@@ -1,0 +1,33 @@
+<svg viewBox="0 0 460 270" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:460px; height:auto; font-family:'Plus Jakarta Sans', sans-serif;">
+  <rect x="2" y="2" width="456" height="266" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+  
+  <!-- Email Header Bar -->
+  <rect x="2" y="2" width="456" height="34" rx="10 10 0 0" fill="#3b0764"/>
+  <circle cx="20" cy="17" r="4.5" fill="#ef4444"/><circle cx="34" cy="17" r="4.5" fill="#f59e0b"/><circle cx="48" cy="17" r="4.5" fill="#10b981"/>
+  <text x="68" y="22" font-size="12" font-weight="800" fill="#ffffff">New Workplace Message — Outlook / NHS Webmail</text>
+  
+  <!-- Header Fields -->
+  <rect x="18" y="44" width="424" height="24" rx="5" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="28" y="60" font-size="10" font-weight="700" fill="#64748b">To: <tspan fill="#0f172a">department.manager@oxfordhealth.nhs.uk</tspan></text>
+  
+  <rect x="18" y="73" width="424" height="24" rx="5" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="28" y="89" font-size="10" font-weight="700" fill="#64748b">Subject: <tspan fill="#0f172a" font-weight="900">Proposal: Upgrading Apprentice Clinical Facilities</tspan></text>
+  
+  <!-- Salutation -->
+  <text x="28" y="116" font-size="11" font-weight="800" fill="#3b0764">Dear Clinical Practice Team,</text>
+  
+  <!-- Message Body lines -->
+  <rect x="28" y="126" width="404" height="9" rx="2" fill="#e2e8f0"/>
+  <rect x="28" y="140" width="380" height="9" rx="2" fill="#e2e8f0"/>
+  
+  <!-- Action Points Bullets -->
+  <circle cx="36" cy="162" r="3.5" fill="#3b0764"/><rect x="48" y="158" width="340" height="8" rx="2" fill="#cbd5e1"/>
+  <circle cx="36" cy="178" r="3.5" fill="#3b0764"/><rect x="48" y="174" width="320" height="8" rx="2" fill="#cbd5e1"/>
+  
+  <!-- Sign-off & Attachment -->
+  <text x="28" y="206" font-size="10.5" font-weight="700" fill="#475569">Kind regards,</text>
+  <text x="28" y="222" font-size="11" font-weight="900" fill="#0f172a">Abdul • Senior Lead Tutor</text>
+  
+  <rect x="28" y="234" width="220" height="22" rx="5" fill="#eff6ff" stroke="#bfdbfe"/>
+  <text x="38" y="249" font-size="9.5" font-weight="700" fill="#1d4ed8">📎 Clinical_Proposal_Summary_v2.pdf</text>
+</svg>

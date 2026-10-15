@@ -1,0 +1,2709 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="alternate icon" href="favicon.ico">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tutor &amp; Training Provider Resource Hub | Master Functional Skills</title>
+  <meta name="description" content="Official Awarding Body Curriculums, Scheme of Work (SoW) templates, Subject Content Specifications, Delivery Guides, and Professional Documentation for Functional Skills Tutors, FE Colleges, and NHS Training Providers.">
+  <link rel="stylesheet" href="assets/css/mfs-theme.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer">
+  <style>
+    .tutor-hero {
+      background: linear-gradient(135deg, #0b172d 0%, #17325e 100%);
+      color: #ffffff;
+      padding: 64px 0 54px;
+      position: relative;
+      overflow: hidden;
+    }
+    .tutor-hero::after {
+      content: '';
+      position: absolute;
+      top: -50px;
+      right: -50px;
+      width: 320px;
+      height: 320px;
+      background: radial-gradient(circle, rgba(37,99,235,0.25) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+    .tutor-hero h1 {
+      font-size: 2.5rem;
+      font-weight: 800;
+      line-height: 1.25;
+      margin-bottom: 16px;
+      color: #ffffff;
+    }
+    .tutor-hero h1 span {
+      color: #60a5fa;
+    }
+    .tutor-hero p.lead-desc {
+      font-size: 1.1rem;
+      color: #cbd5e1;
+      max-width: 820px;
+      line-height: 1.65;
+      margin-bottom: 24px;
+    }
+    .board-jump-nav {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+    .board-jump-btn {
+      padding: 8px 16px;
+      border-radius: 100px;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: #ffffff;
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .board-jump-btn:hover {
+      background: #2563eb;
+      border-color: #2563eb;
+      color: #ffffff;
+      transform: translateY(-2px);
+    }
+    .section-wrap {
+      padding: 56px 0;
+    }
+    .section-wrap.alt-bg {
+      background: var(--bg-card-alt, #f4efe6);
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+    .tutor-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+      display: flex;
+      flex-direction: column;
+    }
+    .tutor-card:hover {
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-lg);
+      border-color: var(--accent);
+    }
+    .board-header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 18px;
+      padding-bottom: 14px;
+      border-bottom: 1.5px solid var(--border-light);
+    }
+    .board-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.3rem;
+      color: #ffffff;
+    }
+    .board-icon.edexcel { background: #005a9c; }
+    .board-icon.cg { background: #059669; }
+    .board-icon.oa { background: #d97706; }
+    .board-icon.ncfe { background: #7c3aed; }
+    .board-icon.dfe { background: #dc2626; }
+    .doc-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 20px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      flex-grow: 1;
+    }
+    .doc-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      padding: 10px 12px;
+      border-radius: 8px;
+      background: var(--bg-page, #faf8f2);
+      border: 1px solid var(--border-light);
+      font-size: 0.88rem;
+      line-height: 1.45;
+    }
+    .doc-item i.file-icon {
+      color: #ef4444;
+      font-size: 1.1rem;
+      margin-top: 2px;
+    }
+    .doc-item a {
+      color: var(--navy);
+      font-weight: 600;
+      text-decoration: none;
+      flex-grow: 1;
+    }
+    .doc-item a:hover {
+      color: var(--accent);
+      text-decoration: underline;
+    }
+    .doc-badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 2px 6px;
+      border-radius: 4px;
+      background: #e2e8f0;
+      color: #475569;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+    .tool-box {
+      background: #ffffff;
+      border-radius: 14px;
+      border: 1.5px solid var(--border);
+      padding: 24px;
+      box-shadow: var(--shadow-sm);
+    }
+  
+    /* 120+ Worksheets Section Styles */
+    .ws-filter-bar {
+      max-width: 720px;
+      margin: 0 auto 18px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .ws-search-box {
+      flex: 1;
+      min-width: 280px;
+      display: flex;
+      align-items: center;
+      background: #ffffff;
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 10px 16px;
+      gap: 10px;
+      box-shadow: var(--shadow-sm);
+    }
+    .ws-search-box input {
+      flex: 1;
+      border: none;
+      outline: none;
+      font-size: 0.95rem;
+      background: transparent;
+      color: var(--navy-dark);
+    }
+    .ws-counter-pill {
+      background: #ffffff;
+      border: 1.5px solid var(--border);
+      border-radius: 12px;
+      padding: 10px 16px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--navy);
+      white-space: nowrap;
+      box-shadow: var(--shadow-sm);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .ws-chips-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 8px;
+      margin-bottom: 28px;
+    }
+    .ws-chip {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 6px 14px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--text-secondary);
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .ws-chip:hover {
+      border-color: var(--accent);
+      color: var(--navy);
+      transform: translateY(-1px);
+    }
+    .ws-chip.active {
+      background: var(--navy-dark);
+      border-color: var(--navy-dark);
+      color: #ffffff;
+    }
+    .ws-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 18px;
+    }
+    .ws-card {
+      background: #ffffff;
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 14px;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s ease;
+    }
+    .ws-card:hover {
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--accent);
+    }
+    .ws-card-badges {
+      display: flex;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+    .ws-badge {
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 3px 8px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .ws-badge-maths { background: #eff6ff; color: #1d4ed8; }
+    .ws-badge-english { background: #faf5ff; color: #6d28d9; }
+    .ws-badge-cat {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 6px;
+      background: #f1f5f9;
+      color: #475569;
+    }
+    .ws-card-title {
+      font-size: 0.98rem;
+      font-weight: 700;
+      color: var(--navy-dark);
+      margin: 0;
+      line-height: 1.35;
+    }
+    .ws-card-actions {
+      display: flex;
+      gap: 8px;
+      margin-top: auto;
+    }
+    .btn-ws {
+      flex: 1;
+      padding: 8px 10px;
+      border-radius: 8px;
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-align: center;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+    }
+    .btn-ws-sheet {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      color: #1d4ed8;
+    }
+    .btn-ws-sheet:hover {
+      background: #2563eb;
+      color: #ffffff;
+      border-color: #2563eb;
+    }
+    .btn-ws-ans {
+      background: #f0fdf4;
+      border: 1px solid #bbf7d0;
+      color: #15803d;
+    }
+    .btn-ws-ans:hover {
+      background: #16a34a;
+      color: #ffffff;
+      border-color: #16a34a;
+    }
+
+  </style>
+</head>
+<body>
+
+      <!-- TOP TRUST BAR WITH ACCESSIBILITY & CONTACT -->
+  <div class="mfs-top-bar">
+    <div class="mfs-container mfs-top-bar-inner">
+      <div class="top-trust-items">
+        <span class="top-trust-item"><i class="fa-solid fa-building-columns"></i> Pearson Edexcel &amp; City &amp; Guilds Aligned</span>
+      </div>
+      <div class="top-contacts">
+        <div class="mfs-access-bar">
+          <!-- DYSLEXIA BACKGROUND TINT PICKER -->
+          <div class="mfs-tint-dropdown-wrap">
+            <button type="button" id="tintToggle" class="btn-tint-toggle" onclick="toggleTintMenu(event)" title="Change dyslexia background tint">
+              <span class="tint-swatch-indicator" id="tintCurrentSwatch"></span>
+              <span id="tintLabel">Cream Tint</span>
+              <i class="fa-solid fa-chevron-down" style="font-size:0.62rem; opacity:0.75; margin-left:2px;"></i>
+            </button>
+            <div id="tintMenu" class="tint-picker-menu">
+              <div class="tint-picker-title"><i class="fa-solid fa-glasses"></i> Dyslexia Reading Tint</div>
+              <button type="button" class="tint-option-btn active" data-tint="cream" onclick="setSiteTint('cream', event)">
+                <span class="swatch swatch-cream"></span>
+                <span class="tint-name">Cream <small class="tint-badge-def">Default</small></span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="peach" onclick="setSiteTint('peach', event)">
+                <span class="swatch swatch-peach"></span>
+                <span class="tint-name">Soft Peach</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="cool" onclick="setSiteTint('cool', event)">
+                <span class="swatch swatch-cool"></span>
+                <span class="tint-name">Cool Mist</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="sage" onclick="setSiteTint('sage', event)">
+                <span class="swatch swatch-sage"></span>
+                <span class="tint-name">Soft Sage</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <div class="tint-divider"></div>
+              <button type="button" class="tint-option-btn" data-tint="none" onclick="setSiteTint('none', event)">
+                <span class="swatch swatch-none"></span>
+                <span class="tint-name">No Tint (White)</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+            </div>
+          </div>
+          <button id="dyslexiaToggle" class="btn-dyslexia-toggle" onclick="toggleDyslexiaMode()" title="Toggle Dyslexia High-Readability Mode">
+            <i class="fa-solid fa-universal-access"></i> Dyslexia
+          </button>
+          <button id="themeToggle" class="mfs-theme-pill" onclick="toggleTheme()" title="Switch Palette: Sapphire vs Emerald">
+            <i class="fa-solid fa-palette"></i> <span id="themeLabel">Sapphire</span>
+          </button>
+        </div>
+        <a href="contact-us.html" class="top-contact-link"><i class="fa-solid fa-envelope"></i> <strong>Contact Us</strong></a>
+      </div>
+    </div>
+  </div>  <!-- MAIN NAVIGATION -->
+                                  <header class="mfs-navbar">
+    <div class="revision-page-wrapper mfs-navbar-inner">
+      <a href="index.html" class="mfs-brand">
+        <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div class="mfs-brand-text">
+          <div class="mfs-brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
+          <div class="mfs-brand-subtitle">Delivering Skills • Achieving Goals</div>
+        </div>
+      </a>
+
+      <nav class="mfs-nav-wrapper">
+        <ul class="mfs-nav-menu">
+          <!-- 1. SUBJECTS (VISUAL MEGA-MENU) -->
+          <li class="mfs-nav-item">
+            <a href="courses.html" class="mfs-nav-link">
+              <i class="fa-solid fa-book-open-reader" style="color:#0284c7; margin-right:5px;"></i> Subjects <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-revision-hub">
+              <div class="mfs-revision-grid">
+                <!-- Maths Column -->
+                <div class="mfs-revision-col mfs-revision-col-maths">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-calculator"></i> Maths Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="functional-skills-maths-level-2.html" class="mfs-dropdown-item">Maths Level 2</a>
+                    <a href="functional-skills-maths-level-1.html" class="mfs-dropdown-item">Maths Level 1</a>
+                    <a href="entry-level-3-maths.html" class="mfs-dropdown-item">Entry Level 3 Maths</a>
+                  </div>
+                </div>
+                <!-- English Column -->
+                <div class="mfs-revision-col mfs-revision-col-english">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-pen-nib"></i> English Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="functional-skills-english-level-2.html" class="mfs-dropdown-item">English Level 2</a>
+                    <a href="functional-skills-english-level-1.html" class="mfs-dropdown-item">English Level 1</a>
+                  </div>
+                </div>
+                <!-- Digital Skills Column -->
+                <div class="mfs-revision-col mfs-revision-col-digital">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-laptop-code"></i> Digital Skills</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="digital-functional-skills.html" class="mfs-dropdown-item">Digital Skills Hub</a>
+                    <a href="digital-functional-skills-mock-exam.html" class="mfs-dropdown-item">Pearson Mock Exam</a>
+                    <a href="digital-functional-skills-past-papers.html" class="mfs-dropdown-item">Past Papers &amp; Files</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- 2. PAST PAPERS & MOCKS (DIRECT ACCESS) -->
+          <li class="mfs-nav-item">
+            <a href="functional-skills-past-papers.html" class="mfs-nav-link">
+              <i class="fa-regular fa-file-lines" style="color:#0284c7; margin-right:5px;"></i> Past Papers &amp; Mocks
+            </a>
+          </li>
+
+          <!-- 2b. WORKSHEETS DIRECTORY (CORBETT STYLE DUAL ENGINE) -->
+          <li class="mfs-nav-item">
+            <a href="worksheets.html" class="mfs-nav-link">
+              <i class="fa-solid fa-layer-group" style="color:#0284c7; margin-right:5px;"></i> Worksheets Hub
+            </a>
+          </li>
+
+          <!-- 3. FREE TOOLS (COMPACT DROPDOWN) -->
+          <li class="mfs-nav-item">
+            <a href="tools.html" class="mfs-nav-link">
+              <i class="fa-solid fa-screwdriver-wrench" style="color:#0284c7; margin-right:5px;"></i> Free Tools <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-compact">
+              <a href="tools.html" class="mfs-dropdown-item" style="font-weight:700; color:var(--accent);"><i class="fa-solid fa-layer-group" style="font-size:0.85rem; margin-right:6px;"></i> All Free Tools &amp; Simulators &rarr;</a>
+              <div class="mfs-dropdown-divider" style="margin:4px 0; border-top:1px solid #e2e8f0;"></div>
+              <a href="pass-mark-calculator.html" class="mfs-dropdown-item"><i class="fa-solid fa-calculator" style="color:var(--accent); font-size:0.85rem; margin-right:6px;"></i> Pass Mark Calculator</a>
+              <a href="diagnostic-test.html" class="mfs-dropdown-item"><i class="fa-solid fa-chart-pie" style="color:#059669; font-size:0.85rem; margin-right:6px;"></i> Diagnostic Skill Checker</a>
+              <a href="functional-skills-nets.html" class="mfs-dropdown-item"><i class="fa-solid fa-cube" style="color:#0284c7; font-size:0.85rem; margin-right:6px;"></i> 3D Net Folding Tool</a>
+            </div>
+          </li>
+
+          <!-- 4. REVISION CARDS -->
+          <li class="mfs-nav-item">
+            <a href="revision-cards.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-layer-group" style="color:#d97706; margin-right:5px;"></i> Revision Cards
+            </a>
+          </li>
+
+          <!-- 5. SHOP -->
+          <li class="mfs-nav-item">
+            <a href="shop.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-basket-shopping" style="color:#d97706; margin-right:5px;"></i> Shop
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- 6. BOOK EXAM ACTION BUTTON -->
+      <div class="mfs-nav-actions">
+        <a href="exams.html" class="btn-nav-exam">
+          <i class="fa-solid fa-calendar-check"></i> Book Exam
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="tutor-hero">
+    <div class="mfs-container">
+      <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(255,255,255,0.12); padding:6px 14px; border-radius:100px; font-size:0.85rem; font-weight:700; margin-bottom:16px;">
+        <i class="fa-solid fa-award" style="color:#f59e0b;"></i> For FE Tutors, Assessors, Colleges &amp; NHS Training Providers
+      </div>
+      <h1>Tutor &amp; Training Provider <span>Resource Hub</span></h1>
+      <p class="lead-desc">
+        Centralized access to official Awarding Body specifications, curriculum designs, Schemes of Work (SoW), delivery guides, and diagnostic assessment materials. Designed to empower Functional Skills educators delivering Pearson Edexcel, City &amp; Guilds, Open Awards, NCFE, and AQA qualifications.
+      </p>
+
+      <div class="board-jump-nav">
+        <span style="color:#94a3b8; font-size:0.85rem; display:inline-flex; align-items:center; font-weight:600;">Jump to Awarding Body:</span>
+        <a href="#edexcel" class="board-jump-btn"><i class="fa-solid fa-building-columns"></i> Pearson Edexcel</a>
+        <a href="#city-guilds" class="board-jump-btn"><i class="fa-solid fa-award"></i> City &amp; Guilds</a>
+        <a href="#open-awards" class="board-jump-btn"><i class="fa-solid fa-file-lines"></i> Open Awards</a>
+        <a href="#ncfe-aqa" class="board-jump-btn"><i class="fa-solid fa-book"></i> NCFE &amp; AQA</a>
+        <a href="#curriculum-design" class="board-jump-btn"><i class="fa-solid fa-compass-drafting"></i> Curriculum Templates</a>
+        <a href="#worksheets-library" class="board-jump-btn" style="background:var(--accent); border-color:var(--accent); color:#0f172a; font-weight:800;"><i class="fa-solid fa-file-pen"></i> 120+ Topic Worksheets</a>
+        <a href="#dfe-statutory" class="board-jump-btn"><i class="fa-solid fa-scale-balanced"></i> DfE Statutory Criteria</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- STATUTORY STANDARDS SECTION -->
+  <section class="section-wrap" id="dfe-statutory">
+    <div class="mfs-container">
+      <div class="mfs-section-title" style="text-align:center;">
+        <div style="display:inline-block; font-size:0.8rem; font-weight:800; color:var(--accent); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:14px;">The Regulatory Foundation</div>
+        <div style="display:flex; align-items:center; justify-content:center; gap:28px; flex-wrap:wrap; margin-bottom:18px;">
+          <img src="assets/img/boards/dfe.svg" alt="Department for Education" style="height:76px; width:auto; object-fit:contain;">
+          <span style="font-size:2.2rem; color:#cbd5e1; font-weight:300;">&amp;</span>
+          <img src="assets/img/boards/ofqual.svg" alt="Ofqual" style="height:66px; width:auto; object-fit:contain;">
+        </div>
+        <h2 style="font-size:1.6rem; color:var(--navy-dark); margin:0 0 8px;">Statutory Subject Content &amp; National Standards</h2>
+        <p style="max-width:760px; margin:0 auto;">The definitive government specifications underpinning all UK Functional Skills qualifications across all awarding bodies.</p>
+      </div>
+
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:24px; margin-top:32px;">
+        <!-- DfE Maths -->
+        <div class="tutor-card">
+          <div class="board-header">
+            <div class="board-icon dfe"><i class="fa-solid fa-calculator"></i></div>
+            <div>
+              <h3 style="margin:0; font-size:1.15rem; color:var(--navy);">DfE Subject Content for Maths</h3>
+              <span style="font-size:0.8rem; color:var(--text-muted);">Entry 1 to Level 2 Statutory Standards</span>
+            </div>
+          </div>
+          <p style="font-size:0.88rem; color:var(--text-secondary); margin-bottom:16px;">
+            Full specification outlining required mathematical problem-solving skills, underpinning knowledge, non-calculator expectations, and scope of study across Number, Measure/Shape, and Data Handling.
+          </p>
+          <ul class="doc-list">
+            <li class="doc-item">
+              <i class="fa-regular fa-file-pdf file-icon"></i>
+              <a href="assets/curriculum/dfe/DfE_Functional_Skills_Subject_Content_Mathematics.pdf" target="_blank" rel="noopener">DfE Subject Content: Mathematics (Official PDF)</a>
+              <span class="doc-badge">Gov.uk</span>
+            </li>
+            <li class="doc-item">
+              <i class="fa-solid fa-table-list file-icon" style="color:#2563eb;"></i>
+              <a href="functional-skills-maths-level-2.html">MFS Level 2 Maths Curriculum Topic Matrix (39 Topics)</a>
+              <span class="doc-badge" style="background:#eff6ff; color:#2563eb;">MFS</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- DfE English -->
+        <div class="tutor-card">
+          <div class="board-header">
+            <div class="board-icon dfe"><i class="fa-solid fa-pen-nib"></i></div>
+            <div>
+              <h3 style="margin:0; font-size:1.15rem; color:var(--navy);">DfE Subject Content for English</h3>
+              <span style="font-size:0.8rem; color:var(--text-muted);">Reading, Writing &amp; SLC Requirements</span>
+            </div>
+          </div>
+          <p style="font-size:0.88rem; color:var(--text-secondary); margin-bottom:16px;">
+            Statutory breakdown of criteria for Reading comprehension and critical analysis, Spelling, Punctuation and Grammar (SPaG) weighting (40-45%), and Speaking, Listening and Communicating (SLC).
+          </p>
+          <ul class="doc-list">
+            <li class="doc-item">
+              <i class="fa-regular fa-file-pdf file-icon"></i>
+              <a href="assets/curriculum/dfe/DfE_Functional_Skills_Subject_Content_English.pdf" target="_blank" rel="noopener">DfE Subject Content: English (Official PDF)</a>
+              <span class="doc-badge">Gov.uk</span>
+            </li>
+            <li class="doc-item">
+              <i class="fa-solid fa-table-list file-icon" style="color:#2563eb;"></i>
+              <a href="functional-skills-english-level-2.html">MFS Level 2 English Topic Matrix (35 Topics)</a>
+              <span class="doc-badge" style="background:#eff6ff; color:#2563eb;">MFS</span>
+            </li>
+          </ul>
+        </div>
+
+        <!-- DfE Digital Skills -->
+        <div class="tutor-card">
+          <div class="board-header">
+            <div class="board-icon dfe"><i class="fa-solid fa-laptop-code"></i></div>
+            <div>
+              <h3 style="margin:0; font-size:1.15rem; color:var(--navy);">DfE Digital Functional Skills (DFSQ)</h3>
+              <span style="font-size:0.8rem; color:var(--text-muted);">Entry 3 &amp; Level 1 National Standards</span>
+            </div>
+          </div>
+          <p style="font-size:0.88rem; color:var(--text-secondary); margin-bottom:16px;">
+            Curriculum framework across 5 core digital skill areas: Using Devices &amp; Handling Info, Creating &amp; Editing, Communicating, Transacting, and Being Safe &amp; Responsible Online.
+          </p>
+          <ul class="doc-list">
+            <li class="doc-item">
+              <i class="fa-regular fa-file-pdf file-icon"></i>
+              <a href="https://assets.publishing.service.gov.uk/media/61793fa7e90e071981ee6b68/Digital_functional_skills_qualifications_subject_content.pdf" target="_blank" rel="noopener">DfE Subject Content: Digital Skills (Official PDF)</a>
+              <span class="doc-badge">Gov.uk</span>
+            </li>
+            <li class="doc-item">
+              <i class="fa-solid fa-microchip file-icon" style="color:#10b981;"></i>
+              <a href="digital-functional-skills.html">MFS DFSQ Teaching &amp; Mock Simulator Hub</a>
+              <span class="doc-badge" style="background:#ecfdf5; color:#059669;">Live Tool</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AWARDING BODY DOCUMENTATION SECTION: PEARSON EDEXCEL -->
+  <section class="section-wrap alt-bg" id="edexcel">
+    <div class="mfs-container">
+      <div class="mfs-section-title" style="text-align:center;">
+        <div style="display:inline-block; font-size:0.8rem; font-weight:800; color:var(--accent); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:14px;">Awarding Body Portals &amp; Specifications</div>
+        <div style="display:flex; align-items:center; justify-content:center; margin-bottom:22px;">
+          <img src="assets/img/boards/edexcel.png" alt="Pearson Edexcel" style="height:130px; width:auto; object-fit:contain; max-width:460px;">
+        </div>
+        <h2 style="font-size:1.6rem; color:var(--navy-dark); margin:0 0 8px;">Functional Skills Suite &amp; Delivery Guides</h2>
+        <p style="max-width:760px; margin:0 auto;">Complete official specifications, teacher delivery guides, and scheme of work resources from Pearson Qualifications.</p>
+      </div>
+
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap:24px; margin-top:32px;">
+        <!-- Edexcel Maths -->
+        <div class="tutor-card">
+          <div class="board-header">
+            <div class="board-icon edexcel"><i class="fa-solid fa-square-root-variable"></i></div>
+            <div>
+              <h3 style="margin:0; font-size:1.15rem; color:var(--navy);">Pearson Edexcel Maths L1 &amp; L2</h3>
+              <span style="font-size:0.8rem; color:var(--text-muted);">Specification Code: 603/4267/5 &amp; 603/4268/7</span>
+            </div>
+          </div>
+          <p style="font-size:0.86rem; color:var(--text-secondary); margin-bottom:14px;">
+            Section A (Non-calculator: 25 mins, 25% marks) &amp; Section B (Calculator: 1h 30m, 75% marks). Total 64 raw marks.
+          </p>
+          <ul class="doc-list">
+            <li class="doc-item">
+              <i class="fa-regular fa-file-pdf file-icon"></i>
+              <a href="assets/teaching-resources/edexcel/Pearson_Edexcel_FS_Maths_L1_L2_Specification.pdf" target="_blank" rel="noopener">Pearson Edexcel Maths L1-L2 Full Specification (PDF)</a>
+            </li>
+            <li class="doc-item">
+              <i class="fa-regular fa-file-word file-icon" style="color:#2563eb;"></i>
+              <a href="#curriculum-design">Pearson 15-Week &amp; 30-Week Maths Scheme of Work (SoW)</a>
+            </li>
+            <li class="doc-item">
+              <i class="fa-regular fa-file-lines file-icon"></i>
+              <a href="https://qualifications.pearson.com/content/dam/pdf/Functional-skills/Mathematics/2019/Teaching-and-learning-materials/FS-Maths-L1-L2-Teacher-Guide.pdf" target="_blank" rel="noopener">Teacher Guidance &amp; Delivery Strategies (PDF)</a>
+            </li>
+            <li class="doc-item">
+              <i class="fa-solid fa-calculator file-icon" style="color:#f59e0b;"></i>
+              <a href="pass-mark-calculator.html">Pearson Edexcel Raw Mark Scaling Calculator</a>
+            </li>
+          </ul>
+          <div style="margin-top:auto;">
+            <a href="past-papers.html?board=Pearson+Edexcel&amp;subj=Maths" class="btn-card-action" style="display:block; text-align:center;">Access All Pearson Maths Past Papers →</a>
+          </div>
+        </div>
+
+        <!-- Edexcel English -->
+        <div class="tutor-card">
+          <div class="board-header">
+            <div class="board-icon edexcel"><i class="fa-solid fa-book-open-reader"></i></div>
+            <div>
+              <h3 style="margin:0; font-size:1.15rem; color:var(--navy);">Pearson Edexcel English L1 &amp; L2</h3>
+              <span style="font-size:0.8rem; color:var(--text-muted);">Specification Code: 603/4289/4 &amp; 603/4290/0</span>
+            </div>
+          </div>
+          <p style="font-size:0.86rem; color:var(--text-secondary); margin-bottom:14px;">
+            3 separate components: Reading (1h, 35 marks), Writing (1h 20m, 50 marks), and Speaking, Listening &amp; Communicating (Internal).
+          </p>
+          <ul class="doc-list">
+            <li class="doc-item">
+              <i class="fa-regular fa-file-pdf file-icon"></i>
+              <a href="assets/teaching-resources/edexcel/Pearson_Edexcel_FS_English_L1_L2_Specification.pdf" target="_blank" rel="noopener">Pearson Edexcel English L1-L2 Specification (PDF)</a>
+            </li>
+            <li class="doc-item">
+              <i class="fa-regular fa-file-lines file-icon"></i>
+              <a href="#curriculum-design">Speaking, Listening &amp; Communicating (SLC) Assessment Record</a>
+            </li>
+            <li class="doc-item">
+              <i class="fa-regular fa-file-pdf file-icon"></i>
+              <a href="https://qualifications.pearson.com/content/dam/pdf/Functional-skills/English/2019/Teaching-and-learning-materials/Access-to-Scripts-FAQs.pdf" target="_blank" rel="noopener">Access to Candidate Scripts &amp; Examiner Reviews FAQ</a>
+            </li>
+            <li class="doc-item">
+              <i class="fa-solid fa-chart-line file-icon" style="color:#059669;"></i>
+              <a href="https://qualifications.pearson.com/en/support/support-topics/results-certification/resultsplus.html" target="_blank" rel="noopener">ResultsPlus Diagnostic Analysis for Tutors ↗</a>
+            </li>
+          </ul>
+          <div style="margin-top:auto;">
+            <a href="past-papers.html?board=Pearson+Edexcel&amp;subj=English" class="btn-card-action" style="display:block; text-align:center;">Access All Pearson English Past Papers →</a>
+          </div>
+        </div>
+
+        <!-- Edexcel Digital Functional Skills -->
+        <div class="tutor-card">
+          <div class="board-header">
+            <div class="board-icon edexcel"><i class="fa-solid fa-laptop-code"></i></div>
+            <div>
+              <h3 style="margin:0; font-size:1.15rem; color:var(--navy);">Pearson Digital Functional Skills</h3>
+              <span style="font-size:0.8rem; color:var(--text-muted);">DFSQ Entry 3 &amp; Level 1 (First Teaching Sept 2023)</span>
+            </div>
+          </div>
+          <p style="font-size:0.86rem; color:var(--text-secondary); margin-bottom:14px;">
+            Modern replacement for legacy ICT. Features computer-based assessments with authentic candidate data file bundles.
+          </p>
+          <ul class="doc-list">
+            <li class="doc-item">
+              <i class="fa-regular fa-file-pdf file-icon"></i>
+              <a href="assets/teaching-resources/edexcel/Pearson_Edexcel_DFSQ_Specification.pdf" target="_blank" rel="noopener">Pearson DFSQ Specification Guide (PDF)</a>
+            </li>
+            <li class="doc-item">
+              <i class="fa-solid fa-file-zipper file-icon" style="color:#2563eb;"></i>
+              <a href="digital-functional-skills-past-papers.html">Candidate Practice Data Files (.ZIP) &amp; Spreadsheets</a>
+            </li>
+            <li class="doc-item">
+              <i class="fa-solid fa-desktop file-icon" style="color:#10b981;"></i>
+              <a href="digital-functional-skills-mock-exam.html">Online Pearson DFS Mock Exam Simulator ↗</a>
+            </li>
+          </ul>
+          <div style="margin-top:auto;">
+            <a href="digital-functional-skills.html" class="btn-card-action" style="display:block; text-align:center;">Visit Digital Skills Hub →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CITY & GUILDS (4748) SECTION -->
+  <section class="section-wrap" id="city-guilds">
+    <div class="mfs-container">
+      <div class="mfs-section-title" style="text-align:center;">
+        <div style="display:inline-block; font-size:0.8rem; font-weight:800; color:#059669; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:14px;">Awarding Body Documentation</div>
+        <div style="display:flex; align-items:center; justify-content:center; margin-bottom:18px;">
+          <img src="assets/img/boards/city-and-guilds.png" alt="City &amp; Guilds" style="height:84px; width:auto; object-fit:contain; max-width:360px;">
+        </div>
+        <h2 style="font-size:1.6rem; color:var(--navy-dark); margin:0 0 8px;">4748 Reform Suite Handbooks &amp; Specifications</h2>
+        <p style="max-width:760px; margin:0 auto;">Comprehensive qualification handbooks, delivery plans, and examiner guidance for the City &amp; Guilds 4748 specification.</p>
+      </div>
+
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(340px, 1fr)); gap:24px; margin-top:32px;">
+        <!-- C&G Maths -->
+        <div class="tutor-card">
+          <div class="board-header">
+            <div class="board-icon cg"><i class="fa-solid fa-calculator"></i></div>
+            <div>
+              <h3 style="margin:0; font-size:1.15rem; color:var(--navy);">City &amp; Guilds 4748 Maths L1/L2</h3>
+              <span style="font-size:0.8rem; color:var(--text-muted);">4748-02 (Level 1) &amp; 4748-04 (Level 2)</span>
+            </div>
+          </div>
+          <p style="font-size:0.88rem; color:var(--text-secondary); margin-bottom:14px;">
+            Structured into Section 1 (Non-calculator) and Section 2 (Calculator). Features strict underpinning questions alongside multi-step problem solving.
+          </p>
+          <ul class="doc-list">
+            <li class="doc-item">
+              <i class="fa-regular fa-file-pdf file-icon"></i>
+              <a href="assets/teaching-resources/city-and-guilds/City_Guilds_4748_Maths_L1_L2_Qualification_Handbook.pdf" target="_blank" rel="noopener">4748 Maths Qualification Handbook (PDF)</a>
+              <span class="doc-badge">C&amp;G</span>
+            </li>
+            <li class="doc-item">
+              <i class="fa-regular fa-file-pdf file-icon"></i>
+              <a href="assets/teaching-resources/city-and-guilds/City_Guilds_4748_Maths_L2_Chief_Examiner_Report.pdf" download>City &amp; Guilds 4748 Maths L2 Chief Examiner Report (PDF)</a>
+              <span class="doc-badge" style="background:#dcfce7; color:#15803d;">Key Insight</span>
+            </li>
+          </ul>
+          <div style="margin-top:auto;">
+            <a href="past-papers.html?board=City+%26+Guilds&amp;subj=Maths" class="btn-card-action" style="display:block; text-align:center;">Access C&amp;G Maths Past Papers →</a>
+          </div>
+        </div>
+
+        <!-- C&G English -->
+        <div class="tutor-card">
+          <div class="board-header">
+            <div class="board-icon cg"><i class="fa-solid fa-feather"></i></div>
+            <div>
+              <h3 style="margin:0; font-size:1.15rem; color:var(--navy);">City &amp; Guilds 4748 English L1/L2</h3>
+              <span style="font-size:0.8rem; color:var(--text-muted);">4748-01 (Level 1) &amp; 4748-03 (Level 2)</span>
+            </div>
+          </div>
+          <p style="font-size:0.88rem; color:var(--text-secondary); margin-bottom:14px;">
+            Comprehensive handbooks covering Reading (comprehension &amp; comparative analysis), Writing (form, purpose, audience &amp; SPaG), and SLC assessor sheets.
+          </p>
+          <ul class="doc-list">
+            <li class="doc-item">
+              <i class="fa-regular fa-file-pdf file-icon"></i>
+              <a href="https://www.cityandguilds.com/~/media/productdocuments/skills_for_work_and_life/functional_skills/4748/4748_centre_documents/4748-01-03_english_qualification_handbook_v2-2.ashx" target="_blank" rel="noopener">4748 English Qualification Handbook (PDF)</a>
+              <span class="doc-badge">C&amp;G</span>
+            </li>
+            <li class="doc-item">
+              <i class="fa-regular fa-file-lines file-icon"></i>
+              <a href="https://www.cityandguilds.com/~/media/productdocuments/skills_for_work_and_life/functional_skills/4748/4748_centre_documents/4748_slc_assessment_pack_v1-4.ashx" target="_blank" rel="noopener">Speaking &amp; Listening Assessor Recording Pack</a>
+            </li>
+          </ul>
+          <div style="margin-top:auto;">
+            <a href="past-papers.html?board=City+%26+Guilds&amp;subj=English" class="btn-card-action" style="display:block; text-align:center;">Access C&amp;G English Past Papers →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- OPEN AWARDS, NCFE & AQA SECTION -->
+  <section class="section-wrap alt-bg" id="open-awards">
+    <div class="mfs-container">
+      <div class="mfs-section-title" style="text-align:center;">
+        <div style="display:inline-block; font-size:0.8rem; font-weight:800; color:#d97706; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px;">Alternative Examination Boards</div>
+        <h2 style="font-size:1.6rem; color:var(--navy-dark); margin:0 0 8px;">Open Awards, NCFE &amp; AQA</h2>
+        <p style="max-width:760px; margin:0 auto;">Official specifications and tutor guidance for alternative leading UK examination boards.</p>
+      </div>
+
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:24px; margin-top:32px;">
+        <!-- Open Awards -->
+        <div class="tutor-card">
+          <div style="background:#ffffff; border:1px solid #fed7aa; border-radius:14px; padding:16px 20px; display:flex; align-items:center; justify-content:center; margin-bottom:18px; box-shadow:0 4px 12px rgba(217,119,6,0.06); min-height:72px;">
+            <img src="assets/img/boards/open-awards.png" alt="Open Awards" style="height:44px; width:auto; max-width:200px; object-fit:contain;">
+          </div>
+          <div class="board-header" style="margin-bottom:12px; padding-bottom:10px;">
+            <div>
+              <h3 style="margin:0; font-size:1.15rem; color:var(--navy);">Open Awards Functional Skills</h3>
+              <span style="font-size:0.8rem; color:var(--text-muted);">Qualification Guides &amp; Assessment Strategy</span>
+            </div>
+          </div>
+          <p style="font-size:0.88rem; color:var(--text-secondary); margin-bottom:14px;">
+            Practical, accessible assessments favoured by apprenticeships, NHS trusts, and adult education budgets across the UK.
+          </p>
+          <ul class="doc-list">
+            <li class="doc-item">
+              <i class="fa-regular fa-file-pdf file-icon"></i>
+              <a href="assets/teaching-resources/open-awards/Open_Awards_Maths_Level_2_Qualification_Guide.pdf" target="_blank" rel="noopener">Open Awards Functional Skills Qualification Guide (PDF)</a>
+            </li>
+            <li class="doc-item">
+              <i class="fa-regular fa-file-pdf file-icon"></i>
+              <a href="assets/teaching-resources/open-awards/Open_Awards_English_Level_2_Qualification_Guide.pdf" download>Open Awards English Level 2 Qualification Guide (PDF)</a>
+              <span class="doc-badge">OA Guide</span>
+            </li>
+            <li class="doc-item">
+              <i class="fa-solid fa-table file-icon" style="color:#d97706;"></i>
+              <a href="open-awards-functional-skills-maths-level-2-past-papers.html">Open Awards Maths Level 2 Past Papers &amp; Mark Schemes</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- NCFE -->
+        <div class="tutor-card" id="ncfe-aqa">
+          <div style="background:#ffffff; border:1px solid #ddd6fe; border-radius:14px; padding:16px 20px; display:flex; align-items:center; justify-content:center; margin-bottom:18px; box-shadow:0 4px 12px rgba(124,58,237,0.06); min-height:72px;">
+            <img src="assets/img/boards/ncfe.png" alt="NCFE" style="height:44px; width:auto; max-width:200px; object-fit:contain;">
+          </div>
+          <div class="board-header" style="margin-bottom:12px; padding-bottom:10px;">
+            <div>
+              <h3 style="margin:0; font-size:1.15rem; color:var(--navy);">NCFE Functional Skills</h3>
+              <span style="font-size:0.8rem; color:var(--text-muted);">Specifications &amp; Learner Portfolios</span>
+            </div>
+          </div>
+          <p style="font-size:0.88rem; color:var(--text-secondary); margin-bottom:14px;">
+            NCFE's reformed qualifications designed to provide young people and adults with essential English and Maths skills for work and life.
+          </p>
+          <ul class="doc-list">
+            <li class="doc-item">
+              <i class="fa-regular fa-file-pdf file-icon"></i>
+              <a href="https://www.ncfe.org.uk/qualification-search/functional-skills" target="_blank" rel="noopener">NCFE Functional Skills Specification Directory ↗</a>
+            </li>
+            <li class="doc-item">
+              <i class="fa-solid fa-table file-icon" style="color:#7c3aed;"></i>
+              <a href="ncfe-functional-skills-maths-level-2-past-papers.html">NCFE Maths Level 2 Past Papers &amp; Schemes</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- AQA -->
+        <div class="tutor-card">
+          <div style="background:#ffffff; border:1px solid #bae6fd; border-radius:14px; padding:16px 20px; display:flex; align-items:center; justify-content:center; margin-bottom:18px; box-shadow:0 4px 12px rgba(2,132,199,0.06); min-height:72px;">
+            <img src="assets/img/boards/aqa.png" alt="AQA" style="height:44px; width:auto; max-width:200px; object-fit:contain;">
+          </div>
+          <div class="board-header" style="margin-bottom:12px; padding-bottom:10px;">
+            <div>
+              <h3 style="margin:0; font-size:1.15rem; color:var(--navy);">AQA Functional Skills</h3>
+              <span style="font-size:0.8rem; color:var(--text-muted);">Maths (8361/8362) &amp; English (8720/8725)</span>
+            </div>
+          </div>
+          <p style="font-size:0.88rem; color:var(--text-secondary); margin-bottom:14px;">
+            Full qualification specifications, teacher support resources, and moderation criteria from AQA examinations.
+          </p>
+          <ul class="doc-list">
+            <li class="doc-item">
+              <i class="fa-regular fa-file-pdf file-icon"></i>
+              <a href="https://www.aqa.org.uk/subjects/english/functional-skills" target="_blank" rel="noopener">AQA Functional Skills English Specifications ↗</a>
+            </li>
+            <li class="doc-item">
+              <i class="fa-regular fa-file-pdf file-icon"></i>
+              <a href="https://www.aqa.org.uk/subjects/mathematics/functional-skills" target="_blank" rel="noopener">AQA Functional Skills Maths Specifications ↗</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+  <!-- 120+ CLASSROOM WORKSHEETS & ANSWERS LIBRARY -->
+  <section class="section-wrap alt-bg" id="worksheets-library">
+    <div class="mfs-container">
+      <div class="mfs-section-title" style="text-align:center;">
+        <div style="display:inline-block; font-size:0.8rem; font-weight:800; color:var(--accent); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:10px;">Classroom Teaching &amp; Student Practice</div>
+        <h2 style="font-size:1.85rem; color:var(--navy-dark); margin:0 0 10px;">120+ Printable Topic Worksheets &amp; Answer Schemes</h2>
+        <p style="max-width:780px; margin:0 auto 24px; color:var(--text-secondary); line-height:1.6;">
+          Complete topic worksheets calibrated to DfE Functional Skills Subject Content statements for Mathematics (Level 1 &amp; 2) and English (Reading, Writing, SPaG &amp; SLC). Each sheet is designed for print (A4 portrait) and classroom delivery, paired with step-by-step examiner marking keys.
+        </p>
+
+        <!-- SEARCH & FILTER BAR -->
+        <div class="ws-filter-bar">
+          <div class="ws-search-box">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="text" id="wsSearchInput" placeholder="Search 122 worksheets (e.g. Ratio, Area, Decimals, Punctuation, Fact or Opinion)..." oninput="filterWorksheets()">
+            <button type="button" id="wsClearBtn" style="display:none; background:none; border:none; color:#64748b; cursor:pointer;" onclick="clearWsSearch()"><i class="fa-solid fa-xmark"></i></button>
+          </div>
+          <div class="ws-counter-pill">
+            <i class="fa-solid fa-file-lines"></i> Showing <strong id="wsVisibleCount">122</strong> of 122 Worksheets
+          </div>
+        </div>
+
+        <!-- FILTER CHIPS -->
+        <div class="ws-chips-row">
+          <span style="font-size:0.8rem; font-weight:700; color:var(--text-muted); display:inline-flex; align-items:center; gap:6px; margin-right:4px;"><i class="fa-solid fa-sliders"></i> Filter:</span>
+          <button type="button" class="ws-chip active" data-filter="" onclick="setWsFilter('')">All (122)</button>
+          <button type="button" class="ws-chip" data-filter="maths" onclick="setWsFilter('maths')"><i class="fa-solid fa-calculator"></i> Maths All (78)</button>
+          <button type="button" class="ws-chip" data-filter="number" onclick="setWsFilter('number')">Maths: Number</button>
+          <button type="button" class="ws-chip" data-filter="geometry" onclick="setWsFilter('geometry')">Maths: Measure &amp; Shape</button>
+          <button type="button" class="ws-chip" data-filter="stats" onclick="setWsFilter('stats')">Maths: Data &amp; Stats</button>
+          <button type="button" class="ws-chip" data-filter="english" onclick="setWsFilter('english')"><i class="fa-solid fa-pen-nib"></i> English All (44)</button>
+          <button type="button" class="ws-chip" data-filter="reading" onclick="setWsFilter('reading')">English: Reading</button>
+          <button type="button" class="ws-chip" data-filter="writing" onclick="setWsFilter('writing')">English: Writing</button>
+          <button type="button" class="ws-chip" data-filter="spag" onclick="setWsFilter('spag')">English: SPaG</button>
+        </div>
+      </div>
+
+      <!-- WORKSHEETS GRID -->
+      <div class="ws-grid" id="wsGrid">
+        
+    <div class="ws-card" data-subj="maths" data-cat="geometry" data-title="2d shapes 2d shapes">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Measure &amp; Shape</span>
+        </div>
+        <h4 class="ws-card-title">2D Shapes</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/2d-shapes-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/2d-shapes-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="geometry" data-title="3d shape basics 3d shape basics">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Measure &amp; Shape</span>
+        </div>
+        <h4 class="ws-card-title">3D Shape Basics</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/3d-shape-basics-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/3d-shape-basics-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="geometry" data-title="3d shapes 3d shapes">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Measure &amp; Shape</span>
+        </div>
+        <h4 class="ws-card-title">3D Shapes</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/3d-shapes-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/3d-shapes-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="number" data-title="addition &amp; subtraction addition and subtraction">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Number</span>
+        </div>
+        <h4 class="ws-card-title">Addition &amp; Subtraction</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/addition-and-subtraction-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/addition-and-subtraction-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="geometry" data-title="angles and bearings angles and bearings">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Measure &amp; Shape</span>
+        </div>
+        <h4 class="ws-card-title">Angles And Bearings</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/angles-and-bearings-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/angles-and-bearings-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="geometry" data-title="angles in 2d shapes angles in 2d shapes">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Measure &amp; Shape</span>
+        </div>
+        <h4 class="ws-card-title">Angles In 2D Shapes</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/angles-in-2d-shapes-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/angles-in-2d-shapes-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="geometry" data-title="angles angles">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Measure &amp; Shape</span>
+        </div>
+        <h4 class="ws-card-title">Angles</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/angles-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/angles-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="geometry" data-title="area area">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Measure &amp; Shape</span>
+        </div>
+        <h4 class="ws-card-title">Area</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/area-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/area-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="number" data-title="assessing the basics assessing the basics">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Number</span>
+        </div>
+        <h4 class="ws-card-title">Assessing the Basics</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/assessing-the-basics-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/assessing-the-basics-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="stats" data-title="bar charts bar charts">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Data &amp; Stats</span>
+        </div>
+        <h4 class="ws-card-title">Bar Charts</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/bar-charts-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/bar-charts-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="number" data-title="best buys best buys">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Number</span>
+        </div>
+        <h4 class="ws-card-title">Best Buys</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/best-buys-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/best-buys-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="number" data-title="bidmas / order of operations bidmas">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Number</span>
+        </div>
+        <h4 class="ws-card-title">BIDMAS / Order of Operations</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/bidmas-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/bidmas-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="number" data-title="capacity capacity">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Number</span>
+        </div>
+        <h4 class="ws-card-title">Capacity</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/capacity-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/capacity-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="geometry" data-title="circles &amp; circumference circles">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Measure &amp; Shape</span>
+        </div>
+        <h4 class="ws-card-title">Circles &amp; Circumference</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/circles-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/circles-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="number" data-title="common mistakes in reading common mistakes">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Number</span>
+        </div>
+        <h4 class="ws-card-title">Common Mistakes in Reading</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/common-mistakes-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/common-mistakes-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="stats" data-title="comparing data sets comparing data sets">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Data &amp; Stats</span>
+        </div>
+        <h4 class="ws-card-title">Comparing Data Sets</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/comparing-data-sets-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/comparing-data-sets-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="stats" data-title="conversion graphs conversion graphs">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Data &amp; Stats</span>
+        </div>
+        <h4 class="ws-card-title">Conversion Graphs</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/conversion-graphs-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/conversion-graphs-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="geometry" data-title="coordinates coordinates">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Measure &amp; Shape</span>
+        </div>
+        <h4 class="ws-card-title">Coordinates</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/coordinates-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/coordinates-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="number" data-title="courses courses">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Number</span>
+        </div>
+        <h4 class="ws-card-title">Courses</h4>
+      </div>
+      </div>
+    <div class="ws-card" data-subj="maths" data-cat="stats" data-title="data tables data tables">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Data &amp; Stats</span>
+        </div>
+        <h4 class="ws-card-title">Data Tables</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/data-tables-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/data-tables-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="number" data-title="decimal basics decimal basics">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Number</span>
+        </div>
+        <h4 class="ws-card-title">Decimal Basics</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/decimal-basics-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/decimal-basics-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="number" data-title="decimals decimals">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Number</span>
+        </div>
+        <h4 class="ws-card-title">Decimals</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/decimals-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/decimals-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="number" data-title="density density">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Number</span>
+        </div>
+        <h4 class="ws-card-title">Density</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/density-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/density-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="number" data-title="detecting language techniques detecting language techniques">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Number</span>
+        </div>
+        <h4 class="ws-card-title">Detecting Language Techniques</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/detecting-language-techniques-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/detecting-language-techniques-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="number" data-title="dfs level 1 (digital functional skills level 1) digital functional skills level 1">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Number</span>
+        </div>
+        <h4 class="ws-card-title">DFS Level 1 (Digital Functional Skills Level 1)</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/digital-functional-skills-level-1-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/digital-functional-skills-level-1-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="number" data-title="dfs revision (dfsq entry 3 &amp; dfs level 1) digital functional skills revision">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Number</span>
+        </div>
+        <h4 class="ws-card-title">DFS Revision (DFSQ Entry 3 &amp; DFS Level 1)</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/digital-functional-skills-revision-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/digital-functional-skills-revision-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="number" data-title="dfsq entry 3 (digital functional skills entry 3) digital functional skills">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Number</span>
+        </div>
+        <h4 class="ws-card-title">DFSQ Entry 3 (Digital Functional Skills Entry 3)</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/digital-functional-skills-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/digital-functional-skills-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="number" data-title="division &amp; remainders division">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Number</span>
+        </div>
+        <h4 class="ws-card-title">Division &amp; Remainders</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/division-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/division-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="number" data-title="english level 1 english level 1">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Number</span>
+        </div>
+        <h4 class="ws-card-title">English Level 1</h4>
+      </div>
+      </div>
+    <div class="ws-card" data-subj="maths" data-cat="number" data-title="english level 2 english level 2">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Number</span>
+        </div>
+        <h4 class="ws-card-title">English Level 2</h4>
+      </div>
+      </div>
+    <div class="ws-card" data-subj="english" data-cat="writing" data-title="english level 2 blog english level 2 writing blog">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-english">English</span>
+          <span class="ws-badge-cat">Writing</span>
+        </div>
+        <h4 class="ws-card-title">English Level 2 Blog</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/english-level-2-writing-blog-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/english-level-2-writing-blog-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="number" data-title="entry level 3 entry level 3">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Number</span>
+        </div>
+        <h4 class="ws-card-title">Entry Level 3</h4>
+      </div>
+      </div>
+    <div class="ws-card" data-subj="maths" data-cat="stats" data-title="estimating the mean estimating the mean">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Data &amp; Stats</span>
+        </div>
+        <h4 class="ws-card-title">Estimating The Mean</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/estimating-the-mean-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/estimating-the-mean-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="number" data-title="exam exam">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Number</span>
+        </div>
+        <h4 class="ws-card-title">Exam</h4>
+      </div>
+      </div>
+    <div class="ws-card" data-subj="english" data-cat="writing" data-title="formality and bias formality and bias">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-english">English</span>
+          <span class="ws-badge-cat">Writing</span>
+        </div>
+        <h4 class="ws-card-title">Formality and Bias</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/formality-and-bias-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/formality-and-bias-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="number" data-title="formulas formulas">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Number</span>
+        </div>
+        <h4 class="ws-card-title">Formulas</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/formulas-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/formulas-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="number" data-title="fraction basics fraction basics">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Number</span>
+        </div>
+        <h4 class="ws-card-title">Fraction Basics</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/fraction-basics-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/fraction-basics-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="number" data-title="fdp conversions fractions decimals and percentages">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Number</span>
+        </div>
+        <h4 class="ws-card-title">FDP Conversions</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/fractions-decimals-and-percentages-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/fractions-decimals-and-percentages-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="number" data-title="fractions fractions">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Number</span>
+        </div>
+        <h4 class="ws-card-title">Fractions</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/fractions-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/fractions-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="stats" data-title="grouped data grouped data">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Data &amp; Stats</span>
+        </div>
+        <h4 class="ws-card-title">Grouped Data</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/grouped-data-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/grouped-data-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="number" data-title="simple &amp; compound interest interest and compound interest">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Number</span>
+        </div>
+        <h4 class="ws-card-title">Simple &amp; Compound Interest</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/interest-and-compound-interest-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/interest-and-compound-interest-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="number" data-title="length length">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Number</span>
+        </div>
+        <h4 class="ws-card-title">Length</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/length-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/length-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="stats" data-title="line graphs line graphs">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Data &amp; Stats</span>
+        </div>
+        <h4 class="ws-card-title">Line Graphs</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/line-graphs-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/line-graphs-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="number" data-title="lists lists">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Number</span>
+        </div>
+        <h4 class="ws-card-title">Lists</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/lists-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/lists-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="number" data-title="maps and scale drawings maps and scale drawings">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Number</span>
+        </div>
+        <h4 class="ws-card-title">Maps And Scale Drawings</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/maps-and-scale-drawings-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/maps-and-scale-drawings-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="number" data-title="maths and english maths and english">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Number</span>
+        </div>
+        <h4 class="ws-card-title">Maths And English</h4>
+      </div>
+      </div>
+    <div class="ws-card" data-subj="maths" data-cat="number" data-title="maths level 1 maths level 1">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Number</span>
+        </div>
+        <h4 class="ws-card-title">Maths Level 1</h4>
+      </div>
+      </div>
+    <div class="ws-card" data-subj="maths" data-cat="number" data-title="maths level 2 maths level 2">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Number</span>
+        </div>
+        <h4 class="ws-card-title">Maths Level 2</h4>
+      </div>
+      </div>
+    <div class="ws-card" data-subj="maths" data-cat="stats" data-title="mean median mode and range mean median mode and range">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Data &amp; Stats</span>
+        </div>
+        <h4 class="ws-card-title">Mean Median Mode And Range</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/mean-median-mode-and-range-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/mean-median-mode-and-range-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="number" data-title="money money">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Number</span>
+        </div>
+        <h4 class="ws-card-title">Money</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/money-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/money-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="number" data-title="movement and direction movement and direction">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Number</span>
+        </div>
+        <h4 class="ws-card-title">Movement And Direction</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/movement-and-direction-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/movement-and-direction-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="number" data-title="multiplication multiplication">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Number</span>
+        </div>
+        <h4 class="ws-card-title">Multiplication</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/multiplication-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/multiplication-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="geometry" data-title="nets nets">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Measure &amp; Shape</span>
+        </div>
+        <h4 class="ws-card-title">Nets</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/nets-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/nets-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="number" data-title="number basics number basics">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Number</span>
+        </div>
+        <h4 class="ws-card-title">Number Basics</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/number-basics-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/number-basics-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="number" data-title="number patterns number patterns">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Number</span>
+        </div>
+        <h4 class="ws-card-title">Number Patterns</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/number-patterns-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/number-patterns-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="number" data-title="numbers &amp; place value numbers and place value">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Number</span>
+        </div>
+        <h4 class="ws-card-title">Numbers &amp; Place Value</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/numbers-and-place-value-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/numbers-and-place-value-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="number" data-title="ordering numbers ordering numbers">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Number</span>
+        </div>
+        <h4 class="ws-card-title">Ordering Numbers</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/ordering-numbers-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/ordering-numbers-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="number" data-title="percentages percentages">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Number</span>
+        </div>
+        <h4 class="ws-card-title">Percentages</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/percentages-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/percentages-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="geometry" data-title="perimeter perimeter">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Measure &amp; Shape</span>
+        </div>
+        <h4 class="ws-card-title">Perimeter</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/perimeter-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/perimeter-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="stats" data-title="pie charts pie charts">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Data &amp; Stats</span>
+        </div>
+        <h4 class="ws-card-title">Pie Charts</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/pie-charts-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/pie-charts-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="english" data-cat="reading" data-title="comparing texts in detail piecing it together comparing texts">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-english">English</span>
+          <span class="ws-badge-cat">Reading</span>
+        </div>
+        <h4 class="ws-card-title">Comparing Texts in Detail</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/piecing-it-together-comparing-texts-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/piecing-it-together-comparing-texts-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="english" data-cat="reading" data-title="key and detailed points piecing it together key and detailed points">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-english">English</span>
+          <span class="ws-badge-cat">Reading</span>
+        </div>
+        <h4 class="ws-card-title">Key and Detailed Points</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/piecing-it-together-key-and-detailed-points-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/piecing-it-together-key-and-detailed-points-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="geometry" data-title="plans and elevations plans and elevations">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Measure &amp; Shape</span>
+        </div>
+        <h4 class="ws-card-title">Plans And Elevations</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/plans-and-elevations-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/plans-and-elevations-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="stats" data-title="probability tables probability tables">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Data &amp; Stats</span>
+        </div>
+        <h4 class="ws-card-title">Probability Tables</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/probability-tables-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/probability-tables-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="stats" data-title="probability probability">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Data &amp; Stats</span>
+        </div>
+        <h4 class="ws-card-title">Probability</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/probability-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/probability-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="number" data-title="problems involving money problems involving money">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Number</span>
+        </div>
+        <h4 class="ws-card-title">Problems Involving Money</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/problems-involving-money-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/problems-involving-money-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="number" data-title="proportion proportion">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Number</span>
+        </div>
+        <h4 class="ws-card-title">Proportion</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/proportion-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/proportion-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="number" data-title="ratio ratio">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Number</span>
+        </div>
+        <h4 class="ws-card-title">Ratio</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/ratio-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/ratio-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="english" data-cat="reading" data-title="comparing texts reading comparing texts">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-english">English</span>
+          <span class="ws-badge-cat">Reading</span>
+        </div>
+        <h4 class="ws-card-title">Comparing Texts</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/reading-comparing-texts-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/reading-comparing-texts-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="english" data-cat="reading" data-title="fact or opinion reading fact or opinion">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-english">English</span>
+          <span class="ws-badge-cat">Reading</span>
+        </div>
+        <h4 class="ws-card-title">Fact or Opinion</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/reading-fact-or-opinion-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/reading-fact-or-opinion-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="english" data-cat="reading" data-title="investigating image reading investigating image">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-english">English</span>
+          <span class="ws-badge-cat">Reading</span>
+        </div>
+        <h4 class="ws-card-title">Investigating Image</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/reading-investigating-image-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/reading-investigating-image-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="english" data-cat="reading" data-title="investigating layout reading investigating layout">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-english">English</span>
+          <span class="ws-badge-cat">Reading</span>
+        </div>
+        <h4 class="ws-card-title">Investigating Layout</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/reading-investigating-layout-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/reading-investigating-layout-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="english" data-cat="reading" data-title="language features &amp; devices reading language features">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-english">English</span>
+          <span class="ws-badge-cat">Reading</span>
+        </div>
+        <h4 class="ws-card-title">Language Features &amp; Devices</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/reading-language-features-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/reading-language-features-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="english" data-cat="reading" data-title="meaning reading meaning">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-english">English</span>
+          <span class="ws-badge-cat">Reading</span>
+        </div>
+        <h4 class="ws-card-title">Meaning</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/reading-meaning-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/reading-meaning-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="english" data-cat="reading" data-title="point of view and line of argument reading point of view and line of argument">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-english">English</span>
+          <span class="ws-badge-cat">Reading</span>
+        </div>
+        <h4 class="ws-card-title">Point Of View And Line Of Argument</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/reading-point-of-view-and-line-of-argument-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/reading-point-of-view-and-line-of-argument-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="english" data-cat="reading" data-title="presentational features reading presentational features">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-english">English</span>
+          <span class="ws-badge-cat">Reading</span>
+        </div>
+        <h4 class="ws-card-title">Presentational Features</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/reading-presentational-features-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/reading-presentational-features-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="english" data-cat="reading" data-title="specialist words reading specialist words">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-english">English</span>
+          <span class="ws-badge-cat">Reading</span>
+        </div>
+        <h4 class="ws-card-title">Specialist Words</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/reading-specialist-words-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/reading-specialist-words-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="english" data-cat="reading" data-title="styles of and voice reading styles of writing and voice">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-english">English</span>
+          <span class="ws-badge-cat">Reading</span>
+        </div>
+        <h4 class="ws-card-title">Styles Of And Voice</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/reading-styles-of-writing-and-voice-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/reading-styles-of-writing-and-voice-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="english" data-cat="reading" data-title="text types reading text types">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-english">English</span>
+          <span class="ws-badge-cat">Reading</span>
+        </div>
+        <h4 class="ws-card-title">Text Types</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/reading-text-types-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/reading-text-types-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="english" data-cat="reading" data-title="the exam reading the exam">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-english">English</span>
+          <span class="ws-badge-cat">Reading</span>
+        </div>
+        <h4 class="ws-card-title">The Exam</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/reading-the-exam-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/reading-the-exam-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="english" data-cat="reading" data-title="why do writers write reading why do writers write">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-english">English</span>
+          <span class="ws-badge-cat">Reading</span>
+        </div>
+        <h4 class="ws-card-title">Why Do Writers Write</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/reading-why-do-writers-write-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/reading-why-do-writers-write-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="number" data-title="rounding &amp; estimating rounding and estimating">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Number</span>
+        </div>
+        <h4 class="ws-card-title">Rounding &amp; Estimating</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/rounding-and-estimating-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/rounding-and-estimating-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="number" data-title="scales scales">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Number</span>
+        </div>
+        <h4 class="ws-card-title">Scales</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/scales-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/scales-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="stats" data-title="scatter graphs scatter graphs">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Data &amp; Stats</span>
+        </div>
+        <h4 class="ws-card-title">Scatter Graphs</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/scatter-graphs-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/scatter-graphs-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="english" data-cat="slc" data-title="adapting slc adapting">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-english">English</span>
+          <span class="ws-badge-cat">SLC</span>
+        </div>
+        <h4 class="ws-card-title">Adapting</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/slc-adapting-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/slc-adapting-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="english" data-cat="slc" data-title="asking slc asking">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-english">English</span>
+          <span class="ws-badge-cat">SLC</span>
+        </div>
+        <h4 class="ws-card-title">Asking</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/slc-asking-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/slc-asking-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="english" data-cat="slc" data-title="communicating slc communicating">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-english">English</span>
+          <span class="ws-badge-cat">SLC</span>
+        </div>
+        <h4 class="ws-card-title">Communicating</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/slc-communicating-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/slc-communicating-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="english" data-cat="slc" data-title="contributing slc contributing">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-english">English</span>
+          <span class="ws-badge-cat">SLC</span>
+        </div>
+        <h4 class="ws-card-title">Contributing</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/slc-contributing-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/slc-contributing-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="english" data-cat="slc" data-title="extracting information slc extracting information">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-english">English</span>
+          <span class="ws-badge-cat">SLC</span>
+        </div>
+        <h4 class="ws-card-title">Extracting Information</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/slc-extracting-information-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/slc-extracting-information-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="english" data-cat="slc" data-title="key slc skills &amp; discussion strategies slc key slc skills">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-english">English</span>
+          <span class="ws-badge-cat">SLC</span>
+        </div>
+        <h4 class="ws-card-title">Key SLC Skills &amp; Discussion Strategies</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/slc-key-slc-skills-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/slc-key-slc-skills-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="english" data-cat="reading" data-title="language in context slc language in context">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-english">English</span>
+          <span class="ws-badge-cat">Reading</span>
+        </div>
+        <h4 class="ws-card-title">Language In Context</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/slc-language-in-context-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/slc-language-in-context-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="english" data-cat="slc" data-title="line of argument and narratives slc line of argument and narratives">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-english">English</span>
+          <span class="ws-badge-cat">SLC</span>
+        </div>
+        <h4 class="ws-card-title">Line Of Argument And Narratives</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/slc-line-of-argument-and-narratives-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/slc-line-of-argument-and-narratives-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="english" data-cat="slc" data-title="responding slc responding">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-english">English</span>
+          <span class="ws-badge-cat">SLC</span>
+        </div>
+        <h4 class="ws-card-title">Responding</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/slc-responding-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/slc-responding-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="english" data-cat="slc" data-title="the exam slc the exam">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-english">English</span>
+          <span class="ws-badge-cat">SLC</span>
+        </div>
+        <h4 class="ws-card-title">The Exam</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/slc-the-exam-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/slc-the-exam-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="english" data-cat="slc" data-title="using evidence slc using evidence">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-english">English</span>
+          <span class="ws-badge-cat">SLC</span>
+        </div>
+        <h4 class="ws-card-title">Using Evidence</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/slc-using-evidence-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/slc-using-evidence-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="english" data-cat="slc" data-title="your turn slc your turn">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-english">English</span>
+          <span class="ws-badge-cat">SLC</span>
+        </div>
+        <h4 class="ws-card-title">Your Turn</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/slc-your-turn-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/slc-your-turn-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="number" data-title="speed speed">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Number</span>
+        </div>
+        <h4 class="ws-card-title">Speed</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/speed-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/speed-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="geometry" data-title="surface area surface area">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Measure &amp; Shape</span>
+        </div>
+        <h4 class="ws-card-title">Surface Area</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/surface-area-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/surface-area-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="geometry" data-title="symmetry and 2d shapes symmetry and 2d shapes">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Measure &amp; Shape</span>
+        </div>
+        <h4 class="ws-card-title">Symmetry And 2D Shapes</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/symmetry-and-2d-shapes-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/symmetry-and-2d-shapes-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="stats" data-title="tables tables">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Data &amp; Stats</span>
+        </div>
+        <h4 class="ws-card-title">Tables</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/tables-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/tables-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="stats" data-title="tally charts tally charts">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Data &amp; Stats</span>
+        </div>
+        <h4 class="ws-card-title">Tally Charts</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/tally-charts-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/tally-charts-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="number" data-title="temperature temperature">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Number</span>
+        </div>
+        <h4 class="ws-card-title">Temperature</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/temperature-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/temperature-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="number" data-title="time time">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Number</span>
+        </div>
+        <h4 class="ws-card-title">Time</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/time-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/time-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="english" data-cat="reading" data-title="types of and navigating sources types of and navigating sources">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-english">English</span>
+          <span class="ws-badge-cat">Reading</span>
+        </div>
+        <h4 class="ws-card-title">Types of and Navigating Sources</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/types-of-and-navigating-sources-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/types-of-and-navigating-sources-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="number" data-title="unit conversions unit conversions">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Number</span>
+        </div>
+        <h4 class="ws-card-title">Unit Conversions</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/unit-conversions-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/unit-conversions-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="geometry" data-title="using length area and volume in calculations using length area and volume in calculations">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Measure &amp; Shape</span>
+        </div>
+        <h4 class="ws-card-title">Using Length Area And Volume In Calculations</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/using-length-area-and-volume-in-calculations-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/using-length-area-and-volume-in-calculations-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="geometry" data-title="volume &amp; capacity volume">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Measure &amp; Shape</span>
+        </div>
+        <h4 class="ws-card-title">Volume &amp; Capacity</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/volume-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/volume-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="maths" data-cat="number" data-title="weight weight">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-maths">Maths</span>
+          <span class="ws-badge-cat">Number</span>
+        </div>
+        <h4 class="ws-card-title">Weight</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/weight-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/weight-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="english" data-cat="writing" data-title="assessing audience writing assessing audience">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-english">English</span>
+          <span class="ws-badge-cat">Writing</span>
+        </div>
+        <h4 class="ws-card-title">Assessing Audience</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/writing-assessing-audience-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/writing-assessing-audience-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="english" data-cat="writing" data-title="communicating writing communicating">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-english">English</span>
+          <span class="ws-badge-cat">Writing</span>
+        </div>
+        <h4 class="ws-card-title">Communicating</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/writing-communicating-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/writing-communicating-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="english" data-cat="reading" data-title="context writing context">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-english">English</span>
+          <span class="ws-badge-cat">Reading</span>
+        </div>
+        <h4 class="ws-card-title">Context</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/writing-context-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/writing-context-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="english" data-cat="writing" data-title="fantastic finalising writing fantastic finalising">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-english">English</span>
+          <span class="ws-badge-cat">Writing</span>
+        </div>
+        <h4 class="ws-card-title">Fantastic Finalising</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/writing-fantastic-finalising-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/writing-fantastic-finalising-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="english" data-cat="writing" data-title="form presentational and language features writing form presentational and language features">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-english">English</span>
+          <span class="ws-badge-cat">Writing</span>
+        </div>
+        <h4 class="ws-card-title">Form Presentational And Language Features</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/writing-form-presentational-and-language-features-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/writing-form-presentational-and-language-features-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="english" data-cat="spag" data-title="grammar &amp; sentence structures writing grammar">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-english">English</span>
+          <span class="ws-badge-cat">SPaG</span>
+        </div>
+        <h4 class="ws-card-title">Grammar &amp; Sentence Structures</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/writing-grammar-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/writing-grammar-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="english" data-cat="writing" data-title="linking up your answer writing linking up your answer">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-english">English</span>
+          <span class="ws-badge-cat">Writing</span>
+        </div>
+        <h4 class="ws-card-title">Linking Up Your Answer</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/writing-linking-up-your-answer-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/writing-linking-up-your-answer-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="english" data-cat="writing" data-title="organisational markers writing organisational markers">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-english">English</span>
+          <span class="ws-badge-cat">Writing</span>
+        </div>
+        <h4 class="ws-card-title">Organisational Markers</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/writing-organisational-markers-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/writing-organisational-markers-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="english" data-cat="spag" data-title="punctuation mastery writing perfecting your punctuation">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-english">English</span>
+          <span class="ws-badge-cat">SPaG</span>
+        </div>
+        <h4 class="ws-card-title">Punctuation Mastery</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/writing-perfecting-your-punctuation-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/writing-perfecting-your-punctuation-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="english" data-cat="writing" data-title="planning your answer writing planning your answer">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-english">English</span>
+          <span class="ws-badge-cat">Writing</span>
+        </div>
+        <h4 class="ws-card-title">Planning Your Answer</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/writing-planning-your-answer-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/writing-planning-your-answer-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="english" data-cat="spag" data-title="spelling writing spelling">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-english">English</span>
+          <span class="ws-badge-cat">SPaG</span>
+        </div>
+        <h4 class="ws-card-title">Spelling</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/writing-spelling-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/writing-spelling-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="english" data-cat="writing" data-title="tenses writing tenses">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-english">English</span>
+          <span class="ws-badge-cat">Writing</span>
+        </div>
+        <h4 class="ws-card-title">Tenses</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/writing-tenses-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/writing-tenses-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="english" data-cat="writing" data-title="the exam writing the exam">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-english">English</span>
+          <span class="ws-badge-cat">Writing</span>
+        </div>
+        <h4 class="ws-card-title">The Exam</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/writing-the-exam-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/writing-the-exam-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+    <div class="ws-card" data-subj="english" data-cat="writing" data-title="why are you writing writing why are you writing">
+      <div class="ws-card-header">
+        <div class="ws-card-badges">
+          <span class="ws-badge ws-badge-english">English</span>
+          <span class="ws-badge-cat">Writing</span>
+        </div>
+        <h4 class="ws-card-title">Why Are You Writing</h4>
+      </div>
+      <div class="ws-card-actions">
+        <a href="worksheets/writing-why-are-you-writing-worksheet.html" target="_blank" rel="noopener" class="btn-ws btn-ws-sheet"><i class="fa-solid fa-file-pen"></i> Worksheet</a>
+        <a href="worksheets/writing-why-are-you-writing-answers.html" target="_blank" rel="noopener" class="btn-ws btn-ws-ans"><i class="fa-solid fa-clipboard-check"></i> Answers</a>
+      </div>
+    </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CURRICULUM DESIGN & TEACHING TOOLKIT -->
+  <section class="section-wrap" id="curriculum-design">
+    <div class="mfs-container">
+      <div class="mfs-section-title">
+        <div style="display:inline-block; font-size:0.8rem; font-weight:800; color:var(--accent); text-transform:uppercase; letter-spacing:0.5px; margin-bottom:6px;">Professional Downloads &amp; Templates</div>
+        <h2>Curriculum Design &amp; Scheme of Work (SoW) Toolkit</h2>
+        <p>Ready-to-use curriculum templates and delivery frameworks built for FE colleges, apprenticeship providers, and specialist tutors.</p>
+      </div>
+
+      <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap:24px; margin-top:32px;">
+        <!-- Toolkit Item 1: Scheme of Work -->
+        <div class="tool-box">
+          <div style="width:42px; height:42px; border-radius:10px; background:#eff6ff; color:#2563eb; display:flex; align-items:center; justify-content:center; font-size:1.2rem; margin-bottom:14px;">
+            <i class="fa-solid fa-calendar-days"></i>
+          </div>
+          <h3 style="font-size:1.15rem; color:var(--navy); margin-bottom:8px;">Modular Schemes of Work (SoW)</h3>
+          <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.55; margin-bottom:16px;">
+            Curriculum sequencing templates covering 10-week intensive cohorts, 16-week blended delivery, and 30-week apprenticeship models. Mapped directly to Ofqual subject criteria.
+          </p>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <div style="font-size:0.85rem; font-weight:700; color:var(--navy);"><i class="fa-regular fa-file-word" style="color:#2563eb;"></i> Scheme of Work: Maths Level 2 (16-Week Template)</div>
+            <div style="font-size:0.85rem; font-weight:700; color:var(--navy);"><i class="fa-regular fa-file-word" style="color:#2563eb;"></i> Scheme of Work: English Level 2 (16-Week Template)</div>
+            <div style="font-size:0.85rem; font-weight:700; color:var(--navy);"><i class="fa-regular fa-file-word" style="color:#2563eb;"></i> Scheme of Work: Digital Skills Entry 3 &amp; Level 1</div>
+          </div>
+        </div>
+
+        <!-- Toolkit Item 2: Diagnostic Matrix -->
+        <div class="tool-box">
+          <div style="width:42px; height:42px; border-radius:10px; background:#f0fdf4; color:#059669; display:flex; align-items:center; justify-content:center; font-size:1.2rem; margin-bottom:14px;">
+            <i class="fa-solid fa-chart-pie"></i>
+          </div>
+          <h3 style="font-size:1.15rem; color:var(--navy); margin-bottom:8px;">Diagnostic &amp; BKSB Remediation</h3>
+          <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.55; margin-bottom:16px;">
+            Diagnostic matrix mapping student baseline test gaps (e.g. from BKSB or OneAdvanced) to specific topic drills and corrective mock intervention plans.
+          </p>
+          <div style="display:flex; flex-direction:column; gap:8px;">
+            <a href="bksb-remediation.html" style="font-size:0.85rem; font-weight:700; color:var(--accent); text-decoration:none;"><i class="fa-solid fa-arrow-right"></i> BKSB / OneAdvanced Wrong Answers Remediation Tool →</a>
+            <a href="pass-mark-calculator.html" style="font-size:0.85rem; font-weight:700; color:var(--accent); text-decoration:none;"><i class="fa-solid fa-calculator"></i> Functional Skills Raw Pass Mark Calculator →</a>
+          </div>
+        </div>
+
+        <!-- Toolkit Item 3: Dyslexia & Access Arrangements -->
+        <div class="tool-box" id="dyslexia-guidance">
+          <div style="width:42px; height:42px; border-radius:10px; background:#fef3c7; color:#d97706; display:flex; align-items:center; justify-content:center; font-size:1.2rem; margin-bottom:14px;">
+            <i class="fa-solid fa-universal-access"></i>
+          </div>
+          <h3 style="font-size:1.15rem; color:var(--navy); margin-bottom:8px;">Dyslexia, Neurodiversity &amp; JCQ Access</h3>
+          <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.55; margin-bottom:16px;">
+            Evidence-backed teaching strategies and JCQ Form 8 access arrangement guidance: 25% extra time, coloured overlays, text-to-speech readers, and overcoming adult maths anxiety in healthcare staff.
+          </p>
+          <div style="font-size:0.85rem; color:var(--text-secondary);">
+            Built by specialist tutors with extensive NHS Trust and adult education experience. OpenDyslexic typeface and glare-free colour tint engines built directly into every MFS topic page.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TUTOR & INSTITUTIONAL PARTNERSHIP CONTACT -->
+  <section class="section-wrap" style="background: var(--navy-dark); color:#ffffff;">
+    <div class="mfs-container" style="text-align:center; max-width:800px;">
+      <div style="width:54px; height:54px; border-radius:14px; background:rgba(255,255,255,0.12); color:#60a5fa; display:inline-flex; align-items:center; justify-content:center; font-size:1.6rem; margin-bottom:18px;">
+        <i class="fa-solid fa-handshake-angle"></i>
+      </div>
+      <h2 style="color:#ffffff; font-size:2rem; margin-bottom:14px;">Partner with Master Functional Skills</h2>
+      <p style="color:#cbd5e1; font-size:1.05rem; line-height:1.6; margin-bottom:28px;">
+        Are you a college, independent training provider, or NHS Trust seeking curriculum consultancy, specialist 1-to-1 learner interventions, or external moderation support? Speak directly with our lead specialist tutor, Abdul.
+      </p>
+      <div style="display:flex; justify-content:center; gap:16px; flex-wrap:wrap;">
+        <a href="https://wa.me/447564525425" target="_blank" rel="noopener" class="btn-card-action" style="background:var(--accent); color:#ffffff; padding:12px 24px; font-size:1rem; border-radius:12px;"><i class="fa-solid fa-phone"></i> Call Office: +44 (0)7564 525425</a>
+        <a href="https://wa.me/447564525425" target="_blank" rel="noopener" class="btn-card-action" style="background:#10b981; color:#ffffff; padding:12px 24px; font-size:1rem; border-radius:12px;"><i class="fa-brands fa-whatsapp"></i> WhatsApp Tutor Support</a>
+        <a href="https://sterlingenglish.org" target="_blank" rel="noopener" class="btn-card-action" style="background:rgba(255,255,255,0.15); color:#ffffff; padding:12px 24px; font-size:1rem; border-radius:12px;">1-to-1 Specialist Tuition ↗</a>
+      </div>
+    </div>
+  </section>  <!-- FOOTER -->
+  <footer class="mfs-footer" id="site-footer">
+    <div class="mfs-container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="mfs-brand" style="margin-bottom:16px;">
+            <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="mfs-brand-text">
+              <div class="mfs-brand-title" style="color:#ffffff;">MASTER<span>FUNCTIONALSKILLS</span></div>
+              <div class="mfs-brand-subtitle" style="color:#94a3b8;">Delivering Skills • Achieving Goals</div>
+            </div>
+          </div>
+          <p style="font-size:0.88rem; line-height:1.6; margin-bottom:16px;">
+            The UK's dedicated Functional Skills revision specialist. Providing realistic mock exams, step-by-step revision flashcards, diagnostic assessments, and 1-to-1 specialist tuition for Pearson Edexcel, City &amp; Guilds, and all major exam boards.
+          </p>
+          <div style="font-size:0.85rem; color:#cbd5e1;">
+            <p><a href="https://wa.me/447564525425" target="_blank" rel="noopener" style="color:#cbd5e1; text-decoration:none;"><i class="fa-brands fa-whatsapp" style="color:var(--accent); margin-right:8px;"></i> WhatsApp: +44 (0)7564 525425</a></p>
+            <p style="margin-top:6px;"><a href="contact-us.html" style="color:#cbd5e1; text-decoration:none;"><i class="fa-solid fa-envelope" style="color:var(--accent); margin-right:8px;"></i> Contact Tutor Team</a></p>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Maths Revision</h4>
+          <ul class="footer-links">
+            <li><a href="functional-skills-maths-level-2.html">Maths Level 2 Revision</a></li>
+            <li><a href="functional-skills-maths-level-1.html">Maths Level 1 Revision</a></li>
+            <li><a href="entry-level-3-maths.html">Entry Level 3 Maths</a></li>
+            <li><a href="pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="functional-skills-past-papers.html">Free Maths Past Papers</a></li>
+            <li><a href="exam-maths-l2.html">Book Level 2 Maths Exam</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>English &amp; Digital</h4>
+          <ul class="footer-links">
+            <li><a href="functional-skills-english-level-2.html">English Level 2 Revision</a></li>
+            <li><a href="functional-skills-english-level-1.html">English Level 1 Revision</a></li>
+            <li><a href="digital-functional-skills.html">Digital Skills Hub (L1 &amp; E3)</a></li>
+            <li><a href="digital-functional-skills-past-papers.html">DFS Past Papers &amp; Data Files</a></li>
+            <li><a href="functional-skills-past-papers.html?format=online#mock-finder">Online Exam Simulator</a></li>
+            <li><a href="exam-english-l2.html">Book Level 2 English Exam</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Student Support &amp; Tools</h4>
+          <ul class="footer-links">
+            <li><a href="tools.html" style="color:var(--accent); font-weight:700;"><i class="fa-solid fa-screwdriver-wrench" style="margin-right:6px;"></i>All Interactive Tools Hub</a></li>
+            <li><a href="pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="diagnostic-test.html">Diagnostic Skill Checker</a></li>
+            <li><a href="functional-skills-nets.html">3D Net Folding Tool</a></li>
+            <li><a href="digital-functional-skills-mock-exam.html">Pearson DFS Simulator</a></li>
+            <li><a href="revision-cards.html">Revision Cards &amp; Flashcards</a></li>
+            <li><a href="shop.html">Revision Books &amp; Study Packs</a></li>
+            <li><a href="tutors.html">1-to-1 Specialist Tuition</a></li>
+            <li><a href="exams.html">Book Official Online Exam</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Master Functional Skills. All rights reserved. Registered in England &amp; Wales. Ofqual Regulated Qualification Standards.</div>
+        <div style="display:flex; gap:16px; flex-wrap:wrap;">
+          <a href="index.html">Home</a>
+          <a href="tools.html" style="color:var(--accent); font-weight:700;">Tools</a>
+          <a href="functional-skills-past-papers.html">Past Papers</a>
+          <a href="revision-cards.html">Revision Cards</a>
+          <a href="shop.html">Study Shop</a>
+          <a href="tutors.html">Tutors</a>
+          <a href="contact-us.html">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/mfs-tint.js"></script>
+
+  <script>
+    let currentWsFilter = "";
+    function filterWorksheets() {
+      const q = (document.getElementById("wsSearchInput").value || "").toLowerCase().trim();
+      const clearBtn = document.getElementById("wsClearBtn");
+      if (clearBtn) clearBtn.style.display = q ? "inline-block" : "none";
+
+      const cards = document.querySelectorAll(".ws-card");
+      let visible = 0;
+      cards.forEach(card => {
+        const title = card.getAttribute("data-title") || "";
+        const subj = card.getAttribute("data-subj") || "";
+        const cat = card.getAttribute("data-cat") || "";
+
+        let matchesSearch = !q || title.includes(q);
+        let matchesFilter = true;
+        if (currentWsFilter) {
+          if (currentWsFilter === "maths" || currentWsFilter === "english") {
+            matchesFilter = (subj === currentWsFilter);
+          } else {
+            matchesFilter = (cat === currentWsFilter);
+          }
+        }
+
+        if (matchesSearch && matchesFilter) {
+          card.style.display = "flex";
+          visible++;
+        } else {
+          card.style.display = "none";
+        }
+      });
+      const counter = document.getElementById("wsVisibleCount");
+      if (counter) counter.textContent = visible;
+    }
+
+    function setWsFilter(f) {
+      currentWsFilter = f;
+      document.querySelectorAll(".ws-chip").forEach(btn => {
+        if (btn.getAttribute("data-filter") === f) {
+          btn.classList.add("active");
+        } else {
+          btn.classList.remove("active");
+        }
+      });
+      filterWorksheets();
+    }
+
+    function clearWsSearch() {
+      document.getElementById("wsSearchInput").value = "";
+      filterWorksheets();
+    }
+  </script>
+
+</body>
+</html>

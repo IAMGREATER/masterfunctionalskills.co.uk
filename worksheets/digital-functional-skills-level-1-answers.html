@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Master Functional Skills — Digital Functional Skills Level 1: Spreadsheets, Email & Cyber Hygiene Answer Key & Mark Scheme (Level 1 & Level 2)</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 12mm 15mm 12mm 15mm;
+    }
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #0f172a;
+      background: #f0fdf4;
+      margin: 0;
+      padding: 0;
+      font-size: 11pt;
+      line-height: 1.5;
+    }
+    .print-bar {
+      background: #064e3b;
+      color: #f8fafc;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    }
+    .print-bar a {
+      color: #a7f3d0;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .print-bar a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+    .btn-action-print {
+      background: #10b981;
+      color: #ffffff;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s;
+    }
+    .btn-action-print:hover {
+      background: #059669;
+    }
+    .btn-action-sheet {
+      background: #2563eb;
+      color: #ffffff;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-right: 12px;
+    }
+    .btn-action-sheet:hover {
+      background: #1d4ed8;
+    }
+
+    @media print {
+      .print-bar {
+        display: none !important;
+      }
+      body {
+        background: #ffffff !important;
+      }
+      .page-sheet {
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+      }
+      .ans-card {
+        page-break-inside: avoid;
+      }
+    }
+
+    .page-sheet {
+      max-width: 860px;
+      margin: 24px auto;
+      background: #ffffff;
+      padding: 32px 40px;
+      border-radius: 8px;
+      border: 1px solid #bbf7d0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+    .sheet-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 2.5px solid #064e3b;
+      padding-bottom: 16px;
+      margin-bottom: 20px;
+    }
+    .brand-title {
+      font-size: 1.45rem;
+      font-weight: 900;
+      color: #064e3b;
+      letter-spacing: -0.5px;
+    }
+    .brand-title span {
+      color: #10b981;
+    }
+    .brand-subtitle {
+      font-size: 0.88rem;
+      color: #047857;
+      margin-top: 2px;
+      font-weight: 600;
+    }
+    .sheet-meta-badge {
+      background: #ecfdf5;
+      border: 1.5px solid #a7f3d0;
+      color: #065f46;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-align: right;
+    }
+    .sheet-meta-badge .topic-name {
+      font-size: 1.15rem;
+      font-weight: 800;
+      display: block;
+    }
+    .sheet-meta-badge .spec-tag {
+      font-size: 0.78rem;
+      color: #059669;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .scheme-summary-bar {
+      background: #f0fdf4;
+      border: 1px solid #86efac;
+      border-radius: 6px;
+      padding: 12px 18px;
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.95rem;
+      color: #065f46;
+    }
+
+    .tier-divider {
+      background: #f0fdf4;
+      border-left: 4px solid #059669;
+      padding: 6px 12px;
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: #064e3b;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin: 24px 0 16px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .ans-card {
+      border: 1.5px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 18px 20px;
+      margin-bottom: 24px;
+      background: #ffffff;
+    }
+    .ans-card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+    .ans-q-num {
+      font-weight: 800;
+      color: #064e3b;
+      font-size: 1.05rem;
+    }
+    .ans-marks-badge {
+      font-weight: 700;
+      color: #047857;
+      background: #ecfdf5;
+      padding: 3px 10px;
+      border-radius: 4px;
+      border: 1px solid #a7f3d0;
+      font-size: 0.88rem;
+    }
+    .ans-stem-quote {
+      font-size: 0.94rem;
+      color: #475569;
+      background: #f8fafc;
+      border-left: 3px solid #cbd5e1;
+      padding: 8px 12px;
+      margin-bottom: 14px;
+      font-style: italic;
+    }
+
+    .mark-steps-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 14px 16px;
+      margin-bottom: 14px;
+    }
+    .step-title {
+      font-weight: 800;
+      color: #0f172a;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .step-row {
+      margin-bottom: 8px;
+      line-height: 1.6;
+      font-size: 0.98rem;
+      color: #1e293b;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 1px dashed #f1f5f9;
+      padding-bottom: 6px;
+    }
+    .step-row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+    .mark-code {
+      font-weight: 800;
+      color: #2563eb;
+      font-family: monospace;
+      font-size: 0.9rem;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      padding: 1px 6px;
+      border-radius: 4px;
+      white-space: nowrap;
+      margin-left: 12px;
+    }
+
+    .final-award-box {
+      background: #ecfdf5;
+      border: 1.5px solid #10b981;
+      border-radius: 6px;
+      padding: 10px 16px;
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .award-label {
+      font-weight: 800;
+      color: #065f46;
+      font-size: 0.92rem;
+    }
+    .award-val {
+      font-weight: 900;
+      color: #047857;
+      font-size: 1.15rem;
+      font-family: monospace;
+      text-decoration: underline;
+    }
+
+    .pitfall-box {
+      background: #fffbeb;
+      border-left: 4px solid #f59e0b;
+      border-radius: 4px;
+      padding: 10px 14px;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+      color: #92400e;
+      line-height: 1.5;
+    }
+    .pitfall-box strong {
+      color: #b45309;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .alt-method-box {
+      background: #eff6ff;
+      border-left: 4px solid #3b82f6;
+      border-radius: 4px;
+      padding: 8px 12px;
+      margin-bottom: 10px;
+      font-size: 0.88rem;
+      color: #1e40af;
+      line-height: 1.5;
+    }
+
+    .reverse-check-box {
+      background: #fdf4ff;
+      border-left: 4px solid #c084fc;
+      border-radius: 4px;
+      padding: 8px 12px;
+      font-size: 0.88rem;
+      color: #6b21a8;
+      line-height: 1.5;
+    }
+
+    .sheet-footer {
+      border-top: 1px solid #e2e8f0;
+      padding-top: 14px;
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      color: #94a3b8;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="print-bar">
+    <a href="../digital-functional-skills-level-1.html"><i class="fa-solid fa-arrow-left"></i> Back to Digital Functional Skills Level 1: Spreadsheets, Email & Cyber Hygiene Revision Guide</a>
+    <div>
+      <a href="digital-functional-skills-level-1-workout-answers.html" class="btn-action-answers" style="background:#2563eb;"><i class="fa-solid fa-repeat"></i> Workout Answers</a>
+      <a href="digital-functional-skills-level-1-worksheet.html" class="btn-action-sheet"><i class="fa-solid fa-file-pen"></i> Open Exam Worksheet</a>
+      <button type="button" class="btn-action-print" onclick="window.print()"><i class="fa-solid fa-print"></i> Print / Save to PDF</button>
+    </div>
+  </div>
+
+  <div class="page-sheet">
+    <div class="sheet-head">
+      <div>
+        <div class="brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
+        <div class="brand-subtitle">Official Tutor Examiner Mark Scheme &amp; Model Solutions</div>
+      </div>
+      <div class="sheet-meta-badge">
+        <span class="topic-name">Digital Functional Skills Level 1: Spreadsheets, Email & Cyber Hygiene</span>
+        <span class="spec-tag">Ofqual / Pearson Edexcel: DFS.1 • DFS.2 • DFS.3 • DFS.4 • DFS.5</span>
+      </div>
+    </div>
+
+    <div class="scheme-summary-bar">
+      <div><strong>Total Marks Available:</strong> 18 Marks (Pass Threshold: ~11/18)</div>
+      <div><strong>Examiner Standard:</strong> Full Method (M) and Process (P) marks awarded even if final arithmetic errs.</div>
+    </div>
+
+
+    <div class="tier-divider">
+      <span>Section A: Core Technical Skills Solutions</span>
+      <span>Questions 1 & 2 • 4 Marks</span>
+    </div>
+
+    <div class="ans-card">
+      <div class="ans-card-head">
+        <span class="ans-q-num">Question 1 (Spreadsheet Formulas: SUM, AVERAGE & Multiplication) Model Solution</span>
+        <span class="ans-marks-badge">[2 Marks Total]</span>
+      </div>
+      <div class="ans-stem-quote">
+        In a clinic stock spreadsheet, cells <strong>C2 to C15</strong> contain the monthly costs of 14 sterile supply orders.<br>(a) Write the exact spreadsheet formula to calculate the <strong>total cost</strong> across cells C2 to C15.<br>(b) Write the exact formula to calculate the <strong>mean (average) cost</strong> across cells C2 to C15.
+      </div>
+      <div class="mark-steps-box">
+        <div class="step-title">Step-by-Step Marking Criteria:</div>
+
+        <div class="step-row">
+          <span>1. (a) Total formula starting with '=' and colon range: =SUM(C2:C15)</span>
+          <span class="mark-code">[M1]</span>
+        </div>
+        <div class="step-row">
+          <span>2. (b) Mean formula starting with '=' and colon range: =AVERAGE(C2:C15)</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+      </div>
+      <div class="final-award-box">
+        <span class="award-label">Award Final Answer Mark:</span>
+        <span class="award-val">(a) =SUM(C2:C15) | (b) =AVERAGE(C2:C15)</span>
+      </div>
+      <div class="pitfall-box">
+        <strong>⚠️ Examiner Trap Alert:</strong>
+        Omitting the leading '=' sign or writing =AVG(C2:C15) instead of the full word =AVERAGE(C2:C15).
+      </div>
+      <div class="reverse-check-box">
+        <strong>🔄 Reverse Sanity Check:</strong> Both formulas start with '=' and use a colon ':' for the contiguous cell range.
+      </div>
+    </div>
+
+    <div class="ans-card">
+      <div class="ans-card-head">
+        <span class="ans-q-num">Question 2 (Absolute Cell References & VAT Calculation) Model Solution</span>
+        <span class="ans-marks-badge">[2 Marks Total]</span>
+      </div>
+      <div class="ans-stem-quote">
+        Cell <strong>B4</strong> contains a net equipment price of <strong>£240.00</strong>, and cell <strong>F1</strong> contains the VAT rate of <strong>20%</strong>.<br>You want to write a formula in cell <strong>C4</strong> to calculate the VAT amount and then drag-fill (replicate) that formula down column C from C4 to C20.<br>Write the exact formula for cell <strong>C4</strong> using an <strong>absolute cell reference</strong> for cell F1.
+      </div>
+      <div class="mark-steps-box">
+        <div class="step-title">Step-by-Step Marking Criteria:</div>
+
+        <div class="step-row">
+          <span>1. Multiply relative cell B4 by cell F1 using '*' operator</span>
+          <span class="mark-code">[M1]</span>
+        </div>
+        <div class="step-row">
+          <span>2. Lock cell F1 with dollar signs so it does not shift when dragged down: =B4*$F$1</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+      </div>
+      <div class="final-award-box">
+        <span class="award-label">Award Final Answer Mark:</span>
+        <span class="award-val">=B4*$F$1</span>
+      </div>
+      <div class="pitfall-box">
+        <strong>⚠️ Examiner Trap Alert:</strong>
+        Writing =B4*F1 without '$' signs, which shifts to F2, F3, F4 when dragged down column C.
+      </div>
+      <div class="reverse-check-box">
+        <strong>🔄 Reverse Sanity Check:</strong> The '$' before F and before 1 locks both column F and row 1.
+      </div>
+    </div>
+
+    <div class="tier-divider">
+      <span>Section B: Digital Workplace Tasks Solutions</span>
+      <span>Questions 3 & 4 • 6 Marks</span>
+    </div>
+
+    <div class="ans-card">
+      <div class="ans-card-head">
+        <span class="ans-q-num">Question 3 (Logical IF Statements in a Training Tracker) Model Solution</span>
+        <span class="ans-marks-badge">[3 Marks Total]</span>
+      </div>
+      <div class="ans-stem-quote">
+        In a staff mandatory training spreadsheet, cell <strong>D5</strong> holds an employee's fire-safety test score (out of 100).<br>The pass mark is <strong>75 or above</strong>.<br>Write an <strong>=IF</strong> formula in cell <strong>E5</strong> that displays <strong>"Compliant"</strong> if D5 is 75 or higher, and <strong>"Retake Required"</strong> if it is below 75.
+      </div>
+      <div class="mark-steps-box">
+        <div class="step-title">Step-by-Step Marking Criteria:</div>
+
+        <div class="step-row">
+          <span>1. Set logical condition testing if D5 is at least 75: D5>=75</span>
+          <span class="mark-code">[M1]</span>
+        </div>
+        <div class="step-row">
+          <span>2. Set value_if_true in double quotes: "Compliant"</span>
+          <span class="mark-code">[M1]</span>
+        </div>
+        <div class="step-row">
+          <span>3. Set value_if_false in double quotes: =IF(D5>=75, "Compliant", "Retake Required")</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+      </div>
+      <div class="final-award-box">
+        <span class="award-label">Award Final Answer Mark:</span>
+        <span class="award-val">=IF(D5>=75, "Compliant", "Retake Required")</span>
+      </div>
+      <div class="pitfall-box">
+        <strong>⚠️ Examiner Trap Alert:</strong>
+        Using >75 instead of >=75 (which would wrongly fail someone who scored exactly 75), or forgetting quotation marks around text strings.
+      </div>
+      <div class="reverse-check-box">
+        <strong>🔄 Reverse Sanity Check:</strong> Test D5=75: 75>=75 is TRUE → returns "Compliant".
+      </div>
+    </div>
+
+    <div class="ans-card">
+      <div class="ans-card-head">
+        <span class="ans-q-num">Question 4 (UK GDPR Email Security: CC vs BCC & File Encryption) Model Solution</span>
+        <span class="ans-marks-badge">[3 Marks Total]</span>
+      </div>
+      <div class="ans-stem-quote">
+        A clinic administrator needs to email a monthly appointment update to <strong>85 private patients</strong> and also send an attached spreadsheet containing <strong>patient dates of birth and NHS numbers</strong> to the Practice Manager.<br>Explain:<br>(a) Which email address field (<strong>To, CC, or BCC</strong>) must be used for the 85 patients and why.<br>(b) One technical security measure required before emailing the sensitive patient spreadsheet.
+      </div>
+      <div class="mark-steps-box">
+        <div class="step-title">Step-by-Step Marking Criteria:</div>
+
+        <div class="step-row">
+          <span>1. (a) Use BCC (Blind Carbon Copy) for the 85 patients</span>
+          <span class="mark-code">[M1]</span>
+        </div>
+        <div class="step-row">
+          <span>2. (a) Reason: Hides patients' personal email addresses from one another, preventing a UK GDPR data breach</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+        <div class="step-row">
+          <span>3. (b) Password-protect / encrypt the spreadsheet (and share the password via a separate channel such as SMS/telephone)</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+      </div>
+      <div class="final-award-box">
+        <span class="award-label">Award Final Answer Mark:</span>
+        <span class="award-val">(a) BCC — hides recipients' email addresses from each other under UK GDPR. (b) Encrypt/password-protect the spreadsheet and send the password via a separate channel.</span>
+      </div>
+      <div class="pitfall-box">
+        <strong>⚠️ Examiner Trap Alert:</strong>
+        Putting 85 external patients in the 'CC' field, which exposes every patient's email address to all 84 other patients.
+      </div>
+      <div class="reverse-check-box">
+        <strong>🔄 Reverse Sanity Check:</strong> BCC = Blind Carbon Copy (external privacy); Encryption = file confidentiality.
+      </div>
+    </div>
+
+    <div class="tier-divider">
+      <span>Section C: Problem Solving, Cybersecurity & Verification Solutions</span>
+      <span>Questions 5 & 6 • 8 Marks</span>
+    </div>
+
+    <div class="ans-card">
+      <div class="ans-card-head">
+        <span class="ans-q-num">Question 5 (Spotting Phishing Attacks & Malicious URLs) Model Solution</span>
+        <span class="ans-marks-badge">[4 Marks Total]</span>
+      </div>
+      <div class="ans-stem-quote">
+        An accounts clerk receives this email:<br><strong>From:</strong> <code>security-alert@nhs-payrol-update.ru</code><br><strong>Subject:</strong> URGENT: Your NHS Pension Account Will Be Deleted in 2 Hours!<br><strong>Body:</strong> <em>'Dear User, click <u>http://bit.ly/3x99pQ</u> immediately and enter your staff login password and bank sort code to avoid suspension.'</em><br><br>Identify <strong>three red flags</strong> proving this email is a <strong>phishing attack</strong>, and state the <strong>correct workplace action</strong> the clerk should take.
+      </div>
+      <div class="mark-steps-box">
+        <div class="step-title">Step-by-Step Marking Criteria:</div>
+
+        <div class="step-row">
+          <span>1. Flag 1 (Spoofed/Suspicious Sender Domain): Misspelled 'payrol' and foreign '.ru' domain instead of official '@nhs.net'</span>
+          <span class="mark-code">[P1]</span>
+        </div>
+        <div class="step-row">
+          <span>2. Flag 2 (Artificial Urgency & Generic Greeting): 'Deleted in 2 Hours!' panic threat and impersonal 'Dear User'</span>
+          <span class="mark-code">[P1]</span>
+        </div>
+        <div class="step-row">
+          <span>3. Flag 3 (Masked Unsecure Link & Credential Request): Unsecure 'http://' shortened link asking for password and bank details</span>
+          <span class="mark-code">[M1]</span>
+        </div>
+        <div class="step-row">
+          <span>4. Correct Action: Do NOT click the link or reply; report the email immediately to the IT Security Helpdesk using the Report Phishing button</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+      </div>
+      <div class="final-award-box">
+        <span class="award-label">Award Final Answer Mark:</span>
+        <span class="award-val">Red flags: 1. Misspelled '.ru' sender domain ('payrol'); 2. Artificial 2-hour panic deadline & 'Dear User'; 3. Masked http link requesting password. Action: Do not click; report immediately to IT Security.</span>
+      </div>
+      <div class="pitfall-box">
+        <strong>⚠️ Examiner Trap Alert:</strong>
+        Replying to the email to ask if it is genuine.
+      </div>
+      <div class="reverse-check-box">
+        <strong>🔄 Reverse Sanity Check:</strong> Check sender domain, urgency tone, URL protocol, and IT reporting protocol.
+      </div>
+    </div>
+
+    <div class="ans-card">
+      <div class="ans-card-head">
+        <span class="ans-q-num">Question 6 (Cloud File Management, Naming Conventions & Version Control) Model Solution</span>
+        <span class="ans-marks-badge">[4 Marks Total]</span>
+      </div>
+      <div class="ans-stem-quote">
+        A project team shares a folder containing these files:<br>• <code>rota.xlsx</code><br>• <code>rota_new_final2_johns_copy.xlsx</code><br>• <code>ward_budget_2026.pdf</code><br><br>(a) Explain why <code>rota_new_final2_johns_copy.xlsx</code> violates professional version-control standards, and write a clean, standardised filename for <strong>Version 2.1 of the Ward 4 Rota created on 14 October 2026</strong>.<br>(b) If the team wants 5 managers to view <code>rota.xlsx</code> on SharePoint <strong>without being able to accidentally delete or alter shift cells</strong>, what file permission level should be set?
+      </div>
+      <div class="mark-steps-box">
+        <div class="step-title">Step-by-Step Marking Criteria:</div>
+
+        <div class="step-row">
+          <span>1. (a) Critique: Ambiguous words like 'new_final2' make it impossible to sort chronologically or identify the latest authoritative file</span>
+          <span class="mark-code">[P1]</span>
+        </div>
+        <div class="step-row">
+          <span>2. (a) Standardised ISO filename: 2026-10-14_Ward4_Rota_v2.1.xlsx (or Ward4_Rota_2026-10-14_v2.1.xlsx)</span>
+          <span class="mark-code">[M1]</span>
+        </div>
+        <div class="step-row">
+          <span>3. (b) SharePoint permission level: Set to 'Read-Only' / 'View Only' (disable 'Can Edit')</span>
+          <span class="mark-code">[P1]</span>
+        </div>
+        <div class="step-row">
+          <span>4. (b) Benefit: Allows all 5 managers to view and download the rota while preventing accidental overwrites</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+      </div>
+      <div class="final-award-box">
+        <span class="award-label">Award Final Answer Mark:</span>
+        <span class="award-val">(a) Ambiguous naming causes version confusion; rename to '2026-10-14_Ward4_Rota_v2.1.xlsx'. (b) Set SharePoint access to 'View Only' / 'Read-Only'.</span>
+      </div>
+      <div class="pitfall-box">
+        <strong>⚠️ Examiner Trap Alert:</strong>
+        Using spaces or slashes (14/10/2026) in filenames, which are invalid in operating system file paths.
+      </div>
+      <div class="reverse-check-box">
+        <strong>🔄 Reverse Sanity Check:</strong> YYYY-MM-DD_Topic_vX.X.ext sorts chronologically and prevents ambiguity.
+      </div>
+    </div>
+
+
+    <div class="sheet-footer">
+      <div>Master Functional Skills • Pearson Edexcel Official Marking Guide • 100% Original Content</div>
+      <div>Page 1 of 1 • Rev 2026.1</div>
+    </div>
+  </div>
+</body>
+</html>

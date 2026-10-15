@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 300" width="300" height="300">
+  <defs>
+    <linearGradient id="capGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#2563eb" />
+      <stop offset="100%" stop-color="#1d4ed8" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a" />
+      <stop offset="50%" stop-color="#f59e0b" />
+      <stop offset="100%" stop-color="#b45309" />
+    </linearGradient>
+    <filter id="watermarkShadow" x="-30%" y="-30%" width="160%" height="160%">
+      <!-- Strong dark outline drop shadow so white M and blue cap are visible on white backgrounds -->
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-color="#000000" flood-opacity="0.85" />
+      <feDropShadow dx="0" dy="0" stdDeviation="3" flood-color="#000000" flood-opacity="0.9" />
+    </filter>
+  </defs>
+
+  <g transform="translate(150, 150) scale(5.4) translate(-32, -29.5)" filter="url(#watermarkShadow)">
+    <!-- Cap Diamond -->
+    <path d="M 32 9 L 49 16.5 L 32 24 L 15 16.5 Z" fill="url(#capGrad)" stroke="#93c5fd" stroke-width="0.9" />
+    <path d="M 32 10.5 L 46.5 16.5 L 32 22.5 L 17.5 16.5 Z" fill="#0f172a" fill-opacity="0.4" />
+    <!-- Cap Skullcap -->
+    <path d="M 44 20 L 44 27.5 C 44 30.5 38 32.5 32 32.5 C 26 32.5 20 30.5 20 27.5 L 20 20" 
+          fill="none" stroke="url(#capGrad)" stroke-width="2.6" stroke-linecap="round" />
+    <!-- Tassel -->
+    <path d="M 49 16.5 C 50 20 50.5 22 51 24.5" fill="none" stroke="url(#goldGrad)" stroke-width="2.2" stroke-linecap="round" />
+    <circle cx="51.2" cy="25.5" r="1.8" fill="url(#goldGrad)" />
+    <circle cx="32" cy="16.5" r="1.5" fill="url(#goldGrad)" />
+
+    <!-- Bold White 'M' -->
+    <path d="M 17 50 L 17 29 L 24 29 L 32 41 L 40 29 L 47 29 L 47 50 L 40 50 L 40 37 L 34 46 L 30 46 L 24 37 L 24 50 Z" 
+          fill="#ffffff" stroke="#0f172a" stroke-width="1.2" stroke-linejoin="round" />
+  </g>
+</svg>

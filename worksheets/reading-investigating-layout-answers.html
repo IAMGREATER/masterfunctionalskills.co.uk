@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Master Functional Skills — Layout Devices & Visual Signposting Answer Key & Mark Scheme (Level 1 & Level 2)</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 12mm 15mm 12mm 15mm;
+    }
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #0f172a;
+      background: #f0fdf4;
+      margin: 0;
+      padding: 0;
+      font-size: 11pt;
+      line-height: 1.5;
+    }
+    .print-bar {
+      background: #064e3b;
+      color: #f8fafc;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    }
+    .print-bar a {
+      color: #a7f3d0;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .print-bar a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+    .btn-action-print {
+      background: #10b981;
+      color: #ffffff;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s;
+    }
+    .btn-action-print:hover {
+      background: #059669;
+    }
+    .btn-action-sheet {
+      background: #2563eb;
+      color: #ffffff;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-right: 12px;
+    }
+    .btn-action-sheet:hover {
+      background: #1d4ed8;
+    }
+
+    @media print {
+      .print-bar {
+        display: none !important;
+      }
+      body {
+        background: #ffffff !important;
+      }
+      .page-sheet {
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+      }
+      .ans-card {
+        page-break-inside: avoid;
+      }
+    }
+
+    .page-sheet {
+      max-width: 860px;
+      margin: 24px auto;
+      background: #ffffff;
+      padding: 32px 40px;
+      border-radius: 8px;
+      border: 1px solid #bbf7d0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+    .sheet-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 2.5px solid #064e3b;
+      padding-bottom: 16px;
+      margin-bottom: 20px;
+    }
+    .brand-title {
+      font-size: 1.45rem;
+      font-weight: 900;
+      color: #064e3b;
+      letter-spacing: -0.5px;
+    }
+    .brand-title span {
+      color: #10b981;
+    }
+    .brand-subtitle {
+      font-size: 0.88rem;
+      color: #047857;
+      margin-top: 2px;
+      font-weight: 600;
+    }
+    .sheet-meta-badge {
+      background: #ecfdf5;
+      border: 1.5px solid #a7f3d0;
+      color: #065f46;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-align: right;
+    }
+    .sheet-meta-badge .topic-name {
+      font-size: 1.15rem;
+      font-weight: 800;
+      display: block;
+    }
+    .sheet-meta-badge .spec-tag {
+      font-size: 0.78rem;
+      color: #059669;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .scheme-summary-bar {
+      background: #f0fdf4;
+      border: 1px solid #86efac;
+      border-radius: 6px;
+      padding: 12px 18px;
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.95rem;
+      color: #065f46;
+    }
+
+    .tier-divider {
+      background: #f0fdf4;
+      border-left: 4px solid #059669;
+      padding: 6px 12px;
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: #064e3b;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin: 24px 0 16px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .ans-card {
+      border: 1.5px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 18px 20px;
+      margin-bottom: 24px;
+      background: #ffffff;
+    }
+    .ans-card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+    .ans-q-num {
+      font-weight: 800;
+      color: #064e3b;
+      font-size: 1.05rem;
+    }
+    .ans-marks-badge {
+      font-weight: 700;
+      color: #047857;
+      background: #ecfdf5;
+      padding: 3px 10px;
+      border-radius: 4px;
+      border: 1px solid #a7f3d0;
+      font-size: 0.88rem;
+    }
+    .ans-stem-quote {
+      font-size: 0.94rem;
+      color: #475569;
+      background: #f8fafc;
+      border-left: 3px solid #cbd5e1;
+      padding: 8px 12px;
+      margin-bottom: 14px;
+      font-style: italic;
+    }
+
+    .mark-steps-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 14px 16px;
+      margin-bottom: 14px;
+    }
+    .step-title {
+      font-weight: 800;
+      color: #0f172a;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .step-row {
+      margin-bottom: 8px;
+      line-height: 1.6;
+      font-size: 0.98rem;
+      color: #1e293b;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 1px dashed #f1f5f9;
+      padding-bottom: 6px;
+    }
+    .step-row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+    .mark-code {
+      font-weight: 800;
+      color: #2563eb;
+      font-family: monospace;
+      font-size: 0.9rem;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      padding: 1px 6px;
+      border-radius: 4px;
+      white-space: nowrap;
+      margin-left: 12px;
+    }
+
+    .final-award-box {
+      background: #ecfdf5;
+      border: 1.5px solid #10b981;
+      border-radius: 6px;
+      padding: 10px 16px;
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .award-label {
+      font-weight: 800;
+      color: #065f46;
+      font-size: 0.92rem;
+    }
+    .award-val {
+      font-weight: 900;
+      color: #047857;
+      font-size: 1.15rem;
+      font-family: monospace;
+      text-decoration: underline;
+    }
+
+    .pitfall-box {
+      background: #fffbeb;
+      border-left: 4px solid #f59e0b;
+      border-radius: 4px;
+      padding: 10px 14px;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+      color: #92400e;
+      line-height: 1.5;
+    }
+    .pitfall-box strong {
+      color: #b45309;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .alt-method-box {
+      background: #eff6ff;
+      border-left: 4px solid #3b82f6;
+      border-radius: 4px;
+      padding: 8px 12px;
+      margin-bottom: 10px;
+      font-size: 0.88rem;
+      color: #1e40af;
+      line-height: 1.5;
+    }
+
+    .reverse-check-box {
+      background: #fdf4ff;
+      border-left: 4px solid #c084fc;
+      border-radius: 4px;
+      padding: 8px 12px;
+      font-size: 0.88rem;
+      color: #6b21a8;
+      line-height: 1.5;
+    }
+
+    .sheet-footer {
+      border-top: 1px solid #e2e8f0;
+      padding-top: 14px;
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      color: #94a3b8;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="print-bar">
+    <a href="../reading-investigating-layout.html"><i class="fa-solid fa-arrow-left"></i> Back to Layout Devices & Visual Signposting Revision Guide</a>
+    <div>
+      <a href="reading-investigating-layout-workout-answers.html" class="btn-action-answers" style="background:#2563eb;"><i class="fa-solid fa-repeat"></i> Workout Answers</a>
+      <a href="reading-investigating-layout-worksheet.html" class="btn-action-sheet"><i class="fa-solid fa-file-pen"></i> Open Exam Worksheet</a>
+      <button type="button" class="btn-action-print" onclick="window.print()"><i class="fa-solid fa-print"></i> Print / Save to PDF</button>
+    </div>
+  </div>
+
+  <div class="page-sheet">
+    <div class="sheet-head">
+      <div>
+        <div class="brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
+        <div class="brand-subtitle">Official Tutor Examiner Mark Scheme &amp; Model Solutions</div>
+      </div>
+      <div class="sheet-meta-badge">
+        <span class="topic-name">Layout Devices & Visual Signposting</span>
+        <span class="spec-tag">Pearson Edexcel: L1.14 • L2.16 • L2.17</span>
+      </div>
+    </div>
+
+    <div class="scheme-summary-bar">
+      <div><strong>Total Marks Available:</strong> 18 Marks (Pass Threshold: ~11/18)</div>
+      <div><strong>Examiner Standard:</strong> Full Method (M) and Process (P) marks awarded even if final arithmetic errs.</div>
+    </div>
+
+
+    <div class="tier-divider">
+      <span>Section A: Foundational Concept Check Solutions</span>
+      <span>Questions 1 & 2 • 4 Marks</span>
+    </div>
+
+    <div class="ans-card">
+      <div class="ans-card-head">
+        <span class="ans-q-num">Question 1 (Level 1 Using Subheadings to Navigate a Document) Model Solution</span>
+        <span class="ans-marks-badge">[2 Marks Total]</span>
+      </div>
+      <div class="ans-stem-quote">
+        A community leisure centre guide is divided into four bold sections:<br><strong>Section 1: Pool &amp; Sauna Opening Hours</strong><br><strong>Section 2: Peak &amp; Off-Peak Membership Tariffs</strong><br><strong>Section 3: Crèche &amp; Junior Swim Rules</strong><br><strong>Section 4: Car Parking &amp; Bus Routes</strong><br><br>State which section a parent should read to check the minimum age for children in the pool, and explain how subheadings help readers navigate the guide.
+      </div>
+      <div class="mark-steps-box">
+        <div class="step-title">Step-by-Step Marking Criteria:</div>
+
+        <div class="step-row">
+          <span>1. Identify correct section: Section 3: Crèche & Junior Swim Rules</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+        <div class="step-row">
+          <span>2. Explain benefit: Subheadings divide the guide by topic so readers can scan and jump straight to the section they need without reading the whole text</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+      </div>
+      <div class="final-award-box">
+        <span class="award-label">Award Final Answer Mark:</span>
+        <span class="award-val">Section 3: Crèche & Junior Swim Rules. Subheadings allow readers to scan and go straight to their required topic without reading every word.</span>
+      </div>
+      <div class="pitfall-box">
+        <strong>⚠️ Examiner Trap Alert:</strong>
+        Writing just 'Section 3' without explaining how subheadings aid reader navigation.
+      </div>
+      <div class="reverse-check-box">
+        <strong>🔄 Reverse Sanity Check:</strong> Does Section 3 cover children's swimming rules? Yes.
+      </div>
+    </div>
+
+    <div class="ans-card">
+      <div class="ans-card-head">
+        <span class="ans-q-num">Question 2 (Level 1 Numbered Lists vs Bullet Points) Model Solution</span>
+        <span class="ans-marks-badge">[2 Marks Total]</span>
+      </div>
+      <div class="ans-stem-quote">
+        A laboratory chemical spill card uses a <strong>bulleted list</strong> for <em>'Kit Inside the Spill Bucket (gloves, goggles, absorbent granules)'</em> and a <strong>numbered list (1, 2, 3, 4)</strong> for <em>'Emergency Clean-Up Procedure'</em>.<br><br>Explain why the writer used a <strong>numbered list</strong> for the clean-up procedure instead of ordinary bullet points.
+      </div>
+      <div class="mark-steps-box">
+        <div class="step-title">Step-by-Step Marking Criteria:</div>
+
+        <div class="step-row">
+          <span>1. Chronological sequence: Numbers (1 to 4) show the exact step-by-step chronological order that must be followed</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+        <div class="step-row">
+          <span>2. Safety compliance: Ensures staff do not skip a step or perform emergency actions in the wrong order (unlike the non-sequential kit list)</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+      </div>
+      <div class="final-award-box">
+        <span class="award-label">Award Final Answer Mark:</span>
+        <span class="award-val">Numbers establish a strict chronological sequence (Step 1 before Step 2) so staff follow the emergency clean-up steps in the exact safe order.</span>
+      </div>
+      <div class="pitfall-box">
+        <strong>⚠️ Examiner Trap Alert:</strong>
+        Saying 'it makes it easier to read' without mentioning chronological order or step-by-step sequence.
+      </div>
+      <div class="reverse-check-box">
+        <strong>🔄 Reverse Sanity Check:</strong> Bullet points = any order; Numbered list = strict chronological sequence.
+      </div>
+    </div>
+
+    <div class="tier-divider">
+      <span>Section B: Functional Workplace Application Solutions</span>
+      <span>Questions 3 & 4 • 6 Marks</span>
+    </div>
+
+    <div class="ans-card">
+      <div class="ans-card-head">
+        <span class="ans-q-num">Question 3 (Level 1/2 Evaluating a Data Table vs Continuous Prose) Model Solution</span>
+        <span class="ans-marks-badge">[3 Marks Total]</span>
+      </div>
+      <div class="ans-stem-quote">
+        A courier company prints its parcel delivery prices in a three-column table:<br><strong>Column 1: Parcel Weight (Under 2kg / 2–10kg / Over 10kg) | Column 2: Standard 48-Hr Cost | Column 3: Express Next-Day Cost</strong>.<br><br>Explain <strong>three advantages</strong> of presenting these delivery tariffs in a table rather than a continuous paragraph of text.
+      </div>
+      <div class="mark-steps-box">
+        <div class="step-title">Step-by-Step Marking Criteria:</div>
+
+        <div class="step-row">
+          <span>1. Rapid cross-referencing: Aligns weight bands with 48-Hr and Next-Day prices in rows and columns for instant lookup</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+        <div class="step-row">
+          <span>2. Easy comparison: Allows customers to compare Standard vs Express prices side-by-side at a glance</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+        <div class="step-row">
+          <span>3. Prevents reading errors: Eliminates visual clutter so staff do not misread figures buried in dense sentences</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+      </div>
+      <div class="final-award-box">
+        <span class="award-label">Award Final Answer Mark:</span>
+        <span class="award-val">1. Aligns weights and prices in rows/columns for fast lookup. 2. Makes comparing 48-Hr vs Next-Day costs easy. 3. Reduces risk of misreading numbers in dense prose.</span>
+      </div>
+      <div class="pitfall-box">
+        <strong>⚠️ Examiner Trap Alert:</strong>
+        Repeating the same point three times instead of giving three distinct functional benefits (speed, comparison, accuracy).
+      </div>
+      <div class="reverse-check-box">
+        <strong>🔄 Reverse Sanity Check:</strong> Check you mentioned row/column alignment, side-by-side comparison, and error reduction.
+      </div>
+    </div>
+
+    <div class="ans-card">
+      <div class="ans-card-head">
+        <span class="ans-q-num">Question 4 (Level 2 Purpose of a Dedicated Sidebar Panel) Model Solution</span>
+        <span class="ans-marks-badge">[3 Marks Total]</span>
+      </div>
+      <div class="ans-stem-quote">
+        A two-page NHS guide on managing asthma in schools is laid out with three main columns explaining inhaler types and triggers, plus a red-bordered vertical <strong>sidebar</strong> down the right-hand margin titled: <strong>'999 RED FLAG SYMPTOMS: WHEN TO CALL AN AMBULANCE'</strong>.<br><br>Analyse why the designer placed the 999 symptoms in a separate red-bordered sidebar and how this helps school staff.
+      </div>
+      <div class="mark-steps-box">
+        <div class="step-title">Step-by-Step Marking Criteria:</div>
+
+        <div class="step-row">
+          <span>1. Structural separation: Physically isolates life-threatening emergency signs from the general background paragraphs on triggers</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+        <div class="step-row">
+          <span>2. Visual prominence: The red border and right-margin position draw the eye immediately to critical danger warnings</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+        <div class="step-row">
+          <span>3. Practical workplace benefit: Enables a teacher dealing with an acute asthma attack to check 999 criteria in seconds without hunting through three columns</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+      </div>
+      <div class="final-award-box">
+        <span class="award-label">Award Final Answer Mark:</span>
+        <span class="award-val">Isolates critical 999 danger signs from general background text; the red border draws immediate visual attention so teachers can verify ambulance criteria instantly during an attack.</span>
+      </div>
+      <div class="pitfall-box">
+        <strong>⚠️ Examiner Trap Alert:</strong>
+        Summarising asthma symptoms instead of analysing the structural position and red border of the sidebar.
+      </div>
+      <div class="reverse-check-box">
+        <strong>🔄 Reverse Sanity Check:</strong> Does your answer explain both visual separation and speed of access in an emergency?
+      </div>
+    </div>
+
+    <div class="tier-divider">
+      <span>Section C: Pearson Edexcel Exam-Style Analysis & Evaluation Solutions</span>
+      <span>Questions 5 & 6 • 8 Marks</span>
+    </div>
+
+    <div class="ans-card">
+      <div class="ans-card-head">
+        <span class="ans-q-num">Question 5 (Level 2 Analysing Flowchart & Q&A Structural Devices) Model Solution</span>
+        <span class="ans-marks-badge">[4 Marks Total]</span>
+      </div>
+      <div class="ans-stem-quote">
+        An IT troubleshooting webpage for homeworkers combines two layout devices:<br>• <strong>Top Half:</strong> A <strong>decision flowchart</strong> with Yes/No arrows (<em>'Is the router power light green? &rarr; YES: Reboot VPN / NO: Check wall socket'</em>).<br>• <strong>Bottom Half:</strong> An <strong>FAQ (Frequently Asked Questions)</strong> section with bold question subheadings.<br><br>Explain how <strong>both</strong> layout devices work together to help an employee whose internet has just disconnected.
+      </div>
+      <div class="mark-steps-box">
+        <div class="step-title">Step-by-Step Marking Criteria:</div>
+
+        <div class="step-row">
+          <span>1. Flowchart visual guidance: Uses Yes/No directional arrows to guide the worker step-by-step through diagnosing their router fault logically</span>
+          <span class="mark-code">[M1]</span>
+        </div>
+        <div class="step-row">
+          <span>2. Flowchart efficiency: Saves time by steering the user only to the action that matches their light status (green vs off)</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+        <div class="step-row">
+          <span>3. FAQ navigation: Uses bold common questions as signposts so workers with specific follow-up queries can scan straight to the right answer</span>
+          <span class="mark-code">[M1]</span>
+        </div>
+        <div class="step-row">
+          <span>4. Combined benefit: Makes complex technical troubleshooting accessible and stress-free for non-IT staff working alone at home</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+      </div>
+      <div class="final-award-box">
+        <span class="award-label">Award Final Answer Mark:</span>
+        <span class="award-val">The Yes/No flowchart guides workers logically through step-by-step fault diagnosis based on their router light, while the bold FAQ headings allow them to scan straight to specific follow-up answers.</span>
+      </div>
+      <div class="pitfall-box">
+        <strong>⚠️ Examiner Trap Alert:</strong>
+        Analysing only the flowchart and ignoring the FAQ layout.
+      </div>
+      <div class="reverse-check-box">
+        <strong>🔄 Reverse Sanity Check:</strong> Verify both the Yes/No decision path (flowchart) and question scanning (FAQ) are explained.
+      </div>
+    </div>
+
+    <div class="ans-card">
+      <div class="ans-card-head">
+        <span class="ans-q-num">Question 6 (Level 2 Comparing Layout & Structure Across Two Documents) Model Solution</span>
+        <span class="ans-marks-badge">[4 Marks Total]</span>
+      </div>
+      <div class="ans-stem-quote">
+        Compare the layout of two texts about food allergens:<br><strong>Text A (Kitchen Wall Poster):</strong> Uses a single large page with a 14-icon allergen grid, bold red warning boxes, and bulleted rules.<br><strong>Text B (Food Standards Journal Article):</strong> Uses four pages of dense, two-column continuous prose paragraphs with numbered academic footnotes (¹ ²) and a bibliography at the end.<br><br>Compare how the layout of Text A and Text B is tailored to their different audiences and workplace uses.
+      </div>
+      <div class="mark-steps-box">
+        <div class="step-title">Step-by-Step Marking Criteria:</div>
+
+        <div class="step-row">
+          <span>1. Text A layout & audience utility: Uses a 14-icon grid, red warning boxes, and bullets so busy chefs can check allergens at a glance during fast kitchen service</span>
+          <span class="mark-code">[M1]</span>
+        </div>
+        <div class="step-row">
+          <span>2. Text B layout & audience utility: Uses dense multi-column prose, academic footnotes, and a bibliography suited for researchers or policy managers reading in depth</span>
+          <span class="mark-code">[M1]</span>
+        </div>
+        <div class="step-row">
+          <span>3. Direct structural contrast: Whereas Text A prioritises instant visual scanning on a wall, Text B prioritises detailed scholarly citation and extended reading</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+        <div class="step-row">
+          <span>4. Explain footnotes in Text B: Footnotes/bibliography verify scientific sources without interrupting the formal academic narrative</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+      </div>
+      <div class="final-award-box">
+        <span class="award-label">Award Final Answer Mark:</span>
+        <span class="award-val">Text A uses an icon grid, red warning boxes, and bullets for instant wall-scanning by busy chefs. Conversely, Text B uses dense two-column prose and footnotes for in-depth study and source verification by researchers.</span>
+      </div>
+      <div class="pitfall-box">
+        <strong>⚠️ Examiner Trap Alert:</strong>
+        Describing the topic of food allergies instead of comparing the structural layout features (icon grid/bullets vs prose columns/footnotes).
+      </div>
+      <div class="reverse-check-box">
+        <strong>🔄 Reverse Sanity Check:</strong> Have you linked Text A's layout to busy chefs and Text B's layout to researchers/in-depth study?
+      </div>
+    </div>
+
+
+    <div class="sheet-footer">
+      <div>Master Functional Skills • Pearson Edexcel Official Marking Guide • 100% Original Content</div>
+      <div>Page 1 of 1 • Rev 2026.1</div>
+    </div>
+  </div>
+</body>
+</html>

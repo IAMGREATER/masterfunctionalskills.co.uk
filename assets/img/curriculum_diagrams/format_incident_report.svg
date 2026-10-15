@@ -1,0 +1,29 @@
+<svg viewBox="0 0 460 270" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:460px; height:auto; font-family:'Plus Jakarta Sans', sans-serif;">
+  <rect x="2" y="2" width="456" height="266" rx="10" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+  
+  <!-- Report Title Header -->
+  <rect x="16" y="12" width="428" height="46" rx="5" fill="#0f172a"/>
+  <text x="28" y="30" font-size="11.5" font-weight="900" fill="#38bdf8">INVESTIGATION REPORT: HEALTH &amp; SAFETY AUDIT</text>
+  <text x="28" y="47" font-size="9" fill="#94a3b8">Target: Safety Executive • Date: October 2026 • Lead Tutor: Abdul</text>
+  
+  <!-- Section 1.0: Executive Summary -->
+  <rect x="16" y="66" width="428" height="48" rx="5" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="26" y="82" font-size="10.5" font-weight="900" fill="#0f172a">1.0 Executive Summary &amp; Scope</text>
+  <rect x="26" y="89" width="408" height="7" rx="2" fill="#cbd5e1"/>
+  <rect x="26" y="100" width="380" height="7" rx="2" fill="#cbd5e1"/>
+  
+  <!-- Section 2.0: Table of Findings -->
+  <rect x="16" y="120" width="428" height="58" rx="5" fill="#f8fafc" stroke="#e2e8f0"/>
+  <text x="26" y="136" font-size="10.5" font-weight="900" fill="#0f172a">2.0 Risk Assessment Matrix</text>
+  <rect x="26" y="142" width="408" height="15" rx="3" fill="#e2e8f0"/>
+  <text x="36" y="153" font-size="8.5" font-weight="800" fill="#475569">Inspection Zone | Hazard Noted | Severity Rating | Target Date</text>
+  <rect x="26" y="159" width="408" height="15" rx="3" fill="#ffffff" stroke="#e2e8f0"/>
+  <text x="36" y="170" font-size="8.5" fill="#0f172a">Ward 4 Store | Obstructed Fire Egress | HIGH | Immediate (24h)</text>
+  
+  <!-- Section 3.0: Recommendations -->
+  <rect x="16" y="184" width="428" height="72" rx="5" fill="#eff6ff" stroke="#bfdbfe"/>
+  <text x="26" y="200" font-size="10.5" font-weight="900" fill="#1e40af">3.0 Actionable Recommendations</text>
+  <text x="36" y="215" font-size="9" font-weight="700" fill="#1e3a8a">• Clear all corridor emergency routes immediately (Priority 1)</text>
+  <text x="36" y="229" font-size="9" font-weight="700" fill="#1e3a8a">• Deploy digital checklist app across shift handovers</text>
+  <text x="36" y="243" font-size="9" font-weight="700" fill="#1e3a8a">• Complete follow-up audit with Lead Tutor Abdul on Friday</text>
+</svg>

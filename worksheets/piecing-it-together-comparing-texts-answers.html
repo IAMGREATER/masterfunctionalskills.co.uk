@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Master Functional Skills — Comparing Texts & Cross-Text Synthesis Answer Key & Mark Scheme (Level 1 & Level 2)</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 12mm 15mm 12mm 15mm;
+    }
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #0f172a;
+      background: #f0fdf4;
+      margin: 0;
+      padding: 0;
+      font-size: 11pt;
+      line-height: 1.5;
+    }
+    .print-bar {
+      background: #064e3b;
+      color: #f8fafc;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    }
+    .print-bar a {
+      color: #a7f3d0;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .print-bar a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+    .btn-action-print {
+      background: #10b981;
+      color: #ffffff;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s;
+    }
+    .btn-action-print:hover {
+      background: #059669;
+    }
+    .btn-action-sheet {
+      background: #2563eb;
+      color: #ffffff;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-right: 12px;
+    }
+    .btn-action-sheet:hover {
+      background: #1d4ed8;
+    }
+
+    @media print {
+      .print-bar {
+        display: none !important;
+      }
+      body {
+        background: #ffffff !important;
+      }
+      .page-sheet {
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+      }
+      .ans-card {
+        page-break-inside: avoid;
+      }
+    }
+
+    .page-sheet {
+      max-width: 860px;
+      margin: 24px auto;
+      background: #ffffff;
+      padding: 32px 40px;
+      border-radius: 8px;
+      border: 1px solid #bbf7d0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+    .sheet-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 2.5px solid #064e3b;
+      padding-bottom: 16px;
+      margin-bottom: 20px;
+    }
+    .brand-title {
+      font-size: 1.45rem;
+      font-weight: 900;
+      color: #064e3b;
+      letter-spacing: -0.5px;
+    }
+    .brand-title span {
+      color: #10b981;
+    }
+    .brand-subtitle {
+      font-size: 0.88rem;
+      color: #047857;
+      margin-top: 2px;
+      font-weight: 600;
+    }
+    .sheet-meta-badge {
+      background: #ecfdf5;
+      border: 1.5px solid #a7f3d0;
+      color: #065f46;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-align: right;
+    }
+    .sheet-meta-badge .topic-name {
+      font-size: 1.15rem;
+      font-weight: 800;
+      display: block;
+    }
+    .sheet-meta-badge .spec-tag {
+      font-size: 0.78rem;
+      color: #059669;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .scheme-summary-bar {
+      background: #f0fdf4;
+      border: 1px solid #86efac;
+      border-radius: 6px;
+      padding: 12px 18px;
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.95rem;
+      color: #065f46;
+    }
+
+    .tier-divider {
+      background: #f0fdf4;
+      border-left: 4px solid #059669;
+      padding: 6px 12px;
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: #064e3b;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin: 24px 0 16px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .ans-card {
+      border: 1.5px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 18px 20px;
+      margin-bottom: 24px;
+      background: #ffffff;
+    }
+    .ans-card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+    .ans-q-num {
+      font-weight: 800;
+      color: #064e3b;
+      font-size: 1.05rem;
+    }
+    .ans-marks-badge {
+      font-weight: 700;
+      color: #047857;
+      background: #ecfdf5;
+      padding: 3px 10px;
+      border-radius: 4px;
+      border: 1px solid #a7f3d0;
+      font-size: 0.88rem;
+    }
+    .ans-stem-quote {
+      font-size: 0.94rem;
+      color: #475569;
+      background: #f8fafc;
+      border-left: 3px solid #cbd5e1;
+      padding: 8px 12px;
+      margin-bottom: 14px;
+      font-style: italic;
+    }
+
+    .mark-steps-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 14px 16px;
+      margin-bottom: 14px;
+    }
+    .step-title {
+      font-weight: 800;
+      color: #0f172a;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .step-row {
+      margin-bottom: 8px;
+      line-height: 1.6;
+      font-size: 0.98rem;
+      color: #1e293b;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 1px dashed #f1f5f9;
+      padding-bottom: 6px;
+    }
+    .step-row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+    .mark-code {
+      font-weight: 800;
+      color: #2563eb;
+      font-family: monospace;
+      font-size: 0.9rem;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      padding: 1px 6px;
+      border-radius: 4px;
+      white-space: nowrap;
+      margin-left: 12px;
+    }
+
+    .final-award-box {
+      background: #ecfdf5;
+      border: 1.5px solid #10b981;
+      border-radius: 6px;
+      padding: 10px 16px;
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .award-label {
+      font-weight: 800;
+      color: #065f46;
+      font-size: 0.92rem;
+    }
+    .award-val {
+      font-weight: 900;
+      color: #047857;
+      font-size: 1.15rem;
+      font-family: monospace;
+      text-decoration: underline;
+    }
+
+    .pitfall-box {
+      background: #fffbeb;
+      border-left: 4px solid #f59e0b;
+      border-radius: 4px;
+      padding: 10px 14px;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+      color: #92400e;
+      line-height: 1.5;
+    }
+    .pitfall-box strong {
+      color: #b45309;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .alt-method-box {
+      background: #eff6ff;
+      border-left: 4px solid #3b82f6;
+      border-radius: 4px;
+      padding: 8px 12px;
+      margin-bottom: 10px;
+      font-size: 0.88rem;
+      color: #1e40af;
+      line-height: 1.5;
+    }
+
+    .reverse-check-box {
+      background: #fdf4ff;
+      border-left: 4px solid #c084fc;
+      border-radius: 4px;
+      padding: 8px 12px;
+      font-size: 0.88rem;
+      color: #6b21a8;
+      line-height: 1.5;
+    }
+
+    .sheet-footer {
+      border-top: 1px solid #e2e8f0;
+      padding-top: 14px;
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      color: #94a3b8;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="print-bar">
+    <a href="../piecing-it-together-comparing-texts.html"><i class="fa-solid fa-arrow-left"></i> Back to Comparing Texts & Cross-Text Synthesis Revision Guide</a>
+    <div>
+      <a href="piecing-it-together-comparing-texts-workout-answers.html" class="btn-action-answers" style="background:#2563eb;"><i class="fa-solid fa-repeat"></i> Workout Answers</a>
+      <a href="piecing-it-together-comparing-texts-worksheet.html" class="btn-action-sheet"><i class="fa-solid fa-file-pen"></i> Open Exam Worksheet</a>
+      <button type="button" class="btn-action-print" onclick="window.print()"><i class="fa-solid fa-print"></i> Print / Save to PDF</button>
+    </div>
+  </div>
+
+  <div class="page-sheet">
+    <div class="sheet-head">
+      <div>
+        <div class="brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
+        <div class="brand-subtitle">Official Tutor Examiner Mark Scheme &amp; Model Solutions</div>
+      </div>
+      <div class="sheet-meta-badge">
+        <span class="topic-name">Comparing Texts & Cross-Text Synthesis</span>
+        <span class="spec-tag">Pearson Edexcel: Pearson Edexcel Functional Skills English (READING)</span>
+      </div>
+    </div>
+
+    <div class="scheme-summary-bar">
+      <div><strong>Total Marks Available:</strong> 18 Marks (Pass Threshold: ~11/18)</div>
+      <div><strong>Examiner Standard:</strong> Full Method (M) and Process (P) marks awarded even if final arithmetic errs.</div>
+    </div>
+
+
+    <div class="tier-divider">
+      <span>Section A: Foundational Concept Check Solutions</span>
+      <span>Questions 1 & 2 • 4 Marks</span>
+    </div>
+
+    <div class="ans-card">
+      <div class="ans-card-head">
+        <span class="ans-q-num">Question 1 (Linking Two Texts with Comparative Connectives) Model Solution</span>
+        <span class="ans-marks-badge">[2 Marks Total]</span>
+      </div>
+      <div class="ans-stem-quote">
+        Read these two views on paperless hospital records:<br><strong>Text A (IT Director):</strong> <em>'Digital tablets eliminate lost paper charts and allow doctors to view blood results instantly.'</em><br><strong>Text B (Ward Sister):</strong> <em>'Instant blood results are helpful, but Wi-Fi blackspots on the ground floor often freeze the tablets mid-round.'</em><br>State <strong>one point of agreement</strong> and <strong>one difference</strong> between Text A and Text B.
+      </div>
+      <div class="mark-steps-box">
+        <div class="step-title">Step-by-Step Marking Criteria:</div>
+
+        <div class="step-row">
+          <span>1. Point of agreement: Both agree that instant access to blood results is beneficial</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+        <div class="step-row">
+          <span>2. Point of difference: Text A is wholly positive, whereas Text B warns that Wi-Fi blackspots freeze tablets mid-round</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+      </div>
+      <div class="final-award-box">
+        <span class="award-label">Award Final Answer Mark:</span>
+        <span class="award-val">Both agree instant blood results are useful, whereas Text B highlights that Wi-Fi blackspots freeze the tablets.</span>
+      </div>
+      <div class="pitfall-box">
+        <strong>⚠️ Examiner Trap Alert:</strong>
+        Summarising Text A without contrasting it directly with Text B.
+      </div>
+      <div class="reverse-check-box">
+        <strong>🔄 Reverse Sanity Check:</strong> Check that both similarity and difference are clearly stated.
+      </div>
+    </div>
+
+    <div class="ans-card">
+      <div class="ans-card-head">
+        <span class="ans-q-num">Question 2 (Core Skill Application — 3 Marks) Model Solution</span>
+        <span class="ans-marks-badge">[2 Marks Total]</span>
+      </div>
+      <div class="ans-stem-quote">
+        Read the two extracts on town centre parking:<br><strong>Text 1 (Council Press Release):</strong> <em>'Increasing high-street parking tariffs by £1.20 per hour will relieve severe daytime congestion and cut town centre exhaust emissions by 20%.'</em><br><strong>Text 2 (Shopkeepers' Petition):</strong> <em>'Although town centre traffic is undeniably congested, this greedy £1.20 parking hike will drive loyal shoppers straight to out-of-town retail parks!'</em><br>Identify <strong>one similarity</strong> and <strong>two differences</strong> in how the texts present the parking issue.
+      </div>
+      <div class="mark-steps-box">
+        <div class="step-title">Step-by-Step Marking Criteria:</div>
+
+        <div class="step-row">
+          <span>1. Similarity: Both Text 1 and Text 2 agree that town centre parking/traffic is heavily congested [1 Mark].</span>
+          <span class="mark-code">[M1]</span>
+        </div>
+        <div class="step-row">
+          <span>2. Difference 1 (Impact): Text 1 argues the £1.20 increase will cut emissions by 20%, whereas Text 2 warns it will drive shoppers away to out-of-town retail parks [1 Mark].</span>
+          <span class="mark-code">[M1]</span>
+        </div>
+        <div class="step-row">
+          <span>3. Difference 2 (Tone/Language): Text 1 uses formal, objective statistics ('20%'), whereas Text 2 uses emotive, critical language ('greedy', exclamation mark) [1 Mark].</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+      </div>
+      <div class="final-award-box">
+        <span class="award-label">Award Final Answer Mark:</span>
+        <span class="award-val">Similarity: Both agree the town centre is congested. | Difference 1: Text 1 claims the £1.20 rise cuts emissions by 20%, whereas Text 2 claims it will drive shoppers to retail parks. | Difference 2: Text 1 uses a formal statistical tone, while Text 2 uses emotive language ('greedy').</span>
+      </div>
+      <div class="pitfall-box">
+        <strong>⚠️ Examiner Trap Alert:</strong>
+        Writing a summary of Text A followed by an unrelated summary of Text B prevents you from demonstrating synthesis and caps your mark at 1 out of 4.
+      </div>
+      <div class="reverse-check-box">
+        <strong>🔄 Reverse Sanity Check:</strong> Ensure you clearly label which text is which and use comparative connectives like 'whereas' and 'both'.
+      </div>
+    </div>
+
+    <div class="tier-divider">
+      <span>Section B: Functional Workplace Application Solutions</span>
+      <span>Questions 3 & 4 • 6 Marks</span>
+    </div>
+
+    <div class="ans-card">
+      <div class="ans-card-head">
+        <span class="ans-q-num">Question 3 (Comparing Two Staff Emails on Canteen Changes (Level 1)) Model Solution</span>
+        <span class="ans-marks-badge">[3 Marks Total]</span>
+      </div>
+      <div class="ans-stem-quote">
+        Read the two extracts:<br><strong>Text A (Facilities Manager):</strong> <em>'Replacing our staffed hot canteen with smart vending machines will save £22,000 a year and provide 24-hour food access for night-shift workers.'</em><br><strong>Text B (Warehouse Supervisor):</strong> <em>'While 24-hour access for night staff is welcome, vending machines only sell processed snacks rather than the hot, nutritious meals our manual workers need.'</em><br>(a) Identify <strong>one point of agreement</strong> between Text A and Text B. [1 Mark]<br>(b) Identify <strong>one point of disagreement</strong> about the food provided. [1 Mark]
+      </div>
+      <div class="mark-steps-box">
+        <div class="step-title">Step-by-Step Marking Criteria:</div>
+
+        <div class="step-row">
+          <span>1. Identify shared agreement across both extracts: Both Text A and Text B agree that providing 24-hour food access for night-shift staff is a positive benefit.</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+        <div class="step-row">
+          <span>2. Contrast their views on the food using a connective: Whereas Text A views smart vending machines as a cost-saving upgrade (£22,000 saved), Text B argues they only provide 'processed snacks' instead of the hot, nutritious meals workers need.</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+      </div>
+      <div class="final-award-box">
+        <span class="award-label">Award Final Answer Mark:</span>
+        <span class="award-val">(a) Agreement: Both agree that 24-hour food access for night-shift workers is beneficial. | (b) Disagreement: Text A promotes vending machines to save £22,000, whereas Text B criticises them for serving processed snacks instead of hot, nutritious meals.</span>
+      </div>
+      <div class="pitfall-box">
+        <strong>⚠️ Examiner Trap Alert:</strong>
+        Use comparative sentence frames: 'While Text A argues [X], Text B contends that [Y].'
+      </div>
+      <div class="reverse-check-box">
+        <strong>🔄 Reverse Sanity Check:</strong> Even in a 2-mark Level 1 question, always mention both texts explicitly when explaining a disagreement.
+      </div>
+    </div>
+
+    <div class="ans-card">
+      <div class="ans-card-head">
+        <span class="ans-q-num">Question 4 (Exam-Style Task — 3 Marks) Model Solution</span>
+        <span class="ans-marks-badge">[3 Marks Total]</span>
+      </div>
+      <div class="ans-stem-quote">
+        Read the two extracts about open-plan offices:<br><strong>Text A (Office Architect):</strong> <em>'Open-plan workspaces foster instant team collaboration, spark creative ideas, and reduce partitioning costs by 35%.'</em><br><strong>Text B (Software Developer):</strong> <em>'Working in a noisy fishbowl of constant chatter destroys deep concentration and leaves neurodivergent staff exhausted by 3 p.m.'</em><br>Compare how the two writers view open-plan offices and identify one language technique used in Text B.
+      </div>
+      <div class="mark-steps-box">
+        <div class="step-title">Step-by-Step Marking Criteria:</div>
+
+        <div class="step-row">
+          <span>1. Viewpoint Comparison: Text A views open-plan offices positively as collaborative and cost-effective ('reduce partitioning costs by 35%'), whereas Text B views them negatively as distracting and exhausting ('destroys deep concentration') [2 Marks].</span>
+          <span class="mark-code">[M1]</span>
+        </div>
+        <div class="step-row">
+          <span>2. Language Technique in Text B: Metaphor ('noisy fishbowl') or emotive verb ('destroys'), emphasizing lack of privacy and sensory overload [1 Mark].</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+      </div>
+      <div class="final-award-box">
+        <span class="award-label">Award Final Answer Mark:</span>
+        <span class="award-val">Text A praises open-plan offices for boosting collaboration and cutting costs by 35%, whereas Text B criticises them for ruining concentration and exhausting staff. Text B uses the metaphor 'noisy fishbowl' to highlight the lack of privacy.</span>
+      </div>
+      <div class="pitfall-box">
+        <strong>⚠️ Examiner Trap Alert:</strong>
+        Saying 'Text A talks about parking costs whereas Text B talks about uniform rules' is not a valid comparison because the two points are not about the same sub-topic.
+      </div>
+      <div class="reverse-check-box">
+        <strong>🔄 Reverse Sanity Check:</strong> Quote short phrases from both extracts to anchor your comparison.
+      </div>
+    </div>
+
+    <div class="tier-divider">
+      <span>Section C: Pearson Edexcel Exam-Style Analysis & Evaluation Solutions</span>
+      <span>Questions 5 & 6 • 8 Marks</span>
+    </div>
+
+    <div class="ans-card">
+      <div class="ans-card-head">
+        <span class="ans-q-num">Question 5 (Comparing Perspectives and Language on 12-Hour Hospital Shifts (Level 2)) Model Solution</span>
+        <span class="ans-marks-badge">[4 Marks Total]</span>
+      </div>
+      <div class="ans-stem-quote">
+        Read the two extracts:<br><strong>Text A (Hospital Trust Circular):</strong> <em>'Transitioning to 12-hour nursing rosters has reduced clinical handover errors by 15% and guarantees seamless operational continuity for acute patients.'</em><br><strong>Text B (Nursing Union Blog):</strong> <em>'Exhausted nurses are being pushed to breaking point! Working gruelling 12-hour marathons doubles medication errors after the tenth hour — how can exhausted staff keep patients safe?'</em><br>Compare the writers' views on 12-hour shifts and how they use language to convey their perspectives. [4 Marks]
+      </div>
+      <div class="mark-steps-box">
+        <div class="step-title">Step-by-Step Marking Criteria:</div>
+
+        <div class="step-row">
+          <span>1. Compare central viewpoints on patient safety with quotes: Both texts focus on patient safety during 12-hour shifts; however, Text A supports the shifts by claiming they 'reduced clinical handover errors by 15%', whereas Text B opposes them, claiming they 'double medication errors after the tenth hour'.</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+        <div class="step-row">
+          <span>2. Compare tone and language devices with quotes: Text A uses a formal, reassuring corporate tone with professional vocabulary ('seamless operational continuity'). In contrast, Text B uses an urgent, emotive tone featuring metaphors ('gruelling 12-hour marathons') and a rhetorical question ('how can exhausted staff keep patients safe?') to provoke concern.</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+      </div>
+      <div class="final-award-box">
+        <span class="award-label">Award Final Answer Mark:</span>
+        <span class="award-val">Text A supports 12-hour shifts, citing a '15%' drop in handover errors in a formal, objective tone ('seamless operational continuity'). Conversely, Text B strongly opposes 12-hour shifts, warning that 'medication errors' double and using emotive language ('pushed to breaking point') and a rhetorical question ('how can exhausted staff keep patients safe?') to highlight staff burnout.</span>
+      </div>
+      <div class="pitfall-box">
+        <strong>⚠️ Examiner Trap Alert:</strong>
+        Always match the exact same theme across both texts (e.g. how both view costs, or how both view staff morale).
+      </div>
+      <div class="reverse-check-box">
+        <strong>🔄 Reverse Sanity Check:</strong> Always mention BOTH texts in EVERY comparative paragraph. If you write only about Text A in paragraph 1 and Text B in paragraph 2 without cross-referencing, examiners cap your mark.
+      </div>
+    </div>
+
+    <div class="ans-card">
+      <div class="ans-card-head">
+        <span class="ans-q-num">Question 6 (Level 2 Mastery Challenge — 4 Marks) Model Solution</span>
+        <span class="ans-marks-badge">[4 Marks Total]</span>
+      </div>
+      <div class="ans-stem-quote">
+        Read these two extracts on AI customer service chatbots:<br><strong>Text A (Tech Vendor):</strong> <em>'Our AI Assistant resolves 82% of routine billing queries in under 10 seconds, freeing human agents to handle complex cases.'</em><br><strong>Text B (Consumer Watchdog):</strong> <em>'Frustrated customers are trapped in endless automated loops when trying to report urgent banking fraud. Why replace empathetic human advisors with robotic scripts?'</em><br>Compare how Text A and Text B present AI chatbots, referring to both content and language. [4 Marks]
+      </div>
+      <div class="mark-steps-box">
+        <div class="step-title">Step-by-Step Marking Criteria:</div>
+
+        <div class="step-row">
+          <span>1. Content comparison: Text A presents AI chatbots as fast and helpful ('resolves 82% of routine billing queries in under 10 seconds'), whereas Text B presents them as obstructive during urgent emergencies ('trapped in endless automated loops') [2 Marks].</span>
+          <span class="mark-code">[M1]</span>
+        </div>
+        <div class="step-row">
+          <span>2. Language comparison: Text A relies on persuasive statistics ('82%', '10 seconds') and a professional tone, whereas Text B uses emotive imagery ('trapped in endless... loops') and a rhetorical question ('Why replace empathetic human advisors with robotic scripts?') [2 Marks].</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+      </div>
+      <div class="final-award-box">
+        <span class="award-label">Award Final Answer Mark:</span>
+        <span class="award-val">Text A portrays AI chatbots as efficient support tools that free up staff ('resolves 82%... in under 10 seconds'), using factual statistics. In contrast, Text B portrays them as frustrating barriers ('trapped in endless automated loops'), using emotive language and a rhetorical question to defend human advisors.</span>
+      </div>
+      <div class="pitfall-box">
+        <strong>⚠️ Examiner Trap Alert:</strong>
+        Failing to proofread spelling, punctuation, and grammar after completing the draft.
+      </div>
+      <div class="reverse-check-box">
+        <strong>🔄 Reverse Sanity Check:</strong> Four-mark comparison questions require two well-developed comparisons supported by direct quotes from both texts.
+      </div>
+    </div>
+
+
+    <div class="sheet-footer">
+      <div>Master Functional Skills • Pearson Edexcel Official Marking Guide • 100% Original Content</div>
+      <div>Page 1 of 1 • Rev 2026.1</div>
+    </div>
+  </div>
+</body>
+</html>

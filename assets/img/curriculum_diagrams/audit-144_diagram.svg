@@ -1,0 +1,37 @@
+<svg viewBox="0 0 540 250" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:540px; height:auto; font-family:'Plus Jakarta Sans', system-ui, sans-serif;">
+  <rect x="2" y="2" width="536" height="246" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <rect x="16" y="12" width="280" height="24" rx="6" fill="#e0f2fe"/>
+  <text x="26" y="28" font-size="11" font-weight="800" fill="#0369a1">✎ FORMAT BLUEPRINT: NOTICE &amp; POSTER</text>
+  <text x="306" y="28" font-size="11" font-weight="700" fill="#475569">Workplace Public Notice Architecture</text>
+
+  <!-- Poster simulation frame -->
+  <rect x="16" y="46" width="340" height="190" rx="6" fill="#fffbeb" stroke="#f59e0b" stroke-width="2"/>
+  <!-- Header banner -->
+  <rect x="24" y="54" width="324" height="32" rx="4" fill="#b45309"/>
+  <text x="186" y="74" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">ATTENTION: STAFF KITCHEN PROTOCOL</text>
+  
+  <!-- Bullet point section -->
+  <text x="30" y="102" font-size="9" font-weight="700" fill="#78350f">Please follow these 3 workplace hygiene rules:</text>
+  <circle cx="36" cy="118" r="3" fill="#b45309"/><text x="46" y="121" font-size="8.5" fill="#451a03">Wash, dry, and put away all mugs immediately.</text>
+  <circle cx="36" cy="134" r="3" fill="#b45309"/><text x="46" y="137" font-size="8.5" fill="#451a03">Label all food items in the fridge with your name.</text>
+  <circle cx="36" cy="150" r="3" fill="#b45309"/><text x="46" y="153" font-size="8.5" fill="#451a03">Friday 4pm: Unlabelled items will be cleared.</text>
+
+  <!-- Highlight box -->
+  <rect x="24" y="166" width="324" height="36" rx="4" fill="#fee2e2" stroke="#ef4444"/>
+  <text x="186" y="182" font-size="9" font-weight="800" fill="#991b1b" text-anchor="middle">EMERGENCY CONTACT &amp; FIRST AID</text>
+  <text x="186" y="195" font-size="8" fill="#7f1d1d" text-anchor="middle">Report facility issues to Building Manager: Ext 402</text>
+
+  <text x="24" y="226" font-size="7.5" font-weight="600" fill="#92400e">Issue Date: 12 October 2026 • Operations Directorate</text>
+
+  <!-- Right side checklist -->
+  <rect x="368" y="46" width="156" height="190" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="446" y="66" font-size="10.5" font-weight="800" fill="#0f172a" text-anchor="middle">NOTICE CHECKLIST</text>
+  <text x="376" y="88" font-size="9" font-weight="700" fill="#0284c7">✓ Bold Eye-Catching Title</text>
+  <text x="376" y="102" font-size="8" fill="#64748b">Must state topic instantly</text>
+  <text x="376" y="122" font-size="9" font-weight="700" fill="#0284c7">✓ Bullet Points for Rules</text>
+  <text x="376" y="136" font-size="8" fill="#64748b">Enables rapid reading</text>
+  <text x="376" y="156" font-size="9" font-weight="700" fill="#0284c7">✓ Specific Action &amp; Time</text>
+  <text x="376" y="170" font-size="8" fill="#64748b">Clear deadline / protocol</text>
+  <text x="376" y="190" font-size="9" font-weight="700" fill="#0284c7">✓ Contact / Sign-off</text>
+  <text x="376" y="204" font-size="8" fill="#64748b">Tells reader who to notify</text>
+</svg>

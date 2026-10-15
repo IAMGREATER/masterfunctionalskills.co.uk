@@ -1,0 +1,39 @@
+<svg viewBox="0 0 540 260" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:540px; height:auto; font-family:'Plus Jakarta Sans', system-ui, sans-serif;">
+  <rect x="2" y="2" width="536" height="256" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <rect x="16" y="12" width="280" height="24" rx="6" fill="#e0f2fe"/>
+  <text x="26" y="28" font-size="11" font-weight="800" fill="#0369a1">✎ 4 WRITER'S PURPOSES &amp; TEXT TYPES</text>
+  <text x="306" y="28" font-size="11" font-weight="700" fill="#475569">Pearson Core Criteria</text>
+
+  <!-- 4 Quadrants -->
+  <!-- Q1: Inform -->
+  <rect x="16" y="46" width="248" height="95" rx="8" fill="#f0f9ff" stroke="#bae6fd" stroke-width="1.5"/>
+  <rect x="24" y="54" width="90" height="20" rx="4" fill="#0284c7"/>
+  <text x="69" y="68" font-size="10" font-weight="800" fill="#ffffff" text-anchor="middle">TO INFORM</text>
+  <text x="24" y="88" font-size="9.5" font-weight="700" fill="#0369a1">Goal: Give neutral facts &amp; details</text>
+  <text x="24" y="104" font-size="9" fill="#334155">Examples: News reports, timetables, guides</text>
+  <text x="24" y="120" font-size="8.5" font-style="italic" fill="#64748b">Clues: Dates, times, stats, third person, no bias</text>
+
+  <!-- Q2: Persuade -->
+  <rect x="276" y="46" width="248" height="95" rx="8" fill="#fdf2f8" stroke="#fbcfe8" stroke-width="1.5"/>
+  <rect x="284" y="54" width="100" height="20" rx="4" fill="#db2777"/>
+  <text x="334" y="68" font-size="10" font-weight="800" fill="#ffffff" text-anchor="middle">TO PERSUADE</text>
+  <text x="284" y="88" font-size="9.5" font-weight="700" fill="#9d174d">Goal: Convince reader to act or agree</text>
+  <text x="284" y="104" font-size="9" fill="#334155">Examples: Adverts, campaign letters, speeches</text>
+  <text x="284" y="120" font-size="8.5" font-style="italic" fill="#64748b">Clues: Emotive language, rhetorical questions, rule of 3</text>
+
+  <!-- Q3: Instruct -->
+  <rect x="16" y="151" width="248" height="95" rx="8" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="1.5"/>
+  <rect x="24" y="159" width="100" height="20" rx="4" fill="#16a34a"/>
+  <text x="74" y="173" font-size="10" font-weight="800" fill="#ffffff" text-anchor="middle">TO INSTRUCT</text>
+  <text x="24" y="193" font-size="9.5" font-weight="700" fill="#166534">Goal: Tell the reader how to do something</text>
+  <text x="24" y="209" font-size="9" fill="#334155">Examples: Operating manuals, directions, recipes</text>
+  <text x="24" y="225" font-size="8.5" font-style="italic" fill="#64748b">Clues: Imperative verbs ('Press', 'Cut'), numbered steps</text>
+
+  <!-- Q4: Advise / Explain -->
+  <rect x="276" y="151" width="248" height="95" rx="8" fill="#fffbeb" stroke="#fde68a" stroke-width="1.5"/>
+  <rect x="284" y="159" width="120" height="20" rx="4" fill="#d97706"/>
+  <text x="344" y="173" font-size="10" font-weight="800" fill="#ffffff" text-anchor="middle">TO ADVISE / EXPLAIN</text>
+  <text x="284" y="193" font-size="9.5" font-weight="700" fill="#92400e">Goal: Offer guidance, recommendations &amp; tips</text>
+  <text x="284" y="209" font-size="9" fill="#334155">Examples: Health leaflets, advice columns, FAQs</text>
+  <text x="284" y="225" font-size="8.5" font-style="italic" fill="#64748b">Clues: Modal verbs ('should', 'ought to'), clear recommendations</text>
+</svg>

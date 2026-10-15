@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Master Functional Skills — Multi-Step Spatial Calculations: Area & Volume Answer Key & Mark Scheme (Level 1 & Level 2)</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 12mm 15mm 12mm 15mm;
+    }
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #0f172a;
+      background: #f0fdf4;
+      margin: 0;
+      padding: 0;
+      font-size: 11pt;
+      line-height: 1.5;
+    }
+    .print-bar {
+      background: #064e3b;
+      color: #f8fafc;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    }
+    .print-bar a {
+      color: #a7f3d0;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .print-bar a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+    .btn-action-print {
+      background: #10b981;
+      color: #ffffff;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s;
+    }
+    .btn-action-print:hover {
+      background: #059669;
+    }
+    .btn-action-sheet {
+      background: #2563eb;
+      color: #ffffff;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-right: 12px;
+    }
+    .btn-action-sheet:hover {
+      background: #1d4ed8;
+    }
+
+    @media print {
+      .print-bar {
+        display: none !important;
+      }
+      body {
+        background: #ffffff !important;
+      }
+      .page-sheet {
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+      }
+      .ans-card {
+        page-break-inside: avoid;
+      }
+    }
+
+    .page-sheet {
+      max-width: 860px;
+      margin: 24px auto;
+      background: #ffffff;
+      padding: 32px 40px;
+      border-radius: 8px;
+      border: 1px solid #bbf7d0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+    .sheet-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 2.5px solid #064e3b;
+      padding-bottom: 16px;
+      margin-bottom: 20px;
+    }
+    .brand-title {
+      font-size: 1.45rem;
+      font-weight: 900;
+      color: #064e3b;
+      letter-spacing: -0.5px;
+    }
+    .brand-title span {
+      color: #10b981;
+    }
+    .brand-subtitle {
+      font-size: 0.88rem;
+      color: #047857;
+      margin-top: 2px;
+      font-weight: 600;
+    }
+    .sheet-meta-badge {
+      background: #ecfdf5;
+      border: 1.5px solid #a7f3d0;
+      color: #065f46;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-align: right;
+    }
+    .sheet-meta-badge .topic-name {
+      font-size: 1.15rem;
+      font-weight: 800;
+      display: block;
+    }
+    .sheet-meta-badge .spec-tag {
+      font-size: 0.78rem;
+      color: #059669;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .scheme-summary-bar {
+      background: #f0fdf4;
+      border: 1px solid #86efac;
+      border-radius: 6px;
+      padding: 12px 18px;
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.95rem;
+      color: #065f46;
+    }
+
+    .tier-divider {
+      background: #f0fdf4;
+      border-left: 4px solid #059669;
+      padding: 6px 12px;
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: #064e3b;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin: 24px 0 16px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .ans-card {
+      border: 1.5px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 18px 20px;
+      margin-bottom: 24px;
+      background: #ffffff;
+    }
+    .ans-card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+    .ans-q-num {
+      font-weight: 800;
+      color: #064e3b;
+      font-size: 1.05rem;
+    }
+    .ans-marks-badge {
+      font-weight: 700;
+      color: #047857;
+      background: #ecfdf5;
+      padding: 3px 10px;
+      border-radius: 4px;
+      border: 1px solid #a7f3d0;
+      font-size: 0.88rem;
+    }
+    .ans-stem-quote {
+      font-size: 0.94rem;
+      color: #475569;
+      background: #f8fafc;
+      border-left: 3px solid #cbd5e1;
+      padding: 8px 12px;
+      margin-bottom: 14px;
+      font-style: italic;
+    }
+
+    .mark-steps-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 14px 16px;
+      margin-bottom: 14px;
+    }
+    .step-title {
+      font-weight: 800;
+      color: #0f172a;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .step-row {
+      margin-bottom: 8px;
+      line-height: 1.6;
+      font-size: 0.98rem;
+      color: #1e293b;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 1px dashed #f1f5f9;
+      padding-bottom: 6px;
+    }
+    .step-row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+    .mark-code {
+      font-weight: 800;
+      color: #2563eb;
+      font-family: monospace;
+      font-size: 0.9rem;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      padding: 1px 6px;
+      border-radius: 4px;
+      white-space: nowrap;
+      margin-left: 12px;
+    }
+
+    .final-award-box {
+      background: #ecfdf5;
+      border: 1.5px solid #10b981;
+      border-radius: 6px;
+      padding: 10px 16px;
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .award-label {
+      font-weight: 800;
+      color: #065f46;
+      font-size: 0.92rem;
+    }
+    .award-val {
+      font-weight: 900;
+      color: #047857;
+      font-size: 1.15rem;
+      font-family: monospace;
+      text-decoration: underline;
+    }
+
+    .pitfall-box {
+      background: #fffbeb;
+      border-left: 4px solid #f59e0b;
+      border-radius: 4px;
+      padding: 10px 14px;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+      color: #92400e;
+      line-height: 1.5;
+    }
+    .pitfall-box strong {
+      color: #b45309;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .alt-method-box {
+      background: #eff6ff;
+      border-left: 4px solid #3b82f6;
+      border-radius: 4px;
+      padding: 8px 12px;
+      margin-bottom: 10px;
+      font-size: 0.88rem;
+      color: #1e40af;
+      line-height: 1.5;
+    }
+
+    .reverse-check-box {
+      background: #fdf4ff;
+      border-left: 4px solid #c084fc;
+      border-radius: 4px;
+      padding: 8px 12px;
+      font-size: 0.88rem;
+      color: #6b21a8;
+      line-height: 1.5;
+    }
+
+    .sheet-footer {
+      border-top: 1px solid #e2e8f0;
+      padding-top: 14px;
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      color: #94a3b8;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="print-bar">
+    <a href="../functional-skills-using-length-area-and-volume-in-calculations.html"><i class="fa-solid fa-arrow-left"></i> Back to Multi-Step Spatial Calculations: Area & Volume Revision Guide</a>
+    <div>
+      <a href="using-length-area-and-volume-in-calculations-workout-answers.html" class="btn-action-answers" style="background:#2563eb;"><i class="fa-solid fa-repeat"></i> Workout Answers</a>
+      <a href="using-length-area-and-volume-in-calculations-worksheet.html" class="btn-action-sheet"><i class="fa-solid fa-file-pen"></i> Open Exam Worksheet</a>
+      <button type="button" class="btn-action-print" onclick="window.print()"><i class="fa-solid fa-print"></i> Print / Save to PDF</button>
+    </div>
+  </div>
+
+  <div class="page-sheet">
+    <div class="sheet-head">
+      <div>
+        <div class="brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
+        <div class="brand-subtitle">Official Tutor Examiner Mark Scheme &amp; Model Solutions</div>
+      </div>
+      <div class="sheet-meta-badge">
+        <span class="topic-name">Multi-Step Spatial Calculations: Area & Volume</span>
+        <span class="spec-tag">Pearson Edexcel: Pearson Edexcel L1 & L2 Mathematics</span>
+      </div>
+    </div>
+
+    <div class="scheme-summary-bar">
+      <div><strong>Total Marks Available:</strong> 18 Marks (Pass Threshold: ~11/18)</div>
+      <div><strong>Examiner Standard:</strong> Full Method (M) and Process (P) marks awarded even if final arithmetic errs.</div>
+    </div>
+
+
+    <div class="tier-divider">
+      <span>Section A: Procedural Fluency Check Solutions</span>
+      <span>Questions 1 & 2 • 4 Marks</span>
+    </div>
+
+    <div class="ans-card">
+      <div class="ans-card-head">
+        <span class="ans-q-num">Question 1 (Converting Linear Measurements Before Area Calculation) Model Solution</span>
+        <span class="ans-marks-badge">[2 Marks Total]</span>
+      </div>
+      <div class="ans-stem-quote">
+        A rectangular clinic corridor measures <strong>15 metres long</strong> by <strong>180 centimetres wide</strong>.<br>Calculate the floor area of the corridor in <strong>square metres (m²)</strong>.
+      </div>
+      <div class="mark-steps-box">
+        <div class="step-title">Step-by-Step Marking Criteria:</div>
+
+        <div class="step-row">
+          <span>1. Convert width from centimetres to metres first: 180 cm ÷ 100 = 1.8 m</span>
+          <span class="mark-code">[M1]</span>
+        </div>
+        <div class="step-row">
+          <span>2. Multiply length by width: 15 m × 1.8 m = 27 m²</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+      </div>
+      <div class="final-award-box">
+        <span class="award-label">Award Final Answer Mark:</span>
+        <span class="award-val">27 m²</span>
+      </div>
+      <div class="pitfall-box">
+        <strong>⚠️ Examiner Trap Alert:</strong>
+        Multiplying 15 × 180 = 2,700 without converting 180 cm to 1.8 m first.
+      </div>
+      <div class="reverse-check-box">
+        <strong>🔄 Reverse Sanity Check:</strong> 27 m² ÷ 15 m = 1.8 m = 180 cm.
+      </div>
+    </div>
+
+    <div class="ans-card">
+      <div class="ans-card-head">
+        <span class="ans-q-num">Question 2 (Level 1 Foundation — 3 Marks) Model Solution</span>
+        <span class="ans-marks-badge">[2 Marks Total]</span>
+      </div>
+      <div class="ans-stem-quote">
+        A rectangular concrete base measures <strong>5.0 m long, 4.0 m wide, and 15 cm deep</strong>. Calculate the volume of concrete required in <strong>cubic metres (m³)</strong>.
+      </div>
+      <div class="mark-steps-box">
+        <div class="step-title">Step-by-Step Marking Criteria:</div>
+
+        <div class="step-row">
+          <span>1. Convert 15 cm to metres: 15 ÷ 100 = 0.15 m.</span>
+          <span class="mark-code">[M1]</span>
+        </div>
+        <div class="step-row">
+          <span>2. Volume = 5.0 × 4.0 × 0.15 = 3.0 m³.</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+      </div>
+      <div class="final-award-box">
+        <span class="award-label">Award Final Answer Mark:</span>
+        <span class="award-val">3.0 m³ (or 3 m³)</span>
+      </div>
+      <div class="pitfall-box">
+        <strong>⚠️ Examiner Trap Alert:</strong>
+        Computing 15 m × 8 m × 6 cm = 720 m³ is 100 times too big!
+      </div>
+      <div class="reverse-check-box">
+        <strong>🔄 Reverse Sanity Check:</strong> 15 cm = 0.15 m; 20 m² × 0.15 m = 3.0 m³.
+      </div>
+    </div>
+
+    <div class="tier-divider">
+      <span>Section B: Workplace & Functional Scenarios Solutions</span>
+      <span>Questions 3 & 4 • 6 Marks</span>
+    </div>
+
+    <div class="ans-card">
+      <div class="ans-card-head">
+        <span class="ans-q-num">Question 3 (Hospital Consultation Room Vinyl Flooring Installation (Level 2 Core)) Model Solution</span>
+        <span class="ans-marks-badge">[3 Marks Total]</span>
+      </div>
+      <div class="ans-stem-quote">
+        A clinical consultation room floor measures <strong>6.0 m long by 4.0 m wide</strong>. Non-slip vinyl tiles are sold in packs:<br>• Each pack covers <strong>2.5 m²</strong> and costs <strong>£28.50</strong>.<br>• The installer adds <strong>10% extra area</strong> for cutting wastage.<br>Calculate the total cost of the packs required to tile the room.
+      </div>
+      <div class="mark-steps-box">
+        <div class="step-title">Step-by-Step Marking Criteria:</div>
+
+        <div class="step-row">
+          <span>1. Calculate floor area: 6.0 m × 4.0 m = 24.0 m².</span>
+          <span class="mark-code">[M1]</span>
+        </div>
+        <div class="step-row">
+          <span>2. Add 10% cutting wastage: 24.0 m² × 1.10 = 26.4 m².</span>
+          <span class="mark-code">[M1]</span>
+        </div>
+        <div class="step-row">
+          <span>3. Divide by 2.5 m² pack coverage and round UP: 26.4 ÷ 2.5 = 10.56 packs → Round UP to 11 whole packs.</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+        <div class="step-row">
+          <span>4. Calculate total cost: 11 packs × £28.50 = £313.50.</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+      </div>
+      <div class="final-award-box">
+        <span class="award-label">Award Final Answer Mark:</span>
+        <span class="award-val">£313.50 (11 packs required)</span>
+      </div>
+      <div class="pitfall-box">
+        <strong>⚠️ Examiner Trap Alert:</strong>
+        Convert cm to m (÷ 100) before multiplying.
+      </div>
+      <div class="reverse-check-box">
+        <strong>🔄 Reverse Sanity Check:</strong> Always round packs UP (10.56 → 11 packs) so you do not leave 1.4 m² of floor bare!
+      </div>
+    </div>
+
+    <div class="ans-card">
+      <div class="ans-card-head">
+        <span class="ans-q-num">Question 4 (Workplace Application — 3 Marks) Model Solution</span>
+        <span class="ans-marks-badge">[3 Marks Total]</span>
+      </div>
+      <div class="ans-stem-quote">
+        A rectangular fish tank measures <strong>80 cm long, 40 cm wide, and 50 cm high</strong>. It is filled with water to <strong>90% of its height</strong>. How many <strong>litres</strong> of water are in the tank? (1,000 cm³ = 1 litre).
+      </div>
+      <div class="mark-steps-box">
+        <div class="step-title">Step-by-Step Marking Criteria:</div>
+
+        <div class="step-row">
+          <span>1. Water height = 90% of 50 cm = 45 cm.</span>
+          <span class="mark-code">[M1]</span>
+        </div>
+        <div class="step-row">
+          <span>2. Water volume = 80 × 40 × 45 = 144,000 cm³.</span>
+          <span class="mark-code">[P1]</span>
+        </div>
+        <div class="step-row">
+          <span>3. Convert to litres: 144,000 ÷ 1,000 = 144 litres.</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+      </div>
+      <div class="final-award-box">
+        <span class="award-label">Award Final Answer Mark:</span>
+        <span class="award-val">144 litres</span>
+      </div>
+      <div class="pitfall-box">
+        <strong>⚠️ Examiner Trap Alert:</strong>
+        Rounding 14.4 bags down to 14 bags leaves the job unfinished.
+      </div>
+      <div class="reverse-check-box">
+        <strong>🔄 Reverse Sanity Check:</strong> Divide cm³ by 1,000 to convert directly into litres.
+      </div>
+    </div>
+
+    <div class="tier-divider">
+      <span>Section C: Pearson Edexcel Problem Solving & Justification Solutions</span>
+      <span>Questions 5 & 6 • 8 Marks</span>
+    </div>
+
+    <div class="ans-card">
+      <div class="ans-card-head">
+        <span class="ans-q-num">Question 5 (Car Park Gravel Resurfacing Depth, Tonnage & Bulk Bag Costing (Level 2 Multi-Step)) Model Solution</span>
+        <span class="ans-marks-badge">[4 Marks Total]</span>
+      </div>
+      <div class="ans-stem-quote">
+        A clinic resurfaces a rectangular overflow car park measuring <strong>15 m long by 8 m wide</strong> with gravel laid to an even depth of <strong>6 cm</strong>.<br>• <strong>1 m³ of gravel weighs 1.6 tonnes</strong>.<br>• Gravel is sold in <strong>0.8-tonne bulk bags</strong> costing <strong>£64.00 per bag</strong>.<br>Calculate the total cost of the bulk bags required.
+      </div>
+      <div class="mark-steps-box">
+        <div class="step-title">Step-by-Step Marking Criteria:</div>
+
+        <div class="step-row">
+          <span>1. Convert 6 cm depth into metres (÷ 100): 6 cm = 0.06 m.</span>
+          <span class="mark-code">[B1]</span>
+        </div>
+        <div class="step-row">
+          <span>2. Calculate volume of gravel in m³: Volume = 15 m × 8 m × 0.06 m = 7.2 m³.</span>
+          <span class="mark-code">[M1]</span>
+        </div>
+        <div class="step-row">
+          <span>3. Multiply volume by 1.6 tonnes per m³: Total weight = 7.2 × 1.6 = 11.52 tonnes.</span>
+          <span class="mark-code">[M1]</span>
+        </div>
+        <div class="step-row">
+          <span>4. Divide by 0.8 tonnes per bag and round UP: 11.52 ÷ 0.8 = 14.4 bags → Round UP to 15 bags.</span>
+          <span class="mark-code">[M1]</span>
+        </div>
+        <div class="step-row">
+          <span>5. Multiply 15 bags by £64.00: 15 × £64.00 = £960.00.</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+      </div>
+      <div class="final-award-box">
+        <span class="award-label">Award Final Answer Mark:</span>
+        <span class="award-val">£960.00 (15 bulk bags required for 11.52 tonnes / 7.2 m³)</span>
+      </div>
+      <div class="pitfall-box">
+        <strong>⚠️ Examiner Trap Alert:</strong>
+        In construction and decorating, even .01 of a pack requires buying the next full pack.
+      </div>
+      <div class="reverse-check-box">
+        <strong>🔄 Reverse Sanity Check:</strong> Converting 6 cm to 0.06 m at Step 1 prevents the fatal error of calculating 15 × 8 × 6 = 720 m³!
+      </div>
+    </div>
+
+    <div class="ans-card">
+      <div class="ans-card-head">
+        <span class="ans-q-num">Question 6 (Level 2 Multi-Step Problem Solving — 4 Marks) Model Solution</span>
+        <span class="ans-marks-badge">[4 Marks Total]</span>
+      </div>
+      <div class="ans-stem-quote">
+        A painter needs to paint a wall measuring <strong>8.5 m long by 2.8 m high</strong> with <strong>2 coats of paint</strong>. One tin of paint covers <strong>12 m²</strong> and costs <strong>£21.50</strong>. Calculate the total cost of the paint tins required.
+      </div>
+      <div class="mark-steps-box">
+        <div class="step-title">Step-by-Step Marking Criteria:</div>
+
+        <div class="step-row">
+          <span>1. Wall area = 8.5 × 2.8 = 23.8 m².</span>
+          <span class="mark-code">[M1]</span>
+        </div>
+        <div class="step-row">
+          <span>2. Area for 2 coats = 23.8 × 2 = 47.6 m².</span>
+          <span class="mark-code">[P1]</span>
+        </div>
+        <div class="step-row">
+          <span>3. Tins needed = 47.6 ÷ 12 = 3.966... → Round UP to 4 tins.</span>
+          <span class="mark-code">[P1]</span>
+        </div>
+        <div class="step-row">
+          <span>4. Total cost = 4 × £21.50 = £86.00.</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+      </div>
+      <div class="final-award-box">
+        <span class="award-label">Award Final Answer Mark:</span>
+        <span class="award-val">£86.00 (4 tins)</span>
+      </div>
+      <div class="pitfall-box">
+        <strong>⚠️ Examiner Trap Alert:</strong>
+        Stating a conclusion without showing the full numerical comparison values.
+      </div>
+      <div class="reverse-check-box">
+        <strong>🔄 Reverse Sanity Check:</strong> Remember to double the wall area for 2 coats before dividing by 12 m²!
+      </div>
+    </div>
+
+
+    <div class="sheet-footer">
+      <div>Master Functional Skills • Pearson Edexcel Official Marking Guide • 100% Original Content</div>
+      <div>Page 1 of 1 • Rev 2026.1</div>
+    </div>
+  </div>
+</body>
+</html>

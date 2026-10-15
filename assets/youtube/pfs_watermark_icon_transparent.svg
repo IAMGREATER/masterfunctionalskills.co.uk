@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="-4 -4 50 54" width="300" height="300">
+  
+  <defs>
+    <linearGradient id="pfsGreen" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00f000" />
+      <stop offset="100%" stop-color="#00a800" />
+    </linearGradient>
+    <linearGradient id="pfsLime" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#4ade80" />
+      <stop offset="100%" stop-color="#22c55e" />
+    </linearGradient>
+    <linearGradient id="ytRed" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#ff0000" />
+      <stop offset="100%" stop-color="#b91c1c" />
+    </linearGradient>
+    <radialGradient id="navyBadgeBg" cx="50%" cy="40%" r="65%">
+      <stop offset="0%" stop-color="#1e2e47" />
+      <stop offset="60%" stop-color="#121f33" />
+      <stop offset="100%" stop-color="#080e18" />
+    </radialGradient>
+    <filter id="pfsShadow" x="-25%" y="-25%" width="150%" height="150%">
+      <feDropShadow dx="0" dy="2.5" stdDeviation="3.5" flood-color="#000000" flood-opacity="0.8" />
+    </filter>
+    <filter id="cardShadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="6" flood-color="#000000" flood-opacity="0.75" />
+    </filter>
+  </defs>
+
+  
+  <g filter="url(#pfsShadow)">
+    <!-- White Checkmark -->
+    <path d="M27.52,24.92l-1.35,1.75c-2.15,2.78-6.14,3.3-8.92,1.15l-8.92-6.88c-1.88-1.45-2.23-4.14-.78-6.01,1.45-1.88,4.14-2.22,6.02-.78l7.17,5.53L33.65,2.91c2.1,2.3 4.5,5.2 5.98,7.09l-12.11,15.71Z" fill="#ffffff" />
+    <!-- Vibrant Green P -->
+    <path d="M27.52,24.92l-1.35,1.75c-2.15,2.78-6.14,3.3-8.92,1.15l-8.92-6.88c-1.88-1.45-2.23-4.14-.78-6.01,1.45-1.88,4.14-2.22,6.02-.78l7.17,5.53L33.65,2.91c-2.85-1.84-6.25-2.91-9.89-2.91H4.28C1.91,0,0,1.91,0,4.28v37.75c0,2.36,1.91,4.28,4.28,4.28,4.71,0,8.85-3.13,10.13-7.67l.59-2.08h8.77c10.09,0,18.28-8.18,18.28-18.28h0c0-3.3-.88-6.39-2.41-9.07l-12.11,15.71Z" fill="url(#pfsGreen)" />
+  </g>
+
+</svg>

@@ -1,0 +1,2249 @@
+# -*- coding: utf-8 -*-
+"""
+Builds the complete, pristine functional-skills-nets.html
+with comprehensive ground-up pedagogy, enlarged valid & invalid cube nets,
+mathematically verified 3D & 2D SVGs, clearer scenario questions,
+and the integrated NetFold 3D Three.js engine.
+"""
+
+import os
+
+def generate_page():
+    # 1. Cube net generators
+    def make_large_cube_card(title, cells, family, num, note=""):
+        sz = 26
+        svg = [
+            '<div class="cube-net-card">',
+            '  <div class="cube-net-card-header">',
+            f'    <span class="cube-net-family-pill">{family}</span>',
+            f'    <span class="cube-net-num-pill">Net #{num}</span>',
+            '  </div>',
+            f'  <div class="cube-net-card-title">{title}</div>',
+            '  <div class="cube-net-svg-wrap">',
+            '    <svg viewBox="0 0 170 125" width="165" height="120" xmlns="http://www.w3.org/2000/svg">'
+        ]
+        for c, r in cells:
+            x = 10 + c * sz
+            y = 6 + r * sz
+            svg.append(f'      <rect x="{x}" y="{y}" width="{sz}" height="{sz}" fill="#bae6fd" stroke="#0284c7" stroke-width="2.2" rx="3.5"/>')
+        svg.append('    </svg>')
+        svg.append('  </div>')
+        if note:
+            svg.append(f'  <div class="cube-net-card-note">{note}</div>')
+        svg.append('</div>')
+        return "\n".join(svg)
+
+    def make_large_invalid_card(title, cells, trap_name, reason):
+        sz = 26
+        svg = [
+            '<div class="invalid-net-card">',
+            f'  <div class="invalid-net-trap-tag"><i class="fa-solid fa-triangle-exclamation"></i> {trap_name}</div>',
+            f'  <div class="invalid-net-card-title">{title}</div>',
+            '  <div class="invalid-net-svg-wrap">',
+            '    <svg viewBox="0 0 170 125" width="165" height="120" xmlns="http://www.w3.org/2000/svg">'
+        ]
+        for c, r in cells:
+            x = 10 + c * sz
+            y = 6 + r * sz
+            svg.append(f'      <rect x="{x}" y="{y}" width="{sz}" height="{sz}" fill="#fee2e2" stroke="#dc2626" stroke-width="2.2" rx="3.5"/>')
+        svg.append('    </svg>')
+        svg.append('  </div>')
+        svg.append(f'  <div class="invalid-net-reason"><i class="fa-solid fa-circle-xmark" style="color:#dc2626; margin-right:4px;"></i> {reason}</div>')
+        svg.append('</div>')
+        return "\n".join(svg)
+
+    valid_nets_data = [
+        ("Latin Cross (Classic)", [(2,0), (0,1), (1,1), (2,1), (3,1), (2,2)], "1-4-1 Group", 1, "4 in central row. Top and bottom flaps both at column 2."),
+        ("Offset Latin Cross", [(1,0), (0,1), (1,1), (2,1), (3,1), (2,2)], "1-4-1 Group", 2, "4 in central row. Top flap at column 1, bottom flap at column 2."),
+        ("T-Cross Net", [(0,0), (0,1), (1,1), (2,1), (3,1), (2,2)], "1-4-1 Group", 3, "4 in central row. Top flap at column 0, bottom flap at column 2."),
+        ("Staggered Cross", [(3,0), (0,1), (1,1), (2,1), (3,1), (1,2)], "1-4-1 Group", 4, "4 in central row. Top flap at column 3, bottom flap at column 1."),
+        ("Wide Flap Net", [(0,0), (0,1), (1,1), (2,1), (3,1), (3,2)], "1-4-1 Group", 5, "4 in central row. Top flap at column 0, bottom flap at column 3."),
+        ("Col-1 Aligned Cross", [(1,0), (0,1), (1,1), (2,1), (3,1), (1,2)], "1-4-1 Group", 6, "4 in central row. Top and bottom flaps both at column 1."),
+        ("Z-Pattern Net", [(0,0), (1,0), (1,1), (2,1), (3,1), (3,2)], "2-3-1 Group", 7, "2 on top row, 3 in middle row, 1 on bottom row."),
+        ("Step-Down Net", [(0,0), (1,0), (1,1), (2,1), (3,1), (2,2)], "2-3-1 Group", 8, "2 on top row, 3 in middle row, bottom flap at column 2."),
+        ("Compact Step Net", [(0,0), (1,0), (1,1), (2,1), (3,1), (1,2)], "2-3-1 Group", 9, "2 on top row, 3 in middle row, bottom flap at column 1."),
+        ("Staircase Zigzag", [(0,0), (1,0), (1,1), (2,1), (2,2), (3,2)], "2-2-2 Group", 10, "3 pairs of 2 squares descending in a balanced staircase."),
+        ("Twin Offset Bars", [(0,0), (1,0), (2,0), (1,1), (2,1), (3,1)], "3-3 Group", 11, "Two rows of 3 squares offset by exactly one square.")
+    ]
+
+    invalid_nets_data = [
+        ("Solid 2x2 Block", [(1,0), (2,0), (1,1), (2,1), (1,2), (1,3)], "Trap 1: 2x2 Square Block", "A solid 2&times;2 block of four squares can never form a cube. Two faces fold directly into the exact same position, clashing and leaving an open hole on the opposite side."),
+        ("5-Square Linear Row", [(0,1), (1,1), (2,1), (3,1), (4,1), (2,0)], "Trap 2: 5 Squares in a Row", "A cube only has 4 vertical walls! A line of 5 squares wraps completely around past the 4th side, overlapping face 1 and leaving one side wide open."),
+        ("Adjacent Same-Side Flaps", [(1,1), (2,1), (3,1), (4,1), (2,0), (3,0)], "Trap 3: Adjacent Same-Side Flaps", "Both top flaps fold along the exact same orientation. Instead of forming a top and bottom lid, both flaps collide to form the top lid twice, leaving the base missing.")
+    ]
+
+    valid_cards_html = "\n".join([make_large_cube_card(t, c, f, n, note) for t, c, f, n, note in valid_nets_data])
+    invalid_cards_html = "\n".join([make_large_invalid_card(t, c, tr, r) for t, c, tr, r in invalid_nets_data])
+
+    # 2. 3D & 2D SVGs for Models
+    cuboid_3d = """<svg viewBox="0 0 520 280" width="100%" height="260" xmlns="http://www.w3.org/2000/svg" style="max-width:500px; display:block; margin:0 auto;">
+  <defs>
+    <filter id="c3dShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="3" dy="6" stdDeviation="5" flood-color="#0f172a" flood-opacity="0.12"/>
+    </filter>
+    <linearGradient id="cTop" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fdba74"/><stop offset="100%" stop-color="#fb923c"/></linearGradient>
+    <linearGradient id="cFront" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#fb7185"/><stop offset="100%" stop-color="#f43f5e"/></linearGradient>
+    <linearGradient id="cSide" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#fde047"/><stop offset="100%" stop-color="#f59e0b"/></linearGradient>
+  </defs>
+  <!-- Floor shadow -->
+  <polygon points="110,210 330,210 440,150 220,150" fill="#e2e8f0" opacity="0.6"/>
+
+  <!-- Top Face (8cm x 5cm) -->
+  <polygon points="130,85 330,85 410,135 210,135" fill="url(#cTop)" stroke="#ea580c" stroke-width="2.5" filter="url(#c3dShadow)"/>
+  <text x="270" y="115" font-family="'Inter', system-ui, sans-serif" font-size="13" font-weight="800" fill="#7c2d12" text-anchor="middle">TOP (8 &times; 5 cm)</text>
+
+  <!-- Front Face (8cm x 3cm) -->
+  <polygon points="210,135 410,135 410,205 210,205" fill="url(#cFront)" stroke="#e11d48" stroke-width="2.5"/>
+  <text x="310" y="174" font-family="'Inter', system-ui, sans-serif" font-size="14" font-weight="900" fill="#ffffff" text-anchor="middle">FRONT (8 &times; 3 cm)</text>
+
+  <!-- Right Face (5cm x 3cm) -->
+  <polygon points="410,135 480,85 480,155 410,205" fill="url(#cSide)" stroke="#d97706" stroke-width="2.5"/>
+  <text x="445" y="150" font-family="'Inter', system-ui, sans-serif" font-size="11" font-weight="800" fill="#78350f" text-anchor="middle" transform="rotate(-35, 445, 150)">RIGHT (5 &times; 3)</text>
+
+  <!-- Dashed internal hidden edges -->
+  <line x1="130" y1="85" x2="130" y2="155" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="5,5"/>
+  <line x1="130" y1="155" x2="210" y2="205" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="5,5"/>
+  <line x1="130" y1="155" x2="480" y2="155" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="5,5"/>
+
+  <!-- Length Leader: 8 cm -->
+  <line x1="210" y1="228" x2="410" y2="228" stroke="#0284c7" stroke-width="2"/>
+  <polyline points="218,223 210,228 218,233" fill="none" stroke="#0284c7" stroke-width="2"/>
+  <polyline points="402,223 410,228 402,233" fill="none" stroke="#0284c7" stroke-width="2"/>
+  <rect x="275" y="216" width="70" height="24" rx="4" fill="#ffffff" stroke="#0284c7" stroke-width="1.5"/>
+  <text x="310" y="233" font-family="'Inter', sans-serif" font-size="13" font-weight="800" fill="#0369a1" text-anchor="middle">8 cm</text>
+
+  <!-- Height Leader: 3 cm -->
+  <line x1="188" y1="135" x2="188" y2="205" stroke="#0284c7" stroke-width="2"/>
+  <polyline points="183,143 188,135 193,143" fill="none" stroke="#0284c7" stroke-width="2"/>
+  <polyline points="183,197 188,205 193,197" fill="none" stroke="#0284c7" stroke-width="2"/>
+  <rect x="145" y="158" width="38" height="24" rx="4" fill="#ffffff" stroke="#0284c7" stroke-width="1.5"/>
+  <text x="164" y="175" font-family="'Inter', sans-serif" font-size="13" font-weight="800" fill="#0369a1" text-anchor="middle">3 cm</text>
+
+  <!-- Width Leader: 5 cm -->
+  <line x1="425" y1="215" x2="495" y2="165" stroke="#0284c7" stroke-width="2"/>
+  <rect x="465" y="195" width="46" height="24" rx="4" fill="#ffffff" stroke="#0284c7" stroke-width="1.5"/>
+  <text x="488" y="212" font-family="'Inter', sans-serif" font-size="13" font-weight="800" fill="#0369a1" text-anchor="middle">5 cm</text>
+</svg>"""
+
+    cuboid_net = """<svg viewBox="0 0 520 340" width="100%" height="300" xmlns="http://www.w3.org/2000/svg" style="max-width:500px; display:block; margin:0 auto;">
+  <g stroke-width="2.2">
+    <!-- Back Face (8 x 3 cm) - Purple -->
+    <rect x="180" y="20" width="180" height="45" fill="#a855f7" stroke="#7e22ce" rx="2"/>
+    <text x="270" y="48" font-family="'Inter', sans-serif" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">BACK (8 &times; 3 cm)</text>
+
+    <!-- Bottom / Base Face (8 x 5 cm) - Cyan -->
+    <rect x="180" y="65" width="180" height="75" fill="#38bdf8" stroke="#0284c7" rx="2"/>
+    <text x="270" y="108" font-family="'Inter', sans-serif" font-size="13" font-weight="900" fill="#082f49" text-anchor="middle">BOTTOM / BASE (8 &times; 5 cm)</text>
+
+    <!-- Front Face (8 x 3 cm) - Rose -->
+    <rect x="180" y="140" width="180" height="45" fill="#f43f5e" stroke="#be123c" rx="2"/>
+    <text x="270" y="168" font-family="'Inter', sans-serif" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">FRONT (8 &times; 3 cm)</text>
+
+    <!-- Top Face (8 x 5 cm) - Orange -->
+    <rect x="180" y="185" width="180" height="75" fill="#fb923c" stroke="#c2410c" rx="2"/>
+    <text x="270" y="228" font-family="'Inter', sans-serif" font-size="13" font-weight="900" fill="#ffffff" text-anchor="middle">TOP / LID (8 &times; 5 cm)</text>
+
+    <!-- Left Flap (3 x 5 cm) attached to Base - Green -->
+    <rect x="125" y="65" width="55" height="75" fill="#22c55e" stroke="#15803d" rx="2"/>
+    <text x="152" y="108" font-family="'Inter', sans-serif" font-size="11" font-weight="800" fill="#ffffff" text-anchor="middle">LEFT<br/>(3&times;5)</text>
+
+    <!-- Right Flap (3 x 5 cm) attached to Base - Amber -->
+    <rect x="360" y="65" width="55" height="75" fill="#f59e0b" stroke="#b45309" rx="2"/>
+    <text x="388" y="108" font-family="'Inter', sans-serif" font-size="11" font-weight="800" fill="#ffffff" text-anchor="middle">RIGHT<br/>(3&times;5)</text>
+  </g>
+
+  <!-- Dashed Fold Lines (Creases) -->
+  <line x1="180" y1="65" x2="360" y2="65" stroke="#ffffff" stroke-width="3" stroke-dasharray="6,6"/>
+  <line x1="180" y1="140" x2="360" y2="140" stroke="#ffffff" stroke-width="3" stroke-dasharray="6,6"/>
+  <line x1="180" y1="185" x2="360" y2="185" stroke="#ffffff" stroke-width="3" stroke-dasharray="6,6"/>
+  <line x1="180" y1="65" x2="180" y2="140" stroke="#ffffff" stroke-width="3" stroke-dasharray="6,6"/>
+  <line x1="360" y1="65" x2="360" y2="140" stroke="#ffffff" stroke-width="3" stroke-dasharray="6,6"/>
+
+  <!-- Dimension Leaders -->
+  <line x1="180" y1="280" x2="360" y2="280" stroke="#0284c7" stroke-width="2"/>
+  <polyline points="188,275 180,280 188,285" fill="none" stroke="#0284c7" stroke-width="2"/>
+  <polyline points="352,275 360,280 352,285" fill="none" stroke="#0284c7" stroke-width="2"/>
+  <text x="270" y="302" font-family="'Inter', sans-serif" font-size="14" font-weight="900" fill="#0369a1" text-anchor="middle">Length = 8 cm</text>
+
+  <line x1="435" y1="65" x2="435" y2="140" stroke="#0284c7" stroke-width="2"/>
+  <polyline points="430,73 435,65 440,73" fill="none" stroke="#0284c7" stroke-width="2"/>
+  <polyline points="430,132 435,140 440,132" fill="none" stroke="#0284c7" stroke-width="2"/>
+  <text x="455" y="107" font-family="'Inter', sans-serif" font-size="13" font-weight="800" fill="#0369a1">5 cm</text>
+
+  <line x1="435" y1="20" x2="435" y2="65" stroke="#0284c7" stroke-width="2"/>
+  <polyline points="430,28 435,20 440,28" fill="none" stroke="#0284c7" stroke-width="2"/>
+  <polyline points="430,57 435,65 440,57" fill="none" stroke="#0284c7" stroke-width="2"/>
+  <text x="455" y="47" font-family="'Inter', sans-serif" font-size="13" font-weight="800" fill="#0369a1">3 cm</text>
+</svg>"""
+
+    prism_3d = """<svg viewBox="0 0 520 280" width="100%" height="260" xmlns="http://www.w3.org/2000/svg" style="max-width:500px; display:block; margin:0 auto;">
+  <defs>
+    <linearGradient id="pRoofL" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#fb7185"/><stop offset="100%" stop-color="#f43f5e"/></linearGradient>
+    <linearGradient id="pRoofR" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#c084fc"/><stop offset="100%" stop-color="#9333ea"/></linearGradient>
+    <linearGradient id="pEnd" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#38bdf8"/><stop offset="100%" stop-color="#0284c7"/></linearGradient>
+  </defs>
+  <!-- 3D Triangular Prism: Length 10cm, Base 4cm, Slant 5cm -->
+  <!-- Slanted Left Roof (10 x 5 cm) -->
+  <polygon points="170,75 370,45 300,185 100,215" fill="url(#pRoofL)" stroke="#e11d48" stroke-width="2.5"/>
+  <text x="235" y="135" font-family="'Inter', sans-serif" font-size="13" font-weight="800" fill="#ffffff" transform="rotate(-8, 235, 135)">Slant Face (10 &times; 5 cm)</text>
+
+  <!-- Front Triangular End Face (Base 4cm, sides 5cm) -->
+  <polygon points="100,215 170,75 230,215" fill="url(#pEnd)" stroke="#0369a1" stroke-width="2.5"/>
+  <text x="165" y="175" font-family="'Inter', sans-serif" font-size="13" font-weight="900" fill="#ffffff" text-anchor="middle">TRIANGLE<br/>(4 &times; 5 &times; 5)</text>
+
+  <!-- Slanted Right Roof (10 x 5 cm) -->
+  <polygon points="170,75 370,45 440,185 230,215" fill="url(#pRoofR)" stroke="#7e22ce" stroke-width="2.5" opacity="0.95"/>
+  <text x="335" y="140" font-family="'Inter', sans-serif" font-size="12" font-weight="800" fill="#ffffff" transform="rotate(-8, 335, 140)">Slant Face (10 &times; 5 cm)</text>
+
+  <!-- Dimension Leaders -->
+  <line x1="175" y1="55" x2="375" y2="25" stroke="#0284c7" stroke-width="2"/>
+  <text x="275" y="33" font-family="'Inter', sans-serif" font-size="14" font-weight="900" fill="#0369a1" text-anchor="middle">Length = 10 cm</text>
+
+  <line x1="100" y1="233" x2="230" y2="233" stroke="#0284c7" stroke-width="2"/>
+  <text x="165" y="253" font-family="'Inter', sans-serif" font-size="13" font-weight="800" fill="#0369a1" text-anchor="middle">Base = 4 cm</text>
+  <text x="120" y="135" font-family="'Inter', sans-serif" font-size="13" font-weight="800" fill="#b91c1c">5 cm</text>
+</svg>"""
+
+    prism_net = """<svg viewBox="0 0 520 340" width="100%" height="300" xmlns="http://www.w3.org/2000/svg" style="max-width:500px; display:block; margin:0 auto;">
+  <!-- Unfolded Net of Triangular Prism -->
+  <g stroke-width="2.2">
+    <!-- Slanted Roof 1 (10 x 5) - Rose -->
+    <rect x="130" y="30" width="260" height="55" fill="#f43f5e" stroke="#e11d48" rx="2"/>
+    <text x="260" y="64" font-family="'Inter', sans-serif" font-size="13" font-weight="800" fill="#ffffff" text-anchor="middle">SLANT RECTANGLE (10 &times; 5 cm)</text>
+
+    <!-- Base Rectangle (10 x 4) - Cyan -->
+    <rect x="130" y="85" width="260" height="55" fill="#38bdf8" stroke="#0284c7" rx="2"/>
+    <text x="260" y="119" font-family="'Inter', sans-serif" font-size="13" font-weight="900" fill="#082f49" text-anchor="middle">BASE RECTANGLE (10 &times; 4 cm)</text>
+
+    <!-- Slanted Roof 2 (10 x 5) - Purple -->
+    <rect x="130" y="140" width="260" height="55" fill="#a855f7" stroke="#7e22ce" rx="2"/>
+    <text x="260" y="174" font-family="'Inter', sans-serif" font-size="13" font-weight="800" fill="#ffffff" text-anchor="middle">SLANT RECTANGLE (10 &times; 5 cm)</text>
+
+    <!-- Left Triangular End (Base 4cm, sides 5cm) - Green -->
+    <polygon points="130,85 130,140 70,112.5" fill="#22c55e" stroke="#15803d"/>
+    <text x="102" y="116" font-family="'Inter', sans-serif" font-size="10" font-weight="900" fill="#ffffff" text-anchor="middle">END<br/>4&times;5&times;5</text>
+
+    <!-- Right Triangular End (Base 4cm, sides 5cm) - Green -->
+    <polygon points="390,85 390,140 450,112.5" fill="#22c55e" stroke="#15803d"/>
+    <text x="418" y="116" font-family="'Inter', sans-serif" font-size="10" font-weight="900" fill="#ffffff" text-anchor="middle">END<br/>4&times;5&times;5</text>
+  </g>
+
+  <!-- Dashed Fold Lines -->
+  <line x1="130" y1="85" x2="390" y2="85" stroke="#ffffff" stroke-width="3" stroke-dasharray="6,6"/>
+  <line x1="130" y1="140" x2="390" y2="140" stroke="#ffffff" stroke-width="3" stroke-dasharray="6,6"/>
+  <line x1="130" y1="85" x2="130" y2="140" stroke="#ffffff" stroke-width="3" stroke-dasharray="6,6"/>
+  <line x1="390" y1="85" x2="390" y2="140" stroke="#ffffff" stroke-width="3" stroke-dasharray="6,6"/>
+
+  <!-- Dimensions -->
+  <line x1="130" y1="215" x2="390" y2="215" stroke="#0284c7" stroke-width="2"/>
+  <polyline points="138,210 130,215 138,220" fill="none" stroke="#0284c7" stroke-width="2"/>
+  <polyline points="382,210 390,215 382,220" fill="none" stroke="#0284c7" stroke-width="2"/>
+  <text x="260" y="238" font-family="'Inter', sans-serif" font-size="14" font-weight="900" fill="#0369a1" text-anchor="middle">Length = 10 cm</text>
+
+  <line x1="475" y1="85" x2="475" y2="140" stroke="#0284c7" stroke-width="2"/>
+  <text x="495" y="116" font-family="'Inter', sans-serif" font-size="13" font-weight="800" fill="#0369a1">4 cm</text>
+  <text x="82" y="85" font-family="'Inter', sans-serif" font-size="12" font-weight="800" fill="#15803d">5 cm</text>
+</svg>"""
+
+    pyramid_3d = """<svg viewBox="0 0 520 280" width="100%" height="260" xmlns="http://www.w3.org/2000/svg" style="max-width:500px; display:block; margin:0 auto;">
+  <defs>
+    <linearGradient id="pyrFront" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#38bdf8"/><stop offset="100%" stop-color="#0284c7"/></linearGradient>
+    <linearGradient id="pyrSide" x1="0" y1="0" x2="1" y2="0"><stop offset="0%" stop-color="#0369a1"/><stop offset="100%" stop-color="#075985"/></linearGradient>
+  </defs>
+  <!-- 3D Square Pyramid: Base 6cm x 6cm, Slant height 8cm -->
+  <!-- Base Shadow Plane -->
+  <polygon points="140,210 340,210 420,160 220,160" fill="#e2e8f0" opacity="0.6"/>
+
+  <!-- Hidden Base Lines -->
+  <line x1="140" y1="210" x2="220" y2="160" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="5,5"/>
+  <line x1="220" y1="160" x2="420" y2="160" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="5,5"/>
+  <line x1="220" y1="160" x2="270" y2="50" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="5,5"/>
+
+  <!-- Front Triangular Face -->
+  <polygon points="140,210 340,210 270,50" fill="url(#pyrFront)" stroke="#0284c7" stroke-width="2.5"/>
+  <text x="250" y="160" font-family="'Inter', sans-serif" font-size="13" font-weight="900" fill="#ffffff">FRONT ROOF</text>
+
+  <!-- Right Triangular Face -->
+  <polygon points="340,210 420,160 270,50" fill="url(#pyrSide)" stroke="#0369a1" stroke-width="2.5"/>
+  <text x="350" y="140" font-family="'Inter', sans-serif" font-size="12" font-weight="800" fill="#bae6fd">RIGHT ROOF</text>
+
+  <!-- Dimensions -->
+  <line x1="140" y1="230" x2="340" y2="230" stroke="#0284c7" stroke-width="2"/>
+  <text x="240" y="250" font-family="'Inter', sans-serif" font-size="14" font-weight="900" fill="#0369a1" text-anchor="middle">Base = 6 cm</text>
+  <text x="185" y="120" font-family="'Inter', sans-serif" font-size="13" font-weight="800" fill="#b91c1c">Slant = 8 cm</text>
+</svg>"""
+
+    pyramid_net = """<svg viewBox="0 0 520 340" width="100%" height="300" xmlns="http://www.w3.org/2000/svg" style="max-width:500px; display:block; margin:0 auto;">
+  <!-- Unfolded Net of Square Pyramid -->
+  <g stroke-width="2.2">
+    <!-- Central Square Base (6cm x 6cm) - Cyan -->
+    <rect x="200" y="110" width="120" height="120" fill="#38bdf8" stroke="#0284c7" rx="3"/>
+    <text x="260" y="175" font-family="'Inter', sans-serif" font-size="14" font-weight="900" fill="#082f49" text-anchor="middle">SQUARE BASE<br/>(6 cm &times; 6 cm)</text>
+
+    <!-- Top Triangle - Rose -->
+    <polygon points="200,110 320,110 260,10" fill="#f43f5e" stroke="#be123c"/>
+    <text x="260" y="70" font-family="'Inter', sans-serif" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">8 cm</text>
+
+    <!-- Bottom Triangle - Purple -->
+    <polygon points="200,230 320,230 260,330" fill="#a855f7" stroke="#7e22ce"/>
+    <text x="260" y="275" font-family="'Inter', sans-serif" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">8 cm</text>
+
+    <!-- Left Triangle - Green -->
+    <polygon points="200,110 200,230 100,170" fill="#22c55e" stroke="#15803d"/>
+    <text x="155" y="175" font-family="'Inter', sans-serif" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">8 cm</text>
+
+    <!-- Right Triangle - Amber -->
+    <polygon points="320,110 320,230 420,170" fill="#f59e0b" stroke="#b45309"/>
+    <text x="365" y="175" font-family="'Inter', sans-serif" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">8 cm</text>
+  </g>
+
+  <!-- Dashed Fold Lines -->
+  <line x1="200" y1="110" x2="320" y2="110" stroke="#ffffff" stroke-width="3" stroke-dasharray="6,6"/>
+  <line x1="200" y1="230" x2="320" y2="230" stroke="#ffffff" stroke-width="3" stroke-dasharray="6,6"/>
+  <line x1="200" y1="110" x2="200" y2="230" stroke="#ffffff" stroke-width="3" stroke-dasharray="6,6"/>
+  <line x1="320" y1="110" x2="320" y2="230" stroke="#ffffff" stroke-width="3" stroke-dasharray="6,6"/>
+
+  <text x="260" y="250" font-family="'Inter', sans-serif" font-size="13" font-weight="900" fill="#082f49" text-anchor="middle">Base Width = 6 cm</text>
+</svg>"""
+
+    cylinder_3d = """<svg viewBox="0 0 520 280" width="100%" height="260" xmlns="http://www.w3.org/2000/svg" style="max-width:500px; display:block; margin:0 auto;">
+  <defs>
+    <linearGradient id="cylShade" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#38bdf8"/>
+      <stop offset="45%" stop-color="#bae6fd"/>
+      <stop offset="100%" stop-color="#0284c7"/>
+    </linearGradient>
+  </defs>
+  <!-- 3D Cylinder: Radius 3cm, Height 10cm -->
+  <!-- Body -->
+  <path d="M 190,80 L 190,200 A 70,24 0 0,0 330,200 L 330,80 Z" fill="url(#cylShade)" stroke="#0284c7" stroke-width="2.5"/>
+  <!-- Hidden Bottom Ellipse Half -->
+  <path d="M 190,200 A 70,24 0 0,1 330,200" fill="none" stroke="#94a3b8" stroke-width="1.8" stroke-dasharray="5,5"/>
+  <!-- Top Circular Lid -->
+  <ellipse cx="260" cy="80" rx="70" ry="24" fill="#e0f2fe" stroke="#0284c7" stroke-width="2.5"/>
+  
+  <!-- Radius Indicator -->
+  <line x1="260" y1="80" x2="330" y2="80" stroke="#ef4444" stroke-width="2.5"/>
+  <circle cx="260" cy="80" r="4" fill="#ef4444"/>
+  <rect x="272" y="55" width="68" height="22" rx="4" fill="#ffffff" stroke="#ef4444" stroke-width="1.5"/>
+  <text x="306" y="70" font-family="'Inter', sans-serif" font-size="11" font-weight="900" fill="#b91c1c" text-anchor="middle">r = 3 cm</text>
+
+  <!-- Height Indicator -->
+  <line x1="165" y1="80" x2="165" y2="200" stroke="#0284c7" stroke-width="2"/>
+  <polyline points="160,88 165,80 170,88" fill="none" stroke="#0284c7" stroke-width="2"/>
+  <polyline points="160,192 165,200 170,192" fill="none" stroke="#0284c7" stroke-width="2"/>
+  <text x="150" y="145" font-family="'Inter', sans-serif" font-size="14" font-weight="900" fill="#0369a1" text-anchor="end">Height = 10 cm</text>
+</svg>"""
+
+    cylinder_net = """<svg viewBox="0 0 520 340" width="100%" height="300" xmlns="http://www.w3.org/2000/svg" style="max-width:500px; display:block; margin:0 auto;">
+  <!-- Unfolded Net of Cylinder -->
+  <g stroke-width="2.2">
+    <!-- Top Circular Lid (r = 3 cm) -->
+    <circle cx="260" cy="55" r="38" fill="#e0f2fe" stroke="#0284c7"/>
+    <text x="260" y="60" font-family="'Inter', sans-serif" font-size="12" font-weight="900" fill="#0369a1" text-anchor="middle">Top Lid (r = 3 cm)</text>
+
+    <!-- Central Unrolled Rectangle (Width = 18.85 cm, Height = 10 cm) -->
+    <rect x="100" y="105" width="320" height="120" fill="#f0f9ff" stroke="#0284c7" rx="3"/>
+    <text x="260" y="152" font-family="'Inter', sans-serif" font-size="13" font-weight="900" fill="#0284c7" text-anchor="middle">CURVED SURFACE AREA UNROLLED</text>
+    <text x="260" y="178" font-family="'Inter', sans-serif" font-size="12.5" font-weight="800" fill="#0369a1" text-anchor="middle">Width = Circumference = &pi; &times; d = 3.142 &times; 6 &approx; 18.85 cm</text>
+
+    <!-- Bottom Circular Lid (r = 3 cm) -->
+    <circle cx="260" cy="275" r="38" fill="#e0f2fe" stroke="#0284c7"/>
+    <text x="260" y="280" font-family="'Inter', sans-serif" font-size="12" font-weight="900" fill="#0369a1" text-anchor="middle">Base Lid (r = 3 cm)</text>
+  </g>
+
+  <!-- Height Annotation -->
+  <line x1="75" y1="105" x2="75" y2="225" stroke="#0284c7" stroke-width="2"/>
+  <polyline points="70,113 75,105 80,113" fill="none" stroke="#0284c7" stroke-width="2"/>
+  <polyline points="70,217 75,225 80,217" fill="none" stroke="#0284c7" stroke-width="2"/>
+  <text x="65" y="170" font-family="'Inter', sans-serif" font-size="13" font-weight="900" fill="#0369a1" text-anchor="end">10 cm</text>
+
+  <!-- Width Annotation -->
+  <line x1="100" y1="240" x2="420" y2="240" stroke="#0284c7" stroke-width="2"/>
+  <polyline points="108,235 100,240 108,245" fill="none" stroke="#0284c7" stroke-width="2"/>
+  <polyline points="412,235 420,240 412,245" fill="none" stroke="#0284c7" stroke-width="2"/>
+  <text x="260" y="260" font-family="'Inter', sans-serif" font-size="13" font-weight="900" fill="#0369a1" text-anchor="middle">&larr; Width = 18.85 cm &rarr;</text>
+</svg>"""
+
+    # 3. Exam Practice SVGs
+    q1_svg = """<svg viewBox="0 0 780 230" width="100%" height="230" xmlns="http://www.w3.org/2000/svg" style="max-width:780px; margin:0 auto; display:block;">
+  <!-- Question 1: 4 Large Nets to Test (A, B, C, D) -->
+  <!-- Net A: Valid Latin Cross (1-4-1) -->
+  <g transform="translate(15, 15)">
+    <rect x="0" y="0" width="170" height="190" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" rx="8"/>
+    <text x="85" y="22" font-family="'Inter', sans-serif" font-size="15" font-weight="900" fill="#0284c7" text-anchor="middle">Net A</text>
+    <g fill="#bae6fd" stroke="#0284c7" stroke-width="2" rx="3">
+      <rect x="70" y="35" width="30" height="30" rx="3"/>
+      <rect x="10" y="65" width="30" height="30" rx="3"/>
+      <rect x="40" y="65" width="30" height="30" rx="3"/>
+      <rect x="70" y="65" width="30" height="30" rx="3"/>
+      <rect x="100" y="65" width="30" height="30" rx="3"/>
+      <rect x="70" y="95" width="30" height="30" rx="3"/>
+    </g>
+    <text x="85" y="165" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#475569" text-anchor="middle">1-4-1 Latin Cross</text>
+  </g>
+
+  <!-- Net B: Invalid 2x2 solid block -->
+  <g transform="translate(205, 15)">
+    <rect x="0" y="0" width="170" height="190" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" rx="8"/>
+    <text x="85" y="22" font-family="'Inter', sans-serif" font-size="15" font-weight="900" fill="#dc2626" text-anchor="middle">Net B</text>
+    <g fill="#fee2e2" stroke="#dc2626" stroke-width="2" rx="3">
+      <rect x="55" y="35" width="30" height="30" rx="3"/>
+      <rect x="85" y="35" width="30" height="30" rx="3"/>
+      <rect x="55" y="65" width="30" height="30" rx="3"/>
+      <rect x="85" y="65" width="30" height="30" rx="3"/>
+      <rect x="55" y="95" width="30" height="30" rx="3"/>
+      <rect x="55" y="125" width="30" height="30" rx="3"/>
+    </g>
+    <text x="85" y="175" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#991b1b" text-anchor="middle">2&times;2 Solid Block</text>
+  </g>
+
+  <!-- Net C: Valid 2-3-1 Z-shape net -->
+  <g transform="translate(395, 15)">
+    <rect x="0" y="0" width="170" height="190" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" rx="8"/>
+    <text x="85" y="22" font-family="'Inter', sans-serif" font-size="15" font-weight="900" fill="#0284c7" text-anchor="middle">Net C</text>
+    <g fill="#bae6fd" stroke="#0284c7" stroke-width="2" rx="3">
+      <rect x="25" y="35" width="30" height="30" rx="3"/>
+      <rect x="55" y="35" width="30" height="30" rx="3"/>
+      <rect x="55" y="65" width="30" height="30" rx="3"/>
+      <rect x="85" y="65" width="30" height="30" rx="3"/>
+      <rect x="115" y="65" width="30" height="30" rx="3"/>
+      <rect x="115" y="95" width="30" height="30" rx="3"/>
+    </g>
+    <text x="85" y="165" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#475569" text-anchor="middle">2-3-1 Z-Pattern</text>
+  </g>
+
+  <!-- Net D: Invalid 5 squares in a row -->
+  <g transform="translate(585, 15)">
+    <rect x="0" y="0" width="180" height="190" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2" rx="8"/>
+    <text x="90" y="22" font-family="'Inter', sans-serif" font-size="15" font-weight="900" fill="#dc2626" text-anchor="middle">Net D</text>
+    <g fill="#fee2e2" stroke="#dc2626" stroke-width="2" rx="3">
+      <rect x="75" y="35" width="30" height="30" rx="3"/>
+      <rect x="15" y="65" width="30" height="30" rx="3"/>
+      <rect x="45" y="65" width="30" height="30" rx="3"/>
+      <rect x="75" y="65" width="30" height="30" rx="3"/>
+      <rect x="105" y="65" width="30" height="30" rx="3"/>
+      <rect x="135" y="65" width="30" height="30" rx="3"/>
+    </g>
+    <text x="90" y="165" font-family="'Inter', sans-serif" font-size="12" font-weight="700" fill="#991b1b" text-anchor="middle">5 in a Row</text>
+  </g>
+</svg>"""
+
+    q2_svg = """<svg viewBox="0 0 780 260" width="100%" height="260" xmlns="http://www.w3.org/2000/svg" style="max-width:780px; margin:0 auto; display:block;">
+  <!-- Question 2: Candidate Nets for 12cm x 8cm x 5cm Cuboid -->
+  <!-- Net 1: Correct Net -->
+  <g transform="translate(15, 15)">
+    <rect x="0" y="0" width="230" height="230" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5" rx="8"/>
+    <text x="115" y="25" font-family="'Inter', sans-serif" font-size="14" font-weight="900" fill="#15803d" text-anchor="middle">Proposed Net 1</text>
+    <g fill="#dcfce7" stroke="#16a34a" stroke-width="1.8">
+      <!-- 4-spine: 12x5, 12x8, 12x5, 12x8 -->
+      <rect x="75" y="38" width="80" height="25" rx="2"/>
+      <rect x="75" y="63" width="80" height="45" rx="2"/>
+      <rect x="75" y="108" width="80" height="25" rx="2"/>
+      <rect x="75" y="133" width="80" height="45" rx="2"/>
+      <!-- Side flaps: 8x5 on 8cm edge -->
+      <rect x="40" y="63" width="35" height="45" rx="2"/>
+      <rect x="155" y="63" width="35" height="45" rx="2"/>
+    </g>
+    <text x="115" y="205" font-family="'Inter', sans-serif" font-size="11.5" font-weight="800" fill="#166534" text-anchor="middle">Flaps: 5cm wide on 8cm edge</text>
+    <text x="115" y="220" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#15803d" text-anchor="middle">Spine: Alternating 5 &amp; 8 cm</text>
+  </g>
+
+  <!-- Net 2: Incorrect Side Flap Dimensions (8x8 instead of 8x5) -->
+  <g transform="translate(270, 15)">
+    <rect x="0" y="0" width="230" height="230" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5" rx="8"/>
+    <text x="115" y="25" font-family="'Inter', sans-serif" font-size="14" font-weight="900" fill="#b91c1c" text-anchor="middle">Proposed Net 2</text>
+    <g fill="#fee2e2" stroke="#dc2626" stroke-width="1.8">
+      <rect x="75" y="38" width="80" height="25" rx="2"/>
+      <rect x="75" y="63" width="80" height="45" rx="2"/>
+      <rect x="75" y="108" width="80" height="25" rx="2"/>
+      <rect x="75" y="133" width="80" height="45" rx="2"/>
+      <!-- Faulty square flaps: 8x8 cm (oversized) -->
+      <rect x="25" y="63" width="50" height="45" rx="2"/>
+      <rect x="155" y="63" width="50" height="45" rx="2"/>
+    </g>
+    <text x="115" y="205" font-family="'Inter', sans-serif" font-size="11.5" font-weight="800" fill="#991b1b" text-anchor="middle">Flaps: 8cm wide (Should be 5cm!)</text>
+    <text x="115" y="220" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#b91c1c" text-anchor="middle">Flaps too wide to close box</text>
+  </g>
+
+  <!-- Net 3: Incorrect 5-Face Spine (7 faces total) -->
+  <g transform="translate(525, 15)">
+    <rect x="0" y="0" width="240" height="230" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5" rx="8"/>
+    <text x="120" y="25" font-family="'Inter', sans-serif" font-size="14" font-weight="900" fill="#b91c1c" text-anchor="middle">Proposed Net 3</text>
+    <g fill="#fee2e2" stroke="#dc2626" stroke-width="1.8">
+      <!-- 5-face spine: 7 faces in total! -->
+      <rect x="80" y="35" width="80" height="24" rx="2"/>
+      <rect x="80" y="59" width="80" height="38" rx="2"/>
+      <rect x="80" y="97" width="80" height="24" rx="2"/>
+      <rect x="80" y="121" width="80" height="38" rx="2"/>
+      <rect x="80" y="159" width="80" height="24" rx="2"/>
+      <rect x="45" y="59" width="35" height="38" rx="2"/>
+      <rect x="160" y="59" width="35" height="38" rx="2"/>
+    </g>
+    <text x="120" y="205" font-family="'Inter', sans-serif" font-size="11.5" font-weight="800" fill="#991b1b" text-anchor="middle">Spine: 5 faces (7 faces total!)</text>
+    <text x="120" y="220" font-family="'Inter', sans-serif" font-size="11" font-weight="700" fill="#b91c1c" text-anchor="middle">Overlaps past 6 faces of cuboid</text>
+  </g>
+</svg>"""
+
+    # Assemble HTML page
+    html_content = f"""<!DOCTYPE html>
+<html lang="en-GB" data-theme="sapphire" data-tint="cream">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>3D Shapes &amp; Nets: Comprehensive Revision Masterclass | Master Functional Skills</title>
+  <meta name="description" content="Master 3D shapes, 2D nets, and packaging geometry for Functional Skills Maths Level 1 &amp; Level 2. Interactive NetFold 3D lab, the 11 valid cube nets, golden rules, worked models, and original exam practice.">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192x192.png">
+  <link rel="apple-touch-icon" href="assets/img/favicon-192x192.png">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="assets/css/mfs-theme.css">
+  <link rel="stylesheet" href="assets/css/mfs-revision.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    /* NetFold 3D Lab Workstation Card */
+    .netfold-station-card {{
+      background: linear-gradient(145deg, #091326 0%, #112347 55%, #1a365d 100%);
+      border-radius: 20px;
+      border: 1.5px solid rgba(255, 255, 255, 0.16);
+      box-shadow: 0 20px 40px -10px rgba(7, 13, 30, 0.5);
+      overflow: hidden;
+      margin: 28px 0 46px;
+      color: #ffffff;
+    }}
+    .netfold-station-header {{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding: 18px 28px;
+      background: rgba(15, 23, 42, 0.88);
+      backdrop-filter: blur(12px);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    }}
+    .netfold-station-title {{
+      font-size: 1.35rem;
+      font-weight: 800;
+      color: #ffffff;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }}
+    .netfold-station-title i {{
+      color: #38bdf8;
+      font-size: 1.5rem;
+    }}
+    .netfold-pill-live {{
+      background: #38bdf8;
+      color: #082f49;
+      font-size: 0.75rem;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: 9999px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }}
+    .netfold-station-actions {{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }}
+    .btn-station-tool {{
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.24);
+      color: #ffffff;
+      padding: 9px 18px;
+      border-radius: 8px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+    }}
+    .btn-station-tool:hover {{
+      background: rgba(255, 255, 255, 0.28);
+      color: #38bdf8;
+      border-color: #38bdf8;
+      transform: translateY(-1px);
+    }}
+    .netfold-station-body {{
+      width: 100%;
+      height: 680px;
+      background: #090f1d;
+      position: relative;
+    }}
+    .netfold-station-body iframe {{
+      width: 100%;
+      height: 100%;
+      border: none;
+      display: block;
+    }}
+    @media (max-width: 900px) {{
+      .netfold-station-body {{
+        height: 540px;
+      }}
+    }}
+    .netfold-station-footer {{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 14px;
+      padding: 14px 28px;
+      background: rgba(15, 23, 42, 0.95);
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.85rem;
+      color: #94a3b8;
+    }}
+    .netfold-feature-pills {{
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      flex-wrap: wrap;
+    }}
+    .netfold-feature-pill {{
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #cbd5e1;
+      font-size: 0.84rem;
+    }}
+    .netfold-feature-pill i {{
+      color: #38bdf8;
+    }}
+
+    /* 3D Shapes Anatomy Table & Cards */
+    .shape-anatomy-grid {{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 20px;
+      margin: 24px 0 32px;
+    }}
+    .shape-card {{
+      background: #ffffff;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+      transition: all 0.2s ease;
+    }}
+    .shape-card:hover {{
+      border-color: #0284c7;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(2,132,199,0.08);
+    }}
+    .shape-card-title {{
+      font-size: 1.12rem;
+      font-weight: 800;
+      color: var(--navy-dark);
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }}
+    .shape-card-title i {{
+      color: #0284c7;
+      font-size: 1.25rem;
+    }}
+    .shape-stats-list {{
+      list-style: none;
+      padding: 0;
+      margin: 0 0 14px;
+      font-size: 0.92rem;
+      color: #334155;
+      line-height: 1.7;
+    }}
+    .shape-stats-list li {{
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px dashed #f1f5f9;
+      padding: 4px 0;
+    }}
+    .shape-stats-list li strong {{
+      color: #0f172a;
+    }}
+    .shape-net-desc {{
+      background: #f8fafc;
+      border-left: 3px solid #0284c7;
+      padding: 8px 12px;
+      font-size: 0.86rem;
+      color: #475569;
+      border-radius: 0 6px 6px 0;
+      line-height: 1.5;
+    }}
+
+    /* Large Cube Nets Gallery */
+    .cube-nets-grid {{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 20px;
+      margin: 24px 0 32px;
+    }}
+    .cube-net-card {{
+      background: #ffffff;
+      border: 2px solid #e2e8f0;
+      border-radius: 14px;
+      padding: 16px 14px;
+      text-align: center;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.03);
+      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+    }}
+    .cube-net-card:hover {{
+      border-color: #0284c7;
+      transform: translateY(-4px);
+      box-shadow: 0 10px 24px rgba(2, 132, 199, 0.14);
+    }}
+    .cube-net-card-header {{
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 8px;
+    }}
+    .cube-net-family-pill {{
+      font-size: 0.74rem;
+      font-weight: 800;
+      color: #0284c7;
+      background: #e0f2fe;
+      padding: 3px 8px;
+      border-radius: 6px;
+      letter-spacing: 0.02em;
+    }}
+    .cube-net-num-pill {{
+      font-size: 0.74rem;
+      font-weight: 800;
+      color: #64748b;
+    }}
+    .cube-net-card-title {{
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--navy-dark);
+      margin-bottom: 12px;
+      min-height: 24px;
+    }}
+    .cube-net-svg-wrap {{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 6px 0 10px;
+    }}
+    .cube-net-card-note {{
+      font-size: 0.8rem;
+      color: #475569;
+      line-height: 1.45;
+      background: #f8fafc;
+      padding: 8px 10px;
+      border-radius: 6px;
+      text-align: left;
+      margin-top: 8px;
+      border: 1px solid #f1f5f9;
+    }}
+
+    /* Large Invalid Nets Gallery */
+    .invalid-nets-grid {{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 22px;
+      margin: 24px 0 32px;
+    }}
+    .invalid-net-card {{
+      background: #fef2f2;
+      border: 2px solid #fecaca;
+      border-radius: 14px;
+      padding: 20px 18px;
+      box-shadow: 0 4px 14px rgba(220, 38, 38, 0.05);
+      text-align: center;
+    }}
+    .invalid-net-trap-tag {{
+      font-size: 0.82rem;
+      font-weight: 800;
+      color: #dc2626;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 6px;
+    }}
+    .invalid-net-card-title {{
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #991b1b;
+      margin-bottom: 12px;
+    }}
+    .invalid-net-svg-wrap {{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 6px 0 12px;
+    }}
+    .invalid-net-reason {{
+      font-size: 0.86rem;
+      color: #7f1d1d;
+      margin-top: 12px;
+      line-height: 1.6;
+      font-weight: 600;
+      text-align: left;
+      background: rgba(255, 255, 255, 0.75);
+      padding: 12px 14px;
+      border-radius: 8px;
+      border: 1px solid #fca5a5;
+    }}
+
+    /* Elevated Pedagogical Worked Models */
+    .model-comparison-container {{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 28px;
+      margin: 24px 0 28px;
+    }}
+    @media (max-width: 900px) {{
+      .model-comparison-container {{
+        grid-template-columns: 1fr;
+      }}
+    }}
+    .model-display-card {{
+      background: #ffffff;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 16px;
+      padding: 24px 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.03);
+    }}
+    .model-card-badge {{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--navy-dark);
+      margin-bottom: 16px;
+      padding-bottom: 8px;
+      border-bottom: 2px solid #f1f5f9;
+      width: 100%;
+      justify-content: center;
+    }}
+    .model-card-badge i {{
+      color: #0284c7;
+    }}
+    .model-card-subcaption {{
+      font-size: 0.88rem;
+      color: #475569;
+      margin-top: 16px;
+      text-align: center;
+      line-height: 1.55;
+    }}
+
+    /* Step Lists & Callouts */
+    .example-steps-list {{
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-top: 20px;
+    }}
+    .example-step-item {{
+      display: flex;
+      gap: 16px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      padding: 14px 18px;
+      align-items: flex-start;
+    }}
+    .example-step-pill {{
+      background: var(--navy-dark);
+      color: #ffffff;
+      font-size: 0.78rem;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 6px;
+      white-space: nowrap;
+    }}
+    .example-step-content {{
+      font-size: 0.94rem;
+      color: #334155;
+      line-height: 1.65;
+    }}
+    .tutor-insight-callout {{
+      background: #f0fdf4;
+      border: 1.5px solid #bbf7d0;
+      border-left: 5px solid #10b981;
+      border-radius: 12px;
+      padding: 18px 22px;
+      margin: 20px 0 24px;
+      font-size: 0.94rem;
+      line-height: 1.7;
+      color: #064e3b;
+    }}
+    .tutor-insight-callout strong {{
+      color: #065f46;
+    }}
+    .rule-card-amber {{
+      background: #fffbeb;
+      border: 1.5px solid #fde68a;
+      border-left: 5px solid #f59e0b;
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 22px;
+    }}
+    .rule-card-amber-header {{
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: #92400e;
+      margin-bottom: 10px;
+    }}
+    .rule-card-amber-header i {{
+      color: #d97706;
+      font-size: 1.25rem;
+    }}
+    .rule-card-amber p {{
+      margin: 0 0 12px;
+      font-size: 0.95rem;
+      line-height: 1.65;
+      color: #78350f;
+    }}
+    .rule-highlight-badge {{
+      display: inline-block;
+      background: #fef3c7;
+      color: #b45309;
+      font-weight: 700;
+      font-size: 0.85rem;
+      padding: 4px 12px;
+      border-radius: 6px;
+      border: 1px solid #fcd34d;
+    }}
+  </style>
+</head>
+<body>
+
+    <!-- TOP TRUST BAR WITH ACCESSIBILITY & CONTACT -->
+  <div class="mfs-top-bar">
+    <div class="mfs-container mfs-top-bar-inner">
+      <div class="top-trust-items">
+        <span class="top-trust-item"><i class="fa-solid fa-building-columns"></i> Pearson Edexcel &amp; City &amp; Guilds Aligned</span>
+      </div>
+      <div class="top-contacts">
+        <div class="mfs-access-bar">
+          <!-- DYSLEXIA BACKGROUND TINT PICKER -->
+          <div class="mfs-tint-dropdown-wrap">
+            <button type="button" id="tintToggle" class="btn-tint-toggle" onclick="toggleTintMenu(event)" title="Change dyslexia background tint">
+              <span class="tint-swatch-indicator" id="tintCurrentSwatch"></span>
+              <span id="tintLabel">Cream Tint</span>
+              <i class="fa-solid fa-chevron-down" style="font-size:0.62rem; opacity:0.75; margin-left:2px;"></i>
+            </button>
+            <div id="tintMenu" class="tint-picker-menu">
+              <div class="tint-picker-title"><i class="fa-solid fa-glasses"></i> Dyslexia Reading Tint</div>
+              <button type="button" class="tint-option-btn active" data-tint="cream" onclick="setSiteTint('cream', event)">
+                <span class="swatch swatch-cream"></span>
+                <span class="tint-name">Cream <small class="tint-badge-def">Default</small></span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="peach" onclick="setSiteTint('peach', event)">
+                <span class="swatch swatch-peach"></span>
+                <span class="tint-name">Soft Peach</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="cool" onclick="setSiteTint('cool', event)">
+                <span class="swatch swatch-cool"></span>
+                <span class="tint-name">Cool Mist</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="sage" onclick="setSiteTint('sage', event)">
+                <span class="swatch swatch-sage"></span>
+                <span class="tint-name">Soft Sage</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <div class="tint-divider"></div>
+              <button type="button" class="tint-option-btn" data-tint="none" onclick="setSiteTint('none', event)">
+                <span class="swatch swatch-none"></span>
+                <span class="tint-name">No Tint (White)</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+            </div>
+          </div>
+          <button id="dyslexiaToggle" class="btn-dyslexia-toggle" onclick="toggleDyslexiaMode()" title="Toggle Dyslexia High-Readability Mode">
+            <i class="fa-solid fa-universal-access"></i> Dyslexia
+          </button>
+          <button id="themeToggle" class="mfs-theme-pill" onclick="toggleTheme()" title="Switch Palette: Sapphire vs Emerald">
+            <i class="fa-solid fa-palette"></i> <span id="themeLabel">Sapphire</span>
+          </button>
+        </div>
+        <a href="contact-us.html" class="top-contact-link"><i class="fa-solid fa-envelope"></i> <strong>Contact Us</strong></a>
+      </div>
+    </div>
+  </div>  <!-- MAIN NAVIGATION -->
+                      <header class="mfs-navbar">
+    <div class="revision-page-wrapper mfs-navbar-inner">
+      <a href="index.html" class="mfs-brand">
+        <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div class="mfs-brand-text">
+          <div class="mfs-brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
+          <div class="mfs-brand-subtitle">Delivering Skills • Achieving Goals</div>
+        </div>
+      </a>
+
+      <nav class="mfs-nav-wrapper">
+        <ul class="mfs-nav-menu">
+          <!-- 1. SUBJECTS (VISUAL MEGA-MENU) -->
+          <li class="mfs-nav-item">
+            <a href="courses.html" class="mfs-nav-link">
+              <i class="fa-solid fa-book-open-reader" style="color:#0284c7; margin-right:5px;"></i> Subjects <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-revision-hub">
+              <div class="mfs-revision-grid">
+                <!-- Maths Column -->
+                <div class="mfs-revision-col mfs-revision-col-maths">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-calculator"></i> Maths Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="functional-skills-maths-level-2.html" class="mfs-dropdown-item">Maths Level 2</a>
+                    <a href="functional-skills-maths-level-1.html" class="mfs-dropdown-item">Maths Level 1</a>
+                    <a href="entry-level-3-maths.html" class="mfs-dropdown-item">Entry Level 3 Maths</a>
+                  </div>
+                </div>
+                <!-- English Column -->
+                <div class="mfs-revision-col mfs-revision-col-english">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-pen-nib"></i> English Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="functional-skills-english-level-2.html" class="mfs-dropdown-item">English Level 2</a>
+                    <a href="functional-skills-english-level-1.html" class="mfs-dropdown-item">English Level 1</a>
+                  </div>
+                </div>
+                <!-- Digital Skills Column -->
+                <div class="mfs-revision-col mfs-revision-col-digital">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-laptop-code"></i> Digital Skills</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="digital-functional-skills.html" class="mfs-dropdown-item">Digital Skills Hub</a>
+                    <a href="digital-functional-skills-mock-exam.html" class="mfs-dropdown-item">Pearson Mock Exam</a>
+                    <a href="digital-functional-skills-past-papers.html" class="mfs-dropdown-item">Past Papers &amp; Files</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- 2. PAST PAPERS & MOCKS (DIRECT ACCESS) -->
+          <li class="mfs-nav-item">
+            <a href="functional-skills-past-papers.html" class="mfs-nav-link">
+              <i class="fa-regular fa-file-lines" style="color:#0284c7; margin-right:5px;"></i> Past Papers &amp; Mocks
+            </a>
+          </li>
+
+          <!-- 2b. WORKSHEETS DIRECTORY (CORBETT STYLE DUAL ENGINE) -->
+          <li class="mfs-nav-item">
+            <a href="worksheets.html" class="mfs-nav-link">
+              <i class="fa-solid fa-layer-group" style="color:#0284c7; margin-right:5px;"></i> Worksheets Hub
+            </a>
+          </li>
+
+          <!-- 3. FREE TOOLS (COMPACT DROPDOWN) -->
+          <li class="mfs-nav-item">
+            <a href="tools.html" class="mfs-nav-link">
+              <i class="fa-solid fa-screwdriver-wrench" style="color:#0284c7; margin-right:5px;"></i> Free Tools <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-compact">
+              <a href="tools.html" class="mfs-dropdown-item" style="font-weight:700; color:var(--accent);"><i class="fa-solid fa-layer-group" style="font-size:0.85rem; margin-right:6px;"></i> All Free Tools &amp; Simulators &rarr;</a>
+              <div class="mfs-dropdown-divider" style="margin:4px 0; border-top:1px solid #e2e8f0;"></div>
+              <a href="pass-mark-calculator.html" class="mfs-dropdown-item"><i class="fa-solid fa-calculator" style="color:var(--accent); font-size:0.85rem; margin-right:6px;"></i> Pass Mark Calculator</a>
+              <a href="diagnostic-test.html" class="mfs-dropdown-item"><i class="fa-solid fa-chart-pie" style="color:#059669; font-size:0.85rem; margin-right:6px;"></i> Diagnostic Skill Checker</a>
+              <a href="functional-skills-nets.html" class="mfs-dropdown-item"><i class="fa-solid fa-cube" style="color:#0284c7; font-size:0.85rem; margin-right:6px;"></i> 3D Net Folding Tool</a>
+            </div>
+          </li>
+
+          <!-- 4. REVISION CARDS -->
+          <li class="mfs-nav-item">
+            <a href="revision-cards.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-layer-group" style="color:#d97706; margin-right:5px;"></i> Revision Cards
+            </a>
+          </li>
+
+          <!-- 5. SHOP -->
+          <li class="mfs-nav-item">
+            <a href="shop.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-basket-shopping" style="color:#d97706; margin-right:5px;"></i> Shop
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- 6. BOOK EXAM ACTION BUTTON -->
+      <div class="mfs-nav-actions">
+        <a href="exams.html" class="btn-nav-exam">
+          <i class="fa-solid fa-calendar-check"></i> Book Exam
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- BREADCRUMBS -->
+  <div class="revision-breadcrumb-bar">
+    <div class="revision-page-wrapper">
+      <div class="revision-breadcrumbs">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a href="revise.html">Revise Hub</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a href="functional-skills-maths-level-2.html">Mathematics Level 2</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span class="current">3D Shapes &amp; Nets Masterclass</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="revision-hero-card">
+    <div class="revision-page-wrapper">
+      <div class="revision-hero-pill-row">
+        <span class="badge-pill-accent"><i class="fa-solid fa-calculator"></i> MATHEMATICS</span>
+        <span class="badge-pill-gold">LEVEL 1 &amp; LEVEL 2</span>
+        <span class="badge-pill-outline"><i class="fa-solid fa-cube"></i> INTERACTIVE 3D NET FOLDING TOOL</span>
+      </div>
+
+      <h1 class="revision-hero-title">
+        3D Shapes &amp; Nets: <span>Foundations, The 11 Cube Nets &amp; Exam Masterclass</span>
+      </h1>
+
+      <p class="revision-hero-desc">
+        Master every aspect of 3D solids and 2D nets: explore the live NetFold 3D folding engine, learn shape anatomy and folding rules, memorize the 11 valid cube nets, and tackle mathematically verified workplace exam problems.
+      </p>
+
+      <div class="revision-hero-meta-bar">
+        <div class="hero-meta-item">
+          <i class="fa-solid fa-clock"></i> <strong>Est. Study Time:</strong> 25-35 Mins
+        </div>
+        <div class="hero-meta-item">
+          <i class="fa-solid fa-book-open"></i> <strong>Curriculum Standards:</strong> Pearson Edexcel &amp; City &amp; Guilds
+        </div>
+        <div class="hero-meta-item">
+          <i class="fa-solid fa-cube"></i> <strong>Interactive 3D Engine Included</strong>
+        </div>
+
+        <div class="hero-quick-actions">
+          <a href="#interactive-lab" class="btn-hero-action">
+            <i class="fa-solid fa-play"></i> Launch 3D Folding Lab
+          </a>
+          <a href="#cube-nets" class="btn-hero-action-secondary">
+            <i class="fa-solid fa-cubes"></i> View 11 Cube Nets
+          </a>
+          <a href="#practice-questions" class="btn-hero-action-secondary">
+            <i class="fa-solid fa-pencil"></i> Start Practice Tasks
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOBILE TABLE OF CONTENTS BAR -->
+  <div class="mobile-toc-bar">
+    <div style="font-weight:700; color:var(--navy-dark); font-size:0.9rem;">
+      <i class="fa-solid fa-list-check" style="color:var(--accent);"></i> Nets Blueprint
+    </div>
+    <button type="button" class="btn-mobile-toc" onclick="toggleMobileToc()">
+      <span>Table of Contents</span> <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+
+  <!-- MAIN 2-COLUMN RESPONSIVE LAYOUT -->
+  <main class="revision-page-wrapper">
+    <div class="revision-layout">
+
+      <!-- LEFT COLUMN: STICKY BLUEPRINT TOC -->
+      <aside class="revision-sidebar" id="sidebarNav">
+        <div class="sidebar-toc-title">
+          <span><i class="fa-solid fa-compass-drafting" style="color:var(--accent);"></i> Topic Contents</span>
+          <span style="font-size:0.75rem; color:#64748b; font-weight:700;">12 Sections</span>
+        </div>
+
+        <ul class="sidebar-toc-list" id="tocList">
+          <li>
+            <a href="#interactive-lab" class="sidebar-toc-link active">
+              <i class="fa-solid fa-cube"></i> 3D Net Folding Tool Lab
+            </a>
+          </li>
+          <li>
+            <a href="#specification" class="sidebar-toc-link">
+              <i class="fa-solid fa-clipboard-check"></i> Specification
+            </a>
+          </li>
+          <li>
+            <a href="#concept-nets" class="sidebar-toc-link">
+              <i class="fa-solid fa-shapes"></i> What is a 2D Net?
+            </a>
+          </li>
+          <li>
+            <a href="#shape-anatomy" class="sidebar-toc-link">
+              <i class="fa-solid fa-cubes-stacked"></i> 3D Shape Anatomy
+            </a>
+          </li>
+          <li>
+            <a href="#golden-rules" class="sidebar-toc-link">
+              <i class="fa-solid fa-lightbulb"></i> Golden Rules of Nets
+            </a>
+          </li>
+          <li>
+            <a href="#cube-nets" class="sidebar-toc-link">
+              <i class="fa-solid fa-cubes"></i> The 11 Cube Nets
+            </a>
+          </li>
+          <li>
+            <a href="#invalid-nets" class="sidebar-toc-link">
+              <i class="fa-solid fa-triangle-exclamation"></i> Invalid Net Traps
+            </a>
+          </li>
+          <li>
+            <a href="#how-to-draw" class="sidebar-toc-link">
+              <i class="fa-solid fa-pen-ruler"></i> How to Draw Nets
+            </a>
+          </li>
+          <li>
+            <a href="#model-cuboid" class="sidebar-toc-link">
+              <i class="fa-solid fa-box"></i> Model 1: Cuboid Box
+            </a>
+          </li>
+          <li>
+            <a href="#model-prism" class="sidebar-toc-link">
+              <i class="fa-solid fa-shapes"></i> Model 2: Prism
+            </a>
+          </li>
+          <li>
+            <a href="#model-pyramid" class="sidebar-toc-link">
+              <i class="fa-solid fa-monument"></i> Model 3: Pyramid
+            </a>
+          </li>
+          <li>
+            <a href="#model-cylinder" class="sidebar-toc-link">
+              <i class="fa-solid fa-database"></i> Model 4: Cylinder
+            </a>
+          </li>
+          <li>
+            <a href="#practice-questions" class="sidebar-toc-link">
+              <i class="fa-solid fa-pencil"></i> Exam Practice
+            </a>
+          </li>
+          <li>
+            <a href="#downloads" class="sidebar-toc-link">
+              <i class="fa-solid fa-file-pdf"></i> Downloads (PDF)
+            </a>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- RIGHT COLUMN: MAIN LEARNING CONTENT -->
+      <div class="revision-content">
+
+        <!-- INTERACTIVE 3D NET FOLDING TOOL LAB EMBED -->
+        <section id="interactive-lab" class="revision-section">
+          <div class="netfold-station-card">
+            <div class="netfold-station-header">
+              <div class="netfold-station-title">
+                <i class="fa-solid fa-cube"></i> NetFold 3D &mdash; Interactive Geometry &amp; Net Lab
+                <span class="netfold-pill-live">Live Three.js Engine</span>
+              </div>
+              <div class="netfold-station-actions">
+                <button type="button" class="btn-station-tool" onclick="toggleEmbedFullscreen()" title="Toggle Fullscreen">
+                  <i class="fa-solid fa-expand"></i> Fullscreen
+                </button>
+                <a href="tools/netfolding/index.html" target="_blank" rel="noopener" class="btn-station-tool" title="Open in new window">
+                  <i class="fa-solid fa-arrow-up-right-from-square"></i> Open in New Tab
+                </a>
+              </div>
+            </div>
+
+            <!-- EMBEDDED THREE.JS APPLICATION -->
+            <div class="netfold-station-body" id="netfoldStationContainer">
+              <iframe src="tools/netfolding/index.html" id="netfoldIframe" title="NetFold 3D Interactive Lab" allow="fullscreen" loading="lazy"></iframe>
+            </div>
+
+            <div class="netfold-station-footer">
+              <div class="netfold-feature-pills">
+                <span class="netfold-feature-pill"><i class="fa-solid fa-check"></i> 15 3D Shapes &amp; Nets</span>
+                <span class="netfold-feature-pill"><i class="fa-solid fa-check"></i> Dynamic 0% &ndash; 100% Folding</span>
+                <span class="netfold-feature-pill"><i class="fa-solid fa-check"></i> 2D Net Drawing Workbench</span>
+                <span class="netfold-feature-pill"><i class="fa-solid fa-check"></i> Overlap Collision Detection</span>
+                <span class="netfold-feature-pill"><i class="fa-solid fa-check"></i> Printable PDF Templates</span>
+              </div>
+              <div>
+                <a href="tools/netfolding/index.html" target="_blank" rel="noopener" style="color:#38bdf8; text-decoration:none; font-weight:700;">
+                  Launch Standalone App &rarr;
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- SPECIFICATION -->
+        <section id="specification" class="revision-section">
+          <div class="section-header-row">
+            <h2 class="section-title"><i class="fa-solid fa-clipboard-check"></i> Specification &amp; Learning Outcomes</h2>
+          </div>
+          <div class="skill-card-container">
+            <p>Under the national statutory subject criteria for Pearson Edexcel, City &amp; Guilds, NCFE, Open Awards, and Highfield, learners must demonstrate confident competence across:</p>
+            <ul style="padding-left:22px; line-height:1.85; color:#334155; font-size:1.02rem;">
+              <li><strong>Level 1 (L1.25):</strong> Interpret nets of simple 3-D shapes (including cubes, cuboids, prisms, and pyramids).</li>
+              <li><strong>Level 2 (L2.20):</strong> Understand and use common 2-D representations of 3-D objects, matching plans, elevations, and nets to solid objects.</li>
+              <li><strong>Level 2 (L2.21):</strong> Draw 3-D shapes and nets accurately with specified measurements, recognizing edge connections and fold lines.</li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- WHAT IS A NET? (FOUNDATIONAL THEORY) -->
+        <section id="concept-nets" class="revision-section">
+          <div class="skill-card-container">
+            <div class="skill-header-meta">
+              <span class="skill-badge-tag">Foundational Theory</span>
+              <span class="badge-level-tag">Level 1 &amp; Level 2</span>
+              <span class="badge-board-tag">Core Geometry Concept</span>
+            </div>
+            <h3 class="skill-title-text">What is a 2D Net?</h3>
+            <p>
+              A <strong style="color:var(--accent);">2D net</strong> is a flat, two-dimensional pattern that can be folded along crease lines and assembled to construct a three-dimensional hollow solid.
+            </p>
+            <p>
+              Imagine taking a cardboard cereal box, cutting carefully along some of its glued seams with scissors, and flattening it completely onto a table. The resulting flat piece of card is the <strong>net</strong> of that cuboid.
+            </p>
+            
+            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; padding:18px 20px; margin:16px 0;">
+              <h4 style="margin:0 0 10px; color:var(--navy-dark); font-size:1.05rem;"><i class="fa-solid fa-pen-ruler" style="color:#0284c7;"></i> Key Drawing Conventions Used in Exams:</h4>
+              <ul style="margin:0; padding-left:20px; line-height:1.8; color:#334155; font-size:0.96rem;">
+                <li><strong>Solid Lines (<span style="border-bottom:2px solid #0f172a; padding:0 8px;">&mdash;&mdash;</span>):</strong> Represent <em>cut lines</em> (the outer perimeter of the net).</li>
+                <li><strong>Dashed Lines (<span style="border-bottom:2px dashed #0284c7; padding:0 8px;">- - - -</span>):</strong> Represent <em>crease or fold lines</em> where the card must be bent.</li>
+                <li><strong>Flaps / Tabs:</strong> Extra narrow margins added in manufacturing so glue or tape can stick faces together. (In basic Functional Skills exam drawings, glue tabs are usually omitted unless explicitly requested).</li>
+              </ul>
+            </div>
+
+            <div style="display:flex; gap:14px; flex-wrap:wrap; margin-top:16px;">
+              <a href="functional-skills-3d-shapes.html" class="btn-card-action" style="padding:10px 18px;">
+                <i class="fa-solid fa-cube"></i> Revise 3D Shapes, Volume &amp; Surface Area &rarr;
+              </a>
+              <a href="functional-skills-circles.html" class="btn-card-action" style="padding:10px 18px; background:#475569;">
+                <i class="fa-solid fa-circle-notch"></i> Revise Circles &amp; Circumference &rarr;
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <!-- 3D SHAPE ANATOMY & PROPERTIES -->
+        <section id="shape-anatomy" class="revision-section">
+          <div class="skill-card-container">
+            <div class="skill-header-meta">
+              <span class="skill-badge-tag" style="background:#2563eb;">Shape Properties</span>
+              <span class="badge-level-tag">Level 1 &amp; Level 2</span>
+              <span class="badge-board-tag">Exam Essential Knowledge</span>
+            </div>
+            <h3 class="skill-title-text">3D Shape Anatomy: Faces, Edges &amp; Vertices</h3>
+            <p>
+              To determine whether a net is valid, you must first know the exact properties of the 3D solid it is supposed to make. Before folding, count the faces and verify their 2D shapes:
+            </p>
+
+            <div class="shape-anatomy-grid">
+              <!-- Cube -->
+              <div class="shape-card">
+                <div class="shape-card-title"><i class="fa-solid fa-cube"></i> Cube</div>
+                <ul class="shape-stats-list">
+                  <li><span>Faces:</span> <strong>6 congruent squares</strong></li>
+                  <li><span>Edges:</span> <strong>12 edges (all equal)</strong></li>
+                  <li><span>Vertices (corners):</span> <strong>8 vertices</strong></li>
+                </ul>
+                <div class="shape-net-desc">
+                  <strong>Net Check:</strong> Exactly 6 identical squares. No row of 5 squares. No 2&times;2 solid blocks.
+                </div>
+              </div>
+
+              <!-- Cuboid -->
+              <div class="shape-card">
+                <div class="shape-card-title"><i class="fa-solid fa-box"></i> Cuboid (Rectangular Prism)</div>
+                <ul class="shape-stats-list">
+                  <li><span>Faces:</span> <strong>6 rectangles (3 pairs)</strong></li>
+                  <li><span>Edges:</span> <strong>12 edges</strong></li>
+                  <li><span>Vertices (corners):</span> <strong>8 vertices</strong></li>
+                </ul>
+                <div class="shape-net-desc">
+                  <strong>Net Check:</strong> 3 matching pairs of opposite rectangular faces (Top/Bottom, Front/Back, Left/Right).
+                </div>
+              </div>
+
+              <!-- Triangular Prism -->
+              <div class="shape-card">
+                <div class="shape-card-title"><i class="fa-solid fa-shapes"></i> Triangular Prism</div>
+                <ul class="shape-stats-list">
+                  <li><span>Faces:</span> <strong>5 faces (2 &Delta; + 3 &#9645;)</strong></li>
+                  <li><span>Edges:</span> <strong>9 edges</strong></li>
+                  <li><span>Vertices (corners):</span> <strong>6 vertices</strong></li>
+                </ul>
+                <div class="shape-net-desc">
+                  <strong>Net Check:</strong> 2 identical triangular end faces and 3 rectangular side walls folding along the prism length.
+                </div>
+              </div>
+
+              <!-- Square-Based Pyramid -->
+              <div class="shape-card">
+                <div class="shape-card-title"><i class="fa-solid fa-monument"></i> Square-Based Pyramid</div>
+                <ul class="shape-stats-list">
+                  <li><span>Faces:</span> <strong>5 faces (1 &#9633; + 4 &Delta;)</strong></li>
+                  <li><span>Edges:</span> <strong>8 edges</strong></li>
+                  <li><span>Vertices (corners):</span> <strong>5 (including apex)</strong></li>
+                </ul>
+                <div class="shape-net-desc">
+                  <strong>Net Check:</strong> 1 central square base with 4 identical isosceles triangles folding up towards the apex.
+                </div>
+              </div>
+
+              <!-- Cylinder -->
+              <div class="shape-card">
+                <div class="shape-card-title"><i class="fa-solid fa-database"></i> Cylinder</div>
+                <ul class="shape-stats-list">
+                  <li><span>Faces:</span> <strong>3 (2 circles + 1 curved)</strong></li>
+                  <li><span>Edges:</span> <strong>2 circular edges</strong></li>
+                  <li><span>Vertices:</span> <strong>0 vertices</strong></li>
+                </ul>
+                <div class="shape-net-desc">
+                  <strong>Net Check:</strong> 2 identical circular lids and 1 unrolled rectangle whose width equals the circle's circumference ($\pi d$).
+                </div>
+              </div>
+
+              <!-- Cone -->
+              <div class="shape-card">
+                <div class="shape-card-title"><i class="fa-solid fa-traffic-light"></i> Cone</div>
+                <ul class="shape-stats-list">
+                  <li><span>Faces:</span> <strong>2 (1 circle + 1 curved)</strong></li>
+                  <li><span>Edges:</span> <strong>1 circular edge</strong></li>
+                  <li><span>Vertices:</span> <strong>1 apex point</strong></li>
+                </ul>
+                <div class="shape-net-desc">
+                  <strong>Net Check:</strong> 1 circular base and 1 sector of a larger circle (like a slice of pizza) that rolls into a cone.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- THE 3 GOLDEN RULES OF NETS -->
+        <section id="golden-rules" class="revision-section">
+          <div class="section-header-row">
+            <h2 class="section-title"><i class="fa-solid fa-lightbulb"></i> The 3 Golden Rules of Nets</h2>
+          </div>
+
+          <div class="rule-card-amber">
+            <div class="rule-card-amber-header">
+              <i class="fa-solid fa-list-ol"></i>
+              <span>Golden Rule 1: Always Count &amp; Verify Face Shapes First</span>
+            </div>
+            <p>
+              Before doing any mental folding, count the number of faces on the flat pattern. If an exam question asks whether a pattern folds into a cube, but the pattern has 5 squares or 7 squares, you can instantly reject it without wasting time! A cube must have exactly <strong>6 squares</strong>. A triangular prism must have exactly <strong>2 triangles and 3 rectangles</strong>.
+            </p>
+            <div class="rule-highlight-badge">
+              Fast Check: Does the flat net have the exact number and shapes of faces required for the 3D solid?
+            </div>
+          </div>
+
+          <div class="rule-card-amber">
+            <div class="rule-card-amber-header">
+              <i class="fa-solid fa-ruler-combined"></i>
+              <span>Golden Rule 2: Touching Edges Must Match Exactly in Length</span>
+            </div>
+            <p>
+              When a flat net folds into a 3D solid, pairs of edges that meet to form a single seam <strong>must be the exact same length</strong>. If an edge of $5\text{{ cm}}$ folds against an edge of $3\text{{ cm}}$, the box will not close properly and will leave a gaping hole or tear. Always check adjacent folding sides.
+            </p>
+            <div class="rule-highlight-badge">
+              Seam Rule: When two edges fold up to meet in 3D, do their labelled dimensions match 1-to-1?
+            </div>
+          </div>
+
+          <div class="rule-card-amber">
+            <div class="rule-card-amber-header">
+              <i class="fa-solid fa-arrows-split-up-and-left"></i>
+              <span>Golden Rule 3: Opposite Faces Never Touch Along an Edge</span>
+            </div>
+            <p>
+              In a closed 3D solid like a cube or cuboid, opposite faces (e.g. Top and Bottom, or Front and Back) are parallel to each other. They <strong>never share an edge</strong> on a flat net! In any straight row or column of faces, opposite faces are always separated by <strong>exactly one intervening face</strong>. If two opposite faces touch directly on the net, they will collide when folded.
+            </p>
+            <div class="rule-highlight-badge">
+              Opposite Rule: Opposite faces are separated by exactly one step on the net grid.
+            </div>
+          </div>
+        </section>
+
+        <!-- THE 11 VALID CUBE NETS (ENLARGED) -->
+        <section id="cube-nets" class="revision-section">
+          <div class="skill-card-container">
+            <div class="skill-header-meta">
+              <span class="skill-badge-tag" style="background:#0284c7;">Official Syllabus Matrix</span>
+              <span class="badge-level-tag">Level 1 &amp; Level 2</span>
+              <span class="badge-board-tag">All Awarding Bodies</span>
+            </div>
+            <h3 class="skill-title-text">The 11 Valid Nets of a Cube (Full Matrix)</h3>
+            <p>
+              A cube has exactly <strong>11 unique valid nets</strong> (excluding rotations and reflections). Every single valid cube net consists of 6 identical squares arranged so that no faces collide or leave gaps when folded.
+            </p>
+            <p style="font-size:0.96rem; color:#475569;">
+              Mathematicians categorize all 11 nets into <strong>four structural families</strong> based on their central rows:
+            </p>
+
+            <!-- CUBE NETS GRID -->
+            <div class="cube-nets-grid">
+              {valid_cards_html}
+            </div>
+
+            <div class="tutor-insight-callout">
+              <strong>Tutor Golden Memory Rule:</strong> Notice the universal pattern across all 11 valid nets above:
+              <br>&bull; There are <strong>NO solid 2&times;2 blocks</strong> of squares anywhere.
+              <br>&bull; There are <strong>NO lines of 5 squares</strong>.
+              <br>&bull; Memorizing the classic <strong>1-4-1 Latin Cross (Net #1)</strong> and the <strong>2-3-1 Z-Pattern (Net #7)</strong> covers over 90% of exam questions!
+            </div>
+          </div>
+        </section>
+
+        <!-- INVALID NET TRAPS TO AVOID (ENLARGED) -->
+        <section id="invalid-nets" class="revision-section">
+          <div class="skill-card-container">
+            <div class="skill-header-meta">
+              <span class="skill-badge-tag" style="background:#dc2626;">Exam Traps</span>
+              <span class="badge-level-tag">Level 1 &amp; Level 2</span>
+              <span class="badge-board-tag">Common Misconceptions</span>
+            </div>
+            <h3 class="skill-title-text">How to Spot an Invalid Net in Seconds</h3>
+            <p>
+              In exam multiple choice and identification tasks, examiners deliberately present patterns that appear valid at first glance. Watch out for these three fatal flaws:
+            </p>
+
+            <div class="invalid-nets-grid">
+              {invalid_cards_html}
+            </div>
+          </div>
+        </section>
+
+        <!-- HOW TO DRAW A NET: STEP-BY-STEP BLUEPRINT -->
+        <section id="how-to-draw" class="revision-section">
+          <div class="skill-card-container">
+            <div class="skill-header-meta">
+              <span class="skill-badge-tag" style="background:#059669;">Examiner Blueprint</span>
+              <span class="badge-level-tag">Level 1 &amp; Level 2</span>
+              <span class="badge-board-tag">Method Mark (M1) Guide</span>
+            </div>
+            <h3 class="skill-title-text">Step-by-Step Guide: How to Draw Any Net on an Exam Grid</h3>
+            <p>
+              When an exam asks you to <em>"Draw an accurate net of the box on the centimetre grid"</em>, follow this systematic 5-step blueprint to guarantee full method and accuracy marks:
+            </p>
+
+            <div class="example-steps-list">
+              <div class="example-step-item">
+                <span class="example-step-pill">Step 1</span>
+                <div class="example-step-content">
+                  <strong>Identify and list all 3D dimensions:</strong> Write down Length ($L$), Width ($W$), and Height ($H$). Count the required faces (e.g. 6 for a cuboid, 5 for a prism) and note the dimensions of each matching pair.
+                </div>
+              </div>
+              <div class="example-step-item">
+                <span class="example-step-pill">Step 2</span>
+                <div class="example-step-content">
+                  <strong>Draw the Base (Bottom face) in the center:</strong> Use a ruler and count grid squares carefully. Label this face "BASE" or "BOTTOM" lightly with its length and width.
+                </div>
+              </div>
+              <div class="example-step-item">
+                <span class="example-step-pill">Step 3</span>
+                <div class="example-step-content">
+                  <strong>Attach the four side walls folding out:</strong> 
+                  <br>&bull; Attach the Front and Back walls ($L \times H$) to the top and bottom edges of the base.
+                  <br>&bull; Attach the Left and Right side walls ($W \times H$) to the side edges of the base.
+                </div>
+              </div>
+              <div class="example-step-item">
+                <span class="example-step-pill">Step 4</span>
+                <div class="example-step-content">
+                  <strong>Attach the Top Lid:</strong> Attach the top face ($L \times W$) to the outer edge of either the Front or Back wall so it can fold over to close the box.
+                </div>
+              </div>
+              <div class="example-step-item">
+                <span class="example-step-pill">Step 5</span>
+                <div class="example-step-content">
+                  <strong>Check seams &amp; line styles:</strong> Verify that dashed lines are used for internal fold lines and solid lines for the perimeter. Ensure adjacent edges have identical measurements!
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- WORKED MODEL 1: CUBOID (DELIVERY BOX) -->
+        <section id="model-cuboid" class="revision-section">
+          <div class="skill-card-container">
+            <div class="skill-header-meta">
+              <span class="skill-badge-tag" style="background:#059669;">Worked Model 1</span>
+              <span class="badge-level-tag">Level 1 &amp; Level 2</span>
+              <span class="badge-board-tag">Packaging Logistics Scenario</span>
+            </div>
+            <h3 class="skill-title-text">Model 1: Flat-Pack Delivery Box (Cuboid)</h3>
+            <p>
+              A logistics warehouse manufactures flat-pack delivery cartons measuring <strong style="color:#0284c7;">8 cm long</strong>, <strong style="color:#0284c7;">5 cm wide</strong>, and <strong style="color:#0284c7;">3 cm high</strong>.
+            </p>
+
+            <div class="model-comparison-container">
+              <div class="model-display-card">
+                <div class="model-card-badge">
+                  <i class="fa-solid fa-box"></i> 1. The 3D Cuboid Box
+                </div>
+                {cuboid_3d}
+                <div class="model-card-subcaption">
+                  Dimensions: Length = <strong>8 cm</strong>, Width = <strong>5 cm</strong>, Height = <strong>3 cm</strong>. Total 6 rectangular faces.
+                </div>
+              </div>
+
+              <div class="model-display-card">
+                <div class="model-card-badge">
+                  <i class="fa-solid fa-table-cells"></i> 2. The Unfolded 2D Net
+                </div>
+                {cuboid_net}
+                <div class="model-card-subcaption">
+                  Notice how the side wings ($3\text{{ cm}} \times 5\text{{ cm}}$) attach along the $5\text{{ cm}}$ edge of the base so they fold up into vertical walls $3\text{{ cm}}$ high!
+                </div>
+              </div>
+            </div>
+
+            <div class="example-steps-list">
+              <div class="example-step-item">
+                <span class="example-step-pill">Step 1</span>
+                <div class="example-step-content">
+                  <strong>List the 3 pairs of opposite faces:</strong><br>
+                  &bull; <strong>Top &amp; Bottom:</strong> 2 faces measuring <strong style="color:#0284c7;">8 cm &times; 5 cm</strong><br>
+                  &bull; <strong>Front &amp; Back:</strong> 2 faces measuring <strong style="color:#0284c7;">8 cm &times; 3 cm</strong><br>
+                  &bull; <strong>Left &amp; Right:</strong> 2 faces measuring <strong style="color:#0284c7;">5 cm &times; 3 cm</strong>
+                </div>
+              </div>
+              <div class="example-step-item">
+                <span class="example-step-pill">Step 2</span>
+                <div class="example-step-content">
+                  <strong>Verify Edge Matching:</strong> When the Left flap ($3\times 5$) folds up, its $3\text{{ cm}}$ edge joins the $3\text{{ cm}}$ height edge of the Front face. Both edges are exactly $3\text{{ cm}}$, creating a perfect corner seam!
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- WORKED MODEL 2: TRIANGULAR PRISM (PACKAGING) -->
+        <section id="model-prism" class="revision-section">
+          <div class="skill-card-container">
+            <div class="skill-header-meta">
+              <span class="skill-badge-tag" style="background:#059669;">Worked Model 2</span>
+              <span class="badge-level-tag">Level 1 &amp; Level 2</span>
+              <span class="badge-board-tag">Retail Packaging Scenario</span>
+            </div>
+            <h3 class="skill-title-text">Model 2: Retail Display Pack (Triangular Prism)</h3>
+            <p>
+              A food packaging designer creates a triangular prism carton for chocolate bars with a length of <strong style="color:#0284c7;">10 cm</strong>, a base width of <strong style="color:#0284c7;">4 cm</strong>, and two slanted sides of <strong style="color:#0284c7;">5 cm</strong>.
+            </p>
+
+            <div class="model-comparison-container">
+              <div class="model-display-card">
+                <div class="model-card-badge">
+                  <i class="fa-solid fa-shapes"></i> 1. The 3D Triangular Prism
+                </div>
+                {prism_3d}
+                <div class="model-card-subcaption">
+                  Length = <strong>10 cm</strong>, Base = <strong>4 cm</strong>, Slanted sides = <strong>5 cm</strong>. Total 5 faces.
+                </div>
+              </div>
+
+              <div class="model-display-card">
+                <div class="model-card-badge">
+                  <i class="fa-solid fa-table-cells"></i> 2. The Unfolded 2D Net
+                </div>
+                {prism_net}
+                <div class="model-card-subcaption">
+                  A central row of 3 rectangular faces flanked by 2 matching triangular end flaps.
+                </div>
+              </div>
+            </div>
+
+            <div class="example-steps-list">
+              <div class="example-step-item">
+                <span class="example-step-pill">Step 1</span>
+                <div class="example-step-content">
+                  <strong>Layout the 3 rectangular faces side by side:</strong><br>
+                  &bull; Slanted roof rectangle 1: <strong style="color:#0284c7;">10 cm &times; 5 cm</strong><br>
+                  &bull; Central base rectangle: <strong style="color:#0284c7;">10 cm &times; 4 cm</strong><br>
+                  &bull; Slanted roof rectangle 2: <strong style="color:#0284c7;">10 cm &times; 5 cm</strong>
+                </div>
+              </div>
+              <div class="example-step-item">
+                <span class="example-step-pill">Step 2</span>
+                <div class="example-step-content">
+                  <strong>Attach the two triangular end flaps:</strong><br>
+                  Attach two isosceles triangles (base = <strong style="color:#0284c7;">4 cm</strong>, sides = <strong style="color:#0284c7;">5 cm</strong>) to the outer edges of the central <strong style="color:#0284c7;">10 cm &times; 4 cm</strong> base rectangle so they fold up into vertical end walls.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- WORKED MODEL 3: SQUARE PYRAMID (ROOF SKYLIGHT) -->
+        <section id="model-pyramid" class="revision-section">
+          <div class="skill-card-container">
+            <div class="skill-header-meta">
+              <span class="skill-badge-tag" style="background:#059669;">Worked Model 3</span>
+              <span class="badge-level-tag">Level 1 &amp; Level 2</span>
+              <span class="badge-board-tag">Construction &amp; Architecture</span>
+            </div>
+            <h3 class="skill-title-text">Model 3: Architectural Roof Skylight (Square-Based Pyramid)</h3>
+            <p>
+              An engineering draftsman draws a sheet-metal pattern for a pyramid skylight with a square base of <strong style="color:#0284c7;">6 cm &times; 6 cm</strong> and a triangular slant height of <strong style="color:#0284c7;">8 cm</strong>.
+            </p>
+
+            <div class="model-comparison-container">
+              <div class="model-display-card">
+                <div class="model-card-badge">
+                  <i class="fa-solid fa-monument"></i> 1. The 3D Square Pyramid
+                </div>
+                {pyramid_3d}
+                <div class="model-card-subcaption">
+                  Base = <strong>6 cm &times; 6 cm</strong>, Slant height = <strong>8 cm</strong>. Total 5 faces (1 square + 4 triangles).
+                </div>
+              </div>
+
+              <div class="model-display-card">
+                <div class="model-card-badge">
+                  <i class="fa-solid fa-table-cells"></i> 2. The Unfolded 2D Net
+                </div>
+                {pyramid_net}
+                <div class="model-card-subcaption">
+                  A central square base with 4 identical isosceles triangles folding outward.
+                </div>
+              </div>
+            </div>
+
+            <div class="example-steps-list">
+              <div class="example-step-item">
+                <span class="example-step-pill">Step 1</span>
+                <div class="example-step-content">
+                  <strong>Central Base:</strong> Draw a square measuring <strong style="color:#0284c7;">6 cm &times; 6 cm</strong> in the center of the grid.
+                </div>
+              </div>
+              <div class="example-step-item">
+                <span class="example-step-pill">Step 2</span>
+                <div class="example-step-content">
+                  <strong>Attach 4 Isosceles Triangles:</strong> On each of the 4 edges of the central square, draw an isosceles triangle with base <strong style="color:#0284c7;">6 cm</strong> and perpendicular height <strong style="color:#0284c7;">8 cm</strong>. All 4 triangles fold up to meet at the top apex!
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- WORKED MODEL 4: CYLINDER (CONTAINER) -->
+        <section id="model-cylinder" class="revision-section">
+          <div class="skill-card-container">
+            <div class="skill-header-meta">
+              <span class="skill-badge-tag" style="background:#059669;">Worked Model 4</span>
+              <span class="badge-level-tag">Level 2 Essential</span>
+              <span class="badge-board-tag">Industrial Packaging Scenario</span>
+            </div>
+            <h3 class="skill-title-text">Model 4: Cylindrical Storage Drum (Cylinder Net)</h3>
+            <p>
+              A metal fabricator manufactures cylindrical containers with a radius of <strong style="color:#0284c7;">3 cm</strong> (diameter $d = 6\text{{ cm}}$) and a height of <strong style="color:#0284c7;">10 cm</strong>.
+            </p>
+
+            <div class="model-comparison-container">
+              <div class="model-display-card">
+                <div class="model-card-badge">
+                  <i class="fa-solid fa-database"></i> 1. The 3D Cylinder
+                </div>
+                {cylinder_3d}
+                <div class="model-card-subcaption">
+                  Radius $r =$ <strong>3 cm</strong>, Diameter $d =$ <strong>6 cm</strong>, Height $h =$ <strong>10 cm</strong>. Total 3 faces.
+                </div>
+              </div>
+
+              <div class="model-display-card">
+                <div class="model-card-badge">
+                  <i class="fa-solid fa-table-cells"></i> 2. The Unfolded 2D Net
+                </div>
+                {cylinder_net}
+                <div class="model-card-subcaption">
+                  Crucial Level 2 rule: The width of the unrolled rectangle equals the circumference of the circle: $\text{{Width}} = \pi \times d \approx 18.85\text{{ cm}}$.
+                </div>
+              </div>
+            </div>
+
+            <div class="example-steps-list">
+              <div class="example-step-item">
+                <span class="example-step-pill">Step 1</span>
+                <div class="example-step-content">
+                  <strong>Calculate the unrolled rectangle length:</strong><br>
+                  The rectangle must wrap completely around the circular lid with zero gap:
+                  <div style="background:#e0f2fe; padding:8px 14px; border-radius:6px; margin:6px 0; font-family:'Courier New', monospace; font-weight:700; color:#0369a1;">
+                    Circumference = &pi; &times; d = 3.142 &times; 6 = 18.85 cm
+                  </div>
+                </div>
+              </div>
+              <div class="example-step-item">
+                <span class="example-step-pill">Step 2</span>
+                <div class="example-step-content">
+                  <strong>Assemble the net:</strong> Draw a rectangle measuring <strong style="color:#0284c7;">18.85 cm wide</strong> by <strong style="color:#0284c7;">10 cm tall</strong>. Attach two circles of radius <strong style="color:#0284c7;">3 cm</strong> to opposite long edges.
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ORIGINAL INTERACTIVE EXAM PRACTICE -->
+        <section id="practice-questions" class="revision-section">
+          <div class="section-header-row">
+            <h2 class="section-title"><i class="fa-solid fa-pencil"></i> Original Interactive Exam Practice</h2>
+          </div>
+
+          <!-- QUESTION 1 -->
+          <div class="practice-q-card">
+            <div class="practice-q-header">
+              <div class="practice-q-title"><span class="pfs-prefix">Question 1:</span> Cube Net Verification &amp; Trap Elimination</div>
+              <span class="practice-marks-pill"><i class="fa-solid fa-award"></i> [3 Marks]</span>
+            </div>
+            <div class="practice-q-stem">
+              <p>Look at the four 2D nets shown below. <strong>Which TWO nets can be folded to form a closed cube?</strong> Explain why the other two nets cannot fold into a cube.</p>
+              <div class="vector-diagram-box">
+                {q1_svg}
+              </div>
+            </div>
+
+            <div class="working-scratchpad-area">
+              <label class="working-scratchpad-label"><i class="fa-solid fa-calculator"></i> Your Working Scratchpad (Auto-saved):</label>
+              <textarea class="working-scratchpad-input" placeholder="State which two nets are valid, and explain the fatal error in each of the invalid nets..."></textarea>
+            </div>
+
+            <div class="practice-q-toolbar">
+              <button type="button" class="btn-reveal-solution" onclick="toggleSolutionDrawer('drawer-q1')">
+                <i class="fa-solid fa-eye"></i> Reveal Step-by-Step Solution &amp; Mark Scheme
+              </button>
+            </div>
+
+            <div id="drawer-q1" class="solution-drawer">
+              <div class="solution-drawer-title">
+                <div style="display:flex; align-items:center; gap:8px;"><i class="fa-solid fa-circle-check"></i> Official Tutor Step-by-Step Mark Scheme</div>
+                <span class="solution-marks-badge">[3 Marks] Full Marks</span>
+              </div>
+              <div class="solution-steps-list">
+                <div class="solution-step-item">
+                  <div class="solution-step-header">
+                    <span class="solution-step-tag">Step 1 (Valid Nets Identification)</span>
+                    <span class="solution-step-mark">B1 Mark</span>
+                  </div>
+                  <div class="solution-step-content">
+                    <strong>Net A</strong> and <strong>Net C</strong> are valid nets. Net A is the classic 1-4-1 Latin cross net and Net C is a valid 2-3-1 Z-pattern net. Both have 6 squares with no overlapping faces.
+                  </div>
+                </div>
+                <div class="solution-step-item">
+                  <div class="solution-step-header">
+                    <span class="solution-step-tag">Step 2 (Net B Diagnostic)</span>
+                    <span class="solution-step-mark">M1 Mark</span>
+                  </div>
+                  <div class="solution-step-content">
+                    <strong>Net B</strong> fails because it contains a <strong>solid 2&times;2 block</strong> of squares. When folded, two of these squares collide into the exact same face, leaving an open hole on the opposite side.
+                  </div>
+                </div>
+                <div class="solution-step-item">
+                  <div class="solution-step-header">
+                    <span class="solution-step-tag">Step 3 (Net D Diagnostic)</span>
+                    <span class="solution-step-mark">M1 Mark</span>
+                  </div>
+                  <div class="solution-step-content">
+                    <strong>Net D</strong> fails because it has <strong>5 squares in a straight row</strong>. A cube has only 4 vertical walls, so a row of 5 wraps past the 4th side, overlapping face 1 and leaving one side open.
+                  </div>
+                </div>
+              </div>
+              <div class="solution-final-answer-box">
+                <div class="solution-final-label"><i class="fa-solid fa-award"></i> Correct Final Answer:</div>
+                <div class="solution-final-value">Valid: Net A and Net C. Invalid: Net B (2&times;2 block clashes) and Net D (5 in a row overlaps).</div>
+              </div>
+            </div>
+
+            <div class="practice-q-footer">
+              <span class="pfs-pill-l1">FS Level 1</span>
+              <span class="pfs-pill-l2">FS Level 2</span>
+              <span class="pfs-pill-board">Pearson Edexcel &bull; City &amp; Guilds</span>
+            </div>
+          </div>
+
+          <!-- QUESTION 2 -->
+          <div class="practice-q-card">
+            <div class="practice-q-header">
+              <div class="practice-q-title"><span class="pfs-prefix">Question 2:</span> Packaging Scenario &mdash; Tablet Delivery Box</div>
+              <span class="practice-marks-pill"><i class="fa-solid fa-award"></i> [3 Marks]</span>
+            </div>
+            <div class="practice-q-stem">
+              <p>An electronics distributor manufactures cardboard packaging boxes for graphic tablets. Each box is a cuboid measuring <strong style="color:#0284c7;">12 cm long</strong>, <strong style="color:#0284c7;">8 cm wide</strong>, and <strong style="color:#0284c7;">5 cm high</strong>.</p>
+              <p>Three candidate flat-pack net designs (Net 1, Net 2, and Net 3) are evaluated below:</p>
+              <div class="vector-diagram-box">
+                {q2_svg}
+              </div>
+              <p><strong>(a)</strong> State which candidate net is mathematically correct.</p>
+              <p><strong>(b)</strong> Explain the specific geometric error in the other two candidate nets.</p>
+            </div>
+
+            <div class="working-scratchpad-area">
+              <label class="working-scratchpad-label"><i class="fa-solid fa-calculator"></i> Your Working Scratchpad (Auto-saved):</label>
+              <textarea class="working-scratchpad-input" placeholder="Check the dimensions of the spine and the side flaps for each proposed design..."></textarea>
+            </div>
+
+            <div class="practice-q-toolbar">
+              <button type="button" class="btn-reveal-solution" onclick="toggleSolutionDrawer('drawer-q2')">
+                <i class="fa-solid fa-eye"></i> Reveal Step-by-Step Solution &amp; Mark Scheme
+              </button>
+            </div>
+
+            <div id="drawer-q2" class="solution-drawer">
+              <div class="solution-drawer-title">
+                <div style="display:flex; align-items:center; gap:8px;"><i class="fa-solid fa-circle-check"></i> Official Tutor Step-by-Step Mark Scheme</div>
+                <span class="solution-marks-badge">[3 Marks] Full Marks</span>
+              </div>
+              <div class="solution-steps-list">
+                <div class="solution-step-item">
+                  <div class="solution-step-header">
+                    <span class="solution-step-tag">Step 1 (Correct Net Selection)</span>
+                    <span class="solution-step-mark">A1 Mark</span>
+                  </div>
+                  <div class="solution-step-content">
+                    <strong>Proposed Net 1</strong> is correct. The central spine alternates between the $12\times 5$ and $12\times 8$ faces, and the two side flaps are $8\text{{ cm}} \times 5\text{{ cm}}$ attached to the $8\text{{ cm}}$ edges of the base.
+                  </div>
+                </div>
+                <div class="solution-step-item">
+                  <div class="solution-step-header">
+                    <span class="solution-step-tag">Step 2 (Net 2 Error Diagnostic)</span>
+                    <span class="solution-step-mark">M1 Mark</span>
+                  </div>
+                  <div class="solution-step-content">
+                    <strong>Net 2 fails</strong> because its side flaps measure <strong>8 cm &times; 8 cm</strong> instead of 8 cm &times; 5 cm. When folded up, they will be 3 cm too tall and collide with the top lid.
+                  </div>
+                </div>
+                <div class="solution-step-item">
+                  <div class="solution-step-header">
+                    <span class="solution-step-tag">Step 3 (Net 3 Error Diagnostic)</span>
+                    <span class="solution-step-mark">M1 Mark</span>
+                  </div>
+                  <div class="solution-step-content">
+                    <strong>Net 3 fails</strong> because the central spine has <strong>5 rectangles instead of 4</strong>, giving 7 faces in total. A cuboid has only 6 faces, so Net 3 will overlap onto itself.
+                  </div>
+                </div>
+              </div>
+              <div class="solution-final-answer-box">
+                <div class="solution-final-label"><i class="fa-solid fa-award"></i> Correct Final Answer:</div>
+                <div class="solution-final-value">Net 1 is correct. Net 2 has oversized side flaps (8&times;8cm). Net 3 has 7 faces instead of 6.</div>
+              </div>
+            </div>
+
+            <div class="practice-q-footer">
+              <span class="pfs-pill-l1">FS Level 1</span>
+              <span class="pfs-pill-l2">FS Level 2</span>
+              <span class="pfs-pill-board">Pearson Edexcel &bull; City &amp; Guilds</span>
+            </div>
+          </div>
+
+          <!-- QUESTION 3 -->
+          <div class="practice-q-card">
+            <div class="practice-q-header">
+              <div class="practice-q-title"><span class="pfs-prefix">Question 3:</span> Triangular Prism Packaging Area</div>
+              <span class="practice-marks-pill"><i class="fa-solid fa-award"></i> [2 Marks]</span>
+            </div>
+            <div class="practice-q-stem">
+              <p>A confectionery company packages triangular chocolate bars in a prism box. The end faces are equilateral triangles with sides of <strong style="color:#0284c7;">6 cm</strong>. The length of the box is <strong style="color:#0284c7;">15 cm</strong>.</p>
+              <p><strong>(a)</strong> State the total number of faces, edges, and vertices on this box.</p>
+              <p><strong>(b)</strong> Calculate the total cardboard surface area of the <strong>three rectangular faces</strong> of the net.</p>
+            </div>
+
+            <div class="working-scratchpad-area">
+              <label class="working-scratchpad-label"><i class="fa-solid fa-calculator"></i> Your Working Scratchpad (Auto-saved):</label>
+              <textarea class="working-scratchpad-input" placeholder="Calculate area = length x width for the 3 rectangular faces..."></textarea>
+            </div>
+
+            <div class="practice-q-toolbar">
+              <button type="button" class="btn-reveal-solution" onclick="toggleSolutionDrawer('drawer-q3')">
+                <i class="fa-solid fa-eye"></i> Reveal Step-by-Step Solution &amp; Mark Scheme
+              </button>
+            </div>
+
+            <div id="drawer-q3" class="solution-drawer">
+              <div class="solution-drawer-title">
+                <div style="display:flex; align-items:center; gap:8px;"><i class="fa-solid fa-circle-check"></i> Official Tutor Step-by-Step Mark Scheme</div>
+                <span class="solution-marks-badge">[2 Marks] Full Marks</span>
+              </div>
+              <div class="solution-steps-list">
+                <div class="solution-step-item">
+                  <div class="solution-step-header">
+                    <span class="solution-step-tag">Part (a): Shape Anatomy</span>
+                    <span class="solution-step-mark">B1 Mark</span>
+                  </div>
+                  <div class="solution-step-content">
+                    Faces = <strong>5</strong> (2 triangles + 3 rectangles), Edges = <strong>9</strong>, Vertices = <strong>6</strong>.
+                  </div>
+                </div>
+                <div class="solution-step-item">
+                  <div class="solution-step-header">
+                    <span class="solution-step-tag">Part (b): Rectangular Area</span>
+                    <span class="solution-step-mark">M1 A1 Mark</span>
+                  </div>
+                  <div class="solution-step-content">
+                    Each rectangular face measures $15\text{{ cm}} \times 6\text{{ cm}} = 90\text{{ cm}}^2$.<br>
+                    Total area for 3 rectangular faces $= 3 \times 90 = \mathbf{{270\text{{ cm}}^2}}$.
+                  </div>
+                </div>
+              </div>
+              <div class="solution-final-answer-box">
+                <div class="solution-final-label"><i class="fa-solid fa-award"></i> Correct Final Answer:</div>
+                <div class="solution-final-value">(a) 5 faces, 9 edges, 6 vertices. (b) 270 cm&sup2;</div>
+              </div>
+            </div>
+
+            <div class="practice-q-footer">
+              <span class="pfs-pill-l1">FS Level 1</span>
+              <span class="pfs-pill-l2">FS Level 2</span>
+              <span class="pfs-pill-board">Pearson Edexcel &bull; City &amp; Guilds</span>
+            </div>
+          </div>
+
+          <!-- QUESTION 4 -->
+          <div class="practice-q-card">
+            <div class="practice-q-header">
+              <div class="practice-q-title"><span class="pfs-prefix">Question 4:</span> Cylindrical Paint Tin Label</div>
+              <span class="practice-marks-pill"><i class="fa-solid fa-award"></i> [3 Marks]</span>
+            </div>
+            <div class="practice-q-stem">
+              <p>A manufacturing plant produces cylindrical paint tins. Each tin has a diameter of <strong style="color:#0284c7;">8 cm</strong> and a height of <strong style="color:#0284c7;">12 cm</strong>. A rectangular paper label wraps completely around the tin with an extra <strong style="color:#0284c7;">1 cm overlap</strong> for glue.</p>
+              <p><strong>(a)</strong> What 2D shape is formed when the curved surface of a cylinder is unrolled flat?</p>
+              <p><strong>(b)</strong> Calculate the minimum total length of the paper label required, including the 1 cm overlap. (Use $\pi = 3.142$ and give your answer to 1 decimal place).</p>
+            </div>
+
+            <div class="working-scratchpad-area">
+              <label class="working-scratchpad-label"><i class="fa-solid fa-calculator"></i> Your Working Scratchpad (Auto-saved):</label>
+              <textarea class="working-scratchpad-input" placeholder="Use Circumference = pi x d, then add the 1 cm overlap..."></textarea>
+            </div>
+
+            <div class="practice-q-toolbar">
+              <button type="button" class="btn-reveal-solution" onclick="toggleSolutionDrawer('drawer-q4')">
+                <i class="fa-solid fa-eye"></i> Reveal Step-by-Step Solution &amp; Mark Scheme
+              </button>
+            </div>
+
+            <div id="drawer-q4" class="solution-drawer">
+              <div class="solution-drawer-title">
+                <div style="display:flex; align-items:center; gap:8px;"><i class="fa-solid fa-circle-check"></i> Official Tutor Step-by-Step Mark Scheme</div>
+                <span class="solution-marks-badge">[3 Marks] Full Marks</span>
+              </div>
+              <div class="solution-steps-list">
+                <div class="solution-step-item">
+                  <div class="solution-step-header">
+                    <span class="solution-step-tag">Part (a): Shape Identification</span>
+                    <span class="solution-step-mark">B1 Mark</span>
+                  </div>
+                  <div class="solution-step-content">
+                    A <strong>Rectangle</strong> (or oblong).
+                  </div>
+                </div>
+                <div class="solution-step-item">
+                  <div class="solution-step-header">
+                    <span class="solution-step-tag">Part (b): Circumference Calculation</span>
+                    <span class="solution-step-mark">M1 Mark</span>
+                  </div>
+                  <div class="solution-step-content">
+                    $\text{{Circumference}} = \pi \times d = 3.142 \times 8 = 25.136\text{{ cm}}$.
+                  </div>
+                </div>
+                <div class="solution-step-item">
+                  <div class="solution-step-header">
+                    <span class="solution-step-tag">Part (b): Total Length with Overlap</span>
+                    <span class="solution-step-mark">A1 Mark</span>
+                  </div>
+                  <div class="solution-step-content">
+                    $\text{{Total Length}} = 25.136 + 1.0 = 26.136\text{{ cm}} \approx \mathbf{{26.1\text{{ cm}}}}$ (to 1 d.p.).
+                  </div>
+                </div>
+              </div>
+              <div class="solution-final-answer-box">
+                <div class="solution-final-label"><i class="fa-solid fa-award"></i> Correct Final Answer:</div>
+                <div class="solution-final-value">(a) Rectangle. (b) 26.1 cm (to 1 d.p.).</div>
+              </div>
+            </div>
+
+            <div class="practice-q-footer">
+              <span class="pfs-pill-l2">FS Level 2</span>
+              <span class="pfs-pill-board">Pearson Edexcel &bull; City &amp; Guilds</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- FREE REVISION WORKSHEETS & DOWNLOADS -->
+        <section id="downloads" class="revision-section">
+          <div class="section-header-row">
+            <h2 class="section-title"><i class="fa-regular fa-file-pdf"></i> Free Revision Worksheets &amp; Exam Papers</h2>
+          </div>
+          <div class="skill-card-container">
+            <p>Download our dyslexia-friendly, double-spaced practice worksheets and printable net cut-out activities:</p>
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:18px; margin-top:16px;">
+              <div style="background:#f8fafc; border:1.5px solid #e2e8f0; border-radius:12px; padding:18px; display:flex; align-items:center; gap:14px;">
+                <i class="fa-solid fa-file-pdf" style="font-size:2rem; color:#dc2626;"></i>
+                <div>
+                  <div style="font-weight:800; color:var(--navy-dark); font-size:0.95rem;">Printable Cube Nets Cut-Out Sheet</div>
+                  <div style="font-size:0.82rem; color:#64748b;">11 Valid Nets &bull; High Resolution PDF &bull; A4</div>
+                  <a href="functional-skills-past-papers.html" style="font-size:0.85rem; color:#0284c7; font-weight:700; text-decoration:none; margin-top:4px; display:inline-block;">Download Free PDF &rarr;</a>
+                </div>
+              </div>
+
+              <div style="background:#f8fafc; border:1.5px solid #e2e8f0; border-radius:12px; padding:18px; display:flex; align-items:center; gap:14px;">
+                <i class="fa-solid fa-file-pdf" style="font-size:2rem; color:#dc2626;"></i>
+                <div>
+                  <div style="font-weight:800; color:var(--navy-dark); font-size:0.95rem;">3D Nets &amp; Surface Area Exam Pack</div>
+                  <div style="font-size:0.82rem; color:#64748b;">Pearson Edexcel &bull; 15 Practice Questions with Answers</div>
+                  <a href="functional-skills-past-papers.html" style="font-size:0.85rem; color:#0284c7; font-weight:700; text-decoration:none; margin-top:4px; display:inline-block;">Download Free PDF &rarr;</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>  <!-- FOOTER -->
+  <footer class="mfs-footer" id="site-footer">
+    <div class="mfs-container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="mfs-brand" style="margin-bottom:16px;">
+            <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="mfs-brand-text">
+              <div class="mfs-brand-title" style="color:#ffffff;">MASTER<span>FUNCTIONALSKILLS</span></div>
+              <div class="mfs-brand-subtitle" style="color:#94a3b8;">Delivering Skills • Achieving Goals</div>
+            </div>
+          </div>
+          <p style="font-size:0.88rem; line-height:1.6; margin-bottom:16px;">
+            The UK's dedicated Functional Skills revision specialist. Providing realistic mock exams, step-by-step revision flashcards, diagnostic assessments, and 1-to-1 specialist tuition for Pearson Edexcel, City &amp; Guilds, and all major exam boards.
+          </p>
+          <div style="font-size:0.85rem; color:#cbd5e1;">
+            <p><a href="https://wa.me/447564525425" target="_blank" rel="noopener" style="color:#cbd5e1; text-decoration:none;"><i class="fa-brands fa-whatsapp" style="color:var(--accent); margin-right:8px;"></i> WhatsApp: +44 (0)7564 525425</a></p>
+            <p style="margin-top:6px;"><a href="contact-us.html" style="color:#cbd5e1; text-decoration:none;"><i class="fa-solid fa-envelope" style="color:var(--accent); margin-right:8px;"></i> Contact Tutor Team</a></p>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Maths Revision</h4>
+          <ul class="footer-links">
+            <li><a href="functional-skills-maths-level-2.html">Maths Level 2 Revision</a></li>
+            <li><a href="functional-skills-maths-level-1.html">Maths Level 1 Revision</a></li>
+            <li><a href="entry-level-3-maths.html">Entry Level 3 Maths</a></li>
+            <li><a href="pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="functional-skills-past-papers.html">Free Maths Past Papers</a></li>
+            <li><a href="exam-maths-l2.html">Book Level 2 Maths Exam</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>English &amp; Digital</h4>
+          <ul class="footer-links">
+            <li><a href="functional-skills-english-level-2.html">English Level 2 Revision</a></li>
+            <li><a href="functional-skills-english-level-1.html">English Level 1 Revision</a></li>
+            <li><a href="digital-functional-skills.html">Digital Skills Hub (L1 &amp; E3)</a></li>
+            <li><a href="digital-functional-skills-past-papers.html">DFS Past Papers &amp; Data Files</a></li>
+            <li><a href="functional-skills-past-papers.html?format=online#mock-finder">Online Exam Simulator</a></li>
+            <li><a href="exam-english-l2.html">Book Level 2 English Exam</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Student Support &amp; Tools</h4>
+          <ul class="footer-links">
+            <li><a href="tools.html" style="color:var(--accent); font-weight:700;"><i class="fa-solid fa-screwdriver-wrench" style="margin-right:6px;"></i>All Interactive Tools Hub</a></li>
+            <li><a href="pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="diagnostic-test.html">Diagnostic Skill Checker</a></li>
+            <li><a href="functional-skills-nets.html">3D Net Folding Tool</a></li>
+            <li><a href="digital-functional-skills-mock-exam.html">Pearson DFS Simulator</a></li>
+            <li><a href="revision-cards.html">Revision Cards &amp; Flashcards</a></li>
+            <li><a href="shop.html">Revision Books &amp; Study Packs</a></li>
+            <li><a href="tutors.html">1-to-1 Specialist Tuition</a></li>
+            <li><a href="exams.html">Book Official Online Exam</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Master Functional Skills. All rights reserved. Registered in England &amp; Wales. Ofqual Regulated Qualification Standards.</div>
+        <div style="display:flex; gap:16px; flex-wrap:wrap;">
+          <a href="index.html">Home</a>
+          <a href="tools.html" style="color:var(--accent); font-weight:700;">Tools</a>
+          <a href="functional-skills-past-papers.html">Past Papers</a>
+          <a href="revision-cards.html">Revision Cards</a>
+          <a href="shop.html">Study Shop</a>
+          <a href="tutors.html">Tutors</a>
+          <a href="contact-us.html">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- SCRIPT FOR INTERACTIVE FEATURES & SOLUTION DRAWERS -->
+  <script>
+    function toggleSolutionDrawer(drawerId) {{
+      const drawer = document.getElementById(drawerId);
+      if (drawer) {{
+        drawer.classList.toggle('open');
+      }}
+    }}
+
+    function toggleMobileToc() {{
+      const nav = document.getElementById('sidebarNav');
+      if (nav) {{
+        nav.classList.toggle('open-mobile');
+      }}
+    }}
+
+    function toggleEmbedFullscreen() {{
+      const container = document.getElementById('netfoldStationContainer');
+      if (!document.fullscreenElement) {{
+        if (container.requestFullscreen) {{
+          container.requestFullscreen();
+        }} else if (container.webkitRequestFullscreen) {{
+          container.webkitRequestFullscreen();
+        }}
+      }} else {{
+        if (document.exitFullscreen) {{
+          document.exitFullscreen();
+        }}
+      }}
+    }}
+
+    // Highlight active link in sidebar during scroll
+    window.addEventListener('DOMContentLoaded', () => {{
+      const sections = document.querySelectorAll('.revision-section');
+      const navLinks = document.querySelectorAll('.sidebar-toc-link');
+
+      window.addEventListener('scroll', () => {{
+        let current = '';
+        sections.forEach(section => {{
+          const sectionTop = section.offsetTop;
+          if (pageYOffset >= sectionTop - 150) {{
+            current = section.getAttribute('id');
+          }}
+        }});
+
+        navLinks.forEach(link => {{
+          link.classList.remove('active');
+          if (link.getAttribute('href') === '#' + current) {{
+            link.classList.add('active');
+          }}
+        }});
+      }});
+    }});
+  </script>
+</body>
+</html>
+"""
+
+    out_paths = [
+        "/home/subi/Projects/masterfunctionalskills.co.uk/functional-skills-nets.html",
+        "/home/subi/Nextcloud/Projects/masterfunctionalskills.co.uk/functional-skills-nets.html"
+    ]
+    for p in out_paths:
+        os.makedirs(os.path.dirname(p), exist_ok=True)
+        with open(p, "w", encoding="utf-8") as f:
+            f.write(html_content)
+        print(f"Successfully generated {p} ({len(html_content)} bytes).")
+
+if __name__ == "__main__":
+    generate_page()

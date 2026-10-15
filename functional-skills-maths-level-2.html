@@ -1,0 +1,929 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-theme="maths" data-tint="cream">
+<head>
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Functional Skills Maths Level 2 | Master Functional Skills</title>
+  <meta name="description" content="Master Functional Skills Maths Level 2. Pass first time with topic-by-topic revision guides, worksheet questions, video solutions, and practice tests.">
+  <link rel="stylesheet" href="assets/css/mfs-theme.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <!-- TOP TRUST BAR WITH ACCESSIBILITY & CONTACT -->
+  <div class="mfs-top-bar">
+    <div class="mfs-container mfs-top-bar-inner">
+      <div class="top-trust-items">
+        <span class="top-trust-item"><i class="fa-solid fa-building-columns"></i> Pearson Edexcel &amp; City &amp; Guilds Aligned</span>
+      </div>
+      <div class="top-contacts">
+        <div class="mfs-access-bar">
+          <!-- DYSLEXIA BACKGROUND TINT PICKER -->
+          <div class="mfs-tint-dropdown-wrap">
+            <button type="button" id="tintToggle" class="btn-tint-toggle" onclick="toggleTintMenu(event)" title="Change dyslexia background tint">
+              <span class="tint-swatch-indicator" id="tintCurrentSwatch"></span>
+              <span id="tintLabel">Cream Tint</span>
+              <i class="fa-solid fa-chevron-down" style="font-size:0.62rem; opacity:0.75; margin-left:2px;"></i>
+            </button>
+            <div id="tintMenu" class="tint-picker-menu">
+              <div class="tint-picker-title"><i class="fa-solid fa-glasses"></i> Dyslexia Reading Tint</div>
+              <button type="button" class="tint-option-btn active" data-tint="cream" onclick="setSiteTint('cream', event)">
+                <span class="swatch swatch-cream"></span>
+                <span class="tint-name">Cream <small class="tint-badge-def">Default</small></span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="peach" onclick="setSiteTint('peach', event)">
+                <span class="swatch swatch-peach"></span>
+                <span class="tint-name">Soft Peach</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="cool" onclick="setSiteTint('cool', event)">
+                <span class="swatch swatch-cool"></span>
+                <span class="tint-name">Cool Mist</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="sage" onclick="setSiteTint('sage', event)">
+                <span class="swatch swatch-sage"></span>
+                <span class="tint-name">Soft Sage</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <div class="tint-divider"></div>
+              <button type="button" class="tint-option-btn" data-tint="none" onclick="setSiteTint('none', event)">
+                <span class="swatch swatch-none"></span>
+                <span class="tint-name">No Tint (White)</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+            </div>
+          </div>
+          <button id="dyslexiaToggle" class="btn-dyslexia-toggle" onclick="toggleDyslexiaMode()" title="Toggle Dyslexia High-Readability Mode">
+            <i class="fa-solid fa-universal-access"></i> Dyslexia
+          </button>
+          <button id="themeToggle" class="mfs-theme-pill" onclick="toggleTheme()" title="Switch Palette: Sapphire vs Emerald">
+            <i class="fa-solid fa-palette"></i> <span id="themeLabel">Sapphire</span>
+          </button>
+        </div>
+        <a href="contact-us.html" class="top-contact-link"><i class="fa-solid fa-envelope"></i> <strong>Contact Us</strong></a>
+      </div>
+    </div>
+  </div>  <!-- MAIN NAVIGATION -->
+                                  <header class="mfs-navbar">
+    <div class="revision-page-wrapper mfs-navbar-inner">
+      <a href="index.html" class="mfs-brand">
+        <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div class="mfs-brand-text">
+          <div class="mfs-brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
+          <div class="mfs-brand-subtitle">Delivering Skills • Achieving Goals</div>
+        </div>
+      </a>
+
+      <nav class="mfs-nav-wrapper">
+        <ul class="mfs-nav-menu">
+          <!-- 1. SUBJECTS (VISUAL MEGA-MENU) -->
+          <li class="mfs-nav-item">
+            <a href="courses.html" class="mfs-nav-link">
+              <i class="fa-solid fa-book-open-reader" style="color:#0284c7; margin-right:5px;"></i> Subjects <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-revision-hub">
+              <div class="mfs-revision-grid">
+                <!-- Maths Column -->
+                <div class="mfs-revision-col mfs-revision-col-maths">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-calculator"></i> Maths Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="functional-skills-maths-level-2.html" class="mfs-dropdown-item">Maths Level 2</a>
+                    <a href="functional-skills-maths-level-1.html" class="mfs-dropdown-item">Maths Level 1</a>
+                    <a href="entry-level-3-maths.html" class="mfs-dropdown-item">Entry Level 3 Maths</a>
+                  </div>
+                </div>
+                <!-- English Column -->
+                <div class="mfs-revision-col mfs-revision-col-english">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-pen-nib"></i> English Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="functional-skills-english-level-2.html" class="mfs-dropdown-item">English Level 2</a>
+                    <a href="functional-skills-english-level-1.html" class="mfs-dropdown-item">English Level 1</a>
+                  </div>
+                </div>
+                <!-- Digital Skills Column -->
+                <div class="mfs-revision-col mfs-revision-col-digital">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-laptop-code"></i> Digital Skills</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="digital-functional-skills.html" class="mfs-dropdown-item">Digital Skills Hub</a>
+                    <a href="digital-functional-skills-mock-exam.html" class="mfs-dropdown-item">Pearson Mock Exam</a>
+                    <a href="digital-functional-skills-past-papers.html" class="mfs-dropdown-item">Past Papers &amp; Files</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- 2. PAST PAPERS & MOCKS (DIRECT ACCESS) -->
+          <li class="mfs-nav-item">
+            <a href="functional-skills-past-papers.html" class="mfs-nav-link">
+              <i class="fa-regular fa-file-lines" style="color:#0284c7; margin-right:5px;"></i> Past Papers &amp; Mocks
+            </a>
+          </li>
+
+          <!-- 2b. WORKSHEETS DIRECTORY (CORBETT STYLE DUAL ENGINE) -->
+          <li class="mfs-nav-item">
+            <a href="worksheets.html" class="mfs-nav-link">
+              <i class="fa-solid fa-layer-group" style="color:#0284c7; margin-right:5px;"></i> Worksheets Hub
+            </a>
+          </li>
+
+          <!-- 3. FREE TOOLS (COMPACT DROPDOWN) -->
+          <li class="mfs-nav-item">
+            <a href="tools.html" class="mfs-nav-link">
+              <i class="fa-solid fa-screwdriver-wrench" style="color:#0284c7; margin-right:5px;"></i> Free Tools <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-compact">
+              <a href="tools.html" class="mfs-dropdown-item" style="font-weight:700; color:var(--accent);"><i class="fa-solid fa-layer-group" style="font-size:0.85rem; margin-right:6px;"></i> All Free Tools &amp; Simulators &rarr;</a>
+              <div class="mfs-dropdown-divider" style="margin:4px 0; border-top:1px solid #e2e8f0;"></div>
+              <a href="pass-mark-calculator.html" class="mfs-dropdown-item"><i class="fa-solid fa-calculator" style="color:var(--accent); font-size:0.85rem; margin-right:6px;"></i> Pass Mark Calculator</a>
+              <a href="diagnostic-test.html" class="mfs-dropdown-item"><i class="fa-solid fa-chart-pie" style="color:#059669; font-size:0.85rem; margin-right:6px;"></i> Diagnostic Skill Checker</a>
+              <a href="functional-skills-nets.html" class="mfs-dropdown-item"><i class="fa-solid fa-cube" style="color:#0284c7; font-size:0.85rem; margin-right:6px;"></i> 3D Net Folding Tool</a>
+            </div>
+          </li>
+
+          <!-- 4. REVISION CARDS -->
+          <li class="mfs-nav-item">
+            <a href="revision-cards.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-layer-group" style="color:#d97706; margin-right:5px;"></i> Revision Cards
+            </a>
+          </li>
+
+          <!-- 5. SHOP -->
+          <li class="mfs-nav-item">
+            <a href="shop.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-basket-shopping" style="color:#d97706; margin-right:5px;"></i> Shop
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- 6. BOOK EXAM ACTION BUTTON -->
+      <div class="mfs-nav-actions">
+        <a href="exams.html" class="btn-nav-exam">
+          <i class="fa-solid fa-calendar-check"></i> Book Exam
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- PROMOTIONAL SALE ACCENT BANNER -->
+  <div class="mfs-promo-banner"><div class="mfs-container mfs-promo-inner"></div></div>
+
+  <!-- HERO SECTION -->
+  <section class="mfs-hero-section">
+    <div class="mfs-container mfs-hero-grid">
+      <div class="hero-content">
+        <h1>Functional Skills <span>Maths Level 2</span></h1>
+        <p class="hero-description">
+          The complete Functional Skills Maths Level 2 curriculum directory. Access dedicated topic revision guides, interactive video tutorials, practice worksheet questions, and worked solutions. Everything you need to secure your Ofqual-regulated Grade 4 / C equivalent qualification.
+        </p>
+
+        <div class="hero-reviews-bar">
+          <div class="star-rating">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star-half-stroke"></i>
+          </div>
+          <div class="reviews-stat">
+            Average rating: <strong>4.9 / 5</strong> from <strong>1,420+ Verified Reviews</strong>
+          </div>
+        </div>
+
+        
+
+        <div class="hero-buttons">
+          <a href="exam-maths-l2.html" class="btn-hero-accent"><i class="fa-solid fa-check"></i> Book Level 2 Exam (£149)</a>
+          <a href="course-maths-l2.html" class="btn-hero-navy"><i class="fa-solid fa-play"></i> Online Course</a>
+          <a href="#revision" class="btn-hero-outline"><i class="fa-solid fa-arrow-down"></i> Revise Topics</a>
+        </div>
+      </div>
+
+      <!-- Right Column: Real Learner Photo & Pass Rates Comparison Card -->
+      <div style="display:flex; flex-direction:column; gap:20px;">
+        <div class="real-photo-card">
+          <img src="assets/img/whiteboard-stylus-tablet.jpg" alt="Interactive Maths Level 2 digital problem solving" style="height:210px; object-fit:cover;">
+          <div class="real-photo-overlay">
+            <div style="font-size:1.6rem; color:var(--accent);"><i class="fa-solid fa-calculator"></i></div>
+            <div>
+              <strong>Complete 39-Topic Curriculum</strong>
+              <span>Interactive videos, worksheets, answers, and online tests</span>
+            </div>
+          </div>
+        </div>
+
+        
+      </div>
+    </div>
+  </section>
+
+  <!-- 3 ACTION CARDS -->
+  <section class="mfs-features-section">
+    <div class="mfs-container mfs-features-grid">
+      <!-- Card 1 -->
+      <div class="feature-action-card">
+        <div class="feature-card-top">
+          <div class="feature-icon-badge"><i class="fa-solid fa-book-open"></i></div>
+          <div class="feature-card-body">
+            <h3>Revise Maths Level 2 Topics</h3>
+            <p>Over 39 dedicated topic guides with clear golden rules, examiner traps, and step-by-step model answers.</p>
+          </div>
+        </div>
+        <a href="#revision" class="btn-card-action">View Topic Directory →</a>
+      </div>
+
+      <!-- Card 2 -->
+      <div class="feature-action-card">
+        <div class="feature-card-top">
+          <div class="feature-icon-badge"><i class="fa-regular fa-file-pdf"></i></div>
+          <div class="feature-card-body">
+            <h3>Maths Level 2 Past Papers</h3>
+            <p>Download free Pearson Edexcel, City & Guilds, and Open Awards past papers with complete mark schemes.</p>
+          </div>
+        </div>
+        <a href="functional-skills-past-papers.html" class="btn-card-action">View Past Papers →</a>
+      </div>
+
+      <!-- Card 3 -->
+      <div class="feature-action-card">
+        <div class="feature-card-top">
+          <div class="feature-icon-badge"><i class="fa-solid fa-chart-line"></i></div>
+          <div class="feature-card-body">
+            <h3>Free Diagnostic Assessment</h3>
+            <p>Pinpoint your exact strengths and target weak areas with our AI diagnostic test before booking your exam.</p>
+          </div>
+        </div>
+        <a href="diagnostic-test.html" class="btn-card-action">Start Free Assessment →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- TOPIC REVISION DIRECTORY & TABLE -->
+  <section class="mfs-directory-section" id="revision">
+    <div class="mfs-container">
+      
+      <div class="directory-head-card">
+        <h2>
+          <i class="fa-solid fa-list-check" style="color:var(--accent);"></i>
+          Functional Skills Maths Level 2 Curriculum
+          <span class="badge-count">39 Topics</span>
+        </h2>
+        <div class="directory-search-wrapper">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="search" class="directory-search-input" id="topicSearchInput" placeholder="Search topics (e.g. Fractions, Ratio, Area)...">
+        </div>
+      </div>
+
+      <div class="topic-table-bar">
+        <span>Topic Name & Curriculum Cluster</span>
+        <span>Revision & Study Resources</span>
+      </div>
+
+      <div class="topic-rows-container" id="topicsContainer">
+        
+      <div class="topic-row">
+        <div class="topic-meta">
+          <div class="topic-title">Numbers and Place Value</div>
+          <div class="topic-category-tag tag-numbers" data-cat="numbers"><i class="fa-solid fa-arrow-down-1-9"></i> Using Numbers</div>
+        </div>
+        <div class="topic-actions-group">
+          <a href="functional-skills-numbers-and-place-value.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+          <a href="worksheets/numbers-and-place-value-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet"><i class="fa-regular fa-file-pdf"></i> Worksheet</a>
+          <a href="https://youtu.be/oKEZEIsz7wE" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
+          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+        </div>
+      </div>
+      <div class="topic-row">
+        <div class="topic-meta">
+          <div class="topic-title">Ordering Numbers</div>
+          <div class="topic-category-tag tag-numbers" data-cat="numbers"><i class="fa-solid fa-arrow-down-1-9"></i> Using Numbers</div>
+        </div>
+        <div class="topic-actions-group">
+          <a href="functional-skills-ordering-numbers.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+          <a href="worksheets/ordering-numbers-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet"><i class="fa-regular fa-file-pdf"></i> Worksheet</a>
+          <a href="https://youtu.be/G9cQ3hSmQZA" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
+          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+        </div>
+      </div>
+      <div class="topic-row">
+        <div class="topic-meta">
+          <div class="topic-title">Addition and Subtraction</div>
+          <div class="topic-category-tag tag-numbers" data-cat="numbers"><i class="fa-solid fa-arrow-down-1-9"></i> Using Numbers</div>
+        </div>
+        <div class="topic-actions-group">
+          <a href="functional-skills-addition-and-subtraction.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+          <a href="worksheets/addition-and-subtraction-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet"><i class="fa-regular fa-file-pdf"></i> Worksheet</a>
+          <a href="https://youtu.be/p_XYX-c85KA" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
+          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+        </div>
+      </div>
+      <div class="topic-row">
+        <div class="topic-meta">
+          <div class="topic-title">Multiplication</div>
+          <div class="topic-category-tag tag-numbers" data-cat="numbers"><i class="fa-solid fa-arrow-down-1-9"></i> Using Numbers</div>
+        </div>
+        <div class="topic-actions-group">
+          <a href="functional-skills-multiplication.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+          <a href="worksheets/multiplication-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet"><i class="fa-regular fa-file-pdf"></i> Worksheet</a>
+          <a href="https://youtu.be/ohiYjRNW9PE" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
+          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+        </div>
+      </div>
+      <div class="topic-row">
+        <div class="topic-meta">
+          <div class="topic-title">Division</div>
+          <div class="topic-category-tag tag-numbers" data-cat="numbers"><i class="fa-solid fa-arrow-down-1-9"></i> Using Numbers</div>
+        </div>
+        <div class="topic-actions-group">
+          <a href="functional-skills-division.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+          <a href="worksheets/division-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet"><i class="fa-regular fa-file-pdf"></i> Worksheet</a>
+          <a href="https://youtu.be/n4PylBV4QXI" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
+          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+        </div>
+      </div>
+      <div class="topic-row">
+        <div class="topic-meta">
+          <div class="topic-title">BIDMAS</div>
+          <div class="topic-category-tag tag-numbers" data-cat="numbers"><i class="fa-solid fa-arrow-down-1-9"></i> Using Numbers</div>
+        </div>
+        <div class="topic-actions-group">
+          <a href="functional-skills-bidmas.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+          <a href="worksheets/bidmas-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet"><i class="fa-regular fa-file-pdf"></i> Worksheet</a>
+          <a href="https://youtu.be/-IHWYkDqc0c" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
+          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+        </div>
+      </div>
+      <div class="topic-row">
+        <div class="topic-meta">
+          <div class="topic-title">Fractions</div>
+          <div class="topic-category-tag tag-numbers" data-cat="numbers"><i class="fa-solid fa-arrow-down-1-9"></i> Using Numbers</div>
+        </div>
+        <div class="topic-actions-group">
+          <a href="functional-skills-fractions.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+          <a href="worksheets/fractions-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet"><i class="fa-regular fa-file-pdf"></i> Worksheet</a>
+          <a href="https://youtu.be/44r0jIa4Yrk" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
+          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+        </div>
+      </div>
+      <div class="topic-row">
+        <div class="topic-meta">
+          <div class="topic-title">Decimals</div>
+          <div class="topic-category-tag tag-numbers" data-cat="numbers"><i class="fa-solid fa-arrow-down-1-9"></i> Using Numbers</div>
+        </div>
+        <div class="topic-actions-group">
+          <a href="functional-skills-decimals.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+          <a href="worksheets/decimals-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet"><i class="fa-regular fa-file-pdf"></i> Worksheet</a>
+          <a href="https://youtu.be/P063A1ny_s4" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
+          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+        </div>
+      </div>
+      <div class="topic-row">
+        <div class="topic-meta">
+          <div class="topic-title">Rounding and Estimating</div>
+          <div class="topic-category-tag tag-numbers" data-cat="numbers"><i class="fa-solid fa-arrow-down-1-9"></i> Using Numbers</div>
+        </div>
+        <div class="topic-actions-group">
+          <a href="functional-skills-rounding-and-estimating.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+          <a href="worksheets/rounding-and-estimating-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet"><i class="fa-regular fa-file-pdf"></i> Worksheet</a>
+          <a href="https://youtu.be/mJGUW0YldWE" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
+          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+        </div>
+      </div>
+      <div class="topic-row">
+        <div class="topic-meta">
+          <div class="topic-title">Percentages</div>
+          <div class="topic-category-tag tag-numbers" data-cat="numbers"><i class="fa-solid fa-arrow-down-1-9"></i> Using Numbers</div>
+        </div>
+        <div class="topic-actions-group">
+          <a href="functional-skills-percentages.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+          <a href="worksheets/percentages-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet"><i class="fa-regular fa-file-pdf"></i> Worksheet</a>
+          <a href="https://youtu.be/YOIWAI5vWP4" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
+          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+        </div>
+      </div>
+      <div class="topic-row">
+        <div class="topic-meta">
+          <div class="topic-title">Fractions, Decimals and Percentages</div>
+          <div class="topic-category-tag tag-numbers" data-cat="numbers"><i class="fa-solid fa-arrow-down-1-9"></i> Using Numbers</div>
+        </div>
+        <div class="topic-actions-group">
+          <a href="functional-skills-fractions-decimals-and-percentages.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+          <a href="worksheets/fdp-conversions-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet"><i class="fa-regular fa-file-pdf"></i> Worksheet</a>
+          <a href="https://youtu.be/BvUDOL989_0" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
+          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+        </div>
+      </div>
+      <div class="topic-row">
+        <div class="topic-meta">
+          <div class="topic-title">Ratio</div>
+          <div class="topic-category-tag tag-numbers" data-cat="numbers"><i class="fa-solid fa-arrow-down-1-9"></i> Using Numbers</div>
+        </div>
+        <div class="topic-actions-group">
+          <a href="functional-skills-ratio.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+          <a href="worksheets/ratio-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet"><i class="fa-regular fa-file-pdf"></i> Worksheet</a>
+          <a href="https://youtu.be/CUzPpFHtizs" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
+          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+        </div>
+      </div>
+      <div class="topic-row">
+        <div class="topic-meta">
+          <div class="topic-title">Proportion</div>
+          <div class="topic-category-tag tag-numbers" data-cat="numbers"><i class="fa-solid fa-arrow-down-1-9"></i> Using Numbers</div>
+        </div>
+        <div class="topic-actions-group">
+          <a href="functional-skills-proportion.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+          <a href="worksheets/proportion-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet"><i class="fa-regular fa-file-pdf"></i> Worksheet</a>
+          <a href="https://youtu.be/t1RTYc4Pygg" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
+          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+        </div>
+      </div>
+      <div class="topic-row">
+        <div class="topic-meta">
+          <div class="topic-title">Formulas</div>
+          <div class="topic-category-tag tag-numbers" data-cat="numbers"><i class="fa-solid fa-arrow-down-1-9"></i> Using Numbers</div>
+        </div>
+        <div class="topic-actions-group">
+          <a href="functional-skills-formulas.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+          <a href="worksheets/formulas-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet"><i class="fa-regular fa-file-pdf"></i> Worksheet</a>
+          <a href="https://youtu.be/2cjyIpGZTH0" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
+          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+        </div>
+      </div>
+      <div class="topic-row">
+        <div class="topic-meta">
+          <div class="topic-title">Unit Conversions</div>
+          <div class="topic-category-tag tag-measures" data-cat="measures"><i class="fa-solid fa-ruler-combined"></i> Common Measures, Shape &amp; Space</div>
+        </div>
+        <div class="topic-actions-group">
+          <a href="functional-skills-unit-conversions.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+          <a href="worksheets/unit-conversions-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet"><i class="fa-regular fa-file-pdf"></i> Worksheet</a>
+          <a href="https://youtu.be/sKgsCjc9cgI" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
+          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+        </div>
+      </div>
+      <div class="topic-row">
+        <div class="topic-meta">
+          <div class="topic-title">Conversion graphs</div>
+          <div class="topic-category-tag tag-measures" data-cat="measures"><i class="fa-solid fa-ruler-combined"></i> Common Measures, Shape &amp; Space</div>
+        </div>
+        <div class="topic-actions-group">
+          <a href="functional-skills-conversion-graphs.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+          <a href="worksheets/conversion-graphs-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet"><i class="fa-regular fa-file-pdf"></i> Worksheet</a>
+          <a href="https://youtu.be/0EIzThdDvrg" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
+          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+        </div>
+      </div>
+      <div class="topic-row">
+        <div class="topic-meta">
+          <div class="topic-title">Problems Involving Money</div>
+          <div class="topic-category-tag tag-measures" data-cat="measures"><i class="fa-solid fa-ruler-combined"></i> Common Measures, Shape &amp; Space</div>
+        </div>
+        <div class="topic-actions-group">
+          <a href="functional-skills-problems-involving-money.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+          <a href="worksheets/problems-involving-money-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet"><i class="fa-regular fa-file-pdf"></i> Worksheet</a>
+          <a href="https://youtu.be/lwr9nZdCOCQ" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
+          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+        </div>
+      </div>
+      <div class="topic-row">
+        <div class="topic-meta">
+          <div class="topic-title">Best Buys</div>
+          <div class="topic-category-tag tag-measures" data-cat="measures"><i class="fa-solid fa-ruler-combined"></i> Common Measures, Shape &amp; Space</div>
+        </div>
+        <div class="topic-actions-group">
+          <a href="functional-skills-best-buys.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+          <a href="worksheets/best-buys-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet"><i class="fa-regular fa-file-pdf"></i> Worksheet</a>
+          <a href="https://youtu.be/rDRjx7Yip0c" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
+          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+        </div>
+      </div>
+      <div class="topic-row">
+        <div class="topic-meta">
+          <div class="topic-title">Interest and Compound Interest</div>
+          <div class="topic-category-tag tag-measures" data-cat="measures"><i class="fa-solid fa-ruler-combined"></i> Common Measures, Shape &amp; Space</div>
+        </div>
+        <div class="topic-actions-group">
+          <a href="functional-skills-interest-and-compound-interest.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+          <a href="worksheets/interest-and-compound-interest-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet"><i class="fa-regular fa-file-pdf"></i> Worksheet</a>
+          <a href="https://youtu.be/jc9bI7vJ2kQ" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
+          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+        </div>
+      </div>
+      <div class="topic-row">
+        <div class="topic-meta">
+          <div class="topic-title">Speed</div>
+          <div class="topic-category-tag tag-measures" data-cat="measures"><i class="fa-solid fa-ruler-combined"></i> Common Measures, Shape &amp; Space</div>
+        </div>
+        <div class="topic-actions-group">
+          <a href="functional-skills-speed.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+          <a href="worksheets/speed-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet"><i class="fa-regular fa-file-pdf"></i> Worksheet</a>
+          <a href="https://youtu.be/vsHHWDEZObY" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
+          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+        </div>
+      </div>
+      <div class="topic-row">
+        <div class="topic-meta">
+          <div class="topic-title">Density</div>
+          <div class="topic-category-tag tag-measures" data-cat="measures"><i class="fa-solid fa-ruler-combined"></i> Common Measures, Shape &amp; Space</div>
+        </div>
+        <div class="topic-actions-group">
+          <a href="functional-skills-density.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+          <a href="worksheets/density-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet"><i class="fa-regular fa-file-pdf"></i> Worksheet</a>
+          <a href="https://youtu.be/8Dg5DC9YX6U" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
+          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+        </div>
+      </div>
+      <div class="topic-row">
+        <div class="topic-meta">
+          <div class="topic-title">Perimeter</div>
+          <div class="topic-category-tag tag-measures" data-cat="measures"><i class="fa-solid fa-ruler-combined"></i> Common Measures, Shape &amp; Space</div>
+        </div>
+        <div class="topic-actions-group">
+          <a href="functional-skills-perimeter.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+          <a href="worksheets/perimeter-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet"><i class="fa-regular fa-file-pdf"></i> Worksheet</a>
+          <a href="https://youtu.be/Y84d2MAje-A" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
+          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+        </div>
+      </div>
+      <div class="topic-row">
+        <div class="topic-meta">
+          <div class="topic-title">Area</div>
+          <div class="topic-category-tag tag-measures" data-cat="measures"><i class="fa-solid fa-ruler-combined"></i> Common Measures, Shape &amp; Space</div>
+        </div>
+        <div class="topic-actions-group">
+          <a href="functional-skills-area.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+          <a href="worksheets/area-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet"><i class="fa-regular fa-file-pdf"></i> Worksheet</a>
+          <a href="https://youtu.be/roE9wBYCxG0" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
+          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+        </div>
+      </div>
+      <div class="topic-row">
+        <div class="topic-meta">
+          <div class="topic-title">Circles</div>
+          <div class="topic-category-tag tag-measures" data-cat="measures"><i class="fa-solid fa-ruler-combined"></i> Common Measures, Shape &amp; Space</div>
+        </div>
+        <div class="topic-actions-group">
+          <a href="functional-skills-circles.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+          <a href="worksheets/circles-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet"><i class="fa-regular fa-file-pdf"></i> Worksheet</a>
+          <a href="https://youtu.be/EL2BoEQ4iKg" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
+          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+        </div>
+      </div>
+      <div class="topic-row">
+        <div class="topic-meta">
+          <div class="topic-title">3D Shapes</div>
+          <div class="topic-category-tag tag-measures" data-cat="measures"><i class="fa-solid fa-ruler-combined"></i> Common Measures, Shape &amp; Space</div>
+        </div>
+        <div class="topic-actions-group">
+          <a href="functional-skills-3d-shapes.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+          <a href="worksheets/3d-shapes-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet"><i class="fa-regular fa-file-pdf"></i> Worksheet</a>
+          <a href="https://youtu.be/mhb6lJiM2D4" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
+          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+        </div>
+      </div>
+      <div class="topic-row">
+        <div class="topic-meta">
+          <div class="topic-title">Volume</div>
+          <div class="topic-category-tag tag-measures" data-cat="measures"><i class="fa-solid fa-ruler-combined"></i> Common Measures, Shape &amp; Space</div>
+        </div>
+        <div class="topic-actions-group">
+          <a href="functional-skills-volume.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+          <a href="worksheets/volume-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet"><i class="fa-regular fa-file-pdf"></i> Worksheet</a>
+          <a href="https://youtu.be/S7IIJYZznOg" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
+          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+        </div>
+      </div>
+      <div class="topic-row">
+        <div class="topic-meta">
+          <div class="topic-title">Using Length, Area and Volume in Calculations</div>
+          <div class="topic-category-tag tag-measures" data-cat="measures"><i class="fa-solid fa-ruler-combined"></i> Common Measures, Shape &amp; Space</div>
+        </div>
+        <div class="topic-actions-group">
+          <a href="functional-skills-using-length-area-and-volume-in-calculations.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+          <a href="worksheets/using-length-area-and-volume-in-calculations-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet"><i class="fa-regular fa-file-pdf"></i> Worksheet</a>
+          <a href="https://youtu.be/BmNYkwfl524" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
+          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+        </div>
+      </div>
+      <div class="topic-row">
+        <div class="topic-meta">
+          <div class="topic-title">Nets</div>
+          <div class="topic-category-tag tag-measures" data-cat="measures"><i class="fa-solid fa-ruler-combined"></i> Common Measures, Shape &amp; Space</div>
+        </div>
+        <div class="topic-actions-group">
+          <a href="functional-skills-nets.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+          <a href="worksheets/nets-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet"><i class="fa-regular fa-file-pdf"></i> Worksheet</a>
+          <a href="https://youtu.be/R5WNLkaH8nI" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
+          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+        </div>
+      </div>
+      <div class="topic-row">
+        <div class="topic-meta">
+          <div class="topic-title">Surface Area</div>
+          <div class="topic-category-tag tag-measures" data-cat="measures"><i class="fa-solid fa-ruler-combined"></i> Common Measures, Shape &amp; Space</div>
+        </div>
+        <div class="topic-actions-group">
+          <a href="functional-skills-surface-area.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+          <a href="worksheets/surface-area-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet"><i class="fa-regular fa-file-pdf"></i> Worksheet</a>
+          <a href="https://youtu.be/xGaFcfG1UYA" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
+          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+        </div>
+      </div>
+      <div class="topic-row">
+        <div class="topic-meta">
+          <div class="topic-title">Plans and Elevations</div>
+          <div class="topic-category-tag tag-measures" data-cat="measures"><i class="fa-solid fa-ruler-combined"></i> Common Measures, Shape &amp; Space</div>
+        </div>
+        <div class="topic-actions-group">
+          <a href="functional-skills-plans-and-elevations.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+          <a href="worksheets/plans-and-elevations-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet"><i class="fa-regular fa-file-pdf"></i> Worksheet</a>
+          <a href="https://youtu.be/q0RYqfvNbok" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
+          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+        </div>
+      </div>
+      <div class="topic-row">
+        <div class="topic-meta">
+          <div class="topic-title">Maps and Scale drawings</div>
+          <div class="topic-category-tag tag-measures" data-cat="measures"><i class="fa-solid fa-ruler-combined"></i> Common Measures, Shape &amp; Space</div>
+        </div>
+        <div class="topic-actions-group">
+          <a href="functional-skills-maps-and-scale-drawings.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+          <a href="worksheets/maps-and-scale-drawings-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet"><i class="fa-regular fa-file-pdf"></i> Worksheet</a>
+          <a href="https://youtu.be/ZO5drRGSKdc" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
+          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+        </div>
+      </div>
+      <div class="topic-row">
+        <div class="topic-meta">
+          <div class="topic-title">Coordinates</div>
+          <div class="topic-category-tag tag-measures" data-cat="measures"><i class="fa-solid fa-ruler-combined"></i> Common Measures, Shape &amp; Space</div>
+        </div>
+        <div class="topic-actions-group">
+          <a href="functional-skills-coordinates.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+          <a href="worksheets/coordinates-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet"><i class="fa-regular fa-file-pdf"></i> Worksheet</a>
+          <a href="https://youtu.be/zwsrVi0WxlM" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
+          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+        </div>
+      </div>
+      <div class="topic-row">
+        <div class="topic-meta">
+          <div class="topic-title">Angles in 2D shapes</div>
+          <div class="topic-category-tag tag-measures" data-cat="measures"><i class="fa-solid fa-ruler-combined"></i> Common Measures, Shape &amp; Space</div>
+        </div>
+        <div class="topic-actions-group">
+          <a href="functional-skills-angles-in-2d-shapes.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+          <a href="worksheets/angles-in-2d-shapes-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet"><i class="fa-regular fa-file-pdf"></i> Worksheet</a>
+          <a href="https://youtu.be/RMryHEoPzpc" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
+          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+        </div>
+      </div>
+      <div class="topic-row">
+        <div class="topic-meta">
+          <div class="topic-title">Mean, Median, Mode and Range</div>
+          <div class="topic-category-tag tag-data" data-cat="data"><i class="fa-solid fa-chart-column"></i> Handling Information &amp; Data</div>
+        </div>
+        <div class="topic-actions-group">
+          <a href="functional-skills-mean-median-mode-and-range.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+          <a href="worksheets/mean-median-mode-and-range-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet"><i class="fa-regular fa-file-pdf"></i> Worksheet</a>
+          <a href="https://youtu.be/ENeVxTj_Wh4" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
+          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+        </div>
+      </div>
+      <div class="topic-row">
+        <div class="topic-meta">
+          <div class="topic-title">Comparing Data Sets</div>
+          <div class="topic-category-tag tag-data" data-cat="data"><i class="fa-solid fa-chart-column"></i> Handling Information &amp; Data</div>
+        </div>
+        <div class="topic-actions-group">
+          <a href="functional-skills-comparing-data-sets.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+          <a href="worksheets/comparing-data-sets-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet"><i class="fa-regular fa-file-pdf"></i> Worksheet</a>
+          <a href="https://youtu.be/Xv4OwMlDa7M" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
+          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+        </div>
+      </div>
+      <div class="topic-row">
+        <div class="topic-meta">
+          <div class="topic-title">Estimating the Mean</div>
+          <div class="topic-category-tag tag-data" data-cat="data"><i class="fa-solid fa-chart-column"></i> Handling Information &amp; Data</div>
+        </div>
+        <div class="topic-actions-group">
+          <a href="functional-skills-estimating-the-mean.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+          <a href="worksheets/estimating-the-mean-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet"><i class="fa-regular fa-file-pdf"></i> Worksheet</a>
+          <a href="https://youtu.be/wzCkAkWey9w" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
+          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+        </div>
+      </div>
+      <div class="topic-row">
+        <div class="topic-meta">
+          <div class="topic-title">Probability</div>
+          <div class="topic-category-tag tag-data" data-cat="data"><i class="fa-solid fa-chart-column"></i> Handling Information &amp; Data</div>
+        </div>
+        <div class="topic-actions-group">
+          <a href="functional-skills-probability.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+          <a href="worksheets/probability-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet"><i class="fa-regular fa-file-pdf"></i> Worksheet</a>
+          <a href="https://youtu.be/Xl_MhJI3mC8" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
+          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+        </div>
+      </div>
+      <div class="topic-row">
+        <div class="topic-meta">
+          <div class="topic-title">Probability Tables</div>
+          <div class="topic-category-tag tag-data" data-cat="data"><i class="fa-solid fa-chart-column"></i> Handling Information &amp; Data</div>
+        </div>
+        <div class="topic-actions-group">
+          <a href="functional-skills-probability-tables.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+          <a href="worksheets/probability-tables-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet"><i class="fa-regular fa-file-pdf"></i> Worksheet</a>
+          <a href="https://youtu.be/QXTNBDoKt4s" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
+          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+        </div>
+      </div>
+      <div class="topic-row">
+        <div class="topic-meta">
+          <div class="topic-title">Scatter Graphs</div>
+          <div class="topic-category-tag tag-data" data-cat="data"><i class="fa-solid fa-chart-column"></i> Handling Information &amp; Data</div>
+        </div>
+        <div class="topic-actions-group">
+          <a href="functional-skills-scatter-graphs.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+          <a href="worksheets/scatter-graphs-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet"><i class="fa-regular fa-file-pdf"></i> Worksheet</a>
+          <a href="https://youtu.be/k5wPVKvrk2s" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
+          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+        </div>
+      </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FAQ SECTION -->
+  <section class="mfs-faq-section">
+    <div class="mfs-container">
+      <div class="faq-header">
+        <h2>Functional Skills Maths Level 2 — Frequently Asked Questions</h2>
+        <p>Everything you need to know about the exam, syllabus, preparation, and certificate.</p>
+      </div>
+
+      <div class="faq-grid">
+        <div class="faq-card">
+          <h3><i class="fa-solid fa-circle-question"></i> Is Functional Skills Maths Level 2 easier than GCSE?</h3>
+          <p>Many adult learners find Functional Skills Maths Level 2 more manageable than GCSE because questions focus directly on practical workplace and everyday life contexts. There is less abstract algebra and trigonometry, allowing focused revision in weeks rather than years.</p>
+        </div>
+
+        <div class="faq-card">
+          <h3><i class="fa-solid fa-circle-question"></i> Are all resources and past papers accessible online?</h3>
+          <p>Yes. All 39 topic revision guides, downloadable PDF worksheets, model answers, and video walkthroughs are 100% accessible online from your desktop, tablet, or smartphone anytime.</p>
+        </div>
+
+        <div class="faq-card">
+          <h3><i class="fa-solid fa-circle-question"></i> Can I sit the Level 2 exam online from home?</h3>
+          <p>Yes. We provide official Ofqual-regulated Pearson Edexcel and Open Awards online exams invigilated via secure remote proctoring from Monday through Saturday.</p>
+        </div>
+
+        <div class="faq-card">
+          <h3><i class="fa-solid fa-circle-question"></i> Is Level 2 accepted for university, nursing, and apprenticeships?</h3>
+          <p>Yes. Functional Skills Level 2 is officially recognized by UCAS, the NHS, police forces, apprenticeship standards, and UK universities as a direct equivalent to GCSE grade 4 / C.</p>
+        </div>
+      </div>
+    </div>
+  </section>  <!-- FOOTER -->
+  <footer class="mfs-footer" id="site-footer">
+    <div class="mfs-container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="mfs-brand" style="margin-bottom:16px;">
+            <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="mfs-brand-text">
+              <div class="mfs-brand-title" style="color:#ffffff;">MASTER<span>FUNCTIONALSKILLS</span></div>
+              <div class="mfs-brand-subtitle" style="color:#94a3b8;">Delivering Skills • Achieving Goals</div>
+            </div>
+          </div>
+          <p style="font-size:0.88rem; line-height:1.6; margin-bottom:16px;">
+            The UK's dedicated Functional Skills revision specialist. Providing realistic mock exams, step-by-step revision flashcards, diagnostic assessments, and 1-to-1 specialist tuition for Pearson Edexcel, City &amp; Guilds, and all major exam boards.
+          </p>
+          <div style="font-size:0.85rem; color:#cbd5e1;">
+            <p><a href="https://wa.me/447564525425" target="_blank" rel="noopener" style="color:#cbd5e1; text-decoration:none;"><i class="fa-brands fa-whatsapp" style="color:var(--accent); margin-right:8px;"></i> WhatsApp: +44 (0)7564 525425</a></p>
+            <p style="margin-top:6px;"><a href="contact-us.html" style="color:#cbd5e1; text-decoration:none;"><i class="fa-solid fa-envelope" style="color:var(--accent); margin-right:8px;"></i> Contact Tutor Team</a></p>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Maths Revision</h4>
+          <ul class="footer-links">
+            <li><a href="functional-skills-maths-level-2.html">Maths Level 2 Revision</a></li>
+            <li><a href="functional-skills-maths-level-1.html">Maths Level 1 Revision</a></li>
+            <li><a href="entry-level-3-maths.html">Entry Level 3 Maths</a></li>
+            <li><a href="pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="functional-skills-past-papers.html">Free Maths Past Papers</a></li>
+            <li><a href="exam-maths-l2.html">Book Level 2 Maths Exam</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>English &amp; Digital</h4>
+          <ul class="footer-links">
+            <li><a href="functional-skills-english-level-2.html">English Level 2 Revision</a></li>
+            <li><a href="functional-skills-english-level-1.html">English Level 1 Revision</a></li>
+            <li><a href="digital-functional-skills.html">Digital Skills Hub (L1 &amp; E3)</a></li>
+            <li><a href="digital-functional-skills-past-papers.html">DFS Past Papers &amp; Data Files</a></li>
+            <li><a href="functional-skills-past-papers.html?format=online#mock-finder">Online Exam Simulator</a></li>
+            <li><a href="exam-english-l2.html">Book Level 2 English Exam</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Student Support &amp; Tools</h4>
+          <ul class="footer-links">
+            <li><a href="tools.html" style="color:var(--accent); font-weight:700;"><i class="fa-solid fa-screwdriver-wrench" style="margin-right:6px;"></i>All Interactive Tools Hub</a></li>
+            <li><a href="pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="diagnostic-test.html">Diagnostic Skill Checker</a></li>
+            <li><a href="functional-skills-nets.html">3D Net Folding Tool</a></li>
+            <li><a href="digital-functional-skills-mock-exam.html">Pearson DFS Simulator</a></li>
+            <li><a href="revision-cards.html">Revision Cards &amp; Flashcards</a></li>
+            <li><a href="shop.html">Revision Books &amp; Study Packs</a></li>
+            <li><a href="tutors.html">1-to-1 Specialist Tuition</a></li>
+            <li><a href="exams.html">Book Official Online Exam</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Master Functional Skills. All rights reserved. Registered in England &amp; Wales. Ofqual Regulated Qualification Standards.</div>
+        <div style="display:flex; gap:16px; flex-wrap:wrap;">
+          <a href="index.html">Home</a>
+          <a href="tools.html" style="color:var(--accent); font-weight:700;">Tools</a>
+          <a href="functional-skills-past-papers.html">Past Papers</a>
+          <a href="revision-cards.html">Revision Cards</a>
+          <a href="shop.html">Study Shop</a>
+          <a href="tutors.html">Tutors</a>
+          <a href="contact-us.html">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- CLIENT SEARCH & SMOOTH SCROLL JAVASCRIPT -->
+  <script>
+    document.addEventListener("DOMContentLoaded", function() {
+      var searchInput = document.getElementById("topicSearchInput");
+      var container = document.getElementById("topicsContainer");
+      if (searchInput && container) {
+        var rows = container.querySelectorAll(".topic-row");
+        searchInput.addEventListener("input", function() {
+          var q = this.value.toLowerCase().trim();
+          rows.forEach(function(row) {
+            var text = row.textContent.toLowerCase();
+            row.style.display = text.includes(q) ? "flex" : "none";
+          });
+        });
+      }
+
+      document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+        anchor.addEventListener("click", function(e) {
+          var targetId = this.getAttribute("href").substring(1);
+          if (!targetId) return;
+          var targetEl = document.getElementById(targetId);
+          if (targetEl) {
+            e.preventDefault();
+            targetEl.scrollIntoView({ behavior: "smooth" });
+          }
+        });
+      });
+    });
+  </script>
+
+  <!-- THEME & DYSLEXIA MODE ENGINE -->
+  <script>
+    function toggleDyslexiaMode() {
+      const isDys = document.body.classList.toggle('dyslexia-mode');
+      localStorage.setItem('mfs_dyslexia', isDys ? '1' : '0');
+      const btn = document.getElementById('dyslexiaToggle');
+      if (btn) btn.classList.toggle('active', isDys);
+    }
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme') || 'sapphire';
+      const next = current === 'emerald' ? 'sapphire' : 'emerald';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('mfs_theme', next);
+      const lbl = document.getElementById('themeLabel');
+      if (lbl) lbl.textContent = next === 'emerald' ? 'Emerald' : 'Sapphire';
+    }
+    (function() {
+      if (localStorage.getItem('mfs_dyslexia') === '1') {
+        document.body.classList.add('dyslexia-mode');
+        const btn = document.getElementById('dyslexiaToggle');
+        if (btn) btn.classList.add('active', true);
+      }
+      const th = localStorage.getItem('mfs_theme') || 'sapphire';
+      document.documentElement.setAttribute('data-theme', th);
+      const lbl = document.getElementById('themeLabel');
+      if (lbl) lbl.textContent = th === 'emerald' ? 'Emerald' : 'Sapphire';
+    })();
+  </script>
+
+  <!-- DYSLEXIA TINT ENGINE -->
+  <script src="assets/js/mfs-tint.js"></script>
+</body>
+</html>

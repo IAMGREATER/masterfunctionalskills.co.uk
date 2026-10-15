@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Master Functional Skills — Ratio and Proportion Skill Workout & Repetition Drills</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 12mm 15mm 12mm 15mm;
+    }
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #0f172a;
+      background: #f8fafc;
+      margin: 0;
+      padding: 0;
+      font-size: 10.5pt;
+      line-height: 1.5;
+    }
+    .print-bar {
+      background: #0b172d;
+      color: #f8fafc;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    }
+    .print-bar a {
+      color: #93c5fd;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .print-bar a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+    .btn-action-print {
+      background: #2563eb;
+      color: #ffffff;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s;
+    }
+    .btn-action-print:hover {
+      background: #1d4ed8;
+    }
+    .btn-action-answers {
+      background: #059669;
+      color: #ffffff;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-right: 10px;
+    }
+    .btn-action-answers:hover {
+      background: #047857;
+    }
+    .btn-action-practice {
+      background: #7c3aed;
+      color: #ffffff;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-right: 10px;
+    }
+    .btn-action-practice:hover {
+      background: #6d28d9;
+    }
+
+    @media print {
+      .print-bar {
+        display: none !important;
+      }
+      body {
+        background: #ffffff !important;
+      }
+      .page-sheet {
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+      }
+      .workout-block, .apply-card {
+        page-break-inside: avoid;
+      }
+      .page-break-before {
+        page-break-before: always;
+      }
+    }
+
+    .page-sheet {
+      max-width: 900px;
+      margin: 24px auto;
+      background: #ffffff;
+      padding: 32px 40px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+    }
+
+    /* Header styling */
+    .sheet-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 2px solid #0f172a;
+      padding-bottom: 16px;
+      margin-bottom: 20px;
+    }
+    .brand-title {
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: #0b172d;
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .brand-title i {
+      color: #2563eb;
+    }
+    .sheet-sub {
+      font-size: 0.9rem;
+      color: #475569;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+    .header-badges {
+      text-align: right;
+    }
+    .badge-level {
+      background: #eff6ff;
+      color: #1e40af;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.82rem;
+      border: 1px solid #bfdbfe;
+      display: inline-block;
+      margin-bottom: 4px;
+    }
+    .badge-spec {
+      font-size: 0.78rem;
+      color: #64748b;
+      font-weight: 600;
+    }
+
+    /* Title banner */
+    .hero-banner {
+      background: linear-gradient(135deg, #0b172d 0%, #1e3a8a 100%);
+      color: #ffffff;
+      padding: 18px 24px;
+      border-radius: 8px;
+      margin-bottom: 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .hero-title {
+      font-size: 1.45rem;
+      font-weight: 800;
+      margin: 0;
+      line-height: 1.2;
+    }
+    .hero-subtitle {
+      font-size: 0.88rem;
+      color: #bfdbfe;
+      margin-top: 4px;
+    }
+    .hero-tag {
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    /* Method Card */
+    .method-card {
+      background: #f0fdf4;
+      border: 1.5px solid #86efac;
+      border-radius: 8px;
+      margin-bottom: 24px;
+      overflow: hidden;
+    }
+    .method-card-header {
+      background: #dcfce7;
+      padding: 8px 16px;
+      font-weight: 800;
+      color: #166534;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid #86efac;
+    }
+    .method-card-body {
+      padding: 12px 18px;
+    }
+    .method-points {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 8px 20px;
+    }
+    .method-points li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 0.92rem;
+      color: #1e293b;
+    }
+    .text-emerald {
+      color: #059669;
+      margin-top: 3px;
+    }
+    .method-calc-tip {
+      margin-top: 10px;
+      padding-top: 8px;
+      border-top: 1px dashed #bbf7d0;
+      font-size: 0.88rem;
+      color: #166534;
+    }
+
+    /* Section divider */
+    .section-ribbon {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 28px 0 16px 0;
+    }
+    .section-ribbon-tag {
+      background: #0f172a;
+      color: #ffffff;
+      padding: 6px 16px;
+      border-radius: 4px;
+      font-size: 0.95rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .section-ribbon-line {
+      flex: 1;
+      height: 2px;
+      background: #cbd5e1;
+    }
+    .section-ribbon-info {
+      font-size: 0.85rem;
+      color: #64748b;
+      font-weight: 600;
+    }
+
+    /* Workout block */
+    .workout-block {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-bottom: 20px;
+    }
+    .workout-block-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 8px;
+      margin-bottom: 8px;
+    }
+    .block-q-num {
+      background: #2563eb;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.85rem;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+    .block-q-desc {
+      font-weight: 800;
+      color: #0f172a;
+      font-size: 1rem;
+    }
+    .workout-instruction {
+      font-size: 0.88rem;
+      color: #64748b;
+      font-style: italic;
+      margin-bottom: 12px;
+    }
+
+    /* Drill grid */
+    .drill-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+      gap: 10px;
+    }
+    .drill-card {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 8px 10px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .drill-letter {
+      font-weight: 800;
+      color: #2563eb;
+      font-size: 0.85rem;
+      margin-bottom: 2px;
+    }
+    .drill-q {
+      font-size: 0.95rem;
+      font-weight: 600;
+      color: #1e293b;
+      margin-bottom: 8px;
+      line-height: 1.3;
+    }
+    .drill-ans-box {
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      margin-top: auto;
+      border-top: 1px dashed #cbd5e1;
+      padding-top: 6px;
+    }
+    .drill-unit-prefix, .drill-unit-suffix {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: #475569;
+    }
+    .drill-input-line {
+      flex: 1;
+      border-bottom: 1.5px solid #94a3b8;
+      height: 16px;
+    }
+
+    /* Apply Cards */
+    .apply-card {
+      background: #ffffff;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-bottom: 18px;
+    }
+    .apply-card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 8px;
+      margin-bottom: 10px;
+    }
+    .apply-q-num {
+      font-weight: 800;
+      color: #0f172a;
+      font-size: 1rem;
+    }
+    .apply-context-tag {
+      background: #f1f5f9;
+      color: #334155;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 4px;
+      border: 1px solid #cbd5e1;
+    }
+    .apply-marks {
+      font-weight: 800;
+      color: #dc2626;
+      font-size: 0.88rem;
+    }
+    .apply-stem {
+      font-size: 0.96rem;
+      color: #1e293b;
+      line-height: 1.55;
+      margin-bottom: 12px;
+    }
+    .apply-working-area {
+      background: #fafafa;
+      border: 1px dashed #cbd5e1;
+      border-radius: 6px;
+      padding: 10px 14px;
+      margin-bottom: 12px;
+    }
+    .apply-working-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 8px;
+    }
+    .work-line {
+      border-bottom: 1px solid #e2e8f0;
+      height: 22px;
+    }
+    .apply-ans-line {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      justify-content: flex-end;
+      padding-top: 4px;
+    }
+    .ans-label {
+      font-weight: 700;
+      font-size: 0.92rem;
+      color: #0f172a;
+    }
+    .ans-write-box {
+      width: 140px;
+      border-bottom: 2px solid #0f172a;
+      height: 22px;
+    }
+    .unit-pfx, .unit-sfx {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: #0f172a;
+    }
+
+    /* Footer */
+    .sheet-footer {
+      margin-top: 30px;
+      padding-top: 14px;
+      border-top: 1px solid #e2e8f0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: #64748b;
+    }
+    .footer-links a {
+      color: #2563eb;
+      text-decoration: none;
+      font-weight: 600;
+      margin-left: 12px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Action Navigation Bar -->
+  <div class="print-bar">
+    <div>
+      <a href="../functional-skills-proportion.html"><i class="fa-solid fa-arrow-left"></i> Back to Ratio and Proportion Revision Guide</a>
+    </div>
+    <div>
+      <a href="proportion-worksheet.html" class="btn-action-practice"><i class="fa-solid fa-file-pen"></i> Switch to Exam Practice</a>
+      <a href="proportion-workout-answers.html" target="_blank" class="btn-action-answers"><i class="fa-solid fa-check-double"></i> View Workout Answers</a>
+      <button class="btn-action-print" onclick="window.print()"><i class="fa-solid fa-print"></i> Print / Save as PDF</button>
+    </div>
+  </div>
+
+  <div class="page-sheet">
+    <!-- Sheet Header -->
+    <div class="sheet-header">
+      <div>
+        <div class="brand-title"><i class="fa-solid fa-graduation-cap"></i> MASTER FUNCTIONAL SKILLS</div>
+        <div class="sheet-sub">Procedural Fluency &amp; High-Repetition Skill Workout</div>
+      </div>
+      <div class="header-badges">
+        <div class="badge-level">Level 1 & Level 2</div><br>
+        <span class="badge-spec">Pearson Edexcel: L1.11 • L2.13 • L2.14</span>
+      </div>
+    </div>
+
+    <!-- Hero Title Banner -->
+    <div class="hero-banner">
+      <div>
+        <h1 class="hero-title">Ratio and Proportion Fluency Workout</h1>
+        <div class="hero-subtitle">Section 1: Rapid Procedural Drills &bull; Section 2: Vocational Applications</div>
+      </div>
+      <div class="hero-tag">
+        <i class="fa-solid fa-repeat"></i> High Repetition
+      </div>
+    </div>
+
+    
+    <!-- Method & Formula Card -->
+    <div class="method-card">
+      <div class="method-card-header">
+        <i class="fa-solid fa-lightbulb"></i>
+        <span>Core Rules & Operational Mechanics</span>
+      </div>
+      <div class="method-card-body">
+        <ul class="method-points">
+          <li><i class='fa-solid fa-check text-emerald'></i> <span>Sharing into a Ratio: 1. Add all parts together. 2. Divide total amount by total parts to find value of 1 part. 3. Multiply 1 part by each ratio number.</span></li>
+<li><i class='fa-solid fa-check text-emerald'></i> <span>Simplifying Ratios: Divide all parts by the Highest Common Factor (HCF). Ratios have no units!</span></li>
+<li><i class='fa-solid fa-check text-emerald'></i> <span>Unit Proportion (Best Buys): Find cost of 1 unit (Price ÷ Quantity) to compare value.</span></li>
+<li><i class='fa-solid fa-check text-emerald'></i> <span>Scale Drawings: Map Distance × Scale Factor = Real Distance (keep units consistent).</span></li>
+        </ul>
+        <div class='method-calc-tip'><i class='fa-solid fa-calculator'></i> <strong>Calculator Strategy:</strong> When checking ratio shares, add your individual answers back together — they MUST sum to the original total!</div>
+      </div>
+    </div>
+
+
+    <!-- PART 1: THE WORKOUT -->
+    <div class="section-ribbon">
+      <span class="section-ribbon-tag">Part 1: The Workout</span>
+      <div class="section-ribbon-line"></div>
+      <span class="section-ribbon-info">Rapid calculation drills to build procedural fluency</span>
+    </div>
+
+    
+    <div class="workout-block">
+      <div class="workout-block-header">
+        <span class="block-q-num">Question 1</span>
+        <span class="block-q-desc">Simplifying Ratios to Lowest Terms</span>
+      </div>
+      <div class="workout-instruction">Simplify each ratio into its simplest whole number form:</div>
+      <div class="drill-grid">
+        
+        <div class="drill-card">
+          <div class="drill-letter">(a)</div>
+          <div class="drill-q">Simplify 6 : 9</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+
+        <div class="drill-card">
+          <div class="drill-letter">(b)</div>
+          <div class="drill-q">Simplify 10 : 25</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+
+        <div class="drill-card">
+          <div class="drill-letter">(c)</div>
+          <div class="drill-q">Simplify 12 : 18</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+
+        <div class="drill-card">
+          <div class="drill-letter">(d)</div>
+          <div class="drill-q">Simplify 15 : 20</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+
+        <div class="drill-card">
+          <div class="drill-letter">(e)</div>
+          <div class="drill-q">Simplify 24 : 36</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+
+        <div class="drill-card">
+          <div class="drill-letter">(f)</div>
+          <div class="drill-q">Simplify 30 : 45</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+
+        <div class="drill-card">
+          <div class="drill-letter">(g)</div>
+          <div class="drill-q">Simplify 14 : 21 : 28</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+
+        <div class="drill-card">
+          <div class="drill-letter">(h)</div>
+          <div class="drill-q">Simplify 50p : £2.50</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="workout-block">
+      <div class="workout-block-header">
+        <span class="block-q-num">Question 2</span>
+        <span class="block-q-desc">Sharing Amounts in 2-Part Ratios</span>
+      </div>
+      <div class="workout-instruction">Share the given amounts into the specified ratios:</div>
+      <div class="drill-grid">
+        
+        <div class="drill-card">
+          <div class="drill-letter">(a)</div>
+          <div class="drill-q">Share £60 in ratio 1 : 2</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+
+        <div class="drill-card">
+          <div class="drill-letter">(b)</div>
+          <div class="drill-q">Share £80 in ratio 1 : 3</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+
+        <div class="drill-card">
+          <div class="drill-letter">(c)</div>
+          <div class="drill-q">Share 100 kg in ratio 2 : 3</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+
+        <div class="drill-card">
+          <div class="drill-letter">(d)</div>
+          <div class="drill-q">Share £140 in ratio 3 : 4</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+
+        <div class="drill-card">
+          <div class="drill-letter">(e)</div>
+          <div class="drill-q">Share 90 litres in ratio 1 : 4</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+
+        <div class="drill-card">
+          <div class="drill-letter">(f)</div>
+          <div class="drill-q">Share £240 in ratio 5 : 3</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+
+        <div class="drill-card">
+          <div class="drill-letter">(g)</div>
+          <div class="drill-q">Share 180 metres in ratio 4 : 5</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+
+        <div class="drill-card">
+          <div class="drill-letter">(h)</div>
+          <div class="drill-q">Share £350 in ratio 2 : 5</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="workout-block">
+      <div class="workout-block-header">
+        <span class="block-q-num">Question 3</span>
+        <span class="block-q-desc">Sharing Amounts in 3-Part Ratios</span>
+      </div>
+      <div class="workout-instruction">Add all three parts, find 1 part, then calculate each share:</div>
+      <div class="drill-grid">
+        
+        <div class="drill-card">
+          <div class="drill-letter">(a)</div>
+          <div class="drill-q">Share £90 in ratio 1 : 2 : 3</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+
+        <div class="drill-card">
+          <div class="drill-letter">(b)</div>
+          <div class="drill-q">Share £120 in ratio 1 : 1 : 2</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+
+        <div class="drill-card">
+          <div class="drill-letter">(c)</div>
+          <div class="drill-q">Share 140 kg in ratio 2 : 2 : 3</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+
+        <div class="drill-card">
+          <div class="drill-letter">(d)</div>
+          <div class="drill-q">Share £200 in ratio 3 : 2 : 5</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+
+        <div class="drill-card">
+          <div class="drill-letter">(e)</div>
+          <div class="drill-q">Share 180 litres in ratio 1 : 3 : 5</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+
+        <div class="drill-card">
+          <div class="drill-letter">(f)</div>
+          <div class="drill-q">Share £360 in ratio 4 : 3 : 2</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="workout-block">
+      <div class="workout-block-header">
+        <span class="block-q-num">Question 4</span>
+        <span class="block-q-desc">Direct Proportion & Recipes (Scaling)</span>
+      </div>
+      <div class="workout-instruction">Find the unit amount, then scale up or down proportionally:</div>
+      <div class="drill-grid">
+        
+        <div class="drill-card">
+          <div class="drill-letter">(a)</div>
+          <div class="drill-q">3 pens cost £2.40. Find cost of 5 pens.</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+
+        <div class="drill-card">
+          <div class="drill-letter">(b)</div>
+          <div class="drill-q">4 kg of apples cost £6.00. Cost of 6 kg?</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+
+        <div class="drill-card">
+          <div class="drill-letter">(c)</div>
+          <div class="drill-q">Recipe for 4 needs 300g flour. For 6 people?</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+
+        <div class="drill-card">
+          <div class="drill-letter">(d)</div>
+          <div class="drill-q">Recipe for 6 needs 180ml milk. For 10 people?</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+
+        <div class="drill-card">
+          <div class="drill-letter">(e)</div>
+          <div class="drill-q">A machine makes 120 parts in 2 hours. In 5 hrs?</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+
+        <div class="drill-card">
+          <div class="drill-letter">(f)</div>
+          <div class="drill-q">8 workers build a fence in 6 hrs. How many hours for 4 workers?</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+
+    <!-- PART 2: THE APPLY -->
+    <div class="section-ribbon page-break-before">
+      <span class="section-ribbon-tag">Part 2: The Apply</span>
+      <div class="section-ribbon-line"></div>
+      <span class="section-ribbon-info">Real-world adult and vocational scenario applications</span>
+    </div>
+
+    
+      <div class="apply-card">
+        <div class="apply-card-head">
+          <span class="apply-q-num">Question 1</span>
+          <span class="apply-context-tag"><i class="fa-solid fa-briefcase"></i> Building & Mortar Mixing</span>
+          <span class="apply-marks">[3 Marks]</span>
+        </div>
+        <div class="apply-stem">A bricklayer mixes sand and cement in the ratio <strong>4 : 1</strong> by weight. He needs to produce <strong>350 kg</strong> of mortar mix.<br>Work out the weight of sand and the weight of cement required.</div>
+        <div class="apply-working-area">
+          <div class="apply-working-label">Show your step-by-step working:</div>
+          <div class="apply-working-lines">
+            <div class="work-line"></div>
+            <div class="work-line"></div>
+            <div class="work-line"></div>
+          </div>
+        </div>
+        
+            <div class="apply-ans-line">
+              <span class="ans-label">Final Answer =</span>
+              
+              <div class="ans-write-box"></div>
+              <span class="unit-sfx">kg</span>
+            </div>
+      </div>
+
+      <div class="apply-card">
+        <div class="apply-card-head">
+          <span class="apply-q-num">Question 2</span>
+          <span class="apply-context-tag"><i class="fa-solid fa-briefcase"></i> Workplace Business Profits</span>
+          <span class="apply-marks">[3 Marks]</span>
+        </div>
+        <div class="apply-stem">Three partners, Alex, Brian and Clara, invest in a catering business in the ratio <strong>2 : 3 : 5</strong>. At the end of the year, the business generates a net profit of <strong>£48,000</strong>.<br>How much profit does Clara receive?</div>
+        <div class="apply-working-area">
+          <div class="apply-working-label">Show your step-by-step working:</div>
+          <div class="apply-working-lines">
+            <div class="work-line"></div>
+            <div class="work-line"></div>
+            <div class="work-line"></div>
+          </div>
+        </div>
+        
+            <div class="apply-ans-line">
+              <span class="ans-label">Final Answer =</span>
+              <span class="unit-pfx">£</span>
+              <div class="ans-write-box"></div>
+              
+            </div>
+      </div>
+
+      <div class="apply-card">
+        <div class="apply-card-head">
+          <span class="apply-q-num">Question 3</span>
+          <span class="apply-context-tag"><i class="fa-solid fa-briefcase"></i> Care Home Staff Ratios</span>
+          <span class="apply-marks">[2 Marks]</span>
+        </div>
+        <div class="apply-stem">A specialist residential care home operates with a required staffing ratio of <strong>1 healthcare assistant for every 5 residents</strong>.<br>On Thursday night, there are <strong>42 residents</strong> in the facility.<br>What is the minimum number of healthcare assistants that must be on duty?</div>
+        <div class="apply-working-area">
+          <div class="apply-working-label">Show your step-by-step working:</div>
+          <div class="apply-working-lines">
+            <div class="work-line"></div>
+            <div class="work-line"></div>
+            <div class="work-line"></div>
+          </div>
+        </div>
+        
+            <div class="apply-ans-line">
+              <span class="ans-label">Final Answer =</span>
+              
+              <div class="ans-write-box"></div>
+              <span class="unit-sfx">assistants</span>
+            </div>
+      </div>
+
+      <div class="apply-card">
+        <div class="apply-card-head">
+          <span class="apply-q-num">Question 4</span>
+          <span class="apply-context-tag"><i class="fa-solid fa-briefcase"></i> Chemical Cleaning Dilution</span>
+          <span class="apply-marks">[3 Marks]</span>
+        </div>
+        <div class="apply-stem">An industrial disinfectant concentrate must be diluted with water in the ratio <strong>1 : 25</strong> (1 part concentrate to 25 parts water).<br>A cleaning supervisor needs to make <strong>13 litres</strong> of ready-to-use cleaning solution.<br>How many millilitres of concentrate does she need?</div>
+        <div class="apply-working-area">
+          <div class="apply-working-label">Show your step-by-step working:</div>
+          <div class="apply-working-lines">
+            <div class="work-line"></div>
+            <div class="work-line"></div>
+            <div class="work-line"></div>
+          </div>
+        </div>
+        
+            <div class="apply-ans-line">
+              <span class="ans-label">Final Answer =</span>
+              
+              <div class="ans-write-box"></div>
+              <span class="unit-sfx">ml</span>
+            </div>
+      </div>
+
+      <div class="apply-card">
+        <div class="apply-card-head">
+          <span class="apply-q-num">Question 5</span>
+          <span class="apply-context-tag"><i class="fa-solid fa-briefcase"></i> Architectural Scale Plan</span>
+          <span class="apply-marks">[3 Marks]</span>
+        </div>
+        <div class="apply-stem">A warehouse building plan is drawn to a scale of <strong>1 : 50</strong>.<br>On the plan, the width of the loading bay is <strong>16.4 cm</strong>.<br>Work out the actual real-life width of the loading bay in metres.</div>
+        <div class="apply-working-area">
+          <div class="apply-working-label">Show your step-by-step working:</div>
+          <div class="apply-working-lines">
+            <div class="work-line"></div>
+            <div class="work-line"></div>
+            <div class="work-line"></div>
+          </div>
+        </div>
+        
+            <div class="apply-ans-line">
+              <span class="ans-label">Final Answer =</span>
+              
+              <div class="ans-write-box"></div>
+              <span class="unit-sfx">metres</span>
+            </div>
+      </div>
+
+      <div class="apply-card">
+        <div class="apply-card-head">
+          <span class="apply-q-num">Question 6</span>
+          <span class="apply-context-tag"><i class="fa-solid fa-briefcase"></i> Vehicle Fleet Fuel Efficiency</span>
+          <span class="apply-marks">[3 Marks]</span>
+        </div>
+        <div class="apply-stem">A courier van travels <strong>270 miles</strong> on <strong>36 litres</strong> of diesel fuel.<br>At this rate of fuel consumption, how many litres of diesel will the van need to complete a route of <strong>450 miles</strong>?</div>
+        <div class="apply-working-area">
+          <div class="apply-working-label">Show your step-by-step working:</div>
+          <div class="apply-working-lines">
+            <div class="work-line"></div>
+            <div class="work-line"></div>
+            <div class="work-line"></div>
+          </div>
+        </div>
+        
+            <div class="apply-ans-line">
+              <span class="ans-label">Final Answer =</span>
+              
+              <div class="ans-write-box"></div>
+              <span class="unit-sfx">litres</span>
+            </div>
+      </div>
+
+    <!-- Sheet Footer -->
+    <div class="sheet-footer">
+      <div>&copy; Master Functional Skills &bull; masterfunctionalskills.co.uk &bull; Pearson Edexcel Reformed Specification</div>
+      <div class="footer-links">
+        <a href="proportion-workout-answers.html">Answers Key</a>
+        <a href="proportion-worksheet.html">Exam Practice Booklet</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,47 @@
+<svg viewBox="0 0 540 240" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:540px; height:auto; font-family:'Plus Jakarta Sans', system-ui, sans-serif;">
+  <rect x="2" y="2" width="536" height="236" rx="14" fill="#ffffff" stroke="#bae6fd" stroke-width="2"/>
+  <rect x="18" y="14" width="260" height="26" rx="13" fill="#e0f2fe"/>
+  <text x="28" y="32" font-size="12" font-weight="800" fill="#0369a1">✎ VISUAL MODEL: METRIC STAIRCASE</text>
+  <text x="290" y="32" font-size="13" font-weight="700" fill="#0f172a">Length, Weight &amp; Capacity</text>
+
+  <!-- Length conversion row -->
+  <text x="25" y="70" font-size="12" font-weight="800" fill="#0369a1">LENGTH:</text>
+  
+  <rect x="85" y="55" width="45" height="28" rx="4" fill="#0284c7"/>
+  <text x="107" y="74" font-size="13" font-weight="800" fill="#ffffff" text-anchor="middle">km</text>
+
+  <text x="145" y="65" font-size="10.5" font-weight="800" fill="#16a34a">× 1,000 →</text>
+  <text x="145" y="80" font-size="10.5" font-weight="800" fill="#dc2626">← ÷ 1,000</text>
+
+  <rect x="200" y="55" width="45" height="28" rx="4" fill="#0284c7"/>
+  <text x="222" y="74" font-size="13" font-weight="800" fill="#ffffff" text-anchor="middle">m</text>
+
+  <text x="258" y="65" font-size="10.5" font-weight="800" fill="#16a34a">× 100 →</text>
+  <text x="258" y="80" font-size="10.5" font-weight="800" fill="#dc2626">← ÷ 100</text>
+
+  <rect x="310" y="55" width="45" height="28" rx="4" fill="#0284c7"/>
+  <text x="332" y="74" font-size="13" font-weight="800" fill="#ffffff" text-anchor="middle">cm</text>
+
+  <text x="368" y="65" font-size="10.5" font-weight="800" fill="#16a34a">× 10 →</text>
+  <text x="368" y="80" font-size="10.5" font-weight="800" fill="#dc2626">← ÷ 10</text>
+
+  <rect x="420" y="55" width="45" height="28" rx="4" fill="#0284c7"/>
+  <text x="442" y="74" font-size="13" font-weight="800" fill="#ffffff" text-anchor="middle">mm</text>
+
+  <!-- Weight & Capacity rows in split card -->
+  <g transform="translate(25, 105)">
+    <rect width="235" height="110" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
+    <text x="15" y="24" font-size="11" font-weight="800" fill="#0369a1">MASS / WEIGHT (× 1,000):</text>
+    <text x="15" y="50" font-size="12" fill="#0f172a">1 kilogram (kg) = <tspan font-weight="800" fill="#0284c7">1,000 grams (g)</tspan></text>
+    <text x="15" y="72" font-size="12" fill="#0f172a">1 tonne (t) = <tspan font-weight="800" fill="#0284c7">1,000 kg</tspan></text>
+    <text x="15" y="96" font-size="11" font-weight="700" fill="#15803d">Big to small: Multiply by 1,000</text>
+  </g>
+
+  <g transform="translate(275, 105)">
+    <rect width="235" height="110" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
+    <text x="15" y="24" font-size="11" font-weight="800" fill="#0369a1">CAPACITY / LIQUID (× 1,000):</text>
+    <text x="15" y="50" font-size="12" fill="#0f172a">1 litre (L) = <tspan font-weight="800" fill="#0284c7">1,000 millilitres (ml)</tspan></text>
+    <text x="15" y="72" font-size="12" fill="#0f172a">1 centilitre (cl) = <tspan font-weight="800" fill="#0284c7">10 ml</tspan></text>
+    <text x="15" y="96" font-size="11" font-weight="700" fill="#15803d">Small to big: Divide by 1,000</text>
+  </g>
+</svg>

@@ -1,0 +1,1820 @@
+import os
+import re
+
+PROJECT_DIR = "/home/subi/Projects/masterfunctionalskills.co.uk"
+
+with open(os.path.join(PROJECT_DIR, "generate_modern_services_pages.py"), "r", encoding="utf-8") as f:
+    code = f.read()
+
+nav_match = re.search(r'NAV_HEADER = """(.*?)"""', code, re.DOTALL)
+NAV_HEADER = nav_match.group(1).strip() if nav_match else ""
+
+footer_match = re.search(r'FOOTER = """(.*?)"""', code, re.DOTALL)
+FOOTER = footer_match.group(1).strip() if footer_match else ""
+
+diagnostic_html = f"""<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Free Functional Skills Diagnostic Assessment & Skill Checker | Master Functional Skills</title>
+  <meta name="description" content="Take our free Functional Skills Maths and English diagnostic test. Choose between Quick Check or In-Depth Assessment with typed working out, extended reading, and workplace writing analysis.">
+  <link rel="stylesheet" href="assets/css/mfs-theme.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    .diag-wrapper {{
+      max-width: 960px;
+      margin: 0 auto;
+    }}
+    .diag-card {{
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 32px;
+      box-shadow: 0 8px 30px rgba(7, 13, 30, 0.05);
+      margin-bottom: 24px;
+    }}
+    .diag-q-card {{
+      background: #ffffff;
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 22px 24px;
+      margin-bottom: 18px;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }}
+    .diag-q-card:focus-within {{
+      border-color: var(--accent);
+      box-shadow: 0 4px 14px var(--accent-glow);
+    }}
+    .diag-q-header {{
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 10px;
+      gap: 12px;
+    }}
+    .diag-q-num {{
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: rgba(37, 99, 235, 0.12);
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 0.85rem;
+      margin-right: 8px;
+      flex-shrink: 0;
+    }}
+    .diag-q-title {{
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--navy);
+      line-height: 1.5;
+    }}
+    .diag-q-topic {{
+      font-size: 0.75rem;
+      font-weight: 700;
+      background: var(--bg-card-alt);
+      color: var(--text-muted);
+      padding: 3px 10px;
+      border-radius: 100px;
+      border: 1px solid var(--border);
+      white-space: nowrap;
+    }}
+    .diag-q-desc {{
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.6;
+      margin: 8px 0 14px;
+    }}
+    .diag-options {{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+      margin-top: 14px;
+    }}
+    @media (max-width: 640px) {{
+      .diag-options {{ grid-template-columns: 1fr; }}
+    }}
+    .diag-option-label {{
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 12px 16px;
+      border-radius: 10px;
+      border: 1.5px solid var(--border);
+      background: #faf8f2;
+      cursor: pointer;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: var(--text-primary);
+      transition: all 0.15s ease;
+    }}
+    .diag-option-label:hover {{
+      border-color: var(--accent);
+      background: #ffffff;
+    }}
+    .diag-option-label.selected {{
+      border-color: var(--accent);
+      background: var(--accent-light);
+      color: var(--accent);
+    }}
+    .diag-option-label input[type="radio"] {{
+      accent-color: var(--accent);
+      width: 17px;
+      height: 17px;
+    }}
+
+    /* WORKING OUT TEXTAREA (DETAILED MATHS) */
+    .diag-working-box {{
+      margin-top: 14px;
+      padding: 14px 16px;
+      background: #faf8f2;
+      border: 1px dashed var(--border);
+      border-radius: 12px;
+    }}
+    .diag-working-label {{
+      display: block;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: var(--navy);
+      margin-bottom: 6px;
+    }}
+    .diag-working-hint {{
+      font-weight: normal;
+      color: var(--text-muted);
+      font-size: 0.78rem;
+      margin-left: 4px;
+    }}
+    .diag-working-input {{
+      width: 100%;
+      min-height: 72px;
+      padding: 10px 12px;
+      font-family: inherit;
+      font-size: 0.88rem;
+      line-height: 1.5;
+      color: var(--text-primary);
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      resize: vertical;
+      box-sizing: border-box;
+      transition: border-color 0.2s ease;
+    }}
+    .diag-working-input:focus {{
+      outline: none;
+      border-color: var(--accent);
+    }}
+
+    /* SOURCE EXTRACT BOX (DETAILED ENGLISH) */
+    .source-extract-box {{
+      background: #f8fafc;
+      border: 1.5px solid #cbd5e1;
+      border-left: 4px solid var(--accent);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 24px;
+    }}
+    .source-extract-badge {{
+      display: inline-block;
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--accent);
+      background: var(--accent-light);
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 8px;
+    }}
+    .source-extract-title {{
+      font-size: 1.25rem;
+      font-weight: 800;
+      color: var(--navy);
+      margin: 0 0 10px;
+    }}
+    .source-extract-text {{
+      font-size: 0.92rem;
+      line-height: 1.7;
+      color: #334155;
+    }}
+    .source-extract-text p {{
+      margin: 0 0 12px;
+    }}
+
+    /* WRITING DRAFTING BOX (DETAILED ENGLISH) */
+    .writing-draft-box {{
+      background: #ffffff;
+      border: 1.5px solid var(--border);
+      border-radius: 14px;
+      padding: 22px;
+      margin-top: 14px;
+    }}
+    .writing-checklist {{
+      background: var(--bg-card-alt);
+      border-radius: 10px;
+      padding: 12px 16px;
+      margin-bottom: 14px;
+      font-size: 0.85rem;
+    }}
+    .writing-checklist ul {{
+      margin: 6px 0 0 18px;
+      padding: 0;
+      color: var(--text-secondary);
+    }}
+    .diag-writing-textarea {{
+      width: 100%;
+      min-height: 160px;
+      padding: 14px;
+      font-family: inherit;
+      font-size: 0.92rem;
+      line-height: 1.6;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      box-sizing: border-box;
+      resize: vertical;
+    }}
+    .diag-writing-textarea:focus {{
+      outline: none;
+      border-color: var(--accent);
+    }}
+    .writing-stats-bar {{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 8px;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      flex-wrap: wrap;
+      gap: 10px;
+    }}
+
+    /* MODE SELECTOR */
+    .mode-selector-wrap {{
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 20px 24px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+    }}
+    .mode-selector-header {{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }}
+    .mode-selector-title {{
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--navy);
+    }}
+    .mode-selector-grid {{
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }}
+    @media (max-width: 600px) {{
+      .mode-selector-grid {{ grid-template-columns: 1fr; }}
+    }}
+    .mode-btn {{
+      display: block;
+      text-align: left;
+      padding: 16px 20px;
+      border-radius: 12px;
+      border: 2px solid var(--border);
+      background: #faf8f2;
+      cursor: pointer;
+      transition: all 0.2s ease;
+      width: 100%;
+    }}
+    .mode-btn:hover {{
+      border-color: var(--accent-border);
+      background: #ffffff;
+    }}
+    .mode-btn.active {{
+      border-color: var(--accent);
+      background: var(--accent-light);
+    }}
+    .mode-btn-title {{
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--navy);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 4px;
+    }}
+    .mode-btn.active .mode-btn-title {{
+      color: var(--accent);
+    }}
+    .mode-btn-desc {{
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      line-height: 1.4;
+    }}
+
+    /* SUBJECT TABS */
+    .tab-btn {{
+      padding: 14px 28px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      border: 1px solid var(--border);
+      border-bottom: none;
+      background: #faf8f2;
+      color: var(--text-muted);
+      border-radius: 12px 12px 0 0;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }}
+    .tab-btn.active {{
+      background: #ffffff;
+      color: var(--accent);
+      border-top: 3px solid var(--accent);
+    }}
+
+    /* RESULTS BANNER */
+    .diag-result-banner {{
+      display: none;
+      background: linear-gradient(135deg, var(--navy-dark) 0%, var(--navy) 100%);
+      color: #ffffff;
+      border-radius: 16px;
+      padding: 32px;
+      margin-top: 30px;
+    }}
+    .gap-table {{
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 18px;
+      background: rgba(255, 255, 255, 0.04);
+      border-radius: 10px;
+      overflow: hidden;
+    }}
+    .gap-table th, .gap-table td {{
+      padding: 12px 16px;
+      text-align: left;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      font-size: 0.9rem;
+    }}
+    .gap-table th {{
+      background: rgba(0, 0, 0, 0.2);
+      font-weight: 700;
+      color: #cbd5e1;
+    }}
+
+    .method-review-box {{
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.15);
+      border-radius: 10px;
+      padding: 12px 16px;
+      margin-top: 8px;
+      font-size: 0.85rem;
+    }}
+  </style>
+</head>
+<body>
+{NAV_HEADER}
+
+  <!-- HERO SECTION -->
+  <section class="mfs-hero-section">
+    <div class="mfs-container">
+      <div style="max-width: 860px; margin: 0 auto; text-align: center;">
+        <span class="moat-badge" style="background:rgba(37,99,235,0.1); color:var(--accent); font-weight:800; margin-bottom:12px;">
+          <i class="fa-solid fa-graduation-cap"></i> Ofqual-Aligned Diagnostic Skill Check
+        </span>
+        <h1 style="font-size: 2.6rem; margin-bottom: 14px;">Functional Skills <span>Diagnostic Assessment</span></h1>
+        <p class="hero-description" style="margin: 0 auto 20px;">
+          Identify your exact baseline working level (Entry 3, Level 1, or Level 2) and spot specific knowledge gaps. Choose between our fast 10-question check or our in-depth diagnostic with typed calculation workings and extended written analysis.
+        </p>
+        <div class="moat-strip" style="justify-content: center;">
+          <span class="moat-badge"><i class="fa-solid fa-sliders"></i> Basic or Detailed Mode</span>
+          <span class="moat-badge"><i class="fa-solid fa-calculator"></i> Step-by-Step Working Out</span>
+          <span class="moat-badge"><i class="fa-solid fa-pen-nib"></i> Extended Reading & SPaG</span>
+          <span class="moat-badge"><i class="fa-solid fa-bullseye"></i> Targeted Revise Links</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ASSESSMENT BODY -->
+  <section style="padding: 40px 0; background: var(--bg-page);">
+    <div class="mfs-container diag-wrapper">
+
+      <!-- 1. ASSESSMENT DEPTH MODE SELECTOR -->
+      <div class="mode-selector-wrap">
+        <div class="mode-selector-header">
+          <div class="mode-selector-title"><i class="fa-solid fa-layer-group" style="color:var(--accent); margin-right:6px;"></i> Step 1: Select Assessment Depth</div>
+          <span style="font-size:0.85rem; color:var(--text-muted); font-weight:600;">You can switch modes anytime</span>
+        </div>
+        <div class="mode-selector-grid">
+          <!-- Basic Mode Option -->
+          <button type="button" class="mode-btn active" id="modeBtnBasic" onclick="setAssessmentMode('basic')">
+            <div class="mode-btn-title">
+              <i class="fa-solid fa-bolt"></i> Quick Skill Check (Basic)
+            </div>
+            <div class="mode-btn-desc">
+              10 targeted questions • ~7–10 minutes. Fast multiple-choice check to determine whether you are Entry 3, Level 1, or Level 2 ready.
+            </div>
+          </button>
+
+          <!-- Detailed Mode Option -->
+          <button type="button" class="mode-btn" id="modeBtnDetailed" onclick="setAssessmentMode('detailed')">
+            <div class="mode-btn-title">
+              <i class="fa-solid fa-microscope"></i> Detailed In-Depth Diagnostic
+            </div>
+            <div class="mode-btn-desc">
+              24 comprehensive questions • ~35–45 minutes. Includes <strong>typed working-out workspaces</strong> for Maths (method marks) and <strong>extended reading & workplace writing drafting</strong> for English.
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <!-- 2. SUBJECT TABS -->
+      <div style="display:flex; gap:8px;">
+        <button type="button" class="tab-btn active" id="tabMaths" onclick="switchSubject('maths')">
+          <i class="fa-solid fa-calculator"></i> Maths Assessment (<span id="mathsQCount">10</span> Qs)
+        </button>
+        <button type="button" class="tab-btn" id="tabEnglish" onclick="switchSubject('english')">
+          <i class="fa-solid fa-pen-nib"></i> English Assessment (<span id="englishQCount">10</span> Qs)
+        </button>
+      </div>
+
+      <div class="diag-card" style="border-radius: 0 18px 18px 18px;">
+        <form id="diagnosticForm" onsubmit="submitDiagnostic(event)">
+
+          <!-- ============================================================= -->
+          <!-- A. MATHS - BASIC (10 QUESTIONS)                               -->
+          <!-- ============================================================= -->
+          <div id="mathsBasicContainer">
+            <div style="margin-bottom:20px; padding:12px 16px; background:#eff6ff; border-radius:10px; border-left:4px solid var(--accent); font-size:0.88rem; color:#1e3a8a;">
+              <strong>Quick Maths Diagnostic:</strong> 10 foundational questions covering Fractions, Percentages, Ratio, Area, Mean, Probability, Units, Temperatures, Scale, and Formulas.
+            </div>
+
+            <!-- Q1: Fractions -->
+            <div class="diag-q-card" data-q="mb1" data-topic="Fractions" data-correct="C" data-guide="functional-skills-fractions.html">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">1</span> Work out: 3/4 of £360</div>
+                <span class="diag-q-topic">Fractions</span>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="mb1" value="A"> £90</label>
+                <label class="diag-option-label"><input type="radio" name="mb1" value="B"> £180</label>
+                <label class="diag-option-label"><input type="radio" name="mb1" value="C"> £270</label>
+                <label class="diag-option-label"><input type="radio" name="mb1" value="D"> £240</label>
+              </div>
+            </div>
+
+            <!-- Q2: Percentages -->
+            <div class="diag-q-card" data-q="mb2" data-topic="Percentages" data-correct="B" data-guide="functional-skills-percentages.html">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">2</span> A television costing £400 is reduced by 15% in a seasonal sale. What is the final sale price?</div>
+                <span class="diag-q-topic">Percentages</span>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="mb2" value="A"> £60</label>
+                <label class="diag-option-label"><input type="radio" name="mb2" value="B"> £340</label>
+                <label class="diag-option-label"><input type="radio" name="mb2" value="C"> £360</label>
+                <label class="diag-option-label"><input type="radio" name="mb2" value="D"> £385</label>
+              </div>
+            </div>
+
+            <!-- Q3: Ratio -->
+            <div class="diag-q-card" data-q="mb3" data-topic="Ratio" data-correct="A" data-guide="functional-skills-ratio.html">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">3</span> Share £120 in the ratio 2 : 3. What is the value of the larger share?</div>
+                <span class="diag-q-topic">Ratio</span>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="mb3" value="A"> £72</label>
+                <label class="diag-option-label"><input type="radio" name="mb3" value="B"> £48</label>
+                <label class="diag-option-label"><input type="radio" name="mb3" value="C"> £80</label>
+                <label class="diag-option-label"><input type="radio" name="mb3" value="D"> £60</label>
+              </div>
+            </div>
+
+            <!-- Q4: Area -->
+            <div class="diag-q-card" data-q="mb4" data-topic="Area & Perimeter" data-correct="C" data-guide="functional-skills-area.html">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">4</span> An office floor measures 6.5 m in length by 4 m in width. What is its total surface area?</div>
+                <span class="diag-q-topic">Area & Perimeter</span>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="mb4" value="A"> 21 m²</label>
+                <label class="diag-option-label"><input type="radio" name="mb4" value="B"> 24.5 m²</label>
+                <label class="diag-option-label"><input type="radio" name="mb4" value="C"> 26 m²</label>
+                <label class="diag-option-label"><input type="radio" name="mb4" value="D"> 260 m²</label>
+              </div>
+            </div>
+
+            <!-- Q5: Mean Average -->
+            <div class="diag-q-card" data-q="mb5" data-topic="Mean & Range" data-correct="B" data-guide="functional-skills-mean-median-mode-and-range.html">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">5</span> Find the mean (average) of these 5 daily delivery times: 12, 18, 15, 23, and 17 minutes.</div>
+                <span class="diag-q-topic">Mean Average</span>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="mb5" value="A"> 15 mins</label>
+                <label class="diag-option-label"><input type="radio" name="mb5" value="B"> 17 mins</label>
+                <label class="diag-option-label"><input type="radio" name="mb5" value="C"> 18 mins</label>
+                <label class="diag-option-label"><input type="radio" name="mb5" value="D"> 21 mins</label>
+              </div>
+            </div>
+
+            <!-- Q6: Probability -->
+            <div class="diag-q-card" data-q="mb6" data-topic="Probability" data-correct="A" data-guide="functional-skills-probability.html">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">6</span> A fair six-sided dice is rolled once. What is the probability of rolling a prime number (2, 3, or 5)?</div>
+                <span class="diag-q-topic">Probability</span>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="mb6" value="A"> 1/2 (or 3/6)</label>
+                <label class="diag-option-label"><input type="radio" name="mb6" value="B"> 1/3 (or 2/6)</label>
+                <label class="diag-option-label"><input type="radio" name="mb6" value="C"> 1/6</label>
+                <label class="diag-option-label"><input type="radio" name="mb6" value="D"> 2/3 (or 4/6)</label>
+              </div>
+            </div>
+
+            <!-- Q7: Unit Conversions -->
+            <div class="diag-q-card" data-q="mb7" data-topic="Unit Conversions" data-correct="C" data-guide="functional-skills-unit-conversions.html">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">7</span> Convert 2.75 kilograms into grams.</div>
+                <span class="diag-q-topic">Unit Conversions</span>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="mb7" value="A"> 275 g</label>
+                <label class="diag-option-label"><input type="radio" name="mb7" value="B"> 27.5 g</label>
+                <label class="diag-option-label"><input type="radio" name="mb7" value="C"> 2,750 g</label>
+                <label class="diag-option-label"><input type="radio" name="mb7" value="D"> 27,500 g</label>
+              </div>
+            </div>
+
+            <!-- Q8: Negative Numbers -->
+            <div class="diag-q-card" data-q="mb8" data-topic="Negative Numbers & Temperature" data-correct="D" data-guide="functional-skills-temperature.html">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">8</span> At 06:00, the temperature in a cold storage freezer is -4°C. By midday, it rises by 9°C. What is the new temperature?</div>
+                <span class="diag-q-topic">Temperatures</span>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="mb8" value="A"> -13°C</label>
+                <label class="diag-option-label"><input type="radio" name="mb8" value="B"> -5°C</label>
+                <label class="diag-option-label"><input type="radio" name="mb8" value="C"> 4°C</label>
+                <label class="diag-option-label"><input type="radio" name="mb8" value="D"> 5°C</label>
+              </div>
+            </div>
+
+            <!-- Q9: Scale Drawings -->
+            <div class="diag-q-card" data-q="mb9" data-topic="Scale Drawings" data-correct="B" data-guide="functional-skills-maps-and-scale-drawings.html">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">9</span> On an architect plan drawn to scale 1 : 50, a wall measures 6 cm. What is the actual length of the wall in real life?</div>
+                <span class="diag-q-topic">Scale & Maps</span>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="mb9" value="A"> 300 metres</label>
+                <label class="diag-option-label"><input type="radio" name="mb9" value="B"> 3 metres (300 cm)</label>
+                <label class="diag-option-label"><input type="radio" name="mb9" value="C"> 30 metres</label>
+                <label class="diag-option-label"><input type="radio" name="mb9" value="D"> 0.83 metres</label>
+              </div>
+            </div>
+
+            <!-- Q10: Formulas -->
+            <div class="diag-q-card" data-q="mb10" data-topic="Formulas & Substitution" data-correct="A" data-guide="functional-skills-formulas.html">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">10</span> Use the perimeter formula P = 2L + 2W. When Length (L) = 8.5 cm and Width (W) = 4.2 cm, what is P?</div>
+                <span class="diag-q-topic">Formulas</span>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="mb10" value="A"> 25.4 cm</label>
+                <label class="diag-option-label"><input type="radio" name="mb10" value="B"> 12.7 cm</label>
+                <label class="diag-option-label"><input type="radio" name="mb10" value="C"> 35.7 cm</label>
+                <label class="diag-option-label"><input type="radio" name="mb10" value="D"> 71.4 cm</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- ============================================================= -->
+          <!-- B. MATHS - DETAILED (24 QUESTIONS WITH WORKING OUT TEXTAREAS)  -->
+          <!-- ============================================================= -->
+          <div id="mathsDetailedContainer" style="display:none;">
+            <div style="margin-bottom:20px; padding:14px 18px; background:#eff6ff; border-radius:12px; border-left:4px solid var(--accent); font-size:0.9rem; color:#1e3a8a;">
+              <strong><i class="fa-solid fa-pencil"></i> In-Depth Maths Diagnostic Assessment (24 Questions):</strong>
+              <div style="margin-top:4px; line-height:1.5;">
+                In real Functional Skills Level 1 & Level 2 exams, method marks (M1, M2) are awarded for showing logical steps even if you make an arithmetic error. <strong>Type your calculations into the working-out box under each question</strong> to receive comprehensive examiner method feedback!
+              </div>
+            </div>
+
+            <!-- DOMAIN 1: USING NUMBERS & NUMBER SYSTEMS -->
+            <div style="background:var(--navy-dark); color:#ffffff; padding:10px 16px; border-radius:10px; font-weight:800; font-size:0.9rem; margin-bottom:16px;">
+              <i class="fa-solid fa-1"></i> Section 1: Using Numbers & Number Systems (Q1 – Q8)
+            </div>
+
+            <!-- DM1: Percentage with VAT -->
+            <div class="diag-q-card" data-q="md1" data-topic="Percentages with VAT" data-correct="B" data-guide="functional-skills-percentages.html" data-solution="Step 1: 20% of £840 = 0.20 × 840 = £168 (M1). Step 2: Total cost = £840 + £168 = £1,008 (A1).">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">1</span> A builder quotes £840 for labor and materials. VAT of 20% must be added to the invoice. What is the total invoice cost including VAT?</div>
+                <span class="diag-q-topic">Percentages & VAT</span>
+              </div>
+              <div class="diag-working-box">
+                <label class="diag-working-label"><i class="fa-solid fa-calculator"></i> Show Your Working Out & Steps:<span class="diag-working-hint">(e.g. 840 × 0.20 = 168...)</span></label>
+                <textarea class="diag-working-input" name="work_md1" placeholder="Type your calculation steps here..."></textarea>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="md1" value="A"> £168.00</label>
+                <label class="diag-option-label"><input type="radio" name="md1" value="B"> £1,008.00</label>
+                <label class="diag-option-label"><input type="radio" name="md1" value="C"> £980.00</label>
+                <label class="diag-option-label"><input type="radio" name="md1" value="D"> £1,024.00</label>
+              </div>
+            </div>
+
+            <!-- DM2: Reverse Percentages -->
+            <div class="diag-q-card" data-q="md2" data-topic="Reverse Percentages" data-correct="C" data-guide="functional-skills-percentages.html" data-solution="Step 1: 100% - 15% = 85% = 0.85 (M1). Step 2: Original price = £136 ÷ 0.85 = £160 (A1).">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">2</span> A winter coat is reduced by 15% in a sale. The sale price is £136. What was the original price before the discount?</div>
+                <span class="diag-q-topic">Reverse Percentages</span>
+              </div>
+              <div class="diag-working-box">
+                <label class="diag-working-label"><i class="fa-solid fa-calculator"></i> Show Your Working Out & Steps:<span class="diag-working-hint">(Reverse percentage: sale price represents 85%)</span></label>
+                <textarea class="diag-working-input" name="work_md2" placeholder="Type your calculation steps here..."></textarea>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="md2" value="A"> £156.40</label>
+                <label class="diag-option-label"><input type="radio" name="md2" value="B"> £150.00</label>
+                <label class="diag-option-label"><input type="radio" name="md2" value="C"> £160.00</label>
+                <label class="diag-option-label"><input type="radio" name="md2" value="D"> £172.50</label>
+              </div>
+            </div>
+
+            <!-- DM3: 3-Way Ratio -->
+            <div class="diag-q-card" data-q="md3" data-topic="Multi-Part Ratio" data-correct="A" data-guide="functional-skills-ratio.html" data-solution="Step 1: Total parts = 1 + 2 + 3 = 6 parts (M1). Step 2: 1 part = £1,800 ÷ 6 = £300. Step 3: Highest share = 3 × £300 = £900 (A1).">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">3</span> A department annual bonus of £1,800 is divided between three employees in the ratio 1 : 2 : 3. How much does the employee with the highest share receive?</div>
+                <span class="diag-q-topic">3-Way Ratio</span>
+              </div>
+              <div class="diag-working-box">
+                <label class="diag-working-label"><i class="fa-solid fa-calculator"></i> Show Your Working Out & Steps:<span class="diag-working-hint">(Sum of parts -> 1 part value -> highest share)</span></label>
+                <textarea class="diag-working-input" name="work_md3" placeholder="Type your calculation steps here..."></textarea>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="md3" value="A"> £900.00</label>
+                <label class="diag-option-label"><input type="radio" name="md3" value="B"> £600.00</label>
+                <label class="diag-option-label"><input type="radio" name="md3" value="C"> £750.00</label>
+                <label class="diag-option-label"><input type="radio" name="md3" value="D"> £1,200.00</label>
+              </div>
+            </div>
+
+            <!-- DM4: Mixed Numbers -->
+            <div class="diag-q-card" data-q="md4" data-topic="Fractions & Mixed Numbers" data-correct="D" data-guide="functional-skills-fractions.html" data-solution="Step 1: 1 3/4 + 2 1/3 = 7/4 + 7/3 (M1). Step 2: Common denominator 12 -> 21/12 + 28/12 = 49/12 = 4 1/12 metres (A1).">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">4</span> A carpenter joins two lengths of timber: 1 ¾ metres and 2 ⅓ metres. What is the total combined length?</div>
+                <span class="diag-q-topic">Mixed Number Fractions</span>
+              </div>
+              <div class="diag-working-box">
+                <label class="diag-working-label"><i class="fa-solid fa-calculator"></i> Show Your Working Out & Steps:<span class="diag-working-hint">(Convert to common denominator 12)</span></label>
+                <textarea class="diag-working-input" name="work_md4" placeholder="Type your calculation steps here..."></textarea>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="md4" value="A"> 3 4/7 m</label>
+                <label class="diag-option-label"><input type="radio" name="md4" value="B"> 3 2/3 m</label>
+                <label class="diag-option-label"><input type="radio" name="md4" value="C"> 4 m</label>
+                <label class="diag-option-label"><input type="radio" name="md4" value="D"> 4 1/12 m</label>
+              </div>
+            </div>
+
+            <!-- DM5: Compound Interest -->
+            <div class="diag-q-card" data-q="md5" data-topic="Compound Interest" data-correct="B" data-guide="functional-skills-interest-and-compound-interest.html" data-solution="Step 1: Year 1 = £2,500 × 1.04 = £2,600 (M1). Step 2: Year 2 = £2,600 × 1.04 = £2,704 (M1, A1). Total interest = £2,704 - £2,500 = £204.">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">5</span> You invest £2,500 in a business savings account paying 4% compound interest per year. What is the total account balance at the end of 2 years?</div>
+                <span class="diag-q-topic">Compound Interest</span>
+              </div>
+              <div class="diag-working-box">
+                <label class="diag-working-label"><i class="fa-solid fa-calculator"></i> Show Your Working Out & Steps:<span class="diag-working-hint">(Calculate year 1 interest, then year 2 on new balance)</span></label>
+                <textarea class="diag-working-input" name="work_md5" placeholder="Type your calculation steps here..."></textarea>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="md5" value="A"> £2,700.00</label>
+                <label class="diag-option-label"><input type="radio" name="md5" value="B"> £2,704.00</label>
+                <label class="diag-option-label"><input type="radio" name="md5" value="C"> £2,680.00</label>
+                <label class="diag-option-label"><input type="radio" name="md5" value="D"> £2,800.00</label>
+              </div>
+            </div>
+
+            <!-- DM6: Best Buys -->
+            <div class="diag-q-card" data-q="md6" data-topic="Best Buys & Unit Rates" data-correct="C" data-guide="functional-skills-best-buys.html" data-solution="Step 1: Pack A unit cost = £4.80 ÷ 750 = £0.0064 per ml (or £6.40 per L). Step 2: Pack B unit cost = £8.50 ÷ 1500 = £0.00567 per ml (or £5.67 per L) (M1). Step 3: Pack B is cheaper by ~73p per litre (A1).">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">6</span> A hospital purchases disinfectant: Pack A costs £4.80 for 750 ml; Pack B costs £8.50 for 1.5 litres (1,500 ml). Which pack offers better value for money and by what rate?</div>
+                <span class="diag-q-topic">Best Buys</span>
+              </div>
+              <div class="diag-working-box">
+                <label class="diag-working-label"><i class="fa-solid fa-calculator"></i> Show Your Working Out & Steps:<span class="diag-working-hint">(Convert to identical unit cost per litre or per 100ml)</span></label>
+                <textarea class="diag-working-input" name="work_md6" placeholder="Type your calculation steps here..."></textarea>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="md6" value="A"> Pack A is cheaper (£0.64 per 100ml)</label>
+                <label class="diag-option-label"><input type="radio" name="md6" value="B"> Both packs have identical unit cost</label>
+                <label class="diag-option-label"><input type="radio" name="md6" value="C"> Pack B is cheaper (~£0.57 per 100ml vs £0.64)</label>
+                <label class="diag-option-label"><input type="radio" name="md6" value="D"> Pack B is cheaper by £3.70 in total</label>
+              </div>
+            </div>
+
+            <!-- DM7: Complex Formula -->
+            <div class="diag-q-card" data-q="md7" data-topic="Formulas with Squares" data-correct="A" data-guide="functional-skills-formulas.html" data-solution="Step 1: v = 40, so v² = 1600 (M1). Step 2: 0.05 × 1600 = 80. Step 3: 0.2 × 40 = 8. Step 4: Total distance = 80 + 8 = 88 metres (A1).">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">7</span> The braking distance of a van is calculated with the formula: d = 0.05v² + 0.2v, where v is speed in mph and d is distance in metres. Calculate d when v = 40 mph.</div>
+                <span class="diag-q-topic">Complex Formulas</span>
+              </div>
+              <div class="diag-working-box">
+                <label class="diag-working-label"><i class="fa-solid fa-calculator"></i> Show Your Working Out & Steps:<span class="diag-working-hint">(Calculate 40² first according to BIDMAS)</span></label>
+                <textarea class="diag-working-input" name="work_md7" placeholder="Type your calculation steps here..."></textarea>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="md7" value="A"> 88 metres</label>
+                <label class="diag-option-label"><input type="radio" name="md7" value="B"> 72 metres</label>
+                <label class="diag-option-label"><input type="radio" name="md7" value="C"> 96 metres</label>
+                <label class="diag-option-label"><input type="radio" name="md7" value="D"> 120 metres</label>
+              </div>
+            </div>
+
+            <!-- DM8: Estimation & Check -->
+            <div class="diag-q-card" data-q="md8" data-topic="Rounding & Estimation" data-correct="B" data-guide="functional-skills-rounding-and-estimating.html" data-solution="Step 1: Round each figure to 1 significant figure: 39 -> 40; £19.85 -> £20; 78 -> 80 (M1). Step 2: (40 × £20) ÷ 80 = £800 ÷ 80 = £10 (A1).">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">8</span> Estimate the result of (39 × £19.85) ÷ 78 by rounding each number to 1 significant figure to check for reasonableness.</div>
+                <span class="diag-q-topic">Estimation Check</span>
+              </div>
+              <div class="diag-working-box">
+                <label class="diag-working-label"><i class="fa-solid fa-calculator"></i> Show Your Working Out & Steps:<span class="diag-working-hint">(Show your rounded values for each term)</span></label>
+                <textarea class="diag-working-input" name="work_md8" placeholder="Type your calculation steps here..."></textarea>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="md8" value="A"> £5.00</label>
+                <label class="diag-option-label"><input type="radio" name="md8" value="B"> £10.00</label>
+                <label class="diag-option-label"><input type="radio" name="md8" value="C"> £15.00</label>
+                <label class="diag-option-label"><input type="radio" name="md8" value="D"> £20.00</label>
+              </div>
+            </div>
+
+            <!-- DOMAIN 2: MEASURES, SHAPE AND SPACE -->
+            <div style="background:var(--navy-dark); color:#ffffff; padding:10px 16px; border-radius:10px; font-weight:800; font-size:0.9rem; margin:24px 0 16px;">
+              <i class="fa-solid fa-2"></i> Section 2: Measures, Shape & Space (Q9 – Q16)
+            </div>
+
+            <!-- DM9: Compound Area -->
+            <div class="diag-q-card" data-q="md9" data-topic="Compound L-Shaped Area" data-correct="B" data-guide="functional-skills-area.html" data-solution="Step 1: Split L-shape into 2 rectangles: Rect A = 8m × 3m = 24m²; Rect B = (6m - 3m) × 4m = 3m × 4m = 12m² (M1). Step 2: Total area = 24 + 12 = 36m² (A1). Carpet packs needed = 36 ÷ 5 = 7.2 -> 8 packs (M1).">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">9</span> An L-shaped community room has an 8 m back wall, 6 m side wall, 4 m front width, and 3 m recess depth. What is the total floor area, and how many 5 m² carpet packs must be ordered?</div>
+                <span class="diag-q-topic">Compound Area</span>
+              </div>
+              <div class="diag-working-box">
+                <label class="diag-working-label"><i class="fa-solid fa-calculator"></i> Show Your Working Out & Steps:<span class="diag-working-hint">(Show how you split the shape and round up packs)</span></label>
+                <textarea class="diag-working-input" name="work_md9" placeholder="Type your calculation steps here..."></textarea>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="md9" value="A"> 32 m² (7 packs)</label>
+                <label class="diag-option-label"><input type="radio" name="md9" value="B"> 36 m² (8 packs)</label>
+                <label class="diag-option-label"><input type="radio" name="md9" value="C"> 42 m² (9 packs)</label>
+                <label class="diag-option-label"><input type="radio" name="md9" value="D"> 48 m² (10 packs)</label>
+              </div>
+            </div>
+
+            <!-- DM10: Perimeter & Fencing -->
+            <div class="diag-q-card" data-q="md10" data-topic="Perimeter with Gate" data-correct="D" data-guide="functional-skills-perimeter.html" data-solution="Step 1: Total perimeter = 2 × (14 + 9) = 46 m (M1). Step 2: Deduct 1.5 m gate opening = 46 - 1.5 = 44.5 m (A1).">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">10</span> A rectangular garden measures 14 m by 9 m. Fencing is required around the entire boundary except for a 1.5 m gate opening. What total length of fencing is needed?</div>
+                <span class="diag-q-topic">Perimeter & Fencing</span>
+              </div>
+              <div class="diag-working-box">
+                <label class="diag-working-label"><i class="fa-solid fa-calculator"></i> Show Your Working Out & Steps:<span class="diag-working-hint">(Perimeter = 2L + 2W minus gate)</span></label>
+                <textarea class="diag-working-input" name="work_md10" placeholder="Type your calculation steps here..."></textarea>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="md10" value="A"> 23 m</label>
+                <label class="diag-option-label"><input type="radio" name="md10" value="B"> 46 m</label>
+                <label class="diag-option-label"><input type="radio" name="md10" value="C"> 43 m</label>
+                <label class="diag-option-label"><input type="radio" name="md10" value="D"> 44.5 m</label>
+              </div>
+            </div>
+
+            <!-- DM11: Cylinder Volume -->
+            <div class="diag-q-card" data-q="md11" data-topic="Cylinder Volume" data-correct="A" data-guide="functional-skills-volume.html" data-solution="Step 1: Formula V = πr²h. r = 0.6 m, h = 1.5 m. r² = 0.36 (M1). Step 2: 3.142 × 0.36 × 1.5 ≈ 1.697 m³ (A1). Step 3: 1 m³ = 1000 L -> ~1,697 litres.">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">11</span> A cylindrical rainwater storage tank has a base radius of 0.6 m and a height of 1.5 m. Using π = 3.142 and V = πr²h, what is its water capacity in cubic metres?</div>
+                <span class="diag-q-topic">3D Cylinder Volume</span>
+              </div>
+              <div class="diag-working-box">
+                <label class="diag-working-label"><i class="fa-solid fa-calculator"></i> Show Your Working Out & Steps:<span class="diag-working-hint">(Show substitution into π × r² × h)</span></label>
+                <textarea class="diag-working-input" name="work_md11" placeholder="Type your calculation steps here..."></textarea>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="md11" value="A"> 1.70 m³ (to 2 d.p.)</label>
+                <label class="diag-option-label"><input type="radio" name="md11" value="B"> 2.83 m³</label>
+                <label class="diag-option-label"><input type="radio" name="md11" value="C"> 5.65 m³</label>
+                <label class="diag-option-label"><input type="radio" name="md11" value="D"> 0.85 m³</label>
+              </div>
+            </div>
+
+            <!-- DM12: Speed, Distance & Time -->
+            <div class="diag-q-card" data-q="md12" data-topic="Speed, Distance & Time" data-correct="C" data-guide="functional-skills-speed.html" data-solution="Step 1: Time = Distance ÷ Speed = 135 ÷ 45 = 3 hours (M1). Step 2: Arrival at 14:30 minus 3 hours = 11:30 departure (A1).">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">12</span> A technician drives 135 miles to an NHS clinic at an average speed of 45 mph. If they must arrive strictly by 14:30, what is the latest time they can depart?</div>
+                <span class="diag-q-topic">Speed Distance Time</span>
+              </div>
+              <div class="diag-working-box">
+                <label class="diag-working-label"><i class="fa-solid fa-calculator"></i> Show Your Working Out & Steps:<span class="diag-working-hint">(Time = Distance ÷ Speed, count backward on 24hr clock)</span></label>
+                <textarea class="diag-working-input" name="work_md12" placeholder="Type your calculation steps here..."></textarea>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="md12" value="A"> 10:45</label>
+                <label class="diag-option-label"><input type="radio" name="md12" value="B"> 11:00</label>
+                <label class="diag-option-label"><input type="radio" name="md12" value="C"> 11:30</label>
+                <label class="diag-option-label"><input type="radio" name="md12" value="D"> 12:00</label>
+              </div>
+            </div>
+
+            <!-- DM13: Density -->
+            <div class="diag-q-card" data-q="md13" data-topic="Density, Mass & Volume" data-correct="A" data-guide="functional-skills-density.html" data-solution="Step 1: Volume = 5 × 4 × 3 = 60 cm³ (M1). Step 2: Density = Mass ÷ Volume = 510 ÷ 60 = 8.5 g/cm³ (A1).">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">13</span> A solid brass rectangular block measures 5 cm by 4 cm by 3 cm and has a total mass of 510 grams. Calculate the density of the brass in g/cm³.</div>
+                <span class="diag-q-topic">Density Calculation</span>
+              </div>
+              <div class="diag-working-box">
+                <label class="diag-working-label"><i class="fa-solid fa-calculator"></i> Show Your Working Out & Steps:<span class="diag-working-hint">(Volume first, then Density = Mass ÷ Volume)</span></label>
+                <textarea class="diag-working-input" name="work_md13" placeholder="Type your calculation steps here..."></textarea>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="md13" value="A"> 8.5 g/cm³</label>
+                <label class="diag-option-label"><input type="radio" name="md13" value="B"> 10.2 g/cm³</label>
+                <label class="diag-option-label"><input type="radio" name="md13" value="C"> 6.8 g/cm³</label>
+                <label class="diag-option-label"><input type="radio" name="md13" value="D"> 12.0 g/cm³</label>
+              </div>
+            </div>
+
+            <!-- DM14: Bearings -->
+            <div class="diag-q-card" data-q="md14" data-topic="Angles & Bearings" data-correct="B" data-guide="functional-skills-angles-and-bearings.html" data-solution="Step 1: A bearing must be 3 figures measured clockwise from North (M1). Step 2: North to East = 090°, plus 35° South of East = 090° + 35° = 125° (A1).">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">14</span> An emergency ambulance station is located directly North of a patient. A helicopter navigates from the hospital on a heading 35° clockwise past East. What is this three-figure compass bearing?</div>
+                <span class="diag-q-topic">Three-Figure Bearings</span>
+              </div>
+              <div class="diag-working-box">
+                <label class="diag-working-label"><i class="fa-solid fa-calculator"></i> Show Your Working Out & Steps:<span class="diag-working-hint">(Remember 3 digits, clockwise from North: 090 + 35)</span></label>
+                <textarea class="diag-working-input" name="work_md14" placeholder="Type your calculation steps here..."></textarea>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="md14" value="A"> 035°</label>
+                <label class="diag-option-label"><input type="radio" name="md14" value="B"> 125°</label>
+                <label class="diag-option-label"><input type="radio" name="md14" value="C"> 055°</label>
+                <label class="diag-option-label"><input type="radio" name="md14" value="D"> 215°</label>
+              </div>
+            </div>
+
+            <!-- DM15: Metric / Imperial Conversion -->
+            <div class="diag-q-card" data-q="md15" data-topic="Metric & Imperial Conversions" data-correct="D" data-guide="functional-skills-unit-conversions.html" data-solution="Step 1: Rule: 5 miles ≈ 8 kilometres (M1). Step 2: 65 miles ÷ 5 = 13. Step 3: 13 × 8 km = 104 kilometres (A1).">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">15</span> A delivery route in mainland Europe is 65 miles long. Using the official conversion approximation 5 miles ≈ 8 kilometres, convert 65 miles into kilometres.</div>
+                <span class="diag-q-topic">Metric-Imperial Conversion</span>
+              </div>
+              <div class="diag-working-box">
+                <label class="diag-working-label"><i class="fa-solid fa-calculator"></i> Show Your Working Out & Steps:<span class="diag-working-hint">(Show: 65 ÷ 5 × 8)</span></label>
+                <textarea class="diag-working-input" name="work_md15" placeholder="Type your calculation steps here..."></textarea>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="md15" value="A"> 40.6 km</label>
+                <label class="diag-option-label"><input type="radio" name="md15" value="B"> 80 km</label>
+                <label class="diag-option-label"><input type="radio" name="md15" value="C"> 96 km</label>
+                <label class="diag-option-label"><input type="radio" name="md15" value="D"> 104 km</label>
+              </div>
+            </div>
+
+            <!-- DM16: Surface Area -->
+            <div class="diag-q-card" data-q="md16" data-topic="Surface Area of a Box" data-correct="B" data-guide="functional-skills-surface-area.html" data-solution="Step 1: Pairs of faces: Top/Bottom = 2 × (30 × 20) = 1,200 cm²; Front/Back = 2 × (30 × 10) = 600 cm²; Ends = 2 × (20 × 10) = 400 cm² (M1). Step 2: Total surface area = 1,200 + 600 + 400 = 2,200 cm² (A1).">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">16</span> A cardboard shipping carton measures 30 cm long, 20 cm wide, and 10 cm high. What is the total external surface area of all six faces in cm²?</div>
+                <span class="diag-q-topic">Surface Area</span>
+              </div>
+              <div class="diag-working-box">
+                <label class="diag-working-label"><i class="fa-solid fa-calculator"></i> Show Your Working Out & Steps:<span class="diag-working-hint">(Calculate the 3 opposite pairs: 2lw + 2lh + 2wh)</span></label>
+                <textarea class="diag-working-input" name="work_md16" placeholder="Type your calculation steps here..."></textarea>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="md16" value="A"> 6,000 cm²</label>
+                <label class="diag-option-label"><input type="radio" name="md16" value="B"> 2,200 cm²</label>
+                <label class="diag-option-label"><input type="radio" name="md16" value="C"> 1,800 cm²</label>
+                <label class="diag-option-label"><input type="radio" name="md16" value="D"> 2,400 cm²</label>
+              </div>
+            </div>
+
+            <!-- DOMAIN 3: HANDLING INFORMATION AND DATA -->
+            <div style="background:var(--navy-dark); color:#ffffff; padding:10px 16px; border-radius:10px; font-weight:800; font-size:0.9rem; margin:24px 0 16px;">
+              <i class="fa-solid fa-3"></i> Section 3: Handling Information & Data (Q17 – Q24)
+            </div>
+
+            <!-- DM17: Grouped Mean -->
+            <div class="diag-q-card" data-q="md17" data-topic="Grouped Frequency Mean" data-correct="C" data-guide="functional-skills-estimating-the-mean.html" data-solution="Step 1: Midpoints: (0+10)/2=5; (10+20)/2=15; (20+30)/2=25 (M1). Step 2: Products fx: 5×4=20; 15×10=150; 25×6=150 (M1). Total fx = 320. Total f = 20. Step 3: Mean estimate = 320 ÷ 20 = 16 (A1).">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">17</span> Estimate the mean from this grouped frequency table: 0–10 mins (freq 4), 10–20 mins (freq 10), 20–30 mins (freq 6). Total frequency = 20 calls.</div>
+                <span class="diag-q-topic">Estimating Grouped Mean</span>
+              </div>
+              <div class="diag-working-box">
+                <label class="diag-working-label"><i class="fa-solid fa-calculator"></i> Show Your Working Out & Steps:<span class="diag-working-hint">(Midpoints: 5, 15, 25 -> multiply by frequency -> divide by total frequency)</span></label>
+                <textarea class="diag-working-input" name="work_md17" placeholder="Type your calculation steps here..."></textarea>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="md17" value="A"> 14.5 mins</label>
+                <label class="diag-option-label"><input type="radio" name="md17" value="B"> 15.0 mins</label>
+                <label class="diag-option-label"><input type="radio" name="md17" value="C"> 16.0 mins</label>
+                <label class="diag-option-label"><input type="radio" name="md17" value="D"> 18.2 mins</label>
+              </div>
+            </div>
+
+            <!-- DM18: Comparing Data Sets -->
+            <div class="diag-q-card" data-q="md18" data-topic="Comparing Two Data Sets" data-correct="B" data-guide="functional-skills-comparing-data-sets.html" data-solution="Step 1: Examiner criteria requires comparing ONE average (mean) AND ONE measure of spread (range) in context (M1). Team A has higher mean (82 > 75) and lower range (12 < 28), meaning higher and more consistent performance (A1).">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">18</span> Team A has mean score 82 and range 12. Team B has mean score 75 and range 28. Which is the valid statistical comparison required by Pearson Edexcel examiners?</div>
+                <span class="diag-q-topic">Comparing Data Sets</span>
+              </div>
+              <div class="diag-working-box">
+                <label class="diag-working-label"><i class="fa-solid fa-calculator"></i> Show Your Working Out & Steps:<span class="diag-working-hint">(Write your 2-part conclusion: average comparison + consistency comparison)</span></label>
+                <textarea class="diag-working-input" name="work_md18" placeholder="Type your reasoning here..."></textarea>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="md18" value="A"> Team B performed better because their range of 28 is higher.</label>
+                <label class="diag-option-label"><input type="radio" name="md18" value="B"> Team A had higher average performance (82 vs 75) and were more consistent (lower range 12 vs 28).</label>
+                <label class="diag-option-label"><input type="radio" name="md18" value="C"> Team A and Team B performed identically because ranges are both under 30.</label>
+                <label class="diag-option-label"><input type="radio" name="md18" value="D"> Team B had fewer mistakes because their mean is lower.</label>
+              </div>
+            </div>
+
+            <!-- DM19: Two-Way Table Probability -->
+            <div class="diag-q-card" data-q="md19" data-topic="Two-Way Probability" data-correct="A" data-guide="functional-skills-probability-tables.html" data-solution="Step 1: Out of 50 patients total, 18 patients attended in the morning and were seen on time (M1). Step 2: Probability = 18 ÷ 50 = 9/25 = 0.36 or 36% (A1).">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">19</span> In a medical practice survey of 50 patients: 30 attended in the Morning (18 on time, 12 late); 20 attended in the Afternoon (14 on time, 6 late). What is the probability that a patient chosen at random attended in the Morning AND was seen on time?</div>
+                <span class="diag-q-topic">Two-Way Table Probability</span>
+              </div>
+              <div class="diag-working-box">
+                <label class="diag-working-label"><i class="fa-solid fa-calculator"></i> Show Your Working Out & Steps:<span class="diag-working-hint">(Identify the specific cell 18 over total 50)</span></label>
+                <textarea class="diag-working-input" name="work_md19" placeholder="Type your calculation steps here..."></textarea>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="md19" value="A"> 18/50 (0.36 or 36%)</label>
+                <label class="diag-option-label"><input type="radio" name="md19" value="B"> 18/30 (0.60 or 60%)</label>
+                <label class="diag-option-label"><input type="radio" name="md19" value="C"> 30/50 (0.60 or 60%)</label>
+                <label class="diag-option-label"><input type="radio" name="md19" value="D"> 32/50 (0.64 or 64%)</label>
+              </div>
+            </div>
+
+            <!-- DM20: Scatter Graphs & Correlation -->
+            <div class="diag-q-card" data-q="md20" data-topic="Scatter Graphs & Correlation" data-correct="D" data-guide="functional-skills-scatter-graphs.html" data-solution="Step 1: As training hours increase, diagnostic errors decrease -> negative correlation (M1). An outlier is an isolated point that does not follow the general trend line (A1).">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">20</span> A scatter graph plots "Weekly Staff Training Hours" against "Recorded Office Admin Errors". As training hours increase from 2 to 10, errors decrease from 45 to 8. What type of correlation does this represent?</div>
+                <span class="diag-q-topic">Scatter Correlation</span>
+              </div>
+              <div class="diag-working-box">
+                <label class="diag-working-label"><i class="fa-solid fa-calculator"></i> Show Your Working Out & Steps:<span class="diag-working-hint">(Explain the relationship as one variable increases while the other decreases)</span></label>
+                <textarea class="diag-working-input" name="work_md20" placeholder="Type your explanation here..."></textarea>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="md20" value="A"> Positive correlation</label>
+                <label class="diag-option-label"><input type="radio" name="md20" value="B"> Zero correlation</label>
+                <label class="diag-option-label"><input type="radio" name="md20" value="C"> Non-linear curved trend with no correlation</label>
+                <label class="diag-option-label"><input type="radio" name="md20" value="D"> Negative correlation (as training increases, errors decrease)</label>
+              </div>
+            </div>
+
+            <!-- DM21: Pie Chart Angle -->
+            <div class="diag-q-card" data-q="md21" data-topic="Pie Chart Angles" data-correct="C" data-guide="functional-skills-pie-charts.html" data-solution="Step 1: Total circle = 360°. Total people = 180 (M1). Step 2: Angle per person = 360° ÷ 180 = 2°. Step 3: For 45 people = 45 × 2° = 90° (A1).">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">21</span> In an apprentice survey of 180 staff, 45 state they commute by bicycle. What angle sector should represent cyclists on a 360° pie chart?</div>
+                <span class="diag-q-topic">Pie Chart Angles</span>
+              </div>
+              <div class="diag-working-box">
+                <label class="diag-working-label"><i class="fa-solid fa-calculator"></i> Show Your Working Out & Steps:<span class="diag-working-hint">(Show: 45/180 × 360°)</span></label>
+                <textarea class="diag-working-input" name="work_md21" placeholder="Type your calculation steps here..."></textarea>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="md21" value="A"> 45°</label>
+                <label class="diag-option-label"><input type="radio" name="md21" value="B"> 60°</label>
+                <label class="diag-option-label"><input type="radio" name="md21" value="C"> 90°</label>
+                <label class="diag-option-label"><input type="radio" name="md21" value="D"> 120°</label>
+              </div>
+            </div>
+
+            <!-- DM22: Median from Frequency -->
+            <div class="diag-q-card" data-q="md22" data-topic="Median from Ordered Data" data-correct="B" data-guide="functional-skills-mean-median-mode-and-range.html" data-solution="Step 1: Put the 7 values in ascending order: 3, 5, 8, 12, 16, 19, 24 (M1). Step 2: The middle (4th) position is 12 (A1).">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">22</span> Find the median value from this unordered set of test scores: 16, 5, 24, 8, 12, 3, 19.</div>
+                <span class="diag-q-topic">Median Finding</span>
+              </div>
+              <div class="diag-working-box">
+                <label class="diag-working-label"><i class="fa-solid fa-calculator"></i> Show Your Working Out & Steps:<span class="diag-working-hint">(Write the numbers ordered from smallest to largest)</span></label>
+                <textarea class="diag-working-input" name="work_md22" placeholder="Type your calculation steps here..."></textarea>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="md22" value="A"> 8</label>
+                <label class="diag-option-label"><input type="radio" name="md22" value="B"> 12</label>
+                <label class="diag-option-label"><input type="radio" name="md22" value="C"> 14</label>
+                <label class="diag-option-label"><input type="radio" name="md22" value="D"> 16</label>
+              </div>
+            </div>
+
+            <!-- DM23: Relative Frequency -->
+            <div class="diag-q-card" data-q="md23" data-topic="Relative Frequency & Probability" data-correct="A" data-guide="functional-skills-probability.html" data-solution="Step 1: Relative frequency of defect = 14 ÷ 400 = 0.035 (M1). Step 2: Expected defects in 6,000 units = 6,000 × 0.035 = 210 units (A1).">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">23</span> Quality control inspects 400 manufactured computer parts and finds 14 defects. Based on this relative frequency, how many defective parts should be expected in a production run of 6,000 parts?</div>
+                <span class="diag-q-topic">Relative Frequency</span>
+              </div>
+              <div class="diag-working-box">
+                <label class="diag-working-label"><i class="fa-solid fa-calculator"></i> Show Your Working Out & Steps:<span class="diag-working-hint">(Find experimental probability, then multiply by 6,000)</span></label>
+                <textarea class="diag-working-input" name="work_md23" placeholder="Type your calculation steps here..."></textarea>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="md23" value="A"> 210 defective parts</label>
+                <label class="diag-option-label"><input type="radio" name="md23" value="B"> 140 defective parts</label>
+                <label class="diag-option-label"><input type="radio" name="md23" value="C"> 280 defective parts</label>
+                <label class="diag-option-label"><input type="radio" name="md23" value="D"> 350 defective parts</label>
+              </div>
+            </div>
+
+            <!-- DM24: Dual Bar Chart Analysis -->
+            <div class="diag-q-card" data-q="md24" data-topic="Comparative Bar Chart Analysis" data-correct="D" data-guide="functional-skills-bar-charts.html" data-solution="Step 1: Total Q1 + Q2 budget = £45k + £55k = £100k (M1). Actual spent = £48k + £62k = £110k (M1). Step 2: Difference = £110k - £100k = £10k over budget (A1).">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">24</span> A department dual bar chart shows Budget vs Actual Spend: Quarter 1 budget was £45k (spent £48k); Quarter 2 budget was £55k (spent £62k). What is the total combined variance across both quarters?</div>
+                <span class="diag-q-topic">Bar Chart Variance</span>
+              </div>
+              <div class="diag-working-box">
+                <label class="diag-working-label"><i class="fa-solid fa-calculator"></i> Show Your Working Out & Steps:<span class="diag-working-hint">(Total actual spend minus total budgeted spend)</span></label>
+                <textarea class="diag-working-input" name="work_md24" placeholder="Type your calculation steps here..."></textarea>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="md24" value="A"> £3,000 over budget</label>
+                <label class="diag-option-label"><input type="radio" name="md24" value="B"> £7,000 over budget</label>
+                <label class="diag-option-label"><input type="radio" name="md24" value="C"> £10,000 under budget</label>
+                <label class="diag-option-label"><input type="radio" name="md24" value="D"> £10,000 over budget</label>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- ============================================================= -->
+          <!-- C. ENGLISH - BASIC (10 QUESTIONS)                             -->
+          <!-- ============================================================= -->
+          <div id="englishBasicContainer" style="display:none;">
+            <div style="margin-bottom:20px; padding:12px 16px; background:#eff6ff; border-radius:10px; border-left:4px solid var(--accent); font-size:0.88rem; color:#1e3a8a;">
+              <strong>Quick English Diagnostic:</strong> 10 questions testing Reading Purpose, Fact vs Opinion, Organizational Devices, Punctuation, Confused Words, Language Techniques, Register, Bias, and Subject-Verb agreement.
+            </div>
+
+            <!-- Q1: Purpose of Text -->
+            <div class="diag-q-card" data-q="eb1" data-topic="Text Purpose" data-correct="B" data-guide="reading-why-do-writers-write.html">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">1</span> A health notice states: "Staff must wash hands thoroughly for at least 20 seconds before entering surgical wards." What is the primary purpose of this text?</div>
+                <span class="diag-q-topic">Text Purpose</span>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="eb1" value="A"> To entertain</label>
+                <label class="diag-option-label"><input type="radio" name="eb1" value="B"> To instruct</label>
+                <label class="diag-option-label"><input type="radio" name="eb1" value="C"> To advertise</label>
+                <label class="diag-option-label"><input type="radio" name="eb1" value="D"> To debate</label>
+              </div>
+            </div>
+
+            <!-- Q2: Fact vs Opinion -->
+            <div class="diag-q-card" data-q="eb2" data-topic="Fact vs Opinion" data-correct="C" data-guide="reading-fact-or-opinion.html">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">2</span> Which of the following statements is a FACT rather than an opinion?</div>
+                <span class="diag-q-topic">Fact vs Opinion</span>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="eb2" value="A"> Electric cars are much more enjoyable to drive than diesel vans.</label>
+                <label class="diag-option-label"><input type="radio" name="eb2" value="B"> Open-plan offices are by far the best workspace for team morale.</label>
+                <label class="diag-option-label"><input type="radio" name="eb2" value="C"> The statutory minimum wage in the UK is reviewed annually by the Low Pay Commission.</label>
+                <label class="diag-option-label"><input type="radio" name="eb2" value="D"> Online learning is definitely harder than classroom tuition.</label>
+              </div>
+            </div>
+
+            <!-- Q3: Organizational Devices -->
+            <div class="diag-q-card" data-q="eb3" data-topic="Organizational Devices" data-correct="A" data-guide="reading-presentational-features.html">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">3</span> Why does a writer use bullet points in a workplace health and safety policy?</div>
+                <span class="diag-q-topic">Organizational Devices</span>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="eb3" value="A"> To present key action steps clearly so the reader can skim and retain critical safety steps.</label>
+                <label class="diag-option-label"><input type="radio" name="eb3" value="B"> To make the article sound like an informal personal diary.</label>
+                <label class="diag-option-label"><input type="radio" name="eb3" value="C"> To hide negative data from inspectors.</label>
+                <label class="diag-option-label"><input type="radio" name="eb3" value="D"> To avoid using full stops.</label>
+              </div>
+            </div>
+
+            <!-- Q4: Punctuation (Apostrophes) -->
+            <div class="diag-q-card" data-q="eb4" data-topic="Punctuation & Apostrophes" data-correct="D" data-guide="writing-perfecting-your-punctuation.html">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">4</span> Identify the sentence that uses the apostrophe CORRECTLY for singular possession:</div>
+                <span class="diag-q-topic">Apostrophes</span>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="eb4" value="A"> The nurse lost her badge in the staff's room.</label>
+                <label class="diag-option-label"><input type="radio" name="eb4" value="B"> The doctors' stethoscope was left on the chair.</label>
+                <label class="diag-option-label"><input type="radio" name="eb4" value="C"> All the patient's records were updated yesterday.</label>
+                <label class="diag-option-label"><input type="radio" name="eb4" value="D"> The manager's laptop was password protected.</label>
+              </div>
+            </div>
+
+            <!-- Q5: Commonly Confused Words -->
+            <div class="diag-q-card" data-q="eb5" data-topic="Spelling & Homophones" data-correct="B" data-guide="writing-spelling.html">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">5</span> Choose the sentence where homophones (there / their / they're) are used accurately:</div>
+                <span class="diag-q-topic">Homophones</span>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="eb5" value="A"> They parked there vehicle over their.</label>
+                <label class="diag-option-label"><input type="radio" name="eb5" value="B"> They're planning to submit their coursework over there by Friday.</label>
+                <label class="diag-option-label"><input type="radio" name="eb5" value="C"> Their planning to submit they're coursework over there.</label>
+                <label class="diag-option-label"><input type="radio" name="eb5" value="D"> There planning to submit their coursework over they're.</label>
+              </div>
+            </div>
+
+            <!-- Q6: Language Techniques -->
+            <div class="diag-q-card" data-q="eb6" data-topic="Language Techniques" data-correct="C" data-guide="reading-language-features.html">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">6</span> "Our dedicated team worked day and night without a single second of rest to finish the project." Which language device is demonstrated?</div>
+                <span class="diag-q-topic">Language Techniques</span>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="eb6" value="A"> Onomatopoeia</label>
+                <label class="diag-option-label"><input type="radio" name="eb6" value="B"> Alliteration</label>
+                <label class="diag-option-label"><input type="radio" name="eb6" value="C"> Hyperbole (exaggeration for emphasis)</label>
+                <label class="diag-option-label"><input type="radio" name="eb6" value="D"> Oxymoron</label>
+              </div>
+            </div>
+
+            <!-- Q7: Register & Salutation -->
+            <div class="diag-q-card" data-q="eb7" data-topic="Formal Register" data-correct="A" data-guide="writing-assessing-audience.html">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">7</span> When drafting an official formal letter where you do NOT know the recipient's name, which salutation and sign-off pair is correct?</div>
+                <span class="diag-q-topic">Formal Letter Format</span>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="eb7" value="A"> Dear Sir/Madam ... Yours faithfully</label>
+                <label class="diag-option-label"><input type="radio" name="eb7" value="B"> Dear Sir/Madam ... Yours sincerely</label>
+                <label class="diag-option-label"><input type="radio" name="eb7" value="C"> Hi Boss ... Best wishes</label>
+                <label class="diag-option-label"><input type="radio" name="eb7" value="D"> To Whom It May Concern ... Cheers</label>
+              </div>
+            </div>
+
+            <!-- Q8: Detecting Bias -->
+            <div class="diag-q-card" data-q="eb8" data-topic="Detecting Bias" data-correct="C" data-guide="formality-and-bias.html">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">8</span> Which phrase indicates subtle commercial bias in a product review article?</div>
+                <span class="diag-q-topic">Detecting Bias</span>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="eb8" value="A"> "The machine weighs 4.2 kilograms and operates on a 240V supply."</label>
+                <label class="diag-option-label"><input type="radio" name="eb8" value="B"> "Independent laboratory tests reported 82% efficiency in battery life."</label>
+                <label class="diag-option-label"><input type="radio" name="eb8" value="C"> "Without question, this revolutionary appliance completely embarrasses all rival competitors."</label>
+                <label class="diag-option-label"><input type="radio" name="eb8" value="D"> "The warranty provides 24 months coverage against manufacturer defects."</label>
+              </div>
+            </div>
+
+            <!-- Q9: Subject-Verb Agreement -->
+            <div class="diag-q-card" data-q="eb9" data-topic="Subject-Verb Agreement" data-correct="B" data-guide="writing-grammar.html">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">9</span> Identify the sentence with correct grammatical tense consistency and subject-verb agreement:</div>
+                <span class="diag-q-topic">Verb Agreement</span>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="eb9" value="A"> The doctor entered the ward and speaks to the patient.</label>
+                <label class="diag-option-label"><input type="radio" name="eb9" value="B"> The doctor entered the ward and spoke to the patient.</label>
+                <label class="diag-option-label"><input type="radio" name="eb9" value="C"> The doctor enters the ward and spoke to the patient.</label>
+                <label class="diag-option-label"><input type="radio" name="eb9" value="D"> The doctor had entered the ward and will speak.</label>
+              </div>
+            </div>
+
+            <!-- Q10: SPaG Criteria -->
+            <div class="diag-q-card" data-q="eb10" data-topic="Exam Criteria & SPaG" data-correct="C" data-guide="writing-fantastic-finalising.html">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">10</span> In official Pearson Edexcel and City & Guilds Functional Skills Level 2 writing exams, what proportion of total marks are awarded specifically for SPaG (Spelling, Punctuation & Grammar)?</div>
+                <span class="diag-q-topic">Exam Criteria</span>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="eb10" value="A"> Approximately 10%</label>
+                <label class="diag-option-label"><input type="radio" name="eb10" value="B"> Around 20%</label>
+                <label class="diag-option-label"><input type="radio" name="eb10" value="C"> Approximately 42% – 45% of total writing marks</label>
+                <label class="diag-option-label"><input type="radio" name="eb10" value="D"> Exactly 75%</label>
+              </div>
+            </div>
+          </div>
+
+
+          <!-- ============================================================= -->
+          <!-- D. ENGLISH - DETAILED (20 QUESTIONS WITH EXTENDED WRITING)     -->
+          <!-- ============================================================= -->
+          <div id="englishDetailedContainer" style="display:none;">
+            <div style="margin-bottom:20px; padding:14px 18px; background:#eff6ff; border-radius:12px; border-left:4px solid var(--accent); font-size:0.9rem; color:#1e3a8a;">
+              <strong><i class="fa-solid fa-book-open"></i> In-Depth English Diagnostic Assessment (20 Questions):</strong>
+              <div style="margin-top:4px; line-height:1.5;">
+                Features authentic Functional Skills Level 1 & Level 2 components: <strong>Part 1: Extended Reading Extract Analysis</strong> (comprehension, tone, purpose, comparison); <strong>Part 2: SPaG & Language Drills</strong>; and <strong>Part 3: Workplace Writing Drafting Workspace</strong> with real-time word counting and formal structure criteria.
+              </div>
+            </div>
+
+            <!-- EXTRACT DISPLAY -->
+            <div class="source-extract-box">
+              <span class="source-extract-badge"><i class="fa-solid fa-newspaper"></i> Reading Source Text Extract (Read Before Answering Q1 – Q8)</span>
+              <h3 class="source-extract-title">The Evolution of the Modern Workplace: Flexible Working in Healthcare</h3>
+              <div class="source-extract-text">
+                <p>
+                  <strong>Text A (Hospital Trust Management Memo):</strong> Over the past three years, the NHS trust has piloted flexible shift scheduling across seven community hospital wards. Evidence demonstrates that when healthcare assistants and administrative staff are empowered to adjust shift patterns, absenteeism drops by 24% and staff retention improves dramatically. Modern cloud rota systems allow personnel to swap shifts autonomously with minimal supervisory friction. However, critics argue that patient handover continuity can suffer if team communications are fragmented. Management firmly believes that with robust electronic handovers and strict core team requirements, flexible working represents the only sustainable pathway to retain skilled talent in an increasingly competitive labor market.
+                </p>
+                <p>
+                  <strong>Text B (Staff Union Newsletter Response):</strong> While management heralds the new flexible rota app as a triumphant innovation, our frontline members paint a far more cautious reality. Many older employees report significant anxiety navigating the new smartphone interface, with several missing shift confirmations due to software synchronization errors. Furthermore, while flexibility sounds appealing in glossy management brochures, the reality on understaffed night wards often means nurses feel coerced into covering short-notice vacancies under the guise of "mutual flexibility". Flexibility must never become a euphemism for compulsory overtime.
+                </p>
+              </div>
+            </div>
+
+            <!-- PART 1: EXTENDED READING -->
+            <div style="background:var(--navy-dark); color:#ffffff; padding:10px 16px; border-radius:10px; font-weight:800; font-size:0.9rem; margin-bottom:16px;">
+              <i class="fa-solid fa-book"></i> Part 1: Extended Reading & Comparative Analysis (Q1 – Q8)
+            </div>
+
+            <!-- ED1: Main Idea -->
+            <div class="diag-q-card" data-q="ed1" data-topic="Extract Main Idea" data-correct="B" data-guide="piecing-it-together-key-and-detailed-points.html">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">1</span> What is the primary purpose and overall stance of management in Text A?</div>
+                <span class="diag-q-topic">Reading Purpose</span>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="ed1" value="A"> To announce the immediate cancellation of flexible working shifts.</label>
+                <label class="diag-option-label"><input type="radio" name="ed1" value="B"> To justify flexible working by citing data on absenteeism and staff retention benefits.</label>
+                <label class="diag-option-label"><input type="radio" name="ed1" value="C"> To criticize frontline staff for lack of smartphone capability.</label>
+                <label class="diag-option-label"><input type="radio" name="ed1" value="D"> To mandate compulsory weekend overtime.</label>
+              </div>
+            </div>
+
+            <!-- ED2: Comparing Perspectives -->
+            <div class="diag-q-card" data-q="ed2" data-topic="Comparing Texts" data-correct="A" data-guide="reading-comparing-texts.html">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">2</span> How does the perspective of Text B contrast most sharply with the management perspective in Text A?</div>
+                <span class="diag-q-topic">Comparing Perspectives</span>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="ed2" value="A"> Text B highlights frontline digital anxiety and the risk of coercion, whereas Text A focuses on positive statistics.</label>
+                <label class="diag-option-label"><input type="radio" name="ed2" value="B"> Text B agrees that all staff prefer the app, while Text A prefers paper rotas.</label>
+                <label class="diag-option-label"><input type="radio" name="ed2" value="C"> Text B demands that the trust increase hourly pay by 24%.</label>
+                <label class="diag-option-label"><input type="radio" name="ed2" value="D"> Text B argues that healthcare assistants should never work night shifts.</label>
+              </div>
+            </div>
+
+            <!-- ED3: Implicit Meaning -->
+            <div class="diag-q-card" data-q="ed3" data-topic="Implicit Meaning & Nuance" data-correct="C" data-guide="reading-meaning.html">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">3</span> What does the phrase "euphemism for compulsory overtime" in Text B imply?</div>
+                <span class="diag-q-topic">Implicit Meaning</span>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="ed3" value="A"> That overtime is generously remunerated.</label>
+                <label class="diag-option-label"><input type="radio" name="ed3" value="B"> That the union supports mandatory night work.</label>
+                <label class="diag-option-label"><input type="radio" name="ed3" value="C"> That a pleasant-sounding word ("flexibility") is masking an unwelcome obligation (pressured overtime).</label>
+                <label class="diag-option-label"><input type="radio" name="ed3" value="D"> That grammatical rules are being ignored.</label>
+              </div>
+            </div>
+
+            <!-- ED4: Fact Identification -->
+            <div class="diag-q-card" data-q="ed4" data-topic="Extract Fact Spotting" data-correct="D" data-guide="reading-fact-or-opinion.html">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">4</span> Which detail stated in Text A is an empirical FACT supported by numerical measurement?</div>
+                <span class="diag-q-topic">Fact Identification</span>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="ed4" value="A"> "Flexible working represents the only sustainable pathway."</label>
+                <label class="diag-option-label"><input type="radio" name="ed4" value="B"> "Staff retention improves dramatically."</label>
+                <label class="diag-option-label"><input type="radio" name="ed4" value="C"> "Electronic handovers will solve all continuity problems."</label>
+                <label class="diag-option-label"><input type="radio" name="ed4" value="D"> "Absenteeism drops by 24% across seven community hospital wards."</label>
+              </div>
+            </div>
+
+            <!-- ED5: Tone & Language Device -->
+            <div class="diag-q-card" data-q="ed5" data-topic="Tone Analysis" data-correct="B" data-guide="reading-language-features.html">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">5</span> In Text B, what effect does the author create by referring to "glossy management brochures"?</div>
+                <span class="diag-q-topic">Language Devices</span>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="ed5" value="A"> An admiring tone praising high graphic design quality.</label>
+                <label class="diag-option-label"><input type="radio" name="ed5" value="B"> A skeptical, cynical tone implying that executive promotional materials oversimplify real workplace struggles.</label>
+                <label class="diag-option-label"><input type="radio" name="ed5" value="C"> An educational instruction for staff to print more documents.</label>
+                <label class="diag-option-label"><input type="radio" name="ed5" value="D"> An apology for poor communication.</label>
+              </div>
+            </div>
+
+            <!-- ED6: Specialist Vocabulary -->
+            <div class="diag-q-card" data-q="ed6" data-topic="Vocabulary in Context" data-correct="A" data-guide="reading-specialist-words.html">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">6</span> What is the definition of "handover continuity" in the healthcare context described in Text A?</div>
+                <span class="diag-q-topic">Specialist Vocabulary</span>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="ed6" value="A"> The smooth, uninterrupted transfer of vital patient care information between outgoing and incoming shift staff.</label>
+                <label class="diag-option-label"><input type="radio" name="ed6" value="B"> The process of handing out hospital uniform supplies.</label>
+                <label class="diag-option-label"><input type="radio" name="ed6" value="C"> Returning medical ID badges at the end of employment.</label>
+                <label class="diag-option-label"><input type="radio" name="ed6" value="D"> Passing telephone calls between departments.</label>
+              </div>
+            </div>
+
+            <!-- ED7: Organizational Feature -->
+            <div class="diag-q-card" data-q="ed7" data-topic="Presentational Features" data-correct="C" data-guide="reading-investigating-layout.html">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">7</span> If Text A were reproduced on a public NHS intranet noticeboard, what presentational device would most effectively highlight the "24% absenteeism drop"?</div>
+                <span class="diag-q-topic">Layout & Features</span>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="ed7" value="A"> A long italicized footnote in 8pt font at the bottom of the page.</label>
+                <label class="diag-option-label"><input type="radio" name="ed7" value="B"> A decorative borders with floral motifs.</label>
+                <label class="diag-option-label"><input type="radio" name="ed7" value="C"> A prominent infographic callout box or enlarged bold statistic badge.</label>
+                <label class="diag-option-label"><input type="radio" name="ed7" value="D"> Hiding the text behind a password prompt.</label>
+              </div>
+            </div>
+
+            <!-- ED8: Author Counterargument -->
+            <div class="diag-q-card" data-q="ed8" data-topic="Argumentation Structure" data-correct="D" data-guide="reading-point-of-view-and-line-of-argument.html">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">8</span> In Text A, how does the author address the potential criticism that "patient handover continuity can suffer"?</div>
+                <span class="diag-q-topic">Counterarguments</span>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="ed8" value="A"> By dismissing the critics as unqualified troublemakers.</label>
+                <label class="diag-option-label"><input type="radio" name="ed8" value="B"> By ignoring the issue completely.</label>
+                <label class="diag-option-label"><input type="radio" name="ed8" value="C"> By threatening to reprimand personnel who report handovers.</label>
+                <label class="diag-option-label"><input type="radio" name="ed8" value="D"> By proposing concrete countermeasures: robust electronic handovers and strict core team requirements.</label>
+              </div>
+            </div>
+
+            <!-- PART 2: SPAG & LANGUAGE ACCURACY -->
+            <div style="background:var(--navy-dark); color:#ffffff; padding:10px 16px; border-radius:10px; font-weight:800; font-size:0.9rem; margin:24px 0 16px;">
+              <i class="fa-solid fa-spell-check"></i> Part 2: SPaG, Punctuation & Language Accuracy (Q9 – Q16)
+            </div>
+
+            <!-- ED9: Semicolons -->
+            <div class="diag-q-card" data-q="ed9" data-topic="Semicolon Usage" data-correct="A" data-guide="writing-perfecting-your-punctuation.html">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">9</span> Which sentence uses a semicolon (;) CORRECTLY to connect two closely linked independent clauses?</div>
+                <span class="diag-q-topic">Semicolons</span>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="ed9" value="A"> The rota was published on Monday; however, two shifts remain unassigned.</label>
+                <label class="diag-option-label"><input type="radio" name="ed9" value="B"> The rota was; published on Monday.</label>
+                <label class="diag-option-label"><input type="radio" name="ed9" value="C"> Because the rota was published on Monday; we checked our shifts.</label>
+                <label class="diag-option-label"><input type="radio" name="ed9" value="D"> Shift times are; 08:00, 14:00, and 20:00.</label>
+              </div>
+            </div>
+
+            <!-- ED10: Affect vs Effect -->
+            <div class="diag-q-card" data-q="ed10" data-topic="Affect vs Effect" data-correct="C" data-guide="writing-spelling.html">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">10</span> Select the sentence that uses "affect" (verb) and "effect" (noun) correctly:</div>
+                <span class="diag-q-topic">Confused Words</span>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="ed10" value="A"> The new rota will effect our shift times and have a positive affect on morale.</label>
+                <label class="diag-option-label"><input type="radio" name="ed10" value="B"> The new rota will affect our shift times and have a positive affect on morale.</label>
+                <label class="diag-option-label"><input type="radio" name="ed10" value="C"> The new rota will affect our shift times and have a positive effect on morale.</label>
+                <label class="diag-option-label"><input type="radio" name="ed10" value="D"> The new rota will effect our shift times and have a positive effect on morale.</label>
+              </div>
+            </div>
+
+            <!-- ED11: Comma Splice -->
+            <div class="diag-q-card" data-q="ed11" data-topic="Comma Splice Error" data-correct="B" data-guide="writing-perfecting-your-punctuation.html">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">11</span> A comma splice occurs when two independent sentences are incorrectly joined with only a comma. Which sentence represents a COMMA SPLICE error?</div>
+                <span class="diag-q-topic">Comma Splices</span>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="ed11" value="A"> The ambulance arrived promptly, and the paramedic immediately assessed the patient.</label>
+                <label class="diag-option-label"><input type="radio" name="ed11" value="B"> The ambulance arrived promptly, the paramedic immediately assessed the patient.</label>
+                <label class="diag-option-label"><input type="radio" name="ed11" value="C"> When the ambulance arrived promptly, the paramedic assessed the patient.</label>
+                <label class="diag-option-label"><input type="radio" name="ed11" value="D"> The ambulance arrived promptly; the paramedic assessed the patient.</label>
+              </div>
+            </div>
+
+            <!-- ED12: Capital Letters -->
+            <div class="diag-q-card" data-q="ed12" data-topic="Capitalisation Rules" data-correct="D" data-guide="writing-grammar.html">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">12</span> Choose the sentence with immaculate capitalisation for names, acronyms, and days:</div>
+                <span class="diag-q-topic">Capitalisation</span>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="ed12" value="A"> On wednesday, nurse sarah attended an nhs training seminar in Oxford.</label>
+                <label class="diag-option-label"><input type="radio" name="ed12" value="B"> On Wednesday, Nurse Sarah attended an nhs training seminar in Oxford.</label>
+                <label class="diag-option-label"><input type="radio" name="ed12" value="C"> On wednesday, Nurse Sarah attended an NHS training seminar in oxford.</label>
+                <label class="diag-option-label"><input type="radio" name="ed12" value="D"> On Wednesday, Nurse Sarah attended an NHS training seminar in Oxford.</label>
+              </div>
+            </div>
+
+            <!-- ED13: Complex Sentence Tense -->
+            <div class="diag-q-card" data-q="ed13" data-topic="Tense Consistency" data-correct="A" data-guide="writing-tenses.html">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">13</span> Which sentence maintains strict grammatical past tense consistency throughout?</div>
+                <span class="diag-q-topic">Tense Consistency</span>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="ed13" value="A"> As the inspector entered the facility, the supervisor provided the safety logs and explained the evacuation protocol.</label>
+                <label class="diag-option-label"><input type="radio" name="ed13" value="B"> As the inspector entered the facility, the supervisor provides the safety logs and explained the protocol.</label>
+                <label class="diag-option-label"><input type="radio" name="ed13" value="C"> As the inspector enters the facility, the supervisor provided the safety logs and explains the protocol.</label>
+                <label class="diag-option-label"><input type="radio" name="ed13" value="D"> As the inspector entered the facility, the supervisor had provided the logs and will explain the protocol.</label>
+              </div>
+            </div>
+
+            <!-- ED14: Passive vs Active Voice -->
+            <div class="diag-q-card" data-q="ed14" data-topic="Active vs Passive Voice" data-correct="B" data-guide="writing-styles-of-writing-and-voice.html">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">14</span> In official workplace incident reporting, which sentence is written in the ACTIVE voice (subject performs the action)?</div>
+                <span class="diag-q-topic">Active Voice</span>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="ed14" value="A"> The hazardous spill was quickly cordoned off by the caretaker.</label>
+                <label class="diag-option-label"><input type="radio" name="ed14" value="B"> The caretaker cordoned off the hazardous spill within four minutes.</label>
+                <label class="diag-option-label"><input type="radio" name="ed14" value="C"> The spill had been reported by nursing personnel earlier that morning.</label>
+                <label class="diag-option-label"><input type="radio" name="ed14" value="D"> The incident report was signed by the departmental head.</label>
+              </div>
+            </div>
+
+            <!-- ED15: Formal Connectives -->
+            <div class="diag-q-card" data-q="ed15" data-topic="Connectives & Cohesion" data-correct="C" data-guide="writing-linking-up-your-answer.html">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">15</span> Which connective best introduces a formal contrasting point in a persuasive workplace proposal?</div>
+                <span class="diag-q-topic">Discourse Markers</span>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="ed15" value="A"> Anyhow,</label>
+                <label class="diag-option-label"><input type="radio" name="ed15" value="B"> Plus,</label>
+                <label class="diag-option-label"><input type="radio" name="ed15" value="C"> Conversely, / Furthermore, / On the other hand,</label>
+                <label class="diag-option-label"><input type="radio" name="ed15" value="D"> Like I said,</label>
+              </div>
+            </div>
+
+            <!-- ED16: SLC Active Listening -->
+            <div class="diag-q-card" data-q="ed16" data-topic="Speaking & Listening (SLC)" data-correct="D" data-guide="slc-contributing.html">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">16</span> During a Level 2 formal team meeting (SLC criteria), which response demonstrates exemplary collaborative active listening?</div>
+                <span class="diag-q-topic">SLC Criteria</span>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="ed16" value="A"> Remaining silent until someone asks your opinion.</label>
+                <label class="diag-option-label"><input type="radio" name="ed16" value="B"> Interrupting immediately to tell the speaker they are mistaken.</label>
+                <label class="diag-option-label"><input type="radio" name="ed16" value="C"> Checking your smartphone until your agenda item arrives.</label>
+                <label class="diag-option-label"><input type="radio" name="ed16" value="D"> "I appreciate John’s point regarding staffing pressures; could we perhaps explore pairing this with staggered lunch rotas to alleviate the midday rush?"</label>
+              </div>
+            </div>
+
+            <!-- PART 3: EXTENDED WORKPLACE WRITING DRAFTING -->
+            <div style="background:var(--navy-dark); color:#ffffff; padding:10px 16px; border-radius:10px; font-weight:800; font-size:0.9rem; margin:24px 0 16px;">
+              <i class="fa-solid fa-pen-nib"></i> Part 3: Extended Workplace Writing Diagnostic (Q17 – Q20)
+            </div>
+
+            <!-- ED17: Extended Writing Draft -->
+            <div class="diag-q-card" data-q="ed17" data-topic="Workplace Writing Task" data-correct="SUBMITTED" data-guide="functional-skills-english-level-2-writing-blog.html">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">17</span> Extended Writing Scenario: Formal Workplace Proposal Email (120–160 Words)</div>
+                <span class="diag-q-topic">Extended Writing Task</span>
+              </div>
+              <div class="diag-q-desc">
+                <strong>Scenario:</strong> You are an administrative coordinator or healthcare assistant. Write a formal email to your Department Operations Manager (Ms. Harrison) proposing that your department introduce weekly 30-minute peer revision/training workshops to reduce admin errors.
+              </div>
+
+              <div class="writing-checklist">
+                <strong><i class="fa-solid fa-list-check"></i> Pearson Edexcel Level 2 Format & Criteria Checklist:</strong>
+                <ul>
+                  <li>Include a clear, professional <strong>Subject line</strong> (e.g. <em>Subject: Proposal for Weekly Peer Support Workshops</em>).</li>
+                  <li>Use a formal salutation (<em>Dear Ms. Harrison,</em>) and professional sign-off (<em>Yours sincerely, [Your Name]</em>).</li>
+                  <li>Structure into 3 clear paragraphs: (1) Reason for writing & current error challenge; (2) Detailed proposal & workshop schedule; (3) Expected benefits to staff morale and patient care.</li>
+                  <li>Use formal connectives (<em>furthermore, consequently, however</em>) and ensure accurate punctuation.</li>
+                </ul>
+              </div>
+
+              <textarea class="diag-writing-textarea" id="diagWritingDraft" name="diagWritingDraft" placeholder="Subject: Proposal for Weekly Peer Training Workshops&#10;&#10;Dear Ms. Harrison,&#10;&#10;I am writing to formally propose the introduction of...&#10;&#10;Yours sincerely,&#10;[Your Name]" oninput="updateWritingLiveStats(this)"></textarea>
+
+              <div class="writing-stats-bar">
+                <span>Word Count: <strong id="liveWordCount" style="color:var(--navy);">0</strong> / 120–160 target</span>
+                <span>Paragraphs: <strong id="liveParaCount" style="color:var(--navy);">0</strong></span>
+                <span id="liveSpagFeedback"><i class="fa-solid fa-circle-info"></i> Start typing your formal email draft above</span>
+              </div>
+            </div>
+
+            <!-- ED18: Proofreading Challenge -->
+            <div class="diag-q-card" data-q="ed18" data-topic="Proofreading & Error Spotting" data-correct="B" data-guide="writing-fantastic-finalising.html">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">18</span> Proofread this unedited customer notice: <em>"All visitors must sign in at recepton, they're bags will be inspected and no photograghs are aloud without permision."</em> How many distinct spelling and homophone errors are present?</div>
+                <span class="diag-q-topic">Proofreading Drills</span>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="ed18" value="A"> 2 errors</label>
+                <label class="diag-option-label"><input type="radio" name="ed18" value="B"> 5 errors (recepton, they're/their, photograghs, aloud/allowed, permision)</label>
+                <label class="diag-option-label"><input type="radio" name="ed18" value="C"> Exactly 7 errors</label>
+                <label class="diag-option-label"><input type="radio" name="ed18" value="D"> 0 errors (fully correct)</label>
+              </div>
+            </div>
+
+            <!-- ED19: Report Subheadings -->
+            <div class="diag-q-card" data-q="ed19" data-topic="Report Structure" data-correct="C" data-guide="writing-form-presentational-and-language-features.html">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">19</span> In a formal Level 2 accident investigation report, which sequence of subheadings represents the standard professional layout?</div>
+                <span class="diag-q-topic">Report Structure</span>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="ed19" value="A"> Recommendations -> Conclusion -> Timeline -> Introduction</label>
+                <label class="diag-option-label"><input type="radio" name="ed19" value="B"> What Happened -> Random Notes -> The End</label>
+                <label class="diag-option-label"><input type="radio" name="ed19" value="C"> 1. Purpose of Report -> 2. Incident Summary & Timeline -> 3. Analysis of Contributing Factors -> 4. Actionable Recommendations</label>
+                <label class="diag-option-label"><input type="radio" name="ed19" value="D"> Personal Opinions -> Accusations -> Signature</label>
+              </div>
+            </div>
+
+            <!-- ED20: Tone Conversion -->
+            <div class="diag-q-card" data-q="ed20" data-topic="Tone Adjustment" data-correct="A" data-guide="writing-assessing-audience.html">
+              <div class="diag-q-header">
+                <div class="diag-q-title"><span class="diag-q-num">20</span> A junior colleague drafted this message to a patient: <em>"Hey, you didn't show up today so your appointment is scrapped. Ring us if you want another one."</em> Which revision converts this into an empathetic, professional healthcare tone?</div>
+                <span class="diag-q-topic">Tone & Professionalism</span>
+              </div>
+              <div class="diag-options">
+                <label class="diag-option-label"><input type="radio" name="ed20" value="A"> "Dear Mr. Davis, We missed you at your appointment today. If you need to reschedule or require assistance, please contact our reception team at your earliest convenience."</label>
+                <label class="diag-option-label"><input type="radio" name="ed20" value="B"> "You failed to attend your booking and fines will apply unless you ring immediately."</label>
+                <label class="diag-option-label"><input type="radio" name="ed20" value="C"> "Appointment cancelled due to no-show. Bye."</label>
+                <label class="diag-option-label"><input type="radio" name="ed20" value="D"> "Hi mate, why didn't you arrive? Drop us a quick text."</label>
+              </div>
+            </div>
+          </div>
+
+          <!-- SUBMIT ACTION -->
+          <div style="margin-top:28px; text-align:center;">
+            <button type="submit" class="btn-hero-accent" style="padding:16px 42px; font-size:1.1rem; cursor:pointer;">
+              <i class="fa-solid fa-chart-pie"></i> Complete & View My Diagnostic Gap Analysis Report
+            </button>
+            <div style="font-size:0.82rem; color:var(--text-muted); margin-top:8px;">Instant automated marking with personalized revision recommendations</div>
+          </div>
+        </form>
+
+        <!-- DIAGNOSTIC RESULTS REPORT BANNER -->
+        <div id="diagnosticResults" class="diag-result-banner">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:16px; border-bottom:1px solid rgba(255,255,255,0.15); padding-bottom:18px;">
+            <div>
+              <span style="font-size:0.8rem; font-weight:800; text-transform:uppercase; letter-spacing:0.8px; color:var(--accent);">Personalised Diagnostic Profile</span>
+              <h2 id="resultHeading" style="font-size:1.8rem; color:#ffffff; margin:4px 0 0;">Working at Strong Level 2</h2>
+            </div>
+            <div style="font-size:2.4rem; font-weight:900; color:#38bdf8;" id="scoreBadge">8 / 10</div>
+          </div>
+
+          <p id="resultSummary" style="font-size:1rem; opacity:0.9; margin:16px 0 20px; line-height:1.6;">
+            Excellent foundation! You demonstrated competency across the majority of core standards. Review your specific topic gap analysis below to turn your remaining weaknesses into guaranteed marks.
+          </p>
+
+          <!-- GAP ANALYSIS TABLE -->
+          <h3 style="font-size:1.15rem; color:#ffffff; margin-bottom:8px;"><i class="fa-solid fa-bullseye" style="color:var(--accent);"></i> Topic Gap Analysis & Targeted Actions</h3>
+          <table class="gap-table">
+            <thead>
+              <tr>
+                <th>Question & Topic</th>
+                <th>Result</th>
+                <th>Targeted Revision Guide</th>
+              </tr>
+            </thead>
+            <tbody id="gapTableBody">
+              <!-- Dynamically populated -->
+            </tbody>
+          </table>
+
+          <div style="margin-top:28px; display:flex; gap:14px; flex-wrap:wrap;">
+            <a href="revise.html" class="btn-hero-accent" style="flex:1; justify-content:center; padding:12px; text-align:center;">
+              <i class="fa-solid fa-book-open"></i> Go to Master Revise Hub
+            </a>
+            <a href="functional-skills-past-papers.html" class="btn-hero-navy" style="flex:1; justify-content:center; padding:12px; text-align:center; border:1px solid rgba(255,255,255,0.2);">
+              <i class="fa-solid fa-download"></i> Practice Past Papers
+            </a>
+            <a href="contact-us.html" class="btn-hero-outline" style="flex:1; justify-content:center; padding:12px; text-align:center; border-color:#ffffff; color:#ffffff;">
+              <i class="fa-solid fa-user-graduate"></i> Book 1-to-1 Diagnostic Review
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- FAQ SECTION -->
+      <div style="margin-top:40px;">
+        <h3 style="font-size:1.4rem; color:var(--navy); margin-bottom:16px;">Frequently Asked Questions</h3>
+        <div style="display:flex; flex-direction:column; gap:12px;">
+          <div style="background:#ffffff; border:1px solid var(--border); border-radius:12px; padding:18px 22px;">
+            <strong style="color:var(--navy); font-size:1rem;">What is the difference between the Basic and Detailed Diagnostic?</strong>
+            <p style="color:var(--text-muted); font-size:0.9rem; margin:6px 0 0; line-height:1.6;">
+              The <strong>Basic Diagnostic</strong> (10 questions, ~7–10 minutes) provides a rapid baseline assessment of whether you are working at Entry 3, Level 1, or Level 2. The <strong>Detailed Diagnostic</strong> (20–24 questions, ~35–45 minutes) features step-by-step working-out calculation workspaces for Maths to review method marks, and extended reading extract analysis plus workplace writing drafting for English.
+            </p>
+          </div>
+          <div style="background:#ffffff; border:1px solid var(--border); border-radius:12px; padding:18px 22px;">
+            <strong style="color:var(--navy); font-size:1rem;">Are method marks really awarded if my final numerical answer is wrong?</strong>
+            <p style="color:var(--text-muted); font-size:0.9rem; margin:6px 0 0; line-height:1.6;">
+              Yes! In official Pearson Edexcel and City & Guilds Functional Skills exams, between 60% and 75% of marks on multi-step questions are method marks (M1, M2). Showing your calculation steps ensures you collect vital marks even if a minor arithmetic slip occurs.
+            </p>
+          </div>
+          <div style="background:#ffffff; border:1px solid var(--border); border-radius:12px; padding:18px 22px;">
+            <strong style="color:var(--navy); font-size:1rem;">Can colleges or employers use this diagnostic?</strong>
+            <p style="color:var(--text-muted); font-size:0.9rem; margin:6px 0 0; line-height:1.6;">
+              Yes. Training providers, NHS trusts, and apprenticeships use this tool to determine gateway readiness before booking accredited Functional Skills examinations.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- JAVASCRIPT ENGINE -->
+  <script>
+    let activeSubject = 'maths';
+    let assessmentMode = 'basic'; // 'basic' or 'detailed'
+
+    function setAssessmentMode(mode) {{
+      assessmentMode = mode;
+      document.getElementById('modeBtnBasic').classList.toggle('active', mode === 'basic');
+      document.getElementById('modeBtnDetailed').classList.toggle('active', mode === 'detailed');
+      
+      document.getElementById('mathsQCount').textContent = mode === 'basic' ? '10' : '24';
+      document.getElementById('englishQCount').textContent = mode === 'basic' ? '10' : '20';
+
+      updateContainerVisibility();
+      document.getElementById('diagnosticResults').style.display = 'none';
+    }}
+
+    function switchSubject(subj) {{
+      activeSubject = subj;
+      document.getElementById('tabMaths').classList.toggle('active', subj === 'maths');
+      document.getElementById('tabEnglish').classList.toggle('active', subj === 'english');
+      updateContainerVisibility();
+      document.getElementById('diagnosticResults').style.display = 'none';
+    }}
+
+    function updateContainerVisibility() {{
+      document.getElementById('mathsBasicContainer').style.display = (activeSubject === 'maths' && assessmentMode === 'basic') ? 'block' : 'none';
+      document.getElementById('mathsDetailedContainer').style.display = (activeSubject === 'maths' && assessmentMode === 'detailed') ? 'block' : 'none';
+      document.getElementById('englishBasicContainer').style.display = (activeSubject === 'english' && assessmentMode === 'basic') ? 'block' : 'none';
+      document.getElementById('englishDetailedContainer').style.display = (activeSubject === 'english' && assessmentMode === 'detailed') ? 'block' : 'none';
+    }}
+
+    function getActiveContainer() {{
+      if (activeSubject === 'maths') {{
+        return document.getElementById(assessmentMode === 'basic' ? 'mathsBasicContainer' : 'mathsDetailedContainer');
+      }} else {{
+        return document.getElementById(assessmentMode === 'basic' ? 'englishBasicContainer' : 'englishDetailedContainer');
+      }}
+    }}
+
+    // Visual selection highlighting
+    document.querySelectorAll('.diag-option-label input[type=radio]').forEach(radio => {{
+      radio.addEventListener('change', function() {{
+        const group = this.name;
+        document.querySelectorAll(`input[name="${{group}}"]`).forEach(r => {{
+          r.closest('.diag-option-label').classList.remove('selected');
+        }});
+        if (this.checked) {{
+          this.closest('.diag-option-label').classList.add('selected');
+        }}
+      }});
+    }});
+
+    // Live writing statistics (English Detailed)
+    function updateWritingLiveStats(textarea) {{
+      const text = textarea.value.trim();
+      const words = text ? text.split(/\\s+/).length : 0;
+      const paras = text ? text.split(/\\n+/).filter(p => p.trim().length > 0).length : 0;
+
+      document.getElementById('liveWordCount').textContent = words;
+      document.getElementById('liveParaCount').textContent = paras;
+
+      const feedback = document.getElementById('liveSpagFeedback');
+      if (words < 50) {{
+        feedback.innerHTML = '<span style="color:#f59e0b;"><i class="fa-solid fa-pen"></i> Keep writing — aim for 120–160 words</span>';
+      }} else if (words >= 110 && words <= 170) {{
+        feedback.innerHTML = '<span style="color:#10b981; font-weight:700;"><i class="fa-solid fa-circle-check"></i> Excellent length within target range</span>';
+      }} else if (words > 170) {{
+        feedback.innerHTML = '<span style="color:#3b82f6;"><i class="fa-solid fa-circle-info"></i> Good detail — ensure you do not exceed time in real exams</span>';
+      }} else {{
+        feedback.innerHTML = '<span style="color:#64748b;">Good progress — remember formal paragraphs and sign-off</span>';
+      }}
+    }}
+
+    function submitDiagnostic(ev) {{
+      ev.preventDefault();
+      const container = getActiveContainer();
+      const cards = container.querySelectorAll('.diag-q-card');
+
+      let score = 0;
+      let total = 0;
+      let gapRows = '';
+
+      cards.forEach((card, idx) => {{
+        const qName = card.getAttribute('data-q');
+        const correct = card.getAttribute('data-correct');
+        const topic = card.getAttribute('data-topic');
+        const guide = card.getAttribute('data-guide');
+        const solution = card.getAttribute('data-solution');
+        const workingArea = card.querySelector('.diag-working-input');
+        const userWorking = workingArea ? workingArea.value.trim() : '';
+
+        // Handle writing submission task
+        if (correct === 'SUBMITTED') {{
+          const writingText = document.getElementById('diagWritingDraft') ? document.getElementById('diagWritingDraft').value.trim() : '';
+          const words = writingText ? writingText.split(/\\s+/).length : 0;
+          total++;
+          if (words >= 80) {{
+            score++;
+            gapRows += `
+              <tr>
+                <td><strong>Q${{idx+1}}: ${{topic}}</strong><div style="font-size:0.8rem; color:#94a3b8; margin-top:2px;">Drafted: ${{words}} words</div></td>
+                <td><span style="color:#38bdf8; font-weight:700;"><i class="fa-solid fa-circle-check"></i> Completed Draft</span></td>
+                <td><a href="${{guide}}" class="btn-card-action" style="padding:4px 10px; font-size:0.78rem; display:inline-flex;">View Model Drafts →</a></td>
+              </tr>
+            `;
+          }} else {{
+            gapRows += `
+              <tr style="background:rgba(239, 68, 68, 0.08);">
+                <td><strong>Q${{idx+1}}: ${{topic}}</strong><div style="font-size:0.8rem; color:#f87171; margin-top:2px;">Word count below target (${{words}} words)</div></td>
+                <td><span style="color:#f87171; font-weight:700;"><i class="fa-solid fa-circle-exclamation"></i> Incomplete</span></td>
+                <td><a href="${{guide}}" class="btn-card-action" style="padding:4px 10px; font-size:0.78rem; display:inline-flex;">Writing Guide →</a></td>
+              </tr>
+            `;
+          }}
+          return;
+        }}
+
+        total++;
+        const checked = card.querySelector(`input[name="${{qName}}"]:checked`);
+        const userVal = checked ? checked.value : null;
+        const isCorrect = userVal === correct;
+
+        let solutionHtml = '';
+        if (solution) {{
+          solutionHtml = `
+            <div class="method-review-box">
+              <strong style="color:var(--accent);"><i class="fa-solid fa-lightbulb"></i> Step-by-Step Examiner Method:</strong> ${{solution}}
+              ${{userWorking ? `<div style="margin-top:6px; color:#cbd5e1;"><em>Your typed calculation:</em> "${{userWorking}}"</div>` : ''}}
+            </div>
+          `;
+        }}
+
+        if (isCorrect) {{
+          score++;
+          gapRows += `
+            <tr>
+              <td>
+                <strong>Q${{idx+1}}: ${{topic}}</strong>
+                ${{solutionHtml}}
+              </td>
+              <td><span style="color:#38bdf8; font-weight:700;"><i class="fa-solid fa-circle-check"></i> Correct</span></td>
+              <td><span style="opacity:0.65;">Mastered</span></td>
+            </tr>
+          `;
+        }} else {{
+          gapRows += `
+            <tr style="background:rgba(239, 68, 68, 0.08);">
+              <td>
+                <strong>Q${{idx+1}}: ${{topic}}</strong>
+                ${{solutionHtml}}
+              </td>
+              <td><span style="color:#f87171; font-weight:700;"><i class="fa-solid fa-circle-xmark"></i> Needs Practice</span></td>
+              <td><a href="${{guide}}" class="btn-card-action" style="padding:4px 10px; font-size:0.78rem; display:inline-flex;">Revise Topic →</a></td>
+            </tr>
+          `;
+        }}
+      }});
+
+      const pct = Math.round((score / total) * 100);
+      document.getElementById('scoreBadge').textContent = `${{score}} / ${{total}} (${{pct}}%)`;
+      document.getElementById('gapTableBody').innerHTML = gapRows;
+
+      const heading = document.getElementById('resultHeading');
+      const summary = document.getElementById('resultSummary');
+
+      if (pct >= 80) {{
+        heading.textContent = 'Working at Strong Level 2 (Exam Ready)';
+        heading.style.color = '#38bdf8';
+        summary.textContent = `Outstanding performance! You scored ${{pct}}% across the core assessment criteria. You have a solid grasp of Level 2 concepts. Take a full practice past paper under timed conditions to finalize your exam readiness.`;
+      }} else if (pct >= 50) {{
+        heading.textContent = 'Working at Level 1 / Developing Level 2';
+        heading.style.color = '#fbbf24';
+        summary.textContent = `Good foundational skills (${{pct}}%). You have secured the essential concepts, but have clear topic gaps highlighted in the review table above. Target these topics on the Master Revise Hub before booking an exam.`;
+      }} else {{
+        heading.textContent = 'Working at Entry Level 3 / Early Level 1';
+        heading.style.color = '#f87171';
+        summary.textContent = `This diagnostic has identified your baseline level (${{pct}}%). Don't worry — start with the Entry 3 & Level 1 revision modules linked above to systematically build your numerical and literacy confidence.`;
+      }}
+
+      const resultBanner = document.getElementById('diagnosticResults');
+      resultBanner.style.display = 'block';
+      resultBanner.scrollIntoView({{ behavior: 'smooth', block: 'start' }});
+    }}
+  </script>
+
+{FOOTER}
+</body>
+</html>
+"""
+
+target = os.path.join(PROJECT_DIR, "diagnostic-test.html")
+with open(target, "w", encoding="utf-8") as f:
+    f.write(diagnostic_html)
+
+print(f"[OK] Generated upgraded modern diagnostic-test.html ({len(diagnostic_html)} bytes)")

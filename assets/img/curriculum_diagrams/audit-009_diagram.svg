@@ -1,0 +1,29 @@
+<svg viewBox="0 0 540 260" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:540px; height:auto; font-family:'Plus Jakarta Sans', system-ui, sans-serif;">
+  <rect x="2" y="2" width="536" height="256" rx="14" fill="#ffffff" stroke="#bae6fd" stroke-width="2"/>
+  <rect x="18" y="14" width="240" height="28" rx="14" fill="#e0f2fe"/>
+  <text x="28" y="33" font-size="12" font-weight="800" fill="#0369a1">✎ VISUAL MODEL: RATIO BAR SHARING</text>
+  <text x="270" y="33" font-size="13" font-weight="700" fill="#0f172a">Share £450 in Ratio 3 : 2</text>
+
+  <!-- Person A: 3 Parts -->
+  <text x="25" y="82" font-size="13.5" font-weight="800" fill="#0369a1">A (3 parts):</text>
+  <rect x="125" y="60" width="75" height="38" rx="6" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+  <text x="162" y="84" font-size="15" font-weight="800" fill="#0369a1" text-anchor="middle">£90</text>
+  <rect x="206" y="60" width="75" height="38" rx="6" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+  <text x="243" y="84" font-size="15" font-weight="800" fill="#0369a1" text-anchor="middle">£90</text>
+  <rect x="287" y="60" width="75" height="38" rx="6" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
+  <text x="324" y="84" font-size="15" font-weight="800" fill="#0369a1" text-anchor="middle">£90</text>
+  <text x="375" y="85" font-size="16" font-weight="900" fill="#0284c7">= £270</text>
+
+  <!-- Person B: 2 Parts -->
+  <text x="25" y="136" font-size="13.5" font-weight="800" fill="#b45309">B (2 parts):</text>
+  <rect x="125" y="114" width="75" height="38" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="162" y="138" font-size="15" font-weight="800" fill="#b45309" text-anchor="middle">£90</text>
+  <rect x="206" y="114" width="75" height="38" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="243" y="138" font-size="15" font-weight="800" fill="#b45309" text-anchor="middle">£90</text>
+  <text x="295" y="139" font-size="16" font-weight="900" fill="#d97706">= £180</text>
+
+  <!-- Summary Footer Box (Carefully wrapped so no text overflows) -->
+  <rect x="20" y="172" width="500" height="68" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+  <text x="34" y="196" font-size="12" font-weight="700" fill="#166534">Step 1: Total parts = 3 + 2 = 5 parts &bull; Step 2: Value of 1 part = £450 &divide; 5 = £90</text>
+  <text x="34" y="222" font-size="13" font-weight="800" fill="#15803d">Verification Check: £270 + £180 = £450.00 ✓ (Matches original starting total)</text>
+</svg>

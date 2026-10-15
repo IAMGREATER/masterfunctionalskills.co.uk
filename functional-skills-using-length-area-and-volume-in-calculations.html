@@ -1,0 +1,968 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-theme="sapphire" data-tint="cream">
+<head>
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multi-Step Spatial Calculations: Area & Volume: Key Rules, Models &amp; Exam Practice | Master Functional Skills</title>
+  <meta name="description" content="Dyslexia-friendly Multi-Step Spatial Calculations: Area & Volume revision guide for Functional Skills Mathematics Level 1 &amp; Level 2. Clear spacing, structured cards, large numbers, worked models, and interactive practice.">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192x192.png">
+  <link rel="apple-touch-icon" href="assets/img/favicon-192x192.png">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="assets/css/mfs-theme.css">
+  <link rel="stylesheet" href="assets/css/mfs-revision.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <!-- TOP TRUST BAR WITH ACCESSIBILITY & CONTACT -->
+  <div class="mfs-top-bar">
+    <div class="mfs-container mfs-top-bar-inner">
+      <div class="top-trust-items">
+        <span class="top-trust-item"><i class="fa-solid fa-building-columns"></i> Pearson Edexcel &amp; City &amp; Guilds Aligned</span>
+      </div>
+      <div class="top-contacts">
+        <div class="mfs-access-bar">
+          <!-- DYSLEXIA BACKGROUND TINT PICKER -->
+          <div class="mfs-tint-dropdown-wrap">
+            <button type="button" id="tintToggle" class="btn-tint-toggle" onclick="toggleTintMenu(event)" title="Change dyslexia background tint">
+              <span class="tint-swatch-indicator" id="tintCurrentSwatch"></span>
+              <span id="tintLabel">Cream Tint</span>
+              <i class="fa-solid fa-chevron-down" style="font-size:0.62rem; opacity:0.75; margin-left:2px;"></i>
+            </button>
+            <div id="tintMenu" class="tint-picker-menu">
+              <div class="tint-picker-title"><i class="fa-solid fa-glasses"></i> Dyslexia Reading Tint</div>
+              <button type="button" class="tint-option-btn active" data-tint="cream" onclick="setSiteTint('cream', event)">
+                <span class="swatch swatch-cream"></span>
+                <span class="tint-name">Cream <small class="tint-badge-def">Default</small></span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="peach" onclick="setSiteTint('peach', event)">
+                <span class="swatch swatch-peach"></span>
+                <span class="tint-name">Soft Peach</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="cool" onclick="setSiteTint('cool', event)">
+                <span class="swatch swatch-cool"></span>
+                <span class="tint-name">Cool Mist</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="sage" onclick="setSiteTint('sage', event)">
+                <span class="swatch swatch-sage"></span>
+                <span class="tint-name">Soft Sage</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <div class="tint-divider"></div>
+              <button type="button" class="tint-option-btn" data-tint="none" onclick="setSiteTint('none', event)">
+                <span class="swatch swatch-none"></span>
+                <span class="tint-name">No Tint (White)</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+            </div>
+          </div>
+          <button id="dyslexiaToggle" class="btn-dyslexia-toggle" onclick="toggleDyslexiaMode()" title="Toggle Dyslexia High-Readability Mode">
+            <i class="fa-solid fa-universal-access"></i> Dyslexia
+          </button>
+          <button id="themeToggle" class="mfs-theme-pill" onclick="toggleTheme()" title="Switch Palette: Sapphire vs Emerald">
+            <i class="fa-solid fa-palette"></i> <span id="themeLabel">Sapphire</span>
+          </button>
+        </div>
+        <a href="contact-us.html" class="top-contact-link"><i class="fa-solid fa-envelope"></i> <strong>Contact Us</strong></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->  <!-- MAIN NAVIGATION -->
+                    <header class="mfs-navbar">
+    <div class="revision-page-wrapper mfs-navbar-inner">
+      <a href="index.html" class="mfs-brand">
+        <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div class="mfs-brand-text">
+          <div class="mfs-brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
+          <div class="mfs-brand-subtitle">Delivering Skills • Achieving Goals</div>
+        </div>
+      </a>
+
+      <nav class="mfs-nav-wrapper">
+        <ul class="mfs-nav-menu">
+          <!-- 1. SUBJECTS (VISUAL MEGA-MENU) -->
+          <li class="mfs-nav-item">
+            <a href="courses.html" class="mfs-nav-link">
+              <i class="fa-solid fa-book-open-reader" style="color:#0284c7; margin-right:5px;"></i> Subjects <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-revision-hub">
+              <div class="mfs-revision-grid">
+                <!-- Maths Column -->
+                <div class="mfs-revision-col mfs-revision-col-maths">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-calculator"></i> Maths Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="functional-skills-maths-level-2.html" class="mfs-dropdown-item">Maths Level 2</a>
+                    <a href="functional-skills-maths-level-1.html" class="mfs-dropdown-item">Maths Level 1</a>
+                    <a href="entry-level-3-maths.html" class="mfs-dropdown-item">Entry Level 3 Maths</a>
+                  </div>
+                </div>
+                <!-- English Column -->
+                <div class="mfs-revision-col mfs-revision-col-english">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-pen-nib"></i> English Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="functional-skills-english-level-2.html" class="mfs-dropdown-item">English Level 2</a>
+                    <a href="functional-skills-english-level-1.html" class="mfs-dropdown-item">English Level 1</a>
+                  </div>
+                </div>
+                <!-- Digital Skills Column -->
+                <div class="mfs-revision-col mfs-revision-col-digital">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-laptop-code"></i> Digital Skills</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="digital-functional-skills.html" class="mfs-dropdown-item">Digital Skills Hub</a>
+                    <a href="digital-functional-skills-mock-exam.html" class="mfs-dropdown-item">Pearson Mock Exam</a>
+                    <a href="digital-functional-skills-past-papers.html" class="mfs-dropdown-item">Past Papers &amp; Files</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- 2. PAST PAPERS & MOCKS (DIRECT ACCESS) -->
+          <li class="mfs-nav-item">
+            <a href="functional-skills-past-papers.html" class="mfs-nav-link">
+              <i class="fa-regular fa-file-lines" style="color:#0284c7; margin-right:5px;"></i> Past Papers &amp; Mocks
+            </a>
+          </li>
+
+          <!-- 2b. WORKSHEETS DIRECTORY (CORBETT STYLE DUAL ENGINE) -->
+          <li class="mfs-nav-item">
+            <a href="worksheets.html" class="mfs-nav-link">
+              <i class="fa-solid fa-layer-group" style="color:#0284c7; margin-right:5px;"></i> Worksheets Hub
+            </a>
+          </li>
+
+          <!-- 3. FREE TOOLS (COMPACT DROPDOWN) -->
+          <li class="mfs-nav-item">
+            <a href="tools.html" class="mfs-nav-link">
+              <i class="fa-solid fa-screwdriver-wrench" style="color:#0284c7; margin-right:5px;"></i> Free Tools <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-compact">
+              <a href="tools.html" class="mfs-dropdown-item" style="font-weight:700; color:var(--accent);"><i class="fa-solid fa-layer-group" style="font-size:0.85rem; margin-right:6px;"></i> All Free Tools &amp; Simulators &rarr;</a>
+              <div class="mfs-dropdown-divider" style="margin:4px 0; border-top:1px solid #e2e8f0;"></div>
+              <a href="pass-mark-calculator.html" class="mfs-dropdown-item"><i class="fa-solid fa-calculator" style="color:var(--accent); font-size:0.85rem; margin-right:6px;"></i> Pass Mark Calculator</a>
+              <a href="diagnostic-test.html" class="mfs-dropdown-item"><i class="fa-solid fa-chart-pie" style="color:#059669; font-size:0.85rem; margin-right:6px;"></i> Diagnostic Skill Checker</a>
+              <a href="functional-skills-nets.html" class="mfs-dropdown-item"><i class="fa-solid fa-cube" style="color:#0284c7; font-size:0.85rem; margin-right:6px;"></i> 3D Net Folding Tool</a>
+            </div>
+          </li>
+
+          <!-- 4. REVISION CARDS -->
+          <li class="mfs-nav-item">
+            <a href="revision-cards.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-layer-group" style="color:#d97706; margin-right:5px;"></i> Revision Cards
+            </a>
+          </li>
+
+          <!-- 5. SHOP -->
+          <li class="mfs-nav-item">
+            <a href="shop.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-basket-shopping" style="color:#d97706; margin-right:5px;"></i> Shop
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- 6. BOOK EXAM ACTION BUTTON -->
+      <div class="mfs-nav-actions">
+        <a href="exams.html" class="btn-nav-exam">
+          <i class="fa-solid fa-calendar-check"></i> Book Exam
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- BREADCRUMBS -->
+  <div class="revision-breadcrumb-bar">
+    <div class="revision-page-wrapper">
+      <div class="revision-breadcrumbs">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a href="revise.html">Revise Hub</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a href="functional-skills-maths-level-2.html">Mathematics Level 2</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span class="current">Multi-Step Spatial Calculations: Area & Volume</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="revision-hero-card">
+    <div class="revision-page-wrapper">
+      <div class="revision-hero-grid">
+        <div class="revision-hero-content">
+          <div class="revision-hero-pill-row">
+            <span class="badge-pill-accent"><i class="fa-solid fa-calculator"></i> MATHEMATICS</span>
+            <span class="badge-pill-gold">LEVEL 1 &amp; LEVEL 2</span>
+            <span class="badge-pill-outline">OFQUAL SPECIFICATION STANDARDS</span>
+          </div>
+
+          <h1 class="revision-hero-title">
+            Multi-Step Spatial Calculations: Area & Volume: <span>Formulas, Models &amp; Exam Practice</span>
+          </h1>
+
+          <p class="revision-hero-desc">
+            Combine measurements of length, compound area, 3D volume, unit conversions (cm to m, m³ to litres), percentage wastage, and pack pricing to solve 5-mark and 6-mark exam problems.
+          </p>
+
+          <div class="revision-hero-meta-bar">
+            <div class="hero-meta-item">
+              <i class="fa-solid fa-clock"></i> <strong>Est. Study Time:</strong> 25-35 Mins
+            </div>
+            <div class="hero-meta-item">
+              <i class="fa-solid fa-book-open"></i> <strong>Curriculum Standards:</strong> Pearson Edexcel &amp; City &amp; Guilds
+            </div>
+            <div class="hero-meta-item">
+              <i class="fa-solid fa-circle-check"></i> <strong>Interactive Practice Tasks Included</strong>
+            </div>
+
+            <div class="hero-quick-actions">
+              <a href="#downloads" class="btn-hero-action">
+                <i class="fa-regular fa-file-pdf"></i> Free Worksheet &amp; Answers (PDF)
+              </a>
+              <a href="#practice-questions" class="btn-hero-action-secondary">
+                <i class="fa-solid fa-pencil"></i> Start Practice Tasks
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="revision-hero-visual-card">
+          <div class="revision-hero-img-wrap">
+            <img src="assets/img/book_photos/home_diy_decorating/ceramic_floor_tiling.jpg" alt="Multi-Step Spatial Calculations: Area & Volume Workplace Application" loading="lazy" />
+          </div>
+          <div class="revision-hero-caption-bar">
+            <strong><i class="fa-solid fa-shapes"></i> Key Visual Concept</strong>
+            Trades installer measuring room dimensions and calculating square meterage for floor tiling.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOBILE TABLE OF CONTENTS BAR -->
+  <div class="mobile-toc-bar">
+    <div style="font-weight:700; color:var(--navy-dark); font-size:0.9rem;">
+      <i class="fa-solid fa-list-check" style="color:var(--accent);"></i> Multi-Step Spatial Calculations: Area & Volume Blueprint
+    </div>
+    <button type="button" class="btn-mobile-toc" onclick="toggleMobileToc()">
+      <span>Table of Contents</span> <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+
+  <!-- MAIN 2-COLUMN RESPONSIVE LAYOUT -->
+  <main class="revision-page-wrapper">
+    <div class="revision-layout">
+
+      <!-- LEFT COLUMN: STICKY BLUEPRINT TOC -->
+      <aside class="revision-sidebar" id="sidebarNav">
+        <div class="sidebar-toc-title">
+          <span><i class="fa-solid fa-compass-drafting" style="color:var(--accent);"></i> Topic Contents</span>
+          <span style="font-size:0.75rem; color:#64748b; font-weight:700;">9 Sections</span>
+        </div>
+
+        <ul class="sidebar-toc-list" id="tocList">
+          
+          <li>
+            <a href="#specification" class="sidebar-toc-link active">
+              <i class="fa-solid fa-clipboard-check"></i> Specification
+            </a>
+          </li>
+          <li>
+            <a href="#golden-rules" class="sidebar-toc-link">
+              <i class="fa-solid fa-lightbulb"></i> Golden Rules
+            </a>
+          </li>
+          <li>
+            <a href="#skill-1" class="sidebar-toc-link">
+              <i class="fa-solid fa-shapes"></i> 1. The 5-Stage Construction & Renovation Costing Pipeline
+            </a>
+          </li>
+          <li>
+            <a href="#skill-2" class="sidebar-toc-link">
+              <i class="fa-solid fa-shapes"></i> 2. Volume-to-Capacity Bridges (cm³ ↔ Litres ↔ m³) & Flow Rates
+            </a>
+          </li>
+          <li>
+            <a href="#skill-3" class="sidebar-toc-link">
+              <i class="fa-solid fa-shapes"></i> 3. Mass, Density & Gravel/Concrete Tonnage Calculations
+            </a>
+          </li>
+          <li>
+            <a href="#worked-exam-models" class="sidebar-toc-link">
+              <i class="fa-solid fa-graduation-cap"></i> Exam Models
+            </a>
+          </li>
+          <li>
+            <a href="#examiner-traps" class="sidebar-toc-link">
+              <i class="fa-solid fa-triangle-exclamation"></i> Examiner Traps
+            </a>
+          </li>
+          <li>
+            <a href="#practice-questions" class="sidebar-toc-link">
+              <i class="fa-solid fa-pencil"></i> Exam Practice
+            </a>
+          </li>
+          <li>
+            <a href="#downloads" class="sidebar-toc-link">
+              <i class="fa-solid fa-file-pdf"></i> Downloads (PDF)
+            </a>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- RIGHT COLUMN: MAIN LEARNING CONTENT -->
+      <div class="revision-content">
+        
+    <!-- SPECIFICATION -->
+    <section id="specification" class="revision-section">
+      <div class="section-header-row">
+        <h2 class="section-title"><i class="fa-solid fa-clipboard-check"></i> Specification &amp; Learning Outcomes</h2>
+      </div>
+      <div class="skill-card-container">
+        <p>Candidates must demonstrate mastery of the following regulated Functional Skills Mathematics outcomes:</p>
+        <ul style="padding-left:20px; line-height:1.8; color:#334155;">
+          <li><strong>L1.22 / L2.24</strong> – Solve multi-stage problems combining perimeter, compound area, surface area, and volume with unit conversions, wastage percentages, and financial costing.</li>
+        </ul>
+      </div>
+    </section>
+    
+
+    <!-- GOLDEN RULES -->
+    <section id="golden-rules" class="revision-section">
+      <div class="section-header-row">
+        <h2 class="section-title"><i class="fa-solid fa-lightbulb"></i> Golden Rules for Multi-Step Spatial Calculations: Area & Volume</h2>
+      </div>
+      
+        <div class="rule-card-amber">
+          <div class="rule-card-amber-header">
+            <i class="fa-solid fa-layer-group"></i>
+            <span>Golden Rule 1: Unify All Units FIRST Before Multiplying for Area or Volume</span>
+          </div>
+          <p>Never multiply metres by centimetres or millimetres! If a driveway is 8 m long, 3.5 m wide, and 5 cm deep, convert 5 cm into 0.05 m FIRST before calculating Volume = 8 × 3.5 × 0.05 = 1.4 m³.</p>
+          <div class="rule-highlight-badge">
+            <strong>Golden Rule / Method:</strong> Convert All Dimensions to the SAME Unit Before Multiplying!
+          </div>
+        </div>
+        
+        <div class="rule-card-amber">
+          <div class="rule-card-amber-header">
+            <i class="fa-solid fa-percent"></i>
+            <span>Golden Rule 2: Add Percentage Wastage BEFORE Dividing by Pack Coverage, Then Round UP</span>
+          </div>
+          <p>In construction and flooring questions: 1. Calculate Area/Volume. 2. Add wastage (e.g. × 1.10 for 10%). 3. Divide by pack coverage. 4. Always round UP to the next whole pack/bag/tin.</p>
+          <div class="rule-highlight-badge">
+            <strong>Golden Rule / Method:</strong> Area/Volume → Add Wastage → Divide by Pack Size → Round UP → × Price
+          </div>
+        </div>
+        
+    </section>
+    
+
+        <!-- SKILL 1: The 5-Stage Construction & Renovation Costing Pipeline -->
+        <section id="skill-1" class="revision-section">
+          <div class="mfs-topic-card">
+            <div class="mfs-topic-head">
+              <h3 class="mfs-topic-title"><span class="mfs-topic-prefix">Core Skill 1:</span> The 5-Stage Construction & Renovation Costing Pipeline</h3>
+              <p class="mfs-topic-stem">How to structure 5-mark and 6-mark spatial costing questions.</p>
+            </div>
+            <div class="mfs-topic-body" style="padding:20px 24px;">
+              <div class="sketch-diagram-wrap"><svg viewBox="0 0 540 270" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:540px; height:auto; font-family:'Plus Jakarta Sans', system-ui, sans-serif;">
+  <rect x="2" y="2" width="536" height="266" rx="14" fill="#ffffff" stroke="#bae6fd" stroke-width="2"/>
+  <rect x="18" y="14" width="270" height="28" rx="14" fill="#e0f2fe"/>
+  <text x="28" y="33" font-size="12" font-weight="800" fill="#0369a1">✎ VISUAL MODEL: COMPOUND L-SHAPE</text>
+  <text x="300" y="33" font-size="13" font-weight="700" fill="#0f172a">Split into Shape A + Shape B</text>
+
+  <!-- Dimension Arrow Top Width: 5m -->
+  <line x1="45" y1="52" x2="145" y2="52" stroke="#0284c7" stroke-width="1.5"/>
+  <text x="95" y="47" font-size="12" font-weight="800" fill="#0284c7" text-anchor="middle">5 m</text>
+
+  <!-- Shape A: Left column (100 wide x 160 high) -->
+  <rect x="45" y="58" width="100" height="160" fill="#e0f2fe" stroke="#0284c7" stroke-width="2.5"/>
+  <text x="95" y="132" font-size="16" font-weight="800" fill="#0369a1" text-anchor="middle">Shape A</text>
+  <text x="95" y="152" font-size="12.5" font-weight="700" fill="#0284c7" text-anchor="middle">5m × 8m</text>
+  <text x="95" y="170" font-size="14" font-weight="900" fill="#0369a1" text-anchor="middle">= 40 m²</text>
+
+  <!-- Dashed dividing line between A and B -->
+  <line x1="145" y1="118" x2="145" y2="218" stroke="#ef4444" stroke-width="3" stroke-dasharray="6,4"/>
+
+  <!-- Shape B: Right extension (135 wide x 100 high) -->
+  <rect x="145" y="118" width="135" height="100" fill="#fef3c7" stroke="#d97706" stroke-width="2.5"/>
+  <text x="212" y="160" font-size="16" font-weight="800" fill="#b45309" text-anchor="middle">Shape B</text>
+  <text x="212" y="180" font-size="12.5" font-weight="700" fill="#d97706" text-anchor="middle">7m × 3m</text>
+  <text x="212" y="198" font-size="14" font-weight="900" fill="#b45309" text-anchor="middle">= 21 m²</text>
+
+  <!-- Dimension: Left Height (8m) -->
+  <text x="26" y="142" font-size="13" font-weight="800" fill="#0f172a" text-anchor="middle">8 m</text>
+
+  <!-- Dimension: Shape B Top Width (7m) -->
+  <text x="212" y="110" font-size="12" font-weight="800" fill="#d97706" text-anchor="middle">7 m</text>
+
+  <!-- Dimension: Right Height (3m) -->
+  <text x="296" y="172" font-size="13" font-weight="800" fill="#0f172a">3 m</text>
+
+  <!-- Dimension: Total Bottom Width (12m) -->
+  <text x="162" y="238" font-size="13" font-weight="800" fill="#0f172a" text-anchor="middle">Total Width = 12 m (5m + 7m)</text>
+
+  <!-- Calculation Summary Panel (Spacious on Right) -->
+  <rect x="325" y="58" width="195" height="195" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="340" y="85" font-size="12.5" font-weight="800" fill="#0369a1">CALCULATING TOTAL AREA:</text>
+  <text x="340" y="112" font-size="12" font-weight="700" fill="#0284c7">Step 1: Area A (Left)</text>
+  <text x="340" y="128" font-size="12" fill="#334155">5 m × 8 m = 40 m²</text>
+  <text x="340" y="152" font-size="12" font-weight="700" fill="#d97706">Step 2: Area B (Right)</text>
+  <text x="340" y="168" font-size="12" fill="#334155">7 m × 3 m = 21 m²</text>
+  <line x1="340" y1="180" x2="505" y2="180" stroke="#cbd5e1"/>
+  <rect x="338" y="190" width="168" height="34" rx="6" fill="#dcfce7" stroke="#86efac"/>
+  <text x="422" y="212" font-size="14" font-weight="900" fill="#15803d" text-anchor="middle">40 + 21 = 61 m² ✓</text>
+</svg></div>
+              
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:18px; margin:16px 0;">
+                  <ol style="padding-left:22px; line-height:1.8; color:#334155;">
+                    <li><strong>Unify Units:</strong> Convert all cm/mm into metres (e.g. 50 cm = 0.5 m; 80 mm = 0.08 m).</li>
+                    <li><strong>Calculate Area or Volume:</strong> Split compound shapes or multiply L &times; W &times; Depth.</li>
+                    <li><strong>Add Wastage / Multiple Coats:</strong> Multiply by 1.10 (for +10% wastage) or &times; 2 (for 2 coats).</li>
+                    <li><strong>Find Whole Packs Needed:</strong> Divide by coverage per pack and <strong>round UP to the next whole integer</strong>.</li>
+                    <li><strong>Calculate Total Cost (+ VAT/Discount):</strong> Whole Packs &times; Price per Pack.</li>
+                  </ol>
+                </div>
+                
+            </div>
+            <div class="mfs-topic-footer" style="display:flex; gap:8px; flex-wrap:wrap; padding-top:14px; border-top:1px solid #e2e8f0; margin-top:16px;">
+              <span class="mfs-pill-l1">Level 1</span>
+              <span class="mfs-pill-l2">Level 2</span>
+              <span class="mfs-pill-board">Pearson Edexcel</span>
+              <span class="mfs-pill-board">City &amp; Guilds</span>
+              <span class="mfs-pill-board">NCFE</span>
+            </div>
+          </div>
+        </section>
+        
+        <!-- SKILL 2: Volume-to-Capacity Bridges (cm³ ↔ Litres ↔ m³) & Flow Rates -->
+        <section id="skill-2" class="revision-section">
+          <div class="mfs-topic-card">
+            <div class="mfs-topic-head">
+              <h3 class="mfs-topic-title"><span class="mfs-topic-prefix">Core Skill 2:</span> Volume-to-Capacity Bridges (cm³ ↔ Litres ↔ m³) & Flow Rates</h3>
+              <p class="mfs-topic-stem">The three essential 3D volume-to-liquid capacity conversions.</p>
+            </div>
+            <div class="mfs-topic-body" style="padding:20px 24px;">
+              
+              
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:18px; margin:16px 0;">
+                  <table style="width:100%; border-collapse:collapse; text-align:center;">
+                    <thead>
+                      <tr style="background:#0284c7; color:#fff;">
+                        <th style="padding:8px; border:1px solid #cbd5e1;">3D Cubic Volume</th>
+                        <th style="padding:8px; border:1px solid #cbd5e1;">Liquid Capacity Equivalent</th>
+                        <th style="padding:8px; border:1px solid #cbd5e1;">Conversion Rule</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr><td style="padding:6px; border:1px solid #cbd5e1; font-weight:700;">1 cm&sup3;</td><td style="padding:6px; border:1px solid #cbd5e1;">1 ml</td><td style="padding:6px; border:1px solid #cbd5e1;">1 : 1 identical</td></tr>
+                      <tr><td style="padding:6px; border:1px solid #cbd5e1; font-weight:700;">1,000 cm&sup3;</td><td style="padding:6px; border:1px solid #cbd5e1;">1 Litre (1,000 ml)</td><td style="padding:6px; border:1px solid #cbd5e1;">Litres = cm&sup3; &divide; 1,000</td></tr>
+                      <tr><td style="padding:6px; border:1px solid #cbd5e1; font-weight:700;">1 m&sup3;</td><td style="padding:6px; border:1px solid #cbd5e1;">1,000 Litres</td><td style="padding:6px; border:1px solid #cbd5e1;">Litres = m&sup3; &times; 1,000</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                
+            </div>
+            <div class="mfs-topic-footer" style="display:flex; gap:8px; flex-wrap:wrap; padding-top:14px; border-top:1px solid #e2e8f0; margin-top:16px;">
+              <span class="mfs-pill-l1">Level 1</span>
+              <span class="mfs-pill-l2">Level 2</span>
+              <span class="mfs-pill-board">Pearson Edexcel</span>
+              <span class="mfs-pill-board">City &amp; Guilds</span>
+              <span class="mfs-pill-board">NCFE</span>
+            </div>
+          </div>
+        </section>
+        
+        <!-- SKILL 3: Mass, Density & Gravel/Concrete Tonnage Calculations -->
+        <section id="skill-3" class="revision-section">
+          <div class="mfs-topic-card">
+            <div class="mfs-topic-head">
+              <h3 class="mfs-topic-title"><span class="mfs-topic-prefix">Core Skill 3:</span> Mass, Density & Gravel/Concrete Tonnage Calculations</h3>
+              <p class="mfs-topic-stem">Converting cubic metres of soil, sand, or concrete into tonnes and skip bags.</p>
+            </div>
+            <div class="mfs-topic-body" style="padding:20px 24px;">
+              
+              
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:18px; margin:16px 0;">
+                  <p style="color:#334155; line-height:1.7; margin-top:0;">Once you know the volume in <strong>m&sup3;</strong>, multiply by the material density (e.g. <strong>1 m&sup3; of gravel weighs 1.6 tonnes</strong>):</p>
+                  <ul style="padding-left:20px; line-height:1.8; color:#334155;">
+                    <li><strong>Total Weight = Volume (m&sup3;) &times; Weight per m&sup3;</strong>.</li>
+                  </ul>
+                </div>
+                
+            </div>
+            <div class="mfs-topic-footer" style="display:flex; gap:8px; flex-wrap:wrap; padding-top:14px; border-top:1px solid #e2e8f0; margin-top:16px;">
+              <span class="mfs-pill-l1">Level 1</span>
+              <span class="mfs-pill-l2">Level 2</span>
+              <span class="mfs-pill-board">Pearson Edexcel</span>
+              <span class="mfs-pill-board">City &amp; Guilds</span>
+              <span class="mfs-pill-board">NCFE</span>
+            </div>
+          </div>
+        </section>
+        
+
+    <!-- WORKED EXAM MODELS -->
+    <section id="worked-exam-models" class="revision-section">
+      <div class="section-header-row">
+        <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i> Pearson Edexcel Step-by-Step Worked Models</h2>
+      </div>
+      
+        <div class="model-example-card" style="margin-bottom:24px;">
+          <div class="model-card-header">
+            <span class="model-badge"><i class="fa-solid fa-graduation-cap"></i> Benchmark Exam Model 1</span>
+            <span class="model-marks-pill">4 Marks (Pearson Edexcel Level 2)</span>
+          </div>
+          <div class="model-scenario" style="padding:16px 20px; background:#fff; border-bottom:1px solid #e2e8f0;">
+            <p style="font-weight:600; color:#0f172a; margin-bottom:8px;">Vocational Context: <span style="color:#0369a1;">Healthcare Facility Renovation</span></p>
+            <div class="model-q-stem" style="font-size:1.05rem; line-height:1.7; color:#334155;">A clinical consultation room floor measures <strong>6.0 m long by 4.0 m wide</strong>. Non-slip vinyl tiles are sold in packs:<br>• Each pack covers <strong>2.5 m²</strong> and costs <strong>£28.50</strong>.<br>• The installer adds <strong>10% extra area</strong> for cutting wastage.<br>Calculate the total cost of the packs required to tile the room.</div>
+          </div>
+          <div class="model-steps-container" style="padding:18px 20px; background:#ffffff;">
+            <!-- 3-Column Header: Step, Description, Criteria -->
+            <div class="model-steps-header-row">
+              <div><i class="fa-solid fa-list-ol" style="color:#0284c7; margin-right:6px;"></i> Step</div>
+              <div><i class="fa-solid fa-calculator" style="color:#0284c7; margin-right:6px;"></i> Description / Working</div>
+              <div><i class="fa-solid fa-clipboard-check" style="color:#0284c7; margin-right:6px;"></i> Criteria</div>
+            </div>
+            
+            <div class="model-step-row model-step-grid-row">
+              <div class="model-step-col-step">
+                <span class="example-step-pill">Step 1</span>
+                <span class="model-step-title">Calculate floor area</span>
+              </div>
+              <div class="model-step-col-desc">
+                6.0 m × 4.0 m = 24.0 m².
+              </div>
+              <div class="model-step-col-criteria">
+                <span class="criteria-badge-teal"><i class="fa-solid fa-award" style="font-size:0.78rem; margin-right:4px; opacity:0.85;"></i><strong>Criteria:</strong> M1: Floor area (24.0 m²)</span>
+              </div>
+            </div>
+            
+            <div class="model-step-row model-step-grid-row">
+              <div class="model-step-col-step">
+                <span class="example-step-pill">Step 2</span>
+                <span class="model-step-title">Add 10% cutting wastage</span>
+              </div>
+              <div class="model-step-col-desc">
+                24.0 m² × 1.10 = 26.4 m².
+              </div>
+              <div class="model-step-col-criteria">
+                <span class="criteria-badge-teal"><i class="fa-solid fa-award" style="font-size:0.78rem; margin-right:4px; opacity:0.85;"></i><strong>Criteria:</strong> M1: Area including wastage (26.4 m²)</span>
+              </div>
+            </div>
+            
+            <div class="model-step-row model-step-grid-row">
+              <div class="model-step-col-step">
+                <span class="example-step-pill">Step 3</span>
+                <span class="model-step-title">Divide by 2.5 m² pack coverage and round UP</span>
+              </div>
+              <div class="model-step-col-desc">
+                26.4 ÷ 2.5 = 10.56 packs → Round UP to 11 whole packs.
+              </div>
+              <div class="model-step-col-criteria">
+                <span class="criteria-badge-teal"><i class="fa-solid fa-award" style="font-size:0.78rem; margin-right:4px; opacity:0.85;"></i><strong>Criteria:</strong> A1: 11 packs</span>
+              </div>
+            </div>
+            
+            <div class="model-step-row model-step-grid-row">
+              <div class="model-step-col-step">
+                <span class="example-step-pill">Step 4</span>
+                <span class="model-step-title">Calculate total cost</span>
+              </div>
+              <div class="model-step-col-desc">
+                11 packs × £28.50 = £313.50.
+              </div>
+              <div class="model-step-col-criteria">
+                <span class="criteria-badge-teal"><i class="fa-solid fa-award" style="font-size:0.78rem; margin-right:4px; opacity:0.85;"></i><strong>Criteria:</strong> A1: Accurate total cost (£313.50)</span>
+              </div>
+            </div>
+            
+            <div class="model-final-answer" style="margin-top:16px; padding:12px 18px; background:#f0fdf4; border:1px solid #86efac; border-radius:6px; font-weight:700; color:#166534; font-size:1.05rem;">
+              <i class="fa-solid fa-check-circle"></i> Final Accredited Answer: £313.50 (11 packs required)
+            </div>
+            <div class="examiner-guidance-box">
+              <div class="examiner-guidance-header">
+                <i class="fa-solid fa-clipboard-check"></i>
+                <span>Method Checklist &amp; Marking Scheme Guidance</span>
+              </div>
+              <div class="examiner-guidance-text">
+                Always round packs UP (10.56 → 11 packs) so you do not leave 1.4 m² of floor bare!
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="model-example-card" style="margin-bottom:24px;">
+          <div class="model-card-header">
+            <span class="model-badge"><i class="fa-solid fa-graduation-cap"></i> Benchmark Exam Model 2</span>
+            <span class="model-marks-pill">5 Marks (Pearson Edexcel Level 2)</span>
+          </div>
+          <div class="model-scenario" style="padding:16px 20px; background:#fff; border-bottom:1px solid #e2e8f0;">
+            <p style="font-weight:600; color:#0f172a; margin-bottom:8px;">Vocational Context: <span style="color:#0369a1;">Civil Engineering & Grounds Maintenance</span></p>
+            <div class="model-q-stem" style="font-size:1.05rem; line-height:1.7; color:#334155;">A clinic resurfaces a rectangular overflow car park measuring <strong>15 m long by 8 m wide</strong> with gravel laid to an even depth of <strong>6 cm</strong>.<br>• <strong>1 m³ of gravel weighs 1.6 tonnes</strong>.<br>• Gravel is sold in <strong>0.8-tonne bulk bags</strong> costing <strong>£64.00 per bag</strong>.<br>Calculate the total cost of the bulk bags required.</div>
+          </div>
+          <div class="model-steps-container" style="padding:18px 20px; background:#ffffff;">
+            <!-- 3-Column Header: Step, Description, Criteria -->
+            <div class="model-steps-header-row">
+              <div><i class="fa-solid fa-list-ol" style="color:#0284c7; margin-right:6px;"></i> Step</div>
+              <div><i class="fa-solid fa-calculator" style="color:#0284c7; margin-right:6px;"></i> Description / Working</div>
+              <div><i class="fa-solid fa-clipboard-check" style="color:#0284c7; margin-right:6px;"></i> Criteria</div>
+            </div>
+            
+            <div class="model-step-row model-step-grid-row">
+              <div class="model-step-col-step">
+                <span class="example-step-pill">Step 1</span>
+                <span class="model-step-title">Convert 6 cm depth into metres (÷ 100)</span>
+              </div>
+              <div class="model-step-col-desc">
+                6 cm = 0.06 m.
+              </div>
+              <div class="model-step-col-criteria">
+                <span class="criteria-badge-teal"><i class="fa-solid fa-award" style="font-size:0.78rem; margin-right:4px; opacity:0.85;"></i><strong>Criteria:</strong> B1: Depth conversion (0.06 m)</span>
+              </div>
+            </div>
+            
+            <div class="model-step-row model-step-grid-row">
+              <div class="model-step-col-step">
+                <span class="example-step-pill">Step 2</span>
+                <span class="model-step-title">Calculate volume of gravel in m³</span>
+              </div>
+              <div class="model-step-col-desc">
+                Volume = 15 m × 8 m × 0.06 m = 7.2 m³.
+              </div>
+              <div class="model-step-col-criteria">
+                <span class="criteria-badge-teal"><i class="fa-solid fa-award" style="font-size:0.78rem; margin-right:4px; opacity:0.85;"></i><strong>Criteria:</strong> M1: Accurate volume (7.2 m³)</span>
+              </div>
+            </div>
+            
+            <div class="model-step-row model-step-grid-row">
+              <div class="model-step-col-step">
+                <span class="example-step-pill">Step 3</span>
+                <span class="model-step-title">Multiply volume by 1.6 tonnes per m³</span>
+              </div>
+              <div class="model-step-col-desc">
+                Total weight = 7.2 × 1.6 = 11.52 tonnes.
+              </div>
+              <div class="model-step-col-criteria">
+                <span class="criteria-badge-teal"><i class="fa-solid fa-award" style="font-size:0.78rem; margin-right:4px; opacity:0.85;"></i><strong>Criteria:</strong> M1: Total weight (11.52 tonnes)</span>
+              </div>
+            </div>
+            
+            <div class="model-step-row model-step-grid-row">
+              <div class="model-step-col-step">
+                <span class="example-step-pill">Step 4</span>
+                <span class="model-step-title">Divide by 0.8 tonnes per bag and round UP</span>
+              </div>
+              <div class="model-step-col-desc">
+                11.52 ÷ 0.8 = 14.4 bags → Round UP to 15 bags.
+              </div>
+              <div class="model-step-col-criteria">
+                <span class="criteria-badge-teal"><i class="fa-solid fa-award" style="font-size:0.78rem; margin-right:4px; opacity:0.85;"></i><strong>Criteria:</strong> M1: 15 whole bags</span>
+              </div>
+            </div>
+            
+            <div class="model-step-row model-step-grid-row">
+              <div class="model-step-col-step">
+                <span class="example-step-pill">Step 5</span>
+                <span class="model-step-title">Multiply 15 bags by £64.00</span>
+              </div>
+              <div class="model-step-col-desc">
+                15 × £64.00 = £960.00.
+              </div>
+              <div class="model-step-col-criteria">
+                <span class="criteria-badge-teal"><i class="fa-solid fa-award" style="font-size:0.78rem; margin-right:4px; opacity:0.85;"></i><strong>Criteria:</strong> A1: Accurate total cost (£960.00)</span>
+              </div>
+            </div>
+            
+            <div class="model-final-answer" style="margin-top:16px; padding:12px 18px; background:#f0fdf4; border:1px solid #86efac; border-radius:6px; font-weight:700; color:#166534; font-size:1.05rem;">
+              <i class="fa-solid fa-check-circle"></i> Final Accredited Answer: £960.00 (15 bulk bags required for 11.52 tonnes / 7.2 m³)
+            </div>
+            <div class="examiner-guidance-box">
+              <div class="examiner-guidance-header">
+                <i class="fa-solid fa-clipboard-check"></i>
+                <span>Method Checklist &amp; Marking Scheme Guidance</span>
+              </div>
+              <div class="examiner-guidance-text">
+                Converting 6 cm to 0.06 m at Step 1 prevents the fatal error of calculating 15 × 8 × 6 = 720 m³!
+              </div>
+            </div>
+          </div>
+        </div>
+        
+    </section>
+    
+
+    <!-- EXAMINER TRAPS -->
+    <section id="examiner-traps" class="revision-section">
+      <div class="section-header-row">
+        <h2 class="section-title"><i class="fa-solid fa-triangle-exclamation"></i> Critical Examiner Traps &amp; Common Pitfalls</h2>
+      </div>
+      
+        <div class="examiner-pitfall-box">
+          <div class="examiner-pitfall-title">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span>Examiner Pitfall: Multiplying Metres by Centimetres Without Converting First</span>
+          </div>
+          <div class="examiner-pitfall-desc">
+            Computing 15 m × 8 m × 6 cm = 720 m³ is 100 times too big!
+          </div>
+          <div class="examiner-pitfall-fix">
+            <i class="fa-solid fa-shield-halved" style="color:#e11d48; margin-top:2px;"></i>
+            <div><strong>How to Avoid This Pitfall:</strong> Convert cm to m (÷ 100) before multiplying.</div>
+          </div>
+        </div>
+        
+        <div class="examiner-pitfall-box">
+          <div class="examiner-pitfall-title">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span>Examiner Pitfall: Rounding Material Packs or Bags Down</span>
+          </div>
+          <div class="examiner-pitfall-desc">
+            Rounding 14.4 bags down to 14 bags leaves the job unfinished.
+          </div>
+          <div class="examiner-pitfall-fix">
+            <i class="fa-solid fa-shield-halved" style="color:#e11d48; margin-top:2px;"></i>
+            <div><strong>How to Avoid This Pitfall:</strong> In construction and decorating, even .01 of a pack requires buying the next full pack.</div>
+          </div>
+        </div>
+        
+    </section>
+    
+
+    <!-- PRACTICE QUESTIONS -->
+    <section id="practice-questions" class="revision-section">
+      <div class="section-header-row">
+        <h2 class="section-title"><i class="fa-solid fa-pencil"></i> Interactive Exam Practice Questions</h2>
+      </div>
+      
+        <div class="practice-q-card" style="margin-bottom:20px; border:1px solid #cbd5e1; border-radius:8px; overflow:hidden; background:#fff;">
+          <div class="practice-q-header" style="padding:12px 18px; background:#f8fafc; border-bottom:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-weight:700; color:#1e293b;"><i class="fa-solid fa-pencil"></i> Exam Practice Question 1</span>
+            <span class="practice-marks-pill">3 Marks</span>
+          </div>
+          <div class="practice-q-body" style="padding:18px 20px;">
+            <div class="practice-q-stem" style="font-size:1.05rem; line-height:1.7; color:#334155; margin-bottom:16px;">
+              A rectangular concrete base measures <strong>5.0 m long, 4.0 m wide, and 15 cm deep</strong>. Calculate the volume of concrete required in <strong>cubic metres (m³)</strong>.
+            </div>
+            <div class="practice-interactive-wrap">
+              <label style="display:block; font-weight:600; font-size:0.9rem; color:#475569; margin-bottom:6px;">Your Working / Notes (Auto-saves):</label>
+              <textarea class="practice-scratchpad" rows="3" style="width:100%; border:1px solid #cbd5e1; border-radius:6px; padding:10px; font-family:monospace; font-size:0.95rem;" placeholder="Type your rough working or steps here..."></textarea>
+              <div style="margin-top:12px; display:flex; gap:10px;">
+                <button type="button" class="btn-solution-toggle" onclick="toggleSolution('sol-1')" style="padding:8px 16px; background:#0284c7; color:#fff; border:none; border-radius:6px; font-weight:600; cursor:pointer;">
+                  <i class="fa-solid fa-eye"></i> Show Solution
+                </button>
+              </div>
+              <div id="sol-1" class="practice-solution-drawer" style="display:none; margin-top:14px; padding:16px; background:#f0fdf4; border:1px solid #86efac; border-radius:6px;">
+                <div style="font-weight:700; color:#166534; margin-bottom:6px;"><i class="fa-solid fa-check"></i> Marking Scheme Steps:</div>
+                <div style="line-height:1.7; color:#14532d;">1. Convert 15 cm to metres: 15 ÷ 100 = 0.15 m.<br>2. Volume = 5.0 × 4.0 × 0.15 = 3.0 m³.</div>
+                <div style="margin-top:10px; font-weight:800; color:#166534;">Final Correct Answer: 3.0 m³ (or 3 m³)</div>
+                <div style="margin-top:8px; font-size:0.88rem; color:#15803d; font-style:italic;">Examiner Tip: 15 cm = 0.15 m; 20 m² × 0.15 m = 3.0 m³.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="practice-q-card" style="margin-bottom:20px; border:1px solid #cbd5e1; border-radius:8px; overflow:hidden; background:#fff;">
+          <div class="practice-q-header" style="padding:12px 18px; background:#f8fafc; border-bottom:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-weight:700; color:#1e293b;"><i class="fa-solid fa-pencil"></i> Exam Practice Question 2</span>
+            <span class="practice-marks-pill">3 Marks</span>
+          </div>
+          <div class="practice-q-body" style="padding:18px 20px;">
+            <div class="practice-q-stem" style="font-size:1.05rem; line-height:1.7; color:#334155; margin-bottom:16px;">
+              A rectangular fish tank measures <strong>80 cm long, 40 cm wide, and 50 cm high</strong>. It is filled with water to <strong>90% of its height</strong>. How many <strong>litres</strong> of water are in the tank? (1,000 cm³ = 1 litre).
+            </div>
+            <div class="practice-interactive-wrap">
+              <label style="display:block; font-weight:600; font-size:0.9rem; color:#475569; margin-bottom:6px;">Your Working / Notes (Auto-saves):</label>
+              <textarea class="practice-scratchpad" rows="3" style="width:100%; border:1px solid #cbd5e1; border-radius:6px; padding:10px; font-family:monospace; font-size:0.95rem;" placeholder="Type your rough working or steps here..."></textarea>
+              <div style="margin-top:12px; display:flex; gap:10px;">
+                <button type="button" class="btn-solution-toggle" onclick="toggleSolution('sol-2')" style="padding:8px 16px; background:#0284c7; color:#fff; border:none; border-radius:6px; font-weight:600; cursor:pointer;">
+                  <i class="fa-solid fa-eye"></i> Show Solution
+                </button>
+              </div>
+              <div id="sol-2" class="practice-solution-drawer" style="display:none; margin-top:14px; padding:16px; background:#f0fdf4; border:1px solid #86efac; border-radius:6px;">
+                <div style="font-weight:700; color:#166534; margin-bottom:6px;"><i class="fa-solid fa-check"></i> Marking Scheme Steps:</div>
+                <div style="line-height:1.7; color:#14532d;">1. Water height = 90% of 50 cm = 45 cm.<br>2. Water volume = 80 × 40 × 45 = 144,000 cm³.<br>3. Convert to litres: 144,000 ÷ 1,000 = 144 litres.</div>
+                <div style="margin-top:10px; font-weight:800; color:#166534;">Final Correct Answer: 144 litres</div>
+                <div style="margin-top:8px; font-size:0.88rem; color:#15803d; font-style:italic;">Examiner Tip: Divide cm³ by 1,000 to convert directly into litres.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="practice-q-card" style="margin-bottom:20px; border:1px solid #cbd5e1; border-radius:8px; overflow:hidden; background:#fff;">
+          <div class="practice-q-header" style="padding:12px 18px; background:#f8fafc; border-bottom:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-weight:700; color:#1e293b;"><i class="fa-solid fa-pencil"></i> Exam Practice Question 3</span>
+            <span class="practice-marks-pill">4 Marks</span>
+          </div>
+          <div class="practice-q-body" style="padding:18px 20px;">
+            <div class="practice-q-stem" style="font-size:1.05rem; line-height:1.7; color:#334155; margin-bottom:16px;">
+              A painter needs to paint a wall measuring <strong>8.5 m long by 2.8 m high</strong> with <strong>2 coats of paint</strong>. One tin of paint covers <strong>12 m²</strong> and costs <strong>£21.50</strong>. Calculate the total cost of the paint tins required.
+            </div>
+            <div class="practice-interactive-wrap">
+              <label style="display:block; font-weight:600; font-size:0.9rem; color:#475569; margin-bottom:6px;">Your Working / Notes (Auto-saves):</label>
+              <textarea class="practice-scratchpad" rows="3" style="width:100%; border:1px solid #cbd5e1; border-radius:6px; padding:10px; font-family:monospace; font-size:0.95rem;" placeholder="Type your rough working or steps here..."></textarea>
+              <div style="margin-top:12px; display:flex; gap:10px;">
+                <button type="button" class="btn-solution-toggle" onclick="toggleSolution('sol-3')" style="padding:8px 16px; background:#0284c7; color:#fff; border:none; border-radius:6px; font-weight:600; cursor:pointer;">
+                  <i class="fa-solid fa-eye"></i> Show Solution
+                </button>
+              </div>
+              <div id="sol-3" class="practice-solution-drawer" style="display:none; margin-top:14px; padding:16px; background:#f0fdf4; border:1px solid #86efac; border-radius:6px;">
+                <div style="font-weight:700; color:#166534; margin-bottom:6px;"><i class="fa-solid fa-check"></i> Marking Scheme Steps:</div>
+                <div style="line-height:1.7; color:#14532d;">1. Wall area = 8.5 × 2.8 = 23.8 m².<br>2. Area for 2 coats = 23.8 × 2 = 47.6 m².<br>3. Tins needed = 47.6 ÷ 12 = 3.966... → Round UP to 4 tins.<br>4. Total cost = 4 × £21.50 = £86.00.</div>
+                <div style="margin-top:10px; font-weight:800; color:#166534;">Final Correct Answer: £86.00 (4 tins)</div>
+                <div style="margin-top:8px; font-size:0.88rem; color:#15803d; font-style:italic;">Examiner Tip: Remember to double the wall area for 2 coats before dividing by 12 m²!</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+    </section>
+    
+
+        <!-- DOWNLOADS -->
+        <section id="downloads" class="revision-section">
+          <div class="section-header-row">
+            <h2 class="section-title"><i class="fa-regular fa-file-pdf"></i> Free Revision Worksheets &amp; Exam Papers</h2>
+          </div>
+
+          <div class="download-tiles-grid">
+            <!-- STYLE 1: SKILL WORKOUT -->
+            <a href="worksheets/using-length-area-and-volume-in-calculations-workout.html" target="_blank" class="download-tile-card">
+              <div class="download-tile-icon icon-workout"><i class="fa-solid fa-repeat"></i></div>
+              <div class="download-tile-info">
+                <div class="tile-badge-wrap"><span class="badge-tile-type">Style 1: Skill Workout</span></div>
+                <strong>Using Length Area And Volume In Calculations Repetition Drills (PDF)</strong>
+                <span>Over 25 rapid-fire calculation drills + vocational applications for procedural fluency</span>
+              </div>
+            </a>
+
+            <a href="worksheets/using-length-area-and-volume-in-calculations-workout-answers.html" target="_blank" class="download-tile-card">
+              <div class="download-tile-icon icon-answers"><i class="fa-solid fa-check-double"></i></div>
+              <div class="download-tile-info">
+                <div class="tile-badge-wrap"><span class="badge-tile-type ans">Workout Answers</span></div>
+                <strong>Skill Workout Answer Key (PDF)</strong>
+                <span>Quick-check marking grid + worked solutions for vocational applications</span>
+              </div>
+            </a>
+
+            <!-- STYLE 2: EXAM PRACTICE BOOKLET -->
+            <a href="worksheets/using-length-area-and-volume-in-calculations-worksheet.html" target="_blank" class="download-tile-card">
+              <div class="download-tile-icon icon-pdf"><i class="fa-regular fa-file-pdf"></i></div>
+              <div class="download-tile-info">
+                <div class="tile-badge-wrap"><span class="badge-tile-type exam">Style 2: Exam Booklet</span></div>
+                <strong>Using Length Area And Volume In Calculations Exam Practice Booklet (PDF)</strong>
+                <span>Authentic Pearson Edexcel exam questions with official [M1][A1] mark allocations</span>
+              </div>
+            </a>
+
+            <a href="worksheets/using-length-area-and-volume-in-calculations-answers.html" target="_blank" class="download-tile-card">
+              <div class="download-tile-icon icon-answers"><i class="fa-solid fa-award"></i></div>
+              <div class="download-tile-info">
+                <div class="tile-badge-wrap"><span class="badge-tile-type ans">Exam Mark Scheme</span></div>
+                <strong>Step-by-Step Exam Mark Scheme (PDF)</strong>
+                <span>Official tutor model answers with method marks, common traps, and reverse checks</span>
+              </div>
+            </a>
+          </div>
+        </section>
+
+        <!-- NEXT TOPIC BANNER -->
+        <div class="next-topic-banner">
+          <div class="next-topic-info">
+            <strong>Next Curriculum Topic</strong>
+            <span>Maths Level 2 Directory</span>
+          </div>
+          <a href="functional-skills-maths-level-2.html" class="btn-next-topic">
+            Continue Revision <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </main>  <!-- FOOTER -->
+  <footer class="mfs-footer" id="site-footer">
+    <div class="mfs-container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="mfs-brand" style="margin-bottom:16px;">
+            <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="mfs-brand-text">
+              <div class="mfs-brand-title" style="color:#ffffff;">MASTER<span>FUNCTIONALSKILLS</span></div>
+              <div class="mfs-brand-subtitle" style="color:#94a3b8;">Delivering Skills • Achieving Goals</div>
+            </div>
+          </div>
+          <p style="font-size:0.88rem; line-height:1.6; margin-bottom:16px;">
+            The UK's dedicated Functional Skills revision specialist. Providing realistic mock exams, step-by-step revision flashcards, diagnostic assessments, and 1-to-1 specialist tuition for Pearson Edexcel, City &amp; Guilds, and all major exam boards.
+          </p>
+          <div style="font-size:0.85rem; color:#cbd5e1;">
+            <p><a href="https://wa.me/447564525425" target="_blank" rel="noopener" style="color:#cbd5e1; text-decoration:none;"><i class="fa-brands fa-whatsapp" style="color:var(--accent); margin-right:8px;"></i> WhatsApp: +44 (0)7564 525425</a></p>
+            <p style="margin-top:6px;"><a href="contact-us.html" style="color:#cbd5e1; text-decoration:none;"><i class="fa-solid fa-envelope" style="color:var(--accent); margin-right:8px;"></i> Contact Tutor Team</a></p>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Maths Revision</h4>
+          <ul class="footer-links">
+            <li><a href="functional-skills-maths-level-2.html">Maths Level 2 Revision</a></li>
+            <li><a href="functional-skills-maths-level-1.html">Maths Level 1 Revision</a></li>
+            <li><a href="entry-level-3-maths.html">Entry Level 3 Maths</a></li>
+            <li><a href="pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="functional-skills-past-papers.html">Free Maths Past Papers</a></li>
+            <li><a href="exam-maths-l2.html">Book Level 2 Maths Exam</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>English &amp; Digital</h4>
+          <ul class="footer-links">
+            <li><a href="functional-skills-english-level-2.html">English Level 2 Revision</a></li>
+            <li><a href="functional-skills-english-level-1.html">English Level 1 Revision</a></li>
+            <li><a href="digital-functional-skills.html">Digital Skills Hub (L1 &amp; E3)</a></li>
+            <li><a href="digital-functional-skills-past-papers.html">DFS Past Papers &amp; Data Files</a></li>
+            <li><a href="functional-skills-past-papers.html?format=online#mock-finder">Online Exam Simulator</a></li>
+            <li><a href="exam-english-l2.html">Book Level 2 English Exam</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Student Support &amp; Tools</h4>
+          <ul class="footer-links">
+            <li><a href="tools.html" style="color:var(--accent); font-weight:700;"><i class="fa-solid fa-screwdriver-wrench" style="margin-right:6px;"></i>All Interactive Tools Hub</a></li>
+            <li><a href="pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="diagnostic-test.html">Diagnostic Skill Checker</a></li>
+            <li><a href="functional-skills-nets.html">3D Net Folding Tool</a></li>
+            <li><a href="digital-functional-skills-mock-exam.html">Pearson DFS Simulator</a></li>
+            <li><a href="revision-cards.html">Revision Cards &amp; Flashcards</a></li>
+            <li><a href="shop.html">Revision Books &amp; Study Packs</a></li>
+            <li><a href="tutors.html">1-to-1 Specialist Tuition</a></li>
+            <li><a href="exams.html">Book Official Online Exam</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Master Functional Skills. All rights reserved. Registered in England &amp; Wales. Ofqual Regulated Qualification Standards.</div>
+        <div style="display:flex; gap:16px; flex-wrap:wrap;">
+          <a href="index.html">Home</a>
+          <a href="tools.html" style="color:var(--accent); font-weight:700;">Tools</a>
+          <a href="functional-skills-past-papers.html">Past Papers</a>
+          <a href="revision-cards.html">Revision Cards</a>
+          <a href="shop.html">Study Shop</a>
+          <a href="tutors.html">Tutors</a>
+          <a href="contact-us.html">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/mfs-revision.js"></script>
+</body>
+</html>

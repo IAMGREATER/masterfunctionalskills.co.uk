@@ -1,0 +1,62 @@
+<svg viewBox="0 0 540 240" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:540px; height:auto; font-family:'Plus Jakarta Sans', system-ui, sans-serif;">
+  <rect x="2" y="2" width="536" height="236" rx="14" fill="#ffffff" stroke="#bae6fd" stroke-width="2"/>
+  
+  <rect x="18" y="14" width="240" height="26" rx="13" fill="#e0f2fe"/>
+  <text x="28" y="32" font-size="12" font-weight="800" fill="#0369a1">✎ VISUAL MODEL: PLACE VALUE</text>
+  <text x="270" y="32" font-size="13" font-weight="700" fill="#0f172a">Partitioning: 3,485,270</text>
+
+  <!-- 7 Place value columns -->
+  <!-- Col 1: Millions -->
+  <rect x="20" y="52" width="70" height="42" fill="#0284c7"/>
+  <text x="55" y="70" font-size="10" font-weight="700" fill="#bae6fd" text-anchor="middle">MILLIONS</text>
+  <text x="55" y="86" font-size="11" font-weight="800" fill="#ffffff" text-anchor="middle">1,000,000</text>
+  <rect x="20" y="96" width="70" height="52" fill="#f0f9ff" stroke="#bae6fd"/>
+  <text x="55" y="132" font-size="28" font-weight="800" fill="#0369a1" text-anchor="middle">3</text>
+
+  <!-- Col 2: H-Th -->
+  <rect x="92" y="52" width="70" height="42" fill="#0284c7"/>
+  <text x="127" y="70" font-size="10" font-weight="700" fill="#bae6fd" text-anchor="middle">HND THOU</text>
+  <text x="127" y="86" font-size="11" font-weight="800" fill="#ffffff" text-anchor="middle">100,000</text>
+  <rect x="92" y="96" width="70" height="52" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="127" y="132" font-size="28" font-weight="800" fill="#0f172a" text-anchor="middle">4</text>
+
+  <!-- Col 3: T-Th -->
+  <rect x="164" y="52" width="70" height="42" fill="#0284c7"/>
+  <text x="199" y="70" font-size="10" font-weight="700" fill="#bae6fd" text-anchor="middle">TEN THOU</text>
+  <text x="199" y="86" font-size="11" font-weight="800" fill="#ffffff" text-anchor="middle">10,000</text>
+  <rect x="164" y="96" width="70" height="52" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="199" y="132" font-size="28" font-weight="800" fill="#0f172a" text-anchor="middle">8</text>
+
+  <!-- Col 4: Th -->
+  <rect x="236" y="52" width="70" height="42" fill="#0284c7"/>
+  <text x="271" y="70" font-size="10" font-weight="700" fill="#bae6fd" text-anchor="middle">THOUSANDS</text>
+  <text x="271" y="86" font-size="11" font-weight="800" fill="#ffffff" text-anchor="middle">1,000</text>
+  <rect x="236" y="96" width="70" height="52" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="271" y="132" font-size="28" font-weight="800" fill="#0f172a" text-anchor="middle">5</text>
+
+  <!-- Col 5: H -->
+  <rect x="308" y="52" width="70" height="42" fill="#0369a1"/>
+  <text x="343" y="70" font-size="10" font-weight="700" fill="#bae6fd" text-anchor="middle">HUNDREDS</text>
+  <text x="343" y="86" font-size="11" font-weight="800" fill="#ffffff" text-anchor="middle">100</text>
+  <rect x="308" y="96" width="70" height="52" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="343" y="132" font-size="28" font-weight="800" fill="#0f172a" text-anchor="middle">2</text>
+
+  <!-- Col 6: T -->
+  <rect x="380" y="52" width="70" height="42" fill="#0369a1"/>
+  <text x="415" y="70" font-size="10" font-weight="700" fill="#bae6fd" text-anchor="middle">TENS</text>
+  <text x="415" y="86" font-size="11" font-weight="800" fill="#ffffff" text-anchor="middle">10</text>
+  <rect x="380" y="96" width="70" height="52" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="415" y="132" font-size="28" font-weight="800" fill="#0f172a" text-anchor="middle">7</text>
+
+  <!-- Col 7: U -->
+  <rect x="452" y="52" width="68" height="42" fill="#0369a1"/>
+  <text x="486" y="70" font-size="10" font-weight="700" fill="#bae6fd" text-anchor="middle">UNITS</text>
+  <text x="486" y="86" font-size="11" font-weight="800" fill="#ffffff" text-anchor="middle">1</text>
+  <rect x="452" y="96" width="68" height="52" fill="#ffffff" stroke="#cbd5e1"/>
+  <text x="486" y="132" font-size="28" font-weight="800" fill="#0f172a" text-anchor="middle">0</text>
+
+  <!-- Breakdown text footer -->
+  <rect x="20" y="160" width="500" height="64" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="35" y="182" font-size="12" font-weight="700" fill="#0369a1">Value of the digit 4: 4 × 100,000 = 400,000 (Four hundred thousand)</text>
+  <text x="35" y="204" font-size="11" fill="#475569">Word form: Three million, four hundred and eighty-five thousand, two hundred and seventy.</text>
+</svg>

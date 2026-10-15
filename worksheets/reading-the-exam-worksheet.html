@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Master Functional Skills — Reading Exam Strategy, Command Words & Verification Worksheet (Level 1 & Level 2)</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 12mm 15mm 12mm 15mm;
+    }
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #0f172a;
+      background: #f8fafc;
+      margin: 0;
+      padding: 0;
+      font-size: 11pt;
+      line-height: 1.5;
+    }
+    .print-bar {
+      background: #0b172d;
+      color: #f8fafc;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    }
+    .print-bar a {
+      color: #93c5fd;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .print-bar a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+    .btn-action-print {
+      background: #2563eb;
+      color: #ffffff;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s;
+    }
+    .btn-action-print:hover {
+      background: #1d4ed8;
+    }
+    .btn-action-answers {
+      background: #059669;
+      color: #ffffff;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-right: 12px;
+    }
+    .btn-action-answers:hover {
+      background: #047857;
+    }
+
+    @media print {
+      .print-bar {
+        display: none !important;
+      }
+      body {
+        background: #ffffff !important;
+      }
+      .page-sheet {
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+      }
+      .q-card {
+        page-break-inside: avoid;
+      }
+    }
+
+    .page-sheet {
+      max-width: 860px;
+      margin: 24px auto;
+      background: #ffffff;
+      padding: 32px 40px;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+    .sheet-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 2.5px solid #0b172d;
+      padding-bottom: 16px;
+      margin-bottom: 20px;
+    }
+    .brand-title {
+      font-size: 1.45rem;
+      font-weight: 900;
+      color: #0b172d;
+      letter-spacing: -0.5px;
+    }
+    .brand-title span {
+      color: #2563eb;
+    }
+    .brand-subtitle {
+      font-size: 0.88rem;
+      color: #64748b;
+      margin-top: 2px;
+      font-weight: 500;
+    }
+    .sheet-meta-badge {
+      background: #eff6ff;
+      border: 1.5px solid #bfdbfe;
+      color: #1e40af;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-align: right;
+    }
+    .sheet-meta-badge .topic-name {
+      font-size: 1.15rem;
+      font-weight: 800;
+      display: block;
+    }
+    .sheet-meta-badge .spec-tag {
+      font-size: 0.78rem;
+      color: #3b82f6;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .learner-bar {
+      display: grid;
+      grid-template-columns: 2.5fr 1.5fr 1fr;
+      gap: 16px;
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 10px 16px;
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+    }
+    .learner-bar-item strong {
+      color: #0b172d;
+    }
+    .dotted-line {
+      display: inline-block;
+      width: 65%;
+      border-bottom: 1.5px dotted #94a3b8;
+      height: 12px;
+      margin-left: 6px;
+    }
+
+    .recall-banner {
+      background: #fffbeb;
+      border-left: 4px solid #f59e0b;
+      border-radius: 4px;
+      padding: 10px 14px;
+      margin-bottom: 24px;
+      font-size: 0.92rem;
+      color: #78350f;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .recall-banner i {
+      font-size: 1.1rem;
+      margin-top: 2px;
+      color: #d97706;
+    }
+
+    .tier-header {
+      background: #f1f5f9;
+      border-left: 4px solid #2563eb;
+      padding: 6px 12px;
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: #0b172d;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin: 24px 0 16px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .tier-header .tier-marks {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #2563eb;
+      background: #ffffff;
+      padding: 2px 8px;
+      border-radius: 4px;
+      border: 1px solid #cbd5e1;
+    }
+
+    .q-card {
+      border: 1.5px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 18px 20px;
+      margin-bottom: 22px;
+      background: #ffffff;
+    }
+    .q-card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+    .q-title {
+      font-weight: 800;
+      color: #0b172d;
+      font-size: 1rem;
+    }
+    .q-marks {
+      font-weight: 700;
+      color: #2563eb;
+      font-size: 0.88rem;
+      background: #eff6ff;
+      padding: 3px 10px;
+      border-radius: 4px;
+      border: 1px solid #bfdbfe;
+    }
+    .q-stem {
+      font-size: 1.02rem;
+      color: #0f172a;
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+
+    .q-diagram-wrap {
+      text-align: center;
+      margin: 14px 0;
+      padding: 10px;
+      background: #faf8f2;
+      border: 1px dashed #cbd5e1;
+      border-radius: 6px;
+    }
+    .q-diagram-wrap svg {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .q-working-area {
+      margin: 14px 0;
+      background: #ffffff;
+    }
+    .working-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #64748b;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .working-lines-box {
+      border: 1px solid #e2e8f0;
+      border-radius: 4px;
+      background: #ffffff;
+      padding: 0 10px;
+    }
+    .working-line {
+      height: 24px;
+      border-bottom: 1px dashed #e2e8f0;
+    }
+    .working-line:last-child {
+      border-bottom: none;
+    }
+
+    .q-answer-row {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px 12px;
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid #e2e8f0;
+    }
+    .q-answer-label {
+      font-weight: 700;
+      color: #0b172d;
+      font-size: 0.95rem;
+    }
+    .q-answer-sublabel {
+      font-weight: 600;
+      color: #1e293b;
+      font-size: 0.9rem;
+    }
+    .q-unit-prefix, .q-unit-suffix {
+      font-weight: 700;
+      color: #0b172d;
+      font-size: 1.05rem;
+    }
+    .q-item-sep {
+      color: #cbd5e1;
+      font-weight: 400;
+      margin: 0 4px;
+    }
+    .q-answer-separator {
+      font-weight: 600;
+      color: #64748b;
+      font-size: 1.05rem;
+    }
+    .q-choice-pills {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      background: #f8fafc;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #334155;
+    }
+    .pills-title {
+      color: #64748b;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .pill-opt {
+      padding: 2px 6px;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 4px;
+      color: #0f172a;
+    }
+    .q-workspace-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 6px;
+      color: #1d4ed8;
+      font-weight: 600;
+      font-size: 0.88rem;
+    }
+    .q-answer-input-box {
+      border: 2px solid #0b172d;
+      border-radius: 5px;
+      background: #ffffff;
+      height: 38px;
+      min-width: 140px;
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .q-answer-input-box.xs { min-width: 65px; }
+    .q-answer-input-box.sm { min-width: 105px; }
+    .q-answer-input-box.md { min-width: 160px; }
+    .q-answer-input-box.lg { min-width: 240px; }
+    .q-answer-row-multiline {
+      width: 100%;
+      display: flex;
+      align-items: flex-end;
+      gap: 12px;
+    }
+    .q-answer-line-fill {
+      flex: 1;
+      height: 28px;
+      border-bottom: 2px solid #0b172d;
+    }
+
+    .sheet-footer {
+      border-top: 1px solid #e2e8f0;
+      padding-top: 14px;
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      color: #94a3b8;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="print-bar">
+    <a href="../reading-the-exam.html"><i class="fa-solid fa-arrow-left"></i> Back to Reading Exam Strategy, Command Words & Verification Revision Guide</a>
+    <div>
+      <a href="reading-the-exam-workout.html" class="btn-action-answers" style="background:#2563eb;"><i class="fa-solid fa-repeat"></i> Switch to Skill Workout</a>
+      <a href="reading-the-exam-answers.html" class="btn-action-answers"><i class="fa-solid fa-check-double"></i> View Tutor Mark Scheme</a>
+      <button type="button" class="btn-action-print" onclick="window.print()"><i class="fa-solid fa-print"></i> Print / Save to PDF</button>
+    </div>
+  </div>
+
+  <div class="page-sheet">
+    <div class="sheet-head">
+      <div>
+        <div class="brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
+        <div class="brand-subtitle">Ofqual Regulated Standards • English Reading Curriculum</div>
+      </div>
+      <div class="sheet-meta-badge">
+        <span class="topic-name">Reading Exam Strategy, Command Words & Verification</span>
+        <span class="spec-tag">Pearson Edexcel: L1.9–L1.16 • L2.10–L2.18</span>
+      </div>
+    </div>
+
+    <div class="learner-bar">
+      <div class="learner-bar-item"><strong>Learner:</strong> <span class="dotted-line"></span></div>
+      <div class="learner-bar-item"><strong>Date:</strong> <span class="dotted-line"></span></div>
+      <div class="learner-bar-item" style="text-align:right;"><strong>Score:</strong> _____ / 18</div>
+    </div>
+
+    <div class="recall-banner">
+      <i class="fa-solid fa-lightbulb"></i>
+      <div>
+        <strong>Examiner Rule for Reading Exam Strategy, Command Words & Verification:</strong> Read the question stem FIRST before reading the passage. Underline the target text ('Using Text A...'), the command verb ('Identify', 'Replace', 'Explain', 'Compare'), any exclusion traps ('Apart from...'), and the mark tariff (1 mark = 1 point; 3 marks = 3 distinct points or Name + Quote + Effect).
+      </div>
+    </div>
+
+
+    <!-- Section A: Foundational Concept Check -->
+    <div class="tier-header">
+      <span>Section A: Foundational Concept Check</span>
+      <span class="tier-marks">Questions 1 & 2 • 4 Marks</span>
+    </div>
+
+    <div class="q-card">
+      <div class="q-card-head">
+        <span class="q-title">Question 1 (Level 1 Avoiding the 'Apart From' Exclusion Trap)</span>
+        <span class="q-marks">[2 Marks]</span>
+      </div>
+      <div class="q-stem">
+        Read this extract from Text A (Allotment Rules):<br><em>'Plot holders are strictly prohibited from lighting bonfires before 6:00 p.m., keeping cockerels on site, erecting fences higher than 1.2 metres, or using hosepipes during July and August.'</em><br><br>Exam Question: <strong>Apart from keeping cockerels on site, identify two things plot holders are prohibited from doing. [2 Marks]</strong><br>Write a full 2-mark answer, and explain why writing <em>'Keeping cockerels'</em> scores 0.
+      </div>
+      <div class="q-working-area">
+        <div class="working-label">Show your full working out here:</div>
+        <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+        </div>
+      </div>
+      <div class="q-answer-row">
+        <span class="q-answer-label">Two Prohibited Actions & Rule =</span>
+        1: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> 2: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Why 'cockerels' scores 0: <div class="q-answer-input-box sm"></div>
+      </div>
+    </div>
+
+    <div class="q-card">
+      <div class="q-card-head">
+        <span class="q-title">Question 2 (Level 1 Spotting 'NOT True / FALSE' Qualifier Traps)</span>
+        <span class="q-marks">[2 Marks]</span>
+      </div>
+      <div class="q-stem">
+        Read this extract from a clinic notice:<br><em>'Walk-in blood tests run Monday to Thursday from 08:00 to 11:30. Patients aged under 16 must book a scheduled paediatric slot on Fridays. Fasting patients should drink plain water only.'</em><br><br>Which <strong>ONE</strong> of the following statements is <strong>FALSE</strong> according to the extract, and explain why:<br><strong>A.</strong> Walk-in blood tests finish at 11:30 on Wednesdays.<br><strong>B.</strong> Fasting patients are allowed to drink plain water.<br><strong>C.</strong> A 14-year-old can attend the Tuesday morning walk-in clinic.<br><strong>D.</strong> There is no walk-in blood test clinic on Fridays.
+      </div>
+      <div class="q-working-area">
+        <div class="working-label">Show your full working out here:</div>
+        <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+        </div>
+      </div>
+      <div class="q-answer-row">
+        <span class="q-answer-label">False Option & Text Proof =</span>
+        False Statement (A / B / C / D): <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Proof from text: <div class="q-answer-input-box sm"></div>
+      </div>
+    </div>
+
+    <!-- Section B: Functional Workplace Application -->
+    <div class="tier-header">
+      <span>Section B: Functional Workplace Application</span>
+      <span class="tier-marks">Questions 3 & 4 • 6 Marks</span>
+    </div>
+
+    <div class="q-card">
+      <div class="q-card-head">
+        <span class="q-title">Question 3 (Level 1/2 The 'Goldilocks' Quotation Precision Rule)</span>
+        <span class="q-marks">[3 Marks]</span>
+      </div>
+      <div class="q-stem">
+        Read this extract from a council report:<br><em>'Following the installation of 14 speed cameras along ring-road junctions in March, serious collisions fell by 48% and average vehicle speeds dropped to 29 mph.'</em><br><br>Exam Question: <strong>Give one quotation from the text that shows the speed cameras reduced accidents. [1 Mark]</strong><br>Evaluate why Candidate A (who wrote <em>'48%'</em>) and Candidate B (who copied the entire 25-word sentence) both risk losing the mark, and write the ideal exact quotation.
+      </div>
+      <div class="q-working-area">
+        <div class="working-label">Show your full working out here:</div>
+        <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+        </div>
+      </div>
+      <div class="q-answer-row">
+        <span class="q-answer-label">Evaluation & Ideal Quote =</span>
+        Why A fails: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Why B fails: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Ideal Quote: <div class="q-answer-input-box sm"></div>
+      </div>
+    </div>
+
+    <div class="q-card">
+      <div class="q-card-head">
+        <span class="q-title">Question 4 (Level 2 Using ONLY Text Evidence vs Personal Knowledge)</span>
+        <span class="q-marks">[3 Marks]</span>
+      </div>
+      <div class="q-stem">
+        Read this extract from Text B (Catering Kitchen Hygiene):<br><em>'To prevent cross-contamination, chefs must use red chopping boards for raw meat and blue chopping boards for raw fish. All boards must be sanitised in the commercial dishwasher at 82°C.'</em><br><br>Exam Question: <strong>According to Text B, give two ways chefs prevent cross-contamination in the kitchen. [2 Marks]</strong><br>A catering student writes: <em>'1. Wash hands with antibacterial soap for 20 seconds. 2. Tie long hair back under a hairnet.'</em><br>Explain why this student scored <strong>0 marks</strong>, and write the correct 2-mark answer.
+      </div>
+      <div class="q-working-area">
+        <div class="working-label">Show your full working out here:</div>
+        <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+        </div>
+      </div>
+      <div class="q-answer-row">
+        <span class="q-answer-label">Reason for 0 Marks & Correct Answer =</span>
+        Why 0 marks: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Correct 1: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Correct 2: <div class="q-answer-input-box sm"></div>
+      </div>
+    </div>
+
+    <!-- Section C: Pearson Edexcel Exam-Style Analysis & Evaluation -->
+    <div class="tier-header">
+      <span>Section C: Pearson Edexcel Exam-Style Analysis & Evaluation</span>
+      <span class="tier-marks">Questions 5 & 6 • 8 Marks</span>
+    </div>
+
+    <div class="q-card">
+      <div class="q-card-head">
+        <span class="q-title">Question 5 (Level 2 Multi-Condition Eligibility Checking Question)</span>
+        <span class="q-marks">[4 Marks]</span>
+      </div>
+      <div class="q-stem">
+        Read this extract from Text C (Apprentice Travel Grant Scheme):<br><em>'To qualify for the £500 Annual Bus Pass Grant, applicants must: (1) be aged between 16 and 24 on 1st September, (2) live more than 3 miles from their training college, (3) earn under £16,000 per year before tax, and (4) submit a signed employer attendance letter by 15th October.'</em><br><br>Your friend Chloe says: <em>'I turned 24 in August, I live 4.5 miles from college, and my apprenticeship wage is £14,200 a year — so I can send in my form on 20th October and get the £500 grant!'</em><br>Using Text C, evaluate whether Chloe will receive the grant. Check <strong>all four conditions</strong> in your answer.
+      </div>
+      <div class="q-working-area">
+        <div class="working-label">Show your full working out here:</div>
+        <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+        </div>
+      </div>
+      <div class="q-answer-row">
+        <span class="q-answer-label">Four-Point Eligibility Audit =</span>
+        Verdict (Yes/No): <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Met Conditions: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Failed Condition: <div class="q-answer-input-box sm"></div>
+      </div>
+    </div>
+
+    <div class="q-card">
+      <div class="q-card-head">
+        <span class="q-title">Question 6 (Level 2 Matching Answer Depth to Mark Tariffs — 1 vs 3 Marks)</span>
+        <span class="q-marks">[4 Marks]</span>
+      </div>
+      <div class="q-stem">
+        Read this extract from a campaign leaflet:<br><em>'Every year, 250,000 tonnes of edible supermarket food are dumped into landfill while families go hungry. Sign our Zero-Waste Petition today!'</em><br><br>Compare how you must answer these two different exam questions on the extract:<br>• <strong>Question A [1 Mark]:</strong> <em>How many tonnes of edible supermarket food are dumped into landfill each year?</em><br>• <strong>Question B [3 Marks]:</strong> <em>Explain how the writer uses language to persuade the reader to sign the petition.</em><br><br>Write the full model answer for <strong>both</strong> Question A and Question B, and explain why Question B requires three distinct components.
+      </div>
+      <div class="q-working-area">
+        <div class="working-label">Show your full working out here:</div>
+        <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+        </div>
+      </div>
+      <div class="q-answer-row">
+        <span class="q-answer-label">Model Answers for Q.A and Q.B =</span>
+        Q.A Answer [1m]: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Q.B Answer [3m] (Technique + Quote + Effect): <div class="q-answer-input-box sm"></div>
+      </div>
+    </div>
+
+
+    <div class="sheet-footer">
+      <div>Master Functional Skills • Pearson Edexcel Curriculum Aligned • 100% Original IP</div>
+      <div>Page 1 of 1 • Rev 2026.1</div>
+    </div>
+  </div>
+</body>
+</html>

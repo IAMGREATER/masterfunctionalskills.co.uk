@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Master Functional Skills — Averages (Mean, Median, Mode) & Range Answer Key & Mark Scheme (Level 1 & Level 2)</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 12mm 15mm 12mm 15mm;
+    }
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #0f172a;
+      background: #f0fdf4;
+      margin: 0;
+      padding: 0;
+      font-size: 11pt;
+      line-height: 1.5;
+    }
+    .print-bar {
+      background: #064e3b;
+      color: #f8fafc;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    }
+    .print-bar a {
+      color: #a7f3d0;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .print-bar a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+    .btn-action-print {
+      background: #10b981;
+      color: #ffffff;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s;
+    }
+    .btn-action-print:hover {
+      background: #059669;
+    }
+    .btn-action-sheet {
+      background: #2563eb;
+      color: #ffffff;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-right: 12px;
+    }
+    .btn-action-sheet:hover {
+      background: #1d4ed8;
+    }
+
+    @media print {
+      .print-bar {
+        display: none !important;
+      }
+      body {
+        background: #ffffff !important;
+      }
+      .page-sheet {
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+      }
+      .ans-card {
+        page-break-inside: avoid;
+      }
+    }
+
+    .page-sheet {
+      max-width: 860px;
+      margin: 24px auto;
+      background: #ffffff;
+      padding: 32px 40px;
+      border-radius: 8px;
+      border: 1px solid #bbf7d0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+    .sheet-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 2.5px solid #064e3b;
+      padding-bottom: 16px;
+      margin-bottom: 20px;
+    }
+    .brand-title {
+      font-size: 1.45rem;
+      font-weight: 900;
+      color: #064e3b;
+      letter-spacing: -0.5px;
+    }
+    .brand-title span {
+      color: #10b981;
+    }
+    .brand-subtitle {
+      font-size: 0.88rem;
+      color: #047857;
+      margin-top: 2px;
+      font-weight: 600;
+    }
+    .sheet-meta-badge {
+      background: #ecfdf5;
+      border: 1.5px solid #a7f3d0;
+      color: #065f46;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-align: right;
+    }
+    .sheet-meta-badge .topic-name {
+      font-size: 1.15rem;
+      font-weight: 800;
+      display: block;
+    }
+    .sheet-meta-badge .spec-tag {
+      font-size: 0.78rem;
+      color: #059669;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .scheme-summary-bar {
+      background: #f0fdf4;
+      border: 1px solid #86efac;
+      border-radius: 6px;
+      padding: 12px 18px;
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.95rem;
+      color: #065f46;
+    }
+
+    .tier-divider {
+      background: #f0fdf4;
+      border-left: 4px solid #059669;
+      padding: 6px 12px;
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: #064e3b;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin: 24px 0 16px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .ans-card {
+      border: 1.5px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 18px 20px;
+      margin-bottom: 24px;
+      background: #ffffff;
+    }
+    .ans-card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+    .ans-q-num {
+      font-weight: 800;
+      color: #064e3b;
+      font-size: 1.05rem;
+    }
+    .ans-marks-badge {
+      font-weight: 700;
+      color: #047857;
+      background: #ecfdf5;
+      padding: 3px 10px;
+      border-radius: 4px;
+      border: 1px solid #a7f3d0;
+      font-size: 0.88rem;
+    }
+    .ans-stem-quote {
+      font-size: 0.94rem;
+      color: #475569;
+      background: #f8fafc;
+      border-left: 3px solid #cbd5e1;
+      padding: 8px 12px;
+      margin-bottom: 14px;
+      font-style: italic;
+    }
+
+    .mark-steps-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 14px 16px;
+      margin-bottom: 14px;
+    }
+    .step-title {
+      font-weight: 800;
+      color: #0f172a;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .step-row {
+      margin-bottom: 8px;
+      line-height: 1.6;
+      font-size: 0.98rem;
+      color: #1e293b;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 1px dashed #f1f5f9;
+      padding-bottom: 6px;
+    }
+    .step-row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+    .mark-code {
+      font-weight: 800;
+      color: #2563eb;
+      font-family: monospace;
+      font-size: 0.9rem;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      padding: 1px 6px;
+      border-radius: 4px;
+      white-space: nowrap;
+      margin-left: 12px;
+    }
+
+    .final-award-box {
+      background: #ecfdf5;
+      border: 1.5px solid #10b981;
+      border-radius: 6px;
+      padding: 10px 16px;
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .award-label {
+      font-weight: 800;
+      color: #065f46;
+      font-size: 0.92rem;
+    }
+    .award-val {
+      font-weight: 900;
+      color: #047857;
+      font-size: 1.15rem;
+      font-family: monospace;
+      text-decoration: underline;
+    }
+
+    .pitfall-box {
+      background: #fffbeb;
+      border-left: 4px solid #f59e0b;
+      border-radius: 4px;
+      padding: 10px 14px;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+      color: #92400e;
+      line-height: 1.5;
+    }
+    .pitfall-box strong {
+      color: #b45309;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .alt-method-box {
+      background: #eff6ff;
+      border-left: 4px solid #3b82f6;
+      border-radius: 4px;
+      padding: 8px 12px;
+      margin-bottom: 10px;
+      font-size: 0.88rem;
+      color: #1e40af;
+      line-height: 1.5;
+    }
+
+    .reverse-check-box {
+      background: #fdf4ff;
+      border-left: 4px solid #c084fc;
+      border-radius: 4px;
+      padding: 8px 12px;
+      font-size: 0.88rem;
+      color: #6b21a8;
+      line-height: 1.5;
+    }
+
+    .sheet-footer {
+      border-top: 1px solid #e2e8f0;
+      padding-top: 14px;
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      color: #94a3b8;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="print-bar">
+    <a href="../functional-skills-mean-median-mode-and-range.html"><i class="fa-solid fa-arrow-left"></i> Back to Averages (Mean, Median, Mode) & Range Revision Guide</a>
+    <div>
+      <a href="mean-median-mode-and-range-workout-answers.html" class="btn-action-answers" style="background:#2563eb;"><i class="fa-solid fa-repeat"></i> Workout Answers</a>
+      <a href="mean-median-mode-and-range-worksheet.html" class="btn-action-sheet"><i class="fa-solid fa-file-pen"></i> Open Exam Worksheet</a>
+      <button type="button" class="btn-action-print" onclick="window.print()"><i class="fa-solid fa-print"></i> Print / Save to PDF</button>
+    </div>
+  </div>
+
+  <div class="page-sheet">
+    <div class="sheet-head">
+      <div>
+        <div class="brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
+        <div class="brand-subtitle">Official Tutor Examiner Mark Scheme &amp; Model Solutions</div>
+      </div>
+      <div class="sheet-meta-badge">
+        <span class="topic-name">Averages (Mean, Median, Mode) & Range</span>
+        <span class="spec-tag">Pearson Edexcel: Pearson Edexcel L1 & L2 Mathematics</span>
+      </div>
+    </div>
+
+    <div class="scheme-summary-bar">
+      <div><strong>Total Marks Available:</strong> 18 Marks (Pass Threshold: ~11/18)</div>
+      <div><strong>Examiner Standard:</strong> Full Method (M) and Process (P) marks awarded even if final arithmetic errs.</div>
+    </div>
+
+
+    <div class="tier-divider">
+      <span>Section A: Procedural Fluency Check Solutions</span>
+      <span>Questions 1 & 2 • 4 Marks</span>
+    </div>
+
+    <div class="ans-card">
+      <div class="ans-card-head">
+        <span class="ans-q-num">Question 1 (Calculating Median & Range of an Even Data Set) Model Solution</span>
+        <span class="ans-marks-badge">[2 Marks Total]</span>
+      </div>
+      <div class="ans-stem-quote">
+        Six outpatient physiotherapy sessions lasted the following times (in minutes):<br><strong>28, 42, 35, 24, 39, 48</strong><br>Calculate the <strong>median</strong> session duration and the <strong>range</strong>.
+      </div>
+      <div class="mark-steps-box">
+        <div class="step-title">Step-by-Step Marking Criteria:</div>
+
+        <div class="step-row">
+          <span>1. Order data (24, 28, 35, 39, 42, 48) → Median is average of 35 and 39 = 37 mins</span>
+          <span class="mark-code">[M1]</span>
+        </div>
+        <div class="step-row">
+          <span>2. Range = Highest (48) - Lowest (24) = 24 mins</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+      </div>
+      <div class="final-award-box">
+        <span class="award-label">Award Final Answer Mark:</span>
+        <span class="award-val">Median = 37 mins, Range = 24 mins</span>
+      </div>
+      <div class="pitfall-box">
+        <strong>⚠️ Examiner Trap Alert:</strong>
+        Finding the middle of the unordered list (35 and 24) without sorting first.
+      </div>
+      <div class="reverse-check-box">
+        <strong>🔄 Reverse Sanity Check:</strong> 37 is halfway between 35 and 39; 24 + 24 = 48.
+      </div>
+    </div>
+
+    <div class="ans-card">
+      <div class="ans-card-head">
+        <span class="ans-q-num">Question 2 (Level 1 Foundation — 3 Marks) Model Solution</span>
+        <span class="ans-marks-badge">[2 Marks Total]</span>
+      </div>
+      <div class="ans-stem-quote">
+        Find the median, mode, and range for these 8 daily parcel deliveries: <strong>14, 18, 12, 14, 22, 19, 14, 16</strong>.
+      </div>
+      <div class="mark-steps-box">
+        <div class="step-title">Step-by-Step Marking Criteria:</div>
+
+        <div class="step-row">
+          <span>1. Ordered: 12, 14, 14, 14, 16, 18, 19, 22.</span>
+          <span class="mark-code">[M1]</span>
+        </div>
+        <div class="step-row">
+          <span>2. Median (4th & 5th values: 14 and 16): (14 + 16) ÷ 2 = 15.</span>
+          <span class="mark-code">[M1]</span>
+        </div>
+        <div class="step-row">
+          <span>3. Mode (most frequent) = 14.</span>
+          <span class="mark-code">[M1]</span>
+        </div>
+        <div class="step-row">
+          <span>4. Range = 22 − 12 = 10.</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+      </div>
+      <div class="final-award-box">
+        <span class="award-label">Award Final Answer Mark:</span>
+        <span class="award-val">Median = 15, Mode = 14, Range = 10</span>
+      </div>
+      <div class="pitfall-box">
+        <strong>⚠️ Examiner Trap Alert:</strong>
+        Selecting 55 or 38 from the raw unsorted list instead of sorting from smallest to largest first forfeits all median marks.
+      </div>
+      <div class="reverse-check-box">
+        <strong>🔄 Reverse Sanity Check:</strong> For 8 numbers, average the 4th and 5th ordered values for the median.
+      </div>
+    </div>
+
+    <div class="tier-divider">
+      <span>Section B: Workplace & Functional Scenarios Solutions</span>
+      <span>Questions 3 & 4 • 6 Marks</span>
+    </div>
+
+    <div class="ans-card">
+      <div class="ans-card-head">
+        <span class="ans-q-num">Question 3 (Paramedic Crew Response Time Audit (Level 1 Foundation)) Model Solution</span>
+        <span class="ans-marks-badge">[3 Marks Total]</span>
+      </div>
+      <div class="ans-stem-quote">
+        An ambulance station logs response times (in minutes) for <strong>7 emergency calls</strong>:<br><strong>8, 12, 7, 15, 8, 11, 9</strong><br>(a) Find the mode.<br>(b) Find the median.<br>(c) Calculate the mean and the range.
+      </div>
+      <div class="mark-steps-box">
+        <div class="step-title">Step-by-Step Marking Criteria:</div>
+
+        <div class="step-row">
+          <span>1. Identify the mode and sort data in ascending order: Ordered list: 7, 8, 8, 9, 11, 12, 15. | Mode (most frequent) = 8 minutes.</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+        <div class="step-row">
+          <span>2. Extract the middle (4th) value for the median: The 4th value in the ordered list of 7 numbers is 9 minutes.</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+        <div class="step-row">
+          <span>3. Calculate Mean (Sum ÷ 7) and Range (High − Low): Sum = 7 + 8 + 8 + 9 + 11 + 12 + 15 = 70. | Mean = 70 ÷ 7 = 10 minutes. | Range = 15 − 7 = 8 minutes.</span>
+          <span class="mark-code">[M1 / A1]</span>
+        </div>
+      </div>
+      <div class="final-award-box">
+        <span class="award-label">Award Final Answer Mark:</span>
+        <span class="award-val">(a) Mode = 8 mins | (b) Median = 9 mins | (c) Mean = 10 mins, Range = 8 mins</span>
+      </div>
+      <div class="pitfall-box">
+        <strong>⚠️ Examiner Trap Alert:</strong>
+        Always write "Ordered:" and tick off each number as you rewrite it.
+      </div>
+      <div class="reverse-check-box">
+        <strong>🔄 Reverse Sanity Check:</strong> Always write your ordered list down and count that you still have all 7 numbers before picking the middle value!
+      </div>
+    </div>
+
+    <div class="ans-card">
+      <div class="ans-card-head">
+        <span class="ans-q-num">Question 4 (Workplace Application — 3 Marks) Model Solution</span>
+        <span class="ans-marks-badge">[3 Marks Total]</span>
+      </div>
+      <div class="ans-stem-quote">
+        A student needs a <strong>mean score of 75 marks</strong> across <strong>5 mock tests</strong> to qualify for an award. Their first 4 test scores are <strong>72, 68, 81, and 74</strong>. Calculate the score they must achieve on the 5th test.
+      </div>
+      <div class="mark-steps-box">
+        <div class="step-title">Step-by-Step Marking Criteria:</div>
+
+        <div class="step-row">
+          <span>1. Required total across 5 tests = 5 × 75 = 375 marks.</span>
+          <span class="mark-code">[M1]</span>
+        </div>
+        <div class="step-row">
+          <span>2. Sum of first 4 tests = 72 + 68 + 81 + 74 = 295 marks.</span>
+          <span class="mark-code">[P1]</span>
+        </div>
+        <div class="step-row">
+          <span>3. Required 5th test score = 375 − 295 = 80 marks.</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+      </div>
+      <div class="final-award-box">
+        <span class="award-label">Award Final Answer Mark:</span>
+        <span class="award-val">80 marks</span>
+      </div>
+      <div class="pitfall-box">
+        <strong>⚠️ Examiner Trap Alert:</strong>
+        The range measures SPREAD (consistency), not average performance.
+      </div>
+      <div class="reverse-check-box">
+        <strong>🔄 Reverse Sanity Check:</strong> Use Total = Mean × Count (75 × 5 = 375) and subtract the known 4 scores.
+      </div>
+    </div>
+
+    <div class="tier-divider">
+      <span>Section C: Pearson Edexcel Problem Solving & Justification Solutions</span>
+      <span>Questions 5 & 6 • 8 Marks</span>
+    </div>
+
+    <div class="ans-card">
+      <div class="ans-card-head">
+        <span class="ans-q-num">Question 5 (Hospital Emergency A&E Triage Waiting Times Comparison (Level 2 Multi-Step)) Model Solution</span>
+        <span class="ans-marks-badge">[4 Marks Total]</span>
+      </div>
+      <div class="ans-stem-quote">
+        A hospital trust records the waiting times in minutes for <strong>6 triage patients</strong> on Monday and compares them with Tuesday’s summary:<br>• Monday: <strong>45, 62, 38, 55, 70, 42</strong><br>• Tuesday Summary: <strong>Mean = 48 minutes, Range = 15 minutes</strong>.<br>Calculate the mean and range for Monday, and write two comparative statements comparing waiting times on Monday and Tuesday.
+      </div>
+      <div class="mark-steps-box">
+        <div class="step-title">Step-by-Step Marking Criteria:</div>
+
+        <div class="step-row">
+          <span>1. Calculate Monday Mean (Sum ÷ 6): Sum = 45 + 62 + 38 + 55 + 70 + 42 = 312 minutes. | Mean = 312 ÷ 6 = 52 minutes.</span>
+          <span class="mark-code">[M1]</span>
+        </div>
+        <div class="step-row">
+          <span>2. Calculate Monday Range (Highest − Lowest): Range = 70 − 38 = 32 minutes.</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+        <div class="step-row">
+          <span>3. Statement 1 — Compare Averages in Context: Tuesday had a lower mean waiting time than Monday (48 mins vs 52 mins), so patients waited less time on average on Tuesday.</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+        <div class="step-row">
+          <span>4. Statement 2 — Compare Consistency using Range: Tuesday had a smaller range than Monday (15 mins vs 32 mins), meaning waiting times on Tuesday were much more consistent.</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+      </div>
+      <div class="final-award-box">
+        <span class="award-label">Award Final Answer Mark:</span>
+        <span class="award-val">Monday Mean = 52 mins, Range = 32 mins. Tuesday had shorter average waits (48 vs 52 mins) and more consistent wait times (range 15 vs 32 mins).</span>
+      </div>
+      <div class="pitfall-box">
+        <strong>⚠️ Examiner Trap Alert:</strong>
+        Never write "The average range was..."; write "The range was..., showing greater consistency."
+      </div>
+      <div class="reverse-check-box">
+        <strong>🔄 Reverse Sanity Check:</strong> Smaller range ALWAYS means MORE CONSISTENT. Cite the actual numbers (52 vs 48 and 32 vs 15) in your sentences.
+      </div>
+    </div>
+
+    <div class="ans-card">
+      <div class="ans-card-head">
+        <span class="ans-q-num">Question 6 (Level 2 Multi-Step Problem Solving — 3 Marks) Model Solution</span>
+        <span class="ans-marks-badge">[4 Marks Total]</span>
+      </div>
+      <div class="ans-stem-quote">
+        A clinic employs 4 receptionists earning <strong>£21,000, £22,000, £22,000, and £23,000</strong>, plus 1 consultant surgeon earning <strong>£112,000</strong>.<br>(a) Calculate the mean salary and the median salary of the 5 staff.<br>(b) Explain which average is fairer to represent a typical worker at the clinic.
+      </div>
+      <div class="mark-steps-box">
+        <div class="step-title">Step-by-Step Marking Criteria:</div>
+
+        <div class="step-row">
+          <span>1. Total salary = 21,000 + 22,000 + 22,000 + 23,000 + 112,000 = £200,000. Mean = £200,000 ÷ 5 = £40,000.</span>
+          <span class="mark-code">[M1]</span>
+        </div>
+        <div class="step-row">
+          <span>2. Median (3rd ordered value) = £22,000.</span>
+          <span class="mark-code">[P1]</span>
+        </div>
+        <div class="step-row">
+          <span>3. The median (£22,000) is fairer because the mean (£40,000) is heavily skewed upward by the consultant’s £112,000 outlier salary.</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+      </div>
+      <div class="final-award-box">
+        <span class="award-label">Award Final Answer Mark:</span>
+        <span class="award-val">(a) Mean = £40,000, Median = £22,000 | (b) Median, as it is not distorted by the £112,000 outlier</span>
+      </div>
+      <div class="pitfall-box">
+        <strong>⚠️ Examiner Trap Alert:</strong>
+        Stating a conclusion without showing the full numerical comparison values.
+      </div>
+      <div class="reverse-check-box">
+        <strong>🔄 Reverse Sanity Check:</strong> Whenever there is an extreme outlier, the median is the best average to choose.
+      </div>
+    </div>
+
+
+    <div class="sheet-footer">
+      <div>Master Functional Skills • Pearson Edexcel Official Marking Guide • 100% Original Content</div>
+      <div>Page 1 of 1 • Rev 2026.1</div>
+    </div>
+  </div>
+</body>
+</html>

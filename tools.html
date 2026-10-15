@@ -1,0 +1,1184 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-theme="sapphire" data-tint="cream">
+<head>
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="alternate icon" href="favicon.ico">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Interactive Functional Skills Tools, Simulators &amp; Calculators | Master Functional Skills</title>
+  <meta name="description" content="Free interactive Functional Skills learning tools: Pass Mark & Grade Boundary Calculator, Diagnostic Skill Checker, NetFold 3D Lab, Pearson DFS Exam Simulator, and Instant Mock Finder.">
+  <link rel="stylesheet" href="assets/css/mfs-theme.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    /* TOOLS HUB SPECIFIC STYLES */
+    .tools-hero {
+      background: linear-gradient(180deg, rgba(239, 246, 255, 0.7) 0%, rgba(250, 248, 242, 1) 100%);
+      padding: 48px 0 36px;
+      border-bottom: 1px solid var(--border);
+      position: relative;
+    }
+    .tools-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 16px;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #1d4ed8;
+      margin-bottom: 16px;
+    }
+    .tools-hero h1 {
+      font-size: 2.5rem;
+      font-weight: 900;
+      color: var(--navy-dark);
+      letter-spacing: -0.02em;
+      line-height: 1.2;
+      margin-bottom: 14px;
+    }
+    .tools-hero h1 span {
+      color: var(--accent);
+    }
+    .tools-hero p.lead {
+      font-size: 1.12rem;
+      color: var(--text-secondary);
+      max-width: 820px;
+      line-height: 1.6;
+      margin-bottom: 24px;
+    }
+    .tools-trust-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 18px;
+    }
+    .trust-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 0.84rem;
+      font-weight: 600;
+      color: var(--navy);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.04);
+    }
+    .trust-pill i {
+      color: var(--accent);
+    }
+
+    /* CONTROLS BAR: SEARCH & CATEGORIES */
+    .tools-controls-bar {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 16px 20px;
+      margin: -24px auto 36px;
+      box-shadow: 0 10px 25px -5px rgba(11, 21, 40, 0.06);
+      position: relative;
+      z-index: 5;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .tools-search-wrap {
+      position: relative;
+      width: 100%;
+    }
+    .tools-search-input {
+      width: 100%;
+      padding: 14px 18px 14px 46px;
+      border-radius: 12px;
+      border: 1.5px solid var(--border);
+      background: #faf8f2;
+      font-size: 0.98rem;
+      font-family: inherit;
+      color: var(--text-primary);
+      transition: all 0.2s ease;
+    }
+    .tools-search-input:focus {
+      outline: none;
+      border-color: var(--accent);
+      background: #ffffff;
+      box-shadow: 0 0 0 3px var(--accent-glow);
+    }
+    .tools-search-icon {
+      position: absolute;
+      left: 16px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--text-muted);
+      font-size: 1.1rem;
+      pointer-events: none;
+    }
+    .tools-clear-btn {
+      position: absolute;
+      right: 14px;
+      top: 50%;
+      transform: translateY(-50%);
+      background: transparent;
+      border: none;
+      color: var(--text-muted);
+      cursor: pointer;
+      font-size: 1rem;
+      display: none;
+      padding: 4px 8px;
+    }
+
+    .tools-filters-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .filter-pills-list {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .filter-pill-btn {
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 7px 14px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.18s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .filter-pill-btn:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+      background: #ffffff;
+    }
+    .filter-pill-btn.active {
+      background: var(--navy-dark);
+      color: #ffffff;
+      border-color: var(--navy-dark);
+      box-shadow: 0 4px 12px rgba(11, 23, 45, 0.2);
+    }
+    .tools-counter {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+
+    /* TILES GRID */
+    .tools-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+      gap: 28px;
+      margin-bottom: 60px;
+    }
+    @media (max-width: 768px) {
+      .tools-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .tools-hero h1 {
+        font-size: 2rem;
+      }
+    }
+
+    /* TOOL TILE CARD */
+    .tool-tile {
+      background: #ffffff;
+      border: 1.5px solid var(--border);
+      border-radius: 20px;
+      padding: 30px 28px 24px;
+      box-shadow: 0 8px 24px rgba(11, 21, 40, 0.05);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      transition: transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s ease;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      overflow: hidden;
+    }
+    .tool-tile::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      height: 4px;
+      background: transparent;
+      transition: background 0.25s ease;
+    }
+    .tool-tile:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 38px -6px rgba(11, 21, 40, 0.12);
+      border-color: var(--accent);
+    }
+    .tool-tile:hover::before {
+      background: var(--accent);
+    }
+    .tool-tile:focus-visible {
+      outline: 3px solid var(--accent);
+      outline-offset: 3px;
+    }
+
+    /* TILE TOP ROW */
+    .tool-tile-top {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .tool-icon-box {
+      width: 58px;
+      height: 58px;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.6rem;
+      flex-shrink: 0;
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.08);
+      transition: transform 0.25s ease;
+    }
+    .tool-tile:hover .tool-icon-box {
+      transform: scale(1.06);
+    }
+    .tool-status-pill {
+      font-size: 0.72rem;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+    .pill-live {
+      background: #ecfdf5;
+      color: #059669;
+      border: 1px solid #a7f3d0;
+    }
+    .pill-live::before {
+      content: '';
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #10b981;
+      display: inline-block;
+      box-shadow: 0 0 6px #10b981;
+    }
+    .pill-webgl {
+      background: #eff6ff;
+      color: #0284c7;
+      border: 1px solid #bae6fd;
+    }
+    .pill-sim {
+      background: #f5f3ff;
+      color: #7c3aed;
+      border: 1px solid #ddd6fe;
+    }
+    .pill-papers {
+      background: #fffbeb;
+      color: #b45309;
+      border: 1px solid #fde68a;
+    }
+    .pill-dev {
+      background: #fef3c7;
+      color: #92400e;
+      border: 1px solid #fde68a;
+    }
+
+    /* TILE CONTENT */
+    .tool-tile-body {
+      flex-grow: 1;
+    }
+    .tool-tile-category {
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent);
+      margin-bottom: 6px;
+      display: block;
+    }
+    .tool-tile-title {
+      font-size: 1.32rem;
+      font-weight: 800;
+      color: var(--navy-dark);
+      line-height: 1.3;
+      margin-bottom: 12px;
+      transition: color 0.15s ease;
+    }
+    .tool-tile:hover .tool-tile-title {
+      color: var(--accent);
+    }
+    .tool-tile-desc {
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.55;
+      margin-bottom: 18px;
+    }
+
+    /* BULLET HIGHLIGHTS */
+    .tool-features-list {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 22px 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      border-top: 1px solid var(--border-light);
+      padding-top: 16px;
+    }
+    .tool-features-list li {
+      font-size: 0.86rem;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: flex-start;
+      gap: 9px;
+      line-height: 1.45;
+    }
+    .tool-features-list li i {
+      color: #10b981;
+      font-size: 0.9rem;
+      margin-top: 2px;
+      flex-shrink: 0;
+    }
+
+    /* ACTION BUTTON */
+    .tool-action-btn {
+      width: 100%;
+      background: var(--navy-dark);
+      color: #ffffff;
+      font-family: var(--font-heading);
+      font-size: 0.92rem;
+      font-weight: 700;
+      padding: 12px 20px;
+      border-radius: 12px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      transition: all 0.2s ease;
+      text-decoration: none;
+      border: none;
+      cursor: pointer;
+    }
+    .tool-tile:hover .tool-action-btn {
+      background: var(--accent);
+      box-shadow: 0 6px 18px rgba(37, 99, 235, 0.35);
+      color: #ffffff;
+    }
+    .tool-action-btn i {
+      transition: transform 0.2s ease;
+    }
+    .tool-tile:hover .tool-action-btn i {
+      transform: translateX(4px);
+    }
+
+    /* DEEP LINKS BAR */
+    .tool-sublinks {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 14px;
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--border-light);
+      font-size: 0.8rem;
+    }
+    .tool-sublink-item {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      transition: color 0.15s ease;
+    }
+    .tool-sublink-item:hover {
+      text-decoration: underline;
+      color: var(--accent-hover);
+    }
+
+    /* NO RESULTS MSG */
+    .tools-no-results {
+      display: none;
+      text-align: center;
+      padding: 60px 20px;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      margin-bottom: 60px;
+    }
+    .tools-no-results i {
+      font-size: 2.8rem;
+      color: var(--text-muted);
+      margin-bottom: 14px;
+    }
+    .tools-no-results h3 {
+      font-size: 1.3rem;
+      margin-bottom: 6px;
+    }
+
+    /* BENEFITS GRID */
+    .tools-benefits-section {
+      padding: 56px 0;
+      background: #f8fafc;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 60px;
+    }
+    .benefit-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 24px;
+      box-shadow: 0 4px 14px rgba(11, 21, 40, 0.04);
+    }
+    .benefit-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 10px;
+      background: #eff6ff;
+      color: var(--accent);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.25rem;
+      margin-bottom: 14px;
+    }
+    .benefit-card h4 {
+      font-size: 1.05rem;
+      font-weight: 800;
+      margin-bottom: 8px;
+      color: var(--navy-dark);
+    }
+    .benefit-card p {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      margin: 0;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP TRUST BAR WITH ACCESSIBILITY & CONTACT -->
+  <div class="mfs-top-bar">
+    <div class="mfs-container mfs-top-bar-inner">
+      <div class="top-trust-items">
+        <span class="top-trust-item"><i class="fa-solid fa-building-columns"></i> Pearson Edexcel &amp; City &amp; Guilds Aligned</span>
+      </div>
+      <div class="top-contacts">
+        <div class="mfs-access-bar">
+          <!-- DYSLEXIA BACKGROUND TINT PICKER -->
+          <div class="mfs-tint-dropdown-wrap">
+            <button type="button" id="tintToggle" class="btn-tint-toggle" onclick="toggleTintMenu(event)" title="Change dyslexia background tint">
+              <span class="tint-swatch-indicator" id="tintCurrentSwatch"></span>
+              <span id="tintLabel">Cream Tint</span>
+              <i class="fa-solid fa-chevron-down" style="font-size:0.62rem; opacity:0.75; margin-left:2px;"></i>
+            </button>
+            <div id="tintMenu" class="tint-picker-menu">
+              <div class="tint-picker-title"><i class="fa-solid fa-glasses"></i> Dyslexia Reading Tint</div>
+              <button type="button" class="tint-option-btn active" data-tint="cream" onclick="setSiteTint('cream', event)">
+                <span class="swatch swatch-cream"></span>
+                <span class="tint-name">Cream <small class="tint-badge-def">Default</small></span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="peach" onclick="setSiteTint('peach', event)">
+                <span class="swatch swatch-peach"></span>
+                <span class="tint-name">Soft Peach</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="cool" onclick="setSiteTint('cool', event)">
+                <span class="swatch swatch-cool"></span>
+                <span class="tint-name">Cool Mist</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="sage" onclick="setSiteTint('sage', event)">
+                <span class="swatch swatch-sage"></span>
+                <span class="tint-name">Soft Sage</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <div class="tint-divider"></div>
+              <button type="button" class="tint-option-btn" data-tint="none" onclick="setSiteTint('none', event)">
+                <span class="swatch swatch-none"></span>
+                <span class="tint-name">No Tint (White)</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+            </div>
+          </div>
+          <button id="dyslexiaToggle" class="btn-dyslexia-toggle" onclick="toggleDyslexiaMode()" title="Toggle Dyslexia High-Readability Mode">
+            <i class="fa-solid fa-universal-access"></i> Dyslexia
+          </button>
+          <button id="themeToggle" class="mfs-theme-pill" onclick="toggleTheme()" title="Switch Palette: Sapphire vs Emerald">
+            <i class="fa-solid fa-palette"></i> <span id="themeLabel">Sapphire</span>
+          </button>
+        </div>
+        <a href="contact-us.html" class="top-contact-link"><i class="fa-solid fa-envelope"></i> <strong>Contact Us</strong></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN NAVIGATION -->
+                                  <header class="mfs-navbar">
+    <div class="revision-page-wrapper mfs-navbar-inner">
+      <a href="index.html" class="mfs-brand">
+        <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div class="mfs-brand-text">
+          <div class="mfs-brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
+          <div class="mfs-brand-subtitle">Delivering Skills • Achieving Goals</div>
+        </div>
+      </a>
+
+      <nav class="mfs-nav-wrapper">
+        <ul class="mfs-nav-menu">
+          <!-- 1. SUBJECTS (VISUAL MEGA-MENU) -->
+          <li class="mfs-nav-item">
+            <a href="courses.html" class="mfs-nav-link">
+              <i class="fa-solid fa-book-open-reader" style="color:#0284c7; margin-right:5px;"></i> Subjects <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-revision-hub">
+              <div class="mfs-revision-grid">
+                <!-- Maths Column -->
+                <div class="mfs-revision-col mfs-revision-col-maths">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-calculator"></i> Maths Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="functional-skills-maths-level-2.html" class="mfs-dropdown-item">Maths Level 2</a>
+                    <a href="functional-skills-maths-level-1.html" class="mfs-dropdown-item">Maths Level 1</a>
+                    <a href="entry-level-3-maths.html" class="mfs-dropdown-item">Entry Level 3 Maths</a>
+                  </div>
+                </div>
+                <!-- English Column -->
+                <div class="mfs-revision-col mfs-revision-col-english">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-pen-nib"></i> English Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="functional-skills-english-level-2.html" class="mfs-dropdown-item">English Level 2</a>
+                    <a href="functional-skills-english-level-1.html" class="mfs-dropdown-item">English Level 1</a>
+                  </div>
+                </div>
+                <!-- Digital Skills Column -->
+                <div class="mfs-revision-col mfs-revision-col-digital">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-laptop-code"></i> Digital Skills</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="digital-functional-skills.html" class="mfs-dropdown-item">Digital Skills Hub</a>
+                    <a href="digital-functional-skills-mock-exam.html" class="mfs-dropdown-item">Pearson Mock Exam</a>
+                    <a href="digital-functional-skills-past-papers.html" class="mfs-dropdown-item">Past Papers &amp; Files</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- 2. PAST PAPERS & MOCKS (DIRECT ACCESS) -->
+          <li class="mfs-nav-item">
+            <a href="functional-skills-past-papers.html" class="mfs-nav-link">
+              <i class="fa-regular fa-file-lines" style="color:#0284c7; margin-right:5px;"></i> Past Papers &amp; Mocks
+            </a>
+          </li>
+
+          <!-- 2b. WORKSHEETS DIRECTORY (CORBETT STYLE DUAL ENGINE) -->
+          <li class="mfs-nav-item">
+            <a href="worksheets.html" class="mfs-nav-link">
+              <i class="fa-solid fa-layer-group" style="color:#0284c7; margin-right:5px;"></i> Worksheets Hub
+            </a>
+          </li>
+
+          <!-- 3. FREE TOOLS (COMPACT DROPDOWN) -->
+          <li class="mfs-nav-item">
+            <a href="tools.html" class="mfs-nav-link">
+              <i class="fa-solid fa-screwdriver-wrench" style="color:#0284c7; margin-right:5px;"></i> Free Tools <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-compact">
+              <a href="tools.html" class="mfs-dropdown-item" style="font-weight:700; color:var(--accent);"><i class="fa-solid fa-layer-group" style="font-size:0.85rem; margin-right:6px;"></i> All Free Tools &amp; Simulators &rarr;</a>
+              <div class="mfs-dropdown-divider" style="margin:4px 0; border-top:1px solid #e2e8f0;"></div>
+              <a href="pass-mark-calculator.html" class="mfs-dropdown-item"><i class="fa-solid fa-calculator" style="color:var(--accent); font-size:0.85rem; margin-right:6px;"></i> Pass Mark Calculator</a>
+              <a href="diagnostic-test.html" class="mfs-dropdown-item"><i class="fa-solid fa-chart-pie" style="color:#059669; font-size:0.85rem; margin-right:6px;"></i> Diagnostic Skill Checker</a>
+              <a href="functional-skills-nets.html" class="mfs-dropdown-item"><i class="fa-solid fa-cube" style="color:#0284c7; font-size:0.85rem; margin-right:6px;"></i> 3D Net Folding Tool</a>
+            </div>
+          </li>
+
+          <!-- 4. REVISION CARDS -->
+          <li class="mfs-nav-item">
+            <a href="revision-cards.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-layer-group" style="color:#d97706; margin-right:5px;"></i> Revision Cards
+            </a>
+          </li>
+
+          <!-- 5. SHOP -->
+          <li class="mfs-nav-item">
+            <a href="shop.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-basket-shopping" style="color:#d97706; margin-right:5px;"></i> Shop
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- 6. BOOK EXAM ACTION BUTTON -->
+      <div class="mfs-nav-actions">
+        <a href="exams.html" class="btn-nav-exam">
+          <i class="fa-solid fa-calendar-check"></i> Book Exam
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="tools-hero">
+    <div class="mfs-container">
+      <div style="font-size:0.82rem; color:var(--text-muted); margin-bottom:12px;">
+        <a href="index.html" style="color:var(--accent); text-decoration:none;">Home</a> &gt; <span>Interactive Revision Tools &amp; Simulators</span>
+      </div>
+
+      <div class="tools-hero-badge">
+        <i class="fa-solid fa-wand-magic-sparkles"></i> 100% Free Interactive Suite &bull; No Sign-Up Required
+      </div>
+
+      <h1>Interactive Functional Skills <span>Tools &amp; Simulators</span></h1>
+      <p class="lead">
+        Purpose-built digital utilities designed specifically for UK adult learners, apprentices, and specialist tutors. Calculate official exam board pass thresholds, manipulate 3D shapes in real-time WebGL, take diagnostic assessments, and practice in an authentic onscreen test simulator.
+      </p>
+
+      <div class="tools-trust-pills">
+        <span class="trust-pill"><i class="fa-solid fa-circle-check"></i> 6 Dedicated Specialist Tools</span>
+        <span class="trust-pill"><i class="fa-solid fa-award"></i> Pearson Edexcel, C&amp;G &amp; Ofqual Aligned</span>
+        <span class="trust-pill"><i class="fa-solid fa-bolt"></i> Instant In-Browser Execution</span>
+        <span class="trust-pill"><i class="fa-solid fa-glasses"></i> Dyslexia Tints &amp; Readability First</span>
+        <span class="trust-pill"><i class="fa-solid fa-mobile-screen"></i> Works on Phones, Tablets &amp; Desktop</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN TOOLS CONTENT -->
+  <main class="mfs-container" style="padding-top:20px;">
+
+    <!-- SEARCH & CATEGORY CONTROLS BAR -->
+    <div class="tools-controls-bar">
+      <div class="tools-search-wrap">
+        <i class="fa-solid fa-magnifying-glass tools-search-icon"></i>
+        <input type="text" id="toolSearchInput" class="tools-search-input" placeholder="Search tools by name, topic, or keyword (e.g. calculator, 3D nets, Pearson mock, diagnostic, BKSB)..." oninput="filterTools()" autocomplete="off">
+        <button type="button" id="toolClearBtn" class="tools-clear-btn" onclick="clearToolSearch()" title="Clear search"><i class="fa-solid fa-xmark"></i></button>
+      </div>
+
+      <div class="tools-filters-row">
+        <div class="filter-pills-list" id="filterPills">
+          <button type="button" class="filter-pill-btn active" data-category="all" onclick="setCategoryFilter('all')">
+            <i class="fa-solid fa-grid-2"></i> All Tools <span style="opacity:0.75;">(6)</span>
+          </button>
+          <button type="button" class="filter-pill-btn" data-category="calc" onclick="setCategoryFilter('calc')">
+            <i class="fa-solid fa-calculator"></i> Calculators &amp; Boundaries
+          </button>
+          <button type="button" class="filter-pill-btn" data-category="diag" onclick="setCategoryFilter('diag')">
+            <i class="fa-solid fa-chart-pie"></i> Diagnostic Checks
+          </button>
+          <button type="button" class="filter-pill-btn" data-category="sim" onclick="setCategoryFilter('sim')">
+            <i class="fa-solid fa-cube"></i> Simulators &amp; 3D WebGL
+          </button>
+          <button type="button" class="filter-pill-btn" data-category="papers" onclick="setCategoryFilter('papers')">
+            <i class="fa-solid fa-bolt"></i> Mock Finder
+          </button>
+          <button type="button" class="filter-pill-btn" data-category="tutor" onclick="setCategoryFilter('tutor')">
+            <i class="fa-solid fa-arrows-split-up-and-left"></i> Tutor Bridge
+          </button>
+        </div>
+        <div class="tools-counter" id="toolsCountDisplay">
+          Showing <strong>6 of 6</strong> tools
+        </div>
+      </div>
+    </div>
+
+    <!-- TILED TOOLS GRID -->
+    <div class="tools-grid" id="toolsGrid">
+
+      <!-- TILE 1: PASS MARK CALCULATOR -->
+      <a href="pass-mark-calculator.html" class="tool-tile" data-category="calc" data-keywords="calculator grade boundaries pass mark edexcel city guilds open awards ncfe aqa percentage score marks needed non calculator section a section b maths english level 1 level 2">
+        <div>
+          <div class="tool-tile-top">
+            <div class="tool-icon-box" style="background:linear-gradient(135deg, #eff6ff 0%, #dbeafe 100%); color:#2563eb;">
+              <i class="fa-solid fa-calculator"></i>
+            </div>
+            <span class="tool-status-pill pill-live">Live Tool</span>
+          </div>
+
+          <div class="tool-tile-body">
+            <span class="tool-tile-category">Calculators &amp; Boundaries</span>
+            <h2 class="tool-tile-title">Pass Mark &amp; Grade Boundary Calculator</h2>
+            <p class="tool-tile-desc">
+              Calculate your exact mock exam outcome against official exam board grade boundaries. Input your raw scores to test pass/fail cutoffs, check Section A vs Section B weightings, and forecast how many marks you need to pass.
+            </p>
+
+            <ul class="tool-features-list">
+              <li><i class="fa-solid fa-circle-check"></i> <strong>All Major UK Boards:</strong> Pearson Edexcel, C&amp;G, Open Awards, NCFE &amp; AQA</li>
+              <li><i class="fa-solid fa-circle-check"></i> <strong>Section Weighting:</strong> Auto-combines Non-Calculator &amp; Calculator scores</li>
+              <li><i class="fa-solid fa-circle-check"></i> <strong>Maths &amp; English:</strong> Covers Level 1 &amp; Level 2 plus Reading &amp; Writing</li>
+              <li><i class="fa-solid fa-circle-check"></i> <strong>Target Gap Analysis:</strong> Indicates exact marks needed to clear pass boundary</li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <div class="tool-action-btn">
+            <span>Launch Pass Mark Calculator</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+
+          <div class="tool-sublinks">
+            <span class="tool-sublink-item" onclick="event.stopPropagation(); window.location='pass-mark-calculator.html#maths';"><i class="fa-solid fa-calculator"></i> Maths Boundaries</span>
+            <span class="tool-sublink-item" onclick="event.stopPropagation(); window.location='pass-mark-calculator.html#english';"><i class="fa-solid fa-pen-nib"></i> English Boundaries</span>
+            <span class="tool-sublink-item" onclick="event.stopPropagation(); window.location='pass-mark-calculator.html#boundaries';"><i class="fa-solid fa-table"></i> Cutoff Table</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- TILE 2: DIAGNOSTIC SKILL CHECKER -->
+      <a href="diagnostic-test.html" class="tool-tile" data-category="diag" data-keywords="diagnostic assessment skill checker skills gap check test quick check in depth evaluation maths english number fractions decimals percentages measures shape data handling spag workplace reading">
+        <div>
+          <div class="tool-tile-top">
+            <div class="tool-icon-box" style="background:linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%); color:#059669;">
+              <i class="fa-solid fa-chart-pie"></i>
+            </div>
+            <span class="tool-status-pill pill-live">Adaptive Test</span>
+          </div>
+
+          <div class="tool-tile-body">
+            <span class="tool-tile-category">Diagnostics &amp; Assessments</span>
+            <h2 class="tool-tile-title">Diagnostic Skill Checker &amp; Assessment</h2>
+            <p class="tool-tile-desc">
+              Uncover your exact learning gaps before beginning your revision. Choose between a fast 10-question screener or a comprehensive 30-question diagnostic featuring typed working-out evaluations and automatic topic reports.
+            </p>
+
+            <ul class="tool-features-list">
+              <li><i class="fa-solid fa-circle-check"></i> <strong>Dual Assessment Modes:</strong> Rapid 10-Q Screener or Full 30-Q Evaluation</li>
+              <li><i class="fa-solid fa-circle-check"></i> <strong>Full Curriculum Scope:</strong> Number, FDP, Measures &amp; Shape, Data Handling</li>
+              <li><i class="fa-solid fa-circle-check"></i> <strong>Interactive Working Out:</strong> Typed intermediate working steps &amp; SPaG check</li>
+              <li><i class="fa-solid fa-circle-check"></i> <strong>Instant Gap Report:</strong> Highlights specific topic masteries needing attention</li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <div class="tool-action-btn">
+            <span>Start Free Diagnostic Assessment</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+
+          <div class="tool-sublinks">
+            <span class="tool-sublink-item" onclick="event.stopPropagation(); window.location='diagnostic-test.html?mode=quick';"><i class="fa-solid fa-stopwatch"></i> Quick 10-Q Check</span>
+            <span class="tool-sublink-item" onclick="event.stopPropagation(); window.location='diagnostic-test.html?mode=full';"><i class="fa-solid fa-list-check"></i> Full 30-Q Diagnostic</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- TILE 3: NETFOLD 3D LAB -->
+      <a href="functional-skills-nets.html" class="tool-tile" data-category="sim" data-keywords="netfold 3d nets folding lab threejs webgl cube nets 11 valid nets shapes geometry cuboid prism pyramid cylinder packaging 3d spatial reasoning level 1 level 2 maths">
+        <div>
+          <div class="tool-tile-top">
+            <div class="tool-icon-box" style="background:linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%); color:#0284c7;">
+              <i class="fa-solid fa-cube"></i>
+            </div>
+            <span class="tool-status-pill pill-webgl">Interactive 3D</span>
+          </div>
+
+          <div class="tool-tile-body">
+            <span class="tool-tile-category">Simulators &amp; 3D WebGL</span>
+            <h2 class="tool-tile-title">NetFold 3D &mdash; 3D Nets &amp; Folding Lab</h2>
+            <p class="tool-tile-desc">
+              Master 3D spatial geometry and 2D nets in interactive WebGL. Fold, rotate, and unfold all 11 mathematically valid cube net arrangements, inspect opposite face pairings, and experience real-time collision detection on invalid nets.
+            </p>
+
+            <ul class="tool-features-list">
+              <li><i class="fa-solid fa-circle-check"></i> <strong>Real-Time 3D WebGL Engine:</strong> Smooth folding slider with 360&deg; orbital rotation</li>
+              <li><i class="fa-solid fa-circle-check"></i> <strong>All 11 Valid Cube Nets:</strong> Complete verified suite with opposite face matching</li>
+              <li><i class="fa-solid fa-circle-check"></i> <strong>Collision &amp; Overlap Detection:</strong> Visually demonstrates why invalid nets fail</li>
+              <li><i class="fa-solid fa-circle-check"></i> <strong>Packaging Shapes:</strong> Prisms, pyramids, cylinders &amp; cuboids for L1/L2 exams</li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <div class="tool-action-btn">
+            <span>Explore 3D Net Masterclass</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+
+          <div class="tool-sublinks">
+            <span class="tool-sublink-item" onclick="event.stopPropagation(); window.open('tools/netfolding/index.html', '_blank', 'noopener');"><i class="fa-solid fa-up-right-from-square"></i> Launch Fullscreen 3D Lab</span>
+            <span class="tool-sublink-item" onclick="event.stopPropagation(); window.location='functional-skills-nets.html#rules';"><i class="fa-solid fa-book-open"></i> The 11 Cube Nets Guide</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- TILE 4: PEARSON ONSCREEN TEST SIMULATOR -->
+      <a href="digital-functional-skills-mock-exam.html" class="tool-tile" data-category="sim" data-keywords="pearson onscreen test player simulator digital functional skills dfs mock exam online exam practice authentic exam environment computer based test l1 e3 timer flag for review summary grid">
+        <div>
+          <div class="tool-tile-top">
+            <div class="tool-icon-box" style="background:linear-gradient(135deg, #eff6ff 0%, #c7d2fe 100%); color:#4338ca;">
+              <i class="fa-solid fa-laptop-code"></i>
+            </div>
+            <span class="tool-status-pill pill-sim">Exam Replica</span>
+          </div>
+
+          <div class="tool-tile-body">
+            <span class="tool-tile-category">Simulators &amp; 3D WebGL</span>
+            <h2 class="tool-tile-title">Pearson Onscreen Test Player Simulator</h2>
+            <p class="tool-tile-desc">
+              Experience the authentic Pearson Edexcel onscreen test interface directly in your browser. Complete with screen-by-screen progression, grey question banners, answer widgets, live exam timer, flag-for-review, and auto-graded results.
+            </p>
+
+            <ul class="tool-features-list">
+              <li><i class="fa-solid fa-circle-check"></i> <strong>Official UI Replica:</strong> Realistic navigation header, progress banner &amp; exhibits</li>
+              <li><i class="fa-solid fa-circle-check"></i> <strong>Interactive Tasks:</strong> Multiple-choice, multi-select, typed numeric &amp; workplace drills</li>
+              <li><i class="fa-solid fa-circle-check"></i> <strong>Live Exam Conditions:</strong> 45-minute countdown timer with 'Flag for Review'</li>
+              <li><i class="fa-solid fa-circle-check"></i> <strong>Immediate Marking:</strong> Section review grid with instant diagnostic score report</li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <div class="tool-action-btn">
+            <span>Launch Pearson Exam Simulator</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+
+          <div class="tool-sublinks">
+            <span class="tool-sublink-item" onclick="event.stopPropagation(); window.location='digital-functional-skills-mock-exam.html';"><i class="fa-solid fa-desktop"></i> Level 1 DFS Mock</span>
+            <span class="tool-sublink-item" onclick="event.stopPropagation(); window.location='digital-functional-skills.html';"><i class="fa-solid fa-network-wired"></i> Digital Skills Hub</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- TILE 5: PAST PAPER & MOCK FINDER -->
+      <a href="functional-skills-past-papers.html#mock-finder" class="tool-tile" data-category="papers" data-keywords="mock finder past papers search engine filter edexcel city guilds open awards ncfe aqa highfield tquk maths english digital level 1 level 2 entry 3 online papers pdf mark schemes video solutions">
+        <div>
+          <div class="tool-tile-top">
+            <div class="tool-icon-box" style="background:linear-gradient(135deg, #fffbeb 0%, #fde68a 100%); color:#d97706;">
+              <i class="fa-solid fa-bolt"></i>
+            </div>
+            <span class="tool-status-pill pill-papers">500+ Papers</span>
+          </div>
+
+          <div class="tool-tile-body">
+            <span class="tool-tile-category">Mock Papers &amp; Finder</span>
+            <h2 class="tool-tile-title">Interactive Past Paper &amp; Mock Finder</h2>
+            <p class="tool-tile-desc">
+              The UK's most comprehensive Functional Skills exam finder. Filter through over 500 official past examination papers, mark schemes, and video model solutions across all awarding bodies, subjects, levels, and exam formats.
+            </p>
+
+            <ul class="tool-features-list">
+              <li><i class="fa-solid fa-circle-check"></i> <strong>Instant Multi-Facet Search:</strong> Filter by Exam Board, Subject, Level &amp; Year</li>
+              <li><i class="fa-solid fa-circle-check"></i> <strong>Online vs PDF Format:</strong> Toggle interactive onscreen mocks or paper packs</li>
+              <li><i class="fa-solid fa-circle-check"></i> <strong>All 7 Awarding Bodies:</strong> Edexcel, C&amp;G, Open Awards, NCFE, AQA, Highfield &amp; TQUK</li>
+              <li><i class="fa-solid fa-circle-check"></i> <strong>Complete Model Answers:</strong> Paired with official examiner marking keys</li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <div class="tool-action-btn">
+            <span>Find Past Papers &amp; Mocks</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+
+          <div class="tool-sublinks">
+            <span class="tool-sublink-item" onclick="event.stopPropagation(); window.location='edexcel-functional-skills-maths-level-2-past-papers.html';"><i class="fa-regular fa-file-lines"></i> Edexcel Maths L2 Papers</span>
+            <span class="tool-sublink-item" onclick="event.stopPropagation(); window.location='functional-skills-past-papers.html?format=online#mock-finder';"><i class="fa-solid fa-globe"></i> Online Mocks Only</span>
+          </div>
+        </div>
+      </a>
+
+      <!-- TILE 6: BKSB REMEDIATION BRIDGE -->
+      <a href="bksb-remediation.html" class="tool-tile" data-category="tutor" data-keywords="bksb remediation bridge oneadvanced error analysis diagnostic gaps retry sheets worked solutions college nhs trust apprenticeships tutor utility institutional pipeline">
+        <div>
+          <div class="tool-tile-top">
+            <div class="tool-icon-box" style="background:linear-gradient(135deg, #f5f3ff 0%, #ede9fe 100%); color:#7c3aed;">
+              <i class="fa-solid fa-arrows-split-up-and-left"></i>
+            </div>
+            <span class="tool-status-pill pill-dev">Tutor Pipeline</span>
+          </div>
+
+          <div class="tool-tile-body">
+            <span class="tool-tile-category">Tutor &amp; College Systems</span>
+            <h2 class="tool-tile-title">BKSB &amp; OneAdvanced Remediation Bridge</h2>
+            <p class="tool-tile-desc">
+              A specialized error-remediation pipeline designed for colleges, NHS trusts, apprenticeships, and tutors. Converts online diagnostic assessment errors from BKSB and OneAdvanced into targeted retry sheets and worked solutions.
+            </p>
+
+            <ul class="tool-features-list">
+              <li><i class="fa-solid fa-circle-check"></i> <strong>Automated Error Ingestion:</strong> Maps platform gaps to Ofqual subject criteria</li>
+              <li><i class="fa-solid fa-circle-check"></i> <strong>Two-Stage Delivery:</strong> Stage 1 blank student retry sheets; Stage 2 worked models</li>
+              <li><i class="fa-solid fa-circle-check"></i> <strong>Institutional Integration:</strong> Ready for NHS apprenticeship cohorts &amp; FE colleges</li>
+              <li><i class="fa-solid fa-circle-check"></i> <strong>Dyslexia-Friendly Layout:</strong> High-readability double-spaced printable formats</li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <div class="tool-action-btn">
+            <span>Explore Remediation Bridge</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+
+          <div class="tool-sublinks">
+            <span class="tool-sublink-item" onclick="event.stopPropagation(); window.location='bksb-remediation.html#how-it-works';"><i class="fa-solid fa-diagram-project"></i> Remediation Workflow</span>
+            <span class="tool-sublink-item" onclick="event.stopPropagation(); window.location='training-providers-and-employers.html';"><i class="fa-solid fa-building-columns"></i> College Pathways</span>
+          </div>
+        </div>
+      </a>
+
+    </div>
+
+    <!-- NO RESULTS FALLBACK -->
+    <div class="tools-no-results" id="toolsNoResults">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <h3>No interactive tools found matching your query</h3>
+      <p style="color:var(--text-muted); font-size:0.95rem; margin-bottom:16px;">Try adjusting your search terms or selecting 'All Tools' from the filters above.</p>
+      <button type="button" class="btn-hero-accent" onclick="resetToolFilters()"><i class="fa-solid fa-rotate-left"></i> Reset Search &amp; Filters</button>
+    </div>
+
+  </main>
+
+  <!-- BENEFITS & VALUE PROPOSITION -->
+  <section class="tools-benefits-section">
+    <div class="mfs-container">
+      <div style="text-align:center; max-width:760px; margin:0 auto 36px;">
+        <span style="color:var(--accent); font-weight:800; text-transform:uppercase; font-size:0.85rem; letter-spacing:0.06em;">Built For Student Success</span>
+        <h2 style="font-size:2rem; font-weight:800; color:var(--navy-dark); margin-top:6px; margin-bottom:12px;">Why Use Our Free Functional Skills Tools?</h2>
+        <p style="color:var(--text-secondary); font-size:1rem; line-height:1.6;">
+          Master Functional Skills develops innovative digital software specifically to demystify exam criteria and give every adult student the confidence to pass first time.
+        </p>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:22px;">
+        
+        <div class="benefit-card">
+          <div class="benefit-icon"><i class="fa-solid fa-lock-open"></i></div>
+          <h4>100% Free &amp; Open Access</h4>
+          <p>No credit card, subscriptions, or forced account registrations. Every learner in the UK can access every calculator, simulator, and test immediately.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon"><i class="fa-solid fa-certificate"></i></div>
+          <h4>Authentic Exam Fidelity</h4>
+          <p>Carefully calibrated against official Pearson Edexcel, City &amp; Guilds, and Ofqual specifications to mirror actual test conditions accurately.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon"><i class="fa-solid fa-glasses"></i></div>
+          <h4>Dyslexia &amp; SEN Accessible</h4>
+          <p>Includes customizable background colour tints, high-readability typography, high contrast, and keyboard-friendly controls for neurodivergent learners.</p>
+        </div>
+
+        <div class="benefit-card">
+          <div class="benefit-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+          <h4>Cross-Device Compatibility</h4>
+          <p>Optimized for full responsiveness across smartphones, touch tablets, Chromebooks, and desktop monitors with zero app downloads necessary.</p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- TUTOR & EXAM CALLOUT -->
+  <section class="mfs-container" style="margin-bottom:60px;">
+    <div style="background:linear-gradient(135deg, var(--navy-dark) 0%, #17325e 100%); border-radius:24px; padding:44px 36px; color:#ffffff; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:28px; box-shadow:0 18px 40px rgba(7, 13, 30, 0.18);">
+      <div style="max-width:680px;">
+        <span style="background:rgba(255, 255, 255, 0.15); color:#ffffff; font-size:0.8rem; font-weight:800; padding:4px 12px; border-radius:999px; text-transform:uppercase; letter-spacing:0.5px; display:inline-block; margin-bottom:12px;">Need Specialist 1-to-1 Support?</span>
+        <h2 style="font-size:1.85rem; font-weight:900; line-height:1.25; margin-bottom:12px; color:#ffffff;">Book Private Tuition or an Official Online Exam</h2>
+        <p style="font-size:0.95rem; color:#cbd5e1; line-height:1.6; margin:0;">
+          Work directly with specialist Functional Skills tutor Abdul and our expert team. Fast-track your qualification with bespoke 1-to-1 tuition, or sit your official Ofqual-regulated exam from home with invigilation and fast 14-day results.
+        </p>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:12px; min-width:240px;">
+        <a href="tutors.html" class="btn-hero-accent" style="text-align:center;"><i class="fa-solid fa-chalkboard-user"></i> Explore 1-to-1 Tuition</a>
+        <a href="functional-skills-exam.html" class="btn-hero-outline" style="background:rgba(255,255,255,0.08); border-color:rgba(255,255,255,0.3); color:#ffffff; text-align:center;"><i class="fa-solid fa-calendar-check"></i> Book Online Exam (£149)</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CANONICAL FOOTER -->  <!-- FOOTER -->
+  <footer class="mfs-footer" id="site-footer">
+    <div class="mfs-container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="mfs-brand" style="margin-bottom:16px;">
+            <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="mfs-brand-text">
+              <div class="mfs-brand-title" style="color:#ffffff;">MASTER<span>FUNCTIONALSKILLS</span></div>
+              <div class="mfs-brand-subtitle" style="color:#94a3b8;">Delivering Skills • Achieving Goals</div>
+            </div>
+          </div>
+          <p style="font-size:0.88rem; line-height:1.6; margin-bottom:16px;">
+            The UK's dedicated Functional Skills revision specialist. Providing realistic mock exams, step-by-step revision flashcards, diagnostic assessments, and 1-to-1 specialist tuition for Pearson Edexcel, City &amp; Guilds, and all major exam boards.
+          </p>
+          <div style="font-size:0.85rem; color:#cbd5e1;">
+            <p><a href="https://wa.me/447564525425" target="_blank" rel="noopener" style="color:#cbd5e1; text-decoration:none;"><i class="fa-brands fa-whatsapp" style="color:var(--accent); margin-right:8px;"></i> WhatsApp: +44 (0)7564 525425</a></p>
+            <p style="margin-top:6px;"><a href="contact-us.html" style="color:#cbd5e1; text-decoration:none;"><i class="fa-solid fa-envelope" style="color:var(--accent); margin-right:8px;"></i> Contact Tutor Team</a></p>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Maths Revision</h4>
+          <ul class="footer-links">
+            <li><a href="functional-skills-maths-level-2.html">Maths Level 2 Revision</a></li>
+            <li><a href="functional-skills-maths-level-1.html">Maths Level 1 Revision</a></li>
+            <li><a href="entry-level-3-maths.html">Entry Level 3 Maths</a></li>
+            <li><a href="pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="functional-skills-past-papers.html">Free Maths Past Papers</a></li>
+            <li><a href="exam-maths-l2.html">Book Level 2 Maths Exam</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>English &amp; Digital</h4>
+          <ul class="footer-links">
+            <li><a href="functional-skills-english-level-2.html">English Level 2 Revision</a></li>
+            <li><a href="functional-skills-english-level-1.html">English Level 1 Revision</a></li>
+            <li><a href="digital-functional-skills.html">Digital Skills Hub (L1 &amp; E3)</a></li>
+            <li><a href="digital-functional-skills-past-papers.html">DFS Past Papers &amp; Data Files</a></li>
+            <li><a href="functional-skills-past-papers.html?format=online#mock-finder">Online Exam Simulator</a></li>
+            <li><a href="exam-english-l2.html">Book Level 2 English Exam</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Student Support &amp; Tools</h4>
+          <ul class="footer-links">
+            <li><a href="tools.html" style="color:var(--accent); font-weight:700;"><i class="fa-solid fa-screwdriver-wrench" style="margin-right:6px;"></i>All Interactive Tools Hub</a></li>
+            <li><a href="pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="diagnostic-test.html">Diagnostic Skill Checker</a></li>
+            <li><a href="functional-skills-nets.html">3D Net Folding Tool</a></li>
+            <li><a href="digital-functional-skills-mock-exam.html">Pearson DFS Simulator</a></li>
+            <li><a href="revision-cards.html">Revision Cards &amp; Flashcards</a></li>
+            <li><a href="shop.html">Revision Books &amp; Study Packs</a></li>
+            <li><a href="tutors.html">1-to-1 Specialist Tuition</a></li>
+            <li><a href="exams.html">Book Official Online Exam</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Master Functional Skills. All rights reserved. Registered in England &amp; Wales. Ofqual Regulated Qualification Standards.</div>
+        <div style="display:flex; gap:16px; flex-wrap:wrap;">
+          <a href="index.html">Home</a>
+          <a href="tools.html" style="color:var(--accent); font-weight:700;">Tools</a>
+          <a href="functional-skills-past-papers.html">Past Papers</a>
+          <a href="revision-cards.html">Revision Cards</a>
+          <a href="shop.html">Study Shop</a>
+          <a href="tutors.html">Tutors</a>
+          <a href="contact-us.html">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- DYSLEXIA TINT ENGINE -->
+  <script src="assets/js/mfs-tint.js"></script>
+
+  <!-- ACCESSIBILITY, THEME & TOOLS FILTER ENGINE -->
+  <script>
+    /* DYSLEXIA & PALETTE TOGGLES */
+    function toggleDyslexiaMode() {
+      const isDys = document.body.classList.toggle('dyslexia-mode');
+      localStorage.setItem('mfs_dyslexia', isDys ? '1' : '0');
+      const btn = document.getElementById('dyslexiaToggle');
+      if (btn) btn.classList.toggle('active', isDys);
+    }
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme') || 'sapphire';
+      const next = current === 'emerald' ? 'sapphire' : 'emerald';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('mfs_theme', next);
+      const lbl = document.getElementById('themeLabel');
+      if (lbl) lbl.textContent = next === 'emerald' ? 'Emerald' : 'Sapphire';
+    }
+    (function() {
+      if (localStorage.getItem('mfs_dyslexia') === '1') {
+        document.body.classList.add('dyslexia-mode');
+        const btn = document.getElementById('dyslexiaToggle');
+        if (btn) btn.classList.add('active', true);
+      }
+      const th = localStorage.getItem('mfs_theme') || 'sapphire';
+      document.documentElement.setAttribute('data-theme', th);
+      const lbl = document.getElementById('themeLabel');
+      if (lbl) lbl.textContent = th === 'emerald' ? 'Emerald' : 'Sapphire';
+    })();
+
+    /* TOOLS CLIENT FILTERING & SEARCH */
+    let currentCategory = 'all';
+
+    function setCategoryFilter(category) {
+      currentCategory = category;
+      document.querySelectorAll('.filter-pill-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-category') === category);
+      });
+      filterTools();
+    }
+
+    function clearToolSearch() {
+      const input = document.getElementById('toolSearchInput');
+      if (input) {
+        input.value = '';
+        document.getElementById('toolClearBtn').style.display = 'none';
+        filterTools();
+        input.focus();
+      }
+    }
+
+    function resetToolFilters() {
+      const input = document.getElementById('toolSearchInput');
+      if (input) input.value = '';
+      document.getElementById('toolClearBtn').style.display = 'none';
+      setCategoryFilter('all');
+    }
+
+    function filterTools() {
+      const input = document.getElementById('toolSearchInput');
+      const query = input ? input.value.trim().toLowerCase() : '';
+      const clearBtn = document.getElementById('toolClearBtn');
+      if (clearBtn) clearBtn.style.display = query.length > 0 ? 'block' : 'none';
+
+      const tiles = document.querySelectorAll('.tool-tile');
+      let visibleCount = 0;
+
+      tiles.forEach(tile => {
+        const cat = tile.getAttribute('data-category');
+        const title = (tile.querySelector('.tool-tile-title')?.textContent || '').toLowerCase();
+        const desc = (tile.querySelector('.tool-tile-desc')?.textContent || '').toLowerCase();
+        const keywords = (tile.getAttribute('data-keywords') || '').toLowerCase();
+
+        const matchesCat = (currentCategory === 'all' || cat === currentCategory);
+        const matchesQuery = query === '' || title.includes(query) || desc.includes(query) || keywords.includes(query);
+
+        if (matchesCat && matchesQuery) {
+          tile.style.display = 'flex';
+          visibleCount++;
+        } else {
+          tile.style.display = 'none';
+        }
+      });
+
+      const countDisplay = document.getElementById('toolsCountDisplay');
+      if (countDisplay) {
+        countDisplay.innerHTML = `Showing <strong>${visibleCount} of ${tiles.length}</strong> tools`;
+      }
+
+      const noResults = document.getElementById('toolsNoResults');
+      if (noResults) {
+        noResults.style.display = visibleCount === 0 ? 'block' : 'none';
+      }
+    }
+  </script>
+</body>
+</html>

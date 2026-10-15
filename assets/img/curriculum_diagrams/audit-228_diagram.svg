@@ -1,0 +1,49 @@
+<svg viewBox="0 0 540 250" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:540px; height:auto; font-family:'Plus Jakarta Sans', system-ui, sans-serif;">
+  <rect x="2" y="2" width="536" height="246" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <rect x="16" y="12" width="300" height="24" rx="6" fill="#e0f2fe"/>
+  <text x="26" y="28" font-size="11" font-weight="800" fill="#0369a1">✎ WORDS IN CONTEXT &amp; VOCABULARY</text>
+  <text x="326" y="28" font-size="11" font-weight="700" fill="#475569">Context Clue Deduction Strategy</text>
+
+  <!-- 3 Strategy Steps -->
+  <!-- Step 1 -->
+  <rect x="16" y="46" width="160" height="188" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+  <rect x="16" y="46" width="160" height="28" rx="8" fill="#0284c7"/>
+  <text x="96" y="65" font-size="11" font-weight="800" fill="#ffffff" text-anchor="middle">1. SURROUNDING CLUES</text>
+  <text x="24" y="92" font-size="9.5" font-weight="700" fill="#0369a1">Look Before &amp; After:</text>
+  <text x="24" y="108" font-size="8.5" fill="#334155">Read the whole sentence</text>
+  <text x="24" y="122" font-size="8.5" fill="#334155">and adjoining sentences to</text>
+  <text x="24" y="136" font-size="8.5" fill="#334155">grasp the overall sense.</text>
+  <rect x="22" y="152" width="148" height="72" rx="4" fill="#ecfdf5" stroke="#a7f3d0"/>
+  <text x="26" y="168" font-size="8" font-weight="700" fill="#065f46">Exam Tip:</text>
+  <text x="26" y="182" font-size="8" fill="#047857">Look for conjunctions</text>
+  <text x="26" y="196" font-size="8" fill="#047857">like 'however' (opposite)</text>
+  <text x="26" y="210" font-size="8" fill="#047857">or 'also' (similar idea).</text>
+
+  <!-- Step 2 -->
+  <rect x="190" y="46" width="160" height="188" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+  <rect x="190" y="46" width="160" height="28" rx="8" fill="#0f172a"/>
+  <text x="270" y="65" font-size="11" font-weight="800" fill="#ffffff" text-anchor="middle">2. WORD MORPHOLOGY</text>
+  <text x="198" y="92" font-size="9.5" font-weight="700" fill="#0284c7">Break the Word Apart:</text>
+  <text x="198" y="108" font-size="8.5" fill="#334155">• Prefix: re- (again), un- (not)</text>
+  <text x="198" y="122" font-size="8.5" fill="#334155">• Root: the base word meaning</text>
+  <text x="198" y="136" font-size="8.5" fill="#334155">• Suffix: -ful, -less, -tion</text>
+  <rect x="196" y="152" width="148" height="72" rx="4" fill="#eff6ff" stroke="#bfdbfe"/>
+  <text x="200" y="168" font-size="8" font-weight="700" fill="#1e40af">Example:</text>
+  <text x="200" y="182" font-size="8" fill="#1d4ed8">'Inaccessible':</text>
+  <text x="200" y="196" font-size="8" fill="#1e3a8a">in- (not) + access (reach)</text>
+  <text x="200" y="210" font-size="8" fill="#1e3a8a">+ ible (able to be) = Not able to reach.</text>
+
+  <!-- Step 3 -->
+  <rect x="364" y="46" width="160" height="188" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+  <rect x="364" y="46" width="160" height="28" rx="8" fill="#16a34a"/>
+  <text x="444" y="65" font-size="11" font-weight="800" fill="#ffffff" text-anchor="middle">3. SUBSTITUTION TEST</text>
+  <text x="372" y="92" font-size="9.5" font-weight="700" fill="#166534">Swap with a Known Word:</text>
+  <text x="372" y="108" font-size="8.5" fill="#334155">Replace the tricky word</text>
+  <text x="372" y="122" font-size="8.5" fill="#334155">with your estimated synonym.</text>
+  <text x="372" y="136" font-size="8.5" fill="#334155">Does the sentence still work?</text>
+  <rect x="370" y="152" width="148" height="72" rx="4" fill="#fef3c7" stroke="#fde68a"/>
+  <text x="374" y="168" font-size="8" font-weight="700" fill="#92400e">Golden Exam Rule:</text>
+  <text x="374" y="182" font-size="8" fill="#78350f">Never leave a question blank.</text>
+  <text x="374" y="196" font-size="8" fill="#78350f">A logical contextual guess</text>
+  <text x="374" y="210" font-size="8" fill="#78350f">frequently earns the mark!</text>
+</svg>

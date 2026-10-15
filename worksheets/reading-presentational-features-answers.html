@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Master Functional Skills — Presentational Features & Typographical Devices Answer Key & Mark Scheme (Level 1 & Level 2)</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 12mm 15mm 12mm 15mm;
+    }
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #0f172a;
+      background: #f0fdf4;
+      margin: 0;
+      padding: 0;
+      font-size: 11pt;
+      line-height: 1.5;
+    }
+    .print-bar {
+      background: #064e3b;
+      color: #f8fafc;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    }
+    .print-bar a {
+      color: #a7f3d0;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .print-bar a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+    .btn-action-print {
+      background: #10b981;
+      color: #ffffff;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s;
+    }
+    .btn-action-print:hover {
+      background: #059669;
+    }
+    .btn-action-sheet {
+      background: #2563eb;
+      color: #ffffff;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-right: 12px;
+    }
+    .btn-action-sheet:hover {
+      background: #1d4ed8;
+    }
+
+    @media print {
+      .print-bar {
+        display: none !important;
+      }
+      body {
+        background: #ffffff !important;
+      }
+      .page-sheet {
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+      }
+      .ans-card {
+        page-break-inside: avoid;
+      }
+    }
+
+    .page-sheet {
+      max-width: 860px;
+      margin: 24px auto;
+      background: #ffffff;
+      padding: 32px 40px;
+      border-radius: 8px;
+      border: 1px solid #bbf7d0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+    .sheet-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 2.5px solid #064e3b;
+      padding-bottom: 16px;
+      margin-bottom: 20px;
+    }
+    .brand-title {
+      font-size: 1.45rem;
+      font-weight: 900;
+      color: #064e3b;
+      letter-spacing: -0.5px;
+    }
+    .brand-title span {
+      color: #10b981;
+    }
+    .brand-subtitle {
+      font-size: 0.88rem;
+      color: #047857;
+      margin-top: 2px;
+      font-weight: 600;
+    }
+    .sheet-meta-badge {
+      background: #ecfdf5;
+      border: 1.5px solid #a7f3d0;
+      color: #065f46;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-align: right;
+    }
+    .sheet-meta-badge .topic-name {
+      font-size: 1.15rem;
+      font-weight: 800;
+      display: block;
+    }
+    .sheet-meta-badge .spec-tag {
+      font-size: 0.78rem;
+      color: #059669;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .scheme-summary-bar {
+      background: #f0fdf4;
+      border: 1px solid #86efac;
+      border-radius: 6px;
+      padding: 12px 18px;
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.95rem;
+      color: #065f46;
+    }
+
+    .tier-divider {
+      background: #f0fdf4;
+      border-left: 4px solid #059669;
+      padding: 6px 12px;
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: #064e3b;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin: 24px 0 16px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .ans-card {
+      border: 1.5px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 18px 20px;
+      margin-bottom: 24px;
+      background: #ffffff;
+    }
+    .ans-card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+    .ans-q-num {
+      font-weight: 800;
+      color: #064e3b;
+      font-size: 1.05rem;
+    }
+    .ans-marks-badge {
+      font-weight: 700;
+      color: #047857;
+      background: #ecfdf5;
+      padding: 3px 10px;
+      border-radius: 4px;
+      border: 1px solid #a7f3d0;
+      font-size: 0.88rem;
+    }
+    .ans-stem-quote {
+      font-size: 0.94rem;
+      color: #475569;
+      background: #f8fafc;
+      border-left: 3px solid #cbd5e1;
+      padding: 8px 12px;
+      margin-bottom: 14px;
+      font-style: italic;
+    }
+
+    .mark-steps-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 14px 16px;
+      margin-bottom: 14px;
+    }
+    .step-title {
+      font-weight: 800;
+      color: #0f172a;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .step-row {
+      margin-bottom: 8px;
+      line-height: 1.6;
+      font-size: 0.98rem;
+      color: #1e293b;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 1px dashed #f1f5f9;
+      padding-bottom: 6px;
+    }
+    .step-row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+    .mark-code {
+      font-weight: 800;
+      color: #2563eb;
+      font-family: monospace;
+      font-size: 0.9rem;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      padding: 1px 6px;
+      border-radius: 4px;
+      white-space: nowrap;
+      margin-left: 12px;
+    }
+
+    .final-award-box {
+      background: #ecfdf5;
+      border: 1.5px solid #10b981;
+      border-radius: 6px;
+      padding: 10px 16px;
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .award-label {
+      font-weight: 800;
+      color: #065f46;
+      font-size: 0.92rem;
+    }
+    .award-val {
+      font-weight: 900;
+      color: #047857;
+      font-size: 1.15rem;
+      font-family: monospace;
+      text-decoration: underline;
+    }
+
+    .pitfall-box {
+      background: #fffbeb;
+      border-left: 4px solid #f59e0b;
+      border-radius: 4px;
+      padding: 10px 14px;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+      color: #92400e;
+      line-height: 1.5;
+    }
+    .pitfall-box strong {
+      color: #b45309;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .alt-method-box {
+      background: #eff6ff;
+      border-left: 4px solid #3b82f6;
+      border-radius: 4px;
+      padding: 8px 12px;
+      margin-bottom: 10px;
+      font-size: 0.88rem;
+      color: #1e40af;
+      line-height: 1.5;
+    }
+
+    .reverse-check-box {
+      background: #fdf4ff;
+      border-left: 4px solid #c084fc;
+      border-radius: 4px;
+      padding: 8px 12px;
+      font-size: 0.88rem;
+      color: #6b21a8;
+      line-height: 1.5;
+    }
+
+    .sheet-footer {
+      border-top: 1px solid #e2e8f0;
+      padding-top: 14px;
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      color: #94a3b8;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="print-bar">
+    <a href="../reading-presentational-features.html"><i class="fa-solid fa-arrow-left"></i> Back to Presentational Features & Typographical Devices Revision Guide</a>
+    <div>
+      <a href="reading-presentational-features-workout-answers.html" class="btn-action-answers" style="background:#2563eb;"><i class="fa-solid fa-repeat"></i> Workout Answers</a>
+      <a href="reading-presentational-features-worksheet.html" class="btn-action-sheet"><i class="fa-solid fa-file-pen"></i> Open Exam Worksheet</a>
+      <button type="button" class="btn-action-print" onclick="window.print()"><i class="fa-solid fa-print"></i> Print / Save to PDF</button>
+    </div>
+  </div>
+
+  <div class="page-sheet">
+    <div class="sheet-head">
+      <div>
+        <div class="brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
+        <div class="brand-subtitle">Official Tutor Examiner Mark Scheme &amp; Model Solutions</div>
+      </div>
+      <div class="sheet-meta-badge">
+        <span class="topic-name">Presentational Features & Typographical Devices</span>
+        <span class="spec-tag">Pearson Edexcel: L1.14 • L2.16 • L2.17</span>
+      </div>
+    </div>
+
+    <div class="scheme-summary-bar">
+      <div><strong>Total Marks Available:</strong> 18 Marks (Pass Threshold: ~11/18)</div>
+      <div><strong>Examiner Standard:</strong> Full Method (M) and Process (P) marks awarded even if final arithmetic errs.</div>
+    </div>
+
+
+    <div class="tier-divider">
+      <span>Section A: Foundational Concept Check Solutions</span>
+      <span>Questions 1 & 2 • 4 Marks</span>
+    </div>
+
+    <div class="ans-card">
+      <div class="ans-card-head">
+        <span class="ans-q-num">Question 1 (Level 1 Identifying Presentational Features in a Safety Notice) Model Solution</span>
+        <span class="ans-marks-badge">[2 Marks Total]</span>
+      </div>
+      <div class="ans-stem-quote">
+        Look at this formatted extract from a workshop sign:<br><strong><u>EYE PROTECTION ZONE</u></strong><br>• Safety goggles must be worn past this line.<br>• Report scratched visors to the storeman.<br><em><strong>WARNING: Flying metal swarf can cause permanent blindness.</strong></em><br><br>Identify <strong>two presentational features</strong> used in this sign and state which words or details they highlight.
+      </div>
+      <div class="mark-steps-box">
+        <div class="step-title">Step-by-Step Marking Criteria:</div>
+
+        <div class="step-row">
+          <span>1. Feature 1: Bold, capitalised, underlined heading ('EYE PROTECTION ZONE') to announce the mandatory safety zone</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+        <div class="step-row">
+          <span>2. Feature 2: Bullet points (listing the two goggle rules) OR Bold/italic warning text ('WARNING: Flying metal swarf...')</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+      </div>
+      <div class="final-award-box">
+        <span class="award-label">Award Final Answer Mark:</span>
+        <span class="award-val">1. Bold underlined capitals on the heading ('EYE PROTECTION ZONE'). 2. Bullet points listing the two rules (or bold italics on the blindness warning).</span>
+      </div>
+      <div class="pitfall-box">
+        <strong>⚠️ Examiner Trap Alert:</strong>
+        Naming 'imperative verbs' or 'emotive language' — those are language features, not presentational features!
+      </div>
+      <div class="reverse-check-box">
+        <strong>🔄 Reverse Sanity Check:</strong> Can you see bold, underlining, capitals, italics, and bullet points visually? Yes.
+      </div>
+    </div>
+
+    <div class="ans-card">
+      <div class="ans-card-head">
+        <span class="ans-q-num">Question 2 (Level 1 Explaining the Effect of a Shaded Callout Box) Model Solution</span>
+        <span class="ans-marks-badge">[2 Marks Total]</span>
+      </div>
+      <div class="ans-stem-quote">
+        A council council-tax leaflet prints a grey shaded rectangular box at the bottom of the page reading:<br><strong>STRUGGLING TO PAY? Call our confidential Hardship Team free on 0800 111 2222 (Mon–Fri, 9am–5pm).</strong><br><br>Explain why the designer placed this information inside a <strong>shaded box</strong> with <strong>bold capital letters</strong>.
+      </div>
+      <div class="mark-steps-box">
+        <div class="step-title">Step-by-Step Marking Criteria:</div>
+
+        <div class="step-row">
+          <span>1. Shaded box effect: Visually separates the helpline number from the main body text so worried residents can find support details instantly</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+        <div class="step-row">
+          <span>2. Bold capitals effect: 'STRUGGLING TO PAY?' grabs the immediate attention of residents in financial difficulty</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+      </div>
+      <div class="final-award-box">
+        <span class="award-label">Award Final Answer Mark:</span>
+        <span class="award-val">The shaded box separates the free 0800 helpline number from the main text for instant lookup, while bold capitals ('STRUGGLING TO PAY?') grab the attention of residents needing help.</span>
+      </div>
+      <div class="pitfall-box">
+        <strong>⚠️ Examiner Trap Alert:</strong>
+        Writing 'to make it stand out' without mentioning the helpline number or residents struggling to pay.
+      </div>
+      <div class="reverse-check-box">
+        <strong>🔄 Reverse Sanity Check:</strong> Always link 'stands out' to the specific content (the 0800 hardship helpline).
+      </div>
+    </div>
+
+    <div class="tier-divider">
+      <span>Section B: Functional Workplace Application Solutions</span>
+      <span>Questions 3 & 4 • 6 Marks</span>
+    </div>
+
+    <div class="ans-card">
+      <div class="ans-card-head">
+        <span class="ans-q-num">Question 3 (Level 1/2 Webpage Presentational Features) Model Solution</span>
+        <span class="ans-marks-badge">[3 Marks Total]</span>
+      </div>
+      <div class="ans-stem-quote">
+        A veterinary clinic webpage includes:<br>1. A top horizontal bar reading: <strong>[ Home ] &nbsp; [ Book a Vet ] &nbsp; [ Repeat Prescriptions ] &nbsp; [ 24hr Emergency ]</strong><br>2. Underlined blue text in the main paragraph: <em>'View our <u>2026 Vaccination Price List</u>.'</em><br>3. Customer review ratings showing: <strong>&#9733;&#9733;&#9733;&#9733;&#9733; (4.9 / 5 from 320 pet owners)</strong>.<br><br>Name each of these <strong>three webpage features</strong> and explain how each one helps a pet owner using the site.
+      </div>
+      <div class="mark-steps-box">
+        <div class="step-title">Step-by-Step Marking Criteria:</div>
+
+        <div class="step-row">
+          <span>1. Navigation bar / menu tabs: Lets pet owners click straight to key pages like '24hr Emergency' or 'Book a Vet'</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+        <div class="step-row">
+          <span>2. Hyperlink ('2026 Vaccination Price List'): Allows users to click directly to the price list without searching</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+        <div class="step-row">
+          <span>3. Star rating graphic (5 stars / 4.9): Gives instant visual reassurance that 320 pet owners trust the clinic</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+      </div>
+      <div class="final-award-box">
+        <span class="award-label">Award Final Answer Mark:</span>
+        <span class="award-val">1. Navigation menu bar (quick switching to bookings/emergencies). 2. Hyperlink (one-click access to vaccination prices). 3. Star rating (instant visual proof of high customer trust).</span>
+      </div>
+      <div class="pitfall-box">
+        <strong>⚠️ Examiner Trap Alert:</strong>
+        Calling a hyperlink 'underlined words' without explaining that clicking it opens the price list page.
+      </div>
+      <div class="reverse-check-box">
+        <strong>🔄 Reverse Sanity Check:</strong> Menu bar + Hyperlink + Star rating = 3 distinct digital presentational features.
+      </div>
+    </div>
+
+    <div class="ans-card">
+      <div class="ans-card-head">
+        <span class="ans-q-num">Question 4 (Level 2 Analysing Pull Quotes and Straplines in Articles) Model Solution</span>
+        <span class="ans-marks-badge">[3 Marks Total]</span>
+      </div>
+      <div class="ans-stem-quote">
+        A trade magazine article is formatted with:<br>• <strong>Main Headline:</strong> <em>SOLAR ROOFS: THE BRIGHT SOLUTION FOR WAREHOUSES</em><br>• <strong>Strapline (Sub-headline underneath):</strong> <em>How three Midlands logistics depots cut their summer electricity bills by 60%.</em><br>• <strong>Boxed Pull Quote in large italics mid-page:</strong> <em>'"Our solar panels paid for themselves in under four years!" — Depot Director'</em>.<br><br>Explain how the <strong>strapline</strong> and the <strong>pull quote</strong> work together with the main headline to engage business readers.
+      </div>
+      <div class="mark-steps-box">
+        <div class="step-title">Step-by-Step Marking Criteria:</div>
+
+        <div class="step-row">
+          <span>1. Role of strapline: Clarifies the pun in the main headline by summarizing the exact factual topic (Midlands depots cutting electricity bills by 60%)</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+        <div class="step-row">
+          <span>2. Role of pull quote: Breaks up the columns of text and highlights a dramatic real-world financial endorsement ('paid for themselves in under four years!')</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+        <div class="step-row">
+          <span>3. Combined effect on business readers: Hooks skimming warehouse managers with proven financial savings so they read the full article</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+      </div>
+      <div class="final-award-box">
+        <span class="award-label">Award Final Answer Mark:</span>
+        <span class="award-val">The strapline clarifies the headline by stating the 60% electricity saving, while the boxed pull quote breaks up the text and highlights the 4-year payback quote to persuade skimming managers to read on.</span>
+      </div>
+      <div class="pitfall-box">
+        <strong>⚠️ Examiner Trap Alert:</strong>
+        Analysing the pun 'Bright Solution' (a language feature) instead of the functional role of the strapline and pull quote.
+      </div>
+      <div class="reverse-check-box">
+        <strong>🔄 Reverse Sanity Check:</strong> Strapline = clarifies headline topic (60% saving); Pull quote = highlights key testimonial.
+      </div>
+    </div>
+
+    <div class="tier-divider">
+      <span>Section C: Pearson Edexcel Exam-Style Analysis & Evaluation Solutions</span>
+      <span>Questions 5 & 6 • 8 Marks</span>
+    </div>
+
+    <div class="ans-card">
+      <div class="ans-card-head">
+        <span class="ans-q-num">Question 5 (Level 2 Diagnosing Presentational vs Language Feature Confusion) Model Solution</span>
+        <span class="ans-marks-badge">[4 Marks Total]</span>
+      </div>
+      <div class="ans-stem-quote">
+        Read this extract from a health campaign poster:<br><strong>STOP SMOKING TODAY — PROTECT YOUR LUNGS, YOUR HEART, AND YOUR WALLET!</strong><br>• <em>Free nicotine patches delivered to your door</em><br>• <em>1-to-1 support from local NHS advisors</em><br><br>An exam candidate is asked for <strong>two presentational features</strong> and writes: <em>'1. Rule of three (lungs, heart, wallet). 2. Direct address (your).'</em><br>(a) Explain why the candidate scored <strong>0 marks</strong>. [2 Marks]<br>(b) Identify <strong>two genuine presentational features</strong> from the extract and explain their effect. [2 Marks]
+      </div>
+      <div class="mark-steps-box">
+        <div class="step-title">Step-by-Step Marking Criteria:</div>
+
+        <div class="step-row">
+          <span>1. (a) Diagnose error: 'Rule of three' and 'Direct address' are LANGUAGE features (word/grammar choices), not visual presentational features</span>
+          <span class="mark-code">[M1]</span>
+        </div>
+        <div class="step-row">
+          <span>2. (a) Clarify distinction: Presentational features must refer to visual formatting and layout on the poster</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+        <div class="step-row">
+          <span>3. (b) Correct Feature 1 & Effect: Bold ALL-CAPS heading ('STOP SMOKING TODAY...') visually commands attention and conveys urgency</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+        <div class="step-row">
+          <span>4. (b) Correct Feature 2 & Effect: Bullet points (and italics) separate the two free NHS support benefits into quick, easy-to-scan points</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+      </div>
+      <div class="final-award-box">
+        <span class="award-label">Award Final Answer Mark:</span>
+        <span class="award-val">(a) Rule of three and direct address are language features, not visual formatting. (b) 1. Bold capital letters ('STOP SMOKING TODAY') grab attention and show urgency. 2. Bullet points clearly list the free patches and 1-to-1 NHS support.</span>
+      </div>
+      <div class="pitfall-box">
+        <strong>⚠️ Examiner Trap Alert:</strong>
+        Failing to explain the effect of the bold capitals and bullet points in part (b).
+      </div>
+      <div class="reverse-check-box">
+        <strong>🔄 Reverse Sanity Check:</strong> Language = words; Presentational = bold capitals, bullet points, italics.
+      </div>
+    </div>
+
+    <div class="ans-card">
+      <div class="ans-card-head">
+        <span class="ans-q-num">Question 6 (Level 2 Evaluating How Multiple Presentational Features Support Purpose) Model Solution</span>
+        <span class="ans-marks-badge">[4 Marks Total]</span>
+      </div>
+      <div class="ans-stem-quote">
+        A food allergy product recall notice in a supermarket uses:<br>1. A <strong>thick red-and-white striped hazard border</strong> around the edge of the poster<br>2. A <strong>colour photograph</strong> of the exact <em>'Crunchy Oat Granola 500g'</em> packet<br>3. <strong>Bold underlined text</strong> on the batch code: <strong><u>Batch Code: L4492 — Best Before: Oct 2026</u></strong><br>4. A <strong>shaded green footer box</strong> stating: <em>'Return to any customer service desk for a full £3.20 cash refund (no receipt needed).'</em><br><br>Evaluate how these four presentational features work together to achieve the notice's purpose.
+      </div>
+      <div class="mark-steps-box">
+        <div class="step-title">Step-by-Step Marking Criteria:</div>
+
+        <div class="step-row">
+          <span>1. Red-and-white hazard border: Immediately signals an urgent safety alert to passing shoppers</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+        <div class="step-row">
+          <span>2. Product photograph: Allows customers to visually recognise the 'Crunchy Oat Granola' box in their kitchen cupboard instantly</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+        <div class="step-row">
+          <span>3. Bold underlined batch code: Draws the eye to the exact batch ('L4492') and date so shoppers can verify if their packet is affected</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+        <div class="step-row">
+          <span>4. Shaded green footer box: Separates the reassuring action step (getting a full £3.20 refund with no receipt)</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+      </div>
+      <div class="final-award-box">
+        <span class="award-label">Award Final Answer Mark:</span>
+        <span class="award-val">1. Hazard border grabs attention for a safety alert. 2. Photo helps shoppers recognise the granola box. 3. Bold underlining highlights Batch Code L4492 for checking. 4. Green box separates the £3.20 refund instructions.</span>
+      </div>
+      <div class="pitfall-box">
+        <strong>⚠️ Examiner Trap Alert:</strong>
+        Listing the four features without linking each one to how a shopper uses it (spotting alert -> recognising packet -> checking batch -> claiming refund).
+      </div>
+      <div class="reverse-check-box">
+        <strong>🔄 Reverse Sanity Check:</strong> All 4 features explained with specific content links = 4 marks.
+      </div>
+    </div>
+
+
+    <div class="sheet-footer">
+      <div>Master Functional Skills • Pearson Edexcel Official Marking Guide • 100% Original Content</div>
+      <div>Page 1 of 1 • Rev 2026.1</div>
+    </div>
+  </div>
+</body>
+</html>

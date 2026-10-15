@@ -1,0 +1,30 @@
+<svg viewBox="0 0 520 250" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:520px; height:auto; font-family:'Plus Jakarta Sans', system-ui, sans-serif;">
+  <rect x="2" y="2" width="516" height="246" rx="14" fill="#ffffff" stroke="#bae6fd" stroke-width="2"/>
+  <rect x="18" y="14" width="250" height="26" rx="13" fill="#e0f2fe"/>
+  <text x="28" y="32" font-size="12" font-weight="800" fill="#0369a1">✎ WORKED METHOD: PERIMETER BOUNDARY</text>
+  <text x="280" y="32" font-size="13" font-weight="700" fill="#0f172a">L-Shape Outer Walk</text>
+
+  <!-- L-Shape polygon with bold border -->
+  <polygon points="50,60 150,60 150,120 290,120 290,210 50,210" fill="#f0f9ff" stroke="#0284c7" stroke-width="3"/>
+
+  <!-- Dimension Labels -->
+  <text x="100" y="52" font-size="13" font-weight="800" fill="#0284c7" text-anchor="middle">5 m</text>
+  <text x="30" y="140" font-size="13" font-weight="800" fill="#0284c7" text-anchor="middle">8 m</text>
+  <text x="170" y="228" font-size="13" font-weight="800" fill="#0284c7" text-anchor="middle">12 m</text>
+  <text x="305" y="170" font-size="13" font-weight="800" fill="#0284c7">3 m</text>
+  
+  <!-- Missing sides in red -->
+  <text x="220" y="112" font-size="12" font-weight="800" fill="#e11d48" text-anchor="middle">12 − 5 = 7 m</text>
+  <text x="175" y="90" font-size="12" font-weight="800" fill="#e11d48">8 − 3 = 5 m</text>
+
+  <!-- Calculation Panel -->
+  <rect x="330" y="60" width="170" height="155" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="345" y="85" font-size="12" font-weight="800" fill="#0369a1">SUM OF ALL SIDES:</text>
+  <text x="345" y="110" font-size="12" fill="#334155">Top = 5 m</text>
+  <text x="345" y="128" font-size="12" fill="#334155">Drop = 5 m</text>
+  <text x="345" y="146" font-size="12" fill="#334155">Step = 7 m</text>
+  <text x="345" y="164" font-size="12" fill="#334155">Right = 3 m, Base = 12 m</text>
+  <text x="345" y="182" font-size="12" fill="#334155">Left = 8 m</text>
+  <line x1="345" y1="190" x2="480" y2="190" stroke="#cbd5e1"/>
+  <text x="345" y="206" font-size="13" font-weight="800" fill="#15803d">Total P = 40 m ✓</text>
+</svg>

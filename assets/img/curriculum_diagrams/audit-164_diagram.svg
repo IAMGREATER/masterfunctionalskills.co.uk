@@ -1,0 +1,32 @@
+<svg viewBox="0 0 540 250" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:540px; height:auto; font-family:'Plus Jakarta Sans', system-ui, sans-serif;">
+  <rect x="2" y="2" width="536" height="246" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <rect x="16" y="12" width="280" height="24" rx="6" fill="#e0f2fe"/>
+  <text x="26" y="28" font-size="11" font-weight="800" fill="#0369a1">✎ COMPARING TEXTS &amp; PERSPECTIVES</text>
+  <text x="306" y="28" font-size="11" font-weight="700" fill="#475569">Level 1 &amp; Level 2 Reading Benchmark</text>
+
+  <!-- Left Column: Text A -->
+  <rect x="16" y="46" width="246" height="188" rx="8" fill="#f0f9ff" stroke="#bae6fd" stroke-width="1.5"/>
+  <rect x="16" y="46" width="246" height="28" rx="8" fill="#0284c7"/>
+  <text x="139" y="65" font-size="11" font-weight="800" fill="#ffffff" text-anchor="middle">TEXT A (E.g. Bus Service Route 40)</text>
+  <text x="26" y="92" font-size="9.5" font-weight="700" fill="#0369a1">Format:</text><text x="80" y="92" font-size="9.5" fill="#334155">Online timetable &amp; travel leaflet</text>
+  <text x="26" y="110" font-size="9.5" font-weight="700" fill="#0369a1">Tone:</text><text x="80" y="110" font-size="9.5" fill="#334155">Informative, promoting low cost (£2.30)</text>
+  <text x="26" y="128" font-size="9.5" font-weight="700" fill="#0369a1">Journey:</text><text x="80" y="128" font-size="9.5" fill="#334155">42 minutes (slower, multiple stops)</text>
+  <text x="26" y="146" font-size="9.5" font-weight="700" fill="#0369a1">Perks:</text><text x="80" y="146" font-size="9.5" fill="#334155">Free Wi-Fi on board, regular departures</text>
+  <rect x="22" y="160" width="234" height="66" rx="4" fill="#ffffff" stroke="#bae6fd"/>
+  <text x="28" y="176" font-size="9" font-weight="700" fill="#0369a1">Writer's Main Argument:</text>
+  <text x="28" y="192" font-size="8.5" fill="#334155">Bus travel is affordable, convenient, and</text>
+  <text x="28" y="206" font-size="8.5" fill="#334155">accessible for everyday local commuters.</text>
+
+  <!-- Right Column: Text B -->
+  <rect x="278" y="46" width="246" height="188" rx="8" fill="#fdf4ff" stroke="#f0abfc" stroke-width="1.5"/>
+  <rect x="278" y="46" width="246" height="28" rx="8" fill="#a21caf"/>
+  <text x="401" y="65" font-size="11" font-weight="800" fill="#ffffff" text-anchor="middle">TEXT B (E.g. City Express Train)</text>
+  <text x="288" y="92" font-size="9.5" font-weight="700" fill="#701a75">Format:</text><text x="342" y="92" font-size="9.5" fill="#334155">Corporate promotional web page</text>
+  <text x="288" y="110" font-size="9.5" font-weight="700" fill="#701a75">Tone:</text><text x="342" y="110" font-size="9.5" fill="#334155">Persuasive, focusing on speed &amp; comfort</text>
+  <text x="288" y="128" font-size="9.5" font-weight="700" fill="#701a75">Journey:</text><text x="342" y="128" font-size="9.5" fill="#334155">16 minutes (fast, direct express)</text>
+  <text x="288" y="146" font-size="9.5" font-weight="700" fill="#701a75">Perks:</text><text x="342" y="146" font-size="9.5" fill="#334155">Quiet coach, power sockets, higher price</text>
+  <rect x="284" y="160" width="234" height="66" rx="4" fill="#ffffff" stroke="#f0abfc"/>
+  <text x="290" y="176" font-size="9" font-weight="700" fill="#701a75">Writer's Main Argument:</text>
+  <text x="290" y="192" font-size="8.5" fill="#334155">Train travel is premium and saves valuable</text>
+  <text x="290" y="206" font-size="8.5" fill="#334155">time for busy business professionals.</text>
+</svg>

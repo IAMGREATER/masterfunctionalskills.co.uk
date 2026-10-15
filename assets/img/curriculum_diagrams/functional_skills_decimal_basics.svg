@@ -1,0 +1,68 @@
+<svg viewBox="0 0 540 270" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:540px; height:auto; font-family:'Plus Jakarta Sans', system-ui, sans-serif;">
+  <rect x="2" y="2" width="536" height="266" rx="14" fill="#ffffff" stroke="#bae6fd" stroke-width="2"/>
+  
+  <rect x="18" y="14" width="290" height="28" rx="14" fill="#e0f2fe"/>
+  <text x="28" y="33" font-size="12" font-weight="800" fill="#0369a1">✎ WORKED METHOD: DECIMAL ALIGNMENT</text>
+  <text x="320" y="33" font-size="13" font-weight="700" fill="#0f172a">Adding £34.75 + £8.60 + £12.08</text>
+
+  <!-- Vertical Column Calculation Box (Spacious & Clean) -->
+  <rect x="28" y="55" width="224" height="195" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+  
+  <!-- Column Header Tags (Tens, Units, Tenths, Hundredths) -->
+  <text x="82" y="74" font-size="9.5" font-weight="800" fill="#64748b" text-anchor="middle">T</text>
+  <text x="108" y="74" font-size="9.5" font-weight="800" fill="#64748b" text-anchor="middle">U</text>
+  <text x="122" y="74" font-size="9.5" font-weight="800" fill="#dc2626" text-anchor="middle">&bull;</text>
+  <text x="136" y="74" font-size="9.5" font-weight="800" fill="#64748b" text-anchor="middle">t</text>
+  <text x="162" y="74" font-size="9.5" font-weight="800" fill="#64748b" text-anchor="middle">h</text>
+  <line x1="40" y1="80" x2="238" y2="80" stroke="#e2e8f0" stroke-width="1.5"/>
+
+  <!-- Vertical Red Alignment Guideline Cutting Exactly Down the Decimal Point -->
+  <line x1="122" y1="78" x2="122" y2="236" stroke="#ef4444" stroke-width="2.5" stroke-dasharray="4,3"/>
+
+  <!-- Row 1: £34.75 -->
+  <text x="46" y="106" font-size="18" font-weight="800" fill="#64748b">£</text>
+  <text x="82" y="106" font-size="19" font-weight="800" fill="#0f172a" text-anchor="middle">3</text>
+  <text x="108" y="106" font-size="19" font-weight="800" fill="#0f172a" text-anchor="middle">4</text>
+  <text x="122" y="106" font-size="20" font-weight="900" fill="#ef4444" text-anchor="middle">.</text>
+  <text x="136" y="106" font-size="19" font-weight="800" fill="#0f172a" text-anchor="middle">7</text>
+  <text x="162" y="106" font-size="19" font-weight="800" fill="#0f172a" text-anchor="middle">5</text>
+
+  <!-- Row 2: £8.60 (Zero padded highlighted) -->
+  <text x="46" y="138" font-size="18" font-weight="800" fill="#64748b">£</text>
+  <text x="82" y="138" font-size="19" font-weight="800" fill="#cbd5e1" text-anchor="middle">-</text>
+  <text x="108" y="138" font-size="19" font-weight="800" fill="#0f172a" text-anchor="middle">8</text>
+  <text x="122" y="138" font-size="20" font-weight="900" fill="#ef4444" text-anchor="middle">.</text>
+  <text x="136" y="138" font-size="19" font-weight="800" fill="#0f172a" text-anchor="middle">6</text>
+  <rect x="153" y="121" width="18" height="22" rx="3" fill="#dcfce7"/>
+  <text x="162" y="138" font-size="19" font-weight="800" fill="#15803d" text-anchor="middle">0</text>
+
+  <!-- Row 3: + £12.08 -->
+  <text x="40" y="170" font-size="18" font-weight="800" fill="#0284c7">+</text>
+  <text x="46" y="170" font-size="18" font-weight="800" fill="#64748b">£</text>
+  <text x="82" y="170" font-size="19" font-weight="800" fill="#0f172a" text-anchor="middle">1</text>
+  <text x="108" y="170" font-size="19" font-weight="800" fill="#0f172a" text-anchor="middle">2</text>
+  <text x="122" y="170" font-size="20" font-weight="900" fill="#ef4444" text-anchor="middle">.</text>
+  <text x="136" y="170" font-size="19" font-weight="800" fill="#0f172a" text-anchor="middle">0</text>
+  <text x="162" y="170" font-size="19" font-weight="800" fill="#0f172a" text-anchor="middle">8</text>
+
+  <!-- Calculation Horizontal Border Lines -->
+  <line x1="42" y1="184" x2="238" y2="184" stroke="#0f172a" stroke-width="2.5"/>
+
+  <!-- Grand Total: £55.43 -->
+  <text x="46" y="214" font-size="19" font-weight="900" fill="#15803d">£</text>
+  <text x="82" y="214" font-size="21" font-weight="900" fill="#15803d" text-anchor="middle">5</text>
+  <text x="108" y="214" font-size="21" font-weight="900" fill="#15803d" text-anchor="middle">5</text>
+  <text x="122" y="214" font-size="22" font-weight="900" fill="#ef4444" text-anchor="middle">.</text>
+  <text x="136" y="214" font-size="21" font-weight="900" fill="#15803d" text-anchor="middle">4</text>
+  <text x="162" y="214" font-size="21" font-weight="900" fill="#15803d" text-anchor="middle">3</text>
+  <line x1="42" y1="228" x2="238" y2="228" stroke="#0f172a" stroke-width="2.5"/>
+
+  <!-- Annotation panel on right (Spacious & Dyslexia Friendly) -->
+  <rect x="268" y="55" width="244" height="195" rx="10" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.5"/>
+  <text x="282" y="82" font-size="12" font-weight="800" fill="#1e40af">KEY RULES FOR ALIGNMENT:</text>
+  <text x="282" y="106" font-size="11.5" fill="#1e293b">• <tspan font-weight="700" fill="#dc2626">Decimal Point Axis:</tspan> keep dots in a straight vertical line.</text>
+  <text x="282" y="132" font-size="11.5" fill="#1e293b">• <tspan font-weight="700" fill="#15803d">Pad Trailing Zeros:</tspan> change £8.6 to £8.60 so columns align.</text>
+  <text x="282" y="158" font-size="11.5" fill="#1e293b">• <tspan font-weight="700">Units over Units:</tspan> single digits (8) must align under units (4, 2).</text>
+  <rect x="280" y="180" width="220" height="32" rx="6" fill="#dcfce7" stroke="#86efac"/>
+  <text x="390" y="201" font-size="11.5" font-weight="800" fill="#15803d" text-anchor="middle">Always Write £55.43, never £55.4 ✓</text>
+</svg>

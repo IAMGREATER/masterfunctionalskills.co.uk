@@ -1,0 +1,48 @@
+<svg viewBox="0 0 540 270" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:540px; height:auto; font-family:'Plus Jakarta Sans', system-ui, sans-serif;">
+  <rect x="2" y="2" width="536" height="266" rx="14" fill="#ffffff" stroke="#bae6fd" stroke-width="2"/>
+  <rect x="18" y="14" width="270" height="28" rx="14" fill="#e0f2fe"/>
+  <text x="28" y="33" font-size="12" font-weight="800" fill="#0369a1">✎ VISUAL MODEL: COMPOUND L-SHAPE</text>
+  <text x="300" y="33" font-size="13" font-weight="700" fill="#0f172a">Split into Shape A + Shape B</text>
+
+  <!-- Dimension Arrow Top Width: 5m -->
+  <line x1="45" y1="52" x2="145" y2="52" stroke="#0284c7" stroke-width="1.5"/>
+  <text x="95" y="47" font-size="12" font-weight="800" fill="#0284c7" text-anchor="middle">5 m</text>
+
+  <!-- Shape A: Left column (100 wide x 160 high) -->
+  <rect x="45" y="58" width="100" height="160" fill="#e0f2fe" stroke="#0284c7" stroke-width="2.5"/>
+  <text x="95" y="132" font-size="16" font-weight="800" fill="#0369a1" text-anchor="middle">Shape A</text>
+  <text x="95" y="152" font-size="12.5" font-weight="700" fill="#0284c7" text-anchor="middle">5m × 8m</text>
+  <text x="95" y="170" font-size="14" font-weight="900" fill="#0369a1" text-anchor="middle">= 40 m²</text>
+
+  <!-- Dashed dividing line between A and B -->
+  <line x1="145" y1="118" x2="145" y2="218" stroke="#ef4444" stroke-width="3" stroke-dasharray="6,4"/>
+
+  <!-- Shape B: Right extension (135 wide x 100 high) -->
+  <rect x="145" y="118" width="135" height="100" fill="#fef3c7" stroke="#d97706" stroke-width="2.5"/>
+  <text x="212" y="160" font-size="16" font-weight="800" fill="#b45309" text-anchor="middle">Shape B</text>
+  <text x="212" y="180" font-size="12.5" font-weight="700" fill="#d97706" text-anchor="middle">7m × 3m</text>
+  <text x="212" y="198" font-size="14" font-weight="900" fill="#b45309" text-anchor="middle">= 21 m²</text>
+
+  <!-- Dimension: Left Height (8m) -->
+  <text x="26" y="142" font-size="13" font-weight="800" fill="#0f172a" text-anchor="middle">8 m</text>
+
+  <!-- Dimension: Shape B Top Width (7m) -->
+  <text x="212" y="110" font-size="12" font-weight="800" fill="#d97706" text-anchor="middle">7 m</text>
+
+  <!-- Dimension: Right Height (3m) -->
+  <text x="296" y="172" font-size="13" font-weight="800" fill="#0f172a">3 m</text>
+
+  <!-- Dimension: Total Bottom Width (12m) -->
+  <text x="162" y="238" font-size="13" font-weight="800" fill="#0f172a" text-anchor="middle">Total Width = 12 m (5m + 7m)</text>
+
+  <!-- Calculation Summary Panel (Spacious on Right) -->
+  <rect x="325" y="58" width="195" height="195" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="340" y="85" font-size="12.5" font-weight="800" fill="#0369a1">CALCULATING TOTAL AREA:</text>
+  <text x="340" y="112" font-size="12" font-weight="700" fill="#0284c7">Step 1: Area A (Left)</text>
+  <text x="340" y="128" font-size="12" fill="#334155">5 m × 8 m = 40 m²</text>
+  <text x="340" y="152" font-size="12" font-weight="700" fill="#d97706">Step 2: Area B (Right)</text>
+  <text x="340" y="168" font-size="12" fill="#334155">7 m × 3 m = 21 m²</text>
+  <line x1="340" y1="180" x2="505" y2="180" stroke="#cbd5e1"/>
+  <rect x="338" y="190" width="168" height="34" rx="6" fill="#dcfce7" stroke="#86efac"/>
+  <text x="422" y="212" font-size="14" font-weight="900" fill="#15803d" text-anchor="middle">40 + 21 = 61 m² ✓</text>
+</svg>

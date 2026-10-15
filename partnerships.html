@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="alternate icon" href="favicon.ico">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Functional Skills for Universities, NHS Trusts & Colleges | Master Functional Skills</title>
+  <meta name="description" content="Institutional delivery, free BKSB / OneAdvanced alternative diagnostic software, ESFA audit compliance, and remote exam proctoring.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="assets/css/mfs-theme.css">
+</head>
+<body>
+    <!-- TOP TRUST BAR WITH ACCESSIBILITY & CONTACT -->
+  <div class="mfs-top-bar">
+    <div class="mfs-container mfs-top-bar-inner">
+      <div class="top-trust-items">
+        <span class="top-trust-item"><i class="fa-solid fa-building-columns"></i> Pearson Edexcel &amp; City &amp; Guilds Aligned</span>
+      </div>
+      <div class="top-contacts">
+        <div class="mfs-access-bar">
+          <!-- DYSLEXIA BACKGROUND TINT PICKER -->
+          <div class="mfs-tint-dropdown-wrap">
+            <button type="button" id="tintToggle" class="btn-tint-toggle" onclick="toggleTintMenu(event)" title="Change dyslexia background tint">
+              <span class="tint-swatch-indicator" id="tintCurrentSwatch"></span>
+              <span id="tintLabel">Cream Tint</span>
+              <i class="fa-solid fa-chevron-down" style="font-size:0.62rem; opacity:0.75; margin-left:2px;"></i>
+            </button>
+            <div id="tintMenu" class="tint-picker-menu">
+              <div class="tint-picker-title"><i class="fa-solid fa-glasses"></i> Dyslexia Reading Tint</div>
+              <button type="button" class="tint-option-btn active" data-tint="cream" onclick="setSiteTint('cream', event)">
+                <span class="swatch swatch-cream"></span>
+                <span class="tint-name">Cream <small class="tint-badge-def">Default</small></span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="peach" onclick="setSiteTint('peach', event)">
+                <span class="swatch swatch-peach"></span>
+                <span class="tint-name">Soft Peach</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="cool" onclick="setSiteTint('cool', event)">
+                <span class="swatch swatch-cool"></span>
+                <span class="tint-name">Cool Mist</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="sage" onclick="setSiteTint('sage', event)">
+                <span class="swatch swatch-sage"></span>
+                <span class="tint-name">Soft Sage</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <div class="tint-divider"></div>
+              <button type="button" class="tint-option-btn" data-tint="none" onclick="setSiteTint('none', event)">
+                <span class="swatch swatch-none"></span>
+                <span class="tint-name">No Tint (White)</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+            </div>
+          </div>
+          <button id="dyslexiaToggle" class="btn-dyslexia-toggle" onclick="toggleDyslexiaMode()" title="Toggle Dyslexia High-Readability Mode">
+            <i class="fa-solid fa-universal-access"></i> Dyslexia
+          </button>
+          <button id="themeToggle" class="mfs-theme-pill" onclick="toggleTheme()" title="Switch Palette: Sapphire vs Emerald">
+            <i class="fa-solid fa-palette"></i> <span id="themeLabel">Sapphire</span>
+          </button>
+        </div>
+        <a href="contact-us.html" class="top-contact-link"><i class="fa-solid fa-envelope"></i> <strong>Contact Us</strong></a>
+      </div>
+    </div>
+  </div>  <!-- MAIN NAVIGATION -->
+                                  <header class="mfs-navbar">
+    <div class="revision-page-wrapper mfs-navbar-inner">
+      <a href="index.html" class="mfs-brand">
+        <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div class="mfs-brand-text">
+          <div class="mfs-brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
+          <div class="mfs-brand-subtitle">Delivering Skills • Achieving Goals</div>
+        </div>
+      </a>
+
+      <nav class="mfs-nav-wrapper">
+        <ul class="mfs-nav-menu">
+          <!-- 1. SUBJECTS (VISUAL MEGA-MENU) -->
+          <li class="mfs-nav-item">
+            <a href="courses.html" class="mfs-nav-link">
+              <i class="fa-solid fa-book-open-reader" style="color:#0284c7; margin-right:5px;"></i> Subjects <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-revision-hub">
+              <div class="mfs-revision-grid">
+                <!-- Maths Column -->
+                <div class="mfs-revision-col mfs-revision-col-maths">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-calculator"></i> Maths Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="functional-skills-maths-level-2.html" class="mfs-dropdown-item">Maths Level 2</a>
+                    <a href="functional-skills-maths-level-1.html" class="mfs-dropdown-item">Maths Level 1</a>
+                    <a href="entry-level-3-maths.html" class="mfs-dropdown-item">Entry Level 3 Maths</a>
+                  </div>
+                </div>
+                <!-- English Column -->
+                <div class="mfs-revision-col mfs-revision-col-english">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-pen-nib"></i> English Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="functional-skills-english-level-2.html" class="mfs-dropdown-item">English Level 2</a>
+                    <a href="functional-skills-english-level-1.html" class="mfs-dropdown-item">English Level 1</a>
+                  </div>
+                </div>
+                <!-- Digital Skills Column -->
+                <div class="mfs-revision-col mfs-revision-col-digital">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-laptop-code"></i> Digital Skills</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="digital-functional-skills.html" class="mfs-dropdown-item">Digital Skills Hub</a>
+                    <a href="digital-functional-skills-mock-exam.html" class="mfs-dropdown-item">Pearson Mock Exam</a>
+                    <a href="digital-functional-skills-past-papers.html" class="mfs-dropdown-item">Past Papers &amp; Files</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- 2. PAST PAPERS & MOCKS (DIRECT ACCESS) -->
+          <li class="mfs-nav-item">
+            <a href="functional-skills-past-papers.html" class="mfs-nav-link">
+              <i class="fa-regular fa-file-lines" style="color:#0284c7; margin-right:5px;"></i> Past Papers &amp; Mocks
+            </a>
+          </li>
+
+          <!-- 2b. WORKSHEETS DIRECTORY (CORBETT STYLE DUAL ENGINE) -->
+          <li class="mfs-nav-item">
+            <a href="worksheets.html" class="mfs-nav-link">
+              <i class="fa-solid fa-layer-group" style="color:#0284c7; margin-right:5px;"></i> Worksheets Hub
+            </a>
+          </li>
+
+          <!-- 3. FREE TOOLS (COMPACT DROPDOWN) -->
+          <li class="mfs-nav-item">
+            <a href="tools.html" class="mfs-nav-link">
+              <i class="fa-solid fa-screwdriver-wrench" style="color:#0284c7; margin-right:5px;"></i> Free Tools <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-compact">
+              <a href="tools.html" class="mfs-dropdown-item" style="font-weight:700; color:var(--accent);"><i class="fa-solid fa-layer-group" style="font-size:0.85rem; margin-right:6px;"></i> All Free Tools &amp; Simulators &rarr;</a>
+              <div class="mfs-dropdown-divider" style="margin:4px 0; border-top:1px solid #e2e8f0;"></div>
+              <a href="pass-mark-calculator.html" class="mfs-dropdown-item"><i class="fa-solid fa-calculator" style="color:var(--accent); font-size:0.85rem; margin-right:6px;"></i> Pass Mark Calculator</a>
+              <a href="diagnostic-test.html" class="mfs-dropdown-item"><i class="fa-solid fa-chart-pie" style="color:#059669; font-size:0.85rem; margin-right:6px;"></i> Diagnostic Skill Checker</a>
+              <a href="functional-skills-nets.html" class="mfs-dropdown-item"><i class="fa-solid fa-cube" style="color:#0284c7; font-size:0.85rem; margin-right:6px;"></i> 3D Net Folding Tool</a>
+            </div>
+          </li>
+
+          <!-- 4. REVISION CARDS -->
+          <li class="mfs-nav-item">
+            <a href="revision-cards.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-layer-group" style="color:#d97706; margin-right:5px;"></i> Revision Cards
+            </a>
+          </li>
+
+          <!-- 5. SHOP -->
+          <li class="mfs-nav-item">
+            <a href="shop.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-basket-shopping" style="color:#d97706; margin-right:5px;"></i> Shop
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- 6. BOOK EXAM ACTION BUTTON -->
+      <div class="mfs-nav-actions">
+        <a href="exams.html" class="btn-nav-exam">
+          <i class="fa-solid fa-calendar-check"></i> Book Exam
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- PROMOTIONAL SALE ACCENT BANNER -->
+  <div class="mfs-promo-banner"><div class="mfs-container mfs-promo-inner"></div></div>
+el 2 Exam (£149)</a>
+      </div>
+    </div>
+  </header>
+
+  <section class="mfs-hero" style="padding: 50px 0 40px; background: linear-gradient(180deg, #eff6ff 0%, #dbeafe 100%);">
+    <div class="mfs-container text-center" style="max-width: 880px; margin: 0 auto;">
+      <span class="section-tag" style="background: #0284c7; color: #ffffff;">INSTITUTIONAL & B2B DELIVERY</span>
+      <h1 style="font-size: 2.6rem; color: var(--mfs-navy); margin: 12px 0 16px; font-family: var(--font-heading); line-height: 1.2;">
+        Functional Skills for Universities, NHS Trusts & Training Providers
+      </h1>
+      <p style="font-size: 1.15rem; color: var(--mfs-gray); line-height: 1.6; margin-bottom: 24px;">
+        Turnkey qualification delivery, free diagnostic baseline assessments (zero-cost BKSB / OneAdvanced alternative), ESFA/Ofsted compliance reporting, and high-volume remote exam invigilation.
+      </p>
+      <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+        <a href="#book-demo" class="btn-hero-primary">Book a Corporate Demo</a>
+        <a href="#bksb" class="btn-hero-secondary">Free Alternative to BKSB / OneAdvanced</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BKSB ALTERNATIVE SECTION -->
+  <section class="mfs-section" id="bksb" style="background: #ffffff;">
+    <div class="mfs-container">
+      <div style="background: #f8fafc; border: 2px solid #0284c7; border-radius: 16px; padding: 40px; display: grid; grid-template-columns: 1fr 1fr; gap: 40px; align-items: center;">
+        <div>
+          <span style="background: #e0f2fe; color: #0284c7; font-weight: 800; font-size: 0.82rem; padding: 4px 12px; border-radius: 20px; text-transform: uppercase;">
+            FREE INSTITUTIONAL SOFTWARE
+          </span>
+          <h2 style="font-size: 2.2rem; color: var(--mfs-navy); margin: 12px 0 14px;">The Free Alternative to BKSB / OneAdvanced</h2>
+          <p style="color: var(--mfs-gray); font-size: 1.02rem; line-height: 1.6; margin-bottom: 16px;">
+            Stop paying expensive per-learner licence fees. Master Functional Skills provides FE colleges and Independent Training Providers (ITPs) with a completely free, Ofqual-aligned Initial Assessment and Subject Knowledge Diagnostic platform.
+          </p>
+          <ul style="margin: 0 0 20px; padding-left: 20px; color: #334155; line-height: 1.8; font-size: 0.95rem;">
+            <li><strong>£0 Licence Fees:</strong> Zero cost for initial assessments or diagnostic tests.</li>
+            <li><strong>ESFA Audit Ready:</strong> Instant export of learner baseline and prior learning evidence.</li>
+            <li><strong>Ofsted Distance Travelled:</strong> Clear progress tracking from diagnostic baseline to exam pass.</li>
+            <li><strong>OneFile Integration:</strong> Directly export learner evidence into your e-portfolio system.</li>
+          </ul>
+          <a href="#book-demo" class="btn-hero-primary">Request Free Provider Portal Access →</a>
+        </div>
+        <div style="background: #ffffff; border: 1px solid var(--mfs-border); border-radius: 12px; padding: 24px; box-shadow: 0 4px 14px rgba(0,0,0,0.04);">
+          <h4 style="margin: 0 0 14px; color: var(--mfs-navy); font-size: 1.1rem; border-bottom: 2px solid #f1f5f9; padding-bottom: 10px;">
+            Comparison: MasterFunctionalSkills vs BKSB / OneAdvanced
+          </h4>
+          <table style="width: 100%; font-size: 0.9rem; border-collapse: collapse;">
+            <thead>
+              <tr style="border-bottom: 2px solid #edf2f7; text-align: left;">
+                <th style="padding: 8px 4px;">Feature</th>
+                <th style="padding: 8px 4px; color: var(--mfs-green);">MasterFunctionalSkills</th>
+                <th style="padding: 8px 4px; color: #e11d48;">BKSB / OneAdvanced</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr style="border-bottom: 1px solid #f1f5f9;">
+                <td style="padding: 8px 4px;">Licence Cost</td>
+                <td style="padding: 8px 4px; font-weight: 700; color: var(--mfs-green);">FREE (£0)</td>
+                <td style="padding: 8px 4px; color: #e11d48;">£15–£25 per seat</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #f1f5f9;">
+                <td style="padding: 8px 4px;">Diagnostic Assessment</td>
+                <td style="padding: 8px 4px; color: var(--mfs-green);">Included (Free)</td>
+                <td style="padding: 8px 4px;">Included (Paid)</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #f1f5f9;">
+                <td style="padding: 8px 4px;">Integrated Online Exams</td>
+                <td style="padding: 8px 4px; color: var(--mfs-green);">Yes (On-demand)</td>
+                <td style="padding: 8px 4px; color: #e11d48;">No (Software only)</td>
+              </tr>
+              <tr style="border-bottom: 1px solid #f1f5f9;">
+                <td style="padding: 8px 4px;">Turnaround Time</td>
+                <td style="padding: 8px 4px; color: var(--mfs-green);">2–6 Working Days</td>
+                <td style="padding: 8px 4px;">Board dependent</td>
+              </tr>
+              <tr>
+                <td style="padding: 8px 4px;">Dyslexia Optimization</td>
+                <td style="padding: 8px 4px; color: var(--mfs-green);">Built-in high-contrast</td>
+                <td style="padding: 8px 4px;">Standard UI</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- UNIVERSITY PROGRESSION & NHS SECTION -->
+  <section class="mfs-section" id="nursing" style="background: #f8fafc;">
+    <div class="mfs-container">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 40px; margin-bottom: 40px;">
+        <!-- NHS -->
+        <div style="background: #ffffff; border-radius: 14px; padding: 30px; border: 1px solid var(--mfs-border);">
+          <div style="width: 50px; height: 50px; background: #e0f2fe; color: #0284c7; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 16px;">
+            <i class="fa-solid fa-hospital"></i>
+          </div>
+          <h3 style="font-size: 1.4rem; color: var(--mfs-navy); margin: 0 0 10px;">NHS Trusts & Healthcare Assistants (HCAs)</h3>
+          <p style="color: var(--mfs-gray); font-size: 0.95rem; line-height: 1.6; margin-bottom: 14px;">
+            Solve the 12-hour rotational shift challenge. Our 24/7 on-demand exam slots allow Healthcare Assistants, Band 2/3 clinical staff, and Nursing Associates to sit Functional Skills exams around ward schedules.
+          </p>
+          <ul style="margin: 0; padding-left: 20px; font-size: 0.9rem; color: #334155; line-height: 1.7;">
+            <li>Fast-tracks Nursing Degree Apprenticeship gateways.</li>
+            <li>Satisfies Nursing and Midwifery Council (NMC) Level 2 entry criteria.</li>
+            <li>Cohort dashboard for Trust Apprenticeship Lead monitoring.</li>
+          </ul>
+        </div>
+
+        <!-- Universities -->
+        <div style="background: #ffffff; border-radius: 14px; padding: 30px; border: 1px solid var(--mfs-border);">
+          <div style="width: 50px; height: 50px; background: #dcfce7; color: #16a34a; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 16px;">
+            <i class="fa-solid fa-university"></i>
+          </div>
+          <h3 style="font-size: 1.4rem; color: var(--mfs-navy); margin: 0 0 10px;">Universities & Conditional Offer Clearances</h3>
+          <p style="color: var(--mfs-gray); font-size: 0.95rem; line-height: 1.6; margin-bottom: 14px;">
+            Partner with UK admissions teams to clear conditional offers for prospective students needing GCSE Grade 4 / C equivalencies in Maths or English prior to autumn enrolment.
+          </p>
+          <ul style="margin: 0; padding-left: 20px; font-size: 0.9rem; color: #334155; line-height: 1.7;">
+            <li>Accepted for BSc Nursing, Midwifery, Social Work, and Paramedic Science.</li>
+            <li>Direct result verification letters provided within 48 hours to admissions offices.</li>
+            <li>High completion and pass rate ensures maximum student intake retention.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- LEAD CAPTURE FORM -->
+      <div id="book-demo" style="background: #ffffff; border: 1px solid var(--mfs-border); border-radius: 16px; padding: 40px; max-width: 760px; margin: 0 auto; box-shadow: 0 4px 14px rgba(0,0,0,0.04);">
+        <div class="text-center" style="margin-bottom: 24px;">
+          <h3 style="font-size: 1.8rem; color: var(--mfs-navy); margin: 0 0 8px;">Book a Corporate Demo / Partnership Consultation</h3>
+          <p style="color: var(--mfs-gray); margin: 0;">Speak with our Academic Partnerships Director to arrange free provider portal access or cohort pricing.</p>
+        </div>
+        <form onsubmit="event.preventDefault(); window.open('https://wa.me/447564525425?text=' + encodeURIComponent('Hello, I am interested in an institutional partnership for: ' + document.getElementById('b2bOrg').value + ' (' + document.getElementById('b2bType').value + ')'), '_blank');">
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+            <div>
+              <label style="display:block; font-size:0.85rem; font-weight:700; color:#334155; margin-bottom:6px;">Your Name</label>
+              <input type="text" id="b2bName" required style="width:100%; padding:10px 14px; border:1px solid #cbd5e1; border-radius:8px; font-size:0.95rem;">
+            </div>
+            <div>
+              <label style="display:block; font-size:0.85rem; font-weight:700; color:#334155; margin-bottom:6px;">Work Email</label>
+              <input type="email" id="b2bEmail" required style="width:100%; padding:10px 14px; border:1px solid #cbd5e1; border-radius:8px; font-size:0.95rem;">
+            </div>
+          </div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px;">
+            <div>
+              <label style="display:block; font-size:0.85rem; font-weight:700; color:#334155; margin-bottom:6px;">Organisation / Trust / College Name</label>
+              <input type="text" id="b2bOrg" required style="width:100%; padding:10px 14px; border:1px solid #cbd5e1; border-radius:8px; font-size:0.95rem;">
+            </div>
+            <div>
+              <label style="display:block; font-size:0.85rem; font-weight:700; color:#334155; margin-bottom:6px;">Institution Type</label>
+              <select id="b2bType" style="width:100%; padding:10px 14px; border:1px solid #cbd5e1; border-radius:8px; font-size:0.95rem;">
+                <option value="FE College">FE College / Sixth Form</option>
+                <option value="Independent Training Provider (ITP)">Apprenticeship Training Provider (ITP)</option>
+                <option value="NHS Trust">NHS Trust / Healthcare Provider</option>
+                <option value="University">University Admissions Department</option>
+                <option value="Corporate Employer">Corporate Employer</option>
+              </select>
+            </div>
+          </div>
+          <button type="submit" class="btn-hero-primary" style="width:100%; border:none; cursor:pointer; font-size:1.05rem; padding:14px;">
+            Submit Partnership Enquiry & Schedule Demo →
+          </button>
+        </form>
+      </div>
+    </div>
+  </section>  <!-- FOOTER -->
+  <footer class="mfs-footer" id="site-footer">
+    <div class="mfs-container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="mfs-brand" style="margin-bottom:16px;">
+            <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="mfs-brand-text">
+              <div class="mfs-brand-title" style="color:#ffffff;">MASTER<span>FUNCTIONALSKILLS</span></div>
+              <div class="mfs-brand-subtitle" style="color:#94a3b8;">Delivering Skills • Achieving Goals</div>
+            </div>
+          </div>
+          <p style="font-size:0.88rem; line-height:1.6; margin-bottom:16px;">
+            The UK's dedicated Functional Skills revision specialist. Providing realistic mock exams, step-by-step revision flashcards, diagnostic assessments, and 1-to-1 specialist tuition for Pearson Edexcel, City &amp; Guilds, and all major exam boards.
+          </p>
+          <div style="font-size:0.85rem; color:#cbd5e1;">
+            <p><a href="https://wa.me/447564525425" target="_blank" rel="noopener" style="color:#cbd5e1; text-decoration:none;"><i class="fa-brands fa-whatsapp" style="color:var(--accent); margin-right:8px;"></i> WhatsApp: +44 (0)7564 525425</a></p>
+            <p style="margin-top:6px;"><a href="contact-us.html" style="color:#cbd5e1; text-decoration:none;"><i class="fa-solid fa-envelope" style="color:var(--accent); margin-right:8px;"></i> Contact Tutor Team</a></p>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Maths Revision</h4>
+          <ul class="footer-links">
+            <li><a href="functional-skills-maths-level-2.html">Maths Level 2 Revision</a></li>
+            <li><a href="functional-skills-maths-level-1.html">Maths Level 1 Revision</a></li>
+            <li><a href="entry-level-3-maths.html">Entry Level 3 Maths</a></li>
+            <li><a href="pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="functional-skills-past-papers.html">Free Maths Past Papers</a></li>
+            <li><a href="exam-maths-l2.html">Book Level 2 Maths Exam</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>English &amp; Digital</h4>
+          <ul class="footer-links">
+            <li><a href="functional-skills-english-level-2.html">English Level 2 Revision</a></li>
+            <li><a href="functional-skills-english-level-1.html">English Level 1 Revision</a></li>
+            <li><a href="digital-functional-skills.html">Digital Skills Hub (L1 &amp; E3)</a></li>
+            <li><a href="digital-functional-skills-past-papers.html">DFS Past Papers &amp; Data Files</a></li>
+            <li><a href="functional-skills-past-papers.html?format=online#mock-finder">Online Exam Simulator</a></li>
+            <li><a href="exam-english-l2.html">Book Level 2 English Exam</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Student Support &amp; Tools</h4>
+          <ul class="footer-links">
+            <li><a href="tools.html" style="color:var(--accent); font-weight:700;"><i class="fa-solid fa-screwdriver-wrench" style="margin-right:6px;"></i>All Interactive Tools Hub</a></li>
+            <li><a href="pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="diagnostic-test.html">Diagnostic Skill Checker</a></li>
+            <li><a href="functional-skills-nets.html">3D Net Folding Tool</a></li>
+            <li><a href="digital-functional-skills-mock-exam.html">Pearson DFS Simulator</a></li>
+            <li><a href="revision-cards.html">Revision Cards &amp; Flashcards</a></li>
+            <li><a href="shop.html">Revision Books &amp; Study Packs</a></li>
+            <li><a href="tutors.html">1-to-1 Specialist Tuition</a></li>
+            <li><a href="exams.html">Book Official Online Exam</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Master Functional Skills. All rights reserved. Registered in England &amp; Wales. Ofqual Regulated Qualification Standards.</div>
+        <div style="display:flex; gap:16px; flex-wrap:wrap;">
+          <a href="index.html">Home</a>
+          <a href="tools.html" style="color:var(--accent); font-weight:700;">Tools</a>
+          <a href="functional-skills-past-papers.html">Past Papers</a>
+          <a href="revision-cards.html">Revision Cards</a>
+          <a href="shop.html">Study Shop</a>
+          <a href="tutors.html">Tutors</a>
+          <a href="contact-us.html">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Vanilla accordion toggle support for exam questions and revision cards
+    document.querySelectorAll('[data-toggle="collapse"], [data-bs-toggle="collapse"], .card-header[data-target], .card-header[href]').forEach(function(btn) {
+      btn.style.cursor = "pointer";
+      btn.addEventListener("click", function(e) {
+        var targetId = this.getAttribute("data-target") || this.getAttribute("data-bs-target") || this.getAttribute("href");
+        if (targetId && targetId.startsWith("#")) {
+          var targetEl = document.querySelector(targetId);
+          if (targetEl) {
+            e.preventDefault();
+            var isHidden = targetEl.classList.contains("collapse") && !targetEl.classList.contains("show");
+            if (isHidden) {
+              targetEl.classList.remove("collapse");
+              targetEl.classList.add("show");
+              targetEl.style.display = "block";
+            } else {
+              targetEl.classList.add("collapse");
+              targetEl.classList.remove("show");
+              targetEl.style.display = "none";
+            }
+          }
+        }
+      });
+    });
+
+    // Smooth scroll for hash anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+      anchor.addEventListener("click", function(e) {
+        var targetId = this.getAttribute("href").substring(1);
+        if (!targetId) return;
+        var targetEl = document.getElementById(targetId);
+        if (targetEl) {
+          e.preventDefault();
+          targetEl.scrollIntoView({ behavior: "smooth" });
+        }
+      });
+    });
+  });
+</script>
+
+  <!-- DYSLEXIA TINT ENGINE -->
+  <script src="assets/js/mfs-tint.js"></script>
+
+  <script>
+    function toggleDyslexiaMode() {
+      const isDys = document.body.classList.toggle('dyslexia-mode');
+      localStorage.setItem('mfs_dyslexia', isDys ? '1' : '0');
+      const btn = document.getElementById('dyslexiaToggle');
+      if (btn) btn.classList.toggle('active', isDys);
+    }
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme') || 'sapphire';
+      const next = current === 'emerald' ? 'sapphire' : 'emerald';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('mfs_theme', next);
+      const lbl = document.getElementById('themeLabel');
+      if (lbl) lbl.textContent = next === 'emerald' ? 'Emerald' : 'Sapphire';
+    }
+    (function() {
+      if (localStorage.getItem('mfs_dyslexia') === '1') {
+        document.body.classList.add('dyslexia-mode');
+        const btn = document.getElementById('dyslexiaToggle');
+        if (btn) btn.classList.add('active', true);
+      }
+      const th = localStorage.getItem('mfs_theme') || 'sapphire';
+      document.documentElement.setAttribute('data-theme', th);
+      const lbl = document.getElementById('themeLabel');
+      if (lbl) lbl.textContent = th === 'emerald' ? 'Emerald' : 'Sapphire';
+    })();
+  </script>
+
+</body>
+</html>

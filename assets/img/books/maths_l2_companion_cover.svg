@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 680" width="500" height="680">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#022c43"/>
+      <stop offset="60%" stop-color="#053f5e"/>
+      <stop offset="100%" stop-color="#011627"/>
+    </linearGradient>
+    <linearGradient id="spineShadow" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" stop-color="#000000" stop-opacity="0.6"/>
+      <stop offset="3%" stop-color="#000000" stop-opacity="0.1"/>
+      <stop offset="6%" stop-color="#ffffff" stop-opacity="0.15"/>
+      <stop offset="9%" stop-color="#000000" stop-opacity="0.25"/>
+      <stop offset="15%" stop-color="#000000" stop-opacity="0"/>
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#fef08a"/>
+      <stop offset="50%" stop-color="#f59e0b"/>
+      <stop offset="100%" stop-color="#b45309"/>
+    </linearGradient>
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="8" dy="16" stdDeviation="16" flood-color="#070d1e" flood-opacity="0.4"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#cardShadow)">
+    <!-- Book Cover Base -->
+    <rect x="15" y="15" width="470" height="650" rx="14" fill="url(#bgGrad)" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
+
+    <!-- Subtle Ambient Top Light -->
+    <circle cx="450" cy="50" r="160" fill="url(#goldGrad)" opacity="0.08"/>
+
+    <!-- Header Brand Strip -->
+    <g transform="translate(45, 45)">
+      <text x="0" y="24" font-family="Montserrat, Arial, sans-serif" font-size="14" font-weight="900" letter-spacing="3" fill="#ffffff" opacity="0.95">MASTER FUNCTIONAL SKILLS</text>
+      <text x="0" y="44" font-family="Montserrat, Arial, sans-serif" font-size="10" font-weight="700" letter-spacing="1.5" fill="#38bdf8">OFFICIAL OFQUAL SPECIFICATION</text>
+      
+      <!-- Level Badge -->
+      <rect x="300" y="6" width="110" height="32" rx="16" fill="#38bdf8"/>
+      <text x="355" y="27" font-family="Montserrat, Arial, sans-serif" font-size="12" font-weight="900" letter-spacing="1" fill="#070d1e" text-anchor="middle">LEVEL 2</text>
+    </g>
+
+    <!-- Edition Pill -->
+    <rect x="45" y="115" width="280" height="24" rx="4" fill="rgba(0,0,0,0.3)" stroke="#38bdf8" stroke-width="1.2"/>
+    <text x="55" y="131" font-family="Montserrat, Arial, sans-serif" font-size="9" font-weight="800" letter-spacing="1" fill="#38bdf8">CORE REVISION GUIDE • MODEL ANSWERS</text>
+
+    <!-- Knockout Graphic Word -->
+    <g transform="translate(45, 170)">
+      <text x="0" y="70" font-family="'Oswald', Impact, sans-serif" font-size="74" font-weight="700" letter-spacing="4" fill="rgba(255,255,255,0.07)">COMPANION</text>
+    </g>
+
+    <!-- Main Title -->
+    <g transform="translate(45, 290)">
+      <text x="0" y="55" font-family="Montserrat, Arial, sans-serif" font-size="44" font-weight="900" line-height="0.95" letter-spacing="0.5" fill="#38bdf8">MATHEMATICS</text>
+      <text x="0" y="105" font-family="Montserrat, Arial, sans-serif" font-size="34" font-weight="900" fill="#ffffff">COMPANION WORKBOOK</text>
+      <text x="0" y="145" font-family="'Open Sans', Arial, sans-serif" font-size="15" font-weight="600" fill="rgba(255,255,255,0.85)">Exam Problem-Solving Frames &amp; Stepped Drills</text>
+    </g>
+
+    <!-- Features Badges -->
+    <g>
+      <rect x="35" y="490" width="98" height="28" rx="6" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.25)" stroke-width="1"/><text x="84" y="508" font-family="Montserrat, Arial, sans-serif" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">120+ Drills</text><rect x="140" y="490" width="98" height="28" rx="6" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.25)" stroke-width="1"/><text x="189" y="508" font-family="Montserrat, Arial, sans-serif" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">Step Workspaces</text><rect x="245" y="490" width="98" height="28" rx="6" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.25)" stroke-width="1"/><text x="294" y="508" font-family="Montserrat, Arial, sans-serif" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">Method Marks</text><rect x="350" y="490" width="98" height="28" rx="6" fill="rgba(255,255,255,0.12)" stroke="rgba(255,255,255,0.25)" stroke-width="1"/><text x="399" y="508" font-family="Montserrat, Arial, sans-serif" font-size="10" font-weight="700" fill="#ffffff" text-anchor="middle">Error Traps</text>
+    </g>
+
+    <!-- Footer Trust Info -->
+    <line x1="45" y1="590" x2="455" y2="590" stroke="rgba(255,255,255,0.2)" stroke-width="1"/>
+    <g transform="translate(45, 620)">
+      <text x="0" y="0" font-family="Montserrat, Arial, sans-serif" font-size="9" font-weight="700" letter-spacing="1" fill="rgba(255,255,255,0.75)">PEARSON EDEXCEL &amp; CITY &amp; GUILDS ALIGNED</text>
+      <text x="410" y="0" font-family="Montserrat, Arial, sans-serif" font-size="9" font-weight="700" letter-spacing="1" fill="#38bdf8" text-anchor="end">2026/2027 EDITION</text>
+    </g>
+
+    <!-- 3D Book Spine Effect -->
+    <rect x="15" y="15" width="40" height="650" rx="14" fill="url(#spineShadow)" pointer-events="none"/>
+    <line x1="38" y1="15" x2="38" y2="665" stroke="rgba(255,255,255,0.25)" stroke-width="1.5" pointer-events="none"/>
+  </g>
+</svg>

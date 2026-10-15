@@ -1,0 +1,37 @@
+[
+  {
+    "path": "abdul_explaining.png",
+    "name": "Abdul",
+    "role": "Tutor",
+    "description": "Abdul, friendly male tutor in 40s with glasses, short dark beard, navy jumper, explaining with welcoming gesture.",
+    "keywords": ["abdul", "tutor", "explaining", "teacher", "man", "male", "guide"]
+  },
+  {
+    "path": "priya_explaining.png",
+    "name": "Priya",
+    "role": "Tutor",
+    "description": "Priya, female tutor in 30s with long dark hair, glasses, purple cardigan, explaining with friendly gesture.",
+    "keywords": ["priya", "tutor", "explaining", "teacher", "woman", "female", "guide"]
+  },
+  {
+    "path": "marcus_apprentice.png",
+    "name": "Marcus",
+    "role": "Apprentice",
+    "description": "Marcus, young apprentice in early 20s with short curly dark hair and hi-vis vest, smiling.",
+    "keywords": ["marcus", "apprentice", "learner", "student", "trades", "construction", "hivis"]
+  },
+  {
+    "path": "sarah_care_worker.png",
+    "name": "Sarah",
+    "role": "Care Worker",
+    "description": "Sarah, female healthcare worker in 30s with ponytail and teal healthcare tunic, smiling.",
+    "keywords": ["sarah", "care", "nurse", "healthcare", "worker", "hospital", "woman"]
+  },
+  {
+    "path": "sam_thinking.png",
+    "name": "Sam",
+    "role": "Learner",
+    "description": "Sam, adult learner in 20s with thoughtful puzzled expression, hand on chin, wearing green hoodie.",
+    "keywords": ["sam", "learner", "student", "thinking", "puzzled", "confused", "question"]
+  }
+]

@@ -1,0 +1,872 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-theme="digital" data-tint="cream">
+<head>
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Functional Skills: Key Rules, Models &amp; Exam Practice | Master Functional Skills</title>
+  <meta name="description" content="Dyslexia-friendly Digital Functional Skills revision guide for Functional Skills Digital Skills Level 1 &amp; Level 2. Clear spacing, structured cards, large numbers, worked models, and interactive practice.">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192x192.png">
+  <link rel="apple-touch-icon" href="assets/img/favicon-192x192.png">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="assets/css/mfs-theme.css">
+  <link rel="stylesheet" href="assets/css/mfs-revision.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <!-- TOP TRUST BAR WITH ACCESSIBILITY & CONTACT -->
+  <div class="mfs-top-bar">
+    <div class="mfs-container mfs-top-bar-inner">
+      <div class="top-trust-items">
+        <span class="top-trust-item"><i class="fa-solid fa-building-columns"></i> Pearson Edexcel &amp; City &amp; Guilds Aligned</span>
+      </div>
+      <div class="top-contacts">
+        <div class="mfs-access-bar">
+          <!-- DYSLEXIA BACKGROUND TINT PICKER -->
+          <div class="mfs-tint-dropdown-wrap">
+            <button type="button" id="tintToggle" class="btn-tint-toggle" onclick="toggleTintMenu(event)" title="Change dyslexia background tint">
+              <span class="tint-swatch-indicator" id="tintCurrentSwatch"></span>
+              <span id="tintLabel">Cream Tint</span>
+              <i class="fa-solid fa-chevron-down" style="font-size:0.62rem; opacity:0.75; margin-left:2px;"></i>
+            </button>
+            <div id="tintMenu" class="tint-picker-menu">
+              <div class="tint-picker-title"><i class="fa-solid fa-glasses"></i> Dyslexia Reading Tint</div>
+              <button type="button" class="tint-option-btn active" data-tint="cream" onclick="setSiteTint('cream', event)">
+                <span class="swatch swatch-cream"></span>
+                <span class="tint-name">Cream <small class="tint-badge-def">Default</small></span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="peach" onclick="setSiteTint('peach', event)">
+                <span class="swatch swatch-peach"></span>
+                <span class="tint-name">Soft Peach</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="cool" onclick="setSiteTint('cool', event)">
+                <span class="swatch swatch-cool"></span>
+                <span class="tint-name">Cool Mist</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="sage" onclick="setSiteTint('sage', event)">
+                <span class="swatch swatch-sage"></span>
+                <span class="tint-name">Soft Sage</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <div class="tint-divider"></div>
+              <button type="button" class="tint-option-btn" data-tint="none" onclick="setSiteTint('none', event)">
+                <span class="swatch swatch-none"></span>
+                <span class="tint-name">No Tint (White)</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+            </div>
+          </div>
+          <button id="dyslexiaToggle" class="btn-dyslexia-toggle" onclick="toggleDyslexiaMode()" title="Toggle Dyslexia High-Readability Mode">
+            <i class="fa-solid fa-universal-access"></i> Dyslexia
+          </button>
+          <button id="themeToggle" class="mfs-theme-pill" onclick="toggleTheme()" title="Switch Palette: Sapphire vs Emerald">
+            <i class="fa-solid fa-palette"></i> <span id="themeLabel">Sapphire</span>
+          </button>
+        </div>
+        <a href="contact-us.html" class="top-contact-link"><i class="fa-solid fa-envelope"></i> <strong>Contact Us</strong></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->  <!-- MAIN NAVIGATION -->
+                                  <header class="mfs-navbar">
+    <div class="revision-page-wrapper mfs-navbar-inner">
+      <a href="index.html" class="mfs-brand">
+        <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div class="mfs-brand-text">
+          <div class="mfs-brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
+          <div class="mfs-brand-subtitle">Delivering Skills • Achieving Goals</div>
+        </div>
+      </a>
+
+      <nav class="mfs-nav-wrapper">
+        <ul class="mfs-nav-menu">
+          <!-- 1. SUBJECTS (VISUAL MEGA-MENU) -->
+          <li class="mfs-nav-item">
+            <a href="courses.html" class="mfs-nav-link">
+              <i class="fa-solid fa-book-open-reader" style="color:#0284c7; margin-right:5px;"></i> Subjects <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-revision-hub">
+              <div class="mfs-revision-grid">
+                <!-- Maths Column -->
+                <div class="mfs-revision-col mfs-revision-col-maths">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-calculator"></i> Maths Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="functional-skills-maths-level-2.html" class="mfs-dropdown-item">Maths Level 2</a>
+                    <a href="functional-skills-maths-level-1.html" class="mfs-dropdown-item">Maths Level 1</a>
+                    <a href="entry-level-3-maths.html" class="mfs-dropdown-item">Entry Level 3 Maths</a>
+                  </div>
+                </div>
+                <!-- English Column -->
+                <div class="mfs-revision-col mfs-revision-col-english">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-pen-nib"></i> English Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="functional-skills-english-level-2.html" class="mfs-dropdown-item">English Level 2</a>
+                    <a href="functional-skills-english-level-1.html" class="mfs-dropdown-item">English Level 1</a>
+                  </div>
+                </div>
+                <!-- Digital Skills Column -->
+                <div class="mfs-revision-col mfs-revision-col-digital">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-laptop-code"></i> Digital Skills</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="digital-functional-skills.html" class="mfs-dropdown-item">Digital Skills Hub</a>
+                    <a href="digital-functional-skills-mock-exam.html" class="mfs-dropdown-item">Pearson Mock Exam</a>
+                    <a href="digital-functional-skills-past-papers.html" class="mfs-dropdown-item">Past Papers &amp; Files</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- 2. PAST PAPERS & MOCKS (DIRECT ACCESS) -->
+          <li class="mfs-nav-item">
+            <a href="functional-skills-past-papers.html" class="mfs-nav-link">
+              <i class="fa-regular fa-file-lines" style="color:#0284c7; margin-right:5px;"></i> Past Papers &amp; Mocks
+            </a>
+          </li>
+
+          <!-- 2b. WORKSHEETS DIRECTORY (CORBETT STYLE DUAL ENGINE) -->
+          <li class="mfs-nav-item">
+            <a href="worksheets.html" class="mfs-nav-link">
+              <i class="fa-solid fa-layer-group" style="color:#0284c7; margin-right:5px;"></i> Worksheets Hub
+            </a>
+          </li>
+
+          <!-- 3. FREE TOOLS (COMPACT DROPDOWN) -->
+          <li class="mfs-nav-item">
+            <a href="tools.html" class="mfs-nav-link">
+              <i class="fa-solid fa-screwdriver-wrench" style="color:#0284c7; margin-right:5px;"></i> Free Tools <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-compact">
+              <a href="tools.html" class="mfs-dropdown-item" style="font-weight:700; color:var(--accent);"><i class="fa-solid fa-layer-group" style="font-size:0.85rem; margin-right:6px;"></i> All Free Tools &amp; Simulators &rarr;</a>
+              <div class="mfs-dropdown-divider" style="margin:4px 0; border-top:1px solid #e2e8f0;"></div>
+              <a href="pass-mark-calculator.html" class="mfs-dropdown-item"><i class="fa-solid fa-calculator" style="color:var(--accent); font-size:0.85rem; margin-right:6px;"></i> Pass Mark Calculator</a>
+              <a href="diagnostic-test.html" class="mfs-dropdown-item"><i class="fa-solid fa-chart-pie" style="color:#059669; font-size:0.85rem; margin-right:6px;"></i> Diagnostic Skill Checker</a>
+              <a href="functional-skills-nets.html" class="mfs-dropdown-item"><i class="fa-solid fa-cube" style="color:#0284c7; font-size:0.85rem; margin-right:6px;"></i> 3D Net Folding Tool</a>
+            </div>
+          </li>
+
+          <!-- 4. REVISION CARDS -->
+          <li class="mfs-nav-item">
+            <a href="revision-cards.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-layer-group" style="color:#d97706; margin-right:5px;"></i> Revision Cards
+            </a>
+          </li>
+
+          <!-- 5. SHOP -->
+          <li class="mfs-nav-item">
+            <a href="shop.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-basket-shopping" style="color:#d97706; margin-right:5px;"></i> Shop
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- 6. BOOK EXAM ACTION BUTTON -->
+      <div class="mfs-nav-actions">
+        <a href="exams.html" class="btn-nav-exam">
+          <i class="fa-solid fa-calendar-check"></i> Book Exam
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- BREADCRUMBS -->
+  <div class="revision-breadcrumb-bar">
+    <div class="revision-page-wrapper">
+      <div class="revision-breadcrumbs">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a href="revise.html">Revise Hub</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a href="digital-functional-skills.html">Digital Skills Level 2</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span class="current">Digital Functional Skills</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="revision-hero-card">
+    <div class="revision-page-wrapper">
+      <div class="revision-hero-grid">
+        <div class="revision-hero-content">
+          <div class="revision-hero-pill-row">
+            <span class="badge-pill-accent"><i class="fa-solid fa-laptop-code"></i> DIGITAL SKILLS</span>
+            <span class="badge-pill-gold">LEVEL 1 &amp; LEVEL 2</span>
+            <span class="badge-pill-outline">OFQUAL SPECIFICATION STANDARDS</span>
+          </div>
+
+          <h1 class="revision-hero-title">
+            Digital Skills: <span>Core Standards, Models &amp; Exam Practice</span>
+          </h1>
+
+          <p class="revision-hero-desc">
+            Comprehensive revision guide for Ofqual-regulated Digital Functional Skills (Entry 3 &amp; Level 1) calibrated to Pearson Edexcel &amp; City &amp; Guilds standards. Master cybersecurity, spreadsheets, file management, online safety, worked models, and interactive practice.
+          </p>
+
+          <div class="revision-hero-meta-bar">
+            <div class="hero-meta-item">
+              <i class="fa-solid fa-clock"></i> <strong>Est. Study Time:</strong> 25-35 Mins
+            </div>
+            <div class="hero-meta-item">
+              <i class="fa-solid fa-book-open"></i> <strong>Curriculum Standards:</strong> Pearson Edexcel &amp; City &amp; Guilds
+            </div>
+            <div class="hero-meta-item">
+              <i class="fa-solid fa-circle-check"></i> <strong>Interactive Practice Tasks Included</strong>
+            </div>
+
+            <div class="hero-quick-actions">
+              <a href="#downloads" class="btn-hero-action">
+                <i class="fa-regular fa-file-pdf"></i> Free Worksheet &amp; Answers (PDF)
+              </a>
+              <a href="#practice-questions" class="btn-hero-action-secondary">
+                <i class="fa-solid fa-pencil"></i> Start Practice Tasks
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="revision-hero-visual-card">
+          <div class="revision-hero-img-wrap">
+            <img src="assets/img/book_photos/money_shopping_bills/calculator_finance.jpg" alt="Digital Functional Skills Workplace Application" loading="lazy" />
+          </div>
+          <div class="revision-hero-caption-bar">
+            <strong><i class="fa-solid fa-shapes"></i> Key Visual Concept</strong>
+            Applying functional mathematical skills to solve practical workplace problems.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOBILE TABLE OF CONTENTS BAR -->
+  <div class="mobile-toc-bar">
+    <div style="font-weight:700; color:var(--navy-dark); font-size:0.9rem;">
+      <i class="fa-solid fa-list-check" style="color:var(--accent);"></i> Digital Functional Skills Blueprint
+    </div>
+    <button type="button" class="btn-mobile-toc" onclick="toggleMobileToc()">
+      <span>Table of Contents</span> <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+
+  <!-- MAIN 2-COLUMN RESPONSIVE LAYOUT -->
+  <main class="revision-page-wrapper">
+    <div class="revision-layout">
+
+      <!-- LEFT COLUMN: STICKY BLUEPRINT TOC -->
+      <aside class="revision-sidebar" id="sidebarNav">
+        <div class="sidebar-toc-title">
+          <span><i class="fa-solid fa-compass-drafting" style="color:var(--accent);"></i> Topic Contents</span>
+          <span style="font-size:0.75rem; color:#64748b; font-weight:700;">10 Sections</span>
+        </div>
+
+        <ul class="sidebar-toc-list" id="tocList">
+          
+          <li>
+            <a href="#specification" class="sidebar-toc-link active">
+              <i class="fa-solid fa-clipboard-check"></i> Specification
+            </a>
+          </li>
+          <li>
+            <a href="#golden-rules" class="sidebar-toc-link">
+              <i class="fa-solid fa-lightbulb"></i> Golden Rules
+            </a>
+          </li>
+          <li>
+            <a href="#skill-1" class="sidebar-toc-link">
+              <i class="fa-solid fa-shield-halved"></i> 1. Cybersecurity
+            </a>
+          </li>
+          <li>
+            <a href="#skill-2" class="sidebar-toc-link">
+              <i class="fa-solid fa-table-cells"></i> 2. Spreadsheets
+            </a>
+          </li>
+          <li>
+            <a href="#skill-3" class="sidebar-toc-link">
+              <i class="fa-solid fa-folder-tree"></i> 3. File Management
+            </a>
+          </li>
+          <li>
+            <a href="#skill-4" class="sidebar-toc-link">
+              <i class="fa-solid fa-envelope-open-text"></i> 4. Phishing Detection
+            </a>
+          </li>
+          <li>
+            <a href="#worked-exam-models" class="sidebar-toc-link">
+              <i class="fa-solid fa-graduation-cap"></i> Worked Exam Models
+            </a>
+          </li>
+          <li>
+            <a href="#examiner-traps" class="sidebar-toc-link">
+              <i class="fa-solid fa-triangle-exclamation"></i> Examiner Traps
+            </a>
+          </li>
+          <li>
+            <a href="#practice-questions" class="sidebar-toc-link">
+              <i class="fa-solid fa-pencil"></i> Exam Practice
+            </a>
+          </li>
+          <li>
+            <a href="#downloads" class="sidebar-toc-link">
+              <i class="fa-solid fa-file-pdf"></i> Downloads (PDF)
+            </a>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- RIGHT COLUMN: MAIN LEARNING CONTENT -->
+      <div class="revision-content">
+        
+    <!-- SPECIFICATION -->
+    <section id="specification" class="revision-section">
+      <div class="section-header-row">
+        <h2 class="section-title"><i class="fa-solid fa-clipboard-check"></i> 5 Core National Digital Standards</h2>
+      </div>
+      <div class="skill-card-container">
+        <p>Students must demonstrate competence across the 5 regulated government digital skills standards:</p>
+        <ul style="padding-left:20px; line-height:1.75; color:#334155;">
+          <li><strong>Standard 1: Using Devices &amp; Handling Information</strong> – File management, searching, cloud storage, selecting appropriate applications.</li>
+          <li><strong>Standard 2: Creating &amp; Editing</strong> – Word processing, formatting documents, spreadsheet formulas (SUM, AVERAGE, MIN, MAX), charts, sorting and filtering.</li>
+          <li><strong>Standard 3: Communicating</strong> – Professional email etiquette, CC vs BCC, calendar invitations, video conferencing netiquette.</li>
+          <li><strong>Standard 4: Transacting</strong> – Completing digital forms, verification checks, online purchasing, account management.</li>
+          <li><strong>Standard 5: Being Safe &amp; Responsible Online</strong> – Password security, two-factor authentication (2FA), identifying phishing scams, protecting privacy and physical wellbeing.</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- GOLDEN RULES -->
+    <section id="golden-rules" class="revision-section">
+      <div class="section-header-row">
+        <h2 class="section-title"><i class="fa-solid fa-lightbulb"></i> Golden Rules for Digital Functional Skills</h2>
+      </div>
+
+      <div class="rule-card-amber">
+        <div class="rule-card-amber-header">
+          <i class="fa-solid fa-shield-halved"></i>
+          <span>Golden Rule 1: Cybersecurity &amp; Credential Hygiene</span>
+        </div>
+        <p>
+          Always create passwords with at least 12 characters combining uppercase, lowercase, numbers, and symbols (passphrase technique). Never reveal 2FA codes. In phishing scenarios, inspect the sender email header for subtle domain spoofing (e.g. support@paypaI-sec.com instead of paypal.com).
+        </p>
+        <div class="rule-highlight-badge">
+          Examiner Tip: If an email asks for urgent action with a link to confirm passwords, it is always a phishing attempt.
+        </div>
+      </div>
+
+      <div class="rule-card-amber">
+        <div class="rule-card-amber-header">
+          <i class="fa-solid fa-table-cells"></i>
+          <span>Golden Rule 2: Accurate Spreadsheet Formula Formatting</span>
+        </div>
+        <p>
+          Every spreadsheet formula must start with an equals sign (=). When calculating totals or averages, use uppercase function names with accurate colon ranges: =SUM(C2:C14) or =AVERAGE(D2:D20). Always format currency columns with &pound; and two decimal places.
+        </p>
+        <div class="rule-highlight-badge">
+          Check: Ensure range references include all relevant data rows without including summary header lines.
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILL 1: CYBERSECURITY -->
+    <section id="skill-1" class="revision-section">
+      <div class="pfs-card">
+        <div class="pfs-card-head">
+          <div class="pfs-card-title">
+            <span class="pfs-prefix">Example 1:</span> Password Security &amp; Multi-Factor Authentication (2FA)
+          </div>
+          <p class="pfs-card-stem">
+            An NHS healthcare assistant needs to set up a new password for the clinical patient management system. Evaluate which password meets high-security compliance criteria.
+          </p>
+        </div>
+
+        <div class="pfs-card-body">
+          <div class="pfs-math-col">
+            <div class="pfs-marks-row">[2 Marks]</div>
+            <div class="pfs-formula-display">
+              Strong Passwords = 12+ Characters + Mixed Case + Numbers + Special Characters
+            </div>
+            <div class="pfs-steps-box">
+              <div class="pfs-step-row">
+                <span class="pfs-step-tag">Option A:</span>
+                <span style="color:#e11d48; text-decoration:line-through;">Hospital2026! (Weak: predictable dictionary word).</span>
+              </div>
+              <div class="pfs-step-row">
+                <span class="pfs-step-tag">Option B:</span>
+                <span style="color:#059669; font-weight:700;">Tr@in!Blue#98Pine (Strong: 16 characters, 3 unrelated words, mixed case &amp; symbols).</span>
+              </div>
+              <div class="pfs-step-row">
+                <span class="pfs-step-tag">2FA Rule:</span>
+                <span>Two-Factor Authentication requires two different categories: Something you KNOW (password) + Something you HAVE (authenticator app / phone token).</span>
+              </div>
+            </div>
+
+            <div class="big-answer-row">
+              <div class="big-answer-title"><i class="fa-solid fa-check"></i> Compliant Password:</div>
+              <div class="big-answer-chips">
+                <span class="big-answer-chip">Tr@in!Blue#98Pine</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pfs-diagram-col">
+            <div style="background:#f8fafc; border:2px solid #00a8ff; border-radius:12px; padding:20px; text-align:center; width:100%;">
+              <i class="fa-solid fa-lock" style="font-size:3rem; color:#00a8ff; margin-bottom:12px;"></i>
+              <div style="font-weight:800; color:#0f172a; margin-bottom:6px;">Multi-Factor Authentication</div>
+              <div style="font-size:0.88rem; color:#64748b;">Password + Authenticator Code = 99.9% Protection Against Account Compromise</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pfs-card-footer">
+          <span class="pfs-pill-l1">Entry 3</span>
+          <span class="pfs-pill-l2">Level 1</span>
+          <span class="pfs-pill-board">Pearson Edexcel &bull; City &amp; Guilds</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILL 2: SPREADSHEETS -->
+    <section id="skill-2" class="revision-section">
+      <div class="pfs-card">
+        <div class="pfs-card-head">
+          <div class="pfs-card-title">
+            <span class="pfs-prefix">Example 2:</span> Core Spreadsheet Formulas (SUM, AVERAGE, MIN, MAX)
+          </div>
+          <p class="pfs-card-stem">
+            You are managing a medical supply inventory spreadsheet. Column C contains item costs from row 3 to row 14. What formulas should be entered into the summary rows?
+          </p>
+        </div>
+
+        <div class="pfs-card-body">
+          <div class="pfs-math-col">
+            <div class="pfs-marks-row">[3 Marks]</div>
+            <div class="pfs-steps-box">
+              <div class="pfs-step-row">
+                <span class="pfs-step-tag">Total Cost:</span>
+                <span style="font-family:monospace; font-weight:800; color:#0284c7; font-size:1.1rem;">=SUM(C3:C14)</span>
+                <span>Adds all values in the specified cell range.</span>
+              </div>
+              <div class="pfs-step-row">
+                <span class="pfs-step-tag">Average Cost:</span>
+                <span style="font-family:monospace; font-weight:800; color:#0284c7; font-size:1.1rem;">=AVERAGE(C3:C14)</span>
+                <span>Calculates the arithmetic mean of the range.</span>
+              </div>
+              <div class="pfs-step-row">
+                <span class="pfs-step-tag">Lowest Cost:</span>
+                <span style="font-family:monospace; font-weight:800; color:#0284c7; font-size:1.1rem;">=MIN(C3:C14)</span>
+                <span>Identifies the lowest price in the dataset.</span>
+              </div>
+              <div class="pfs-step-row">
+                <span class="pfs-step-tag">Highest Cost:</span>
+                <span style="font-family:monospace; font-weight:800; color:#0284c7; font-size:1.1rem;">=MAX(C3:C14)</span>
+                <span>Identifies the highest price in the dataset.</span>
+              </div>
+            </div>
+
+            <div class="big-answer-row">
+              <div class="big-answer-title"><i class="fa-solid fa-check"></i> Golden Rule:</div>
+              <div class="big-answer-chips">
+                <span class="big-answer-chip">Always start with =</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pfs-diagram-col">
+            <div style="background:#f0fdf4; border:2px solid #10b981; border-radius:12px; padding:20px; text-align:center; width:100%;">
+              <i class="fa-solid fa-table-cells" style="font-size:3rem; color:#10b981; margin-bottom:12px;"></i>
+              <div style="font-weight:800; color:#065f46; margin-bottom:6px;">Spreadsheet Formatting</div>
+              <div style="font-size:0.88rem; color:#047857;">Format monetary data as Currency (&pound;) with 2 decimal places. Center align headers.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pfs-card-footer">
+          <span class="pfs-pill-l2">Level 1 Workplace Standard</span>
+          <span class="pfs-pill-board">Pearson Edexcel &bull; City &amp; Guilds</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILL 3: FILE MANAGEMENT -->
+    <section id="skill-3" class="revision-section">
+      <div class="pfs-card">
+        <div class="pfs-card-head">
+          <div class="pfs-card-title">
+            <span class="pfs-prefix">Example 3:</span> Hierarchical Folder Structures &amp; Cloud Storage
+          </div>
+          <p class="pfs-card-stem">
+            You need to organize hospital patient training records so all staff can find files quickly. Which folder hierarchy is logical, professional, and compliant?
+          </p>
+        </div>
+
+        <div class="pfs-card-body">
+          <div class="pfs-math-col">
+            <div class="pfs-marks-row">[2 Marks]</div>
+            <div class="pfs-steps-box">
+              <div class="pfs-step-row">
+                <span class="pfs-step-tag">Root:</span>
+                <span><strong>NHS_Training_2026/</strong></span>
+              </div>
+              <div class="pfs-step-row">
+                <span class="pfs-step-tag">Subfolder:</span>
+                <span>NHS_Training_2026/<strong>01_Clinical_Skills/</strong></span>
+              </div>
+              <div class="pfs-step-row">
+                <span class="pfs-step-tag">File Naming:</span>
+                <span style="font-family:monospace; color:#0284c7; font-weight:700;">2026-10-15_Hand_Hygiene_Protocols_v1.2.pdf</span>
+              </div>
+              <div class="pfs-step-row">
+                <span class="pfs-step-tag">Best Practice:</span>
+                <span>Use YYYY-MM-DD date prefixes so files sort chronologically. Use version numbers (_v1.0) and avoid vague names like 'doc1.docx' or 'final.pdf'.</span>
+              </div>
+            </div>
+
+            <div class="big-answer-row">
+              <div class="big-answer-title"><i class="fa-solid fa-check"></i> Standard Format:</div>
+              <div class="big-answer-chips">
+                <span class="big-answer-chip">YYYY-MM-DD_Topic_vX</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pfs-diagram-col">
+            <div style="background:#eff6ff; border:2px solid #2563eb; border-radius:12px; padding:20px; text-align:center; width:100%;">
+              <i class="fa-solid fa-folder-tree" style="font-size:3rem; color:#2563eb; margin-bottom:12px;"></i>
+              <div style="font-weight:800; color:#1e3a8a; margin-bottom:6px;">Cloud Collaboration</div>
+              <div style="font-size:0.88rem; color:#1d4ed8;">OneDrive / SharePoint: Set permission to 'View Only' for sensitive records.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pfs-card-footer">
+          <span class="pfs-pill-l1">Entry 3</span>
+          <span class="pfs-pill-l2">Level 1</span>
+          <span class="pfs-pill-board">Pearson Edexcel &bull; City &amp; Guilds</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORKED EXAM MODELS -->
+    <section id="worked-exam-models" class="revision-section">
+      <div class="section-header-row">
+        <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i> Pearson Edexcel Worked Exam Model</h2>
+      </div>
+
+      <div class="worked-exam-model-card">
+        <div class="model-header-bar">
+          <span class="badge-worked-model">Pearson Edexcel Level 1 Practical Simulator</span>
+          <span class="model-marks-pill">[4 Marks &bull; Digital Practical Task]</span>
+        </div>
+        <div class="model-question-stem">
+          <strong>Workplace Scenario:</strong> You are an administrative assistant at a community clinic. 
+          Your manager asks you to prepare a staff shift attendance spreadsheet. 
+          <ol style="margin-top:10px; padding-left:20px; line-height:1.7;">
+            <li>Enter a formula in cell <strong>B15</strong> to calculate the total hours worked across rows B3 to B14.</li>
+            <li>Enter a formula in cell <strong>B16</strong> to calculate the average hours worked.</li>
+            <li>Sort the table by Staff Surname in alphabetical order (A to Z).</li>
+            <li>Apply currency formatting (&pound;) with 2 decimal places to the hourly wage column D.</li>
+          </ol>
+        </div>
+
+        <div class="model-steps-list">
+          <div class="model-step-row">
+            <span class="step-number-bubble">Step 1</span>
+            <div class="step-detail-body">
+              <div class="step-detail-title">Total Hours Formula [1 Mark]</div>
+              <div class="step-math-line">=SUM(B3:B14)</div>
+              <div class="mark-scheme-tag"><i class="fa-solid fa-check"></i> 1 mark awarded for correct uppercase formula syntax and accurate range.</div>
+            </div>
+          </div>
+
+          <div class="model-step-row">
+            <span class="step-number-bubble">Step 2</span>
+            <div class="step-detail-body">
+              <div class="step-detail-title">Average Hours Formula [1 Mark]</div>
+              <div class="step-math-line">=AVERAGE(B3:B14)</div>
+              <div class="mark-scheme-tag"><i class="fa-solid fa-check"></i> 1 mark awarded for =AVERAGE with matching data range.</div>
+            </div>
+          </div>
+
+          <div class="model-step-row">
+            <span class="step-number-bubble">Step 3</span>
+            <div class="step-detail-body">
+              <div class="step-detail-title">Table Sorting [1 Mark]</div>
+              <div class="step-math-line">Highlight range A3:E14 &rarr; Data &rarr; Sort &rarr; Column A &rarr; Ascending (A-Z)</div>
+              <div class="mark-scheme-tag"><i class="fa-solid fa-check"></i> 1 mark awarded for expanding selection so related data rows stay intact.</div>
+            </div>
+          </div>
+
+          <div class="model-step-row">
+            <span class="step-number-bubble">Step 4</span>
+            <div class="step-detail-body">
+              <div class="step-detail-title">Currency Number Formatting [1 Mark]</div>
+              <div class="step-math-line" style="background:#dcfce7; color:#166534; border-color:#86efac;">Right click Column D &rarr; Format Cells &rarr; Currency &rarr; Symbol: &pound; &rarr; Decimals: 2</div>
+              <div class="mark-scheme-tag"><i class="fa-solid fa-check"></i> 1 mark awarded for professional UK currency formatting.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="model-final-answer-callout">
+          <div class="model-final-text">Official Examiner Award: 4 / 4 Marks</div>
+          <div style="font-size:0.92rem; color:#94a3b8;">Common Mistake: Typing =SUM(B3+B14) or including row 15 in the average range!</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXAMINER TRAPS -->
+    <section id="examiner-traps" class="revision-section">
+      <div class="section-header-row">
+        <h2 class="section-title"><i class="fa-solid fa-triangle-exclamation"></i> Examiner Traps &amp; Common Pitfalls</h2>
+      </div>
+
+      <div class="trap-card-coral">
+        <div class="trap-card-coral-header">
+          <i class="fa-solid fa-circle-xmark"></i>
+          <span>Trap 1: Sorting Only One Column Without Expanding the Selection</span>
+        </div>
+        <p>
+          If you highlight only names and click sort without selecting the entire table, the names will sort but their addresses, hours, and pay will stay put — corrupting all patient records!
+        </p>
+        <div class="trap-solution-badge">
+          <i class="fa-solid fa-circle-check" style="color:#10b981;"></i> Solution: Always click 'Expand the Selection' when prompted by spreadsheet software.
+        </div>
+      </div>
+
+      <div class="trap-card-coral">
+        <div class="trap-card-coral-header">
+          <i class="fa-solid fa-circle-xmark"></i>
+          <span>Trap 2: Replying 'ALL' or CC'ing Confidentially Sensitive Emails</span>
+        </div>
+        <p>
+          Sending patient records or group feedback using the 'To' or 'CC' field exposes everyone's private email address to the entire list, breaching UK GDPR data protection legislation.
+        </p>
+        <div class="trap-solution-badge">
+          <i class="fa-solid fa-circle-check" style="color:#10b981;"></i> Solution: Always use BCC (Blind Carbon Copy) when emailing multiple external recipients.
+        </div>
+      </div>
+    </section>
+
+    <!-- PRACTICE QUESTIONS -->
+    <section id="practice-questions" class="revision-section">
+      <div class="section-header-row">
+        <h2 class="section-title"><i class="fa-solid fa-pencil"></i> Interactive Exam Practice Questions</h2>
+        <span style="font-size:0.9rem; color:#64748b; font-weight:700;">2 Practice Tasks</span>
+      </div>
+
+      <!-- Question 1 -->
+      <div class="practice-q-card">
+        <div class="practice-q-header">
+          <span class="practice-q-num">Question 1</span>
+          <span class="practice-q-marks">[2 Marks]</span>
+        </div>
+        <div class="practice-q-stem">
+          You receive an email from <code>security-update@nhs-net-verify.org</code> stating: <em>"Urgent: Your NHS Smartcard login expires today. Click here immediately to enter your password and prevent suspension."</em><br><br>
+          Give TWO reasons why this is a phishing scam, and state what action you should take.
+        </div>
+
+        <div class="working-scratchpad-area">
+          <label class="working-scratchpad-label"><i class="fa-solid fa-calculator"></i> Your Working Scratchpad (Auto-saved):</label>
+          <textarea class="working-scratchpad-input" placeholder="Type your step-by-step working here..."></textarea>
+        </div>
+
+        <div class="practice-q-toolbar">
+          <button type="button" class="btn-reveal-solution" onclick="toggleSolutionDrawer('drawer-q1')">
+            <i class="fa-solid fa-eye"></i> Reveal Full Solution &amp; Mark Scheme
+          </button>
+        </div>
+
+        <div id="drawer-q1" class="solution-drawer">
+          <div class="solution-drawer-title"><i class="fa-solid fa-circle-check"></i> Official Tutor Worked Solution</div>
+          <div style="line-height:1.7; color:#166534;">
+            <p><strong>Reason 1:</strong> Fake sender domain (official NHS domains end in <code>@nhs.net</code> or <code>@nhs.uk</code>, not <code>.org</code>). [1 Mark]</p>
+            <p><strong>Reason 2:</strong> Creates artificial urgency and threatens account closure to provoke panic. [1 Mark]</p>
+            <p><strong>Action:</strong> Do not click the link; report the email to the IT security officer and delete it. [1 Mark]</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="practice-q-card">
+        <div class="practice-q-header">
+          <span class="practice-q-num">Question 2</span>
+          <span class="practice-q-marks">[2 Marks]</span>
+        </div>
+        <div class="practice-q-stem">
+          A spreadsheet lists staff overtime hours in cells <code>D4:D18</code>.<br>
+          Write the exact formula required to calculate the AVERAGE overtime hours.
+        </div>
+
+        <div class="working-scratchpad-area">
+          <label class="working-scratchpad-label"><i class="fa-solid fa-calculator"></i> Your Working Scratchpad (Auto-saved):</label>
+          <textarea class="working-scratchpad-input" placeholder="Type your step-by-step working here..."></textarea>
+        </div>
+
+        <div class="practice-q-toolbar">
+          <button type="button" class="btn-reveal-solution" onclick="toggleSolutionDrawer('drawer-q2')">
+            <i class="fa-solid fa-eye"></i> Reveal Full Solution &amp; Mark Scheme
+          </button>
+        </div>
+
+        <div id="drawer-q2" class="solution-drawer">
+          <div class="solution-drawer-title"><i class="fa-solid fa-circle-check"></i> Official Tutor Worked Solution</div>
+          <div style="line-height:1.7; color:#166534;">
+            <p><strong>Formula:</strong> <code>=AVERAGE(D4:D18)</code> [2 Marks]</p>
+            <p><em>(Award 1 mark for correct function name without equals sign, full 2 marks for exact syntax).</em></p>
+          </div>
+        </div>
+      </div>
+    </section>
+    
+
+                <!-- DOWNLOADS -->
+        <section id="downloads" class="revision-section">
+          <!-- LINK TO ALL DIGITAL SKILLS MOCK EXAMS -->
+          <div style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border: 1.5px solid #3b82f6; border-radius: 14px; padding: 20px 24px; margin-bottom: 22px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; box-shadow: 0 4px 18px rgba(15,23,42,0.12);">
+            <div style="display: flex; align-items: center; gap: 16px;">
+              <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(37,99,235,0.25); border: 1px solid rgba(59,130,246,0.4); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: #60a5fa; flex-shrink: 0;">
+                <i class="fa-solid fa-graduation-cap"></i>
+              </div>
+              <div>
+                <div style="color: #ffffff; font-weight: 700; font-size: 1.08rem; margin-bottom: 3px;">Looking for All Digital Skills Mock Exams &amp; Past Papers?</div>
+                <div style="color: #94a3b8; font-size: 0.88rem;">Access the complete archive of Pearson Edexcel Level 1 &amp; Entry Level 3 past papers, ZIP data files, and mark schemes.</div>
+              </div>
+            </div>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center;">
+              <a href="digital-functional-skills-past-papers.html" style="background: #2563eb; color: #ffffff; text-decoration: none; padding: 10px 20px; border-radius: 8px; font-weight: 700; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 2px 8px rgba(37,99,235,0.3); transition: background 0.2s;">
+                <i class="fa-solid fa-folder-open"></i> All Digital Skills Mock Exams &rarr;
+              </a>
+              <a href="functional-skills-past-papers.html?subject=digital-skills#mock-finder" style="background: rgba(255,255,255,0.1); color: #ffffff; text-decoration: none; padding: 10px 16px; border-radius: 8px; font-weight: 600; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,0.25); transition: background 0.2s;">
+                <i class="fa-solid fa-magnifying-glass"></i> Interactive Mock Finder
+              </a>
+            </div>
+          </div>
+
+          <div style="margin-bottom: 14px;">
+            <a href="digital-functional-skills-past-papers.html" style="font-weight: 700; color: #2563eb; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; font-size: 0.95rem;">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Link to All Digital Skills Mock Exams &amp; Past Paper Archives &rarr;
+            </a>
+          </div>
+
+          <div class="section-header-row">
+            <h2 class="section-title"><i class="fa-regular fa-file-pdf"></i> Free Revision Worksheets &amp; Exam Papers</h2>
+          </div>
+
+          <div class="download-tiles-grid">
+            <a href="worksheets/digital-functional-skills-revision-worksheet.html" target="_blank" class="download-tile-card">
+              <div class="download-tile-icon icon-pdf"><i class="fa-regular fa-file-pdf"></i></div>
+              <div class="download-tile-info">
+                <strong>Digital Revision Exam Practice Worksheet (PDF)</strong>
+                <span>Original practice questions calibrated for L1 &amp; L2 examinations</span>
+              </div>
+            </a>
+
+            <a href="worksheets/digital-functional-skills-revision-answers.html" target="_blank" class="download-tile-card">
+              <div class="download-tile-icon icon-answers"><i class="fa-solid fa-check-double"></i></div>
+              <div class="download-tile-info">
+                <strong>Step-by-Step Worked Mark Scheme (PDF)</strong>
+                <span>Official tutor model answers with method marks breakdown</span>
+              </div>
+            </a>
+          </div>
+        </section>
+
+        <!-- NEXT TOPIC BANNER -->
+        <div class="next-topic-banner">
+          <div class="next-topic-info">
+            <strong>Next Curriculum Topic</strong>
+            <span>Digital Skills Level 1 Online Course</span>
+          </div>
+          <a href="digital-functional-skills-level-1.html" class="btn-next-topic">
+            Continue Revision <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </main>  <!-- FOOTER -->
+  <footer class="mfs-footer" id="site-footer">
+    <div class="mfs-container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="mfs-brand" style="margin-bottom:16px;">
+            <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="mfs-brand-text">
+              <div class="mfs-brand-title" style="color:#ffffff;">MASTER<span>FUNCTIONALSKILLS</span></div>
+              <div class="mfs-brand-subtitle" style="color:#94a3b8;">Delivering Skills • Achieving Goals</div>
+            </div>
+          </div>
+          <p style="font-size:0.88rem; line-height:1.6; margin-bottom:16px;">
+            The UK's dedicated Functional Skills revision specialist. Providing realistic mock exams, step-by-step revision flashcards, diagnostic assessments, and 1-to-1 specialist tuition for Pearson Edexcel, City &amp; Guilds, and all major exam boards.
+          </p>
+          <div style="font-size:0.85rem; color:#cbd5e1;">
+            <p><a href="https://wa.me/447564525425" target="_blank" rel="noopener" style="color:#cbd5e1; text-decoration:none;"><i class="fa-brands fa-whatsapp" style="color:var(--accent); margin-right:8px;"></i> WhatsApp: +44 (0)7564 525425</a></p>
+            <p style="margin-top:6px;"><a href="contact-us.html" style="color:#cbd5e1; text-decoration:none;"><i class="fa-solid fa-envelope" style="color:var(--accent); margin-right:8px;"></i> Contact Tutor Team</a></p>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Maths Revision</h4>
+          <ul class="footer-links">
+            <li><a href="functional-skills-maths-level-2.html">Maths Level 2 Revision</a></li>
+            <li><a href="functional-skills-maths-level-1.html">Maths Level 1 Revision</a></li>
+            <li><a href="entry-level-3-maths.html">Entry Level 3 Maths</a></li>
+            <li><a href="pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="functional-skills-past-papers.html">Free Maths Past Papers</a></li>
+            <li><a href="exam-maths-l2.html">Book Level 2 Maths Exam</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>English &amp; Digital</h4>
+          <ul class="footer-links">
+            <li><a href="functional-skills-english-level-2.html">English Level 2 Revision</a></li>
+            <li><a href="functional-skills-english-level-1.html">English Level 1 Revision</a></li>
+            <li><a href="digital-functional-skills.html">Digital Skills Hub (L1 &amp; E3)</a></li>
+            <li><a href="digital-functional-skills-past-papers.html">DFS Past Papers &amp; Data Files</a></li>
+            <li><a href="functional-skills-past-papers.html?format=online#mock-finder">Online Exam Simulator</a></li>
+            <li><a href="exam-english-l2.html">Book Level 2 English Exam</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Student Support &amp; Tools</h4>
+          <ul class="footer-links">
+            <li><a href="tools.html" style="color:var(--accent); font-weight:700;"><i class="fa-solid fa-screwdriver-wrench" style="margin-right:6px;"></i>All Interactive Tools Hub</a></li>
+            <li><a href="pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="diagnostic-test.html">Diagnostic Skill Checker</a></li>
+            <li><a href="functional-skills-nets.html">3D Net Folding Tool</a></li>
+            <li><a href="digital-functional-skills-mock-exam.html">Pearson DFS Simulator</a></li>
+            <li><a href="revision-cards.html">Revision Cards &amp; Flashcards</a></li>
+            <li><a href="shop.html">Revision Books &amp; Study Packs</a></li>
+            <li><a href="tutors.html">1-to-1 Specialist Tuition</a></li>
+            <li><a href="exams.html">Book Official Online Exam</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Master Functional Skills. All rights reserved. Registered in England &amp; Wales. Ofqual Regulated Qualification Standards.</div>
+        <div style="display:flex; gap:16px; flex-wrap:wrap;">
+          <a href="index.html">Home</a>
+          <a href="tools.html" style="color:var(--accent); font-weight:700;">Tools</a>
+          <a href="functional-skills-past-papers.html">Past Papers</a>
+          <a href="revision-cards.html">Revision Cards</a>
+          <a href="shop.html">Study Shop</a>
+          <a href="tutors.html">Tutors</a>
+          <a href="contact-us.html">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/mfs-revision.js"></script>
+</body>
+</html>

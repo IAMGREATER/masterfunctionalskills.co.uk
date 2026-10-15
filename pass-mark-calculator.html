@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="alternate icon" href="favicon.ico">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Functional Skills Pass Mark & Grade Boundary Calculator | Master Functional Skills</title>
+  <meta name="description" content="Calculate your Functional Skills Maths and English Level 1 & Level 2 mock scores against official Pearson Edexcel, City & Guilds, Open Awards, NCFE, and AQA grade boundaries.">
+  <link rel="stylesheet" href="assets/css/mfs-theme.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    .calc-container {
+      max-width: 980px;
+      margin: 0 auto;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      box-shadow: 0 12px 35px rgba(7, 13, 30, 0.06);
+      padding: 36px;
+      position: relative;
+    }
+    .calc-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+      margin-top: 24px;
+    }
+    @media (max-width: 820px) {
+      .calc-grid { grid-template-columns: 1fr; }
+      .calc-container { padding: 22px; }
+    }
+    .calc-group {
+      margin-bottom: 20px;
+    }
+    .calc-label {
+      display: block;
+      font-size: 0.92rem;
+      font-weight: 700;
+      color: var(--navy-dark);
+      margin-bottom: 8px;
+    }
+    .calc-select, .calc-input {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 12px;
+      border: 1.5px solid var(--border);
+      font-size: 0.95rem;
+      font-family: inherit;
+      color: var(--text-primary);
+      background: #faf8f2;
+      transition: all 0.2s ease;
+    }
+    .calc-select:focus, .calc-input:focus {
+      border-color: var(--accent);
+      outline: none;
+      background: #ffffff;
+      box-shadow: 0 0 0 3px var(--accent-glow);
+    }
+    .slider-wrap {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-top: 8px;
+    }
+    .slider-wrap input[type=range] {
+      flex-grow: 1;
+      accent-color: var(--accent);
+      height: 6px;
+      cursor: pointer;
+    }
+    .slider-val {
+      min-width: 52px;
+      text-align: center;
+      font-weight: 800;
+      font-size: 1.1rem;
+      color: var(--navy);
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 4px 8px;
+    }
+    .result-box {
+      background: linear-gradient(135deg, #070d1e 0%, #14213d 100%);
+      color: #ffffff;
+      border-radius: 18px;
+      padding: 28px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      overflow: hidden;
+    }
+    .result-box::before {
+      content: '';
+      position: absolute;
+      top: -40px;
+      right: -40px;
+      width: 140px;
+      height: 140px;
+      background: radial-gradient(circle, rgba(0, 184, 124, 0.25) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    .result-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+    .result-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 100px;
+      font-size: 0.85rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .badge-pass {
+      background: rgba(0, 184, 124, 0.2);
+      color: #00e59b;
+      border: 1px solid rgba(0, 184, 124, 0.4);
+    }
+    .badge-borderline {
+      background: rgba(245, 158, 11, 0.2);
+      color: #fbbf24;
+      border: 1px solid rgba(245, 158, 11, 0.4);
+    }
+    .badge-fail {
+      background: rgba(239, 68, 68, 0.2);
+      color: #f87171;
+      border: 1px solid rgba(239, 68, 68, 0.4);
+    }
+    .score-big {
+      font-size: 3rem;
+      font-weight: 900;
+      line-height: 1;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+    }
+    .score-max {
+      font-size: 1.3rem;
+      opacity: 0.6;
+      font-weight: 600;
+    }
+    .pct-bar-track {
+      width: 100%;
+      height: 10px;
+      background: rgba(255, 255, 255, 0.12);
+      border-radius: 100px;
+      margin: 14px 0 20px;
+      overflow: hidden;
+      position: relative;
+    }
+    .pct-bar-fill {
+      height: 100%;
+      border-radius: 100px;
+      transition: width 0.35s ease, background 0.35s ease;
+      background: var(--accent);
+    }
+    .cutoff-marker {
+      position: absolute;
+      top: 0;
+      bottom: 0;
+      width: 2px;
+      background: #ffffff;
+      box-shadow: 0 0 6px #ffffff;
+    }
+    .guidance-box {
+      background: rgba(255, 255, 255, 0.07);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 12px;
+      padding: 16px;
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+    .boundaries-table-wrap {
+      margin-top: 48px;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 18px rgba(7, 13, 30, 0.04);
+    }
+    .boundaries-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+      font-size: 0.92rem;
+    }
+    .boundaries-table th {
+      background: var(--navy-dark);
+      color: #ffffff;
+      padding: 14px 20px;
+      font-weight: 700;
+      font-size: 0.86rem;
+      letter-spacing: 0.5px;
+    }
+    .boundaries-table td {
+      padding: 14px 20px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-primary);
+    }
+    .boundaries-table tr:hover td {
+      background: #faf8f2;
+    }
+  </style>
+</head>
+<body>
+    <!-- TOP TRUST BAR WITH ACCESSIBILITY & CONTACT -->
+  <div class="mfs-top-bar">
+    <div class="mfs-container mfs-top-bar-inner">
+      <div class="top-trust-items">
+        <span class="top-trust-item"><i class="fa-solid fa-building-columns"></i> Pearson Edexcel &amp; City &amp; Guilds Aligned</span>
+      </div>
+      <div class="top-contacts">
+        <div class="mfs-access-bar">
+          <!-- DYSLEXIA BACKGROUND TINT PICKER -->
+          <div class="mfs-tint-dropdown-wrap">
+            <button type="button" id="tintToggle" class="btn-tint-toggle" onclick="toggleTintMenu(event)" title="Change dyslexia background tint">
+              <span class="tint-swatch-indicator" id="tintCurrentSwatch"></span>
+              <span id="tintLabel">Cream Tint</span>
+              <i class="fa-solid fa-chevron-down" style="font-size:0.62rem; opacity:0.75; margin-left:2px;"></i>
+            </button>
+            <div id="tintMenu" class="tint-picker-menu">
+              <div class="tint-picker-title"><i class="fa-solid fa-glasses"></i> Dyslexia Reading Tint</div>
+              <button type="button" class="tint-option-btn active" data-tint="cream" onclick="setSiteTint('cream', event)">
+                <span class="swatch swatch-cream"></span>
+                <span class="tint-name">Cream <small class="tint-badge-def">Default</small></span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="peach" onclick="setSiteTint('peach', event)">
+                <span class="swatch swatch-peach"></span>
+                <span class="tint-name">Soft Peach</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="cool" onclick="setSiteTint('cool', event)">
+                <span class="swatch swatch-cool"></span>
+                <span class="tint-name">Cool Mist</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="sage" onclick="setSiteTint('sage', event)">
+                <span class="swatch swatch-sage"></span>
+                <span class="tint-name">Soft Sage</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <div class="tint-divider"></div>
+              <button type="button" class="tint-option-btn" data-tint="none" onclick="setSiteTint('none', event)">
+                <span class="swatch swatch-none"></span>
+                <span class="tint-name">No Tint (White)</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+            </div>
+          </div>
+          <button id="dyslexiaToggle" class="btn-dyslexia-toggle" onclick="toggleDyslexiaMode()" title="Toggle Dyslexia High-Readability Mode">
+            <i class="fa-solid fa-universal-access"></i> Dyslexia
+          </button>
+          <button id="themeToggle" class="mfs-theme-pill" onclick="toggleTheme()" title="Switch Palette: Sapphire vs Emerald">
+            <i class="fa-solid fa-palette"></i> <span id="themeLabel">Sapphire</span>
+          </button>
+        </div>
+        <a href="contact-us.html" class="top-contact-link"><i class="fa-solid fa-envelope"></i> <strong>Contact Us</strong></a>
+      </div>
+    </div>
+  </div>  <!-- MAIN NAVIGATION -->
+                                  <header class="mfs-navbar">
+    <div class="revision-page-wrapper mfs-navbar-inner">
+      <a href="index.html" class="mfs-brand">
+        <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div class="mfs-brand-text">
+          <div class="mfs-brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
+          <div class="mfs-brand-subtitle">Delivering Skills • Achieving Goals</div>
+        </div>
+      </a>
+
+      <nav class="mfs-nav-wrapper">
+        <ul class="mfs-nav-menu">
+          <!-- 1. SUBJECTS (VISUAL MEGA-MENU) -->
+          <li class="mfs-nav-item">
+            <a href="courses.html" class="mfs-nav-link">
+              <i class="fa-solid fa-book-open-reader" style="color:#0284c7; margin-right:5px;"></i> Subjects <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-revision-hub">
+              <div class="mfs-revision-grid">
+                <!-- Maths Column -->
+                <div class="mfs-revision-col mfs-revision-col-maths">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-calculator"></i> Maths Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="functional-skills-maths-level-2.html" class="mfs-dropdown-item">Maths Level 2</a>
+                    <a href="functional-skills-maths-level-1.html" class="mfs-dropdown-item">Maths Level 1</a>
+                    <a href="entry-level-3-maths.html" class="mfs-dropdown-item">Entry Level 3 Maths</a>
+                  </div>
+                </div>
+                <!-- English Column -->
+                <div class="mfs-revision-col mfs-revision-col-english">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-pen-nib"></i> English Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="functional-skills-english-level-2.html" class="mfs-dropdown-item">English Level 2</a>
+                    <a href="functional-skills-english-level-1.html" class="mfs-dropdown-item">English Level 1</a>
+                  </div>
+                </div>
+                <!-- Digital Skills Column -->
+                <div class="mfs-revision-col mfs-revision-col-digital">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-laptop-code"></i> Digital Skills</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="digital-functional-skills.html" class="mfs-dropdown-item">Digital Skills Hub</a>
+                    <a href="digital-functional-skills-mock-exam.html" class="mfs-dropdown-item">Pearson Mock Exam</a>
+                    <a href="digital-functional-skills-past-papers.html" class="mfs-dropdown-item">Past Papers &amp; Files</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- 2. PAST PAPERS & MOCKS (DIRECT ACCESS) -->
+          <li class="mfs-nav-item">
+            <a href="functional-skills-past-papers.html" class="mfs-nav-link">
+              <i class="fa-regular fa-file-lines" style="color:#0284c7; margin-right:5px;"></i> Past Papers &amp; Mocks
+            </a>
+          </li>
+
+          <!-- 2b. WORKSHEETS DIRECTORY (CORBETT STYLE DUAL ENGINE) -->
+          <li class="mfs-nav-item">
+            <a href="worksheets.html" class="mfs-nav-link">
+              <i class="fa-solid fa-layer-group" style="color:#0284c7; margin-right:5px;"></i> Worksheets Hub
+            </a>
+          </li>
+
+          <!-- 3. FREE TOOLS (COMPACT DROPDOWN) -->
+          <li class="mfs-nav-item">
+            <a href="tools.html" class="mfs-nav-link">
+              <i class="fa-solid fa-screwdriver-wrench" style="color:#0284c7; margin-right:5px;"></i> Free Tools <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-compact">
+              <a href="tools.html" class="mfs-dropdown-item" style="font-weight:700; color:var(--accent);"><i class="fa-solid fa-layer-group" style="font-size:0.85rem; margin-right:6px;"></i> All Free Tools &amp; Simulators &rarr;</a>
+              <div class="mfs-dropdown-divider" style="margin:4px 0; border-top:1px solid #e2e8f0;"></div>
+              <a href="pass-mark-calculator.html" class="mfs-dropdown-item"><i class="fa-solid fa-calculator" style="color:var(--accent); font-size:0.85rem; margin-right:6px;"></i> Pass Mark Calculator</a>
+              <a href="diagnostic-test.html" class="mfs-dropdown-item"><i class="fa-solid fa-chart-pie" style="color:#059669; font-size:0.85rem; margin-right:6px;"></i> Diagnostic Skill Checker</a>
+              <a href="functional-skills-nets.html" class="mfs-dropdown-item"><i class="fa-solid fa-cube" style="color:#0284c7; font-size:0.85rem; margin-right:6px;"></i> 3D Net Folding Tool</a>
+            </div>
+          </li>
+
+          <!-- 4. REVISION CARDS -->
+          <li class="mfs-nav-item">
+            <a href="revision-cards.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-layer-group" style="color:#d97706; margin-right:5px;"></i> Revision Cards
+            </a>
+          </li>
+
+          <!-- 5. SHOP -->
+          <li class="mfs-nav-item">
+            <a href="shop.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-basket-shopping" style="color:#d97706; margin-right:5px;"></i> Shop
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- 6. BOOK EXAM ACTION BUTTON -->
+      <div class="mfs-nav-actions">
+        <a href="exams.html" class="btn-nav-exam">
+          <i class="fa-solid fa-calendar-check"></i> Book Exam
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- PROMOTIONAL SALE ACCENT BANNER -->
+  <div class="mfs-promo-banner"><div class="mfs-container mfs-promo-inner"></div></div>
+
+  <!-- HERO SECTION -->
+  <section class="mfs-hero-section">
+    <div class="mfs-container">
+      <div style="max-width: 820px; margin: 0 auto; text-align: center;">
+        <span class="moat-badge" style="background:rgba(0,184,124,0.1); color:var(--accent); font-weight:800; margin-bottom:12px;">
+          <i class="fa-solid fa-chart-line"></i> Official Ofqual Benchmarks
+        </span>
+        <h1 style="font-size: 2.6rem; margin-bottom: 14px;">Functional Skills <span>Pass Mark Calculator</span></h1>
+        <p class="hero-description" style="margin: 0 auto 24px;">
+          Check your practice mock scores against the official grade boundaries for <strong>Pearson Edexcel</strong>, <strong>City & Guilds</strong>, <strong>Open Awards</strong>, <strong>NCFE</strong>, and <strong>AQA</strong>. See instantly if you passed and calculate your required mark buffer.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CALCULATOR SECTION -->
+  <section style="padding: 48px 0; background: var(--bg-page);">
+    <div class="mfs-container">
+      <div class="calc-container">
+
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; border-bottom:1px solid var(--border); padding-bottom:18px;">
+          <div>
+            <h2 style="font-size:1.4rem; color:var(--navy); margin-bottom:4px;">Mock Exam Score Checker</h2>
+            <p style="color:var(--text-muted); font-size:0.9rem; margin:0;">Select your subject, exam board, and enter your section marks.</p>
+          </div>
+          <div style="display:inline-flex; align-items:center; gap:8px; background:rgba(0,184,124,0.1); color:var(--accent); padding:6px 14px; border-radius:100px; font-size:0.82rem; font-weight:700;">
+            <i class="fa-solid fa-shield-check"></i> 2025/2026 Ofqual Criteria Aligned
+          </div>
+        </div>
+
+        <div class="calc-grid">
+          <!-- LEFT: INPUTS -->
+          <div>
+            <div class="calc-group">
+              <label class="calc-label" for="subjectSelect"><i class="fa-solid fa-book-open" style="color:var(--accent); margin-right:6px;"></i> Subject & Level</label>
+              <select id="subjectSelect" class="calc-select" onchange="updateExamSpecs()">
+                <option value="maths_l2" selected>Functional Skills Maths Level 2</option>
+                <option value="maths_l1">Functional Skills Maths Level 1</option>
+                <option value="english_l2">Functional Skills English Level 2</option>
+                <option value="english_l1">Functional Skills English Level 1</option>
+              </select>
+            </div>
+
+            <div class="calc-group">
+              <label class="calc-label" for="boardSelect"><i class="fa-solid fa-building-columns" style="color:var(--accent); margin-right:6px;"></i> Awarding Body (Exam Board)</label>
+              <select id="boardSelect" class="calc-select" onchange="updateExamSpecs()">
+                <option value="edexcel" selected>Pearson Edexcel</option>
+                <option value="city_guilds">City & Guilds (4748)</option>
+                <option value="open_awards">Open Awards</option>
+                <option value="ncfe">NCFE</option>
+                <option value="aqa">AQA</option>
+              </select>
+            </div>
+
+            <div class="calc-group" id="secA_wrap">
+              <label class="calc-label" id="secA_label">Section A: Non-Calculator (Max 16 Marks)</label>
+              <div class="slider-wrap">
+                <input type="range" id="secA_slider" min="0" max="16" value="11" oninput="syncMarks('secA')">
+                <input type="number" id="secA_num" class="slider-val" min="0" max="16" value="11" oninput="syncMarks('secA_num')">
+              </div>
+            </div>
+
+            <div class="calc-group" id="secB_wrap">
+              <label class="calc-label" id="secB_label">Section B: Calculator (Max 48 Marks)</label>
+              <div class="slider-wrap">
+                <input type="range" id="secB_slider" min="0" max="48" value="32" oninput="syncMarks('secB')">
+                <input type="number" id="secB_num" class="slider-val" min="0" max="48" value="32" oninput="syncMarks('secB_num')">
+              </div>
+            </div>
+
+            <!-- OFQUAL REGULATORY MARKING RULE CARD -->
+            <div id="markingRuleCard" style="background:#f0fdf4; border:1px solid #bbf7d0; border-radius:12px; padding:16px; margin-top:20px; font-size:0.88rem; line-height:1.5;">
+              <div id="markingRuleTitle" style="font-weight:700; display:flex; align-items:center; gap:6px; margin-bottom:6px; color:#166534;">
+                <i class="fa-solid fa-circle-check"></i> Ofqual Aggregate Total Rule (Maths)
+              </div>
+              <p id="markingRuleText" style="margin:0; font-size:0.85rem; color:#14532d;">
+                In Functional Skills Maths, you <strong>do NOT have to pass Non-Calculator and Calculator independently</strong>. Your result is determined purely by your <strong>combined aggregate total score</strong> across Section A + Section B. Even if you struggle on Non-Calculator, a strong score on the Calculator section can easily secure your overall pass!
+              </p>
+            </div>
+          </div>
+
+          <!-- RIGHT: LIVE RESULT BOX -->
+          <div class="result-box">
+            <div>
+              <div class="result-header">
+                <span style="font-size:0.85rem; font-weight:700; letter-spacing:0.5px; opacity:0.8; text-transform:uppercase;">Assessment Outcome</span>
+                <span id="resultBadge" class="result-badge badge-pass"><i class="fa-solid fa-circle-check"></i> PASS</span>
+              </div>
+
+              <div class="score-big">
+                <span id="totalMarksVal">43</span>
+                <span class="score-max">/ <span id="totalMaxVal">64</span></span>
+              </div>
+
+              <div id="componentBreakdown" style="font-size:0.84rem; opacity:0.9; margin-bottom:10px; display:flex; flex-wrap:wrap; gap:8px;">
+                <span id="breakdownSecA" style="background:rgba(255,255,255,0.12); padding:3px 10px; border-radius:6px; font-weight:600;">Sec A: 11/16</span>
+                <span id="breakdownSecB" style="background:rgba(255,255,255,0.12); padding:3px 10px; border-radius:6px; font-weight:600;">Sec B: 32/48</span>
+              </div>
+
+              <div style="font-size:0.95rem; opacity:0.85; margin-bottom:4px;">
+                Score: <strong id="scorePctVal" style="color:var(--accent-border);">67%</strong> • Pass Benchmark: <strong id="boundaryPctVal">55% (~35 marks)</strong>
+              </div>
+
+              <div class="pct-bar-track">
+                <div id="pctBarFill" class="pct-bar-fill" style="width: 67%;"></div>
+                <div id="cutoffMarker" class="cutoff-marker" style="left: 55%;" title="Pass Boundary"></div>
+              </div>
+            </div>
+
+            <div class="guidance-box" id="guidanceBox">
+              <strong><i class="fa-solid fa-trophy" style="color:#00e59b; margin-right:4px;"></i> Solid Pass!</strong>
+              <p style="margin:6px 0 0; opacity:0.9;">You are <strong>8 marks above</strong> the estimated pass cutoff. Maintain this accuracy by completing another timed practice past paper.</p>
+            </div>
+
+            <div style="margin-top:18px; display:flex; gap:10px;">
+              <a id="targetPaperBtn" href="edexcel-functional-skills-maths-level-2-past-papers.html" class="btn-hero-accent" style="flex:1; justify-content:center; padding:10px; font-size:0.85rem; text-align:center;">
+                <i class="fa-solid fa-file-pdf"></i> View Past Papers
+              </a>
+              <a href="revise.html" class="btn-hero-navy" style="flex:1; justify-content:center; padding:10px; font-size:0.85rem; text-align:center; border:1px solid rgba(255,255,255,0.2);">
+                <i class="fa-solid fa-book-open"></i> Revise Topics
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- OFFICIAL BOUNDARIES REFERENCE TABLE -->
+      <div class="boundaries-table-wrap">
+        <div style="padding:22px 24px; border-bottom:1px solid var(--border); display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+          <div>
+            <h3 style="font-size:1.25rem; color:var(--navy); margin-bottom:4px;">Official Functional Skills Grade Boundaries Benchmark</h3>
+            <p style="color:var(--text-muted); font-size:0.88rem; margin:0;">Historical average pass marks across UK awarding organisations (reformed Ofqual criteria).</p>
+          </div>
+          <span style="font-size:0.82rem; font-weight:700; color:var(--text-muted);"><i class="fa-solid fa-circle-info"></i> Boundaries vary ±2 marks per series</span>
+        </div>
+
+        <table class="boundaries-table">
+          <thead>
+            <tr>
+              <th>Exam Board</th>
+              <th>Subject & Level</th>
+              <th>Paper Components</th>
+              <th>Total Marks</th>
+              <th>Typical Pass Cutoff</th>
+              <th>Pass %</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>Pearson Edexcel</strong></td>
+              <td>Maths Level 2</td>
+              <td>Sec A: Non-Calc (16m) + Sec B: Calc (48m)</td>
+              <td>64 Marks</td>
+              <td>35 – 37 Marks</td>
+              <td><span style="font-weight:700; color:#00b87c;">~56%</span></td>
+            </tr>
+            <tr>
+              <td><strong>City & Guilds</strong></td>
+              <td>Maths Level 2</td>
+              <td>Sec 1: Non-Calc (15m) + Sec 2: Calc (45m)</td>
+              <td>60 Marks</td>
+              <td>33 – 35 Marks</td>
+              <td><span style="font-weight:700; color:#00b87c;">~55%</span></td>
+            </tr>
+            <tr>
+              <td><strong>Open Awards</strong></td>
+              <td>Maths Level 2</td>
+              <td>Section A (15m) + Section B (45m)</td>
+              <td>60 Marks</td>
+              <td>32 – 34 Marks</td>
+              <td><span style="font-weight:700; color:#00b87c;">~54%</span></td>
+            </tr>
+            <tr>
+              <td><strong>NCFE</strong></td>
+              <td>Maths Level 2</td>
+              <td>Section A (15m) + Section B (45m)</td>
+              <td>60 Marks</td>
+              <td>32 – 35 Marks</td>
+              <td><span style="font-weight:700; color:#00b87c;">~55%</span></td>
+            </tr>
+            <tr>
+              <td><strong>AQA</strong></td>
+              <td>Maths Level 2</td>
+              <td>Paper 1 Non-Calc (20m) + Paper 2 Calc (60m)</td>
+              <td>80 Marks</td>
+              <td>42 – 46 Marks</td>
+              <td><span style="font-weight:700; color:#00b87c;">~55%</span></td>
+            </tr>
+            <tr>
+              <td><strong>Pearson Edexcel</strong></td>
+              <td>English Level 2</td>
+              <td>Reading (35m) & Writing (50m)</td>
+              <td>85 Marks</td>
+              <td>Reading: 19–21m | Writing: 28–30m</td>
+              <td><span style="font-weight:700; color:#00b87c;">~58%</span></td>
+            </tr>
+            <tr>
+              <td><strong>City & Guilds</strong></td>
+              <td>English Level 2</td>
+              <td>Reading (30m) & Writing (54m)</td>
+              <td>84 Marks</td>
+              <td>Reading: 18m | Writing: 32m</td>
+              <td><span style="font-weight:700; color:#00b87c;">~57%</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- FREQUENTLY ASKED QUESTIONS SECTION -->
+      <div style="margin-top: 48px; background: #ffffff; border: 1px solid var(--border); border-radius: 16px; padding: 32px; box-shadow: 0 4px 18px rgba(7, 13, 30, 0.04);">
+        <h3 style="font-size: 1.35rem; color: var(--navy); margin-bottom: 8px;">
+          <i class="fa-solid fa-circle-question" style="color:var(--accent); margin-right:8px;"></i>
+          Understanding Functional Skills Pass Rules & Grade Boundaries
+        </h3>
+        <p style="color: var(--text-muted); font-size: 0.92rem; margin-bottom: 24px;">
+          Official Ofqual regulatory guidance on how Functional Skills Maths and English exams are marked and awarded.
+        </p>
+
+        <div style="display: grid; gap: 18px;">
+          <div style="background:#faf8f2; border:1px solid var(--border); border-radius:12px; padding:20px;">
+            <h4 style="font-size:1.05rem; color:var(--navy); margin-bottom:8px; display:flex; align-items:center; gap:8px;">
+              <i class="fa-solid fa-calculator" style="color:var(--accent);"></i>
+              In Maths, do you have to pass Non-Calculator and Calculator separately?
+            </h4>
+            <p style="margin:0 0 10px; color:var(--text-primary); font-size:0.92rem; line-height:1.6;">
+              <strong>No, you do not.</strong> Under official Ofqual regulations across all UK awarding bodies (Pearson Edexcel, City & Guilds, Open Awards, NCFE, and AQA), Functional Skills Mathematics is awarded strictly on your <strong>combined aggregate total mark</strong>.
+            </p>
+            <p style="margin:0; color:var(--text-muted); font-size:0.88rem; line-height:1.5;">
+              For example, in <strong>Pearson Edexcel Maths Level 2</strong>, the exam consists of Section A (Non-Calculator, 16 marks) and Section B (Calculator, 48 marks) for a total of 64 marks. The pass cutoff is typically ~35–37 marks. If a student achieves <strong>6/16</strong> on Section A and <strong>34/48</strong> on Section B, their total is <strong>40/64</strong>—which is an official <strong>PASS</strong>. There is no independent minimum hurdle for either section.
+            </p>
+          </div>
+
+          <div style="background:#faf8f2; border:1px solid var(--border); border-radius:12px; padding:20px;">
+            <h4 style="font-size:1.05rem; color:var(--navy); margin-bottom:8px; display:flex; align-items:center; gap:8px;">
+              <i class="fa-solid fa-pen-nib" style="color:var(--accent);"></i>
+              Why do many people think you must pass both sections independently?
+            </h4>
+            <p style="margin:0 0 10px; color:var(--text-primary); font-size:0.92rem; line-height:1.6;">
+              This widespread misconception usually happens for two reasons:
+            </p>
+            <ul style="margin:0; padding-left:20px; color:var(--text-muted); font-size:0.88rem; line-height:1.6;">
+              <li><strong>Confusion with English:</strong> In Functional Skills <em>English</em>, Reading and Writing <strong>are</strong> separate standalone exams with independent pass thresholds. Candidates often assume Maths works the same way.</li>
+              <li><strong>Mathematical pressure:</strong> Because Section A is 25% of the total marks in Maths, scoring 0 or very few marks puts immense mathematical pressure on the Calculator section (requiring 75%+ accuracy in Section B) to hit the aggregate pass mark. However, it is not an automatic regulatory fail.</li>
+            </ul>
+          </div>
+
+          <div style="background:#faf8f2; border:1px solid var(--border); border-radius:12px; padding:20px;">
+            <h4 style="font-size:1.05rem; color:var(--navy); margin-bottom:8px; display:flex; align-items:center; gap:8px;">
+              <i class="fa-solid fa-scale-balanced" style="color:var(--accent);"></i>
+              Can a strong calculator section make up for non-calculator mistakes?
+            </h4>
+            <p style="margin:0; color:var(--text-primary); font-size:0.92rem; line-height:1.6;">
+              <strong>Yes, 100%.</strong> Because Section B (Calculator) represents approximately <strong>75% of the total marks</strong> (e.g. 48 out of 64 marks in Edexcel, or 45 out of 60 in City & Guilds), confident calculator skills and thorough working out in Section B can easily lift your overall mark well above the pass threshold.
+            </p>
+          </div>
+
+          <div style="background:#faf8f2; border:1px solid var(--border); border-radius:12px; padding:20px;">
+            <h4 style="font-size:1.05rem; color:var(--navy); margin-bottom:8px; display:flex; align-items:center; gap:8px;">
+              <i class="fa-solid fa-book-bookmark" style="color:var(--accent);"></i>
+              How does Functional Skills English marking differ from Maths?
+            </h4>
+            <p style="margin:0; color:var(--text-primary); font-size:0.92rem; line-height:1.6;">
+              In Functional Skills English (Level 1 & Level 2), <strong>Reading</strong>, <strong>Writing</strong>, and <strong>Speaking, Listening & Communicating (SLC)</strong> are distinct, independently accredited components. You must pass each component on its own merits (typically 55–60% on Reading and 55–60% on Writing). Any component you pass is permanently "banked"—if you pass Reading but fail Writing, you only need to resit the Writing paper.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- CALCULATOR LOGIC SCRIPT -->
+  <script>
+    const SPECS = {
+      maths_l2: {
+        edexcel:     { secA: 16, secB: 48, total: 64, cutoff: 36, secAName: "Section A: Non-Calculator", secBName: "Section B: Calculator", paperUrl: "edexcel-functional-skills-maths-level-2-past-papers.html" },
+        city_guilds: { secA: 15, secB: 45, total: 60, cutoff: 33, secAName: "Section 1: Non-Calculator", secBName: "Section 2: Calculator", paperUrl: "city-and-guilds-functional-skills-maths-level-2-past-papers.html" },
+        open_awards: { secA: 15, secB: 45, total: 60, cutoff: 33, secAName: "Section A: Non-Calculator", secBName: "Section B: Calculator", paperUrl: "open-awards-functional-skills-maths-level-2-past-papers.html" },
+        ncfe:        { secA: 15, secB: 45, total: 60, cutoff: 33, secAName: "Section A: Non-Calculator", secBName: "Section B: Calculator", paperUrl: "ncfe-functional-skills-maths-level-2-past-papers.html" },
+        aqa:         { secA: 20, secB: 60, total: 80, cutoff: 44, secAName: "Paper 1: Non-Calculator", secBName: "Paper 2: Calculator", paperUrl: "aqa-functional-skills-maths-level-2-past-papers.html" }
+      },
+      maths_l1: {
+        edexcel:     { secA: 14, secB: 42, total: 56, cutoff: 32, secAName: "Section A: Non-Calculator", secBName: "Section B: Calculator", paperUrl: "edexcel-functional-skills-maths-level-1-past-papers.html" },
+        city_guilds: { secA: 15, secB: 45, total: 60, cutoff: 33, secAName: "Section 1: Non-Calculator", secBName: "Section 2: Calculator", paperUrl: "city-and-guilds-functional-skills-maths-level-1-past-papers.html" },
+        open_awards: { secA: 15, secB: 45, total: 60, cutoff: 33, secAName: "Section A: Non-Calculator", secBName: "Section B: Calculator", paperUrl: "open-awards-functional-skills-maths-level-1-past-papers.html" },
+        ncfe:        { secA: 15, secB: 45, total: 60, cutoff: 33, secAName: "Section A: Non-Calculator", secBName: "Section B: Calculator", paperUrl: "ncfe-functional-skills-maths-level-1-past-papers.html" },
+        aqa:         { secA: 20, secB: 60, total: 80, cutoff: 44, secAName: "Paper 1: Non-Calculator", secBName: "Paper 2: Calculator", paperUrl: "aqa-functional-skills-maths-level-1-past-papers.html" }
+      },
+      english_l2: {
+        edexcel:     { secA: 35, secACutoff: 19, secB: 50, secBCutoff: 29, total: 85, cutoff: 48, secAName: "Reading Component (Max 35)", secBName: "Writing Component (Max 50)", paperUrl: "edexcel-functional-skills-english-level-2-past-papers.html" },
+        city_guilds: { secA: 30, secACutoff: 18, secB: 54, secBCutoff: 32, total: 84, cutoff: 50, secAName: "Reading Component (Max 30)", secBName: "Writing Component (Max 54)", paperUrl: "city-and-guilds-functional-skills-english-level-2-past-papers.html" },
+        open_awards: { secA: 30, secACutoff: 18, secB: 50, secBCutoff: 28, total: 80, cutoff: 46, secAName: "Reading Component (Max 30)", secBName: "Writing Component (Max 50)", paperUrl: "open-awards-functional-skills-english-level-2-past-papers.html" },
+        ncfe:        { secA: 30, secACutoff: 18, secB: 50, secBCutoff: 28, total: 80, cutoff: 46, secAName: "Reading Component (Max 30)", secBName: "Writing Component (Max 50)", paperUrl: "ncfe-functional-skills-english-level-2-past-papers.html" },
+        aqa:         { secA: 26, secACutoff: 15, secB: 30, secBCutoff: 17, total: 56, cutoff: 32, secAName: "Reading Component (Max 26)", secBName: "Writing Component (Max 30)", paperUrl: "aqa-functional-skills-english-level-2-past-papers.html" }
+      },
+      english_l1: {
+        edexcel:     { secA: 30, secACutoff: 16, secB: 45, secBCutoff: 26, total: 75, cutoff: 42, secAName: "Reading Component (Max 30)", secBName: "Writing Component (Max 45)", paperUrl: "edexcel-functional-skills-english-level-1-past-papers.html" },
+        city_guilds: { secA: 30, secACutoff: 17, secB: 50, secBCutoff: 29, total: 80, cutoff: 46, secAName: "Reading Component (Max 30)", secBName: "Writing Component (Max 50)", paperUrl: "city-and-guilds-functional-skills-english-level-1-past-papers.html" },
+        open_awards: { secA: 30, secACutoff: 16, secB: 45, secBCutoff: 25, total: 75, cutoff: 41, secAName: "Reading Component (Max 30)", secBName: "Writing Component (Max 45)", paperUrl: "open-awards-functional-skills-english-level-1-past-papers.html" },
+        ncfe:        { secA: 30, secACutoff: 16, secB: 45, secBCutoff: 25, total: 75, cutoff: 41, secAName: "Reading Component (Max 30)", secBName: "Writing Component (Max 45)", paperUrl: "ncfe-functional-skills-english-level-1-past-papers.html" },
+        aqa:         { secA: 26, secACutoff: 15, secB: 30, secBCutoff: 17, total: 56, cutoff: 32, secAName: "Reading Component (Max 26)", secBName: "Writing Component (Max 30)", paperUrl: "aqa-functional-skills-english-level-1-past-papers.html" }
+      }
+    };
+
+    function getActiveSpec() {
+      const subj = document.getElementById('subjectSelect').value;
+      const board = document.getElementById('boardSelect').value;
+      return SPECS[subj][board];
+    }
+
+    function updateExamSpecs() {
+      const subj = document.getElementById('subjectSelect').value;
+      const isMaths = subj.startsWith('maths');
+      const spec = getActiveSpec();
+
+      document.getElementById('secA_label').textContent = spec.secAName + ' (Max ' + spec.secA + ' Marks)';
+      document.getElementById('secB_label').textContent = spec.secBName + ' (Max ' + spec.secB + ' Marks)';
+
+      const ruleCard = document.getElementById('markingRuleCard');
+      const ruleTitle = document.getElementById('markingRuleTitle');
+      const ruleText = document.getElementById('markingRuleText');
+
+      if (isMaths) {
+        ruleCard.style.background = '#f0fdf4';
+        ruleCard.style.borderColor = '#bbf7d0';
+        ruleTitle.style.color = '#166534';
+        ruleTitle.innerHTML = '<i class="fa-solid fa-circle-check"></i> Ofqual Combined Marks Rule (Maths)';
+        ruleText.style.color = '#14532d';
+        ruleText.innerHTML = 'In Functional Skills Maths, you <strong>do NOT have to pass Non-Calculator and Calculator independently</strong>. Your result is determined purely by your <strong>combined aggregate total score</strong> across Section A + Section B. Even if you score low on Non-Calculator, a high score on the Calculator section will secure your overall pass!';
+      } else {
+        ruleCard.style.background = '#eff6ff';
+        ruleCard.style.borderColor = '#bfdbfe';
+        ruleTitle.style.color = '#1e40af';
+        ruleTitle.innerHTML = '<i class="fa-solid fa-circle-info"></i> Ofqual Independent Components Rule (English)';
+        ruleText.style.color = '#1e3a8a';
+        ruleText.innerHTML = 'In Functional Skills English, Reading and Writing are <strong>separate components with independent pass marks</strong>. Each component is assessed and banked separately. You must pass each component to achieve the full qualification.';
+      }
+
+      const sA = document.getElementById('secA_slider');
+      const nA = document.getElementById('secA_num');
+      sA.max = spec.secA;
+      nA.max = spec.secA;
+      if (parseInt(sA.value) > spec.secA) { sA.value = Math.round(spec.secA * 0.7); nA.value = sA.value; }
+
+      const sB = document.getElementById('secB_slider');
+      const nB = document.getElementById('secB_num');
+      sB.max = spec.secB;
+      nB.max = spec.secB;
+      if (parseInt(sB.value) > spec.secB) { sB.value = Math.round(spec.secB * 0.7); nB.value = sB.value; }
+
+      document.getElementById('targetPaperBtn').href = spec.paperUrl;
+      calculateScore();
+    }
+
+    function syncMarks(source) {
+      const sA = document.getElementById('secA_slider');
+      const nA = document.getElementById('secA_num');
+      const sB = document.getElementById('secB_slider');
+      const nB = document.getElementById('secB_num');
+
+      if (source === 'secA') nA.value = sA.value;
+      if (source === 'secA_num') sA.value = nA.value;
+      if (source === 'secB') nB.value = sB.value;
+      if (source === 'secB_num') sB.value = nB.value;
+
+      calculateScore();
+    }
+
+    function calculateScore() {
+      const subj = document.getElementById('subjectSelect').value;
+      const isMaths = subj.startsWith('maths');
+      const spec = getActiveSpec();
+      const valA = parseInt(document.getElementById('secA_num').value) || 0;
+      const valB = parseInt(document.getElementById('secB_num').value) || 0;
+      const total = valA + valB;
+      const max = spec.total;
+      const cutoff = spec.cutoff;
+      const pct = Math.round((total / max) * 100);
+      const cutoffPct = Math.round((cutoff / max) * 100);
+
+      document.getElementById('totalMarksVal').textContent = total;
+      document.getElementById('totalMaxVal').textContent = max;
+      document.getElementById('scorePctVal').textContent = pct + '%';
+      document.getElementById('boundaryPctVal').textContent = cutoffPct + '% (~' + cutoff + ' marks)';
+      document.getElementById('pctBarFill').style.width = Math.min(100, pct) + '%';
+      document.getElementById('cutoffMarker').style.left = cutoffPct + '%';
+
+      // Update section breakdown chips
+      const chipA = document.getElementById('breakdownSecA');
+      const chipB = document.getElementById('breakdownSecB');
+      if (isMaths) {
+        chipA.textContent = 'Sec A (Non-Calc): ' + valA + '/' + spec.secA;
+        chipB.textContent = 'Sec B (Calc): ' + valB + '/' + spec.secB;
+      } else {
+        chipA.textContent = 'Reading: ' + valA + '/' + spec.secA + (spec.secACutoff ? ' (Pass ~' + spec.secACutoff + ')' : '');
+        chipB.textContent = 'Writing: ' + valB + '/' + spec.secB + (spec.secBCutoff ? ' (Pass ~' + spec.secBCutoff + ')' : '');
+      }
+
+      const badge = document.getElementById('resultBadge');
+      const fill = document.getElementById('pctBarFill');
+      const guidance = document.getElementById('guidanceBox');
+
+      if (isMaths) {
+        // Maths: Strictly combined aggregate total
+        const diff = total - cutoff;
+        if (diff >= 3) {
+          badge.className = 'result-badge badge-pass';
+          badge.innerHTML = '<i class="fa-solid fa-circle-check"></i> SOLID PASS';
+          fill.style.background = '#00e59b';
+          guidance.innerHTML = '<strong><i class="fa-solid fa-trophy" style="color:#00e59b; margin-right:4px;"></i> Solid Pass!</strong>' +
+            '<p style="margin:6px 0 0; opacity:0.9;">You scored <strong>' + total + '/' + max + '</strong> (' + diff + ' marks above the pass boundary). ' +
+            '<strong>Rule Reminder:</strong> In Functional Skills Maths, your mark is purely the combined aggregate total. You do not need to pass Section A or Section B independently!</p>';
+        } else if (diff >= 0 && diff < 3) {
+          badge.className = 'result-badge badge-borderline';
+          badge.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> BORDERLINE PASS';
+          fill.style.background = '#f59e0b';
+          guidance.innerHTML = '<strong><i class="fa-solid fa-triangle-exclamation" style="color:#fbbf24; margin-right:4px;"></i> Borderline Pass!</strong>' +
+            '<p style="margin:6px 0 0; opacity:0.9;">You met the combined pass mark by <strong>' + (diff === 0 ? 'exactly' : diff + ' marks') + '</strong>. ' +
+            'Because Section B (Calculator) represents 75% of marks, focusing revision on calculator multi-step questions gives the best score buffer.</p>';
+        } else {
+          const deficit = Math.abs(diff);
+          badge.className = 'result-badge badge-fail';
+          badge.innerHTML = '<i class="fa-solid fa-circle-xmark"></i> NEEDS REVISION';
+          fill.style.background = '#ef4444';
+          guidance.innerHTML = '<strong><i class="fa-solid fa-circle-xmark" style="color:#f87171; margin-right:4px;"></i> Not Quite Passed Yet</strong>' +
+            '<p style="margin:6px 0 0; opacity:0.9;">You need <strong>' + deficit + ' more mark' + (deficit > 1 ? 's' : '') + '</strong> to reach the pass threshold of ' + cutoff + '/' + max + '. ' +
+            'Since Section A and B are added together, extra marks gained anywhere count directly toward passing!</p>';
+        }
+      } else {
+        // English: Component-based evaluation
+        const passA = spec.secACutoff ? valA >= spec.secACutoff : false;
+        const passB = spec.secBCutoff ? valB >= spec.secBCutoff : false;
+
+        if (passA && passB) {
+          badge.className = 'result-badge badge-pass';
+          badge.innerHTML = '<i class="fa-solid fa-circle-check"></i> BOTH COMPONENTS PASSED';
+          fill.style.background = '#00e59b';
+          guidance.innerHTML = '<strong><i class="fa-solid fa-trophy" style="color:#00e59b; margin-right:4px;"></i> Full English Pass!</strong>' +
+            '<p style="margin:6px 0 0; opacity:0.9;">Both Reading (' + valA + '/' + spec.secA + ') and Writing (' + valB + '/' + spec.secB + ') meet their independent pass thresholds. Both component achievements will be banked.</p>';
+        } else if (passA || passB) {
+          badge.className = 'result-badge badge-borderline';
+          badge.innerHTML = '<i class="fa-solid fa-star-half-stroke"></i> PARTIAL PASS (BANKED)';
+          fill.style.background = '#38bdf8';
+          const passedComp = passA ? 'Reading' : 'Writing';
+          const failedComp = passA ? 'Writing' : 'Reading';
+          guidance.innerHTML = '<strong><i class="fa-solid fa-circle-info" style="color:#38bdf8; margin-right:4px;"></i> Partial Pass!</strong>' +
+            '<p style="margin:6px 0 0; opacity:0.9;">You achieved a pass in <strong>' + passedComp + '</strong>! In Functional Skills English, this pass is permanently banked. You only need to focus on revising and retaking <strong>' + failedComp + '</strong>.</p>';
+        } else {
+          badge.className = 'result-badge badge-fail';
+          badge.innerHTML = '<i class="fa-solid fa-circle-xmark"></i> NEEDS REVISION';
+          fill.style.background = '#ef4444';
+          guidance.innerHTML = '<strong><i class="fa-solid fa-circle-xmark" style="color:#f87171; margin-right:4px;"></i> Not Quite Passed Yet</strong>' +
+            '<p style="margin:6px 0 0; opacity:0.9;">Both Reading and Writing are currently below the required pass thresholds. Use our free topic worksheets and revision guides to target your weakest areas.</p>';
+        }
+      }
+    }
+
+    // Initial run
+    updateExamSpecs();
+  </script>  <!-- FOOTER -->
+  <footer class="mfs-footer" id="site-footer">
+    <div class="mfs-container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="mfs-brand" style="margin-bottom:16px;">
+            <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="mfs-brand-text">
+              <div class="mfs-brand-title" style="color:#ffffff;">MASTER<span>FUNCTIONALSKILLS</span></div>
+              <div class="mfs-brand-subtitle" style="color:#94a3b8;">Delivering Skills • Achieving Goals</div>
+            </div>
+          </div>
+          <p style="font-size:0.88rem; line-height:1.6; margin-bottom:16px;">
+            The UK's dedicated Functional Skills revision specialist. Providing realistic mock exams, step-by-step revision flashcards, diagnostic assessments, and 1-to-1 specialist tuition for Pearson Edexcel, City &amp; Guilds, and all major exam boards.
+          </p>
+          <div style="font-size:0.85rem; color:#cbd5e1;">
+            <p><a href="https://wa.me/447564525425" target="_blank" rel="noopener" style="color:#cbd5e1; text-decoration:none;"><i class="fa-brands fa-whatsapp" style="color:var(--accent); margin-right:8px;"></i> WhatsApp: +44 (0)7564 525425</a></p>
+            <p style="margin-top:6px;"><a href="contact-us.html" style="color:#cbd5e1; text-decoration:none;"><i class="fa-solid fa-envelope" style="color:var(--accent); margin-right:8px;"></i> Contact Tutor Team</a></p>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Maths Revision</h4>
+          <ul class="footer-links">
+            <li><a href="functional-skills-maths-level-2.html">Maths Level 2 Revision</a></li>
+            <li><a href="functional-skills-maths-level-1.html">Maths Level 1 Revision</a></li>
+            <li><a href="entry-level-3-maths.html">Entry Level 3 Maths</a></li>
+            <li><a href="pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="functional-skills-past-papers.html">Free Maths Past Papers</a></li>
+            <li><a href="exam-maths-l2.html">Book Level 2 Maths Exam</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>English &amp; Digital</h4>
+          <ul class="footer-links">
+            <li><a href="functional-skills-english-level-2.html">English Level 2 Revision</a></li>
+            <li><a href="functional-skills-english-level-1.html">English Level 1 Revision</a></li>
+            <li><a href="digital-functional-skills.html">Digital Skills Hub (L1 &amp; E3)</a></li>
+            <li><a href="digital-functional-skills-past-papers.html">DFS Past Papers &amp; Data Files</a></li>
+            <li><a href="functional-skills-past-papers.html?format=online#mock-finder">Online Exam Simulator</a></li>
+            <li><a href="exam-english-l2.html">Book Level 2 English Exam</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Student Support &amp; Tools</h4>
+          <ul class="footer-links">
+            <li><a href="tools.html" style="color:var(--accent); font-weight:700;"><i class="fa-solid fa-screwdriver-wrench" style="margin-right:6px;"></i>All Interactive Tools Hub</a></li>
+            <li><a href="pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="diagnostic-test.html">Diagnostic Skill Checker</a></li>
+            <li><a href="functional-skills-nets.html">3D Net Folding Tool</a></li>
+            <li><a href="digital-functional-skills-mock-exam.html">Pearson DFS Simulator</a></li>
+            <li><a href="revision-cards.html">Revision Cards &amp; Flashcards</a></li>
+            <li><a href="shop.html">Revision Books &amp; Study Packs</a></li>
+            <li><a href="tutors.html">1-to-1 Specialist Tuition</a></li>
+            <li><a href="exams.html">Book Official Online Exam</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Master Functional Skills. All rights reserved. Registered in England &amp; Wales. Ofqual Regulated Qualification Standards.</div>
+        <div style="display:flex; gap:16px; flex-wrap:wrap;">
+          <a href="index.html">Home</a>
+          <a href="tools.html" style="color:var(--accent); font-weight:700;">Tools</a>
+          <a href="functional-skills-past-papers.html">Past Papers</a>
+          <a href="revision-cards.html">Revision Cards</a>
+          <a href="shop.html">Study Shop</a>
+          <a href="tutors.html">Tutors</a>
+          <a href="contact-us.html">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- DYSLEXIA TINT ENGINE -->
+  <script src="assets/js/mfs-tint.js"></script>
+
+  <!-- THEME & DYSLEXIA MODE ENGINE -->
+  <script>
+    function toggleDyslexiaMode() {
+      const isDys = document.body.classList.toggle('dyslexia-mode');
+      localStorage.setItem('mfs_dyslexia', isDys ? '1' : '0');
+      const btn = document.getElementById('dyslexiaToggle');
+      if (btn) btn.classList.toggle('active', isDys);
+    }
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme') || 'sapphire';
+      const next = current === 'emerald' ? 'sapphire' : 'emerald';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('mfs_theme', next);
+      const lbl = document.getElementById('themeLabel');
+      if (lbl) lbl.textContent = next === 'emerald' ? 'Emerald' : 'Sapphire';
+    }
+    (function() {
+      if (localStorage.getItem('mfs_dyslexia') === '1') {
+        document.body.classList.add('dyslexia-mode');
+        const btn = document.getElementById('dyslexiaToggle');
+        if (btn) btn.classList.add('active', true);
+      }
+      const th = localStorage.getItem('mfs_theme') || 'sapphire';
+      document.documentElement.setAttribute('data-theme', th);
+      const lbl = document.getElementById('themeLabel');
+      if (lbl) lbl.textContent = th === 'emerald' ? 'Emerald' : 'Sapphire';
+    })();
+  </script>
+</body>
+</html>

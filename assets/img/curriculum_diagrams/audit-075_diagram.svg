@@ -1,0 +1,39 @@
+<svg viewBox="0 0 540 250" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:540px; height:auto; font-family:'Plus Jakarta Sans', system-ui, sans-serif;">
+  <rect x="2" y="2" width="536" height="246" rx="14" fill="#ffffff" stroke="#bae6fd" stroke-width="2"/>
+  
+  <rect x="18" y="14" width="270" height="26" rx="13" fill="#e0f2fe"/>
+  <text x="28" y="32" font-size="12" font-weight="800" fill="#0369a1">✎ WORKED METHOD: NUMBER LINE ROUNDING</text>
+  <text x="300" y="32" font-size="13" font-weight="700" fill="#0f172a">Rounding 47 to Nearest 10</text>
+
+  <!-- Number line axis -->
+  <line x1="50" y1="90" x2="490" y2="90" stroke="#0f172a" stroke-width="3" stroke-linecap="round"/>
+  
+  <!-- Ticks -->
+  <line x1="70" y1="80" x2="70" y2="100" stroke="#0f172a" stroke-width="3"/>
+  <text x="70" y="122" font-size="16" font-weight="800" fill="#0284c7" text-anchor="middle">40</text>
+  <text x="70" y="138" font-size="11" font-weight="600" fill="#64748b" text-anchor="middle">Round Down</text>
+
+  <line x1="280" y1="82" x2="280" y2="98" stroke="#94a3b8" stroke-width="2" stroke-dasharray="4,3"/>
+  <text x="280" y="122" font-size="14" font-weight="700" fill="#64748b" text-anchor="middle">45 (Midpoint)</text>
+  <text x="280" y="138" font-size="10.5" fill="#94a3b8" text-anchor="middle">Cutoff: 5 or more rounds UP</text>
+
+  <line x1="470" y1="80" x2="470" y2="100" stroke="#0f172a" stroke-width="3"/>
+  <text x="470" y="122" font-size="16" font-weight="800" fill="#15803d" text-anchor="middle">50</text>
+  <text x="470" y="138" font-size="11" font-weight="700" fill="#15803d" text-anchor="middle">Round Up ✓</text>
+
+  <!-- Number 47 Marker -->
+  <circle cx="376" cy="90" r="8" fill="#e11d48"/>
+  <path d="M 376 78 L 376 56" stroke="#e11d48" stroke-width="2"/>
+  <rect x="345" y="40" width="62" height="22" rx="4" fill="#fee2e2" stroke="#fca5a5"/>
+  <text x="376" y="55" font-size="12" font-weight="800" fill="#9f1239" text-anchor="middle">47</text>
+  <!-- Curving arrow from 47 to 50 -->
+  <path d="M 385 65 Q 430 50 462 76" fill="none" stroke="#e11d48" stroke-width="2.5" stroke-dasharray="4,3"/>
+
+  <!-- 1 Significant Figure Estimation Box -->
+  <rect x="25" y="156" width="490" height="76" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="40" y="178" font-size="12" font-weight="800" fill="#0369a1">EXAM ESTIMATION BENCHMARK (1 SIGNIFICANT FIGURE):</text>
+  <text x="40" y="200" font-size="13" font-weight="700" fill="#0f172a">
+    Estimate 48.7 × 31.25  →  Round BEFORE calculating: 50 × 30 = <tspan fill="#15803d" font-weight="800">1,500</tspan>
+  </text>
+  <text x="40" y="220" font-size="11" fill="#64748b">Examiner Rule: Always round each number to 1 s.f. FIRST. Never multiply exact figures and round at the end!</text>
+</svg>

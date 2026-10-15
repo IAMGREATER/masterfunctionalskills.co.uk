@@ -1,0 +1,46 @@
+<svg viewBox="0 0 480 280" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:480px; height:auto; font-family:'Plus Jakarta Sans', sans-serif;">
+  <rect x="2" y="2" width="476" height="276" rx="10" fill="#090d16" stroke="#00e5ff" stroke-width="2"/>
+  
+  <!-- Top Menu Bar -->
+  <rect x="2" y="2" width="476" height="30" rx="10 10 0 0" fill="#111827"/>
+  <text x="16" y="20" font-size="11" font-weight="900" fill="#00e5ff">OS Desktop • Window Manager (Skill Area 1)</text>
+  
+  <!-- Window 1: File Explorer (Spacious Left) -->
+  <rect x="14" y="42" width="220" height="190" rx="6" fill="#1e293b" stroke="#334155"/>
+  <rect x="14" y="42" width="220" height="26" rx="6 6 0 0" fill="#0f172a"/>
+  <text x="24" y="59" font-size="9.5" font-weight="800" fill="#94a3b8">📁 File Explorer — /Documents</text>
+  
+  <text x="24" y="86" font-size="9" font-weight="700" fill="#38bdf8">📁 NHS_Oxford_Health/</text>
+  <text x="36" y="104" font-size="8.5" fill="#cbd5e1">📄 Patient_Rota.xlsx</text>
+  <text x="36" y="120" font-size="8.5" fill="#cbd5e1">📄 Handover_Notes.docx</text>
+  
+  <text x="24" y="142" font-size="9" font-weight="700" fill="#38bdf8">📁 Functional_Skills_Revision/</text>
+  <text x="36" y="160" font-size="8.5" fill="#cbd5e1">📄 Mock_Exam_Maths_L2.pdf</text>
+  <text x="36" y="176" font-size="8.5" fill="#cbd5e1">📄 Practice_Drills_Abdul.docx</text>
+  <text x="36" y="192" font-size="8.5" fill="#cbd5e1">📄 Diagnostic_Tracker.xlsx</text>
+  
+  <!-- Window 2: Web Browser (Spacious Right) -->
+  <rect x="246" y="42" width="220" height="190" rx="6" fill="#0f172a" stroke="#00e5ff"/>
+  <rect x="246" y="42" width="220" height="26" rx="6 6 0 0" fill="#1e293b"/>
+  <!-- URL Bar with Padlock -->
+  <rect x="256" y="47" width="200" height="16" rx="4" fill="#090d16" stroke="#334155"/>
+  <text x="264" y="59" font-size="8" font-weight="800" fill="#10b981">🔒 https://masterfunctionalskills.co.uk</text>
+  
+  <rect x="256" y="78" width="200" height="48" rx="5" fill="#1e293b"/>
+  <text x="266" y="98" font-size="10" font-weight="900" fill="#38bdf8">Digital Skills Mastery</text>
+  <text x="266" y="114" font-size="8" fill="#94a3b8">Interactive learning &amp; exam portal</text>
+  
+  <rect x="256" y="136" width="94" height="42" rx="4" fill="#1e293b"/>
+  <text x="266" y="158" font-size="8.5" font-weight="800" fill="#fbbf24">Level 1 EDSQ</text>
+  <rect x="362" y="136" width="94" height="42" rx="4" fill="#1e293b"/>
+  <text x="372" y="158" font-size="8.5" font-weight="800" fill="#10b981">Level 2 DFS</text>
+  
+  <!-- Taskbar at bottom -->
+  <rect x="2" y="244" width="476" height="34" rx="0 0 10 10" fill="#030712" stroke="#1f2937"/>
+  <rect x="12" y="248" width="24" height="24" rx="4" fill="#00e5ff"/>
+  <text x="24" y="264" font-size="12" font-weight="900" fill="#090d16" text-anchor="middle">❖</text>
+  <rect x="44" y="250" width="22" height="22" rx="4" fill="#1f2937"/>
+  <rect x="72" y="250" width="22" height="22" rx="4" fill="#1f2937"/>
+  <rect x="100" y="250" width="22" height="22" rx="4" fill="#1f2937"/>
+  <text x="465" y="266" font-size="9" fill="#94a3b8" text-anchor="end">17:05 • 12 Oct 2026</text>
+</svg>

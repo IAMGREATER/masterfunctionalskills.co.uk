@@ -1,0 +1,31 @@
+<svg viewBox="0 0 540 260" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:540px; height:auto; font-family:'Plus Jakarta Sans', sans-serif;">
+  <rect x="2" y="2" width="536" height="256" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+  <rect x="14" y="12" width="512" height="30" rx="6" fill="#1d4ed8"/>
+  <text x="24" y="32" font-size="12" font-weight="900" fill="#ffffff">DIAGNOSTIC TRAP AUTOPSY: REVERSE PERCENTAGES</text>
+
+  <!-- Left: The Fatal Failure Trap -->
+  <rect x="16" y="50" width="246" height="155" rx="8" fill="#fff1f2" stroke="#fca5a5" stroke-width="2"/>
+  <rect x="26" y="58" width="226" height="24" rx="4" fill="#fee2e2"/>
+  <text x="34" y="74" font-size="10" font-weight="900" fill="#991b1b">&#10005; FATAL TRAP (Adding % back)</text>
+  <text x="26" y="100" font-size="9.5" fill="#881337">Sale price = &#163;120 after 20% discount.</text>
+  <text x="26" y="118" font-size="9.5" fill="#881337">Candidate mistake: 20% of &#163;120 = &#163;24</text>
+  <text x="26" y="136" font-size="10" font-weight="800" fill="#b91c1c">&#163;120 + &#163;24 = &#163;144.00 (WRONG!)</text>
+  <rect x="24" y="148" width="230" height="46" rx="4" fill="#fee2e2"/>
+  <text x="30" y="164" font-size="8.5" font-weight="800" fill="#991b1b">FATAL FLAW: The 20% discount was</text>
+  <text x="30" y="178" font-size="8.5" font-weight="800" fill="#991b1b">subtracted from a LARGER original sum!</text>
+
+  <!-- Right: The Golden Multiplier Rule -->
+  <rect x="278" y="50" width="246" height="155" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="2"/>
+  <rect x="288" y="58" width="226" height="24" rx="4" fill="#dcfce7"/>
+  <text x="296" y="74" font-size="10" font-weight="900" fill="#166534">&#10003; GOLDEN METHOD (Divide Multiplier)</text>
+  <text x="288" y="100" font-size="9.5" fill="#14532d">&#163;120 represents 80% (100% - 20%).</text>
+  <text x="288" y="118" font-size="9.5" fill="#14532d">Multiplier = 1.00 - 0.20 = 0.80</text>
+  <text x="288" y="136" font-size="11.5" font-weight="900" fill="#15803d">&#163;120 &#247; 0.80 = &#163;150.00 &#10003;</text>
+  <rect x="286" y="148" width="230" height="46" rx="4" fill="#dcfce7"/>
+  <text x="294" y="164" font-size="8.5" font-weight="800" fill="#166534">VERIFICATION CHECK:</text>
+  <text x="294" y="178" font-size="8.5" fill="#15803d">20% of &#163;150 = &#163;30. &#163;150 - &#163;30 = &#163;120 &#10003;</text>
+
+  <!-- Footer Banner -->
+  <rect x="14" y="214" width="512" height="34" rx="6" fill="#eff6ff" stroke="#bfdbfe"/>
+  <text x="24" y="235" font-size="10" font-weight="800" fill="#1d4ed8">Examiner Golden Peg: Original Value = Final Value &#247; Decimal Multiplier</text>
+</svg>

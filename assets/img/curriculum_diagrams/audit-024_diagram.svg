@@ -1,0 +1,54 @@
+<svg viewBox="0 0 540 240" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:540px; height:auto; font-family:'Plus Jakarta Sans', system-ui, sans-serif;">
+  <rect x="2" y="2" width="536" height="236" rx="14" fill="#ffffff" stroke="#bae6fd" stroke-width="2"/>
+  <rect x="18" y="14" width="270" height="26" rx="13" fill="#e0f2fe"/>
+  <text x="28" y="32" font-size="12" font-weight="800" fill="#0369a1">✎ VISUAL MODEL: THE 4 STATISTICAL AVERAGES</text>
+  <text x="300" y="32" font-size="13" font-weight="700" fill="#0f172a">Data: 4, 6, 6, 7, 9, 10</text>
+
+  <!-- 4 Cards -->
+  <!-- Mean -->
+  <g transform="translate(20, 52)">
+    <rect width="118" height="135" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5"/>
+    <text x="59" y="24" font-size="12" font-weight="800" fill="#1e3a8a" text-anchor="middle">MEAN</text>
+    <text x="59" y="44" font-size="10.5" fill="#64748b" text-anchor="middle">Total ÷ Count</text>
+    <line x1="15" y1="52" x2="103" y2="52" stroke="#bfdbfe"/>
+    <text x="59" y="74" font-size="11" fill="#1e293b" text-anchor="middle">4+6+6+7+9+10</text>
+    <text x="59" y="92" font-size="11" fill="#1e293b" text-anchor="middle">= 42 ÷ 6</text>
+    <text x="59" y="120" font-size="18" font-weight="800" fill="#2563eb" text-anchor="middle">= 7 ✓</text>
+  </g>
+
+  <!-- Median -->
+  <g transform="translate(148, 52)">
+    <rect width="118" height="135" rx="8" fill="#faf5ff" stroke="#a855f7" stroke-width="1.5"/>
+    <text x="59" y="24" font-size="12" font-weight="800" fill="#581c87" text-anchor="middle">MEDIAN</text>
+    <text x="59" y="44" font-size="10.5" fill="#64748b" text-anchor="middle">Middle in Order</text>
+    <line x1="15" y1="52" x2="103" y2="52" stroke="#e9d5ff"/>
+    <text x="59" y="74" font-size="11" fill="#1e293b" text-anchor="middle">4, 6, [6, 7], 9, 10</text>
+    <text x="59" y="92" font-size="11" fill="#1e293b" text-anchor="middle">(6 + 7) ÷ 2</text>
+    <text x="59" y="120" font-size="18" font-weight="800" fill="#9333ea" text-anchor="middle">= 6.5 ✓</text>
+  </g>
+
+  <!-- Mode -->
+  <g transform="translate(276, 52)">
+    <rect width="118" height="135" rx="8" fill="#f0fdf4" stroke="#22c55e" stroke-width="1.5"/>
+    <text x="59" y="24" font-size="12" font-weight="800" fill="#14532d" text-anchor="middle">MODE</text>
+    <text x="59" y="44" font-size="10.5" fill="#64748b" text-anchor="middle">Most Common</text>
+    <line x1="15" y1="52" x2="103" y2="52" stroke="#bbf7d0"/>
+    <text x="59" y="74" font-size="11" fill="#1e293b" text-anchor="middle">6 appears twice</text>
+    <text x="59" y="92" font-size="11" fill="#1e293b" text-anchor="middle">Others once</text>
+    <text x="59" y="120" font-size="18" font-weight="800" fill="#16a34a" text-anchor="middle">= 6 ✓</text>
+  </g>
+
+  <!-- Range -->
+  <g transform="translate(404, 52)">
+    <rect width="116" height="135" rx="8" fill="#fff7ed" stroke="#f97316" stroke-width="1.5"/>
+    <text x="58" y="24" font-size="12" font-weight="800" fill="#7c2d12" text-anchor="middle">RANGE</text>
+    <text x="58" y="44" font-size="10.5" fill="#64748b" text-anchor="middle">Highest − Lowest</text>
+    <line x1="15" y1="52" x2="101" y2="52" stroke="#fed7aa"/>
+    <text x="58" y="74" font-size="11" fill="#1e293b" text-anchor="middle">Highest = 10</text>
+    <text x="58" y="92" font-size="11" fill="#1e293b" text-anchor="middle">Lowest = 4</text>
+    <text x="58" y="120" font-size="18" font-weight="800" fill="#ea580c" text-anchor="middle">= 6 ✓</text>
+  </g>
+
+  <rect x="20" y="196" width="500" height="30" rx="6" fill="#f8fafc" stroke="#cbd5e1"/>
+  <text x="270" y="216" font-size="11.5" font-weight="600" fill="#475569" text-anchor="middle">Remember: Range is a measure of spread/consistency, NOT an average!</text>
+</svg>

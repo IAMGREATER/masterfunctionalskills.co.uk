@@ -1,0 +1,42 @@
+<svg viewBox="0 0 540 280" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:540px; height:auto; font-family:'Plus Jakarta Sans', sans-serif;">
+  <rect x="2" y="2" width="536" height="276" rx="14" fill="#ffffff" stroke="#cbd5e1" stroke-width="2"/>
+  
+  <!-- Header Banner -->
+  <rect x="14" y="12" width="512" height="34" rx="8" fill="#1d4ed8"/>
+  <text x="26" y="34" font-size="12" font-weight="900" fill="#ffffff">DIAGNOSTIC FAILURE MODE: REVERSE PERCENTAGES</text>
+  
+  <!-- Side by Side Boxes (Generous Width & Padding) -->
+  <!-- Left Box: The Red Error Trap -->
+  <rect x="16" y="54" width="246" height="175" rx="8" fill="#fff1f2" stroke="#fca5a5" stroke-width="2"/>
+  <rect x="26" y="64" width="226" height="26" rx="5" fill="#fee2e2"/>
+  <text x="36" y="81" font-size="10" font-weight="900" fill="#991b1b">✕ COMMON FAILURE TRAP (BKSB)</text>
+  
+  <text x="28" y="106" font-size="9.5" fill="#881337">Problem: Sale price = £120 after 20% discount.</text>
+  <text x="28" y="124" font-size="10" font-weight="800" fill="#b91c1c">Faulty Working:</text>
+  <text x="28" y="140" font-size="10" fill="#881337">20% of £120 = £24</text>
+  <text x="28" y="156" font-size="10" fill="#881337">£120 + £24 = £144.00</text>
+  
+  <rect x="24" y="168" width="230" height="48" rx="5" fill="#fee2e2"/>
+  <text x="32" y="184" font-size="9" font-weight="800" fill="#991b1b">FATAL FLAW: You cannot add 20% of the</text>
+  <text x="32" y="198" font-size="9" font-weight="800" fill="#991b1b">discounted £120 to recover 100% original value!</text>
+  <text x="32" y="210" font-size="8.5" fill="#b91c1c">The 20% was deducted from a LARGER starting sum.</text>
+
+  <!-- Right Box: The Golden Rule Method -->
+  <rect x="278" y="54" width="246" height="175" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="2"/>
+  <rect x="288" y="64" width="226" height="26" rx="5" fill="#dcfce7"/>
+  <text x="298" y="81" font-size="10" font-weight="900" fill="#166534">✓ GOLDEN RULE METHOD (ABDUL)</text>
+  
+  <text x="290" y="106" font-size="9.5" fill="#14532d">Sale price £120 represents 80% (100% - 20%).</text>
+  <text x="290" y="124" font-size="10" font-weight="800" fill="#15803d">Single-Step Multiplier Method:</text>
+  <text x="290" y="140" font-size="10" fill="#14532d">Multiplier = 1.00 - 0.20 = 0.80</text>
+  <text x="290" y="158" font-size="12" font-weight="900" fill="#15803d">£120 ÷ 0.80 = £150.00 ✓</text>
+  
+  <rect x="286" y="168" width="230" height="48" rx="5" fill="#dcfce7"/>
+  <text x="294" y="184" font-size="9" font-weight="800" fill="#166534">VERIFICATION CHECK:</text>
+  <text x="294" y="198" font-size="9" fill="#15803d">20% of £150 = £30.00.</text>
+  <text x="294" y="210" font-size="9" font-weight="800" fill="#166534">£150 - £30 = £120. Perfectly verified! ✓</text>
+
+  <!-- Footer Progress Bar -->
+  <rect x="14" y="238" width="512" height="28" rx="6" fill="#eff6ff" stroke="#bfdbfe"/>
+  <text x="26" y="256" font-size="10" font-weight="800" fill="#1d4ed8">Target Mastery Progression: Level 1 Emerging (42%) ➔ Level 2 Secure (84%) Sign-Off</text>
+</svg>

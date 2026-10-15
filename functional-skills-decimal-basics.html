@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-theme="sapphire" data-tint="cream">
+<head>
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Decimal Basics: Tenths, Hundredths & Money: Key Rules, Models &amp; Exam Practice | Master Functional Skills</title>
+  <meta name="description" content="Dyslexia-friendly Decimal Basics: Tenths, Hundredths & Money revision guide for Functional Skills Mathematics Level 1 &amp; Level 2. Clear spacing, structured cards, large numbers, worked models, and interactive practice.">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192x192.png">
+  <link rel="apple-touch-icon" href="assets/img/favicon-192x192.png">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="assets/css/mfs-theme.css">
+  <link rel="stylesheet" href="assets/css/mfs-revision.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <!-- TOP TRUST BAR WITH ACCESSIBILITY & CONTACT -->
+  <div class="mfs-top-bar">
+    <div class="mfs-container mfs-top-bar-inner">
+      <div class="top-trust-items">
+        <span class="top-trust-item"><i class="fa-solid fa-building-columns"></i> Pearson Edexcel &amp; City &amp; Guilds Aligned</span>
+      </div>
+      <div class="top-contacts">
+        <div class="mfs-access-bar">
+          <!-- DYSLEXIA BACKGROUND TINT PICKER -->
+          <div class="mfs-tint-dropdown-wrap">
+            <button type="button" id="tintToggle" class="btn-tint-toggle" onclick="toggleTintMenu(event)" title="Change dyslexia background tint">
+              <span class="tint-swatch-indicator" id="tintCurrentSwatch"></span>
+              <span id="tintLabel">Cream Tint</span>
+              <i class="fa-solid fa-chevron-down" style="font-size:0.62rem; opacity:0.75; margin-left:2px;"></i>
+            </button>
+            <div id="tintMenu" class="tint-picker-menu">
+              <div class="tint-picker-title"><i class="fa-solid fa-glasses"></i> Dyslexia Reading Tint</div>
+              <button type="button" class="tint-option-btn active" data-tint="cream" onclick="setSiteTint('cream', event)">
+                <span class="swatch swatch-cream"></span>
+                <span class="tint-name">Cream <small class="tint-badge-def">Default</small></span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="peach" onclick="setSiteTint('peach', event)">
+                <span class="swatch swatch-peach"></span>
+                <span class="tint-name">Soft Peach</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="cool" onclick="setSiteTint('cool', event)">
+                <span class="swatch swatch-cool"></span>
+                <span class="tint-name">Cool Mist</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="sage" onclick="setSiteTint('sage', event)">
+                <span class="swatch swatch-sage"></span>
+                <span class="tint-name">Soft Sage</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <div class="tint-divider"></div>
+              <button type="button" class="tint-option-btn" data-tint="none" onclick="setSiteTint('none', event)">
+                <span class="swatch swatch-none"></span>
+                <span class="tint-name">No Tint (White)</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+            </div>
+          </div>
+          <button id="dyslexiaToggle" class="btn-dyslexia-toggle" onclick="toggleDyslexiaMode()" title="Toggle Dyslexia High-Readability Mode">
+            <i class="fa-solid fa-universal-access"></i> Dyslexia
+          </button>
+          <button id="themeToggle" class="mfs-theme-pill" onclick="toggleTheme()" title="Switch Palette: Sapphire vs Emerald">
+            <i class="fa-solid fa-palette"></i> <span id="themeLabel">Sapphire</span>
+          </button>
+        </div>
+        <a href="contact-us.html" class="top-contact-link"><i class="fa-solid fa-envelope"></i> <strong>Contact Us</strong></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->  <!-- MAIN NAVIGATION -->
+                    <header class="mfs-navbar">
+    <div class="revision-page-wrapper mfs-navbar-inner">
+      <a href="index.html" class="mfs-brand">
+        <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div class="mfs-brand-text">
+          <div class="mfs-brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
+          <div class="mfs-brand-subtitle">Delivering Skills • Achieving Goals</div>
+        </div>
+      </a>
+
+      <nav class="mfs-nav-wrapper">
+        <ul class="mfs-nav-menu">
+          <!-- 1. SUBJECTS (VISUAL MEGA-MENU) -->
+          <li class="mfs-nav-item">
+            <a href="courses.html" class="mfs-nav-link">
+              <i class="fa-solid fa-book-open-reader" style="color:#0284c7; margin-right:5px;"></i> Subjects <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-revision-hub">
+              <div class="mfs-revision-grid">
+                <!-- Maths Column -->
+                <div class="mfs-revision-col mfs-revision-col-maths">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-calculator"></i> Maths Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="functional-skills-maths-level-2.html" class="mfs-dropdown-item">Maths Level 2</a>
+                    <a href="functional-skills-maths-level-1.html" class="mfs-dropdown-item">Maths Level 1</a>
+                    <a href="entry-level-3-maths.html" class="mfs-dropdown-item">Entry Level 3 Maths</a>
+                  </div>
+                </div>
+                <!-- English Column -->
+                <div class="mfs-revision-col mfs-revision-col-english">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-pen-nib"></i> English Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="functional-skills-english-level-2.html" class="mfs-dropdown-item">English Level 2</a>
+                    <a href="functional-skills-english-level-1.html" class="mfs-dropdown-item">English Level 1</a>
+                  </div>
+                </div>
+                <!-- Digital Skills Column -->
+                <div class="mfs-revision-col mfs-revision-col-digital">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-laptop-code"></i> Digital Skills</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="digital-functional-skills.html" class="mfs-dropdown-item">Digital Skills Hub</a>
+                    <a href="digital-functional-skills-mock-exam.html" class="mfs-dropdown-item">Pearson Mock Exam</a>
+                    <a href="digital-functional-skills-past-papers.html" class="mfs-dropdown-item">Past Papers &amp; Files</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- 2. PAST PAPERS & MOCKS (DIRECT ACCESS) -->
+          <li class="mfs-nav-item">
+            <a href="functional-skills-past-papers.html" class="mfs-nav-link">
+              <i class="fa-regular fa-file-lines" style="color:#0284c7; margin-right:5px;"></i> Past Papers &amp; Mocks
+            </a>
+          </li>
+
+          <!-- 2b. WORKSHEETS DIRECTORY (CORBETT STYLE DUAL ENGINE) -->
+          <li class="mfs-nav-item">
+            <a href="worksheets.html" class="mfs-nav-link">
+              <i class="fa-solid fa-layer-group" style="color:#0284c7; margin-right:5px;"></i> Worksheets Hub
+            </a>
+          </li>
+
+          <!-- 3. FREE TOOLS (COMPACT DROPDOWN) -->
+          <li class="mfs-nav-item">
+            <a href="tools.html" class="mfs-nav-link">
+              <i class="fa-solid fa-screwdriver-wrench" style="color:#0284c7; margin-right:5px;"></i> Free Tools <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-compact">
+              <a href="tools.html" class="mfs-dropdown-item" style="font-weight:700; color:var(--accent);"><i class="fa-solid fa-layer-group" style="font-size:0.85rem; margin-right:6px;"></i> All Free Tools &amp; Simulators &rarr;</a>
+              <div class="mfs-dropdown-divider" style="margin:4px 0; border-top:1px solid #e2e8f0;"></div>
+              <a href="pass-mark-calculator.html" class="mfs-dropdown-item"><i class="fa-solid fa-calculator" style="color:var(--accent); font-size:0.85rem; margin-right:6px;"></i> Pass Mark Calculator</a>
+              <a href="diagnostic-test.html" class="mfs-dropdown-item"><i class="fa-solid fa-chart-pie" style="color:#059669; font-size:0.85rem; margin-right:6px;"></i> Diagnostic Skill Checker</a>
+              <a href="functional-skills-nets.html" class="mfs-dropdown-item"><i class="fa-solid fa-cube" style="color:#0284c7; font-size:0.85rem; margin-right:6px;"></i> 3D Net Folding Tool</a>
+            </div>
+          </li>
+
+          <!-- 4. REVISION CARDS -->
+          <li class="mfs-nav-item">
+            <a href="revision-cards.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-layer-group" style="color:#d97706; margin-right:5px;"></i> Revision Cards
+            </a>
+          </li>
+
+          <!-- 5. SHOP -->
+          <li class="mfs-nav-item">
+            <a href="shop.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-basket-shopping" style="color:#d97706; margin-right:5px;"></i> Shop
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- 6. BOOK EXAM ACTION BUTTON -->
+      <div class="mfs-nav-actions">
+        <a href="exams.html" class="btn-nav-exam">
+          <i class="fa-solid fa-calendar-check"></i> Book Exam
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- BREADCRUMBS -->
+  <div class="revision-breadcrumb-bar">
+    <div class="revision-page-wrapper">
+      <div class="revision-breadcrumbs">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a href="revise.html">Revise Hub</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a href="functional-skills-maths-level-2.html">Mathematics Level 2</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span class="current">Decimal Basics: Tenths, Hundredths & Money</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="revision-hero-card">
+    <div class="revision-page-wrapper">
+      <div class="revision-hero-grid">
+        <div class="revision-hero-content">
+          <div class="revision-hero-pill-row">
+            <span class="badge-pill-accent"><i class="fa-solid fa-calculator"></i> MATHEMATICS</span>
+            <span class="badge-pill-gold">LEVEL 1 &amp; LEVEL 2</span>
+            <span class="badge-pill-outline">OFQUAL SPECIFICATION STANDARDS</span>
+          </div>
+
+          <h1 class="revision-hero-title">
+            Decimal Basics: Tenths, Hundredths & Money: <span>Formulas, Models &amp; Exam Practice</span>
+          </h1>
+
+          <p class="revision-hero-desc">
+            Read and write decimal numbers up to two decimal places, connect tenths and hundredths to pounds and pence, order decimals accurately, and round money to the nearest 10p or £1.
+          </p>
+
+          <div class="revision-hero-meta-bar">
+            <div class="hero-meta-item">
+              <i class="fa-solid fa-clock"></i> <strong>Est. Study Time:</strong> 25-35 Mins
+            </div>
+            <div class="hero-meta-item">
+              <i class="fa-solid fa-book-open"></i> <strong>Curriculum Standards:</strong> Pearson Edexcel &amp; City &amp; Guilds
+            </div>
+            <div class="hero-meta-item">
+              <i class="fa-solid fa-circle-check"></i> <strong>Interactive Practice Tasks Included</strong>
+            </div>
+
+            <div class="hero-quick-actions">
+              <a href="#downloads" class="btn-hero-action">
+                <i class="fa-regular fa-file-pdf"></i> Free Worksheet &amp; Answers (PDF)
+              </a>
+              <a href="#practice-questions" class="btn-hero-action-secondary">
+                <i class="fa-solid fa-pencil"></i> Start Practice Tasks
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="revision-hero-visual-card">
+          <div class="revision-hero-img-wrap">
+            <img src="assets/img/book_photos/money_shopping_bills/coins_pounds.jpg" alt="Decimal Basics: Tenths, Hundredths & Money Workplace Application" loading="lazy" />
+          </div>
+          <div class="revision-hero-caption-bar">
+            <strong><i class="fa-solid fa-shapes"></i> Key Visual Concept</strong>
+            Tenths and hundredths place value in coin calculations.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOBILE TABLE OF CONTENTS BAR -->
+  <div class="mobile-toc-bar">
+    <div style="font-weight:700; color:var(--navy-dark); font-size:0.9rem;">
+      <i class="fa-solid fa-list-check" style="color:var(--accent);"></i> Decimal Basics: Tenths, Hundredths & Money Blueprint
+    </div>
+    <button type="button" class="btn-mobile-toc" onclick="toggleMobileToc()">
+      <span>Table of Contents</span> <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+
+  <!-- MAIN 2-COLUMN RESPONSIVE LAYOUT -->
+  <main class="revision-page-wrapper">
+    <div class="revision-layout">
+
+      <!-- LEFT COLUMN: STICKY BLUEPRINT TOC -->
+      <aside class="revision-sidebar" id="sidebarNav">
+        <div class="sidebar-toc-title">
+          <span><i class="fa-solid fa-compass-drafting" style="color:var(--accent);"></i> Topic Contents</span>
+          <span style="font-size:0.75rem; color:#64748b; font-weight:700;">9 Sections</span>
+        </div>
+
+        <ul class="sidebar-toc-list" id="tocList">
+          
+          <li>
+            <a href="#specification" class="sidebar-toc-link active">
+              <i class="fa-solid fa-clipboard-check"></i> Specification
+            </a>
+          </li>
+          <li>
+            <a href="#golden-rules" class="sidebar-toc-link">
+              <i class="fa-solid fa-lightbulb"></i> Golden Rules
+            </a>
+          </li>
+          <li>
+            <a href="#skill-1" class="sidebar-toc-link">
+              <i class="fa-solid fa-shapes"></i> 1. Pounds & Pence Conversion Rules (Avoiding the Mixed-Unit Trap)
+            </a>
+          </li>
+          <li>
+            <a href="#skill-2" class="sidebar-toc-link">
+              <i class="fa-solid fa-shapes"></i> 2. Ordering Decimal Measurements (Metres, Kilograms & Litres)
+            </a>
+          </li>
+          <li>
+            <a href="#skill-3" class="sidebar-toc-link">
+              <i class="fa-solid fa-shapes"></i> 3. Rounding Decimals to the Nearest Whole Number or 1 Decimal Place
+            </a>
+          </li>
+          <li>
+            <a href="#worked-exam-models" class="sidebar-toc-link">
+              <i class="fa-solid fa-graduation-cap"></i> Exam Models
+            </a>
+          </li>
+          <li>
+            <a href="#examiner-traps" class="sidebar-toc-link">
+              <i class="fa-solid fa-triangle-exclamation"></i> Examiner Traps
+            </a>
+          </li>
+          <li>
+            <a href="#practice-questions" class="sidebar-toc-link">
+              <i class="fa-solid fa-pencil"></i> Exam Practice
+            </a>
+          </li>
+          <li>
+            <a href="#downloads" class="sidebar-toc-link">
+              <i class="fa-solid fa-file-pdf"></i> Downloads (PDF)
+            </a>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- RIGHT COLUMN: MAIN LEARNING CONTENT -->
+      <div class="revision-content">
+        
+    <!-- SPECIFICATION -->
+    <section id="specification" class="revision-section">
+      <div class="section-header-row">
+        <h2 class="section-title"><i class="fa-solid fa-clipboard-check"></i> Specification &amp; Learning Outcomes</h2>
+      </div>
+      <div class="skill-card-container">
+        <p>Candidates must demonstrate mastery of the following regulated Functional Skills Mathematics outcomes:</p>
+        <ul style="padding-left:20px; line-height:1.8; color:#334155;">
+          <li><strong>E3.5 / L1.10</strong> – Read, write, order, and compare decimals up to two decimal places in practical contexts such as money and metric length.</li><li><strong>E3.5 / L1.6</strong> – Round decimal currency and measurements to the nearest whole unit or tenth.</li>
+        </ul>
+      </div>
+    </section>
+    
+
+    <!-- GOLDEN RULES -->
+    <section id="golden-rules" class="revision-section">
+      <div class="section-header-row">
+        <h2 class="section-title"><i class="fa-solid fa-lightbulb"></i> Golden Rules for Decimal Basics: Tenths, Hundredths & Money</h2>
+      </div>
+      
+        <div class="rule-card-amber">
+          <div class="rule-card-amber-header">
+            <i class="fa-solid fa-coins"></i>
+            <span>Golden Rule 1: The Decimal Point Separates Whole Units from Tenths & Hundredths</span>
+          </div>
+          <p>In £4.75, the 4 is whole pounds, the 7 is tenths (7 × 10p = 70p), and the 5 is hundredths (5 × 1p = 5p). Single-digit pence from 1p to 9p MUST have a zero in the tenths column (e.g. 6p = £0.06, NEVER £0.6!).</p>
+          <div class="rule-highlight-badge">
+            <strong>Golden Rule / Method:</strong> Pounds . Tenths (10p) Hundredths (1p) • 6p = £0.06
+          </div>
+        </div>
+        
+        <div class="rule-card-amber">
+          <div class="rule-card-amber-header">
+            <i class="fa-solid fa-arrows-left-right"></i>
+            <span>Golden Rule 2: Pad with Trailing Zeros to Compare Decimals (0.5 = 0.50 > 0.08)</span>
+          </div>
+          <p>To compare 0.5 and 0.08, make both numbers have 2 decimal places by writing 0.5 as 0.50. Now it is obvious that 0.50 (50 hundredths) is much larger than 0.08 (8 hundredths).</p>
+          <div class="rule-highlight-badge">
+            <strong>Golden Rule / Method:</strong> 0.5 = 0.50 (50p) > 0.08 (8p)
+          </div>
+        </div>
+        
+    </section>
+    
+
+        <!-- SKILL 1: Pounds & Pence Conversion Rules (Avoiding the Mixed-Unit Trap) -->
+        <section id="skill-1" class="revision-section">
+          <div class="mfs-topic-card">
+            <div class="mfs-topic-head">
+              <h3 class="mfs-topic-title"><span class="mfs-topic-prefix">Core Skill 1:</span> Pounds & Pence Conversion Rules (Avoiding the Mixed-Unit Trap)</h3>
+              <p class="mfs-topic-stem">Writing currency properly with £ or p—never both at the same time.</p>
+            </div>
+            <div class="mfs-topic-body" style="padding:20px 24px;">
+              <div class="sketch-diagram-wrap"><svg viewBox="0 0 760 320" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:760px; height:auto; font-family:'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;">
+  <!-- Main Container Card -->
+  <rect x="2" y="2" width="756" height="316" rx="14" fill="#ffffff" stroke="#bae6fd" stroke-width="2"/>
+  
+  <!-- Top Title Badges -->
+  <rect x="22" y="16" width="320" height="32" rx="16" fill="#e0f2fe"/>
+  <text x="36" y="37" font-size="13.5" font-weight="800" fill="#0369a1" letter-spacing="0.5">✎ WORKED METHOD: DECIMAL ALIGNMENT</text>
+  <text x="365" y="38" font-size="16" font-weight="700" fill="#0f172a">Adding £34.75 + £8.60 + £12.08</text>
+
+  <!-- Left Column Calculation Card -->
+  <rect x="22" y="62" width="310" height="238" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+
+  <!-- Red Vertical Decimal Guideline -->
+  <line x1="184" y1="72" x2="184" y2="286" stroke="#ef4444" stroke-width="2" stroke-dasharray="5,4" opacity="0.85"/>
+
+  <!-- Row 1: £34.75 -->
+  <g font-size="28" font-weight="800" fill="#0f172a">
+    <text x="78" y="106" text-anchor="middle">£</text>
+    <text x="120" y="106" text-anchor="middle">3</text>
+    <text x="156" y="106" text-anchor="middle">4</text>
+    <circle cx="184" cy="103" r="3.2" fill="#0f172a"/>
+    <text x="212" y="106" text-anchor="middle">7</text>
+    <text x="248" y="106" text-anchor="middle">5</text>
+  </g>
+
+  <!-- Row 2: £ 8.60 -->
+  <g font-size="28" font-weight="800" fill="#0f172a">
+    <text x="78" y="148" text-anchor="middle">£</text>
+    <text x="156" y="148" text-anchor="middle">8</text>
+    <circle cx="184" cy="145" r="3.2" fill="#0f172a"/>
+    <text x="212" y="148" text-anchor="middle">6</text>
+    <text x="248" y="148" text-anchor="middle">0</text>
+  </g>
+
+  <!-- Row 3: + £12.08 -->
+  <text x="46" y="190" font-size="26" font-weight="800" fill="#0284c7" text-anchor="middle">+</text>
+  <g font-size="28" font-weight="800" fill="#0f172a">
+    <text x="78" y="190" text-anchor="middle">£</text>
+    <text x="120" y="190" text-anchor="middle">1</text>
+    <text x="156" y="190" text-anchor="middle">2</text>
+    <circle cx="184" cy="187" r="3.2" fill="#0f172a"/>
+    <text x="212" y="190" text-anchor="middle">0</text>
+    <text x="248" y="190" text-anchor="middle">8</text>
+  </g>
+
+  <!-- Calculation Divider Line -->
+  <line x1="38" y1="208" x2="286" y2="208" stroke="#0f172a" stroke-width="2.5"/>
+
+  <!-- Carries row -->
+  <g font-size="14" font-weight="800" fill="#64748b">
+    <text x="120" y="224" text-anchor="middle">1</text>
+    <text x="156" y="224" text-anchor="middle">1</text>
+    <text x="212" y="224" text-anchor="middle">1</text>
+  </g>
+
+  <!-- Result Row: £55.43 -->
+  <g font-size="30" font-weight="800" fill="#15803d">
+    <text x="78" y="258" text-anchor="middle">£</text>
+    <text x="120" y="258" text-anchor="middle">5</text>
+    <text x="156" y="258" text-anchor="middle">5</text>
+    <circle cx="184" cy="255" r="3.4" fill="#15803d"/>
+    <text x="212" y="258" text-anchor="middle">4</text>
+    <text x="248" y="258" text-anchor="middle">3</text>
+  </g>
+
+  <!-- Double Underline -->
+  <line x1="38" y1="274" x2="286" y2="274" stroke="#0f172a" stroke-width="2.5"/>
+  <line x1="38" y1="280" x2="286" y2="280" stroke="#0f172a" stroke-width="2.5"/>
+
+  <!-- Right Rules Card -->
+  <rect x="350" y="62" width="388" height="238" rx="10" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.5"/>
+  <text x="372" y="98" font-size="15" font-weight="800" fill="#1e40af" letter-spacing="0.4">KEY EXAM RULES FOR DECIMALS:</text>
+  
+  <circle cx="380" cy="132" r="3.5" fill="#2563eb"/>
+  <text x="394" y="137" font-size="14.5" font-weight="600" fill="#1e293b">Align decimal points vertically (red line).</text>
+  
+  <circle cx="380" cy="168" r="3.5" fill="#2563eb"/>
+  <text x="394" y="173" font-size="14.5" font-weight="600" fill="#1e293b">Fill missing trailing zero: £8.6 → £8.60.</text>
+  
+  <circle cx="380" cy="204" r="3.5" fill="#2563eb"/>
+  <text x="394" y="209" font-size="14.5" font-weight="600" fill="#1e293b">Currency MUST always have 2 decimal places.</text>
+  
+  <!-- Green Highlight Badge -->
+  <rect x="372" y="232" width="344" height="46" rx="8" fill="#dcfce7" stroke="#86efac" stroke-width="1.5"/>
+  <text x="544" y="261" font-size="15" font-weight="800" fill="#15803d" text-anchor="middle">Write £55.43, never £55.4 ✓</text>
+</svg></div>
+              
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:18px; margin:16px 0;">
+                  <ul style="padding-left:20px; line-height:1.8; color:#334155;">
+                    <li><strong>Pence to Pounds (&divide; 100):</strong> 345p = <strong>&pound;3.45</strong>; 80p = <strong>&pound;0.80</strong>; 7p = <strong>&pound;0.07</strong>.</li>
+                    <li><strong>Never Mix &pound; and p:</strong> Write <strong>&pound;0.85</strong> or <strong>85p</strong> — NEVER write <em>"&pound;0.85p"</em>!</li>
+                    <li><strong>Always Two Decimal Places for Pounds:</strong> If your calculator shows <strong>4.5</strong> for money, write <strong>&pound;4.50</strong>.</li>
+                  </ul>
+                </div>
+                
+            </div>
+            <div class="mfs-topic-footer" style="display:flex; gap:8px; flex-wrap:wrap; padding-top:14px; border-top:1px solid #e2e8f0; margin-top:16px;">
+              <span class="mfs-pill-l1">Level 1</span>
+              <span class="mfs-pill-l2">Level 2</span>
+              <span class="mfs-pill-board">Pearson Edexcel</span>
+              <span class="mfs-pill-board">City &amp; Guilds</span>
+              <span class="mfs-pill-board">NCFE</span>
+            </div>
+          </div>
+        </section>
+        
+        <!-- SKILL 2: Ordering Decimal Measurements (Metres, Kilograms & Litres) -->
+        <section id="skill-2" class="revision-section">
+          <div class="mfs-topic-card">
+            <div class="mfs-topic-head">
+              <h3 class="mfs-topic-title"><span class="mfs-topic-prefix">Core Skill 2:</span> Ordering Decimal Measurements (Metres, Kilograms & Litres)</h3>
+              <p class="mfs-topic-stem">Comparing whole units first, then tenths, then hundredths.</p>
+            </div>
+            <div class="mfs-topic-body" style="padding:20px 24px;">
+              
+              
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:18px; margin:16px 0;">
+                  <p style="color:#334155; line-height:1.7; margin-top:0;">To order <strong>1.4 m, 1.09 m, 1.45 m, 1.38 m</strong> from shortest to longest:</p>
+                  <ol style="padding-left:22px; line-height:1.8; color:#334155;">
+                    <li>Pad 1.4 m with a trailing zero so all have 2 decimal places: <strong>1.40, 1.09, 1.45, 1.38</strong>.</li>
+                    <li>Compare the hundredths after the dot (09, 38, 40, 45).</li>
+                    <li>Ordered list: <strong>1.09 m, 1.38 m, 1.4 m, 1.45 m</strong>.</li>
+                  </ol>
+                </div>
+                
+            </div>
+            <div class="mfs-topic-footer" style="display:flex; gap:8px; flex-wrap:wrap; padding-top:14px; border-top:1px solid #e2e8f0; margin-top:16px;">
+              <span class="mfs-pill-l1">Level 1</span>
+              <span class="mfs-pill-l2">Level 2</span>
+              <span class="mfs-pill-board">Pearson Edexcel</span>
+              <span class="mfs-pill-board">City &amp; Guilds</span>
+              <span class="mfs-pill-board">NCFE</span>
+            </div>
+          </div>
+        </section>
+        
+        <!-- SKILL 3: Rounding Decimals to the Nearest Whole Number or 1 Decimal Place -->
+        <section id="skill-3" class="revision-section">
+          <div class="mfs-topic-card">
+            <div class="mfs-topic-head">
+              <h3 class="mfs-topic-title"><span class="mfs-topic-prefix">Core Skill 3:</span> Rounding Decimals to the Nearest Whole Number or 1 Decimal Place</h3>
+              <p class="mfs-topic-stem">Using the decider digit to round prices and weights.</p>
+            </div>
+            <div class="mfs-topic-body" style="padding:20px 24px;">
+              
+              
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:18px; margin:16px 0;">
+                  <ul style="padding-left:20px; line-height:1.8; color:#334155;">
+                    <li><strong>To Nearest Whole Pound (&pound;1):</strong> Look at the tenths digit. &pound;14.62 &rarr; 6 is 5 or more &rarr; rounds UP to <strong>&pound;15.00</strong>.</li>
+                    <li><strong>To 1 Decimal Place (Nearest 10p):</strong> Look at the hundredths digit. &pound;14.62 &rarr; 2 is less than 5 &rarr; rounds DOWN to <strong>&pound;14.60</strong>.</li>
+                  </ul>
+                </div>
+                
+            </div>
+            <div class="mfs-topic-footer" style="display:flex; gap:8px; flex-wrap:wrap; padding-top:14px; border-top:1px solid #e2e8f0; margin-top:16px;">
+              <span class="mfs-pill-l1">Level 1</span>
+              <span class="mfs-pill-l2">Level 2</span>
+              <span class="mfs-pill-board">Pearson Edexcel</span>
+              <span class="mfs-pill-board">City &amp; Guilds</span>
+              <span class="mfs-pill-board">NCFE</span>
+            </div>
+          </div>
+        </section>
+        
+
+    <!-- WORKED EXAM MODELS -->
+    <section id="worked-exam-models" class="revision-section">
+      <div class="section-header-row">
+        <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i> Pearson Edexcel Step-by-Step Worked Models</h2>
+      </div>
+      
+        <div class="model-example-card" style="margin-bottom:24px;">
+          <div class="model-card-header">
+            <span class="model-badge"><i class="fa-solid fa-graduation-cap"></i> Benchmark Exam Model 1</span>
+            <span class="model-marks-pill">2 Marks (Entry Level 3 / Level 1)</span>
+          </div>
+          <div class="model-scenario" style="padding:16px 20px; background:#fff; border-bottom:1px solid #e2e8f0;">
+            <p style="font-weight:600; color:#0f172a; margin-bottom:8px;">Vocational Context: <span style="color:#0369a1;">Activities Petty Cash Management</span></p>
+            <div class="model-q-stem" style="font-size:1.05rem; line-height:1.7; color:#334155;">A care home activity worker buys biscuits for <strong>£1.45</strong>, tea bags for <strong>£2.80</strong>, and milk for <strong>95p</strong>.<br>(a) Calculate the total cost in pounds (£).<br>(b) How much change will she receive from a <strong>£10.00 note</strong>?</div>
+          </div>
+          <div class="model-steps-container" style="padding:18px 20px; background:#ffffff;">
+            <!-- 3-Column Header: Step, Description, Criteria -->
+            <div class="model-steps-header-row">
+              <div><i class="fa-solid fa-list-ol" style="color:#0284c7; margin-right:6px;"></i> Step</div>
+              <div><i class="fa-solid fa-calculator" style="color:#0284c7; margin-right:6px;"></i> Description / Working</div>
+              <div><i class="fa-solid fa-clipboard-check" style="color:#0284c7; margin-right:6px;"></i> Criteria</div>
+            </div>
+            
+            <div class="model-step-row model-step-grid-row">
+              <div class="model-step-col-step">
+                <span class="example-step-pill">Step 1</span>
+                <span class="model-step-title">Convert 95p to £0.95 and add all three items</span>
+              </div>
+              <div class="model-step-col-desc">
+                £1.45 + £2.80 + £0.95 = £5.20.
+              </div>
+              <div class="model-step-col-criteria">
+                <span class="criteria-badge-teal"><i class="fa-solid fa-award" style="font-size:0.78rem; margin-right:4px; opacity:0.85;"></i><strong>Criteria:</strong> M1: Converting 95p to £0.95 and adding (£5.20)</span>
+              </div>
+            </div>
+            
+            <div class="model-step-row model-step-grid-row">
+              <div class="model-step-col-step">
+                <span class="example-step-pill">Step 2</span>
+                <span class="model-step-title">Subtract £5.20 from £10.00</span>
+              </div>
+              <div class="model-step-col-desc">
+                £10.00 − £5.20 = £4.80.
+              </div>
+              <div class="model-step-col-criteria">
+                <span class="criteria-badge-teal"><i class="fa-solid fa-award" style="font-size:0.78rem; margin-right:4px; opacity:0.85;"></i><strong>Criteria:</strong> A1: Accurate change (£4.80)</span>
+              </div>
+            </div>
+            
+            <div class="model-final-answer" style="margin-top:16px; padding:12px 18px; background:#f0fdf4; border:1px solid #86efac; border-radius:6px; font-weight:700; color:#166534; font-size:1.05rem;">
+              <i class="fa-solid fa-check-circle"></i> Final Accredited Answer: (a) Total = £5.20 | (b) Change = £4.80
+            </div>
+            <div class="examiner-guidance-box">
+              <div class="examiner-guidance-header">
+                <i class="fa-solid fa-clipboard-check"></i>
+                <span>Method Checklist &amp; Marking Scheme Guidance</span>
+              </div>
+              <div class="examiner-guidance-text">
+                Always convert pence (95p) into pounds (£0.95) BEFORE adding to pound amounts!
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="model-example-card" style="margin-bottom:24px;">
+          <div class="model-card-header">
+            <span class="model-badge"><i class="fa-solid fa-graduation-cap"></i> Benchmark Exam Model 2</span>
+            <span class="model-marks-pill">3 Marks (Pearson Edexcel Level 1/2)</span>
+          </div>
+          <div class="model-scenario" style="padding:16px 20px; background:#fff; border-bottom:1px solid #e2e8f0;">
+            <p style="font-weight:600; color:#0f172a; margin-bottom:8px;">Vocational Context: <span style="color:#0369a1;">Workplace Catering Promotion</span></p>
+            <div class="model-q-stem" style="font-size:1.05rem; line-height:1.7; color:#334155;">A hospital canteen sells items individually:<br>• Sandwich: <strong>£2.65</strong> | Fruit Pot: <strong>£1.35</strong> | Bottled Water: <strong>85p</strong><br>• A "Healthy Shift Meal Deal" includes all three items for <strong>£4.20</strong>.<br>If a nurse buys this meal deal every shift for <strong>5 shifts</strong>, how much money does she save in total compared to buying the items separately?</div>
+          </div>
+          <div class="model-steps-container" style="padding:18px 20px; background:#ffffff;">
+            <!-- 3-Column Header: Step, Description, Criteria -->
+            <div class="model-steps-header-row">
+              <div><i class="fa-solid fa-list-ol" style="color:#0284c7; margin-right:6px;"></i> Step</div>
+              <div><i class="fa-solid fa-calculator" style="color:#0284c7; margin-right:6px;"></i> Description / Working</div>
+              <div><i class="fa-solid fa-clipboard-check" style="color:#0284c7; margin-right:6px;"></i> Criteria</div>
+            </div>
+            
+            <div class="model-step-row model-step-grid-row">
+              <div class="model-step-col-step">
+                <span class="example-step-pill">Step 1</span>
+                <span class="model-step-title">Convert 85p to £0.85 and sum the separate item prices</span>
+              </div>
+              <div class="model-step-col-desc">
+                £2.65 + £1.35 + £0.85 = £4.85 per day.
+              </div>
+              <div class="model-step-col-criteria">
+                <span class="criteria-badge-teal"><i class="fa-solid fa-award" style="font-size:0.78rem; margin-right:4px; opacity:0.85;"></i><strong>Criteria:</strong> M1: Separate daily total (£4.85)</span>
+              </div>
+            </div>
+            
+            <div class="model-step-row model-step-grid-row">
+              <div class="model-step-col-step">
+                <span class="example-step-pill">Step 2</span>
+                <span class="model-step-title">Calculate daily saving with the £4.20 Meal Deal</span>
+              </div>
+              <div class="model-step-col-desc">
+                £4.85 − £4.20 = £0.65 (65p) saved per shift.
+              </div>
+              <div class="model-step-col-criteria">
+                <span class="criteria-badge-teal"><i class="fa-solid fa-award" style="font-size:0.78rem; margin-right:4px; opacity:0.85;"></i><strong>Criteria:</strong> M1: Daily saving (£0.65)</span>
+              </div>
+            </div>
+            
+            <div class="model-step-row model-step-grid-row">
+              <div class="model-step-col-step">
+                <span class="example-step-pill">Step 3</span>
+                <span class="model-step-title">Multiply daily saving by 5 shifts</span>
+              </div>
+              <div class="model-step-col-desc">
+                5 × £0.65 = £3.25.
+              </div>
+              <div class="model-step-col-criteria">
+                <span class="criteria-badge-teal"><i class="fa-solid fa-award" style="font-size:0.78rem; margin-right:4px; opacity:0.85;"></i><strong>Criteria:</strong> A1: Accurate 5-shift saving (£3.25)</span>
+              </div>
+            </div>
+            
+            <div class="model-final-answer" style="margin-top:16px; padding:12px 18px; background:#f0fdf4; border:1px solid #86efac; border-radius:6px; font-weight:700; color:#166534; font-size:1.05rem;">
+              <i class="fa-solid fa-check-circle"></i> Final Accredited Answer: £3.25 saved over 5 shifts
+            </div>
+            <div class="examiner-guidance-box">
+              <div class="examiner-guidance-header">
+                <i class="fa-solid fa-clipboard-check"></i>
+                <span>Method Checklist &amp; Marking Scheme Guidance</span>
+              </div>
+              <div class="examiner-guidance-text">
+                Convert 85p to £0.85 first so you never add 85 whole pounds by mistake!
+              </div>
+            </div>
+          </div>
+        </div>
+        
+    </section>
+    
+
+    <!-- EXAMINER TRAPS -->
+    <section id="examiner-traps" class="revision-section">
+      <div class="section-header-row">
+        <h2 class="section-title"><i class="fa-solid fa-triangle-exclamation"></i> Critical Examiner Traps &amp; Common Pitfalls</h2>
+      </div>
+      
+        <div class="examiner-pitfall-box">
+          <div class="examiner-pitfall-title">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span>Examiner Pitfall: Adding Pence Directly to Pounds (e.g. £2.65 + 85 = £87.65)</span>
+          </div>
+          <div class="examiner-pitfall-desc">
+            Failing to convert 85p into £0.85 before adding to £2.65.
+          </div>
+          <div class="examiner-pitfall-fix">
+            <i class="fa-solid fa-shield-halved" style="color:#e11d48; margin-top:2px;"></i>
+            <div><strong>How to Avoid This Pitfall:</strong> Convert every pence figure into £0.XX before starting your calculation.</div>
+          </div>
+        </div>
+        
+        <div class="examiner-pitfall-box">
+          <div class="examiner-pitfall-title">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span>Examiner Pitfall: Writing 5p as £0.5 Instead of £0.05</span>
+          </div>
+          <div class="examiner-pitfall-desc">
+            £0.5 is £0.50 (50 pence)! Single-digit pence require a zero after the decimal point.
+          </div>
+          <div class="examiner-pitfall-fix">
+            <i class="fa-solid fa-shield-halved" style="color:#e11d48; margin-top:2px;"></i>
+            <div><strong>How to Avoid This Pitfall:</strong> Remember: 10p = £0.10, while 1p = £0.01.</div>
+          </div>
+        </div>
+        
+    </section>
+    
+
+    <!-- PRACTICE QUESTIONS -->
+    <section id="practice-questions" class="revision-section">
+      <div class="section-header-row">
+        <h2 class="section-title"><i class="fa-solid fa-pencil"></i> Interactive Exam Practice Questions</h2>
+      </div>
+      
+        <div class="practice-q-card" style="margin-bottom:20px; border:1px solid #cbd5e1; border-radius:8px; overflow:hidden; background:#fff;">
+          <div class="practice-q-header" style="padding:12px 18px; background:#f8fafc; border-bottom:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-weight:700; color:#1e293b;"><i class="fa-solid fa-pencil"></i> Exam Practice Question 1</span>
+            <span class="practice-marks-pill">2 Marks</span>
+          </div>
+          <div class="practice-q-body" style="padding:18px 20px;">
+            <div class="practice-q-stem" style="font-size:1.05rem; line-height:1.7; color:#334155; margin-bottom:16px;">
+              Arrange these four parcel weights in ascending order (lightest to heaviest): <strong>2.4 kg, 2.08 kg, 2.45 kg, 2.39 kg</strong>.
+            </div>
+            <div class="practice-interactive-wrap">
+              <label style="display:block; font-weight:600; font-size:0.9rem; color:#475569; margin-bottom:6px;">Your Working / Notes (Auto-saves):</label>
+              <textarea class="practice-scratchpad" rows="3" style="width:100%; border:1px solid #cbd5e1; border-radius:6px; padding:10px; font-family:monospace; font-size:0.95rem;" placeholder="Type your rough working or steps here..."></textarea>
+              <div style="margin-top:12px; display:flex; gap:10px;">
+                <button type="button" class="btn-solution-toggle" onclick="toggleSolution('sol-1')" style="padding:8px 16px; background:#0284c7; color:#fff; border:none; border-radius:6px; font-weight:600; cursor:pointer;">
+                  <i class="fa-solid fa-eye"></i> Show Solution
+                </button>
+              </div>
+              <div id="sol-1" class="practice-solution-drawer" style="display:none; margin-top:14px; padding:16px; background:#f0fdf4; border:1px solid #86efac; border-radius:6px;">
+                <div style="font-weight:700; color:#166534; margin-bottom:6px;"><i class="fa-solid fa-check"></i> Marking Scheme Steps:</div>
+                <div style="line-height:1.7; color:#14532d;">1. Pad to 2 decimal places: 2.40, 2.08, 2.45, 2.39.<br>2. Order from smallest to largest: 2.08 kg, 2.39 kg, 2.4 kg, 2.45 kg.</div>
+                <div style="margin-top:10px; font-weight:800; color:#166534;">Final Correct Answer: 2.08 kg, 2.39 kg, 2.4 kg, 2.45 kg</div>
+                <div style="margin-top:8px; font-size:0.88rem; color:#15803d; font-style:italic;">Examiner Tip: Writing 2.4 as 2.40 makes it easy to see that 2.39 is lighter than 2.40.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="practice-q-card" style="margin-bottom:20px; border:1px solid #cbd5e1; border-radius:8px; overflow:hidden; background:#fff;">
+          <div class="practice-q-header" style="padding:12px 18px; background:#f8fafc; border-bottom:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-weight:700; color:#1e293b;"><i class="fa-solid fa-pencil"></i> Exam Practice Question 2</span>
+            <span class="practice-marks-pill">2 Marks</span>
+          </div>
+          <div class="practice-q-body" style="padding:18px 20px;">
+            <div class="practice-q-stem" style="font-size:1.05rem; line-height:1.7; color:#334155; margin-bottom:16px;">
+              Round <strong>£27.46</strong>:<br>(a) To the nearest whole pound (£1).<br>(b) To 1 decimal place (nearest 10p).
+            </div>
+            <div class="practice-interactive-wrap">
+              <label style="display:block; font-weight:600; font-size:0.9rem; color:#475569; margin-bottom:6px;">Your Working / Notes (Auto-saves):</label>
+              <textarea class="practice-scratchpad" rows="3" style="width:100%; border:1px solid #cbd5e1; border-radius:6px; padding:10px; font-family:monospace; font-size:0.95rem;" placeholder="Type your rough working or steps here..."></textarea>
+              <div style="margin-top:12px; display:flex; gap:10px;">
+                <button type="button" class="btn-solution-toggle" onclick="toggleSolution('sol-2')" style="padding:8px 16px; background:#0284c7; color:#fff; border:none; border-radius:6px; font-weight:600; cursor:pointer;">
+                  <i class="fa-solid fa-eye"></i> Show Solution
+                </button>
+              </div>
+              <div id="sol-2" class="practice-solution-drawer" style="display:none; margin-top:14px; padding:16px; background:#f0fdf4; border:1px solid #86efac; border-radius:6px;">
+                <div style="font-weight:700; color:#166534; margin-bottom:6px;"><i class="fa-solid fa-check"></i> Marking Scheme Steps:</div>
+                <div style="line-height:1.7; color:#14532d;">1. Nearest £1: tenths digit is 4 (< 5), so it rounds down to £27.00.<br>2. Nearest 10p (1 dp): hundredths digit is 6 (≥ 5), so 4 tenths rounds up to 5 tenths → £27.50.</div>
+                <div style="margin-top:10px; font-weight:800; color:#166534;">Final Correct Answer: (a) £27.00 (or £27) | (b) £27.50 (or 27.5)</div>
+                <div style="margin-top:8px; font-size:0.88rem; color:#15803d; font-style:italic;">Examiner Tip: When rounding to the nearest £1, look only at the tenths digit (4), not the 6!</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="practice-q-card" style="margin-bottom:20px; border:1px solid #cbd5e1; border-radius:8px; overflow:hidden; background:#fff;">
+          <div class="practice-q-header" style="padding:12px 18px; background:#f8fafc; border-bottom:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-weight:700; color:#1e293b;"><i class="fa-solid fa-pencil"></i> Exam Practice Question 3</span>
+            <span class="practice-marks-pill">3 Marks</span>
+          </div>
+          <div class="practice-q-body" style="padding:18px 20px;">
+            <div class="practice-q-stem" style="font-size:1.05rem; line-height:1.7; color:#334155; margin-bottom:16px;">
+              A receptionist buys <strong>3 packs of pens at £1.75 each</strong> and <strong>1 stapler for £3.40</strong>. How much change does he get from a <strong>£10.00 note</strong>?
+            </div>
+            <div class="practice-interactive-wrap">
+              <label style="display:block; font-weight:600; font-size:0.9rem; color:#475569; margin-bottom:6px;">Your Working / Notes (Auto-saves):</label>
+              <textarea class="practice-scratchpad" rows="3" style="width:100%; border:1px solid #cbd5e1; border-radius:6px; padding:10px; font-family:monospace; font-size:0.95rem;" placeholder="Type your rough working or steps here..."></textarea>
+              <div style="margin-top:12px; display:flex; gap:10px;">
+                <button type="button" class="btn-solution-toggle" onclick="toggleSolution('sol-3')" style="padding:8px 16px; background:#0284c7; color:#fff; border:none; border-radius:6px; font-weight:600; cursor:pointer;">
+                  <i class="fa-solid fa-eye"></i> Show Solution
+                </button>
+              </div>
+              <div id="sol-3" class="practice-solution-drawer" style="display:none; margin-top:14px; padding:16px; background:#f0fdf4; border:1px solid #86efac; border-radius:6px;">
+                <div style="font-weight:700; color:#166534; margin-bottom:6px;"><i class="fa-solid fa-check"></i> Marking Scheme Steps:</div>
+                <div style="line-height:1.7; color:#14532d;">1. Pens = 3 × £1.75 = £5.25.<br>2. Total spent = £5.25 + £3.40 = £8.65.<br>3. Change = £10.00 − £8.65 = £1.35.</div>
+                <div style="margin-top:10px; font-weight:800; color:#166534;">Final Correct Answer: £1.35</div>
+                <div style="margin-top:8px; font-size:0.88rem; color:#15803d; font-style:italic;">Examiner Tip: Check: £8.65 + £1.35 = £10.00.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+    </section>
+    
+
+        <!-- DOWNLOADS -->
+        <section id="downloads" class="revision-section">
+          <div class="section-header-row">
+            <h2 class="section-title"><i class="fa-regular fa-file-pdf"></i> Free Revision Worksheets &amp; Exam Papers</h2>
+          </div>
+
+          <div class="download-tiles-grid">
+            <!-- STYLE 1: SKILL WORKOUT -->
+            <a href="worksheets/decimal-basics-workout.html" target="_blank" class="download-tile-card">
+              <div class="download-tile-icon icon-workout"><i class="fa-solid fa-repeat"></i></div>
+              <div class="download-tile-info">
+                <div class="tile-badge-wrap"><span class="badge-tile-type">Style 1: Skill Workout</span></div>
+                <strong>Decimal Basics Repetition Drills (PDF)</strong>
+                <span>Over 25 rapid-fire calculation drills + vocational applications for procedural fluency</span>
+              </div>
+            </a>
+
+            <a href="worksheets/decimal-basics-workout-answers.html" target="_blank" class="download-tile-card">
+              <div class="download-tile-icon icon-answers"><i class="fa-solid fa-check-double"></i></div>
+              <div class="download-tile-info">
+                <div class="tile-badge-wrap"><span class="badge-tile-type ans">Workout Answers</span></div>
+                <strong>Skill Workout Answer Key (PDF)</strong>
+                <span>Quick-check marking grid + worked solutions for vocational applications</span>
+              </div>
+            </a>
+
+            <!-- STYLE 2: EXAM PRACTICE BOOKLET -->
+            <a href="worksheets/decimal-basics-worksheet.html" target="_blank" class="download-tile-card">
+              <div class="download-tile-icon icon-pdf"><i class="fa-regular fa-file-pdf"></i></div>
+              <div class="download-tile-info">
+                <div class="tile-badge-wrap"><span class="badge-tile-type exam">Style 2: Exam Booklet</span></div>
+                <strong>Decimal Basics Exam Practice Booklet (PDF)</strong>
+                <span>Authentic Pearson Edexcel exam questions with official [M1][A1] mark allocations</span>
+              </div>
+            </a>
+
+            <a href="worksheets/decimal-basics-answers.html" target="_blank" class="download-tile-card">
+              <div class="download-tile-icon icon-answers"><i class="fa-solid fa-award"></i></div>
+              <div class="download-tile-info">
+                <div class="tile-badge-wrap"><span class="badge-tile-type ans">Exam Mark Scheme</span></div>
+                <strong>Step-by-Step Exam Mark Scheme (PDF)</strong>
+                <span>Official tutor model answers with method marks, common traps, and reverse checks</span>
+              </div>
+            </a>
+          </div>
+        </section>
+
+        <!-- NEXT TOPIC BANNER -->
+        <div class="next-topic-banner">
+          <div class="next-topic-info">
+            <strong>Next Curriculum Topic</strong>
+            <span>Decimals</span>
+          </div>
+          <a href="functional-skills-decimals.html" class="btn-next-topic">
+            Continue Revision <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </main>  <!-- FOOTER -->
+  <footer class="mfs-footer" id="site-footer">
+    <div class="mfs-container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="mfs-brand" style="margin-bottom:16px;">
+            <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="mfs-brand-text">
+              <div class="mfs-brand-title" style="color:#ffffff;">MASTER<span>FUNCTIONALSKILLS</span></div>
+              <div class="mfs-brand-subtitle" style="color:#94a3b8;">Delivering Skills • Achieving Goals</div>
+            </div>
+          </div>
+          <p style="font-size:0.88rem; line-height:1.6; margin-bottom:16px;">
+            The UK's dedicated Functional Skills revision specialist. Providing realistic mock exams, step-by-step revision flashcards, diagnostic assessments, and 1-to-1 specialist tuition for Pearson Edexcel, City &amp; Guilds, and all major exam boards.
+          </p>
+          <div style="font-size:0.85rem; color:#cbd5e1;">
+            <p><a href="https://wa.me/447564525425" target="_blank" rel="noopener" style="color:#cbd5e1; text-decoration:none;"><i class="fa-brands fa-whatsapp" style="color:var(--accent); margin-right:8px;"></i> WhatsApp: +44 (0)7564 525425</a></p>
+            <p style="margin-top:6px;"><a href="contact-us.html" style="color:#cbd5e1; text-decoration:none;"><i class="fa-solid fa-envelope" style="color:var(--accent); margin-right:8px;"></i> Contact Tutor Team</a></p>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Maths Revision</h4>
+          <ul class="footer-links">
+            <li><a href="functional-skills-maths-level-2.html">Maths Level 2 Revision</a></li>
+            <li><a href="functional-skills-maths-level-1.html">Maths Level 1 Revision</a></li>
+            <li><a href="entry-level-3-maths.html">Entry Level 3 Maths</a></li>
+            <li><a href="pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="functional-skills-past-papers.html">Free Maths Past Papers</a></li>
+            <li><a href="exam-maths-l2.html">Book Level 2 Maths Exam</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>English &amp; Digital</h4>
+          <ul class="footer-links">
+            <li><a href="functional-skills-english-level-2.html">English Level 2 Revision</a></li>
+            <li><a href="functional-skills-english-level-1.html">English Level 1 Revision</a></li>
+            <li><a href="digital-functional-skills.html">Digital Skills Hub (L1 &amp; E3)</a></li>
+            <li><a href="digital-functional-skills-past-papers.html">DFS Past Papers &amp; Data Files</a></li>
+            <li><a href="functional-skills-past-papers.html?format=online#mock-finder">Online Exam Simulator</a></li>
+            <li><a href="exam-english-l2.html">Book Level 2 English Exam</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Student Support &amp; Tools</h4>
+          <ul class="footer-links">
+            <li><a href="tools.html" style="color:var(--accent); font-weight:700;"><i class="fa-solid fa-screwdriver-wrench" style="margin-right:6px;"></i>All Interactive Tools Hub</a></li>
+            <li><a href="pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="diagnostic-test.html">Diagnostic Skill Checker</a></li>
+            <li><a href="functional-skills-nets.html">3D Net Folding Tool</a></li>
+            <li><a href="digital-functional-skills-mock-exam.html">Pearson DFS Simulator</a></li>
+            <li><a href="revision-cards.html">Revision Cards &amp; Flashcards</a></li>
+            <li><a href="shop.html">Revision Books &amp; Study Packs</a></li>
+            <li><a href="tutors.html">1-to-1 Specialist Tuition</a></li>
+            <li><a href="exams.html">Book Official Online Exam</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Master Functional Skills. All rights reserved. Registered in England &amp; Wales. Ofqual Regulated Qualification Standards.</div>
+        <div style="display:flex; gap:16px; flex-wrap:wrap;">
+          <a href="index.html">Home</a>
+          <a href="tools.html" style="color:var(--accent); font-weight:700;">Tools</a>
+          <a href="functional-skills-past-papers.html">Past Papers</a>
+          <a href="revision-cards.html">Revision Cards</a>
+          <a href="shop.html">Study Shop</a>
+          <a href="tutors.html">Tutors</a>
+          <a href="contact-us.html">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/mfs-revision.js"></script>
+</body>
+</html>

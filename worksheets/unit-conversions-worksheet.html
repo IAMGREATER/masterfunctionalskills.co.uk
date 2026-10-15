@@ -1,0 +1,610 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Master Functional Skills — Metric & Imperial Unit Conversions Worksheet (Level 1 & Level 2)</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 12mm 15mm 12mm 15mm;
+    }
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #0f172a;
+      background: #f8fafc;
+      margin: 0;
+      padding: 0;
+      font-size: 11pt;
+      line-height: 1.5;
+    }
+    .print-bar {
+      background: #0b172d;
+      color: #f8fafc;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    }
+    .print-bar a {
+      color: #93c5fd;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .print-bar a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+    .btn-action-print {
+      background: #2563eb;
+      color: #ffffff;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s;
+    }
+    .btn-action-print:hover {
+      background: #1d4ed8;
+    }
+    .btn-action-answers {
+      background: #059669;
+      color: #ffffff;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-right: 12px;
+    }
+    .btn-action-answers:hover {
+      background: #047857;
+    }
+
+    @media print {
+      .print-bar {
+        display: none !important;
+      }
+      body {
+        background: #ffffff !important;
+      }
+      .page-sheet {
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+      }
+      .q-card {
+        page-break-inside: avoid;
+      }
+    }
+
+    .page-sheet {
+      max-width: 860px;
+      margin: 24px auto;
+      background: #ffffff;
+      padding: 32px 40px;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+    .sheet-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 2.5px solid #0b172d;
+      padding-bottom: 16px;
+      margin-bottom: 20px;
+    }
+    .brand-title {
+      font-size: 1.45rem;
+      font-weight: 900;
+      color: #0b172d;
+      letter-spacing: -0.5px;
+    }
+    .brand-title span {
+      color: #2563eb;
+    }
+    .brand-subtitle {
+      font-size: 0.88rem;
+      color: #64748b;
+      margin-top: 2px;
+      font-weight: 500;
+    }
+    .sheet-meta-badge {
+      background: #eff6ff;
+      border: 1.5px solid #bfdbfe;
+      color: #1e40af;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-align: right;
+    }
+    .sheet-meta-badge .topic-name {
+      font-size: 1.15rem;
+      font-weight: 800;
+      display: block;
+    }
+    .sheet-meta-badge .spec-tag {
+      font-size: 0.78rem;
+      color: #3b82f6;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .learner-bar {
+      display: grid;
+      grid-template-columns: 2.5fr 1.5fr 1fr;
+      gap: 16px;
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 10px 16px;
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+    }
+    .learner-bar-item strong {
+      color: #0b172d;
+    }
+    .dotted-line {
+      display: inline-block;
+      width: 65%;
+      border-bottom: 1.5px dotted #94a3b8;
+      height: 12px;
+      margin-left: 6px;
+    }
+
+    .recall-banner {
+      background: #fffbeb;
+      border-left: 4px solid #f59e0b;
+      border-radius: 4px;
+      padding: 10px 14px;
+      margin-bottom: 24px;
+      font-size: 0.92rem;
+      color: #78350f;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .recall-banner i {
+      font-size: 1.1rem;
+      margin-top: 2px;
+      color: #d97706;
+    }
+
+    .tier-header {
+      background: #f1f5f9;
+      border-left: 4px solid #2563eb;
+      padding: 6px 12px;
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: #0b172d;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin: 24px 0 16px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .tier-header .tier-marks {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #2563eb;
+      background: #ffffff;
+      padding: 2px 8px;
+      border-radius: 4px;
+      border: 1px solid #cbd5e1;
+    }
+
+    .q-card {
+      border: 1.5px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 18px 20px;
+      margin-bottom: 22px;
+      background: #ffffff;
+    }
+    .q-card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+    .q-title {
+      font-weight: 800;
+      color: #0b172d;
+      font-size: 1rem;
+    }
+    .q-marks {
+      font-weight: 700;
+      color: #2563eb;
+      font-size: 0.88rem;
+      background: #eff6ff;
+      padding: 3px 10px;
+      border-radius: 4px;
+      border: 1px solid #bfdbfe;
+    }
+    .q-stem {
+      font-size: 1.02rem;
+      color: #0f172a;
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+
+    .q-diagram-wrap {
+      text-align: center;
+      margin: 14px 0;
+      padding: 10px;
+      background: #faf8f2;
+      border: 1px dashed #cbd5e1;
+      border-radius: 6px;
+    }
+    .q-diagram-wrap svg {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .q-working-area {
+      margin: 14px 0;
+      background: #ffffff;
+    }
+    .working-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #64748b;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .working-lines-box {
+      border: 1px solid #e2e8f0;
+      border-radius: 4px;
+      background: #ffffff;
+      padding: 0 10px;
+    }
+    .working-line {
+      height: 24px;
+      border-bottom: 1px dashed #e2e8f0;
+    }
+    .working-line:last-child {
+      border-bottom: none;
+    }
+
+    .q-answer-row {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px 12px;
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid #e2e8f0;
+    }
+    .q-answer-label {
+      font-weight: 700;
+      color: #0b172d;
+      font-size: 0.95rem;
+    }
+    .q-answer-sublabel {
+      font-weight: 600;
+      color: #1e293b;
+      font-size: 0.9rem;
+    }
+    .q-unit-prefix, .q-unit-suffix {
+      font-weight: 700;
+      color: #0b172d;
+      font-size: 1.05rem;
+    }
+    .q-item-sep {
+      color: #cbd5e1;
+      font-weight: 400;
+      margin: 0 4px;
+    }
+    .q-answer-separator {
+      font-weight: 600;
+      color: #64748b;
+      font-size: 1.05rem;
+    }
+    .q-choice-pills {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      background: #f8fafc;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #334155;
+    }
+    .pills-title {
+      color: #64748b;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .pill-opt {
+      padding: 2px 6px;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 4px;
+      color: #0f172a;
+    }
+    .q-workspace-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 6px;
+      color: #1d4ed8;
+      font-weight: 600;
+      font-size: 0.88rem;
+    }
+    .q-answer-input-box {
+      border: 2px solid #0b172d;
+      border-radius: 5px;
+      background: #ffffff;
+      height: 38px;
+      min-width: 140px;
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .q-answer-input-box.xs { min-width: 65px; }
+    .q-answer-input-box.sm { min-width: 105px; }
+    .q-answer-input-box.md { min-width: 160px; }
+    .q-answer-input-box.lg { min-width: 240px; }
+    .q-answer-row-multiline {
+      width: 100%;
+      display: flex;
+      align-items: flex-end;
+      gap: 12px;
+    }
+    .q-answer-line-fill {
+      flex: 1;
+      height: 28px;
+      border-bottom: 2px solid #0b172d;
+    }
+
+    .sheet-footer {
+      border-top: 1px solid #e2e8f0;
+      padding-top: 14px;
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      color: #94a3b8;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="print-bar">
+    <a href="../functional-skills-unit-conversions.html"><i class="fa-solid fa-arrow-left"></i> Back to Metric & Imperial Unit Conversions Revision Guide</a>
+    <div>
+      <a href="unit-conversions-workout.html" class="btn-action-answers" style="background:#2563eb;"><i class="fa-solid fa-repeat"></i> Switch to Skill Workout</a>
+      <a href="unit-conversions-answers.html" class="btn-action-answers"><i class="fa-solid fa-check-double"></i> View Tutor Mark Scheme</a>
+      <button type="button" class="btn-action-print" onclick="window.print()"><i class="fa-solid fa-print"></i> Print / Save to PDF</button>
+    </div>
+  </div>
+
+  <div class="page-sheet">
+    <div class="sheet-head">
+      <div>
+        <div class="brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
+        <div class="brand-subtitle">Ofqual Regulated Standards • Mathematics Curriculum</div>
+      </div>
+      <div class="sheet-meta-badge">
+        <span class="topic-name">Metric & Imperial Unit Conversions</span>
+        <span class="spec-tag">Pearson Edexcel: L1.18 • L2.20 • L2.21</span>
+      </div>
+    </div>
+
+    <div class="learner-bar">
+      <div class="learner-bar-item"><strong>Learner:</strong> <span class="dotted-line"></span></div>
+      <div class="learner-bar-item"><strong>Date:</strong> <span class="dotted-line"></span></div>
+      <div class="learner-bar-item" style="text-align:right;"><strong>Score:</strong> _____ / 18</div>
+    </div>
+
+    <div class="recall-banner">
+      <i class="fa-solid fa-lightbulb"></i>
+      <div>
+        <strong>Examiner Rule for Metric & Imperial Unit Conversions:</strong> Big unit to small unit = MULTIPLY; Small unit to big unit = DIVIDE. Key metric factors: 1 km = 1,000 m, 1 m = 100 cm, 1 cm = 10 mm; 1 t = 1,000 kg, 1 kg = 1,000 g; 1 L = 1,000 ml.
+      </div>
+    </div>
+
+
+    <!-- Section A: Procedural Fluency Check -->
+    <div class="tier-header">
+      <span>Section A: Procedural Fluency Check</span>
+      <span class="tier-marks">Questions 1 & 2 • 4 Marks</span>
+    </div>
+
+    <div class="q-card">
+      <div class="q-card-head">
+        <span class="q-title">Question 1 (Level 1 Metric Length & Mass Conversion)</span>
+        <span class="q-marks">[2 Marks]</span>
+      </div>
+      <div class="q-stem">
+        Complete both metric conversions below:<br>(a) Convert <strong>4.08 kilometres</strong> into <strong>metres</strong>.<br>(b) Convert <strong>650 grams</strong> into <strong>kilograms</strong>.
+      </div>
+      <div class="q-working-area">
+        <div class="working-label">Show your full working out here:</div>
+        <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+        </div>
+      </div>
+      <div class="q-answer-row">
+        <span class="q-answer-label">Conversions =</span>
+        (a) <div class="q-answer-input-box sm"></div> m <span class="q-item-sep">|</span> (b) <div class="q-answer-input-box sm"></div> kg
+      </div>
+    </div>
+
+    <div class="q-card">
+      <div class="q-card-head">
+        <span class="q-title">Question 2 (Level 2 Miles and Kilometres Conversion)</span>
+        <span class="q-marks">[2 Marks]</span>
+      </div>
+      <div class="q-stem">
+        An organ transplant courier drives <strong>104 kilometres</strong> from an airport to a specialist hospital.<br>Using the conversion <strong>5 miles = 8 kilometres</strong>, calculate this distance in <strong>miles</strong>.
+      </div>
+      <div class="q-working-area">
+        <div class="working-label">Show your full working out here:</div>
+        <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+        </div>
+      </div>
+      <div class="q-answer-row">
+        <span class="q-answer-label">Distance in miles =</span>
+        <div class="q-answer-input-box md"></div>
+        <span class="q-unit-suffix">miles</span>
+      </div>
+    </div>
+
+    <!-- Section B: Workplace & Functional Scenarios -->
+    <div class="tier-header">
+      <span>Section B: Workplace & Functional Scenarios</span>
+      <span class="tier-marks">Questions 3 & 4 • 6 Marks</span>
+    </div>
+
+    <div class="q-card">
+      <div class="q-card-head">
+        <span class="q-title">Question 3 (Level 1 Liquid Capacity Unit Mixing)</span>
+        <span class="q-marks">[3 Marks]</span>
+      </div>
+      <div class="q-stem">
+        A hospital catering team prepares a fruit punch by mixing:<br>• <strong>3.5 litres</strong> of orange juice<br>• <strong>75 centilitres (cl)</strong> of cranberry juice<br>• <strong>450 millilitres (ml)</strong> of ginger ale<br><br>Calculate the total volume of fruit punch in <strong>millilitres (ml)</strong>.
+      </div>
+      <div class="q-working-area">
+        <div class="working-label">Show your full working out here:</div>
+        <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+        </div>
+      </div>
+      <div class="q-answer-row">
+        <span class="q-answer-label">Total Volume =</span>
+        <div class="q-answer-input-box md"></div>
+        <span class="q-unit-suffix">ml</span>
+      </div>
+    </div>
+
+    <div class="q-card">
+      <div class="q-card-head">
+        <span class="q-title">Question 4 (Level 2 Stone & Pounds to Kilograms Clinical Dosage)</span>
+        <span class="q-marks">[3 Marks]</span>
+      </div>
+      <div class="q-stem">
+        A patient weighs <strong>12 stone 10 lbs</strong>.<br>Use the conversions: <strong>1 stone = 14 lbs</strong> and <strong>1 kg = 2.2 lbs</strong>.<br><br>Calculate the patient's weight in <strong>kilograms (kg)</strong>.
+      </div>
+      <div class="q-working-area">
+        <div class="working-label">Show your full working out here:</div>
+        <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+        </div>
+      </div>
+      <div class="q-answer-row">
+        <span class="q-answer-label">Patient Weight =</span>
+        <div class="q-answer-input-box md"></div>
+        <span class="q-unit-suffix">kg</span>
+      </div>
+    </div>
+
+    <!-- Section C: Pearson Edexcel Problem Solving & Justification -->
+    <div class="tier-header">
+      <span>Section C: Pearson Edexcel Problem Solving & Justification</span>
+      <span class="tier-marks">Questions 5 & 6 • 8 Marks</span>
+    </div>
+
+    <div class="q-card">
+      <div class="q-card-head">
+        <span class="q-title">Question 5 (Level 2 Imported Medical Fridge Clearance Check)</span>
+        <span class="q-marks">[4 Marks]</span>
+      </div>
+      <div class="q-stem">
+        A pharmacy orders an imported American vaccine refrigerator with dimensions:<br>• Height: <strong>6 feet 4 inches</strong><br>• Width: <strong>30 inches</strong><br>The pharmacy alcove where it will stand measures <strong>198 cm high</strong> by <strong>80 cm wide</strong>.<br>Use: <strong>1 foot = 12 inches</strong> and <strong>1 inch = 2.54 cm</strong>.<br><br>Will the refrigerator fit into the alcove? Check both height and width in centimetres.
+      </div>
+      <div class="q-working-area">
+        <div class="working-label">Show your full working out here:</div>
+        <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+        </div>
+      </div>
+      <div class="q-answer-row">
+        <span class="q-answer-label">Decision & Metric Dimensions =</span>
+        <div class="q-choice-pills"><span class="pills-title">Decision:</span> <span class="pill-opt">Yes</span> / <span class="pill-opt">No</span></div>
+        Height = <div class="q-answer-input-box sm"></div> cm, Width = <div class="q-answer-input-box sm"></div> cm
+      </div>
+    </div>
+
+    <div class="q-card">
+      <div class="q-card-head">
+        <span class="q-title">Question 6 (Level 2 Fuel Tanker Gallons vs Litres Cost Comparison)</span>
+        <span class="q-marks">[4 Marks]</span>
+      </div>
+      <div class="q-stem">
+        A backup hospital generator requires <strong>250 gallons</strong> of red diesel.<br>• <strong>Supplier A</strong> quotes <strong>£5.22 per gallon</strong>.<br>• <strong>Supplier B</strong> quotes <strong>£1.12 per litre</strong>.<br>• Use the conversion: <strong>1 gallon = 4.54 litres</strong>.<br><br>Which supplier is cheaper for the 250-gallon order, and by how much?
+      </div>
+      <div class="q-working-area">
+        <div class="working-label">Show your full working out here:</div>
+        <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+        </div>
+      </div>
+      <div class="q-answer-row">
+        <span class="q-answer-label">Cheaper Supplier & Saving =</span>
+        Supplier <div class="q-answer-input-box sm"></div> is cheaper by <span class="q-unit-prefix">£</span><div class="q-answer-input-box sm"></div>
+      </div>
+    </div>
+
+
+    <div class="sheet-footer">
+      <div>Master Functional Skills • Pearson Edexcel Curriculum Aligned • 100% Original IP</div>
+      <div>Page 1 of 1 • Rev 2026.1</div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,711 @@
+/* Master Functional Skills - Authentic Pearson Onscreen Test Player App Stylesheet */
+
+:root {
+  --pop-bg: #ffffff;
+  --pop-window-bg: #f3f3f3;
+  --pop-bar-bg: #404040;
+  --pop-bar-text: #ffffff;
+  --pop-orange: #f37021;
+  --pop-orange-dark: #d85c13;
+  --pop-counter-bg: #e69138;
+  --pop-blue-selected: #0078d7;
+  --pop-pill-bg: #d9d9d9;
+  --pop-pill-hover: #c8c8c8;
+  --pop-qbox-bg: #e6e6e6;
+  --pop-qbox-border: #a6a6a6;
+  --pop-summary-header: #d4e8e1;
+  --pop-unattempted-blue: #025785;
+}
+
+/* Outer Wrapper for App Container */
+.pearson-app-shell {
+  max-width: 1240px;
+  height: 600px;
+  max-height: calc(100vh - 120px);
+  margin: 12px auto 30px auto;
+  background: #ffffff;
+  border: 1px solid #bfbfbf;
+  border-radius: 8px;
+  box-shadow: 0 10px 35px rgba(0,0,0,0.18);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  font-family: Arial, "Helvetica Neue", Helvetica, sans-serif;
+  color: #1a1a1a;
+}
+
+/* Fullscreen & Fill Screen Mode */
+.pearson-app-shell:fullscreen,
+.pearson-app-shell.fullscreen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  max-width: 100vw;
+  max-height: 100vh;
+  margin: 0;
+  border-radius: 0;
+  border: none;
+  z-index: 999999;
+  box-shadow: none;
+  background: #ffffff;
+}
+
+.pearson-app-shell:fullscreen .pearson-canvas,
+.pearson-app-shell.fullscreen .pearson-canvas {
+  height: calc(100vh - 90px);
+  padding: 30px 48px;
+}
+
+.pearson-btn-fill-screen {
+  background: #0078d7;
+  color: #ffffff;
+  border: 1px solid #005a9e;
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  line-height: 1.2;
+}
+
+.pearson-btn-fill-screen:hover {
+  background: #005a9e;
+}
+
+.pearson-btn-fill-screen.active {
+  background: #ea580c;
+  border-color: #c2410c;
+}
+
+/* Top Windows Title Bar */
+.pearson-titlebar {
+  background: #f1f1f1;
+  border-bottom: 1px solid #d4d4d4;
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 14px;
+  user-select: none;
+}
+
+.pearson-title-left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.88rem;
+  color: #333333;
+  font-weight: 600;
+}
+
+.pearson-window-icon {
+  width: 16px;
+  height: 16px;
+  background: #0078d7;
+  color: #ffffff;
+  border-radius: 3px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.65rem;
+  font-weight: bold;
+}
+
+.pearson-title-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pearson-set-dropdown {
+  padding: 4px 8px;
+  font-size: 0.8rem;
+  font-family: inherit;
+  font-weight: bold;
+  border: 1px solid #bfbfbf;
+  border-radius: 4px;
+  background: #ffffff;
+  color: #1a1a1a;
+  cursor: pointer;
+}
+
+.pearson-win-btn {
+  width: 28px;
+  height: 24px;
+  background: transparent;
+  border: none;
+  font-size: 0.85rem;
+  color: #555555;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 3px;
+}
+
+.pearson-win-btn:hover {
+  background: #e5e5e5;
+}
+
+.pearson-win-btn.close-btn:hover {
+  background: #e81123;
+  color: #ffffff;
+}
+
+/* Main Test Player Screen Canvas */
+.pearson-canvas {
+  flex: 1;
+  padding: 24px 36px;
+  background: #ffffff;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Screen 0: Welcome / Section Splash */
+.pearson-splash-screen {
+  max-width: 820px;
+  margin: 20px auto;
+}
+
+.pearson-logo-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.pearson-p-logo {
+  width: 44px;
+  height: 44px;
+  background: #0078d7;
+  color: #ffffff;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  font-weight: bold;
+  font-family: Georgia, serif;
+}
+
+.pearson-brand-word {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #333333;
+  letter-spacing: -0.5px;
+}
+
+.pearson-splash-title {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+  color: #111111;
+}
+
+.pearson-splash-subtitle {
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin: 0 0 24px 0;
+  color: #111111;
+}
+
+.pearson-bullet-list {
+  padding-left: 22px;
+  line-height: 1.8;
+  font-size: 1rem;
+  color: #222222;
+  margin-bottom: 24px;
+}
+
+.pearson-splash-heading {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 18px 0 8px 0;
+}
+
+.pearson-start-btn-wrap {
+  text-align: center;
+  margin-top: 36px;
+}
+
+.btn-pearson-start {
+  background: var(--pop-orange);
+  color: #ffffff;
+  border: 1px solid var(--pop-orange-dark);
+  font-size: 1.15rem;
+  font-weight: 700;
+  padding: 12px 36px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.btn-pearson-start:hover {
+  background: var(--pop-orange-dark);
+}
+
+/* Question Screen */
+.pearson-scenario-text {
+  font-size: 1.05rem;
+  margin-bottom: 16px;
+  color: #222222;
+  line-height: 1.5;
+}
+
+.pearson-qbox {
+  background: var(--pop-qbox-bg);
+  border: 1.5px solid var(--pop-qbox-border);
+  border-radius: 8px;
+  padding: 14px 20px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 14px;
+}
+
+.pearson-qbox-text {
+  font-size: 1.05rem;
+  font-weight: 600;
+  line-height: 1.45;
+  color: #111111;
+}
+
+.pearson-qbox-mark {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #111111;
+  white-space: nowrap;
+}
+
+.pearson-select-prompt {
+  font-size: 0.95rem;
+  color: #444444;
+  margin-bottom: 24px;
+}
+
+/* Pill Options Layout */
+.pearson-pill-options {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  margin: 20px 0 30px 0;
+}
+
+.pearson-pill-btn {
+  background: var(--pop-pill-bg);
+  border: 1.5px solid #bfbfbf;
+  border-radius: 30px;
+  padding: 12px 32px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #111111;
+  cursor: pointer;
+  width: 100%;
+  max-width: 520px;
+  text-align: center;
+  transition: all 0.15s ease;
+  user-select: none;
+}
+
+.pearson-pill-btn:hover {
+  background: var(--pop-pill-hover);
+}
+
+.pearson-pill-btn.selected {
+  background: var(--pop-blue-selected) !important;
+  color: #ffffff !important;
+  border-color: #005a9e !important;
+  box-shadow: 0 2px 8px rgba(0,120,215,0.35);
+}
+
+/* Tutor Mode Rationale Box (Appears when in Practice Mode) */
+.pearson-rationale-box {
+  background: #f0fdf4;
+  border: 1.5px solid #86efac;
+  border-radius: 8px;
+  padding: 12px 18px;
+  margin-top: 20px;
+  font-size: 0.95rem;
+  color: #14532d;
+  line-height: 1.5;
+  display: none;
+}
+
+.pearson-rationale-box.show {
+  display: block;
+}
+
+/* Section B Practical Tasks Screens */
+.pearson-task-intro-box {
+  background: #fdfdfd;
+  border: 1.5px solid #a6a6a6;
+  border-radius: 8px;
+  padding: 18px 24px;
+  margin: 16px 0;
+}
+
+.pearson-task-table {
+  width: 100%;
+  max-width: 320px;
+  border-collapse: collapse;
+  margin: 14px 0;
+}
+
+.pearson-task-table th, .pearson-task-table td {
+  border: 1px solid #bfbfbf;
+  padding: 6px 14px;
+  text-align: center;
+}
+
+.pearson-task-table th {
+  background: #e6e6e6;
+  font-weight: 700;
+}
+
+.pearson-evidence-check {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 20px;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.pearson-evidence-check input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  accent-color: var(--pop-orange);
+}
+
+.pearson-next-task-prompt {
+  text-align: right;
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: #333333;
+  margin-top: 30px;
+}
+
+/* Section Summary Screen (Authentic Pearson Design) */
+.pearson-summary-wrap {
+  background: var(--pop-summary-header);
+  border: 1px solid #a8cfc2;
+  border-radius: 8px;
+  padding: 24px 32px;
+  color: #111111;
+}
+
+.pearson-summary-title {
+  text-align: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0 0 8px 0;
+}
+
+.pearson-summary-subtitle {
+  text-align: center;
+  font-size: 1.05rem;
+  margin: 0 0 20px 0;
+}
+
+.pearson-summary-legend {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 700px;
+  margin: 0 auto 24px auto;
+  font-size: 0.95rem;
+}
+
+.legend-row {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.legend-badge-blue {
+  background: var(--pop-unattempted-blue);
+  color: #ffffff;
+  padding: 3px 12px;
+  border-radius: 3px;
+  font-weight: 700;
+  font-size: 0.82rem;
+}
+
+.legend-badge-orange {
+  background: var(--pop-orange);
+  color: #ffffff;
+  padding: 3px 12px;
+  border-radius: 3px;
+  font-weight: 700;
+  font-size: 0.82rem;
+}
+
+.pearson-summary-grid {
+  display: grid;
+  grid-template-columns: repeat(10, 1fr);
+  gap: 4px;
+  max-width: 760px;
+  margin: 20px auto;
+  background: #ffffff;
+  padding: 12px;
+  border: 1px solid #bfbfbf;
+  border-radius: 4px;
+}
+
+.summary-grid-cell {
+  aspect-ratio: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  color: #ffffff;
+  position: relative;
+  transition: transform 0.1s ease;
+}
+
+.summary-grid-cell:hover {
+  transform: scale(1.05);
+}
+
+.summary-grid-cell.attempted {
+  background: var(--pop-orange);
+}
+
+.summary-grid-cell.unattempted {
+  background: var(--pop-unattempted-blue);
+}
+
+.summary-grid-cell .status-icon {
+  font-size: 0.75rem;
+  margin-top: 2px;
+}
+
+.summary-grid-cell.flagged::after {
+  content: "⚑";
+  position: absolute;
+  top: 2px;
+  right: 4px;
+  color: #fef08a;
+  font-size: 0.85rem;
+}
+
+.pearson-summary-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 30px;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.btn-summary-action {
+  background: transparent;
+  color: #0b453b;
+  border: none;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  text-transform: uppercase;
+}
+
+.btn-summary-action:hover {
+  text-decoration: underline;
+}
+
+/* Bottom Control Bar */
+.pearson-bottom-bar {
+  background: var(--pop-bar-bg);
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 16px;
+  user-select: none;
+  border-top: 1px solid #2a2a2a;
+}
+
+.pop-tools-left {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.pop-tool-btn {
+  background: transparent;
+  border: none;
+  color: #d1d5db;
+  font-size: 1.15rem;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: color 0.15s ease;
+}
+
+.pop-tool-btn:hover {
+  color: #ffffff;
+}
+
+.pop-tool-btn.active-flag {
+  color: #f59e0b;
+}
+
+.pop-nav-center {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.btn-pop-nav {
+  background: var(--pop-orange);
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 16px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  transition: background 0.15s ease;
+}
+
+.btn-pop-nav:hover {
+  background: var(--pop-orange-dark);
+}
+
+.btn-pop-nav:disabled {
+  background: #666666;
+  cursor: not-allowed;
+  opacity: 0.6;
+}
+
+.pop-counter-pill {
+  background: var(--pop-counter-bg);
+  color: #111111;
+  font-weight: 700;
+  font-size: 0.95rem;
+  padding: 6px 14px;
+  border-radius: 4px;
+}
+
+.pop-timer-box {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: 'JetBrains Mono', monospace;
+  margin: 0 12px;
+}
+
+.pop-actions-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.btn-pop-action {
+  background: var(--pop-orange);
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 6px 16px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.15s ease;
+}
+
+.btn-pop-action:hover {
+  background: var(--pop-orange-dark);
+}
+
+/* Official Pearson Diagnostic Report Modal */
+.pop-report-modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0,0,0,0.65);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000000;
+  padding: 20px;
+}
+
+.pop-report-modal.active {
+  display: flex;
+}
+
+.pop-report-sheet {
+  background: #ffffff;
+  border: 2px solid #333333;
+  width: 100%;
+  max-width: 680px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 30px;
+  box-shadow: 0 14px 40px rgba(0,0,0,0.4);
+  font-family: Arial, sans-serif;
+  color: #000000;
+}
+
+.pop-report-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 16px 0;
+  font-size: 0.9rem;
+}
+
+.pop-report-table th, .pop-report-table td {
+  border: 1px solid #000000;
+  padding: 6px 12px;
+  text-align: center;
+}
+
+.pop-report-table th {
+  background: #f2f2f2;
+  font-weight: 700;
+}
+
+.pop-report-table td:nth-child(1) {
+  text-align: left;
+  font-weight: 700;
+}
+
+@media (max-width: 768px) {
+  .pearson-canvas {
+    padding: 20px 16px;
+  }
+  .pearson-summary-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+  .pearson-bottom-bar {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 8px 10px;
+    gap: 8px;
+  }
+}

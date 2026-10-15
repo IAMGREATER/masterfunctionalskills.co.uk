@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400" width="500" height="400">
+  <defs>
+    <linearGradient id="bundleBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0a192f"/>
+      <stop offset="100%" stop-color="#020c1b"/>
+    </linearGradient>
+    <filter id="bundleShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="14" stdDeviation="18" flood-color="#070d1e" flood-opacity="0.45"/>
+    </filter>
+  </defs>
+
+  <g filter="url(#bundleShadow)">
+    <rect x="25" y="25" width="450" height="350" rx="16" fill="url(#bundleBg)" stroke="#f59e0b" stroke-width="2"/>
+
+    <!-- Badge -->
+    <rect x="330" y="45" width="120" height="28" rx="14" fill="#f59e0b"/>
+    <text x="390" y="64" font-family="Montserrat, Arial, sans-serif" font-size="11" font-weight="900" fill="#070d1e" text-anchor="middle">COMPLETE PACK</text>
+
+    <!-- Header -->
+    <g transform="translate(55, 75)">
+      <text x="0" y="0" font-family="Montserrat, Arial, sans-serif" font-size="12" font-weight="900" letter-spacing="2" fill="#ffffff" opacity="0.9">MASTER FUNCTIONAL SKILLS</text>
+      <text x="0" y="45" font-family="Montserrat, Arial, sans-serif" font-size="28" font-weight="900" fill="#f59e0b">ULTIMATE PASS BUNDLE</text>
+      <text x="0" y="78" font-family="Montserrat, Arial, sans-serif" font-size="18" font-weight="700" fill="#ffffff">Maths + English Core Guides &amp; Flashcards</text>
+    </g>
+
+    <!-- Bundle Items Icons -->
+    <g transform="translate(55, 195)">
+      <rect x="0" y="0" width="115" height="110" rx="8" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.15)"/>
+      <text x="57" y="45" font-family="Montserrat, Arial, sans-serif" font-size="11" font-weight="800" fill="#f59e0b" text-anchor="middle">CORE GUIDE</text>
+      <text x="57" y="68" font-family="'Open Sans', sans-serif" font-size="9" fill="#ffffff" text-anchor="middle">Full Syllabus</text>
+      <text x="57" y="84" font-family="'Open Sans', sans-serif" font-size="9" fill="#ffffff" text-anchor="middle">&amp; Model Answers</text>
+
+      <rect x="130" y="0" width="115" height="110" rx="8" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.15)"/>
+      <text x="187" y="45" font-family="Montserrat, Arial, sans-serif" font-size="11" font-weight="800" fill="#f59e0b" text-anchor="middle">COMPANION</text>
+      <text x="187" y="68" font-family="'Open Sans', sans-serif" font-size="9" fill="#ffffff" text-anchor="middle">Practice Drills</text>
+      <text x="187" y="84" font-family="'Open Sans', sans-serif" font-size="9" fill="#ffffff" text-anchor="middle">&amp; Workspaces</text>
+
+      <rect x="260" y="0" width="130" height="110" rx="8" fill="rgba(255,255,255,0.07)" stroke="rgba(255,255,255,0.15)"/>
+      <text x="325" y="45" font-family="Montserrat, Arial, sans-serif" font-size="11" font-weight="800" fill="#f59e0b" text-anchor="middle">MOCK PACK</text>
+      <text x="325" y="68" font-family="'Open Sans', sans-serif" font-size="9" fill="#ffffff" text-anchor="middle">5 Full Tests</text>
+      <text x="325" y="84" font-family="'Open Sans', sans-serif" font-size="9" fill="#ffffff" text-anchor="middle">&amp; Mark Schemes</text>
+    </g>
+
+    <text x="55" y="345" font-family="Montserrat, Arial, sans-serif" font-size="10" font-weight="700" letter-spacing="1" fill="rgba(255,255,255,0.6)">FREE FAST TRACKED UK COURIER DELIVERY</text>
+  </g>
+</svg>

@@ -1,0 +1,64 @@
+<svg viewBox="0 0 540 260" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:540px; height:auto; font-family:'Plus Jakarta Sans', system-ui, sans-serif;">
+  <rect x="2" y="2" width="536" height="256" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <rect x="16" y="12" width="300" height="24" rx="6" fill="#e0f2fe"/>
+  <text x="26" y="28" font-size="11" font-weight="800" fill="#0369a1">✎ PRESENTATIONAL FEATURES ARCHITECTURE</text>
+  <text x="326" y="28" font-size="11" font-weight="700" fill="#475569">Examiner Layout Checklist</text>
+
+  <!-- Document Layout Simulation -->
+  <rect x="16" y="46" width="350" height="200" rx="6" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
+  
+  <!-- Main Heading -->
+  <rect x="26" y="56" width="210" height="18" rx="3" fill="#0284c7"/>
+  <text x="32" y="69" font-size="10" font-weight="800" fill="#ffffff">MAIN HEADLINE / BANNER</text>
+  
+  <!-- Subheading -->
+  <rect x="26" y="82" width="140" height="12" rx="2" fill="#64748b"/>
+  <text x="30" y="91" font-size="8.5" font-weight="700" fill="#ffffff">Subheading: Key Section</text>
+
+  <!-- Body Text Lines -->
+  <line x1="26" y1="104" x2="230" y2="104" stroke="#cbd5e1" stroke-width="3" stroke-linecap="round"/>
+  <line x1="26" y1="114" x2="215" y2="114" stroke="#cbd5e1" stroke-width="3" stroke-linecap="round"/>
+  <line x1="26" y1="124" x2="190" y2="124" stroke="#cbd5e1" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Bullet points -->
+  <circle cx="32" cy="140" r="3" fill="#0284c7"/>
+  <line x1="40" y1="140" x2="220" y2="140" stroke="#94a3b8" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="32" cy="152" r="3" fill="#0284c7"/>
+  <line x1="40" y1="152" x2="200" y2="152" stroke="#94a3b8" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="32" cy="164" r="3" fill="#0284c7"/>
+  <line x1="40" y1="164" x2="210" y2="164" stroke="#94a3b8" stroke-width="3" stroke-linecap="round"/>
+
+  <!-- Callout box -->
+  <rect x="26" y="180" width="210" height="36" rx="4" fill="#fef3c7" stroke="#f59e0b" stroke-width="1.2"/>
+  <text x="32" y="194" font-size="8.5" font-weight="800" fill="#b45309">⚠ KEY NOTICE / CALLOUT BOX</text>
+  <text x="32" y="208" font-size="8" fill="#78350f">Important warning or deadline information</text>
+
+  <!-- Image and Caption Box on Right of Document -->
+  <rect x="246" y="56" width="110" height="90" rx="4" fill="#e2e8f0" stroke="#cbd5e1"/>
+  <rect x="256" y="66" width="90" height="55" rx="3" fill="#cbd5e1"/>
+  <text x="301" y="97" font-size="9" font-weight="700" fill="#64748b" text-anchor="middle">[ PHOTO / GRAPHIC ]</text>
+  <text x="301" y="135" font-size="7.5" font-style="italic" fill="#475569" text-anchor="middle">Figure 1: Explanatory Caption</text>
+
+  <rect x="246" y="156" width="110" height="60" rx="4" fill="#ede9fe" stroke="#c4b5fd"/>
+  <text x="301" y="172" font-size="8" font-weight="800" fill="#6d28d9" text-anchor="middle">SIDEBAR / CONTACT</text>
+  <text x="301" y="188" font-size="7.5" fill="#5b21b6" text-anchor="middle">Tel: 01865 240000</text>
+  <text x="301" y="202" font-size="7.5" fill="#5b21b6" text-anchor="middle">Email: info@hub.co.uk</text>
+
+  <!-- Right Legend / Annotations -->
+  <rect x="376" y="46" width="148" height="200" rx="6" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+  <text x="450" y="66" font-size="11" font-weight="800" fill="#166534" text-anchor="middle">EXAM TERMINOLOGY</text>
+  <text x="384" y="88" font-size="9.5" font-weight="700" fill="#0284c7">1. Headline / Heading</text>
+  <text x="384" y="102" font-size="8.5" fill="#475569">Identifies overall topic</text>
+  
+  <text x="384" y="122" font-size="9.5" font-weight="700" fill="#64748b">2. Subheadings</text>
+  <text x="384" y="136" font-size="8.5" fill="#475569">Divides text logically</text>
+
+  <text x="384" y="156" font-size="9.5" font-weight="700" fill="#15803d">3. Bullet Points</text>
+  <text x="384" y="170" font-size="8.5" fill="#475569">Lists key points clearly</text>
+
+  <text x="384" y="190" font-size="9.5" font-weight="700" fill="#b45309">4. Callout Box / Border</text>
+  <text x="384" y="204" font-size="8.5" fill="#475569">Emphasises urgent info</text>
+
+  <text x="384" y="224" font-size="9.5" font-weight="700" fill="#6d28d9">5. Captions &amp; Sidebar</text>
+  <text x="384" y="238" font-size="8.5" fill="#475569">Explains visual / contact</text>
+</svg>

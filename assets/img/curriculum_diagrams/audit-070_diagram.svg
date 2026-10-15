@@ -1,0 +1,72 @@
+<svg viewBox="0 0 540 260" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:540px; height:auto; font-family:'Plus Jakarta Sans', system-ui, sans-serif;">
+  <defs>
+    <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.08"/>
+    </filter>
+  </defs>
+  <rect x="2" y="2" width="536" height="256" rx="14" fill="#ffffff" stroke="#bae6fd" stroke-width="2" filter="url(#shadow)"/>
+  
+  <pattern id="dot-grid-gm" x="0" y="0" width="16" height="16" patternUnits="userSpaceOnUse">
+    <circle cx="2" cy="2" r="1" fill="#e2e8f0"/>
+  </pattern>
+  <rect x="2" y="2" width="536" height="256" rx="14" fill="url(#dot-grid-gm)"/>
+
+  <!-- Title Pill -->
+  <rect x="18" y="14" width="250" height="26" rx="13" fill="#e0f2fe"/>
+  <text x="28" y="32" font-size="12" font-weight="800" fill="#0369a1">✎ WORKED METHOD: GRID MULTIPLICATION</text>
+  <text x="285" y="32" font-size="13" font-weight="700" fill="#0f172a">Calculating 46 × 35</text>
+
+  <!-- Grid Header Row -->
+  <rect x="25" y="52" width="60" height="42" rx="6" fill="#0284c7"/>
+  <text x="50" y="79" font-size="20" font-weight="800" fill="#ffffff" text-anchor="middle">×</text>
+
+  <rect x="95" y="52" width="145" height="42" rx="6" fill="#0284c7"/>
+  <text x="167" y="72" font-size="11" font-weight="700" fill="#bae6fd" text-anchor="middle">TENS</text>
+  <text x="167" y="88" font-size="16" font-weight="800" fill="#ffffff" text-anchor="middle">40</text>
+
+  <rect x="250" y="52" width="110" height="42" rx="6" fill="#0284c7"/>
+  <text x="305" y="72" font-size="11" font-weight="700" fill="#bae6fd" text-anchor="middle">UNITS</text>
+  <text x="305" y="88" font-size="16" font-weight="800" fill="#ffffff" text-anchor="middle">6</text>
+
+  <rect x="370" y="52" width="145" height="42" rx="6" fill="#0369a1"/>
+  <text x="442" y="78" font-size="13" font-weight="800" fill="#ffffff" text-anchor="middle">ROW SUBTOTAL</text>
+
+  <!-- Row 1: 30 -->
+  <rect x="25" y="104" width="60" height="52" rx="6" fill="#f0f9ff" stroke="#bae6fd" stroke-width="1.5"/>
+  <text x="55" y="128" font-size="10" font-weight="700" fill="#0284c7" text-anchor="middle">TENS</text>
+  <text x="55" y="146" font-size="17" font-weight="800" fill="#0c4a6e" text-anchor="middle">30</text>
+
+  <rect x="95" y="104" width="145" height="52" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="167" y="126" font-size="11" fill="#64748b" text-anchor="middle">30 × 40 =</text>
+  <text x="167" y="147" font-size="18" font-weight="800" fill="#0284c7" text-anchor="middle">1,200</text>
+
+  <rect x="250" y="104" width="110" height="52" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="305" y="126" font-size="11" fill="#64748b" text-anchor="middle">30 × 6 =</text>
+  <text x="305" y="147" font-size="18" font-weight="800" fill="#0284c7" text-anchor="middle">180</text>
+
+  <rect x="370" y="104" width="145" height="52" rx="6" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="442" y="126" font-size="11" fill="#475569" text-anchor="middle">1,200 + 180 =</text>
+  <text x="442" y="147" font-size="18" font-weight="800" fill="#0f172a" text-anchor="middle">1,380</text>
+
+  <!-- Row 2: 5 -->
+  <rect x="25" y="164" width="60" height="52" rx="6" fill="#f0f9ff" stroke="#bae6fd" stroke-width="1.5"/>
+  <text x="55" y="188" font-size="10" font-weight="700" fill="#0284c7" text-anchor="middle">UNITS</text>
+  <text x="55" y="206" font-size="17" font-weight="800" fill="#0c4a6e" text-anchor="middle">5</text>
+
+  <rect x="95" y="164" width="145" height="52" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="167" y="186" font-size="11" fill="#64748b" text-anchor="middle">5 × 40 =</text>
+  <text x="167" y="207" font-size="18" font-weight="800" fill="#0284c7" text-anchor="middle">200</text>
+
+  <rect x="250" y="164" width="110" height="52" rx="6" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="305" y="186" font-size="11" fill="#64748b" text-anchor="middle">5 × 6 =</text>
+  <text x="305" y="207" font-size="18" font-weight="800" fill="#0284c7" text-anchor="middle">30</text>
+
+  <rect x="370" y="164" width="145" height="52" rx="6" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="442" y="186" font-size="11" fill="#475569" text-anchor="middle">200 + 30 =</text>
+  <text x="442" y="207" font-size="18" font-weight="800" fill="#0f172a" text-anchor="middle">230</text>
+
+  <!-- Final Sum Footer Banner -->
+  <rect x="25" y="222" width="490" height="28" rx="6" fill="#dcfce7" stroke="#86efac" stroke-width="1.5"/>
+  <text x="140" y="241" font-size="12" font-weight="700" fill="#166534">GRAND TOTAL: 1,380 + 230</text>
+  <text x="442" y="242" font-size="15" font-weight="800" fill="#15803d" text-anchor="middle">= 1,610 ✓</text>
+</svg>

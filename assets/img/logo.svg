@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="mfsLogoGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1e3a8a" />
+      <stop offset="50%" stop-color="#1d4ed8" />
+      <stop offset="100%" stop-color="#0f172a" />
+    </linearGradient>
+    <filter id="mfsGlow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="1.2" stdDeviation="1.2" flood-color="#000000" flood-opacity="0.35" />
+    </filter>
+  </defs>
+  <!-- Rounded Square Background -->
+  <rect x="2" y="2" width="60" height="60" rx="14" fill="url(#mfsLogoGrad)" stroke="#3b82f6" stroke-width="1.6" />
+  
+  <!-- Graduation Cap Motif over the M -->
+  <path d="M 32 9 L 49 16.5 L 32 24 L 15 16.5 Z" fill="#60a5fa" filter="url(#mfsGlow)" />
+  <path d="M 44 20 L 44 27.5 C 44 30.5 38 32.5 32 32.5 C 26 32.5 20 30.5 20 27.5 L 20 20" fill="none" stroke="#60a5fa" stroke-width="2.5" />
+  <path d="M 49 16.5 L 51 24.5" stroke="#f59e0b" stroke-width="2.2" stroke-linecap="round" />
+  <circle cx="51.2" cy="25.5" r="1.8" fill="#f59e0b" />
+
+  <!-- Bold White Letter 'M' underneath the cap -->
+  <path d="M 17 50 L 17 29 L 24 29 L 32 41 L 40 29 L 47 29 L 47 50 L 40 50 L 40 37 L 34 46 L 30 46 L 24 37 L 24 50 Z" fill="#ffffff" filter="url(#mfsGlow)" />
+</svg>

@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="alternate icon" href="favicon.ico">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Video Solution Walkthrough | Master Functional Skills</title>
+  <meta name="description" content="Watch step-by-step video solutions for Pearson Edexcel Functional Skills. Method marks (M1/A1), examiner trap alerts, and full worked answers.">
+  <link rel="stylesheet" href="assets/css/mfs-theme.css">
+  <link rel="stylesheet" href="assets/css/mfs-video-modal.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    .video-hero-section {
+      padding: 40px 0 60px 0;
+      background: linear-gradient(180deg, #070e1e 0%, #0f172a 100%);
+      color: #f8fafc;
+    }
+    .video-hero-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+    .video-breadcrumbs {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.85rem;
+      color: #94a3b8;
+      margin-bottom: 20px;
+    }
+    .video-breadcrumbs a {
+      color: #38bdf8;
+      text-decoration: none;
+    }
+    .video-breadcrumbs a:hover {
+      text-decoration: underline;
+    }
+    .video-main-player-wrap {
+      background: #020617;
+      border: 1px solid rgba(59, 130, 246, 0.4);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6), 0 0 25px rgba(37, 99, 235, 0.25);
+      aspect-ratio: 16 / 9;
+      width: 100%;
+      position: relative;
+    }
+    .video-main-player-wrap video {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      background: #000;
+      display: block;
+    }
+    .video-details-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 30px;
+      margin-top: 36px;
+    }
+    .video-content-panel {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 30px;
+      color: var(--navy-dark);
+      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+    }
+    .video-sidebar-panel {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .sidebar-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 24px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+    }
+    .sidebar-card-title {
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--navy-dark);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .res-link-btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 12px 16px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 0.92rem;
+      text-decoration: none;
+      margin-bottom: 10px;
+      transition: all 0.15s ease;
+    }
+    .res-link-worksheet {
+      background: #eff6ff;
+      border: 1.5px solid #bfdbfe;
+      color: #1e40af;
+    }
+    .res-link-worksheet:hover {
+      background: #2563eb;
+      color: #ffffff;
+    }
+    .res-link-answers {
+      background: #ecfdf5;
+      border: 1.5px solid #a7f3d0;
+      color: #065f46;
+    }
+    .res-link-answers:hover {
+      background: #10b981;
+      color: #ffffff;
+    }
+    .res-link-revise {
+      background: #faf5ff;
+      border: 1.5px solid #e9d5ff;
+      color: #6b21a8;
+    }
+    .res-link-revise:hover {
+      background: #8b5cf6;
+      color: #ffffff;
+    }
+    .badge-pill-edexcel {
+      background: #1e293b;
+      border: 1px solid #3b82f6;
+      color: #93c5fd;
+      font-size: 0.76rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.6px;
+      padding: 4px 12px;
+      border-radius: 20px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    @media (max-width: 860px) {
+      .video-details-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+      <!-- TOP TRUST BAR WITH ACCESSIBILITY & CONTACT -->
+  <div class="mfs-top-bar">
+    <div class="mfs-container mfs-top-bar-inner">
+      <div class="top-trust-items">
+        <span class="top-trust-item"><i class="fa-solid fa-building-columns"></i> Pearson Edexcel &amp; City &amp; Guilds Aligned</span>
+      </div>
+      <div class="top-contacts">
+        <div class="mfs-access-bar">
+          <!-- DYSLEXIA BACKGROUND TINT PICKER -->
+          <div class="mfs-tint-dropdown-wrap">
+            <button type="button" id="tintToggle" class="btn-tint-toggle" onclick="toggleTintMenu(event)" title="Change dyslexia background tint">
+              <span class="tint-swatch-indicator" id="tintCurrentSwatch"></span>
+              <span id="tintLabel">Cream Tint</span>
+              <i class="fa-solid fa-chevron-down" style="font-size:0.62rem; opacity:0.75; margin-left:2px;"></i>
+            </button>
+            <div id="tintMenu" class="tint-picker-menu">
+              <div class="tint-picker-title"><i class="fa-solid fa-glasses"></i> Dyslexia Reading Tint</div>
+              <button type="button" class="tint-option-btn active" data-tint="cream" onclick="setSiteTint('cream', event)">
+                <span class="swatch swatch-cream"></span>
+                <span class="tint-name">Cream <small class="tint-badge-def">Default</small></span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="peach" onclick="setSiteTint('peach', event)">
+                <span class="swatch swatch-peach"></span>
+                <span class="tint-name">Soft Peach</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="cool" onclick="setSiteTint('cool', event)">
+                <span class="swatch swatch-cool"></span>
+                <span class="tint-name">Cool Mist</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="sage" onclick="setSiteTint('sage', event)">
+                <span class="swatch swatch-sage"></span>
+                <span class="tint-name">Soft Sage</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <div class="tint-divider"></div>
+              <button type="button" class="tint-option-btn" data-tint="none" onclick="setSiteTint('none', event)">
+                <span class="swatch swatch-none"></span>
+                <span class="tint-name">No Tint (White)</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+            </div>
+          </div>
+          <button id="dyslexiaToggle" class="btn-dyslexia-toggle" onclick="toggleDyslexiaMode()" title="Toggle Dyslexia High-Readability Mode">
+            <i class="fa-solid fa-universal-access"></i> Dyslexia
+          </button>
+          <button id="themeToggle" class="mfs-theme-pill" onclick="toggleTheme()" title="Switch Palette: Sapphire vs Emerald">
+            <i class="fa-solid fa-palette"></i> <span id="themeLabel">Sapphire</span>
+          </button>
+        </div>
+        <a href="contact-us.html" class="top-contact-link"><i class="fa-solid fa-envelope"></i> <strong>Contact Us</strong></a>
+      </div>
+    </div>
+  </div>  <!-- MAIN NAVIGATION -->
+                                  <header class="mfs-navbar">
+    <div class="revision-page-wrapper mfs-navbar-inner">
+      <a href="index.html" class="mfs-brand">
+        <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div class="mfs-brand-text">
+          <div class="mfs-brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
+          <div class="mfs-brand-subtitle">Delivering Skills • Achieving Goals</div>
+        </div>
+      </a>
+
+      <nav class="mfs-nav-wrapper">
+        <ul class="mfs-nav-menu">
+          <!-- 1. SUBJECTS (VISUAL MEGA-MENU) -->
+          <li class="mfs-nav-item">
+            <a href="courses.html" class="mfs-nav-link">
+              <i class="fa-solid fa-book-open-reader" style="color:#0284c7; margin-right:5px;"></i> Subjects <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-revision-hub">
+              <div class="mfs-revision-grid">
+                <!-- Maths Column -->
+                <div class="mfs-revision-col mfs-revision-col-maths">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-calculator"></i> Maths Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="functional-skills-maths-level-2.html" class="mfs-dropdown-item">Maths Level 2</a>
+                    <a href="functional-skills-maths-level-1.html" class="mfs-dropdown-item">Maths Level 1</a>
+                    <a href="entry-level-3-maths.html" class="mfs-dropdown-item">Entry Level 3 Maths</a>
+                  </div>
+                </div>
+                <!-- English Column -->
+                <div class="mfs-revision-col mfs-revision-col-english">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-pen-nib"></i> English Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="functional-skills-english-level-2.html" class="mfs-dropdown-item">English Level 2</a>
+                    <a href="functional-skills-english-level-1.html" class="mfs-dropdown-item">English Level 1</a>
+                  </div>
+                </div>
+                <!-- Digital Skills Column -->
+                <div class="mfs-revision-col mfs-revision-col-digital">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-laptop-code"></i> Digital Skills</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="digital-functional-skills.html" class="mfs-dropdown-item">Digital Skills Hub</a>
+                    <a href="digital-functional-skills-mock-exam.html" class="mfs-dropdown-item">Pearson Mock Exam</a>
+                    <a href="digital-functional-skills-past-papers.html" class="mfs-dropdown-item">Past Papers &amp; Files</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- 2. PAST PAPERS & MOCKS (DIRECT ACCESS) -->
+          <li class="mfs-nav-item">
+            <a href="functional-skills-past-papers.html" class="mfs-nav-link">
+              <i class="fa-regular fa-file-lines" style="color:#0284c7; margin-right:5px;"></i> Past Papers &amp; Mocks
+            </a>
+          </li>
+
+          <!-- 2b. WORKSHEETS DIRECTORY (CORBETT STYLE DUAL ENGINE) -->
+          <li class="mfs-nav-item">
+            <a href="worksheets.html" class="mfs-nav-link">
+              <i class="fa-solid fa-layer-group" style="color:#0284c7; margin-right:5px;"></i> Worksheets Hub
+            </a>
+          </li>
+
+          <!-- 3. FREE TOOLS (COMPACT DROPDOWN) -->
+          <li class="mfs-nav-item">
+            <a href="tools.html" class="mfs-nav-link">
+              <i class="fa-solid fa-screwdriver-wrench" style="color:#0284c7; margin-right:5px;"></i> Free Tools <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-compact">
+              <a href="tools.html" class="mfs-dropdown-item" style="font-weight:700; color:var(--accent);"><i class="fa-solid fa-layer-group" style="font-size:0.85rem; margin-right:6px;"></i> All Free Tools &amp; Simulators &rarr;</a>
+              <div class="mfs-dropdown-divider" style="margin:4px 0; border-top:1px solid #e2e8f0;"></div>
+              <a href="pass-mark-calculator.html" class="mfs-dropdown-item"><i class="fa-solid fa-calculator" style="color:var(--accent); font-size:0.85rem; margin-right:6px;"></i> Pass Mark Calculator</a>
+              <a href="diagnostic-test.html" class="mfs-dropdown-item"><i class="fa-solid fa-chart-pie" style="color:#059669; font-size:0.85rem; margin-right:6px;"></i> Diagnostic Skill Checker</a>
+              <a href="functional-skills-nets.html" class="mfs-dropdown-item"><i class="fa-solid fa-cube" style="color:#0284c7; font-size:0.85rem; margin-right:6px;"></i> 3D Net Folding Tool</a>
+            </div>
+          </li>
+
+          <!-- 4. REVISION CARDS -->
+          <li class="mfs-nav-item">
+            <a href="revision-cards.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-layer-group" style="color:#d97706; margin-right:5px;"></i> Revision Cards
+            </a>
+          </li>
+
+          <!-- 5. SHOP -->
+          <li class="mfs-nav-item">
+            <a href="shop.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-basket-shopping" style="color:#d97706; margin-right:5px;"></i> Shop
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- 6. BOOK EXAM ACTION BUTTON -->
+      <div class="mfs-nav-actions">
+        <a href="exams.html" class="btn-nav-exam">
+          <i class="fa-solid fa-calendar-check"></i> Book Exam
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- VIDEO PLAYER HERO SECTION -->
+  <section class="video-hero-section">
+    <div class="video-hero-container">
+      <div class="video-breadcrumbs">
+        <a href="index.html">Home</a>
+        <i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i>
+        <a href="maths-level-2.html">Curriculum Hub</a>
+        <i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i>
+        <span id="breadcrumbTopic">Topic Video Solution</span>
+      </div>
+
+      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; flex-wrap:wrap; gap:10px;">
+        <div>
+          <span class="badge-pill-edexcel" id="heroBadge"><i class="fa-solid fa-video"></i> Official Video Solution</span>
+          <h1 id="heroTitle" style="font-size:2rem; font-weight:900; margin:8px 0 0 0; color:#ffffff;">Numbers and Place Value</h1>
+          <p id="heroSubtitle" style="color:#94a3b8; font-size:1rem; margin:4px 0 0 0;">Pearson Edexcel Functional Skills • Step-by-Step Method Marks [M1/A1] & Examiner Traps</p>
+        </div>
+        <div style="display:flex; align-items:center; gap:12px;">
+          <div style="background:#1e293b; border:1px solid #334155; padding:8px 16px; border-radius:10px; display:flex; align-items:center; gap:10px;">
+            <div style="width:34px; height:34px; border-radius:50%; background:#2563eb; color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800;"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div>
+              <div style="font-size:0.85rem; font-weight:700; color:#fff;">Your Functional Skills Tutor</div>
+              <div style="font-size:0.72rem; color:#94a3b8;">Pearson Specialist</div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Section Switcher (shown for multi-section past papers) -->
+      <div id="sectionSwitcherBar" style="display:none; margin-bottom:14px; gap:10px; flex-wrap:wrap;"></div>
+
+      <!-- Player Box -->
+      <div class="video-main-player-wrap" id="mainPlayerContainer">
+        <!-- Rendered by JavaScript -->
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN CONTENT DETAILS SECTION -->
+  <main class="mfs-container" style="padding: 40px 20px 80px 20px;">
+    <div class="video-details-grid">
+      <!-- Left Content -->
+      <div class="video-content-panel">
+        <h2 style="font-size:1.4rem; font-weight:800; margin-top:0; color:var(--navy-dark);" id="panelTitle">
+          What You Learn in this Video Walkthrough
+        </h2>
+        <p style="font-size:1.02rem; line-height:1.6; color:#475569;" id="panelDesc">
+          In this official Master Functional Skills video walkthrough, your tutor breaks down the core concepts, examiner expectations, and exact calculation methods needed to achieve maximum marks on Pearson Edexcel Functional Skills assessments.
+        </p>
+
+        <h3 style="font-size:1.15rem; font-weight:800; margin-top:28px; color:var(--navy-dark);"><i class="fa-solid fa-list-check" style="color:#2563eb; margin-right:8px;"></i> Assessment Criteria & Method Marks</h3>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:14px;">
+          <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:10px; padding:16px;">
+            <div style="font-weight:800; color:#2563eb; margin-bottom:4px;"><i class="fa-solid fa-bullseye"></i> [M1] Method Marks</div>
+            <div style="font-size:0.9rem; color:#475569;">Awarded for correct mathematical process, place value partitioning, column alignment, and clear multi-step reasoning—even if an arithmetic slip occurs.</div>
+          </div>
+          <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:10px; padding:16px;">
+            <div style="font-weight:800; color:#10b981; margin-bottom:4px;"><i class="fa-solid fa-circle-check"></i> [A1] Accuracy Marks</div>
+            <div style="font-size:0.9rem; color:#475569;">Awarded for precisely evaluated answers with correct units (e.g. £, cm², kg, hours), commas, or correct placeholder zeros.</div>
+          </div>
+        </div>
+
+        <h3 style="font-size:1.15rem; font-weight:800; margin-top:28px; color:var(--navy-dark);"><i class="fa-solid fa-triangle-exclamation" style="color:#f59e0b; margin-right:8px;"></i> Common Pitfalls Highlighted by Examiners</h3>
+        <ul style="color:#475569; line-height:1.7; font-size:0.96rem; margin-top:10px; padding-left:20px;">
+          <li><strong>Placeholder Zeros:</strong> Missing zero in intermediate columns (e.g. writing 2,45,608 instead of 2,045,608).</li>
+          <li><strong>Unit Omission:</strong> Forgetting money symbols (£ or p) or square units (cm², m²).</li>
+          <li><strong>Reverse Sanity Checks:</strong> Skipping the reverse operation to verify answers (e.g. subtraction check for addition).</li>
+        </ul>
+      </div>
+
+      <!-- Right Sidebar -->
+      <div class="video-sidebar-panel">
+        <div class="sidebar-card">
+          <div class="sidebar-card-title">
+            <i class="fa-solid fa-folder-open" style="color:#2563eb;"></i> Topic Study Materials
+          </div>
+          <a href="#" target="_blank" rel="noopener" class="res-link-btn res-link-worksheet" id="sideWorksheetBtn">
+            <span id="sideWorksheetLabel"><i class="fa-regular fa-file-pdf"></i> Question Worksheet</span>
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+          <a href="#" target="_blank" rel="noopener" class="res-link-btn res-link-answers" id="sideAnswersBtn">
+            <span id="sideAnswersLabel"><i class="fa-solid fa-circle-check"></i> Worked Answers [M1/A1]</span>
+            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+          </a>
+          <a href="#" class="res-link-btn res-link-revise" id="sideReviseBtn">
+            <span id="sideReviseLabel"><i class="fa-solid fa-book-open"></i> Full Revision Guide</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+        <div class="sidebar-card" style="background:#eff6ff; border-color:#bfdbfe;">
+          <div class="sidebar-card-title" style="color:#1e40af;">
+            <i class="fa-solid fa-chalkboard-user"></i> Need 1-to-1 Tutoring?
+          </div>
+          <p style="font-size:0.88rem; color:#1e3a8a; line-height:1.5; margin-bottom:14px;">
+            Our specialist tutors provide bespoke one-to-one Functional Skills tuition and dyslexia-friendly coaching tailored to pass your Pearson Edexcel exam first time.
+          </p>
+          <a href="https://wa.me/447564525425" target="_blank" rel="noopener" class="btn-primary" style="display:block; text-align:center; padding:10px 16px; font-size:0.9rem; text-decoration:none; background:#2563eb; color:#fff; border-radius:8px; font-weight:700;">
+            <i class="fa-solid fa-phone"></i> Call 020 4574 9155
+          </a>
+        </div>
+      </div>
+    </div>
+  </main>  <!-- FOOTER -->
+  <footer class="mfs-footer" id="site-footer">
+    <div class="mfs-container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="mfs-brand" style="margin-bottom:16px;">
+            <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="mfs-brand-text">
+              <div class="mfs-brand-title" style="color:#ffffff;">MASTER<span>FUNCTIONALSKILLS</span></div>
+              <div class="mfs-brand-subtitle" style="color:#94a3b8;">Delivering Skills • Achieving Goals</div>
+            </div>
+          </div>
+          <p style="font-size:0.88rem; line-height:1.6; margin-bottom:16px;">
+            The UK's dedicated Functional Skills revision specialist. Providing realistic mock exams, step-by-step revision flashcards, diagnostic assessments, and 1-to-1 specialist tuition for Pearson Edexcel, City &amp; Guilds, and all major exam boards.
+          </p>
+          <div style="font-size:0.85rem; color:#cbd5e1;">
+            <p><a href="https://wa.me/447564525425" target="_blank" rel="noopener" style="color:#cbd5e1; text-decoration:none;"><i class="fa-brands fa-whatsapp" style="color:var(--accent); margin-right:8px;"></i> WhatsApp: +44 (0)7564 525425</a></p>
+            <p style="margin-top:6px;"><a href="contact-us.html" style="color:#cbd5e1; text-decoration:none;"><i class="fa-solid fa-envelope" style="color:var(--accent); margin-right:8px;"></i> Contact Tutor Team</a></p>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Maths Revision</h4>
+          <ul class="footer-links">
+            <li><a href="functional-skills-maths-level-2.html">Maths Level 2 Revision</a></li>
+            <li><a href="functional-skills-maths-level-1.html">Maths Level 1 Revision</a></li>
+            <li><a href="entry-level-3-maths.html">Entry Level 3 Maths</a></li>
+            <li><a href="pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="functional-skills-past-papers.html">Free Maths Past Papers</a></li>
+            <li><a href="exam-maths-l2.html">Book Level 2 Maths Exam</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>English &amp; Digital</h4>
+          <ul class="footer-links">
+            <li><a href="functional-skills-english-level-2.html">English Level 2 Revision</a></li>
+            <li><a href="functional-skills-english-level-1.html">English Level 1 Revision</a></li>
+            <li><a href="digital-functional-skills.html">Digital Skills Hub (L1 &amp; E3)</a></li>
+            <li><a href="digital-functional-skills-past-papers.html">DFS Past Papers &amp; Data Files</a></li>
+            <li><a href="functional-skills-past-papers.html?format=online#mock-finder">Online Exam Simulator</a></li>
+            <li><a href="exam-english-l2.html">Book Level 2 English Exam</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Student Support &amp; Tools</h4>
+          <ul class="footer-links">
+            <li><a href="tools.html" style="color:var(--accent); font-weight:700;"><i class="fa-solid fa-screwdriver-wrench" style="margin-right:6px;"></i>All Interactive Tools Hub</a></li>
+            <li><a href="pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="diagnostic-test.html">Diagnostic Skill Checker</a></li>
+            <li><a href="functional-skills-nets.html">3D Net Folding Tool</a></li>
+            <li><a href="digital-functional-skills-mock-exam.html">Pearson DFS Simulator</a></li>
+            <li><a href="revision-cards.html">Revision Cards &amp; Flashcards</a></li>
+            <li><a href="shop.html">Revision Books &amp; Study Packs</a></li>
+            <li><a href="tutors.html">1-to-1 Specialist Tuition</a></li>
+            <li><a href="exams.html">Book Official Online Exam</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Master Functional Skills. All rights reserved. Registered in England &amp; Wales. Ofqual Regulated Qualification Standards.</div>
+        <div style="display:flex; gap:16px; flex-wrap:wrap;">
+          <a href="index.html">Home</a>
+          <a href="tools.html" style="color:var(--accent); font-weight:700;">Tools</a>
+          <a href="functional-skills-past-papers.html">Past Papers</a>
+          <a href="revision-cards.html">Revision Cards</a>
+          <a href="shop.html">Study Shop</a>
+          <a href="tutors.html">Tutors</a>
+          <a href="contact-us.html">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/mfs-tint.js"></script>
+  <script>
+    (function () {
+      const urlParams = new URLSearchParams(window.location.search);
+      let topic = urlParams.get('topic') || 'numbers-and-place-value';
+      
+      const topicTitles = {
+        'numbers-and-place-value': 'Numbers and Place Value',
+        'ordering-numbers': 'Ordering Numbers',
+        'addition-and-subtraction': 'Addition and Subtraction',
+        'multiplication': 'Multiplication',
+        'division': 'Division',
+        'bidmas': 'BIDMAS & Order of Operations',
+        'fractions': 'Fractions',
+        'decimals': 'Decimals',
+        'percentages': 'Percentages',
+        'ratio': 'Ratio & Proportion',
+        'perimeter': 'Perimeter',
+        'area': 'Area of 2D Shapes',
+        'volume': 'Volume & Capacity',
+        'mean-median-mode-and-range': 'Averages: Mean, Median, Mode & Range',
+        'probability': 'Probability',
+        'edexcel-maths-l2-past-paper-10': 'Edexcel Maths Level 2 • Past Paper 10 (Section A: Non-Calculator)',
+        'edexcel-maths-l2-past-paper-10-section-a': 'Edexcel Maths Level 2 • Past Paper 10 (Section A: Non-Calculator)',
+        'edexcel-maths-l2-past-paper-10-section-b': 'Edexcel Maths Level 2 • Past Paper 10 (Section B: Calculator)'
+      };
+
+      const cleanSlug = topic.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+      const displayTitle = topicTitles[cleanSlug] || topic.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+
+      document.title = `${displayTitle} — Video Solution Walkthrough | Master Functional Skills`;
+      document.getElementById('breadcrumbTopic').textContent = displayTitle;
+      document.getElementById('heroTitle').textContent = displayTitle;
+      document.getElementById('panelTitle').textContent = `What You Learn in ${displayTitle}`;
+
+      // Update Resource Links
+      document.getElementById('sideWorksheetBtn').href = `worksheets/${cleanSlug}-worksheet.html`;
+      document.getElementById('sideAnswersBtn').href = `worksheets/${cleanSlug}-answers.html`;
+      document.getElementById('sideReviseBtn').href = `functional-skills-${cleanSlug}.html`;
+
+      const playerContainer = document.getElementById('mainPlayerContainer');
+      const switcherBar = document.getElementById('sectionSwitcherBar');
+
+      if (cleanSlug === 'numbers-and-place-value') {
+        playerContainer.innerHTML = `
+          <video controls autoplay playsinline poster="videos/thumbnail_numbers_and_place_value.png">
+            <source src="videos/Numbers_and_Place_Value_Video_Solution.mp4?v=3" type="video/mp4">
+            Your browser does not support HTML5 video.
+          </video>
+        `;
+      } else if (
+        cleanSlug === 'edexcel-maths-l2-past-paper-10' ||
+        cleanSlug === 'edexcel-maths-l2-past-paper-10-section-a' ||
+        cleanSlug === 'edexcel-maths-l2-past-paper-10-section-b'
+      ) {
+        const isSecB = cleanSlug === 'edexcel-maths-l2-past-paper-10-section-b';
+        const videoFile = isSecB
+          ? 'videos/Pearson_Edexcel_Maths_L2_Past_Paper_10_Section_B_Full_Walkthrough.mp4'
+          : 'videos/Pearson_Edexcel_Maths_L2_Past_Paper_10_Section_A_Walkthrough.mp4';
+        const posterFile = isSecB
+          ? 'videos/thumbnail_edexcel_maths_l2_paper_10_sec_b.png'
+          : 'videos/thumbnail_edexcel_maths_l2_paper_10_sec_a.png';
+
+        document.getElementById('sideWorksheetBtn').href = 'https://passfunctionalskills.co.uk/app/uploads/2024/06/FS_Maths_Level_2_Past_Paper_10.pdf';
+        document.getElementById('sideWorksheetLabel').innerHTML = '<i class="fa-regular fa-file-pdf"></i> Question Paper (PDF)';
+        document.getElementById('sideAnswersBtn').href = 'assets/downloads/past-papers/edexcel/maths-level-2/FS_Maths_Level_2_Past_Paper_10_Model_Solution_MFS.pdf';
+        document.getElementById('sideAnswersLabel').innerHTML = '<i class="fa-solid fa-lightbulb"></i> MFS Model Solution Booklet';
+        document.getElementById('sideReviseBtn').href = 'https://passfunctionalskills.co.uk/app/uploads/2024/06/FS_Maths_Level_2_Past_Paper_10_MS.pdf';
+        document.getElementById('sideReviseBtn').setAttribute('target', '_blank');
+        document.getElementById('sideReviseLabel').innerHTML = '<i class="fa-solid fa-clipboard-check"></i> Official Mark Scheme';
+
+        if (switcherBar) {
+          switcherBar.style.display = 'flex';
+          switcherBar.innerHTML = `
+            <a href="video-solution.html?topic=edexcel-maths-l2-past-paper-10-section-a" style="padding:10px 18px; border-radius:10px; font-weight:800; font-size:0.92rem; text-decoration:none; display:inline-flex; align-items:center; gap:8px; border:1.5px solid ${!isSecB ? '#3b82f6' : '#334155'}; background:${!isSecB ? '#2563eb' : '#1e293b'}; color:#ffffff;">
+              <i class="fa-solid fa-circle-play"></i> Section A: Non-Calculator (Q1–Q4 • 13m)
+            </a>
+            <a href="video-solution.html?topic=edexcel-maths-l2-past-paper-10-section-b" style="padding:10px 18px; border-radius:10px; font-weight:800; font-size:0.92rem; text-decoration:none; display:inline-flex; align-items:center; gap:8px; border:1.5px solid ${isSecB ? '#3b82f6' : '#334155'}; background:${isSecB ? '#2563eb' : '#1e293b'}; color:#ffffff;">
+              <i class="fa-solid fa-calculator"></i> Section B: Calculator (Q1–Q12 • 22m)
+            </a>
+          `;
+        }
+
+        playerContainer.innerHTML = `
+          <video controls autoplay playsinline poster="${posterFile}">
+            <source src="${videoFile}" type="video/mp4">
+            Your browser does not support HTML5 video.
+          </video>
+        `;
+      } else {
+        playerContainer.innerHTML = `
+          <div class="mfs-video-placeholder-card">
+            <div class="mfs-placeholder-icon-wrap">
+              <i class="fa-solid fa-clapperboard"></i>
+            </div>
+            <span class="mfs-placeholder-badge">
+              <i class="fa-solid fa-circle-play"></i> Video Walkthrough in Production
+            </span>
+            <h2 class="mfs-placeholder-heading" style="color:#fff; font-size:1.6rem; margin:6px 0;">${displayTitle}</h2>
+            <p class="mfs-placeholder-text">
+              Our specialist Functional Skills tutor is recording the complete step-by-step video solution with Pearson Edexcel method marks [M1/A1], examiner trap alerts, and reverse sanity checks.
+            </p>
+            <div style="display:flex; gap:14px; flex-wrap:wrap; justify-content:center; margin-top:10px;">
+              <a href="worksheets/${cleanSlug}-answers.html" target="_blank" rel="noopener" class="btn-modal-answers" style="padding:12px 22px; font-size:0.95rem;">
+                <i class="fa-solid fa-circle-check"></i> Open Step-by-Step Worked Answers
+              </a>
+              <a href="worksheets/${cleanSlug}-worksheet.html" target="_blank" rel="noopener" class="btn-modal-sheet" style="padding:12px 22px; font-size:0.95rem;">
+                <i class="fa-regular fa-file-pdf"></i> Open Question Worksheet
+              </a>
+            </div>
+          </div>
+        `;
+      }
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,35 @@
+<svg viewBox="0 0 540 270" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:540px; height:auto; font-family:'Plus Jakarta Sans', system-ui, sans-serif;">
+  <rect x="2" y="2" width="536" height="266" rx="14" fill="#ffffff" stroke="#bae6fd" stroke-width="2"/>
+  <rect x="18" y="14" width="250" height="28" rx="14" fill="#e0f2fe"/>
+  <text x="28" y="33" font-size="12" font-weight="800" fill="#0369a1">✎ VISUAL MODEL: 3D CUBOID VOLUME</text>
+  <text x="280" y="33" font-size="13" font-weight="700" fill="#0f172a">Length × Width × Height</text>
+
+  <!-- Isometric 3D Cuboid (Clear & Spacious) -->
+  <!-- Front face: 130 wide x 90 high -->
+  <polygon points="55,115 185,115 185,205 55,205" fill="#e0f2fe" stroke="#0284c7" stroke-width="2.5"/>
+  <!-- Top face: depth 55 slant -->
+  <polygon points="55,115 115,62 245,62 185,115" fill="#bae6fd" stroke="#0284c7" stroke-width="2.5"/>
+  <!-- Right face -->
+  <polygon points="185,115 245,62 245,152 185,205" fill="#7dd3fc" stroke="#0284c7" stroke-width="2.5"/>
+
+  <!-- Length Dimension: along bottom front -->
+  <text x="120" y="226" font-size="13" font-weight="800" fill="#0c4a6e" text-anchor="middle">Length = 8 cm</text>
+
+  <!-- Height Dimension: along left edge -->
+  <text x="42" y="164" font-size="13" font-weight="800" fill="#0c4a6e" text-anchor="end">Height = 5 cm</text>
+
+  <!-- Width Dimension: Positioned cleanly with dedicated white pill so it is NEVER hidden -->
+  <rect x="210" y="180" width="105" height="26" rx="5" fill="#ffffff" stroke="#0284c7" stroke-width="1.5"/>
+  <text x="262" y="197" font-size="12" font-weight="800" fill="#0369a1" text-anchor="middle">Width = 4 cm</text>
+
+  <!-- Calculation Summary Panel -->
+  <rect x="325" y="58" width="195" height="190" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="340" y="85" font-size="12" font-weight="800" fill="#0369a1">VOLUME &amp; CAPACITY:</text>
+  <text x="340" y="112" font-size="13" font-weight="700" fill="#0f172a">V = Length × Width × Height</text>
+  <text x="340" y="136" font-size="13" fill="#334155">V = 8 cm × 4 cm × 5 cm</text>
+  <line x1="340" y1="150" x2="505" y2="150" stroke="#cbd5e1"/>
+  <rect x="338" y="160" width="170" height="34" rx="6" fill="#dcfce7" stroke="#86efac"/>
+  <text x="423" y="182" font-size="15" font-weight="900" fill="#15803d" text-anchor="middle">Volume = 160 cm³ ✓</text>
+  <text x="340" y="214" font-size="11.5" font-weight="700" fill="#0369a1">Capacity: 160 cm³ = 160 ml</text>
+  <text x="340" y="232" font-size="10.5" fill="#64748b">1,000 cm³ = 1 Litre</text>
+</svg>

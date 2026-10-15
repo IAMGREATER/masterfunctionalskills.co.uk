@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-theme="digital" data-tint="cream">
+<head>
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="alternate icon" href="favicon.ico">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pearson Onscreen Test Player Simulator | Digital Functional Skills Online Mock</title>
+  <meta name="description" content="Experience the authentic Pearson Edexcel Digital Functional Skills onscreen test player in your browser. Screen-by-screen navigation, grey question banners, pill option buttons, section summary grid, and official diagnostic score report.">
+  <link rel="stylesheet" href="assets/css/mfs-theme.css">
+  <link rel="stylesheet" href="assets/css/mfs-revision.css">
+  <link rel="stylesheet" href="assets/css/mfs-dfs-mock.css">
+  <link rel="stylesheet" href="assets/css/mfs-pearson-app.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+      <!-- TOP TRUST BAR WITH ACCESSIBILITY & CONTACT -->
+  <div class="mfs-top-bar">
+    <div class="mfs-container mfs-top-bar-inner">
+      <div class="top-trust-items">
+        <span class="top-trust-item"><i class="fa-solid fa-building-columns"></i> Pearson Edexcel &amp; City &amp; Guilds Aligned</span>
+      </div>
+      <div class="top-contacts">
+        <div class="mfs-access-bar">
+          <!-- DYSLEXIA BACKGROUND TINT PICKER -->
+          <div class="mfs-tint-dropdown-wrap">
+            <button type="button" id="tintToggle" class="btn-tint-toggle" onclick="toggleTintMenu(event)" title="Change dyslexia background tint">
+              <span class="tint-swatch-indicator" id="tintCurrentSwatch"></span>
+              <span id="tintLabel">Cream Tint</span>
+              <i class="fa-solid fa-chevron-down" style="font-size:0.62rem; opacity:0.75; margin-left:2px;"></i>
+            </button>
+            <div id="tintMenu" class="tint-picker-menu">
+              <div class="tint-picker-title"><i class="fa-solid fa-glasses"></i> Dyslexia Reading Tint</div>
+              <button type="button" class="tint-option-btn active" data-tint="cream" onclick="setSiteTint('cream', event)">
+                <span class="swatch swatch-cream"></span>
+                <span class="tint-name">Cream <small class="tint-badge-def">Default</small></span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="peach" onclick="setSiteTint('peach', event)">
+                <span class="swatch swatch-peach"></span>
+                <span class="tint-name">Soft Peach</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="cool" onclick="setSiteTint('cool', event)">
+                <span class="swatch swatch-cool"></span>
+                <span class="tint-name">Cool Mist</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="sage" onclick="setSiteTint('sage', event)">
+                <span class="swatch swatch-sage"></span>
+                <span class="tint-name">Soft Sage</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <div class="tint-divider"></div>
+              <button type="button" class="tint-option-btn" data-tint="none" onclick="setSiteTint('none', event)">
+                <span class="swatch swatch-none"></span>
+                <span class="tint-name">No Tint (White)</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+            </div>
+          </div>
+          <button id="dyslexiaToggle" class="btn-dyslexia-toggle" onclick="toggleDyslexiaMode()" title="Toggle Dyslexia High-Readability Mode">
+            <i class="fa-solid fa-universal-access"></i> Dyslexia
+          </button>
+          <button id="themeToggle" class="mfs-theme-pill" onclick="toggleTheme()" title="Switch Palette: Sapphire vs Emerald">
+            <i class="fa-solid fa-palette"></i> <span id="themeLabel">Sapphire</span>
+          </button>
+        </div>
+        <a href="contact-us.html" class="top-contact-link"><i class="fa-solid fa-envelope"></i> <strong>Contact Us</strong></a>
+      </div>
+    </div>
+  </div>  <!-- MAIN NAVIGATION -->
+                                  <header class="mfs-navbar">
+    <div class="revision-page-wrapper mfs-navbar-inner">
+      <a href="index.html" class="mfs-brand">
+        <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div class="mfs-brand-text">
+          <div class="mfs-brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
+          <div class="mfs-brand-subtitle">Delivering Skills • Achieving Goals</div>
+        </div>
+      </a>
+
+      <nav class="mfs-nav-wrapper">
+        <ul class="mfs-nav-menu">
+          <!-- 1. SUBJECTS (VISUAL MEGA-MENU) -->
+          <li class="mfs-nav-item">
+            <a href="courses.html" class="mfs-nav-link">
+              <i class="fa-solid fa-book-open-reader" style="color:#0284c7; margin-right:5px;"></i> Subjects <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-revision-hub">
+              <div class="mfs-revision-grid">
+                <!-- Maths Column -->
+                <div class="mfs-revision-col mfs-revision-col-maths">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-calculator"></i> Maths Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="functional-skills-maths-level-2.html" class="mfs-dropdown-item">Maths Level 2</a>
+                    <a href="functional-skills-maths-level-1.html" class="mfs-dropdown-item">Maths Level 1</a>
+                    <a href="entry-level-3-maths.html" class="mfs-dropdown-item">Entry Level 3 Maths</a>
+                  </div>
+                </div>
+                <!-- English Column -->
+                <div class="mfs-revision-col mfs-revision-col-english">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-pen-nib"></i> English Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="functional-skills-english-level-2.html" class="mfs-dropdown-item">English Level 2</a>
+                    <a href="functional-skills-english-level-1.html" class="mfs-dropdown-item">English Level 1</a>
+                  </div>
+                </div>
+                <!-- Digital Skills Column -->
+                <div class="mfs-revision-col mfs-revision-col-digital">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-laptop-code"></i> Digital Skills</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="digital-functional-skills.html" class="mfs-dropdown-item">Digital Skills Hub</a>
+                    <a href="digital-functional-skills-mock-exam.html" class="mfs-dropdown-item">Pearson Mock Exam</a>
+                    <a href="digital-functional-skills-past-papers.html" class="mfs-dropdown-item">Past Papers &amp; Files</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- 2. PAST PAPERS & MOCKS (DIRECT ACCESS) -->
+          <li class="mfs-nav-item">
+            <a href="functional-skills-past-papers.html" class="mfs-nav-link">
+              <i class="fa-regular fa-file-lines" style="color:#0284c7; margin-right:5px;"></i> Past Papers &amp; Mocks
+            </a>
+          </li>
+
+          <!-- 2b. WORKSHEETS DIRECTORY (CORBETT STYLE DUAL ENGINE) -->
+          <li class="mfs-nav-item">
+            <a href="worksheets.html" class="mfs-nav-link">
+              <i class="fa-solid fa-layer-group" style="color:#0284c7; margin-right:5px;"></i> Worksheets Hub
+            </a>
+          </li>
+
+          <!-- 3. FREE TOOLS (COMPACT DROPDOWN) -->
+          <li class="mfs-nav-item">
+            <a href="tools.html" class="mfs-nav-link">
+              <i class="fa-solid fa-screwdriver-wrench" style="color:#0284c7; margin-right:5px;"></i> Free Tools <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-compact">
+              <a href="tools.html" class="mfs-dropdown-item" style="font-weight:700; color:var(--accent);"><i class="fa-solid fa-layer-group" style="font-size:0.85rem; margin-right:6px;"></i> All Free Tools &amp; Simulators &rarr;</a>
+              <div class="mfs-dropdown-divider" style="margin:4px 0; border-top:1px solid #e2e8f0;"></div>
+              <a href="pass-mark-calculator.html" class="mfs-dropdown-item"><i class="fa-solid fa-calculator" style="color:var(--accent); font-size:0.85rem; margin-right:6px;"></i> Pass Mark Calculator</a>
+              <a href="diagnostic-test.html" class="mfs-dropdown-item"><i class="fa-solid fa-chart-pie" style="color:#059669; font-size:0.85rem; margin-right:6px;"></i> Diagnostic Skill Checker</a>
+              <a href="functional-skills-nets.html" class="mfs-dropdown-item"><i class="fa-solid fa-cube" style="color:#0284c7; font-size:0.85rem; margin-right:6px;"></i> 3D Net Folding Tool</a>
+            </div>
+          </li>
+
+          <!-- 4. REVISION CARDS -->
+          <li class="mfs-nav-item">
+            <a href="revision-cards.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-layer-group" style="color:#d97706; margin-right:5px;"></i> Revision Cards
+            </a>
+          </li>
+
+          <!-- 5. SHOP -->
+          <li class="mfs-nav-item">
+            <a href="shop.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-basket-shopping" style="color:#d97706; margin-right:5px;"></i> Shop
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- 6. BOOK EXAM ACTION BUTTON -->
+      <div class="mfs-nav-actions">
+        <a href="exams.html" class="btn-nav-exam">
+          <i class="fa-solid fa-calendar-check"></i> Book Exam
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- INTRO HEADER -->
+  <section style="background:linear-gradient(180deg, #f8fafc 0%, #edf2f7 100%); padding:14px 0 10px; border-bottom:1px solid #cbd5e1;">
+    <div class="mfs-container">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+        <div>
+          <span class="promo-badge" style="background:#0078d7; color:#ffffff; margin-bottom:4px; font-size:0.72rem; padding:3px 8px; display:inline-block;">
+            AUTHENTIC PEARSON ONSCREEN PLATFORM (POP)
+          </span>
+          <h1 style="font-size:1.55rem; font-weight:800; color:var(--navy-dark); margin:0 0 4px 0;">
+            Pearson Digital Functional Skills <span>Test Player Simulator</span>
+          </h1>
+          <p style="font-size:0.86rem; color:#475569; margin:0; max-width:850px; line-height:1.4;">
+            Official onscreen test player simulation: grey question banners, pill option buttons, 15-min Section A summary grid, workplace tasks simulator, and official diagnostic score report.
+          </p>
+        </div>
+
+        <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
+          <button type="button" class="btn-hero-action" id="heroFillScreenBtn" style="background:#0078d7; color:#ffffff; padding:8px 14px; font-size:0.82rem; font-weight:700; display:inline-flex; align-items:center; gap:6px;" onclick="togglePopFullscreen()">
+            <i class="fa-solid fa-expand"></i> <span>Fill Screen</span>
+          </button>
+          <a href="digital-functional-skills-past-papers.html" class="btn-card-action" style="padding:8px 14px; font-size:0.82rem;">
+            <i class="fa-solid fa-cloud-arrow-down"></i> Download .ZIP Data Files
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUTHENTIC PEARSON TEST PLAYER WINDOW -->
+  <main class="mfs-container" style="padding: 6px 0 30px 0;">
+
+    <div class="pearson-app-shell" id="popAppShell">
+      <!-- Windows App Title Bar -->
+      <div class="pearson-titlebar">
+        <div class="pearson-title-left">
+          <span class="pearson-window-icon">P</span>
+          <span id="popWindowSubtitle">Pearson Test Player - Level 1: Fresh Bite Sandwich Shop (SAM)</span>
+        </div>
+
+        <div class="pearson-title-controls">
+          <label style="font-size:0.8rem; font-weight:700; color:#555555; display:flex; align-items:center; gap:6px;">
+            <span>Select Mock Set:</span>
+            <select class="pearson-set-dropdown" id="popSetSelector" onchange="handleSetChange(this.value)">
+              <option value="set1" selected>Mock 1: Fresh Bite Sandwich Shop (Level 1 SAM)</option>
+              <option value="set2">Mock 2: Annual Awards Ceremony & Catering (Level 1 Practice Set 2)</option>
+              <option value="set3">Mock 3: First Aid Training & Supplies (Level 1 Practice Set 1)</option>
+              <option value="set5">Mock 4: Gelato & Ice Cream Business (Level 1 Past Test Set 1)</option>
+              <option value="set4">Entry Level 3 Mock: Apprenticeships & Work Experience (SAM)</option>
+            </select>
+          </label>
+
+          <button type="button" class="pearson-btn-fill-screen" id="btnFillScreen" onclick="togglePopFullscreen()" title="Fill Entire Screen (F11 / Fullscreen Mode)">
+            <i class="fa-solid fa-expand"></i> <span>Fill Screen</span>
+          </button>
+
+          <button type="button" class="pearson-win-btn" title="Minimise" onclick="alert('Minimise simulated')">−</button>
+          <button type="button" class="pearson-win-btn" id="popWinMaximizeBtn" title="Maximize / Fill Screen" onclick="togglePopFullscreen()">□</button>
+          <button type="button" class="pearson-win-btn close-btn" title="Exit Test" onclick="if(confirm('Do you want to save and exit this Pearson assessment?')) showPearsonReportModal()">✕</button>
+        </div>
+      </div>
+
+      <!-- Main Interactive Canvas (Screen-by-screen) -->
+      <div class="pearson-canvas" id="popCanvas">
+        <!-- Rendered by assets/js/pearson-app-engine.js -->
+      </div>
+
+      <!-- Official Pearson Dark Bottom Navigation & Tool Bar -->
+      <div class="pearson-bottom-bar">
+        <div class="pop-tools-left">
+          <button type="button" class="pop-tool-btn" onclick="toggleDyslexiaMode()" title="Accessibility & High-Contrast Options">
+            <i class="fa-solid fa-universal-access"></i>
+          </button>
+          <button type="button" class="pop-tool-btn" onclick="alert('Pearson Test Help:\n• Answer each question and click Next\n• Click Flag icon to review later\n• Click Marks to see your score report\n• Section A is 15 minutes, Section B is 90 minutes.')" title="Help & Instructions">
+            <i class="fa-regular fa-circle-question"></i>
+          </button>
+          <button type="button" class="pop-tool-btn" id="popBottomFsBtn" onclick="togglePopFullscreen()" title="Fill Screen / Fullscreen View">
+            <i class="fa-solid fa-expand"></i>
+          </button>
+          <button type="button" class="pop-tool-btn" id="popFlagBtn" onclick="togglePearsonFlag()" title="Flag this question for review">
+            <i class="fa-solid fa-flag"></i>
+          </button>
+        </div>
+
+        <div class="pop-nav-center">
+          <button type="button" class="btn-pop-nav" id="popPrevBtn" onclick="goToPrevScreen()">
+            <i class="fa-solid fa-caret-left"></i> Previous
+          </button>
+          <div class="pop-counter-pill" id="popCounterDisplay">1 / 16</div>
+          <button type="button" class="btn-pop-nav" id="popNextBtn" onclick="goToNextScreen()">
+            Next <i class="fa-solid fa-caret-right"></i>
+          </button>
+        </div>
+
+        <div style="display:flex; align-items:center;">
+          <div class="pop-timer-box">
+            <i class="fa-solid fa-hourglass-half" style="color:var(--pop-orange);"></i>
+            <span id="popTimerDisplay">90:00</span>
+          </div>
+
+          <div class="pop-actions-right">
+            <button type="button" class="btn-pop-action" onclick="showPearsonReportModal()">Marks</button>
+            <button type="button" class="btn-pop-action" onclick="showPearsonReportModal()">Save</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- CANDIDATE DATA FILE DOWNLOAD & OFFLINE DESKTOP APP GUIDANCE -->
+    <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:20px; margin-top:30px;">
+      <!-- Data Files Card -->
+      <div style="background:#ffffff; border:1px solid #cbd5e1; border-radius:12px; padding:22px; box-shadow:0 4px 12px rgba(0,0,0,0.04);">
+        <h3 style="margin:0 0 8px 0; font-size:1.15rem; color:var(--navy-dark);"><i class="fa-solid fa-folder-open" style="color:#d97706;"></i> Candidate Data Folders</h3>
+        <p style="font-size:0.88rem; color:#475569; line-height:1.5; margin-bottom:14px;">
+          Section B practical tasks require starter files (Word documents, spreadsheets, web forms, and JPG photos). Download the exact candidate ZIP package for your set:
+        </p>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a href="assets/downloads/dfs/dfs-level-1-sam-data-files.zip" class="btn-card-action" style="font-size:0.85rem;" download>
+            <i class="fa-solid fa-download"></i> L1 SAM Data Files (.ZIP)
+          </a>
+          <a href="assets/downloads/dfs/dfs-level-1-practice-set-2-data-files.zip" class="btn-card-action" style="font-size:0.85rem;" download>
+            <i class="fa-solid fa-download"></i> Practice Set 2 Data (.ZIP)
+          </a>
+        </div>
+      </div>
+
+      <!-- Official Pearson Windows Desktop App Card -->
+      <div style="background:#ffffff; border:1px solid #cbd5e1; border-radius:12px; padding:22px; box-shadow:0 4px 12px rgba(0,0,0,0.04);">
+        <h3 style="margin:0 0 8px 0; font-size:1.15rem; color:var(--navy-dark);"><i class="fa-brands fa-windows" style="color:#0078d7;"></i> Official Pearson Windows Desktop App</h3>
+        <p style="font-size:0.88rem; color:#475569; line-height:1.5; margin-bottom:14px;">
+          Windows users can also run tests inside Pearson's native desktop player (installer: <code>Edi.Advance.Tdp.SamplePlayer.Setup.msi</code>) using encrypted <code>.pkgx</code> files.
+        </p>
+        <div style="display:flex; gap:10px; flex-wrap:wrap;">
+          <a href="assets/downloads/dfs/dfs-onscreen-practice-assessments-guide.pdf" class="btn-card-action" style="font-size:0.85rem;" download>
+            <i class="fa-solid fa-file-pdf"></i> Official Setup Guide (PDF)
+          </a>
+          <a href="assets/downloads/dfs/dfs-level-1-practice-set-2-onscreen-test.pkgx" class="btn-card-action" style="font-size:0.85rem;" download>
+            <i class="fa-solid fa-box-archive"></i> Download .PKGX Test
+          </a>
+        </div>
+      </div>
+    </div>
+
+        <!-- DOWNLOADS -->
+        <section id="downloads" class="revision-section">
+          <!-- LINK TO ALL DIGITAL SKILLS MOCK EXAMS -->
+          <div style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border: 1.5px solid #3b82f6; border-radius: 14px; padding: 20px 24px; margin-bottom: 22px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 16px; box-shadow: 0 4px 18px rgba(15,23,42,0.12);">
+            <div style="display: flex; align-items: center; gap: 16px;">
+              <div style="width: 48px; height: 48px; border-radius: 12px; background: rgba(37,99,235,0.25); border: 1px solid rgba(59,130,246,0.4); display: flex; align-items: center; justify-content: center; font-size: 1.4rem; color: #60a5fa; flex-shrink: 0;">
+                <i class="fa-solid fa-graduation-cap"></i>
+              </div>
+              <div>
+                <div style="color: #ffffff; font-weight: 700; font-size: 1.08rem; margin-bottom: 3px;">Looking for All Digital Skills Mock Exams &amp; Past Papers?</div>
+                <div style="color: #94a3b8; font-size: 0.88rem;">Access the complete archive of Pearson Edexcel Level 1 &amp; Entry Level 3 past papers, ZIP data files, and mark schemes.</div>
+              </div>
+            </div>
+            <div style="display: flex; gap: 10px; flex-wrap: wrap; align-items: center;">
+              <a href="digital-functional-skills-past-papers.html" style="background: #2563eb; color: #ffffff; text-decoration: none; padding: 10px 20px; border-radius: 8px; font-weight: 700; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 8px; box-shadow: 0 2px 8px rgba(37,99,235,0.3); transition: background 0.2s;" onmouseover="this.style.background='#1d4ed8'" onmouseout="this.style.background='#2563eb'">
+                <i class="fa-solid fa-folder-open"></i> All Digital Skills Mock Exams &rarr;
+              </a>
+              <a href="functional-skills-past-papers.html?subject=digital-skills#mock-finder" style="background: rgba(255,255,255,0.1); color: #ffffff; text-decoration: none; padding: 10px 16px; border-radius: 8px; font-weight: 600; font-size: 0.9rem; display: inline-flex; align-items: center; gap: 8px; border: 1px solid rgba(255,255,255,0.25); transition: background 0.2s;" onmouseover="this.style.background='rgba(255,255,255,0.2)'" onmouseout="this.style.background='rgba(255,255,255,0.1)'">
+                <i class="fa-solid fa-magnifying-glass"></i> Interactive Mock Finder
+              </a>
+            </div>
+          </div>
+
+          <div style="margin-bottom: 14px;">
+            <a href="digital-functional-skills-past-papers.html" style="font-weight: 700; color: #2563eb; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; font-size: 0.95rem;">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Link to All Digital Skills Mock Exams &amp; Past Paper Archives &rarr;
+            </a>
+          </div>
+
+          <div class="section-header-row">
+            <h2 class="section-title"><i class="fa-regular fa-file-pdf"></i> Free Revision Worksheets &amp; Exam Papers</h2>
+          </div>
+
+          <div class="download-tiles-grid">
+            <a href="worksheets/digital-functional-skills-mock-exam-worksheet.html" target="_blank" class="download-tile-card">
+              <div class="download-tile-icon icon-pdf"><i class="fa-regular fa-file-pdf"></i></div>
+              <div class="download-tile-info">
+                <strong>Digital Mock Exam Exam Practice Worksheet (PDF)</strong>
+                <span>Original practice questions calibrated for L1 &amp; L2 examinations</span>
+              </div>
+            </a>
+
+            <a href="worksheets/digital-functional-skills-mock-exam-answers.html" target="_blank" class="download-tile-card">
+              <div class="download-tile-icon icon-answers"><i class="fa-solid fa-check-double"></i></div>
+              <div class="download-tile-info">
+                <strong>Step-by-Step Worked Mark Scheme (PDF)</strong>
+                <span>Official tutor model answers with method marks breakdown</span>
+              </div>
+            </a>
+          </div>
+        </section>
+      </main>
+
+  <!-- OFFICIAL PEARSON DIAGNOSTIC SCORE REPORT MODAL -->
+  <div class="pop-report-modal" id="popReportModal">
+    <div class="pop-report-sheet" id="popReportModalBody">
+      <!-- Generated by assets/js/pearson-app-engine.js -->
+    </div>
+  </div>
+
+  <!-- GLOBAL FOOTER -->  <!-- FOOTER -->
+  <footer class="mfs-footer" id="site-footer">
+    <div class="mfs-container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="mfs-brand" style="margin-bottom:16px;">
+            <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="mfs-brand-text">
+              <div class="mfs-brand-title" style="color:#ffffff;">MASTER<span>FUNCTIONALSKILLS</span></div>
+              <div class="mfs-brand-subtitle" style="color:#94a3b8;">Delivering Skills • Achieving Goals</div>
+            </div>
+          </div>
+          <p style="font-size:0.88rem; line-height:1.6; margin-bottom:16px;">
+            The UK's dedicated Functional Skills revision specialist. Providing realistic mock exams, step-by-step revision flashcards, diagnostic assessments, and 1-to-1 specialist tuition for Pearson Edexcel, City &amp; Guilds, and all major exam boards.
+          </p>
+          <div style="font-size:0.85rem; color:#cbd5e1;">
+            <p><a href="https://wa.me/447564525425" target="_blank" rel="noopener" style="color:#cbd5e1; text-decoration:none;"><i class="fa-brands fa-whatsapp" style="color:var(--accent); margin-right:8px;"></i> WhatsApp: +44 (0)7564 525425</a></p>
+            <p style="margin-top:6px;"><a href="contact-us.html" style="color:#cbd5e1; text-decoration:none;"><i class="fa-solid fa-envelope" style="color:var(--accent); margin-right:8px;"></i> Contact Tutor Team</a></p>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Maths Revision</h4>
+          <ul class="footer-links">
+            <li><a href="functional-skills-maths-level-2.html">Maths Level 2 Revision</a></li>
+            <li><a href="functional-skills-maths-level-1.html">Maths Level 1 Revision</a></li>
+            <li><a href="entry-level-3-maths.html">Entry Level 3 Maths</a></li>
+            <li><a href="pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="functional-skills-past-papers.html">Free Maths Past Papers</a></li>
+            <li><a href="exam-maths-l2.html">Book Level 2 Maths Exam</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>English &amp; Digital</h4>
+          <ul class="footer-links">
+            <li><a href="functional-skills-english-level-2.html">English Level 2 Revision</a></li>
+            <li><a href="functional-skills-english-level-1.html">English Level 1 Revision</a></li>
+            <li><a href="digital-functional-skills.html">Digital Skills Hub (L1 &amp; E3)</a></li>
+            <li><a href="digital-functional-skills-past-papers.html">DFS Past Papers &amp; Data Files</a></li>
+            <li><a href="functional-skills-past-papers.html?format=online#mock-finder">Online Exam Simulator</a></li>
+            <li><a href="exam-english-l2.html">Book Level 2 English Exam</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Student Support &amp; Tools</h4>
+          <ul class="footer-links">
+            <li><a href="tools.html" style="color:var(--accent); font-weight:700;"><i class="fa-solid fa-screwdriver-wrench" style="margin-right:6px;"></i>All Interactive Tools Hub</a></li>
+            <li><a href="pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="diagnostic-test.html">Diagnostic Skill Checker</a></li>
+            <li><a href="functional-skills-nets.html">3D Net Folding Tool</a></li>
+            <li><a href="digital-functional-skills-mock-exam.html">Pearson DFS Simulator</a></li>
+            <li><a href="revision-cards.html">Revision Cards &amp; Flashcards</a></li>
+            <li><a href="shop.html">Revision Books &amp; Study Packs</a></li>
+            <li><a href="tutors.html">1-to-1 Specialist Tuition</a></li>
+            <li><a href="exams.html">Book Official Online Exam</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Master Functional Skills. All rights reserved. Registered in England &amp; Wales. Ofqual Regulated Qualification Standards.</div>
+        <div style="display:flex; gap:16px; flex-wrap:wrap;">
+          <a href="index.html">Home</a>
+          <a href="tools.html" style="color:var(--accent); font-weight:700;">Tools</a>
+          <a href="functional-skills-past-papers.html">Past Papers</a>
+          <a href="revision-cards.html">Revision Cards</a>
+          <a href="shop.html">Study Shop</a>
+          <a href="tutors.html">Tutors</a>
+          <a href="contact-us.html">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/mfs-tint.js"></script>
+  <script src="assets/js/dfs-mock-engine.js"></script>
+  <script src="assets/js/pearson-app-engine.js"></script>
+</body>
+</html>

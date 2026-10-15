@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="alternate icon" href="favicon.ico">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Functional Skills Courses (Level 1 & Level 2 Online) | Master Functional Skills</title>
+  <meta name="description" content="Accredited Functional Skills Maths and English online courses. Self-paced, video tutorials, AI-marked mock exams.">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="assets/css/mfs-theme.css">
+</head>
+<body>
+    <!-- TOP TRUST BAR WITH ACCESSIBILITY & CONTACT -->
+  <div class="mfs-top-bar">
+    <div class="mfs-container mfs-top-bar-inner">
+      <div class="top-trust-items">
+        <span class="top-trust-item"><i class="fa-solid fa-building-columns"></i> Pearson Edexcel &amp; City &amp; Guilds Aligned</span>
+      </div>
+      <div class="top-contacts">
+        <div class="mfs-access-bar">
+          <!-- DYSLEXIA BACKGROUND TINT PICKER -->
+          <div class="mfs-tint-dropdown-wrap">
+            <button type="button" id="tintToggle" class="btn-tint-toggle" onclick="toggleTintMenu(event)" title="Change dyslexia background tint">
+              <span class="tint-swatch-indicator" id="tintCurrentSwatch"></span>
+              <span id="tintLabel">Cream Tint</span>
+              <i class="fa-solid fa-chevron-down" style="font-size:0.62rem; opacity:0.75; margin-left:2px;"></i>
+            </button>
+            <div id="tintMenu" class="tint-picker-menu">
+              <div class="tint-picker-title"><i class="fa-solid fa-glasses"></i> Dyslexia Reading Tint</div>
+              <button type="button" class="tint-option-btn active" data-tint="cream" onclick="setSiteTint('cream', event)">
+                <span class="swatch swatch-cream"></span>
+                <span class="tint-name">Cream <small class="tint-badge-def">Default</small></span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="peach" onclick="setSiteTint('peach', event)">
+                <span class="swatch swatch-peach"></span>
+                <span class="tint-name">Soft Peach</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="cool" onclick="setSiteTint('cool', event)">
+                <span class="swatch swatch-cool"></span>
+                <span class="tint-name">Cool Mist</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="sage" onclick="setSiteTint('sage', event)">
+                <span class="swatch swatch-sage"></span>
+                <span class="tint-name">Soft Sage</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <div class="tint-divider"></div>
+              <button type="button" class="tint-option-btn" data-tint="none" onclick="setSiteTint('none', event)">
+                <span class="swatch swatch-none"></span>
+                <span class="tint-name">No Tint (White)</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+            </div>
+          </div>
+          <button id="dyslexiaToggle" class="btn-dyslexia-toggle" onclick="toggleDyslexiaMode()" title="Toggle Dyslexia High-Readability Mode">
+            <i class="fa-solid fa-universal-access"></i> Dyslexia
+          </button>
+          <button id="themeToggle" class="mfs-theme-pill" onclick="toggleTheme()" title="Switch Palette: Sapphire vs Emerald">
+            <i class="fa-solid fa-palette"></i> <span id="themeLabel">Sapphire</span>
+          </button>
+        </div>
+        <a href="contact-us.html" class="top-contact-link"><i class="fa-solid fa-envelope"></i> <strong>Contact Us</strong></a>
+      </div>
+    </div>
+  </div>  <!-- MAIN NAVIGATION -->
+                                  <header class="mfs-navbar">
+    <div class="revision-page-wrapper mfs-navbar-inner">
+      <a href="index.html" class="mfs-brand">
+        <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div class="mfs-brand-text">
+          <div class="mfs-brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
+          <div class="mfs-brand-subtitle">Delivering Skills • Achieving Goals</div>
+        </div>
+      </a>
+
+      <nav class="mfs-nav-wrapper">
+        <ul class="mfs-nav-menu">
+          <!-- 1. SUBJECTS (VISUAL MEGA-MENU) -->
+          <li class="mfs-nav-item">
+            <a href="courses.html" class="mfs-nav-link">
+              <i class="fa-solid fa-book-open-reader" style="color:#0284c7; margin-right:5px;"></i> Subjects <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-revision-hub">
+              <div class="mfs-revision-grid">
+                <!-- Maths Column -->
+                <div class="mfs-revision-col mfs-revision-col-maths">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-calculator"></i> Maths Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="functional-skills-maths-level-2.html" class="mfs-dropdown-item">Maths Level 2</a>
+                    <a href="functional-skills-maths-level-1.html" class="mfs-dropdown-item">Maths Level 1</a>
+                    <a href="entry-level-3-maths.html" class="mfs-dropdown-item">Entry Level 3 Maths</a>
+                  </div>
+                </div>
+                <!-- English Column -->
+                <div class="mfs-revision-col mfs-revision-col-english">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-pen-nib"></i> English Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="functional-skills-english-level-2.html" class="mfs-dropdown-item">English Level 2</a>
+                    <a href="functional-skills-english-level-1.html" class="mfs-dropdown-item">English Level 1</a>
+                  </div>
+                </div>
+                <!-- Digital Skills Column -->
+                <div class="mfs-revision-col mfs-revision-col-digital">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-laptop-code"></i> Digital Skills</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="digital-functional-skills.html" class="mfs-dropdown-item">Digital Skills Hub</a>
+                    <a href="digital-functional-skills-mock-exam.html" class="mfs-dropdown-item">Pearson Mock Exam</a>
+                    <a href="digital-functional-skills-past-papers.html" class="mfs-dropdown-item">Past Papers &amp; Files</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- 2. PAST PAPERS & MOCKS (DIRECT ACCESS) -->
+          <li class="mfs-nav-item">
+            <a href="functional-skills-past-papers.html" class="mfs-nav-link">
+              <i class="fa-regular fa-file-lines" style="color:#0284c7; margin-right:5px;"></i> Past Papers &amp; Mocks
+            </a>
+          </li>
+
+          <!-- 2b. WORKSHEETS DIRECTORY (CORBETT STYLE DUAL ENGINE) -->
+          <li class="mfs-nav-item">
+            <a href="worksheets.html" class="mfs-nav-link">
+              <i class="fa-solid fa-layer-group" style="color:#0284c7; margin-right:5px;"></i> Worksheets Hub
+            </a>
+          </li>
+
+          <!-- 3. FREE TOOLS (COMPACT DROPDOWN) -->
+          <li class="mfs-nav-item">
+            <a href="tools.html" class="mfs-nav-link">
+              <i class="fa-solid fa-screwdriver-wrench" style="color:#0284c7; margin-right:5px;"></i> Free Tools <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-compact">
+              <a href="tools.html" class="mfs-dropdown-item" style="font-weight:700; color:var(--accent);"><i class="fa-solid fa-layer-group" style="font-size:0.85rem; margin-right:6px;"></i> All Free Tools &amp; Simulators &rarr;</a>
+              <div class="mfs-dropdown-divider" style="margin:4px 0; border-top:1px solid #e2e8f0;"></div>
+              <a href="pass-mark-calculator.html" class="mfs-dropdown-item"><i class="fa-solid fa-calculator" style="color:var(--accent); font-size:0.85rem; margin-right:6px;"></i> Pass Mark Calculator</a>
+              <a href="diagnostic-test.html" class="mfs-dropdown-item"><i class="fa-solid fa-chart-pie" style="color:#059669; font-size:0.85rem; margin-right:6px;"></i> Diagnostic Skill Checker</a>
+              <a href="functional-skills-nets.html" class="mfs-dropdown-item"><i class="fa-solid fa-cube" style="color:#0284c7; font-size:0.85rem; margin-right:6px;"></i> 3D Net Folding Tool</a>
+            </div>
+          </li>
+
+          <!-- 4. REVISION CARDS -->
+          <li class="mfs-nav-item">
+            <a href="revision-cards.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-layer-group" style="color:#d97706; margin-right:5px;"></i> Revision Cards
+            </a>
+          </li>
+
+          <!-- 5. SHOP -->
+          <li class="mfs-nav-item">
+            <a href="shop.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-basket-shopping" style="color:#d97706; margin-right:5px;"></i> Shop
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- 6. BOOK EXAM ACTION BUTTON -->
+      <div class="mfs-nav-actions">
+        <a href="exams.html" class="btn-nav-exam">
+          <i class="fa-solid fa-calendar-check"></i> Book Exam
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- PROMOTIONAL SALE ACCENT BANNER -->
+  <div class="mfs-promo-banner"><div class="mfs-container mfs-promo-inner"></div></div>
+
+  <section class="mfs-hero" style="padding: 50px 0 40px; background: linear-gradient(180deg, #f8fafc 0%, #edf2f7 100%);">
+    <div class="mfs-container text-center" style="max-width: 860px; margin: 0 auto;">
+      <span class="section-tag" style="background: #dcfce7; color: #16a34a;">100% ONLINE • SELF-PACED & ACCREDITED</span>
+      <h1 style="font-size: 2.6rem; color: var(--mfs-navy); margin: 12px 0 16px; font-family: var(--font-heading); line-height: 1.2;">
+        Functional Skills Online Courses (Level 1 & Level 2)
+      </h1>
+      <p style="font-size: 1.15rem; color: var(--mfs-gray); line-height: 1.6; margin-bottom: 24px;">
+        Everything you need to pass your Ofqual regulated Maths and English exams on your first attempt. Built-in diagnostic assessment, video lessons, dynamic personal learning plan, and AI-marked mock exams.
+      </p>
+      <div style="display: flex; gap: 14px; justify-content: center; flex-wrap: wrap;">
+        <a href="#courses-grid" class="btn-hero-primary">Browse All Courses</a>
+        <a href="past-papers.html" class="btn-hero-secondary">Take Free Initial Assessment</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FEATURES STRIP -->
+  <section style="background: #ffffff; border-bottom: 1px solid var(--mfs-border); padding: 30px 0;">
+    <div class="mfs-container">
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 24px; text-align: center;">
+        <div>
+          <i class="fa-solid fa-brain" style="font-size: 2rem; color: var(--mfs-blue); margin-bottom: 8px;"></i>
+          <h4 style="margin: 0 0 4px; font-size: 1.05rem; color: var(--mfs-navy);">Adaptive Diagnostics</h4>
+          <p style="margin: 0; font-size: 0.88rem; color: var(--mfs-gray);">Pinpoints gaps and builds your custom pathway</p>
+        </div>
+        <div>
+          <i class="fa-solid fa-circle-play" style="font-size: 2rem; color: var(--mfs-green); margin-bottom: 8px;"></i>
+          <h4 style="margin: 0 0 4px; font-size: 1.05rem; color: var(--mfs-navy);">50+ Video Lessons</h4>
+          <p style="margin: 0; font-size: 0.88rem; color: var(--mfs-gray);">Bite-sized micro-tutorials covering every topic</p>
+        </div>
+        <div>
+          <i class="fa-solid fa-robot" style="font-size: 2rem; color: #9333ea; margin-bottom: 8px;"></i>
+          <h4 style="margin: 0 0 4px; font-size: 1.05rem; color: var(--mfs-navy);">AI Mock Marking</h4>
+          <p style="margin: 0; font-size: 0.88rem; color: var(--mfs-gray);">Instant marks and model solutions for essays & steps</p>
+        </div>
+        <div>
+          <i class="fa-solid fa-chart-line" style="font-size: 2rem; color: #ea580c; margin-bottom: 8px;"></i>
+          <h4 style="margin: 0 0 4px; font-size: 1.05rem; color: var(--mfs-navy);">Chance of Passing</h4>
+          <p style="margin: 0; font-size: 0.88rem; color: var(--mfs-gray);">Real-time readiness index before sitting your exam</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COURSES GRID -->
+  <section class="mfs-section" id="courses-grid">
+    <div class="mfs-container">
+      <div class="section-head text-center" style="max-width: 760px; margin: 0 auto 40px;">
+        <span class="section-tag">POPULAR COURSES</span>
+        <h2 style="font-size: 2.2rem; color: var(--mfs-navy); margin: 10px 0;">Find Your Accredited Course</h2>
+        <p style="color: var(--mfs-gray); font-size: 1.05rem;">Choose a standalone course or bundle with an official Ofqual regulated online exam.</p>
+      </div>
+
+      <div class="packages-grid">
+        <!-- Maths L2 -->
+        <div class="package-card featured">
+          <div class="pkg-badge">MOST POPULAR</div>
+          <div class="pkg-header">
+            <h3>Maths Level 2 Complete Course</h3>
+            <p class="pkg-sub">Equivalent to GCSE Grade 4 / C Maths</p>
+            <div class="pkg-price">
+              <span class="price-val">£284</span>
+              <span class="price-period">/ 1-year access (or £99/mo)</span>
+            </div>
+            <div class="pkg-save">Save £71.00 (Was £355) • Exam Bundle available for £230</div>
+          </div>
+          <div class="pkg-body">
+            <ul class="pkg-features">
+              <li><i class="fa-solid fa-check"></i> <strong>Initial & Diagnostic Baseline Test</strong></li>
+              <li><i class="fa-solid fa-check"></i> Dynamic Personal Learning Plan (PLP)</li>
+              <li><i class="fa-solid fa-check"></i> 39 Video Modules (Numbers, Shape, Data, Finance)</li>
+              <li><i class="fa-solid fa-check"></i> 500+ Practice Questions with Step-by-Step Solutions</li>
+              <li><i class="fa-solid fa-check"></i> 10 Full AI-Marked Mock Exam Papers</li>
+              <li><i class="fa-solid fa-check"></i> Real-time "Chance of Passing" Tracker</li>
+              <li><i class="fa-solid fa-check"></i> 100% Free Resit with Premium Exam Bundle</li>
+            </ul>
+          </div>
+          <div class="pkg-footer">
+            <a href="https://wa.me/447564525425?text=Hello,%20I%20want%20to%20enrol%20in%20Maths%20Level%202%20Course" target="_blank" rel="noopener" class="btn-pkg">Enrol in Maths L2 Course →</a>
+          </div>
+        </div>
+
+        <!-- English L2 -->
+        <div class="package-card featured">
+          <div class="pkg-badge">ESSENTIAL FOR NURSING & UNI</div>
+          <div class="pkg-header">
+            <h3>English Level 2 Complete Course</h3>
+            <p class="pkg-sub">Equivalent to GCSE Grade 4 / C English Language</p>
+            <div class="pkg-price">
+              <span class="price-val">£284</span>
+              <span class="price-period">/ 1-year access (or £99/mo)</span>
+            </div>
+            <div class="pkg-save">Save £71.00 (Was £355) • Exam Bundle available for £230</div>
+          </div>
+          <div class="pkg-body">
+            <ul class="pkg-features">
+              <li><i class="fa-solid fa-check"></i> <strong>Initial & Subject Knowledge Assessment</strong></li>
+              <li><i class="fa-solid fa-check"></i> Covers all 3 Components: Reading, Writing & SLC</li>
+              <li><i class="fa-solid fa-check"></i> Punctuation, SPaG & Formal Letter/Report Writing</li>
+              <li><i class="fa-solid fa-check"></i> Side-by-Side Model Answer Rewrites</li>
+              <li><i class="fa-solid fa-check"></i> Instant AI Essay Feedback against Pearson & C&G bands</li>
+              <li><i class="fa-solid fa-check"></i> Speaking & Listening Remote Preparation</li>
+              <li><i class="fa-solid fa-check"></i> 100% Free Resit with Premium Exam Bundle</li>
+            </ul>
+          </div>
+          <div class="pkg-footer">
+            <a href="https://wa.me/447564525425?text=Hello,%20I%20want%20to%20enrol%20in%20English%20Level%202%20Course" target="_blank" rel="noopener" class="btn-pkg">Enrol in English L2 Course →</a>
+          </div>
+        </div>
+
+        <!-- Dual Maths & English Bundle -->
+        <div class="package-card">
+          <div class="pkg-badge" style="background:#0284c7;">BEST VALUE DUAL BUNDLE</div>
+          <div class="pkg-header">
+            <h3>Maths & English Level 2 Dual Course</h3>
+            <p class="pkg-sub">Complete Double GCSE-Equivalent Pass System</p>
+            <div class="pkg-price">
+              <span class="price-val">£499</span>
+              <span class="price-period">/ 1-year full access</span>
+            </div>
+            <div class="pkg-save">Save £211 vs purchasing separately!</div>
+          </div>
+          <div class="pkg-body">
+            <ul class="pkg-features">
+              <li><i class="fa-solid fa-check"></i> <strong>Full Access to Both Maths L2 & English L2 Courses</strong></li>
+              <li><i class="fa-solid fa-check"></i> Dual Personal Learning Plans</li>
+              <li><i class="fa-solid fa-check"></i> 80+ Video Lessons across both subjects</li>
+              <li><i class="fa-solid fa-check"></i> 20 AI-Marked Mock Exam Papers</li>
+              <li><i class="fa-solid fa-check"></i> Free Physical Revision Flashcard Pack included (£17.98 value)</li>
+              <li><i class="fa-solid fa-check"></i> Priority Tutor Marking on 2 Full Mock Papers</li>
+            </ul>
+          </div>
+          <div class="pkg-footer">
+            <a href="https://wa.me/447564525425?text=Hello,%20I%20want%20to%20enrol%20in%20Dual%20Maths%20and%20English%20Course" target="_blank" rel="noopener" class="btn-pkg">Enrol in Dual Course (£499) →</a>
+          </div>
+        </div>
+
+        <!-- Level 1 Foundation -->
+        <div class="package-card">
+          <div class="pkg-header">
+            <h3>Functional Skills Level 1 Courses</h3>
+            <p class="pkg-sub">Maths or English Level 1 (GCSE Grade 2–3 Equivalent)</p>
+            <div class="pkg-price">
+              <span class="price-val">£284</span>
+              <span class="price-period">/ 1-year access</span>
+            </div>
+            <div class="pkg-save">Ideal stepping stone for apprenticeships</div>
+          </div>
+          <div class="pkg-body">
+            <ul class="pkg-features">
+              <li><i class="fa-solid fa-check"></i> Complete Level 1 syllabus preparation</li>
+              <li><i class="fa-solid fa-check"></i> Foundational arithmetic, fractions, decimals & measures</li>
+              <li><i class="fa-solid fa-check"></i> Sentence structure, basic SPaG, and workplace emails</li>
+              <li><i class="fa-solid fa-check"></i> Step-by-step video solutions</li>
+              <li><i class="fa-solid fa-check"></i> Unlimited mock practice tests</li>
+            </ul>
+          </div>
+          <div class="pkg-footer">
+            <a href="https://wa.me/447564525425?text=Hello,%20I%20want%20to%20enrol%20in%20Level%201%20Course" target="_blank" rel="noopener" class="btn-pkg">Enrol in Level 1 Course →</a>
+          </div>
+        </div>
+
+        <!-- Entry Level 3 -->
+        <div class="package-card">
+          <div class="pkg-header">
+            <h3>Entry Level 3 Foundation Courses</h3>
+            <p class="pkg-sub">Maths or English Entry 3 (Confidence Building)</p>
+            <div class="pkg-price">
+              <span class="price-val">£184</span>
+              <span class="price-period">/ 1-year access</span>
+            </div>
+            <div class="pkg-save">Save £46.00 (Was £230)</div>
+          </div>
+          <div class="pkg-body">
+            <ul class="pkg-features">
+              <li><i class="fa-solid fa-check"></i> Core literacy and numeracy foundations</li>
+              <li><i class="fa-solid fa-check"></i> Phonics, basic spelling, and simple reading</li>
+              <li><i class="fa-solid fa-check"></i> Place value, times tables, and money calculations</li>
+              <li><i class="fa-solid fa-check"></i> Dyslexia-friendly visual pacing</li>
+            </ul>
+          </div>
+          <div class="pkg-footer">
+            <a href="https://wa.me/447564525425?text=Hello,%20I%20want%20to%20enrol%20in%20Entry%20Level%203%20Course" target="_blank" rel="noopener" class="btn-pkg">Enrol in Entry 3 (£184) →</a>
+          </div>
+        </div>
+
+        <!-- Digital Skills L1 -->
+        <div class="package-card">
+          <div class="pkg-header">
+            <h3>Digital Functional Skills (Level 1)</h3>
+            <p class="pkg-sub">Modern Workplace Essential Qualification</p>
+            <div class="pkg-price">
+              <span class="price-val">£99</span>
+              <span class="price-period">/ 1-year access</span>
+            </div>
+            <div class="pkg-save">Save £24.75 (Was £123.75)</div>
+          </div>
+          <div class="pkg-body">
+            <ul class="pkg-features">
+              <li><i class="fa-solid fa-check"></i> Digital devices, file management & operating systems</li>
+              <li><i class="fa-solid fa-check"></i> Word processing, spreadsheets & digital presentations</li>
+              <li><i class="fa-solid fa-check"></i> Online safety, data privacy & cybersecurity basics</li>
+              <li><i class="fa-solid fa-check"></i> Workplace digital communication (Email & Teams)</li>
+            </ul>
+          </div>
+          <div class="pkg-footer">
+            <a href="https://wa.me/447564525425?text=Hello,%20I%20want%20to%20enrol%20in%20Digital%20Skills" target="_blank" rel="noopener" class="btn-pkg">Enrol in Digital Skills (£99) →</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>  <!-- FOOTER -->
+  <footer class="mfs-footer" id="site-footer">
+    <div class="mfs-container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="mfs-brand" style="margin-bottom:16px;">
+            <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="mfs-brand-text">
+              <div class="mfs-brand-title" style="color:#ffffff;">MASTER<span>FUNCTIONALSKILLS</span></div>
+              <div class="mfs-brand-subtitle" style="color:#94a3b8;">Delivering Skills • Achieving Goals</div>
+            </div>
+          </div>
+          <p style="font-size:0.88rem; line-height:1.6; margin-bottom:16px;">
+            The UK's dedicated Functional Skills revision specialist. Providing realistic mock exams, step-by-step revision flashcards, diagnostic assessments, and 1-to-1 specialist tuition for Pearson Edexcel, City &amp; Guilds, and all major exam boards.
+          </p>
+          <div style="font-size:0.85rem; color:#cbd5e1;">
+            <p><a href="https://wa.me/447564525425" target="_blank" rel="noopener" style="color:#cbd5e1; text-decoration:none;"><i class="fa-brands fa-whatsapp" style="color:var(--accent); margin-right:8px;"></i> WhatsApp: +44 (0)7564 525425</a></p>
+            <p style="margin-top:6px;"><a href="contact-us.html" style="color:#cbd5e1; text-decoration:none;"><i class="fa-solid fa-envelope" style="color:var(--accent); margin-right:8px;"></i> Contact Tutor Team</a></p>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Maths Revision</h4>
+          <ul class="footer-links">
+            <li><a href="functional-skills-maths-level-2.html">Maths Level 2 Revision</a></li>
+            <li><a href="functional-skills-maths-level-1.html">Maths Level 1 Revision</a></li>
+            <li><a href="entry-level-3-maths.html">Entry Level 3 Maths</a></li>
+            <li><a href="pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="functional-skills-past-papers.html">Free Maths Past Papers</a></li>
+            <li><a href="exam-maths-l2.html">Book Level 2 Maths Exam</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>English &amp; Digital</h4>
+          <ul class="footer-links">
+            <li><a href="functional-skills-english-level-2.html">English Level 2 Revision</a></li>
+            <li><a href="functional-skills-english-level-1.html">English Level 1 Revision</a></li>
+            <li><a href="digital-functional-skills.html">Digital Skills Hub (L1 &amp; E3)</a></li>
+            <li><a href="digital-functional-skills-past-papers.html">DFS Past Papers &amp; Data Files</a></li>
+            <li><a href="functional-skills-past-papers.html?format=online#mock-finder">Online Exam Simulator</a></li>
+            <li><a href="exam-english-l2.html">Book Level 2 English Exam</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Student Support &amp; Tools</h4>
+          <ul class="footer-links">
+            <li><a href="tools.html" style="color:var(--accent); font-weight:700;"><i class="fa-solid fa-screwdriver-wrench" style="margin-right:6px;"></i>All Interactive Tools Hub</a></li>
+            <li><a href="pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="diagnostic-test.html">Diagnostic Skill Checker</a></li>
+            <li><a href="functional-skills-nets.html">3D Net Folding Tool</a></li>
+            <li><a href="digital-functional-skills-mock-exam.html">Pearson DFS Simulator</a></li>
+            <li><a href="revision-cards.html">Revision Cards &amp; Flashcards</a></li>
+            <li><a href="shop.html">Revision Books &amp; Study Packs</a></li>
+            <li><a href="tutors.html">1-to-1 Specialist Tuition</a></li>
+            <li><a href="exams.html">Book Official Online Exam</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Master Functional Skills. All rights reserved. Registered in England &amp; Wales. Ofqual Regulated Qualification Standards.</div>
+        <div style="display:flex; gap:16px; flex-wrap:wrap;">
+          <a href="index.html">Home</a>
+          <a href="tools.html" style="color:var(--accent); font-weight:700;">Tools</a>
+          <a href="functional-skills-past-papers.html">Past Papers</a>
+          <a href="revision-cards.html">Revision Cards</a>
+          <a href="shop.html">Study Shop</a>
+          <a href="tutors.html">Tutors</a>
+          <a href="contact-us.html">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function() {
+    // Vanilla accordion toggle support for exam questions and revision cards
+    document.querySelectorAll('[data-toggle="collapse"], [data-bs-toggle="collapse"], .card-header[data-target], .card-header[href]').forEach(function(btn) {
+      btn.style.cursor = "pointer";
+      btn.addEventListener("click", function(e) {
+        var targetId = this.getAttribute("data-target") || this.getAttribute("data-bs-target") || this.getAttribute("href");
+        if (targetId && targetId.startsWith("#")) {
+          var targetEl = document.querySelector(targetId);
+          if (targetEl) {
+            e.preventDefault();
+            var isHidden = targetEl.classList.contains("collapse") && !targetEl.classList.contains("show");
+            if (isHidden) {
+              targetEl.classList.remove("collapse");
+              targetEl.classList.add("show");
+              targetEl.style.display = "block";
+            } else {
+              targetEl.classList.add("collapse");
+              targetEl.classList.remove("show");
+              targetEl.style.display = "none";
+            }
+          }
+        }
+      });
+    });
+
+    // Smooth scroll for hash anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(function(anchor) {
+      anchor.addEventListener("click", function(e) {
+        var targetId = this.getAttribute("href").substring(1);
+        if (!targetId) return;
+        var targetEl = document.getElementById(targetId);
+        if (targetEl) {
+          e.preventDefault();
+          targetEl.scrollIntoView({ behavior: "smooth" });
+        }
+      });
+    });
+  });
+</script>
+
+  <!-- DYSLEXIA TINT ENGINE -->
+  <script src="assets/js/mfs-tint.js"></script>
+
+  <script>
+    function toggleDyslexiaMode() {
+      const isDys = document.body.classList.toggle('dyslexia-mode');
+      localStorage.setItem('mfs_dyslexia', isDys ? '1' : '0');
+      const btn = document.getElementById('dyslexiaToggle');
+      if (btn) btn.classList.toggle('active', isDys);
+    }
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme') || 'sapphire';
+      const next = current === 'emerald' ? 'sapphire' : 'emerald';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('mfs_theme', next);
+      const lbl = document.getElementById('themeLabel');
+      if (lbl) lbl.textContent = next === 'emerald' ? 'Emerald' : 'Sapphire';
+    }
+    (function() {
+      if (localStorage.getItem('mfs_dyslexia') === '1') {
+        document.body.classList.add('dyslexia-mode');
+        const btn = document.getElementById('dyslexiaToggle');
+        if (btn) btn.classList.add('active', true);
+      }
+      const th = localStorage.getItem('mfs_theme') || 'sapphire';
+      document.documentElement.setAttribute('data-theme', th);
+      const lbl = document.getElementById('themeLabel');
+      if (lbl) lbl.textContent = th === 'emerald' ? 'Emerald' : 'Sapphire';
+    })();
+  </script>
+
+</body>
+</html>

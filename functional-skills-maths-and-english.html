@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-theme="maths" data-tint="cream">
+<head>
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Functional Skills Maths and English | Master Functional Skills</title>
+  <meta name="description" content="Official Ofqual-regulated Functional Skills Maths and English Level 2 & Level 1 qualifications. GCSE Grade 4/C equivalent accepted for university, nursing, police, and apprenticeships.">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192x192.png">
+  <link rel="apple-touch-icon" href="assets/img/favicon-192x192.png">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="assets/css/mfs-theme.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    .comparison-table-wrap {
+      overflow-x: auto;
+      margin: 2.5rem 0;
+      background: #ffffff;
+      border-radius: 12px;
+      border: 1px solid var(--border-color, #e2e8f0);
+      box-shadow: 0 4px 6px -1px rgba(0,0,0,0.05);
+    }
+    .comp-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+    .comp-table th, .comp-table td {
+      padding: 16px 20px;
+      border-bottom: 1px solid #e2e8f0;
+      font-size: 0.95rem;
+    }
+    .comp-table th {
+      background: #f8fafc;
+      font-weight: 700;
+      color: #0f172a;
+    }
+    .comp-table th.highlight-col, .comp-table td.highlight-col {
+      background: rgba(14, 165, 233, 0.06);
+      font-weight: 600;
+      color: #0369a1;
+    }
+    .badge-check {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #059669;
+      font-weight: 600;
+    }
+    .badge-cross {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #dc2626;
+      font-weight: 500;
+    }
+    .hub-grid-3 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin-top: 2rem;
+    }
+    .hub-feature-box {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 24px;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .hub-feature-box:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 10px 20px -3px rgba(0,0,0,0.08);
+      border-color: #0284c7;
+    }
+    .hub-feature-box .icon-wrap {
+      width: 52px;
+      height: 52px;
+      border-radius: 10px;
+      background: #e0f2fe;
+      color: #0284c7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.5rem;
+      margin-bottom: 16px;
+    }
+    .hub-feature-box h3 {
+      font-size: 1.25rem;
+      margin-bottom: 10px;
+      color: #0f172a;
+    }
+    .hub-feature-box p {
+      color: #475569;
+      font-size: 0.95rem;
+      line-height: 1.55;
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+    .faq-list {
+      max-width: 860px;
+      margin: 2rem auto;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .faq-item {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 10px;
+      overflow: hidden;
+    }
+    .faq-question {
+      padding: 18px 20px;
+      font-weight: 600;
+      font-size: 1.05rem;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      user-select: none;
+    }
+    .faq-question:hover {
+      background: #f8fafc;
+    }
+    .faq-answer {
+      padding: 0 20px 18px 20px;
+      color: #475569;
+      font-size: 0.95rem;
+      line-height: 1.6;
+    }
+  </style>
+</head>
+<body>
+
+    <!-- TOP TRUST BAR WITH ACCESSIBILITY & CONTACT -->
+  <div class="mfs-top-bar">
+    <div class="mfs-container mfs-top-bar-inner">
+      <div class="top-trust-items">
+        <span class="top-trust-item"><i class="fa-solid fa-building-columns"></i> Pearson Edexcel &amp; City &amp; Guilds Aligned</span>
+      </div>
+      <div class="top-contacts">
+        <div class="mfs-access-bar">
+          <!-- DYSLEXIA BACKGROUND TINT PICKER -->
+          <div class="mfs-tint-dropdown-wrap">
+            <button type="button" id="tintToggle" class="btn-tint-toggle" onclick="toggleTintMenu(event)" title="Change dyslexia background tint">
+              <span class="tint-swatch-indicator" id="tintCurrentSwatch"></span>
+              <span id="tintLabel">Cream Tint</span>
+              <i class="fa-solid fa-chevron-down" style="font-size:0.62rem; opacity:0.75; margin-left:2px;"></i>
+            </button>
+            <div id="tintMenu" class="tint-picker-menu">
+              <div class="tint-picker-title"><i class="fa-solid fa-glasses"></i> Dyslexia Reading Tint</div>
+              <button type="button" class="tint-option-btn active" data-tint="cream" onclick="setSiteTint('cream', event)">
+                <span class="swatch swatch-cream"></span>
+                <span class="tint-name">Cream <small class="tint-badge-def">Default</small></span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="peach" onclick="setSiteTint('peach', event)">
+                <span class="swatch swatch-peach"></span>
+                <span class="tint-name">Soft Peach</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="cool" onclick="setSiteTint('cool', event)">
+                <span class="swatch swatch-cool"></span>
+                <span class="tint-name">Cool Mist</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="sage" onclick="setSiteTint('sage', event)">
+                <span class="swatch swatch-sage"></span>
+                <span class="tint-name">Soft Sage</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <div class="tint-divider"></div>
+              <button type="button" class="tint-option-btn" data-tint="none" onclick="setSiteTint('none', event)">
+                <span class="swatch swatch-none"></span>
+                <span class="tint-name">No Tint (White)</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+            </div>
+          </div>
+          <button id="dyslexiaToggle" class="btn-dyslexia-toggle" onclick="toggleDyslexiaMode()" title="Toggle Dyslexia High-Readability Mode">
+            <i class="fa-solid fa-universal-access"></i> Dyslexia
+          </button>
+          <button id="themeToggle" class="mfs-theme-pill" onclick="toggleTheme()" title="Switch Palette: Sapphire vs Emerald">
+            <i class="fa-solid fa-palette"></i> <span id="themeLabel">Sapphire</span>
+          </button>
+        </div>
+        <a href="contact-us.html" class="top-contact-link"><i class="fa-solid fa-envelope"></i> <strong>Contact Us</strong></a>
+      </div>
+    </div>
+  </div>  <!-- MAIN NAVIGATION -->
+                                  <header class="mfs-navbar">
+    <div class="revision-page-wrapper mfs-navbar-inner">
+      <a href="index.html" class="mfs-brand">
+        <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div class="mfs-brand-text">
+          <div class="mfs-brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
+          <div class="mfs-brand-subtitle">Delivering Skills • Achieving Goals</div>
+        </div>
+      </a>
+
+      <nav class="mfs-nav-wrapper">
+        <ul class="mfs-nav-menu">
+          <!-- 1. SUBJECTS (VISUAL MEGA-MENU) -->
+          <li class="mfs-nav-item">
+            <a href="courses.html" class="mfs-nav-link">
+              <i class="fa-solid fa-book-open-reader" style="color:#0284c7; margin-right:5px;"></i> Subjects <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-revision-hub">
+              <div class="mfs-revision-grid">
+                <!-- Maths Column -->
+                <div class="mfs-revision-col mfs-revision-col-maths">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-calculator"></i> Maths Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="functional-skills-maths-level-2.html" class="mfs-dropdown-item">Maths Level 2</a>
+                    <a href="functional-skills-maths-level-1.html" class="mfs-dropdown-item">Maths Level 1</a>
+                    <a href="entry-level-3-maths.html" class="mfs-dropdown-item">Entry Level 3 Maths</a>
+                  </div>
+                </div>
+                <!-- English Column -->
+                <div class="mfs-revision-col mfs-revision-col-english">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-pen-nib"></i> English Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="functional-skills-english-level-2.html" class="mfs-dropdown-item">English Level 2</a>
+                    <a href="functional-skills-english-level-1.html" class="mfs-dropdown-item">English Level 1</a>
+                  </div>
+                </div>
+                <!-- Digital Skills Column -->
+                <div class="mfs-revision-col mfs-revision-col-digital">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-laptop-code"></i> Digital Skills</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="digital-functional-skills.html" class="mfs-dropdown-item">Digital Skills Hub</a>
+                    <a href="digital-functional-skills-mock-exam.html" class="mfs-dropdown-item">Pearson Mock Exam</a>
+                    <a href="digital-functional-skills-past-papers.html" class="mfs-dropdown-item">Past Papers &amp; Files</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- 2. PAST PAPERS & MOCKS (DIRECT ACCESS) -->
+          <li class="mfs-nav-item">
+            <a href="functional-skills-past-papers.html" class="mfs-nav-link">
+              <i class="fa-regular fa-file-lines" style="color:#0284c7; margin-right:5px;"></i> Past Papers &amp; Mocks
+            </a>
+          </li>
+
+          <!-- 2b. WORKSHEETS DIRECTORY (CORBETT STYLE DUAL ENGINE) -->
+          <li class="mfs-nav-item">
+            <a href="worksheets.html" class="mfs-nav-link">
+              <i class="fa-solid fa-layer-group" style="color:#0284c7; margin-right:5px;"></i> Worksheets Hub
+            </a>
+          </li>
+
+          <!-- 3. FREE TOOLS (COMPACT DROPDOWN) -->
+          <li class="mfs-nav-item">
+            <a href="tools.html" class="mfs-nav-link">
+              <i class="fa-solid fa-screwdriver-wrench" style="color:#0284c7; margin-right:5px;"></i> Free Tools <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-compact">
+              <a href="tools.html" class="mfs-dropdown-item" style="font-weight:700; color:var(--accent);"><i class="fa-solid fa-layer-group" style="font-size:0.85rem; margin-right:6px;"></i> All Free Tools &amp; Simulators &rarr;</a>
+              <div class="mfs-dropdown-divider" style="margin:4px 0; border-top:1px solid #e2e8f0;"></div>
+              <a href="pass-mark-calculator.html" class="mfs-dropdown-item"><i class="fa-solid fa-calculator" style="color:var(--accent); font-size:0.85rem; margin-right:6px;"></i> Pass Mark Calculator</a>
+              <a href="diagnostic-test.html" class="mfs-dropdown-item"><i class="fa-solid fa-chart-pie" style="color:#059669; font-size:0.85rem; margin-right:6px;"></i> Diagnostic Skill Checker</a>
+              <a href="functional-skills-nets.html" class="mfs-dropdown-item"><i class="fa-solid fa-cube" style="color:#0284c7; font-size:0.85rem; margin-right:6px;"></i> 3D Net Folding Tool</a>
+            </div>
+          </li>
+
+          <!-- 4. REVISION CARDS -->
+          <li class="mfs-nav-item">
+            <a href="revision-cards.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-layer-group" style="color:#d97706; margin-right:5px;"></i> Revision Cards
+            </a>
+          </li>
+
+          <!-- 5. SHOP -->
+          <li class="mfs-nav-item">
+            <a href="shop.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-basket-shopping" style="color:#d97706; margin-right:5px;"></i> Shop
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- 6. BOOK EXAM ACTION BUTTON -->
+      <div class="mfs-nav-actions">
+        <a href="exams.html" class="btn-nav-exam">
+          <i class="fa-solid fa-calendar-check"></i> Book Exam
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- PROMOTIONAL SALE ACCENT BANNER -->
+  <div class="mfs-promo-banner"><div class="mfs-container mfs-promo-inner"></div></div>
+
+
+  <!-- HERO SECTION -->
+  <section class="mfs-hero-section">
+    <div class="mfs-container mfs-hero-grid">
+      <div class="hero-content">
+        <div class="hero-badge"><i class="fa-solid fa-graduation-cap"></i> Ofqual Regulated GCSE Grade 4/C Equivalent</div>
+        <h1>Functional Skills <span>Maths and English</span></h1>
+        <p class="hero-description">
+          The UK's trusted pathway to GCSE equivalence. Secure the qualifications you need for university entry, nursing degrees, teaching credentials, police recruitment, and apprenticeship gateway completion without taking 2-year school GCSEs.
+        </p>
+
+        <div class="hero-reviews-bar">
+          <div class="star-rating">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star-half-stroke"></i>
+          </div>
+          <div class="reviews-stat">
+            Average rating: <strong>4.9 / 5</strong> from <strong>1,420+ Verified Reviews</strong>
+          </div>
+        </div>
+
+        
+
+        <div class="hero-buttons">
+          <a href="functional-skills-courses.html" class="btn-hero-accent"><i class="fa-solid fa-book-open"></i> Explore Courses</a>
+          <a href="functional-skills-exam.html" class="btn-hero-navy"><i class="fa-solid fa-laptop"></i> Book Online Exam</a>
+          <a href="diagnostic-test.html" class="btn-hero-outline"><i class="fa-solid fa-chart-line"></i> Free Diagnostic</a>
+        </div>
+      </div>
+
+      <div class="hero-visual">
+        <div class="hero-stat-card">
+          <div class="stat-badge"><i class="fa-solid fa-award"></i> Recognized Nationwide</div>
+          <div class="stat-main">Level 2 = GCSE Grade C/4</div>
+          <p class="stat-sub">Valid for UCAS, NHS England, Department for Education, and UK employers.</p>
+          <div class="stat-pillars">
+            <div class="pillar-item">
+              <i class="fa-solid fa-calculator" style="color:#0284c7;"></i>
+              <div>
+                <strong>Maths L2 &amp; L1</strong>
+                <span>Non-calc &amp; Calculator</span>
+              </div>
+            </div>
+            <div class="pillar-item">
+              <i class="fa-solid fa-feather-pointed" style="color:#059669;"></i>
+              <div>
+                <strong>English L2 &amp; L1</strong>
+                <span>Reading, Writing &amp; SLC</span>
+              </div>
+            </div>
+            <div class="pillar-item">
+              <i class="fa-solid fa-bolt" style="color:#eab308;"></i>
+              <div>
+                <strong>Fast Track Results</strong>
+                <span>6 to 10 Working Days</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- KEY PATHWAYS SECTION -->
+  <section class="mfs-section bg-light" id="pathways">
+    <div class="mfs-container">
+      <div class="section-header-center">
+        <span class="badge-subtitle">Why Take Functional Skills</span>
+        <h2>Open Doors to Higher Education &amp; Career Growth</h2>
+        <p>Functional Skills qualifications are designed for real-world application, offering a fast, stress-free route to meeting UK gateway criteria.</p>
+      </div>
+
+      <div class="hub-grid-3">
+        <!-- Card 1 -->
+        <div class="hub-feature-box">
+          <div>
+            <div class="icon-wrap"><i class="fa-solid fa-user-doctor"></i></div>
+            <h3>University &amp; Healthcare</h3>
+            <p>Meet strict university entry requirements for BSc Nursing, Midwifery, Social Work, Paramedic Science, and Primary Teaching degrees across UK universities.</p>
+          </div>
+          <a href="functional-skills-exam.html" class="btn-card-action">Book University Exam →</a>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="hub-feature-box">
+          <div>
+            <div class="icon-wrap" style="background:#ecfdf5; color:#059669;"><i class="fa-solid fa-briefcase"></i></div>
+            <h3>Career Progression</h3>
+            <p>Boost your CV and qualify for promotions in the NHS (Agenda for Change Bands 3-7), Police Constable Entry Programme (PCEP), Civil Service, and corporate roles.</p>
+          </div>
+          <a href="functional-skills-courses.html" class="btn-card-action">View Online Courses →</a>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="hub-feature-box">
+          <div>
+            <div class="icon-wrap" style="background:#fef3c7; color:#d97706;"><i class="fa-solid fa-certificate"></i></div>
+            <h3>Apprenticeship Gateways</h3>
+            <p>Most UK Level 3, 4, and Degree Apprenticeships require Level 2 in Maths and English before you can reach the End-Point Assessment (EPA) gateway.</p>
+          </div>
+          <a href="diagnostic-test.html" class="btn-card-action">Take Free Diagnostic →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUALIFICATION COMPARISON -->
+  <section class="mfs-section">
+    <div class="mfs-container">
+      <div class="section-header-center">
+        <span class="badge-subtitle">Comparison</span>
+        <h2>Functional Skills vs Traditional GCSE</h2>
+        <p>Why hundreds of thousands of adult learners choose Functional Skills over retaking school GCSEs.</p>
+      </div>
+
+      <div class="comparison-table-wrap">
+        <table class="comp-table">
+          <thead>
+            <tr>
+              <th style="width:30%;">Feature</th>
+              <th class="highlight-col" style="width:35%;">Functional Skills Level 2 (MFS)</th>
+              <th style="width:35%;">Traditional GCSE (Retake)</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><strong>GCSE Grade Equivalent</strong></td>
+              <td class="highlight-col"><span class="badge-check"><i class="fa-solid fa-check"></i> Official Grade C / Grade 4 Equivalent</span></td>
+              <td>Grade 4 (Standard Pass) or above</td>
+            </tr>
+            <tr>
+              <td><strong>Typical Study Time</strong></td>
+              <td class="highlight-col"><span class="badge-check"><i class="fa-solid fa-check"></i> 2 to 8 weeks (Self-paced)</span></td>
+              <td><span class="badge-cross"><i class="fa-solid fa-xmark"></i> 9 months to 2 academic years</span></td>
+            </tr>
+            <tr>
+              <td><strong>Exam Availability</strong></td>
+              <td class="highlight-col"><span class="badge-check"><i class="fa-solid fa-check"></i> Year-round, Monday to Saturday on-demand</span></td>
+              <td><span class="badge-cross"><i class="fa-solid fa-xmark"></i> Fixed dates only (May/June &amp; Nov)</span></td>
+            </tr>
+            <tr>
+              <td><strong>Exam Location</strong></td>
+              <td class="highlight-col"><span class="badge-check"><i class="fa-solid fa-check"></i> Online from home (remote invigilation)</span></td>
+              <td><span class="badge-cross"><i class="fa-solid fa-xmark"></i> Physical exam centre attendance</span></td>
+            </tr>
+            <tr>
+              <td><strong>Results Turnaround</strong></td>
+              <td class="highlight-col"><span class="badge-check"><i class="fa-solid fa-check"></i> 6 to 10 working days</span></td>
+              <td><span class="badge-cross"><i class="fa-solid fa-xmark"></i> 8 to 10 weeks (August results day)</span></td>
+            </tr>
+            <tr>
+              <td><strong>Content Focus</strong></td>
+              <td class="highlight-col"><span class="badge-check"><i class="fa-solid fa-check"></i> Practical everyday workplace maths &amp; communication</span></td>
+              <td>Abstract academic literature &amp; theoretical algebra</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUICK NAVIGATION TO REVISION DIRECTORIES -->
+  <section class="mfs-section bg-light">
+    <div class="mfs-container">
+      <div class="section-header-center">
+        <span class="badge-subtitle">Learning Hubs</span>
+        <h2>Explore Our Complete Subject Directories</h2>
+        <p>Each directory contains comprehensive curriculum tables, practice worksheets, answer keys, video masterclasses, and exam-level topic tests.</p>
+      </div>
+
+      <div class="hub-grid-3">
+        <!-- Maths L2 -->
+        <div class="hub-feature-box">
+          <div>
+            <div class="icon-wrap"><i class="fa-solid fa-calculator"></i></div>
+            <h3>Maths Level 2</h3>
+            <p>39 structured topics covering fractions, decimals, percentages, ratio, area, perimeter, volume, probability, mean, median, range, and scatter diagrams.</p>
+          </div>
+          <a href="functional-skills-maths-level-2.html" class="btn-card-action">Go to Maths Level 2 Directory →</a>
+        </div>
+
+        <!-- English L2 -->
+        <div class="hub-feature-box">
+          <div>
+            <div class="icon-wrap" style="background:#ecfdf5; color:#059669;"><i class="fa-solid fa-pen-nib"></i></div>
+            <h3>English Level 2</h3>
+            <p>35 topics covering Reading analysis, organizational devices, biases, tone, practical writing formats (articles, speeches, reports, emails), and punctuation rules.</p>
+          </div>
+          <a href="functional-skills-english-level-2.html" class="btn-card-action">Go to English Level 2 Directory →</a>
+        </div>
+
+        <!-- Maths L1 -->
+        <div class="hub-feature-box">
+          <div>
+            <div class="icon-wrap" style="background:#fef3c7; color:#d97706;"><i class="fa-solid fa-square-root-variable"></i></div>
+            <h3>Maths Level 1</h3>
+            <p>38 core foundation topics to build fundamental confidence before progressing to Level 2. Full worked examples and step-by-step guidance.</p>
+          </div>
+          <a href="functional-skills-maths-level-1.html" class="btn-card-action">Go to Maths Level 1 Directory →</a>
+        </div>
+
+        <!-- English L1 -->
+        <div class="hub-feature-box">
+          <div>
+            <div class="icon-wrap" style="background:#f3e8ff; color:#7c3aed;"><i class="fa-solid fa-book-open-reader"></i></div>
+            <h3>English Level 1</h3>
+            <p>33 foundation modules covering sentence structures, spelling rules, punctuation conventions, format features, and reading comprehension techniques.</p>
+          </div>
+          <a href="functional-skills-english-level-1.html" class="btn-card-action">Go to English Level 1 Directory →</a>
+        </div>
+
+        <!-- Entry 3 Maths -->
+        <div class="hub-feature-box">
+          <div>
+            <div class="icon-wrap" style="background:#e0f2fe; color:#0369a1;"><i class="fa-solid fa-shapes"></i></div>
+            <h3>Entry Level 3 Maths</h3>
+            <p>24 confidence-building modules covering place value, rounding, four operations, money calculations, simple time, units, and simple charts.</p>
+          </div>
+          <a href="entry-level-3-maths.html" class="btn-card-action">Go to Entry 3 Maths Directory →</a>
+        </div>
+
+        <!-- Digital Skills -->
+        <div class="hub-feature-box">
+          <div>
+            <div class="icon-wrap" style="background:#ffe4e6; color:#e11d48;"><i class="fa-solid fa-laptop-code"></i></div>
+            <h3>Digital Functional Skills</h3>
+            <p>Essential digital skills for life and work: online safety, device configuration, searching the internet, creating digital documents, and communication tools.</p>
+          </div>
+          <a href="digital-functional-skills.html" class="btn-card-action">Go to Digital Skills Hub →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQS -->
+  <section class="mfs-section">
+    <div class="mfs-container">
+      <div class="section-header-center">
+        <span class="badge-subtitle">Common Questions</span>
+        <h2>Frequently Asked Questions</h2>
+        <p>Everything you need to know about Functional Skills Maths and English.</p>
+      </div>
+
+      <div class="faq-list">
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Is Functional Skills Level 2 genuinely equivalent to a GCSE?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            Yes. Functional Skills Level 2 is officially recognised by Ofqual (the Office of Qualifications and Examinations Regulation) as equivalent to a GCSE grade 4 or grade C. It is accepted by UK universities, UCAS, NHS trusts, police forces, colleges, and national employers.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>Can I take both Maths and English exams online from home?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            Yes. Both Maths and English exams can be sat online from home using secure remote invigilation. All you need is a computer or laptop with a working webcam, microphone, and a stable broadband internet connection.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>How fast can I get my official certificate?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            Official exam results are released within 6 to 10 working days of sitting your exam. Once results are confirmed, your official e-certificate and printed certificate are dispatched promptly.
+          </div>
+        </div>
+
+        <div class="faq-item">
+          <div class="faq-question">
+            <span>What if I have dyslexia or require extra time?</span>
+            <i class="fa-solid fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            Our platform features built-in dyslexia tints (Cream, Soft Peach, Cool Mist, Soft Sage) and dyslexia-friendly typography. If you have a formal diagnosis or evidence of special educational needs, we can arrange reasonable adjustments (e.g. 25% extra time) with the awarding exam board.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>  <!-- FOOTER -->
+  <footer class="mfs-footer" id="site-footer">
+    <div class="mfs-container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="mfs-brand" style="margin-bottom:16px;">
+            <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="mfs-brand-text">
+              <div class="mfs-brand-title" style="color:#ffffff;">MASTER<span>FUNCTIONALSKILLS</span></div>
+              <div class="mfs-brand-subtitle" style="color:#94a3b8;">Delivering Skills • Achieving Goals</div>
+            </div>
+          </div>
+          <p style="font-size:0.88rem; line-height:1.6; margin-bottom:16px;">
+            The UK's dedicated Functional Skills revision specialist. Providing realistic mock exams, step-by-step revision flashcards, diagnostic assessments, and 1-to-1 specialist tuition for Pearson Edexcel, City &amp; Guilds, and all major exam boards.
+          </p>
+          <div style="font-size:0.85rem; color:#cbd5e1;">
+            <p><a href="https://wa.me/447564525425" target="_blank" rel="noopener" style="color:#cbd5e1; text-decoration:none;"><i class="fa-brands fa-whatsapp" style="color:var(--accent); margin-right:8px;"></i> WhatsApp: +44 (0)7564 525425</a></p>
+            <p style="margin-top:6px;"><a href="contact-us.html" style="color:#cbd5e1; text-decoration:none;"><i class="fa-solid fa-envelope" style="color:var(--accent); margin-right:8px;"></i> Contact Tutor Team</a></p>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Maths Revision</h4>
+          <ul class="footer-links">
+            <li><a href="functional-skills-maths-level-2.html">Maths Level 2 Revision</a></li>
+            <li><a href="functional-skills-maths-level-1.html">Maths Level 1 Revision</a></li>
+            <li><a href="entry-level-3-maths.html">Entry Level 3 Maths</a></li>
+            <li><a href="pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="functional-skills-past-papers.html">Free Maths Past Papers</a></li>
+            <li><a href="exam-maths-l2.html">Book Level 2 Maths Exam</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>English &amp; Digital</h4>
+          <ul class="footer-links">
+            <li><a href="functional-skills-english-level-2.html">English Level 2 Revision</a></li>
+            <li><a href="functional-skills-english-level-1.html">English Level 1 Revision</a></li>
+            <li><a href="digital-functional-skills.html">Digital Skills Hub (L1 &amp; E3)</a></li>
+            <li><a href="digital-functional-skills-past-papers.html">DFS Past Papers &amp; Data Files</a></li>
+            <li><a href="functional-skills-past-papers.html?format=online#mock-finder">Online Exam Simulator</a></li>
+            <li><a href="exam-english-l2.html">Book Level 2 English Exam</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Student Support &amp; Tools</h4>
+          <ul class="footer-links">
+            <li><a href="tools.html" style="color:var(--accent); font-weight:700;"><i class="fa-solid fa-screwdriver-wrench" style="margin-right:6px;"></i>All Interactive Tools Hub</a></li>
+            <li><a href="pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="diagnostic-test.html">Diagnostic Skill Checker</a></li>
+            <li><a href="functional-skills-nets.html">3D Net Folding Tool</a></li>
+            <li><a href="digital-functional-skills-mock-exam.html">Pearson DFS Simulator</a></li>
+            <li><a href="revision-cards.html">Revision Cards &amp; Flashcards</a></li>
+            <li><a href="shop.html">Revision Books &amp; Study Packs</a></li>
+            <li><a href="tutors.html">1-to-1 Specialist Tuition</a></li>
+            <li><a href="exams.html">Book Official Online Exam</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Master Functional Skills. All rights reserved. Registered in England &amp; Wales. Ofqual Regulated Qualification Standards.</div>
+        <div style="display:flex; gap:16px; flex-wrap:wrap;">
+          <a href="index.html">Home</a>
+          <a href="tools.html" style="color:var(--accent); font-weight:700;">Tools</a>
+          <a href="functional-skills-past-papers.html">Past Papers</a>
+          <a href="revision-cards.html">Revision Cards</a>
+          <a href="shop.html">Study Shop</a>
+          <a href="tutors.html">Tutors</a>
+          <a href="contact-us.html">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- DYSLEXIA TINT ENGINE -->
+  <script src="assets/js/mfs-tint.js"></script>
+
+  <!-- THEME & DYSLEXIA MODE ENGINE -->
+  <script>
+    function toggleDyslexiaMode() {
+      const isDys = document.body.classList.toggle('dyslexia-mode');
+      localStorage.setItem('mfs_dyslexia', isDys ? '1' : '0');
+      const btn = document.getElementById('dyslexiaToggle');
+      if (btn) btn.classList.toggle('active', isDys);
+    }
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme') || 'sapphire';
+      const next = current === 'emerald' ? 'sapphire' : 'emerald';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('mfs_theme', next);
+      const lbl = document.getElementById('themeLabel');
+      if (lbl) lbl.textContent = next === 'emerald' ? 'Emerald' : 'Sapphire';
+    }
+    (function() {
+      if (localStorage.getItem('mfs_dyslexia') === '1') {
+        document.body.classList.add('dyslexia-mode');
+        const btn = document.getElementById('dyslexiaToggle');
+        if (btn) btn.classList.add('active', true);
+      }
+      const th = localStorage.getItem('mfs_theme') || 'sapphire';
+      document.documentElement.setAttribute('data-theme', th);
+      const lbl = document.getElementById('themeLabel');
+      if (lbl) lbl.textContent = th === 'emerald' ? 'Emerald' : 'Sapphire';
+    })();
+  </script>
+
+        </body>
+</html>

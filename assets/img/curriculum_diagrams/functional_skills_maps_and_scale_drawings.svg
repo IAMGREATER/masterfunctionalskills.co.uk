@@ -1,0 +1,37 @@
+<svg viewBox="0 0 520 240" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:520px; height:auto; font-family:'Plus Jakarta Sans', system-ui, sans-serif;">
+  <rect x="2" y="2" width="516" height="236" rx="14" fill="#ffffff" stroke="#bae6fd" stroke-width="2"/>
+  <rect x="18" y="14" width="260" height="26" rx="13" fill="#e0f2fe"/>
+  <text x="28" y="32" font-size="12" font-weight="800" fill="#0369a1">✎ VISUAL MODEL: 4-QUADRANT GRID</text>
+  <text x="290" y="32" font-size="13" font-weight="700" fill="#0f172a">(x, y) Along Corridor, Up Stairs</text>
+
+  <!-- Coordinate Grid -->
+  <g transform="translate(40, 50)">
+    <!-- Axes -->
+    <line x1="0" y1="85" x2="180" y2="85" stroke="#0f172a" stroke-width="2.5"/>
+    <line x1="90" y1="0" x2="90" y2="170" stroke="#0f172a" stroke-width="2.5"/>
+    <text x="175" y="80" font-size="12" font-weight="800" fill="#0f172a">x</text>
+    <text x="95" y="12" font-size="12" font-weight="800" fill="#0f172a">y</text>
+    <text x="80" y="98" font-size="10" font-weight="700" fill="#64748b">0</text>
+
+    <!-- Point A (3, 2) -->
+    <circle cx="150" cy="45" r="5" fill="#0284c7"/>
+    <text x="156" y="42" font-size="11" font-weight="800" fill="#0369a1">A(3, 2)</text>
+
+    <!-- Point B (-2, 3) -->
+    <circle cx="50" cy="25" r="5" fill="#16a34a"/>
+    <text x="10" y="25" font-size="11" font-weight="800" fill="#15803d">B(−2, 3)</text>
+
+    <!-- Point C (-3, -2) -->
+    <circle cx="30" cy="125" r="5" fill="#e11d48"/>
+    <text x="5" y="142" font-size="11" font-weight="800" fill="#9f1239">C(−3, −2)</text>
+  </g>
+
+  <!-- Explanation box on right -->
+  <rect x="250" y="55" width="245" height="165" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+  <text x="265" y="80" font-size="12" font-weight="800" fill="#0369a1">GOLDEN COORDINATE RULES:</text>
+  <text x="265" y="105" font-size="11.5" fill="#1e293b">1. Coordinates are written <tspan font-weight="800">(x, y)</tspan>.</text>
+  <text x="265" y="128" font-size="11.5" fill="#1e293b">2. First number (<tspan font-weight="800">x</tspan>): Go left/right along corridor.</text>
+  <text x="265" y="151" font-size="11.5" fill="#1e293b">3. Second number (<tspan font-weight="800">y</tspan>): Go up/down the stairs.</text>
+  <rect x="265" y="170" width="215" height="36" rx="4" fill="#dcfce7"/>
+  <text x="275" y="192" font-size="11" font-weight="700" fill="#15803d">Origin (0,0) is where axes cross ✓</text>
+</svg>

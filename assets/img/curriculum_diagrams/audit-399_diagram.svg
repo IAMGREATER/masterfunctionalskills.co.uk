@@ -1,0 +1,31 @@
+<svg viewBox="0 0 460 270" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:460px; height:auto; font-family:'Plus Jakarta Sans', sans-serif;">
+  <rect x="2" y="2" width="456" height="266" rx="10" fill="#ffffff" stroke="#94a3b8" stroke-width="2"/>
+  
+  <!-- Sender Address block (Top Right, Spacious) -->
+  <rect x="260" y="14" width="180" height="46" rx="6" fill="#f8fafc" stroke="#94a3b8" stroke-dasharray="4 3"/>
+  <text x="272" y="32" font-size="10" font-weight="800" fill="#0f172a">Sender Address &amp; Date</text>
+  <text x="272" y="48" font-size="9" fill="#64748b">Right-aligned, top right corner</text>
+  
+  <!-- Recipient Address block (Left Aligned, Lower than date) -->
+  <rect x="20" y="45" width="180" height="42" rx="6" fill="#f8fafc" stroke="#94a3b8" stroke-dasharray="4 3"/>
+  <text x="32" y="62" font-size="10" font-weight="800" fill="#0f172a">Recipient Name &amp; Address</text>
+  <text x="32" y="77" font-size="9" fill="#64748b">Left-aligned, lower than date</text>
+  
+  <!-- Salutation -->
+  <rect x="20" y="98" width="200" height="22" rx="4" fill="#e0f2fe"/>
+  <text x="30" y="113" font-size="10.5" font-weight="800" fill="#0369a1">Dear Mr Davies, / Dear Sir/Madam,</text>
+  
+  <!-- Subject / Reference Line -->
+  <rect x="20" y="128" width="280" height="22" rx="4" fill="#fef3c7"/>
+  <text x="30" y="143" font-size="10" font-weight="900" fill="#92400e">RE: FORMAL COMPLAINT - REF #8492</text>
+  
+  <!-- Body Paragraph lines (Spacious) -->
+  <rect x="20" y="158" width="420" height="9" rx="2" fill="#e2e8f0"/>
+  <rect x="20" y="172" width="400" height="9" rx="2" fill="#e2e8f0"/>
+  <rect x="20" y="186" width="410" height="9" rx="2" fill="#e2e8f0"/>
+  
+  <!-- Sign-off valediction -->
+  <rect x="20" y="206" width="220" height="48" rx="6" fill="#dcfce7" stroke="#86efac"/>
+  <text x="30" y="224" font-size="10.5" font-weight="800" fill="#166534">Yours sincerely, / Yours faithfully,</text>
+  <text x="30" y="242" font-size="9.5" font-weight="700" fill="#15803d">[Full Candidate Name &amp; Job Title]</text>
+</svg>

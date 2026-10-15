@@ -1,0 +1,1079 @@
+#!/usr/bin/env python3
+"""
+Generate modern, accessible, dyslexia-friendly Master Functional Skills Course Pages:
+- course-maths-l2.html (Functional Skills Maths Level 2 Course)
+- course-english-l2.html (Functional Skills English Level 2 Course)
+Replaces the legacy WordPress/PFS scrape files.
+"""
+
+import os
+
+HEADER_HTML = """  <!-- TOP TRUST BAR -->
+  <div class="mfs-top-bar">
+    <div class="mfs-container mfs-top-bar-inner">
+      <div class="top-trust-items">
+        <span class="top-trust-item"><i class="fa-solid fa-building-columns"></i> Pearson Edexcel & City & Guilds Aligned</span>
+      </div>
+      <div class="top-contacts">
+        <div class="mfs-access-bar">
+          <!-- DYSLEXIA BACKGROUND TINT PICKER -->
+          <div class="mfs-tint-dropdown-wrap">
+            <button type="button" id="tintToggle" class="btn-tint-toggle" onclick="toggleTintMenu(event)" title="Change dyslexia background tint or remove tint">
+              <span class="tint-swatch-indicator" id="tintCurrentSwatch"></span>
+              <span id="tintLabel">Cream Tint</span>
+              <i class="fa-solid fa-chevron-down" style="font-size:0.62rem; opacity:0.75; margin-left:2px;"></i>
+            </button>
+            <div id="tintMenu" class="tint-picker-menu">
+              <div class="tint-picker-title"><i class="fa-solid fa-glasses"></i> Dyslexia Reading Tint</div>
+              <button type="button" class="tint-option-btn active" data-tint="cream" onclick="setSiteTint('cream', event)">
+                <span class="swatch swatch-cream"></span>
+                <span class="tint-name">Cream <small class="tint-badge-def">Default</small></span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="peach" onclick="setSiteTint('peach', event)">
+                <span class="swatch swatch-peach"></span>
+                <span class="tint-name">Soft Peach</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="cool" onclick="setSiteTint('cool', event)">
+                <span class="swatch swatch-cool"></span>
+                <span class="tint-name">Cool Mist</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="sage" onclick="setSiteTint('sage', event)">
+                <span class="swatch swatch-sage"></span>
+                <span class="tint-name">Soft Sage</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <div class="tint-divider"></div>
+              <button type="button" class="tint-option-btn" data-tint="none" onclick="setSiteTint('none', event)">
+                <span class="swatch swatch-none"></span>
+                <span class="tint-name">No Tint (White)</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+            </div>
+          </div>
+          <button type="button" class="btn-dyslexia-toggle" onclick="openGlobalSearch()" title="Search 174 topics & tools (Ctrl+K)">
+            <i class="fa-solid fa-magnifying-glass"></i> Search
+          </button>
+          <button id="dyslexiaToggle" class="btn-dyslexia-toggle" onclick="toggleDyslexiaMode()" title="Toggle Dyslexia High-Readability Mode">
+            <i class="fa-solid fa-universal-access"></i> Dyslexia
+          </button>
+          <button id="themeToggle" class="mfs-theme-pill" onclick="toggleTheme()" title="Switch Palette: Sapphire vs Emerald">
+            <i class="fa-solid fa-palette"></i> <span id="themeLabel">Sapphire</span>
+          </button>
+        </div>
+        <a href="tel:020XXXXXXXX" class="top-contact-link"><i class="fa-solid fa-phone"></i> <strong>020 XXXX XXXX</strong></a>
+        <a href="https://wa.me/447564525425" target="_blank" rel="noopener" class="top-contact-link"><i class="fa-brands fa-whatsapp"></i> <strong>+44 (0)7564 525425</strong></a>
+        <a href="https://sterlingenglish.org" target="_blank" rel="noopener" class="top-badge-gold">1-to-1 Specialist Tuition ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN NAVIGATION -->
+  <!-- MAIN NAVIGATION -->
+  <header class="mfs-navbar">
+    <div class="revision-page-wrapper mfs-navbar-inner">
+      <a href="index.html" class="mfs-brand">
+        <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div class="mfs-brand-text">
+          <div class="mfs-brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
+          <div class="mfs-brand-subtitle">Delivering Skills • Achieving Goals</div>
+        </div>
+      </a>
+
+      <nav class="mfs-nav-wrapper">
+        <ul class="mfs-nav-menu">
+          <li class="mfs-nav-item">
+            <a href="functional-skills-maths-level-2.html" class="mfs-nav-link"><i class="fa-solid fa-calculator" style="color:#0284c7; margin-right:5px;"></i> Maths <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i></a>
+            <div class="mfs-dropdown-menu mfs-dropdown-compact">
+              <a href="functional-skills-maths-level-2.html" class="mfs-dropdown-item">Maths Level 2</a>
+              <a href="functional-skills-maths-level-1.html" class="mfs-dropdown-item">Maths Level 1</a>
+              <a href="entry-level-3-maths.html" class="mfs-dropdown-item">Entry Level 3 Maths</a>
+              <div class="mfs-dropdown-divider" style="margin:4px 0; border-top:1px solid #e2e8f0;"></div>
+              <a href="pass-mark-calculator.html" class="mfs-dropdown-item"><i class="fa-solid fa-calculator" style="color:var(--accent); font-size:0.85rem; margin-right:6px;"></i> Pass Mark Calculator</a>
+              <a href="diagnostic-test.html" class="mfs-dropdown-item"><i class="fa-solid fa-chart-pie" style="color:#059669; font-size:0.85rem; margin-right:6px;"></i> Diagnostic Test</a>
+              <a href="functional-skills-nets.html" class="mfs-dropdown-item"><i class="fa-solid fa-cube" style="color:#0284c7; font-size:0.85rem; margin-right:6px;"></i> 3D Net Folder</a>
+            </div>
+          </li>
+          <li class="mfs-nav-item">
+            <a href="functional-skills-english-level-2.html" class="mfs-nav-link"><i class="fa-solid fa-pen-nib" style="color:#0284c7; margin-right:5px;"></i> English <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i></a>
+            <div class="mfs-dropdown-menu mfs-dropdown-compact">
+              <a href="functional-skills-english-level-2.html" class="mfs-dropdown-item">English Level 2</a>
+              <a href="functional-skills-english-level-1.html" class="mfs-dropdown-item">English Level 1</a>
+              <div class="mfs-dropdown-divider" style="margin:4px 0; border-top:1px solid #e2e8f0;"></div>
+              <a href="pass-mark-calculator.html#english" class="mfs-dropdown-item"><i class="fa-solid fa-calculator" style="color:var(--accent); font-size:0.85rem; margin-right:6px;"></i> Pass Mark Calculator</a>
+              <a href="diagnostic-test.html" class="mfs-dropdown-item"><i class="fa-solid fa-chart-pie" style="color:#059669; font-size:0.85rem; margin-right:6px;"></i> Diagnostic Test</a>
+            </div>
+          </li>
+          <li class="mfs-nav-item">
+            <a href="digital-functional-skills.html" class="mfs-nav-link"><i class="fa-solid fa-laptop-code" style="color:#0284c7; margin-right:5px;"></i> Digital Skills <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i></a>
+            <div class="mfs-dropdown-menu mfs-dropdown-compact">
+              <a href="digital-functional-skills.html" class="mfs-dropdown-item">Digital Skills Hub</a>
+              <a href="digital-functional-skills-mock-exam.html" class="mfs-dropdown-item"><i class="fa-solid fa-laptop-code" style="color:#2563eb; font-size:0.85rem; margin-right:6px;"></i> Pearson Mock Simulator</a>
+              <a href="digital-functional-skills-past-papers.html" class="mfs-dropdown-item">Past Papers &amp; Data Files</a>
+            </div>
+          </li>
+          <li class="mfs-nav-item">
+            <a href="pass-mark-calculator.html" class="mfs-nav-link"><i class="fa-solid fa-screwdriver-wrench" style="color:#0284c7; margin-right:5px;"></i> Tools <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i></a>
+            <div class="mfs-dropdown-menu mfs-dropdown-compact">
+              <a href="pass-mark-calculator.html" class="mfs-dropdown-item"><i class="fa-solid fa-calculator" style="color:var(--accent); font-size:0.85rem; margin-right:6px;"></i> Pass Mark Calculator</a>
+              <a href="diagnostic-test.html" class="mfs-dropdown-item"><i class="fa-solid fa-chart-pie" style="color:#059669; font-size:0.85rem; margin-right:6px;"></i> Diagnostic Skill Checker</a>
+              <a href="digital-functional-skills-mock-exam.html" class="mfs-dropdown-item"><i class="fa-solid fa-laptop-code" style="color:#2563eb; font-size:0.85rem; margin-right:6px;"></i> Pearson Exam Simulator</a>
+              <a href="bksb-remediation.html" class="mfs-dropdown-item"><i class="fa-solid fa-arrows-split-up-and-left" style="color:#8b5cf6; font-size:0.85rem; margin-right:6px;"></i> BKSB Remediation Bridge</a>
+              <a href="functional-skills-nets.html" class="mfs-dropdown-item"><i class="fa-solid fa-cube" style="color:#0284c7; font-size:0.85rem; margin-right:6px;"></i> 3D Net Folding Tool</a>
+            </div>
+          </li>
+          <li class="mfs-nav-item"><a href="tutors.html" class="mfs-nav-link"><i class="fa-solid fa-chalkboard-user" style="color:#0284c7; margin-right:5px;"></i> Tutor Hub</a></li>
+          <li class="mfs-nav-item">
+            <a href="functional-skills-past-papers.html" class="mfs-nav-link"><i class="fa-regular fa-file-lines" style="color:#0284c7; margin-right:5px;"></i> Past Papers <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i></a>
+            <div class="mfs-dropdown-menu mfs-dropdown-compact">
+              <a href="functional-skills-past-papers.html" class="mfs-dropdown-item">All Past Papers Hub</a>
+              <a href="edexcel-functional-skills-maths-level-2-past-papers.html" class="mfs-dropdown-item">Pearson Edexcel Papers</a>
+              <a href="pass-mark-calculator.html" class="mfs-dropdown-item"><i class="fa-solid fa-calculator" style="color:var(--accent); font-size:0.85rem; margin-right:6px;"></i> Grade Boundaries Calculator</a>
+            </div>
+          </li>
+          <li class="mfs-nav-item"><a href="revision-cards.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#f59e0b; font-weight:700;"><i class="fa-solid fa-layer-group" style="color:#f59e0b; margin-right:5px;"></i> Revision Cards</a></li>
+          <li class="mfs-nav-item"><a href="shop.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#f59e0b; font-weight:700;"><i class="fa-solid fa-basket-shopping" style="color:#f59e0b; margin-right:5px;"></i> Shop</a></li>
+        </ul>
+      </nav>
+
+      <div class="mfs-nav-actions">
+        <a href="functional-skills-exam.html" class="btn-nav-exam"><i class="fa-solid fa-calendar-check"></i> Book Exam</a>
+      </div>
+    </div>
+  </header>
+
+  <!-- PROMOTIONAL SALE BANNER -->
+  <div class="mfs-promo-banner"><div class="mfs-container mfs-promo-inner"></div></div>"""
+
+FOOTER_HTML = """  <!-- FOOTER -->
+  <footer class="mfs-footer">
+    <div class="mfs-container">
+      <div class="footer-grid">
+        <div class="footer-col footer-col-brand">
+          <div class="footer-brand">MASTER<span>FUNCTIONALSKILLS</span></div>
+          <p class="footer-tagline">The UK's premier dedicated Functional Skills training and examination service. Delivering regulated qualifications across London, Oxford, and nationwide.</p>
+          <div style="font-size:0.88rem; color:#94a3b8; margin-top:8px;">
+            <i class="fa-solid fa-graduation-cap"></i> Senior Academic Lead & Specialist Tutor Team
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Maths Revision</h4>
+          <ul class="footer-links">
+            <li><a href="functional-skills-maths-level-2.html">Maths Level 2 Directory</a></li>
+            <li><a href="functional-skills-maths-level-1.html">Maths Level 1 Directory</a></li>
+            <li><a href="entry-level-3-maths.html">Entry Level 3 Maths</a></li>
+            <li><a href="exam-maths-l2.html">Book Level 2 Maths Exam</a></li>
+            <li><a href="functional-skills-past-papers.html">Free Maths Past Papers</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Digital & English</h4>
+          <ul class="footer-links">
+            <li><a href="digital-functional-skills.html">Digital Skills Hub (L1 & E3)</a></li>
+            <li><a href="digital-functional-skills-level-1.html">Digital Skills Level 1 Course</a></li>
+            <li><a href="functional-skills-english-level-2.html">English Level 2 Directory</a></li>
+            <li><a href="functional-skills-english-level-1.html">English Level 1 Directory</a></li>
+            <li><a href="functional-skills-past-papers.html">Past Papers & Mark Schemes</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Institutional</h4>
+          <ul class="footer-links">
+            <li><a href="training-providers-and-employers.html">NHS & Employer Services</a></li>
+            <li><a href="colleges.html">Colleges & Universities</a></li>
+            <li><a href="career-functional-skills.html">Nursing & Police Pathways</a></li>
+            <li><a href="pass-functional-skills-reviews.html">Verified Student Reviews</a></li>
+            <li><a href="contact-us.html">Speak to a Tutor</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Master Functional Skills. All rights reserved. Registered in England & Wales. Ofqual Regulated Qualification Standards.</div>
+        <div style="display:flex; gap:16px;">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms & Conditions</a>
+          <a href="#">Cookie Policy</a>
+          <a href="#">Sitemap</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- DYSLEXIA TINT ENGINE -->
+  <script src="assets/js/mfs-tint.js"></script>
+
+  <!-- THEME & DYSLEXIA MODE ENGINE -->
+  <script>
+    function toggleDyslexiaMode() {
+      const isDys = document.body.classList.toggle('dyslexia-mode');
+      localStorage.setItem('mfs_dyslexia', isDys ? '1' : '0');
+      const btn = document.getElementById('dyslexiaToggle');
+      if (btn) btn.classList.toggle('active', isDys);
+    }
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme') || 'sapphire';
+      const next = current === 'emerald' ? 'sapphire' : 'emerald';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('mfs_theme', next);
+      const lbl = document.getElementById('themeLabel');
+      if (lbl) lbl.textContent = next === 'emerald' ? 'Emerald' : 'Sapphire';
+    }
+    (function() {
+      if (localStorage.getItem('mfs_dyslexia') === '1') {
+        document.body.classList.add('dyslexia-mode');
+        const btn = document.getElementById('dyslexiaToggle');
+        if (btn) btn.classList.add('active', true);
+      }
+      const th = localStorage.getItem('mfs_theme') || 'sapphire';
+      document.documentElement.setAttribute('data-theme', th);
+      const lbl = document.getElementById('themeLabel');
+      if (lbl) lbl.textContent = th === 'emerald' ? 'Emerald' : 'Sapphire';
+    })();
+  </script>
+</body>
+</html>"""
+
+def generate_maths_course():
+    html = f"""<!DOCTYPE html>
+<html lang="en-GB" data-theme="sapphire" data-tint="cream">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Functional Skills Maths Level 2 Online Course | Pass Guarantee | Master Functional Skills</title>
+  <meta name="description" content="Accredited Functional Skills Maths Level 2 online course with pass guarantee. Self-paced video lessons, interactive practice questions, personal learning plan, and tutor-marked mock exams.">
+  <link rel="stylesheet" href="assets/css/mfs-theme.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    .course-badge-pill {{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: var(--accent-light);
+      color: var(--accent);
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }}
+    .pathway-grid {{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin: 36px 0;
+    }}
+    .pathway-step-card {{
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      position: relative;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s ease;
+    }}
+    .pathway-step-card:hover {{
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--accent);
+    }}
+    .step-num-pill {{
+      display: inline-block;
+      width: 34px;
+      height: 34px;
+      line-height: 34px;
+      text-align: center;
+      background: var(--navy);
+      color: #ffffff;
+      font-weight: 800;
+      border-radius: 50%;
+      margin-bottom: 14px;
+    }}
+    .pricing-cards-grid {{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin: 40px 0;
+    }}
+    .pricing-card {{
+      background: var(--bg-card);
+      border: 2px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px 28px;
+      position: relative;
+      box-shadow: var(--shadow-md);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }}
+    .pricing-card.featured {{
+      border-color: var(--accent);
+      box-shadow: 0 15px 35px -5px rgba(37, 99, 235, 0.2);
+    }}
+    .pricing-ribbon {{
+      position: absolute;
+      top: -14px;
+      right: 24px;
+      background: var(--accent);
+      color: #ffffff;
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      letter-spacing: 0.5px;
+    }}
+    .pricing-price {{
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--navy-dark);
+      margin: 14px 0 6px;
+      line-height: 1;
+    }}
+    .pricing-price small {{
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }}
+    .feature-check-list {{
+      list-style: none;
+      padding: 0;
+      margin: 20px 0 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }}
+    .feature-check-list li {{
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }}
+    .feature-check-list li i {{
+      color: #10b981;
+      margin-top: 3px;
+      font-size: 1rem;
+    }}
+  </style>
+</head>
+<body>
+
+{HEADER_HTML}
+
+  <!-- HERO SECTION -->
+  <section class="mfs-hero-section">
+    <div class="mfs-container mfs-hero-grid">
+      <div class="hero-content">
+        <div class="course-badge-pill">
+          <i class="fa-solid fa-graduation-cap"></i> GCSE Grade 4 (Grade C) Equivalent • Ofqual Regulated
+        </div>
+        <h1>Functional Skills <span>Maths Level 2 Course</span></h1>
+        <p class="hero-description">
+          The UK's highest pass-rate online course for Functional Skills Maths Level 2. Pass first time with our smart initial assessment, personalized revision pathway, step-by-step video tutorials, and realistic mock exams marked to official Pearson Edexcel criteria.
+        </p>
+
+        <div class="hero-reviews-bar">
+          <div class="star-rating">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <div class="reviews-stat">
+            Rated <strong>4.9 / 5</strong> by NHS professionals, university applicants & apprentices
+          </div>
+        </div>
+
+        
+
+        <div class="hero-buttons">
+          <a href="#packages" class="btn-hero-accent"><i class="fa-solid fa-cart-shopping"></i> Enrol in Course (£199)</a>
+          <a href="exam-maths-l2.html" class="btn-hero-navy"><i class="fa-solid fa-certificate"></i> Course + Official Exam (£299)</a>
+          <a href="diagnostic-test.html" class="btn-hero-outline"><i class="fa-solid fa-chart-pie"></i> Free Diagnostic Check</a>
+        </div>
+      </div>
+
+      <!-- Right Column -->
+      <div style="display:flex; flex-direction:column; gap:20px;">
+        <div class="real-photo-card">
+          <img src="assets/img/whiteboard-stylus-tablet.jpg" alt="Learner studying Maths Level 2 online course" style="height:220px; object-fit:cover;">
+          <div class="real-photo-overlay">
+            <div style="font-size:1.6rem; color:var(--accent);"><i class="fa-solid fa-shield-halved"></i></div>
+            <div>
+              <strong>100% Accepted Nationwide</strong>
+              <span>NHS, UCAS Universities, Police & Apprenticeships</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="background:var(--bg-card); border:1px solid var(--border); border-radius:16px; padding:22px; box-shadow:var(--shadow-md);">
+          <h4 style="margin:0 0 12px 0; font-size:1.1rem; color:var(--navy-dark);"><i class="fa-solid fa-award" style="color:var(--accent); margin-right:8px;"></i> Course Highlights:</h4>
+          <ul style="list-style:none; padding:0; margin:0; font-size:0.88rem; display:flex; flex-direction:column; gap:8px;">
+            <li><i class="fa-solid fa-check" style="color:#10b981; margin-right:8px;"></i> <strong>Complete 39-Topic Curriculum:</strong> Full coverage of Number, Measure & Data.</li>
+            <li><i class="fa-solid fa-check" style="color:#10b981; margin-right:8px;"></i> <strong>Smart Diagnostic Assessment:</strong> Pins down your starting level and skips what you know.</li>
+            <li><i class="fa-solid fa-check" style="color:#10b981; margin-right:8px;"></i> <strong>Step-by-Step Video Lessons:</strong> Dyslexia-friendly explanations with worked exam models.</li>
+            <li><i class="fa-solid fa-check" style="color:#10b981; margin-right:8px;"></i> <strong>Non-Calculator Mastery:</strong> Dedicated drills to secure easy method marks without a calculator.</li>
+            <li><i class="fa-solid fa-check" style="color:#10b981; margin-right:8px;"></i> <strong>Full Mock Exams with Mark Schemes:</strong> Real exam questions with method marks explained.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4-STEP MASTER FUNCTIONAL SKILLS METHOD -->
+  <section style="padding:60px 0; background:var(--bg-card); border-top:1px solid var(--border-light); border-bottom:1px solid var(--border-light);">
+    <div class="mfs-container">
+      <div style="text-align:center; max-width:760px; margin:0 auto 30px auto;">
+        <span style="color:var(--accent); font-weight:800; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em;">Our Proven System</span>
+        <h2 style="font-size:2.2rem; color:var(--navy-dark); margin:8px 0 12px;">How the Level 2 Maths Course Works</h2>
+        <p style="color:var(--text-secondary); font-size:1rem; line-height:1.6;">A structured, personalized roadmap engineered to turn math anxiety into calm, confident exam readiness.</p>
+      </div>
+
+      <div class="pathway-grid">
+        <div class="pathway-step-card">
+          <div class="step-num-pill">1</div>
+          <h3 style="font-size:1.15rem; color:var(--navy-dark); margin-bottom:8px;">Smart Initial Assessment</h3>
+          <p style="font-size:0.9rem; color:var(--text-secondary); line-height:1.6; margin:0;">
+            Take an interactive diagnostic assessment that identifies your exact strengths and knowledge gaps across all 39 Level 2 Maths specification points.
+          </p>
+        </div>
+
+        <div class="pathway-step-card">
+          <div class="step-num-pill">2</div>
+          <h3 style="font-size:1.15rem; color:var(--navy-dark); margin-bottom:8px;">Dynamic Learning Plan</h3>
+          <p style="font-size:0.9rem; color:var(--text-secondary); line-height:1.6; margin:0;">
+            Your personal dashboard updates in real-time, focusing your revision on high-yield target areas so you don't waste time re-learning what you already master.
+          </p>
+        </div>
+
+        <div class="pathway-step-card">
+          <div class="step-num-pill">3</div>
+          <h3 style="font-size:1.15rem; color:var(--navy-dark); margin-bottom:8px;">Bite-Sized Lessons & Worksheets</h3>
+          <p style="font-size:0.9rem; color:var(--text-secondary); line-height:1.6; margin:0;">
+            Watch clear, dyslexia-friendly video tutorials for each topic. Complete practice questions, downloadable worksheets, and reveal step-by-step marking criteria.
+          </p>
+        </div>
+
+        <div class="pathway-step-card">
+          <div class="step-num-pill">4</div>
+          <h3 style="font-size:1.15rem; color:var(--navy-dark); margin-bottom:8px;">Exam-Board Mock Papers</h3>
+          <p style="font-size:0.9rem; color:var(--text-secondary); line-height:1.6; margin:0;">
+            Sit timed, realistic online mock exams matched to Pearson Edexcel, City & Guilds, or Open Awards. Receive detailed feedback showing your predicted pass mark.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SYLLABUS & MODULES -->
+  <section style="padding:60px 0; background:var(--bg-page);">
+    <div class="mfs-container">
+      <div style="text-align:center; max-width:760px; margin:0 auto 40px auto;">
+        <span style="color:var(--accent); font-weight:800; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em;">Curriculum Overview</span>
+        <h2 style="font-size:2.2rem; color:var(--navy-dark); margin:8px 0 12px;">39 Topics Across 3 Core Standards</h2>
+        <p style="color:var(--text-secondary); font-size:1rem; line-height:1.6;">Full coverage of the Department for Education and Ofqual Subject Content for Functional Skills Maths Level 2.</p>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(340px, 1fr)); gap:24px; max-width:1100px; margin:0 auto;">
+        <!-- Standard 1 -->
+        <div style="background:var(--bg-card); border:1px solid var(--border); border-radius:16px; padding:26px; box-shadow:var(--shadow-sm);">
+          <div style="display:flex; align-items:center; gap:12px; margin-bottom:14px;">
+            <div style="width:44px; height:44px; border-radius:10px; background:#eff6ff; color:var(--accent); display:flex; align-items:center; justify-content:center; font-size:1.3rem;">
+              <i class="fa-solid fa-calculator"></i>
+            </div>
+            <div>
+              <h3 style="font-size:1.15rem; color:var(--navy-dark); margin:0;">1. Using Numbers & The Number System</h3>
+              <span style="font-size:0.8rem; color:var(--text-muted); font-weight:600;">14 Core Topics • Non-Calc & Calc</span>
+            </div>
+          </div>
+          <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.55; margin-bottom:12px;">
+            Master the foundational operations that represent over 40% of your exam marks.
+          </p>
+          <ul style="list-style:none; padding:0; margin:0; font-size:0.85rem; color:var(--text-primary); display:flex; flex-direction:column; gap:6px;">
+            <li><i class="fa-solid fa-angle-right" style="color:var(--accent);"></i> Ordering positive and negative numbers</li>
+            <li><i class="fa-solid fa-angle-right" style="color:var(--accent);"></i> Fractions of amounts, addition & mixed numbers</li>
+            <li><i class="fa-solid fa-angle-right" style="color:var(--accent);"></i> Percentages, percentage increase/decrease & reverse percentages</li>
+            <li><i class="fa-solid fa-angle-right" style="color:var(--accent);"></i> Ratio sharing and direct proportion problems</li>
+            <li><i class="fa-solid fa-angle-right" style="color:var(--accent);"></i> Compound interest and AER loan comparisons</li>
+          </ul>
+        </div>
+
+        <!-- Standard 2 -->
+        <div style="background:var(--bg-card); border:1px solid var(--border); border-radius:16px; padding:26px; box-shadow:var(--shadow-sm);">
+          <div style="display:flex; align-items:center; gap:12px; margin-bottom:14px;">
+            <div style="width:44px; height:44px; border-radius:10px; background:#ecfdf5; color:#059669; display:flex; align-items:center; justify-content:center; font-size:1.3rem;">
+              <i class="fa-solid fa-draw-polygon"></i>
+            </div>
+            <div>
+              <h3 style="font-size:1.15rem; color:var(--navy-dark); margin:0;">2. Measures, Shape & Space</h3>
+              <span style="font-size:0.8rem; color:var(--text-muted); font-weight:600;">15 Core Topics • Real-World Problem Solving</span>
+            </div>
+          </div>
+          <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.55; margin-bottom:12px;">
+            Navigate workplace scenarios involving dimensions, floorplans, turfing, and packaging.
+          </p>
+          <ul style="list-style:none; padding:0; margin:0; font-size:0.85rem; color:var(--text-primary); display:flex; flex-direction:column; gap:6px;">
+            <li><i class="fa-solid fa-angle-right" style="color:#059669;"></i> Perimeter, circumference, and compound shape area</li>
+            <li><i class="fa-solid fa-angle-right" style="color:#059669;"></i> Volume and surface area of prisms and cylinders</li>
+            <li><i class="fa-solid fa-angle-right" style="color:#059669;"></i> Scale drawings, plans, elevations & bearings</li>
+            <li><i class="fa-solid fa-angle-right" style="color:#059669;"></i> Metric and imperial unit conversions</li>
+            <li><i class="fa-solid fa-angle-right" style="color:#059669;"></i> Compound measures: Speed, density & pressure</li>
+          </ul>
+        </div>
+
+        <!-- Standard 3 -->
+        <div style="background:var(--bg-card); border:1px solid var(--border); border-radius:16px; padding:26px; box-shadow:var(--shadow-sm);">
+          <div style="display:flex; align-items:center; gap:12px; margin-bottom:14px;">
+            <div style="width:44px; height:44px; border-radius:10px; background:#fef3c7; color:#d97706; display:flex; align-items:center; justify-content:center; font-size:1.3rem;">
+              <i class="fa-solid fa-chart-line"></i>
+            </div>
+            <div>
+              <h3 style="font-size:1.15rem; color:var(--navy-dark); margin:0;">3. Handling Information & Data</h3>
+              <span style="font-size:0.8rem; color:var(--text-muted); font-weight:600;">10 Core Topics • Statistical Analysis</span>
+            </div>
+          </div>
+          <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.55; margin-bottom:12px;">
+            Interpret workplace tables, charts, probability outcomes, and statistical comparisons.
+          </p>
+          <ul style="list-style:none; padding:0; margin:0; font-size:0.85rem; color:var(--text-primary); display:flex; flex-direction:column; gap:6px;">
+            <li><i class="fa-solid fa-angle-right" style="color:#d97706;"></i> Mean, median, mode, and range comparisons</li>
+            <li><i class="fa-solid fa-angle-right" style="color:#d97706;"></i> Calculating estimated mean from grouped frequency tables</li>
+            <li><i class="fa-solid fa-angle-right" style="color:#d97706;"></i> Scatter graphs, correlation & lines of best fit</li>
+            <li><i class="fa-solid fa-angle-right" style="color:#d97706;"></i> Single and combined probability events & sample space</li>
+            <li><i class="fa-solid fa-angle-right" style="color:#d97706;"></i> Pie charts, bar charts, and frequency polygons</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING & ENROLMENT PACKAGES -->
+  <section id="packages" style="padding:70px 0; background:var(--bg-card); border-top:1px solid var(--border-light);">
+    <div class="mfs-container">
+      <div style="text-align:center; max-width:760px; margin:0 auto;">
+        <span style="color:var(--accent); font-weight:800; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em;">Transparent Pricing</span>
+        <h2 style="font-size:2.4rem; color:var(--navy-dark); margin:8px 0 12px;">Choose Your Maths Level 2 Package</h2>
+        <p style="color:var(--text-secondary); font-size:1rem; line-height:1.6;">All packages include 12-month full access, pass guarantee, and full tutor support.</p>
+      </div>
+
+      <div class="pricing-cards-grid">
+        <!-- Option 1: Course Only -->
+        <div class="pricing-card">
+          <div>
+            <h3 style="font-size:1.35rem; color:var(--navy-dark); margin-bottom:4px;">Maths Level 2 Course</h3>
+            <p style="font-size:0.88rem; color:var(--text-muted); margin:0;">Complete self-paced training for learners who already have an exam booked or need revision.</p>
+            <div class="pricing-price">£199 <small>/ 12 Months Access</small></div>
+            <ul class="feature-check-list">
+              <li><i class="fa-solid fa-check"></i> Complete 39-Topic Interactive Curriculum</li>
+              <li><i class="fa-solid fa-check"></i> Smart Diagnostic Skill Assessment</li>
+              <li><i class="fa-solid fa-check"></i> 100+ Video Lessons with Dyslexia-Friendly Pacing</li>
+              <li><i class="fa-solid fa-check"></i> Downloadable Practice Worksheets & Model Answers</li>
+              <li><i class="fa-solid fa-check"></i> Non-Calculator Strategy Masterclasses</li>
+              <li><i class="fa-solid fa-check"></i> 5 Realistic Full-Length Practice Mock Exams</li>
+              <li><i class="fa-solid fa-check"></i> Master Functional Skills Pass Guarantee</li>
+            </ul>
+          </div>
+          <a href="https://wa.me/447564525425?text=Hello,%20I%20would%20like%20to%20enrol%20in%20the%20Maths%20Level%202%20Course%20(£199)" target="_blank" rel="noopener" class="btn-hero-navy" style="width:100%; text-align:center; box-sizing:border-box;">
+            Enrol in Course (£199) →
+          </a>
+        </div>
+
+        <!-- Option 2: Course + Exam (Featured) -->
+        <div class="pricing-card featured">
+          <div class="pricing-ribbon">Most Popular • Save £50</div>
+          <div>
+            <h3 style="font-size:1.35rem; color:var(--navy-dark); margin-bottom:4px;">Course + Accredited Exam</h3>
+            <p style="font-size:0.88rem; color:var(--text-muted); margin:0;">The complete all-in-one pathway. Study online at your pace, then sit the official Ofqual exam from home.</p>
+            <div class="pricing-price">£299 <small>/ Complete Package</small></div>
+            <ul class="feature-check-list">
+              <li><i class="fa-solid fa-check"></i> <strong>Everything included in the Course package</strong></li>
+              <li><i class="fa-solid fa-check"></i> <strong>Official Pearson Edexcel Level 2 Exam Sitting</strong></li>
+              <li><i class="fa-solid fa-check"></i> Take the exam from home via secure online invigilation</li>
+              <li><i class="fa-solid fa-check"></i> Fast-track official certificate dispatch (6-16 days)</li>
+              <li><i class="fa-solid fa-check"></i> Free exam re-sit if course requirements are met (Pass Guarantee)</li>
+              <li><i class="fa-solid fa-check"></i> WhatsApp tutor support & check-in guidance</li>
+            </ul>
+          </div>
+          <a href="exam-maths-l2.html" class="btn-hero-accent" style="width:100%; text-align:center; box-sizing:border-box;">
+            Get Course + Exam (£299) →
+          </a>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top:20px; font-size:0.88rem; color:var(--text-muted);">
+        <i class="fa-solid fa-lock"></i> Flexible payment plans available via PayPal, Klarna & Clearpay at checkout.
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQS -->
+  <section style="padding:60px 0; background:var(--bg-page);">
+    <div class="mfs-container" style="max-width:860px;">
+      <div style="text-align:center; margin-bottom:40px;">
+        <span style="color:var(--accent); font-weight:800; font-size:0.85rem; text-transform:uppercase;">Got Questions?</span>
+        <h2 style="font-size:2rem; color:var(--navy-dark); margin:8px 0;">Frequently Asked Questions</h2>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:16px;">
+        <details style="background:var(--bg-card); border:1px solid var(--border); border-radius:12px; padding:18px 22px;">
+          <summary style="font-weight:700; font-size:1.05rem; color:var(--navy-dark); cursor:pointer;">Is Functional Skills Maths Level 2 equivalent to a GCSE?</summary>
+          <p style="margin-top:10px; color:var(--text-secondary); font-size:0.92rem; line-height:1.6;">
+            Yes. Functional Skills Maths Level 2 is officially regulated by Ofqual and recognized nationally by universities, the NHS, the College of Policing, and apprenticeship standards as equivalent to a GCSE Grade 4 (Grade C).
+          </p>
+        </details>
+
+        <details style="background:var(--bg-card); border:1px solid var(--border); border-radius:12px; padding:18px 22px;">
+          <summary style="font-weight:700; font-size:1.05rem; color:var(--navy-dark); cursor:pointer;">How does the Pass Guarantee work?</summary>
+          <p style="margin-top:10px; color:var(--text-secondary); font-size:0.92rem; line-height:1.6;">
+            We are so confident in our structured curriculum that if you complete 100% of the course modules and score at least 80% on our practice mock tests, in the unlikely event you don't pass your official exam, we will cover your exam resit free of charge.
+          </p>
+        </details>
+
+        <details style="background:var(--bg-card); border:1px solid var(--border); border-radius:12px; padding:18px 22px;">
+          <summary style="font-weight:700; font-size:1.05rem; color:var(--navy-dark); cursor:pointer;">How long do I need to complete the course?</summary>
+          <p style="margin-top:10px; color:var(--text-secondary); font-size:0.92rem; line-height:1.6;">
+            The course is completely self-paced. Many students who need urgent certification for a job or university offer finish the course in 2 to 3 weeks studying 5-10 hours a week. Others spread their revision over 2 to 3 months. You retain 12 full months of course access.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+{FOOTER_HTML}"""
+    return html
+
+def generate_english_course():
+    html = f"""<!DOCTYPE html>
+<html lang="en-GB" data-theme="sapphire" data-tint="cream">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Functional Skills English Level 2 Online Course | Pass Guarantee | Master Functional Skills</title>
+  <meta name="description" content="Accredited Functional Skills English Level 2 online course with pass guarantee. Reading analysis, workplace writing, SPaG, speaking & listening, and tutor-marked mock exams.">
+  <link rel="stylesheet" href="assets/css/mfs-theme.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    .course-badge-pill {{
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 14px;
+      background: var(--accent-light);
+      color: var(--accent);
+      border-radius: var(--radius-full);
+      font-size: 0.85rem;
+      font-weight: 700;
+      margin-bottom: 14px;
+    }}
+    .pathway-grid {{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 20px;
+      margin: 36px 0;
+    }}
+    .pathway-step-card {{
+      background: var(--bg-card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 24px;
+      position: relative;
+      box-shadow: var(--shadow-sm);
+      transition: all 0.2s ease;
+    }}
+    .pathway-step-card:hover {{
+      transform: translateY(-3px);
+      box-shadow: var(--shadow-md);
+      border-color: var(--accent);
+    }}
+    .step-num-pill {{
+      display: inline-block;
+      width: 34px;
+      height: 34px;
+      line-height: 34px;
+      text-align: center;
+      background: var(--navy);
+      color: #ffffff;
+      font-weight: 800;
+      border-radius: 50%;
+      margin-bottom: 14px;
+    }}
+    .pricing-cards-grid {{
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 24px;
+      margin: 40px 0;
+    }}
+    .pricing-card {{
+      background: var(--bg-card);
+      border: 2px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 32px 28px;
+      position: relative;
+      box-shadow: var(--shadow-md);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }}
+    .pricing-card.featured {{
+      border-color: var(--accent);
+      box-shadow: 0 15px 35px -5px rgba(37, 99, 235, 0.2);
+    }}
+    .pricing-ribbon {{
+      position: absolute;
+      top: -14px;
+      right: 24px;
+      background: var(--accent);
+      color: #ffffff;
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      letter-spacing: 0.5px;
+    }}
+    .pricing-price {{
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: var(--navy-dark);
+      margin: 14px 0 6px;
+      line-height: 1;
+    }}
+    .pricing-price small {{
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-muted);
+    }}
+    .feature-check-list {{
+      list-style: none;
+      padding: 0;
+      margin: 20px 0 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }}
+    .feature-check-list li {{
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.92rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+    }}
+    .feature-check-list li i {{
+      color: #10b981;
+      margin-top: 3px;
+      font-size: 1rem;
+    }}
+  </style>
+</head>
+<body>
+
+{HEADER_HTML}
+
+  <!-- HERO SECTION -->
+  <section class="mfs-hero-section">
+    <div class="mfs-container mfs-hero-grid">
+      <div class="hero-content">
+        <div class="course-badge-pill">
+          <i class="fa-solid fa-graduation-cap"></i> GCSE English Grade 4 (Grade C) Equivalent • Ofqual Regulated
+        </div>
+        <h1>Functional Skills <span>English Level 2 Course</span></h1>
+        <p class="hero-description">
+          Master Functional Skills English Level 2 online with confidence. Learn how to compare challenging reading texts, write persuasive workplace reports with accurate spelling, punctuation, and grammar (SPaG), and succeed in your Speaking & Listening assessment.
+        </p>
+
+        <div class="hero-reviews-bar">
+          <div class="star-rating">
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+            <i class="fa-solid fa-star"></i>
+          </div>
+          <div class="reviews-stat">
+            Rated <strong>4.9 / 5</strong> by adult learners, career changers & teacher training applicants
+          </div>
+        </div>
+
+        
+
+        <div class="hero-buttons">
+          <a href="#packages" class="btn-hero-accent"><i class="fa-solid fa-cart-shopping"></i> Enrol in Course (£199)</a>
+          <a href="exam-english-l2.html" class="btn-hero-navy"><i class="fa-solid fa-certificate"></i> Course + Official Exam (£299)</a>
+          <a href="diagnostic-test.html" class="btn-hero-outline"><i class="fa-solid fa-chart-pie"></i> Free Diagnostic Check</a>
+        </div>
+      </div>
+
+      <!-- Right Column -->
+      <div style="display:flex; flex-direction:column; gap:20px;">
+        <div class="real-photo-card">
+          <img src="assets/img/student-learning-online.jpg" alt="Learner studying English Level 2 online course" style="height:220px; object-fit:cover;">
+          <div class="real-photo-overlay">
+            <div style="font-size:1.6rem; color:var(--accent);"><i class="fa-solid fa-shield-halved"></i></div>
+            <div>
+              <strong>100% Accepted Across the UK</strong>
+              <span>NHS, Universities, Police Forces & Apprenticeships</span>
+            </div>
+          </div>
+        </div>
+
+        <div style="background:var(--bg-card); border:1px solid var(--border); border-radius:16px; padding:22px; box-shadow:var(--shadow-md);">
+          <h4 style="margin:0 0 12px 0; font-size:1.1rem; color:var(--navy-dark);"><i class="fa-solid fa-award" style="color:var(--accent); margin-right:8px;"></i> Course Highlights:</h4>
+          <ul style="list-style:none; padding:0; margin:0; font-size:0.88rem; display:flex; flex-direction:column; gap:8px;">
+            <li><i class="fa-solid fa-check" style="color:#10b981; margin-right:8px;"></i> <strong>All 3 Exam Components Covered:</strong> Reading, Writing & Speaking/Listening.</li>
+            <li><i class="fa-solid fa-check" style="color:#10b981; margin-right:8px;"></i> <strong>Comparing Texts Masterclass:</strong> Step-by-step methods to secure top marks on Text A vs Text B.</li>
+            <li><i class="fa-solid fa-check" style="color:#10b981; margin-right:8px;"></i> <strong>Workplace Writing Blueprints:</strong> Articles, letters, emails, and reports with model paragraphs.</li>
+            <li><i class="fa-solid fa-check" style="color:#10b981; margin-right:8px;"></i> <strong>SPaG Crash Course:</strong> Eliminate costly punctuation, apostrophe, and tense mistakes.</li>
+            <li><i class="fa-solid fa-check" style="color:#10b981; margin-right:8px;"></i> <strong>Tutor-Marked Writing Mocks:</strong> Submit your essays and receive expert criteria feedback.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4-STEP MASTER FUNCTIONAL SKILLS METHOD -->
+  <section style="padding:60px 0; background:var(--bg-card); border-top:1px solid var(--border-light); border-bottom:1px solid var(--border-light);">
+    <div class="mfs-container">
+      <div style="text-align:center; max-width:760px; margin:0 auto 30px auto;">
+        <span style="color:var(--accent); font-weight:800; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em;">Targeted Revision</span>
+        <h2 style="font-size:2.2rem; color:var(--navy-dark); margin:8px 0 12px;">How the Level 2 English Course Works</h2>
+        <p style="color:var(--text-secondary); font-size:1rem; line-height:1.6;">Designed by senior Functional Skills lecturers to help you master reading extracts and write at a professional standard.</p>
+      </div>
+
+      <div class="pathway-grid">
+        <div class="pathway-step-card">
+          <div class="step-num-pill">1</div>
+          <h3 style="font-size:1.15rem; color:var(--navy-dark); margin-bottom:8px;">Initial Skill Diagnostic</h3>
+          <p style="font-size:0.9rem; color:var(--text-secondary); line-height:1.6; margin:0;">
+            Pinpoint exactly where you stand in reading comprehension, text comparison, vocabulary analysis, and sentence structure.
+          </p>
+        </div>
+
+        <div class="pathway-step-card">
+          <div class="step-num-pill">2</div>
+          <h3 style="font-size:1.15rem; color:var(--navy-dark); margin-bottom:8px;">Structured Learning Plan</h3>
+          <p style="font-size:0.9rem; color:var(--text-secondary); line-height:1.6; margin:0;">
+            Work through high-impact modules that target the exact areas required by Pearson Edexcel, City & Guilds, and Open Awards examiners.
+          </p>
+        </div>
+
+        <div class="pathway-step-card">
+          <div class="step-num-pill">3</div>
+          <h3 style="font-size:1.15rem; color:var(--navy-dark); margin-bottom:8px;">Model Answers & Writing Drills</h3>
+          <p style="font-size:0.9rem; color:var(--text-secondary); line-height:1.6; margin:0;">
+            Study high-scoring benchmark answers side-by-side with weak drafts, learning exactly how to hit Band 3 criteria on writing questions.
+          </p>
+        </div>
+
+        <div class="pathway-step-card">
+          <div class="step-num-pill">4</div>
+          <h3 style="font-size:1.15rem; color:var(--navy-dark); margin-bottom:8px;">Mock Papers & SLC Guidance</h3>
+          <p style="font-size:0.9rem; color:var(--text-secondary); line-height:1.6; margin:0;">
+            Practice timed Reading and Writing papers. Receive guidance, topic ideas, and formal presentation templates for your Speaking and Listening exam.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SYLLABUS & MODULES -->
+  <section style="padding:60px 0; background:var(--bg-page);">
+    <div class="mfs-container">
+      <div style="text-align:center; max-width:760px; margin:0 auto 40px auto;">
+        <span style="color:var(--accent); font-weight:800; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em;">Complete Syllabus</span>
+        <h2 style="font-size:2.2rem; color:var(--navy-dark); margin:8px 0 12px;">The 3 Pillars of Level 2 English</h2>
+        <p style="color:var(--text-secondary); font-size:1rem; line-height:1.6;">Full preparation for all 3 components assessed on Ofqual-regulated Functional Skills English exams.</p>
+      </div>
+
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(340px, 1fr)); gap:24px; max-width:1100px; margin:0 auto;">
+        <!-- Pillar 1: Reading -->
+        <div style="background:var(--bg-card); border:1px solid var(--border); border-radius:16px; padding:26px; box-shadow:var(--shadow-sm);">
+          <div style="display:flex; align-items:center; gap:12px; margin-bottom:14px;">
+            <div style="width:44px; height:44px; border-radius:10px; background:#eff6ff; color:var(--accent); display:flex; align-items:center; justify-content:center; font-size:1.3rem;">
+              <i class="fa-solid fa-book-open-reader"></i>
+            </div>
+            <div>
+              <h3 style="font-size:1.15rem; color:var(--navy-dark); margin:0;">1. Reading Comprehension</h3>
+              <span style="font-size:0.8rem; color:var(--text-muted); font-weight:600;">Text Analysis & Evidence</span>
+            </div>
+          </div>
+          <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.55; margin-bottom:12px;">
+            Learn to analyse arguments, extract implicit meaning, and master comparative questions.
+          </p>
+          <ul style="list-style:none; padding:0; margin:0; font-size:0.85rem; color:var(--text-primary); display:flex; flex-direction:column; gap:6px;">
+            <li><i class="fa-solid fa-angle-right" style="color:var(--accent);"></i> Comparing ideas, perspectives, and tones across Text A and Text B</li>
+            <li><i class="fa-solid fa-angle-right" style="color:var(--accent);"></i> Distinguishing hard facts, opinions, and biased statements</li>
+            <li><i class="fa-solid fa-angle-right" style="color:var(--accent);"></i> Identifying organisational markers (bullet points, captions, subheadings)</li>
+            <li><i class="fa-solid fa-angle-right" style="color:var(--accent);"></i> Decoding specialist vocabulary, nuances, and technical terms</li>
+          </ul>
+        </div>
+
+        <!-- Pillar 2: Writing -->
+        <div style="background:var(--bg-card); border:1px solid var(--border); border-radius:16px; padding:26px; box-shadow:var(--shadow-sm);">
+          <div style="display:flex; align-items:center; gap:12px; margin-bottom:14px;">
+            <div style="width:44px; height:44px; border-radius:10px; background:#ecfdf5; color:#059669; display:flex; align-items:center; justify-content:center; font-size:1.3rem;">
+              <i class="fa-solid fa-pen-nib"></i>
+            </div>
+            <div>
+              <h3 style="font-size:1.15rem; color:var(--navy-dark); margin:0;">2. Workplace Writing & SPaG</h3>
+              <span style="font-size:0.8rem; color:var(--text-muted); font-weight:600;">Form, Content & Technical Accuracy</span>
+            </div>
+          </div>
+          <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.55; margin-bottom:12px;">
+            Produce clear, persuasive, professional documents tailored to specific audiences and formats.
+          </p>
+          <ul style="list-style:none; padding:0; margin:0; font-size:0.85rem; color:var(--text-primary); display:flex; flex-direction:column; gap:6px;">
+            <li><i class="fa-solid fa-angle-right" style="color:#059669;"></i> Formal letters, reports, emails, articles, and speeches</li>
+            <li><i class="fa-solid fa-angle-right" style="color:#059669;"></i> Sentence variety: Compound, complex, and rhetorical structures</li>
+            <li><i class="fa-solid fa-angle-right" style="color:#059669;"></i> SPaG rules: Accurate punctuation (commas, apostrophes, colons)</li>
+            <li><i class="fa-solid fa-angle-right" style="color:#059669;"></i> Organisational markers and logical paragraph transitions</li>
+          </ul>
+        </div>
+
+        <!-- Pillar 3: SLC -->
+        <div style="background:var(--bg-card); border:1px solid var(--border); border-radius:16px; padding:26px; box-shadow:var(--shadow-sm);">
+          <div style="display:flex; align-items:center; gap:12px; margin-bottom:14px;">
+            <div style="width:44px; height:44px; border-radius:10px; background:#fef3c7; color:#d97706; display:flex; align-items:center; justify-content:center; font-size:1.3rem;">
+              <i class="fa-solid fa-comments"></i>
+            </div>
+            <div>
+              <h3 style="font-size:1.15rem; color:var(--navy-dark); margin:0;">3. Speaking, Listening & Communicating</h3>
+              <span style="font-size:0.8rem; color:var(--text-muted); font-weight:600;">Presentation & Discussion</span>
+            </div>
+          </div>
+          <p style="font-size:0.88rem; color:var(--text-secondary); line-height:1.55; margin-bottom:12px;">
+            Prepare for your 10-minute presentation and collaborative group discussion with full confidence.
+          </p>
+          <ul style="list-style:none; padding:0; margin:0; font-size:0.85rem; color:var(--text-primary); display:flex; flex-direction:column; gap:6px;">
+            <li><i class="fa-solid fa-angle-right" style="color:#d97706;"></i> Structuring a formal 5-minute presentation with Q&A</li>
+            <li><i class="fa-solid fa-angle-right" style="color:#d97706;"></i> Active listening techniques and constructive counter-arguments</li>
+            <li><i class="fa-solid fa-angle-right" style="color:#d97706;"></i> Adapting register and vocabulary for professional situations</li>
+            <li><i class="fa-solid fa-angle-right" style="color:#d97706;"></i> Full presentation script templates and slide deck guidelines</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING & ENROLMENT PACKAGES -->
+  <section id="packages" style="padding:70px 0; background:var(--bg-card); border-top:1px solid var(--border-light);">
+    <div class="mfs-container">
+      <div style="text-align:center; max-width:760px; margin:0 auto;">
+        <span style="color:var(--accent); font-weight:800; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.05em;">Transparent Pricing</span>
+        <h2 style="font-size:2.4rem; color:var(--navy-dark); margin:8px 0 12px;">Choose Your English Level 2 Package</h2>
+        <p style="color:var(--text-secondary); font-size:1rem; line-height:1.6;">All packages include 12-month full access, pass guarantee, and full tutor support.</p>
+      </div>
+
+      <div class="pricing-cards-grid">
+        <!-- Option 1: Course Only -->
+        <div class="pricing-card">
+          <div>
+            <h3 style="font-size:1.35rem; color:var(--navy-dark); margin-bottom:4px;">English Level 2 Course</h3>
+            <p style="font-size:0.88rem; color:var(--text-muted); margin:0;">Complete self-paced training across Reading, Writing, and Speaking & Listening.</p>
+            <div class="pricing-price">£199 <small>/ 12 Months Access</small></div>
+            <ul class="feature-check-list">
+              <li><i class="fa-solid fa-check"></i> Complete 3-Pillar Interactive Curriculum</li>
+              <li><i class="fa-solid fa-check"></i> Smart Diagnostic Reading & Writing Assessment</li>
+              <li><i class="fa-solid fa-check"></i> 80+ Video Lessons with Dyslexia-Friendly Pacing</li>
+              <li><i class="fa-solid fa-check"></i> Downloadable Practice Worksheets & Model Answers</li>
+              <li><i class="fa-solid fa-check"></i> Text Comparison & SPaG Crash Courses</li>
+              <li><i class="fa-solid fa-check"></i> 4 Full-Length Reading & Writing Mock Papers</li>
+              <li><i class="fa-solid fa-check"></i> Master Functional Skills Pass Guarantee</li>
+            </ul>
+          </div>
+          <a href="https://wa.me/447564525425?text=Hello,%20I%20would%20like%20to%20enrol%20in%20the%20English%20Level%202%20Course%20(£199)" target="_blank" rel="noopener" class="btn-hero-navy" style="width:100%; text-align:center; box-sizing:border-box;">
+            Enrol in Course (£199) →
+          </a>
+        </div>
+
+        <!-- Option 2: Course + Exam (Featured) -->
+        <div class="pricing-card featured">
+          <div class="pricing-ribbon">Most Popular • Save £50</div>
+          <div>
+            <h3 style="font-size:1.35rem; color:var(--navy-dark); margin-bottom:4px;">Course + Accredited Exam</h3>
+            <p style="font-size:0.88rem; color:var(--text-muted); margin:0;">The complete all-in-one package. Study online, then take your official Ofqual-regulated Reading, Writing, and SLC exams.</p>
+            <div class="pricing-price">£299 <small>/ Complete Package</small></div>
+            <ul class="feature-check-list">
+              <li><i class="fa-solid fa-check"></i> <strong>Everything included in the Course package</strong></li>
+              <li><i class="fa-solid fa-check"></i> <strong>Official Pearson Edexcel Level 2 Exam Sitting</strong></li>
+              <li><i class="fa-solid fa-check"></i> Reading, Writing & SLC components included</li>
+              <li><i class="fa-solid fa-check"></i> Take online from home with certified invigilation</li>
+              <li><i class="fa-solid fa-check"></i> Fast-track official certificate dispatch (6-16 days)</li>
+              <li><i class="fa-solid fa-check"></i> Free exam re-sit if course requirements are met (Pass Guarantee)</li>
+            </ul>
+          </div>
+          <a href="exam-english-l2.html" class="btn-hero-accent" style="width:100%; text-align:center; box-sizing:border-box;">
+            Get Course + Exam (£299) →
+          </a>
+        </div>
+      </div>
+
+      <div style="text-align:center; margin-top:20px; font-size:0.88rem; color:var(--text-muted);">
+        <i class="fa-solid fa-lock"></i> Flexible payment plans available via PayPal, Klarna & Clearpay at checkout.
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQS -->
+  <section style="padding:60px 0; background:var(--bg-page);">
+    <div class="mfs-container" style="max-width:860px;">
+      <div style="text-align:center; margin-bottom:40px;">
+        <span style="color:var(--accent); font-weight:800; font-size:0.85rem; text-transform:uppercase;">Got Questions?</span>
+        <h2 style="font-size:2rem; color:var(--navy-dark); margin:8px 0;">Frequently Asked Questions</h2>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:16px;">
+        <details style="background:var(--bg-card); border:1px solid var(--border); border-radius:12px; padding:18px 22px;">
+          <summary style="font-weight:700; font-size:1.05rem; color:var(--navy-dark); cursor:pointer;">Is Functional Skills English Level 2 accepted for university or nursing?</summary>
+          <p style="margin-top:10px; color:var(--text-secondary); font-size:0.92rem; line-height:1.6;">
+            Yes! Functional Skills English Level 2 is fully regulated by Ofqual and accepted by the Nursing and Midwifery Council (NMC), NHS Trusts, the majority of UK universities, and teaching/apprenticeship programmes as equivalent to a GCSE English Grade 4 / Grade C.
+          </p>
+        </details>
+
+        <details style="background:var(--bg-card); border:1px solid var(--border); border-radius:12px; padding:18px 22px;">
+          <summary style="font-weight:700; font-size:1.05rem; color:var(--navy-dark); cursor:pointer;">How is the Speaking, Listening and Communicating (SLC) exam conducted?</summary>
+          <p style="margin-top:10px; color:var(--text-secondary); font-size:0.92rem; line-height:1.6;">
+            Your SLC assessment is carried out remotely over Zoom with an assessor and small group of fellow candidates. You deliver a short 5-minute presentation on a topic of your choice, answer questions, and participate in a guided discussion. Our course provides complete presentation templates and question practice.
+          </p>
+        </details>
+
+        <details style="background:var(--bg-card); border:1px solid var(--border); border-radius:12px; padding:18px 22px;">
+          <summary style="font-weight:700; font-size:1.05rem; color:var(--navy-dark); cursor:pointer;">Can I take the Reading and Writing exams on separate days?</summary>
+          <p style="margin-top:10px; color:var(--text-secondary); font-size:0.92rem; line-height:1.6;">
+            Yes, our flexible online booking allows you to take your Reading, Writing, and SLC assessments on the same day or split across different days to reduce test fatigue.
+          </p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+{FOOTER_HTML}"""
+    return html
+
+def main():
+    base_dir = "/home/subi/Projects/masterfunctionalskills.co.uk"
+    
+    # 1. Generate Maths Level 2 Course
+    maths_html = generate_maths_course()
+    maths_path = os.path.join(base_dir, "course-maths-l2.html")
+    with open(maths_path, "w", encoding="utf-8") as f:
+        f.write(maths_html)
+    print(f"Generated {maths_path} ({len(maths_html)} bytes)")
+    
+    # 2. Generate English Level 2 Course
+    english_html = generate_english_course()
+    english_path = os.path.join(base_dir, "course-english-l2.html")
+    with open(english_path, "w", encoding="utf-8") as f:
+        f.write(english_html)
+    print(f"Generated {english_path} ({len(english_html)} bytes)")
+
+if __name__ == "__main__":
+    main()

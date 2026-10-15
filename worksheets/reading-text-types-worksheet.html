@@ -1,0 +1,606 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Master Functional Skills — Text Types, Genre Conventions & Target Audience Worksheet (Level 1 & Level 2)</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 12mm 15mm 12mm 15mm;
+    }
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #0f172a;
+      background: #f8fafc;
+      margin: 0;
+      padding: 0;
+      font-size: 11pt;
+      line-height: 1.5;
+    }
+    .print-bar {
+      background: #0b172d;
+      color: #f8fafc;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    }
+    .print-bar a {
+      color: #93c5fd;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .print-bar a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+    .btn-action-print {
+      background: #2563eb;
+      color: #ffffff;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s;
+    }
+    .btn-action-print:hover {
+      background: #1d4ed8;
+    }
+    .btn-action-answers {
+      background: #059669;
+      color: #ffffff;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-right: 12px;
+    }
+    .btn-action-answers:hover {
+      background: #047857;
+    }
+
+    @media print {
+      .print-bar {
+        display: none !important;
+      }
+      body {
+        background: #ffffff !important;
+      }
+      .page-sheet {
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+      }
+      .q-card {
+        page-break-inside: avoid;
+      }
+    }
+
+    .page-sheet {
+      max-width: 860px;
+      margin: 24px auto;
+      background: #ffffff;
+      padding: 32px 40px;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+    .sheet-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 2.5px solid #0b172d;
+      padding-bottom: 16px;
+      margin-bottom: 20px;
+    }
+    .brand-title {
+      font-size: 1.45rem;
+      font-weight: 900;
+      color: #0b172d;
+      letter-spacing: -0.5px;
+    }
+    .brand-title span {
+      color: #2563eb;
+    }
+    .brand-subtitle {
+      font-size: 0.88rem;
+      color: #64748b;
+      margin-top: 2px;
+      font-weight: 500;
+    }
+    .sheet-meta-badge {
+      background: #eff6ff;
+      border: 1.5px solid #bfdbfe;
+      color: #1e40af;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-align: right;
+    }
+    .sheet-meta-badge .topic-name {
+      font-size: 1.15rem;
+      font-weight: 800;
+      display: block;
+    }
+    .sheet-meta-badge .spec-tag {
+      font-size: 0.78rem;
+      color: #3b82f6;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .learner-bar {
+      display: grid;
+      grid-template-columns: 2.5fr 1.5fr 1fr;
+      gap: 16px;
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 10px 16px;
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+    }
+    .learner-bar-item strong {
+      color: #0b172d;
+    }
+    .dotted-line {
+      display: inline-block;
+      width: 65%;
+      border-bottom: 1.5px dotted #94a3b8;
+      height: 12px;
+      margin-left: 6px;
+    }
+
+    .recall-banner {
+      background: #fffbeb;
+      border-left: 4px solid #f59e0b;
+      border-radius: 4px;
+      padding: 10px 14px;
+      margin-bottom: 24px;
+      font-size: 0.92rem;
+      color: #78350f;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .recall-banner i {
+      font-size: 1.1rem;
+      margin-top: 2px;
+      color: #d97706;
+    }
+
+    .tier-header {
+      background: #f1f5f9;
+      border-left: 4px solid #2563eb;
+      padding: 6px 12px;
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: #0b172d;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin: 24px 0 16px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .tier-header .tier-marks {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #2563eb;
+      background: #ffffff;
+      padding: 2px 8px;
+      border-radius: 4px;
+      border: 1px solid #cbd5e1;
+    }
+
+    .q-card {
+      border: 1.5px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 18px 20px;
+      margin-bottom: 22px;
+      background: #ffffff;
+    }
+    .q-card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+    .q-title {
+      font-weight: 800;
+      color: #0b172d;
+      font-size: 1rem;
+    }
+    .q-marks {
+      font-weight: 700;
+      color: #2563eb;
+      font-size: 0.88rem;
+      background: #eff6ff;
+      padding: 3px 10px;
+      border-radius: 4px;
+      border: 1px solid #bfdbfe;
+    }
+    .q-stem {
+      font-size: 1.02rem;
+      color: #0f172a;
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+
+    .q-diagram-wrap {
+      text-align: center;
+      margin: 14px 0;
+      padding: 10px;
+      background: #faf8f2;
+      border: 1px dashed #cbd5e1;
+      border-radius: 6px;
+    }
+    .q-diagram-wrap svg {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .q-working-area {
+      margin: 14px 0;
+      background: #ffffff;
+    }
+    .working-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #64748b;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .working-lines-box {
+      border: 1px solid #e2e8f0;
+      border-radius: 4px;
+      background: #ffffff;
+      padding: 0 10px;
+    }
+    .working-line {
+      height: 24px;
+      border-bottom: 1px dashed #e2e8f0;
+    }
+    .working-line:last-child {
+      border-bottom: none;
+    }
+
+    .q-answer-row {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px 12px;
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid #e2e8f0;
+    }
+    .q-answer-label {
+      font-weight: 700;
+      color: #0b172d;
+      font-size: 0.95rem;
+    }
+    .q-answer-sublabel {
+      font-weight: 600;
+      color: #1e293b;
+      font-size: 0.9rem;
+    }
+    .q-unit-prefix, .q-unit-suffix {
+      font-weight: 700;
+      color: #0b172d;
+      font-size: 1.05rem;
+    }
+    .q-item-sep {
+      color: #cbd5e1;
+      font-weight: 400;
+      margin: 0 4px;
+    }
+    .q-answer-separator {
+      font-weight: 600;
+      color: #64748b;
+      font-size: 1.05rem;
+    }
+    .q-choice-pills {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      background: #f8fafc;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #334155;
+    }
+    .pills-title {
+      color: #64748b;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .pill-opt {
+      padding: 2px 6px;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 4px;
+      color: #0f172a;
+    }
+    .q-workspace-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 6px;
+      color: #1d4ed8;
+      font-weight: 600;
+      font-size: 0.88rem;
+    }
+    .q-answer-input-box {
+      border: 2px solid #0b172d;
+      border-radius: 5px;
+      background: #ffffff;
+      height: 38px;
+      min-width: 140px;
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .q-answer-input-box.xs { min-width: 65px; }
+    .q-answer-input-box.sm { min-width: 105px; }
+    .q-answer-input-box.md { min-width: 160px; }
+    .q-answer-input-box.lg { min-width: 240px; }
+    .q-answer-row-multiline {
+      width: 100%;
+      display: flex;
+      align-items: flex-end;
+      gap: 12px;
+    }
+    .q-answer-line-fill {
+      flex: 1;
+      height: 28px;
+      border-bottom: 2px solid #0b172d;
+    }
+
+    .sheet-footer {
+      border-top: 1px solid #e2e8f0;
+      padding-top: 14px;
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      color: #94a3b8;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="print-bar">
+    <a href="../reading-text-types.html"><i class="fa-solid fa-arrow-left"></i> Back to Text Types, Genre Conventions & Target Audience Revision Guide</a>
+    <div>
+      <a href="reading-text-types-workout.html" class="btn-action-answers" style="background:#2563eb;"><i class="fa-solid fa-repeat"></i> Switch to Skill Workout</a>
+      <a href="reading-text-types-answers.html" class="btn-action-answers"><i class="fa-solid fa-check-double"></i> View Tutor Mark Scheme</a>
+      <button type="button" class="btn-action-print" onclick="window.print()"><i class="fa-solid fa-print"></i> Print / Save to PDF</button>
+    </div>
+  </div>
+
+  <div class="page-sheet">
+    <div class="sheet-head">
+      <div>
+        <div class="brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
+        <div class="brand-subtitle">Ofqual Regulated Standards • English Reading Curriculum</div>
+      </div>
+      <div class="sheet-meta-badge">
+        <span class="topic-name">Text Types, Genre Conventions & Target Audience</span>
+        <span class="spec-tag">Pearson Edexcel: L1.16 • L2.16 • L2.17</span>
+      </div>
+    </div>
+
+    <div class="learner-bar">
+      <div class="learner-bar-item"><strong>Learner:</strong> <span class="dotted-line"></span></div>
+      <div class="learner-bar-item"><strong>Date:</strong> <span class="dotted-line"></span></div>
+      <div class="learner-bar-item" style="text-align:right;"><strong>Score:</strong> _____ / 18</div>
+    </div>
+
+    <div class="recall-banner">
+      <i class="fa-solid fa-lightbulb"></i>
+      <div>
+        <strong>Examiner Rule for Text Types, Genre Conventions & Target Audience:</strong> Identify any text type by combining its visual format conventions (e.g. addresses/salutations for letters; numbered findings/recommendations for reports; user handles/timestamps for forums) with its primary purpose and specific target audience.
+      </div>
+    </div>
+
+
+    <!-- Section A: Foundational Concept Check -->
+    <div class="tier-header">
+      <span>Section A: Foundational Concept Check</span>
+      <span class="tier-marks">Questions 1 & 2 • 4 Marks</span>
+    </div>
+
+    <div class="q-card">
+      <div class="q-card-head">
+        <span class="q-title">Question 1 (Level 1 Identifying Text Genres from Structural Fingerprints)</span>
+        <span class="q-marks">[2 Marks]</span>
+      </div>
+      <div class="q-stem">
+        Identify the exact <strong>text type (genre)</strong> of each extract below from its formatting clues:<br><strong>Extract A:</strong> <em>'Thread: Best cordless combi drill under £120? | Posted by @ChippyPete (Yesterday at 19:14) [Reply] [Like (12)]'</em><br><strong>Extract B:</strong> <em>'14 Oak Lane, Bristol | 12 October 2026 | Dear Mr Henderson, Re: Boundary Wall Repair Quote... Yours sincerely, A. Kowalski'</em>
+      </div>
+      <div class="q-working-area">
+        <div class="working-label">Show your full working out here:</div>
+        <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+        </div>
+      </div>
+      <div class="q-answer-row">
+        <span class="q-answer-label">Identified Genres =</span>
+        Extract A Genre: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Extract B Genre: <div class="q-answer-input-box sm"></div>
+      </div>
+    </div>
+
+    <div class="q-card">
+      <div class="q-card-head">
+        <span class="q-title">Question 2 (Level 1 Pinpointing the Specific Target Audience)</span>
+        <span class="q-marks">[2 Marks]</span>
+      </div>
+      <div class="q-stem">
+        Read this extract from a community leaflet:<br><em>'Are you aged 60 or over and finding your garden lawn too heavy to mow? Our vetted volunteer gardeners offer free fortnightly grass cutting for retired householders across the borough.'</em><br><br>Identify the <strong>specific target audience</strong> for this leaflet and give <strong>two clues</strong> from the text that prove it.
+      </div>
+      <div class="q-working-area">
+        <div class="working-label">Show your full working out here:</div>
+        <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+        </div>
+      </div>
+      <div class="q-answer-row">
+        <span class="q-answer-label">Target Audience & Clues =</span>
+        Target Audience: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Clue 1: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Clue 2: <div class="q-answer-input-box sm"></div>
+      </div>
+    </div>
+
+    <!-- Section B: Functional Workplace Application -->
+    <div class="tier-header">
+      <span>Section B: Functional Workplace Application</span>
+      <span class="tier-marks">Questions 3 & 4 • 6 Marks</span>
+    </div>
+
+    <div class="q-card">
+      <div class="q-card-head">
+        <span class="q-title">Question 3 (Level 1/2 Distinguishing Formal Reports from Magazine Articles)</span>
+        <span class="q-marks">[3 Marks]</span>
+      </div>
+      <div class="q-stem">
+        Look at the structural features of two workplace documents:<br><strong>Document 1:</strong> Titled <em>'Q3 Warehouse Forklift Incident Investigation'</em>, divided into <strong>1.0 Executive Summary, 2.0 Audit Findings, 3.0 Cost Breakdown Table, 4.0 Mandatory Recommendations</strong>.<br><strong>Document 2:</strong> Headlined <em>'Forklift Futures: Why AI Sensors Are Taking Over the Aisle!'</em> by Sarah Jenkins, featuring a catchy strapline, two-column prose, and a boxed pull quote.<br><br>Identify the genre of Document 1 and Document 2, and explain how their purposes differ.
+      </div>
+      <div class="q-working-area">
+        <div class="working-label">Show your full working out here:</div>
+        <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+        </div>
+      </div>
+      <div class="q-answer-row">
+        <span class="q-answer-label">Genres & Contrasting Purposes =</span>
+        Doc 1 Genre: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Doc 2 Genre: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Purpose Difference: <div class="q-answer-input-box sm"></div>
+      </div>
+    </div>
+
+    <div class="q-card">
+      <div class="q-card-head">
+        <span class="q-title">Question 4 (Level 2 Analysing Standard Operating Procedures / Instructional Texts)</span>
+        <span class="q-marks">[3 Marks]</span>
+      </div>
+      <div class="q-stem">
+        Read this extract from a dental surgery wall card:<br><strong>AUTOCLAVE STERILISATION PROTOCOL (SOP-12)</strong><br><em><strong>Warning:</strong> Wear heat-resistant gauntlets.<br>1. Load unwrapped steel instruments onto perforated trays.<br>2. Select Cycle B (134°C at 2.1 bar pressure for 3 minutes).<br>3. Sign and staple the printout strip to the daily clinical logbook.</em><br><br>Identify the <strong>text type</strong>, state its <strong>exact purpose</strong>, and explain why it is unsuitable for a general patient waiting room.
+      </div>
+      <div class="q-working-area">
+        <div class="working-label">Show your full working out here:</div>
+        <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+        </div>
+      </div>
+      <div class="q-answer-row">
+        <span class="q-answer-label">Genre, Purpose & Audience Suitability =</span>
+        Text Type: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Purpose: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Why unsuitable for patients: <div class="q-answer-input-box sm"></div>
+      </div>
+    </div>
+
+    <!-- Section C: Pearson Edexcel Exam-Style Analysis & Evaluation -->
+    <div class="tier-header">
+      <span>Section C: Pearson Edexcel Exam-Style Analysis & Evaluation</span>
+      <span class="tier-marks">Questions 5 & 6 • 8 Marks</span>
+    </div>
+
+    <div class="q-card">
+      <div class="q-card-head">
+        <span class="q-title">Question 5 (Level 2 Evaluating Dual-Purpose Texts)</span>
+        <span class="q-marks">[4 Marks]</span>
+      </div>
+      <div class="q-stem">
+        Read this extract from a leaflet sent to householders by 'GreenHome Insulation Ltd':<br><em>'Did you know that 35% of your home's heat escapes straight through an uninsulated loft? Under the 2026 Great British Insulation Scheme, homes in Council Tax Bands A–D qualify for up to £1,500 towards mineral wool loft lagging. Do not shiver through another expensive winter — book your free 20-minute roof survey at greenhome.co.uk before 30th November!'</em><br><br>Analyse how this text operates as a <strong>dual-purpose text</strong>, quoting evidence for <strong>both</strong> purposes.
+      </div>
+      <div class="q-working-area">
+        <div class="working-label">Show your full working out here:</div>
+        <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+        </div>
+      </div>
+      <div class="q-answer-row">
+        <span class="q-answer-label">Dual-Purpose Analysis =</span>
+        Purpose 1 (Inform) & Quote: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Purpose 2 (Persuade/Promote) & Quote: <div class="q-answer-input-box sm"></div>
+      </div>
+    </div>
+
+    <div class="q-card">
+      <div class="q-card-head">
+        <span class="q-title">Question 6 (Level 2 Comparing Genre Conventions Across Three Extracts)</span>
+        <span class="q-marks">[4 Marks]</span>
+      </div>
+      <div class="q-stem">
+        Read three short texts about a train strike:<br><strong>Text A (Rail Operator SMS Alert):</strong> <em>'ALERT: Strike action Weds 18 Nov. Zero trains on North Line. Claim full refund at rail.co.uk/refunds.'</em><br><strong>Text B (Union Press Release):</strong> <em>'Signallers have been forced into industrial action after management refused to address dangerous lone-working rosters.'</em><br><strong>Text C (Travel Advice Guide):</strong> <em>'If you must travel on Wednesday, consider booking an intercity coach early or car-sharing with colleagues.'</em><br><br>Identify the <strong>text type and primary purpose</strong> of Text A, Text B, and Text C, and explain why Text A uses fragmented sentences.
+      </div>
+      <div class="q-working-area">
+        <div class="working-label">Show your full working out here:</div>
+        <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+        </div>
+      </div>
+      <div class="q-answer-row">
+        <span class="q-answer-label">Three-Text Genre & Purpose Breakdown =</span>
+        Text A: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Text B: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Text C: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Why Text A is short: <div class="q-answer-input-box sm"></div>
+      </div>
+    </div>
+
+
+    <div class="sheet-footer">
+      <div>Master Functional Skills • Pearson Edexcel Curriculum Aligned • 100% Original IP</div>
+      <div>Page 1 of 1 • Rev 2026.1</div>
+    </div>
+  </div>
+</body>
+</html>

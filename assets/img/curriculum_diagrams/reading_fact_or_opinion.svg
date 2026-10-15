@@ -1,0 +1,36 @@
+<svg viewBox="0 0 540 250" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:540px; height:auto; font-family:'Plus Jakarta Sans', system-ui, sans-serif;">
+  <rect x="2" y="2" width="536" height="246" rx="12" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.5"/>
+  <rect x="16" y="12" width="280" height="24" rx="6" fill="#e0f2fe"/>
+  <text x="26" y="28" font-size="11" font-weight="800" fill="#0369a1">✎ READING CRITERIA: FACT VS OPINION</text>
+  <text x="306" y="28" font-size="11" font-weight="700" fill="#475569">Pearson Reading Core Standard</text>
+  
+  <!-- Left Box: Fact -->
+  <rect x="16" y="46" width="246" height="188" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+  <rect x="16" y="46" width="246" height="28" rx="8" fill="#16a34a"/>
+  <text x="139" y="65" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">✓ OBJECTIVE FACT</text>
+  
+  <text x="26" y="94" font-size="10.5" font-weight="700" fill="#166534">• Can be proved true or false</text>
+  <text x="26" y="112" font-size="10" fill="#15803d">• Backed by statistics, data, dates, records</text>
+  <text x="26" y="130" font-size="10" fill="#15803d">• Unbiased, verifiable evidence</text>
+  
+  <rect x="24" y="146" width="230" height="76" rx="6" fill="#ffffff" stroke="#bbf7d0"/>
+  <text x="32" y="164" font-size="10" font-weight="800" fill="#166534">Authentic Exam Example:</text>
+  <text x="32" y="182" font-size="9.5" fill="#334155">"The clinic opens at 8:30am and treated</text>
+  <text x="32" y="198" font-size="9.5" fill="#334155">420 patients in November."</text>
+  <text x="32" y="214" font-size="9" font-weight="700" fill="#16a34a">→ Measurable fact verified by records.</text>
+
+  <!-- Right Box: Opinion -->
+  <rect x="278" y="46" width="246" height="188" rx="8" fill="#fff1f2" stroke="#fecdd3" stroke-width="1.5"/>
+  <rect x="278" y="46" width="246" height="28" rx="8" fill="#e11d48"/>
+  <text x="401" y="65" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">✕ SUBJECTIVE OPINION</text>
+  
+  <text x="288" y="94" font-size="10.5" font-weight="700" fill="#9f1239">• Personal belief, judgment, or feeling</text>
+  <text x="288" y="112" font-size="10" fill="#be123c">• Look for value words: 'best', 'dreadful'</text>
+  <text x="288" y="130" font-size="10" fill="#be123c">• Cannot be scientifically proven</text>
+  
+  <rect x="286" y="146" width="230" height="76" rx="6" fill="#ffffff" stroke="#fecdd3"/>
+  <text x="294" y="164" font-size="10" font-weight="800" fill="#9f1239">Authentic Exam Example:</text>
+  <text x="294" y="182" font-size="9.5" fill="#334155">"Dr Evans is the most caring doctor in</text>
+  <text x="294" y="198" font-size="9.5" fill="#334155">the entire healthcare trust."</text>
+  <text x="294" y="214" font-size="9" font-weight="700" fill="#e11d48">→ Value judgment / subjective opinion.</text>
+</svg>

@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-theme="digital" data-tint="cream">
+<head>
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="alternate icon" href="favicon.ico">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Functional Skills Past Papers, Data Files & Mark Schemes | Master Functional Skills</title>
+  <meta name="description" content="Download authentic Pearson Edexcel Digital Functional Skills past papers, candidate data file packages (.ZIP), mark schemes, and onscreen test files for Level 1 and Entry Level 3.">
+  <link rel="stylesheet" href="assets/css/mfs-theme.css">
+  <link rel="stylesheet" href="assets/css/mfs-revision.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    .dfs-paper-card {
+      background: var(--surface-card, #ffffff);
+      border: 1.5px solid var(--border, #e2e8f0);
+      border-radius: 16px;
+      padding: 28px;
+      margin-bottom: 28px;
+      box-shadow: 0 4px 16px rgba(0,0,0,0.04);
+      transition: all 0.2s ease;
+    }
+    .dfs-paper-card:hover {
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+      border-color: #cbd5e1;
+    }
+    .dfs-paper-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      flex-wrap: wrap;
+      gap: 16px;
+      padding-bottom: 20px;
+      border-bottom: 1.5px solid var(--border, #e2e8f0);
+      margin-bottom: 20px;
+    }
+    .dfs-paper-badge-level {
+      background: var(--accent, #f59e0b);
+      color: #0f172a;
+      font-weight: 800;
+      font-size: 0.78rem;
+      padding: 4px 12px;
+      border-radius: 6px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      display: inline-block;
+      margin-bottom: 8px;
+    }
+    .dfs-downloads-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 16px;
+      margin-top: 20px;
+    }
+    .dfs-dl-item {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: 12px;
+    }
+    .dfs-dl-info {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+    }
+    .dfs-dl-icon {
+      width: 38px;
+      height: 38px;
+      border-radius: 8px;
+      background: #eff6ff;
+      color: #2563eb;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.1rem;
+      flex-shrink: 0;
+    }
+    .dfs-dl-icon.zip {
+      background: #fef3c7;
+      color: #d97706;
+    }
+    .dfs-dl-icon.pdf {
+      background: #fee2e2;
+      color: #dc2626;
+    }
+    .dfs-dl-icon.pkg {
+      background: #dcfce7;
+      color: #16a34a;
+    }
+    .dfs-dl-title {
+      font-weight: 700;
+      font-size: 0.95rem;
+      color: var(--navy-dark, #0f172a);
+      line-height: 1.3;
+    }
+    .dfs-dl-meta {
+      font-size: 0.78rem;
+      color: #64748b;
+      margin-top: 3px;
+    }
+    .btn-file-dl {
+      background: #ffffff;
+      color: var(--navy-dark, #0f172a);
+      border: 1.5px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 8px 14px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      text-align: center;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      transition: all 0.15s ease;
+    }
+    .btn-file-dl:hover {
+      background: #f1f5f9;
+      border-color: #94a3b8;
+    }
+    .btn-file-dl.primary-dl {
+      background: var(--accent, #f59e0b);
+      color: #0f172a;
+      border-color: var(--accent, #f59e0b);
+    }
+    .btn-file-dl.primary-dl:hover {
+      background: #d97706;
+    }
+  </style>
+</head>
+<body>
+
+      <!-- TOP TRUST BAR WITH ACCESSIBILITY & CONTACT -->
+  <div class="mfs-top-bar">
+    <div class="mfs-container mfs-top-bar-inner">
+      <div class="top-trust-items">
+        <span class="top-trust-item"><i class="fa-solid fa-building-columns"></i> Pearson Edexcel &amp; City &amp; Guilds Aligned</span>
+      </div>
+      <div class="top-contacts">
+        <div class="mfs-access-bar">
+          <!-- DYSLEXIA BACKGROUND TINT PICKER -->
+          <div class="mfs-tint-dropdown-wrap">
+            <button type="button" id="tintToggle" class="btn-tint-toggle" onclick="toggleTintMenu(event)" title="Change dyslexia background tint">
+              <span class="tint-swatch-indicator" id="tintCurrentSwatch"></span>
+              <span id="tintLabel">Cream Tint</span>
+              <i class="fa-solid fa-chevron-down" style="font-size:0.62rem; opacity:0.75; margin-left:2px;"></i>
+            </button>
+            <div id="tintMenu" class="tint-picker-menu">
+              <div class="tint-picker-title"><i class="fa-solid fa-glasses"></i> Dyslexia Reading Tint</div>
+              <button type="button" class="tint-option-btn active" data-tint="cream" onclick="setSiteTint('cream', event)">
+                <span class="swatch swatch-cream"></span>
+                <span class="tint-name">Cream <small class="tint-badge-def">Default</small></span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="peach" onclick="setSiteTint('peach', event)">
+                <span class="swatch swatch-peach"></span>
+                <span class="tint-name">Soft Peach</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="cool" onclick="setSiteTint('cool', event)">
+                <span class="swatch swatch-cool"></span>
+                <span class="tint-name">Cool Mist</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="sage" onclick="setSiteTint('sage', event)">
+                <span class="swatch swatch-sage"></span>
+                <span class="tint-name">Soft Sage</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <div class="tint-divider"></div>
+              <button type="button" class="tint-option-btn" data-tint="none" onclick="setSiteTint('none', event)">
+                <span class="swatch swatch-none"></span>
+                <span class="tint-name">No Tint (White)</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+            </div>
+          </div>
+          <button id="dyslexiaToggle" class="btn-dyslexia-toggle" onclick="toggleDyslexiaMode()" title="Toggle Dyslexia High-Readability Mode">
+            <i class="fa-solid fa-universal-access"></i> Dyslexia
+          </button>
+          <button id="themeToggle" class="mfs-theme-pill" onclick="toggleTheme()" title="Switch Palette: Sapphire vs Emerald">
+            <i class="fa-solid fa-palette"></i> <span id="themeLabel">Sapphire</span>
+          </button>
+        </div>
+        <a href="contact-us.html" class="top-contact-link"><i class="fa-solid fa-envelope"></i> <strong>Contact Us</strong></a>
+      </div>
+    </div>
+  </div>  <!-- MAIN NAVIGATION -->
+                                  <header class="mfs-navbar">
+    <div class="revision-page-wrapper mfs-navbar-inner">
+      <a href="index.html" class="mfs-brand">
+        <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div class="mfs-brand-text">
+          <div class="mfs-brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
+          <div class="mfs-brand-subtitle">Delivering Skills • Achieving Goals</div>
+        </div>
+      </a>
+
+      <nav class="mfs-nav-wrapper">
+        <ul class="mfs-nav-menu">
+          <!-- 1. SUBJECTS (VISUAL MEGA-MENU) -->
+          <li class="mfs-nav-item">
+            <a href="courses.html" class="mfs-nav-link">
+              <i class="fa-solid fa-book-open-reader" style="color:#0284c7; margin-right:5px;"></i> Subjects <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-revision-hub">
+              <div class="mfs-revision-grid">
+                <!-- Maths Column -->
+                <div class="mfs-revision-col mfs-revision-col-maths">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-calculator"></i> Maths Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="functional-skills-maths-level-2.html" class="mfs-dropdown-item">Maths Level 2</a>
+                    <a href="functional-skills-maths-level-1.html" class="mfs-dropdown-item">Maths Level 1</a>
+                    <a href="entry-level-3-maths.html" class="mfs-dropdown-item">Entry Level 3 Maths</a>
+                  </div>
+                </div>
+                <!-- English Column -->
+                <div class="mfs-revision-col mfs-revision-col-english">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-pen-nib"></i> English Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="functional-skills-english-level-2.html" class="mfs-dropdown-item">English Level 2</a>
+                    <a href="functional-skills-english-level-1.html" class="mfs-dropdown-item">English Level 1</a>
+                  </div>
+                </div>
+                <!-- Digital Skills Column -->
+                <div class="mfs-revision-col mfs-revision-col-digital">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-laptop-code"></i> Digital Skills</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="digital-functional-skills.html" class="mfs-dropdown-item">Digital Skills Hub</a>
+                    <a href="digital-functional-skills-mock-exam.html" class="mfs-dropdown-item">Pearson Mock Exam</a>
+                    <a href="digital-functional-skills-past-papers.html" class="mfs-dropdown-item">Past Papers &amp; Files</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- 2. PAST PAPERS & MOCKS (DIRECT ACCESS) -->
+          <li class="mfs-nav-item">
+            <a href="functional-skills-past-papers.html" class="mfs-nav-link">
+              <i class="fa-regular fa-file-lines" style="color:#0284c7; margin-right:5px;"></i> Past Papers &amp; Mocks
+            </a>
+          </li>
+
+          <!-- 2b. WORKSHEETS DIRECTORY (CORBETT STYLE DUAL ENGINE) -->
+          <li class="mfs-nav-item">
+            <a href="worksheets.html" class="mfs-nav-link">
+              <i class="fa-solid fa-layer-group" style="color:#0284c7; margin-right:5px;"></i> Worksheets Hub
+            </a>
+          </li>
+
+          <!-- 3. FREE TOOLS (COMPACT DROPDOWN) -->
+          <li class="mfs-nav-item">
+            <a href="tools.html" class="mfs-nav-link">
+              <i class="fa-solid fa-screwdriver-wrench" style="color:#0284c7; margin-right:5px;"></i> Free Tools <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-compact">
+              <a href="tools.html" class="mfs-dropdown-item" style="font-weight:700; color:var(--accent);"><i class="fa-solid fa-layer-group" style="font-size:0.85rem; margin-right:6px;"></i> All Free Tools &amp; Simulators &rarr;</a>
+              <div class="mfs-dropdown-divider" style="margin:4px 0; border-top:1px solid #e2e8f0;"></div>
+              <a href="pass-mark-calculator.html" class="mfs-dropdown-item"><i class="fa-solid fa-calculator" style="color:var(--accent); font-size:0.85rem; margin-right:6px;"></i> Pass Mark Calculator</a>
+              <a href="diagnostic-test.html" class="mfs-dropdown-item"><i class="fa-solid fa-chart-pie" style="color:#059669; font-size:0.85rem; margin-right:6px;"></i> Diagnostic Skill Checker</a>
+              <a href="functional-skills-nets.html" class="mfs-dropdown-item"><i class="fa-solid fa-cube" style="color:#0284c7; font-size:0.85rem; margin-right:6px;"></i> 3D Net Folding Tool</a>
+            </div>
+          </li>
+
+          <!-- 4. REVISION CARDS -->
+          <li class="mfs-nav-item">
+            <a href="revision-cards.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-layer-group" style="color:#d97706; margin-right:5px;"></i> Revision Cards
+            </a>
+          </li>
+
+          <!-- 5. SHOP -->
+          <li class="mfs-nav-item">
+            <a href="shop.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-basket-shopping" style="color:#d97706; margin-right:5px;"></i> Shop
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- 6. BOOK EXAM ACTION BUTTON -->
+      <div class="mfs-nav-actions">
+        <a href="exams.html" class="btn-nav-exam">
+          <i class="fa-solid fa-calendar-check"></i> Book Exam
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="mfs-hero-section" style="padding:40px 0 30px;">
+    <div class="mfs-container">
+      <div style="max-width:960px;">
+        <span class="promo-badge" style="background:#2563eb; color:#ffffff; margin-bottom:12px; display:inline-block;">PEARSON EDEXCEL DFS EXAM REPOSITORY</span>
+        <h1 style="font-size:2.4rem; font-weight:800; color:var(--navy-dark); margin:0 0 14px 0;">
+          Digital Functional Skills <span>Past Papers & Data Files</span>
+        </h1>
+        <p style="font-size:1.1rem; color:var(--text-muted); line-height:1.6; margin:0 0 24px 0;">
+          Free direct downloads of authentic Pearson Edexcel Digital Functional Skills (DFSQ) examination papers, full candidate data file packages (.ZIP), and official examiner mark schemes for Level 1 and Entry Level 3.
+        </p>
+
+        <div style="display:flex; gap:14px; flex-wrap:wrap;">
+          <a href="digital-functional-skills-mock-exam.html" class="btn-hero-action" style="background:var(--accent); color:#0f172a;">
+            <i class="fa-solid fa-desktop"></i> Take Online Mock Exam in Browser →
+          </a>
+          <a href="assets/downloads/dfs/dfs-onscreen-practice-assessments-guide.pdf" class="btn-hero-action-secondary" style="border:2px solid var(--navy-dark); color:var(--navy-dark); background:transparent; font-weight:700;" download>
+            <i class="fa-solid fa-file-pdf"></i> Download Candidate Assessment Guide (PDF)
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="mfs-container" style="padding-top:20px; padding-bottom:60px;">
+
+    <!-- CANDIDATE INSTRUCTIONS CALLOUT -->
+    <div style="background:#eff6ff; border:2px solid #bfdbfe; border-radius:14px; padding:22px 24px; margin-bottom:36px; display:flex; gap:18px; align-items:flex-start;">
+      <div style="font-size:1.8rem; color:#2563eb;"><i class="fa-solid fa-circle-info"></i></div>
+      <div>
+        <h3 style="margin:0 0 6px 0; color:#1e3a8a; font-size:1.15rem;">How to Use These Assessment Files:</h3>
+        <ul style="margin:0; padding-left:20px; color:#1e40af; line-height:1.6; font-size:0.95rem;">
+          <li><strong>Download Data Files (.ZIP):</strong> Each exam set requires candidate starter files (Word flyers, Excel spreadsheets, HTML web forms, and JPG photos). Extract the ZIP into a dedicated folder on your computer.</li>
+          <li><strong>Timed Exam Conditions:</strong> Pearson Level 1 assessments are <strong>90 minutes</strong> (54 marks total: 10 marks Section A, 44 marks Section B). Entry Level 3 assessments are <strong>60 minutes</strong> (40 marks).</li>
+          <li><strong>Software Requirements:</strong> Use Microsoft Office (Word, Excel) or Google Workspace (Docs, Sheets) to complete your practical tasks, then compare your output with the official Pearson Mark Schemes.</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- LEVEL 1 EXAM SETS -->
+    <div class="mfs-section-title" style="margin-bottom:24px;">
+      <h2><i class="fa-solid fa-folder-open" style="color:var(--dfs-primary);"></i> Pearson Edexcel Level 1 Past Papers & Assessment Sets</h2>
+      <p>54 Marks Total • Section A (10 Marks) + Section B (44 Marks) • 90 Minutes Duration</p>
+    </div>
+
+    <!-- SET 1: SAM -->
+    <div class="dfs-paper-card">
+      <div class="dfs-paper-header">
+        <div>
+          <span class="dfs-paper-badge-level">Level 1 • Sample Assessment Materials (SAM)</span>
+          <h3 style="margin:0 0 6px 0; font-size:1.4rem; color:var(--navy-dark);">Mock 1: Fresh Bite Sandwich Shop</h3>
+          <p style="margin:0; color:var(--text-muted); font-size:0.95rem;">
+            Scenario: Managing digital communications, sandwich flyer design, weekly sales spreadsheet calculations, online electricity utility form, and wireless printer troubleshooting.
+          </p>
+        </div>
+        <a href="digital-functional-skills-mock-exam.html?set=set1" class="btn-file-dl primary-dl" style="padding:10px 18px;">
+          <i class="fa-solid fa-desktop"></i> Open Interactive Simulator
+        </a>
+      </div>
+
+      <div style="font-size:0.9rem; color:#475569; margin-bottom:10px;">
+        <strong>Included Candidate Data Files:</strong> <code>FOOD AGENCY.docx</code>, <code>SANDWICH FLYER.docx</code>, <code>SANDWICH SALES.xlsx</code>, <code>UTILITY.html</code>, <code>SANDWICH.jpg</code>, <code>ELECTRICITY READING.jpg</code>.
+      </div>
+
+      <div class="dfs-downloads-grid">
+        <div class="dfs-dl-item">
+          <div class="dfs-dl-info">
+            <div class="dfs-dl-icon pdf"><i class="fa-solid fa-file-pdf"></i></div>
+            <div>
+              <div class="dfs-dl-title">Question Paper & Mark Scheme</div>
+              <div class="dfs-dl-meta">Official Pearson PDF • 1.7 MB</div>
+            </div>
+          </div>
+          <a href="assets/downloads/dfs/dfsq-l1-sam.pdf" class="btn-file-dl" download><i class="fa-solid fa-download"></i> Download PDF</a>
+        </div>
+
+        <div class="dfs-dl-item">
+          <div class="dfs-dl-info">
+            <div class="dfs-dl-icon zip"><i class="fa-solid fa-file-zipper"></i></div>
+            <div>
+              <div class="dfs-dl-title">Candidate Data Files Package</div>
+              <div class="dfs-dl-meta">ZIP Archive • 16.0 MB</div>
+            </div>
+          </div>
+          <a href="assets/downloads/dfs/dfs-level-1-sam-data-files.zip" class="btn-file-dl primary-dl" download><i class="fa-solid fa-cloud-arrow-down"></i> Download Data Files (.ZIP)</a>
+        </div>
+
+        <div class="dfs-dl-item">
+          <div class="dfs-dl-info">
+            <div class="dfs-dl-icon zip"><i class="fa-solid fa-boxes-packing"></i></div>
+            <div>
+              <div class="dfs-dl-title">Full Assessment Package</div>
+              <div class="dfs-dl-meta">Complete Pearson Bundle • 16.4 MB</div>
+            </div>
+          </div>
+          <a href="assets/downloads/dfs/dfs-l1-sample-assessment-materials.zip" class="btn-file-dl" download><i class="fa-solid fa-download"></i> Full Bundle (.ZIP)</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- SET 2: PRACTICE SET 2 -->
+    <div class="dfs-paper-card">
+      <div class="dfs-paper-header">
+        <div>
+          <span class="dfs-paper-badge-level" style="background:#10b981; color:#ffffff;">Level 1 • Practice Set 2</span>
+          <h3 style="margin:0 0 6px 0; font-size:1.4rem; color:var(--navy-dark);">Mock 2: Annual Awards Ceremony & Catering</h3>
+          <p style="margin:0; color:var(--text-muted); font-size:0.95rem;">
+            Scenario: Awards venue image research, event dinner menu typography and photo styling, 4-year budget expenditure spreadsheet with filtering, online ceremony registration form, and Android tablet Wi-Fi diagnostics.
+          </p>
+        </div>
+        <a href="digital-functional-skills-mock-exam.html?set=set2" class="btn-file-dl primary-dl" style="padding:10px 18px;">
+          <i class="fa-solid fa-desktop"></i> Open Interactive Simulator
+        </a>
+      </div>
+
+      <div style="font-size:0.9rem; color:#475569; margin-bottom:10px;">
+        <strong>Included Candidate Data Files:</strong> <code>AWARDS.docx</code>, <code>CEREMONY.html</code>, <code>EXPENDITURE.xlsx</code>, <code>FOOD MENU.docx</code>, <code>MENU.jpg</code>, <code>TROPHY.jpg</code>.
+      </div>
+
+      <div class="dfs-downloads-grid">
+        <div class="dfs-dl-item">
+          <div class="dfs-dl-info">
+            <div class="dfs-dl-icon zip"><i class="fa-solid fa-file-zipper"></i></div>
+            <div>
+              <div class="dfs-dl-title">Candidate Data Files Package</div>
+              <div class="dfs-dl-meta">ZIP Archive • 2.8 MB</div>
+            </div>
+          </div>
+          <a href="assets/downloads/dfs/dfs-level-1-practice-set-2-data-files.zip" class="btn-file-dl primary-dl" download><i class="fa-solid fa-cloud-arrow-down"></i> Download Data Files (.ZIP)</a>
+        </div>
+
+        <div class="dfs-dl-item">
+          <div class="dfs-dl-info">
+            <div class="dfs-dl-icon pdf"><i class="fa-solid fa-file-pdf"></i></div>
+            <div>
+              <div class="dfs-dl-title">Official Examiner Mark Scheme</div>
+              <div class="dfs-dl-meta">Official Pearson PDF • 188 KB</div>
+            </div>
+          </div>
+          <a href="assets/downloads/dfs/dfs-level-1-practice-set-2-mark-scheme.pdf" class="btn-file-dl" download><i class="fa-solid fa-download"></i> Download Mark Scheme</a>
+        </div>
+
+        <div class="dfs-dl-item">
+          <div class="dfs-dl-info">
+            <div class="dfs-dl-icon pkg"><i class="fa-solid fa-box-archive"></i></div>
+            <div>
+              <div class="dfs-dl-title">Pearson Test Player Package</div>
+              <div class="dfs-dl-meta">Encrypted .PKGX Package • 132 KB</div>
+            </div>
+          </div>
+          <a href="assets/downloads/dfs/dfs-level-1-practice-set-2-onscreen-test.pkgx" class="btn-file-dl" download><i class="fa-solid fa-download"></i> Download .PKGX File</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- SET 3: PRACTICE SET 1 -->
+    <div class="dfs-paper-card">
+      <div class="dfs-paper-header">
+        <div>
+          <span class="dfs-paper-badge-level" style="background:#6366f1; color:#ffffff;">Level 1 • Practice Set 1</span>
+          <h3 style="margin:0 0 6px 0; font-size:1.4rem; color:var(--navy-dark);">Mock 3: First Aid Training & Supplies</h3>
+          <p style="margin:0; color:var(--text-muted); font-size:0.95rem;">
+            Scenario: Health and Safety Executive research, apprentice presentation formatting, first aid kit stock inventory costing spreadsheet, supplier ordering web form, and safety incident log filing.
+          </p>
+        </div>
+        <a href="digital-functional-skills-mock-exam.html?set=set3" class="btn-file-dl primary-dl" style="padding:10px 18px;">
+          <i class="fa-solid fa-desktop"></i> Open Interactive Simulator
+        </a>
+      </div>
+
+      <div style="font-size:0.9rem; color:#475569; margin-bottom:10px;">
+        <strong>Included Candidate Files:</strong> <code>FIRST AID ACTIVITY.docx</code>, <code>FIRST AID KIT.xlsx</code>, <code>FIRST AID PRESENTATION.pptx</code>, <code>SUPPLIER.html</code>.
+      </div>
+
+      <div class="dfs-downloads-grid">
+        <div class="dfs-dl-item">
+          <div class="dfs-dl-info">
+            <div class="dfs-dl-icon pdf"><i class="fa-solid fa-file-lines"></i></div>
+            <div>
+              <div class="dfs-dl-title">Candidate Activity Brief</div>
+              <div class="dfs-dl-meta">Word Document • 18 KB</div>
+            </div>
+          </div>
+          <a href="digital-functional-skills-mock-exam.html?set=set3" class="btn-file-dl"><i class="fa-solid fa-arrow-right"></i> View Tasks in Simulator</a>
+        </div>
+
+        <div class="dfs-dl-item">
+          <div class="dfs-dl-info">
+            <div class="dfs-dl-icon zip"><i class="fa-solid fa-file-zipper"></i></div>
+            <div>
+              <div class="dfs-dl-title">Practice Set Assessment Materials</div>
+              <div class="dfs-dl-meta">ZIP Archive Package</div>
+            </div>
+          </div>
+          <a href="assets/downloads/dfs/dfs-l1-sample-assessment-materials.zip" class="btn-file-dl primary-dl" download><i class="fa-solid fa-cloud-arrow-down"></i> Download Materials (.ZIP)</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- SET 4: PAST TEST SET 1 -->
+    <div class="dfs-paper-card">
+      <div class="dfs-paper-header">
+        <div>
+          <span class="dfs-paper-badge-level" style="background:#0284c7; color:#ffffff;">Level 1 • Past Test Set 1</span>
+          <h3 style="margin:0 0 6px 0; font-size:1.4rem; color:var(--navy-dark);">Mock 4: Gelato & Ice Cream Business</h3>
+          <p style="margin:0; color:var(--text-muted); font-size:0.95rem;">
+            Scenario: Allergen information research and staff safety notices, summer promotional poster document formatting, weekly ice cream sales spreadsheet formulas & charting, online commercial equipment portal, and workplace backup organization.
+          </p>
+        </div>
+        <a href="digital-functional-skills-mock-exam.html?set=set5" class="btn-file-dl primary-dl" style="padding:10px 18px;">
+          <i class="fa-solid fa-desktop"></i> Open Interactive Simulator
+        </a>
+      </div>
+
+      <div style="font-size:0.9rem; color:#475569; margin-bottom:10px;">
+        <strong>Included Candidate Files:</strong> <code>ALLERGY.docx</code>, <code>ICE CREAM POSTER.docx</code>, <code>ICE CREAM SALES.xlsx</code>, <code>UTILITY.html</code>, <code>ICE CREAM.jpg</code>.
+      </div>
+
+      <div class="dfs-downloads-grid">
+        <div class="dfs-dl-item">
+          <div class="dfs-dl-info">
+            <div class="dfs-dl-icon pdf"><i class="fa-solid fa-file-lines"></i></div>
+            <div>
+              <div class="dfs-dl-title">Allergen & Task Guidance</div>
+              <div class="dfs-dl-meta">Official Activity Brief</div>
+            </div>
+          </div>
+          <a href="digital-functional-skills-mock-exam.html?set=set5" class="btn-file-dl"><i class="fa-solid fa-arrow-right"></i> View Tasks in Simulator</a>
+        </div>
+
+        <div class="dfs-dl-item">
+          <div class="dfs-dl-info">
+            <div class="dfs-dl-icon zip"><i class="fa-solid fa-file-zipper"></i></div>
+            <div>
+              <div class="dfs-dl-title">Data Files Package</div>
+              <div class="dfs-dl-meta">ZIP Archive Package</div>
+            </div>
+          </div>
+          <a href="assets/downloads/dfs/dfs-level-1-sam-data-files.zip" class="btn-file-dl primary-dl" download><i class="fa-solid fa-cloud-arrow-down"></i> Download Data Files (.ZIP)</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ENTRY LEVEL 3 SETS -->
+    <div class="mfs-section-title" style="margin:40px 0 24px;">
+      <h2><i class="fa-solid fa-award" style="color:var(--accent);"></i> Pearson Edexcel Entry Level 3 (DFSQ) Past Papers</h2>
+      <p>40 Marks Total • Section A (10 Marks) + Section B (30 Marks) • 60 Minutes Duration</p>
+    </div>
+
+    <!-- SET 4: ENTRY 3 SAM -->
+    <div class="dfs-paper-card">
+      <div class="dfs-paper-header">
+        <div>
+          <span class="dfs-paper-badge-level" style="background:#d97706; color:#ffffff;">Entry Level 3 • Sample Assessment Materials (SAM)</span>
+          <h3 style="margin:0 0 6px 0; font-size:1.4rem; color:var(--navy-dark);">Entry Level 3 Mock: Apprenticeships &amp; Work Experience</h3>
+          <p style="margin:0; color:var(--text-muted); font-size:0.95rem;">
+            Scenario: Minimum apprentice wage rates research, email contacts setup, editing local business presentation slides, inserting colleague photos, and completing online work experience application forms.
+          </p>
+        </div>
+        <a href="digital-functional-skills-mock-exam.html?set=set4" class="btn-file-dl primary-dl" style="padding:10px 18px;">
+          <i class="fa-solid fa-desktop"></i> Open Interactive Simulator
+        </a>
+      </div>
+
+      <div style="font-size:0.9rem; color:#475569; margin-bottom:10px;">
+        <strong>Included Candidate Data Files:</strong> <code>LOCAL BUSINESS.pptx</code>, <code>WORK EXPERIENCE.html</code>, <code>TASK A EVIDENCE.docx</code>, <code>COLLEAGUES.jpg</code>.
+      </div>
+
+      <div class="dfs-downloads-grid">
+        <div class="dfs-dl-item">
+          <div class="dfs-dl-info">
+            <div class="dfs-dl-icon pdf"><i class="fa-solid fa-file-pdf"></i></div>
+            <div>
+              <div class="dfs-dl-title">Entry 3 Question Paper & Mark Scheme</div>
+              <div class="dfs-dl-meta">Official Pearson PDF • 1.6 MB</div>
+            </div>
+          </div>
+          <a href="assets/downloads/dfs/dfsq-e3-sam.pdf" class="btn-file-dl" download><i class="fa-solid fa-download"></i> Download PDF</a>
+        </div>
+
+        <div class="dfs-dl-item">
+          <div class="dfs-dl-info">
+            <div class="dfs-dl-icon zip"><i class="fa-solid fa-file-zipper"></i></div>
+            <div>
+              <div class="dfs-dl-title">Candidate Data Files Package</div>
+              <div class="dfs-dl-meta">ZIP Archive • 331 KB</div>
+            </div>
+          </div>
+          <a href="assets/downloads/dfs/dfsq-entry-level-3-sam-data-files.zip" class="btn-file-dl primary-dl" download><i class="fa-solid fa-cloud-arrow-down"></i> Download Data Files (.ZIP)</a>
+        </div>
+
+        <div class="dfs-dl-item">
+          <div class="dfs-dl-info">
+            <div class="dfs-dl-icon zip"><i class="fa-solid fa-boxes-packing"></i></div>
+            <div>
+              <div class="dfs-dl-title">Full Assessment Package</div>
+              <div class="dfs-dl-meta">Complete Pearson Bundle • 1.1 MB</div>
+            </div>
+          </div>
+          <a href="assets/downloads/dfs/dfs-entry-l3-sample-assessment-materials.zip" class="btn-file-dl" download><i class="fa-solid fa-download"></i> Full Bundle (.ZIP)</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ESSENTIAL TUTOR TIPS -->
+    <div style="background:var(--surface-card,#ffffff); border:1px solid var(--border); border-radius:16px; padding:32px; margin-top:40px;">
+      <h3 style="margin:0 0 16px 0; color:var(--navy-dark); font-size:1.3rem;">
+        <i class="fa-solid fa-lightbulb" style="color:var(--accent);"></i> Tutor Advice: How to Pass Digital Functional Skills First Time
+      </h3>
+      <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(280px, 1fr)); gap:24px;">
+        <div>
+          <h4 style="color:#2563eb; margin:0 0 8px 0;"><i class="fa-solid fa-1"></i> Section A: Quick Wins (10 Marks)</h4>
+          <p style="font-size:0.9rem; color:#475569; line-height:1.5;">
+            Master data storage units (1 KB = 1000 Bytes, 1 MB = 1000 KB). Remember GDPR individual rights (Erasure, Rectification, Access). Know how private browsing protects history and recognise the HTTPS padlock symbol.
+          </p>
+        </div>
+        <div>
+          <h4 style="color:#16a34a; margin:0 0 8px 0;"><i class="fa-solid fa-2"></i> Section B: Spreadsheet Precision (15 Marks)</h4>
+          <p style="font-size:0.9rem; color:#475569; line-height:1.5;">
+            Pearson strictly awards marks for <code>=SUM()</code> and <code>=AVERAGE()</code>. Never type manual cell additions like <code>=C4+D4+E4</code>. Always format money columns as British Pounds (£) with 2 decimal places.
+          </p>
+        </div>
+        <div>
+          <h4 style="color:#d97706; margin:0 0 8px 0;"><i class="fa-solid fa-3"></i> Document Design & White Space (10+ Marks)</h4>
+          <p style="font-size:0.9rem; color:#475569; line-height:1.5;">
+            Check document orientation (Landscape vs Portrait). Always lock aspect ratio when resizing photos, apply tight text wrapping so images never obscure sentences, and check for balanced white space.
+          </p>
+        </div>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- GLOBAL FOOTER -->  <!-- FOOTER -->
+  <footer class="mfs-footer" id="site-footer">
+    <div class="mfs-container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="mfs-brand" style="margin-bottom:16px;">
+            <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="mfs-brand-text">
+              <div class="mfs-brand-title" style="color:#ffffff;">MASTER<span>FUNCTIONALSKILLS</span></div>
+              <div class="mfs-brand-subtitle" style="color:#94a3b8;">Delivering Skills • Achieving Goals</div>
+            </div>
+          </div>
+          <p style="font-size:0.88rem; line-height:1.6; margin-bottom:16px;">
+            The UK's dedicated Functional Skills revision specialist. Providing realistic mock exams, step-by-step revision flashcards, diagnostic assessments, and 1-to-1 specialist tuition for Pearson Edexcel, City &amp; Guilds, and all major exam boards.
+          </p>
+          <div style="font-size:0.85rem; color:#cbd5e1;">
+            <p><a href="https://wa.me/447564525425" target="_blank" rel="noopener" style="color:#cbd5e1; text-decoration:none;"><i class="fa-brands fa-whatsapp" style="color:var(--accent); margin-right:8px;"></i> WhatsApp: +44 (0)7564 525425</a></p>
+            <p style="margin-top:6px;"><a href="contact-us.html" style="color:#cbd5e1; text-decoration:none;"><i class="fa-solid fa-envelope" style="color:var(--accent); margin-right:8px;"></i> Contact Tutor Team</a></p>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Maths Revision</h4>
+          <ul class="footer-links">
+            <li><a href="functional-skills-maths-level-2.html">Maths Level 2 Revision</a></li>
+            <li><a href="functional-skills-maths-level-1.html">Maths Level 1 Revision</a></li>
+            <li><a href="entry-level-3-maths.html">Entry Level 3 Maths</a></li>
+            <li><a href="pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="functional-skills-past-papers.html">Free Maths Past Papers</a></li>
+            <li><a href="exam-maths-l2.html">Book Level 2 Maths Exam</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>English &amp; Digital</h4>
+          <ul class="footer-links">
+            <li><a href="functional-skills-english-level-2.html">English Level 2 Revision</a></li>
+            <li><a href="functional-skills-english-level-1.html">English Level 1 Revision</a></li>
+            <li><a href="digital-functional-skills.html">Digital Skills Hub (L1 &amp; E3)</a></li>
+            <li><a href="digital-functional-skills-past-papers.html">DFS Past Papers &amp; Data Files</a></li>
+            <li><a href="functional-skills-past-papers.html?format=online#mock-finder">Online Exam Simulator</a></li>
+            <li><a href="exam-english-l2.html">Book Level 2 English Exam</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Student Support &amp; Tools</h4>
+          <ul class="footer-links">
+            <li><a href="tools.html" style="color:var(--accent); font-weight:700;"><i class="fa-solid fa-screwdriver-wrench" style="margin-right:6px;"></i>All Interactive Tools Hub</a></li>
+            <li><a href="pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="diagnostic-test.html">Diagnostic Skill Checker</a></li>
+            <li><a href="functional-skills-nets.html">3D Net Folding Tool</a></li>
+            <li><a href="digital-functional-skills-mock-exam.html">Pearson DFS Simulator</a></li>
+            <li><a href="revision-cards.html">Revision Cards &amp; Flashcards</a></li>
+            <li><a href="shop.html">Revision Books &amp; Study Packs</a></li>
+            <li><a href="tutors.html">1-to-1 Specialist Tuition</a></li>
+            <li><a href="exams.html">Book Official Online Exam</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Master Functional Skills. All rights reserved. Registered in England &amp; Wales. Ofqual Regulated Qualification Standards.</div>
+        <div style="display:flex; gap:16px; flex-wrap:wrap;">
+          <a href="index.html">Home</a>
+          <a href="tools.html" style="color:var(--accent); font-weight:700;">Tools</a>
+          <a href="functional-skills-past-papers.html">Past Papers</a>
+          <a href="revision-cards.html">Revision Cards</a>
+          <a href="shop.html">Study Shop</a>
+          <a href="tutors.html">Tutors</a>
+          <a href="contact-us.html">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/mfs-tint.js"></script>
+</body>
+</html>

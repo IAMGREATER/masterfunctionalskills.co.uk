@@ -3,8 +3,8 @@
 Unify Navigation Header across all Master Functional Skills pages.
 Ensures every page has:
 1. Subjects mega-menu
-2. Past Papers & Mocks
-2b. Worksheets Hub (Corbett style dual engine)
+2. Past Papers
+2b. Worksheets (Corbett style dual engine)
 3. Free Tools (compact dropdown)
 4. Revision Cards
 5. Shop
@@ -64,17 +64,17 @@ CANONICAL_HEADER = """  <header class="mfs-navbar">
             </div>
           </li>
 
-          <!-- 2. PAST PAPERS & MOCKS (DIRECT ACCESS) -->
+          <!-- 2. PAST PAPERS (DIRECT ACCESS) -->
           <li class="mfs-nav-item">
             <a href="functional-skills-past-papers.html" class="mfs-nav-link">
-              <i class="fa-regular fa-file-lines" style="color:#0284c7; margin-right:5px;"></i> Past Papers &amp; Mocks
+              <i class="fa-regular fa-file-lines" style="color:#0284c7; margin-right:5px;"></i> Past Papers
             </a>
           </li>
 
           <!-- 2b. WORKSHEETS DIRECTORY (CORBETT STYLE DUAL ENGINE) -->
           <li class="mfs-nav-item">
             <a href="worksheets.html" class="mfs-nav-link">
-              <i class="fa-solid fa-layer-group" style="color:#0284c7; margin-right:5px;"></i> Worksheets Hub
+              <i class="fa-solid fa-layer-group" style="color:#0284c7; margin-right:5px;"></i> Worksheets
             </a>
           </li>
 
@@ -155,7 +155,7 @@ EXCLUDE_FILES = {
 }
 
 def main():
-    header_pattern = re.compile(r'<header class=["\']mfs-navbar["\']>.*?</header>', re.DOTALL)
+    header_pattern = re.compile(r'^[ \t]*<header class=["\']mfs-navbar["\']>.*?</header>', re.MULTILINE | re.DOTALL)
 
     for d in DIRS:
         if not os.path.exists(d):

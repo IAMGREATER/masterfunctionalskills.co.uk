@@ -471,10 +471,17 @@ def build_full_html(filename, clean_topic, subject, subject_pill_icon, subject_d
             </div>
           </li>
 
-          <!-- 2. PAST PAPERS & MOCKS (DIRECT ACCESS) -->
+          <!-- 2. PAST PAPERS (DIRECT ACCESS) -->
           <li class="mfs-nav-item">
             <a href="functional-skills-past-papers.html" class="mfs-nav-link">
-              <i class="fa-regular fa-file-lines" style="color:#0284c7; margin-right:5px;"></i> Past Papers &amp; Mocks
+              <i class="fa-regular fa-file-lines" style="color:#0284c7; margin-right:5px;"></i> Past Papers
+            </a>
+          </li>
+
+          <!-- 2b. WORKSHEETS DIRECTORY (CORBETT STYLE DUAL ENGINE) -->
+          <li class="mfs-nav-item">
+            <a href="worksheets.html" class="mfs-nav-link">
+              <i class="fa-solid fa-layer-group" style="color:#0284c7; margin-right:5px;"></i> Worksheets
             </a>
           </li>
 

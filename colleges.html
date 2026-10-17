@@ -317,7 +317,7 @@ var woocommerce_params = {"ajax_url":"/wp/wp-admin/admin-ajax.php","wc_ajax_url"
         <ul class="mfs-nav-menu">
           <!-- 1. SUBJECTS (VISUAL MEGA-MENU) -->
           <li class="mfs-nav-item">
-            <a href="courses.html" class="mfs-nav-link">
+            <a href="revise.html" class="mfs-nav-link">
               <i class="fa-solid fa-book-open-reader" style="color:#0284c7; margin-right:5px;"></i> Subjects <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
             </a>
             <div class="mfs-dropdown-menu mfs-dropdown-revision-hub">
@@ -349,24 +349,36 @@ var woocommerce_params = {"ajax_url":"/wp/wp-admin/admin-ajax.php","wc_ajax_url"
                   </div>
                 </div>
               </div>
+              <!-- Course & Subject Selector Cross-link Footer inside dropdown -->
+              <div class="mfs-revision-dropdown-footer" style="margin-top:12px; padding-top:10px; border-top:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center; font-size:0.82rem;">
+                <a href="revise.html" style="font-weight:700; color:var(--accent); text-decoration:none;"><i class="fa-solid fa-layer-group" style="margin-right:4px;"></i> View All Subjects &amp; Levels &rarr;</a>
+                <a href="courses.html" style="font-weight:700; color:#059669; text-decoration:none;"><i class="fa-solid fa-graduation-cap" style="margin-right:4px;"></i> Accredited Online Courses &rarr;</a>
+              </div>
             </div>
           </li>
 
-          <!-- 2. PAST PAPERS (DIRECT ACCESS) -->
+          <!-- 2. ONLINE COURSES -->
+          <li class="mfs-nav-item">
+            <a href="courses.html" class="mfs-nav-link">
+              <i class="fa-solid fa-graduation-cap" style="color:#0284c7; margin-right:5px;"></i> Online Courses
+            </a>
+          </li>
+
+          <!-- 3. PAST PAPERS (DIRECT ACCESS) -->
           <li class="mfs-nav-item">
             <a href="functional-skills-past-papers.html" class="mfs-nav-link">
               <i class="fa-regular fa-file-lines" style="color:#0284c7; margin-right:5px;"></i> Past Papers
             </a>
           </li>
 
-          <!-- 2b. WORKSHEETS DIRECTORY (CORBETT STYLE DUAL ENGINE) -->
+          <!-- 4. WORKSHEETS DIRECTORY (CORBETT STYLE DUAL ENGINE) -->
           <li class="mfs-nav-item">
             <a href="worksheets.html" class="mfs-nav-link">
               <i class="fa-solid fa-layer-group" style="color:#0284c7; margin-right:5px;"></i> Worksheets
             </a>
           </li>
 
-          <!-- 3. FREE TOOLS (COMPACT DROPDOWN) -->
+          <!-- 5. FREE TOOLS (COMPACT DROPDOWN) -->
           <li class="mfs-nav-item">
             <a href="tools.html" class="mfs-nav-link">
               <i class="fa-solid fa-screwdriver-wrench" style="color:#0284c7; margin-right:5px;"></i> Free Tools <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
@@ -381,14 +393,14 @@ var woocommerce_params = {"ajax_url":"/wp/wp-admin/admin-ajax.php","wc_ajax_url"
             </div>
           </li>
 
-          <!-- 4. REVISION CARDS -->
+          <!-- 6. REVISION CARDS -->
           <li class="mfs-nav-item">
             <a href="revision-cards.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
               <i class="fa-solid fa-layer-group" style="color:#d97706; margin-right:5px;"></i> Revision Cards
             </a>
           </li>
 
-          <!-- 5. SHOP -->
+          <!-- 7. SHOP -->
           <li class="mfs-nav-item">
             <a href="shop.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
               <i class="fa-solid fa-basket-shopping" style="color:#d97706; margin-right:5px;"></i> Shop
@@ -397,7 +409,7 @@ var woocommerce_params = {"ajax_url":"/wp/wp-admin/admin-ajax.php","wc_ajax_url"
         </ul>
       </nav>
 
-      <!-- 6. BOOK EXAM ACTION BUTTON -->
+      <!-- 8. BOOK EXAM ACTION BUTTON -->
       <div class="mfs-nav-actions">
         <a href="exams.html" class="btn-nav-exam">
           <i class="fa-solid fa-calendar-check"></i> Book Exam

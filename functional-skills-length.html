@@ -370,57 +370,109 @@
         <section id="skill-1" class="revision-section">
           <div class="mfs-topic-card">
             <div class="mfs-topic-head">
-              <h3 class="mfs-topic-title"><span class="mfs-topic-prefix">Core Skill 1:</span> Skill 1: Length Measurement Benchmarks & Unit Selection</h3>
+              <h3 class="mfs-topic-title"><span class="mfs-topic-prefix">Core Skill 1:</span> Length Measurement Benchmarks & Unit Selection</h3>
               <p class="mfs-topic-stem">Real-world physical benchmarks for rapid estimation and unit checking.</p>
             </div>
             <div class="mfs-topic-body" style="padding:20px 24px;">
-              <div class="sketch-diagram-wrap"><svg viewBox="0 0 540 240" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:540px; height:auto; font-family:'Plus Jakarta Sans', system-ui, sans-serif;">
-  <rect x="2" y="2" width="536" height="236" rx="14" fill="#ffffff" stroke="#bae6fd" stroke-width="2"/>
-  <rect x="18" y="14" width="260" height="26" rx="13" fill="#e0f2fe"/>
-  <text x="28" y="32" font-size="12" font-weight="800" fill="#0369a1">✎ VISUAL MODEL: METRIC STAIRCASE</text>
-  <text x="290" y="32" font-size="13" font-weight="700" fill="#0f172a">Length, Weight &amp; Capacity</text>
+              <div class="sketch-diagram-wrap" style="margin:24px 0;">
+                <svg viewBox="0 0 860 390" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:860px; height:auto; font-family:'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; display:block; filter:drop-shadow(0 4px 16px rgba(15,23,42,0.07));">
+                  <!-- Outer Card -->
+                  <rect x="2" y="2" width="856" height="386" rx="16" fill="#ffffff" stroke="#bae6fd" stroke-width="2.5"/>
 
-  <!-- Length conversion row -->
-  <text x="25" y="70" font-size="12" font-weight="800" fill="#0369a1">LENGTH:</text>
-  
-  <rect x="85" y="55" width="45" height="28" rx="4" fill="#0284c7"/>
-  <text x="107" y="74" font-size="13" font-weight="800" fill="#ffffff" text-anchor="middle">km</text>
+                  <!-- Header Row -->
+                  <rect x="24" y="18" width="330" height="36" rx="18" fill="#e0f2fe"/>
+                  <text x="40" y="42" font-size="14" font-weight="900" fill="#0369a1" letter-spacing="0.5">✎ VISUAL MODEL: METRIC STAIRCASE</text>
+                  <text x="375" y="42" font-size="17" font-weight="800" fill="#0f172a">Length, Weight &amp; Capacity Conversions</text>
 
-  <text x="145" y="65" font-size="10.5" font-weight="800" fill="#16a34a">× 1,000 →</text>
-  <text x="145" y="80" font-size="10.5" font-weight="800" fill="#dc2626">← ÷ 1,000</text>
+                  <!-- Length Row Container -->
+                  <rect x="24" y="68" width="812" height="138" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
 
-  <rect x="200" y="55" width="45" height="28" rx="4" fill="#0284c7"/>
-  <text x="222" y="74" font-size="13" font-weight="800" fill="#ffffff" text-anchor="middle">m</text>
+                  <!-- Left Label Column -->
+                  <g transform="translate(38, 82)">
+                    <rect width="90" height="28" rx="6" fill="#e0f2fe"/>
+                    <text x="45" y="19" font-size="13" font-weight="900" fill="#0369a1" text-anchor="middle" letter-spacing="0.5">LENGTH</text>
+                    <text x="45" y="42" font-size="12" font-weight="800" fill="#64748b" text-anchor="middle">STAIRCASE</text>
+                    <rect y="66" width="90" height="19" rx="4" fill="#dcfce7"/>
+                    <text x="45" y="79" font-size="10.5" font-weight="800" fill="#15803d" text-anchor="middle">× Multiply →</text>
+                    <rect y="88" width="90" height="19" rx="4" fill="#fee2e2"/>
+                    <text x="45" y="101" font-size="10.5" font-weight="800" fill="#dc2626" text-anchor="middle">← Divide ÷</text>
+                  </g>
 
-  <text x="258" y="65" font-size="10.5" font-weight="800" fill="#16a34a">× 100 →</text>
-  <text x="258" y="80" font-size="10.5" font-weight="800" fill="#dc2626">← ÷ 100</text>
+                  <!-- 1. km Unit Box -->
+                  <g transform="translate(142, 82)">
+                    <rect width="86" height="74" rx="12" fill="#0284c7" stroke="#0369a1" stroke-width="1.5"/>
+                    <text x="43" y="42" font-size="32" font-weight="900" fill="#ffffff" text-anchor="middle">km</text>
+                    <text x="43" y="62" font-size="11" font-weight="800" fill="#e0f2fe" text-anchor="middle">kilometres</text>
+                  </g>
 
-  <rect x="310" y="55" width="45" height="28" rx="4" fill="#0284c7"/>
-  <text x="332" y="74" font-size="13" font-weight="800" fill="#ffffff" text-anchor="middle">cm</text>
+                  <!-- Arrow Transition 1: km to m -->
+                  <g transform="translate(286, 119)">
+                    <rect x="-50" y="-22" width="100" height="26" rx="6" fill="#dcfce7" stroke="#86efac" stroke-width="1.2"/>
+                    <text x="0" y="-4" font-size="15.5" font-weight="900" fill="#15803d" text-anchor="middle">× 1,000 →</text>
+                    <rect x="-50" y="10" width="100" height="26" rx="6" fill="#fee2e2" stroke="#fca5a5" stroke-width="1.2"/>
+                    <text x="0" y="28" font-size="15.5" font-weight="900" fill="#dc2626" text-anchor="middle">← ÷ 1,000</text>
+                  </g>
 
-  <text x="368" y="65" font-size="10.5" font-weight="800" fill="#16a34a">× 10 →</text>
-  <text x="368" y="80" font-size="10.5" font-weight="800" fill="#dc2626">← ÷ 10</text>
+                  <!-- 2. m Unit Box -->
+                  <g transform="translate(344, 82)">
+                    <rect width="86" height="74" rx="12" fill="#0284c7" stroke="#0369a1" stroke-width="1.5"/>
+                    <text x="43" y="42" font-size="32" font-weight="900" fill="#ffffff" text-anchor="middle">m</text>
+                    <text x="43" y="62" font-size="11" font-weight="800" fill="#e0f2fe" text-anchor="middle">metres</text>
+                  </g>
 
-  <rect x="420" y="55" width="45" height="28" rx="4" fill="#0284c7"/>
-  <text x="442" y="74" font-size="13" font-weight="800" fill="#ffffff" text-anchor="middle">mm</text>
+                  <!-- Arrow Transition 2: m to cm -->
+                  <g transform="translate(488, 119)">
+                    <rect x="-48" y="-22" width="96" height="26" rx="6" fill="#dcfce7" stroke="#86efac" stroke-width="1.2"/>
+                    <text x="0" y="-4" font-size="15.5" font-weight="900" fill="#15803d" text-anchor="middle">× 100 →</text>
+                    <rect x="-48" y="10" width="96" height="26" rx="6" fill="#fee2e2" stroke="#fca5a5" stroke-width="1.2"/>
+                    <text x="0" y="28" font-size="15.5" font-weight="900" fill="#dc2626" text-anchor="middle">← ÷ 100</text>
+                  </g>
 
-  <!-- Weight & Capacity rows in split card -->
-  <g transform="translate(25, 105)">
-    <rect width="235" height="110" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
-    <text x="15" y="24" font-size="11" font-weight="800" fill="#0369a1">MASS / WEIGHT (× 1,000):</text>
-    <text x="15" y="50" font-size="12" fill="#0f172a">1 kilogram (kg) = <tspan font-weight="800" fill="#0284c7">1,000 grams (g)</tspan></text>
-    <text x="15" y="72" font-size="12" fill="#0f172a">1 tonne (t) = <tspan font-weight="800" fill="#0284c7">1,000 kg</tspan></text>
-    <text x="15" y="96" font-size="11" font-weight="700" fill="#15803d">Big to small: Multiply by 1,000</text>
-  </g>
+                  <!-- 3. cm Unit Box -->
+                  <g transform="translate(544, 82)">
+                    <rect width="86" height="74" rx="12" fill="#0284c7" stroke="#0369a1" stroke-width="1.5"/>
+                    <text x="43" y="42" font-size="32" font-weight="900" fill="#ffffff" text-anchor="middle">cm</text>
+                    <text x="43" y="62" font-size="11" font-weight="800" fill="#e0f2fe" text-anchor="middle">centimetres</text>
+                  </g>
 
-  <g transform="translate(275, 105)">
-    <rect width="235" height="110" rx="8" fill="#f8fafc" stroke="#cbd5e1"/>
-    <text x="15" y="24" font-size="11" font-weight="800" fill="#0369a1">CAPACITY / LIQUID (× 1,000):</text>
-    <text x="15" y="50" font-size="12" fill="#0f172a">1 litre (L) = <tspan font-weight="800" fill="#0284c7">1,000 millilitres (ml)</tspan></text>
-    <text x="15" y="72" font-size="12" fill="#0f172a">1 centilitre (cl) = <tspan font-weight="800" fill="#0284c7">10 ml</tspan></text>
-    <text x="15" y="96" font-size="11" font-weight="700" fill="#15803d">Small to big: Divide by 1,000</text>
-  </g>
-</svg></div>
+                  <!-- Arrow Transition 3: cm to mm -->
+                  <g transform="translate(682, 119)">
+                    <rect x="-42" y="-22" width="84" height="26" rx="6" fill="#dcfce7" stroke="#86efac" stroke-width="1.2"/>
+                    <text x="0" y="-4" font-size="15.5" font-weight="900" fill="#15803d" text-anchor="middle">× 10 →</text>
+                    <rect x="-42" y="10" width="84" height="26" rx="6" fill="#fee2e2" stroke="#fca5a5" stroke-width="1.2"/>
+                    <text x="0" y="28" font-size="15.5" font-weight="900" fill="#dc2626" text-anchor="middle">← ÷ 10</text>
+                  </g>
+
+                  <!-- 4. mm Unit Box -->
+                  <g transform="translate(734, 82)">
+                    <rect width="86" height="74" rx="12" fill="#0284c7" stroke="#0369a1" stroke-width="1.5"/>
+                    <text x="43" y="42" font-size="32" font-weight="900" fill="#ffffff" text-anchor="middle">mm</text>
+                    <text x="43" y="62" font-size="11" font-weight="800" fill="#e0f2fe" text-anchor="middle">millimetres</text>
+                  </g>
+
+                  <!-- Mass / Weight Card -->
+                  <g transform="translate(24, 218)">
+                    <rect width="396" height="150" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+                    <rect x="16" y="14" width="230" height="26" rx="6" fill="#e0f2fe"/>
+                    <text x="26" y="32" font-size="13" font-weight="900" fill="#0369a1" letter-spacing="0.4">MASS / WEIGHT (× 1,000)</text>
+                    <text x="18" y="70" font-size="14.5" font-weight="600" fill="#0f172a">1 kilogram (kg) = <tspan font-weight="900" fill="#0284c7">1,000 grams (g)</tspan></text>
+                    <text x="18" y="98" font-size="14.5" font-weight="600" fill="#0f172a">1 tonne (t) = <tspan font-weight="900" fill="#0284c7">1,000 kg</tspan></text>
+                    <rect x="16" y="114" width="364" height="24" rx="6" fill="#dcfce7"/>
+                    <text x="26" y="130" font-size="12.5" font-weight="800" fill="#15803d">✔ Big to small: Multiply by 1,000 (kg → g)</text>
+                  </g>
+
+                  <!-- Capacity / Liquid Card -->
+                  <g transform="translate(440, 218)">
+                    <rect width="396" height="150" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+                    <rect x="16" y="14" width="230" height="26" rx="6" fill="#e0f2fe"/>
+                    <text x="26" y="32" font-size="13" font-weight="900" fill="#0369a1" letter-spacing="0.4">CAPACITY / LIQUID (× 1,000)</text>
+                    <text x="18" y="70" font-size="14.5" font-weight="600" fill="#0f172a">1 litre (L) = <tspan font-weight="900" fill="#0284c7">1,000 millilitres (ml)</tspan></text>
+                    <text x="18" y="98" font-size="14.5" font-weight="600" fill="#0f172a">1 centilitre (cl) = <tspan font-weight="900" fill="#0284c7">10 ml</tspan></text>
+                    <rect x="16" y="114" width="364" height="24" rx="6" fill="#dcfce7"/>
+                    <text x="26" y="130" font-size="12.5" font-weight="800" fill="#15803d">✔ Small to big: Divide by 1,000 (ml → L)</text>
+                  </g>
+                </svg>
+              </div>
               
                 <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:18px; margin:16px 0;">
                   <ul style="padding-left:20px; line-height:1.8; color:#334155;">

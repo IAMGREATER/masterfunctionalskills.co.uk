@@ -1036,8 +1036,6 @@
                 <div class="mfs-revision-col mfs-revision-col-digital">
                   <div class="mfs-revision-col-title"><i class="fa-solid fa-laptop-code"></i> Digital Skills</div>
                   <div class="mfs-revision-col-links">
-                    <a href="digital-functional-skills-level-1.html" class="mfs-dropdown-item">Digital Skills Level 1</a>
-                    <a href="entry-level-3-digital-skills.html" class="mfs-dropdown-item">Entry 3 Digital Skills</a>
                     <a href="digital-functional-skills.html" class="mfs-dropdown-item">Digital Skills Hub</a>
                     <a href="digital-functional-skills-mock-exam.html" class="mfs-dropdown-item">Pearson Mock Exam</a>
                     <a href="digital-functional-skills-past-papers.html" class="mfs-dropdown-item">Past Papers &amp; Files</a>
@@ -1055,24 +1053,8 @@
           <!-- 2. ONLINE COURSES -->
           <li class="mfs-nav-item">
             <a href="courses.html" class="mfs-nav-link">
-              <i class="fa-solid fa-graduation-cap" style="color:#0284c7; margin-right:5px;"></i> Online Courses <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+              <i class="fa-solid fa-graduation-cap" style="color:#0284c7; margin-right:5px;"></i> Online Courses
             </a>
-            <div class="mfs-dropdown-menu mfs-dropdown-compact">
-              <a href="courses.html" class="mfs-dropdown-item" style="font-weight:700; color:var(--accent);">
-                <i class="fa-solid fa-layer-group" style="font-size:0.85rem; margin-right:6px;"></i> All Online Courses &rarr;
-              </a>
-              <div class="mfs-dropdown-divider" style="margin:4px 0; border-top:1px solid #e2e8f0;"></div>
-              <a href="course-maths-l2.html" class="mfs-dropdown-item">
-                <i class="fa-solid fa-calculator" style="color:var(--accent); font-size:0.85rem; margin-right:6px;"></i> Maths Level 2 Course
-              </a>
-              <a href="course-english-l2.html" class="mfs-dropdown-item">
-                <i class="fa-solid fa-pen-nib" style="color:#7c3aed; font-size:0.85rem; margin-right:6px;"></i> English Level 2 Course
-              </a>
-              <div class="mfs-dropdown-divider" style="margin:4px 0; border-top:1px solid #e2e8f0;"></div>
-              <a href="exams.html" class="mfs-dropdown-item" style="font-weight:700; color:#16a34a;">
-                <i class="fa-solid fa-calendar-check" style="color:#16a34a; font-size:0.85rem; margin-right:6px;"></i> Book Official Exams (£149) &rarr;
-              </a>
-            </div>
           </li>
 
           <!-- 3. PAST PAPERS (DIRECT ACCESS) -->
@@ -1126,7 +1108,20 @@
           <i class="fa-solid fa-calendar-check"></i> Book Exam
         </a>
       </div>
+
+      <!-- MOBILE CONTROLS (TINT + BURGER) -->
+      <div class="mfs-mobile-controls" id="mfsMobileControls">
+        <button type="button" class="btn-mobile-tint-toggle" id="mfsMobileTintBtn" title="Change Reading Tint" aria-label="Reading Tint">
+          <i class="fa-solid fa-glasses"></i>
+          <span class="mobile-tint-swatch" id="mfsMobileTintSwatch"></span>
+        </button>
+        <button type="button" class="mfs-mobile-toggle" id="mfsMobileToggleBtn" title="Open Navigation Menu" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
     </div>
+    <!-- MOBILE NAVIGATION ENGINE -->
+    <script src="assets/js/mfs-mobile.js" defer></script>
   </header>
 
   <!-- PROMOTIONAL SALE ACCENT BANNER -->

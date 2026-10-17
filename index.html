@@ -144,8 +144,6 @@
                 <div class="mfs-revision-col mfs-revision-col-digital">
                   <div class="mfs-revision-col-title"><i class="fa-solid fa-laptop-code"></i> Digital Skills</div>
                   <div class="mfs-revision-col-links">
-                    <a href="digital-functional-skills-level-1.html" class="mfs-dropdown-item">Digital Skills Level 1</a>
-                    <a href="entry-level-3-digital-skills.html" class="mfs-dropdown-item">Entry 3 Digital Skills</a>
                     <a href="digital-functional-skills.html" class="mfs-dropdown-item">Digital Skills Hub</a>
                     <a href="digital-functional-skills-mock-exam.html" class="mfs-dropdown-item">Pearson Mock Exam</a>
                     <a href="digital-functional-skills-past-papers.html" class="mfs-dropdown-item">Past Papers &amp; Files</a>
@@ -163,24 +161,8 @@
           <!-- 2. ONLINE COURSES -->
           <li class="mfs-nav-item">
             <a href="courses.html" class="mfs-nav-link">
-              <i class="fa-solid fa-graduation-cap" style="color:#0284c7; margin-right:5px;"></i> Online Courses <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+              <i class="fa-solid fa-graduation-cap" style="color:#0284c7; margin-right:5px;"></i> Online Courses
             </a>
-            <div class="mfs-dropdown-menu mfs-dropdown-compact">
-              <a href="courses.html" class="mfs-dropdown-item" style="font-weight:700; color:var(--accent);">
-                <i class="fa-solid fa-layer-group" style="font-size:0.85rem; margin-right:6px;"></i> All Online Courses &rarr;
-              </a>
-              <div class="mfs-dropdown-divider" style="margin:4px 0; border-top:1px solid #e2e8f0;"></div>
-              <a href="course-maths-l2.html" class="mfs-dropdown-item">
-                <i class="fa-solid fa-calculator" style="color:var(--accent); font-size:0.85rem; margin-right:6px;"></i> Maths Level 2 Course
-              </a>
-              <a href="course-english-l2.html" class="mfs-dropdown-item">
-                <i class="fa-solid fa-pen-nib" style="color:#7c3aed; font-size:0.85rem; margin-right:6px;"></i> English Level 2 Course
-              </a>
-              <div class="mfs-dropdown-divider" style="margin:4px 0; border-top:1px solid #e2e8f0;"></div>
-              <a href="exams.html" class="mfs-dropdown-item" style="font-weight:700; color:#16a34a;">
-                <i class="fa-solid fa-calendar-check" style="color:#16a34a; font-size:0.85rem; margin-right:6px;"></i> Book Official Exams (£149) &rarr;
-              </a>
-            </div>
           </li>
 
           <!-- 3. PAST PAPERS (DIRECT ACCESS) -->
@@ -234,7 +216,20 @@
           <i class="fa-solid fa-calendar-check"></i> Book Exam
         </a>
       </div>
+
+      <!-- MOBILE CONTROLS (TINT + BURGER) -->
+      <div class="mfs-mobile-controls" id="mfsMobileControls">
+        <button type="button" class="btn-mobile-tint-toggle" id="mfsMobileTintBtn" title="Change Reading Tint" aria-label="Reading Tint">
+          <i class="fa-solid fa-glasses"></i>
+          <span class="mobile-tint-swatch" id="mfsMobileTintSwatch"></span>
+        </button>
+        <button type="button" class="mfs-mobile-toggle" id="mfsMobileToggleBtn" title="Open Navigation Menu" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
     </div>
+    <!-- MOBILE NAVIGATION ENGINE -->
+    <script src="assets/js/mfs-mobile.js" defer></script>
   </header>
 
   <!-- PROMOTIONAL SALE ACCENT BANNER -->
@@ -260,13 +255,13 @@
 
       <!-- Right Column: Big Square Hero Showcase Card -->
       <div class="hero-square-showcase" style="position:relative; width:100%; aspect-ratio:1/1; min-height:480px; max-width:540px; margin:0 auto; border-radius:24px; overflow:hidden; box-shadow:0 20px 45px -10px rgba(15, 23, 42, 0.35); border:1.5px solid rgba(255, 255, 255, 0.25); background:#070d1e;">
-        <img src="assets/img/sonya-hero-square.png" alt="Specialist AI Tutor Sonya — Master Functional Skills" style="width:100%; height:100%; object-fit:cover; object-position:center top; display:block;">
+        <img class="hero-showcase-img" src="assets/img/sonya-hero-square.png" alt="Specialist AI Tutor Sonya — Master Functional Skills" style="width:100%; height:100%; object-fit:cover; object-position:center top; display:block;">
         
         <!-- Ambient Contrast Scrim -->
-        <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(7, 13, 30, 0.35) 0%, rgba(7, 13, 30, 0.05) 32%, rgba(7, 13, 30, 0.72) 65%, rgba(7, 13, 30, 0.95) 100%); pointer-events:none;"></div>
+        <div class="hero-showcase-scrim" style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(7, 13, 30, 0.35) 0%, rgba(7, 13, 30, 0.05) 32%, rgba(7, 13, 30, 0.72) 65%, rgba(7, 13, 30, 0.95) 100%); pointer-events:none;"></div>
 
         <!-- Top Floating Status Pill -->
-        <div style="position:absolute; top:16px; left:16px; right:16px; display:flex; justify-content:space-between; align-items:center; z-index:2;">
+        <div class="hero-showcase-top-pills" style="position:absolute; top:16px; left:16px; right:16px; display:flex; justify-content:space-between; align-items:center; z-index:2;">
           <span style="background:rgba(7, 13, 30, 0.82); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border:1px solid rgba(56, 189, 248, 0.35); color:#ffffff; padding:6px 14px; border-radius:999px; font-size:0.8rem; font-weight:700; display:inline-flex; align-items:center; gap:7px; box-shadow:0 4px 15px rgba(2,132,199,0.25);">
             <i class="fa-solid fa-wand-magic-sparkles" style="color:#38bdf8;"></i> Specialist AI Tutor Sonya
           </span>
@@ -276,8 +271,8 @@
         </div>
 
         <!-- Bottom Overlaid Qualifications Card -->
-        <div style="position:absolute; bottom:14px; left:14px; right:14px; background:rgba(7, 13, 30, 0.86); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-radius:18px; padding:16px 18px; border:1px solid rgba(255, 255, 255, 0.16); box-shadow:0 12px 30px rgba(0, 0, 0, 0.45); z-index:2; color:#ffffff;">
-          <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:10px;">
+        <div class="hero-showcase-overlay" style="position:absolute; bottom:14px; left:14px; right:14px; background:rgba(7, 13, 30, 0.86); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-radius:18px; padding:16px 18px; border:1px solid rgba(255, 255, 255, 0.16); box-shadow:0 12px 30px rgba(0, 0, 0, 0.45); z-index:2; color:#ffffff;">
+          <div class="hero-showcase-overlay-header" style="display:flex; align-items:center; justify-content:space-between; margin-bottom:10px;">
             <div style="display:flex; align-items:center; gap:10px;">
               <div style="width:34px; height:34px; border-radius:10px; background:rgba(56, 189, 248, 0.2); border:1px solid rgba(56, 189, 248, 0.4); color:#38bdf8; display:flex; align-items:center; justify-content:center; font-size:1.05rem;">
                 <i class="fa-solid fa-award"></i>
@@ -292,7 +287,7 @@
             </span>
           </div>
 
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:10px;">
+          <div class="hero-showcase-grid" style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:10px;">
             <div style="background:rgba(255, 255, 255, 0.08); border:1px solid rgba(255, 255, 255, 0.12); border-radius:10px; padding:8px 10px;">
               <div style="font-size:0.76rem; font-weight:800; color:#38bdf8;"><i class="fa-solid fa-calculator"></i> Maths Level 2</div>
               <div style="font-size:0.7rem; color:#cbd5e1; margin-top:2px; line-height:1.35;">Meets uni, nursing &amp; apprenticeships.</div>
@@ -303,7 +298,7 @@
             </div>
           </div>
 
-          <div style="display:flex; flex-direction:column; gap:5px; font-size:0.74rem; color:#e2e8f0; font-weight:600;">
+          <div class="hero-showcase-features" style="display:flex; flex-direction:column; gap:5px; font-size:0.74rem; color:#e2e8f0; font-weight:600;">
             <div style="display:flex; align-items:center; gap:8px;"><i class="fa-solid fa-circle-check" style="color:#10b981;"></i> Official Pearson Edexcel Online Exam Invigilation</div>
             <div style="display:flex; align-items:center; gap:8px;"><i class="fa-solid fa-circle-check" style="color:#10b981;"></i> Fast Official Results Released within 14 Working Days</div>
             <div style="display:flex; align-items:center; gap:8px;"><i class="fa-solid fa-circle-check" style="color:#10b981;"></i> Free Diagnostic Skills Checks &amp; 3D Revision Flashcards</div>

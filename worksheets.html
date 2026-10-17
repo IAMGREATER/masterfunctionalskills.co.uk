@@ -969,7 +969,20 @@
           <i class="fa-solid fa-calendar-check"></i> Book Exam
         </a>
       </div>
+
+      <!-- MOBILE CONTROLS (TINT + BURGER) -->
+      <div class="mfs-mobile-controls" id="mfsMobileControls">
+        <button type="button" class="btn-mobile-tint-toggle" id="mfsMobileTintBtn" title="Change Reading Tint" aria-label="Reading Tint">
+          <i class="fa-solid fa-glasses"></i>
+          <span class="mobile-tint-swatch" id="mfsMobileTintSwatch"></span>
+        </button>
+        <button type="button" class="mfs-mobile-toggle" id="mfsMobileToggleBtn" title="Open Navigation Menu" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
     </div>
+    <!-- MOBILE NAVIGATION ENGINE -->
+    <script src="assets/js/mfs-mobile.js" defer></script>
   </header>
 
   <!-- DIRECT REVISION HUBS SUB-NAV (Moved below menu bar) -->

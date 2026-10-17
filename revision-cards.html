@@ -1089,22 +1089,195 @@
       height: auto;
     }
 
-    @media (max-width: 640px) {
+    @media (max-width: 768px) {
+      .deck-viewport {
+        padding: 6px 6px 0 !important;
+        max-width: 100% !important;
+        touch-action: pan-y pinch-zoom;
+      }
       .flip-card {
-        aspect-ratio: auto;
-        min-height: 520px;
-        height: auto;
+        aspect-ratio: auto !important;
+        height: 520px !important;
+        max-height: calc(100vh - 180px) !important;
+        min-height: 480px !important;
+        border-radius: 16px !important;
+        user-select: none;
+        -webkit-user-select: none;
       }
       .card-face {
-        position: absolute;
-        height: 100%;
+        position: absolute !important;
+        height: 100% !important;
+        border-radius: 16px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        overflow: hidden !important;
+      }
+      .card-header-bar {
+        padding: 8px 12px !important;
+        border-radius: 14px 14px 0 0 !important;
+      }
+      .header-left {
+        font-size: 0.95rem !important;
+        gap: 6px !important;
+      }
+      .card-num-pill {
+        font-size: 0.80rem !important;
+        padding: 2px 7px !important;
+      }
+      .header-title-text {
+        font-size: 0.92rem !important;
+        max-width: 170px !important;
+      }
+      .header-right {
+        font-size: 0.72rem !important;
+        padding: 2px 8px !important;
+      }
+      .postcard-body {
+        padding: 8px 12px 6px 12px !important;
+        flex: 1 1 auto !important;
+        min-height: 0 !important;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        gap: 5px !important;
+      }
+      .rule-headline {
+        font-size: 1.12rem !important;
+        line-height: 1.25 !important;
+        margin-bottom: 2px !important;
+      }
+      .rule-explanation {
+        font-size: 0.88rem !important;
+        line-height: 1.35 !important;
+        margin-bottom: 4px !important;
+      }
+      .diagram-holder {
+        min-height: 110px !important;
+        max-height: 140px !important;
+        height: 125px !important;
+        margin: 2px 0 4px 0 !important;
+        padding: 4px !important;
+      }
+      .golden-rule-pill,
+      .watch-out-pill {
+        font-size: 0.82rem !important;
+        padding: 4px 8px !important;
+        margin-bottom: 3px !important;
+        line-height: 1.25 !important;
+      }
+      .card-footer-strip {
+        padding: 6px 12px !important;
+        font-size: 0.76rem !important;
+      }
+      .card-face-back .postcard-body {
+        padding: 8px 12px !important;
+      }
+      .challenge-box {
+        padding: 6px 10px !important;
+        margin-bottom: 6px !important;
+      }
+      .challenge-title {
+        font-size: 0.78rem !important;
+        margin-bottom: 2px !important;
+      }
+      .challenge-q {
+        font-size: 0.95rem !important;
+        line-height: 1.35 !important;
+      }
+      .scratchpad-area {
+        min-height: 75px !important;
+        height: 85px !important;
+        font-size: 0.88rem !important;
+        padding: 6px 10px !important;
+      }
+      .card-face-back.show-answer .scratchpad-area,
+      .card-face-back:has(#backAnswerBox:not(.hidden-answer)) .scratchpad-area {
+        flex: 0 0 60px !important;
+        min-height: 60px !important;
+        height: 60px !important;
+        margin-bottom: 6px !important;
+      }
+      .answer-box {
+        min-height: 75px !important;
+        max-height: 130px !important;
+        font-size: 0.86rem !important;
+        padding: 6px 10px !important;
+      }
+      .deck-shortcuts-strip {
+        display: none !important;
+      }
+      .mobile-card-gesture-hint {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin: 10px auto 0;
+        padding: 6px 14px;
+        background: #f1f5f9;
+        border: 1.5px solid #e2e8f0;
+        border-radius: 999px;
+        font-size: 0.80rem;
+        font-weight: 700;
+        color: #334155;
+        max-width: 320px;
+        user-select: none;
+        -webkit-user-select: none;
+      }
+      .mobile-card-gesture-hint i {
+        color: #0284c7;
       }
       .grid-card-item {
-        aspect-ratio: auto;
-        min-height: 280px;
+        aspect-ratio: auto !important;
+        min-height: 280px !important;
       }
       .deck-controls {
-        justify-content: center;
+        justify-content: center !important;
+        gap: 6px !important;
+        margin-top: 12px !important;
+      }
+      .control-btn {
+        padding: 8px 12px !important;
+        font-size: 0.82rem !important;
+      }
+      .btn-kbd {
+        display: none !important;
+      }
+      .btn-mastered,
+      .btn-practice {
+        padding: 8px 11px !important;
+        font-size: 0.80rem !important;
+      }
+      .filter-section {
+        padding: 10px 12px !important;
+        border-radius: 12px !important;
+        margin-bottom: 12px !important;
+      }
+      .search-input-wrap {
+        margin-bottom: 8px !important;
+      }
+      .search-input {
+        padding: 8px 12px 8px 36px !important;
+        font-size: 0.86rem !important;
+      }
+      .deck-stat-badge {
+        padding: 4px 10px !important;
+        font-size: 0.78rem !important;
+      }
+      .filter-pill {
+        padding: 4px 9px !important;
+        font-size: 0.75rem !important;
+      }
+      .view-mode-tabs button:last-child {
+        display: none !important;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .mobile-card-gesture-hint {
+        display: none !important;
       }
     }
 
@@ -1208,8 +1381,6 @@
                 <div class="mfs-revision-col mfs-revision-col-digital">
                   <div class="mfs-revision-col-title"><i class="fa-solid fa-laptop-code"></i> Digital Skills</div>
                   <div class="mfs-revision-col-links">
-                    <a href="digital-functional-skills-level-1.html" class="mfs-dropdown-item">Digital Skills Level 1</a>
-                    <a href="entry-level-3-digital-skills.html" class="mfs-dropdown-item">Entry 3 Digital Skills</a>
                     <a href="digital-functional-skills.html" class="mfs-dropdown-item">Digital Skills Hub</a>
                     <a href="digital-functional-skills-mock-exam.html" class="mfs-dropdown-item">Pearson Mock Exam</a>
                     <a href="digital-functional-skills-past-papers.html" class="mfs-dropdown-item">Past Papers &amp; Files</a>
@@ -1227,24 +1398,8 @@
           <!-- 2. ONLINE COURSES -->
           <li class="mfs-nav-item">
             <a href="courses.html" class="mfs-nav-link">
-              <i class="fa-solid fa-graduation-cap" style="color:#0284c7; margin-right:5px;"></i> Online Courses <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+              <i class="fa-solid fa-graduation-cap" style="color:#0284c7; margin-right:5px;"></i> Online Courses
             </a>
-            <div class="mfs-dropdown-menu mfs-dropdown-compact">
-              <a href="courses.html" class="mfs-dropdown-item" style="font-weight:700; color:var(--accent);">
-                <i class="fa-solid fa-layer-group" style="font-size:0.85rem; margin-right:6px;"></i> All Online Courses &rarr;
-              </a>
-              <div class="mfs-dropdown-divider" style="margin:4px 0; border-top:1px solid #e2e8f0;"></div>
-              <a href="course-maths-l2.html" class="mfs-dropdown-item">
-                <i class="fa-solid fa-calculator" style="color:var(--accent); font-size:0.85rem; margin-right:6px;"></i> Maths Level 2 Course
-              </a>
-              <a href="course-english-l2.html" class="mfs-dropdown-item">
-                <i class="fa-solid fa-pen-nib" style="color:#7c3aed; font-size:0.85rem; margin-right:6px;"></i> English Level 2 Course
-              </a>
-              <div class="mfs-dropdown-divider" style="margin:4px 0; border-top:1px solid #e2e8f0;"></div>
-              <a href="exams.html" class="mfs-dropdown-item" style="font-weight:700; color:#16a34a;">
-                <i class="fa-solid fa-calendar-check" style="color:#16a34a; font-size:0.85rem; margin-right:6px;"></i> Book Official Exams (£149) &rarr;
-              </a>
-            </div>
           </li>
 
           <!-- 3. PAST PAPERS (DIRECT ACCESS) -->
@@ -1298,7 +1453,20 @@
           <i class="fa-solid fa-calendar-check"></i> Book Exam
         </a>
       </div>
+
+      <!-- MOBILE CONTROLS (TINT + BURGER) -->
+      <div class="mfs-mobile-controls" id="mfsMobileControls">
+        <button type="button" class="btn-mobile-tint-toggle" id="mfsMobileTintBtn" title="Change Reading Tint" aria-label="Reading Tint">
+          <i class="fa-solid fa-glasses"></i>
+          <span class="mobile-tint-swatch" id="mfsMobileTintSwatch"></span>
+        </button>
+        <button type="button" class="mfs-mobile-toggle" id="mfsMobileToggleBtn" title="Open Navigation Menu" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
     </div>
+    <!-- MOBILE NAVIGATION ENGINE -->
+    <script src="assets/js/mfs-mobile.js" defer></script>
   </header>
 
   <!-- HERO SECTION -->
@@ -1415,7 +1583,7 @@
         </div>
 
         <div class="deck-viewport">
-          <div class="flip-card" id="activeFlipCard" onclick="toggleCardFlip()">
+          <div class="flip-card" id="activeFlipCard" onclick="toggleCardFlip(event)">
           
           <!-- FRONT FACE -->
           <div class="card-face card-face-front" id="cardFront">
@@ -1526,7 +1694,7 @@
         </div>
 
         <!-- Flip Button -->
-        <button class="control-btn control-btn-primary" onclick="toggleCardFlip()" title="Flip Card (Space)">
+        <button class="control-btn control-btn-primary" onclick="toggleCardFlip(event)" title="Flip Card (Space)">
           <i class="fa-solid fa-arrows-rotate"></i> Flip Card <kbd class="btn-kbd btn-kbd-primary">Space</kbd>
         </button>
 
@@ -1539,6 +1707,11 @@
             <i class="fa-solid fa-check"></i> Mastered
           </button>
         </div>
+      </div>
+
+      <!-- MOBILE TOUCH GESTURES HINT -->
+      <div class="mobile-card-gesture-hint">
+        <i class="fa-solid fa-hand-pointer"></i> Tap card to flip &bull; Swipe ◄ ► to navigate
       </div>
     </div>
 
@@ -1812,12 +1985,76 @@
       });
     }
 
+    let justSwiped = false;
+
     // Toggle card flip
-    function toggleCardFlip() {
+    function toggleCardFlip(e) {
+      if (justSwiped) return;
+      if (e && e.target) {
+        if (e.target.closest('button') || e.target.closest('textarea') || e.target.closest('input') || e.target.closest('a') || e.target.closest('.scratchpad-area') || e.target.closest('.btn-reveal-answer') || e.target.closest('.btn-reveal')) {
+          return;
+        }
+      }
       const card = document.getElementById('activeFlipCard');
       if (!card) return;
       isFlipped = !isFlipped;
       card.classList.toggle('is-flipped', isFlipped);
+    }
+
+    // Touch swipe gesture engine for mobile & tablet
+    function initCardTouchGestures() {
+      const viewportEl = document.querySelector('.deck-viewport');
+      if (!viewportEl) return;
+
+      let startX = 0;
+      let startY = 0;
+      let currentX = 0;
+      let currentY = 0;
+      let isTracking = false;
+
+      viewportEl.addEventListener('touchstart', function(e) {
+        if (e.touches.length !== 1) return;
+        const target = e.target;
+        if (target.closest('button') || target.closest('textarea') || target.closest('input') || target.closest('a') || target.closest('.scratchpad-area') || target.closest('.btn-reveal-answer') || target.closest('.btn-reveal')) {
+          isTracking = false;
+          return;
+        }
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+        currentX = startX;
+        currentY = startY;
+        isTracking = true;
+      }, { passive: true });
+
+      viewportEl.addEventListener('touchmove', function(e) {
+        if (!isTracking || e.touches.length !== 1) return;
+        currentX = e.touches[0].clientX;
+        currentY = e.touches[0].clientY;
+      }, { passive: true });
+
+      viewportEl.addEventListener('touchend', function(e) {
+        if (!isTracking) return;
+        isTracking = false;
+
+        const diffX = currentX - startX;
+        const diffY = currentY - startY;
+        const absX = Math.abs(diffX);
+        const absY = Math.abs(diffY);
+
+        // Horizontal swipe threshold: 45px, predominantly horizontal
+        if (absX > 45 && absX > absY * 1.2) {
+          justSwiped = true;
+          setTimeout(() => { justSwiped = false; }, 350);
+
+          if (diffX < 0) {
+            // Swipe left -> Next card
+            nextCard();
+          } else {
+            // Swipe right -> Previous card
+            prevCard();
+          }
+        }
+      }, { passive: true });
     }
 
     // Next / Prev card
@@ -2073,6 +2310,7 @@
         if (btn) btn.classList.add('active');
       }
       initApp();
+      initCardTouchGestures();
     });
   </script>
 </body>

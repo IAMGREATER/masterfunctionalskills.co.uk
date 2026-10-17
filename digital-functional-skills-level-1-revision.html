@@ -82,7 +82,7 @@
         <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
         <div class="mfs-brand-text">
           <div class="mfs-brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
-          <div class="mfs-brand-subtitle">Delivering Skills &bull; Achieving Goals</div>
+          <div class="mfs-brand-subtitle">Delivering Skills • Achieving Goals</div>
         </div>
       </a>
 
@@ -90,11 +90,12 @@
         <ul class="mfs-nav-menu">
           <!-- 1. SUBJECTS (VISUAL MEGA-MENU) -->
           <li class="mfs-nav-item">
-            <a href="revise.html" class="mfs-nav-link active">
+            <a href="revise.html" class="mfs-nav-link">
               <i class="fa-solid fa-book-open-reader" style="color:#0284c7; margin-right:5px;"></i> Subjects <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
             </a>
             <div class="mfs-dropdown-menu mfs-dropdown-revision-hub">
               <div class="mfs-revision-grid">
+                <!-- Maths Column -->
                 <div class="mfs-revision-col mfs-revision-col-maths">
                   <div class="mfs-revision-col-title"><i class="fa-solid fa-calculator"></i> Maths Revision</div>
                   <div class="mfs-revision-col-links">
@@ -103,6 +104,7 @@
                     <a href="entry-level-3-maths.html" class="mfs-dropdown-item">Entry Level 3 Maths</a>
                   </div>
                 </div>
+                <!-- English Column -->
                 <div class="mfs-revision-col mfs-revision-col-english">
                   <div class="mfs-revision-col-title"><i class="fa-solid fa-pen-nib"></i> English Revision</div>
                   <div class="mfs-revision-col-links">
@@ -110,16 +112,20 @@
                     <a href="functional-skills-english-level-1.html" class="mfs-dropdown-item">English Level 1</a>
                   </div>
                 </div>
+                <!-- Digital Skills Column -->
                 <div class="mfs-revision-col mfs-revision-col-digital">
                   <div class="mfs-revision-col-title"><i class="fa-solid fa-laptop-code"></i> Digital Skills</div>
                   <div class="mfs-revision-col-links">
-                    <a href="digital-functional-skills-level-1.html" class="mfs-dropdown-item">Digital Skills Level 1</a>
-                    <a href="entry-level-3-digital-skills.html" class="mfs-dropdown-item">Entry 3 Digital Skills</a>
                     <a href="digital-functional-skills.html" class="mfs-dropdown-item">Digital Skills Hub</a>
                     <a href="digital-functional-skills-mock-exam.html" class="mfs-dropdown-item">Pearson Mock Exam</a>
                     <a href="digital-functional-skills-past-papers.html" class="mfs-dropdown-item">Past Papers &amp; Files</a>
                   </div>
                 </div>
+              </div>
+              <!-- Course & Subject Selector Cross-link Footer inside dropdown -->
+              <div class="mfs-revision-dropdown-footer" style="margin-top:12px; padding-top:10px; border-top:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center; font-size:0.82rem;">
+                <a href="revise.html" style="font-weight:700; color:var(--accent); text-decoration:none;"><i class="fa-solid fa-layer-group" style="margin-right:4px;"></i> View All Subjects &amp; Levels &rarr;</a>
+                <a href="courses.html" style="font-weight:700; color:#059669; text-decoration:none;"><i class="fa-solid fa-graduation-cap" style="margin-right:4px;"></i> Accredited Online Courses &rarr;</a>
               </div>
             </div>
           </li>
@@ -131,21 +137,21 @@
             </a>
           </li>
 
-          <!-- 3. PAST PAPERS -->
+          <!-- 3. PAST PAPERS (DIRECT ACCESS) -->
           <li class="mfs-nav-item">
             <a href="functional-skills-past-papers.html" class="mfs-nav-link">
               <i class="fa-regular fa-file-lines" style="color:#0284c7; margin-right:5px;"></i> Past Papers
             </a>
           </li>
 
-          <!-- 4. WORKSHEETS DIRECTORY -->
+          <!-- 4. WORKSHEETS DIRECTORY (CORBETT STYLE DUAL ENGINE) -->
           <li class="mfs-nav-item">
             <a href="worksheets.html" class="mfs-nav-link">
               <i class="fa-solid fa-layer-group" style="color:#0284c7; margin-right:5px;"></i> Worksheets
             </a>
           </li>
 
-          <!-- 5. FREE TOOLS -->
+          <!-- 5. FREE TOOLS (COMPACT DROPDOWN) -->
           <li class="mfs-nav-item">
             <a href="tools.html" class="mfs-nav-link">
               <i class="fa-solid fa-screwdriver-wrench" style="color:#0284c7; margin-right:5px;"></i> Free Tools <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
@@ -156,7 +162,6 @@
               <a href="pass-mark-calculator.html" class="mfs-dropdown-item"><i class="fa-solid fa-calculator" style="color:var(--accent); font-size:0.85rem; margin-right:6px;"></i> Pass Mark Calculator</a>
               <a href="diagnostic-test.html" class="mfs-dropdown-item"><i class="fa-solid fa-chart-pie" style="color:#059669; font-size:0.85rem; margin-right:6px;"></i> Diagnostic Skill Checker</a>
               <a href="functional-skills-nets.html" class="mfs-dropdown-item"><i class="fa-solid fa-cube" style="color:#0284c7; font-size:0.85rem; margin-right:6px;"></i> 3D Net Folding Tool</a>
-              <a href="digital-functional-skills-mock-exam.html" class="mfs-dropdown-item"><i class="fa-solid fa-laptop-code" style="color:#0284c7; font-size:0.85rem; margin-right:6px;"></i> Digital Exam Simulator</a>
               <a href="video-solution.html" class="mfs-dropdown-item"><i class="fa-solid fa-circle-play" style="color:#ef4444; font-size:0.85rem; margin-right:6px;"></i> Video Walkthrough Station</a>
             </div>
           </li>
@@ -183,7 +188,20 @@
           <i class="fa-solid fa-calendar-check"></i> Book Exam
         </a>
       </div>
+
+      <!-- MOBILE CONTROLS (TINT + BURGER) -->
+      <div class="mfs-mobile-controls" id="mfsMobileControls">
+        <button type="button" class="btn-mobile-tint-toggle" id="mfsMobileTintBtn" title="Change Reading Tint" aria-label="Reading Tint">
+          <i class="fa-solid fa-glasses"></i>
+          <span class="mobile-tint-swatch" id="mfsMobileTintSwatch"></span>
+        </button>
+        <button type="button" class="mfs-mobile-toggle" id="mfsMobileToggleBtn" title="Open Navigation Menu" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+        </button>
+      </div>
     </div>
+    <!-- MOBILE NAVIGATION ENGINE -->
+    <script src="assets/js/mfs-mobile.js" defer></script>
   </header>
 
   <!-- BREADCRUMBS -->

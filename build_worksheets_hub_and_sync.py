@@ -8,7 +8,7 @@ the 2 distinct worksheet styles (Skill Workout + Exam Practice).
 import os, glob, re
 import generate_all_curriculum_worksheets_final as c_final
 
-BASE_DIR = "/home/subi/Projects/masterfunctionalskills.co.uk"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 WORKSHEETS_DIR = os.path.join(BASE_DIR, "worksheets")
 
 def get_domain_category(slug, subject):
@@ -74,14 +74,32 @@ def generate_worksheets_hub():
             level = "Level 1 & Level 2"
             
             # Guide link
-            if cat_key.startswith("maths"):
-                guide_url = f"functional-skills-{slug}.html"
-            elif cat_key == "english-reading":
-                guide_url = f"reading-{slug.replace('reading-', '')}.html"
-            elif cat_key == "english-writing":
-                guide_url = f"writing-{slug.replace('writing-', '')}.html"
-            else:
-                guide_url = f"{slug}.html"
+            candidates = [
+                f"{slug}.html",
+                f"functional-skills-{slug}.html",
+                f"reading-{slug.replace('reading-', '')}.html",
+                f"writing-{slug.replace('writing-', '')}.html",
+                f"slc-{slug.replace('slc-', '')}.html",
+            ]
+            if slug == 'fdp-conversions':
+                candidates.insert(0, 'functional-skills-fractions-decimals-and-percentages.html')
+            if slug in ('english-level-2-writing-blog', 'writing-blog', 'blog'):
+                candidates.insert(0, 'functional-skills-english-level-2-writing-blog.html')
+            if slug == 'formulas' or slug == 'algebra':
+                candidates.insert(0, 'functional-skills-formulas.html')
+            if slug == 'division-and-remainders':
+                candidates.insert(0, 'functional-skills-division.html')
+            if slug == 'money-invoicing-payroll':
+                candidates.insert(0, 'functional-skills-money.html')
+            if cat_key == 'english-reading':
+                candidates.insert(0, f"reading-{slug.replace('reading-', '')}.html")
+                candidates.insert(1, f"{slug}.html")
+
+            guide_url = f"{slug}.html"
+            for cand in candidates:
+                if os.path.exists(os.path.join(BASE_DIR, cand)):
+                    guide_url = cand
+                    break
                 
             workout_url = f"worksheets/{slug}-workout.html"
             workout_ans_url = f"worksheets/{slug}-workout-answers.html"
@@ -1260,6 +1278,16 @@ def update_topic_pages_with_dual_downloads():
         if 'id="downloads"' in content:
             clean_title = slug.replace('reading-', '').replace('writing-', '').replace('slc-', '').replace('functional-skills-', '').replace('-', ' ').title()
             
+            if slug.startswith(('reading-', 'writing-', 'slc-')):
+                rep_title = f"{clean_title} Practice Drills (PDF)"
+                rep_desc = "Over 25 targeted practice questions + real-life workplace tasks to build confidence"
+            elif slug.startswith(('digital-', 'dfs-')):
+                rep_title = f"{clean_title} Practice Tasks (PDF)"
+                rep_desc = "Over 25 practical tasks + workplace drills to build confidence"
+            else:
+                rep_title = f"{clean_title} Practice Drills (PDF)"
+                rep_desc = "Over 25 quick calculation drills + real-life maths problems to build confidence"
+
             # Pattern matching download tiles grid
             downloads_pattern = re.compile(
                 r'(<section id="downloads"[\s\S]*?<div class="download-tiles-grid[^"]*">)[\s\S]*?(<\/div>\s*<\/section>)',
@@ -1272,8 +1300,8 @@ def update_topic_pages_with_dual_downloads():
               <div class="download-tile-icon icon-workout"><i class="fa-solid fa-repeat"></i></div>
               <div class="download-tile-info">
                 <div class="tile-badge-wrap"><span class="badge-tile-type">Style 1: Skill Workout</span></div>
-                <strong>{clean_title} Repetition Drills (PDF)</strong>
-                <span>Over 25 rapid-fire calculation drills + vocational applications for procedural fluency</span>
+                <strong>{rep_title}</strong>
+                <span>{rep_desc}</span>
               </div>
             </a>
 
@@ -1282,7 +1310,7 @@ def update_topic_pages_with_dual_downloads():
               <div class="download-tile-info">
                 <div class="tile-badge-wrap"><span class="badge-tile-type ans">Workout Answers</span></div>
                 <strong>Skill Workout Answer Key (PDF)</strong>
-                <span>Quick-check marking grid + worked solutions for vocational applications</span>
+                <span>Quick-check marking grid + worked solutions for everyday applications</span>
               </div>
             </a>
 
@@ -1301,7 +1329,7 @@ def update_topic_pages_with_dual_downloads():
               <div class="download-tile-info">
                 <div class="tile-badge-wrap"><span class="badge-tile-type ans">Exam Mark Scheme</span></div>
                 <strong>Step-by-Step Exam Mark Scheme (PDF)</strong>
-                <span>Official tutor model answers with method marks, common traps, and reverse checks</span>
+                <span>Official tutor model answers with step-by-step methods, common mistakes to avoid, and quick checks</span>
               </div>
             </a>
           \\2"""

@@ -197,7 +197,7 @@ ENGLISH_READING_BATCH3_WORKOUTS = {
         "spec_codes": "Pearson Edexcel English: Reading L2.15 • L2.16",
         "level": "Level 2",
         "method_card": {
-            "title": "Analyzing Authorial Stance & Perspective",
+            "title": "Analyzing Writer's Stance & Perspective",
             "points": [
                 "Point of View (POV): The author's personal stance, opinion, or angle on an issue.",
                 "Line of Argument: The logical progression of reasons and evidence used to build a case from introduction to conclusion.",
@@ -219,7 +219,7 @@ ENGLISH_READING_BATCH3_WORKOUTS = {
             },
             {
                 "title": "Detecting Bias Indicators",
-                "instruction": "Identify the word or phrase that reveals authorial bias:",
+                "instruction": "Identify the word or phrase that reveals writer bias:",
                 "items": [
                     ("a", "'The council's so-called consultation was an absolute farce.'", "'so-called' and 'absolute farce' (loaded, dismissive)"),
                     ("b", "'Only foolish managers would resist adopting this cutting-edge software.'", "'Only foolish managers' (ad hominem, biased assertion)"),
@@ -359,13 +359,13 @@ ENGLISH_READING_BATCH3_WORKOUTS = {
 
     # 7. STYLES OF WRITING AND VOICE
     "reading-styles-of-writing-and-voice": {
-        "title": "Writing Styles, Tone & Authorial Voice",
+        "title": "Writing Styles, Tone & Writer's Voice",
         "slug": "reading-styles-of-writing-and-voice",
         "subject": "English Reading",
         "spec_codes": "Pearson Edexcel English: Reading L2.15 • L2.16",
         "level": "Level 2",
         "method_card": {
-            "title": "Recognizing Authorial Tone",
+            "title": "Recognizing Tone & Perspective",
             "points": [
                 "Tone reflects the writer's attitude: Critical, enthusiastic, authoritative, sarcastic, empathetic, cautionary.",
                 "Formality spectrum: Highly formal (academic/legal) to highly informal (chatty/colloquial).",
@@ -530,7 +530,7 @@ ENGLISH_READING_BATCH3_WORKOUTS = {
 
     # 10. WHY DO WRITERS WRITE?
     "reading-why-do-writers-write": {
-        "title": "Authorial Intent & Primary Purpose",
+        "title": "The Writer's Purpose & Primary Goal",
         "slug": "reading-why-do-writers-write",
         "subject": "English Reading",
         "spec_codes": "Pearson Edexcel English: Reading L1.13 • L2.13",

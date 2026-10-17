@@ -2899,21 +2899,20 @@ p {
   .revision-page-wrapper,
   .mfs-container,
   .container {
-    width: 100% !important;
-    max-width: 100% !important;
+    width: calc(100% - 12px) !important;
+    max-width: calc(100% - 12px) !important;
     padding-left: 0 !important;
     padding-right: 0 !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
     box-sizing: border-box !important;
   }
   .revision-hero-card {
-    padding: 14px 0 16px !important;
-    border-bottom-width: 2px !important;
-    border-left: none !important;
-    border-right: none !important;
+    padding: 14px 10px 16px !important;
+    border-radius: 12px !important;
     width: 100% !important;
     max-width: 100% !important;
+    box-sizing: border-box !important;
   }
   .revision-hero-grid {
     grid-template-columns: 1fr !important;
@@ -2986,10 +2985,8 @@ p {
   }
   /* Resized hero visual card and book/concept image: full width in portrait view */
   .revision-hero-visual-card {
-    padding: 8px 0 6px !important;
-    border-radius: 0 !important;
-    border-left: none !important;
-    border-right: none !important;
+    padding: 8px 6px !important;
+    border-radius: 12px !important;
     width: 100% !important;
     max-width: 100% !important;
     margin: 6px 0 0 !important;
@@ -3002,7 +2999,7 @@ p {
     aspect-ratio: 16 / 9 !important;
     height: auto !important;
     max-height: none !important;
-    border-radius: 0 !important;
+    border-radius: 8px !important;
     box-sizing: border-box !important;
   }
   .revision-hero-img-wrap img {
@@ -3048,9 +3045,7 @@ p {
 
   /* 3. CORE SKILL & TOPIC CARDS */
   .mfs-topic-card {
-    border-radius: 0 !important;
-    border-left: none !important;
-    border-right: none !important;
+    border-radius: 12px !important;
     margin-bottom: 16px !important;
     width: 100% !important;
     max-width: 100% !important;

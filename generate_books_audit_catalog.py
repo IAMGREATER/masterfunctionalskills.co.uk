@@ -1095,7 +1095,7 @@ AUDIT_ITEMS = [
         "current_type": "img",
         "current_file": "workplace_office/dual_screen_research.jpg",
         "issue": "Dual screen photo represents the context well. Pair with an analytical Venn synthesis diagram showing Text A points, Text B points, and synthesis overlapping points.",
-        "proposed_concept": "Split-view analytical matrix contrasting Text A (Authorial stance, tone, evidence) against Text B with synthesis bridge column extracting common themes.",
+        "proposed_concept": "Split-view analytical matrix contrasting Text A (Writer's stance, tone, evidence) against Text B with synthesis bridge column extracting common themes.",
         "recommended_action": "Essential visual model for mastering the 11-mark comparison section.",
         "tags": ["Exam Essential", "Text A vs Text B", "Synthesis Grid", "11-Mark Question"]
     },

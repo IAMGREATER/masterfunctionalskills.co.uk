@@ -446,7 +446,10 @@ if __name__ == "__main__":
             workout_data = WORKOUT_CORE_MATHS[slug]
             workout_data['slug'] = slug
             if 'back_url' not in workout_data:
-                workout_data['back_url'] = f"../functional-skills-{slug}.html"
+                if os.path.exists(f"{slug}.html"):
+                    workout_data['back_url'] = f"../{slug}.html"
+                else:
+                    workout_data['back_url'] = f"../functional-skills-{slug}.html"
         else:
             fallback_count += 1
             workout_data = build_procedural_workout(

@@ -56,7 +56,7 @@ PROPOSED_ENGLISH = {
     },
     "reading-point-of-view-and-line-of-argument.html": {
         "concept": "Balanced courtroom or boardroom debate table with two opposing case folders and scales of justice motif.",
-        "why": "Currently reuses desk_laptop.jpg (5x). Opposing case files visually signify identifying bias, authorial stance, and balanced arguments.",
+        "why": "Currently reuses desk_laptop.jpg (5x). Opposing case files visually signify identifying bias, writer's stance, and balanced arguments.",
         "photo_file": "workplace_office/boardroom_debate.jpg",
         "unsplash_search": "debate discussion boardroom case files"
     },
@@ -80,7 +80,7 @@ PROPOSED_ENGLISH = {
     },
     "reading-why-do-writers-write.html": {
         "concept": "Investigative journalist writing an article with research notes, press badge, and highlighted background documents.",
-        "why": "Currently reuses writing_notes.jpg (4x). Captures authorial purpose: writing to expose, inform, advise, or entertain.",
+        "why": "Currently reuses writing_notes.jpg (4x). Captures writer's purpose: writing to expose, inform, advise, or entertain.",
         "photo_file": "journalism_media/journalist_writing.jpg",
         "unsplash_search": "journalist notebook press reporting writer"
     },

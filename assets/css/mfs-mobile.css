@@ -2065,7 +2065,7 @@
       box-sizing: border-box !important;
     }
 
-    /* 2. Containers, Wrappers, Sections & Main: 100% Width Edge-to-Edge */
+    /* 2. Containers & Page Wrappers: Universal Page Width with Thin Small Margins (6px each side) */
     .mfs-container,
     .revision-page-wrapper,
     .container,
@@ -2093,13 +2093,23 @@
     div.product,
     main#content > div#summary,
     main#content > .woocommerce-notices-wrapper,
+    #directoryContent {
+      width: calc(100% - 12px) !important;
+      max-width: calc(100% - 12px) !important;
+      min-width: 0 !important;
+      margin-left: auto !important;
+      margin-right: auto !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      box-sizing: border-box !important;
+    }
+
     main,
     section,
     article,
     .revision-layout,
     .revision-content,
-    .revision-section,
-    #directoryContent {
+    .revision-section {
       width: 100% !important;
       max-width: 100% !important;
       min-width: 0 !important;
@@ -2183,11 +2193,10 @@
       height: auto !important;
       min-height: unset !important;
       aspect-ratio: 1 / 1 !important;
-      border-radius: 0 !important;
-      border-left: none !important;
-      border-right: none !important;
+      border-radius: 16px !important;
       margin: 12px 0 0 0 !important;
       box-sizing: border-box !important;
+      overflow: hidden !important;
     }
 
     .hero-showcase-img {
@@ -2256,9 +2265,7 @@
       margin-left: 0 !important;
       margin-right: 0 !important;
       margin-bottom: 12px !important;
-      border-radius: 0 !important;
-      border-left: none !important;
-      border-right: none !important;
+      border-radius: 10px !important;
       box-sizing: border-box !important;
       padding: 12px 10px !important;
     }
@@ -2290,9 +2297,8 @@
       width: 100% !important;
       max-width: 100% !important;
       margin: 0 !important;
-      padding: 14px 0 16px !important;
-      border-left: none !important;
-      border-right: none !important;
+      padding: 14px 10px 16px !important;
+      border-radius: 12px !important;
       box-sizing: border-box !important;
     }
 
@@ -2310,10 +2316,8 @@
       width: 100% !important;
       max-width: 100% !important;
       margin: 8px 0 0 0 !important;
-      padding: 8px 0 6px 0 !important;
-      border-radius: 0 !important;
-      border-left: none !important;
-      border-right: none !important;
+      padding: 8px 6px !important;
+      border-radius: 12px !important;
       box-sizing: border-box !important;
     }
 
@@ -2322,7 +2326,7 @@
       max-width: 100% !important;
       aspect-ratio: 16 / 9 !important;
       height: auto !important;
-      border-radius: 0 !important;
+      border-radius: 8px !important;
       box-sizing: border-box !important;
     }
 
@@ -2355,15 +2359,12 @@
     .diagram-panel-box,
     .pfs-diagram-col,
     .real-photo-card,
-    .table-responsive,
-    table {
+    .table-responsive {
       width: 100% !important;
       max-width: 100% !important;
       margin-left: 0 !important;
       margin-right: 0 !important;
-      border-radius: 0 !important;
-      border-left: none !important;
-      border-right: none !important;
+      border-radius: 10px !important;
       box-sizing: border-box !important;
     }
 

@@ -105,7 +105,9 @@ def render_clean_answer_row(label, raw_box):
 
 def resolve_guide_url(slug, back_url=None):
     if back_url and not any(bad in back_url for bad in ['fdp-conversions', 'english-level-2-writing-blog', 'algebra', 'money-invoicing-payroll', 'division-and-remainders']):
-        return back_url
+        target = back_url.replace('../', '').split('#')[0].split('?')[0]
+        if os.path.exists(target):
+            return back_url
     if slug == 'fdp-conversions':
         return "../functional-skills-fractions-decimals-and-percentages.html"
     if slug in ('english-level-2-writing-blog', 'writing-blog', 'blog'):
@@ -116,6 +118,10 @@ def resolve_guide_url(slug, back_url=None):
         return "../functional-skills-division.html"
     if slug in ('money', 'money-invoicing-payroll'):
         return "../functional-skills-money.html"
+    if os.path.exists(f"{slug}.html"):
+        return f"../{slug}.html"
+    if os.path.exists(f"functional-skills-{slug}.html"):
+        return f"../functional-skills-{slug}.html"
     if back_url:
         return back_url
     return f"../functional-skills-{slug}.html"
@@ -734,16 +740,16 @@ def render_worksheet(data):
         width: 100% !important;
         max-width: 100% !important;
         overflow-x: hidden !important;
-        background: #ffffff !important;
+        background: #f8fafc !important;
       }}
       .page-sheet {{
-        width: 100% !important;
-        max-width: 100% !important;
-        margin: 0 !important;
-        padding: 12px 10px !important;
-        border: none !important;
-        border-radius: 0 !important;
-        box-shadow: none !important;
+        width: calc(100% - 12px) !important;
+        max-width: calc(100% - 12px) !important;
+        margin: 8px auto !important;
+        padding: 14px 10px !important;
+        border: 1px solid #cbd5e1 !important;
+        border-radius: 8px !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.04) !important;
         box-sizing: border-box !important;
       }}
       .sheet-head, .sheet-header {{
@@ -1520,16 +1526,16 @@ def render_answers(data):
         width: 100% !important;
         max-width: 100% !important;
         overflow-x: hidden !important;
-        background: #ffffff !important;
+        background: #f8fafc !important;
       }}
       .page-sheet {{
-        width: 100% !important;
-        max-width: 100% !important;
-        margin: 0 !important;
-        padding: 12px 10px !important;
-        border: none !important;
-        border-radius: 0 !important;
-        box-shadow: none !important;
+        width: calc(100% - 12px) !important;
+        max-width: calc(100% - 12px) !important;
+        margin: 8px auto !important;
+        padding: 14px 10px !important;
+        border: 1px solid #cbd5e1 !important;
+        border-radius: 8px !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.04) !important;
         box-sizing: border-box !important;
       }}
       .sheet-head, .sheet-header {{

@@ -1631,6 +1631,20 @@ a {
   background: #ffffff;
 }
 
+/* 2a. Workout Pill (Style 1 Fluency Drills) */
+.btn-mfs-sheet.btn-mfs-workout i,
+.btn-mfs-workout i {
+  color: #2563eb;
+  font-size: 0.8rem;
+}
+
+.btn-mfs-sheet.btn-mfs-workout:hover,
+.btn-mfs-workout:hover {
+  border-color: #2563eb;
+  color: #2563eb !important;
+  background: #ffffff;
+}
+
 /* 4. Video Solution */
 .btn-mfs-video {
   background: #ffffff;

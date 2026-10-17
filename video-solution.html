@@ -521,7 +521,10 @@
         'edexcel-maths-l2-past-paper-10-section-b': 'Edexcel Maths Level 2 • Past Paper 10 (Section B: Calculator)',
         'edexcel-maths-l2-past-paper-9': 'Edexcel Maths Level 2 • Past Paper 9 (Section A: Non-Calculator)',
         'edexcel-maths-l2-past-paper-9-section-a': 'Edexcel Maths Level 2 • Past Paper 9 (Section A: Non-Calculator)',
-        'edexcel-maths-l2-past-paper-9-section-b': 'Edexcel Maths Level 2 • Past Paper 9 (Section B: Calculator)'
+        'edexcel-maths-l2-past-paper-9-section-b': 'Edexcel Maths Level 2 • Past Paper 9 (Section B: Calculator)',
+        'edexcel-maths-l2-past-paper-8': 'Edexcel Maths Level 2 • Past Paper 8 (Section A: Non-Calculator)',
+        'edexcel-maths-l2-past-paper-8-section-a': 'Edexcel Maths Level 2 • Past Paper 8 (Section A: Non-Calculator)',
+        'edexcel-maths-l2-past-paper-8-section-b': 'Edexcel Maths Level 2 • Past Paper 8 (Section B: Calculator)'
       };
 
       const cleanSlug = topic.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
@@ -609,6 +612,39 @@
               <i class="fa-solid fa-circle-play"></i> Section A: Non-Calculator (Q1–Q4 • 13m)
             </a>
             <a href="video-solution.html?topic=edexcel-maths-l2-past-paper-10-section-b" style="padding:10px 18px; border-radius:10px; font-weight:800; font-size:0.92rem; text-decoration:none; display:inline-flex; align-items:center; gap:8px; border:1.5px solid ${isSecB ? '#3b82f6' : '#334155'}; background:${isSecB ? '#2563eb' : '#1e293b'}; color:#ffffff;">
+              <i class="fa-solid fa-calculator"></i> Section B: Calculator (Q1–Q12 • 22m)
+            </a>
+          `;
+        }
+
+        playerContainer.innerHTML = `
+          <div style="position:relative; width:100%; padding-bottom:56.25%; height:0; border-radius:14px; overflow:hidden; box-shadow:0 12px 30px rgba(0,0,0,0.6); border:1px solid #1e293b; background:#000;">
+            <iframe style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;" src="https://www.youtube-nocookie.com/embed/${ytId}?rel=0" title="${displayTitle}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        `;
+      } else if (
+        cleanSlug === 'edexcel-maths-l2-past-paper-8' ||
+        cleanSlug === 'edexcel-maths-l2-past-paper-8-section-a' ||
+        cleanSlug === 'edexcel-maths-l2-past-paper-8-section-b'
+      ) {
+        const isSecB = cleanSlug === 'edexcel-maths-l2-past-paper-8-section-b';
+        const ytId = isSecB ? '8xa6AdKD6jU' : 'y0XyWFzcsjc';
+
+        document.getElementById('sideWorksheetBtn').href = 'https://passfunctionalskills.co.uk/app/uploads/2024/01/Edexcel-FS-Maths-L2-Past-Paper-8.pdf';
+        document.getElementById('sideWorksheetLabel').innerHTML = '<i class="fa-regular fa-file-pdf"></i> Question Paper (PDF)';
+        document.getElementById('sideAnswersBtn').href = 'assets/downloads/past-papers/edexcel/maths-level-2/FS_Maths_Level_2_Past_Paper_8_Model_Solution_MFS.pdf';
+        document.getElementById('sideAnswersLabel').innerHTML = '<i class="fa-solid fa-lightbulb"></i> MFS Model Solution Booklet';
+        document.getElementById('sideReviseBtn').href = 'https://passfunctionalskills.co.uk/app/uploads/2024/01/Edexcel-FS-Maths-L2-Past-Paper-8-Mark-Scheme.pdf';
+        document.getElementById('sideReviseBtn').setAttribute('target', '_blank');
+        document.getElementById('sideReviseLabel').innerHTML = '<i class="fa-solid fa-clipboard-check"></i> Official Mark Scheme';
+
+        if (switcherBar) {
+          switcherBar.style.display = 'flex';
+          switcherBar.innerHTML = `
+            <a href="video-solution.html?topic=edexcel-maths-l2-past-paper-8-section-a" style="padding:10px 18px; border-radius:10px; font-weight:800; font-size:0.92rem; text-decoration:none; display:inline-flex; align-items:center; gap:8px; border:1.5px solid ${!isSecB ? '#3b82f6' : '#334155'}; background:${!isSecB ? '#2563eb' : '#1e293b'}; color:#ffffff;">
+              <i class="fa-solid fa-circle-play"></i> Section A: Non-Calculator (Q1–Q4 • 10m)
+            </a>
+            <a href="video-solution.html?topic=edexcel-maths-l2-past-paper-8-section-b" style="padding:10px 18px; border-radius:10px; font-weight:800; font-size:0.92rem; text-decoration:none; display:inline-flex; align-items:center; gap:8px; border:1.5px solid ${isSecB ? '#3b82f6' : '#334155'}; background:${isSecB ? '#2563eb' : '#1e293b'}; color:#ffffff;">
               <i class="fa-solid fa-calculator"></i> Section B: Calculator (Q1–Q12 • 22m)
             </a>
           `;

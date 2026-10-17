@@ -171,8 +171,18 @@ window.toggleTheme = toggleTheme;
 // Mobile TOC Toggle
 function toggleMobileToc() {
   const sidebar = document.getElementById('sidebarNav');
+  const btn = document.querySelector('.btn-mobile-toc');
   if (sidebar) {
-    sidebar.style.display = (sidebar.style.display === 'block') ? 'none' : 'block';
+    const isCurrentlyOpen = sidebar.style.display === 'block' || sidebar.classList.contains('open-mobile') || sidebar.classList.contains('active');
+    if (isCurrentlyOpen) {
+      sidebar.style.display = 'none';
+      sidebar.classList.remove('open-mobile', 'active');
+      if (btn) btn.classList.remove('active');
+    } else {
+      sidebar.style.display = 'block';
+      sidebar.classList.add('open-mobile', 'active');
+      if (btn) btn.classList.add('active');
+    }
   }
 }
 window.toggleMobileToc = toggleMobileToc;
@@ -283,6 +293,47 @@ window.addEventListener('DOMContentLoaded', () => {
       }
     });
   }
+
+  // Mobile / Landscape Table of Contents Interactions
+  const sidebar = document.getElementById('sidebarNav');
+  if (sidebar) {
+    // Auto-close floating TOC dropdown when any section link is tapped
+    sidebar.querySelectorAll('.sidebar-toc-link').forEach(link => {
+      link.addEventListener('click', () => {
+        if (window.innerWidth <= 1024 || window.innerHeight <= 650) {
+          sidebar.style.display = 'none';
+          sidebar.classList.remove('open-mobile', 'active');
+          const btn = document.querySelector('.btn-mobile-toc');
+          if (btn) btn.classList.remove('active');
+        }
+      });
+    });
+  }
+
+  // Close floating TOC when clicking outside
+  document.addEventListener('click', (e) => {
+    const s = document.getElementById('sidebarNav');
+    if (!s || (s.style.display !== 'block' && !s.classList.contains('open-mobile'))) return;
+    if (!s.contains(e.target) && !e.target.closest('.btn-mobile-toc')) {
+      s.style.display = 'none';
+      s.classList.remove('open-mobile', 'active');
+      const btn = document.querySelector('.btn-mobile-toc');
+      if (btn) btn.classList.remove('active');
+    }
+  });
+
+  // Close floating TOC on Escape key
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      const s = document.getElementById('sidebarNav');
+      if (s && (s.style.display === 'block' || s.classList.contains('open-mobile'))) {
+        s.style.display = 'none';
+        s.classList.remove('open-mobile', 'active');
+        const btn = document.querySelector('.btn-mobile-toc');
+        if (btn) btn.classList.remove('active');
+      }
+    }
+  });
 });
 
 // ==========================================================================

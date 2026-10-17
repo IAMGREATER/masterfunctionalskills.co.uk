@@ -150,18 +150,44 @@
         gap: 8px;
       }
       .print-bar > div:first-child {
-        text-align: center;
-        white-space: nowrap;
+        text-align: left;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
         overflow: hidden;
-        text-overflow: ellipsis;
+        display: block;
       }
       .print-bar > div:first-child a {
-        font-size: 0.85rem;
-        display: inline-flex;
+        font-size: 0.82rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        text-align: left;
+        width: 100%;
         max-width: 100%;
+        min-width: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        text-decoration: none;
+        color: #93c5fd;
+        font-weight: 600;
+        gap: 6px;
+      }
+      .print-bar > div:first-child a i {
+        flex-shrink: 0;
+        font-size: 0.85rem;
+        display: inline-block;
+      }
+      .print-bar > div:first-child a span,
+      .print-bar > div:first-child a .back-link-text {
+        flex: 1 1 auto;
+        min-width: 0;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+        text-align: left;
+        display: block;
       }
       .print-bar > div:last-child {
         display: flex;
@@ -555,8 +581,7 @@
       font-weight: 600;
       margin-left: 12px;
     }
-  
-    /* Mobile Portrait View: 100% full-width, clean typography, compact spacing */
+
     @media screen and (max-width: 768px), screen and (orientation: portrait) and (max-width: 1024px) {
       html, body {
         margin: 0 !important;
@@ -576,7 +601,7 @@
         box-shadow: 0 2px 8px rgba(0,0,0,0.04) !important;
         box-sizing: border-box !important;
       }
-      .sheet-head, .sheet-header {
+      .sheet-header {
         flex-direction: column !important;
         align-items: flex-start !important;
         gap: 8px !important;
@@ -591,13 +616,13 @@
         letter-spacing: -0.3px !important;
         width: 100% !important;
       }
-      .brand-subtitle, .sheet-sub {
+      .sheet-sub {
         font-size: 0.76rem !important;
         margin-top: 2px !important;
         width: 100% !important;
         line-height: 1.35 !important;
       }
-      .sheet-meta-badge, .header-badges {
+      .header-badges {
         width: 100% !important;
         box-sizing: border-box !important;
         text-align: left !important;
@@ -608,37 +633,8 @@
         flex-wrap: wrap !important;
         gap: 4px !important;
       }
-      .sheet-meta-badge .topic-name {
-        font-size: 0.90rem !important;
-      }
-      .sheet-meta-badge .spec-tag, .badge-level, .badge-spec {
+      .badge-level, .badge-spec {
         font-size: 0.70rem !important;
-      }
-      .learner-bar {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 6px !important;
-        padding: 6px 10px !important;
-        margin-bottom: 12px !important;
-        font-size: 0.82rem !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-      }
-      .learner-bar-item {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: space-between !important;
-        width: 100% !important;
-      }
-      .learner-bar-item strong {
-        font-size: 0.80rem !important;
-        min-width: 55px !important;
-      }
-      .learner-bar-item .dotted-line {
-        flex: 1 !important;
-        width: auto !important;
-        margin-left: 6px !important;
-        height: 10px !important;
       }
       .hero-banner {
         flex-direction: column !important;
@@ -694,26 +690,6 @@
         line-height: 1.35 !important;
         margin-top: 6px !important;
         padding-top: 6px !important;
-      }
-      .recall-banner {
-        padding: 8px 10px !important;
-        font-size: 0.80rem !important;
-        line-height: 1.38 !important;
-        margin-bottom: 12px !important;
-        gap: 6px !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-      }
-      .tier-header {
-        padding: 5px 8px !important;
-        font-size: 0.80rem !important;
-        margin: 14px 0 10px 0 !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-      }
-      .tier-header .tier-marks {
-        font-size: 0.70rem !important;
-        padding: 2px 5px !important;
       }
       .section-ribbon {
         margin: 14px 0 10px 0 !important;
@@ -781,32 +757,59 @@
       .drill-input-line {
         height: 14px !important;
       }
-      .q-card, .apply-card, .answer-card {
+      .apply-card, .answer-card, .ans-table-card, .solution-card {
         padding: 10px 8px !important;
         margin-bottom: 12px !important;
         border-radius: 6px !important;
         width: 100% !important;
         box-sizing: border-box !important;
       }
-      .q-card-head, .apply-card-head, .answer-card-head {
-        padding-bottom: 5px !important;
-        margin-bottom: 6px !important;
+      .apply-card-head, .answer-card-head, .solution-head {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        gap: 8px !important;
+        padding-bottom: 6px !important;
+        margin-bottom: 8px !important;
+        border-bottom: 1.5px solid #f1f5f9 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
       }
-      .q-title, .apply-title, .answer-title {
-        font-size: 0.85rem !important;
+      .apply-title, .answer-title, .solution-title {
+        font-size: 0.88rem !important;
+        font-weight: 700 !important;
+        color: #0b172d !important;
+        flex: 1 1 auto !important;
+        min-width: 0 !important;
+        line-height: 1.3 !important;
       }
-      .q-marks, .apply-marks, .ans-marks {
-        font-size: 0.72rem !important;
-        padding: 2px 6px !important;
+      .apply-marks, .ans-marks, .sol-mark, .tier-marks {
+        font-size: 0.74rem !important;
+        font-weight: 700 !important;
+        padding: 2px 7px !important;
+        border-radius: 4px !important;
+        white-space: nowrap !important;
+        flex-shrink: 0 !important;
+        display: inline-block !important;
+        line-height: 1.2 !important;
       }
-      .q-stem, .apply-stem {
+      .ans-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 6px !important;
+      }
+      .ans-grid-cell {
+        font-size: 0.78rem !important;
+        padding: 4px 6px !important;
+      }
+      .apply-stem {
         font-size: 0.84rem !important;
         line-height: 1.45 !important;
         margin-bottom: 8px !important;
         overflow-wrap: break-word !important;
         word-wrap: break-word !important;
       }
-      .q-diagram-wrap, .apply-diagram-wrap {
+      .apply-diagram-wrap {
         padding: 4px !important;
         margin: 8px 0 !important;
         width: 100% !important;
@@ -814,63 +817,11 @@
         box-sizing: border-box !important;
         overflow-x: auto !important;
       }
-      .q-diagram-wrap svg, .apply-diagram-wrap svg {
+      .apply-diagram-wrap svg {
         max-width: 100% !important;
         height: auto !important;
       }
-      .q-working-area {
-        margin: 8px 0 !important;
-      }
-      .working-label {
-        font-size: 0.70rem !important;
-        margin-bottom: 3px !important;
-      }
-      .working-lines-box {
-        padding: 0 4px !important;
-      }
-      .working-line {
-        height: 18px !important;
-      }
-      .q-answer-row {
-        margin-top: 8px !important;
-        padding-top: 6px !important;
-        gap: 4px 8px !important;
-        font-size: 0.82rem !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-        justify-content: flex-end !important;
-      }
-      .q-answer-label {
-        font-size: 0.80rem !important;
-      }
-      .q-unit-prefix, .q-unit-suffix {
-        font-size: 0.80rem !important;
-      }
-      .q-answer-input-box {
-        height: 24px !important;
-      }
-      .q-answer-input-box.xs { width: 38px !important; }
-      .q-answer-input-box.sm { width: 60px !important; }
-      .q-answer-input-box.md { width: 85px !important; }
-      .q-answer-input-box.lg { width: 120px !important; max-width: 100% !important; }
-      .q-workspace-badge {
-        font-size: 0.74rem !important;
-        padding: 3px 8px !important;
-      }
-      .ans-step-row, .model-answer-step, .answer-step, .ans-step-box {
-        font-size: 0.82rem !important;
-        line-height: 1.4 !important;
-        padding: 4px 6px !important;
-      }
-      .ans-mark-tag {
-        font-size: 0.70rem !important;
-        padding: 1px 4px !important;
-      }
-      .ans-explanation, .ans-tip {
-        font-size: 0.76rem !important;
-        line-height: 1.35 !important;
-      }
-      .footer-bar, .sheet-footer {
+      .footer-bar {
         font-size: 0.68rem !important;
         padding-top: 8px !important;
         margin-top: 12px !important;
@@ -880,12 +831,11 @@
         width: 100% !important;
         box-sizing: border-box !important;
       }
-      p, span, div, li, td, th, label, h1, h2, h3, h4, .q-stem, .apply-stem, .drill-q {
+      p, span, div, li, td, th, label, h1, h2, h3, h4, .apply-stem, .drill-q {
         overflow-wrap: break-word !important;
         word-wrap: break-word !important;
       }
     }
-
   </style>
 </head>
 <body>
@@ -893,7 +843,7 @@
   <!-- Top Action Navigation Bar -->
   <div class="print-bar">
     <div>
-      <a href="../reading-presentational-features.html"><i class="fa-solid fa-arrow-left"></i> Back to Presentational Features & Typographical Devices Revision Guide</a>
+      <a href="../reading-presentational-features.html"><i class="fa-solid fa-arrow-left"></i> <span class="back-link-text">Back to Presentational Features & Document Layout Revision Guide</span></a>
     </div>
     <div>
       <div class="nav-pill-group">
@@ -939,7 +889,7 @@
       <div class="ans-table-card">
         <div class="ans-table-head">
           <span class="ans-badge">Q1</span>
-          <span class="ans-head-title">Linking Features to Functions</span>
+          <span class="ans-head-title">Question 1: Linking Features to Functions</span>
         </div>
         <div class="ans-grid">
           
@@ -978,7 +928,7 @@
       <div class="ans-table-card">
         <div class="ans-table-head">
           <span class="ans-badge">Q2</span>
-          <span class="ans-head-title">Analyzing Layout Effectiveness</span>
+          <span class="ans-head-title">Question 2: Analyzing Layout Effectiveness</span>
         </div>
         <div class="ans-grid">
           
@@ -992,6 +942,177 @@
               <span class="cell-letter">(b)</span>
               <span class="cell-q">Printing warning phrases in red bold text on medication labels &rarr;</span>
               <span class="cell-val">Draws immediate visual attention to prevent dangerous errors</span>
+            </div>
+        </div>
+      </div>
+
+      <div class="ans-table-card">
+        <div class="ans-table-head">
+          <span class="ans-badge">Q3</span>
+          <span class="ans-head-title">Question 3: Identifying Header and Text Presentational Features</span>
+        </div>
+        <div class="ans-grid">
+          
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(a)</span>
+              <span class="cell-q">Underlining key terms in an operating handbook &rarr;</span>
+              <span class="cell-val">Draws immediate visual attention to critical technical terminology</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(b)</span>
+              <span class="cell-q">Using bulleted lists for dietary allergen ingredients &rarr;</span>
+              <span class="cell-val">Separates each allergen distinctly to prevent dangerous ingestion mistakes</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(c)</span>
+              <span class="cell-q">Placing an excerpt inside an eye-catching coloured quotation callout box &rarr;</span>
+              <span class="cell-val">Highlights notable soundbites or testimonials to enhance credibility</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(d)</span>
+              <span class="cell-q">Using an exclamation mark inside a yellow triangle symbol &rarr;</span>
+              <span class="cell-val">Instantly signifies danger or physical hazard according to universal safety code</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(e)</span>
+              <span class="cell-q">Dividing a long staff handbook into numbered sections with bold headings &rarr;</span>
+              <span class="cell-val">Structures document logically and allows quick indexing and scanning</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(f)</span>
+              <span class="cell-q">Printing critical contact numbers in enlarged bold typeface at the top of the page &rarr;</span>
+              <span class="cell-val">Ensures immediate readability during time-critical emergency situations</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(g)</span>
+              <span class="cell-q">Placing a watermark across a draft contract stating 'CONFIDENTIAL - DRAFT' &rarr;</span>
+              <span class="cell-val">Prevents accidental public distribution and signals legal sensitivity</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(h)</span>
+              <span class="cell-q">Using a horizontal dividing rule line between different job vacancy listings &rarr;</span>
+              <span class="cell-val">Clearly demarcates boundaries between separate job adverts on a noticeboard</span>
+            </div>
+        </div>
+      </div>
+
+      <div class="ans-table-card">
+        <div class="ans-table-head">
+          <span class="ans-badge">Q4</span>
+          <span class="ans-head-title">Question 4: Presentational Design for Accessibility & Inclusion</span>
+        </div>
+        <div class="ans-grid">
+          
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(a)</span>
+              <span class="cell-q">Using dark navy text on an off-white cream or soft pastel background &rarr;</span>
+              <span class="cell-val">Reduces harsh screen glare and visual stress, making reading far more comfortable</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(b)</span>
+              <span class="cell-q">Selecting a clean sans-serif font such as Arial, Calibri, or OpenDyslexic &rarr;</span>
+              <span class="cell-val">Prevents visual crowding and confusion between ornate serif letter hooks</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(c)</span>
+              <span class="cell-q">Left-aligning text rather than fully justifying both left and right margins &rarr;</span>
+              <span class="cell-val">Avoids uneven gaps and 'rivers of white space' that disorient dyslexic readers</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(d)</span>
+              <span class="cell-q">Maintaining line spacing of 1.5 with distinct paragraph spacing &rarr;</span>
+              <span class="cell-val">Stops reader's eyes from accidentally jumping to adjacent text lines</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(e)</span>
+              <span class="cell-q">Adding alternative text (alt-text) descriptions behind all digital website images &rarr;</span>
+              <span class="cell-val">Allows screen readers to describe images to visually impaired users</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(f)</span>
+              <span class="cell-q">Providing high contrast between text and background colours (at least 4.5:1 ratio) &rarr;</span>
+              <span class="cell-val">Ensures people with low vision or colour blindness can comfortably read content</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(g)</span>
+              <span class="cell-q">Keeping line lengths between 60 to 70 characters per line &rarr;</span>
+              <span class="cell-val">Prevents eye strain from tracking across excessively wide widescreen displays</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(h)</span>
+              <span class="cell-q">Using clear bolding rather than italics or underlining for emphasis &rarr;</span>
+              <span class="cell-val">Italics cause letters to slant and blur together; bolding preserves letter shapes</span>
+            </div>
+        </div>
+      </div>
+
+      <div class="ans-table-card">
+        <div class="ans-table-head">
+          <span class="ans-badge">Q5</span>
+          <span class="ans-head-title">Question 5: Exam-Style Evaluation of Presentational Choices</span>
+        </div>
+        <div class="ans-grid">
+          
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(a)</span>
+              <span class="cell-q">A vibrant full-page glossy image on the front of an apprenticeship prospectus &rarr;</span>
+              <span class="cell-val">Catches teenager/school leaver attention and projects an exciting vocational future</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(b)</span>
+              <span class="cell-q">A compact tri-fold leaflet format for an NHS patient advice pamphlet &rarr;</span>
+              <span class="cell-val">Easy for elderly patients to slip into a coat pocket or handbag after a consultation</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(c)</span>
+              <span class="cell-q">A clean spreadsheet grid format with alternating shaded row stripes ('zebra striping') &rarr;</span>
+              <span class="cell-val">Allows accounts staff to scan across long numerical rows without losing their place</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(d)</span>
+              <span class="cell-q">A high-visibility luminous yellow sticker on an electrical isolation switch &rarr;</span>
+              <span class="cell-val">Grabs attention immediately in dim industrial plant environments</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(e)</span>
+              <span class="cell-q">A flow diagram with green checkmarks and red crosses for hand hygiene audits &rarr;</span>
+              <span class="cell-val">Communicates protocol across diverse multi-lingual healthcare teams without language barriers</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(f)</span>
+              <span class="cell-q">A QR code prominently printed on a physical recruitment poster at a bus stop &rarr;</span>
+              <span class="cell-val">Allows commuters to instantly jump to the digital application form on their mobile</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(g)</span>
+              <span class="cell-q">An index table at the end of a 50-page legal employment contract &rarr;</span>
+              <span class="cell-val">Enables rapid navigation directly to specific contractual clauses and appendices</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(h)</span>
+              <span class="cell-q">A step-by-step cartoon strip demonstrating correct PPE removal technique &rarr;</span>
+              <span class="cell-val">Engages visual learners and makes strict compliance procedures less intimidating</span>
             </div>
         </div>
       </div>

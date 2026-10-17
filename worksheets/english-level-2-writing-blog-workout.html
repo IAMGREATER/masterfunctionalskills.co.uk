@@ -150,18 +150,44 @@
         gap: 8px;
       }
       .print-bar > div:first-child {
-        text-align: center;
-        white-space: nowrap;
+        text-align: left;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
         overflow: hidden;
-        text-overflow: ellipsis;
+        display: block;
       }
       .print-bar > div:first-child a {
-        font-size: 0.85rem;
-        display: inline-flex;
+        font-size: 0.82rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        text-align: left;
+        width: 100%;
         max-width: 100%;
+        min-width: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        text-decoration: none;
+        color: #93c5fd;
+        font-weight: 600;
+        gap: 6px;
+      }
+      .print-bar > div:first-child a i {
+        flex-shrink: 0;
+        font-size: 0.85rem;
+        display: inline-block;
+      }
+      .print-bar > div:first-child a span,
+      .print-bar > div:first-child a .back-link-text {
+        flex: 1 1 auto;
+        min-width: 0;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+        text-align: left;
+        display: block;
       }
       .print-bar > div:last-child {
         display: flex;
@@ -584,8 +610,7 @@
       font-weight: 600;
       margin-left: 12px;
     }
-  
-    /* Mobile Portrait View: 100% full-width, clean typography, compact spacing */
+
     @media screen and (max-width: 768px), screen and (orientation: portrait) and (max-width: 1024px) {
       html, body {
         margin: 0 !important;
@@ -605,7 +630,7 @@
         box-shadow: 0 2px 8px rgba(0,0,0,0.04) !important;
         box-sizing: border-box !important;
       }
-      .sheet-head, .sheet-header {
+      .sheet-header {
         flex-direction: column !important;
         align-items: flex-start !important;
         gap: 8px !important;
@@ -620,13 +645,13 @@
         letter-spacing: -0.3px !important;
         width: 100% !important;
       }
-      .brand-subtitle, .sheet-sub {
+      .sheet-sub {
         font-size: 0.76rem !important;
         margin-top: 2px !important;
         width: 100% !important;
         line-height: 1.35 !important;
       }
-      .sheet-meta-badge, .header-badges {
+      .header-badges {
         width: 100% !important;
         box-sizing: border-box !important;
         text-align: left !important;
@@ -637,37 +662,8 @@
         flex-wrap: wrap !important;
         gap: 4px !important;
       }
-      .sheet-meta-badge .topic-name {
-        font-size: 0.90rem !important;
-      }
-      .sheet-meta-badge .spec-tag, .badge-level, .badge-spec {
+      .badge-level, .badge-spec {
         font-size: 0.70rem !important;
-      }
-      .learner-bar {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 6px !important;
-        padding: 6px 10px !important;
-        margin-bottom: 12px !important;
-        font-size: 0.82rem !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-      }
-      .learner-bar-item {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: space-between !important;
-        width: 100% !important;
-      }
-      .learner-bar-item strong {
-        font-size: 0.80rem !important;
-        min-width: 55px !important;
-      }
-      .learner-bar-item .dotted-line {
-        flex: 1 !important;
-        width: auto !important;
-        margin-left: 6px !important;
-        height: 10px !important;
       }
       .hero-banner {
         flex-direction: column !important;
@@ -723,26 +719,6 @@
         line-height: 1.35 !important;
         margin-top: 6px !important;
         padding-top: 6px !important;
-      }
-      .recall-banner {
-        padding: 8px 10px !important;
-        font-size: 0.80rem !important;
-        line-height: 1.38 !important;
-        margin-bottom: 12px !important;
-        gap: 6px !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-      }
-      .tier-header {
-        padding: 5px 8px !important;
-        font-size: 0.80rem !important;
-        margin: 14px 0 10px 0 !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-      }
-      .tier-header .tier-marks {
-        font-size: 0.70rem !important;
-        padding: 2px 5px !important;
       }
       .section-ribbon {
         margin: 14px 0 10px 0 !important;
@@ -810,32 +786,90 @@
       .drill-input-line {
         height: 14px !important;
       }
-      .q-card, .apply-card, .answer-card {
+      .apply-card {
         padding: 10px 8px !important;
         margin-bottom: 12px !important;
         border-radius: 6px !important;
         width: 100% !important;
         box-sizing: border-box !important;
       }
-      .q-card-head, .apply-card-head, .answer-card-head {
-        padding-bottom: 5px !important;
-        margin-bottom: 6px !important;
+      .apply-card-head {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        gap: 8px !important;
+        padding-bottom: 6px !important;
+        margin-bottom: 8px !important;
+        border-bottom: 1.5px solid #f1f5f9 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
       }
-      .q-title, .apply-title, .answer-title {
-        font-size: 0.85rem !important;
+      .apply-title {
+        font-size: 0.88rem !important;
+        font-weight: 700 !important;
+        color: #0b172d !important;
+        flex: 1 1 auto !important;
+        min-width: 0 !important;
+        line-height: 1.3 !important;
       }
-      .q-marks, .apply-marks, .ans-marks {
-        font-size: 0.72rem !important;
-        padding: 2px 6px !important;
+      .apply-marks {
+        font-size: 0.74rem !important;
+        font-weight: 700 !important;
+        padding: 2px 7px !important;
+        border-radius: 4px !important;
+        white-space: nowrap !important;
+        flex-shrink: 0 !important;
+        display: inline-block !important;
+        line-height: 1.2 !important;
       }
-      .q-stem, .apply-stem {
+      .apply-stem {
         font-size: 0.84rem !important;
         line-height: 1.45 !important;
         margin-bottom: 8px !important;
         overflow-wrap: break-word !important;
         word-wrap: break-word !important;
       }
-      .q-diagram-wrap, .apply-diagram-wrap {
+      .apply-ans-line {
+        margin-top: 10px !important;
+        padding: 8px 12px !important;
+        gap: 6px 8px !important;
+        font-size: 0.84rem !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+        background: #f8fafc !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 6px !important;
+      }
+      .ans-label {
+        font-size: 0.84rem !important;
+        font-weight: 700 !important;
+        color: #0b172d !important;
+        text-align: left !important;
+        margin: 0 !important;
+        margin-right: auto !important;
+        flex: 0 1 auto !important;
+        white-space: nowrap !important;
+      }
+      .unit-pfx, .unit-sfx {
+        font-size: 0.88rem !important;
+        font-weight: 700 !important;
+        color: #0b172d !important;
+        white-space: nowrap !important;
+        flex-shrink: 0 !important;
+        margin: 0 1px !important;
+      }
+      .ans-write-box {
+        width: 110px !important;
+        border-bottom: 2px solid #0b172d !important;
+        height: 24px !important;
+        flex-shrink: 0 !important;
+      }
+      .apply-diagram-wrap {
         padding: 4px !important;
         margin: 8px 0 !important;
         width: 100% !important;
@@ -843,63 +877,11 @@
         box-sizing: border-box !important;
         overflow-x: auto !important;
       }
-      .q-diagram-wrap svg, .apply-diagram-wrap svg {
+      .apply-diagram-wrap svg {
         max-width: 100% !important;
         height: auto !important;
       }
-      .q-working-area {
-        margin: 8px 0 !important;
-      }
-      .working-label {
-        font-size: 0.70rem !important;
-        margin-bottom: 3px !important;
-      }
-      .working-lines-box {
-        padding: 0 4px !important;
-      }
-      .working-line {
-        height: 18px !important;
-      }
-      .q-answer-row {
-        margin-top: 8px !important;
-        padding-top: 6px !important;
-        gap: 4px 8px !important;
-        font-size: 0.82rem !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-        justify-content: flex-end !important;
-      }
-      .q-answer-label {
-        font-size: 0.80rem !important;
-      }
-      .q-unit-prefix, .q-unit-suffix {
-        font-size: 0.80rem !important;
-      }
-      .q-answer-input-box {
-        height: 24px !important;
-      }
-      .q-answer-input-box.xs { width: 38px !important; }
-      .q-answer-input-box.sm { width: 60px !important; }
-      .q-answer-input-box.md { width: 85px !important; }
-      .q-answer-input-box.lg { width: 120px !important; max-width: 100% !important; }
-      .q-workspace-badge {
-        font-size: 0.74rem !important;
-        padding: 3px 8px !important;
-      }
-      .ans-step-row, .model-answer-step, .answer-step, .ans-step-box {
-        font-size: 0.82rem !important;
-        line-height: 1.4 !important;
-        padding: 4px 6px !important;
-      }
-      .ans-mark-tag {
-        font-size: 0.70rem !important;
-        padding: 1px 4px !important;
-      }
-      .ans-explanation, .ans-tip {
-        font-size: 0.76rem !important;
-        line-height: 1.35 !important;
-      }
-      .footer-bar, .sheet-footer {
+      .footer-bar {
         font-size: 0.68rem !important;
         padding-top: 8px !important;
         margin-top: 12px !important;
@@ -909,12 +891,11 @@
         width: 100% !important;
         box-sizing: border-box !important;
       }
-      p, span, div, li, td, th, label, h1, h2, h3, h4, .q-stem, .apply-stem, .drill-q {
+      p, span, div, li, td, th, label, h1, h2, h3, h4, .apply-stem, .drill-q {
         overflow-wrap: break-word !important;
         word-wrap: break-word !important;
       }
     }
-
   </style>
 </head>
 <body>
@@ -922,7 +903,7 @@
   <!-- Top Action Navigation Bar -->
   <div class="print-bar">
     <div>
-      <a href="../functional-skills-english-level-2-writing-blog.html"><i class="fa-solid fa-arrow-left"></i> Back to Online Blog & Web Article Writing Revision Guide</a>
+      <a href="../functional-skills-english-level-2-writing-blog.html"><i class="fa-solid fa-arrow-left"></i> <span class="back-link-text">Back to Online Blog & Web Article Writing Revision Guide</span></a>
     </div>
     <div>
       <div class="nav-pill-group">
@@ -988,7 +969,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 1</span>
-        <span class="block-q-desc">Crafting High-Converting Blog Headlines</span>
+        <span class="block-q-desc">Question 1: Crafting High-Converting Blog Headlines</span>
       </div>
       <div class="workout-instruction">Identify whether each headline is Dull, Too Clickbaity, or Strong/Engaging:</div>
       <div class="drill-grid">
@@ -1038,7 +1019,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 2</span>
-        <span class="block-q-desc">Blog Structural Features & Calls-to-Action</span>
+        <span class="block-q-desc">Question 2: Blog Structural Features & Calls-to-Action</span>
       </div>
       <div class="workout-instruction">Match the element with its intended blogging purpose:</div>
       <div class="drill-grid">
@@ -1070,6 +1051,228 @@
         <div class="drill-card">
           <div class="drill-letter">(d)</div>
           <div class="drill-q">'Share your thoughts in the comment section below!'</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="workout-block">
+      <div class="workout-block-header">
+        <span class="block-q-num">Question 3</span>
+        <span class="block-q-desc">Question 3: Crafting Engaging Blog Intros & Hook Techniques</span>
+      </div>
+      <div class="workout-instruction">Identify the hook technique used in each opening blog sentence (Rhetorical question, Shocking statistic, Relatable anecdote, Bold statement):</div>
+      <div class="drill-grid">
+        
+        <div class="drill-card">
+          <div class="drill-letter">(a)</div>
+          <div class="drill-q">'Have you ever walked out of your house and instantly realized you forgot your keys?'</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+
+        <div class="drill-card">
+          <div class="drill-letter">(b)</div>
+          <div class="drill-q">'Over 60% of British employees admit to checking work emails from their beds at night.'</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+
+        <div class="drill-card">
+          <div class="drill-letter">(c)</div>
+          <div class="drill-q">'Traditional 9-to-5 office culture is officially dead.'</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+
+        <div class="drill-card">
+          <div class="drill-letter">(d)</div>
+          <div class="drill-q">'Imagine waking up every morning feeling energized, focused, and genuinely excited for work.'</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+
+        <div class="drill-card">
+          <div class="drill-letter">(e)</div>
+          <div class="drill-q">'Last Tuesday, my laptop crashed right as I was about to submit our biggest tender of the year.'</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+
+        <div class="drill-card">
+          <div class="drill-letter">(f)</div>
+          <div class="drill-q">'Did you know that drinking one extra glass of water boosts cognitive focus by 14%?'</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+
+        <div class="drill-card">
+          <div class="drill-letter">(g)</div>
+          <div class="drill-q">'Stop wasting your hard-earned wages on subscriptions you haven't opened in six months.'</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+
+        <div class="drill-card">
+          <div class="drill-letter">(h)</div>
+          <div class="drill-q">'We have all been there: staring blankly at a blinking cursor with an urgent deadline looming.'</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="workout-block">
+      <div class="workout-block-header">
+        <span class="block-q-num">Question 4</span>
+        <span class="block-q-desc">Question 4: Blog Formatting Conventions for Digital Readers</span>
+      </div>
+      <div class="workout-instruction">State whether the formatting practice is Best Practice or Poor Practice for online blogs:</div>
+      <div class="drill-grid">
+        
+        <div class="drill-card">
+          <div class="drill-letter">(a)</div>
+          <div class="drill-q">Writing paragraphs consisting of 8-10 long, complex sentences with no line breaks.</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+
+        <div class="drill-card">
+          <div class="drill-letter">(b)</div>
+          <div class="drill-q">Using descriptive subheadings (H2, H3) every 150 to 200 words.</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+
+        <div class="drill-card">
+          <div class="drill-letter">(c)</div>
+          <div class="drill-q">Using bulleted lists to summarize key actionable takeaways.</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+
+        <div class="drill-card">
+          <div class="drill-letter">(d)</div>
+          <div class="drill-q">Inserting high-quality relevant images with descriptive alt-text captions.</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+
+        <div class="drill-card">
+          <div class="drill-letter">(e)</div>
+          <div class="drill-q">Bolding random words in every single sentence throughout the article.</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+
+        <div class="drill-card">
+          <div class="drill-letter">(f)</div>
+          <div class="drill-q">Ending the blog with an interactive question inviting reader comments.</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+
+        <div class="drill-card">
+          <div class="drill-letter">(g)</div>
+          <div class="drill-q">Using dark grey text on a slightly lighter grey background.</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+
+        <div class="drill-card">
+          <div class="drill-letter">(h)</div>
+          <div class="drill-q">Hyperlinking descriptive anchor text rather than generic 'click here' links.</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="workout-block">
+      <div class="workout-block-header">
+        <span class="block-q-num">Question 5</span>
+        <span class="block-q-desc">Question 5: Effective Calls to Action (CTAs) for Web Articles</span>
+      </div>
+      <div class="workout-instruction">Classify the goal of each Call to Action (Comment/Engage, Share, Download, Subscribe):</div>
+      <div class="drill-grid">
+        
+        <div class="drill-card">
+          <div class="drill-letter">(a)</div>
+          <div class="drill-q">'What is your favourite workplace productivity tip? Let us know in the comments below!'</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+
+        <div class="drill-card">
+          <div class="drill-letter">(b)</div>
+          <div class="drill-q">'Found this guide useful? Share it with a colleague who needs a boost today!'</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+
+        <div class="drill-card">
+          <div class="drill-letter">(c)</div>
+          <div class="drill-q">'Click here to grab your free printable weekly shift planner PDF.'</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+
+        <div class="drill-card">
+          <div class="drill-letter">(d)</div>
+          <div class="drill-q">'Enjoyed this post? Sign up for our free weekly career advice newsletter.'</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+
+        <div class="drill-card">
+          <div class="drill-letter">(e)</div>
+          <div class="drill-q">'Which of these five apps has transformed your workflow? Vote in our poll below!'</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+
+        <div class="drill-card">
+          <div class="drill-letter">(f)</div>
+          <div class="drill-q">'Download our comprehensive 20-page interview preparation checklist now.'</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+
+        <div class="drill-card">
+          <div class="drill-letter">(g)</div>
+          <div class="drill-q">'Pass this article along to your trade union representative to support the campaign.'</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+
+        <div class="drill-card">
+          <div class="drill-letter">(h)</div>
+          <div class="drill-q">'Join our online community forum to connect with fellow healthcare apprentices.'</div>
           <div class="drill-ans-box">
             <span class="drill-input-line"></span>
           </div>

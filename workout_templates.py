@@ -6,6 +6,7 @@ dyslexia-friendly styling, A4 print optimization, and Pearson Edexcel alignment.
 """
 
 import html
+import os
 
 def render_drill_grid(items, prefix="", suffix=""):
     """
@@ -303,18 +304,44 @@ def render_skill_workout(data):
         gap: 8px;
       }}
       .print-bar > div:first-child {{
-        text-align: center;
-        white-space: nowrap;
+        text-align: left;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
         overflow: hidden;
-        text-overflow: ellipsis;
+        display: block;
       }}
       .print-bar > div:first-child a {{
-        font-size: 0.85rem;
-        display: inline-flex;
+        font-size: 0.82rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        text-align: left;
+        width: 100%;
         max-width: 100%;
+        min-width: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        text-decoration: none;
+        color: #93c5fd;
+        font-weight: 600;
+        gap: 6px;
+      }}
+      .print-bar > div:first-child a i {{
+        flex-shrink: 0;
+        font-size: 0.85rem;
+        display: inline-block;
+      }}
+      .print-bar > div:first-child a span,
+      .print-bar > div:first-child a .back-link-text {{
+        flex: 1 1 auto;
+        min-width: 0;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+        text-align: left;
+        display: block;
       }}
       .print-bar > div:last-child {{
         display: flex;
@@ -921,15 +948,34 @@ def render_skill_workout(data):
         box-sizing: border-box !important;
       }}
       .apply-card-head {{
-        padding-bottom: 5px !important;
-        margin-bottom: 6px !important;
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        gap: 8px !important;
+        padding-bottom: 6px !important;
+        margin-bottom: 8px !important;
+        border-bottom: 1.5px solid #f1f5f9 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
       }}
       .apply-title {{
-        font-size: 0.85rem !important;
+        font-size: 0.88rem !important;
+        font-weight: 700 !important;
+        color: #0b172d !important;
+        flex: 1 1 auto !important;
+        min-width: 0 !important;
+        line-height: 1.3 !important;
       }}
       .apply-marks {{
-        font-size: 0.72rem !important;
-        padding: 2px 6px !important;
+        font-size: 0.74rem !important;
+        font-weight: 700 !important;
+        padding: 2px 7px !important;
+        border-radius: 4px !important;
+        white-space: nowrap !important;
+        flex-shrink: 0 !important;
+        display: inline-block !important;
+        line-height: 1.2 !important;
       }}
       .apply-stem {{
         font-size: 0.84rem !important;
@@ -937,6 +983,45 @@ def render_skill_workout(data):
         margin-bottom: 8px !important;
         overflow-wrap: break-word !important;
         word-wrap: break-word !important;
+      }}
+      .apply-ans-line {{
+        margin-top: 10px !important;
+        padding: 8px 12px !important;
+        gap: 6px 8px !important;
+        font-size: 0.84rem !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+        background: #f8fafc !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 6px !important;
+      }}
+      .ans-label {{
+        font-size: 0.84rem !important;
+        font-weight: 700 !important;
+        color: #0b172d !important;
+        text-align: left !important;
+        margin: 0 !important;
+        margin-right: auto !important;
+        flex: 0 1 auto !important;
+        white-space: nowrap !important;
+      }}
+      .unit-pfx, .unit-sfx {{
+        font-size: 0.88rem !important;
+        font-weight: 700 !important;
+        color: #0b172d !important;
+        white-space: nowrap !important;
+        flex-shrink: 0 !important;
+        margin: 0 1px !important;
+      }}
+      .ans-write-box {{
+        width: 110px !important;
+        border-bottom: 2px solid #0b172d !important;
+        height: 24px !important;
+        flex-shrink: 0 !important;
       }}
       .apply-diagram-wrap {{
         padding: 4px !important;
@@ -972,7 +1057,7 @@ def render_skill_workout(data):
   <!-- Top Action Navigation Bar -->
   <div class="print-bar">
     <div>
-      <a href="{back_url}"><i class="fa-solid fa-arrow-left"></i> Back to {title} Revision Guide</a>
+      <a href="{back_url}"><i class="fa-solid fa-arrow-left"></i> <span class="back-link-text">Back to {title} Revision Guide</span></a>
     </div>
     <div>
       <div class="nav-pill-group">
@@ -1291,18 +1376,44 @@ def render_skill_workout_answers(data):
         gap: 8px;
       }}
       .print-bar > div:first-child {{
-        text-align: center;
-        white-space: nowrap;
+        text-align: left;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
         overflow: hidden;
-        text-overflow: ellipsis;
+        display: block;
       }}
       .print-bar > div:first-child a {{
-        font-size: 0.85rem;
-        display: inline-flex;
+        font-size: 0.82rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        text-align: left;
+        width: 100%;
         max-width: 100%;
+        min-width: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        text-decoration: none;
+        color: #93c5fd;
+        font-weight: 600;
+        gap: 6px;
+      }}
+      .print-bar > div:first-child a i {{
+        flex-shrink: 0;
+        font-size: 0.85rem;
+        display: inline-block;
+      }}
+      .print-bar > div:first-child a span,
+      .print-bar > div:first-child a .back-link-text {{
+        flex: 1 1 auto;
+        min-width: 0;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+        text-align: left;
+        display: block;
       }}
       .print-bar > div:last-child {{
         display: flex;
@@ -1872,23 +1983,50 @@ def render_skill_workout_answers(data):
       .drill-input-line {{
         height: 14px !important;
       }}
-      .apply-card, .answer-card {{
+      .apply-card, .answer-card, .ans-table-card, .solution-card {{
         padding: 10px 8px !important;
         margin-bottom: 12px !important;
         border-radius: 6px !important;
         width: 100% !important;
         box-sizing: border-box !important;
       }}
-      .apply-card-head {{
-        padding-bottom: 5px !important;
-        margin-bottom: 6px !important;
+      .apply-card-head, .answer-card-head, .solution-head {{
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        gap: 8px !important;
+        padding-bottom: 6px !important;
+        margin-bottom: 8px !important;
+        border-bottom: 1.5px solid #f1f5f9 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
       }}
-      .apply-title {{
-        font-size: 0.85rem !important;
+      .apply-title, .answer-title, .solution-title {{
+        font-size: 0.88rem !important;
+        font-weight: 700 !important;
+        color: #0b172d !important;
+        flex: 1 1 auto !important;
+        min-width: 0 !important;
+        line-height: 1.3 !important;
       }}
-      .apply-marks {{
-        font-size: 0.72rem !important;
-        padding: 2px 6px !important;
+      .apply-marks, .ans-marks, .sol-mark, .tier-marks {{
+        font-size: 0.74rem !important;
+        font-weight: 700 !important;
+        padding: 2px 7px !important;
+        border-radius: 4px !important;
+        white-space: nowrap !important;
+        flex-shrink: 0 !important;
+        display: inline-block !important;
+        line-height: 1.2 !important;
+      }}
+      .ans-grid {{
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 6px !important;
+      }}
+      .ans-grid-cell {{
+        font-size: 0.78rem !important;
+        padding: 4px 6px !important;
       }}
       .apply-stem {{
         font-size: 0.84rem !important;
@@ -1931,7 +2069,7 @@ def render_skill_workout_answers(data):
   <!-- Top Action Navigation Bar -->
   <div class="print-bar">
     <div>
-      <a href="{rev_guide_url}"><i class="fa-solid fa-arrow-left"></i> Back to {title} Revision Guide</a>
+      <a href="{rev_guide_url}"><i class="fa-solid fa-arrow-left"></i> <span class="back-link-text">Back to {title} Revision Guide</span></a>
     </div>
     <div>
       <div class="nav-pill-group">

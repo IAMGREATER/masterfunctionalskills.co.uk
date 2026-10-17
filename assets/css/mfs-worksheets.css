@@ -47,26 +47,51 @@ p, span, div, li, td, th, label, h1, h2, h3, h4, .q-stem, .apply-stem, .drill-q,
   .print-bar {
     padding: 8px 10px !important;
     width: 100% !important;
+    max-width: 100% !important;
     box-sizing: border-box !important;
     flex-direction: column !important;
     gap: 8px !important;
     align-items: stretch !important;
   }
   .print-bar > div:first-child {
-    text-align: center !important;
+    text-align: left !important;
     width: 100% !important;
-    white-space: nowrap !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
     overflow: hidden !important;
-    text-overflow: ellipsis !important;
+    display: block !important;
   }
   .print-bar > div:first-child a {
-    font-size: 0.80rem !important;
-    display: inline-flex !important;
+    font-size: 0.82rem !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    text-align: left !important;
+    width: 100% !important;
     max-width: 100% !important;
+    min-width: 0 !important;
+    overflow: hidden !important;
+    white-space: nowrap !important;
+    text-overflow: ellipsis !important;
+    text-decoration: none !important;
+    color: #93c5fd !important;
+    font-weight: 600 !important;
+    gap: 6px !important;
+  }
+  .print-bar > div:first-child a i {
+    flex-shrink: 0 !important;
+    font-size: 0.85rem !important;
+    display: inline-block !important;
+  }
+  .print-bar > div:first-child a span,
+  .print-bar > div:first-child a .back-link-text {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
     overflow: hidden !important;
     text-overflow: ellipsis !important;
     white-space: nowrap !important;
-    justify-content: center !important;
+    text-align: left !important;
+    display: block !important;
   }
   .print-bar > div:last-child {
     display: flex !important;
@@ -350,19 +375,40 @@ p, span, div, li, td, th, label, h1, h2, h3, h4, .q-stem, .apply-stem, .drill-q,
   .q-card-head,
   .apply-card-head,
   .answer-card-head {
-    padding-bottom: 5px !important;
-    margin-bottom: 6px !important;
+    display: flex !important;
+    flex-direction: row !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    gap: 8px !important;
+    padding-bottom: 6px !important;
+    margin-bottom: 8px !important;
+    border-bottom: 1.5px solid #f1f5f9 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
   }
   .q-title,
   .apply-title,
   .answer-title {
-    font-size: 0.85rem !important;
+    font-size: 0.88rem !important;
+    font-weight: 700 !important;
+    color: #0b172d !important;
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    line-height: 1.3 !important;
   }
   .q-marks,
   .apply-marks,
-  .ans-marks {
-    font-size: 0.72rem !important;
-    padding: 2px 6px !important;
+  .ans-marks,
+  .sol-mark,
+  .tier-marks {
+    font-size: 0.74rem !important;
+    font-weight: 700 !important;
+    padding: 2px 7px !important;
+    border-radius: 4px !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+    display: inline-block !important;
+    line-height: 1.2 !important;
   }
   .q-stem,
   .apply-stem {
@@ -403,33 +449,91 @@ p, span, div, li, td, th, label, h1, h2, h3, h4, .q-stem, .apply-stem, .drill-q,
     height: 18px !important;
   }
 
-  /* Answer Row & Inputs */
-  .q-answer-row {
-    margin-top: 8px !important;
-    padding-top: 6px !important;
-    gap: 4px 8px !important;
-    font-size: 0.82rem !important;
+  /* Answer Row & Inputs - Mobile Uniformity & Precision Alignment */
+  .q-answer-row,
+  .apply-ans-line {
+    margin-top: 10px !important;
+    padding: 8px 12px !important;
+    gap: 6px 8px !important;
+    font-size: 0.84rem !important;
     width: 100% !important;
     box-sizing: border-box !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
     justify-content: flex-end !important;
+    background: #f8fafc !important;
+    border: 1px solid #e2e8f0 !important;
+    border-radius: 6px !important;
   }
-  .q-answer-label {
-    font-size: 0.80rem !important;
+  .q-answer-label,
+  .ans-label {
+    font-size: 0.84rem !important;
+    font-weight: 700 !important;
+    color: #0b172d !important;
+    text-align: left !important;
+    margin: 0 !important;
+    margin-right: auto !important;
+    flex: 0 1 auto !important;
+    white-space: nowrap !important;
   }
   .q-unit-prefix,
-  .q-unit-suffix {
-    font-size: 0.80rem !important;
+  .q-unit-suffix,
+  .unit-pfx,
+  .unit-sfx {
+    font-size: 0.88rem !important;
+    font-weight: 700 !important;
+    color: #0b172d !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+    margin: 0 1px !important;
   }
   .q-answer-input-box {
-    height: 24px !important;
+    height: 30px !important;
+    background: #ffffff !important;
+    border: 1.5px solid #0b172d !important;
+    border-radius: 5px !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+    box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+    box-sizing: border-box !important;
+    flex-shrink: 0 !important;
   }
-  .q-answer-input-box.xs { width: 38px !important; }
-  .q-answer-input-box.sm { width: 60px !important; }
-  .q-answer-input-box.md { width: 85px !important; }
-  .q-answer-input-box.lg { width: 120px !important; max-width: 100% !important; }
+  .q-answer-input-box.xs { width: 48px !important; min-width: 48px !important; }
+  .q-answer-input-box.sm { width: 80px !important; min-width: 80px !important; }
+  .q-answer-input-box.md { width: 110px !important; min-width: 110px !important; max-width: 100% !important; }
+  .q-answer-input-box.lg { width: 160px !important; min-width: 130px !important; max-width: 100% !important; }
+  .ans-write-box {
+    width: 110px !important;
+    border-bottom: 2px solid #0b172d !important;
+    height: 24px !important;
+    flex-shrink: 0 !important;
+  }
   .q-workspace-badge {
     font-size: 0.74rem !important;
     padding: 3px 8px !important;
+    margin-right: auto !important;
+  }
+  .q-choice-pills {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+    padding: 3px 6px !important;
+    font-size: 0.78rem !important;
+    flex-shrink: 0 !important;
+  }
+
+  @media screen and (max-width: 420px) {
+    .q-answer-row,
+    .apply-ans-line {
+      justify-content: flex-end !important;
+    }
+    .q-answer-label,
+    .ans-label {
+      width: 100% !important;
+      margin-right: 0 !important;
+      margin-bottom: 4px !important;
+    }
   }
 
   /* Answer Key Steps & Notes */

@@ -150,18 +150,44 @@
         gap: 8px;
       }
       .print-bar > div:first-child {
-        text-align: center;
-        white-space: nowrap;
+        text-align: left;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
         overflow: hidden;
-        text-overflow: ellipsis;
+        display: block;
       }
       .print-bar > div:first-child a {
-        font-size: 0.85rem;
-        display: inline-flex;
+        font-size: 0.82rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        text-align: left;
+        width: 100%;
         max-width: 100%;
+        min-width: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        text-decoration: none;
+        color: #93c5fd;
+        font-weight: 600;
+        gap: 6px;
+      }
+      .print-bar > div:first-child a i {
+        flex-shrink: 0;
+        font-size: 0.85rem;
+        display: inline-block;
+      }
+      .print-bar > div:first-child a span,
+      .print-bar > div:first-child a .back-link-text {
+        flex: 1 1 auto;
+        min-width: 0;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+        text-align: left;
+        display: block;
       }
       .print-bar > div:last-child {
         display: flex;
@@ -555,8 +581,7 @@
       font-weight: 600;
       margin-left: 12px;
     }
-  
-    /* Mobile Portrait View: 100% full-width, clean typography, compact spacing */
+
     @media screen and (max-width: 768px), screen and (orientation: portrait) and (max-width: 1024px) {
       html, body {
         margin: 0 !important;
@@ -576,7 +601,7 @@
         box-shadow: 0 2px 8px rgba(0,0,0,0.04) !important;
         box-sizing: border-box !important;
       }
-      .sheet-head, .sheet-header {
+      .sheet-header {
         flex-direction: column !important;
         align-items: flex-start !important;
         gap: 8px !important;
@@ -591,13 +616,13 @@
         letter-spacing: -0.3px !important;
         width: 100% !important;
       }
-      .brand-subtitle, .sheet-sub {
+      .sheet-sub {
         font-size: 0.76rem !important;
         margin-top: 2px !important;
         width: 100% !important;
         line-height: 1.35 !important;
       }
-      .sheet-meta-badge, .header-badges {
+      .header-badges {
         width: 100% !important;
         box-sizing: border-box !important;
         text-align: left !important;
@@ -608,37 +633,8 @@
         flex-wrap: wrap !important;
         gap: 4px !important;
       }
-      .sheet-meta-badge .topic-name {
-        font-size: 0.90rem !important;
-      }
-      .sheet-meta-badge .spec-tag, .badge-level, .badge-spec {
+      .badge-level, .badge-spec {
         font-size: 0.70rem !important;
-      }
-      .learner-bar {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 6px !important;
-        padding: 6px 10px !important;
-        margin-bottom: 12px !important;
-        font-size: 0.82rem !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-      }
-      .learner-bar-item {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: space-between !important;
-        width: 100% !important;
-      }
-      .learner-bar-item strong {
-        font-size: 0.80rem !important;
-        min-width: 55px !important;
-      }
-      .learner-bar-item .dotted-line {
-        flex: 1 !important;
-        width: auto !important;
-        margin-left: 6px !important;
-        height: 10px !important;
       }
       .hero-banner {
         flex-direction: column !important;
@@ -694,26 +690,6 @@
         line-height: 1.35 !important;
         margin-top: 6px !important;
         padding-top: 6px !important;
-      }
-      .recall-banner {
-        padding: 8px 10px !important;
-        font-size: 0.80rem !important;
-        line-height: 1.38 !important;
-        margin-bottom: 12px !important;
-        gap: 6px !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-      }
-      .tier-header {
-        padding: 5px 8px !important;
-        font-size: 0.80rem !important;
-        margin: 14px 0 10px 0 !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-      }
-      .tier-header .tier-marks {
-        font-size: 0.70rem !important;
-        padding: 2px 5px !important;
       }
       .section-ribbon {
         margin: 14px 0 10px 0 !important;
@@ -781,32 +757,59 @@
       .drill-input-line {
         height: 14px !important;
       }
-      .q-card, .apply-card, .answer-card {
+      .apply-card, .answer-card, .ans-table-card, .solution-card {
         padding: 10px 8px !important;
         margin-bottom: 12px !important;
         border-radius: 6px !important;
         width: 100% !important;
         box-sizing: border-box !important;
       }
-      .q-card-head, .apply-card-head, .answer-card-head {
-        padding-bottom: 5px !important;
-        margin-bottom: 6px !important;
+      .apply-card-head, .answer-card-head, .solution-head {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        gap: 8px !important;
+        padding-bottom: 6px !important;
+        margin-bottom: 8px !important;
+        border-bottom: 1.5px solid #f1f5f9 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
       }
-      .q-title, .apply-title, .answer-title {
-        font-size: 0.85rem !important;
+      .apply-title, .answer-title, .solution-title {
+        font-size: 0.88rem !important;
+        font-weight: 700 !important;
+        color: #0b172d !important;
+        flex: 1 1 auto !important;
+        min-width: 0 !important;
+        line-height: 1.3 !important;
       }
-      .q-marks, .apply-marks, .ans-marks {
-        font-size: 0.72rem !important;
-        padding: 2px 6px !important;
+      .apply-marks, .ans-marks, .sol-mark, .tier-marks {
+        font-size: 0.74rem !important;
+        font-weight: 700 !important;
+        padding: 2px 7px !important;
+        border-radius: 4px !important;
+        white-space: nowrap !important;
+        flex-shrink: 0 !important;
+        display: inline-block !important;
+        line-height: 1.2 !important;
       }
-      .q-stem, .apply-stem {
+      .ans-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 6px !important;
+      }
+      .ans-grid-cell {
+        font-size: 0.78rem !important;
+        padding: 4px 6px !important;
+      }
+      .apply-stem {
         font-size: 0.84rem !important;
         line-height: 1.45 !important;
         margin-bottom: 8px !important;
         overflow-wrap: break-word !important;
         word-wrap: break-word !important;
       }
-      .q-diagram-wrap, .apply-diagram-wrap {
+      .apply-diagram-wrap {
         padding: 4px !important;
         margin: 8px 0 !important;
         width: 100% !important;
@@ -814,63 +817,11 @@
         box-sizing: border-box !important;
         overflow-x: auto !important;
       }
-      .q-diagram-wrap svg, .apply-diagram-wrap svg {
+      .apply-diagram-wrap svg {
         max-width: 100% !important;
         height: auto !important;
       }
-      .q-working-area {
-        margin: 8px 0 !important;
-      }
-      .working-label {
-        font-size: 0.70rem !important;
-        margin-bottom: 3px !important;
-      }
-      .working-lines-box {
-        padding: 0 4px !important;
-      }
-      .working-line {
-        height: 18px !important;
-      }
-      .q-answer-row {
-        margin-top: 8px !important;
-        padding-top: 6px !important;
-        gap: 4px 8px !important;
-        font-size: 0.82rem !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-        justify-content: flex-end !important;
-      }
-      .q-answer-label {
-        font-size: 0.80rem !important;
-      }
-      .q-unit-prefix, .q-unit-suffix {
-        font-size: 0.80rem !important;
-      }
-      .q-answer-input-box {
-        height: 24px !important;
-      }
-      .q-answer-input-box.xs { width: 38px !important; }
-      .q-answer-input-box.sm { width: 60px !important; }
-      .q-answer-input-box.md { width: 85px !important; }
-      .q-answer-input-box.lg { width: 120px !important; max-width: 100% !important; }
-      .q-workspace-badge {
-        font-size: 0.74rem !important;
-        padding: 3px 8px !important;
-      }
-      .ans-step-row, .model-answer-step, .answer-step, .ans-step-box {
-        font-size: 0.82rem !important;
-        line-height: 1.4 !important;
-        padding: 4px 6px !important;
-      }
-      .ans-mark-tag {
-        font-size: 0.70rem !important;
-        padding: 1px 4px !important;
-      }
-      .ans-explanation, .ans-tip {
-        font-size: 0.76rem !important;
-        line-height: 1.35 !important;
-      }
-      .footer-bar, .sheet-footer {
+      .footer-bar {
         font-size: 0.68rem !important;
         padding-top: 8px !important;
         margin-top: 12px !important;
@@ -880,12 +831,11 @@
         width: 100% !important;
         box-sizing: border-box !important;
       }
-      p, span, div, li, td, th, label, h1, h2, h3, h4, .q-stem, .apply-stem, .drill-q {
+      p, span, div, li, td, th, label, h1, h2, h3, h4, .apply-stem, .drill-q {
         overflow-wrap: break-word !important;
         word-wrap: break-word !important;
       }
     }
-
   </style>
 </head>
 <body>
@@ -893,7 +843,7 @@
   <!-- Top Action Navigation Bar -->
   <div class="print-bar">
     <div>
-      <a href="../entry-level-3-digital-skills.html"><i class="fa-solid fa-arrow-left"></i> Back to Entry Level 3 Digital Skills Revision Guide</a>
+      <a href="../entry-level-3-digital-skills.html"><i class="fa-solid fa-arrow-left"></i> <span class="back-link-text">Back to Entry Level 3 Digital Skills Revision Guide</span></a>
     </div>
     <div>
       <div class="nav-pill-group">
@@ -939,7 +889,7 @@
       <div class="ans-table-card">
         <div class="ans-table-head">
           <span class="ans-badge">Q1</span>
-          <span class="ans-head-title">Hardware and Desktop Basics</span>
+          <span class="ans-head-title">Question 1: Hardware and Desktop Basics</span>
         </div>
         <div class="ans-grid">
           
@@ -978,7 +928,7 @@
       <div class="ans-table-card">
         <div class="ans-table-head">
           <span class="ans-badge">Q2</span>
-          <span class="ans-head-title">Digital Safety and Passwords</span>
+          <span class="ans-head-title">Question 2: Digital Safety and Passwords</span>
         </div>
         <div class="ans-grid">
           
@@ -1004,6 +954,177 @@
               <span class="cell-letter">(d)</span>
               <span class="cell-q">Logging out of your account on a public library computer when finished &rarr;</span>
               <span class="cell-val">Safe (prevents unauthorised access)</span>
+            </div>
+        </div>
+      </div>
+
+      <div class="ans-table-card">
+        <div class="ans-table-head">
+          <span class="ans-badge">Q3</span>
+          <span class="ans-head-title">Question 3: Question 2: Basic Computer Hardware & Input Devices</span>
+        </div>
+        <div class="ans-grid">
+          
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(a)</span>
+              <span class="cell-q">The screen that displays pictures and text from the computer &rarr;</span>
+              <span class="cell-val">Monitor / Display Screen</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(b)</span>
+              <span class="cell-q">The handheld pointing device used to click on icons and move the cursor &rarr;</span>
+              <span class="cell-val">Mouse / Trackpad</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(c)</span>
+              <span class="cell-q">The board of letter and number keys used to type words into documents &rarr;</span>
+              <span class="cell-val">Keyboard</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(d)</span>
+              <span class="cell-q">Pressing the left mouse button twice quickly to open a program &rarr;</span>
+              <span class="cell-val">Double-click</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(e)</span>
+              <span class="cell-q">Pressing the right mouse button to open a menu of options &rarr;</span>
+              <span class="cell-val">Right-click</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(f)</span>
+              <span class="cell-q">Holding the mouse button down to move an icon from one folder to another &rarr;</span>
+              <span class="cell-val">Drag and drop</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(g)</span>
+              <span class="cell-q">The small flashing vertical line on screen showing where typed letters will appear &rarr;</span>
+              <span class="cell-val">Cursor / Insertion point</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(h)</span>
+              <span class="cell-q">The key used to create a blank space between two typed words &rarr;</span>
+              <span class="cell-val">Spacebar</span>
+            </div>
+        </div>
+      </div>
+
+      <div class="ans-table-card">
+        <div class="ans-table-head">
+          <span class="ans-badge">Q4</span>
+          <span class="ans-head-title">Question 4: Question 3: Using the Internet & Basic Web Navigation</span>
+        </div>
+        <div class="ans-grid">
+          
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(a)</span>
+              <span class="cell-q">A software program used to view websites (e.g. Chrome, Edge, Safari, Firefox) &rarr;</span>
+              <span class="cell-val">Web browser</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(b)</span>
+              <span class="cell-q">The website address typed into the top bar to visit a page (e.g. www.nhs.uk) &rarr;</span>
+              <span class="cell-val">URL (Uniform Resource Locator) / Web address</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(c)</span>
+              <span class="cell-q">Text on a web page that turns into a hand cursor and jumps to a new page when clicked &rarr;</span>
+              <span class="cell-val">Hyperlink (or link)</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(d)</span>
+              <span class="cell-q">The button shaped like an arrow pointing left that takes you back to the previous webpage &rarr;</span>
+              <span class="cell-val">Back button</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(e)</span>
+              <span class="cell-q">A website used to search for information across the entire internet (e.g. Google) &rarr;</span>
+              <span class="cell-val">Search engine</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(f)</span>
+              <span class="cell-q">Saving a favourite website address so you can visit it again with one click &rarr;</span>
+              <span class="cell-val">Bookmark / Favourite</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(g)</span>
+              <span class="cell-q">The key pressed to jump down to a new line when typing text &rarr;</span>
+              <span class="cell-val">Enter / Return key</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(h)</span>
+              <span class="cell-q">The key used to delete the letter directly to the left of the cursor &rarr;</span>
+              <span class="cell-val">Backspace key</span>
+            </div>
+        </div>
+      </div>
+
+      <div class="ans-table-card">
+        <div class="ans-table-head">
+          <span class="ans-badge">Q5</span>
+          <span class="ans-head-title">Question 5: Question 4: Keeping Safe Online - Basic Rules</span>
+        </div>
+        <div class="ans-grid">
+          
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(a)</span>
+              <span class="cell-q">A website asks for your password to see a funny video &rarr;</span>
+              <span class="cell-val">Do not enter your password; real videos never require your email password</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(b)</span>
+              <span class="cell-q">You finish using a public computer at the local library &rarr;</span>
+              <span class="cell-val">Log out of all accounts and close the web browser before walking away</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(c)</span>
+              <span class="cell-q">A stranger on social media asks you to send them money &rarr;</span>
+              <span class="cell-val">Do not send money; block and report the stranger immediately</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(d)</span>
+              <span class="cell-q">You create a new password for your email account &rarr;</span>
+              <span class="cell-val">Make it a secret combination of letters and numbers that nobody can guess; never share it</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(e)</span>
+              <span class="cell-q">Your computer screen shows an unfamiliar message asking you to install software &rarr;</span>
+              <span class="cell-val">Ask a supervisor, teacher, or IT technician before clicking yes or download</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(f)</span>
+              <span class="cell-q">Someone you don't know sends you an email attachment called 'prize.exe' &rarr;</span>
+              <span class="cell-val">Do not open the attachment; delete the email immediately as it could contain a virus</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(g)</span>
+              <span class="cell-q">You need to type your credit card into a shopping website &rarr;</span>
+              <span class="cell-val">Check that the website address begins with 'https' and has a padlock icon</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(h)</span>
+              <span class="cell-q">You receive a message from a friend saying they are stranded abroad and need cash &rarr;</span>
+              <span class="cell-val">Phone your friend directly on their known phone number to verify before doing anything</span>
             </div>
         </div>
       </div>

@@ -3239,6 +3239,87 @@
       gap: 6px !important;
       margin-top: 6px !important;
     }
+
+    /* Landscape Mode: Convert the bulky full-width 'title & table of contents bar' into a sleek floating pill on the right */
+    .mobile-toc-bar {
+      display: flex !important;
+      position: fixed !important;
+      top: 58px !important;
+      right: max(14px, env(safe-area-inset-right, 14px)) !important;
+      left: auto !important;
+      bottom: auto !important;
+      width: auto !important;
+      max-width: fit-content !important;
+      min-height: 0 !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      background: transparent !important;
+      border: none !important;
+      border-bottom: none !important;
+      box-shadow: none !important;
+      z-index: 9995 !important;
+      align-items: center !important;
+      justify-content: flex-end !important;
+      pointer-events: none !important;
+    }
+
+    .mobile-toc-bar > div:first-child,
+    .mobile-toc-bar > div:not(.btn-mobile-toc) {
+      display: none !important;
+    }
+
+    .btn-mobile-toc {
+      pointer-events: auto !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+      gap: 8px !important;
+      padding: 8px 18px !important;
+      background: #0b172d !important;
+      color: #ffffff !important;
+      border: 1.5px solid rgba(56, 189, 248, 0.45) !important;
+      border-radius: 9999px !important;
+      box-shadow: 0 4px 18px rgba(11, 23, 45, 0.38), 0 2px 4px rgba(0, 0, 0, 0.15) !important;
+      font-size: 0.82rem !important;
+      font-weight: 700 !important;
+      letter-spacing: 0.02em !important;
+      cursor: pointer !important;
+      white-space: nowrap !important;
+      backdrop-filter: blur(8px) !important;
+      -webkit-backdrop-filter: blur(8px) !important;
+      transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+      user-select: none !important;
+      -webkit-user-select: none !important;
+    }
+
+    .btn-mobile-toc i {
+      color: #38bdf8 !important;
+      font-size: 0.85rem !important;
+      transition: transform 0.2s ease !important;
+    }
+
+    .btn-mobile-toc:hover,
+    .btn-mobile-toc:focus-visible {
+      background: #0284c7 !important;
+      border-color: rgba(255, 255, 255, 0.6) !important;
+      transform: translateY(-1px) scale(1.03) !important;
+      box-shadow: 0 6px 22px rgba(2, 132, 199, 0.5) !important;
+    }
+
+    .btn-mobile-toc:active {
+      transform: scale(0.96) !important;
+      background: #0369a1 !important;
+    }
+
+    .btn-mobile-toc.active {
+      background: #0284c7 !important;
+      border-color: #38bdf8 !important;
+      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.35) !important;
+    }
+
+    .btn-mobile-toc.active i {
+      transform: rotate(90deg) !important;
+    }
   }
 
   .video-resource-pills {

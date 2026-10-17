@@ -5,6 +5,7 @@ Designed for high legibility, dyslexia accessibility, A4 print optimization, and
 """
 
 import re
+import os
 
 def clean_sub_piece(text):
     text = re.sub(r"£\s*_+", "<span class=\"q-unit-prefix\">£</span><div class=\"q-answer-input-box sm\"></div>", text)
@@ -351,18 +352,44 @@ def render_worksheet(data):
         gap: 8px;
       }}
       .print-bar > div:first-child {{
-        text-align: center;
-        white-space: nowrap;
+        text-align: left;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
         overflow: hidden;
-        text-overflow: ellipsis;
+        display: block;
       }}
       .print-bar > div:first-child a {{
-        font-size: 0.85rem;
-        display: inline-flex;
+        font-size: 0.82rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        text-align: left;
+        width: 100%;
         max-width: 100%;
+        min-width: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        text-decoration: none;
+        color: #93c5fd;
+        font-weight: 600;
+        gap: 6px;
+      }}
+      .print-bar > div:first-child a i {{
+        flex-shrink: 0;
+        font-size: 0.85rem;
+        display: inline-block;
+      }}
+      .print-bar > div:first-child a span,
+      .print-bar > div:first-child a .back-link-text {{
+        flex: 1 1 auto;
+        min-width: 0;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+        text-align: left;
+        display: block;
       }}
       .print-bar > div:last-child {{
         display: flex;
@@ -844,15 +871,34 @@ def render_worksheet(data):
         box-sizing: border-box !important;
       }}
       .q-card-head, .apply-card-head, .answer-card-head {{
-        padding-bottom: 5px !important;
-        margin-bottom: 6px !important;
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        gap: 8px !important;
+        padding-bottom: 6px !important;
+        margin-bottom: 8px !important;
+        border-bottom: 1.5px solid #f1f5f9 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
       }}
       .q-title, .apply-title, .answer-title {{
-        font-size: 0.85rem !important;
+        font-size: 0.88rem !important;
+        font-weight: 700 !important;
+        color: #0b172d !important;
+        flex: 1 1 auto !important;
+        min-width: 0 !important;
+        line-height: 1.3 !important;
       }}
-      .q-marks, .apply-marks, .ans-marks {{
-        font-size: 0.72rem !important;
-        padding: 2px 6px !important;
+      .q-marks, .apply-marks, .ans-marks, .tier-marks, .sol-mark {{
+        font-size: 0.74rem !important;
+        font-weight: 700 !important;
+        padding: 2px 7px !important;
+        border-radius: 4px !important;
+        white-space: nowrap !important;
+        flex-shrink: 0 !important;
+        display: inline-block !important;
+        line-height: 1.2 !important;
       }}
       .q-stem, .apply-stem {{
         font-size: 0.84rem !important;
@@ -886,31 +932,72 @@ def render_worksheet(data):
       .working-line {{
         height: 18px !important;
       }}
-      .q-answer-row {{
-        margin-top: 8px !important;
-        padding-top: 6px !important;
-        gap: 4px 8px !important;
-        font-size: 0.82rem !important;
+      .q-answer-row, .apply-ans-line {{
+        margin-top: 10px !important;
+        padding: 8px 12px !important;
+        gap: 6px 8px !important;
+        font-size: 0.84rem !important;
         width: 100% !important;
         box-sizing: border-box !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        align-items: center !important;
         justify-content: flex-end !important;
+        background: #f8fafc !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 6px !important;
       }}
-      .q-answer-label {{
-        font-size: 0.80rem !important;
+      .q-answer-label, .ans-label {{
+        font-size: 0.84rem !important;
+        font-weight: 700 !important;
+        color: #0b172d !important;
+        text-align: left !important;
+        margin: 0 !important;
+        margin-right: auto !important;
+        flex: 0 1 auto !important;
+        white-space: nowrap !important;
       }}
-      .q-unit-prefix, .q-unit-suffix {{
-        font-size: 0.80rem !important;
+      .q-unit-prefix, .q-unit-suffix, .unit-pfx, .unit-sfx {{
+        font-size: 0.88rem !important;
+        font-weight: 700 !important;
+        color: #0b172d !important;
+        white-space: nowrap !important;
+        flex-shrink: 0 !important;
+        margin: 0 1px !important;
       }}
       .q-answer-input-box {{
-        height: 24px !important;
+        height: 30px !important;
+        background: #ffffff !important;
+        border: 1.5px solid #0b172d !important;
+        border-radius: 5px !important;
+        display: inline-block !important;
+        vertical-align: middle !important;
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+        box-sizing: border-box !important;
+        flex-shrink: 0 !important;
       }}
-      .q-answer-input-box.xs {{ width: 38px !important; }}
-      .q-answer-input-box.sm {{ width: 60px !important; }}
-      .q-answer-input-box.md {{ width: 85px !important; }}
-      .q-answer-input-box.lg {{ width: 120px !important; max-width: 100% !important; }}
+      .q-answer-input-box.xs {{ width: 48px !important; min-width: 48px !important; }}
+      .q-answer-input-box.sm {{ width: 80px !important; min-width: 80px !important; }}
+      .q-answer-input-box.md {{ width: 110px !important; min-width: 110px !important; max-width: 100% !important; }}
+      .q-answer-input-box.lg {{ width: 160px !important; min-width: 130px !important; max-width: 100% !important; }}
+      .ans-write-box {{
+        width: 110px !important;
+        border-bottom: 2px solid #0b172d !important;
+        height: 24px !important;
+        flex-shrink: 0 !important;
+      }}
       .q-workspace-badge {{
         font-size: 0.74rem !important;
         padding: 3px 8px !important;
+        margin-right: auto !important;
+      }}
+      .q-choice-pills {{
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 4px !important;
+        padding: 3px 6px !important;
+        font-size: 0.78rem !important;
+        flex-shrink: 0 !important;
       }}
       .sheet-footer {{
         font-size: 0.68rem !important;
@@ -933,7 +1020,7 @@ def render_worksheet(data):
 
   <div class="print-bar">
     <div>
-      <a href="{back_url}"><i class="fa-solid fa-arrow-left"></i> Back to {title} Revision Guide</a>
+      <a href="{back_url}"><i class="fa-solid fa-arrow-left"></i> <span class="back-link-text">Back to {title} Revision Guide</span></a>
     </div>
     <div>
       <div class="nav-pill-group">
@@ -1203,18 +1290,44 @@ def render_answers(data):
         gap: 8px;
       }}
       .print-bar > div:first-child {{
-        text-align: center;
-        white-space: nowrap;
+        text-align: left;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
         overflow: hidden;
-        text-overflow: ellipsis;
+        display: block;
       }}
       .print-bar > div:first-child a {{
-        font-size: 0.85rem;
-        display: inline-flex;
+        font-size: 0.82rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        text-align: left;
+        width: 100%;
         max-width: 100%;
+        min-width: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        text-decoration: none;
+        color: #93c5fd;
+        font-weight: 600;
+        gap: 6px;
+      }}
+      .print-bar > div:first-child a i {{
+        flex-shrink: 0;
+        font-size: 0.85rem;
+        display: inline-block;
+      }}
+      .print-bar > div:first-child a span,
+      .print-bar > div:first-child a .back-link-text {{
+        flex: 1 1 auto;
+        min-width: 0;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+        text-align: left;
+        display: block;
       }}
       .print-bar > div:last-child {{
         display: flex;
@@ -1630,15 +1743,34 @@ def render_answers(data):
         box-sizing: border-box !important;
       }}
       .q-card-head, .apply-card-head, .answer-card-head {{
-        padding-bottom: 5px !important;
-        margin-bottom: 6px !important;
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        gap: 8px !important;
+        padding-bottom: 6px !important;
+        margin-bottom: 8px !important;
+        border-bottom: 1.5px solid #f1f5f9 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
       }}
       .q-title, .apply-title, .answer-title {{
-        font-size: 0.85rem !important;
+        font-size: 0.88rem !important;
+        font-weight: 700 !important;
+        color: #0b172d !important;
+        flex: 1 1 auto !important;
+        min-width: 0 !important;
+        line-height: 1.3 !important;
       }}
-      .q-marks, .apply-marks, .ans-marks {{
-        font-size: 0.72rem !important;
-        padding: 2px 6px !important;
+      .q-marks, .apply-marks, .ans-marks, .tier-marks, .sol-mark {{
+        font-size: 0.74rem !important;
+        font-weight: 700 !important;
+        padding: 2px 7px !important;
+        border-radius: 4px !important;
+        white-space: nowrap !important;
+        flex-shrink: 0 !important;
+        display: inline-block !important;
+        line-height: 1.2 !important;
       }}
       .q-stem, .apply-stem {{
         font-size: 0.84rem !important;
@@ -1672,31 +1804,72 @@ def render_answers(data):
       .working-line {{
         height: 18px !important;
       }}
-      .q-answer-row {{
-        margin-top: 8px !important;
-        padding-top: 6px !important;
-        gap: 4px 8px !important;
-        font-size: 0.82rem !important;
+      .q-answer-row, .apply-ans-line {{
+        margin-top: 10px !important;
+        padding: 8px 12px !important;
+        gap: 6px 8px !important;
+        font-size: 0.84rem !important;
         width: 100% !important;
         box-sizing: border-box !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        align-items: center !important;
         justify-content: flex-end !important;
+        background: #f8fafc !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 6px !important;
       }}
-      .q-answer-label {{
-        font-size: 0.80rem !important;
+      .q-answer-label, .ans-label {{
+        font-size: 0.84rem !important;
+        font-weight: 700 !important;
+        color: #0b172d !important;
+        text-align: left !important;
+        margin: 0 !important;
+        margin-right: auto !important;
+        flex: 0 1 auto !important;
+        white-space: nowrap !important;
       }}
-      .q-unit-prefix, .q-unit-suffix {{
-        font-size: 0.80rem !important;
+      .q-unit-prefix, .q-unit-suffix, .unit-pfx, .unit-sfx {{
+        font-size: 0.88rem !important;
+        font-weight: 700 !important;
+        color: #0b172d !important;
+        white-space: nowrap !important;
+        flex-shrink: 0 !important;
+        margin: 0 1px !important;
       }}
       .q-answer-input-box {{
-        height: 24px !important;
+        height: 30px !important;
+        background: #ffffff !important;
+        border: 1.5px solid #0b172d !important;
+        border-radius: 5px !important;
+        display: inline-block !important;
+        vertical-align: middle !important;
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+        box-sizing: border-box !important;
+        flex-shrink: 0 !important;
       }}
-      .q-answer-input-box.xs {{ width: 38px !important; }}
-      .q-answer-input-box.sm {{ width: 60px !important; }}
-      .q-answer-input-box.md {{ width: 85px !important; }}
-      .q-answer-input-box.lg {{ width: 120px !important; max-width: 100% !important; }}
+      .q-answer-input-box.xs {{ width: 48px !important; min-width: 48px !important; }}
+      .q-answer-input-box.sm {{ width: 80px !important; min-width: 80px !important; }}
+      .q-answer-input-box.md {{ width: 110px !important; min-width: 110px !important; max-width: 100% !important; }}
+      .q-answer-input-box.lg {{ width: 160px !important; min-width: 130px !important; max-width: 100% !important; }}
+      .ans-write-box {{
+        width: 110px !important;
+        border-bottom: 2px solid #0b172d !important;
+        height: 24px !important;
+        flex-shrink: 0 !important;
+      }}
       .q-workspace-badge {{
         font-size: 0.74rem !important;
         padding: 3px 8px !important;
+        margin-right: auto !important;
+      }}
+      .q-choice-pills {{
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 4px !important;
+        padding: 3px 6px !important;
+        font-size: 0.78rem !important;
+        flex-shrink: 0 !important;
       }}
       .ans-step-row, .model-answer-step, .answer-step, .ans-step-box {{
         font-size: 0.82rem !important;
@@ -1732,7 +1905,7 @@ def render_answers(data):
 
   <div class="print-bar">
     <div>
-      <a href="{back_url}"><i class="fa-solid fa-arrow-left"></i> Back to {title} Revision Guide</a>
+      <a href="{back_url}"><i class="fa-solid fa-arrow-left"></i> <span class="back-link-text">Back to {title} Revision Guide</span></a>
     </div>
     <div>
       <div class="nav-pill-group">

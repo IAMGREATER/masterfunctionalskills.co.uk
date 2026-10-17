@@ -150,18 +150,44 @@
         gap: 8px;
       }
       .print-bar > div:first-child {
-        text-align: center;
-        white-space: nowrap;
+        text-align: left;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
         overflow: hidden;
-        text-overflow: ellipsis;
+        display: block;
       }
       .print-bar > div:first-child a {
-        font-size: 0.85rem;
-        display: inline-flex;
+        font-size: 0.82rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        text-align: left;
+        width: 100%;
         max-width: 100%;
+        min-width: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        text-decoration: none;
+        color: #93c5fd;
+        font-weight: 600;
+        gap: 6px;
+      }
+      .print-bar > div:first-child a i {
+        flex-shrink: 0;
+        font-size: 0.85rem;
+        display: inline-block;
+      }
+      .print-bar > div:first-child a span,
+      .print-bar > div:first-child a .back-link-text {
+        flex: 1 1 auto;
+        min-width: 0;
         overflow: hidden;
         text-overflow: ellipsis;
         white-space: nowrap;
+        text-align: left;
+        display: block;
       }
       .print-bar > div:last-child {
         display: flex;
@@ -555,8 +581,7 @@
       font-weight: 600;
       margin-left: 12px;
     }
-  
-    /* Mobile Portrait View: 100% full-width, clean typography, compact spacing */
+
     @media screen and (max-width: 768px), screen and (orientation: portrait) and (max-width: 1024px) {
       html, body {
         margin: 0 !important;
@@ -576,7 +601,7 @@
         box-shadow: 0 2px 8px rgba(0,0,0,0.04) !important;
         box-sizing: border-box !important;
       }
-      .sheet-head, .sheet-header {
+      .sheet-header {
         flex-direction: column !important;
         align-items: flex-start !important;
         gap: 8px !important;
@@ -591,13 +616,13 @@
         letter-spacing: -0.3px !important;
         width: 100% !important;
       }
-      .brand-subtitle, .sheet-sub {
+      .sheet-sub {
         font-size: 0.76rem !important;
         margin-top: 2px !important;
         width: 100% !important;
         line-height: 1.35 !important;
       }
-      .sheet-meta-badge, .header-badges {
+      .header-badges {
         width: 100% !important;
         box-sizing: border-box !important;
         text-align: left !important;
@@ -608,37 +633,8 @@
         flex-wrap: wrap !important;
         gap: 4px !important;
       }
-      .sheet-meta-badge .topic-name {
-        font-size: 0.90rem !important;
-      }
-      .sheet-meta-badge .spec-tag, .badge-level, .badge-spec {
+      .badge-level, .badge-spec {
         font-size: 0.70rem !important;
-      }
-      .learner-bar {
-        display: flex !important;
-        flex-direction: column !important;
-        gap: 6px !important;
-        padding: 6px 10px !important;
-        margin-bottom: 12px !important;
-        font-size: 0.82rem !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-      }
-      .learner-bar-item {
-        display: flex !important;
-        align-items: center !important;
-        justify-content: space-between !important;
-        width: 100% !important;
-      }
-      .learner-bar-item strong {
-        font-size: 0.80rem !important;
-        min-width: 55px !important;
-      }
-      .learner-bar-item .dotted-line {
-        flex: 1 !important;
-        width: auto !important;
-        margin-left: 6px !important;
-        height: 10px !important;
       }
       .hero-banner {
         flex-direction: column !important;
@@ -694,26 +690,6 @@
         line-height: 1.35 !important;
         margin-top: 6px !important;
         padding-top: 6px !important;
-      }
-      .recall-banner {
-        padding: 8px 10px !important;
-        font-size: 0.80rem !important;
-        line-height: 1.38 !important;
-        margin-bottom: 12px !important;
-        gap: 6px !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-      }
-      .tier-header {
-        padding: 5px 8px !important;
-        font-size: 0.80rem !important;
-        margin: 14px 0 10px 0 !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-      }
-      .tier-header .tier-marks {
-        font-size: 0.70rem !important;
-        padding: 2px 5px !important;
       }
       .section-ribbon {
         margin: 14px 0 10px 0 !important;
@@ -781,32 +757,59 @@
       .drill-input-line {
         height: 14px !important;
       }
-      .q-card, .apply-card, .answer-card {
+      .apply-card, .answer-card, .ans-table-card, .solution-card {
         padding: 10px 8px !important;
         margin-bottom: 12px !important;
         border-radius: 6px !important;
         width: 100% !important;
         box-sizing: border-box !important;
       }
-      .q-card-head, .apply-card-head, .answer-card-head {
-        padding-bottom: 5px !important;
-        margin-bottom: 6px !important;
+      .apply-card-head, .answer-card-head, .solution-head {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        gap: 8px !important;
+        padding-bottom: 6px !important;
+        margin-bottom: 8px !important;
+        border-bottom: 1.5px solid #f1f5f9 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
       }
-      .q-title, .apply-title, .answer-title {
-        font-size: 0.85rem !important;
+      .apply-title, .answer-title, .solution-title {
+        font-size: 0.88rem !important;
+        font-weight: 700 !important;
+        color: #0b172d !important;
+        flex: 1 1 auto !important;
+        min-width: 0 !important;
+        line-height: 1.3 !important;
       }
-      .q-marks, .apply-marks, .ans-marks {
-        font-size: 0.72rem !important;
-        padding: 2px 6px !important;
+      .apply-marks, .ans-marks, .sol-mark, .tier-marks {
+        font-size: 0.74rem !important;
+        font-weight: 700 !important;
+        padding: 2px 7px !important;
+        border-radius: 4px !important;
+        white-space: nowrap !important;
+        flex-shrink: 0 !important;
+        display: inline-block !important;
+        line-height: 1.2 !important;
       }
-      .q-stem, .apply-stem {
+      .ans-grid {
+        grid-template-columns: repeat(2, 1fr) !important;
+        gap: 6px !important;
+      }
+      .ans-grid-cell {
+        font-size: 0.78rem !important;
+        padding: 4px 6px !important;
+      }
+      .apply-stem {
         font-size: 0.84rem !important;
         line-height: 1.45 !important;
         margin-bottom: 8px !important;
         overflow-wrap: break-word !important;
         word-wrap: break-word !important;
       }
-      .q-diagram-wrap, .apply-diagram-wrap {
+      .apply-diagram-wrap {
         padding: 4px !important;
         margin: 8px 0 !important;
         width: 100% !important;
@@ -814,63 +817,11 @@
         box-sizing: border-box !important;
         overflow-x: auto !important;
       }
-      .q-diagram-wrap svg, .apply-diagram-wrap svg {
+      .apply-diagram-wrap svg {
         max-width: 100% !important;
         height: auto !important;
       }
-      .q-working-area {
-        margin: 8px 0 !important;
-      }
-      .working-label {
-        font-size: 0.70rem !important;
-        margin-bottom: 3px !important;
-      }
-      .working-lines-box {
-        padding: 0 4px !important;
-      }
-      .working-line {
-        height: 18px !important;
-      }
-      .q-answer-row {
-        margin-top: 8px !important;
-        padding-top: 6px !important;
-        gap: 4px 8px !important;
-        font-size: 0.82rem !important;
-        width: 100% !important;
-        box-sizing: border-box !important;
-        justify-content: flex-end !important;
-      }
-      .q-answer-label {
-        font-size: 0.80rem !important;
-      }
-      .q-unit-prefix, .q-unit-suffix {
-        font-size: 0.80rem !important;
-      }
-      .q-answer-input-box {
-        height: 24px !important;
-      }
-      .q-answer-input-box.xs { width: 38px !important; }
-      .q-answer-input-box.sm { width: 60px !important; }
-      .q-answer-input-box.md { width: 85px !important; }
-      .q-answer-input-box.lg { width: 120px !important; max-width: 100% !important; }
-      .q-workspace-badge {
-        font-size: 0.74rem !important;
-        padding: 3px 8px !important;
-      }
-      .ans-step-row, .model-answer-step, .answer-step, .ans-step-box {
-        font-size: 0.82rem !important;
-        line-height: 1.4 !important;
-        padding: 4px 6px !important;
-      }
-      .ans-mark-tag {
-        font-size: 0.70rem !important;
-        padding: 1px 4px !important;
-      }
-      .ans-explanation, .ans-tip {
-        font-size: 0.76rem !important;
-        line-height: 1.35 !important;
-      }
-      .footer-bar, .sheet-footer {
+      .footer-bar {
         font-size: 0.68rem !important;
         padding-top: 8px !important;
         margin-top: 12px !important;
@@ -880,12 +831,11 @@
         width: 100% !important;
         box-sizing: border-box !important;
       }
-      p, span, div, li, td, th, label, h1, h2, h3, h4, .q-stem, .apply-stem, .drill-q {
+      p, span, div, li, td, th, label, h1, h2, h3, h4, .apply-stem, .drill-q {
         overflow-wrap: break-word !important;
         word-wrap: break-word !important;
       }
     }
-
   </style>
 </head>
 <body>
@@ -893,7 +843,7 @@
   <!-- Top Action Navigation Bar -->
   <div class="print-bar">
     <div>
-      <a href="../detecting-language-techniques.html"><i class="fa-solid fa-arrow-left"></i> Back to Detecting Language Techniques & Rhetorical Devices Revision Guide</a>
+      <a href="../detecting-language-techniques.html"><i class="fa-solid fa-arrow-left"></i> <span class="back-link-text">Back to Language Techniques & Rhetorical Devices Revision Guide</span></a>
     </div>
     <div>
       <div class="nav-pill-group">
@@ -939,7 +889,7 @@
       <div class="ans-table-card">
         <div class="ans-table-head">
           <span class="ans-badge">Q1</span>
-          <span class="ans-head-title">Identifying Rhetorical Devices</span>
+          <span class="ans-head-title">Question 1: Identifying Rhetorical Devices</span>
         </div>
         <div class="ans-grid">
           
@@ -978,7 +928,7 @@
       <div class="ans-table-card">
         <div class="ans-table-head">
           <span class="ans-badge">Q2</span>
-          <span class="ans-head-title">Explaining the Effect on the Reader</span>
+          <span class="ans-head-title">Question 2: Explaining the Effect on the Reader</span>
         </div>
         <div class="ans-grid">
           
@@ -992,6 +942,177 @@
               <span class="cell-letter">(b)</span>
               <span class="cell-q">Calling a new community clinic 'a beacon of hope' &rarr;</span>
               <span class="cell-val">Inspires optimism and trust that the clinic will provide guidance and care</span>
+            </div>
+        </div>
+      </div>
+
+      <div class="ans-table-card">
+        <div class="ans-table-head">
+          <span class="ans-badge">Q3</span>
+          <span class="ans-head-title">Question 3: Identifying Rhetorical Devices in Persuasive Texts</span>
+        </div>
+        <div class="ans-grid">
+          
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(a)</span>
+              <span class="cell-q">'Over 87% of surveyed NHS workers would recommend their ward to friends.' &rarr;</span>
+              <span class="cell-val">Statistics / Empirical evidence</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(b)</span>
+              <span class="cell-q">'Are we prepared to let our beloved community library close its doors forever?' &rarr;</span>
+              <span class="cell-val">Rhetorical question</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(c)</span>
+              <span class="cell-q">'We will deliver cleaner streets, safer parks, and brighter futures for our youth.' &rarr;</span>
+              <span class="cell-val">Rule of Three / Tricolon</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(d)</span>
+              <span class="cell-q">'This revolutionary new vacuum cleaner is a million times faster than sweeping.' &rarr;</span>
+              <span class="cell-val">Hyperbole / Exaggeration</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(e)</span>
+              <span class="cell-q">'Last year, local resident Mrs Jenkins had to wait four hours in the rain for a bus.' &rarr;</span>
+              <span class="cell-val">Anecdote / Human interest story</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(f)</span>
+              <span class="cell-q">'Don't let rogue cowboy builders steal your family's precious future.' &rarr;</span>
+              <span class="cell-val">Emotive language / Pejorative nouns</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(g)</span>
+              <span class="cell-q">'Professor Davies, Chief Virologist at Oxford, confirms the safety of the vaccine.' &rarr;</span>
+              <span class="cell-val">Appeal to authority / Expert testimony</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(h)</span>
+              <span class="cell-q">'We cannot afford to wait. We cannot afford to hesitate. We cannot afford to fail.' &rarr;</span>
+              <span class="cell-val">Repetition / Anaphora</span>
+            </div>
+        </div>
+      </div>
+
+      <div class="ans-table-card">
+        <div class="ans-table-head">
+          <span class="ans-badge">Q4</span>
+          <span class="ans-head-title">Question 4: Analyzing the Functional Effect of Language Choices</span>
+        </div>
+        <div class="ans-grid">
+          
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(a)</span>
+              <span class="cell-q">'Heartless corporate landlords are hiking rents without remorse.' &rarr;</span>
+              <span class="cell-val">Demonizes landlords as unfeeling villains and evokes sympathy for vulnerable tenants</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(b)</span>
+              <span class="cell-q">'Our award-winning, state-of-the-art diagnostic equipment.' &rarr;</span>
+              <span class="cell-val">Reassures patients of clinical excellence and justifies higher service prestige</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(c)</span>
+              <span class="cell-q">'Imagine returning home to a sparkling, spotless living room every evening.' &rarr;</span>
+              <span class="cell-val">Prompts reader to visualize a stress-free outcome, motivating them to hire cleaners</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(d)</span>
+              <span class="cell-q">'Time is running out to claim your statutory heating allowance.' &rarr;</span>
+              <span class="cell-val">Instils a sense of urgency, driving eligible readers to submit applications quickly</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(e)</span>
+              <span class="cell-q">'You hold the power to save an innocent animal's life today.' &rarr;</span>
+              <span class="cell-val">Empowers the reader while placing personal moral responsibility on them to donate</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(f)</span>
+              <span class="cell-q">'A catastrophic failure of basic leadership led to this workplace tragedy.' &rarr;</span>
+              <span class="cell-val">Allocates clear blame to senior management and emphasizes the gravity of the incident</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(g)</span>
+              <span class="cell-q">'Our friendly team will guide you through every single step with gentle patience.' &rarr;</span>
+              <span class="cell-val">Allays anxiety and reassures nervous applicants that they will not be judged</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(h)</span>
+              <span class="cell-q">'Every single penny of your monthly subscription directly feeds a hungry child.' &rarr;</span>
+              <span class="cell-val">Builds trust and eliminates skepticism regarding charity administrative overheads</span>
+            </div>
+        </div>
+      </div>
+
+      <div class="ans-table-card">
+        <div class="ans-table-head">
+          <span class="ans-badge">Q5</span>
+          <span class="ans-head-title">Question 5: Distinguishing Subtle Literary Devices in Non-Fiction</span>
+        </div>
+        <div class="ans-grid">
+          
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(a)</span>
+              <span class="cell-q">'The new hospital parking policy was an open secret among clinic staff.' &rarr;</span>
+              <span class="cell-val">Oxymoron ('open secret')</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(b)</span>
+              <span class="cell-q">'The fire station tragically burned to the ground during the night shift.' &rarr;</span>
+              <span class="cell-val">Situational Irony</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(c)</span>
+              <span class="cell-q">'Our bakery team always rises to the occasion.' &rarr;</span>
+              <span class="cell-val">Pun / Play on words ('rises')</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(d)</span>
+              <span class="cell-q">'Silent, sinister shadows slipped across the clinical ward corridor.' &rarr;</span>
+              <span class="cell-val">Sibilance (repetition of soft 's' sounds)</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(e)</span>
+              <span class="cell-q">'The heavy industrial press slammed down with a deafening crash.' &rarr;</span>
+              <span class="cell-val">Onomatopoeia ('crash', 'slammed')</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(f)</span>
+              <span class="cell-q">'The mechanic's own car broke down on his way to work.' &rarr;</span>
+              <span class="cell-val">Situational Irony</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(g)</span>
+              <span class="cell-q">'A deafening silence filled the boardroom when the deficit was announced.' &rarr;</span>
+              <span class="cell-val">Oxymoron ('deafening silence')</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(h)</span>
+              <span class="cell-q">'The bee keeper described his staff as buzzing with fresh ideas.' &rarr;</span>
+              <span class="cell-val">Pun / Extended metaphor</span>
             </div>
         </div>
       </div>

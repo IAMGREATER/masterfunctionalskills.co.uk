@@ -62,7 +62,7 @@ BOOK_SPECS = [
         "spec_text": "OFQUAL REGULATED SPECIFICATION • ENTRY LEVEL 3",
         "badge_pills": ["Entry 3 Spec", "Step-by-Step", "Number & Money", "Visual Models"],
         "back_heading": "Build solid numeracy foundations and achieve Entry Level 3",
-        "back_desc": "Engineered for adult learners, apprentices, and ESOL candidates building foundational math skills. Takes you step-by-step through whole numbers up to 1000, addition, subtraction, multiplication grids, division remainders, decimal money, and basic clock time.",
+        "back_desc": "Engineered for adult learners, apprentices, and vocational students building foundational math skills. Takes you step-by-step through whole numbers up to 1000, addition, subtraction, multiplication grids, division remainders, decimal money, and basic clock time.",
         "key_features": [
             ("Dyslexia-Friendly Layout", "High-contrast visual models, chunked explanations, and generous font spacing."),
             ("Whole Numbers & Place Value", "Clear visual place value charts (Hundreds, Tens, Units) and number line jumps."),
@@ -414,7 +414,7 @@ BOOK_SPECS = [
         ],
         "isbn": "978-1-912345-85-2",
         "companion_note_title": "Essential for Both Level 1 and Level 2:",
-        "companion_note_text": "Designed as the universal grammar partner for both Level 1 and Level 2 writing guides. Suitable for apprentices, adult learners, and ESOL candidates."
+        "companion_note_text": "Designed as the universal grammar partner for both Level 1 and Level 2 writing guides. Suitable for apprentices, adult learners, and vocational students."
     },
     {
         "id": "bksb_remediation",

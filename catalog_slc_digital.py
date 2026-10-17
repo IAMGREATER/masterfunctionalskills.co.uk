@@ -178,12 +178,12 @@ CATALOG_SLC_DIGITAL = [
             "reverse_check": "Adapts complexity and empathy to match audience needs."
         },
         q5={
-            "title": "Question 5 (Synthesizing Arguments to Reach Consensus)",
+            "title": "Question 5 (Bringing Arguments Together to Reach Agreement)",
             "marks": 4,
-            "stem": "In a 15-minute group discussion, four team members debate whether to introduce 12-hour shifts or keep 8-hour shifts.<br>• Member A argues 12-hour shifts give more consecutive days off.<br>• Member B argues 12-hour shifts cause extreme clinical fatigue in the final 3 hours.<br>• Member C worries about childcare pickup times.<br><br>As meeting facilitator, write down a concluding summary statement that synthesizes all three viewpoints and proposes a collaborative compromise.",
+            "stem": "In a 15-minute group discussion, four team members debate whether to introduce 12-hour shifts or keep 8-hour shifts:<br>• Member A argues 12-hour shifts give more consecutive days off.<br>• Member B argues 12-hour shifts cause extreme tiredness in the final 3 hours.<br>• Member C worries about childcare pickup times.<br><br>As the discussion leader, write a short summary statement that brings together all three viewpoints and suggests a fair compromise.",
             "lines": 5,
-            "ans_label": "Facilitator Synthesis Statement =",
-            "choice_box": "Write your synthesis statement in the workspace.",
+            "ans_label": "Leader's Summary Statement =",
+            "choice_box": "Write your summary statement in the workspace.",
             "step_rows": [
                 ("1. Summarize key advantages highlighted (consecutive rest days from Member A)", "[P1]"),
                 ("2. Acknowledge safety and wellbeing risks (fatigue from Member B, childcare from Member C)", "[P1]"),

@@ -15,17 +15,17 @@ def make_maths_topic(slug, title, spec_codes, formula_hint, q1, q2, q3, q4, q5, 
         "total_marks": 18,
         "sections": [
             {
-                "title": "Section A: Procedural Fluency Check",
+                "title": "Section A: Core Skills (Warm-Up)",
                 "meta": "Questions 1 & 2 • 4 Marks",
                 "questions": [q1, q2]
             },
             {
-                "title": "Section B: Workplace & Functional Scenarios",
+                "title": "Section B: Everyday & Workplace Maths",
                 "meta": "Questions 3 & 4 • 6 Marks",
                 "questions": [q3, q4]
             },
             {
-                "title": "Section C: Pearson Edexcel Problem Solving & Justification",
+                "title": "Section C: Exam-Style Problem Solving",
                 "meta": "Questions 5 & 6 • 8 Marks",
                 "questions": [q5, q6]
             }
@@ -45,17 +45,17 @@ def make_english_topic(slug, title, category, spec_codes, golden_rule, q1, q2, q
         "total_marks": 18,
         "sections": [
             {
-                "title": "Section A: Foundational Concept Check",
+                "title": "Section A: Core Skills (The Basics)",
                 "meta": "Questions 1 & 2 • 4 Marks",
                 "questions": [q1, q2]
             },
             {
-                "title": "Section B: Functional Workplace Application",
+                "title": "Section B: Real-Life & Workplace Practice",
                 "meta": "Questions 3 & 4 • 6 Marks",
                 "questions": [q3, q4]
             },
             {
-                "title": "Section C: Pearson Edexcel Exam-Style Analysis & Evaluation",
+                "title": "Section C: Exam-Style Tasks",
                 "meta": "Questions 5 & 6 • 8 Marks",
                 "questions": [q5, q6]
             }
@@ -73,17 +73,17 @@ def make_digital_topic(slug, title, spec_codes, golden_rule, q1, q2, q3, q4, q5,
         "total_marks": 18,
         "sections": [
             {
-                "title": "Section A: Core Technical Skills",
+                "title": "Section A: Core Skills (The Basics)",
                 "meta": "Questions 1 & 2 • 4 Marks",
                 "questions": [q1, q2]
             },
             {
-                "title": "Section B: Digital Workplace Tasks",
+                "title": "Section B: Everyday & Workplace Tasks",
                 "meta": "Questions 3 & 4 • 6 Marks",
                 "questions": [q3, q4]
             },
             {
-                "title": "Section C: Problem Solving, Cybersecurity & Verification",
+                "title": "Section C: Practical Problem Solving",
                 "meta": "Questions 5 & 6 • 8 Marks",
                 "questions": [q5, q6]
             }

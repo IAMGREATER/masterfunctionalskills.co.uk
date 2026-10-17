@@ -3,7 +3,7 @@
 Curriculum Topic Definitions: Maths - Number and The Number System.
 Each topic includes:
 - Formula / Golden Rule reminder
-- Section A: Procedural Fluency (2 questions)
+- Section A: Core Skills (Warm-Up) (2 questions)
 - Section B: Workplace Functional Application (2 questions)
 - Section C: Multi-Step Exam Problem Solving & Decision (2 questions)
 - Complete examiner step-by-step mark breakdown, traps, and checks.
@@ -20,7 +20,7 @@ TOPICS_MATHS_NUMBER = [
         "back_url": "../functional-skills-numbers-and-place-value.html",
         "sections": [
             {
-                "title": "Section A: Procedural Fluency Check",
+                "title": "Section A: Core Skills (Warm-Up)",
                 "meta": "Questions 1 & 2 • 4 Marks",
                 "questions": [
                     {
@@ -56,7 +56,7 @@ TOPICS_MATHS_NUMBER = [
                 ]
             },
             {
-                "title": "Section B: Workplace & Functional Scenarios",
+                "title": "Section B: Everyday & Workplace Maths",
                 "meta": "Questions 3 & 4 • 6 Marks",
                 "questions": [
                     {
@@ -94,7 +94,7 @@ TOPICS_MATHS_NUMBER = [
                 ]
             },
             {
-                "title": "Section C: Pearson Edexcel Problem Solving & Justification",
+                "title": "Section C: Exam-Style Problem Solving",
                 "meta": "Questions 5 & 6 • 8 Marks",
                 "questions": [
                     {
@@ -145,7 +145,7 @@ TOPICS_MATHS_NUMBER = [
         "back_url": "../functional-skills-ordering-numbers.html",
         "sections": [
             {
-                "title": "Section A: Procedural Fluency Check",
+                "title": "Section A: Core Skills (Warm-Up)",
                 "meta": "Questions 1 & 2 • 4 Marks",
                 "questions": [
                     {
@@ -181,7 +181,7 @@ TOPICS_MATHS_NUMBER = [
                 ]
             },
             {
-                "title": "Section B: Workplace & Functional Scenarios",
+                "title": "Section B: Everyday & Workplace Maths",
                 "meta": "Questions 3 & 4 • 6 Marks",
                 "questions": [
                     {
@@ -219,7 +219,7 @@ TOPICS_MATHS_NUMBER = [
                 ]
             },
             {
-                "title": "Section C: Pearson Edexcel Problem Solving & Justification",
+                "title": "Section C: Exam-Style Problem Solving",
                 "meta": "Questions 5 & 6 • 8 Marks",
                 "questions": [
                     {
@@ -275,7 +275,7 @@ TOPICS_MATHS_NUMBER.extend([
         "back_url": "../functional-skills-addition-and-subtraction.html",
         "sections": [
             {
-                "title": "Section A: Procedural Fluency Check",
+                "title": "Section A: Core Skills (Warm-Up)",
                 "meta": "Questions 1 & 2 • 4 Marks",
                 "questions": [
                     {
@@ -311,7 +311,7 @@ TOPICS_MATHS_NUMBER.extend([
                 ]
             },
             {
-                "title": "Section B: Workplace & Functional Scenarios",
+                "title": "Section B: Everyday & Workplace Maths",
                 "meta": "Questions 3 & 4 • 6 Marks",
                 "questions": [
                     {
@@ -349,7 +349,7 @@ TOPICS_MATHS_NUMBER.extend([
                 ]
             },
             {
-                "title": "Section C: Pearson Edexcel Problem Solving & Justification",
+                "title": "Section C: Exam-Style Problem Solving",
                 "meta": "Questions 5 & 6 • 8 Marks",
                 "questions": [
                     {
@@ -400,7 +400,7 @@ TOPICS_MATHS_NUMBER.extend([
         "back_url": "../functional-skills-multiplication.html",
         "sections": [
             {
-                "title": "Section A: Procedural Fluency Check",
+                "title": "Section A: Core Skills (Warm-Up)",
                 "meta": "Questions 1 & 2 • 4 Marks",
                 "questions": [
                     {
@@ -436,7 +436,7 @@ TOPICS_MATHS_NUMBER.extend([
                 ]
             },
             {
-                "title": "Section B: Workplace & Functional Scenarios",
+                "title": "Section B: Everyday & Workplace Maths",
                 "meta": "Questions 3 & 4 • 6 Marks",
                 "questions": [
                     {
@@ -474,7 +474,7 @@ TOPICS_MATHS_NUMBER.extend([
                 ]
             },
             {
-                "title": "Section C: Pearson Edexcel Problem Solving & Justification",
+                "title": "Section C: Exam-Style Problem Solving",
                 "meta": "Questions 5 & 6 • 8 Marks",
                 "questions": [
                     {

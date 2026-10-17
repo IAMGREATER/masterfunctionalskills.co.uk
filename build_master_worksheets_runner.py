@@ -24,7 +24,7 @@ TOPIC_CATALOG = [
         "total_marks": 18,
         "sections": [
             {
-                "title": "Section A: Procedural Fluency Check",
+                "title": "Section A: Core Skills (Warm-Up)",
                 "meta": "Questions 1 & 2 • 4 Marks",
                 "questions": [
                     {
@@ -60,7 +60,7 @@ TOPIC_CATALOG = [
                 ]
             },
             {
-                "title": "Section B: Workplace & Functional Scenarios",
+                "title": "Section B: Everyday & Workplace Maths",
                 "meta": "Questions 3 & 4 • 6 Marks",
                 "questions": [
                     {
@@ -98,7 +98,7 @@ TOPIC_CATALOG = [
                 ]
             },
             {
-                "title": "Section C: Pearson Edexcel Problem Solving & Justification",
+                "title": "Section C: Exam-Style Problem Solving",
                 "meta": "Questions 5 & 6 • 8 Marks",
                 "questions": [
                     {
@@ -149,7 +149,7 @@ TOPIC_CATALOG = [
         "total_marks": 18,
         "sections": [
             {
-                "title": "Section A: Procedural Fluency Check",
+                "title": "Section A: Core Skills (Warm-Up)",
                 "meta": "Questions 1 & 2 • 4 Marks",
                 "questions": [
                     {
@@ -185,7 +185,7 @@ TOPIC_CATALOG = [
                 ]
             },
             {
-                "title": "Section B: Workplace & Functional Scenarios",
+                "title": "Section B: Everyday & Workplace Maths",
                 "meta": "Questions 3 & 4 • 6 Marks",
                 "questions": [
                     {
@@ -223,7 +223,7 @@ TOPIC_CATALOG = [
                 ]
             },
             {
-                "title": "Section C: Pearson Edexcel Problem Solving & Justification",
+                "title": "Section C: Exam-Style Problem Solving",
                 "meta": "Questions 5 & 6 • 8 Marks",
                 "questions": [
                     {
@@ -274,7 +274,7 @@ TOPIC_CATALOG = [
         "total_marks": 18,
         "sections": [
             {
-                "title": "Section A: Procedural Fluency Check",
+                "title": "Section A: Core Skills (Warm-Up)",
                 "meta": "Questions 1 & 2 • 4 Marks",
                 "questions": [
                     {
@@ -310,7 +310,7 @@ TOPIC_CATALOG = [
                 ]
             },
             {
-                "title": "Section B: Workplace & Functional Scenarios",
+                "title": "Section B: Everyday & Workplace Maths",
                 "meta": "Questions 3 & 4 • 6 Marks",
                 "questions": [
                     {
@@ -348,7 +348,7 @@ TOPIC_CATALOG = [
                 ]
             },
             {
-                "title": "Section C: Pearson Edexcel Problem Solving & Justification",
+                "title": "Section C: Exam-Style Problem Solving",
                 "meta": "Questions 5 & 6 • 8 Marks",
                 "questions": [
                     {

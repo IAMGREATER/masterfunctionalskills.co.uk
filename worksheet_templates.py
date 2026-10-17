@@ -747,7 +747,7 @@ def render_worksheet(data):
     <div class="recall-banner">
       <i class="fa-solid fa-lightbulb"></i>
       <div>
-        <strong>Examiner Rule for {title}:</strong> {formula_hint}
+        <strong>Top Tip for {title}:</strong> {formula_hint}
       </div>
     </div>
 
@@ -794,7 +794,7 @@ def render_answers(data):
             if q.get('pitfall'):
                 pitfall_html = f"""
       <div class="pitfall-box">
-        <strong>⚠️ Examiner Trap Alert:</strong>
+        <strong>⚠️ Common Mistake to Avoid:</strong>
         {q['pitfall']}
       </div>"""
             
@@ -810,7 +810,7 @@ def render_answers(data):
             if q.get('reverse_check'):
                 reverse_html = f"""
       <div class="reverse-check-box">
-        <strong>🔄 Reverse Sanity Check:</strong> {q['reverse_check']}
+        <strong>🔄 Quick Check:</strong> {q['reverse_check']}
       </div>"""
 
             sections_html += f"""

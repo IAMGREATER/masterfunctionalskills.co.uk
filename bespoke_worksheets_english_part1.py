@@ -93,11 +93,11 @@ WORKSHEETS_ENGLISH_PART1 = [
             "reverse_check": "Verify at least two techniques/quotes from Text A are contrasted against two from Text B."
         },
         q6={
-            "title": "Question 6 (Level 2 Multi-Text Synthesis Across Three Sources)",
+            "title": "Question 6 (Level 2 Comparing Three Sources)",
             "marks": 4,
-            "stem": "Read all three extracts on night-shift working:<br><strong>Text A (Medical Journal):</strong> <em>'Rotating night shifts disrupt natural circadian rhythms and increase long-term cardiovascular risk by 19%.'</em><br><strong>Text B (Warehouse Worker):</strong> <em>'The 25% night-shift pay premium adds £350 a month to my wages, and the roads are completely traffic-free at 5 a.m.'</em><br><strong>Text C (Union Advisor):</strong> <em>'Night workers suffer higher fatigue rates, though free hot meals on night shifts significantly boost morale.'</em><br><br>Synthesise the <strong>advantages</strong> and <strong>disadvantages</strong> of night-shift work using evidence from <strong>all three texts</strong>.",
+            "stem": "Read all three extracts on night-shift working:<br><strong>Text A (Medical Journal):</strong> <em>'Rotating night shifts disrupt natural circadian rhythms and increase long-term cardiovascular risk by 19%.'</em><br><strong>Text B (Warehouse Worker):</strong> <em>'The 25% night-shift pay premium adds £350 a month to my wages, and the roads are completely traffic-free at 5 a.m.'</em><br><strong>Text C (Union Advisor):</strong> <em>'Night workers suffer higher fatigue rates, though free hot meals on night shifts significantly boost morale.'</em><br><br>Using evidence from <strong>all three texts</strong>, explain the <strong>advantages</strong> and <strong>disadvantages</strong> of night-shift work.",
             "lines": 5,
-            "ans_label": "Cross-Text Synthesis =",
+            "ans_label": "Summary of 3 Texts =",
             "choice_box": "Disadvantages (Texts A & C): ____________ | Advantages (Texts B & C): ____________",
             "step_rows": [
                 ("1. Disadvantage from Text A: Disrupts circadian rhythms and raises cardiovascular risk by 19%", "[A1]"),

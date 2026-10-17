@@ -12,7 +12,7 @@ CATALOG_ENGLISH_WRITING = [
         title="Grammar & Sentence Structures",
         category="writing",
         spec_codes="L1.24 • L2.22",
-        golden_rule="Vary sentence lengths using simple, compound, and complex sentences. Use coordinating conjunctions (FANBOYS: For, And, Nor, But, Or, Yet, So) for compound sentences, and subordinating conjunctions (Although, Because, Since, While, Unless) for complex sentences. Avoid comma splices and run-on sentences.",
+        golden_rule="Mix short and longer sentences to make your writing clear and interesting. Use joining words like 'and', 'but', or 'so' to link ideas, and words like 'although', 'because', or 'when' to add detail. Put a comma after an opening phrase, and always finish with a full stop.",
         q1={
             "title": "Question 1 (Level 1 Compound Sentences with Conjunctions)",
             "marks": 2,
@@ -29,19 +29,19 @@ CATALOG_ENGLISH_WRITING = [
             "reverse_check": "Both clauses are independent and express contrasting outcomes connected by 'but'."
         },
         q2={
-            "title": "Question 2 (Level 2 Complex Sentence with Subordinating Conjunction)",
+            "title": "Question 2 (Level 2 Adding Detail with 'Although')",
             "marks": 2,
-            "stem": "Rewrite the following ideas as a single complex sentence starting with the subordinating conjunction <strong>'Although'</strong>:<br>Idea 1: <em>The ward team worked under intense winter pressures.</em><br>Idea 2: <em>They maintained a 98% patient satisfaction rating throughout January.</em>",
+            "stem": "Join the two ideas below into one sentence starting with the word <strong>'Although'</strong>:<br>Idea 1: <em>The ward team worked under intense winter pressures.</em><br>Idea 2: <em>They maintained a 98% patient satisfaction rating throughout January.</em>",
             "lines": 3,
             "ans_label": "Complex Sentence =",
             "choice_box": "Although _______________________________________________",
             "step_rows": [
-                ("1. Start with 'Although' and place comma after introductory dependent clause", "[M1]"),
+                ("1. Start with 'Although' and place a comma after the opening phrase", "[M1]"),
                 ("2. Accurate sentence: 'Although the ward team worked under intense winter pressures, they maintained a 98% patient satisfaction rating throughout January.'", "[A1]")
             ],
             "final_answer": "Although the ward team worked under intense winter pressures, they maintained a 98% patient satisfaction rating throughout January.",
-            "pitfall": "Omitting the comma separating the subordinate clause from the main clause.",
-            "reverse_check": "'Although... pressures' is dependent; 'they maintained... January' is the main clause."
+            "pitfall": "Forgetting the comma after the opening phrase starting with 'Although'.",
+            "reverse_check": "'Although... pressures' is the opening phrase; 'they maintained... January' completes the sentence."
         },
         q3={
             "title": "Question 3 (Level 1 Subject-Verb Agreement Correction)",
@@ -116,52 +116,52 @@ CATALOG_ENGLISH_WRITING = [
         title="Punctuation Mastery",
         category="writing",
         spec_codes="L1.25 • L2.23",
-        golden_rule="Punctuation controls pace and clarity. Master capital letters for proper nouns/sentence starts, apostrophes for possession vs contraction, commas for introductory clauses and items in lists, and colons/semicolons for advanced sentence architecture.",
+        golden_rule="Punctuation makes your writing clear and easy to read. Use capital letters for names and sentence starts, apostrophes for missing letters (it's) or belonging (the doctor's pen), commas in lists and after opening phrases, and colons or semicolons to link ideas clearly.",
         q1={
-            "title": "Question 1 (Level 1 Apostrophes for Possession vs Contraction)",
+            "title": "Question 1 (Level 1 Apostrophes for Missing Letters and Belonging)",
             "marks": 2,
             "stem": "Insert the apostrophe in the correct position in each sentence:<br>1. <em>The doctors stethoscope was left in consultation room 4.</em> (One doctor)<br>2. <em>Its essential that all staff wear photo identification badges.</em>",
             "lines": 3,
             "ans_label": "Punctuation correction =",
             "choice_box": "1: ____________________ | 2: ____________________",
             "step_rows": [
-                ("1. Singular possession: 'The doctor's stethoscope...'", "[A1]"),
-                ("2. Contraction of 'it is': 'It's essential that...'", "[A1]")
+                ("1. Belonging to one doctor: 'The doctor's stethoscope...'", "[A1]"),
+                ("2. Short for 'it is': 'It's essential that...'", "[A1]")
             ],
             "final_answer": "1. doctor's; 2. It's",
             "pitfall": "Using 'doctors'' (plural possession) or confusing possessive 'its' with contraction 'it's'.",
             "reverse_check": "1 doctor owns stethoscope = doctor's. 'It is essential' contracts to It's."
         },
         q2={
-            "title": "Question 2 (Level 2 Colons & Semicolons)",
+            "title": "Question 2 (Level 2 Using Colons & Semicolons)",
             "marks": 2,
-            "stem": "Punctuate the sentence below using <strong>one colon</strong> and <strong>one semicolon</strong>:<br><em>'The inspection team audited three essential wards Ward 2, Ward 5, and Ward 9 all three passed with outstanding ratings.'</em>",
+            "stem": "Add <strong>one colon</strong> and <strong>one semicolon</strong> in the correct places in this sentence:<br><em>'The inspection team checked three busy wards Ward 2, Ward 5, and Ward 9 all three passed with high scores.'</em>",
             "lines": 3,
             "ans_label": "Punctuated sentence =",
             "choice_box": "________________________________________________________",
             "step_rows": [
-                ("1. Insert colon to introduce the list: '...three essential wards: Ward 2, Ward 5, and Ward 9...'", "[M1]"),
-                ("2. Insert semicolon to join closely related independent clause: '...and Ward 9; all three passed with outstanding ratings.'", "[A1]")
+                ("1. Insert colon before the list of wards: '...three busy wards: Ward 2, Ward 5, and Ward 9...'", "[M1]"),
+                ("2. Insert semicolon before the linked result sentence: '...and Ward 9; all three passed with high scores.'", "[A1]")
             ],
-            "final_answer": "The inspection team audited three essential wards: Ward 2, Ward 5, and Ward 9; all three passed with outstanding ratings.",
+            "final_answer": "The inspection team checked three busy wards: Ward 2, Ward 5, and Ward 9; all three passed with high scores.",
             "pitfall": "Swapping the positions of colon and semicolon.",
-            "reverse_check": "Colon introduces the specific list; semicolon links the outcome clause."
+            "reverse_check": "Colon introduces the specific list; semicolon links the outcome sentence."
         },
         q3={
-            "title": "Question 3 (Level 1 Commas in Lists and Introductory Clauses)",
+            "title": "Question 3 (Level 1 Commas in Lists and After Opening Phrases)",
             "marks": 3,
-            "stem": "Insert all missing punctuation (commas and full stops) into the following sentence:<br><em>'Before administering any medication the staff nurse verified the patient name date of birth allergy status and hospital number'</em>",
+            "stem": "Add all missing punctuation (commas and a full stop) to this sentence:<br><em>'Before giving any medication the staff nurse checked the patient name date of birth allergy status and hospital number'</em>",
             "lines": 4,
             "ans_label": "Punctuated sentence =",
             "choice_box": "________________________________________________________",
             "step_rows": [
-                ("1. Comma after introductory dependent clause: 'Before administering any medication, ...'", "[A1]"),
+                ("1. Comma after the opening phrase: 'Before giving any medication, ...'", "[A1]"),
                 ("2. Commas separating list items: '...patient name, date of birth, allergy status, ...'", "[A1]"),
                 ("3. Full stop at the end: '...and hospital number.'", "[A1]")
             ],
-            "final_answer": "Before administering any medication, the staff nurse verified the patient name, date of birth, allergy status and hospital number.",
-            "pitfall": "Omitting the comma after the introductory clause 'Before administering any medication'.",
-            "reverse_check": "Introductory clause separated by comma; list items punctuated; terminal full stop present."
+            "final_answer": "Before giving any medication, the staff nurse checked the patient name, date of birth, allergy status and hospital number.",
+            "pitfall": "Missing the comma after the opening phrase 'Before giving any medication'.",
+            "reverse_check": "Opening phrase has a comma; list items have commas; full stop at the end."
         },
         q4={
             "title": "Question 4 (Level 2 Direct Speech and Quotation Punctuation)",
@@ -197,21 +197,21 @@ CATALOG_ENGLISH_WRITING = [
             "reverse_check": "Corrected text flows clearly with proper capitals, clause breaks, and apostrophes."
         },
         q6={
-            "title": "Question 6 (Level 2 Ambiguity Caused by Missing Commas)",
+            "title": "Question 6 (Level 2 How Commas Change Meaning)",
             "marks": 4,
-            "stem": "Explain how the presence or absence of a comma drastically alters the meaning in these two sentences:<br>Sentence A: <em>'The surgeon said the patient had died.'</em><br>Sentence B: <em>'The surgeon, said the patient, had died.'</em><br><br>Explain who died in Sentence A versus who died in Sentence B.<br>Explain what grammatical role the commas play in Sentence B.",
+            "stem": "Explain how commas completely change the meaning of these two sentences:<br>Sentence A: <em>'The surgeon said the patient had died.'</em><br>Sentence B: <em>'The surgeon, said the patient, had died.'</em><br><br>Explain who died in Sentence A versus who died in Sentence B.<br>Explain how the commas change who is speaking in Sentence B.",
             "lines": 5,
             "ans_label": "Explanation of meaning =",
             "choice_box": "Sentence A meaning: ____________ | Sentence B meaning: ____________",
             "step_rows": [
                 ("1. Sentence A meaning: The surgeon is speaking/reporting that the patient is deceased (the patient died).", "[M1]"),
                 ("2. Sentence B meaning: The patient is speaking/reporting that the surgeon is deceased (the surgeon died).", "[M1]"),
-                ("3. Grammatical role: In Sentence B, the commas enclose a parenthetical reporting clause ('said the patient'), making 'The surgeon... had died' the main clause.", "[A1]"),
-                ("4. Clear, precise conclusion demonstrating understanding of how commas establish clause boundaries", "[A1]")
+                ("3. Role of commas: In Sentence B, the commas set off 'said the patient' as extra information, meaning 'The surgeon had died' is what happened.", "[A1]"),
+                ("4. Clear, simple conclusion showing who died in each sentence", "[A1]")
             ],
-            "final_answer": "In Sentence A the patient died (surgeon speaks). In Sentence B the surgeon died (patient speaks). The commas enclose a parenthetical reporting clause.",
+            "final_answer": "In Sentence A the patient died (surgeon speaks). In Sentence B the surgeon died (patient speaks). The commas set off 'said the patient' as extra information.",
             "pitfall": "Thinking both sentences mean the same thing, missing the dramatic reversal of who died.",
-            "reverse_check": "Read without parenthetical commas: Sentence B is 'The surgeon had died.'"
+            "reverse_check": "Read without commas: Sentence B says 'The surgeon had died.'"
         }
     )
 ]

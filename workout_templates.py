@@ -70,7 +70,7 @@ def render_skill_workout(data):
     # Build Workout Blocks HTML
     workout_sections_html = ""
     for b_idx, block in enumerate(workout_blocks, 1):
-        b_title = block.get('title', f'Question {b_idx}: Procedural Drills')
+        b_title = block.get('title', f'Question {b_idx}: Skills Practice')
         b_instr = block.get('instruction', 'Work out the answers without a calculator where possible:')
         items = block.get('items', [])
         grid_html = render_drill_grid(items, prefix=block.get('prefix', ''), suffix=block.get('suffix', ''))
@@ -737,7 +737,7 @@ def render_skill_workout(data):
     <div class="sheet-header">
       <div>
         <div class="brand-title"><i class="fa-solid fa-graduation-cap"></i> MASTER FUNCTIONAL SKILLS</div>
-        <div class="sheet-sub">Procedural Fluency &amp; High-Repetition Skill Workout</div>
+        <div class="sheet-sub">Core Skills &amp; Practice Workout</div>
       </div>
       <div class="header-badges">
         <div class="badge-level">{level}</div><br>
@@ -748,11 +748,11 @@ def render_skill_workout(data):
     <!-- Hero Title Banner -->
     <div class="hero-banner">
       <div>
-        <h1 class="hero-title">{title} Fluency Workout</h1>
-        <div class="hero-subtitle">Section 1: Rapid Procedural Drills &bull; Section 2: Vocational Applications</div>
+        <h1 class="hero-title">{title} Skill Workout</h1>
+        <div class="hero-subtitle">Section 1: Quick Practice Drills &bull; Section 2: Real-Life Problems</div>
       </div>
       <div class="hero-tag">
-        <i class="fa-solid fa-repeat"></i> High Repetition
+        <i class="fa-solid fa-repeat"></i> Practice &amp; Repeat
       </div>
     </div>
 
@@ -760,18 +760,18 @@ def render_skill_workout(data):
 
     <!-- PART 1: THE WORKOUT -->
     <div class="section-ribbon">
-      <span class="section-ribbon-tag">Part 1: The Workout</span>
+      <span class="section-ribbon-tag">Part 1: Quick Practice</span>
       <div class="section-ribbon-line"></div>
-      <span class="section-ribbon-info">Rapid calculation drills to build procedural fluency</span>
+      <span class="section-ribbon-info">Quick calculation drills to build confidence</span>
     </div>
 
     {workout_sections_html}
 
     <!-- PART 2: THE APPLY -->
     <div class="section-ribbon page-break-before">
-      <span class="section-ribbon-tag">Part 2: The Apply</span>
+      <span class="section-ribbon-tag">Part 2: Real-Life Practice</span>
       <div class="section-ribbon-line"></div>
-      <span class="section-ribbon-info">Real-world adult and vocational scenario applications</span>
+      <span class="section-ribbon-info">Everyday life and workplace questions</span>
     </div>
 
     {apply_html}
@@ -837,7 +837,7 @@ def render_skill_workout_answers(data):
     apply_solutions = ""
     for q_idx, q in enumerate(apply_questions, 1):
         stem = q.get('stem', '')
-        context_tag = q.get('context_tag', 'Vocational Context')
+        context_tag = q.get('context_tag', 'Real-Life Context')
         marks = q.get('marks', 2)
         steps = q.get('steps', [])
         final_answer = q.get('final_answer', '')
@@ -856,13 +856,13 @@ def render_skill_workout_answers(data):
         check_html = f"""
         <div class="callout-box check-box">
           <i class="fa-solid fa-shield-check"></i>
-          <div><strong>Pearson Reverse Check Method:</strong> {reverse_check}</div>
+          <div><strong>Quick Check Method:</strong> {reverse_check}</div>
         </div>""" if reverse_check else ""
 
         pitfall_html = f"""
         <div class="callout-box pitfall-box">
           <i class="fa-solid fa-triangle-exclamation"></i>
-          <div><strong>Common Exam Trap / Pitfall:</strong> {pitfall}</div>
+          <div><strong>Common Mistake to Avoid:</strong> {pitfall}</div>
         </div>""" if pitfall else ""
 
         apply_solutions += f"""
@@ -1478,8 +1478,8 @@ def render_skill_workout_answers(data):
     <!-- Hero Title Banner -->
     <div class="hero-banner">
       <div>
-        <h1 class="hero-title">{title} Fluency Solutions</h1>
-        <div class="hero-subtitle">Official Step-by-Step Worked Answers with Method Marks Breakdown</div>
+        <h1 class="hero-title">{title} Workout Solutions</h1>
+        <div class="hero-subtitle">Step-by-Step Worked Answers with Method Marks Breakdown</div>
       </div>
       <div class="hero-tag">
         <i class="fa-solid fa-check-double"></i> Complete Solutions
@@ -1490,16 +1490,16 @@ def render_skill_workout_answers(data):
     <div class="section-ribbon">
       <span class="section-ribbon-tag">Part 1: Quick-Check Answer Key</span>
       <div class="section-ribbon-line"></div>
-      <span class="section-ribbon-info">Quick marking key for procedural drilling questions</span>
+      <span class="section-ribbon-info">Quick answers for practice questions</span>
     </div>
 
     {quick_check_tables}
 
     <!-- PART 2: APPLY WORKED SOLUTIONS -->
     <div class="section-ribbon page-break-before">
-      <span class="section-ribbon-tag">Part 2: Applied Vocational Solutions</span>
+      <span class="section-ribbon-tag">Part 2: Real-Life Problem Solutions</span>
       <div class="section-ribbon-line"></div>
-      <span class="section-ribbon-info">Full Pearson mark scheme steps with method &amp; accuracy marks</span>
+      <span class="section-ribbon-info">Step-by-step methods and mark breakdown</span>
     </div>
 
     {apply_solutions}

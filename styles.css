@@ -38,6 +38,16 @@ body {
   overflow-x: hidden;
 }
 
+p, h1, h2, h3, h4, h5, h6, span, a, li, blockquote, dt, dd, figcaption, label, td, th, div, em, strong {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+img, svg {
+  max-width: 100%;
+  height: auto;
+}
+
 a {
   text-decoration: none;
   color: inherit;
@@ -873,7 +883,7 @@ a {
 }
 
 /* ==========================================================================
-   CAREERS GATEWAYS (NHS, Uni, Apprenticeships)
+   CAREERS GATEWAYS (Healthcare, Uni, Apprenticeships)
    ========================================================================== */
 .careers-grid {
   display: grid;

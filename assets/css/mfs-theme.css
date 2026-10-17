@@ -357,11 +357,35 @@ body {
   overflow-x: clip;
 }
 
+/* Universal text wrapping - guarantees zero lines fall off the page across whole site */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+p, h1, h2, h3, h4, h5, h6, span, a, li, blockquote, dt, dd, figcaption, label, td, th, div, em, strong {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+}
+
+pre, code, kbd, samp {
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  max-width: 100%;
+}
+
+img, svg, canvas, video, iframe {
+  max-width: 100%;
+  height: auto;
+}
+
 h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading);
   font-weight: 700;
   color: var(--navy-dark);
   line-height: 1.25;
+  overflow-wrap: break-word;
+  word-wrap: break-word;
 }
 
 a {

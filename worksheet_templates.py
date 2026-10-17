@@ -183,6 +183,7 @@ def render_worksheet(data):
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Master Functional Skills — {title} Worksheet (Level 1 & Level 2)</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/mfs-worksheets.css">
   <style>
     @page {{
       size: A4 portrait;
@@ -725,6 +726,201 @@ def render_worksheet(data):
       color: #94a3b8;
       font-size: 0.8rem;
     }}
+
+    @media screen and (max-width: 768px), screen and (orientation: portrait) and (max-width: 1024px) {{
+      html, body {{
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+        background: #ffffff !important;
+      }}
+      .page-sheet {{
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 12px 10px !important;
+        border: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        box-sizing: border-box !important;
+      }}
+      .sheet-head, .sheet-header {{
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 8px !important;
+        padding-bottom: 10px !important;
+        margin-bottom: 12px !important;
+        border-bottom-width: 1.5px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }}
+      .brand-title {{
+        font-size: 1.10rem !important;
+        letter-spacing: -0.3px !important;
+        width: 100% !important;
+      }}
+      .brand-subtitle, .sheet-sub {{
+        font-size: 0.76rem !important;
+        margin-top: 2px !important;
+        width: 100% !important;
+        line-height: 1.35 !important;
+      }}
+      .sheet-meta-badge, .header-badges {{
+        width: 100% !important;
+        box-sizing: border-box !important;
+        text-align: left !important;
+        padding: 6px 10px !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        flex-wrap: wrap !important;
+        gap: 4px !important;
+      }}
+      .sheet-meta-badge .topic-name {{
+        font-size: 0.90rem !important;
+      }}
+      .sheet-meta-badge .spec-tag, .badge-level, .badge-spec {{
+        font-size: 0.70rem !important;
+      }}
+      .learner-bar {{
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 6px !important;
+        padding: 6px 10px !important;
+        margin-bottom: 12px !important;
+        font-size: 0.82rem !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }}
+      .learner-bar-item {{
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+      }}
+      .learner-bar-item strong {{
+        font-size: 0.80rem !important;
+        min-width: 55px !important;
+      }}
+      .learner-bar-item .dotted-line {{
+        flex: 1 !important;
+        width: auto !important;
+        margin-left: 6px !important;
+        height: 10px !important;
+      }}
+      .recall-banner {{
+        padding: 8px 10px !important;
+        font-size: 0.80rem !important;
+        line-height: 1.38 !important;
+        margin-bottom: 12px !important;
+        gap: 6px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }}
+      .tier-header {{
+        padding: 5px 8px !important;
+        font-size: 0.80rem !important;
+        margin: 14px 0 10px 0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }}
+      .tier-header .tier-marks {{
+        font-size: 0.70rem !important;
+        padding: 2px 5px !important;
+      }}
+      .q-card, .apply-card, .answer-card {{
+        padding: 10px 8px !important;
+        margin-bottom: 12px !important;
+        border-radius: 6px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }}
+      .q-card-head, .apply-card-head, .answer-card-head {{
+        padding-bottom: 5px !important;
+        margin-bottom: 6px !important;
+      }}
+      .q-title, .apply-title, .answer-title {{
+        font-size: 0.85rem !important;
+      }}
+      .q-marks, .apply-marks, .ans-marks {{
+        font-size: 0.72rem !important;
+        padding: 2px 6px !important;
+      }}
+      .q-stem, .apply-stem {{
+        font-size: 0.84rem !important;
+        line-height: 1.45 !important;
+        margin-bottom: 8px !important;
+        overflow-wrap: break-word !important;
+        word-wrap: break-word !important;
+      }}
+      .q-diagram-wrap, .apply-diagram-wrap {{
+        padding: 4px !important;
+        margin: 8px 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        overflow-x: auto !important;
+      }}
+      .q-diagram-wrap svg, .apply-diagram-wrap svg {{
+        max-width: 100% !important;
+        height: auto !important;
+      }}
+      .q-working-area {{
+        margin: 8px 0 !important;
+      }}
+      .working-label {{
+        font-size: 0.70rem !important;
+        margin-bottom: 3px !important;
+      }}
+      .working-lines-box {{
+        padding: 0 4px !important;
+      }}
+      .working-line {{
+        height: 18px !important;
+      }}
+      .q-answer-row {{
+        margin-top: 8px !important;
+        padding-top: 6px !important;
+        gap: 4px 8px !important;
+        font-size: 0.82rem !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        justify-content: flex-end !important;
+      }}
+      .q-answer-label {{
+        font-size: 0.80rem !important;
+      }}
+      .q-unit-prefix, .q-unit-suffix {{
+        font-size: 0.80rem !important;
+      }}
+      .q-answer-input-box {{
+        height: 24px !important;
+      }}
+      .q-answer-input-box.xs {{ width: 38px !important; }}
+      .q-answer-input-box.sm {{ width: 60px !important; }}
+      .q-answer-input-box.md {{ width: 85px !important; }}
+      .q-answer-input-box.lg {{ width: 120px !important; max-width: 100% !important; }}
+      .q-workspace-badge {{
+        font-size: 0.74rem !important;
+        padding: 3px 8px !important;
+      }}
+      .sheet-footer {{
+        font-size: 0.68rem !important;
+        padding-top: 8px !important;
+        margin-top: 12px !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 3px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }}
+      p, span, div, li, td, th, label, h1, h2, h3, h4, .q-stem, .apply-stem {{
+        overflow-wrap: break-word !important;
+        word-wrap: break-word !important;
+      }}
+    }}
   </style>
 </head>
 <body>
@@ -857,6 +1053,7 @@ def render_answers(data):
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Master Functional Skills — {title} Answer Key & Mark Scheme (Level 1 & Level 2)</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/mfs-worksheets.css">
   <style>
     @page {{
       size: A4 portrait;
@@ -1315,6 +1512,214 @@ def render_answers(data):
       justify-content: space-between;
       color: #94a3b8;
       font-size: 0.8rem;
+    }}
+
+    @media screen and (max-width: 768px), screen and (orientation: portrait) and (max-width: 1024px) {{
+      html, body {{
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+        background: #ffffff !important;
+      }}
+      .page-sheet {{
+        width: 100% !important;
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 12px 10px !important;
+        border: none !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+        box-sizing: border-box !important;
+      }}
+      .sheet-head, .sheet-header {{
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 8px !important;
+        padding-bottom: 10px !important;
+        margin-bottom: 12px !important;
+        border-bottom-width: 1.5px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }}
+      .brand-title {{
+        font-size: 1.10rem !important;
+        letter-spacing: -0.3px !important;
+        width: 100% !important;
+      }}
+      .brand-subtitle, .sheet-sub {{
+        font-size: 0.76rem !important;
+        margin-top: 2px !important;
+        width: 100% !important;
+        line-height: 1.35 !important;
+      }}
+      .sheet-meta-badge, .header-badges {{
+        width: 100% !important;
+        box-sizing: border-box !important;
+        text-align: left !important;
+        padding: 6px 10px !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        flex-wrap: wrap !important;
+        gap: 4px !important;
+      }}
+      .sheet-meta-badge .topic-name {{
+        font-size: 0.90rem !important;
+      }}
+      .sheet-meta-badge .spec-tag, .badge-level, .badge-spec {{
+        font-size: 0.70rem !important;
+      }}
+      .learner-bar {{
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 6px !important;
+        padding: 6px 10px !important;
+        margin-bottom: 12px !important;
+        font-size: 0.82rem !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }}
+      .learner-bar-item {{
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+      }}
+      .learner-bar-item strong {{
+        font-size: 0.80rem !important;
+        min-width: 55px !important;
+      }}
+      .learner-bar-item .dotted-line {{
+        flex: 1 !important;
+        width: auto !important;
+        margin-left: 6px !important;
+        height: 10px !important;
+      }}
+      .recall-banner {{
+        padding: 8px 10px !important;
+        font-size: 0.80rem !important;
+        line-height: 1.38 !important;
+        margin-bottom: 12px !important;
+        gap: 6px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }}
+      .tier-header {{
+        padding: 5px 8px !important;
+        font-size: 0.80rem !important;
+        margin: 14px 0 10px 0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }}
+      .tier-header .tier-marks {{
+        font-size: 0.70rem !important;
+        padding: 2px 5px !important;
+      }}
+      .q-card, .apply-card, .answer-card {{
+        padding: 10px 8px !important;
+        margin-bottom: 12px !important;
+        border-radius: 6px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }}
+      .q-card-head, .apply-card-head, .answer-card-head {{
+        padding-bottom: 5px !important;
+        margin-bottom: 6px !important;
+      }}
+      .q-title, .apply-title, .answer-title {{
+        font-size: 0.85rem !important;
+      }}
+      .q-marks, .apply-marks, .ans-marks {{
+        font-size: 0.72rem !important;
+        padding: 2px 6px !important;
+      }}
+      .q-stem, .apply-stem {{
+        font-size: 0.84rem !important;
+        line-height: 1.45 !important;
+        margin-bottom: 8px !important;
+        overflow-wrap: break-word !important;
+        word-wrap: break-word !important;
+      }}
+      .q-diagram-wrap, .apply-diagram-wrap {{
+        padding: 4px !important;
+        margin: 8px 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        overflow-x: auto !important;
+      }}
+      .q-diagram-wrap svg, .apply-diagram-wrap svg {{
+        max-width: 100% !important;
+        height: auto !important;
+      }}
+      .q-working-area {{
+        margin: 8px 0 !important;
+      }}
+      .working-label {{
+        font-size: 0.70rem !important;
+        margin-bottom: 3px !important;
+      }}
+      .working-lines-box {{
+        padding: 0 4px !important;
+      }}
+      .working-line {{
+        height: 18px !important;
+      }}
+      .q-answer-row {{
+        margin-top: 8px !important;
+        padding-top: 6px !important;
+        gap: 4px 8px !important;
+        font-size: 0.82rem !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        justify-content: flex-end !important;
+      }}
+      .q-answer-label {{
+        font-size: 0.80rem !important;
+      }}
+      .q-unit-prefix, .q-unit-suffix {{
+        font-size: 0.80rem !important;
+      }}
+      .q-answer-input-box {{
+        height: 24px !important;
+      }}
+      .q-answer-input-box.xs {{ width: 38px !important; }}
+      .q-answer-input-box.sm {{ width: 60px !important; }}
+      .q-answer-input-box.md {{ width: 85px !important; }}
+      .q-answer-input-box.lg {{ width: 120px !important; max-width: 100% !important; }}
+      .q-workspace-badge {{
+        font-size: 0.74rem !important;
+        padding: 3px 8px !important;
+      }}
+      .ans-step-row, .model-answer-step, .answer-step, .ans-step-box {{
+        font-size: 0.82rem !important;
+        line-height: 1.4 !important;
+        padding: 4px 6px !important;
+      }}
+      .ans-mark-tag {{
+        font-size: 0.70rem !important;
+        padding: 1px 4px !important;
+      }}
+      .ans-explanation, .ans-tip {{
+        font-size: 0.76rem !important;
+        line-height: 1.35 !important;
+      }}
+      .sheet-footer {{
+        font-size: 0.68rem !important;
+        padding-top: 8px !important;
+        margin-top: 12px !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 3px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }}
+      p, span, div, li, td, th, label, h1, h2, h3, h4, .q-stem, .apply-stem {{
+        overflow-wrap: break-word !important;
+        word-wrap: break-word !important;
+      }}
     }}
   </style>
 </head>

@@ -379,7 +379,7 @@
         </div>
 
         <div class="video-screen-wrap">
-          <video id="topicSlcVideoPlayer" controls playsinline poster="assets/slc-exemplar/slides/intro_screen.png">
+          <video id="topicSlcVideoPlayer" controls playsinline poster="assets/img/slc-task1-poster.png">
             <source id="topicSlcVideoSource" src="assets/video/slc-task1-presentation-model.mp4" type="video/mp4">
             Your browser does not support the video tag.
           </video>
@@ -448,7 +448,7 @@
         if (task === 'task1') {
           tabs[0].classList.add('active');
           source.src = 'assets/video/slc-task1-presentation-model.mp4';
-          player.poster = 'assets/slc-exemplar/slides/intro_screen.png';
+          player.poster = 'assets/img/slc-task1-poster.png';
           t1Jumps.style.display = 'flex';
           t2Jumps.style.display = 'none';
           dlBtn.href = 'assets/video/slc-task1-presentation-model.mp4';
@@ -456,7 +456,7 @@
         } else {
           tabs[1].classList.add('active');
           source.src = 'assets/video/slc-task2-discussion-model.mp4';
-          player.poster = 'assets/slc-exemplar/slides/task2_intro.png';
+          player.poster = 'assets/img/slc-task2-poster.png';
           t1Jumps.style.display = 'none';
           t2Jumps.style.display = 'flex';
           dlBtn.href = 'assets/video/slc-task2-discussion-model.mp4';
@@ -905,6 +905,34 @@
                 <div class="tile-badge-wrap"><span class="badge-tile-type ans">Exam Mark Scheme</span></div>
                 <strong>Step-by-Step Exam Mark Scheme (PDF)</strong>
                 <span>Official tutor model answers with step-by-step methods, common mistakes to avoid, and quick checks</span>
+              </div>
+            </a>
+
+            <!-- STYLE 3: OFFICIAL EXEMPLAR DOCUMENTATION -->
+            <a href="assets/downloads/FS_SLC_L2_Assessment_Record_Sheet_Exemplar.pdf" target="_blank" download class="download-tile-card">
+              <div class="download-tile-icon" style="background:#ecfdf5; color:#059669;"><i class="fa-solid fa-file-signature"></i></div>
+              <div class="download-tile-info">
+                <div class="tile-badge-wrap"><span class="badge-tile-type" style="background:#059669; color:#fff;">Official Exemplar</span></div>
+                <strong>Assessor Record Sheet &amp; Pass Scheme (PDF)</strong>
+                <span>Completed Pearson Edexcel witness sheet with criterion grades (L2.1–L2.10) &amp; tutor rationale</span>
+              </div>
+            </a>
+
+            <a href="assets/downloads/Candidate_A_Constantin_Presentation_Cue_Cards.pdf" target="_blank" download class="download-tile-card">
+              <div class="download-tile-icon" style="background:#eff6ff; color:#2563eb;"><i class="fa-solid fa-id-card"></i></div>
+              <div class="download-tile-info">
+                <div class="tile-badge-wrap"><span class="badge-tile-type" style="background:#2563eb; color:#fff;">Candidate Exemplar</span></div>
+                <strong>Presentation Cue Cards Pack (PDF)</strong>
+                <span>Model 4-card speaking prompt deck with high-scoring bullet prompts and statistics</span>
+              </div>
+            </a>
+
+            <a href="assets/downloads/Candidate_Research_Submission_Sheets_Task2.pdf" target="_blank" download class="download-tile-card">
+              <div class="download-tile-icon" style="background:#faf5ff; color:#7c3aed;"><i class="fa-solid fa-clipboard-list"></i></div>
+              <div class="download-tile-info">
+                <div class="tile-badge-wrap"><span class="badge-tile-type" style="background:#7c3aed; color:#fff;">Candidate Exemplar</span></div>
+                <strong>Discussion Research Submission Notes (PDF)</strong>
+                <span>Task 2 pre-prepared research evidence sheets for Constantin, Thomas, and Amara</span>
               </div>
             </a>
           </div>

@@ -295,6 +295,11 @@
             </a>
           </li>
           <li>
+            <a href="#video-exemplar" class="sidebar-toc-link">
+              <i class="fa-solid fa-circle-play"></i> Video Exemplar Suite
+            </a>
+          </li>
+          <li>
             <a href="#worked-exam-models" class="sidebar-toc-link">
               <i class="fa-solid fa-graduation-cap"></i> Exam Models
             </a>
@@ -490,6 +495,75 @@
           </div>
         </section>
         
+
+    <!-- OFFICIAL PEARSON EDEXCEL VIDEO EXEMPLAR SUITE -->
+    <section id="video-exemplar" class="revision-section">
+      <div class="video-exemplar-card">
+        <div class="video-exemplar-head">
+          <div class="video-exemplar-title">
+            <i class="fa-solid fa-circle-play"></i> Pearson Edexcel Level 2 SLC Video Exemplar (3-Candidate Cohort)
+          </div>
+          <div class="video-tabs">
+            <button type="button" class="video-tab-btn active" onclick="switchTopicVideo('task1')"><i class="fa-solid fa-chalkboard-user"></i> Task 1: Presentation &amp; Q&amp;A (3m 28s)</button>
+            <button type="button" class="video-tab-btn" onclick="switchTopicVideo('task2')"><i class="fa-solid fa-users-viewfinder"></i> Task 2: Group Discussion (3m 25s)</button>
+          </div>
+        </div>
+
+        <div class="video-screen-wrap">
+          <video id="topicSlcVideoPlayer" controls playsinline poster="assets/img/slc-task1-poster.png">
+            <source id="topicSlcVideoSource" src="assets/video/slc-task1-presentation-model.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <!-- TASK 1 JUMP POINTS -->
+        <div id="topicTask1Jumps" class="video-jump-bar">
+          <span class="jump-label"><i class="fa-solid fa-forward-step"></i> Task 1 Benchmarks:</span>
+          <button type="button" class="jump-btn" onclick="jumpTopicTo(0)">0:00 Briefing (Tutor Silence)</button>
+          <button type="button" class="jump-btn" onclick="jumpTopicTo(31)">0:31 Intro &amp; Roadmap [L2.1]</button>
+          <button type="button" class="jump-btn" onclick="jumpTopicTo(51)">0:51 Why Customers Get Upset [L2.6]</button>
+          <button type="button" class="jump-btn" onclick="jumpTopicTo(73)">1:13 3 Golden Rules [L2.5]</button>
+          <button type="button" class="jump-btn" onclick="jumpTopicTo(96)">1:36 Results &amp; Wrap-up [L2.2]</button>
+          <button type="button" class="jump-btn" onclick="jumpTopicTo(112)">1:52 Presenter Chairs Q&amp;A [L2.5]</button>
+          <button type="button" class="jump-btn" onclick="jumpTopicTo(123)">2:03 Abusive Shouting [L2.4 Thomas]</button>
+          <button type="button" class="jump-btn" onclick="jumpTopicTo(135)">2:15 De-escalation &amp; Policy [L2.3]</button>
+          <button type="button" class="jump-btn" onclick="jumpTopicTo(157)">2:37 No-Receipt Return [L2.4 Amara]</button>
+          <button type="button" class="jump-btn" onclick="jumpTopicTo(165)">2:45 Solutions vs Policy [L2.3]</button>
+          <button type="button" class="jump-btn" onclick="jumpTopicTo(187)">3:07 Presenter Closes Q&amp;A</button>
+        </div>
+
+        <!-- TASK 2 JUMP POINTS -->
+        <div id="topicTask2Jumps" class="video-jump-bar" style="display:none;">
+          <span class="jump-label"><i class="fa-solid fa-forward-step"></i> Task 2 Benchmarks:</span>
+          <button type="button" class="jump-btn" onclick="jumpTopicTo(0)">0:00 Briefing (Tutor Silence)</button>
+          <button type="button" class="jump-btn" onclick="jumpTopicTo(24)">0:24 Opening &amp; Framing [L2.9]</button>
+          <button type="button" class="jump-btn" onclick="jumpTopicTo(47)">0:47 UK Pilot Trial [L2.6 Thomas]</button>
+          <button type="button" class="jump-btn" onclick="jumpTopicTo(72)">1:12 Shift Work &amp; Parents [L2.9 Amara]</button>
+          <button type="button" class="jump-btn" onclick="jumpTopicTo(99)">1:39 Warehouse Fatigue [L2.8 Constantin]</button>
+          <button type="button" class="jump-btn" onclick="jumpTopicTo(115)">1:55 100:80:100 Solution [L2.10 Thomas]</button>
+          <button type="button" class="jump-btn" onclick="jumpTopicTo(141)">2:21 Accepting Idea [L2.10 Constantin]</button>
+          <button type="button" class="jump-btn" onclick="jumpTopicTo(152)">2:32 Flexible Choice [L2.8 Amara]</button>
+          <button type="button" class="jump-btn" onclick="jumpTopicTo(167)">2:47 Final Consensus [L2.8 Thomas]</button>
+          <button type="button" class="jump-btn" onclick="jumpTopicTo(181)">3:01 Assessment Concluded [Abdul]</button>
+        </div>
+
+        <!-- DOWNLOAD ACTION PACK -->
+        <div class="download-pack-row">
+          <a href="assets/downloads/FS_SLC_L2_Assessment_Record_Sheet_Exemplar.pdf" class="download-btn" target="_blank" download>
+            <i class="fa-solid fa-file-pdf"></i> Download Assessor Record Sheet (.pdf)
+          </a>
+          <a href="assets/downloads/Candidate_A_Constantin_Presentation_Cue_Cards.pdf" class="download-btn" target="_blank" download>
+            <i class="fa-solid fa-id-card"></i> Candidate Cue Cards (.pdf)
+          </a>
+          <a href="assets/downloads/Candidate_Research_Submission_Sheets_Task2.pdf" class="download-btn" target="_blank" download>
+            <i class="fa-solid fa-file-lines"></i> Research Submission Notes (.pdf)
+          </a>
+          <a href="assets/video/slc-task1-presentation-model.mp4" id="topicVideoDownloadBtn" class="download-btn download-btn-secondary" download>
+            <i class="fa-solid fa-download"></i> Download Task 1 Video (1080p MP4)
+          </a>
+        </div>
+      </div>
+    </section>
 
     <!-- WORKED EXAM MODELS -->
     <section id="worked-exam-models" class="revision-section">
@@ -811,6 +885,34 @@
                 <div class="tile-badge-wrap"><span class="badge-tile-type ans">Exam Mark Scheme</span></div>
                 <strong>Step-by-Step Exam Mark Scheme (PDF)</strong>
                 <span>Official tutor model answers with step-by-step methods, common mistakes to avoid, and quick checks</span>
+              </div>
+            </a>
+
+            <!-- STYLE 3: OFFICIAL EXEMPLAR DOCUMENTATION -->
+            <a href="assets/downloads/FS_SLC_L2_Assessment_Record_Sheet_Exemplar.pdf" target="_blank" download class="download-tile-card">
+              <div class="download-tile-icon" style="background:#ecfdf5; color:#059669;"><i class="fa-solid fa-file-signature"></i></div>
+              <div class="download-tile-info">
+                <div class="tile-badge-wrap"><span class="badge-tile-type" style="background:#059669; color:#fff;">Official Exemplar</span></div>
+                <strong>Assessor Record Sheet &amp; Pass Scheme (PDF)</strong>
+                <span>Completed Pearson Edexcel witness sheet with criterion grades (L2.1–L2.10) &amp; tutor rationale</span>
+              </div>
+            </a>
+
+            <a href="assets/downloads/Candidate_A_Constantin_Presentation_Cue_Cards.pdf" target="_blank" download class="download-tile-card">
+              <div class="download-tile-icon" style="background:#eff6ff; color:#2563eb;"><i class="fa-solid fa-id-card"></i></div>
+              <div class="download-tile-info">
+                <div class="tile-badge-wrap"><span class="badge-tile-type" style="background:#2563eb; color:#fff;">Candidate Exemplar</span></div>
+                <strong>Presentation Cue Cards Pack (PDF)</strong>
+                <span>Model 4-card speaking prompt deck with high-scoring bullet prompts and statistics</span>
+              </div>
+            </a>
+
+            <a href="assets/downloads/Candidate_Research_Submission_Sheets_Task2.pdf" target="_blank" download class="download-tile-card">
+              <div class="download-tile-icon" style="background:#faf5ff; color:#7c3aed;"><i class="fa-solid fa-clipboard-list"></i></div>
+              <div class="download-tile-info">
+                <div class="tile-badge-wrap"><span class="badge-tile-type" style="background:#7c3aed; color:#fff;">Candidate Exemplar</span></div>
+                <strong>Discussion Research Submission Notes (PDF)</strong>
+                <span>Task 2 pre-prepared research evidence sheets for Constantin, Thomas, and Amara</span>
               </div>
             </a>
           </div>

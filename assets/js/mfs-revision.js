@@ -284,3 +284,54 @@ window.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+
+// ==========================================================================
+// VIDEO EXEMPLAR SUITE CONTROLS
+// ==========================================================================
+function switchTopicVideo(task) {
+  const player = document.getElementById('topicSlcVideoPlayer');
+  const source = document.getElementById('topicSlcVideoSource');
+  const t1Jumps = document.getElementById('topicTask1Jumps');
+  const t2Jumps = document.getElementById('topicTask2Jumps');
+  const dlBtn = document.getElementById('topicVideoDownloadBtn');
+  const tabs = document.querySelectorAll('.video-exemplar-card .video-tab-btn');
+
+  if (!player || !source) return;
+
+  tabs.forEach(t => t.classList.remove('active'));
+
+  if (task === 'task1') {
+    tabs.forEach(t => { if (t.textContent.includes('Task 1')) t.classList.add('active'); });
+    source.src = 'assets/video/slc-task1-presentation-model.mp4';
+    player.poster = 'assets/img/slc-task1-poster.png';
+    if (t1Jumps) t1Jumps.style.display = 'flex';
+    if (t2Jumps) t2Jumps.style.display = 'none';
+    if (dlBtn) {
+      dlBtn.href = 'assets/video/slc-task1-presentation-model.mp4';
+      dlBtn.innerHTML = '<i class="fa-solid fa-download"></i> Download Task 1 Video (1080p MP4)';
+    }
+  } else {
+    tabs.forEach(t => { if (t.textContent.includes('Task 2')) t.classList.add('active'); });
+    source.src = 'assets/video/slc-task2-discussion-model.mp4';
+    player.poster = 'assets/img/slc-task2-poster.png';
+    if (t1Jumps) t1Jumps.style.display = 'none';
+    if (t2Jumps) t2Jumps.style.display = 'flex';
+    if (dlBtn) {
+      dlBtn.href = 'assets/video/slc-task2-discussion-model.mp4';
+      dlBtn.innerHTML = '<i class="fa-solid fa-download"></i> Download Task 2 Video (1080p MP4)';
+    }
+  }
+  player.load();
+  player.play().catch(e => console.log('Autoplay handled:', e));
+}
+
+function jumpTopicTo(seconds) {
+  const player = document.getElementById('topicSlcVideoPlayer');
+  if (!player) return;
+  player.currentTime = seconds;
+  player.play().catch(e => console.log('Playback error:', e));
+}
+
+window.switchTopicVideo = switchTopicVideo;
+window.jumpTopicTo = jumpTopicTo;
+

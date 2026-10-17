@@ -2,7 +2,7 @@
 """
 Master Functional Skills - Core Maths Data for Skill Workouts (Procedural Fluency & Repetition).
 Features high-repetition drill items (a-h) testing integers, money, decimals, units, and edge cases,
-paired with realistic adult vocational application scenarios (NHS, construction, retail, warehousing).
+paired with realistic adult vocational application scenarios (Healthcare, construction, retail, warehousing).
 """
 
 WORKOUT_CORE_MATHS = {
@@ -82,8 +82,8 @@ WORKOUT_CORE_MATHS = {
         ],
         "apply_questions": [
             {
-                "context_tag": "NHS Healthcare & Pay",
-                "stem": "An NHS healthcare assistant earns an hourly rate of <strong>£11.80</strong>. She receives an agreed cost-of-living pay increase of <strong>5%</strong>.<br>Work out her new hourly rate of pay.",
+                "context_tag": "Healthcare Healthcare & Pay",
+                "stem": "A community healthcare assistant earns an hourly rate of <strong>£11.80</strong>. She receives an agreed cost-of-living pay increase of <strong>5%</strong>.<br>Work out her new hourly rate of pay.",
                 "marks": 2,
                 "prefix": "£",
                 "steps": [
@@ -239,7 +239,7 @@ WORKOUT_CORE_MATHS = {
         ],
         "apply_questions": [
             {
-                "context_tag": "NHS Hospital Timesheet",
+                "context_tag": "Healthcare Hospital Timesheet",
                 "stem": "A staff nurse works <strong>37 1/2 hours</strong> per week. Over four weeks, she spends <strong>2/5</strong> of her total working hours in surgical triage.<br>How many hours does she spend in surgical triage over the four weeks?",
                 "marks": 3,
                 "unit": "hours",

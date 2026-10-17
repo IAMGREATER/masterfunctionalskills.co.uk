@@ -61,7 +61,7 @@ ENGLISH_WORKOUTS = {
         ],
         "apply_questions": [
             {
-                "context_tag": "NHS Clinical Incident Report Editing",
+                "context_tag": "Healthcare Clinical Incident Report Editing",
                 "stem": "Read this poorly drafted sentence from a trainee healthcare assistant's incident log:<br><em>'The delivery of medical oxygen cylinders was late on Tuesday, it caused delays in theatre and the ward sister were very frustrated.'</em><br><br>Identify the <strong>two grammatical errors</strong> in the sentence and rewrite it in flawless, professional Standard English.",
                 "marks": 3,
                 "prefix": "",
@@ -124,7 +124,7 @@ ENGLISH_WORKOUTS = {
         ],
         "apply_questions": [
             {
-                "context_tag": "NHS Staff Noticeboard Notice",
+                "context_tag": "Healthcare Staff Noticeboard Notice",
                 "stem": "Correct all punctuation errors in this draft notice for a clinic reception area:<br><em>'All visitor's must report to reception its essential that you sign in before visiting patient's in ward 3.'</em><br><br>Rewrite the sentence with correct apostrophes and appropriate sentence boundaries.",
                 "marks": 3,
                 "prefix": "",
@@ -238,7 +238,7 @@ ENGLISH_WORKOUTS = {
         ],
         "apply_questions": [
             {
-                "context_tag": "NHS Clinical Shift Handover Report",
+                "context_tag": "Healthcare Clinical Shift Handover Report",
                 "stem": "Spot the three tense-shifting errors in this clinical report extract:<br><em>'At 14:00, the patient reported mild chest pain. Dr Hughes examines the ECG results and decided to prescribe medication. The patient takes the tablets and rested comfortably.'</em><br><br>Rewrite the extract maintaining consistent past tense throughout.",
                 "marks": 3,
                 "prefix": "",
@@ -336,7 +336,7 @@ ENGLISH_WORKOUTS = {
         ],
         "apply_questions": [
             {
-                "context_tag": "NHS Trust Annual Review Analysis",
+                "context_tag": "Healthcare Facility Annual Review Analysis",
                 "stem": "Read this excerpt from a hospital chief executive's annual message:<br><em>'Last year, our surgical teams performed 12,450 operations across three sites. It was the most remarkable and inspiring year in our hospital's history, and every single resident in our town should feel immensely proud of our heroic doctors.'</em><br><br>Extract <strong>one verifiable fact</strong> and <strong>one subjective opinion</strong> from the text.",
                 "marks": 2,
                 "prefix": "",
@@ -436,7 +436,7 @@ ENGLISH_WORKOUTS = {
         ],
         "apply_questions": [
             {
-                "context_tag": "NHS Fire Evacuation Noticeboard",
+                "context_tag": "Healthcare Fire Evacuation Noticeboard",
                 "stem": "A hospital fire safety procedure leaflet displays:<br>• A main title in red 24pt bold: <strong>EMERGENCY FIRE ACTION</strong><br>• Four numbered steps (1 to 4) with bold action verbs (Sound, Evacuate, Report, Assemble)<br>• A yellow shaded box at the bottom displaying the <strong>Assembly Point Map</strong>.<br><br>Explain how the layout devices help hospital staff act safely during a fire emergency.",
                 "marks": 3,
                 "prefix": "",
@@ -484,7 +484,7 @@ ENGLISH_WORKOUTS = {
         ],
         "apply_questions": [
             {
-                "context_tag": "NHS Departmental Staff Consultation",
+                "context_tag": "Healthcare Departmental Staff Consultation",
                 "stem": "During an assessed group discussion on reducing hospital food waste, a quiet peer remarks: <em>'I think the canteen portions are too big.'</em><br><br>Write an effective <strong>open probing question</strong> you would ask this colleague to draw out their ideas and invite constructive solutions.",
                 "marks": 2,
                 "prefix": "",
@@ -532,7 +532,7 @@ ENGLISH_WORKOUTS = {
         ],
         "apply_questions": [
             {
-                "context_tag": "NHS Trust Transport Committee Discussion",
+                "context_tag": "Healthcare Facility Transport Committee Discussion",
                 "stem": "In an assessed Level 2 discussion regarding staff parking charges, Candidate A states:<br><em>'We should charge doctors £50 a month and lower-paid healthcare assistants only £10 a month.'</em><br><br>Write a two-sentence contribution demonstrating a <strong>respectful challenge</strong> that acknowledges Candidate A's intention but raises a practical payroll or equity concern.",
                 "marks": 2,
                 "prefix": "",

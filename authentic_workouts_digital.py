@@ -72,7 +72,7 @@ DIGITAL_WORKOUTS = {
         ],
         "apply_questions": [
             {
-                "context_tag": "NHS Clinic Administration",
+                "context_tag": "Healthcare Clinic Administration",
                 "stem": "A medical receptionist manages a patient appointment spreadsheet. Column C contains the consultation fee for 15 patients (cells <strong>C2 to C16</strong>). The clinic offers a <strong>15% prompt payment discount</strong> recorded in cell <strong>F1</strong>.<br>(a) Write the formula in cell D2 to calculate the discount amount using an absolute reference for F1.<br>(b) Write the formula to calculate the total fee collected across cells C2 to C16.",
                 "marks": 3,
                 "prefix": "",
@@ -116,7 +116,7 @@ DIGITAL_WORKOUTS = {
                 "Operating Systems (Windows, macOS, Linux, iOS, Android) manage hardware and run application software (Word, Excel, Chrome).",
                 "Cloud storage allows synchronization across multiple devices, automatic revision history, and off-site disaster recovery.",
                 "3-2-1 Backup Strategy: Keep 3 copies of your data, across 2 different media types, with 1 copy stored off-site in the cloud.",
-                "Under UK GDPR, personal identifiable data (names, NHS numbers, bank details) must be stored securely and deleted when no longer required."
+                "Under UK GDPR, personal identifiable data (names, medical record numbers, bank details) must be stored securely and deleted when no longer required."
             ],
             "calc_tip": "To convert GB to MB, multiply by 1,000. To convert MB to GB, divide by 1,000."
         },
@@ -164,8 +164,8 @@ DIGITAL_WORKOUTS = {
         ],
         "apply_questions": [
             {
-                "context_tag": "NHS Mobile Care Worker",
-                "stem": "A community district nurse visits patients at home using an NHS tablet computer.<br>The nurse needs to save <strong>12 high-resolution wound clinical photographs</strong> (each photo is <strong>25 MB</strong>) and <strong>3 patient assessment videos</strong> (each video is <strong>450 MB</strong>).<br>Calculate the total storage space required in Megabytes (MB), and state whether this data will fit onto a secure <strong>2 GB encrypted memory card</strong>.",
+                "context_tag": "Mobile Healthcare Worker",
+                "stem": "A community district nurse visits patients at home using a clinical tablet computer.<br>The nurse needs to save <strong>12 high-resolution wound clinical photographs</strong> (each photo is <strong>25 MB</strong>) and <strong>3 patient assessment videos</strong> (each video is <strong>450 MB</strong>).<br>Calculate the total storage space required in Megabytes (MB), and state whether this data will fit onto a secure <strong>2 GB encrypted memory card</strong>.",
                 "marks": 3,
                 "prefix": "",
                 "steps": [

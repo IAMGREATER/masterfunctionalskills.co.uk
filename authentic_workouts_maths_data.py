@@ -56,7 +56,7 @@ MATHS_DATA_WORKOUTS = {
         ],
         "apply_questions": [
             {
-                "context_tag": "NHS Outpatients Booking Probability",
+                "context_tag": "Healthcare Outpatients Booking Probability",
                 "stem": "An outpatient physiotherapy clinic reviews its appointment attendance records over <strong>200 scheduled sessions</strong>:<br>• 156 patients attended on time<br>• 28 patients arrived late<br>• 16 patients did not attend (DNA)<br>(a) What is the probability that a randomly chosen patient attended on time? Give your answer as a simplified fraction and as a percentage.<br>(b) What is the probability that a patient did NOT attend?",
                 "marks": 3,
                 "prefix": "",
@@ -106,7 +106,7 @@ MATHS_DATA_WORKOUTS = {
         ],
         "apply_questions": [
             {
-                "context_tag": "NHS Hospital Emergency Triage Audit",
+                "context_tag": "Healthcare Hospital Emergency Triage Audit",
                 "stem": "An accident and emergency department plots a scatter graph comparing <strong>Number of Emergency Doctors on Shift</strong> against <strong>Average Patient Triage Waiting Time (minutes)</strong>.<br>The points slope downwards from 60 minutes with 2 doctors down to 18 minutes with 8 doctors.<br>(a) What type of correlation does the scatter graph show?<br>(b) Write a one-sentence conclusion summarizing the relationship between doctor numbers and waiting time.",
                 "marks": 2,
                 "prefix": "",
@@ -155,7 +155,7 @@ MATHS_DATA_WORKOUTS = {
         ],
         "apply_questions": [
             {
-                "context_tag": "NHS Staff Sickness Absence Audit",
+                "context_tag": "Healthcare Staff Sickness Absence Audit",
                 "stem": "A hospital HR department reviews a dual bar chart comparing staff sickness days between <strong>2024 and 2025</strong> across four departments:<br>• Emergency: 2024 = 120 days, 2025 = 95 days<br>• Surgery: 2024 = 85 days, 2025 = 90 days<br>• Outpatients: 2024 = 60 days, 2025 = 45 days<br>• Facilities: 2024 = 110 days, 2025 = 80 days<br>(a) Which department achieved the greatest reduction in sickness days?<br>(b) Calculate the total overall reduction in sickness days across all 4 departments.",
                 "marks": 3,
                 "prefix": "",
@@ -206,8 +206,8 @@ MATHS_DATA_WORKOUTS = {
         ],
         "apply_questions": [
             {
-                "context_tag": "NHS Trust Energy Source Breakdown",
-                "stem": "An NHS hospital trust displays its annual electricity sources in a pie chart.<br>The total annual electricity consumption is <strong>720,000 kilowatt-hours (kWh)</strong>.<br>On the pie chart, the sector representing <strong>Rooftop Solar Energy</strong> has an angle of <strong>54°</strong>.<br>Calculate the amount of electricity supplied by solar energy in kWh.",
+                "context_tag": "Healthcare Facility Energy Source Breakdown",
+                "stem": "A regional healthcare facility displays its annual electricity sources in a pie chart.<br>The total annual electricity consumption is <strong>720,000 kilowatt-hours (kWh)</strong>.<br>On the pie chart, the sector representing <strong>Rooftop Solar Energy</strong> has an angle of <strong>54°</strong>.<br>Calculate the amount of electricity supplied by solar energy in kWh.",
                 "marks": 3,
                 "prefix": "",
                 "steps": [
@@ -256,7 +256,7 @@ MATHS_DATA_WORKOUTS = {
         ],
         "apply_questions": [
             {
-                "context_tag": "NHS Staff Training Records",
+                "context_tag": "Healthcare Staff Training Records",
                 "stem": "A community healthcare provider tracks mandatory resuscitation certification across <strong>150 healthcare workers</strong>.<br>The two-way table shows:<br>• <strong>Doctors:</strong> 25 Certified, 5 Pending (Total = 30)<br>• <strong>Nurses:</strong> 65 Certified, 15 Pending (Total = 80)<br>• <strong>Healthcare Assistants:</strong> 32 Certified, X Pending (Total = 40)<br>(a) Find the missing number X of Healthcare Assistants with pending certification.<br>(b) What percentage of all 150 workers are fully certified?",
                 "marks": 3,
                 "prefix": "",

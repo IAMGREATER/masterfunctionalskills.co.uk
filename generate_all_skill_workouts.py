@@ -12,9 +12,23 @@ from workout_templates import render_skill_workout, render_skill_workout_answers
 from workout_maths_core_data import WORKOUT_CORE_MATHS
 import generate_all_curriculum_worksheets_final as c_final
 
-BASE_DIR = "/home/subi/Projects/masterfunctionalskills.co.uk"
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 WORKSHEETS_DIR = os.path.join(BASE_DIR, "worksheets")
 os.makedirs(WORKSHEETS_DIR, exist_ok=True)
+
+# Authentic Workouts Modules
+import authentic_workouts_maths_number as awmn
+import authentic_workouts_maths_measures as awmm
+import authentic_workouts_maths_data as awmd
+import authentic_workouts_maths_batch2_part1 as mb2p1
+import authentic_workouts_maths_batch2_part2 as mb2p2
+import authentic_workouts_maths_batch2_part3 as mb2p3
+import authentic_workouts_english as awe
+import authentic_workouts_english_writing_batch3 as ewb3
+import authentic_workouts_english_reading_batch3 as erb3
+import authentic_workouts_english_slc_batch3 as esb3
+import authentic_workouts_digital as awd
+import authentic_workouts_digital_batch3 as db3
 
 # Additional bespoke core maths datasets
 ADDITIONAL_CORE_WORKOUTS = {
@@ -94,8 +108,8 @@ ADDITIONAL_CORE_WORKOUTS = {
         ],
         "apply_questions": [
             {
-                "context_tag": "NHS Clinic Flooring Refurbishment",
-                "stem": "An NHS healthcare clinic waiting room is an L-shaped room. The room can be divided into two rectangular sections measuring <strong>8.5 m by 6.0 m</strong> and <strong>4.0 m by 3.5 m</strong>.<br>Specialist medical-grade vinyl flooring costs <strong>£24 per square metre</strong>.<br>Work out the total cost to floor the waiting room.",
+                "context_tag": "Healthcare Clinic Flooring Refurbishment",
+                "stem": "A community healthcare clinic waiting room is an L-shaped room. The room can be divided into two rectangular sections measuring <strong>8.5 m by 6.0 m</strong> and <strong>4.0 m by 3.5 m</strong>.<br>Specialist medical-grade vinyl flooring costs <strong>£24 per square metre</strong>.<br>Work out the total cost to floor the waiting room.",
                 "marks": 3,
                 "prefix": "£",
                 "steps": [
@@ -286,8 +300,8 @@ ADDITIONAL_CORE_WORKOUTS = {
         ],
         "apply_questions": [
             {
-                "context_tag": "NHS Hospital Patient Waiting Times",
-                "stem": "An accident and emergency department monitors waiting times (in minutes) for triage over 6 consecutive patients:<br><strong>35, 48, 22, 65, 40, 30</strong><br>The NHS hospital target is for average waiting time to be <strong>under 42 minutes</strong>.<br>Did the hospital meet its target? You must show full working out.",
+                "context_tag": "Healthcare Hospital Patient Waiting Times",
+                "stem": "An accident and emergency department monitors waiting times (in minutes) for triage over 6 consecutive patients:<br><strong>35, 48, 22, 65, 40, 30</strong><br>The clinic target is for average waiting time to be <strong>under 42 minutes</strong>.<br>Did the hospital meet its target? You must show full working out.",
                 "marks": 3,
                 "prefix": "",
                 "steps": [
@@ -303,8 +317,20 @@ ADDITIONAL_CORE_WORKOUTS = {
     }
 }
 
-# Merge with Core
+# Merge all authentic workouts
 WORKOUT_CORE_MATHS.update(ADDITIONAL_CORE_WORKOUTS)
+WORKOUT_CORE_MATHS.update(awmn.MATHS_NUMBER_WORKOUTS)
+WORKOUT_CORE_MATHS.update(awmm.MATHS_MEASURES_WORKOUTS)
+WORKOUT_CORE_MATHS.update(awmd.MATHS_DATA_WORKOUTS)
+WORKOUT_CORE_MATHS.update(mb2p1.MATHS_BATCH2_PART1_WORKOUTS)
+WORKOUT_CORE_MATHS.update(mb2p2.MATHS_BATCH2_PART2_WORKOUTS)
+WORKOUT_CORE_MATHS.update(mb2p3.MATHS_BATCH2_PART3_WORKOUTS)
+WORKOUT_CORE_MATHS.update(awe.ENGLISH_WORKOUTS)
+WORKOUT_CORE_MATHS.update(ewb3.ENGLISH_WRITING_BATCH3_WORKOUTS)
+WORKOUT_CORE_MATHS.update(erb3.ENGLISH_READING_BATCH3_WORKOUTS)
+WORKOUT_CORE_MATHS.update(esb3.ENGLISH_SLC_BATCH3_WORKOUTS)
+WORKOUT_CORE_MATHS.update(awd.DIGITAL_WORKOUTS)
+WORKOUT_CORE_MATHS.update(db3.DIGITAL_BATCH3_WORKOUTS)
 
 def build_procedural_workout(topic_slug, topic_title, subject="Mathematics", spec_codes="Pearson Edexcel"):
     """
@@ -367,8 +393,8 @@ def build_procedural_workout(topic_slug, topic_title, subject="Mathematics", spe
         ],
         "apply_questions": [
             {
-                "context_tag": "NHS Healthcare & Workplace Scenario",
-                "stem": f"An NHS healthcare administrator manages resource scheduling involving <strong>{clean_title}</strong>.<br>The baseline record requires evaluating three consecutive ward operations with values <strong>120, 180, and 240 units</strong>.<br>Calculate the combined outcome and determine if the total satisfies the threshold limit of <strong>500 units</strong>.",
+                "context_tag": "Healthcare Healthcare & Workplace Scenario",
+                "stem": f"A community healthcare administrator manages resource scheduling involving <strong>{clean_title}</strong>.<br>The baseline record requires evaluating three consecutive ward operations with values <strong>120, 180, and 240 units</strong>.<br>Calculate the combined outcome and determine if the total satisfies the threshold limit of <strong>500 units</strong>.",
                 "marks": 3,
                 "prefix": "",
                 "steps": [
@@ -410,15 +436,19 @@ if __name__ == "__main__":
     
     generated_workouts = 0
     generated_workout_answers = 0
+    handcrafted_count = 0
+    fallback_count = 0
     
     for slug, t_data in all_topics.items():
         # Check if we have handcrafted core workout data
         if slug in WORKOUT_CORE_MATHS:
+            handcrafted_count += 1
             workout_data = WORKOUT_CORE_MATHS[slug]
             workout_data['slug'] = slug
             if 'back_url' not in workout_data:
                 workout_data['back_url'] = f"../functional-skills-{slug}.html"
         else:
+            fallback_count += 1
             workout_data = build_procedural_workout(
                 slug, 
                 t_data.get('title', slug.replace('-', ' ').title()),
@@ -440,5 +470,5 @@ if __name__ == "__main__":
             f.write(workout_ans_html)
         generated_workout_answers += 1
 
-    print(f"✅ Generated {generated_workouts} Skill Workout sheets in {WORKSHEETS_DIR}")
+    print(f"✅ Generated {generated_workouts} Skill Workout sheets ({handcrafted_count} authentic, {fallback_count} fallback) in {WORKSHEETS_DIR}")
     print(f"✅ Generated {generated_workout_answers} Skill Workout answer keys in {WORKSHEETS_DIR}")

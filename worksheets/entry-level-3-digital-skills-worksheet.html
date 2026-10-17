@@ -1,0 +1,756 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Master Functional Skills — Entry Level 3 Digital Skills Worksheet (Level 1 & Level 2)</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 12mm 15mm 12mm 15mm;
+    }
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #0f172a;
+      background: #f8fafc;
+      margin: 0;
+      padding: 0;
+      font-size: 11pt;
+      line-height: 1.5;
+    }
+    .print-bar {
+      background: #0b172d;
+      color: #f8fafc;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    }
+    .print-bar a {
+      color: #93c5fd;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .print-bar a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+    .btn-action-print {
+      background: #2563eb;
+      color: #ffffff;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s;
+    }
+    .btn-action-print:hover {
+      background: #1d4ed8;
+    }
+    .btn-action-mode,
+    .btn-action-answers,
+    .btn-action-practice,
+    .btn-action-mode,
+    .btn-action-answers,
+    .btn-action-practice,
+    .btn-action-sheet {
+      color: #ffffff !important;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none !important;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-right: 12px;
+      transition: background 0.2s;
+    }
+    .old-btn-action-sheet {
+      color: #ffffff !important;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none !important;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-right: 12px;
+      transition: background 0.2s;
+    }
+    .old-btn-action-answers {
+      background: #059669;
+      color: #ffffff;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-right: 12px;
+    }
+    .btn-action-answers:hover {
+      background: #047857;
+    }
+    .nav-pill-group {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 8px;
+      padding: 3px;
+      margin-right: 12px;
+      vertical-align: middle;
+    }
+    .nav-pill-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 6px 0;
+      width: 115px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: #cbd5e1;
+      text-decoration: none;
+      transition: all 0.15s ease-in-out;
+      cursor: pointer;
+      white-space: nowrap;
+      user-select: none;
+      border: none;
+      background: transparent;
+      box-sizing: border-box;
+    }
+    .nav-pill-btn:hover:not(.active) {
+      background: rgba(255, 255, 255, 0.18);
+      color: #ffffff;
+      text-decoration: none;
+    }
+    .nav-pill-btn.active {
+      background: #2563eb;
+      color: #ffffff;
+      cursor: default;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+    }
+
+
+    @media (max-width: 900px) {
+      .print-bar {
+        padding: 10px 14px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+      }
+      .print-bar > div:first-child {
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .print-bar > div:first-child a {
+        font-size: 0.85rem;
+        display: inline-flex;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .print-bar > div:last-child {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .print-bar > div:last-child > * {
+        margin-right: 0 !important;
+      }
+      .btn-action-mode,
+      .btn-action-practice,
+      .btn-action-answers,
+      .btn-action-sheet,
+      .btn-action-print {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+      }
+      .nav-pill-group {
+        margin-right: 0;
+      }
+      .nav-pill-btn {
+        width: 100px;
+        font-size: 0.82rem;
+        padding: 5px 0;
+      }
+    }
+    @media (max-width: 480px) {
+      .print-bar > div:last-child {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+      }
+      .nav-pill-group {
+        grid-column: span 2;
+        width: 100%;
+      }
+      .nav-pill-btn {
+        flex: 1;
+        width: auto;
+      }
+      .btn-action-mode,
+      .btn-action-practice,
+      .btn-action-answers,
+      .btn-action-sheet,
+      .btn-action-print {
+        justify-content: center;
+        width: 100%;
+      }
+    }
+    @media print {
+      .print-bar {
+        display: none !important;
+      }
+      body {
+        background: #ffffff !important;
+      }
+      .page-sheet {
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+      }
+      .q-card {
+        page-break-inside: avoid;
+      }
+    }
+
+    .page-sheet {
+      max-width: 860px;
+      margin: 24px auto;
+      background: #ffffff;
+      padding: 32px 40px;
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+    .sheet-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 2.5px solid #0b172d;
+      padding-bottom: 16px;
+      margin-bottom: 20px;
+    }
+    .brand-title {
+      font-size: 1.45rem;
+      font-weight: 900;
+      color: #0b172d;
+      letter-spacing: -0.5px;
+    }
+    .brand-title span {
+      color: #2563eb;
+    }
+    .brand-subtitle {
+      font-size: 0.88rem;
+      color: #64748b;
+      margin-top: 2px;
+      font-weight: 500;
+    }
+    .sheet-meta-badge {
+      background: #eff6ff;
+      border: 1.5px solid #bfdbfe;
+      color: #1e40af;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-align: right;
+    }
+    .sheet-meta-badge .topic-name {
+      font-size: 1.15rem;
+      font-weight: 800;
+      display: block;
+    }
+    .sheet-meta-badge .spec-tag {
+      font-size: 0.78rem;
+      color: #3b82f6;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .learner-bar {
+      display: grid;
+      grid-template-columns: 2.5fr 1.5fr 1fr;
+      gap: 16px;
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 10px 16px;
+      margin-bottom: 20px;
+      font-size: 0.95rem;
+    }
+    .learner-bar-item strong {
+      color: #0b172d;
+    }
+    .dotted-line {
+      display: inline-block;
+      width: 65%;
+      border-bottom: 1.5px dotted #94a3b8;
+      height: 12px;
+      margin-left: 6px;
+    }
+
+    .recall-banner {
+      background: #fffbeb;
+      border-left: 4px solid #f59e0b;
+      border-radius: 4px;
+      padding: 10px 14px;
+      margin-bottom: 24px;
+      font-size: 0.92rem;
+      color: #78350f;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+    }
+    .recall-banner i {
+      font-size: 1.1rem;
+      margin-top: 2px;
+      color: #d97706;
+    }
+
+    .tier-header {
+      background: #f1f5f9;
+      border-left: 4px solid #2563eb;
+      padding: 6px 12px;
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: #0b172d;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin: 24px 0 16px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .tier-header .tier-marks {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #2563eb;
+      background: #ffffff;
+      padding: 2px 8px;
+      border-radius: 4px;
+      border: 1px solid #cbd5e1;
+    }
+
+    .q-card {
+      border: 1.5px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 18px 20px;
+      margin-bottom: 22px;
+      background: #ffffff;
+    }
+    .q-card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+    .q-title {
+      font-weight: 800;
+      color: #0b172d;
+      font-size: 1rem;
+    }
+    .q-marks {
+      font-weight: 700;
+      color: #2563eb;
+      font-size: 0.88rem;
+      background: #eff6ff;
+      padding: 3px 10px;
+      border-radius: 4px;
+      border: 1px solid #bfdbfe;
+    }
+    .q-stem {
+      font-size: 1.02rem;
+      color: #0f172a;
+      line-height: 1.6;
+      margin-bottom: 14px;
+    }
+
+    .q-diagram-wrap {
+      text-align: center;
+      margin: 14px 0;
+      padding: 10px;
+      background: #faf8f2;
+      border: 1px dashed #cbd5e1;
+      border-radius: 6px;
+    }
+    .q-diagram-wrap svg {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .q-working-area {
+      margin: 14px 0;
+      background: #ffffff;
+    }
+    .working-label {
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #64748b;
+      font-weight: 700;
+      margin-bottom: 4px;
+    }
+    .working-lines-box {
+      border: 1px solid #e2e8f0;
+      border-radius: 4px;
+      background: #ffffff;
+      padding: 0 10px;
+    }
+    .working-line {
+      height: 24px;
+      border-bottom: 1px dashed #e2e8f0;
+    }
+    .working-line:last-child {
+      border-bottom: none;
+    }
+
+    .q-answer-row {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 8px 12px;
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid #e2e8f0;
+    }
+    .q-answer-label {
+      font-weight: 700;
+      color: #0b172d;
+      font-size: 0.95rem;
+    }
+    .q-answer-sublabel {
+      font-weight: 600;
+      color: #1e293b;
+      font-size: 0.9rem;
+    }
+    .q-unit-prefix, .q-unit-suffix {
+      font-weight: 700;
+      color: #0b172d;
+      font-size: 1.05rem;
+    }
+    .q-item-sep {
+      color: #cbd5e1;
+      font-weight: 400;
+      margin: 0 4px;
+    }
+    .q-answer-separator {
+      font-weight: 600;
+      color: #64748b;
+      font-size: 1.05rem;
+    }
+    .q-choice-pills {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      background: #f8fafc;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      color: #334155;
+    }
+    .pills-title {
+      color: #64748b;
+      font-size: 0.8rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+    .pill-opt {
+      padding: 2px 6px;
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      border-radius: 4px;
+      color: #0f172a;
+    }
+    .q-workspace-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 12px;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 6px;
+      color: #1d4ed8;
+      font-weight: 600;
+      font-size: 0.88rem;
+    }
+    .q-answer-input-box {
+      border: 2px solid #0b172d;
+      border-radius: 5px;
+      background: #ffffff;
+      height: 38px;
+      min-width: 140px;
+      box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+      display: inline-block;
+      vertical-align: middle;
+    }
+    .q-answer-input-box.xs { min-width: 65px; }
+    .q-answer-input-box.sm { min-width: 105px; }
+    .q-answer-input-box.md { min-width: 160px; }
+    .q-answer-input-box.lg { min-width: 240px; }
+    .q-answer-row-multiline {
+      width: 100%;
+      display: flex;
+      align-items: flex-end;
+      gap: 12px;
+    }
+    .q-answer-line-fill {
+      flex: 1;
+      height: 28px;
+      border-bottom: 2px solid #0b172d;
+    }
+
+    .sheet-footer {
+      border-top: 1px solid #e2e8f0;
+      padding-top: 14px;
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      color: #94a3b8;
+      font-size: 0.8rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="print-bar">
+    <div>
+      <a href="../entry-level-3-digital-skills.html"><i class="fa-solid fa-arrow-left"></i> Back to Entry Level 3 Digital Skills Revision Guide</a>
+    </div>
+    <div>
+      <a href="entry-level-3-digital-skills-workout.html" class="btn-action-answers" style="background:#2563eb; margin-right:10px;"><i class="fa-solid fa-repeat"></i> Switch to Skill Workout</a>
+      <div class="nav-pill-group">
+        <span class="nav-pill-btn active"><i class="fa-solid fa-file-lines"></i> Questions</span>
+        <a href="entry-level-3-digital-skills-answers.html" class="nav-pill-btn"><i class="fa-solid fa-check-double"></i> Answers</a>
+      </div>
+      <button type="button" class="btn-action-print" onclick="window.print()"><i class="fa-solid fa-print"></i> Print / Save to PDF</button>
+    </div>
+  </div>
+
+  <div class="page-sheet">
+    <div class="sheet-head">
+      <div>
+        <div class="brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
+        <div class="brand-subtitle">Ofqual Regulated Standards • Digital Functional Skills Curriculum</div>
+      </div>
+      <div class="sheet-meta-badge">
+        <span class="topic-name">Entry Level 3 Digital Skills</span>
+        <span class="spec-tag">Ofqual / Pearson Edexcel: Ofqual Digital Functional Skills Standard</span>
+      </div>
+    </div>
+
+    <div class="learner-bar">
+      <div class="learner-bar-item"><strong>Learner:</strong> <span class="dotted-line"></span></div>
+      <div class="learner-bar-item"><strong>Date:</strong> <span class="dotted-line"></span></div>
+      <div class="learner-bar-item" style="text-align:right;"><strong>Score:</strong> _____ / 18</div>
+    </div>
+
+    <div class="recall-banner">
+      <i class="fa-solid fa-lightbulb"></i>
+      <div>
+        <strong>Top Tip for Entry Level 3 Digital Skills:</strong> Master Entry Level 3 Digital Skills: Follow cybersecurity protocols, check file sharing permissions, verify spreadsheet formulas, and maintain data protection compliance (GDPR).
+      </div>
+    </div>
+
+
+    <!-- Section A: Core Skills (The Basics) -->
+    <div class="tier-header">
+      <span>Section A: Core Skills (The Basics)</span>
+      <span class="tier-marks">Questions 1 & 2 • 4 Marks</span>
+    </div>
+
+    <div class="q-card">
+      <div class="q-card-head">
+        <span class="q-title">Question 1 (Core Technical Task: Entry Level 3 Digital Skills)</span>
+        <span class="q-marks">[2 Marks]</span>
+      </div>
+      <div class="q-stem">
+        State two essential digital best practices when managing <strong>Entry Level 3 Digital Skills</strong> in an office environment.
+      </div>
+      <div class="q-working-area">
+        <div class="working-label">Show your full working out here:</div>
+        <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+        </div>
+      </div>
+      <div class="q-answer-row">
+        <span class="q-answer-label">Two Best Practices =</span>
+        1: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> 2: <div class="q-answer-input-box sm"></div>
+      </div>
+    </div>
+
+    <div class="q-card">
+      <div class="q-card-head">
+        <span class="q-title">Question 2 (Formula & Tool Selection)</span>
+        <span class="q-marks">[2 Marks]</span>
+      </div>
+      <div class="q-stem">
+        Select the most appropriate digital tool or formula for managing <strong>Entry Level 3 Digital Skills</strong> data.
+      </div>
+      <div class="q-working-area">
+        <div class="working-label">Show your full working out here:</div>
+        <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+        </div>
+      </div>
+      <div class="q-answer-row">
+        <span class="q-answer-label">Tool / Formula =</span>
+        <div class="q-answer-input-box md"></div>
+      </div>
+    </div>
+
+    <!-- Section B: Everyday & Workplace Tasks -->
+    <div class="tier-header">
+      <span>Section B: Everyday & Workplace Tasks</span>
+      <span class="tier-marks">Questions 3 & 4 • 6 Marks</span>
+    </div>
+
+    <div class="q-card">
+      <div class="q-card-head">
+        <span class="q-title">Question 3 (Workplace Scenario: Entry Level 3 Digital Skills)</span>
+        <span class="q-marks">[3 Marks]</span>
+      </div>
+      <div class="q-stem">
+        An employee encounters a digital workflow issue involving <strong>Entry Level 3 Digital Skills</strong>.<br>Outline the 3-step troubleshooting sequence to resolve the issue securely.
+      </div>
+      <div class="q-working-area">
+        <div class="working-label">Show your full working out here:</div>
+        <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+        </div>
+      </div>
+      <div class="q-answer-row">
+        <span class="q-answer-label">Sequence =</span>
+        Step 1: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Step 2: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Step 3: <div class="q-answer-input-box sm"></div>
+      </div>
+    </div>
+
+    <div class="q-card">
+      <div class="q-card-head">
+        <span class="q-title">Question 4 (Data Privacy & Compliance)</span>
+        <span class="q-marks">[3 Marks]</span>
+      </div>
+      <div class="q-stem">
+        Explain how <strong>Entry Level 3 Digital Skills</strong> must be handled to comply with UK GDPR and the Data Protection Act 2018.
+      </div>
+      <div class="q-working-area">
+        <div class="working-label">Show your full working out here:</div>
+        <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+        </div>
+      </div>
+      <div class="q-answer-row">
+        <span class="q-workspace-badge"><i class="fa-solid fa-pen-to-square"></i> Write your compliance steps in the workspace.</span>
+      </div>
+    </div>
+
+    <!-- Section C: Practical Problem Solving -->
+    <div class="tier-header">
+      <span>Section C: Practical Problem Solving</span>
+      <span class="tier-marks">Questions 5 & 6 • 8 Marks</span>
+    </div>
+
+    <div class="q-card">
+      <div class="q-card-head">
+        <span class="q-title">Question 5 (Cyber Threat Analysis)</span>
+        <span class="q-marks">[4 Marks]</span>
+      </div>
+      <div class="q-stem">
+        A healthcare organization assesses risk factors relating to <strong>Entry Level 3 Digital Skills</strong>.<br>Identify two distinct digital vulnerabilities and outline robust technical countermeasures for each.
+      </div>
+      <div class="q-working-area">
+        <div class="working-label">Show your full working out here:</div>
+        <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+        </div>
+      </div>
+      <div class="q-answer-row">
+        <span class="q-answer-label">Vulnerabilities & Countermeasures =</span>
+        Vulnerability 1 & Fix: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Vulnerability 2 & Fix: <div class="q-answer-input-box sm"></div>
+      </div>
+    </div>
+
+    <div class="q-card">
+      <div class="q-card-head">
+        <span class="q-title">Question 6 (Evaluation & Audit Justification)</span>
+        <span class="q-marks">[4 Marks]</span>
+      </div>
+      <div class="q-stem">
+        An IT auditor evaluates team compliance with <strong>Entry Level 3 Digital Skills</strong> policy.<br>The team lead states: <em>'All team files and credentials comply fully with organizational security policies.'</em><br><br>Evaluate the audit findings, identify any non-conformances, and give a definitive conclusion.
+      </div>
+      <div class="q-working-area">
+        <div class="working-label">Show your full working out here:</div>
+        <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+          <div class="working-line"></div>
+        </div>
+      </div>
+      <div class="q-answer-row">
+        <span class="q-answer-label">Audit Evaluation =</span>
+        Conclusion: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Non-conformances: <div class="q-answer-input-box sm"></div>
+      </div>
+    </div>
+
+
+    <div class="sheet-footer">
+      <div>Master Functional Skills • Pearson Edexcel Curriculum Aligned • 100% Original IP</div>
+      <div>Page 1 of 1 • Rev 2026.1</div>
+    </div>
+  </div>
+</body>
+</html>

@@ -63,7 +63,7 @@ MATHS_MEASURES_WORKOUTS = {
         ],
         "apply_questions": [
             {
-                "context_tag": "NHS Emergency Blood Courier",
+                "context_tag": "Healthcare Emergency Blood Courier",
                 "stem": "An emergency medical motorcycle courier carries urgent blood supplies between two hospital trauma centres <strong>84 miles apart</strong>.<br>The courier leaves at <strong>14:15</strong> and must arrive before <strong>15:45</strong>.<br>(a) What is the maximum journey time allowed in hours and minutes, and in decimal hours?<br>(b) Calculate the minimum average speed the courier must maintain to arrive on time.",
                 "marks": 3,
                 "prefix": "",
@@ -126,7 +126,7 @@ MATHS_MEASURES_WORKOUTS = {
         ],
         "apply_questions": [
             {
-                "context_tag": "NHS Shift Handover & Travel",
+                "context_tag": "Healthcare Shift Handover & Travel",
                 "stem": "A clinical support worker must arrive at the hospital ward for a shift briefing starting at <strong>07:15</strong>.<br>Her morning routine and journey take:<br>• Getting dressed and breakfast: <strong>35 minutes</strong><br>• Walking to the bus stop: <strong>10 minutes</strong><br>• Bus journey: <strong>28 minutes</strong><br>• Walking from bus stop to ward: <strong>7 minutes</strong><br>What is the latest time she can wake up in the morning to arrive exactly on time?",
                 "marks": 3,
                 "prefix": "",
@@ -256,8 +256,8 @@ MATHS_MEASURES_WORKOUTS = {
         ],
         "apply_questions": [
             {
-                "context_tag": "NHS Clinical Hydrotherapy Pool",
-                "stem": "An NHS rehabilitation hospital builds a rectangular hydrotherapy exercise pool.<br>The pool dimensions are: <strong>12 metres long by 5 metres wide by 1.5 metres deep</strong>.<br>(a) Calculate the volume of the pool in cubic metres (m³).<br>(b) 1 cubic metre holds 1,000 litres of water. How many litres of water are needed to fill the pool?",
+                "context_tag": "Healthcare Clinical Hydrotherapy Pool",
+                "stem": "A community rehabilitation centre builds a rectangular hydrotherapy exercise pool.<br>The pool dimensions are: <strong>12 metres long by 5 metres wide by 1.5 metres deep</strong>.<br>(a) Calculate the volume of the pool in cubic metres (m³).<br>(b) 1 cubic metre holds 1,000 litres of water. How many litres of water are needed to fill the pool?",
                 "marks": 3,
                 "prefix": "",
                 "steps": [
@@ -431,7 +431,7 @@ MATHS_MEASURES_WORKOUTS = {
         ],
         "apply_questions": [
             {
-                "context_tag": "NHS Hospital Ward Floor Plan",
+                "context_tag": "Healthcare Hospital Ward Floor Plan",
                 "stem": "An estates surveyor draws a floor plan for a new hospital treatment room.<br>The scale on the architectural drawing is <strong>1 : 50</strong>.<br>On the plan, the rectangular room measures <strong>14 cm long by 9 cm wide</strong>.<br>(a) Calculate the real-world length and width of the room in metres.<br>(b) Work out the actual floor area of the room in square metres (m²).",
                 "marks": 3,
                 "prefix": "",
@@ -563,8 +563,8 @@ MATHS_MEASURES_WORKOUTS = {
         ],
         "apply_questions": [
             {
-                "context_tag": "NHS Clinic Paving Design",
-                "stem": "An NHS healthcare facility installs safety signboards and paving.<br>An emergency stop sign is manufactured in the shape of a <strong>regular octagon</strong>.<br>Each side of the octagon measures <strong>35 centimetres</strong>.<br>(a) Calculate the perimeter of the signboard in metres.<br>(b) How many lines of reflective symmetry does the sign have?",
+                "context_tag": "Healthcare Clinic Paving Design",
+                "stem": "A community healthcare facility installs safety signboards and paving.<br>An emergency stop sign is manufactured in the shape of a <strong>regular octagon</strong>.<br>Each side of the octagon measures <strong>35 centimetres</strong>.<br>(a) Calculate the perimeter of the signboard in metres.<br>(b) How many lines of reflective symmetry does the sign have?",
                 "marks": 3,
                 "prefix": "",
                 "steps": [
@@ -624,8 +624,8 @@ MATHS_MEASURES_WORKOUTS = {
         ],
         "apply_questions": [
             {
-                "context_tag": "NHS Vaccine Cold-Chain Storage",
-                "stem": "An NHS hospital pharmacy stores temperature-sensitive vaccines in a specialist freezer.<br>The target storage temperature is <strong>-18°C</strong>.<br>The safety regulations allow a tolerance of <strong>±3°C</strong>.<br>(a) What are the minimum and maximum acceptable temperatures?<br>(b) During a power interruption, the freezer temperature rises to <strong>-11°C</strong>. Did the freezer breach the safety limit? State the difference.",
+                "context_tag": "Healthcare Vaccine Cold-Chain Storage",
+                "stem": "A healthcare clinic pharmacy stores temperature-sensitive vaccines in a specialist freezer.<br>The target storage temperature is <strong>-18°C</strong>.<br>The safety regulations allow a tolerance of <strong>±3°C</strong>.<br>(a) What are the minimum and maximum acceptable temperatures?<br>(b) During a power interruption, the freezer temperature rises to <strong>-11°C</strong>. Did the freezer breach the safety limit? State the difference.",
                 "marks": 3,
                 "prefix": "",
                 "steps": [

@@ -76,7 +76,7 @@ MATHS_NUMBER_WORKOUTS = {
         ],
         "apply_questions": [
             {
-                "context_tag": "NHS Hospital Ward Stock Tracking",
+                "context_tag": "Healthcare Hospital Ward Stock Tracking",
                 "stem": "A healthcare ward starts Monday with <strong>450 boxes of nitrile gloves</strong>.<br>During the week, the deliveries and usage are:<br>• Tuesday: Used 165 boxes<br>• Wednesday: New delivery received of 240 boxes<br>• Thursday: Used 195 boxes<br>• Friday: Used 110 boxes<br>Calculate how many boxes of gloves remain on the ward at the end of Friday.",
                 "marks": 3,
                 "prefix": "",
@@ -167,7 +167,7 @@ MATHS_NUMBER_WORKOUTS = {
         ],
         "apply_questions": [
             {
-                "context_tag": "NHS Staff Rota & Overtime",
+                "context_tag": "Healthcare Staff Rota & Overtime",
                 "stem": "A senior healthcare assistant works <strong>36 standard hours</strong> at an hourly rate of <strong>£12.50</strong>.<br>She also works <strong>8 hours of overtime</strong> paid at <strong>time-and-a-half</strong> (1.5 times the standard rate).<br>Calculate her total gross pay for the week.",
                 "marks": 3,
                 "prefix": "£",
@@ -309,7 +309,7 @@ MATHS_NUMBER_WORKOUTS = {
         ],
         "apply_questions": [
             {
-                "context_tag": "NHS Clinical Syringe Dosage",
+                "context_tag": "Healthcare Clinical Syringe Dosage",
                 "stem": "A patient requires a medication dosage of <strong>0.35 ml per kilogram of body weight</strong>.<br>The patient weighs <strong>68 kg</strong>.<br>Each ampoule contains <strong>10 ml</strong> of medicine.<br>(a) Calculate the total dosage required in ml.<br>(b) How many complete ampoules are needed?",
                 "marks": 3,
                 "prefix": "",
@@ -503,7 +503,7 @@ MATHS_NUMBER_WORKOUTS = {
         ],
         "apply_questions": [
             {
-                "context_tag": "NHS Clinical Disinfectant Dilution",
+                "context_tag": "Healthcare Clinical Disinfectant Dilution",
                 "stem": "Infection control guidelines state that concentrated surgical disinfectant must be diluted with water in the ratio <strong>1 : 9</strong> (1 part disinfectant to 9 parts water).<br>A healthcare cleaner needs to prepare <strong>15 litres</strong> of diluted disinfectant solution.<br>How many litres of concentrated disinfectant and how many litres of water are needed?",
                 "marks": 3,
                 "prefix": "",
@@ -582,7 +582,7 @@ MATHS_NUMBER_WORKOUTS = {
         ],
         "apply_questions": [
             {
-                "context_tag": "NHS Procurement Order Estimation",
+                "context_tag": "Healthcare Procurement Order Estimation",
                 "stem": "A procurement manager orders <strong>38 digital blood pressure monitors</strong> at <strong>£48.75 each</strong>.<br>(a) Use estimation (by rounding each number to 1 significant figure) to calculate an approximate total cost.<br>(b) The supplier sends an invoice for <strong>£2,450.00</strong>. Is this invoice reasonable based on your estimate?",
                 "marks": 3,
                 "prefix": "£",
@@ -710,7 +710,7 @@ MATHS_NUMBER_WORKOUTS = {
         ],
         "apply_questions": [
             {
-                "context_tag": "NHS Clinical Body Mass Index (BMI)",
+                "context_tag": "Healthcare Clinical Body Mass Index (BMI)",
                 "stem": "A clinical nurse calculates a patient's Body Mass Index (BMI) using this formula:<br><strong>BMI = Weight ÷ Height²</strong><br>Where Weight is in kilograms (kg) and Height is in metres (m).<br>• Patient weight = <strong>78 kg</strong><br>• Patient height = <strong>1.75 m</strong><br>(a) Calculate the patient's BMI to 1 decimal place.<br>(b) Healthy BMI is between 18.5 and 24.9. Is the patient within the healthy range?",
                 "marks": 3,
                 "prefix": "",

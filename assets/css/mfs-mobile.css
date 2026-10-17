@@ -6,9 +6,12 @@
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   1. TABLET & MOBILE BREAKPOINT (< 992px)
+   1. TABLET & MOBILE BREAKPOINT (< 992px OR Mobile Landscape <= 600px height)
    -------------------------------------------------------------------------- */
-@media (max-width: 991px) {
+@media (max-width: 991px), 
+       (orientation: landscape) and (max-height: 600px), 
+       (max-height: 500px), 
+       (hover: none) and (pointer: coarse) and (orientation: landscape) and (max-width: 1024px) {
   /* Eliminate bulky top trust bar and empty promo banners */
   .mfs-top-bar,
   .mfs-promo-banner,
@@ -1180,9 +1183,9 @@
 }
 
 /* --------------------------------------------------------------------------
-   4. DESKTOP SAFETY GUARANTEE (>= 992px)
+   4. DESKTOP SAFETY GUARANTEE (>= 992px and desktop height > 600px)
    -------------------------------------------------------------------------- */
-@media (min-width: 992px) {
+@media (min-width: 992px) and (min-height: 601px) {
   .mfs-mobile-controls,
   .mfs-mobile-toggle,
   .mfs-drawer-backdrop,

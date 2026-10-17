@@ -390,6 +390,17 @@ a {
   overflow: visible !important;
 }
 
+@media (max-width: 991px), 
+       (orientation: landscape) and (max-height: 600px), 
+       (max-height: 500px), 
+       (hover: none) and (pointer: coarse) and (orientation: landscape) and (max-width: 1024px) {
+  .mfs-top-bar,
+  .mfs-promo-banner,
+  .mfs-promo-banner:empty {
+    display: none !important;
+  }
+}
+
 .mfs-top-bar-inner {
   display: flex;
   justify-content: space-between;

@@ -9,8 +9,8 @@
    1. TABLET & MOBILE BREAKPOINT (< 992px OR Mobile Landscape <= 600px height)
    -------------------------------------------------------------------------- */
 @media (max-width: 991px), 
-       (orientation: landscape) and (max-height: 600px), 
-       (max-height: 500px), 
+       (orientation: landscape) and (max-height: 700px), 
+       (max-height: 550px), 
        (hover: none) and (pointer: coarse) and (orientation: landscape) and (max-width: 1024px) {
   /* Eliminate bulky top trust bar and empty promo banners */
   .mfs-top-bar,
@@ -19,13 +19,13 @@
     display: none !important;
   }
 
-  /* Make header a sleek 52px app bar */
+  /* Header scrolls away naturally on scroll down - no sticky persistence on mobile/landscape */
   .mfs-navbar {
-    position: sticky !important;
-    top: 0 !important;
-    left: 0 !important;
-    right: 0 !important;
-    z-index: 9999 !important;
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    z-index: 100 !important;
     background: #0b172d !important;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15) !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
@@ -744,8 +744,93 @@
   }
 
   /* ------------------------------------------------------------------------
-     E. SHRINK PAST PAPERS ROWS & DOWNLOAD ACTIONS (2,180 ROWS)
+     E. PAST PAPERS: MINIMAL HERO, ROW SHRINK & CLUTTER ELIMINATION
      ------------------------------------------------------------------------ */
+  /* Top Clutter: Eliminate massive hero padding, breadcrumb, logo box & marketing strips */
+  .past-papers-hero {
+    padding: 12px 10px 8px !important;
+    border-bottom: 2px solid var(--accent) !important;
+  }
+
+  .past-papers-breadcrumb {
+    display: none !important;
+  }
+
+  .board-hero-logo-badge {
+    display: none !important;
+  }
+
+  .past-papers-hero-title {
+    font-size: 1.15rem !important;
+    line-height: 1.25 !important;
+    margin: 0 0 2px 0 !important;
+    font-weight: 800 !important;
+  }
+
+  .past-papers-hero-subtitle {
+    display: none !important;
+  }
+
+  .moat-strip {
+    display: none !important;
+  }
+
+  .past-papers-badges-bar {
+    display: none !important;
+  }
+
+  /* Compact Awarding Bodies Rail */
+  .board-switcher-nav {
+    padding: 4px 0 !important;
+    background: #f8fafc !important;
+  }
+
+  .board-switcher-inner {
+    padding: 0 4px !important;
+    gap: 0 !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+  }
+
+  .board-switcher-inner::-webkit-scrollbar {
+    display: none !important;
+  }
+
+  .board-switcher-label {
+    display: none !important;
+  }
+
+  .board-switcher-pills {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    gap: 4px !important;
+  }
+
+  .board-pill {
+    padding: 3px 8px !important;
+    font-size: 0.70rem !important;
+    line-height: 1.2 !important;
+    min-height: 24px !important;
+    border-radius: 9999px !important;
+    white-space: nowrap !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 3px !important;
+  }
+
+  .board-pill img {
+    height: 12px !important;
+    width: auto !important;
+  }
+
+  /* Main Past Papers Container */
+  .past-papers-container {
+    padding: 8px 6px 20px !important;
+    max-width: 100% !important;
+  }
+
   .past-paper-row {
     display: flex !important;
     flex-direction: column !important;
@@ -814,7 +899,7 @@
 
   .paper-filter-bar {
     padding: 6px 8px !important;
-    margin-bottom: 8px !important;
+    margin-bottom: 6px !important;
     border-radius: 8px !important;
   }
 
@@ -829,16 +914,44 @@
     overflow-x: auto !important;
     -webkit-overflow-scrolling: touch !important;
     gap: 4px !important;
-    padding: 4px 0 !important;
+    padding: 2px 0 6px !important;
     flex-wrap: nowrap !important;
     scrollbar-width: none !important;
   }
 
-  .paper-filter-chip {
+  .paper-filter-chip,
+  .filter-chip {
     padding: 3px 8px !important;
-    font-size: 0.72rem !important;
+    font-size: 0.70rem !important;
     border-radius: 12px !important;
     white-space: nowrap !important;
+  }
+
+  .filter-chip-label {
+    display: none !important;
+  }
+
+  /* Bottom Clutter: Eliminate specification & FAQ cards and booking callout banners */
+  .past-papers-container .paper-info-card,
+  .past-papers-container > .paper-info-card,
+  .past-papers-container div.paper-info-card {
+    display: none !important;
+  }
+
+  .past-papers-container > div[style*="linear-gradient(135deg, var(--navy-dark)"],
+  .past-papers-container div[style*="Ready to Pass?"] {
+    display: none !important;
+  }
+
+  /* Hide irrelevant filter chips by subject */
+  [data-theme="maths"] .filter-chip[data-filter="reading"],
+  [data-theme="maths"] .filter-chip[data-filter="writing"] {
+    display: none !important;
+  }
+
+  [data-theme="english"] .filter-chip[data-filter*="non-calc"],
+  [data-theme="english"] .filter-chip[data-filter*="calc|"] {
+    display: none !important;
   }
 
   /* ------------------------------------------------------------------------

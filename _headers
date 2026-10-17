@@ -1,2 +1,10 @@
 /*
   X-Robots-Tag: noindex, nofollow, noarchive, nosnippet
+
+/sw.js
+  Cache-Control: no-cache, no-store, must-revalidate
+  Service-Worker-Allowed: /
+
+/manifest.json
+  Content-Type: application/manifest+json; charset=utf-8
+  Cache-Control: public, max-age=0, must-revalidate

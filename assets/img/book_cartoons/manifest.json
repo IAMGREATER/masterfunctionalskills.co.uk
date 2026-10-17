@@ -1,10 +1,10 @@
 [
   {
-    "path": "abdul_explaining.png",
-    "name": "Abdul",
+    "path": "subi_explaining.png",
+    "name": "Subi",
     "role": "Tutor",
-    "description": "Abdul, friendly male tutor in 40s with glasses, short dark beard, navy jumper, explaining with welcoming gesture.",
-    "keywords": ["abdul", "tutor", "explaining", "teacher", "man", "male", "guide"]
+    "description": "Subi, friendly male tutor in 40s with glasses, short dark beard, navy jumper, explaining with welcoming gesture.",
+    "keywords": ["subi", "tutor", "explaining", "teacher", "man", "male", "guide"]
   },
   {
     "path": "priya_explaining.png",

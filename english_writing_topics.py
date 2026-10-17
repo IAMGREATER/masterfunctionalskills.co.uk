@@ -734,7 +734,7 @@ WRITING_TOPICS = [
                   </div>
                   <div>
                     <strong>Yours sincerely,</strong><br>
-                    Abdul Rahman<br>
+                    Subi Rahman<br>
                     Senior Physiotherapy Assistant
                   </div>
                 </div>

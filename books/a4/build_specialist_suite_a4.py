@@ -139,7 +139,7 @@ def build_mock_maths_l2():
             "</table>",
             title="Measures, Rates &amp; Statistics Matrix"
         )
-        + K.cartoon_tip(get_cartoon("abdul tutor explaining"), "Abdul",
+        + K.cartoon_tip(get_cartoon("abdul tutor explaining"), "Subi",
                         "Time Trap Alert! 2 hours 15 minutes is 2.25 hours, NOT 2.15 hours! Always convert minutes to decimal hours by dividing by 60 before using speed formulas.")
         + K.fill_notes("Key Conversion Facts (e.g. 1 m&sup3; = 1,000 litres, 1 gallon = 4.55 litres)", 28)
     )
@@ -431,7 +431,7 @@ def build_mock_maths_l2():
             "<p style='font-size:16pt; font-weight:bold; border-bottom:2px solid var(--accent); display:inline-block; min-width:300px; padding-bottom:3px; margin:4px 0;'>&nbsp;</p>"
             "<p style='margin:4px 0;'>has completed all 6 Official-Style Mock Examinations and demonstrated competence across all Pearson Edexcel Functional Skills Mathematics Level 2 standards.</p>"
             "<table style='width:100%; margin-top:12px; font-size:10.5pt; border-collapse:collapse;'>"
-            "<tr><td style='text-align:left;'><b>Lead Tutor:</b> Abdul</td><td style='text-align:right;'><b>Date Verified:</b> _______________</td></tr>"
+            "<tr><td style='text-align:left;'><b>Lead Tutor:</b> Subi</td><td style='text-align:right;'><b>Date Verified:</b> _______________</td></tr>"
             "<tr><td style='text-align:left;'><b>Average Mock Score:</b> ______ / 64</td><td style='text-align:right;'><b>Exam Centre:</b> Master Functional Skills</td></tr>"
             "</table>"
             "</div>",
@@ -564,7 +564,7 @@ def build_mock_english_l2():
             "</table>",
             title="Pearson Edexcel Format Blueprint Matrix"
         )
-        + K.cartoon_tip(get_cartoon("abdul tutor explaining"), "Abdul",
+        + K.cartoon_tip(get_cartoon("abdul tutor explaining"), "Subi",
                         "Salutation Trap! If you start with 'Dear Sir or Madam' or 'Dear Hiring Manager', you MUST sign off with 'Yours faithfully'. If you name the recipient ('Dear Mr Taylor'), you MUST sign off with 'Yours sincerely'!")
         + K.fill_notes("Target Writing Formats &amp; Vocabulary To Practice", 22)
     )
@@ -996,7 +996,7 @@ def build_mock_english_l2():
             "<p style='font-size:16pt; font-weight:bold; border-bottom:2px solid var(--accent); display:inline-block; min-width:300px; padding-bottom:3px; margin:4px 0;'>&nbsp;</p>"
             "<p style='margin:4px 0;'>has completed all 5 Official-Style Mock Examinations and demonstrated mastery across all Pearson Edexcel Functional Skills English Level 2 standards.</p>"
             "<table style='width:100%; margin-top:12px; font-size:10.5pt; border-collapse:collapse;'>"
-            "<tr><td style='text-align:left;'><b>Lead Tutor:</b> Abdul</td><td style='text-align:right;'><b>Date Verified:</b> _______________</td></tr>"
+            "<tr><td style='text-align:left;'><b>Lead Tutor:</b> Subi</td><td style='text-align:right;'><b>Date Verified:</b> _______________</td></tr>"
             "<tr><td style='text-align:left;'><b>Average Mock Score:</b> ______ / 60</td><td style='text-align:right;'><b>Exam Centre:</b> Master Functional Skills</td></tr>"
             "</table>"
             "</div>",
@@ -1410,7 +1410,7 @@ def build_digital_skills_handbook():
             + K.box_html(
                 "<div style='display:flex; justify-content:space-between; font-weight:bold; font-size:10pt;'>"
                 "<span>Lab Task Completed: [ &nbsp; ] Yes &emsp; [ &nbsp; ] In Progress</span>"
-                "<span>Lead Tutor Verification: Abdul &bull; ____________________</span>"
+                "<span>Lead Tutor Verification: Subi &bull; ____________________</span>"
                 "</div>",
                 title="Software Lab Sign-Off &amp; Competency Endorsement"
             )
@@ -1552,7 +1552,7 @@ def build_digital_skills_handbook():
             "<p style='font-size:18pt; font-weight:bold; border-bottom:2px solid var(--accent); display:inline-block; min-width:320px; padding-bottom:4px;'>&nbsp;</p>"
             "<p>has completed the Essential Digital Skills National Curriculum and successfully passed all 4 synoptic workplace scenario examinations.</p>"
             "<table style='width:100%; margin-top:20px; font-size:11pt; border-collapse:collapse;'>"
-            "<tr><td style='text-align:left;'><b>Lead Instructor:</b> Abdul</td><td style='text-align:right;'><b>Date Verified:</b> _______________</td></tr>"
+            "<tr><td style='text-align:left;'><b>Lead Instructor:</b> Subi</td><td style='text-align:right;'><b>Date Verified:</b> _______________</td></tr>"
             "<tr><td style='text-align:left;'><b>Practical Exam Score:</b> ______ / 50</td><td style='text-align:right;'><b>Exam Centre:</b> Master Functional Skills</td></tr>"
             "</table>"
             "</div>",
@@ -1650,7 +1650,7 @@ def build_bksb_remediation_workbook():
             "</table></div>",
             title="Why Online Platforms Mark Correct Answers Wrong"
         )
-        + K.cartoon_tip(get_cartoon("abdul tutor explaining"), "Abdul",
+        + K.cartoon_tip(get_cartoon("abdul tutor explaining"), "Subi",
                         "Look closely at the answer box! If the &pound; sign is already printed outside the text input box, DO NOT type &pound; inside the box. Typing '&pound;25.00' into a box preceded by '&pound;' causes the system to read '&pound;&pound;25.00' and mark it wrong!")
         + K.fill_notes("Personal Checklist for Online Computer Tests", 22)
     )
@@ -1693,7 +1693,7 @@ def build_bksb_remediation_workbook():
             + "</table>",
             title="The 24 Diagnostic Remediation Milestones"
         )
-        + K.fill_notes("Target Remediation Schedule with Tutor Abdul", 14)
+        + K.fill_notes("Target Remediation Schedule with Tutor Subi", 14)
     )
     pages.append(K.page(p6_body, header=(BOOK, "Score Tracker"), footer=BOOK, page_no=6))
 
@@ -1876,10 +1876,10 @@ def build_bksb_remediation_workbook():
         + K.box_html(
             "<table style='width:100%; border-collapse:collapse; font-size:10.5pt; text-align:center; line-height:1.4;'>"
             "<tr style='background:#f1f5f9;'><th style='padding:5px; text-align:left;'>Assessment Milestone</th><th>Initial Working Level</th><th>Post-Workbook Level</th><th>Target Functional Level</th><th>Sign-Off</th></tr>"
-            "<tr><td style='padding:5px; border-bottom:1px solid #e2e8f0; text-align:left;'>BKSB Baseline Diagnostics</td><td>Level 1 (42%)</td><td>Level 2 (84%)</td><td>Level 2 Pass</td><td>Abdul</td></tr>"
-            "<tr><td style='padding:5px; border-bottom:1px solid #e2e8f0; text-align:left;'>OneAdvanced Progress Check 1</td><td>Level 1 Borderline</td><td>Level 2 Secure</td><td>Level 2 Pass</td><td>Abdul</td></tr>"
-            "<tr><td style='padding:5px; border-bottom:1px solid #e2e8f0; text-align:left;'>OneAdvanced Progress Check 2</td><td>Level 2 Emerging</td><td>Level 2 High Pass</td><td>Level 2 Pass</td><td>Abdul</td></tr>"
-            "<tr><td style='padding:5px; text-align:left;'>Final Exam Readiness Audit</td><td>Level 2 Secure</td><td>Level 2 Distinction</td><td>Level 2 Pass</td><td>Abdul</td></tr>"
+            "<tr><td style='padding:5px; border-bottom:1px solid #e2e8f0; text-align:left;'>BKSB Baseline Diagnostics</td><td>Level 1 (42%)</td><td>Level 2 (84%)</td><td>Level 2 Pass</td><td>Subi</td></tr>"
+            "<tr><td style='padding:5px; border-bottom:1px solid #e2e8f0; text-align:left;'>OneAdvanced Progress Check 1</td><td>Level 1 Borderline</td><td>Level 2 Secure</td><td>Level 2 Pass</td><td>Subi</td></tr>"
+            "<tr><td style='padding:5px; border-bottom:1px solid #e2e8f0; text-align:left;'>OneAdvanced Progress Check 2</td><td>Level 2 Emerging</td><td>Level 2 High Pass</td><td>Level 2 Pass</td><td>Subi</td></tr>"
+            "<tr><td style='padding:5px; text-align:left;'>Final Exam Readiness Audit</td><td>Level 2 Secure</td><td>Level 2 Distinction</td><td>Level 2 Pass</td><td>Subi</td></tr>"
             "</table>",
             title="Learner Diagnostic Growth Record"
         )
@@ -1900,7 +1900,7 @@ def build_bksb_remediation_workbook():
             "<p style='font-size:16pt; font-weight:bold; border-bottom:2px solid var(--accent); display:inline-block; min-width:300px; padding-bottom:3px; margin:4px 0;'>&nbsp;</p>"
             "<p style='margin:4px 0;'>has completed all 24 High-Frequency Diagnostic Failure Mode Masterclasses and demonstrated Level 2 mastery on independent retry drills.</p>"
             "<table style='width:100%; margin-top:12px; font-size:10.5pt; border-collapse:collapse;'>"
-            "<tr><td style='text-align:left;'><b>Lead Tutor:</b> Abdul</td><td style='text-align:right;'><b>Date Verified:</b> _______________</td></tr>"
+            "<tr><td style='text-align:left;'><b>Lead Tutor:</b> Subi</td><td style='text-align:right;'><b>Date Verified:</b> _______________</td></tr>"
             "<tr><td style='text-align:left;'><b>Remediation Score:</b> 72 / 72 Drills</td><td style='text-align:right;'><b>Exam Centre:</b> Master Functional Skills</td></tr>"
             "</table>"
             "</div>",

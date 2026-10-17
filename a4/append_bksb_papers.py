@@ -219,7 +219,7 @@ BKSB_PAPERS_SOLUTIONS = {
     4: [
         ("Diagnostic Paper 4 Model Solutions (English Writing)",
          "<b>Task 1 Model (Formal Recommendation Report):</b><br>"
-         "Layout: To: Operations Director; From: Abdul, Apprentice Coordinator; Date: 14 October 2026; Subject: Technical Trainee Mentorship Proposal.<br>"
+         "Layout: To: Operations Director; From: Subi, Apprentice Coordinator; Date: 14 October 2026; Subject: Technical Trainee Mentorship Proposal.<br>"
          "Sections: 1. Purpose &amp; Executive Summary, 2. Productivity Benefits, 3. Workload Mitigation, 4. Strategic Recommendations.<br>"
          "Content highlights: Establishes a 2-hour protected Friday morning mentor slot, pairs trainees with senior mentors, and schedules quarterly progress reviews.<br><br>"
          "<b>Task 2 Model (Persuasive Careers Evening Speech):</b><br>"

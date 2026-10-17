@@ -178,7 +178,7 @@ def build_spag_l2():
     # p7-58: 26 Units (52 pages)
     characters = [
         ("Priya", "tutor woman female", "#7c3aed"),
-        ("Abdul", "abdul tutor man", "#0c4a6e"),
+        ("Subi", "abdul tutor man", "#0c4a6e"),
         ("Marcus", "marcus apprentice", "#0d9488"),
         ("Sarah", "sarah care nurse", "#be123c"),
         ("Sam", "sam learner thinking", "#475569"),
@@ -592,7 +592,7 @@ def build_spag_l1():
 
     # p7-58: 26 Units (52 pages)
     characters = [
-        ("Abdul", "abdul tutor man", "#0c4a6e"),
+        ("Subi", "abdul tutor man", "#0c4a6e"),
         ("Priya", "priya tutor woman", "#7c3aed"),
         ("Marcus", "marcus apprentice", "#0d9488"),
         ("Sarah", "sarah care nurse", "#be123c"),
@@ -1026,7 +1026,7 @@ def build_spag_e3():
 
     # p7-54: 24 Units (48 pages)
     characters = [
-        ("Abdul", "abdul tutor man", "#0c4a6e"),
+        ("Subi", "abdul tutor man", "#0c4a6e"),
         ("Sarah", "sarah care nurse", "#be123c"),
         ("Marcus", "marcus apprentice", "#0d9488"),
         ("Priya", "priya tutor woman", "#7c3aed"),

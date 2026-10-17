@@ -267,7 +267,7 @@ ENGLISH_L2_MOCK_SOLUTIONS = {
         ("Mock 1 &bull; Writing Exemplar &bull; Task 1 (Formal Workplace Report)",
          "<b>Task 1 Benchmark Exemplar: Formal Recommendation Report</b><br>"
          "<b>To:</b> Board of Operations, GreenRoute Logistics<br>"
-         "<b>From:</b> Abdul, Senior Logistics Analyst<br>"
+         "<b>From:</b> Subi, Senior Logistics Analyst<br>"
          "<b>Date:</b> 14 October 2026<br>"
          "<b>Subject:</b> Fleet Electrification Feasibility Assessment &amp; Infrastructure Roadmap<br><br>"
          "<b>1. Executive Summary</b><br>"
@@ -303,7 +303,7 @@ ENGLISH_L2_MOCK_SOLUTIONS = {
         ("Mock 2 &bull; Writing Exemplar &bull; Task 1 (Formal Workplace Policy Report)",
          "<b>Task 1 Benchmark Exemplar: Formal Hybrid Working Policy Report</b><br>"
          "<b>To:</b> Executive Management Board, Apex Global Enterprises<br>"
-         "<b>From:</b> Abdul, Lead HR Strategy Consultant<br>"
+         "<b>From:</b> Subi, Lead HR Strategy Consultant<br>"
          "<b>Date:</b> 18 October 2026<br>"
          "<b>Subject:</b> Enterprise Hybrid Working Framework &amp; Core Productivity Standards<br><br>"
          "<b>1. Purpose &amp; Scope</b><br>"
@@ -342,7 +342,7 @@ ENGLISH_L2_MOCK_SOLUTIONS = {
         ("Mock 3 &bull; Writing Exemplar &bull; Task 1 (Formal Article for a National Careers Publication)",
          "<b>Task 1 Benchmark Exemplar: Careers Feature Article</b><br>"
          "<b>Title: Degree Apprenticeship or Traditional Campus? Navigating Modern Career Gateways</b><br>"
-         "<b>Byline:</b> Abdul, Lead Vocational Education Specialist<br><br>"
+         "<b>Byline:</b> Subi, Lead Vocational Education Specialist<br><br>"
          "For generations of school leavers, the path to professional success followed an unchanging script: finish Sixth Form, secure university admission, and graduate into the corporate world. Today, skyrocketing tuition fees and the rapid rise of Degree Apprenticeships have fundamentally disrupted that conventional narrative.<br><br>"
          "<b>The Apprenticeship Advantage: Earn While You Learn</b><br>"
          "Degree apprenticeships offer an undeniable financial proposition: zero tuition debt, a full employee salary from day one, and immediate immersion in corporate culture. In fields like software engineering, quantity surveying, and digital marketing, candidates accumulate four years of workplace experience while simultaneously earning a BSc or BEng.<br><br>"
@@ -365,7 +365,7 @@ ENGLISH_L2_MOCK_SOLUTIONS = {
          "3. Retain top young talent within our regional economy.<br><br>"
          "I would welcome the opportunity to present a 15-minute briefing paper at the upcoming Executive Committee meeting on 5 November. Thank you for your leadership on regional economic growth.<br><br>"
          "Yours sincerely,<br><br>"
-         "Abdul<br>"
+         "Subi<br>"
          "Lead Vocational Workforce Consultant")
     ],
     4: [
@@ -382,7 +382,7 @@ ENGLISH_L2_MOCK_SOLUTIONS = {
         ("Mock 4 &bull; Writing Exemplar &bull; Task 1 (Formal Contribution to a Government Consultation Review)",
          "<b>Task 1 Benchmark Exemplar: Government Consultation Submission</b><br>"
          "<b>To:</b> Parliamentary Select Committee on Science, Innovation and Technology<br>"
-         "<b>From:</b> Abdul, Senior Digital Ethics &amp; Functional Skills Lead<br>"
+         "<b>From:</b> Subi, Senior Digital Ethics &amp; Functional Skills Lead<br>"
          "<b>Date:</b> 25 October 2026<br>"
          "<b>Subject:</b> Written Evidence: AI Integration Standards in Vocational &amp; Enterprise Education<br><br>"
          "<b>1. Introduction &amp; Terms of Reference</b><br>"
@@ -429,7 +429,7 @@ ENGLISH_L2_MOCK_SOLUTIONS = {
          "<b>The Grant Assessment Committee</b><br>"
          "National Lottery Community Fund<br>"
          "100 Wharf Road, London, SE1 7NN<br><br>"
-         "<b>From:</b> Abdul, Project Director, GreenCorridor Community Trust<br>"
+         "<b>From:</b> Subi, Project Director, GreenCorridor Community Trust<br>"
          "<b>Date:</b> 28 October 2026<br>"
          "<b>Subject:</b> Grant Application: Riverside Wildlife &amp; Wellbeing Community Trail (&pound;48,500)<br><br>"
          "Dear Members of the Committee,<br><br>"
@@ -445,7 +445,7 @@ ENGLISH_L2_MOCK_SOLUTIONS = {
          "Over 65 local volunteers have pledged ongoing maintenance support, partnered with the local vocational college horticultural department. We enclose our detailed financial audit, risk assessments, and council planning letters for your review.<br><br>"
          "Thank you for considering our application to create a lasting green legacy.<br><br>"
          "Yours sincerely,<br><br>"
-         "Abdul<br>"
+         "Subi<br>"
          "Project Director, GreenCorridor Community Trust"),
         ("Mock 5 &bull; Writing Exemplar &bull; Task 2 (Inspiring Local Newspaper Article / Volunteer Appeal)",
          "<b>Task 2 Benchmark Exemplar: Local Gazette Feature Article</b><br>"
@@ -473,7 +473,7 @@ ENGLISH_L2_MOCK_SOLUTIONS = {
          "<b>Task 1 Benchmark Exemplar: Executive Healthcare Memo</b><br>"
          "<b>MEMORANDUM</b><br>"
          "<b>To:</b> Chief Executive &amp; Management Board, St Jude's NHS Healthcare Trust<br>"
-         "<b>From:</b> Abdul, Clinical Operations Integration Manager<br>"
+         "<b>From:</b> Subi, Clinical Operations Integration Manager<br>"
          "<b>Date:</b> 30 October 2026<br>"
          "<b>Subject:</b> Urgent Operational Strategy: Mitigating Delayed Discharge Through Hospital-to-Home Pathways<br><br>"
          "<b>1. Purpose of Briefing</b><br>"
@@ -520,7 +520,7 @@ DIGITAL_SKILLS_SOLUTIONS = {
          "&bull; Bonus Threshold: <code>=IF(E2&gt;10000, E2*0.05, 0)</code><br>"
          "&bull; VAT Calculation: <code>=F2*B1</code> (where B1 holds 0.20)."),
         ("Unit 5 &bull; Professional Workplace Email Drill",
-         "<b>Email Layout:</b> Clear subject line (<code>Project Update: Q3 Audit Report Complete</code>), formal salutation (<code>Dear Ms Henderson,</code>), concise three-paragraph body, attachment confirmation, polite sign-off (<code>Kind regards, Abdul</code>)."),
+         "<b>Email Layout:</b> Clear subject line (<code>Project Update: Q3 Audit Report Complete</code>), formal salutation (<code>Dear Ms Henderson,</code>), concise three-paragraph body, attachment confirmation, polite sign-off (<code>Kind regards, Subi</code>)."),
         ("Unit 6 &bull; Cloud Collaboration &amp; Permissions Drill",
          "<b>Sharing Tiers:</b> Assign <b>'Viewer'</b> for external clients, <b>'Commenter'</b> for review committees, and <b>'Editor'</b> strictly to assigned document authors. Enable link expiration after 14 days."),
         ("Unit 7 &bull; Cybersecurity &amp; Phishing Drill",
@@ -893,7 +893,7 @@ BKSB_PAPERS_SOLUTIONS = {
     4: [
         ("Diagnostic Paper 4 Model Solutions (English Writing)",
          "<b>Task 1 Model (Formal Recommendation Report):</b><br>"
-         "Layout: To: Operations Director; From: Abdul, Apprentice Coordinator; Date: 14 October 2026; Subject: Technical Trainee Mentorship Proposal.<br>"
+         "Layout: To: Operations Director; From: Subi, Apprentice Coordinator; Date: 14 October 2026; Subject: Technical Trainee Mentorship Proposal.<br>"
          "Sections: 1. Purpose &amp; Executive Summary, 2. Productivity Benefits, 3. Workload Mitigation, 4. Strategic Recommendations.<br>"
          "Content highlights: Establishes a 2-hour protected Friday morning mentor slot, pairs trainees with senior mentors, and schedules quarterly progress reviews.<br><br>"
          "<b>Task 2 Model (Persuasive Careers Evening Speech):</b><br>"

@@ -4,7 +4,7 @@
   <!-- Report Title Header -->
   <rect x="16" y="12" width="428" height="46" rx="5" fill="#0f172a"/>
   <text x="28" y="30" font-size="11.5" font-weight="900" fill="#38bdf8">INVESTIGATION REPORT: HEALTH &amp; SAFETY AUDIT</text>
-  <text x="28" y="47" font-size="9" fill="#94a3b8">Target: Safety Executive • Date: October 2026 • Lead Tutor: Abdul</text>
+  <text x="28" y="47" font-size="9" fill="#94a3b8">Target: Safety Executive • Date: October 2026 • Lead Tutor: Subi</text>
   
   <!-- Section 1.0: Executive Summary -->
   <rect x="16" y="66" width="428" height="48" rx="5" fill="#f8fafc" stroke="#e2e8f0"/>
@@ -25,5 +25,5 @@
   <text x="26" y="200" font-size="10.5" font-weight="900" fill="#1e40af">3.0 Actionable Recommendations</text>
   <text x="36" y="215" font-size="9" font-weight="700" fill="#1e3a8a">• Clear all corridor emergency routes immediately (Priority 1)</text>
   <text x="36" y="229" font-size="9" font-weight="700" fill="#1e3a8a">• Deploy digital checklist app across shift handovers</text>
-  <text x="36" y="243" font-size="9" font-weight="700" fill="#1e3a8a">• Complete follow-up audit with Lead Tutor Abdul on Friday</text>
+  <text x="36" y="243" font-size="9" font-weight="700" fill="#1e3a8a">• Complete follow-up audit with Lead Tutor Subi on Friday</text>
 </svg>

@@ -26,7 +26,7 @@
   <rect x="170" y="132" width="140" height="134" rx="4" fill="#f8fafc" stroke="#e2e8f0"/>
   <text x="240" y="156" font-size="9" font-weight="900" fill="#0f172a" text-anchor="middle">Student Testimonial</text>
   <text x="240" y="176" font-size="8" font-style="italic" fill="#475569" text-anchor="middle">"Passed first time with"</text>
-  <text x="240" y="190" font-size="8" font-style="italic" fill="#475569" text-anchor="middle">"Abdul's step-by-step drills!"</text>
+  <text x="240" y="190" font-size="8" font-style="italic" fill="#475569" text-anchor="middle">"Subi's step-by-step drills!"</text>
   
   <!-- Panel 3: Front Cover & Contact (Right) -->
   <rect x="330" y="12" width="140" height="32" rx="4" fill="#070d1e"/>

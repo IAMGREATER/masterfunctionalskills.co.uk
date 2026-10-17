@@ -155,7 +155,7 @@ def build_mock_maths_l2():
             "</table>",
             title="Measures, Rates &amp; Statistics Matrix"
         )
-        + K.cartoon_tip(get_cartoon("abdul tutor explaining"), "Abdul",
+        + K.cartoon_tip(get_cartoon("abdul tutor explaining"), "Subi",
                         "Time Trap Alert! 2 hours 15 minutes is 2.25 hours, NOT 2.15 hours! Always convert minutes to decimal hours by dividing by 60 before using speed formulas.")
         + K.fill_notes("Key Conversion Facts (e.g. 1 m&sup3; = 1,000 litres, 1 gallon = 4.55 litres)", 28)
     )
@@ -445,7 +445,7 @@ def build_mock_maths_l2():
             "<p style='font-size:18pt; font-weight:bold; border-bottom:2px solid var(--accent); display:inline-block; min-width:320px; padding-bottom:4px;'>&nbsp;</p>"
             "<p>has completed all 6 Official-Style Mock Examinations and demonstrated competence across all Pearson Edexcel Functional Skills Mathematics Level 2 standards.</p>"
             "<table style='width:100%; margin-top:20px; font-size:11pt; border-collapse:collapse;'>"
-            "<tr><td style='text-align:left;'><b>Lead Tutor:</b> Abdul</td><td style='text-align:right;'><b>Date Verified:</b> _______________</td></tr>"
+            "<tr><td style='text-align:left;'><b>Lead Tutor:</b> Subi</td><td style='text-align:right;'><b>Date Verified:</b> _______________</td></tr>"
             "<tr><td style='text-align:left;'><b>Average Mock Score:</b> ______ / 64</td><td style='text-align:right;'><b>Exam Centre:</b> Master Functional Skills</td></tr>"
             "</table>"
             "</div>",

@@ -378,7 +378,7 @@ def get_email_wireframe_svg():
   
   <!-- Sign-off & Attachment -->
   <text x="28" y="206" font-size="10.5" font-weight="700" fill="#475569">Kind regards,</text>
-  <text x="28" y="222" font-size="11" font-weight="900" fill="#0f172a">Abdul • Senior Lead Tutor</text>
+  <text x="28" y="222" font-size="11" font-weight="900" fill="#0f172a">Subi • Senior Lead Tutor</text>
   
   <rect x="28" y="234" width="220" height="22" rx="5" fill="#eff6ff" stroke="#bfdbfe"/>
   <text x="38" y="249" font-size="9.5" font-weight="700" fill="#1d4ed8">📎 Clinical_Proposal_Summary_v2.pdf</text>
@@ -392,7 +392,7 @@ def get_report_wireframe_svg():
   <!-- Report Title Header -->
   <rect x="16" y="12" width="428" height="46" rx="5" fill="#0f172a"/>
   <text x="28" y="30" font-size="11.5" font-weight="900" fill="#38bdf8">INVESTIGATION REPORT: HEALTH &amp; SAFETY AUDIT</text>
-  <text x="28" y="47" font-size="9" fill="#94a3b8">Target: Safety Executive • Date: October 2026 • Lead Tutor: Abdul</text>
+  <text x="28" y="47" font-size="9" fill="#94a3b8">Target: Safety Executive • Date: October 2026 • Lead Tutor: Subi</text>
   
   <!-- Section 1.0: Executive Summary -->
   <rect x="16" y="66" width="428" height="48" rx="5" fill="#f8fafc" stroke="#e2e8f0"/>
@@ -413,7 +413,7 @@ def get_report_wireframe_svg():
   <text x="26" y="200" font-size="10.5" font-weight="900" fill="#1e40af">3.0 Actionable Recommendations</text>
   <text x="36" y="215" font-size="9" font-weight="700" fill="#1e3a8a">• Clear all corridor emergency routes immediately (Priority 1)</text>
   <text x="36" y="229" font-size="9" font-weight="700" fill="#1e3a8a">• Deploy digital checklist app across shift handovers</text>
-  <text x="36" y="243" font-size="9" font-weight="700" fill="#1e3a8a">• Complete follow-up audit with Lead Tutor Abdul on Friday</text>
+  <text x="36" y="243" font-size="9" font-weight="700" fill="#1e3a8a">• Complete follow-up audit with Lead Tutor Subi on Friday</text>
 </svg>"""
 
 
@@ -473,7 +473,7 @@ def get_leaflet_wireframe_svg():
   <rect x="170" y="132" width="140" height="134" rx="4" fill="#f8fafc" stroke="#e2e8f0"/>
   <text x="240" y="156" font-size="9" font-weight="900" fill="#0f172a" text-anchor="middle">Student Testimonial</text>
   <text x="240" y="176" font-size="8" font-style="italic" fill="#475569" text-anchor="middle">"Passed first time with"</text>
-  <text x="240" y="190" font-size="8" font-style="italic" fill="#475569" text-anchor="middle">"Abdul's step-by-step drills!"</text>
+  <text x="240" y="190" font-size="8" font-style="italic" fill="#475569" text-anchor="middle">"Subi's step-by-step drills!"</text>
   
   <!-- Panel 3: Front Cover & Contact (Right) -->
   <rect x="330" y="12" width="140" height="32" rx="4" fill="#070d1e"/>
@@ -553,7 +553,7 @@ def get_digital_gui_svg():
   
   <text x="24" y="142" font-size="9" font-weight="700" fill="#38bdf8">📁 Functional_Skills_Revision/</text>
   <text x="36" y="160" font-size="8.5" fill="#cbd5e1">📄 Mock_Exam_Maths_L2.pdf</text>
-  <text x="36" y="176" font-size="8.5" fill="#cbd5e1">📄 Practice_Drills_Abdul.docx</text>
+  <text x="36" y="176" font-size="8.5" fill="#cbd5e1">📄 Practice_Drills_Subi.docx</text>
   <text x="36" y="192" font-size="8.5" fill="#cbd5e1">📄 Diagnostic_Tracker.xlsx</text>
   
   <!-- Window 2: Web Browser (Spacious Right) -->

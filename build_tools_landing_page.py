@@ -979,7 +979,7 @@ TOOLS_HTML = """<!DOCTYPE html>
         <span style="background:rgba(255, 255, 255, 0.15); color:#ffffff; font-size:0.8rem; font-weight:800; padding:4px 12px; border-radius:999px; text-transform:uppercase; letter-spacing:0.5px; display:inline-block; margin-bottom:12px;">Need Specialist 1-to-1 Support?</span>
         <h2 style="font-size:1.85rem; font-weight:900; line-height:1.25; margin-bottom:12px; color:#ffffff;">Book Private Tuition or an Official Online Exam</h2>
         <p style="font-size:0.95rem; color:#cbd5e1; line-height:1.6; margin:0;">
-          Work directly with specialist Functional Skills tutor Abdul and our expert team. Fast-track your qualification with bespoke 1-to-1 tuition, or sit your official Ofqual-regulated exam from home with invigilation and fast 14-day results.
+          Work directly with specialist Functional Skills tutor Subi and our expert team. Fast-track your qualification with bespoke 1-to-1 tuition, or sit your official Ofqual-regulated exam from home with invigilation and fast 14-day results.
         </p>
       </div>
 

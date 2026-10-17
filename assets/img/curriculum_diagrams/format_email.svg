@@ -26,7 +26,7 @@
   
   <!-- Sign-off & Attachment -->
   <text x="28" y="206" font-size="10.5" font-weight="700" fill="#475569">Kind regards,</text>
-  <text x="28" y="222" font-size="11" font-weight="900" fill="#0f172a">Abdul • Senior Lead Tutor</text>
+  <text x="28" y="222" font-size="11" font-weight="900" fill="#0f172a">Subi • Senior Lead Tutor</text>
   
   <rect x="28" y="234" width="220" height="22" rx="5" fill="#eff6ff" stroke="#bfdbfe"/>
   <text x="38" y="249" font-size="9.5" font-weight="700" fill="#1d4ed8">📎 Clinical_Proposal_Summary_v2.pdf</text>

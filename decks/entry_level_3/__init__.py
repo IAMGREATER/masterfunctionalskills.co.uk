@@ -672,7 +672,7 @@ CARDS = [
             <text x="200" y="25" font-size="12" font-weight="900" fill="#15803d" text-anchor="middle">M.I.N.T.S. CAPITAL LETTER CHECKLIST</text>
             <text x="25" y="52" font-size="10.5" font-weight="800" fill="#0f172a">M — Months &amp; Days: <tspan fill="#059669">Friday, November</tspan></text>
             <text x="25" y="74" font-size="10.5" font-weight="800" fill="#0f172a">I — The word 'I': <tspan fill="#059669">I work at the clinic.</tspan></text>
-            <text x="25" y="96" font-size="10.5" font-weight="800" fill="#0f172a">N — Names &amp; Places: <tspan fill="#059669">Abdul, Oxford, High Street</tspan></text>
+            <text x="25" y="96" font-size="10.5" font-weight="800" fill="#0f172a">N — Names &amp; Places: <tspan fill="#059669">Subi, Oxford, High Street</tspan></text>
             <text x="25" y="118" font-size="10.5" font-weight="800" fill="#0f172a">S — Start of Every Sentence (+ end with <tspan fill="#dc2626">.  ?  !</tspan>)</text>
           </g>
         </svg>"""

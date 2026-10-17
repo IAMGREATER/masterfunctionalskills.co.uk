@@ -138,7 +138,7 @@ LABS_CODE = '''
             + K.box_html(
                 "<div style='display:flex; justify-content:space-between; font-weight:bold; font-size:10pt;'>"
                 "<span>Lab Task Completed: [ &nbsp; ] Yes &emsp; [ &nbsp; ] In Progress</span>"
-                "<span>Lead Tutor Verification: Abdul &bull; ____________________</span>"
+                "<span>Lead Tutor Verification: Subi &bull; ____________________</span>"
                 "</div>",
                 title="Software Lab Sign-Off &amp; Competency Endorsement"
             )

@@ -1964,7 +1964,7 @@ def build_english_e3_core():
 
         ("Reading Emails from Work or College", "Understanding the sender's purpose, key dates, and instructions in an email.", "laptop email screen inbox reading",
          "Email: Student ID Cards and Enrolment Confirmation",
-         "Dear Learner, Welcome to Oxford City College. Your functional skills induction takes place on Monday 15 September at 09:30 in Room B14. Please bring your photographic ID (passport or driving licence) so reception can issue your electronic security lanyard. If you cannot attend, notify your tutor Abdul on 01865 554100.",
+         "Dear Learner, Welcome to Oxford City College. Your functional skills induction takes place on Monday 15 September at 09:30 in Room B14. Please bring your photographic ID (passport or driving licence) so reception can issue your electronic security lanyard. If you cannot attend, notify your tutor Subi on 01865 554100.",
          [("1.", "What room does the induction take place in? [1 mark]"),
           ("2.", "What document must you bring to reception? [1 mark]"),
           ("3.", "What telephone number should you call if you cannot attend? [1 mark]"),
@@ -2155,7 +2155,7 @@ def build_english_e3_core():
         ("Writing an Email to a Tutor or Manager",
          "Format an email with a clear subject line, polite greeting (Dear / Hello), clear message, and polite sign-off.",
          "Writing an Email to Request Course Notes",
-         "Write a short email (30–40 words) to your tutor Abdul. In your email you must:<br>"
+         "Write a short email (30–40 words) to your tutor Subi. In your email you must:<br>"
          "&bull; State the subject clearly.<br>"
          "&bull; Explain that you missed Tuesday's class due to an appointment.<br>"
          "&bull; Ask for the maths revision worksheet.<br>"
@@ -2563,7 +2563,7 @@ def build_english_e3_core():
     READING_E3_SOLUTIONS = {
         1: ["Assembly Point B is located on the south car park.", "The routine alarm is tested every Tuesday at 10:00am.", "The fire warden for Bay 4 is Mrs Helen Patel.", "You must NOT use the lifts during an evacuation."],
         2: ["The community garden reopens on Saturday 11 October at 10:00am.", "Free gardening gloves and seed packets are provided for all attendees.", "A sensory garden with raised vegetable beds has been built.", "Tea and homemade cakes will be served in the pavilion."],
-        3: ["The functional skills induction takes place in Room B14.", "You must bring your photographic ID (passport or driving licence) to reception.", "If you cannot attend, call your tutor Abdul on 01865 554100.", "Reception will issue an electronic security lanyard."],
+        3: ["The functional skills induction takes place in Room B14.", "You must bring your photographic ID (passport or driving licence) to reception.", "If you cannot attend, call your tutor Subi on 01865 554100.", "Reception will issue an electronic security lanyard."],
         4: ["The green READY light shows the machine is ready to use.", "The sealed edge of the pouch must enter the machine first.", "Allow the hot laminated document to cool on the rear flat tray for 60 seconds.", "The machine takes 4 minutes to heat up."],
         5: ["The telephone number for course advice is 01865 240100.", "The Citizens Advice Bureau provides legal & financial support.", "Call 01865 248900 for emergency dental access appointments.", "The public library loans service is listed last in alphabetical order."],
         6: ["All annual leave booking forms must be submitted by Friday 28 November.", "Submit your signed booking form to line manager David Clark.", "A maximum of two staff members per department may take leave during peak weeks.", "Late submissions will not be approved."],

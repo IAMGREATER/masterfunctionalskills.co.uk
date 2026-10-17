@@ -80,7 +80,7 @@ ENGLISH_L2_MOCK_SOLUTIONS[6] = [
      "&bull; Q5: Alleviating the physical strain, exhaustion, and financial embarrassment of arduous hospital commutes for frail patients.<br>"
      "&bull; Q6-9: Synthesises clinical throughput gains in Text A with ethical equity warnings in Text B.<br><br>"
      "<b>Writing Task 1 Model (Executive Hospital Briefing Memo):</b><br>"
-     "Structured memo header (To: Board of Directors; From: Abdul, Patient Services Analyst; Date: 14 October 2026; Subject: Hybrid Outpatient Strategy Evaluation). Four numbered headings, data tables, risk mitigation matrix, and definitive recommendation for a 50/50 hybrid balance.<br><br>"
+     "Structured memo header (To: Board of Directors; From: Subi, Patient Services Analyst; Date: 14 October 2026; Subject: Hybrid Outpatient Strategy Evaluation). Four numbered headings, data tables, risk mitigation matrix, and definitive recommendation for a 50/50 hybrid balance.<br><br>"
      "<b>Writing Task 2 Model (Persuasive Newspaper Opinion Feature):</b><br>"
      "Title: <i>'Compassion Before Screens: Why Healthcare Needs Warm Hands, Not Just Smart Devices'</i>. Emotive opening, rhetorical questions, tri-colon ('confused, abandoned, and ignored'), counter-argument acknowledging IT efficiency, and rousing plea for community solidarity.")
 ]

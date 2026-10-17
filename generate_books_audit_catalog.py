@@ -102,7 +102,7 @@ def get_email_wireframe_svg():
   
   <!-- Sign-off & Attachment -->
   <text x="28" y="206" font-size="10.5" font-weight="700" fill="#475569">Kind regards,</text>
-  <text x="28" y="222" font-size="11" font-weight="900" fill="#0f172a">Abdul &bull; Senior Lead Tutor</text>
+  <text x="28" y="222" font-size="11" font-weight="900" fill="#0f172a">Subi &bull; Senior Lead Tutor</text>
   
   <rect x="28" y="234" width="220" height="22" rx="5" fill="#eff6ff" stroke="#bfdbfe"/>
   <text x="38" y="249" font-size="9.5" font-weight="700" fill="#1d4ed8">📎 Clinical_Proposal_Summary_v2.pdf</text>
@@ -157,7 +157,7 @@ def get_report_wireframe_svg():
   <!-- Report Title Header -->
   <rect x="16" y="12" width="428" height="46" rx="5" fill="#0f172a"/>
   <text x="28" y="30" font-size="11.5" font-weight="900" fill="#38bdf8">INVESTIGATION REPORT: HEALTH &amp; SAFETY AUDIT</text>
-  <text x="28" y="47" font-size="9" fill="#94a3b8">Target: Safety Executive &bull; Date: October 2026 &bull; Lead Tutor: Abdul</text>
+  <text x="28" y="47" font-size="9" fill="#94a3b8">Target: Safety Executive &bull; Date: October 2026 &bull; Lead Tutor: Subi</text>
   
   <!-- Section 1.0: Executive Summary -->
   <rect x="16" y="66" width="428" height="48" rx="5" fill="#f8fafc" stroke="#e2e8f0"/>
@@ -178,7 +178,7 @@ def get_report_wireframe_svg():
   <text x="26" y="200" font-size="10.5" font-weight="900" fill="#1e40af">3.0 Actionable Recommendations</text>
   <text x="36" y="215" font-size="9" font-weight="700" fill="#1e3a8a">&bull; Clear all corridor emergency routes immediately (Priority 1)</text>
   <text x="36" y="229" font-size="9" font-weight="700" fill="#1e3a8a">&bull; Deploy digital checklist app across shift handovers</text>
-  <text x="36" y="243" font-size="9" font-weight="700" fill="#1e3a8a">&bull; Complete follow-up audit with Lead Tutor Abdul on Friday</text>
+  <text x="36" y="243" font-size="9" font-weight="700" fill="#1e3a8a">&bull; Complete follow-up audit with Lead Tutor Subi on Friday</text>
 </svg>"""
 
 def get_bksb_misconception_svg():
@@ -280,7 +280,7 @@ def get_leaflet_wireframe_svg():
   <rect x="170" y="132" width="140" height="134" rx="4" fill="#f8fafc" stroke="#e2e8f0"/>
   <text x="240" y="156" font-size="9" font-weight="900" fill="#0f172a" text-anchor="middle">Student Testimonial</text>
   <text x="240" y="176" font-size="8" font-style="italic" fill="#475569" text-anchor="middle">"Passed first time with"</text>
-  <text x="240" y="190" font-size="8" font-style="italic" fill="#475569" text-anchor="middle">"Abdul's step-by-step drills!"</text>
+  <text x="240" y="190" font-size="8" font-style="italic" fill="#475569" text-anchor="middle">"Subi's step-by-step drills!"</text>
   
   <!-- Panel 3: Front Cover & Contact (Right) -->
   <rect x="330" y="12" width="140" height="32" rx="4" fill="#070d1e"/>
@@ -314,7 +314,7 @@ def get_digital_gui_svg():
   
   <text x="24" y="142" font-size="9" font-weight="700" fill="#38bdf8">📁 Functional_Skills_Revision/</text>
   <text x="36" y="160" font-size="8.5" fill="#cbd5e1">📄 Mock_Exam_Maths_L2.pdf</text>
-  <text x="36" y="176" font-size="8.5" fill="#cbd5e1">📄 Practice_Drills_Abdul.docx</text>
+  <text x="36" y="176" font-size="8.5" fill="#cbd5e1">📄 Practice_Drills_Subi.docx</text>
   <text x="36" y="192" font-size="8.5" fill="#cbd5e1">📄 Diagnostic_Tracker.xlsx</text>
   
   <!-- Window 2: Web Browser (Spacious Right) -->
@@ -432,7 +432,7 @@ def get_flashcard_mockup_svg():
   <text x="268" y="138" font-size="8.5" font-weight="800" fill="#92400e">Step 2: £360 &divide; 1.20 = £300.00 ✓</text>
   
   <rect x="260" y="166" width="190" height="54" rx="5" fill="#dcfce7" stroke="#86efac"/>
-  <text x="355" y="186" font-size="9" font-weight="900" fill="#166534" text-anchor="middle">Tutor Sign-Off: Abdul ✓</text>
+  <text x="355" y="186" font-size="9" font-weight="900" fill="#166534" text-anchor="middle">Tutor Sign-Off: Subi ✓</text>
   <text x="355" y="204" font-size="8" fill="#15803d" text-anchor="middle">Master Functional Skills Apprenticeships</text>
 </svg>"""
 
@@ -523,7 +523,7 @@ AUDIT_ITEMS = [
         "current_type": "img",
         "current_file": "assets/img/books/3d_maths_e3_core.png",
         "issue": "Rich Crimson Red (#991b1b) is good, but typography should be larger and friendlier to reduce math anxiety.",
-        "proposed_concept": "Warm Crimson Red with sunny gold accents, friendly rounded Lexend 14pt typography, and cartoon tutor Abdul welcoming learners.",
+        "proposed_concept": "Warm Crimson Red with sunny gold accents, friendly rounded Lexend 14pt typography, and cartoon tutor Subi welcoming learners.",
         "recommended_action": "Incorporate friendly supportive visual cues for adult learners returning to study.",
         "tags": ["A4 Print Spec", "92 Pages", "Crimson Red", "Entry 3"]
     },
@@ -667,7 +667,7 @@ AUDIT_ITEMS = [
         "current_type": "img",
         "current_file": "assets/img/books/3d_spag_mastery.png",
         "issue": "Imperial Royal Violet (#581c87) with Warm Gold is striking. Ensure Murphy cartoon styling is credited.",
-        "proposed_concept": "Imperial Royal Violet with gold lettering, featuring Murphy-style cartoon tutor Abdul and Priya speech bubbles.",
+        "proposed_concept": "Imperial Royal Violet with gold lettering, featuring Murphy-style cartoon tutor Subi and Priya speech bubbles.",
         "recommended_action": "Showcase Murphy spread cartoon approach directly on front and back covers.",
         "tags": ["A4 Print Spec", "84 Pages", "Royal Violet", "SPaG Mastery"]
     },
@@ -1297,14 +1297,14 @@ AUDIT_ITEMS = [
         "suite": "cartoons",
         "subject": "cartoons",
         "type": "cartoon",
-        "topic": "Tutor Abdul: Concept Explanations & Exam Strategy",
+        "topic": "Tutor Subi: Concept Explanations & Exam Strategy",
         "context": "Speech bubbles, Golden Rules, and diagnostic walkthroughs across all books.",
         "current_visual": "assets/img/book_cartoons/abdul_explaining.png",
         "current_type": "img",
         "current_file": "assets/img/book_cartoons/abdul_explaining.png",
-        "issue": "Abdul's character portrait is clean and approachable. Ensure consistent speech bubble typography (Lexend 13pt) beside character in all Murphy spreads.",
-        "proposed_concept": "Abdul in clean navy cardigan with smart tutor lanyard, gesturing towards whiteboard sketch graphics with supportive speech bubble.",
-        "recommended_action": "Maintain Abdul as lead authoritative pedagogical voice across both print books and website.",
+        "issue": "Subi's character portrait is clean and approachable. Ensure consistent speech bubble typography (Lexend 13pt) beside character in all Murphy spreads.",
+        "proposed_concept": "Subi in clean navy cardigan with smart tutor lanyard, gesturing towards whiteboard sketch graphics with supportive speech bubble.",
+        "recommended_action": "Maintain Subi as lead authoritative pedagogical voice across both print books and website.",
         "tags": ["Lead Tutor", "Murphy Style", "Consistent Voice", "Exam Strategy"]
     },
     {
@@ -1367,7 +1367,7 @@ AUDIT_ITEMS = [
         "current_type": "img",
         "current_file": "assets/img/book_cartoons/sam_thinking.png",
         "issue": "Sam represents the adult learner returning to education after many years.",
-        "proposed_concept": "Sam with study notebook, asking the questions every hesitant learner wants to ask, followed by Abdul's encouraging breakdown.",
+        "proposed_concept": "Sam with study notebook, asking the questions every hesitant learner wants to ask, followed by Subi's encouraging breakdown.",
         "recommended_action": "Validates learner doubts and dismantles math anxiety in early units.",
         "tags": ["Adult Learner", "Confidence Building", "Overcoming Anxiety", "Entry 3"]
     }

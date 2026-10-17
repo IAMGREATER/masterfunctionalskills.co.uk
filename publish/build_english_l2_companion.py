@@ -81,7 +81,7 @@ def generate_l2_companion_html():
 
     <div style="margin-top:20px; border-top:1px solid #1e3a8a; padding-top:12px; display:flex; justify-content:space-between; font-size:8.5pt; color:#94a3b8; text-align:left;">
       <div>
-        <strong>Curriculum Lead:</strong> Saboor Abdul (Tutor Abdul)<br>
+        <strong>Curriculum Lead:</strong> Subi (Tutor Subi)<br>
         Functional Skills English Specialist &bull; masterfunctionalskills.co.uk
       </div>
       <div style="text-align:right;">

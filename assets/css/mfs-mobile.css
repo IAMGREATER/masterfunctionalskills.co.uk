@@ -507,12 +507,13 @@
     box-sizing: border-box !important;
   }
 
-  /* HERO IMAGE & SHOWCASE CARD (MOBILE/TABLET) - TALLER FOR FULL FACE SONYA */
+  /* HERO IMAGE & SHOWCASE CARD (MOBILE/TABLET) - SQUARE */
   .hero-square-showcase {
     min-height: unset !important;
-    height: 480px !important;
+    height: auto !important;
+    width: 100% !important;
     max-width: 440px !important;
-    aspect-ratio: auto !important;
+    aspect-ratio: 1 / 1 !important;
     border-radius: 20px !important;
     margin: 16px auto !important;
   }
@@ -521,7 +522,7 @@
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
-    object-position: center top !important;
+    object-position: center center !important;
   }
 
   .hero-showcase-top-pills {
@@ -1571,16 +1572,22 @@
   /* ------------------------------------------------------------------------
      SMARTPHONE HERO IMAGE, AWARDING BODIES & REVISION CARDS OPTIMIZATION
      ------------------------------------------------------------------------ */
-  /* Hero Image on Smartphone: Taller at 280px for full face visibility */
+  /* Hero Image on Smartphone: Square aspect ratio so full image is visible */
   .hero-square-showcase {
-    height: 280px !important;
-    max-width: 100% !important;
-    border-radius: 14px !important;
-    margin: 8px auto 0 !important;
+    width: 100% !important;
+    max-width: 360px !important;
+    height: auto !important;
+    min-height: unset !important;
+    aspect-ratio: 1 / 1 !important;
+    border-radius: 16px !important;
+    margin: 10px auto 0 !important;
   }
 
   .hero-showcase-img {
-    object-position: center top !important;
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center center !important;
   }
 
   .hero-showcase-top-pills {

@@ -1,0 +1,1822 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-theme="sapphire" data-tint="cream">
+<head>
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Digital Functional Skills Level 1 Revision: Rules, Worked Models &amp; Exam Practice | Master Functional Skills</title>
+  <meta name="description" content="Dyslexia-friendly Pearson Edexcel Digital Functional Skills Level 1 revision guide. Spreadsheets (=SUM, =AVERAGE), cloud file management, GDPR email BCC netiquette, cybersecurity, and interactive practice.">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192x192.png">
+  <link rel="apple-touch-icon" href="assets/img/favicon-192x192.png">
+  <link rel="shortcut icon" href="favicon.ico">
+  <link rel="stylesheet" href="assets/css/mfs-theme.css">
+  <link rel="stylesheet" href="assets/css/mfs-revision.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+  <!-- TOP TRUST BAR WITH ACCESSIBILITY & CONTACT -->
+  <div class="mfs-top-bar">
+    <div class="mfs-container mfs-top-bar-inner">
+      <div class="top-trust-items">
+        <span class="top-trust-item"><i class="fa-solid fa-building-columns"></i> Pearson Edexcel &amp; City &amp; Guilds Aligned</span>
+        <span class="top-trust-item" style="color:#f59e0b;"><i class="fa-solid fa-graduation-cap"></i> Moodle LMS E-Learning Portal Ready</span>
+      </div>
+      <div class="top-contacts">
+        <div class="mfs-access-bar">
+          <!-- DYSLEXIA BACKGROUND TINT PICKER -->
+          <div class="mfs-tint-dropdown-wrap">
+            <button type="button" id="tintToggle" class="btn-tint-toggle" onclick="toggleTintMenu(event)" title="Change dyslexia background tint">
+              <span class="tint-swatch-indicator" id="tintCurrentSwatch"></span>
+              <span id="tintLabel">Cream Tint</span>
+              <i class="fa-solid fa-chevron-down" style="font-size:0.62rem; opacity:0.75; margin-left:2px;"></i>
+            </button>
+            <div id="tintMenu" class="tint-picker-menu">
+              <div class="tint-picker-title"><i class="fa-solid fa-glasses"></i> Dyslexia Reading Tint</div>
+              <button type="button" class="tint-option-btn active" data-tint="cream" onclick="setSiteTint('cream', event)">
+                <span class="swatch swatch-cream"></span>
+                <span class="tint-name">Cream <small class="tint-badge-def">Default</small></span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="peach" onclick="setSiteTint('peach', event)">
+                <span class="swatch swatch-peach"></span>
+                <span class="tint-name">Soft Peach</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="cool" onclick="setSiteTint('cool', event)">
+                <span class="swatch swatch-cool"></span>
+                <span class="tint-name">Cool Mist</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="sage" onclick="setSiteTint('sage', event)">
+                <span class="swatch swatch-sage"></span>
+                <span class="tint-name">Soft Sage</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <div class="tint-divider"></div>
+              <button type="button" class="tint-option-btn" data-tint="none" onclick="setSiteTint('none', event)">
+                <span class="swatch swatch-none"></span>
+                <span class="tint-name">No Tint (White)</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+            </div>
+          </div>
+          <button id="dyslexiaToggle" class="btn-dyslexia-toggle" onclick="toggleDyslexiaMode()" title="Toggle Dyslexia High-Readability Mode">
+            <i class="fa-solid fa-universal-access"></i> Dyslexia
+          </button>
+          <button id="themeToggle" class="mfs-theme-pill" onclick="toggleTheme()" title="Switch Palette: Sapphire vs Emerald">
+            <i class="fa-solid fa-palette"></i> <span id="themeLabel">Sapphire</span>
+          </button>
+        </div>
+        <a href="contact-us.html" class="top-contact-link"><i class="fa-solid fa-envelope"></i> <strong>Contact Us</strong></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->
+  <header class="mfs-navbar">
+    <div class="revision-page-wrapper mfs-navbar-inner">
+      <a href="index.html" class="mfs-brand">
+        <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div class="mfs-brand-text">
+          <div class="mfs-brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
+          <div class="mfs-brand-subtitle">Delivering Skills &bull; Achieving Goals</div>
+        </div>
+      </a>
+
+      <nav class="mfs-nav-wrapper">
+        <ul class="mfs-nav-menu">
+          <!-- 1. SUBJECTS (VISUAL MEGA-MENU) -->
+          <li class="mfs-nav-item">
+            <a href="revise.html" class="mfs-nav-link active">
+              <i class="fa-solid fa-book-open-reader" style="color:#0284c7; margin-right:5px;"></i> Subjects <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-revision-hub">
+              <div class="mfs-revision-grid">
+                <div class="mfs-revision-col mfs-revision-col-maths">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-calculator"></i> Maths Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="functional-skills-maths-level-2.html" class="mfs-dropdown-item">Maths Level 2</a>
+                    <a href="functional-skills-maths-level-1.html" class="mfs-dropdown-item">Maths Level 1</a>
+                    <a href="entry-level-3-maths.html" class="mfs-dropdown-item">Entry Level 3 Maths</a>
+                  </div>
+                </div>
+                <div class="mfs-revision-col mfs-revision-col-english">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-pen-nib"></i> English Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="functional-skills-english-level-2.html" class="mfs-dropdown-item">English Level 2</a>
+                    <a href="functional-skills-english-level-1.html" class="mfs-dropdown-item">English Level 1</a>
+                  </div>
+                </div>
+                <div class="mfs-revision-col mfs-revision-col-digital">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-laptop-code"></i> Digital Skills</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="digital-functional-skills-level-1.html" class="mfs-dropdown-item">Digital Skills Level 1</a>
+                    <a href="entry-level-3-digital-skills.html" class="mfs-dropdown-item">Entry 3 Digital Skills</a>
+                    <a href="digital-functional-skills.html" class="mfs-dropdown-item">Digital Skills Hub</a>
+                    <a href="digital-functional-skills-mock-exam.html" class="mfs-dropdown-item">Pearson Mock Exam</a>
+                    <a href="digital-functional-skills-past-papers.html" class="mfs-dropdown-item">Past Papers &amp; Files</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </li>
+
+          <!-- 2. ONLINE COURSES -->
+          <li class="mfs-nav-item">
+            <a href="courses.html" class="mfs-nav-link">
+              <i class="fa-solid fa-graduation-cap" style="color:#0284c7; margin-right:5px;"></i> Online Courses
+            </a>
+          </li>
+
+          <!-- 3. PAST PAPERS -->
+          <li class="mfs-nav-item">
+            <a href="functional-skills-past-papers.html" class="mfs-nav-link">
+              <i class="fa-regular fa-file-lines" style="color:#0284c7; margin-right:5px;"></i> Past Papers
+            </a>
+          </li>
+
+          <!-- 4. WORKSHEETS DIRECTORY -->
+          <li class="mfs-nav-item">
+            <a href="worksheets.html" class="mfs-nav-link">
+              <i class="fa-solid fa-layer-group" style="color:#0284c7; margin-right:5px;"></i> Worksheets
+            </a>
+          </li>
+
+          <!-- 5. FREE TOOLS -->
+          <li class="mfs-nav-item">
+            <a href="tools.html" class="mfs-nav-link">
+              <i class="fa-solid fa-screwdriver-wrench" style="color:#0284c7; margin-right:5px;"></i> Free Tools <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-compact">
+              <a href="tools.html" class="mfs-dropdown-item" style="font-weight:700; color:var(--accent);"><i class="fa-solid fa-layer-group" style="font-size:0.85rem; margin-right:6px;"></i> All Free Tools &amp; Simulators &rarr;</a>
+              <div class="mfs-dropdown-divider" style="margin:4px 0; border-top:1px solid #e2e8f0;"></div>
+              <a href="pass-mark-calculator.html" class="mfs-dropdown-item"><i class="fa-solid fa-calculator" style="color:var(--accent); font-size:0.85rem; margin-right:6px;"></i> Pass Mark Calculator</a>
+              <a href="diagnostic-test.html" class="mfs-dropdown-item"><i class="fa-solid fa-chart-pie" style="color:#059669; font-size:0.85rem; margin-right:6px;"></i> Diagnostic Skill Checker</a>
+              <a href="functional-skills-nets.html" class="mfs-dropdown-item"><i class="fa-solid fa-cube" style="color:#0284c7; font-size:0.85rem; margin-right:6px;"></i> 3D Net Folding Tool</a>
+              <a href="digital-functional-skills-mock-exam.html" class="mfs-dropdown-item"><i class="fa-solid fa-laptop-code" style="color:#0284c7; font-size:0.85rem; margin-right:6px;"></i> Digital Exam Simulator</a>
+              <a href="video-solution.html" class="mfs-dropdown-item"><i class="fa-solid fa-circle-play" style="color:#ef4444; font-size:0.85rem; margin-right:6px;"></i> Video Walkthrough Station</a>
+            </div>
+          </li>
+
+          <!-- 6. REVISION CARDS -->
+          <li class="mfs-nav-item">
+            <a href="revision-cards.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-layer-group" style="color:#d97706; margin-right:5px;"></i> Revision Cards
+            </a>
+          </li>
+
+          <!-- 7. SHOP -->
+          <li class="mfs-nav-item">
+            <a href="shop.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-basket-shopping" style="color:#d97706; margin-right:5px;"></i> Shop
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- 8. BOOK EXAM ACTION BUTTON -->
+      <div class="mfs-nav-actions">
+        <a href="exams.html" class="btn-nav-exam">
+          <i class="fa-solid fa-calendar-check"></i> Book Exam
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- BREADCRUMBS -->
+  <div class="revision-breadcrumb-bar">
+    <div class="revision-page-wrapper">
+      <div class="revision-breadcrumbs">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a href="revise.html">Revise Hub</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a href="digital-functional-skills.html">Digital Skills</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a href="digital-functional-skills-level-1.html">DFS Level 1 Directory</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span class="current">Level 1 Revision Guide</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO SECTION WITH TITLE AND REAL PHOTOGRAPH -->
+  <section class="revision-hero-card">
+    <div class="revision-page-wrapper">
+      <div class="revision-hero-grid">
+        <div class="revision-hero-content">
+          <div class="revision-hero-pill-row">
+            <span class="badge-pill-accent"><i class="fa-solid fa-laptop-code"></i> DIGITAL FUNCTIONAL SKILLS</span>
+            <span class="badge-pill-gold">LEVEL 1 (WORKPLACE STANDARD)</span>
+            <span class="badge-pill-outline">PEARSON EDEXCEL SPECIFICATION</span>
+          </div>
+
+          <h1 class="revision-hero-title">
+            Functional Skills Digital Level 1: <span>Rules, Worked Models &amp; Exam Practice</span>
+          </h1>
+
+          <p class="revision-hero-desc">
+            The complete, in-depth revision guide for Pearson Edexcel Digital Functional Skills (DFS) Level 1. Master hierarchical cloud folders, advanced spreadsheet formulas (=SUM, =AVERAGE, =COUNT), data sorting, BCC email privacy under UK GDPR, cybersecurity defense, and official worked exam models.
+          </p>
+
+          <div class="revision-hero-meta-bar">
+            <div class="hero-meta-item">
+              <i class="fa-solid fa-clock"></i> <strong>Est. Study Time:</strong> 45-60 Mins
+            </div>
+            <div class="hero-meta-item">
+              <i class="fa-solid fa-book-open"></i> <strong>Curriculum Standards:</strong> 32 Regulated Pearson Points
+            </div>
+            <div class="hero-meta-item">
+              <i class="fa-solid fa-circle-check"></i> <strong>Interactive Practice Tasks Included</strong>
+            </div>
+
+            <div class="hero-quick-actions" style="gap:10px; margin-top:16px;">
+              <a href="#moodle-pricing" class="btn-hero-action" style="background:#f59e0b; color:#0f172a; font-weight:800; border-color:#f59e0b;">
+                <i class="fa-solid fa-graduation-cap"></i> Enrol in Moodle Course (&pound;99)
+              </a>
+              <a href="exams.html" class="btn-hero-action" style="background:#10b981; color:#ffffff; font-weight:800; border-color:#10b981;">
+                <i class="fa-solid fa-calendar-check"></i> Book Pearson Exam (&pound;149)
+              </a>
+              <a href="#practice-questions" class="btn-hero-action-secondary">
+                <i class="fa-solid fa-pencil"></i> Free Practice Tasks
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- RIGHT HERO PHOTO CARD -->
+        <div class="revision-hero-visual-card">
+          <div class="revision-hero-img-wrap">
+            <img src="assets/img/book_photos/charts_data_screens/tablet_spreadsheet.jpg" alt="Functional Skills Digital Level 1 Spreadsheets, Formulas and Workplace Systems" loading="lazy" />
+          </div>
+          <div class="revision-hero-caption-bar">
+            <strong><i class="fa-solid fa-shapes"></i> Key Visual Concept</strong>
+            Workplace spreadsheets, automated formulas (=SUM, =AVERAGE), cloud file management, and GDPR digital security.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOBILE TABLE OF CONTENTS BAR -->
+  <div class="mobile-toc-bar">
+    <div style="font-weight:700; color:var(--navy-dark); font-size:0.9rem;">
+      <i class="fa-solid fa-list-check" style="color:var(--accent);"></i> Level 1 Digital Blueprint
+    </div>
+    <button type="button" class="btn-mobile-toc" onclick="toggleMobileToc()">
+      <span>Table of Contents</span> <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+
+  <!-- MAIN 2-COLUMN RESPONSIVE LAYOUT -->
+  <main class="revision-page-wrapper revision-layout">
+    <!-- LEFT COLUMN: STICKY TOC SIDEBAR -->
+    <aside class="revision-sidebar" id="sidebarNav">
+      <div class="sidebar-toc-title">
+        <span>Table of Contents</span>
+        <span style="font-size:0.75rem; color:#64748b; font-weight:700;">14 Sections</span>
+      </div>
+
+      <ul class="sidebar-toc-list" id="tocList">
+        <li>
+          <a href="#moodle-lms" class="sidebar-toc-link" style="color:#0284c7; font-weight:700;">
+            <i class="fa-solid fa-graduation-cap"></i> Moodle LMS Portal
+          </a>
+        </li>
+        <li>
+          <a href="#moodle-pricing" class="sidebar-toc-link" style="color:#d97706; font-weight:700;">
+            <i class="fa-solid fa-tag"></i> Course &amp; Exam Pricing
+          </a>
+        </li>
+        <li>
+          <a href="#specification" class="sidebar-toc-link active">
+            <i class="fa-solid fa-clipboard-check"></i> Specification &amp; Mapping
+          </a>
+        </li>
+        <li>
+          <a href="#golden-rules" class="sidebar-toc-link">
+            <i class="fa-solid fa-lightbulb"></i> Golden Rules (Level 1)
+          </a>
+        </li>
+        <li>
+          <a href="#skill-1" class="sidebar-toc-link">
+            <i class="fa-solid fa-folder-tree"></i> 1. Using Devices (6 Topics)
+          </a>
+        </li>
+        <li>
+          <a href="#skill-2" class="sidebar-toc-link">
+            <i class="fa-solid fa-table-cells"></i> 2. Creating &amp; Editing (12 Topics)
+          </a>
+        </li>
+        <li>
+          <a href="#skill-3" class="sidebar-toc-link">
+            <i class="fa-solid fa-users-gear"></i> 3. Communicating (7 Topics)
+          </a>
+        </li>
+        <li>
+          <a href="#skill-4" class="sidebar-toc-link">
+            <i class="fa-solid fa-shield-halved"></i> 4. Transacting (4 Topics)
+          </a>
+        </li>
+        <li>
+          <a href="#skill-5" class="sidebar-toc-link">
+            <i class="fa-solid fa-lock"></i> 5. Being Safe Online (3 Topics)
+          </a>
+        </li>
+        <li>
+          <a href="#worked-exam-models" class="sidebar-toc-link">
+            <i class="fa-solid fa-graduation-cap"></i> Worked Exam Models
+          </a>
+        </li>
+        <li>
+          <a href="#examiner-traps" class="sidebar-toc-link">
+            <i class="fa-solid fa-triangle-exclamation"></i> Examiner Traps
+          </a>
+        </li>
+        <li>
+          <a href="#practice-questions" class="sidebar-toc-link">
+            <i class="fa-solid fa-pencil"></i> Interactive Practice
+          </a>
+        </li>
+        <li>
+          <a href="#employers" class="sidebar-toc-link" style="color:#15803d; font-weight:700;">
+            <i class="fa-solid fa-building"></i> Employer Cohorts
+          </a>
+        </li>
+        <li>
+          <a href="#downloads" class="sidebar-toc-link">
+            <i class="fa-solid fa-file-pdf"></i> Downloads &amp; Past Papers
+          </a>
+        </li>
+      </ul>
+    </aside>
+
+    <!-- RIGHT COLUMN: MAIN LEARNING CONTENT -->
+    <div class="revision-content">
+
+      <!-- MOODLE LMS E-LEARNING PORTAL SHOWCASE -->
+      <section id="moodle-lms" class="revision-section" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%); border-radius:18px; padding:32px; color:#ffffff; border:2px solid #38bdf8; box-shadow:0 12px 30px rgba(15,23,42,0.15); margin-bottom:36px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-bottom:20px; border-bottom:1px solid #334155; padding-bottom:16px;">
+          <div>
+            <span style="background:#f59e0b; color:#0f172a; font-weight:800; font-size:0.75rem; padding:4px 12px; border-radius:999px; text-transform:uppercase; letter-spacing:0.06em;">
+              <i class="fa-solid fa-graduation-cap"></i> MASTER FUNCTIONAL SKILLS MOODLE LMS
+            </span>
+            <h3 style="color:#ffffff; font-size:1.6rem; margin:10px 0 4px 0;">Interactive Moodle E-Learning Portal</h3>
+            <p style="color:#94a3b8; font-size:0.95rem; margin:0;">Autonomous 24/7 cloud training platform calibrated for Pearson Edexcel Level 1.</p>
+          </div>
+          <div style="display:flex; gap:10px; flex-wrap:wrap;">
+            <a href="courses.html?enrol=dfs-l1" class="btn-hero-action" style="background:#f59e0b; color:#0f172a; font-weight:800; border-color:#f59e0b; padding:10px 20px; font-size:0.92rem;">
+              <i class="fa-solid fa-right-to-bracket"></i> Enrol in Moodle Course (&pound;99)
+            </a>
+            <a href="digital-functional-skills-mock-exam.html" class="btn-hero-action-secondary" style="border-color:#38bdf8; color:#38bdf8; padding:10px 18px; font-size:0.92rem;">
+              <i class="fa-solid fa-desktop"></i> Try Course Demo
+            </a>
+          </div>
+        </div>
+
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:16px;">
+          <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:16px;">
+            <div style="font-size:1.3rem; color:#38bdf8; margin-bottom:6px;"><i class="fa-solid fa-list-check"></i></div>
+            <h4 style="color:#ffffff; margin:0 0 4px 0; font-size:1rem;">80+ Skill Quizzes</h4>
+            <p style="color:#cbd5e1; font-size:0.85rem; margin:0; line-height:1.5;">Auto-marked questions testing every standard with instant diagnostic feedback.</p>
+          </div>
+
+          <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:16px;">
+            <div style="font-size:1.3rem; color:#4ade80; margin-bottom:6px;"><i class="fa-solid fa-chart-pie"></i></div>
+            <h4 style="color:#ffffff; margin:0 0 4px 0; font-size:1rem;">Live Progress Tracker</h4>
+            <p style="color:#cbd5e1; font-size:0.85rem; margin:0; line-height:1.5;">Visual dashboard tracking your 0% to 100% completion across all 5 skill areas.</p>
+          </div>
+
+          <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:16px;">
+            <div style="font-size:1.3rem; color:#facc15; margin-bottom:6px;"><i class="fa-solid fa-file-zipper"></i></div>
+            <h4 style="color:#ffffff; margin:0 0 4px 0; font-size:1rem;">Starter Practice Files</h4>
+            <p style="color:#cbd5e1; font-size:0.85rem; margin:0; line-height:1.5;">Work through realistic starter spreadsheets (.xlsx) and Word briefs matching the exam.</p>
+          </div>
+
+          <div style="background:rgba(255,255,255,0.05); border:1px solid rgba(255,255,255,0.1); border-radius:12px; padding:16px;">
+            <div style="font-size:1.3rem; color:#a78bfa; margin-bottom:6px;"><i class="fa-solid fa-comments"></i></div>
+            <h4 style="color:#ffffff; margin:0 0 4px 0; font-size:1rem;">Tutor Messaging</h4>
+            <p style="color:#cbd5e1; font-size:0.85rem; margin:0; line-height:1.5;">Message specialist tutor Abdul directly within your Moodle LMS dashboard.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- SPECIFICATION & MAPPING -->
+      <section id="specification" class="revision-section">
+        <div class="section-header-row">
+          <h2 class="section-title"><i class="fa-solid fa-clipboard-check"></i> Pearson Edexcel Level 1 Specification Mapping</h2>
+        </div>
+        <div class="skill-card-container">
+          <p>The Pearson Edexcel Digital Functional Skills Qualification (DFSQ) Level 1 assesses competence across 5 core national standards and 32 discrete skills:</p>
+          <div style="overflow-x:auto;">
+            <table style="width:100%; border-collapse:collapse; margin-top:14px; font-size:0.92rem;">
+              <thead>
+                <tr style="background:#0284c7; color:#ffffff;">
+                  <th style="padding:10px; text-align:left; border:1px solid #bae6fd;">Standard Area</th>
+                  <th style="padding:10px; text-align:left; border:1px solid #bae6fd;">Code Range</th>
+                  <th style="padding:10px; text-align:left; border:1px solid #bae6fd;">Core Competencies Assessed</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr style="background:#ffffff;">
+                  <td style="padding:10px; border:1px solid #e2e8f0; font-weight:700;"><i class="fa-solid fa-gear" style="color:#0284c7; margin-right:6px;"></i> 1. Using Devices &amp; Info</td>
+                  <td style="padding:10px; border:1px solid #e2e8f0; font-family:monospace; color:#0369a1; font-weight:700;">L1.1.1 &ndash; L1.1.6</td>
+                  <td style="padding:10px; border:1px solid #e2e8f0;">Display scaling, folder hierarchy, cloud sync, .zip compression, CRAAP web evaluation.</td>
+                </tr>
+                <tr style="background:#f8fafc;">
+                  <td style="padding:10px; border:1px solid #e2e8f0; font-weight:700;"><i class="fa-solid fa-file-pen" style="color:#059669; margin-right:6px;"></i> 2. Creating &amp; Editing</td>
+                  <td style="padding:10px; border:1px solid #e2e8f0; font-family:monospace; color:#059669; font-weight:700;">L1.2.1 &ndash; L1.2.12</td>
+                  <td style="padding:10px; border:1px solid #e2e8f0;">Typography, image aspect ratio, tables, =SUM/=AVERAGE/=COUNT, sorting, chart creation.</td>
+                </tr>
+                <tr style="background:#ffffff;">
+                  <td style="padding:10px; border:1px solid #e2e8f0; font-weight:700;"><i class="fa-solid fa-comments" style="color:#2563eb; margin-right:6px;"></i> 3. Communicating</td>
+                  <td style="padding:10px; border:1px solid #e2e8f0; font-family:monospace; color:#2563eb; font-weight:700;">L1.3.1 &ndash; L1.3.7</td>
+                  <td style="padding:10px; border:1px solid #e2e8f0;">Workplace email, mandatory BCC privacy under UK GDPR, calendar invites, virtual meetings.</td>
+                </tr>
+                <tr style="background:#f8fafc;">
+                  <td style="padding:10px; border:1px solid #e2e8f0; font-weight:700;"><i class="fa-solid fa-credit-card" style="color:#d97706; margin-right:6px;"></i> 4. Transacting</td>
+                  <td style="padding:10px; border:1px solid #e2e8f0; font-family:monospace; color:#d97706; font-weight:700;">L1.4.1 &ndash; L1.4.4</td>
+                  <td style="padding:10px; border:1px solid #e2e8f0;">Online forms (*), e-commerce checkout, HTTPS/SSL padlock verification, VAT invoice filing.</td>
+                </tr>
+                <tr style="background:#ffffff;">
+                  <td style="padding:10px; border:1px solid #e2e8f0; font-weight:700;"><i class="fa-solid fa-shield-halved" style="color:#dc2626; margin-right:6px;"></i> 5. Being Safe Online</td>
+                  <td style="padding:10px; border:1px solid #e2e8f0; font-family:monospace; color:#dc2626; font-weight:700;">L1.5.1 &ndash; L1.5.3</td>
+                  <td style="padding:10px; border:1px solid #e2e8f0;">3-factor MFA, detecting phishing headers, UK GDPR data protection, Win+L screen locking.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <!-- GOLDEN RULES -->
+      <section id="golden-rules" class="revision-section">
+        <div class="section-header-row">
+          <h2 class="section-title"><i class="fa-solid fa-lightbulb"></i> Golden Rules for Level 1 Digital Skills</h2>
+        </div>
+
+        <div class="rule-card-amber">
+          <div class="rule-card-amber-header">
+            <i class="fa-solid fa-arrow-down-wide-short"></i>
+            <span>Golden Rule 1: Always "Expand the Selection" When Sorting Tables</span>
+          </div>
+          <p>
+            When sorting a spreadsheet column (e.g. sorting Staff Names alphabetically), Excel or Google Sheets will prompt you: <em>"Expand the selection"</em> or <em>"Continue with current selection"</em>. You <strong>MUST always choose Expand the Selection</strong>. If you sort only the highlighted column, employee names will sort but their salaries and department IDs stay in place &ndash; corrupting the entire database!
+          </p>
+          <div class="rule-highlight-badge">
+            Cardinal Rule: Highlight entire data table before sorting &rarr; Data Integrity Preserved
+          </div>
+        </div>
+
+        <div class="rule-card-amber">
+          <div class="rule-card-amber-header">
+            <i class="fa-solid fa-user-shield"></i>
+            <span>Golden Rule 2: BCC is Mandatory for Group External Emails (UK GDPR)</span>
+          </div>
+          <p>
+            When sending emails to multiple clients, patients, or external contractors, placing their addresses into the 'To' or 'CC' field exposes everyone's private contact details to every recipient. This is an immediate <strong>UK GDPR data breach</strong>. Always put your own email in 'To' and place all external recipients into <strong>BCC (Blind Carbon Copy)</strong>.
+          </p>
+          <div class="rule-highlight-badge">
+            Privacy Formula: External Group Mail = Use BCC (Blind Carbon Copy)
+          </div>
+        </div>
+
+        <div class="rule-card-amber">
+          <div class="rule-card-amber-header">
+            <i class="fa-solid fa-calculator"></i>
+            <span>Golden Rule 3: Never Include the Total Row in '=AVERAGE' Ranges</span>
+          </div>
+          <p>
+            When calculating the average of a column of values in cells <code>C2:C13</code>, the grand total is usually in cell <code>C14</code>. If you write <code>=AVERAGE(C2:C14)</code>, you include the sum itself, artificially doubling the average! Always double-check your row numbers: <code>=AVERAGE(C2:C13)</code>.
+          </p>
+          <div class="rule-highlight-badge">
+            Formula Check: =AVERAGE(FirstDataRow:LastDataRow) &ndash; Exclude Header &amp; Total
+          </div>
+        </div>
+
+        <div class="rule-card-amber">
+          <div class="rule-card-amber-header">
+            <i class="fa-solid fa-key"></i>
+            <span>Golden Rule 4: Multi-Factor Authentication (2FA) Combines Two Different Factors</span>
+          </div>
+          <p>
+            True MFA requires two distinct categories from: <strong>(1) Something you KNOW</strong> (password, PIN), <strong>(2) Something you HAVE</strong> (smartcard, mobile authenticator token, SMS OTP), or <strong>(3) Something you ARE</strong> (fingerprint, facial recognition). Using two passwords is NOT two-factor authentication.
+          </p>
+          <div class="rule-highlight-badge">
+            MFA Formula: Password (Know) + Authenticator App (Have) = High-Security Compliance
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILL AREA 1: USING DEVICES & HANDLING INFORMATION -->
+      <section id="skill-1" class="revision-section">
+        <div class="section-header-row">
+          <h2 class="section-title"><i class="fa-solid fa-folder-tree" style="color:#0284c7;"></i> Skill Area 1: Using Devices and Handling Information</h2>
+          <span style="font-size:0.85rem; font-weight:800; background:#e0f2fe; color:#0369a1; padding:4px 12px; border-radius:999px;">6 Regulated Standards</span>
+        </div>
+        <p style="color:#64748b; font-size:0.95rem; margin-bottom:20px;">Master operating system display settings, hierarchical directory trees, cloud synchronization status, .zip compression, and source evaluation.</p>
+        <!-- Topic Card: L1.1.1 -->
+        <div id="topic-l1-1-1" class="topic-teaching-card" style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:24px; margin-bottom:24px; box-shadow:0 2px 8px rgba(0,0,0,0.04); scroll-margin-top:100px;">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
+            <div>
+              <span style="background:#e0f2fe; color:#0369a1; font-weight:800; font-size:0.78rem; padding:3px 10px; border-radius:4px; font-family:monospace; margin-right:8px;">L1.1.1</span>
+              <span style="background:#f1f5f9; color:#475569; font-weight:700; font-size:0.78rem; padding:3px 10px; border-radius:4px;"><i class="fa-solid fa-gear"></i> Using Devices</span>
+              <h4 style="color:#0f172a; font-size:1.25rem; margin:10px 0 6px 0;">Operating System Settings & Personalisation</h4>
+            </div>
+            <div>
+              <a href="courses.html?enrol=dfs-l1&amp;topic=L1.1.1" data-moodle-action="launch" data-topic="L1.1.1" class="btn-card-action" style="font-size:0.8rem; padding:5px 12px; background:#0284c7; color:#ffffff; text-decoration:none; border-radius:6px; font-weight:700; display:inline-flex; align-items:center; gap:6px;">
+                <i class="fa-solid fa-graduation-cap"></i> Practice in Moodle
+              </a>
+            </div>
+          </div>
+          <p style="color:#334155; font-size:0.95rem; line-height:1.6; margin-bottom:16px;">Configure display scaling (e.g. 125% for high-resolution displays without distorting apps), high-contrast accessibility themes, mouse pointer sizing and speed, desktop audio levels, and manage operating system update schedules.</p>
+          
+          <div style="background:#f8fafc; border-left:4px solid #0284c7; padding:14px 18px; border-radius:0 8px 8px 0; margin-bottom:16px; font-size:0.92rem; line-height:1.6;">
+            <div style="font-weight:800; color:#0369a1; margin-bottom:4px;"><i class="fa-solid fa-laptop-code"></i> Workplace Practical Model: Display Scaling vs Resolution: Display scaling resizes text and UI elements cleanly, whereas changing resolution alters hardware pixel rendering, causing blurriness.</div>
+            <div>Task: Adjust workplace monitor for a user with visual fatigue.<br><strong>Step 1:</strong> Press Win + I &rarr; System &rarr; Display.<br><strong>Step 2:</strong> Under 'Scale & layout', change scale from 100% to 125%.<br><strong>Step 3:</strong> Navigate to Accessibility &rarr; Mouse pointer and touch &rarr; increase cursor size to 3 and select high-contrast lime-green outline.<br><strong>Result:</strong> UI text is instantly readable across all open workplace spreadsheets without altering native monitor resolution.</div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:12px; margin-top:14px;">
+            <div style="background:#fefce8; border:1px solid #fef08a; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#854d0e; line-height:1.5;">
+              <i class="fa-solid fa-lightbulb" style="color:#ca8a04; margin-right:6px;"></i> <strong>Golden Rule: Always use Display Scaling (125%) rather than changing monitor resolution to enlarge small text cleanly without blurriness.</strong>
+            </div>
+            <div style="background:#fef2f2; border:1px solid #fecaca; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#991b1b; line-height:1.5;">
+              <i class="fa-solid fa-triangle-exclamation" style="color:#dc2626; margin-right:6px;"></i> <strong>Examiner Trap: Do not reduce screen resolution to make text bigger—it blurs all text and loses layout marks in Pearson digital exams.</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Topic Card: L1.1.2 -->
+        <div id="topic-l1-1-2" class="topic-teaching-card" style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:24px; margin-bottom:24px; box-shadow:0 2px 8px rgba(0,0,0,0.04); scroll-margin-top:100px;">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
+            <div>
+              <span style="background:#e0f2fe; color:#0369a1; font-weight:800; font-size:0.78rem; padding:3px 10px; border-radius:4px; font-family:monospace; margin-right:8px;">L1.1.2</span>
+              <span style="background:#f1f5f9; color:#475569; font-weight:700; font-size:0.78rem; padding:3px 10px; border-radius:4px;"><i class="fa-solid fa-folder-tree"></i> Using Devices</span>
+              <h4 style="color:#0f172a; font-size:1.25rem; margin:10px 0 6px 0;">Hierarchical Folder Organisation & File Management</h4>
+            </div>
+            <div>
+              <a href="courses.html?enrol=dfs-l1&amp;topic=L1.1.2" data-moodle-action="launch" data-topic="L1.1.2" class="btn-card-action" style="font-size:0.8rem; padding:5px 12px; background:#0284c7; color:#ffffff; text-decoration:none; border-radius:6px; font-weight:700; display:inline-flex; align-items:center; gap:6px;">
+                <i class="fa-solid fa-graduation-cap"></i> Practice in Moodle
+              </a>
+            </div>
+          </div>
+          <p style="color:#334155; font-size:0.95rem; line-height:1.6; margin-bottom:16px;">Create systematic multi-tier directory trees, use standardized ISO file naming conventions (YYYY-MM-DD_Subject_v1.0), avoid illegal characters, and organize workplace documents so teams can retrieve assets in seconds.</p>
+          
+          <div style="background:#f8fafc; border-left:4px solid #0284c7; padding:14px 18px; border-radius:0 8px 8px 0; margin-bottom:16px; font-size:0.92rem; line-height:1.6;">
+            <div style="font-weight:800; color:#0369a1; margin-bottom:4px;"><i class="fa-solid fa-laptop-code"></i> Workplace Practical Model: Systematic Folder Hierarchy: Root Directory &rarr; Department Subfolder &rarr; Project Subfolder &rarr; Versioned Asset.</div>
+            <div>Task: Create a compliant directory structure for quarterly audit documents.<br><strong>Structure:</strong><br><code>Shared_Drive/<br>&boxv;&HorizontalLine;&HorizontalLine; &folder; 01_Finance_Audits/<br>&boxv;&nbsp;&nbsp; &boxur;&HorizontalLine; &folder; 2026_Q1_Review/<br>&boxv;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &boxv;&HorizontalLine; &doc; 2026-03-31_Expenditure_Audit_v1.0.xlsx<br>&boxv;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &boxur;&HorizontalLine; &doc; 2026-03-31_Variance_Report.docx</code><br><strong>Rule:</strong> No illegal characters (<code>/ \ : * ? " &lt; &gt; |</code>) and explicit version tags.</div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:12px; margin-top:14px;">
+            <div style="background:#fefce8; border:1px solid #fef08a; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#854d0e; line-height:1.5;">
+              <i class="fa-solid fa-lightbulb" style="color:#ca8a04; margin-right:6px;"></i> <strong>Golden Rule: Always save documents in the designated subfolder specified in the exam scenario using the exact requested file name.</strong>
+            </div>
+            <div style="background:#fef2f2; border:1px solid #fecaca; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#991b1b; line-height:1.5;">
+              <i class="fa-solid fa-triangle-exclamation" style="color:#dc2626; margin-right:6px;"></i> <strong>Examiner Trap: Leaving downloaded files in the generic 'Downloads' or 'Desktop' folder will lose file organization marks.</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Topic Card: L1.1.3 -->
+        <div id="topic-l1-1-3" class="topic-teaching-card" style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:24px; margin-bottom:24px; box-shadow:0 2px 8px rgba(0,0,0,0.04); scroll-margin-top:100px;">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
+            <div>
+              <span style="background:#e0f2fe; color:#0369a1; font-weight:800; font-size:0.78rem; padding:3px 10px; border-radius:4px; font-family:monospace; margin-right:8px;">L1.1.3</span>
+              <span style="background:#f1f5f9; color:#475569; font-weight:700; font-size:0.78rem; padding:3px 10px; border-radius:4px;"><i class="fa-solid fa-cloud"></i> Using Devices</span>
+              <h4 style="color:#0f172a; font-size:1.25rem; margin:10px 0 6px 0;">Storage Media & Cloud Synchronisation</h4>
+            </div>
+            <div>
+              <a href="courses.html?enrol=dfs-l1&amp;topic=L1.1.3" data-moodle-action="launch" data-topic="L1.1.3" class="btn-card-action" style="font-size:0.8rem; padding:5px 12px; background:#0284c7; color:#ffffff; text-decoration:none; border-radius:6px; font-weight:700; display:inline-flex; align-items:center; gap:6px;">
+                <i class="fa-solid fa-graduation-cap"></i> Practice in Moodle
+              </a>
+            </div>
+          </div>
+          <p style="color:#334155; font-size:0.95rem; line-height:1.6; margin-bottom:16px;">Understand storage media characteristics: high-speed internal solid-state drives (SSDs), portable encrypted USB storage, and enterprise cloud repositories (OneDrive, Google Drive, SharePoint) with sync status indicators.</p>
+          
+          <div style="background:#f8fafc; border-left:4px solid #0284c7; padding:14px 18px; border-radius:0 8px 8px 0; margin-bottom:16px; font-size:0.92rem; line-height:1.6;">
+            <div style="font-weight:800; color:#0369a1; margin-bottom:4px;"><i class="fa-solid fa-laptop-code"></i> Workplace Practical Model: Cloud Sync Status Indicators: Blue Cloud = Stored online only (saves disk space); Green Tick = Downloaded locally for offline access; Syncing Arrows = File currently syncing.</div>
+            <div>Task: Ensure critical team presentations are available on a laptop during travel with no Wi-Fi.<br><strong>Step 1:</strong> Locate file in OneDrive / SharePoint sync directory.<br><strong>Step 2:</strong> Right click file &rarr; Select 'Always keep on this device'.<br><strong>Step 3:</strong> Verify status icon switches from Blue Cloud to solid Green Circle with White Checkmark.<br><strong>Result:</strong> File is permanently cached on the local drive and opens instantly offline.</div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:12px; margin-top:14px;">
+            <div style="background:#fefce8; border:1px solid #fef08a; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#854d0e; line-height:1.5;">
+              <i class="fa-solid fa-lightbulb" style="color:#ca8a04; margin-right:6px;"></i> <strong>Golden Rule: Files with 'Blue Cloud' status require internet access. Use 'Always keep on this device' before travelling offline.</strong>
+            </div>
+            <div style="background:#fef2f2; border:1px solid #fecaca; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#991b1b; line-height:1.5;">
+              <i class="fa-solid fa-triangle-exclamation" style="color:#dc2626; margin-right:6px;"></i> <strong>Examiner Trap: Assuming cloud files are always available offline without checking their local sync status.</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Topic Card: L1.1.4 -->
+        <div id="topic-l1-1-4" class="topic-teaching-card" style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:24px; margin-bottom:24px; box-shadow:0 2px 8px rgba(0,0,0,0.04); scroll-margin-top:100px;">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
+            <div>
+              <span style="background:#e0f2fe; color:#0369a1; font-weight:800; font-size:0.78rem; padding:3px 10px; border-radius:4px; font-family:monospace; margin-right:8px;">L1.1.4</span>
+              <span style="background:#f1f5f9; color:#475569; font-weight:700; font-size:0.78rem; padding:3px 10px; border-radius:4px;"><i class="fa-solid fa-file-zipper"></i> Using Devices</span>
+              <h4 style="color:#0f172a; font-size:1.25rem; margin:10px 0 6px 0;">File Compression & Extracting .ZIP Archives</h4>
+            </div>
+            <div>
+              <a href="courses.html?enrol=dfs-l1&amp;topic=L1.1.4" data-moodle-action="launch" data-topic="L1.1.4" class="btn-card-action" style="font-size:0.8rem; padding:5px 12px; background:#0284c7; color:#ffffff; text-decoration:none; border-radius:6px; font-weight:700; display:inline-flex; align-items:center; gap:6px;">
+                <i class="fa-solid fa-graduation-cap"></i> Practice in Moodle
+              </a>
+            </div>
+          </div>
+          <p style="color:#334155; font-size:0.95rem; line-height:1.6; margin-bottom:16px;">Compress multiple project documents, spreadsheets, and high-resolution images into a single .zip archive to reduce file transmission size and decompress archives to target folders.</p>
+          
+          <div style="background:#f8fafc; border-left:4px solid #0284c7; padding:14px 18px; border-radius:0 8px 8px 0; margin-bottom:16px; font-size:0.92rem; line-height:1.6;">
+            <div style="font-weight:800; color:#0369a1; margin-bottom:4px;"><i class="fa-solid fa-laptop-code"></i> Workplace Practical Model: Compression Utility: Reduces total payload size to bypass 20MB-25MB email attachment limits and bundles related project files into a single transfer package.</div>
+            <div>Task: Compress three audit documents and extract incoming vendor archives.<br><strong>Compress:</strong> Highlight files &rarr; Right Click &rarr; 'Compress to ZIP file' &rarr; Name archive <code>Audit_Bundle_2026.zip</code>.<br><strong>Extract:</strong> Right click <code>Supplier_Invoices.zip</code> &rarr; Select 'Extract All...' &rarr; Choose folder <code>Shared_Drive/Invoices/</code> &rarr; Click Extract.</div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:12px; margin-top:14px;">
+            <div style="background:#fefce8; border:1px solid #fef08a; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#854d0e; line-height:1.5;">
+              <i class="fa-solid fa-lightbulb" style="color:#ca8a04; margin-right:6px;"></i> <strong>Golden Rule: Always extract a .zip archive before editing. Editing files directly inside an archive can open them in Read-Only mode and discard changes.</strong>
+            </div>
+            <div style="background:#fef2f2; border:1px solid #fecaca; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#991b1b; line-height:1.5;">
+              <i class="fa-solid fa-triangle-exclamation" style="color:#dc2626; margin-right:6px;"></i> <strong>Examiner Trap: Double clicking an archive and trying to save edits without extracting first loses your work when the window closes.</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Topic Card: L1.1.5 -->
+        <div id="topic-l1-1-5" class="topic-teaching-card" style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:24px; margin-bottom:24px; box-shadow:0 2px 8px rgba(0,0,0,0.04); scroll-margin-top:100px;">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
+            <div>
+              <span style="background:#e0f2fe; color:#0369a1; font-weight:800; font-size:0.78rem; padding:3px 10px; border-radius:4px; font-family:monospace; margin-right:8px;">L1.1.5</span>
+              <span style="background:#f1f5f9; color:#475569; font-weight:700; font-size:0.78rem; padding:3px 10px; border-radius:4px;"><i class="fa-solid fa-magnifying-glass"></i> Using Devices</span>
+              <h4 style="color:#0f172a; font-size:1.25rem; margin:10px 0 6px 0;">Search Operators & Advanced Internet Queries</h4>
+            </div>
+            <div>
+              <a href="courses.html?enrol=dfs-l1&amp;topic=L1.1.5" data-moodle-action="launch" data-topic="L1.1.5" class="btn-card-action" style="font-size:0.8rem; padding:5px 12px; background:#0284c7; color:#ffffff; text-decoration:none; border-radius:6px; font-weight:700; display:inline-flex; align-items:center; gap:6px;">
+                <i class="fa-solid fa-graduation-cap"></i> Practice in Moodle
+              </a>
+            </div>
+          </div>
+          <p style="color:#334155; font-size:0.95rem; line-height:1.6; margin-bottom:16px;">Conduct precision workplace research using search engine operators: quotation marks (" ") for exact phrase matching, site: filters (.gov.uk) for official domains, and filetype:pdf for authoritative policy documents.</p>
+          
+          <div style="background:#f8fafc; border-left:4px solid #0284c7; padding:14px 18px; border-radius:0 8px 8px 0; margin-bottom:16px; font-size:0.92rem; line-height:1.6;">
+            <div style="font-weight:800; color:#0369a1; margin-bottom:4px;"><i class="fa-solid fa-laptop-code"></i> Workplace Practical Model: Boolean Search Operators: AND (narrows search to include both), OR (broadens search), NOT / minus sign (-) (excludes unwanted terms).</div>
+            <div>Task: Locate official UK government guidelines on statutory maternity leave without commercial agency blog clutter.<br><strong>Query:</strong> <code>"statutory maternity pay" site:gov.uk filetype:pdf</code><br><strong>Result:</strong> Eliminates third-party adverts and links directly to official HM Government policy guidance documentation.</div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:12px; margin-top:14px;">
+            <div style="background:#fefce8; border:1px solid #fef08a; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#854d0e; line-height:1.5;">
+              <i class="fa-solid fa-lightbulb" style="color:#ca8a04; margin-right:6px;"></i> <strong>Golden Rule: Put key phrases in double quotation marks to force exact word order and append site:gov.uk to target authoritative sources.</strong>
+            </div>
+            <div style="background:#fef2f2; border:1px solid #fecaca; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#991b1b; line-height:1.5;">
+              <i class="fa-solid fa-triangle-exclamation" style="color:#dc2626; margin-right:6px;"></i> <strong>Examiner Trap: Searching single words like 'maternity' returns millions of commercial forum posts rather than official policy rules.</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Topic Card: L1.1.6 -->
+        <div id="topic-l1-1-6" class="topic-teaching-card" style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:24px; margin-bottom:24px; box-shadow:0 2px 8px rgba(0,0,0,0.04); scroll-margin-top:100px;">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
+            <div>
+              <span style="background:#e0f2fe; color:#0369a1; font-weight:800; font-size:0.78rem; padding:3px 10px; border-radius:4px; font-family:monospace; margin-right:8px;">L1.1.6</span>
+              <span style="background:#f1f5f9; color:#475569; font-weight:700; font-size:0.78rem; padding:3px 10px; border-radius:4px;"><i class="fa-solid fa-scale-balanced"></i> Using Devices</span>
+              <h4 style="color:#0f172a; font-size:1.25rem; margin:10px 0 6px 0;">Evaluating Source Reliability (The CRAAP Test)</h4>
+            </div>
+            <div>
+              <a href="courses.html?enrol=dfs-l1&amp;topic=L1.1.6" data-moodle-action="launch" data-topic="L1.1.6" class="btn-card-action" style="font-size:0.8rem; padding:5px 12px; background:#0284c7; color:#ffffff; text-decoration:none; border-radius:6px; font-weight:700; display:inline-flex; align-items:center; gap:6px;">
+                <i class="fa-solid fa-graduation-cap"></i> Practice in Moodle
+              </a>
+            </div>
+          </div>
+          <p style="color:#334155; font-size:0.95rem; line-height:1.6; margin-bottom:16px;">Critically evaluate online information using the CRAAP framework: Currency (timeliness), Relevance (depth), Authority (source credentials), Accuracy (evidence & citations), and Purpose (commercial or political bias).</p>
+          
+          <div style="background:#f8fafc; border-left:4px solid #0284c7; padding:14px 18px; border-radius:0 8px 8px 0; margin-bottom:16px; font-size:0.92rem; line-height:1.6;">
+            <div style="font-weight:800; color:#0369a1; margin-bottom:4px;"><i class="fa-solid fa-laptop-code"></i> Workplace Practical Model: The CRAAP Framework: Currency (Date), Relevance (Coverage), Authority (Author/.gov.uk/.org.uk), Accuracy (Verified citations), Purpose (Objective fact vs sales promotion).</div>
+            <div>Task: Compare two health advice websites for a workplace wellness memo.<br><strong>Source A:</strong> Commercial blog (.com) with unverified author selling detox tea. (Fails Authority and Purpose).<br><strong>Source B:</strong> Official UK Public Health guidance (.gov.uk) updated January 2026 citing peer-reviewed clinical studies. (Passes all 5 CRAAP criteria).<br><strong>Selection:</strong> Source B is approved for workplace dissemination.</div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:12px; margin-top:14px;">
+            <div style="background:#fefce8; border:1px solid #fef08a; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#854d0e; line-height:1.5;">
+              <i class="fa-solid fa-lightbulb" style="color:#ca8a04; margin-right:6px;"></i> <strong>Golden Rule: Look for accredited domains (.gov.uk, .ac.uk), verifiable author credentials, and publication dates within the last 12-24 months.</strong>
+            </div>
+            <div style="background:#fef2f2; border:1px solid #fecaca; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#991b1b; line-height:1.5;">
+              <i class="fa-solid fa-triangle-exclamation" style="color:#dc2626; margin-right:6px;"></i> <strong>Examiner Trap: Relying on the first result on a search engine without checking whether it is a paid advertisement or sponsored link.</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILL AREA 2: CREATING & EDITING -->
+      <section id="skill-2" class="revision-section">
+        <div class="section-header-row">
+          <h2 class="section-title"><i class="fa-solid fa-table-cells" style="color:#059669;"></i> Skill Area 2: Creating and Editing</h2>
+          <span style="font-size:0.85rem; font-weight:800; background:#ecfdf5; color:#047857; padding:4px 12px; border-radius:999px;">12 Regulated Standards</span>
+        </div>
+        <p style="color:#64748b; font-size:0.95rem; margin-bottom:20px;">Master workplace typography, image aspect ratio, table alignment, =SUM/=AVERAGE/=COUNT formulas, data sorting, auto-filters, and chart construction.</p>
+        <!-- Topic Card: L1.2.1 -->
+        <div id="topic-l1-2-1" class="topic-teaching-card" style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:24px; margin-bottom:24px; box-shadow:0 2px 8px rgba(0,0,0,0.04); scroll-margin-top:100px;">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
+            <div>
+              <span style="background:#e0f2fe; color:#0369a1; font-weight:800; font-size:0.78rem; padding:3px 10px; border-radius:4px; font-family:monospace; margin-right:8px;">L1.2.1</span>
+              <span style="background:#f1f5f9; color:#475569; font-weight:700; font-size:0.78rem; padding:3px 10px; border-radius:4px;"><i class="fa-solid fa-file-lines"></i> Creating & Editing</span>
+              <h4 style="color:#0f172a; font-size:1.25rem; margin:10px 0 6px 0;">Word Processing: Document Structure & Styling</h4>
+            </div>
+            <div>
+              <a href="courses.html?enrol=dfs-l1&amp;topic=L1.2.1" data-moodle-action="launch" data-topic="L1.2.1" class="btn-card-action" style="font-size:0.8rem; padding:5px 12px; background:#0284c7; color:#ffffff; text-decoration:none; border-radius:6px; font-weight:700; display:inline-flex; align-items:center; gap:6px;">
+                <i class="fa-solid fa-graduation-cap"></i> Practice in Moodle
+              </a>
+            </div>
+          </div>
+          <p style="color:#334155; font-size:0.95rem; line-height:1.6; margin-bottom:16px;">Structure workplace documents using clear typographical styles (Title 20pt Bold, Heading 1 16pt, Heading 2 13pt, Body 11pt Regular), consistent margins, line spacing (1.15 to 1.5), and official page breaks.</p>
+          
+          <div style="background:#f8fafc; border-left:4px solid #0284c7; padding:14px 18px; border-radius:0 8px 8px 0; margin-bottom:16px; font-size:0.92rem; line-height:1.6;">
+            <div style="font-weight:800; color:#0369a1; margin-bottom:4px;"><i class="fa-solid fa-laptop-code"></i> Workplace Practical Model: Document Hierarchy: Clear visual distinction between document titles, major section headings, minor subheadings, and body paragraphs.</div>
+            <div>Task: Format a raw 2-page staff policy.<br><strong>1. Styles:</strong> Apply 'Heading 1' to all section titles and 'Heading 2' to subtopics.<br><strong>2. Page Break:</strong> Place cursor before Section 3 &rarr; Press Ctrl + Enter (inserts Page Break cleanly).<br><strong>3. Line Spacing:</strong> Set body text to 1.15 line spacing with 6pt space after paragraphs.<br><strong>Result:</strong> A polished, accessible layout meeting professional workplace publishing standards.</div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:12px; margin-top:14px;">
+            <div style="background:#fefce8; border:1px solid #fef08a; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#854d0e; line-height:1.5;">
+              <i class="fa-solid fa-lightbulb" style="color:#ca8a04; margin-right:6px;"></i> <strong>Golden Rule: Never press Enter repeatedly to push text onto a new page. Always insert a formal Page Break (Ctrl + Enter).</strong>
+            </div>
+            <div style="background:#fef2f2; border:1px solid #fecaca; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#991b1b; line-height:1.5;">
+              <i class="fa-solid fa-triangle-exclamation" style="color:#dc2626; margin-right:6px;"></i> <strong>Examiner Trap: Multiple blank Enter lines cause text to shift and misalign when printed or viewed on different screen sizes.</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Topic Card: L1.2.2 -->
+        <div id="topic-l1-2-2" class="topic-teaching-card" style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:24px; margin-bottom:24px; box-shadow:0 2px 8px rgba(0,0,0,0.04); scroll-margin-top:100px;">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
+            <div>
+              <span style="background:#e0f2fe; color:#0369a1; font-weight:800; font-size:0.78rem; padding:3px 10px; border-radius:4px; font-family:monospace; margin-right:8px;">L1.2.2</span>
+              <span style="background:#f1f5f9; color:#475569; font-weight:700; font-size:0.78rem; padding:3px 10px; border-radius:4px;"><i class="fa-solid fa-image"></i> Creating & Editing</span>
+              <h4 style="color:#0f172a; font-size:1.25rem; margin:10px 0 6px 0;">Image Insertion, Resizing & Text Wrap</h4>
+            </div>
+            <div>
+              <a href="courses.html?enrol=dfs-l1&amp;topic=L1.2.2" data-moodle-action="launch" data-topic="L1.2.2" class="btn-card-action" style="font-size:0.8rem; padding:5px 12px; background:#0284c7; color:#ffffff; text-decoration:none; border-radius:6px; font-weight:700; display:inline-flex; align-items:center; gap:6px;">
+                <i class="fa-solid fa-graduation-cap"></i> Practice in Moodle
+              </a>
+            </div>
+          </div>
+          <p style="color:#334155; font-size:0.95rem; line-height:1.6; margin-bottom:16px;">Insert graphic assets into text documents, position images cleanly using 'Square' or 'Tight' text wrapping, and maintain exact aspect ratio proportions by resizing exclusively from corner handles.</p>
+          
+          <div style="background:#f8fafc; border-left:4px solid #0284c7; padding:14px 18px; border-radius:0 8px 8px 0; margin-bottom:16px; font-size:0.92rem; line-height:1.6;">
+            <div style="font-weight:800; color:#0369a1; margin-bottom:4px;"><i class="fa-solid fa-laptop-code"></i> Workplace Practical Model: Aspect Ratio Preservation: Dragging side or top handles stretches or squashes images; dragging corner handles preserves natural proportions.</div>
+            <div>Task: Place a facility logo next to the introductory paragraph.<br><strong>Step 1:</strong> Insert &rarr; Pictures &rarr; Select <code>clinic_logo.png</code>.<br><strong>Step 2:</strong> Click 'Layout Options' icon &rarr; Select 'Square' text wrap.<br><strong>Step 3:</strong> Hold Shift and drag bottom-right corner handle until image width is 6cm.<br><strong>Result:</strong> Paragraph flows neatly around the logo without distortion.</div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:12px; margin-top:14px;">
+            <div style="background:#fefce8; border:1px solid #fef08a; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#854d0e; line-height:1.5;">
+              <i class="fa-solid fa-lightbulb" style="color:#ca8a04; margin-right:6px;"></i> <strong>Golden Rule: Always drag CORNER handles to resize images. Never drag side or top handles, which squashes the image.</strong>
+            </div>
+            <div style="background:#fef2f2; border:1px solid #fecaca; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#991b1b; line-height:1.5;">
+              <i class="fa-solid fa-triangle-exclamation" style="color:#dc2626; margin-right:6px;"></i> <strong>Examiner Trap: Pearson examiners deduct marks if an image appears distorted, squashed, or stretches across margins.</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Topic Card: L1.2.3 -->
+        <div id="topic-l1-2-3" class="topic-teaching-card" style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:24px; margin-bottom:24px; box-shadow:0 2px 8px rgba(0,0,0,0.04); scroll-margin-top:100px;">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
+            <div>
+              <span style="background:#e0f2fe; color:#0369a1; font-weight:800; font-size:0.78rem; padding:3px 10px; border-radius:4px; font-family:monospace; margin-right:8px;">L1.2.3</span>
+              <span style="background:#f1f5f9; color:#475569; font-weight:700; font-size:0.78rem; padding:3px 10px; border-radius:4px;"><i class="fa-solid fa-table"></i> Creating & Editing</span>
+              <h4 style="color:#0f172a; font-size:1.25rem; margin:10px 0 6px 0;">Tables in Documents & Clear Information Layout</h4>
+            </div>
+            <div>
+              <a href="courses.html?enrol=dfs-l1&amp;topic=L1.2.3" data-moodle-action="launch" data-topic="L1.2.3" class="btn-card-action" style="font-size:0.8rem; padding:5px 12px; background:#0284c7; color:#ffffff; text-decoration:none; border-radius:6px; font-weight:700; display:inline-flex; align-items:center; gap:6px;">
+                <i class="fa-solid fa-graduation-cap"></i> Practice in Moodle
+              </a>
+            </div>
+          </div>
+          <p style="color:#334155; font-size:0.95rem; line-height:1.6; margin-bottom:16px;">Build clear information tables in word processing documents: apply bold shaded header rows, left-align text descriptions, right-align numerical values and currency figures, and configure clean borders.</p>
+          
+          <div style="background:#f8fafc; border-left:4px solid #0284c7; padding:14px 18px; border-radius:0 8px 8px 0; margin-bottom:16px; font-size:0.92rem; line-height:1.6;">
+            <div style="font-weight:800; color:#0369a1; margin-bottom:4px;"><i class="fa-solid fa-laptop-code"></i> Workplace Practical Model: Table Alignment Standard: Left-align words and text titles; Right-align numbers, decimals, and monetary amounts (£) to maintain decimal point column alignment.</div>
+            <div>Task: Format a departmental equipment inventory table.<br><strong>Header Row:</strong> Shaded background (#0284c7) with bold white text.<br><strong>Column 1 (Item Name):</strong> Left-aligned text.<br><strong>Column 2 (Quantity):</strong> Centered or Right-aligned integer.<br><strong>Column 3 (Unit Cost £):</strong> Right-aligned currency with 2 decimal places (£145.00).</div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:12px; margin-top:14px;">
+            <div style="background:#fefce8; border:1px solid #fef08a; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#854d0e; line-height:1.5;">
+              <i class="fa-solid fa-lightbulb" style="color:#ca8a04; margin-right:6px;"></i> <strong>Golden Rule: Right-align currency and numeric figures in tables so decimal points line up vertically for readability.</strong>
+            </div>
+            <div style="background:#fef2f2; border:1px solid #fecaca; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#991b1b; line-height:1.5;">
+              <i class="fa-solid fa-triangle-exclamation" style="color:#dc2626; margin-right:6px;"></i> <strong>Examiner Trap: Centering currency figures makes different numbers hard to compare and loses alignment marks.</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Topic Card: L1.2.4 -->
+        <div id="topic-l1-2-4" class="topic-teaching-card" style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:24px; margin-bottom:24px; box-shadow:0 2px 8px rgba(0,0,0,0.04); scroll-margin-top:100px;">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
+            <div>
+              <span style="background:#e0f2fe; color:#0369a1; font-weight:800; font-size:0.78rem; padding:3px 10px; border-radius:4px; font-family:monospace; margin-right:8px;">L1.2.4</span>
+              <span style="background:#f1f5f9; color:#475569; font-weight:700; font-size:0.78rem; padding:3px 10px; border-radius:4px;"><i class="fa-solid fa-hashtag"></i> Creating & Editing</span>
+              <h4 style="color:#0f172a; font-size:1.25rem; margin:10px 0 6px 0;">Spreadsheet Navigation & Number Formatting</h4>
+            </div>
+            <div>
+              <a href="courses.html?enrol=dfs-l1&amp;topic=L1.2.4" data-moodle-action="launch" data-topic="L1.2.4" class="btn-card-action" style="font-size:0.8rem; padding:5px 12px; background:#0284c7; color:#ffffff; text-decoration:none; border-radius:6px; font-weight:700; display:inline-flex; align-items:center; gap:6px;">
+                <i class="fa-solid fa-graduation-cap"></i> Practice in Moodle
+              </a>
+            </div>
+          </div>
+          <p style="color:#334155; font-size:0.95rem; line-height:1.6; margin-bottom:16px;">Enter spreadsheet labels and values accurately, apply UK Currency formatting (£ with exactly 2 decimal places), format percentages (%), and auto-fit column boundaries to prevent truncation.</p>
+          
+          <div style="background:#f8fafc; border-left:4px solid #0284c7; padding:14px 18px; border-radius:0 8px 8px 0; margin-bottom:16px; font-size:0.92rem; line-height:1.6;">
+            <div style="font-weight:800; color:#0369a1; margin-bottom:4px;"><i class="fa-solid fa-laptop-code"></i> Workplace Practical Model: Number Formatting: Numbers left unformatted as 'General' (e.g. 14.5) fail Pearson criteria. Apply 'Currency' (£14.50) with 2 decimal places.</div>
+            <div>Task: Format monthly staff budget cells C4:C15.<br><strong>Step 1:</strong> Select cell range C4:C15.<br><strong>Step 2:</strong> Home Ribbon &rarr; Number group &rarr; Dropdown &rarr; Select 'Currency'.<br><strong>Step 3:</strong> Ensure symbol is £ and decimal places is 2.<br><strong>Step 4:</strong> Double-click boundary between column headers C and D to auto-fit width.</div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:12px; margin-top:14px;">
+            <div style="background:#fefce8; border:1px solid #fef08a; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#854d0e; line-height:1.5;">
+              <i class="fa-solid fa-lightbulb" style="color:#ca8a04; margin-right:6px;"></i> <strong>Golden Rule: Always verify monetary values show the £ symbol and exactly 2 decimal places (e.g. £24.00, not 24).</strong>
+            </div>
+            <div style="background:#fef2f2; border:1px solid #fecaca; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#991b1b; line-height:1.5;">
+              <i class="fa-solid fa-triangle-exclamation" style="color:#dc2626; margin-right:6px;"></i> <strong>Examiner Trap: Leaving raw numbers as general decimals without £ formatting loses 1-2 marks in every Pearson spreadsheet task.</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Topic Card: L1.2.5 -->
+        <div id="topic-l1-2-5" class="topic-teaching-card" style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:24px; margin-bottom:24px; box-shadow:0 2px 8px rgba(0,0,0,0.04); scroll-margin-top:100px;">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
+            <div>
+              <span style="background:#e0f2fe; color:#0369a1; font-weight:800; font-size:0.78rem; padding:3px 10px; border-radius:4px; font-family:monospace; margin-right:8px;">L1.2.5</span>
+              <span style="background:#f1f5f9; color:#475569; font-weight:700; font-size:0.78rem; padding:3px 10px; border-radius:4px;"><i class="fa-solid fa-calculator"></i> Creating & Editing</span>
+              <h4 style="color:#0f172a; font-size:1.25rem; margin:10px 0 6px 0;">Core Spreadsheet Formulas: =SUM, =AVERAGE, =COUNT</h4>
+            </div>
+            <div>
+              <a href="courses.html?enrol=dfs-l1&amp;topic=L1.2.5" data-moodle-action="launch" data-topic="L1.2.5" class="btn-card-action" style="font-size:0.8rem; padding:5px 12px; background:#0284c7; color:#ffffff; text-decoration:none; border-radius:6px; font-weight:700; display:inline-flex; align-items:center; gap:6px;">
+                <i class="fa-solid fa-graduation-cap"></i> Practice in Moodle
+              </a>
+            </div>
+          </div>
+          <p style="color:#334155; font-size:0.95rem; line-height:1.6; margin-bottom:16px;">Calculate totals, arithmetic means, and record tallies using standardized formula syntax: =SUM(first:last), =AVERAGE(first:last), and =COUNT(first:last) over continuous data ranges.</p>
+          
+          <div style="background:#f8fafc; border-left:4px solid #0284c7; padding:14px 18px; border-radius:0 8px 8px 0; margin-bottom:16px; font-size:0.92rem; line-height:1.6;">
+            <div style="font-weight:800; color:#0369a1; margin-bottom:4px;"><i class="fa-solid fa-laptop-code"></i> Workplace Practical Model: Function Syntax: Every formula must begin with an equals sign (=), followed by the capitalized function name and cell range in parentheses, e.g. =SUM(C2:C13).</div>
+            <div>Task: Calculate Q1 financial metrics in column D (rows 3 to 14).<br><strong>Total Revenue (D15):</strong> <code>=SUM(D3:D14)</code><br><strong>Average Monthly Revenue (D16):</strong> <code>=AVERAGE(D3:D14)</code><br><strong>Number of Active Stores (D17):</strong> <code>=COUNT(D3:D14)</code><br><strong>Check:</strong> Cell D15 (Total) is strictly excluded from the =AVERAGE range.</div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:12px; margin-top:14px;">
+            <div style="background:#fefce8; border:1px solid #fef08a; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#854d0e; line-height:1.5;">
+              <i class="fa-solid fa-lightbulb" style="color:#ca8a04; margin-right:6px;"></i> <strong>Golden Rule: Never include the Total row inside an =AVERAGE formula. Double-check range boundary numbers!</strong>
+            </div>
+            <div style="background:#fef2f2; border:1px solid #fecaca; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#991b1b; line-height:1.5;">
+              <i class="fa-solid fa-triangle-exclamation" style="color:#dc2626; margin-right:6px;"></i> <strong>Examiner Trap: Writing =AVERAGE(D3:D15) includes the total sum, artificially doubling the calculated average.</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Topic Card: L1.2.6 -->
+        <div id="topic-l1-2-6" class="topic-teaching-card" style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:24px; margin-bottom:24px; box-shadow:0 2px 8px rgba(0,0,0,0.04); scroll-margin-top:100px;">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
+            <div>
+              <span style="background:#e0f2fe; color:#0369a1; font-weight:800; font-size:0.78rem; padding:3px 10px; border-radius:4px; font-family:monospace; margin-right:8px;">L1.2.6</span>
+              <span style="background:#f1f5f9; color:#475569; font-weight:700; font-size:0.78rem; padding:3px 10px; border-radius:4px;"><i class="fa-solid fa-chart-simple"></i> Creating & Editing</span>
+              <h4 style="color:#0f172a; font-size:1.25rem; margin:10px 0 6px 0;">Advanced Functions: =MAX, =MIN & Arithmetic Formulas</h4>
+            </div>
+            <div>
+              <a href="courses.html?enrol=dfs-l1&amp;topic=L1.2.6" data-moodle-action="launch" data-topic="L1.2.6" class="btn-card-action" style="font-size:0.8rem; padding:5px 12px; background:#0284c7; color:#ffffff; text-decoration:none; border-radius:6px; font-weight:700; display:inline-flex; align-items:center; gap:6px;">
+                <i class="fa-solid fa-graduation-cap"></i> Practice in Moodle
+              </a>
+            </div>
+          </div>
+          <p style="color:#334155; font-size:0.95rem; line-height:1.6; margin-bottom:16px;">Identify extreme data points using =MAX(range) and =MIN(range), and build cell arithmetic calculations using multiplication (*), division (/), addition (+), and subtraction (-).</p>
+          
+          <div style="background:#f8fafc; border-left:4px solid #0284c7; padding:14px 18px; border-radius:0 8px 8px 0; margin-bottom:16px; font-size:0.92rem; line-height:1.6;">
+            <div style="font-weight:800; color:#0369a1; margin-bottom:4px;"><i class="fa-solid fa-laptop-code"></i> Workplace Practical Model: Relational Math Formulas: Multiply Quantity by Unit Price using cell references =(B4*C4), never hardcoded static numbers like =(4*12.50).</div>
+            <div>Task: Calculate line item totals and identify highest expense.<br><strong>Line Total (E4):</strong> <code>=(C4*D4)</code> &rarr; copy down column.<br><strong>VAT Amount (F4):</strong> <code>=(E4*0.20)</code><br><strong>Highest Expense (E20):</strong> <code>=MAX(E4:E18)</code><br><strong>Lowest Expense (E21):</strong> <code>=MIN(E4:E18)</code>.</div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:12px; margin-top:14px;">
+            <div style="background:#fefce8; border:1px solid #fef08a; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#854d0e; line-height:1.5;">
+              <i class="fa-solid fa-lightbulb" style="color:#ca8a04; margin-right:6px;"></i> <strong>Golden Rule: Always use cell references (e.g. =B4*C4) in formulas so that calculations update automatically if values change.</strong>
+            </div>
+            <div style="background:#fef2f2; border:1px solid #fecaca; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#991b1b; line-height:1.5;">
+              <i class="fa-solid fa-triangle-exclamation" style="color:#dc2626; margin-right:6px;"></i> <strong>Examiner Trap: Typing static numbers into a formula (e.g. =5*10.50) will receive 0 marks for formula use.</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Topic Card: L1.2.7 -->
+        <div id="topic-l1-2-7" class="topic-teaching-card" style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:24px; margin-bottom:24px; box-shadow:0 2px 8px rgba(0,0,0,0.04); scroll-margin-top:100px;">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
+            <div>
+              <span style="background:#e0f2fe; color:#0369a1; font-weight:800; font-size:0.78rem; padding:3px 10px; border-radius:4px; font-family:monospace; margin-right:8px;">L1.2.7</span>
+              <span style="background:#f1f5f9; color:#475569; font-weight:700; font-size:0.78rem; padding:3px 10px; border-radius:4px;"><i class="fa-solid fa-arrow-down-a-z"></i> Creating & Editing</span>
+              <h4 style="color:#0f172a; font-size:1.25rem; margin:10px 0 6px 0;">Sorting Spreadsheet Data: 'Expand the Selection'</h4>
+            </div>
+            <div>
+              <a href="courses.html?enrol=dfs-l1&amp;topic=L1.2.7" data-moodle-action="launch" data-topic="L1.2.7" class="btn-card-action" style="font-size:0.8rem; padding:5px 12px; background:#0284c7; color:#ffffff; text-decoration:none; border-radius:6px; font-weight:700; display:inline-flex; align-items:center; gap:6px;">
+                <i class="fa-solid fa-graduation-cap"></i> Practice in Moodle
+              </a>
+            </div>
+          </div>
+          <p style="color:#334155; font-size:0.95rem; line-height:1.6; margin-bottom:16px;">Sort multi-column data records alphabetically (A to Z) or numerically (Largest to Smallest) while preserving database integrity by always choosing 'Expand the Selection'.</p>
+          
+          <div style="background:#f8fafc; border-left:4px solid #0284c7; padding:14px 18px; border-radius:0 8px 8px 0; margin-bottom:16px; font-size:0.92rem; line-height:1.6;">
+            <div style="font-weight:800; color:#0369a1; margin-bottom:4px;"><i class="fa-solid fa-laptop-code"></i> Workplace Practical Model: Expand the Selection: When sorting by one column (e.g. Surname), all other columns (Address, Salary, ID) must move together so records remain aligned.</div>
+            <div>Task: Sort staff records in columns A to E alphabetically by Department (Column C).<br><strong>Step 1:</strong> Select entire table data range A2:E35.<br><strong>Step 2:</strong> Data Ribbon &rarr; Sort &rarr; Sort By: 'Department' &rarr; Order: 'A to Z'.<br><strong>Step 3:</strong> Ensure 'My data has headers' is ticked.<br><strong>Result:</strong> All rows remain intact with correct staff details paired with their respective departments.</div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:12px; margin-top:14px;">
+            <div style="background:#fefce8; border:1px solid #fef08a; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#854d0e; line-height:1.5;">
+              <i class="fa-solid fa-lightbulb" style="color:#ca8a04; margin-right:6px;"></i> <strong>Golden Rule: If Excel asks 'Expand the selection' or 'Continue with current selection', ALWAYS click 'Expand the Selection'.</strong>
+            </div>
+            <div style="background:#fef2f2; border:1px solid #fecaca; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#991b1b; line-height:1.5;">
+              <i class="fa-solid fa-triangle-exclamation" style="color:#dc2626; margin-right:6px;"></i> <strong>Examiner Trap: Choosing 'Continue with current selection' sorts only one column, corrupting the entire spreadsheet.</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Topic Card: L1.2.8 -->
+        <div id="topic-l1-2-8" class="topic-teaching-card" style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:24px; margin-bottom:24px; box-shadow:0 2px 8px rgba(0,0,0,0.04); scroll-margin-top:100px;">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
+            <div>
+              <span style="background:#e0f2fe; color:#0369a1; font-weight:800; font-size:0.78rem; padding:3px 10px; border-radius:4px; font-family:monospace; margin-right:8px;">L1.2.8</span>
+              <span style="background:#f1f5f9; color:#475569; font-weight:700; font-size:0.78rem; padding:3px 10px; border-radius:4px;"><i class="fa-solid fa-filter"></i> Creating & Editing</span>
+              <h4 style="color:#0f172a; font-size:1.25rem; margin:10px 0 6px 0;">Filtering Spreadsheet Records & Querying Data</h4>
+            </div>
+            <div>
+              <a href="courses.html?enrol=dfs-l1&amp;topic=L1.2.8" data-moodle-action="launch" data-topic="L1.2.8" class="btn-card-action" style="font-size:0.8rem; padding:5px 12px; background:#0284c7; color:#ffffff; text-decoration:none; border-radius:6px; font-weight:700; display:inline-flex; align-items:center; gap:6px;">
+                <i class="fa-solid fa-graduation-cap"></i> Practice in Moodle
+              </a>
+            </div>
+          </div>
+          <p style="color:#334155; font-size:0.95rem; line-height:1.6; margin-bottom:16px;">Enable AutoFilter on table headers to interrogate large datasets, filtering records by specific text criteria (e.g. Status = 'Overdue') or numeric thresholds (e.g. Balance > £1,000).</p>
+          
+          <div style="background:#f8fafc; border-left:4px solid #0284c7; padding:14px 18px; border-radius:0 8px 8px 0; margin-bottom:16px; font-size:0.92rem; line-height:1.6;">
+            <div style="font-weight:800; color:#0369a1; margin-bottom:4px;"><i class="fa-solid fa-laptop-code"></i> Workplace Practical Model: AutoFilter Tool: Temporarily hides rows that do not meet specified criteria without deleting any data from the worksheet.</div>
+            <div>Task: Filter patient records to show only those in the 'Physiotherapy' clinic with overdue follow-ups.<br><strong>Step 1:</strong> Click header row &rarr; Data Ribbon &rarr; Click 'Filter' icon.<br><strong>Step 2:</strong> Click dropdown arrow on Clinic column &rarr; Check 'Physiotherapy'.<br><strong>Step 3:</strong> Click dropdown on Status column &rarr; Check 'Overdue'.<br><strong>Result:</strong> Only matching records are displayed on screen.</div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:12px; margin-top:14px;">
+            <div style="background:#fefce8; border:1px solid #fef08a; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#854d0e; line-height:1.5;">
+              <i class="fa-solid fa-lightbulb" style="color:#ca8a04; margin-right:6px;"></i> <strong>Golden Rule: To copy filtered data to a report, select visible cells only (Alt + ;) so hidden rows are not accidentally pasted.</strong>
+            </div>
+            <div style="background:#fef2f2; border:1px solid #fecaca; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#991b1b; line-height:1.5;">
+              <i class="fa-solid fa-triangle-exclamation" style="color:#dc2626; margin-right:6px;"></i> <strong>Examiner Trap: Forgetting to clear filters before continuing with subsequent exam tasks.</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Topic Card: L1.2.9 -->
+        <div id="topic-l1-2-9" class="topic-teaching-card" style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:24px; margin-bottom:24px; box-shadow:0 2px 8px rgba(0,0,0,0.04); scroll-margin-top:100px;">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
+            <div>
+              <span style="background:#e0f2fe; color:#0369a1; font-weight:800; font-size:0.78rem; padding:3px 10px; border-radius:4px; font-family:monospace; margin-right:8px;">L1.2.9</span>
+              <span style="background:#f1f5f9; color:#475569; font-weight:700; font-size:0.78rem; padding:3px 10px; border-radius:4px;"><i class="fa-solid fa-chart-pie"></i> Creating & Editing</span>
+              <h4 style="color:#0f172a; font-size:1.25rem; margin:10px 0 6px 0;">Selecting the Appropriate Visual Chart</h4>
+            </div>
+            <div>
+              <a href="courses.html?enrol=dfs-l1&amp;topic=L1.2.9" data-moodle-action="launch" data-topic="L1.2.9" class="btn-card-action" style="font-size:0.8rem; padding:5px 12px; background:#0284c7; color:#ffffff; text-decoration:none; border-radius:6px; font-weight:700; display:inline-flex; align-items:center; gap:6px;">
+                <i class="fa-solid fa-graduation-cap"></i> Practice in Moodle
+              </a>
+            </div>
+          </div>
+          <p style="color:#334155; font-size:0.95rem; line-height:1.6; margin-bottom:16px;">Select the ideal chart format for data visualization: Column/Bar Chart for comparing distinct categories, Line Graph for trends over time, or Pie Chart for shares of a single total.</p>
+          
+          <div style="background:#f8fafc; border-left:4px solid #0284c7; padding:14px 18px; border-radius:0 8px 8px 0; margin-bottom:16px; font-size:0.92rem; line-height:1.6;">
+            <div style="font-weight:800; color:#0369a1; margin-bottom:4px;"><i class="fa-solid fa-laptop-code"></i> Workplace Practical Model: Visual Representation Fit: Bar/Column = Discrete comparison; Line = Continuous timeline progression; Pie = Proportions of 100% (max 5-6 slices).</div>
+            <div>Task: Determine the right chart for two different reporting requirements:<br><strong>Scenario 1:</strong> Compare total training hours completed by 6 hospital departments &rarr; <strong>Column Chart</strong>.<br><strong>Scenario 2:</strong> Display monthly energy consumption from Jan to Dec &rarr; <strong>Line Graph</strong>.<br><strong>Scenario 3:</strong> Budget allocation breakdown across 4 divisions &rarr; <strong>Pie Chart</strong>.</div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:12px; margin-top:14px;">
+            <div style="background:#fefce8; border:1px solid #fef08a; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#854d0e; line-height:1.5;">
+              <i class="fa-solid fa-lightbulb" style="color:#ca8a04; margin-right:6px;"></i> <strong>Golden Rule: Never use a pie chart for data over time or for datasets with more than 6 categories. Use a column chart.</strong>
+            </div>
+            <div style="background:#fef2f2; border:1px solid #fecaca; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#991b1b; line-height:1.5;">
+              <i class="fa-solid fa-triangle-exclamation" style="color:#dc2626; margin-right:6px;"></i> <strong>Examiner Trap: Selecting a line chart for discrete categories (e.g. Surgery, HR, Catering) which incorrectly implies a continuous trend.</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Topic Card: L1.2.10 -->
+        <div id="topic-l1-2-10" class="topic-teaching-card" style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:24px; margin-bottom:24px; box-shadow:0 2px 8px rgba(0,0,0,0.04); scroll-margin-top:100px;">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
+            <div>
+              <span style="background:#e0f2fe; color:#0369a1; font-weight:800; font-size:0.78rem; padding:3px 10px; border-radius:4px; font-family:monospace; margin-right:8px;">L1.2.10</span>
+              <span style="background:#f1f5f9; color:#475569; font-weight:700; font-size:0.78rem; padding:3px 10px; border-radius:4px;"><i class="fa-solid fa-chart-column"></i> Creating & Editing</span>
+              <h4 style="color:#0f172a; font-size:1.25rem; margin:10px 0 6px 0;">Formatting Charts: Titles, Axes & Legends</h4>
+            </div>
+            <div>
+              <a href="courses.html?enrol=dfs-l1&amp;topic=L1.2.10" data-moodle-action="launch" data-topic="L1.2.10" class="btn-card-action" style="font-size:0.8rem; padding:5px 12px; background:#0284c7; color:#ffffff; text-decoration:none; border-radius:6px; font-weight:700; display:inline-flex; align-items:center; gap:6px;">
+                <i class="fa-solid fa-graduation-cap"></i> Practice in Moodle
+              </a>
+            </div>
+          </div>
+          <p style="color:#334155; font-size:0.95rem; line-height:1.6; margin-bottom:16px;">Produce presentation-quality charts: create concise and informative chart titles, add primary horizontal and vertical axis titles with units (e.g. 'Month', 'Cost (£)'), and manage legends.</p>
+          
+          <div style="background:#f8fafc; border-left:4px solid #0284c7; padding:14px 18px; border-radius:0 8px 8px 0; margin-bottom:16px; font-size:0.92rem; line-height:1.6;">
+            <div style="font-weight:800; color:#0369a1; margin-bottom:4px;"><i class="fa-solid fa-laptop-code"></i> Workplace Practical Model: Complete Chart Anatomy: Chart Title + Horizontal Axis Title + Vertical Axis Title (with unit) + Clear Data Labels + Legend (only if comparing multiple series).</div>
+            <div>Task: Format a column chart comparing quarterly department expenditures.<br><strong>Chart Title:</strong> 'Department Expenditure &ndash; Q1 to Q4 2026'<br><strong>Horizontal (X) Axis Title:</strong> 'Hospital Department'<br><strong>Vertical (Y) Axis Title:</strong> 'Expenditure (&pound;)'<br><strong>Legend:</strong> Removed (only one data series plotted, making the legend redundant).</div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:12px; margin-top:14px;">
+            <div style="background:#fefce8; border:1px solid #fef08a; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#854d0e; line-height:1.5;">
+              <i class="fa-solid fa-lightbulb" style="color:#ca8a04; margin-right:6px;"></i> <strong>Golden Rule: Always include units in axis titles (e.g. 'Revenue (£)' or 'Temperature (°C)'). Every chart must have both axes labelled.</strong>
+            </div>
+            <div style="background:#fef2f2; border:1px solid #fecaca; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#991b1b; line-height:1.5;">
+              <i class="fa-solid fa-triangle-exclamation" style="color:#dc2626; margin-right:6px;"></i> <strong>Examiner Trap: Missing axis labels is the most common reason candidates lose marks on Pearson chart questions.</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Topic Card: L1.2.11 -->
+        <div id="topic-l1-2-11" class="topic-teaching-card" style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:24px; margin-bottom:24px; box-shadow:0 2px 8px rgba(0,0,0,0.04); scroll-margin-top:100px;">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
+            <div>
+              <span style="background:#e0f2fe; color:#0369a1; font-weight:800; font-size:0.78rem; padding:3px 10px; border-radius:4px; font-family:monospace; margin-right:8px;">L1.2.11</span>
+              <span style="background:#f1f5f9; color:#475569; font-weight:700; font-size:0.78rem; padding:3px 10px; border-radius:4px;"><i class="fa-solid fa-paste"></i> Creating & Editing</span>
+              <h4 style="color:#0f172a; font-size:1.25rem; margin:10px 0 6px 0;">Combining Documents: Exporting Tables to Reports</h4>
+            </div>
+            <div>
+              <a href="courses.html?enrol=dfs-l1&amp;topic=L1.2.11" data-moodle-action="launch" data-topic="L1.2.11" class="btn-card-action" style="font-size:0.8rem; padding:5px 12px; background:#0284c7; color:#ffffff; text-decoration:none; border-radius:6px; font-weight:700; display:inline-flex; align-items:center; gap:6px;">
+                <i class="fa-solid fa-graduation-cap"></i> Practice in Moodle
+              </a>
+            </div>
+          </div>
+          <p style="color:#334155; font-size:0.95rem; line-height:1.6; margin-bottom:16px;">Integrate data across applications: copy spreadsheet tables and charts into Word report templates or slide decks using appropriate paste options ('Keep Source Formatting' or 'Picture').</p>
+          
+          <div style="background:#f8fafc; border-left:4px solid #0284c7; padding:14px 18px; border-radius:0 8px 8px 0; margin-bottom:16px; font-size:0.92rem; line-height:1.6;">
+            <div style="font-weight:800; color:#0369a1; margin-bottom:4px;"><i class="fa-solid fa-laptop-code"></i> Workplace Practical Model: Cross-Application Integration: Transporting tabular data into formal written reports while maintaining layout boundaries and table styling.</div>
+            <div>Task: Embed spreadsheet summary into a formal board report.<br><strong>Step 1:</strong> In Excel, highlight summary range A3:D8 &rarr; Ctrl + C.<br><strong>Step 2:</strong> In Word, place cursor under section heading &rarr; Paste &rarr; 'Keep Source Formatting'.<br><strong>Step 3:</strong> Table Tools &rarr; Layout &rarr; AutoFit &rarr; 'AutoFit to Window'.<br><strong>Result:</strong> Table fits neatly between page margins with zero horizontal scroll or truncation.</div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:12px; margin-top:14px;">
+            <div style="background:#fefce8; border:1px solid #fef08a; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#854d0e; line-height:1.5;">
+              <i class="fa-solid fa-lightbulb" style="color:#ca8a04; margin-right:6px;"></i> <strong>Golden Rule: Use 'AutoFit to Window' in Word after pasting tables to ensure columns do not overflow off the page margins.</strong>
+            </div>
+            <div style="background:#fef2f2; border:1px solid #fecaca; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#991b1b; line-height:1.5;">
+              <i class="fa-solid fa-triangle-exclamation" style="color:#dc2626; margin-right:6px;"></i> <strong>Examiner Trap: Pasting a massive table that runs off the right margin of the Word document loses presentation marks.</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Topic Card: L1.2.12 -->
+        <div id="topic-l1-2-12" class="topic-teaching-card" style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:24px; margin-bottom:24px; box-shadow:0 2px 8px rgba(0,0,0,0.04); scroll-margin-top:100px;">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
+            <div>
+              <span style="background:#e0f2fe; color:#0369a1; font-weight:800; font-size:0.78rem; padding:3px 10px; border-radius:4px; font-family:monospace; margin-right:8px;">L1.2.12</span>
+              <span style="background:#f1f5f9; color:#475569; font-weight:700; font-size:0.78rem; padding:3px 10px; border-radius:4px;"><i class="fa-solid fa-triangle-exclamation"></i> Creating & Editing</span>
+              <h4 style="color:#0f172a; font-size:1.25rem; margin:10px 0 6px 0;">Proofreading, Spellcheck & Resolving Formula Errors</h4>
+            </div>
+            <div>
+              <a href="courses.html?enrol=dfs-l1&amp;topic=L1.2.12" data-moodle-action="launch" data-topic="L1.2.12" class="btn-card-action" style="font-size:0.8rem; padding:5px 12px; background:#0284c7; color:#ffffff; text-decoration:none; border-radius:6px; font-weight:700; display:inline-flex; align-items:center; gap:6px;">
+                <i class="fa-solid fa-graduation-cap"></i> Practice in Moodle
+              </a>
+            </div>
+          </div>
+          <p style="color:#334155; font-size:0.95rem; line-height:1.6; margin-bottom:16px;">Diagnose and fix spreadsheet formula errors (##### = column too narrow, #DIV/0! = dividing by zero, #VALUE! = wrong data type, #REF! = invalid cell reference), and proofread text.</p>
+          
+          <div style="background:#f8fafc; border-left:4px solid #0284c7; padding:14px 18px; border-radius:0 8px 8px 0; margin-bottom:16px; font-size:0.92rem; line-height:1.6;">
+            <div style="font-weight:800; color:#0369a1; margin-bottom:4px;"><i class="fa-solid fa-laptop-code"></i> Workplace Practical Model: Error Diagnostics: '#####' is not a math error; it simply means the cell is too narrow to display the number. Widen the column to resolve.</div>
+            <div>Task: Resolve common spreadsheet errors in a submitted draft.<br><strong>1. '#####' in Cell D4:</strong> Double-click column border between D and E &rarr; number (£1,450,200.00) appears.<br><strong>2. '#DIV/0!' in Cell E6:</strong> Formula was <code>=C6/D6</code> where D6 was 0 &rarr; updated divisor to correct active staff count.<br><strong>3. Spelling:</strong> Ran spellcheck and caught contextual typo ('there' instead of 'their').</div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:12px; margin-top:14px;">
+            <div style="background:#fefce8; border:1px solid #fef08a; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#854d0e; line-height:1.5;">
+              <i class="fa-solid fa-lightbulb" style="color:#ca8a04; margin-right:6px;"></i> <strong>Golden Rule: Double-click the column boundary to instantly fix '#####' errors. Always run manual proofreading alongside spellcheck.</strong>
+            </div>
+            <div style="background:#fef2f2; border:1px solid #fecaca; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#991b1b; line-height:1.5;">
+              <i class="fa-solid fa-triangle-exclamation" style="color:#dc2626; margin-right:6px;"></i> <strong>Examiner Trap: Automatic spellcheckers miss homophones ('form' instead of 'from', 'weather' instead of 'whether').</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILL AREA 3: COMMUNICATING -->
+      <section id="skill-3" class="revision-section">
+        <div class="section-header-row">
+          <h2 class="section-title"><i class="fa-solid fa-users-gear" style="color:#2563eb;"></i> Skill Area 3: Communicating</h2>
+          <span style="font-size:0.85rem; font-weight:800; background:#eff6ff; color:#1d4ed8; padding:4px 12px; border-radius:999px;">7 Regulated Standards</span>
+        </div>
+        <p style="color:#64748b; font-size:0.95rem; margin-bottom:20px;">Master workplace email composition, mandatory BCC data privacy, email attachments, digital calendars, virtual meeting etiquette, and shared cloud permissions.</p>
+        <!-- Topic Card: L1.3.1 -->
+        <div id="topic-l1-3-1" class="topic-teaching-card" style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:24px; margin-bottom:24px; box-shadow:0 2px 8px rgba(0,0,0,0.04); scroll-margin-top:100px;">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
+            <div>
+              <span style="background:#e0f2fe; color:#0369a1; font-weight:800; font-size:0.78rem; padding:3px 10px; border-radius:4px; font-family:monospace; margin-right:8px;">L1.3.1</span>
+              <span style="background:#f1f5f9; color:#475569; font-weight:700; font-size:0.78rem; padding:3px 10px; border-radius:4px;"><i class="fa-solid fa-envelope"></i> Communicating</span>
+              <h4 style="color:#0f172a; font-size:1.25rem; margin:10px 0 6px 0;">Professional Workplace Email Composition</h4>
+            </div>
+            <div>
+              <a href="courses.html?enrol=dfs-l1&amp;topic=L1.3.1" data-moodle-action="launch" data-topic="L1.3.1" class="btn-card-action" style="font-size:0.8rem; padding:5px 12px; background:#0284c7; color:#ffffff; text-decoration:none; border-radius:6px; font-weight:700; display:inline-flex; align-items:center; gap:6px;">
+                <i class="fa-solid fa-graduation-cap"></i> Practice in Moodle
+              </a>
+            </div>
+          </div>
+          <p style="color:#334155; font-size:0.95rem; line-height:1.6; margin-bottom:16px;">Draft structured workplace emails: formulate precise and actionable subject lines, apply professional greetings, maintain courteous business tone, and close with standard sign-offs.</p>
+          
+          <div style="background:#f8fafc; border-left:4px solid #0284c7; padding:14px 18px; border-radius:0 8px 8px 0; margin-bottom:16px; font-size:0.92rem; line-height:1.6;">
+            <div style="font-weight:800; color:#0369a1; margin-bottom:4px;"><i class="fa-solid fa-laptop-code"></i> Workplace Practical Model: Workplace Email Anatomy: Specific Subject Line + Formal Salutation + Context Body Paragraph + Action Request + Professional Sign-off & Signature.</div>
+            <div>Task: Write an email to team leads requesting Q2 budget submissions.<br><strong>To:</strong> teamleads@workplace.co.uk<br><strong>Subject:</strong> Action Required: Q2 Departmental Budget Submissions by 15th April<br><strong>Body:</strong><br>Dear Team Leads,<br><br>Please find attached the updated 2026 budget template. Kindly complete your departmental projections and return the completed file by Friday 15th April at 5:00 PM.<br><br>If you require assistance with formula entries, please let me know.<br><br>Kind regards,<br>Abdul &ndash; Functional Skills Lead</div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:12px; margin-top:14px;">
+            <div style="background:#fefce8; border:1px solid #fef08a; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#854d0e; line-height:1.5;">
+              <i class="fa-solid fa-lightbulb" style="color:#ca8a04; margin-right:6px;"></i> <strong>Golden Rule: Subject lines must state the exact topic and any deadline. Never leave the subject line blank or write vague words like 'Hi'.</strong>
+            </div>
+            <div style="background:#fef2f2; border:1px solid #fecaca; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#991b1b; line-height:1.5;">
+              <i class="fa-solid fa-triangle-exclamation" style="color:#dc2626; margin-right:6px;"></i> <strong>Examiner Trap: Forgetting to mention the specific action required and deadline in the email body.</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Topic Card: L1.3.2 -->
+        <div id="topic-l1-3-2" class="topic-teaching-card" style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:24px; margin-bottom:24px; box-shadow:0 2px 8px rgba(0,0,0,0.04); scroll-margin-top:100px;">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
+            <div>
+              <span style="background:#e0f2fe; color:#0369a1; font-weight:800; font-size:0.78rem; padding:3px 10px; border-radius:4px; font-family:monospace; margin-right:8px;">L1.3.2</span>
+              <span style="background:#f1f5f9; color:#475569; font-weight:700; font-size:0.78rem; padding:3px 10px; border-radius:4px;"><i class="fa-solid fa-user-shield"></i> Communicating</span>
+              <h4 style="color:#0f172a; font-size:1.25rem; margin:10px 0 6px 0;">Email Addressing: To vs CC vs BCC (UK GDPR Rules)</h4>
+            </div>
+            <div>
+              <a href="courses.html?enrol=dfs-l1&amp;topic=L1.3.2" data-moodle-action="launch" data-topic="L1.3.2" class="btn-card-action" style="font-size:0.8rem; padding:5px 12px; background:#0284c7; color:#ffffff; text-decoration:none; border-radius:6px; font-weight:700; display:inline-flex; align-items:center; gap:6px;">
+                <i class="fa-solid fa-graduation-cap"></i> Practice in Moodle
+              </a>
+            </div>
+          </div>
+          <p style="color:#334155; font-size:0.95rem; line-height:1.6; margin-bottom:16px;">Apply recipient addressing rules: 'To' for action owners, 'CC' for oversight, and mandatory 'BCC' (Blind Carbon Copy) for group emails to protect personal email addresses under UK GDPR.</p>
+          
+          <div style="background:#f8fafc; border-left:4px solid #0284c7; padding:14px 18px; border-radius:0 8px 8px 0; margin-bottom:16px; font-size:0.92rem; line-height:1.6;">
+            <div style="font-weight:800; color:#0369a1; margin-bottom:4px;"><i class="fa-solid fa-laptop-code"></i> Workplace Practical Model: BCC Privacy Mandate: BCC hides recipient email addresses from everyone else on the email, preventing catastrophic personal data leaks.</div>
+            <div>Task: Send an appointment notice to 45 patient clients.<br><strong>To:</strong> clinic.admin@workplace.co.uk (own department address)<br><strong>CC:</strong> [Empty]<br><strong>BCC:</strong> [All 45 client email addresses pasted here]<br><strong>GDPR Outcome:</strong> Each client receives the message without seeing anyone else's email address or identifying details.</div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:12px; margin-top:14px;">
+            <div style="background:#fefce8; border:1px solid #fef08a; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#854d0e; line-height:1.5;">
+              <i class="fa-solid fa-lightbulb" style="color:#ca8a04; margin-right:6px;"></i> <strong>Golden Rule: External group emails to clients, patients, or contractors MUST use BCC to prevent UK GDPR privacy breaches.</strong>
+            </div>
+            <div style="background:#fef2f2; border:1px solid #fecaca; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#991b1b; line-height:1.5;">
+              <i class="fa-solid fa-triangle-exclamation" style="color:#dc2626; margin-right:6px;"></i> <strong>Examiner Trap: Putting a list of client or patient emails in 'To' or 'CC' is an immediate UK GDPR breach and will fail Pearson criteria.</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Topic Card: L1.3.3 -->
+        <div id="topic-l1-3-3" class="topic-teaching-card" style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:24px; margin-bottom:24px; box-shadow:0 2px 8px rgba(0,0,0,0.04); scroll-margin-top:100px;">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
+            <div>
+              <span style="background:#e0f2fe; color:#0369a1; font-weight:800; font-size:0.78rem; padding:3px 10px; border-radius:4px; font-family:monospace; margin-right:8px;">L1.3.3</span>
+              <span style="background:#f1f5f9; color:#475569; font-weight:700; font-size:0.78rem; padding:3px 10px; border-radius:4px;"><i class="fa-solid fa-paperclip"></i> Communicating</span>
+              <h4 style="color:#0f172a; font-size:1.25rem; margin:10px 0 6px 0;">Managing Email Attachments & File Size Limits</h4>
+            </div>
+            <div>
+              <a href="courses.html?enrol=dfs-l1&amp;topic=L1.3.3" data-moodle-action="launch" data-topic="L1.3.3" class="btn-card-action" style="font-size:0.8rem; padding:5px 12px; background:#0284c7; color:#ffffff; text-decoration:none; border-radius:6px; font-weight:700; display:inline-flex; align-items:center; gap:6px;">
+                <i class="fa-solid fa-graduation-cap"></i> Practice in Moodle
+              </a>
+            </div>
+          </div>
+          <p style="color:#334155; font-size:0.95rem; line-height:1.6; margin-bottom:16px;">Attach documents to email messages, check attachment file sizes against mail server limits (typically 20MB to 25MB), use universal file formats (.pdf), and verify attachments before sending.</p>
+          
+          <div style="background:#f8fafc; border-left:4px solid #0284c7; padding:14px 18px; border-radius:0 8px 8px 0; margin-bottom:16px; font-size:0.92rem; line-height:1.6;">
+            <div style="font-weight:800; color:#0369a1; margin-bottom:4px;"><i class="fa-solid fa-laptop-code"></i> Workplace Practical Model: Attachment Protocol: Confirm the attachment icon and file size pill are present in the compose window and reference the attachment in the email body.</div>
+            <div>Task: Send an audit report to external regulators.<br><strong>Step 1:</strong> Save working file as <code>Audit_Report_2026.pdf</code> (universal format, cannot be easily altered).<br><strong>Step 2:</strong> In mail client &rarr; Click paperclip icon &rarr; Attach file.<br><strong>Step 3:</strong> Verify attachment pill appears with file name and size (1.4 MB).<br><strong>Step 4:</strong> Include body reference: 'Please find attached the official audit report.'</div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:12px; margin-top:14px;">
+            <div style="background:#fefce8; border:1px solid #fef08a; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#854d0e; line-height:1.5;">
+              <i class="fa-solid fa-lightbulb" style="color:#ca8a04; margin-right:6px;"></i> <strong>Golden Rule: Always verify the attachment chip appears in the email draft before hitting Send. Explicitly mention the attachment in the body.</strong>
+            </div>
+            <div style="background:#fef2f2; border:1px solid #fecaca; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#991b1b; line-height:1.5;">
+              <i class="fa-solid fa-triangle-exclamation" style="color:#dc2626; margin-right:6px;"></i> <strong>Examiner Trap: Writing 'I have attached the document' but forgetting to actually attach the file is a classic student error.</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Topic Card: L1.3.4 -->
+        <div id="topic-l1-3-4" class="topic-teaching-card" style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:24px; margin-bottom:24px; box-shadow:0 2px 8px rgba(0,0,0,0.04); scroll-margin-top:100px;">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
+            <div>
+              <span style="background:#e0f2fe; color:#0369a1; font-weight:800; font-size:0.78rem; padding:3px 10px; border-radius:4px; font-family:monospace; margin-right:8px;">L1.3.4</span>
+              <span style="background:#f1f5f9; color:#475569; font-weight:700; font-size:0.78rem; padding:3px 10px; border-radius:4px;"><i class="fa-solid fa-calendar-plus"></i> Communicating</span>
+              <h4 style="color:#0f172a; font-size:1.25rem; margin:10px 0 6px 0;">Calendar Invitations & Scheduling Meetings</h4>
+            </div>
+            <div>
+              <a href="courses.html?enrol=dfs-l1&amp;topic=L1.3.4" data-moodle-action="launch" data-topic="L1.3.4" class="btn-card-action" style="font-size:0.8rem; padding:5px 12px; background:#0284c7; color:#ffffff; text-decoration:none; border-radius:6px; font-weight:700; display:inline-flex; align-items:center; gap:6px;">
+                <i class="fa-solid fa-graduation-cap"></i> Practice in Moodle
+              </a>
+            </div>
+          </div>
+          <p style="color:#334155; font-size:0.95rem; line-height:1.6; margin-bottom:16px;">Schedule workplace meetings using digital calendars (Outlook, Google Calendar): set meeting titles, designate required and optional attendees, set dates/times, add video links, and configure reminders.</p>
+          
+          <div style="background:#f8fafc; border-left:4px solid #0284c7; padding:14px 18px; border-radius:0 8px 8px 0; margin-bottom:16px; font-size:0.92rem; line-height:1.6;">
+            <div style="font-weight:800; color:#0369a1; margin-bottom:4px;"><i class="fa-solid fa-laptop-code"></i> Workplace Practical Model: Calendar Event Fields: Title + Required Attendees + Optional Attendees + Start/End Time + Location/Teams Link + Meeting Description/Agenda + 15-min Reminder.</div>
+            <div>Task: Schedule quarterly review meeting.<br><strong>Event Title:</strong> 'Q2 Regional Performance Review'<br><strong>Required:</strong> department.heads@workplace.co.uk<br><strong>Date & Time:</strong> Tuesday 21st April, 10:00 AM &ndash; 11:30 AM<br><strong>Location:</strong> MS Teams Video Meeting Link<br><strong>Reminder:</strong> 15 minutes before start.</div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:12px; margin-top:14px;">
+            <div style="background:#fefce8; border:1px solid #fef08a; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#854d0e; line-height:1.5;">
+              <i class="fa-solid fa-lightbulb" style="color:#ca8a04; margin-right:6px;"></i> <strong>Golden Rule: Always include a brief agenda in the calendar description so attendees can prepare necessary documents beforehand.</strong>
+            </div>
+            <div style="background:#fef2f2; border:1px solid #fecaca; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#991b1b; line-height:1.5;">
+              <i class="fa-solid fa-triangle-exclamation" style="color:#dc2626; margin-right:6px;"></i> <strong>Examiner Trap: Forgetting to set a meeting reminder or choosing the wrong time zone when scheduling across teams.</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Topic Card: L1.3.5 -->
+        <div id="topic-l1-3-5" class="topic-teaching-card" style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:24px; margin-bottom:24px; box-shadow:0 2px 8px rgba(0,0,0,0.04); scroll-margin-top:100px;">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
+            <div>
+              <span style="background:#e0f2fe; color:#0369a1; font-weight:800; font-size:0.78rem; padding:3px 10px; border-radius:4px; font-family:monospace; margin-right:8px;">L1.3.5</span>
+              <span style="background:#f1f5f9; color:#475569; font-weight:700; font-size:0.78rem; padding:3px 10px; border-radius:4px;"><i class="fa-solid fa-video"></i> Communicating</span>
+              <h4 style="color:#0f172a; font-size:1.25rem; margin:10px 0 6px 0;">Video Conferencing Etiquette & Virtual Meetings</h4>
+            </div>
+            <div>
+              <a href="courses.html?enrol=dfs-l1&amp;topic=L1.3.5" data-moodle-action="launch" data-topic="L1.3.5" class="btn-card-action" style="font-size:0.8rem; padding:5px 12px; background:#0284c7; color:#ffffff; text-decoration:none; border-radius:6px; font-weight:700; display:inline-flex; align-items:center; gap:6px;">
+                <i class="fa-solid fa-graduation-cap"></i> Practice in Moodle
+              </a>
+            </div>
+          </div>
+          <p style="color:#334155; font-size:0.95rem; line-height:1.6; margin-bottom:16px;">Adhere to professional standards in virtual meetings (Teams, Zoom): test audio/video before joining, mute microphone when not speaking, frame camera at eye level, blur backgrounds, and use chat respectfully.</p>
+          
+          <div style="background:#f8fafc; border-left:4px solid #0284c7; padding:14px 18px; border-radius:0 8px 8px 0; margin-bottom:16px; font-size:0.92rem; line-height:1.6;">
+            <div style="font-weight:800; color:#0369a1; margin-bottom:4px;"><i class="fa-solid fa-laptop-code"></i> Workplace Practical Model: Virtual Meeting Etiquette: Mute microphone by default; Use 'Raise Hand' feature to request speaking turn; Use background blur for confidentiality.</div>
+            <div>Task: Prepare and participate in a workplace team video conference.<br><strong>Pre-call:</strong> Test headset and webcam &bull; Apply background blur to hide domestic environment.<br><strong>During call:</strong> Keep microphone muted while others present &bull; Use the in-meeting chat box for questions &bull; Raise virtual hand before speaking.</div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:12px; margin-top:14px;">
+            <div style="background:#fefce8; border:1px solid #fef08a; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#854d0e; line-height:1.5;">
+              <i class="fa-solid fa-lightbulb" style="color:#ca8a04; margin-right:6px;"></i> <strong>Golden Rule: Keep your microphone muted when you are not actively speaking to prevent echo, feedback, and background noise.</strong>
+            </div>
+            <div style="background:#fef2f2; border:1px solid #fecaca; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#991b1b; line-height:1.5;">
+              <i class="fa-solid fa-triangle-exclamation" style="color:#dc2626; margin-right:6px;"></i> <strong>Examiner Trap: Leaving your microphone unmuted during large meetings creates background noise disruptions.</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Topic Card: L1.3.6 -->
+        <div id="topic-l1-3-6" class="topic-teaching-card" style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:24px; margin-bottom:24px; box-shadow:0 2px 8px rgba(0,0,0,0.04); scroll-margin-top:100px;">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
+            <div>
+              <span style="background:#e0f2fe; color:#0369a1; font-weight:800; font-size:0.78rem; padding:3px 10px; border-radius:4px; font-family:monospace; margin-right:8px;">L1.3.6</span>
+              <span style="background:#f1f5f9; color:#475569; font-weight:700; font-size:0.78rem; padding:3px 10px; border-radius:4px;"><i class="fa-solid fa-users"></i> Communicating</span>
+              <h4 style="color:#0f172a; font-size:1.25rem; margin:10px 0 6px 0;">Cloud Collaboration & Shared Document Permissions</h4>
+            </div>
+            <div>
+              <a href="courses.html?enrol=dfs-l1&amp;topic=L1.3.6" data-moodle-action="launch" data-topic="L1.3.6" class="btn-card-action" style="font-size:0.8rem; padding:5px 12px; background:#0284c7; color:#ffffff; text-decoration:none; border-radius:6px; font-weight:700; display:inline-flex; align-items:center; gap:6px;">
+                <i class="fa-solid fa-graduation-cap"></i> Practice in Moodle
+              </a>
+            </div>
+          </div>
+          <p style="color:#334155; font-size:0.95rem; line-height:1.6; margin-bottom:16px;">Collaborate on live cloud documents (SharePoint, Google Docs): co-author in real time, insert tagged review comments (@colleague), track version history, and configure 'View Only' vs 'Can Edit' permissions.</p>
+          
+          <div style="background:#f8fafc; border-left:4px solid #0284c7; padding:14px 18px; border-radius:0 8px 8px 0; margin-bottom:16px; font-size:0.92rem; line-height:1.6;">
+            <div style="font-weight:800; color:#0369a1; margin-bottom:4px;"><i class="fa-solid fa-laptop-code"></i> Workplace Practical Model: Permission Control: Restrict access levels based on user needs: 'Can View' (read-only), 'Can Comment' (reviewers), or 'Can Edit' (active authors).</div>
+            <div>Task: Share draft policy with 10 team leads for feedback without allowing them to overwrite original text.<br><strong>Step 1:</strong> Click 'Share' button in cloud document.<br><strong>Step 2:</strong> Change link setting from 'Anyone with the link' to 'Specific people'.<br><strong>Step 3:</strong> Set permission dropdown to 'Can review / comment' (disables direct text deletion).<br><strong>Step 4:</strong> Send link.</div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:12px; margin-top:14px;">
+            <div style="background:#fefce8; border:1px solid #fef08a; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#854d0e; line-height:1.5;">
+              <i class="fa-solid fa-lightbulb" style="color:#ca8a04; margin-right:6px;"></i> <strong>Golden Rule: Use 'Can View' or 'Can Comment' when distributing files for review to prevent accidental deletion of approved content.</strong>
+            </div>
+            <div style="background:#fef2f2; border:1px solid #fecaca; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#991b1b; line-height:1.5;">
+              <i class="fa-solid fa-triangle-exclamation" style="color:#dc2626; margin-right:6px;"></i> <strong>Examiner Trap: Granting unrestricted 'Can Edit' access to an entire organization can result in accidental data loss.</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Topic Card: L1.3.7 -->
+        <div id="topic-l1-3-7" class="topic-teaching-card" style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:24px; margin-bottom:24px; box-shadow:0 2px 8px rgba(0,0,0,0.04); scroll-margin-top:100px;">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
+            <div>
+              <span style="background:#e0f2fe; color:#0369a1; font-weight:800; font-size:0.78rem; padding:3px 10px; border-radius:4px; font-family:monospace; margin-right:8px;">L1.3.7</span>
+              <span style="background:#f1f5f9; color:#475569; font-weight:700; font-size:0.78rem; padding:3px 10px; border-radius:4px;"><i class="fa-solid fa-comments"></i> Communicating</span>
+              <h4 style="color:#0f172a; font-size:1.25rem; margin:10px 0 6px 0;">Digital Communication Channels & Appropriate Tone</h4>
+            </div>
+            <div>
+              <a href="courses.html?enrol=dfs-l1&amp;topic=L1.3.7" data-moodle-action="launch" data-topic="L1.3.7" class="btn-card-action" style="font-size:0.8rem; padding:5px 12px; background:#0284c7; color:#ffffff; text-decoration:none; border-radius:6px; font-weight:700; display:inline-flex; align-items:center; gap:6px;">
+                <i class="fa-solid fa-graduation-cap"></i> Practice in Moodle
+              </a>
+            </div>
+          </div>
+          <p style="color:#334155; font-size:0.95rem; line-height:1.6; margin-bottom:16px;">Select the correct communication medium for workplace contexts: formal email for official records, instant messaging (Teams/Slack) for quick operational checks, phone/video for sensitive HR conversations.</p>
+          
+          <div style="background:#f8fafc; border-left:4px solid #0284c7; padding:14px 18px; border-radius:0 8px 8px 0; margin-bottom:16px; font-size:0.92rem; line-height:1.6;">
+            <div style="font-weight:800; color:#0369a1; margin-bottom:4px;"><i class="fa-solid fa-laptop-code"></i> Workplace Practical Model: Channel Selection: Match channel urgency and formality: Formal Email = Written audit trail; Instant Message = Quick team query; Phone/1-to-1 = Sensitive/confidential issue.</div>
+            <div>Task: Match scenario to ideal communication tool:<br><strong>1. Formal resignation notice:</strong> Formal Email with attached signed letter.<br><strong>2. Asking a colleague for coffee during lunch:</strong> Instant message (Teams/Slack).<br><strong>3. Discussing sensitive performance concerns:</strong> Private 1-to-1 video call or in-person meeting.</div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:12px; margin-top:14px;">
+            <div style="background:#fefce8; border:1px solid #fef08a; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#854d0e; line-height:1.5;">
+              <i class="fa-solid fa-lightbulb" style="color:#ca8a04; margin-right:6px;"></i> <strong>Golden Rule: Never use informal emojis, abbreviations, or ALL CAPS in client-facing or regulatory communications.</strong>
+            </div>
+            <div style="background:#fef2f2; border:1px solid #fecaca; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#991b1b; line-height:1.5;">
+              <i class="fa-solid fa-triangle-exclamation" style="color:#dc2626; margin-right:6px;"></i> <strong>Examiner Trap: Writing emails in ALL CAPS is considered shouting in workplace netiquette and will be penalized in exams.</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILL AREA 4: TRANSACTING -->
+      <section id="skill-4" class="revision-section">
+        <div class="section-header-row">
+          <h2 class="section-title"><i class="fa-solid fa-shield-halved" style="color:#d97706;"></i> Skill Area 4: Transacting</h2>
+          <span style="font-size:0.85rem; font-weight:800; background:#fefce8; color:#a16207; padding:4px 12px; border-radius:999px;">4 Regulated Standards</span>
+        </div>
+        <p style="color:#64748b; font-size:0.95rem; margin-bottom:20px;">Master completing complex digital forms (*), online procurement checkout, verifying SSL padlocks and HTTPS security, and archiving VAT invoices.</p>
+        <!-- Topic Card: L1.4.1 -->
+        <div id="topic-l1-4-1" class="topic-teaching-card" style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:24px; margin-bottom:24px; box-shadow:0 2px 8px rgba(0,0,0,0.04); scroll-margin-top:100px;">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
+            <div>
+              <span style="background:#e0f2fe; color:#0369a1; font-weight:800; font-size:0.78rem; padding:3px 10px; border-radius:4px; font-family:monospace; margin-right:8px;">L1.4.1</span>
+              <span style="background:#f1f5f9; color:#475569; font-weight:700; font-size:0.78rem; padding:3px 10px; border-radius:4px;"><i class="fa-solid fa-rectangle-list"></i> Transacting</span>
+              <h4 style="color:#0f172a; font-size:1.25rem; margin:10px 0 6px 0;">Completing Complex Online Forms & Input Validation</h4>
+            </div>
+            <div>
+              <a href="courses.html?enrol=dfs-l1&amp;topic=L1.4.1" data-moodle-action="launch" data-topic="L1.4.1" class="btn-card-action" style="font-size:0.8rem; padding:5px 12px; background:#0284c7; color:#ffffff; text-decoration:none; border-radius:6px; font-weight:700; display:inline-flex; align-items:center; gap:6px;">
+                <i class="fa-solid fa-graduation-cap"></i> Practice in Moodle
+              </a>
+            </div>
+          </div>
+          <p style="color:#334155; font-size:0.95rem; line-height:1.6; margin-bottom:16px;">Fill out multi-step online forms accurately: recognize mandatory fields marked with an asterisk (*), select options from dropdown menus, upload compliant attachments, and correct validation errors.</p>
+          
+          <div style="background:#f8fafc; border-left:4px solid #0284c7; padding:14px 18px; border-radius:0 8px 8px 0; margin-bottom:16px; font-size:0.92rem; line-height:1.6;">
+            <div style="font-weight:800; color:#0369a1; margin-bottom:4px;"><i class="fa-solid fa-laptop-code"></i> Workplace Practical Model: Form Validation: Required fields (*) must contain valid data formats (e.g. UK postcode format SW1A 1AA, valid email name@domain.com) before form submission.</div>
+            <div>Task: Register a new workplace apprentice on an awarding body portal.<br><strong>Step 1:</strong> Identify fields marked with red asterisk (*) &rarr; Full Name, Date of Birth, Email, National Insurance Number.<br><strong>Step 2:</strong> Use date-picker calendar to prevent day/month inversion.<br><strong>Step 3:</strong> Upload ID proof in approved format (.pdf, &lt; 5MB).<br><strong>Step 4:</strong> Review preview screen &rarr; Submit.</div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:12px; margin-top:14px;">
+            <div style="background:#fefce8; border:1px solid #fef08a; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#854d0e; line-height:1.5;">
+              <i class="fa-solid fa-lightbulb" style="color:#ca8a04; margin-right:6px;"></i> <strong>Golden Rule: Always review all input fields before submitting. Missing a single mandatory field (*) will reset form data.</strong>
+            </div>
+            <div style="background:#fef2f2; border:1px solid #fecaca; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#991b1b; line-height:1.5;">
+              <i class="fa-solid fa-triangle-exclamation" style="color:#dc2626; margin-right:6px;"></i> <strong>Examiner Trap: Submitting a form without reviewing the preview screen leads to uncorrected validation errors.</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Topic Card: L1.4.2 -->
+        <div id="topic-l1-4-2" class="topic-teaching-card" style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:24px; margin-bottom:24px; box-shadow:0 2px 8px rgba(0,0,0,0.04); scroll-margin-top:100px;">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
+            <div>
+              <span style="background:#e0f2fe; color:#0369a1; font-weight:800; font-size:0.78rem; padding:3px 10px; border-radius:4px; font-family:monospace; margin-right:8px;">L1.4.2</span>
+              <span style="background:#f1f5f9; color:#475569; font-weight:700; font-size:0.78rem; padding:3px 10px; border-radius:4px;"><i class="fa-solid fa-cart-shopping"></i> Transacting</span>
+              <h4 style="color:#0f172a; font-size:1.25rem; margin:10px 0 6px 0;">E-Commerce Purchasing & Booking Workflows</h4>
+            </div>
+            <div>
+              <a href="courses.html?enrol=dfs-l1&amp;topic=L1.4.2" data-moodle-action="launch" data-topic="L1.4.2" class="btn-card-action" style="font-size:0.8rem; padding:5px 12px; background:#0284c7; color:#ffffff; text-decoration:none; border-radius:6px; font-weight:700; display:inline-flex; align-items:center; gap:6px;">
+                <i class="fa-solid fa-graduation-cap"></i> Practice in Moodle
+              </a>
+            </div>
+          </div>
+          <p style="color:#334155; font-size:0.95rem; line-height:1.6; margin-bottom:16px;">Navigate digital procurement workflows: verify shopping basket item quantities and unit prices, apply discount vouchers, select shipping options (Standard vs Express), and verify order totals.</p>
+          
+          <div style="background:#f8fafc; border-left:4px solid #0284c7; padding:14px 18px; border-radius:0 8px 8px 0; margin-bottom:16px; font-size:0.92rem; line-height:1.6;">
+            <div style="font-weight:800; color:#0369a1; margin-bottom:4px;"><i class="fa-solid fa-laptop-code"></i> Workplace Practical Model: Procurement Verification: Verify basket contents before proceeding to checkout: Quantity &times; Unit Price = Subtotal + Shipping &ndash; Discount + VAT = Final Total.</div>
+            <div>Task: Order 12 boxes of sanitising wipes for clinic supply.<br><strong>Basket Check:</strong> Confirm quantity is 12 (not default 1).<br><strong>Voucher:</strong> Apply corporate discount code <code>HEALTH2026</code> (10% deduction).<br><strong>Delivery:</strong> Select 'Standard 3-Day Business Delivery (£4.99)' rather than costly premium weekend delivery.<br><strong>Summary:</strong> Verify final total matches allocated budget.</div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:12px; margin-top:14px;">
+            <div style="background:#fefce8; border:1px solid #fef08a; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#854d0e; line-height:1.5;">
+              <i class="fa-solid fa-lightbulb" style="color:#ca8a04; margin-right:6px;"></i> <strong>Golden Rule: Always check the basket quantity and delivery method. Default options often select expensive express courier delivery.</strong>
+            </div>
+            <div style="background:#fef2f2; border:1px solid #fecaca; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#991b1b; line-height:1.5;">
+              <i class="fa-solid fa-triangle-exclamation" style="color:#dc2626; margin-right:6px;"></i> <strong>Examiner Trap: Forgetting to verify quantities can cause accidental duplicate purchases on corporate payment cards.</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Topic Card: L1.4.3 -->
+        <div id="topic-l1-4-3" class="topic-teaching-card" style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:24px; margin-bottom:24px; box-shadow:0 2px 8px rgba(0,0,0,0.04); scroll-margin-top:100px;">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
+            <div>
+              <span style="background:#e0f2fe; color:#0369a1; font-weight:800; font-size:0.78rem; padding:3px 10px; border-radius:4px; font-family:monospace; margin-right:8px;">L1.4.3</span>
+              <span style="background:#f1f5f9; color:#475569; font-weight:700; font-size:0.78rem; padding:3px 10px; border-radius:4px;"><i class="fa-solid fa-lock"></i> Transacting</span>
+              <h4 style="color:#0f172a; font-size:1.25rem; margin:10px 0 6px 0;">Verifying Secure Payment Gateways & SSL Certificates</h4>
+            </div>
+            <div>
+              <a href="courses.html?enrol=dfs-l1&amp;topic=L1.4.3" data-moodle-action="launch" data-topic="L1.4.3" class="btn-card-action" style="font-size:0.8rem; padding:5px 12px; background:#0284c7; color:#ffffff; text-decoration:none; border-radius:6px; font-weight:700; display:inline-flex; align-items:center; gap:6px;">
+                <i class="fa-solid fa-graduation-cap"></i> Practice in Moodle
+              </a>
+            </div>
+          </div>
+          <p style="color:#334155; font-size:0.95rem; line-height:1.6; margin-bottom:16px;">Verify transaction security before inputting payment details: verify HTTPS protocol, click the browser padlock icon to check SSL certificate validity, and choose secure payment methods.</p>
+          
+          <div style="background:#f8fafc; border-left:4px solid #0284c7; padding:14px 18px; border-radius:0 8px 8px 0; margin-bottom:16px; font-size:0.92rem; line-height:1.6;">
+            <div style="font-weight:800; color:#0369a1; margin-bottom:4px;"><i class="fa-solid fa-laptop-code"></i> Workplace Practical Model: Secure Checkout Verification: 'https://' indicates encrypted transmission; Padlock icon verifies that a trusted Certificate Authority has validated the domain.</div>
+            <div>Task: Audit an online medical supplier's payment gateway before booking.<br><strong>Check 1:</strong> URL begins with <code>https://</code> (not unencrypted http://).<br><strong>Check 2:</strong> Click padlock icon &rarr; View Certificate &rarr; 'Issued to supplierdomain.co.uk' &bull; 'Valid to Dec 2026'.<br><strong>Check 3:</strong> Payment processing powered by recognized secure gateway (e.g. Stripe, Worldpay, PayPal).</div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:12px; margin-top:14px;">
+            <div style="background:#fefce8; border:1px solid #fef08a; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#854d0e; line-height:1.5;">
+              <i class="fa-solid fa-lightbulb" style="color:#ca8a04; margin-right:6px;"></i> <strong>Golden Rule: Never enter debit card or bank details on a website that lacks HTTPS or displays a browser 'Not Secure' security warning.</strong>
+            </div>
+            <div style="background:#fef2f2; border:1px solid #fecaca; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#991b1b; line-height:1.5;">
+              <i class="fa-solid fa-triangle-exclamation" style="color:#dc2626; margin-right:6px;"></i> <strong>Examiner Trap: Assuming HTTPS guarantees a website is honest. HTTPS encrypts data in transit, but you must still check merchant legitimacy.</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Topic Card: L1.4.4 -->
+        <div id="topic-l1-4-4" class="topic-teaching-card" style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:24px; margin-bottom:24px; box-shadow:0 2px 8px rgba(0,0,0,0.04); scroll-margin-top:100px;">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
+            <div>
+              <span style="background:#e0f2fe; color:#0369a1; font-weight:800; font-size:0.78rem; padding:3px 10px; border-radius:4px; font-family:monospace; margin-right:8px;">L1.4.4</span>
+              <span style="background:#f1f5f9; color:#475569; font-weight:700; font-size:0.78rem; padding:3px 10px; border-radius:4px;"><i class="fa-solid fa-file-invoice"></i> Transacting</span>
+              <h4 style="color:#0f172a; font-size:1.25rem; margin:10px 0 6px 0;">Transaction Confirmations, VAT Invoices & Record Keeping</h4>
+            </div>
+            <div>
+              <a href="courses.html?enrol=dfs-l1&amp;topic=L1.4.4" data-moodle-action="launch" data-topic="L1.4.4" class="btn-card-action" style="font-size:0.8rem; padding:5px 12px; background:#0284c7; color:#ffffff; text-decoration:none; border-radius:6px; font-weight:700; display:inline-flex; align-items:center; gap:6px;">
+                <i class="fa-solid fa-graduation-cap"></i> Practice in Moodle
+              </a>
+            </div>
+          </div>
+          <p style="color:#334155; font-size:0.95rem; line-height:1.6; margin-bottom:16px;">Complete digital audit trails for online transactions: record unique order confirmation numbers, download VAT invoice PDFs, and file financial receipts in structured company archives.</p>
+          
+          <div style="background:#f8fafc; border-left:4px solid #0284c7; padding:14px 18px; border-radius:0 8px 8px 0; margin-bottom:16px; font-size:0.92rem; line-height:1.6;">
+            <div style="font-weight:800; color:#0369a1; margin-bottom:4px;"><i class="fa-solid fa-laptop-code"></i> Workplace Practical Model: Audit Record Trail: Order Reference Number + Itemised VAT Invoice PDF + Payment Method Confirmation filed into financial archives for accounting reconciliation.</div>
+            <div>Task: Conclude corporate software subscription purchase.<br><strong>Step 1:</strong> Save order reference number <code>ORD-98231-UK</code>.<br><strong>Step 2:</strong> Click 'Download VAT Receipt / Invoice' &rarr; save as <code>2026-03-31_Software_Invoice_ORD98231.pdf</code>.<br><strong>Step 3:</strong> Save copy to <code>01_Finance/Receipts/2026/</code>.<br><strong>Step 4:</strong> Forward receipt to accounts department.</div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:12px; margin-top:14px;">
+            <div style="background:#fefce8; border:1px solid #fef08a; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#854d0e; line-height:1.5;">
+              <i class="fa-solid fa-lightbulb" style="color:#ca8a04; margin-right:6px;"></i> <strong>Golden Rule: Always download and save the official VAT invoice PDF immediately upon checkout. Do not rely solely on email confirmations.</strong>
+            </div>
+            <div style="background:#fef2f2; border:1px solid #fecaca; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#991b1b; line-height:1.5;">
+              <i class="fa-solid fa-triangle-exclamation" style="color:#dc2626; margin-right:6px;"></i> <strong>Examiner Trap: Closing the browser tab without saving the order number or invoice makes expense reconciliation impossible.</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SKILL AREA 5: BEING SAFE ONLINE -->
+      <section id="skill-5" class="revision-section">
+        <div class="section-header-row">
+          <h2 class="section-title"><i class="fa-solid fa-lock" style="color:#dc2626;"></i> Skill Area 5: Being Safe and Responsible Online</h2>
+          <span style="font-size:0.85rem; font-weight:800; background:#fef2f2; color:#b91c1c; padding:4px 12px; border-radius:999px;">3 Regulated Standards</span>
+        </div>
+        <p style="color:#64748b; font-size:0.95rem; margin-bottom:20px;">Master multi-factor authentication (MFA), detecting email phishing headers, personal data privacy under UK GDPR, and desk security (Win + L).</p>
+        <!-- Topic Card: L1.5.1 -->
+        <div id="topic-l1-5-1" class="topic-teaching-card" style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:24px; margin-bottom:24px; box-shadow:0 2px 8px rgba(0,0,0,0.04); scroll-margin-top:100px;">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
+            <div>
+              <span style="background:#e0f2fe; color:#0369a1; font-weight:800; font-size:0.78rem; padding:3px 10px; border-radius:4px; font-family:monospace; margin-right:8px;">L1.5.1</span>
+              <span style="background:#f1f5f9; color:#475569; font-weight:700; font-size:0.78rem; padding:3px 10px; border-radius:4px;"><i class="fa-solid fa-key"></i> Being Safe Online</span>
+              <h4 style="color:#0f172a; font-size:1.25rem; margin:10px 0 6px 0;">Strong Passwords & Multi-Factor Authentication (MFA)</h4>
+            </div>
+            <div>
+              <a href="courses.html?enrol=dfs-l1&amp;topic=L1.5.1" data-moodle-action="launch" data-topic="L1.5.1" class="btn-card-action" style="font-size:0.8rem; padding:5px 12px; background:#0284c7; color:#ffffff; text-decoration:none; border-radius:6px; font-weight:700; display:inline-flex; align-items:center; gap:6px;">
+                <i class="fa-solid fa-graduation-cap"></i> Practice in Moodle
+              </a>
+            </div>
+          </div>
+          <p style="color:#334155; font-size:0.95rem; line-height:1.6; margin-bottom:16px;">Implement enterprise identity security: create strong passphrases (14+ characters combining words, numbers, symbols), avoid password re-use across platforms, and configure Multi-Factor Authentication (MFA).</p>
+          
+          <div style="background:#f8fafc; border-left:4px solid #0284c7; padding:14px 18px; border-radius:0 8px 8px 0; margin-bottom:16px; font-size:0.92rem; line-height:1.6;">
+            <div style="font-weight:800; color:#0369a1; margin-bottom:4px;"><i class="fa-solid fa-laptop-code"></i> Workplace Practical Model: MFA Principles: Combines two distinct authentication categories: (1) Something you KNOW (password), (2) Something you HAVE (authenticator phone app / security key), (3) Something you ARE (biometrics).</div>
+            <div>Task: Configure high-security access for workplace cloud portal.<br><strong>Password:</strong> Replace weak password ('Summer2025!') with a 4-word passphrase: <code>Coffee!Blueberry#Orchid94</code>.<br><strong>MFA Setup:</strong> Open Microsoft Authenticator app on mobile &rarr; Scan QR code &rarr; Enter 6-digit one-time code.<br><strong>Result:</strong> Even if password is breached in a leak, attackers cannot log in without the physical phone token.</div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:12px; margin-top:14px;">
+            <div style="background:#fefce8; border:1px solid #fef08a; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#854d0e; line-height:1.5;">
+              <i class="fa-solid fa-lightbulb" style="color:#ca8a04; margin-right:6px;"></i> <strong>Golden Rule: True 2FA requires two DIFFERENT factors (e.g. Password + Authenticator Code). Two passwords do not constitute 2FA.</strong>
+            </div>
+            <div style="background:#fef2f2; border:1px solid #fecaca; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#991b1b; line-height:1.5;">
+              <i class="fa-solid fa-triangle-exclamation" style="color:#dc2626; margin-right:6px;"></i> <strong>Examiner Trap: Believing that entering a secondary secret question or second password qualifies as multi-factor authentication.</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Topic Card: L1.5.2 -->
+        <div id="topic-l1-5-2" class="topic-teaching-card" style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:24px; margin-bottom:24px; box-shadow:0 2px 8px rgba(0,0,0,0.04); scroll-margin-top:100px;">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
+            <div>
+              <span style="background:#e0f2fe; color:#0369a1; font-weight:800; font-size:0.78rem; padding:3px 10px; border-radius:4px; font-family:monospace; margin-right:8px;">L1.5.2</span>
+              <span style="background:#f1f5f9; color:#475569; font-weight:700; font-size:0.78rem; padding:3px 10px; border-radius:4px;"><i class="fa-solid fa-fish-fins"></i> Being Safe Online</span>
+              <h4 style="color:#0f172a; font-size:1.25rem; margin:10px 0 6px 0;">Detecting Phishing Scams, Suspicious Links & Fraud</h4>
+            </div>
+            <div>
+              <a href="courses.html?enrol=dfs-l1&amp;topic=L1.5.2" data-moodle-action="launch" data-topic="L1.5.2" class="btn-card-action" style="font-size:0.8rem; padding:5px 12px; background:#0284c7; color:#ffffff; text-decoration:none; border-radius:6px; font-weight:700; display:inline-flex; align-items:center; gap:6px;">
+                <i class="fa-solid fa-graduation-cap"></i> Practice in Moodle
+              </a>
+            </div>
+          </div>
+          <p style="color:#334155; font-size:0.95rem; line-height:1.6; margin-bottom:16px;">Identify sophisticated cyber threats: inspect sender email headers for domain spoofing, detect psychological urgency and fear tactics, hover over hyperlinks to inspect true destination URLs, and spot malicious attachments.</p>
+          
+          <div style="background:#f8fafc; border-left:4px solid #0284c7; padding:14px 18px; border-radius:0 8px 8px 0; margin-bottom:16px; font-size:0.92rem; line-height:1.6;">
+            <div style="font-weight:800; color:#0369a1; margin-bottom:4px;"><i class="fa-solid fa-laptop-code"></i> Workplace Practical Model: Phishing Detection Protocol: Inspect sender domain (e.g. support@paypal-service-alert.co.uk vs official @paypal.com) &bull; Hover over links to reveal true URL destination &bull; Never open unverified .exe, .scr, or macro-enabled .docm attachments.</div>
+            <div>Task: Analyse an urgent email claiming 'Your IT Account will be suspended in 2 hours unless you verify credentials'.<br><strong>Red Flag 1:</strong> Sender is <code>it-support@cloud-auth-update.xyz</code> (not official workplace domain).<br><strong>Red Flag 2:</strong> Artificial urgency (threat of suspension within 2 hours).<br><strong>Red Flag 3:</strong> Hovering over 'Verify Here' shows link pointing to <code>http://185.220.101.4/login</code>.<br><strong>Action:</strong> Do not click. Report to IT Security and mark as Phishing.</div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:12px; margin-top:14px;">
+            <div style="background:#fefce8; border:1px solid #fef08a; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#854d0e; line-height:1.5;">
+              <i class="fa-solid fa-lightbulb" style="color:#ca8a04; margin-right:6px;"></i> <strong>Golden Rule: Always hover your mouse over hyperlinks to inspect the true destination URL before clicking.</strong>
+            </div>
+            <div style="background:#fef2f2; border:1px solid #fecaca; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#991b1b; line-height:1.5;">
+              <i class="fa-solid fa-triangle-exclamation" style="color:#dc2626; margin-right:6px;"></i> <strong>Examiner Trap: Clicking links inside warning emails to verify account status. Always navigate independently via the official browser bookmark.</strong>
+            </div>
+          </div>
+        </div>
+
+        <!-- Topic Card: L1.5.3 -->
+        <div id="topic-l1-5-3" class="topic-teaching-card" style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:24px; margin-bottom:24px; box-shadow:0 2px 8px rgba(0,0,0,0.04); scroll-margin-top:100px;">
+          <div style="display:flex; justify-content:space-between; align-items:flex-start; flex-wrap:wrap; gap:10px; margin-bottom:12px;">
+            <div>
+              <span style="background:#e0f2fe; color:#0369a1; font-weight:800; font-size:0.78rem; padding:3px 10px; border-radius:4px; font-family:monospace; margin-right:8px;">L1.5.3</span>
+              <span style="background:#f1f5f9; color:#475569; font-weight:700; font-size:0.78rem; padding:3px 10px; border-radius:4px;"><i class="fa-solid fa-shield-halved"></i> Being Safe Online</span>
+              <h4 style="color:#0f172a; font-size:1.25rem; margin:10px 0 6px 0;">Personal Data Protection, UK GDPR & Digital Footprint</h4>
+            </div>
+            <div>
+              <a href="courses.html?enrol=dfs-l1&amp;topic=L1.5.3" data-moodle-action="launch" data-topic="L1.5.3" class="btn-card-action" style="font-size:0.8rem; padding:5px 12px; background:#0284c7; color:#ffffff; text-decoration:none; border-radius:6px; font-weight:700; display:inline-flex; align-items:center; gap:6px;">
+                <i class="fa-solid fa-graduation-cap"></i> Practice in Moodle
+              </a>
+            </div>
+          </div>
+          <p style="color:#334155; font-size:0.95rem; line-height:1.6; margin-bottom:16px;">Ensure strict compliance with the UK General Data Protection Regulation (UK GDPR) and Data Protection Act 2018: handle Personally Identifiable Information (PII) legally, protect physical workspace screens (Win + L), and report breaches within 72 hours.</p>
+          
+          <div style="background:#f8fafc; border-left:4px solid #0284c7; padding:14px 18px; border-radius:0 8px 8px 0; margin-bottom:16px; font-size:0.92rem; line-height:1.6;">
+            <div style="font-weight:800; color:#0369a1; margin-bottom:4px;"><i class="fa-solid fa-laptop-code"></i> Workplace Practical Model: PII Protection: Names, addresses, medical records, financial data, and IP addresses are legally protected. They must be encrypted, minimized, and disclosed only with lawful authority.</div>
+            <div>Task: Maintain data protection compliance during workplace desk duties.<br><strong>Physical Security:</strong> Whenever stepping away from desk for coffee or lunch, press <code>Win + L</code> to lock workstation immediately.<br><strong>Paperwork:</strong> Place patient/client paper files into locked filing cabinet (Clean Desk Policy).<br><strong>Disposal:</strong> Shred confidential printouts in cross-cut shredder.<br><strong>Breach Reporting:</strong> If personal data is accidentally emailed to wrong recipient, notify Data Protection Officer (DPO) immediately.</div>
+          </div>
+
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:12px; margin-top:14px;">
+            <div style="background:#fefce8; border:1px solid #fef08a; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#854d0e; line-height:1.5;">
+              <i class="fa-solid fa-lightbulb" style="color:#ca8a04; margin-right:6px;"></i> <strong>Golden Rule: Always press Win + L to lock your computer whenever leaving your desk to prevent unauthorized access to sensitive records.</strong>
+            </div>
+            <div style="background:#fef2f2; border:1px solid #fecaca; padding:10px 14px; border-radius:8px; font-size:0.86rem; color:#991b1b; line-height:1.5;">
+              <i class="fa-solid fa-triangle-exclamation" style="color:#dc2626; margin-right:6px;"></i> <strong>Examiner Trap: Leaving confidential spreadsheets open on an unlocked computer screen when away from your desk is a serious UK GDPR breach.</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- WORKED EXAM MODELS -->
+      <section id="worked-exam-models" class="revision-section">
+        <div class="section-header-row">
+          <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i> Official Pearson Edexcel Worked Exam Models</h2>
+        </div>
+        <div class="skill-card-container">
+          <p>Study these accredited step-by-step models calibrated directly to the Pearson Edexcel Level 1 Digital Functional Skills mark scheme:</p>
+
+          <!-- Model 1: Spreadsheet Task -->
+          <div class="exam-model-big-step" style="background:#ffffff; border:1px solid #cbd5e1; border-radius:12px; padding:24px; margin-bottom:24px; box-shadow:0 4px 12px rgba(0,0,0,0.05);">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; border-bottom:1px solid #e2e8f0; padding-bottom:10px;">
+              <span style="font-weight:800; color:#0284c7; font-size:1.1rem;"><i class="fa-solid fa-file-excel"></i> Exam Task 1: Spreadsheet Calculation &amp; Sorting</span>
+              <span style="background:#ecfdf5; color:#047857; font-weight:800; font-size:0.82rem; padding:3px 10px; border-radius:999px;">[5 Marks Allocated]</span>
+            </div>
+            <p><strong>Scenario:</strong> You are provided with file <code>Q1_Staff_Hours.xlsx</code> containing 14 staff records in columns A to E. You must calculate total pay per employee, overall department total, average pay, sort alphabetically by Surname, and format as Currency (£, 2 d.p.).</p>
+            <div style="background:#f8fafc; border-left:4px solid #059669; padding:14px; margin:14px 0; font-size:0.9rem; line-height:1.7;">
+              <strong>Step-by-step Model Solution:</strong><br>
+              1. <strong>Line Calculation [1 Mark]:</strong> In cell E2, enter <code>=(C2*D2)</code> (Hours &times; Hourly Rate). Replicate formula down to cell E15.<br>
+              2. <strong>Summary Functions [2 Marks]:</strong> In cell E16, enter <code>=SUM(E2:E15)</code>. In cell E17, enter <code>=AVERAGE(E2:E15)</code> (excluding row 16).<br>
+              3. <strong>Data Sorting [1 Mark]:</strong> Highlight entire table range A1:E15 &rarr; Data &rarr; Sort &rarr; Sort by: 'Surname' (Order: A to Z) with headers checked.<br>
+              4. <strong>Number Formatting [1 Mark]:</strong> Select column E &rarr; Home Ribbon &rarr; Currency &rarr; &pound; English (UK), 2 decimal places.
+            </div>
+          </div>
+
+          <!-- Model 2: Email & BCC Privacy Task -->
+          <div class="exam-model-big-step" style="background:#ffffff; border:1px solid #cbd5e1; border-radius:12px; padding:24px; margin-bottom:24px; box-shadow:0 4px 12px rgba(0,0,0,0.05);">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; border-bottom:1px solid #e2e8f0; padding-bottom:10px;">
+              <span style="font-weight:800; color:#0284c7; font-size:1.1rem;"><i class="fa-solid fa-envelope"></i> Exam Task 2: Client Communication &amp; UK GDPR Protection</span>
+              <span style="background:#ecfdf5; color:#047857; font-weight:800; font-size:0.82rem; padding:3px 10px; border-radius:999px;">[4 Marks Allocated]</span>
+            </div>
+            <p><strong>Scenario:</strong> Send an update regarding new clinic opening times to 25 external patients, attaching the PDF guide <code>Clinic_Times_2026.pdf</code>.</p>
+            <div style="background:#f8fafc; border-left:4px solid #0284c7; padding:14px; margin:14px 0; font-size:0.9rem; line-height:1.7;">
+              <strong>Step-by-step Model Solution:</strong><br>
+              1. <strong>Field Allocation [2 Marks]:</strong> Put own email in 'To' (or leave To blank) and place all 25 patient addresses in <strong>BCC</strong>.<br>
+              2. <strong>Subject Line [1 Mark]:</strong> Enter clear, specific subject: <code>Notice: Updated Clinic Opening Hours from May 2026</code>.<br>
+              3. <strong>Attachment &amp; Body [1 Mark]:</strong> Attach <code>Clinic_Times_2026.pdf</code>, open with 'Dear Patient / Client', state changes clearly, reference attachment, and close with 'Kind regards, Management'.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- EXAMINER TRAPS -->
+      <section id="examiner-traps" class="revision-section">
+        <div class="section-header-row">
+          <h2 class="section-title"><i class="fa-solid fa-triangle-exclamation"></i> Examiner Traps: What Candidates Get Wrong</h2>
+        </div>
+        <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap:18px;">
+          <div class="trap-card-red" style="background:#fff5f5; border:1px solid #fecaca; border-radius:10px; padding:18px;">
+            <div style="color:#b91c1c; font-weight:800; font-size:1rem; margin-bottom:6px;"><i class="fa-solid fa-circle-xmark"></i> Trap 1: Sorting Only One Column</div>
+            <p style="color:#7f1d1d; font-size:0.88rem; line-height:1.5; margin:0;">Never choose 'Continue with current selection' when sorting. It scrambles names away from salaries, corrupting the database.</p>
+          </div>
+          <div class="trap-card-red" style="background:#fff5f5; border:1px solid #fecaca; border-radius:10px; padding:18px;">
+            <div style="color:#b91c1c; font-weight:800; font-size:1rem; margin-bottom:6px;"><i class="fa-solid fa-circle-xmark"></i> Trap 2: Including Total in =AVERAGE</div>
+            <p style="color:#7f1d1d; font-size:0.88rem; line-height:1.5; margin:0;">Highlighting the total row when calculating an average doubles the result! Always stop range before total row.</p>
+          </div>
+          <div class="trap-card-red" style="background:#fff5f5; border:1px solid #fecaca; border-radius:10px; padding:18px;">
+            <div style="color:#b91c1c; font-weight:800; font-size:1rem; margin-bottom:6px;"><i class="fa-solid fa-circle-xmark"></i> Trap 3: Group Emails in CC</div>
+            <p style="color:#7f1d1d; font-size:0.88rem; line-height:1.5; margin:0;">Putting external contacts in 'CC' is an immediate UK GDPR breach because addresses become visible to all recipients. Always use BCC.</p>
+          </div>
+          <div class="trap-card-red" style="background:#fff5f5; border:1px solid #fecaca; border-radius:10px; padding:18px;">
+            <div style="color:#b91c1c; font-weight:800; font-size:1rem; margin-bottom:6px;"><i class="fa-solid fa-circle-xmark"></i> Trap 4: Distorted Image Resizing</div>
+            <p style="color:#7f1d1d; font-size:0.88rem; line-height:1.5; margin:0;">Dragging side handles squashes graphics. Pearson examiners deduct marks unless images are resized from corner handles.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- INTERACTIVE PRACTICE QUESTIONS -->
+      <section id="practice-questions" class="revision-section">
+        <div class="section-header-row">
+          <h2 class="section-title"><i class="fa-solid fa-pencil"></i> Interactive Exam Practice Questions</h2>
+        </div>
+        <div class="skill-card-container">
+          <p>Attempt these realistic exam scenarios. Type your answers into the autosaving scratchpads, then click <em>Reveal Pearson Mark Scheme</em> to check your score:</p>
+
+          <!-- Practice Task 1 -->
+          <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:22px; margin-bottom:24px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+              <span style="font-weight:800; color:#0284c7;">Practice Task 1: Spreadsheet Syntax &amp; Formatting</span>
+              <span style="background:#e0f2fe; color:#0369a1; font-weight:700; font-size:0.8rem; padding:2px 8px; border-radius:4px;">3 Marks</span>
+            </div>
+            <p style="color:#334155; font-size:0.92rem;">A spreadsheet contains quarterly departmental travel expenses in cells <code>D4:D19</code>. Cell <code>D20</code> contains the grand total. State the exact formula required in cell <code>D21</code> to find the average expense, state what error code appears if column D is too narrow, and state how to fix it.</p>
+            <textarea id="dfs_p1_scratch" style="width:100%; height:80px; padding:10px; border:1px solid #cbd5e1; border-radius:6px; font-family:inherit; font-size:0.9rem; margin-bottom:12px;" placeholder="Type your answers here... (auto-saved)"></textarea>
+            <details style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; padding:12px;">
+              <summary style="font-weight:700; color:#0284c7; cursor:pointer;">Reveal Pearson Mark Scheme &amp; Tutor Model</summary>
+              <div style="padding-top:10px; font-size:0.9rem; color:#1e293b; line-height:1.6;">
+                &bull; <strong>Formula:</strong> <code>=AVERAGE(D4:D19)</code> [1 Mark] (Must strictly exclude D20).<br>
+                &bull; <strong>Error Code:</strong> <code>#####</code> [1 Mark] (Indicates column is too narrow to display formatted currency).<br>
+                &bull; <strong>Resolution:</strong> Double-click the boundary line between column headers D and E to auto-fit width [1 Mark].
+              </div>
+            </details>
+          </div>
+
+          <!-- Practice Task 2 -->
+          <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:12px; padding:22px; margin-bottom:24px;">
+            <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+              <span style="font-weight:800; color:#0284c7;">Practice Task 2: UK GDPR Email Privacy &amp; 2FA</span>
+              <span style="background:#e0f2fe; color:#0369a1; font-weight:700; font-size:0.8rem; padding:2px 8px; border-radius:4px;">3 Marks</span>
+            </div>
+            <p style="color:#334155; font-size:0.92rem;">Explain why sending an email to 30 external clients using the 'CC' field is a violation of UK GDPR. State which field should be used instead, and state the two different authentication factors required for true 2FA.</p>
+            <textarea id="dfs_p2_scratch" style="width:100%; height:80px; padding:10px; border:1px solid #cbd5e1; border-radius:6px; font-family:inherit; font-size:0.9rem; margin-bottom:12px;" placeholder="Type your answers here... (auto-saved)"></textarea>
+            <details style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; padding:12px;">
+              <summary style="font-weight:700; color:#0284c7; cursor:pointer;">Reveal Pearson Mark Scheme &amp; Tutor Model</summary>
+              <div style="padding-top:10px; font-size:0.9rem; color:#1e293b; line-height:1.6;">
+                &bull; <strong>GDPR Breach Reason:</strong> 'CC' makes every recipient's private email address visible to all other 29 clients, exposing Personal Identifiable Information (PII) without consent [1 Mark].<br>
+                &bull; <strong>Correct Field:</strong> <strong>BCC (Blind Carbon Copy)</strong> [1 Mark].<br>
+                &bull; <strong>2FA Factors:</strong> Combines something you KNOW (password/PIN) with something you HAVE (phone authenticator app code/smartcard) or ARE (biometrics) [1 Mark].
+              </div>
+            </details>
+          </div>
+        </div>
+      </section>
+
+      <!-- EMPLOYER COHORTS -->
+      <section id="employers" class="revision-section" style="background:#f0fdf4; border:1px solid #bbf7d0; border-radius:14px; padding:28px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:14px;">
+          <div>
+            <span style="background:#15803d; color:#ffffff; font-weight:800; font-size:0.75rem; padding:3px 10px; border-radius:999px; text-transform:uppercase;">Apprenticeship &amp; Healthcare Training</span>
+            <h3 style="color:#14532d; font-size:1.4rem; margin:8px 0 6px 0;">Corporate Digital Skills Cohorts</h3>
+            <p style="color:#166534; font-size:0.95rem; margin:0; max-width:650px;">We train apprentice cohorts and clinical support workers across the UK to pass their Pearson Edexcel Digital Functional Skills exams with guaranteed first-time pass rates.</p>
+          </div>
+          <div>
+            <a href="contact-us.html?enquiry=employer-cohort" class="btn-card-action" style="background:#15803d; color:#ffffff; padding:10px 20px; font-weight:800; border-radius:8px; text-decoration:none;">Enquire for Team &rarr;</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- DOWNLOADS & PAST PAPERS -->
+      <section id="downloads" class="revision-section">
+        <div class="section-header-row">
+          <h2 class="section-title"><i class="fa-solid fa-file-pdf"></i> Downloads, Starter Files &amp; Past Papers</h2>
+        </div>
+        <div class="skill-card-container">
+          <p>Download authentic Pearson Edexcel Level 1 assessment assets to practice on your desktop:</p>
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap:16px; margin-top:16px;">
+            <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:10px; padding:18px;">
+              <div style="font-weight:700; color:#0f172a; margin-bottom:6px;"><i class="fa-solid fa-file-excel" style="color:#10b981; margin-right:8px;"></i> Level 1 Practice Spreadsheet (.xlsx)</div>
+              <p style="color:#64748b; font-size:0.85rem; margin-bottom:12px;">Starter data sheet with unformatted salary and hours records for formula testing.</p>
+              <a href="digital-functional-skills-past-papers.html" class="btn-card-action" style="font-size:0.82rem; padding:5px 12px;">Download .xlsx &rarr;</a>
+            </div>
+
+            <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:10px; padding:18px;">
+              <div style="font-weight:700; color:#0f172a; margin-bottom:6px;"><i class="fa-solid fa-file-word" style="color:#2563eb; margin-right:8px;"></i> Level 1 Word Brief (.docx)</div>
+              <p style="color:#64748b; font-size:0.85rem; margin-bottom:12px;">Template report document with mock unformatted text, tables, and logo assets.</p>
+              <a href="digital-functional-skills-past-papers.html" class="btn-card-action" style="font-size:0.82rem; padding:5px 12px;">Download .docx &rarr;</a>
+            </div>
+
+            <div style="background:#ffffff; border:1px solid #e2e8f0; border-radius:10px; padding:18px;">
+              <div style="font-weight:700; color:#0f172a; margin-bottom:6px;"><i class="fa-regular fa-file-pdf" style="color:#ef4444; margin-right:8px;"></i> Pearson Sample Mark Scheme (PDF)</div>
+              <p style="color:#64748b; font-size:0.85rem; margin-bottom:12px;">Official criteria breakdown showing mark allocations for every task.</p>
+              <a href="digital-functional-skills-past-papers.html" class="btn-card-action" style="font-size:0.82rem; padding:5px 12px;">Download PDF &rarr;</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="mfs-footer">
+    <div class="mfs-container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <i class="fa-solid fa-graduation-cap"></i>
+            <span>MASTER<strong>FUNCTIONALSKILLS</strong></span>
+          </div>
+          <p>The UK's dedicated Functional Skills training and revision portal. Delivering Ofqual-regulated Pearson Edexcel qualifications nationwide.</p>
+        </div>
+        <div class="footer-links-col">
+          <h4>Digital Skills</h4>
+          <ul>
+            <li><a href="digital-functional-skills.html">Digital Skills Hub</a></li>
+            <li><a href="digital-functional-skills-level-1.html">DFS Level 1 Directory (32 Topics)</a></li>
+            <li><a href="digital-functional-skills-level-1-revision.html">DFS Level 1 Revision Guide</a></li>
+            <li><a href="entry-level-3-digital-skills.html">DFSQ Entry 3 Revision</a></li>
+            <li><a href="digital-functional-skills-mock-exam.html">Pearson Exam Simulator</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-col">
+          <h4>Maths &amp; English</h4>
+          <ul>
+            <li><a href="functional-skills-maths-level-2.html">Maths Level 2</a></li>
+            <li><a href="functional-skills-maths-level-1.html">Maths Level 1</a></li>
+            <li><a href="functional-skills-english-level-2.html">English Level 2</a></li>
+            <li><a href="functional-skills-english-level-1.html">English Level 1</a></li>
+          </ul>
+        </div>
+        <div class="footer-links-col">
+          <h4>Support &amp; Trust</h4>
+          <ul>
+            <li><a href="contact-us.html">Contact Us</a></li>
+            <li><a href="exams.html">Book Online Exam</a></li>
+            <li><a href="courses.html">Accredited Courses</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 Master Functional Skills. All rights reserved. Ofqual Regulated &bull; Pearson Edexcel Approved Training Centre.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- DYSLEXIA, TINT & SCRATCHPAD SCRIPTS -->
+  <script>
+    function toggleMobileToc() {
+      const sidebar = document.getElementById('sidebarNav');
+      if (sidebar) sidebar.classList.toggle('open');
+    }
+    function toggleTintMenu(e) {
+      e.stopPropagation();
+      const menu = document.getElementById('tintMenu');
+      if (menu) menu.classList.toggle('open');
+    }
+    function setSiteTint(tint, e) {
+      if (e) e.stopPropagation();
+      document.documentElement.setAttribute('data-tint', tint);
+      localStorage.setItem('mfs_tint', tint);
+      document.querySelectorAll('.tint-option-btn').forEach(btn => {
+        btn.classList.toggle('active', btn.getAttribute('data-tint') === tint);
+      });
+      const menu = document.getElementById('tintMenu');
+      if (menu) menu.classList.remove('open');
+    }
+    function toggleDyslexiaMode() {
+      const isDyslexia = document.documentElement.classList.toggle('dyslexia-mode');
+      localStorage.setItem('mfs_dyslexia', isDyslexia ? '1' : '0');
+    }
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme') || 'sapphire';
+      const next = current === 'sapphire' ? 'emerald' : 'sapphire';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('mfs_theme', next);
+      const label = document.getElementById('themeLabel');
+      if (label) label.textContent = next === 'sapphire' ? 'Sapphire' : 'Emerald';
+    }
+
+    // Autosave practice scratchpads
+    ['dfs_p1_scratch', 'dfs_p2_scratch'].forEach(id => {
+      const el = document.getElementById(id);
+      if (el) {
+        el.value = localStorage.getItem('mfs_' + id) || '';
+        el.addEventListener('input', () => {
+          localStorage.setItem('mfs_' + id, el.value);
+        });
+      }
+    });
+
+    // Highlight active TOC item on scroll
+    window.addEventListener('scroll', () => {
+      const sections = document.querySelectorAll('.revision-section');
+      const links = document.querySelectorAll('.sidebar-toc-link');
+      let currentSection = '';
+      sections.forEach(sec => {
+        const rect = sec.getBoundingClientRect();
+        if (rect.top <= 120 && rect.bottom >= 120) {
+          currentSection = sec.getAttribute('id');
+        }
+      });
+      if (currentSection) {
+        links.forEach(l => {
+          l.classList.toggle('active', l.getAttribute('href') === '#' + currentSection);
+        });
+      }
+    });
+
+    document.addEventListener('click', (e) => {
+      const menu = document.getElementById('tintMenu');
+      if (menu && !e.target.closest('.mfs-tint-dropdown-wrap')) {
+        menu.classList.remove('open');
+      }
+    });
+  </script>
+  <!-- DYSLEXIA TINT & TOUCH NAVIGATION ENGINE -->
+  <script src="assets/js/mfs-tint.js"></script>
+</body>
+</html>

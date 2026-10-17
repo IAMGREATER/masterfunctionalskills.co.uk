@@ -263,6 +263,88 @@
     document.head.appendChild(searchScript);
   }
 
+  function initTouchDropdowns() {
+    if (window.__MFS_TOUCH_DROPDOWNS_INIT) return;
+    window.__MFS_TOUCH_DROPDOWNS_INIT = true;
+
+    function isTouchInteraction(e) {
+      if (e && (e.pointerType === 'touch' || e.pointerType === 'pen')) return true;
+      if (window.matchMedia && window.matchMedia('(hover: none)').matches) return true;
+      if (window.innerWidth <= 1080) return true;
+      return false;
+    }
+
+    function closeAllDropdowns(exceptItem) {
+      var openItems = document.querySelectorAll('.mfs-nav-item.open');
+      for (var i = 0; i < openItems.length; i++) {
+        if (openItems[i] !== exceptItem) {
+          openItems[i].classList.remove('open');
+          var link = openItems[i].querySelector('.mfs-nav-link');
+          if (link) link.setAttribute('aria-expanded', 'false');
+        }
+      }
+    }
+
+    function adjustDropdownPosition(dropdown) {
+      if (!dropdown || window.innerWidth <= 991) return;
+      dropdown.style.left = '';
+      dropdown.style.right = '';
+      var rect = dropdown.getBoundingClientRect();
+      var vw = window.innerWidth;
+      if (rect.right > vw - 12) {
+        var overflowX = rect.right - (vw - 12);
+        dropdown.style.left = (-overflowX) + 'px';
+      }
+    }
+
+    document.addEventListener('click', function(e) {
+      var navLink = e.target.closest('.mfs-nav-item > .mfs-nav-link');
+      var navItem = navLink ? navLink.closest('.mfs-nav-item') : null;
+      var dropdown = navItem ? navItem.querySelector('.mfs-dropdown-menu') : null;
+
+      if (navLink && dropdown) {
+        if (isTouchInteraction(e)) {
+          var isOpen = navItem.classList.contains('open');
+          e.preventDefault();
+          e.stopPropagation();
+
+          if (isOpen) {
+            navItem.classList.remove('open');
+            navLink.setAttribute('aria-expanded', 'false');
+          } else {
+            closeAllDropdowns(navItem);
+            navItem.classList.add('open');
+            navLink.setAttribute('aria-expanded', 'true');
+            adjustDropdownPosition(dropdown);
+          }
+          return;
+        }
+      }
+
+      if (!e.target.closest('.mfs-nav-item')) {
+        closeAllDropdowns(null);
+      }
+    });
+
+    document.addEventListener('touchstart', function(e) {
+      if (!e.target.closest('.mfs-navbar')) {
+        closeAllDropdowns(null);
+      }
+    }, { passive: true });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' || e.key === 'Esc') {
+        closeAllDropdowns(null);
+      }
+    });
+
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 1080) {
+        closeAllDropdowns(null);
+      }
+    }, { passive: true });
+  }
+
   function initDOM() {
     ensureFloatingWidget();
     applyTint(initialTint, false);
@@ -270,6 +352,7 @@
     if (initialDyslexia) {
       applyDyslexiaMode(true, false);
     }
+    initTouchDropdowns();
   }
 
   if (document.readyState === 'loading') {

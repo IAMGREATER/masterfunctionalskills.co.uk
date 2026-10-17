@@ -665,7 +665,7 @@ def svg_email_format():
       <g transform="translate(40, 15)">
         <rect x="0" y="0" width="380" height="135" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.8"/>
         <rect x="0" y="0" width="380" height="26" rx="8 8 0 0" fill="#f1f5f9"/>
-        <text x="15" y="17" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#475569">To: clinic.lead@oxfordhealth.nhs.uk</text>
+        <text x="15" y="17" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#475569">To: centre.lead@masterfunctionalskills.co.uk</text>
         <text x="15" y="42" font-family="system-ui, sans-serif" font-size="10" font-weight="800" fill="#2563eb">Subject: Shift Cover Request - Saturday 18th Oct [Clear &amp; Specific]</text>
         <line x1="15" y1="50" x2="365" y2="50" stroke="#e2e8f0"/>
         <text x="15" y="68" font-family="system-ui, sans-serif" font-size="10" font-weight="700" fill="#1e293b">Dear Sarah,</text>
@@ -815,7 +815,7 @@ def svg_file_management():
       <g transform="translate(40, 15)">
         <rect x="0" y="0" width="380" height="135" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.8"/>
         <text x="20" y="26" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#2563eb">📁 Documents</text>
-        <text x="45" y="48" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#d97706">└── 📁 Oxford_Health_Functional_Skills</text>
+        <text x="45" y="48" font-family="system-ui, sans-serif" font-size="11" font-weight="700" fill="#d97706">└── 📁 Master_Functional_Skills_Centre</text>
         <text x="80" y="70" font-family="system-ui, sans-serif" font-size="10.5" font-weight="700" fill="#059669">├── 📁 Maths_Level_2</text>
         <text x="110" y="88" font-family="system-ui, sans-serif" font-size="10" font-weight="600" fill="#475569">└── 📄 Trapezium_Area_2026-10-11.pdf ✓</text>
         <rect x="15" y="104" width="350" height="24" rx="4" fill="#f8fafc" stroke="#cbd5e1"/>

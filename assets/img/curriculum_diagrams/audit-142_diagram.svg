@@ -8,7 +8,7 @@
   
   <!-- Header Fields -->
   <rect x="18" y="44" width="424" height="24" rx="5" fill="#f8fafc" stroke="#e2e8f0"/>
-  <text x="28" y="60" font-size="10" font-weight="700" fill="#64748b">To: <tspan fill="#0f172a">department.manager@oxfordhealth.nhs.uk</tspan></text>
+  <text x="28" y="60" font-size="10" font-weight="700" fill="#64748b">To: <tspan fill="#0f172a">department.manager@masterfunctionalskills.co.uk</tspan></text>
   
   <rect x="18" y="73" width="424" height="24" rx="5" fill="#f8fafc" stroke="#e2e8f0"/>
   <text x="28" y="89" font-size="10" font-weight="700" fill="#64748b">Subject: <tspan fill="#0f172a" font-weight="900">Proposal: Upgrading Apprentice Clinical Facilities</tspan></text>

@@ -446,7 +446,7 @@ def build_mock_maths_l2():
             "<p>has completed all 6 Official-Style Mock Examinations and demonstrated competence across all Pearson Edexcel Functional Skills Mathematics Level 2 standards.</p>"
             "<table style='width:100%; margin-top:20px; font-size:11pt; border-collapse:collapse;'>"
             "<tr><td style='text-align:left;'><b>Lead Tutor:</b> Abdul</td><td style='text-align:right;'><b>Date Verified:</b> _______________</td></tr>"
-            "<tr><td style='text-align:left;'><b>Average Mock Score:</b> ______ / 64</td><td style='text-align:right;'><b>Exam Centre:</b> Oxford Health OH</td></tr>"
+            "<tr><td style='text-align:left;'><b>Average Mock Score:</b> ______ / 64</td><td style='text-align:right;'><b>Exam Centre:</b> Master Functional Skills</td></tr>"
             "</table>"
             "</div>",
             title="Master Functional Skills &bull; Certificate of Exam Readiness"

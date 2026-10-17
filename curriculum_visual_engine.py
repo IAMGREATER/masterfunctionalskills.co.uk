@@ -360,7 +360,7 @@ def get_email_wireframe_svg():
   
   <!-- Header Fields -->
   <rect x="18" y="44" width="424" height="24" rx="5" fill="#f8fafc" stroke="#e2e8f0"/>
-  <text x="28" y="60" font-size="10" font-weight="700" fill="#64748b">To: <tspan fill="#0f172a">department.manager@oxfordhealth.nhs.uk</tspan></text>
+  <text x="28" y="60" font-size="10" font-weight="700" fill="#64748b">To: <tspan fill="#0f172a">department.manager@masterfunctionalskills.co.uk</tspan></text>
   
   <rect x="18" y="73" width="424" height="24" rx="5" fill="#f8fafc" stroke="#e2e8f0"/>
   <text x="28" y="89" font-size="10" font-weight="700" fill="#64748b">Subject: <tspan fill="#0f172a" font-weight="900">Proposal: Upgrading Apprentice Clinical Facilities</tspan></text>
@@ -478,7 +478,7 @@ def get_leaflet_wireframe_svg():
   <!-- Panel 3: Front Cover & Contact (Right) -->
   <rect x="330" y="12" width="140" height="32" rx="4" fill="#070d1e"/>
   <text x="400" y="27" font-size="9.5" font-weight="900" fill="#38bdf8" text-anchor="middle">MASTER SKILLS</text>
-  <text x="400" y="38" font-size="7.5" fill="#ffffff" text-anchor="middle">Oxford Health NHS</text>
+  <text x="400" y="38" font-size="7.5" fill="#ffffff" text-anchor="middle">Master Functional Skills</text>
   <rect x="330" y="50" width="140" height="110" rx="4" fill="#e2e8f0"/>
   <text x="400" y="106" font-size="9" font-weight="800" fill="#64748b" text-anchor="middle">📷 [Learner Cover]</text>
   <rect x="330" y="168" width="140" height="98" rx="4" fill="#dcfce7" stroke="#86efac"/>
@@ -547,7 +547,7 @@ def get_digital_gui_svg():
   <rect x="14" y="42" width="220" height="26" rx="6 6 0 0" fill="#0f172a"/>
   <text x="24" y="59" font-size="9.5" font-weight="800" fill="#94a3b8">📁 File Explorer — /Documents</text>
   
-  <text x="24" y="86" font-size="9" font-weight="700" fill="#38bdf8">📁 NHS_Oxford_Health/</text>
+  <text x="24" y="86" font-size="9" font-weight="700" fill="#38bdf8">📁 MFS_Healthcare_Project/</text>
   <text x="36" y="104" font-size="8.5" fill="#cbd5e1">📄 Patient_Rota.xlsx</text>
   <text x="36" y="120" font-size="8.5" fill="#cbd5e1">📄 Handover_Notes.docx</text>
   

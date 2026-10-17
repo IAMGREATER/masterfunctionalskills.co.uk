@@ -31,7 +31,7 @@
   <!-- Panel 3: Front Cover & Contact (Right) -->
   <rect x="330" y="12" width="140" height="32" rx="4" fill="#070d1e"/>
   <text x="400" y="27" font-size="9.5" font-weight="900" fill="#38bdf8" text-anchor="middle">MASTER SKILLS</text>
-  <text x="400" y="38" font-size="7.5" fill="#ffffff" text-anchor="middle">Oxford Health NHS</text>
+  <text x="400" y="38" font-size="7.5" fill="#ffffff" text-anchor="middle">Master Functional Skills</text>
   <rect x="330" y="50" width="140" height="110" rx="4" fill="#e2e8f0"/>
   <text x="400" y="106" font-size="9" font-weight="800" fill="#64748b" text-anchor="middle">📷 [Learner Cover]</text>
   <rect x="330" y="168" width="140" height="98" rx="4" fill="#dcfce7" stroke="#86efac"/>

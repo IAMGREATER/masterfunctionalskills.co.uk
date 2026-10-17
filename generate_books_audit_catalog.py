@@ -84,7 +84,7 @@ def get_email_wireframe_svg():
   
   <!-- Header Fields -->
   <rect x="18" y="44" width="424" height="24" rx="5" fill="#f8fafc" stroke="#e2e8f0"/>
-  <text x="28" y="60" font-size="10" font-weight="700" fill="#64748b">To: <tspan fill="#0f172a">department.manager@oxfordhealth.nhs.uk</tspan></text>
+  <text x="28" y="60" font-size="10" font-weight="700" fill="#64748b">To: <tspan fill="#0f172a">department.manager@masterfunctionalskills.co.uk</tspan></text>
   
   <rect x="18" y="73" width="424" height="24" rx="5" fill="#f8fafc" stroke="#e2e8f0"/>
   <text x="28" y="89" font-size="10" font-weight="700" fill="#64748b">Subject: <tspan fill="#0f172a" font-weight="900">Proposal: Upgrading Apprentice Clinical Facilities</tspan></text>
@@ -285,7 +285,7 @@ def get_leaflet_wireframe_svg():
   <!-- Panel 3: Front Cover & Contact (Right) -->
   <rect x="330" y="12" width="140" height="32" rx="4" fill="#070d1e"/>
   <text x="400" y="27" font-size="9.5" font-weight="900" fill="#38bdf8" text-anchor="middle">MASTER SKILLS</text>
-  <text x="400" y="38" font-size="7.5" fill="#ffffff" text-anchor="middle">Oxford Health NHS</text>
+  <text x="400" y="38" font-size="7.5" fill="#ffffff" text-anchor="middle">Master Functional Skills</text>
   <rect x="330" y="50" width="140" height="110" rx="4" fill="#e2e8f0"/>
   <text x="400" y="106" font-size="9" font-weight="800" fill="#64748b" text-anchor="middle">📷 [Learner Cover]</text>
   <rect x="330" y="168" width="140" height="98" rx="4" fill="#dcfce7" stroke="#86efac"/>
@@ -308,7 +308,7 @@ def get_digital_gui_svg():
   <rect x="14" y="42" width="220" height="26" rx="6 6 0 0" fill="#0f172a"/>
   <text x="24" y="59" font-size="9.5" font-weight="800" fill="#94a3b8">📁 File Explorer — /Documents</text>
   
-  <text x="24" y="86" font-size="9" font-weight="700" fill="#38bdf8">📁 NHS_Oxford_Health/</text>
+  <text x="24" y="86" font-size="9" font-weight="700" fill="#38bdf8">📁 MFS_Healthcare_Project/</text>
   <text x="36" y="104" font-size="8.5" fill="#cbd5e1">📄 Patient_Rota.xlsx</text>
   <text x="36" y="120" font-size="8.5" fill="#cbd5e1">📄 Handover_Notes.docx</text>
   
@@ -433,7 +433,7 @@ def get_flashcard_mockup_svg():
   
   <rect x="260" y="166" width="190" height="54" rx="5" fill="#dcfce7" stroke="#86efac"/>
   <text x="355" y="186" font-size="9" font-weight="900" fill="#166534" text-anchor="middle">Tutor Sign-Off: Abdul ✓</text>
-  <text x="355" y="204" font-size="8" fill="#15803d" text-anchor="middle">Oxford Health NHS Apprenticeships</text>
+  <text x="355" y="204" font-size="8" fill="#15803d" text-anchor="middle">Master Functional Skills Apprenticeships</text>
 </svg>"""
 
 
@@ -1350,10 +1350,10 @@ AUDIT_ITEMS = [
         "current_visual": "assets/img/book_cartoons/sarah_care_worker.png",
         "current_type": "img",
         "current_file": "assets/img/book_cartoons/sarah_care_worker.png",
-        "issue": "Sarah in clinical scrubs is excellent for Oxford Health OH learner demographic.",
+        "issue": "Sarah in clinical scrubs is excellent for Healthcare learner demographic.",
         "proposed_concept": "Sarah in clinical NHS uniform with stethoscope/ID badge, providing real healthcare scenarios (fluid charts, shift logs, patient dignity).",
         "recommended_action": "Directly supports NHS trust apprentices and healthcare assistants.",
-        "tags": ["NHS Healthcare", "Clinical Scenarios", "Oxford Health OH", "Care Worker"]
+        "tags": ["NHS Healthcare", "Clinical Scenarios", "Healthcare", "Care Worker"]
     },
     {
         "id": "cartoon-sam-thinking",

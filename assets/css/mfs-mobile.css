@@ -6,12 +6,12 @@
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
-   1. TABLET & MOBILE BREAKPOINT (< 992px OR Mobile Landscape <= 600px height)
+   1. TABLET & MOBILE BREAKPOINT (< 1025px OR Mobile Landscape / Touch Devices)
    -------------------------------------------------------------------------- */
-@media (max-width: 991px), 
-       (orientation: landscape) and (max-height: 700px), 
-       (max-height: 550px), 
-       (hover: none) and (pointer: coarse) and (orientation: landscape) and (max-width: 1024px) {
+@media (max-width: 1024px), 
+       (orientation: landscape) and (max-height: 850px), 
+       (max-height: 650px), 
+       (hover: none) and (pointer: coarse) {
   /* Eliminate bulky top trust bar and empty promo banners */
   .mfs-top-bar,
   .mfs-promo-banner,
@@ -19,12 +19,13 @@
     display: none !important;
   }
 
-  /* Header scrolls away naturally on scroll down - no sticky persistence on mobile/landscape */
+  /* Header scrolls away naturally on scroll down - strictly non-persisting across whole site in BOTH orientations on mobiles */
   .mfs-navbar {
     position: relative !important;
     top: auto !important;
     left: auto !important;
     right: auto !important;
+    bottom: auto !important;
     z-index: 100 !important;
     background: #0b172d !important;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15) !important;
@@ -1923,9 +1924,9 @@
 }
 
 /* --------------------------------------------------------------------------
-   4. DESKTOP SAFETY GUARANTEE (>= 992px and desktop height > 600px)
+   4. DESKTOP SAFETY GUARANTEE (Laptops & Desktops with fine cursor > 1024px)
    -------------------------------------------------------------------------- */
-@media (min-width: 992px) and (min-height: 601px) {
+@media (min-width: 1025px) and (min-height: 651px) and (hover: hover) and (pointer: fine) {
   .mfs-mobile-controls,
   .mfs-mobile-toggle,
   .mfs-drawer-backdrop,

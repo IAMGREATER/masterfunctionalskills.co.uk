@@ -1,4 +1,4 @@
-const CACHE_NAME = 'mfs-cache-v1';
+const CACHE_NAME = 'mfs-cache-v20261017d';
 
 const PRECACHE_ASSETS = [
   '/',
@@ -8,8 +8,10 @@ const PRECACHE_ASSETS = [
   '/past-papers.html',
   '/functional-skills-past-papers.html',
   '/assets/css/mfs-theme.css',
+  '/assets/css/mfs-mobile.css',
   '/assets/css/mfs-revision.css',
   '/assets/css/mfs-video-modal.css',
+  '/assets/js/mfs-mobile.js',
   '/assets/js/mfs-tint.js',
   '/assets/img/favicon-192x192.png',
   '/assets/img/favicon-512x512.png',

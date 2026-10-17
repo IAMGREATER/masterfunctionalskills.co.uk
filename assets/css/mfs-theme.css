@@ -390,10 +390,10 @@ a {
   overflow: visible !important;
 }
 
-@media (max-width: 991px), 
-       (orientation: landscape) and (max-height: 700px), 
-       (max-height: 550px), 
-       (hover: none) and (pointer: coarse) and (orientation: landscape) and (max-width: 1024px) {
+@media (max-width: 1024px), 
+       (orientation: landscape) and (max-height: 850px), 
+       (max-height: 650px), 
+       (hover: none) and (pointer: coarse) {
   .mfs-top-bar,
   .mfs-promo-banner,
   .mfs-promo-banner:empty {
@@ -403,6 +403,9 @@ a {
   .mfs-navbar {
     position: relative !important;
     top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
   }
 }
 
@@ -499,6 +502,20 @@ a {
   top: 0;
   z-index: 1000;
   box-shadow: var(--shadow-sm);
+}
+
+/* Ensure mobile header is strictly non-persisting across all mobile viewports in both orientations */
+@media (max-width: 1024px), 
+       (orientation: landscape) and (max-height: 850px), 
+       (max-height: 650px), 
+       (hover: none) and (pointer: coarse) {
+  .mfs-navbar {
+    position: relative !important;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+  }
 }
 
 .mfs-navbar-inner {

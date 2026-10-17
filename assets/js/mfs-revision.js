@@ -335,3 +335,48 @@ function jumpTopicTo(seconds) {
 window.switchTopicVideo = switchTopicVideo;
 window.jumpTopicTo = jumpTopicTo;
 
+/* ==========================================================================
+   HERO IMAGE FULL-RESOLUTION LIGHTBOX
+   ========================================================================== */
+document.addEventListener('DOMContentLoaded', function() {
+  const heroImgWrap = document.querySelector('.revision-hero-img-wrap');
+  if (!heroImgWrap) return;
+  const heroImg = heroImgWrap.querySelector('img');
+  if (!heroImg) return;
+
+  heroImgWrap.setAttribute('title', 'Click to view full-resolution high-definition visual');
+
+  heroImgWrap.addEventListener('click', function() {
+    let overlay = document.getElementById('mfs-image-lightbox');
+    if (!overlay) {
+      overlay = document.createElement('div');
+      overlay.id = 'mfs-image-lightbox';
+      overlay.innerHTML = `
+        <div class="mfs-lightbox-backdrop"></div>
+        <div class="mfs-lightbox-content">
+          <img src="" alt="Full-Resolution Visual" class="mfs-lightbox-img" />
+          <button type="button" class="mfs-lightbox-close" aria-label="Close image"><i class="fa-solid fa-xmark"></i></button>
+        </div>
+      `;
+      document.body.appendChild(overlay);
+
+      const closeLightbox = () => {
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+      };
+
+      overlay.querySelector('.mfs-lightbox-backdrop').addEventListener('click', closeLightbox);
+      overlay.querySelector('.mfs-lightbox-close').addEventListener('click', closeLightbox);
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && overlay.classList.contains('active')) closeLightbox();
+      });
+    }
+
+    const img = overlay.querySelector('.mfs-lightbox-img');
+    img.src = heroImg.currentSrc || heroImg.src;
+    img.alt = heroImg.alt;
+    overlay.classList.add('active');
+    document.body.style.overflow = 'hidden';
+  });
+});
+

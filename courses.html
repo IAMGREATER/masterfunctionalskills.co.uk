@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-GB">
+<html lang="en-GB" data-theme="sapphire" data-tint="cream">
 <head>
   <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
@@ -8,12 +8,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Accredited Functional Skills Online Courses (Maths, English &amp; Digital) | Master Functional Skills</title>
   <meta name="description" content="Accredited Functional Skills Maths, English, and Digital Skills online courses for Level 1, Level 2, and Entry 3. Self-paced video tutorials, adaptive diagnostics, dynamic learning plans, and AI-marked mock exams.">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="assets/css/mfs-theme.css">
+  <link rel="stylesheet" href="assets/css/mfs-video-modal.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="assets/css/mfs-theme.css">
 
   <style>
     /* ==========================================================================
@@ -85,268 +85,432 @@
       box-shadow: 0 4px 14px rgba(11, 23, 45, 0.2);
     }
 
-    /* Course Card Architecture */
+    /* ==========================================================================
+       PREMIUM COURSE BOXES ARCHITECTURE & DESIGN
+       ========================================================================== */
     .courses-grid-enhanced {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-      gap: 28px;
-      margin-bottom: 40px;
+      grid-template-columns: repeat(auto-fit, minmax(360px, 1fr));
+      gap: 32px;
+      margin-bottom: 50px;
     }
 
     .course-card-enhanced {
       background: #ffffff;
-      border: 1.5px solid var(--border);
-      border-radius: 20px;
+      border: 1px solid var(--border);
+      border-radius: 22px;
       overflow: hidden;
       display: flex;
       flex-direction: column;
       position: relative;
-      transition: all 0.25s ease;
-      box-shadow: var(--shadow-sm);
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 18px rgba(11, 23, 45, 0.05), 0 0 1px rgba(11, 23, 45, 0.1);
     }
 
     .course-card-enhanced:hover {
-      transform: translateY(-4px);
-      box-shadow: var(--shadow-xl);
-      border-color: var(--accent);
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px -10px rgba(11, 23, 45, 0.14), 0 0 1px rgba(11, 23, 45, 0.2);
     }
 
     .course-card-enhanced.featured {
-      border-color: var(--accent);
-      box-shadow: 0 10px 30px -5px rgba(37, 99, 235, 0.2);
+      border: 2px solid var(--accent);
+      box-shadow: 0 8px 30px -4px rgba(37, 99, 235, 0.2), 0 0 1px rgba(37, 99, 235, 0.25);
     }
 
-    .card-top-ribbon {
+    /* Top Card Hero Banner */
+    .card-hero-banner {
+      padding: 24px 24px 20px;
+      position: relative;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.15);
+      background-size: 100% 100%;
+    }
+
+    .card-hero-banner::after {
+      content: '';
       position: absolute;
-      top: 14px;
-      right: 14px;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 45%;
+      background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.18), transparent 70%);
+      pointer-events: none;
+    }
+
+    .banner-maths {
+      background: linear-gradient(135deg, #0b1e3f 0%, #1e40af 55%, #2563eb 100%);
+      color: #ffffff;
+    }
+
+    .banner-english {
+      background: linear-gradient(135deg, #240b49 0%, #5b21b6 55%, #7c3aed 100%);
+      color: #ffffff;
+    }
+
+    .banner-bundle {
+      background: linear-gradient(135deg, #063d2f 0%, #047857 50%, #0284c7 100%);
+      color: #ffffff;
+    }
+
+    .banner-level1 {
+      background: linear-gradient(135deg, #6c240c 0%, #b43403 55%, #ea580c 100%);
+      color: #ffffff;
+    }
+
+    .banner-entry3 {
+      background: linear-gradient(135deg, #700d33 0%, #9f1239 55%, #e11d48 100%);
+      color: #ffffff;
+    }
+
+    .banner-digital {
+      background: linear-gradient(135deg, #062b3a 0%, #0e7490 55%, #06b6d4 100%);
+      color: #ffffff;
+    }
+
+    .banner-top-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .banner-level-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.76rem;
+      font-weight: 800;
+      background: rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
+      color: #ffffff;
+      padding: 4px 11px;
+      border-radius: var(--radius-full);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+    }
+
+    .banner-tag-badge {
       font-size: 0.72rem;
       font-weight: 800;
       text-transform: uppercase;
       letter-spacing: 0.05em;
       padding: 5px 12px;
       border-radius: var(--radius-full);
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      z-index: 2;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     }
 
-    .ribbon-popular {
+    .badge-popular {
       background: #f59e0b;
       color: #000000;
     }
 
-    .ribbon-bundle {
-      background: #0284c7;
-      color: #ffffff;
+    .badge-nursing {
+      background: #ffffff;
+      color: #6b21a8;
     }
 
-    .ribbon-nursing {
-      background: #7c3aed;
-      color: #ffffff;
+    .badge-bundle {
+      background: #fde047;
+      color: #000000;
     }
 
-    .ribbon-stepping {
-      background: #10b981;
-      color: #ffffff;
+    .badge-stepping {
+      background: #ffffff;
+      color: #9a3412;
     }
 
-    .ribbon-foundation {
-      background: #ea580c;
-      color: #ffffff;
+    .badge-confidence {
+      background: #ffffff;
+      color: #9f1239;
     }
 
-    .course-card-header {
-      padding: 24px 24px 18px;
-      border-bottom: 1px solid var(--border-light);
+    .badge-digital {
+      background: #ffffff;
+      color: #0e7490;
     }
 
-    .course-cat-pill {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      font-size: 0.75rem;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.06em;
-      padding: 4px 10px;
-      border-radius: 6px;
-      margin-bottom: 12px;
-    }
-
-    .cat-maths { background: #eff6ff; color: #2563eb; }
-    .cat-english { background: #f5f3ff; color: #7c3aed; }
-    .cat-bundle { background: #ecfdf5; color: #059669; }
-    .cat-digital { background: #ecfeff; color: #0891b2; }
-    .cat-foundation { background: #fff7ed; color: #c2410c; }
-
-    .course-card-header h3 {
-      font-family: var(--font-heading);
-      font-size: 1.35rem;
-      font-weight: 800;
-      color: var(--navy-dark);
-      line-height: 1.3;
-      margin: 0 0 6px 0;
-    }
-
-    .course-equiv-tag {
-      font-size: 0.84rem;
-      color: var(--text-muted);
-      font-weight: 600;
+    .banner-center-content {
       display: flex;
       align-items: center;
-      gap: 6px;
+      gap: 16px;
+      position: relative;
+      z-index: 1;
     }
 
-    /* Price Section */
-    .course-price-wrap {
-      padding: 16px 24px 14px;
-      background: #fafaf9;
-      border-bottom: 1px solid var(--border-light);
-      display: flex;
-      flex-direction: column;
-      gap: 4px;
-    }
-
-    .price-row-main {
-      display: flex;
-      align-items: baseline;
-      gap: 8px;
-    }
-
-    .price-amount {
-      font-family: var(--font-heading);
-      font-size: 2.3rem;
-      font-weight: 800;
-      color: var(--navy-dark);
-      line-height: 1;
-    }
-
-    .price-duration {
-      font-size: 0.88rem;
-      color: var(--text-secondary);
-      font-weight: 600;
-    }
-
-    .price-savings-row {
+    .banner-icon-circle {
+      width: 52px;
+      height: 52px;
+      border-radius: 14px;
+      background: rgba(255, 255, 255, 0.18);
+      backdrop-filter: blur(8px);
+      -webkit-backdrop-filter: blur(8px);
       display: flex;
       align-items: center;
-      gap: 8px;
-      flex-wrap: wrap;
-      font-size: 0.82rem;
+      justify-content: center;
+      font-size: 1.45rem;
+      color: #ffffff;
+      border: 1.5px solid rgba(255, 255, 255, 0.28);
+      box-shadow: 0 4px 14px rgba(0, 0, 0, 0.12);
+      flex-shrink: 0;
     }
 
-    .price-savings-badge {
-      background: #dcfce7;
-      color: #166534;
-      font-weight: 700;
-      padding: 2px 8px;
-      border-radius: 4px;
-    }
-
-    .price-was {
-      color: var(--text-muted);
-      text-decoration: line-through;
-    }
-
-    .price-bundle-note {
-      color: var(--text-secondary);
-      font-weight: 500;
-    }
-
-    /* Feature List */
-    .course-features-wrap {
-      padding: 20px 24px;
+    .banner-title-area {
       flex-grow: 1;
     }
 
-    .course-features-list {
+    .banner-category-name {
+      display: block;
+      font-size: 0.74rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: rgba(255, 255, 255, 0.85);
+      margin-bottom: 3px;
+    }
+
+    .banner-course-title {
+      font-family: var(--font-heading);
+      font-size: 1.32rem;
+      font-weight: 800;
+      color: #ffffff;
+      margin: 0;
+      line-height: 1.25;
+    }
+
+    /* Card Main Body */
+    .card-main-body {
+      padding: 22px 24px 16px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .card-meta-bar {
+      display: flex;
+      gap: 7px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+
+    .meta-chip {
+      background: #f1f5f9;
+      color: var(--navy-dark);
+      font-size: 0.76rem;
+      font-weight: 700;
+      padding: 4px 9px;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      border: 1px solid #e2e8f0;
+    }
+
+    .meta-chip i {
+      color: var(--text-muted);
+      font-size: 0.74rem;
+    }
+
+    .card-pitch-text {
+      font-size: 0.88rem;
+      color: var(--text-secondary);
+      line-height: 1.5;
+      margin: 0 0 16px 0;
+    }
+
+    .card-features-section {
+      margin-top: auto;
+      padding-top: 14px;
+      border-top: 1px dashed var(--border-light);
+    }
+
+    .features-section-title {
+      font-size: 0.76rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--text-muted);
+      margin-bottom: 10px;
+    }
+
+    .card-checklist {
       list-style: none;
       padding: 0;
       margin: 0;
       display: flex;
       flex-direction: column;
-      gap: 10px;
+      gap: 9px;
     }
 
-    .course-features-list li {
-      font-size: 0.88rem;
-      color: var(--text-primary);
+    .card-checklist li {
       display: flex;
       align-items: flex-start;
       gap: 10px;
-      line-height: 1.45;
+      font-size: 0.86rem;
+      color: var(--text-primary);
+      line-height: 1.4;
     }
 
-    .course-features-list li i {
+    .card-checklist li i {
       color: #10b981;
       font-size: 0.95rem;
       margin-top: 2px;
       flex-shrink: 0;
     }
 
-    /* Card Footer & Actions */
-    .course-card-footer {
-      padding: 16px 24px 20px;
-      background: #ffffff;
+    /* Card Bottom Actions & Pricing */
+    .card-bottom-actions {
+      padding: 18px 24px 22px;
+      background: #fafaf9;
       border-top: 1px solid var(--border-light);
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
+      border-radius: 0 0 22px 22px;
     }
 
-    .btn-enrol-main {
+    .card-pricing-box {
+      margin-bottom: 16px;
+    }
+
+    .pricing-primary-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .price-figure-wrap {
+      display: flex;
+      align-items: baseline;
+    }
+
+    .price-symbol {
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--navy-dark);
+      font-family: var(--font-heading);
+    }
+
+    .price-number {
+      font-size: 2.35rem;
+      font-weight: 900;
+      color: var(--navy-dark);
+      font-family: var(--font-heading);
+      line-height: 1;
+      letter-spacing: -0.02em;
+    }
+
+    .price-tenure {
+      font-size: 0.82rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-left: 5px;
+    }
+
+    .price-discount-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #dcfce7;
+      color: #166534;
+      font-size: 0.8rem;
+      font-weight: 800;
+      padding: 3px 9px;
+      border-radius: 6px;
+      border: 1px solid #bbf7d0;
+    }
+
+    .strikethrough-was {
+      color: #64748b;
+      text-decoration: line-through;
+      font-weight: 600;
+      font-size: 0.78rem;
+    }
+
+    .pricing-subtext {
+      font-size: 0.78rem;
+      color: var(--text-secondary);
+      margin-top: 6px;
       display: flex;
       align-items: center;
-      justify-content: center;
+      gap: 6px;
+      font-weight: 500;
+    }
+
+    .pricing-subtext i {
+      color: #10b981;
+    }
+
+    .card-buttons-group {
+      display: flex;
+      flex-direction: column;
       gap: 8px;
+    }
+
+    .btn-card-enrol {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      width: 100%;
       padding: 13px 20px;
-      border-radius: var(--radius-md);
+      border-radius: 12px;
       background: var(--navy-dark);
       color: #ffffff;
       font-family: var(--font-heading);
       font-weight: 700;
       font-size: 0.95rem;
       text-decoration: none;
-      transition: all 0.2s ease;
-      box-shadow: 0 4px 10px rgba(11, 23, 45, 0.12);
+      transition: all 0.22s ease;
+      box-shadow: 0 4px 12px rgba(11, 23, 45, 0.12);
+      box-sizing: border-box;
     }
 
-    .btn-enrol-main:hover {
+    .btn-card-enrol:hover {
       background: var(--accent);
-      transform: translateY(-1px);
-      box-shadow: var(--shadow-accent);
       color: #ffffff;
+      transform: translateY(-2px);
+      box-shadow: var(--shadow-accent);
     }
 
-    .btn-enrol-main.featured-btn {
+    .btn-card-enrol.featured-accent-btn {
       background: var(--accent);
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
     }
 
-    .btn-enrol-main.featured-btn:hover {
+    .btn-card-enrol.featured-accent-btn:hover {
       background: var(--accent-hover);
+      box-shadow: 0 8px 24px rgba(37, 99, 235, 0.45);
     }
 
-    .btn-details-secondary {
+    .btn-card-syllabus {
       display: flex;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       gap: 6px;
-      padding: 9px 16px;
-      border-radius: var(--radius-md);
-      background: #f8fafc;
+      width: 100%;
+      padding: 10px 16px;
+      border-radius: 10px;
+      background: #ffffff;
+      border: 1.5px solid var(--border);
       color: var(--text-secondary);
-      border: 1px solid var(--border);
       font-family: var(--font-heading);
-      font-weight: 600;
+      font-weight: 700;
       font-size: 0.85rem;
       text-decoration: none;
       transition: all 0.2s ease;
+      box-sizing: border-box;
     }
 
-    .btn-details-secondary:hover {
+    .btn-card-syllabus:hover {
       background: #f1f5f9;
       color: var(--navy-dark);
       border-color: var(--border-hover);
+      transform: translateY(-1px);
     }
 
     /* Feature Pillars Strip */
@@ -756,6 +920,36 @@
         width: 100%;
       }
     }
+
+    @media (max-width: 540px) {
+      .courses-grid-enhanced {
+        grid-template-columns: 1fr;
+        gap: 22px;
+      }
+      .card-hero-banner {
+        padding: 20px 18px 18px;
+      }
+      .banner-center-content {
+        gap: 12px;
+      }
+      .banner-icon-circle {
+        width: 44px;
+        height: 44px;
+        font-size: 1.25rem;
+      }
+      .banner-course-title {
+        font-size: 1.18rem;
+      }
+      .card-main-body {
+        padding: 18px 18px 14px;
+      }
+      .card-bottom-actions {
+        padding: 16px 18px 18px;
+      }
+      .price-number {
+        font-size: 2.1rem;
+      }
+    }
   </style>
 </head>
 <body>
@@ -832,8 +1026,8 @@
         <ul class="mfs-nav-menu">
           <!-- 1. SUBJECTS (VISUAL MEGA-MENU) -->
           <li class="mfs-nav-item">
-            <a href="courses.html" class="mfs-nav-link active" style="color:var(--accent); font-weight:700;">
-              <i class="fa-solid fa-book-open-reader" style="color:var(--accent); margin-right:5px;"></i> Subjects <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            <a href="courses.html" class="mfs-nav-link">
+              <i class="fa-solid fa-book-open-reader" style="color:#0284c7; margin-right:5px;"></i> Subjects <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
             </a>
             <div class="mfs-dropdown-menu mfs-dropdown-revision-hub">
               <div class="mfs-revision-grid">
@@ -841,9 +1035,8 @@
                 <div class="mfs-revision-col mfs-revision-col-maths">
                   <div class="mfs-revision-col-title"><i class="fa-solid fa-calculator"></i> Maths Revision</div>
                   <div class="mfs-revision-col-links">
-                    <a href="course-maths-l2.html" class="mfs-dropdown-item">Maths Level 2 Course</a>
-                    <a href="functional-skills-maths-level-2.html" class="mfs-dropdown-item">Maths Level 2 Revision</a>
-                    <a href="functional-skills-maths-level-1.html" class="mfs-dropdown-item">Maths Level 1 Revision</a>
+                    <a href="functional-skills-maths-level-2.html" class="mfs-dropdown-item">Maths Level 2</a>
+                    <a href="functional-skills-maths-level-1.html" class="mfs-dropdown-item">Maths Level 1</a>
                     <a href="entry-level-3-maths.html" class="mfs-dropdown-item">Entry Level 3 Maths</a>
                   </div>
                 </div>
@@ -851,9 +1044,8 @@
                 <div class="mfs-revision-col mfs-revision-col-english">
                   <div class="mfs-revision-col-title"><i class="fa-solid fa-pen-nib"></i> English Revision</div>
                   <div class="mfs-revision-col-links">
-                    <a href="course-english-l2.html" class="mfs-dropdown-item">English Level 2 Course</a>
-                    <a href="functional-skills-english-level-2.html" class="mfs-dropdown-item">English Level 2 Revision</a>
-                    <a href="functional-skills-english-level-1.html" class="mfs-dropdown-item">English Level 1 Revision</a>
+                    <a href="functional-skills-english-level-2.html" class="mfs-dropdown-item">English Level 2</a>
+                    <a href="functional-skills-english-level-1.html" class="mfs-dropdown-item">English Level 1</a>
                   </div>
                 </div>
                 <!-- Digital Skills Column -->
@@ -876,7 +1068,7 @@
             </a>
           </li>
 
-          <!-- 2b. WORKSHEETS DIRECTORY -->
+          <!-- 2b. WORKSHEETS DIRECTORY (CORBETT STYLE DUAL ENGINE) -->
           <li class="mfs-nav-item">
             <a href="worksheets.html" class="mfs-nav-link">
               <i class="fa-solid fa-layer-group" style="color:#0284c7; margin-right:5px;"></i> Worksheets
@@ -934,7 +1126,7 @@
         </div>
         <h1>Accredited Functional Skills <span>Online Courses</span></h1>
         <p class="hero-description">
-          Fast-track your GCSE equivalency from home. Master Functional Skills provides interactive, self-paced courses for <strong>Maths</strong>, <strong>English</strong>, and <strong>Digital Skills</strong>. Featuring smart baseline diagnostics, bite-sized video lessons, dynamic learning plans, and AI-marked mock exams with instant step feedback.
+          Get your GCSE equivalent qualification from home, at your own speed. Master Functional Skills gives you simple online courses in <strong>Maths</strong>, <strong>English</strong>, and <strong>Digital Skills</strong>. Start with a quick skills check, watch clear video lessons, and practice with real exam questions that give you instant feedback.
         </p>
 
         <div class="hero-reviews-bar">
@@ -952,7 +1144,7 @@
 
         <div class="hero-buttons">
           <a href="#courses-catalogue" class="btn-hero-accent"><i class="fa-solid fa-book-open"></i> Browse All Courses</a>
-          <a href="diagnostic-test.html" class="btn-hero-navy"><i class="fa-solid fa-chart-pie"></i> Free Diagnostic Check</a>
+          <a href="diagnostic-test.html" class="btn-hero-navy"><i class="fa-solid fa-chart-pie"></i> Free Skills Check</a>
           <a href="exams.html" class="btn-hero-outline"><i class="fa-solid fa-calendar-check"></i> Book Official Exam</a>
         </div>
       </div>
@@ -964,8 +1156,8 @@
           <div class="real-photo-overlay">
             <div style="font-size:1.6rem; color:var(--accent);"><i class="fa-solid fa-trophy"></i></div>
             <div>
-              <strong>94.8% First-Time Pass Rate</strong>
-              <span>With dynamic personal pathways &amp; AI mock feedback</span>
+              <strong>94.8% Pass Rate First Time</strong>
+              <span>With personalised study plans &amp; friendly practice tests</span>
             </div>
           </div>
         </div>
@@ -978,17 +1170,17 @@
                 <i class="fa-solid fa-award"></i>
               </div>
               <div>
-                <h4 style="margin:0; font-size:1.02rem; font-weight:800; color:var(--navy-dark);">Official GCSE Equivalency</h4>
-                <span style="font-size:0.75rem; color:var(--text-muted); font-weight:600;">Accepted Nationwide across UK Sectors</span>
+                <h4 style="margin:0; font-size:1.02rem; font-weight:800; color:var(--navy-dark);">Official GCSE Equivalent</h4>
+                <span style="font-size:0.75rem; color:var(--text-muted); font-weight:600;">Accepted Across the UK</span>
               </div>
             </div>
             <span style="background:#ecfdf5; color:#059669; font-size:0.72rem; font-weight:800; padding:4px 10px; border-radius:999px;">RQF Accredited</span>
           </div>
 
           <div style="display:flex; flex-direction:column; gap:8px; font-size:0.82rem; color:var(--text-secondary); font-weight:600;">
-            <div style="display:flex; align-items:center; gap:8px;"><i class="fa-solid fa-check text-success" style="color:#10b981;"></i> Meets UCAS entry criteria for Nursing, Midwifery &amp; University</div>
-            <div style="display:flex; align-items:center; gap:8px;"><i class="fa-solid fa-check text-success" style="color:#10b981;"></i> Satisfies Level 2 gateway for apprenticeships &amp; Police recruitment</div>
-            <div style="display:flex; align-items:center; gap:8px;"><i class="fa-solid fa-check text-success" style="color:#10b981;"></i> 12-Month unlimited platform access with 100% Pass Guarantee</div>
+            <div style="display:flex; align-items:center; gap:8px;"><i class="fa-solid fa-check text-success" style="color:#10b981;"></i> Accepted for Nursing, Midwifery &amp; UK Universities</div>
+            <div style="display:flex; align-items:center; gap:8px;"><i class="fa-solid fa-check text-success" style="color:#10b981;"></i> Meets requirements for Apprenticeships and Police recruitment</div>
+            <div style="display:flex; align-items:center; gap:8px;"><i class="fa-solid fa-check text-success" style="color:#10b981;"></i> Full 12-month access with free tutor support whenever you need help</div>
           </div>
         </div>
       </div>
@@ -1000,11 +1192,11 @@
     <div class="mfs-container">
       <div style="text-align:center; max-width:760px; margin:0 auto 24px;">
         <span style="font-size:0.82rem; font-weight:800; text-transform:uppercase; letter-spacing:0.06em; color:var(--accent); display:inline-flex; align-items:center; gap:8px;">
-          <i class="fa-solid fa-building-columns"></i> Official UK Awarding Bodies
+          <i class="fa-solid fa-building-columns"></i> Official UK Exam Boards
         </span>
-        <h2 style="font-size:1.55rem; font-weight:800; color:var(--navy-dark); margin:6px 0 4px;">Courses Calibrated to Official Exam Standards</h2>
+        <h2 style="font-size:1.55rem; font-weight:800; color:var(--navy-dark); margin:6px 0 4px;">Courses Matched to Real Exam Standards</h2>
         <p style="font-size:0.9rem; color:var(--text-secondary); margin:0;">
-          All syllabus modules and practice mock exams are mapped directly to official Ofqual qualification criteria.
+          Every lesson and practice question is based on official UK exam requirements.
         </p>
       </div>
 
@@ -1041,8 +1233,8 @@
             <i class="fa-solid fa-brain"></i>
           </div>
           <div class="feature-strip-text">
-            <h4>Adaptive Diagnostics</h4>
-            <p>Pinpoints precise knowledge gaps and generates a bespoke study pathway.</p>
+            <h4>Quick Skills Check</h4>
+            <p>Finds out what you already know and builds a study plan just for you.</p>
           </div>
         </div>
 
@@ -1051,8 +1243,8 @@
             <i class="fa-solid fa-circle-play"></i>
           </div>
           <div class="feature-strip-text">
-            <h4>80+ Video Tutorials</h4>
-            <p>Step-by-step explanations with dyslexia-friendly pacing and worked exam models.</p>
+            <h4>80+ Video Lessons</h4>
+            <p>Step-by-step videos that explain tricky topics in calm, plain English.</p>
           </div>
         </div>
 
@@ -1061,8 +1253,8 @@
             <i class="fa-solid fa-robot"></i>
           </div>
           <div class="feature-strip-text">
-            <h4>AI Mock Marking</h4>
-            <p>Instant examiner mark breakdowns for extended answers, calculations &amp; SPaG.</p>
+            <h4>Instant Practice Marking</h4>
+            <p>Helpful feedback on your practice answers so you learn how to gain extra marks.</p>
           </div>
         </div>
 
@@ -1071,8 +1263,8 @@
             <i class="fa-solid fa-chart-line"></i>
           </div>
           <div class="feature-strip-text">
-            <h4>Chance of Passing</h4>
-            <p>Live readiness index that calculates your pass likelihood before booking exams.</p>
+            <h4>Ready-to-Pass Score</h4>
+            <p>Tracks your practice scores so you know exactly when you are ready to pass.</p>
           </div>
         </div>
       </div>
@@ -1083,12 +1275,12 @@
   <section class="mfs-section" id="courses-catalogue" style="padding: 60px 0;">
     <div class="mfs-container">
       <div class="section-head text-center" style="max-width: 760px; margin: 0 auto 30px;">
-        <span class="section-tag" style="background:#e0f2fe; color:#0369a1; font-weight:800;">SELECT YOUR QUALIFICATION</span>
+        <span class="section-tag" style="background:#e0f2fe; color:#0369a1; font-weight:800;">CHOOSE YOUR COURSE</span>
         <h2 style="font-size: 2.3rem; color: var(--navy-dark); margin: 12px 0 10px; font-family: var(--font-heading);">
           Functional Skills Course Packages
         </h2>
         <p style="color: var(--text-secondary); font-size: 1.05rem; line-height: 1.6;">
-          Choose a standalone self-paced course or bundle your training with an official Ofqual-regulated online exam.
+          Study at your own speed with tutor support, or choose a package that includes your official online exam.
         </p>
 
         <!-- Course Category Filter Tabs -->
@@ -1103,7 +1295,7 @@
             <i class="fa-solid fa-pen-nib"></i> English
           </button>
           <button class="course-filter-btn" data-filter="bundle">
-            <i class="fa-solid fa-sparkles"></i> Dual Bundles
+            <i class="fa-solid fa-sparkles"></i> Both Together (Save £211)
           </button>
           <button class="course-filter-btn" data-filter="foundation">
             <i class="fa-solid fa-seedling"></i> Level 1 &amp; Entry 3
@@ -1119,262 +1311,415 @@
 
         <!-- 1. Maths L2 Course -->
         <div class="course-card-enhanced featured" data-category="maths">
-          <div class="card-top-ribbon ribbon-popular">
-            <i class="fa-solid fa-fire"></i> Most Popular
-          </div>
-          <div class="course-card-header">
-            <span class="course-cat-pill cat-maths"><i class="fa-solid fa-calculator"></i> Maths Suite</span>
-            <h3>Maths Level 2 Complete Course</h3>
-            <div class="course-equiv-tag">
-              <i class="fa-solid fa-graduation-cap" style="color:var(--accent);"></i> Equivalent to GCSE Maths Grade 4 / C
+          <div class="card-hero-banner banner-maths">
+            <div class="banner-top-row">
+              <span class="banner-level-chip"><i class="fa-solid fa-graduation-cap"></i> Level 2 • GCSE Grade 4/C</span>
+              <span class="banner-tag-badge badge-popular"><i class="fa-solid fa-fire"></i> Most Popular</span>
+            </div>
+            <div class="banner-center-content">
+              <div class="banner-icon-circle">
+                <i class="fa-solid fa-calculator"></i>
+              </div>
+              <div class="banner-title-area">
+                <span class="banner-category-name">Maths Course</span>
+                <h3 class="banner-course-title">Maths Level 2 Complete Course</h3>
+              </div>
             </div>
           </div>
-          <div class="course-price-wrap">
-            <div class="price-row-main">
-              <span class="price-amount">£284</span>
-              <span class="price-duration">/ 1-year unlimited access</span>
+
+          <div class="card-main-body">
+            <div class="card-meta-bar">
+              <div class="meta-chip"><i class="fa-regular fa-clock"></i> Learn At Your Own Pace</div>
+              <div class="meta-chip"><i class="fa-solid fa-layer-group"></i> 39 Short Lessons</div>
+              <div class="meta-chip"><i class="fa-solid fa-robot"></i> 10 Practice Exams</div>
             </div>
-            <div class="price-savings-row">
-              <span class="price-was">Was £355</span>
-              <span class="price-savings-badge">Save £71.00</span>
-              <span class="price-bundle-note">• Add Exam for £230</span>
+
+            <p class="card-pitch-text">
+              Everything you need to pass your Level 2 Maths (equal to a GCSE Grade 4 or C). Perfect for nursing, university, apprenticeships, and jobs.
+            </p>
+
+            <div class="card-features-section">
+              <div class="features-section-title">What's Included:</div>
+              <ul class="card-checklist">
+                <li><i class="fa-solid fa-circle-check"></i> <span><strong>Quick Skills Check:</strong> Finds out what you know and what to practice</span></li>
+                <li><i class="fa-solid fa-circle-check"></i> <span><strong>39 Video Lessons:</strong> Simple step-by-step videos covering numbers, fractions, shapes, and data</span></li>
+                <li><i class="fa-solid fa-circle-check"></i> <span><strong>500+ Practice Questions:</strong> Clear worked examples showing you how to get full marks</span></li>
+                <li><i class="fa-solid fa-circle-check"></i> <span><strong>10 Practice Mock Exams:</strong> Marked instantly so you can see your score and when you're ready</span></li>
+                <li><i class="fa-solid fa-circle-check"></i> <span><strong>Non-Calculator Tips:</strong> Simple tricks to solve calculations quickly without a calculator</span></li>
+              </ul>
             </div>
           </div>
-          <div class="course-features-wrap">
-            <ul class="course-features-list">
-              <li><i class="fa-solid fa-check"></i> <strong>Initial Diagnostic &amp; Skill Gap Assessment</strong></li>
-              <li><i class="fa-solid fa-check"></i> Dynamic Personal Learning Plan (PLP)</li>
-              <li><i class="fa-solid fa-check"></i> 39 Video Modules covering Number, Shape, Data &amp; Finance</li>
-              <li><i class="fa-solid fa-check"></i> 500+ Practice Questions with Step-by-Step Examiner Models</li>
-              <li><i class="fa-solid fa-check"></i> 10 Full AI-Marked Mock Exams with pass predictions</li>
-              <li><i class="fa-solid fa-check"></i> Non-Calculator Mastery section with quick mental strategies</li>
-              <li><i class="fa-solid fa-shield-halved" style="color:#10b981;"></i> 100% Free Resit with Premium Exam Bundle</li>
-            </ul>
-          </div>
-          <div class="course-card-footer">
-            <a href="https://wa.me/447564525425?text=Hello,%20I%20would%20like%20to%20enrol%20in%20the%20Maths%20Level%202%20Online%20Course" target="_blank" rel="noopener" class="btn-enrol-main featured-btn">
-              <i class="fa-solid fa-cart-shopping"></i> Enrol in Maths L2 (£284)
-            </a>
-            <a href="course-maths-l2.html" class="btn-details-secondary">
-              View 39-Topic Syllabus &amp; Modules &rarr;
-            </a>
+
+          <div class="card-bottom-actions">
+            <div class="card-pricing-box">
+              <div class="pricing-primary-row">
+                <div class="price-figure-wrap">
+                  <span class="price-symbol">£</span><span class="price-number">284</span>
+                  <span class="price-tenure">/ 12-Month Access</span>
+                </div>
+                <div class="price-discount-pill">
+                  <span class="strikethrough-was">£355</span>
+                  <span class="savings-amount">Save £71.00</span>
+                </div>
+              </div>
+              <div class="pricing-subtext">
+                <i class="fa-solid fa-shield-halved"></i> Free exam resit included if you choose the exam bundle
+              </div>
+            </div>
+
+            <div class="card-buttons-group">
+              <a href="https://wa.me/447564525425?text=Hello,%20I%20would%20like%20to%20enrol%20in%20the%20Maths%20Level%202%20Online%20Course%20(£284)" target="_blank" rel="noopener" class="btn-card-enrol featured-accent-btn">
+                <span>Enrol in Maths L2 (£284)</span> <i class="fa-solid fa-arrow-right"></i>
+              </a>
+              <a href="course-maths-l2.html" class="btn-card-syllabus">
+                <i class="fa-solid fa-book-open"></i> View Full Course Topics
+              </a>
+            </div>
           </div>
         </div>
 
         <!-- 2. English L2 Course -->
         <div class="course-card-enhanced featured" data-category="english">
-          <div class="card-top-ribbon ribbon-nursing">
-            <i class="fa-solid fa-user-doctor"></i> Nursing &amp; Uni Essential
-          </div>
-          <div class="course-card-header">
-            <span class="course-cat-pill cat-english"><i class="fa-solid fa-pen-nib"></i> English Suite</span>
-            <h3>English Level 2 Complete Course</h3>
-            <div class="course-equiv-tag">
-              <i class="fa-solid fa-graduation-cap" style="color:#7c3aed;"></i> Equivalent to GCSE English Language Grade 4 / C
+          <div class="card-hero-banner banner-english">
+            <div class="banner-top-row">
+              <span class="banner-level-chip"><i class="fa-solid fa-graduation-cap"></i> Level 2 • GCSE Grade 4/C</span>
+              <span class="banner-tag-badge badge-nursing"><i class="fa-solid fa-user-doctor"></i> Popular for Nursing</span>
+            </div>
+            <div class="banner-center-content">
+              <div class="banner-icon-circle">
+                <i class="fa-solid fa-pen-nib"></i>
+              </div>
+              <div class="banner-title-area">
+                <span class="banner-category-name">English Course</span>
+                <h3 class="banner-course-title">English Level 2 Complete Course</h3>
+              </div>
             </div>
           </div>
-          <div class="course-price-wrap">
-            <div class="price-row-main">
-              <span class="price-amount">£284</span>
-              <span class="price-duration">/ 1-year unlimited access</span>
+
+          <div class="card-main-body">
+            <div class="card-meta-bar">
+              <div class="meta-chip"><i class="fa-regular fa-clock"></i> Reading, Writing &amp; Speaking</div>
+              <div class="meta-chip"><i class="fa-solid fa-layer-group"></i> 25 Short Lessons</div>
+              <div class="meta-chip"><i class="fa-solid fa-pen-fancy"></i> Spelling &amp; Grammar Help</div>
             </div>
-            <div class="price-savings-row">
-              <span class="price-was">Was £355</span>
-              <span class="price-savings-badge">Save £71.00</span>
-              <span class="price-bundle-note">• Add Exam for £230</span>
+
+            <p class="card-pitch-text">
+              Pass all 3 parts of your Level 2 English: Reading, Writing, and Speaking &amp; Listening. Includes helpful writing examples and instant feedback on your practice work.
+            </p>
+
+            <div class="card-features-section">
+              <div class="features-section-title">What's Included:</div>
+              <ul class="card-checklist">
+                <li><i class="fa-solid fa-circle-check"></i> <span><strong>Initial Skills Check:</strong> See where your reading, spelling, and grammar stand</span></li>
+                <li><i class="fa-solid fa-circle-check"></i> <span><strong>All 3 Exam Parts Covered:</strong> Step-by-step help for Reading, Writing, and Speaking &amp; Listening</span></li>
+                <li><i class="fa-solid fa-circle-check"></i> <span><strong>All 11 Writing Types:</strong> Easy templates for letters, emails, articles, reports, and leaflets</span></li>
+                <li><i class="fa-solid fa-circle-check"></i> <span><strong>Clear Writing Models:</strong> Learn how to fix simple punctuation and spelling mistakes</span></li>
+                <li><i class="fa-solid fa-circle-check"></i> <span><strong>Instant Writing Feedback:</strong> Shows you how examiners mark and where you can gain marks</span></li>
+              </ul>
             </div>
           </div>
-          <div class="course-features-wrap">
-            <ul class="course-features-list">
-              <li><i class="fa-solid fa-check"></i> <strong>Initial &amp; Subject Knowledge Baseline Test</strong></li>
-              <li><i class="fa-solid fa-check"></i> All 3 Components: <strong>Reading, Writing &amp; SLC</strong></li>
-              <li><i class="fa-solid fa-check"></i> All 11 Writing Formats: Letters, Articles, Reports, Leaflets, Speeches</li>
-              <li><i class="fa-solid fa-check"></i> Side-by-Side Model Rewrites with SPaG Error Checklists</li>
-              <li><i class="fa-solid fa-check"></i> Instant AI Essay Feedback aligned to Pearson &amp; C&amp;G mark bands</li>
-              <li><i class="fa-solid fa-check"></i> Speaking &amp; Listening Remote Preparation &amp; Presentation Practice</li>
-              <li><i class="fa-solid fa-shield-halved" style="color:#10b981;"></i> 100% Free Resit with Premium Exam Bundle</li>
-            </ul>
-          </div>
-          <div class="course-card-footer">
-            <a href="https://wa.me/447564525425?text=Hello,%20I%20would%20like%20to%20enrol%20in%20the%20English%20Level%202%20Online%20Course" target="_blank" rel="noopener" class="btn-enrol-main" style="background:#7c3aed;">
-              <i class="fa-solid fa-cart-shopping"></i> Enrol in English L2 (£284)
-            </a>
-            <a href="course-english-l2.html" class="btn-details-secondary">
-              View English Syllabus &amp; Modules &rarr;
-            </a>
+
+          <div class="card-bottom-actions">
+            <div class="card-pricing-box">
+              <div class="pricing-primary-row">
+                <div class="price-figure-wrap">
+                  <span class="price-symbol">£</span><span class="price-number">284</span>
+                  <span class="price-tenure">/ 12-Month Access</span>
+                </div>
+                <div class="price-discount-pill">
+                  <span class="strikethrough-was">£355</span>
+                  <span class="savings-amount">Save £71.00</span>
+                </div>
+              </div>
+              <div class="pricing-subtext">
+                <i class="fa-solid fa-shield-halved"></i> Free exam resit included if you choose the exam bundle
+              </div>
+            </div>
+
+            <div class="card-buttons-group">
+              <a href="https://wa.me/447564525425?text=Hello,%20I%20would%20like%20to%20enrol%20in%20the%20English%20Level%202%20Online%20Course%20(£284)" target="_blank" rel="noopener" class="btn-card-enrol" style="background:#7c3aed;">
+                <span>Enrol in English L2 (£284)</span> <i class="fa-solid fa-arrow-right"></i>
+              </a>
+              <a href="course-english-l2.html" class="btn-card-syllabus">
+                <i class="fa-solid fa-book-open"></i> View Full Course Topics
+              </a>
+            </div>
           </div>
         </div>
 
         <!-- 3. Dual Maths & English Bundle -->
         <div class="course-card-enhanced" data-category="bundle">
-          <div class="card-top-ribbon ribbon-bundle">
-            <i class="fa-solid fa-tag"></i> Best Value (Save £211)
-          </div>
-          <div class="course-card-header">
-            <span class="course-cat-pill cat-bundle"><i class="fa-solid fa-sparkles"></i> Dual Package</span>
-            <h3>Maths &amp; English Level 2 Dual Course</h3>
-            <div class="course-equiv-tag">
-              <i class="fa-solid fa-graduation-cap" style="color:#059669;"></i> Complete Double GCSE-Equivalent Pass System
+          <div class="card-hero-banner banner-bundle">
+            <div class="banner-top-row">
+              <span class="banner-level-chip"><i class="fa-solid fa-graduation-cap"></i> Two Qualifications • 2x GCSE Grade 4/C</span>
+              <span class="banner-tag-badge badge-bundle"><i class="fa-solid fa-tags"></i> Best Value • Save £211</span>
+            </div>
+            <div class="banner-center-content">
+              <div class="banner-icon-circle">
+                <i class="fa-solid fa-sparkles"></i>
+              </div>
+              <div class="banner-title-area">
+                <span class="banner-category-name">Both Subjects Together</span>
+                <h3 class="banner-course-title">Maths &amp; English L2 Dual Course</h3>
+              </div>
             </div>
           </div>
-          <div class="course-price-wrap">
-            <div class="price-row-main">
-              <span class="price-amount">£499</span>
-              <span class="price-duration">/ 1-year full dual access</span>
+
+          <div class="card-main-body">
+            <div class="card-meta-bar">
+              <div class="meta-chip"><i class="fa-regular fa-clock"></i> Maths + English</div>
+              <div class="meta-chip"><i class="fa-solid fa-layer-group"></i> 64 Short Lessons</div>
+              <div class="meta-chip"><i class="fa-solid fa-robot"></i> 20 Practice Exams</div>
             </div>
-            <div class="price-savings-row">
-              <span class="price-was">Was £710</span>
-              <span class="price-savings-badge">Save £211.00</span>
-              <span class="price-bundle-note">• Combined package</span>
+
+            <p class="card-pitch-text">
+              Pass both Maths and English together and save £211. Get full 12-month access to both courses, tutor support, and practice mock exams.
+            </p>
+
+            <div class="card-features-section">
+              <div class="features-section-title">What's Included:</div>
+              <ul class="card-checklist">
+                <li><i class="fa-solid fa-circle-check"></i> <span><strong>Full Access to Both Courses:</strong> Everything included for Maths L2 and English L2</span></li>
+                <li><i class="fa-solid fa-circle-check"></i> <span><strong>Flexible Study Plans:</strong> Study at your own pace around work and family life</span></li>
+                <li><i class="fa-solid fa-circle-check"></i> <span><strong>80+ Video Lessons:</strong> Friendly, easy-to-follow videos covering every exam topic</span></li>
+                <li><i class="fa-solid fa-circle-check"></i> <span><strong>20 Practice Mock Exams:</strong> Practice with real exam-style questions marked instantly</span></li>
+                <li><i class="fa-solid fa-circle-check"></i> <span><strong>Free Revision Flashcards:</strong> Physical flashcard revision pack delivered to your door</span></li>
+              </ul>
             </div>
           </div>
-          <div class="course-features-wrap">
-            <ul class="course-features-list">
-              <li><i class="fa-solid fa-check"></i> <strong>Full Access to Both Maths L2 &amp; English L2 Courses</strong></li>
-              <li><i class="fa-solid fa-check"></i> Dual Personal Learning Plans tailored to your timeline</li>
-              <li><i class="fa-solid fa-check"></i> 80+ Video Lessons covering all syllabus standards</li>
-              <li><i class="fa-solid fa-check"></i> 20 AI-Marked Mock Exam Papers with detailed diagnostics</li>
-              <li><i class="fa-solid fa-check"></i> Free Physical Revision Flashcard Pack included (£17.98 value)</li>
-              <li><i class="fa-solid fa-check"></i> Priority Specialist Tutor Marking on 2 Full Mock Papers</li>
-              <li><i class="fa-solid fa-shield-halved" style="color:#10b981;"></i> Complete gateway solution for Uni &amp; Apprenticeships</li>
-            </ul>
-          </div>
-          <div class="course-card-footer">
-            <a href="https://wa.me/447564525425?text=Hello,%20I%20would%20like%20to%20enrol%20in%20the%20Dual%20Maths%20and%20English%20Level%202%20Course%20Bundle%20(£499)" target="_blank" rel="noopener" class="btn-enrol-main" style="background:#0284c7;">
-              <i class="fa-solid fa-cart-shopping"></i> Enrol in Dual Course (£499)
-            </a>
-            <a href="contact-us.html" class="btn-details-secondary">
-              Speak to an Academic Advisor &rarr;
-            </a>
+
+          <div class="card-bottom-actions">
+            <div class="card-pricing-box">
+              <div class="pricing-primary-row">
+                <div class="price-figure-wrap">
+                  <span class="price-symbol">£</span><span class="price-number">499</span>
+                  <span class="price-tenure">/ 12-Month Access for Both</span>
+                </div>
+                <div class="price-discount-pill">
+                  <span class="strikethrough-was">£710</span>
+                  <span class="savings-amount">Save £211.00</span>
+                </div>
+              </div>
+              <div class="pricing-subtext">
+                <i class="fa-solid fa-check-double"></i> Meets university and job entry requirements for both subjects
+              </div>
+            </div>
+
+            <div class="card-buttons-group">
+              <a href="https://wa.me/447564525425?text=Hello,%20I%20would%20like%20to%20enrol%20in%20the%20Dual%20Maths%20and%20English%20Level%202%20Course%20(£499)" target="_blank" rel="noopener" class="btn-card-enrol" style="background:#0284c7;">
+                <span>Enrol in Both Subjects (£499)</span> <i class="fa-solid fa-arrow-right"></i>
+              </a>
+              <a href="https://wa.me/447564525425?text=Hello,%20I%20would%20like%20to%20ask%20a%20question%20about%20the%20Dual%20Course" target="_blank" rel="noopener" class="btn-card-syllabus">
+                <i class="fa-solid fa-comments"></i> Chat with a Friendly Tutor
+              </a>
+            </div>
           </div>
         </div>
 
         <!-- 4. Functional Skills Level 1 -->
         <div class="course-card-enhanced" data-category="foundation">
-          <div class="card-top-ribbon ribbon-stepping">
-            <i class="fa-solid fa-stairs"></i> Apprenticeship Gateway
-          </div>
-          <div class="course-card-header">
-            <span class="course-cat-pill cat-foundation"><i class="fa-solid fa-seedling"></i> Foundation Suite</span>
-            <h3>Functional Skills Level 1 Courses</h3>
-            <div class="course-equiv-tag">
-              <i class="fa-solid fa-graduation-cap" style="color:#ea580c;"></i> Maths or English Level 1 (GCSE Grade 2–3 Equivalent)
+          <div class="card-hero-banner banner-level1">
+            <div class="banner-top-row">
+              <span class="banner-level-chip"><i class="fa-solid fa-graduation-cap"></i> Level 1 • GCSE Grades 2–3</span>
+              <span class="banner-tag-badge badge-stepping"><i class="fa-solid fa-stairs"></i> Apprenticeship Step</span>
+            </div>
+            <div class="banner-center-content">
+              <div class="banner-icon-circle">
+                <i class="fa-solid fa-seedling"></i>
+              </div>
+              <div class="banner-title-area">
+                <span class="banner-category-name">Step Towards Level 2</span>
+                <h3 class="banner-course-title">Functional Skills Level 1 Courses</h3>
+              </div>
             </div>
           </div>
-          <div class="course-price-wrap">
-            <div class="price-row-main">
-              <span class="price-amount">£284</span>
-              <span class="price-duration">/ 1-year unlimited access</span>
+
+          <div class="card-main-body">
+            <div class="card-meta-bar">
+              <div class="meta-chip"><i class="fa-regular fa-clock"></i> Maths or English</div>
+              <div class="meta-chip"><i class="fa-solid fa-layer-group"></i> 30 Short Lessons</div>
+              <div class="meta-chip"><i class="fa-solid fa-check"></i> Unlimited Practice</div>
             </div>
-            <div class="price-savings-row">
-              <span class="price-was">Was £355</span>
-              <span class="price-savings-badge">Save £71.00</span>
-              <span class="price-bundle-note">• Pick Maths or English</span>
+
+            <p class="card-pitch-text">
+              The ideal starting point to build your confidence before Level 2. Learn everyday fractions, decimals, percentages, and practical writing skills.
+            </p>
+
+            <div class="card-features-section">
+              <div class="features-section-title">What's Included:</div>
+              <ul class="card-checklist">
+                <li><i class="fa-solid fa-circle-check"></i> <span><strong>Quick Skills Check:</strong> Finds out where to start so you don't repeat what you know</span></li>
+                <li><i class="fa-solid fa-circle-check"></i> <span><strong>Everyday Maths:</strong> Clear practice with fractions, percentages, money, and time</span></li>
+                <li><i class="fa-solid fa-circle-check"></i> <span><strong>Everyday Writing:</strong> Simple sentences, punctuation, and clear workplace emails</span></li>
+                <li><i class="fa-solid fa-circle-check"></i> <span><strong>Dyslexia-Friendly Lessons:</strong> Calm, visual explanations that are easy to follow</span></li>
+                <li><i class="fa-solid fa-circle-check"></i> <span><strong>Pathway to Level 2:</strong> Prepares you to move smoothly up to Level 2 when you pass</span></li>
+              </ul>
             </div>
           </div>
-          <div class="course-features-wrap">
-            <ul class="course-features-list">
-              <li><i class="fa-solid fa-check"></i> Complete Level 1 syllabus preparation and baseline test</li>
-              <li><i class="fa-solid fa-check"></i> Core arithmetic, fractions, decimals, percentages &amp; measures</li>
-              <li><i class="fa-solid fa-check"></i> Sentence structure, basic SPaG, workplace emails &amp; letters</li>
-              <li><i class="fa-solid fa-check"></i> Step-by-step video solutions and dyslexia-friendly guides</li>
-              <li><i class="fa-solid fa-check"></i> Unlimited mock practice tests with method mark breakdowns</li>
-              <li><i class="fa-solid fa-check"></i> Ideal stepping stone towards Level 2 qualifications</li>
-            </ul>
-          </div>
-          <div class="course-card-footer">
-            <a href="https://wa.me/447564525425?text=Hello,%20I%20would%20like%20to%20enrol%20in%20the%20Functional%20Skills%20Level%201%20Course" target="_blank" rel="noopener" class="btn-enrol-main">
-              <i class="fa-solid fa-cart-shopping"></i> Enrol in Level 1 Course (£284)
-            </a>
-            <a href="functional-skills-maths-level-1.html" class="btn-details-secondary">
-              Explore Level 1 Curriculum &rarr;
-            </a>
+
+          <div class="card-bottom-actions">
+            <div class="card-pricing-box">
+              <div class="pricing-primary-row">
+                <div class="price-figure-wrap">
+                  <span class="price-symbol">£</span><span class="price-number">284</span>
+                  <span class="price-tenure">/ 12-Month Access</span>
+                </div>
+                <div class="price-discount-pill">
+                  <span class="strikethrough-was">£355</span>
+                  <span class="savings-amount">Save £71.00</span>
+                </div>
+              </div>
+              <div class="pricing-subtext">
+                <i class="fa-solid fa-user-check"></i> Choose Maths or English when you enrol
+              </div>
+            </div>
+
+            <div class="card-buttons-group">
+              <a href="https://wa.me/447564525425?text=Hello,%20I%20would%20like%20to%20enrol%20in%20the%20Functional%20Skills%20Level%201%20Course%20(£284)" target="_blank" rel="noopener" class="btn-card-enrol">
+                <span>Enrol in Level 1 (£284)</span> <i class="fa-solid fa-arrow-right"></i>
+              </a>
+              <a href="functional-skills-maths-level-1.html" class="btn-card-syllabus">
+                <i class="fa-solid fa-book-open"></i> View Full Course Topics
+              </a>
+            </div>
           </div>
         </div>
 
         <!-- 5. Entry Level 3 -->
         <div class="course-card-enhanced" data-category="foundation">
-          <div class="card-top-ribbon ribbon-foundation">
-            <i class="fa-solid fa-heart"></i> Confidence Builder
-          </div>
-          <div class="course-card-header">
-            <span class="course-cat-pill cat-foundation"><i class="fa-solid fa-seedling"></i> Entry Level</span>
-            <h3>Entry Level 3 Foundation Courses</h3>
-            <div class="course-equiv-tag">
-              <i class="fa-solid fa-graduation-cap" style="color:#ea580c;"></i> Maths or English Entry 3 (Core Literacy &amp; Numeracy)
+          <div class="card-hero-banner banner-entry3">
+            <div class="banner-top-row">
+              <span class="banner-level-chip"><i class="fa-solid fa-graduation-cap"></i> Entry Level 3 • Foundation</span>
+              <span class="banner-tag-badge badge-confidence"><i class="fa-solid fa-heart"></i> Calm &amp; Friendly</span>
+            </div>
+            <div class="banner-center-content">
+              <div class="banner-icon-circle">
+                <i class="fa-solid fa-heart-pulse"></i>
+              </div>
+              <div class="banner-title-area">
+                <span class="banner-category-name">Beginner Confidence</span>
+                <h3 class="banner-course-title">Entry Level 3 Foundation Courses</h3>
+              </div>
             </div>
           </div>
-          <div class="course-price-wrap">
-            <div class="price-row-main">
-              <span class="price-amount">£184</span>
-              <span class="price-duration">/ 1-year unlimited access</span>
+
+          <div class="card-main-body">
+            <div class="card-meta-bar">
+              <div class="meta-chip"><i class="fa-regular fa-clock"></i> Gentle Pace</div>
+              <div class="meta-chip"><i class="fa-solid fa-layer-group"></i> 20 Simple Lessons</div>
+              <div class="meta-chip"><i class="fa-solid fa-shield"></i> Zero Pressure</div>
             </div>
-            <div class="price-savings-row">
-              <span class="price-was">Was £230</span>
-              <span class="price-savings-badge">Save £46.00</span>
-              <span class="price-bundle-note">• Calm, stress-free pace</span>
+
+            <p class="card-pitch-text">
+              Start from the beginning with simple, step-by-step help. Built for anyone returning to learning who wants a calm, supportive place to build confidence.
+            </p>
+
+            <div class="card-features-section">
+              <div class="features-section-title">What's Included:</div>
+              <ul class="card-checklist">
+                <li><i class="fa-solid fa-circle-check"></i> <span><strong>Reading &amp; Spelling:</strong> Build confidence word by word at your own speed</span></li>
+                <li><i class="fa-solid fa-circle-check"></i> <span><strong>Everyday Numbers:</strong> Times tables, simple sums, and everyday money skills</span></li>
+                <li><i class="fa-solid fa-circle-check"></i> <span><strong>Dyslexia-Friendly Layout:</strong> Clear fonts, calm colours, and large text</span></li>
+                <li><i class="fa-solid fa-circle-check"></i> <span><strong>Untimed Practice:</strong> Try questions as many times as you like with no timer</span></li>
+                <li><i class="fa-solid fa-circle-check"></i> <span><strong>Step Towards Level 1:</strong> Prepares you gently for higher qualifications</span></li>
+              </ul>
             </div>
           </div>
-          <div class="course-features-wrap">
-            <ul class="course-features-list">
-              <li><i class="fa-solid fa-check"></i> Build foundational numeracy and workplace literacy from scratch</li>
-              <li><i class="fa-solid fa-check"></i> Phonics, basic word patterns, spelling &amp; simple reading</li>
-              <li><i class="fa-solid fa-check"></i> Place value, times tables, money calculations &amp; basic time</li>
-              <li><i class="fa-solid fa-check"></i> Dyslexia-friendly high-contrast visual lessons</li>
-              <li><i class="fa-solid fa-check"></i> Guided practice with unlimited repeats and zero time pressure</li>
-              <li><i class="fa-solid fa-check"></i> Seamless progression into Level 1 accreditation</li>
-            </ul>
-          </div>
-          <div class="course-card-footer">
-            <a href="https://wa.me/447564525425?text=Hello,%20I%20would%20like%20to%20enrol%20in%20the%20Entry%20Level%203%20Course%20(£184)" target="_blank" rel="noopener" class="btn-enrol-main">
-              <i class="fa-solid fa-cart-shopping"></i> Enrol in Entry 3 (£184)
-            </a>
-            <a href="entry-level-3-maths.html" class="btn-details-secondary">
-              Explore Entry 3 Maths &rarr;
-            </a>
+
+          <div class="card-bottom-actions">
+            <div class="card-pricing-box">
+              <div class="pricing-primary-row">
+                <div class="price-figure-wrap">
+                  <span class="price-symbol">£</span><span class="price-number">184</span>
+                  <span class="price-tenure">/ 12-Month Access</span>
+                </div>
+                <div class="price-discount-pill">
+                  <span class="strikethrough-was">£230</span>
+                  <span class="savings-amount">Save £46.00</span>
+                </div>
+              </div>
+              <div class="pricing-subtext">
+                <i class="fa-solid fa-circle-info"></i> Friendly tutor support whenever you need help
+              </div>
+            </div>
+
+            <div class="card-buttons-group">
+              <a href="https://wa.me/447564525425?text=Hello,%20I%20would%20like%20to%20enrol%20in%20the%20Entry%20Level%203%20Course%20(£184)" target="_blank" rel="noopener" class="btn-card-enrol">
+                <span>Enrol in Entry 3 (£184)</span> <i class="fa-solid fa-arrow-right"></i>
+              </a>
+              <a href="entry-level-3-maths.html" class="btn-card-syllabus">
+                <i class="fa-solid fa-book-open"></i> View Entry 3 Topics
+              </a>
+            </div>
           </div>
         </div>
 
         <!-- 6. Digital Functional Skills (Level 1) -->
         <div class="course-card-enhanced" data-category="digital">
-          <div class="card-top-ribbon" style="background:#0891b2; color:#ffffff;">
-            <i class="fa-solid fa-laptop"></i> Modern Essential
-          </div>
-          <div class="course-card-header">
-            <span class="course-cat-pill cat-digital"><i class="fa-solid fa-laptop-code"></i> Digital Skills</span>
-            <h3>Digital Functional Skills (Level 1)</h3>
-            <div class="course-equiv-tag">
-              <i class="fa-solid fa-shield-halved" style="color:#0891b2;"></i> Modern Workplace Essential Qualification
+          <div class="card-hero-banner banner-digital">
+            <div class="banner-top-row">
+              <span class="banner-level-chip"><i class="fa-solid fa-laptop"></i> Level 1 • Computer Skills</span>
+              <span class="banner-tag-badge badge-digital"><i class="fa-solid fa-bolt"></i> 2-Week Fast Track</span>
+            </div>
+            <div class="banner-center-content">
+              <div class="banner-icon-circle">
+                <i class="fa-solid fa-laptop-code"></i>
+              </div>
+              <div class="banner-title-area">
+                <span class="banner-category-name">Everyday Computer Skills</span>
+                <h3 class="banner-course-title">Digital Functional Skills (Level 1)</h3>
+              </div>
             </div>
           </div>
-          <div class="course-price-wrap">
-            <div class="price-row-main">
-              <span class="price-amount">£99</span>
-              <span class="price-duration">/ 1-year unlimited access</span>
+
+          <div class="card-main-body">
+            <div class="card-meta-bar">
+              <div class="meta-chip"><i class="fa-regular fa-clock"></i> 2-Week Course</div>
+              <div class="meta-chip"><i class="fa-solid fa-layer-group"></i> 15 Short Lessons</div>
+              <div class="meta-chip"><i class="fa-solid fa-desktop"></i> Real Exam Practice</div>
             </div>
-            <div class="price-savings-row">
-              <span class="price-was">Was £124</span>
-              <span class="price-savings-badge">Save £25.00</span>
-              <span class="price-bundle-note">• Fast-track 2-week course</span>
+
+            <p class="card-pitch-text">
+              Learn the essential computer skills needed for everyday jobs and modern life. Covers emails, files, basic spreadsheets, and staying safe online.
+            </p>
+
+            <div class="card-features-section">
+              <div class="features-section-title">What's Included:</div>
+              <ul class="card-checklist">
+                <li><i class="fa-solid fa-circle-check"></i> <span><strong>Files &amp; Folders:</strong> Saving work, organising folders, and using cloud storage</span></li>
+                <li><i class="fa-solid fa-circle-check"></i> <span><strong>Everyday Programs:</strong> Writing documents, simple spreadsheets, and presentation slides</span></li>
+                <li><i class="fa-solid fa-circle-check"></i> <span><strong>Staying Safe Online:</strong> Spotting scam emails and protecting your passwords</span></li>
+                <li><i class="fa-solid fa-circle-check"></i> <span><strong>Workplace Communication:</strong> Writing professional emails and using video calls</span></li>
+                <li><i class="fa-solid fa-circle-check"></i> <span><strong>Exam Practice Simulator:</strong> Practice in a screen that looks just like the real exam</span></li>
+              </ul>
             </div>
           </div>
-          <div class="course-features-wrap">
-            <ul class="course-features-list">
-              <li><i class="fa-solid fa-check"></i> Digital devices, file organisation &amp; cloud storage skills</li>
-              <li><i class="fa-solid fa-check"></i> Word processing, spreadsheets &amp; digital presentations</li>
-              <li><i class="fa-solid fa-check"></i> Online safety, data privacy, phishing prevention &amp; cybersecurity</li>
-              <li><i class="fa-solid fa-check"></i> Workplace digital communication (Email &amp; Microsoft Teams)</li>
-              <li><i class="fa-solid fa-check"></i> Pearson DFS simulator practice mock exams included</li>
-              <li><i class="fa-solid fa-check"></i> Official certificate for modern career progression</li>
-            </ul>
-          </div>
-          <div class="course-card-footer">
-            <a href="https://wa.me/447564525425?text=Hello,%20I%20would%20like%20to%20enrol%20in%20the%20Digital%20Functional%20Skills%20Level%201%20Course%20(£99)" target="_blank" rel="noopener" class="btn-enrol-main" style="background:#0891b2;">
-              <i class="fa-solid fa-cart-shopping"></i> Enrol in Digital Skills (£99)
-            </a>
-            <a href="digital-functional-skills.html" class="btn-details-secondary">
-              Explore Digital Skills Hub &rarr;
-            </a>
+
+          <div class="card-bottom-actions">
+            <div class="card-pricing-box">
+              <div class="pricing-primary-row">
+                <div class="price-figure-wrap">
+                  <span class="price-symbol">£</span><span class="price-number">99</span>
+                  <span class="price-tenure">/ 12-Month Access</span>
+                </div>
+                <div class="price-discount-pill">
+                  <span class="strikethrough-was">£124</span>
+                  <span class="savings-amount">Save £25.00</span>
+                </div>
+              </div>
+              <div class="pricing-subtext">
+                <i class="fa-solid fa-award"></i> Official UK qualification recognized by employers
+              </div>
+            </div>
+
+            <div class="card-buttons-group">
+              <a href="https://wa.me/447564525425?text=Hello,%20I%20would%20like%20to%20enrol%20in%20the%20Digital%20Functional%20Skills%20Level%201%20Course%20(£99)" target="_blank" rel="noopener" class="btn-card-enrol" style="background:#0891b2;">
+                <span>Enrol in Digital Skills (£99)</span> <i class="fa-solid fa-arrow-right"></i>
+              </a>
+              <a href="digital-functional-skills.html" class="btn-card-syllabus">
+                <i class="fa-solid fa-book-open"></i> Explore Digital Skills Hub
+              </a>
+            </div>
           </div>
         </div>
 
@@ -1391,7 +1736,7 @@
           How the Online Course Works Step-by-Step
         </h2>
         <p style="color:var(--text-secondary); font-size:1rem; line-height:1.6;">
-          A stress-free, personalized learning roadmap engineered to eliminate study anxiety and guarantee first-time exam success.
+          A simple, stress-free way to learn that takes away exam worry and helps you pass first time.
         </p>
       </div>
 
@@ -1399,36 +1744,36 @@
         <!-- Step 1 -->
         <div class="pathway-card">
           <div class="pathway-step-num">1</div>
-          <h3>Smart Baseline Diagnostic</h3>
+          <h3>Quick 20-Minute Skills Check</h3>
           <p>
-            Complete an interactive initial assessment in 20 minutes that maps your exact knowledge gaps against official qualification criteria.
+            A short check that finds out what you already know, so you only study the topics you actually need to practice.
           </p>
         </div>
 
         <!-- Step 2 -->
         <div class="pathway-card">
           <div class="pathway-step-num">2</div>
-          <h3>Dynamic Learning Plan</h3>
+          <h3>Your Personal Study Plan</h3>
           <p>
-            Your dashboard creates a bespoke study sequence focusing strictly on your weaker areas so you never waste time re-learning what you already know.
+            Get a simple checklist showing you exactly which short lessons to watch each week, keeping you organized and on track.
           </p>
         </div>
 
         <!-- Step 3 -->
         <div class="pathway-card">
           <div class="pathway-step-num">3</div>
-          <h3>Bite-Sized Lessons &amp; Drills</h3>
+          <h3>Short Video Lessons &amp; Practice</h3>
           <p>
-            Watch clear, dyslexia-friendly video tutorials for each topic. Complete practice questions, downloadable worksheets, and worked exam models.
+            Watch clear 5-to-10 minute videos that explain things simply, then try practice questions with step-by-step model answers.
           </p>
         </div>
 
         <!-- Step 4 -->
         <div class="pathway-card">
           <div class="pathway-step-num">4</div>
-          <h3>AI Mock Exams &amp; Certification</h3>
+          <h3>Practice Exams &amp; Passing</h3>
           <p>
-            Sit timed, realistic online mock papers with instant AI marking and feedback. When your "Chance of Passing" hits 85%+, sit your official exam from home!
+            Take realistic practice exams that mark your work right away. Once your score is high, book your real exam and pass with confidence!
           </p>
         </div>
       </div>
@@ -1520,7 +1865,7 @@
             </div>
             <ul class="syllabus-topic-list" style="margin-bottom:20px;">
               <li><i class="fa-solid fa-check"></i> Identifying implicit meaning, bias, tone and style</li>
-              <li><i class="fa-solid fa-check"></i> Multi-text comparison (synthesising Text A, B &amp; C)</li>
+              <li><i class="fa-solid fa-check"></i> Multi-text comparison (pulling points together from Text A, B &amp; C)</li>
               <li><i class="fa-solid fa-check"></i> Organisational features (headings, subheadings, bullet points)</li>
               <li><i class="fa-solid fa-check"></i> Language devices (rhetorical questions, rule of three, metaphors)</li>
             </ul>
@@ -1532,7 +1877,7 @@
               <li><i class="fa-solid fa-check"></i> Formal letters, professional workplace emails, and incident reports</li>
               <li><i class="fa-solid fa-check"></i> Articles, informational leaflets, speeches, and persuasive reviews</li>
               <li><i class="fa-solid fa-check"></i> SPaG mastery: Colons, semicolons, apostrophes &amp; sentence variation</li>
-              <li><i class="fa-solid fa-check"></i> Proofreading frameworks to eliminate fatal mark deductions</li>
+              <li><i class="fa-solid fa-check"></i> Proofreading tips to avoid losing easy marks on spelling and punctuation</li>
             </ul>
 
             <div style="margin-bottom:14px;">
@@ -1599,39 +1944,39 @@
           </thead>
           <tbody>
             <tr>
-              <td><strong>GCSE Equivalency</strong></td>
-              <td>Below GCSE (Entry level foundation)</td>
-              <td>GCSE Grades 2–3 (Grade E–D equivalent)</td>
-              <td style="background:#f8fafc; font-weight:700; color:var(--navy-dark);">GCSE Grade 4 / C Equivalent</td>
+              <td><strong>GCSE Comparison</strong></td>
+              <td>Beginner (step before GCSE)</td>
+              <td>GCSE Grades 2–3 (Grades E–D)</td>
+              <td style="background:#f8fafc; font-weight:700; color:var(--navy-dark);">GCSE Grade 4 / C Equivalent (Pass)</td>
             </tr>
             <tr>
-              <td><strong>Target Audience</strong></td>
-              <td>Learners returning to study, needing basic numeracy &amp; literacy</td>
-              <td>Apprentices needing L1 gateway or building towards L2</td>
-              <td style="background:#f8fafc; font-weight:700; color:#059669;">University, Nursing, Midwifery, Police, Teaching &amp; L3 Apprenticeships</td>
+              <td><strong>Who is it for?</strong></td>
+              <td>Learners returning to study who want to build basic confidence in numbers and reading</td>
+              <td>Apprentices and learners wanting to build confidence before taking Level 2</td>
+              <td style="background:#f8fafc; font-weight:700; color:#059669;">Anyone needing a GCSE Grade 4/C for University, Nursing, Teaching, Police, or Jobs</td>
             </tr>
             <tr>
-              <td><strong>Study Duration</strong></td>
-              <td>2 to 6 weeks self-paced</td>
-              <td>3 to 8 weeks self-paced</td>
-              <td style="background:#f8fafc;">4 to 12 weeks self-paced (Fast-track available)</td>
+              <td><strong>How long does it take?</strong></td>
+              <td>2 to 6 weeks at your own pace</td>
+              <td>3 to 8 weeks at your own pace</td>
+              <td style="background:#f8fafc;">4 to 12 weeks at your own pace (or faster if you have an urgent deadline)</td>
             </tr>
             <tr>
               <td><strong>Exam Format</strong></td>
-              <td>Untimed or flexible classroom assessment</td>
-              <td>Online exam from home (Non-calc &amp; calc)</td>
-              <td style="background:#f8fafc;">Online remote invigilated exam from home</td>
+              <td>Untimed paper or flexible assessment</td>
+              <td>Online exam from home (Non-calculator &amp; calculator)</td>
+              <td style="background:#f8fafc;">Online exam from home with an online invigilator</td>
             </tr>
             <tr>
-              <td><strong>AI Mock Marking</strong></td>
-              <td><i class="fa-solid fa-check text-success" style="color:#10b981;"></i> Included</td>
-              <td><i class="fa-solid fa-check text-success" style="color:#10b981;"></i> Included</td>
-              <td style="background:#f8fafc;"><i class="fa-solid fa-check text-success" style="color:#10b981;"></i> Full AI Step-by-Step Marking + Predicted Pass Index</td>
+              <td><strong>Practice Test Marking</strong></td>
+              <td><i class="fa-solid fa-check text-success" style="color:#10b981;"></i> Instant feedback</td>
+              <td><i class="fa-solid fa-check text-success" style="color:#10b981;"></i> Instant feedback</td>
+              <td style="background:#f8fafc;"><i class="fa-solid fa-check text-success" style="color:#10b981;"></i> Instant step-by-step marking &amp; score tracker</td>
             </tr>
             <tr>
-              <td><strong>Free Resit Option</strong></td>
-              <td>Optional add-on</td>
-              <td>Optional add-on</td>
+              <td><strong>Free Resit Guarantee</strong></td>
+              <td>Available with exam package</td>
+              <td>Available with exam package</td>
               <td style="background:#f8fafc;"><i class="fa-solid fa-shield" style="color:#10b981;"></i> Included with Premium Exam Bundle</td>
             </tr>
             <tr>
@@ -1652,7 +1997,7 @@
       <div style="text-align:center; max-width:760px; margin:0 auto 36px;">
         <span style="color:var(--accent); font-weight:800; font-size:0.85rem; text-transform:uppercase; letter-spacing:0.06em;">Success Stories</span>
         <h2 style="font-size:2.2rem; color:var(--navy-dark); margin:8px 0 12px; font-family:var(--font-heading);">
-          Real Learners, Real GCSE Equivalency Passes
+          Real Learners, Real GCSE Equivalent Passes
         </h2>
         <p style="color:var(--text-secondary); font-size:1rem; line-height:1.6;">
           See how our online courses helped learners achieve their qualifications and progress into university, healthcare, and higher apprenticeships.
@@ -1741,7 +2086,7 @@
             <i class="fa-solid fa-chevron-down"></i>
           </button>
           <div class="faq-answer-pane">
-            Yes, 100%. All of our Functional Skills qualifications are regulated by Ofqual (Office of Qualifications and Examinations Regulation) on the Regulated Qualifications Framework (RQF). Level 2 is officially recognized across the UK by universities (UCAS), NHS Trusts, the Department for Education, the College of Policing, and all apprenticeship apprenticeship standards as equivalent to a GCSE Grade 4 / Grade C.
+            Yes, 100%. All qualifications are regulated by Ofqual, the UK government exams regulator. Level 2 is officially recognized across the UK by universities, the NHS, colleges, employers, and apprenticeships as equal to a GCSE Grade 4 or C.
           </div>
         </div>
 
@@ -1751,7 +2096,7 @@
             <i class="fa-solid fa-chevron-down"></i>
           </button>
           <div class="faq-answer-pane">
-            The course is completely self-paced. Most learners complete the course in 4 to 8 weeks by dedicating 3 to 5 hours per week. If you have an urgent deadline for a university or job offer, you can fast-track the entire course in as little as 2 to 3 weeks. You have full 12-month unlimited access to all lessons and materials.
+            You can study at whatever pace works for you. Most learners finish in 4 to 8 weeks by doing a few hours a week. If you need your qualification urgently for a job or university place, you can finish faster in 2 to 3 weeks. You also get full 12-month access, so there is never any rush.
           </div>
         </div>
 
@@ -1761,17 +2106,17 @@
             <i class="fa-solid fa-chevron-down"></i>
           </button>
           <div class="faq-answer-pane">
-            Yes! You can sit your official Ofqual-regulated exam from the comfort of your own home using remote invigilation. You only need a laptop or desktop computer with a working webcam, microphone, and a stable internet connection. Slots are available 6 days a week, with fast results released in 2 to 6 working days.
+            Yes! You can sit your official exam from home on your computer. An online exam invigilator will guide you through the process. All you need is a computer or laptop with a webcam, microphone, and internet. Exam slots run 6 days a week, and results arrive in just 2 to 6 working days.
           </div>
         </div>
 
         <div class="faq-item-enhanced">
           <button class="faq-question-btn" onclick="toggleFaq(this)">
-            <span>How does the AI Mock Marking work?</span>
+            <span>How does the practice test marking work?</span>
             <i class="fa-solid fa-chevron-down"></i>
           </button>
           <div class="faq-answer-pane">
-            Our AI marking engine is trained specifically on thousands of official Pearson Edexcel and City &amp; Guilds past papers and mark schemes. When you submit mock math calculations or English essays, it checks your method marks, spelling, punctuation, grammar, and paragraph structure against official criteria, providing instant marks and side-by-side model answers.
+            When you complete a practice test, the system marks your calculations and writing right away against real exam mark schemes. It shows you exactly where you earned marks, points out any spelling or calculation slips, and gives you a clear model answer so you learn how to improve.
           </div>
         </div>
 
@@ -1781,7 +2126,7 @@
             <i class="fa-solid fa-chevron-down"></i>
           </button>
           <div class="faq-answer-pane">
-            No textbooks are required—all video lessons, interactive questions, downloadable cheat sheets, and mock exams are included within your online course dashboard. However, if you prefer physical revision, our official pocket revision flashcard packs and companion workbooks are available in the <a href="shop.html" style="color:var(--accent); font-weight:700;">Study Shop</a>.
+            No textbooks needed! Everything—video lessons, practice questions, worksheets, and mock exams—is included in your course. If you prefer studying on paper, you can also grab our printed revision flashcard packs in our <a href="shop.html" style="color:var(--accent); font-weight:700;">Study Shop</a>.
           </div>
         </div>
 
@@ -1791,7 +2136,7 @@
             <i class="fa-solid fa-chevron-down"></i>
           </button>
           <div class="faq-answer-pane">
-            When you bundle your course with our Premium Exam package (+£125), you receive a 100% Free Resit guarantee. If you do not pass on your first attempt, we will re-register and schedule your second official exam sitting completely free of charge.
+            If you choose the Premium Exam package and do not pass your exam on the first try, don't worry. We will rebook and pay for your second official exam sitting completely free of charge.
           </div>
         </div>
 
@@ -1808,12 +2153,12 @@
         </span>
         <h3 style="margin-top:12px;">Not sure which course or level is right for you?</h3>
         <p>
-          Take our quick 5-minute diagnostic skill checker to identify your starting level, or chat directly with our specialist tutor team on WhatsApp for personalized enrolment advice.
+          Take our quick 5-minute skills check to find your starting level, or send a quick message to our friendly tutor team on WhatsApp for free advice.
         </p>
       </div>
       <div class="cta-banner-actions">
         <a href="diagnostic-test.html" class="btn-cta-green">
-          <i class="fa-solid fa-chart-pie"></i> Free 5-Min Diagnostic Check
+          <i class="fa-solid fa-chart-pie"></i> Free 5-Min Skills Check
         </a>
         <a href="https://wa.me/447564525425?text=Hello,%20I%20would%20like%20guidance%20on%20choosing%20the%20right%20Functional%20Skills%20course" target="_blank" rel="noopener" class="btn-cta-light">
           <i class="fa-brands fa-whatsapp" style="color:#25d366; font-size:1.15rem;"></i> WhatsApp Tutor Team
@@ -1846,7 +2191,6 @@
         <div class="footer-col">
           <h4>Maths Revision</h4>
           <ul class="footer-links">
-            <li><a href="course-maths-l2.html">Maths Level 2 Course</a></li>
             <li><a href="functional-skills-maths-level-2.html">Maths Level 2 Revision</a></li>
             <li><a href="functional-skills-maths-level-1.html">Maths Level 1 Revision</a></li>
             <li><a href="entry-level-3-maths.html">Entry Level 3 Maths</a></li>
@@ -1859,7 +2203,6 @@
         <div class="footer-col">
           <h4>English &amp; Digital</h4>
           <ul class="footer-links">
-            <li><a href="course-english-l2.html">English Level 2 Course</a></li>
             <li><a href="functional-skills-english-level-2.html">English Level 2 Revision</a></li>
             <li><a href="functional-skills-english-level-1.html">English Level 1 Revision</a></li>
             <li><a href="digital-functional-skills.html">Digital Skills Hub (L1 &amp; E3)</a></li>
@@ -1910,6 +2253,7 @@
     function toggleDyslexiaMode() {
       const isDys = document.body.classList.toggle('dyslexia-mode');
       localStorage.setItem('mfs_dyslexia', isDys ? '1' : '0');
+      localStorage.setItem('mfs_dyslexia_mode', isDys ? 'true' : 'false');
       const btn = document.getElementById('dyslexiaToggle');
       if (btn) btn.classList.toggle('active', isDys);
     }
@@ -1924,7 +2268,7 @@
     }
 
     (function() {
-      if (localStorage.getItem('mfs_dyslexia') === '1') {
+      if (localStorage.getItem('mfs_dyslexia') === '1' || localStorage.getItem('mfs_dyslexia_mode') === 'true') {
         document.body.classList.add('dyslexia-mode');
         const btn = document.getElementById('dyslexiaToggle');
         if (btn) btn.classList.add('active', true);

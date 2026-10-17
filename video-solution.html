@@ -580,11 +580,11 @@
           `;
         }
 
+        const ytId = isSecB ? 'D0uGqcyMy34' : 'KvOZvxBZgL0';
         playerContainer.innerHTML = `
-          <video controls autoplay playsinline poster="${posterFile}">
-            <source src="${videoFile}" type="video/mp4">
-            Your browser does not support HTML5 video.
-          </video>
+          <div style="position:relative; width:100%; padding-bottom:56.25%; height:0; border-radius:14px; overflow:hidden; box-shadow:0 12px 30px rgba(0,0,0,0.6); border:1px solid #1e293b; background:#000;">
+            <iframe style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;" src="https://www.youtube-nocookie.com/embed/${ytId}?rel=0" title="${displayTitle}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
         `;
       } else if (
         cleanSlug === 'edexcel-maths-l2-past-paper-10' ||
@@ -592,12 +592,7 @@
         cleanSlug === 'edexcel-maths-l2-past-paper-10-section-b'
       ) {
         const isSecB = cleanSlug === 'edexcel-maths-l2-past-paper-10-section-b';
-        const videoFile = isSecB
-          ? 'videos/Pearson_Edexcel_Maths_L2_Past_Paper_10_Section_B_Full_Walkthrough.mp4'
-          : 'videos/Pearson_Edexcel_Maths_L2_Past_Paper_10_Section_A_Walkthrough.mp4';
-        const posterFile = isSecB
-          ? 'videos/thumbnail_edexcel_maths_l2_paper_10_sec_b.png'
-          : 'videos/thumbnail_edexcel_maths_l2_paper_10_sec_a.png';
+        const ytId = isSecB ? 'n5NwrhtNEhQ' : 'muSRa0fEsSs';
 
         document.getElementById('sideWorksheetBtn').href = 'https://passfunctionalskills.co.uk/app/uploads/2024/06/FS_Maths_Level_2_Past_Paper_10.pdf';
         document.getElementById('sideWorksheetLabel').innerHTML = '<i class="fa-regular fa-file-pdf"></i> Question Paper (PDF)';
@@ -620,10 +615,9 @@
         }
 
         playerContainer.innerHTML = `
-          <video controls autoplay playsinline poster="${posterFile}">
-            <source src="${videoFile}" type="video/mp4">
-            Your browser does not support HTML5 video.
-          </video>
+          <div style="position:relative; width:100%; padding-bottom:56.25%; height:0; border-radius:14px; overflow:hidden; box-shadow:0 12px 30px rgba(0,0,0,0.6); border:1px solid #1e293b; background:#000;">
+            <iframe style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;" src="https://www.youtube-nocookie.com/embed/${ytId}?rel=0" title="${displayTitle}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
         `;
       } else {
         playerContainer.innerHTML = `

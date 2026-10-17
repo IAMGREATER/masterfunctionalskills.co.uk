@@ -115,7 +115,7 @@ class ModelSolutionAuditor:
         except Exception:
             pass
         for c in candidates:
-            if c.exists():
+            if c.exists() and c.resolve() != self.pdf_path.resolve():
                 return c
         return None
 
@@ -167,7 +167,7 @@ class ModelSolutionAuditor:
             
             page = self.doc[page_idx]
             page_text = page.get_text('text').lower()
-            if 'section b' in page_text and ('calculator' in page_text or 'pmat' in page_text or 'candidate' in page_text or 'check that you have' in page_text):
+            if 'section b' in page_text and ('calculator' in page_text or 'pmat' in page_text or 'candidate' in page_text or 'check that you have' in page_text or 'solutions' in page_text or 'prac' in page_text):
                 continue
 
             # Scale boundaries proportionally to page width (e.g. 652 pt Crown Quarto vs 595.3 pt A4)

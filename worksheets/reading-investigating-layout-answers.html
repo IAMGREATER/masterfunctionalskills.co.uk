@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
-  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Master Functional Skills — Layout Devices & Visual Signposting Answer Key & Mark Scheme (Level 1 & Level 2)</title>
@@ -65,7 +64,24 @@
     .btn-action-print:hover {
       background: #059669;
     }
+    .btn-action-mode,
+    .btn-action-answers,
+    .btn-action-practice,
     .btn-action-sheet {
+      color: #ffffff !important;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none !important;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-right: 12px;
+      transition: background 0.2s;
+    }
+    .old-btn-action-sheet {
       background: #2563eb;
       color: #ffffff;
       border: none;
@@ -123,38 +139,7 @@
       cursor: default;
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
     }
-    .btn-action-mode,
-    .btn-action-practice,
-    .btn-action-answers,
-    .btn-action-sheet {
-      color: #ffffff !important;
-      border: none;
-      padding: 8px 18px;
-      border-radius: 6px;
-      font-weight: 700;
-      font-size: 0.95rem;
-      text-decoration: none !important;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-right: 12px;
-      transition: background 0.2s;
-    }
-    .btn-action-practice {
-      background: #7c3aed;
-    }
-    .btn-action-practice:hover {
-      background: #6d28d9;
-      color: #ffffff !important;
-      text-decoration: none !important;
-    }
-    .btn-action-mode:hover,
-    .btn-action-answers:hover,
-    .btn-action-sheet:hover {
-      color: #ffffff !important;
-      text-decoration: none !important;
-      filter: brightness(0.9);
-    }
+
 
     @media (max-width: 900px) {
       .print-bar {
@@ -483,12 +468,12 @@
 </head>
 <body>
 
-        <div class="print-bar">
+  <div class="print-bar">
     <div>
       <a href="../reading-investigating-layout.html"><i class="fa-solid fa-arrow-left"></i> Back to Layout Devices & Visual Signposting Revision Guide</a>
     </div>
     <div>
-      <a href="reading-investigating-layout-workout-answers.html" class="btn-action-answers" style="background:#2563eb; margin-right:12px;"><i class="fa-solid fa-repeat"></i> Workout Answers</a>
+      <a href="reading-investigating-layout-workout-answers.html" class="btn-action-answers" style="background:#2563eb; margin-right:10px;"><i class="fa-solid fa-repeat"></i> Workout Answers</a>
       <div class="nav-pill-group">
         <a href="reading-investigating-layout-worksheet.html" class="nav-pill-btn"><i class="fa-solid fa-file-lines"></i> Questions</a>
         <span class="nav-pill-btn active"><i class="fa-solid fa-check-double"></i> Answers</span>
@@ -516,7 +501,7 @@
 
 
     <div class="tier-divider">
-      <span>Section A: Foundational Concept Check Solutions</span>
+      <span>Section A: Core Skills (The Basics) Solutions</span>
       <span>Questions 1 & 2 • 4 Marks</span>
     </div>
 
@@ -545,11 +530,11 @@
         <span class="award-val">Section 3: Crèche & Junior Swim Rules. Subheadings allow readers to scan and go straight to their required topic without reading every word.</span>
       </div>
       <div class="pitfall-box">
-        <strong>⚠️ Examiner Trap Alert:</strong>
+        <strong>⚠️ Common Mistake to Avoid:</strong>
         Writing just 'Section 3' without explaining how subheadings aid reader navigation.
       </div>
       <div class="reverse-check-box">
-        <strong>🔄 Reverse Sanity Check:</strong> Does Section 3 cover children's swimming rules? Yes.
+        <strong>🔄 Quick Check:</strong> Does Section 3 cover children's swimming rules? Yes.
       </div>
     </div>
 
@@ -578,16 +563,16 @@
         <span class="award-val">Numbers establish a strict chronological sequence (Step 1 before Step 2) so staff follow the emergency clean-up steps in the exact safe order.</span>
       </div>
       <div class="pitfall-box">
-        <strong>⚠️ Examiner Trap Alert:</strong>
+        <strong>⚠️ Common Mistake to Avoid:</strong>
         Saying 'it makes it easier to read' without mentioning chronological order or step-by-step sequence.
       </div>
       <div class="reverse-check-box">
-        <strong>🔄 Reverse Sanity Check:</strong> Bullet points = any order; Numbered list = strict chronological sequence.
+        <strong>🔄 Quick Check:</strong> Bullet points = any order; Numbered list = strict chronological sequence.
       </div>
     </div>
 
     <div class="tier-divider">
-      <span>Section B: Functional Workplace Application Solutions</span>
+      <span>Section B: Real-Life & Workplace Practice Solutions</span>
       <span>Questions 3 & 4 • 6 Marks</span>
     </div>
 
@@ -620,11 +605,11 @@
         <span class="award-val">1. Aligns weights and prices in rows/columns for fast lookup. 2. Makes comparing 48-Hr vs Next-Day costs easy. 3. Reduces risk of misreading numbers in dense prose.</span>
       </div>
       <div class="pitfall-box">
-        <strong>⚠️ Examiner Trap Alert:</strong>
+        <strong>⚠️ Common Mistake to Avoid:</strong>
         Repeating the same point three times instead of giving three distinct functional benefits (speed, comparison, accuracy).
       </div>
       <div class="reverse-check-box">
-        <strong>🔄 Reverse Sanity Check:</strong> Check you mentioned row/column alignment, side-by-side comparison, and error reduction.
+        <strong>🔄 Quick Check:</strong> Check you mentioned row/column alignment, side-by-side comparison, and error reduction.
       </div>
     </div>
 
@@ -657,16 +642,16 @@
         <span class="award-val">Isolates critical 999 danger signs from general background text; the red border draws immediate visual attention so teachers can verify ambulance criteria instantly during an attack.</span>
       </div>
       <div class="pitfall-box">
-        <strong>⚠️ Examiner Trap Alert:</strong>
+        <strong>⚠️ Common Mistake to Avoid:</strong>
         Summarising asthma symptoms instead of analysing the structural position and red border of the sidebar.
       </div>
       <div class="reverse-check-box">
-        <strong>🔄 Reverse Sanity Check:</strong> Does your answer explain both visual separation and speed of access in an emergency?
+        <strong>🔄 Quick Check:</strong> Does your answer explain both visual separation and speed of access in an emergency?
       </div>
     </div>
 
     <div class="tier-divider">
-      <span>Section C: Pearson Edexcel Exam-Style Analysis & Evaluation Solutions</span>
+      <span>Section C: Exam-Style Tasks Solutions</span>
       <span>Questions 5 & 6 • 8 Marks</span>
     </div>
 
@@ -703,11 +688,11 @@
         <span class="award-val">The Yes/No flowchart guides workers logically through step-by-step fault diagnosis based on their router light, while the bold FAQ headings allow them to scan straight to specific follow-up answers.</span>
       </div>
       <div class="pitfall-box">
-        <strong>⚠️ Examiner Trap Alert:</strong>
+        <strong>⚠️ Common Mistake to Avoid:</strong>
         Analysing only the flowchart and ignoring the FAQ layout.
       </div>
       <div class="reverse-check-box">
-        <strong>🔄 Reverse Sanity Check:</strong> Verify both the Yes/No decision path (flowchart) and question scanning (FAQ) are explained.
+        <strong>🔄 Quick Check:</strong> Verify both the Yes/No decision path (flowchart) and question scanning (FAQ) are explained.
       </div>
     </div>
 
@@ -744,11 +729,11 @@
         <span class="award-val">Text A uses an icon grid, red warning boxes, and bullets for instant wall-scanning by busy chefs. Conversely, Text B uses dense two-column prose and footnotes for in-depth study and source verification by researchers.</span>
       </div>
       <div class="pitfall-box">
-        <strong>⚠️ Examiner Trap Alert:</strong>
+        <strong>⚠️ Common Mistake to Avoid:</strong>
         Describing the topic of food allergies instead of comparing the structural layout features (icon grid/bullets vs prose columns/footnotes).
       </div>
       <div class="reverse-check-box">
-        <strong>🔄 Reverse Sanity Check:</strong> Have you linked Text A's layout to busy chefs and Text B's layout to researchers/in-depth study?
+        <strong>🔄 Quick Check:</strong> Have you linked Text A's layout to busy chefs and Text B's layout to researchers/in-depth study?
       </div>
     </div>
 

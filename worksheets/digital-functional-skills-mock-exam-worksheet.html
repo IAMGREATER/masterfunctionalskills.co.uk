@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Master Functional Skills — Digital Functional Skills Mock Exam Practice: Word Processing, Calculations & Communication Worksheet (Level 1 & Level 2)</title>
+  <title>Master Functional Skills — Digital Functional Skills Mock Exam Practice: Formulas, Files & Security Worksheet (Level 1 & Level 2)</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     @page {
@@ -64,7 +64,41 @@
     .btn-action-print:hover {
       background: #1d4ed8;
     }
-    .btn-action-answers {
+    .btn-action-mode,
+    .btn-action-answers,
+    .btn-action-practice,
+    .btn-action-mode,
+    .btn-action-answers,
+    .btn-action-practice,
+    .btn-action-sheet {
+      color: #ffffff !important;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none !important;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-right: 12px;
+      transition: background 0.2s;
+    }
+    .old-btn-action-sheet {
+      color: #ffffff !important;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none !important;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-right: 12px;
+      transition: background 0.2s;
+    }
+    .old-btn-action-answers {
       background: #059669;
       color: #ffffff;
       border: none;
@@ -122,38 +156,7 @@
       cursor: default;
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
     }
-    .btn-action-mode,
-    .btn-action-practice,
-    .btn-action-answers,
-    .btn-action-sheet {
-      color: #ffffff !important;
-      border: none;
-      padding: 8px 18px;
-      border-radius: 6px;
-      font-weight: 700;
-      font-size: 0.95rem;
-      text-decoration: none !important;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-right: 12px;
-      transition: background 0.2s;
-    }
-    .btn-action-practice {
-      background: #7c3aed;
-    }
-    .btn-action-practice:hover {
-      background: #6d28d9;
-      color: #ffffff !important;
-      text-decoration: none !important;
-    }
-    .btn-action-mode:hover,
-    .btn-action-answers:hover,
-    .btn-action-sheet:hover {
-      color: #ffffff !important;
-      text-decoration: none !important;
-      filter: brightness(0.9);
-    }
+
 
     @media (max-width: 900px) {
       .print-bar {
@@ -548,12 +551,12 @@
 </head>
 <body>
 
-        <div class="print-bar">
+  <div class="print-bar">
     <div>
-      <a href="../digital-functional-skills-mock-exam.html"><i class="fa-solid fa-arrow-left"></i> Back to Digital Functional Skills Mock Exam Practice: Word Processing, Calculations & Communication Revision Guide</a>
+      <a href="../digital-functional-skills-mock-exam.html"><i class="fa-solid fa-arrow-left"></i> Back to Digital Functional Skills Mock Exam Practice: Formulas, Files & Security Revision Guide</a>
     </div>
     <div>
-      <a href="digital-functional-skills-mock-exam-workout.html" class="btn-action-answers" style="background:#2563eb; margin-right:12px;"><i class="fa-solid fa-repeat"></i> Switch to Skill Workout</a>
+      <a href="digital-functional-skills-mock-exam-workout.html" class="btn-action-answers" style="background:#2563eb; margin-right:10px;"><i class="fa-solid fa-repeat"></i> Switch to Skill Workout</a>
       <div class="nav-pill-group">
         <span class="nav-pill-btn active"><i class="fa-solid fa-file-lines"></i> Questions</span>
         <a href="digital-functional-skills-mock-exam-answers.html" class="nav-pill-btn"><i class="fa-solid fa-check-double"></i> Answers</a>
@@ -569,8 +572,8 @@
         <div class="brand-subtitle">Ofqual Regulated Standards • Digital Functional Skills Curriculum</div>
       </div>
       <div class="sheet-meta-badge">
-        <span class="topic-name">Digital Functional Skills Mock Exam Practice: Word Processing, Calculations & Communication</span>
-        <span class="spec-tag">Ofqual / Pearson Edexcel: Pearson Edexcel DFS: Reformed Level 1 & Level 2 Full Benchmark</span>
+        <span class="topic-name">Digital Functional Skills Mock Exam Practice: Formulas, Files & Security</span>
+        <span class="spec-tag">Ofqual / Pearson Edexcel: DFS.1 • DFS.2 • DFS.3 • DFS.4 • DFS.5</span>
       </div>
     </div>
 
@@ -583,24 +586,24 @@
     <div class="recall-banner">
       <i class="fa-solid fa-lightbulb"></i>
       <div>
-        <strong>Examiner Rule for Digital Functional Skills Mock Exam Practice: Word Processing, Calculations & Communication:</strong> In Pearson Edexcel exams, always label chart axes with units, apply cell formatting (Currency £, 2 d.p.), and structure formal written communications with clear headings, bullet points, and appropriate professional tone.
+        <strong>Top Tip for Digital Functional Skills Mock Exam Practice: Formulas, Files & Security:</strong> Every spreadsheet formula MUST begin with an equals sign (=). Never use =SUM(A1/B1) for division — use =A1/B1. When emailing a large distribution list externally, always put recipient addresses in the BCC field to comply with UK GDPR.
       </div>
     </div>
 
 
-    <!-- Section A: Core Technical Skills -->
+    <!-- Section A: Core Skills (The Basics) -->
     <div class="tier-header">
-      <span>Section A: Core Technical Skills</span>
+      <span>Section A: Core Skills (The Basics)</span>
       <span class="tier-marks">Questions 1 & 2 • 4 Marks</span>
     </div>
 
     <div class="q-card">
       <div class="q-card-head">
-        <span class="q-title">Question 1 (Document Formatting & Dyslexia-Friendly Layout)</span>
+        <span class="q-title">Question 1 (Spreadsheet Formulas: SUM, AVERAGE & Multiplication)</span>
         <span class="q-marks">[2 Marks]</span>
       </div>
       <div class="q-stem">
-        A trainee drafts an internal Health & Safety bulletin. Look at the unformatted text:<br><code>"ALL WAREHOUSE STAFF MUST WEAR HI-VIS VESTS AT ALL TIMES NO EXCEPTIONS ALSO HARD HATS ARE REQUIRED IN BAY 4 FOR MORE INFO CONTACT DAVE ON EXT 204"</code><br><br>State <strong>three document formatting techniques</strong> you would apply in a word processor to turn this into a professional, dyslexia-friendly staff notice.
+        In a clinic stock spreadsheet, cells <strong>C2 to C15</strong> contain the monthly costs of 14 sterile supply orders.<br>(a) Write the exact spreadsheet formula to calculate the <strong>total cost</strong> across cells C2 to C15.<br>(b) Write the exact formula to calculate the <strong>mean (average) cost</strong> across cells C2 to C15.
       </div>
       <div class="q-working-area">
         <div class="working-label">Show your full working out here:</div>
@@ -611,18 +614,18 @@
         </div>
       </div>
       <div class="q-answer-row">
-        <span class="q-answer-label">Three Formatting Techniques =</span>
-        1. <div class="q-answer-input-box sm"></div> 2. <div class="q-answer-input-box sm"></div> 3. <div class="q-answer-input-box sm"></div>
+        <span class="q-answer-label">(a) Total & (b) Average =</span>
+        (a) <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> (b) <div class="q-answer-input-box sm"></div>
       </div>
     </div>
 
     <div class="q-card">
       <div class="q-card-head">
-        <span class="q-title">Question 2 (Spreadsheet Formulas: MAX, MIN & COUNT)</span>
+        <span class="q-title">Question 2 (Absolute Cell References & VAT Calculation)</span>
         <span class="q-marks">[2 Marks]</span>
       </div>
       <div class="q-stem">
-        In a surgical instruments tracking spreadsheet, cells <strong>D2 to D35</strong> contain the current stock counts of 34 different sterile toolkits.<br>(a) Write the exact formula to find the <strong>highest stock count</strong> in the range.<br>(b) Write the exact formula to find the <strong>lowest stock count</strong> in the range.<br>(c) Write the exact formula to <strong>count how many toolkits</strong> have numerical stock recorded.
+        Cell <strong>B4</strong> contains a net equipment price of <strong>£240.00</strong>, and cell <strong>F1</strong> contains the VAT rate of <strong>20%</strong>.<br>You want to write a formula in cell <strong>C4</strong> to calculate the VAT amount and then drag-fill (replicate) that formula down column C from C4 to C20.<br>Write the exact formula for cell <strong>C4</strong> using an <strong>absolute cell reference</strong> for cell F1.
       </div>
       <div class="q-working-area">
         <div class="working-label">Show your full working out here:</div>
@@ -633,24 +636,24 @@
         </div>
       </div>
       <div class="q-answer-row">
-        <span class="q-answer-label">Formulas (a), (b), (c) =</span>
-        (a) <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> (b) <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> (c) <div class="q-answer-input-box sm"></div>
+        <span class="q-answer-label">Formula in C4 =</span>
+        <div class="q-answer-input-box md"></div>
       </div>
     </div>
 
-    <!-- Section B: Digital Workplace Tasks -->
+    <!-- Section B: Everyday & Workplace Tasks -->
     <div class="tier-header">
-      <span>Section B: Digital Workplace Tasks</span>
+      <span>Section B: Everyday & Workplace Tasks</span>
       <span class="tier-marks">Questions 3 & 4 • 6 Marks</span>
     </div>
 
     <div class="q-card">
       <div class="q-card-head">
-        <span class="q-title">Question 3 (Spreadsheet Data Sorting & Multi-Column Filtering)</span>
+        <span class="q-title">Question 3 (Logical IF Statements in a Training Tracker)</span>
         <span class="q-marks">[3 Marks]</span>
       </div>
       <div class="q-stem">
-        A clinic database spreadsheet contains 450 patient appointment rows across Columns A to E (Column A: Surname, Column B: NHS Number, Column C: Doctor, Column D: Clinic Room, Column E: Status).<br>Describe the exact step-by-step procedure to:<br>(1) Display only patients assigned to <strong>"Dr Sharma"</strong> whose status is <strong>"Confirmed"</strong>.<br>(2) Sort those filtered results <strong>alphabetically by Surname (A to Z)</strong>.
+        In a staff mandatory training spreadsheet, cell <strong>D5</strong> holds an employee's fire-safety test score (out of 100).<br>The pass mark is <strong>75 or above</strong>.<br>Write an <strong>=IF</strong> formula in cell <strong>E5</strong> that displays <strong>"Compliant"</strong> if D5 is 75 or higher, and <strong>"Retake Required"</strong> if it is below 75.
       </div>
       <div class="q-working-area">
         <div class="working-label">Show your full working out here:</div>
@@ -662,17 +665,18 @@
         </div>
       </div>
       <div class="q-answer-row">
-        <span class="q-workspace-badge"><i class="fa-solid fa-pen-to-square"></i> Write your response in the workspace provided.</span>
+        <span class="q-answer-label">IF Formula =</span>
+        =IF( <div class="q-answer-input-box sm"></div> , <div class="q-answer-input-box sm"></div> , <div class="q-answer-input-box sm"></div> )
       </div>
     </div>
 
     <div class="q-card">
       <div class="q-card-head">
-        <span class="q-title">Question 4 (Chart Selection & Presentation Requirements)</span>
+        <span class="q-title">Question 4 (UK GDPR Email Security: CC vs BCC & File Encryption)</span>
         <span class="q-marks">[3 Marks]</span>
       </div>
       <div class="q-stem">
-        A healthcare practice manager wants to present <strong>quarterly missed appointment rates</strong> across Q1, Q2, Q3, and Q4 to the Clinical Commissioning Board.<br>(a) State whether a <strong>column bar chart</strong> or a <strong>pie chart</strong> is more appropriate for comparing quarterly missed appointment counts over time, and give one reason.<br>(b) State <strong>two mandatory chart elements</strong> required by Pearson Edexcel examiners to achieve full marks.
+        A clinic administrator needs to email a monthly appointment update to <strong>85 private patients</strong> and also send an attached spreadsheet containing <strong>patient dates of birth and NHS numbers</strong> to the Practice Manager.<br>Explain:<br>(a) Which email address field (<strong>To, CC, or BCC</strong>) must be used for the 85 patients and why.<br>(b) One technical security measure required before emailing the sensitive patient spreadsheet.
       </div>
       <div class="q-working-area">
         <div class="working-label">Show your full working out here:</div>
@@ -684,23 +688,24 @@
         </div>
       </div>
       <div class="q-answer-row">
-        <span class="q-workspace-badge"><i class="fa-solid fa-pen-to-square"></i> Write your response in the workspace provided.</span>
+        <span class="q-answer-label">(a) Field & (b) Security Measure =</span>
+        (a) Field: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> (b) Security: <div class="q-answer-input-box sm"></div>
       </div>
     </div>
 
-    <!-- Section C: Problem Solving, Cybersecurity & Verification -->
+    <!-- Section C: Practical Problem Solving -->
     <div class="tier-header">
-      <span>Section C: Problem Solving, Cybersecurity & Verification</span>
+      <span>Section C: Practical Problem Solving</span>
       <span class="tier-marks">Questions 5 & 6 • 8 Marks</span>
     </div>
 
     <div class="q-card">
       <div class="q-card-head">
-        <span class="q-title">Question 5 (Professional Workplace Email & Formal Attachments)</span>
+        <span class="q-title">Question 5 (Spotting Phishing Attacks & Malicious URLs)</span>
         <span class="q-marks">[4 Marks]</span>
       </div>
       <div class="q-stem">
-        You are an apprentice administrative officer. Draft a professional <strong>three-sentence formal email</strong> to your Department Head (Dr Patricia Evans) submitting the completed <strong>Quarterly Infection Audit Report</strong> (attached as a PDF).<br>Your email must include:<br>• A professional subject line.<br>• Formal greeting and sign-off.<br>• Mention of the attached report and a request for feedback by <strong>Friday at 4:00 PM</strong>.
+        An accounts clerk receives this email:<br><strong>From:</strong> <code>security-alert@nhs-payrol-update.ru</code><br><strong>Subject:</strong> URGENT: Your NHS Pension Account Will Be Deleted in 2 Hours!<br><strong>Body:</strong> <em>'Dear User, click <u>http://bit.ly/3x99pQ</u> immediately and enter your staff login password and bank sort code to avoid suspension.'</em><br><br>Identify <strong>three red flags</strong> proving this email is a <strong>phishing attack</strong>, and state the <strong>correct workplace action</strong> the clerk should take.
       </div>
       <div class="q-working-area">
         <div class="working-label">Show your full working out here:</div>
@@ -713,17 +718,18 @@
         </div>
       </div>
       <div class="q-answer-row">
-        <span class="q-workspace-badge"><i class="fa-solid fa-pen-to-square"></i> Write your response in the workspace provided.</span>
+        <span class="q-answer-label">Three Red Flags & Action =</span>
+        Flags: 1. <div class="q-answer-input-box sm"></div> 2. <div class="q-answer-input-box sm"></div> 3. <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Action: <div class="q-answer-input-box sm"></div>
       </div>
     </div>
 
     <div class="q-card">
       <div class="q-card-head">
-        <span class="q-title">Question 6 (Cybersecurity Incident Response: Ransomware Alert)</span>
+        <span class="q-title">Question 6 (Cloud File Management, Naming Conventions & Version Control)</span>
         <span class="q-marks">[4 Marks]</span>
       </div>
       <div class="q-stem">
-        While working in an NHS outpatient clinic, a computer screen suddenly turns black and displays this message:<br><code>"YOUR FILES HAVE BEEN ENCRYPTED! Send 0.5 Bitcoin within 24 hours or all patient data will be destroyed."</code><br><br>State the <strong>three immediate steps</strong> the healthcare worker must take, and state <strong>one action they must NEVER take</strong>.
+        A project team shares a folder containing these files:<br>• <code>rota.xlsx</code><br>• <code>rota_new_final2_johns_copy.xlsx</code><br>• <code>ward_budget_2026.pdf</code><br><br>(a) Explain why <code>rota_new_final2_johns_copy.xlsx</code> violates professional version-control standards, and write a clean, standardised filename for <strong>Version 2.1 of the Ward 4 Rota created on 14 October 2026</strong>.<br>(b) If the team wants 5 managers to view <code>rota.xlsx</code> on SharePoint <strong>without being able to accidentally delete or alter shift cells</strong>, what file permission level should be set?
       </div>
       <div class="q-working-area">
         <div class="working-label">Show your full working out here:</div>
@@ -736,7 +742,8 @@
         </div>
       </div>
       <div class="q-answer-row">
-        <span class="q-workspace-badge"><i class="fa-solid fa-pen-to-square"></i> Write your response in the workspace provided.</span>
+        <span class="q-answer-label">(a) Filename & (b) Permission =</span>
+        (a) Filename: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> (b) Permission: <div class="q-answer-input-box sm"></div>
       </div>
     </div>
 

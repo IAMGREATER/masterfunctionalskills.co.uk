@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
-  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Master Functional Skills — Digital Functional Skills Core Answer Key & Mark Scheme (Level 1 & Level 2)</title>
@@ -65,7 +64,24 @@
     .btn-action-print:hover {
       background: #059669;
     }
+    .btn-action-mode,
+    .btn-action-answers,
+    .btn-action-practice,
     .btn-action-sheet {
+      color: #ffffff !important;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none !important;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-right: 12px;
+      transition: background 0.2s;
+    }
+    .old-btn-action-sheet {
       background: #2563eb;
       color: #ffffff;
       border: none;
@@ -123,38 +139,7 @@
       cursor: default;
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
     }
-    .btn-action-mode,
-    .btn-action-practice,
-    .btn-action-answers,
-    .btn-action-sheet {
-      color: #ffffff !important;
-      border: none;
-      padding: 8px 18px;
-      border-radius: 6px;
-      font-weight: 700;
-      font-size: 0.95rem;
-      text-decoration: none !important;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-right: 12px;
-      transition: background 0.2s;
-    }
-    .btn-action-practice {
-      background: #7c3aed;
-    }
-    .btn-action-practice:hover {
-      background: #6d28d9;
-      color: #ffffff !important;
-      text-decoration: none !important;
-    }
-    .btn-action-mode:hover,
-    .btn-action-answers:hover,
-    .btn-action-sheet:hover {
-      color: #ffffff !important;
-      text-decoration: none !important;
-      filter: brightness(0.9);
-    }
+
 
     @media (max-width: 900px) {
       .print-bar {
@@ -483,12 +468,12 @@
 </head>
 <body>
 
-        <div class="print-bar">
+  <div class="print-bar">
     <div>
       <a href="../digital-functional-skills.html"><i class="fa-solid fa-arrow-left"></i> Back to Digital Functional Skills Core Revision Guide</a>
     </div>
     <div>
-      <a href="digital-functional-skills-workout-answers.html" class="btn-action-answers" style="background:#2563eb; margin-right:12px;"><i class="fa-solid fa-repeat"></i> Workout Answers</a>
+      <a href="digital-functional-skills-workout-answers.html" class="btn-action-answers" style="background:#2563eb; margin-right:10px;"><i class="fa-solid fa-repeat"></i> Workout Answers</a>
       <div class="nav-pill-group">
         <a href="digital-functional-skills-worksheet.html" class="nav-pill-btn"><i class="fa-solid fa-file-lines"></i> Questions</a>
         <span class="nav-pill-btn active"><i class="fa-solid fa-check-double"></i> Answers</span>
@@ -516,7 +501,7 @@
 
 
     <div class="tier-divider">
-      <span>Section A: Core Technical Skills Solutions</span>
+      <span>Section A: Core Skills (The Basics) Solutions</span>
       <span>Questions 1 & 2 • 4 Marks</span>
     </div>
 
@@ -545,11 +530,11 @@
         <span class="award-val">Format: .pdf; Security Risk: Physical loss/theft leads to unauthorized data access and GDPR violation.</span>
       </div>
       <div class="pitfall-box">
-        <strong>⚠️ Examiner Trap Alert:</strong>
+        <strong>⚠️ Common Mistake to Avoid:</strong>
         Selecting .docx which allows anyone to alter records.
       </div>
       <div class="reverse-check-box">
-        <strong>🔄 Reverse Sanity Check:</strong> .pdf is standard for immutable read-only records.
+        <strong>🔄 Quick Check:</strong> .pdf is standard for immutable read-only records.
       </div>
     </div>
 
@@ -578,16 +563,16 @@
         <span class="award-val">1. =SUM(B2:B15);  2. =AVERAGE(B2:B15)</span>
       </div>
       <div class="pitfall-box">
-        <strong>⚠️ Examiner Trap Alert:</strong>
+        <strong>⚠️ Common Mistake to Avoid:</strong>
         Omitting the '=' sign or writing =TOTAL() or =AVG() instead of =AVERAGE().
       </div>
       <div class="reverse-check-box">
-        <strong>🔄 Reverse Sanity Check:</strong> =SUM sums range; =AVERAGE computes arithmetic mean.
+        <strong>🔄 Quick Check:</strong> =SUM sums range; =AVERAGE computes arithmetic mean.
       </div>
     </div>
 
     <div class="tier-divider">
-      <span>Section B: Digital Workplace Tasks Solutions</span>
+      <span>Section B: Everyday & Workplace Tasks Solutions</span>
       <span>Questions 3 & 4 • 6 Marks</span>
     </div>
 
@@ -620,11 +605,11 @@
         <span class="award-val">1. Panic/urgency deadline; 2. Fake sender domain (.co.uk instead of .net); 3. Direct request to enter password via link.</span>
       </div>
       <div class="pitfall-box">
-        <strong>⚠️ Examiner Trap Alert:</strong>
+        <strong>⚠️ Common Mistake to Avoid:</strong>
         Only mentioning that it's an email without highlighting domain or deadline tactics.
       </div>
       <div class="reverse-check-box">
-        <strong>🔄 Reverse Sanity Check:</strong> Legitimate IT never asks users to click a link to verify passwords within 2 hours.
+        <strong>🔄 Quick Check:</strong> Legitimate IT never asks users to click a link to verify passwords within 2 hours.
       </div>
     </div>
 
@@ -657,16 +642,16 @@
         <span class="award-val">Select table, go to Data > Sort, sort by Column C (Quantity) in Descending order (Largest to Smallest).</span>
       </div>
       <div class="pitfall-box">
-        <strong>⚠️ Examiner Trap Alert:</strong>
+        <strong>⚠️ Common Mistake to Avoid:</strong>
         Sorting Ascending (which puts the smallest at the top) or sorting Column C without selecting the other columns (corrupting data rows).
       </div>
       <div class="reverse-check-box">
-        <strong>🔄 Reverse Sanity Check:</strong> Descending sort order places maximum values in the first row.
+        <strong>🔄 Quick Check:</strong> Descending sort order places maximum values in the first row.
       </div>
     </div>
 
     <div class="tier-divider">
-      <span>Section C: Problem Solving, Cybersecurity & Verification Solutions</span>
+      <span>Section C: Practical Problem Solving Solutions</span>
       <span>Questions 5 & 6 • 8 Marks</span>
     </div>
 
@@ -703,11 +688,11 @@
         <span class="award-val">MFA requires 2+ credentials. Password ('something you know') + Mobile token ('something you have'). Even with stolen password, attacker lacks the second factor.</span>
       </div>
       <div class="pitfall-box">
-        <strong>⚠️ Examiner Trap Alert:</strong>
+        <strong>⚠️ Common Mistake to Avoid:</strong>
         Describing MFA as simply 'entering two different passwords'.
       </div>
       <div class="reverse-check-box">
-        <strong>🔄 Reverse Sanity Check:</strong> Two distinct authentication categories: knowledge + possession.
+        <strong>🔄 Quick Check:</strong> Two distinct authentication categories: knowledge + possession.
       </div>
     </div>
 
@@ -744,11 +729,11 @@
         <span class="award-val">Breach: Unrestricted public access to sensitive PII. Correct setting: 'Specific people'. Containment: Revoke sharing link immediately and report incident to DPO.</span>
       </div>
       <div class="pitfall-box">
-        <strong>⚠️ Examiner Trap Alert:</strong>
+        <strong>⚠️ Common Mistake to Avoid:</strong>
         Suggesting changing permission to 'Can edit' or assuming password-protected intranet prevents forwarding.
       </div>
       <div class="reverse-check-box">
-        <strong>🔄 Reverse Sanity Check:</strong> 'Anyone with the link' bypasses organizational authentication controls.
+        <strong>🔄 Quick Check:</strong> 'Anyone with the link' bypasses organizational authentication controls.
       </div>
     </div>
 

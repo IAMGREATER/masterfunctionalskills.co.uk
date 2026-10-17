@@ -64,7 +64,24 @@
     .btn-action-print:hover {
       background: #059669;
     }
+    .btn-action-mode,
+    .btn-action-answers,
+    .btn-action-practice,
     .btn-action-sheet {
+      color: #ffffff !important;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none !important;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-right: 12px;
+      transition: background 0.2s;
+    }
+    .old-btn-action-sheet {
       background: #2563eb;
       color: #ffffff;
       border: none;
@@ -122,38 +139,7 @@
       cursor: default;
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
     }
-    .btn-action-mode,
-    .btn-action-practice,
-    .btn-action-answers,
-    .btn-action-sheet {
-      color: #ffffff !important;
-      border: none;
-      padding: 8px 18px;
-      border-radius: 6px;
-      font-weight: 700;
-      font-size: 0.95rem;
-      text-decoration: none !important;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-right: 12px;
-      transition: background 0.2s;
-    }
-    .btn-action-practice {
-      background: #7c3aed;
-    }
-    .btn-action-practice:hover {
-      background: #6d28d9;
-      color: #ffffff !important;
-      text-decoration: none !important;
-    }
-    .btn-action-mode:hover,
-    .btn-action-answers:hover,
-    .btn-action-sheet:hover {
-      color: #ffffff !important;
-      text-decoration: none !important;
-      filter: brightness(0.9);
-    }
+
 
     @media (max-width: 900px) {
       .print-bar {
@@ -482,12 +468,12 @@
 </head>
 <body>
 
-        <div class="print-bar">
+  <div class="print-bar">
     <div>
       <a href="../digital-functional-skills-level-1.html"><i class="fa-solid fa-arrow-left"></i> Back to Digital Functional Skills Level 1: Spreadsheets, Email & Cyber Hygiene Revision Guide</a>
     </div>
     <div>
-      <a href="digital-functional-skills-level-1-workout-answers.html" class="btn-action-answers" style="background:#2563eb; margin-right:12px;"><i class="fa-solid fa-repeat"></i> Workout Answers</a>
+      <a href="digital-functional-skills-level-1-workout-answers.html" class="btn-action-answers" style="background:#2563eb; margin-right:10px;"><i class="fa-solid fa-repeat"></i> Workout Answers</a>
       <div class="nav-pill-group">
         <a href="digital-functional-skills-level-1-worksheet.html" class="nav-pill-btn"><i class="fa-solid fa-file-lines"></i> Questions</a>
         <span class="nav-pill-btn active"><i class="fa-solid fa-check-double"></i> Answers</span>
@@ -504,7 +490,7 @@
       </div>
       <div class="sheet-meta-badge">
         <span class="topic-name">Digital Functional Skills Level 1: Spreadsheets, Email & Cyber Hygiene</span>
-        <span class="spec-tag">Ofqual / Pearson Edexcel: Pearson Edexcel DFS: L1.1 • L1.2 • L1.3 • L1.4</span>
+        <span class="spec-tag">Ofqual / Pearson Edexcel: DFS.1 • DFS.2 • DFS.3 • DFS.4 • DFS.5</span>
       </div>
     </div>
 
@@ -515,7 +501,7 @@
 
 
     <div class="tier-divider">
-      <span>Section A: Core Technical Skills Solutions</span>
+      <span>Section A: Core Skills (The Basics) Solutions</span>
       <span>Questions 1 & 2 • 4 Marks</span>
     </div>
 
@@ -531,11 +517,11 @@
         <div class="step-title">Step-by-Step Marking Criteria:</div>
 
         <div class="step-row">
-          <span>1. (a) Total formula starting with "=" and colon range: =SUM(C2:C15)</span>
+          <span>1. (a) Total formula starting with '=' and colon range: =SUM(C2:C15)</span>
           <span class="mark-code">[M1]</span>
         </div>
         <div class="step-row">
-          <span>2. (b) Mean formula starting with "=" and colon range: =AVERAGE(C2:C15)</span>
+          <span>2. (b) Mean formula starting with '=' and colon range: =AVERAGE(C2:C15)</span>
           <span class="mark-code">[A1]</span>
         </div>
       </div>
@@ -544,11 +530,11 @@
         <span class="award-val">(a) =SUM(C2:C15) | (b) =AVERAGE(C2:C15)</span>
       </div>
       <div class="pitfall-box">
-        <strong>⚠️ Examiner Trap Alert:</strong>
-        Omitting the leading "=" sign or writing =AVG(C2:C15) instead of the full word =AVERAGE(C2:C15).
+        <strong>⚠️ Common Mistake to Avoid:</strong>
+        Omitting the leading '=' sign or writing =AVG(C2:C15) instead of the full word =AVERAGE(C2:C15).
       </div>
       <div class="reverse-check-box">
-        <strong>🔄 Reverse Sanity Check:</strong> Both formulas start with "=" and use a colon ":" for the contiguous cell range.
+        <strong>🔄 Quick Check:</strong> Both formulas start with '=' and use a colon ':' for the contiguous cell range.
       </div>
     </div>
 
@@ -564,29 +550,29 @@
         <div class="step-title">Step-by-Step Marking Criteria:</div>
 
         <div class="step-row">
-          <span>1. Multiply relative cell B4 by cell F1 using "*" operator</span>
+          <span>1. Multiply relative cell B4 by cell F1 using '*' operator</span>
           <span class="mark-code">[M1]</span>
         </div>
         <div class="step-row">
-          <span>2. Lock cell F1 with dollar signs so it does not shift when dragged down: =B4*</span>
+          <span>2. Lock cell F1 with dollar signs so it does not shift when dragged down: =B4*$F$1</span>
           <span class="mark-code">[A1]</span>
         </div>
       </div>
       <div class="final-award-box">
         <span class="award-label">Award Final Answer Mark:</span>
-        <span class="award-val">=B4*</span>
+        <span class="award-val">=B4*$F$1</span>
       </div>
       <div class="pitfall-box">
-        <strong>⚠️ Examiner Trap Alert:</strong>
-        Writing =B4*F1 without "$" signs, which shifts to F2, F3, F4 when dragged down column C.
+        <strong>⚠️ Common Mistake to Avoid:</strong>
+        Writing =B4*F1 without '$' signs, which shifts to F2, F3, F4 when dragged down column C.
       </div>
       <div class="reverse-check-box">
-        <strong>🔄 Reverse Sanity Check:</strong> The "$" before F and before 1 locks both column F and row 1.
+        <strong>🔄 Quick Check:</strong> The '$' before F and before 1 locks both column F and row 1.
       </div>
     </div>
 
     <div class="tier-divider">
-      <span>Section B: Digital Workplace Tasks Solutions</span>
+      <span>Section B: Everyday & Workplace Tasks Solutions</span>
       <span>Questions 3 & 4 • 6 Marks</span>
     </div>
 
@@ -619,11 +605,11 @@
         <span class="award-val">=IF(D5>=75, "Compliant", "Retake Required")</span>
       </div>
       <div class="pitfall-box">
-        <strong>⚠️ Examiner Trap Alert:</strong>
+        <strong>⚠️ Common Mistake to Avoid:</strong>
         Using >75 instead of >=75 (which would wrongly fail someone who scored exactly 75), or forgetting quotation marks around text strings.
       </div>
       <div class="reverse-check-box">
-        <strong>🔄 Reverse Sanity Check:</strong> Test D5=75: 75>=75 is TRUE → returns "Compliant".
+        <strong>🔄 Quick Check:</strong> Test D5=75: 75>=75 is TRUE → returns "Compliant".
       </div>
     </div>
 
@@ -656,16 +642,16 @@
         <span class="award-val">(a) BCC — hides recipients' email addresses from each other under UK GDPR. (b) Encrypt/password-protect the spreadsheet and send the password via a separate channel.</span>
       </div>
       <div class="pitfall-box">
-        <strong>⚠️ Examiner Trap Alert:</strong>
-        Putting 85 external patients in the "CC" field, which exposes every patient's email address to all 84 other patients.
+        <strong>⚠️ Common Mistake to Avoid:</strong>
+        Putting 85 external patients in the 'CC' field, which exposes every patient's email address to all 84 other patients.
       </div>
       <div class="reverse-check-box">
-        <strong>🔄 Reverse Sanity Check:</strong> BCC = Blind Carbon Copy (external privacy); Encryption = file confidentiality.
+        <strong>🔄 Quick Check:</strong> BCC = Blind Carbon Copy (external privacy); Encryption = file confidentiality.
       </div>
     </div>
 
     <div class="tier-divider">
-      <span>Section C: Problem Solving, Cybersecurity & Verification Solutions</span>
+      <span>Section C: Practical Problem Solving Solutions</span>
       <span>Questions 5 & 6 • 8 Marks</span>
     </div>
 
@@ -702,11 +688,11 @@
         <span class="award-val">Red flags: 1. Misspelled '.ru' sender domain ('payrol'); 2. Artificial 2-hour panic deadline & 'Dear User'; 3. Masked http link requesting password. Action: Do not click; report immediately to IT Security.</span>
       </div>
       <div class="pitfall-box">
-        <strong>⚠️ Examiner Trap Alert:</strong>
+        <strong>⚠️ Common Mistake to Avoid:</strong>
         Replying to the email to ask if it is genuine.
       </div>
       <div class="reverse-check-box">
-        <strong>🔄 Reverse Sanity Check:</strong> Check sender domain, urgency tone, URL protocol, and IT reporting protocol.
+        <strong>🔄 Quick Check:</strong> Check sender domain, urgency tone, URL protocol, and IT reporting protocol.
       </div>
     </div>
 
@@ -743,11 +729,11 @@
         <span class="award-val">(a) Ambiguous naming causes version confusion; rename to '2026-10-14_Ward4_Rota_v2.1.xlsx'. (b) Set SharePoint access to 'View Only' / 'Read-Only'.</span>
       </div>
       <div class="pitfall-box">
-        <strong>⚠️ Examiner Trap Alert:</strong>
+        <strong>⚠️ Common Mistake to Avoid:</strong>
         Using spaces or slashes (14/10/2026) in filenames, which are invalid in operating system file paths.
       </div>
       <div class="reverse-check-box">
-        <strong>🔄 Reverse Sanity Check:</strong> YYYY-MM-DD_Topic_vX.X.ext sorts chronologically and prevents ambiguity.
+        <strong>🔄 Quick Check:</strong> YYYY-MM-DD_Topic_vX.X.ext sorts chronologically and prevents ambiguity.
       </div>
     </div>
 

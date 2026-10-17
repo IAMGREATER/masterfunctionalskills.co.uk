@@ -64,7 +64,41 @@
     .btn-action-print:hover {
       background: #1d4ed8;
     }
-    .btn-action-answers {
+    .btn-action-mode,
+    .btn-action-answers,
+    .btn-action-practice,
+    .btn-action-mode,
+    .btn-action-answers,
+    .btn-action-practice,
+    .btn-action-sheet {
+      color: #ffffff !important;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none !important;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-right: 12px;
+      transition: background 0.2s;
+    }
+    .old-btn-action-sheet {
+      color: #ffffff !important;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none !important;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-right: 12px;
+      transition: background 0.2s;
+    }
+    .old-btn-action-answers {
       background: #059669;
       color: #ffffff;
       border: none;
@@ -122,38 +156,7 @@
       cursor: default;
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
     }
-    .btn-action-mode,
-    .btn-action-practice,
-    .btn-action-answers,
-    .btn-action-sheet {
-      color: #ffffff !important;
-      border: none;
-      padding: 8px 18px;
-      border-radius: 6px;
-      font-weight: 700;
-      font-size: 0.95rem;
-      text-decoration: none !important;
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      margin-right: 12px;
-      transition: background 0.2s;
-    }
-    .btn-action-practice {
-      background: #7c3aed;
-    }
-    .btn-action-practice:hover {
-      background: #6d28d9;
-      color: #ffffff !important;
-      text-decoration: none !important;
-    }
-    .btn-action-mode:hover,
-    .btn-action-answers:hover,
-    .btn-action-sheet:hover {
-      color: #ffffff !important;
-      text-decoration: none !important;
-      filter: brightness(0.9);
-    }
+
 
     @media (max-width: 900px) {
       .print-bar {
@@ -548,12 +551,12 @@
 </head>
 <body>
 
-        <div class="print-bar">
+  <div class="print-bar">
     <div>
       <a href="../digital-functional-skills-level-1.html"><i class="fa-solid fa-arrow-left"></i> Back to Digital Functional Skills Level 1: Spreadsheets, Email & Cyber Hygiene Revision Guide</a>
     </div>
     <div>
-      <a href="digital-functional-skills-level-1-workout.html" class="btn-action-answers" style="background:#2563eb; margin-right:12px;"><i class="fa-solid fa-repeat"></i> Switch to Skill Workout</a>
+      <a href="digital-functional-skills-level-1-workout.html" class="btn-action-answers" style="background:#2563eb; margin-right:10px;"><i class="fa-solid fa-repeat"></i> Switch to Skill Workout</a>
       <div class="nav-pill-group">
         <span class="nav-pill-btn active"><i class="fa-solid fa-file-lines"></i> Questions</span>
         <a href="digital-functional-skills-level-1-answers.html" class="nav-pill-btn"><i class="fa-solid fa-check-double"></i> Answers</a>
@@ -570,7 +573,7 @@
       </div>
       <div class="sheet-meta-badge">
         <span class="topic-name">Digital Functional Skills Level 1: Spreadsheets, Email & Cyber Hygiene</span>
-        <span class="spec-tag">Ofqual / Pearson Edexcel: Pearson Edexcel DFS: L1.1 • L1.2 • L1.3 • L1.4</span>
+        <span class="spec-tag">Ofqual / Pearson Edexcel: DFS.1 • DFS.2 • DFS.3 • DFS.4 • DFS.5</span>
       </div>
     </div>
 
@@ -583,14 +586,14 @@
     <div class="recall-banner">
       <i class="fa-solid fa-lightbulb"></i>
       <div>
-        <strong>Examiner Rule for Digital Functional Skills Level 1: Spreadsheets, Email & Cyber Hygiene:</strong> Every spreadsheet formula MUST begin with an equals sign (=). Never use =SUM(A1/B1) for division — use =A1/B1. When emailing a large distribution list externally, always put recipient addresses in the BCC field to comply with UK GDPR.
+        <strong>Top Tip for Digital Functional Skills Level 1: Spreadsheets, Email & Cyber Hygiene:</strong> Every spreadsheet formula MUST begin with an equals sign (=). Never use =SUM(A1/B1) for division — use =A1/B1. When emailing a large distribution list externally, always put recipient addresses in the BCC field to comply with UK GDPR.
       </div>
     </div>
 
 
-    <!-- Section A: Core Technical Skills -->
+    <!-- Section A: Core Skills (The Basics) -->
     <div class="tier-header">
-      <span>Section A: Core Technical Skills</span>
+      <span>Section A: Core Skills (The Basics)</span>
       <span class="tier-marks">Questions 1 & 2 • 4 Marks</span>
     </div>
 
@@ -638,9 +641,9 @@
       </div>
     </div>
 
-    <!-- Section B: Digital Workplace Tasks -->
+    <!-- Section B: Everyday & Workplace Tasks -->
     <div class="tier-header">
-      <span>Section B: Digital Workplace Tasks</span>
+      <span>Section B: Everyday & Workplace Tasks</span>
       <span class="tier-marks">Questions 3 & 4 • 6 Marks</span>
     </div>
 
@@ -690,9 +693,9 @@
       </div>
     </div>
 
-    <!-- Section C: Problem Solving, Cybersecurity & Verification -->
+    <!-- Section C: Practical Problem Solving -->
     <div class="tier-header">
-      <span>Section C: Problem Solving, Cybersecurity & Verification</span>
+      <span>Section C: Practical Problem Solving</span>
       <span class="tier-marks">Questions 5 & 6 • 8 Marks</span>
     </div>
 

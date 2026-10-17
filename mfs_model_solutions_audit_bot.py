@@ -233,9 +233,9 @@ class ModelSolutionAuditor:
         # Build barcode mapping from orig_doc
         orig_map = {}
         for i, p in enumerate(self.orig_doc):
-            m = re.search(r'\*P[0-9A-Z]+\*', p.get_text('text'))
+            m = re.search(r'\*[A-Za-z0-9_]+\*', p.get_text('text'))
             if m:
-                orig_map[m.group(0)] = i
+                orig_map[m.group(0).lower()] = i
 
         for p_idx in range(self.total_pages):
             if p_idx in (0, 1, self.total_pages - 1):
@@ -245,9 +245,9 @@ class ModelSolutionAuditor:
             if 'section b' in page_text and ('calculator' in page_text or 'candidate' in page_text or 'pmat' in page_text or 'check that you have' in page_text):
                 continue
 
-            m = re.search(r'\*P[0-9A-Z]+\*', annot_page.get_text('text'))
-            if m and m.group(0) in orig_map:
-                orig_page = self.orig_doc[orig_map[m.group(0)]]
+            m = re.search(r'\*[A-Za-z0-9_]+\*', annot_page.get_text('text'))
+            if m and m.group(0).lower() in orig_map:
+                orig_page = self.orig_doc[orig_map[m.group(0).lower()]]
             elif p_idx - 1 < len(self.orig_doc):
                 orig_page = self.orig_doc[p_idx - 1]
             else:
@@ -257,7 +257,7 @@ class ModelSolutionAuditor:
             orig_words = []
             for w in orig_page.get_text('words'):
                 txt = w[4].strip()
-                if not txt or '____' in txt or '*P' in txt:
+                if not txt or '____' in txt or '*P' in txt or txt.startswith('*') or '....' in txt or re.fullmatch(r'[\s._\-–—…\.]+', txt):
                     continue
                 orig_words.append((pymupdf.Rect(w[:4]), txt))
 

@@ -1641,6 +1641,85 @@ a {
   .directory-search-wrapper { width: 100%; }
 }
 
+@media (max-width: 768px) {
+  /* Revision Directory Units — 3-Line Mobile Portrait Standard */
+  .topic-row {
+    flex-direction: column !important;
+    align-items: stretch !important;
+    padding: 10px 12px !important;
+    gap: 8px !important;
+  }
+  .topic-meta {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    gap: 8px !important;
+  }
+  .topic-title {
+    font-size: clamp(0.82rem, 1.5vw + 0.45rem, 0.88rem) !important;
+    font-weight: 700 !important;
+    line-height: 1.22 !important;
+    margin: 0 !important;
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+  }
+  .topic-category-tag {
+    font-size: 0.60rem !important;
+    padding: 2px 7px !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+    margin-left: auto !important;
+    border-radius: 4px !important;
+    max-width: 48% !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+  .topic-actions-group {
+    display: grid !important;
+    grid-template-columns: repeat(24, 1fr) !important;
+    gap: 5px 4px !important;
+    width: 100% !important;
+    align-items: center !important;
+  }
+  /* Line 2: Revise, Fluency Drills, Practice Questions */
+  .topic-actions-group > :nth-child(1) {
+    grid-column: span 5 !important;
+  }
+  .topic-actions-group > :nth-child(2) {
+    grid-column: span 9 !important;
+  }
+  .topic-actions-group > :nth-child(3) {
+    grid-column: span 10 !important;
+  }
+  /* Line 3: Video Solution, Topic Test */
+  .topic-actions-group > :nth-child(4) {
+    grid-column: span 12 !important;
+  }
+  .topic-actions-group > :nth-child(5) {
+    grid-column: span 12 !important;
+  }
+  .topic-actions-group > a {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+    width: 100% !important;
+    min-width: 0 !important;
+    padding: 5px 3px !important;
+    font-size: clamp(0.64rem, 1.8vw + 0.25rem, 0.70rem) !important;
+    white-space: nowrap !important;
+    gap: 4px !important;
+    border-radius: 9999px !important;
+  }
+  .topic-actions-group > a i {
+    font-size: 0.68rem !important;
+    flex-shrink: 0 !important;
+  }
+}
+
 /* ==========================================================================
    TOPIC & REVISION LESSON PAGE ENHANCEMENTS
    ========================================================================== */

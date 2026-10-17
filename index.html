@@ -228,49 +228,55 @@
         </div>
       </div>
 
-      <!-- Right Column: Real Learner Photo & Pass Rates Card -->
-      <div style="display:flex; flex-direction:column; gap:20px;">
-        <div class="real-photo-card">
-          <img src="assets/img/sonya-hero-photo.png" alt="Sonya — Specialist Functional Skills &amp; AI Video Guide" style="height:220px; object-fit:cover; object-position:center right;">
-          <div class="real-photo-overlay">
-            <div style="font-size:1.6rem; color:var(--accent);"><i class="fa-solid fa-video"></i></div>
-            <div>
-              <strong>Interactive AI Video Walkthroughs</strong>
-              <span>Meet Sonya &bull; Guided step-by-step exam strategy &amp; pass techniques</span>
-            </div>
-          </div>
+      <!-- Right Column: Big Square Hero Showcase Card -->
+      <div class="hero-square-showcase" style="position:relative; width:100%; aspect-ratio:1/1; min-height:480px; max-width:540px; margin:0 auto; border-radius:24px; overflow:hidden; box-shadow:0 20px 45px -10px rgba(15, 23, 42, 0.35); border:1.5px solid rgba(255, 255, 255, 0.25); background:#070d1e;">
+        <img src="assets/img/sonya-hero-square.png" alt="Specialist AI Tutor Sonya — Master Functional Skills" style="width:100%; height:100%; object-fit:cover; object-position:center top; display:block;">
+        
+        <!-- Ambient Contrast Scrim -->
+        <div style="position:absolute; inset:0; background:linear-gradient(180deg, rgba(7, 13, 30, 0.35) 0%, rgba(7, 13, 30, 0.05) 32%, rgba(7, 13, 30, 0.72) 65%, rgba(7, 13, 30, 0.95) 100%); pointer-events:none;"></div>
+
+        <!-- Top Floating Status Pill -->
+        <div style="position:absolute; top:16px; left:16px; right:16px; display:flex; justify-content:space-between; align-items:center; z-index:2;">
+          <span style="background:rgba(7, 13, 30, 0.82); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px); border:1px solid rgba(56, 189, 248, 0.35); color:#ffffff; padding:6px 14px; border-radius:999px; font-size:0.8rem; font-weight:700; display:inline-flex; align-items:center; gap:7px; box-shadow:0 4px 15px rgba(2,132,199,0.25);">
+            <i class="fa-solid fa-wand-magic-sparkles" style="color:#38bdf8;"></i> Specialist AI Tutor Sonya
+          </span>
+          <span style="background:#10b981; color:#ffffff; font-size:0.75rem; font-weight:800; padding:6px 12px; border-radius:999px; box-shadow:0 4px 12px rgba(16, 185, 129, 0.4); display:inline-flex; align-items:center; gap:5px;">
+            <i class="fa-solid fa-circle-check"></i> Level 2 Verified
+          </span>
         </div>
 
-                <!-- Qualifications & Pathways Overview Card -->
-        <div style="background:#ffffff; border:1px solid #bae6fd; border-radius:18px; padding:22px; box-shadow:0 10px 25px -5px rgba(15, 23, 42, 0.08);">
-          <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:14px;">
+        <!-- Bottom Overlaid Qualifications Card -->
+        <div style="position:absolute; bottom:14px; left:14px; right:14px; background:rgba(7, 13, 30, 0.86); backdrop-filter:blur(14px); -webkit-backdrop-filter:blur(14px); border-radius:18px; padding:16px 18px; border:1px solid rgba(255, 255, 255, 0.16); box-shadow:0 12px 30px rgba(0, 0, 0, 0.45); z-index:2; color:#ffffff;">
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:10px;">
             <div style="display:flex; align-items:center; gap:10px;">
-              <div style="width:36px; height:36px; border-radius:10px; background:#e0f2fe; color:#0284c7; display:flex; align-items:center; justify-content:center; font-size:1.1rem;">
+              <div style="width:34px; height:34px; border-radius:10px; background:rgba(56, 189, 248, 0.2); border:1px solid rgba(56, 189, 248, 0.4); color:#38bdf8; display:flex; align-items:center; justify-content:center; font-size:1.05rem;">
                 <i class="fa-solid fa-award"></i>
               </div>
               <div>
-                <h3 style="margin:0; font-size:1.05rem; font-weight:800; color:#0f172a;">Official GCSE Equivalency</h3>
-                <span style="font-size:0.75rem; color:#64748b; font-weight:600;">Ofqual Regulated • Recognised Nationwide</span>
+                <h3 style="margin:0; font-size:1.08rem; font-weight:800; color:#ffffff; letter-spacing:-0.01em;">Official GCSE Equivalency</h3>
+                <span style="font-size:0.74rem; color:#94a3b8; font-weight:600;">Ofqual Regulated &bull; Recognised Nationwide</span>
               </div>
             </div>
-            <span style="background:#ecfdf5; color:#059669; font-size:0.72rem; font-weight:800; padding:4px 10px; border-radius:999px;">Level 2 Verified</span>
+            <span style="background:rgba(255, 255, 255, 0.1); border:1px solid rgba(255, 255, 255, 0.18); color:#e2e8f0; font-size:0.7rem; font-weight:700; padding:4px 8px; border-radius:6px;">
+              <i class="fa-solid fa-bolt" style="color:#f59e0b; margin-right:3px;"></i> Fast Pass
+            </span>
           </div>
 
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-bottom:14px;">
-            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:10px; padding:10px;">
-              <div style="font-size:0.75rem; font-weight:800; color:#0369a1;"><i class="fa-solid fa-calculator"></i> Maths Level 2</div>
-              <div style="font-size:0.74rem; color:#64748b; margin-top:2px;">Meets university, nursing, police &amp; apprenticeship entry.</div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:10px;">
+            <div style="background:rgba(255, 255, 255, 0.08); border:1px solid rgba(255, 255, 255, 0.12); border-radius:10px; padding:8px 10px;">
+              <div style="font-size:0.76rem; font-weight:800; color:#38bdf8;"><i class="fa-solid fa-calculator"></i> Maths Level 2</div>
+              <div style="font-size:0.7rem; color:#cbd5e1; margin-top:2px; line-height:1.35;">Meets uni, nursing &amp; apprenticeships.</div>
             </div>
-            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:10px; padding:10px;">
-              <div style="font-size:0.75rem; font-weight:800; color:#be185d;"><i class="fa-solid fa-pen-nib"></i> English Level 2</div>
-              <div style="font-size:0.74rem; color:#64748b; margin-top:2px;">Complete Reading, Writing &amp; SLC certification.</div>
+            <div style="background:rgba(255, 255, 255, 0.08); border:1px solid rgba(255, 255, 255, 0.12); border-radius:10px; padding:8px 10px;">
+              <div style="font-size:0.76rem; font-weight:800; color:#f472b6;"><i class="fa-solid fa-pen-nib"></i> English Level 2</div>
+              <div style="font-size:0.7rem; color:#cbd5e1; margin-top:2px; line-height:1.35;">Complete Reading, Writing &amp; SLC.</div>
             </div>
           </div>
 
-          <div style="display:flex; flex-direction:column; gap:6px; font-size:0.78rem; color:#334155; font-weight:600;">
-            <div style="display:flex; align-items:center; gap:8px;"><i class="fa-solid fa-check text-success" style="color:#10b981;"></i> Official Pearson Edexcel Online Exam Invigilation</div>
-            <div style="display:flex; align-items:center; gap:8px;"><i class="fa-solid fa-check text-success" style="color:#10b981;"></i> Fast Official Results Released within 14 Working Days</div>
-            <div style="display:flex; align-items:center; gap:8px;"><i class="fa-solid fa-check text-success" style="color:#10b981;"></i> Free Diagnostic Skills Checks &amp; 3D Revision Flashcards</div>
+          <div style="display:flex; flex-direction:column; gap:5px; font-size:0.74rem; color:#e2e8f0; font-weight:600;">
+            <div style="display:flex; align-items:center; gap:8px;"><i class="fa-solid fa-circle-check" style="color:#10b981;"></i> Official Pearson Edexcel Online Exam Invigilation</div>
+            <div style="display:flex; align-items:center; gap:8px;"><i class="fa-solid fa-circle-check" style="color:#10b981;"></i> Fast Official Results Released within 14 Working Days</div>
+            <div style="display:flex; align-items:center; gap:8px;"><i class="fa-solid fa-circle-check" style="color:#10b981;"></i> Free Diagnostic Skills Checks &amp; 3D Revision Flashcards</div>
           </div>
         </div>
       </div>

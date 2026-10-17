@@ -606,6 +606,7 @@
               <a href="pass-mark-calculator.html" class="mfs-dropdown-item"><i class="fa-solid fa-calculator" style="color:var(--accent); font-size:0.85rem; margin-right:6px;"></i> Pass Mark Calculator</a>
               <a href="diagnostic-test.html" class="mfs-dropdown-item"><i class="fa-solid fa-chart-pie" style="color:#059669; font-size:0.85rem; margin-right:6px;"></i> Diagnostic Skill Checker</a>
               <a href="functional-skills-nets.html" class="mfs-dropdown-item"><i class="fa-solid fa-cube" style="color:#0284c7; font-size:0.85rem; margin-right:6px;"></i> 3D Net Folding Tool</a>
+              <a href="video-solution.html" class="mfs-dropdown-item"><i class="fa-solid fa-circle-play" style="color:#ef4444; font-size:0.85rem; margin-right:6px;"></i> Video Walkthrough Station</a>
             </div>
           </li>
 
@@ -651,7 +652,7 @@
       </p>
 
       <div class="tools-trust-pills">
-        <span class="trust-pill"><i class="fa-solid fa-circle-check"></i> 6 Dedicated Specialist Tools</span>
+        <span class="trust-pill"><i class="fa-solid fa-circle-check"></i> 7 Dedicated Specialist Tools</span>
         <span class="trust-pill"><i class="fa-solid fa-award"></i> Pearson Edexcel, C&amp;G &amp; Ofqual Aligned</span>
         <span class="trust-pill"><i class="fa-solid fa-bolt"></i> Instant In-Browser Execution</span>
         <span class="trust-pill"><i class="fa-solid fa-glasses"></i> Dyslexia Tints &amp; Readability First</span>
@@ -667,14 +668,17 @@
     <div class="tools-controls-bar">
       <div class="tools-search-wrap">
         <i class="fa-solid fa-magnifying-glass tools-search-icon"></i>
-        <input type="text" id="toolSearchInput" class="tools-search-input" placeholder="Search tools by name, topic, or keyword (e.g. calculator, 3D nets, Pearson mock, diagnostic, BKSB)..." oninput="filterTools()" autocomplete="off">
+        <input type="text" id="toolSearchInput" class="tools-search-input" placeholder="Search tools by name, topic, or keyword (e.g. video solutions, calculator, 3D nets, Pearson mock, diagnostic, BKSB)..." oninput="filterTools()" autocomplete="off">
         <button type="button" id="toolClearBtn" class="tools-clear-btn" onclick="clearToolSearch()" title="Clear search"><i class="fa-solid fa-xmark"></i></button>
       </div>
 
       <div class="tools-filters-row">
         <div class="filter-pills-list" id="filterPills">
           <button type="button" class="filter-pill-btn active" data-category="all" onclick="setCategoryFilter('all')">
-            <i class="fa-solid fa-grid-2"></i> All Tools <span style="opacity:0.75;">(6)</span>
+            <i class="fa-solid fa-grid-2"></i> All Tools <span style="opacity:0.75;">(7)</span>
+          </button>
+          <button type="button" class="filter-pill-btn" data-category="video" onclick="setCategoryFilter('video')">
+            <i class="fa-solid fa-circle-play"></i> Video Walkthroughs
           </button>
           <button type="button" class="filter-pill-btn" data-category="calc" onclick="setCategoryFilter('calc')">
             <i class="fa-solid fa-calculator"></i> Calculators &amp; Boundaries
@@ -693,7 +697,7 @@
           </button>
         </div>
         <div class="tools-counter" id="toolsCountDisplay">
-          Showing <strong>6 of 6</strong> tools
+          Showing <strong>7 of 7</strong> tools
         </div>
       </div>
     </div>
@@ -936,6 +940,46 @@
         </div>
       </a>
 
+      <!-- TILE 7: VIDEO SOLUTION WALKTHROUGH STATION -->
+      <a href="video-solution.html" class="tool-tile" data-category="video" data-keywords="video solution walkthrough station player interactive past paper edexcel maths level 1 level 2 non calculator calculator section a section b model answer mark schemes sonia tts explanation">
+        <div>
+          <div class="tool-tile-top">
+            <div class="tool-icon-box" style="background:linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%); color:#ef4444;">
+              <i class="fa-solid fa-circle-play"></i>
+            </div>
+            <span class="tool-status-pill pill-live">Live Tool</span>
+          </div>
+
+          <div class="tool-tile-body">
+            <span class="tool-tile-category">Video Solutions &amp; Walkthroughs</span>
+            <h2 class="tool-tile-title">Interactive Video Walkthrough Station</h2>
+            <p class="tool-tile-desc">
+              Watch complete step-by-step video solutions for Pearson Edexcel past papers and core maths topics. Features synchronized question papers, British Sonia RP voice narration, official Method [M1] and Accuracy [A1] marks, and instant Section A / Section B switching.
+            </p>
+
+            <ul class="tool-features-list">
+              <li><i class="fa-solid fa-circle-check"></i> <strong>Section Switcher:</strong> Instant toggling between Section A (Non-Calc) &amp; Section B (Calc)</li>
+              <li><i class="fa-solid fa-circle-check"></i> <strong>Sonia RP Voice:</strong> British RP narration with natural pacing and step-by-step guidance</li>
+              <li><i class="fa-solid fa-circle-check"></i> <strong>Integrated Sidebar:</strong> One-click access to Question Papers, Model Booklets &amp; Mark Schemes</li>
+              <li><i class="fa-solid fa-circle-check"></i> <strong>Dynamic Topic Routing:</strong> Load any past paper or curriculum lesson via simple topic links</li>
+            </ul>
+          </div>
+        </div>
+
+        <div>
+          <div class="tool-action-btn">
+            <span>Launch Video Walkthrough Station</span>
+            <i class="fa-solid fa-arrow-right"></i>
+          </div>
+
+          <div class="tool-sublinks">
+            <span class="tool-sublink-item" onclick="event.stopPropagation(); window.location='video-solution.html?topic=edexcel-maths-l2-past-paper-10-section-a';"><i class="fa-solid fa-circle-play"></i> Past Paper 10</span>
+            <span class="tool-sublink-item" onclick="event.stopPropagation(); window.location='video-solution.html?topic=edexcel-maths-l2-past-paper-9-section-a';"><i class="fa-solid fa-circle-play"></i> Past Paper 9</span>
+            <span class="tool-sublink-item" onclick="event.stopPropagation(); window.location='video-solution.html?topic=edexcel-maths-l2-past-paper-8-section-a';"><i class="fa-solid fa-circle-play"></i> Past Paper 8</span>
+          </div>
+        </div>
+      </a>
+
     </div>
 
     <!-- NO RESULTS FALLBACK -->
@@ -1059,6 +1103,7 @@
             <li><a href="pass-mark-calculator.html">Pass Mark Calculator</a></li>
             <li><a href="diagnostic-test.html">Diagnostic Skill Checker</a></li>
             <li><a href="functional-skills-nets.html">3D Net Folding Tool</a></li>
+            <li><a href="video-solution.html">Video Walkthrough Station</a></li>
             <li><a href="digital-functional-skills-mock-exam.html">Pearson DFS Simulator</a></li>
             <li><a href="revision-cards.html">Revision Cards &amp; Flashcards</a></li>
             <li><a href="shop.html">Revision Books &amp; Study Packs</a></li>

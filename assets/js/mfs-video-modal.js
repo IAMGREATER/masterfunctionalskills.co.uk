@@ -340,9 +340,9 @@
 
       btn.addEventListener('click', function (e) {
         const href = this.getAttribute('href') || '';
-        const hasVideoAttr = !!this.getAttribute('data-video');
-        if (this.classList.contains('btn-paper-video') && !hasVideoAttr && /^https?:\/\//i.test(href)) {
-          return; // allow external video link to open normally
+        // If link points to video-solution.html or external video URL, let browser navigate directly to the video player
+        if (href.indexOf('video-solution.html') !== -1 || (!this.getAttribute('data-video') && /^https?:\/\//i.test(href))) {
+          return;
         }
         e.preventDefault();
 

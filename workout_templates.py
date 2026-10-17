@@ -150,7 +150,7 @@ def render_skill_workout(data):
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Master Functional Skills — {title} Skill Workout & Repetition Drills</title>
+  <title>Master Functional Skills — {title} Fluency Drills</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="../assets/css/mfs-worksheets.css">
   <style>
@@ -969,7 +969,6 @@ def render_skill_workout(data):
       <a href="{back_url}"><i class="fa-solid fa-arrow-left"></i> Back to {title} Revision Guide</a>
     </div>
     <div>
-      <a href="{practice_url}" class="btn-action-practice"><i class="fa-solid fa-file-pen"></i> Switch to Exam Practice</a>
       <div class="nav-pill-group">
         <span class="nav-pill-btn active"><i class="fa-solid fa-file-lines"></i> Questions</span>
         <a href="{ans_url}" class="nav-pill-btn"><i class="fa-solid fa-check-double"></i> Answers</a>
@@ -983,7 +982,7 @@ def render_skill_workout(data):
     <div class="sheet-header">
       <div>
         <div class="brand-title"><i class="fa-solid fa-graduation-cap"></i> MASTER FUNCTIONAL SKILLS</div>
-        <div class="sheet-sub">Core Skills &amp; Practice Workout</div>
+        <div class="sheet-sub">Core Skills &amp; Fluency Drills</div>
       </div>
       <div class="header-badges">
         <div class="badge-level">{level}</div><br>
@@ -994,11 +993,11 @@ def render_skill_workout(data):
     <!-- Hero Title Banner -->
     <div class="hero-banner">
       <div>
-        <h1 class="hero-title">{title} Skill Workout</h1>
-        <div class="hero-subtitle">Section 1: Quick Practice Drills &bull; Section 2: Real-Life Problems</div>
+        <h1 class="hero-title">{title} Fluency Drills</h1>
+        <div class="hero-subtitle">Section 1: Quick Fluency Drills &bull; Section 2: Real-Life Problems</div>
       </div>
       <div class="hero-tag">
-        <i class="fa-solid fa-repeat"></i> Practice &amp; Repeat
+        <i class="fa-solid fa-pen-ruler"></i> Fluency Drills
       </div>
     </div>
 
@@ -1139,7 +1138,7 @@ def render_skill_workout_answers(data):
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Master Functional Skills — {title} Skill Workout Worked Answers &amp; Mark Scheme</title>
+  <title>Master Functional Skills — {title} Fluency Drills Answers &amp; Mark Scheme</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="../assets/css/mfs-worksheets.css">
   <style>
@@ -1929,7 +1928,6 @@ def render_skill_workout_answers(data):
       <a href="{rev_guide_url}"><i class="fa-solid fa-arrow-left"></i> Back to {title} Revision Guide</a>
     </div>
     <div>
-      <a href="{practice_ans_url}" class="btn-action-practice"><i class="fa-solid fa-file-shield"></i> Exam Mark Scheme</a>
       <div class="nav-pill-group">
         <a href="{back_url}" class="nav-pill-btn"><i class="fa-solid fa-file-lines"></i> Questions</a>
         <span class="nav-pill-btn active"><i class="fa-solid fa-check-double"></i> Answers</span>
@@ -1943,7 +1941,7 @@ def render_skill_workout_answers(data):
     <div class="sheet-header">
       <div>
         <div class="brand-title"><i class="fa-solid fa-circle-check"></i> MASTER FUNCTIONAL SKILLS</div>
-        <div class="sheet-sub">Tutor Model Solutions &amp; Step-by-Step Mark Scheme</div>
+        <div class="sheet-sub">Fluency Drills Model Solutions &amp; Step-by-Step Mark Scheme</div>
       </div>
       <div class="header-badges">
         <div class="badge-level">{level}</div><br>
@@ -1954,7 +1952,7 @@ def render_skill_workout_answers(data):
     <!-- Hero Title Banner -->
     <div class="hero-banner">
       <div>
-        <h1 class="hero-title">{title} Workout Solutions</h1>
+        <h1 class="hero-title">{title} Fluency Drills Solutions</h1>
         <div class="hero-subtitle">Step-by-Step Worked Answers with Method Marks Breakdown</div>
       </div>
       <div class="hero-tag">

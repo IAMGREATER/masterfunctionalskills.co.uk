@@ -181,7 +181,7 @@ def render_worksheet(data):
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Master Functional Skills — {title} Worksheet (Level 1 & Level 2)</title>
+  <title>Master Functional Skills — {title} Practice Questions (Level 1 & Level 2)</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="../assets/css/mfs-worksheets.css">
   <style>
@@ -930,7 +930,6 @@ def render_worksheet(data):
       <a href="{back_url}"><i class="fa-solid fa-arrow-left"></i> Back to {title} Revision Guide</a>
     </div>
     <div>
-      <a href="{slug}-workout.html" class="btn-action-answers" style="background:#2563eb; margin-right:10px;"><i class="fa-solid fa-repeat"></i> Switch to Skill Workout</a>
       <div class="nav-pill-group">
         <span class="nav-pill-btn active"><i class="fa-solid fa-file-lines"></i> Questions</span>
         <a href="{ans_url}" class="nav-pill-btn"><i class="fa-solid fa-check-double"></i> Answers</a>
@@ -943,7 +942,7 @@ def render_worksheet(data):
     <div class="sheet-head">
       <div>
         <div class="brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
-        <div class="brand-subtitle">Ofqual Regulated Standards • {subject} Curriculum</div>
+        <div class="brand-subtitle">Ofqual Regulated Standards • Exam-Style Practice Questions</div>
       </div>
       <div class="sheet-meta-badge">
         <span class="topic-name">{title}</span>
@@ -1051,7 +1050,7 @@ def render_answers(data):
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Master Functional Skills — {title} Answer Key & Mark Scheme (Level 1 & Level 2)</title>
+  <title>Master Functional Skills — {title} Practice Questions Mark Scheme (Level 1 & Level 2)</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <link rel="stylesheet" href="../assets/css/mfs-worksheets.css">
   <style>
@@ -1730,7 +1729,6 @@ def render_answers(data):
       <a href="{back_url}"><i class="fa-solid fa-arrow-left"></i> Back to {title} Revision Guide</a>
     </div>
     <div>
-      <a href="{slug}-workout-answers.html" class="btn-action-answers" style="background:#2563eb; margin-right:10px;"><i class="fa-solid fa-repeat"></i> Workout Answers</a>
       <div class="nav-pill-group">
         <a href="{sheet_url}" class="nav-pill-btn"><i class="fa-solid fa-file-lines"></i> Questions</a>
         <span class="nav-pill-btn active"><i class="fa-solid fa-check-double"></i> Answers</span>
@@ -1743,7 +1741,7 @@ def render_answers(data):
     <div class="sheet-head">
       <div>
         <div class="brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
-        <div class="brand-subtitle">Official Tutor Examiner Mark Scheme &amp; Model Solutions</div>
+        <div class="brand-subtitle">Practice Questions Mark Scheme &amp; Model Solutions</div>
       </div>
       <div class="sheet-meta-badge">
         <span class="topic-name">{title}</span>

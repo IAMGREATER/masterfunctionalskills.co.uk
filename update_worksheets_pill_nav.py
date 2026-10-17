@@ -229,7 +229,6 @@ def main():
       <a href="{rev_url}"><i class="fa-solid fa-arrow-left"></i> {rev_text}</a>
     </div>
     <div>
-      <a href="{slug}-worksheet.html" class="btn-action-practice"><i class="fa-solid fa-file-pen"></i> Switch to Exam Practice</a>
       <div class="nav-pill-group">
         <span class="nav-pill-btn active"><i class="fa-solid fa-file-lines"></i> Questions</span>
         <a href="{slug}-workout-answers.html" class="nav-pill-btn"><i class="fa-solid fa-check-double"></i> Answers</a>
@@ -244,7 +243,6 @@ def main():
       <a href="{rev_url}"><i class="fa-solid fa-arrow-left"></i> {rev_text}</a>
     </div>
     <div>
-      <a href="{slug}-answers.html" class="btn-action-practice"><i class="fa-solid fa-file-shield"></i> Exam Mark Scheme</a>
       <div class="nav-pill-group">
         <a href="{slug}-workout.html" class="nav-pill-btn"><i class="fa-solid fa-file-lines"></i> Questions</a>
         <span class="nav-pill-btn active"><i class="fa-solid fa-check-double"></i> Answers</span>
@@ -258,7 +256,6 @@ def main():
       <a href="{rev_url}"><i class="fa-solid fa-arrow-left"></i> {rev_text}</a>
     </div>
     <div>
-      <a href="{slug}-workout.html" class="btn-action-answers" style="background:#2563eb; margin-right:12px;"><i class="fa-solid fa-repeat"></i> Switch to Skill Workout</a>
       <div class="nav-pill-group">
         <span class="nav-pill-btn active"><i class="fa-solid fa-file-lines"></i> Questions</span>
         <a href="{slug}-answers.html" class="nav-pill-btn"><i class="fa-solid fa-check-double"></i> Answers</a>
@@ -272,7 +269,6 @@ def main():
       <a href="{rev_url}"><i class="fa-solid fa-arrow-left"></i> {rev_text}</a>
     </div>
     <div>
-      <a href="{slug}-workout-answers.html" class="btn-action-answers" style="background:#2563eb; margin-right:12px;"><i class="fa-solid fa-repeat"></i> Workout Answers</a>
       <div class="nav-pill-group">
         <a href="{slug}-worksheet.html" class="nav-pill-btn"><i class="fa-solid fa-file-lines"></i> Questions</a>
         <span class="nav-pill-btn active"><i class="fa-solid fa-check-double"></i> Answers</span>

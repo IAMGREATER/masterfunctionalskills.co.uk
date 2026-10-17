@@ -80,3 +80,35 @@ This document sets out the core architecture, established rules, and formatting 
   - Test `-pix_fmt yuv444p` or optimized x264 chroma parameters (`-crf 12 -preset slow -tune stillimage`) so text remains razor-sharp without color fringing.
 - **Rerender Roadmap**: Once AI generation credits / billing are refreshed, re-render both Section A (Non-Calc) and Section B (Calc) Past Paper 10 with Sonia and the clean chroma pipeline, then proceed with the remaining past papers on the website.
 
+---
+
+## 6. Online Revision & Mathematics Visual System Routine
+
+When authoring, redesigning, or auditing learning and revision pages across `masterfunctionalskills.co.uk`:
+
+### A. Centre Branding & Confidentiality (STRICT)
+- **Centre Name**: Strictly **Master Functional Skills** (MFS).
+- **Confidentiality Mandate**: Never mention Oxford Health, NHS, external hospital trusts, or client partner organisations.
+- **Vocational Contexts**: Always use generic, realistic vocational contexts (e.g. *"Community healthcare clinic"*, *"Medical diagnostics facility"*, *"Commercial catering & food services"*, *"Estates & facilities maintenance"*, *"Care home staffing"*).
+
+### B. "No-Squinting" Visual Mathematics Standard
+- **Zero Inline Text Strings**: Eliminate cramped, plain inline calculation strings (e.g. never write `145.80 + 39.45 = ...` or `58.7 × 19.4 ÷ 0.48` as plain inline text). Every calculation must be presented in a dedicated visual container.
+- **Large Bold Typography**: Numbers and mathematical symbols must be large (`1.25rem` to `2.25rem`), bold, and set to tabular figures (`font-variant-numeric: tabular-nums`).
+- **Vertical Place-Value Alignment (`.math-col-board`, `.math-pv-row`)**: Always align place values vertically with explicit column headers (`H`, `T`, `U`, `.`, `t`, `h`).
+- **Padded Zeros (`.math-pad-zero`)**: Explicitly pad missing trailing or leading zeros with soft-green dashed boxes (`#dcfce7`) to maintain positional accuracy.
+- **Centered Decomposition Slashes (`.math-digit-slashed`)**: Red strike-through lines on cancelled/exchanged digits must pass directly through the centroid of digits (`top: 50%`, `transform: translateY(-50%) rotate(-45deg)`).
+- **Visual Unit Bar Models (`.math-bar-model`, `.math-bar-cell`)**: Always use distinct, equal-sized colored blocks for fractions of amounts, reverse fractions, and ratio sharing.
+- **BIDMAS Hierarchy & Step-Down Boards (`.math-bidmas-ladder`, `.math-stepdown-board`)**: Use 4-tier color-coded priority badges (Tier 1 B, Tier 2 I, Tier 3 DM, Tier 4 AS). Highlight actively evaluated terms in glowing yellow pills (`.math-target-calc`) connected with downward flow arrows.
+- **Stacked Fraction Bars (`.math-stacked-frac`)**: Render compound or algebraic fractions vertically with `.math-stacked-num` and `.math-stacked-den`. Never use non-standard entities like `&frac{...}`.
+- **Expansive Master Tables (`.math-master-table`)**: Use high-contrast master tables with 1.35rem fonts and colored headers for directories (e.g. FDP Equivalences, Decimal Places vs. Significant Figures, Remainder Decision Matrix, Directional Estimation).
+
+### C. Re-architected Exam Models & Marking Criteria
+- **Multi-Card Architecture (`.exam-model-big-step`)**: Every worked example must be broken into individual step cards with problem stem, visual calculation block, plain-English tutor explanation, and Pearson Edexcel / City & Guilds mark tags (`[M1]`, `[A1]`, `[B1]`).
+- **Interactive Practice Scratchpads**: Include auto-saving learner textareas with accredited step-down marking scheme dropdown drawers (`.practice-solution-drawer`).
+
+### D. Automated Quality Assurance Protocols
+- **HTML Syntax & Tag Balancing**: Always run an automated Python `html.parser` check verifying `stack remaining == 0` and `errors == 0` before committing.
+- **Automated Confidentiality Verification**: Run automated regex searches confirming 0 occurrences of forbidden organisation terms (`oxford health`, `nhs`, `trust`, etc.).
+- **Dyslexia Tint Testing**: Ensure all components render cleanly against the site's four dyslexia tints: Cream (`#fdfbf7`), Soft Peach (`#fff7ed`), Cool Mist (`#f0f9ff`), and Soft Sage (`#f0fdf4`).
+
+

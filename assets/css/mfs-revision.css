@@ -2106,7 +2106,7 @@ p {
   font-size: 1rem;
   font-weight: 800;
   color: #64748b;
-  text-transform: uppercase;
+  text-transform: none;
   padding-bottom: 10px;
   border-bottom: 2px solid #e2e8f0;
   margin-bottom: 14px;

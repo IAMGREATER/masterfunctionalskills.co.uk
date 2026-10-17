@@ -2896,25 +2896,48 @@ p {
    ========================================================================== */
 @media (max-width: 768px) {
   /* 1. HERO SECTION & VISUAL SHOWCASE RESIZING */
+  .revision-page-wrapper,
+  .mfs-container,
+  .container {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box !important;
+  }
   .revision-hero-card {
-    padding: 18px 0 22px !important;
+    padding: 16px 0 18px !important;
     border-bottom-width: 2px !important;
   }
   .revision-hero-grid {
     grid-template-columns: 1fr !important;
-    gap: 16px !important;
+    gap: 14px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+  .revision-hero-content {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
   }
   .revision-hero-title {
     font-size: 1.45rem !important;
     line-height: 1.22 !important;
     margin: 0 0 10px 0 !important;
     letter-spacing: -0.01em !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
   .revision-hero-desc {
     font-size: 0.88rem !important;
     line-height: 1.45 !important;
     margin-bottom: 12px !important;
     color: #cbd5e1 !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
   .revision-hero-pill-row {
     gap: 6px !important;
@@ -2933,6 +2956,9 @@ p {
     padding-top: 12px !important;
     margin-top: 6px !important;
     border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
   .hero-meta-item {
     font-size: 0.80rem !important;
@@ -2954,27 +2980,40 @@ p {
     font-size: 0.84rem !important;
     border-radius: 8px !important;
   }
-  /* Resized hero visual card and book/concept image */
+  /* Resized hero visual card and book/concept image: full width in portrait view */
   .revision-hero-visual-card {
     padding: 8px 8px 6px !important;
     border-radius: 12px !important;
+    width: 100% !important;
     max-width: 100% !important;
-    margin: 6px auto 0 !important;
+    margin: 6px 0 0 !important;
+    box-sizing: border-box !important;
     box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.4) !important;
   }
   .revision-hero-img-wrap {
+    width: 100% !important;
+    max-width: 100% !important;
     aspect-ratio: 16 / 9 !important;
-    max-height: 185px !important;
+    height: auto !important;
+    max-height: none !important;
     border-radius: 8px !important;
+    box-sizing: border-box !important;
   }
   .revision-hero-img-wrap img {
-    max-height: 185px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: 100% !important;
+    max-height: none !important;
     object-fit: cover !important;
+    display: block !important;
   }
   .revision-hero-caption-bar {
     padding: 7px 8px 4px !important;
     font-size: 0.76rem !important;
     line-height: 1.35 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
   .revision-hero-caption-bar strong {
     font-size: 0.72rem !important;
@@ -3005,39 +3044,60 @@ p {
   .mfs-topic-card {
     border-radius: 12px !important;
     margin-bottom: 16px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box !important;
   }
   .mfs-topic-head {
-    padding: 12px 14px !important;
+    padding: 10px 10px !important;
+    box-sizing: border-box !important;
   }
   .mfs-topic-title {
     font-size: 1.10rem !important;
     line-height: 1.35 !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
   .mfs-topic-stem {
     font-size: 0.85rem !important;
     line-height: 1.4 !important;
     margin-top: 4px !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
   .mfs-topic-body {
-    padding: 12px 12px !important;
+    padding: 10px 10px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
   .mfs-topic-footer {
     padding-top: 10px !important;
     margin-top: 12px !important;
     gap: 6px !important;
+    box-sizing: border-box !important;
   }
 
-  /* 4. DIAGRAMS & SVGS RESIZING */
+  /* 4. DIAGRAMS & SVGS RESIZING (FULL WIDTH) */
   .sketch-diagram-wrap {
     margin: 12px 0 !important;
-    display: flex !important;
-    justify-content: center !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
     overflow-x: auto !important;
     -webkit-overflow-scrolling: touch !important;
-    max-width: 100% !important;
     padding-bottom: 4px !important;
+    box-sizing: border-box !important;
   }
-  .sketch-diagram-wrap svg {
+  .sketch-diagram-wrap svg,
+  .sketch-diagram-wrap img,
+  .diagram-panel-box img,
+  .diagram-panel-box svg,
+  .pfs-diagram-col svg,
+  .pfs-diagram-col img {
+    width: 100% !important;
     max-width: 100% !important;
     height: auto !important;
     display: block !important;
@@ -3067,39 +3127,59 @@ p {
     line-height: 1.3 !important;
   }
 
-  /* 6. GOLDEN RULES & AMBER CARDS */
+  /* 6. GOLDEN RULES & AMBER CARDS (FULL WIDTH) */
   .rule-card-amber {
-    padding: 12px 14px !important;
+    padding: 10px 10px !important;
     margin-bottom: 12px !important;
     border-radius: 10px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box !important;
   }
   .rule-card-amber-header {
     font-size: 0.90rem !important;
     gap: 8px !important;
     margin-bottom: 6px !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
   .rule-card-amber p {
     font-size: 0.85rem !important;
     line-height: 1.45 !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
   .rule-highlight-badge {
     font-size: 0.78rem !important;
     padding: 6px 10px !important;
     margin-top: 8px !important;
     border-radius: 6px !important;
+    display: inline-block !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
 
-  /* 7. STEP-BY-STEP WORKED EXAM MODELS */
+  /* 7. STEP-BY-STEP WORKED EXAM MODELS (FULL WIDTH) */
   .model-example-card {
     border-radius: 12px !important;
     margin-bottom: 16px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box !important;
   }
   .model-card-header {
     display: flex !important;
     flex-direction: column !important;
     align-items: flex-start !important;
     gap: 6px !important;
-    padding: 10px 14px !important;
+    padding: 10px 10px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
   .model-badge {
     font-size: 0.78rem !important;
@@ -3110,38 +3190,60 @@ p {
     line-height: 1.25 !important;
   }
   .model-scenario {
-    padding: 12px 14px !important;
+    padding: 10px 10px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
   .model-q-stem {
     font-size: 0.92rem !important;
     line-height: 1.55 !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
   .model-steps-container {
-    padding: 12px 14px !important;
+    padding: 10px 10px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
   .model-step-grid-row {
     grid-template-columns: 1fr !important;
     gap: 6px !important;
-    padding: 10px 12px !important;
+    padding: 8px 10px !important;
     border-radius: 8px !important;
     margin-bottom: 10px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
   .exam-model-big-step {
     border-radius: 12px !important;
     margin-bottom: 16px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box !important;
   }
   .exam-model-big-step-header {
-    padding: 10px 14px !important;
+    padding: 10px 10px !important;
     gap: 6px !important;
     flex-wrap: wrap !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
   .exam-model-big-step-body {
-    padding: 12px 10px !important;
+    padding: 10px 10px !important;
     grid-template-columns: 1fr !important;
     gap: 12px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
   .exam-model-calc-block {
-    padding: 12px 14px !important;
+    padding: 10px 10px !important;
     width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
@@ -3191,37 +3293,57 @@ p {
     line-height: 1.45 !important;
   }
 
-  /* 8. EXAMINER TRAPS & PITFALLS */
+  /* 8. EXAMINER TRAPS & PITFALLS (FULL WIDTH) */
   .examiner-pitfall-box {
-    padding: 12px 14px !important;
+    padding: 10px 10px !important;
     margin-bottom: 12px !important;
     border-radius: 8px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box !important;
   }
   .examiner-pitfall-title {
     font-size: 0.92rem !important;
     gap: 6px !important;
     margin-bottom: 4px !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
   .examiner-pitfall-desc {
     font-size: 0.85rem !important;
     line-height: 1.45 !important;
     margin-bottom: 8px !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
   .examiner-pitfall-fix {
     padding: 8px 10px !important;
     font-size: 0.82rem !important;
     line-height: 1.4 !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
 
-  /* 9. INTERACTIVE EXAM PRACTICE CARDS */
+  /* 9. INTERACTIVE EXAM PRACTICE CARDS (FULL WIDTH) */
   .practice-question-card {
-    padding: 14px 14px !important;
+    padding: 12px 10px !important;
     margin-bottom: 16px !important;
     border-radius: 12px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box !important;
   }
   .practice-card-header {
     padding-bottom: 10px !important;
     margin-bottom: 10px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
   .practice-card-title {
     font-size: 0.98rem !important;
@@ -3233,19 +3355,27 @@ p {
     font-size: 0.68rem !important;
   }
   .practice-prompt-box {
-    padding: 10px 12px !important;
+    padding: 10px 10px !important;
     font-size: 0.88rem !important;
     line-height: 1.5 !important;
     border-radius: 8px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
   .practice-notes-label {
     font-size: 0.80rem !important;
     margin-top: 10px !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
   .practice-scratchpad {
     font-size: 0.84rem !important;
     min-height: 60px !important;
     padding: 8px 10px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
   }
   .btn-toggle-solution {
     padding: 8px 14px !important;
@@ -3253,12 +3383,16 @@ p {
     border-radius: 6px !important;
   }
 
-  /* 10. MATH VISUAL BOARDS & FORMULAS */
+  /* 10. MATH VISUAL BOARDS & FORMULAS (FULL WIDTH) */
   .math-visual-card {
-    padding: 12px 12px !important;
+    padding: 10px 10px !important;
     margin: 10px 0 !important;
+    width: 100% !important;
     max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
     border-radius: 10px !important;
+    box-sizing: border-box !important;
   }
   .math-visual-card-title {
     font-size: 0.95rem !important;

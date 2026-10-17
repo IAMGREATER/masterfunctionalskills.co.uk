@@ -579,6 +579,7 @@
     max-width: 100% !important;
   }
 
+  div[style*="minmax(2"],
   div[style*="minmax(3"],
   div[style*="minmax(4"],
   .math-two-col-grid {
@@ -1599,19 +1600,20 @@
   /* ------------------------------------------------------------------------
      SMARTPHONE HERO IMAGE, AWARDING BODIES & REVISION CARDS OPTIMIZATION
      ------------------------------------------------------------------------ */
-  /* Hero Image on Smartphone: Square aspect ratio so full image is visible */
+  /* Hero Image on Smartphone: Full width so image fills the screen */
   .hero-square-showcase {
     width: 100% !important;
-    max-width: 360px !important;
+    max-width: 100% !important;
     height: auto !important;
     min-height: unset !important;
     aspect-ratio: 1 / 1 !important;
     border-radius: 16px !important;
-    margin: 10px auto 0 !important;
+    margin: 10px 0 0 !important;
   }
 
   .hero-showcase-img {
     width: 100% !important;
+    max-width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
     object-position: center center !important;
@@ -2039,65 +2041,220 @@
       min-width: 0 !important;
     }
 
+    /* CONTAINERS & FULL-WIDTH SHIELD (PORTRAIT VIEW) */
+    .mfs-container,
+    .revision-page-wrapper,
+    .container,
+    .video-hero-container {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding-left: 8px !important;
+      padding-right: 8px !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      box-sizing: border-box !important;
+    }
+
+    /* HOMEPAGE & GENERAL HERO (PORTRAIT VIEW) */
+    .hero-content {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      box-sizing: border-box !important;
+    }
+    .hero-content h1,
+    .hero-description {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      box-sizing: border-box !important;
+    }
+    .hero-square-showcase {
+      width: 100% !important;
+      max-width: 100% !important;
+      height: auto !important;
+      min-height: unset !important;
+      aspect-ratio: 1 / 1 !important;
+      border-radius: 16px !important;
+      margin: 10px 0 0 !important;
+      box-sizing: border-box !important;
+    }
+    .hero-showcase-img {
+      width: 100% !important;
+      max-width: 100% !important;
+      height: 100% !important;
+      object-fit: cover !important;
+      object-position: center center !important;
+    }
+
     /* REVISION HERO & VISUAL CONCEPT DISPLAY ON MOBILE PORTRAIT */
     .revision-hero-card {
-      padding: 16px 0 20px !important;
+      padding: 16px 0 18px !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
     }
     .revision-hero-grid {
       grid-template-columns: 1fr !important;
       gap: 14px !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      box-sizing: border-box !important;
+    }
+    .revision-hero-content {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      box-sizing: border-box !important;
     }
     .revision-hero-title {
       font-size: 1.40rem !important;
       line-height: 1.22 !important;
       margin-bottom: 8px !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
     }
     .revision-hero-desc {
       font-size: 0.88rem !important;
       line-height: 1.45 !important;
       margin-bottom: 12px !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
     }
     .revision-hero-visual-card {
       padding: 8px 8px 6px !important;
       border-radius: 12px !important;
+      width: 100% !important;
       max-width: 100% !important;
-      margin: 4px auto 0 !important;
+      margin: 6px 0 0 !important;
+      box-sizing: border-box !important;
       box-shadow: 0 8px 18px -4px rgba(0, 0, 0, 0.4) !important;
     }
     .revision-hero-img-wrap {
+      width: 100% !important;
+      max-width: 100% !important;
       aspect-ratio: 16 / 9 !important;
-      max-height: 180px !important;
+      height: auto !important;
+      max-height: none !important;
       border-radius: 8px !important;
+      box-sizing: border-box !important;
     }
     .revision-hero-img-wrap img {
-      max-height: 180px !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      height: 100% !important;
+      max-height: none !important;
       object-fit: cover !important;
+      display: block !important;
     }
     .revision-hero-caption-bar {
       padding: 6px 8px 4px !important;
       font-size: 0.76rem !important;
       line-height: 1.35 !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
     }
 
-    /* SECTION HEADINGS & TOPICS RESIZING */
+    /* SECTION HEADINGS & TOPICS RESIZING & FULL-WIDTH CARDS */
+    .revision-layout {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding: 16px 0 40px !important;
+      box-sizing: border-box !important;
+    }
     .section-title {
       font-size: 1.20rem !important;
       line-height: 1.25 !important;
       gap: 8px !important;
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+    .mfs-topic-card,
+    .model-example-card,
+    .rule-card-amber,
+    .examiner-pitfall-box,
+    .exam-model-big-step,
+    .practice-question-card,
+    .download-worksheet-card,
+    .math-visual-card,
+    .table-responsive,
+    .diagram-panel-box,
+    .pfs-diagram-col {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      box-sizing: border-box !important;
+    }
+    .mfs-topic-head,
+    .mfs-topic-body,
+    .model-scenario,
+    .model-steps-container,
+    .exam-model-big-step-body,
+    .exam-model-calc-block,
+    .rule-card-amber,
+    .examiner-pitfall-box,
+    .practice-question-card {
+      padding-left: 10px !important;
+      padding-right: 10px !important;
+      box-sizing: border-box !important;
     }
     .mfs-topic-title {
       font-size: 1.08rem !important;
       line-height: 1.35 !important;
+      width: 100% !important;
+      max-width: 100% !important;
+    }
+    .mfs-topic-stem,
+    .section-lead-text,
+    .model-q-stem,
+    .model-step-col-desc,
+    .exam-model-calc-explanation,
+    .examiner-pitfall-desc,
+    .examiner-guidance-text,
+    .practice-prompt-box,
+    p {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      box-sizing: border-box !important;
+      word-wrap: break-word !important;
+      overflow-wrap: break-word !important;
     }
 
-    /* WHITEBOARD SKETCH & DIAGRAMS SAFE SWIPE */
+    /* WHITEBOARD SKETCH & DIAGRAMS (FULL WIDTH) */
     .sketch-diagram-wrap {
       margin: 12px 0 !important;
+      display: block !important;
+      width: 100% !important;
+      max-width: 100% !important;
       overflow-x: auto !important;
       -webkit-overflow-scrolling: touch !important;
       padding-bottom: 4px !important;
+      box-sizing: border-box !important;
     }
-    .sketch-diagram-wrap svg {
+    .sketch-diagram-wrap svg,
+    .sketch-diagram-wrap img,
+    .diagram-panel-box img,
+    .diagram-panel-box svg,
+    .pfs-diagram-col svg,
+    .pfs-diagram-col img,
+    .mfs-topic-body img,
+    .mfs-topic-body svg,
+    .math-visual-card img,
+    .model-example-card img,
+    .practice-question-card img,
+    .real-photo-card img,
+    .product-img-wrap img {
+      width: 100% !important;
       max-width: 100% !important;
       height: auto !important;
       display: block !important;

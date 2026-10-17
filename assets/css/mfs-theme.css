@@ -1843,6 +1843,10 @@ a {
   background: var(--accent);
 }
 
+.mfs-footer-chevron {
+  display: none;
+}
+
 .footer-links,
 .footer-links-col ul {
   list-style: none;
@@ -1907,7 +1911,8 @@ a {
   .mfs-hero-grid { grid-template-columns: 1fr; gap: 32px; }
   .mfs-features-grid { grid-template-columns: 1fr; }
   .faq-grid { grid-template-columns: 1fr; }
-  .footer-grid { grid-template-columns: 1fr 1fr; }
+  .footer-grid { grid-template-columns: 1fr 1fr; gap: 20px; margin-bottom: 20px; }
+  .mfs-footer { padding: 28px 0 18px; }
   .topic-row { flex-direction: column; align-items: flex-start; gap: 14px; }
   .topic-actions-group { width: 100%; justify-content: flex-start; }
   .directory-head-card { flex-direction: column; align-items: stretch; }

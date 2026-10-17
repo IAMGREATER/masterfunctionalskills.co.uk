@@ -619,41 +619,61 @@
      STREAMLINED ULTRA-COMPACT MOBILE FOOTER
      ========================================================================== */
   footer.mfs-footer {
-    padding: 22px 0 16px 0 !important;
+    padding: 10px 0 8px 0 !important;
     border-top: 2px solid var(--accent) !important;
   }
 
   footer.mfs-footer .mfs-container {
-    padding: 0 16px !important;
+    padding: 0 12px !important;
   }
 
   .footer-grid {
     display: flex !important;
     flex-direction: column !important;
-    gap: 8px !important;
-    margin-bottom: 16px !important;
+    gap: 4px !important;
+    margin-bottom: 6px !important;
   }
 
-  /* Brand Column */
+  /* Brand Column — Ultra Compact Header Row */
   .footer-col:first-child,
   .footer-brand {
-    padding-bottom: 10px !important;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
-    margin-bottom: 4px !important;
+    padding-bottom: 5px !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.06) !important;
+    margin-bottom: 2px !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 6px !important;
   }
 
   .footer-col:first-child .mfs-brand,
+  .footer-brand .mfs-brand,
   .footer-brand .footer-logo {
-    margin-bottom: 8px !important;
+    margin-bottom: 0 !important;
+    gap: 6px !important;
+  }
+
+  .footer-col:first-child .mfs-brand-icon,
+  .footer-brand .mfs-brand-icon {
+    width: 22px !important;
+    height: 22px !important;
+    min-width: 22px !important;
+    font-size: 0.70rem !important;
+    border-radius: 5px !important;
+    box-shadow: none !important;
   }
 
   .footer-col:first-child .mfs-brand-title,
   .footer-brand .footer-logo span {
-    font-size: 1.05rem !important;
+    font-size: 0.80rem !important;
+    letter-spacing: -0.01em !important;
+    line-height: 1.1 !important;
   }
 
-  .footer-col:first-child .mfs-brand-subtitle {
-    font-size: 0.76rem !important;
+  .footer-col:first-child .mfs-brand-subtitle,
+  .footer-brand .mfs-brand-subtitle {
+    display: none !important;
   }
 
   /* Hide verbose marketing paragraphs on mobile */
@@ -662,12 +682,12 @@
     display: none !important;
   }
 
-  /* Contact row as sleek horizontal pills */
+  /* Contact row as sleek horizontal mini-pills */
   .footer-col:first-child div[style*="font-size:0.85rem"] {
     display: flex !important;
     flex-wrap: wrap !important;
-    gap: 8px !important;
-    margin-top: 6px !important;
+    gap: 5px !important;
+    margin-top: 0 !important;
   }
 
   .footer-col:first-child div[style*="font-size:0.85rem"] p {
@@ -677,52 +697,54 @@
   .footer-col:first-child div[style*="font-size:0.85rem"] a {
     display: inline-flex !important;
     align-items: center !important;
-    gap: 6px !important;
-    padding: 5px 12px !important;
-    background: rgba(255, 255, 255, 0.06) !important;
-    border: 1px solid rgba(255, 255, 255, 0.12) !important;
-    border-radius: 20px !important;
-    font-size: 0.78rem !important;
-    color: #e2e8f0 !important;
+    gap: 4px !important;
+    padding: 2px 7px !important;
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.10) !important;
+    border-radius: 12px !important;
+    font-size: 0.68rem !important;
+    color: #cbd5e1 !important;
     text-decoration: none !important;
-    transition: background 0.2s ease !important;
+    transition: background 0.15s ease !important;
+    line-height: 1.25 !important;
   }
 
   .footer-col:first-child div[style*="font-size:0.85rem"] a:active {
-    background: rgba(2, 132, 199, 0.2) !important;
+    background: rgba(37, 99, 235, 0.2) !important;
     border-color: var(--accent) !important;
   }
 
   /* Collapsible Accordion Sections for Link Columns */
   .footer-col.mfs-footer-accordion,
   .footer-links-col.mfs-footer-accordion {
-    background: rgba(255, 255, 255, 0.025) !important;
-    border: 1px solid rgba(255, 255, 255, 0.07) !important;
-    border-radius: 8px !important;
+    background: rgba(255, 255, 255, 0.02) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-radius: 5px !important;
     overflow: hidden !important;
     transition: border-color 0.2s ease, background 0.2s ease !important;
   }
 
   .footer-col.mfs-footer-accordion.is-open,
   .footer-links-col.mfs-footer-accordion.is-open {
-    border-color: rgba(2, 132, 199, 0.35) !important;
-    background: rgba(255, 255, 255, 0.05) !important;
+    border-color: rgba(37, 99, 235, 0.35) !important;
+    background: rgba(255, 255, 255, 0.04) !important;
   }
 
   .footer-col.mfs-footer-accordion h4,
   .footer-links-col.mfs-footer-accordion h4 {
     margin: 0 !important;
-    padding: 10px 14px !important;
-    font-size: 0.84rem !important;
-    font-weight: 700 !important;
+    padding: 5px 8px !important;
+    font-size: 0.72rem !important;
+    font-weight: 600 !important;
     color: #ffffff !important;
-    letter-spacing: 0.03em !important;
+    letter-spacing: 0.02em !important;
     cursor: pointer !important;
     display: flex !important;
     justify-content: space-between !important;
     align-items: center !important;
     user-select: none !important;
     -webkit-tap-highlight-color: transparent !important;
+    line-height: 1.2 !important;
   }
 
   .footer-col.mfs-footer-accordion h4::after,
@@ -732,9 +754,10 @@
 
   .footer-col.mfs-footer-accordion .mfs-footer-chevron,
   .footer-links-col.mfs-footer-accordion .mfs-footer-chevron {
-    font-size: 0.70rem !important;
+    display: inline-block !important;
+    font-size: 0.58rem !important;
     color: var(--accent) !important;
-    transition: transform 0.25s ease !important;
+    transition: transform 0.2s ease !important;
   }
 
   .footer-col.mfs-footer-accordion.is-open .mfs-footer-chevron,
@@ -746,32 +769,32 @@
   .footer-col.mfs-footer-accordion .footer-links,
   .footer-links-col.mfs-footer-accordion ul {
     display: none !important;
-    padding: 2px 14px 12px 14px !important;
+    padding: 2px 8px 6px 8px !important;
     margin: 0 !important;
     list-style: none !important;
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 6px 12px !important;
+    gap: 3px 8px !important;
   }
 
   .footer-col.mfs-footer-accordion.is-open .footer-links,
   .footer-links-col.mfs-footer-accordion.is-open ul {
     display: grid !important;
-    animation: mfsFooterFadeIn 0.2s ease forwards;
+    animation: mfsFooterFadeIn 0.15s ease forwards;
   }
 
   @keyframes mfsFooterFadeIn {
-    from { opacity: 0; transform: translateY(-4px); }
+    from { opacity: 0; transform: translateY(-3px); }
     to { opacity: 1; transform: translateY(0); }
   }
 
   .footer-col.mfs-footer-accordion .footer-links a,
   .footer-links-col.mfs-footer-accordion ul a {
-    font-size: 0.78rem !important;
-    line-height: 1.35 !important;
+    font-size: 0.68rem !important;
+    line-height: 1.25 !important;
     color: #cbd5e1 !important;
     text-decoration: none !important;
     display: block !important;
-    padding: 3px 0 !important;
+    padding: 2px 0 !important;
   }
 
   .footer-col.mfs-footer-accordion .footer-links a:hover,
@@ -784,55 +807,58 @@
   /* Fallback if JS hasn't run or is not an accordion */
   .footer-col:not(.mfs-footer-accordion):not(:first-child) h4,
   .footer-links-col:not(.mfs-footer-accordion) h4 {
-    margin-bottom: 8px !important;
-    padding-bottom: 4px !important;
-    font-size: 0.82rem !important;
+    margin-bottom: 3px !important;
+    padding-bottom: 2px !important;
+    font-size: 0.72rem !important;
   }
 
   .footer-col:not(.mfs-footer-accordion):not(:first-child) .footer-links,
   .footer-links-col:not(.mfs-footer-accordion) ul {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr) !important;
-    gap: 6px 10px !important;
+    gap: 3px 8px !important;
     padding: 0 !important;
   }
 
   .footer-col:not(.mfs-footer-accordion):not(:first-child) .footer-links a,
   .footer-links-col:not(.mfs-footer-accordion) ul a {
-    font-size: 0.76rem !important;
+    font-size: 0.68rem !important;
   }
 
-  /* Footer Bottom Bar */
+  /* Footer Bottom Bar — Ultra Slim */
   .footer-bottom {
-    padding-top: 14px !important;
-    border-top: 1px solid rgba(255, 255, 255, 0.08) !important;
+    padding-top: 6px !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
     text-align: center !important;
-    gap: 8px !important;
-    font-size: 0.72rem !important;
+    gap: 3px !important;
+    font-size: 0.64rem !important;
     color: #94a3b8 !important;
   }
 
   .footer-bottom div:first-child,
   .footer-bottom p {
-    line-height: 1.4 !important;
-    max-width: 92% !important;
+    line-height: 1.25 !important;
+    max-width: 96% !important;
     margin: 0 !important;
+    font-size: 0.62rem !important;
+    color: #64748b !important;
   }
 
   .footer-bottom div[style*="display:flex"] {
     display: flex !important;
     justify-content: center !important;
     flex-wrap: wrap !important;
-    gap: 6px 12px !important;
+    gap: 3px 8px !important;
   }
 
   .footer-bottom a {
-    font-size: 0.72rem !important;
+    font-size: 0.65rem !important;
     color: #94a3b8 !important;
     text-decoration: none !important;
+    padding: 1px 0 !important;
   }
 
   /* ------------------------------------------------------------------------

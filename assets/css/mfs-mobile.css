@@ -9,12 +9,14 @@
    1. TABLET & MOBILE BREAKPOINT (< 992px)
    -------------------------------------------------------------------------- */
 @media (max-width: 991px) {
-  /* Eliminate the bulky multi-row top trust bar */
-  .mfs-top-bar {
+  /* Eliminate bulky top trust bar and empty promo banners */
+  .mfs-top-bar,
+  .mfs-promo-banner,
+  .mfs-promo-banner:empty {
     display: none !important;
   }
 
-  /* Make header a sleek 50px app bar */
+  /* Make header a sleek 52px app bar */
   .mfs-navbar {
     position: sticky !important;
     top: 0 !important;
@@ -27,8 +29,8 @@
   }
 
   .mfs-navbar-inner {
-    height: 50px !important;
-    min-height: 50px !important;
+    height: 52px !important;
+    min-height: 52px !important;
     padding: 0 12px !important;
     display: flex !important;
     flex-wrap: nowrap !important;
@@ -43,30 +45,38 @@
   .mfs-brand {
     display: flex !important;
     align-items: center !important;
-    gap: 8px !important;
+    gap: 7px !important;
     text-decoration: none !important;
     padding: 0 !important;
     margin: 0 !important;
+    min-width: 0 !important;
   }
 
   .mfs-brand-icon {
-    width: 32px !important;
-    height: 32px !important;
-    min-width: 32px !important;
-    font-size: 0.95rem !important;
-    border-radius: 8px !important;
+    width: 28px !important;
+    height: 28px !important;
+    min-width: 28px !important;
+    font-size: 0.85rem !important;
+    border-radius: 7px !important;
   }
 
   .mfs-brand-title {
-    font-size: 0.92rem !important;
+    font-size: 0.84rem !important;
     letter-spacing: -0.01em !important;
     color: #ffffff !important;
     font-weight: 800 !important;
     margin: 0 !important;
+    white-space: nowrap !important;
   }
 
   .mfs-brand-title span {
-    color: var(--accent, #0284c7) !important;
+    display: none !important;
+  }
+
+  .mfs-brand-title::after {
+    content: " FS" !important;
+    color: var(--accent, #38bdf8) !important;
+    font-weight: 800 !important;
   }
 
   .mfs-brand-subtitle {
@@ -86,7 +96,8 @@
   .mfs-mobile-controls {
     display: flex !important;
     align-items: center !important;
-    gap: 8px !important;
+    gap: 6px !important;
+    flex-shrink: 0 !important;
   }
 
   .btn-mobile-tint-toggle {
@@ -95,12 +106,12 @@
     justify-content: center !important;
     gap: 4px !important;
     height: 34px !important;
-    padding: 0 8px !important;
-    border-radius: 6px !important;
-    background: rgba(255, 255, 255, 0.1) !important;
-    border: 1px solid rgba(255, 255, 255, 0.2) !important;
+    padding: 0 9px !important;
+    border-radius: 9999px !important; /* Companion Pill */
+    background: rgba(255, 255, 255, 0.12) !important;
+    border: 1px solid rgba(255, 255, 255, 0.22) !important;
     color: #ffffff !important;
-    font-size: 0.82rem !important;
+    font-size: 0.78rem !important;
     font-weight: 600 !important;
     cursor: pointer !important;
     touch-action: manipulation !important;
@@ -115,24 +126,44 @@
     border: 1px solid rgba(0, 0, 0, 0.3) !important;
   }
 
+  /* Sleek Menu Pill */
+  .mfs-menu-pill,
   .mfs-mobile-toggle {
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    width: 36px !important;
-    height: 36px !important;
+    gap: 6px !important;
+    height: 34px !important;
+    padding: 0 13px !important;
     background: var(--accent, #0284c7) !important;
+    background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%) !important;
     color: #ffffff !important;
-    border: none !important;
-    border-radius: 6px !important;
-    font-size: 1.1rem !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    border-radius: 9999px !important; /* Perfect Pill */
+    font-size: 0.80rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.02em !important;
     cursor: pointer !important;
     touch-action: manipulation !important;
-    transition: transform 0.1s ease, background 0.15s ease !important;
+    box-shadow: 0 2px 8px rgba(2, 132, 199, 0.35) !important;
+    transition: transform 0.12s ease, box-shadow 0.12s ease !important;
+    white-space: nowrap !important;
   }
 
+  .mfs-menu-pill:active,
   .mfs-mobile-toggle:active {
-    transform: scale(0.92) !important;
+    transform: scale(0.93) !important;
+  }
+
+  .mfs-menu-pill i,
+  .mfs-mobile-toggle i {
+    font-size: 0.88rem !important;
+  }
+
+  .mfs-menu-pill span,
+  .mfs-mobile-toggle span {
+    font-size: 0.80rem !important;
+    font-weight: 700 !important;
   }
 
   /* ------------------------------------------------------------------------
@@ -463,49 +494,58 @@
   main h1,
   .mfs-hero-title,
   .hero-content h1 {
-    font-size: 1.5rem !important;
-    line-height: 1.25 !important;
+    font-size: 1.35rem !important;
+    line-height: 1.22 !important;
     letter-spacing: -0.01em !important;
-    margin-bottom: 10px !important;
+    margin-bottom: 8px !important;
   }
 
   main h2 {
-    font-size: 1.25rem !important;
-    line-height: 1.3 !important;
-    margin-top: 20px !important;
-    margin-bottom: 10px !important;
+    font-size: 1.18rem !important;
+    line-height: 1.28 !important;
+    margin-top: 18px !important;
+    margin-bottom: 8px !important;
   }
 
   main h3 {
-    font-size: 1.1rem !important;
-    line-height: 1.35 !important;
-    margin-top: 16px !important;
-    margin-bottom: 8px !important;
+    font-size: 1.05rem !important;
+    line-height: 1.3 !important;
+    margin-top: 14px !important;
+    margin-bottom: 6px !important;
   }
 
   .hero-description,
   p.hero-description {
-    font-size: 0.92rem !important;
-    line-height: 1.45 !important;
-    margin-bottom: 14px !important;
+    font-size: 0.85rem !important;
+    line-height: 1.38 !important;
+    margin-bottom: 12px !important;
+    color: #475569 !important;
   }
 
-  /* Stack hero action buttons full width */
+  /* Grid hero action buttons on smartphone */
   .hero-buttons {
-    display: flex !important;
-    flex-direction: column !important;
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
     gap: 8px !important;
     width: 100% !important;
-    margin-top: 12px !important;
+    margin-top: 10px !important;
+    margin-bottom: 12px !important;
   }
 
   .hero-buttons a {
     width: 100% !important;
     text-align: center !important;
     justify-content: center !important;
-    padding: 12px 14px !important;
-    font-size: 0.95rem !important;
+    padding: 9px 8px !important;
+    font-size: 0.82rem !important;
+    font-weight: 700 !important;
+    border-radius: 8px !important;
     box-sizing: border-box !important;
+  }
+
+  .hero-buttons a:last-child {
+    grid-column: 1 / -1 !important;
+    padding: 8px 10px !important;
   }
 
   .hero-reviews-bar {
@@ -586,10 +626,10 @@
      ------------------------------------------------------------------------ */
   /* Hero Image on Smartphone: Sonya's face perfectly visible, zero blockage */
   .hero-square-showcase {
-    height: 300px !important;
+    height: 260px !important;
     max-width: 100% !important;
     border-radius: 16px !important;
-    margin: 12px auto 0 !important;
+    margin: 8px auto 0 !important;
   }
 
   .hero-showcase-img {

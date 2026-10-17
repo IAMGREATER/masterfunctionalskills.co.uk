@@ -128,14 +128,15 @@ CANONICAL_HEADER = """  <header class="mfs-navbar">
         </a>
       </div>
 
-      <!-- MOBILE CONTROLS (TINT + BURGER) -->
+      <!-- MOBILE CONTROLS (TINT + MENU PILL) -->
       <div class="mfs-mobile-controls" id="mfsMobileControls">
         <button type="button" class="btn-mobile-tint-toggle" id="mfsMobileTintBtn" title="Change Reading Tint" aria-label="Reading Tint">
           <i class="fa-solid fa-glasses"></i>
           <span class="mobile-tint-swatch" id="mfsMobileTintSwatch"></span>
         </button>
-        <button type="button" class="mfs-mobile-toggle" id="mfsMobileToggleBtn" title="Open Navigation Menu" aria-label="Toggle Menu">
+        <button type="button" class="mfs-menu-pill" id="mfsMobileToggleBtn" title="Open Navigation Menu" aria-label="Toggle Menu">
           <i class="fa-solid fa-bars"></i>
+          <span>Menu</span>
         </button>
       </div>
     </div>
@@ -144,7 +145,6 @@ CANONICAL_HEADER = """  <header class="mfs-navbar">
   </header>"""
 
 DIRS = [
-    "/home/subi/Projects/masterfunctionalskills.co.uk",
     "/home/subi/Nextcloud/Projects/masterfunctionalskills.co.uk"
 ]
 
@@ -176,12 +176,12 @@ EXCLUDE_FILES = {
     "test_card41_fixed.html",
     "test_card41_isolated.html",
     "netfold.html",
-    "netfolding.html",
-    "worksheets.html"  # Retains its dedicated active nav styling
+    "netfolding.html"
 }
 
 def main():
     header_pattern = re.compile(r'^[ \t]*<header class=["\']mfs-navbar["\']>.*?</header>', re.MULTILINE | re.DOTALL)
+    theme_css_pattern = re.compile(r'(<link[^>]+href=["\'][^"\']*mfs-theme\.css["\'][^>]*>)')
 
     for d in DIRS:
         if not os.path.exists(d):
@@ -200,19 +200,33 @@ def main():
             with open(fpath, "r", encoding="utf-8") as f:
                 content = f.read()
 
-            if header_pattern.search(content):
-                new_content = header_pattern.sub(CANONICAL_HEADER, content, count=1)
-                if new_content != content:
-                    with open(fpath, "w", encoding="utf-8") as f:
-                        f.write(new_content)
-                    updated_count += 1
+            new_content = content
+
+            # 1. Ensure mfs-mobile.css is explicitly linked in <head>
+            if "mfs-mobile.css" not in new_content and "mfs-theme.css" in new_content:
+                new_content = theme_css_pattern.sub(r'\1\n  <link rel="stylesheet" href="assets/css/mfs-mobile.css?v=20261017">', new_content, count=1)
+
+            # 2. Update Header
+            if header_pattern.search(new_content):
+                new_content = header_pattern.sub(CANONICAL_HEADER, new_content, count=1)
             else:
                 no_header_count += 1
-                print(f"[{d}] No <header class='mfs-navbar'> found in: {fname}")
+
+            # 3. For worksheets.html or custom headers, ensure mobile toggle has menu pill
+            if 'class="mfs-mobile-toggle"' in new_content:
+                new_content = new_content.replace(
+                    '<button type="button" class="mfs-mobile-toggle" id="mfsMobileToggleBtn" title="Open Navigation Menu" aria-label="Toggle Menu">\n          <i class="fa-solid fa-bars"></i>\n        </button>',
+                    '<button type="button" class="mfs-menu-pill" id="mfsMobileToggleBtn" title="Open Navigation Menu" aria-label="Toggle Menu">\n          <i class="fa-solid fa-bars"></i>\n          <span>Menu</span>\n        </button>'
+                )
+
+            if new_content != content:
+                with open(fpath, "w", encoding="utf-8") as f:
+                    f.write(new_content)
+                updated_count += 1
 
         print(f"Directory {d}: Updated {updated_count} files, Skipped {skipped_count}, No header {no_header_count}")
 
-    print("Done unifying all navbars across the entire website!")
+    print("Done unifying all navbars and mobile stylesheets across the entire website!")
 
 if __name__ == "__main__":
     main()

@@ -4,7 +4,6 @@
    ========================================================================== */
 
 @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
-@import url('mfs-mobile.css');
 
 :root {
   /* Signature Primary Theme: Royal Oxford Sapphire (Default) */
@@ -1896,77 +1895,7 @@ a {
   .top-trust-items .top-trust-item:nth-child(2) { display: none; }
 }
 
-@media (max-width: 768px) {
-  .top-trust-items { display: none; }
-  .mfs-top-bar-inner { justify-content: flex-end; }
-}
-
 @media (max-width: 991px) {
-  .mfs-navbar {
-    position: relative !important;
-  }
-  .mfs-navbar-inner {
-    height: auto !important;
-    min-height: 68px;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    flex-wrap: wrap;
-    gap: 10px;
-    position: relative !important;
-  }
-  .mfs-nav-wrapper {
-    width: 100%;
-    overflow: visible !important;
-    order: 3;
-    padding-top: 4px;
-  }
-  .mfs-nav-wrapper::-webkit-scrollbar {
-    display: none;
-  }
-  .mfs-nav-menu {
-    flex-wrap: wrap !important;
-    white-space: normal !important;
-    padding-bottom: 2px;
-    gap: 4px 6px !important;
-  }
-  .mfs-nav-item {
-    position: static !important;
-  }
-  .mfs-dropdown-menu {
-    position: absolute !important;
-    left: 8px !important;
-    right: 8px !important;
-    width: auto !important;
-    min-width: 0 !important;
-    max-width: calc(100vw - 16px) !important;
-    top: 100% !important;
-    margin-top: 4px !important;
-    max-height: calc(85vh - 60px) !important;
-    overflow-y: auto !important;
-    -webkit-overflow-scrolling: touch !important;
-    box-shadow: 0 16px 36px rgba(11, 21, 40, 0.24), 0 0 0 1px rgba(0, 0, 0, 0.08) !important;
-    z-index: 10050 !important;
-  }
-  .mfs-dropdown-revision-hub {
-    left: 8px !important;
-    right: 8px !important;
-    width: auto !important;
-    min-width: 0 !important;
-    max-width: calc(100vw - 16px) !important;
-    padding: 14px !important;
-  }
-  .mfs-dropdown-compact {
-    left: auto !important;
-    right: 8px !important;
-    width: auto !important;
-    min-width: 250px !important;
-    max-width: min(320px, calc(100vw - 16px)) !important;
-  }
-  .mfs-revision-grid {
-    display: grid !important;
-    grid-template-columns: repeat(3, 1fr) !important;
-    gap: 12px !important;
-  }
   .mfs-hero-grid { grid-template-columns: 1fr; gap: 32px; }
   .mfs-features-grid { grid-template-columns: 1fr; }
   .faq-grid { grid-template-columns: 1fr; }
@@ -1975,13 +1904,6 @@ a {
   .topic-actions-group { width: 100%; justify-content: flex-start; }
   .directory-head-card { flex-direction: column; align-items: stretch; }
   .directory-search-wrapper { width: 100%; }
-}
-
-@media (max-width: 640px) {
-  .mfs-revision-grid {
-    grid-template-columns: 1fr !important;
-    gap: 12px !important;
-  }
 }
 
 /* ==========================================================================
@@ -3408,3 +3330,9 @@ body.dyslexia-mode .moat-badge {
     grid-template-columns: 1fr !important;
   }
 }
+
+/* ==========================================================================
+   MOBILE & TABLET SYSTEM IMPORT (PRIORITY CASCADE)
+   ========================================================================== */
+@import url('mfs-mobile.css');
+

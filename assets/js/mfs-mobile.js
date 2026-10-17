@@ -190,8 +190,9 @@
           <i class="fa-solid fa-glasses"></i>
           <span class="mobile-tint-swatch" id="mfsMobileTintSwatch"></span>
         </button>
-        <button type="button" class="mfs-mobile-toggle" id="mfsMobileToggleBtn" title="Open Navigation Menu" aria-label="Toggle Menu">
+        <button type="button" class="mfs-menu-pill" id="mfsMobileToggleBtn" title="Open Navigation Menu" aria-label="Toggle Menu">
           <i class="fa-solid fa-bars"></i>
+          <span>Menu</span>
         </button>
       `;
       navInner.appendChild(controls);

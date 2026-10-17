@@ -148,9 +148,363 @@
       align-items: center;
       gap: 6px;
     }
+
+    /* Video Transport Navigation Bar */
+    .video-transport-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      margin-top: 16px;
+      background: #0b1329;
+      border: 1px solid #1e293b;
+      border-radius: 12px;
+      padding: 10px 14px;
+      box-shadow: 0 6px 24px rgba(0, 0, 0, 0.45);
+    }
+    .btn-transport {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      background: #131d38;
+      border: 1.5px solid #2563eb;
+      color: #f8fafc;
+      padding: 8px 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      text-decoration: none;
+      transition: all 0.18s ease;
+      min-width: 170px;
+      max-width: 250px;
+      text-align: left;
+    }
+    .btn-transport:hover:not(:disabled) {
+      background: #1d4ed8;
+      border-color: #60a5fa;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+    }
+    .btn-transport:disabled {
+      opacity: 0.35;
+      cursor: not-allowed;
+      border-color: #334155;
+      background: #0f172a;
+    }
+    .transport-label-group {
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      line-height: 1.25;
+    }
+    .transport-meta {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      font-weight: 800;
+      letter-spacing: 0.6px;
+      color: #38bdf8;
+    }
+    .transport-title {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #ffffff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .transport-center-controls {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex: 1;
+      justify-content: center;
+      max-width: 480px;
+    }
+    .transport-picker-wrap {
+      position: relative;
+      width: 100%;
+    }
+    .transport-picker-icon {
+      position: absolute;
+      left: 12px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #38bdf8;
+      font-size: 0.95rem;
+      pointer-events: none;
+    }
+    .station-video-dropdown {
+      width: 100%;
+      background: #070e1e;
+      border: 1.5px solid #334155;
+      color: #f8fafc;
+      padding: 9px 34px 9px 34px;
+      border-radius: 9px;
+      font-size: 0.88rem;
+      font-weight: 600;
+      cursor: pointer;
+      appearance: none;
+      -webkit-appearance: none;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%2394a3b8' viewBox='0 0 24 24'%3E%3Cpath d='M7 10l5 5 5-5z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 10px center;
+      background-size: 18px;
+    }
+    .station-video-dropdown:focus {
+      outline: none;
+      border-color: #38bdf8;
+      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+    }
+    .station-video-dropdown optgroup {
+      background: #0b1329;
+      color: #38bdf8;
+      font-weight: 800;
+    }
+    .station-video-dropdown option {
+      background: #070e1e;
+      color: #f8fafc;
+      font-weight: 500;
+      padding: 6px 10px;
+    }
+
+    /* Sidebar Tabs & Video Playlist */
+    .sidebar-tab-nav {
+      display: flex;
+      background: #070e1e;
+      padding: 4px;
+      border-radius: 10px;
+      margin-bottom: 14px;
+      border: 1px solid #1e293b;
+      gap: 4px;
+    }
+    .sidebar-tab-btn {
+      flex: 1;
+      padding: 8px 10px;
+      background: transparent;
+      border: none;
+      border-radius: 7px;
+      color: #94a3b8;
+      font-size: 0.84rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: all 0.15s ease;
+    }
+    .sidebar-tab-btn.active {
+      background: #1e293b;
+      color: #38bdf8;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    }
+    .sidebar-tab-btn:hover:not(.active) {
+      color: #ffffff;
+      background: rgba(255, 255, 255, 0.04);
+    }
+    .badge-count {
+      background: #2563eb;
+      color: #ffffff;
+      font-size: 0.7rem;
+      padding: 1px 6px;
+      border-radius: 10px;
+      font-weight: 800;
+    }
+    .playlist-filter-bar {
+      display: flex;
+      gap: 5px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+    .filter-chip {
+      background: #131d38;
+      border: 1px solid #1e293b;
+      color: #94a3b8;
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 4px 8px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.15s ease;
+    }
+    .filter-chip:hover {
+      color: #ffffff;
+      border-color: #3b82f6;
+    }
+    .filter-chip.active {
+      background: #2563eb;
+      border-color: #38bdf8;
+      color: #ffffff;
+    }
+    .playlist-items-scroll {
+      max-height: 490px;
+      overflow-y: auto;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      padding-right: 4px;
+    }
+    .playlist-items-scroll::-webkit-scrollbar {
+      width: 5px;
+    }
+    .playlist-items-scroll::-webkit-scrollbar-track {
+      background: #070e1e;
+      border-radius: 4px;
+    }
+    .playlist-items-scroll::-webkit-scrollbar-thumb {
+      background: #334155;
+      border-radius: 4px;
+    }
+    .playlist-item-card {
+      display: flex;
+      gap: 10px;
+      padding: 9px;
+      border-radius: 10px;
+      background: #0b1329;
+      border: 1px solid #1e293b;
+      cursor: pointer;
+      text-decoration: none;
+      color: #cbd5e1;
+      transition: all 0.15s ease;
+      align-items: center;
+      position: relative;
+    }
+    .playlist-item-card:hover {
+      background: #131f42;
+      border-color: #3b82f6;
+      transform: translateX(2px);
+    }
+    .playlist-item-card.active {
+      background: #122147;
+      border-color: #38bdf8;
+      box-shadow: 0 0 14px rgba(56, 189, 248, 0.22);
+    }
+    .playlist-thumb-box {
+      width: 64px;
+      height: 40px;
+      border-radius: 6px;
+      overflow: hidden;
+      position: relative;
+      background: #020617;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid #1e293b;
+    }
+    .playlist-thumb-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    .playlist-thumb-duration {
+      position: absolute;
+      bottom: 2px;
+      right: 2px;
+      background: rgba(0, 0, 0, 0.85);
+      color: #f8fafc;
+      font-size: 0.6rem;
+      font-weight: 700;
+      padding: 1px 4px;
+      border-radius: 3px;
+      line-height: 1.2;
+    }
+    .playlist-info {
+      flex: 1;
+      min-width: 0;
+    }
+    .playlist-item-tag {
+      font-size: 0.65rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #38bdf8;
+      display: block;
+      margin-bottom: 2px;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .playlist-item-title {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: #ffffff;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      display: block;
+      line-height: 1.25;
+    }
+    .playlist-now-playing-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+      color: #38bdf8;
+      font-size: 0.62rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 3px;
+    }
+    .pulse-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #38bdf8;
+      box-shadow: 0 0 8px #38bdf8;
+      animation: pulseAnim 1.4s infinite ease-in-out;
+    }
+    @keyframes pulseAnim {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.35; transform: scale(0.65); }
+    }
+
+    /* Up Next Banner below player/pitfalls */
+    .up-next-prompt {
+      margin-top: 24px;
+      background: linear-gradient(135deg, #0b1329 0%, #131d38 100%);
+      border: 1.5px solid #2563eb;
+      border-radius: 12px;
+      padding: 16px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    }
+
     @media (max-width: 860px) {
       .video-details-grid {
         grid-template-columns: 1fr;
+      }
+      .video-transport-bar {
+        flex-direction: column;
+        gap: 10px;
+      }
+      .transport-center-controls {
+        width: 100%;
+        max-width: none;
+        order: 1;
+      }
+      .btn-transport-prev, .btn-transport-next {
+        width: 100%;
+        max-width: none;
+        min-width: 0;
+        justify-content: center;
+      }
+      .btn-transport-prev {
+        order: 2;
+      }
+      .btn-transport-next {
+        order: 3;
+      }
+      .up-next-prompt {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .up-next-prompt button {
+        width: 100%;
+        justify-content: center;
       }
     }
   </style>
@@ -351,6 +705,34 @@
       <div class="video-main-player-wrap" id="mainPlayerContainer">
         <!-- Rendered by JavaScript -->
       </div>
+
+      <!-- Video Transport & Quick Next/Prev Navigation Bar -->
+      <div class="video-transport-bar" id="videoTransportBar">
+        <button type="button" class="btn-transport btn-transport-prev" id="btnPrevVideo" onclick="window.MFS_STATION.prev()" title="Previous Video (Shift + P)">
+          <i class="fa-solid fa-backward-step"></i>
+          <div class="transport-label-group">
+            <span class="transport-meta"><i class="fa-solid fa-arrow-left"></i> Previous Video</span>
+            <span class="transport-title" id="prevVideoTitle">—</span>
+          </div>
+        </button>
+
+        <div class="transport-center-controls">
+          <div class="transport-picker-wrap">
+            <i class="fa-solid fa-film transport-picker-icon"></i>
+            <select id="stationVideoPicker" class="station-video-dropdown" onchange="window.MFS_STATION.load(this.value)" aria-label="Select Video Walkthrough">
+              <!-- Dynamically populated -->
+            </select>
+          </div>
+        </div>
+
+        <button type="button" class="btn-transport btn-transport-next" id="btnNextVideo" onclick="window.MFS_STATION.next()" title="Next Video (Shift + N)">
+          <div class="transport-label-group" style="text-align:right;">
+            <span class="transport-meta">Next Video <i class="fa-solid fa-arrow-right"></i></span>
+            <span class="transport-title" id="nextVideoTitle">—</span>
+          </div>
+          <i class="fa-solid fa-forward-step"></i>
+        </button>
+      </div>
     </div>
   </section>
 
@@ -384,26 +766,69 @@
           <li><strong style="color:#f8fafc;">Unit Omission:</strong> Forgetting money symbols (£ or p) or square units (cm², m²).</li>
           <li><strong style="color:#f8fafc;">Reverse Sanity Checks:</strong> Skipping the reverse operation to verify answers (e.g. subtraction check for addition).</li>
         </ul>
+
+        <!-- Up Next in Series Interactive Prompt -->
+        <div class="up-next-prompt" id="upNextBanner">
+          <div style="display:flex; align-items:center; gap:14px;">
+            <div style="width:42px; height:42px; border-radius:10px; background:#2563eb; display:flex; align-items:center; justify-content:center; color:#fff; font-size:1.15rem; flex-shrink:0; box-shadow:0 4px 12px rgba(37,99,235,0.4);">
+              <i class="fa-solid fa-forward"></i>
+            </div>
+            <div>
+              <div style="font-size:0.72rem; font-weight:800; text-transform:uppercase; letter-spacing:0.7px; color:#38bdf8;">Next in Sequence</div>
+              <div id="upNextBannerTitle" style="font-size:1rem; font-weight:800; color:#fff; margin-top:2px;">Section B: Calculator (Full Walkthrough)</div>
+              <div id="upNextBannerMeta" style="font-size:0.8rem; color:#94a3b8; margin-top:1px;">Pearson Edexcel Functional Skills • 22 mins</div>
+            </div>
+          </div>
+          <button type="button" class="btn-play-next" id="upNextBannerBtn" onclick="window.MFS_STATION.next()" style="padding:10px 18px; background:#2563eb; color:#fff; border:none; border-radius:8px; font-weight:700; font-size:0.9rem; cursor:pointer; display:inline-flex; align-items:center; gap:8px; white-space:nowrap; transition:background 0.2s; box-shadow:0 4px 12px rgba(37,99,235,0.4);">
+            <span>Watch Next</span> <i class="fa-solid fa-circle-play"></i>
+          </button>
+        </div>
       </div>
 
       <!-- Right Sidebar -->
       <div class="video-sidebar-panel">
-        <div class="sidebar-card">
-          <div class="sidebar-card-title">
-            <i class="fa-solid fa-folder-open" style="color:#38bdf8;"></i> Topic Study Materials
+        <div class="sidebar-card" style="padding:18px;">
+          <!-- Tab Navigation: Playlist vs Materials -->
+          <div class="sidebar-tab-nav">
+            <button type="button" class="sidebar-tab-btn active" id="tabBtnPlaylist" onclick="window.MFS_STATION.setSidebarTab('playlist')">
+              <i class="fa-solid fa-list-ol"></i> Walkthroughs <span class="badge-count" id="sidebarPlaylistCount">11</span>
+            </button>
+            <button type="button" class="sidebar-tab-btn" id="tabBtnMaterials" onclick="window.MFS_STATION.setSidebarTab('materials')">
+              <i class="fa-solid fa-folder-open"></i> Materials
+            </button>
           </div>
-          <a href="#" target="_blank" rel="noopener" class="res-link-btn res-link-worksheet" id="sideWorksheetBtn">
-            <span id="sideWorksheetLabel"><i class="fa-regular fa-file-pdf"></i> Question Worksheet</span>
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-          </a>
-          <a href="#" target="_blank" rel="noopener" class="res-link-btn res-link-answers" id="sideAnswersBtn">
-            <span id="sideAnswersLabel"><i class="fa-solid fa-circle-check"></i> Worked Answers [M1/A1]</span>
-            <i class="fa-solid fa-arrow-up-right-from-square"></i>
-          </a>
-          <a href="#" class="res-link-btn res-link-revise" id="sideReviseBtn">
-            <span id="sideReviseLabel"><i class="fa-solid fa-book-open"></i> Full Revision Guide</span>
-            <i class="fa-solid fa-arrow-right"></i>
-          </a>
+
+          <!-- TAB 1: Video Playlist Drawer -->
+          <div id="sidebarPlaylistTab" class="sidebar-tab-pane">
+            <div class="playlist-filter-bar">
+              <button type="button" class="filter-chip active" data-filter="all" onclick="window.MFS_STATION.filterPlaylist('all', this)">All</button>
+              <button type="button" class="filter-chip" data-filter="past-papers" onclick="window.MFS_STATION.filterPlaylist('past-papers', this)">Past Papers</button>
+              <button type="button" class="filter-chip" data-filter="topics" onclick="window.MFS_STATION.filterPlaylist('topics', this)">Topics</button>
+              <button type="button" class="filter-chip" data-filter="slc" onclick="window.MFS_STATION.filterPlaylist('slc', this)">English SLC</button>
+            </div>
+            <div id="playlistContainer" class="playlist-items-scroll">
+              <!-- Dynamically populated list -->
+            </div>
+          </div>
+
+          <!-- TAB 2: Topic Study Materials -->
+          <div id="sidebarMaterialsTab" class="sidebar-tab-pane" style="display:none;">
+            <div class="sidebar-card-title" style="margin-bottom:12px;">
+              <i class="fa-solid fa-folder-open" style="color:#38bdf8;"></i> Topic Study Materials
+            </div>
+            <a href="#" target="_blank" rel="noopener" class="res-link-btn res-link-worksheet" id="sideWorksheetBtn">
+              <span id="sideWorksheetLabel"><i class="fa-regular fa-file-pdf"></i> Question Worksheet</span>
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+            <a href="#" target="_blank" rel="noopener" class="res-link-btn res-link-answers" id="sideAnswersBtn">
+              <span id="sideAnswersLabel"><i class="fa-solid fa-circle-check"></i> Worked Answers [M1/A1]</span>
+              <i class="fa-solid fa-arrow-up-right-from-square"></i>
+            </a>
+            <a href="#" class="res-link-btn res-link-revise" id="sideReviseBtn">
+              <span id="sideReviseLabel"><i class="fa-solid fa-book-open"></i> Full Revision Guide</span>
+              <i class="fa-solid fa-arrow-right"></i>
+            </a>
+          </div>
         </div>
 
         <div class="sidebar-card" style="background:#0c1b33; border: 1.5px solid #1d4ed8;">
@@ -498,11 +923,215 @@
   <script src="assets/js/mfs-tint.js"></script>
   <script>
     (function () {
-      const urlParams = new URLSearchParams(window.location.search);
-      let topic = urlParams.get('topic') || 'numbers-and-place-value';
-      
-      const topicTitles = {
-        'numbers-and-place-value': 'Numbers and Place Value',
+      'use strict';
+
+      const MFS_WALKTHROUGHS = [
+        {
+          id: 'edexcel-maths-l2-past-paper-10-section-a',
+          category: 'past-papers',
+          series: 'Pearson Edexcel Maths Level 2',
+          paper: 'Past Paper 10',
+          section: 'Section A: Non-Calculator (Q1–Q4)',
+          title: 'Past Paper 10 • Section A (Non-Calc)',
+          fullTitle: 'Past Paper 10 • Section A: Non-Calculator',
+          duration: '13m',
+          badge: 'Non-Calculator • 10 Marks',
+          type: 'youtube',
+          ytId: 'muSRa0fEsSs',
+          poster: 'videos/thumbnail_edexcel_maths_l2_paper_10_sec_a.png',
+          worksheet: 'https://passfunctionalskills.co.uk/app/uploads/2024/06/FS_Maths_Level_2_Past_Paper_10.pdf',
+          answers: 'assets/downloads/past-papers/edexcel/maths-level-2/FS_Maths_Level_2_Past_Paper_10_Model_Solution_MFS.pdf',
+          markScheme: 'https://passfunctionalskills.co.uk/app/uploads/2024/06/FS_Maths_Level_2_Past_Paper_10_MS.pdf',
+          companionSlug: 'edexcel-maths-l2-past-paper-10-section-b',
+          companionLabel: 'Section B: Calculator (Q1–Q12 • 22m)'
+        },
+        {
+          id: 'edexcel-maths-l2-past-paper-10-section-b',
+          category: 'past-papers',
+          series: 'Pearson Edexcel Maths Level 2',
+          paper: 'Past Paper 10',
+          section: 'Section B: Calculator (Q1–Q12)',
+          title: 'Past Paper 10 • Section B (Calculator)',
+          fullTitle: 'Past Paper 10 • Section B: Calculator',
+          duration: '22m',
+          badge: 'Calculator • 20 Marks',
+          type: 'youtube',
+          ytId: 'UGjVuqySTfE',
+          poster: 'videos/thumbnail_edexcel_maths_l2_paper_10_sec_b.png',
+          worksheet: 'https://passfunctionalskills.co.uk/app/uploads/2024/06/FS_Maths_Level_2_Past_Paper_10.pdf',
+          answers: 'assets/downloads/past-papers/edexcel/maths-level-2/FS_Maths_Level_2_Past_Paper_10_Model_Solution_MFS.pdf',
+          markScheme: 'https://passfunctionalskills.co.uk/app/uploads/2024/06/FS_Maths_Level_2_Past_Paper_10_MS.pdf',
+          companionSlug: 'edexcel-maths-l2-past-paper-10-section-a',
+          companionLabel: 'Section A: Non-Calculator (Q1–Q4 • 13m)'
+        },
+        {
+          id: 'edexcel-maths-l2-past-paper-9-section-a',
+          category: 'past-papers',
+          series: 'Pearson Edexcel Maths Level 2',
+          paper: 'Past Paper 9',
+          section: 'Section A: Non-Calculator (Q1–Q4)',
+          title: 'Past Paper 9 • Section A (Non-Calc)',
+          fullTitle: 'Past Paper 9 • Section A: Non-Calculator',
+          duration: '10m',
+          badge: 'Non-Calculator • 10 Marks',
+          type: 'youtube',
+          ytId: 'KvOZvxBZgL0',
+          poster: 'videos/thumbnail_edexcel_maths_l2_paper_9_sec_a.png',
+          worksheet: 'https://passfunctionalskills.co.uk/app/uploads/2024/01/Edexcel-FS-Maths-L2-Past-Paper-9.pdf',
+          answers: 'assets/downloads/past-papers/edexcel/maths-level-2/FS_Maths_Level_2_Past_Paper_9_Model_Solution_MFS.pdf',
+          markScheme: 'https://passfunctionalskills.co.uk/app/uploads/2024/01/Edexcel-FS-Maths-L2-Past-Paper-9-Mark-Scheme.pdf',
+          companionSlug: 'edexcel-maths-l2-past-paper-9-section-b',
+          companionLabel: 'Section B: Calculator (Q1–Q12 • 20m)'
+        },
+        {
+          id: 'edexcel-maths-l2-past-paper-9-section-b',
+          category: 'past-papers',
+          series: 'Pearson Edexcel Maths Level 2',
+          paper: 'Past Paper 9',
+          section: 'Section B: Calculator (Q1–Q12)',
+          title: 'Past Paper 9 • Section B (Calculator)',
+          fullTitle: 'Past Paper 9 • Section B: Calculator',
+          duration: '20m',
+          badge: 'Calculator • 20 Marks',
+          type: 'youtube',
+          ytId: 'O1Z5SINmpEE',
+          poster: 'videos/thumbnail_edexcel_maths_l2_paper_9_sec_b.png',
+          worksheet: 'https://passfunctionalskills.co.uk/app/uploads/2024/01/Edexcel-FS-Maths-L2-Past-Paper-9.pdf',
+          answers: 'assets/downloads/past-papers/edexcel/maths-level-2/FS_Maths_Level_2_Past_Paper_9_Model_Solution_MFS.pdf',
+          markScheme: 'https://passfunctionalskills.co.uk/app/uploads/2024/01/Edexcel-FS-Maths-L2-Past-Paper-9-Mark-Scheme.pdf',
+          companionSlug: 'edexcel-maths-l2-past-paper-9-section-a',
+          companionLabel: 'Section A: Non-Calculator (Q1–Q4 • 10m)'
+        },
+        {
+          id: 'edexcel-maths-l2-past-paper-8-section-a',
+          category: 'past-papers',
+          series: 'Pearson Edexcel Maths Level 2',
+          paper: 'Past Paper 8',
+          section: 'Section A: Non-Calculator (Q1–Q4)',
+          title: 'Past Paper 8 • Section A (Non-Calc)',
+          fullTitle: 'Past Paper 8 • Section A: Non-Calculator',
+          duration: '10m',
+          badge: 'Non-Calculator • 10 Marks',
+          type: 'youtube',
+          ytId: 'y0XyWFzcsjc',
+          poster: 'videos/thumbnail_edexcel_maths_l2_paper_8_sec_a.png',
+          worksheet: 'https://passfunctionalskills.co.uk/app/uploads/2024/01/Edexcel-FS-Maths-L2-Past-Paper-8.pdf',
+          answers: 'assets/downloads/past-papers/edexcel/maths-level-2/FS_Maths_Level_2_Past_Paper_8_Model_Solution_MFS.pdf',
+          markScheme: 'https://passfunctionalskills.co.uk/app/uploads/2024/01/Edexcel-FS-Maths-L2-Past-Paper-8-Mark-Scheme.pdf',
+          companionSlug: 'edexcel-maths-l2-past-paper-8-section-b',
+          companionLabel: 'Section B: Calculator (Q1–Q12 • 22m)'
+        },
+        {
+          id: 'edexcel-maths-l2-past-paper-8-section-b',
+          category: 'past-papers',
+          series: 'Pearson Edexcel Maths Level 2',
+          paper: 'Past Paper 8',
+          section: 'Section B: Calculator (Q1–Q12)',
+          title: 'Past Paper 8 • Section B (Calculator)',
+          fullTitle: 'Past Paper 8 • Section B: Calculator',
+          duration: '22m',
+          badge: 'Calculator • 20 Marks',
+          type: 'youtube',
+          ytId: '8xa6AdKD6jU',
+          poster: 'videos/thumbnail_edexcel_maths_l2_paper_8_sec_b.png',
+          worksheet: 'https://passfunctionalskills.co.uk/app/uploads/2024/01/Edexcel-FS-Maths-L2-Past-Paper-8.pdf',
+          answers: 'assets/downloads/past-papers/edexcel/maths-level-2/FS_Maths_Level_2_Past_Paper_8_Model_Solution_MFS.pdf',
+          markScheme: 'https://passfunctionalskills.co.uk/app/uploads/2024/01/Edexcel-FS-Maths-L2-Past-Paper-8-Mark-Scheme.pdf',
+          companionSlug: 'edexcel-maths-l2-past-paper-8-section-a',
+          companionLabel: 'Section A: Non-Calculator (Q1–Q4 • 10m)'
+        },
+        {
+          id: 'edexcel-maths-l2-past-paper-7-section-a',
+          category: 'past-papers',
+          series: 'Pearson Edexcel Maths Level 2',
+          paper: 'Past Paper 7',
+          section: 'Section A: Non-Calculator (Q1–Q4)',
+          title: 'Past Paper 7 • Section A (Non-Calc)',
+          fullTitle: 'Past Paper 7 • Section A: Non-Calculator',
+          duration: '11m',
+          badge: 'Non-Calculator • 10 Marks',
+          type: 'youtube',
+          ytId: 's6jrD3m22aE',
+          poster: 'videos/thumbnail_edexcel_maths_l2_paper_7_sec_a.png',
+          worksheet: 'https://passfunctionalskills.co.uk/app/uploads/2024/01/Edexcel-FS-Maths-Past-Paper-7.pdf',
+          answers: 'assets/downloads/past-papers/edexcel/maths-level-2/FS_Maths_Level_2_Past_Paper_7_Model_Solution_MFS.pdf',
+          markScheme: 'https://passfunctionalskills.co.uk/app/uploads/2024/01/Edexcel-FS-Maths-L2-Mark-Scheme-Past-Paper-7.pdf',
+          companionSlug: 'edexcel-maths-l2-past-paper-7-section-b',
+          companionLabel: 'Section B: Calculator (Q1–Q12 • 23m)'
+        },
+        {
+          id: 'edexcel-maths-l2-past-paper-7-section-b',
+          category: 'past-papers',
+          series: 'Pearson Edexcel Maths Level 2',
+          paper: 'Past Paper 7',
+          section: 'Section B: Calculator (Q1–Q12)',
+          title: 'Past Paper 7 • Section B (Calculator)',
+          fullTitle: 'Past Paper 7 • Section B: Calculator',
+          duration: '23m',
+          badge: 'Calculator • 20 Marks',
+          type: 'youtube',
+          ytId: 'aLmiVpvFv28',
+          poster: 'videos/thumbnail_edexcel_maths_l2_paper_7_sec_b.png',
+          worksheet: 'https://passfunctionalskills.co.uk/app/uploads/2024/01/Edexcel-FS-Maths-Past-Paper-7.pdf',
+          answers: 'assets/downloads/past-papers/edexcel/maths-level-2/FS_Maths_Level_2_Past_Paper_7_Model_Solution_MFS.pdf',
+          markScheme: 'https://passfunctionalskills.co.uk/app/uploads/2024/01/Edexcel-FS-Maths-L2-Mark-Scheme-Past-Paper-7.pdf',
+          companionSlug: 'edexcel-maths-l2-past-paper-7-section-a',
+          companionLabel: 'Section A: Non-Calculator (Q1–Q4 • 11m)'
+        },
+        {
+          id: 'numbers-and-place-value',
+          category: 'topics',
+          series: 'Functional Skills Maths Core Topics',
+          paper: 'Topic Masterclass',
+          section: 'Numbers & Place Value',
+          title: 'Numbers and Place Value',
+          fullTitle: 'Numbers and Place Value • Video Solution Walkthrough',
+          duration: '6m',
+          badge: 'Core Topic • 6 mins',
+          type: 'html5',
+          videoSrc: 'videos/Numbers_and_Place_Value_Video_Solution.mp4?v=4',
+          poster: 'videos/thumbnail_numbers_and_place_value.png',
+          worksheet: 'worksheets/numbers-and-place-value-worksheet.html',
+          answers: 'worksheets/numbers-and-place-value-answers.html',
+          markScheme: 'functional-skills-numbers-and-place-value.html'
+        },
+        {
+          id: 'slc-task1-presentation-model',
+          category: 'slc',
+          series: 'English Level 2 Speaking, Listening & Communicating',
+          paper: 'SLC Exemplar',
+          section: 'Task 1: Presentation',
+          title: 'SLC Task 1 • Presentation Model',
+          fullTitle: 'English Level 2 SLC • Task 1 Formal Presentation Model',
+          duration: '5m',
+          badge: 'English SLC • 5 mins',
+          type: 'html5',
+          videoSrc: 'videos/slc-task1-presentation-model.mp4',
+          poster: 'videos/thumbnail_numbers_and_place_value.png',
+          worksheet: 'slc-presentation-exemplar.html',
+          answers: 'slc-presentation-exemplar.html',
+          markScheme: 'slc-pass-criteria.html'
+        },
+        {
+          id: 'slc-task2-discussion-model',
+          category: 'slc',
+          series: 'English Level 2 Speaking, Listening & Communicating',
+          paper: 'SLC Exemplar',
+          section: 'Task 2: Discussion',
+          title: 'SLC Task 2 • Discussion Model',
+          fullTitle: 'English Level 2 SLC • Task 2 Formal Discussion Model',
+          duration: '5m',
+          badge: 'English SLC • 5 mins',
+          type: 'html5',
+          videoSrc: 'videos/slc-task2-discussion-model.mp4',
+          poster: 'videos/thumbnail_numbers_and_place_value.png',
+          worksheet: 'slc-discussion-exemplar.html',
+          answers: 'slc-discussion-exemplar.html',
+          markScheme: 'slc-pass-criteria.html'
+        }
+      ];
+
+      const TOPIC_FALLBACKS = {
         'ordering-numbers': 'Ordering Numbers',
         'addition-and-subtraction': 'Addition and Subtraction',
         'multiplication': 'Multiplication',
@@ -516,205 +1145,377 @@
         'area': 'Area of 2D Shapes',
         'volume': 'Volume & Capacity',
         'mean-median-mode-and-range': 'Averages: Mean, Median, Mode & Range',
-        'probability': 'Probability',
-        'edexcel-maths-l2-past-paper-10': 'Edexcel Maths Level 2 • Past Paper 10 (Section A: Non-Calculator)',
-        'edexcel-maths-l2-past-paper-10-section-a': 'Edexcel Maths Level 2 • Past Paper 10 (Section A: Non-Calculator)',
-        'edexcel-maths-l2-past-paper-10-section-b': 'Edexcel Maths Level 2 • Past Paper 10 (Section B: Calculator)',
-        'edexcel-maths-l2-past-paper-9': 'Edexcel Maths Level 2 • Past Paper 9 (Section A: Non-Calculator)',
-        'edexcel-maths-l2-past-paper-9-section-a': 'Edexcel Maths Level 2 • Past Paper 9 (Section A: Non-Calculator)',
-        'edexcel-maths-l2-past-paper-9-section-b': 'Edexcel Maths Level 2 • Past Paper 9 (Section B: Calculator)',
-        'edexcel-maths-l2-past-paper-8': 'Edexcel Maths Level 2 • Past Paper 8 (Section A: Non-Calculator)',
-        'edexcel-maths-l2-past-paper-8-section-a': 'Edexcel Maths Level 2 • Past Paper 8 (Section A: Non-Calculator)',
-        'edexcel-maths-l2-past-paper-8-section-b': 'Edexcel Maths Level 2 • Past Paper 8 (Section B: Calculator)',
-        'edexcel-maths-l2-past-paper-7': 'Edexcel Maths Level 2 • Past Paper 7 (Section A: Non-Calculator)',
-        'edexcel-maths-l2-past-paper-7-section-a': 'Edexcel Maths Level 2 • Past Paper 7 (Section A: Non-Calculator)',
-        'edexcel-maths-l2-past-paper-7-section-b': 'Edexcel Maths Level 2 • Past Paper 7 (Section B: Calculator)'
+        'probability': 'Probability'
       };
 
-      const cleanSlug = topic.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
-      const displayTitle = topicTitles[cleanSlug] || topic.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+      const ALIASES = {
+        'edexcel-maths-l2-past-paper-10': 'edexcel-maths-l2-past-paper-10-section-a',
+        'edexcel-maths-l2-past-paper-9': 'edexcel-maths-l2-past-paper-9-section-a',
+        'edexcel-maths-l2-past-paper-8': 'edexcel-maths-l2-past-paper-8-section-a',
+        'edexcel-maths-l2-past-paper-7': 'edexcel-maths-l2-past-paper-7-section-a'
+      };
 
-      document.title = `${displayTitle} — Video Solution Walkthrough | Master Functional Skills`;
-      document.getElementById('breadcrumbTopic').textContent = displayTitle;
-      document.getElementById('heroTitle').textContent = displayTitle;
-      document.getElementById('panelTitle').textContent = `What You Learn in ${displayTitle}`;
+      let currentSlug = 'numbers-and-place-value';
+      let currentFilter = 'all';
 
-      // Update Resource Links
-      document.getElementById('sideWorksheetBtn').href = `worksheets/${cleanSlug}-worksheet.html`;
-      document.getElementById('sideAnswersBtn').href = `worksheets/${cleanSlug}-answers.html`;
-      document.getElementById('sideReviseBtn').href = `functional-skills-${cleanSlug}.html`;
+      function normalizeSlug(slug) {
+        if (!slug) return 'numbers-and-place-value';
+        const clean = slug.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+        return ALIASES[clean] || clean;
+      }
 
-      const playerContainer = document.getElementById('mainPlayerContainer');
-      const switcherBar = document.getElementById('sectionSwitcherBar');
+      function findWalkthrough(slug) {
+        return MFS_WALKTHROUGHS.find(item => item.id === slug);
+      }
 
-      if (cleanSlug === 'numbers-and-place-value') {
-        playerContainer.innerHTML = `
-          <video controls autoplay playsinline poster="videos/thumbnail_numbers_and_place_value.png">
-            <source src="videos/Numbers_and_Place_Value_Video_Solution.mp4?v=4" type="video/mp4">
-            Your browser does not support HTML5 video.
-          </video>
-        `;
-      } else if (
-        cleanSlug === 'edexcel-maths-l2-past-paper-9' ||
-        cleanSlug === 'edexcel-maths-l2-past-paper-9-section-a' ||
-        cleanSlug === 'edexcel-maths-l2-past-paper-9-section-b'
-      ) {
-        const isSecB = cleanSlug === 'edexcel-maths-l2-past-paper-9-section-b';
-        const videoFile = isSecB
-          ? 'videos/Pearson_Edexcel_Maths_L2_Past_Paper_9_Section_B_Full_Walkthrough.mp4'
-          : 'videos/Pearson_Edexcel_Maths_L2_Past_Paper_9_Section_A_Walkthrough.mp4';
-        const posterFile = isSecB
-          ? 'videos/thumbnail_edexcel_maths_l2_paper_9_sec_b.png'
-          : 'videos/thumbnail_edexcel_maths_l2_paper_9_sec_a.png';
+      function getWalkthroughIndex(slug) {
+        return MFS_WALKTHROUGHS.findIndex(item => item.id === slug);
+      }
 
-        document.getElementById('sideWorksheetBtn').href = 'https://passfunctionalskills.co.uk/app/uploads/2024/01/Edexcel-FS-Maths-L2-Past-Paper-9.pdf';
-        document.getElementById('sideWorksheetLabel').innerHTML = '<i class="fa-regular fa-file-pdf"></i> Question Paper (PDF)';
-        document.getElementById('sideAnswersBtn').href = 'assets/downloads/past-papers/edexcel/maths-level-2/FS_Maths_Level_2_Past_Paper_9_Model_Solution_MFS.pdf';
-        document.getElementById('sideAnswersLabel').innerHTML = '<i class="fa-solid fa-lightbulb"></i> MFS Model Solution Booklet';
-        document.getElementById('sideReviseBtn').href = 'https://passfunctionalskills.co.uk/app/uploads/2024/01/Edexcel-FS-Maths-L2-Past-Paper-9-Mark-Scheme.pdf';
-        document.getElementById('sideReviseBtn').setAttribute('target', '_blank');
-        document.getElementById('sideReviseLabel').innerHTML = '<i class="fa-solid fa-clipboard-check"></i> Official Mark Scheme';
+      window.MFS_STATION = {
+        init: function () {
+          const urlParams = new URLSearchParams(window.location.search);
+          const initialTopic = normalizeSlug(urlParams.get('topic') || 'numbers-and-place-value');
 
-        if (switcherBar) {
-          switcherBar.style.display = 'flex';
-          switcherBar.innerHTML = `
-            <a href="video-solution.html?topic=edexcel-maths-l2-past-paper-9-section-a" style="padding:10px 18px; border-radius:10px; font-weight:800; font-size:0.92rem; text-decoration:none; display:inline-flex; align-items:center; gap:8px; border:1.5px solid ${!isSecB ? '#3b82f6' : '#334155'}; background:${!isSecB ? '#2563eb' : '#1e293b'}; color:#ffffff;">
-              <i class="fa-solid fa-circle-play"></i> Section A: Non-Calculator (Q1–Q4 • 10m)
-            </a>
-            <a href="video-solution.html?topic=edexcel-maths-l2-past-paper-9-section-b" style="padding:10px 18px; border-radius:10px; font-weight:800; font-size:0.92rem; text-decoration:none; display:inline-flex; align-items:center; gap:8px; border:1.5px solid ${isSecB ? '#3b82f6' : '#334155'}; background:${isSecB ? '#2563eb' : '#1e293b'}; color:#ffffff;">
-              <i class="fa-solid fa-calculator"></i> Section B: Calculator (Q1–Q12 • 20m)
-            </a>
-          `;
+          this.buildPicker();
+          this.buildPlaylist();
+          this.attachKeyboard();
+          this.load(initialTopic, false, false);
+
+          window.addEventListener('popstate', function () {
+            const params = new URLSearchParams(window.location.search);
+            const popTopic = normalizeSlug(params.get('topic') || 'numbers-and-place-value');
+            window.MFS_STATION.load(popTopic, false, true);
+          });
+        },
+
+        buildPicker: function () {
+          const picker = document.getElementById('stationVideoPicker');
+          if (!picker) return;
+
+          let html = '';
+          const groups = [
+            { key: 'past-papers', label: '📑 Edexcel Maths Level 2 Past Papers' },
+            { key: 'topics', label: '📐 Maths Topic Masterclasses' },
+            { key: 'slc', label: '🗣️ English Speaking & Listening Models' }
+          ];
+
+          groups.forEach(g => {
+            const items = MFS_WALKTHROUGHS.filter(w => w.category === g.key);
+            if (items.length > 0) {
+              html += `<optgroup label="${g.label}">`;
+              items.forEach(w => {
+                html += `<option value="${w.id}">${w.title} (${w.duration})</option>`;
+              });
+              html += `</optgroup>`;
+            }
+          });
+
+          // Add in-production topics
+          html += `<optgroup label="⏳ Upcoming Topic Walkthroughs (In Production)">`;
+          Object.keys(TOPIC_FALLBACKS).forEach(key => {
+            html += `<option value="${key}">${TOPIC_FALLBACKS[key]}</option>`;
+          });
+          html += `</optgroup>`;
+
+          picker.innerHTML = html;
+        },
+
+        buildPlaylist: function () {
+          const container = document.getElementById('playlistContainer');
+          const countBadge = document.getElementById('sidebarPlaylistCount');
+          if (!container) return;
+
+          if (countBadge) {
+            countBadge.textContent = MFS_WALKTHROUGHS.length;
+          }
+
+          let html = '';
+          MFS_WALKTHROUGHS.forEach(w => {
+            const isHidden = (currentFilter !== 'all' && w.category !== currentFilter);
+            const posterSrc = w.poster || 'videos/thumbnail_numbers_and_place_value.png';
+            html += `
+              <div class="playlist-item-card" id="playlist-card-${w.id}" data-category="${w.category}" style="${isHidden ? 'display:none;' : ''}" onclick="window.MFS_STATION.load('${w.id}', true, true)">
+                <div class="playlist-thumb-box">
+                  <img src="${posterSrc}" alt="" class="playlist-thumb-img" onerror="this.src='videos/thumbnail_numbers_and_place_value.png';">
+                  <span class="playlist-thumb-duration">${w.duration}</span>
+                </div>
+                <div class="playlist-info">
+                  <span class="playlist-item-tag">${w.badge}</span>
+                  <span class="playlist-item-title">${w.title}</span>
+                  <div class="playlist-active-indicator" style="display:none;" id="playlist-active-${w.id}">
+                    <span class="playlist-now-playing-badge"><span class="pulse-dot"></span> NOW PLAYING</span>
+                  </div>
+                </div>
+              </div>
+            `;
+          });
+          container.innerHTML = html;
+        },
+
+        filterPlaylist: function (category, btn) {
+          currentFilter = category;
+          const chips = document.querySelectorAll('.playlist-filter-bar .filter-chip');
+          chips.forEach(c => c.classList.remove('active'));
+          if (btn) btn.classList.add('active');
+
+          const cards = document.querySelectorAll('.playlist-item-card');
+          cards.forEach(card => {
+            if (category === 'all' || card.getAttribute('data-category') === category) {
+              card.style.display = 'flex';
+            } else {
+              card.style.display = 'none';
+            }
+          });
+        },
+
+        setSidebarTab: function (tab) {
+          const btnPlaylist = document.getElementById('tabBtnPlaylist');
+          const btnMaterials = document.getElementById('tabBtnMaterials');
+          const panePlaylist = document.getElementById('sidebarPlaylistTab');
+          const paneMaterials = document.getElementById('sidebarMaterialsTab');
+
+          if (tab === 'playlist') {
+            btnPlaylist.classList.add('active');
+            btnMaterials.classList.remove('active');
+            panePlaylist.style.display = 'block';
+            paneMaterials.style.display = 'none';
+          } else {
+            btnMaterials.classList.add('active');
+            btnPlaylist.classList.remove('active');
+            panePlaylist.style.display = 'none';
+            paneMaterials.style.display = 'block';
+          }
+        },
+
+        load: function (slug, updateHistory = true, shouldAutoplay = true) {
+          const cleanSlug = normalizeSlug(slug);
+          currentSlug = cleanSlug;
+
+          const item = findWalkthrough(cleanSlug);
+          const currentIndex = getWalkthroughIndex(cleanSlug);
+
+          const playerContainer = document.getElementById('mainPlayerContainer');
+          const switcherBar = document.getElementById('sectionSwitcherBar');
+          const picker = document.getElementById('stationVideoPicker');
+
+          let displayTitle = '';
+          let badgeText = '<i class="fa-solid fa-video"></i> Official Video Solution';
+
+          if (item) {
+            displayTitle = item.fullTitle || item.title;
+            badgeText = `<i class="fa-solid fa-video"></i> ${item.badge}`;
+            document.title = `${displayTitle} — Video Solution Walkthrough | Master Functional Skills`;
+            document.getElementById('breadcrumbTopic').textContent = item.title;
+            document.getElementById('heroTitle').textContent = displayTitle;
+            document.getElementById('panelTitle').textContent = `What You Learn in ${item.title}`;
+
+            // Render Player
+            if (item.type === 'youtube') {
+              const autoplayParam = shouldAutoplay ? '1' : '0';
+              playerContainer.innerHTML = `
+                <div style="position:relative; width:100%; padding-bottom:56.25%; height:0; border-radius:14px; overflow:hidden; box-shadow:0 12px 30px rgba(0,0,0,0.6); border:1px solid #1e293b; background:#000;">
+                  <iframe style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;" src="https://www.youtube-nocookie.com/embed/${item.ytId}?rel=0&autoplay=${autoplayParam}" title="${displayTitle}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                </div>
+              `;
+            } else if (item.type === 'html5') {
+              const autoplayAttr = shouldAutoplay ? 'autoplay' : '';
+              playerContainer.innerHTML = `
+                <video id="html5StationVideo" controls ${autoplayAttr} playsinline poster="${item.poster || ''}">
+                  <source src="${item.videoSrc}" type="video/mp4">
+                  Your browser does not support HTML5 video.
+                </video>
+              `;
+              const v = document.getElementById('html5StationVideo');
+              if (v) {
+                v.addEventListener('ended', function () {
+                  window.MFS_STATION.next();
+                });
+              }
+            }
+
+            // Section Switcher Bar
+            if (switcherBar) {
+              if (item.companionSlug) {
+                const isSecB = item.id.includes('section-b');
+                const secASlug = isSecB ? item.companionSlug : item.id;
+                const secBSlug = isSecB ? item.id : item.companionSlug;
+
+                switcherBar.style.display = 'flex';
+                switcherBar.innerHTML = `
+                  <button type="button" onclick="window.MFS_STATION.load('${secASlug}', true, true)" style="padding:10px 18px; border-radius:10px; font-weight:800; font-size:0.92rem; cursor:pointer; display:inline-flex; align-items:center; gap:8px; border:1.5px solid ${!isSecB ? '#3b82f6' : '#334155'}; background:${!isSecB ? '#2563eb' : '#1e293b'}; color:#ffffff;">
+                    <i class="fa-solid fa-circle-play"></i> Section A: Non-Calculator
+                  </button>
+                  <button type="button" onclick="window.MFS_STATION.load('${secBSlug}', true, true)" style="padding:10px 18px; border-radius:10px; font-weight:800; font-size:0.92rem; cursor:pointer; display:inline-flex; align-items:center; gap:8px; border:1.5px solid ${isSecB ? '#3b82f6' : '#334155'}; background:${isSecB ? '#2563eb' : '#1e293b'}; color:#ffffff;">
+                    <i class="fa-solid fa-calculator"></i> Section B: Calculator
+                  </button>
+                `;
+              } else {
+                switcherBar.style.display = 'none';
+              }
+            }
+
+            // Update Side Materials
+            if (item.worksheet) {
+              document.getElementById('sideWorksheetBtn').href = item.worksheet;
+              document.getElementById('sideWorksheetLabel').innerHTML = '<i class="fa-regular fa-file-pdf"></i> Question Worksheet';
+            }
+            if (item.answers) {
+              document.getElementById('sideAnswersBtn').href = item.answers;
+              document.getElementById('sideAnswersLabel').innerHTML = '<i class="fa-solid fa-circle-check"></i> Worked Answers [M1/A1]';
+            }
+            if (item.markScheme) {
+              document.getElementById('sideReviseBtn').href = item.markScheme;
+              document.getElementById('sideReviseBtn').setAttribute('target', '_blank');
+              document.getElementById('sideReviseLabel').innerHTML = '<i class="fa-solid fa-clipboard-check"></i> Mark Scheme / Guide';
+            }
+
+          } else {
+            // Topic Fallback (In production)
+            displayTitle = TOPIC_FALLBACKS[cleanSlug] || cleanSlug.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
+            document.title = `${displayTitle} — Video Solution Walkthrough | Master Functional Skills`;
+            document.getElementById('breadcrumbTopic').textContent = displayTitle;
+            document.getElementById('heroTitle').textContent = displayTitle;
+            document.getElementById('panelTitle').textContent = `What You Learn in ${displayTitle}`;
+
+            if (switcherBar) switcherBar.style.display = 'none';
+
+            playerContainer.innerHTML = `
+              <div class="mfs-video-placeholder-card">
+                <div class="mfs-placeholder-icon-wrap">
+                  <i class="fa-solid fa-clapperboard"></i>
+                </div>
+                <span class="mfs-placeholder-badge">
+                  <i class="fa-solid fa-circle-play"></i> Video Walkthrough in Production
+                </span>
+                <h2 class="mfs-placeholder-heading" style="color:#fff; font-size:1.6rem; margin:6px 0;">${displayTitle}</h2>
+                <p class="mfs-placeholder-text">
+                  Our specialist Functional Skills tutor is recording the complete step-by-step video solution with Pearson Edexcel method marks [M1/A1], examiner trap alerts, and reverse sanity checks.
+                </p>
+                <div style="display:flex; gap:14px; flex-wrap:wrap; justify-content:center; margin-top:10px;">
+                  <a href="worksheets/${cleanSlug}-answers.html" target="_blank" rel="noopener" class="btn-modal-answers" style="padding:12px 22px; font-size:0.95rem;">
+                    <i class="fa-solid fa-circle-check"></i> Open Step-by-Step Worked Answers
+                  </a>
+                  <a href="worksheets/${cleanSlug}-worksheet.html" target="_blank" rel="noopener" class="btn-modal-sheet" style="padding:12px 22px; font-size:0.95rem;">
+                    <i class="fa-regular fa-file-pdf"></i> Open Question Worksheet
+                  </a>
+                </div>
+              </div>
+            `;
+
+            document.getElementById('sideWorksheetBtn').href = `worksheets/${cleanSlug}-worksheet.html`;
+            document.getElementById('sideAnswersBtn').href = `worksheets/${cleanSlug}-answers.html`;
+            document.getElementById('sideReviseBtn').href = `functional-skills-${cleanSlug}.html`;
+          }
+
+          document.getElementById('heroBadge').innerHTML = badgeText;
+
+          // Update Transport Buttons & Labels
+          const btnPrev = document.getElementById('btnPrevVideo');
+          const btnNext = document.getElementById('btnNextVideo');
+          const prevLabel = document.getElementById('prevVideoTitle');
+          const nextLabel = document.getElementById('nextVideoTitle');
+          const upNextBanner = document.getElementById('upNextBanner');
+          const upNextTitle = document.getElementById('upNextBannerTitle');
+          const upNextMeta = document.getElementById('upNextBannerMeta');
+
+          if (currentIndex !== -1) {
+            const prevIndex = (currentIndex - 1 + MFS_WALKTHROUGHS.length) % MFS_WALKTHROUGHS.length;
+            const nextIndex = (currentIndex + 1) % MFS_WALKTHROUGHS.length;
+            const prevItem = MFS_WALKTHROUGHS[prevIndex];
+            const nextItem = MFS_WALKTHROUGHS[nextIndex];
+
+            prevLabel.textContent = prevItem.title;
+            nextLabel.textContent = `${nextItem.title} (${nextItem.duration})`;
+            btnPrev.disabled = false;
+            btnNext.disabled = false;
+
+            if (upNextBanner && upNextTitle && upNextMeta) {
+              upNextBanner.style.display = 'flex';
+              upNextTitle.textContent = nextItem.fullTitle || nextItem.title;
+              upNextMeta.textContent = `${nextItem.series} • ${nextItem.duration}`;
+            }
+          } else {
+            const firstItem = MFS_WALKTHROUGHS[0];
+            prevLabel.textContent = 'Past Paper 10 • Sec A';
+            nextLabel.textContent = `${firstItem.title} (${firstItem.duration})`;
+            btnPrev.disabled = false;
+            btnNext.disabled = false;
+            if (upNextBanner) upNextBanner.style.display = 'none';
+          }
+
+          // Update Picker Value
+          if (picker) {
+            picker.value = cleanSlug;
+          }
+
+          // Update Playlist Active Highlights
+          const cards = document.querySelectorAll('.playlist-item-card');
+          cards.forEach(card => card.classList.remove('active'));
+          const indicators = document.querySelectorAll('.playlist-active-indicator');
+          indicators.forEach(ind => ind.style.display = 'none');
+
+          const activeCard = document.getElementById(`playlist-card-${cleanSlug}`);
+          const activeInd = document.getElementById(`playlist-active-${cleanSlug}`);
+          if (activeCard) {
+            activeCard.classList.add('active');
+            if (activeInd) activeInd.style.display = 'block';
+            activeCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+          }
+
+          // Push State
+          if (updateHistory) {
+            window.history.pushState(null, '', `?topic=${cleanSlug}`);
+          }
+        },
+
+        next: function () {
+          const currentIndex = getWalkthroughIndex(currentSlug);
+          let targetIndex = 0;
+          if (currentIndex !== -1) {
+            targetIndex = (currentIndex + 1) % MFS_WALKTHROUGHS.length;
+          }
+          const nextItem = MFS_WALKTHROUGHS[targetIndex];
+          if (nextItem) {
+            this.load(nextItem.id, true, true);
+          }
+        },
+
+        prev: function () {
+          const currentIndex = getWalkthroughIndex(currentSlug);
+          let targetIndex = MFS_WALKTHROUGHS.length - 1;
+          if (currentIndex !== -1) {
+            targetIndex = (currentIndex - 1 + MFS_WALKTHROUGHS.length) % MFS_WALKTHROUGHS.length;
+          }
+          const prevItem = MFS_WALKTHROUGHS[targetIndex];
+          if (prevItem) {
+            this.load(prevItem.id, true, true);
+          }
+        },
+
+        attachKeyboard: function () {
+          window.addEventListener('keydown', function (e) {
+            const tag = (e.target && e.target.tagName) ? e.target.tagName.toLowerCase() : '';
+            if (tag === 'input' || tag === 'textarea' || tag === 'select') return;
+
+            if (e.key === 'N' || (e.shiftKey && e.key === 'ArrowRight')) {
+              e.preventDefault();
+              window.MFS_STATION.next();
+            } else if (e.key === 'P' || (e.shiftKey && e.key === 'ArrowLeft')) {
+              e.preventDefault();
+              window.MFS_STATION.prev();
+            }
+          });
         }
+      };
 
-        const ytId = isSecB ? 'O1Z5SINmpEE' : 'KvOZvxBZgL0';
-        playerContainer.innerHTML = `
-          <div style="position:relative; width:100%; padding-bottom:56.25%; height:0; border-radius:14px; overflow:hidden; box-shadow:0 12px 30px rgba(0,0,0,0.6); border:1px solid #1e293b; background:#000;">
-            <iframe style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;" src="https://www.youtube-nocookie.com/embed/${ytId}?rel=0" title="${displayTitle}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-          </div>
-        `;
-      } else if (
-        cleanSlug === 'edexcel-maths-l2-past-paper-10' ||
-        cleanSlug === 'edexcel-maths-l2-past-paper-10-section-a' ||
-        cleanSlug === 'edexcel-maths-l2-past-paper-10-section-b'
-      ) {
-        const isSecB = cleanSlug === 'edexcel-maths-l2-past-paper-10-section-b';
-        const ytId = isSecB ? 'UGjVuqySTfE' : 'muSRa0fEsSs';
-
-        document.getElementById('sideWorksheetBtn').href = 'https://passfunctionalskills.co.uk/app/uploads/2024/06/FS_Maths_Level_2_Past_Paper_10.pdf';
-        document.getElementById('sideWorksheetLabel').innerHTML = '<i class="fa-regular fa-file-pdf"></i> Question Paper (PDF)';
-        document.getElementById('sideAnswersBtn').href = 'assets/downloads/past-papers/edexcel/maths-level-2/FS_Maths_Level_2_Past_Paper_10_Model_Solution_MFS.pdf';
-        document.getElementById('sideAnswersLabel').innerHTML = '<i class="fa-solid fa-lightbulb"></i> MFS Model Solution Booklet';
-        document.getElementById('sideReviseBtn').href = 'https://passfunctionalskills.co.uk/app/uploads/2024/06/FS_Maths_Level_2_Past_Paper_10_MS.pdf';
-        document.getElementById('sideReviseBtn').setAttribute('target', '_blank');
-        document.getElementById('sideReviseLabel').innerHTML = '<i class="fa-solid fa-clipboard-check"></i> Official Mark Scheme';
-
-        if (switcherBar) {
-          switcherBar.style.display = 'flex';
-          switcherBar.innerHTML = `
-            <a href="video-solution.html?topic=edexcel-maths-l2-past-paper-10-section-a" style="padding:10px 18px; border-radius:10px; font-weight:800; font-size:0.92rem; text-decoration:none; display:inline-flex; align-items:center; gap:8px; border:1.5px solid ${!isSecB ? '#3b82f6' : '#334155'}; background:${!isSecB ? '#2563eb' : '#1e293b'}; color:#ffffff;">
-              <i class="fa-solid fa-circle-play"></i> Section A: Non-Calculator (Q1–Q4 • 13m)
-            </a>
-            <a href="video-solution.html?topic=edexcel-maths-l2-past-paper-10-section-b" style="padding:10px 18px; border-radius:10px; font-weight:800; font-size:0.92rem; text-decoration:none; display:inline-flex; align-items:center; gap:8px; border:1.5px solid ${isSecB ? '#3b82f6' : '#334155'}; background:${isSecB ? '#2563eb' : '#1e293b'}; color:#ffffff;">
-              <i class="fa-solid fa-calculator"></i> Section B: Calculator (Q1–Q12 • 22m)
-            </a>
-          `;
-        }
-
-        playerContainer.innerHTML = `
-          <div style="position:relative; width:100%; padding-bottom:56.25%; height:0; border-radius:14px; overflow:hidden; box-shadow:0 12px 30px rgba(0,0,0,0.6); border:1px solid #1e293b; background:#000;">
-            <iframe style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;" src="https://www.youtube-nocookie.com/embed/${ytId}?rel=0" title="${displayTitle}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-          </div>
-        `;
-      } else if (
-        cleanSlug === 'edexcel-maths-l2-past-paper-8' ||
-        cleanSlug === 'edexcel-maths-l2-past-paper-8-section-a' ||
-        cleanSlug === 'edexcel-maths-l2-past-paper-8-section-b'
-      ) {
-        const isSecB = cleanSlug === 'edexcel-maths-l2-past-paper-8-section-b';
-        const ytId = isSecB ? '8xa6AdKD6jU' : 'y0XyWFzcsjc';
-
-        document.getElementById('sideWorksheetBtn').href = 'https://passfunctionalskills.co.uk/app/uploads/2024/01/Edexcel-FS-Maths-L2-Past-Paper-8.pdf';
-        document.getElementById('sideWorksheetLabel').innerHTML = '<i class="fa-regular fa-file-pdf"></i> Question Paper (PDF)';
-        document.getElementById('sideAnswersBtn').href = 'assets/downloads/past-papers/edexcel/maths-level-2/FS_Maths_Level_2_Past_Paper_8_Model_Solution_MFS.pdf';
-        document.getElementById('sideAnswersLabel').innerHTML = '<i class="fa-solid fa-lightbulb"></i> MFS Model Solution Booklet';
-        document.getElementById('sideReviseBtn').href = 'https://passfunctionalskills.co.uk/app/uploads/2024/01/Edexcel-FS-Maths-L2-Past-Paper-8-Mark-Scheme.pdf';
-        document.getElementById('sideReviseBtn').setAttribute('target', '_blank');
-        document.getElementById('sideReviseLabel').innerHTML = '<i class="fa-solid fa-clipboard-check"></i> Official Mark Scheme';
-
-        if (switcherBar) {
-          switcherBar.style.display = 'flex';
-          switcherBar.innerHTML = `
-            <a href="video-solution.html?topic=edexcel-maths-l2-past-paper-8-section-a" style="padding:10px 18px; border-radius:10px; font-weight:800; font-size:0.92rem; text-decoration:none; display:inline-flex; align-items:center; gap:8px; border:1.5px solid ${!isSecB ? '#3b82f6' : '#334155'}; background:${!isSecB ? '#2563eb' : '#1e293b'}; color:#ffffff;">
-              <i class="fa-solid fa-circle-play"></i> Section A: Non-Calculator (Q1–Q4 • 10m)
-            </a>
-            <a href="video-solution.html?topic=edexcel-maths-l2-past-paper-8-section-b" style="padding:10px 18px; border-radius:10px; font-weight:800; font-size:0.92rem; text-decoration:none; display:inline-flex; align-items:center; gap:8px; border:1.5px solid ${isSecB ? '#3b82f6' : '#334155'}; background:${isSecB ? '#2563eb' : '#1e293b'}; color:#ffffff;">
-              <i class="fa-solid fa-calculator"></i> Section B: Calculator (Q1–Q12 • 22m)
-            </a>
-          `;
-        }
-
-        playerContainer.innerHTML = `
-          <div style="position:relative; width:100%; padding-bottom:56.25%; height:0; border-radius:14px; overflow:hidden; box-shadow:0 12px 30px rgba(0,0,0,0.6); border:1px solid #1e293b; background:#000;">
-            <iframe style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;" src="https://www.youtube-nocookie.com/embed/${ytId}?rel=0" title="${displayTitle}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-          </div>
-        `;
-      } else if (
-        cleanSlug === 'edexcel-maths-l2-past-paper-7' ||
-        cleanSlug === 'edexcel-maths-l2-past-paper-7-section-a' ||
-        cleanSlug === 'edexcel-maths-l2-past-paper-7-section-b'
-      ) {
-        const isSecB = cleanSlug === 'edexcel-maths-l2-past-paper-7-section-b';
-        const ytId = isSecB ? 'aLmiVpvFv28' : 's6jrD3m22aE';
-
-        document.getElementById('sideWorksheetBtn').href = 'https://passfunctionalskills.co.uk/app/uploads/2024/01/Edexcel-FS-Maths-Past-Paper-7.pdf';
-        document.getElementById('sideWorksheetLabel').innerHTML = '<i class="fa-regular fa-file-pdf"></i> Question Paper (PDF)';
-        document.getElementById('sideAnswersBtn').href = 'assets/downloads/past-papers/edexcel/maths-level-2/FS_Maths_Level_2_Past_Paper_7_Model_Solution_MFS.pdf';
-        document.getElementById('sideAnswersLabel').innerHTML = '<i class="fa-solid fa-lightbulb"></i> MFS Model Solution Booklet';
-        document.getElementById('sideReviseBtn').href = 'https://passfunctionalskills.co.uk/app/uploads/2024/01/Edexcel-FS-Maths-L2-Mark-Scheme-Past-Paper-7.pdf';
-        document.getElementById('sideReviseBtn').setAttribute('target', '_blank');
-        document.getElementById('sideReviseLabel').innerHTML = '<i class="fa-solid fa-clipboard-check"></i> Official Mark Scheme';
-
-        if (switcherBar) {
-          switcherBar.style.display = 'flex';
-          switcherBar.innerHTML = `
-            <a href="video-solution.html?topic=edexcel-maths-l2-past-paper-7-section-a" style="padding:10px 18px; border-radius:10px; font-weight:800; font-size:0.92rem; text-decoration:none; display:inline-flex; align-items:center; gap:8px; border:1.5px solid ${!isSecB ? '#3b82f6' : '#334155'}; background:${!isSecB ? '#2563eb' : '#1e293b'}; color:#ffffff;">
-              <i class="fa-solid fa-circle-play"></i> Section A: Non-Calculator (Q1–Q4 • 11m)
-            </a>
-            <a href="video-solution.html?topic=edexcel-maths-l2-past-paper-7-section-b" style="padding:10px 18px; border-radius:10px; font-weight:800; font-size:0.92rem; text-decoration:none; display:inline-flex; align-items:center; gap:8px; border:1.5px solid ${isSecB ? '#3b82f6' : '#334155'}; background:${isSecB ? '#2563eb' : '#1e293b'}; color:#ffffff;">
-              <i class="fa-solid fa-calculator"></i> Section B: Calculator (Q1–Q12 • 23m)
-            </a>
-          `;
-        }
-
-        playerContainer.innerHTML = `
-          <div style="position:relative; width:100%; padding-bottom:56.25%; height:0; border-radius:14px; overflow:hidden; box-shadow:0 12px 30px rgba(0,0,0,0.6); border:1px solid #1e293b; background:#000;">
-            <iframe style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;" src="https://www.youtube-nocookie.com/embed/${ytId}?rel=0" title="${displayTitle}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-          </div>
-        `;
+      // Bootstrap station on load
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', function () {
+          window.MFS_STATION.init();
+        });
       } else {
-        playerContainer.innerHTML = `
-          <div class="mfs-video-placeholder-card">
-            <div class="mfs-placeholder-icon-wrap">
-              <i class="fa-solid fa-clapperboard"></i>
-            </div>
-            <span class="mfs-placeholder-badge">
-              <i class="fa-solid fa-circle-play"></i> Video Walkthrough in Production
-            </span>
-            <h2 class="mfs-placeholder-heading" style="color:#fff; font-size:1.6rem; margin:6px 0;">${displayTitle}</h2>
-            <p class="mfs-placeholder-text">
-              Our specialist Functional Skills tutor is recording the complete step-by-step video solution with Pearson Edexcel method marks [M1/A1], examiner trap alerts, and reverse sanity checks.
-            </p>
-            <div style="display:flex; gap:14px; flex-wrap:wrap; justify-content:center; margin-top:10px;">
-              <a href="worksheets/${cleanSlug}-answers.html" target="_blank" rel="noopener" class="btn-modal-answers" style="padding:12px 22px; font-size:0.95rem;">
-                <i class="fa-solid fa-circle-check"></i> Open Step-by-Step Worked Answers
-              </a>
-              <a href="worksheets/${cleanSlug}-worksheet.html" target="_blank" rel="noopener" class="btn-modal-sheet" style="padding:12px 22px; font-size:0.95rem;">
-                <i class="fa-regular fa-file-pdf"></i> Open Question Worksheet
-              </a>
-            </div>
-          </div>
-        `;
+        window.MFS_STATION.init();
       }
     })();
   </script>

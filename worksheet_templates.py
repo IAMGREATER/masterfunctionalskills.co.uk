@@ -103,13 +103,30 @@ def render_clean_answer_row(label, raw_box):
         {cleaned}
       </div>"""
 
+def resolve_guide_url(slug, back_url=None):
+    if back_url and not any(bad in back_url for bad in ['fdp-conversions', 'english-level-2-writing-blog', 'algebra', 'money-invoicing-payroll', 'division-and-remainders']):
+        return back_url
+    if slug == 'fdp-conversions':
+        return "../functional-skills-fractions-decimals-and-percentages.html"
+    if slug in ('english-level-2-writing-blog', 'writing-blog', 'blog'):
+        return "../functional-skills-english-level-2-writing-blog.html"
+    if slug in ('formulas', 'algebra'):
+        return "../functional-skills-formulas.html"
+    if slug in ('division', 'division-and-remainders'):
+        return "../functional-skills-division.html"
+    if slug in ('money', 'money-invoicing-payroll'):
+        return "../functional-skills-money.html"
+    if back_url:
+        return back_url
+    return f"../functional-skills-{slug}.html"
+
 def render_worksheet(data):
     title = data['title']
     slug = data['slug']
     subject = data.get('subject', 'Mathematics')
     spec_codes = data.get('spec_codes', 'Pearson Edexcel Functional Skills')
     formula_hint = data.get('formula_hint', 'Show full step-by-step working out to secure method marks.')
-    back_url = data.get('back_url', f"../functional-skills-{slug}.html")
+    back_url = resolve_guide_url(slug, data.get('back_url'))
     ans_url = f"{slug}-answers.html"
     total_marks = data.get('total_marks', 18)
     
@@ -767,7 +784,7 @@ def render_answers(data):
     slug = data['slug']
     subject = data.get('subject', 'Mathematics')
     spec_codes = data.get('spec_codes', 'Pearson Edexcel Functional Skills')
-    back_url = data.get('back_url', f"../functional-skills-{slug}.html")
+    back_url = resolve_guide_url(slug, data.get('back_url'))
     sheet_url = f"{slug}-worksheet.html"
     total_marks = data.get('total_marks', 18)
     

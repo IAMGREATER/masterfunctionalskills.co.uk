@@ -1124,15 +1124,15 @@ def generate_worksheets_hub():
     <div class="explainer-col">
       <div class="explainer-icon icon-workout-bg"><i class="fa-solid fa-repeat"></i></div>
       <div class="explainer-text">
-        <h4>Style 1: Skill Workout (Repetition &amp; Fluency)</h4>
-        <p>Over 25 rapid calculation drills (a–h) with systematic number variation to eliminate hesitation, followed by realistic adult vocational applications.</p>
+        <h4>Style 1: Skill Workout (Quick Practice &amp; Speed)</h4>
+        <p>Over 25 step-by-step practice questions (a–h) to build confidence, followed by realistic everyday life and workplace tasks.</p>
       </div>
     </div>
     <div class="explainer-col">
       <div class="explainer-icon icon-exam-bg"><i class="fa-solid fa-file-shield"></i></div>
       <div class="explainer-text">
-        <h4>Style 2: Exam Practice Booklet (Pearson Reformed)</h4>
-        <p>Authentic Pearson Edexcel exam questions with official [M1][A1] mark scheme allocations, working boxes, and reverse calculation checks.</p>
+        <h4>Style 2: Exam Practice Booklet (Exam-Style Questions)</h4>
+        <p>Realistic exam questions with full mark schemes [M1/A1], official working space, and easy check-your-answer tips.</p>
       </div>
     </div>
   </div>

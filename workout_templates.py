@@ -29,6 +29,23 @@ def render_drill_grid(items, prefix="", suffix=""):
         </div>""")
     return "\n".join(cells)
 
+def resolve_guide_url(slug, back_url=None):
+    if back_url and not any(bad in back_url for bad in ['fdp-conversions', 'english-level-2-writing-blog', 'algebra', 'money-invoicing-payroll', 'division-and-remainders']):
+        return back_url
+    if slug == 'fdp-conversions':
+        return "../functional-skills-fractions-decimals-and-percentages.html"
+    if slug in ('english-level-2-writing-blog', 'writing-blog', 'blog'):
+        return "../functional-skills-english-level-2-writing-blog.html"
+    if slug in ('formulas', 'algebra'):
+        return "../functional-skills-formulas.html"
+    if slug in ('division', 'division-and-remainders'):
+        return "../functional-skills-division.html"
+    if slug in ('money', 'money-invoicing-payroll'):
+        return "../functional-skills-money.html"
+    if back_url:
+        return back_url
+    return f"../functional-skills-{slug}.html"
+
 def render_skill_workout(data):
     title = data['title']
     slug = data['slug']
@@ -38,7 +55,7 @@ def render_skill_workout(data):
     method_card = data.get('method_card', {})
     workout_blocks = data.get('workout_blocks', [])
     apply_questions = data.get('apply_questions', [])
-    back_url = data.get('back_url', f"../functional-skills-{slug}.html")
+    back_url = resolve_guide_url(slug, data.get('back_url'))
     practice_url = f"{slug}-worksheet.html"
     ans_url = f"{slug}-workout-answers.html"
 
@@ -799,6 +816,7 @@ def render_skill_workout_answers(data):
     level = data.get('level', 'Level 1 & Level 2')
     workout_blocks = data.get('workout_blocks', [])
     apply_questions = data.get('apply_questions', [])
+    rev_guide_url = resolve_guide_url(slug, data.get('back_url'))
     back_url = f"{slug}-workout.html"
     practice_ans_url = f"{slug}-answers.html"
 

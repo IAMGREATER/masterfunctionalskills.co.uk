@@ -2231,20 +2231,24 @@ p {
 
 .math-digit-slashed {
   position: relative;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   color: #94a3b8;
 }
 
 .math-digit-slashed::after {
   content: '';
   position: absolute;
-  left: 10%;
-  top: 15%;
-  width: 80%;
-  height: 70%;
-  border-top: 3px solid #dc2626;
-  transform: rotate(-45deg);
-  transform-origin: center;
+  top: 50%;
+  left: 50%;
+  width: 0.95em;
+  height: 3px;
+  background-color: #dc2626;
+  transform: translate(-50%, -50%) rotate(-50deg);
+  transform-origin: center center;
+  border-radius: 2px;
+  pointer-events: none;
 }
 
 /* Step-by-Step Breakdown Cards */

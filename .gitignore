@@ -20,9 +20,13 @@ test_*.html
 
 # Large video assets (>25MB Cloudflare Pages individual asset limit)
 videos/*.mp4
+videos/*.mp3
 videos/scene_*
 videos/test_*
 videos/concat_list.txt
+videos/Original_George_Voice_Videos_Backup/
+assets/video/
+assets/slc-exemplar/
 
 # Python byte-code and caches
 __pycache__/

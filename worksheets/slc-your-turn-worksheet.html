@@ -339,6 +339,131 @@
       color: #d97706;
     }
 
+    /* Video Exemplar Cinema Box */
+    .video-exemplar-card {
+      background: #0b1528;
+      border-radius: 12px;
+      padding: 20px;
+      color: #f8fafc;
+      margin-bottom: 28px;
+      box-shadow: 0 10px 25px -5px rgba(0,0,0,0.25);
+      border: 1px solid #1e293b;
+    }
+    .video-exemplar-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .video-exemplar-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #38bdf8;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .video-tabs {
+      display: flex;
+      gap: 8px;
+    }
+    .video-tab-btn {
+      background: #1e293b;
+      border: 1px solid #334155;
+      color: #cbd5e1;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+    .video-tab-btn:hover {
+      background: #334155;
+      color: #ffffff;
+    }
+    .video-tab-btn.active {
+      background: #2563eb;
+      border-color: #3b82f6;
+      color: #ffffff;
+    }
+    .video-screen-wrap {
+      position: relative;
+      border-radius: 8px;
+      overflow: hidden;
+      background: #000000;
+      aspect-ratio: 16 / 9;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+    }
+    .video-screen-wrap video {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+    .video-jump-bar {
+      margin-top: 14px;
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .jump-label {
+      font-size: 0.8rem;
+      color: #94a3b8;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-right: 4px;
+    }
+    .jump-btn {
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.15);
+      color: #f1f5f9;
+      font-size: 0.78rem;
+      padding: 4px 10px;
+      border-radius: 4px;
+      cursor: pointer;
+      transition: all 0.15s;
+    }
+    .jump-btn:hover {
+      background: #2563eb;
+      border-color: #2563eb;
+      color: #ffffff;
+    }
+    .download-pack-row {
+      margin-top: 16px;
+      padding-top: 14px;
+      border-top: 1px solid #1e293b;
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .download-btn {
+      background: #059669;
+      color: #ffffff !important;
+      text-decoration: none !important;
+      font-size: 0.82rem;
+      font-weight: 700;
+      padding: 6px 12px;
+      border-radius: 6px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      transition: background 0.2s;
+    }
+    .download-btn:hover {
+      background: #047857;
+    }
+    .download-btn-secondary {
+      background: #475569;
+    }
+    .download-btn-secondary:hover {
+      background: #334155;
+    }
+
+
     .tier-header {
       background: #f1f5f9;
       border-left: 4px solid #2563eb;

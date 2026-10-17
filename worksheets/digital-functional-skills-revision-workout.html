@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
-  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Master Functional Skills — Digital  Core : Devices, Cloud & Data Protection Skill Workout & Repetition Drills</title>
+  <title>Master Functional Skills — Digital Functional Skills Core Revision: Devices, Cloud & Data Protection Skill Workout & Repetition Drills</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     @page {
@@ -99,7 +98,151 @@
     .btn-action-practice:hover {
       background: #6d28d9;
     }
+    .nav-pill-group {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 8px;
+      padding: 3px;
+      margin-right: 12px;
+      vertical-align: middle;
+    }
+    .nav-pill-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 6px 0;
+      width: 115px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: #cbd5e1;
+      text-decoration: none;
+      transition: all 0.15s ease-in-out;
+      cursor: pointer;
+      white-space: nowrap;
+      user-select: none;
+      border: none;
+      background: transparent;
+      box-sizing: border-box;
+    }
+    .nav-pill-btn:hover:not(.active) {
+      background: rgba(255, 255, 255, 0.18);
+      color: #ffffff;
+      text-decoration: none;
+    }
+    .nav-pill-btn.active {
+      background: #2563eb;
+      color: #ffffff;
+      cursor: default;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+    }
+    .btn-action-mode,
+    .btn-action-practice,
+    .btn-action-answers,
+    .btn-action-sheet {
+      color: #ffffff !important;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none !important;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-right: 12px;
+      transition: background 0.2s;
+    }
+    .btn-action-practice {
+      background: #7c3aed;
+    }
+    .btn-action-practice:hover {
+      background: #6d28d9;
+      color: #ffffff !important;
+      text-decoration: none !important;
+    }
+    .btn-action-mode:hover,
+    .btn-action-answers:hover,
+    .btn-action-sheet:hover {
+      color: #ffffff !important;
+      text-decoration: none !important;
+      filter: brightness(0.9);
+    }
 
+    @media (max-width: 900px) {
+      .print-bar {
+        padding: 10px 14px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+      }
+      .print-bar > div:first-child {
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .print-bar > div:first-child a {
+        font-size: 0.85rem;
+        display: inline-flex;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .print-bar > div:last-child {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .print-bar > div:last-child > * {
+        margin-right: 0 !important;
+      }
+      .btn-action-mode,
+      .btn-action-practice,
+      .btn-action-answers,
+      .btn-action-sheet,
+      .btn-action-print {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+      }
+      .nav-pill-group {
+        margin-right: 0;
+      }
+      .nav-pill-btn {
+        width: 100px;
+        font-size: 0.82rem;
+        padding: 5px 0;
+      }
+    }
+    @media (max-width: 480px) {
+      .print-bar > div:last-child {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+      }
+      .nav-pill-group {
+        grid-column: span 2;
+        width: 100%;
+      }
+      .nav-pill-btn {
+        flex: 1;
+        width: auto;
+      }
+      .btn-action-mode,
+      .btn-action-practice,
+      .btn-action-answers,
+      .btn-action-sheet,
+      .btn-action-print {
+        justify-content: center;
+        width: 100%;
+      }
+    }
     @media print {
       .print-bar {
         display: none !important;
@@ -475,14 +618,17 @@
 </head>
 <body>
 
-  <!-- Top Action Navigation Bar -->
+        <!-- Top Action Navigation Bar -->
   <div class="print-bar">
     <div>
-      <a href="../functional-skills-digital-functional-skills-revision.html"><i class="fa-solid fa-arrow-left"></i> Back to Digital  Core : Devices, Cloud & Data Protection Revision Guide</a>
+      <a href="../digital-functional-skills-revision.html"><i class="fa-solid fa-arrow-left"></i> Back to Digital Functional Skills Core Revision: Devices, Cloud & Data Protection Revision Guide</a>
     </div>
     <div>
       <a href="digital-functional-skills-revision-worksheet.html" class="btn-action-practice"><i class="fa-solid fa-file-pen"></i> Switch to Exam Practice</a>
-      <a href="digital-functional-skills-revision-workout-answers.html" target="_blank" class="btn-action-answers"><i class="fa-solid fa-check-double"></i> View Workout Answers</a>
+      <div class="nav-pill-group">
+        <span class="nav-pill-btn active"><i class="fa-solid fa-file-lines"></i> Questions</span>
+        <a href="digital-functional-skills-revision-workout-answers.html" class="nav-pill-btn"><i class="fa-solid fa-check-double"></i> Answers</a>
+      </div>
       <button class="btn-action-print" onclick="window.print()"><i class="fa-solid fa-print"></i> Print / Save as PDF</button>
     </div>
   </div>
@@ -496,14 +642,14 @@
       </div>
       <div class="header-badges">
         <div class="badge-level">Level 1 & Level 2</div><br>
-        <span class="badge-spec">Ofqual / Pearson Edexcel: DFS.1 • DFS.2 • DFS.3 • DFS.4 • DFS.5 Reformed Specification</span>
+        <span class="badge-spec">Pearson Edexcel DFS: Devices, Cloud & Data Protection</span>
       </div>
     </div>
 
     <!-- Hero Title Banner -->
     <div class="hero-banner">
       <div>
-        <h1 class="hero-title">Digital  Core : Devices, Cloud & Data Protection Fluency Workout</h1>
+        <h1 class="hero-title">Digital Functional Skills Core Revision: Devices, Cloud & Data Protection Fluency Workout</h1>
         <div class="hero-subtitle">Section 1: Rapid Procedural Drills &bull; Section 2: Vocational Applications</div>
       </div>
       <div class="hero-tag">
@@ -516,17 +662,17 @@
     <div class="method-card">
       <div class="method-card-header">
         <i class="fa-solid fa-lightbulb"></i>
-        <span>Essential Principles & Methods: Digital  Core : Devices, Cloud & Data Protection</span>
+        <span>Storage Units, Cloud Storage & Backup Rules</span>
       </div>
       <div class="method-card-body">
         <ul class="method-points">
-          <li><i class='fa-solid fa-check text-emerald'></i> <span>Identify the mathematical operation required for Digital  Core : Devices, Cloud & Data Protection.</span></li>
-<li><i class='fa-solid fa-check text-emerald'></i> <span>Read the values carefully and check all units match before calculating.</span></li>
-<li><i class='fa-solid fa-check text-emerald'></i> <span>Use estimation to check that your answer is reasonable.</span></li>
-<li><i class='fa-solid fa-check text-emerald'></i> <span>Show all working steps clearly to ensure method marks [M1] are secured.</span></li>
-<li><i class='fa-solid fa-check text-emerald'></i> <span>Always check units: ensure money has 2 decimal places (£0.00) and units are labeled.</span></li>
+          <li><i class='fa-solid fa-check text-emerald'></i> <span>Memory hierarchy: 1 Kilobyte (KB) = 1,000 Bytes, 1 Megabyte (MB) = 1,000 KB, 1 Gigabyte (GB) = 1,000 MB, 1 Terabyte (TB) = 1,000 GB.</span></li>
+<li><i class='fa-solid fa-check text-emerald'></i> <span>Operating Systems (Windows, macOS, Linux, iOS, Android) manage hardware and run application software (Word, Excel, Chrome).</span></li>
+<li><i class='fa-solid fa-check text-emerald'></i> <span>Cloud storage allows synchronization across multiple devices, automatic revision history, and off-site disaster recovery.</span></li>
+<li><i class='fa-solid fa-check text-emerald'></i> <span>3-2-1 Backup Strategy: Keep 3 copies of your data, across 2 different media types, with 1 copy stored off-site in the cloud.</span></li>
+<li><i class='fa-solid fa-check text-emerald'></i> <span>Under UK GDPR, personal identifiable data (names, NHS numbers, bank details) must be stored securely and deleted when no longer required.</span></li>
         </ul>
-        <div class='method-calc-tip'><i class='fa-solid fa-calculator'></i> <strong>Calculator Strategy:</strong> On calculator questions, write down your calculation string before pressing enter to verify syntax.</div>
+        <div class='method-calc-tip'><i class='fa-solid fa-calculator'></i> <strong>Calculator Strategy:</strong> To convert GB to MB, multiply by 1,000. To convert MB to GB, divide by 1,000.</div>
       </div>
     </div>
 
@@ -542,14 +688,14 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 1</span>
-        <span class="block-q-desc">Core Procedural Drill 1: Foundation Operations (Digital  Core : Devices, Cloud & Data Protection)</span>
+        <span class="block-q-desc">Storage Capacity & Unit Conversions</span>
       </div>
-      <div class="workout-instruction">Work out the answers without a calculator:</div>
+      <div class="workout-instruction">Convert the storage units or answer the capacity questions:</div>
       <div class="drill-grid">
         
         <div class="drill-card">
           <div class="drill-letter">(a)</div>
-          <div class="drill-q">Basic drill 1: calculate baseline value</div>
+          <div class="drill-q">How many Megabytes (MB) in 4 Gigabytes (GB)?</div>
           <div class="drill-ans-box">
             <span class="drill-input-line"></span>
           </div>
@@ -557,7 +703,7 @@
 
         <div class="drill-card">
           <div class="drill-letter">(b)</div>
-          <div class="drill-q">Basic drill 2: evaluate expression</div>
+          <div class="drill-q">How many Gigabytes (GB) in 2 Terabytes (TB)?</div>
           <div class="drill-ans-box">
             <span class="drill-input-line"></span>
           </div>
@@ -565,7 +711,7 @@
 
         <div class="drill-card">
           <div class="drill-letter">(c)</div>
-          <div class="drill-q">Basic drill 3: simplify result</div>
+          <div class="drill-q">How many Kilobytes (KB) in 5 Megabytes (MB)?</div>
           <div class="drill-ans-box">
             <span class="drill-input-line"></span>
           </div>
@@ -573,7 +719,7 @@
 
         <div class="drill-card">
           <div class="drill-letter">(d)</div>
-          <div class="drill-q">Basic drill 4: apply standard rule</div>
+          <div class="drill-q">Convert 8,500 MB into Gigabytes (GB)</div>
           <div class="drill-ans-box">
             <span class="drill-input-line"></span>
           </div>
@@ -581,7 +727,7 @@
 
         <div class="drill-card">
           <div class="drill-letter">(e)</div>
-          <div class="drill-q">Basic drill 5: compute with whole numbers</div>
+          <div class="drill-q">Convert 500 GB into Terabytes (TB)</div>
           <div class="drill-ans-box">
             <span class="drill-input-line"></span>
           </div>
@@ -589,7 +735,23 @@
 
         <div class="drill-card">
           <div class="drill-letter">(f)</div>
-          <div class="drill-q">Basic drill 6: check intermediate result</div>
+          <div class="drill-q">Which is larger: 1.5 GB or 1,200 MB?</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+
+        <div class="drill-card">
+          <div class="drill-letter">(g)</div>
+          <div class="drill-q">Which is smaller: 750 KB or 1 MB?</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+
+        <div class="drill-card">
+          <div class="drill-letter">(h)</div>
+          <div class="drill-q">Number of 500 MB videos that fit on a 32 GB drive</div>
           <div class="drill-ans-box">
             <span class="drill-input-line"></span>
           </div>
@@ -600,14 +762,14 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 2</span>
-        <span class="block-q-desc">Core Procedural Drill 2: Applied Metric & Money Fluency</span>
+        <span class="block-q-desc">Hardware, OS & Software Classification</span>
       </div>
-      <div class="workout-instruction">Calculate the result with given currency or units:</div>
+      <div class="workout-instruction">Classify each item as Input Device, Output Device, Storage Device, or Operating System:</div>
       <div class="drill-grid">
         
         <div class="drill-card">
           <div class="drill-letter">(a)</div>
-          <div class="drill-q">Calculate with money values (£)</div>
+          <div class="drill-q">Barcode scanner</div>
           <div class="drill-ans-box">
             <span class="drill-input-line"></span>
           </div>
@@ -615,7 +777,7 @@
 
         <div class="drill-card">
           <div class="drill-letter">(b)</div>
-          <div class="drill-q">Calculate with metric length (metres)</div>
+          <div class="drill-q">Solid State Drive (SSD)</div>
           <div class="drill-ans-box">
             <span class="drill-input-line"></span>
           </div>
@@ -623,7 +785,7 @@
 
         <div class="drill-card">
           <div class="drill-letter">(c)</div>
-          <div class="drill-q">Calculate with weight quantities (kg)</div>
+          <div class="drill-q">Microsoft Windows 11</div>
           <div class="drill-ans-box">
             <span class="drill-input-line"></span>
           </div>
@@ -631,7 +793,7 @@
 
         <div class="drill-card">
           <div class="drill-letter">(d)</div>
-          <div class="drill-q">Calculate with capacity units (litres)</div>
+          <div class="drill-q">Laser printer</div>
           <div class="drill-ans-box">
             <span class="drill-input-line"></span>
           </div>
@@ -639,7 +801,7 @@
 
         <div class="drill-card">
           <div class="drill-letter">(e)</div>
-          <div class="drill-q">Calculate with elapsed time (hours)</div>
+          <div class="drill-q">Touchscreen monitor</div>
           <div class="drill-ans-box">
             <span class="drill-input-line"></span>
           </div>
@@ -647,7 +809,23 @@
 
         <div class="drill-card">
           <div class="drill-letter">(f)</div>
-          <div class="drill-q">Calculate with percentage factors</div>
+          <div class="drill-q">Apple iOS</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+
+        <div class="drill-card">
+          <div class="drill-letter">(g)</div>
+          <div class="drill-q">USB Flash Drive</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+
+        <div class="drill-card">
+          <div class="drill-letter">(h)</div>
+          <div class="drill-q">Biometric fingerprint reader</div>
           <div class="drill-ans-box">
             <span class="drill-input-line"></span>
           </div>
@@ -658,14 +836,14 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 3</span>
-        <span class="block-q-desc">Core Procedural Drill 3: Multi-Step & Level 2 Variations</span>
+        <span class="block-q-desc">Data Protection & Cloud Security Fluency</span>
       </div>
-      <div class="workout-instruction">Solve each problem showing clear intermediate steps:</div>
+      <div class="workout-instruction">State the correct technical term for each description:</div>
       <div class="drill-grid">
         
         <div class="drill-card">
           <div class="drill-letter">(a)</div>
-          <div class="drill-q">Multi-step procedure: Step 1 then Step 2</div>
+          <div class="drill-q">Law governing personal data privacy in the UK</div>
           <div class="drill-ans-box">
             <span class="drill-input-line"></span>
           </div>
@@ -673,7 +851,7 @@
 
         <div class="drill-card">
           <div class="drill-letter">(b)</div>
-          <div class="drill-q">Solve inverse relationship</div>
+          <div class="drill-q">Scramble data into unreadable code requiring a secret key to open</div>
           <div class="drill-ans-box">
             <span class="drill-input-line"></span>
           </div>
@@ -681,7 +859,7 @@
 
         <div class="drill-card">
           <div class="drill-letter">(c)</div>
-          <div class="drill-q">Compare two alternative outcomes</div>
+          <div class="drill-q">Verifying identity via password plus a mobile push notification</div>
           <div class="drill-ans-box">
             <span class="drill-input-line"></span>
           </div>
@@ -689,7 +867,23 @@
 
         <div class="drill-card">
           <div class="drill-letter">(d)</div>
-          <div class="drill-q">Calculate compound rate</div>
+          <div class="drill-q">Software that secretly logs keystrokes to steal passwords</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+
+        <div class="drill-card">
+          <div class="drill-letter">(e)</div>
+          <div class="drill-q">Fake website designed to look like a bank login page</div>
+          <div class="drill-ans-box">
+            <span class="drill-input-line"></span>
+          </div>
+        </div>
+
+        <div class="drill-card">
+          <div class="drill-letter">(f)</div>
+          <div class="drill-q">Private secure encrypted tunnel across the public internet</div>
           <div class="drill-ans-box">
             <span class="drill-input-line"></span>
           </div>
@@ -709,10 +903,10 @@
       <div class="apply-card">
         <div class="apply-card-head">
           <span class="apply-q-num">Question 1</span>
-          <span class="apply-context-tag"><i class="fa-solid fa-briefcase"></i> NHS Healthcare & Workplace Scenario</span>
+          <span class="apply-context-tag"><i class="fa-solid fa-briefcase"></i> NHS Mobile Care Worker</span>
           <span class="apply-marks">[3 Marks]</span>
         </div>
-        <div class="apply-stem">An NHS healthcare administrator manages resource scheduling involving <strong>Digital  Core : Devices, Cloud & Data Protection</strong>.<br>The baseline record requires evaluating three consecutive ward operations with values <strong>120, 180, and 240 units</strong>.<br>Calculate the combined outcome and determine if the total satisfies the threshold limit of <strong>500 units</strong>.</div>
+        <div class="apply-stem">A community district nurse visits patients at home using an NHS tablet computer.<br>The nurse needs to save <strong>12 high-resolution wound clinical photographs</strong> (each photo is <strong>25 MB</strong>) and <strong>3 patient assessment videos</strong> (each video is <strong>450 MB</strong>).<br>Calculate the total storage space required in Megabytes (MB), and state whether this data will fit onto a secure <strong>2 GB encrypted memory card</strong>.</div>
         <div class="apply-working-area">
           <div class="apply-working-label">Show your step-by-step working:</div>
           <div class="apply-working-lines">
@@ -725,30 +919,6 @@
             <div class="apply-ans-line">
               <span class="ans-label">Final Answer =</span>
               
-              <div class="ans-write-box"></div>
-              
-            </div>
-      </div>
-
-      <div class="apply-card">
-        <div class="apply-card-head">
-          <span class="apply-q-num">Question 2</span>
-          <span class="apply-context-tag"><i class="fa-solid fa-briefcase"></i> Commercial Trade & Logistics</span>
-          <span class="apply-marks">[3 Marks]</span>
-        </div>
-        <div class="apply-stem">A warehouse logistics supervisor reviews shipping schedules involving <strong>Digital  Core : Devices, Cloud & Data Protection</strong>.<br>Each pallet requires standard packaging costing <strong>£14.50</strong> plus a handling surcharge of <strong>12%</strong>.<br>Calculate the total cost to dispatch <strong>20 pallets</strong>.</div>
-        <div class="apply-working-area">
-          <div class="apply-working-label">Show your step-by-step working:</div>
-          <div class="apply-working-lines">
-            <div class="work-line"></div>
-            <div class="work-line"></div>
-            <div class="work-line"></div>
-          </div>
-        </div>
-        
-            <div class="apply-ans-line">
-              <span class="ans-label">Final Answer =</span>
-              <span class="unit-pfx">£</span>
               <div class="ans-write-box"></div>
               
             </div>

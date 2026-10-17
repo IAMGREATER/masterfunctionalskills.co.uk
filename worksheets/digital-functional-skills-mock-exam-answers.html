@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
-  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Master Functional Skills — Digital Functional Skills Mock Exam Practice: Formulas, Files & Security Answer Key & Mark Scheme (Level 1 & Level 2)</title>
+  <title>Master Functional Skills — Digital Functional Skills Mock Exam Practice: Word Processing, Calculations & Communication Answer Key & Mark Scheme (Level 1 & Level 2)</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     @page {
@@ -82,7 +81,151 @@
     .btn-action-sheet:hover {
       background: #1d4ed8;
     }
+    .nav-pill-group {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 8px;
+      padding: 3px;
+      margin-right: 12px;
+      vertical-align: middle;
+    }
+    .nav-pill-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 6px 0;
+      width: 115px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: #cbd5e1;
+      text-decoration: none;
+      transition: all 0.15s ease-in-out;
+      cursor: pointer;
+      white-space: nowrap;
+      user-select: none;
+      border: none;
+      background: transparent;
+      box-sizing: border-box;
+    }
+    .nav-pill-btn:hover:not(.active) {
+      background: rgba(255, 255, 255, 0.18);
+      color: #ffffff;
+      text-decoration: none;
+    }
+    .nav-pill-btn.active {
+      background: #059669;
+      color: #ffffff;
+      cursor: default;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+    }
+    .btn-action-mode,
+    .btn-action-practice,
+    .btn-action-answers,
+    .btn-action-sheet {
+      color: #ffffff !important;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none !important;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-right: 12px;
+      transition: background 0.2s;
+    }
+    .btn-action-practice {
+      background: #7c3aed;
+    }
+    .btn-action-practice:hover {
+      background: #6d28d9;
+      color: #ffffff !important;
+      text-decoration: none !important;
+    }
+    .btn-action-mode:hover,
+    .btn-action-answers:hover,
+    .btn-action-sheet:hover {
+      color: #ffffff !important;
+      text-decoration: none !important;
+      filter: brightness(0.9);
+    }
 
+    @media (max-width: 900px) {
+      .print-bar {
+        padding: 10px 14px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+      }
+      .print-bar > div:first-child {
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .print-bar > div:first-child a {
+        font-size: 0.85rem;
+        display: inline-flex;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .print-bar > div:last-child {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .print-bar > div:last-child > * {
+        margin-right: 0 !important;
+      }
+      .btn-action-mode,
+      .btn-action-practice,
+      .btn-action-answers,
+      .btn-action-sheet,
+      .btn-action-print {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+      }
+      .nav-pill-group {
+        margin-right: 0;
+      }
+      .nav-pill-btn {
+        width: 100px;
+        font-size: 0.82rem;
+        padding: 5px 0;
+      }
+    }
+    @media (max-width: 480px) {
+      .print-bar > div:last-child {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+      }
+      .nav-pill-group {
+        grid-column: span 2;
+        width: 100%;
+      }
+      .nav-pill-btn {
+        flex: 1;
+        width: auto;
+      }
+      .btn-action-mode,
+      .btn-action-practice,
+      .btn-action-answers,
+      .btn-action-sheet,
+      .btn-action-print {
+        justify-content: center;
+        width: 100%;
+      }
+    }
     @media print {
       .print-bar {
         display: none !important;
@@ -339,11 +482,16 @@
 </head>
 <body>
 
-  <div class="print-bar">
-    <a href="../digital-functional-skills-mock-exam.html"><i class="fa-solid fa-arrow-left"></i> Back to Digital Functional Skills Mock Exam Practice: Formulas, Files & Security Revision Guide</a>
+        <div class="print-bar">
     <div>
-      <a href="digital-functional-skills-mock-exam-workout-answers.html" class="btn-action-answers" style="background:#2563eb;"><i class="fa-solid fa-repeat"></i> Workout Answers</a>
-      <a href="digital-functional-skills-mock-exam-worksheet.html" class="btn-action-sheet"><i class="fa-solid fa-file-pen"></i> Open Exam Worksheet</a>
+      <a href="../digital-functional-skills-mock-exam.html"><i class="fa-solid fa-arrow-left"></i> Back to Digital Functional Skills Mock Exam Practice: Word Processing, Calculations & Communication Revision Guide</a>
+    </div>
+    <div>
+      <a href="digital-functional-skills-mock-exam-workout-answers.html" class="btn-action-answers" style="background:#2563eb; margin-right:12px;"><i class="fa-solid fa-repeat"></i> Workout Answers</a>
+      <div class="nav-pill-group">
+        <a href="digital-functional-skills-mock-exam-worksheet.html" class="nav-pill-btn"><i class="fa-solid fa-file-lines"></i> Questions</a>
+        <span class="nav-pill-btn active"><i class="fa-solid fa-check-double"></i> Answers</span>
+      </div>
       <button type="button" class="btn-action-print" onclick="window.print()"><i class="fa-solid fa-print"></i> Print / Save to PDF</button>
     </div>
   </div>
@@ -355,8 +503,8 @@
         <div class="brand-subtitle">Official Tutor Examiner Mark Scheme &amp; Model Solutions</div>
       </div>
       <div class="sheet-meta-badge">
-        <span class="topic-name">Digital Functional Skills Mock Exam Practice: Formulas, Files & Security</span>
-        <span class="spec-tag">Ofqual / Pearson Edexcel: DFS.1 • DFS.2 • DFS.3 • DFS.4 • DFS.5</span>
+        <span class="topic-name">Digital Functional Skills Mock Exam Practice: Word Processing, Calculations & Communication</span>
+        <span class="spec-tag">Ofqual / Pearson Edexcel: Pearson Edexcel DFS: Reformed Level 1 & Level 2 Full Benchmark</span>
       </div>
     </div>
 
@@ -373,67 +521,71 @@
 
     <div class="ans-card">
       <div class="ans-card-head">
-        <span class="ans-q-num">Question 1 (Spreadsheet Formulas: SUM, AVERAGE & Multiplication) Model Solution</span>
+        <span class="ans-q-num">Question 1 (Document Formatting & Dyslexia-Friendly Layout) Model Solution</span>
         <span class="ans-marks-badge">[2 Marks Total]</span>
       </div>
       <div class="ans-stem-quote">
-        In a clinic stock spreadsheet, cells <strong>C2 to C15</strong> contain the monthly costs of 14 sterile supply orders.<br>(a) Write the exact spreadsheet formula to calculate the <strong>total cost</strong> across cells C2 to C15.<br>(b) Write the exact formula to calculate the <strong>mean (average) cost</strong> across cells C2 to C15.
+        A trainee drafts an internal Health & Safety bulletin. Look at the unformatted text:<br><code>"ALL WAREHOUSE STAFF MUST WEAR HI-VIS VESTS AT ALL TIMES NO EXCEPTIONS ALSO HARD HATS ARE REQUIRED IN BAY 4 FOR MORE INFO CONTACT DAVE ON EXT 204"</code><br><br>State <strong>three document formatting techniques</strong> you would apply in a word processor to turn this into a professional, dyslexia-friendly staff notice.
       </div>
       <div class="mark-steps-box">
         <div class="step-title">Step-by-Step Marking Criteria:</div>
 
         <div class="step-row">
-          <span>1. (a) Total formula starting with '=' and colon range: =SUM(C2:C15)</span>
-          <span class="mark-code">[M1]</span>
+          <span>1. Technique 1: Replace all-caps shouting with sentence case and create a clear bold heading (H1)</span>
+          <span class="mark-code">[A1]</span>
         </div>
         <div class="step-row">
-          <span>2. (b) Mean formula starting with '=' and colon range: =AVERAGE(C2:C15)</span>
+          <span>2. Technique 2: Break rules into a bulleted list with 1.15–1.5 line spacing and left alignment (avoid justified text)</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+        <div class="step-row">
+          <span>3. Technique 3: Add contact details in a distinct shaded callout box at the bottom</span>
           <span class="mark-code">[A1]</span>
         </div>
       </div>
       <div class="final-award-box">
         <span class="award-label">Award Final Answer Mark:</span>
-        <span class="award-val">(a) =SUM(C2:C15) | (b) =AVERAGE(C2:C15)</span>
+        <span class="award-val">1. Bold headline in sentence case; 2. Bulleted list with 1.25 line spacing (left-aligned); 3. Shaded callout box for contact info.</span>
       </div>
       <div class="pitfall-box">
         <strong>⚠️ Examiner Trap Alert:</strong>
-        Omitting the leading '=' sign or writing =AVG(C2:C15) instead of the full word =AVERAGE(C2:C15).
+        Using full justification (which creates uneven rivers of white space difficult for dyslexic readers) or leaving text in block capitals.
       </div>
       <div class="reverse-check-box">
-        <strong>🔄 Reverse Sanity Check:</strong> Both formulas start with '=' and use a colon ':' for the contiguous cell range.
+        <strong>🔄 Reverse Sanity Check:</strong> Heading + Bulleted List + Left Align = Accessible design.
       </div>
     </div>
 
     <div class="ans-card">
       <div class="ans-card-head">
-        <span class="ans-q-num">Question 2 (Absolute Cell References & VAT Calculation) Model Solution</span>
+        <span class="ans-q-num">Question 2 (Spreadsheet Formulas: MAX, MIN & COUNT) Model Solution</span>
         <span class="ans-marks-badge">[2 Marks Total]</span>
       </div>
       <div class="ans-stem-quote">
-        Cell <strong>B4</strong> contains a net equipment price of <strong>£240.00</strong>, and cell <strong>F1</strong> contains the VAT rate of <strong>20%</strong>.<br>You want to write a formula in cell <strong>C4</strong> to calculate the VAT amount and then drag-fill (replicate) that formula down column C from C4 to C20.<br>Write the exact formula for cell <strong>C4</strong> using an <strong>absolute cell reference</strong> for cell F1.
+        In a surgical instruments tracking spreadsheet, cells <strong>D2 to D35</strong> contain the current stock counts of 34 different sterile toolkits.<br>(a) Write the exact formula to find the <strong>highest stock count</strong> in the range.<br>(b) Write the exact formula to find the <strong>lowest stock count</strong> in the range.<br>(c) Write the exact formula to <strong>count how many toolkits</strong> have numerical stock recorded.
       </div>
       <div class="mark-steps-box">
         <div class="step-title">Step-by-Step Marking Criteria:</div>
 
         <div class="step-row">
-          <span>1. Multiply relative cell B4 by cell F1 using '*' operator</span>
+          <span>1. (a) Highest value formula: =MAX(D2:D35)</span>
           <span class="mark-code">[M1]</span>
         </div>
         <div class="step-row">
-          <span>2. Lock cell F1 with dollar signs so it does not shift when dragged down: =B4*$F$1</span>
+          <span>2. (b) Lowest value formula: =MIN(D2:D35); (c) Count formula: =COUNT(D2:D35)</span>
           <span class="mark-code">[A1]</span>
         </div>
       </div>
       <div class="final-award-box">
         <span class="award-label">Award Final Answer Mark:</span>
-        <span class="award-val">=B4*$F$1</span>
+        <span class="award-val">(a) =MAX(D2:D35) | (b) =MIN(D2:D35) | (c) =COUNT(D2:D35)</span>
       </div>
       <div class="pitfall-box">
         <strong>⚠️ Examiner Trap Alert:</strong>
-        Writing =B4*F1 without '$' signs, which shifts to F2, F3, F4 when dragged down column C.
+        Using =HIGHEST() or =LOWEST() (invalid Excel function names).
       </div>
       <div class="reverse-check-box">
-        <strong>🔄 Reverse Sanity Check:</strong> The '$' before F and before 1 locks both column F and row 1.
+        <strong>🔄 Reverse Sanity Check:</strong> MAX, MIN, COUNT are standard uppercase spreadsheet functions.
       </div>
     </div>
 
@@ -444,75 +596,75 @@
 
     <div class="ans-card">
       <div class="ans-card-head">
-        <span class="ans-q-num">Question 3 (Logical IF Statements in a Training Tracker) Model Solution</span>
+        <span class="ans-q-num">Question 3 (Spreadsheet Data Sorting & Multi-Column Filtering) Model Solution</span>
         <span class="ans-marks-badge">[3 Marks Total]</span>
       </div>
       <div class="ans-stem-quote">
-        In a staff mandatory training spreadsheet, cell <strong>D5</strong> holds an employee's fire-safety test score (out of 100).<br>The pass mark is <strong>75 or above</strong>.<br>Write an <strong>=IF</strong> formula in cell <strong>E5</strong> that displays <strong>"Compliant"</strong> if D5 is 75 or higher, and <strong>"Retake Required"</strong> if it is below 75.
+        A clinic database spreadsheet contains 450 patient appointment rows across Columns A to E (Column A: Surname, Column B: NHS Number, Column C: Doctor, Column D: Clinic Room, Column E: Status).<br>Describe the exact step-by-step procedure to:<br>(1) Display only patients assigned to <strong>"Dr Sharma"</strong> whose status is <strong>"Confirmed"</strong>.<br>(2) Sort those filtered results <strong>alphabetically by Surname (A to Z)</strong>.
       </div>
       <div class="mark-steps-box">
         <div class="step-title">Step-by-Step Marking Criteria:</div>
 
         <div class="step-row">
-          <span>1. Set logical condition testing if D5 is at least 75: D5>=75</span>
+          <span>1. Step 1: Select header row (A1:E1) and click Data > Filter (funnel icon) to enable column filter arrows</span>
           <span class="mark-code">[M1]</span>
         </div>
         <div class="step-row">
-          <span>2. Set value_if_true in double quotes: "Compliant"</span>
+          <span>2. Step 2: Click Column C filter arrow, uncheck "Select All", and tick only "Dr Sharma"; then click Column E filter arrow and tick only "Confirmed"</span>
           <span class="mark-code">[M1]</span>
         </div>
         <div class="step-row">
-          <span>3. Set value_if_false in double quotes: =IF(D5>=75, "Compliant", "Retake Required")</span>
+          <span>3. Step 3: Click Column A filter arrow and select "Sort A to Z"</span>
           <span class="mark-code">[A1]</span>
         </div>
       </div>
       <div class="final-award-box">
         <span class="award-label">Award Final Answer Mark:</span>
-        <span class="award-val">=IF(D5>=75, "Compliant", "Retake Required")</span>
+        <span class="award-val">1. Enable Data Filter on row 1; 2. Filter Column C by "Dr Sharma" and Column E by "Confirmed"; 3. Sort Column A ascending (A to Z).</span>
       </div>
       <div class="pitfall-box">
         <strong>⚠️ Examiner Trap Alert:</strong>
-        Using >75 instead of >=75 (which would wrongly fail someone who scored exactly 75), or forgetting quotation marks around text strings.
+        Sorting only Column A without selecting the full table, which misaligns surnames from NHS numbers.
       </div>
       <div class="reverse-check-box">
-        <strong>🔄 Reverse Sanity Check:</strong> Test D5=75: 75>=75 is TRUE → returns "Compliant".
+        <strong>🔄 Reverse Sanity Check:</strong> Filter criteria applied first, then sort column.
       </div>
     </div>
 
     <div class="ans-card">
       <div class="ans-card-head">
-        <span class="ans-q-num">Question 4 (UK GDPR Email Security: CC vs BCC & File Encryption) Model Solution</span>
+        <span class="ans-q-num">Question 4 (Chart Selection & Presentation Requirements) Model Solution</span>
         <span class="ans-marks-badge">[3 Marks Total]</span>
       </div>
       <div class="ans-stem-quote">
-        A clinic administrator needs to email a monthly appointment update to <strong>85 private patients</strong> and also send an attached spreadsheet containing <strong>patient dates of birth and NHS numbers</strong> to the Practice Manager.<br>Explain:<br>(a) Which email address field (<strong>To, CC, or BCC</strong>) must be used for the 85 patients and why.<br>(b) One technical security measure required before emailing the sensitive patient spreadsheet.
+        A healthcare practice manager wants to present <strong>quarterly missed appointment rates</strong> across Q1, Q2, Q3, and Q4 to the Clinical Commissioning Board.<br>(a) State whether a <strong>column bar chart</strong> or a <strong>pie chart</strong> is more appropriate for comparing quarterly missed appointment counts over time, and give one reason.<br>(b) State <strong>two mandatory chart elements</strong> required by Pearson Edexcel examiners to achieve full marks.
       </div>
       <div class="mark-steps-box">
         <div class="step-title">Step-by-Step Marking Criteria:</div>
 
         <div class="step-row">
-          <span>1. (a) Use BCC (Blind Carbon Copy) for the 85 patients</span>
+          <span>1. (a) Column bar chart — clearly displays changes and trends across discrete time intervals (pie charts only show proportions of a whole at one moment)</span>
           <span class="mark-code">[M1]</span>
         </div>
         <div class="step-row">
-          <span>2. (a) Reason: Hides patients' personal email addresses from one another, preventing a UK GDPR data breach</span>
+          <span>2. (b) Element 1: Clear, descriptive chart title (e.g. "Quarterly Missed Appointments 2026") linking variables</span>
           <span class="mark-code">[A1]</span>
         </div>
         <div class="step-row">
-          <span>3. (b) Password-protect / encrypt the spreadsheet (and share the password via a separate channel such as SMS/telephone)</span>
+          <span>3. (b) Element 2: Correctly labeled vertical (y) and horizontal (x) axes with units (e.g. "Number of Patients" and "Quarter")</span>
           <span class="mark-code">[A1]</span>
         </div>
       </div>
       <div class="final-award-box">
         <span class="award-label">Award Final Answer Mark:</span>
-        <span class="award-val">(a) BCC — hides recipients' email addresses from each other under UK GDPR. (b) Encrypt/password-protect the spreadsheet and send the password via a separate channel.</span>
+        <span class="award-val">(a) Column bar chart — ideal for comparing discrete quarterly trends over time. (b) 1. Descriptive chart title; 2. Fully labeled X and Y axes with units.</span>
       </div>
       <div class="pitfall-box">
         <strong>⚠️ Examiner Trap Alert:</strong>
-        Putting 85 external patients in the 'CC' field, which exposes every patient's email address to all 84 other patients.
+        Forgetting axis labels or using a pie chart to display temporal trend progression.
       </div>
       <div class="reverse-check-box">
-        <strong>🔄 Reverse Sanity Check:</strong> BCC = Blind Carbon Copy (external privacy); Encryption = file confidentiality.
+        <strong>🔄 Reverse Sanity Check:</strong> Title + Labeled X/Y Axes + Appropriate Chart Type.
       </div>
     </div>
 
@@ -523,83 +675,91 @@
 
     <div class="ans-card">
       <div class="ans-card-head">
-        <span class="ans-q-num">Question 5 (Spotting Phishing Attacks & Malicious URLs) Model Solution</span>
+        <span class="ans-q-num">Question 5 (Professional Workplace Email & Formal Attachments) Model Solution</span>
         <span class="ans-marks-badge">[4 Marks Total]</span>
       </div>
       <div class="ans-stem-quote">
-        An accounts clerk receives this email:<br><strong>From:</strong> <code>security-alert@nhs-payrol-update.ru</code><br><strong>Subject:</strong> URGENT: Your NHS Pension Account Will Be Deleted in 2 Hours!<br><strong>Body:</strong> <em>'Dear User, click <u>http://bit.ly/3x99pQ</u> immediately and enter your staff login password and bank sort code to avoid suspension.'</em><br><br>Identify <strong>three red flags</strong> proving this email is a <strong>phishing attack</strong>, and state the <strong>correct workplace action</strong> the clerk should take.
+        You are an apprentice administrative officer. Draft a professional <strong>three-sentence formal email</strong> to your Department Head (Dr Patricia Evans) submitting the completed <strong>Quarterly Infection Audit Report</strong> (attached as a PDF).<br>Your email must include:<br>• A professional subject line.<br>• Formal greeting and sign-off.<br>• Mention of the attached report and a request for feedback by <strong>Friday at 4:00 PM</strong>.
       </div>
       <div class="mark-steps-box">
         <div class="step-title">Step-by-Step Marking Criteria:</div>
 
         <div class="step-row">
-          <span>1. Flag 1 (Spoofed/Suspicious Sender Domain): Misspelled 'payrol' and foreign '.ru' domain instead of official '@nhs.net'</span>
+          <span>1. Professional subject line: Subject: Quarterly Infection Audit Report — For Review [Attached PDF]</span>
           <span class="mark-code">[P1]</span>
         </div>
         <div class="step-row">
-          <span>2. Flag 2 (Artificial Urgency & Generic Greeting): 'Deleted in 2 Hours!' panic threat and impersonal 'Dear User'</span>
+          <span>2. Formal salutation: Dear Dr Evans,</span>
           <span class="mark-code">[P1]</span>
         </div>
         <div class="step-row">
-          <span>3. Flag 3 (Masked Unsecure Link & Credential Request): Unsecure 'http://' shortened link asking for password and bank details</span>
+          <span>3. Concise body: Please find attached the completed Quarterly Infection Audit Report for Q3. Could you please review the findings and share any feedback or amendments by Friday at 4:00 PM? Please let me know if you require any additional clinical data.</span>
           <span class="mark-code">[M1]</span>
         </div>
         <div class="step-row">
-          <span>4. Correct Action: Do NOT click the link or reply; report the email immediately to the IT Security Helpdesk using the Report Phishing button</span>
+          <span>4. Professional sign-off: Kind regards, / Yours sincerely, [Your Name] (Apprentice Administrator)</span>
           <span class="mark-code">[A1]</span>
         </div>
       </div>
       <div class="final-award-box">
         <span class="award-label">Award Final Answer Mark:</span>
-        <span class="award-val">Red flags: 1. Misspelled '.ru' sender domain ('payrol'); 2. Artificial 2-hour panic deadline & 'Dear User'; 3. Masked http link requesting password. Action: Do not click; report immediately to IT Security.</span>
+        <span class="award-val">Subject: Quarterly Infection Audit Report Q3 [Attached]
+
+Dear Dr Evans,
+
+Please find attached the completed Quarterly Infection Audit Report for your review. Could you please review the data and provide any feedback by Friday at 4:00 PM? Please let me know if you require any further information.
+
+Kind regards,
+[Your Name]
+Apprentice Administrator</span>
       </div>
       <div class="pitfall-box">
         <strong>⚠️ Examiner Trap Alert:</strong>
-        Replying to the email to ask if it is genuine.
+        Informal greeting ("Hey Pat"), missing subject line, or failing to mention the attachment.
       </div>
       <div class="reverse-check-box">
-        <strong>🔄 Reverse Sanity Check:</strong> Check sender domain, urgency tone, URL protocol, and IT reporting protocol.
+        <strong>🔄 Reverse Sanity Check:</strong> Subject line + Salutation + Attachment reference + Action deadline + Sign-off.
       </div>
     </div>
 
     <div class="ans-card">
       <div class="ans-card-head">
-        <span class="ans-q-num">Question 6 (Cloud File Management, Naming Conventions & Version Control) Model Solution</span>
+        <span class="ans-q-num">Question 6 (Cybersecurity Incident Response: Ransomware Alert) Model Solution</span>
         <span class="ans-marks-badge">[4 Marks Total]</span>
       </div>
       <div class="ans-stem-quote">
-        A project team shares a folder containing these files:<br>• <code>rota.xlsx</code><br>• <code>rota_new_final2_johns_copy.xlsx</code><br>• <code>ward_budget_2026.pdf</code><br><br>(a) Explain why <code>rota_new_final2_johns_copy.xlsx</code> violates professional version-control standards, and write a clean, standardised filename for <strong>Version 2.1 of the Ward 4 Rota created on 14 October 2026</strong>.<br>(b) If the team wants 5 managers to view <code>rota.xlsx</code> on SharePoint <strong>without being able to accidentally delete or alter shift cells</strong>, what file permission level should be set?
+        While working in an NHS outpatient clinic, a computer screen suddenly turns black and displays this message:<br><code>"YOUR FILES HAVE BEEN ENCRYPTED! Send 0.5 Bitcoin within 24 hours or all patient data will be destroyed."</code><br><br>State the <strong>three immediate steps</strong> the healthcare worker must take, and state <strong>one action they must NEVER take</strong>.
       </div>
       <div class="mark-steps-box">
         <div class="step-title">Step-by-Step Marking Criteria:</div>
 
         <div class="step-row">
-          <span>1. (a) Critique: Ambiguous words like 'new_final2' make it impossible to sort chronologically or identify the latest authoritative file</span>
+          <span>1. Step 1: Immediately disconnect the computer from the network (unplug Ethernet cable and turn off Wi-Fi) to prevent ransomware spreading across hospital network</span>
           <span class="mark-code">[P1]</span>
         </div>
         <div class="step-row">
-          <span>2. (a) Standardised ISO filename: 2026-10-14_Ward4_Rota_v2.1.xlsx (or Ward4_Rota_2026-10-14_v2.1.xlsx)</span>
+          <span>2. Step 2: Leave the computer powered on as it is (do NOT restart or turn off completely, as volatile memory contains forensic decryption keys)</span>
           <span class="mark-code">[M1]</span>
         </div>
         <div class="step-row">
-          <span>3. (b) SharePoint permission level: Set to 'Read-Only' / 'View Only' (disable 'Can Edit')</span>
+          <span>3. Step 3: Immediately alert the IT Security Emergency Desk / Incident Response Team via phone or in person</span>
           <span class="mark-code">[P1]</span>
         </div>
         <div class="step-row">
-          <span>4. (b) Benefit: Allows all 5 managers to view and download the rota while preventing accidental overwrites</span>
+          <span>4. Prohibited action: NEVER pay the ransom, do NOT click the extortion links, and do NOT attempt to transfer files to a USB drive</span>
           <span class="mark-code">[A1]</span>
         </div>
       </div>
       <div class="final-award-box">
         <span class="award-label">Award Final Answer Mark:</span>
-        <span class="award-val">(a) Ambiguous naming causes version confusion; rename to '2026-10-14_Ward4_Rota_v2.1.xlsx'. (b) Set SharePoint access to 'View Only' / 'Read-Only'.</span>
+        <span class="award-val">1. Disconnect Ethernet / Wi-Fi immediately to isolate device; 2. Leave machine running without rebooting; 3. Call IT Security Desk immediately. NEVER pay the ransom or click suspicious links.</span>
       </div>
       <div class="pitfall-box">
         <strong>⚠️ Examiner Trap Alert:</strong>
-        Using spaces or slashes (14/10/2026) in filenames, which are invalid in operating system file paths.
+        Powering off the machine or plugging in a USB drive to try to "save" files (which infects the USB drive).
       </div>
       <div class="reverse-check-box">
-        <strong>🔄 Reverse Sanity Check:</strong> YYYY-MM-DD_Topic_vX.X.ext sorts chronologically and prevents ambiguity.
+        <strong>🔄 Reverse Sanity Check:</strong> Isolate network → Preserve evidence → Report to IT → Never pay.
       </div>
     </div>
 

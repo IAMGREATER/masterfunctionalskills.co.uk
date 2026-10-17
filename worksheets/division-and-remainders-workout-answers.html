@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Master Functional Skills — Division & Remainders Skill Workout Worked Answers &amp; Mark Scheme</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 12mm 15mm 12mm 15mm;
+    }
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #0f172a;
+      background: #f8fafc;
+      margin: 0;
+      padding: 0;
+      font-size: 10.5pt;
+      line-height: 1.5;
+    }
+    .print-bar {
+      background: #0b172d;
+      color: #f8fafc;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    }
+    .print-bar a {
+      color: #93c5fd;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .print-bar a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+    .btn-action-print {
+      background: #2563eb;
+      color: #ffffff;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s;
+    }
+    .btn-action-print:hover {
+      background: #1d4ed8;
+    }
+    .btn-action-workout {
+      background: #059669;
+      color: #ffffff;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-right: 10px;
+    }
+    .btn-action-workout:hover {
+      background: #047857;
+    }
+    .nav-pill-group {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 8px;
+      padding: 3px;
+      margin-right: 12px;
+      vertical-align: middle;
+    }
+    .nav-pill-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 6px 0;
+      width: 115px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: #cbd5e1;
+      text-decoration: none;
+      transition: all 0.15s ease-in-out;
+      cursor: pointer;
+      white-space: nowrap;
+      user-select: none;
+      border: none;
+      background: transparent;
+      box-sizing: border-box;
+    }
+    .nav-pill-btn:hover:not(.active) {
+      background: rgba(255, 255, 255, 0.18);
+      color: #ffffff;
+      text-decoration: none;
+    }
+    .nav-pill-btn.active {
+      background: #059669;
+      color: #ffffff;
+      cursor: default;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+    }
+    .btn-action-mode,
+    .btn-action-practice,
+    .btn-action-answers,
+    .btn-action-sheet {
+      color: #ffffff !important;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none !important;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-right: 12px;
+      transition: background 0.2s;
+    }
+    .btn-action-practice {
+      background: #7c3aed;
+    }
+    .btn-action-practice:hover {
+      background: #6d28d9;
+      color: #ffffff !important;
+      text-decoration: none !important;
+    }
+    .btn-action-mode:hover,
+    .btn-action-answers:hover,
+    .btn-action-sheet:hover {
+      color: #ffffff !important;
+      text-decoration: none !important;
+      filter: brightness(0.9);
+    }
+
+    @media (max-width: 900px) {
+      .print-bar {
+        padding: 10px 14px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+      }
+      .print-bar > div:first-child {
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .print-bar > div:first-child a {
+        font-size: 0.85rem;
+        display: inline-flex;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .print-bar > div:last-child {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .print-bar > div:last-child > * {
+        margin-right: 0 !important;
+      }
+      .btn-action-mode,
+      .btn-action-practice,
+      .btn-action-answers,
+      .btn-action-sheet,
+      .btn-action-print {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+      }
+      .nav-pill-group {
+        margin-right: 0;
+      }
+      .nav-pill-btn {
+        width: 100px;
+        font-size: 0.82rem;
+        padding: 5px 0;
+      }
+    }
+    @media (max-width: 480px) {
+      .print-bar > div:last-child {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+      }
+      .nav-pill-group {
+        grid-column: span 2;
+        width: 100%;
+      }
+      .nav-pill-btn {
+        flex: 1;
+        width: auto;
+      }
+      .btn-action-mode,
+      .btn-action-practice,
+      .btn-action-answers,
+      .btn-action-sheet,
+      .btn-action-print {
+        justify-content: center;
+        width: 100%;
+      }
+    }
+    @media print {
+      .print-bar {
+        display: none !important;
+      }
+      body {
+        background: #ffffff !important;
+      }
+      .page-sheet {
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+      }
+      .ans-table-card, .apply-sol-card {
+        page-break-inside: avoid;
+      }
+      .page-break-before {
+        page-break-before: always;
+      }
+    }
+
+    .page-sheet {
+      max-width: 900px;
+      margin: 24px auto;
+      background: #ffffff;
+      padding: 32px 40px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+    }
+
+    /* Header styling */
+    .sheet-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 2px solid #0f172a;
+      padding-bottom: 16px;
+      margin-bottom: 20px;
+    }
+    .brand-title {
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: #0b172d;
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .brand-title i {
+      color: #059669;
+    }
+    .sheet-sub {
+      font-size: 0.9rem;
+      color: #475569;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+    .header-badges {
+      text-align: right;
+    }
+    .badge-level {
+      background: #f0fdf4;
+      color: #166534;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.82rem;
+      border: 1px solid #bbf7d0;
+      display: inline-block;
+      margin-bottom: 4px;
+    }
+    .badge-spec {
+      font-size: 0.78rem;
+      color: #64748b;
+      font-weight: 600;
+    }
+
+    /* Title banner */
+    .hero-banner {
+      background: linear-gradient(135deg, #064e3b 0%, #047857 100%);
+      color: #ffffff;
+      padding: 18px 24px;
+      border-radius: 8px;
+      margin-bottom: 22px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .hero-title {
+      font-size: 1.45rem;
+      font-weight: 800;
+      margin: 0;
+      line-height: 1.2;
+    }
+    .hero-subtitle {
+      font-size: 0.88rem;
+      color: #a7f3d0;
+      margin-top: 4px;
+    }
+    .hero-tag {
+      background: rgba(255, 255, 255, 0.2);
+      border: 1px solid rgba(255, 255, 255, 0.35);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    /* Section divider */
+    .section-ribbon {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      margin: 28px 0 16px 0;
+    }
+    .section-ribbon-tag {
+      background: #064e3b;
+      color: #ffffff;
+      padding: 6px 16px;
+      border-radius: 4px;
+      font-size: 0.95rem;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+    .section-ribbon-line {
+      flex: 1;
+      height: 2px;
+      background: #cbd5e1;
+    }
+    .section-ribbon-info {
+      font-size: 0.85rem;
+      color: #64748b;
+      font-weight: 600;
+    }
+
+    /* Quick check grid */
+    .ans-table-card {
+      background: #ffffff;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 14px 18px;
+      margin-bottom: 16px;
+    }
+    .ans-table-head {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 8px;
+      margin-bottom: 10px;
+    }
+    .ans-badge {
+      background: #047857;
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 0.85rem;
+      padding: 2px 8px;
+      border-radius: 4px;
+    }
+    .ans-head-title {
+      font-weight: 800;
+      color: #0f172a;
+      font-size: 0.98rem;
+    }
+    .ans-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      gap: 8px 12px;
+    }
+    .ans-grid-cell {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 4px;
+      padding: 6px 10px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 0.88rem;
+    }
+    .cell-letter {
+      font-weight: 800;
+      color: #047857;
+    }
+    .cell-q {
+      color: #64748b;
+      font-size: 0.82rem;
+    }
+    .cell-val {
+      font-weight: 800;
+      color: #0f172a;
+      margin-left: auto;
+    }
+
+    /* Apply solutions */
+    .apply-sol-card {
+      background: #ffffff;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 18px 22px;
+      margin-bottom: 20px;
+    }
+    .apply-sol-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 10px;
+      margin-bottom: 10px;
+    }
+    .sol-q-num {
+      font-weight: 800;
+      color: #0f172a;
+      font-size: 1.05rem;
+      margin-right: 8px;
+    }
+    .sol-ctx {
+      background: #f1f5f9;
+      color: #334155;
+      font-size: 0.78rem;
+      font-weight: 700;
+      padding: 3px 8px;
+      border-radius: 4px;
+      border: 1px solid #cbd5e1;
+    }
+    .sol-marks {
+      font-weight: 800;
+      color: #dc2626;
+      font-size: 0.88rem;
+    }
+    .sol-stem-summary {
+      font-size: 0.92rem;
+      color: #475569;
+      margin-bottom: 14px;
+      line-height: 1.5;
+    }
+    .sol-steps-wrap {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 12px 16px;
+      margin-bottom: 12px;
+    }
+    .sol-step-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 6px 0;
+      border-bottom: 1px dashed #e2e8f0;
+      font-size: 0.92rem;
+    }
+    .sol-step-row:last-child {
+      border-bottom: none;
+    }
+    .step-text {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: #1e293b;
+      font-weight: 600;
+    }
+    .text-emerald {
+      color: #059669;
+      font-size: 0.8rem;
+    }
+    .step-mark {
+      font-weight: 800;
+      color: #dc2626;
+      background: #fef2f2;
+      border: 1px solid #fecaca;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 0.8rem;
+    }
+    .final-ans-box {
+      background: #ecfdf5;
+      border: 1.5px solid #6ee7b7;
+      border-radius: 6px;
+      padding: 10px 16px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 12px;
+    }
+    .final-lbl {
+      font-weight: 800;
+      color: #065f46;
+      font-size: 0.95rem;
+    }
+    .final-val {
+      font-weight: 900;
+      color: #064e3b;
+      font-size: 1.15rem;
+    }
+    .callout-box {
+      border-radius: 6px;
+      padding: 10px 14px;
+      display: flex;
+      align-items: flex-start;
+      gap: 10px;
+      font-size: 0.88rem;
+      margin-top: 8px;
+    }
+    .check-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      color: #1e40af;
+    }
+    .check-box i {
+      color: #2563eb;
+      margin-top: 3px;
+    }
+    .pitfall-box {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      color: #92400e;
+    }
+    .pitfall-box i {
+      color: #d97706;
+      margin-top: 3px;
+    }
+
+    /* Footer */
+    .sheet-footer {
+      margin-top: 30px;
+      padding-top: 14px;
+      border-top: 1px solid #e2e8f0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      color: #64748b;
+    }
+    .footer-links a {
+      color: #059669;
+      text-decoration: none;
+      font-weight: 600;
+      margin-left: 12px;
+    }
+  </style>
+</head>
+<body>
+
+        <!-- Top Action Navigation Bar -->
+  <div class="print-bar">
+    <div>
+      <a href="../functional-skills-division-and-remainders.html"><i class="fa-solid fa-arrow-left"></i> Back to Division & Remainders Revision Guide</a>
+    </div>
+    <div>
+      <a href="division-and-remainders-answers.html" class="btn-action-practice"><i class="fa-solid fa-file-shield"></i> Exam Mark Scheme</a>
+      <div class="nav-pill-group">
+        <a href="division-and-remainders-workout.html" class="nav-pill-btn"><i class="fa-solid fa-file-lines"></i> Questions</a>
+        <span class="nav-pill-btn active"><i class="fa-solid fa-check-double"></i> Answers</span>
+      </div>
+      <button class="btn-action-print" onclick="window.print()"><i class="fa-solid fa-print"></i> Print / Save as PDF</button>
+    </div>
+  </div>
+
+  <div class="page-sheet">
+    <!-- Sheet Header -->
+    <div class="sheet-header">
+      <div>
+        <div class="brand-title"><i class="fa-solid fa-circle-check"></i> MASTER FUNCTIONAL SKILLS</div>
+        <div class="sheet-sub">Tutor Model Solutions &amp; Step-by-Step Mark Scheme</div>
+      </div>
+      <div class="header-badges">
+        <div class="badge-level">Level 1 & Level 2</div><br>
+        <span class="badge-spec">Pearson Edexcel: L1.4 • L2.1</span>
+      </div>
+    </div>
+
+    <!-- Hero Title Banner -->
+    <div class="hero-banner">
+      <div>
+        <h1 class="hero-title">Division & Remainders Fluency Solutions</h1>
+        <div class="hero-subtitle">Official Step-by-Step Worked Answers with Method Marks Breakdown</div>
+      </div>
+      <div class="hero-tag">
+        <i class="fa-solid fa-check-double"></i> Complete Solutions
+      </div>
+    </div>
+
+    <!-- PART 1: WORKOUT QUICK CHECK -->
+    <div class="section-ribbon">
+      <span class="section-ribbon-tag">Part 1: Quick-Check Answer Key</span>
+      <div class="section-ribbon-line"></div>
+      <span class="section-ribbon-info">Quick marking key for procedural drilling questions</span>
+    </div>
+
+    
+      <div class="ans-table-card">
+        <div class="ans-table-head">
+          <span class="ans-badge">Q1</span>
+          <span class="ans-head-title">Short Division (Whole Numbers & Decimals)</span>
+        </div>
+        <div class="ans-grid">
+          
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(a)</span>
+              <span class="cell-q">456 ÷ 3 &rarr;</span>
+              <span class="cell-val">152</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(b)</span>
+              <span class="cell-q">728 ÷ 4 &rarr;</span>
+              <span class="cell-val">182</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(c)</span>
+              <span class="cell-q">945 ÷ 5 &rarr;</span>
+              <span class="cell-val">189</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(d)</span>
+              <span class="cell-q">876 ÷ 6 &rarr;</span>
+              <span class="cell-val">146</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(e)</span>
+              <span class="cell-q">1,248 ÷ 8 &rarr;</span>
+              <span class="cell-val">156</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(f)</span>
+              <span class="cell-q">2,466 ÷ 9 &rarr;</span>
+              <span class="cell-val">274</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(g)</span>
+              <span class="cell-q">£85.50 ÷ 5 &rarr;</span>
+              <span class="cell-val">£17.10</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(h)</span>
+              <span class="cell-q">£147.00 ÷ 6 &rarr;</span>
+              <span class="cell-val">£24.50</span>
+            </div>
+        </div>
+      </div>
+
+      <div class="ans-table-card">
+        <div class="ans-table-head">
+          <span class="ans-badge">Q2</span>
+          <span class="ans-head-title">Division with Remainders & Fractional Answers</span>
+        </div>
+        <div class="ans-grid">
+          
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(a)</span>
+              <span class="cell-q">43 ÷ 5 &rarr;</span>
+              <span class="cell-val">8 R 3</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(b)</span>
+              <span class="cell-q">67 ÷ 8 &rarr;</span>
+              <span class="cell-val">8 R 3</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(c)</span>
+              <span class="cell-q">85 ÷ 6 &rarr;</span>
+              <span class="cell-val">14 R 1</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(d)</span>
+              <span class="cell-q">94 ÷ 7 &rarr;</span>
+              <span class="cell-val">13 R 3</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(e)</span>
+              <span class="cell-q">125 ÷ 4 &rarr;</span>
+              <span class="cell-val">31 R 1 (or 31.25)</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(f)</span>
+              <span class="cell-q">150 ÷ 8 &rarr;</span>
+              <span class="cell-val">18 R 6 (or 18.75)</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(g)</span>
+              <span class="cell-q">200 ÷ 12 &rarr;</span>
+              <span class="cell-val">16 R 8</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(h)</span>
+              <span class="cell-q">350 ÷ 15 &rarr;</span>
+              <span class="cell-val">23 R 5</span>
+            </div>
+        </div>
+      </div>
+
+      <div class="ans-table-card">
+        <div class="ans-table-head">
+          <span class="ans-badge">Q3</span>
+          <span class="ans-head-title">Practical Contextual Rounding (Up or Down)</span>
+        </div>
+        <div class="ans-grid">
+          
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(a)</span>
+              <span class="cell-q">75 students go on a trip. Each minibus holds 16. How many minibuses? &rarr;</span>
+              <span class="cell-val">5 minibuses (75 ÷ 16 = 4.68 → round UP)</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(b)</span>
+              <span class="cell-q">100 eggs placed in boxes of 6. How many full boxes? &rarr;</span>
+              <span class="cell-val">16 full boxes (100 ÷ 6 = 16 R 4 → round DOWN)</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(c)</span>
+              <span class="cell-q">140 m of rope cut into 8 m jump ropes. How many ropes? &rarr;</span>
+              <span class="cell-val">17 ropes (140 ÷ 8 = 17.5 → round DOWN)</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(d)</span>
+              <span class="cell-q">210 tiles needed. Packs contain 20 tiles. How many packs? &rarr;</span>
+              <span class="cell-val">11 packs (210 ÷ 20 = 10.5 → round UP)</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(e)</span>
+              <span class="cell-q">£50 budget. Books cost £7 each. How many books can be bought? &rarr;</span>
+              <span class="cell-val">7 books (£50 ÷ £7 = 7.14 → round DOWN)</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(f)</span>
+              <span class="cell-q">85 patients need transport. Ambulances carry 4 each. How many trips? &rarr;</span>
+              <span class="cell-val">22 trips (85 ÷ 4 = 21.25 → round UP)</span>
+            </div>
+        </div>
+      </div>
+
+
+    <!-- PART 2: APPLY WORKED SOLUTIONS -->
+    <div class="section-ribbon page-break-before">
+      <span class="section-ribbon-tag">Part 2: Applied Vocational Solutions</span>
+      <div class="section-ribbon-line"></div>
+      <span class="section-ribbon-info">Full Pearson mark scheme steps with method &amp; accuracy marks</span>
+    </div>
+
+    
+      <div class="apply-sol-card">
+        <div class="apply-sol-head">
+          <div>
+            <span class="sol-q-num">Question 1 Worked Solution</span>
+            <span class="sol-ctx"><i class="fa-solid fa-briefcase"></i> Care Home Transport Outing</span>
+          </div>
+          <span class="sol-marks">[3 Marks Available]</span>
+        </div>
+        <div class="sol-stem-summary">A community care centre is organizing a day trip for <strong>58 residents</strong> and <strong>14 care staff</strong>.<br>They are hiring minibuses. Each minibus carries up to <strong>15 passengers</strong>.<br>Hiring each minibus costs <strong>£120 per day</strong>.<br>How many minibuses must be hired, and what is the total hire cost?</div>
+        <div class="sol-steps-wrap">
+          
+            <div class="sol-step-row">
+              <div class="step-text"><i class="fa-solid fa-chevron-right text-emerald"></i> Calculate total people: 58 residents + 14 staff = 72 people</div>
+              <div class="step-mark">[M1]</div>
+            </div>
+
+            <div class="sol-step-row">
+              <div class="step-text"><i class="fa-solid fa-chevron-right text-emerald"></i> Calculate minibuses: 72 ÷ 15 = 4.8 → Must round UP to 5 minibuses to transport everyone</div>
+              <div class="step-mark">[M1]</div>
+            </div>
+
+            <div class="sol-step-row">
+              <div class="step-text"><i class="fa-solid fa-chevron-right text-emerald"></i> Calculate total cost: 5 minibuses × £120 = £600.00</div>
+              <div class="step-mark">[A1]</div>
+            </div>
+        </div>
+        <div class="final-ans-box">
+          <span class="final-lbl">Correct Final Answer:</span>
+          <span class="final-val">5 minibuses costing £600.00</span>
+        </div>
+        
+        <div class="callout-box check-box">
+          <i class="fa-solid fa-shield-check"></i>
+          <div><strong>Pearson Reverse Check Method:</strong> 5 × 15 = 75 seats (covers 72 people with 3 spare seats).</div>
+        </div>
+        
+        <div class="callout-box pitfall-box">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          <div><strong>Common Exam Trap / Pitfall:</strong> Rounding down to 4 minibuses, leaving 12 passengers behind.</div>
+        </div>
+      </div>
+
+
+    <!-- Sheet Footer -->
+    <div class="sheet-footer">
+      <div>&copy; Master Functional Skills &bull; masterfunctionalskills.co.uk &bull; Pearson Edexcel Reformed Specification</div>
+      <div class="footer-links">
+        <a href="division-and-remainders-workout.html">Return to Workout</a>
+        <a href="division-and-remainders-answers.html">Exam Scheme</a>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>

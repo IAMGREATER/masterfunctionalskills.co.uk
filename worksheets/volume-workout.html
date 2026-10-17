@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
-  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Master Functional Skills — Volume & Capacity Skill Workout & Repetition Drills</title>
@@ -99,7 +98,151 @@
     .btn-action-practice:hover {
       background: #6d28d9;
     }
+    .nav-pill-group {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 8px;
+      padding: 3px;
+      margin-right: 12px;
+      vertical-align: middle;
+    }
+    .nav-pill-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 6px 0;
+      width: 115px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: #cbd5e1;
+      text-decoration: none;
+      transition: all 0.15s ease-in-out;
+      cursor: pointer;
+      white-space: nowrap;
+      user-select: none;
+      border: none;
+      background: transparent;
+      box-sizing: border-box;
+    }
+    .nav-pill-btn:hover:not(.active) {
+      background: rgba(255, 255, 255, 0.18);
+      color: #ffffff;
+      text-decoration: none;
+    }
+    .nav-pill-btn.active {
+      background: #2563eb;
+      color: #ffffff;
+      cursor: default;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+    }
+    .btn-action-mode,
+    .btn-action-practice,
+    .btn-action-answers,
+    .btn-action-sheet {
+      color: #ffffff !important;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none !important;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-right: 12px;
+      transition: background 0.2s;
+    }
+    .btn-action-practice {
+      background: #7c3aed;
+    }
+    .btn-action-practice:hover {
+      background: #6d28d9;
+      color: #ffffff !important;
+      text-decoration: none !important;
+    }
+    .btn-action-mode:hover,
+    .btn-action-answers:hover,
+    .btn-action-sheet:hover {
+      color: #ffffff !important;
+      text-decoration: none !important;
+      filter: brightness(0.9);
+    }
 
+    @media (max-width: 900px) {
+      .print-bar {
+        padding: 10px 14px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+      }
+      .print-bar > div:first-child {
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .print-bar > div:first-child a {
+        font-size: 0.85rem;
+        display: inline-flex;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .print-bar > div:last-child {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .print-bar > div:last-child > * {
+        margin-right: 0 !important;
+      }
+      .btn-action-mode,
+      .btn-action-practice,
+      .btn-action-answers,
+      .btn-action-sheet,
+      .btn-action-print {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+      }
+      .nav-pill-group {
+        margin-right: 0;
+      }
+      .nav-pill-btn {
+        width: 100px;
+        font-size: 0.82rem;
+        padding: 5px 0;
+      }
+    }
+    @media (max-width: 480px) {
+      .print-bar > div:last-child {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+      }
+      .nav-pill-group {
+        grid-column: span 2;
+        width: 100%;
+      }
+      .nav-pill-btn {
+        flex: 1;
+        width: auto;
+      }
+      .btn-action-mode,
+      .btn-action-practice,
+      .btn-action-answers,
+      .btn-action-sheet,
+      .btn-action-print {
+        justify-content: center;
+        width: 100%;
+      }
+    }
     @media print {
       .print-bar {
         display: none !important;
@@ -475,14 +618,17 @@
 </head>
 <body>
 
-  <!-- Top Action Navigation Bar -->
+        <!-- Top Action Navigation Bar -->
   <div class="print-bar">
     <div>
       <a href="../functional-skills-volume.html"><i class="fa-solid fa-arrow-left"></i> Back to Volume & Capacity Revision Guide</a>
     </div>
     <div>
       <a href="volume-worksheet.html" class="btn-action-practice"><i class="fa-solid fa-file-pen"></i> Switch to Exam Practice</a>
-      <a href="volume-workout-answers.html" target="_blank" class="btn-action-answers"><i class="fa-solid fa-check-double"></i> View Workout Answers</a>
+      <div class="nav-pill-group">
+        <span class="nav-pill-btn active"><i class="fa-solid fa-file-lines"></i> Questions</span>
+        <a href="volume-workout-answers.html" class="nav-pill-btn"><i class="fa-solid fa-check-double"></i> Answers</a>
+      </div>
       <button class="btn-action-print" onclick="window.print()"><i class="fa-solid fa-print"></i> Print / Save as PDF</button>
     </div>
   </div>
@@ -496,7 +642,7 @@
       </div>
       <div class="header-badges">
         <div class="badge-level">Level 1 & Level 2</div><br>
-        <span class="badge-spec">Pearson Edexcel: L1.24 • L2.18 Reformed Specification</span>
+        <span class="badge-spec">Pearson Edexcel: L1.25 • L2.21</span>
       </div>
     </div>
 
@@ -516,17 +662,17 @@
     <div class="method-card">
       <div class="method-card-header">
         <i class="fa-solid fa-lightbulb"></i>
-        <span>Essential Principles & Methods: Volume & Capacity</span>
+        <span>Volume Formulas & Liquid Capacity</span>
       </div>
       <div class="method-card-body">
         <ul class="method-points">
-          <li><i class='fa-solid fa-check text-emerald'></i> <span>Identify the mathematical operation required for Volume & Capacity.</span></li>
-<li><i class='fa-solid fa-check text-emerald'></i> <span>Read the values carefully and check all units match before calculating.</span></li>
-<li><i class='fa-solid fa-check text-emerald'></i> <span>Use estimation to check that your answer is reasonable.</span></li>
-<li><i class='fa-solid fa-check text-emerald'></i> <span>Show all working steps clearly to ensure method marks [M1] are secured.</span></li>
-<li><i class='fa-solid fa-check text-emerald'></i> <span>Always check units: ensure money has 2 decimal places (£0.00) and units are labeled.</span></li>
+          <li><i class='fa-solid fa-check text-emerald'></i> <span>Cuboid Volume = Length × Width × Height (V = L × W × H).</span></li>
+<li><i class='fa-solid fa-check text-emerald'></i> <span>Cube Volume = Side³ (V = s × s × s).</span></li>
+<li><i class='fa-solid fa-check text-emerald'></i> <span>Prism Volume = Cross-Sectional Area × Length (V = A × L).</span></li>
+<li><i class='fa-solid fa-check text-emerald'></i> <span>Cylinder Volume = π × r² × Height (V = πr²h).</span></li>
+<li><i class='fa-solid fa-check text-emerald'></i> <span>Volume to Liquid Capacity: 1 cm³ = 1 ml; 1,000 cm³ = 1 litre; 1 m³ = 1,000 litres.</span></li>
         </ul>
-        <div class='method-calc-tip'><i class='fa-solid fa-calculator'></i> <strong>Calculator Strategy:</strong> On calculator questions, write down your calculation string before pressing enter to verify syntax.</div>
+        <div class='method-calc-tip'><i class='fa-solid fa-calculator'></i> <strong>Calculator Strategy:</strong> Always ensure all 3 dimensions are in the same unit (all cm or all m) BEFORE multiplying!</div>
       </div>
     </div>
 
@@ -542,56 +688,56 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 1</span>
-        <span class="block-q-desc">Core Procedural Drill 1: Foundation Operations (Volume & Capacity)</span>
+        <span class="block-q-desc">Volume of Cuboids and Cubes</span>
       </div>
-      <div class="workout-instruction">Work out the answers without a calculator:</div>
+      <div class="workout-instruction">Calculate the volume (L × W × H):</div>
       <div class="drill-grid">
         
         <div class="drill-card">
           <div class="drill-letter">(a)</div>
-          <div class="drill-q">Basic drill 1: calculate baseline value</div>
+          <div class="drill-q">Cuboid: 8 cm × 5 cm × 3 cm</div>
           <div class="drill-ans-box">
-            <span class="drill-input-line"></span>
+            <span class="drill-input-line"></span><span class="drill-unit-suffix">cm³</span>
           </div>
         </div>
 
         <div class="drill-card">
           <div class="drill-letter">(b)</div>
-          <div class="drill-q">Basic drill 2: evaluate expression</div>
+          <div class="drill-q">Cuboid: 12 cm × 4 cm × 5 cm</div>
           <div class="drill-ans-box">
-            <span class="drill-input-line"></span>
+            <span class="drill-input-line"></span><span class="drill-unit-suffix">cm³</span>
           </div>
         </div>
 
         <div class="drill-card">
           <div class="drill-letter">(c)</div>
-          <div class="drill-q">Basic drill 3: simplify result</div>
+          <div class="drill-q">Cube with side length 5 cm</div>
           <div class="drill-ans-box">
-            <span class="drill-input-line"></span>
+            <span class="drill-input-line"></span><span class="drill-unit-suffix">cm³</span>
           </div>
         </div>
 
         <div class="drill-card">
           <div class="drill-letter">(d)</div>
-          <div class="drill-q">Basic drill 4: apply standard rule</div>
+          <div class="drill-q">Cuboid: 10 m × 4 m × 2.5 m</div>
           <div class="drill-ans-box">
-            <span class="drill-input-line"></span>
+            <span class="drill-input-line"></span><span class="drill-unit-suffix">cm³</span>
           </div>
         </div>
 
         <div class="drill-card">
           <div class="drill-letter">(e)</div>
-          <div class="drill-q">Basic drill 5: compute with whole numbers</div>
+          <div class="drill-q">Cuboid: 15 cm × 6 cm × 4 cm</div>
           <div class="drill-ans-box">
-            <span class="drill-input-line"></span>
+            <span class="drill-input-line"></span><span class="drill-unit-suffix">cm³</span>
           </div>
         </div>
 
         <div class="drill-card">
           <div class="drill-letter">(f)</div>
-          <div class="drill-q">Basic drill 6: check intermediate result</div>
+          <div class="drill-q">Cube with side length 4 m</div>
           <div class="drill-ans-box">
-            <span class="drill-input-line"></span>
+            <span class="drill-input-line"></span><span class="drill-unit-suffix">cm³</span>
           </div>
         </div>
       </div>
@@ -600,14 +746,14 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 2</span>
-        <span class="block-q-desc">Core Procedural Drill 2: Applied Metric & Money Fluency</span>
+        <span class="block-q-desc">Volume of Cylinders & Triangular Prisms (Level 2)</span>
       </div>
-      <div class="workout-instruction">Calculate the result with given currency or units:</div>
+      <div class="workout-instruction">Use V = Area of base × Length (use π = 3.14):</div>
       <div class="drill-grid">
         
         <div class="drill-card">
           <div class="drill-letter">(a)</div>
-          <div class="drill-q">Calculate with money values (£)</div>
+          <div class="drill-q">Cylinder: Radius 3 cm, Height 10 cm</div>
           <div class="drill-ans-box">
             <span class="drill-input-line"></span>
           </div>
@@ -615,7 +761,7 @@
 
         <div class="drill-card">
           <div class="drill-letter">(b)</div>
-          <div class="drill-q">Calculate with metric length (metres)</div>
+          <div class="drill-q">Cylinder: Radius 5 m, Height 4 m</div>
           <div class="drill-ans-box">
             <span class="drill-input-line"></span>
           </div>
@@ -623,7 +769,7 @@
 
         <div class="drill-card">
           <div class="drill-letter">(c)</div>
-          <div class="drill-q">Calculate with weight quantities (kg)</div>
+          <div class="drill-q">Cylinder: Diameter 8 cm (r = 4), Height 12 cm</div>
           <div class="drill-ans-box">
             <span class="drill-input-line"></span>
           </div>
@@ -631,7 +777,7 @@
 
         <div class="drill-card">
           <div class="drill-letter">(d)</div>
-          <div class="drill-q">Calculate with capacity units (litres)</div>
+          <div class="drill-q">Triangular prism: Triangle base 6 cm, height 4 cm, length 15 cm</div>
           <div class="drill-ans-box">
             <span class="drill-input-line"></span>
           </div>
@@ -639,7 +785,7 @@
 
         <div class="drill-card">
           <div class="drill-letter">(e)</div>
-          <div class="drill-q">Calculate with elapsed time (hours)</div>
+          <div class="drill-q">Convert 4,500 cm³ into litres</div>
           <div class="drill-ans-box">
             <span class="drill-input-line"></span>
           </div>
@@ -647,49 +793,7 @@
 
         <div class="drill-card">
           <div class="drill-letter">(f)</div>
-          <div class="drill-q">Calculate with percentage factors</div>
-          <div class="drill-ans-box">
-            <span class="drill-input-line"></span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="workout-block">
-      <div class="workout-block-header">
-        <span class="block-q-num">Question 3</span>
-        <span class="block-q-desc">Core Procedural Drill 3: Multi-Step & Level 2 Variations</span>
-      </div>
-      <div class="workout-instruction">Solve each problem showing clear intermediate steps:</div>
-      <div class="drill-grid">
-        
-        <div class="drill-card">
-          <div class="drill-letter">(a)</div>
-          <div class="drill-q">Multi-step procedure: Step 1 then Step 2</div>
-          <div class="drill-ans-box">
-            <span class="drill-input-line"></span>
-          </div>
-        </div>
-
-        <div class="drill-card">
-          <div class="drill-letter">(b)</div>
-          <div class="drill-q">Solve inverse relationship</div>
-          <div class="drill-ans-box">
-            <span class="drill-input-line"></span>
-          </div>
-        </div>
-
-        <div class="drill-card">
-          <div class="drill-letter">(c)</div>
-          <div class="drill-q">Compare two alternative outcomes</div>
-          <div class="drill-ans-box">
-            <span class="drill-input-line"></span>
-          </div>
-        </div>
-
-        <div class="drill-card">
-          <div class="drill-letter">(d)</div>
-          <div class="drill-q">Calculate compound rate</div>
+          <div class="drill-q">Convert 2.8 m³ into litres</div>
           <div class="drill-ans-box">
             <span class="drill-input-line"></span>
           </div>
@@ -709,10 +813,10 @@
       <div class="apply-card">
         <div class="apply-card-head">
           <span class="apply-q-num">Question 1</span>
-          <span class="apply-context-tag"><i class="fa-solid fa-briefcase"></i> NHS Healthcare & Workplace Scenario</span>
+          <span class="apply-context-tag"><i class="fa-solid fa-briefcase"></i> NHS Clinical Hydrotherapy Pool</span>
           <span class="apply-marks">[3 Marks]</span>
         </div>
-        <div class="apply-stem">An NHS healthcare administrator manages resource scheduling involving <strong>Volume & Capacity</strong>.<br>The baseline record requires evaluating three consecutive ward operations with values <strong>120, 180, and 240 units</strong>.<br>Calculate the combined outcome and determine if the total satisfies the threshold limit of <strong>500 units</strong>.</div>
+        <div class="apply-stem">An NHS rehabilitation hospital builds a rectangular hydrotherapy exercise pool.<br>The pool dimensions are: <strong>12 metres long by 5 metres wide by 1.5 metres deep</strong>.<br>(a) Calculate the volume of the pool in cubic metres (m³).<br>(b) 1 cubic metre holds 1,000 litres of water. How many litres of water are needed to fill the pool?</div>
         <div class="apply-working-area">
           <div class="apply-working-label">Show your step-by-step working:</div>
           <div class="apply-working-lines">
@@ -725,30 +829,6 @@
             <div class="apply-ans-line">
               <span class="ans-label">Final Answer =</span>
               
-              <div class="ans-write-box"></div>
-              
-            </div>
-      </div>
-
-      <div class="apply-card">
-        <div class="apply-card-head">
-          <span class="apply-q-num">Question 2</span>
-          <span class="apply-context-tag"><i class="fa-solid fa-briefcase"></i> Commercial Trade & Logistics</span>
-          <span class="apply-marks">[3 Marks]</span>
-        </div>
-        <div class="apply-stem">A warehouse logistics supervisor reviews shipping schedules involving <strong>Volume & Capacity</strong>.<br>Each pallet requires standard packaging costing <strong>£14.50</strong> plus a handling surcharge of <strong>12%</strong>.<br>Calculate the total cost to dispatch <strong>20 pallets</strong>.</div>
-        <div class="apply-working-area">
-          <div class="apply-working-label">Show your step-by-step working:</div>
-          <div class="apply-working-lines">
-            <div class="work-line"></div>
-            <div class="work-line"></div>
-            <div class="work-line"></div>
-          </div>
-        </div>
-        
-            <div class="apply-ans-line">
-              <span class="ans-label">Final Answer =</span>
-              <span class="unit-pfx">£</span>
               <div class="ans-write-box"></div>
               
             </div>

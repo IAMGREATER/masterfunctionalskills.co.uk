@@ -1,10 +1,9 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
-  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Master Functional Skills — Digital  Level 1: Spreadsheets, Email & Cyber Hygiene Skill Workout Worked Answers &amp; Mark Scheme</title>
+  <title>Master Functional Skills — Digital Functional Skills Level 1: Spreadsheets, Email & Cyber Hygiene Skill Workout Worked Answers &amp; Mark Scheme</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     @page {
@@ -82,7 +81,151 @@
     .btn-action-workout:hover {
       background: #047857;
     }
+    .nav-pill-group {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 8px;
+      padding: 3px;
+      margin-right: 12px;
+      vertical-align: middle;
+    }
+    .nav-pill-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 6px 0;
+      width: 115px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: #cbd5e1;
+      text-decoration: none;
+      transition: all 0.15s ease-in-out;
+      cursor: pointer;
+      white-space: nowrap;
+      user-select: none;
+      border: none;
+      background: transparent;
+      box-sizing: border-box;
+    }
+    .nav-pill-btn:hover:not(.active) {
+      background: rgba(255, 255, 255, 0.18);
+      color: #ffffff;
+      text-decoration: none;
+    }
+    .nav-pill-btn.active {
+      background: #059669;
+      color: #ffffff;
+      cursor: default;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+    }
+    .btn-action-mode,
+    .btn-action-practice,
+    .btn-action-answers,
+    .btn-action-sheet {
+      color: #ffffff !important;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none !important;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-right: 12px;
+      transition: background 0.2s;
+    }
+    .btn-action-practice {
+      background: #7c3aed;
+    }
+    .btn-action-practice:hover {
+      background: #6d28d9;
+      color: #ffffff !important;
+      text-decoration: none !important;
+    }
+    .btn-action-mode:hover,
+    .btn-action-answers:hover,
+    .btn-action-sheet:hover {
+      color: #ffffff !important;
+      text-decoration: none !important;
+      filter: brightness(0.9);
+    }
 
+    @media (max-width: 900px) {
+      .print-bar {
+        padding: 10px 14px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+      }
+      .print-bar > div:first-child {
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .print-bar > div:first-child a {
+        font-size: 0.85rem;
+        display: inline-flex;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .print-bar > div:last-child {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .print-bar > div:last-child > * {
+        margin-right: 0 !important;
+      }
+      .btn-action-mode,
+      .btn-action-practice,
+      .btn-action-answers,
+      .btn-action-sheet,
+      .btn-action-print {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+      }
+      .nav-pill-group {
+        margin-right: 0;
+      }
+      .nav-pill-btn {
+        width: 100px;
+        font-size: 0.82rem;
+        padding: 5px 0;
+      }
+    }
+    @media (max-width: 480px) {
+      .print-bar > div:last-child {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+      }
+      .nav-pill-group {
+        grid-column: span 2;
+        width: 100%;
+      }
+      .nav-pill-btn {
+        flex: 1;
+        width: auto;
+      }
+      .btn-action-mode,
+      .btn-action-practice,
+      .btn-action-answers,
+      .btn-action-sheet,
+      .btn-action-print {
+        justify-content: center;
+        width: 100%;
+      }
+    }
     @media print {
       .print-bar {
         display: none !important;
@@ -429,14 +572,17 @@
 </head>
 <body>
 
-  <!-- Top Action Navigation Bar -->
+        <!-- Top Action Navigation Bar -->
   <div class="print-bar">
     <div>
-      <a href="digital-functional-skills-level-1-workout.html"><i class="fa-solid fa-arrow-left"></i> Back to Digital  Level 1: Spreadsheets, Email & Cyber Hygiene Fluency Workout</a>
+      <a href="../digital-functional-skills-level-1.html"><i class="fa-solid fa-arrow-left"></i> Back to Digital Functional Skills Level 1: Spreadsheets, Email & Cyber Hygiene Revision Guide</a>
     </div>
     <div>
-      <a href="digital-functional-skills-level-1-workout.html" class="btn-action-workout"><i class="fa-solid fa-pen-ruler"></i> View Question Sheet</a>
-      <a href="digital-functional-skills-level-1-answers.html" class="btn-action-workout" style="background:#7c3aed"><i class="fa-solid fa-file-shield"></i> Exam Mark Scheme</a>
+      <a href="digital-functional-skills-level-1-answers.html" class="btn-action-practice"><i class="fa-solid fa-file-shield"></i> Exam Mark Scheme</a>
+      <div class="nav-pill-group">
+        <a href="digital-functional-skills-level-1-workout.html" class="nav-pill-btn"><i class="fa-solid fa-file-lines"></i> Questions</a>
+        <span class="nav-pill-btn active"><i class="fa-solid fa-check-double"></i> Answers</span>
+      </div>
       <button class="btn-action-print" onclick="window.print()"><i class="fa-solid fa-print"></i> Print / Save as PDF</button>
     </div>
   </div>
@@ -449,15 +595,15 @@
         <div class="sheet-sub">Tutor Model Solutions &amp; Step-by-Step Mark Scheme</div>
       </div>
       <div class="header-badges">
-        <div class="badge-level">Level 1 & Level 2</div><br>
-        <span class="badge-spec">Ofqual / Pearson Edexcel: DFS.1 • DFS.2 • DFS.3 • DFS.4 • DFS.5 Reformed Specification</span>
+        <div class="badge-level">Level 1</div><br>
+        <span class="badge-spec">Pearson Edexcel DFS: Level 1 Standard</span>
       </div>
     </div>
 
     <!-- Hero Title Banner -->
     <div class="hero-banner">
       <div>
-        <h1 class="hero-title">Digital  Level 1: Spreadsheets, Email & Cyber Hygiene Fluency Solutions</h1>
+        <h1 class="hero-title">Digital Functional Skills Level 1: Spreadsheets, Email & Cyber Hygiene Fluency Solutions</h1>
         <div class="hero-subtitle">Official Step-by-Step Worked Answers with Method Marks Breakdown</div>
       </div>
       <div class="hero-tag">
@@ -476,44 +622,56 @@
       <div class="ans-table-card">
         <div class="ans-table-head">
           <span class="ans-badge">Q1</span>
-          <span class="ans-head-title">Core Procedural Drill 1: Foundation Operations (Digital  Level 1: Spreadsheets, Email & Cyber Hygiene)</span>
+          <span class="ans-head-title">Formula Mechanics & Cell Referencing</span>
         </div>
         <div class="ans-grid">
           
             <div class="ans-grid-cell">
               <span class="cell-letter">(a)</span>
-              <span class="cell-q">Basic drill 1: calculate baseline value &rarr;</span>
-              <span class="cell-val">Correct standard value</span>
+              <span class="cell-q">Add cell A1 to cell B1 &rarr;</span>
+              <span class="cell-val">=A1+B1</span>
             </div>
 
             <div class="ans-grid-cell">
               <span class="cell-letter">(b)</span>
-              <span class="cell-q">Basic drill 2: evaluate expression &rarr;</span>
-              <span class="cell-val">Correct standard value</span>
+              <span class="cell-q">Subtract cell D3 from cell C3 &rarr;</span>
+              <span class="cell-val">=C3-D3</span>
             </div>
 
             <div class="ans-grid-cell">
               <span class="cell-letter">(c)</span>
-              <span class="cell-q">Basic drill 3: simplify result &rarr;</span>
-              <span class="cell-val">Correct standard value</span>
+              <span class="cell-q">Multiply cell E2 by cell F2 &rarr;</span>
+              <span class="cell-val">=E2*F2</span>
             </div>
 
             <div class="ans-grid-cell">
               <span class="cell-letter">(d)</span>
-              <span class="cell-q">Basic drill 4: apply standard rule &rarr;</span>
-              <span class="cell-val">Correct standard value</span>
+              <span class="cell-q">Divide cell G4 by cell H4 &rarr;</span>
+              <span class="cell-val">=G4/H4</span>
             </div>
 
             <div class="ans-grid-cell">
               <span class="cell-letter">(e)</span>
-              <span class="cell-q">Basic drill 5: compute with whole numbers &rarr;</span>
-              <span class="cell-val">Correct standard value</span>
+              <span class="cell-q">Sum the range from B5 to B25 &rarr;</span>
+              <span class="cell-val">=SUM(B5:B25)</span>
             </div>
 
             <div class="ans-grid-cell">
               <span class="cell-letter">(f)</span>
-              <span class="cell-q">Basic drill 6: check intermediate result &rarr;</span>
-              <span class="cell-val">Correct standard value</span>
+              <span class="cell-q">Calculate the average of range D1 to D12 &rarr;</span>
+              <span class="cell-val">=AVERAGE(D1:D12)</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(g)</span>
+              <span class="cell-q">Lock row 2 absolutely while leaving column A relative &rarr;</span>
+              <span class="cell-val">A$2</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(h)</span>
+              <span class="cell-q">Lock column B absolutely while leaving row 5 relative &rarr;</span>
+              <span class="cell-val">$B5</span>
             </div>
         </div>
       </div>
@@ -521,77 +679,44 @@
       <div class="ans-table-card">
         <div class="ans-table-head">
           <span class="ans-badge">Q2</span>
-          <span class="ans-head-title">Core Procedural Drill 2: Applied Metric & Money Fluency</span>
+          <span class="ans-head-title">Spreadsheet Formatting & Tools</span>
         </div>
         <div class="ans-grid">
           
             <div class="ans-grid-cell">
               <span class="cell-letter">(a)</span>
-              <span class="cell-q">Calculate with money values (£) &rarr;</span>
-              <span class="cell-val">£45.00</span>
+              <span class="cell-q">Tool used to combine multiple cells into one large cell &rarr;</span>
+              <span class="cell-val">Merge & Center</span>
             </div>
 
             <div class="ans-grid-cell">
               <span class="cell-letter">(b)</span>
-              <span class="cell-q">Calculate with metric length (metres) &rarr;</span>
-              <span class="cell-val">12.5 m</span>
+              <span class="cell-q">Feature to display long text on multiple lines within a cell &rarr;</span>
+              <span class="cell-val">Wrap Text</span>
             </div>
 
             <div class="ans-grid-cell">
               <span class="cell-letter">(c)</span>
-              <span class="cell-q">Calculate with weight quantities (kg) &rarr;</span>
-              <span class="cell-val">80 kg</span>
+              <span class="cell-q">Format applied to display 45.5 as £45.50 &rarr;</span>
+              <span class="cell-val">Currency format (2 decimal places)</span>
             </div>
 
             <div class="ans-grid-cell">
               <span class="cell-letter">(d)</span>
-              <span class="cell-q">Calculate with capacity units (litres) &rarr;</span>
-              <span class="cell-val">250 litres</span>
+              <span class="cell-q">Tool used to display only records that meet specific criteria &rarr;</span>
+              <span class="cell-val">Filter (AutoFilter)</span>
             </div>
 
             <div class="ans-grid-cell">
               <span class="cell-letter">(e)</span>
-              <span class="cell-q">Calculate with elapsed time (hours) &rarr;</span>
-              <span class="cell-val">3.5 hours</span>
+              <span class="cell-q">Feature used to automatically colour cells based on value &rarr;</span>
+              <span class="cell-val">Conditional Formatting</span>
             </div>
 
             <div class="ans-grid-cell">
               <span class="cell-letter">(f)</span>
-              <span class="cell-q">Calculate with percentage factors &rarr;</span>
-              <span class="cell-val">18%</span>
-            </div>
-        </div>
-      </div>
-
-      <div class="ans-table-card">
-        <div class="ans-table-head">
-          <span class="ans-badge">Q3</span>
-          <span class="ans-head-title">Core Procedural Drill 3: Multi-Step & Level 2 Variations</span>
-        </div>
-        <div class="ans-grid">
-          
-            <div class="ans-grid-cell">
-              <span class="cell-letter">(a)</span>
-              <span class="cell-q">Multi-step procedure: Step 1 then Step 2 &rarr;</span>
-              <span class="cell-val">Accurate compound value</span>
-            </div>
-
-            <div class="ans-grid-cell">
-              <span class="cell-letter">(b)</span>
-              <span class="cell-q">Solve inverse relationship &rarr;</span>
-              <span class="cell-val">Verified original quantity</span>
-            </div>
-
-            <div class="ans-grid-cell">
-              <span class="cell-letter">(c)</span>
-              <span class="cell-q">Compare two alternative outcomes &rarr;</span>
-              <span class="cell-val">Option A is more economical</span>
-            </div>
-
-            <div class="ans-grid-cell">
-              <span class="cell-letter">(d)</span>
-              <span class="cell-q">Calculate compound rate &rarr;</span>
-              <span class="cell-val">Standard calibrated rate</span>
+              <span class="cell-q">Corner square dragged to copy formulas down a column &rarr;</span>
+              <span class="cell-val">Fill Handle (AutoFill)</span>
             </div>
         </div>
       </div>
@@ -609,83 +734,41 @@
         <div class="apply-sol-head">
           <div>
             <span class="sol-q-num">Question 1 Worked Solution</span>
-            <span class="sol-ctx"><i class="fa-solid fa-briefcase"></i> NHS Healthcare & Workplace Scenario</span>
+            <span class="sol-ctx"><i class="fa-solid fa-briefcase"></i> Care Home Food Supplies</span>
           </div>
           <span class="sol-marks">[3 Marks Available]</span>
         </div>
-        <div class="sol-stem-summary">An NHS healthcare administrator manages resource scheduling involving <strong>Digital  Level 1: Spreadsheets, Email & Cyber Hygiene</strong>.<br>The baseline record requires evaluating three consecutive ward operations with values <strong>120, 180, and 240 units</strong>.<br>Calculate the combined outcome and determine if the total satisfies the threshold limit of <strong>500 units</strong>.</div>
+        <div class="sol-stem-summary">A residential care home kitchen orders supplies. In their spreadsheet:<br>• Cell <strong>B2</strong> has item quantity: <strong>24</strong><br>• Cell <strong>C2</strong> has unit price: <strong>£3.50</strong><br>• Cell <strong>D2</strong> calculates total cost: <code>=B2*C2</code><br>• Delivery charge in cell <strong>F1</strong> is <strong>£6.00</strong>.<br>(a) What is the evaluated cost in cell D2?<br>(b) Write a formula in cell E2 to add the delivery charge ($F$1) to D2.</div>
         <div class="sol-steps-wrap">
           
             <div class="sol-step-row">
-              <div class="step-text"><i class="fa-solid fa-chevron-right text-emerald"></i> 1. Sum the baseline resource values: 120 + 180 + 240 = 540 units</div>
+              <div class="step-text"><i class="fa-solid fa-chevron-right text-emerald"></i> Calculate D2: 24 × £3.50 = £84.00</div>
               <div class="step-mark">[M1]</div>
             </div>
 
             <div class="sol-step-row">
-              <div class="step-text"><i class="fa-solid fa-chevron-right text-emerald"></i> 2. Compare against threshold: 540 > 500 units</div>
-              <div class="step-mark">[M1]</div>
+              <div class="step-text"><i class="fa-solid fa-chevron-right text-emerald"></i> Write formula for E2: =D2+$F$1</div>
+              <div class="step-mark">[A1]</div>
             </div>
 
             <div class="sol-step-row">
-              <div class="step-text"><i class="fa-solid fa-chevron-right text-emerald"></i> 3. State supported conclusion: Total exceeds threshold by 40 units</div>
+              <div class="step-text"><i class="fa-solid fa-chevron-right text-emerald"></i> Calculate overall total in E2: £84.00 + £6.00 = £90.00</div>
               <div class="step-mark">[A1]</div>
             </div>
         </div>
         <div class="final-ans-box">
           <span class="final-lbl">Correct Final Answer:</span>
-          <span class="final-val">Threshold Exceeded (Total = 540 units, 40 over limit)</span>
+          <span class="final-val">(a) £84.00 | (b) =D2+$F$1 (Total = £90.00)</span>
         </div>
         
         <div class="callout-box check-box">
           <i class="fa-solid fa-shield-check"></i>
-          <div><strong>Pearson Reverse Check Method:</strong> 540 - 240 - 180 = 120 units.</div>
+          <div><strong>Pearson Reverse Check Method:</strong> £90.00 - £6.00 = £84.00; £84.00 ÷ 24 = £3.50.</div>
         </div>
         
         <div class="callout-box pitfall-box">
           <i class="fa-solid fa-triangle-exclamation"></i>
-          <div><strong>Common Exam Trap / Pitfall:</strong> Omitting the comparison statement against the threshold limit.</div>
-        </div>
-      </div>
-
-      <div class="apply-sol-card">
-        <div class="apply-sol-head">
-          <div>
-            <span class="sol-q-num">Question 2 Worked Solution</span>
-            <span class="sol-ctx"><i class="fa-solid fa-briefcase"></i> Commercial Trade & Logistics</span>
-          </div>
-          <span class="sol-marks">[3 Marks Available]</span>
-        </div>
-        <div class="sol-stem-summary">A warehouse logistics supervisor reviews shipping schedules involving <strong>Digital  Level 1: Spreadsheets, Email & Cyber Hygiene</strong>.<br>Each pallet requires standard packaging costing <strong>£14.50</strong> plus a handling surcharge of <strong>12%</strong>.<br>Calculate the total cost to dispatch <strong>20 pallets</strong>.</div>
-        <div class="sol-steps-wrap">
-          
-            <div class="sol-step-row">
-              <div class="step-text"><i class="fa-solid fa-chevron-right text-emerald"></i> 1. Calculate handling surcharge: £14.50 × 0.12 = £1.74</div>
-              <div class="step-mark">[M1]</div>
-            </div>
-
-            <div class="sol-step-row">
-              <div class="step-text"><i class="fa-solid fa-chevron-right text-emerald"></i> 2. Total cost per pallet: £14.50 + £1.74 = £16.24</div>
-              <div class="step-mark">[M1]</div>
-            </div>
-
-            <div class="sol-step-row">
-              <div class="step-text"><i class="fa-solid fa-chevron-right text-emerald"></i> 3. Multiply for 20 pallets: £16.24 × 20 = £324.80</div>
-              <div class="step-mark">[A1]</div>
-            </div>
-        </div>
-        <div class="final-ans-box">
-          <span class="final-lbl">Correct Final Answer:</span>
-          <span class="final-val">£324.80</span>
-        </div>
-        
-        <div class="callout-box check-box">
-          <i class="fa-solid fa-shield-check"></i>
-          <div><strong>Pearson Reverse Check Method:</strong> £324.80 ÷ 20 = £16.24; £16.24 ÷ 1.12 = £14.50.</div>
-        </div>
-        
-        <div class="callout-box pitfall-box">
-          <i class="fa-solid fa-triangle-exclamation"></i>
-          <div><strong>Common Exam Trap / Pitfall:</strong> Multiplying £14.50 by 20 and forgetting the 12% surcharge.</div>
+          <div><strong>Common Exam Trap / Pitfall:</strong> Writing =D2+6 instead of referencing cell $F$1.</div>
         </div>
       </div>
 

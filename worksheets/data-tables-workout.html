@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
-  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Master Functional Skills — Data Tables & Two-Way Tables Skill Workout & Repetition Drills</title>
@@ -99,7 +98,151 @@
     .btn-action-practice:hover {
       background: #6d28d9;
     }
+    .nav-pill-group {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 8px;
+      padding: 3px;
+      margin-right: 12px;
+      vertical-align: middle;
+    }
+    .nav-pill-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 6px 0;
+      width: 115px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: #cbd5e1;
+      text-decoration: none;
+      transition: all 0.15s ease-in-out;
+      cursor: pointer;
+      white-space: nowrap;
+      user-select: none;
+      border: none;
+      background: transparent;
+      box-sizing: border-box;
+    }
+    .nav-pill-btn:hover:not(.active) {
+      background: rgba(255, 255, 255, 0.18);
+      color: #ffffff;
+      text-decoration: none;
+    }
+    .nav-pill-btn.active {
+      background: #2563eb;
+      color: #ffffff;
+      cursor: default;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+    }
+    .btn-action-mode,
+    .btn-action-practice,
+    .btn-action-answers,
+    .btn-action-sheet {
+      color: #ffffff !important;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none !important;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-right: 12px;
+      transition: background 0.2s;
+    }
+    .btn-action-practice {
+      background: #7c3aed;
+    }
+    .btn-action-practice:hover {
+      background: #6d28d9;
+      color: #ffffff !important;
+      text-decoration: none !important;
+    }
+    .btn-action-mode:hover,
+    .btn-action-answers:hover,
+    .btn-action-sheet:hover {
+      color: #ffffff !important;
+      text-decoration: none !important;
+      filter: brightness(0.9);
+    }
 
+    @media (max-width: 900px) {
+      .print-bar {
+        padding: 10px 14px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+      }
+      .print-bar > div:first-child {
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .print-bar > div:first-child a {
+        font-size: 0.85rem;
+        display: inline-flex;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .print-bar > div:last-child {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .print-bar > div:last-child > * {
+        margin-right: 0 !important;
+      }
+      .btn-action-mode,
+      .btn-action-practice,
+      .btn-action-answers,
+      .btn-action-sheet,
+      .btn-action-print {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+      }
+      .nav-pill-group {
+        margin-right: 0;
+      }
+      .nav-pill-btn {
+        width: 100px;
+        font-size: 0.82rem;
+        padding: 5px 0;
+      }
+    }
+    @media (max-width: 480px) {
+      .print-bar > div:last-child {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+      }
+      .nav-pill-group {
+        grid-column: span 2;
+        width: 100%;
+      }
+      .nav-pill-btn {
+        flex: 1;
+        width: auto;
+      }
+      .btn-action-mode,
+      .btn-action-practice,
+      .btn-action-answers,
+      .btn-action-sheet,
+      .btn-action-print {
+        justify-content: center;
+        width: 100%;
+      }
+    }
     @media print {
       .print-bar {
         display: none !important;
@@ -475,14 +618,17 @@
 </head>
 <body>
 
-  <!-- Top Action Navigation Bar -->
+        <!-- Top Action Navigation Bar -->
   <div class="print-bar">
     <div>
       <a href="../functional-skills-data-tables.html"><i class="fa-solid fa-arrow-left"></i> Back to Data Tables & Two-Way Tables Revision Guide</a>
     </div>
     <div>
       <a href="data-tables-worksheet.html" class="btn-action-practice"><i class="fa-solid fa-file-pen"></i> Switch to Exam Practice</a>
-      <a href="data-tables-workout-answers.html" target="_blank" class="btn-action-answers"><i class="fa-solid fa-check-double"></i> View Workout Answers</a>
+      <div class="nav-pill-group">
+        <span class="nav-pill-btn active"><i class="fa-solid fa-file-lines"></i> Questions</span>
+        <a href="data-tables-workout-answers.html" class="nav-pill-btn"><i class="fa-solid fa-check-double"></i> Answers</a>
+      </div>
       <button class="btn-action-print" onclick="window.print()"><i class="fa-solid fa-print"></i> Print / Save as PDF</button>
     </div>
   </div>
@@ -496,7 +642,7 @@
       </div>
       <div class="header-badges">
         <div class="badge-level">Level 1 & Level 2</div><br>
-        <span class="badge-spec">Pearson Edexcel: Pearson Edexcel L1 & L2 Mathematics Reformed Specification</span>
+        <span class="badge-spec">Pearson Edexcel: L1.26 • L2.22</span>
       </div>
     </div>
 
@@ -516,17 +662,17 @@
     <div class="method-card">
       <div class="method-card-header">
         <i class="fa-solid fa-lightbulb"></i>
-        <span>Essential Principles & Methods: Data Tables & Two-Way Tables</span>
+        <span>Two-Way Contingency Tables</span>
       </div>
       <div class="method-card-body">
         <ul class="method-points">
-          <li><i class='fa-solid fa-check text-emerald'></i> <span>Identify the mathematical operation required for Data Tables & Two-Way Tables.</span></li>
-<li><i class='fa-solid fa-check text-emerald'></i> <span>Read the values carefully and check all units match before calculating.</span></li>
-<li><i class='fa-solid fa-check text-emerald'></i> <span>Use estimation to check that your answer is reasonable.</span></li>
-<li><i class='fa-solid fa-check text-emerald'></i> <span>Show all working steps clearly to ensure method marks [M1] are secured.</span></li>
-<li><i class='fa-solid fa-check text-emerald'></i> <span>Always check units: ensure money has 2 decimal places (£0.00) and units are labeled.</span></li>
+          <li><i class='fa-solid fa-check text-emerald'></i> <span>Two-way tables categorize data by two distinct criteria (e.g. Gender and Shift, or Treatment and Age).</span></li>
+<li><i class='fa-solid fa-check text-emerald'></i> <span>Row totals: The sum of each row adds up horizontally to the right-hand total.</span></li>
+<li><i class='fa-solid fa-check text-emerald'></i> <span>Column totals: The sum of each column adds up vertically to the bottom total.</span></li>
+<li><i class='fa-solid fa-check text-emerald'></i> <span>Grand Total: Bottom-right corner is the sum of all row totals AND the sum of all column totals.</span></li>
+<li><i class='fa-solid fa-check text-emerald'></i> <span>Work systematically to find cells that have only one missing number in their row or column.</span></li>
         </ul>
-        <div class='method-calc-tip'><i class='fa-solid fa-calculator'></i> <strong>Calculator Strategy:</strong> On calculator questions, write down your calculation string before pressing enter to verify syntax.</div>
+        <div class='method-calc-tip'><i class='fa-solid fa-calculator'></i> <strong>Calculator Strategy:</strong> Double-check by adding both the row totals and column totals to confirm they equal the same grand total.</div>
       </div>
     </div>
 
@@ -542,14 +688,14 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 1</span>
-        <span class="block-q-desc">Core Procedural Drill 1: Foundation Operations (Data Tables & Two-Way Tables)</span>
+        <span class="block-q-desc">Completing Two-Way Contingency Tables</span>
       </div>
-      <div class="workout-instruction">Work out the answers without a calculator:</div>
+      <div class="workout-instruction">Find the missing value using row and column totals:</div>
       <div class="drill-grid">
         
         <div class="drill-card">
           <div class="drill-letter">(a)</div>
-          <div class="drill-q">Basic drill 1: calculate baseline value</div>
+          <div class="drill-q">Row: 14 men, 18 women. Row total?</div>
           <div class="drill-ans-box">
             <span class="drill-input-line"></span>
           </div>
@@ -557,7 +703,7 @@
 
         <div class="drill-card">
           <div class="drill-letter">(b)</div>
-          <div class="drill-q">Basic drill 2: evaluate expression</div>
+          <div class="drill-q">Column: Total is 50. Row 1 is 22. What is Row 2?</div>
           <div class="drill-ans-box">
             <span class="drill-input-line"></span>
           </div>
@@ -565,7 +711,7 @@
 
         <div class="drill-card">
           <div class="drill-letter">(c)</div>
-          <div class="drill-q">Basic drill 3: simplify result</div>
+          <div class="drill-q">Row: 45 passed, total was 60. How many failed?</div>
           <div class="drill-ans-box">
             <span class="drill-input-line"></span>
           </div>
@@ -573,7 +719,7 @@
 
         <div class="drill-card">
           <div class="drill-letter">(d)</div>
-          <div class="drill-q">Basic drill 4: apply standard rule</div>
+          <div class="drill-q">Table grand total = 100. Row 1 = 35, Row 2 = 40. Row 3?</div>
           <div class="drill-ans-box">
             <span class="drill-input-line"></span>
           </div>
@@ -581,7 +727,7 @@
 
         <div class="drill-card">
           <div class="drill-letter">(e)</div>
-          <div class="drill-q">Basic drill 5: compute with whole numbers</div>
+          <div class="drill-q">Column 1 total = 42, Column 2 total = 58. Grand total?</div>
           <div class="drill-ans-box">
             <span class="drill-input-line"></span>
           </div>
@@ -589,107 +735,7 @@
 
         <div class="drill-card">
           <div class="drill-letter">(f)</div>
-          <div class="drill-q">Basic drill 6: check intermediate result</div>
-          <div class="drill-ans-box">
-            <span class="drill-input-line"></span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="workout-block">
-      <div class="workout-block-header">
-        <span class="block-q-num">Question 2</span>
-        <span class="block-q-desc">Core Procedural Drill 2: Applied Metric & Money Fluency</span>
-      </div>
-      <div class="workout-instruction">Calculate the result with given currency or units:</div>
-      <div class="drill-grid">
-        
-        <div class="drill-card">
-          <div class="drill-letter">(a)</div>
-          <div class="drill-q">Calculate with money values (£)</div>
-          <div class="drill-ans-box">
-            <span class="drill-input-line"></span>
-          </div>
-        </div>
-
-        <div class="drill-card">
-          <div class="drill-letter">(b)</div>
-          <div class="drill-q">Calculate with metric length (metres)</div>
-          <div class="drill-ans-box">
-            <span class="drill-input-line"></span>
-          </div>
-        </div>
-
-        <div class="drill-card">
-          <div class="drill-letter">(c)</div>
-          <div class="drill-q">Calculate with weight quantities (kg)</div>
-          <div class="drill-ans-box">
-            <span class="drill-input-line"></span>
-          </div>
-        </div>
-
-        <div class="drill-card">
-          <div class="drill-letter">(d)</div>
-          <div class="drill-q">Calculate with capacity units (litres)</div>
-          <div class="drill-ans-box">
-            <span class="drill-input-line"></span>
-          </div>
-        </div>
-
-        <div class="drill-card">
-          <div class="drill-letter">(e)</div>
-          <div class="drill-q">Calculate with elapsed time (hours)</div>
-          <div class="drill-ans-box">
-            <span class="drill-input-line"></span>
-          </div>
-        </div>
-
-        <div class="drill-card">
-          <div class="drill-letter">(f)</div>
-          <div class="drill-q">Calculate with percentage factors</div>
-          <div class="drill-ans-box">
-            <span class="drill-input-line"></span>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <div class="workout-block">
-      <div class="workout-block-header">
-        <span class="block-q-num">Question 3</span>
-        <span class="block-q-desc">Core Procedural Drill 3: Multi-Step & Level 2 Variations</span>
-      </div>
-      <div class="workout-instruction">Solve each problem showing clear intermediate steps:</div>
-      <div class="drill-grid">
-        
-        <div class="drill-card">
-          <div class="drill-letter">(a)</div>
-          <div class="drill-q">Multi-step procedure: Step 1 then Step 2</div>
-          <div class="drill-ans-box">
-            <span class="drill-input-line"></span>
-          </div>
-        </div>
-
-        <div class="drill-card">
-          <div class="drill-letter">(b)</div>
-          <div class="drill-q">Solve inverse relationship</div>
-          <div class="drill-ans-box">
-            <span class="drill-input-line"></span>
-          </div>
-        </div>
-
-        <div class="drill-card">
-          <div class="drill-letter">(c)</div>
-          <div class="drill-q">Compare two alternative outcomes</div>
-          <div class="drill-ans-box">
-            <span class="drill-input-line"></span>
-          </div>
-        </div>
-
-        <div class="drill-card">
-          <div class="drill-letter">(d)</div>
-          <div class="drill-q">Calculate compound rate</div>
+          <div class="drill-q">Out of 80 patients, 48 are female. How many male?</div>
           <div class="drill-ans-box">
             <span class="drill-input-line"></span>
           </div>
@@ -709,10 +755,10 @@
       <div class="apply-card">
         <div class="apply-card-head">
           <span class="apply-q-num">Question 1</span>
-          <span class="apply-context-tag"><i class="fa-solid fa-briefcase"></i> NHS Healthcare & Workplace Scenario</span>
+          <span class="apply-context-tag"><i class="fa-solid fa-briefcase"></i> NHS Staff Training Records</span>
           <span class="apply-marks">[3 Marks]</span>
         </div>
-        <div class="apply-stem">An NHS healthcare administrator manages resource scheduling involving <strong>Data Tables & Two-Way Tables</strong>.<br>The baseline record requires evaluating three consecutive ward operations with values <strong>120, 180, and 240 units</strong>.<br>Calculate the combined outcome and determine if the total satisfies the threshold limit of <strong>500 units</strong>.</div>
+        <div class="apply-stem">A community healthcare provider tracks mandatory resuscitation certification across <strong>150 healthcare workers</strong>.<br>The two-way table shows:<br>• <strong>Doctors:</strong> 25 Certified, 5 Pending (Total = 30)<br>• <strong>Nurses:</strong> 65 Certified, 15 Pending (Total = 80)<br>• <strong>Healthcare Assistants:</strong> 32 Certified, X Pending (Total = 40)<br>(a) Find the missing number X of Healthcare Assistants with pending certification.<br>(b) What percentage of all 150 workers are fully certified?</div>
         <div class="apply-working-area">
           <div class="apply-working-label">Show your step-by-step working:</div>
           <div class="apply-working-lines">
@@ -725,30 +771,6 @@
             <div class="apply-ans-line">
               <span class="ans-label">Final Answer =</span>
               
-              <div class="ans-write-box"></div>
-              
-            </div>
-      </div>
-
-      <div class="apply-card">
-        <div class="apply-card-head">
-          <span class="apply-q-num">Question 2</span>
-          <span class="apply-context-tag"><i class="fa-solid fa-briefcase"></i> Commercial Trade & Logistics</span>
-          <span class="apply-marks">[3 Marks]</span>
-        </div>
-        <div class="apply-stem">A warehouse logistics supervisor reviews shipping schedules involving <strong>Data Tables & Two-Way Tables</strong>.<br>Each pallet requires standard packaging costing <strong>£14.50</strong> plus a handling surcharge of <strong>12%</strong>.<br>Calculate the total cost to dispatch <strong>20 pallets</strong>.</div>
-        <div class="apply-working-area">
-          <div class="apply-working-label">Show your step-by-step working:</div>
-          <div class="apply-working-lines">
-            <div class="work-line"></div>
-            <div class="work-line"></div>
-            <div class="work-line"></div>
-          </div>
-        </div>
-        
-            <div class="apply-ans-line">
-              <span class="ans-label">Final Answer =</span>
-              <span class="unit-pfx">£</span>
               <div class="ans-write-box"></div>
               
             </div>

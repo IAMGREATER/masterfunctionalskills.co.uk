@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en-GB">
 <head>
-  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Master Functional Skills — Rounding & Estimating Skill Workout Worked Answers &amp; Mark Scheme</title>
@@ -82,7 +81,151 @@
     .btn-action-workout:hover {
       background: #047857;
     }
+    .nav-pill-group {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 8px;
+      padding: 3px;
+      margin-right: 12px;
+      vertical-align: middle;
+    }
+    .nav-pill-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 6px 0;
+      width: 115px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: #cbd5e1;
+      text-decoration: none;
+      transition: all 0.15s ease-in-out;
+      cursor: pointer;
+      white-space: nowrap;
+      user-select: none;
+      border: none;
+      background: transparent;
+      box-sizing: border-box;
+    }
+    .nav-pill-btn:hover:not(.active) {
+      background: rgba(255, 255, 255, 0.18);
+      color: #ffffff;
+      text-decoration: none;
+    }
+    .nav-pill-btn.active {
+      background: #059669;
+      color: #ffffff;
+      cursor: default;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+    }
+    .btn-action-mode,
+    .btn-action-practice,
+    .btn-action-answers,
+    .btn-action-sheet {
+      color: #ffffff !important;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none !important;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-right: 12px;
+      transition: background 0.2s;
+    }
+    .btn-action-practice {
+      background: #7c3aed;
+    }
+    .btn-action-practice:hover {
+      background: #6d28d9;
+      color: #ffffff !important;
+      text-decoration: none !important;
+    }
+    .btn-action-mode:hover,
+    .btn-action-answers:hover,
+    .btn-action-sheet:hover {
+      color: #ffffff !important;
+      text-decoration: none !important;
+      filter: brightness(0.9);
+    }
 
+    @media (max-width: 900px) {
+      .print-bar {
+        padding: 10px 14px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+      }
+      .print-bar > div:first-child {
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .print-bar > div:first-child a {
+        font-size: 0.85rem;
+        display: inline-flex;
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+      }
+      .print-bar > div:last-child {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .print-bar > div:last-child > * {
+        margin-right: 0 !important;
+      }
+      .btn-action-mode,
+      .btn-action-practice,
+      .btn-action-answers,
+      .btn-action-sheet,
+      .btn-action-print {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+      }
+      .nav-pill-group {
+        margin-right: 0;
+      }
+      .nav-pill-btn {
+        width: 100px;
+        font-size: 0.82rem;
+        padding: 5px 0;
+      }
+    }
+    @media (max-width: 480px) {
+      .print-bar > div:last-child {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+      }
+      .nav-pill-group {
+        grid-column: span 2;
+        width: 100%;
+      }
+      .nav-pill-btn {
+        flex: 1;
+        width: auto;
+      }
+      .btn-action-mode,
+      .btn-action-practice,
+      .btn-action-answers,
+      .btn-action-sheet,
+      .btn-action-print {
+        justify-content: center;
+        width: 100%;
+      }
+    }
     @media print {
       .print-bar {
         display: none !important;
@@ -429,14 +572,17 @@
 </head>
 <body>
 
-  <!-- Top Action Navigation Bar -->
+        <!-- Top Action Navigation Bar -->
   <div class="print-bar">
     <div>
-      <a href="rounding-and-estimating-workout.html"><i class="fa-solid fa-arrow-left"></i> Back to Rounding & Estimating Fluency Workout</a>
+      <a href="../functional-skills-rounding-and-estimating.html"><i class="fa-solid fa-arrow-left"></i> Back to Rounding & Estimating Revision Guide</a>
     </div>
     <div>
-      <a href="rounding-and-estimating-workout.html" class="btn-action-workout"><i class="fa-solid fa-pen-ruler"></i> View Question Sheet</a>
-      <a href="rounding-and-estimating-answers.html" class="btn-action-workout" style="background:#7c3aed"><i class="fa-solid fa-file-shield"></i> Exam Mark Scheme</a>
+      <a href="rounding-and-estimating-answers.html" class="btn-action-practice"><i class="fa-solid fa-file-shield"></i> Exam Mark Scheme</a>
+      <div class="nav-pill-group">
+        <a href="rounding-and-estimating-workout.html" class="nav-pill-btn"><i class="fa-solid fa-file-lines"></i> Questions</a>
+        <span class="nav-pill-btn active"><i class="fa-solid fa-check-double"></i> Answers</span>
+      </div>
       <button class="btn-action-print" onclick="window.print()"><i class="fa-solid fa-print"></i> Print / Save as PDF</button>
     </div>
   </div>
@@ -450,7 +596,7 @@
       </div>
       <div class="header-badges">
         <div class="badge-level">Level 1 & Level 2</div><br>
-        <span class="badge-spec">Pearson Edexcel: E3.6 • L1.10 • L2.12 Reformed Specification</span>
+        <span class="badge-spec">Pearson Edexcel: L1.7 • L2.3</span>
       </div>
     </div>
 
@@ -476,44 +622,56 @@
       <div class="ans-table-card">
         <div class="ans-table-head">
           <span class="ans-badge">Q1</span>
-          <span class="ans-head-title">Core Procedural Drill 1: Foundation Operations (Rounding & Estimating)</span>
+          <span class="ans-head-title">Rounding to Nearest 10, 100 & 1,000</span>
         </div>
         <div class="ans-grid">
           
             <div class="ans-grid-cell">
               <span class="cell-letter">(a)</span>
-              <span class="cell-q">Basic drill 1: calculate baseline value &rarr;</span>
-              <span class="cell-val">Correct standard value</span>
+              <span class="cell-q">Round 47 to the nearest 10 &rarr;</span>
+              <span class="cell-val">50</span>
             </div>
 
             <div class="ans-grid-cell">
               <span class="cell-letter">(b)</span>
-              <span class="cell-q">Basic drill 2: evaluate expression &rarr;</span>
-              <span class="cell-val">Correct standard value</span>
+              <span class="cell-q">Round 184 to the nearest 10 &rarr;</span>
+              <span class="cell-val">180</span>
             </div>
 
             <div class="ans-grid-cell">
               <span class="cell-letter">(c)</span>
-              <span class="cell-q">Basic drill 3: simplify result &rarr;</span>
-              <span class="cell-val">Correct standard value</span>
+              <span class="cell-q">Round 365 to the nearest 100 &rarr;</span>
+              <span class="cell-val">400</span>
             </div>
 
             <div class="ans-grid-cell">
               <span class="cell-letter">(d)</span>
-              <span class="cell-q">Basic drill 4: apply standard rule &rarr;</span>
-              <span class="cell-val">Correct standard value</span>
+              <span class="cell-q">Round 1,438 to the nearest 100 &rarr;</span>
+              <span class="cell-val">1,400</span>
             </div>
 
             <div class="ans-grid-cell">
               <span class="cell-letter">(e)</span>
-              <span class="cell-q">Basic drill 5: compute with whole numbers &rarr;</span>
-              <span class="cell-val">Correct standard value</span>
+              <span class="cell-q">Round 7,850 to the nearest 1,000 &rarr;</span>
+              <span class="cell-val">8,000</span>
             </div>
 
             <div class="ans-grid-cell">
               <span class="cell-letter">(f)</span>
-              <span class="cell-q">Basic drill 6: check intermediate result &rarr;</span>
-              <span class="cell-val">Correct standard value</span>
+              <span class="cell-q">Round 14,290 to the nearest 1,000 &rarr;</span>
+              <span class="cell-val">14,000</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(g)</span>
+              <span class="cell-q">Round £45.68 to the nearest pound (£) &rarr;</span>
+              <span class="cell-val">£46.00</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(h)</span>
+              <span class="cell-q">Round £129.40 to the nearest ten pounds &rarr;</span>
+              <span class="cell-val">£130.00</span>
             </div>
         </div>
       </div>
@@ -521,44 +679,56 @@
       <div class="ans-table-card">
         <div class="ans-table-head">
           <span class="ans-badge">Q2</span>
-          <span class="ans-head-title">Core Procedural Drill 2: Applied Metric & Money Fluency</span>
+          <span class="ans-head-title">Rounding to Decimal Places (d.p.) and Significant Figures (s.f.)</span>
         </div>
         <div class="ans-grid">
           
             <div class="ans-grid-cell">
               <span class="cell-letter">(a)</span>
-              <span class="cell-q">Calculate with money values (£) &rarr;</span>
-              <span class="cell-val">£45.00</span>
+              <span class="cell-q">Round 4.738 to 1 decimal place &rarr;</span>
+              <span class="cell-val">4.7</span>
             </div>
 
             <div class="ans-grid-cell">
               <span class="cell-letter">(b)</span>
-              <span class="cell-q">Calculate with metric length (metres) &rarr;</span>
-              <span class="cell-val">12.5 m</span>
+              <span class="cell-q">Round 12.865 to 2 decimal places &rarr;</span>
+              <span class="cell-val">12.87</span>
             </div>
 
             <div class="ans-grid-cell">
               <span class="cell-letter">(c)</span>
-              <span class="cell-q">Calculate with weight quantities (kg) &rarr;</span>
-              <span class="cell-val">80 kg</span>
+              <span class="cell-q">Round 0.0482 to 2 decimal places &rarr;</span>
+              <span class="cell-val">0.05</span>
             </div>
 
             <div class="ans-grid-cell">
               <span class="cell-letter">(d)</span>
-              <span class="cell-q">Calculate with capacity units (litres) &rarr;</span>
-              <span class="cell-val">250 litres</span>
+              <span class="cell-q">Round 3.14159 to 2 decimal places &rarr;</span>
+              <span class="cell-val">3.14</span>
             </div>
 
             <div class="ans-grid-cell">
               <span class="cell-letter">(e)</span>
-              <span class="cell-q">Calculate with elapsed time (hours) &rarr;</span>
-              <span class="cell-val">3.5 hours</span>
+              <span class="cell-q">Round 48,200 to 1 significant figure &rarr;</span>
+              <span class="cell-val">50,000</span>
             </div>
 
             <div class="ans-grid-cell">
               <span class="cell-letter">(f)</span>
-              <span class="cell-q">Calculate with percentage factors &rarr;</span>
-              <span class="cell-val">18%</span>
+              <span class="cell-q">Round 3,485 to 2 significant figures &rarr;</span>
+              <span class="cell-val">3,500</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(g)</span>
+              <span class="cell-q">Round 0.00482 to 1 significant figure &rarr;</span>
+              <span class="cell-val">0.005</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(h)</span>
+              <span class="cell-q">Round 0.0763 to 2 significant figures &rarr;</span>
+              <span class="cell-val">0.076</span>
             </div>
         </div>
       </div>
@@ -566,32 +736,44 @@
       <div class="ans-table-card">
         <div class="ans-table-head">
           <span class="ans-badge">Q3</span>
-          <span class="ans-head-title">Core Procedural Drill 3: Multi-Step & Level 2 Variations</span>
+          <span class="ans-head-title">Exam Estimation Drills (1 Significant Figure)</span>
         </div>
         <div class="ans-grid">
           
             <div class="ans-grid-cell">
               <span class="cell-letter">(a)</span>
-              <span class="cell-q">Multi-step procedure: Step 1 then Step 2 &rarr;</span>
-              <span class="cell-val">Accurate compound value</span>
+              <span class="cell-q">Estimate: 49 × 21 &rarr;</span>
+              <span class="cell-val">50 × 20 = 1,000</span>
             </div>
 
             <div class="ans-grid-cell">
               <span class="cell-letter">(b)</span>
-              <span class="cell-q">Solve inverse relationship &rarr;</span>
-              <span class="cell-val">Verified original quantity</span>
+              <span class="cell-q">Estimate: 395 × 18 &rarr;</span>
+              <span class="cell-val">400 × 20 = 8,000</span>
             </div>
 
             <div class="ans-grid-cell">
               <span class="cell-letter">(c)</span>
-              <span class="cell-q">Compare two alternative outcomes &rarr;</span>
-              <span class="cell-val">Option A is more economical</span>
+              <span class="cell-q">Estimate: 785 ÷ 38 &rarr;</span>
+              <span class="cell-val">800 ÷ 40 = 20</span>
             </div>
 
             <div class="ans-grid-cell">
               <span class="cell-letter">(d)</span>
-              <span class="cell-q">Calculate compound rate &rarr;</span>
-              <span class="cell-val">Standard calibrated rate</span>
+              <span class="cell-q">Estimate: 19.8 × 4.2 &rarr;</span>
+              <span class="cell-val">20 × 4 = 80</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(e)</span>
+              <span class="cell-q">Estimate: (48.5 + 31.2) ÷ 19.4 &rarr;</span>
+              <span class="cell-val">(50 + 30) ÷ 20 = 80 ÷ 20 = 4</span>
+            </div>
+
+            <div class="ans-grid-cell">
+              <span class="cell-letter">(f)</span>
+              <span class="cell-q">Estimate: 512 × 0.48 &rarr;</span>
+              <span class="cell-val">500 × 0.5 = 250</span>
             </div>
         </div>
       </div>
@@ -609,83 +791,41 @@
         <div class="apply-sol-head">
           <div>
             <span class="sol-q-num">Question 1 Worked Solution</span>
-            <span class="sol-ctx"><i class="fa-solid fa-briefcase"></i> NHS Healthcare & Workplace Scenario</span>
+            <span class="sol-ctx"><i class="fa-solid fa-briefcase"></i> NHS Procurement Order Estimation</span>
           </div>
           <span class="sol-marks">[3 Marks Available]</span>
         </div>
-        <div class="sol-stem-summary">An NHS healthcare administrator manages resource scheduling involving <strong>Rounding & Estimating</strong>.<br>The baseline record requires evaluating three consecutive ward operations with values <strong>120, 180, and 240 units</strong>.<br>Calculate the combined outcome and determine if the total satisfies the threshold limit of <strong>500 units</strong>.</div>
+        <div class="sol-stem-summary">A procurement manager orders <strong>38 digital blood pressure monitors</strong> at <strong>£48.75 each</strong>.<br>(a) Use estimation (by rounding each number to 1 significant figure) to calculate an approximate total cost.<br>(b) The supplier sends an invoice for <strong>£2,450.00</strong>. Is this invoice reasonable based on your estimate?</div>
         <div class="sol-steps-wrap">
           
             <div class="sol-step-row">
-              <div class="step-text"><i class="fa-solid fa-chevron-right text-emerald"></i> 1. Sum the baseline resource values: 120 + 180 + 240 = 540 units</div>
+              <div class="step-text"><i class="fa-solid fa-chevron-right text-emerald"></i> Round 38 to 1 s.f. = 40; Round £48.75 to 1 s.f. = £50</div>
               <div class="step-mark">[M1]</div>
             </div>
 
             <div class="sol-step-row">
-              <div class="step-text"><i class="fa-solid fa-chevron-right text-emerald"></i> 2. Compare against threshold: 540 > 500 units</div>
+              <div class="step-text"><i class="fa-solid fa-chevron-right text-emerald"></i> Estimate calculation: 40 × £50 = £2,000</div>
               <div class="step-mark">[M1]</div>
             </div>
 
             <div class="sol-step-row">
-              <div class="step-text"><i class="fa-solid fa-chevron-right text-emerald"></i> 3. State supported conclusion: Total exceeds threshold by 40 units</div>
+              <div class="step-text"><i class="fa-solid fa-chevron-right text-emerald"></i> Conclusion: No, the invoice for £2,450 is significantly too high (overcharged by ~£600; actual cost is 38 × £48.75 = £1,852.50).</div>
               <div class="step-mark">[A1]</div>
             </div>
         </div>
         <div class="final-ans-box">
           <span class="final-lbl">Correct Final Answer:</span>
-          <span class="final-val">Threshold Exceeded (Total = 540 units, 40 over limit)</span>
+          <span class="final-val">(a) Estimate = £2,000 | (b) No, £2,450 is unreasonable (much higher than estimate)</span>
         </div>
         
         <div class="callout-box check-box">
           <i class="fa-solid fa-shield-check"></i>
-          <div><strong>Pearson Reverse Check Method:</strong> 540 - 240 - 180 = 120 units.</div>
+          <div><strong>Pearson Reverse Check Method:</strong> Exact = £1,852.50, which is close to the £2,000 estimate, confirming £2,450 is incorrect.</div>
         </div>
         
         <div class="callout-box pitfall-box">
           <i class="fa-solid fa-triangle-exclamation"></i>
-          <div><strong>Common Exam Trap / Pitfall:</strong> Omitting the comparison statement against the threshold limit.</div>
-        </div>
-      </div>
-
-      <div class="apply-sol-card">
-        <div class="apply-sol-head">
-          <div>
-            <span class="sol-q-num">Question 2 Worked Solution</span>
-            <span class="sol-ctx"><i class="fa-solid fa-briefcase"></i> Commercial Trade & Logistics</span>
-          </div>
-          <span class="sol-marks">[3 Marks Available]</span>
-        </div>
-        <div class="sol-stem-summary">A warehouse logistics supervisor reviews shipping schedules involving <strong>Rounding & Estimating</strong>.<br>Each pallet requires standard packaging costing <strong>£14.50</strong> plus a handling surcharge of <strong>12%</strong>.<br>Calculate the total cost to dispatch <strong>20 pallets</strong>.</div>
-        <div class="sol-steps-wrap">
-          
-            <div class="sol-step-row">
-              <div class="step-text"><i class="fa-solid fa-chevron-right text-emerald"></i> 1. Calculate handling surcharge: £14.50 × 0.12 = £1.74</div>
-              <div class="step-mark">[M1]</div>
-            </div>
-
-            <div class="sol-step-row">
-              <div class="step-text"><i class="fa-solid fa-chevron-right text-emerald"></i> 2. Total cost per pallet: £14.50 + £1.74 = £16.24</div>
-              <div class="step-mark">[M1]</div>
-            </div>
-
-            <div class="sol-step-row">
-              <div class="step-text"><i class="fa-solid fa-chevron-right text-emerald"></i> 3. Multiply for 20 pallets: £16.24 × 20 = £324.80</div>
-              <div class="step-mark">[A1]</div>
-            </div>
-        </div>
-        <div class="final-ans-box">
-          <span class="final-lbl">Correct Final Answer:</span>
-          <span class="final-val">£324.80</span>
-        </div>
-        
-        <div class="callout-box check-box">
-          <i class="fa-solid fa-shield-check"></i>
-          <div><strong>Pearson Reverse Check Method:</strong> £324.80 ÷ 20 = £16.24; £16.24 ÷ 1.12 = £14.50.</div>
-        </div>
-        
-        <div class="callout-box pitfall-box">
-          <i class="fa-solid fa-triangle-exclamation"></i>
-          <div><strong>Common Exam Trap / Pitfall:</strong> Multiplying £14.50 by 20 and forgetting the 12% surcharge.</div>
+          <div><strong>Common Exam Trap / Pitfall:</strong> Calculating the exact value (£1,852.50) instead of showing the 1 s.f. rounded values (40 × £50).</div>
         </div>
       </div>
 

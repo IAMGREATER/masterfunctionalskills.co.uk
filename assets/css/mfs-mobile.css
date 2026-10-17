@@ -2380,14 +2380,6 @@
     .exam-model-calc-explanation,
     .examiner-pitfall-box,
     .examiner-pitfall-fix,
-    .practice-q-header,
-    .practice-card-header,
-    .practice-q-body,
-    .practice-card-body,
-    .practice-q-stem,
-    .practice-prompt-box,
-    .practice-solution-drawer,
-    .solution-drawer,
     .download-card-body {
       width: 100% !important;
       max-width: 100% !important;
@@ -2396,31 +2388,292 @@
       box-sizing: border-box !important;
     }
 
-    .practice-interactive-wrap,
-    .working-scratchpad-area,
-    .scratchpad-area,
-    .practice-scratchpad,
-    .working-scratchpad-input {
+    /* ==========================================================================
+       INTERACTIVE EXAM PRACTICE QUESTIONS — MOBILE PORTRAIT ENGINE (COMPACT & FULL-WIDTH)
+       ========================================================================== */
+    #practice-questions,
+    section.revision-section:has(.practice-q-card),
+    section[id*="practice"] {
       width: 100% !important;
       max-width: 100% !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
       margin-left: 0 !important;
       margin-right: 0 !important;
       box-sizing: border-box !important;
     }
 
+    #practice-questions .section-header-row,
+    section.revision-section:has(.practice-q-card) .section-header-row {
+      padding: 6px 10px !important;
+      margin: 0 0 8px 0 !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+
+    #practice-questions .section-title,
+    section.revision-section:has(.practice-q-card) .section-title {
+      font-size: 0.98rem !important;
+      line-height: 1.35 !important;
+      margin: 0 !important;
+      font-weight: 800 !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+
+    .practice-q-card,
+    .practice-card,
+    .practice-question-card {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 0 12px 0 !important;
+      padding: 0 !important;
+      border-radius: 6px !important;
+      border: 1px solid #cbd5e1 !important;
+      background: #ffffff !important;
+      overflow: hidden !important;
+      box-sizing: border-box !important;
+    }
+
+    .practice-q-header,
+    .practice-card-header {
+      padding: 8px 10px !important;
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      background: #f8fafc !important;
+      border-bottom: 1px solid #e2e8f0 !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+
+    .practice-q-header span:first-child,
+    .practice-q-header strong,
+    .practice-q-title,
+    .practice-q-num {
+      font-size: 0.84rem !important;
+      font-weight: 700 !important;
+      color: #1e293b !important;
+      line-height: 1.3 !important;
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 5px !important;
+      width: auto !important;
+      max-width: 72% !important;
+    }
+
+    .practice-marks-pill,
+    .practice-q-marks,
+    .practice-card-marks {
+      font-size: 0.70rem !important;
+      font-weight: 800 !important;
+      padding: 2px 7px !important;
+      border-radius: 999px !important;
+      line-height: 1.2 !important;
+      width: auto !important;
+      white-space: nowrap !important;
+      display: inline-flex !important;
+      align-items: center !important;
+    }
+
+    .practice-q-body,
+    .practice-card-body {
+      padding: 8px 10px !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+
+    .practice-q-stem,
+    .practice-prompt-box {
+      font-size: 0.84rem !important;
+      line-height: 1.48 !important;
+      color: #1e293b !important;
+      margin-bottom: 8px !important;
+      padding: 8px 10px !important;
+      background: #f8fafc !important;
+      border-radius: 6px !important;
+      border: 1px solid #e2e8f0 !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+      overflow-wrap: break-word !important;
+      word-wrap: break-word !important;
+    }
+
+    .practice-q-stem *,
+    .practice-prompt-box * {
+      font-size: 0.84rem !important;
+      line-height: 1.48 !important;
+      box-sizing: border-box !important;
+    }
+
+    .practice-q-stem p,
+    .practice-q-stem li {
+      font-size: 0.84rem !important;
+      line-height: 1.48 !important;
+      margin-bottom: 6px !important;
+    }
+
+    .practice-q-stem strong {
+      font-weight: 800 !important;
+      font-size: 0.84rem !important;
+    }
+
+    .practice-q-stem em {
+      font-size: 0.84rem !important;
+    }
+
+    .practice-q-stem .math-frac {
+      display: inline-flex !important;
+      flex-direction: column !important;
+      vertical-align: middle !important;
+      padding: 0 2px !important;
+      width: auto !important;
+      font-size: 0.82rem !important;
+      line-height: 1 !important;
+    }
+
+    .practice-q-stem .math-frac-num {
+      font-size: 0.70rem !important;
+      line-height: 1 !important;
+      padding-bottom: 1px !important;
+      border-bottom: 1.5px solid currentColor !important;
+      width: auto !important;
+      text-align: center !important;
+    }
+
+    .practice-q-stem .math-frac-den {
+      font-size: 0.70rem !important;
+      line-height: 1 !important;
+      padding-top: 1px !important;
+      width: auto !important;
+      text-align: center !important;
+    }
+
+    .practice-q-stem .math-mixed-num {
+      display: inline-flex !important;
+      align-items: center !important;
+      gap: 2px !important;
+      width: auto !important;
+      vertical-align: middle !important;
+    }
+
+    .practice-q-stem .math-mixed-whole {
+      font-size: 0.86rem !important;
+      line-height: 1 !important;
+      width: auto !important;
+      font-weight: 800 !important;
+    }
+
+    .practice-q-stem img,
+    .practice-q-stem svg {
+      max-width: 100% !important;
+      height: auto !important;
+      display: block !important;
+      margin: 6px auto !important;
+      border-radius: 6px !important;
+    }
+
+    .practice-interactive-wrap,
+    .working-scratchpad-area,
+    .scratchpad-area {
+      width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      box-sizing: border-box !important;
+    }
+
+    .practice-interactive-wrap label,
+    .working-scratchpad-label,
+    .practice-notes-label {
+      font-size: 0.76rem !important;
+      font-weight: 700 !important;
+      color: #475569 !important;
+      margin-bottom: 4px !important;
+      display: block !important;
+      line-height: 1.3 !important;
+    }
+
+    .practice-scratchpad,
+    .working-scratchpad-input {
+      width: 100% !important;
+      min-height: 48px !important;
+      height: 52px !important;
+      padding: 6px 8px !important;
+      font-size: 0.80rem !important;
+      line-height: 1.35 !important;
+      border-radius: 6px !important;
+      border: 1px solid #cbd5e1 !important;
+      background: #fafbfc !important;
+      font-family: monospace !important;
+      box-sizing: border-box !important;
+      resize: vertical !important;
+    }
+
+    .practice-interactive-wrap > div:has(.btn-solution-toggle),
+    .practice-q-toolbar {
+      margin-top: 6px !important;
+      width: 100% !important;
+      display: flex !important;
+    }
+
+    .btn-solution-toggle,
+    .btn-reveal-solution,
+    .btn-toggle-solution {
+      width: 100% !important;
+      padding: 7px 12px !important;
+      font-size: 0.78rem !important;
+      font-weight: 700 !important;
+      border-radius: 6px !important;
+      display: flex !important;
+      justify-content: center !important;
+      align-items: center !important;
+      gap: 6px !important;
+      box-sizing: border-box !important;
+      margin: 0 !important;
+      cursor: pointer !important;
+      background: #0284c7 !important;
+      color: #ffffff !important;
+      border: none !important;
+    }
+
+    .practice-solution-drawer,
+    .solution-drawer {
+      padding: 8px 10px !important;
+      margin-top: 8px !important;
+      background: #f0fdf4 !important;
+      border: 1px solid #86efac !important;
+      border-radius: 6px !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+
     .practice-solution-drawer > div:first-child,
     .solution-drawer-title {
-      font-size: 0.84rem !important;
+      font-size: 0.82rem !important;
       font-weight: 800 !important;
+      color: #166534 !important;
       margin-bottom: 6px !important;
-      line-height: 1.35 !important;
+      line-height: 1.3 !important;
+    }
+
+    .practice-solution-drawer div,
+    .practice-solution-drawer p,
+    .practice-solution-drawer span,
+    .practice-solution-drawer li {
+      font-size: 0.80rem !important;
+      line-height: 1.4 !important;
+    }
+
+    .practice-solution-drawer strong {
+      font-weight: 800 !important;
     }
 
     .practice-solution-drawer .math-col-board,
     .solution-drawer .math-col-board {
       padding: 6px 8px !important;
-      margin: 6px 0 !important;
-      font-size: 0.84rem !important;
+      margin: 4px 0 6px 0 !important;
+      font-size: 0.80rem !important;
+      border-radius: 4px !important;
       width: 100% !important;
       max-width: 100% !important;
       box-sizing: border-box !important;
@@ -2428,35 +2681,242 @@
       -webkit-overflow-scrolling: touch !important;
     }
 
-    .practice-solution-drawer .math-col-board div,
-    .practice-solution-drawer div[style*="font-size"] {
-      font-size: 0.84rem !important;
-      line-height: 1.45 !important;
+    .practice-solution-drawer .math-col-board div {
+      font-size: 0.80rem !important;
+      line-height: 1.4 !important;
     }
 
-    .practice-solution-drawer div[style*="font-size:1.45rem"],
-    .practice-solution-drawer div[style*="font-size: 1.45rem"],
-    .practice-solution-drawer div[style*="font-size:1.25rem"],
-    .practice-solution-drawer div[style*="font-size: 1.25rem"],
-    .practice-solution-drawer div[style*="font-size:1.15rem"],
-    .practice-solution-drawer div[style*="font-size: 1.15rem"] {
-      font-size: 0.86rem !important;
-      line-height: 1.45 !important;
+    .practice-solution-drawer div[style*="font-size:1."],
+    .practice-solution-drawer div[style*="font-size: 1."],
+    .practice-solution-drawer strong[style*="font-size:1."],
+    .practice-solution-drawer strong[style*="font-size: 1."] {
+      font-size: 0.85rem !important;
+      line-height: 1.4 !important;
     }
 
-    .practice-solution-drawer div[style*="Final Correct Answer"],
-    .practice-solution-drawer div[style*="font-weight:900"],
-    .practice-solution-drawer div[style*="font-weight: 900"] {
-      font-size: 0.88rem !important;
+    .practice-solution-drawer div:has(> strong:only-child),
+    .practice-solution-drawer div[style*="color:#166534"],
+    .practice-solution-drawer div[style*="color:#15803d"] {
+      font-size: 0.82rem !important;
       font-weight: 800 !important;
       margin-top: 6px !important;
     }
 
     .practice-solution-drawer div[style*="italic"],
+    .practice-solution-drawer .solution-tip,
     .practice-solution-drawer .examiner-tip {
       font-size: 0.76rem !important;
       line-height: 1.35 !important;
-      margin-top: 6px !important;
+      color: #15803d !important;
+      font-style: italic !important;
+      margin-top: 4px !important;
+    }
+
+    /* ==========================================================================
+       WORKED EXAM MODELS — MOBILE PORTRAIT ENGINE (COMPACT & FULL-WIDTH)
+       ========================================================================== */
+    #worked-exam-models,
+    section.revision-section:has(.model-example-card),
+    section[id*="model"] {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      box-sizing: border-box !important;
+    }
+
+    #worked-exam-models .section-header-row,
+    section.revision-section:has(.model-example-card) .section-header-row {
+      padding: 6px 10px !important;
+      margin: 0 0 8px 0 !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+
+    #worked-exam-models .section-title,
+    section.revision-section:has(.model-example-card) .section-title {
+      font-size: 0.98rem !important;
+      line-height: 1.35 !important;
+      margin: 0 !important;
+      font-weight: 800 !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+
+    .model-example-card,
+    .exam-model-big-step {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 0 12px 0 !important;
+      padding: 0 !important;
+      border-radius: 6px !important;
+      border: 1px solid #cbd5e1 !important;
+      overflow: hidden !important;
+      box-sizing: border-box !important;
+      background: #ffffff !important;
+    }
+
+    .model-card-header,
+    .exam-model-big-step-header {
+      padding: 6px 10px !important;
+      display: flex !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+
+    .model-badge,
+    .exam-model-badge {
+      font-size: 0.72rem !important;
+      padding: 2px 7px !important;
+      border-radius: 999px !important;
+    }
+
+    .model-marks-pill {
+      font-size: 0.68rem !important;
+      padding: 2px 6px !important;
+      border-radius: 999px !important;
+    }
+
+    .model-scenario {
+      padding: 8px 10px !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+
+    .model-scenario p,
+    .model-scenario span {
+      font-size: 0.78rem !important;
+      line-height: 1.35 !important;
+      margin-bottom: 4px !important;
+    }
+
+    .model-q-stem {
+      font-size: 0.84rem !important;
+      line-height: 1.45 !important;
+      color: #1e293b !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+
+    .model-q-stem * {
+      font-size: 0.84rem !important;
+      line-height: 1.45 !important;
+    }
+
+    .model-steps-container {
+      padding: 8px 10px !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+
+    .model-steps-header-row {
+      display: none !important;
+    }
+
+    .model-step-row,
+    .model-step-grid-row {
+      display: flex !important;
+      flex-direction: column !important;
+      padding: 6px 0 !important;
+      border-bottom: 1px solid #f1f5f9 !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+
+    .model-step-col-step {
+      width: 100% !important;
+      margin-bottom: 4px !important;
+    }
+
+    .example-step-pill {
+      font-size: 0.68rem !important;
+      padding: 2px 6px !important;
+    }
+
+    .model-step-title {
+      font-size: 0.80rem !important;
+      font-weight: 700 !important;
+    }
+
+    .model-step-col-desc {
+      width: 100% !important;
+      font-size: 0.80rem !important;
+      box-sizing: border-box !important;
+    }
+
+    .model-step-col-desc * {
+      font-size: 0.80rem !important;
+      line-height: 1.4 !important;
+    }
+
+    .model-step-col-desc .math-col-board {
+      padding: 6px 8px !important;
+      margin: 4px 0 !important;
+      font-size: 0.80rem !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+
+    .model-step-col-desc .math-col-board div {
+      font-size: 0.80rem !important;
+      line-height: 1.4 !important;
+    }
+
+    .model-step-col-desc .math-col-board strong {
+      font-size: 0.84rem !important;
+    }
+
+    .model-step-col-criteria {
+      width: 100% !important;
+      margin-top: 4px !important;
+    }
+
+    .criteria-badge-teal {
+      font-size: 0.70rem !important;
+      padding: 2px 6px !important;
+      border-radius: 4px !important;
+      display: inline-block !important;
+    }
+
+    .model-final-answer {
+      margin-top: 8px !important;
+      padding: 6px 8px !important;
+      font-size: 0.80rem !important;
+      line-height: 1.35 !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+      gap: 8px !important;
+    }
+
+    .model-final-answer div,
+    .model-final-answer strong {
+      font-size: 0.80rem !important;
+    }
+
+    .model-final-answer i {
+      font-size: 1.2rem !important;
+    }
+
+    .examiner-guidance-box {
+      margin-top: 8px !important;
+      padding: 6px 8px !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+
+    .examiner-guidance-header {
+      font-size: 0.76rem !important;
+      font-weight: 700 !important;
+      margin-bottom: 4px !important;
+    }
+
+    .examiner-guidance-text {
+      font-size: 0.76rem !important;
+      line-height: 1.35 !important;
     }
 
     /* Sketches, Diagrams, and SVGs */
@@ -2812,6 +3272,342 @@
     border-radius: 6px !important;
   }
 }
+
+/* ==========================================================================
+   INTERACTIVE EXAM PRACTICE QUESTIONS & WORKED MODELS — TOP-LEVEL PORTRAIT ENGINE
+   Direct top-level media rule guaranteeing 100% full width, edge-to-edge spread,
+   smaller crisp text sizing, and compact touch-friendly interaction on all phones.
+   ========================================================================== */
+@media (max-width: 768px), (orientation: portrait) and (max-width: 1024px) {
+  #practice-questions,
+  section.revision-section:has(.practice-q-card),
+  section[id*="practice"],
+  #worked-exam-models,
+  section.revision-section:has(.model-example-card),
+  section[id*="model"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  #practice-questions .section-header-row,
+  section.revision-section:has(.practice-q-card) .section-header-row,
+  #worked-exam-models .section-header-row,
+  section.revision-section:has(.model-example-card) .section-header-row {
+    padding: 6px 10px !important;
+    margin: 0 0 8px 0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  #practice-questions .section-title,
+  section.revision-section:has(.practice-q-card) .section-title,
+  #worked-exam-models .section-title,
+  section.revision-section:has(.model-example-card) .section-title {
+    font-size: 0.98rem !important;
+    line-height: 1.35 !important;
+    margin: 0 !important;
+    font-weight: 800 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .practice-q-card,
+  .practice-card,
+  .practice-question-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 0 12px 0 !important;
+    padding: 0 !important;
+    border-radius: 6px !important;
+    border: 1px solid #cbd5e1 !important;
+    background: #ffffff !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
+  }
+
+  .practice-q-header,
+  .practice-card-header {
+    padding: 8px 10px !important;
+    display: flex !important;
+    justify-content: space-between !important;
+    align-items: center !important;
+    background: #f8fafc !important;
+    border-bottom: 1px solid #e2e8f0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .practice-q-header span:first-child,
+  .practice-q-header strong,
+  .practice-q-title,
+  .practice-q-num {
+    font-size: 0.84rem !important;
+    font-weight: 700 !important;
+    color: #1e293b !important;
+    line-height: 1.3 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 5px !important;
+    width: auto !important;
+    max-width: 72% !important;
+  }
+
+  .practice-marks-pill,
+  .practice-q-marks,
+  .practice-card-marks {
+    font-size: 0.70rem !important;
+    font-weight: 800 !important;
+    padding: 2px 7px !important;
+    border-radius: 999px !important;
+    line-height: 1.2 !important;
+    width: auto !important;
+    white-space: nowrap !important;
+    display: inline-flex !important;
+    align-items: center !important;
+  }
+
+  .practice-q-body,
+  .practice-card-body {
+    padding: 8px 10px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .practice-q-stem,
+  .practice-prompt-box {
+    font-size: 0.84rem !important;
+    line-height: 1.48 !important;
+    color: #1e293b !important;
+    margin-bottom: 8px !important;
+    padding: 8px 10px !important;
+    background: #f8fafc !important;
+    border-radius: 6px !important;
+    border: 1px solid #e2e8f0 !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-wrap: break-word !important;
+    word-wrap: break-word !important;
+  }
+
+  .practice-q-stem *,
+  .practice-prompt-box * {
+    font-size: 0.84rem !important;
+    line-height: 1.48 !important;
+    box-sizing: border-box !important;
+  }
+
+  .practice-q-stem p,
+  .practice-q-stem li {
+    font-size: 0.84rem !important;
+    line-height: 1.48 !important;
+    margin-bottom: 6px !important;
+  }
+
+  .practice-q-stem strong {
+    font-weight: 800 !important;
+    font-size: 0.84rem !important;
+  }
+
+  .practice-q-stem em {
+    font-size: 0.84rem !important;
+  }
+
+  .practice-q-stem .math-frac {
+    display: inline-flex !important;
+    flex-direction: column !important;
+    vertical-align: middle !important;
+    padding: 0 2px !important;
+    width: auto !important;
+    font-size: 0.82rem !important;
+    line-height: 1 !important;
+  }
+
+  .practice-q-stem .math-frac-num {
+    font-size: 0.70rem !important;
+    line-height: 1 !important;
+    padding-bottom: 1px !important;
+    border-bottom: 1.5px solid currentColor !important;
+    width: auto !important;
+    text-align: center !important;
+  }
+
+  .practice-q-stem .math-frac-den {
+    font-size: 0.70rem !important;
+    line-height: 1 !important;
+    padding-top: 1px !important;
+    width: auto !important;
+    text-align: center !important;
+  }
+
+  .practice-q-stem .math-mixed-num {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 2px !important;
+    width: auto !important;
+    vertical-align: middle !important;
+  }
+
+  .practice-q-stem .math-mixed-whole {
+    font-size: 0.86rem !important;
+    line-height: 1 !important;
+    width: auto !important;
+    font-weight: 800 !important;
+  }
+
+  .practice-q-stem img,
+  .practice-q-stem svg {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    margin: 6px auto !important;
+    border-radius: 6px !important;
+  }
+
+  .practice-interactive-wrap,
+  .working-scratchpad-area,
+  .scratchpad-area {
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  .practice-interactive-wrap label,
+  .working-scratchpad-label,
+  .practice-notes-label {
+    font-size: 0.76rem !important;
+    font-weight: 700 !important;
+    color: #475569 !important;
+    margin-bottom: 4px !important;
+    display: block !important;
+    line-height: 1.3 !important;
+  }
+
+  .practice-scratchpad,
+  .working-scratchpad-input {
+    width: 100% !important;
+    min-height: 48px !important;
+    height: 52px !important;
+    padding: 6px 8px !important;
+    font-size: 0.80rem !important;
+    line-height: 1.35 !important;
+    border-radius: 6px !important;
+    border: 1px solid #cbd5e1 !important;
+    background: #fafbfc !important;
+    font-family: monospace !important;
+    box-sizing: border-box !important;
+    resize: vertical !important;
+  }
+
+  .practice-interactive-wrap > div:has(.btn-solution-toggle),
+  .practice-q-toolbar {
+    margin-top: 6px !important;
+    width: 100% !important;
+    display: flex !important;
+  }
+
+  .btn-solution-toggle,
+  .btn-reveal-solution,
+  .btn-toggle-solution {
+    width: 100% !important;
+    padding: 7px 12px !important;
+    font-size: 0.78rem !important;
+    font-weight: 700 !important;
+    border-radius: 6px !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    gap: 6px !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    cursor: pointer !important;
+    background: #0284c7 !important;
+    color: #ffffff !important;
+    border: none !important;
+  }
+
+  .practice-solution-drawer,
+  .solution-drawer {
+    padding: 8px 10px !important;
+    margin-top: 8px !important;
+    background: #f0fdf4 !important;
+    border: 1px solid #86efac !important;
+    border-radius: 6px !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .practice-solution-drawer > div:first-child,
+  .solution-drawer-title {
+    font-size: 0.82rem !important;
+    font-weight: 800 !important;
+    color: #166534 !important;
+    margin-bottom: 6px !important;
+    line-height: 1.3 !important;
+  }
+
+  .practice-solution-drawer div,
+  .practice-solution-drawer p,
+  .practice-solution-drawer span,
+  .practice-solution-drawer li {
+    font-size: 0.80rem !important;
+    line-height: 1.4 !important;
+  }
+
+  .practice-solution-drawer strong {
+    font-weight: 800 !important;
+  }
+
+  .practice-solution-drawer .math-col-board,
+  .solution-drawer .math-col-board {
+    padding: 6px 8px !important;
+    margin: 4px 0 6px 0 !important;
+    font-size: 0.80rem !important;
+    border-radius: 4px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  .practice-solution-drawer .math-col-board div {
+    font-size: 0.80rem !important;
+    line-height: 1.4 !important;
+  }
+
+  .practice-solution-drawer div[style*="font-size:1."],
+  .practice-solution-drawer div[style*="font-size: 1."],
+  .practice-solution-drawer strong[style*="font-size:1."],
+  .practice-solution-drawer strong[style*="font-size: 1."] {
+    font-size: 0.85rem !important;
+    line-height: 1.4 !important;
+  }
+
+  .practice-solution-drawer div:has(> strong:only-child),
+  .practice-solution-drawer div[style*="color:#166534"],
+  .practice-solution-drawer div[style*="color:#15803d"] {
+    font-size: 0.82rem !important;
+    font-weight: 800 !important;
+    margin-top: 6px !important;
+  }
+
+  .practice-solution-drawer div[style*="italic"],
+  .practice-solution-drawer .solution-tip,
+  .practice-solution-drawer .examiner-tip {
+    font-size: 0.76rem !important;
+    line-height: 1.35 !important;
+    color: #15803d !important;
+    font-style: italic !important;
+    margin-top: 4px !important;
+  }
+}
+
 
 /* --------------------------------------------------------------------------
    4. DESKTOP SAFETY GUARANTEE (Laptops & Desktops with fine cursor > 1024px)

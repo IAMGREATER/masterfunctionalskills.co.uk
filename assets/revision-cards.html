@@ -9,6 +9,7 @@
   <title>Pocket Revision Cards | Master Functional Skills</title>
   <meta name="description" content="Official Functional Skills Revision Cards mapped to the UK DfE Government Curriculum. Interactive 3D flip cards, spaced repetition recall, and printable sheets for Maths, English & Digital Skills.">
   <link rel="stylesheet" href="assets/css/mfs-theme.css">
+  <link rel="stylesheet" href="assets/css/mfs-mobile.css?v=20261017">
   <link rel="stylesheet" href="assets/css/mfs-video-modal.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
@@ -485,21 +486,21 @@
       color: var(--accent-hover);
     }
 
-    /* Filter & Search Bar - Centered & Refined */
+    /* Filter & Search Bar - Centered & Streamlined */
     .filter-section {
-      max-width: 760px;
-      margin: 0 auto 24px;
+      max-width: 710px;
+      margin: 0 auto 20px;
       background: #ffffff;
       border: 1px solid var(--border);
-      border-radius: 18px;
-      padding: 18px 22px;
+      border-radius: 16px;
+      padding: 13px 18px;
       box-shadow: 0 6px 20px rgba(0, 0, 0, 0.04);
       box-sizing: border-box;
     }
 
     .search-input-wrap {
       position: relative;
-      margin-bottom: 14px;
+      margin-bottom: 12px;
     }
 
     .search-input-wrap i {
@@ -512,10 +513,10 @@
 
     .search-input {
       width: 100%;
-      padding: 11px 16px 11px 44px;
+      padding: 9px 16px 9px 42px;
       border-radius: 12px;
       border: 1.5px solid var(--border);
-      font-size: 0.92rem;
+      font-size: 0.90rem;
       background: #f8fafc;
       box-sizing: border-box;
       outline: none;
@@ -527,23 +528,43 @@
       box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
     }
 
-    .filter-pills-row {
+    .filter-controls-row {
       display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
+      justify-content: space-between;
       align-items: center;
+      gap: 12px;
+      flex-wrap: nowrap;
+    }
+    .filter-controls-row .filter-pills-row {
+      display: flex;
+      flex-wrap: nowrap;
+      white-space: nowrap;
+      gap: 5px;
+      align-items: center;
+    }
+    @media (max-width: 700px) {
+      .filter-controls-row {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 8px;
+      }
+      .filter-controls-row .filter-pills-row {
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+      }
     }
 
     .filter-pill {
-      padding: 6px 12px;
+      padding: 5px 11px;
       border-radius: 999px;
       border: 1px solid var(--border);
       background: #f8fafc;
-      font-size: 0.82rem;
+      font-size: 0.80rem;
       font-weight: 700;
       color: var(--text-secondary);
       cursor: pointer;
       transition: all 0.2s ease;
+      white-space: nowrap;
     }
 
     .filter-pill:hover,
@@ -551,6 +572,120 @@
       background: var(--navy);
       color: #ffffff;
       border-color: var(--navy);
+    }
+
+    /* Distinct Action Palette for View Mode Pills (3D Deck, Grid View, Print) */
+    .view-mode-tabs {
+      display: flex;
+      gap: 5px;
+      align-items: center;
+      flex-wrap: nowrap;
+      white-space: nowrap;
+    }
+    .view-mode-tabs .filter-pill {
+      background: #eef2ff;
+      border: 1.5px solid #c7d2fe;
+      color: #4338ca;
+      padding: 5px 12px;
+      font-size: 0.80rem;
+      font-weight: 700;
+    }
+    .view-mode-tabs .filter-pill i {
+      color: #4f46e5;
+    }
+    .view-mode-tabs .filter-pill:hover {
+      background: #e0e7ff;
+      border-color: #a5b4fc;
+      color: #3730a3;
+      transform: translateY(-1px);
+    }
+    .view-mode-tabs .filter-pill.active {
+      background: #4f46e5 !important;
+      border-color: #4338ca !important;
+      color: #ffffff !important;
+      box-shadow: 0 2px 8px rgba(79, 70, 229, 0.28);
+    }
+    .view-mode-tabs .filter-pill.active i {
+      color: #ffffff !important;
+    }
+
+    /* Hero Subject Pills (Quick Breakdown Badges) */
+    .deck-stat-badge {
+      border-radius: 999px;
+      padding: 6px 16px;
+      font-size: 0.86rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s ease;
+      background: #ffffff;
+      border: 1.5px solid var(--border);
+      color: var(--navy);
+      text-decoration: none;
+    }
+    .deck-stat-badge:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+    .deck-stat-badge[data-subject="all"] {
+      background: #f1f5f9;
+      border-color: #cbd5e1;
+      color: var(--navy);
+    }
+    .deck-stat-badge[data-subject="all"].active {
+      background: var(--navy);
+      color: #ffffff;
+      border-color: var(--navy);
+    }
+    .deck-stat-badge[data-subject="all"].active i {
+      color: #ffffff !important;
+    }
+    .deck-stat-badge[data-subject="maths"] {
+      background: #eff6ff;
+      border-color: #bfdbfe;
+      color: #1e40af;
+    }
+    .deck-stat-badge[data-subject="maths"].active {
+      background: #2563eb;
+      color: #ffffff;
+      border-color: #1d4ed8;
+    }
+    .deck-stat-badge[data-subject="maths"].active i,
+    .deck-stat-badge[data-subject="maths"].active span {
+      color: #ffffff !important;
+      opacity: 0.95;
+    }
+    .deck-stat-badge[data-subject="english"] {
+      background: #f5f3ff;
+      border-color: #ddd6fe;
+      color: #5b21b6;
+    }
+    .deck-stat-badge[data-subject="english"].active {
+      background: #7c3aed;
+      color: #ffffff;
+      border-color: #6d28d9;
+    }
+    .deck-stat-badge[data-subject="english"].active i,
+    .deck-stat-badge[data-subject="english"].active span {
+      color: #ffffff !important;
+      opacity: 0.95;
+    }
+    .deck-stat-badge[data-subject="digital"] {
+      background: #ecfdf5;
+      border-color: #a7f3d0;
+      color: #065f46;
+    }
+    .deck-stat-badge[data-subject="digital"].active {
+      background: #059669;
+      color: #ffffff;
+      border-color: #047857;
+    }
+    .deck-stat-badge[data-subject="digital"].active i,
+    .deck-stat-badge[data-subject="digital"].active span {
+      color: #ffffff !important;
+      opacity: 0.95;
     }
 
     /* Collapsible Downloads Drawer */
@@ -780,23 +915,23 @@
       background: #ecfdf5;
       border: 1.5px solid #10b981;
       border-radius: 8px;
-      padding: 6px 14px;
-      font-size: 0.94rem;
+      padding: 5px 12px;
+      font-size: 0.92rem;
       font-weight: 700;
       color: #065f46;
-      line-height: 1.35;
-      margin-bottom: 6px;
+      line-height: 1.32;
+      margin-bottom: 5px;
       flex-shrink: 0;
     }
     .watch-out-pill {
       background: #fff1f2;
       border: 1.5px solid #f43f5e;
       border-radius: 8px;
-      padding: 6px 14px;
-      font-size: 0.94rem;
+      padding: 5px 12px;
+      font-size: 0.92rem;
       font-weight: 700;
       color: #9f1239;
-      line-height: 1.35;
+      line-height: 1.32;
       margin-bottom: 0;
       flex-shrink: 0;
     }
@@ -955,22 +1090,195 @@
       height: auto;
     }
 
-    @media (max-width: 640px) {
+    @media (max-width: 768px) {
+      .deck-viewport {
+        padding: 6px 6px 0 !important;
+        max-width: 100% !important;
+        touch-action: pan-y pinch-zoom;
+      }
       .flip-card {
-        aspect-ratio: auto;
-        min-height: 520px;
-        height: auto;
+        aspect-ratio: auto !important;
+        height: 520px !important;
+        max-height: calc(100vh - 180px) !important;
+        min-height: 480px !important;
+        border-radius: 16px !important;
+        user-select: none;
+        -webkit-user-select: none;
       }
       .card-face {
-        position: absolute;
-        height: 100%;
+        position: absolute !important;
+        height: 100% !important;
+        border-radius: 16px !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: space-between !important;
+        overflow: hidden !important;
+      }
+      .card-header-bar {
+        padding: 8px 12px !important;
+        border-radius: 14px 14px 0 0 !important;
+      }
+      .header-left {
+        font-size: 0.95rem !important;
+        gap: 6px !important;
+      }
+      .card-num-pill {
+        font-size: 0.80rem !important;
+        padding: 2px 7px !important;
+      }
+      .header-title-text {
+        font-size: 0.92rem !important;
+        max-width: 170px !important;
+      }
+      .header-right {
+        font-size: 0.72rem !important;
+        padding: 2px 8px !important;
+      }
+      .postcard-body {
+        padding: 8px 12px 6px 12px !important;
+        flex: 1 1 auto !important;
+        min-height: 0 !important;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        gap: 5px !important;
+      }
+      .rule-headline {
+        font-size: 1.12rem !important;
+        line-height: 1.25 !important;
+        margin-bottom: 2px !important;
+      }
+      .rule-explanation {
+        font-size: 0.88rem !important;
+        line-height: 1.35 !important;
+        margin-bottom: 4px !important;
+      }
+      .diagram-holder {
+        min-height: 110px !important;
+        max-height: 140px !important;
+        height: 125px !important;
+        margin: 2px 0 4px 0 !important;
+        padding: 4px !important;
+      }
+      .golden-rule-pill,
+      .watch-out-pill {
+        font-size: 0.82rem !important;
+        padding: 4px 8px !important;
+        margin-bottom: 3px !important;
+        line-height: 1.25 !important;
+      }
+      .card-footer-strip {
+        padding: 6px 12px !important;
+        font-size: 0.76rem !important;
+      }
+      .card-face-back .postcard-body {
+        padding: 8px 12px !important;
+      }
+      .challenge-box {
+        padding: 6px 10px !important;
+        margin-bottom: 6px !important;
+      }
+      .challenge-title {
+        font-size: 0.78rem !important;
+        margin-bottom: 2px !important;
+      }
+      .challenge-q {
+        font-size: 0.95rem !important;
+        line-height: 1.35 !important;
+      }
+      .scratchpad-area {
+        min-height: 75px !important;
+        height: 85px !important;
+        font-size: 0.88rem !important;
+        padding: 6px 10px !important;
+      }
+      .card-face-back.show-answer .scratchpad-area,
+      .card-face-back:has(#backAnswerBox:not(.hidden-answer)) .scratchpad-area {
+        flex: 0 0 60px !important;
+        min-height: 60px !important;
+        height: 60px !important;
+        margin-bottom: 6px !important;
+      }
+      .answer-box {
+        min-height: 75px !important;
+        max-height: 130px !important;
+        font-size: 0.86rem !important;
+        padding: 6px 10px !important;
+      }
+      .deck-shortcuts-strip {
+        display: none !important;
+      }
+      .mobile-card-gesture-hint {
+        display: flex !important;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        margin: 10px auto 0;
+        padding: 6px 14px;
+        background: #f1f5f9;
+        border: 1.5px solid #e2e8f0;
+        border-radius: 999px;
+        font-size: 0.80rem;
+        font-weight: 700;
+        color: #334155;
+        max-width: 320px;
+        user-select: none;
+        -webkit-user-select: none;
+      }
+      .mobile-card-gesture-hint i {
+        color: #0284c7;
       }
       .grid-card-item {
-        aspect-ratio: auto;
-        min-height: 280px;
+        aspect-ratio: auto !important;
+        min-height: 280px !important;
       }
       .deck-controls {
-        justify-content: center;
+        justify-content: center !important;
+        gap: 6px !important;
+        margin-top: 12px !important;
+      }
+      .control-btn {
+        padding: 8px 12px !important;
+        font-size: 0.82rem !important;
+      }
+      .btn-kbd {
+        display: none !important;
+      }
+      .btn-mastered,
+      .btn-practice {
+        padding: 8px 11px !important;
+        font-size: 0.80rem !important;
+      }
+      .filter-section {
+        padding: 10px 12px !important;
+        border-radius: 12px !important;
+        margin-bottom: 12px !important;
+      }
+      .search-input-wrap {
+        margin-bottom: 8px !important;
+      }
+      .search-input {
+        padding: 8px 12px 8px 36px !important;
+        font-size: 0.86rem !important;
+      }
+      .deck-stat-badge {
+        padding: 4px 10px !important;
+        font-size: 0.78rem !important;
+      }
+      .filter-pill {
+        padding: 4px 9px !important;
+        font-size: 0.75rem !important;
+      }
+      .view-mode-tabs button:last-child {
+        display: none !important;
+      }
+    }
+
+    @media (min-width: 769px) {
+      .mobile-card-gesture-hint {
+        display: none !important;
       }
     }
 
@@ -978,7 +1286,7 @@
 </head>
 <body>
 
-    <!-- TOP TRUST BAR -->
+      <!-- TOP TRUST BAR WITH ACCESSIBILITY & CONTACT -->
   <div class="mfs-top-bar">
     <div class="mfs-container mfs-top-bar-inner">
       <div class="top-trust-items">
@@ -989,10 +1297,9 @@
           <!-- DYSLEXIA BACKGROUND TINT PICKER -->
           <div class="mfs-tint-dropdown-wrap">
             <button type="button" id="tintToggle" class="btn-tint-toggle" onclick="toggleTintMenu(event)" title="Change dyslexia background tint">
-              <i class="fa-solid fa-glasses"></i>
               <span class="tint-swatch-indicator" id="tintCurrentSwatch"></span>
-              <span id="tintLabel">Dyslexia Tint</span>
-              <i class="fa-solid fa-chevron-down" style="font-size:0.55rem; opacity:0.75; margin-left:1px;"></i>
+              <span id="tintLabel">Cream Tint</span>
+              <i class="fa-solid fa-chevron-down" style="font-size:0.62rem; opacity:0.75; margin-left:2px;"></i>
             </button>
             <div id="tintMenu" class="tint-picker-menu">
               <div class="tint-picker-title"><i class="fa-solid fa-glasses"></i> Dyslexia Reading Tint</div>
@@ -1024,16 +1331,17 @@
               </button>
             </div>
           </div>
+          <button id="dyslexiaToggle" class="btn-dyslexia-toggle" onclick="toggleDyslexiaMode()" title="Toggle Dyslexia High-Readability Mode">
+            <i class="fa-solid fa-universal-access"></i> Dyslexia
+          </button>
+          <button id="themeToggle" class="mfs-theme-pill" onclick="toggleTheme()" title="Switch Palette: Sapphire vs Emerald">
+            <i class="fa-solid fa-palette"></i> <span id="themeLabel">Sapphire</span>
+          </button>
         </div>
-        <a href="tel:020XXXXXXXX" class="top-contact-link"><i class="fa-solid fa-phone"></i> <strong>020 XXXX XXXX</strong></a>
-        <a href="https://wa.me/447564525425" target="_blank" rel="noopener" class="top-contact-link"><i class="fa-brands fa-whatsapp"></i> <strong>WhatsApp</strong></a>
         <a href="contact-us.html" class="top-contact-link"><i class="fa-solid fa-envelope"></i> <strong>Contact Us</strong></a>
-        <a href="https://sterlingenglish.org" target="_blank" rel="noopener" class="top-badge-gold">1-to-1 Specialist Tuition ↗</a>
       </div>
     </div>
-  </div>
-
-  <!-- MAIN NAVIGATION -->
+  </div>  <!-- MAIN NAVIGATION -->
   <header class="mfs-navbar">
     <div class="revision-page-wrapper mfs-navbar-inner">
       <a href="index.html" class="mfs-brand">
@@ -1046,64 +1354,121 @@
 
       <nav class="mfs-nav-wrapper">
         <ul class="mfs-nav-menu">
+          <!-- 1. SUBJECTS (VISUAL MEGA-MENU) -->
           <li class="mfs-nav-item">
-            <a href="functional-skills-maths-level-2.html" class="mfs-nav-link"><i class="fa-solid fa-calculator" style="color:#0284c7; margin-right:5px;"></i> Maths <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i></a>
+            <a href="revise.html" class="mfs-nav-link">
+              <i class="fa-solid fa-book-open-reader" style="color:#0284c7; margin-right:5px;"></i> Subjects <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-revision-hub">
+              <div class="mfs-revision-grid">
+                <!-- Maths Column -->
+                <div class="mfs-revision-col mfs-revision-col-maths">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-calculator"></i> Maths Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="functional-skills-maths-level-2.html" class="mfs-dropdown-item">Maths Level 2</a>
+                    <a href="functional-skills-maths-level-1.html" class="mfs-dropdown-item">Maths Level 1</a>
+                    <a href="entry-level-3-maths.html" class="mfs-dropdown-item">Entry Level 3 Maths</a>
+                  </div>
+                </div>
+                <!-- English Column -->
+                <div class="mfs-revision-col mfs-revision-col-english">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-pen-nib"></i> English Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="functional-skills-english-level-2.html" class="mfs-dropdown-item">English Level 2</a>
+                    <a href="functional-skills-english-level-1.html" class="mfs-dropdown-item">English Level 1</a>
+                  </div>
+                </div>
+                <!-- Digital Skills Column -->
+                <div class="mfs-revision-col mfs-revision-col-digital">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-laptop-code"></i> Digital Skills</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="digital-functional-skills.html" class="mfs-dropdown-item">Digital Skills Hub</a>
+                    <a href="digital-functional-skills-mock-exam.html" class="mfs-dropdown-item">Pearson Mock Exam</a>
+                    <a href="digital-functional-skills-past-papers.html" class="mfs-dropdown-item">Past Papers &amp; Files</a>
+                  </div>
+                </div>
+              </div>
+              <!-- Course & Subject Selector Cross-link Footer inside dropdown -->
+              <div class="mfs-revision-dropdown-footer" style="margin-top:12px; padding-top:10px; border-top:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center; font-size:0.82rem;">
+                <a href="revise.html" style="font-weight:700; color:var(--accent); text-decoration:none;"><i class="fa-solid fa-layer-group" style="margin-right:4px;"></i> View All Subjects &amp; Levels &rarr;</a>
+                <a href="courses.html" style="font-weight:700; color:#059669; text-decoration:none;"><i class="fa-solid fa-graduation-cap" style="margin-right:4px;"></i> Accredited Online Courses &rarr;</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- 2. ONLINE COURSES -->
+          <li class="mfs-nav-item">
+            <a href="courses.html" class="mfs-nav-link">
+              <i class="fa-solid fa-graduation-cap" style="color:#0284c7; margin-right:5px;"></i> Online Courses
+            </a>
+          </li>
+
+          <!-- 3. PAST PAPERS (DIRECT ACCESS) -->
+          <li class="mfs-nav-item">
+            <a href="functional-skills-past-papers.html" class="mfs-nav-link">
+              <i class="fa-regular fa-file-lines" style="color:#0284c7; margin-right:5px;"></i> Past Papers
+            </a>
+          </li>
+
+          <!-- 4. WORKSHEETS DIRECTORY (CORBETT STYLE DUAL ENGINE) -->
+          <li class="mfs-nav-item">
+            <a href="worksheets.html" class="mfs-nav-link">
+              <i class="fa-solid fa-layer-group" style="color:#0284c7; margin-right:5px;"></i> Worksheets
+            </a>
+          </li>
+
+          <!-- 5. FREE TOOLS (COMPACT DROPDOWN) -->
+          <li class="mfs-nav-item">
+            <a href="tools.html" class="mfs-nav-link">
+              <i class="fa-solid fa-screwdriver-wrench" style="color:#0284c7; margin-right:5px;"></i> Free Tools <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
             <div class="mfs-dropdown-menu mfs-dropdown-compact">
-              <a href="functional-skills-maths-level-2.html" class="mfs-dropdown-item">Maths Level 2</a>
-              <a href="functional-skills-maths-level-1.html" class="mfs-dropdown-item">Maths Level 1</a>
-              <a href="entry-level-3-maths.html" class="mfs-dropdown-item">Entry Level 3 Maths</a>
+              <a href="tools.html" class="mfs-dropdown-item" style="font-weight:700; color:var(--accent);"><i class="fa-solid fa-layer-group" style="font-size:0.85rem; margin-right:6px;"></i> All Free Tools &amp; Simulators &rarr;</a>
               <div class="mfs-dropdown-divider" style="margin:4px 0; border-top:1px solid #e2e8f0;"></div>
-              <a href="pass-mark-calculator.html" class="mfs-dropdown-item"><i class="fa-solid fa-calculator" style="color:var(--accent); font-size:0.85rem; margin-right:6px;"></i> Pass Mark Calculator</a>
-              <a href="diagnostic-test.html" class="mfs-dropdown-item"><i class="fa-solid fa-chart-pie" style="color:#059669; font-size:0.85rem; margin-right:6px;"></i> Diagnostic Test</a>
-              <a href="functional-skills-nets.html" class="mfs-dropdown-item"><i class="fa-solid fa-cube" style="color:#0284c7; font-size:0.85rem; margin-right:6px;"></i> 3D Net Folder</a>
-            </div>
-          </li>
-          <li class="mfs-nav-item">
-            <a href="functional-skills-english-level-2.html" class="mfs-nav-link"><i class="fa-solid fa-pen-nib" style="color:#0284c7; margin-right:5px;"></i> English <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i></a>
-            <div class="mfs-dropdown-menu mfs-dropdown-compact">
-              <a href="functional-skills-english-level-2.html" class="mfs-dropdown-item">English Level 2</a>
-              <a href="functional-skills-english-level-1.html" class="mfs-dropdown-item">English Level 1</a>
-              <div class="mfs-dropdown-divider" style="margin:4px 0; border-top:1px solid #e2e8f0;"></div>
-              <a href="pass-mark-calculator.html#english" class="mfs-dropdown-item"><i class="fa-solid fa-calculator" style="color:var(--accent); font-size:0.85rem; margin-right:6px;"></i> Pass Mark Calculator</a>
-              <a href="diagnostic-test.html" class="mfs-dropdown-item"><i class="fa-solid fa-chart-pie" style="color:#059669; font-size:0.85rem; margin-right:6px;"></i> Diagnostic Test</a>
-            </div>
-          </li>
-          <li class="mfs-nav-item">
-            <a href="digital-functional-skills.html" class="mfs-nav-link"><i class="fa-solid fa-laptop-code" style="color:#0284c7; margin-right:5px;"></i> Digital Skills <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i></a>
-            <div class="mfs-dropdown-menu mfs-dropdown-compact">
-              <a href="digital-functional-skills.html" class="mfs-dropdown-item">Digital Skills Hub</a>
-              <a href="digital-functional-skills-mock-exam.html" class="mfs-dropdown-item"><i class="fa-solid fa-laptop-code" style="color:#2563eb; font-size:0.85rem; margin-right:6px;"></i> Pearson Mock Simulator</a>
-              <a href="digital-functional-skills-past-papers.html" class="mfs-dropdown-item">Past Papers &amp; Data Files</a>
-            </div>
-          </li>
-          <li class="mfs-nav-item">
-            <a href="pass-mark-calculator.html" class="mfs-nav-link"><i class="fa-solid fa-screwdriver-wrench" style="color:#0284c7; margin-right:5px;"></i> Tools <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i></a>
-            <div class="mfs-dropdown-menu mfs-dropdown-compact">
               <a href="pass-mark-calculator.html" class="mfs-dropdown-item"><i class="fa-solid fa-calculator" style="color:var(--accent); font-size:0.85rem; margin-right:6px;"></i> Pass Mark Calculator</a>
               <a href="diagnostic-test.html" class="mfs-dropdown-item"><i class="fa-solid fa-chart-pie" style="color:#059669; font-size:0.85rem; margin-right:6px;"></i> Diagnostic Skill Checker</a>
-              <a href="digital-functional-skills-mock-exam.html" class="mfs-dropdown-item"><i class="fa-solid fa-laptop-code" style="color:#2563eb; font-size:0.85rem; margin-right:6px;"></i> Pearson Exam Simulator</a>
-              <a href="bksb-remediation.html" class="mfs-dropdown-item"><i class="fa-solid fa-arrows-split-up-and-left" style="color:#8b5cf6; font-size:0.85rem; margin-right:6px;"></i> BKSB Remediation Bridge</a>
               <a href="functional-skills-nets.html" class="mfs-dropdown-item"><i class="fa-solid fa-cube" style="color:#0284c7; font-size:0.85rem; margin-right:6px;"></i> 3D Net Folding Tool</a>
+              <a href="video-solution.html" class="mfs-dropdown-item"><i class="fa-solid fa-circle-play" style="color:#ef4444; font-size:0.85rem; margin-right:6px;"></i> Video Walkthrough Station</a>
             </div>
           </li>
-          <li class="mfs-nav-item"><a href="tutors.html" class="mfs-nav-link"><i class="fa-solid fa-chalkboard-user" style="color:#0284c7; margin-right:5px;"></i> Tutor Hub</a></li>
+
+          <!-- 6. REVISION CARDS -->
           <li class="mfs-nav-item">
-            <a href="functional-skills-past-papers.html" class="mfs-nav-link"><i class="fa-regular fa-file-lines" style="color:#0284c7; margin-right:5px;"></i> Past Papers <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i></a>
-            <div class="mfs-dropdown-menu mfs-dropdown-compact">
-              <a href="functional-skills-past-papers.html" class="mfs-dropdown-item">All Past Papers Hub</a>
-              <a href="edexcel-functional-skills-maths-level-2-past-papers.html" class="mfs-dropdown-item">Pearson Edexcel Papers</a>
-              <a href="pass-mark-calculator.html" class="mfs-dropdown-item"><i class="fa-solid fa-calculator" style="color:var(--accent); font-size:0.85rem; margin-right:6px;"></i> Grade Boundaries Calculator</a>
-            </div>
+            <a href="revision-cards.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-layer-group" style="color:#d97706; margin-right:5px;"></i> Revision Cards
+            </a>
           </li>
-          <li class="mfs-nav-item"><a href="revision-cards.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#f59e0b; font-weight:700;"><i class="fa-solid fa-layer-group" style="color:#f59e0b; margin-right:5px;"></i> Revision Cards</a></li>
-          <li class="mfs-nav-item"><a href="shop.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#f59e0b; font-weight:700;"><i class="fa-solid fa-basket-shopping" style="color:#f59e0b; margin-right:5px;"></i> Shop</a></li>
+
+          <!-- 7. SHOP -->
+          <li class="mfs-nav-item">
+            <a href="shop.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-basket-shopping" style="color:#d97706; margin-right:5px;"></i> Shop
+            </a>
+          </li>
         </ul>
       </nav>
 
+      <!-- 8. BOOK EXAM ACTION BUTTON -->
       <div class="mfs-nav-actions">
-        <a href="functional-skills-exam.html" class="btn-nav-exam"><i class="fa-solid fa-calendar-check"></i> Book Exam</a>
+        <a href="exams.html" class="btn-nav-exam">
+          <i class="fa-solid fa-calendar-check"></i> Book Exam
+        </a>
+      </div>
+
+      <!-- MOBILE CONTROLS (TINT + MENU PILL) -->
+      <div class="mfs-mobile-controls" id="mfsMobileControls">
+        <button type="button" class="btn-mobile-tint-toggle" id="mfsMobileTintBtn" title="Change Reading Tint" aria-label="Reading Tint">
+          <i class="fa-solid fa-glasses"></i>
+          <span class="mobile-tint-swatch" id="mfsMobileTintSwatch"></span>
+        </button>
+        <button type="button" class="mfs-menu-pill" id="mfsMobileToggleBtn" title="Open Navigation Menu" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+          <span>Menu</span>
+        </button>
       </div>
     </div>
+    <!-- MOBILE NAVIGATION ENGINE -->
+    <script src="assets/js/mfs-mobile.js" defer></script>
   </header>
 
   <!-- HERO SECTION -->
@@ -1120,24 +1485,19 @@
       </p>
 
       <!-- Quick Deck Breakdown Badges -->
-      <div style="display:flex; justify-content:center; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:16px;">
-        <button type="button" class="deck-stat-badge" onclick="setFilter('subject', 'maths', document.querySelector('#subjectFilterRow [data-subject=\'maths\']'))" style="background:#eff6ff; border:1.5px solid #bfdbfe; color:#1e40af; border-radius:999px; padding:6px 16px; font-size:0.86rem; font-weight:700; cursor:pointer; display:inline-flex; align-items:center; gap:8px; transition:all 0.2s;">
-          <i class="fa-solid fa-calculator" style="color:#2563eb;"></i> Maths: <strong>88 Cards</strong> <span style="font-size:0.75rem; color:#3b82f6; font-weight:600;">(50 L2 + 38 L1)</span>
+      <div class="deck-stat-badges-row" id="heroSubjectPillsRow" style="display:flex; justify-content:center; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:16px;">
+        <button type="button" class="deck-stat-badge active" data-subject="all" onclick="setFilter('subject', 'all', this)">
+          <i class="fa-solid fa-layer-group"></i> All: <strong>266 Cards</strong>
         </button>
-        <button type="button" class="deck-stat-badge" onclick="setFilter('subject', 'english', document.querySelector('#subjectFilterRow [data-subject=\'english\']'))" style="background:#f5f3ff; border:1.5px solid #ddd6fe; color:#5b21b6; border-radius:999px; padding:6px 16px; font-size:0.86rem; font-weight:700; cursor:pointer; display:inline-flex; align-items:center; gap:8px; transition:all 0.2s;">
-          <i class="fa-solid fa-pen-nib" style="color:#7c3aed;"></i> English: <strong>90 Cards</strong> <span style="font-size:0.75rem; color:#8b5cf6; font-weight:600;">(48 L2 + 42 L1)</span>
+        <button type="button" class="deck-stat-badge" data-subject="maths" onclick="setFilter('subject', 'maths', this)">
+          <i class="fa-solid fa-calculator"></i> Maths: <strong>102 Cards</strong> <span style="font-size:0.75rem; font-weight:600;">(50 L2 + 38 L1 + 14 E3)</span>
         </button>
-        <button type="button" class="deck-stat-badge" onclick="setFilter('subject', 'digital', document.querySelector('#subjectFilterRow [data-subject=\'digital\']'))" style="background:#ecfdf5; border:1.5px solid #a7f3d0; color:#065f46; border-radius:999px; padding:6px 16px; font-size:0.86rem; font-weight:700; cursor:pointer; display:inline-flex; align-items:center; gap:8px; transition:all 0.2s;">
-          <i class="fa-solid fa-laptop-code" style="color:#059669;"></i> Digital Skills: <strong>50 Cards</strong> <span style="font-size:0.75rem; color:#10b981; font-weight:600;">(Areas 1–5)</span>
+        <button type="button" class="deck-stat-badge" data-subject="english" onclick="setFilter('subject', 'english', this)">
+          <i class="fa-solid fa-pen-nib"></i> English: <strong>108 Cards</strong> <span style="font-size:0.75rem; font-weight:600;">(52 L2 + 46 L1 + 10 E3)</span>
         </button>
-      </div>
-
-      <!-- Mastery Live Stat Badge -->
-      <div style="display: inline-flex; align-items: center; gap: 14px; background: #ffffff; border: 1px solid var(--border); border-radius: 100px; padding: 6px 18px; box-shadow: 0 4px 12px rgba(0,0,0,0.04); font-size: 0.9rem;">
-        <span><i class="fa-solid fa-chart-line" style="color:var(--accent);"></i> <strong>Mastery Tracker:</strong></span>
-        <span id="masteryScore" style="font-weight: 800; color: #10b981;">0 / 228 Mastered (0%)</span>
-        <span style="color:#cbd5e1;">|</span>
-        <button onclick="resetMastery()" style="background:none; border:none; color:var(--text-muted); font-size:0.78rem; text-decoration:underline; cursor:pointer;">Reset Progress</button>
+        <button type="button" class="deck-stat-badge" data-subject="digital" onclick="setFilter('subject', 'digital', this)">
+          <i class="fa-solid fa-laptop-code"></i> Digital Skills: <strong>56 Cards</strong> <span style="font-size:0.75rem; font-weight:600;">(50 L1/L2 + 6 E3)</span>
+        </button>
       </div>
     </div>
   </section>
@@ -1152,22 +1512,13 @@
         <input type="text" id="searchInput" class="search-input" placeholder="Search by topic, formula, DfE code (e.g. MSS18, N9), or exam trap..." oninput="handleSearch()">
       </div>
 
-      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
-        <!-- Subject Pills -->
-        <div class="filter-pills-row" id="subjectFilterRow">
-          <span style="font-size:0.82rem; font-weight:700; color:var(--navy); margin-right:4px;">Subject:</span>
-          <button class="filter-pill active" data-subject="all" onclick="setFilter('subject', 'all', this)">All (228)</button>
-          <button class="filter-pill" data-subject="maths" onclick="setFilter('subject', 'maths', this)"><i class="fa-solid fa-calculator"></i> Maths (88)</button>
-          <button class="filter-pill" data-subject="english" onclick="setFilter('subject', 'english', this)"><i class="fa-solid fa-pen-nib"></i> English (90)</button>
-          <button class="filter-pill" data-subject="digital" onclick="setFilter('subject', 'digital', this)"><i class="fa-solid fa-laptop-code"></i> Digital Skills (50)</button>
-        </div>
-
+      <div class="filter-controls-row">
         <!-- Level Pills -->
         <div class="filter-pills-row" id="levelFilterRow">
-          <span style="font-size:0.82rem; font-weight:700; color:var(--navy); margin-right:4px;">Level:</span>
+          <span style="font-size:0.80rem; font-weight:700; color:var(--navy); margin-right:2px;">Level:</span>
           <button class="filter-pill active" data-level="all" onclick="setFilter('level', 'all', this)">All</button>
-          <button class="filter-pill" data-level="l2" onclick="setFilter('level', 'l2', this)">Level 2 (98)</button>
-          <button class="filter-pill" data-level="l1" onclick="setFilter('level', 'l1', this)">Level 1 (80)</button>
+          <button class="filter-pill" data-level="l2" onclick="setFilter('level', 'l2', this)">Level 2</button>
+          <button class="filter-pill" data-level="l1" onclick="setFilter('level', 'l1', this)">Level 1</button>
           <button class="filter-pill" data-level="e3" onclick="setFilter('level', 'e3', this)">Entry 3</button>
         </div>
 
@@ -1192,20 +1543,20 @@
             <i class="fa-solid fa-id-card" style="color:#059669;"></i> Standard A6 Postcard PDFs (148mm × 105mm):
           </div>
           <div style="display:flex; flex-wrap:wrap; gap:6px; margin-bottom:12px;">
-            <a href="assets/downloads/MasterFunctionalSkills_Visual_Postcard_Cards_A6.pdf" download class="filter-pill" style="font-size:0.75rem; padding:4px 9px; text-decoration:none; background:#059669; color:#fff; border-color:#059669;"><i class="fa-solid fa-layer-group"></i> Master A6 Deck (228 Cards)</a>
+            <a href="assets/downloads/MasterFunctionalSkills_Visual_Postcard_Cards_A6.pdf" download class="filter-pill" style="font-size:0.75rem; padding:4px 9px; text-decoration:none; background:#059669; color:#fff; border-color:#059669;"><i class="fa-solid fa-layer-group"></i> Master A6 Deck (266 Cards)</a>
             <a href="assets/downloads/MasterFunctionalSkills_Revision_Cards_maths_l2_A6.pdf" download class="filter-pill" style="font-size:0.75rem; padding:4px 9px; text-decoration:none;"><i class="fa-regular fa-file-pdf" style="color:#2563eb;"></i> Maths L2 (50 Cards)</a>
             <a href="assets/downloads/MasterFunctionalSkills_Revision_Cards_maths_l1_A6.pdf" download class="filter-pill" style="font-size:0.75rem; padding:4px 9px; text-decoration:none;"><i class="fa-regular fa-file-pdf" style="color:#2563eb;"></i> Maths L1 (38 Cards)</a>
-            <a href="assets/downloads/MasterFunctionalSkills_Revision_Cards_english_l2_A6.pdf" download class="filter-pill" style="font-size:0.75rem; padding:4px 9px; text-decoration:none;"><i class="fa-regular fa-file-pdf" style="color:#7c3aed;"></i> English L2 (48 Cards)</a>
-            <a href="assets/downloads/MasterFunctionalSkills_Revision_Cards_english_l1_A6.pdf" download class="filter-pill" style="font-size:0.75rem; padding:4px 9px; text-decoration:none;"><i class="fa-regular fa-file-pdf" style="color:#7c3aed;"></i> English L1 (42 Cards)</a>
+            <a href="assets/downloads/MasterFunctionalSkills_Revision_Cards_english_l2_A6.pdf" download class="filter-pill" style="font-size:0.75rem; padding:4px 9px; text-decoration:none;"><i class="fa-regular fa-file-pdf" style="color:#7c3aed;"></i> English L2 (52 Cards)</a>
+            <a href="assets/downloads/MasterFunctionalSkills_Revision_Cards_english_l1_A6.pdf" download class="filter-pill" style="font-size:0.75rem; padding:4px 9px; text-decoration:none;"><i class="fa-regular fa-file-pdf" style="color:#7c3aed;"></i> English L1 (46 Cards)</a>
             <a href="assets/downloads/MasterFunctionalSkills_Revision_Cards_digital_skills_A6.pdf" download class="filter-pill" style="font-size:0.75rem; padding:4px 9px; text-decoration:none;"><i class="fa-regular fa-file-pdf" style="color:#059669;"></i> Digital Skills (50 Cards)</a>
-            <a href="assets/downloads/MasterFunctionalSkills_Revision_Cards_entry_level_3_A6.pdf" download class="filter-pill" style="font-size:0.75rem; padding:4px 9px; text-decoration:none;"><i class="fa-regular fa-file-pdf" style="color:#d97706;"></i> Entry 3 Foundation</a>
+            <a href="assets/downloads/MasterFunctionalSkills_Revision_Cards_entry_level_3_A6.pdf" download class="filter-pill" style="font-size:0.75rem; padding:4px 9px; text-decoration:none;"><i class="fa-regular fa-file-pdf" style="color:#d97706;"></i> Entry 3 Foundation (30 Cards)</a>
           </div>
 
           <div style="font-size:0.8rem; font-weight:800; color:var(--text-muted); margin-bottom:8px; border-top:1px dashed #cbd5e1; padding-top:8px; display:flex; align-items:center; gap:6px;">
             <i class="fa-solid fa-print" style="color:#2563eb;"></i> A4 4-Per-Page Imposition Cut Sheets:
           </div>
           <div style="display:flex; flex-wrap:wrap; gap:6px;">
-            <a href="assets/downloads/MasterFunctionalSkills_Visual_Postcard_Cards.pdf" download class="filter-pill" style="font-size:0.75rem; padding:4px 9px; text-decoration:none; background:var(--navy); color:#fff; border-color:var(--navy);"><i class="fa-solid fa-box-archive"></i> Master A4 Sheet (228 Cards)</a>
+            <a href="assets/downloads/MasterFunctionalSkills_Visual_Postcard_Cards.pdf" download class="filter-pill" style="font-size:0.75rem; padding:4px 9px; text-decoration:none; background:var(--navy); color:#fff; border-color:var(--navy);"><i class="fa-solid fa-box-archive"></i> Master A4 Sheet (266 Cards)</a>
             <a href="assets/downloads/MasterFunctionalSkills_Revision_Cards_maths_l2.pdf" download class="filter-pill" style="font-size:0.75rem; padding:4px 9px; text-decoration:none;">Maths L2 (A4)</a>
             <a href="assets/downloads/MasterFunctionalSkills_Revision_Cards_maths_l1.pdf" download class="filter-pill" style="font-size:0.75rem; padding:4px 9px; text-decoration:none;">Maths L1 (A4)</a>
             <a href="assets/downloads/MasterFunctionalSkills_Revision_Cards_english_l2.pdf" download class="filter-pill" style="font-size:0.75rem; padding:4px 9px; text-decoration:none;">English L2 (A4)</a>
@@ -1222,8 +1573,19 @@
 
       <!-- VIEW 1: INTERACTIVE 3D FLIP CARD DECK -->
       <div id="deckViewContainer">
-      <div class="deck-viewport">
-        <div class="flip-card" id="activeFlipCard" onclick="toggleCardFlip()">
+
+        <!-- Mastery Live Stat Badge - Centered directly above the revision card -->
+        <div class="deck-mastery-wrap" style="display:flex; justify-content:center; align-items:center; margin-bottom:12px;">
+          <div class="mastery-tracker-pill" style="display:inline-flex; align-items:center; gap:14px; background:#ffffff; border:1.5px solid var(--border); border-radius:100px; padding:6px 18px; box-shadow:0 4px 12px rgba(0,0,0,0.04); font-size:0.88rem;">
+            <span><i class="fa-solid fa-chart-line" style="color:var(--accent);"></i> <strong>Mastery Tracker:</strong></span>
+            <span id="masteryScore" style="font-weight:800; color:#10b981;">0 / 266 Mastered (0%)</span>
+            <span style="color:#cbd5e1;">|</span>
+            <button onclick="resetMastery()" style="background:none; border:none; color:var(--text-muted); font-size:0.78rem; text-decoration:underline; cursor:pointer;">Reset Progress</button>
+          </div>
+        </div>
+
+        <div class="deck-viewport">
+          <div class="flip-card" id="activeFlipCard" onclick="toggleCardFlip(event)">
           
           <!-- FRONT FACE -->
           <div class="card-face card-face-front" id="cardFront">
@@ -1258,7 +1620,7 @@
               <span style="color:var(--accent); display:flex; align-items:center; gap:6px; cursor:pointer;" onclick="toggleCardFlip(event)">
                 <i class="fa-solid fa-arrows-rotate"></i> Flip for Challenge &amp; Solution ➔
               </span>
-              <span id="cardCounterText" style="font-weight:700;">Card 1 of 228</span>
+              <span id="cardCounterText" style="font-weight:700;">Card 1 of 266</span>
             </div>
           </div>
 
@@ -1300,7 +1662,7 @@
             </div>
 
             <div class="card-footer-strip">
-              <span><span id="cardCounterTextBack">Card 1 of 228</span> • DfE Standards</span>
+              <span><span id="cardCounterTextBack">Card 1 of 266</span> • DfE Standards</span>
               <span style="color:#059669; font-weight:800; cursor:pointer;" onclick="toggleCardFlip(event)">
                 <i class="fa-solid fa-arrows-rotate"></i> Flip to Rule ➔
               </span>
@@ -1334,7 +1696,7 @@
         </div>
 
         <!-- Flip Button -->
-        <button class="control-btn control-btn-primary" onclick="toggleCardFlip()" title="Flip Card (Space)">
+        <button class="control-btn control-btn-primary" onclick="toggleCardFlip(event)" title="Flip Card (Space)">
           <i class="fa-solid fa-arrows-rotate"></i> Flip Card <kbd class="btn-kbd btn-kbd-primary">Space</kbd>
         </button>
 
@@ -1348,6 +1710,11 @@
           </button>
         </div>
       </div>
+
+      <!-- MOBILE TOUCH GESTURES HINT -->
+      <div class="mobile-card-gesture-hint">
+        <i class="fa-solid fa-hand-pointer"></i> Tap card to flip &bull; Swipe ◄ ► to navigate
+      </div>
     </div>
 
     <!-- VIEW 2: ALL CARDS GRID VIEW -->
@@ -1357,16 +1724,91 @@
 
     </div><!-- /revisionCardsStage -->
 
-  </main>
+  </main>  <!-- FOOTER -->
+  <footer class="mfs-footer" id="site-footer">
+    <div class="mfs-container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="mfs-brand" style="margin-bottom:16px;">
+            <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="mfs-brand-text">
+              <div class="mfs-brand-title" style="color:#ffffff;">MASTER<span>FUNCTIONALSKILLS</span></div>
+              <div class="mfs-brand-subtitle" style="color:#94a3b8;">Delivering Skills • Achieving Goals</div>
+            </div>
+          </div>
+          <p style="font-size:0.88rem; line-height:1.6; margin-bottom:16px;">
+            The UK's dedicated Functional Skills revision specialist. Providing realistic mock exams, step-by-step revision flashcards, diagnostic assessments, and 1-to-1 specialist tuition for Pearson Edexcel, City &amp; Guilds, and all major exam boards.
+          </p>
+          <div style="font-size:0.85rem; color:#cbd5e1;">
+            <p><a href="https://wa.me/447564525425" target="_blank" rel="noopener" style="color:#cbd5e1; text-decoration:none;"><i class="fa-brands fa-whatsapp" style="color:var(--accent); margin-right:8px;"></i> WhatsApp: +44 (0)7564 525425</a></p>
+            <p style="margin-top:6px;"><a href="contact-us.html" style="color:#cbd5e1; text-decoration:none;"><i class="fa-solid fa-envelope" style="color:var(--accent); margin-right:8px;"></i> Contact Tutor Team</a></p>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Maths Revision</h4>
+          <ul class="footer-links">
+            <li><a href="functional-skills-maths-level-2.html">Maths Level 2 Revision</a></li>
+            <li><a href="functional-skills-maths-level-1.html">Maths Level 1 Revision</a></li>
+            <li><a href="entry-level-3-maths.html">Entry Level 3 Maths</a></li>
+            <li><a href="pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="functional-skills-past-papers.html">Free Maths Past Papers</a></li>
+            <li><a href="exam-maths-l2.html">Book Level 2 Maths Exam</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>English &amp; Digital</h4>
+          <ul class="footer-links">
+            <li><a href="functional-skills-english-level-2.html">English Level 2 Revision</a></li>
+            <li><a href="functional-skills-english-level-1.html">English Level 1 Revision</a></li>
+            <li><a href="digital-functional-skills.html">Digital Skills Hub (L1 &amp; E3)</a></li>
+            <li><a href="digital-functional-skills-past-papers.html">DFS Past Papers &amp; Data Files</a></li>
+            <li><a href="functional-skills-past-papers.html?format=online#mock-finder">Online Exam Simulator</a></li>
+            <li><a href="exam-english-l2.html">Book Level 2 English Exam</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Student Support &amp; Tools</h4>
+          <ul class="footer-links">
+            <li><a href="tools.html" style="color:var(--accent); font-weight:700;"><i class="fa-solid fa-screwdriver-wrench" style="margin-right:6px;"></i>All Interactive Tools Hub</a></li>
+            <li><a href="pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="diagnostic-test.html">Diagnostic Skill Checker</a></li>
+            <li><a href="functional-skills-nets.html">3D Net Folding Tool</a></li>
+            <li><a href="digital-functional-skills-mock-exam.html">Pearson DFS Simulator</a></li>
+            <li><a href="revision-cards.html">Revision Cards &amp; Flashcards</a></li>
+            <li><a href="shop.html">Revision Books &amp; Study Packs</a></li>
+            <li><a href="tutors.html">1-to-1 Specialist Tuition</a></li>
+            <li><a href="exams.html">Book Official Online Exam</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Master Functional Skills. All rights reserved. Registered in England &amp; Wales. Ofqual Regulated Qualification Standards.</div>
+        <div style="display:flex; gap:16px; flex-wrap:wrap;">
+          <a href="index.html">Home</a>
+          <a href="tools.html" style="color:var(--accent); font-weight:700;">Tools</a>
+          <a href="functional-skills-past-papers.html">Past Papers</a>
+          <a href="revision-cards.html">Revision Cards</a>
+          <a href="shop.html">Study Shop</a>
+          <a href="tutors.html">Tutors</a>
+          <a href="contact-us.html">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </footer>
 
   <!-- DATA & LOGIC ENGINES -->
-  <script src="assets/js/revision_cards_data.js?v=20261012c"></script>
+  <script src="assets/js/revision_cards_data.js?v=20261014"></script>
   <script src="assets/js/mfs-tint.js"></script>
 
   <script>
     // State management
     const THEMES = {
       emerald: { primary: '#059669', pill_bg: '#064e3b' },
+      teal: { primary: '#0d9488', pill_bg: '#134e4a' },
       orange: { primary: '#ea580c', pill_bg: '#7c2d12' },
       amber: { primary: '#d97706', pill_bg: '#78350f' },
       purple: { primary: '#7c3aed', pill_bg: '#4c1d95' },
@@ -1402,7 +1844,7 @@
     // Mastery Tracker Functions
     function updateMasteryBadge() {
       const masteredCount = Object.keys(masteryState).filter(k => masteryState[k] === true).length;
-      const total = allCards.length || 228;
+      const total = allCards.length || 266;
       const pct = Math.round((masteredCount / total) * 100);
       const badge = document.getElementById('masteryScore');
       if (badge) {
@@ -1493,11 +1935,10 @@
         if (s) {
           s = s.toLowerCase();
           currentFilterSubject = s;
-          const sButtons = document.querySelectorAll('#subjectFilterRow .filter-pill');
+          const sButtons = document.querySelectorAll('.deck-stat-badge');
           sButtons.forEach(btn => {
             const ds = btn.getAttribute('data-subject') || '';
-            const oc = btn.getAttribute('onclick') || '';
-            btn.classList.toggle('active', ds === s || oc.includes(`'${s}'`));
+            btn.classList.toggle('active', ds === s);
           });
         }
 
@@ -1546,12 +1987,76 @@
       });
     }
 
+    let justSwiped = false;
+
     // Toggle card flip
-    function toggleCardFlip() {
+    function toggleCardFlip(e) {
+      if (justSwiped) return;
+      if (e && e.target) {
+        if (e.target.closest('button') || e.target.closest('textarea') || e.target.closest('input') || e.target.closest('a') || e.target.closest('.scratchpad-area') || e.target.closest('.btn-reveal-answer') || e.target.closest('.btn-reveal')) {
+          return;
+        }
+      }
       const card = document.getElementById('activeFlipCard');
       if (!card) return;
       isFlipped = !isFlipped;
       card.classList.toggle('is-flipped', isFlipped);
+    }
+
+    // Touch swipe gesture engine for mobile & tablet
+    function initCardTouchGestures() {
+      const viewportEl = document.querySelector('.deck-viewport');
+      if (!viewportEl) return;
+
+      let startX = 0;
+      let startY = 0;
+      let currentX = 0;
+      let currentY = 0;
+      let isTracking = false;
+
+      viewportEl.addEventListener('touchstart', function(e) {
+        if (e.touches.length !== 1) return;
+        const target = e.target;
+        if (target.closest('button') || target.closest('textarea') || target.closest('input') || target.closest('a') || target.closest('.scratchpad-area') || target.closest('.btn-reveal-answer') || target.closest('.btn-reveal')) {
+          isTracking = false;
+          return;
+        }
+        startX = e.touches[0].clientX;
+        startY = e.touches[0].clientY;
+        currentX = startX;
+        currentY = startY;
+        isTracking = true;
+      }, { passive: true });
+
+      viewportEl.addEventListener('touchmove', function(e) {
+        if (!isTracking || e.touches.length !== 1) return;
+        currentX = e.touches[0].clientX;
+        currentY = e.touches[0].clientY;
+      }, { passive: true });
+
+      viewportEl.addEventListener('touchend', function(e) {
+        if (!isTracking) return;
+        isTracking = false;
+
+        const diffX = currentX - startX;
+        const diffY = currentY - startY;
+        const absX = Math.abs(diffX);
+        const absY = Math.abs(diffY);
+
+        // Horizontal swipe threshold: 45px, predominantly horizontal
+        if (absX > 45 && absX > absY * 1.2) {
+          justSwiped = true;
+          setTimeout(() => { justSwiped = false; }, 350);
+
+          if (diffX < 0) {
+            // Swipe left -> Next card
+            nextCard();
+          } else {
+            // Swipe right -> Previous card
+            prevCard();
+          }
+        }
+      }, { passive: true });
     }
 
     // Next / Prev card
@@ -1611,11 +2116,9 @@
       if (filteredCards.length === 0) {
         document.getElementById('frontCardHeaderTitle').textContent = 'No Revision Cards Found';
         document.getElementById('frontRuleHeadline').textContent = 'Adjust Search or Filters';
-        document.getElementById('frontRuleExplanation').textContent = currentFilterLevel === 'e3' 
-          ? 'Entry Level 3 revision cards are currently being updated to the visual postcard format. In the meantime, download the Entry 3 PDF pack below or explore Level 1 cards.'
-          : 'Try resetting your subject or level filters to view cards.';
+        document.getElementById('frontRuleExplanation').textContent = 'Try resetting your subject or level filters to view cards.';
         document.getElementById('frontDiagramHolder').innerHTML = '<div style="display:flex; flex-direction:column; align-items:center; justify-content:center; height:100%; color:#94a3b8;"><i class="fa-solid fa-filter" style="font-size:2rem; margin-bottom:8px;"></i><span>No matching cards</span></div>';
-        document.getElementById('frontGoldenRule').innerHTML = '★ <strong>Golden Rule:</strong> Select "All" above to study the full 228 card master deck.';
+        document.getElementById('frontGoldenRule').innerHTML = '★ <strong>Golden Rule:</strong> Select "All" above to study the full 266 card master deck.';
         document.getElementById('frontWatchOut').innerHTML = '⚠️ <strong>Tip:</strong> You can search by topic keyword, DfE criteria code, or formula.';
         document.getElementById('cardCounterText').textContent = '0 of 0';
         document.getElementById('cardCounterTextBack').textContent = '0 of 0';
@@ -1631,9 +2134,9 @@
       if (fHeader) fHeader.style.background = theme.primary;
       const fNum = document.getElementById('frontCardNumBadge');
       if (fNum) fNum.textContent = `#${card.number}`;
-      const cleanTitle = (card.title || '').replace(/&amp;/g, '&');
+      const cleanTitle = decodeHtml(card.title || '');
       document.getElementById('frontCardHeaderTitle').textContent = cleanTitle;
-      document.getElementById('frontStrandPill').textContent = card.strand_name;
+      document.getElementById('frontStrandPill').textContent = decodeHtml(card.strand_name);
       document.getElementById('frontRuleHeadline').innerHTML = card.rule_heading || '';
       document.getElementById('frontRuleExplanation').innerHTML = card.rule_body || '';
       document.getElementById('frontDiagramHolder').innerHTML = card.svg_html;
@@ -1648,12 +2151,12 @@
       document.getElementById('backCardHeaderTitle').textContent = `Challenge: ${cleanTitle}`;
       const bPill = document.getElementById('backStrandPill');
       if (bPill) {
-        bPill.textContent = card.strand_name;
+        bPill.textContent = decodeHtml(card.strand_name);
         bPill.style.background = theme.primary;
       }
       document.getElementById('backDfeCodeBadge').textContent = card.dfe_code;
-      document.getElementById('backChallengeQ').textContent = card.challenge_prompt;
-      document.getElementById('backAnswerText').textContent = card.answer_text;
+      document.getElementById('backChallengeQ').textContent = decodeHtml(card.challenge_prompt);
+      document.getElementById('backAnswerText').textContent = decodeHtml(card.answer_text);
       document.getElementById('cardCounterTextBack').textContent = `Card ${currentIndex + 1} of ${filteredCards.length}`;
       
       // Clear scratchpad
@@ -1667,16 +2170,17 @@
     function setFilter(type, value, btn) {
       if (type === 'subject') {
         currentFilterSubject = value;
-        document.querySelectorAll('#subjectFilterRow .filter-pill').forEach(b => {
-          b.classList.toggle('active', (btn ? b === btn : b.getAttribute('data-subject') === value));
+        document.querySelectorAll('.deck-stat-badge').forEach(b => {
+          const ds = b.getAttribute('data-subject') || '';
+          b.classList.toggle('active', (btn ? b === btn : ds === value));
         });
       } else if (type === 'level') {
         currentFilterLevel = value;
         document.querySelectorAll('#levelFilterRow .filter-pill').forEach(b => {
-          b.classList.toggle('active', (btn ? b === btn : b.getAttribute('data-level') === value));
+          const dl = b.getAttribute('data-level') || '';
+          b.classList.toggle('active', (btn ? b === btn : dl === value));
         });
       }
-      if (btn) btn.classList.add('active');
       applyFilters();
     }
 
@@ -1725,7 +2229,7 @@
             <i class="fa-solid fa-layer-group" style="font-size: 2.4rem; color: #94a3b8; margin-bottom: 12px; display: block;"></i>
             <h3 style="font-size: 1.2rem; color: var(--navy); margin-bottom: 6px;">No revision cards match your current filter</h3>
             <p style="font-size: 0.95rem; margin-bottom: 16px;">Try switching to "All" or choosing another subject / level combination.</p>
-            <button class="filter-pill" onclick="setFilter('subject', 'all', document.querySelector('#subjectFilterRow [data-subject=\\'all\\']')); setFilter('level', 'all', document.querySelector('#levelFilterRow [data-level=\\'all\\']'));" style="padding: 8px 18px; font-size: 0.9rem; background: var(--accent); color: #fff; border-color: var(--accent);">Reset All Filters</button>
+            <button class="filter-pill" onclick="setFilter('subject', 'all'); setFilter('level', 'all');" style="padding: 8px 18px; font-size: 0.9rem; background: var(--accent); color: #fff; border-color: var(--accent);">Reset All Filters</button>
           </div>
         `;
         return;
@@ -1808,6 +2312,7 @@
         if (btn) btn.classList.add('active');
       }
       initApp();
+      initCardTouchGestures();
     });
   </script>
 </body>

@@ -61,3 +61,22 @@ This document sets out the core architecture, established rules, and formatting 
 ## 4. Telegram Progress Updates
 
 - Always keep the user posted on progress, verification results, and completed papers via the DarkNight Telegram bot (`darknight-notify` / `@darknight_subi_bot`).
+
+---
+
+## 5. Video Solution Walkthrough Specifications
+
+### A. Official Designated Voiceover
+- **Voice**: **Sonia** (`en-GB-SoniaNeural`)
+- **Engine**: Microsoft Edge Neural TTS (`uvx edge-tts`)
+- **Speech Rate**: `-2%` (calibrated for clear, patient, dyslexia-friendly instructional cadence).
+- **Mastering**: Audio processed via FFmpeg with highpass filter ($80\text{ Hz}$) and EBU R128 loudness normalization (`loudnorm=I=-16:TP=-1.5:LRA=11`), followed by natural step padding ($0.6\text{s}$ pause between working steps, $1.8\text{s}$ conclusion pause).
+- **Status**: Officially chosen voice for all Pearson Edexcel Functional Skills video walkthroughs across `masterfunctionalskills.co.uk`.
+
+### B. Video Encoding & Text Artifact Prevention
+- **Issue Noted**: 4:2:0 chroma subsampling (`-pix_fmt yuv420p`) causes colored ink ringing/chroma bleed (blue, green, red halos) around fine handwritten text against white canvas backgrounds.
+- **Protocol for Full Rerender**:
+  - Apply accurate chroma scaling flags: `-sws_flags spline+accurate_rnd+full_chroma_inp+full_chroma_int` and anti-aliased ink rendering.
+  - Test `-pix_fmt yuv444p` or optimized x264 chroma parameters (`-crf 12 -preset slow -tune stillimage`) so text remains razor-sharp without color fringing.
+- **Rerender Roadmap**: Once AI generation credits / billing are refreshed, re-render both Section A (Non-Calc) and Section B (Calc) Past Paper 10 with Sonia and the clean chroma pipeline, then proceed with the remaining past papers on the website.
+

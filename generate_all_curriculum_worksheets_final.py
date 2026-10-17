@@ -293,7 +293,7 @@ for cat, slug, bn, fpath in curriculum_pages:
             q6={
                 "title": f"Question 6 (Evaluation & Critical Justification)",
                 "marks": 4,
-                "stem": f"Evaluate the effectiveness of a writer's or speaker's use of <strong>{title}</strong> in achieving their communicative purpose.<br>State a clear conclusion supported by at least two specific citations.",
+                "stem": f"Explain how effectively the writer or speaker uses <strong>{title}</strong> to achieve their main purpose.<br>Give a clear conclusion supported by at least two examples from the text.",
                 "lines": 5,
                 "ans_label": "Evaluation & Justification =",
                 "choice_box": "Conclusion: ____________ | Evidence: ____________",
@@ -301,7 +301,7 @@ for cat, slug, bn, fpath in curriculum_pages:
                     ("1. State clear evaluative judgment", "[A1]"),
                     ("2. Provide first piece of textual evidence with analysis", "[M1]"),
                     ("3. Provide second piece of textual evidence with analysis", "[M1]"),
-                    ("4. Link evidence to communicative impact on audience", "[A1]")
+                    ("4. Link evidence to its impact on the reader or listener", "[A1]")
                 ],
                 "final_answer": "Model Critical Evaluation (Verified)",
                 "pitfall": "Stating an opinion without quoting specific evidence from the text.",

@@ -141,7 +141,7 @@ def build_mock_english_l2_book():
       <h3 style="color:#003366; margin-top:0;">Detecting Language Devices &amp; Bias</h3>
       <ul style="margin:2px 0 0 14px; padding:0;">
         <li><strong>Rhetorical Questions:</strong> Prompt reader reflection without expecting an answer; creates conversational rapport.</li>
-        <li><strong>Rule of Three (Tricolon):</strong> Groups three rhythmic phrases for persuasive resonance (e.g. <em>"broken connectors, conflicting apps, and staggering disparities"</em>).</li>
+        <li><strong>Rule of Three:</strong> Groups three rhythmic phrases for persuasive impact (e.g. <em>"broken connectors, conflicting apps, and staggering disparities"</em>).</li>
         <li><strong>Hyperbole:</strong> Deliberate exaggeration to dramatize urgency (e.g. <em>"suffocating under an avalanche"</em>).</li>
         <li><strong>Detecting Bias:</strong> One-sided emotive language, absence of counter-evidence, dismissive adjectives (<em>"glossy corporate rhetoric"</em>), and subjective value judgments presented as fact.</li>
       </ul>

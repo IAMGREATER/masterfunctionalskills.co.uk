@@ -533,11 +533,11 @@ ENGLISH_WORKOUTS = {
         "apply_questions": [
             {
                 "context_tag": "Healthcare Facility Transport Committee Discussion",
-                "stem": "In an assessed Level 2 discussion regarding staff parking charges, Candidate A states:<br><em>'We should charge doctors £50 a month and lower-paid healthcare assistants only £10 a month.'</em><br><br>Write a two-sentence contribution demonstrating a <strong>respectful challenge</strong> that acknowledges Candidate A's intention but raises a practical payroll or equity concern.",
+                "stem": "In an assessed Level 2 discussion regarding staff parking charges, Candidate A states:<br><em>'We should charge doctors £50 a month and lower-paid healthcare assistants only £10 a month.'</em><br><br>Write a two-sentence contribution demonstrating a <strong>respectful challenge</strong> that acknowledges Candidate A's aim but raises a practical payroll or fairness concern.",
                 "marks": 2,
                 "prefix": "",
                 "steps": [
-                    ("Sentence 1: Acknowledge Candidate A's fairness rationale: 'I appreciate Candidate A's intention to support lower-paid staff with reduced charges.'", "[P1]"),
+                    ("Sentence 1: Acknowledge Candidate A's fairness rationale: 'I appreciate Candidate A's aim to support lower-paid staff with reduced charges.'", "[P1]"),
                     ("Sentence 2: Introduce respectful challenge with practical consideration: 'However, tiered charges based on salary grades could create administrative complexity for payroll, so should we consider subsidized public transport passes as an alternative?'", "[A1]")
                 ],
                 "final_answer": "'I understand Candidate A's aim to make parking affordable for lower-paid colleagues. However, linking parking permits to salary bands can cause privacy and payroll issues, so could we explore offering free bus passes instead?'",

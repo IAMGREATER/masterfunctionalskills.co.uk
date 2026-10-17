@@ -564,7 +564,7 @@ ENGLISH_WRITING_BATCH3_WORKOUTS = {
                 "R - Rhetorical Questions & Repetition: Encourages reader reflection and reinforces key themes.",
                 "E - Emotive Language & Expert Opinion: Words that provoke feeling ('vital', 'critical', 'devastating') paired with authority.",
                 "S - Statistics & Facts: Concrete numbers lend credibility ('85% of healthcare staff reported...').",
-                "T - Rule of Three (Tricolon): Grouping three powerful words or ideas together for rhythm."
+                "T - Rule of Three: Grouping three words or ideas together for rhythm and impact."
             ],
             "calc_tip": "Do not overload every sentence with techniques; choose 2-3 appropriate devices per paragraph."
         },
@@ -575,14 +575,14 @@ ENGLISH_WRITING_BATCH3_WORKOUTS = {
                 "items": [
                     ("a", "'Can we really afford to ignore the wellbeing of our frontline team?'", "Rhetorical Question"),
                     ("b", "'Over 78% of staff surveyed expressed severe fatigue.'", "Statistic / Fact"),
-                    ("c", "'This vital service provides safe, supportive, and specialist care.'", "Rule of Three (Tricolon)"),
+                    ("c", "'This vital service provides safe, supportive, and specialist care.'", "Rule of Three"),
                     ("d", "'Failing to upgrade equipment will lead to catastrophic breakdowns.'", "Emotive Language"),
                     ("e", "'Together, you and I can transform patient recovery.'", "Direct Address")
                 ]
             },
             {
                 "title": "Applying the Rule of Three",
-                "instruction": "Complete the tricolon with a third powerful descriptor:",
+                "instruction": "Complete the rule of three with a third powerful word:",
                 "items": [
                     ("a", "Our service must be efficient, reliable, and ___.", "compassionate / professional"),
                     ("b", "We need training that is accessible, practical, and ___.", "engaging / affordable"),

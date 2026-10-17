@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """
 Catalog English Reading: 13 Core Reading Standards.
-Covers Fact vs Opinion, Language Features, Presentational Devices, Comparing Texts, Bias & Intent.
+Covers Fact vs Opinion, Language Features, Presentational Devices, Comparing Texts, Bias & Purpose.
 """
 from build_topic_dataset import make_english_topic
 
@@ -103,7 +103,7 @@ CATALOG_ENGLISH_READING = [
                 ("1. State clear conclusion: <strong>Yes, the reader's complaint is fully justified</strong>", "[A1]"),
                 ("2. Evidence 1: Use of biased, emotive adjective 'disgraceful' to describe the policy without explaining its details", "[M1]"),
                 ("3. Evidence 2: Extreme hyperbole 'completely ruined local tourism' without citing any visitor statistics or revenue data", "[M1]"),
-                ("4. Evidence 3: Sweeping, unproven assumption about intentions ('councillors care nothing for residents')", "[A1]")
+                ("4. Evidence 3: Sweeping, unproven claim about motives ('councillors care nothing for residents')", "[A1]")
             ],
             "final_answer": "Justified (Uses emotive language 'disgraceful', unsubstantiated hyperbole 'completely ruined', and unsupported assumption of motives)",
             "pitfall": "Writing 'Yes' without directly quoting and analysing the specific words used by the journalist.",

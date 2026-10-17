@@ -100,7 +100,7 @@ ENGLISH_READING_BATCH3_WORKOUTS = {
         "workout_blocks": [
             {
                 "title": "Identifying the Purpose of Visuals",
-                "instruction": "State the primary communicative purpose of each visual element:",
+                "instruction": "State the main purpose of each visual element:",
                 "items": [
                     ("a", "A step-by-step diagram showing correct clinical handwashing technique", "Instructional (guides correct physical action)"),
                     ("b", "A high-contrast photograph of a smiling, active resident in a care home brochure", "Persuasive / Reassuring (builds trust and emotional appeal)"),
@@ -558,7 +558,7 @@ ENGLISH_READING_BATCH3_WORKOUTS = {
                 ]
             },
             {
-                "title": "Recognizing Secondary Intentions",
+                "title": "Recognizing Secondary Purposes",
                 "instruction": "State the dual purpose of the text:",
                 "items": [
                     ("a", "A dental hygiene blog post that explains flossing benefits while advertising their own brand of eco-friendly floss", "To inform and persuade (commercial marketing)"),

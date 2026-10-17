@@ -424,7 +424,7 @@ ENRICHMENT_ENGLISH_READING = {
         },
         {
             "title": "Question 4: Primary Purpose of Different Text Types",
-            "instruction": "State the primary communicative purpose of each text (Persuade, Inform, Instruct, Advise, or Entertain):",
+            "instruction": "State the main purpose of each text (Persuade, Inform, Instruct, Advise, or Entertain):",
             "items": [
                 ("a", "A leaflet explaining how to apply for tax-free childcare vouchers", "Inform / Instruct"),
                 ("b", "An advert urging readers to sign up for private health insurance before April", "Persuade"),
@@ -499,8 +499,8 @@ ENRICHMENT_ENGLISH_READING = {
 
     "reading-why-do-writers-write": [
         {
-            "title": "Question 3: Identifying Authorial Intent in Workplace & Civic Texts",
-            "instruction": "State the writer's primary intent (Inform, Persuade, Instruct, Warn, Entertain, or Complain):",
+            "title": "Question 3: Identifying the Writer's Purpose in Workplace & Community Texts",
+            "instruction": "State the writer's main purpose (Inform, Persuade, Instruct, Warn, Entertain, or Complain):",
             "items": [
                 ("a", "'Faulty charging cables can ignite and cause devastating warehouse fires.'", "Warn"),
                 ("b", "'Invest in our premier solar roofing system and slash your carbon footprint today.'", "Persuade"),
@@ -594,12 +594,12 @@ ENRICHMENT_ENGLISH_READING = {
             "items": [
                 ("a", "'Over 87% of surveyed NHS workers would recommend their ward to friends.'", "Statistics / Empirical evidence"),
                 ("b", "'Are we prepared to let our beloved community library close its doors forever?'", "Rhetorical question"),
-                ("c", "'We will deliver cleaner streets, safer parks, and brighter futures for our youth.'", "Rule of Three / Tricolon"),
+                ("c", "'We will deliver cleaner streets, safer parks, and brighter futures for our youth.'", "Rule of Three"),
                 ("d", "'This revolutionary new vacuum cleaner is a million times faster than sweeping.'", "Hyperbole / Exaggeration"),
                 ("e", "'Last year, local resident Mrs Jenkins had to wait four hours in the rain for a bus.'", "Anecdote / Human interest story"),
-                ("f", "'Don't let rogue cowboy builders steal your family's precious future.'", "Emotive language / Pejorative nouns"),
+                ("f", "'Don't let rogue cowboy builders steal your family's precious future.'", "Emotive language"),
                 ("g", "'Professor Davies, Chief Virologist at Oxford, confirms the safety of the vaccine.'", "Appeal to authority / Expert testimony"),
-                ("h", "'We cannot afford to wait. We cannot afford to hesitate. We cannot afford to fail.'", "Repetition / Anaphora")
+                ("h", "'We cannot afford to wait. We cannot afford to hesitate. We cannot afford to fail.'", "Repetition")
             ]
         },
         {

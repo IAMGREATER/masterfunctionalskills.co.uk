@@ -257,16 +257,16 @@ ENRICHMENT_ENGLISH_SLC = {
             ]
         },
         {
-            "title": "Question 5: Effective Spoken Rhetoric & Engagement Devices",
-            "instruction": "Name the rhetorical device used to make the speech memorable (Analogy, Tricolon, Anecdote, Rhetorical Hook):",
+            "title": "Question 5: Engaging Speaking Techniques in Presentations",
+            "instruction": "Name the speaking technique used to make the presentation memorable (Analogy, Rule of Three, Personal Story / Anecdote, Rhetorical Question):",
             "items": [
                 ("a", "'Managing patient data without encryption is like leaving the hospital front doors wide open at midnight.'", "Analogy / Metaphorical comparison"),
-                ("b", "'We must listen with empathy, speak with clarity, and act with integrity.'", "Tricolon / Rule of Three"),
+                ("b", "'We must listen with empathy, speak with clarity, and act with integrity.'", "Rule of Three"),
                 ("c", "'When I first stepped onto a night ward six years ago, an experienced sister gave me a piece of advice I will never forget.'", "Anecdote / Storytelling hook"),
                 ("d", "'How many more near-miss accidents must occur before we install adequate loading bay lighting?'", "Rhetorical Question"),
-                ("e", "'Safety is not a department; safety is not a binder on a shelf; safety is our daily promise.'", "Repetition / Anaphora"),
+                ("e", "'Safety is not a department; safety is not a binder on a shelf; safety is our daily promise.'", "Repetition"),
                 ("f", "'Think of our apprentice program as the foundation pillars of a cathedral.'", "Extended Analogy"),
-                ("g", "'Better care, brighter futures, stronger communities.'", "Tricolon / Parallel phrasing"),
+                ("g", "'Better care, brighter futures, stronger communities.'", "Rule of Three / Parallel phrasing"),
                 ("h", "'Imagine a workplace where every employee leaves at the end of their shift safe, unharmed, and proud.'", "Visualization / Emotive invitation")
             ]
         }
@@ -341,7 +341,7 @@ ENRICHMENT_ENGLISH_SLC = {
                 ("c", "'Every other hospital in the region has automated check-ins, so we must do it too.'", "Bandwagon appeal (arguing popularity proves correctness)"),
                 ("d", "'If we allow staff to work from home on Fridays, soon nobody will ever come into the office and the company will fail.'", "Slippery Slope (exaggerated extreme chain reaction)"),
                 ("e", "'Don't trust Sarah's budget numbers; she was late to work twice last week.'", "Ad Hominem (irrelevant personal attack)"),
-                ("f", "'Either you support mandatory overtime on weekends, or you don't care about patient wellbeing.'", "False Dilemma (creating false moral dichotomy)"),
+                ("f", "'Either you support mandatory overtime on weekends, or you don't care about patient wellbeing.'", "False Dilemma (forcing an unfair either/or choice)"),
                 ("g", "'If we buy organic apples for the canteen, next we'll be serving caviar and we'll go bankrupt.'", "Slippery Slope (absurd escalation)"),
                 ("h", "'Thousands of people bought this detox tea, so it must cure liver illness.'", "Bandwagon / Unsubstantiated appeal to crowd")
             ]

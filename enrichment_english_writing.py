@@ -395,7 +395,7 @@ ENRICHMENT_ENGLISH_WRITING = {
             "title": "Question 5: Deploying Persuasive Language Features in Form-Specific Writing",
             "instruction": "Write a short sentence demonstrating the specified language feature for a campaign promoting workplace recycling:",
             "items": [
-                ("a", "Rule of Three (Tricolon)", "'Recycling reduces landfill, conserves natural resources, and protects our local environment.'"),
+                ("a", "Rule of Three", "'Recycling reduces landfill, conserves natural resources, and protects our local environment.'"),
                 ("b", "Rhetorical Question", "'Can we really afford to ignore the environmental crisis on our own doorstep?'"),
                 ("c", "Imperative Command", "'Place all clean paper, cardboard, and plastic bottles into the green bins today.'"),
                 ("d", "Emotive Adjective", "'Thousands of marine animals endure agonizing suffering due to discarded single-use plastics.'"),
@@ -603,8 +603,8 @@ ENRICHMENT_ENGLISH_WRITING = {
             ]
         },
         {
-            "title": "Question 3: Matching Tone to Communicative Purpose",
-            "instruction": "Select the appropriate tone to fulfill the stated communicative goal:",
+            "title": "Question 3: Matching Tone to Purpose and Audience",
+            "instruction": "Select the appropriate tone to achieve the writing purpose:",
             "items": [
                 ("a", "Purpose: Resolving a sensitive patient complaint regarding nurse attitude", "Empathetic, professional, conciliatory, accountable"),
                 ("b", "Purpose: Instructing contractors on strict mandatory site safety requirements", "Authoritative, firm, clear, unambiguous"),
@@ -617,13 +617,13 @@ ENRICHMENT_ENGLISH_WRITING = {
             ]
         },
         {
-            "title": "Question 4: Alignment Between Purpose and Structural Choices",
-            "instruction": "Explain why the structural choice directly supports the writer's underlying purpose:",
+            "title": "Question 4: Alignment Between Purpose and Layout Choices",
+            "instruction": "Explain why the layout choice supports the writer's purpose:",
             "items": [
                 ("a", "Why use a bulleted list in an email requesting four specific actions from a team?", "Prevents critical tasks from getting lost in paragraphs; enables recipients to tick off each action"),
                 ("b", "Why include an emotional personal case study at the start of a charity fundraising appeal?", "Builds immediate reader empathy, humanizing abstract problems and motivating donations"),
                 ("c", "Why place the deadline in bold at both the top and conclusion of an invoice reminder?", "Ensures the payment cutoff is unmissable, creating clear urgency and compliance"),
-                ("d", "Why use short, imperative sentences in emergency fire instructions?", "Facilitates rapid comprehension during high-stress situations without cognitive overload"),
+                ("d", "Why use short, imperative sentences in emergency fire instructions?", "Makes instructions fast and easy to follow during emergencies without confusion"),
                 ("e", "Why provide a comparative cost-benefit table in a business proposal to a director?", "Allows busy decision-makers to evaluate financial viability and ROI at a glance"),
                 ("f", "Why use a rhetorical question as the headline for an opinion article?", "Hooks the reader's curiosity and prompts them to question their existing assumptions"),
                 ("g", "Why include contact details for an out-of-hours team on a medical discharge letter?", "Provides vital patient safety netting and reassurance in case symptoms worsen overnight"),

@@ -1511,7 +1511,7 @@ TOPIC_VISUAL_REGISTRY = {
     },
     "reading-why-do-writers-write": {
         "photo": "journalism_media/journalist_writing.jpg",
-        "photo_caption": "Journalist drafting investigative article with intent to inform, persuade, and raise awareness.",
+        "photo_caption": "Journalist drafting investigative article to inform, persuade, and raise awareness.",
         "character": "abdul",
         "character_quote": "Examine the verbs used: is the writer trying to advise, warn, criticise, or sell?",
         "sketch": None

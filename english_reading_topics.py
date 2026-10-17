@@ -1205,7 +1205,7 @@ READING_TOPICS = [
             {
                 "marks": "2 Marks",
                 "question": "A trade union newsletter argues: <em>'The proposed shift roster overhaul is an unmitigated disaster designed solely to exploit loyal warehouse staff.'</em><br>Identify the author's stance and explain why the phrasing demonstrates <strong>bias</strong>.",
-                "solution_steps": "1. Stance: Strongly opposed to the proposed shift roster overhaul [1 Mark].<br>2. Bias Reason: Uses extreme, emotionally loaded language ('unmitigated disaster', 'exploit') and assumes malicious intent without presenting any of management's operational reasons [1 Mark].",
+                "solution_steps": "1. Stance: Strongly opposed to the proposed shift roster overhaul [1 Mark].<br>2. Bias Reason: Uses extreme, emotionally loaded language ('unmitigated disaster', 'exploit') and assumes bad motives without presenting any of management's operational reasons [1 Mark].",
                 "correct_answer": "Stance: Strongly opposes the new shift roster. | Bias: Uses loaded emotional words ('unmitigated disaster', 'exploit') and presents a one-sided view without management's perspective.",
                 "tutor_tip": "Quote the exact loaded phrase ('unmitigated disaster') to substantiate your bias finding."
             },

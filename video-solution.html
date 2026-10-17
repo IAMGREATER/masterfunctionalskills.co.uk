@@ -469,6 +469,146 @@
       50% { opacity: 0.35; transform: scale(0.65); }
     }
 
+    /* Header Block */
+    .video-hero-header-block {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 16px;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+    .hero-title-group h1 {
+      font-size: 2rem;
+      font-weight: 900;
+      margin: 8px 0 0 0;
+      color: #ffffff;
+      letter-spacing: -0.3px;
+    }
+    .hero-title-group p {
+      color: #94a3b8;
+      font-size: 1rem;
+      margin: 4px 0 0 0;
+    }
+    .hero-tutor-card {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .hero-tutor-inner {
+      background: #1e293b;
+      border: 1px solid #334155;
+      padding: 8px 16px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .hero-tutor-avatar {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      background: #2563eb;
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+    }
+    .hero-tutor-name {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .hero-tutor-sub {
+      font-size: 0.72rem;
+      color: #94a3b8;
+    }
+
+    /* Section Switcher */
+    .section-switcher-bar {
+      display: flex;
+      gap: 10px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+    .btn-section-toggle {
+      padding: 10px 18px;
+      border-radius: 10px;
+      font-weight: 800;
+      font-size: 0.92rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1.5px solid #334155;
+      background: #1e293b;
+      color: #ffffff;
+      transition: all 0.15s ease;
+      text-decoration: none;
+    }
+    .btn-section-toggle.active {
+      border-color: #3b82f6;
+      background: #2563eb;
+      box-shadow: 0 4px 14px rgba(37, 99, 235, 0.4);
+    }
+    .btn-section-toggle:hover:not(.active) {
+      background: #25334d;
+      border-color: #475569;
+    }
+
+    /* Quick Study Materials */
+    .hero-quick-materials {
+      display: none;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
+    .hero-quick-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 8px 12px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      border-radius: 8px;
+      text-decoration: none;
+      transition: all 0.15s ease;
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+    .hero-quick-worksheet {
+      background: #1e293b;
+      border: 1.5px solid #3b82f6;
+      color: #93c5fd;
+    }
+    .hero-quick-worksheet:hover {
+      background: #2563eb;
+      color: #fff;
+    }
+    .hero-quick-answers {
+      background: #064e3b;
+      border: 1.5px solid #10b981;
+      color: #a7f3d0;
+    }
+    .hero-quick-answers:hover {
+      background: #059669;
+      color: #fff;
+    }
+
+    /* Criteria Grid */
+    .criteria-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin-top: 14px;
+    }
+
+    .video-main-content {
+      padding: 40px 20px 80px 20px;
+    }
+
     /* Up Next Banner below player/pitfalls */
     .up-next-prompt {
       margin-top: 24px;
@@ -484,37 +624,237 @@
     }
 
     @media (max-width: 860px) {
-      .video-details-grid {
-        grid-template-columns: 1fr;
+      .video-hero-section {
+        padding: 8px 0 14px 0;
       }
-      .video-transport-bar {
+      .video-hero-container {
+        display: flex;
         flex-direction: column;
-        gap: 10px;
+        padding: 0 10px;
+      }
+      .video-breadcrumbs {
+        display: none !important;
+      }
+
+      /* 1. Video Player FIRST on mobile */
+      .video-main-player-wrap {
+        order: 1;
+        margin-bottom: 10px;
+        border-radius: 12px;
+        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+      }
+
+      /* 2. Compact Title & Badge SECOND */
+      .video-hero-header-block {
+        order: 2;
+        margin-bottom: 8px;
+        gap: 4px;
+      }
+      .hero-title-group h1 {
+        font-size: 1.15rem !important;
+        font-weight: 800 !important;
+        margin: 4px 0 2px 0 !important;
+        line-height: 1.25 !important;
+      }
+      .hero-title-group p {
+        font-size: 0.76rem !important;
+        color: #94a3b8 !important;
+        margin: 0 0 4px 0 !important;
+        line-height: 1.35 !important;
+      }
+      .badge-pill-edexcel {
+        font-size: 0.68rem !important;
+        padding: 2px 8px !important;
+      }
+      .hero-tutor-card {
+        display: none !important;
+      }
+
+      /* 3. Compact Section Switcher THIRD */
+      .section-switcher-bar {
+        order: 3;
+        display: grid !important;
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+        width: 100%;
+        margin-bottom: 8px;
+      }
+      .btn-section-toggle {
+        width: 100%;
+        padding: 8px 6px !important;
+        font-size: 0.78rem !important;
+        font-weight: 700 !important;
+        justify-content: center !important;
+        text-align: center !important;
+        border-radius: 8px !important;
+        gap: 6px !important;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      /* 4. Quick PDF Download Chips FOURTH */
+      .hero-quick-materials {
+        order: 4;
+        display: grid !important;
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+        width: 100%;
+        margin-bottom: 8px;
+      }
+      .hero-quick-btn {
+        padding: 7px 6px;
+        font-size: 0.76rem;
+      }
+
+      /* 5. Compact Transport Bar FIFTH */
+      .video-transport-bar {
+        order: 5;
+        display: grid !important;
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+        padding: 8px 10px;
+        margin-top: 2px !important;
+        border-radius: 10px;
       }
       .transport-center-controls {
+        grid-column: 1 / -1;
         width: 100%;
         max-width: none;
-        order: 1;
       }
-      .btn-transport-prev, .btn-transport-next {
-        width: 100%;
-        max-width: none;
-        min-width: 0;
-        justify-content: center;
+      .station-video-dropdown {
+        padding: 8px 30px 8px 32px;
+        font-size: 0.82rem;
+      }
+      .transport-picker-icon {
+        font-size: 0.85rem;
+        left: 10px;
       }
       .btn-transport-prev {
-        order: 2;
+        grid-column: 1;
+        width: 100%;
+        min-width: 0;
+        max-width: none;
+        padding: 6px 10px;
+        border-radius: 8px;
+        gap: 6px;
       }
       .btn-transport-next {
-        order: 3;
+        grid-column: 2;
+        width: 100%;
+        min-width: 0;
+        max-width: none;
+        padding: 6px 10px;
+        border-radius: 8px;
+        gap: 6px;
+        justify-content: flex-end;
+      }
+      .transport-meta {
+        font-size: 0.62rem;
+      }
+      .transport-title {
+        font-size: 0.74rem;
+      }
+
+      /* DETAILS GRID ON MOBILE: Sidebar/Playlist First, Content Second */
+      .video-main-content {
+        padding: 14px 10px 40px 10px !important;
+      }
+      .video-details-grid {
+        display: flex;
+        flex-direction: column;
+        gap: 14px;
+        margin-top: 10px;
+      }
+      .video-sidebar-panel {
+        order: 1;
+        gap: 12px;
+      }
+      .sidebar-card {
+        padding: 14px 12px;
+        border-radius: 12px;
+      }
+      .sidebar-card-title {
+        font-size: 0.94rem;
+        margin-bottom: 10px;
+      }
+      .sidebar-tab-nav {
+        margin-bottom: 10px;
+      }
+      .sidebar-tab-btn {
+        padding: 7px 8px;
+        font-size: 0.78rem;
+      }
+      .playlist-filter-bar {
+        gap: 4px;
+        margin-bottom: 10px;
+      }
+      .filter-chip {
+        padding: 3px 7px;
+        font-size: 0.68rem;
+      }
+      .playlist-items-scroll {
+        max-height: 320px;
+        gap: 6px;
+      }
+      .playlist-item-card {
+        padding: 7px 8px;
+        gap: 8px;
+      }
+      .playlist-thumb-box {
+        width: 52px;
+        height: 32px;
+      }
+      .playlist-item-title {
+        font-size: 0.76rem;
+      }
+      .playlist-item-tag {
+        font-size: 0.6rem;
+      }
+
+      /* CONTENT PANEL: Examiner Tips & Pitfalls */
+      .video-content-panel {
+        order: 2;
+        padding: 16px 12px;
+        border-radius: 12px;
+      }
+      .video-content-panel h2 {
+        font-size: 1.12rem !important;
+        margin-bottom: 6px !important;
+      }
+      .video-content-panel p#panelDesc {
+        font-size: 0.86rem !important;
+        line-height: 1.5 !important;
+      }
+      .video-content-panel h3 {
+        font-size: 0.95rem !important;
+        margin-top: 18px !important;
+      }
+      .criteria-grid {
+        grid-template-columns: 1fr;
+        gap: 8px;
+        margin-top: 10px;
+      }
+      .criteria-grid > div {
+        padding: 12px 14px !important;
+      }
+      .video-content-panel ul {
+        font-size: 0.86rem !important;
+        line-height: 1.55 !important;
+        padding-left: 18px !important;
+        margin-top: 6px !important;
       }
       .up-next-prompt {
+        padding: 12px 14px;
+        margin-top: 16px;
         flex-direction: column;
-        align-items: flex-start;
+        align-items: stretch;
+        gap: 10px;
       }
-      .up-next-prompt button {
+      .up-next-prompt .btn-play-next {
         width: 100%;
         justify-content: center;
+        padding: 9px 14px !important;
       }
     }
   </style>
@@ -717,25 +1057,35 @@
         <span id="breadcrumbTopic">Topic Video Solution</span>
       </div>
 
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:16px; flex-wrap:wrap; gap:10px;">
-        <div>
+      <div class="video-hero-header-block">
+        <div class="hero-title-group">
           <span class="badge-pill-edexcel" id="heroBadge"><i class="fa-solid fa-video"></i> Official Video Solution</span>
-          <h1 id="heroTitle" style="font-size:2rem; font-weight:900; margin:8px 0 0 0; color:#ffffff;">Numbers and Place Value</h1>
-          <p id="heroSubtitle" style="color:#94a3b8; font-size:1rem; margin:4px 0 0 0;">Pearson Edexcel Functional Skills • Step-by-Step Method Marks [M1/A1] & Examiner Traps</p>
+          <h1 id="heroTitle">Numbers and Place Value</h1>
+          <p id="heroSubtitle">Pearson Edexcel Functional Skills • Step-by-Step Method Marks [M1/A1] & Examiner Traps</p>
         </div>
-        <div style="display:flex; align-items:center; gap:12px;">
-          <div style="background:#1e293b; border:1px solid #334155; padding:8px 16px; border-radius:10px; display:flex; align-items:center; gap:10px;">
-            <div style="width:34px; height:34px; border-radius:50%; background:#2563eb; color:#fff; display:flex; align-items:center; justify-content:center; font-weight:800;"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div class="hero-tutor-card">
+          <div class="hero-tutor-inner">
+            <div class="hero-tutor-avatar"><i class="fa-solid fa-graduation-cap"></i></div>
             <div>
-              <div style="font-size:0.85rem; font-weight:700; color:#fff;">Your Functional Skills Tutor</div>
-              <div style="font-size:0.72rem; color:#94a3b8;">Pearson Specialist</div>
+              <div class="hero-tutor-name">Your Functional Skills Tutor</div>
+              <div class="hero-tutor-sub">Pearson Specialist</div>
             </div>
           </div>
         </div>
       </div>
 
       <!-- Section Switcher (shown for multi-section past papers) -->
-      <div id="sectionSwitcherBar" style="display:none; margin-bottom:14px; gap:10px; flex-wrap:wrap;"></div>
+      <div id="sectionSwitcherBar" class="section-switcher-bar" style="display:none;"></div>
+
+      <!-- Quick Action Study Materials (Question Paper & Worked Answers) -->
+      <div class="hero-quick-materials" id="heroQuickMaterials" style="display:none;">
+        <a href="#" target="_blank" rel="noopener" class="hero-quick-btn hero-quick-worksheet" id="heroQuickWorksheet">
+          <i class="fa-regular fa-file-pdf"></i> Question Sheet (PDF)
+        </a>
+        <a href="#" target="_blank" rel="noopener" class="hero-quick-btn hero-quick-answers" id="heroQuickAnswers">
+          <i class="fa-solid fa-circle-check"></i> Worked Answers [M1/A1]
+        </a>
+      </div>
 
       <!-- Player Box -->
       <div class="video-main-player-wrap" id="mainPlayerContainer">
@@ -773,7 +1123,7 @@
   </section>
 
   <!-- MAIN CONTENT DETAILS SECTION -->
-  <main class="mfs-container" style="padding: 40px 20px 80px 20px;">
+  <main class="mfs-container video-main-content">
     <div class="video-details-grid">
       <!-- Left Content -->
       <div class="video-content-panel">
@@ -785,12 +1135,12 @@
         </p>
 
         <h3 style="font-size:1.15rem; font-weight:800; margin-top:28px; color:#ffffff;"><i class="fa-solid fa-list-check" style="color:#38bdf8; margin-right:8px;"></i> Assessment Criteria & Method Marks</h3>
-        <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px; margin-top:14px;">
-          <div style="background:#131c31; border:1px solid #1e293b; border-radius:10px; padding:16px;">
+        <div class="criteria-grid">
+          <div class="criteria-card">
             <div style="font-weight:800; color:#38bdf8; margin-bottom:4px;"><i class="fa-solid fa-bullseye"></i> [M1] Method Marks</div>
             <div style="font-size:0.9rem; color:#94a3b8;">Awarded for correct mathematical process, place value partitioning, column alignment, and clear multi-step reasoning—even if an arithmetic slip occurs.</div>
           </div>
-          <div style="background:#131c31; border:1px solid #1e293b; border-radius:10px; padding:16px;">
+          <div class="criteria-card">
             <div style="font-weight:800; color:#34d399; margin-bottom:4px;"><i class="fa-solid fa-circle-check"></i> [A1] Accuracy Marks</div>
             <div style="font-size:0.9rem; color:#94a3b8;">Awarded for precisely evaluated answers with correct units (e.g. £, cm², kg, hours), commas, or correct placeholder zeros.</div>
           </div>
@@ -1210,6 +1560,11 @@
 
       window.MFS_STATION = {
         init: function () {
+          // Disable default browser scroll jump to top on load so video player defaults into view
+          if ('scrollRestoration' in history) {
+            history.scrollRestoration = 'manual';
+          }
+
           const urlParams = new URLSearchParams(window.location.search);
           const initialTopic = normalizeSlug(urlParams.get('topic') || 'numbers-and-place-value');
 
@@ -1218,11 +1573,42 @@
           this.attachKeyboard();
           this.load(initialTopic, false, false);
 
+          // Default view to showing the video player on landing
+          this.focusPlayer(true);
+
           window.addEventListener('popstate', function () {
             const params = new URLSearchParams(window.location.search);
             const popTopic = normalizeSlug(params.get('topic') || 'numbers-and-place-value');
             window.MFS_STATION.load(popTopic, false, true);
           });
+        },
+
+        focusPlayer: function (instant = true) {
+          const player = document.getElementById('mainPlayerContainer');
+          if (!player) return;
+
+          const scrollAction = () => {
+            const rect = player.getBoundingClientRect();
+            const currentY = window.pageYOffset || document.documentElement.scrollTop;
+            const isMobile = window.innerWidth <= 860;
+            // On mobile, position player right at top of viewport (giving 6px margin)
+            // On desktop, ensure the player is in clear view
+            const targetY = isMobile
+              ? Math.max(0, rect.top + currentY - 6)
+              : Math.max(0, rect.top + currentY - 70);
+
+            if (Math.abs(currentY - targetY) > 6) {
+              window.scrollTo({
+                top: targetY,
+                behavior: instant ? 'auto' : 'smooth'
+              });
+            }
+          };
+
+          scrollAction();
+          requestAnimationFrame(scrollAction);
+          setTimeout(scrollAction, 80);
+          setTimeout(scrollAction, 260);
         },
 
         buildPicker: function () {
@@ -1388,12 +1774,12 @@
                 const secASlug = isSecB ? item.companionSlug : item.id;
                 const secBSlug = isSecB ? item.id : item.companionSlug;
 
-                switcherBar.style.display = 'flex';
+                switcherBar.style.display = 'grid';
                 switcherBar.innerHTML = `
-                  <button type="button" onclick="window.MFS_STATION.load('${secASlug}', true, true)" style="padding:10px 18px; border-radius:10px; font-weight:800; font-size:0.92rem; cursor:pointer; display:inline-flex; align-items:center; gap:8px; border:1.5px solid ${!isSecB ? '#3b82f6' : '#334155'}; background:${!isSecB ? '#2563eb' : '#1e293b'}; color:#ffffff;">
+                  <button type="button" class="btn-section-toggle ${!isSecB ? 'active' : ''}" onclick="window.MFS_STATION.load('${secASlug}', true, true)">
                     <i class="fa-solid fa-circle-play"></i> Section A: Non-Calculator
                   </button>
-                  <button type="button" onclick="window.MFS_STATION.load('${secBSlug}', true, true)" style="padding:10px 18px; border-radius:10px; font-weight:800; font-size:0.92rem; cursor:pointer; display:inline-flex; align-items:center; gap:8px; border:1.5px solid ${isSecB ? '#3b82f6' : '#334155'}; background:${isSecB ? '#2563eb' : '#1e293b'}; color:#ffffff;">
+                  <button type="button" class="btn-section-toggle ${isSecB ? 'active' : ''}" onclick="window.MFS_STATION.load('${secBSlug}', true, true)">
                     <i class="fa-solid fa-calculator"></i> Section B: Calculator
                   </button>
                 `;
@@ -1402,19 +1788,28 @@
               }
             }
 
-            // Update Side Materials
+            // Update Side & Quick Materials
+            const quickMaterials = document.getElementById('heroQuickMaterials');
+            const quickWorksheet = document.getElementById('heroQuickWorksheet');
+            const quickAnswers = document.getElementById('heroQuickAnswers');
+
             if (item.worksheet) {
               document.getElementById('sideWorksheetBtn').href = item.worksheet;
               document.getElementById('sideWorksheetLabel').innerHTML = '<i class="fa-regular fa-file-pdf"></i> Question Worksheet';
+              if (quickWorksheet) quickWorksheet.href = item.worksheet;
             }
             if (item.answers) {
               document.getElementById('sideAnswersBtn').href = item.answers;
               document.getElementById('sideAnswersLabel').innerHTML = '<i class="fa-solid fa-circle-check"></i> Worked Answers [M1/A1]';
+              if (quickAnswers) quickAnswers.href = item.answers;
             }
             if (item.markScheme) {
               document.getElementById('sideReviseBtn').href = item.markScheme;
               document.getElementById('sideReviseBtn').setAttribute('target', '_blank');
               document.getElementById('sideReviseLabel').innerHTML = '<i class="fa-solid fa-clipboard-check"></i> Mark Scheme / Guide';
+            }
+            if (quickMaterials) {
+              quickMaterials.style.display = (item.worksheet || item.answers) ? 'grid' : 'none';
             }
 
           } else {
@@ -1453,6 +1848,13 @@
             document.getElementById('sideWorksheetBtn').href = `worksheets/${cleanSlug}-worksheet.html`;
             document.getElementById('sideAnswersBtn').href = `worksheets/${cleanSlug}-answers.html`;
             document.getElementById('sideReviseBtn').href = `functional-skills-${cleanSlug}.html`;
+
+            const quickMaterials = document.getElementById('heroQuickMaterials');
+            const quickWorksheet = document.getElementById('heroQuickWorksheet');
+            const quickAnswers = document.getElementById('heroQuickAnswers');
+            if (quickWorksheet) quickWorksheet.href = `worksheets/${cleanSlug}-worksheet.html`;
+            if (quickAnswers) quickAnswers.href = `worksheets/${cleanSlug}-answers.html`;
+            if (quickMaterials) quickMaterials.style.display = 'grid';
           }
 
           document.getElementById('heroBadge').innerHTML = badgeText;
@@ -1496,7 +1898,7 @@
             picker.value = cleanSlug;
           }
 
-          // Update Playlist Active Highlights
+          // Update Playlist Active Highlights (scrolling internal container only)
           const cards = document.querySelectorAll('.playlist-item-card');
           cards.forEach(card => card.classList.remove('active'));
           const indicators = document.querySelectorAll('.playlist-active-indicator');
@@ -1507,7 +1909,16 @@
           if (activeCard) {
             activeCard.classList.add('active');
             if (activeInd) activeInd.style.display = 'block';
-            activeCard.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+            const playlistScroll = document.getElementById('playlistContainer');
+            if (playlistScroll && playlistScroll.contains(activeCard)) {
+              const cardOffset = activeCard.offsetTop - playlistScroll.offsetTop;
+              playlistScroll.scrollTo({ top: Math.max(0, cardOffset - 10), behavior: 'smooth' });
+            }
+          }
+
+          // If triggered by user action, ensure player is comfortably in view
+          if (shouldAutoplay) {
+            this.focusPlayer(false);
           }
 
           // Push State

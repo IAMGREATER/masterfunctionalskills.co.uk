@@ -343,6 +343,58 @@
 
     // Initial sync
     syncTintUI();
+
+    // Initialize Mobile Footer Accordions
+    initMobileFooter();
+  }
+
+  /**
+   * Mobile Footer Accordion Engine
+   * Collapses bulky link columns into tap-to-expand compact cards on mobile.
+   */
+  function initMobileFooter() {
+    var footer = document.querySelector('.mfs-footer');
+    if (!footer) return;
+    var cols = footer.querySelectorAll('.footer-col, .footer-links-col');
+    if (!cols || cols.length === 0) return;
+
+    for (var i = 0; i < cols.length; i++) {
+      var col = cols[i];
+      // Skip brand column
+      if (col.classList.contains('footer-brand') || col.querySelector('.mfs-brand')) {
+        continue;
+      }
+
+      var h4 = col.querySelector('h4');
+      var links = col.querySelector('.footer-links, ul');
+      if (!h4 || !links) continue;
+
+      col.classList.add('mfs-footer-accordion');
+      if (!h4.querySelector('.mfs-footer-chevron')) {
+        var chevron = document.createElement('i');
+        chevron.className = 'fa-solid fa-chevron-down mfs-footer-chevron';
+        h4.appendChild(chevron);
+      }
+
+      h4.setAttribute('role', 'button');
+      h4.setAttribute('tabindex', '0');
+      h4.setAttribute('aria-expanded', 'false');
+
+      (function(c, heading) {
+        function toggle(e) {
+          if (e) e.preventDefault();
+          var isOpen = c.classList.toggle('is-open');
+          heading.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        }
+
+        heading.onclick = toggle;
+        heading.onkeydown = function(e) {
+          if (e.key === 'Enter' || e.key === ' ') {
+            toggle(e);
+          }
+        };
+      })(col, h4);
+    }
   }
 
   if (document.readyState === 'loading') {

@@ -708,52 +708,14 @@
       }
 
       /* 5. Compact Transport Bar FIFTH */
-      .video-transport-bar {
-        order: 5;
-        display: grid !important;
-        grid-template-columns: 1fr 1fr;
-        gap: 8px;
-        padding: 8px 10px;
-        margin-top: 2px !important;
-        border-radius: 10px;
-      }
-      .transport-center-controls {
-        grid-column: 1 / -1;
-        width: 100%;
-        max-width: none;
-      }
-      .station-video-dropdown {
-        padding: 8px 30px 8px 32px;
-        font-size: 0.82rem;
-      }
-      .transport-picker-icon {
-        font-size: 0.85rem;
-        left: 10px;
-      }
-      .btn-transport-prev {
-        grid-column: 1;
-        width: 100%;
-        min-width: 0;
-        max-width: none;
-        padding: 6px 10px;
-        border-radius: 8px;
-        gap: 6px;
-      }
-      .btn-transport-next {
-        grid-column: 2;
-        width: 100%;
-        min-width: 0;
-        max-width: none;
-        padding: 6px 10px;
-        border-radius: 8px;
-        gap: 6px;
-        justify-content: flex-end;
-      }
       .transport-meta {
         font-size: 0.62rem;
       }
       .transport-title {
         font-size: 0.74rem;
+      }
+      .transport-label-group {
+        min-width: 0 !important;
       }
 
       /* DETAILS GRID ON MOBILE: Sidebar/Playlist First, Content Second */
@@ -855,6 +817,95 @@
         width: 100%;
         justify-content: center;
         padding: 9px 14px !important;
+      }
+    }
+
+    /* Mobile Portrait View Only: Previous Video & Next Video buttons on the same line */
+    @media (max-width: 860px) and (orientation: portrait) {
+      .video-transport-bar {
+        order: 5;
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        grid-template-areas:
+          "dropdown dropdown"
+          "prev next" !important;
+        gap: 8px !important;
+        padding: 8px 10px !important;
+        margin-top: 2px !important;
+        border-radius: 10px !important;
+      }
+      .transport-center-controls {
+        grid-area: dropdown !important;
+        width: 100% !important;
+        max-width: none !important;
+      }
+      .station-video-dropdown {
+        padding: 8px 30px 8px 32px !important;
+        font-size: 0.82rem !important;
+      }
+      .transport-picker-icon {
+        font-size: 0.85rem !important;
+        left: 10px !important;
+      }
+      .btn-transport-prev {
+        grid-area: prev !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: none !important;
+        padding: 6px 10px !important;
+        border-radius: 8px !important;
+        gap: 6px !important;
+      }
+      .btn-transport-next {
+        grid-area: next !important;
+        width: 100% !important;
+        min-width: 0 !important;
+        max-width: none !important;
+        padding: 6px 10px !important;
+        border-radius: 8px !important;
+        gap: 6px !important;
+        justify-content: flex-end !important;
+      }
+    }
+
+    /* Mobile Landscape View: Single row transport bar */
+    @media (max-width: 860px) and (orientation: landscape) {
+      .video-transport-bar {
+        order: 5;
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        gap: 8px !important;
+        padding: 6px 10px !important;
+        margin-top: 2px !important;
+        border-radius: 10px !important;
+      }
+      .transport-center-controls {
+        flex: 1 1 auto !important;
+        max-width: none !important;
+        min-width: 0 !important;
+      }
+      .station-video-dropdown {
+        padding: 7px 28px 7px 30px !important;
+        font-size: 0.80rem !important;
+      }
+      .transport-picker-icon {
+        font-size: 0.85rem !important;
+        left: 10px !important;
+      }
+      .btn-transport-prev,
+      .btn-transport-next {
+        flex: 0 0 auto !important;
+        min-width: 120px !important;
+        max-width: 220px !important;
+        width: auto !important;
+        padding: 6px 10px !important;
+        border-radius: 8px !important;
+        gap: 6px !important;
+      }
+      .btn-transport-next {
+        justify-content: flex-end !important;
       }
     }
   </style>

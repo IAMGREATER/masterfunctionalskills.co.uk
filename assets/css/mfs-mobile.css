@@ -1987,16 +1987,41 @@
     border-radius: 8px !important;
   }
 
-  .video-transport-bar {
-    gap: 6px !important;
-    margin-top: 6px !important;
-    flex-wrap: wrap !important;
+  @media (orientation: portrait) {
+    .video-transport-bar {
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      grid-template-areas:
+        "dropdown dropdown"
+        "prev next" !important;
+      gap: 8px !important;
+      margin-top: 6px !important;
+    }
+    .transport-center-controls {
+      grid-area: dropdown !important;
+      width: 100% !important;
+    }
+    .btn-transport-prev {
+      grid-area: prev !important;
+      width: 100% !important;
+      min-width: 0 !important;
+    }
+    .btn-transport-next {
+      grid-area: next !important;
+      width: 100% !important;
+      min-width: 0 !important;
+    }
   }
 
-  .transport-btn {
-    padding: 5px 8px !important;
-    font-size: 0.75rem !important;
-    border-radius: 6px !important;
+  @media (orientation: landscape) {
+    .video-transport-bar {
+      display: flex !important;
+      flex-direction: row !important;
+      justify-content: space-between !important;
+      align-items: center !important;
+      gap: 6px !important;
+      margin-top: 6px !important;
+    }
   }
 
   .video-resource-pills {

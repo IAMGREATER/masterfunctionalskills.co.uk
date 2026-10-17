@@ -365,8 +365,112 @@
     </section>
     
 
+    <!-- OFFICIAL PEARSON EDEXCEL VIDEO EXEMPLAR SUITE -->
+    <section id="video-exemplar" class="revision-section">
+      <div class="video-exemplar-card">
+        <div class="video-exemplar-head">
+          <div class="video-exemplar-title">
+            <i class="fa-solid fa-circle-play"></i> Pearson Edexcel Level 2 SLC Video Exemplar (3-Candidate Cohort)
+          </div>
+          <div class="video-tabs">
+            <button type="button" class="video-tab-btn active" onclick="switchTopicVideo('task1')"><i class="fa-solid fa-chalkboard-user"></i> Task 1: Presentation &amp; Q&amp;A (4m 06s)</button>
+            <button type="button" class="video-tab-btn" onclick="switchTopicVideo('task2')"><i class="fa-solid fa-users-viewfinder"></i> Task 2: Group Discussion (4m 22s)</button>
+          </div>
+        </div>
+
+        <div class="video-screen-wrap">
+          <video id="topicSlcVideoPlayer" controls playsinline poster="assets/slc-exemplar/slides/intro_screen.png">
+            <source id="topicSlcVideoSource" src="assets/video/slc-task1-presentation-model.mp4" type="video/mp4">
+            Your browser does not support the video tag.
+          </video>
+        </div>
+
+        <!-- TASK 1 JUMP POINTS -->
+        <div id="topicTask1Jumps" class="video-jump-bar">
+          <span class="jump-label"><i class="fa-solid fa-forward-step"></i> Task 1 Benchmarks:</span>
+          <button type="button" class="jump-btn" onclick="jumpTopicTo(0)">0:00 Assessment Briefing</button>
+          <button type="button" class="jump-btn" onclick="jumpTopicTo(25)">0:25 Intro &amp; Scope [L2.1]</button>
+          <button type="button" class="jump-btn" onclick="jumpTopicTo(55)">0:55 UKHSA Audit Data [L2.6]</button>
+          <button type="button" class="jump-btn" onclick="jumpTopicTo(95)">1:35 2-Pronged Strategy [L2.5]</button>
+          <button type="button" class="jump-btn" onclick="jumpTopicTo(145)">2:25 Pilot Outcomes [L2.2]</button>
+          <button type="button" class="jump-btn" onclick="jumpTopicTo(175)">2:55 Floor Q&amp;A [L2.4 Thomas]</button>
+          <button type="button" class="jump-btn" onclick="jumpTopicTo(205)">3:25 Cost Defence [L2.3]</button>
+          <button type="button" class="jump-btn" onclick="jumpTopicTo(240)">4:00 Home Visits [L2.4 Amara]</button>
+        </div>
+
+        <!-- TASK 2 JUMP POINTS -->
+        <div id="topicTask2Jumps" class="video-jump-bar" style="display:none;">
+          <span class="jump-label"><i class="fa-solid fa-forward-step"></i> Task 2 Benchmarks:</span>
+          <button type="button" class="jump-btn" onclick="jumpTopicTo(0)">0:00 Task 2 Briefing</button>
+          <button type="button" class="jump-btn" onclick="jumpTopicTo(25)">0:25 Opening Complex Topic [L2.9]</button>
+          <button type="button" class="jump-btn" onclick="jumpTopicTo(55)">0:55 King's Fund Telemetry Data [L2.6]</button>
+          <button type="button" class="jump-btn" onclick="jumpTopicTo(95)">1:35 Age UK Digital Exclusion [L2.6]</button>
+          <button type="button" class="jump-btn" onclick="jumpTopicTo(145)">2:25 Pressure Ulcer Case [L2.8]</button>
+          <button type="button" class="jump-btn" onclick="jumpTopicTo(180)">3:00 Polite Interjection [L2.10]</button>
+          <button type="button" class="jump-btn" onclick="jumpTopicTo(210)">3:30 Responding to Interjection [L2.10]</button>
+          <button type="button" class="jump-btn" onclick="jumpTopicTo(235)">3:55 Consensus &amp; Champions [L2.8]</button>
+        </div>
+
+        <!-- DOWNLOAD ACTION PACK -->
+        <div class="download-pack-row">
+          <a href="assets/downloads/FS_SLC_L2_Assessment_Record_Sheet_Exemplar.pdf" class="download-btn" target="_blank" download>
+            <i class="fa-solid fa-file-pdf"></i> Download Assessor Record Sheet (.pdf)
+          </a>
+          <a href="assets/downloads/Candidate_A_Constantin_Presentation_Cue_Cards.pdf" class="download-btn" target="_blank" download>
+            <i class="fa-solid fa-id-card"></i> Candidate Cue Cards (.pdf)
+          </a>
+          <a href="assets/downloads/Candidate_Research_Submission_Sheets_Task2.pdf" class="download-btn" target="_blank" download>
+            <i class="fa-solid fa-file-lines"></i> Research Submission Notes (.pdf)
+          </a>
+          <a href="assets/video/slc-task1-presentation-model.mp4" id="topicVideoDownloadBtn" class="download-btn download-btn-secondary" download>
+            <i class="fa-solid fa-download"></i> Download Task 1 Video (1080p MP4)
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      function switchTopicVideo(task) {
+        const player = document.getElementById('topicSlcVideoPlayer');
+        const source = document.getElementById('topicSlcVideoSource');
+        const t1Jumps = document.getElementById('topicTask1Jumps');
+        const t2Jumps = document.getElementById('topicTask2Jumps');
+        const dlBtn = document.getElementById('topicVideoDownloadBtn');
+        const tabs = document.querySelectorAll('#video-exemplar .video-tab-btn');
+        
+        tabs.forEach(t => t.classList.remove('active'));
+
+        if (task === 'task1') {
+          tabs[0].classList.add('active');
+          source.src = 'assets/video/slc-task1-presentation-model.mp4';
+          player.poster = 'assets/slc-exemplar/slides/intro_screen.png';
+          t1Jumps.style.display = 'flex';
+          t2Jumps.style.display = 'none';
+          dlBtn.href = 'assets/video/slc-task1-presentation-model.mp4';
+          dlBtn.innerHTML = '<i class="fa-solid fa-download"></i> Download Task 1 Video (1080p MP4)';
+        } else {
+          tabs[1].classList.add('active');
+          source.src = 'assets/video/slc-task2-discussion-model.mp4';
+          player.poster = 'assets/slc-exemplar/slides/task2_intro.png';
+          t1Jumps.style.display = 'none';
+          t2Jumps.style.display = 'flex';
+          dlBtn.href = 'assets/video/slc-task2-discussion-model.mp4';
+          dlBtn.innerHTML = '<i class="fa-solid fa-download"></i> Download Task 2 Video (1080p MP4)';
+        }
+        player.load();
+        player.play().catch(e => console.log('Autoplay blocked:', e));
+      }
+
+      function jumpTopicTo(seconds) {
+        const player = document.getElementById('topicSlcVideoPlayer');
+        player.currentTime = seconds;
+        player.play().catch(e => console.log('Play on jump:', e));
+      }
+    </script>
+
         <!-- SKILL 1: Three Regulated Workplace Discussion Simulation Briefs -->
         <section id="skill-1" class="revision-section">
+
           <div class="mfs-topic-card">
             <div class="mfs-topic-head">
               <h3 class="mfs-topic-title"><span class="mfs-topic-prefix">Core Skill 1:</span> Three Regulated Workplace Discussion Simulation Briefs</h3>

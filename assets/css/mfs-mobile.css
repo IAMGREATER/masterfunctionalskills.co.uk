@@ -19,6 +19,16 @@
     display: none !important;
   }
 
+  /* Mobile input zoom prevention (iOS Safari auto-zooms if < 16px) & tap reset */
+  input, select, textarea {
+    font-size: 16px !important;
+  }
+
+  button, a, input, select, textarea {
+    -webkit-tap-highlight-color: transparent !important;
+    touch-action: manipulation;
+  }
+
   /* Header scrolls away naturally on scroll down - strictly non-persisting across whole site in BOTH orientations on mobiles */
   .mfs-navbar {
     position: relative !important;
@@ -27,6 +37,7 @@
     right: auto !important;
     bottom: auto !important;
     z-index: 100 !important;
+    padding-top: env(safe-area-inset-top, 0px) !important;
     background: #0b172d !important;
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15) !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
@@ -216,7 +227,7 @@
   }
 
   .mfs-drawer-header {
-    padding: 14px 16px !important;
+    padding: max(14px, env(safe-area-inset-top, 14px)) 16px 14px !important;
     background: #0b172d !important;
     color: #ffffff !important;
     display: flex !important;
@@ -239,14 +250,47 @@
     background: rgba(255, 255, 255, 0.15) !important;
     border: none !important;
     color: #ffffff !important;
-    width: 32px !important;
-    height: 32px !important;
-    border-radius: 6px !important;
-    font-size: 1.1rem !important;
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+    min-height: 38px !important;
+    border-radius: 8px !important;
+    font-size: 1.15rem !important;
     cursor: pointer !important;
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
+    touch-action: manipulation !important;
+  }
+
+  /* DRAWER PWA INSTALL BOX */
+  .mfs-drawer-install-box {
+    padding: 10px 14px !important;
+    background: #f0fdf4 !important;
+    border-bottom: 1px solid #bbf7d0 !important;
+  }
+
+  .btn-drawer-install {
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    padding: 10px 14px !important;
+    background: #16a34a !important;
+    background: linear-gradient(135deg, #16a34a 0%, #15803d 100%) !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 8px !important;
+    font-weight: 700 !important;
+    font-size: 0.85rem !important;
+    cursor: pointer !important;
+    touch-action: manipulation !important;
+    box-shadow: 0 2px 6px rgba(22, 163, 74, 0.3) !important;
+  }
+
+  .btn-drawer-install:active {
+    transform: scale(0.98) !important;
   }
 
   /* DRAWER DYSLEXIA TINTS PANEL */
@@ -405,9 +449,45 @@
 
   /* DRAWER FOOTER ACTION */
   .mfs-drawer-footer {
-    padding: 14px 16px !important;
+    padding: 14px 16px max(18px, env(safe-area-inset-bottom, 18px)) !important;
     border-top: 1px solid #e2e8f0 !important;
     background: #ffffff !important;
+  }
+
+  /* FLOATING BACK TO TOP BUTTON (Mobile only) */
+  .mfs-scroll-top-btn {
+    position: fixed !important;
+    bottom: max(18px, env(safe-area-inset-bottom, 18px)) !important;
+    right: max(16px, env(safe-area-inset-right, 16px)) !important;
+    width: 42px !important;
+    height: 42px !important;
+    border-radius: 50% !important;
+    background: #0284c7 !important;
+    color: #ffffff !important;
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.28) !important;
+    border: 1px solid rgba(255, 255, 255, 0.25) !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    font-size: 0.95rem !important;
+    cursor: pointer !important;
+    z-index: 9998 !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    transform: translateY(12px) !important;
+    transition: opacity 0.22s ease, transform 0.22s ease, visibility 0.22s ease !important;
+    touch-action: manipulation !important;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+
+  .mfs-scroll-top-btn.visible {
+    opacity: 0.92 !important;
+    visibility: visible !important;
+    transform: translateY(0) !important;
+  }
+
+  .mfs-scroll-top-btn:active {
+    transform: scale(0.9) !important;
   }
 
   .btn-drawer-exam {
@@ -1931,6 +2011,7 @@
   .mfs-mobile-toggle,
   .mfs-drawer-backdrop,
   .mfs-mobile-drawer,
+  .mfs-scroll-top-btn,
   .mobile-card-gesture-hint {
     display: none !important;
   }

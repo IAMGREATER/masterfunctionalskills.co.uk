@@ -1,31 +1,37 @@
-const CACHE_NAME = 'mfs-cache-v20261017d';
+const CACHE_NAME = 'mfs-cache-v20261017e';
 
-const PRECACHE_ASSETS = [
-  '/',
-  '/index.html',
-  '/courses.html',
-  '/worksheets.html',
-  '/past-papers.html',
-  '/functional-skills-past-papers.html',
-  '/assets/css/mfs-theme.css',
-  '/assets/css/mfs-mobile.css',
-  '/assets/css/mfs-revision.css',
-  '/assets/css/mfs-video-modal.css',
-  '/assets/js/mfs-mobile.js',
-  '/assets/js/mfs-tint.js',
-  '/assets/img/favicon-192x192.png',
-  '/assets/img/favicon-512x512.png',
-  '/assets/img/favicon.svg',
-  '/assets/img/favicon.ico',
-  '/assets/img/pfs/pfs-logo-hoz@4x-4-300x39.png',
-  '/manifest.json'
+const RELATIVE_ASSETS = [
+  '',
+  'index.html',
+  'courses.html',
+  'worksheets.html',
+  'past-papers.html',
+  'functional-skills-past-papers.html',
+  'revision-cards.html',
+  'shop.html',
+  'assets/css/mfs-theme.css',
+  'assets/css/mfs-mobile.css',
+  'assets/css/mfs-revision.css',
+  'assets/css/mfs-video-modal.css',
+  'assets/js/mfs-mobile.js',
+  'assets/js/mfs-tint.js',
+  'assets/js/mfs-pwa.js',
+  'assets/img/favicon-192x192.png',
+  'assets/img/favicon-512x512.png',
+  'assets/img/favicon.svg',
+  'assets/img/favicon.ico',
+  'manifest.json'
 ];
 
 self.addEventListener('install', (event) => {
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      return cache.addAll(PRECACHE_ASSETS).catch((err) => {
-        console.warn('[SW] Precache non-critical failure:', err);
+      // Resolve asset paths against the service worker's actual scope
+      const precacheUrls = RELATIVE_ASSETS.map((asset) => {
+        return new URL(asset, self.registration.scope).href;
+      });
+      return cache.addAll(precacheUrls).catch((err) => {
+        console.warn('[MFS SW] Precache non-critical notice:', err);
       });
     }).then(() => self.skipWaiting())
   );
@@ -62,7 +68,7 @@ self.addEventListener('fetch', (event) => {
               caches.open(CACHE_NAME).then((cache) => cache.put(request, responseClone));
             }
             return networkResponse;
-          });
+          }).catch(() => null);
         })
       );
     }
@@ -83,7 +89,9 @@ self.addEventListener('fetch', (event) => {
         .catch(() => {
           return caches.match(request).then((cachedResponse) => {
             if (cachedResponse) return cachedResponse;
-            return caches.match('/index.html');
+            // Fallback to home/index if offline and page not cached
+            const fallbackUrl = new URL('index.html', self.registration.scope).href;
+            return caches.match(fallbackUrl);
           });
         })
     );

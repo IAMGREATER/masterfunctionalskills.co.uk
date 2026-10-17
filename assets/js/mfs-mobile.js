@@ -1,22 +1,41 @@
 /**
  * MASTER FUNCTIONAL SKILLS (UK) — MINIMAL MOBILE & TABLET NAVIGATION ENGINE
- * Controls off-canvas slide-out drawer, touch ergonomics, and mobile dyslexia tinting.
- * Auto-initializes on all mobile & tablet viewports (< 992px).
+ * Controls off-canvas slide-out drawer, touch ergonomics, mobile dyslexia tinting,
+ * PWA installation prompt, and smooth mobile scroll helpers.
+ * Auto-initializes on all mobile & tablet viewports (< 1025px / touch).
  */
 (function() {
   'use strict';
 
-  var DRAWER_HTML = `
+  // Compute Root Path dynamically so drawer links resolve cleanly from subdirectories
+  var ROOT_PATH = (function() {
+    var p = window.location.pathname;
+    if (p.includes('/worksheets/') || p.includes('/topics/')) {
+      return '../';
+    }
+    return '';
+  })();
+
+  function getDrawerHtml(root) {
+    return `
     <div id="mfsDrawerBackdrop" class="mfs-drawer-backdrop"></div>
     <aside id="mfsMobileDrawer" class="mfs-mobile-drawer" aria-label="Mobile Navigation Drawer">
-      <!-- Drawer Header -->
+      <!-- Drawer Header with Safe-Area Padding -->
       <div class="mfs-drawer-header">
-        <a href="index.html" class="mfs-drawer-brand">
+        <a href="${root}index.html" class="mfs-drawer-brand">
           <div class="mfs-brand-icon" style="width:28px; height:28px; font-size:0.85rem;"><i class="fa-solid fa-graduation-cap"></i></div>
           <span>MFS Navigation</span>
         </a>
         <button type="button" class="mfs-drawer-close" id="mfsDrawerCloseBtn" aria-label="Close menu">
           <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- PWA Install Prompt Card (Visible when installable) -->
+      <div id="mfsDrawerInstallBox" class="mfs-drawer-install-box" style="display:none;">
+        <button type="button" class="btn-drawer-install" onclick="window.__mfsTriggerInstall && window.__mfsTriggerInstall()">
+          <i class="fa-solid fa-mobile-screen-button"></i>
+          <span>Install MFS App on Phone</span>
         </button>
       </div>
 
@@ -65,19 +84,19 @@
             <i class="fa-solid fa-chevron-down mfs-drawer-chevron"></i>
           </div>
           <div class="mfs-drawer-sublist">
-            <a href="functional-skills-maths-level-2.html" class="mfs-drawer-sublink"><i class="fa-solid fa-calculator" style="margin-right:6px; color:#0284c7;"></i> Maths Level 2</a>
-            <a href="functional-skills-maths-level-1.html" class="mfs-drawer-sublink"><i class="fa-solid fa-calculator" style="margin-right:6px; color:#0284c7;"></i> Maths Level 1</a>
-            <a href="entry-level-3-maths.html" class="mfs-drawer-sublink"><i class="fa-solid fa-calculator" style="margin-right:6px; color:#0284c7;"></i> Entry Level 3 Maths</a>
-            <a href="functional-skills-english-level-2.html" class="mfs-drawer-sublink"><i class="fa-solid fa-pen-nib" style="margin-right:6px; color:#7c3aed;"></i> English Level 2</a>
-            <a href="functional-skills-english-level-1.html" class="mfs-drawer-sublink"><i class="fa-solid fa-pen-nib" style="margin-right:6px; color:#7c3aed;"></i> English Level 1</a>
-            <a href="digital-functional-skills.html" class="mfs-drawer-sublink"><i class="fa-solid fa-laptop-code" style="margin-right:6px; color:#059669;"></i> Digital Skills Hub</a>
-            <a href="revise.html" class="mfs-drawer-sublink" style="font-weight:700; color:#0284c7;">View All Subjects &rarr;</a>
+            <a href="${root}functional-skills-maths-level-2.html" class="mfs-drawer-sublink"><i class="fa-solid fa-calculator" style="margin-right:6px; color:#0284c7;"></i> Maths Level 2</a>
+            <a href="${root}functional-skills-maths-level-1.html" class="mfs-drawer-sublink"><i class="fa-solid fa-calculator" style="margin-right:6px; color:#0284c7;"></i> Maths Level 1</a>
+            <a href="${root}entry-level-3-maths.html" class="mfs-drawer-sublink"><i class="fa-solid fa-calculator" style="margin-right:6px; color:#0284c7;"></i> Entry Level 3 Maths</a>
+            <a href="${root}functional-skills-english-level-2.html" class="mfs-drawer-sublink"><i class="fa-solid fa-pen-nib" style="margin-right:6px; color:#7c3aed;"></i> English Level 2</a>
+            <a href="${root}functional-skills-english-level-1.html" class="mfs-drawer-sublink"><i class="fa-solid fa-pen-nib" style="margin-right:6px; color:#7c3aed;"></i> English Level 1</a>
+            <a href="${root}digital-functional-skills.html" class="mfs-drawer-sublink"><i class="fa-solid fa-laptop-code" style="margin-right:6px; color:#059669;"></i> Digital Skills Hub</a>
+            <a href="${root}revise.html" class="mfs-drawer-sublink" style="font-weight:700; color:#0284c7;">View All Subjects &rarr;</a>
           </div>
         </div>
 
         <!-- Past Papers -->
         <div class="mfs-drawer-item">
-          <a href="functional-skills-past-papers.html" class="mfs-drawer-link">
+          <a href="${root}functional-skills-past-papers.html" class="mfs-drawer-link">
             <div class="mfs-drawer-link-left">
               <i class="fa-regular fa-file-lines"></i>
               <span>Past Papers &amp; Models</span>
@@ -88,7 +107,7 @@
 
         <!-- Worksheets -->
         <div class="mfs-drawer-item">
-          <a href="worksheets.html" class="mfs-drawer-link">
+          <a href="${root}worksheets.html" class="mfs-drawer-link">
             <div class="mfs-drawer-link-left">
               <i class="fa-solid fa-layer-group"></i>
               <span>Worksheets Directory</span>
@@ -99,7 +118,7 @@
 
         <!-- Revision Cards -->
         <div class="mfs-drawer-item">
-          <a href="revision-cards.html" class="mfs-drawer-link">
+          <a href="${root}revision-cards.html" class="mfs-drawer-link">
             <div class="mfs-drawer-link-left">
               <i class="fa-solid fa-clone" style="color:#d97706;"></i>
               <span style="color:#b45309; font-weight:700;">Revision Cards</span>
@@ -118,17 +137,17 @@
             <i class="fa-solid fa-chevron-down mfs-drawer-chevron"></i>
           </div>
           <div class="mfs-drawer-sublist">
-            <a href="pass-mark-calculator.html" class="mfs-drawer-sublink">Pass Mark Calculator</a>
-            <a href="diagnostic-test.html" class="mfs-drawer-sublink">Diagnostic Skill Checker</a>
-            <a href="functional-skills-nets.html" class="mfs-drawer-sublink">3D Net Folding Tool</a>
-            <a href="video-solution.html" class="mfs-drawer-sublink">Video Walkthrough Station</a>
-            <a href="tools.html" class="mfs-drawer-sublink" style="font-weight:700; color:#0284c7;">All Tools &rarr;</a>
+            <a href="${root}pass-mark-calculator.html" class="mfs-drawer-sublink">Pass Mark Calculator</a>
+            <a href="${root}diagnostic-test.html" class="mfs-drawer-sublink">Diagnostic Skill Checker</a>
+            <a href="${root}functional-skills-nets.html" class="mfs-drawer-sublink">3D Net Folding Tool</a>
+            <a href="${root}video-solution.html" class="mfs-drawer-sublink">Video Walkthrough Station</a>
+            <a href="${root}tools.html" class="mfs-drawer-sublink" style="font-weight:700; color:#0284c7;">All Tools &rarr;</a>
           </div>
         </div>
 
         <!-- Online Courses -->
         <div class="mfs-drawer-item">
-          <a href="courses.html" class="mfs-drawer-link">
+          <a href="${root}courses.html" class="mfs-drawer-link">
             <div class="mfs-drawer-link-left">
               <i class="fa-solid fa-graduation-cap"></i>
               <span>Online Courses</span>
@@ -139,7 +158,7 @@
 
         <!-- Shop -->
         <div class="mfs-drawer-item">
-          <a href="shop.html" class="mfs-drawer-link">
+          <a href="${root}shop.html" class="mfs-drawer-link">
             <div class="mfs-drawer-link-left">
               <i class="fa-solid fa-basket-shopping" style="color:#d97706;"></i>
               <span>Revision Books Shop</span>
@@ -150,7 +169,7 @@
 
         <!-- Contact Us -->
         <div class="mfs-drawer-item">
-          <a href="contact-us.html" class="mfs-drawer-link">
+          <a href="${root}contact-us.html" class="mfs-drawer-link">
             <div class="mfs-drawer-link-left">
               <i class="fa-solid fa-envelope"></i>
               <span>Contact &amp; Support</span>
@@ -160,20 +179,25 @@
         </div>
       </nav>
 
-      <!-- Drawer Footer CTA -->
+      <!-- Drawer Footer CTA with Safe-Area Padding -->
       <div class="mfs-drawer-footer">
-        <a href="exams.html" class="btn-drawer-exam">
+        <a href="${root}exams.html" class="btn-drawer-exam">
           <i class="fa-solid fa-calendar-check"></i> Book Official Exam (£149)
         </a>
       </div>
     </aside>
-  `;
+    <!-- Floating Back to Top Pill -->
+    <button type="button" id="mfsScrollTopBtn" class="mfs-scroll-top-btn" aria-label="Scroll back to top" title="Back to top">
+      <i class="fa-solid fa-arrow-up"></i>
+    </button>
+    `;
+  }
 
   function initMobileNav() {
     // 1. Ensure Drawer markup exists in DOM
     if (!document.getElementById('mfsMobileDrawer')) {
       var wrapper = document.createElement('div');
-      wrapper.innerHTML = DRAWER_HTML.trim();
+      wrapper.innerHTML = getDrawerHtml(ROOT_PATH).trim();
       while (wrapper.firstChild) {
         document.body.appendChild(wrapper.firstChild);
       }
@@ -203,6 +227,7 @@
     var toggleBtn = document.getElementById('mfsMobileToggleBtn');
     var closeBtn = document.getElementById('mfsDrawerCloseBtn');
     var tintBtn = document.getElementById('mfsMobileTintBtn');
+    var scrollTopBtn = document.getElementById('mfsScrollTopBtn');
 
     function openDrawer() {
       if (!drawer || !backdrop) return;
@@ -210,6 +235,11 @@
       backdrop.classList.add('active');
       document.body.style.overflow = 'hidden';
       syncTintUI();
+      // Check install prompt state
+      if (window.__mfsInstallPrompt) {
+        var installContainer = document.getElementById('mfsDrawerInstallBox');
+        if (installContainer) installContainer.style.display = 'block';
+      }
     }
 
     function closeDrawer() {
@@ -246,6 +276,16 @@
         e.preventDefault();
         openDrawer();
       });
+    }
+
+    // Auto-close drawer when any link is clicked
+    if (drawer) {
+      var drawerLinks = drawer.querySelectorAll('.mfs-drawer-nav a, .mfs-drawer-footer a');
+      for (var i = 0; i < drawerLinks.length; i++) {
+        drawerLinks[i].addEventListener('click', function() {
+          closeDrawer();
+        });
+      }
     }
 
     // Escape key closes drawer
@@ -344,6 +384,25 @@
     // Initial sync
     syncTintUI();
 
+    // Floating Back to Top Button Listener
+    if (scrollTopBtn) {
+      window.addEventListener('scroll', function() {
+        if (window.pageYOffset > 350) {
+          scrollTopBtn.classList.add('visible');
+        } else {
+          scrollTopBtn.classList.remove('visible');
+        }
+      }, { passive: true });
+
+      scrollTopBtn.addEventListener('click', function(e) {
+        e.preventDefault();
+        window.scrollTo({
+          top: 0,
+          behavior: 'smooth'
+        });
+      });
+    }
+
     // Initialize Mobile Footer Accordions
     initMobileFooter();
   }
@@ -360,7 +419,6 @@
 
     for (var i = 0; i < cols.length; i++) {
       var col = cols[i];
-      // Skip brand column
       if (col.classList.contains('footer-brand') || col.querySelector('.mfs-brand')) {
         continue;
       }

@@ -59,7 +59,7 @@ CARDS_1 = [
           <g transform="translate(60, 20)">
             <rect x="0" y="0" width="340" height="130" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.8"/>
             <text x="25" y="26" font-size="11" font-weight="800" fill="#0f172a">📁 Documents (Root Folder)</text>
-            <text x="45" y="52" font-size="10.5" font-weight="700" fill="#2563eb">└── 📁 Oxford_Health_Project (Subfolder)</text>
+            <text x="45" y="52" font-size="10.5" font-weight="700" fill="#2563eb">└── 📁 Healthcare_Clinic_Project (Subfolder)</text>
             <text x="70" y="76" font-size="10" font-weight="700" fill="#475569">├── 📄 Meeting_Notes_12Oct24.docx</text>
             <text x="70" y="98" font-size="10" font-weight="700" fill="#475569">└── 📊 Financial_Forecast_v3.xlsx</text>
           </g>"""),

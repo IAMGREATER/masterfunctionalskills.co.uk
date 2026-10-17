@@ -72,7 +72,7 @@ CARDS = [ { 'answer_text': 'A screen reader (or text-to-speech / Narrator).',
                 'font-weight="800" fill="#0f172a">📁 Documents (Root '
                 'Folder)</text>\n'
                 '            <text x="45" y="52" font-size="10.5" '
-                'font-weight="700" fill="#2563eb">└── 📁 Oxford_Health_Project '
+                'font-weight="700" fill="#2563eb">└── 📁 Healthcare_Clinic_Project '
                 '(Subfolder)</text>\n'
                 '            <text x="70" y="76" font-size="10" '
                 'font-weight="700" fill="#475569">├── 📄 '

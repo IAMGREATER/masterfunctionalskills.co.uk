@@ -2,11 +2,14 @@
   "name": "Master Functional Skills",
   "short_name": "MFS Skills",
   "description": "Functional Skills Maths, English, and Digital Skills past papers, revision worksheets, and model solutions.",
-  "start_url": "/index.html",
-  "scope": "/",
+  "id": "mfs-skills-pwa",
+  "start_url": "./index.html",
+  "scope": "./",
   "display": "standalone",
+  "orientation": "any",
   "background_color": "#faf4e6",
   "theme_color": "#0b172d",
+  "categories": ["education", "books"],
   "icons": [
     {
       "src": "assets/img/favicon-192x192.png",
@@ -21,3 +24,4 @@
     }
   ]
 }
+

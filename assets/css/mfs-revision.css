@@ -1548,6 +1548,7 @@ p {
 }
 
 /* Level 1 Pill */
+.mfs-pill-l1,
 .pfs-pill-l1,
 .badge-level-fs-level-1,
 .filter-item-fs-level-1 {
@@ -1567,6 +1568,7 @@ p {
 }
 
 /* Level 2 Pill */
+.mfs-pill-l2,
 .pfs-pill-l2,
 .badge-level-fs-level-2,
 .filter-item-fs-level-2 {
@@ -1586,6 +1588,7 @@ p {
 }
 
 /* Awarding Body / Board Pill */
+.mfs-pill-board,
 .pfs-pill-board,
 .badge-soft-dark,
 .filter-item:not(.filter-item-fs-level-1):not(.filter-item-fs-level-2),
@@ -2886,6 +2889,439 @@ p {
   text-align: center;
   color: #7e22ce;
 }
+
+/* ==========================================================================
+   MOBILE PORTRAIT RESPONSIVE SYSTEM (MAX-WIDTH: 768px / SMARTPHONES)
+   Guarantees perfect visual sizing across images, text, pictures & diagrams
+   ========================================================================== */
+@media (max-width: 768px) {
+  /* 1. HERO SECTION & VISUAL SHOWCASE RESIZING */
+  .revision-hero-card {
+    padding: 18px 0 22px !important;
+    border-bottom-width: 2px !important;
+  }
+  .revision-hero-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+  .revision-hero-title {
+    font-size: 1.45rem !important;
+    line-height: 1.22 !important;
+    margin: 0 0 10px 0 !important;
+    letter-spacing: -0.01em !important;
+  }
+  .revision-hero-desc {
+    font-size: 0.88rem !important;
+    line-height: 1.45 !important;
+    margin-bottom: 12px !important;
+    color: #cbd5e1 !important;
+  }
+  .revision-hero-pill-row {
+    gap: 6px !important;
+    margin-bottom: 10px !important;
+  }
+  .badge-pill-accent,
+  .badge-pill-gold,
+  .badge-pill-outline {
+    font-size: 0.68rem !important;
+    padding: 3px 8px !important;
+    letter-spacing: 0.02em !important;
+  }
+  .revision-hero-meta-bar {
+    gap: 8px !important;
+    font-size: 0.80rem !important;
+    padding-top: 12px !important;
+    margin-top: 6px !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.1) !important;
+  }
+  .hero-meta-item {
+    font-size: 0.80rem !important;
+    gap: 6px !important;
+  }
+  .hero-quick-actions {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    margin-left: 0 !important;
+    gap: 8px !important;
+    margin-top: 8px !important;
+  }
+  .btn-hero-action,
+  .btn-hero-action-secondary {
+    width: 100% !important;
+    justify-content: center !important;
+    padding: 9px 14px !important;
+    font-size: 0.84rem !important;
+    border-radius: 8px !important;
+  }
+  /* Resized hero visual card and book/concept image */
+  .revision-hero-visual-card {
+    padding: 8px 8px 6px !important;
+    border-radius: 12px !important;
+    max-width: 100% !important;
+    margin: 6px auto 0 !important;
+    box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.4) !important;
+  }
+  .revision-hero-img-wrap {
+    aspect-ratio: 16 / 9 !important;
+    max-height: 185px !important;
+    border-radius: 8px !important;
+  }
+  .revision-hero-img-wrap img {
+    max-height: 185px !important;
+    object-fit: cover !important;
+  }
+  .revision-hero-caption-bar {
+    padding: 7px 8px 4px !important;
+    font-size: 0.76rem !important;
+    line-height: 1.35 !important;
+  }
+  .revision-hero-caption-bar strong {
+    font-size: 0.72rem !important;
+    gap: 4px !important;
+    margin-bottom: 2px !important;
+  }
+
+  /* 2. SECTION HEADINGS & LEAD TEXT */
+  .section-title {
+    font-size: 1.22rem !important;
+    line-height: 1.25 !important;
+    gap: 8px !important;
+  }
+  .section-title i {
+    font-size: 1.10rem !important;
+  }
+  .section-header-row {
+    padding-bottom: 8px !important;
+    margin-bottom: 12px !important;
+  }
+  .section-lead-text {
+    font-size: 0.88rem !important;
+    line-height: 1.45 !important;
+    margin-bottom: 16px !important;
+  }
+
+  /* 3. CORE SKILL & TOPIC CARDS */
+  .mfs-topic-card {
+    border-radius: 12px !important;
+    margin-bottom: 16px !important;
+  }
+  .mfs-topic-head {
+    padding: 12px 14px !important;
+  }
+  .mfs-topic-title {
+    font-size: 1.10rem !important;
+    line-height: 1.35 !important;
+  }
+  .mfs-topic-stem {
+    font-size: 0.85rem !important;
+    line-height: 1.4 !important;
+    margin-top: 4px !important;
+  }
+  .mfs-topic-body {
+    padding: 12px 12px !important;
+  }
+  .mfs-topic-footer {
+    padding-top: 10px !important;
+    margin-top: 12px !important;
+    gap: 6px !important;
+  }
+
+  /* 4. DIAGRAMS & SVGS RESIZING */
+  .sketch-diagram-wrap {
+    margin: 12px 0 !important;
+    display: flex !important;
+    justify-content: center !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    max-width: 100% !important;
+    padding-bottom: 4px !important;
+  }
+  .sketch-diagram-wrap svg {
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
+  }
+
+  /* 5. TABLES RESPONSIVE SCROLL SHIELD */
+  .table-responsive,
+  .mfs-topic-body > div:has(table) {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    max-width: 100% !important;
+    margin: 12px 0 !important;
+    padding: 10px !important;
+    border-radius: 8px !important;
+  }
+  .mfs-topic-body table,
+  .table-responsive table {
+    width: 100% !important;
+    font-size: 0.78rem !important;
+  }
+  .mfs-topic-body th,
+  .mfs-topic-body td,
+  .table-responsive th,
+  .table-responsive td {
+    padding: 6px 5px !important;
+    font-size: 0.76rem !important;
+    line-height: 1.3 !important;
+  }
+
+  /* 6. GOLDEN RULES & AMBER CARDS */
+  .rule-card-amber {
+    padding: 12px 14px !important;
+    margin-bottom: 12px !important;
+    border-radius: 10px !important;
+  }
+  .rule-card-amber-header {
+    font-size: 0.90rem !important;
+    gap: 8px !important;
+    margin-bottom: 6px !important;
+  }
+  .rule-card-amber p {
+    font-size: 0.85rem !important;
+    line-height: 1.45 !important;
+  }
+  .rule-highlight-badge {
+    font-size: 0.78rem !important;
+    padding: 6px 10px !important;
+    margin-top: 8px !important;
+    border-radius: 6px !important;
+  }
+
+  /* 7. STEP-BY-STEP WORKED EXAM MODELS */
+  .model-example-card {
+    border-radius: 12px !important;
+    margin-bottom: 16px !important;
+  }
+  .model-card-header {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 6px !important;
+    padding: 10px 14px !important;
+  }
+  .model-badge {
+    font-size: 0.78rem !important;
+  }
+  .model-marks-pill {
+    font-size: 0.72rem !important;
+    padding: 3px 8px !important;
+    line-height: 1.25 !important;
+  }
+  .model-scenario {
+    padding: 12px 14px !important;
+  }
+  .model-q-stem {
+    font-size: 0.92rem !important;
+    line-height: 1.55 !important;
+  }
+  .model-steps-container {
+    padding: 12px 14px !important;
+  }
+  .model-step-grid-row {
+    grid-template-columns: 1fr !important;
+    gap: 6px !important;
+    padding: 10px 12px !important;
+    border-radius: 8px !important;
+    margin-bottom: 10px !important;
+  }
+  .exam-model-big-step {
+    border-radius: 12px !important;
+    margin-bottom: 16px !important;
+  }
+  .exam-model-big-step-header {
+    padding: 10px 14px !important;
+    gap: 6px !important;
+    flex-wrap: wrap !important;
+  }
+  .exam-model-big-step-body {
+    padding: 12px 10px !important;
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+  .exam-model-calc-block {
+    padding: 12px 14px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .exam-model-calc-block > div[style*="font-size:1.6rem"],
+  .exam-model-calc-block > div[style*="font-size:1.55rem"],
+  .exam-model-calc-block > div[style*="font-size:1.45rem"],
+  .exam-model-calc-block > div[style*="font-size:1.35rem"] {
+    font-size: 1.20rem !important;
+  }
+  .exam-model-calc-explanation {
+    font-size: 0.88rem !important;
+    line-height: 1.5 !important;
+  }
+  .model-step-title {
+    font-size: 0.86rem !important;
+    line-height: 1.35 !important;
+  }
+  .model-step-col-desc {
+    font-size: 0.86rem !important;
+    line-height: 1.45 !important;
+    width: 100% !important;
+    overflow-x: auto !important;
+  }
+  .criteria-badge-teal {
+    font-size: 0.72rem !important;
+    padding: 3px 7px !important;
+    line-height: 1.3 !important;
+  }
+  .model-final-answer {
+    padding: 9px 12px !important;
+    font-size: 0.88rem !important;
+    line-height: 1.45 !important;
+    margin-top: 12px !important;
+  }
+  .examiner-guidance-box {
+    padding: 10px 12px !important;
+    margin-top: 10px !important;
+    border-radius: 8px !important;
+  }
+  .examiner-guidance-header {
+    font-size: 0.82rem !important;
+    gap: 6px !important;
+  }
+  .examiner-guidance-text {
+    font-size: 0.80rem !important;
+    line-height: 1.45 !important;
+  }
+
+  /* 8. EXAMINER TRAPS & PITFALLS */
+  .examiner-pitfall-box {
+    padding: 12px 14px !important;
+    margin-bottom: 12px !important;
+    border-radius: 8px !important;
+  }
+  .examiner-pitfall-title {
+    font-size: 0.92rem !important;
+    gap: 6px !important;
+    margin-bottom: 4px !important;
+  }
+  .examiner-pitfall-desc {
+    font-size: 0.85rem !important;
+    line-height: 1.45 !important;
+    margin-bottom: 8px !important;
+  }
+  .examiner-pitfall-fix {
+    padding: 8px 10px !important;
+    font-size: 0.82rem !important;
+    line-height: 1.4 !important;
+  }
+
+  /* 9. INTERACTIVE EXAM PRACTICE CARDS */
+  .practice-question-card {
+    padding: 14px 14px !important;
+    margin-bottom: 16px !important;
+    border-radius: 12px !important;
+  }
+  .practice-card-header {
+    padding-bottom: 10px !important;
+    margin-bottom: 10px !important;
+  }
+  .practice-card-title {
+    font-size: 0.98rem !important;
+  }
+  .practice-q-marks {
+    width: 46px !important;
+    height: 46px !important;
+    min-width: 46px !important;
+    font-size: 0.68rem !important;
+  }
+  .practice-prompt-box {
+    padding: 10px 12px !important;
+    font-size: 0.88rem !important;
+    line-height: 1.5 !important;
+    border-radius: 8px !important;
+  }
+  .practice-notes-label {
+    font-size: 0.80rem !important;
+    margin-top: 10px !important;
+  }
+  .practice-scratchpad {
+    font-size: 0.84rem !important;
+    min-height: 60px !important;
+    padding: 8px 10px !important;
+  }
+  .btn-toggle-solution {
+    padding: 8px 14px !important;
+    font-size: 0.82rem !important;
+    border-radius: 6px !important;
+  }
+
+  /* 10. MATH VISUAL BOARDS & FORMULAS */
+  .math-visual-card {
+    padding: 12px 12px !important;
+    margin: 10px 0 !important;
+    max-width: 100% !important;
+    border-radius: 10px !important;
+  }
+  .math-visual-card-title {
+    font-size: 0.95rem !important;
+    margin-bottom: 6px !important;
+  }
+  .math-step-explanation {
+    font-size: 0.84rem !important;
+    line-height: 1.45 !important;
+  }
+  .math-col-board {
+    padding: 6px 8px !important;
+    font-size: 1.10rem !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+  }
+  .math-calc-cell {
+    font-size: 1.25rem !important;
+    min-width: 20px !important;
+    height: 30px !important;
+  }
+  .math-pv-header {
+    font-size: 0.70rem !important;
+  }
+  .math-stepdown-line {
+    font-size: 1.02rem !important;
+    gap: 6px !important;
+    padding: 6px 8px !important;
+  }
+  .math-stepdown-tag {
+    font-size: 0.70rem !important;
+    padding: 3px 6px !important;
+  }
+  .math-frac-bracket-board {
+    padding: 10px 8px !important;
+    gap: 8px !important;
+    font-size: 1.10rem !important;
+  }
+  .math-stacked-frac {
+    font-size: 1.10rem !important;
+    padding: 0 3px !important;
+  }
+  .math-stacked-num,
+  .math-stacked-den {
+    padding: 2px 6px !important;
+  }
+  .math-bar-model {
+    max-width: 100% !important;
+    overflow-x: auto !important;
+  }
+
+  /* 11. DOWNLOADS SECTION */
+  .download-worksheet-card {
+    padding: 12px 14px !important;
+  }
+  .download-card-title {
+    font-size: 0.95rem !important;
+  }
+  .btn-download-action {
+    padding: 8px 12px !important;
+    font-size: 0.80rem !important;
+  }
+}
+
 
 
 

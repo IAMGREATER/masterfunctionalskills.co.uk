@@ -570,7 +570,7 @@
     height: auto;
   }
 
-  /* Universal Fluid Shield: Defeat rigid inline desktop widths */
+  /* Universal Fluid Shield: Defeat rigid inline desktop widths and grids */
   div[style*="width"],
   table[style*="width"],
   section[style*="width"],
@@ -579,9 +579,25 @@
     max-width: 100% !important;
   }
 
-  pre, code {
+  div[style*="minmax(3"],
+  div[style*="minmax(4"],
+  .math-two-col-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  pre {
     white-space: pre-wrap !important;
     word-break: break-word !important;
+  }
+
+  code {
+    word-break: normal !important;
+    overflow-wrap: break-word !important;
+    max-width: 100% !important;
+  }
+
+  pre code {
+    white-space: pre-wrap !important;
   }
 
   /* ------------------------------------------------------------------------
@@ -1021,6 +1037,9 @@
 
   .paper-filter-chips {
     display: flex !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
     overflow-x: auto !important;
     -webkit-overflow-scrolling: touch !important;
     gap: 4px !important;
@@ -1242,9 +1261,17 @@
   /* ------------------------------------------------------------------------
      H. SHRINK TABLES & MASTER DIRECTORIES
      ------------------------------------------------------------------------ */
+  .table-responsive,
+  div:has(> table) {
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
   table {
     display: block !important;
     width: 100% !important;
+    max-width: 100% !important;
     overflow-x: auto !important;
     -webkit-overflow-scrolling: touch !important;
     border-collapse: collapse !important;
@@ -2010,6 +2037,97 @@
       grid-area: next !important;
       width: 100% !important;
       min-width: 0 !important;
+    }
+
+    /* REVISION HERO & VISUAL CONCEPT DISPLAY ON MOBILE PORTRAIT */
+    .revision-hero-card {
+      padding: 16px 0 20px !important;
+    }
+    .revision-hero-grid {
+      grid-template-columns: 1fr !important;
+      gap: 14px !important;
+    }
+    .revision-hero-title {
+      font-size: 1.40rem !important;
+      line-height: 1.22 !important;
+      margin-bottom: 8px !important;
+    }
+    .revision-hero-desc {
+      font-size: 0.88rem !important;
+      line-height: 1.45 !important;
+      margin-bottom: 12px !important;
+    }
+    .revision-hero-visual-card {
+      padding: 8px 8px 6px !important;
+      border-radius: 12px !important;
+      max-width: 100% !important;
+      margin: 4px auto 0 !important;
+      box-shadow: 0 8px 18px -4px rgba(0, 0, 0, 0.4) !important;
+    }
+    .revision-hero-img-wrap {
+      aspect-ratio: 16 / 9 !important;
+      max-height: 180px !important;
+      border-radius: 8px !important;
+    }
+    .revision-hero-img-wrap img {
+      max-height: 180px !important;
+      object-fit: cover !important;
+    }
+    .revision-hero-caption-bar {
+      padding: 6px 8px 4px !important;
+      font-size: 0.76rem !important;
+      line-height: 1.35 !important;
+    }
+
+    /* SECTION HEADINGS & TOPICS RESIZING */
+    .section-title {
+      font-size: 1.20rem !important;
+      line-height: 1.25 !important;
+      gap: 8px !important;
+    }
+    .mfs-topic-title {
+      font-size: 1.08rem !important;
+      line-height: 1.35 !important;
+    }
+
+    /* WHITEBOARD SKETCH & DIAGRAMS SAFE SWIPE */
+    .sketch-diagram-wrap {
+      margin: 12px 0 !important;
+      overflow-x: auto !important;
+      -webkit-overflow-scrolling: touch !important;
+      padding-bottom: 4px !important;
+    }
+    .sketch-diagram-wrap svg {
+      max-width: 100% !important;
+      height: auto !important;
+      display: block !important;
+    }
+
+    /* PILLS & BADGES IN TOPIC FOOTERS */
+    .mfs-pill-l1,
+    .pfs-pill-l1 {
+      background: #16a34a !important;
+      color: #fff !important;
+      font-size: 0.72rem !important;
+      padding: 3px 8px !important;
+      border-radius: 4px !important;
+    }
+    .mfs-pill-l2,
+    .pfs-pill-l2 {
+      background: #ea580c !important;
+      color: #fff !important;
+      font-size: 0.72rem !important;
+      padding: 3px 8px !important;
+      border-radius: 4px !important;
+    }
+    .mfs-pill-board,
+    .pfs-pill-board {
+      background: #f1f5f9 !important;
+      color: #334155 !important;
+      border: 1px solid #cbd5e1 !important;
+      font-size: 0.72rem !important;
+      padding: 3px 8px !important;
+      border-radius: 4px !important;
     }
   }
 

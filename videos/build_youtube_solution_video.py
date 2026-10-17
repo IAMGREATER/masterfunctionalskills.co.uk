@@ -11,7 +11,7 @@ import json
 import time
 from PIL import Image, ImageDraw, ImageFont
 
-VID_DIR = "/home/subi/Projects/masterfunctionalskills.co.uk/videos"
+VID_DIR = "/home/subi/Nextcloud/Projects/masterfunctionalskills.co.uk/videos"
 os.makedirs(VID_DIR, exist_ok=True)
 
 FONT_BOLD = "/usr/share/fonts/liberation/LiberationSans-Bold.ttf"
@@ -20,38 +20,41 @@ FONT_ITALIC = "/usr/share/fonts/liberation/LiberationSans-Italic.ttf"
 
 W, H = 1920, 1080
 
+VOICE_NAME = "en-GB-SoniaNeural"
+VOICE_RATE = "-5%"
+
 def get_font(path, size):
     return ImageFont.truetype(path, size)
 
-def generate_voiceover(text, output_path, voice="bm_george"):
-    print(f"Generating Kokoro Neural narration ({voice}) for {os.path.basename(output_path)}...")
+def generate_voiceover(text, output_path):
+    print(f"Generating Sonia RP narration for {os.path.basename(output_path)}...")
     if os.path.exists(output_path):
         os.remove(output_path)
-    wav_tmp = output_path.replace(".mp3", ".wav")
-    if os.path.exists(wav_tmp):
-        os.remove(wav_tmp)
+    tmp_mp3 = output_path + ".tmp.mp3"
+    if os.path.exists(tmp_mp3):
+        os.remove(tmp_mp3)
 
-    cmd_kokoro = [
-        "uvx", "kokoro",
-        "-m", voice,
-        "-l", "b",
-        "-o", wav_tmp,
-        "-t", text
+    cmd_tts = [
+        "uvx", "edge-tts",
+        "--voice", VOICE_NAME,
+        f"--rate={VOICE_RATE}",
+        "--text", text,
+        "--write-media", tmp_mp3
     ]
-    subprocess.run(cmd_kokoro, check=True)
+    subprocess.run(cmd_tts, check=True)
 
-    # Broadcast standard EBU R128 loudness normalization
+    # Broadcast standard EBU R128 loudness normalization and natural padding
     cmd_ffmpeg = [
         "ffmpeg", "-y",
-        "-i", wav_tmp,
-        "-af", "loudnorm=I=-16:TP=-1.5:LRA=11",
+        "-i", tmp_mp3,
+        "-af", "highpass=f=80,loudnorm=I=-16:TP=-1.5:LRA=11,apad=pad_dur=1.2",
         "-c:a", "libmp3lame", "-b:a", "192k",
         output_path
     ]
     subprocess.run(cmd_ffmpeg, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL, check=True)
 
-    if os.path.exists(wav_tmp):
-        os.remove(wav_tmp)
+    if os.path.exists(tmp_mp3):
+        os.remove(tmp_mp3)
     return True
 
 def draw_header_and_footer(draw, topic_name="Numbers & Place Value"):

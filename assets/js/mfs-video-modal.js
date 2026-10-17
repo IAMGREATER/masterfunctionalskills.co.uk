@@ -9,14 +9,14 @@
   // Available videos dictionary (slug/topic -> video details)
   const KNOWN_VIDEOS = {
     'numbers-and-place-value': {
-      videoSrc: 'videos/Numbers_and_Place_Value_Video_Solution.mp4?v=3',
+      videoSrc: 'videos/Numbers_and_Place_Value_Video_Solution.mp4?v=4',
       posterSrc: 'videos/thumbnail_numbers_and_place_value.png',
       title: 'Numbers and Place Value • Video Solution Walkthrough',
       series: 'Pearson Edexcel Maths Level 1 & Level 2',
       tutor: 'Your Functional Skills Tutor'
     },
     'numbers and place value': {
-      videoSrc: 'videos/Numbers_and_Place_Value_Video_Solution.mp4?v=3',
+      videoSrc: 'videos/Numbers_and_Place_Value_Video_Solution.mp4?v=4',
       posterSrc: 'videos/thumbnail_numbers_and_place_value.png',
       title: 'Numbers and Place Value • Video Solution Walkthrough',
       series: 'Pearson Edexcel Maths Level 1 & Level 2',

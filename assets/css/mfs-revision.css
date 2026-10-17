@@ -309,14 +309,17 @@ p {
 }
 
 /* ==========================================================================
-   LANDSCAPE MODE TOC PILL (Screens <= 1024px or Short Viewports)
+   LANDSCAPE MODE TOC PILL (Mobile Phones Only — Strictly Excludes Tablets)
    Transforms the bulky full-width 'title & table of contents bar' into a sleek
-   floating pill that sits on the right of the landscape screen, preventing it
-   from blocking the reading space.
+   floating pill that sits on the right of the landscape screen on mobile phones,
+   preventing it from blocking the reading space.
+   STRICTLY EXCLUDES TABLETS:
+   - Mobile phones in landscape have height <= 500px (typically 360-430px)
+     and width <= 950px.
+   - Tablets in landscape have height >= 600px and width >= 1024px, so they
+     retain their full desktop/tablet layout and do not show this pill.
    ========================================================================== */
-@media (max-width: 1024px) and (orientation: landscape),
-       (orientation: landscape) and (max-height: 750px),
-       (max-height: 520px) {
+@media (orientation: landscape) and (max-height: 500px) and (max-width: 950px) {
 
   .mobile-toc-bar {
     display: flex !important;

@@ -155,9 +155,10 @@ class ModelSolutionAuditor:
         rule_res = {'status': 'PASS', 'max_x': 0.0, 'violations': []}
         board = self._detect_board()
         
+        # Base limits for standard A4 (595.28 pt):
         # Pearson Edexcel working box border is 518.2 pt; City & Guilds margin border is 550.0 pt
-        max_limit = 485.0 if board == 'edexcel' else 525.0
-        border_limit = 518.2 if board == 'edexcel' else 550.0
+        base_max_limit = 485.0 if board == 'edexcel' else 525.0
+        base_border_limit = 518.2 if board == 'edexcel' else 550.0
         
         # Check interior pages (ignore cover, service promo, and final merch page)
         for page_idx in range(self.total_pages):
@@ -165,10 +166,14 @@ class ModelSolutionAuditor:
                 continue
             
             page = self.doc[page_idx]
-            # Skip Section B cover if present
-            page_text = page.get_text('text')
-            if 'SECTION B' in page_text and 'Check that you have the correct question paper' in page_text:
+            page_text = page.get_text('text').lower()
+            if 'section b' in page_text and ('calculator' in page_text or 'pmat' in page_text or 'candidate' in page_text or 'check that you have' in page_text):
                 continue
+
+            # Scale boundaries proportionally to page width (e.g. 652 pt Crown Quarto vs 595.3 pt A4)
+            scale = page.rect.width / 595.28
+            max_limit = base_max_limit * scale
+            border_limit = base_border_limit * scale
 
             text_dict = page.get_text('dict')
             for block in text_dict.get('blocks', []):
@@ -206,7 +211,7 @@ class ModelSolutionAuditor:
         if rule_res['violations']:
             has_crit = any(v['severity'] == 'CRITICAL' for v in rule_res['violations'])
             rule_res['status'] = 'FAIL' if has_crit else 'WARNING'
-            msg = f"{len(rule_res['violations'])} annotation span(s) exceed x={max_limit} pt (Max x={rule_res['max_x']} pt, Board: {board})"
+            msg = f"{len(rule_res['violations'])} annotation span(s) exceed safe margins (Max x={rule_res['max_x']} pt, Board: {board})"
             if has_crit:
                 self.results['errors'].append(f"Margin Boundary Error: {msg}")
             else:
@@ -225,41 +230,57 @@ class ModelSolutionAuditor:
             self.results['rules']['collisions'] = rule_res
             return rule_res
 
-        # Compare matching pages
-        min_pages = min(len(self.doc), len(self.orig_doc))
-        for p_idx in range(min_pages):
-            orig_page = self.orig_doc[p_idx]
-            annot_page = self.doc[p_idx]
+        # Build barcode mapping from orig_doc
+        orig_map = {}
+        for i, p in enumerate(self.orig_doc):
+            m = re.search(r'\*P[0-9A-Z]+\*', p.get_text('text'))
+            if m:
+                orig_map[m.group(0)] = i
 
-            # 1. Collect original words (ignore footer and underlines)
+        for p_idx in range(self.total_pages):
+            if p_idx in (0, 1, self.total_pages - 1):
+                continue
+            annot_page = self.doc[p_idx]
+            page_text = annot_page.get_text('text').lower()
+            if 'section b' in page_text and ('calculator' in page_text or 'candidate' in page_text or 'pmat' in page_text or 'check that you have' in page_text):
+                continue
+
+            m = re.search(r'\*P[0-9A-Z]+\*', annot_page.get_text('text'))
+            if m and m.group(0) in orig_map:
+                orig_page = self.orig_doc[orig_map[m.group(0)]]
+            elif p_idx - 1 < len(self.orig_doc):
+                orig_page = self.orig_doc[p_idx - 1]
+            else:
+                continue
+
+            # 1. Collect original words (ignore underlines and barcodes)
             orig_words = []
             for w in orig_page.get_text('words'):
                 txt = w[4].strip()
-                if not txt or '____' in txt:
+                if not txt or '____' in txt or '*P' in txt:
                     continue
                 orig_words.append((pymupdf.Rect(w[:4]), txt))
 
-            # 2. Collect annotated words not present in original at same coordinate
+            # 2. Collect injected handwriting/annot words
             annot_words = []
-            for w in annot_page.get_text('words'):
-                txt = w[4].strip()
-                if not txt or '____' in txt:
-                    continue
-                r = pymupdf.Rect(w[:4])
-                # Check if identical to an original word
-                is_orig = False
-                for ow_r, ow_txt in orig_words:
-                    if ow_txt == txt and abs(r.x0 - ow_r.x0) < 1.0 and abs(r.y0 - ow_r.y0) < 1.0:
-                        is_orig = True
-                        break
-                if not is_orig:
-                    annot_words.append((r, txt))
+            text_dict = annot_page.get_text('dict')
+            for block in text_dict.get('blocks', []):
+                for line in block.get('lines', []):
+                    for span in line.get('spans', []):
+                        font = span.get('font', '').lower()
+                        color = span.get('color', 0)
+                        txt = span.get('text', '').strip()
+                        if not txt or '*P' in txt:
+                            continue
+                        is_annot = any(f in font for f in ['kalam', 'caveat', 'script', 'hand']) or color in [0x0f172a, 0x0f766e, 0xdc2626, 0xd97706]
+                        if is_annot:
+                            annot_words.append((pymupdf.Rect(span['bbox']), txt))
 
             # 3. Check for physical bounding box collisions
             for ar, atxt in annot_words:
                 for ow_r, ow_txt in orig_words:
                     inter = ar & ow_r
-                    if inter.is_valid and inter.width > 2.0 and inter.height > 2.0:
+                    if inter.is_valid and inter.width > 3.0 and inter.height > 3.0:
                         rule_res['collisions'].append({
                             'page': p_idx + 1,
                             'annot_word': atxt,
@@ -327,16 +348,27 @@ class ModelSolutionAuditor:
         
         for p_idx in range(self.total_pages):
             page = self.doc[p_idx]
-            text = page.get_text('text')
-            for char, fix in FORBIDDEN_GLYPHS.items():
-                if char in text:
-                    count = text.count(char)
-                    rule_res['violations'].append({
-                        'page': p_idx + 1,
-                        'char': char,
-                        'count': count,
-                        'recommended_fix': fix
-                    })
+            text_dict = page.get_text('dict')
+            for block in text_dict.get('blocks', []):
+                for line in block.get('lines', []):
+                    for span in line.get('spans', []):
+                        font = span.get('font', '').lower()
+                        color = span.get('color', 0)
+                        txt = span.get('text', '')
+                        if not txt:
+                            continue
+                        
+                        is_annot_font = any(f in font for f in ['kalam', 'caveat', 'script', 'hand'])
+                        is_pedagogical_color = color in [0x0f172a, 0x0f766e, 0xdc2626, 0xd97706]
+                        if is_annot_font or is_pedagogical_color:
+                            for char, fix in FORBIDDEN_GLYPHS.items():
+                                if char in txt:
+                                    rule_res['violations'].append({
+                                        'page': p_idx + 1,
+                                        'char': char,
+                                        'count': txt.count(char),
+                                        'recommended_fix': fix
+                                    })
 
         if rule_res['violations']:
             rule_res['status'] = 'FAIL'

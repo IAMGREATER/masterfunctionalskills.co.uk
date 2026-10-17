@@ -2601,3 +2601,73 @@ p {
   line-height: 1.75;
 }
 
+/* ==========================================================================
+   HIGH-VISIBILITY MATH FRACTION & BAR-MODEL COMPONENTS
+   ========================================================================== */
+.math-frac {
+  display: inline-flex;
+  flex-direction: column;
+  vertical-align: middle;
+  text-align: center;
+  padding: 0 4px;
+  font-weight: 800;
+  line-height: 1;
+}
+.math-frac-num {
+  padding-bottom: 2px;
+  border-bottom: 2px solid currentColor;
+}
+.math-frac-den {
+  padding-top: 2px;
+}
+.math-mixed-num {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-weight: 800;
+  vertical-align: middle;
+}
+.math-mixed-whole {
+  font-size: 1.25em;
+  line-height: 1;
+}
+
+/* Fraction Bar Model Component */
+.math-bar-model {
+  display: flex;
+  width: 100%;
+  border: 2px solid #0f172a;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #f8fafc;
+  margin: 14px 0;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+.math-bar-cell {
+  flex: 1;
+  padding: 14px 4px;
+  text-align: center;
+  font-weight: 800;
+  font-size: 1.05rem;
+  border-right: 1px solid #cbd5e1;
+  background: #f1f5f9;
+  color: #64748b;
+  transition: all 0.2s ease;
+}
+.math-bar-cell:last-child {
+  border-right: none;
+}
+.math-bar-cell.active-cyan {
+  background: #0284c7;
+  color: #ffffff;
+}
+.math-bar-cell.active-emerald {
+  background: #15803d;
+  color: #ffffff;
+}
+.math-bar-cell.active-amber {
+  background: #d97706;
+  color: #ffffff;
+}
+
+

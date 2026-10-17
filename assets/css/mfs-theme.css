@@ -2754,7 +2754,7 @@ main .container,
   box-sizing: border-box !important;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px), (orientation: portrait) and (max-width: 1024px) {
   .container,
   .container-sm,
   .container-md,
@@ -2762,10 +2762,15 @@ main .container,
   .container-xl,
   .container-xxl,
   main .container,
-  #content .container {
-    width: 94% !important;
-    padding-left: 12px !important;
-    padding-right: 12px !important;
+  #content .container,
+  .mfs-container {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box !important;
   }
 }
 
@@ -2919,13 +2924,17 @@ div.product {
   box-sizing: border-box !important;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 768px), (orientation: portrait) and (max-width: 1024px) {
   .woocommerce-page main#content,
   main#content > .product,
   div.product {
-    width: 94% !important;
-    padding-left: 12px !important;
-    padding-right: 12px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+    box-sizing: border-box !important;
   }
 }
 

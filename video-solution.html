@@ -630,7 +630,9 @@
       .video-hero-container {
         display: flex;
         flex-direction: column;
-        padding: 0 10px;
+        padding: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
       }
       .video-breadcrumbs {
         display: none !important;
@@ -640,7 +642,9 @@
       .video-main-player-wrap {
         order: 1;
         margin-bottom: 10px;
-        border-radius: 12px;
+        border-radius: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
         box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
       }
 
@@ -720,21 +724,31 @@
 
       /* DETAILS GRID ON MOBILE: Sidebar/Playlist First, Content Second */
       .video-main-content {
-        padding: 14px 10px 40px 10px !important;
+        padding: 10px 0 40px 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
       }
       .video-details-grid {
         display: flex;
         flex-direction: column;
         gap: 14px;
         margin-top: 10px;
+        width: 100% !important;
+        max-width: 100% !important;
       }
       .video-sidebar-panel {
         order: 1;
         gap: 12px;
+        width: 100% !important;
+        max-width: 100% !important;
       }
       .sidebar-card {
-        padding: 14px 12px;
-        border-radius: 12px;
+        padding: 12px 10px;
+        border-radius: 0 !important;
+        border-left: none !important;
+        border-right: none !important;
+        width: 100% !important;
+        max-width: 100% !important;
       }
       .sidebar-card-title {
         font-size: 0.94rem;

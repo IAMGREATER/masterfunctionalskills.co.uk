@@ -21,7 +21,7 @@ p, span, div, li, td, th, label, h1, h2, h3, h4, .q-stem, .apply-stem, .drill-q,
    MOBILE PORTRAIT & SMALL SCREEN OPTIMISATION (< 768px or Portrait View)
    Uses 100% screen width, compact dyslexia-friendly text and streamlined spacing
    ========================================================================== */
-@media screen and (max-width: 768px), screen and (orientation: portrait) and (max-width: 1024px) {
+@media screen and (orientation: portrait), screen and (max-width: 768px), screen and (orientation: portrait) and (max-width: 1024px) {
   html, body {
     margin: 0 !important;
     padding: 0 !important;
@@ -36,7 +36,7 @@ p, span, div, li, td, th, label, h1, h2, h3, h4, .q-stem, .apply-stem, .drill-q,
     width: 100% !important;
     max-width: 100% !important;
     margin: 0 !important;
-    padding: 12px 10px !important;
+    padding: 10px 8px !important;
     border: none !important;
     border-radius: 0 !important;
     box-shadow: none !important;

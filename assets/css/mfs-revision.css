@@ -2894,22 +2894,26 @@ p {
    MOBILE PORTRAIT RESPONSIVE SYSTEM (MAX-WIDTH: 768px / SMARTPHONES)
    Guarantees perfect visual sizing across images, text, pictures & diagrams
    ========================================================================== */
-@media (max-width: 768px) {
+@media (max-width: 768px), (orientation: portrait) and (max-width: 1024px) {
   /* 1. HERO SECTION & VISUAL SHOWCASE RESIZING */
   .revision-page-wrapper,
   .mfs-container,
   .container {
     width: 100% !important;
     max-width: 100% !important;
-    padding-left: 8px !important;
-    padding-right: 8px !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
     margin-left: 0 !important;
     margin-right: 0 !important;
     box-sizing: border-box !important;
   }
   .revision-hero-card {
-    padding: 16px 0 18px !important;
+    padding: 14px 0 16px !important;
     border-bottom-width: 2px !important;
+    border-left: none !important;
+    border-right: none !important;
+    width: 100% !important;
+    max-width: 100% !important;
   }
   .revision-hero-grid {
     grid-template-columns: 1fr !important;
@@ -2982,8 +2986,10 @@ p {
   }
   /* Resized hero visual card and book/concept image: full width in portrait view */
   .revision-hero-visual-card {
-    padding: 8px 8px 6px !important;
-    border-radius: 12px !important;
+    padding: 8px 0 6px !important;
+    border-radius: 0 !important;
+    border-left: none !important;
+    border-right: none !important;
     width: 100% !important;
     max-width: 100% !important;
     margin: 6px 0 0 !important;
@@ -2996,7 +3002,7 @@ p {
     aspect-ratio: 16 / 9 !important;
     height: auto !important;
     max-height: none !important;
-    border-radius: 8px !important;
+    border-radius: 0 !important;
     box-sizing: border-box !important;
   }
   .revision-hero-img-wrap img {
@@ -3008,7 +3014,7 @@ p {
     display: block !important;
   }
   .revision-hero-caption-bar {
-    padding: 7px 8px 4px !important;
+    padding: 7px 10px 4px !important;
     font-size: 0.76rem !important;
     line-height: 1.35 !important;
     width: 100% !important;
@@ -3042,7 +3048,9 @@ p {
 
   /* 3. CORE SKILL & TOPIC CARDS */
   .mfs-topic-card {
-    border-radius: 12px !important;
+    border-radius: 0 !important;
+    border-left: none !important;
+    border-right: none !important;
     margin-bottom: 16px !important;
     width: 100% !important;
     max-width: 100% !important;

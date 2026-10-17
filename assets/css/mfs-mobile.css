@@ -512,10 +512,13 @@
     min-height: unset !important;
     height: auto !important;
     width: 100% !important;
-    max-width: 440px !important;
+    max-width: 100% !important;
     aspect-ratio: 1 / 1 !important;
-    border-radius: 20px !important;
-    margin: 16px auto !important;
+    border-radius: 0 !important;
+    border-left: none !important;
+    border-right: none !important;
+    margin: 12px 0 0 0 !important;
+    box-sizing: border-box !important;
   }
 
   .hero-showcase-img {
@@ -1861,8 +1864,10 @@
     border-radius: 999px;
     font-size: 0.76rem;
     font-weight: 700;
-    color: #334155;
-    max-width: 300px;
+    max-width: 100% !important;
+    width: 100% !important;
+    margin: 8px 0 0 0 !important;
+    box-sizing: border-box !important;
     user-select: none;
     -webkit-user-select: none;
   }
@@ -1953,7 +1958,7 @@
   .product-img-wrap img {
     max-height: 245px !important;
     width: auto !important;
-    max-width: 92% !important;
+    max-width: 100% !important;
     object-fit: contain !important;
     filter: drop-shadow(0 10px 22px rgba(7, 13, 30, 0.15)) !important;
   }
@@ -2016,7 +2021,13 @@
     border-radius: 8px !important;
   }
 
-  @media (orientation: portrait) {
+  /* ========================================================================
+     UNIVERSAL MOBILE PORTRAIT SYSTEM — FULL WIDTH FOR EVERYTHING SITE-WIDE
+     Active across all mobile portrait viewports (orientation: portrait and <= 1024px, or <= 768px).
+     Uses 100% width edge-to-edge for all containers, cards, heroes, grids,
+     math boards, tables, practice scratchpads, worksheets, past papers & shop.
+     ======================================================================== */
+  @media (orientation: portrait), (max-width: 768px) and (orientation: portrait) {
     .video-transport-bar {
       display: grid !important;
       grid-template-columns: 1fr 1fr !important;
@@ -2041,416 +2052,362 @@
       min-width: 0 !important;
     }
 
-    /* CONTAINERS & FULL-WIDTH SHIELD (PORTRAIT VIEW) */
-    .mfs-container,
-    .revision-page-wrapper,
-    .container,
-    .video-hero-container {
+    /* 1. Base & Viewport Full-Bleed */
+    html, body {
       width: 100% !important;
-      max-width: 100% !important;
-      padding-left: 8px !important;
-      padding-right: 8px !important;
-      margin-left: 0 !important;
-      margin-right: 0 !important;
+      max-width: 100vw !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      overflow-x: hidden !important;
+    }
+
+    *, *::before, *::after {
       box-sizing: border-box !important;
     }
 
-    /* HOMEPAGE & GENERAL HERO (PORTRAIT VIEW) */
-    .hero-content {
+    /* 2. Containers, Wrappers, Sections & Main: 100% Width Edge-to-Edge */
+    .mfs-container,
+    .revision-page-wrapper,
+    .container,
+    .container-fluid,
+    .container-sm,
+    .container-md,
+    .container-lg,
+    .container-xl,
+    .container-xxl,
+    main .container,
+    #content .container,
+    .past-papers-container,
+    .video-hero-container,
+    .video-station-container,
+    .video-main-content,
+    .page-sheet,
+    .hub-domain-section,
+    .hub-toolbar-container,
+    .styles-explainer,
+    .page_builder_section .container,
+    .page-builder-spacing .container,
+    .hero-with-enforcers .container,
+    .woocommerce-page main#content,
+    main#content > .product,
+    div.product,
+    main#content > div#summary,
+    main#content > .woocommerce-notices-wrapper,
+    main,
+    section,
+    article,
+    .revision-layout,
+    .revision-content,
+    .revision-section,
+    #directoryContent {
+      width: 100% !important;
+      max-width: 100% !important;
+      min-width: 0 !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      box-sizing: border-box !important;
+    }
+
+    /* 3. Direct Headings, Paragraphs, Lead Text & Breadcrumbs: Safe Readable Inset */
+    .hero-content,
+    .section-head,
+    .section-header,
+    .revision-hero-content,
+    .past-papers-hero,
+    .hub-hero,
+    .announcement-row,
+    .mfs-top-bar-inner,
+    .revision-breadcrumb-bar,
+    .revision-breadcrumbs,
+    .video-breadcrumbs,
+    .breadcrumb {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      padding-left: 10px !important;
+      padding-right: 10px !important;
+      box-sizing: border-box !important;
+    }
+
+    .hero-content h1,
+    .hero-description,
+    .section-title,
+    .section-lead-text,
+    .revision-hero-title,
+    .revision-hero-desc,
+    .past-papers-hero-title,
+    .past-papers-hero-subtitle,
+    .hub-hero-title,
+    .hub-hero p,
+    .mfs-topic-stem,
+    .model-q-stem,
+    .examiner-pitfall-desc,
+    .examiner-guidance-text,
+    .practice-q-stem,
+    .practice-prompt-box,
+    h1, h2, h3, h4, h5, h6, p, ul, ol, blockquote {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      box-sizing: border-box !important;
+      overflow-wrap: break-word !important;
+      word-wrap: break-word !important;
+    }
+
+    /* 4. Homepage Hero, Awarding Bodies, Feature Cards & Universal Rows */
+    .mfs-hero-grid {
+      display: flex !important;
+      flex-direction: column !important;
       width: 100% !important;
       max-width: 100% !important;
       margin: 0 !important;
       padding: 0 !important;
-      box-sizing: border-box !important;
     }
-    .hero-content h1,
-    .hero-description {
+
+    .hero-buttons {
       width: 100% !important;
       max-width: 100% !important;
-      margin-left: 0 !important;
-      margin-right: 0 !important;
+      display: grid !important;
+      grid-template-columns: 1fr 1fr !important;
+      gap: 6px !important;
       box-sizing: border-box !important;
     }
+
     .hero-square-showcase {
       width: 100% !important;
       max-width: 100% !important;
       height: auto !important;
       min-height: unset !important;
       aspect-ratio: 1 / 1 !important;
-      border-radius: 16px !important;
-      margin: 10px 0 0 !important;
+      border-radius: 0 !important;
+      border-left: none !important;
+      border-right: none !important;
+      margin: 12px 0 0 0 !important;
       box-sizing: border-box !important;
     }
+
     .hero-showcase-img {
       width: 100% !important;
       max-width: 100% !important;
       height: 100% !important;
       object-fit: cover !important;
-      object-position: center center !important;
+      display: block !important;
     }
 
-    /* REVISION HERO & VISUAL CONCEPT DISPLAY ON MOBILE PORTRAIT */
-    .revision-hero-card {
-      padding: 16px 0 18px !important;
+    .awarding-bodies-section {
       width: 100% !important;
       max-width: 100% !important;
-      box-sizing: border-box !important;
+      padding: 14px 0 !important;
+      margin: 0 !important;
     }
-    .revision-hero-grid {
-      grid-template-columns: 1fr !important;
-      gap: 14px !important;
+
+    .awarding-bodies-grid {
+      display: grid !important;
+      grid-template-columns: repeat(3, 1fr) !important;
+      gap: 4px !important;
       width: 100% !important;
       max-width: 100% !important;
+      padding: 0 4px !important;
       margin: 0 !important;
       box-sizing: border-box !important;
     }
-    .revision-hero-content {
+
+    .board-brand-card {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding: 6px 4px !important;
+      margin: 0 !important;
+      border-radius: 6px !important;
+      box-sizing: border-box !important;
+    }
+
+    .mfs-features-section {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding: 14px 0 !important;
+      margin: 0 !important;
+    }
+
+    .mfs-features-section .mfs-container,
+    .features-grid,
+    .feature-grid {
+      display: flex !important;
+      flex-direction: column !important;
       width: 100% !important;
       max-width: 100% !important;
       margin: 0 !important;
       padding: 0 !important;
-      box-sizing: border-box !important;
+      gap: 12px !important;
     }
-    .revision-hero-title {
-      font-size: 1.40rem !important;
-      line-height: 1.22 !important;
-      margin-bottom: 8px !important;
+
+    .feature-action-card,
+    .course-card,
+    .exam-card,
+    .pricing-card,
+    .review-card,
+    .testimonial-card,
+    .card {
       width: 100% !important;
       max-width: 100% !important;
-      box-sizing: border-box !important;
-    }
-    .revision-hero-desc {
-      font-size: 0.88rem !important;
-      line-height: 1.45 !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
       margin-bottom: 12px !important;
+      border-radius: 0 !important;
+      border-left: none !important;
+      border-right: none !important;
+      box-sizing: border-box !important;
+      padding: 12px 10px !important;
+    }
+
+    .row {
+      display: flex !important;
+      flex-wrap: wrap !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
       width: 100% !important;
       max-width: 100% !important;
+    }
+
+    .row > [class*="col-"],
+    .row > .col,
+    [class*="col-"] {
+      width: 100% !important;
+      max-width: 100% !important;
+      flex: 0 0 100% !important;
+      padding-left: 10px !important;
+      padding-right: 10px !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
       box-sizing: border-box !important;
     }
+
+    /* 5. Revision Hero & Visual Showcase */
+    .revision-hero-card {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      padding: 14px 0 16px !important;
+      border-left: none !important;
+      border-right: none !important;
+      box-sizing: border-box !important;
+    }
+
+    .revision-hero-grid {
+      display: flex !important;
+      flex-direction: column !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+      gap: 12px !important;
+    }
+
     .revision-hero-visual-card {
-      padding: 8px 8px 6px !important;
-      border-radius: 12px !important;
       width: 100% !important;
       max-width: 100% !important;
-      margin: 6px 0 0 !important;
+      margin: 8px 0 0 0 !important;
+      padding: 8px 0 6px 0 !important;
+      border-radius: 0 !important;
+      border-left: none !important;
+      border-right: none !important;
       box-sizing: border-box !important;
-      box-shadow: 0 8px 18px -4px rgba(0, 0, 0, 0.4) !important;
     }
+
     .revision-hero-img-wrap {
       width: 100% !important;
       max-width: 100% !important;
       aspect-ratio: 16 / 9 !important;
       height: auto !important;
-      max-height: none !important;
-      border-radius: 8px !important;
+      border-radius: 0 !important;
       box-sizing: border-box !important;
     }
+
     .revision-hero-img-wrap img {
       width: 100% !important;
       max-width: 100% !important;
       height: 100% !important;
-      max-height: none !important;
       object-fit: cover !important;
       display: block !important;
     }
+
     .revision-hero-caption-bar {
-      padding: 6px 8px 4px !important;
-      font-size: 0.76rem !important;
-      line-height: 1.35 !important;
       width: 100% !important;
       max-width: 100% !important;
+      padding: 6px 10px 4px !important;
       box-sizing: border-box !important;
     }
 
-    /* SECTION HEADINGS & TOPICS RESIZING & FULL-WIDTH CARDS */
-    .revision-layout {
-      width: 100% !important;
-      max-width: 100% !important;
-      padding: 16px 0 40px !important;
-      box-sizing: border-box !important;
-    }
-    .section-title {
-      font-size: 1.20rem !important;
-      line-height: 1.25 !important;
-      gap: 8px !important;
-      width: 100% !important;
-      max-width: 100% !important;
-    }
+    /* 6. Topic Cards, Worked Models, Practice Cards & Educational Containers */
     .mfs-topic-card,
     .model-example-card,
+    .exam-model-big-step,
     .rule-card-amber,
     .examiner-pitfall-box,
-    .exam-model-big-step,
     .practice-q-card,
-    .practice-question-card,
     .practice-card,
+    .practice-question-card,
     .download-worksheet-card,
     .math-visual-card,
-    .table-responsive,
     .diagram-panel-box,
-    .pfs-diagram-col {
+    .pfs-diagram-col,
+    .real-photo-card,
+    .table-responsive,
+    table {
       width: 100% !important;
       max-width: 100% !important;
       margin-left: 0 !important;
       margin-right: 0 !important;
+      border-radius: 0 !important;
+      border-left: none !important;
+      border-right: none !important;
       box-sizing: border-box !important;
     }
+
     .mfs-topic-head,
     .mfs-topic-body,
+    .mfs-topic-footer,
+    .model-card-header,
     .model-scenario,
     .model-steps-container,
+    .model-step-grid-row,
+    .exam-model-big-step-header,
     .exam-model-big-step-body,
     .exam-model-calc-block,
-    .rule-card-amber,
+    .exam-model-calc-explanation,
     .examiner-pitfall-box,
+    .examiner-pitfall-fix,
+    .practice-q-header,
+    .practice-card-header,
     .practice-q-body,
     .practice-card-body,
-    .practice-question-card {
-      padding-left: 8px !important;
-      padding-right: 8px !important;
-      box-sizing: border-box !important;
-    }
-    .mfs-topic-title {
-      font-size: 1.08rem !important;
-      line-height: 1.35 !important;
-      width: 100% !important;
-      max-width: 100% !important;
-    }
-    .mfs-topic-stem,
-    .section-lead-text,
-    .model-q-stem,
-    .model-step-col-desc,
-    .exam-model-calc-explanation,
-    .examiner-pitfall-desc,
-    .examiner-guidance-text,
     .practice-q-stem,
     .practice-prompt-box,
-    p, span, a, li, h1, h2, h3, h4, h5, h6 {
+    .practice-solution-drawer,
+    .solution-drawer,
+    .download-card-body {
       width: 100% !important;
       max-width: 100% !important;
-      margin-left: 0 !important;
-      margin-right: 0 !important;
+      padding-left: 10px !important;
+      padding-right: 10px !important;
       box-sizing: border-box !important;
-      word-wrap: break-word !important;
-      overflow-wrap: break-word !important;
     }
 
-    /* WHITEBOARD SKETCH & DIAGRAMS (FULL WIDTH) */
-    .sketch-diagram-wrap {
-      margin: 12px 0 !important;
-      display: block !important;
-      width: 100% !important;
-      max-width: 100% !important;
-      overflow-x: auto !important;
-      -webkit-overflow-scrolling: touch !important;
-      padding-bottom: 4px !important;
-      box-sizing: border-box !important;
-    }
-    .sketch-diagram-wrap svg,
-    .sketch-diagram-wrap img,
-    .diagram-panel-box img,
-    .diagram-panel-box svg,
-    .pfs-diagram-col svg,
-    .pfs-diagram-col img,
-    .mfs-topic-body img,
-    .mfs-topic-body svg,
-    .math-visual-card img,
-    .model-example-card img,
-    .practice-question-card img,
-    .real-photo-card img,
-    .product-img-wrap img {
-      width: 100% !important;
-      max-width: 100% !important;
-      height: auto !important;
-      display: block !important;
-    }
-
-    /* PILLS & BADGES IN TOPIC FOOTERS */
-    .mfs-pill-l1,
-    .pfs-pill-l1 {
-      background: #16a34a !important;
-      color: #fff !important;
-      font-size: 0.72rem !important;
-      padding: 3px 8px !important;
-      border-radius: 4px !important;
-    }
-    .mfs-pill-l2,
-    .pfs-pill-l2 {
-      background: #ea580c !important;
-      color: #fff !important;
-      font-size: 0.72rem !important;
-      padding: 3px 8px !important;
-      border-radius: 4px !important;
-    }
-    .mfs-pill-board,
-    .pfs-pill-board {
-      background: #f1f5f9 !important;
-      color: #334155 !important;
-      border: 1px solid #cbd5e1 !important;
-      font-size: 0.72rem !important;
-      padding: 3px 8px !important;
-      border-radius: 4px !important;
-    }
-
-    /* INTERACTIVE EXAM PRACTICE QUESTIONS (MOBILE PORTRAIT VIEW - COMPACT & FULL WIDTH) */
-    #practice-questions,
-    section.revision-section:has(.practice-q-card),
-    section[id*="practice"] {
-      width: 100% !important;
-      max-width: 100% !important;
-      padding-left: 0 !important;
-      padding-right: 0 !important;
-      margin-left: 0 !important;
-      margin-right: 0 !important;
-      box-sizing: border-box !important;
-    }
-    .practice-q-card,
-    .practice-question-card,
-    .practice-card {
-      padding: 0 !important;
-      margin-bottom: 14px !important;
-      border-radius: 8px !important;
-      width: 100% !important;
-      max-width: 100% !important;
-      margin-left: 0 !important;
-      margin-right: 0 !important;
-      box-sizing: border-box !important;
-      overflow: hidden !important;
-      border: 1px solid #cbd5e1 !important;
-    }
-    .practice-q-header,
-    .practice-card-header {
-      padding: 8px 10px !important;
-      width: 100% !important;
-      max-width: 100% !important;
-      box-sizing: border-box !important;
-      display: flex !important;
-      justify-content: space-between !important;
-      align-items: center !important;
-      background: #f8fafc !important;
-      border-bottom: 1px solid #e2e8f0 !important;
-    }
-    .practice-q-title,
-    .practice-q-num,
-    .practice-card-title,
-    .practice-q-header span:first-child,
-    .practice-q-header strong {
-      font-size: 0.86rem !important;
-      font-weight: 700 !important;
-      color: #1e293b !important;
-      line-height: 1.3 !important;
-      display: flex !important;
-      align-items: center !important;
-      gap: 6px !important;
-    }
-    .practice-marks-pill,
-    .practice-q-marks,
-    .practice-card-marks {
-      font-size: 0.70rem !important;
-      font-weight: 800 !important;
-      padding: 2px 7px !important;
-      border-radius: 999px !important;
-      width: auto !important;
-      min-width: unset !important;
-      height: auto !important;
-      line-height: 1.2 !important;
-      letter-spacing: 0 !important;
-    }
-    .practice-q-body,
-    .practice-card-body {
-      padding: 10px 8px !important;
-      width: 100% !important;
-      max-width: 100% !important;
-      box-sizing: border-box !important;
-    }
-    .practice-q-stem,
-    .practice-prompt-box {
-      padding: 8px 10px !important;
-      font-size: 0.84rem !important;
-      line-height: 1.48 !important;
-      margin-bottom: 10px !important;
-      border-radius: 6px !important;
-      width: 100% !important;
-      max-width: 100% !important;
-      box-sizing: border-box !important;
-      overflow-wrap: break-word !important;
-      word-wrap: break-word !important;
-    }
-    .practice-q-stem p,
-    .practice-q-stem li,
-    .practice-q-stem strong,
-    .practice-q-stem em {
-      font-size: 0.84rem !important;
-      line-height: 1.48 !important;
-    }
-    .practice-q-stem img,
-    .practice-q-stem svg {
-      max-width: 100% !important;
-      height: auto !important;
-      margin: 8px 0 !important;
-    }
     .practice-interactive-wrap,
     .working-scratchpad-area,
-    .scratchpad-area {
-      width: 100% !important;
-      max-width: 100% !important;
-      margin: 0 !important;
-      padding: 0 !important;
-      box-sizing: border-box !important;
-    }
-    .practice-interactive-wrap label,
-    .working-scratchpad-label,
-    .practice-notes-label,
-    .scratchpad-header-row {
-      font-size: 0.78rem !important;
-      font-weight: 700 !important;
-      color: #475569 !important;
-      margin-bottom: 4px !important;
-      display: block !important;
-      line-height: 1.3 !important;
-    }
+    .scratchpad-area,
     .practice-scratchpad,
     .working-scratchpad-input {
-      font-size: 0.82rem !important;
-      min-height: 54px !important;
-      padding: 7px 9px !important;
       width: 100% !important;
       max-width: 100% !important;
-      box-sizing: border-box !important;
-      border-radius: 6px !important;
-      line-height: 1.4 !important;
-    }
-    .practice-q-toolbar {
-      margin-top: 8px !important;
-      gap: 6px !important;
-      width: 100% !important;
-      display: flex !important;
-      flex-wrap: wrap !important;
-    }
-    .btn-solution-toggle,
-    .btn-reveal-solution,
-    .btn-toggle-solution {
-      padding: 6px 12px !important;
-      font-size: 0.78rem !important;
-      border-radius: 6px !important;
-      font-weight: 700 !important;
-      cursor: pointer !important;
-      display: inline-flex !important;
-      align-items: center !important;
-      gap: 6px !important;
-      width: auto !important;
-      max-width: 100% !important;
-      margin: 0 !important;
-    }
-    .practice-solution-drawer,
-    .solution-drawer {
-      padding: 8px 10px !important;
-      margin-top: 10px !important;
-      border-radius: 6px !important;
-      width: 100% !important;
-      max-width: 100% !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
       box-sizing: border-box !important;
     }
+
     .practice-solution-drawer > div:first-child,
     .solution-drawer-title {
       font-size: 0.84rem !important;
@@ -2458,6 +2415,7 @@
       margin-bottom: 6px !important;
       line-height: 1.35 !important;
     }
+
     .practice-solution-drawer .math-col-board,
     .solution-drawer .math-col-board {
       padding: 6px 8px !important;
@@ -2469,11 +2427,13 @@
       overflow-x: auto !important;
       -webkit-overflow-scrolling: touch !important;
     }
+
     .practice-solution-drawer .math-col-board div,
     .practice-solution-drawer div[style*="font-size"] {
       font-size: 0.84rem !important;
       line-height: 1.45 !important;
     }
+
     .practice-solution-drawer div[style*="font-size:1.45rem"],
     .practice-solution-drawer div[style*="font-size: 1.45rem"],
     .practice-solution-drawer div[style*="font-size:1.25rem"],
@@ -2483,6 +2443,7 @@
       font-size: 0.86rem !important;
       line-height: 1.45 !important;
     }
+
     .practice-solution-drawer div[style*="Final Correct Answer"],
     .practice-solution-drawer div[style*="font-weight:900"],
     .practice-solution-drawer div[style*="font-weight: 900"] {
@@ -2490,11 +2451,321 @@
       font-weight: 800 !important;
       margin-top: 6px !important;
     }
+
     .practice-solution-drawer div[style*="italic"],
     .practice-solution-drawer .examiner-tip {
       font-size: 0.76rem !important;
       line-height: 1.35 !important;
       margin-top: 6px !important;
+    }
+
+    /* Sketches, Diagrams, and SVGs */
+    .sketch-diagram-wrap {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      border-radius: 0 !important;
+      display: block !important;
+      overflow-x: auto !important;
+      -webkit-overflow-scrolling: touch !important;
+      box-sizing: border-box !important;
+    }
+
+    .sketch-diagram-wrap svg,
+    .sketch-diagram-wrap img,
+    .diagram-panel-box img,
+    .diagram-panel-box svg,
+    .pfs-diagram-col svg,
+    .pfs-diagram-col img,
+    .mfs-topic-body img,
+    .mfs-topic-body svg,
+    .math-visual-card img,
+    .math-visual-card svg,
+    .model-example-card img,
+    .practice-question-card img,
+    .practice-q-stem img,
+    .real-photo-card img {
+      width: 100% !important;
+      max-width: 100% !important;
+      height: auto !important;
+      display: block !important;
+      box-sizing: border-box !important;
+    }
+
+    /* Math Visual Boards */
+    .math-col-board,
+    .math-stepdown-board,
+    .math-bidmas-ladder,
+    .math-bar-model,
+    .math-master-table {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      border-radius: 0 !important;
+      border-left: none !important;
+      border-right: none !important;
+      box-sizing: border-box !important;
+    }
+
+    /* 7. Past Papers Hub & Board Pages */
+    .past-papers-container {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding: 8px 0 24px 0 !important;
+      margin: 0 !important;
+      box-sizing: border-box !important;
+    }
+
+    .past-papers-hero {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding: 10px 10px 8px 10px !important;
+      border-left: none !important;
+      border-right: none !important;
+      box-sizing: border-box !important;
+    }
+
+    .paper-filter-bar,
+    .board-switcher-nav {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      border-radius: 0 !important;
+      border-left: none !important;
+      border-right: none !important;
+      padding: 10px !important;
+      box-sizing: border-box !important;
+    }
+
+    .past-papers-finder-section,
+    .paper-group-section {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      box-sizing: border-box !important;
+    }
+
+    .past-paper-row,
+    .paper-card,
+    .paper-row {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      margin-bottom: 8px !important;
+      border-radius: 0 !important;
+      border-left: none !important;
+      border-right: none !important;
+      padding: 10px !important;
+      box-sizing: border-box !important;
+    }
+
+    .past-paper-actions {
+      width: 100% !important;
+      max-width: 100% !important;
+      display: grid !important;
+      grid-template-columns: repeat(2, 1fr) !important;
+      gap: 6px !important;
+      box-sizing: border-box !important;
+    }
+
+    .btn-paper,
+    .btn-paper-model {
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+    }
+
+    /* 8. Shop Page (shop.html) */
+    .product-grid {
+      display: flex !important;
+      flex-direction: column !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      gap: 14px !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    .product-card {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      margin-bottom: 12px !important;
+      border-radius: 0 !important;
+      border-left: none !important;
+      border-right: none !important;
+      box-sizing: border-box !important;
+    }
+
+    .product-img-wrap {
+      width: 100% !important;
+      max-width: 100% !important;
+      height: auto !important;
+      min-height: 250px !important;
+      padding: 16px 0 8px !important;
+      box-sizing: border-box !important;
+    }
+
+    .product-img-wrap img {
+      width: auto !important;
+      max-width: 100% !important;
+      max-height: 240px !important;
+      display: block !important;
+      margin: 0 auto !important;
+    }
+
+    .product-body,
+    .product-content,
+    .product-details {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding: 14px 10px !important;
+      box-sizing: border-box !important;
+    }
+
+    .product-btn,
+    .btn-buy {
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+    }
+
+    /* 9. Worksheets Directory (worksheets.html) */
+    .hub-hero {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding: 36px 10px 24px !important;
+      margin: 0 !important;
+      box-sizing: border-box !important;
+    }
+
+    .styles-explainer {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 10px 0 !important;
+      border-radius: 0 !important;
+      border-left: none !important;
+      border-right: none !important;
+      padding: 12px 10px !important;
+      box-sizing: border-box !important;
+      display: flex !important;
+      flex-direction: column !important;
+      gap: 10px !important;
+    }
+
+    .hub-toolbar-container {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 0 14px 0 !important;
+      padding: 0 !important;
+      box-sizing: border-box !important;
+    }
+
+    .hub-toolbar {
+      width: 100% !important;
+      max-width: 100% !important;
+      border-radius: 0 !important;
+      border-left: none !important;
+      border-right: none !important;
+      padding: 10px !important;
+      box-sizing: border-box !important;
+    }
+
+    .hub-domain-section {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 0 24px 0 !important;
+      padding: 0 !important;
+      box-sizing: border-box !important;
+    }
+
+    .hub-domain-header {
+      padding: 0 10px 10px !important;
+      width: 100% !important;
+      box-sizing: border-box !important;
+    }
+
+    .hub-topics-grid {
+      display: flex !important;
+      flex-direction: column !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      gap: 10px !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    .hub-topic-card {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      border-radius: 0 !important;
+      border-left: none !important;
+      border-right: none !important;
+      padding: 12px 10px !important;
+      box-sizing: border-box !important;
+    }
+
+    /* 10. Video Solution Station (video-solution.html) */
+    .video-hero-section {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding: 8px 0 14px 0 !important;
+      margin: 0 !important;
+    }
+
+    .video-hero-container,
+    .video-station-container,
+    .video-main-content {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      padding-left: 0 !important;
+      padding-right: 0 !important;
+      box-sizing: border-box !important;
+    }
+
+    .video-player-wrap {
+      width: 100% !important;
+      max-width: 100% !important;
+      border-radius: 0 !important;
+      margin: 0 !important;
+    }
+
+    .video-details-grid {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 0 !important;
+      padding: 0 !important;
+    }
+
+    .video-content-panel,
+    .video-playlist-sidebar {
+      width: 100% !important;
+      max-width: 100% !important;
+      padding: 12px 10px !important;
+      box-sizing: border-box !important;
+    }
+
+    .playlist-card,
+    .playlist-item-card {
+      width: 100% !important;
+      max-width: 100% !important;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
+      border-radius: 0 !important;
+      border-left: none !important;
+      border-right: none !important;
+      box-sizing: border-box !important;
     }
   }
 

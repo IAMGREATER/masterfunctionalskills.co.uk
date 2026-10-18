@@ -3523,7 +3523,9 @@
     }
   }
 
-  @media (orientation: landscape) and (max-height: 500px) {
+  @media (orientation: landscape) and (max-height: 500px),
+         (orientation: landscape) and (hover: none) and (pointer: coarse),
+         (orientation: landscape) and (max-width: 1200px) and (max-height: 900px) {
     .video-transport-bar {
       display: flex !important;
       flex-direction: row !important;
@@ -3533,7 +3535,7 @@
       margin-top: 6px !important;
     }
 
-    /* Landscape Mode: Convert the bulky full-width 'title & table of contents bar' into a sleek floating pill on the right (mobiles only) */
+    /* Landscape Mode: Convert the bulky full-width 'title & table of contents bar' into a sleek floating pill on the right (mobiles & tablets) */
     .mobile-toc-bar {
       display: flex !important;
       position: fixed !important;

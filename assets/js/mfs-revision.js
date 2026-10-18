@@ -295,43 +295,63 @@ window.addEventListener('DOMContentLoaded', () => {
   }
 
   // Mobile / Landscape Table of Contents Interactions
+  // Mobile & Tablet Landscape Table of Contents Interactions
   const sidebar = document.getElementById('sidebarNav');
   if (sidebar) {
     // Auto-close floating TOC dropdown when any section link is tapped
     sidebar.querySelectorAll('.sidebar-toc-link').forEach(link => {
       link.addEventListener('click', () => {
-        if (window.innerWidth <= 1024 || window.innerHeight <= 650) {
+        const btn = document.querySelector('.btn-mobile-toc');
+        const isFloatingDrawer = sidebar.classList.contains('open-mobile') || 
+                                 sidebar.classList.contains('active') || 
+                                 sidebar.style.display === 'block' ||
+                                 (btn && window.getComputedStyle(btn).display !== 'none');
+        if (isFloatingDrawer || window.innerWidth <= 1366 || window.innerHeight <= 900) {
           sidebar.style.display = 'none';
           sidebar.classList.remove('open-mobile', 'active');
-          const btn = document.querySelector('.btn-mobile-toc');
           if (btn) btn.classList.remove('active');
         }
       });
     });
   }
 
-  // Close floating TOC when clicking outside
-  document.addEventListener('click', (e) => {
+  // Close floating TOC when tapping outside (supports click & touchstart on iOS/iPadOS/Android)
+  function handleOutsideToc(e) {
     const s = document.getElementById('sidebarNav');
-    if (!s || (s.style.display !== 'block' && !s.classList.contains('open-mobile'))) return;
+    if (!s || (s.style.display !== 'block' && !s.classList.contains('open-mobile') && !s.classList.contains('active'))) return;
     if (!s.contains(e.target) && !e.target.closest('.btn-mobile-toc')) {
       s.style.display = 'none';
       s.classList.remove('open-mobile', 'active');
       const btn = document.querySelector('.btn-mobile-toc');
       if (btn) btn.classList.remove('active');
     }
-  });
+  }
+  document.addEventListener('click', handleOutsideToc);
+  document.addEventListener('touchstart', handleOutsideToc, { passive: true });
 
   // Close floating TOC on Escape key
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') {
       const s = document.getElementById('sidebarNav');
-      if (s && (s.style.display === 'block' || s.classList.contains('open-mobile'))) {
+      if (s && (s.style.display === 'block' || s.classList.contains('open-mobile') || s.classList.contains('active'))) {
         s.style.display = 'none';
         s.classList.remove('open-mobile', 'active');
         const btn = document.querySelector('.btn-mobile-toc');
         if (btn) btn.classList.remove('active');
       }
+    }
+  });
+
+  // Handle window resize / rotation to cleanly restore desktop layout if transitioning to desktop
+  window.addEventListener('resize', () => {
+    const s = document.getElementById('sidebarNav');
+    const btn = document.querySelector('.btn-mobile-toc');
+    if (window.innerWidth > 1200 && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+      if (s) {
+        s.style.display = '';
+        s.classList.remove('open-mobile', 'active');
+      }
+      if (btn) btn.classList.remove('active');
     }
   });
 });

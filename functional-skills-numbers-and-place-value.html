@@ -21,7 +21,7 @@
   <script src="assets/js/mfs-pwa.js" defer></script>
   <link rel="stylesheet" href="assets/css/mfs-theme.css?v=20261017j">
   <link rel="stylesheet" href="assets/css/mfs-mobile.css?v=20261018a">
-  <link rel="stylesheet" href="assets/css/mfs-revision.css?v=20261018a">
+  <link rel="stylesheet" href="assets/css/mfs-revision.css?v=20261018b">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
 <body>
@@ -473,7 +473,7 @@
 </svg></div>
               
                 <div class="table-responsive" style="overflow-x:auto; -webkit-overflow-scrolling:touch; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:12px; margin:16px 0;">
-                  <table style="min-width:480px; width:100%; border-collapse:collapse; text-align:center;">
+                  <table class="keep-table-grid math-matrix-table" style=" width:100%; border-collapse:collapse; text-align:center;">
                     <thead>
                       <tr style="background:#0284c7; color:#fff;">
                         <th style="padding:8px 6px; border:1px solid #cbd5e1; font-size:0.78rem;">Millions<br><small style="font-weight:600; opacity:0.9;">(M)</small></th>
@@ -487,22 +487,22 @@
                     </thead>
                     <tbody>
                       <tr style="font-weight:700; font-size:1.15rem; color:#0f172a;">
-                        <td style="padding:8px 6px; border:1px solid #cbd5e1;">3</td>
-                        <td style="padding:8px 6px; border:1px solid #cbd5e1;">0</td>
-                        <td style="padding:8px 6px; border:1px solid #cbd5e1;">4</td>
-                        <td style="padding:8px 6px; border:1px solid #cbd5e1;">8</td>
-                        <td style="padding:8px 6px; border:1px solid #cbd5e1;">5</td>
-                        <td style="padding:8px 6px; border:1px solid #cbd5e1;">2</td>
-                        <td style="padding:8px 6px; border:1px solid #cbd5e1;">0</td>
+                        <td data-label="Millions (M)" style="padding:8px 6px; border:1px solid #cbd5e1;">3</td>
+                        <td data-label="Hundred Thousands (HT)" style="padding:8px 6px; border:1px solid #cbd5e1;">0</td>
+                        <td data-label="Ten Thousands (TT)" style="padding:8px 6px; border:1px solid #cbd5e1;">4</td>
+                        <td data-label="Thousands (Th)" style="padding:8px 6px; border:1px solid #cbd5e1;">8</td>
+                        <td data-label="Hundreds (H)" style="padding:8px 6px; border:1px solid #cbd5e1;">5</td>
+                        <td data-label="Tens (T)" style="padding:8px 6px; border:1px solid #cbd5e1;">2</td>
+                        <td data-label="Units (U)" style="padding:8px 6px; border:1px solid #cbd5e1;">0</td>
                       </tr>
                       <tr style="font-size:0.82rem; color:#64748b;">
-                        <td style="padding:6px 4px; border:1px solid #cbd5e1;">3,000,000</td>
-                        <td style="padding:6px 4px; border:1px solid #cbd5e1;">0</td>
-                        <td style="padding:6px 4px; border:1px solid #cbd5e1;">40,000</td>
-                        <td style="padding:6px 4px; border:1px solid #cbd5e1;">8,000</td>
-                        <td style="padding:6px 4px; border:1px solid #cbd5e1;">500</td>
-                        <td style="padding:6px 4px; border:1px solid #cbd5e1;">20</td>
-                        <td style="padding:6px 4px; border:1px solid #cbd5e1;">0</td>
+                        <td data-label="Millions (M)" style="padding:6px 4px; border:1px solid #cbd5e1;">3,000,000</td>
+                        <td data-label="Hundred Thousands (HT)" style="padding:6px 4px; border:1px solid #cbd5e1;">0</td>
+                        <td data-label="Ten Thousands (TT)" style="padding:6px 4px; border:1px solid #cbd5e1;">40,000</td>
+                        <td data-label="Thousands (Th)" style="padding:6px 4px; border:1px solid #cbd5e1;">8,000</td>
+                        <td data-label="Hundreds (H)" style="padding:6px 4px; border:1px solid #cbd5e1;">500</td>
+                        <td data-label="Tens (T)" style="padding:6px 4px; border:1px solid #cbd5e1;">20</td>
+                        <td data-label="Units (U)" style="padding:6px 4px; border:1px solid #cbd5e1;">0</td>
                       </tr>
                     </tbody>
                   </table>
@@ -561,7 +561,7 @@
               
               
                 <div class="table-responsive" style="overflow-x:auto; -webkit-overflow-scrolling:touch; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:12px; margin:14px 0;">
-                  <table style="min-width:420px; width:100%; border-collapse:collapse; text-align:left;">
+                  <table class="table-stack-mobile" style=" width:100%; border-collapse:collapse; text-align:left;">
                     <thead>
                       <tr style="background:#f1f5f9; color:#0f172a;">
                         <th style="padding:8px; border:1px solid #cbd5e1; font-size:0.80rem;">Operation</th>
@@ -571,19 +571,19 @@
                     </thead>
                     <tbody>
                       <tr>
-                        <td style="padding:8px; border:1px solid #cbd5e1; font-weight:700; font-size:0.80rem;">Multiply by 10 / 100 / 1,000</td>
-                        <td style="padding:8px; border:1px solid #cbd5e1; font-size:0.80rem;">Shift digits 1, 2, or 3 places LEFT</td>
-                        <td style="padding:8px; border:1px solid #cbd5e1; font-size:0.80rem;"><code style="white-space:nowrap;">42.5 × 1,000 = 42,500</code></td>
+                        <td data-label="Operation" style="padding:8px; border:1px solid #cbd5e1; font-weight:700; font-size:0.80rem;">Multiply by 10 / 100 / 1,000</td>
+                        <td data-label="Place Value Shift" style="padding:8px; border:1px solid #cbd5e1; font-size:0.80rem;">Shift digits 1, 2, or 3 places LEFT</td>
+                        <td data-label="Worked Example" style="padding:8px; border:1px solid #cbd5e1; font-size:0.80rem;"><code >42.5 × 1,000 = 42,500</code></td>
                       </tr>
                       <tr>
-                        <td style="padding:8px; border:1px solid #cbd5e1; font-weight:700; font-size:0.80rem;">Divide by 10 / 100 / 1,000</td>
-                        <td style="padding:8px; border:1px solid #cbd5e1; font-size:0.80rem;">Shift digits 1, 2, or 3 places RIGHT</td>
-                        <td style="padding:8px; border:1px solid #cbd5e1; font-size:0.80rem;"><code style="white-space:nowrap;">3,800 ÷ 100 = 38</code></td>
+                        <td data-label="Operation" style="padding:8px; border:1px solid #cbd5e1; font-weight:700; font-size:0.80rem;">Divide by 10 / 100 / 1,000</td>
+                        <td data-label="Place Value Shift" style="padding:8px; border:1px solid #cbd5e1; font-size:0.80rem;">Shift digits 1, 2, or 3 places RIGHT</td>
+                        <td data-label="Worked Example" style="padding:8px; border:1px solid #cbd5e1; font-size:0.80rem;"><code >3,800 ÷ 100 = 38</code></td>
                       </tr>
                       <tr>
-                        <td style="padding:8px; border:1px solid #cbd5e1; font-weight:700; font-size:0.80rem;">Converting "Million" Figures</td>
-                        <td style="padding:8px; border:1px solid #cbd5e1; font-size:0.80rem;">Multiply decimal millions by 1,000,000 (shift 6 places)</td>
-                        <td style="padding:8px; border:1px solid #cbd5e1; font-size:0.80rem;"><code style="white-space:nowrap;">£2.45 million = £2,450,000</code></td>
+                        <td data-label="Operation" style="padding:8px; border:1px solid #cbd5e1; font-weight:700; font-size:0.80rem;">Converting "Million" Figures</td>
+                        <td data-label="Place Value Shift" style="padding:8px; border:1px solid #cbd5e1; font-size:0.80rem;">Multiply decimal millions by 1,000,000 (shift 6 places)</td>
+                        <td data-label="Worked Example" style="padding:8px; border:1px solid #cbd5e1; font-size:0.80rem;"><code >£2.45 million = £2,450,000</code></td>
                       </tr>
                     </tbody>
                   </table>
@@ -885,43 +885,45 @@
           </div>
 
           <div class="download-tiles-grid">
-            <!-- STYLE 1: SKILL WORKOUT -->
-            <a href="worksheets/numbers-and-place-value-workout.html" target="_blank" class="download-tile-card">
-              <div class="download-tile-icon icon-workout"><i class="fa-solid fa-repeat"></i></div>
-              <div class="download-tile-info">
-                <div class="tile-badge-wrap"><span class="badge-tile-type">Style 1: Fluency Drills</span></div>
-                <strong>Numbers And Place Value Practice Drills (PDF)</strong>
-                <span>Over 25 quick calculation drills + real-life maths problems to build confidence</span>
+            <!-- STYLE 1: FLUENCY DRILLS WORKOUT (COMBINED) -->
+            <div class="download-combo-card">
+              <div class="download-combo-header">
+                <div class="download-tile-icon icon-workout"><i class="fa-solid fa-repeat"></i></div>
+                <div class="download-combo-info">
+                  <div class="tile-badge-wrap"><span class="badge-tile-type">Style 1: Fluency Drills</span></div>
+                  <strong class="download-tile-title">Numbers &amp; Place Value Practice Drills</strong>
+                  <span class="download-tile-desc">25+ quick calculation drills + real-life maths problems</span>
+                </div>
               </div>
-            </a>
+              <div class="download-combo-actions">
+                <a href="worksheets/numbers-and-place-value-workout.html" target="_blank" class="download-combo-btn btn-qp">
+                  <i class="fa-regular fa-file-pdf"></i> Question Paper
+                </a>
+                <a href="worksheets/numbers-and-place-value-workout-answers.html" target="_blank" class="download-combo-btn btn-ans">
+                  <i class="fa-solid fa-check-double"></i> Answer Key
+                </a>
+              </div>
+            </div>
 
-            <a href="worksheets/numbers-and-place-value-workout-answers.html" target="_blank" class="download-tile-card">
-              <div class="download-tile-icon icon-answers"><i class="fa-solid fa-check-double"></i></div>
-              <div class="download-tile-info">
-                <div class="tile-badge-wrap"><span class="badge-tile-type ans">Fluency Answers</span></div>
-                <strong>Fluency Drills Answer Key (PDF)</strong>
-                <span>Quick-check marking grid + worked solutions for everyday applications</span>
+            <!-- STYLE 2: EXAM PRACTICE QUESTIONS (COMBINED) -->
+            <div class="download-combo-card">
+              <div class="download-combo-header">
+                <div class="download-tile-icon icon-pdf"><i class="fa-regular fa-file-pdf"></i></div>
+                <div class="download-combo-info">
+                  <div class="tile-badge-wrap"><span class="badge-tile-type exam">Style 2: Practice Questions</span></div>
+                  <strong class="download-tile-title">Numbers &amp; Place Value Practice Questions</strong>
+                  <span class="download-tile-desc">Authentic Pearson Edexcel exam questions with [M1][A1] mark scheme</span>
+                </div>
               </div>
-            </a>
-
-            <!-- STYLE 2: EXAM PRACTICE BOOKLET -->
-            <a href="worksheets/numbers-and-place-value-worksheet.html" target="_blank" class="download-tile-card">
-              <div class="download-tile-icon icon-pdf"><i class="fa-regular fa-file-pdf"></i></div>
-              <div class="download-tile-info">
-                <div class="tile-badge-wrap"><span class="badge-tile-type exam">Style 2: Practice Questions</span></div>
-                <strong>Numbers And Place Value Practice Questions (PDF)</strong>
-                <span>Authentic Pearson Edexcel exam questions with official [M1][A1] mark allocations</span>
+              <div class="download-combo-actions">
+                <a href="worksheets/numbers-and-place-value-worksheet.html" target="_blank" class="download-combo-btn btn-qp">
+                  <i class="fa-regular fa-file-pdf"></i> Question Paper
+                </a>
+                <a href="worksheets/numbers-and-place-value-answers.html" target="_blank" class="download-combo-btn btn-ans">
+                  <i class="fa-solid fa-award"></i> Mark Scheme
+                </a>
               </div>
-            </a>
-
-            <a href="worksheets/numbers-and-place-value-answers.html" target="_blank" class="download-tile-card">
-              <div class="download-tile-icon icon-answers"><i class="fa-solid fa-award"></i></div>
-              <div class="download-tile-info">
-                <div class="tile-badge-wrap"><span class="badge-tile-type ans">Exam Mark Scheme</span></div>
-                <strong>Step-by-Step Exam Mark Scheme (PDF)</strong>
-                <span>Official tutor model answers with step-by-step methods, common mistakes to avoid, and quick checks</span>
-              </div>
-            </a>
+            </div>
           </div>
         </section>
 

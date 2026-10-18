@@ -405,6 +405,73 @@
 
     // Initialize Mobile Footer Accordions
     initMobileFooter();
+
+    // Initialize Mobile Responsive Tables Engine
+    initResponsiveTables();
+  }
+
+  /**
+   * Mobile Portrait Responsive Tables Engine
+   * Ensures no table has data cut off or requires horizontal side-scrolling.
+   * Automatically extracts column headers and sets data-label on every td,
+   * pushing column data onto clean stacked lines in portrait mobile view.
+   */
+  function initResponsiveTables() {
+    var tables = document.querySelectorAll('table');
+    if (!tables || tables.length === 0) return;
+
+    for (var t = 0; t < tables.length; t++) {
+      var table = tables[t];
+
+      // Check if explicitly marked as a matrix grid
+      var isMatrix = table.classList.contains('math-matrix-table') || 
+                     table.classList.contains('keep-table-grid');
+
+      // Extract column headers
+      var headers = [];
+      var ths = table.querySelectorAll('thead th, tr:first-child th');
+      if (ths.length > 0) {
+        for (var h = 0; h < ths.length; h++) {
+          headers.push(ths[h].textContent.replace(/\s+/g, ' ').trim());
+        }
+      }
+
+      // Populate data-label attributes on every td
+      var rows = table.querySelectorAll('tbody tr');
+      if (rows.length === 0) {
+        var allRows = table.querySelectorAll('tr');
+        if (allRows.length > 1 && allRows[0].querySelector('th')) {
+          rows = Array.prototype.slice.call(allRows, 1);
+        }
+      }
+
+      if (rows.length > 0 && headers.length > 0) {
+        for (var r = 0; r < rows.length; r++) {
+          var tds = rows[r].querySelectorAll('td');
+          for (var d = 0; d < tds.length; d++) {
+            if (headers[d] && !tds[d].getAttribute('data-label')) {
+              tds[d].setAttribute('data-label', headers[d]);
+            }
+          }
+        }
+      }
+
+      // If not marked as a matrix grid, ensure table-stack-mobile is added
+      if (!isMatrix) {
+        table.classList.add('table-stack-mobile');
+      }
+
+      // Defeat any parent horizontal scroll clipping
+      var parent = table.parentElement;
+      if (parent) {
+        if (parent.classList.contains('table-responsive') || 
+            parent.classList.contains('boundaries-table-wrap') ||
+            parent.classList.contains('comparison-table-container') ||
+            (parent.style && (parent.style.overflowX === 'auto' || parent.style.overflowX === 'scroll'))) {
+          parent.style.overflowX = 'visible';
+        }
+      }
+    }
   }
 
   /**

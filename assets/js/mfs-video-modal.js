@@ -7,56 +7,158 @@
   'use strict';
 
   // Available videos dictionary (slug/topic -> video details)
+  // Available videos dictionary (slug/topic -> video details)
   const KNOWN_VIDEOS = {
-    'numbers-and-place-value': {
-      videoSrc: 'videos/Numbers_and_Place_Value_Video_Solution.mp4?v=4',
-      posterSrc: 'videos/thumbnail_numbers_and_place_value.png',
-      title: 'Numbers and Place Value • Video Solution Walkthrough',
-      series: 'Pearson Edexcel Maths Level 1 & Level 2',
-      tutor: 'Your Functional Skills Tutor'
-    },
-    'numbers and place value': {
-      videoSrc: 'videos/Numbers_and_Place_Value_Video_Solution.mp4?v=4',
-      posterSrc: 'videos/thumbnail_numbers_and_place_value.png',
-      title: 'Numbers and Place Value • Video Solution Walkthrough',
-      series: 'Pearson Edexcel Maths Level 1 & Level 2',
-      tutor: 'Your Functional Skills Tutor'
-    },
+    // Past Paper 10
     'edexcel-maths-l2-past-paper-10-section-a': {
-      videoSrc: 'videos/Pearson_Edexcel_Maths_L2_Past_Paper_10_Section_A_Walkthrough.mp4',
-      posterSrc: 'videos/thumbnail_edexcel_maths_l2_paper_10_sec_a.png',
+      ytId: 'muSRa0fEsSs',
       title: 'Past Paper 10 • Section A: Non-Calculator (Full Walkthrough)',
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
-      tutor: 'Your Functional Skills Tutor',
       paperGroup: 'edexcel-maths-l2-pp10',
-      activeSection: 'A'
+      activeSection: 'A',
+      companionSlug: 'edexcel-maths-l2-past-paper-10-section-b',
+      companionLabel: 'Section B: Calculator (22m)'
     },
     'past paper 10 • section a: non-calculator': {
-      videoSrc: 'videos/Pearson_Edexcel_Maths_L2_Past_Paper_10_Section_A_Walkthrough.mp4',
-      posterSrc: 'videos/thumbnail_edexcel_maths_l2_paper_10_sec_a.png',
+      ytId: 'muSRa0fEsSs',
       title: 'Past Paper 10 • Section A: Non-Calculator (Full Walkthrough)',
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
-      tutor: 'Your Functional Skills Tutor',
       paperGroup: 'edexcel-maths-l2-pp10',
-      activeSection: 'A'
+      activeSection: 'A',
+      companionSlug: 'edexcel-maths-l2-past-paper-10-section-b',
+      companionLabel: 'Section B: Calculator (22m)'
     },
     'edexcel-maths-l2-past-paper-10-section-b': {
-      videoSrc: 'videos/Pearson_Edexcel_Maths_L2_Past_Paper_10_Section_B_Full_Walkthrough.mp4',
-      posterSrc: 'videos/thumbnail_edexcel_maths_l2_paper_10_sec_b.png',
+      ytId: 'UGjVuqySTfE',
       title: 'Past Paper 10 • Section B: Calculator (Full Walkthrough)',
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
-      tutor: 'Your Functional Skills Tutor',
       paperGroup: 'edexcel-maths-l2-pp10',
-      activeSection: 'B'
+      activeSection: 'B',
+      companionSlug: 'edexcel-maths-l2-past-paper-10-section-a',
+      companionLabel: 'Section A: Non-Calculator (13m)'
     },
     'past paper 10 • section b: calculator': {
-      videoSrc: 'videos/Pearson_Edexcel_Maths_L2_Past_Paper_10_Section_B_Full_Walkthrough.mp4',
-      posterSrc: 'videos/thumbnail_edexcel_maths_l2_paper_10_sec_b.png',
+      ytId: 'UGjVuqySTfE',
       title: 'Past Paper 10 • Section B: Calculator (Full Walkthrough)',
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
-      tutor: 'Your Functional Skills Tutor',
       paperGroup: 'edexcel-maths-l2-pp10',
-      activeSection: 'B'
+      activeSection: 'B',
+      companionSlug: 'edexcel-maths-l2-past-paper-10-section-a',
+      companionLabel: 'Section A: Non-Calculator (13m)'
+    },
+
+    // Past Paper 9
+    'edexcel-maths-l2-past-paper-9-section-a': {
+      ytId: 'KvOZvxBZgL0',
+      title: 'Past Paper 9 • Section A: Non-Calculator (Full Walkthrough)',
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      paperGroup: 'edexcel-maths-l2-pp9',
+      activeSection: 'A',
+      companionSlug: 'edexcel-maths-l2-past-paper-9-section-b',
+      companionLabel: 'Section B: Calculator (20m)'
+    },
+    'past paper 9 • section a: non-calculator': {
+      ytId: 'KvOZvxBZgL0',
+      title: 'Past Paper 9 • Section A: Non-Calculator (Full Walkthrough)',
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      paperGroup: 'edexcel-maths-l2-pp9',
+      activeSection: 'A',
+      companionSlug: 'edexcel-maths-l2-past-paper-9-section-b',
+      companionLabel: 'Section B: Calculator (20m)'
+    },
+    'edexcel-maths-l2-past-paper-9-section-b': {
+      ytId: 'O1Z5SINmpEE',
+      title: 'Past Paper 9 • Section B: Calculator (Full Walkthrough)',
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      paperGroup: 'edexcel-maths-l2-pp9',
+      activeSection: 'B',
+      companionSlug: 'edexcel-maths-l2-past-paper-9-section-a',
+      companionLabel: 'Section A: Non-Calculator (10m)'
+    },
+    'past paper 9 • section b: calculator': {
+      ytId: 'O1Z5SINmpEE',
+      title: 'Past Paper 9 • Section B: Calculator (Full Walkthrough)',
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      paperGroup: 'edexcel-maths-l2-pp9',
+      activeSection: 'B',
+      companionSlug: 'edexcel-maths-l2-past-paper-9-section-a',
+      companionLabel: 'Section A: Non-Calculator (10m)'
+    },
+
+    // Past Paper 8
+    'edexcel-maths-l2-past-paper-8-section-a': {
+      ytId: 'y0XyWFzcsjc',
+      title: 'Past Paper 8 • Section A: Non-Calculator (Full Walkthrough)',
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      paperGroup: 'edexcel-maths-l2-pp8',
+      activeSection: 'A',
+      companionSlug: 'edexcel-maths-l2-past-paper-8-section-b',
+      companionLabel: 'Section B: Calculator (22m)'
+    },
+    'past paper 8 • section a: non-calculator': {
+      ytId: 'y0XyWFzcsjc',
+      title: 'Past Paper 8 • Section A: Non-Calculator (Full Walkthrough)',
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      paperGroup: 'edexcel-maths-l2-pp8',
+      activeSection: 'A',
+      companionSlug: 'edexcel-maths-l2-past-paper-8-section-b',
+      companionLabel: 'Section B: Calculator (22m)'
+    },
+    'edexcel-maths-l2-past-paper-8-section-b': {
+      ytId: '8xa6AdKD6jU',
+      title: 'Past Paper 8 • Section B: Calculator (Full Walkthrough)',
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      paperGroup: 'edexcel-maths-l2-pp8',
+      activeSection: 'B',
+      companionSlug: 'edexcel-maths-l2-past-paper-8-section-a',
+      companionLabel: 'Section A: Non-Calculator (10m)'
+    },
+    'past paper 8 • section b: calculator': {
+      ytId: '8xa6AdKD6jU',
+      title: 'Past Paper 8 • Section B: Calculator (Full Walkthrough)',
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      paperGroup: 'edexcel-maths-l2-pp8',
+      activeSection: 'B',
+      companionSlug: 'edexcel-maths-l2-past-paper-8-section-a',
+      companionLabel: 'Section A: Non-Calculator (10m)'
+    },
+
+    // Past Paper 7
+    'edexcel-maths-l2-past-paper-7-section-a': {
+      ytId: 'proQAbkfZyQ',
+      title: 'Past Paper 7 • Section A: Non-Calculator (Full Walkthrough)',
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      paperGroup: 'edexcel-maths-l2-pp7',
+      activeSection: 'A',
+      companionSlug: 'edexcel-maths-l2-past-paper-7-section-b',
+      companionLabel: 'Section B: Calculator (25m)'
+    },
+    'past paper 7 • section a: non-calculator': {
+      ytId: 'proQAbkfZyQ',
+      title: 'Past Paper 7 • Section A: Non-Calculator (Full Walkthrough)',
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      paperGroup: 'edexcel-maths-l2-pp7',
+      activeSection: 'A',
+      companionSlug: 'edexcel-maths-l2-past-paper-7-section-b',
+      companionLabel: 'Section B: Calculator (25m)'
+    },
+    'edexcel-maths-l2-past-paper-7-section-b': {
+      ytId: '5ZTGk25aDg0',
+      title: 'Past Paper 7 • Section B: Calculator (Full Walkthrough)',
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      paperGroup: 'edexcel-maths-l2-pp7',
+      activeSection: 'B',
+      companionSlug: 'edexcel-maths-l2-past-paper-7-section-a',
+      companionLabel: 'Section A: Non-Calculator (12m)'
+    },
+    'past paper 7 • section b: calculator': {
+      ytId: '5ZTGk25aDg0',
+      title: 'Past Paper 7 • Section B: Calculator (Full Walkthrough)',
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      paperGroup: 'edexcel-maths-l2-pp7',
+      activeSection: 'B',
+      companionSlug: 'edexcel-maths-l2-past-paper-7-section-a',
+      companionLabel: 'Section A: Non-Calculator (12m)'
     }
   };
 
@@ -118,8 +220,8 @@
               <a href="#" target="_blank" rel="noopener" class="btn-modal-answers" id="mfsModalAnswersBtn">
                 <i class="fa-solid fa-circle-check"></i> Worked Answers [M1/A1]
               </a>
-              <a href="https://www.youtube.com/@MasterFunctionalSkills" target="_blank" rel="noopener" class="btn-modal-yt">
-                <i class="fa-brands fa-youtube"></i> Subscribe
+              <a href="https://www.youtube.com/@MasterFunctionalSkills" target="_blank" rel="noopener" class="btn-modal-yt" id="mfsModalYtBtn">
+                <i class="fa-brands fa-youtube"></i> Watch on YouTube App
               </a>
             </div>
           </div>
@@ -175,18 +277,21 @@
 
     const topic = options.topic || 'Video Solution Walkthrough';
     const series = options.series || 'Pearson Edexcel Functional Skills';
-    const tutor = options.tutor || 'Your Functional Skills Tutor';
+    const tutor = options.tutor || 'Subi';
     const sheetUrl = options.sheetUrl || '#';
     const answersUrl = options.answersUrl || '#';
     
-    // Check known videos dict if videoSrc not directly given
-    let videoSrc = options.videoSrc || '';
-    let posterSrc = options.posterSrc || '';
+    // Detect YouTube ID from options or known dictionary
+    let ytId = options.ytId || '';
+    if (!ytId && options.videoSrc) {
+      const m = options.videoSrc.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([a-zA-Z0-9_-]{11})/);
+      if (m) ytId = m[1];
+    }
 
     const normTopic = topic.trim().toLowerCase();
-    if (!videoSrc && KNOWN_VIDEOS[normTopic]) {
-      videoSrc = KNOWN_VIDEOS[normTopic].videoSrc;
-      posterSrc = KNOWN_VIDEOS[normTopic].posterSrc;
+    const knownItem = KNOWN_VIDEOS[normTopic] || (options.slug && KNOWN_VIDEOS[options.slug]);
+    if (!ytId && knownItem && knownItem.ytId) {
+      ytId = knownItem.ytId;
     }
 
     // Set Header
@@ -194,40 +299,43 @@
     document.getElementById('mfsModalSeries').textContent = series;
     document.getElementById('mfsModalTutor').textContent = tutor;
 
-    // Section Switcher for Past Paper 10
+    // Section Switcher for Multi-Section Past Papers
     const switcherEl = document.getElementById('mfsModalSectionSwitcher');
     if (switcherEl) {
-      if (videoSrc.indexOf('Past_Paper_10_Section_') !== -1) {
-        const isSecB = videoSrc.indexOf('Section_B') !== -1;
+      if (knownItem && knownItem.companionSlug && KNOWN_VIDEOS[knownItem.companionSlug]) {
+        const companion = KNOWN_VIDEOS[knownItem.companionSlug];
+        const isSecB = knownItem.activeSection === 'B';
+        const secA = isSecB ? companion : knownItem;
+        const secB = isSecB ? knownItem : companion;
         switcherEl.style.display = 'flex';
         switcherEl.innerHTML = `
           <button type="button" id="mfsSwitchSecA" style="cursor:pointer; padding:8px 14px; border-radius:8px; font-weight:800; font-size:0.86rem; display:inline-flex; align-items:center; gap:6px; border:1.5px solid ${!isSecB ? '#3b82f6' : '#334155'}; background:${!isSecB ? '#2563eb' : '#1e293b'}; color:#ffffff;">
-            <i class="fa-solid fa-circle-play"></i> Section A: Non-Calculator (Q1–Q4 • 13m)
+            <i class="fa-solid fa-circle-play"></i> Section A: Non-Calculator
           </button>
           <button type="button" id="mfsSwitchSecB" style="cursor:pointer; padding:8px 14px; border-radius:8px; font-weight:800; font-size:0.86rem; display:inline-flex; align-items:center; gap:6px; border:1.5px solid ${isSecB ? '#3b82f6' : '#334155'}; background:${isSecB ? '#2563eb' : '#1e293b'}; color:#ffffff;">
-            <i class="fa-solid fa-calculator"></i> Section B: Calculator (Q1–Q12 • 22m)
+            <i class="fa-solid fa-calculator"></i> Section B: Calculator
           </button>
         `;
         document.getElementById('mfsSwitchSecA').onclick = function () {
           openModal({
-            topic: 'Past Paper 10 • Section A: Non-Calculator (Full Walkthrough)',
-            series: 'Pearson Edexcel Functional Skills Maths Level 2',
+            topic: secA.title,
+            series: secA.series,
             tutor: tutor,
             sheetUrl: sheetUrl,
             answersUrl: answersUrl,
-            videoSrc: 'videos/Pearson_Edexcel_Maths_L2_Past_Paper_10_Section_A_Walkthrough.mp4',
-            posterSrc: 'videos/thumbnail_edexcel_maths_l2_paper_10_sec_a.png'
+            ytId: secA.ytId,
+            slug: secA.companionSlug ? secA.companionSlug : undefined
           });
         };
         document.getElementById('mfsSwitchSecB').onclick = function () {
           openModal({
-            topic: 'Past Paper 10 • Section B: Calculator (Full Walkthrough)',
-            series: 'Pearson Edexcel Functional Skills Maths Level 2',
+            topic: secB.title,
+            series: secB.series,
             tutor: tutor,
             sheetUrl: sheetUrl,
             answersUrl: answersUrl,
-            videoSrc: 'videos/Pearson_Edexcel_Maths_L2_Past_Paper_10_Section_B_Full_Walkthrough.mp4',
-            posterSrc: 'videos/thumbnail_edexcel_maths_l2_paper_10_sec_b.png'
+            ytId: secB.ytId,
+            slug: secB.companionSlug ? secB.companionSlug : undefined
           });
         };
       } else {
@@ -239,6 +347,7 @@
     // Set Action Links
     const sheetBtn = document.getElementById('mfsModalSheetBtn');
     const answersBtn = document.getElementById('mfsModalAnswersBtn');
+    const ytBtn = document.getElementById('mfsModalYtBtn');
     
     if (sheetUrl && sheetUrl !== '#') {
       sheetBtn.href = sheetUrl;
@@ -254,37 +363,43 @@
       answersBtn.style.display = 'none';
     }
 
+    if (ytBtn) {
+      if (ytId) {
+        ytBtn.href = `https://youtu.be/${ytId}`;
+        ytBtn.innerHTML = '<i class="fa-brands fa-youtube"></i> Watch on YouTube App';
+      } else {
+        ytBtn.href = 'https://www.youtube.com/@MasterFunctionalSkills';
+        ytBtn.innerHTML = '<i class="fa-brands fa-youtube"></i> Visit MFS YouTube Channel';
+      }
+    }
+
     // Set Player Box
     const playerBox = document.getElementById('mfsPlayerBox');
     playerBox.innerHTML = '';
 
-    if (videoSrc) {
-      // Live Video Player
-      const videoEl = document.createElement('video');
-      videoEl.id = 'mfsActiveVideo';
-      videoEl.controls = true;
-      videoEl.playsInline = true;
-      videoEl.autoplay = true;
-      if (posterSrc) {
-        videoEl.poster = posterSrc;
-      }
-      videoEl.src = videoSrc;
-      playerBox.appendChild(videoEl);
+    if (ytId) {
+      // Clean YouTube Embed (Never crashes mobile browsers with MIME type error)
+      playerBox.innerHTML = `
+        <iframe style="width:100%; height:100%; border:0; display:block;" src="https://www.youtube-nocookie.com/embed/${ytId}?autoplay=1&rel=0&playsinline=1" title="${escapeHtml(topic)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      `;
     } else {
-      // In Production State
+      // In Production State / Channel Fallback
       playerBox.innerHTML = `
         <div class="mfs-video-placeholder-card">
-          <div class="mfs-placeholder-icon-wrap">
-            <i class="fa-solid fa-clapperboard"></i>
+          <div class="mfs-placeholder-icon-wrap" style="color:#ef4444; border-color:#ef4444; background:rgba(239,68,68,0.15);">
+            <i class="fa-brands fa-youtube"></i>
           </div>
           <span class="mfs-placeholder-badge">
-            <i class="fa-solid fa-circle-play"></i> High-Definition Walkthrough in Production
+            <i class="fa-solid fa-circle-play"></i> Video Walkthrough on Master Functional Skills
           </span>
           <h4 class="mfs-placeholder-heading">${escapeHtml(topic)}</h4>
           <p class="mfs-placeholder-text">
-            Our specialist Functional Skills tutor is recording the complete step-by-step video solution with Pearson Edexcel method marks [M1/A1], examiner trap alerts, and reverse sanity checks.
+            Watch our step-by-step video solutions with Pearson Edexcel method marks [M1/A1], examiner trap alerts, and reverse sanity checks directly on our YouTube channel.
           </p>
           <div style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-top:8px;">
+            <a href="https://www.youtube.com/@MasterFunctionalSkills" target="_blank" rel="noopener" class="btn-modal-yt" style="padding:10px 18px; font-size:0.92rem; background:#dc2626; color:#fff; border-radius:8px; text-decoration:none; font-weight:700; display:inline-flex; align-items:center; gap:8px;">
+              <i class="fa-brands fa-youtube"></i> Open YouTube Channel
+            </a>
             ${answersUrl && answersUrl !== '#' ? `<a href="${answersUrl}" target="_blank" rel="noopener" class="btn-modal-answers" style="padding:10px 18px; font-size:0.92rem;"><i class="fa-solid fa-circle-check"></i> Open Step-by-Step Worked Answers</a>` : ''}
             ${sheetUrl && sheetUrl !== '#' ? `<a href="${sheetUrl}" target="_blank" rel="noopener" class="btn-modal-sheet" style="padding:10px 18px; font-size:0.92rem;"><i class="fa-regular fa-file-pdf"></i> Open Question Worksheet</a>` : ''}
           </div>
@@ -300,16 +415,10 @@
   function closeModal() {
     if (!modalOverlay) return;
 
-    // Pause and clear video playback
-    const activeVideo = document.getElementById('mfsActiveVideo');
-    if (activeVideo) {
-      try {
-        activeVideo.pause();
-        activeVideo.src = '';
-        activeVideo.load();
-      } catch (e) {
-        // ignore
-      }
+    // Immediately stop iframe video/audio
+    const playerBox = document.getElementById('mfsPlayerBox');
+    if (playerBox) {
+      playerBox.innerHTML = '';
     }
 
     modalOverlay.classList.remove('active');
@@ -340,19 +449,29 @@
 
       btn.addEventListener('click', function (e) {
         const href = this.getAttribute('href') || '';
-        // If link points to video-solution.html or external video URL, let browser navigate directly to the video player
-        if (href.indexOf('video-solution.html') !== -1 || (!this.getAttribute('data-video') && /^https?:\/\//i.test(href))) {
+        // If link points to video-solution.html, let browser navigate directly to the dedicated video app
+        if (href.indexOf('video-solution.html') !== -1) {
           return;
         }
+
+        // Check if link is an external non-YouTube URL
+        if (/^https?:\/\//i.test(href) && !/(?:youtu\.be|youtube\.com)/i.test(href)) {
+          return;
+        }
+
         e.preventDefault();
 
         // Extract topic metadata from attributes or DOM context
         let topic = this.getAttribute('data-topic');
         let sheetUrl = this.getAttribute('data-sheet');
         let answersUrl = this.getAttribute('data-answers');
-        let videoSrc = this.getAttribute('data-video') || '';
-        let posterSrc = this.getAttribute('data-poster') || '';
+        let ytId = this.getAttribute('data-yt-id') || '';
         let series = this.getAttribute('data-series') || 'Pearson Edexcel Functional Skills';
+
+        if (!ytId && href) {
+          const m = href.match(/(?:youtu\.be\/|youtube\.com\/(?:watch\?v=|embed\/))([a-zA-Z0-9_-]{11})/);
+          if (m) ytId = m[1];
+        }
 
         // Auto-detect topic from parent row if missing
         if (!topic) {
@@ -377,10 +496,9 @@
           topic: topic || 'Video Solution Walkthrough',
           sheetUrl: sheetUrl,
           answersUrl: answersUrl,
-          videoSrc: videoSrc,
-          posterSrc: posterSrc,
+          ytId: ytId,
           series: series,
-          tutor: 'Your Functional Skills Tutor'
+          tutor: 'Subi'
         });
       });
     });

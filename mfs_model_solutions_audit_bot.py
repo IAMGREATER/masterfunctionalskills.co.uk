@@ -167,7 +167,7 @@ class ModelSolutionAuditor:
             
             page = self.doc[page_idx]
             page_text = page.get_text('text').lower()
-            if 'section b' in page_text and ('calculator' in page_text or 'pmat' in page_text or 'candidate' in page_text or 'check that you have' in page_text or 'solutions' in page_text or 'prac' in page_text):
+            if ('section b' in page_text or 'section 2' in page_text) and ('calculator' in page_text or 'pmat' in page_text or 'candidate' in page_text or 'check that you have' in page_text or 'solutions' in page_text or 'prac' in page_text):
                 continue
 
             # Scale boundaries proportionally to page width (e.g. 652 pt Crown Quarto vs 595.3 pt A4)
@@ -242,16 +242,38 @@ class ModelSolutionAuditor:
                 continue
             annot_page = self.doc[p_idx]
             page_text = annot_page.get_text('text').lower()
-            if 'section b' in page_text and ('calculator' in page_text or 'candidate' in page_text or 'pmat' in page_text or 'check that you have' in page_text):
+            if ('section b' in page_text or 'section 2' in page_text) and ('calculator' in page_text or 'candidate' in page_text or 'pmat' in page_text or 'check that you have' in page_text):
                 continue
 
             m = re.search(r'\*[A-Za-z0-9_]+\*', annot_page.get_text('text'))
             if m and m.group(0).lower() in orig_map:
                 orig_page = self.orig_doc[orig_map[m.group(0).lower()]]
-            elif p_idx - 1 < len(self.orig_doc):
-                orig_page = self.orig_doc[p_idx - 1]
             else:
-                continue
+                # Default candidate index is p_idx - 1 (for 1-page inserted promo)
+                cand_idx = p_idx - 1 if (p_idx - 1 < len(self.orig_doc)) else None
+                cand_overlap = 0
+                annot_word_set = set(w[4].lower() for w in annot_page.get_text('words') if len(w[4]) > 3)
+                if cand_idx is not None:
+                    cand_words = set(w[4].lower() for w in self.orig_doc[cand_idx].get_text('words') if len(w[4]) > 3)
+                    cand_overlap = len(annot_word_set & cand_words)
+
+                # If cand_idx matches well or candidate page has very sparse text (e.g. grid/chart answer page), use cand_idx
+                if cand_idx is not None and (cand_overlap >= 8 or len(self.orig_doc[cand_idx].get_text('words')) <= 15):
+                    orig_page = self.orig_doc[cand_idx]
+                else:
+                    best_idx, best_overlap = -1, 0
+                    for o_idx, o_page in enumerate(self.orig_doc):
+                        o_word_set = set(w[4].lower() for w in o_page.get_text('words') if len(w[4]) > 3)
+                        overlap = len(annot_word_set & o_word_set)
+                        if overlap > best_overlap:
+                            best_overlap = overlap
+                            best_idx = o_idx
+                    if best_overlap >= 8:
+                        orig_page = self.orig_doc[best_idx]
+                    elif cand_idx is not None:
+                        orig_page = self.orig_doc[cand_idx]
+                    else:
+                        continue
 
             # 1. Collect original words (ignore underlines and barcodes)
             orig_words = []

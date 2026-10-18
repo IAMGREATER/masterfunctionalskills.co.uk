@@ -1125,15 +1125,15 @@
       <div class="video-hero-header-block">
         <div class="hero-title-group">
           <span class="badge-pill-edexcel" id="heroBadge"><i class="fa-solid fa-video"></i> Official Video Solution</span>
-          <h1 id="heroTitle">Numbers and Place Value</h1>
-          <p id="heroSubtitle">Pearson Edexcel Functional Skills • Step-by-Step Method Marks [M1/A1] & Examiner Traps</p>
+          <h1 id="heroTitle">Past Paper 10 • Section A: Non-Calculator</h1>
+          <p id="heroSubtitle">Pearson Edexcel Functional Skills Maths Level 2 • Step-by-Step Method Marks [M1/A1] & Examiner Traps</p>
         </div>
         <div class="hero-tutor-card">
           <div class="hero-tutor-inner">
             <div class="hero-tutor-avatar"><i class="fa-solid fa-graduation-cap"></i></div>
             <div>
-              <div class="hero-tutor-name">Your Functional Skills Tutor</div>
-              <div class="hero-tutor-sub">Pearson Specialist</div>
+              <div class="hero-tutor-name">Subi</div>
+              <div class="hero-tutor-sub">Pearson Functional Skills Specialist</div>
             </div>
           </div>
         </div>
@@ -1142,8 +1142,11 @@
       <!-- Section Switcher (shown for multi-section past papers) -->
       <div id="sectionSwitcherBar" class="section-switcher-bar" style="display:none;"></div>
 
-      <!-- Quick Action Study Materials (Question Paper & Worked Answers) -->
+      <!-- Quick Action Study Materials (Question Paper & Worked Answers & YouTube App) -->
       <div class="hero-quick-materials" id="heroQuickMaterials" style="display:none;">
+        <a href="https://youtu.be/muSRa0fEsSs" target="_blank" rel="noopener" class="hero-quick-btn hero-quick-youtube" id="heroQuickYouTube" style="background:#dc2626; color:#fff; border:1.5px solid #ef4444;">
+          <i class="fa-brands fa-youtube"></i> Watch on YouTube App
+        </a>
         <a href="#" target="_blank" rel="noopener" class="hero-quick-btn hero-quick-worksheet" id="heroQuickWorksheet">
           <i class="fa-regular fa-file-pdf"></i> Question Sheet (PDF)
         </a>
@@ -1539,8 +1542,7 @@
           fullTitle: 'Numbers and Place Value • Video Solution Walkthrough',
           duration: '6m',
           badge: 'Core Topic • 6 mins',
-          type: 'html5',
-          videoSrc: 'videos/Numbers_and_Place_Value_Video_Solution.mp4?v=4',
+          type: 'preview',
           poster: 'videos/thumbnail_numbers_and_place_value.png',
           worksheet: 'worksheets/numbers-and-place-value-worksheet.html',
           answers: 'worksheets/numbers-and-place-value-answers.html',
@@ -1556,8 +1558,7 @@
           fullTitle: 'English Level 2 SLC • Task 1 Formal Presentation Model',
           duration: '5m',
           badge: 'English SLC • 5 mins',
-          type: 'html5',
-          videoSrc: 'videos/slc-task1-presentation-model.mp4',
+          type: 'preview',
           poster: 'videos/thumbnail_numbers_and_place_value.png',
           worksheet: 'slc-presentation-exemplar.html',
           answers: 'slc-presentation-exemplar.html',
@@ -1573,8 +1574,7 @@
           fullTitle: 'English Level 2 SLC • Task 2 Formal Discussion Model',
           duration: '5m',
           badge: 'English SLC • 5 mins',
-          type: 'html5',
-          videoSrc: 'videos/slc-task2-discussion-model.mp4',
+          type: 'preview',
           poster: 'videos/thumbnail_numbers_and_place_value.png',
           worksheet: 'slc-discussion-exemplar.html',
           answers: 'slc-discussion-exemplar.html',
@@ -1606,11 +1606,12 @@
         'edexcel-maths-l2-past-paper-7': 'edexcel-maths-l2-past-paper-7-section-a'
       };
 
-      let currentSlug = 'numbers-and-place-value';
+      const DEFAULT_SLUG = 'edexcel-maths-l2-past-paper-10-section-a';
+      let currentSlug = DEFAULT_SLUG;
       let currentFilter = 'all';
 
       function normalizeSlug(slug) {
-        if (!slug) return 'numbers-and-place-value';
+        if (!slug) return DEFAULT_SLUG;
         const clean = slug.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
         return ALIASES[clean] || clean;
       }
@@ -1631,7 +1632,7 @@
           }
 
           const urlParams = new URLSearchParams(window.location.search);
-          const initialTopic = normalizeSlug(urlParams.get('topic') || 'numbers-and-place-value');
+          const initialTopic = normalizeSlug(urlParams.get('topic') || DEFAULT_SLUG);
 
           this.buildPicker();
           this.buildPlaylist();
@@ -1643,7 +1644,7 @@
 
           window.addEventListener('popstate', function () {
             const params = new URLSearchParams(window.location.search);
-            const popTopic = normalizeSlug(params.get('topic') || 'numbers-and-place-value');
+            const popTopic = normalizeSlug(params.get('topic') || DEFAULT_SLUG);
             window.MFS_STATION.load(popTopic, false, true);
           });
         },
@@ -1798,7 +1799,7 @@
             document.getElementById('panelTitle').textContent = `What You Learn in ${item.title}`;
 
             // Render Player
-            if (item.type === 'youtube') {
+            if (item.type === 'youtube' && item.ytId) {
               const autoplayParam = shouldAutoplay ? '1' : '0';
               const isFileProto = window.location.protocol === 'file:';
               const fileNotice = isFileProto ? `
@@ -1811,25 +1812,32 @@
                 </div>
               ` : '';
               playerContainer.innerHTML = `
-                <div style="position:relative; width:100%; padding-bottom:56.25%; height:0; border-radius:14px; overflow:hidden; box-shadow:0 12px 30px rgba(0,0,0,0.6); border:1px solid #1e293b; background:#000;">
-                  <iframe style="position:absolute; top:0; left:0; width:100%; height:100%; border:0;" src="https://www.youtube-nocookie.com/embed/${item.ytId}?rel=0&autoplay=${autoplayParam}" title="${displayTitle}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
-                </div>
+                <iframe style="position:absolute; top:0; left:0; width:100%; height:100%; border:0; display:block;" src="https://www.youtube-nocookie.com/embed/${item.ytId}?rel=0&autoplay=${autoplayParam}&playsinline=1" title="${displayTitle}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
                 ${fileNotice}
               `;
-            } else if (item.type === 'html5') {
-              const autoplayAttr = shouldAutoplay ? 'autoplay' : '';
+            } else {
+              // Video in production / channel preview (Never crash phone browsers with MIME type error)
               playerContainer.innerHTML = `
-                <video id="html5StationVideo" controls ${autoplayAttr} playsinline poster="${item.poster || ''}">
-                  <source src="${item.videoSrc}" type="video/mp4">
-                  Your browser does not support HTML5 video.
-                </video>
+                <div class="mfs-video-placeholder-card">
+                  <div class="mfs-placeholder-icon-wrap" style="color:#ef4444; border-color:#ef4444; background:rgba(239,68,68,0.15);">
+                    <i class="fa-brands fa-youtube"></i>
+                  </div>
+                  <span class="mfs-placeholder-badge">
+                    <i class="fa-solid fa-circle-play"></i> Video Walkthrough on Master Functional Skills
+                  </span>
+                  <h2 class="mfs-placeholder-heading" style="color:#fff; font-size:1.5rem; margin:6px 0;">${displayTitle}</h2>
+                  <p class="mfs-placeholder-text">
+                    Watch our step-by-step video solutions with Pearson Edexcel method marks [M1/A1], examiner trap alerts, and reverse sanity checks directly on our YouTube channel.
+                  </p>
+                  <div style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-top:10px;">
+                    <a href="https://www.youtube.com/@MasterFunctionalSkills" target="_blank" rel="noopener" class="btn-modal-yt" style="padding:11px 20px; font-size:0.92rem; background:#dc2626; color:#fff; border-radius:8px; text-decoration:none; font-weight:700; display:inline-flex; align-items:center; gap:8px;">
+                      <i class="fa-brands fa-youtube"></i> Open YouTube Channel
+                    </a>
+                    ${item.answers ? `<a href="${item.answers}" target="_blank" rel="noopener" class="btn-modal-answers" style="padding:11px 20px; font-size:0.92rem;"><i class="fa-solid fa-circle-check"></i> Worked Answers [M1/A1]</a>` : ''}
+                    ${item.worksheet ? `<a href="${item.worksheet}" target="_blank" rel="noopener" class="btn-modal-sheet" style="padding:11px 20px; font-size:0.92rem;"><i class="fa-regular fa-file-pdf"></i> Question Worksheet</a>` : ''}
+                  </div>
+                </div>
               `;
-              const v = document.getElementById('html5StationVideo');
-              if (v) {
-                v.addEventListener('ended', function () {
-                  window.MFS_STATION.next();
-                });
-              }
             }
 
             // Section Switcher Bar
@@ -1857,6 +1865,17 @@
             const quickMaterials = document.getElementById('heroQuickMaterials');
             const quickWorksheet = document.getElementById('heroQuickWorksheet');
             const quickAnswers = document.getElementById('heroQuickAnswers');
+            const quickYouTube = document.getElementById('heroQuickYouTube');
+
+            if (quickYouTube) {
+              if (item.ytId) {
+                quickYouTube.href = `https://youtu.be/${item.ytId}`;
+                quickYouTube.style.display = 'inline-flex';
+              } else {
+                quickYouTube.href = 'https://www.youtube.com/@MasterFunctionalSkills';
+                quickYouTube.style.display = 'inline-flex';
+              }
+            }
 
             if (item.worksheet) {
               document.getElementById('sideWorksheetBtn').href = item.worksheet;
@@ -1874,7 +1893,7 @@
               document.getElementById('sideReviseLabel').innerHTML = '<i class="fa-solid fa-clipboard-check"></i> Mark Scheme / Guide';
             }
             if (quickMaterials) {
-              quickMaterials.style.display = (item.worksheet || item.answers) ? 'grid' : 'none';
+              quickMaterials.style.display = 'grid';
             }
 
           } else {
@@ -1889,21 +1908,24 @@
 
             playerContainer.innerHTML = `
               <div class="mfs-video-placeholder-card">
-                <div class="mfs-placeholder-icon-wrap">
-                  <i class="fa-solid fa-clapperboard"></i>
+                <div class="mfs-placeholder-icon-wrap" style="color:#ef4444; border-color:#ef4444; background:rgba(239,68,68,0.15);">
+                  <i class="fa-brands fa-youtube"></i>
                 </div>
                 <span class="mfs-placeholder-badge">
-                  <i class="fa-solid fa-circle-play"></i> Video Walkthrough in Production
+                  <i class="fa-solid fa-circle-play"></i> Video Walkthrough on Master Functional Skills
                 </span>
-                <h2 class="mfs-placeholder-heading" style="color:#fff; font-size:1.6rem; margin:6px 0;">${displayTitle}</h2>
+                <h2 class="mfs-placeholder-heading" style="color:#fff; font-size:1.5rem; margin:6px 0;">${displayTitle}</h2>
                 <p class="mfs-placeholder-text">
                   Our specialist Functional Skills tutor is recording the complete step-by-step video solution with Pearson Edexcel method marks [M1/A1], examiner trap alerts, and reverse sanity checks.
                 </p>
-                <div style="display:flex; gap:14px; flex-wrap:wrap; justify-content:center; margin-top:10px;">
-                  <a href="worksheets/${cleanSlug}-answers.html" target="_blank" rel="noopener" class="btn-modal-answers" style="padding:12px 22px; font-size:0.95rem;">
+                <div style="display:flex; gap:12px; flex-wrap:wrap; justify-content:center; margin-top:10px;">
+                  <a href="https://www.youtube.com/@MasterFunctionalSkills" target="_blank" rel="noopener" class="btn-modal-yt" style="padding:11px 20px; font-size:0.92rem; background:#dc2626; color:#fff; border-radius:8px; text-decoration:none; font-weight:700; display:inline-flex; align-items:center; gap:8px;">
+                    <i class="fa-brands fa-youtube"></i> Open YouTube Channel
+                  </a>
+                  <a href="worksheets/${cleanSlug}-answers.html" target="_blank" rel="noopener" class="btn-modal-answers" style="padding:11px 20px; font-size:0.92rem;">
                     <i class="fa-solid fa-circle-check"></i> Open Step-by-Step Worked Answers
                   </a>
-                  <a href="worksheets/${cleanSlug}-worksheet.html" target="_blank" rel="noopener" class="btn-modal-sheet" style="padding:12px 22px; font-size:0.95rem;">
+                  <a href="worksheets/${cleanSlug}-worksheet.html" target="_blank" rel="noopener" class="btn-modal-sheet" style="padding:11px 20px; font-size:0.92rem;">
                     <i class="fa-regular fa-file-pdf"></i> Open Question Worksheet
                   </a>
                 </div>
@@ -1917,8 +1939,13 @@
             const quickMaterials = document.getElementById('heroQuickMaterials');
             const quickWorksheet = document.getElementById('heroQuickWorksheet');
             const quickAnswers = document.getElementById('heroQuickAnswers');
+            const quickYouTube = document.getElementById('heroQuickYouTube');
             if (quickWorksheet) quickWorksheet.href = `worksheets/${cleanSlug}-worksheet.html`;
             if (quickAnswers) quickAnswers.href = `worksheets/${cleanSlug}-answers.html`;
+            if (quickYouTube) {
+              quickYouTube.href = 'https://www.youtube.com/@MasterFunctionalSkills';
+              quickYouTube.style.display = 'inline-flex';
+            }
             if (quickMaterials) quickMaterials.style.display = 'grid';
           }
 

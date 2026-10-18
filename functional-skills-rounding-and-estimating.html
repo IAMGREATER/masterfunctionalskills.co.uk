@@ -504,7 +504,7 @@
 
         <!-- Master Comparison Table -->
         <div style="overflow-x:auto; margin-top:20px;">
-          <table class="math-master-table" style="width:100%;">
+          <table class="math-master-table table-stack-mobile" style="width:100%;">
             <thead>
               <tr>
                 <th style="background:#0284c7; color:#fff; width:22%;">Original Number</th>
@@ -515,61 +515,61 @@
             </thead>
             <tbody>
               <tr>
-                <td><strong style="font-size:1.35rem; color:#0f172a;">47.86</strong></td>
-                <td>
+                <td data-label="Original Number"><strong style="font-size:1.35rem; color:#0f172a;">47.86</strong></td>
+                <td data-label="To 1 Decimal Place (1 dp)">
                   <span class="math-calc-cell-large" style="color:#0284c7;">47.9</span>
                   <div style="font-size:0.82rem; color:#64748b;">(decider 6 &ge; 5 rounds 8 to 9)</div>
                 </td>
-                <td>
+                <td data-label="To 1 Significant Figure (1 sf)">
                   <span class="math-calc-cell-large" style="color:#16a34a;">50</span>
                   <div style="font-size:0.82rem; color:#64748b;">(first digit 4, decider 7 &ge; 5)</div>
                 </td>
-                <td>
+                <td data-label="To 2 Significant Figures (2 sf)">
                   <span class="math-calc-cell-large" style="color:#7e22ce;">48</span>
                   <div style="font-size:0.82rem; color:#64748b;">(first 2 digits 47, decider 8 &ge; 5)</div>
                 </td>
               </tr>
               <tr>
-                <td><strong style="font-size:1.35rem; color:#0f172a;">0.0482</strong></td>
-                <td>
+                <td data-label="Original Number"><strong style="font-size:1.35rem; color:#0f172a;">0.0482</strong></td>
+                <td data-label="To 1 Decimal Place (1 dp)">
                   <span class="math-calc-cell-large" style="color:#0284c7;">0.0</span>
                   <div style="font-size:0.82rem; color:#64748b;">(1st digit after dot is 0, decider 4)</div>
                 </td>
-                <td>
+                <td data-label="To 1 Significant Figure (1 sf)">
                   <span class="math-calc-cell-large" style="color:#16a34a;">0.05</span>
                   <div style="font-size:0.82rem; color:#64748b;">(1st non-zero is 4, decider 8 &ge; 5)</div>
                 </td>
-                <td>
+                <td data-label="To 2 Significant Figures (2 sf)">
                   <span class="math-calc-cell-large" style="color:#7e22ce;">0.048</span>
                   <div style="font-size:0.82rem; color:#64748b;">(digits 48, decider 2 &lt; 5)</div>
                 </td>
               </tr>
               <tr>
-                <td><strong style="font-size:1.35rem; color:#0f172a;">3,849</strong></td>
-                <td>
+                <td data-label="Original Number"><strong style="font-size:1.35rem; color:#0f172a;">3,849</strong></td>
+                <td data-label="To 1 Decimal Place (1 dp)">
                   <span class="math-calc-cell-large" style="color:#0284c7;">3,849.0</span>
                   <div style="font-size:0.82rem; color:#64748b;">(whole number padded with .0)</div>
                 </td>
-                <td>
+                <td data-label="To 1 Significant Figure (1 sf)">
                   <span class="math-calc-cell-large" style="color:#16a34a;">4,000</span>
                   <div style="font-size:0.82rem; color:#64748b;">(first digit 3, decider 8 &ge; 5)</div>
                 </td>
-                <td>
+                <td data-label="To 2 Significant Figures (2 sf)">
                   <span class="math-calc-cell-large" style="color:#7e22ce;">3,800</span>
                   <div style="font-size:0.82rem; color:#64748b;">(digits 38, decider 4 &lt; 5)</div>
                 </td>
               </tr>
               <tr>
-                <td><strong style="font-size:1.35rem; color:#0f172a;">0.00715</strong></td>
-                <td>
+                <td data-label="Original Number"><strong style="font-size:1.35rem; color:#0f172a;">0.00715</strong></td>
+                <td data-label="To 1 Decimal Place (1 dp)">
                   <span class="math-calc-cell-large" style="color:#0284c7;">0.0</span>
                   <div style="font-size:0.82rem; color:#64748b;">(1st digit after dot is 0)</div>
                 </td>
-                <td>
+                <td data-label="To 1 Significant Figure (1 sf)">
                   <span class="math-calc-cell-large" style="color:#16a34a;">0.007</span>
                   <div style="font-size:0.82rem; color:#64748b;">(1st non-zero is 7, decider 1 &lt; 5)</div>
                 </td>
-                <td>
+                <td data-label="To 2 Significant Figures (2 sf)">
                   <span class="math-calc-cell-large" style="color:#7e22ce;">0.0072</span>
                   <div style="font-size:0.82rem; color:#64748b;">(digits 71, decider 5 &ge; 5)</div>
                 </td>
@@ -666,7 +666,7 @@
         </p>
 
         <div style="overflow-x:auto; margin:16px 0;">
-          <table class="math-master-table">
+          <table class="math-master-table table-stack-mobile">
             <thead>
               <tr>
                 <th style="background:#ea580c; color:#fff; width:25%;">Rounding Direction</th>
@@ -677,22 +677,22 @@
             </thead>
             <tbody>
               <tr>
-                <td><strong>Both Values Rounded UP</strong><br><small style="color:#64748b;">e.g. 194 &rarr; 200, &pound;4.85 &rarr; &pound;5</small></td>
-                <td>Estimated product is LARGER than actual value (&pound;1,000 &gt; &pound;940.90)</td>
-                <td><span style="color:#ea580c; font-weight:800; font-size:1.18rem;"><i class="fa-solid fa-arrow-trend-up"></i> OVERESTIMATE</span></td>
-                <td><em>"Overestimate because both values were rounded up."</em></td>
+                <td data-label="Rounding Direction"><strong>Both Values Rounded UP</strong><br><small style="color:#64748b;">e.g. 194 &rarr; 200, &pound;4.85 &rarr; &pound;5</small></td>
+                <td data-label="Mathematical Impact">Estimated product is LARGER than actual value (&pound;1,000 &gt; &pound;940.90)</td>
+                <td data-label="Accredited Status"><span style="color:#ea580c; font-weight:800; font-size:1.18rem;"><i class="fa-solid fa-arrow-trend-up"></i> OVERESTIMATE</span></td>
+                <td data-label="Exam Reason Template"><em>"Overestimate because both values were rounded up."</em></td>
               </tr>
               <tr>
-                <td><strong>Both Values Rounded DOWN</strong><br><small style="color:#64748b;">e.g. 312 &rarr; 300, &pound;2.15 &rarr; &pound;2</small></td>
-                <td>Estimated product is SMALLER than actual value (&pound;600 &lt; &pound;670.80)</td>
-                <td><span style="color:#0284c7; font-weight:800; font-size:1.18rem;"><i class="fa-solid fa-arrow-trend-down"></i> UNDERESTIMATE</span></td>
-                <td><em>"Underestimate because both values were rounded down."</em></td>
+                <td data-label="Rounding Direction"><strong>Both Values Rounded DOWN</strong><br><small style="color:#64748b;">e.g. 312 &rarr; 300, &pound;2.15 &rarr; &pound;2</small></td>
+                <td data-label="Mathematical Impact">Estimated product is SMALLER than actual value (&pound;600 &lt; &pound;670.80)</td>
+                <td data-label="Accredited Status"><span style="color:#0284c7; font-weight:800; font-size:1.18rem;"><i class="fa-solid fa-arrow-trend-down"></i> UNDERESTIMATE</span></td>
+                <td data-label="Exam Reason Template"><em>"Underestimate because both values were rounded down."</em></td>
               </tr>
               <tr>
-                <td><strong>One UP, One DOWN</strong><br><small style="color:#64748b;">e.g. 194 &rarr; 200 (UP), &pound;5.20 &rarr; &pound;5 (DOWN)</small></td>
-                <td>The rounding errors partially cancel each other out</td>
-                <td><span style="color:#15803d; font-weight:800; font-size:1.18rem;"><i class="fa-solid fa-scale-balanced"></i> COMPENSATING</span></td>
-                <td><em>"Close estimate as one rounded up and one rounded down."</em></td>
+                <td data-label="Rounding Direction"><strong>One UP, One DOWN</strong><br><small style="color:#64748b;">e.g. 194 &rarr; 200 (UP), &pound;5.20 &rarr; &pound;5 (DOWN)</small></td>
+                <td data-label="Mathematical Impact">The rounding errors partially cancel each other out</td>
+                <td data-label="Accredited Status"><span style="color:#15803d; font-weight:800; font-size:1.18rem;"><i class="fa-solid fa-scale-balanced"></i> COMPENSATING</span></td>
+                <td data-label="Exam Reason Template"><em>"Close estimate as one rounded up and one rounded down."</em></td>
               </tr>
             </tbody>
           </table>

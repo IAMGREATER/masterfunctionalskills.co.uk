@@ -495,7 +495,7 @@
               
               
                 <div class="table-responsive" style="overflow-x:auto; -webkit-overflow-scrolling:touch; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:14px; margin:16px 0;">
-                  <table style="width:100%; border-collapse:collapse; text-align:center;">
+                  <table class="table-stack-mobile" style="width:100%; border-collapse:collapse; text-align:center;">
                     <thead>
                       <tr style="background:#0284c7; color:#fff;">
                         <th style="padding:8px; border:1px solid #cbd5e1;">Wait Time (mins)</th>
@@ -505,10 +505,10 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr><td style="padding:6px; border:1px solid #cbd5e1;">0 to 10</td><td style="padding:6px; border:1px solid #cbd5e1;">6</td><td style="padding:6px; border:1px solid #cbd5e1;">5</td><td style="padding:6px; border:1px solid #cbd5e1;">30</td></tr>
-                      <tr><td style="padding:6px; border:1px solid #cbd5e1;">10 to 20</td><td style="padding:6px; border:1px solid #cbd5e1;">14</td><td style="padding:6px; border:1px solid #cbd5e1;">15</td><td style="padding:6px; border:1px solid #cbd5e1;">210</td></tr>
-                      <tr><td style="padding:6px; border:1px solid #cbd5e1;">20 to 30</td><td style="padding:6px; border:1px solid #cbd5e1;">10</td><td style="padding:6px; border:1px solid #cbd5e1;">25</td><td style="padding:6px; border:1px solid #cbd5e1;">250</td></tr>
-                      <tr style="background:#e0f2fe; font-weight:800; color:#0369a1;"><td style="padding:6px; border:1px solid #cbd5e1;">Totals</td><td style="padding:6px; border:1px solid #cbd5e1;">&Sigma;f = 30</td><td style="padding:6px; border:1px solid #cbd5e1;">—</td><td style="padding:6px; border:1px solid #cbd5e1;">&Sigma;fx = 490</td></tr>
+                      <tr><td data-label="Wait Time (mins)" style="padding:6px; border:1px solid #cbd5e1;">0 to 10</td><td data-label="Frequency (f)" style="padding:6px; border:1px solid #cbd5e1;">6</td><td data-label="Midpoint (x)" style="padding:6px; border:1px solid #cbd5e1;">5</td><td data-label="f &times; x (fx)" style="padding:6px; border:1px solid #cbd5e1;">30</td></tr>
+                      <tr><td data-label="Wait Time (mins)" style="padding:6px; border:1px solid #cbd5e1;">10 to 20</td><td data-label="Frequency (f)" style="padding:6px; border:1px solid #cbd5e1;">14</td><td data-label="Midpoint (x)" style="padding:6px; border:1px solid #cbd5e1;">15</td><td data-label="f &times; x (fx)" style="padding:6px; border:1px solid #cbd5e1;">210</td></tr>
+                      <tr><td data-label="Wait Time (mins)" style="padding:6px; border:1px solid #cbd5e1;">20 to 30</td><td data-label="Frequency (f)" style="padding:6px; border:1px solid #cbd5e1;">10</td><td data-label="Midpoint (x)" style="padding:6px; border:1px solid #cbd5e1;">25</td><td data-label="f &times; x (fx)" style="padding:6px; border:1px solid #cbd5e1;">250</td></tr>
+                      <tr style="background:#e0f2fe; font-weight:800; color:#0369a1;"><td data-label="Wait Time (mins)" style="padding:6px; border:1px solid #cbd5e1;">Totals</td><td data-label="Frequency (f)" style="padding:6px; border:1px solid #cbd5e1;">&Sigma;f = 30</td><td data-label="Midpoint (x)" style="padding:6px; border:1px solid #cbd5e1;">—</td><td data-label="f &times; x (fx)" style="padding:6px; border:1px solid #cbd5e1;">&Sigma;fx = 490</td></tr>
                     </tbody>
                   </table>
                   <p style="margin-top:10px; font-weight:700; color:#0f172a;">Estimated Mean = 490 &divide; 30 = 16.33 minutes.</p>

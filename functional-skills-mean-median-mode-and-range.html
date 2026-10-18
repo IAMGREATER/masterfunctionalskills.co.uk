@@ -524,7 +524,7 @@
               
               
                 <div class="table-responsive" style="overflow-x:auto; -webkit-overflow-scrolling:touch; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:14px; margin:16px 0;">
-                  <table style="width:100%; border-collapse:collapse; text-align:left;">
+                  <table class="table-stack-mobile" style="width:100%; border-collapse:collapse; text-align:left;">
                     <thead>
                       <tr style="background:#0284c7; color:#fff;">
                         <th style="padding:8px; border:1px solid #cbd5e1;">Measure</th>
@@ -533,9 +533,9 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr><td style="padding:8px; border:1px solid #cbd5e1; font-weight:700;">Mean</td><td style="padding:8px; border:1px solid #cbd5e1;">Data is evenly spread with no extreme outliers (uses every value)</td><td style="padding:8px; border:1px solid #cbd5e1;">Distorted by one extreme high or low outlier</td></tr>
-                      <tr><td style="padding:8px; border:1px solid #cbd5e1; font-weight:700;">Median</td><td style="padding:8px; border:1px solid #cbd5e1;">Salaries or house prices where 1 extreme outlier would skew the mean</td><td style="padding:8px; border:1px solid #cbd5e1;">Ignores the exact size of outer values</td></tr>
-                      <tr><td style="padding:8px; border:1px solid #cbd5e1; font-weight:700;">Mode</td><td style="padding:8px; border:1px solid #cbd5e1;">Shoe/uniform sizes or categorical stock orders (most popular item)</td><td style="padding:8px; border:1px solid #cbd5e1;">May be no mode or more than one mode</td></tr>
+                      <tr><td data-label="Measure" style="padding:8px; border:1px solid #cbd5e1; font-weight:700;">Mean</td><td data-label="Best Used When..." style="padding:8px; border:1px solid #cbd5e1;">Data is evenly spread with no extreme outliers (uses every value)</td><td data-label="Limitation" style="padding:8px; border:1px solid #cbd5e1;">Distorted by one extreme high or low outlier</td></tr>
+                      <tr><td data-label="Measure" style="padding:8px; border:1px solid #cbd5e1; font-weight:700;">Median</td><td data-label="Best Used When..." style="padding:8px; border:1px solid #cbd5e1;">Salaries or house prices where 1 extreme outlier would skew the mean</td><td data-label="Limitation" style="padding:8px; border:1px solid #cbd5e1;">Ignores the exact size of outer values</td></tr>
+                      <tr><td data-label="Measure" style="padding:8px; border:1px solid #cbd5e1; font-weight:700;">Mode</td><td data-label="Best Used When..." style="padding:8px; border:1px solid #cbd5e1;">Shoe/uniform sizes or categorical stock orders (most popular item)</td><td data-label="Limitation" style="padding:8px; border:1px solid #cbd5e1;">May be no mode or more than one mode</td></tr>
                     </tbody>
                   </table>
                 </div>

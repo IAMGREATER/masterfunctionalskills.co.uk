@@ -1340,40 +1340,256 @@
   }
 
   /* ------------------------------------------------------------------------
-     H. SHRINK TABLES & MASTER DIRECTORIES
+     H. RESPONSIVE TABLES & MASTER DIRECTORIES (PUSH INFORMATION ONTO LINES)
+     Eliminates horizontal side-scrolling and data truncation across all tables
      ------------------------------------------------------------------------ */
   .table-responsive,
+  .boundaries-table-wrap,
+  .comparison-table-container,
+  .mfs-topic-body > div:has(table),
+  div[style*="overflow-x:auto"],
+  div[style*="overflow-x: auto"],
+  div[style*="overflow-x: scroll"],
   div:has(> table) {
     max-width: 100% !important;
-    overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch !important;
+    width: 100% !important;
+    overflow-x: visible !important;
+    -webkit-overflow-scrolling: auto !important;
+    box-sizing: border-box !important;
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
 
-  table {
-    display: block !important;
+  table,
+  table[style*="width"],
+  table[style*="min-width"] {
     width: 100% !important;
     max-width: 100% !important;
-    overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
     border-collapse: collapse !important;
   }
 
-  th, td {
-    padding: 4px 6px !important;
-    font-size: 0.75rem !important;
-    line-height: 1.25 !important;
+  th, td,
+  th *, td *,
+  th code, td code,
+  th span, td span {
+    white-space: normal !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
   }
 
-  .math-master-table {
+  /* Stacked card layout: push each piece of information onto another line */
+  .table-stack-mobile,
+  .course-compare-table,
+  .boundaries-table,
+  .comp-table,
+  .mfs-topic-body table:not(.keep-table-grid):not(.math-matrix-table),
+  div:has(> table):not(.keep-table-grid) > table:not(.keep-table-grid):not(.math-matrix-table) {
     display: block !important;
     width: 100% !important;
-    overflow-x: auto !important;
+    border: none !important;
+    background: transparent !important;
+    overflow-x: visible !important;
   }
 
-  .math-master-table th,
-  .math-master-table td {
-    padding: 4px 6px !important;
-    font-size: 0.74rem !important;
+  .table-stack-mobile thead,
+  .course-compare-table thead,
+  .boundaries-table thead,
+  .comp-table thead,
+  .mfs-topic-body table:not(.keep-table-grid):not(.math-matrix-table) thead,
+  div:has(> table):not(.keep-table-grid) > table:not(.keep-table-grid):not(.math-matrix-table) thead {
+    display: none !important;
+  }
+
+  .table-stack-mobile tbody,
+  .course-compare-table tbody,
+  .boundaries-table tbody,
+  .comp-table tbody,
+  .mfs-topic-body table:not(.keep-table-grid):not(.math-matrix-table) tbody,
+  div:has(> table):not(.keep-table-grid) > table:not(.keep-table-grid):not(.math-matrix-table) tbody {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 12px !important;
+    width: 100% !important;
+  }
+
+  .table-stack-mobile tr,
+  .course-compare-table tr,
+  .boundaries-table tr,
+  .comp-table tr,
+  .mfs-topic-body table:not(.keep-table-grid):not(.math-matrix-table) tr,
+  div:has(> table):not(.keep-table-grid) > table:not(.keep-table-grid):not(.math-matrix-table) tr {
+    display: block !important;
+    width: 100% !important;
+    background: #ffffff !important;
+    border: 1.5px solid #e2e8f0 !important;
+    border-radius: 12px !important;
+    padding: 12px 14px !important;
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.04) !important;
+    box-sizing: border-box !important;
+    margin-bottom: 8px !important;
+  }
+
+  /* Glare reduction & Dyslexia tint support for stacked cards */
+  html[data-tint="cream"] .table-stack-mobile tr,
+  html[data-tint="cream"] .boundaries-table tr,
+  html[data-tint="cream"] .course-compare-table tr,
+  html[data-tint="cream"] .comp-table tr,
+  html[data-tint="cream"] .mfs-topic-body table:not(.keep-table-grid):not(.math-matrix-table) tr {
+    background: #fdfbf7 !important;
+    border-color: #eedcc0 !important;
+  }
+  html[data-tint="soft-peach"] .table-stack-mobile tr,
+  html[data-tint="soft-peach"] .boundaries-table tr,
+  html[data-tint="soft-peach"] .course-compare-table tr,
+  html[data-tint="soft-peach"] .comp-table tr,
+  html[data-tint="soft-peach"] .mfs-topic-body table:not(.keep-table-grid):not(.math-matrix-table) tr {
+    background: #fff8f5 !important;
+    border-color: #ffd6c9 !important;
+  }
+  html[data-tint="cool-mist"] .table-stack-mobile tr,
+  html[data-tint="cool-mist"] .boundaries-table tr,
+  html[data-tint="cool-mist"] .course-compare-table tr,
+  html[data-tint="cool-mist"] .comp-table tr,
+  html[data-tint="cool-mist"] .mfs-topic-body table:not(.keep-table-grid):not(.math-matrix-table) tr {
+    background: #f4f8fa !important;
+    border-color: #cde2eb !important;
+  }
+  html[data-tint="soft-sage"] .table-stack-mobile tr,
+  html[data-tint="soft-sage"] .boundaries-table tr,
+  html[data-tint="soft-sage"] .course-compare-table tr,
+  html[data-tint="soft-sage"] .comp-table tr,
+  html[data-tint="soft-sage"] .mfs-topic-body table:not(.keep-table-grid):not(.math-matrix-table) tr {
+    background: #f5f9f6 !important;
+    border-color: #d1e5d7 !important;
+  }
+
+  .table-stack-mobile td,
+  .course-compare-table td,
+  .boundaries-table td,
+  .comp-table td,
+  .mfs-topic-body table:not(.keep-table-grid):not(.math-matrix-table) td,
+  div:has(> table):not(.keep-table-grid) > table:not(.keep-table-grid):not(.math-matrix-table) td {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 6px 0 !important;
+    border: none !important;
+    border-bottom: 1px dashed #e2e8f0 !important;
+    font-size: 0.85rem !important;
+    line-height: 1.45 !important;
+    color: #334155 !important;
+    text-align: left !important;
+  }
+
+  .table-stack-mobile td:last-child,
+  .course-compare-table td:last-child,
+  .boundaries-table td:last-child,
+  .comp-table td:last-child,
+  .mfs-topic-body table:not(.keep-table-grid):not(.math-matrix-table) td:last-child,
+  div:has(> table):not(.keep-table-grid) > table:not(.keep-table-grid):not(.math-matrix-table) td:last-child {
+    border-bottom: none !important;
+    padding-bottom: 0 !important;
+  }
+
+  /* First cell styled as prominent card header */
+  .table-stack-mobile td:first-child,
+  .course-compare-table td:first-child,
+  .boundaries-table td:first-child,
+  .comp-table td:first-child,
+  .mfs-topic-body table:not(.keep-table-grid):not(.math-matrix-table) td:first-child,
+  div:has(> table):not(.keep-table-grid) > table:not(.keep-table-grid):not(.math-matrix-table) td:first-child {
+    font-size: 0.95rem !important;
+    font-weight: 800 !important;
+    color: #0f172a !important;
+    padding-top: 0 !important;
+    padding-bottom: 8px !important;
+    border-bottom: 1.5px solid #cbd5e1 !important;
+    margin-bottom: 6px !important;
+  }
+
+  /* Display data-label attribute as field header before the data */
+  .table-stack-mobile td[data-label]:not(:first-child)::before,
+  .course-compare-table td[data-label]:not(:first-child)::before,
+  .boundaries-table td[data-label]:not(:first-child)::before,
+  .comp-table td[data-label]:not(:first-child)::before,
+  .mfs-topic-body table:not(.keep-table-grid):not(.math-matrix-table) td[data-label]:not(:first-child)::before,
+  div:has(> table):not(.keep-table-grid) > table:not(.keep-table-grid):not(.math-matrix-table) td[data-label]:not(:first-child)::before {
+    content: attr(data-label);
+    display: block !important;
+    font-size: 0.72rem !important;
+    font-weight: 800 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    color: #0284c7 !important;
+    margin-bottom: 2px !important;
+  }
+
+  .boundaries-table td[data-label]:first-child::before,
+  .course-compare-table td[data-label]:first-child::before {
+    content: attr(data-label);
+    display: block !important;
+    font-size: 0.70rem !important;
+    font-weight: 700 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.5px !important;
+    color: #64748b !important;
+    margin-bottom: 2px !important;
+  }
+
+  /* Compact grid preservation for matrix tables */
+  table.keep-table-grid,
+  table.math-matrix-table {
+    display: table !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    table-layout: auto !important;
+    border-collapse: collapse !important;
+    margin: 10px 0 !important;
+  }
+
+  table.keep-table-grid thead,
+  table.math-matrix-table thead {
+    display: table-header-group !important;
+  }
+
+  table.keep-table-grid tbody,
+  table.math-matrix-table tbody {
+    display: table-row-group !important;
+  }
+
+  table.keep-table-grid tr,
+  table.math-matrix-table tr {
+    display: table-row !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+  }
+
+  table.keep-table-grid th,
+  table.keep-table-grid td,
+  table.math-matrix-table th,
+  table.math-matrix-table td {
+    display: table-cell !important;
+    width: auto !important;
+    padding: 4px 3px !important;
+    font-size: 0.70rem !important;
+    line-height: 1.2 !important;
+    text-align: center !important;
+    border: 1px solid #cbd5e1 !important;
+    white-space: normal !important;
+    word-break: break-word !important;
+    overflow-wrap: break-word !important;
+  }
+
+  table.keep-table-grid td::before,
+  table.math-matrix-table td::before {
+    display: none !important;
   }
 
   /* ------------------------------------------------------------------------

@@ -442,7 +442,7 @@
                 <div class="math-two-col-grid">
                   <!-- Col 1: Big Visual Grid Table -->
                   <div style="flex:1; min-width:320px;">
-                    <table class="math-master-table" style="width:100%; border-collapse:collapse; text-align:center; font-size:1.15rem;">
+                    <table class="math-master-table keep-table-grid math-matrix-table" style="width:100%; border-collapse:collapse; text-align:center; font-size:1.15rem;">
                       <thead>
                         <tr style="background:#0284c7; color:#fff;">
                           <th style="padding:12px; font-size:1.5rem; font-weight:900;">&times;</th>
@@ -453,31 +453,31 @@
                       </thead>
                       <tbody>
                         <tr>
-                          <td style="padding:14px; font-weight:800; background:#f0f9ff; color:#0369a1; font-size:1.3rem;">30 <span style="font-size:0.8rem; font-weight:600; display:block; color:#64748b;">(TENS)</span></td>
-                          <td style="padding:14px; font-weight:800; color:#0284c7; font-size:1.45rem;">
+                          <td data-label="&times;" style="padding:14px; font-weight:800; background:#f0f9ff; color:#0369a1; font-size:1.3rem;">30 <span style="font-size:0.8rem; font-weight:600; display:block; color:#64748b;">(TENS)</span></td>
+                          <td data-label="40 (TENS)" style="padding:14px; font-weight:800; color:#0284c7; font-size:1.45rem;">
                             <div style="font-size:0.85rem; color:#64748b; font-weight:600; margin-bottom:2px;">30 &times; 40</div>
                             1,200
                           </td>
-                          <td style="padding:14px; font-weight:800; color:#0284c7; font-size:1.45rem;">
+                          <td data-label="6 (UNITS)" style="padding:14px; font-weight:800; color:#0284c7; font-size:1.45rem;">
                             <div style="font-size:0.85rem; color:#64748b; font-weight:600; margin-bottom:2px;">30 &times; 6</div>
                             180
                           </td>
-                          <td style="padding:14px; font-weight:900; color:#0f172a; background:#f8fafc; font-size:1.45rem;">
+                          <td data-label="ROW SUBTOTAL" style="padding:14px; font-weight:900; color:#0f172a; background:#f8fafc; font-size:1.45rem;">
                             <div style="font-size:0.82rem; color:#64748b; font-weight:600; margin-bottom:2px;">1,200 + 180</div>
                             1,380
                           </td>
                         </tr>
                         <tr>
-                          <td style="padding:14px; font-weight:800; background:#f0f9ff; color:#0369a1; font-size:1.3rem;">5 <span style="font-size:0.8rem; font-weight:600; display:block; color:#64748b;">(UNITS)</span></td>
-                          <td style="padding:14px; font-weight:800; color:#0284c7; font-size:1.45rem;">
+                          <td data-label="&times;" style="padding:14px; font-weight:800; background:#f0f9ff; color:#0369a1; font-size:1.3rem;">5 <span style="font-size:0.8rem; font-weight:600; display:block; color:#64748b;">(UNITS)</span></td>
+                          <td data-label="40 (TENS)" style="padding:14px; font-weight:800; color:#0284c7; font-size:1.45rem;">
                             <div style="font-size:0.85rem; color:#64748b; font-weight:600; margin-bottom:2px;">5 &times; 40</div>
                             200
                           </td>
-                          <td style="padding:14px; font-weight:800; color:#0284c7; font-size:1.45rem;">
+                          <td data-label="6 (UNITS)" style="padding:14px; font-weight:800; color:#0284c7; font-size:1.45rem;">
                             <div style="font-size:0.85rem; color:#64748b; font-weight:600; margin-bottom:2px;">5 &times; 6</div>
                             30
                           </td>
-                          <td style="padding:14px; font-weight:900; color:#0f172a; background:#f8fafc; font-size:1.45rem;">
+                          <td data-label="ROW SUBTOTAL" style="padding:14px; font-weight:900; color:#0f172a; background:#f8fafc; font-size:1.45rem;">
                             <div style="font-size:0.82rem; color:#64748b; font-weight:600; margin-bottom:2px;">200 + 30</div>
                             230
                           </td>
@@ -485,10 +485,10 @@
                       </tbody>
                       <tfoot>
                         <tr style="background:#dcfce7; border-top:3px solid #86efac;">
-                          <td colspan="3" style="padding:14px 18px; text-align:right; font-weight:800; color:#166534; font-size:1.2rem;">
+                          <td data-label="&times;" colspan="3" style="padding:14px 18px; text-align:right; font-weight:800; color:#166534; font-size:1.2rem;">
                             GRAND SUM: 1,380 + 230 =
                           </td>
-                          <td style="padding:14px; font-weight:900; color:#15803d; font-size:1.85rem;">
+                          <td data-label="40 (TENS)" style="padding:14px; font-weight:900; color:#15803d; font-size:1.85rem;">
                             1,610 &check;
                           </td>
                         </tr>

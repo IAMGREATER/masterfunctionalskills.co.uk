@@ -146,12 +146,14 @@
   justify-content: center;
 }
 
-.mfs-player-ratio-box video {
+.mfs-player-ratio-box video,
+.mfs-player-ratio-box iframe {
   width: 100%;
   height: 100%;
   object-fit: contain;
   background: #000;
   display: block;
+  border: 0;
 }
 
 /* In-Production Placeholder Screen */

@@ -194,8 +194,17 @@
       background: #ffffff;
       border: 1px solid var(--border);
       border-radius: 16px;
-      overflow: hidden;
+      overflow-x: visible;
       box-shadow: 0 4px 18px rgba(7, 13, 30, 0.04);
+    }
+    @media (max-width: 768px) {
+      .boundaries-table-wrap {
+        margin-top: 24px;
+        background: transparent;
+        border: none;
+        box-shadow: none;
+        overflow-x: visible;
+      }
     }
     .boundaries-table {
       width: 100%;
@@ -546,7 +555,7 @@
           <span style="font-size:0.82rem; font-weight:700; color:var(--text-muted);"><i class="fa-solid fa-circle-info"></i> Boundaries vary ±2 marks per series</span>
         </div>
 
-        <table class="boundaries-table">
+        <table class="boundaries-table table-stack-mobile">
           <thead>
             <tr>
               <th>Exam Board</th>
@@ -559,60 +568,60 @@
           </thead>
           <tbody>
             <tr>
-              <td><strong>Pearson Edexcel</strong></td>
-              <td>Maths Level 2</td>
-              <td>Sec A: Non-Calc (16m) + Sec B: Calc (48m)</td>
-              <td>64 Marks</td>
-              <td>35 – 37 Marks</td>
-              <td><span style="font-weight:700; color:#00b87c;">~56%</span></td>
+              <td data-label="Exam Board"><strong>Pearson Edexcel</strong></td>
+              <td data-label="Subject & Level">Maths Level 2</td>
+              <td data-label="Paper Components">Sec A: Non-Calc (16m) + Sec B: Calc (48m)</td>
+              <td data-label="Total Marks">64 Marks</td>
+              <td data-label="Typical Pass Cutoff">35 – 37 Marks</td>
+              <td data-label="Pass %"><span style="font-weight:700; color:#00b87c;">~56%</span></td>
             </tr>
             <tr>
-              <td><strong>City & Guilds</strong></td>
-              <td>Maths Level 2</td>
-              <td>Sec 1: Non-Calc (15m) + Sec 2: Calc (45m)</td>
-              <td>60 Marks</td>
-              <td>33 – 35 Marks</td>
-              <td><span style="font-weight:700; color:#00b87c;">~55%</span></td>
+              <td data-label="Exam Board"><strong>City & Guilds</strong></td>
+              <td data-label="Subject & Level">Maths Level 2</td>
+              <td data-label="Paper Components">Sec 1: Non-Calc (15m) + Sec 2: Calc (45m)</td>
+              <td data-label="Total Marks">60 Marks</td>
+              <td data-label="Typical Pass Cutoff">33 – 35 Marks</td>
+              <td data-label="Pass %"><span style="font-weight:700; color:#00b87c;">~55%</span></td>
             </tr>
             <tr>
-              <td><strong>Open Awards</strong></td>
-              <td>Maths Level 2</td>
-              <td>Section A (15m) + Section B (45m)</td>
-              <td>60 Marks</td>
-              <td>32 – 34 Marks</td>
-              <td><span style="font-weight:700; color:#00b87c;">~54%</span></td>
+              <td data-label="Exam Board"><strong>Open Awards</strong></td>
+              <td data-label="Subject & Level">Maths Level 2</td>
+              <td data-label="Paper Components">Section A (15m) + Section B (45m)</td>
+              <td data-label="Total Marks">60 Marks</td>
+              <td data-label="Typical Pass Cutoff">32 – 34 Marks</td>
+              <td data-label="Pass %"><span style="font-weight:700; color:#00b87c;">~54%</span></td>
             </tr>
             <tr>
-              <td><strong>NCFE</strong></td>
-              <td>Maths Level 2</td>
-              <td>Section A (15m) + Section B (45m)</td>
-              <td>60 Marks</td>
-              <td>32 – 35 Marks</td>
-              <td><span style="font-weight:700; color:#00b87c;">~55%</span></td>
+              <td data-label="Exam Board"><strong>NCFE</strong></td>
+              <td data-label="Subject & Level">Maths Level 2</td>
+              <td data-label="Paper Components">Section A (15m) + Section B (45m)</td>
+              <td data-label="Total Marks">60 Marks</td>
+              <td data-label="Typical Pass Cutoff">32 – 35 Marks</td>
+              <td data-label="Pass %"><span style="font-weight:700; color:#00b87c;">~55%</span></td>
             </tr>
             <tr>
-              <td><strong>AQA</strong></td>
-              <td>Maths Level 2</td>
-              <td>Paper 1 Non-Calc (20m) + Paper 2 Calc (60m)</td>
-              <td>80 Marks</td>
-              <td>42 – 46 Marks</td>
-              <td><span style="font-weight:700; color:#00b87c;">~55%</span></td>
+              <td data-label="Exam Board"><strong>AQA</strong></td>
+              <td data-label="Subject & Level">Maths Level 2</td>
+              <td data-label="Paper Components">Paper 1 Non-Calc (20m) + Paper 2 Calc (60m)</td>
+              <td data-label="Total Marks">80 Marks</td>
+              <td data-label="Typical Pass Cutoff">42 – 46 Marks</td>
+              <td data-label="Pass %"><span style="font-weight:700; color:#00b87c;">~55%</span></td>
             </tr>
             <tr>
-              <td><strong>Pearson Edexcel</strong></td>
-              <td>English Level 2</td>
-              <td>Reading (35m) & Writing (50m)</td>
-              <td>85 Marks</td>
-              <td>Reading: 19–21m | Writing: 28–30m</td>
-              <td><span style="font-weight:700; color:#00b87c;">~58%</span></td>
+              <td data-label="Exam Board"><strong>Pearson Edexcel</strong></td>
+              <td data-label="Subject & Level">English Level 2</td>
+              <td data-label="Paper Components">Reading (35m) & Writing (50m)</td>
+              <td data-label="Total Marks">85 Marks</td>
+              <td data-label="Typical Pass Cutoff">Reading: 19–21m | Writing: 28–30m</td>
+              <td data-label="Pass %"><span style="font-weight:700; color:#00b87c;">~58%</span></td>
             </tr>
             <tr>
-              <td><strong>City & Guilds</strong></td>
-              <td>English Level 2</td>
-              <td>Reading (30m) & Writing (54m)</td>
-              <td>84 Marks</td>
-              <td>Reading: 18m | Writing: 32m</td>
-              <td><span style="font-weight:700; color:#00b87c;">~57%</span></td>
+              <td data-label="Exam Board"><strong>City & Guilds</strong></td>
+              <td data-label="Subject & Level">English Level 2</td>
+              <td data-label="Paper Components">Reading (30m) & Writing (54m)</td>
+              <td data-label="Total Marks">84 Marks</td>
+              <td data-label="Typical Pass Cutoff">Reading: 18m | Writing: 32m</td>
+              <td data-label="Pass %"><span style="font-weight:700; color:#00b87c;">~57%</span></td>
             </tr>
           </tbody>
         </table>

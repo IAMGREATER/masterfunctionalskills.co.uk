@@ -412,7 +412,7 @@
               
               
                 <div class="table-responsive" style="overflow-x:auto; -webkit-overflow-scrolling:touch; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:14px; margin:16px 0;">
-                  <table style="width:100%; border-collapse:collapse; text-align:center;">
+                  <table class="table-stack-mobile" style="width:100%; border-collapse:collapse; text-align:center;">
                     <thead>
                       <tr style="background:#0284c7; color:#fff;">
                         <th style="padding:8px; border:1px solid #cbd5e1;">Time Period</th>
@@ -422,10 +422,10 @@
                       </tr>
                     </thead>
                     <tbody>
-                      <tr><td style="padding:6px; border:1px solid #cbd5e1; font-weight:700;">Midnight Hour</td><td style="padding:6px; border:1px solid #cbd5e1;">12:25 am</td><td style="padding:6px; border:1px solid #cbd5e1;">00:25</td><td style="padding:6px; border:1px solid #cbd5e1;">Replace 12 am with 00</td></tr>
-                      <tr><td style="padding:6px; border:1px solid #cbd5e1; font-weight:700;">Morning (AM)</td><td style="padding:6px; border:1px solid #cbd5e1;">8:40 am</td><td style="padding:6px; border:1px solid #cbd5e1;">08:40</td><td style="padding:6px; border:1px solid #cbd5e1;">Add leading zero if under 10</td></tr>
-                      <tr><td style="padding:6px; border:1px solid #cbd5e1; font-weight:700;">Noon Hour</td><td style="padding:6px; border:1px solid #cbd5e1;">12:30 pm</td><td style="padding:6px; border:1px solid #cbd5e1;">12:30</td><td style="padding:6px; border:1px solid #cbd5e1;">Keep 12 unchanged</td></tr>
-                      <tr><td style="padding:6px; border:1px solid #cbd5e1; font-weight:700;">Afternoon / Evening (PM)</td><td style="padding:6px; border:1px solid #cbd5e1;">4:15 pm</td><td style="padding:6px; border:1px solid #cbd5e1;">16:15</td><td style="padding:6px; border:1px solid #cbd5e1;">Add 12 to the hour (4 + 12 = 16)</td></tr>
+                      <tr><td data-label="Time Period" style="padding:6px; border:1px solid #cbd5e1; font-weight:700;">Midnight Hour</td><td data-label="12-Hour Clock" style="padding:6px; border:1px solid #cbd5e1;">12:25 am</td><td data-label="24-Hour Clock (4 Digits)" style="padding:6px; border:1px solid #cbd5e1;">00:25</td><td data-label="Conversion Rule" style="padding:6px; border:1px solid #cbd5e1;">Replace 12 am with 00</td></tr>
+                      <tr><td data-label="Time Period" style="padding:6px; border:1px solid #cbd5e1; font-weight:700;">Morning (AM)</td><td data-label="12-Hour Clock" style="padding:6px; border:1px solid #cbd5e1;">8:40 am</td><td data-label="24-Hour Clock (4 Digits)" style="padding:6px; border:1px solid #cbd5e1;">08:40</td><td data-label="Conversion Rule" style="padding:6px; border:1px solid #cbd5e1;">Add leading zero if under 10</td></tr>
+                      <tr><td data-label="Time Period" style="padding:6px; border:1px solid #cbd5e1; font-weight:700;">Noon Hour</td><td data-label="12-Hour Clock" style="padding:6px; border:1px solid #cbd5e1;">12:30 pm</td><td data-label="24-Hour Clock (4 Digits)" style="padding:6px; border:1px solid #cbd5e1;">12:30</td><td data-label="Conversion Rule" style="padding:6px; border:1px solid #cbd5e1;">Keep 12 unchanged</td></tr>
+                      <tr><td data-label="Time Period" style="padding:6px; border:1px solid #cbd5e1; font-weight:700;">Afternoon / Evening (PM)</td><td data-label="12-Hour Clock" style="padding:6px; border:1px solid #cbd5e1;">4:15 pm</td><td data-label="24-Hour Clock (4 Digits)" style="padding:6px; border:1px solid #cbd5e1;">16:15</td><td data-label="Conversion Rule" style="padding:6px; border:1px solid #cbd5e1;">Add 12 to the hour (4 + 12 = 16)</td></tr>
                     </tbody>
                   </table>
                 </div>

@@ -421,57 +421,62 @@
   <!-- Left Column Calculation Card -->
   <rect x="22" y="62" width="310" height="238" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
 
+  <!-- Column Place Value Headers -->
+  <text x="120" y="80" font-size="12" font-weight="800" fill="#64748b" text-anchor="middle">T</text>
+  <text x="156" y="80" font-size="12" font-weight="800" fill="#64748b" text-anchor="middle">U</text>
+  <text x="184" y="80" font-size="12" font-weight="800" fill="#dc2626" text-anchor="middle">&bull;</text>
+  <text x="212" y="80" font-size="12" font-weight="800" fill="#64748b" text-anchor="middle">t</text>
+  <text x="248" y="80" font-size="12" font-weight="800" fill="#64748b" text-anchor="middle">h</text>
+  <line x1="38" y1="86" x2="286" y2="86" stroke="#e2e8f0" stroke-width="1.5"/>
+
   <!-- Red Vertical Decimal Guideline -->
   <line x1="184" y1="72" x2="184" y2="286" stroke="#ef4444" stroke-width="2" stroke-dasharray="5,4" opacity="0.85"/>
 
-  <!-- Row 1: £34.75 -->
+  <!-- Row 1: 34.75 -->
   <g font-size="28" font-weight="800" fill="#0f172a">
-    <text x="78" y="106" text-anchor="middle">£</text>
-    <text x="120" y="106" text-anchor="middle">3</text>
-    <text x="156" y="106" text-anchor="middle">4</text>
-    <circle cx="184" cy="103" r="3.2" fill="#0f172a"/>
-    <text x="212" y="106" text-anchor="middle">7</text>
-    <text x="248" y="106" text-anchor="middle">5</text>
+    <text x="120" y="112" text-anchor="middle">3</text>
+    <text x="156" y="112" text-anchor="middle">4</text>
+    <circle cx="184" cy="109" r="3.2" fill="#0f172a"/>
+    <text x="212" y="112" text-anchor="middle">7</text>
+    <text x="248" y="112" text-anchor="middle">5</text>
   </g>
 
-  <!-- Row 2: £ 8.60 -->
+  <!-- Row 2: 8.60 (padded zero) -->
   <g font-size="28" font-weight="800" fill="#0f172a">
-    <text x="78" y="148" text-anchor="middle">£</text>
-    <text x="156" y="148" text-anchor="middle">8</text>
-    <circle cx="184" cy="145" r="3.2" fill="#0f172a"/>
-    <text x="212" y="148" text-anchor="middle">6</text>
-    <text x="248" y="148" text-anchor="middle">0</text>
+    <text x="156" y="152" text-anchor="middle">8</text>
+    <circle cx="184" cy="149" r="3.2" fill="#0f172a"/>
+    <text x="212" y="152" text-anchor="middle">6</text>
+    <rect x="236" y="129" width="24" height="30" rx="4" fill="#dcfce7"/>
+    <text x="248" y="152" font-weight="800" fill="#15803d" text-anchor="middle">0</text>
   </g>
 
-  <!-- Row 3: + £12.08 -->
-  <text x="46" y="190" font-size="26" font-weight="800" fill="#0284c7" text-anchor="middle">+</text>
+  <!-- Row 3: + 12.08 (Operation + to far left, out of the way) -->
+  <text x="46" y="192" font-size="28" font-weight="900" fill="#0284c7" text-anchor="middle">+</text>
   <g font-size="28" font-weight="800" fill="#0f172a">
-    <text x="78" y="190" text-anchor="middle">£</text>
-    <text x="120" y="190" text-anchor="middle">1</text>
-    <text x="156" y="190" text-anchor="middle">2</text>
-    <circle cx="184" cy="187" r="3.2" fill="#0f172a"/>
-    <text x="212" y="190" text-anchor="middle">0</text>
-    <text x="248" y="190" text-anchor="middle">8</text>
+    <text x="120" y="192" text-anchor="middle">1</text>
+    <text x="156" y="192" text-anchor="middle">2</text>
+    <circle cx="184" cy="189" r="3.2" fill="#0f172a"/>
+    <text x="212" y="192" text-anchor="middle">0</text>
+    <text x="248" y="192" text-anchor="middle">8</text>
   </g>
 
   <!-- Calculation Divider Line -->
-  <line x1="38" y1="208" x2="286" y2="208" stroke="#0f172a" stroke-width="2.5"/>
+  <line x1="38" y1="210" x2="286" y2="210" stroke="#0f172a" stroke-width="2.5"/>
 
   <!-- Carries row -->
-  <g font-size="14" font-weight="800" fill="#64748b">
-    <text x="120" y="224" text-anchor="middle">1</text>
-    <text x="156" y="224" text-anchor="middle">1</text>
-    <text x="212" y="224" text-anchor="middle">1</text>
+  <g font-size="14" font-weight="800" fill="#dc2626">
+    <text x="120" y="226" text-anchor="middle">¹</text>
+    <text x="156" y="226" text-anchor="middle">¹</text>
+    <text x="212" y="226" text-anchor="middle">¹</text>
   </g>
 
-  <!-- Result Row: £55.43 -->
-  <g font-size="30" font-weight="800" fill="#15803d">
-    <text x="78" y="258" text-anchor="middle">£</text>
-    <text x="120" y="258" text-anchor="middle">5</text>
-    <text x="156" y="258" text-anchor="middle">5</text>
-    <circle cx="184" cy="255" r="3.4" fill="#15803d"/>
-    <text x="212" y="258" text-anchor="middle">4</text>
-    <text x="248" y="258" text-anchor="middle">3</text>
+  <!-- Result Row: 55.43 (No currency inside calculation) -->
+  <g font-size="30" font-weight="900" fill="#15803d">
+    <text x="120" y="260" text-anchor="middle">5</text>
+    <text x="156" y="260" text-anchor="middle">5</text>
+    <circle cx="184" cy="257" r="3.4" fill="#15803d"/>
+    <text x="212" y="260" text-anchor="middle">4</text>
+    <text x="248" y="260" text-anchor="middle">3</text>
   </g>
 
   <!-- Double Underline -->
@@ -486,14 +491,14 @@
   <text x="394" y="137" font-size="14.5" font-weight="600" fill="#1e293b">Align decimal points vertically (red line).</text>
   
   <circle cx="380" cy="168" r="3.5" fill="#2563eb"/>
-  <text x="394" y="173" font-size="14.5" font-weight="600" fill="#1e293b">Fill missing trailing zero: £8.6 → £8.60.</text>
+  <text x="394" y="173" font-size="14.5" font-weight="600" fill="#1e293b">Fill missing trailing zero: 8.6 → 8.60.</text>
   
   <circle cx="380" cy="204" r="3.5" fill="#2563eb"/>
   <text x="394" y="209" font-size="14.5" font-weight="600" fill="#1e293b">Currency MUST always have 2 decimal places.</text>
   
   <!-- Green Highlight Badge -->
   <rect x="372" y="232" width="344" height="46" rx="8" fill="#dcfce7" stroke="#86efac" stroke-width="1.5"/>
-  <text x="544" y="261" font-size="15" font-weight="800" fill="#15803d" text-anchor="middle">Write £55.43, never £55.4 ✓</text>
+  <text x="544" y="261" font-size="15" font-weight="800" fill="#15803d" text-anchor="middle">Final Answer: £55.43 (Units added after calc) ✓</text>
 </svg></div>
               
                 <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:18px; margin:16px 0;">

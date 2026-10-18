@@ -2643,13 +2643,14 @@ p {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 0.95em;
+  width: 1.35em;
   height: 3px;
   background-color: #dc2626;
-  transform: translate(-50%, -50%) rotate(-50deg);
+  transform: translate(-50%, -50%) rotate(-45deg);
   transform-origin: center center;
   border-radius: 2px;
   pointer-events: none;
+  z-index: 2;
 }
 
 /* Step-by-Step Breakdown Cards */

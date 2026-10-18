@@ -63,18 +63,40 @@ CARDS_A = [
         "svg_html": wrap_svg("""
           <g transform="translate(50, 15)">
             <rect x="0" y="0" width="160" height="135" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.8"/>
-            <text x="80" y="24" font-size="11" font-weight="800" fill="#1e40af" text-anchor="middle">SUBTRACTION</text>
-            <text x="80" y="55" font-size="14" font-weight="800" fill="#0f172a" text-anchor="middle">5 2 4</text>
-            <text x="80" y="80" font-size="14" font-weight="800" fill="#dc2626" text-anchor="middle">- 1 6 8</text>
-            <line x1="20" y1="92" x2="140" y2="92" stroke="#0f172a" stroke-width="1.5"/>
-            <text x="80" y="115" font-size="15" font-weight="900" fill="#059669" text-anchor="middle">3 5 6</text>
+            <text x="80" y="22" font-size="11" font-weight="800" fill="#1e40af" text-anchor="middle">SUBTRACTION (BORROW)</text>
+            <text x="56" y="42" font-size="10.5" font-weight="900" fill="#dc2626" text-anchor="middle">4</text>
+            <text x="86" y="42" font-size="10.5" font-weight="900" fill="#dc2626" text-anchor="middle">11</text>
+            <text x="116" y="42" font-size="10.5" font-weight="900" fill="#dc2626" text-anchor="middle">14</text>
+            <text x="56" y="62" font-size="15" font-weight="800" fill="#94a3b8" text-anchor="middle">5</text>
+            <line x1="48" y1="67" x2="64" y2="51" stroke="#dc2626" stroke-width="2" stroke-linecap="round"/>
+            <text x="86" y="62" font-size="15" font-weight="800" fill="#94a3b8" text-anchor="middle">2</text>
+            <line x1="78" y1="67" x2="94" y2="51" stroke="#dc2626" stroke-width="2" stroke-linecap="round"/>
+            <text x="116" y="62" font-size="15" font-weight="800" fill="#94a3b8" text-anchor="middle">4</text>
+            <line x1="108" y1="67" x2="124" y2="51" stroke="#dc2626" stroke-width="2" stroke-linecap="round"/>
+            <text x="26" y="84" font-size="18" font-weight="900" fill="#0284c7" text-anchor="middle">&minus;</text>
+            <text x="56" y="84" font-size="15" font-weight="800" fill="#0f172a" text-anchor="middle">1</text>
+            <text x="86" y="84" font-size="15" font-weight="800" fill="#0f172a" text-anchor="middle">6</text>
+            <text x="116" y="84" font-size="15" font-weight="800" fill="#0f172a" text-anchor="middle">8</text>
+            <line x1="20" y1="94" x2="140" y2="94" stroke="#0f172a" stroke-width="2"/>
+            <text x="56" y="118" font-size="16" font-weight="900" fill="#059669" text-anchor="middle">3</text>
+            <text x="86" y="118" font-size="16" font-weight="900" fill="#059669" text-anchor="middle">5</text>
+            <text x="116" y="118" font-size="16" font-weight="900" fill="#059669" text-anchor="middle">6</text>
           </g>
           <g transform="translate(250, 15)">
             <rect x="0" y="0" width="160" height="135" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.8"/>
-            <text x="80" y="24" font-size="11" font-weight="800" fill="#15803d" text-anchor="middle">SHORT DIVISION</text>
-            <text x="80" y="60" font-size="14" font-weight="800" fill="#0f172a" text-anchor="middle">6 ) 8 5 ²4</text>
-            <line x1="40" y1="75" x2="120" y2="75" stroke="#0f172a" stroke-width="1.5"/>
-            <text x="80" y="105" font-size="15" font-weight="900" fill="#059669" text-anchor="middle">1 4 2</text>
+            <text x="80" y="22" font-size="11" font-weight="800" fill="#15803d" text-anchor="middle">SHORT BUS-STOP DIVISION</text>
+            <text x="64" y="52" font-size="16" font-weight="900" fill="#15803d" text-anchor="middle">1</text>
+            <text x="92" y="52" font-size="16" font-weight="900" fill="#15803d" text-anchor="middle">4</text>
+            <text x="120" y="52" font-size="16" font-weight="900" fill="#15803d" text-anchor="middle">2</text>
+            <path d="M 46 95 L 46 58 L 136 58" fill="none" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+            <text x="30" y="85" font-size="16" font-weight="900" fill="#0369a1" text-anchor="middle">6</text>
+            <text x="64" y="85" font-size="15" font-weight="800" fill="#0f172a" text-anchor="middle">8</text>
+            <text x="80" y="73" font-size="10" font-weight="900" fill="#dc2626" text-anchor="middle">&sup2;</text>
+            <text x="92" y="85" font-size="15" font-weight="800" fill="#0f172a" text-anchor="middle">5</text>
+            <text x="108" y="73" font-size="10" font-weight="900" fill="#dc2626" text-anchor="middle">&sup1;</text>
+            <text x="120" y="85" font-size="15" font-weight="800" fill="#0f172a" text-anchor="middle">2</text>
+            <rect x="20" y="104" width="120" height="22" rx="4" fill="#dcfce7" stroke="#86efac"/>
+            <text x="80" y="119" font-size="10.5" font-weight="800" fill="#15803d" text-anchor="middle">852 &divide; 6 = 142 &check;</text>
           </g>"""),
         "golden_rule": "Always check subtraction by adding your answer to the smaller number!",
         "watch_out": "Don't subtract smaller from larger in the same column! If top digit is smaller, borrow 1 from left.",

@@ -19,16 +19,14 @@
   <!-- Vertical Red Alignment Guideline Cutting Exactly Down the Decimal Point -->
   <line x1="122" y1="78" x2="122" y2="236" stroke="#ef4444" stroke-width="2.5" stroke-dasharray="4,3"/>
 
-  <!-- Row 1: £34.75 -->
-  <text x="46" y="106" font-size="18" font-weight="800" fill="#64748b">£</text>
+  <!-- Row 1: 34.75 -->
   <text x="82" y="106" font-size="19" font-weight="800" fill="#0f172a" text-anchor="middle">3</text>
   <text x="108" y="106" font-size="19" font-weight="800" fill="#0f172a" text-anchor="middle">4</text>
   <text x="122" y="106" font-size="20" font-weight="900" fill="#ef4444" text-anchor="middle">.</text>
   <text x="136" y="106" font-size="19" font-weight="800" fill="#0f172a" text-anchor="middle">7</text>
   <text x="162" y="106" font-size="19" font-weight="800" fill="#0f172a" text-anchor="middle">5</text>
 
-  <!-- Row 2: £8.60 (Zero padded highlighted) -->
-  <text x="46" y="138" font-size="18" font-weight="800" fill="#64748b">£</text>
+  <!-- Row 2: 8.60 (Zero padded highlighted) -->
   <text x="82" y="138" font-size="19" font-weight="800" fill="#cbd5e1" text-anchor="middle">-</text>
   <text x="108" y="138" font-size="19" font-weight="800" fill="#0f172a" text-anchor="middle">8</text>
   <text x="122" y="138" font-size="20" font-weight="900" fill="#ef4444" text-anchor="middle">.</text>
@@ -36,9 +34,8 @@
   <rect x="153" y="121" width="18" height="22" rx="3" fill="#dcfce7"/>
   <text x="162" y="138" font-size="19" font-weight="800" fill="#15803d" text-anchor="middle">0</text>
 
-  <!-- Row 3: + £12.08 -->
-  <text x="40" y="170" font-size="18" font-weight="800" fill="#0284c7">+</text>
-  <text x="46" y="170" font-size="18" font-weight="800" fill="#64748b">£</text>
+  <!-- Row 3: + 12.08 (Operation + to far left, out of the way) -->
+  <text x="46" y="170" font-size="20" font-weight="900" fill="#0284c7" text-anchor="middle">+</text>
   <text x="82" y="170" font-size="19" font-weight="800" fill="#0f172a" text-anchor="middle">1</text>
   <text x="108" y="170" font-size="19" font-weight="800" fill="#0f172a" text-anchor="middle">2</text>
   <text x="122" y="170" font-size="20" font-weight="900" fill="#ef4444" text-anchor="middle">.</text>
@@ -48,8 +45,7 @@
   <!-- Calculation Horizontal Border Lines -->
   <line x1="42" y1="184" x2="238" y2="184" stroke="#0f172a" stroke-width="2.5"/>
 
-  <!-- Grand Total: £55.43 -->
-  <text x="46" y="214" font-size="19" font-weight="900" fill="#15803d">£</text>
+  <!-- Grand Total: 55.43 -->
   <text x="82" y="214" font-size="21" font-weight="900" fill="#15803d" text-anchor="middle">5</text>
   <text x="108" y="214" font-size="21" font-weight="900" fill="#15803d" text-anchor="middle">5</text>
   <text x="122" y="214" font-size="22" font-weight="900" fill="#ef4444" text-anchor="middle">.</text>
@@ -61,8 +57,8 @@
   <rect x="268" y="55" width="244" height="195" rx="10" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.5"/>
   <text x="282" y="82" font-size="12" font-weight="800" fill="#1e40af">KEY RULES FOR ALIGNMENT:</text>
   <text x="282" y="106" font-size="11.5" fill="#1e293b">• <tspan font-weight="700" fill="#dc2626">Decimal Point Axis:</tspan> keep dots in a straight vertical line.</text>
-  <text x="282" y="132" font-size="11.5" fill="#1e293b">• <tspan font-weight="700" fill="#15803d">Pad Trailing Zeros:</tspan> change £8.6 to £8.60 so columns align.</text>
+  <text x="282" y="132" font-size="11.5" fill="#1e293b">• <tspan font-weight="700" fill="#15803d">Pad Trailing Zeros:</tspan> change 8.6 to 8.60 so columns align.</text>
   <text x="282" y="158" font-size="11.5" fill="#1e293b">• <tspan font-weight="700">Units over Units:</tspan> single digits (8) must align under units (4, 2).</text>
   <rect x="280" y="180" width="220" height="32" rx="6" fill="#dcfce7" stroke="#86efac"/>
-  <text x="390" y="201" font-size="11.5" font-weight="800" fill="#15803d" text-anchor="middle">Always Write £55.43, never £55.4 ✓</text>
+  <text x="390" y="201" font-size="11.5" font-weight="800" fill="#15803d" text-anchor="middle">Write £55.43 (Units after calc) ✓</text>
 </svg>

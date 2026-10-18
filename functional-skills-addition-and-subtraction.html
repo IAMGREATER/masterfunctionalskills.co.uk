@@ -444,57 +444,62 @@
   <!-- Left Column Calculation Card -->
   <rect x="22" y="62" width="310" height="238" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
 
+  <!-- Column Place Value Headers -->
+  <text x="120" y="80" font-size="12" font-weight="800" fill="#64748b" text-anchor="middle">T</text>
+  <text x="156" y="80" font-size="12" font-weight="800" fill="#64748b" text-anchor="middle">U</text>
+  <text x="184" y="80" font-size="12" font-weight="800" fill="#dc2626" text-anchor="middle">&bull;</text>
+  <text x="212" y="80" font-size="12" font-weight="800" fill="#64748b" text-anchor="middle">t</text>
+  <text x="248" y="80" font-size="12" font-weight="800" fill="#64748b" text-anchor="middle">h</text>
+  <line x1="38" y1="86" x2="286" y2="86" stroke="#e2e8f0" stroke-width="1.5"/>
+
   <!-- Red Vertical Decimal Guideline -->
   <line x1="184" y1="72" x2="184" y2="286" stroke="#ef4444" stroke-width="2" stroke-dasharray="5,4" opacity="0.85"/>
 
-  <!-- Row 1: £34.75 -->
+  <!-- Row 1: 34.75 -->
   <g font-size="28" font-weight="800" fill="#0f172a">
-    <text x="78" y="106" text-anchor="middle">£</text>
-    <text x="120" y="106" text-anchor="middle">3</text>
-    <text x="156" y="106" text-anchor="middle">4</text>
-    <circle cx="184" cy="103" r="3.2" fill="#0f172a"/>
-    <text x="212" y="106" text-anchor="middle">7</text>
-    <text x="248" y="106" text-anchor="middle">5</text>
+    <text x="120" y="112" text-anchor="middle">3</text>
+    <text x="156" y="112" text-anchor="middle">4</text>
+    <circle cx="184" cy="109" r="3.2" fill="#0f172a"/>
+    <text x="212" y="112" text-anchor="middle">7</text>
+    <text x="248" y="112" text-anchor="middle">5</text>
   </g>
 
-  <!-- Row 2: £ 8.60 -->
+  <!-- Row 2: 8.60 (padded zero) -->
   <g font-size="28" font-weight="800" fill="#0f172a">
-    <text x="78" y="148" text-anchor="middle">£</text>
-    <text x="156" y="148" text-anchor="middle">8</text>
-    <circle cx="184" cy="145" r="3.2" fill="#0f172a"/>
-    <text x="212" y="148" text-anchor="middle">6</text>
-    <text x="248" y="148" text-anchor="middle">0</text>
+    <text x="156" y="152" text-anchor="middle">8</text>
+    <circle cx="184" cy="149" r="3.2" fill="#0f172a"/>
+    <text x="212" y="152" text-anchor="middle">6</text>
+    <rect x="236" y="129" width="24" height="30" rx="4" fill="#dcfce7"/>
+    <text x="248" y="152" font-weight="800" fill="#15803d" text-anchor="middle">0</text>
   </g>
 
-  <!-- Row 3: + £12.08 -->
-  <text x="46" y="190" font-size="26" font-weight="800" fill="#0284c7" text-anchor="middle">+</text>
+  <!-- Row 3: + 12.08 (Operation + to far left, out of the way) -->
+  <text x="46" y="192" font-size="28" font-weight="900" fill="#0284c7" text-anchor="middle">+</text>
   <g font-size="28" font-weight="800" fill="#0f172a">
-    <text x="78" y="190" text-anchor="middle">£</text>
-    <text x="120" y="190" text-anchor="middle">1</text>
-    <text x="156" y="190" text-anchor="middle">2</text>
-    <circle cx="184" cy="187" r="3.2" fill="#0f172a"/>
-    <text x="212" y="190" text-anchor="middle">0</text>
-    <text x="248" y="190" text-anchor="middle">8</text>
+    <text x="120" y="192" text-anchor="middle">1</text>
+    <text x="156" y="192" text-anchor="middle">2</text>
+    <circle cx="184" cy="189" r="3.2" fill="#0f172a"/>
+    <text x="212" y="192" text-anchor="middle">0</text>
+    <text x="248" y="192" text-anchor="middle">8</text>
   </g>
 
   <!-- Calculation Divider Line -->
-  <line x1="38" y1="208" x2="286" y2="208" stroke="#0f172a" stroke-width="2.5"/>
+  <line x1="38" y1="210" x2="286" y2="210" stroke="#0f172a" stroke-width="2.5"/>
 
   <!-- Carries row -->
-  <g font-size="14" font-weight="800" fill="#64748b">
-    <text x="120" y="224" text-anchor="middle">1</text>
-    <text x="156" y="224" text-anchor="middle">1</text>
-    <text x="212" y="224" text-anchor="middle">1</text>
+  <g font-size="14" font-weight="800" fill="#dc2626">
+    <text x="120" y="226" text-anchor="middle">¹</text>
+    <text x="156" y="226" text-anchor="middle">¹</text>
+    <text x="212" y="226" text-anchor="middle">¹</text>
   </g>
 
-  <!-- Result Row: £55.43 -->
-  <g font-size="30" font-weight="800" fill="#15803d">
-    <text x="78" y="258" text-anchor="middle">£</text>
-    <text x="120" y="258" text-anchor="middle">5</text>
-    <text x="156" y="258" text-anchor="middle">5</text>
-    <circle cx="184" cy="255" r="3.4" fill="#15803d"/>
-    <text x="212" y="258" text-anchor="middle">4</text>
-    <text x="248" y="258" text-anchor="middle">3</text>
+  <!-- Result Row: 55.43 (No currency inside calculation) -->
+  <g font-size="30" font-weight="900" fill="#15803d">
+    <text x="120" y="260" text-anchor="middle">5</text>
+    <text x="156" y="260" text-anchor="middle">5</text>
+    <circle cx="184" cy="257" r="3.4" fill="#15803d"/>
+    <text x="212" y="260" text-anchor="middle">4</text>
+    <text x="248" y="260" text-anchor="middle">3</text>
   </g>
 
   <!-- Double Underline -->
@@ -509,14 +514,14 @@
   <text x="394" y="137" font-size="14.5" font-weight="600" fill="#1e293b">Align decimal points vertically (red line).</text>
   
   <circle cx="380" cy="168" r="3.5" fill="#2563eb"/>
-  <text x="394" y="173" font-size="14.5" font-weight="600" fill="#1e293b">Fill missing trailing zero: £8.6 → £8.60.</text>
+  <text x="394" y="173" font-size="14.5" font-weight="600" fill="#1e293b">Fill missing trailing zero: 8.6 → 8.60.</text>
   
   <circle cx="380" cy="204" r="3.5" fill="#2563eb"/>
   <text x="394" y="209" font-size="14.5" font-weight="600" fill="#1e293b">Currency MUST always have 2 decimal places.</text>
   
   <!-- Green Highlight Badge -->
   <rect x="372" y="232" width="344" height="46" rx="8" fill="#dcfce7" stroke="#86efac" stroke-width="1.5"/>
-  <text x="544" y="261" font-size="15" font-weight="800" fill="#15803d" text-anchor="middle">Write £55.43, never £55.4 ✓</text>
+  <text x="544" y="261" font-size="15" font-weight="800" fill="#15803d" text-anchor="middle">Final Answer: £55.43 (Units added after calc) ✓</text>
 </svg></div>
               
                 <!-- ENHANCED VISUAL BREAKDOWN: £145.80 + £39.45 + £8.00 -->
@@ -543,9 +548,9 @@
                         <div class="math-pv-cell" title="Hundredths">h</div>
                       </div>
 
-                      <!-- Row 1: £145.80 -->
+                      <!-- Row 1: 145.80 -->
                       <div class="math-calc-row">
-                        <div class="math-calc-cell math-unit" style="width:28px;">£</div>
+                        <div class="math-calc-cell" style="width:28px;"></div>
                         <div class="math-calc-cell">1</div>
                         <div class="math-calc-cell">4</div>
                         <div class="math-calc-cell">5</div>
@@ -554,9 +559,9 @@
                         <div class="math-calc-cell">0</div>
                       </div>
 
-                      <!-- Row 2: £ 39.45 -->
+                      <!-- Row 2: 39.45 -->
                       <div class="math-calc-row">
-                        <div class="math-calc-cell math-unit" style="width:28px;">£</div>
+                        <div class="math-calc-cell" style="width:28px;"></div>
                         <div class="math-calc-cell" style="color:#cbd5e1;">-</div>
                         <div class="math-calc-cell">3</div>
                         <div class="math-calc-cell">9</div>
@@ -565,7 +570,7 @@
                         <div class="math-calc-cell">5</div>
                       </div>
 
-                      <!-- Row 3: + £ 08.00 (Padded) -->
+                      <!-- Row 3: + 08.00 (Padded) -->
                       <div class="math-calc-row">
                         <div class="math-calc-cell math-symbol" style="width:28px;">+</div>
                         <div class="math-calc-cell" style="color:#cbd5e1;">-</div>
@@ -590,9 +595,9 @@
                         <div class="math-calc-cell" style="color:#cbd5e1;">&nbsp;</div>
                       </div>
 
-                      <!-- Result Row: £193.25 -->
+                      <!-- Result Row: 193.25 -->
                       <div class="math-calc-row math-result">
-                        <div class="math-calc-cell math-unit" style="width:28px; color:#15803d;">£</div>
+                        <div class="math-calc-cell" style="width:28px;"></div>
                         <div class="math-calc-cell">1</div>
                         <div class="math-calc-cell">9</div>
                         <div class="math-calc-cell">3</div>
@@ -604,7 +609,11 @@
                       <!-- Double underline -->
                       <div class="math-calc-double-divider"></div>
 
-                      <div style="margin-top:14px; font-size:0.92rem; color:#475569; text-align:center; font-weight:700;">
+                      <div style="margin-top:10px; text-align:center;">
+                        <span style="display:inline-block; font-weight:800; font-size:1.05rem; color:#15803d; background:#f0fdf4; border:1.5px solid #86efac; border-radius:6px; padding:4px 14px;">Total = £193.25</span>
+                      </div>
+
+                      <div style="margin-top:10px; font-size:0.92rem; color:#475569; text-align:center; font-weight:700;">
                         <span style="color:#15803d; background:#dcfce7; padding:2px 8px; border-radius:4px; border:1px solid #86efac;">Green shaded boxes</span> = Padded zeros ensuring perfect decimal alignment
                       </div>
                     </div>
@@ -1022,7 +1031,7 @@
                   <!-- Vertical Column Box -->
                   <div class="math-col-board" style="padding:14px 20px; min-width:240px; width:auto; border-color:#93c5fd; background:#f0f7ff;">
                     <div class="math-calc-row" style="font-size:1.45rem; gap:10px;">
-                      <span class="math-unit" style="font-size:1.3rem;">£</span>
+                      <span style="width:24px;">&nbsp;</span>
                       <span style="width:24px; color:#cbd5e1;">&nbsp;</span>
                       <span style="width:24px;">4</span>
                       <span style="width:24px;">6</span>
@@ -1031,7 +1040,7 @@
                       <span style="width:24px;">5</span>
                     </div>
                     <div class="math-calc-row" style="font-size:1.45rem; gap:10px;">
-                      <span class="math-unit" style="font-size:1.3rem;">£</span>
+                      <span style="width:24px;">&nbsp;</span>
                       <span style="width:24px;">1</span>
                       <span style="width:24px;">8</span>
                       <span style="width:24px;">9</span>
@@ -1040,8 +1049,8 @@
                       <span style="width:24px;">0</span>
                     </div>
                     <div class="math-calc-row" style="font-size:1.45rem; gap:10px;">
-                      <span class="math-symbol" style="font-size:1.4rem;">+</span>
-                      <span class="math-unit" style="font-size:1.3rem;">£</span>
+                      <span class="math-symbol" style="font-size:1.4rem; width:24px;">+</span>
+                      <span style="width:24px; color:#cbd5e1;">&nbsp;</span>
                       <span style="width:24px;">6</span>
                       <span style="width:24px;">2</span>
                       <span class="math-dot" style="font-size:1.6rem; width:10px;">•</span>
@@ -1060,7 +1069,7 @@
                       <span style="width:24px;">&nbsp;</span>
                     </div>
                     <div class="math-calc-row math-result" style="font-size:1.65rem; gap:10px;">
-                      <span class="math-unit" style="font-size:1.3rem; color:#15803d;">£</span>
+                      <span style="width:24px;">&nbsp;</span>
                       <span style="width:24px;">2</span>
                       <span style="width:24px;">9</span>
                       <span style="width:24px;">9</span>
@@ -1109,7 +1118,7 @@
                       <span style="width:24px;">&nbsp;</span>
                     </div>
                     <div class="math-calc-row" style="font-size:1.45rem; gap:10px;">
-                      <span class="math-unit" style="font-size:1.3rem;">£</span>
+                      <span style="width:24px;">&nbsp;</span>
                       <span style="width:24px;" class="math-digit-slashed">8</span>
                       <span style="width:24px;" class="math-digit-slashed">5</span>
                       <span style="width:24px;" class="math-digit-slashed">0</span>
@@ -1118,8 +1127,7 @@
                       <span style="width:24px;">0</span>
                     </div>
                     <div class="math-calc-row" style="font-size:1.45rem; gap:10px;">
-                      <span class="math-symbol" style="font-size:1.4rem;">&minus;</span>
-                      <span class="math-unit" style="font-size:1.3rem;">£</span>
+                      <span class="math-symbol" style="font-size:1.4rem; width:24px;">&minus;</span>
                       <span style="width:24px;">2</span>
                       <span style="width:24px;">9</span>
                       <span style="width:24px;">9</span>
@@ -1129,7 +1137,7 @@
                     </div>
                     <div class="math-calc-divider" style="height:2.5px; margin:6px 0;"></div>
                     <div class="math-calc-row math-result" style="font-size:1.65rem; gap:10px;">
-                      <span class="math-unit" style="font-size:1.3rem; color:#15803d;">£</span>
+                      <span style="width:24px;">&nbsp;</span>
                       <span style="width:24px;">5</span>
                       <span style="width:24px;">5</span>
                       <span style="width:24px;">1</span>
@@ -1244,12 +1252,14 @@
                 <div style="display:flex; flex-wrap:wrap; gap:20px; align-items:center;">
                   <div class="math-col-board" style="padding:14px 20px; min-width:220px; width:auto; border-color:#cbd5e1;">
                     <div class="math-calc-row" style="font-size:1.45rem; gap:10px;">
+                      <span style="width:24px;">&nbsp;</span>
                       <span style="width:24px;">1</span>
                       <span style="width:24px;">2</span>
                       <span style="width:24px;">8</span>
                       <span style="width:24px;">5</span>
                     </div>
                     <div class="math-calc-row" style="font-size:1.45rem; gap:10px;">
+                      <span style="width:24px;">&nbsp;</span>
                       <span style="width:24px; color:#cbd5e1;">&nbsp;</span>
                       <span style="width:24px;">9</span>
                       <span style="width:24px;">4</span>
@@ -1264,12 +1274,14 @@
                     </div>
                     <div class="math-calc-divider" style="height:2.5px; margin:6px 0;"></div>
                     <div class="math-calc-carries" style="font-size:1rem; gap:10px;">
+                      <span style="width:24px;">&nbsp;</span>
                       <span style="width:24px;" title="Carried 1">¹</span>
                       <span style="width:24px;" title="Carried 2">²</span>
                       <span style="width:24px;" title="Carried 1">¹</span>
                       <span style="width:24px;">&nbsp;</span>
                     </div>
                     <div class="math-calc-row math-result" style="font-size:1.65rem; gap:10px;">
+                      <span style="width:24px;">&nbsp;</span>
                       <span style="width:24px;">3</span>
                       <span style="width:24px;">4</span>
                       <span style="width:24px;">2</span>
@@ -1329,6 +1341,7 @@
                 <div style="display:flex; flex-wrap:wrap; gap:20px; align-items:center;">
                   <div class="math-col-board" style="padding:14px 20px; min-width:220px; width:auto; border-color:#cbd5e1;">
                     <div class="math-calc-row" style="font-size:1.45rem; gap:10px;">
+                      <span style="width:24px;">&nbsp;</span>
                       <span style="width:24px;">4</span>
                       <span style="width:24px;">6</span>
                       <span style="width:24px;">5</span>
@@ -1343,6 +1356,7 @@
                     </div>
                     <div class="math-calc-divider" style="height:2.5px; margin:6px 0;"></div>
                     <div class="math-calc-row math-result" style="font-size:1.65rem; gap:10px;">
+                      <span style="width:24px;">&nbsp;</span>
                       <span style="width:24px;">1</span>
                       <span style="width:24px;">2</span>
                       <span style="width:24px;">3</span>
@@ -1509,12 +1523,42 @@
                   <div style="background:#ffffff; border:1px solid #cbd5e1; border-left:4px solid #0284c7; border-radius:8px; padding:16px;">
                     <span style="background:#0284c7; color:#fff; font-size:0.8rem; font-weight:800; padding:2px 8px; border-radius:4px; text-transform:uppercase;">Step 1: Total Fuel Used</span>
                     <div class="math-col-board" style="padding:10px 16px; margin-top:10px; min-width:auto;">
-                      <div class="math-calc-row" style="font-size:1.3rem; gap:10px;"><span>3</span><span>4</span><span>5</span></div>
-                      <div class="math-calc-row" style="font-size:1.3rem; gap:10px;"><span>2</span><span>8</span><span>0</span></div>
-                      <div class="math-calc-row" style="font-size:1.3rem; gap:10px;"><span class="math-symbol">+</span><span>4</span><span>1</span><span>5</span></div>
+                      <div class="math-calc-row" style="font-size:1.3rem; gap:10px;">
+                        <span style="width:20px;">&nbsp;</span>
+                        <span style="width:20px;">&nbsp;</span>
+                        <span style="width:20px; text-align:center;">3</span>
+                        <span style="width:20px; text-align:center;">4</span>
+                        <span style="width:20px; text-align:center;">5</span>
+                      </div>
+                      <div class="math-calc-row" style="font-size:1.3rem; gap:10px;">
+                        <span style="width:20px;">&nbsp;</span>
+                        <span style="width:20px;">&nbsp;</span>
+                        <span style="width:20px; text-align:center;">2</span>
+                        <span style="width:20px; text-align:center;">8</span>
+                        <span style="width:20px; text-align:center;">0</span>
+                      </div>
+                      <div class="math-calc-row" style="font-size:1.3rem; gap:10px;">
+                        <span class="math-symbol" style="width:20px; text-align:center;">+</span>
+                        <span style="width:20px;">&nbsp;</span>
+                        <span style="width:20px; text-align:center;">4</span>
+                        <span style="width:20px; text-align:center;">1</span>
+                        <span style="width:20px; text-align:center;">5</span>
+                      </div>
                       <div class="math-calc-divider" style="height:2px; margin:4px 0;"></div>
-                      <div class="math-calc-carries" style="font-size:0.9rem; gap:10px;"><span>¹</span><span>¹</span><span>&nbsp;</span></div>
-                      <div class="math-calc-row math-result" style="font-size:1.45rem; gap:10px;"><span>1</span><span>0</span><span>4</span><span>0</span></div>
+                      <div class="math-calc-carries" style="font-size:0.9rem; gap:10px;">
+                        <span style="width:20px;">&nbsp;</span>
+                        <span style="width:20px; text-align:center;">¹</span>
+                        <span style="width:20px; text-align:center;">¹</span>
+                        <span style="width:20px; text-align:center;">¹</span>
+                        <span style="width:20px;">&nbsp;</span>
+                      </div>
+                      <div class="math-calc-row math-result" style="font-size:1.45rem; gap:10px;">
+                        <span style="width:20px;">&nbsp;</span>
+                        <span style="width:20px; text-align:center;">1</span>
+                        <span style="width:20px; text-align:center;">0</span>
+                        <span style="width:20px; text-align:center;">4</span>
+                        <span style="width:20px; text-align:center;">0</span>
+                      </div>
                     </div>
                     <div style="font-size:0.95rem; font-weight:700; color:#0369a1; margin-top:8px;">Total Used = 1,040 litres [M1]</div>
                   </div>
@@ -1523,10 +1567,28 @@
                   <div style="background:#ffffff; border:1px solid #cbd5e1; border-left:4px solid #0284c7; border-radius:8px; padding:16px;">
                     <span style="background:#0284c7; color:#fff; font-size:0.8rem; font-weight:800; padding:2px 8px; border-radius:4px; text-transform:uppercase;">Step 2: Remaining Fuel</span>
                     <div class="math-col-board" style="padding:10px 16px; margin-top:10px; min-width:auto;">
-                      <div class="math-calc-row" style="font-size:1.3rem; gap:10px;"><span>1</span><span>2</span><span>0</span><span>0</span></div>
-                      <div class="math-calc-row" style="font-size:1.3rem; gap:10px;"><span class="math-symbol">&minus;</span><span>1</span><span>0</span><span>4</span><span>0</span></div>
+                      <div class="math-calc-row" style="font-size:1.3rem; gap:10px;">
+                        <span style="width:20px;">&nbsp;</span>
+                        <span style="width:20px; text-align:center;">1</span>
+                        <span style="width:20px; text-align:center;">2</span>
+                        <span style="width:20px; text-align:center;">0</span>
+                        <span style="width:20px; text-align:center;">0</span>
+                      </div>
+                      <div class="math-calc-row" style="font-size:1.3rem; gap:10px;">
+                        <span class="math-symbol" style="width:20px; text-align:center;">&minus;</span>
+                        <span style="width:20px; text-align:center;">1</span>
+                        <span style="width:20px; text-align:center;">0</span>
+                        <span style="width:20px; text-align:center;">4</span>
+                        <span style="width:20px; text-align:center;">0</span>
+                      </div>
                       <div class="math-calc-divider" style="height:2px; margin:4px 0;"></div>
-                      <div class="math-calc-row math-result" style="font-size:1.45rem; gap:10px;"><span style="color:#cbd5e1;">&nbsp;</span><span>1</span><span>6</span><span>0</span></div>
+                      <div class="math-calc-row math-result" style="font-size:1.45rem; gap:10px;">
+                        <span style="width:20px;">&nbsp;</span>
+                        <span style="width:20px; color:#cbd5e1;">&nbsp;</span>
+                        <span style="width:20px; text-align:center;">1</span>
+                        <span style="width:20px; text-align:center;">6</span>
+                        <span style="width:20px; text-align:center;">0</span>
+                      </div>
                     </div>
                     <div style="font-size:0.95rem; font-weight:700; color:#15803d; margin-top:8px;">Remaining = 160 litres [A1]</div>
                   </div>

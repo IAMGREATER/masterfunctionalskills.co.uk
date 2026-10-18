@@ -570,6 +570,7 @@
                   <div class="math-col-board" style="min-width:270px; padding:22px 28px;">
                     <!-- Place Value Headers -->
                     <div class="math-pv-row" style="gap:16px;">
+                      <div class="math-pv-cell"></div>
                       <div class="math-pv-cell">Th</div>
                       <div class="math-pv-cell">H</div>
                       <div class="math-pv-cell">T</div>
@@ -578,7 +579,8 @@
 
                     <!-- Row 1: 138 -->
                     <div class="math-calc-row" style="gap:16px;">
-                      <div class="math-calc-cell" style="width:28px;"></div>
+                      <div class="math-calc-cell"></div>
+                      <div class="math-calc-cell" style="color:#cbd5e1;">&nbsp;</div>
                       <div class="math-calc-cell">1</div>
                       <div class="math-calc-cell">3</div>
                       <div class="math-calc-cell">8</div>
@@ -586,8 +588,9 @@
 
                     <!-- Row 2: × 24 -->
                     <div class="math-calc-row" style="gap:16px;">
-                      <div class="math-calc-cell math-symbol" style="width:28px;">&times;</div>
-                      <div class="math-calc-cell" style="color:#94a3b8;">&nbsp;</div>
+                      <div class="math-calc-cell math-symbol">&times;</div>
+                      <div class="math-calc-cell" style="color:#cbd5e1;">&nbsp;</div>
+                      <div class="math-calc-cell" style="color:#cbd5e1;">&nbsp;</div>
                       <div class="math-calc-cell" style="color:#0369a1;">2</div>
                       <div class="math-calc-cell" style="color:#0284c7;">4</div>
                     </div>
@@ -596,20 +599,23 @@
 
                     <!-- Line 1: 138 × 4 units = 552 -->
                     <div class="math-calc-row" style="gap:16px; font-size:1.85rem;">
-                      <div class="math-calc-cell" style="width:28px; font-size:0.85rem; color:#64748b; font-weight:700;">&times;4</div>
+                      <div class="math-calc-cell" style="font-size:0.85rem; color:#64748b; font-weight:700;">&times;4</div>
+                      <div class="math-calc-cell" style="color:#cbd5e1;">&nbsp;</div>
                       <div class="math-calc-cell">5</div>
                       <div class="math-calc-cell">5</div>
                       <div class="math-calc-cell">2</div>
                     </div>
-                    <div style="display:flex; justify-content:flex-end; gap:16px; padding-right:10px; font-size:0.85rem; color:#dc2626; font-weight:800; margin:-4px 0 6px;">
-                      <span style="width:36px; text-align:center;">&sup1;</span>
-                      <span style="width:36px; text-align:center;">&sup3;</span>
-                      <span style="width:36px; text-align:center;"></span>
+                    <div class="math-calc-carries" style="display:flex; justify-content:flex-end; gap:16px; padding-right:6px; font-size:0.85rem; color:#dc2626; font-weight:800; margin:-4px 0 6px;">
+                      <span class="math-calc-cell"></span>
+                      <span class="math-calc-cell">&sup1;</span>
+                      <span class="math-calc-cell">&sup3;</span>
+                      <span class="math-calc-cell"></span>
+                      <span class="math-calc-cell"></span>
                     </div>
 
                     <!-- Line 2: 138 × 20 tens = 2,760 (with GREEN ZERO) -->
                     <div class="math-calc-row" style="gap:16px; font-size:1.85rem;">
-                      <div class="math-calc-cell" style="width:28px; font-size:0.85rem; color:#64748b; font-weight:700;">&times;20</div>
+                      <div class="math-calc-cell" style="font-size:0.85rem; color:#64748b; font-weight:700;">&times;20</div>
                       <div class="math-calc-cell">2</div>
                       <div class="math-calc-cell">7</div>
                       <div class="math-calc-cell">6</div>
@@ -617,10 +623,17 @@
                     </div>
 
                     <div class="math-calc-divider" style="height:3px;"></div>
+                    <div class="math-calc-carries" style="display:flex; justify-content:flex-end; gap:16px; padding-right:6px; font-size:0.85rem; color:#dc2626; font-weight:800; margin:-2px 0 2px;">
+                      <span class="math-calc-cell"></span>
+                      <span class="math-calc-cell">&sup1;</span>
+                      <span class="math-calc-cell"></span>
+                      <span class="math-calc-cell"></span>
+                      <span class="math-calc-cell"></span>
+                    </div>
 
                     <!-- Result: 3,312 -->
                     <div class="math-calc-row math-result" style="gap:16px;">
-                      <div class="math-calc-cell" style="width:28px; font-size:0.85rem; color:#15803d; font-weight:800;">SUM</div>
+                      <div class="math-calc-cell" style="font-size:0.85rem; color:#15803d; font-weight:800;">+</div>
                       <div class="math-calc-cell">3</div>
                       <div class="math-calc-cell">3</div>
                       <div class="math-calc-cell">1</div>
@@ -875,37 +888,39 @@
                     <div class="math-calc-row" style="font-size:1.45rem; gap:12px;">
                       <span class="math-calc-cell" style="width:24px;"></span>
                       <span class="math-calc-cell" style="width:24px;"></span>
-                      <span class="math-calc-cell" style="width:24px;">4</span>
-                      <span class="math-calc-cell" style="width:24px;">8</span>
+                      <span class="math-calc-cell" style="width:24px;"></span>
+                      <span class="math-calc-cell" style="width:24px; text-align:center;">4</span>
+                      <span class="math-calc-cell" style="width:24px; text-align:center;">8</span>
                     </div>
                     <div class="math-calc-row" style="font-size:1.45rem; gap:12px;">
-                      <span class="math-calc-cell math-symbol" style="width:24px;">&times;</span>
+                      <span class="math-calc-cell math-symbol" style="width:24px; text-align:center;">&times;</span>
                       <span class="math-calc-cell" style="width:24px;"></span>
-                      <span class="math-calc-cell" style="width:24px; color:#0369a1;">2</span>
-                      <span class="math-calc-cell" style="width:24px; color:#0284c7;">6</span>
+                      <span class="math-calc-cell" style="width:24px;"></span>
+                      <span class="math-calc-cell" style="width:24px; text-align:center; color:#0369a1;">2</span>
+                      <span class="math-calc-cell" style="width:24px; text-align:center; color:#0284c7;">6</span>
                     </div>
                     <div class="math-calc-divider" style="height:2px; margin:6px 0;"></div>
                     <div class="math-calc-row" style="font-size:1.45rem; gap:12px;">
-                      <span class="math-calc-cell" style="width:24px; font-size:0.75rem; color:#64748b;">&times;6</span>
+                      <span class="math-calc-cell" style="width:24px; font-size:0.75rem; color:#64748b; text-align:center;">&times;6</span>
                       <span class="math-calc-cell" style="width:24px;"></span>
-                      <span class="math-calc-cell" style="width:24px;">2</span>
-                      <span class="math-calc-cell" style="width:24px;">8</span>
-                      <span class="math-calc-cell" style="width:24px;">8</span>
+                      <span class="math-calc-cell" style="width:24px; text-align:center;">2</span>
+                      <span class="math-calc-cell" style="width:24px; text-align:center;">8</span>
+                      <span class="math-calc-cell" style="width:24px; text-align:center;">8</span>
                     </div>
                     <div class="math-calc-row" style="font-size:1.45rem; gap:12px;">
-                      <span class="math-calc-cell" style="width:24px; font-size:0.75rem; color:#64748b;">&times;20</span>
+                      <span class="math-calc-cell" style="width:24px; font-size:0.75rem; color:#64748b; text-align:center;">&times;20</span>
                       <span class="math-calc-cell" style="width:24px;"></span>
-                      <span class="math-calc-cell" style="width:24px;">9</span>
-                      <span class="math-calc-cell" style="width:24px;">6</span>
-                      <span class="math-calc-cell math-pad-zero" style="width:24px;">0</span>
+                      <span class="math-calc-cell" style="width:24px; text-align:center;">9</span>
+                      <span class="math-calc-cell" style="width:24px; text-align:center;">6</span>
+                      <span class="math-calc-cell math-pad-zero" style="width:24px; text-align:center;">0</span>
                     </div>
                     <div class="math-calc-divider" style="height:2.5px; margin:6px 0;"></div>
                     <div class="math-calc-row math-result" style="font-size:1.6rem; gap:12px;">
-                      <span class="math-calc-cell" style="width:24px; font-size:0.75rem; color:#15803d;">SUM</span>
-                      <span class="math-calc-cell" style="width:24px;">1</span>
-                      <span class="math-calc-cell" style="width:24px;">2</span>
-                      <span class="math-calc-cell" style="width:24px;">4</span>
-                      <span class="math-calc-cell" style="width:24px;">8</span>
+                      <span class="math-calc-cell" style="width:24px; font-size:0.75rem; color:#15803d; text-align:center;">+</span>
+                      <span class="math-calc-cell" style="width:24px; text-align:center;">1</span>
+                      <span class="math-calc-cell" style="width:24px; text-align:center;">2</span>
+                      <span class="math-calc-cell" style="width:24px; text-align:center;">4</span>
+                      <span class="math-calc-cell" style="width:24px; text-align:center;">8</span>
                     </div>
                     <div class="math-calc-double-divider" style="height:6px; margin:6px 0 2px;"></div>
                   </div>
@@ -1053,17 +1068,45 @@
                 <div style="display:flex; flex-wrap:wrap; gap:16px; align-items:center;">
                   <div class="math-col-board" style="padding:12px 18px; min-width:200px;">
                     <div class="math-calc-row" style="font-size:1.35rem; gap:10px;">
-                      <span class="math-unit">£</span>
-                      <span>1</span><span>2</span><span>6</span><span>4</span><span>.</span><span>8</span><span>0</span>
+                      <span style="width:20px;">&nbsp;</span>
+                      <span style="width:18px; text-align:center;">1</span>
+                      <span style="width:18px; text-align:center;">2</span>
+                      <span style="width:18px; text-align:center;">6</span>
+                      <span style="width:18px; text-align:center;">4</span>
+                      <span style="width:8px; text-align:center; font-weight:900; color:#ef4444;">.</span>
+                      <span style="width:18px; text-align:center;">8</span>
+                      <span style="width:18px; text-align:center;">0</span>
                     </div>
                     <div class="math-calc-row" style="font-size:1.35rem; gap:10px;">
-                      <span class="math-symbol">+</span>
-                      <span>&nbsp;</span><span>6</span><span>2</span><span>7</span><span>.</span><span>0</span><span>0</span>
+                      <span class="math-symbol" style="width:20px; text-align:center;">+</span>
+                      <span style="width:18px; text-align:center;">&nbsp;</span>
+                      <span style="width:18px; text-align:center;">6</span>
+                      <span style="width:18px; text-align:center;">2</span>
+                      <span style="width:18px; text-align:center;">7</span>
+                      <span style="width:8px; text-align:center; font-weight:900; color:#ef4444;">.</span>
+                      <span style="width:18px; text-align:center;">0</span>
+                      <span style="width:18px; text-align:center;">0</span>
                     </div>
                     <div class="math-calc-divider" style="height:2px; margin:4px 0;"></div>
+                    <div class="math-calc-carries" style="display:flex; justify-content:flex-end; gap:10px; font-size:0.85rem; color:#dc2626; font-weight:800; margin:-2px 0 2px;">
+                      <span style="width:20px;">&nbsp;</span>
+                      <span style="width:18px; text-align:center;">&nbsp;</span>
+                      <span style="width:18px; text-align:center;">&nbsp;</span>
+                      <span style="width:18px; text-align:center;">&sup1;</span>
+                      <span style="width:18px; text-align:center;">&nbsp;</span>
+                      <span style="width:8px;">&nbsp;</span>
+                      <span style="width:18px; text-align:center;">&nbsp;</span>
+                      <span style="width:18px; text-align:center;">&nbsp;</span>
+                    </div>
                     <div class="math-calc-row math-result" style="font-size:1.45rem; gap:10px;">
-                      <span class="math-unit" style="color:#15803d;">£</span>
-                      <span>1</span><span>8</span><span>9</span><span>1</span><span>.</span><span>8</span><span>0</span>
+                      <span style="width:20px;">&nbsp;</span>
+                      <span style="width:18px; text-align:center;">1</span>
+                      <span style="width:18px; text-align:center;">8</span>
+                      <span style="width:18px; text-align:center;">9</span>
+                      <span style="width:18px; text-align:center;">1</span>
+                      <span style="width:8px; text-align:center; font-weight:900; color:#ef4444;">.</span>
+                      <span style="width:18px; text-align:center;">8</span>
+                      <span style="width:18px; text-align:center;">0</span>
                     </div>
                     <div class="math-calc-double-divider" style="height:6px; margin:4px 0 2px;"></div>
                   </div>

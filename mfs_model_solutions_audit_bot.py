@@ -489,6 +489,119 @@ class ModelSolutionAuditor:
         self.results['rules']['assembly'] = rule_res
         return rule_res
 
+    def check_pedagogical_authenticity(self):
+        """Rule 7: Verify presence of genuine MFS pedagogical ink layers and absence of competitor raw handwriting."""
+        rule_res = {
+            'status': 'PASS',
+            'mfs_font_spans': 0,
+            'pedagogical_color_spans': 0,
+            'competitor_ink_annots': 0,
+            'competitor_drawings': 0,
+            'mark_tags_found': 0,
+            'annotated_question_pages': 0,
+            'total_question_pages': 0,
+            'blank_page_violations': [],
+            'violations': []
+        }
+
+        # Scan interior pages (exclude cover p0, service promo p1, and final merch promo)
+        interior_start = min(2, self.total_pages - 1)
+        interior_end = max(interior_start, self.total_pages - 1)
+
+        total_interior_pages = max(1, interior_end - interior_start)
+
+        for p_idx in range(interior_start, interior_end):
+            page = self.doc[p_idx]
+            page_text = page.get_text('text').lower()
+
+            # Identify if page is intentionally blank
+            is_intentionally_blank = 'intentionally blank' in page_text or 'blank page' in page_text
+            is_question_page = any(w in page_text for w in ['question', 'task', 'calculate', 'what is', 'show your calculations'])
+
+            if is_question_page:
+                rule_res['total_question_pages'] += 1
+
+            page_mfs_spans = 0
+
+            # 1. Detect competitor Ink annotations
+            for annot in page.annots():
+                if annot.type[1] == 'Ink':
+                    rule_res['competitor_ink_annots'] += 1
+                    rule_res['violations'].append({
+                        'page': p_idx + 1,
+                        'issue': 'Competitor Ink annotation detected (raw scanned/vector handwriting)'
+                    })
+
+            # 2. Detect competitor vector drawings (blue handwriting / red ticks)
+            drawings = page.get_drawings()
+            for d in drawings:
+                c = d.get('color')
+                if c and len(c) >= 3:
+                    # Pure competitor blue (0.0, 0.0, 1.0)
+                    if c[0] == 0.0 and c[1] == 0.0 and c[2] == 1.0:
+                        rule_res['competitor_drawings'] += 1
+                    # Competitor marking red (0.898, 0.133, 0.215)
+                    elif 0.85 < c[0] < 0.95 and c[1] < 0.2 and 0.18 < c[2] < 0.25:
+                        rule_res['competitor_drawings'] += 1
+
+            # 3. Detect authentic MFS pedagogical text layers & fonts
+            text_dict = page.get_text('dict')
+            for block in text_dict.get('blocks', []):
+                for line in block.get('lines', []):
+                    for span in line.get('spans', []):
+                        font = span.get('font', '').lower()
+                        color = span.get('color', 0)
+                        txt = span.get('text', '').strip()
+                        if not txt:
+                            continue
+
+                        # Check fonts
+                        if any(f in font for f in ['kalam', 'caveat']):
+                            rule_res['mfs_font_spans'] += 1
+                            page_mfs_spans += 1
+
+                        # Check pedagogical color hierarchy
+                        # Navy: 0x0f172a / 0x0f47ad, Emerald: 0x0f766e / 0x14843d, Crimson: 0xdc2626 / 0xd11f26, Gold: 0xd97706 / 0xf59e0b
+                        if color in [0x0f172a, 0x0f47ad, 0x0f766e, 0x14843d, 0xdc2626, 0xd11f26, 0xd97706, 0xf59e0b]:
+                            rule_res['pedagogical_color_spans'] += 1
+
+                        # Check mark schemes and tutor callouts
+                        if re.search(r'\[(?:M\d|A\d|B\d|P\d|R\d|W\d|\d+\s*marks?)\]', txt, re.IGNORECASE):
+                            rule_res['mark_tags_found'] += 1
+
+            if page_mfs_spans > 0:
+                if is_question_page:
+                    rule_res['annotated_question_pages'] += 1
+                if is_intentionally_blank:
+                    rule_res['blank_page_violations'].append({
+                        'page': p_idx + 1,
+                        'spans': page_mfs_spans,
+                        'issue': 'Handwritten solution spans detected on page marked "Intentionally Blank"'
+                    })
+
+        # Evaluate violations
+        if rule_res['competitor_ink_annots'] > 0:
+            rule_res['status'] = 'FAIL'
+            self.results['errors'].append(f"Authenticity Failure: Found {rule_res['competitor_ink_annots']} raw competitor Ink annotation(s) inside paper.")
+        elif rule_res['competitor_drawings'] > 10:
+            rule_res['status'] = 'FAIL'
+            self.results['errors'].append(f"Authenticity Failure: Found {rule_res['competitor_drawings']} raw competitor vector handwriting stroke(s) inside paper.")
+        elif rule_res['blank_page_violations']:
+            rule_res['status'] = 'FAIL'
+            self.results['errors'].append(f"Layout Failure: {len(rule_res['blank_page_violations'])} page(s) have handwriting written on blank/overflow pages instead of designated answer areas.")
+        elif rule_res['mfs_font_spans'] < 10 and rule_res['pedagogical_color_spans'] < 10:
+            # If neither MFS fonts nor pedagogical colors are present on interior pages
+            rule_res['status'] = 'FAIL'
+            self.results['errors'].append("Authenticity Failure: Insufficient MFS pedagogical ink layers detected on interior pages (wrapper-only document).")
+        elif rule_res['total_question_pages'] > 5 and (rule_res['annotated_question_pages'] / max(1, rule_res['total_question_pages'])) < 0.5:
+            # Less than 50% of question pages have model solutions
+            rule_res['status'] = 'FAIL'
+            cov_pct = round((rule_res['annotated_question_pages'] / max(1, rule_res['total_question_pages'])) * 100, 1)
+            self.results['errors'].append(f"Incomplete Paper: Only {rule_res['annotated_question_pages']} of {rule_res['total_question_pages']} question pages ({cov_pct}%) have worked solutions.")
+
+        self.results['rules']['authenticity'] = rule_res
+        return rule_res
+
     def run_all_checks(self):
         """Execute full audit suite across all rules."""
         self.check_right_margin_overflow()
@@ -497,6 +610,7 @@ class ModelSolutionAuditor:
         self.check_typography_glyphs()
         self.check_merchandise_promo_page()
         self.check_booklet_assembly()
+        self.check_pedagogical_authenticity()
 
         if self.results['errors']:
             self.results['overall_status'] = 'FAIL'

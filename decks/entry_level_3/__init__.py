@@ -63,21 +63,39 @@ CARDS = [
         "svg_html": """<svg viewBox="0 0 460 170" width="100%" height="170" xmlns="http://www.w3.org/2000/svg">
           <g transform="translate(25, 18)">
             <rect x="0" y="0" width="195" height="132" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.8"/>
-            <text x="97" y="24" font-size="11.5" font-weight="900" fill="#15803d" text-anchor="middle">ADDITION (CARRYING)</text>
-            <text x="97" y="52" font-family="monospace" font-size="14" font-weight="800" fill="#0f172a" text-anchor="middle">  3 6 7</text>
-            <text x="97" y="72" font-family="monospace" font-size="14" font-weight="800" fill="#0f172a" text-anchor="middle">+ 1 5 8</text>
-            <line x1="45" y1="80" x2="150" y2="80" stroke="#15803d" stroke-width="2"/>
-            <text x="97" y="100" font-family="monospace" font-size="15" font-weight="900" fill="#059669" text-anchor="middle">  5 2 5</text>
-            <text x="97" y="120" font-size="9.5" font-weight="700" fill="#475569" text-anchor="middle">Carry: 1 hundred, 1 ten</text>
+            <text x="97" y="22" font-size="11.5" font-weight="900" fill="#15803d" text-anchor="middle">ADDITION (CARRYING)</text>
+            <text x="36" y="74" font-size="18" font-weight="900" fill="#0284c7" text-anchor="middle">+</text>
+            <text x="75" y="52" font-size="15" font-weight="800" fill="#0f172a" text-anchor="middle">3</text>
+            <text x="105" y="52" font-size="15" font-weight="800" fill="#0f172a" text-anchor="middle">6</text>
+            <text x="135" y="52" font-size="15" font-weight="800" fill="#0f172a" text-anchor="middle">7</text>
+            <text x="75" y="74" font-size="15" font-weight="800" fill="#0f172a" text-anchor="middle">1</text>
+            <text x="105" y="74" font-size="15" font-weight="800" fill="#0f172a" text-anchor="middle">5</text>
+            <text x="135" y="74" font-size="15" font-weight="800" fill="#0f172a" text-anchor="middle">8</text>
+            <line x1="30" y1="84" x2="165" y2="84" stroke="#15803d" stroke-width="2"/>
+            <text x="75" y="106" font-size="16" font-weight="900" fill="#059669" text-anchor="middle">5</text>
+            <text x="105" y="106" font-size="16" font-weight="900" fill="#059669" text-anchor="middle">2</text>
+            <text x="135" y="106" font-size="16" font-weight="900" fill="#059669" text-anchor="middle">5</text>
+            <text x="97" y="123" font-size="9.5" font-weight="700" fill="#475569" text-anchor="middle">Carry: 1 hundred, 1 ten</text>
           </g>
           <g transform="translate(240, 18)">
             <rect x="0" y="0" width="195" height="132" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="1.8"/>
-            <text x="97" y="24" font-size="11.5" font-weight="900" fill="#1e40af" text-anchor="middle">SUBTRACTION (BORROW)</text>
-            <text x="97" y="52" font-family="monospace" font-size="14" font-weight="800" fill="#0f172a" text-anchor="middle">  5 4 2</text>
-            <text x="97" y="72" font-family="monospace" font-size="14" font-weight="800" fill="#0f172a" text-anchor="middle">- 2 1 7</text>
-            <line x1="45" y1="80" x2="150" y2="80" stroke="#1e40af" stroke-width="2"/>
-            <text x="97" y="100" font-family="monospace" font-size="15" font-weight="900" fill="#2563eb" text-anchor="middle">  3 2 5</text>
-            <text x="97" y="120" font-size="9.5" font-weight="700" fill="#475569" text-anchor="middle">4 tens → 3 tens, 12 - 7 = 5</text>
+            <text x="97" y="22" font-size="11.5" font-weight="900" fill="#1e40af" text-anchor="middle">SUBTRACTION (BORROW)</text>
+            <text x="105" y="38" font-size="10.5" font-weight="900" fill="#dc2626" text-anchor="middle">3</text>
+            <text x="135" y="38" font-size="10.5" font-weight="900" fill="#dc2626" text-anchor="middle">12</text>
+            <text x="36" y="74" font-size="18" font-weight="900" fill="#0284c7" text-anchor="middle">&minus;</text>
+            <text x="75" y="52" font-size="15" font-weight="800" fill="#0f172a" text-anchor="middle">5</text>
+            <text x="105" y="52" font-size="15" font-weight="800" fill="#94a3b8" text-anchor="middle">4</text>
+            <line x1="97" y1="57" x2="113" y2="43" stroke="#dc2626" stroke-width="2" stroke-linecap="round"/>
+            <text x="135" y="52" font-size="15" font-weight="800" fill="#94a3b8" text-anchor="middle">2</text>
+            <line x1="127" y1="57" x2="143" y2="43" stroke="#dc2626" stroke-width="2" stroke-linecap="round"/>
+            <text x="75" y="74" font-size="15" font-weight="800" fill="#0f172a" text-anchor="middle">2</text>
+            <text x="105" y="74" font-size="15" font-weight="800" fill="#0f172a" text-anchor="middle">1</text>
+            <text x="135" y="74" font-size="15" font-weight="800" fill="#0f172a" text-anchor="middle">7</text>
+            <line x1="30" y1="84" x2="165" y2="84" stroke="#1e40af" stroke-width="2"/>
+            <text x="75" y="106" font-size="16" font-weight="900" fill="#2563eb" text-anchor="middle">3</text>
+            <text x="105" y="106" font-size="16" font-weight="900" fill="#2563eb" text-anchor="middle">2</text>
+            <text x="135" y="106" font-size="16" font-weight="900" fill="#2563eb" text-anchor="middle">5</text>
+            <text x="97" y="123" font-size="9.5" font-weight="700" fill="#475569" text-anchor="middle">4 tens &rarr; 3 tens, 12 - 7 = 5</text>
           </g>
         </svg>"""
     },

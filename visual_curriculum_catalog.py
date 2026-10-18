@@ -31,7 +31,7 @@ def get_grid_method_svg():
 
   <!-- Grid Header Row -->
   <rect x="25" y="52" width="60" height="42" rx="6" fill="#0284c7"/>
-  <text x="50" y="79" font-size="20" font-weight="800" fill="#ffffff" text-anchor="middle">×</text>
+  <text x="55" y="79" font-size="20" font-weight="800" fill="#ffffff" text-anchor="middle">×</text>
 
   <rect x="95" y="52" width="145" height="42" rx="6" fill="#0284c7"/>
   <text x="167" y="72" font-size="11" font-weight="700" fill="#bae6fd" text-anchor="middle">TENS</text>
@@ -91,30 +91,31 @@ def get_bus_stop_svg():
   <text x="28" y="32" font-size="12" font-weight="800" fill="#0369a1">✎ WORKED METHOD: BUS STOP</text>
   <text x="265" y="32" font-size="13" font-weight="700" fill="#0f172a">Short Division: 936 ÷ 4</text>
 
-  <!-- Quotient on top -->
-  <text x="160" y="80" font-size="34" font-weight="800" fill="#0284c7">2</text>
-  <text x="245" y="80" font-size="34" font-weight="800" fill="#0284c7">3</text>
-  <text x="330" y="80" font-size="34" font-weight="800" fill="#0284c7">4</text>
+  <!-- Quotient on top (Centered above dividend digits) -->
+  <text x="165" y="80" font-size="34" font-weight="800" fill="#0284c7" text-anchor="middle">2</text>
+  <text x="255" y="80" font-size="34" font-weight="800" fill="#0284c7" text-anchor="middle">3</text>
+  <text x="345" y="80" font-size="34" font-weight="800" fill="#0284c7" text-anchor="middle">4</text>
 
   <!-- Bus Stop Bracket -->
   <path d="M 115 165 L 115 95 L 390 95" fill="none" stroke="#0f172a" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
 
-  <!-- Divisor -->
-  <text x="50" y="145" font-size="36" font-weight="800" fill="#0f172a">4</text>
+  <!-- Divisor on far left, out of the way -->
+  <text x="70" y="148" font-size="36" font-weight="800" fill="#0f172a" text-anchor="middle">4</text>
 
   <!-- Dividend digits with red carried remainders -->
-  <text x="155" y="148" font-size="36" font-weight="800" fill="#0f172a">9</text>
+  <text x="165" y="148" font-size="36" font-weight="800" fill="#0f172a" text-anchor="middle">9</text>
   <circle cx="215" cy="115" r="14" fill="#fee2e2"/>
   <text x="215" y="121" font-size="18" font-weight="800" fill="#e11d48" text-anchor="middle">¹</text>
-  <text x="245" y="148" font-size="36" font-weight="800" fill="#0f172a">3</text>
-
-  <circle cx="300" cy="115" r="14" fill="#fee2e2"/>
-  <text x="300" y="121" font-size="18" font-weight="800" fill="#e11d48" text-anchor="middle">¹</text>
-  <text x="330" y="148" font-size="36" font-weight="800" fill="#0f172a">6</text>
+  
+  <text x="255" y="148" font-size="36" font-weight="800" fill="#0f172a" text-anchor="middle">3</text>
+  <circle cx="305" cy="115" r="14" fill="#fee2e2"/>
+  <text x="305" y="121" font-size="18" font-weight="800" fill="#e11d48" text-anchor="middle">¹</text>
+  
+  <text x="345" y="148" font-size="36" font-weight="800" fill="#0f172a" text-anchor="middle">6</text>
 
   <!-- Annotation note -->
   <rect x="25" y="174" width="410" height="24" rx="6" fill="#f8fafc" stroke="#e2e8f0"/>
-  <text x="230" y="190" font-size="11.5" font-weight="600" fill="#475569" text-anchor="middle">Step: 4 into 9 = 2 r 1 → 4 into 13 = 3 r 1 → 4 into 16 = 4. Answer = 234 ✓</text>
+  <text x="230" y="190" font-size="11.5" font-weight="600" fill="#475569" text-anchor="middle">Step: 4 into 9 = 2 r 1 → 4 into 13 = 3 r 1 → 4 into 16 = 4. Final Answer = 234 ✓</text>
 </svg>"""
 
 def get_bidmas_svg():
@@ -373,57 +374,62 @@ def get_decimals_svg():
   <!-- Left Column Calculation Card -->
   <rect x="22" y="62" width="310" height="238" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
 
+  <!-- Column Place Value Headers -->
+  <text x="120" y="80" font-size="12" font-weight="800" fill="#64748b" text-anchor="middle">T</text>
+  <text x="156" y="80" font-size="12" font-weight="800" fill="#64748b" text-anchor="middle">U</text>
+  <text x="184" y="80" font-size="12" font-weight="800" fill="#dc2626" text-anchor="middle">&bull;</text>
+  <text x="212" y="80" font-size="12" font-weight="800" fill="#64748b" text-anchor="middle">t</text>
+  <text x="248" y="80" font-size="12" font-weight="800" fill="#64748b" text-anchor="middle">h</text>
+  <line x1="38" y1="86" x2="286" y2="86" stroke="#e2e8f0" stroke-width="1.5"/>
+
   <!-- Red Vertical Decimal Guideline -->
   <line x1="184" y1="72" x2="184" y2="286" stroke="#ef4444" stroke-width="2" stroke-dasharray="5,4" opacity="0.85"/>
 
-  <!-- Row 1: £34.75 -->
+  <!-- Row 1: 34.75 -->
   <g font-size="28" font-weight="800" fill="#0f172a">
-    <text x="78" y="106" text-anchor="middle">£</text>
-    <text x="120" y="106" text-anchor="middle">3</text>
-    <text x="156" y="106" text-anchor="middle">4</text>
-    <circle cx="184" cy="103" r="3.2" fill="#0f172a"/>
-    <text x="212" y="106" text-anchor="middle">7</text>
-    <text x="248" y="106" text-anchor="middle">5</text>
+    <text x="120" y="112" text-anchor="middle">3</text>
+    <text x="156" y="112" text-anchor="middle">4</text>
+    <circle cx="184" cy="109" r="3.2" fill="#0f172a"/>
+    <text x="212" y="112" text-anchor="middle">7</text>
+    <text x="248" y="112" text-anchor="middle">5</text>
   </g>
 
-  <!-- Row 2: £ 8.60 -->
+  <!-- Row 2: 8.60 (padded zero) -->
   <g font-size="28" font-weight="800" fill="#0f172a">
-    <text x="78" y="148" text-anchor="middle">£</text>
-    <text x="156" y="148" text-anchor="middle">8</text>
-    <circle cx="184" cy="145" r="3.2" fill="#0f172a"/>
-    <text x="212" y="148" text-anchor="middle">6</text>
-    <text x="248" y="148" text-anchor="middle">0</text>
+    <text x="156" y="152" text-anchor="middle">8</text>
+    <circle cx="184" cy="149" r="3.2" fill="#0f172a"/>
+    <text x="212" y="152" text-anchor="middle">6</text>
+    <rect x="236" y="129" width="24" height="30" rx="4" fill="#dcfce7"/>
+    <text x="248" y="152" font-weight="800" fill="#15803d" text-anchor="middle">0</text>
   </g>
 
-  <!-- Row 3: + £12.08 -->
-  <text x="46" y="190" font-size="26" font-weight="800" fill="#0284c7" text-anchor="middle">+</text>
+  <!-- Row 3: + 12.08 (Operation + to far left, out of the way) -->
+  <text x="46" y="192" font-size="28" font-weight="900" fill="#0284c7" text-anchor="middle">+</text>
   <g font-size="28" font-weight="800" fill="#0f172a">
-    <text x="78" y="190" text-anchor="middle">£</text>
-    <text x="120" y="190" text-anchor="middle">1</text>
-    <text x="156" y="190" text-anchor="middle">2</text>
-    <circle cx="184" cy="187" r="3.2" fill="#0f172a"/>
-    <text x="212" y="190" text-anchor="middle">0</text>
-    <text x="248" y="190" text-anchor="middle">8</text>
+    <text x="120" y="192" text-anchor="middle">1</text>
+    <text x="156" y="192" text-anchor="middle">2</text>
+    <circle cx="184" cy="189" r="3.2" fill="#0f172a"/>
+    <text x="212" y="192" text-anchor="middle">0</text>
+    <text x="248" y="192" text-anchor="middle">8</text>
   </g>
 
   <!-- Calculation Divider Line -->
-  <line x1="38" y1="208" x2="286" y2="208" stroke="#0f172a" stroke-width="2.5"/>
+  <line x1="38" y1="210" x2="286" y2="210" stroke="#0f172a" stroke-width="2.5"/>
 
   <!-- Carries row -->
-  <g font-size="14" font-weight="800" fill="#64748b">
-    <text x="120" y="224" text-anchor="middle">1</text>
-    <text x="156" y="224" text-anchor="middle">1</text>
-    <text x="212" y="224" text-anchor="middle">1</text>
+  <g font-size="14" font-weight="800" fill="#dc2626">
+    <text x="120" y="226" text-anchor="middle">¹</text>
+    <text x="156" y="226" text-anchor="middle">¹</text>
+    <text x="212" y="226" text-anchor="middle">¹</text>
   </g>
 
-  <!-- Result Row: £55.43 -->
-  <g font-size="30" font-weight="800" fill="#15803d">
-    <text x="78" y="258" text-anchor="middle">£</text>
-    <text x="120" y="258" text-anchor="middle">5</text>
-    <text x="156" y="258" text-anchor="middle">5</text>
-    <circle cx="184" cy="255" r="3.4" fill="#15803d"/>
-    <text x="212" y="258" text-anchor="middle">4</text>
-    <text x="248" y="258" text-anchor="middle">3</text>
+  <!-- Result Row: 55.43 (No currency inside calculation) -->
+  <g font-size="30" font-weight="900" fill="#15803d">
+    <text x="120" y="260" text-anchor="middle">5</text>
+    <text x="156" y="260" text-anchor="middle">5</text>
+    <circle cx="184" cy="257" r="3.4" fill="#15803d"/>
+    <text x="212" y="260" text-anchor="middle">4</text>
+    <text x="248" y="260" text-anchor="middle">3</text>
   </g>
 
   <!-- Double Underline -->
@@ -438,7 +444,7 @@ def get_decimals_svg():
   <text x="394" y="137" font-size="14.5" font-weight="600" fill="#1e293b">Align decimal points vertically (red line).</text>
   
   <circle cx="380" cy="168" r="3.5" fill="#2563eb"/>
-  <text x="394" y="173" font-size="14.5" font-weight="600" fill="#1e293b">Fill missing trailing zero: £8.6 → £8.60.</text>
+  <text x="394" y="173" font-size="14.5" font-weight="600" fill="#1e293b">Fill missing trailing zero: 8.6 → 8.60.</text>
   
   <circle cx="380" cy="204" r="3.5" fill="#2563eb"/>
   <text x="394" y="209" font-size="14.5" font-weight="600" fill="#1e293b">Currency MUST always have 2 decimal places.</text>

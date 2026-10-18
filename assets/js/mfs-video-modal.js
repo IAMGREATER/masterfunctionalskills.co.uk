@@ -29,7 +29,7 @@
       companionLabel: 'Section B: Calculator (22m)'
     },
     'edexcel-maths-l2-past-paper-10-section-b': {
-      ytId: 'UGjVuqySTfE',
+      ytId: 'b6Ma4VzxG8I',
       title: 'Past Paper 10 • Section B: Calculator (Full Walkthrough)',
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       paperGroup: 'edexcel-maths-l2-pp10',
@@ -38,7 +38,7 @@
       companionLabel: 'Section A: Non-Calculator (13m)'
     },
     'past paper 10 • section b: calculator': {
-      ytId: 'UGjVuqySTfE',
+      ytId: 'b6Ma4VzxG8I',
       title: 'Past Paper 10 • Section B: Calculator (Full Walkthrough)',
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       paperGroup: 'edexcel-maths-l2-pp10',
@@ -49,7 +49,7 @@
 
     // Past Paper 9
     'edexcel-maths-l2-past-paper-9-section-a': {
-      ytId: 'KvOZvxBZgL0',
+      ytId: '61c6xSMBz0I',
       title: 'Past Paper 9 • Section A: Non-Calculator (Full Walkthrough)',
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       paperGroup: 'edexcel-maths-l2-pp9',
@@ -58,7 +58,7 @@
       companionLabel: 'Section B: Calculator (20m)'
     },
     'past paper 9 • section a: non-calculator': {
-      ytId: 'KvOZvxBZgL0',
+      ytId: '61c6xSMBz0I',
       title: 'Past Paper 9 • Section A: Non-Calculator (Full Walkthrough)',
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       paperGroup: 'edexcel-maths-l2-pp9',
@@ -67,7 +67,7 @@
       companionLabel: 'Section B: Calculator (20m)'
     },
     'edexcel-maths-l2-past-paper-9-section-b': {
-      ytId: 'O1Z5SINmpEE',
+      ytId: 'how7uhzmyIQ',
       title: 'Past Paper 9 • Section B: Calculator (Full Walkthrough)',
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       paperGroup: 'edexcel-maths-l2-pp9',
@@ -76,7 +76,7 @@
       companionLabel: 'Section A: Non-Calculator (10m)'
     },
     'past paper 9 • section b: calculator': {
-      ytId: 'O1Z5SINmpEE',
+      ytId: 'how7uhzmyIQ',
       title: 'Past Paper 9 • Section B: Calculator (Full Walkthrough)',
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       paperGroup: 'edexcel-maths-l2-pp9',
@@ -87,7 +87,7 @@
 
     // Past Paper 8
     'edexcel-maths-l2-past-paper-8-section-a': {
-      ytId: 'y0XyWFzcsjc',
+      ytId: 'nr8dqv5KIkI',
       title: 'Past Paper 8 • Section A: Non-Calculator (Full Walkthrough)',
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       paperGroup: 'edexcel-maths-l2-pp8',
@@ -96,7 +96,7 @@
       companionLabel: 'Section B: Calculator (22m)'
     },
     'past paper 8 • section a: non-calculator': {
-      ytId: 'y0XyWFzcsjc',
+      ytId: 'nr8dqv5KIkI',
       title: 'Past Paper 8 • Section A: Non-Calculator (Full Walkthrough)',
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       paperGroup: 'edexcel-maths-l2-pp8',
@@ -105,7 +105,7 @@
       companionLabel: 'Section B: Calculator (22m)'
     },
     'edexcel-maths-l2-past-paper-8-section-b': {
-      ytId: '8xa6AdKD6jU',
+      ytId: 'KbPz2OxJRxc',
       title: 'Past Paper 8 • Section B: Calculator (Full Walkthrough)',
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       paperGroup: 'edexcel-maths-l2-pp8',
@@ -114,7 +114,7 @@
       companionLabel: 'Section A: Non-Calculator (10m)'
     },
     'past paper 8 • section b: calculator': {
-      ytId: '8xa6AdKD6jU',
+      ytId: 'KbPz2OxJRxc',
       title: 'Past Paper 8 • Section B: Calculator (Full Walkthrough)',
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       paperGroup: 'edexcel-maths-l2-pp8',
@@ -125,7 +125,7 @@
 
     // Past Paper 7
     'edexcel-maths-l2-past-paper-7-section-a': {
-      ytId: 'proQAbkfZyQ',
+      ytId: 'bnxoprdRACk',
       title: 'Past Paper 7 • Section A: Non-Calculator (Full Walkthrough)',
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       paperGroup: 'edexcel-maths-l2-pp7',
@@ -134,7 +134,7 @@
       companionLabel: 'Section B: Calculator (25m)'
     },
     'past paper 7 • section a: non-calculator': {
-      ytId: 'proQAbkfZyQ',
+      ytId: 'bnxoprdRACk',
       title: 'Past Paper 7 • Section A: Non-Calculator (Full Walkthrough)',
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       paperGroup: 'edexcel-maths-l2-pp7',
@@ -143,7 +143,7 @@
       companionLabel: 'Section B: Calculator (25m)'
     },
     'edexcel-maths-l2-past-paper-7-section-b': {
-      ytId: '5ZTGk25aDg0',
+      ytId: 'IY2EjScrw4Y',
       title: 'Past Paper 7 • Section B: Calculator (Full Walkthrough)',
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       paperGroup: 'edexcel-maths-l2-pp7',
@@ -152,7 +152,7 @@
       companionLabel: 'Section A: Non-Calculator (12m)'
     },
     'past paper 7 • section b: calculator': {
-      ytId: '5ZTGk25aDg0',
+      ytId: 'IY2EjScrw4Y',
       title: 'Past Paper 7 • Section B: Calculator (Full Walkthrough)',
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       paperGroup: 'edexcel-maths-l2-pp7',

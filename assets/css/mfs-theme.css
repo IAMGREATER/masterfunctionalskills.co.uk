@@ -3531,6 +3531,128 @@ body.dyslexia-mode .moat-badge {
   }
 }
 
+/* Compact Combined Download Cards (Paper + Answers in one card) */
+.download-combo-card {
+  background: var(--bg-card, #ffffff);
+  border: 1px solid var(--border, #e2e8f0);
+  border-radius: 12px;
+  padding: 16px 18px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 12px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+  transition: all 0.2s ease;
+}
+.download-combo-card:hover {
+  border-color: var(--accent, #2563eb);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.06);
+}
+.download-combo-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.download-combo-card .download-tile-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 10px;
+  font-size: 1.25rem;
+  flex-shrink: 0;
+}
+.download-combo-info {
+  flex: 1;
+  min-width: 0;
+}
+.download-combo-info .tile-badge-wrap {
+  margin-bottom: 3px;
+}
+.download-tile-title {
+  display: block;
+  font-size: 0.96rem;
+  font-weight: 800;
+  color: var(--navy-dark, #070d1e);
+  margin-bottom: 2px;
+  line-height: 1.3;
+}
+.download-tile-desc {
+  display: block;
+  font-size: 0.8rem;
+  color: #64748b;
+  line-height: 1.35;
+}
+.download-combo-actions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 8px;
+  padding-top: 4px;
+  border-top: 1px solid var(--border-light, #f1f5f9);
+}
+.download-combo-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 7px 10px;
+  border-radius: 7px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: all 0.15s ease;
+}
+.download-combo-btn.btn-qp {
+  background: #eff6ff;
+  color: #1d4ed8;
+  border: 1px solid #bfdbfe;
+}
+.download-combo-btn.btn-qp i {
+  color: #2563eb;
+}
+.download-combo-btn.btn-qp:hover {
+  background: #2563eb;
+  color: #ffffff;
+  border-color: #2563eb;
+}
+.download-combo-btn.btn-qp:hover i {
+  color: #ffffff;
+}
+.download-combo-btn.btn-ans {
+  background: #f0fdf4;
+  color: #166534;
+  border: 1px solid #bbf7d0;
+}
+.download-combo-btn.btn-ans i {
+  color: #16a34a;
+}
+.download-combo-btn.btn-ans:hover {
+  background: #16a34a;
+  color: #ffffff;
+  border-color: #16a34a;
+}
+.download-combo-btn.btn-ans:hover i {
+  color: #ffffff;
+}
+@media (max-width: 480px) {
+  .download-combo-card {
+    padding: 14px;
+    gap: 10px;
+  }
+  .download-combo-header {
+    gap: 10px;
+  }
+  .download-combo-card .download-tile-icon {
+    width: 38px;
+    height: 38px;
+    font-size: 1.1rem;
+  }
+  .download-combo-actions {
+    grid-template-columns: 1fr;
+    gap: 6px;
+  }
+}
+
 /* ==========================================================================
    MOBILE & TABLET SYSTEM IMPORT (PRIORITY CASCADE)
    ========================================================================== */

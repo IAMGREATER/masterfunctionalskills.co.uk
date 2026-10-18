@@ -159,7 +159,44 @@
       activeSection: 'B',
       companionSlug: 'edexcel-maths-l2-past-paper-7-section-a',
       companionLabel: 'Section A: Non-Calculator (12m)'
-    }
+    },
+    // Past Paper 6
+    'edexcel-maths-l2-past-paper-6-section-a': {
+      ytId: 'TCwy_FiZ1eA',
+      title: 'Past Paper 6 • Section A: Non-Calculator (Full Walkthrough)',
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      paperGroup: 'edexcel-maths-l2-pp6',
+      activeSection: 'A',
+      companionSlug: 'edexcel-maths-l2-past-paper-6-section-b',
+      companionLabel: 'Section B: Calculator (22m)'
+    },
+    'past paper 6 • section a: non-calculator': {
+      ytId: 'TCwy_FiZ1eA',
+      title: 'Past Paper 6 • Section A: Non-Calculator (Full Walkthrough)',
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      paperGroup: 'edexcel-maths-l2-pp6',
+      activeSection: 'A',
+      companionSlug: 'edexcel-maths-l2-past-paper-6-section-b',
+      companionLabel: 'Section B: Calculator (22m)'
+    },
+    'edexcel-maths-l2-past-paper-6-section-b': {
+      ytId: 'r4bU8USCWvs',
+      title: 'Past Paper 6 • Section B: Calculator (Full Walkthrough)',
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      paperGroup: 'edexcel-maths-l2-pp6',
+      activeSection: 'B',
+      companionSlug: 'edexcel-maths-l2-past-paper-6-section-a',
+      companionLabel: 'Section A: Non-Calculator (10m)'
+    },
+    'past paper 6 • section b: calculator': {
+      ytId: 'r4bU8USCWvs',
+      title: 'Past Paper 6 • Section B: Calculator (Full Walkthrough)',
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      paperGroup: 'edexcel-maths-l2-pp6',
+      activeSection: 'B',
+      companionSlug: 'edexcel-maths-l2-past-paper-6-section-a',
+      companionLabel: 'Section A: Non-Calculator (10m)'
+    },
   };
 
   let modalOverlay = null;

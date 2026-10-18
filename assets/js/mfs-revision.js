@@ -365,6 +365,8 @@ function switchTopicVideo(task) {
   const t1Jumps = document.getElementById('topicTask1Jumps');
   const t2Jumps = document.getElementById('topicTask2Jumps');
   const dlBtn = document.getElementById('topicVideoDownloadBtn');
+  const stationBtn = document.getElementById('topicVideoStationBtn');
+  const ytBtn = document.getElementById('topicVideoYouTubeBtn');
   const tabs = document.querySelectorAll('.video-exemplar-card .video-tab-btn');
 
   if (!player || !source) return;
@@ -381,6 +383,14 @@ function switchTopicVideo(task) {
       dlBtn.href = 'assets/video/slc-task1-presentation-model.mp4';
       dlBtn.innerHTML = '<i class="fa-solid fa-download"></i> Download Task 1 Video (1080p MP4)';
     }
+    if (stationBtn) {
+      stationBtn.href = 'video-solution.html?topic=slc-task1-presentation-model';
+      stationBtn.innerHTML = '<i class="fa-solid fa-circle-play"></i> Video Station: Task 1';
+    }
+    if (ytBtn) {
+      ytBtn.href = 'https://youtu.be/l7VRzidsFno';
+      ytBtn.innerHTML = '<i class="fa-brands fa-youtube"></i> Watch Task 1 on YouTube';
+    }
   } else {
     tabs.forEach(t => { if (t.textContent.includes('Task 2')) t.classList.add('active'); });
     source.src = 'assets/video/slc-task2-discussion-model.mp4';
@@ -390,6 +400,14 @@ function switchTopicVideo(task) {
     if (dlBtn) {
       dlBtn.href = 'assets/video/slc-task2-discussion-model.mp4';
       dlBtn.innerHTML = '<i class="fa-solid fa-download"></i> Download Task 2 Video (1080p MP4)';
+    }
+    if (stationBtn) {
+      stationBtn.href = 'video-solution.html?topic=slc-task2-discussion-model';
+      stationBtn.innerHTML = '<i class="fa-solid fa-circle-play"></i> Video Station: Task 2';
+    }
+    if (ytBtn) {
+      ytBtn.href = 'https://youtu.be/labg8nxHII0';
+      ytBtn.innerHTML = '<i class="fa-brands fa-youtube"></i> Watch Task 2 on YouTube';
     }
   }
   player.load();

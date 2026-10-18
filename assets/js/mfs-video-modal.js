@@ -197,6 +197,44 @@
       companionSlug: 'edexcel-maths-l2-past-paper-6-section-a',
       companionLabel: 'Section A: Non-Calculator (10m)'
     },
+
+    // SLC Task 1 & Task 2 Exemplar Walkthroughs
+    'slc-task1-presentation-model': {
+      ytId: 'l7VRzidsFno',
+      title: 'SLC Task 1 • Presentation Model (Pass Benchmark)',
+      series: 'Pearson Edexcel English Level 2 SLC',
+      paperGroup: 'edexcel-english-l2-slc',
+      activeSection: 'Task 1',
+      companionSlug: 'slc-task2-discussion-model',
+      companionLabel: 'Task 2: Discussion Model (4m)'
+    },
+    'slc task 1 • presentation model': {
+      ytId: 'l7VRzidsFno',
+      title: 'SLC Task 1 • Presentation Model (Pass Benchmark)',
+      series: 'Pearson Edexcel English Level 2 SLC',
+      paperGroup: 'edexcel-english-l2-slc',
+      activeSection: 'Task 1',
+      companionSlug: 'slc-task2-discussion-model',
+      companionLabel: 'Task 2: Discussion Model (4m)'
+    },
+    'slc-task2-discussion-model': {
+      ytId: 'labg8nxHII0',
+      title: 'SLC Task 2 • Group Discussion Model (Pass Benchmark)',
+      series: 'Pearson Edexcel English Level 2 SLC',
+      paperGroup: 'edexcel-english-l2-slc',
+      activeSection: 'Task 2',
+      companionSlug: 'slc-task1-presentation-model',
+      companionLabel: 'Task 1: Presentation Model (4m)'
+    },
+    'slc task 2 • discussion model': {
+      ytId: 'labg8nxHII0',
+      title: 'SLC Task 2 • Group Discussion Model (Pass Benchmark)',
+      series: 'Pearson Edexcel English Level 2 SLC',
+      paperGroup: 'edexcel-english-l2-slc',
+      activeSection: 'Task 2',
+      companionSlug: 'slc-task1-presentation-model',
+      companionLabel: 'Task 1: Presentation Model (4m)'
+    }
   };
 
   let modalOverlay = null;

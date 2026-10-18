@@ -466,6 +466,12 @@
           <a href="assets/video/slc-task1-presentation-model.mp4" id="topicVideoDownloadBtn" class="download-btn download-btn-secondary" download>
             <i class="fa-solid fa-download"></i> Download Task 1 Video (1080p MP4)
           </a>
+          <a href="video-solution.html?topic=slc-task1-presentation-model" id="topicVideoStationBtn" class="download-btn download-btn-secondary" style="background:#0284c7; color:#fff;" target="_blank" rel="noopener">
+            <i class="fa-solid fa-circle-play"></i> Video Station: Task 1
+          </a>
+          <a href="https://youtu.be/l7VRzidsFno" id="topicVideoYouTubeBtn" class="download-btn download-btn-secondary" style="background:#dc2626; color:#fff;" target="_blank" rel="noopener">
+            <i class="fa-brands fa-youtube"></i> Watch Task 1 on YouTube
+          </a>
         </div>
       </div>
     </section>
@@ -477,6 +483,8 @@
         const t1Jumps = document.getElementById('topicTask1Jumps');
         const t2Jumps = document.getElementById('topicTask2Jumps');
         const dlBtn = document.getElementById('topicVideoDownloadBtn');
+        const stationBtn = document.getElementById('topicVideoStationBtn');
+        const ytBtn = document.getElementById('topicVideoYouTubeBtn');
         const tabs = document.querySelectorAll('#video-exemplar .video-tab-btn');
         
         tabs.forEach(t => t.classList.remove('active'));
@@ -487,16 +495,36 @@
           player.poster = 'assets/img/slc-task1-poster.png';
           t1Jumps.style.display = 'flex';
           t2Jumps.style.display = 'none';
-          dlBtn.href = 'assets/video/slc-task1-presentation-model.mp4';
-          dlBtn.innerHTML = '<i class="fa-solid fa-download"></i> Download Task 1 Video (1080p MP4)';
+          if (dlBtn) {
+            dlBtn.href = 'assets/video/slc-task1-presentation-model.mp4';
+            dlBtn.innerHTML = '<i class="fa-solid fa-download"></i> Download Task 1 Video (1080p MP4)';
+          }
+          if (stationBtn) {
+            stationBtn.href = 'video-solution.html?topic=slc-task1-presentation-model';
+            stationBtn.innerHTML = '<i class="fa-solid fa-circle-play"></i> Video Station: Task 1';
+          }
+          if (ytBtn) {
+            ytBtn.href = 'https://youtu.be/l7VRzidsFno';
+            ytBtn.innerHTML = '<i class="fa-brands fa-youtube"></i> Watch Task 1 on YouTube';
+          }
         } else {
           tabs[1].classList.add('active');
           source.src = 'assets/video/slc-task2-discussion-model.mp4';
           player.poster = 'assets/img/slc-task2-poster.png';
           t1Jumps.style.display = 'none';
           t2Jumps.style.display = 'flex';
-          dlBtn.href = 'assets/video/slc-task2-discussion-model.mp4';
-          dlBtn.innerHTML = '<i class="fa-solid fa-download"></i> Download Task 2 Video (1080p MP4)';
+          if (dlBtn) {
+            dlBtn.href = 'assets/video/slc-task2-discussion-model.mp4';
+            dlBtn.innerHTML = '<i class="fa-solid fa-download"></i> Download Task 2 Video (1080p MP4)';
+          }
+          if (stationBtn) {
+            stationBtn.href = 'video-solution.html?topic=slc-task2-discussion-model';
+            stationBtn.innerHTML = '<i class="fa-solid fa-circle-play"></i> Video Station: Task 2';
+          }
+          if (ytBtn) {
+            ytBtn.href = 'https://youtu.be/labg8nxHII0';
+            ytBtn.innerHTML = '<i class="fa-brands fa-youtube"></i> Watch Task 2 on YouTube';
+          }
         }
         player.load();
         player.play().catch(e => console.log('Autoplay blocked:', e));

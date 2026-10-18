@@ -2682,6 +2682,70 @@
       box-sizing: border-box !important;
     }
 
+    /* Tutor Pro Callout & Fixed-Size Avatar (Strictly immune to 100% image stretch) */
+    .tutor-pro-callout {
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: flex-start !important;
+      gap: 12px !important;
+      padding: 14px 14px !important;
+      margin: 16px 0 !important;
+      border-radius: 12px !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      box-sizing: border-box !important;
+    }
+
+    .tutor-pro-callout img.tutor-avatar-img,
+    .mfs-topic-body .tutor-pro-callout img.tutor-avatar-img,
+    .math-visual-card .tutor-pro-callout img.tutor-avatar-img,
+    .model-example-card .tutor-pro-callout img.tutor-avatar-img,
+    .model-steps-container .tutor-pro-callout img.tutor-avatar-img,
+    img.tutor-avatar-img {
+      width: 52px !important;
+      min-width: 52px !important;
+      max-width: 52px !important;
+      height: 52px !important;
+      min-height: 52px !important;
+      max-height: 52px !important;
+      border-radius: 50% !important;
+      border: 2.5px solid #ffffff !important;
+      box-shadow: 0 3px 8px rgba(2, 132, 199, 0.22) !important;
+      object-fit: cover !important;
+      flex-shrink: 0 !important;
+      margin: 0 !important;
+      display: block !important;
+    }
+
+    .tutor-speech-bubble {
+      flex: 1 1 0% !important;
+      min-width: 0 !important;
+      word-break: break-word !important;
+      overflow-wrap: break-word !important;
+    }
+
+    .tutor-speech-title {
+      font-size: 0.98rem !important;
+      line-height: 1.35 !important;
+      margin-bottom: 4px !important;
+      gap: 6px !important;
+      display: flex !important;
+      align-items: flex-start !important;
+      flex-wrap: wrap !important;
+    }
+
+    .tutor-speech-title i {
+      font-size: 0.95rem !important;
+      margin-top: 2px !important;
+    }
+
+    .tutor-speech-text {
+      font-size: 0.86rem !important;
+      line-height: 1.5 !important;
+      margin: 0 !important;
+      color: #334155 !important;
+    }
+
     /* ==========================================================================
        INTERACTIVE EXAM PRACTICE QUESTIONS — MOBILE PORTRAIT ENGINE (COMPACT & FULL-WIDTH)
        ========================================================================== */
@@ -2733,6 +2797,8 @@
     .practice-card-header {
       padding: 8px 10px !important;
       display: flex !important;
+      flex-wrap: wrap !important;
+      gap: 6px !important;
       justify-content: space-between !important;
       align-items: center !important;
       background: #f8fafc !important;
@@ -2753,7 +2819,7 @@
       align-items: center !important;
       gap: 5px !important;
       width: auto !important;
-      max-width: 72% !important;
+      max-width: 100% !important;
     }
 
     .practice-marks-pill,
@@ -2765,7 +2831,9 @@
       border-radius: 999px !important;
       line-height: 1.2 !important;
       width: auto !important;
-      white-space: nowrap !important;
+      max-width: 100% !important;
+      white-space: normal !important;
+      word-break: break-word !important;
       display: inline-flex !important;
       align-items: center !important;
     }
@@ -2893,7 +2961,7 @@
       min-height: 48px !important;
       height: 52px !important;
       padding: 6px 8px !important;
-      font-size: 0.80rem !important;
+      font-size: 16px !important; /* Prevents auto-zoom on iOS Safari */
       line-height: 1.35 !important;
       border-radius: 6px !important;
       border: 1px solid #cbd5e1 !important;
@@ -3147,6 +3215,13 @@
       line-height: 1.4 !important;
     }
 
+    .model-step-col-desc > div[style*="display:flex"],
+    .model-step-col-desc > div[style*="display: flex"] {
+      flex-direction: column !important;
+      align-items: stretch !important;
+      gap: 12px !important;
+    }
+
     .model-step-col-desc .math-col-board {
       padding: 6px 8px !important;
       margin: 4px 0 !important;
@@ -3213,12 +3288,17 @@
       line-height: 1.35 !important;
     }
 
+    .examiner-pitfall-box div[style*="grid-template-columns"] {
+      grid-template-columns: 1fr !important;
+      gap: 10px !important;
+    }
+
     /* Sketches, Diagrams, and SVGs */
     .sketch-diagram-wrap {
       width: 100% !important;
       max-width: 100% !important;
-      margin-left: 0 !important;
-      margin-right: 0 !important;
+      margin: 12px 0 !important;
+      padding-bottom: 6px !important;
       border-radius: 0 !important;
       display: block !important;
       overflow-x: auto !important;
@@ -3226,19 +3306,25 @@
       box-sizing: border-box !important;
     }
 
-    .sketch-diagram-wrap svg,
+    .sketch-diagram-wrap svg {
+      min-width: 520px !important;
+      width: 100% !important;
+      height: auto !important;
+      display: block !important;
+    }
+
     .sketch-diagram-wrap img,
     .diagram-panel-box img,
     .diagram-panel-box svg,
     .pfs-diagram-col svg,
     .pfs-diagram-col img,
-    .mfs-topic-body img,
+    .mfs-topic-body img:not(.tutor-avatar-img),
     .mfs-topic-body svg,
-    .math-visual-card img,
+    .math-visual-card img:not(.tutor-avatar-img),
     .math-visual-card svg,
-    .model-example-card img,
-    .practice-question-card img,
-    .practice-q-stem img,
+    .model-example-card img:not(.tutor-avatar-img),
+    .practice-question-card img:not(.tutor-avatar-img),
+    .practice-q-stem img:not(.tutor-avatar-img),
     .real-photo-card img {
       width: 100% !important;
       max-width: 100% !important;
@@ -3711,6 +3797,8 @@
   .practice-card-header {
     padding: 8px 10px !important;
     display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 6px !important;
     justify-content: space-between !important;
     align-items: center !important;
     background: #f8fafc !important;
@@ -3731,7 +3819,7 @@
     align-items: center !important;
     gap: 5px !important;
     width: auto !important;
-    max-width: 72% !important;
+    max-width: 100% !important;
   }
 
   .practice-marks-pill,
@@ -3743,7 +3831,9 @@
     border-radius: 999px !important;
     line-height: 1.2 !important;
     width: auto !important;
-    white-space: nowrap !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+    word-break: break-word !important;
     display: inline-flex !important;
     align-items: center !important;
   }
@@ -3871,7 +3961,7 @@
     min-height: 48px !important;
     height: 52px !important;
     padding: 6px 8px !important;
-    font-size: 0.80rem !important;
+    font-size: 16px !important; /* Prevents auto-zoom on iOS Safari */
     line-height: 1.35 !important;
     border-radius: 6px !important;
     border: 1px solid #cbd5e1 !important;

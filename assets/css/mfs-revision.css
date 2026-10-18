@@ -2785,6 +2785,42 @@ p {
   margin: 0;
 }
 
+@media (max-width: 768px), (orientation: portrait) and (max-width: 1024px) {
+  .tutor-pro-callout {
+    gap: 12px;
+    align-items: flex-start;
+    padding: 14px 14px;
+    margin: 16px 0;
+    border-radius: 12px;
+  }
+  .tutor-avatar-img {
+    width: 52px;
+    height: 52px;
+    min-width: 52px;
+    min-height: 52px;
+  }
+  .tutor-speech-bubble {
+    min-width: 0;
+    word-break: break-word;
+    overflow-wrap: break-word;
+  }
+  .tutor-speech-title {
+    font-size: 0.98rem;
+    line-height: 1.35;
+    margin-bottom: 4px;
+    gap: 6px;
+    flex-wrap: wrap;
+  }
+  .tutor-speech-title i {
+    font-size: 0.95rem;
+    margin-top: 2px;
+  }
+  .tutor-speech-text {
+    font-size: 0.86rem;
+    line-height: 1.5;
+  }
+}
+
 /* Big Master Tables */
 .math-master-table {
   width: 100%;

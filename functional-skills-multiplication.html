@@ -439,100 +439,101 @@
                   <div class="math-card-title">Calculating 213 &times; 74 (Partitioning: 200 + 10 + 3 and 70 + 4)</div>
                 </div>
 
-                <div class="math-two-col-grid">
-                  <!-- Col 1: Big Visual Grid Table -->
-                  <div style="flex:1; min-width:320px; overflow-x:auto;">
-                    <table class="math-master-table keep-table-grid math-matrix-table" style="width:100%; border-collapse:collapse; text-align:center; font-size:1.15rem; min-width:360px;">
-                      <thead>
-                        <tr style="background:#0284c7; color:#fff;">
-                          <th style="padding:12px; font-size:1.5rem; font-weight:900;">&times;</th>
-                          <th style="padding:12px; font-size:1.2rem;">200 <span style="font-size:0.8rem; font-weight:400; opacity:0.85; display:block;">(HUNDREDS)</span></th>
-                          <th style="padding:12px; font-size:1.2rem;">10 <span style="font-size:0.8rem; font-weight:400; opacity:0.85; display:block;">(TENS)</span></th>
-                          <th style="padding:12px; font-size:1.2rem;">3 <span style="font-size:0.8rem; font-weight:400; opacity:0.85; display:block;">(UNITS)</span></th>
-                          <th style="padding:12px; font-size:1.15rem; background:#0369a1;">ROW SUBTOTAL</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                        <tr>
-                          <td data-label="&times;" style="padding:14px; font-weight:800; background:#f0f9ff; color:#0369a1; font-size:1.3rem;">70 <span style="font-size:0.8rem; font-weight:600; display:block; color:#64748b;">(TENS)</span></td>
-                          <td data-label="200 (HUNDREDS)" style="padding:14px; font-weight:800; color:#0284c7; font-size:1.45rem;">
-                            <div style="font-size:0.82rem; color:#64748b; font-weight:600; margin-bottom:2px;">70 &times; 200</div>
-                            14,000
-                          </td>
-                          <td data-label="10 (TENS)" style="padding:14px; font-weight:800; color:#0284c7; font-size:1.45rem;">
-                            <div style="font-size:0.82rem; color:#64748b; font-weight:600; margin-bottom:2px;">70 &times; 10</div>
-                            700
-                          </td>
-                          <td data-label="3 (UNITS)" style="padding:14px; font-weight:800; color:#0284c7; font-size:1.45rem;">
-                            <div style="font-size:0.82rem; color:#64748b; font-weight:600; margin-bottom:2px;">70 &times; 3</div>
-                            210
-                          </td>
-                          <td data-label="ROW SUBTOTAL" style="padding:14px; font-weight:900; color:#0f172a; background:#f8fafc; font-size:1.45rem;">
-                            <div style="font-size:0.8rem; color:#64748b; font-weight:600; margin-bottom:2px;">14,000 + 700 + 210</div>
-                            14,910
-                          </td>
-                        </tr>
-                        <tr>
-                          <td data-label="&times;" style="padding:14px; font-weight:800; background:#f0f9ff; color:#0369a1; font-size:1.3rem;">4 <span style="font-size:0.8rem; font-weight:600; display:block; color:#64748b;">(UNITS)</span></td>
-                          <td data-label="200 (HUNDREDS)" style="padding:14px; font-weight:800; color:#0284c7; font-size:1.45rem;">
-                            <div style="font-size:0.82rem; color:#64748b; font-weight:600; margin-bottom:2px;">4 &times; 200</div>
-                            800
-                          </td>
-                          <td data-label="10 (TENS)" style="padding:14px; font-weight:800; color:#0284c7; font-size:1.45rem;">
-                            <div style="font-size:0.82rem; color:#64748b; font-weight:600; margin-bottom:2px;">4 &times; 10</div>
-                            40
-                          </td>
-                          <td data-label="3 (UNITS)" style="padding:14px; font-weight:800; color:#0284c7; font-size:1.45rem;">
-                            <div style="font-size:0.82rem; color:#64748b; font-weight:600; margin-bottom:2px;">4 &times; 3</div>
-                            12
-                          </td>
-                          <td data-label="ROW SUBTOTAL" style="padding:14px; font-weight:900; color:#0f172a; background:#f8fafc; font-size:1.45rem;">
-                            <div style="font-size:0.8rem; color:#64748b; font-weight:600; margin-bottom:2px;">800 + 40 + 12</div>
-                            852
-                          </td>
-                        </tr>
-                      </tbody>
-                      <tfoot>
-                        <tr style="background:#dcfce7; border-top:3px solid #86efac;">
-                          <td data-label="&times;" colspan="4" style="padding:14px 18px; text-align:right; font-weight:800; color:#166534; font-size:1.2rem;">
-                            GRAND SUM: 14,910 + 852 =
-                          </td>
-                          <td data-label="ROW SUBTOTAL" style="padding:14px; font-weight:900; color:#15803d; font-size:1.85rem;">
-                            15,762 &check;
-                          </td>
-                        </tr>
-                      </tfoot>
-                    </table>
+                <!-- Big Visual Grid Table (Full Width) -->
+                <div style="overflow-x:auto; margin-bottom:24px; -webkit-overflow-scrolling:touch;">
+                  <table class="math-master-table keep-table-grid math-matrix-table" style="width:100%; border-collapse:collapse; text-align:center; font-size:1.15rem; min-width:540px; margin:0 0 10px 0;">
+                    <thead>
+                      <tr style="background:#0284c7; color:#fff;">
+                        <th style="padding:14px; font-size:1.5rem; font-weight:900; width:12%;">&times;</th>
+                        <th style="padding:14px; font-size:1.2rem; width:22%;">200 <span style="font-size:0.82rem; font-weight:400; opacity:0.9; display:block;">(HUNDREDS)</span></th>
+                        <th style="padding:14px; font-size:1.2rem; width:20%;">10 <span style="font-size:0.82rem; font-weight:400; opacity:0.9; display:block;">(TENS)</span></th>
+                        <th style="padding:14px; font-size:1.2rem; width:18%;">3 <span style="font-size:0.82rem; font-weight:400; opacity:0.9; display:block;">(UNITS)</span></th>
+                        <th style="padding:14px; font-size:1.2rem; background:#0369a1; width:28%;">ROW SUBTOTAL</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td data-label="&times;" style="padding:16px; font-weight:800; background:#f0f9ff; color:#0369a1; font-size:1.35rem;">70 <span style="font-size:0.82rem; font-weight:600; display:block; color:#64748b;">(TENS)</span></td>
+                        <td data-label="200 (HUNDREDS)" style="padding:16px; font-weight:800; color:#0284c7; font-size:1.45rem;">
+                          <div style="font-size:0.82rem; color:#64748b; font-weight:600; margin-bottom:2px;">70 &times; 200</div>
+                          14,000
+                        </td>
+                        <td data-label="10 (TENS)" style="padding:16px; font-weight:800; color:#0284c7; font-size:1.45rem;">
+                          <div style="font-size:0.82rem; color:#64748b; font-weight:600; margin-bottom:2px;">70 &times; 10</div>
+                          700
+                        </td>
+                        <td data-label="3 (UNITS)" style="padding:16px; font-weight:800; color:#0284c7; font-size:1.45rem;">
+                          <div style="font-size:0.82rem; color:#64748b; font-weight:600; margin-bottom:2px;">70 &times; 3</div>
+                          210
+                        </td>
+                        <td data-label="ROW SUBTOTAL" style="padding:16px; font-weight:900; color:#0f172a; background:#f8fafc; font-size:1.45rem;">
+                          <div style="font-size:0.82rem; color:#64748b; font-weight:600; margin-bottom:2px;">14,000 + 700 + 210</div>
+                          14,910
+                        </td>
+                      </tr>
+                      <tr>
+                        <td data-label="&times;" style="padding:16px; font-weight:800; background:#f0f9ff; color:#0369a1; font-size:1.35rem;">4 <span style="font-size:0.82rem; font-weight:600; display:block; color:#64748b;">(UNITS)</span></td>
+                        <td data-label="200 (HUNDREDS)" style="padding:16px; font-weight:800; color:#0284c7; font-size:1.45rem;">
+                          <div style="font-size:0.82rem; color:#64748b; font-weight:600; margin-bottom:2px;">4 &times; 200</div>
+                          800
+                        </td>
+                        <td data-label="10 (TENS)" style="padding:16px; font-weight:800; color:#0284c7; font-size:1.45rem;">
+                          <div style="font-size:0.82rem; color:#64748b; font-weight:600; margin-bottom:2px;">4 &times; 10</div>
+                          40
+                        </td>
+                        <td data-label="3 (UNITS)" style="padding:16px; font-weight:800; color:#0284c7; font-size:1.45rem;">
+                          <div style="font-size:0.82rem; color:#64748b; font-weight:600; margin-bottom:2px;">4 &times; 3</div>
+                          12
+                        </td>
+                        <td data-label="ROW SUBTOTAL" style="padding:16px; font-weight:900; color:#0f172a; background:#f8fafc; font-size:1.45rem;">
+                          <div style="font-size:0.82rem; color:#64748b; font-weight:600; margin-bottom:2px;">800 + 40 + 12</div>
+                          852
+                        </td>
+                      </tr>
+                    </tbody>
+                    <tfoot>
+                      <tr style="background:#dcfce7; border-top:3px solid #86efac;">
+                        <td data-label="&times;" colspan="4" style="padding:16px 20px; text-align:right; font-weight:800; color:#166534; font-size:1.25rem;">
+                          GRAND SUM: 14,910 + 852 =
+                        </td>
+                        <td data-label="ROW SUBTOTAL" style="padding:16px; font-weight:900; color:#15803d; font-size:1.85rem;">
+                          15,762 &check;
+                        </td>
+                      </tr>
+                    </tfoot>
+                  </table>
+                </div>
+
+                <!-- 3-Column Step-by-Step Breakdown Cards -->
+                <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(260px, 1fr)); gap:16px; margin-bottom:20px;">
+                  <div class="math-step-item" style="border:1px solid #e2e8f0; border-radius:10px; padding:16px 18px; background:#f8fafc; border-left:4px solid #0284c7;">
+                    <div class="math-step-header" style="margin-bottom:8px; display:flex; align-items:center; gap:8px;">
+                      <span class="math-step-num" style="background:#0284c7; color:#fff; font-size:0.8rem; font-weight:800; padding:2px 8px; border-radius:4px;">STEP 1</span>
+                      <span class="math-step-col-name" style="font-weight:800; color:#0f172a; font-size:1rem;">Partition Both Multipliers</span>
+                    </div>
+                    <div class="math-step-calc" style="font-size:1.05rem; font-weight:800; color:#0284c7; margin-bottom:6px;">213 = 200 + 10 + 3 &nbsp;|&nbsp; 74 = 70 + 4</div>
+                    <div class="math-step-desc" style="font-size:0.92rem; color:#475569; line-height:1.6;">Split into hundreds, tens, and units. Place 200, 10, and 3 across the top; 70 and 4 down the left.</div>
                   </div>
 
-                  <!-- Col 2: Step-by-Step Breakdown Cards -->
-                  <div class="math-step-list" style="flex:1; min-width:300px;">
-                    <div class="math-step-item">
-                      <div class="math-step-header">
-                        <span class="math-step-num">STEP 1</span>
-                        <span class="math-step-col-name">Partition Both Multipliers</span>
-                      </div>
-                      <div class="math-step-calc">213 = 200 + 10 + 3 &nbsp;|&nbsp; 74 = 70 + 4</div>
-                      <div class="math-step-desc">Split into hundreds, tens, and units. Place 200, 10, and 3 across the top; 70 and 4 down the left.</div>
+                  <div class="math-step-item" style="border:1px solid #e2e8f0; border-radius:10px; padding:16px 18px; background:#f8fafc; border-left:4px solid #0284c7;">
+                    <div class="math-step-header" style="margin-bottom:8px; display:flex; align-items:center; gap:8px;">
+                      <span class="math-step-num" style="background:#0284c7; color:#fff; font-size:0.8rem; font-weight:800; padding:2px 8px; border-radius:4px;">STEP 2</span>
+                      <span class="math-step-col-name" style="font-weight:800; color:#0f172a; font-size:1rem;">Calculate the 6 Grid Products</span>
                     </div>
+                    <div class="math-step-calc" style="font-size:0.95rem; font-weight:700; color:#0369a1; margin-bottom:6px; line-height:1.6;">
+                      70 &times; 200 = 14,000 &bull; 70 &times; 10 = 700 &bull; 70 &times; 3 = 210<br>
+                      4 &times; 200 = 800 &bull; 4 &times; 10 = 40 &bull; 4 &times; 3 = 12
+                    </div>
+                    <div class="math-step-desc" style="font-size:0.92rem; color:#475569; line-height:1.6;">Multiply basic non-zero digits then append zeros (e.g. 7 &times; 2 = 14 &rarr; 14,000).</div>
+                  </div>
 
-                    <div class="math-step-item">
-                      <div class="math-step-header">
-                        <span class="math-step-num">STEP 2</span>
-                        <span class="math-step-col-name">Calculate the 6 Grid Products</span>
-                      </div>
-                      <div class="math-step-calc">70 &times; 200 = 14,000 &bull; 70 &times; 10 = 700 &bull; 70 &times; 3 = 210<br>4 &times; 200 = 800 &bull; 4 &times; 10 = 40 &bull; 4 &times; 3 = 12</div>
-                      <div class="math-step-desc">Multiply basic non-zero digits then append zeros (e.g. 7 &times; 2 = 14 &rarr; 14,000).</div>
+                  <div class="math-step-item" style="border:1px solid #86efac; border-radius:10px; padding:16px 18px; background:#f0fdf4; border-left:4px solid #16a34a;">
+                    <div class="math-step-header" style="margin-bottom:8px; display:flex; align-items:center; gap:8px;">
+                      <span class="math-step-num" style="background:#16a34a; color:#fff; font-size:0.8rem; font-weight:800; padding:2px 8px; border-radius:4px;">STEP 3</span>
+                      <span class="math-step-col-name" style="font-weight:800; color:#166534; font-size:1rem;">Sum Subtotals for Final Product</span>
                     </div>
-
-                    <div class="math-step-item">
-                      <div class="math-step-header">
-                        <span class="math-step-num">STEP 3</span>
-                        <span class="math-step-col-name">Sum Subtotals for Final Product</span>
-                      </div>
-                      <div class="math-step-calc">14,910 + 852 = 15,762</div>
-                      <div class="math-step-desc">Add row subtotals (14,910 + 852) or column subtotals (14,800 + 740 + 222). Final answer: <strong style="color:#15803d;">15,762</strong>.</div>
-                    </div>
+                    <div class="math-step-calc" style="font-size:1.15rem; font-weight:800; color:#15803d; margin-bottom:6px;">14,910 + 852 = 15,762</div>
+                    <div class="math-step-desc" style="font-size:0.92rem; color:#166534; line-height:1.6;">Add row subtotals (14,910 + 852) or column subtotals (14,800 + 740 + 222). Final answer: <strong style="color:#15803d;">15,762 &check;</strong></div>
                   </div>
                 </div>
 
@@ -614,28 +615,14 @@
                       <div class="math-calc-cell" style="width:36px;">4</div>
                       <div class="math-calc-cell" style="width:36px;">3</div>
                     </div>
-                    <div class="math-calc-carries" style="display:flex; justify-content:flex-end; gap:16px; padding-right:6px; font-size:0.95rem; color:#dc2626; font-weight:800; margin:-4px 0 6px;">
-                      <span class="math-calc-cell" style="width:44px;"></span>
-                      <span class="math-calc-cell" style="width:36px;"></span>
-                      <span class="math-calc-cell" style="width:36px; color:#dc2626;" title="Carried 2 from 8 × 3 = 24">&sup2;</span>
-                      <span class="math-calc-cell" style="width:36px;"></span>
-                      <span class="math-calc-cell" style="width:36px;"></span>
-                    </div>
 
-                    <!-- Line 2: 281 × 20 tens = 5,620 (with GREEN ZERO) -->
+                    <!-- Line 2: 281 × 20 tens = 5,620 (with GREEN ZERO & PLUS SIGN) -->
                     <div class="math-calc-row" style="gap:16px; font-size:1.85rem;">
-                      <div class="math-calc-cell" style="width:44px; font-size:0.85rem; color:#64748b; font-weight:700; text-align:center;">&times;20</div>
+                      <div class="math-calc-cell" style="width:44px; font-size:0.85rem; color:#15803d; font-weight:800; text-align:center;">+ &times;20</div>
                       <div class="math-calc-cell" style="width:36px;">5</div>
                       <div class="math-calc-cell" style="width:36px;">6</div>
                       <div class="math-calc-cell" style="width:36px;">2</div>
                       <div class="math-calc-cell math-pad-zero" style="width:36px; text-align:center;" title="Placeholder Zero for Tens!">0</div>
-                    </div>
-                    <div class="math-calc-carries" style="display:flex; justify-content:flex-end; gap:16px; padding-right:6px; font-size:0.95rem; color:#dc2626; font-weight:800; margin:-4px 0 6px;">
-                      <span class="math-calc-cell" style="width:44px;"></span>
-                      <span class="math-calc-cell" style="width:36px; color:#dc2626;" title="Carried 1 from 8 × 2 = 16">&sup1;</span>
-                      <span class="math-calc-cell" style="width:36px;"></span>
-                      <span class="math-calc-cell" style="width:36px;"></span>
-                      <span class="math-calc-cell" style="width:36px;"></span>
                     </div>
 
                     <div class="math-calc-divider" style="height:3px;"></div>
@@ -647,16 +634,16 @@
                       <span class="math-calc-cell" style="width:36px;"></span>
                     </div>
 
-                    <!-- Result: 6,463 -->
+                    <!-- Result: 6,463 (Clean final answer line) -->
                     <div class="math-calc-row math-result" style="gap:16px;">
-                      <div class="math-calc-cell" style="width:44px; font-size:1.1rem; color:#15803d; font-weight:900; text-align:center;">+</div>
+                      <div class="math-calc-cell" style="width:44px;"></div>
                       <div class="math-calc-cell" style="width:36px;">6</div>
                       <div class="math-calc-cell" style="width:36px;">4</div>
                       <div class="math-calc-cell" style="width:36px;">6</div>
                       <div class="math-calc-cell" style="width:36px;">3</div>
                     </div>
                     <div class="math-calc-double-divider"></div>
-                    <div style="text-align:center; font-size:0.9rem; color:#15803d; font-weight:800; margin-top:8px;">
+                    <div style="text-align:center; font-size:0.95rem; color:#15803d; font-weight:800; margin-top:8px;">
                       Final Answer: 6,463 &check;
                     </div>
                   </div>
@@ -924,15 +911,22 @@
                       <span class="math-calc-cell" style="width:24px; text-align:center;">8</span>
                     </div>
                     <div class="math-calc-row" style="font-size:1.45rem; gap:12px;">
-                      <span class="math-calc-cell" style="width:24px; font-size:0.75rem; color:#64748b; text-align:center;">&times;20</span>
+                      <span class="math-calc-cell" style="width:24px; font-size:0.8rem; color:#15803d; text-align:center; font-weight:800;">+</span>
                       <span class="math-calc-cell" style="width:24px;"></span>
                       <span class="math-calc-cell" style="width:24px; text-align:center;">9</span>
                       <span class="math-calc-cell" style="width:24px; text-align:center;">6</span>
-                      <span class="math-calc-cell math-pad-zero" style="width:24px; text-align:center;">0</span>
+                      <span class="math-calc-cell math-pad-zero" style="width:24px; text-align:center;" title="Placeholder Zero for Tens!">0</span>
                     </div>
-                    <div class="math-calc-divider" style="height:2.5px; margin:6px 0;"></div>
+                    <div class="math-calc-divider" style="height:2px; margin:6px 0;"></div>
+                    <div class="math-calc-carries" style="display:flex; justify-content:flex-end; gap:12px; font-size:0.85rem; color:#dc2626; font-weight:800; margin:-2px 0 2px;">
+                      <span style="width:24px;"></span>
+                      <span style="width:24px; text-align:center;" title="Carried 1 from 2 + 9 + 1 = 12">&sup1;</span>
+                      <span style="width:24px; text-align:center;" title="Carried 1 from 8 + 6 = 14">&sup1;</span>
+                      <span style="width:24px;"></span>
+                      <span style="width:24px;"></span>
+                    </div>
                     <div class="math-calc-row math-result" style="font-size:1.6rem; gap:12px;">
-                      <span class="math-calc-cell" style="width:24px; font-size:0.75rem; color:#15803d; text-align:center;">+</span>
+                      <span class="math-calc-cell" style="width:24px;"></span>
                       <span class="math-calc-cell" style="width:24px; text-align:center;">1</span>
                       <span class="math-calc-cell" style="width:24px; text-align:center;">2</span>
                       <span class="math-calc-cell" style="width:24px; text-align:center;">4</span>

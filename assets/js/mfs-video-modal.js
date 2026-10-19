@@ -562,6 +562,12 @@
 
       btn.addEventListener('click', function (e) {
         const href = this.getAttribute('href') || '';
+        // If link is a placeholder, do not open modal or navigate
+        if (!href || href === '#' || href.startsWith('javascript:')) {
+          e.preventDefault();
+          return;
+        }
+
         // If link points to video-solution.html, let browser navigate directly to the dedicated video app
         if (href.indexOf('video-solution.html') !== -1) {
           return;

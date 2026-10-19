@@ -2808,10 +2808,10 @@
     }
 
     .practice-q-header span:first-child,
-    .practice-q-header strong,
-    .practice-q-title,
-    .practice-q-num {
-      font-size: 0.84rem !important;
+  .practice-q-header strong,
+  .practice-q-title,
+  .practice-q-num {
+    font-size: 1.05rem !important;
       font-weight: 700 !important;
       color: #1e293b !important;
       line-height: 1.3 !important;
@@ -2823,9 +2823,9 @@
     }
 
     .practice-marks-pill,
-    .practice-q-marks,
-    .practice-card-marks {
-      font-size: 0.70rem !important;
+  .practice-q-marks,
+  .practice-card-marks {
+    font-size: 0.88rem !important;
       font-weight: 800 !important;
       padding: 2px 7px !important;
       border-radius: 999px !important;
@@ -2846,8 +2846,8 @@
     }
 
     .practice-q-stem,
-    .practice-prompt-box {
-      font-size: 0.84rem !important;
+  .practice-prompt-box {
+    font-size: 1.02rem !important;
       line-height: 1.48 !important;
       color: #1e293b !important;
       margin-bottom: 8px !important;
@@ -2862,22 +2862,22 @@
     }
 
     .practice-q-stem *,
-    .practice-prompt-box * {
-      font-size: 0.84rem !important;
+  .practice-prompt-box * {
+    font-size: 1.02rem !important;
       line-height: 1.48 !important;
       box-sizing: border-box !important;
     }
 
     .practice-q-stem p,
-    .practice-q-stem li {
-      font-size: 0.84rem !important;
+  .practice-q-stem li {
+    font-size: 1.02rem !important;
       line-height: 1.48 !important;
       margin-bottom: 6px !important;
     }
 
     .practice-q-stem strong {
-      font-weight: 800 !important;
-      font-size: 0.84rem !important;
+    font-weight: 800 !important;
+    font-size: 1.02rem !important;
     }
 
     .practice-q-stem em {
@@ -3010,8 +3010,8 @@
     }
 
     .practice-solution-drawer > div:first-child,
-    .solution-drawer-title {
-      font-size: 0.82rem !important;
+  .solution-drawer-title {
+    font-size: 1.05rem !important;
       font-weight: 800 !important;
       color: #166534 !important;
       margin-bottom: 6px !important;
@@ -3065,9 +3065,9 @@
     }
 
     .practice-solution-drawer div[style*="italic"],
-    .practice-solution-drawer .solution-tip,
-    .practice-solution-drawer .examiner-tip {
-      font-size: 0.76rem !important;
+  .practice-solution-drawer .solution-tip,
+  .practice-solution-drawer .examiner-tip {
+    font-size: 0.98rem !important;
       line-height: 1.35 !important;
       color: #15803d !important;
       font-style: italic !important;
@@ -3131,14 +3131,14 @@
     }
 
     .model-badge,
-    .exam-model-badge {
-      font-size: 0.72rem !important;
+  .exam-model-badge {
+    font-size: 0.88rem !important;
       padding: 2px 7px !important;
       border-radius: 999px !important;
     }
 
     .model-marks-pill {
-      font-size: 0.68rem !important;
+    font-size: 0.88rem !important;
       padding: 2px 6px !important;
       border-radius: 999px !important;
     }
@@ -3195,18 +3195,18 @@
     }
 
     .example-step-pill {
-      font-size: 0.68rem !important;
+    font-size: 0.88rem !important;
       padding: 2px 6px !important;
     }
 
     .model-step-title {
-      font-size: 0.80rem !important;
+    font-size: 1.05rem !important;
       font-weight: 700 !important;
     }
 
     .model-step-col-desc {
-      width: 100% !important;
-      font-size: 0.80rem !important;
+    width: 100% !important;
+    font-size: 1.02rem !important;
       box-sizing: border-box !important;
     }
 
@@ -3245,16 +3245,16 @@
     }
 
     .criteria-badge-teal {
-      font-size: 0.70rem !important;
+    font-size: 0.90rem !important;
       padding: 2px 6px !important;
       border-radius: 4px !important;
       display: inline-block !important;
     }
 
     .model-final-answer {
-      margin-top: 8px !important;
-      padding: 6px 8px !important;
-      font-size: 0.80rem !important;
+    margin-top: 10px !important;
+    padding: 10px 14px !important;
+    font-size: 1.05rem !important;
       line-height: 1.35 !important;
       width: 100% !important;
       box-sizing: border-box !important;
@@ -3811,7 +3811,7 @@
   .practice-q-header strong,
   .practice-q-title,
   .practice-q-num {
-    font-size: 0.84rem !important;
+    font-size: 1.05rem !important;
     font-weight: 700 !important;
     color: #1e293b !important;
     line-height: 1.3 !important;
@@ -3825,7 +3825,7 @@
   .practice-marks-pill,
   .practice-q-marks,
   .practice-card-marks {
-    font-size: 0.70rem !important;
+    font-size: 0.88rem !important;
     font-weight: 800 !important;
     padding: 2px 7px !important;
     border-radius: 999px !important;
@@ -3847,7 +3847,7 @@
 
   .practice-q-stem,
   .practice-prompt-box {
-    font-size: 0.84rem !important;
+    font-size: 1.02rem !important;
     line-height: 1.48 !important;
     color: #1e293b !important;
     margin-bottom: 8px !important;
@@ -3863,21 +3863,21 @@
 
   .practice-q-stem *,
   .practice-prompt-box * {
-    font-size: 0.84rem !important;
+    font-size: 1.02rem !important;
     line-height: 1.48 !important;
     box-sizing: border-box !important;
   }
 
   .practice-q-stem p,
   .practice-q-stem li {
-    font-size: 0.84rem !important;
+    font-size: 1.02rem !important;
     line-height: 1.48 !important;
     margin-bottom: 6px !important;
   }
 
   .practice-q-stem strong {
     font-weight: 800 !important;
-    font-size: 0.84rem !important;
+    font-size: 1.02rem !important;
   }
 
   .practice-q-stem em {
@@ -4011,7 +4011,7 @@
 
   .practice-solution-drawer > div:first-child,
   .solution-drawer-title {
-    font-size: 0.82rem !important;
+    font-size: 1.05rem !important;
     font-weight: 800 !important;
     color: #166534 !important;
     margin-bottom: 6px !important;
@@ -4067,7 +4067,7 @@
   .practice-solution-drawer div[style*="italic"],
   .practice-solution-drawer .solution-tip,
   .practice-solution-drawer .examiner-tip {
-    font-size: 0.76rem !important;
+    font-size: 0.98rem !important;
     line-height: 1.35 !important;
     color: #15803d !important;
     font-style: italic !important;

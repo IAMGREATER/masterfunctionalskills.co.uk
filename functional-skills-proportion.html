@@ -423,34 +423,67 @@
               <p class="mfs-topic-stem">Recognising whether values increase together or move in opposite directions.</p>
             </div>
             <div class="mfs-topic-body" style="padding:20px 24px;">
-              <div class="sketch-diagram-wrap"><svg viewBox="0 0 540 260" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:540px; height:auto; font-family:'Plus Jakarta Sans', system-ui, sans-serif;">
-  <rect x="2" y="2" width="536" height="256" rx="14" fill="#ffffff" stroke="#bae6fd" stroke-width="2"/>
-  <rect x="18" y="14" width="240" height="28" rx="14" fill="#e0f2fe"/>
-  <text x="28" y="33" font-size="12" font-weight="800" fill="#0369a1">✎ VISUAL MODEL: RATIO BAR SHARING</text>
-  <text x="270" y="33" font-size="13" font-weight="700" fill="#0f172a">Share £450 in Ratio 3 : 2</text>
+              <div class="sketch-diagram-wrap" style="width:100%; margin:24px 0;"><svg viewBox="0 0 860 360" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:860px; height:auto; display:block; font-family:'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;">
+  <rect x="2" y="2" width="856" height="356" rx="14" fill="#ffffff" stroke="#bae6fd" stroke-width="2"/>
+  
+  <rect x="24" y="16" width="340" height="34" rx="17" fill="#e0f2fe"/>
+  <text x="38" y="39" font-size="14" font-weight="800" fill="#0369a1" letter-spacing="0.5">✎ MASTER MODEL: RATIO BAR SHARING</text>
+  <text x="380" y="39" font-size="15" font-weight="700" fill="#0f172a">Problem: Share £450 in the Ratio 3 : 2</text>
 
-  <!-- Person A: 3 Parts -->
-  <text x="25" y="82" font-size="13.5" font-weight="800" fill="#0369a1">A (3 parts):</text>
-  <rect x="125" y="60" width="75" height="38" rx="6" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
-  <text x="162" y="84" font-size="15" font-weight="800" fill="#0369a1" text-anchor="middle">£90</text>
-  <rect x="206" y="60" width="75" height="38" rx="6" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
-  <text x="243" y="84" font-size="15" font-weight="800" fill="#0369a1" text-anchor="middle">£90</text>
-  <rect x="287" y="60" width="75" height="38" rx="6" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
-  <text x="324" y="84" font-size="15" font-weight="800" fill="#0369a1" text-anchor="middle">£90</text>
-  <text x="375" y="85" font-size="16" font-weight="900" fill="#0284c7">= £270</text>
+  <!-- Left: Visual Bar Blocks (x: 24 to 450) -->
+  <!-- Person A -->
+  <g transform="translate(24, 68)">
+    <rect width="420" height="110" rx="10" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.8"/>
+    <text x="16" y="30" font-size="14.5" font-weight="900" fill="#1d4ed8">PERSON A (3 PARTS):</text>
+    <!-- 3 Large equal boxes of £90 -->
+    <rect x="16" y="44" width="105" height="52" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/>
+    <text x="68" y="76" font-size="18" font-weight="900" fill="#1e40af" text-anchor="middle">£90</text>
 
-  <!-- Person B: 2 Parts -->
-  <text x="25" y="136" font-size="13.5" font-weight="800" fill="#b45309">B (2 parts):</text>
-  <rect x="125" y="114" width="75" height="38" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
-  <text x="162" y="138" font-size="15" font-weight="800" fill="#b45309" text-anchor="middle">£90</text>
-  <rect x="206" y="114" width="75" height="38" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
-  <text x="243" y="138" font-size="15" font-weight="800" fill="#b45309" text-anchor="middle">£90</text>
-  <text x="295" y="139" font-size="16" font-weight="900" fill="#d97706">= £180</text>
+    <rect x="131" y="44" width="105" height="52" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/>
+    <text x="183" y="76" font-size="18" font-weight="900" fill="#1e40af" text-anchor="middle">£90</text>
 
-  <!-- Summary Footer Box (Carefully wrapped so no text overflows) -->
-  <rect x="20" y="172" width="500" height="68" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
-  <text x="34" y="196" font-size="12" font-weight="700" fill="#166534">Step 1: Total parts = 3 + 2 = 5 parts &bull; Step 2: Value of 1 part = £450 &divide; 5 = £90</text>
-  <text x="34" y="222" font-size="13" font-weight="800" fill="#15803d">Verification Check: £270 + £180 = £450.00 ✓ (Matches original starting total)</text>
+    <rect x="246" y="44" width="105" height="52" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/>
+    <text x="298" y="76" font-size="18" font-weight="900" fill="#1e40af" text-anchor="middle">£90</text>
+
+    <text x="365" y="76" font-size="18" font-weight="900" fill="#1d4ed8">= £270</text>
+  </g>
+
+  <!-- Person B -->
+  <g transform="translate(24, 190)">
+    <rect width="420" height="110" rx="10" fill="#fffbeb" stroke="#fde68a" stroke-width="1.8"/>
+    <text x="16" y="30" font-size="14.5" font-weight="900" fill="#b45309">PERSON B (2 PARTS):</text>
+    <!-- 2 Large equal boxes of £90 -->
+    <rect x="16" y="44" width="105" height="52" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="2.5"/>
+    <text x="68" y="76" font-size="18" font-weight="900" fill="#92400e" text-anchor="middle">£90</text>
+
+    <rect x="131" y="44" width="105" height="52" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="2.5"/>
+    <text x="183" y="76" font-size="18" font-weight="900" fill="#92400e" text-anchor="middle">£90</text>
+
+    <text x="250" y="76" font-size="18" font-weight="900" fill="#b45309">= £180</text>
+  </g>
+
+  <!-- Right: 3-Step Master Method Card (x: 460 to 836) -->
+  <g transform="translate(460, 68)">
+    <rect width="376" height="232" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+    <rect x="16" y="14" width="160" height="26" rx="6" fill="#0f172a"/>
+    <text x="96" y="31" font-size="12" font-weight="900" fill="#ffffff" text-anchor="middle">3-STEP GOLDEN METHOD</text>
+
+    <text x="16" y="66" font-size="14" font-weight="800" fill="#1e40af">Step 1: Add total parts</text>
+    <text x="28" y="88" font-size="15" font-weight="700" fill="#0f172a">3 + 2 = <tspan font-weight="900" fill="#1e40af">5 total parts</tspan></text>
+
+    <text x="16" y="118" font-size="14" font-weight="800" fill="#0369a1">Step 2: Value of 1 single part</text>
+    <text x="28" y="140" font-size="15" font-weight="700" fill="#0f172a">£450 ÷ 5 = <tspan font-weight="900" fill="#0284c7">£90 per part</tspan></text>
+
+    <text x="16" y="170" font-size="14" font-weight="800" fill="#15803d">Step 3: Multiply each share</text>
+    <text x="28" y="192" font-size="14" font-weight="700" fill="#0f172a">A = 3 × £90 = <tspan font-weight="900" fill="#1e40af">£270</tspan> | B = 2 × £90 = <tspan font-weight="900" fill="#b45309">£180</tspan></text>
+    <text x="28" y="214" font-size="13" font-weight="800" fill="#15803d">Check: £270 + £180 = £450 ✓</text>
+  </g>
+
+  <!-- Bottom Strip -->
+  <g transform="translate(24, 308)">
+    <rect width="812" height="40" rx="8" fill="#dcfce7" stroke="#86efac" stroke-width="1.5"/>
+    <text x="406" y="25" font-size="13.5" font-weight="900" fill="#15803d" text-anchor="middle">PEARSON EDEXCEL RULE: Always add the parts, divide to find ONE part, then scale up. [M1][A1]</text>
+  </g>
 </svg></div>
               
                 <div class="table-responsive" style="overflow-x:auto; -webkit-overflow-scrolling:touch; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:14px; margin:16px 0;">

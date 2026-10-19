@@ -423,44 +423,52 @@
               <p class="mfs-topic-stem">Setting up the standard 4-column table for full method and accuracy marks.</p>
             </div>
             <div class="mfs-topic-body" style="padding:20px 24px;">
-              <div class="sketch-diagram-wrap"><svg viewBox="0 0 540 270" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:540px; height:auto; font-family:'Plus Jakarta Sans', system-ui, sans-serif;">
-  <rect x="2" y="2" width="536" height="266" rx="14" fill="#ffffff" stroke="#bae6fd" stroke-width="2"/>
-  <rect x="18" y="14" width="270" height="28" rx="14" fill="#e0f2fe"/>
-  <text x="28" y="33" font-size="12" font-weight="800" fill="#0369a1">✎ WORKED METHOD: PIE CHART ANGLES</text>
-  <text x="300" y="33" font-size="13" font-weight="700" fill="#0f172a">Full Circle = 360°</text>
+              <div class="sketch-diagram-wrap" style="width:100%; margin:24px 0;"><svg viewBox="0 0 860 360" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:860px; height:auto; display:block; font-family:'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;">
+  <rect x="2" y="2" width="856" height="356" rx="14" fill="#ffffff" stroke="#bae6fd" stroke-width="2"/>
+  
+  <rect x="24" y="16" width="370" height="34" rx="17" fill="#e0f2fe"/>
+  <text x="38" y="39" font-size="14" font-weight="800" fill="#0369a1" letter-spacing="0.5">✎ MASTER MODEL: PIE CHART ANGLES</text>
+  <text x="410" y="39" font-size="15" font-weight="700" fill="#0f172a">Total Frequency = 60 People | Full Turn = 360°</text>
 
-  <!-- Segmented pie chart on left (Radius 72px) -->
-  <g transform="translate(135, 145)">
-    <!-- Food: 180 deg (bottom half) -->
-    <path d="M 0 0 L -72 0 A 72 72 0 0 0 72 0 Z" fill="#0284c7"/>
-    <!-- Rent: 90 deg (top right) -->
-    <path d="M 0 0 L 0 -72 A 72 72 0 0 1 72 0 Z" fill="#f59e0b"/>
-    <!-- Transport: 54 deg -->
-    <path d="M 0 0 L -58 -42 A 72 72 0 0 1 0 -72 Z" fill="#10b981"/>
-    <!-- Bills: 36 deg -->
-    <path d="M 0 0 L -72 0 A 72 72 0 0 1 -58 -42 Z" fill="#6366f1"/>
+  <!-- Left: Pie Chart Visual (x: 40 to 340) -->
+  <g transform="translate(60, 75)">
+    <!-- Circle segments -->
+    <circle cx="120" cy="115" r="105" fill="#f8fafc" stroke="#0f172a" stroke-width="2"/>
+    
+    <!-- 180° Blue (30 people) -->
+    <path d="M 120 115 L 225 115 A 105 105 0 0 1 15 115 Z" fill="#3b82f6"/>
+    <text x="120" y="165" font-size="15" font-weight="900" fill="#ffffff" text-anchor="middle">Bus: 180° (30)</text>
 
-    <!-- Labels on Sectors -->
-    <text x="0" y="38" font-size="11.5" font-weight="900" fill="#ffffff" text-anchor="middle">Food: 50% (180°)</text>
-    <text x="36" y="-30" font-size="10.5" font-weight="800" fill="#ffffff" text-anchor="middle">Rent: 25% (90°)</text>
-    <text x="-26" y="-45" font-size="9" font-weight="800" fill="#ffffff" text-anchor="middle">Travel: 54°</text>
-    <text x="-48" y="-12" font-size="8.5" font-weight="800" fill="#ffffff" text-anchor="middle">Bills 36°</text>
+    <!-- 90° Green (15 people) -->
+    <path d="M 120 115 L 15 115 A 105 105 0 0 1 120 10 Z" fill="#22c55e"/>
+    <text x="75" y="70" font-size="14" font-weight="900" fill="#ffffff" text-anchor="middle">Walk: 90°</text>
+
+    <!-- 90° Amber (15 people) -->
+    <path d="M 120 115 L 120 10 A 105 105 0 0 1 225 115 Z" fill="#f59e0b"/>
+    <text x="165" y="70" font-size="14" font-weight="900" fill="#ffffff" text-anchor="middle">Car: 90°</text>
   </g>
 
-  <!-- Right Panel: High Quality Angle Formula & Calculation Table -->
-  <rect x="270" y="55" width="250" height="195" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
-  <text x="285" y="80" font-size="12" font-weight="800" fill="#0369a1">SECTOR ANGLE FORMULA:</text>
-  <rect x="282" y="90" width="225" height="24" rx="4" fill="#eff6ff"/>
-  <text x="394" y="106" font-size="11.5" font-weight="800" fill="#1e40af" text-anchor="middle">Angle = (Frequency &divide; Total) &times; 360&deg;</text>
+  <!-- Right: 3-Step Angle Allocation Method (x: 370 to 836) -->
+  <g transform="translate(370, 68)">
+    <rect width="466" height="265" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+    <rect x="16" y="14" width="200" height="26" rx="6" fill="#0284c7"/>
+    <text x="116" y="31" font-size="12" font-weight="900" fill="#ffffff" text-anchor="middle">CALCULATING SECTOR ANGLES</text>
 
-  <!-- Step-by-step example -->
-  <text x="285" y="132" font-size="11.5" fill="#334155">Example: 15 out of 60 choose Travel:</text>
-  <text x="285" y="152" font-size="12" font-weight="800" fill="#10b981">(15 &divide; 60) &times; 360&deg; = 0.25 &times; 360&deg; = 90&deg;</text>
+    <text x="16" y="66" font-size="15" font-weight="900" fill="#0f172a">Step 1: Find degrees per 1 item (360° ÷ Total)</text>
+    <text x="28" y="90" font-size="16" font-weight="900" fill="#0284c7">360° ÷ 60 people = 6° per person</text>
 
-  <line x1="285" y1="166" x2="505" y2="166" stroke="#e2e8f0"/>
-  <rect x="282" y="174" width="225" height="42" rx="6" fill="#dcfce7" stroke="#86efac"/>
-  <text x="394" y="193" font-size="11" font-weight="800" fill="#166534" text-anchor="middle">GOLDEN RULE OF PIE CHARTS:</text>
-  <text x="394" y="208" font-size="10.5" fill="#15803d" text-anchor="middle">All sector angles MUST sum to exactly 360&deg; &check;</text>
+    <line x1="16" y1="106" x2="450" y2="106" stroke="#e2e8f0" stroke-width="1.5"/>
+
+    <text x="16" y="130" font-size="15" font-weight="900" fill="#0f172a">Step 2: Multiply each frequency by 6°:</text>
+    <text x="28" y="156" font-size="14.5" font-weight="800" fill="#1d4ed8">• Bus: 30 people × 6° = 180° (Half circle)</text>
+    <text x="28" y="180" font-size="14.5" font-weight="800" fill="#15803d">• Walk: 15 people × 6° = 90° (Right angle quarter)</text>
+    <text x="28" y="204" font-size="14.5" font-weight="800" fill="#b45309">• Car: 15 people × 6° = 90° (Quarter)</text>
+
+    <rect x="16" y="222" width="434" height="30" rx="6" fill="#dcfce7"/>
+    <text x="233" y="242" font-size="13.5" font-weight="900" fill="#166534" text-anchor="middle">
+      Check: 180° + 90° + 90° = 360° ✓ Full Circle Verified!
+    </text>
+  </g>
 </svg></div>
               
                 <div class="table-responsive" style="overflow-x:auto; -webkit-overflow-scrolling:touch; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:14px; margin:16px 0;">

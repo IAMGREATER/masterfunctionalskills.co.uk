@@ -423,39 +423,58 @@
               <p class="mfs-topic-stem">Finding 1 part first and scaling up to multiple parts.</p>
             </div>
             <div class="mfs-topic-body" style="padding:20px 24px;">
-              <div class="sketch-diagram-wrap"><svg viewBox="0 0 540 250" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:540px; height:auto; font-family:'Plus Jakarta Sans', system-ui, sans-serif;">
-  <rect x="2" y="2" width="536" height="246" rx="14" fill="#ffffff" stroke="#bae6fd" stroke-width="2"/>
+              <div class="sketch-diagram-wrap" style="width:100%; margin:24px 0;"><svg viewBox="0 0 860 360" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:860px; height:auto; display:block; font-family:'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;">
+  <rect x="2" y="2" width="856" height="356" rx="14" fill="#ffffff" stroke="#bae6fd" stroke-width="2"/>
   
-  <rect x="18" y="14" width="270" height="26" rx="13" fill="#e0f2fe"/>
-  <text x="28" y="32" font-size="12" font-weight="800" fill="#0369a1">✎ VISUAL MODEL: FRACTION BAR MODELS</text>
-  <text x="300" y="32" font-size="13" font-weight="700" fill="#0f172a">Common Denominator: ⅓ + ¼</text>
+  <rect x="24" y="16" width="370" height="34" rx="17" fill="#e0f2fe"/>
+  <text x="38" y="39" font-size="14" font-weight="800" fill="#0369a1" letter-spacing="0.5">✎ MASTER MODEL: FRACTION BAR MODELS</text>
+  <text x="410" y="39" font-size="15" font-weight="700" fill="#0f172a">Adding with Common Denominator: ⅓ + ¼ (LCM = 12)</text>
 
-  <!-- Bar 1: 1/3 converted to 4/12 -->
-  <text x="25" y="70" font-size="13" font-weight="800" fill="#0369a1">⅓  = ⁴⁄₁₂</text>
-  <rect x="95" y="52" width="415" height="30" fill="#f1f5f9" stroke="#94a3b8" rx="4"/>
-  <!-- 4 blocks of 12 filled -->
-  <rect x="95" y="52" width="138" height="30" fill="#0284c7" rx="4"/>
-  <text x="164" y="72" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">4 parts (⅓)</text>
+  <!-- Row 1: 1/3 = 4/12 -->
+  <g transform="translate(24, 68)">
+    <text x="0" y="26" font-size="16" font-weight="900" fill="#0369a1">⅓  = ⁴⁄₁₂</text>
+    <rect x="100" y="6" width="600" height="36" rx="6" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.8"/>
+    <!-- 4 parts filled of 12 (each part = 50px) -->
+    <rect x="100" y="6" width="200" height="36" rx="6" fill="#0284c7"/>
+    <text x="200" y="30" font-size="14" font-weight="900" fill="#ffffff" text-anchor="middle">4 parts (⅓ of 12)</text>
+    <text x="715" y="30" font-size="15" font-weight="900" fill="#0369a1">= 4 / 12</text>
+  </g>
 
-  <!-- Bar 2: 1/4 converted to 3/12 -->
-  <text x="25" y="118" font-size="13" font-weight="800" fill="#b45309">¼  = ³⁄₁₂</text>
-  <rect x="95" y="100" width="415" height="30" fill="#f1f5f9" stroke="#94a3b8" rx="4"/>
-  <!-- 3 blocks of 12 filled -->
-  <rect x="95" y="100" width="103" height="30" fill="#f59e0b" rx="4"/>
-  <text x="146" y="120" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">3 parts (¼)</text>
+  <!-- Row 2: 1/4 = 3/12 -->
+  <g transform="translate(24, 126)">
+    <text x="0" y="26" font-size="16" font-weight="900" fill="#b45309">¼  = ³⁄₁₂</text>
+    <rect x="100" y="6" width="600" height="36" rx="6" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.8"/>
+    <!-- 3 parts filled of 12 (150px) -->
+    <rect x="100" y="6" width="150" height="36" rx="6" fill="#d97706"/>
+    <text x="175" y="30" font-size="14" font-weight="900" fill="#ffffff" text-anchor="middle">3 parts (¼ of 12)</text>
+    <text x="715" y="30" font-size="15" font-weight="900" fill="#b45309">= 3 / 12</text>
+  </g>
 
-  <!-- Combined Bar: 4/12 + 3/12 = 7/12 -->
-  <text x="25" y="166" font-size="13" font-weight="800" fill="#15803d">Sum = ⁷⁄₁₂</text>
-  <rect x="95" y="148" width="415" height="30" fill="#f1f5f9" stroke="#94a3b8" rx="4"/>
-  <rect x="95" y="148" width="138" height="30" fill="#0284c7" rx="4"/>
-  <rect x="233" y="148" width="103" height="30" fill="#f59e0b"/>
-  <text x="210" y="168" font-size="12" font-weight="800" fill="#ffffff" text-anchor="middle">7 parts of 12 (⁷⁄₁₂)</text>
+  <!-- Divider plus sign -->
+  <text x="50" y="196" font-size="28" font-weight="900" fill="#0f172a" text-anchor="middle">+</text>
 
-  <!-- Formula Summary footer -->
-  <rect x="25" y="195" width="485" height="40" rx="6" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
-  <text x="40" y="220" font-size="12.5" font-weight="700" fill="#166534">
-    LCM of 3 and 4 is 12:  (1 × 4)/(3 × 4) + (1 × 3)/(4 × 3) = ⁴⁄₁₂ + ³⁄₁₂ = <tspan font-size="14" font-weight="800">⁷⁄₁₂</tspan> ✓
-  </text>
+  <!-- Row 3: Total 4/12 + 3/12 = 7/12 -->
+  <g transform="translate(24, 184)">
+    <text x="0" y="26" font-size="16" font-weight="900" fill="#15803d">TOTAL</text>
+    <rect x="100" y="6" width="600" height="42" rx="6" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2"/>
+    <!-- 7 parts filled of 12 (350px) -->
+    <rect x="100" y="6" width="200" height="42" fill="#0284c7"/>
+    <rect x="300" y="6" width="150" height="42" fill="#d97706"/>
+    <text x="275" y="32" font-size="15" font-weight="900" fill="#ffffff" text-anchor="middle">4 + 3 = 7 parts filled</text>
+    <text x="715" y="33" font-size="18" font-weight="900" fill="#15803d">= ⁷⁄₁₂ ✓</text>
+  </g>
+
+  <!-- Summary Card (y: 252 to 340) -->
+  <g transform="translate(24, 250)">
+    <rect width="812" height="92" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="24" y="28" font-size="14" font-weight="800" fill="#475569">GOLDEN DENOMINATOR RULE:</text>
+    <text x="24" y="54" font-size="16" font-weight="700" fill="#0f172a">
+      You CANNOT add fractions with different bottom numbers! Find the lowest common multiple (LCM of 3 and 4 is 12).
+    </text>
+    <text x="24" y="78" font-size="14" font-weight="800" fill="#15803d">
+      Calculation: ⅓ (×4/4 = ⁴⁄₁₂) + ¼ (×3/3 = ³⁄₁₂) = (4 + 3) / 12 = ⁷⁄₁₂ ✓ (Never add denominators: 3 + 4 is NOT 7!)
+    </text>
+  </g>
 </svg></div>
               
                 <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:18px; margin:16px 0;">

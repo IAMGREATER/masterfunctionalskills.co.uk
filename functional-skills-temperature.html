@@ -423,37 +423,59 @@
               <p class="mfs-topic-stem">Visualising a vertical thermometer with 0°C in the middle.</p>
             </div>
             <div class="mfs-topic-body" style="padding:20px 24px;">
-              <div class="sketch-diagram-wrap"><svg viewBox="0 0 540 250" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:540px; height:auto; font-family:'Plus Jakarta Sans', system-ui, sans-serif;">
-  <rect x="2" y="2" width="536" height="246" rx="14" fill="#ffffff" stroke="#bae6fd" stroke-width="2"/>
+              <div class="sketch-diagram-wrap" style="width:100%; margin:24px 0;"><svg viewBox="0 0 860 360" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:860px; height:auto; display:block; font-family:'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;">
+  <rect x="2" y="2" width="856" height="356" rx="14" fill="#ffffff" stroke="#bae6fd" stroke-width="2"/>
   
-  <rect x="18" y="14" width="280" height="26" rx="13" fill="#e0f2fe"/>
-  <text x="28" y="32" font-size="12" font-weight="800" fill="#0369a1">✎ VISUAL MODEL: NEGATIVES &amp; SCALES</text>
-  <text x="310" y="32" font-size="13" font-weight="700" fill="#0f172a">Temperature &amp; Bank Balances</text>
+  <rect x="24" y="16" width="370" height="34" rx="17" fill="#e0f2fe"/>
+  <text x="38" y="39" font-size="14" font-weight="800" fill="#0369a1" letter-spacing="0.5">✎ MASTER MODEL: NEGATIVE SCALES</text>
+  <text x="410" y="39" font-size="15" font-weight="700" fill="#0f172a">Temperature Transitions &amp; Bank Balances Across Zero</text>
 
-  <!-- Thermometer graphic on left -->
-  <rect x="45" y="55" width="24" height="150" rx="12" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2"/>
-  <circle cx="57" cy="205" r="22" fill="#0284c7"/>
-  <!-- Mercury column up to 4°C -->
-  <rect x="51" y="125" width="12" height="75" fill="#0284c7"/>
-  <!-- Freezing threshold 0°C line -->
-  <line x1="35" y1="140" x2="80" y2="140" stroke="#e11d48" stroke-width="2.5" stroke-dasharray="4,2"/>
-  <text x="90" y="144" font-size="11" font-weight="800" fill="#e11d48">0°C (Freezing)</text>
+  <!-- Left: Thermometer Tube & Scale (x: 40 to 300) -->
+  <g transform="translate(60, 68)">
+    <rect width="240" height="260" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
 
-  <text x="90" y="85" font-size="12" font-weight="700" fill="#15803d">+15°C Warm</text>
-  <text x="90" y="120" font-size="12" font-weight="700" fill="#0284c7">+4°C Evening</text>
-  <text x="90" y="175" font-size="12" font-weight="800" fill="#0369a1">−6°C Night (-10° drop)</text>
+    <!-- Thermometer Glass -->
+    <rect x="50" y="20" width="30" height="190" rx="15" fill="#f1f5f9" stroke="#64748b" stroke-width="2.5"/>
+    <circle cx="65" cy="210" r="26" fill="#0284c7"/>
+    <!-- Liquid Column up to +6°C -->
+    <rect x="58" y="100" width="14" height="110" fill="#0284c7"/>
 
-  <!-- Number line on right for bank balances -->
-  <rect x="220" y="55" width="300" height="175" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
-  <text x="235" y="80" font-size="12" font-weight="800" fill="#0369a1">BANK OVERDRAFT CALCULATION:</text>
-  
-  <text x="235" y="106" font-size="13" fill="#334155">Starting Overdraft: <tspan font-weight="800" fill="#e11d48">−£140</tspan></text>
-  <text x="235" y="130" font-size="13" fill="#334155">Client Payment Received: <tspan font-weight="800" fill="#15803d">+£250</tspan></text>
-  <text x="235" y="154" font-size="13" fill="#334155">Material Bill Paid: <tspan font-weight="800" fill="#e11d48">−£180</tspan></text>
+    <!-- 0°C Freezing threshold -->
+    <line x1="35" y1="130" x2="110" y2="130" stroke="#ef4444" stroke-width="3" stroke-dasharray="5,3"/>
+    <text x="120" y="135" font-size="14" font-weight="900" fill="#dc2626">0°C (Freezing)</text>
 
-  <rect x="235" y="170" width="270" height="46" rx="6" fill="#eff6ff" stroke="#bfdbfe"/>
-  <text x="245" y="190" font-size="11" font-weight="700" fill="#1e3a8a">Step: −140 + 250 = +110 → +110 − 180 = −70</text>
-  <text x="245" y="208" font-size="13" font-weight="800" fill="#e11d48">Final Balance = −£70 (Overdraft) ✓</text>
+    <!-- Scale ticks -->
+    <text x="95" y="45" font-size="13" font-weight="800" fill="#15803d">+15°C Warm</text>
+    <text x="95" y="95" font-size="13" font-weight="800" fill="#0284c7">+6°C Afternoon</text>
+    <text x="95" y="175" font-size="13" font-weight="900" fill="#1e40af">−4°C Overnight</text>
+  </g>
+
+  <!-- Right: 2 Worked Temperature Jump Cards (x: 330 to 836) -->
+  <!-- Card 1: Rise Across Zero -->
+  <g transform="translate(330, 68)">
+    <rect width="506" height="120" rx="10" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
+    <rect x="16" y="12" width="180" height="26" rx="6" fill="#2563eb"/>
+    <text x="106" y="29" font-size="12.5" font-weight="900" fill="#ffffff" text-anchor="middle">CASE 1: RISE ACROSS ZERO</text>
+
+    <text x="16" y="62" font-size="15" font-weight="800" fill="#0f172a">From −4°C overnight to +6°C afternoon:</text>
+    <text x="16" y="86" font-size="14" font-weight="700" fill="#475569">Step 1: −4°C up to 0°C = 4°C rise  |  Step 2: 0°C up to +6°C = 6°C rise</text>
+    <text x="16" y="108" font-size="17" font-weight="900" fill="#1d4ed8">
+      Total Temperature Rise = 4 + 6 = 10°C increase ✓
+    </text>
+  </g>
+
+  <!-- Card 2: Drop Below Zero -->
+  <g transform="translate(330, 200)">
+    <rect width="506" height="128" rx="10" fill="#fef2f2" stroke="#fca5a5" stroke-width="2"/>
+    <rect x="16" y="12" width="180" height="26" rx="6" fill="#dc2626"/>
+    <text x="106" y="29" font-size="12.5" font-weight="900" fill="#ffffff" text-anchor="middle">CASE 2: DROP BELOW ZERO</text>
+
+    <text x="16" y="62" font-size="15" font-weight="800" fill="#0f172a">Start at +3°C, temperature drops by 8°C:</text>
+    <text x="16" y="86" font-size="14" font-weight="700" fill="#475569">Step 1: Drops 3°C to reach 0°C  |  Step 2: Drops remaining 5°C below zero</text>
+    <text x="16" y="112" font-size="17" font-weight="900" fill="#991b1b">
+      Final Temperature = 3 − 8 = −5°C ✓
+    </text>
+  </g>
 </svg></div>
               
                 <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:18px; margin:16px 0;">

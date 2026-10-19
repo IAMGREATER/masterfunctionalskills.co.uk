@@ -423,7 +423,7 @@
               <p class="mfs-topic-stem">Setting up the standard 4-column table for full method and accuracy marks.</p>
             </div>
             <div class="mfs-topic-body" style="padding:20px 24px;">
-              <div class="sketch-diagram-wrap" style="width:100%; margin:24px 0;"><svg viewBox="0 0 860 360" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:860px; height:auto; display:block; font-family:'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;">
+              <div class="sketch-diagram-wrap" style="width:100%; margin:24px 0;"><svg viewBox="0 0 860 360" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:100%; height:auto; display:block; font-family:'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;">
   <rect x="2" y="2" width="856" height="356" rx="14" fill="#ffffff" stroke="#bae6fd" stroke-width="2"/>
   
   <rect x="24" y="16" width="370" height="34" rx="17" fill="#e0f2fe"/>
@@ -591,13 +591,14 @@
                 <span class="model-step-title">Calculate degrees per MWh (360° ÷ 1,000)</span>
               </div>
               <div class="model-step-col-desc">
-                <div class="math-visual-card" style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:6px; padding:12px 16px; margin-bottom:6px;">
-                  <div style="font-size:0.85rem; color:#64748b; font-weight:600; text-transform:uppercase; letter-spacing:0.5px;">Scale Factor (Degrees per MWh)</div>
-                  <div style="font-size:1.35rem; font-weight:700; color:#0f172a; font-variant-numeric:tabular-nums; margin:4px 0;">360&deg; &divide; 1,000 MWh = 0.36&deg; per MWh</div>
-                  <div style="font-size:0.85rem; color:#475569;">Every megawatt-hour represents exactly 0.36 degrees of the circle.</div>
+                <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:10px; padding:14px 18px; width:100%; box-shadow:0 2px 6px rgba(15, 23, 42, 0.04);">
+                  <div style="font-size:1.15rem; font-weight:800; color:#0f172a; margin-bottom:4px; font-variant-numeric:tabular-nums;"><div class="math-visual-card" style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:6px; padding:12px 16px; margin-bottom:6px;"></div>
+                  <div style="font-size:1.15rem; font-weight:800; color:#0369a1; font-variant-numeric:tabular-nums; margin-bottom:4px;"><div style="font-size:0.85rem; color:#64748b; font-weight:600; text-transform:uppercase; letter-spacing:0.5px;">Scale Factor (Degrees per MWh)</div></div>
+                  <div style="font-size:1.15rem; font-weight:800; color:#0369a1; font-variant-numeric:tabular-nums; margin-bottom:4px;"><div style="font-size:1.35rem; font-weight:700; color:#0f172a; font-variant-numeric:tabular-nums; margin:4px 0;">360&deg; &divide; 1,000 MWh = 0.36&deg; per MWh</div></div>
+                  <div style="font-size:1.15rem; font-weight:800; color:#0369a1; font-variant-numeric:tabular-nums; margin-bottom:4px;"><div style="font-size:0.85rem; color:#475569;">Every megawatt-hour represents exactly 0.36 degrees of the circle.</div></div>
+                  <div style="font-size:0.95rem; color:#475569; margin-top:2px;"></div></div>
                 </div>
-              </div>
-              <div class="model-step-col-criteria">
+              </div><div class="model-step-col-criteria">
                 <span class="criteria-badge-teal"><i class="fa-solid fa-award" style="font-size:0.78rem; margin-right:4px; opacity:0.85;"></i><strong>Criteria:</strong> M1: Angle multiplier (0.36° per MWh)</span>
               </div>
             </div>
@@ -608,9 +609,13 @@
                 <span class="model-step-title">Multiply each energy quantity by 0.36°</span>
               </div>
               <div class="model-step-col-desc">
-                Gas = 500 × 0.36° = 180°<br>Electricity = 300 × 0.36° = 108°<br>Solar = 120 × 0.36° = 43.2°<br>Biomass = 80 × 0.36° = 28.8°
-              </div>
-              <div class="model-step-col-criteria">
+                <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:10px; padding:14px 18px; width:100%; box-shadow:0 2px 6px rgba(15, 23, 42, 0.04);">
+                  <div style="font-size:1.15rem; font-weight:800; color:#0f172a; margin-bottom:4px; font-variant-numeric:tabular-nums;">Gas = 500 × 0.36° = 180°</div>
+                  <div style="font-size:1.15rem; font-weight:800; color:#0369a1; font-variant-numeric:tabular-nums; margin-bottom:4px;">Electricity = 300 × 0.36° = 108°</div>
+                  <div style="font-size:1.15rem; font-weight:800; color:#0369a1; font-variant-numeric:tabular-nums; margin-bottom:4px;">Solar = 120 × 0.36° = 43.2°</div>
+                  <div style="font-size:1.15rem; font-weight:800; color:#0369a1; font-variant-numeric:tabular-nums; margin-bottom:4px;">Biomass = 80 × 0.36° = 28.8°</div>
+                </div>
+              </div><div class="model-step-col-criteria">
                 <span class="criteria-badge-teal"><i class="fa-solid fa-award" style="font-size:0.78rem; margin-right:4px; opacity:0.85;"></i><strong>Criteria:</strong> M1: Sector multiplications</span>
               </div>
             </div>
@@ -621,9 +626,10 @@
                 <span class="model-step-title">Check that all four angles sum to 360°</span>
               </div>
               <div class="model-step-col-desc">
-                180° + 108° + 43.2° + 28.8° = 360°. Confirmed.
-              </div>
-              <div class="model-step-col-criteria">
+                <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:10px; padding:14px 18px; width:100%; box-shadow:0 2px 6px rgba(15, 23, 42, 0.04);">
+                  <div style="font-size:1.15rem; font-weight:800; color:#0f172a; font-variant-numeric:tabular-nums;">180° + 108° + 43.2° + 28.8° = 360°. Confirmed.</div>
+                </div>
+              </div><div class="model-step-col-criteria">
                 <span class="criteria-badge-teal"><i class="fa-solid fa-award" style="font-size:0.78rem; margin-right:4px; opacity:0.85;"></i><strong>Criteria:</strong> A1: All 4 angles accurate</span>
               </div>
             </div>
@@ -669,9 +675,10 @@
                 <span class="model-step-title">Calculate number of Electric Vans at North Depot</span>
               </div>
               <div class="model-step-col-desc">
-                North = (100° ÷ 360°) × 180 = 50 electric vans.
-              </div>
-              <div class="model-step-col-criteria">
+                <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:10px; padding:14px 18px; width:100%; box-shadow:0 2px 6px rgba(15, 23, 42, 0.04);">
+                  <div style="font-size:1.15rem; font-weight:800; color:#0f172a; font-variant-numeric:tabular-nums;">North = (100° ÷ 360°) × 180 = 50 electric vans.</div>
+                </div>
+              </div><div class="model-step-col-criteria">
                 <span class="criteria-badge-teal"><i class="fa-solid fa-award" style="font-size:0.78rem; margin-right:4px; opacity:0.85;"></i><strong>Criteria:</strong> M1 / A1: North Depot count (50 vans)</span>
               </div>
             </div>
@@ -682,9 +689,10 @@
                 <span class="model-step-title">Calculate number of Electric Vans at South Depot</span>
               </div>
               <div class="model-step-col-desc">
-                South = (72° ÷ 360°) × 300 = 0.2 × 300 = 60 electric vans.
-              </div>
-              <div class="model-step-col-criteria">
+                <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:10px; padding:14px 18px; width:100%; box-shadow:0 2px 6px rgba(15, 23, 42, 0.04);">
+                  <div style="font-size:1.15rem; font-weight:800; color:#0f172a; font-variant-numeric:tabular-nums;">South = (72° ÷ 360°) × 300 = 0.2 × 300 = 60 electric vans.</div>
+                </div>
+              </div><div class="model-step-col-criteria">
                 <span class="criteria-badge-teal"><i class="fa-solid fa-award" style="font-size:0.78rem; margin-right:4px; opacity:0.85;"></i><strong>Criteria:</strong> M1: South Depot count (60 vans)</span>
               </div>
             </div>
@@ -695,9 +703,10 @@
                 <span class="model-step-title">Compare counts and state conclusion</span>
               </div>
               <div class="model-step-col-desc">
-                No, the director is incorrect. North Depot has a higher proportion, but South Depot has 60 electric vans compared to 50 at North Depot (10 more vans).
-              </div>
-              <div class="model-step-col-criteria">
+                <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:10px; padding:14px 18px; width:100%; box-shadow:0 2px 6px rgba(15, 23, 42, 0.04);">
+                  <div style="font-size:1.15rem; font-weight:800; color:#0f172a; font-variant-numeric:tabular-nums;">No, the director is incorrect. North Depot has a higher proportion, but South Depot has 60 electric vans compared to 50 at North Depot (10 more vans).</div>
+                </div>
+              </div><div class="model-step-col-criteria">
                 <span class="criteria-badge-teal"><i class="fa-solid fa-award" style="font-size:0.78rem; margin-right:4px; opacity:0.85;"></i><strong>Criteria:</strong> A1: Valid comparison and No conclusion</span>
               </div>
             </div>

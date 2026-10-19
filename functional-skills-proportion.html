@@ -423,68 +423,85 @@
               <p class="mfs-topic-stem">Recognising whether values increase together or move in opposite directions.</p>
             </div>
             <div class="mfs-topic-body" style="padding:20px 24px;">
-              <div class="sketch-diagram-wrap" style="width:100%; margin:24px 0;"><svg viewBox="0 0 860 360" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:860px; height:auto; display:block; font-family:'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;">
-  <rect x="2" y="2" width="856" height="356" rx="14" fill="#ffffff" stroke="#bae6fd" stroke-width="2"/>
-  
-  <rect x="24" y="16" width="340" height="34" rx="17" fill="#e0f2fe"/>
-  <text x="38" y="39" font-size="14" font-weight="800" fill="#0369a1" letter-spacing="0.5">✎ MASTER MODEL: RATIO BAR SHARING</text>
-  <text x="380" y="39" font-size="15" font-weight="700" fill="#0f172a">Problem: Share £450 in the Ratio 3 : 2</text>
+              <div class="mfs-ratio-master-board" style="background:#ffffff; border:2px solid #bae6fd; border-radius:18px; padding:28px 24px; margin:24px 0; box-shadow:0 4px 20px rgba(15, 23, 42, 0.06); width:100%;">
+  <!-- Header Bar -->
+  <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:12px; margin-bottom:24px; padding-bottom:16px; border-bottom:1px solid #e2e8f0; width:100%;">
+    <div style="display:inline-flex; align-items:center; gap:8px; background:#e0f2fe; color:#0369a1; font-size:0.88rem; font-weight:800; padding:6px 18px; border-radius:999px; text-transform:uppercase; letter-spacing:0.04em;">
+      <i class="fa-solid fa-shapes"></i> Master Model: Ratio Bar Sharing
+    </div>
+    <div style="color:#0f172a; font-size:1.15rem; font-weight:800;">
+      Problem: Share <span style="color:#2563eb;">&pound;450</span> in the Ratio <span style="color:#0369a1; background:#e0f2fe; padding:2px 8px; border-radius:6px;">3 : 2</span>
+    </div>
+  </div>
 
-  <!-- Left: Visual Bar Blocks (x: 24 to 450) -->
-  <!-- Person A -->
-  <g transform="translate(24, 68)">
-    <rect width="420" height="110" rx="10" fill="#eff6ff" stroke="#bfdbfe" stroke-width="1.8"/>
-    <text x="16" y="30" font-size="14.5" font-weight="900" fill="#1d4ed8">PERSON A (3 PARTS):</text>
-    <!-- 3 Large equal boxes of £90 -->
-    <rect x="16" y="44" width="105" height="52" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/>
-    <text x="68" y="76" font-size="18" font-weight="900" fill="#1e40af" text-anchor="middle">£90</text>
+  <!-- Main 2-Column Grid: Visual Bar Model (Left) vs 3-Step Method (Right) -->
+  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:24px; width:100%; margin-bottom:24px;">
+    <!-- Visual Bars -->
+    <div style="display:flex; flex-direction:column; gap:18px;">
+      <!-- Person A: 3 Parts -->
+      <div style="background:#eff6ff; border:2px solid #3b82f6; border-radius:14px; padding:18px; box-shadow:0 2px 8px rgba(37, 99, 235, 0.06);">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+          <span style="color:#1d4ed8; font-size:1.05rem; font-weight:900; text-transform:uppercase; letter-spacing:0.04em;">Person A (3 parts)</span>
+          <span style="background:#2563eb; color:#ffffff; font-size:1.25rem; font-weight:900; padding:4px 14px; border-radius:8px;">= &pound;270</span>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(3, 1fr); gap:10px;">
+          <div style="background:#dbeafe; border:2px solid #2563eb; border-radius:8px; padding:14px; text-align:center; font-size:1.3rem; font-weight:900; color:#1e40af;">&pound;90</div>
+          <div style="background:#dbeafe; border:2px solid #2563eb; border-radius:8px; padding:14px; text-align:center; font-size:1.3rem; font-weight:900; color:#1e40af;">&pound;90</div>
+          <div style="background:#dbeafe; border:2px solid #2563eb; border-radius:8px; padding:14px; text-align:center; font-size:1.3rem; font-weight:900; color:#1e40af;">&pound;90</div>
+        </div>
+      </div>
 
-    <rect x="131" y="44" width="105" height="52" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/>
-    <text x="183" y="76" font-size="18" font-weight="900" fill="#1e40af" text-anchor="middle">£90</text>
+      <!-- Person B: 2 Parts -->
+      <div style="background:#fffbeb; border:2px solid #f59e0b; border-radius:14px; padding:18px; box-shadow:0 2px 8px rgba(245, 158, 11, 0.06);">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+          <span style="color:#b45309; font-size:1.05rem; font-weight:900; text-transform:uppercase; letter-spacing:0.04em;">Person B (2 parts)</span>
+          <span style="background:#d97706; color:#ffffff; font-size:1.25rem; font-weight:900; padding:4px 14px; border-radius:8px;">= &pound;180</span>
+        </div>
+        <div style="display:grid; grid-template-columns:repeat(2, 1fr); gap:10px;">
+          <div style="background:#fef3c7; border:2px solid #d97706; border-radius:8px; padding:14px; text-align:center; font-size:1.3rem; font-weight:900; color:#92400e;">&pound;90</div>
+          <div style="background:#fef3c7; border:2px solid #d97706; border-radius:8px; padding:14px; text-align:center; font-size:1.3rem; font-weight:900; color:#92400e;">&pound;90</div>
+        </div>
+      </div>
+    </div>
 
-    <rect x="246" y="44" width="105" height="52" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2.5"/>
-    <text x="298" y="76" font-size="18" font-weight="900" fill="#1e40af" text-anchor="middle">£90</text>
+    <!-- 3-Step Method -->
+    <div style="background:#f8fafc; border:2px solid #cbd5e1; border-radius:14px; padding:22px; display:flex; flex-direction:column; justify-content:space-between;">
+      <div>
+        <div style="display:inline-block; background:#0f172a; color:#ffffff; font-size:0.85rem; font-weight:900; padding:4px 12px; border-radius:6px; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:16px;">
+          3-Step Universal Ratio Method
+        </div>
+        
+        <div style="margin-bottom:14px;">
+          <div style="color:#1e40af; font-size:0.95rem; font-weight:800;">Step 1: Add the ratio parts</div>
+          <div style="font-size:1.25rem; font-weight:900; color:#0f172a;">3 + 2 = <span style="color:#2563eb;">5 total parts</span></div>
+        </div>
 
-    <text x="365" y="76" font-size="18" font-weight="900" fill="#1d4ed8">= £270</text>
-  </g>
+        <div style="margin-bottom:14px;">
+          <div style="color:#0369a1; font-size:0.95rem; font-weight:800;">Step 2: Value of 1 single part</div>
+          <div style="font-size:1.25rem; font-weight:900; color:#0f172a;">&pound;450 &divide; 5 = <span style="color:#0284c7;">&pound;90 per part</span></div>
+        </div>
 
-  <!-- Person B -->
-  <g transform="translate(24, 190)">
-    <rect width="420" height="110" rx="10" fill="#fffbeb" stroke="#fde68a" stroke-width="1.8"/>
-    <text x="16" y="30" font-size="14.5" font-weight="900" fill="#b45309">PERSON B (2 PARTS):</text>
-    <!-- 2 Large equal boxes of £90 -->
-    <rect x="16" y="44" width="105" height="52" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="2.5"/>
-    <text x="68" y="76" font-size="18" font-weight="900" fill="#92400e" text-anchor="middle">£90</text>
+        <div>
+          <div style="color:#15803d; font-size:0.95rem; font-weight:800;">Step 3: Multiply out each person's share</div>
+          <div style="font-size:1.15rem; font-weight:800; color:#0f172a;">
+            A = 3 &times; &pound;90 = <strong style="color:#1d4ed8;">&pound;270</strong> | B = 2 &times; &pound;90 = <strong style="color:#b45309;">&pound;180</strong>
+          </div>
+        </div>
+      </div>
 
-    <rect x="131" y="44" width="105" height="52" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="2.5"/>
-    <text x="183" y="76" font-size="18" font-weight="900" fill="#92400e" text-anchor="middle">£90</text>
-
-    <text x="250" y="76" font-size="18" font-weight="900" fill="#b45309">= £180</text>
-  </g>
-
-  <!-- Right: 3-Step Master Method Card (x: 460 to 836) -->
-  <g transform="translate(460, 68)">
-    <rect width="376" height="232" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
-    <rect x="16" y="14" width="160" height="26" rx="6" fill="#0f172a"/>
-    <text x="96" y="31" font-size="12" font-weight="900" fill="#ffffff" text-anchor="middle">3-STEP GOLDEN METHOD</text>
-
-    <text x="16" y="66" font-size="14" font-weight="800" fill="#1e40af">Step 1: Add total parts</text>
-    <text x="28" y="88" font-size="15" font-weight="700" fill="#0f172a">3 + 2 = <tspan font-weight="900" fill="#1e40af">5 total parts</tspan></text>
-
-    <text x="16" y="118" font-size="14" font-weight="800" fill="#0369a1">Step 2: Value of 1 single part</text>
-    <text x="28" y="140" font-size="15" font-weight="700" fill="#0f172a">£450 ÷ 5 = <tspan font-weight="900" fill="#0284c7">£90 per part</tspan></text>
-
-    <text x="16" y="170" font-size="14" font-weight="800" fill="#15803d">Step 3: Multiply each share</text>
-    <text x="28" y="192" font-size="14" font-weight="700" fill="#0f172a">A = 3 × £90 = <tspan font-weight="900" fill="#1e40af">£270</tspan> | B = 2 × £90 = <tspan font-weight="900" fill="#b45309">£180</tspan></text>
-    <text x="28" y="214" font-size="13" font-weight="800" fill="#15803d">Check: £270 + £180 = £450 ✓</text>
-  </g>
+      <div style="margin-top:16px; background:#e0f2fe; border-radius:8px; padding:10px 14px; color:#0369a1; font-size:0.92rem; font-weight:800; text-align:center;">
+        Check: &pound;270 + &pound;180 = &pound;450 &#x2713; Full Amount Accounted For!
+      </div>
+    </div>
+  </div>
 
   <!-- Bottom Strip -->
-  <g transform="translate(24, 308)">
-    <rect width="812" height="40" rx="8" fill="#dcfce7" stroke="#86efac" stroke-width="1.5"/>
-    <text x="406" y="25" font-size="13.5" font-weight="900" fill="#15803d" text-anchor="middle">PEARSON EDEXCEL RULE: Always add the parts, divide to find ONE part, then scale up. [M1][A1]</text>
-  </g>
-</svg></div>
+  <div style="background:#dcfce7; border:2px solid #86efac; border-radius:10px; padding:12px 20px; width:100%; text-align:center;">
+    <span style="color:#15803d; font-size:1.1rem; font-weight:900;">
+      PEARSON EDEXCEL RULE: Always add the parts, divide to find ONE part, then scale up. [M1][A1]
+    </span>
+  </div>
+</div>
               
                 <div class="table-responsive" style="overflow-x:auto; -webkit-overflow-scrolling:touch; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:14px; margin:16px 0;">
                   <table class="table-stack-mobile" style="width:100%; border-collapse:collapse;">
@@ -615,9 +632,11 @@
                 <span class="model-step-title">Find the multiplier or unitary amount for 1 portion</span>
               </div>
               <div class="model-step-col-desc">
-                Carrots for 1 portion = 450 g ÷ 15 = 30 g.<br>Stock for 1 portion = 1.2 L ÷ 15 = 0.08 L.
-              </div>
-              <div class="model-step-col-criteria">
+                <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:10px; padding:14px 18px; width:100%; box-shadow:0 2px 6px rgba(15, 23, 42, 0.04);">
+                  <div style="font-size:1.15rem; font-weight:800; color:#0f172a; margin-bottom:4px; font-variant-numeric:tabular-nums;">Carrots for 1 portion = 450 g ÷ 15 = 30 g.</div>
+                  <div style="font-size:1.15rem; font-weight:800; color:#0369a1; font-variant-numeric:tabular-nums; margin-bottom:4px;">Stock for 1 portion = 1.2 L ÷ 15 = 0.08 L.</div>
+                </div>
+              </div><div class="model-step-col-criteria">
                 <span class="criteria-badge-teal"><i class="fa-solid fa-award" style="font-size:0.78rem; margin-right:4px; opacity:0.85;"></i><strong>Criteria:</strong> M1: Unitary division by 15</span>
               </div>
             </div>
@@ -628,13 +647,14 @@
                 <span class="model-step-title">Multiply carrots by 40 portions</span>
               </div>
               <div class="model-step-col-desc">
-                <div class="math-visual-card" style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:6px; padding:12px 16px; margin-bottom:6px;">
-                  <div style="font-size:0.85rem; color:#64748b; font-weight:600; text-transform:uppercase; letter-spacing:0.5px;">Scale Carrots to 40 Portions</div>
-                  <div style="font-size:1.35rem; font-weight:700; color:#0f172a; font-variant-numeric:tabular-nums; margin:4px 0;">30 g &times; 40 = 1,200 grams (1.2 kg) of carrots</div>
-                  <div style="font-size:0.85rem; color:#475569;">Multiply single portion mass by 40 servings.</div>
+                <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:10px; padding:14px 18px; width:100%; box-shadow:0 2px 6px rgba(15, 23, 42, 0.04);">
+                  <div style="font-size:1.15rem; font-weight:800; color:#0f172a; margin-bottom:4px; font-variant-numeric:tabular-nums;"><div class="math-visual-card" style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:6px; padding:12px 16px; margin-bottom:6px;"></div>
+                  <div style="font-size:1.15rem; font-weight:800; color:#0369a1; font-variant-numeric:tabular-nums; margin-bottom:4px;"><div style="font-size:0.85rem; color:#64748b; font-weight:600; text-transform:uppercase; letter-spacing:0.5px;">Scale Carrots to 40 Portions</div></div>
+                  <div style="font-size:1.15rem; font-weight:800; color:#0369a1; font-variant-numeric:tabular-nums; margin-bottom:4px;"><div style="font-size:1.35rem; font-weight:700; color:#0f172a; font-variant-numeric:tabular-nums; margin:4px 0;">30 g &times; 40 = 1,200 grams (1.2 kg) of carrots</div></div>
+                  <div style="font-size:1.15rem; font-weight:800; color:#0369a1; font-variant-numeric:tabular-nums; margin-bottom:4px;"><div style="font-size:0.85rem; color:#475569;">Multiply single portion mass by 40 servings.</div></div>
+                  <div style="font-size:0.95rem; color:#475569; margin-top:2px;"></div></div>
                 </div>
-              </div>
-              <div class="model-step-col-criteria">
+              </div><div class="model-step-col-criteria">
                 <span class="criteria-badge-teal"><i class="fa-solid fa-award" style="font-size:0.78rem; margin-right:4px; opacity:0.85;"></i><strong>Criteria:</strong> A1: Accurate carrot mass (1,200 g)</span>
               </div>
             </div>
@@ -645,13 +665,14 @@
                 <span class="model-step-title">Multiply stock by 40 portions</span>
               </div>
               <div class="model-step-col-desc">
-                <div class="math-visual-card" style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:6px; padding:12px 16px; margin-bottom:6px;">
-                  <div style="font-size:0.85rem; color:#64748b; font-weight:600; text-transform:uppercase; letter-spacing:0.5px;">Scale Vegetable Stock to 40 Portions</div>
-                  <div style="font-size:1.35rem; font-weight:700; color:#166534; font-variant-numeric:tabular-nums; margin:4px 0;">0.08 L &times; 40 = 3.2 litres of stock</div>
-                  <div style="font-size:0.85rem; color:#475569;">Multiply single portion volume by 40 servings.</div>
+                <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:10px; padding:14px 18px; width:100%; box-shadow:0 2px 6px rgba(15, 23, 42, 0.04);">
+                  <div style="font-size:1.15rem; font-weight:800; color:#0f172a; margin-bottom:4px; font-variant-numeric:tabular-nums;"><div class="math-visual-card" style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:6px; padding:12px 16px; margin-bottom:6px;"></div>
+                  <div style="font-size:1.15rem; font-weight:800; color:#0369a1; font-variant-numeric:tabular-nums; margin-bottom:4px;"><div style="font-size:0.85rem; color:#64748b; font-weight:600; text-transform:uppercase; letter-spacing:0.5px;">Scale Vegetable Stock to 40 Portions</div></div>
+                  <div style="font-size:1.15rem; font-weight:800; color:#0369a1; font-variant-numeric:tabular-nums; margin-bottom:4px;"><div style="font-size:1.35rem; font-weight:700; color:#166534; font-variant-numeric:tabular-nums; margin:4px 0;">0.08 L &times; 40 = 3.2 litres of stock</div></div>
+                  <div style="font-size:1.15rem; font-weight:800; color:#0369a1; font-variant-numeric:tabular-nums; margin-bottom:4px;"><div style="font-size:0.85rem; color:#475569;">Multiply single portion volume by 40 servings.</div></div>
+                  <div style="font-size:0.95rem; color:#475569; margin-top:2px;"></div></div>
                 </div>
-              </div>
-              <div class="model-step-col-criteria">
+              </div><div class="model-step-col-criteria">
                 <span class="criteria-badge-teal"><i class="fa-solid fa-award" style="font-size:0.78rem; margin-right:4px; opacity:0.85;"></i><strong>Criteria:</strong> A1: Accurate stock volume (3.2 L)</span>
               </div>
             </div>
@@ -697,13 +718,14 @@
                 <span class="model-step-title">Convert original duration to minutes and find total person-minutes</span>
               </div>
               <div class="model-step-col-desc">
-                <div class="math-visual-card" style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:6px; padding:12px 16px; margin-bottom:6px;">
-                  <div style="font-size:0.85rem; color:#64748b; font-weight:600; text-transform:uppercase; letter-spacing:0.5px;">Convert Duration &amp; Calculate Total Person-Minutes</div>
-                  <div style="font-size:1.30rem; font-weight:700; color:#0f172a; font-variant-numeric:tabular-nums; margin:4px 0;">3h 20m = 200 mins &nbsp;|&nbsp; 6 operatives &times; 200m = 1,200 person-mins</div>
-                  <div style="font-size:0.85rem; color:#475569;">In inverse proportion, the product of workers and time represents total constant workload.</div>
+                <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:10px; padding:14px 18px; width:100%; box-shadow:0 2px 6px rgba(15, 23, 42, 0.04);">
+                  <div style="font-size:1.15rem; font-weight:800; color:#0f172a; margin-bottom:4px; font-variant-numeric:tabular-nums;"><div class="math-visual-card" style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:6px; padding:12px 16px; margin-bottom:6px;"></div>
+                  <div style="font-size:1.15rem; font-weight:800; color:#0369a1; font-variant-numeric:tabular-nums; margin-bottom:4px;"><div style="font-size:0.85rem; color:#64748b; font-weight:600; text-transform:uppercase; letter-spacing:0.5px;">Convert Duration &amp; Calculate Total Person-Minutes</div></div>
+                  <div style="font-size:1.15rem; font-weight:800; color:#0369a1; font-variant-numeric:tabular-nums; margin-bottom:4px;"><div style="font-size:1.30rem; font-weight:700; color:#0f172a; font-variant-numeric:tabular-nums; margin:4px 0;">3h 20m = 200 mins &nbsp;|&nbsp; 6 operatives &times; 200m = 1,200 person-mins</div></div>
+                  <div style="font-size:1.15rem; font-weight:800; color:#0369a1; font-variant-numeric:tabular-nums; margin-bottom:4px;"><div style="font-size:0.85rem; color:#475569;">In inverse proportion, the product of workers and time represents total constant workload.</div></div>
+                  <div style="font-size:0.95rem; color:#475569; margin-top:2px;"></div></div>
                 </div>
-              </div>
-              <div class="model-step-col-criteria">
+              </div><div class="model-step-col-criteria">
                 <span class="criteria-badge-teal"><i class="fa-solid fa-award" style="font-size:0.78rem; margin-right:4px; opacity:0.85;"></i><strong>Criteria:</strong> M1: Inverse proportion total effort in person-minutes</span>
               </div>
             </div>
@@ -714,13 +736,14 @@
                 <span class="model-step-title">Calculate available time window on Friday</span>
               </div>
               <div class="model-step-col-desc">
-                <div class="math-visual-card" style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:6px; padding:12px 16px; margin-bottom:6px;">
-                  <div style="font-size:0.85rem; color:#64748b; font-weight:600; text-transform:uppercase; letter-spacing:0.5px;">Available Unloading Time Window</div>
-                  <div style="font-size:1.35rem; font-weight:700; color:#0f172a; font-variant-numeric:tabular-nums; margin:4px 0;">13:30 to 16:00 = 2h 30m = 150 minutes</div>
-                  <div style="font-size:0.85rem; color:#475569;">The team has exactly 150 minutes to complete the job.</div>
+                <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:10px; padding:14px 18px; width:100%; box-shadow:0 2px 6px rgba(15, 23, 42, 0.04);">
+                  <div style="font-size:1.15rem; font-weight:800; color:#0f172a; margin-bottom:4px; font-variant-numeric:tabular-nums;"><div class="math-visual-card" style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:6px; padding:12px 16px; margin-bottom:6px;"></div>
+                  <div style="font-size:1.15rem; font-weight:800; color:#0369a1; font-variant-numeric:tabular-nums; margin-bottom:4px;"><div style="font-size:0.85rem; color:#64748b; font-weight:600; text-transform:uppercase; letter-spacing:0.5px;">Available Unloading Time Window</div></div>
+                  <div style="font-size:1.15rem; font-weight:800; color:#0369a1; font-variant-numeric:tabular-nums; margin-bottom:4px;"><div style="font-size:1.35rem; font-weight:700; color:#0f172a; font-variant-numeric:tabular-nums; margin:4px 0;">13:30 to 16:00 = 2h 30m = 150 minutes</div></div>
+                  <div style="font-size:1.15rem; font-weight:800; color:#0369a1; font-variant-numeric:tabular-nums; margin-bottom:4px;"><div style="font-size:0.85rem; color:#475569;">The team has exactly 150 minutes to complete the job.</div></div>
+                  <div style="font-size:0.95rem; color:#475569; margin-top:2px;"></div></div>
                 </div>
-              </div>
-              <div class="model-step-col-criteria">
+              </div><div class="model-step-col-criteria">
                 <span class="criteria-badge-teal"><i class="fa-solid fa-award" style="font-size:0.78rem; margin-right:4px; opacity:0.85;"></i><strong>Criteria:</strong> M1: Available time calculation</span>
               </div>
             </div>
@@ -731,13 +754,14 @@
                 <span class="model-step-title">Divide total person-minutes by available minutes</span>
               </div>
               <div class="model-step-col-desc">
-                <div class="math-visual-card" style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:6px; padding:12px 16px; margin-bottom:6px;">
-                  <div style="font-size:0.85rem; color:#64748b; font-weight:600; text-transform:uppercase; letter-spacing:0.5px;">Operatives Required = Workload &divide; Available Minutes</div>
-                  <div style="font-size:1.35rem; font-weight:700; color:#0f172a; font-variant-numeric:tabular-nums; margin:4px 0;">1,200 person-minutes &divide; 150 minutes = 8 operatives</div>
-                  <div style="font-size:0.85rem; color:#475569;">Dividing total person-minutes by available minutes yields the required staffing level.</div>
+                <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:10px; padding:14px 18px; width:100%; box-shadow:0 2px 6px rgba(15, 23, 42, 0.04);">
+                  <div style="font-size:1.15rem; font-weight:800; color:#0f172a; margin-bottom:4px; font-variant-numeric:tabular-nums;"><div class="math-visual-card" style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:6px; padding:12px 16px; margin-bottom:6px;"></div>
+                  <div style="font-size:1.15rem; font-weight:800; color:#0369a1; font-variant-numeric:tabular-nums; margin-bottom:4px;"><div style="font-size:0.85rem; color:#64748b; font-weight:600; text-transform:uppercase; letter-spacing:0.5px;">Operatives Required = Workload &divide; Available Minutes</div></div>
+                  <div style="font-size:1.15rem; font-weight:800; color:#0369a1; font-variant-numeric:tabular-nums; margin-bottom:4px;"><div style="font-size:1.35rem; font-weight:700; color:#0f172a; font-variant-numeric:tabular-nums; margin:4px 0;">1,200 person-minutes &divide; 150 minutes = 8 operatives</div></div>
+                  <div style="font-size:1.15rem; font-weight:800; color:#0369a1; font-variant-numeric:tabular-nums; margin-bottom:4px;"><div style="font-size:0.85rem; color:#475569;">Dividing total person-minutes by available minutes yields the required staffing level.</div></div>
+                  <div style="font-size:0.95rem; color:#475569; margin-top:2px;"></div></div>
                 </div>
-              </div>
-              <div class="model-step-col-criteria">
+              </div><div class="model-step-col-criteria">
                 <span class="criteria-badge-teal"><i class="fa-solid fa-award" style="font-size:0.78rem; margin-right:4px; opacity:0.85;"></i><strong>Criteria:</strong> M1: Inverse proportion division</span>
               </div>
             </div>
@@ -748,13 +772,14 @@
                 <span class="model-step-title">State final staffing conclusion</span>
               </div>
               <div class="model-step-col-desc">
-                <div class="math-visual-card" style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:6px; padding:12px 16px; margin-bottom:6px;">
-                  <div style="font-size:0.85rem; color:#64748b; font-weight:600; text-transform:uppercase; letter-spacing:0.5px;">Accredited Staffing Recommendation</div>
-                  <div style="font-size:1.30rem; font-weight:700; color:#166534; font-variant-numeric:tabular-nums; margin:4px 0;">8 operatives required (+2 extra operatives)</div>
-                  <div style="font-size:0.85rem; color:#475569;">State the final team requirement (8 operatives) clearly.</div>
+                <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:10px; padding:14px 18px; width:100%; box-shadow:0 2px 6px rgba(15, 23, 42, 0.04);">
+                  <div style="font-size:1.15rem; font-weight:800; color:#0f172a; margin-bottom:4px; font-variant-numeric:tabular-nums;"><div class="math-visual-card" style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:6px; padding:12px 16px; margin-bottom:6px;"></div>
+                  <div style="font-size:1.15rem; font-weight:800; color:#0369a1; font-variant-numeric:tabular-nums; margin-bottom:4px;"><div style="font-size:0.85rem; color:#64748b; font-weight:600; text-transform:uppercase; letter-spacing:0.5px;">Accredited Staffing Recommendation</div></div>
+                  <div style="font-size:1.15rem; font-weight:800; color:#0369a1; font-variant-numeric:tabular-nums; margin-bottom:4px;"><div style="font-size:1.30rem; font-weight:700; color:#166534; font-variant-numeric:tabular-nums; margin:4px 0;">8 operatives required (+2 extra operatives)</div></div>
+                  <div style="font-size:1.15rem; font-weight:800; color:#0369a1; font-variant-numeric:tabular-nums; margin-bottom:4px;"><div style="font-size:0.85rem; color:#475569;">State the final team requirement (8 operatives) clearly.</div></div>
+                  <div style="font-size:0.95rem; color:#475569; margin-top:2px;"></div></div>
                 </div>
-              </div>
-              <div class="model-step-col-criteria">
+              </div><div class="model-step-col-criteria">
                 <span class="criteria-badge-teal"><i class="fa-solid fa-award" style="font-size:0.78rem; margin-right:4px; opacity:0.85;"></i><strong>Criteria:</strong> A1: Accurate workforce requirement (8 operatives)</span>
               </div>
             </div>

@@ -423,89 +423,73 @@
               <p class="mfs-topic-stem">Systematically listing all combinations in a 2D table so none are missed.</p>
             </div>
             <div class="mfs-topic-body" style="padding:20px 24px;">
-              <div class="sketch-diagram-wrap" style="width:100%; margin:24px 0;"><svg viewBox="0 0 860 360" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:860px; height:auto; display:block; font-family:'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;">
-  <!-- Main Card -->
-  <rect x="2" y="2" width="856" height="356" rx="14" fill="#ffffff" stroke="#bae6fd" stroke-width="2"/>
-  
-  <!-- Title Badge -->
-  <rect x="24" y="16" width="370" height="34" rx="17" fill="#e0f2fe"/>
-  <text x="40" y="39" font-size="14" font-weight="800" fill="#0369a1" letter-spacing="0.5">✎ MASTER MODEL: PROBABILITY CONTINUUM</text>
-  <text x="420" y="39" font-size="15" font-weight="700" fill="#0f172a">Continuous Scale from 0 (Impossible) to 1 (Certain)</text>
+              <div class="mfs-probability-master-board" style="background:#ffffff; border:2px solid #bae6fd; border-radius:18px; padding:28px 24px; margin:24px 0; box-shadow:0 4px 20px rgba(15, 23, 42, 0.06); width:100%;">
+  <!-- Header Bar -->
+  <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:12px; margin-bottom:24px; padding-bottom:16px; border-bottom:1px solid #e2e8f0; width:100%;">
+    <div style="display:inline-flex; align-items:center; gap:8px; background:#e0f2fe; color:#0369a1; font-size:0.88rem; font-weight:800; padding:6px 18px; border-radius:999px; text-transform:uppercase; letter-spacing:0.04em;">
+      <i class="fa-solid fa-dice"></i> Master Model: Complete Probability Continuum
+    </div>
+    <div style="color:#0f172a; font-size:1.15rem; font-weight:800;">
+      Scale: <span style="color:#dc2626;">0 (Impossible)</span> &rarr; <span style="color:#15803d;">1 (Certain)</span>
+    </div>
+  </div>
 
-  <!-- Probability Line Track (Spans x=70 to x=790 = 720px wide!) -->
-  <!-- Background gradient track -->
-  <defs>
-    <linearGradient id="probGrad" x1="0%" y1="0%" x2="100%" y2="0%">
-      <stop offset="0%" stop-color="#ef4444"/>
-      <stop offset="25%" stop-color="#f59e0b"/>
-      <stop offset="50%" stop-color="#0284c7"/>
-      <stop offset="75%" stop-color="#10b981"/>
-      <stop offset="100%" stop-color="#15803d"/>
-    </linearGradient>
-  </defs>
+  <!-- 5 Milestone Cards Across the Screen (Full Width Grid) -->
+  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(170px, 1fr)); gap:16px; width:100%; margin-bottom:24px;">
+    <!-- 0 Impossible -->
+    <div style="background:#fef2f2; border:2px solid #f87171; border-radius:14px; padding:18px 14px; text-align:center; box-shadow:0 2px 6px rgba(239, 68, 68, 0.06);">
+      <div style="font-size:1.8rem; font-weight:900; color:#dc2626; margin-bottom:4px;">0</div>
+      <div style="background:#dc2626; color:#ffffff; font-size:0.85rem; font-weight:900; padding:4px 8px; border-radius:6px; text-transform:uppercase; margin-bottom:6px;">Impossible</div>
+      <div style="color:#7f1d1d; font-size:0.9rem; font-weight:700;">0% Chance</div>
+      <div style="color:#64748b; font-size:0.8rem; margin-top:8px;">e.g. Rolling a 7 on a 6-sided die</div>
+    </div>
 
-  <rect x="70" y="100" width="720" height="12" rx="6" fill="url(#probGrad)"/>
+    <!-- 0.25 Unlikely -->
+    <div style="background:#fffbeb; border:2px solid #fbbf24; border-radius:14px; padding:18px 14px; text-align:center; box-shadow:0 2px 6px rgba(245, 158, 11, 0.06);">
+      <div style="font-size:1.8rem; font-weight:900; color:#d97706; margin-bottom:4px;">&frac14; (0.25)</div>
+      <div style="background:#d97706; color:#ffffff; font-size:0.85rem; font-weight:900; padding:4px 8px; border-radius:6px; text-transform:uppercase; margin-bottom:6px;">Unlikely</div>
+      <div style="color:#78350f; font-size:0.9rem; font-weight:700;">25% Chance</div>
+      <div style="color:#64748b; font-size:0.8rem; margin-top:8px;">e.g. Drawing a Heart from cards</div>
+    </div>
 
-  <!-- Milestone 1: 0 (Impossible) at x=70 -->
-  <line x1="70" y1="84" x2="70" y2="128" stroke="#ef4444" stroke-width="4"/>
-  <circle cx="70" cy="106" r="8" fill="#ffffff" stroke="#ef4444" stroke-width="3"/>
-  <rect x="18" y="138" width="104" height="66" rx="8" fill="#fef2f2" stroke="#fca5a5" stroke-width="1.5"/>
-  <text x="70" y="160" font-size="17" font-weight="900" fill="#dc2626" text-anchor="middle">0</text>
-  <text x="70" y="178" font-size="12" font-weight="900" fill="#991b1b" text-anchor="middle">IMPOSSIBLE</text>
-  <text x="70" y="194" font-size="10" font-weight="700" fill="#7f1d1d" text-anchor="middle">0% Chance</text>
+    <!-- 0.5 Even Chance -->
+    <div style="background:#eff6ff; border:2px solid #60a5fa; border-radius:14px; padding:18px 14px; text-align:center; box-shadow:0 2px 6px rgba(37, 99, 235, 0.06);">
+      <div style="font-size:1.8rem; font-weight:900; color:#0284c7; margin-bottom:4px;">&frac12; (0.50)</div>
+      <div style="background:#0284c7; color:#ffffff; font-size:0.85rem; font-weight:900; padding:4px 8px; border-radius:6px; text-transform:uppercase; margin-bottom:6px;">Even Chance</div>
+      <div style="color:#1e40af; font-size:0.9rem; font-weight:700;">50:50 (50%)</div>
+      <div style="color:#64748b; font-size:0.8rem; margin-top:8px;">e.g. Flipping Heads on a coin</div>
+    </div>
 
-  <!-- Milestone 2: 0.25 (Unlikely) at x=250 -->
-  <line x1="250" y1="88" x2="250" y2="124" stroke="#f59e0b" stroke-width="3"/>
-  <circle cx="250" cy="106" r="7" fill="#ffffff" stroke="#f59e0b" stroke-width="2.5"/>
-  <rect x="198" y="138" width="104" height="66" rx="8" fill="#fffbeb" stroke="#fde68a" stroke-width="1.5"/>
-  <text x="250" y="160" font-size="15" font-weight="900" fill="#d97706" text-anchor="middle">¼ (0.25)</text>
-  <text x="250" y="178" font-size="12" font-weight="900" fill="#92400e" text-anchor="middle">UNLIKELY</text>
-  <text x="250" y="194" font-size="10" font-weight="700" fill="#78350f" text-anchor="middle">25% Chance</text>
+    <!-- 0.75 Likely -->
+    <div style="background:#ecfdf5; border:2px solid #34d399; border-radius:14px; padding:18px 14px; text-align:center; box-shadow:0 2px 6px rgba(16, 185, 129, 0.06);">
+      <div style="font-size:1.8rem; font-weight:900; color:#059669; margin-bottom:4px;">&frac34; (0.75)</div>
+      <div style="background:#059669; color:#ffffff; font-size:0.85rem; font-weight:900; padding:4px 8px; border-radius:6px; text-transform:uppercase; margin-bottom:6px;">Likely</div>
+      <div style="color:#064e3b; font-size:0.9rem; font-weight:700;">75% Chance</div>
+      <div style="color:#64748b; font-size:0.8rem; margin-top:8px;">e.g. Non-Heart from deck (39/52)</div>
+    </div>
 
-  <!-- Milestone 3: 0.5 (Even Chance) at x=430 -->
-  <line x1="430" y1="80" x2="430" y2="132" stroke="#0284c7" stroke-width="4"/>
-  <circle cx="430" cy="106" r="9" fill="#ffffff" stroke="#0284c7" stroke-width="3"/>
-  <rect x="368" y="138" width="124" height="66" rx="8" fill="#eff6ff" stroke="#bfdbfe" stroke-width="2"/>
-  <text x="430" y="160" font-size="16" font-weight="900" fill="#0284c7" text-anchor="middle">½ (0.50)</text>
-  <text x="430" y="178" font-size="12.5" font-weight="900" fill="#1e40af" text-anchor="middle">EVEN CHANCE</text>
-  <text x="430" y="194" font-size="10.5" font-weight="700" fill="#1d4ed8" text-anchor="middle">50:50 (50%)</text>
+    <!-- 1 Certain -->
+    <div style="background:#f0fdf4; border:2px solid #4ade80; border-radius:14px; padding:18px 14px; text-align:center; box-shadow:0 2px 6px rgba(34, 197, 94, 0.06);">
+      <div style="font-size:1.8rem; font-weight:900; color:#15803d; margin-bottom:4px;">1 (1.00)</div>
+      <div style="background:#15803d; color:#ffffff; font-size:0.85rem; font-weight:900; padding:4px 8px; border-radius:6px; text-transform:uppercase; margin-bottom:6px;">Certain</div>
+      <div style="color:#14532d; font-size:0.9rem; font-weight:700;">100% Chance</div>
+      <div style="color:#64748b; font-size:0.8rem; margin-top:8px;">e.g. Drawing a red or black card</div>
+    </div>
+  </div>
 
-  <!-- Milestone 4: 0.75 (Likely) at x=610 -->
-  <line x1="610" y1="88" x2="610" y2="124" stroke="#10b981" stroke-width="3"/>
-  <circle cx="610" cy="106" r="7" fill="#ffffff" stroke="#10b981" stroke-width="2.5"/>
-  <rect x="558" y="138" width="104" height="66" rx="8" fill="#ecfdf5" stroke="#a7f3d0" stroke-width="1.5"/>
-  <text x="610" y="160" font-size="15" font-weight="900" fill="#059669" text-anchor="middle">¾ (0.75)</text>
-  <text x="610" y="178" font-size="12" font-weight="900" fill="#065f46" text-anchor="middle">LIKELY</text>
-  <text x="610" y="194" font-size="10" font-weight="700" fill="#064e3b" text-anchor="middle">75% Chance</text>
-
-  <!-- Milestone 5: 1 (Certain) at x=790 -->
-  <line x1="790" y1="84" x2="790" y2="128" stroke="#15803d" stroke-width="4"/>
-  <circle cx="790" cy="106" r="8" fill="#ffffff" stroke="#15803d" stroke-width="3"/>
-  <rect x="738" y="138" width="104" height="66" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
-  <text x="790" y="160" font-size="17" font-weight="900" fill="#15803d" text-anchor="middle">1</text>
-  <text x="790" y="178" font-size="12" font-weight="900" fill="#166534" text-anchor="middle">CERTAIN</text>
-  <text x="790" y="194" font-size="10" font-weight="700" fill="#14532d" text-anchor="middle">100% Chance</text>
-
-  <!-- Probability Formula & Real Example Card (y: 220 to 336) -->
-  <g transform="translate(24, 222)">
-    <rect width="812" height="114" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
-    <rect x="16" y="16" width="150" height="28" rx="6" fill="#0284c7"/>
-    <text x="91" y="35" font-size="12.5" font-weight="900" fill="#ffffff" text-anchor="middle">UNIVERSAL FORMULA</text>
-    
-    <text x="180" y="35" font-size="14.5" font-weight="900" fill="#0f172a">
-      P(Event) = <tspan fill="#0284c7">Number of Successful Outcomes</tspan> ÷ <tspan fill="#0f172a">Total Possible Outcomes</tspan>
-    </text>
-    
-    <line x1="16" y1="56" x2="796" y2="56" stroke="#e2e8f0" stroke-width="1.5"/>
-    
-    <text x="24" y="80" font-size="13" font-weight="700" fill="#334155">
-      • Example 1: Rolling a 5 on a fair 6-sided die &rarr; 1 outcome of '5' out of 6 total = <tspan font-weight="900" fill="#0284c7">⅙ &approx; 0.167 (16.7%)</tspan>
-    </text>
-    <text x="24" y="100" font-size="13" font-weight="700" fill="#334155">
-      • Example 2: Rolling an Even Number {2, 4, 6} &rarr; 3 outcomes out of 6 total = <tspan font-weight="900" fill="#16a34a">3/6 = ½ = 0.5 (50% Even Chance)</tspan>
-    </text>
-  </g>
-</svg></div>
+  <!-- Universal Formula Card -->
+  <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:12px; padding:18px 22px; width:100%;">
+    <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:8px; margin-bottom:8px;">
+      <span style="background:#0284c7; color:#ffffff; font-size:0.8rem; font-weight:900; padding:3px 10px; border-radius:6px; text-transform:uppercase;">Universal Formula</span>
+      <span style="font-size:1.15rem; font-weight:900; color:#0f172a;">
+        P(Event) = <span style="color:#0284c7;">Successful Outcomes</span> &divide; <span style="color:#0f172a;">Total Possible Outcomes</span>
+      </span>
+    </div>
+    <div style="color:#475569; font-size:0.95rem; font-weight:700; line-height:1.7;">
+      &bull; Example: Rolling an Even Number {2, 4, 6} on a 6-sided die &rarr; 3 outcomes out of 6 = <strong style="color:#15803d;">&sup3;&frasl;&₆ = &frac12; = 0.5 (50% Even Chance)</strong>
+    </div>
+  </div>
+</div>
               
                 <div class="table-responsive" style="overflow-x:auto; -webkit-overflow-scrolling:touch; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:14px; margin:16px 0;">
                   <p style="color:#334155; line-height:1.7; margin-top:0;">When two 4-sided spinners (numbered 1 to 4) are spun and their scores are added together, there are <strong>4 &times; 4 = 16 equally likely outcomes</strong>:</p>
@@ -627,16 +611,17 @@
                 <span class="model-step-title">Multiply Independent Failures for P(Both Fail)</span>
               </div>
               <div class="model-step-col-desc">
-                <div class="math-visual-card" style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px; padding:12px 16px;">
-                  <div style="font-size:0.82rem; color:#64748b; font-weight:700; text-transform:uppercase; margin-bottom:6px;">Multiplication Rule (AND)</div>
-                  <div style="display:flex; align-items:center; gap:10px; font-size:1.35rem; font-weight:700; color:#0f172a; font-variant-numeric:tabular-nums; flex-wrap:wrap;">
-                    <span>P(A fails AND B fails) = 0.05 &times; 0.04 =</span>
-                    <span class="math-target-calc" style="background:#fee2e2; padding:4px 10px; border-radius:6px; border:1px solid #fca5a5; color:#991b1b;">0.002</span>
-                    <span style="font-size:0.95rem; color:#64748b;">(0.2%)</span>
-                  </div>
+                <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:10px; padding:14px 18px; width:100%; box-shadow:0 2px 6px rgba(15, 23, 42, 0.04);">
+                  <div style="font-size:1.15rem; font-weight:800; color:#0f172a; margin-bottom:4px; font-variant-numeric:tabular-nums;"><div class="math-visual-card" style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px; padding:12px 16px;"></div>
+                  <div style="font-size:1.15rem; font-weight:800; color:#0369a1; font-variant-numeric:tabular-nums; margin-bottom:4px;"><div style="font-size:0.82rem; color:#64748b; font-weight:700; text-transform:uppercase; margin-bottom:6px;">Multiplication Rule (AND)</div></div>
+                  <div style="font-size:1.15rem; font-weight:800; color:#0369a1; font-variant-numeric:tabular-nums; margin-bottom:4px;"><div style="display:flex; align-items:center; gap:10px; font-size:1.35rem; font-weight:700; color:#0f172a; font-variant-numeric:tabular-nums; flex-wrap:wrap;"></div>
+                  <div style="font-size:1.15rem; font-weight:800; color:#0369a1; font-variant-numeric:tabular-nums; margin-bottom:4px;"><span>P(A fails AND B fails) = 0.05 &times; 0.04 =</span></div>
+                  <div style="font-size:1.15rem; font-weight:800; color:#0369a1; font-variant-numeric:tabular-nums; margin-bottom:4px;"><span class="math-target-calc" style="background:#fee2e2; padding:4px 10px; border-radius:6px; border:1px solid #fca5a5; color:#991b1b;">0.002</span></div>
+                  <div style="font-size:1.15rem; font-weight:800; color:#0369a1; font-variant-numeric:tabular-nums; margin-bottom:4px;"><span style="font-size:0.95rem; color:#64748b;">(0.2%)</span></div>
+                  <div style="font-size:0.95rem; color:#475569; margin-top:2px;"></div></div>
+                  <div style="font-size:0.95rem; color:#475569; margin-top:2px;"></div></div>
                 </div>
-              </div>
-              <div class="model-step-col-criteria">
+              </div><div class="model-step-col-criteria">
                 <span class="criteria-badge-teal"><i class="fa-solid fa-award" style="font-size:0.78rem; margin-right:4px; opacity:0.85;"></i><strong>Criteria:</strong> M1 / A1: Accurate combined failure probability (0.002)</span>
               </div>
             </div>
@@ -647,15 +632,16 @@
                 <span class="model-step-title">Find Individual Working Probabilities (Complement)</span>
               </div>
               <div class="model-step-col-desc">
-                <div class="math-stepdown-board" style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px; padding:12px 16px;">
-                  <div style="font-size:0.82rem; color:#64748b; font-weight:700; text-transform:uppercase; margin-bottom:6px;">Complement of Failure</div>
-                  <div style="display:flex; flex-direction:column; gap:6px; font-size:1.3rem; font-weight:700; color:#0f172a; font-variant-numeric:tabular-nums;">
-                    <div>P(A works) = 1.00 &minus; 0.05 = <span class="math-target-calc" style="background:#dcfce7; padding:2px 8px; border-radius:6px; border:1px solid #86efac; color:#166534;">0.95</span></div>
-                    <div>P(B works) = 1.00 &minus; 0.04 = <span class="math-target-calc" style="background:#dcfce7; padding:2px 8px; border-radius:6px; border:1px solid #86efac; color:#166534;">0.96</span></div>
-                  </div>
+                <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:10px; padding:14px 18px; width:100%; box-shadow:0 2px 6px rgba(15, 23, 42, 0.04);">
+                  <div style="font-size:1.15rem; font-weight:800; color:#0f172a; margin-bottom:4px; font-variant-numeric:tabular-nums;"><div class="math-stepdown-board" style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px; padding:12px 16px;"></div>
+                  <div style="font-size:1.15rem; font-weight:800; color:#0369a1; font-variant-numeric:tabular-nums; margin-bottom:4px;"><div style="font-size:0.82rem; color:#64748b; font-weight:700; text-transform:uppercase; margin-bottom:6px;">Complement of Failure</div></div>
+                  <div style="font-size:1.15rem; font-weight:800; color:#0369a1; font-variant-numeric:tabular-nums; margin-bottom:4px;"><div style="display:flex; flex-direction:column; gap:6px; font-size:1.3rem; font-weight:700; color:#0f172a; font-variant-numeric:tabular-nums;"></div>
+                  <div style="font-size:1.15rem; font-weight:800; color:#0369a1; font-variant-numeric:tabular-nums; margin-bottom:4px;"><div>P(A works) = 1.00 &minus; 0.05 = <span class="math-target-calc" style="background:#dcfce7; padding:2px 8px; border-radius:6px; border:1px solid #86efac; color:#166534;">0.95</span></div></div>
+                  <div style="font-size:1.15rem; font-weight:800; color:#0369a1; font-variant-numeric:tabular-nums; margin-bottom:4px;"><div>P(B works) = 1.00 &minus; 0.04 = <span class="math-target-calc" style="background:#dcfce7; padding:2px 8px; border-radius:6px; border:1px solid #86efac; color:#166534;">0.96</span></div></div>
+                  <div style="font-size:0.95rem; color:#475569; margin-top:2px;"></div></div>
+                  <div style="font-size:0.95rem; color:#475569; margin-top:2px;"></div></div>
                 </div>
-              </div>
-              <div class="model-step-col-criteria">
+              </div><div class="model-step-col-criteria">
                 <span class="criteria-badge-teal"><i class="fa-solid fa-award" style="font-size:0.78rem; margin-right:4px; opacity:0.85;"></i><strong>Criteria:</strong> M1: Complement probabilities (0.95 and 0.96)</span>
               </div>
             </div>
@@ -666,16 +652,17 @@
                 <span class="model-step-title">Multiply Working Probabilities for P(Both Work)</span>
               </div>
               <div class="model-step-col-desc">
-                <div class="math-visual-card" style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px; padding:12px 16px;">
-                  <div style="font-size:0.82rem; color:#64748b; font-weight:700; text-transform:uppercase; margin-bottom:6px;">Independent Joint Reliability</div>
-                  <div style="display:flex; align-items:center; gap:10px; font-size:1.35rem; font-weight:700; color:#0f172a; font-variant-numeric:tabular-nums; flex-wrap:wrap;">
-                    <span>P(Both work) = 0.95 &times; 0.96 =</span>
-                    <span class="math-target-calc" style="background:#dcfce7; padding:4px 10px; border-radius:6px; border:1px solid #86efac; color:#166534;">0.912</span>
-                    <span style="font-size:0.95rem; color:#64748b;">(91.2%)</span>
-                  </div>
+                <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:10px; padding:14px 18px; width:100%; box-shadow:0 2px 6px rgba(15, 23, 42, 0.04);">
+                  <div style="font-size:1.15rem; font-weight:800; color:#0f172a; margin-bottom:4px; font-variant-numeric:tabular-nums;"><div class="math-visual-card" style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px; padding:12px 16px;"></div>
+                  <div style="font-size:1.15rem; font-weight:800; color:#0369a1; font-variant-numeric:tabular-nums; margin-bottom:4px;"><div style="font-size:0.82rem; color:#64748b; font-weight:700; text-transform:uppercase; margin-bottom:6px;">Independent Joint Reliability</div></div>
+                  <div style="font-size:1.15rem; font-weight:800; color:#0369a1; font-variant-numeric:tabular-nums; margin-bottom:4px;"><div style="display:flex; align-items:center; gap:10px; font-size:1.35rem; font-weight:700; color:#0f172a; font-variant-numeric:tabular-nums; flex-wrap:wrap;"></div>
+                  <div style="font-size:1.15rem; font-weight:800; color:#0369a1; font-variant-numeric:tabular-nums; margin-bottom:4px;"><span>P(Both work) = 0.95 &times; 0.96 =</span></div>
+                  <div style="font-size:1.15rem; font-weight:800; color:#0369a1; font-variant-numeric:tabular-nums; margin-bottom:4px;"><span class="math-target-calc" style="background:#dcfce7; padding:4px 10px; border-radius:6px; border:1px solid #86efac; color:#166534;">0.912</span></div>
+                  <div style="font-size:1.15rem; font-weight:800; color:#0369a1; font-variant-numeric:tabular-nums; margin-bottom:4px;"><span style="font-size:0.95rem; color:#64748b;">(91.2%)</span></div>
+                  <div style="font-size:0.95rem; color:#475569; margin-top:2px;"></div></div>
+                  <div style="font-size:0.95rem; color:#475569; margin-top:2px;"></div></div>
                 </div>
-              </div>
-              <div class="model-step-col-criteria">
+              </div><div class="model-step-col-criteria">
                 <span class="criteria-badge-teal"><i class="fa-solid fa-award" style="font-size:0.78rem; margin-right:4px; opacity:0.85;"></i><strong>Criteria:</strong> A1: Accurate combined working probability (0.912)</span>
               </div>
             </div>
@@ -725,9 +712,11 @@
                 <span class="model-step-title">Determine total outcomes in the sample space and winning combinations (Sum ≥ 9)</span>
               </div>
               <div class="model-step-col-desc">
-                Total outcomes = 3 × 4 = 12 equally likely combinations.<br>Sums ≥ 9: (1+8=9), (2+8=10), (3+6=9), (3+8=11) → 4 winning outcomes.
-              </div>
-              <div class="model-step-col-criteria">
+                <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:10px; padding:14px 18px; width:100%; box-shadow:0 2px 6px rgba(15, 23, 42, 0.04);">
+                  <div style="font-size:1.15rem; font-weight:800; color:#0f172a; margin-bottom:4px; font-variant-numeric:tabular-nums;">Total outcomes = 3 × 4 = 12 equally likely combinations.</div>
+                  <div style="font-size:1.15rem; font-weight:800; color:#0369a1; font-variant-numeric:tabular-nums; margin-bottom:4px;">Sums ≥ 9: (1+8=9), (2+8=10), (3+6=9), (3+8=11) → 4 winning outcomes.</div>
+                </div>
+              </div><div class="model-step-col-criteria">
                 <span class="criteria-badge-teal"><i class="fa-solid fa-award" style="font-size:0.78rem; margin-right:4px; opacity:0.85;"></i><strong>Criteria:</strong> M1: Sample space 4 out of 12 (1/3)</span>
               </div>
             </div>
@@ -738,9 +727,11 @@
                 <span class="model-step-title">Calculate expected number of winners out of 180 players</span>
               </div>
               <div class="model-step-col-desc">
-                P(Win) = 4/12 = 1/3.<br>Expected winners = (1/3) × 180 = 60 winners.
-              </div>
-              <div class="model-step-col-criteria">
+                <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:10px; padding:14px 18px; width:100%; box-shadow:0 2px 6px rgba(15, 23, 42, 0.04);">
+                  <div style="font-size:1.15rem; font-weight:800; color:#0f172a; margin-bottom:4px; font-variant-numeric:tabular-nums;">P(Win) = 4/12 = 1/3.</div>
+                  <div style="font-size:1.15rem; font-weight:800; color:#0369a1; font-variant-numeric:tabular-nums; margin-bottom:4px;">Expected winners = (1/3) × 180 = 60 winners.</div>
+                </div>
+              </div><div class="model-step-col-criteria">
                 <span class="criteria-badge-teal"><i class="fa-solid fa-award" style="font-size:0.78rem; margin-right:4px; opacity:0.85;"></i><strong>Criteria:</strong> M1: Expected winners (60)</span>
               </div>
             </div>
@@ -751,9 +742,12 @@
                 <span class="model-step-title">Calculate total entry revenue minus total prize payouts</span>
               </div>
               <div class="model-step-col-desc">
-                Total Revenue = 180 × £2.00 = £360.00.<br>Total Prize Payout = 60 × £5.00 = £300.00.<br>Expected Net Profit = £360.00 − £300.00 = £60.00.
-              </div>
-              <div class="model-step-col-criteria">
+                <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:10px; padding:14px 18px; width:100%; box-shadow:0 2px 6px rgba(15, 23, 42, 0.04);">
+                  <div style="font-size:1.15rem; font-weight:800; color:#0f172a; margin-bottom:4px; font-variant-numeric:tabular-nums;">Total Revenue = 180 × £2.00 = £360.00.</div>
+                  <div style="font-size:1.15rem; font-weight:800; color:#0369a1; font-variant-numeric:tabular-nums; margin-bottom:4px;">Total Prize Payout = 60 × £5.00 = £300.00.</div>
+                  <div style="font-size:1.15rem; font-weight:800; color:#0369a1; font-variant-numeric:tabular-nums; margin-bottom:4px;">Expected Net Profit = £360.00 − £300.00 = £60.00.</div>
+                </div>
+              </div><div class="model-step-col-criteria">
                 <span class="criteria-badge-teal"><i class="fa-solid fa-award" style="font-size:0.78rem; margin-right:4px; opacity:0.85;"></i><strong>Criteria:</strong> M1 / A1: Accurate net profit (£60.00)</span>
               </div>
             </div>

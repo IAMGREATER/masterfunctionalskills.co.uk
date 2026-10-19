@@ -198,6 +198,44 @@
       companionLabel: 'Section A: Non-Calculator (10m)'
     },
 
+    // Past Paper 5
+    'edexcel-maths-l2-past-paper-5-section-a': {
+      ytId: 'MtTl_qjpdIg',
+      title: 'Past Paper 5 • Section A: Non-Calculator (Full Walkthrough)',
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      paperGroup: 'edexcel-maths-l2-pp5',
+      activeSection: 'A',
+      companionSlug: 'edexcel-maths-l2-past-paper-5-section-b',
+      companionLabel: 'Section B: Calculator (18m)'
+    },
+    'past paper 5 • section a: non-calculator': {
+      ytId: 'MtTl_qjpdIg',
+      title: 'Past Paper 5 • Section A: Non-Calculator (Full Walkthrough)',
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      paperGroup: 'edexcel-maths-l2-pp5',
+      activeSection: 'A',
+      companionSlug: 'edexcel-maths-l2-past-paper-5-section-b',
+      companionLabel: 'Section B: Calculator (18m)'
+    },
+    'edexcel-maths-l2-past-paper-5-section-b': {
+      ytId: '5CqunL_1Pcw',
+      title: 'Past Paper 5 • Section B: Calculator (Full Walkthrough)',
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      paperGroup: 'edexcel-maths-l2-pp5',
+      activeSection: 'B',
+      companionSlug: 'edexcel-maths-l2-past-paper-5-section-a',
+      companionLabel: 'Section A: Non-Calculator (10m)'
+    },
+    'past paper 5 • section b: calculator': {
+      ytId: '5CqunL_1Pcw',
+      title: 'Past Paper 5 • Section B: Calculator (Full Walkthrough)',
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      paperGroup: 'edexcel-maths-l2-pp5',
+      activeSection: 'B',
+      companionSlug: 'edexcel-maths-l2-past-paper-5-section-a',
+      companionLabel: 'Section A: Non-Calculator (10m)'
+    },
+
     // SLC Task 1 & Task 2 Exemplar Walkthroughs
     'slc-task1-presentation-model': {
       ytId: 'l7VRzidsFno',

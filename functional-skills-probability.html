@@ -356,6 +356,20 @@
       <!-- RIGHT COLUMN: MAIN LEARNING CONTENT -->
       <div class="revision-content">
         
+            <!-- SUBI ASSESSOR BLUEPRINT WELCOME -->
+        <div class="tutor-pro-callout" style="margin-bottom: 28px; background: linear-gradient(135deg, #f0fdf4 0%, #e0f2fe 100%); border-left: 5px solid #0284c7; padding: 20px; border-radius: 12px; display: flex; gap: 18px; align-items: flex-start; box-shadow: 0 4px 14px rgba(0,0,0,0.05);">
+          <img src="assets/img/avatars/subi.png" alt="Subi Lead Assessor and Specialist Tutor" style="width: 68px; height: 68px; border-radius: 50%; border: 3px solid #0284c7; flex-shrink: 0; object-fit: cover;">
+          <div style="flex: 1;">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+              <span style="font-weight: 700; color: #0f172a; font-size: 1.05rem;">Subi &mdash; Lead Assessor &amp; Specialist Maths Tutor</span>
+              <span style="background: #0284c7; color: #fff; font-size: 0.72rem; font-weight: 700; padding: 2px 8px; border-radius: 12px; text-transform: uppercase;">Examiner Guidance</span>
+            </div>
+            <p style="margin: 0; color: #334155; font-size: 0.95rem; line-height: 1.6;">
+              Welcome to the <strong>Probability Scale &amp; Single Event Outcomes</strong> blueprint. In Pearson Edexcel Functional Skills (Levels 1 and 2), probability questions test three main ideas: representing single-event likelihoods on the 0-to-1 scale, using the complement rule <span class="math-target-calc" style="padding: 2px 6px; font-weight:700;">P(not A) = 1 &minus; P(A)</span>, and scaling relative frequency up to full batch sizes. Follow our large, step-down calculation cards below to see exactly how full [M1] and [A1] marks are scored without losing marks to ratios!
+            </p>
+          </div>
+        </div>
+
     <!-- SPECIFICATION -->
     <section id="specification" class="revision-section">
       <div class="section-header-row">
@@ -560,10 +574,20 @@
             <div class="model-step-row model-step-grid-row">
               <div class="model-step-col-step">
                 <span class="example-step-pill">Step 1</span>
-                <span class="model-step-title">Calculate P(Group O) and simplify fraction</span>
+                <span class="model-step-title">Calculate P(Group O) &amp; Simplify Fraction</span>
               </div>
               <div class="model-step-col-desc">
-                P(Group O) = 22 / 50 = 11 / 25.
+                <div class="math-visual-card" style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px; padding:12px 16px;">
+                  <div style="font-size:0.82rem; color:#64748b; font-weight:700; text-transform:uppercase; margin-bottom:6px;">Fraction of Total Units</div>
+                  <div style="display:flex; align-items:center; gap:12px; font-size:1.35rem; font-weight:700; color:#0f172a; font-variant-numeric:tabular-nums; flex-wrap:wrap;">
+                    <span>P(Group O) =</span>
+                    <span class="math-stacked-frac"><span class="math-stacked-num">22</span><span class="math-stacked-den">50</span></span>
+                    <span style="color:#0284c7; font-size:1rem;">&divide; 2 &rarr;</span>
+                    <span class="math-target-calc" style="background:#fef08a; padding:4px 10px; border-radius:6px; border:1px solid #eab308; color:#854d0e;">
+                      <span class="math-stacked-frac"><span class="math-stacked-num">11</span><span class="math-stacked-den">25</span></span>
+                    </span>
+                  </div>
+                </div>
               </div>
               <div class="model-step-col-criteria">
                 <span class="criteria-badge-teal"><i class="fa-solid fa-award" style="font-size:0.78rem; margin-right:4px; opacity:0.85;"></i><strong>Criteria:</strong> M1 / A1: Simplified fraction (11/25)</span>
@@ -573,10 +597,18 @@
             <div class="model-step-row model-step-grid-row">
               <div class="model-step-col-step">
                 <span class="example-step-pill">Step 2</span>
-                <span class="model-step-title">Calculate P(Group AB) as a decimal</span>
+                <span class="model-step-title">Calculate P(Group AB) as a Decimal</span>
               </div>
               <div class="model-step-col-desc">
-                P(Group AB) = 3 ÷ 50 = 0.06.
+                <div class="math-visual-card" style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px; padding:12px 16px;">
+                  <div style="font-size:0.82rem; color:#64748b; font-weight:700; text-transform:uppercase; margin-bottom:6px;">Decimal Equivalent</div>
+                  <div style="display:flex; align-items:center; gap:10px; font-size:1.35rem; font-weight:700; color:#0f172a; font-variant-numeric:tabular-nums; flex-wrap:wrap;">
+                    <span>P(Group AB) =</span>
+                    <span class="math-stacked-frac"><span class="math-stacked-num">3</span><span class="math-stacked-den">50</span></span>
+                    <span style="color:#64748b; font-size:1.05rem;">= 3 &divide; 50 =</span>
+                    <span class="math-target-calc" style="background:#dcfce7; padding:4px 10px; border-radius:6px; border:1px solid #86efac; color:#166534;">0.06</span>
+                  </div>
+                </div>
               </div>
               <div class="model-step-col-criteria">
                 <span class="criteria-badge-teal"><i class="fa-solid fa-award" style="font-size:0.78rem; margin-right:4px; opacity:0.85;"></i><strong>Criteria:</strong> M1: Decimal conversion (0.06)</span>
@@ -586,10 +618,17 @@
             <div class="model-step-row model-step-grid-row">
               <div class="model-step-col-step">
                 <span class="example-step-pill">Step 3</span>
-                <span class="model-step-title">Subtract from 1 for P(NOT Group AB)</span>
+                <span class="model-step-title">Apply Complement Rule for P(NOT Group AB)</span>
               </div>
               <div class="model-step-col-desc">
-                1 − 0.06 = 0.94 (or 47 ÷ 50 = 0.94).
+                <div class="math-stepdown-board" style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px; padding:12px 16px;">
+                  <div style="font-size:0.82rem; color:#64748b; font-weight:700; text-transform:uppercase; margin-bottom:6px;">Complement Rule</div>
+                  <div style="display:flex; align-items:center; gap:10px; font-size:1.35rem; font-weight:700; color:#0f172a; font-variant-numeric:tabular-nums; flex-wrap:wrap;">
+                    <span>P(NOT AB) = 1.00 &minus; 0.06 =</span>
+                    <span class="math-target-calc" style="background:#dcfce7; padding:4px 10px; border-radius:6px; border:1px solid #86efac; color:#166534;">0.94</span>
+                  </div>
+                  <div style="font-size:0.86rem; color:#64748b; margin-top:6px;">Cross-check via remaining blood units: (22 + 18 + 7) &divide; 50 = 47 &divide; 50 = 0.94 &check;</div>
+                </div>
               </div>
               <div class="model-step-col-criteria">
                 <span class="criteria-badge-teal"><i class="fa-solid fa-award" style="font-size:0.78rem; margin-right:4px; opacity:0.85;"></i><strong>Criteria:</strong> A1: Accurate decimal answer (0.94)</span>
@@ -605,7 +644,14 @@
                 <span>Method Checklist &amp; Marking Scheme Guidance</span>
               </div>
               <div class="examiner-guidance-text">
-                Never write probability as a ratio like "11 : 25"—always write 11/25, 0.44, or 44%.
+                Never write probability as a ratio like &ldquo;11 : 25&rdquo;&mdash;always write 11/25, 0.44, or 44%.
+              </div>
+            </div>
+            <!-- SONYA TUTOR CALLOUT -->
+            <div class="tutor-pro-callout" style="margin-top: 14px; background: #fdf4ff; border-left: 4px solid #a855f7; padding: 12px 16px; border-radius: 8px; display: flex; gap: 14px; align-items: center;">
+              <img src="assets/img/avatars/sonya.png" alt="Sonya Specialist Maths Tutor" style="width: 48px; height: 48px; border-radius: 50%; border: 2px solid #a855f7; flex-shrink: 0; object-fit: cover;">
+              <div style="font-size: 0.92rem; color: #581c87; line-height: 1.5;">
+                <strong>Sonya's Examiner Tip:</strong> Never write a probability as a ratio like &ldquo;11 : 25&rdquo;! Pearson Edexcel mark schemes award zero marks for ratio notation in probability questions. Always state your answer as a simplified fraction (<span style="font-weight:700;">11/25</span>), a decimal (<span style="font-weight:700;">0.44</span>), or a percentage (<span style="font-weight:700;">44%</span>).
               </div>
             </div>
           </div>
@@ -631,10 +677,15 @@
             <div class="model-step-row model-step-grid-row">
               <div class="model-step-col-step">
                 <span class="example-step-pill">Step 1</span>
-                <span class="model-step-title">Find number of failed thermometers in the 250 sample</span>
+                <span class="model-step-title">Find Number of Failed Thermometers in Sample</span>
               </div>
               <div class="model-step-col-desc">
-                Failed = 250 − (235 + 9) = 250 − 244 = 6 failed thermometers.
+                <div class="math-visual-card" style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px; padding:12px 16px;">
+                  <div style="font-size:0.82rem; color:#64748b; font-weight:700; text-transform:uppercase; margin-bottom:6px;">Sample Defect Tally</div>
+                  <div style="font-size:1.35rem; font-weight:700; color:#0f172a; font-variant-numeric:tabular-nums;">
+                    250 &minus; (235 + 9) = 250 &minus; 244 = <span class="math-target-calc" style="background:#fee2e2; padding:4px 10px; border-radius:6px; border:1px solid #fca5a5; color:#991b1b;">6 failed units</span>
+                  </div>
+                </div>
               </div>
               <div class="model-step-col-criteria">
                 <span class="criteria-badge-teal"><i class="fa-solid fa-award" style="font-size:0.78rem; margin-right:4px; opacity:0.85;"></i><strong>Criteria:</strong> M1: Sample failure count (6)</span>
@@ -644,10 +695,19 @@
             <div class="model-step-row model-step-grid-row">
               <div class="model-step-col-step">
                 <span class="example-step-pill">Step 2</span>
-                <span class="model-step-title">Calculate relative frequency of failure</span>
+                <span class="model-step-title">Calculate Relative Frequency of Failure</span>
               </div>
               <div class="model-step-col-desc">
-                P(Fail) = 6 ÷ 250 = 0.024 (or 2.4%).
+                <div class="math-visual-card" style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px; padding:12px 16px;">
+                  <div style="font-size:0.82rem; color:#64748b; font-weight:700; text-transform:uppercase; margin-bottom:6px;">Relative Frequency Rate</div>
+                  <div style="display:flex; align-items:center; gap:10px; font-size:1.35rem; font-weight:700; color:#0f172a; font-variant-numeric:tabular-nums; flex-wrap:wrap;">
+                    <span>P(Fail) =</span>
+                    <span class="math-stacked-frac"><span class="math-stacked-num">6</span><span class="math-stacked-den">250</span></span>
+                    <span style="color:#64748b; font-size:1.05rem;">= 6 &divide; 250 =</span>
+                    <span class="math-target-calc" style="background:#dcfce7; padding:4px 10px; border-radius:6px; border:1px solid #86efac; color:#166534;">0.024</span>
+                    <span style="font-size:0.95rem; color:#64748b;">(2.4%)</span>
+                  </div>
+                </div>
               </div>
               <div class="model-step-col-criteria">
                 <span class="criteria-badge-teal"><i class="fa-solid fa-award" style="font-size:0.78rem; margin-right:4px; opacity:0.85;"></i><strong>Criteria:</strong> A1: Accurate decimal probability (0.024)</span>
@@ -657,10 +717,19 @@
             <div class="model-step-row model-step-grid-row">
               <div class="model-step-col-step">
                 <span class="example-step-pill">Step 3</span>
-                <span class="model-step-title">Calculate expected failures in 4,000 batch and multiply by £8.50</span>
+                <span class="model-step-title">Scale to 4,000 Batch &amp; Compute Replacement Cost</span>
               </div>
               <div class="model-step-col-desc">
-                Expected failures = 0.024 × 4,000 = 96 thermometers.<br>Expected scrap cost = 96 × £8.50 = £816.00.
+                <div class="math-stepdown-board" style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px; padding:12px 16px;">
+                  <div style="font-size:0.82rem; color:#64748b; font-weight:700; text-transform:uppercase; margin-bottom:6px;">Batch Scale-Up &amp; Costing</div>
+                  <div style="font-size:1.35rem; font-weight:700; color:#0f172a; font-variant-numeric:tabular-nums; margin-bottom:8px;">
+                    0.024 &times; 4,000 = <span class="math-target-calc" style="background:#fef08a; padding:3px 8px; border-radius:6px; border:1px solid #eab308; color:#854d0e;">96 expected failed units</span>
+                  </div>
+                  <div style="display:flex; align-items:center; gap:8px; font-size:1.35rem; font-weight:700; color:#0f172a; font-variant-numeric:tabular-nums;">
+                    <span>96 &times; £8.50 =</span>
+                    <span class="math-target-calc" style="background:#dcfce7; padding:4px 10px; border-radius:6px; border:1px solid #86efac; color:#166534;">£816.00</span>
+                  </div>
+                </div>
               </div>
               <div class="model-step-col-criteria">
                 <span class="criteria-badge-teal"><i class="fa-solid fa-award" style="font-size:0.78rem; margin-right:4px; opacity:0.85;"></i><strong>Criteria:</strong> M1 / A1: 96 units and £816.00 total cost</span>
@@ -676,7 +745,14 @@
                 <span>Method Checklist &amp; Marking Scheme Guidance</span>
               </div>
               <div class="examiner-guidance-text">
-                Expected Frequency = Probability × Batch Size (0.024 × 4,000 = 96 units).
+                Expected Frequency = Probability &times; Batch Size (0.024 &times; 4,000 = 96 units).
+              </div>
+            </div>
+            <!-- SUBI TUTOR CALLOUT -->
+            <div class="tutor-pro-callout" style="margin-top: 14px; background: #f0fdf4; border-left: 4px solid #16a34a; padding: 12px 16px; border-radius: 8px; display: flex; gap: 14px; align-items: center;">
+              <img src="assets/img/avatars/subi.png" alt="Subi Lead Assessor and Specialist Tutor" style="width: 48px; height: 48px; border-radius: 50%; border: 2px solid #16a34a; flex-shrink: 0; object-fit: cover;">
+              <div style="font-size: 0.92rem; color: #166534; line-height: 1.5;">
+                <strong>Subi's Assessor Pro-Tip:</strong> In Level 2 multi-step questions, always keep the full decimal probability (<span style="font-weight:700;">0.024</span>) in your calculator memory when scaling to expected batch numbers. Avoid early rounding: multiplying rounded numbers cascades into incorrect money totals and loses the final accuracy mark [A1].
               </div>
             </div>
           </div>

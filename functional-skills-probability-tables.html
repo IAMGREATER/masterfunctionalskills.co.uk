@@ -356,6 +356,20 @@
       <!-- RIGHT COLUMN: MAIN LEARNING CONTENT -->
       <div class="revision-content">
         
+            <!-- SUBI ASSESSOR BLUEPRINT WELCOME -->
+        <div class="tutor-pro-callout" style="margin-bottom: 28px; background: linear-gradient(135deg, #f0fdf4 0%, #e0f2fe 100%); border-left: 5px solid #0284c7; padding: 20px; border-radius: 12px; display: flex; gap: 18px; align-items: flex-start; box-shadow: 0 4px 14px rgba(0,0,0,0.05);">
+          <img src="assets/img/avatars/subi.png" alt="Subi Lead Assessor and Specialist Tutor" style="width: 68px; height: 68px; border-radius: 50%; border: 3px solid #0284c7; flex-shrink: 0; object-fit: cover;">
+          <div style="flex: 1;">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+              <span style="font-weight: 700; color: #0f172a; font-size: 1.05rem;">Subi &mdash; Lead Assessor &amp; Specialist Maths Tutor</span>
+              <span style="background: #0284c7; color: #fff; font-size: 0.72rem; font-weight: 700; padding: 2px 8px; border-radius: 12px; text-transform: uppercase;">Examiner Guidance</span>
+            </div>
+            <p style="margin: 0; color: #334155; font-size: 0.95rem; line-height: 1.6;">
+              Welcome to the <strong>Probability Outcomes, Sample Space &amp; Combined Events</strong> blueprint. In Level 2 assessments, examiners love combining two independent events (like dual generators or fair spinners). The two essential techniques you must master are: multiplying independent probabilities for <span class="math-target-calc" style="padding:2px 6px; font-weight:700;">P(A 	ext{ and } B)</span>, and setting up systematic sample spaces to calculate expected prize payouts. Let us walk through the complete visual methods below!
+            </p>
+          </div>
+        </div>
+
     <!-- SPECIFICATION -->
     <section id="specification" class="revision-section">
       <div class="section-header-row">
@@ -562,10 +576,17 @@
             <div class="model-step-row model-step-grid-row">
               <div class="model-step-col-step">
                 <span class="example-step-pill">Step 1</span>
-                <span class="model-step-title">Multiply failure probabilities for P(Both Fail)</span>
+                <span class="model-step-title">Multiply Independent Failures for P(Both Fail)</span>
               </div>
               <div class="model-step-col-desc">
-                P(A fails AND B fails) = 0.05 × 0.04 = 0.002.
+                <div class="math-visual-card" style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px; padding:12px 16px;">
+                  <div style="font-size:0.82rem; color:#64748b; font-weight:700; text-transform:uppercase; margin-bottom:6px;">Multiplication Rule (AND)</div>
+                  <div style="display:flex; align-items:center; gap:10px; font-size:1.35rem; font-weight:700; color:#0f172a; font-variant-numeric:tabular-nums; flex-wrap:wrap;">
+                    <span>P(A fails AND B fails) = 0.05 &times; 0.04 =</span>
+                    <span class="math-target-calc" style="background:#fee2e2; padding:4px 10px; border-radius:6px; border:1px solid #fca5a5; color:#991b1b;">0.002</span>
+                    <span style="font-size:0.95rem; color:#64748b;">(0.2%)</span>
+                  </div>
+                </div>
               </div>
               <div class="model-step-col-criteria">
                 <span class="criteria-badge-teal"><i class="fa-solid fa-award" style="font-size:0.78rem; margin-right:4px; opacity:0.85;"></i><strong>Criteria:</strong> M1 / A1: Accurate combined failure probability (0.002)</span>
@@ -575,10 +596,16 @@
             <div class="model-step-row model-step-grid-row">
               <div class="model-step-col-step">
                 <span class="example-step-pill">Step 2</span>
-                <span class="model-step-title">Find working probabilities for each generator</span>
+                <span class="model-step-title">Find Individual Working Probabilities (Complement)</span>
               </div>
               <div class="model-step-col-desc">
-                P(A works) = 1 − 0.05 = 0.95.<br>P(B works) = 1 − 0.04 = 0.96.
+                <div class="math-stepdown-board" style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px; padding:12px 16px;">
+                  <div style="font-size:0.82rem; color:#64748b; font-weight:700; text-transform:uppercase; margin-bottom:6px;">Complement of Failure</div>
+                  <div style="display:flex; flex-direction:column; gap:6px; font-size:1.3rem; font-weight:700; color:#0f172a; font-variant-numeric:tabular-nums;">
+                    <div>P(A works) = 1.00 &minus; 0.05 = <span class="math-target-calc" style="background:#dcfce7; padding:2px 8px; border-radius:6px; border:1px solid #86efac; color:#166534;">0.95</span></div>
+                    <div>P(B works) = 1.00 &minus; 0.04 = <span class="math-target-calc" style="background:#dcfce7; padding:2px 8px; border-radius:6px; border:1px solid #86efac; color:#166534;">0.96</span></div>
+                  </div>
+                </div>
               </div>
               <div class="model-step-col-criteria">
                 <span class="criteria-badge-teal"><i class="fa-solid fa-award" style="font-size:0.78rem; margin-right:4px; opacity:0.85;"></i><strong>Criteria:</strong> M1: Complement probabilities (0.95 and 0.96)</span>
@@ -588,10 +615,17 @@
             <div class="model-step-row model-step-grid-row">
               <div class="model-step-col-step">
                 <span class="example-step-pill">Step 3</span>
-                <span class="model-step-title">Multiply working probabilities for P(Both Work)</span>
+                <span class="model-step-title">Multiply Working Probabilities for P(Both Work)</span>
               </div>
               <div class="model-step-col-desc">
-                P(Both work) = 0.95 × 0.96 = 0.912 (or 91.2%).
+                <div class="math-visual-card" style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px; padding:12px 16px;">
+                  <div style="font-size:0.82rem; color:#64748b; font-weight:700; text-transform:uppercase; margin-bottom:6px;">Independent Joint Reliability</div>
+                  <div style="display:flex; align-items:center; gap:10px; font-size:1.35rem; font-weight:700; color:#0f172a; font-variant-numeric:tabular-nums; flex-wrap:wrap;">
+                    <span>P(Both work) = 0.95 &times; 0.96 =</span>
+                    <span class="math-target-calc" style="background:#dcfce7; padding:4px 10px; border-radius:6px; border:1px solid #86efac; color:#166534;">0.912</span>
+                    <span style="font-size:0.95rem; color:#64748b;">(91.2%)</span>
+                  </div>
+                </div>
               </div>
               <div class="model-step-col-criteria">
                 <span class="criteria-badge-teal"><i class="fa-solid fa-award" style="font-size:0.78rem; margin-right:4px; opacity:0.85;"></i><strong>Criteria:</strong> A1: Accurate combined working probability (0.912)</span>
@@ -607,7 +641,14 @@
                 <span>Method Checklist &amp; Marking Scheme Guidance</span>
               </div>
               <div class="examiner-guidance-text">
-                Notice that 0.05 × 0.04 = 0.002 (three decimal places), NOT 0.02! Never add probabilities when asked for "BOTH" (AND).
+                Notice that 0.05 &times; 0.04 = 0.002 (three decimal places), NOT 0.02! Never add probabilities when asked for &ldquo;BOTH&rdquo; (AND).
+              </div>
+            </div>
+            <!-- SONYA TUTOR CALLOUT -->
+            <div class="tutor-pro-callout" style="margin-top: 14px; background: #fdf4ff; border-left: 4px solid #a855f7; padding: 12px 16px; border-radius: 8px; display: flex; gap: 14px; align-items: center;">
+              <img src="assets/img/avatars/sonya.png" alt="Sonya Specialist Maths Tutor" style="width: 48px; height: 48px; border-radius: 50%; border: 2px solid #a855f7; flex-shrink: 0; object-fit: cover;">
+              <div style="font-size: 0.92rem; color: #581c87; line-height: 1.5;">
+                <strong>Sonya's Examiner Tip:</strong> Beware decimal placement when multiplying decimals! Multiplying <span style="font-weight:700;">0.05 &times; 0.04</span> yields two decimal places plus two decimal places, meaning 3 decimal digits: <span style="font-weight:700; color:#c026d3;">0.002</span>. Entering 0.02 on your paper is the single most common reason candidates forfeit the [A1] mark!
               </div>
             </div>
           </div>

@@ -530,98 +530,117 @@
             <div class="mfs-topic-body" style="padding:20px 24px;">
               
               
-    <div class="big-formula-diagram-container" style="background:#ffffff; border:2px solid #cbd5e1; border-radius:16px; padding:28px 24px; margin:24px 0; box-shadow:0 8px 24px rgba(15, 23, 42, 0.08); width:100%;">
-  <div style="text-align:center; margin-bottom:20px;">
-    <span style="display:inline-block; background:#eff6ff; color:#1e40af; border:1px solid #bfdbfe; font-size:0.9rem; font-weight:800; padding:6px 20px; border-radius:999px; text-transform:uppercase; letter-spacing:0.06em;">
-      <i class="fa-solid fa-gauge-high" style="margin-right:8px; color:#2563eb;"></i> Master Formula System
+    <div class="mfs-triangle-master" style="background:#ffffff; border:1px solid #e2e8f0; border-radius:18px; padding:32px 28px; margin:24px 0; box-shadow:0 4px 20px rgba(15, 23, 42, 0.06); width:100%;">
+  
+  <!-- Header: Minimal & Crisp -->
+  <div style="text-align:center; margin-bottom:28px;">
+    <span style="display:inline-flex; align-items:center; gap:8px; background:#eff6ff; color:#1d4ed8; font-size:0.85rem; font-weight:800; padding:6px 18px; border-radius:999px; text-transform:uppercase; letter-spacing:0.05em;">
+      <i class="fa-solid fa-gauge-high"></i> Speed Formula Triangle
     </span>
-    <h3 style="margin:12px 0 8px 0; color:#0f172a; font-size:1.65rem; font-weight:900;">The Speed, Distance &amp; Time (S-D-T) Triangle</h3>
-    <p style="margin:0 auto; color:#475569; font-size:1.05rem; max-width:680px; line-height:1.5;">
-      Cover the letter you need to find. The remaining letters give you the exact calculation formula.
-    </p>
+    <h3 style="margin:12px 0 6px 0; color:#0f172a; font-size:1.6rem; font-weight:900;">Speed, Distance &amp; Time (S-D-T)</h3>
+    <p style="margin:0; color:#64748b; font-size:1rem;">Cover the letter you want to find to reveal the exact formula.</p>
   </div>
 
-  <div style="display:flex; justify-content:center; width:100%;">
-    <svg viewBox="0 0 860 420" width="100%" style="max-width:860px; height:auto; display:block; font-family:'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;" xmlns="http://www.w3.org/2000/svg">
-      <!-- Container border & background -->
-      <rect x="2" y="2" width="856" height="416" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+  <!-- Main Grid: Triangle on Left, 3 Formulas on Right -->
+  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:32px; align-items:center;">
+    
+    <!-- LEFT: Clean Iconic Triangle -->
+    <div style="display:flex; justify-content:center; align-items:center;">
+      <svg viewBox="0 0 360 300" style="width:100%; max-width:340px; height:auto; display:block;" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id="shadowSpeed" x="-5%" y="-5%" width="110%" height="110%">
+            <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.08"/>
+          </filter>
+        </defs>
 
-      <!-- LEFT SIDE: THE FORMULA TRIANGLE -->
-      <polygon points="205,26 30,320 380,320" fill="#f8fafc" stroke="#0f172a" stroke-width="4.5" stroke-linejoin="round"/>
+        <!-- Outer Triangle Body with soft shadow -->
+        <polygon points="180,20 25,275 335,275" fill="#f8fafc" stroke="#0f172a" stroke-width="3" stroke-linejoin="round" filter="url(#shadowSpeed)"/>
+
+        <!-- Top Chamber: Distance (D) -->
+        <path d="M 180 20 L 98 150 L 262 150 Z" fill="#eff6ff"/>
+        <!-- Bottom Left Chamber: Speed (S) -->
+        <path d="M 98 150 L 25 275 L 180 275 L 180 150 Z" fill="#fffbeb"/>
+        <!-- Bottom Right Chamber: Time (T) -->
+        <path d="M 180 150 L 180 275 L 335 275 L 262 150 Z" fill="#f0fdf4"/>
+
+        <!-- Main Divider Lines -->
+        <line x1="98" y1="150" x2="262" y2="150" stroke="#0f172a" stroke-width="3"/>
+        <line x1="180" y1="150" x2="180" y2="275" stroke="#0f172a" stroke-width="3"/>
+
+        <!-- Operation Badges -->
+        <text x="75" y="156" font-size="20" font-weight="900" fill="#3b82f6" text-anchor="middle">&divide;</text>
+        <text x="285" y="156" font-size="20" font-weight="900" fill="#3b82f6" text-anchor="middle">&divide;</text>
+        <text x="180" y="218" font-size="20" font-weight="900" fill="#d97706" text-anchor="middle">&times;</text>
+
+        <!-- Chamber Labels -->
+        <!-- Distance -->
+        <text x="180" y="95" font-size="36" font-weight="900" fill="#1d4ed8" text-anchor="middle">D</text>
+        <text x="180" y="122" font-size="12" font-weight="800" fill="#2563eb" text-anchor="middle" letter-spacing="1">DISTANCE</text>
+
+        <!-- Speed -->
+        <text x="105" y="210" font-size="34" font-weight="900" fill="#b45309" text-anchor="middle">S</text>
+        <text x="105" y="235" font-size="12" font-weight="800" fill="#92400e" text-anchor="middle" letter-spacing="1">SPEED</text>
+
+        <!-- Time -->
+        <text x="255" y="210" font-size="34" font-weight="900" fill="#15803d" text-anchor="middle">T</text>
+        <text x="255" y="235" font-size="12" font-weight="800" fill="#166534" text-anchor="middle" letter-spacing="1">TIME</text>
+      </svg>
+    </div>
+
+    <!-- RIGHT: 3 Sleek Formula Cards -->
+    <div style="display:flex; flex-direction:column; gap:14px;">
       
-      <!-- Horizontal Division Line -->
-      <line x1="88" y1="190" x2="322" y2="190" stroke="#0f172a" stroke-width="4.5"/>
-      <circle cx="68" cy="190" r="16" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
-      <text x="68" y="196" font-size="18" font-weight="900" fill="#1d4ed8" text-anchor="middle">÷</text>
-      <circle cx="342" cy="190" r="16" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
-      <text x="342" y="196" font-size="18" font-weight="900" fill="#1d4ed8" text-anchor="middle">÷</text>
+      <!-- Distance Card -->
+      <div style="background:#eff6ff; border:1.5px solid #bfdbfe; border-left:5px solid #2563eb; border-radius:12px; padding:14px 18px; display:flex; align-items:center; justify-content:space-between;">
+        <div>
+          <div style="color:#1d4ed8; font-size:0.8rem; font-weight:800; text-transform:uppercase; letter-spacing:0.04em;">To find Distance</div>
+          <div style="color:#0f172a; font-size:1.15rem; font-weight:800; margin-top:2px;">Distance = Speed &times; Time</div>
+        </div>
+        <div style="background:#2563eb; color:#ffffff; font-size:1.1rem; font-weight:900; padding:6px 14px; border-radius:8px; font-variant-numeric:tabular-nums; white-space:nowrap;">
+          D = S &times; T
+        </div>
+      </div>
 
-      <!-- Vertical Dividing Line -->
-      <line x1="205" y1="190" x2="205" y2="320" stroke="#0f172a" stroke-width="4.5"/>
-      <circle cx="205" cy="265" r="17" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
-      <text x="205" y="272" font-size="19" font-weight="900" fill="#b45309" text-anchor="middle">×</text>
+      <!-- Speed Card -->
+      <div style="background:#fffbeb; border:1.5px solid #fde68a; border-left:5px solid #d97706; border-radius:12px; padding:14px 18px; display:flex; align-items:center; justify-content:space-between;">
+        <div>
+          <div style="color:#b45309; font-size:0.8rem; font-weight:800; text-transform:uppercase; letter-spacing:0.04em;">To find Speed</div>
+          <div style="color:#0f172a; font-size:1.15rem; font-weight:800; margin-top:2px;">Speed = Distance &divide; Time</div>
+        </div>
+        <div style="background:#d97706; color:#ffffff; font-size:1.1rem; font-weight:900; padding:6px 14px; border-radius:8px; font-variant-numeric:tabular-nums; white-space:nowrap;">
+          S = D &divide; T
+        </div>
+      </div>
 
-      <!-- Top Chamber: Distance (D) -->
-      <circle cx="205" cy="108" r="48" fill="#dbeafe" stroke="#2563eb" stroke-width="4"/>
-      <text x="205" y="120" font-size="44" font-weight="900" fill="#1e40af" text-anchor="middle">D</text>
-      <text x="205" y="142" font-size="12" font-weight="900" fill="#1d4ed8" text-anchor="middle" letter-spacing="0.5">DISTANCE</text>
-      <text x="205" y="156" font-size="10.5" font-weight="700" fill="#2563eb" text-anchor="middle">(miles, km, m)</text>
+      <!-- Time Card -->
+      <div style="background:#f0fdf4; border:1.5px solid #bbf7d0; border-left:5px solid #16a34a; border-radius:12px; padding:14px 18px; display:flex; align-items:center; justify-content:space-between;">
+        <div>
+          <div style="color:#15803d; font-size:0.8rem; font-weight:800; text-transform:uppercase; letter-spacing:0.04em;">To find Time</div>
+          <div style="color:#0f172a; font-size:1.15rem; font-weight:800; margin-top:2px;">Time = Distance &divide; Speed</div>
+        </div>
+        <div style="background:#16a34a; color:#ffffff; font-size:1.1rem; font-weight:900; padding:6px 14px; border-radius:8px; font-variant-numeric:tabular-nums; white-space:nowrap;">
+          T = D &divide; S
+        </div>
+      </div>
 
-      <!-- Bottom Left Chamber: Speed (S) -->
-      <circle cx="125" cy="260" r="44" fill="#fef3c7" stroke="#d97706" stroke-width="4"/>
-      <text x="125" y="272" font-size="38" font-weight="900" fill="#b45309" text-anchor="middle">S</text>
-      <text x="125" y="291" font-size="11.5" font-weight="900" fill="#92400e" text-anchor="middle" letter-spacing="0.5">SPEED</text>
-      <text x="125" y="304" font-size="10" font-weight="700" fill="#b45309" text-anchor="middle">(mph, km/h)</text>
+    </div>
 
-      <!-- Bottom Right Chamber: Time (T) -->
-      <circle cx="285" cy="260" r="44" fill="#dcfce7" stroke="#16a34a" stroke-width="4"/>
-      <text x="285" y="272" font-size="38" font-weight="900" fill="#15803d" text-anchor="middle">T</text>
-      <text x="285" y="291" font-size="11.5" font-weight="900" fill="#166534" text-anchor="middle" letter-spacing="0.5">TIME</text>
-      <text x="285" y="304" font-size="10" font-weight="700" fill="#15803d" text-anchor="middle">(hours, mins)</text>
-
-      <!-- RIGHT SIDE: THE 3 FORMULA CARDS -->
-      <text x="625" y="38" font-size="15" font-weight="900" fill="#0f172a" text-anchor="middle" letter-spacing="0.5">3 ESSENTIAL FORMULAS AT A GLANCE</text>
-
-      <!-- Card 1: Distance -->
-      <g transform="translate(410, 52)">
-        <rect width="430" height="74" rx="10" fill="#eff6ff" stroke="#bfdbfe" stroke-width="2"/>
-        <text x="20" y="30" font-size="13" font-weight="900" fill="#1d4ed8" letter-spacing="0.5">1. TO FIND DISTANCE (Cover D):</text>
-        <text x="20" y="56" font-size="17" font-weight="800" fill="#0f172a">Distance = Speed × Time</text>
-        <rect x="300" y="18" width="112" height="38" rx="8" fill="#2563eb"/>
-        <text x="356" y="43" font-size="16" font-weight="900" fill="#ffffff" text-anchor="middle">D = S × T</text>
-      </g>
-
-      <!-- Card 2: Speed -->
-      <g transform="translate(410, 138)">
-        <rect width="430" height="74" rx="10" fill="#fffbeb" stroke="#fde68a" stroke-width="2"/>
-        <text x="20" y="30" font-size="13" font-weight="900" fill="#b45309" letter-spacing="0.5">2. TO FIND SPEED (Cover S):</text>
-        <text x="20" y="56" font-size="17" font-weight="800" fill="#0f172a">Speed = Distance ÷ Time</text>
-        <rect x="300" y="18" width="112" height="38" rx="8" fill="#d97706"/>
-        <text x="356" y="43" font-size="16" font-weight="900" fill="#ffffff" text-anchor="middle">S = D ÷ T</text>
-      </g>
-
-      <!-- Card 3: Time -->
-      <g transform="translate(410, 224)">
-        <rect width="430" height="74" rx="10" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="2"/>
-        <text x="20" y="30" font-size="13" font-weight="900" fill="#15803d" letter-spacing="0.5">3. TO FIND TIME (Cover T):</text>
-        <text x="20" y="56" font-size="17" font-weight="800" fill="#0f172a">Time = Distance ÷ Speed</text>
-        <rect x="300" y="18" width="112" height="38" rx="8" fill="#16a34a"/>
-        <text x="356" y="43" font-size="16" font-weight="900" fill="#ffffff" text-anchor="middle">T = D ÷ S</text>
-      </g>
-
-      <!-- BOTTOM FULL-WIDTH STRIP: DECIMAL TIME GOLDEN RULE -->
-      <g transform="translate(20, 318)">
-        <rect width="820" height="84" rx="10" fill="#fef2f2" stroke="#fca5a5" stroke-width="2"/>
-        <text x="30" y="28" font-size="13.5" font-weight="900" fill="#991b1b" letter-spacing="0.5">⚠️ THE EXAM DECIMAL TIME TRAP — DIVIDE MINUTES BY 60:</text>
-        <text x="30" y="52" font-size="14.5" font-weight="800" fill="#0f172a">
-          15 mins = <tspan fill="#2563eb">0.25 h</tspan>  |  30 mins = <tspan fill="#2563eb">0.5 h</tspan>  |  45 mins = <tspan fill="#2563eb">0.75 h</tspan>  |  20 mins = <tspan fill="#2563eb">0.33 h</tspan>
-        </text>
-        <text x="30" y="72" font-size="12.5" font-weight="700" fill="#b91c1c">
-          NEVER type 1 hour 45 minutes as "1.45" on your calculator! Use 1 + (45 ÷ 60) = 1.75 hours.
-        </text>
-      </g>
-    </svg>
   </div>
+
+  <!-- Bottom: Decimal Time Conversion Rule -->
+  <div style="margin-top:24px; padding:16px 20px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px;">
+    <div style="display:flex; align-items:center; gap:10px;">
+      <span style="background:#fee2e2; color:#b91c1c; font-size:0.8rem; font-weight:900; padding:4px 10px; border-radius:6px; text-transform:uppercase;">Crucial Rule</span>
+      <span style="color:#0f172a; font-weight:700; font-size:0.95rem;">Convert minutes to decimal hours (<strong style="color:#2563eb;">&divide; 60</strong>):</span>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap;">
+      <span style="background:#ffffff; border:1px solid #cbd5e1; padding:4px 10px; border-radius:6px; font-size:0.88rem; font-weight:700; color:#334155;">15 mins = <strong>0.25 h</strong></span>
+      <span style="background:#ffffff; border:1px solid #cbd5e1; padding:4px 10px; border-radius:6px; font-size:0.88rem; font-weight:700; color:#334155;">30 mins = <strong>0.5 h</strong></span>
+      <span style="background:#ffffff; border:1px solid #cbd5e1; padding:4px 10px; border-radius:6px; font-size:0.88rem; font-weight:700; color:#334155;">45 mins = <strong>0.75 h</strong></span>
+      <span style="background:#ffffff; border:1px solid #cbd5e1; padding:4px 10px; border-radius:6px; font-size:0.88rem; font-weight:700; color:#334155;">20 mins = <strong>0.33 h</strong></span>
+    </div>
+  </div>
+
 </div>
             </div>
             <div class="mfs-topic-footer" style="display:flex; gap:8px; flex-wrap:wrap; padding-top:14px; border-top:1px solid #e2e8f0; margin-top:16px;">

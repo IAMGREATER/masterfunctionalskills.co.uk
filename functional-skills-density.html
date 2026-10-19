@@ -423,98 +423,116 @@
               <p class="mfs-topic-stem">Mass is always on top. Use the big triangle to find Mass, Density, or Volume.</p>
             </div>
             <div class="mfs-topic-body" style="padding:20px 24px;">
-              <div class="big-formula-diagram-container" style="background:#ffffff; border:2px solid #cbd5e1; border-radius:16px; padding:28px 24px; margin:24px 0; box-shadow:0 8px 24px rgba(15, 23, 42, 0.08); width:100%;">
-  <div style="text-align:center; margin-bottom:20px;">
-    <span style="display:inline-block; background:#f5f3ff; color:#5b21b6; border:1px solid #ddd6fe; font-size:0.9rem; font-weight:800; padding:6px 20px; border-radius:999px; text-transform:uppercase; letter-spacing:0.06em;">
-      <i class="fa-solid fa-cube" style="margin-right:8px; color:#7c3aed;"></i> Master Formula System
+              <div class="mfs-triangle-master" style="background:#ffffff; border:1px solid #e2e8f0; border-radius:18px; padding:32px 28px; margin:24px 0; box-shadow:0 4px 20px rgba(15, 23, 42, 0.06); width:100%;">
+  
+  <!-- Header: Minimal & Crisp -->
+  <div style="text-align:center; margin-bottom:28px;">
+    <span style="display:inline-flex; align-items:center; gap:8px; background:#f5f3ff; color:#6d28d9; font-size:0.85rem; font-weight:800; padding:6px 18px; border-radius:999px; text-transform:uppercase; letter-spacing:0.05em;">
+      <i class="fa-solid fa-cube"></i> Density Formula Triangle
     </span>
-    <h3 style="margin:12px 0 8px 0; color:#0f172a; font-size:1.65rem; font-weight:900;">The Mass, Density &amp; Volume (M-D-V) Triangle</h3>
-    <p style="margin:0 auto; color:#475569; font-size:1.05rem; max-width:680px; line-height:1.5;">
-      Remember: <strong>Mass is always on top (M)</strong>. Cover the quantity you need to find with your finger.
-    </p>
+    <h3 style="margin:12px 0 6px 0; color:#0f172a; font-size:1.6rem; font-weight:900;">Mass, Density &amp; Volume (M-D-V)</h3>
+    <p style="margin:0; color:#64748b; font-size:1rem;">Remember: <strong>Mass is always on top (M)</strong>. Cover the letter to reveal the formula.</p>
   </div>
 
-  <div style="display:flex; justify-content:center; width:100%;">
-    <svg viewBox="0 0 860 420" width="100%" style="max-width:860px; height:auto; display:block; font-family:'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;" xmlns="http://www.w3.org/2000/svg">
-      <!-- Container border & background -->
-      <rect x="2" y="2" width="856" height="416" rx="14" fill="#ffffff" stroke="#e2e8f0" stroke-width="2"/>
+  <!-- Main Grid: Triangle on Left, 3 Formulas on Right -->
+  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(300px, 1fr)); gap:32px; align-items:center;">
+    
+    <!-- LEFT: Clean Iconic Triangle -->
+    <div style="display:flex; justify-content:center; align-items:center;">
+      <svg viewBox="0 0 360 300" style="width:100%; max-width:340px; height:auto; display:block;" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <filter id="shadowDensity" x="-5%" y="-5%" width="110%" height="110%">
+            <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.08"/>
+          </filter>
+        </defs>
 
-      <!-- LEFT SIDE: THE FORMULA TRIANGLE -->
-      <polygon points="205,26 30,320 380,320" fill="#f8fafc" stroke="#0f172a" stroke-width="4.5" stroke-linejoin="round"/>
+        <!-- Outer Triangle Body with soft shadow -->
+        <polygon points="180,20 25,275 335,275" fill="#f8fafc" stroke="#0f172a" stroke-width="3" stroke-linejoin="round" filter="url(#shadowDensity)"/>
+
+        <!-- Top Chamber: Mass (M) -->
+        <path d="M 180 20 L 98 150 L 262 150 Z" fill="#f5f3ff"/>
+        <!-- Bottom Left Chamber: Density (D) -->
+        <path d="M 98 150 L 25 275 L 180 275 L 180 150 Z" fill="#eff6ff"/>
+        <!-- Bottom Right Chamber: Volume (V) -->
+        <path d="M 180 150 L 180 275 L 335 275 L 262 150 Z" fill="#f0fdf4"/>
+
+        <!-- Main Divider Lines -->
+        <line x1="98" y1="150" x2="262" y2="150" stroke="#0f172a" stroke-width="3"/>
+        <line x1="180" y1="150" x2="180" y2="275" stroke="#0f172a" stroke-width="3"/>
+
+        <!-- Operation Badges -->
+        <text x="75" y="156" font-size="20" font-weight="900" fill="#7c3aed" text-anchor="middle">&divide;</text>
+        <text x="285" y="156" font-size="20" font-weight="900" fill="#7c3aed" text-anchor="middle">&divide;</text>
+        <text x="180" y="218" font-size="20" font-weight="900" fill="#0284c7" text-anchor="middle">&times;</text>
+
+        <!-- Chamber Labels -->
+        <!-- Mass -->
+        <text x="180" y="95" font-size="36" font-weight="900" fill="#6d28d9" text-anchor="middle">M</text>
+        <text x="180" y="122" font-size="12" font-weight="800" fill="#7c3aed" text-anchor="middle" letter-spacing="1">MASS</text>
+
+        <!-- Density -->
+        <text x="105" y="210" font-size="34" font-weight="900" fill="#0369a1" text-anchor="middle">D</text>
+        <text x="105" y="235" font-size="12" font-weight="800" fill="#0284c7" text-anchor="middle" letter-spacing="1">DENSITY</text>
+
+        <!-- Volume -->
+        <text x="255" y="210" font-size="34" font-weight="900" fill="#15803d" text-anchor="middle">V</text>
+        <text x="255" y="235" font-size="12" font-weight="800" fill="#166534" text-anchor="middle" letter-spacing="1">VOLUME</text>
+      </svg>
+    </div>
+
+    <!-- RIGHT: 3 Sleek Formula Cards -->
+    <div style="display:flex; flex-direction:column; gap:14px;">
       
-      <!-- Horizontal Division Line -->
-      <line x1="88" y1="190" x2="322" y2="190" stroke="#0f172a" stroke-width="4.5"/>
-      <circle cx="68" cy="190" r="16" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="2"/>
-      <text x="68" y="196" font-size="18" font-weight="900" fill="#6d28d9" text-anchor="middle">÷</text>
-      <circle cx="342" cy="190" r="16" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="2"/>
-      <text x="342" y="196" font-size="18" font-weight="900" fill="#6d28d9" text-anchor="middle">÷</text>
+      <!-- Mass Card -->
+      <div style="background:#f5f3ff; border:1.5px solid #ddd6fe; border-left:5px solid #7c3aed; border-radius:12px; padding:14px 18px; display:flex; align-items:center; justify-content:space-between;">
+        <div>
+          <div style="color:#6d28d9; font-size:0.8rem; font-weight:800; text-transform:uppercase; letter-spacing:0.04em;">To find Mass</div>
+          <div style="color:#0f172a; font-size:1.15rem; font-weight:800; margin-top:2px;">Mass = Density &times; Volume</div>
+        </div>
+        <div style="background:#7c3aed; color:#ffffff; font-size:1.1rem; font-weight:900; padding:6px 14px; border-radius:8px; font-variant-numeric:tabular-nums; white-space:nowrap;">
+          M = D &times; V
+        </div>
+      </div>
 
-      <!-- Vertical Dividing Line -->
-      <line x1="205" y1="190" x2="205" y2="320" stroke="#0f172a" stroke-width="4.5"/>
-      <circle cx="205" cy="265" r="17" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/>
-      <text x="205" y="272" font-size="19" font-weight="900" fill="#0369a1" text-anchor="middle">×</text>
+      <!-- Density Card -->
+      <div style="background:#eff6ff; border:1.5px solid #bfdbfe; border-left:5px solid #0284c7; border-radius:12px; padding:14px 18px; display:flex; align-items:center; justify-content:space-between;">
+        <div>
+          <div style="color:#0369a1; font-size:0.8rem; font-weight:800; text-transform:uppercase; letter-spacing:0.04em;">To find Density</div>
+          <div style="color:#0f172a; font-size:1.15rem; font-weight:800; margin-top:2px;">Density = Mass &divide; Volume</div>
+        </div>
+        <div style="background:#0284c7; color:#ffffff; font-size:1.1rem; font-weight:900; padding:6px 14px; border-radius:8px; font-variant-numeric:tabular-nums; white-space:nowrap;">
+          D = M &divide; V
+        </div>
+      </div>
 
-      <!-- Top Chamber: Mass (M) -->
-      <circle cx="205" cy="108" r="48" fill="#ede9fe" stroke="#7c3aed" stroke-width="4"/>
-      <text x="205" y="120" font-size="44" font-weight="900" fill="#5b21b6" text-anchor="middle">M</text>
-      <text x="205" y="142" font-size="12" font-weight="900" fill="#4c1d95" text-anchor="middle" letter-spacing="0.5">MASS</text>
-      <text x="205" y="156" font-size="10.5" font-weight="700" fill="#7c3aed" text-anchor="middle">(grams, kg, tonnes)</text>
+      <!-- Volume Card -->
+      <div style="background:#f0fdf4; border:1.5px solid #bbf7d0; border-left:5px solid #16a34a; border-radius:12px; padding:14px 18px; display:flex; align-items:center; justify-content:space-between;">
+        <div>
+          <div style="color:#15803d; font-size:0.8rem; font-weight:800; text-transform:uppercase; letter-spacing:0.04em;">To find Volume</div>
+          <div style="color:#0f172a; font-size:1.15rem; font-weight:800; margin-top:2px;">Volume = Mass &divide; Density</div>
+        </div>
+        <div style="background:#16a34a; color:#ffffff; font-size:1.1rem; font-weight:900; padding:6px 14px; border-radius:8px; font-variant-numeric:tabular-nums; white-space:nowrap;">
+          V = M &divide; D
+        </div>
+      </div>
 
-      <!-- Bottom Left Chamber: Density (D) -->
-      <circle cx="125" cy="260" r="44" fill="#e0f2fe" stroke="#0284c7" stroke-width="4"/>
-      <text x="125" y="272" font-size="38" font-weight="900" fill="#0369a1" text-anchor="middle">D</text>
-      <text x="125" y="291" font-size="11.5" font-weight="900" fill="#075985" text-anchor="middle" letter-spacing="0.5">DENSITY</text>
-      <text x="125" y="304" font-size="10" font-weight="700" fill="#0284c7" text-anchor="middle">(g/cm³, kg/m³)</text>
+    </div>
 
-      <!-- Bottom Right Chamber: Volume (V) -->
-      <circle cx="285" cy="260" r="44" fill="#dcfce7" stroke="#16a34a" stroke-width="4"/>
-      <text x="285" y="272" font-size="38" font-weight="900" fill="#15803d" text-anchor="middle">V</text>
-      <text x="285" y="291" font-size="11.5" font-weight="900" fill="#166534" text-anchor="middle" letter-spacing="0.5">VOLUME</text>
-      <text x="285" y="304" font-size="10" font-weight="700" fill="#15803d" text-anchor="middle">(cm³, m³, litres)</text>
-
-      <!-- RIGHT SIDE: THE 3 FORMULA CARDS -->
-      <text x="625" y="38" font-size="15" font-weight="900" fill="#0f172a" text-anchor="middle" letter-spacing="0.5">3 ESSENTIAL FORMULAS AT A GLANCE</text>
-
-      <!-- Card 1: Mass -->
-      <g transform="translate(410, 52)">
-        <rect width="430" height="74" rx="10" fill="#f5f3ff" stroke="#ddd6fe" stroke-width="2"/>
-        <text x="20" y="30" font-size="13" font-weight="900" fill="#5b21b6" letter-spacing="0.5">1. TO FIND MASS (Cover M):</text>
-        <text x="20" y="56" font-size="17" font-weight="800" fill="#0f172a">Mass = Density × Volume</text>
-        <rect x="300" y="18" width="112" height="38" rx="8" fill="#7c3aed"/>
-        <text x="356" y="43" font-size="16" font-weight="900" fill="#ffffff" text-anchor="middle">M = D × V</text>
-      </g>
-
-      <!-- Card 2: Density -->
-      <g transform="translate(410, 138)">
-        <rect width="430" height="74" rx="10" fill="#eff6ff" stroke="#bfdbfe" stroke-width="2"/>
-        <text x="20" y="30" font-size="13" font-weight="900" fill="#0369a1" letter-spacing="0.5">2. TO FIND DENSITY (Cover D):</text>
-        <text x="20" y="56" font-size="17" font-weight="800" fill="#0f172a">Density = Mass ÷ Volume</text>
-        <rect x="300" y="18" width="112" height="38" rx="8" fill="#0284c7"/>
-        <text x="356" y="43" font-size="16" font-weight="900" fill="#ffffff" text-anchor="middle">D = M ÷ V</text>
-      </g>
-
-      <!-- Card 3: Volume -->
-      <g transform="translate(410, 224)">
-        <rect width="430" height="74" rx="10" fill="#f0fdf4" stroke="#bbf7d0" stroke-width="2"/>
-        <text x="20" y="30" font-size="13" font-weight="900" fill="#15803d" letter-spacing="0.5">3. TO FIND VOLUME (Cover V):</text>
-        <text x="20" y="56" font-size="17" font-weight="800" fill="#0f172a">Volume = Mass ÷ Density</text>
-        <rect x="300" y="18" width="112" height="38" rx="8" fill="#16a34a"/>
-        <text x="356" y="43" font-size="16" font-weight="900" fill="#ffffff" text-anchor="middle">V = M ÷ D</text>
-      </g>
-
-      <!-- BOTTOM FULL-WIDTH STRIP: UNITS MATCHING MATRIX -->
-      <g transform="translate(20, 318)">
-        <rect width="820" height="84" rx="10" fill="#f0fdf4" stroke="#86efac" stroke-width="2"/>
-        <text x="30" y="28" font-size="13.5" font-weight="900" fill="#166534" letter-spacing="0.5">⚖️ CHECK MATCHING UNITS BEFORE CALCULATING:</text>
-        <text x="30" y="52" font-size="14.5" font-weight="800" fill="#0f172a">
-          Small solids: <tspan fill="#0284c7">g</tspan> with <tspan fill="#0284c7">cm³</tspan> &rarr; <tspan fill="#0284c7" font-weight="900">g/cm³</tspan>  |  Large materials: <tspan fill="#16a34a">kg</tspan> with <tspan fill="#16a34a">m³</tspan> &rarr; <tspan fill="#16a34a" font-weight="900">kg/m³</tspan>
-        </text>
-        <text x="30" y="72" font-size="12.5" font-weight="700" fill="#15803d">
-          Essential Benchmark: 1 Litre of pure water has a volume of 1000 cm³ and weighs exactly 1 kg (1000 g).
-        </text>
-      </g>
-    </svg>
   </div>
+
+  <!-- Bottom: Units Matching Rule -->
+  <div style="margin-top:24px; padding:16px 20px; background:#f8fafc; border:1px solid #e2e8f0; border-radius:12px; display:flex; flex-wrap:wrap; align-items:center; justify-content:space-between; gap:12px;">
+    <div style="display:flex; align-items:center; gap:10px;">
+      <span style="background:#e0f2fe; color:#0369a1; font-size:0.8rem; font-weight:900; padding:4px 10px; border-radius:6px; text-transform:uppercase;">Units Matching</span>
+      <span style="color:#0f172a; font-weight:700; font-size:0.95rem;">Always pair matching units before calculating:</span>
+    </div>
+    <div style="display:flex; gap:8px; flex-wrap:wrap;">
+      <span style="background:#ffffff; border:1px solid #cbd5e1; padding:4px 10px; border-radius:6px; font-size:0.88rem; font-weight:700; color:#334155;"><strong>g</strong> with <strong>cm&sup3;</strong> &rarr; <span style="color:#0284c7;">g/cm&sup3;</span></span>
+      <span style="background:#ffffff; border:1px solid #cbd5e1; padding:4px 10px; border-radius:6px; font-size:0.88rem; font-weight:700; color:#334155;"><strong>kg</strong> with <strong>m&sup3;</strong> &rarr; <span style="color:#16a34a;">kg/m&sup3;</span></span>
+      <span style="background:#ffffff; border:1px solid #cbd5e1; padding:4px 10px; border-radius:6px; font-size:0.88rem; font-weight:700; color:#334155;">Water benchmark: <strong>1 Litre = 1 kg</strong></span>
+    </div>
+  </div>
+
 </div>
             </div>
             <div class="mfs-topic-footer" style="display:flex; gap:8px; flex-wrap:wrap; padding-top:14px; border-top:1px solid #e2e8f0; margin-top:16px;">

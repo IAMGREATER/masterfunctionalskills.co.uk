@@ -423,83 +423,99 @@
               <p class="mfs-topic-stem">Converting algebraic and word formulas into solvable numerical equations.</p>
             </div>
             <div class="mfs-topic-body" style="padding:20px 24px;">
-              <div class="sketch-diagram-wrap" style="width:100%; margin:24px 0;"><svg viewBox="0 0 860 380" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:860px; height:auto; display:block; font-family:'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;">
-  <!-- Main Container Card -->
-  <rect x="2" y="2" width="856" height="376" rx="14" fill="#ffffff" stroke="#bae6fd" stroke-width="2"/>
+              <div class="mfs-bidmas-master-board" style="background:#ffffff; border:2px solid #bae6fd; border-radius:18px; padding:28px 24px; margin:24px 0; box-shadow:0 4px 20px rgba(15, 23, 42, 0.06); width:100%;">
   
-  <!-- Title Badges -->
-  <rect x="24" y="16" width="310" height="34" rx="17" fill="#e0f2fe"/>
-  <text x="38" y="39" font-size="14" font-weight="800" fill="#0369a1" letter-spacing="0.5">✎ WORKED METHOD: BIDMAS HIERARCHY</text>
-  <text x="350" y="39" font-size="15" font-weight="700" fill="#0f172a">Evaluate: 5 + 3 × (10 − 4)² ÷ 9</text>
+  <!-- Header Bar -->
+  <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:12px; margin-bottom:24px; padding-bottom:16px; border-bottom:1px solid #e2e8f0; width:100%;">
+    <div style="display:inline-flex; align-items:center; gap:8px; background:#e0f2fe; color:#0369a1; font-size:0.88rem; font-weight:800; padding:6px 18px; border-radius:999px; text-transform:uppercase; letter-spacing:0.04em;">
+      <i class="fa-solid fa-list-ol"></i> Worked Method: BIDMAS Hierarchy
+    </div>
+    <div style="color:#0f172a; font-size:1.15rem; font-weight:800;">
+      Evaluate: <span style="color:#2563eb; background:#eff6ff; padding:4px 12px; border-radius:8px; border:1px solid #bfdbfe;">5 + 3 &times; (10 &minus; 4)&sup2; &divide; 9</span>
+    </div>
+  </div>
 
-  <!-- 4 Big Hierarchy Cards across 860px -->
-  <!-- Step 1: B (Brackets) -->
-  <g transform="translate(24, 68)">
-    <rect width="185" height="110" rx="10" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
-    <rect x="10" y="10" width="46" height="26" rx="6" fill="#2563eb"/>
-    <text x="33" y="28" font-size="13" font-weight="900" fill="#ffffff" text-anchor="middle">1. B</text>
-    <text x="64" y="28" font-size="14" font-weight="800" fill="#1e3a8a">Brackets</text>
-    <text x="92" y="62" font-size="13.5" font-weight="600" fill="#334155" text-anchor="middle">(10 − 4)</text>
-    <text x="92" y="90" font-size="18" font-weight="900" fill="#2563eb" text-anchor="middle">= 6 ✓</text>
-  </g>
+  <!-- 4 Step Cards Across the Page (Full Width Grid) -->
+  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(210px, 1fr)); gap:20px; width:100%; margin-bottom:24px;">
+    
+    <!-- Step 1: Brackets -->
+    <div style="background:#eff6ff; border:2px solid #3b82f6; border-radius:14px; padding:20px; display:flex; flex-direction:column; text-align:center; box-shadow:0 2px 8px rgba(37, 99, 235, 0.08);">
+      <div style="display:flex; align-items:center; justify-content:center; gap:8px; margin-bottom:12px;">
+        <span style="background:#2563eb; color:#ffffff; font-size:0.88rem; font-weight:900; padding:4px 10px; border-radius:6px;">1. B</span>
+        <span style="color:#1e3a8a; font-size:1.1rem; font-weight:900;">Brackets</span>
+      </div>
+      <div style="height:1px; background:#bfdbfe; margin-bottom:12px;"></div>
+      <div style="color:#334155; font-size:1.05rem; font-weight:700; margin-bottom:8px;">(10 &minus; 4)</div>
+      <div style="margin-top:auto; background:#1e40af; color:#ffffff; font-size:1.4rem; font-weight:900; padding:10px; border-radius:10px; font-variant-numeric:tabular-nums;">
+        = 6 &#x2713;
+      </div>
+    </div>
 
-  <!-- Arrow 1 -->
-  <text x="219" y="130" font-size="22" fill="#94a3b8" font-weight="900">→</text>
+    <!-- Step 2: Indices -->
+    <div style="background:#faf5ff; border:2px solid #a855f7; border-radius:14px; padding:20px; display:flex; flex-direction:column; text-align:center; box-shadow:0 2px 8px rgba(147, 51, 234, 0.08);">
+      <div style="display:flex; align-items:center; justify-content:center; gap:8px; margin-bottom:12px;">
+        <span style="background:#9333ea; color:#ffffff; font-size:0.88rem; font-weight:900; padding:4px 10px; border-radius:6px;">2. I</span>
+        <span style="color:#581c87; font-size:1.1rem; font-weight:900;">Indices</span>
+      </div>
+      <div style="height:1px; background:#e9d5ff; margin-bottom:12px;"></div>
+      <div style="color:#334155; font-size:1.05rem; font-weight:700; margin-bottom:8px;">6&sup2; = 6 &times; 6</div>
+      <div style="margin-top:auto; background:#7e22ce; color:#ffffff; font-size:1.4rem; font-weight:900; padding:10px; border-radius:10px; font-variant-numeric:tabular-nums;">
+        = 36 &#x2713;
+      </div>
+    </div>
 
-  <!-- Step 2: I (Indices / Powers) -->
-  <g transform="translate(236, 68)">
-    <rect width="185" height="110" rx="10" fill="#faf5ff" stroke="#a855f7" stroke-width="2"/>
-    <rect x="10" y="10" width="46" height="26" rx="6" fill="#9333ea"/>
-    <text x="33" y="28" font-size="13" font-weight="900" fill="#ffffff" text-anchor="middle">2. I</text>
-    <text x="64" y="28" font-size="14" font-weight="800" fill="#581c87">Indices</text>
-    <text x="92" y="62" font-size="13.5" font-weight="600" fill="#334155" text-anchor="middle">6² = 6 × 6</text>
-    <text x="92" y="90" font-size="18" font-weight="900" fill="#9333ea" text-anchor="middle">= 36 ✓</text>
-  </g>
+    <!-- Step 3: Mult & Div -->
+    <div style="background:#f0fdf4; border:2px solid #22c55e; border-radius:14px; padding:20px; display:flex; flex-direction:column; text-align:center; box-shadow:0 2px 8px rgba(22, 163, 74, 0.08);">
+      <div style="display:flex; align-items:center; justify-content:center; gap:8px; margin-bottom:12px;">
+        <span style="background:#16a34a; color:#ffffff; font-size:0.88rem; font-weight:900; padding:4px 10px; border-radius:6px;">3. DM</span>
+        <span style="color:#14532d; font-size:1.1rem; font-weight:900;">Mult &amp; Div</span>
+      </div>
+      <div style="height:1px; background:#bbf7d0; margin-bottom:12px;"></div>
+      <div style="color:#334155; font-size:0.95rem; font-weight:700; margin-bottom:4px;">3 &times; 36 = 108</div>
+      <div style="color:#15803d; font-size:1.05rem; font-weight:800; margin-bottom:8px;">108 &divide; 9</div>
+      <div style="margin-top:auto; background:#15803d; color:#ffffff; font-size:1.4rem; font-weight:900; padding:10px; border-radius:10px; font-variant-numeric:tabular-nums;">
+        = 12 &#x2713;
+      </div>
+    </div>
 
-  <!-- Arrow 2 -->
-  <text x="431" y="130" font-size="22" fill="#94a3b8" font-weight="900">→</text>
+    <!-- Step 4: Addition -->
+    <div style="background:#fff7ed; border:2px solid #f97316; border-radius:14px; padding:20px; display:flex; flex-direction:column; text-align:center; box-shadow:0 2px 8px rgba(234, 88, 12, 0.08);">
+      <div style="display:flex; align-items:center; justify-content:center; gap:8px; margin-bottom:12px;">
+        <span style="background:#ea580c; color:#ffffff; font-size:0.88rem; font-weight:900; padding:4px 10px; border-radius:6px;">4. AS</span>
+        <span style="color:#7c2d12; font-size:1.1rem; font-weight:900;">Addition</span>
+      </div>
+      <div style="height:1px; background:#fed7aa; margin-bottom:12px;"></div>
+      <div style="color:#334155; font-size:1.05rem; font-weight:700; margin-bottom:8px;">5 + 12</div>
+      <div style="margin-top:auto; background:#c2410c; color:#ffffff; font-size:1.4rem; font-weight:900; padding:10px; border-radius:10px; font-variant-numeric:tabular-nums;">
+        = 17 &#x2713;
+      </div>
+    </div>
 
-  <!-- Step 3: DM (Divide & Multiply) -->
-  <g transform="translate(448, 68)">
-    <rect width="185" height="110" rx="10" fill="#f0fdf4" stroke="#22c55e" stroke-width="2"/>
-    <rect x="10" y="10" width="54" height="26" rx="6" fill="#16a34a"/>
-    <text x="37" y="28" font-size="13" font-weight="900" fill="#ffffff" text-anchor="middle">3. DM</text>
-    <text x="70" y="28" font-size="14" font-weight="800" fill="#14532d">Mult &amp; Div</text>
-    <text x="92" y="60" font-size="13" font-weight="600" fill="#334155" text-anchor="middle">3 × 36 = 108</text>
-    <text x="92" y="88" font-size="16" font-weight="900" fill="#16a34a" text-anchor="middle">108 ÷ 9 = 12 ✓</text>
-  </g>
+  </div>
 
-  <!-- Arrow 3 -->
-  <text x="643" y="130" font-size="22" fill="#94a3b8" font-weight="900">→</text>
+  <!-- Full Substitution Calculation Flow Banner (Full Width) -->
+  <div style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:12px; padding:18px 22px; width:100%; margin-bottom:16px;">
+    <div style="color:#475569; font-size:0.85rem; font-weight:800; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:8px;">Full Substitution Calculation Flow:</div>
+    <div style="color:#0f172a; font-size:1.25rem; font-weight:800; line-height:1.6; word-break:break-word;">
+      5 + 3 &times; <span style="color:#2563eb; background:#eff6ff; padding:2px 8px; border-radius:6px; border:1px solid #bfdbfe;">(10 &minus; 4)&sup2;</span> &divide; 9
+      &rarr; 5 + 3 &times; <span style="color:#9333ea; background:#faf5ff; padding:2px 8px; border-radius:6px; border:1px solid #e9d5ff;">6&sup2;</span> &divide; 9
+      &rarr; 5 + <span style="color:#16a34a; background:#f0fdf4; padding:2px 8px; border-radius:6px; border:1px solid #bbf7d0;">108 &divide; 9</span>
+      &rarr; 5 + <span style="color:#16a34a;">12</span>
+      &rarr; <span style="color:#ea580c; font-size:1.4rem; font-weight:900;">17</span>
+    </div>
+    <div style="color:#64748b; font-size:0.92rem; font-weight:600; margin-top:8px;">
+      <i class="fa-solid fa-circle-info" style="color:#0284c7; margin-right:4px;"></i> <strong>Equal Priority Rule:</strong> Division and Multiplication have equal standing (work left to right). Addition and Subtraction also have equal standing.
+    </div>
+  </div>
 
-  <!-- Step 4: AS (Add & Subtract) -->
-  <g transform="translate(660, 68)">
-    <rect width="176" height="110" rx="10" fill="#fff7ed" stroke="#f97316" stroke-width="2"/>
-    <rect x="10" y="10" width="50" height="26" rx="6" fill="#ea580c"/>
-    <text x="35" y="28" font-size="13" font-weight="900" fill="#ffffff" text-anchor="middle">4. AS</text>
-    <text x="66" y="28" font-size="14" font-weight="800" fill="#7c2d12">Addition</text>
-    <text x="88" y="62" font-size="13.5" font-weight="600" fill="#334155" text-anchor="middle">5 + 12</text>
-    <text x="88" y="90" font-size="18" font-weight="900" fill="#ea580c" text-anchor="middle">= 17 ✓</text>
-  </g>
+  <!-- Bottom Result Banner (Full Width) -->
+  <div style="background:#dcfce7; border:2px solid #86efac; border-radius:10px; padding:14px 20px; width:100%; text-align:center;">
+    <span style="color:#15803d; font-size:1.25rem; font-weight:900; letter-spacing:0.04em;">
+      ACCREDITED FINAL EVALUATION = 17 &#x2713;
+    </span>
+  </div>
 
-  <!-- Step-by-step substitution summary card (y: 194 to 296) -->
-  <g transform="translate(24, 194)">
-    <rect width="812" height="102" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
-    <text x="24" y="28" font-size="13.5" font-weight="800" fill="#475569">FULL SUBSTITUTION CALCULATION FLOW:</text>
-    <text x="24" y="58" font-size="16" font-weight="700" fill="#0f172a">
-      5 + 3 × <tspan fill="#2563eb" font-weight="900">(10 − 4)</tspan>² ÷ 9  &rarr;  5 + 3 × <tspan fill="#9333ea" font-weight="900">6²</tspan> ÷ 9  &rarr;  5 + <tspan fill="#16a34a" font-weight="900">108 ÷ 9</tspan>  &rarr;  5 + <tspan fill="#16a34a" font-weight="900">12</tspan>  &rarr;  <tspan fill="#ea580c" font-weight="900">17</tspan>
-    </text>
-    <text x="24" y="86" font-size="12.5" font-weight="600" fill="#64748b">
-      Equal Priority Rule: Division and Multiplication have equal standing (work left to right). Addition and Subtraction also have equal standing.
-    </text>
-  </g>
-
-  <!-- Final Result Banner (y: 310 to 360) -->
-  <g transform="translate(24, 310)">
-    <rect width="812" height="50" rx="8" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
-    <text x="406" y="32" font-size="17" font-weight="900" fill="#15803d" text-anchor="middle">ACCREDITED FINAL EVALUATION = 17 ✓</text>
-  </g>
-</svg></div>
+</div>
               
                 <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:18px; margin:16px 0;">
                   <ol style="padding-left:22px; line-height:1.8; color:#334155;">
@@ -661,41 +677,75 @@
               <p class="mfs-topic-stem">Finding an unknown input when you are given the final output.</p>
             </div>
             <div class="mfs-topic-body" style="padding:20px 24px;">
-              <div class="sketch-diagram-wrap" style="width:100%; margin:20px 0;"><svg viewBox="0 0 860 340" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:860px; height:auto; display:block; font-family:'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;">
-  <rect x="2" y="2" width="856" height="336" rx="14" fill="#ffffff" stroke="#bae6fd" stroke-width="2"/>
-  <rect x="24" y="16" width="350" height="34" rx="17" fill="#e0f2fe"/>
-  <text x="38" y="39" font-size="14" font-weight="800" fill="#0369a1" letter-spacing="0.5">✎ INVERSE METHOD: WORKING BACKWARDS</text>
-  <text x="395" y="39" font-size="15" font-weight="700" fill="#0f172a">Formula: Cost = 40 + 25h  |  Given Total Cost = £190</text>
+              <div class="mfs-inverse-master-board" style="background:#ffffff; border:2px solid #bae6fd; border-radius:18px; padding:28px 24px; margin:24px 0; box-shadow:0 4px 20px rgba(15, 23, 42, 0.06); width:100%;">
+  
+  <!-- Header Bar -->
+  <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:12px; margin-bottom:24px; padding-bottom:16px; border-bottom:1px solid #e2e8f0; width:100%;">
+    <div style="display:inline-flex; align-items:center; gap:8px; background:#e0f2fe; color:#0369a1; font-size:0.88rem; font-weight:800; padding:6px 18px; border-radius:999px; text-transform:uppercase; letter-spacing:0.04em;">
+      <i class="fa-solid fa-arrow-right-arrow-left"></i> Inverse Method: Working Backwards
+    </div>
+    <div style="color:#0f172a; font-size:1.15rem; font-weight:800;">
+      Formula: <span style="color:#2563eb;">Cost = 40 + 25h</span> | Given Total Cost = <span style="color:#15803d;">&pound;190</span>
+    </div>
+  </div>
 
-  <!-- Forward story (Left Card) -->
-  <g transform="translate(24, 68)">
-    <rect width="395" height="175" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
-    <rect x="14" y="12" width="170" height="26" rx="6" fill="#64748b"/>
-    <text x="99" y="29" font-size="12" font-weight="900" fill="#ffffff" text-anchor="middle">FORWARD ORDER (BIDMAS)</text>
-    <text x="18" y="66" font-size="14" font-weight="700" fill="#334155">1. Start with unknown hours (h)</text>
-    <text x="18" y="94" font-size="14" font-weight="700" fill="#334155">2. Multiply by £25 &rarr; <tspan font-weight="900" fill="#0f172a">25h</tspan></text>
-    <text x="18" y="122" font-size="14" font-weight="700" fill="#334155">3. Add fixed fee £40 &rarr; <tspan font-weight="900" fill="#0f172a">Total = £190</tspan></text>
-    <rect x="18" y="136" width="360" height="26" rx="6" fill="#e2e8f0"/>
-    <text x="198" y="154" font-size="11.5" font-weight="800" fill="#475569" text-anchor="middle">Rule: In reverse, do inverse operations in reverse order!</text>
-  </g>
+  <!-- 2 Big Side-by-Side Columns Stretching Across the Page -->
+  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(320px, 1fr)); gap:24px; width:100%; margin-bottom:24px;">
+    
+    <!-- Column 1: Forward Order -->
+    <div style="background:#f8fafc; border:2px solid #cbd5e1; border-radius:14px; padding:24px; display:flex; flex-direction:column; justify-content:space-between; box-shadow:0 2px 8px rgba(15, 23, 42, 0.05);">
+      <div>
+        <div style="display:inline-block; background:#64748b; color:#ffffff; font-size:0.85rem; font-weight:900; padding:4px 12px; border-radius:6px; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:16px;">
+          Forward Order (BIDMAS)
+        </div>
+        <ol style="margin:0; padding-left:22px; color:#334155; font-size:1.1rem; font-weight:700; line-height:2.2;">
+          <li>Start with unknown hours (<strong style="color:#2563eb;">h</strong>)</li>
+          <li>Multiply by &pound;25 &rarr; <strong style="color:#0f172a;">25h</strong></li>
+          <li>Add fixed callout fee &pound;40 &rarr; <strong style="color:#0f172a;">Total = &pound;190</strong></li>
+        </ol>
+      </div>
+      <div style="margin-top:20px; background:#e2e8f0; border-radius:8px; padding:10px 14px; color:#475569; font-size:0.95rem; font-weight:800; text-align:center;">
+        <i class="fa-solid fa-rotate-left" style="margin-right:6px;"></i> Rule: In reverse, do inverse operations in reverse order!
+      </div>
+    </div>
 
-  <!-- Backward story (Right Card) -->
-  <g transform="translate(441, 68)">
-    <rect width="395" height="175" rx="10" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
-    <rect x="14" y="12" width="180" height="26" rx="6" fill="#2563eb"/>
-    <text x="104" y="29" font-size="12" font-weight="900" fill="#ffffff" text-anchor="middle">BACKWARD (INVERSE) STEPS</text>
-    <text x="18" y="66" font-size="14" font-weight="700" fill="#1e40af">Step 1: Undo +40 by subtracting £40</text>
-    <text x="36" y="92" font-size="16" font-weight="900" fill="#0f172a">£190 − £40 = <tspan fill="#2563eb">£150</tspan></text>
-    <text x="18" y="120" font-size="14" font-weight="700" fill="#1e40af">Step 2: Undo &times;25 by dividing by 25</text>
-    <text x="36" y="146" font-size="16" font-weight="900" fill="#0f172a">£150 &divide; 25 = <tspan fill="#16a34a">6 hours &#x2713;</tspan></text>
-  </g>
+    <!-- Column 2: Backward Inverse Steps -->
+    <div style="background:#eff6ff; border:2px solid #3b82f6; border-radius:14px; padding:24px; display:flex; flex-direction:column; justify-content:space-between; box-shadow:0 2px 8px rgba(37, 99, 235, 0.08);">
+      <div>
+        <div style="display:inline-block; background:#2563eb; color:#ffffff; font-size:0.85rem; font-weight:900; padding:4px 12px; border-radius:6px; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:16px;">
+          Backward (Inverse) Steps
+        </div>
+        
+        <div style="margin-bottom:18px;">
+          <div style="color:#1e40af; font-size:1rem; font-weight:800; margin-bottom:4px;">Step 1: Undo +40 by subtracting &pound;40</div>
+          <div style="background:#ffffff; border:1px solid #bfdbfe; border-radius:8px; padding:10px 16px; font-size:1.35rem; font-weight:900; color:#0f172a;">
+            &pound;190 &minus; &pound;40 = <span style="color:#2563eb;">&pound;150</span>
+          </div>
+        </div>
 
-  <!-- Bottom Result Banner -->
-  <g transform="translate(24, 258)">
-    <rect width="812" height="60" rx="10" fill="#dcfce7" stroke="#86efac" stroke-width="2"/>
-    <text x="406" y="36" font-size="15.5" font-weight="900" fill="#15803d" text-anchor="middle">VERIFICATION: 40 + (25 &times; 6) = 40 + 150 = £190 &#x2713; FULL MARKS [M1][A1]</text>
-  </g>
-</svg></div>
+        <div>
+          <div style="color:#1e40af; font-size:1rem; font-weight:800; margin-bottom:4px;">Step 2: Undo &times;25 by dividing by 25</div>
+          <div style="background:#ffffff; border:1px solid #bfdbfe; border-radius:8px; padding:10px 16px; font-size:1.35rem; font-weight:900; color:#0f172a;">
+            &pound;150 &divide; 25 = <span style="color:#16a34a;">6 hours &#x2713;</span>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:20px; background:#dbeafe; border-radius:8px; padding:10px 14px; color:#1e40af; font-size:0.95rem; font-weight:800; text-align:center;">
+        Substituted correctly into the formula to find the missing input!
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Bottom Verification Banner (Full Width) -->
+  <div style="background:#dcfce7; border:2px solid #86efac; border-radius:10px; padding:14px 20px; width:100%; text-align:center;">
+    <span style="color:#15803d; font-size:1.2rem; font-weight:900; letter-spacing:0.03em;">
+      VERIFICATION: 40 + (25 &times; 6) = 40 + 150 = &pound;190 &#x2713; FULL MARKS [M1][A1]
+    </span>
+  </div>
+
+</div>
                 <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:18px; margin:16px 0;">
                   <p style="color:#334155; line-height:1.7;">Suppose a hire formula is <strong><code>Cost = 40 + 25h</code></strong> and a customer is billed <strong>£190</strong>. To find the hours (<code>h</code>):</p>
                   <ol style="padding-left:22px; line-height:1.8; color:#334155;">

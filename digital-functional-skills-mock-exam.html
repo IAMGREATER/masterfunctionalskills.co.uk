@@ -254,12 +254,18 @@
           <label style="font-size:0.8rem; font-weight:700; color:#555555; display:flex; align-items:center; gap:6px;">
             <span>Select Mock Set:</span>
             <select class="pearson-set-dropdown" id="popSetSelector" onchange="handleSetChange(this.value)">
-              <option value="set1" selected>Mock 1: Fresh Bite Sandwich Shop (Level 1 SAM)</option>
-              <option value="set2">Mock 2: Annual Awards Ceremony & Catering (Level 1 Practice Set 2)</option>
-              <option value="set3">Mock 3: First Aid Training & Supplies (Level 1 Practice Set 1)</option>
-              <option value="set5">Mock 4: Gelato & Ice Cream Business (Level 1 Past Test Set 1)</option>
-              <option value="set6">Mock 5: Riverside Community Health & Leisure Hub (Level 1 Practice Set 3)</option>
-              <option value="set4">Entry Level 3 Mock: Apprenticeships & Work Experience (SAM)</option>
+              <optgroup label="Master Functional Skills (MFS) Edexcel Mocks">
+                <option value="mfs_mock1" selected>MFS DFS L1 Mock 1: Riverside Community Health &amp; Leisure Hub</option>
+                <option value="mfs_mock2">MFS DFS L1 Mock 2: EcoCycle Bike Repair &amp; Green Commute</option>
+                <option value="mfs_mock3">MFS DFS L1 Mock 3: Apex Express Logistics &amp; Regional Depot</option>
+              </optgroup>
+              <optgroup label="Pearson Edexcel Official Past Assessment Sets">
+                <option value="set1">Pearson Mock 1: Fresh Bite Sandwich Shop (Level 1 SAM)</option>
+                <option value="set2">Pearson Mock 2: Annual Awards Ceremony &amp; Catering (Practice Set 2)</option>
+                <option value="set3">Pearson Mock 3: First Aid Training &amp; Supplies (Practice Set 1)</option>
+                <option value="set5">Pearson Mock 4: Gelato &amp; Ice Cream Business (Past Test Set 1)</option>
+                <option value="set4">Pearson Entry Level 3: Apprenticeships &amp; Work Experience (SAM)</option>
+              </optgroup>
             </select>
           </label>
 
@@ -328,16 +334,18 @@
           Section B practical tasks require starter files (Word documents, spreadsheets, web forms, and JPG photos). Download the exact candidate ZIP package for your set:
         </p>
         <div style="display:flex; gap:10px; flex-wrap:wrap;">
-          <a href="assets/downloads/dfs/dfs-level-1-sam-data-files.zip" class="btn-card-action" style="font-size:0.85rem;" download>
-            <i class="fa-solid fa-download"></i> L1 SAM Data Files (.ZIP)
+          <a href="assets/downloads/dfs/dfs-mfs-l1-mock-1-data-files.zip" class="btn-card-action" style="font-size:0.85rem;" download>
+            <i class="fa-solid fa-download"></i> MFS Mock 1 Data (.ZIP)
           </a>
-          <a href="assets/downloads/dfs/dfs-level-1-practice-set-2-data-files.zip" class="btn-card-action" style="font-size:0.85rem;" download>
-            <i class="fa-solid fa-download"></i> Practice Set 2 Data (.ZIP)
+          <a href="assets/downloads/dfs/dfs-mfs-l1-mock-2-data-files.zip" class="btn-card-action" style="font-size:0.85rem;" download>
+            <i class="fa-solid fa-download"></i> MFS Mock 2 Data (.ZIP)
           </a>
-          <a href="assets/downloads/dfs/dfs-level-1-practice-set-3-data-files.zip" class="btn-card-action" style="font-size:0.85rem;" download>
-            <i class="fa-solid fa-download"></i> Practice Set 3 Data (.ZIP)
+          <a href="assets/downloads/dfs/dfs-mfs-l1-mock-3-data-files.zip" class="btn-card-action" style="font-size:0.85rem;" download>
+            <i class="fa-solid fa-download"></i> MFS Mock 3 Data (.ZIP)
           </a>
-        </div>
+          <a href="assets/downloads/dfs/dfs-level-1-sam-data-files.zip" class="btn-card-action" style="font-size:0.85rem; background:#475569;" download>
+            <i class="fa-solid fa-box-archive"></i> Pearson SAM (.ZIP)
+          </a></div>
       </div>
 
       <!-- Official Pearson Windows Desktop App Card -->
@@ -391,61 +399,61 @@
           </div>
 
           <div class="download-tiles-grid">
-            <!-- STYLE 1: FLUENCY DRILLS WORKOUT (COMBINED) -->
+            <!-- MFS MOCK 1 CARD -->
             <div class="download-combo-card">
               <div class="download-combo-header">
-                <div class="download-tile-icon icon-workout"><i class="fa-solid fa-repeat"></i></div>
+                <div class="download-tile-icon icon-workout"><i class="fa-solid fa-laptop-code"></i></div>
                 <div class="download-combo-info">
-                  <div class="tile-badge-wrap"><span class="badge-tile-type">Style 1: Fluency Drills</span></div>
-                  <strong class="download-tile-title">Digital Mock Exam Practice Tasks</strong>
-                  <span class="download-tile-desc">25+ practical tasks + workplace drills</span>
+                  <div class="tile-badge-wrap"><span class="badge-tile-type" style="background:#0284c7; color:#ffffff;">MFS Mock 1</span></div>
+                  <strong class="download-tile-title">Riverside Community Leisure Hub</strong>
+                  <span class="download-tile-desc">54 Marks • Physical activity research, flyer, court bookings sheet &amp; network trouble</span>
                 </div>
               </div>
               <div class="download-combo-actions">
-                <a href="worksheets/digital-functional-skills-mock-exam-workout.html" target="_blank" class="download-combo-btn btn-qp">
+                <a href="worksheets/mfs-dfs-l1-mock-1-worksheet.html" target="_blank" class="download-combo-btn btn-qp">
                   <i class="fa-regular fa-file-pdf"></i> Question Paper
                 </a>
-                <a href="worksheets/digital-functional-skills-mock-exam-workout-answers.html" target="_blank" class="download-combo-btn btn-ans">
-                  <i class="fa-solid fa-check-double"></i> Answer Key
-                </a>
-              </div>
-            </div>
-
-            <!-- STYLE 2: EXAM PRACTICE QUESTIONS (COMBINED) -->
-            <div class="download-combo-card">
-              <div class="download-combo-header">
-                <div class="download-tile-icon icon-pdf"><i class="fa-regular fa-file-pdf"></i></div>
-                <div class="download-combo-info">
-                  <div class="tile-badge-wrap"><span class="badge-tile-type exam">Style 2: Practice Questions</span></div>
-                  <strong class="download-tile-title">Digital Mock Exam Practice Questions</strong>
-                  <span class="download-tile-desc">Authentic Pearson Edexcel exam questions with [M1][A1] mark scheme</span>
-                </div>
-              </div>
-              <div class="download-combo-actions">
-                <a href="worksheets/digital-functional-skills-mock-exam-worksheet.html" target="_blank" class="download-combo-btn btn-qp">
-                  <i class="fa-regular fa-file-pdf"></i> Question Paper
-                </a>
-                <a href="worksheets/digital-functional-skills-mock-exam-answers.html" target="_blank" class="download-combo-btn btn-ans">
+                <a href="worksheets/mfs-dfs-l1-mock-1-answers.html" target="_blank" class="download-combo-btn btn-ans">
                   <i class="fa-solid fa-award"></i> Mark Scheme
                 </a>
               </div>
             </div>
 
-            <!-- STYLE 3: PRACTICE SET 3 COMPLETE EXAM PAPER -->
+            <!-- MFS MOCK 2 CARD -->
             <div class="download-combo-card">
               <div class="download-combo-header">
-                <div class="download-tile-icon icon-workout"><i class="fa-solid fa-laptop-code"></i></div>
+                <div class="download-tile-icon icon-workout" style="background:#059669; color:#fff;"><i class="fa-solid fa-bicycle"></i></div>
                 <div class="download-combo-info">
-                  <div class="tile-badge-wrap"><span class="badge-tile-type" style="background:#0284c7; color:#ffffff;">Style 3: Level 1 Practice Set 3</span></div>
-                  <strong class="download-tile-title">Mock 5: Riverside Leisure Hub (54 Marks)</strong>
-                  <span class="download-tile-desc">Complete new Pearson Edexcel L1 mock exam paper with full marking criteria &amp; model answers</span>
+                  <div class="tile-badge-wrap"><span class="badge-tile-type" style="background:#059669; color:#ffffff;">MFS Mock 2</span></div>
+                  <strong class="download-tile-title">EcoCycle Bike Repair &amp; Commute</strong>
+                  <span class="download-tile-desc">54 Marks • Helmet safety standard, workshop flyer, bike hire sheet &amp; Bluetooth scanner</span>
                 </div>
               </div>
               <div class="download-combo-actions">
-                <a href="worksheets/digital-functional-skills-level-1-practice-set-3-worksheet.html" target="_blank" class="download-combo-btn btn-qp">
+                <a href="worksheets/mfs-dfs-l1-mock-2-worksheet.html" target="_blank" class="download-combo-btn btn-qp">
                   <i class="fa-regular fa-file-pdf"></i> Question Paper
                 </a>
-                <a href="worksheets/digital-functional-skills-level-1-practice-set-3-answers.html" target="_blank" class="download-combo-btn btn-ans">
+                <a href="worksheets/mfs-dfs-l1-mock-2-answers.html" target="_blank" class="download-combo-btn btn-ans">
+                  <i class="fa-solid fa-award"></i> Mark Scheme
+                </a>
+              </div>
+            </div>
+
+            <!-- MFS MOCK 3 CARD -->
+            <div class="download-combo-card">
+              <div class="download-combo-header">
+                <div class="download-tile-icon icon-workout" style="background:#2563eb; color:#fff;"><i class="fa-solid fa-truck-fast"></i></div>
+                <div class="download-combo-info">
+                  <div class="tile-badge-wrap"><span class="badge-tile-type" style="background:#2563eb; color:#ffffff;">MFS Mock 3</span></div>
+                  <strong class="download-tile-title">Apex Express Logistics Depot</strong>
+                  <span class="download-tile-desc">54 Marks • Drivers' hours limit, safety bulletin, delivery routes sheet &amp; barcode scanner</span>
+                </div>
+              </div>
+              <div class="download-combo-actions">
+                <a href="worksheets/mfs-dfs-l1-mock-3-worksheet.html" target="_blank" class="download-combo-btn btn-qp">
+                  <i class="fa-regular fa-file-pdf"></i> Question Paper
+                </a>
+                <a href="worksheets/mfs-dfs-l1-mock-3-answers.html" target="_blank" class="download-combo-btn btn-ans">
                   <i class="fa-solid fa-award"></i> Mark Scheme
                 </a>
               </div>

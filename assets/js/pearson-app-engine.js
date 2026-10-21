@@ -29,7 +29,7 @@ document.addEventListener("DOMContentLoaded", () => {
 function initPearsonApp() {
   const urlParams = new URLSearchParams(window.location.search);
   const startScreen = parseInt(urlParams.get("screen") || "0", 10);
-  const startSet = urlParams.get("set") || "set1";
+  const startSet = urlParams.get("set") || (document.getElementById("popSetSelector")?.value || "mfs_mock1");
   const startFs = urlParams.get("fullscreen") === "true";
 
   loadSetData(startSet);

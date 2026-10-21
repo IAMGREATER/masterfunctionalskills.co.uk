@@ -1542,6 +1542,864 @@ const DFS_MOCK_DATA = {
       }
     ]
   }
+,
+  mfs_mock1: {
+    id: "mfs_mock1",
+    level: "Level 1",
+    name: "MFS DFS L1 Mock 1: Riverside Community Health & Leisure Hub",
+    totalMarks: 54,
+    passMark: 35,
+    durationMinutes: 90,
+    dataPackUrl: "assets/downloads/dfs/dfs-mfs-l1-mock-1-data-files.zip",
+    dataPackName: "dfs-mfs-l1-mock-1-data-files.zip",
+    dataFiles: [
+      "ACTIVITY TIMETABLE.docx",
+      "COMMUNITY NOTICE.docx",
+      "MEMBERSHIP PORTAL.html",
+      "SPORTS BOOKINGS.xlsx",
+      "PRACTICE SET 3 DFS LEVEL 1 IMAGES/SPORTS ACTIVITIES.jpg",
+      "PRACTICE SET 3 DFS LEVEL 1 IMAGES/SPORTS BADGE.jpg"
+    ],
+    sectionA: [
+      {
+        qNum: 1,
+        title: "Multi-Factor Authentication (MFA / 2FA)",
+        stem: "Why should staff at a community leisure centre enable Multi-Factor Authentication (MFA) when accessing their staff accounts online?",
+        options: [
+          { text: "It saves internet bandwidth and boosts network connection speeds", isCorrect: false },
+          { text: "It provides an additional layer of defence by requiring two or more verification factors to confirm identity", isCorrect: true },
+          { text: "It ensures that files stored locally on the PC cannot be accidentally deleted", isCorrect: false },
+          { text: "It automatically updates the operating system every evening", isCorrect: false }
+        ],
+        mark: 1,
+        explanation: "Pearson Criteria: Multi-factor authentication adds an essential second verification factor (such as an authenticator app code or SMS token) beyond just a password, making unauthorized account access substantially harder even if passwords are breached."
+      },
+      {
+        qNum: 2,
+        title: "Display Screen Equipment & Ergonomics",
+        stem: "A receptionist at the leisure hub spends long shifts entering booking data into a computer. What ergonomic adjustment best prevents neck and eye strain?",
+        options: [
+          { text: "Positioning the monitor directly in front of the user with the top of the screen at eye level and reducing screen glare", isCorrect: true },
+          { text: "Tilting the screen upwards at a steep angle and dimming room lights completely", isCorrect: false },
+          { text: "Keeping the keyboard on the user's lap and sitting on a rigid stool", isCorrect: false },
+          { text: "Increasing screen resolution to the highest setting so text is as tiny as possible", isCorrect: false }
+        ],
+        mark: 1,
+        explanation: "Pearson Criteria: In accordance with HSE Display Screen Equipment (DSE) regulations, the monitor should be positioned directly in front of the user with the top of the display at eye height, arm's length away, with good ambient lighting to prevent musculoskeletal fatigue and eye strain."
+      },
+      {
+        qNum: 3,
+        title: "Refining Online Searches & Search Operators",
+        stem: "A coordinator wants to find official UK government sports facility guidelines published exclusively as a PDF document. Which search query is most effective?",
+        options: [
+          { text: "search sports facility rules anywhere online", isCorrect: false },
+          { text: "\"sports facility guidelines\" site:gov.uk filetype:pdf", isCorrect: true },
+          { text: "*sports* + *facilities* + help + please", isCorrect: false },
+          { text: "click on the first sponsored link on social media", isCorrect: false }
+        ],
+        mark: 1,
+        explanation: "Pearson Criteria: Using quotation marks for exact phrasing, 'site:gov.uk' to restrict results to authoritative government domains, and 'filetype:pdf' specifically filters for published document guidelines."
+      },
+      {
+        qNum: 4,
+        title: "Digital Footprint & Child Safeguarding",
+        stem: "A sports coach creates a public leisure hub group on social media. What is a primary risk of sharing candid photos of junior participants without parental permission?",
+        options: [
+          { text: "It slows down the social media platform's cloud server", isCorrect: false },
+          { text: "It breaches data privacy and child safeguarding regulations by exposing personal identifiable information publicly", isCorrect: true },
+          { text: "It converts high-resolution images into compressed vector shapes", isCorrect: false },
+          { text: "It automatically locks the coach out of their mobile phone", isCorrect: false }
+        ],
+        mark: 1,
+        explanation: "Pearson Criteria: Under GDPR, the Data Protection Act 2018, and child safeguarding standards, publishing identifiable images of minors online requires explicit parental/guardian consent and controlled privacy settings."
+      },
+      {
+        qNum: 5,
+        title: "Cybersecurity & Ransomware Threats",
+        stem: "A desktop screen suddenly displays a warning stating that all centre booking files are encrypted and demanding payment in digital currency to restore access. What type of malware is this?",
+        options: [
+          { text: "Spyware", isCorrect: false },
+          { text: "Ransomware", isCorrect: true },
+          { text: "Adware", isCorrect: false },
+          { text: "Phishing email", isCorrect: false }
+        ],
+        mark: 1,
+        explanation: "Pearson Criteria: Ransomware is malicious software that encrypts user files and storage devices, withholding decryption keys until an extortion ransom is paid."
+      },
+      {
+        qNum: 6,
+        title: "Secure Web Connections & SSL/TLS",
+        stem: "When entering customer payment card information on an online booking portal, which indicator confirms that communication between the browser and the web server is encrypted?",
+        options: [
+          { text: "The web address starts with https:// accompanied by a closed padlock icon in the browser address bar", isCorrect: true },
+          { text: "The web page has animated pop-up banner advertisements", isCorrect: false },
+          { text: "The website URL ends in .org or .co.uk", isCorrect: false },
+          { text: "The web page loads in under 2 seconds", isCorrect: false }
+        ],
+        mark: 1,
+        explanation: "Pearson Criteria: Hypertext Transfer Protocol Secure (HTTPS) and the padlock symbol confirm that an active SSL/TLS security certificate encrypts data during transmission against eavesdropping."
+      },
+      {
+        qNum: 7,
+        title: "Digital Storage Units & Capacity Hierarchy",
+        stem: "Which list correctly arranges digital storage units in ascending order from smallest capacity to largest capacity?",
+        options: [
+          { text: "Gigabyte (GB) → Megabyte (MB) → Terabyte (TB) → Kilobyte (KB)", isCorrect: false },
+          { text: "Kilobyte (KB) → Megabyte (MB) → Gigabyte (GB) → Terabyte (TB)", isCorrect: true },
+          { text: "Terabyte (TB) → Gigabyte (GB) → Megabyte (MB) → Kilobyte (KB)", isCorrect: false },
+          { text: "Megabyte (MB) → Kilobyte (KB) → Terabyte (TB) → Gigabyte (GB)", isCorrect: false }
+        ],
+        mark: 1,
+        explanation: "Pearson Criteria: Digital storage capacity progresses from Kilobyte (~1,000 bytes) to Megabyte (~1,000 KB), Gigabyte (~1,000 MB), and Terabyte (~1,000 GB)."
+      },
+      {
+        qNum: 8,
+        title: "Data Protection & Subject Access Requests",
+        stem: "A centre member asks to view all personal health questionnaire records and class attendance histories held about them by the leisure hub. Under UK GDPR, what is this right known as?",
+        options: [
+          { text: "Right to erase software licences", isCorrect: false },
+          { text: "Right of access (Subject Access Request)", isCorrect: true },
+          { text: "Right to transfer hardware ownership", isCorrect: false },
+          { text: "Right to demand administrator network privileges", isCorrect: false }
+        ],
+        mark: 1,
+        explanation: "Pearson Criteria: The UK GDPR Right of Access entitles individuals to receive confirmation that their data is being processed and obtain a copy of their personal data (Subject Access Request)."
+      },
+      {
+        qNum: 9,
+        title: "File Compression & Email Attachments",
+        stem: "Why does the leisure centre manager compress (zip) high-resolution promotional event photos before emailing them to the local community newsletter?",
+        options: [
+          { text: "To delete the original images from the computer permanently", isCorrect: false },
+          { text: "To reduce total file size for faster transmission and avoid email attachment size limits", isCorrect: true },
+          { text: "To prevent recipients from viewing the pictures on mobile screens", isCorrect: false },
+          { text: "To alter the colour balance of the photographs automatically", isCorrect: false }
+        ],
+        mark: 1,
+        explanation: "Pearson Criteria: Compressing files into a ZIP archive reduces total storage size and bundles multiple assets together, ensuring files stay within email service attachment limits (typically 20-25 MB)."
+      },
+      {
+        qNum: 10,
+        title: "Safe Transmission of Sensitive Workplace Data",
+        stem: "The manager needs to transmit an urgent payroll report containing employee National Insurance numbers and bank sort codes to the external accountant. What is the safest digital transmission method?",
+        options: [
+          { text: "Posting the spreadsheet on the leisure centre's open Facebook page", isCorrect: false },
+          { text: "Encrypting or password-protecting the file and communicating the strong password via a separate, secure secondary channel", isCorrect: true },
+          { text: "Pasting all bank account numbers into the subject line of a standard email", isCorrect: false },
+          { text: "Saving the file onto a lost-property USB memory stick and leaving it on the counter", isCorrect: false }
+        ],
+        mark: 1,
+        explanation: "Pearson Criteria: Sensitive personal and financial data must be encrypted with robust password protection, and the decryption key must be transmitted out-of-band (e.g. via telephone or separate encrypted channel)."
+      }
+    ],
+    tasks: [
+      {
+        id: "taskA",
+        letter: "Task A",
+        title: "Information Search & Professional Email Communication",
+        marks: 7,
+        brief: "The leisure hub manager, Tariq, wants you to locate the official UK physical activity guidelines for adults and email the summary to him.",
+        instructions: [
+          "Use a search engine to find the recommended weekly physical activity duration for adults in the UK. Take a screenshot of your search terms and results.",
+          "Compose an email to <code>tariq.manager@riversidehub.co.uk</code> with the subject <code>UK Physical Activity Guidelines Summary</code>.",
+          "Include a polite greeting (e.g. 'Dear Tariq,' or 'Hello Tariq,'), state clearly that adults need at least <strong>150 minutes of moderate activity</strong> (or 75 minutes of vigorous activity) per week, plus muscle strengthening on at least 2 days.",
+          "Add a professional automated email signature containing 'Kind regards' and your candidate name."
+        ],
+        type: "search_email",
+        searchAnswer: "UK physical activity guidelines adults 150 minutes",
+        searchResultSnippet: "Official UK Physical Activity Guidelines: Adults aged 19 to 64 should aim to be physically active daily. Each week, adults should accumulate at least 150 minutes of moderate intensity activity (such as brisk walking or cycling) or 75 minutes of vigorous activity, plus strengthening activities on at least 2 days.",
+        rubric: [
+          { code: "A1", desc: "Search engine query shows appropriate keywords (e.g. 'UK physical activity guidelines adults')", mark: 1 },
+          { code: "A1b", desc: "Correct guideline duration identified: at least 150 minutes moderate intensity per week", mark: 1 },
+          { code: "A2", desc: "Automated email signature created with 'Kind regards' and candidate name", mark: 1 },
+          { code: "A3a", desc: "Recipient email entered accurately: tariq.manager@riversidehub.co.uk", mark: 1 },
+          { code: "A3b", desc: "Subject line concise and descriptive: 'UK Physical Activity Guidelines Summary'", mark: 1 },
+          { code: "A3c", desc: "Professional greeting and polite business sign-off maintained", mark: 1 },
+          { code: "A3d", desc: "Accurate physical activity recommendations included in message body", mark: 1 }
+        ]
+      },
+      {
+        id: "taskB",
+        letter: "Task B",
+        title: "Creating & Formatting an Activity Timetable Flyer",
+        marks: 11,
+        brief: "Riverside Community Hub wants an attractive, professional promotional flyer created using ACTIVITY TIMETABLE.docx to advertise evening fitness classes.",
+        instructions: [
+          "Open <code>ACTIVITY TIMETABLE.docx</code> from your data folder. Change page orientation to <strong>Landscape</strong>.",
+          "Format the main title 'Riverside Community Leisure Hub — Evening Fitness Timetable' in bold, 22 pt, centered.",
+          "Insert the timetable schedule below the heading formatted as a clean 5-column table with adjusted column widths and header row shaded in light teal.",
+          "Insert <code>SPORTS ACTIVITIES.jpg</code> to the right-hand side of the table.",
+          "Crop the image to eliminate unnecessary borders, resize to <strong>6 cm height</strong> maintaining aspect ratio, and apply a subtle border.",
+          "Highlight the special introductory offer in a distinct callout box: 'Special Introductory Offer: 20% discount on all monthly class passes when booked online before Friday! Voucher code: RIVERSIDE20'.",
+          "Apply an outer page border. Ensure balanced, professional layout with zero overlapping text."
+        ],
+        type: "flyer_design",
+        rubric: [
+          { code: "B1", desc: "Page orientation set to Landscape", mark: 1 },
+          { code: "B2a", desc: "Main heading formatted in bold, 22 pt font, centered", mark: 1 },
+          { code: "B2b", desc: "Timetable formatted inside a clean structured table with adjusted column widths", mark: 1 },
+          { code: "B2c", desc: "Table header row shaded with a contrasting background color", mark: 1 },
+          { code: "B3a", desc: "Image SPORTS ACTIVITIES.jpg inserted into document", mark: 1 },
+          { code: "B3b", desc: "Image positioned neatly adjacent to or right-hand side of timetable", mark: 1 },
+          { code: "B4", desc: "Image cropped to remove excess margins/borders", mark: 1 },
+          { code: "B5", desc: "Image resized to 6 cm height maintaining proportions", mark: 1 },
+          { code: "B6", desc: "Special introductory offer highlighted in a styled callout box", mark: 1 },
+          { code: "B7a", desc: "Decorative outer page border applied", mark: 1 },
+          { code: "B7b", desc: "Document fit for purpose: balanced spacing, legible fonts, zero overlapping elements", mark: 1 }
+        ]
+      },
+      {
+        id: "taskC",
+        letter: "Task C",
+        title: "Sports Bookings & Revenue Spreadsheet Analysis",
+        marks: 15,
+        brief: "Tariq needs weekly court bookings and revenue calculated in SPORTS BOOKINGS.xlsx, formatted into currency, and charted.",
+        instructions: [
+          "Merge and centre cells A1:H1, set font size to 20 pt, bold, and shade cells A1:H1 soft blue.",
+          "In cell G4, enter a formula to calculate Total Bookings for Badminton Court 1: <code>=SUM(C4:F4)</code>.",
+          "In cell H4, calculate Total Revenue: <code>=G4*B4</code> (Total Bookings × Court Hire Fee).",
+          "Replicate formulas down columns G and H for all 8 sports activities (rows 4 to 11).",
+          "In row 12, calculate the Daily Average Bookings: <code>=AVERAGE(C4:C11)</code> and replicate across columns C to F.",
+          "In cell H12, calculate Grand Total Revenue using <code>=SUM(H4:H11)</code>.",
+          "Format all court hire fees (column B) and revenue amounts (column H and cell H12) as British Pounds (£) with 2 decimal places.",
+          "Sort the activities table (rows A4:H11) in descending order of Total Revenue (Column H).",
+          "Create a 2D Clustered Column or Bar Chart comparing Activity / Facility (A3:A11) against Total Bookings (G3:G11). Add an informative chart title, legible axis titles, and position the chart neatly below the data table or on a separate sheet."
+        ],
+        type: "spreadsheet",
+        rubric: [
+          { code: "C1a", desc: "Main title merged & centred across A1:H1 with 20 pt bold styling", mark: 1 },
+          { code: "C1b", desc: "Header row shaded with soft blue background fill", mark: 1 },
+          { code: "C2a", desc: "Total bookings formula entered correctly in cell G4: =SUM(C4:F4)", mark: 1 },
+          { code: "C2b", desc: "Revenue formula calculated correctly in cell H4: =G4*B4", mark: 1 },
+          { code: "C3", desc: "Formulas successfully replicated down columns G and H for rows 4 to 11", mark: 2 },
+          { code: "C4", desc: "Average formula entered correctly in row 12: =AVERAGE(C4:C11)", mark: 1 },
+          { code: "C5", desc: "Average formula replicated horizontally across columns C to F", mark: 1 },
+          { code: "C6", desc: "Grand total revenue formula entered in cell H12: =SUM(H4:H11)", mark: 1 },
+          { code: "C7", desc: "Currency formatting (£ with 2 decimal places) applied to all monetary figures", mark: 2 },
+          { code: "C8", desc: "Data sorted in descending order of Total Revenue (Column H)", mark: 2 },
+          { code: "C9a", desc: "Bar or Column chart created showing Activity vs Total Bookings accurately", mark: 1 },
+          { code: "C9b", desc: "Chart includes appropriate title and clearly labeled axes", mark: 1 }
+        ]
+      },
+      {
+        id: "taskD",
+        letter: "Task D",
+        title: "Online Membership Portal Registration & Upload",
+        marks: 5,
+        brief: "Register a junior sports charter club on the simulated online membership portal using MEMBERSHIP PORTAL.html.",
+        instructions: [
+          "Open <code>MEMBERSHIP PORTAL.html</code> in a web browser.",
+          "Enter Reference Number: <code>RHC-9428-JUN</code>, Organisation Name: <code>Riverside Youth FC</code>, Contact Person: <code>Sarah Jenkins</code>, Telephone: <code>01632 960882</code>, Email: <code>s.jenkins@riversideyouth.org.uk</code>.",
+          "Select Membership Category: <strong>Junior Community Charter Club</strong> and enter Court Allocation Code: <code>COURT-HALL-B</code>.",
+          "Upload the club verification file <code>SPORTS BADGE.jpg</code>.",
+          "Select communication preferences for <strong>Email Updates</strong> and <strong>SMS Alerts</strong>, then click Submit Registration.",
+          "Record the generated confirmation token (<code>AUTH-BOOKING-9942-VERIFIED</code>) as evidence."
+        ],
+        type: "web_form",
+        rubric: [
+          { code: "D1", desc: "Organisation and contact details entered accurately (Account RHC-9428-JUN, Riverside Youth FC, Sarah Jenkins, phone, email)", mark: 2 },
+          { code: "D2", desc: "Membership category and court allocation code selected accurately", mark: 1 },
+          { code: "D3", desc: "Verification file uploaded into form file field", mark: 1 },
+          { code: "D4", desc: "Communication preferences selected for Email and SMS and confirmation token recorded", mark: 1 }
+        ]
+      },
+      {
+        id: "taskE",
+        letter: "Task E",
+        title: "File Organization & Network Troubleshooting",
+        marks: 6,
+        brief: "The leisure hub has installed a new wireless tablet terminal for pool deck check-ins that fails to obtain an IP address. Organise directories and document troubleshooting steps.",
+        instructions: [
+          "In your candidate workspace, create a new top-level folder named <code>Network Support</code>.",
+          "Inside <code>Network Support</code>, create a subfolder named <code>Pool Deck Tablet</code>.",
+          "Research why a wireless tablet device might fail to obtain an IP address or connect to Wi-Fi (e.g., router DHCP pool exhausted, tablet out of wireless range, incorrect WPA3 security key, or 2.4GHz / 5GHz frequency band mismatch).",
+          "Save your troubleshooting solution inside the <code>Pool Deck Tablet</code> folder with the descriptive filename <code>Tablet Connection Troubleshooting.docx</code>.",
+          "Ensure your recommendations are practical, well-structured, and cite a reliable, secure (HTTPS) technical support reference with a recent date."
+        ],
+        type: "file_mgmt",
+        rubric: [
+          { code: "E1a", desc: "New top-level directory created named 'Network Support'", mark: 1 },
+          { code: "E1b", desc: "Subfolder created inside named 'Pool Deck Tablet'", mark: 1 },
+          { code: "E2a", desc: "Document saved with appropriate descriptive filename 'Tablet Connection Troubleshooting.docx'", mark: 1 },
+          { code: "E2b", desc: "Identifies at least two plausible technical causes for IP / DHCP connection failure", mark: 1 },
+          { code: "E2c", desc: "Provides clear sequential troubleshooting steps to restore tablet connectivity", mark: 1 },
+          { code: "E2d", desc: "Demonstrates secure technical research habits citing reliable HTTPS sources with date verification", mark: 1 }
+        ]
+      }
+    ]
+  },
+
+  mfs_mock2: {
+    id: "mfs_mock2",
+    level: "Level 1",
+    name: "MFS DFS L1 Mock 2: EcoCycle Bike Repair & Green Commute",
+    totalMarks: 54,
+    passMark: 35,
+    durationMinutes: 90,
+    dataPackUrl: "assets/downloads/dfs/dfs-mfs-l1-mock-2-data-files.zip",
+    dataPackName: "dfs-mfs-l1-mock-2-data-files.zip",
+    dataFiles: [
+      "WORKSHOP POSTER.docx",
+      "COMMUNITY CHARTER.docx",
+      "VOLUNTEER REGISTRATION.html",
+      "BIKE WORKSHOP SALES.xlsx",
+      "MFS DFS L1 MOCK 2 IMAGES/BIKE REPAIR.jpg",
+      "MFS DFS L1 MOCK 2 IMAGES/SAFETY CERT.jpg"
+    ],
+    sectionA: [
+      {
+        qNum: 1,
+        title: "Phishing Detection & Suspicious Hyperlinks",
+        stem: "A cycle hub volunteer receives an urgent email claiming a bicycle parts delivery has been detained and requesting £2.50 via an unfamiliar payment link (http://quick-courier-track77.info/pay). What action should the volunteer take?",
+        options: [
+          { text: "Click the link immediately and enter business credit card details", isCorrect: false },
+          { text: "Do not click the link or provide card details; report the email as phishing and verify delivery status via the supplier's official website", isCorrect: true },
+          { text: "Forward the email to all community bike hub subscribers", isCorrect: false },
+          { text: "Reply to the email with the customer's personal phone number", isCorrect: false }
+        ],
+        mark: 1,
+        explanation: "Pearson Criteria: Phishing emails often create artificial urgency and demand small administrative fees via deceptive unverified domains. Legitimate suppliers should always be contacted directly via official channels."
+      },
+      {
+        qNum: 2,
+        title: "Physical Data Security & Screen Privacy",
+        stem: "When handling customer membership registrations at an open public service counter, how can a staff member prevent 'shoulder surfing' and unauthorized observation of personal data?",
+        options: [
+          { text: "Fitting a privacy filter screen to the monitor and locking the workstation (Win + L) when stepping away", isCorrect: true },
+          { text: "Turning the screen brightness up to maximum", isCorrect: false },
+          { text: "Leaving the registration screen open so customers can double check details unattended", isCorrect: false },
+          { text: "Minimizing the browser window without locking the operating system", isCorrect: false }
+        ],
+        mark: 1,
+        explanation: "Pearson Criteria: Privacy screen filters narrow the viewing angle so only someone directly in front can read the display, and locking the operating system prevents unauthorized inspection when unattended."
+      },
+      {
+        qNum: 3,
+        title: "Refining Search Results by Recency",
+        stem: "The cycle project coordinator wants to locate the most up-to-date UK Highway Code cycling safety amendments published in 2026. Which search filter technique is most effective?",
+        options: [
+          { text: "Using search engine tools to filter results by publication date (e.g. Past Year / 2026)", isCorrect: true },
+          { text: "Typing random letters into the search query bar", isCorrect: false },
+          { text: "Clicking the oldest archived forum thread found online", isCorrect: false },
+          { text: "Searching solely on commercial image sharing websites", isCorrect: false }
+        ],
+        mark: 1,
+        explanation: "Pearson Criteria: Date range filters ensure that search engines return the latest statutory amendments rather than outdated, superseded legal guidance."
+      },
+      {
+        qNum: 4,
+        title: "Password Security & Passphrase Best Practice",
+        stem: "Which of the following creates the most resilient, secure password for protecting the workshop customer database?",
+        options: [
+          { text: "Writing 'B1k3s2026' on a sticky note attached to the counter", isCorrect: false },
+          { text: "Combining three or four random, unrelated words with numbers and symbols (e.g. 'Falcon#Pebble!Orbit82')", isCorrect: true },
+          { text: "Using the user's date of birth or pet's name", isCorrect: false },
+          { text: "Using the sequence '12345678' so it is easy for volunteers to remember", isCorrect: false }
+        ],
+        mark: 1,
+        explanation: "Pearson Criteria: The UK National Cyber Security Centre (NCSC) recommends using three or more random words combined with numbers and symbols, creating high entropy that resists brute-force dictionary attacks."
+      },
+      {
+        qNum: 5,
+        title: "Malware Types: Trojan Horses",
+        stem: "An employee downloads what claims to be a free bike maintenance tool from an unverified website. When opened, it quietly installs a hidden backdoor allowing remote attackers access. What type of malware is this?",
+        options: [
+          { text: "Trojan Horse", isCorrect: true },
+          { text: "Spam filter", isCorrect: false },
+          { text: "Antivirus scanner", isCorrect: false },
+          { text: "Web browser extension", isCorrect: false }
+        ],
+        mark: 1,
+        explanation: "Pearson Criteria: A Trojan is malicious software that disguises itself as legitimate or harmless software to trick users into installing it, thereby breaching security."
+      },
+      {
+        qNum: 6,
+        title: "Cloud File Collaboration & Version Conflicts",
+        stem: "Two mechanics open and edit offline copies of the same bike maintenance log spreadsheet simultaneously. What is a common outcome when both reconnect to cloud synchronization?",
+        options: [
+          { text: "The cloud service creates a conflicted copy or prompts the user to merge differences to avoid overwriting changes", isCorrect: true },
+          { text: "Both computers immediately shut down permanently", isCorrect: false },
+          { text: "The files are converted into audio MP3 tracks", isCorrect: false },
+          { text: "Internet access is revoked by the local council", isCorrect: false }
+        ],
+        mark: 1,
+        explanation: "Pearson Criteria: Cloud collaborative storage identifies asynchronous edits and generates conflict versions or version history snapshots to prevent uncoordinated data loss."
+      },
+      {
+        qNum: 7,
+        title: "Selecting Appropriate File Formats (PDF vs DOCX)",
+        stem: "The coordinator needs to distribute the final, approved Volunteer Safety Handbook to external partners so it cannot be easily modified and displays identically on all devices. Which format is best?",
+        options: [
+          { text: "Plain text (.TXT)", isCorrect: false },
+          { text: "Portable Document Format (.PDF)", isCorrect: true },
+          { text: "Editable Word Template (.DOTX)", isCorrect: false },
+          { text: "Bitmap Image (.BMP)", isCorrect: false }
+        ],
+        mark: 1,
+        explanation: "Pearson Criteria: PDF preserves typography, layout, and document integrity across diverse operating systems and devices while restricting accidental edits."
+      },
+      {
+        qNum: 8,
+        title: "UK GDPR: The Accuracy Principle",
+        stem: "A customer informs the bike hub that their residential address and emergency medical contact have changed. Under UK GDPR, which data principle requires the hub to update this record promptly?",
+        options: [
+          { text: "Storage limitation", isCorrect: false },
+          { text: "The Accuracy Principle", isCorrect: true },
+          { text: "Data minimization", isCorrect: false },
+          { text: "Lawfulness of hardware", isCorrect: false }
+        ],
+        mark: 1,
+        explanation: "Pearson Criteria: Under the UK GDPR Accuracy Principle, data controllers must take every reasonable step to ensure personal data that is inaccurate is erased or rectified without delay."
+      },
+      {
+        qNum: 9,
+        title: "Public Wi-Fi Risks & Virtual Private Networks (VPN)",
+        stem: "Why should a staff member use a Virtual Private Network (VPN) when checking financial bank accounts over an open, unencrypted public coffee shop Wi-Fi network?",
+        options: [
+          { text: "It doubles the battery life of the laptop", isCorrect: false },
+          { text: "It encrypts network traffic through a secure tunnel, protecting sensitive financial data from eavesdropping on open public networks", isCorrect: true },
+          { text: "It bypasses the need for account passwords completely", isCorrect: false },
+          { text: "It automatically clears browser cookies and bookmarks", isCorrect: false }
+        ],
+        mark: 1,
+        explanation: "Pearson Criteria: Open public Wi-Fi networks transmit packets in the clear; a VPN encrypts all data passing between the device and the VPN server, preventing packet sniffing."
+      },
+      {
+        qNum: 10,
+        title: "Backup Strategy: 3-2-1 Rule",
+        stem: "Which backup protocol best protects the bike hub against catastrophic data loss caused by office fire, flood, or ransomware infection?",
+        options: [
+          { text: "Saving all documents solely on the desktop screen of one single computer", isCorrect: false },
+          { text: "Maintaining three copies of important data on two different media types, with at least one copy stored safely offsite or in the secure cloud (3-2-1 rule)", isCorrect: true },
+          { text: "Copying files to a USB flash drive and leaving it plugged into the workshop PC overnight", isCorrect: false },
+          { text: "Printing every spreadsheet onto paper and shredding the digital version", isCorrect: false }
+        ],
+        mark: 1,
+        explanation: "Pearson Criteria: The recognized industry benchmark (3-2-1 strategy) mandates 3 total copies of data, across 2 different media types, with 1 copy stored offsite/cloud to guarantee disaster recovery."
+      }
+    ],
+    tasks: [
+      {
+        id: "taskA",
+        letter: "Task A",
+        title: "Information Search & Professional Email Communication",
+        marks: 7,
+        brief: "The workshop coordinator, Elena, wants you to find the official UK/European safety standard certification code for cycle helmets and email the details to her.",
+        instructions: [
+          "Use a search engine to find the UK and European safety standard number for cycle helmets (BS EN 1078).",
+          "Capture a screenshot of your search keywords and result.",
+          "Compose an email to <code>elena.coordinator@ecocycleproject.org.uk</code> with the subject <code>UK Cycle Helmet Safety Standards</code>.",
+          "State clearly that cycle helmets sold in the UK must meet <strong>BS EN 1078</strong> (or BS EN 1080 for young children), and include a polite greeting and sign-off.",
+          "Add an automated email signature formatted with 'Kind regards' and candidate name."
+        ],
+        type: "search_email",
+        searchAnswer: "UK cycle helmet safety standard BS EN 1078",
+        searchResultSnippet: "Official UK Cycle Safety Regulations: All bicycle helmets sold or hired in the United Kingdom must comply with British Standard BS EN 1078 (Helmets for pedal cyclists and for users of skateboards and roller skates), ensuring shock absorption and chin strap retention.",
+        rubric: [
+          { code: "A1", desc: "Search query demonstrates effective keywords (e.g. 'UK cycle helmet safety standard BS EN 1078')", mark: 1 },
+          { code: "A1b", desc: "Accurate standard code identified: BS EN 1078", mark: 1 },
+          { code: "A2", desc: "Automated email signature included with 'Kind regards' and candidate name", mark: 1 },
+          { code: "A3a", desc: "Recipient address entered accurately: elena.coordinator@ecocycleproject.org.uk", mark: 1 },
+          { code: "A3b", desc: "Subject line appropriate and concise: 'UK Cycle Helmet Safety Standards'", mark: 1 },
+          { code: "A3c", desc: "Polite professional greeting and closing maintained throughout", mark: 1 },
+          { code: "A3d", desc: "Correct helmet safety standard code and details stated in message body", mark: 1 }
+        ]
+      },
+      {
+        id: "taskB",
+        letter: "Task B",
+        title: "Creating & Formatting a Workshop Event Flyer",
+        marks: 11,
+        brief: "Design an attractive promotional event flyer using WORKSHOP POSTER.docx to advertise weekend cycle maintenance sessions.",
+        instructions: [
+          "Open <code>WORKSHOP POSTER.docx</code> from your data folder. Change page orientation to <strong>Landscape</strong>.",
+          "Format the main title 'EcoCycle Community Bike Hub — Weekend Maintenance Workshops' in bold, 22 pt, centered green font (#065f46).",
+          "Format the workshop timetable into a clean 5-column table with adjusted column widths and header row shaded light green (#d1fae5).",
+          "Insert <code>BIKE REPAIR.jpg</code> to the right-hand side of the table.",
+          "Crop the image to eliminate excess margins, resize to <strong>6 cm height</strong> maintaining aspect ratio, and apply a 1 pt border.",
+          "Highlight the free community service offer in a callout box: 'Free Community Service: Free 15-minute 20-point safety brake check on your first visit! Pre-book online with voucher code: ECOSAFE26'.",
+          "Apply an outer page border. Ensure balanced, professional layout with zero overlapping text."
+        ],
+        type: "flyer_design",
+        rubric: [
+          { code: "B1", desc: "Page orientation set to Landscape", mark: 1 },
+          { code: "B2a", desc: "Main title formatted in bold, 22 pt, centered", mark: 1 },
+          { code: "B2b", desc: "Workshop schedule formatted inside a clean 5-column table with adjusted widths", mark: 1 },
+          { code: "B2c", desc: "Table header row shaded in light green / contrasting tone", mark: 1 },
+          { code: "B3a", desc: "Image BIKE REPAIR.jpg inserted into document", mark: 1 },
+          { code: "B3b", desc: "Image positioned neatly to the right-hand side of the timetable table", mark: 1 },
+          { code: "B4", desc: "Image cropped to eliminate excess margins/borders", mark: 1 },
+          { code: "B5", desc: "Image resized to 6 cm height maintaining proportional aspect ratio", mark: 1 },
+          { code: "B6", desc: "Free community service offer highlighted in a distinct styled callout box", mark: 1 },
+          { code: "B7a", desc: "Outer page border applied neatly", mark: 1 },
+          { code: "B7b", desc: "Document fit for purpose: balanced spacing, legible typography, zero overlapping elements", mark: 1 }
+        ]
+      },
+      {
+        id: "taskC",
+        letter: "Task C",
+        title: "Bike Workshop & Hire Revenue Spreadsheet Analysis",
+        marks: 15,
+        brief: "Calculate total sessions and weekly revenue across 8 bike services in BIKE WORKSHOP SALES.xlsx, apply currency formatting, sort data, and create an informative chart.",
+        instructions: [
+          "Merge and centre cells A1:H1, set font size to 20 pt, bold, and shade cells A1:H1 soft green.",
+          "In cell G4, enter a formula to calculate Total Sessions for Standard Commuter Bike Hire across Mon-Fri: <code>=SUM(C4:F4)</code>.",
+          "In cell H4, calculate Total Revenue: <code>=G4*B4</code> (Total Sessions × Hourly / Hire Rate).",
+          "Replicate formulas down columns G and H for all 8 workshop services (rows 4 to 11).",
+          "In row 12, calculate the Daily Average Bookings: <code>=AVERAGE(C4:C11)</code> and replicate across columns C to F.",
+          "In cell H12, calculate Grand Total Revenue using <code>=SUM(H4:H11)</code>.",
+          "Format all hire rates (column B) and revenue amounts (column H and cell H12) as British Pounds (£) with 2 decimal places.",
+          "Sort the services table (rows A4:H11) in descending order of Total Revenue (Column H).",
+          "Create a 2D Clustered Column or Bar Chart comparing Service / Hire Item (A3:A11) against Total Sessions (G3:G11). Add an informative chart title, axis titles, and place the chart neatly below the data table or on a separate sheet."
+        ],
+        type: "spreadsheet",
+        rubric: [
+          { code: "C1a", desc: "Main heading merged & centred across A1:H1 with 20 pt bold styling", mark: 1 },
+          { code: "C1b", desc: "Header row shaded with soft green background fill", mark: 1 },
+          { code: "C2a", desc: "Total sessions formula entered correctly in cell G4: =SUM(C4:F4)", mark: 1 },
+          { code: "C2b", desc: "Revenue formula calculated correctly in cell H4: =G4*B4", mark: 1 },
+          { code: "C3", desc: "Formulas successfully replicated down columns G and H for rows 4 to 11", mark: 2 },
+          { code: "C4", desc: "Average formula entered correctly in row 12: =AVERAGE(C4:C11)", mark: 1 },
+          { code: "C5", desc: "Average formula replicated horizontally across columns C to F", mark: 1 },
+          { code: "C6", desc: "Grand total revenue formula entered in cell H12: =SUM(H4:H11)", mark: 1 },
+          { code: "C7", desc: "Currency formatting (£ with 2 decimal places) applied to all monetary figures", mark: 2 },
+          { code: "C8", desc: "Data sorted in descending order of Total Revenue (Column H)", mark: 2 },
+          { code: "C9a", desc: "Bar or Column chart created showing Service Item vs Total Sessions accurately", mark: 1 },
+          { code: "C9b", desc: "Chart includes appropriate title and clearly labeled axes", mark: 1 }
+        ]
+      },
+      {
+        id: "taskD",
+        letter: "Task D",
+        title: "Online Volunteer Registration & File Upload",
+        marks: 5,
+        brief: "Register a volunteer mechanic on the simulated online portal using VOLUNTEER REGISTRATION.html.",
+        instructions: [
+          "Open <code>VOLUNTEER REGISTRATION.html</code> in a web browser.",
+          "Enter Reference ID: <code>VOL-7731-MEC</code>, Full Name: <code>Liam Stewart</code>, Contact Email: <code>liam.volunteer@ecocycleproject.org.uk</code>.",
+          "Select Workshop Bay Role: <strong>Mechanical Tune-Up Lead</strong>.",
+          "Upload the certification badge file <code>SAFETY CERT.jpg</code>.",
+          "Submit the registration and record the generated confirmation token (<code>AUTH-ECO-8831-VOLUNTEER</code>) as evidence."
+        ],
+        type: "web_form",
+        rubric: [
+          { code: "D1", desc: "Volunteer reference ID, full name, and email entered accurately without errors", mark: 2 },
+          { code: "D2", desc: "Workshop bay role selected accurately: Mechanical Tune-Up Lead", mark: 1 },
+          { code: "D3", desc: "Verification file SAFETY CERT.jpg uploaded into file input field", mark: 1 },
+          { code: "D4", desc: "Form submitted and confirmation token recorded: AUTH-ECO-8831-VOLUNTEER", mark: 1 }
+        ]
+      },
+      {
+        id: "taskE",
+        letter: "Task E",
+        title: "File Organization & Bluetooth Scanner Troubleshooting",
+        marks: 6,
+        brief: "The workshop has an e-bike battery diagnostic scanner that fails to pair via Bluetooth with the workshop tablet. Organise directories and document troubleshooting steps.",
+        instructions: [
+          "In your candidate workspace, create a new top-level folder named <code>Diagnostics</code>.",
+          "Inside <code>Diagnostics</code>, create a subfolder named <code>E-Bike Scanner</code>.",
+          "Research why a Bluetooth diagnostic scanner might fail to connect or pair (e.g. tablet Bluetooth turned off, scanner battery critically low, pairing PIN code mismatch, or radio interference from heavy workshop motors).",
+          "Save your troubleshooting solution inside the <code>E-Bike Scanner</code> folder with the descriptive filename <code>Diagnostic Scanner Troubleshooting.docx</code>.",
+          "Ensure your recommendations are practical, well-structured, and cite a reliable, secure (HTTPS) technical support source with a recent date."
+        ],
+        type: "file_mgmt",
+        rubric: [
+          { code: "E1a", desc: "New top-level directory created named 'Diagnostics'", mark: 1 },
+          { code: "E1b", desc: "New subfolder created inside named 'E-Bike Scanner'", mark: 1 },
+          { code: "E2a", desc: "Document saved with descriptive name 'Diagnostic Scanner Troubleshooting.docx'", mark: 1 },
+          { code: "E2b", desc: "Identifies at least two plausible technical causes for Bluetooth pairing failure", mark: 1 },
+          { code: "E2c", desc: "Provides clear sequential troubleshooting instructions to restore connectivity", mark: 1 },
+          { code: "E2d", desc: "References credible HTTPS technical support source with recent date verification", mark: 1 }
+        ]
+      }
+    ]
+  },
+
+  mfs_mock3: {
+    id: "mfs_mock3",
+    level: "Level 1",
+    name: "MFS DFS L1 Mock 3: Apex Express Logistics & Regional Courier Depot",
+    totalMarks: 54,
+    passMark: 35,
+    durationMinutes: 90,
+    dataPackUrl: "assets/downloads/dfs/dfs-mfs-l1-mock-3-data-files.zip",
+    dataPackName: "dfs-mfs-l1-mock-3-data-files.zip",
+    dataFiles: [
+      "FLEET BULLETIN.docx",
+      "DRIVER REGULATIONS.docx",
+      "INCIDENT PORTAL.html",
+      "DELIVERY ROUTES.xlsx",
+      "MFS DFS L1 MOCK 3 IMAGES/DELIVERY FLEET.jpg",
+      "MFS DFS L1 MOCK 3 IMAGES/VAN DAMAGE.jpg"
+    ],
+    sectionA: [
+      {
+        qNum: 1,
+        title: "Two-Factor Authentication: App Tokens vs SMS",
+        stem: "Why do cybersecurity authorities recommend using an Authenticator app (e.g. Google Authenticator) rather than SMS text message codes for two-step verification?",
+        options: [
+          { text: "SMS text messages can be intercepted through SIM-swapping and mobile network eavesdropping, whereas app tokens are generated locally on the physical device", isCorrect: true },
+          { text: "Authenticator apps automatically pay for the user's mobile data plan", isCorrect: false },
+          { text: "SMS codes expire in 10 years rather than 30 seconds", isCorrect: false },
+          { text: "Authenticator apps disable all computer antivirus software", isCorrect: false }
+        ],
+        mark: 1,
+        explanation: "Pearson Criteria: SMS verification codes are vulnerable to cellular interception and SIM-swap fraud. Time-based One-Time Password (TOTP) authenticator apps generate cryptographic tokens locally on the device without transmitting over cellular networks."
+      },
+      {
+        qNum: 2,
+        title: "Repetitive Strain Injury (RSI) Prevention",
+        stem: "A dispatch clerk spends 8 hours daily entering parcel barcodes and weights with a mouse. What practice best prevents Repetitive Strain Injury (RSI) to wrists and forearms?",
+        options: [
+          { text: "Using a supportive gel wrist rest, maintaining neutral wrist alignment, and taking regular micro-breaks to stretch fingers and wrists", isCorrect: true },
+          { text: "Bending wrists backward at steep sharp angles while typing continuously without rest", isCorrect: false },
+          { text: "Gripping the mouse as tightly as possible during data entry", isCorrect: false },
+          { text: "Working in the dark without any ambient room illumination", isCorrect: false }
+        ],
+        mark: 1,
+        explanation: "Pearson Criteria: Ergonomic wrist rests, neutral arm alignment (90° elbow angles), and regular rest breaks prevent repetitive tendon strain and carpal tunnel syndrome per HSE workplace standards."
+      },
+      {
+        qNum: 3,
+        title: "Boolean Search Operators: The Minus (-) Exclusion Operator",
+        stem: "A fleet manager wants to research commercial electric delivery vans available in the UK, but wishes to exclude all results relating to toy or model vans. Which search query achieves this?",
+        options: [
+          { text: "electric delivery vans UK -toys -models", isCorrect: true },
+          { text: "electric vans + toys + models + please", isCorrect: false },
+          { text: "click every sponsored shopping ad on social media", isCorrect: false },
+          { text: "search vans everywhere without keywords", isCorrect: false }
+        ],
+        mark: 1,
+        explanation: "Pearson Criteria: The minus operator (-) immediately preceding a term instructs the search engine to exclude any web page containing that word from the result set."
+      },
+      {
+        qNum: 4,
+        title: "Digital Footprint & Location Tracking Privacy",
+        stem: "A courier app requires drivers to enable continuous high-precision GPS tracking on their personal mobile smartphones. What privacy concern arises from this practice?",
+        options: [
+          { text: "It creates a granular digital footprint revealing personal location histories, movements, and off-duty activities", isCorrect: true },
+          { text: "It permanently erases all photos stored on the memory card", isCorrect: false },
+          { text: "It changes the phone's language setting to French", isCorrect: false },
+          { text: "It increases cellular download speed by 500%", isCorrect: false }
+        ],
+        mark: 1,
+        explanation: "Pearson Criteria: Continuous GPS telemetry builds an invasive location footprint. Under data protection regulations, location tracking must be proportional, transparent, and confined strictly to active working shifts."
+      },
+      {
+        qNum: 5,
+        title: "Cybersecurity Threats: Spyware & Keyloggers",
+        stem: "A depot computer is infected with malware that secretly monitors and records every keystroke typed, including courier logins and customer card details, and transmits them to a remote criminal. What is this malware called?",
+        options: [
+          { text: "Keylogger (Spyware)", isCorrect: true },
+          { text: "Software firewall", isCorrect: false },
+          { text: "Disk defragmenter", isCorrect: false },
+          { text: "Screen saver", isCorrect: false }
+        ],
+        mark: 1,
+        explanation: "Pearson Criteria: A keylogger is a specialized form of spyware that records keyboard inputs to harvest passwords, banking credentials, and sensitive personal information covertly."
+      },
+      {
+        qNum: 6,
+        title: "Operating System Security Updates & Patching",
+        stem: "Why is it vital for logistics depot workstations to install operating system and security patches as soon as they become available?",
+        options: [
+          { text: "To repair known security vulnerabilities and protect against newly discovered exploits and malware strains", isCorrect: true },
+          { text: "To delete all delivery documents from the storage drive", isCorrect: false },
+          { text: "To change the computer brand manufacturer name", isCorrect: false },
+          { text: "To reduce the physical weight of the desktop computer", isCorrect: false }
+        ],
+        mark: 1,
+        explanation: "Pearson Criteria: Software vendors publish security patches to close discovered vulnerabilities. Deferring updates leaves systems exposed to automated exploit kits and zero-day attacks."
+      },
+      {
+        qNum: 7,
+        title: "Connection Speed (Bandwidth) vs Storage Capacity",
+        stem: "Which of the following correctly pairs a digital measurement with what it measures?",
+        options: [
+          { text: "Megabits per second (Mbps) measures internet download/upload speed; Gigabytes (GB) measures file storage capacity", isCorrect: true },
+          { text: "Gigabytes (GB) measures broadband connection speed; Mbps measures hard drive capacity", isCorrect: false },
+          { text: "Kilobytes (KB) measures monitor brightness; Gigabytes (GB) measures mouse speed", isCorrect: false },
+          { text: "Terabytes (TB) measures audio volume; Megabytes (MB) measures keyboard layout", isCorrect: false }
+        ],
+        mark: 1,
+        explanation: "Pearson Criteria: Bandwidth (data transfer speed) is measured in bits per second (e.g. Mbps, Gbps), whereas digital storage capacity is measured in bytes (e.g. KB, MB, GB, TB)."
+      },
+      {
+        qNum: 8,
+        title: "UK GDPR: Right to Rectification",
+        stem: "A customer discovers that their delivery surname and house postcode are recorded incorrectly on the courier dispatch system and asks for them to be corrected. What statutory right is this under UK GDPR?",
+        options: [
+          { text: "Right to rectification", isCorrect: true },
+          { text: "Right to take ownership of depot vehicles", isCorrect: false },
+          { text: "Right to bypass parcel delivery charges", isCorrect: false },
+          { text: "Right to delete the postal sorting office", isCorrect: false }
+        ],
+        mark: 1,
+        explanation: "Pearson Criteria: Under Article 16 of UK GDPR, the Right to Rectification empowers individuals to have inaccurate personal data rectified or completed without undue delay."
+      },
+      {
+        qNum: 9,
+        title: "Image Formats: Lossy JPEG vs Lossless PNG",
+        stem: "Why does the dispatch manager use PNG format for the official Apex company logo on website headers, but JPEG format for thousands of parcel condition delivery photos?",
+        options: [
+          { text: "PNG supports sharp edges and transparent backgrounds for logos, while JPEG provides efficient compression to save storage space for high-volume photos", isCorrect: true },
+          { text: "JPEG is exclusively an audio file format, while PNG is a video file format", isCorrect: false },
+          { text: "PNG files cannot be displayed on computer monitors", isCorrect: false },
+          { text: "JPEG files permanently disable computer web browsers", isCorrect: false }
+        ],
+        mark: 1,
+        explanation: "Pearson Criteria: PNG uses lossless compression with alpha channel transparency ideal for graphics and logos; JPEG uses lossy compression to dramatically reduce photo file sizes for storage efficiency."
+      },
+      {
+        qNum: 10,
+        title: "Secure Disposal of Obsolete Digital Storage Media",
+        stem: "The logistics hub is decommissioning an old file server hard drive that contains historical customer delivery manifests and payment references. What is the most secure disposal method?",
+        options: [
+          { text: "Throwing the hard drive into a standard municipal outdoor waste wheelie bin", isCorrect: false },
+          { text: "Physical destruction (e.g. industrial shredding or degaussing) carried out by an accredited secure data destruction provider", isCorrect: true },
+          { text: "Dragging the files into the desktop Recycle Bin and leaving the drive in reception", isCorrect: false },
+          { text: "Giving the hard drive to an unvetted member of the public", isCorrect: false }
+        ],
+        mark: 1,
+        explanation: "Pearson Criteria: Simply emptying the Recycle Bin or formatting a drive leaves recoverable data. Secure disposal of sensitive media requires certified physical shredding, crushing, or degaussing per ISO 27001 standards."
+      }
+    ],
+    tasks: [
+      {
+        id: "taskA",
+        letter: "Task A",
+        title: "Information Search & Professional Email Communication",
+        marks: 7,
+        brief: "The depot operations manager, Marcus, wants you to locate the official UK rules regarding commercial delivery van driver daily driving limits and email the summary to him.",
+        instructions: [
+          "Use a search engine to find the UK maximum daily driving limit under domestic rules for commercial delivery van drivers (DVSA: 10 hours daily driving limit).",
+          "Capture a screenshot of your search keywords and result.",
+          "Compose an email to <code>marcus.depot@apexlogistics.co.uk</code> with the subject <code>UK Commercial Driver Daily Hours Regulations</code>.",
+          "Include a polite greeting, state clearly that the maximum daily driving limit is <strong>10 hours</strong> per day, and state that drivers must take a rest break after 4.5 hours of driving.",
+          "Add an automated email signature formatted with 'Kind regards' and candidate name."
+        ],
+        type: "search_email",
+        searchAnswer: "UK commercial van driver daily driving hours limit 10 hours",
+        searchResultSnippet: "Official UK DVSA Drivers' Hours Guidance: Under GB domestic drivers' hours rules, van drivers must not exceed 10 hours of driving in a working day, and must take a rest break of at least 30 minutes after 4.5 hours of continuous driving to avoid driver fatigue.",
+        rubric: [
+          { code: "A1", desc: "Search engine query demonstrates appropriate keywords (e.g. 'UK van driver daily driving hours DVSA')", mark: 1 },
+          { code: "A1b", desc: "Correct maximum daily driving limit identified: 10 hours daily limit (and 4.5h break rule)", mark: 1 },
+          { code: "A2", desc: "Automated email signature included formatted with 'Kind regards' and candidate name", mark: 1 },
+          { code: "A3a", desc: "Recipient address entered accurately: marcus.depot@apexlogistics.co.uk", mark: 1 },
+          { code: "A3b", desc: "Subject line appropriate and concise: 'UK Commercial Driver Daily Hours Regulations'", mark: 1 },
+          { code: "A3c", desc: "Polite professional greeting and closing maintained throughout", mark: 1 },
+          { code: "A3d", desc: "Accurate driving limits and mandatory rest break requirements stated in message body", mark: 1 }
+        ]
+      },
+      {
+        id: "taskB",
+        letter: "Task B",
+        title: "Creating & Formatting a Fleet Safety Bulletin",
+        marks: 11,
+        brief: "Create an authoritative, professional fleet safety bulletin using FLEET BULLETIN.docx to notify drivers of mandatory daily vehicle walkaround checks.",
+        instructions: [
+          "Open <code>FLEET BULLETIN.docx</code> from your candidate folder. Change page orientation to <strong>Landscape</strong>.",
+          "Format the main title 'Apex Express Logistics — Weekly Vehicle Safety & Inspection Schedule' in bold, 22 pt, centered navy font (#1e3a8a).",
+          "Format the vehicle inspection schedule into a clean 5-column table with adjusted column widths and header row shaded light blue (#dbeafe).",
+          "Insert <code>DELIVERY FLEET.jpg</code> to the right-hand side of the table.",
+          "Crop the image to eliminate unnecessary background borders, resize to <strong>6 cm height</strong> maintaining aspect ratio, and apply a 1 pt border.",
+          "Highlight the mandatory safety notice in a distinct callout box: 'Mandatory Safety Notice: Drivers must complete the 20-point digital walkaround check on handheld scanners before logging onto routes! Failure to log vehicle defect reports is a regulatory breach.'.",
+          "Apply an outer page border. Ensure balanced, professional layout with zero overlapping text."
+        ],
+        type: "flyer_design",
+        rubric: [
+          { code: "B1", desc: "Page orientation set to Landscape", mark: 1 },
+          { code: "B2a", desc: "Main title formatted in bold, 22 pt, centered", mark: 1 },
+          { code: "B2b", desc: "Inspection schedule formatted inside a clean 5-column table with adjusted widths", mark: 1 },
+          { code: "B2c", desc: "Table header row shaded in light blue / contrasting tone", mark: 1 },
+          { code: "B3a", desc: "Image DELIVERY FLEET.jpg inserted into document", mark: 1 },
+          { code: "B3b", desc: "Image positioned neatly to the right-hand side of the inspection table", mark: 1 },
+          { code: "B4", desc: "Image cropped to eliminate excess margins/borders", mark: 1 },
+          { code: "B5", desc: "Image resized to 6 cm height maintaining proportional aspect ratio", mark: 1 },
+          { code: "B6", desc: "Mandatory safety notice highlighted in a distinct styled callout box", mark: 1 },
+          { code: "B7a", desc: "Outer page border applied neatly", mark: 1 },
+          { code: "B7b", desc: "Document fit for purpose: balanced spacing, legible typography, zero overlapping elements", mark: 1 }
+        ]
+      },
+      {
+        id: "taskC",
+        letter: "Task C",
+        title: "Regional Delivery Routes & Revenue Spreadsheet Analysis",
+        marks: 15,
+        brief: "Calculate total parcels and weekly route revenue across 8 delivery routes in DELIVERY ROUTES.xlsx, apply currency formatting, sort data, and create an informative chart.",
+        instructions: [
+          "Merge and centre cells A1:H1, set font size to 20 pt, bold, and shade cells A1:H1 soft blue.",
+          "In cell G4, enter a formula to calculate Total Parcels for Route 01 - Metro Centre Express: <code>=SUM(C4:F4)</code>.",
+          "In cell H4, calculate Total Revenue: <code>=G4*B4</code> (Total Parcels × Fee per Parcel).",
+          "Replicate formulas down columns G and H for all 8 delivery routes (rows 4 to 11).",
+          "In row 12, calculate the Daily Average Consignments: <code>=AVERAGE(C4:C11)</code> and replicate across columns C to F.",
+          "In cell H12, calculate Grand Total Revenue using <code>=SUM(H4:H11)</code>.",
+          "Format all parcel fees (column B) and revenue amounts (column H and cell H12) as British Pounds (£) with 2 decimal places.",
+          "Sort the routes table (rows A4:H11) in descending order of Total Revenue (Column H).",
+          "Create a 2D Clustered Column or Bar Chart comparing Regional Delivery Route (A3:A11) against Total Parcels (G3:G11). Add an informative chart title, axis titles, and place the chart neatly below the data table or on a separate sheet."
+        ],
+        type: "spreadsheet",
+        rubric: [
+          { code: "C1a", desc: "Main heading merged & centred across A1:H1 with 20 pt bold styling", mark: 1 },
+          { code: "C1b", desc: "Header row shaded with soft blue background fill", mark: 1 },
+          { code: "C2a", desc: "Total parcels formula entered correctly in cell G4: =SUM(C4:F4)", mark: 1 },
+          { code: "C2b", desc: "Revenue formula calculated correctly in cell H4: =G4*B4", mark: 1 },
+          { code: "C3", desc: "Formulas successfully replicated down columns G and H for rows 4 to 11", mark: 2 },
+          { code: "C4", desc: "Average formula entered correctly in row 12: =AVERAGE(C4:C11)", mark: 1 },
+          { code: "C5", desc: "Average formula replicated horizontally across columns C to F", mark: 1 },
+          { code: "C6", desc: "Grand total revenue formula entered in cell H12: =SUM(H4:H11)", mark: 1 },
+          { code: "C7", desc: "Currency formatting (£ with 2 decimal places) applied to all monetary figures", mark: 2 },
+          { code: "C8", desc: "Data sorted in descending order of Total Revenue (Column H)", mark: 2 },
+          { code: "C9a", desc: "Bar or Column chart created showing Route Name vs Total Parcels accurately", mark: 1 },
+          { code: "C9b", desc: "Chart includes appropriate title and clearly labeled axes", mark: 1 }
+        ]
+      },
+      {
+        id: "taskD",
+        letter: "Task D",
+        title: "Online Vehicle Incident Reporting Portal & Upload",
+        marks: 5,
+        brief: "Log a vehicle damage incident on the simulated depot portal using INCIDENT PORTAL.html.",
+        instructions: [
+          "Open <code>INCIDENT PORTAL.html</code> in a web browser.",
+          "Enter Driver ID: <code>DRV-5092</code>, Vehicle Registration: <code>AP24 XLE</code>, Depot Route Assignment: <code>Route 01 - Metro Centre Express</code>.",
+          "Upload the incident damage photograph <code>VAN DAMAGE.jpg</code>.",
+          "Submit the incident report and record the generated confirmation token (<code>AUTH-APEX-7714-INCIDENT</code>) as evidence."
+        ],
+        type: "web_form",
+        rubric: [
+          { code: "D1", desc: "Driver ID and vehicle registration entered accurately without errors", mark: 2 },
+          { code: "D2", desc: "Depot route assignment selected accurately: Route 01 - Metro Centre Express", mark: 1 },
+          { code: "D3", desc: "Damage photograph file VAN DAMAGE.jpg uploaded into file input field", mark: 1 },
+          { code: "D4", desc: "Form submitted and confirmation token recorded: AUTH-APEX-7714-INCIDENT", mark: 1 }
+        ]
+      },
+      {
+        id: "taskE",
+        letter: "Task E",
+        title: "File Organization & Barcode Scanner Troubleshooting",
+        marks: 6,
+        brief: "The parcel sorting depot has a wireless handheld barcode scanner that fails to scan parcel tracking labels. Organise directories and document troubleshooting steps.",
+        instructions: [
+          "In your candidate workspace, create a new top-level folder named <code>Fleet Support</code>.",
+          "Inside <code>Fleet Support</code>, create a subfolder named <code>Barcode Scanners</code>.",
+          "Research why a warehouse laser barcode scanner might fail to scan or sync data (e.g. dirty or scratched optical laser lens, flat battery / poor cradle docking contact, wireless base station disconnected from network, or incorrect barcode symbology mode enabled).",
+          "Save your troubleshooting solution inside the <code>Barcode Scanners</code> folder with the descriptive filename <code>Scanner Maintenance and Troubleshooting.docx</code>.",
+          "Ensure your recommendations are practical, well-structured, and cite a reliable, secure (HTTPS) technical support source with a recent date."
+        ],
+        type: "file_mgmt",
+        rubric: [
+          { code: "E1a", desc: "New top-level directory created named 'Fleet Support'", mark: 1 },
+          { code: "E1b", desc: "New subfolder created inside named 'Barcode Scanners'", mark: 1 },
+          { code: "E2a", desc: "Document saved with descriptive name 'Scanner Maintenance and Troubleshooting.docx'", mark: 1 },
+          { code: "E2b", desc: "Identifies at least two plausible technical causes for scanner laser / data sync failure", mark: 1 },
+          { code: "E2c", desc: "Provides clear sequential troubleshooting instructions to restore scanner functionality", mark: 1 },
+          { code: "E2d", desc: "References credible HTTPS technical support source with recent date verification", mark: 1 }
+        ]
+      }
+    ]
+  }
+
 };
 
 let currentSetKey = "set1";

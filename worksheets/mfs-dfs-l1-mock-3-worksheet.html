@@ -1,0 +1,301 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Master Functional Skills — MFS DFS L1 Mock 3: Apex Express Logistics & Regional Depot</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/mfs-worksheets.css">
+  <style>
+    @page { size: A4 portrait; margin: 12mm 15mm; }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; color: #0f172a; background: #f8fafc; margin: 0; padding: 0; font-size: 10.5pt; line-height: 1.5; }
+    .print-bar { background: #0b172d; color: #f8fafc; padding: 12px 24px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.15); }
+    .print-bar a { color: #93c5fd; text-decoration: none; font-weight: 600; font-size: 0.92rem; display: inline-flex; align-items: center; gap: 8px; }
+    .print-bar a:hover { color: #ffffff; text-decoration: underline; }
+    .btn-action-print { background: #2563eb; color: #ffffff; border: none; padding: 8px 18px; border-radius: 6px; font-weight: 700; font-size: 0.92rem; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }
+    .btn-action-print:hover { background: #1d4ed8; }
+    .nav-pill-group { display: inline-flex; background: rgba(255, 255, 255, 0.1); border-radius: 6px; padding: 3px; margin-right: 12px; }
+    .nav-pill-btn { padding: 6px 14px; border-radius: 4px; font-size: 0.88rem; font-weight: 600; color: #cbd5e1; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+    .nav-pill-btn.active { background: #2563eb; color: #ffffff; }
+    .page-sheet { max-width: 860px; margin: 24px auto; background: #ffffff; padding: 32px 40px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+    .sheet-head { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2.5px solid #0b172d; padding-bottom: 16px; margin-bottom: 20px; }
+    .brand-title { font-size: 1.4rem; font-weight: 900; color: #0b172d; }
+    .brand-title span { color: #2563eb; }
+    .brand-subtitle { font-size: 0.85rem; color: #64748b; margin-top: 2px; }
+    .sheet-meta-badge { background: #eff6ff; border: 1.5px solid #bfdbfe; color: #1e40af; padding: 8px 16px; border-radius: 6px; text-align: right; }
+    .sheet-meta-badge .topic-name { font-size: 1.05rem; font-weight: 800; display: block; }
+    .sheet-meta-badge .spec-tag { font-size: 0.75rem; color: #2563eb; font-weight: 700; text-transform: uppercase; }
+    .learner-bar { display: grid; grid-template-columns: 2fr 1.2fr 1fr; gap: 14px; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; padding: 10px 14px; margin-bottom: 24px; font-size: 0.92rem; }
+    .dotted-line { display: inline-block; width: 60%; border-bottom: 1.5px dotted #94a3b8; height: 12px; margin-left: 6px; }
+    .exam-banner { background: #eff6ff; border-left: 4px solid #2563eb; padding: 14px 18px; margin-bottom: 24px; border-radius: 0 8px 8px 0; }
+    .exam-banner h3 { margin: 0 0 6px 0; color: #1e3a8a; font-size: 1.05rem; }
+    .exam-banner p { margin: 0; font-size: 0.88rem; color: #1e40af; }
+    .sec-header { background: #1e3a8a; color: #ffffff; padding: 10px 16px; border-radius: 6px; margin: 28px 0 16px 0; display: flex; justify-content: space-between; align-items: center; }
+    .sec-header h2 { margin: 0; font-size: 1.15rem; }
+    .sec-header span { font-size: 0.85rem; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 4px; font-weight: 700; }
+    .q-box { background: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 16px 18px; margin-bottom: 18px; page-break-inside: avoid; }
+    .q-head { display: flex; justify-content: space-between; font-weight: 700; color: #1e293b; margin-bottom: 8px; }
+    .q-options { display: grid; grid-template-columns: 1fr; gap: 8px; margin-top: 10px; }
+    .q-opt-label { display: flex; align-items: flex-start; gap: 10px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 8px 12px; font-size: 0.92rem; cursor: pointer; }
+    .q-opt-label:hover { background: #f1f5f9; }
+    .opt-radio { margin-top: 3px; }
+    .task-brief { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 6px; padding: 12px 16px; margin-bottom: 14px; font-size: 0.92rem; color: #1e3a8a; }
+    .task-inst { margin: 0 0 14px 0; padding-left: 20px; font-size: 0.92rem; line-height: 1.6; }
+    .data-table { width: 100%; border-collapse: collapse; margin: 12px 0 18px 0; font-size: 0.88rem; }
+    .data-table th, .data-table td { border: 1px solid #cbd5e1; padding: 8px 10px; text-align: left; }
+    .data-table th { background: #f1f5f9; color: #334155; font-weight: 700; }
+    .work-box { border: 1.5px dashed #94a3b8; background: #fafafa; border-radius: 6px; padding: 14px; margin-top: 12px; min-height: 90px; }
+    .work-box-label { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: #64748b; margin-bottom: 6px; }
+    .evidence-check { background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; padding: 10px 14px; margin-top: 14px; display: flex; align-items: center; gap: 10px; font-size: 0.88rem; font-weight: 600; color: #334155; }
+  </style>
+</head>
+<body>
+
+  <div class="print-bar">
+    <div>
+      <a href="../digital-functional-skills-mock-exam.html?set=mfs_mock3"><i class="fa-solid fa-arrow-left"></i> <span class="back-link-text">Open Interactive Onscreen Player (Mock 3)</span></a>
+    </div>
+    <div style="display:flex; align-items:center;">
+      <div class="nav-pill-group">
+        <span class="nav-pill-btn active"><i class="fa-solid fa-file-lines"></i> Question Paper</span>
+        <a href="mfs-dfs-l1-mock-3-answers.html" class="nav-pill-btn"><i class="fa-solid fa-award"></i> Mark Scheme</a>
+      </div>
+      <button type="button" class="btn-action-print" onclick="window.print()"><i class="fa-solid fa-print"></i> Print Paper</button>
+    </div>
+  </div>
+
+  <div class="page-sheet">
+    <div class="sheet-head">
+      <div>
+        <div class="brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
+        <div class="brand-subtitle">Master Functional Skills (MFS) Edexcel Digital Functional Skills Level 1 Mock</div>
+      </div>
+      <div class="sheet-meta-badge">
+        <span class="topic-name">MFS DFS L1 Mock 3: Apex Express Logistics</span>
+        <span class="spec-tag">54 Marks • 90 Minutes Total</span>
+      </div>
+    </div>
+
+    <div class="learner-bar">
+      <div><strong>Candidate Name:</strong> <span class="dotted-line"></span></div>
+      <div><strong>Date:</strong> <span class="dotted-line"></span></div>
+      <div><strong>Score:</strong> <span class="dotted-line" style="width:40%;"></span> <strong>/ 54</strong></div>
+    </div>
+
+    <div class="exam-banner">
+      <h3><i class="fa-solid fa-truck-fast"></i> Candidate Assessment Instructions</h3>
+      <p>
+        <strong>Context: Apex Express Logistics & Regional Courier Depot</strong><br>
+        • <strong>Section A (Knowledge & Understanding)</strong>: 10 questions (10 marks). Total time allowed: 15 minutes. No internet allowed.<br>
+        • <strong>Section B (Practical Skills)</strong>: 5 tasks (44 marks). Internet permitted. Requires candidate ZIP folder: <code>dfs-mfs-l1-mock-3-data-files.zip</code>.<br>
+        • Pass mark: 35 / 54 (65%). Read each prompt carefully and record evidence in your candidate folder.
+      </p>
+    </div>
+
+    <!-- SECTION A -->
+    <div class="sec-header">
+      <h2>Section A — Digital Knowledge & Understanding</h2>
+      <span>10 Marks (15 Mins)</span>
+    </div>
+
+    <div class="q-box">
+      <div class="q-head"><span>Question 1 • Two-Factor Authentication: App Tokens vs SMS</span><span>(1 mark)</span></div>
+      <p>Why do cybersecurity authorities recommend using an Authenticator app (e.g. Google Authenticator) rather than SMS text message codes for two-step verification?</p>
+      <div class="q-options">
+        <label class="q-opt-label"><input type="radio" name="q1" class="opt-radio"> <span><strong>A</strong> SMS text messages can be intercepted through SIM-swapping and mobile network eavesdropping, whereas app tokens are generated locally on the physical device</span></label>
+        <label class="q-opt-label"><input type="radio" name="q1" class="opt-radio"> <span><strong>B</strong> Authenticator apps automatically pay for the user's mobile data plan</span></label>
+        <label class="q-opt-label"><input type="radio" name="q1" class="opt-radio"> <span><strong>C</strong> SMS codes expire in 10 years rather than 30 seconds</span></label>
+        <label class="q-opt-label"><input type="radio" name="q1" class="opt-radio"> <span><strong>D</strong> Authenticator apps disable all computer antivirus software</span></label>
+      </div>
+    </div>
+
+    <div class="q-box">
+      <div class="q-head"><span>Question 2 • Repetitive Strain Injury (RSI) Prevention</span><span>(1 mark)</span></div>
+      <p>A dispatch clerk spends 8 hours daily entering parcel barcodes and weights with a mouse. What practice best prevents Repetitive Strain Injury (RSI) to wrists and forearms?</p>
+      <div class="q-options">
+        <label class="q-opt-label"><input type="radio" name="q2" class="opt-radio"> <span><strong>A</strong> Using a supportive gel wrist rest, maintaining neutral wrist alignment, and taking regular micro-breaks to stretch fingers and wrists</span></label>
+        <label class="q-opt-label"><input type="radio" name="q2" class="opt-radio"> <span><strong>B</strong> Bending wrists backward at steep sharp angles while typing continuously without rest</span></label>
+        <label class="q-opt-label"><input type="radio" name="q2" class="opt-radio"> <span><strong>C</strong> Gripping the mouse as tightly as possible during data entry</span></label>
+        <label class="q-opt-label"><input type="radio" name="q2" class="opt-radio"> <span><strong>D</strong> Working in the dark without any ambient room illumination</span></label>
+      </div>
+    </div>
+
+    <div class="q-box">
+      <div class="q-head"><span>Question 3 • Boolean Search Operators: The Minus (-) Exclusion Operator</span><span>(1 mark)</span></div>
+      <p>A fleet manager wants to research commercial electric delivery vans available in the UK, but wishes to exclude all results relating to toy or model vans. Which search query achieves this?</p>
+      <div class="q-options">
+        <label class="q-opt-label"><input type="radio" name="q3" class="opt-radio"> <span><strong>A</strong> electric delivery vans UK -toys -models</span></label>
+        <label class="q-opt-label"><input type="radio" name="q3" class="opt-radio"> <span><strong>B</strong> electric vans + toys + models + please</span></label>
+        <label class="q-opt-label"><input type="radio" name="q3" class="opt-radio"> <span><strong>C</strong> click every sponsored shopping ad on social media</span></label>
+        <label class="q-opt-label"><input type="radio" name="q3" class="opt-radio"> <span><strong>D</strong> search vans everywhere without keywords</span></label>
+      </div>
+    </div>
+
+    <div class="q-box">
+      <div class="q-head"><span>Question 4 • Digital Footprint & Location Tracking Privacy</span><span>(1 mark)</span></div>
+      <p>A courier app requires drivers to enable continuous high-precision GPS tracking on their personal mobile smartphones. What privacy concern arises from this practice?</p>
+      <div class="q-options">
+        <label class="q-opt-label"><input type="radio" name="q4" class="opt-radio"> <span><strong>A</strong> It creates a granular digital footprint revealing personal location histories, movements, and off-duty activities</span></label>
+        <label class="q-opt-label"><input type="radio" name="q4" class="opt-radio"> <span><strong>B</strong> It permanently erases all photos stored on the memory card</span></label>
+        <label class="q-opt-label"><input type="radio" name="q4" class="opt-radio"> <span><strong>C</strong> It changes the phone's language setting to French</span></label>
+        <label class="q-opt-label"><input type="radio" name="q4" class="opt-radio"> <span><strong>D</strong> It increases cellular download speed by 500%</span></label>
+      </div>
+    </div>
+
+    <div class="q-box">
+      <div class="q-head"><span>Question 5 • Cybersecurity Threats: Spyware & Keyloggers</span><span>(1 mark)</span></div>
+      <p>A depot computer is infected with malware that secretly monitors and records every keystroke typed, including courier logins and customer card details, and transmits them to a remote criminal. What is this malware called?</p>
+      <div class="q-options">
+        <label class="q-opt-label"><input type="radio" name="q5" class="opt-radio"> <span><strong>A</strong> Keylogger (Spyware)</span></label>
+        <label class="q-opt-label"><input type="radio" name="q5" class="opt-radio"> <span><strong>B</strong> Software firewall</span></label>
+        <label class="q-opt-label"><input type="radio" name="q5" class="opt-radio"> <span><strong>C</strong> Disk defragmenter</span></label>
+        <label class="q-opt-label"><input type="radio" name="q5" class="opt-radio"> <span><strong>D</strong> Screen saver</span></label>
+      </div>
+    </div>
+
+    <div class="q-box">
+      <div class="q-head"><span>Question 6 • Operating System Security Updates & Patching</span><span>(1 mark)</span></div>
+      <p>Why is it vital for logistics depot workstations to install operating system and security patches as soon as they become available?</p>
+      <div class="q-options">
+        <label class="q-opt-label"><input type="radio" name="q6" class="opt-radio"> <span><strong>A</strong> To repair known security vulnerabilities and protect against newly discovered exploits and malware strains</span></label>
+        <label class="q-opt-label"><input type="radio" name="q6" class="opt-radio"> <span><strong>B</strong> To delete all delivery documents from the storage drive</span></label>
+        <label class="q-opt-label"><input type="radio" name="q6" class="opt-radio"> <span><strong>C</strong> To change the computer brand manufacturer name</span></label>
+        <label class="q-opt-label"><input type="radio" name="q6" class="opt-radio"> <span><strong>D</strong> To reduce the physical weight of the desktop computer</span></label>
+      </div>
+    </div>
+
+    <div class="q-box">
+      <div class="q-head"><span>Question 7 • Connection Speed (Bandwidth) vs Storage Capacity</span><span>(1 mark)</span></div>
+      <p>Which of the following correctly pairs a digital measurement with what it measures?</p>
+      <div class="q-options">
+        <label class="q-opt-label"><input type="radio" name="q7" class="opt-radio"> <span><strong>A</strong> Megabits per second (Mbps) measures internet download/upload speed; Gigabytes (GB) measures file storage capacity</span></label>
+        <label class="q-opt-label"><input type="radio" name="q7" class="opt-radio"> <span><strong>B</strong> Gigabytes (GB) measures broadband connection speed; Mbps measures hard drive capacity</span></label>
+        <label class="q-opt-label"><input type="radio" name="q7" class="opt-radio"> <span><strong>C</strong> Kilobytes (KB) measures monitor brightness; Gigabytes (GB) measures mouse speed</span></label>
+        <label class="q-opt-label"><input type="radio" name="q7" class="opt-radio"> <span><strong>D</strong> Terabytes (TB) measures audio volume; Megabytes (MB) measures keyboard layout</span></label>
+      </div>
+    </div>
+
+    <div class="q-box">
+      <div class="q-head"><span>Question 8 • UK GDPR: Right to Rectification</span><span>(1 mark)</span></div>
+      <p>A customer discovers that their delivery surname and house postcode are recorded incorrectly on the courier dispatch system and asks for them to be corrected. What statutory right is this under UK GDPR?</p>
+      <div class="q-options">
+        <label class="q-opt-label"><input type="radio" name="q8" class="opt-radio"> <span><strong>A</strong> Right to rectification</span></label>
+        <label class="q-opt-label"><input type="radio" name="q8" class="opt-radio"> <span><strong>B</strong> Right to take ownership of depot vehicles</span></label>
+        <label class="q-opt-label"><input type="radio" name="q8" class="opt-radio"> <span><strong>C</strong> Right to bypass parcel delivery charges</span></label>
+        <label class="q-opt-label"><input type="radio" name="q8" class="opt-radio"> <span><strong>D</strong> Right to delete the postal sorting office</span></label>
+      </div>
+    </div>
+
+    <div class="q-box">
+      <div class="q-head"><span>Question 9 • Image Formats: Lossy JPEG vs Lossless PNG</span><span>(1 mark)</span></div>
+      <p>Why does the dispatch manager use PNG format for the official Apex company logo on website headers, but JPEG format for thousands of parcel condition delivery photos?</p>
+      <div class="q-options">
+        <label class="q-opt-label"><input type="radio" name="q9" class="opt-radio"> <span><strong>A</strong> PNG supports sharp edges and transparent backgrounds for logos, while JPEG provides efficient compression to save storage space for high-volume photos</span></label>
+        <label class="q-opt-label"><input type="radio" name="q9" class="opt-radio"> <span><strong>B</strong> JPEG is exclusively an audio file format, while PNG is a video file format</span></label>
+        <label class="q-opt-label"><input type="radio" name="q9" class="opt-radio"> <span><strong>C</strong> PNG files cannot be displayed on computer monitors</span></label>
+        <label class="q-opt-label"><input type="radio" name="q9" class="opt-radio"> <span><strong>D</strong> JPEG files permanently disable computer web browsers</span></label>
+      </div>
+    </div>
+
+    <div class="q-box">
+      <div class="q-head"><span>Question 10 • Secure Disposal of Obsolete Digital Storage Media</span><span>(1 mark)</span></div>
+      <p>The logistics hub is decommissioning an old file server hard drive that contains historical customer delivery manifests and payment references. What is the most secure disposal method?</p>
+      <div class="q-options">
+        <label class="q-opt-label"><input type="radio" name="q10" class="opt-radio"> <span><strong>A</strong> Throwing the hard drive into a standard municipal outdoor waste wheelie bin</span></label>
+        <label class="q-opt-label"><input type="radio" name="q10" class="opt-radio"> <span><strong>B</strong> Physical destruction (e.g. industrial shredding or degaussing) carried out by an accredited secure data destruction provider</span></label>
+        <label class="q-opt-label"><input type="radio" name="q10" class="opt-radio"> <span><strong>C</strong> Dragging the files into the desktop Recycle Bin and leaving the drive in reception</span></label>
+        <label class="q-opt-label"><input type="radio" name="q10" class="opt-radio"> <span><strong>D</strong> Giving the hard drive to an unvetted member of the public</span></label>
+      </div>
+    </div>
+
+    <!-- SECTION B -->
+    <div class="sec-header">
+      <h2>Section B — Practical Workplace Tasks</h2>
+      <span>44 Marks (75 Mins)</span>
+    </div>
+
+    <!-- TASK A -->
+    <div class="q-box">
+      <div class="q-head"><span>Task A • Commercial Drivers' Hours Search & Email</span><span>(7 marks)</span></div>
+      <div class="task-brief">
+        <strong>Context:</strong> Marcus, the depot operations manager, wants you to locate the official UK rules regarding commercial delivery van driver daily driving limits and email the summary to him.
+      </div>
+      <ol class="task-inst">
+        <li>Use a search engine to find the UK maximum daily driving limit under domestic rules for commercial delivery van drivers (DVSA: 10 hours daily driving limit).</li>
+        <li>Compose an email to <code>marcus.depot@apexlogistics.co.uk</code> with the subject <code>UK Commercial Driver Daily Hours Regulations</code>.</li>
+        <li>Include a polite greeting, state clearly that the maximum daily driving limit is <strong>10 hours</strong> per day, and state that drivers must take a rest break after 4.5 hours of driving.</li>
+        <li>Add an automated email signature formatted with 'Kind regards' and candidate name.</li>
+      </ol>
+      <div class="evidence-check"><input type="checkbox"> <span>Evidence: Email sent to Marcus with 10h limit, 4.5h break rule, and auto-signature.</span></div>
+    </div>
+
+    <!-- TASK B -->
+    <div class="q-box">
+      <div class="q-head"><span>Task B • Creating & Formatting a Fleet Safety Bulletin</span><span>(11 marks)</span></div>
+      <div class="task-brief">
+        <strong>Context:</strong> Create a professional fleet safety bulletin using <code>FLEET BULLETIN.docx</code> to notify drivers of mandatory daily vehicle walkaround checks.
+      </div>
+      <ol class="task-inst">
+        <li>Open <code>FLEET BULLETIN.docx</code> from your candidate folder. Change page orientation to <strong>Landscape</strong>.</li>
+        <li>Format the main title 'Apex Express Logistics — Weekly Vehicle Safety & Inspection Schedule' in bold, 22 pt, centered navy font (#1e3a8a).</li>
+        <li>Format the vehicle inspection schedule into a clean 5-column table with adjusted column widths and header row shaded light blue (#dbeafe).</li>
+        <li>Insert <code>DELIVERY FLEET.jpg</code> to the right-hand side of the table.</li>
+        <li>Crop the image to eliminate unnecessary background borders, resize to <strong>6 cm height</strong> maintaining aspect ratio, and apply a 1 pt border.</li>
+        <li>Highlight the mandatory safety notice in a distinct callout box: 'Mandatory Safety Notice: Drivers must complete the 20-point digital walkaround check on handheld scanners before logging onto routes! Failure to log vehicle defect reports is a regulatory breach.'.</li>
+        <li>Apply an outer page border. Ensure balanced, professional layout with zero overlapping text.</li>
+      </ol>
+    </div>
+
+    <!-- TASK C -->
+    <div class="q-box">
+      <div class="q-head"><span>Task C • Regional Delivery Routes & Revenue Spreadsheet</span><span>(15 marks)</span></div>
+      <div class="task-brief">
+        <strong>Context:</strong> Calculate total parcels and weekly route revenue across 8 delivery routes in <code>DELIVERY ROUTES.xlsx</code>, apply currency formatting, sort data, and create an informative chart.
+      </div>
+      <ol class="task-inst">
+        <li>Merge and centre cells A1:H1, set font size to 20 pt, bold, and shade cells A1:H1 soft blue.</li>
+        <li>In cell G4, enter a formula to calculate Total Parcels for Route 01 - Metro Centre Express: <code>=SUM(C4:F4)</code>.</li>
+        <li>In cell H4, calculate Total Revenue: <code>=G4*B4</code> (Total Parcels × Fee per Parcel).</li>
+        <li>Replicate formulas down columns G and H for all 8 delivery routes (rows 4 to 11).</li>
+        <li>In row 12, calculate the Daily Average Consignments: <code>=AVERAGE(C4:C11)</code> and replicate across columns C to F.</li>
+        <li>In cell H12, calculate Grand Total Revenue using <code>=SUM(H4:H11)</code>.</li>
+        <li>Format all parcel fees (column B) and revenue amounts (column H and cell H12) as British Pounds (£) with 2 decimal places.</li>
+        <li>Sort the routes table (rows A4:H11) in descending order of Total Revenue (Column H).</li>
+        <li>Create a 2D Clustered Column or Bar Chart comparing Regional Delivery Route (A3:A11) against Total Parcels (G3:G11). Add an informative chart title, axis titles, and place the chart neatly below the data table or on a separate sheet.</li>
+      </ol>
+    </div>
+
+    <!-- TASK D -->
+    <div class="q-box">
+      <div class="q-head"><span>Task D • Online Vehicle Incident Reporting Portal</span><span>(5 marks)</span></div>
+      <div class="task-brief">
+        <strong>Context:</strong> Log a vehicle damage incident on the simulated depot portal using <code>INCIDENT PORTAL.html</code>.
+      </div>
+      <ol class="task-inst">
+        <li>Open <code>INCIDENT PORTAL.html</code> in a web browser.</li>
+        <li>Enter Driver ID: <code>DRV-5092</code>, Vehicle Registration: <code>AP24 XLE</code>, Depot Route Assignment: <code>Route 01 - Metro Centre Express</code>.</li>
+        <li>Upload the incident damage photograph <code>VAN DAMAGE.jpg</code>.</li>
+        <li>Submit the incident report and record the generated confirmation token (<code>AUTH-APEX-7714-INCIDENT</code>) as evidence.</li>
+      </ol>
+    </div>
+
+    <!-- TASK E -->
+    <div class="q-box">
+      <div class="q-head"><span>Task E • Barcode Handheld Scanner Troubleshooting</span><span>(6 marks)</span></div>
+      <div class="task-brief">
+        <strong>Context:</strong> The parcel sorting depot has a wireless handheld barcode scanner that fails to scan parcel tracking labels. Organise directories and document troubleshooting steps.
+      </div>
+      <ol class="task-inst">
+        <li>In your candidate workspace, create a new top-level folder named <code>Fleet Support</code>.</li>
+        <li>Inside <code>Fleet Support</code>, create a subfolder named <code>Barcode Scanners</code>.</li>
+        <li>Research why a warehouse laser barcode scanner might fail to scan or sync data (e.g. dirty optical laser lens, flat battery / poor cradle docking contact, wireless base station disconnected from network, or incorrect barcode symbology mode enabled).</li>
+        <li>Save your troubleshooting solution inside the <code>Barcode Scanners</code> folder with the descriptive filename <code>Scanner Maintenance and Troubleshooting.docx</code>.</li>
+        <li>Ensure your recommendations are practical, well-structured, and cite a reliable, secure (HTTPS) technical support source with a recent date.</li>
+      </ol>
+    </div>
+
+  </div>
+
+</body>
+</html>

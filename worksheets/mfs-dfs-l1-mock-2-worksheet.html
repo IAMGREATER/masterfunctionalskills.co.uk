@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Master Functional Skills — MFS DFS L1 Mock 2: EcoCycle Bike Repair & Green Commute</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/mfs-worksheets.css">
+  <style>
+    @page { size: A4 portrait; margin: 12mm 15mm; }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; color: #0f172a; background: #f8fafc; margin: 0; padding: 0; font-size: 10.5pt; line-height: 1.5; }
+    .print-bar { background: #0b172d; color: #f8fafc; padding: 12px 24px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.15); }
+    .print-bar a { color: #93c5fd; text-decoration: none; font-weight: 600; font-size: 0.92rem; display: inline-flex; align-items: center; gap: 8px; }
+    .print-bar a:hover { color: #ffffff; text-decoration: underline; }
+    .btn-action-print { background: #059669; color: #ffffff; border: none; padding: 8px 18px; border-radius: 6px; font-weight: 700; font-size: 0.92rem; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }
+    .btn-action-print:hover { background: #047857; }
+    .nav-pill-group { display: inline-flex; background: rgba(255, 255, 255, 0.1); border-radius: 6px; padding: 3px; margin-right: 12px; }
+    .nav-pill-btn { padding: 6px 14px; border-radius: 4px; font-size: 0.88rem; font-weight: 600; color: #cbd5e1; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+    .nav-pill-btn.active { background: #059669; color: #ffffff; }
+    .page-sheet { max-width: 860px; margin: 24px auto; background: #ffffff; padding: 32px 40px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+    .sheet-head { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2.5px solid #0b172d; padding-bottom: 16px; margin-bottom: 20px; }
+    .brand-title { font-size: 1.4rem; font-weight: 900; color: #0b172d; }
+    .brand-title span { color: #059669; }
+    .brand-subtitle { font-size: 0.85rem; color: #64748b; margin-top: 2px; }
+    .sheet-meta-badge { background: #f0fdf4; border: 1.5px solid #a7f3d0; color: #065f46; padding: 8px 16px; border-radius: 6px; text-align: right; }
+    .sheet-meta-badge .topic-name { font-size: 1.05rem; font-weight: 800; display: block; }
+    .sheet-meta-badge .spec-tag { font-size: 0.75rem; color: #059669; font-weight: 700; text-transform: uppercase; }
+    .learner-bar { display: grid; grid-template-columns: 2fr 1.2fr 1fr; gap: 14px; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; padding: 10px 14px; margin-bottom: 24px; font-size: 0.92rem; }
+    .dotted-line { display: inline-block; width: 60%; border-bottom: 1.5px dotted #94a3b8; height: 12px; margin-left: 6px; }
+    .exam-banner { background: #f0fdf4; border-left: 4px solid #059669; padding: 14px 18px; margin-bottom: 24px; border-radius: 0 8px 8px 0; }
+    .exam-banner h3 { margin: 0 0 6px 0; color: #065f46; font-size: 1.05rem; }
+    .exam-banner p { margin: 0; font-size: 0.88rem; color: #047857; }
+    .sec-header { background: #064e3b; color: #ffffff; padding: 10px 16px; border-radius: 6px; margin: 28px 0 16px 0; display: flex; justify-content: space-between; align-items: center; }
+    .sec-header h2 { margin: 0; font-size: 1.15rem; }
+    .sec-header span { font-size: 0.85rem; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 4px; font-weight: 700; }
+    .q-box { background: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 16px 18px; margin-bottom: 18px; page-break-inside: avoid; }
+    .q-head { display: flex; justify-content: space-between; font-weight: 700; color: #1e293b; margin-bottom: 8px; }
+    .q-options { display: grid; grid-template-columns: 1fr; gap: 8px; margin-top: 10px; }
+    .q-opt-label { display: flex; align-items: flex-start; gap: 10px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 8px 12px; font-size: 0.92rem; cursor: pointer; }
+    .q-opt-label:hover { background: #f1f5f9; }
+    .opt-radio { margin-top: 3px; }
+    .task-brief { background: #f0fdf4; border: 1px solid #bbf7d0; border-radius: 6px; padding: 12px 16px; margin-bottom: 14px; font-size: 0.92rem; color: #14532d; }
+    .task-inst { margin: 0 0 14px 0; padding-left: 20px; font-size: 0.92rem; line-height: 1.6; }
+    .data-table { width: 100%; border-collapse: collapse; margin: 12px 0 18px 0; font-size: 0.88rem; }
+    .data-table th, .data-table td { border: 1px solid #cbd5e1; padding: 8px 10px; text-align: left; }
+    .data-table th { background: #f1f5f9; color: #334155; font-weight: 700; }
+    .work-box { border: 1.5px dashed #94a3b8; background: #fafafa; border-radius: 6px; padding: 14px; margin-top: 12px; min-height: 90px; }
+    .work-box-label { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: #64748b; margin-bottom: 6px; }
+    .evidence-check { background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; padding: 10px 14px; margin-top: 14px; display: flex; align-items: center; gap: 10px; font-size: 0.88rem; font-weight: 600; color: #334155; }
+  </style>
+</head>
+<body>
+
+  <div class="print-bar">
+    <div>
+      <a href="../digital-functional-skills-mock-exam.html?set=mfs_mock2"><i class="fa-solid fa-arrow-left"></i> <span class="back-link-text">Open Interactive Onscreen Player (Mock 2)</span></a>
+    </div>
+    <div style="display:flex; align-items:center;">
+      <div class="nav-pill-group">
+        <span class="nav-pill-btn active"><i class="fa-solid fa-file-lines"></i> Question Paper</span>
+        <a href="mfs-dfs-l1-mock-2-answers.html" class="nav-pill-btn"><i class="fa-solid fa-award"></i> Mark Scheme</a>
+      </div>
+      <button type="button" class="btn-action-print" onclick="window.print()"><i class="fa-solid fa-print"></i> Print Paper</button>
+    </div>
+  </div>
+
+  <div class="page-sheet">
+    <div class="sheet-head">
+      <div>
+        <div class="brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
+        <div class="brand-subtitle">Master Functional Skills (MFS) Edexcel Digital Functional Skills Level 1 Mock</div>
+      </div>
+      <div class="sheet-meta-badge">
+        <span class="topic-name">MFS DFS L1 Mock 2: EcoCycle Bike Repair</span>
+        <span class="spec-tag">54 Marks • 90 Minutes Total</span>
+      </div>
+    </div>
+
+    <div class="learner-bar">
+      <div><strong>Candidate Name:</strong> <span class="dotted-line"></span></div>
+      <div><strong>Date:</strong> <span class="dotted-line"></span></div>
+      <div><strong>Score:</strong> <span class="dotted-line" style="width:40%;"></span> <strong>/ 54</strong></div>
+    </div>
+
+    <div class="exam-banner">
+      <h3><i class="fa-solid fa-bicycle"></i> Candidate Assessment Instructions</h3>
+      <p>
+        <strong>Context: EcoCycle Community Bike Repair & Green Commute Initiative</strong><br>
+        • <strong>Section A (Knowledge & Understanding)</strong>: 10 questions (10 marks). Total time allowed: 15 minutes. No internet allowed.<br>
+        • <strong>Section B (Practical Skills)</strong>: 5 tasks (44 marks). Internet permitted. Requires candidate ZIP folder: <code>dfs-mfs-l1-mock-2-data-files.zip</code>.<br>
+        • Pass mark: 35 / 54 (65%). Read each prompt carefully and record evidence in your candidate folder.
+      </p>
+    </div>
+
+    <!-- SECTION A -->
+    <div class="sec-header">
+      <h2>Section A — Digital Knowledge & Understanding</h2>
+      <span>10 Marks (15 Mins)</span>
+    </div>
+
+    <!-- Q1 -->
+    <div class="q-box">
+      <div class="q-head">
+        <span>Question 1 • Phishing Detection & Suspicious Hyperlinks</span>
+        <span>(1 mark)</span>
+      </div>
+      <p>A cycle hub volunteer receives an urgent email claiming a bicycle parts delivery has been detained and requesting £2.50 via an unfamiliar payment link (<code>http://quick-courier-track77.info/pay</code>). What action should the volunteer take?</p>
+      <div class="q-options">
+        <label class="q-opt-label"><input type="radio" name="q1" class="opt-radio"> <span><strong>A</strong> Click the link immediately and enter business credit card details</span></label>
+        <label class="q-opt-label"><input type="radio" name="q1" class="opt-radio"> <span><strong>B</strong> Do not click the link or provide card details; report the email as phishing and verify delivery status via the supplier's official website</span></label>
+        <label class="q-opt-label"><input type="radio" name="q1" class="opt-radio"> <span><strong>C</strong> Forward the email to all community bike hub subscribers</span></label>
+        <label class="q-opt-label"><input type="radio" name="q1" class="opt-radio"> <span><strong>D</strong> Reply to the email with the customer's personal phone number</span></label>
+      </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="q-box">
+      <div class="q-head">
+        <span>Question 2 • Physical Data Security & Screen Privacy</span>
+        <span>(1 mark)</span>
+      </div>
+      <p>When handling customer membership registrations at an open public service counter, how can a staff member prevent 'shoulder surfing' and unauthorized observation of personal data?</p>
+      <div class="q-options">
+        <label class="q-opt-label"><input type="radio" name="q2" class="opt-radio"> <span><strong>A</strong> Fitting a privacy filter screen to the monitor and locking the workstation (Win + L) when stepping away</span></label>
+        <label class="q-opt-label"><input type="radio" name="q2" class="opt-radio"> <span><strong>B</strong> Turning the screen brightness up to maximum</span></label>
+        <label class="q-opt-label"><input type="radio" name="q2" class="opt-radio"> <span><strong>C</strong> Leaving the registration screen open so customers can double check details unattended</span></label>
+        <label class="q-opt-label"><input type="radio" name="q2" class="opt-radio"> <span><strong>D</strong> Minimizing the browser window without locking the operating system</span></label>
+      </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="q-box">
+      <div class="q-head">
+        <span>Question 3 • Refining Search Results by Recency</span>
+        <span>(1 mark)</span>
+      </div>
+      <p>The cycle project coordinator wants to locate the most up-to-date UK Highway Code cycling safety amendments published in 2026. Which search filter technique is most effective?</p>
+      <div class="q-options">
+        <label class="q-opt-label"><input type="radio" name="q3" class="opt-radio"> <span><strong>A</strong> Using search engine tools to filter results by publication date (e.g. Past Year / 2026)</span></label>
+        <label class="q-opt-label"><input type="radio" name="q3" class="opt-radio"> <span><strong>B</strong> Typing random letters into the search query bar</span></label>
+        <label class="q-opt-label"><input type="radio" name="q3" class="opt-radio"> <span><strong>C</strong> Clicking the oldest archived forum thread found online</span></label>
+        <label class="q-opt-label"><input type="radio" name="q3" class="opt-radio"> <span><strong>D</strong> Searching solely on commercial image sharing websites</span></label>
+      </div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="q-box">
+      <div class="q-head">
+        <span>Question 4 • Password Security & Passphrase Best Practice</span>
+        <span>(1 mark)</span>
+      </div>
+      <p>Which of the following creates the most resilient, secure password for protecting the workshop customer database?</p>
+      <div class="q-options">
+        <label class="q-opt-label"><input type="radio" name="q4" class="opt-radio"> <span><strong>A</strong> Writing 'B1k3s2026' on a sticky note attached to the counter</span></label>
+        <label class="q-opt-label"><input type="radio" name="q4" class="opt-radio"> <span><strong>B</strong> Combining three or four random, unrelated words with numbers and symbols (e.g. 'Falcon#Pebble!Orbit82')</span></label>
+        <label class="q-opt-label"><input type="radio" name="q4" class="opt-radio"> <span><strong>C</strong> Using the user's date of birth or pet's name</span></label>
+        <label class="q-opt-label"><input type="radio" name="q4" class="opt-radio"> <span><strong>D</strong> Using the sequence '12345678' so it is easy for volunteers to remember</span></label>
+      </div>
+    </div>
+
+    <!-- Q5 -->
+    <div class="q-box">
+      <div class="q-head">
+        <span>Question 5 • Malware Types: Trojan Horses</span>
+        <span>(1 mark)</span>
+      </div>
+      <p>An employee downloads what claims to be a free bike maintenance tool from an unverified website. When opened, it quietly installs a hidden backdoor allowing remote attackers access. What type of malware is this?</p>
+      <div class="q-options">
+        <label class="q-opt-label"><input type="radio" name="q5" class="opt-radio"> <span><strong>A</strong> Trojan Horse</span></label>
+        <label class="q-opt-label"><input type="radio" name="q5" class="opt-radio"> <span><strong>B</strong> Spam filter</span></label>
+        <label class="q-opt-label"><input type="radio" name="q5" class="opt-radio"> <span><strong>C</strong> Antivirus scanner</span></label>
+        <label class="q-opt-label"><input type="radio" name="q5" class="opt-radio"> <span><strong>D</strong> Web browser extension</span></label>
+      </div>
+    </div>
+
+    <!-- Q6 -->
+    <div class="q-box">
+      <div class="q-head">
+        <span>Question 6 • Cloud File Collaboration & Version Conflicts</span>
+        <span>(1 mark)</span>
+      </div>
+      <p>Two mechanics open and edit offline copies of the same bike maintenance log spreadsheet simultaneously. What is a common outcome when both reconnect to cloud synchronization?</p>
+      <div class="q-options">
+        <label class="q-opt-label"><input type="radio" name="q6" class="opt-radio"> <span><strong>A</strong> The cloud service creates a conflicted copy or prompts the user to merge differences to avoid overwriting changes</span></label>
+        <label class="q-opt-label"><input type="radio" name="q6" class="opt-radio"> <span><strong>B</strong> Both computers immediately shut down permanently</span></label>
+        <label class="q-opt-label"><input type="radio" name="q6" class="opt-radio"> <span><strong>C</strong> The files are converted into audio MP3 tracks</span></label>
+        <label class="q-opt-label"><input type="radio" name="q6" class="opt-radio"> <span><strong>D</strong> Internet access is revoked by the local council</span></label>
+      </div>
+    </div>
+
+    <!-- Q7 -->
+    <div class="q-box">
+      <div class="q-head">
+        <span>Question 7 • Selecting Appropriate File Formats</span>
+        <span>(1 mark)</span>
+      </div>
+      <p>The coordinator needs to distribute the final, approved Volunteer Safety Handbook to external partners so it cannot be easily modified and displays identically on all devices. Which format is best?</p>
+      <div class="q-options">
+        <label class="q-opt-label"><input type="radio" name="q7" class="opt-radio"> <span><strong>A</strong> Plain text (.TXT)</span></label>
+        <label class="q-opt-label"><input type="radio" name="q7" class="opt-radio"> <span><strong>B</strong> Portable Document Format (.PDF)</span></label>
+        <label class="q-opt-label"><input type="radio" name="q7" class="opt-radio"> <span><strong>C</strong> Editable Word Template (.DOTX)</span></label>
+        <label class="q-opt-label"><input type="radio" name="q7" class="opt-radio"> <span><strong>D</strong> Bitmap Image (.BMP)</span></label>
+      </div>
+    </div>
+
+    <!-- Q8 -->
+    <div class="q-box">
+      <div class="q-head">
+        <span>Question 8 • UK GDPR: The Accuracy Principle</span>
+        <span>(1 mark)</span>
+      </div>
+      <p>A customer informs the bike hub that their residential address and emergency medical contact have changed. Under UK GDPR, which data principle requires the hub to update this record promptly?</p>
+      <div class="q-options">
+        <label class="q-opt-label"><input type="radio" name="q8" class="opt-radio"> <span><strong>A</strong> Storage limitation</span></label>
+        <label class="q-opt-label"><input type="radio" name="q8" class="opt-radio"> <span><strong>B</strong> The Accuracy Principle</span></label>
+        <label class="q-opt-label"><input type="radio" name="q8" class="opt-radio"> <span><strong>C</strong> Data minimization</span></label>
+        <label class="q-opt-label"><input type="radio" name="q8" class="opt-radio"> <span><strong>D</strong> Lawfulness of hardware</span></label>
+      </div>
+    </div>
+
+    <!-- Q9 -->
+    <div class="q-box">
+      <div class="q-head">
+        <span>Question 9 • Public Wi-Fi Risks & Virtual Private Networks (VPN)</span>
+        <span>(1 mark)</span>
+      </div>
+      <p>Why should a staff member use a Virtual Private Network (VPN) when checking financial bank accounts over an open, unencrypted public coffee shop Wi-Fi network?</p>
+      <div class="q-options">
+        <label class="q-opt-label"><input type="radio" name="q9" class="opt-radio"> <span><strong>A</strong> It doubles the battery life of the laptop</span></label>
+        <label class="q-opt-label"><input type="radio" name="q9" class="opt-radio"> <span><strong>B</strong> It encrypts network traffic through a secure tunnel, protecting sensitive financial data from eavesdropping on open public networks</span></label>
+        <label class="q-opt-label"><input type="radio" name="q9" class="opt-radio"> <span><strong>C</strong> It bypasses the need for account passwords completely</span></label>
+        <label class="q-opt-label"><input type="radio" name="q9" class="opt-radio"> <span><strong>D</strong> It automatically clears browser cookies and bookmarks</span></label>
+      </div>
+    </div>
+
+    <!-- Q10 -->
+    <div class="q-box">
+      <div class="q-head">
+        <span>Question 10 • Backup Strategy: 3-2-1 Rule</span>
+        <span>(1 mark)</span>
+      </div>
+      <p>Which backup protocol best protects the bike hub against catastrophic data loss caused by office fire, flood, or ransomware infection?</p>
+      <div class="q-options">
+        <label class="q-opt-label"><input type="radio" name="q10" class="opt-radio"> <span><strong>A</strong> Saving all documents solely on the desktop screen of one single computer</span></label>
+        <label class="q-opt-label"><input type="radio" name="q10" class="opt-radio"> <span><strong>B</strong> Maintaining three copies of important data on two different media types, with at least one copy stored safely offsite or in the secure cloud (3-2-1 rule)</span></label>
+        <label class="q-opt-label"><input type="radio" name="q10" class="opt-radio"> <span><strong>C</strong> Copying files to a USB flash drive and leaving it plugged into the workshop PC overnight</span></label>
+        <label class="q-opt-label"><input type="radio" name="q10" class="opt-radio"> <span><strong>D</strong> Printing every spreadsheet onto paper and shredding the digital version</span></label>
+      </div>
+    </div>
+
+    <!-- SECTION B -->
+    <div class="sec-header">
+      <h2>Section B — Practical Workplace Tasks</h2>
+      <span>44 Marks (75 Mins)</span>
+    </div>
+
+    <!-- TASK A -->
+    <div class="q-box">
+      <div class="q-head">
+        <span>Task A • Information Search & Professional Email Communication</span>
+        <span>(7 marks)</span>
+      </div>
+      <div class="task-brief">
+        <strong>Context:</strong> The workshop coordinator, Elena, wants you to find the official UK/European safety standard certification code for cycle helmets and email the details to her.
+      </div>
+      <ol class="task-inst">
+        <li>Use a search engine to find the UK and European safety standard number for cycle helmets (BS EN 1078). Record your search query and result.</li>
+        <li>Compose an email to <code>elena.coordinator@ecocycleproject.org.uk</code> with the subject <code>UK Cycle Helmet Safety Standards</code>.</li>
+        <li>State clearly that cycle helmets sold in the UK must meet <strong>BS EN 1078</strong> (or BS EN 1080 for young children), and include a polite greeting and sign-off.</li>
+        <li>Add an automated email signature formatted with <em>Kind regards</em> and candidate name.</li>
+      </ol>
+
+      <div class="work-box">
+        <div class="work-box-label">Task A Evidence Record:</div>
+        <p style="font-size:0.85rem; color:#64748b; margin:0 0 6px 0;">Search Term &amp; Standard Code:</p>
+        <div style="border-bottom:1px dotted #94a3b8; height:24px; margin-bottom:8px;"></div>
+        <p style="font-size:0.85rem; color:#64748b; margin:0 0 6px 0;">Recipient, Subject &amp; Message Body Draft:</p>
+        <div style="border:1px solid #e2e8f0; background:#fff; padding:8px; border-radius:4px; font-size:0.85rem;">
+          To: elena.coordinator@ecocycleproject.org.uk<br>
+          Subject: UK Cycle Helmet Safety Standards<br>
+          Hello Elena,<br>
+          The official UK and European safety standard for pedal cycle helmets is BS EN 1078.<br>
+          Kind regards, [Candidate Name]
+        </div>
+      </div>
+    </div>
+
+    <!-- TASK B -->
+    <div class="q-box">
+      <div class="q-head">
+        <span>Task B • Creating & Formatting a Workshop Event Flyer</span>
+        <span>(11 marks)</span>
+      </div>
+      <div class="task-brief">
+        <strong>Context:</strong> Design an attractive promotional event flyer using <code>WORKSHOP POSTER.docx</code> to advertise weekend cycle maintenance sessions.
+      </div>
+      <ol class="task-inst">
+        <li>Open <code>WORKSHOP POSTER.docx</code> from your data folder. Change page orientation to <strong>Landscape</strong>.</li>
+        <li>Format the main title 'EcoCycle Community Bike Hub — Weekend Maintenance Workshops' in bold, 22 pt, centered green font (#065f46).</li>
+        <li>Format the workshop timetable into a clean 5-column table with adjusted column widths and header row shaded light green (#d1fae5).</li>
+        <li>Insert <code>BIKE REPAIR.jpg</code> to the right-hand side of the table.</li>
+        <li>Crop the image to eliminate excess margins, resize to <strong>6 cm height</strong> maintaining aspect ratio, and apply a 1 pt border.</li>
+        <li>Highlight the free community service offer in a callout box: 'Free Community Service: Free 15-minute 20-point safety brake check on your first visit! Pre-book online with voucher code: ECOSAFE26'.</li>
+        <li>Apply an outer page border. Ensure balanced, professional layout with zero overlapping text.</li>
+      </ol>
+      <div class="evidence-check"><input type="checkbox"> <span>Evidence: Flyer formatted landscape with 6cm cropped image, shaded table, callout box, and border.</span></div>
+    </div>
+
+    <!-- TASK C -->
+    <div class="q-box">
+      <div class="q-head">
+        <span>Task C • Bike Workshop & Hire Revenue Spreadsheet Analysis</span>
+        <span>(15 marks)</span>
+      </div>
+      <div class="task-brief">
+        <strong>Context:</strong> Calculate total sessions and weekly revenue across 8 bike services in <code>BIKE WORKSHOP SALES.xlsx</code>, apply currency formatting, sort data, and create an informative chart.
+      </div>
+      <ol class="task-inst">
+        <li>Merge and centre cells A1:H1, set font size to 20 pt, bold, and shade cells A1:H1 soft green.</li>
+        <li>In cell G4, enter a formula to calculate Total Sessions for Standard Commuter Bike Hire across Mon-Fri: <code>=SUM(C4:F4)</code>.</li>
+        <li>In cell H4, calculate Total Revenue: <code>=G4*B4</code> (Total Sessions × Hourly / Hire Rate).</li>
+        <li>Replicate formulas down columns G and H for all 8 workshop services (rows 4 to 11).</li>
+        <li>In row 12, calculate the Daily Average Bookings: <code>=AVERAGE(C4:C11)</code> and replicate across columns C to F.</li>
+        <li>In cell H12, calculate Grand Total Revenue using <code>=SUM(H4:H11)</code>.</li>
+        <li>Format all hire rates (column B) and revenue amounts (column H and cell H12) as British Pounds (£) with 2 decimal places.</li>
+        <li>Sort the services table (rows A4:H11) in descending order of Total Revenue (Column H).</li>
+        <li>Create a 2D Clustered Column or Bar Chart comparing Service / Hire Item (A3:A11) against Total Sessions (G3:G11). Add an informative chart title, axis titles, and place the chart neatly below the data table or on a separate sheet.</li>
+      </ol>
+    </div>
+
+    <!-- TASK D -->
+    <div class="q-box">
+      <div class="q-head">
+        <span>Task D • Online Volunteer Registration & File Upload</span>
+        <span>(5 marks)</span>
+      </div>
+      <div class="task-brief">
+        <strong>Context:</strong> Register a volunteer mechanic on the simulated online portal using <code>VOLUNTEER REGISTRATION.html</code>.
+      </div>
+      <ol class="task-inst">
+        <li>Open <code>VOLUNTEER REGISTRATION.html</code> in a web browser.</li>
+        <li>Enter Reference ID: <code>VOL-7731-MEC</code>, Full Name: <code>Liam Stewart</code>, Contact Email: <code>liam.volunteer@ecocycleproject.org.uk</code>.</li>
+        <li>Select Workshop Bay Role: <strong>Mechanical Tune-Up Lead</strong>.</li>
+        <li>Upload the certification badge file <code>SAFETY CERT.jpg</code>.</li>
+        <li>Submit the registration and record the generated confirmation token (<code>AUTH-ECO-8831-VOLUNTEER</code>) as evidence.</li>
+      </ol>
+    </div>
+
+    <!-- TASK E -->
+    <div class="q-box">
+      <div class="q-head">
+        <span>Task E • File Organization & Bluetooth Scanner Troubleshooting</span>
+        <span>(6 marks)</span>
+      </div>
+      <div class="task-brief">
+        <strong>Context:</strong> The workshop has an e-bike battery diagnostic scanner that fails to pair via Bluetooth with the workshop tablet. Organise directories and document troubleshooting steps.
+      </div>
+      <ol class="task-inst">
+        <li>In your candidate workspace, create a new top-level folder named <code>Diagnostics</code>.</li>
+        <li>Inside <code>Diagnostics</code>, create a subfolder named <code>E-Bike Scanner</code>.</li>
+        <li>Research why a Bluetooth diagnostic scanner might fail to connect or pair (e.g. tablet Bluetooth turned off, scanner battery critically low, pairing PIN code mismatch, or radio interference from heavy workshop motors).</li>
+        <li>Save your troubleshooting solution inside the <code>E-Bike Scanner</code> folder with the descriptive filename <code>Diagnostic Scanner Troubleshooting.docx</code>.</li>
+        <li>Ensure your recommendations are practical, well-structured, and cite a reliable, secure (HTTPS) technical support source with a recent date.</li>
+      </ol>
+    </div>
+
+  </div>
+
+</body>
+</html>

@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Master Functional Skills — Digital Functional Skills Level 1 Practice Set 3 Mock Exam</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/mfs-worksheets.css">
+  <style>
+    @page { size: A4 portrait; margin: 12mm 15mm; }
+    *, *::before, *::after { box-sizing: border-box; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif; color: #0f172a; background: #f8fafc; margin: 0; padding: 0; font-size: 10.5pt; line-height: 1.5; }
+    .print-bar { background: #0b172d; color: #f8fafc; padding: 12px 24px; display: flex; justify-content: space-between; align-items: center; position: sticky; top: 0; z-index: 1000; box-shadow: 0 2px 10px rgba(0,0,0,0.15); }
+    .print-bar a { color: #93c5fd; text-decoration: none; font-weight: 600; font-size: 0.92rem; display: inline-flex; align-items: center; gap: 8px; }
+    .print-bar a:hover { color: #ffffff; text-decoration: underline; }
+    .btn-action-print { background: #2563eb; color: #ffffff; border: none; padding: 8px 18px; border-radius: 6px; font-weight: 700; font-size: 0.92rem; cursor: pointer; display: inline-flex; align-items: center; gap: 8px; }
+    .btn-action-print:hover { background: #1d4ed8; }
+    .nav-pill-group { display: inline-flex; background: rgba(255, 255, 255, 0.1); border-radius: 6px; padding: 3px; margin-right: 12px; }
+    .nav-pill-btn { padding: 6px 14px; border-radius: 4px; font-size: 0.88rem; font-weight: 600; color: #cbd5e1; text-decoration: none; display: inline-flex; align-items: center; gap: 6px; }
+    .nav-pill-btn.active { background: #2563eb; color: #ffffff; }
+    .page-sheet { max-width: 860px; margin: 24px auto; background: #ffffff; padding: 32px 40px; border-radius: 8px; border: 1px solid #e2e8f0; box-shadow: 0 4px 20px rgba(0,0,0,0.06); }
+    .sheet-head { display: flex; justify-content: space-between; align-items: flex-start; border-bottom: 2.5px solid #0b172d; padding-bottom: 16px; margin-bottom: 20px; }
+    .brand-title { font-size: 1.4rem; font-weight: 900; color: #0b172d; }
+    .brand-title span { color: #2563eb; }
+    .brand-subtitle { font-size: 0.85rem; color: #64748b; margin-top: 2px; }
+    .sheet-meta-badge { background: #eff6ff; border: 1.5px solid #bfdbfe; color: #1e40af; padding: 8px 16px; border-radius: 6px; text-align: right; }
+    .sheet-meta-badge .topic-name { font-size: 1.05rem; font-weight: 800; display: block; }
+    .sheet-meta-badge .spec-tag { font-size: 0.75rem; color: #2563eb; font-weight: 700; text-transform: uppercase; }
+    .learner-bar { display: grid; grid-template-columns: 2fr 1.2fr 1fr; gap: 14px; background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; padding: 10px 14px; margin-bottom: 24px; font-size: 0.92rem; }
+    .dotted-line { display: inline-block; width: 60%; border-bottom: 1.5px dotted #94a3b8; height: 12px; margin-left: 6px; }
+    .exam-banner { background: #f0fdf4; border-left: 4px solid #16a34a; padding: 14px 18px; margin-bottom: 24px; border-radius: 0 8px 8px 0; }
+    .exam-banner h3 { margin: 0 0 6px 0; color: #166534; font-size: 1.05rem; }
+    .exam-banner p { margin: 0; font-size: 0.88rem; color: #14532d; }
+    .sec-header { background: #0f172a; color: #ffffff; padding: 10px 16px; border-radius: 6px; margin: 28px 0 16px 0; display: flex; justify-content: space-between; align-items: center; }
+    .sec-header h2 { margin: 0; font-size: 1.15rem; }
+    .sec-header span { font-size: 0.85rem; background: rgba(255,255,255,0.2); padding: 4px 10px; border-radius: 4px; font-weight: 700; }
+    .q-box { background: #ffffff; border: 1px solid #cbd5e1; border-radius: 8px; padding: 16px 18px; margin-bottom: 18px; page-break-inside: avoid; }
+    .q-head { display: flex; justify-content: space-between; font-weight: 700; color: #1e293b; margin-bottom: 8px; }
+    .q-options { display: grid; grid-template-columns: 1fr; gap: 8px; margin-top: 10px; }
+    .q-opt-label { display: flex; align-items: flex-start; gap: 10px; background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 8px 12px; font-size: 0.92rem; cursor: pointer; }
+    .q-opt-label:hover { background: #f1f5f9; }
+    .opt-radio { margin-top: 3px; }
+    .task-brief { background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 6px; padding: 12px 16px; margin-bottom: 14px; font-size: 0.92rem; color: #1e3a8a; }
+    .task-inst { margin: 0 0 14px 0; padding-left: 20px; font-size: 0.92rem; line-height: 1.6; }
+    .data-table { width: 100%; border-collapse: collapse; margin: 12px 0 18px 0; font-size: 0.88rem; }
+    .data-table th, .data-table td { border: 1px solid #cbd5e1; padding: 8px 10px; text-align: left; }
+    .data-table th { background: #f1f5f9; color: #334155; font-weight: 700; }
+    .work-box { border: 1.5px dashed #94a3b8; background: #fafafa; border-radius: 6px; padding: 14px; margin-top: 12px; min-height: 90px; }
+    .work-box-label { font-size: 0.8rem; font-weight: 700; text-transform: uppercase; color: #64748b; margin-bottom: 6px; }
+    .rubric-pill { display: inline-block; background: #fee2e2; color: #991b1b; font-weight: 700; font-size: 0.78rem; padding: 2px 6px; border-radius: 4px; margin-right: 6px; }
+    .evidence-check { background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; padding: 10px 14px; margin-top: 14px; display: flex; align-items: center; gap: 10px; font-size: 0.88rem; font-weight: 600; color: #334155; }
+  </style>
+</head>
+<body>
+
+  <div class="print-bar">
+    <div>
+      <a href="../digital-functional-skills-mock-exam.html?set=mfs_mock1"><i class="fa-solid fa-arrow-left"></i> <span class="back-link-text">Open Interactive Onscreen Player (Set 3)</span></a>
+    </div>
+    <div style="display:flex; align-items:center;">
+      <div class="nav-pill-group">
+        <span class="nav-pill-btn active"><i class="fa-solid fa-file-lines"></i> Question Paper</span>
+        <a href="mfs-dfs-l1-mock-1-answers.html" class="nav-pill-btn"><i class="fa-solid fa-award"></i> Mark Scheme</a>
+      </div>
+      <button type="button" class="btn-action-print" onclick="window.print()"><i class="fa-solid fa-print"></i> Print Paper</button>
+    </div>
+  </div>
+
+  <div class="page-sheet">
+    <div class="sheet-head">
+      <div>
+        <div class="brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
+        <div class="brand-subtitle">Pearson Edexcel Digital Functional Skills Qualification at Level 1</div>
+      </div>
+      <div class="sheet-meta-badge">
+        <span class="topic-name">MFS DFS L1 Mock 1: Riverside Community Leisure Hub</span>
+        <span class="spec-tag">54 Marks • 90 Minutes Total</span>
+      </div>
+    </div>
+
+    <div class="learner-bar">
+      <div><strong>Candidate Name:</strong> <span class="dotted-line"></span></div>
+      <div><strong>Date:</strong> <span class="dotted-line"></span></div>
+      <div><strong>Score:</strong> <span class="dotted-line" style="width:40%;"></span> <strong>/ 54</strong></div>
+    </div>
+
+    <div class="exam-banner">
+      <h3><i class="fa-solid fa-circle-info"></i> Candidate Assessment Instructions</h3>
+      <p>
+        <strong>Context: Riverside Community Health & Leisure Hub</strong><br>
+        • <strong>Section A (Knowledge & Understanding)</strong>: 10 questions (10 marks). Total time allowed: 15 minutes. No internet allowed.<br>
+        • <strong>Section B (Practical Skills)</strong>: 5 tasks (44 marks). Internet permitted. Requires candidate ZIP folder: <code>dfs-level-1-practice-set-3-data-files.zip</code>.<br>
+        • Pass mark: 35 / 54 (65%). Read each prompt carefully and record evidence in your candidate folder.
+      </p>
+    </div>
+
+    <!-- SECTION A -->
+    <div class="sec-header">
+      <h2>Section A — Digital Knowledge & Understanding</h2>
+      <span>10 Marks (15 Mins)</span>
+    </div>
+
+    <!-- Q1 -->
+    <div class="q-box">
+      <div class="q-head">
+        <span>Question 1 • Multi-Factor Authentication (MFA)</span>
+        <span>(1 mark)</span>
+      </div>
+      <p>Why should staff at a community leisure centre enable Multi-Factor Authentication (MFA) when accessing their staff accounts online?</p>
+      <div class="q-options">
+        <label class="q-opt-label"><input type="radio" name="q1" class="opt-radio"> <span><strong>A</strong> It saves internet bandwidth and boosts network connection speeds</span></label>
+        <label class="q-opt-label"><input type="radio" name="q1" class="opt-radio"> <span><strong>B</strong> It provides an additional layer of defence by requiring two or more verification factors to confirm identity</span></label>
+        <label class="q-opt-label"><input type="radio" name="q1" class="opt-radio"> <span><strong>C</strong> It ensures that files stored locally on the PC cannot be accidentally deleted</span></label>
+        <label class="q-opt-label"><input type="radio" name="q1" class="opt-radio"> <span><strong>D</strong> It automatically updates the operating system every evening</span></label>
+      </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="q-box">
+      <div class="q-head">
+        <span>Question 2 • Display Screen Equipment & Workplace Ergonomics</span>
+        <span>(1 mark)</span>
+      </div>
+      <p>A receptionist at the leisure hub spends long shifts entering booking data into a computer. What ergonomic adjustment best prevents neck and eye strain?</p>
+      <div class="q-options">
+        <label class="q-opt-label"><input type="radio" name="q2" class="opt-radio"> <span><strong>A</strong> Positioning the monitor directly in front of the user with the top of the screen at eye level and reducing screen glare</span></label>
+        <label class="q-opt-label"><input type="radio" name="q2" class="opt-radio"> <span><strong>B</strong> Tilting the screen upwards at a steep angle and dimming room lights completely</span></label>
+        <label class="q-opt-label"><input type="radio" name="q2" class="opt-radio"> <span><strong>C</strong> Keeping the keyboard on the user's lap and sitting on a rigid stool</span></label>
+        <label class="q-opt-label"><input type="radio" name="q2" class="opt-radio"> <span><strong>D</strong> Increasing screen resolution to the highest setting so text is as tiny as possible</span></label>
+      </div>
+    </div>
+
+    <!-- Q3 -->
+    <div class="q-box">
+      <div class="q-head">
+        <span>Question 3 • Refining Online Searches & Search Operators</span>
+        <span>(1 mark)</span>
+      </div>
+      <p>A coordinator wants to find official UK government sports facility guidelines published exclusively as a PDF document. Which search query is most effective?</p>
+      <div class="q-options">
+        <label class="q-opt-label"><input type="radio" name="q3" class="opt-radio"> <span><strong>A</strong> search sports facility rules anywhere online</span></label>
+        <label class="q-opt-label"><input type="radio" name="q3" class="opt-radio"> <span><strong>B</strong> "sports facility guidelines" site:gov.uk filetype:pdf</span></label>
+        <label class="q-opt-label"><input type="radio" name="q3" class="opt-radio"> <span><strong>C</strong> *sports* + *facilities* + help + please</span></label>
+        <label class="q-opt-label"><input type="radio" name="q3" class="opt-radio"> <span><strong>D</strong> click on the first sponsored link on social media</span></label>
+      </div>
+    </div>
+
+    <!-- Q4 -->
+    <div class="q-box">
+      <div class="q-head">
+        <span>Question 4 • Digital Footprint & Child Safeguarding</span>
+        <span>(1 mark)</span>
+      </div>
+      <p>A sports coach creates a public leisure hub group on social media. What is a primary risk of sharing candid photos of junior participants without parental permission?</p>
+      <div class="q-options">
+        <label class="q-opt-label"><input type="radio" name="q4" class="opt-radio"> <span><strong>A</strong> It slows down the social media platform's cloud server</span></label>
+        <label class="q-opt-label"><input type="radio" name="q4" class="opt-radio"> <span><strong>B</strong> It breaches data privacy and child safeguarding regulations by exposing personal identifiable information publicly</span></label>
+        <label class="q-opt-label"><input type="radio" name="q4" class="opt-radio"> <span><strong>C</strong> It converts high-resolution images into compressed vector shapes</span></label>
+        <label class="q-opt-label"><input type="radio" name="q4" class="opt-radio"> <span><strong>D</strong> It automatically locks the coach out of their mobile phone</span></label>
+      </div>
+    </div>
+
+    <!-- Q5 -->
+    <div class="q-box">
+      <div class="q-head">
+        <span>Question 5 • Cybersecurity & Malware Threats</span>
+        <span>(1 mark)</span>
+      </div>
+      <p>A desktop screen suddenly displays a warning stating that all centre booking files are encrypted and demanding payment in digital currency to restore access. What type of malware is this?</p>
+      <div class="q-options">
+        <label class="q-opt-label"><input type="radio" name="q5" class="opt-radio"> <span><strong>A</strong> Spyware</span></label>
+        <label class="q-opt-label"><input type="radio" name="q5" class="opt-radio"> <span><strong>B</strong> Ransomware</span></label>
+        <label class="q-opt-label"><input type="radio" name="q5" class="opt-radio"> <span><strong>C</strong> Adware</span></label>
+        <label class="q-opt-label"><input type="radio" name="q5" class="opt-radio"> <span><strong>D</strong> Phishing email</span></label>
+      </div>
+    </div>
+
+    <!-- Q6 -->
+    <div class="q-box">
+      <div class="q-head">
+        <span>Question 6 • Secure Web Connections & SSL/TLS Encryption</span>
+        <span>(1 mark)</span>
+      </div>
+      <p>When entering customer payment card information on an online booking portal, which indicator confirms that communication between the browser and the web server is encrypted?</p>
+      <div class="q-options">
+        <label class="q-opt-label"><input type="radio" name="q6" class="opt-radio"> <span><strong>A</strong> The web address starts with https:// accompanied by a closed padlock icon in the browser address bar</span></label>
+        <label class="q-opt-label"><input type="radio" name="q6" class="opt-radio"> <span><strong>B</strong> The web page has animated pop-up banner advertisements</span></label>
+        <label class="q-opt-label"><input type="radio" name="q6" class="opt-radio"> <span><strong>C</strong> The website URL ends in .org or .co.uk</span></label>
+        <label class="q-opt-label"><input type="radio" name="q6" class="opt-radio"> <span><strong>D</strong> The web page loads in under 2 seconds</span></label>
+      </div>
+    </div>
+
+    <!-- Q7 -->
+    <div class="q-box">
+      <div class="q-head">
+        <span>Question 7 • Digital Storage Units & Capacity Hierarchy</span>
+        <span>(1 mark)</span>
+      </div>
+      <p>Which list correctly arranges digital storage units in ascending order from smallest capacity to largest capacity?</p>
+      <div class="q-options">
+        <label class="q-opt-label"><input type="radio" name="q7" class="opt-radio"> <span><strong>A</strong> Gigabyte (GB) → Megabyte (MB) → Terabyte (TB) → Kilobyte (KB)</span></label>
+        <label class="q-opt-label"><input type="radio" name="q7" class="opt-radio"> <span><strong>B</strong> Kilobyte (KB) → Megabyte (MB) → Gigabyte (GB) → Terabyte (TB)</span></label>
+        <label class="q-opt-label"><input type="radio" name="q7" class="opt-radio"> <span><strong>C</strong> Terabyte (TB) → Gigabyte (GB) → Megabyte (MB) → Kilobyte (KB)</span></label>
+        <label class="q-opt-label"><input type="radio" name="q7" class="opt-radio"> <span><strong>D</strong> Megabyte (MB) → Kilobyte (KB) → Terabyte (TB) → Gigabyte (GB)</span></label>
+      </div>
+    </div>
+
+    <!-- Q8 -->
+    <div class="q-box">
+      <div class="q-head">
+        <span>Question 8 • Data Protection & Subject Access Requests</span>
+        <span>(1 mark)</span>
+      </div>
+      <p>A centre member asks to view all personal health questionnaire records and class attendance histories held about them by the leisure hub. Under UK GDPR, what is this right known as?</p>
+      <div class="q-options">
+        <label class="q-opt-label"><input type="radio" name="q8" class="opt-radio"> <span><strong>A</strong> Right to erase software licences</span></label>
+        <label class="q-opt-label"><input type="radio" name="q8" class="opt-radio"> <span><strong>B</strong> Right of access (Subject Access Request)</span></label>
+        <label class="q-opt-label"><input type="radio" name="q8" class="opt-radio"> <span><strong>C</strong> Right to transfer hardware ownership</span></label>
+        <label class="q-opt-label"><input type="radio" name="q8" class="opt-radio"> <span><strong>D</strong> Right to demand administrator network privileges</span></label>
+      </div>
+    </div>
+
+    <!-- Q9 -->
+    <div class="q-box">
+      <div class="q-head">
+        <span>Question 9 • File Compression & Archiving</span>
+        <span>(1 mark)</span>
+      </div>
+      <p>Why does the leisure centre manager compress (zip) high-resolution promotional event photos before emailing them to the local community newsletter?</p>
+      <div class="q-options">
+        <label class="q-opt-label"><input type="radio" name="q9" class="opt-radio"> <span><strong>A</strong> To delete the original images from the computer permanently</span></label>
+        <label class="q-opt-label"><input type="radio" name="q9" class="opt-radio"> <span><strong>B</strong> To reduce total file size for faster transmission and avoid email attachment size limits</span></label>
+        <label class="q-opt-label"><input type="radio" name="q9" class="opt-radio"> <span><strong>C</strong> To prevent recipients from viewing the pictures on mobile screens</span></label>
+        <label class="q-opt-label"><input type="radio" name="q9" class="opt-radio"> <span><strong>D</strong> To alter the colour balance of the photographs automatically</span></label>
+      </div>
+    </div>
+
+    <!-- Q10 -->
+    <div class="q-box">
+      <div class="q-head">
+        <span>Question 10 • Safe Workplace Communication & Sensitive Data</span>
+        <span>(1 mark)</span>
+      </div>
+      <p>The manager needs to transmit an urgent payroll report containing employee National Insurance numbers and bank sort codes to the external accountant. What is the safest digital transmission method?</p>
+      <div class="q-options">
+        <label class="q-opt-label"><input type="radio" name="q10" class="opt-radio"> <span><strong>A</strong> Posting the spreadsheet on the leisure centre's open Facebook page</span></label>
+        <label class="q-opt-label"><input type="radio" name="q10" class="opt-radio"> <span><strong>B</strong> Encrypting or password-protecting the file and communicating the strong password via a separate, secure secondary channel</span></label>
+        <label class="q-opt-label"><input type="radio" name="q10" class="opt-radio"> <span><strong>C</strong> Pasting all bank account numbers into the subject line of a standard email</span></label>
+        <label class="q-opt-label"><input type="radio" name="q10" class="opt-radio"> <span><strong>D</strong> Saving the file onto a lost-property USB memory stick and leaving it on the counter</span></label>
+      </div>
+    </div>
+
+    <!-- SECTION B -->
+    <div class="sec-header">
+      <h2>Section B — Practical Workplace Tasks</h2>
+      <span>44 Marks (75 Mins)</span>
+    </div>
+
+    <!-- TASK A -->
+    <div class="q-box">
+      <div class="q-head">
+        <span>Task A • Information Search & Professional Email Communication</span>
+        <span>(7 marks)</span>
+      </div>
+      <div class="task-brief">
+        <strong>Context:</strong> The leisure hub manager, Tariq, wants you to locate official UK physical activity guidelines for adults and email the summary to him.
+      </div>
+      <ol class="task-inst">
+        <li>Use an internet search engine to find the recommended weekly physical activity duration for adults (aged 19–64) in the UK. Record your search query and result.</li>
+        <li>Compose an email to <code>tariq.manager@riversidehub.co.uk</code> with the subject <code>UK Physical Activity Guidelines Summary</code>.</li>
+        <li>Include a polite professional greeting, state clearly that adults need at least <strong>150 minutes of moderate activity</strong> (or 75 minutes of vigorous activity) per week, plus muscle strengthening exercises on at least 2 days.</li>
+        <li>Add a professional automated email signature containing <em>Kind regards</em> and your candidate name.</li>
+      </ol>
+
+      <div class="work-box">
+        <div class="work-box-label">Task A Evidence: Search Query, URL & Extracted Guidelines</div>
+        <p style="font-size:0.85rem; color:#64748b; margin:0 0 8px 0;">Search Engine Keywords used:</p>
+        <div style="border-bottom:1px dotted #94a3b8; height:24px; margin-bottom:10px;"></div>
+        <p style="font-size:0.85rem; color:#64748b; margin:0 0 8px 0;">Website URL / Organisation Source:</p>
+        <div style="border-bottom:1px dotted #94a3b8; height:24px; margin-bottom:10px;"></div>
+        <p style="font-size:0.85rem; color:#64748b; margin:0 0 8px 0;">Key Physical Activity Requirement Identified:</p>
+        <div style="border-bottom:1px dotted #94a3b8; height:24px;"></div>
+      </div>
+
+      <div class="work-box" style="margin-top:14px;">
+        <div class="work-box-label">Email Message Draft:</div>
+        <div style="font-size:0.88rem; line-height:2;">
+          <strong>To:</strong> <code>tariq.manager@riversidehub.co.uk</code><br>
+          <strong>Subject:</strong> <code>UK Physical Activity Guidelines Summary</code><br>
+          <strong>Body:</strong><br>
+          <div style="min-height:100px; border:1px solid #e2e8f0; background:#fff; padding:10px; border-radius:4px;">
+            Dear Tariq,<br><br>
+            Please find below the official UK physical activity guidelines for adults aged 19 to 64:<br>
+            • Accumulate at least <strong>150 minutes of moderate intensity physical activity</strong> (e.g. brisk walking, cycling) per week, or 75 minutes of vigorous activity.<br>
+            • Complete strengthening activities working all major muscles on at least <strong>2 days each week</strong>.<br><br>
+            Kind regards,<br>
+            [Candidate Name]
+          </div>
+        </div>
+      </div>
+
+      <div class="evidence-check">
+        <input type="checkbox"> <span>Evidence Checked: Email sent with accurate recipient, subject line, 150 mins guidelines, and automated signature.</span>
+      </div>
+    </div>
+
+    <!-- TASK B -->
+    <div class="q-box">
+      <div class="q-head">
+        <span>Task B • Creating & Formatting an Activity Timetable Flyer</span>
+        <span>(11 marks)</span>
+      </div>
+      <div class="task-brief">
+        <strong>Context:</strong> Create an eye-catching, professional promotional flyer using <code>ACTIVITY TIMETABLE.docx</code> to advertise evening fitness classes.
+      </div>
+      <ol class="task-inst">
+        <li>Open <code>ACTIVITY TIMETABLE.docx</code> from your candidate folder. Change page orientation to <strong>Landscape</strong>.</li>
+        <li>Format the main heading <em>Riverside Community Leisure Hub — Evening Fitness Timetable</em> in bold, 22 pt, centered navy font.</li>
+        <li>Format the timetable schedule into a clean, 5-column table with adjusted column widths and header row shaded in light teal (#ccfbf1).</li>
+        <li>Insert the image <code>SPORTS ACTIVITIES.jpg</code> to the right-hand side of the table.</li>
+        <li>Crop the image to eliminate unnecessary borders, resize to <strong>6 cm height</strong> maintaining aspect ratio, and apply a 1 pt border.</li>
+        <li>Highlight the special introductory offer in a distinct callout box: <em>Special Introductory Offer: 20% discount on all monthly class passes when booked online before Friday! Use code: RIVERSIDE20</em>.</li>
+        <li>Apply an outer page border. Ensure balanced, professional layout with zero overlapping text.</li>
+      </ol>
+
+      <div class="work-box">
+        <div class="work-box-label">Task B Candidate Formatting Checklist:</div>
+        <div style="display:grid; grid-template-columns:1fr 1fr; gap:8px; font-size:0.85rem; margin-top:8px;">
+          <div><input type="checkbox"> [B1] Page Orientation: Landscape</div>
+          <div><input type="checkbox"> [B2a] Heading: Bold, 22 pt, Centered</div>
+          <div><input type="checkbox"> [B2b] Timetable: 5-Column Clean Table</div>
+          <div><input type="checkbox"> [B2c] Header Row: Shaded Light Teal</div>
+          <div><input type="checkbox"> [B3a] Image: SPORTS ACTIVITIES.jpg inserted</div>
+          <div><input type="checkbox"> [B3b] Position: Right-hand side of table</div>
+          <div><input type="checkbox"> [B4] Cropped: Excess border removed</div>
+          <div><input type="checkbox"> [B5] Resized: Exactly 6 cm height proportional</div>
+          <div><input type="checkbox"> [B6] Offer Box: Highlighted callout styled</div>
+          <div><input type="checkbox"> [B7a] Outer Border: Applied neatly</div>
+          <div style="grid-column: span 2;"><input type="checkbox"> [B7b] Fitness for purpose: Spacing balanced, no overlaps, high contrast</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- TASK C -->
+    <div class="q-box">
+      <div class="q-head">
+        <span>Task C • Sports Bookings & Revenue Spreadsheet Analysis</span>
+        <span>(15 marks)</span>
+      </div>
+      <div class="task-brief">
+        <strong>Context:</strong> Calculate weekly court bookings and revenue in <code>SPORTS BOOKINGS.xlsx</code>, apply currency formatting, sort data, and create an informative chart.
+      </div>
+      <ol class="task-inst">
+        <li>Merge and centre cells A1:H1, set font size to 20 pt, bold, and shade cells A1:H1 soft blue.</li>
+        <li>In cell G4, enter a formula to calculate Total Bookings for Badminton Court 1: <code>=SUM(C4:F4)</code>.</li>
+        <li>In cell H4, calculate Total Revenue: <code>=G4*B4</code> (Total Bookings × Court Hire Fee).</li>
+        <li>Replicate formulas down columns G and H for all 8 sports activities (rows 4 to 11).</li>
+        <li>In row 12, calculate the Daily Average Bookings: <code>=AVERAGE(C4:C11)</code> and replicate across columns C to F.</li>
+        <li>In cell H12, calculate Grand Total Revenue using <code>=SUM(H4:H11)</code>.</li>
+        <li>Format all court hire fees (column B) and revenue amounts (column H and cell H12) as British Pounds (£) with 2 decimal places.</li>
+        <li>Sort the activities table (rows A4:H11) in descending order of Total Revenue (Column H).</li>
+        <li>Create a 2D Clustered Column or Bar Chart comparing Activity / Facility (A3:A11) against Total Bookings (G3:G11). Add an informative chart title, legible axis titles, and position the chart neatly below the data table or on a separate sheet.</li>
+      </ol>
+
+      <table class="data-table">
+        <thead>
+          <tr>
+            <th>Activity / Facility</th>
+            <th>Hire Fee (£)</th>
+            <th>Mon</th>
+            <th>Tue</th>
+            <th>Wed</th>
+            <th>Thu</th>
+            <th>Fri</th>
+            <th>Total Bookings</th>
+            <th>Total Revenue (£)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Badminton Court 1</td><td>£12.50</td><td>14</td><td>16</td><td>15</td><td>18</td><td>20</td><td><code>=SUM(C4:G4)</code></td><td><code>=H4*B4</code></td></tr>
+          <tr><td>Badminton Court 2</td><td>£12.50</td><td>12</td><td>15</td><td>14</td><td>16</td><td>18</td><td><code>=SUM(C5:G5)</code></td><td><code>=H5*B5</code></td></tr>
+          <tr><td>Squash Court 1</td><td>£14.00</td><td>8</td><td>10</td><td>9</td><td>11</td><td>12</td><td><code>=SUM(C6:G6)</code></td><td><code>=H6*B6</code></td></tr>
+          <tr><td>Squash Court 2</td><td>£14.00</td><td>7</td><td>9</td><td>8</td><td>10</td><td>11</td><td><code>=SUM(C7:G7)</code></td><td><code>=H7*B7</code></td></tr>
+          <tr><td>Indoor Tennis Court</td><td>£22.00</td><td>5</td><td>6</td><td>6</td><td>8</td><td>10</td><td><code>=SUM(C8:G8)</code></td><td><code>=H8*B8</code></td></tr>
+          <tr><td>Fitness Studio A</td><td>£28.00</td><td>10</td><td>12</td><td>12</td><td>14</td><td>16</td><td><code>=SUM(C9:G9)</code></td><td><code>=H9*B9</code></td></tr>
+          <tr><td>Spinning Studio</td><td>£25.00</td><td>16</td><td>18</td><td>18</td><td>20</td><td>22</td><td><code>=SUM(C10:G10)</code></td><td><code>=H10*B10</code></td></tr>
+          <tr><td>Hydrotherapy Pool</td><td>£35.00</td><td>6</td><td>8</td><td>7</td><td>9</td><td>10</td><td><code>=SUM(C11:G11)</code></td><td><code>=H11*B11</code></td></tr>
+          <tr style="background:#fef3c7; font-weight:bold;">
+            <td>Daily Average Bookings</td><td>-</td>
+            <td colspan="5"><code>=AVERAGE(C4:C11)</code> (Replicate across to Column G)</td>
+            <td>Grand Total:</td>
+            <td><code>=SUM(I4:I11)</code></td>
+          </tr>
+        </tbody>
+      </table>
+
+      <div class="work-box">
+        <div class="work-box-label">Task C Formulas & Verification:</div>
+        <div style="font-size:0.85rem; line-height:1.7;">
+          • Total Bookings Formula (Row 4): <code>=SUM(C4:G4)</code> (83 bookings)<br>
+          • Revenue Formula (Row 4): <code>=H4*B4</code> (£1,037.50)<br>
+          • Daily Average Bookings Formula: <code>=AVERAGE(C4:C11)</code><br>
+          • Grand Total Revenue Formula (H12): <code>=SUM(I4:I11)</code><br>
+          • Chart Type: 2D Column / Bar Chart (Range: Activity Names vs Total Bookings)
+        </div>
+      </div>
+    </div>
+
+    <!-- TASK D -->
+    <div class="q-box">
+      <div class="q-head">
+        <span>Task D • Online Membership Portal Registration & Upload</span>
+        <span>(5 marks)</span>
+      </div>
+      <div class="task-brief">
+        <strong>Context:</strong> Register a junior sports charter club on the simulated online membership portal using <code>MEMBERSHIP PORTAL.html</code>.
+      </div>
+      <ol class="task-inst">
+        <li>Open <code>MEMBERSHIP PORTAL.html</code> in a web browser.</li>
+        <li>Enter Reference Number: <code>RHC-9428-JUN</code>, Organisation: <code>Riverside Youth FC</code>, Contact Person: <code>Sarah Jenkins</code>, Telephone: <code>01632 960882</code>, Email: <code>s.jenkins@riversideyouth.org.uk</code>.</li>
+        <li>Select Category: <strong>Junior Community Charter Club</strong> and Court Allocation Code: <code>COURT-HALL-B</code>.</li>
+        <li>Upload verification file <code>SPORTS BADGE.jpg</code>.</li>
+        <li>Select preferences for <strong>Email Updates</strong> and <strong>SMS Alerts</strong>, then click Submit Registration.</li>
+        <li>Record the confirmation booking token as evidence.</li>
+      </ol>
+
+      <div class="work-box">
+        <div class="work-box-label">Task D Evidence Record:</div>
+        <p style="font-size:0.85rem; margin:0 0 6px 0;">Generated Confirmation Booking Token:</p>
+        <div style="font-family:monospace; font-weight:700; font-size:1.1rem; color:#0f172a; background:#e2e8f0; padding:8px 12px; border-radius:4px; display:inline-block;">
+          AUTH-BOOKING-9942-VERIFIED
+        </div>
+      </div>
+    </div>
+
+    <!-- TASK E -->
+    <div class="q-box">
+      <div class="q-head">
+        <span>Task E • File Organization & Network Troubleshooting</span>
+        <span>(6 marks)</span>
+      </div>
+      <div class="task-brief">
+        <strong>Context:</strong> The leisure hub has installed a new wireless tablet terminal for pool deck check-ins that fails to obtain an IP address. Organise directories and document troubleshooting steps.
+      </div>
+      <ol class="task-inst">
+        <li>In your candidate workspace, create a new top-level folder named <code>Network Support</code>.</li>
+        <li>Inside <code>Network Support</code>, create a subfolder named <code>Pool Deck Tablet</code>.</li>
+        <li>Research why a wireless tablet device might fail to obtain an IP address or connect to Wi-Fi (e.g. router DHCP pool exhausted, tablet out of wireless range, incorrect WPA3 security key, or 2.4GHz / 5GHz frequency mismatch).</li>
+        <li>Save your troubleshooting solution inside the <code>Pool Deck Tablet</code> folder with the descriptive filename <code>Tablet Connection Troubleshooting.docx</code>.</li>
+        <li>Ensure your recommendations are practical, well-structured, and cite a reliable, secure (HTTPS) technical support reference with a recent date.</li>
+      </ol>
+
+      <div class="work-box">
+        <div class="work-box-label">Task E Directory Structure & Troubleshooting Notes:</div>
+        <div style="font-family:monospace; font-size:0.85rem; line-height:1.6; color:#334155; margin-bottom:10px;">
+          📁 Candidate_Workspace/<br>
+          &nbsp;&nbsp;└── 📁 Network Support/<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── 📁 Pool Deck Tablet/<br>
+          &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;└── 📄 Tablet Connection Troubleshooting.docx
+        </div>
+        <div style="font-size:0.85rem; color:#475569;">
+          <strong>Key Causes Identified:</strong> (1) DHCP IP address pool exhausted on router, (2) Weak signal or RF interference from pool water/structures, (3) Wi-Fi security key incorrect, (4) Incompatible frequency band (5GHz vs 2.4GHz).<br>
+          <strong>Reliable Secure Source:</strong> <code>https://www.ncsc.gov.uk/guidance/wi-fi-security-for-small-business</code> (Accessed October 2026).
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</body>
+</html>

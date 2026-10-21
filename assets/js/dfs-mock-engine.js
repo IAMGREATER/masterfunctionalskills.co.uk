@@ -1256,6 +1256,291 @@ const DFS_MOCK_DATA = {
         ]
       }
     ]
+  },
+  set6: {
+    id: "set6",
+    level: "Level 1",
+    name: "Mock 5: Riverside Community Health & Leisure Hub (Level 1 Practice Set 3)",
+    totalMarks: 54,
+    passMark: 35,
+    durationMinutes: 90,
+    dataPackUrl: "assets/downloads/dfs/dfs-level-1-practice-set-3-data-files.zip",
+    dataPackName: "dfs-level-1-practice-set-3-data-files.zip",
+    dataFiles: [
+      "ACTIVITY TIMETABLE.docx",
+      "COMMUNITY NOTICE.docx",
+      "MEMBERSHIP PORTAL.html",
+      "SPORTS BOOKINGS.xlsx",
+      "PRACTICE SET 3 DFS LEVEL 1 IMAGES/SPORTS ACTIVITIES.jpg",
+      "PRACTICE SET 3 DFS LEVEL 1 IMAGES/SPORTS BADGE.jpg"
+    ],
+    sectionA: [
+      {
+        qNum: 1,
+        title: "Multi-Factor Authentication (MFA / 2FA)",
+        stem: "Why should staff at a community leisure centre enable Multi-Factor Authentication (MFA) when accessing their staff accounts online?",
+        options: [
+          { text: "It saves internet bandwidth and boosts network connection speeds", isCorrect: false },
+          { text: "It provides an additional layer of defence by requiring two or more verification factors to confirm identity", isCorrect: true },
+          { text: "It ensures that files stored locally on the PC cannot be accidentally deleted", isCorrect: false },
+          { text: "It automatically updates the operating system every evening", isCorrect: false }
+        ],
+        mark: 1,
+        explanation: "Pearson Criteria: Multi-factor authentication adds an essential second verification factor (such as an authenticator app code or SMS token) beyond just a password, making unauthorized account access substantially harder even if passwords are breached."
+      },
+      {
+        qNum: 2,
+        title: "Display Screen Equipment & Ergonomics",
+        stem: "A receptionist at the leisure hub spends long shifts entering booking data into a computer. What ergonomic adjustment best prevents neck and eye strain?",
+        options: [
+          { text: "Positioning the monitor directly in front of the user with the top of the screen at eye level and reducing screen glare", isCorrect: true },
+          { text: "Tilting the screen upwards at a steep angle and dimming room lights completely", isCorrect: false },
+          { text: "Keeping the keyboard on the user's lap and sitting on a rigid stool", isCorrect: false },
+          { text: "Increasing screen resolution to the highest setting so text is as tiny as possible", isCorrect: false }
+        ],
+        mark: 1,
+        explanation: "Pearson Criteria: In accordance with HSE Display Screen Equipment (DSE) regulations, the monitor should be positioned directly in front of the user with the top of the display at eye height, arm's length away, with good ambient lighting to prevent musculoskeletal fatigue and eye strain."
+      },
+      {
+        qNum: 3,
+        title: "Refining Online Searches & Search Operators",
+        stem: "A coordinator wants to find official UK government sports facility guidelines published exclusively as a PDF document. Which search query is most effective?",
+        options: [
+          { text: "search sports facility rules anywhere online", isCorrect: false },
+          { text: "\"sports facility guidelines\" site:gov.uk filetype:pdf", isCorrect: true },
+          { text: "*sports* + *facilities* + help + please", isCorrect: false },
+          { text: "click on the first sponsored link on social media", isCorrect: false }
+        ],
+        mark: 1,
+        explanation: "Pearson Criteria: Using quotation marks for exact phrasing, 'site:gov.uk' to restrict results to authoritative government domains, and 'filetype:pdf' specifically filters for published document guidelines."
+      },
+      {
+        qNum: 4,
+        title: "Digital Footprint & Child Safeguarding",
+        stem: "A sports coach creates a public leisure hub group on social media. What is a primary risk of sharing candid photos of junior participants without parental permission?",
+        options: [
+          { text: "It slows down the social media platform's cloud server", isCorrect: false },
+          { text: "It breaches data privacy and child safeguarding regulations by exposing personal identifiable information publicly", isCorrect: true },
+          { text: "It converts high-resolution images into compressed vector shapes", isCorrect: false },
+          { text: "It automatically locks the coach out of their mobile phone", isCorrect: false }
+        ],
+        mark: 1,
+        explanation: "Pearson Criteria: Under GDPR, the Data Protection Act 2018, and child safeguarding standards, publishing identifiable images of minors online requires explicit parental/guardian consent and controlled privacy settings."
+      },
+      {
+        qNum: 5,
+        title: "Cybersecurity & Ransomware Threats",
+        stem: "A desktop screen suddenly displays a warning stating that all centre booking files are encrypted and demanding payment in digital currency to restore access. What type of malware is this?",
+        options: [
+          { text: "Spyware", isCorrect: false },
+          { text: "Ransomware", isCorrect: true },
+          { text: "Adware", isCorrect: false },
+          { text: "Phishing email", isCorrect: false }
+        ],
+        mark: 1,
+        explanation: "Pearson Criteria: Ransomware is malicious software that encrypts user files and storage devices, withholding decryption keys until an extortion ransom is paid."
+      },
+      {
+        qNum: 6,
+        title: "Secure Web Connections & SSL/TLS",
+        stem: "When entering customer payment card information on an online booking portal, which indicator confirms that communication between the browser and the web server is encrypted?",
+        options: [
+          { text: "The web address starts with https:// accompanied by a closed padlock icon in the browser address bar", isCorrect: true },
+          { text: "The web page has animated pop-up banner advertisements", isCorrect: false },
+          { text: "The website URL ends in .org or .co.uk", isCorrect: false },
+          { text: "The web page loads in under 2 seconds", isCorrect: false }
+        ],
+        mark: 1,
+        explanation: "Pearson Criteria: Hypertext Transfer Protocol Secure (HTTPS) and the padlock symbol confirm that an active SSL/TLS security certificate encrypts data during transmission against eavesdropping."
+      },
+      {
+        qNum: 7,
+        title: "Digital Storage Units & Capacity Hierarchy",
+        stem: "Which list correctly arranges digital storage units in ascending order from smallest capacity to largest capacity?",
+        options: [
+          { text: "Gigabyte (GB) → Megabyte (MB) → Terabyte (TB) → Kilobyte (KB)", isCorrect: false },
+          { text: "Kilobyte (KB) → Megabyte (MB) → Gigabyte (GB) → Terabyte (TB)", isCorrect: true },
+          { text: "Terabyte (TB) → Gigabyte (GB) → Megabyte (MB) → Kilobyte (KB)", isCorrect: false },
+          { text: "Megabyte (MB) → Kilobyte (KB) → Terabyte (TB) → Gigabyte (GB)", isCorrect: false }
+        ],
+        mark: 1,
+        explanation: "Pearson Criteria: Digital storage capacity progresses from Kilobyte (~1,000 bytes) to Megabyte (~1,000 KB), Gigabyte (~1,000 MB), and Terabyte (~1,000 GB)."
+      },
+      {
+        qNum: 8,
+        title: "Data Protection & Subject Access Requests",
+        stem: "A centre member asks to view all personal health questionnaire records and class attendance histories held about them by the leisure hub. Under UK GDPR, what is this right known as?",
+        options: [
+          { text: "Right to erase software licences", isCorrect: false },
+          { text: "Right of access (Subject Access Request)", isCorrect: true },
+          { text: "Right to transfer hardware ownership", isCorrect: false },
+          { text: "Right to demand administrator network privileges", isCorrect: false }
+        ],
+        mark: 1,
+        explanation: "Pearson Criteria: The UK GDPR Right of Access entitles individuals to receive confirmation that their data is being processed and obtain a copy of their personal data (Subject Access Request)."
+      },
+      {
+        qNum: 9,
+        title: "File Compression & Email Attachments",
+        stem: "Why does the leisure centre manager compress (zip) high-resolution promotional event photos before emailing them to the local community newsletter?",
+        options: [
+          { text: "To delete the original images from the computer permanently", isCorrect: false },
+          { text: "To reduce total file size for faster transmission and avoid email attachment size limits", isCorrect: true },
+          { text: "To prevent recipients from viewing the pictures on mobile screens", isCorrect: false },
+          { text: "To alter the colour balance of the photographs automatically", isCorrect: false }
+        ],
+        mark: 1,
+        explanation: "Pearson Criteria: Compressing files into a ZIP archive reduces total storage size and bundles multiple assets together, ensuring files stay within email service attachment limits (typically 20-25 MB)."
+      },
+      {
+        qNum: 10,
+        title: "Safe Transmission of Sensitive Workplace Data",
+        stem: "The manager needs to transmit an urgent payroll report containing employee National Insurance numbers and bank sort codes to the external accountant. What is the safest digital transmission method?",
+        options: [
+          { text: "Posting the spreadsheet on the leisure centre's open Facebook page", isCorrect: false },
+          { text: "Encrypting or password-protecting the file and communicating the strong password via a separate, secure secondary channel", isCorrect: true },
+          { text: "Pasting all bank account numbers into the subject line of a standard email", isCorrect: false },
+          { text: "Saving the file onto a lost-property USB memory stick and leaving it on the counter", isCorrect: false }
+        ],
+        mark: 1,
+        explanation: "Pearson Criteria: Sensitive personal and financial data must be encrypted with robust password protection, and the decryption key must be transmitted out-of-band (e.g. via telephone or separate encrypted channel)."
+      }
+    ],
+    tasks: [
+      {
+        id: "taskA",
+        letter: "Task A",
+        title: "Information Search & Professional Email Communication",
+        marks: 7,
+        brief: "The leisure hub manager, Tariq, wants you to locate the official UK physical activity guidelines for adults and email the summary to him.",
+        instructions: [
+          "Use a search engine to find the recommended weekly physical activity duration for adults in the UK. Take a screenshot of your search terms and results.",
+          "Compose an email to <code>tariq.manager@riversidehub.co.uk</code> with the subject <code>UK Physical Activity Guidelines Summary</code>.",
+          "Include a polite greeting (e.g. 'Dear Tariq,' or 'Hello Tariq,'), state clearly that adults need at least <strong>150 minutes of moderate activity</strong> (or 75 minutes of vigorous activity) per week, plus muscle strengthening on at least 2 days.",
+          "Add a professional automated email signature containing 'Kind regards' and your candidate name."
+        ],
+        type: "search_email",
+        searchAnswer: "UK physical activity guidelines adults 150 minutes",
+        searchResultSnippet: "Official UK Physical Activity Guidelines: Adults aged 19 to 64 should aim to be physically active daily. Each week, adults should accumulate at least 150 minutes of moderate intensity activity (such as brisk walking or cycling) or 75 minutes of vigorous activity, plus strengthening activities on at least 2 days.",
+        rubric: [
+          { code: "A1", desc: "Search engine query shows appropriate keywords (e.g. 'UK physical activity guidelines adults')", mark: 1 },
+          { code: "A1b", desc: "Correct guideline duration identified: at least 150 minutes moderate intensity per week", mark: 1 },
+          { code: "A2", desc: "Automated email signature created with 'Kind regards' and candidate name", mark: 1 },
+          { code: "A3a", desc: "Recipient email entered accurately: tariq.manager@riversidehub.co.uk", mark: 1 },
+          { code: "A3b", desc: "Subject line concise and descriptive: 'UK Physical Activity Guidelines Summary'", mark: 1 },
+          { code: "A3c", desc: "Professional greeting and polite business sign-off maintained", mark: 1 },
+          { code: "A3d", desc: "Accurate physical activity recommendations included in message body", mark: 1 }
+        ]
+      },
+      {
+        id: "taskB",
+        letter: "Task B",
+        title: "Creating & Formatting an Activity Timetable Flyer",
+        marks: 11,
+        brief: "Riverside Community Hub wants an attractive, professional promotional flyer created using ACTIVITY TIMETABLE.docx to advertise evening fitness classes.",
+        instructions: [
+          "Open <code>ACTIVITY TIMETABLE.docx</code> from your data folder. Change page orientation to <strong>Landscape</strong>.",
+          "Format the main title 'Riverside Community Leisure Hub — Evening Fitness Timetable' in bold, 22 pt, centered.",
+          "Insert the timetable schedule below the heading formatted as a clean 5-column table with adjusted column widths and header row shaded in light teal.",
+          "Insert <code>SPORTS ACTIVITIES.jpg</code> to the right-hand side of the table.",
+          "Crop the image to eliminate unnecessary borders, resize to <strong>6 cm height</strong> maintaining aspect ratio, and apply a subtle border.",
+          "Highlight the special introductory offer in a distinct callout box: 'Special Introductory Offer: 20% discount on all monthly class passes when booked online before Friday! Voucher code: RIVERSIDE20'.",
+          "Apply an outer page border. Ensure balanced, professional layout with zero overlapping text."
+        ],
+        type: "flyer_design",
+        rubric: [
+          { code: "B1", desc: "Page orientation set to Landscape", mark: 1 },
+          { code: "B2a", desc: "Main heading formatted in bold, 22 pt font, centered", mark: 1 },
+          { code: "B2b", desc: "Timetable formatted inside a clean structured table with adjusted column widths", mark: 1 },
+          { code: "B2c", desc: "Table header row shaded with a contrasting background color", mark: 1 },
+          { code: "B3a", desc: "Image SPORTS ACTIVITIES.jpg inserted into document", mark: 1 },
+          { code: "B3b", desc: "Image positioned neatly adjacent to or right-hand side of timetable", mark: 1 },
+          { code: "B4", desc: "Image cropped to remove excess margins/borders", mark: 1 },
+          { code: "B5", desc: "Image resized to 6 cm height maintaining proportions", mark: 1 },
+          { code: "B6", desc: "Special introductory offer highlighted in a styled callout box", mark: 1 },
+          { code: "B7a", desc: "Decorative outer page border applied", mark: 1 },
+          { code: "B7b", desc: "Document fit for purpose: balanced spacing, legible fonts, zero overlapping elements", mark: 1 }
+        ]
+      },
+      {
+        id: "taskC",
+        letter: "Task C",
+        title: "Sports Bookings & Revenue Spreadsheet Analysis",
+        marks: 15,
+        brief: "Tariq needs weekly court bookings and revenue calculated in SPORTS BOOKINGS.xlsx, formatted into currency, and charted.",
+        instructions: [
+          "Merge and centre cells A1:H1, set font size to 20 pt, bold, and shade cells A1:H1 soft blue.",
+          "In cell G4, enter a formula to calculate Total Bookings for Badminton Court 1: <code>=SUM(C4:F4)</code>.",
+          "In cell H4, calculate Total Revenue: <code>=G4*B4</code> (Total Bookings × Court Hire Fee).",
+          "Replicate formulas down columns G and H for all 8 sports activities (rows 4 to 11).",
+          "In row 12, calculate the Daily Average Bookings: <code>=AVERAGE(C4:C11)</code> and replicate across columns C to F.",
+          "In cell H12, calculate Grand Total Revenue using <code>=SUM(H4:H11)</code>.",
+          "Format all court hire fees (column B) and revenue amounts (column H and cell H12) as British Pounds (£) with 2 decimal places.",
+          "Sort the activities table (rows A4:H11) in descending order of Total Revenue (Column H).",
+          "Create a 2D Clustered Column or Bar Chart comparing Activity / Facility (A3:A11) against Total Bookings (G3:G11). Add an informative chart title, legible axis titles, and position the chart neatly below the data table or on a separate sheet."
+        ],
+        type: "spreadsheet",
+        rubric: [
+          { code: "C1a", desc: "Main title merged & centred across A1:H1 with 20 pt bold styling", mark: 1 },
+          { code: "C1b", desc: "Header row shaded with soft blue background fill", mark: 1 },
+          { code: "C2a", desc: "Total bookings formula entered correctly in cell G4: =SUM(C4:F4)", mark: 1 },
+          { code: "C2b", desc: "Revenue formula calculated correctly in cell H4: =G4*B4", mark: 1 },
+          { code: "C3", desc: "Formulas successfully replicated down columns G and H for rows 4 to 11", mark: 2 },
+          { code: "C4", desc: "Average formula entered correctly in row 12: =AVERAGE(C4:C11)", mark: 1 },
+          { code: "C5", desc: "Average formula replicated horizontally across columns C to F", mark: 1 },
+          { code: "C6", desc: "Grand total revenue formula entered in cell H12: =SUM(H4:H11)", mark: 1 },
+          { code: "C7", desc: "Currency formatting (£ with 2 decimal places) applied to all monetary figures", mark: 2 },
+          { code: "C8", desc: "Data sorted in descending order of Total Revenue (Column H)", mark: 2 },
+          { code: "C9a", desc: "Bar or Column chart created showing Activity vs Total Bookings accurately", mark: 1 },
+          { code: "C9b", desc: "Chart includes appropriate title and clearly labeled axes", mark: 1 }
+        ]
+      },
+      {
+        id: "taskD",
+        letter: "Task D",
+        title: "Online Membership Portal Registration & Upload",
+        marks: 5,
+        brief: "Register a junior sports charter club on the simulated online membership portal using MEMBERSHIP PORTAL.html.",
+        instructions: [
+          "Open <code>MEMBERSHIP PORTAL.html</code> in a web browser.",
+          "Enter Reference Number: <code>RHC-9428-JUN</code>, Organisation Name: <code>Riverside Youth FC</code>, Contact Person: <code>Sarah Jenkins</code>, Telephone: <code>01632 960882</code>, Email: <code>s.jenkins@riversideyouth.org.uk</code>.",
+          "Select Membership Category: <strong>Junior Community Charter Club</strong> and enter Court Allocation Code: <code>COURT-HALL-B</code>.",
+          "Upload the club verification file <code>SPORTS BADGE.jpg</code>.",
+          "Select communication preferences for <strong>Email Updates</strong> and <strong>SMS Alerts</strong>, then click Submit Registration.",
+          "Record the generated confirmation token (<code>AUTH-BOOKING-9942-VERIFIED</code>) as evidence."
+        ],
+        type: "web_form",
+        rubric: [
+          { code: "D1", desc: "Organisation and contact details entered accurately (Account RHC-9428-JUN, Riverside Youth FC, Sarah Jenkins, phone, email)", mark: 2 },
+          { code: "D2", desc: "Membership category and court allocation code selected accurately", mark: 1 },
+          { code: "D3", desc: "Verification file uploaded into form file field", mark: 1 },
+          { code: "D4", desc: "Communication preferences selected for Email and SMS and confirmation token recorded", mark: 1 }
+        ]
+      },
+      {
+        id: "taskE",
+        letter: "Task E",
+        title: "File Organization & Network Troubleshooting",
+        marks: 6,
+        brief: "The leisure hub has installed a new wireless tablet terminal for pool deck check-ins that fails to obtain an IP address. Organise directories and document troubleshooting steps.",
+        instructions: [
+          "In your candidate workspace, create a new top-level folder named <code>Network Support</code>.",
+          "Inside <code>Network Support</code>, create a subfolder named <code>Pool Deck Tablet</code>.",
+          "Research why a wireless tablet device might fail to obtain an IP address or connect to Wi-Fi (e.g., router DHCP pool exhausted, tablet out of wireless range, incorrect WPA3 security key, or 2.4GHz / 5GHz frequency band mismatch).",
+          "Save your troubleshooting solution inside the <code>Pool Deck Tablet</code> folder with the descriptive filename <code>Tablet Connection Troubleshooting.docx</code>.",
+          "Ensure your recommendations are practical, well-structured, and cite a reliable, secure (HTTPS) technical support reference with a recent date."
+        ],
+        type: "file_mgmt",
+        rubric: [
+          { code: "E1a", desc: "New top-level directory created named 'Network Support'", mark: 1 },
+          { code: "E1b", desc: "Subfolder created inside named 'Pool Deck Tablet'", mark: 1 },
+          { code: "E2a", desc: "Document saved with appropriate descriptive filename 'Tablet Connection Troubleshooting.docx'", mark: 1 },
+          { code: "E2b", desc: "Identifies at least two plausible technical causes for IP / DHCP connection failure", mark: 1 },
+          { code: "E2c", desc: "Provides clear sequential troubleshooting steps to restore tablet connectivity", mark: 1 },
+          { code: "E2d", desc: "Demonstrates secure technical research habits citing reliable HTTPS sources with date verification", mark: 1 }
+        ]
+      }
+    ]
   }
 };
 
@@ -1473,6 +1758,55 @@ function renderSimulatorForTask(task) {
             </div>
           </div>
           <div id="simEmailFeedback_${task.id}" style="margin-top:10px; display:none; padding:10px; border-radius:8px;"></div>
+        </div>
+      </div>
+    `;
+  } else if (task.type === "flyer_design" || task.type === "document_design") {
+    return `
+      <div class="sim-container">
+        <div class="sim-top-bar">
+          <span class="sim-dot red"></span><span class="sim-dot yellow"></span><span class="sim-dot green"></span>
+          <span style="margin-left:10px;"><i class="fa-solid fa-file-word"></i> Simulated Word Processing & Document Layout Inspector</span>
+        </div>
+        <div class="sim-body">
+          <p style="margin-top:0; font-size:0.9rem; color:var(--dfs-text-muted);">
+            Test and verify your flyer layout parameters below, or format the downloaded document in Microsoft Word:
+          </p>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(200px, 1fr)); gap:12px; margin-bottom:16px;">
+            <div style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:6px; padding:10px;">
+              <label style="display:block; font-size:0.8rem; font-weight:700; color:#334155; margin-bottom:4px;">Page Orientation:</label>
+              <select id="simDocOrient_${task.id}" class="sim-search-input" style="width:100%;">
+                <option value="portrait">Portrait</option>
+                <option value="landscape" selected>Landscape (Required)</option>
+              </select>
+            </div>
+            <div style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:6px; padding:10px;">
+              <label style="display:block; font-size:0.8rem; font-weight:700; color:#334155; margin-bottom:4px;">Image Height & Cropping:</label>
+              <select id="simDocImg_${task.id}" class="sim-search-input" style="width:100%;">
+                <option value="original">Original Uncropped</option>
+                <option value="6cm" selected>6.0 cm Height (Proportional Cropped)</option>
+                <option value="distorted">Distorted / Stretched</option>
+              </select>
+            </div>
+            <div style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:6px; padding:10px;">
+              <label style="display:block; font-size:0.8rem; font-weight:700; color:#334155; margin-bottom:4px;">Table Header Shading:</label>
+              <select id="simDocTable_${task.id}" class="sim-search-input" style="width:100%;">
+                <option value="none">No Shading (Plain)</option>
+                <option value="shaded" selected>Shaded Header Row</option>
+              </select>
+            </div>
+            <div style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:6px; padding:10px;">
+              <label style="display:block; font-size:0.8rem; font-weight:700; color:#334155; margin-bottom:4px;">Decorative Outer Border:</label>
+              <select id="simDocBorder_${task.id}" class="sim-search-input" style="width:100%;">
+                <option value="none">None</option>
+                <option value="border" selected>1.5 pt Page Border</option>
+              </select>
+            </div>
+          </div>
+          <button type="button" class="sim-search-btn" onclick="validateFlyerSim('${task.id}')">
+            <i class="fa-solid fa-wand-magic-sparkles"></i> Verify Document Formatting Criteria
+          </button>
+          <div id="simFlyerFeedback_${task.id}" style="margin-top:14px; display:none; padding:12px; border-radius:8px;"></div>
         </div>
       </div>
     `;
@@ -1731,6 +2065,26 @@ function executeSimSearch(taskId) {
   }
 }
 
+function validateFlyerSim(taskId) {
+  const orient = document.getElementById(`simDocOrient_${taskId}`)?.value;
+  const img = document.getElementById(`simDocImg_${taskId}`)?.value;
+  const table = document.getElementById(`simDocTable_${taskId}`)?.value;
+  const border = document.getElementById(`simDocBorder_${taskId}`)?.value;
+  const fb = document.getElementById(`simFlyerFeedback_${taskId}`);
+  if (!fb) return;
+
+  fb.style.display = "block";
+  if (orient === "landscape" && img === "6cm" && table === "shaded" && border === "border") {
+    fb.style.background = "#dcfce7";
+    fb.style.color = "#15803d";
+    fb.innerHTML = '<i class="fa-solid fa-circle-check"></i> <strong>All formatting criteria matched!</strong> Landscape orientation, proportional 6cm cropped image, contrasting table header shading, and outer page border verified.';
+  } else {
+    fb.style.background = "#fee2e2";
+    fb.style.color = "#b91c1c";
+    fb.innerHTML = '<i class="fa-solid fa-triangle-exclamation"></i> <strong>Check layout parameters:</strong> Ensure Landscape orientation, 6 cm cropped image, shaded header row, and page border are all selected.';
+  }
+}
+
 function validateSimEmail(taskId) {
   const to = document.getElementById(`simEmailTo_${taskId}`);
   const sub = document.getElementById(`simEmailSub_${taskId}`);
@@ -1744,7 +2098,7 @@ function validateSimEmail(taskId) {
   const bodyVal = body.value.trim();
 
   let errors = [];
-  if (!toVal.includes("@") || !toVal.includes("pearson")) {
+  if (!toVal.includes("@") || !toVal.includes(".")) {
     errors.push("Check recipient email address - must be a valid Pearson test address.");
   }
   if (subVal.length < 3) {

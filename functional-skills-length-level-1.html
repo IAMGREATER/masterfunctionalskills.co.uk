@@ -1,0 +1,1015 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-theme="sapphire" data-tint="cream">
+<head>
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Length & Dimensions Level 1: Key Rules, Models &amp; Exam Practice | Master Functional Skills</title>
+  <meta name="description" content="Dyslexia-friendly Length & Dimensions revision guide for Functional Skills Mathematics Level 1. Clear spacing, structured cards, large numbers, worked models, and interactive practice.">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192x192.png">
+  <link rel="apple-touch-icon" href="assets/img/favicon-192x192.png">
+  <link rel="shortcut icon" href="favicon.ico">
+    <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0b172d">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="MFS Skills">
+  <link rel="apple-touch-icon" href="assets/img/favicon-192x192.png">
+  <script src="assets/js/mfs-pwa.js" defer></script>
+  <link rel="stylesheet" href="assets/css/mfs-theme.css?v=20261017j">
+  <link rel="stylesheet" href="assets/css/mfs-mobile.css?v=20261018b">
+  <link rel="stylesheet" href="assets/css/mfs-revision.css?v=20261018b">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <style>
+    /* Harmonized Large Dyslexia-Friendly Typography (~1.15rem) */
+    .revision-content p,
+    .revision-content li,
+    .mfs-topic-stem,
+    .mfs-topic-body p,
+    .mfs-topic-body ol,
+    .mfs-topic-body ul,
+    .rule-card-amber p,
+    .model-scenario p,
+    .model-q-stem,
+    .model-step-col-desc,
+    .examiner-guidance-text,
+    .examiner-pitfall-desc,
+    .examiner-pitfall-fix,
+    .practice-q-stem,
+    .practice-solution-drawer div {
+      font-size: 1.15rem !important;
+      line-height: 1.85 !important;
+      color: #0f172a;
+    }
+    .mfs-topic-stem {
+      color: #334155 !important;
+      font-size: 1.12rem !important;
+    }
+    .rule-card-amber p {
+      color: #78350f !important;
+    }
+    .examiner-pitfall-desc {
+      color: #881337 !important;
+    }
+    .examiner-pitfall-fix {
+      color: #9f1239 !important;
+    }
+    .revision-content code {
+      font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif !important;
+      font-size: 1.05rem !important;
+      font-weight: 700 !important;
+      padding: 2px 7px !important;
+      background: #e0f2fe !important;
+      color: #0369a1 !important;
+      border-radius: 5px !important;
+    }
+    .model-step-title {
+      font-size: 1.12rem !important;
+      font-weight: 700 !important;
+    }
+    .model-final-answer {
+      font-size: 1.15rem !important;
+      line-height: 1.8 !important;
+    }
+    .practice-scratchpad {
+      font-size: 1.05rem !important;
+      line-height: 1.7 !important;
+    }
+  </style>
+</head>
+<body>
+
+    <!-- TOP TRUST BAR WITH ACCESSIBILITY & CONTACT -->
+  <div class="mfs-top-bar">
+    <div class="mfs-container mfs-top-bar-inner">
+      <div class="top-trust-items">
+        <span class="top-trust-item"><i class="fa-solid fa-building-columns"></i> Pearson Edexcel &amp; City &amp; Guilds Aligned</span>
+      </div>
+      <div class="top-contacts">
+        <div class="mfs-access-bar">
+          <!-- DYSLEXIA BACKGROUND TINT PICKER -->
+          <div class="mfs-tint-dropdown-wrap">
+            <button type="button" id="tintToggle" class="btn-tint-toggle" onclick="toggleTintMenu(event)" title="Change dyslexia background tint">
+              <span class="tint-swatch-indicator" id="tintCurrentSwatch"></span>
+              <span id="tintLabel">Cream Tint</span>
+              <i class="fa-solid fa-chevron-down" style="font-size:0.62rem; opacity:0.75; margin-left:2px;"></i>
+            </button>
+            <div id="tintMenu" class="tint-picker-menu">
+              <div class="tint-picker-title"><i class="fa-solid fa-glasses"></i> Dyslexia Reading Tint</div>
+              <button type="button" class="tint-option-btn active" data-tint="cream" onclick="setSiteTint('cream', event)">
+                <span class="swatch swatch-cream"></span>
+                <span class="tint-name">Cream <small class="tint-badge-def">Default</small></span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="peach" onclick="setSiteTint('peach', event)">
+                <span class="swatch swatch-peach"></span>
+                <span class="tint-name">Soft Peach</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="cool" onclick="setSiteTint('cool', event)">
+                <span class="swatch swatch-cool"></span>
+                <span class="tint-name">Cool Mist</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="sage" onclick="setSiteTint('sage', event)">
+                <span class="swatch swatch-sage"></span>
+                <span class="tint-name">Soft Sage</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <div class="tint-divider"></div>
+              <button type="button" class="tint-option-btn" data-tint="none" onclick="setSiteTint('none', event)">
+                <span class="swatch swatch-none"></span>
+                <span class="tint-name">No Tint (White)</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+            </div>
+          </div>
+          <button id="dyslexiaToggle" class="btn-dyslexia-toggle" onclick="toggleDyslexiaMode()" title="Toggle Dyslexia High-Readability Mode">
+            <i class="fa-solid fa-universal-access"></i> Dyslexia
+          </button>
+          <button id="themeToggle" class="mfs-theme-pill" onclick="toggleTheme()" title="Switch Palette: Sapphire vs Emerald">
+            <i class="fa-solid fa-palette"></i> <span id="themeLabel">Sapphire</span>
+          </button>
+        </div>
+        <a href="contact-us.html" class="top-contact-link"><i class="fa-solid fa-envelope"></i> <strong>Contact Us</strong></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->  <!-- MAIN NAVIGATION -->
+  <header class="mfs-navbar">
+    <div class="revision-page-wrapper mfs-navbar-inner">
+      <a href="index.html" class="mfs-brand">
+        <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div class="mfs-brand-text">
+          <div class="mfs-brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
+          <div class="mfs-brand-subtitle">Delivering Skills • Achieving Goals</div>
+        </div>
+      </a>
+
+      <nav class="mfs-nav-wrapper">
+        <ul class="mfs-nav-menu">
+          <!-- 1. SUBJECTS (VISUAL MEGA-MENU) -->
+          <li class="mfs-nav-item">
+            <a href="revise.html" class="mfs-nav-link">
+              <i class="fa-solid fa-book-open-reader" style="color:#0284c7; margin-right:5px;"></i> Subjects <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-revision-hub">
+              <div class="mfs-revision-grid">
+                <!-- Maths Column -->
+                <div class="mfs-revision-col mfs-revision-col-maths">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-calculator"></i> Maths Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="functional-skills-maths-level-1.html" class="mfs-dropdown-item">Maths Level 2</a>
+                    <a href="functional-skills-maths-level-1.html" class="mfs-dropdown-item">Maths Level 1</a>
+                    <a href="entry-level-3-maths.html" class="mfs-dropdown-item">Entry Level 3 Maths</a>
+                  </div>
+                </div>
+                <!-- English Column -->
+                <div class="mfs-revision-col mfs-revision-col-english">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-pen-nib"></i> English Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="functional-skills-english-level-2.html" class="mfs-dropdown-item">English Level 2</a>
+                    <a href="functional-skills-english-level-1.html" class="mfs-dropdown-item">English Level 1</a>
+                  </div>
+                </div>
+                <!-- Digital Skills Column -->
+                <div class="mfs-revision-col mfs-revision-col-digital">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-laptop-code"></i> Digital Skills</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="digital-functional-skills.html" class="mfs-dropdown-item">Digital Skills Hub</a>
+                    <a href="digital-functional-skills-mock-exam.html" class="mfs-dropdown-item">Pearson Mock Exam</a>
+                    <a href="digital-functional-skills-past-papers.html" class="mfs-dropdown-item">Past Papers &amp; Files</a>
+                  </div>
+                </div>
+              </div>
+              <!-- Course & Subject Selector Cross-link Footer inside dropdown -->
+              <div class="mfs-revision-dropdown-footer" style="margin-top:12px; padding-top:10px; border-top:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center; font-size:0.92rem;">
+                <a href="revise.html" style="font-weight:700; color:var(--accent); text-decoration:none;"><i class="fa-solid fa-layer-group" style="margin-right:4px;"></i> View All Subjects &amp; Levels &rarr;</a>
+                <a href="courses.html" style="font-weight:700; color:#059669; text-decoration:none;"><i class="fa-solid fa-graduation-cap" style="margin-right:4px;"></i> Accredited Online Courses &rarr;</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- 2. ONLINE COURSES -->
+          <li class="mfs-nav-item">
+            <a href="courses.html" class="mfs-nav-link">
+              <i class="fa-solid fa-graduation-cap" style="color:#0284c7; margin-right:5px;"></i> Online Courses
+            </a>
+          </li>
+
+          <!-- 3. PAST PAPERS (DIRECT ACCESS) -->
+          <li class="mfs-nav-item">
+            <a href="functional-skills-past-papers.html" class="mfs-nav-link">
+              <i class="fa-regular fa-file-lines" style="color:#0284c7; margin-right:5px;"></i> Past Papers
+            </a>
+          </li>
+
+          <!-- 4. WORKSHEETS DIRECTORY (CORBETT STYLE DUAL ENGINE) -->
+          <li class="mfs-nav-item">
+            <a href="worksheets.html" class="mfs-nav-link">
+              <i class="fa-solid fa-layer-group" style="color:#0284c7; margin-right:5px;"></i> Worksheets
+            </a>
+          </li>
+
+          <!-- 5. FREE TOOLS (COMPACT DROPDOWN) -->
+          <li class="mfs-nav-item">
+            <a href="tools.html" class="mfs-nav-link">
+              <i class="fa-solid fa-screwdriver-wrench" style="color:#0284c7; margin-right:5px;"></i> Free Tools <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-compact">
+              <a href="tools.html" class="mfs-dropdown-item" style="font-weight:700; color:var(--accent);"><i class="fa-solid fa-layer-group" style="font-size:0.85rem; margin-right:6px;"></i> All Free Tools &amp; Simulators &rarr;</a>
+              <div class="mfs-dropdown-divider" style="margin:4px 0; border-top:1px solid #e2e8f0;"></div>
+              <a href="pass-mark-calculator.html" class="mfs-dropdown-item"><i class="fa-solid fa-calculator" style="color:var(--accent); font-size:0.85rem; margin-right:6px;"></i> Pass Mark Calculator</a>
+              <a href="diagnostic-test.html" class="mfs-dropdown-item"><i class="fa-solid fa-chart-pie" style="color:#059669; font-size:0.85rem; margin-right:6px;"></i> Diagnostic Skill Checker</a>
+              <a href="functional-skills-nets.html" class="mfs-dropdown-item"><i class="fa-solid fa-cube" style="color:#0284c7; font-size:0.85rem; margin-right:6px;"></i> 3D Net Folding Tool</a>
+              <a href="video-solution.html" class="mfs-dropdown-item"><i class="fa-solid fa-circle-play" style="color:#ef4444; font-size:0.85rem; margin-right:6px;"></i> Video Walkthrough Station</a>
+            </div>
+          </li>
+
+          <!-- 6. REVISION CARDS -->
+          <li class="mfs-nav-item">
+            <a href="revision-cards.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-layer-group" style="color:#d97706; margin-right:5px;"></i> Revision Cards
+            </a>
+          </li>
+
+          <!-- 7. SHOP -->
+          <li class="mfs-nav-item">
+            <a href="shop.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-basket-shopping" style="color:#d97706; margin-right:5px;"></i> Shop
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- 8. BOOK EXAM ACTION BUTTON -->
+      <div class="mfs-nav-actions">
+        <a href="exams.html" class="btn-nav-exam">
+          <i class="fa-solid fa-calendar-check"></i> Book Exam
+        </a>
+      </div>
+
+      <!-- MOBILE CONTROLS (TINT + MENU PILL) -->
+      <div class="mfs-mobile-controls" id="mfsMobileControls">
+        <button type="button" class="btn-mobile-tint-toggle" id="mfsMobileTintBtn" title="Change Reading Tint" aria-label="Reading Tint">
+          <i class="fa-solid fa-glasses"></i>
+          <span class="mobile-tint-swatch" id="mfsMobileTintSwatch"></span>
+        </button>
+        <button type="button" class="mfs-menu-pill" id="mfsMobileToggleBtn" title="Open Navigation Menu" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+          <span>Menu</span>
+        </button>
+      </div>
+    </div>
+    <!-- MOBILE NAVIGATION ENGINE -->
+    <script src="assets/js/mfs-mobile.js" defer></script>
+  </header>
+
+  <!-- BREADCRUMBS -->
+  <div class="revision-breadcrumb-bar">
+    <div class="revision-page-wrapper">
+      <div class="revision-breadcrumbs">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a href="revise.html">Revise Hub</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a href="functional-skills-maths-level-1.html">Mathematics Level 1</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span class="current">Length & Dimensions Level 1</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="revision-hero-card">
+    <div class="revision-page-wrapper">
+      <div class="revision-hero-grid">
+        <div class="revision-hero-content">
+          <div class="revision-hero-pill-row">
+            <span class="badge-pill-accent"><i class="fa-solid fa-calculator"></i> MATHEMATICS</span>
+            <span class="badge-pill-gold">LEVEL 1 REVISION</span>
+            <span class="badge-pill-outline">OFQUAL SPECIFICATION STANDARDS</span>
+          </div>
+
+          <h1 class="revision-hero-title">
+            Length & Dimensions Level 1: <span>Formulas, Models &amp; Exam Practice</span>
+          </h1>
+
+          <p class="revision-hero-desc">
+            Measure, estimate, and calculate lengths, heights, widths, and perimeters in construction, interior decorating, and clinical patient positioning.
+          </p>
+
+          <div class="revision-hero-meta-bar">
+            <div class="hero-meta-item">
+              <i class="fa-solid fa-clock"></i> <strong>Est. Study Time:</strong> 25-35 Mins
+            </div>
+            <div class="hero-meta-item">
+              <i class="fa-solid fa-book-open"></i> <strong>Curriculum Standards:</strong> Pearson Edexcel &amp; City &amp; Guilds
+            </div>
+            <div class="hero-meta-item">
+              <i class="fa-solid fa-circle-check"></i> <strong>Interactive Practice Tasks Included</strong>
+            </div>
+
+            <div class="hero-quick-actions">
+              <a href="#downloads" class="btn-hero-action">
+                <i class="fa-regular fa-file-pdf"></i> Free Worksheet &amp; Answers (PDF)
+              </a>
+              <a href="#practice-questions" class="btn-hero-action-secondary">
+                <i class="fa-solid fa-pencil"></i> Start Practice Tasks
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="revision-hero-visual-card">
+          <div class="revision-hero-img-wrap">
+            <img src="assets/img/book_photos/measuring_tools/tape_measure.jpg" alt="Length & Dimensions Workplace Application" loading="lazy" />
+          </div>
+          <div class="revision-hero-caption-bar">
+            <strong><i class="fa-solid fa-shapes"></i> Key Visual Concept</strong>
+            Carpentry and site measurements tracking linear dimensions and timber cuts.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOBILE TABLE OF CONTENTS BAR -->
+  <div class="mobile-toc-bar">
+    <div style="font-weight:700; color:var(--navy-dark); font-size:0.9rem;">
+      <i class="fa-solid fa-list-check" style="color:var(--accent);"></i> Length & Dimensions Blueprint
+    </div>
+    <button type="button" class="btn-mobile-toc" onclick="toggleMobileToc()">
+      <span>Table of Contents</span> <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+
+  <!-- MAIN 2-COLUMN RESPONSIVE LAYOUT -->
+  <main class="revision-page-wrapper">
+    <div class="revision-layout">
+
+      <!-- LEFT COLUMN: STICKY BLUEPRINT TOC -->
+      <aside class="revision-sidebar" id="sidebarNav">
+        <div class="sidebar-toc-title">
+          <span><i class="fa-solid fa-compass-drafting" style="color:var(--accent);"></i> Topic Contents</span>
+          <span style="font-size:0.90rem; color:#64748b; font-weight:700;">9 Sections</span>
+        </div>
+
+        <ul class="sidebar-toc-list" id="tocList">
+          
+          <li>
+            <a href="#specification" class="sidebar-toc-link active">
+              <i class="fa-solid fa-clipboard-check"></i> Specification
+            </a>
+          </li>
+          <li>
+            <a href="#golden-rules" class="sidebar-toc-link">
+              <i class="fa-solid fa-lightbulb"></i> Golden Rules
+            </a>
+          </li>
+          <li>
+            <a href="#skill-1" class="sidebar-toc-link">
+              <i class="fa-solid fa-shapes"></i> 1. Skill 1: Length Measurement Benchmarks & Unit Selection
+            </a>
+          </li>
+          <li>
+            <a href="#skill-2" class="sidebar-toc-link">
+              <i class="fa-solid fa-shapes"></i> 2. Skill 2: Cutting Lengths from Timber / Pipe Stock (No-Joining Rule)
+            </a>
+          </li>
+          <li>
+            <a href="#skill-3" class="sidebar-toc-link">
+              <i class="fa-solid fa-shapes"></i> 3. Skill 3: Spacing Items with Gaps Along a Wall or Fence
+            </a>
+          </li>
+          <li>
+            <a href="#worked-exam-models" class="sidebar-toc-link">
+              <i class="fa-solid fa-graduation-cap"></i> Exam Models
+            </a>
+          </li>
+          <li>
+            <a href="#examiner-traps" class="sidebar-toc-link">
+              <i class="fa-solid fa-triangle-exclamation"></i> Examiner Traps
+            </a>
+          </li>
+          <li>
+            <a href="#practice-questions" class="sidebar-toc-link">
+              <i class="fa-solid fa-pencil"></i> Exam Practice
+            </a>
+          </li>
+          <li>
+            <a href="#downloads" class="sidebar-toc-link">
+              <i class="fa-solid fa-file-pdf"></i> Downloads (PDF)
+            </a>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- RIGHT COLUMN: MAIN LEARNING CONTENT -->
+      <div class="revision-content">
+        
+            <!-- SUBI ASSESSOR BLUEPRINT WELCOME CARD -->
+        <div style="background: linear-gradient(135deg, #f0fdf4 0%, #e0f2fe 100%); border-left: 5px solid #0284c7; padding: 20px 24px; border-radius: 8px; margin-bottom: 28px; display: flex; align-items: flex-start; gap: 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+          <img src="assets/img/avatars/subi.png" alt="Subi &mdash; Lead Assessor and Specialist Tutor" style="width: 68px; height: 68px; border-radius: 50%; border: 3px solid #0284c7; flex-shrink: 0; object-fit: cover;">
+          <div style="flex: 1;">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+              <span style="font-weight: 700; color: #0f172a; font-size: 1.05rem;">Subi &mdash; Lead Assessor &amp; Specialist Maths Tutor</span>
+              <span style="background: #0284c7; color: #fff; font-size:0.92rem; font-weight:800; padding:5px 12px; border-radius:12px; text-transform:uppercase;">Examiner Guidance</span>
+            </div>
+            <p style="margin: 0; color: #334155; font-size: 0.95rem; line-height: 1.6;">
+              Welcome to the <strong>Length, Dimensions &amp; Linear Fit</strong> blueprint. Linear measurement problems in Pearson Edexcel tests test two vital abilities: converting between metres, centimetres, and millimetres before calculating, and solving physical cutting problems without falling into the 'offcut trap'. Explore the visual step-by-step boards below!
+            </p>
+          </div>
+        </div>
+
+    <!-- SPECIFICATION -->
+    <section id="specification" class="revision-section">
+      <div class="section-header-row">
+        <h2 class="section-title"><i class="fa-solid fa-clipboard-check"></i> Specification &amp; Learning Outcomes</h2>
+      </div>
+      <div class="skill-card-container">
+        <p>Candidates must demonstrate mastery of the following regulated Functional Skills Mathematics outcomes:</p>
+        <ul style="padding-left:20px; line-height:1.8; color:#334155;">
+          <li><strong>L1.18</strong> – Estimate and measure length and solve problems involving dimensions.</li>
+        </ul>
+      </div>
+    </section>
+    
+
+    <!-- GOLDEN RULES -->
+    <section id="golden-rules" class="revision-section">
+      <div class="section-header-row">
+        <h2 class="section-title"><i class="fa-solid fa-lightbulb"></i> Golden Rules for Length & Dimensions</h2>
+      </div>
+      
+        <div class="rule-card-amber">
+          <div class="rule-card-amber-header">
+            <i class="fa-solid fa-ruler"></i>
+            <span>Golden Rule 1: Always Align with 0 on Measuring Tools</span>
+          </div>
+          <p>When reading a ruler or tape measure, check whether measurement starts at the 0 mark or at the physical end of the tool.</p>
+          <div class="rule-highlight-badge">
+            <strong>Golden Rule / Method:</strong> Start at 0, NOT the edge of the ruler
+          </div>
+        </div>
+        
+        <div class="rule-card-amber">
+          <div class="rule-card-amber-header">
+            <i class="fa-solid fa-tape"></i>
+            <span>Golden Rule 2: Convert All Dimensions to the Same Unit Before Calculating</span>
+          </div>
+          <p>If room length is 4.2 m and skirting board is sold in 240 cm lengths, convert both to centimetres (420 cm and 240 cm) or both to metres (4.2 m and 2.4 m).</p>
+          <div class="rule-highlight-badge">
+            <strong>Golden Rule / Method:</strong> Never add or divide metres and centimetres directly
+          </div>
+        </div>
+        
+    </section>
+    
+
+        <!-- SKILL 1: Skill 1: Length Measurement Benchmarks & Unit Selection -->
+        <section id="skill-1" class="revision-section">
+          <div class="mfs-topic-card">
+            <div class="mfs-topic-head">
+              <h3 class="mfs-topic-title"><span class="mfs-topic-prefix">Core Skill 1:</span> Length Measurement Benchmarks & Unit Selection</h3>
+              <p class="mfs-topic-stem">Real-world physical benchmarks for rapid estimation and unit checking.</p>
+            </div>
+            <div class="mfs-topic-body" style="padding:20px 24px;">
+              <div class="sketch-diagram-wrap" style="margin:24px 0;">
+                <svg viewBox="0 0 860 390" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:860px; height:auto; font-family:'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; display:block; filter:drop-shadow(0 4px 16px rgba(15,23,42,0.07));">
+                  <!-- Outer Card -->
+                  <rect x="2" y="2" width="856" height="386" rx="16" fill="#ffffff" stroke="#bae6fd" stroke-width="2.5"/>
+
+                  <!-- Header Row -->
+                  <rect x="24" y="18" width="330" height="36" rx="18" fill="#e0f2fe"/>
+                  <text x="40" y="42" font-size="14" font-weight="900" fill="#0369a1" letter-spacing="0.5">✎ VISUAL MODEL: METRIC STAIRCASE</text>
+                  <text x="375" y="42" font-size="17" font-weight="800" fill="#0f172a">Length, Weight &amp; Capacity Conversions</text>
+
+                  <!-- Length Row Container -->
+                  <rect x="24" y="68" width="812" height="134" rx="14" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+
+                  <!-- Left Label Column -->
+                  <g transform="translate(38, 80)">
+                    <rect width="92" height="28" rx="6" fill="#e0f2fe"/>
+                    <text x="46" y="19" font-size="12.5" font-weight="900" fill="#0369a1" text-anchor="middle" letter-spacing="0.5">LENGTH</text>
+                    <text x="46" y="43" font-size="11.5" font-weight="800" fill="#64748b" text-anchor="middle">STAIRCASE</text>
+                    <rect y="64" width="92" height="20" rx="4" fill="#dcfce7" stroke="#86efac" stroke-width="1"/>
+                    <text x="46" y="78" font-size="11" font-weight="800" fill="#15803d" text-anchor="middle">× Multiply →</text>
+                    <rect y="88" width="92" height="20" rx="4" fill="#fee2e2" stroke="#fca5a5" stroke-width="1"/>
+                    <text x="46" y="102" font-size="11" font-weight="800" fill="#dc2626" text-anchor="middle">← Divide ÷</text>
+                  </g>
+
+                  <!-- 1. km Unit Box -->
+                  <g transform="translate(150, 96)">
+                    <rect width="70" height="56" rx="10" fill="#0284c7" stroke="#0369a1" stroke-width="1.5"/>
+                    <text x="35" y="33" font-size="24" font-weight="900" fill="#ffffff" text-anchor="middle">km</text>
+                    <text x="35" y="49" font-size="10" font-weight="800" fill="#e0f2fe" text-anchor="middle">kilometres</text>
+                  </g>
+
+                  <!-- Arrow Transition 1: km to m -->
+                  <g transform="translate(285, 124)">
+                    <rect x="-48" y="-22" width="96" height="25" rx="6" fill="#dcfce7" stroke="#86efac" stroke-width="1.2"/>
+                    <text x="0" y="-5" font-size="14.5" font-weight="900" fill="#15803d" text-anchor="middle">× 1,000 →</text>
+                    <rect x="-48" y="9" width="96" height="25" rx="6" fill="#fee2e2" stroke="#fca5a5" stroke-width="1.2"/>
+                    <text x="0" y="26" font-size="14.5" font-weight="900" fill="#dc2626" text-anchor="middle">← ÷ 1,000</text>
+                  </g>
+
+                  <!-- 2. m Unit Box -->
+                  <g transform="translate(350, 96)">
+                    <rect width="70" height="56" rx="10" fill="#0284c7" stroke="#0369a1" stroke-width="1.5"/>
+                    <text x="35" y="33" font-size="24" font-weight="900" fill="#ffffff" text-anchor="middle">m</text>
+                    <text x="35" y="49" font-size="10" font-weight="800" fill="#e0f2fe" text-anchor="middle">metres</text>
+                  </g>
+
+                  <!-- Arrow Transition 2: m to cm -->
+                  <g transform="translate(485, 124)">
+                    <rect x="-46" y="-22" width="92" height="25" rx="6" fill="#dcfce7" stroke="#86efac" stroke-width="1.2"/>
+                    <text x="0" y="-5" font-size="14.5" font-weight="900" fill="#15803d" text-anchor="middle">× 100 →</text>
+                    <rect x="-46" y="9" width="92" height="25" rx="6" fill="#fee2e2" stroke="#fca5a5" stroke-width="1.2"/>
+                    <text x="0" y="26" font-size="14.5" font-weight="900" fill="#dc2626" text-anchor="middle">← ÷ 100</text>
+                  </g>
+
+                  <!-- 3. cm Unit Box -->
+                  <g transform="translate(550, 96)">
+                    <rect width="70" height="56" rx="10" fill="#0284c7" stroke="#0369a1" stroke-width="1.5"/>
+                    <text x="35" y="33" font-size="24" font-weight="900" fill="#ffffff" text-anchor="middle">cm</text>
+                    <text x="35" y="49" font-size="10" font-weight="800" fill="#e0f2fe" text-anchor="middle">centimetres</text>
+                  </g>
+
+                  <!-- Arrow Transition 3: cm to mm -->
+                  <g transform="translate(678, 124)">
+                    <rect x="-40" y="-22" width="80" height="25" rx="6" fill="#dcfce7" stroke="#86efac" stroke-width="1.2"/>
+                    <text x="0" y="-5" font-size="14.5" font-weight="900" fill="#15803d" text-anchor="middle">× 10 →</text>
+                    <rect x="-40" y="9" width="80" height="25" rx="6" fill="#fee2e2" stroke="#fca5a5" stroke-width="1.2"/>
+                    <text x="0" y="26" font-size="14.5" font-weight="900" fill="#dc2626" text-anchor="middle">← ÷ 10</text>
+                  </g>
+
+                  <!-- 4. mm Unit Box -->
+                  <g transform="translate(738, 96)">
+                    <rect width="70" height="56" rx="10" fill="#0284c7" stroke="#0369a1" stroke-width="1.5"/>
+                    <text x="35" y="33" font-size="24" font-weight="900" fill="#ffffff" text-anchor="middle">mm</text>
+                    <text x="35" y="49" font-size="10" font-weight="800" fill="#e0f2fe" text-anchor="middle">millimetres</text>
+                  </g>
+
+                  <!-- Mass / Weight Card -->
+                  <g transform="translate(24, 218)">
+                    <rect width="396" height="150" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+                    <rect x="16" y="14" width="230" height="26" rx="6" fill="#e0f2fe"/>
+                    <text x="26" y="32" font-size="13" font-weight="900" fill="#0369a1" letter-spacing="0.4">MASS / WEIGHT (× 1,000)</text>
+                    <text x="18" y="70" font-size="14.5" font-weight="600" fill="#0f172a">1 kilogram (kg) = <tspan font-weight="900" fill="#0284c7">1,000 grams (g)</tspan></text>
+                    <text x="18" y="98" font-size="14.5" font-weight="600" fill="#0f172a">1 tonne (t) = <tspan font-weight="900" fill="#0284c7">1,000 kg</tspan></text>
+                    <rect x="16" y="114" width="364" height="24" rx="6" fill="#dcfce7"/>
+                    <text x="26" y="130" font-size="12.5" font-weight="800" fill="#15803d">✔ Big to small: Multiply by 1,000 (kg → g)</text>
+                  </g>
+
+                  <!-- Capacity / Liquid Card -->
+                  <g transform="translate(440, 218)">
+                    <rect width="396" height="150" rx="12" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.5"/>
+                    <rect x="16" y="14" width="230" height="26" rx="6" fill="#e0f2fe"/>
+                    <text x="26" y="32" font-size="13" font-weight="900" fill="#0369a1" letter-spacing="0.4">CAPACITY / LIQUID (× 1,000)</text>
+                    <text x="18" y="70" font-size="14.5" font-weight="600" fill="#0f172a">1 litre (L) = <tspan font-weight="900" fill="#0284c7">1,000 millilitres (ml)</tspan></text>
+                    <text x="18" y="98" font-size="14.5" font-weight="600" fill="#0f172a">1 centilitre (cl) = <tspan font-weight="900" fill="#0284c7">10 ml</tspan></text>
+                    <rect x="16" y="114" width="364" height="24" rx="6" fill="#dcfce7"/>
+                    <text x="26" y="130" font-size="12.5" font-weight="800" fill="#15803d">✔ Small to big: Divide by 1,000 (ml → L)</text>
+                  </g>
+                </svg>
+              </div>
+              
+                <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:12px; padding:20px 24px; margin:20px 0;">
+                  <ul style="padding-left:24px; line-height:2.0; font-size:1.15rem; color:#0f172a; margin:0;">
+                    <li style="margin-bottom:8px;">
+                      <strong style="color:#0f172a; font-size:1.2rem; font-weight:800;">Millimetres (mm):</strong> Precision engineering, timber thickness, tablet diameters <strong>(10 mm = 1 cm)</strong>.
+                    </li>
+                    <li style="margin-bottom:8px;">
+                      <strong style="color:#0f172a; font-size:1.2rem; font-weight:800;">Centimetres (cm):</strong> Furniture dimensions, shelving, clothing sizes <strong>(100 cm = 1 m)</strong>.
+                    </li>
+                    <li style="margin-bottom:8px;">
+                      <strong style="color:#0f172a; font-size:1.2rem; font-weight:800;">Metres (m):</strong> Room dimensions, garden fencing, corridor lengths <strong>(1,000 m = 1 km)</strong>.
+                    </li>
+                    <li>
+                      <strong style="color:#0f172a; font-size:1.2rem; font-weight:800;">Kilometres (km):</strong> Road transport distances and courier routes.
+                    </li>
+                  </ul>
+                </div>
+                
+            </div>
+            <div class="mfs-topic-footer" style="display:flex; gap:8px; flex-wrap:wrap; padding-top:14px; border-top:1px solid #e2e8f0; margin-top:16px;">
+              <span class="mfs-pill-l1">Level 1</span>
+              <span class="mfs-pill-board">Pearson Edexcel</span>
+              <span class="mfs-pill-board">City &amp; Guilds</span>
+              <span class="mfs-pill-board">NCFE</span>
+            </div>
+          </div>
+        </section>
+        
+        <!-- SKILL 2: Cutting Lengths from Timber / Pipe Stock (No-Joining Rule) -->
+        <section id="skill-2" class="revision-section">
+          <div class="mfs-topic-card">
+            <div class="mfs-topic-head">
+              <h3 class="mfs-topic-title"><span class="mfs-topic-prefix">Core Skill 2:</span> Cutting Lengths from Timber / Pipe Stock (No-Joining Rule)</h3>
+              <p class="mfs-topic-stem">Why you must divide each stock length individually when offcuts cannot be glued together.</p>
+            </div>
+            <div class="mfs-topic-body" style="padding:20px 24px;">
+              
+              
+                <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:12px; padding:20px 24px; margin:16px 0;">
+                  <p style="color:#0f172a; line-height:1.85; font-size:1.15rem; margin-bottom:12px;">Suppose you need <strong>10 shelves</strong> each measuring <strong>90 cm</strong>, and timber planks are sold in <strong>240 cm</strong> lengths:</p>
+                  <ol style="padding-left:24px; line-height:1.95; font-size:1.15rem; color:#0f172a; margin:0;">
+                    <li style="margin-bottom:8px;"><strong>Check how many full shelves fit into 1 plank:</strong> <code>240 cm ÷ 90 cm = 2.66... &rarr; 2 full shelves per plank</code> (with a 60 cm offcut that is too short for a 3rd shelf).</li>
+                    <li><strong>Divide required shelves by shelves per plank:</strong> <code>10 shelves ÷ 2 per plank = 5 planks needed</code>.</li>
+                  </ol>
+                </div>
+                
+            </div>
+            <div class="mfs-topic-footer" style="display:flex; gap:8px; flex-wrap:wrap; padding-top:14px; border-top:1px solid #e2e8f0; margin-top:16px;">
+              <span class="mfs-pill-l1">Level 1</span>
+              <span class="mfs-pill-board">Pearson Edexcel</span>
+              <span class="mfs-pill-board">City &amp; Guilds</span>
+              <span class="mfs-pill-board">NCFE</span>
+            </div>
+          </div>
+        </section>
+        
+        <!-- SKILL 3: Spacing Items with Gaps Along a Wall or Fence -->
+        <section id="skill-3" class="revision-section">
+          <div class="mfs-topic-card">
+            <div class="mfs-topic-head">
+              <h3 class="mfs-topic-title"><span class="mfs-topic-prefix">Core Skill 3:</span> Spacing Items with Gaps Along a Wall or Fence</h3>
+              <p class="mfs-topic-stem">Calculating posts, shelving brackets, or hospital bed bays with mandatory clearance gaps.</p>
+            </div>
+            <div class="mfs-topic-body" style="padding:20px 24px;">
+              
+              
+                <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:12px; padding:20px 24px; margin:16px 0;">
+                  <p style="color:#0f172a; line-height:1.85; font-size:1.15rem; margin-bottom:12px;">When placing <strong>4 lockers</strong> (each <code>60 cm</code> wide) along a <strong>3.5 m (350 cm)</strong> wall with a <code>15 cm</code> gap between each locker:</p>
+                  <ul style="padding-left:24px; line-height:1.95; font-size:1.15rem; color:#0f172a; margin:0;">
+                    <li style="margin-bottom:8px;"><strong>4 lockers have 3 internal gaps</strong> between them (<code>Gaps = Items - 1</code>).</li>
+                    <li style="margin-bottom:8px;"><strong>Total width used:</strong> <code>(4 × 60 cm) + (3 × 15 cm) = 240 cm + 45 cm = 285 cm</code>.</li>
+                    <li><strong>Remaining wall space:</strong> <code>350 cm - 285 cm = 65 cm</code>.</li>
+                  </ul>
+                </div>
+                
+            </div>
+            <div class="mfs-topic-footer" style="display:flex; gap:8px; flex-wrap:wrap; padding-top:14px; border-top:1px solid #e2e8f0; margin-top:16px;">
+              <span class="mfs-pill-l1">Level 1</span>
+              <span class="mfs-pill-board">Pearson Edexcel</span>
+              <span class="mfs-pill-board">City &amp; Guilds</span>
+              <span class="mfs-pill-board">NCFE</span>
+            </div>
+          </div>
+        </section>
+        
+
+    <!-- WORKED EXAM MODELS -->
+    <section id="worked-exam-models" class="revision-section">
+      <div class="section-header-row">
+        <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i> Pearson Edexcel Step-by-Step Worked Models</h2>
+      </div>
+      
+        <div class="model-example-card" style="margin-bottom:24px;">
+          <div class="model-card-header">
+            <span class="model-badge"><i class="fa-solid fa-graduation-cap"></i> Benchmark Exam Model 1</span>
+            <span class="model-marks-pill">3 Marks (Pearson Edexcel Level 1/2)</span>
+          </div>
+          <div class="model-scenario" style="padding:16px 20px; background:#fff; border-bottom:1px solid #e2e8f0;">
+            <p style="font-weight:600; color:#0f172a; margin-bottom:8px;">Vocational Context: <span style="color:#0369a1;">Community Facilities Maintenance</span></p>
+            <div class="model-q-stem" style="font-size:1.05rem; line-height:1.7; color:#334155;">A community clinic corridor handrail is <strong>14.4 metres</strong> long. Timber rails are sold in sections of <strong>240 cm</strong> each.<br>(a) How many sections are needed to cover the entire handrail length?<br>(b) If each section costs <strong>£18.50</strong>, calculate the total cost.</div>
+          </div>
+          <div class="model-steps-container" style="padding:18px 20px; background:#ffffff;">
+            <!-- 3-Column Header: Step, Description, Criteria -->
+            <div class="model-steps-header-row">
+              <div><i class="fa-solid fa-list-ol" style="color:#0284c7; margin-right:6px;"></i> Step</div>
+              <div><i class="fa-solid fa-calculator" style="color:#0284c7; margin-right:6px;"></i> Description / Working</div>
+              <div><i class="fa-solid fa-clipboard-check" style="color:#0284c7; margin-right:6px;"></i> Criteria</div>
+            </div>
+            
+            <div class="model-step-row model-step-grid-row">
+              <div class="model-step-col-step">
+                <span class="example-step-pill">Step 1</span>
+                <span class="model-step-title">Convert dimensions to common units (metres to cm)</span>
+              </div>
+              <div class="model-step-col-desc">
+                <div class="math-visual-card" style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:6px; padding:12px 16px; margin-bottom:6px;">
+                  <div style="font-size:0.98rem; color:#475569; font-weight:800; text-transform:uppercase; letter-spacing:0.5px;">Unit Conversion (&times;100 cm per metre)</div>
+                  <div style="font-size:1.35rem; font-weight:700; color:#0f172a; font-variant-numeric:tabular-nums; margin:4px 0;">14.4 m &times; 100 = 1,440 cm</div>
+                  <div style="font-size:1.02rem; color:#334155; line-height:1.6;">Always harmonize lengths into identical units before attempting division.</div>
+                </div>
+              </div>
+              <div class="model-step-col-criteria">
+                <span class="criteria-badge-teal"><i class="fa-solid fa-award" style="margin-right:6px; opacity:0.85;"></i><strong>Criteria:</strong> M1: Unit conversion to centimetres</span>
+              </div>
+            </div>
+            
+            <div class="model-step-row model-step-grid-row">
+              <div class="model-step-col-step">
+                <span class="example-step-pill">Step 2</span>
+                <span class="model-step-title">Divide total length by section length</span>
+              </div>
+              <div class="model-step-col-desc">
+                <div class="math-visual-card" style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:6px; padding:12px 16px; margin-bottom:6px;">
+                  <div style="font-size:0.98rem; color:#475569; font-weight:800; text-transform:uppercase; letter-spacing:0.5px;">Total Length &divide; Section Length</div>
+                  <div style="font-size:1.35rem; font-weight:700; color:#0f172a; font-variant-numeric:tabular-nums; margin:4px 0;">1,440 cm &divide; 240 cm = 6 sections</div>
+                  <div style="font-size:1.02rem; color:#334155; line-height:1.6;">Exactly 6 complete timber sections are required end-to-end.</div>
+                </div>
+              </div>
+              <div class="model-step-col-criteria">
+                <span class="criteria-badge-teal"><i class="fa-solid fa-award" style="margin-right:6px; opacity:0.85;"></i><strong>Criteria:</strong> A1: Accurate section count</span>
+              </div>
+            </div>
+            
+            <div class="model-step-row model-step-grid-row">
+              <div class="model-step-col-step">
+                <span class="example-step-pill">Step 3</span>
+                <span class="model-step-title">Calculate total expenditure</span>
+              </div>
+              <div class="model-step-col-desc">
+                <div class="math-visual-card" style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:6px; padding:12px 16px; margin-bottom:6px;">
+                  <div style="font-size:0.98rem; color:#475569; font-weight:800; text-transform:uppercase; letter-spacing:0.5px;">Quantity &times; Unit Price</div>
+                  <div style="font-size:1.35rem; font-weight:700; color:#0f172a; font-variant-numeric:tabular-nums; margin:4px 0;">6 &times; &pound;18.50 = &pound;111.00</div>
+                  <div style="font-size:1.02rem; color:#334155; line-height:1.6;">Remember to include trailing zero pence (.00) for all monetary values.</div>
+                </div>
+              </div>
+              <div class="model-step-col-criteria">
+                <span class="criteria-badge-teal"><i class="fa-solid fa-award" style="margin-right:6px; opacity:0.85;"></i><strong>Criteria:</strong> A1: Accurate cost calculation</span>
+              </div>
+            </div>
+            
+            <div class="model-final-answer" style="margin-top:16px; padding:12px 18px; background:#f0fdf4; border:1px solid #86efac; border-radius:6px; font-weight:700; color:#166534; font-size:1.05rem;">
+              <i class="fa-solid fa-check-circle"></i> Final Accredited Answer: (a) 6 sections needed | (b) Total cost = £111.00
+            </div>
+            <div class="examiner-guidance-box" style="display: flex; align-items: flex-start; gap: 14px; background: #faf5ff; border: 1px solid #d8b4fe; border-left: 4px solid #a855f7; border-radius: 6px; padding: 14px 18px; margin-top: 16px;">
+              <img src="assets/img/avatars/sonya.png" alt="Sonya &mdash; Functional Skills Assessor" style="width: 48px; height: 48px; border-radius: 50%; border: 2px solid #a855f7; flex-shrink: 0; object-fit: cover;">
+              <div style="flex: 1;">
+                <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 4px;">
+                  <span style="font-weight: 700; color: #581c87; font-size: 0.92rem;">Sonya&rsquo;s Examiner Tip</span>
+                  <span style="background: #a855f7; color: #fff; font-size:0.92rem; font-weight:800; padding:4px 10px; border-radius:12px; text-transform:uppercase;">Matching Units Rule</span>
+                </div>
+                <div style="font-size: 0.90rem; color: #4c1d95; line-height: 1.55;">
+                  Dividing 14.4 by 240 without converting gives <strong>0.06 sections</strong> &mdash; which is impossible in the real world! Always ensure both values share the same unit (cm or m) before dividing, and use common sense to verify your magnitude.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+    </section>
+    
+
+    <!-- EXAMINER TRAPS -->
+    <section id="examiner-traps" class="revision-section">
+      <div class="section-header-row">
+        <h2 class="section-title"><i class="fa-solid fa-triangle-exclamation"></i> Critical Examiner Traps &amp; Common Pitfalls</h2>
+      </div>
+      
+        <div class="examiner-pitfall-box">
+          <div class="examiner-pitfall-title">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span>Examiner Pitfall: Mixing Units in Division or Joining Unjoinable Offcuts</span>
+          </div>
+          <div class="examiner-pitfall-desc">
+            Dividing metres by centimetres directly, or assuming small wood offcuts can be glued together to form a structural shelf.
+          </div>
+          <div class="examiner-pitfall-fix">
+            <i class="fa-solid fa-shield-halved" style="color:#e11d48; margin-top:2px;"></i>
+            <div><strong>How to Avoid This Pitfall:</strong> Convert all lengths to cm first and check how many whole pieces fit into 1 stock length.</div>
+          </div>
+        </div>
+        
+    </section>
+    
+
+    <!-- PRACTICE QUESTIONS -->
+    <section id="practice-questions" class="revision-section">
+      <div class="section-header-row">
+        <h2 class="section-title"><i class="fa-solid fa-pencil"></i> Interactive Exam Practice Questions</h2>
+      </div>
+      
+        <div class="practice-q-card" style="margin-bottom:20px; border:1px solid #cbd5e1; border-radius:8px; overflow:hidden; background:#fff;">
+          <div class="practice-q-header" style="padding:12px 18px; background:#f8fafc; border-bottom:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-weight:700; color:#1e293b;"><i class="fa-solid fa-pencil"></i> Exam Practice Question 1</span>
+            <span class="practice-marks-pill">2 Marks</span>
+          </div>
+          <div class="practice-q-body" style="padding:18px 20px;">
+            <div class="practice-q-stem" style="font-size:1.05rem; line-height:1.7; color:#334155; margin-bottom:16px;">
+              A roll of medical fabric tape is <strong>5 metres</strong> long. A nurse cuts <strong>8 strips</strong> measuring <strong>35 cm</strong> each. How many centimetres of tape remain on the roll?
+            </div>
+            <div class="practice-interactive-wrap">
+              <label style="display:block; font-weight:600; font-size:0.9rem; color:#475569; margin-bottom:6px;">Your Working / Notes (Auto-saves):</label>
+              <textarea class="practice-scratchpad" rows="3" style="width:100%; border:1px solid #cbd5e1; border-radius:6px; padding:10px; font-family:monospace; font-size:0.95rem;" placeholder="Type your rough working or steps here..."></textarea>
+              <div style="margin-top:12px; display:flex; gap:10px;">
+                <button type="button" class="btn-solution-toggle" onclick="toggleSolution('sol-1')" style="padding:8px 16px; background:#0284c7; color:#fff; border:none; border-radius:6px; font-weight:600; cursor:pointer;">
+                  <i class="fa-solid fa-eye"></i> Show Solution
+                </button>
+              </div>
+              <div id="sol-1" class="practice-solution-drawer" style="display:none; margin-top:14px; padding:16px; background:#f0fdf4; border:1px solid #86efac; border-radius:6px;">
+                <div style="font-weight:700; color:#166534; margin-bottom:6px;"><i class="fa-solid fa-check"></i> Marking Scheme Steps:</div>
+                <div style="line-height:1.7; color:#14532d;">1. 5 m = 500 cm.<br>2. 8 strips × 35 cm = 280 cm used.<br>3. Remaining = 500 - 280 = 220 cm (or 2.2 m).</div>
+                <div style="margin-top:10px; font-weight:800; color:#166534;">Final Correct Answer: 220 cm (or 2.2 m)</div>
+                <div style="margin-top:8px; font-size:1.0rem; font-weight:700; color:#15803d; font-style:italic;">Examiner Tip: Convert 5 metres to 500 cm first.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="practice-q-card" style="margin-bottom:20px; border:1px solid #cbd5e1; border-radius:8px; overflow:hidden; background:#fff;">
+          <div class="practice-q-header" style="padding:12px 18px; background:#f8fafc; border-bottom:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-weight:700; color:#1e293b;"><i class="fa-solid fa-pencil"></i> Exam Practice Question 2</span>
+            <span class="practice-marks-pill">2 Marks</span>
+          </div>
+          <div class="practice-q-body" style="padding:18px 20px;">
+            <div class="practice-q-stem" style="font-size:1.05rem; line-height:1.7; color:#334155; margin-bottom:16px;">
+              A picture framer needs to make a rectangular frame measuring <strong>65 cm long by 45 cm high</strong>. Allowing an extra <strong>15 cm</strong> in total for corner mitre cuts, what total length of moulding is needed in metres?
+            </div>
+            <div class="practice-interactive-wrap">
+              <label style="display:block; font-weight:600; font-size:0.9rem; color:#475569; margin-bottom:6px;">Your Working / Notes (Auto-saves):</label>
+              <textarea class="practice-scratchpad" rows="3" style="width:100%; border:1px solid #cbd5e1; border-radius:6px; padding:10px; font-family:monospace; font-size:0.95rem;" placeholder="Type your rough working or steps here..."></textarea>
+              <div style="margin-top:12px; display:flex; gap:10px;">
+                <button type="button" class="btn-solution-toggle" onclick="toggleSolution('sol-2')" style="padding:8px 16px; background:#0284c7; color:#fff; border:none; border-radius:6px; font-weight:600; cursor:pointer;">
+                  <i class="fa-solid fa-eye"></i> Show Solution
+                </button>
+              </div>
+              <div id="sol-2" class="practice-solution-drawer" style="display:none; margin-top:14px; padding:16px; background:#f0fdf4; border:1px solid #86efac; border-radius:6px;">
+                <div style="font-weight:700; color:#166534; margin-bottom:6px;"><i class="fa-solid fa-check"></i> Marking Scheme Steps:</div>
+                <div style="line-height:1.7; color:#14532d;">1. Frame perimeter = 2 × (65 + 45) = 2 × 110 = 220 cm.<br>2. Add cutting allowance = 220 + 15 = 235 cm.<br>3. Convert to metres: 235 ÷ 100 = 2.35 metres.</div>
+                <div style="margin-top:10px; font-weight:800; color:#166534;">Final Correct Answer: 2.35 m</div>
+                <div style="margin-top:8px; font-size:1.0rem; font-weight:700; color:#15803d; font-style:italic;">Examiner Tip: Check the unit requested in the final sentence (metres).</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="practice-q-card" style="margin-bottom:20px; border:1px solid #cbd5e1; border-radius:8px; overflow:hidden; background:#fff;">
+          <div class="practice-q-header" style="padding:12px 18px; background:#f8fafc; border-bottom:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-weight:700; color:#1e293b;"><i class="fa-solid fa-pencil"></i> Exam Practice Question 3</span>
+            <span class="practice-marks-pill">3 Marks</span>
+          </div>
+          <div class="practice-q-body" style="padding:18px 20px;">
+            <div class="practice-q-stem" style="font-size:1.05rem; line-height:1.7; color:#334155; margin-bottom:16px;">
+              An office wall is <strong>4.6 metres</strong> long. The facilities manager places a filing cabinet (<strong>80 cm wide</strong>) in the corner, followed by <strong>3 identical desks</strong> (each <strong>115 cm wide</strong>). How much spare wall length remains in centimetres?
+            </div>
+            <div class="practice-interactive-wrap">
+              <label style="display:block; font-weight:600; font-size:0.9rem; color:#475569; margin-bottom:6px;">Your Working / Notes (Auto-saves):</label>
+              <textarea class="practice-scratchpad" rows="3" style="width:100%; border:1px solid #cbd5e1; border-radius:6px; padding:10px; font-family:monospace; font-size:0.95rem;" placeholder="Type your rough working or steps here..."></textarea>
+              <div style="margin-top:12px; display:flex; gap:10px;">
+                <button type="button" class="btn-solution-toggle" onclick="toggleSolution('sol-3')" style="padding:8px 16px; background:#0284c7; color:#fff; border:none; border-radius:6px; font-weight:600; cursor:pointer;">
+                  <i class="fa-solid fa-eye"></i> Show Solution
+                </button>
+              </div>
+              <div id="sol-3" class="practice-solution-drawer" style="display:none; margin-top:14px; padding:16px; background:#f0fdf4; border:1px solid #86efac; border-radius:6px;">
+                <div style="font-weight:700; color:#166534; margin-bottom:6px;"><i class="fa-solid fa-check"></i> Marking Scheme Steps:</div>
+                <div style="line-height:1.7; color:#14532d;">1. Wall length = 4.6 m = 460 cm.<br>2. 3 desks = 3 × 115 cm = 345 cm.<br>3. Total furniture width = 80 cm + 345 cm = 425 cm.<br>4. Remaining wall length = 460 - 425 = 35 cm.</div>
+                <div style="margin-top:10px; font-weight:800; color:#166534;">Final Correct Answer: 35 cm</div>
+                <div style="margin-top:8px; font-size:1.0rem; font-weight:700; color:#15803d; font-style:italic;">Examiner Tip: Convert 4.6 m to 460 cm right at the start.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+    </section>
+    
+
+        <!-- DOWNLOADS -->
+        <section id="downloads" class="revision-section">
+          <div class="section-header-row">
+            <h2 class="section-title"><i class="fa-regular fa-file-pdf"></i> Free Revision Worksheets &amp; Exam Papers</h2>
+          </div>
+
+          <div class="download-tiles-grid">
+            <!-- STYLE 1: FLUENCY DRILLS WORKOUT (COMBINED) -->
+            <div class="download-combo-card">
+              <div class="download-combo-header">
+                <div class="download-tile-icon icon-workout"><i class="fa-solid fa-repeat"></i></div>
+                <div class="download-combo-info">
+                  <div class="tile-badge-wrap"><span class="badge-tile-type">Style 1: Fluency Drills</span></div>
+                  <strong class="download-tile-title">Length Level 1 Practice Drills</strong>
+                  <span class="download-tile-desc">25+ quick calculation drills + real-life maths problems</span>
+                </div>
+              </div>
+              <div class="download-combo-actions">
+                <a href="worksheets/length-level-1-workout.html" target="_blank" class="download-combo-btn btn-qp">
+                  <i class="fa-regular fa-file-pdf"></i> Question Paper
+                </a>
+                <a href="worksheets/length-level-1-workout-answers.html" target="_blank" class="download-combo-btn btn-ans">
+                  <i class="fa-solid fa-check-double"></i> Answer Key
+                </a>
+              </div>
+            </div>
+
+            <!-- STYLE 2: EXAM PRACTICE QUESTIONS (COMBINED) -->
+            <div class="download-combo-card">
+              <div class="download-combo-header">
+                <div class="download-tile-icon icon-pdf"><i class="fa-regular fa-file-pdf"></i></div>
+                <div class="download-combo-info">
+                  <div class="tile-badge-wrap"><span class="badge-tile-type exam">Style 2: Practice Questions</span></div>
+                  <strong class="download-tile-title">Length Level 1 Practice Questions</strong>
+                  <span class="download-tile-desc">Authentic Pearson Edexcel exam questions with [M1][A1] mark scheme</span>
+                </div>
+              </div>
+              <div class="download-combo-actions">
+                <a href="worksheets/length-level-1-worksheet.html" target="_blank" class="download-combo-btn btn-qp">
+                  <i class="fa-regular fa-file-pdf"></i> Question Paper
+                </a>
+                <a href="worksheets/length-level-1-answers.html" target="_blank" class="download-combo-btn btn-ans">
+                  <i class="fa-solid fa-award"></i> Mark Scheme
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- NEXT TOPIC BANNER -->
+        <div class="next-topic-banner">
+          <div class="next-topic-info">
+            <strong>Next Curriculum Topic</strong>
+            <span>Capacity (Level 1)</span>
+          </div>
+          <a href="functional-skills-capacity-level-1.html" class="btn-next-topic">
+            Continue Revision <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </main>  <!-- FOOTER -->
+  <footer class="mfs-footer" id="site-footer">
+    <div class="mfs-container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="mfs-brand" style="margin-bottom:16px;">
+            <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="mfs-brand-text">
+              <div class="mfs-brand-title" style="color:#ffffff;">MASTER<span>FUNCTIONALSKILLS</span></div>
+              <div class="mfs-brand-subtitle" style="color:#94a3b8;">Delivering Skills • Achieving Goals</div>
+            </div>
+          </div>
+          <p style="font-size:1.0rem; line-height:1.6; margin-bottom:16px;">
+            The UK's dedicated Functional Skills revision specialist. Providing realistic mock exams, step-by-step revision flashcards, diagnostic assessments, and 1-to-1 specialist tuition for Pearson Edexcel, City &amp; Guilds, and all major exam boards.
+          </p>
+          <div style="font-size:0.95rem; color:#cbd5e1;">
+            <p><a href="https://wa.me/447564525425" target="_blank" rel="noopener" style="color:#cbd5e1; text-decoration:none;"><i class="fa-brands fa-whatsapp" style="color:var(--accent); margin-right:8px;"></i> WhatsApp: +44 (0)7564 525425</a></p>
+            <p style="margin-top:6px;"><a href="contact-us.html" style="color:#cbd5e1; text-decoration:none;"><i class="fa-solid fa-envelope" style="color:var(--accent); margin-right:8px;"></i> Contact Tutor Team</a></p>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Maths Revision</h4>
+          <ul class="footer-links">
+            <li><a href="functional-skills-maths-level-1.html">Maths Level 2 Revision</a></li>
+            <li><a href="functional-skills-maths-level-1.html">Maths Level 1 Revision</a></li>
+            <li><a href="entry-level-3-maths.html">Entry Level 3 Maths</a></li>
+            <li><a href="pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="functional-skills-past-papers.html">Free Maths Past Papers</a></li>
+            <li><a href="exam-maths-l2.html">Book Level 2 Maths Exam</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>English &amp; Digital</h4>
+          <ul class="footer-links">
+            <li><a href="functional-skills-english-level-2.html">English Level 2 Revision</a></li>
+            <li><a href="functional-skills-english-level-1.html">English Level 1 Revision</a></li>
+            <li><a href="digital-functional-skills.html">Digital Skills Hub (L1 &amp; E3)</a></li>
+            <li><a href="digital-functional-skills-past-papers.html">DFS Past Papers &amp; Data Files</a></li>
+            <li><a href="functional-skills-past-papers.html?format=online#mock-finder">Online Exam Simulator</a></li>
+            <li><a href="exam-english-l2.html">Book Level 2 English Exam</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Student Support &amp; Tools</h4>
+          <ul class="footer-links">
+            <li><a href="tools.html" style="color:var(--accent); font-weight:700;"><i class="fa-solid fa-screwdriver-wrench" style="margin-right:6px;"></i>All Interactive Tools Hub</a></li>
+            <li><a href="pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="diagnostic-test.html">Diagnostic Skill Checker</a></li>
+            <li><a href="functional-skills-nets.html">3D Net Folding Tool</a></li>
+            <li><a href="digital-functional-skills-mock-exam.html">Pearson DFS Simulator</a></li>
+            <li><a href="revision-cards.html">Revision Cards &amp; Flashcards</a></li>
+            <li><a href="shop.html">Revision Books &amp; Study Packs</a></li>
+            <li><a href="tutors.html">1-to-1 Specialist Tuition</a></li>
+            <li><a href="exams.html">Book Official Online Exam</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Master Functional Skills. All rights reserved. Registered in England &amp; Wales. Ofqual Regulated Qualification Standards.</div>
+        <div style="display:flex; gap:16px; flex-wrap:wrap;">
+          <a href="index.html">Home</a>
+          <a href="tools.html" style="color:var(--accent); font-weight:700;">Tools</a>
+          <a href="functional-skills-past-papers.html">Past Papers</a>
+          <a href="revision-cards.html">Revision Cards</a>
+          <a href="shop.html">Study Shop</a>
+          <a href="tutors.html">Tutors</a>
+          <a href="contact-us.html">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/mfs-revision.js"></script>
+</body>
+</html>

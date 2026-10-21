@@ -1,0 +1,922 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-theme="sapphire" data-tint="cream">
+<head>
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Pie Charts & Proportional Angles Level 1: Key Rules, Models &amp; Exam Practice | Master Functional Skills</title>
+  <meta name="description" content="Dyslexia-friendly Pie Charts & Proportional Angles revision guide for Functional Skills Mathematics Level 1. Clear spacing, structured cards, large numbers, worked models, and interactive practice.">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192x192.png">
+  <link rel="apple-touch-icon" href="assets/img/favicon-192x192.png">
+  <link rel="shortcut icon" href="favicon.ico">
+    <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0b172d">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="MFS Skills">
+  <link rel="apple-touch-icon" href="assets/img/favicon-192x192.png">
+  <script src="assets/js/mfs-pwa.js" defer></script>
+  <link rel="stylesheet" href="assets/css/mfs-theme.css?v=20261017j">
+  <link rel="stylesheet" href="assets/css/mfs-mobile.css?v=20261018b">
+  <link rel="stylesheet" href="assets/css/mfs-revision.css?v=20261018b">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <!-- TOP TRUST BAR WITH ACCESSIBILITY & CONTACT -->
+  <div class="mfs-top-bar">
+    <div class="mfs-container mfs-top-bar-inner">
+      <div class="top-trust-items">
+        <span class="top-trust-item"><i class="fa-solid fa-building-columns"></i> Pearson Edexcel &amp; City &amp; Guilds Aligned</span>
+      </div>
+      <div class="top-contacts">
+        <div class="mfs-access-bar">
+          <!-- DYSLEXIA BACKGROUND TINT PICKER -->
+          <div class="mfs-tint-dropdown-wrap">
+            <button type="button" id="tintToggle" class="btn-tint-toggle" onclick="toggleTintMenu(event)" title="Change dyslexia background tint">
+              <span class="tint-swatch-indicator" id="tintCurrentSwatch"></span>
+              <span id="tintLabel">Cream Tint</span>
+              <i class="fa-solid fa-chevron-down" style="font-size:0.62rem; opacity:0.75; margin-left:2px;"></i>
+            </button>
+            <div id="tintMenu" class="tint-picker-menu">
+              <div class="tint-picker-title"><i class="fa-solid fa-glasses"></i> Dyslexia Reading Tint</div>
+              <button type="button" class="tint-option-btn active" data-tint="cream" onclick="setSiteTint('cream', event)">
+                <span class="swatch swatch-cream"></span>
+                <span class="tint-name">Cream <small class="tint-badge-def">Default</small></span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="peach" onclick="setSiteTint('peach', event)">
+                <span class="swatch swatch-peach"></span>
+                <span class="tint-name">Soft Peach</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="cool" onclick="setSiteTint('cool', event)">
+                <span class="swatch swatch-cool"></span>
+                <span class="tint-name">Cool Mist</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="sage" onclick="setSiteTint('sage', event)">
+                <span class="swatch swatch-sage"></span>
+                <span class="tint-name">Soft Sage</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <div class="tint-divider"></div>
+              <button type="button" class="tint-option-btn" data-tint="none" onclick="setSiteTint('none', event)">
+                <span class="swatch swatch-none"></span>
+                <span class="tint-name">No Tint (White)</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+            </div>
+          </div>
+          <button id="dyslexiaToggle" class="btn-dyslexia-toggle" onclick="toggleDyslexiaMode()" title="Toggle Dyslexia High-Readability Mode">
+            <i class="fa-solid fa-universal-access"></i> Dyslexia
+          </button>
+          <button id="themeToggle" class="mfs-theme-pill" onclick="toggleTheme()" title="Switch Palette: Sapphire vs Emerald">
+            <i class="fa-solid fa-palette"></i> <span id="themeLabel">Sapphire</span>
+          </button>
+        </div>
+        <a href="contact-us.html" class="top-contact-link"><i class="fa-solid fa-envelope"></i> <strong>Contact Us</strong></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->  <!-- MAIN NAVIGATION -->
+  <header class="mfs-navbar">
+    <div class="revision-page-wrapper mfs-navbar-inner">
+      <a href="index.html" class="mfs-brand">
+        <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div class="mfs-brand-text">
+          <div class="mfs-brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
+          <div class="mfs-brand-subtitle">Delivering Skills • Achieving Goals</div>
+        </div>
+      </a>
+
+      <nav class="mfs-nav-wrapper">
+        <ul class="mfs-nav-menu">
+          <!-- 1. SUBJECTS (VISUAL MEGA-MENU) -->
+          <li class="mfs-nav-item">
+            <a href="revise.html" class="mfs-nav-link">
+              <i class="fa-solid fa-book-open-reader" style="color:#0284c7; margin-right:5px;"></i> Subjects <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-revision-hub">
+              <div class="mfs-revision-grid">
+                <!-- Maths Column -->
+                <div class="mfs-revision-col mfs-revision-col-maths">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-calculator"></i> Maths Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="functional-skills-maths-level-1.html" class="mfs-dropdown-item">Maths Level 2</a>
+                    <a href="functional-skills-maths-level-1.html" class="mfs-dropdown-item">Maths Level 1</a>
+                    <a href="entry-level-3-maths.html" class="mfs-dropdown-item">Entry Level 3 Maths</a>
+                  </div>
+                </div>
+                <!-- English Column -->
+                <div class="mfs-revision-col mfs-revision-col-english">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-pen-nib"></i> English Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="functional-skills-english-level-2.html" class="mfs-dropdown-item">English Level 2</a>
+                    <a href="functional-skills-english-level-1.html" class="mfs-dropdown-item">English Level 1</a>
+                  </div>
+                </div>
+                <!-- Digital Skills Column -->
+                <div class="mfs-revision-col mfs-revision-col-digital">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-laptop-code"></i> Digital Skills</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="digital-functional-skills.html" class="mfs-dropdown-item">Digital Skills Hub</a>
+                    <a href="digital-functional-skills-mock-exam.html" class="mfs-dropdown-item">Pearson Mock Exam</a>
+                    <a href="digital-functional-skills-past-papers.html" class="mfs-dropdown-item">Past Papers &amp; Files</a>
+                  </div>
+                </div>
+              </div>
+              <!-- Course & Subject Selector Cross-link Footer inside dropdown -->
+              <div class="mfs-revision-dropdown-footer" style="margin-top:12px; padding-top:10px; border-top:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center; font-size:0.92rem;">
+                <a href="revise.html" style="font-weight:700; color:var(--accent); text-decoration:none;"><i class="fa-solid fa-layer-group" style="margin-right:4px;"></i> View All Subjects &amp; Levels &rarr;</a>
+                <a href="courses.html" style="font-weight:700; color:#059669; text-decoration:none;"><i class="fa-solid fa-graduation-cap" style="margin-right:4px;"></i> Accredited Online Courses &rarr;</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- 2. ONLINE COURSES -->
+          <li class="mfs-nav-item">
+            <a href="courses.html" class="mfs-nav-link">
+              <i class="fa-solid fa-graduation-cap" style="color:#0284c7; margin-right:5px;"></i> Online Courses
+            </a>
+          </li>
+
+          <!-- 3. PAST PAPERS (DIRECT ACCESS) -->
+          <li class="mfs-nav-item">
+            <a href="functional-skills-past-papers.html" class="mfs-nav-link">
+              <i class="fa-regular fa-file-lines" style="color:#0284c7; margin-right:5px;"></i> Past Papers
+            </a>
+          </li>
+
+          <!-- 4. WORKSHEETS DIRECTORY (CORBETT STYLE DUAL ENGINE) -->
+          <li class="mfs-nav-item">
+            <a href="worksheets.html" class="mfs-nav-link">
+              <i class="fa-solid fa-layer-group" style="color:#0284c7; margin-right:5px;"></i> Worksheets
+            </a>
+          </li>
+
+          <!-- 5. FREE TOOLS (COMPACT DROPDOWN) -->
+          <li class="mfs-nav-item">
+            <a href="tools.html" class="mfs-nav-link">
+              <i class="fa-solid fa-screwdriver-wrench" style="color:#0284c7; margin-right:5px;"></i> Free Tools <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-compact">
+              <a href="tools.html" class="mfs-dropdown-item" style="font-weight:700; color:var(--accent);"><i class="fa-solid fa-layer-group" style="font-size:0.85rem; margin-right:6px;"></i> All Free Tools &amp; Simulators &rarr;</a>
+              <div class="mfs-dropdown-divider" style="margin:4px 0; border-top:1px solid #e2e8f0;"></div>
+              <a href="pass-mark-calculator.html" class="mfs-dropdown-item"><i class="fa-solid fa-calculator" style="color:var(--accent); font-size:0.85rem; margin-right:6px;"></i> Pass Mark Calculator</a>
+              <a href="diagnostic-test.html" class="mfs-dropdown-item"><i class="fa-solid fa-chart-pie" style="color:#059669; font-size:0.85rem; margin-right:6px;"></i> Diagnostic Skill Checker</a>
+              <a href="functional-skills-nets.html" class="mfs-dropdown-item"><i class="fa-solid fa-cube" style="color:#0284c7; font-size:0.85rem; margin-right:6px;"></i> 3D Net Folding Tool</a>
+              <a href="video-solution.html" class="mfs-dropdown-item"><i class="fa-solid fa-circle-play" style="color:#ef4444; font-size:0.85rem; margin-right:6px;"></i> Video Walkthrough Station</a>
+            </div>
+          </li>
+
+          <!-- 6. REVISION CARDS -->
+          <li class="mfs-nav-item">
+            <a href="revision-cards.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-layer-group" style="color:#d97706; margin-right:5px;"></i> Revision Cards
+            </a>
+          </li>
+
+          <!-- 7. SHOP -->
+          <li class="mfs-nav-item">
+            <a href="shop.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-basket-shopping" style="color:#d97706; margin-right:5px;"></i> Shop
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- 8. BOOK EXAM ACTION BUTTON -->
+      <div class="mfs-nav-actions">
+        <a href="exams.html" class="btn-nav-exam">
+          <i class="fa-solid fa-calendar-check"></i> Book Exam
+        </a>
+      </div>
+
+      <!-- MOBILE CONTROLS (TINT + MENU PILL) -->
+      <div class="mfs-mobile-controls" id="mfsMobileControls">
+        <button type="button" class="btn-mobile-tint-toggle" id="mfsMobileTintBtn" title="Change Reading Tint" aria-label="Reading Tint">
+          <i class="fa-solid fa-glasses"></i>
+          <span class="mobile-tint-swatch" id="mfsMobileTintSwatch"></span>
+        </button>
+        <button type="button" class="mfs-menu-pill" id="mfsMobileToggleBtn" title="Open Navigation Menu" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+          <span>Menu</span>
+        </button>
+      </div>
+    </div>
+    <!-- MOBILE NAVIGATION ENGINE -->
+    <script src="assets/js/mfs-mobile.js" defer></script>
+  </header>
+
+  <!-- BREADCRUMBS -->
+  <div class="revision-breadcrumb-bar">
+    <div class="revision-page-wrapper">
+      <div class="revision-breadcrumbs">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a href="revise.html">Revise Hub</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a href="functional-skills-maths-level-1.html">Mathematics Level 1</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span class="current">Pie Charts & Proportional Angles Level 1</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="revision-hero-card">
+    <div class="revision-page-wrapper">
+      <div class="revision-hero-grid">
+        <div class="revision-hero-content">
+          <div class="revision-hero-pill-row">
+            <span class="badge-pill-accent"><i class="fa-solid fa-calculator"></i> MATHEMATICS</span>
+            <span class="badge-pill-gold">LEVEL 1 REVISION</span>
+            <span class="badge-pill-outline">OFQUAL SPECIFICATION STANDARDS</span>
+          </div>
+
+          <h1 class="revision-hero-title">
+            Pie Charts & Proportional Angles Level 1: <span>Formulas, Models &amp; Exam Practice</span>
+          </h1>
+
+          <p class="revision-hero-desc">
+            Calculate pie chart sector angles (Angle = Frequency ÷ Total × 360°), draw sectors accurately using a protractor, and extract frequencies and percentages from existing pie charts.
+          </p>
+
+          <div class="revision-hero-meta-bar">
+            <div class="hero-meta-item">
+              <i class="fa-solid fa-clock"></i> <strong>Est. Study Time:</strong> 25-35 Mins
+            </div>
+            <div class="hero-meta-item">
+              <i class="fa-solid fa-book-open"></i> <strong>Curriculum Standards:</strong> Pearson Edexcel &amp; City &amp; Guilds
+            </div>
+            <div class="hero-meta-item">
+              <i class="fa-solid fa-circle-check"></i> <strong>Interactive Practice Tasks Included</strong>
+            </div>
+
+            <div class="hero-quick-actions">
+              <a href="#downloads" class="btn-hero-action">
+                <i class="fa-regular fa-file-pdf"></i> Free Worksheet &amp; Answers (PDF)
+              </a>
+              <a href="#practice-questions" class="btn-hero-action-secondary">
+                <i class="fa-solid fa-pencil"></i> Start Practice Tasks
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="revision-hero-visual-card">
+          <div class="revision-hero-img-wrap">
+            <img src="assets/img/book_photos/charts_data_screens/fancy_pie_chart.jpg" alt="3D Translucent Pie Chart with Proportional Percentage Slices" loading="lazy" />
+          </div>
+          <div class="revision-hero-caption-bar">
+            <strong><i class="fa-solid fa-shapes"></i> Key Visual Concept</strong>
+            Survey report showing segmented pie chart with angle distributions and percentage shares.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOBILE TABLE OF CONTENTS BAR -->
+  <div class="mobile-toc-bar">
+    <div style="font-weight:700; color:var(--navy-dark); font-size:0.9rem;">
+      <i class="fa-solid fa-list-check" style="color:var(--accent);"></i> Pie Charts & Proportional Angles Blueprint
+    </div>
+    <button type="button" class="btn-mobile-toc" onclick="toggleMobileToc()">
+      <span>Table of Contents</span> <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+
+  <!-- MAIN 2-COLUMN RESPONSIVE LAYOUT -->
+  <main class="revision-page-wrapper">
+    <div class="revision-layout">
+
+      <!-- LEFT COLUMN: STICKY BLUEPRINT TOC -->
+      <aside class="revision-sidebar" id="sidebarNav">
+        <div class="sidebar-toc-title">
+          <span><i class="fa-solid fa-compass-drafting" style="color:var(--accent);"></i> Topic Contents</span>
+          <span style="font-size:0.90rem; color:#64748b; font-weight:700;">9 Sections</span>
+        </div>
+
+        <ul class="sidebar-toc-list" id="tocList">
+          
+          <li>
+            <a href="#specification" class="sidebar-toc-link active">
+              <i class="fa-solid fa-clipboard-check"></i> Specification
+            </a>
+          </li>
+          <li>
+            <a href="#golden-rules" class="sidebar-toc-link">
+              <i class="fa-solid fa-lightbulb"></i> Golden Rules
+            </a>
+          </li>
+          <li>
+            <a href="#skill-1" class="sidebar-toc-link">
+              <i class="fa-solid fa-shapes"></i> 1. Pie Chart Angle Calculation Table (Check Sum = 360°)
+            </a>
+          </li>
+          <li>
+            <a href="#skill-2" class="sidebar-toc-link">
+              <i class="fa-solid fa-shapes"></i> 2. Extracting Frequencies When Given One Sector’s Value (Without the Total)
+            </a>
+          </li>
+          <li>
+            <a href="#skill-3" class="sidebar-toc-link">
+              <i class="fa-solid fa-shapes"></i> 3. Comparing Two Pie Charts with Different Total Frequencies
+            </a>
+          </li>
+          <li>
+            <a href="#worked-exam-models" class="sidebar-toc-link">
+              <i class="fa-solid fa-graduation-cap"></i> Exam Models
+            </a>
+          </li>
+          <li>
+            <a href="#examiner-traps" class="sidebar-toc-link">
+              <i class="fa-solid fa-triangle-exclamation"></i> Examiner Traps
+            </a>
+          </li>
+          <li>
+            <a href="#practice-questions" class="sidebar-toc-link">
+              <i class="fa-solid fa-pencil"></i> Exam Practice
+            </a>
+          </li>
+          <li>
+            <a href="#downloads" class="sidebar-toc-link">
+              <i class="fa-solid fa-file-pdf"></i> Downloads (PDF)
+            </a>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- RIGHT COLUMN: MAIN LEARNING CONTENT -->
+      <div class="revision-content">
+        
+            <!-- SUBI ASSESSOR BLUEPRINT WELCOME CARD -->
+        <div style="background: linear-gradient(135deg, #f0fdf4 0%, #e0f2fe 100%); border-left: 5px solid #0284c7; padding: 20px 24px; border-radius: 8px; margin-bottom: 28px; display: flex; align-items: flex-start; gap: 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+          <img src="assets/img/avatars/subi.png" alt="Subi &mdash; Lead Assessor and Specialist Tutor" style="width: 68px; height: 68px; border-radius: 50%; border: 3px solid #0284c7; flex-shrink: 0; object-fit: cover;">
+          <div style="flex: 1;">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+              <span style="font-weight: 700; color: #0f172a; font-size: 1.05rem;">Subi &mdash; Lead Assessor &amp; Specialist Maths Tutor</span>
+              <span style="background: #0284c7; color: #fff; font-size:0.92rem; font-weight:800; padding:5px 12px; border-radius:12px; text-transform:uppercase;">Examiner Guidance</span>
+            </div>
+            <p style="margin: 0; color: #334155; font-size: 0.95rem; line-height: 1.6;">
+              Welcome to the <strong>Pie Charts, Sector Angles &amp; Relative Frequencies</strong> blueprint. A pie chart represents 100% of a dataset inside a 360&deg; circle. Examiners test your ability to convert frequencies into sector angles using the golden formula &mdash; (Frequency &divide; Total) &times; 360&deg; &mdash; and compare proportions between two groups with different sample sizes.
+            </p>
+          </div>
+        </div>
+
+    <!-- SPECIFICATION -->
+    <section id="specification" class="revision-section">
+      <div class="section-header-row">
+        <h2 class="section-title"><i class="fa-solid fa-clipboard-check"></i> Specification &amp; Learning Outcomes</h2>
+      </div>
+      <div class="skill-card-container">
+        <p>Candidates must demonstrate mastery of the following regulated Functional Skills Mathematics outcomes:</p>
+        <ul style="padding-left:20px; line-height:1.8; color:#334155;">
+          <li><strong>L1.25</strong> – Construct and interpret pie charts, calculating sector angles from frequencies and extracting quantities from angles.</li>
+        </ul>
+      </div>
+    </section>
+    
+
+    <!-- GOLDEN RULES -->
+    <section id="golden-rules" class="revision-section">
+      <div class="section-header-row">
+        <h2 class="section-title"><i class="fa-solid fa-lightbulb"></i> Golden Rules for Pie Charts & Proportional Angles</h2>
+      </div>
+      
+        <div class="rule-card-amber">
+          <div class="rule-card-amber-header">
+            <i class="fa-solid fa-chart-pie"></i>
+            <span>Golden Rule 1: The Magic Multiplier: Degrees per Item = 360° ÷ Total Frequency</span>
+          </div>
+          <p>Divide 360° by the total frequency to find how many degrees represent ONE item. Multiply each category's frequency by this magic multiplier, and check that all your angles add up to exactly 360°!</p>
+          <div class="rule-highlight-badge">
+            <strong>Golden Rule / Method:</strong> Sector Angle = (Frequency ÷ Total) × 360° • Check Sum = 360°
+          </div>
+        </div>
+        
+        <div class="rule-card-amber">
+          <div class="rule-card-amber-header">
+            <i class="fa-solid fa-rotate"></i>
+            <span>Golden Rule 2: Working Backwards from an Angle: (Angle ÷ 360°) × Total</span>
+          </div>
+          <p>If given a sector angle (e.g. 90° or 108°) and the total number of items (e.g. 200 people): Frequency = (Angle ÷ 360°) × Total.</p>
+          <div class="rule-highlight-badge">
+            <strong>Golden Rule / Method:</strong> Frequency = (Sector Angle ÷ 360°) × Total Frequency
+          </div>
+        </div>
+        
+    </section>
+    
+
+        <!-- SKILL 1: Pie Chart Angle Calculation Table (Check Sum = 360°) -->
+        <section id="skill-1" class="revision-section">
+          <div class="mfs-topic-card">
+            <div class="mfs-topic-head">
+              <h3 class="mfs-topic-title"><span class="mfs-topic-prefix">Core Skill 1:</span> Pie Chart Angle Calculation Table (Check Sum = 360°)</h3>
+              <p class="mfs-topic-stem">Setting up the standard 4-column table for full method and accuracy marks.</p>
+            </div>
+            <div class="mfs-topic-body" style="padding:20px 24px;">
+              <div class="sketch-diagram-wrap" style="width:100%; margin:24px 0;"><svg viewBox="0 0 860 360" xmlns="http://www.w3.org/2000/svg" style="width:100%; max-width:100%; height:auto; display:block; font-family:'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;">
+  <rect x="2" y="2" width="856" height="356" rx="14" fill="#ffffff" stroke="#bae6fd" stroke-width="2"/>
+  
+  <rect x="24" y="16" width="370" height="34" rx="17" fill="#e0f2fe"/>
+  <text x="38" y="39" font-size="14" font-weight="800" fill="#0369a1" letter-spacing="0.5">✎ MASTER MODEL: PIE CHART ANGLES</text>
+  <text x="410" y="39" font-size="15" font-weight="700" fill="#0f172a">Total Frequency = 60 People | Full Turn = 360°</text>
+
+  <!-- Left: Pie Chart Visual (x: 40 to 340) -->
+  <g transform="translate(60, 75)">
+    <!-- Circle segments -->
+    <circle cx="120" cy="115" r="105" fill="#f8fafc" stroke="#0f172a" stroke-width="2"/>
+    
+    <!-- 180° Blue (30 people) -->
+    <path d="M 120 115 L 225 115 A 105 105 0 0 1 15 115 Z" fill="#3b82f6"/>
+    <text x="120" y="165" font-size="15" font-weight="900" fill="#ffffff" text-anchor="middle">Bus: 180° (30)</text>
+
+    <!-- 90° Green (15 people) -->
+    <path d="M 120 115 L 15 115 A 105 105 0 0 1 120 10 Z" fill="#22c55e"/>
+    <text x="75" y="70" font-size="14" font-weight="900" fill="#ffffff" text-anchor="middle">Walk: 90°</text>
+
+    <!-- 90° Amber (15 people) -->
+    <path d="M 120 115 L 120 10 A 105 105 0 0 1 225 115 Z" fill="#f59e0b"/>
+    <text x="165" y="70" font-size="14" font-weight="900" fill="#ffffff" text-anchor="middle">Car: 90°</text>
+  </g>
+
+  <!-- Right: 3-Step Angle Allocation Method (x: 370 to 836) -->
+  <g transform="translate(370, 68)">
+    <rect width="466" height="265" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+    <rect x="16" y="14" width="200" height="26" rx="6" fill="#0284c7"/>
+    <text x="116" y="31" font-size="12" font-weight="900" fill="#ffffff" text-anchor="middle">CALCULATING SECTOR ANGLES</text>
+
+    <text x="16" y="66" font-size="15" font-weight="900" fill="#0f172a">Step 1: Find degrees per 1 item (360° ÷ Total)</text>
+    <text x="28" y="90" font-size="16" font-weight="900" fill="#0284c7">360° ÷ 60 people = 6° per person</text>
+
+    <line x1="16" y1="106" x2="450" y2="106" stroke="#e2e8f0" stroke-width="1.5"/>
+
+    <text x="16" y="130" font-size="15" font-weight="900" fill="#0f172a">Step 2: Multiply each frequency by 6°:</text>
+    <text x="28" y="156" font-size="14.5" font-weight="800" fill="#1d4ed8">• Bus: 30 people × 6° = 180° (Half circle)</text>
+    <text x="28" y="180" font-size="14.5" font-weight="800" fill="#15803d">• Walk: 15 people × 6° = 90° (Right angle quarter)</text>
+    <text x="28" y="204" font-size="14.5" font-weight="800" fill="#b45309">• Car: 15 people × 6° = 90° (Quarter)</text>
+
+    <rect x="16" y="222" width="434" height="30" rx="6" fill="#dcfce7"/>
+    <text x="233" y="242" font-size="13.5" font-weight="900" fill="#166534" text-anchor="middle">
+      Check: 180° + 90° + 90° = 360° ✓ Full Circle Verified!
+    </text>
+  </g>
+</svg></div>
+              
+                <div class="table-responsive" style="overflow-x:auto; -webkit-overflow-scrolling:touch; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:14px; margin:16px 0;">
+                  <p style="color:#334155; line-height:1.7; margin-top:0;">For <strong>72 total hospital admissions</strong>: Magic Multiplier = 360° &divide; 72 = <strong>5° per patient</strong>.</p>
+                  <table class="table-stack-mobile" style="width:100%; border-collapse:collapse; text-align:center;">
+                    <thead>
+                      <tr style="background:#0284c7; color:#fff;">
+                        <th style="padding:6px; border:1px solid #cbd5e1;">Ward</th>
+                        <th style="padding:6px; border:1px solid #cbd5e1;">Patients</th>
+                        <th style="padding:6px; border:1px solid #cbd5e1;">Calculation (&times; 5°)</th>
+                        <th style="padding:6px; border:1px solid #cbd5e1;">Sector Angle (°)</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr><td data-label="Ward" style="padding:6px; border:1px solid #cbd5e1;">Medical</td><td data-label="Patients" style="padding:6px; border:1px solid #cbd5e1;">36</td><td data-label="Calculation (&times; 5°)" style="padding:6px; border:1px solid #cbd5e1;">36 &times; 5°</td><td data-label="Sector Angle (°)" style="padding:6px; border:1px solid #cbd5e1; font-weight:700;">180°</td></tr>
+                      <tr><td data-label="Ward" style="padding:6px; border:1px solid #cbd5e1;">Surgical</td><td data-label="Patients" style="padding:6px; border:1px solid #cbd5e1;">21</td><td data-label="Calculation (&times; 5°)" style="padding:6px; border:1px solid #cbd5e1;">21 &times; 5°</td><td data-label="Sector Angle (°)" style="padding:6px; border:1px solid #cbd5e1; font-weight:700;">105°</td></tr>
+                      <tr><td data-label="Ward" style="padding:6px; border:1px solid #cbd5e1;">Orthopaedic</td><td data-label="Patients" style="padding:6px; border:1px solid #cbd5e1;">15</td><td data-label="Calculation (&times; 5°)" style="padding:6px; border:1px solid #cbd5e1;">15 &times; 5°</td><td data-label="Sector Angle (°)" style="padding:6px; border:1px solid #cbd5e1; font-weight:700;">75°</td></tr>
+                      <tr style="background:#e0f2fe; font-weight:800; color:#0369a1;"><td data-label="Ward" style="padding:6px; border:1px solid #cbd5e1;">Total</td><td data-label="Patients" style="padding:6px; border:1px solid #cbd5e1;">72</td><td data-label="Calculation (&times; 5°)" style="padding:6px; border:1px solid #cbd5e1;">72 &times; 5°</td><td data-label="Sector Angle (°)" style="padding:6px; border:1px solid #cbd5e1;">360°</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                
+            </div>
+            <div class="mfs-topic-footer" style="display:flex; gap:8px; flex-wrap:wrap; padding-top:14px; border-top:1px solid #e2e8f0; margin-top:16px;">
+              <span class="mfs-pill-l1">Level 1</span>
+              <span class="mfs-pill-board">Pearson Edexcel</span>
+              <span class="mfs-pill-board">City &amp; Guilds</span>
+              <span class="mfs-pill-board">NCFE</span>
+            </div>
+          </div>
+        </section>
+        
+        <!-- SKILL 2: Extracting Frequencies When Given One Sector’s Value (Without the Total) -->
+        <section id="skill-2" class="revision-section">
+          <div class="mfs-topic-card">
+            <div class="mfs-topic-head">
+              <h3 class="mfs-topic-title"><span class="mfs-topic-prefix">Core Skill 2:</span> Extracting Frequencies When Given One Sector’s Value (Without the Total)</h3>
+              <p class="mfs-topic-stem">Using proportional scaling per degree when the grand total is not stated.</p>
+            </div>
+            <div class="mfs-topic-body" style="padding:20px 24px;">
+              
+              
+                <div class="table-responsive" style="overflow-x:auto; -webkit-overflow-scrolling:touch; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:14px; margin:16px 0;">
+                  <p style="color:#334155; line-height:1.7; margin-top:0;">Sometimes a question tells you: <em>"The 60° sector represents 30 patients. How many patients are in the 150° sector?"</em></p>
+                  <ul style="padding-left:20px; line-height:1.8; color:#334155;">
+                    <li><strong>Find Degrees per Patient:</strong> 60° &divide; 30 patients = <strong>2° per patient</strong> (or 0.5 patients per degree).</li>
+                    <li><strong>Scale the Target Sector:</strong> 150° &divide; 2° = <strong>75 patients</strong> (and Total = 360° &divide; 2° = 180 patients).</li>
+                  </ul>
+                </div>
+                
+            </div>
+            <div class="mfs-topic-footer" style="display:flex; gap:8px; flex-wrap:wrap; padding-top:14px; border-top:1px solid #e2e8f0; margin-top:16px;">
+              <span class="mfs-pill-l1">Level 1</span>
+              <span class="mfs-pill-board">Pearson Edexcel</span>
+              <span class="mfs-pill-board">City &amp; Guilds</span>
+              <span class="mfs-pill-board">NCFE</span>
+            </div>
+          </div>
+        </section>
+        
+        <!-- SKILL 3: Comparing Two Pie Charts with Different Total Frequencies -->
+        <section id="skill-3" class="revision-section">
+          <div class="mfs-topic-card">
+            <div class="mfs-topic-head">
+              <h3 class="mfs-topic-title"><span class="mfs-topic-prefix">Core Skill 3:</span> Comparing Two Pie Charts with Different Total Frequencies</h3>
+              <p class="mfs-topic-stem">Why a larger angle does NOT automatically mean a larger number of people!</p>
+            </div>
+            <div class="mfs-topic-body" style="padding:20px 24px;">
+              
+              
+                <div class="table-responsive" style="overflow-x:auto; -webkit-overflow-scrolling:touch; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:14px; margin:16px 0;">
+                  <p style="color:#334155; line-height:1.7; margin-top:0;"><strong>Classic Level 2 Exam Trap:</strong></p>
+                  <ul style="padding-left:20px; line-height:1.8; color:#334155;">
+                    <li>Clinic A (Total = <strong>100 patients</strong>) has a <strong>90°</strong> sector &rarr; (90 &divide; 360) &times; 100 = <strong>25 patients</strong>.</li>
+                    <li>Clinic B (Total = <strong>400 patients</strong>) has a <strong>72°</strong> sector &rarr; (72 &divide; 360) &times; 400 = <strong>80 patients</strong>.</li>
+                    <li>Even though Clinic B has a smaller angle (72° vs 90°), it has <strong>more patients</strong> (80 vs 25) because its total population is four times larger!</li>
+                  </ul>
+                </div>
+                
+            </div>
+            <div class="mfs-topic-footer" style="display:flex; gap:8px; flex-wrap:wrap; padding-top:14px; border-top:1px solid #e2e8f0; margin-top:16px;">
+              <span class="mfs-pill-l1">Level 1</span>
+              <span class="mfs-pill-board">Pearson Edexcel</span>
+              <span class="mfs-pill-board">City &amp; Guilds</span>
+              <span class="mfs-pill-board">NCFE</span>
+            </div>
+          </div>
+        </section>
+        
+
+    <!-- WORKED EXAM MODELS -->
+    <section id="worked-exam-models" class="revision-section">
+      <div class="section-header-row">
+        <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i> Pearson Edexcel Step-by-Step Worked Models</h2>
+      </div>
+      
+        <div class="model-example-card" style="margin-bottom:24px;">
+          <div class="model-card-header">
+            <span class="model-badge"><i class="fa-solid fa-graduation-cap"></i> Benchmark Exam Model 1</span>
+            <span class="model-marks-pill">3 Marks (Pearson Edexcel Level 1/2)</span>
+          </div>
+          <div class="model-scenario" style="padding:16px 20px; background:#fff; border-bottom:1px solid #e2e8f0;">
+            <p style="font-weight:600; color:#0f172a; margin-bottom:8px;">Vocational Context: <span style="color:#0369a1;">Facility Environmental Sustainability</span></p>
+            <div class="model-q-stem" style="font-size:1.05rem; line-height:1.7; color:#334155;">A healthcare centre records its annual energy consumption of <strong>1,000 MWh</strong> by source:<br>• Gas: <strong>500 MWh</strong> | Electricity: <strong>300 MWh</strong> | Solar: <strong>120 MWh</strong> | Biomass: <strong>80 MWh</strong><br>Calculate the sector angle in degrees for each of the four energy sources on a pie chart.</div>
+          </div>
+          <div class="model-steps-container" style="padding:18px 20px; background:#ffffff;">
+            <!-- 3-Column Header: Step, Description, Criteria -->
+            <div class="model-steps-header-row">
+              <div><i class="fa-solid fa-list-ol" style="color:#0284c7; margin-right:6px;"></i> Step</div>
+              <div><i class="fa-solid fa-calculator" style="color:#0284c7; margin-right:6px;"></i> Description / Working</div>
+              <div><i class="fa-solid fa-clipboard-check" style="color:#0284c7; margin-right:6px;"></i> Criteria</div>
+            </div>
+            
+            <div class="model-step-row model-step-grid-row">
+              <div class="model-step-col-step">
+                <span class="example-step-pill">Step 1</span>
+                <span class="model-step-title">Calculate degrees per MWh (360° ÷ 1,000)</span>
+              </div>
+              <div class="model-step-col-desc">
+                <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:10px; padding:14px 18px; width:100%; box-shadow:0 2px 6px rgba(15, 23, 42, 0.04);">
+                  <div style="font-size:1.15rem; font-weight:800; color:#0f172a; margin-bottom:4px; font-variant-numeric:tabular-nums;"><div class="math-visual-card" style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:6px; padding:12px 16px; margin-bottom:6px;"></div>
+                  <div style="font-size:1.15rem; font-weight:800; color:#0369a1; font-variant-numeric:tabular-nums; margin-bottom:4px;"><div style="font-size:0.98rem; color:#475569; font-weight:800; text-transform:uppercase; letter-spacing:0.5px;">Scale Factor (Degrees per MWh)</div></div>
+                  <div style="font-size:1.15rem; font-weight:800; color:#0369a1; font-variant-numeric:tabular-nums; margin-bottom:4px;"><div style="font-size:1.35rem; font-weight:700; color:#0f172a; font-variant-numeric:tabular-nums; margin:4px 0;">360&deg; &divide; 1,000 MWh = 0.36&deg; per MWh</div></div>
+                  <div style="font-size:1.15rem; font-weight:800; color:#0369a1; font-variant-numeric:tabular-nums; margin-bottom:4px;"><div style="font-size:1.02rem; color:#334155; line-height:1.6;">Every megawatt-hour represents exactly 0.36 degrees of the circle.</div></div>
+                  <div style="font-size:0.95rem; color:#475569; margin-top:2px;"></div></div>
+                </div>
+              </div><div class="model-step-col-criteria">
+                <span class="criteria-badge-teal"><i class="fa-solid fa-award" style="margin-right:6px; opacity:0.85;"></i><strong>Criteria:</strong> M1: Angle multiplier (0.36° per MWh)</span>
+              </div>
+            </div>
+            
+            <div class="model-step-row model-step-grid-row">
+              <div class="model-step-col-step">
+                <span class="example-step-pill">Step 2</span>
+                <span class="model-step-title">Multiply each energy quantity by 0.36°</span>
+              </div>
+              <div class="model-step-col-desc">
+                <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:10px; padding:14px 18px; width:100%; box-shadow:0 2px 6px rgba(15, 23, 42, 0.04);">
+                  <div style="font-size:1.15rem; font-weight:800; color:#0f172a; margin-bottom:4px; font-variant-numeric:tabular-nums;">Gas = 500 × 0.36° = 180°</div>
+                  <div style="font-size:1.15rem; font-weight:800; color:#0369a1; font-variant-numeric:tabular-nums; margin-bottom:4px;">Electricity = 300 × 0.36° = 108°</div>
+                  <div style="font-size:1.15rem; font-weight:800; color:#0369a1; font-variant-numeric:tabular-nums; margin-bottom:4px;">Solar = 120 × 0.36° = 43.2°</div>
+                  <div style="font-size:1.15rem; font-weight:800; color:#0369a1; font-variant-numeric:tabular-nums; margin-bottom:4px;">Biomass = 80 × 0.36° = 28.8°</div>
+                </div>
+              </div><div class="model-step-col-criteria">
+                <span class="criteria-badge-teal"><i class="fa-solid fa-award" style="margin-right:6px; opacity:0.85;"></i><strong>Criteria:</strong> M1: Sector multiplications</span>
+              </div>
+            </div>
+            
+            <div class="model-step-row model-step-grid-row">
+              <div class="model-step-col-step">
+                <span class="example-step-pill">Step 3</span>
+                <span class="model-step-title">Check that all four angles sum to 360°</span>
+              </div>
+              <div class="model-step-col-desc">
+                <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:10px; padding:14px 18px; width:100%; box-shadow:0 2px 6px rgba(15, 23, 42, 0.04);">
+                  <div style="font-size:1.15rem; font-weight:800; color:#0f172a; font-variant-numeric:tabular-nums;">180° + 108° + 43.2° + 28.8° = 360°. Confirmed.</div>
+                </div>
+              </div><div class="model-step-col-criteria">
+                <span class="criteria-badge-teal"><i class="fa-solid fa-award" style="margin-right:6px; opacity:0.85;"></i><strong>Criteria:</strong> A1: All 4 angles accurate</span>
+              </div>
+            </div>
+            
+            <div class="model-final-answer" style="margin-top:16px; padding:12px 18px; background:#f0fdf4; border:1px solid #86efac; border-radius:6px; font-weight:700; color:#166534; font-size:1.05rem;">
+              <i class="fa-solid fa-check-circle"></i> Final Accredited Answer: Gas = 180°, Electricity = 108°, Solar = 43.2°, Biomass = 28.8°
+            </div>
+                        <div class="examiner-guidance-box" style="display: flex; align-items: flex-start; gap: 14px; background: #faf5ff; border: 1px solid #d8b4fe; border-left: 4px solid #a855f7; border-radius: 6px; padding: 14px 18px; margin-top: 16px;">
+              <img src="assets/img/avatars/sonya.png" alt="Sonya &mdash; Functional Skills Assessor" style="width: 48px; height: 48px; border-radius: 50%; border: 2px solid #a855f7; flex-shrink: 0; object-fit: cover;">
+              <div style="flex: 1;">
+                <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 4px;">
+                  <span style="font-weight: 700; color: #581c87; font-size: 0.92rem;">Sonya&rsquo;s Examiner Tip</span>
+                  <span style="background: #a855f7; color: #fff; font-size:0.92rem; font-weight:800; padding:4px 10px; border-radius:12px; text-transform:uppercase;">Examiner Method</span>
+                </div>
+                <div style="font-size: 0.90rem; color: #4c1d95; line-height: 1.55;">
+                  Always add your final angles together to verify they sum to 360°.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+    </section>
+    
+
+    <!-- EXAMINER TRAPS -->
+    <section id="examiner-traps" class="revision-section">
+      <div class="section-header-row">
+        <h2 class="section-title"><i class="fa-solid fa-triangle-exclamation"></i> Critical Examiner Traps &amp; Common Pitfalls</h2>
+      </div>
+      
+        <div class="examiner-pitfall-box">
+          <div class="examiner-pitfall-title">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span>Examiner Pitfall: Using 100 Instead of 360° for Pie Chart Angles</span>
+          </div>
+          <div class="examiner-pitfall-desc">
+            Calculating percentages (out of 100) and plotting those directly as degrees leaves two-thirds of the circle empty!
+          </div>
+          <div class="examiner-pitfall-fix">
+            <i class="fa-solid fa-shield-halved" style="color:#e11d48; margin-top:2px;"></i>
+            <div><strong>How to Avoid This Pitfall:</strong> A full circle is 360°, not 100°.</div>
+          </div>
+        </div>
+        
+        <div class="examiner-pitfall-box">
+          <div class="examiner-pitfall-title">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span>Examiner Pitfall: Measuring Each New Sector from the Original Top Vertical Line</span>
+          </div>
+          <div class="examiner-pitfall-desc">
+            When drawing a pie chart with a protractor, you must measure each new sector starting from the line of the PREVIOUS sector you just drew.
+          </div>
+          <div class="examiner-pitfall-fix">
+            <i class="fa-solid fa-shield-halved" style="color:#e11d48; margin-top:2px;"></i>
+            <div><strong>How to Avoid This Pitfall:</strong> Rotate your protractor so its zero line sits on the edge of the sector you just completed.</div>
+          </div>
+        </div>
+        
+    </section>
+    
+
+    <!-- PRACTICE QUESTIONS -->
+    <section id="practice-questions" class="revision-section">
+      <div class="section-header-row">
+        <h2 class="section-title"><i class="fa-solid fa-pencil"></i> Interactive Exam Practice Questions</h2>
+      </div>
+      
+        <div class="practice-q-card" style="margin-bottom:20px; border:1px solid #cbd5e1; border-radius:8px; overflow:hidden; background:#fff;">
+          <div class="practice-q-header" style="padding:12px 18px; background:#f8fafc; border-bottom:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-weight:700; color:#1e293b;"><i class="fa-solid fa-pencil"></i> Exam Practice Question 1</span>
+            <span class="practice-marks-pill">2 Marks</span>
+          </div>
+          <div class="practice-q-body" style="padding:18px 20px;">
+            <div class="practice-q-stem" style="font-size:1.05rem; line-height:1.7; color:#334155; margin-bottom:16px;">
+              In a pie chart representing <strong>120 staff members</strong>, the "Full-Time" sector has an angle of <strong>210°</strong>. How many staff members work full-time?
+            </div>
+            <div class="practice-interactive-wrap">
+              <label style="display:block; font-weight:600; font-size:0.9rem; color:#475569; margin-bottom:6px;">Your Working / Notes (Auto-saves):</label>
+              <textarea class="practice-scratchpad" rows="3" style="width:100%; border:1px solid #cbd5e1; border-radius:6px; padding:10px; font-family:monospace; font-size:0.95rem;" placeholder="Type your rough working or steps here..."></textarea>
+              <div style="margin-top:12px; display:flex; gap:10px;">
+                <button type="button" class="btn-solution-toggle" onclick="toggleSolution('sol-1')" style="padding:8px 16px; background:#0284c7; color:#fff; border:none; border-radius:6px; font-weight:600; cursor:pointer;">
+                  <i class="fa-solid fa-eye"></i> Show Solution
+                </button>
+              </div>
+              <div id="sol-1" class="practice-solution-drawer" style="display:none; margin-top:14px; padding:16px; background:#f0fdf4; border:1px solid #86efac; border-radius:6px;">
+                <div style="font-weight:700; color:#166534; margin-bottom:6px;"><i class="fa-solid fa-check"></i> Marking Scheme Steps:</div>
+                <div style="line-height:1.7; color:#14532d;">1. Fraction of circle = 210° ÷ 360° = 7/12.<br>2. Number of staff = (210 ÷ 360) × 120 = 70 staff members.</div>
+                <div style="margin-top:10px; font-weight:800; color:#166534;">Final Correct Answer: 70 staff members</div>
+                <div style="margin-top:8px; font-size:1.0rem; font-weight:700; color:#15803d; font-style:italic;">Examiner Tip: (210 ÷ 360) × 120 = 70.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="practice-q-card" style="margin-bottom:20px; border:1px solid #cbd5e1; border-radius:8px; overflow:hidden; background:#fff;">
+          <div class="practice-q-header" style="padding:12px 18px; background:#f8fafc; border-bottom:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-weight:700; color:#1e293b;"><i class="fa-solid fa-pencil"></i> Exam Practice Question 2</span>
+            <span class="practice-marks-pill">3 Marks</span>
+          </div>
+          <div class="practice-q-body" style="padding:18px 20px;">
+            <div class="practice-q-stem" style="font-size:1.05rem; line-height:1.7; color:#334155; margin-bottom:16px;">
+              A care home survey of <strong>90 residents</strong> shows: <strong>38 chose Gardening, 27 chose Music, and 25 chose Bingo</strong>. Calculate the pie chart sector angle for each activity.
+            </div>
+            <div class="practice-interactive-wrap">
+              <label style="display:block; font-weight:600; font-size:0.9rem; color:#475569; margin-bottom:6px;">Your Working / Notes (Auto-saves):</label>
+              <textarea class="practice-scratchpad" rows="3" style="width:100%; border:1px solid #cbd5e1; border-radius:6px; padding:10px; font-family:monospace; font-size:0.95rem;" placeholder="Type your rough working or steps here..."></textarea>
+              <div style="margin-top:12px; display:flex; gap:10px;">
+                <button type="button" class="btn-solution-toggle" onclick="toggleSolution('sol-2')" style="padding:8px 16px; background:#0284c7; color:#fff; border:none; border-radius:6px; font-weight:600; cursor:pointer;">
+                  <i class="fa-solid fa-eye"></i> Show Solution
+                </button>
+              </div>
+              <div id="sol-2" class="practice-solution-drawer" style="display:none; margin-top:14px; padding:16px; background:#f0fdf4; border:1px solid #86efac; border-radius:6px;">
+                <div style="font-weight:700; color:#166534; margin-bottom:6px;"><i class="fa-solid fa-check"></i> Marking Scheme Steps:</div>
+                <div style="line-height:1.7; color:#14532d;">1. Multiplier = 360° ÷ 90 = 4° per resident.<br>2. Gardening = 38 × 4° = 152°.<br>3. Music = 27 × 4° = 108°.<br>4. Bingo = 25 × 4° = 100°.<br>5. Check: 152° + 108° + 100° = 360°.</div>
+                <div style="margin-top:10px; font-weight:800; color:#166534;">Final Correct Answer: Gardening = 152°, Music = 108°, Bingo = 100°</div>
+                <div style="margin-top:8px; font-size:1.0rem; font-weight:700; color:#15803d; font-style:italic;">Examiner Tip: 360° ÷ 90 = 4° per resident makes the multiplications super fast!</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="practice-q-card" style="margin-bottom:20px; border:1px solid #cbd5e1; border-radius:8px; overflow:hidden; background:#fff;">
+          <div class="practice-q-header" style="padding:12px 18px; background:#f8fafc; border-bottom:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-weight:700; color:#1e293b;"><i class="fa-solid fa-pencil"></i> Exam Practice Question 3</span>
+            <span class="practice-marks-pill">3 Marks</span>
+          </div>
+          <div class="practice-q-body" style="padding:18px 20px;">
+            <div class="practice-q-stem" style="font-size:1.05rem; line-height:1.7; color:#334155; margin-bottom:16px;">
+              On a budget pie chart, the "IT Software" sector has an angle of <strong>54°</strong> and represents <strong>£13,500</strong>. Calculate the <strong>total budget</strong> represented by the entire 360° pie chart.
+            </div>
+            <div class="practice-interactive-wrap">
+              <label style="display:block; font-weight:600; font-size:0.9rem; color:#475569; margin-bottom:6px;">Your Working / Notes (Auto-saves):</label>
+              <textarea class="practice-scratchpad" rows="3" style="width:100%; border:1px solid #cbd5e1; border-radius:6px; padding:10px; font-family:monospace; font-size:0.95rem;" placeholder="Type your rough working or steps here..."></textarea>
+              <div style="margin-top:12px; display:flex; gap:10px;">
+                <button type="button" class="btn-solution-toggle" onclick="toggleSolution('sol-3')" style="padding:8px 16px; background:#0284c7; color:#fff; border:none; border-radius:6px; font-weight:600; cursor:pointer;">
+                  <i class="fa-solid fa-eye"></i> Show Solution
+                </button>
+              </div>
+              <div id="sol-3" class="practice-solution-drawer" style="display:none; margin-top:14px; padding:16px; background:#f0fdf4; border:1px solid #86efac; border-radius:6px;">
+                <div style="font-weight:700; color:#166534; margin-bottom:6px;"><i class="fa-solid fa-check"></i> Marking Scheme Steps:</div>
+                <div style="line-height:1.7; color:#14532d;">1. Value per degree = £13,500 ÷ 54° = £250 per degree.<br>2. Total 360° budget = £250 × 360 = £90,000.</div>
+                <div style="margin-top:10px; font-weight:800; color:#166534;">Final Correct Answer: £90,000</div>
+                <div style="margin-top:8px; font-size:1.0rem; font-weight:700; color:#15803d; font-style:italic;">Examiner Tip: Divide £13,500 by 54° to find the value of 1° (£250), then multiply by 360°.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+    </section>
+    
+
+        <!-- DOWNLOADS -->
+        <section id="downloads" class="revision-section">
+          <div class="section-header-row">
+            <h2 class="section-title"><i class="fa-regular fa-file-pdf"></i> Free Revision Worksheets &amp; Exam Papers</h2>
+          </div>
+
+          <div class="download-tiles-grid">
+            <!-- STYLE 1: FLUENCY DRILLS WORKOUT (COMBINED) -->
+            <div class="download-combo-card">
+              <div class="download-combo-header">
+                <div class="download-tile-icon icon-workout"><i class="fa-solid fa-repeat"></i></div>
+                <div class="download-combo-info">
+                  <div class="tile-badge-wrap"><span class="badge-tile-type">Style 1: Fluency Drills</span></div>
+                  <strong class="download-tile-title">Pie Charts Level 1 Practice Drills</strong>
+                  <span class="download-tile-desc">25+ quick calculation drills + real-life maths problems</span>
+                </div>
+              </div>
+              <div class="download-combo-actions">
+                <a href="worksheets/pie-charts-level-1-workout.html" target="_blank" class="download-combo-btn btn-qp">
+                  <i class="fa-regular fa-file-pdf"></i> Question Paper
+                </a>
+                <a href="worksheets/pie-charts-level-1-workout-answers.html" target="_blank" class="download-combo-btn btn-ans">
+                  <i class="fa-solid fa-check-double"></i> Answer Key
+                </a>
+              </div>
+            </div>
+
+            <!-- STYLE 2: EXAM PRACTICE QUESTIONS (COMBINED) -->
+            <div class="download-combo-card">
+              <div class="download-combo-header">
+                <div class="download-tile-icon icon-pdf"><i class="fa-regular fa-file-pdf"></i></div>
+                <div class="download-combo-info">
+                  <div class="tile-badge-wrap"><span class="badge-tile-type exam">Style 2: Practice Questions</span></div>
+                  <strong class="download-tile-title">Pie Charts Level 1 Practice Questions</strong>
+                  <span class="download-tile-desc">Authentic Pearson Edexcel exam questions with [M1][A1] mark scheme</span>
+                </div>
+              </div>
+              <div class="download-combo-actions">
+                <a href="worksheets/pie-charts-level-1-worksheet.html" target="_blank" class="download-combo-btn btn-qp">
+                  <i class="fa-regular fa-file-pdf"></i> Question Paper
+                </a>
+                <a href="worksheets/pie-charts-level-1-answers.html" target="_blank" class="download-combo-btn btn-ans">
+                  <i class="fa-solid fa-award"></i> Mark Scheme
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- NEXT TOPIC BANNER -->
+        <div class="next-topic-banner">
+          <div class="next-topic-info">
+            <strong>Next Curriculum Topic</strong>
+            <span>Grouped Data (Level 1)</span>
+          </div>
+          <a href="functional-skills-grouped-data-level-1.html" class="btn-next-topic">
+            Continue Revision <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </main>  <!-- FOOTER -->
+  <footer class="mfs-footer" id="site-footer">
+    <div class="mfs-container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="mfs-brand" style="margin-bottom:16px;">
+            <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="mfs-brand-text">
+              <div class="mfs-brand-title" style="color:#ffffff;">MASTER<span>FUNCTIONALSKILLS</span></div>
+              <div class="mfs-brand-subtitle" style="color:#94a3b8;">Delivering Skills • Achieving Goals</div>
+            </div>
+          </div>
+          <p style="font-size:1.0rem; line-height:1.6; margin-bottom:16px;">
+            The UK's dedicated Functional Skills revision specialist. Providing realistic mock exams, step-by-step revision flashcards, diagnostic assessments, and 1-to-1 specialist tuition for Pearson Edexcel, City &amp; Guilds, and all major exam boards.
+          </p>
+          <div style="font-size:0.95rem; color:#cbd5e1;">
+            <p><a href="https://wa.me/447564525425" target="_blank" rel="noopener" style="color:#cbd5e1; text-decoration:none;"><i class="fa-brands fa-whatsapp" style="color:var(--accent); margin-right:8px;"></i> WhatsApp: +44 (0)7564 525425</a></p>
+            <p style="margin-top:6px;"><a href="contact-us.html" style="color:#cbd5e1; text-decoration:none;"><i class="fa-solid fa-envelope" style="color:var(--accent); margin-right:8px;"></i> Contact Tutor Team</a></p>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Maths Revision</h4>
+          <ul class="footer-links">
+            <li><a href="functional-skills-maths-level-1.html">Maths Level 2 Revision</a></li>
+            <li><a href="functional-skills-maths-level-1.html">Maths Level 1 Revision</a></li>
+            <li><a href="entry-level-3-maths.html">Entry Level 3 Maths</a></li>
+            <li><a href="pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="functional-skills-past-papers.html">Free Maths Past Papers</a></li>
+            <li><a href="exam-maths-l2.html">Book Level 2 Maths Exam</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>English &amp; Digital</h4>
+          <ul class="footer-links">
+            <li><a href="functional-skills-english-level-2.html">English Level 2 Revision</a></li>
+            <li><a href="functional-skills-english-level-1.html">English Level 1 Revision</a></li>
+            <li><a href="digital-functional-skills.html">Digital Skills Hub (L1 &amp; E3)</a></li>
+            <li><a href="digital-functional-skills-past-papers.html">DFS Past Papers &amp; Data Files</a></li>
+            <li><a href="functional-skills-past-papers.html?format=online#mock-finder">Online Exam Simulator</a></li>
+            <li><a href="exam-english-l2.html">Book Level 2 English Exam</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Student Support &amp; Tools</h4>
+          <ul class="footer-links">
+            <li><a href="tools.html" style="color:var(--accent); font-weight:700;"><i class="fa-solid fa-screwdriver-wrench" style="margin-right:6px;"></i>All Interactive Tools Hub</a></li>
+            <li><a href="pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="diagnostic-test.html">Diagnostic Skill Checker</a></li>
+            <li><a href="functional-skills-nets.html">3D Net Folding Tool</a></li>
+            <li><a href="digital-functional-skills-mock-exam.html">Pearson DFS Simulator</a></li>
+            <li><a href="revision-cards.html">Revision Cards &amp; Flashcards</a></li>
+            <li><a href="shop.html">Revision Books &amp; Study Packs</a></li>
+            <li><a href="tutors.html">1-to-1 Specialist Tuition</a></li>
+            <li><a href="exams.html">Book Official Online Exam</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Master Functional Skills. All rights reserved. Registered in England &amp; Wales. Ofqual Regulated Qualification Standards.</div>
+        <div style="display:flex; gap:16px; flex-wrap:wrap;">
+          <a href="index.html">Home</a>
+          <a href="tools.html" style="color:var(--accent); font-weight:700;">Tools</a>
+          <a href="functional-skills-past-papers.html">Past Papers</a>
+          <a href="revision-cards.html">Revision Cards</a>
+          <a href="shop.html">Study Shop</a>
+          <a href="tutors.html">Tutors</a>
+          <a href="contact-us.html">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/mfs-revision.js"></script>
+</body>
+</html>

@@ -1,0 +1,959 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-theme="sapphire" data-tint="cream">
+<head>
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Probability Scale & Single Event Outcomes Level 1: Key Rules, Models &amp; Exam Practice | Master Functional Skills</title>
+  <meta name="description" content="Dyslexia-friendly Probability Scale & Single Event Outcomes revision guide for Functional Skills Mathematics Level 1. Clear spacing, structured cards, large numbers, worked models, and interactive practice.">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192x192.png">
+  <link rel="apple-touch-icon" href="assets/img/favicon-192x192.png">
+  <link rel="shortcut icon" href="favicon.ico">
+    <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0b172d">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="MFS Skills">
+  <link rel="apple-touch-icon" href="assets/img/favicon-192x192.png">
+  <script src="assets/js/mfs-pwa.js" defer></script>
+  <link rel="stylesheet" href="assets/css/mfs-theme.css?v=20261017j">
+  <link rel="stylesheet" href="assets/css/mfs-mobile.css?v=20261018b">
+  <link rel="stylesheet" href="assets/css/mfs-revision.css?v=20261018b">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <!-- TOP TRUST BAR WITH ACCESSIBILITY & CONTACT -->
+  <div class="mfs-top-bar">
+    <div class="mfs-container mfs-top-bar-inner">
+      <div class="top-trust-items">
+        <span class="top-trust-item"><i class="fa-solid fa-building-columns"></i> Pearson Edexcel &amp; City &amp; Guilds Aligned</span>
+      </div>
+      <div class="top-contacts">
+        <div class="mfs-access-bar">
+          <!-- DYSLEXIA BACKGROUND TINT PICKER -->
+          <div class="mfs-tint-dropdown-wrap">
+            <button type="button" id="tintToggle" class="btn-tint-toggle" onclick="toggleTintMenu(event)" title="Change dyslexia background tint">
+              <span class="tint-swatch-indicator" id="tintCurrentSwatch"></span>
+              <span id="tintLabel">Cream Tint</span>
+              <i class="fa-solid fa-chevron-down" style="font-size:0.62rem; opacity:0.75; margin-left:2px;"></i>
+            </button>
+            <div id="tintMenu" class="tint-picker-menu">
+              <div class="tint-picker-title"><i class="fa-solid fa-glasses"></i> Dyslexia Reading Tint</div>
+              <button type="button" class="tint-option-btn active" data-tint="cream" onclick="setSiteTint('cream', event)">
+                <span class="swatch swatch-cream"></span>
+                <span class="tint-name">Cream <small class="tint-badge-def">Default</small></span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="peach" onclick="setSiteTint('peach', event)">
+                <span class="swatch swatch-peach"></span>
+                <span class="tint-name">Soft Peach</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="cool" onclick="setSiteTint('cool', event)">
+                <span class="swatch swatch-cool"></span>
+                <span class="tint-name">Cool Mist</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="sage" onclick="setSiteTint('sage', event)">
+                <span class="swatch swatch-sage"></span>
+                <span class="tint-name">Soft Sage</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <div class="tint-divider"></div>
+              <button type="button" class="tint-option-btn" data-tint="none" onclick="setSiteTint('none', event)">
+                <span class="swatch swatch-none"></span>
+                <span class="tint-name">No Tint (White)</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+            </div>
+          </div>
+          <button id="dyslexiaToggle" class="btn-dyslexia-toggle" onclick="toggleDyslexiaMode()" title="Toggle Dyslexia High-Readability Mode">
+            <i class="fa-solid fa-universal-access"></i> Dyslexia
+          </button>
+          <button id="themeToggle" class="mfs-theme-pill" onclick="toggleTheme()" title="Switch Palette: Sapphire vs Emerald">
+            <i class="fa-solid fa-palette"></i> <span id="themeLabel">Sapphire</span>
+          </button>
+        </div>
+        <a href="contact-us.html" class="top-contact-link"><i class="fa-solid fa-envelope"></i> <strong>Contact Us</strong></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->  <!-- MAIN NAVIGATION -->
+  <header class="mfs-navbar">
+    <div class="revision-page-wrapper mfs-navbar-inner">
+      <a href="index.html" class="mfs-brand">
+        <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div class="mfs-brand-text">
+          <div class="mfs-brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
+          <div class="mfs-brand-subtitle">Delivering Skills • Achieving Goals</div>
+        </div>
+      </a>
+
+      <nav class="mfs-nav-wrapper">
+        <ul class="mfs-nav-menu">
+          <!-- 1. SUBJECTS (VISUAL MEGA-MENU) -->
+          <li class="mfs-nav-item">
+            <a href="revise.html" class="mfs-nav-link">
+              <i class="fa-solid fa-book-open-reader" style="color:#0284c7; margin-right:5px;"></i> Subjects <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-revision-hub">
+              <div class="mfs-revision-grid">
+                <!-- Maths Column -->
+                <div class="mfs-revision-col mfs-revision-col-maths">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-calculator"></i> Maths Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="functional-skills-maths-level-1.html" class="mfs-dropdown-item">Maths Level 2</a>
+                    <a href="functional-skills-maths-level-1.html" class="mfs-dropdown-item">Maths Level 1</a>
+                    <a href="entry-level-3-maths.html" class="mfs-dropdown-item">Entry Level 3 Maths</a>
+                  </div>
+                </div>
+                <!-- English Column -->
+                <div class="mfs-revision-col mfs-revision-col-english">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-pen-nib"></i> English Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="functional-skills-english-level-2.html" class="mfs-dropdown-item">English Level 2</a>
+                    <a href="functional-skills-english-level-1.html" class="mfs-dropdown-item">English Level 1</a>
+                  </div>
+                </div>
+                <!-- Digital Skills Column -->
+                <div class="mfs-revision-col mfs-revision-col-digital">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-laptop-code"></i> Digital Skills</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="digital-functional-skills.html" class="mfs-dropdown-item">Digital Skills Hub</a>
+                    <a href="digital-functional-skills-mock-exam.html" class="mfs-dropdown-item">Pearson Mock Exam</a>
+                    <a href="digital-functional-skills-past-papers.html" class="mfs-dropdown-item">Past Papers &amp; Files</a>
+                  </div>
+                </div>
+              </div>
+              <!-- Course & Subject Selector Cross-link Footer inside dropdown -->
+              <div class="mfs-revision-dropdown-footer" style="margin-top:12px; padding-top:10px; border-top:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center; font-size:0.92rem;">
+                <a href="revise.html" style="font-weight:700; color:var(--accent); text-decoration:none;"><i class="fa-solid fa-layer-group" style="margin-right:4px;"></i> View All Subjects &amp; Levels &rarr;</a>
+                <a href="courses.html" style="font-weight:700; color:#059669; text-decoration:none;"><i class="fa-solid fa-graduation-cap" style="margin-right:4px;"></i> Accredited Online Courses &rarr;</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- 2. ONLINE COURSES -->
+          <li class="mfs-nav-item">
+            <a href="courses.html" class="mfs-nav-link">
+              <i class="fa-solid fa-graduation-cap" style="color:#0284c7; margin-right:5px;"></i> Online Courses
+            </a>
+          </li>
+
+          <!-- 3. PAST PAPERS (DIRECT ACCESS) -->
+          <li class="mfs-nav-item">
+            <a href="functional-skills-past-papers.html" class="mfs-nav-link">
+              <i class="fa-regular fa-file-lines" style="color:#0284c7; margin-right:5px;"></i> Past Papers
+            </a>
+          </li>
+
+          <!-- 4. WORKSHEETS DIRECTORY (CORBETT STYLE DUAL ENGINE) -->
+          <li class="mfs-nav-item">
+            <a href="worksheets.html" class="mfs-nav-link">
+              <i class="fa-solid fa-layer-group" style="color:#0284c7; margin-right:5px;"></i> Worksheets
+            </a>
+          </li>
+
+          <!-- 5. FREE TOOLS (COMPACT DROPDOWN) -->
+          <li class="mfs-nav-item">
+            <a href="tools.html" class="mfs-nav-link">
+              <i class="fa-solid fa-screwdriver-wrench" style="color:#0284c7; margin-right:5px;"></i> Free Tools <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-compact">
+              <a href="tools.html" class="mfs-dropdown-item" style="font-weight:700; color:var(--accent);"><i class="fa-solid fa-layer-group" style="font-size:0.85rem; margin-right:6px;"></i> All Free Tools &amp; Simulators &rarr;</a>
+              <div class="mfs-dropdown-divider" style="margin:4px 0; border-top:1px solid #e2e8f0;"></div>
+              <a href="pass-mark-calculator.html" class="mfs-dropdown-item"><i class="fa-solid fa-calculator" style="color:var(--accent); font-size:0.85rem; margin-right:6px;"></i> Pass Mark Calculator</a>
+              <a href="diagnostic-test.html" class="mfs-dropdown-item"><i class="fa-solid fa-chart-pie" style="color:#059669; font-size:0.85rem; margin-right:6px;"></i> Diagnostic Skill Checker</a>
+              <a href="functional-skills-nets.html" class="mfs-dropdown-item"><i class="fa-solid fa-cube" style="color:#0284c7; font-size:0.85rem; margin-right:6px;"></i> 3D Net Folding Tool</a>
+              <a href="video-solution.html" class="mfs-dropdown-item"><i class="fa-solid fa-circle-play" style="color:#ef4444; font-size:0.85rem; margin-right:6px;"></i> Video Walkthrough Station</a>
+            </div>
+          </li>
+
+          <!-- 6. REVISION CARDS -->
+          <li class="mfs-nav-item">
+            <a href="revision-cards.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-layer-group" style="color:#d97706; margin-right:5px;"></i> Revision Cards
+            </a>
+          </li>
+
+          <!-- 7. SHOP -->
+          <li class="mfs-nav-item">
+            <a href="shop.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-basket-shopping" style="color:#d97706; margin-right:5px;"></i> Shop
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- 8. BOOK EXAM ACTION BUTTON -->
+      <div class="mfs-nav-actions">
+        <a href="exams.html" class="btn-nav-exam">
+          <i class="fa-solid fa-calendar-check"></i> Book Exam
+        </a>
+      </div>
+
+      <!-- MOBILE CONTROLS (TINT + MENU PILL) -->
+      <div class="mfs-mobile-controls" id="mfsMobileControls">
+        <button type="button" class="btn-mobile-tint-toggle" id="mfsMobileTintBtn" title="Change Reading Tint" aria-label="Reading Tint">
+          <i class="fa-solid fa-glasses"></i>
+          <span class="mobile-tint-swatch" id="mfsMobileTintSwatch"></span>
+        </button>
+        <button type="button" class="mfs-menu-pill" id="mfsMobileToggleBtn" title="Open Navigation Menu" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+          <span>Menu</span>
+        </button>
+      </div>
+    </div>
+    <!-- MOBILE NAVIGATION ENGINE -->
+    <script src="assets/js/mfs-mobile.js" defer></script>
+  </header>
+
+  <!-- BREADCRUMBS -->
+  <div class="revision-breadcrumb-bar">
+    <div class="revision-page-wrapper">
+      <div class="revision-breadcrumbs">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a href="revise.html">Revise Hub</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a href="functional-skills-maths-level-1.html">Mathematics Level 1</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span class="current">Probability Scale & Single Event Outcomes Level 1</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="revision-hero-card">
+    <div class="revision-page-wrapper">
+      <div class="revision-hero-grid">
+        <div class="revision-hero-content">
+          <div class="revision-hero-pill-row">
+            <span class="badge-pill-accent"><i class="fa-solid fa-calculator"></i> MATHEMATICS</span>
+            <span class="badge-pill-gold">LEVEL 1 REVISION</span>
+            <span class="badge-pill-outline">OFQUAL SPECIFICATION STANDARDS</span>
+          </div>
+
+          <h1 class="revision-hero-title">
+            Probability Scale & Single Event Outcomes Level 1: <span>Formulas, Models &amp; Exam Practice</span>
+          </h1>
+
+          <p class="revision-hero-desc">
+            Express probabilities as fractions, decimals, and percentages on the 0-to-1 scale, apply the complement rule (P(not A) = 1 − P(A)), and calculate relative frequency in quality audits.
+          </p>
+
+          <div class="revision-hero-meta-bar">
+            <div class="hero-meta-item">
+              <i class="fa-solid fa-clock"></i> <strong>Est. Study Time:</strong> 25-35 Mins
+            </div>
+            <div class="hero-meta-item">
+              <i class="fa-solid fa-book-open"></i> <strong>Curriculum Standards:</strong> Pearson Edexcel &amp; City &amp; Guilds
+            </div>
+            <div class="hero-meta-item">
+              <i class="fa-solid fa-circle-check"></i> <strong>Interactive Practice Tasks Included</strong>
+            </div>
+
+            <div class="hero-quick-actions">
+              <a href="#downloads" class="btn-hero-action">
+                <i class="fa-regular fa-file-pdf"></i> Free Worksheet &amp; Answers (PDF)
+              </a>
+              <a href="#practice-questions" class="btn-hero-action-secondary">
+                <i class="fa-solid fa-pencil"></i> Start Practice Tasks
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="revision-hero-visual-card">
+          <div class="revision-hero-img-wrap">
+            <img src="assets/img/book_photos/everyday_objects/red_dice_roll.jpg" alt="Probability Scale & Single Event Outcomes Workplace Application" loading="lazy" />
+          </div>
+          <div class="revision-hero-caption-bar">
+            <strong><i class="fa-solid fa-shapes"></i> Key Visual Concept</strong>
+            Rolling precision numbered dice to determine experimental and theoretical probability outcomes.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOBILE TABLE OF CONTENTS BAR -->
+  <div class="mobile-toc-bar">
+    <div style="font-weight:700; color:var(--navy-dark); font-size:0.9rem;">
+      <i class="fa-solid fa-list-check" style="color:var(--accent);"></i> Probability Scale & Single Event Outcomes Blueprint
+    </div>
+    <button type="button" class="btn-mobile-toc" onclick="toggleMobileToc()">
+      <span>Table of Contents</span> <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+
+  <!-- MAIN 2-COLUMN RESPONSIVE LAYOUT -->
+  <main class="revision-page-wrapper">
+    <div class="revision-layout">
+
+      <!-- LEFT COLUMN: STICKY BLUEPRINT TOC -->
+      <aside class="revision-sidebar" id="sidebarNav">
+        <div class="sidebar-toc-title">
+          <span><i class="fa-solid fa-compass-drafting" style="color:var(--accent);"></i> Topic Contents</span>
+          <span style="font-size:0.90rem; color:#64748b; font-weight:700;">9 Sections</span>
+        </div>
+
+        <ul class="sidebar-toc-list" id="tocList">
+          
+          <li>
+            <a href="#specification" class="sidebar-toc-link active">
+              <i class="fa-solid fa-clipboard-check"></i> Specification
+            </a>
+          </li>
+          <li>
+            <a href="#golden-rules" class="sidebar-toc-link">
+              <i class="fa-solid fa-lightbulb"></i> Golden Rules
+            </a>
+          </li>
+          <li>
+            <a href="#skill-1" class="sidebar-toc-link">
+              <i class="fa-solid fa-shapes"></i> 1. The 0-to-1 Probability Scale & Equivalent Formats
+            </a>
+          </li>
+          <li>
+            <a href="#skill-2" class="sidebar-toc-link">
+              <i class="fa-solid fa-shapes"></i> 2. Mutually Exclusive Probability Tables (Sum = 1)
+            </a>
+          </li>
+          <li>
+            <a href="#skill-3" class="sidebar-toc-link">
+              <i class="fa-solid fa-shapes"></i> 3. Experimental Probability (Relative Frequency) & Sample Size
+            </a>
+          </li>
+          <li>
+            <a href="#worked-exam-models" class="sidebar-toc-link">
+              <i class="fa-solid fa-graduation-cap"></i> Exam Models
+            </a>
+          </li>
+          <li>
+            <a href="#examiner-traps" class="sidebar-toc-link">
+              <i class="fa-solid fa-triangle-exclamation"></i> Examiner Traps
+            </a>
+          </li>
+          <li>
+            <a href="#practice-questions" class="sidebar-toc-link">
+              <i class="fa-solid fa-pencil"></i> Exam Practice
+            </a>
+          </li>
+          <li>
+            <a href="#downloads" class="sidebar-toc-link">
+              <i class="fa-solid fa-file-pdf"></i> Downloads (PDF)
+            </a>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- RIGHT COLUMN: MAIN LEARNING CONTENT -->
+      <div class="revision-content">
+        
+            <!-- SUBI ASSESSOR BLUEPRINT WELCOME -->
+        <div class="tutor-pro-callout" style="margin-bottom: 28px; background: linear-gradient(135deg, #f0fdf4 0%, #e0f2fe 100%); border-left: 5px solid #0284c7; padding: 20px; border-radius: 12px; display: flex; gap: 18px; align-items: flex-start; box-shadow: 0 4px 14px rgba(0,0,0,0.05);">
+          <img src="assets/img/avatars/subi.png" alt="Subi Lead Assessor and Specialist Tutor" style="width: 68px; height: 68px; border-radius: 50%; border: 3px solid #0284c7; flex-shrink: 0; object-fit: cover;">
+          <div style="flex: 1;">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+              <span style="font-weight: 700; color: #0f172a; font-size: 1.05rem;">Subi &mdash; Lead Assessor &amp; Specialist Maths Tutor</span>
+              <span style="background: #0284c7; color: #fff; font-size:0.92rem; font-weight:800; padding:5px 12px; border-radius:12px; text-transform:uppercase;">Examiner Guidance</span>
+            </div>
+            <p style="margin: 0; color: #334155; font-size: 0.95rem; line-height: 1.6;">
+              Welcome to the <strong>Probability Scale &amp; Single Event Outcomes</strong> blueprint. In Pearson Edexcel Functional Skills (Levels 1 and 2), probability questions test three main ideas: representing single-event likelihoods on the 0-to-1 scale, using the complement rule <span class="math-target-calc" style="padding: 2px 6px; font-weight:700;">P(not A) = 1 &minus; P(A)</span>, and scaling relative frequency up to full batch sizes. Follow our large, step-down calculation cards below to see exactly how full [M1] and [A1] marks are scored without losing marks to ratios!
+            </p>
+          </div>
+        </div>
+
+    <!-- SPECIFICATION -->
+    <section id="specification" class="revision-section">
+      <div class="section-header-row">
+        <h2 class="section-title"><i class="fa-solid fa-clipboard-check"></i> Specification &amp; Learning Outcomes</h2>
+      </div>
+      <div class="skill-card-container">
+        <p>Candidates must demonstrate mastery of the following regulated Functional Skills Mathematics outcomes:</p>
+        <ul style="padding-left:20px; line-height:1.8; color:#334155;">
+          <li><strong>L1.26</strong> – Express probabilities of single events as fractions, decimals, or percentages on a scale from 0 (impossible) to 1 (certain).</li><li><strong>L2.34</strong> – Use the property that the probabilities of all mutually exclusive outcomes sum to 1.</li>
+        </ul>
+      </div>
+    </section>
+    
+
+    <!-- GOLDEN RULES -->
+    <section id="golden-rules" class="revision-section">
+      <div class="section-header-row">
+        <h2 class="section-title"><i class="fa-solid fa-lightbulb"></i> Golden Rules for Probability Scale & Single Event Outcomes</h2>
+      </div>
+      
+        <div class="rule-card-amber">
+          <div class="rule-card-amber-header">
+            <i class="fa-solid fa-dice"></i>
+            <span>Golden Rule 1: P(Event) = Favourable Outcomes ÷ Total Possible Outcomes</span>
+          </div>
+          <p>Probability is ALWAYS a number between 0 and 1 (or 0% and 100%). Write probabilities as a fraction (e.g. 3/10), a decimal (0.3), or a percentage (30%)—NEVER as a ratio (3 : 10) or words ("3 out of 10")!</p>
+          <div class="rule-highlight-badge">
+            <strong>Golden Rule / Method:</strong> P(A) = Successful Outcomes ÷ Total Outcomes (Fraction, Decimal, or %)
+          </div>
+        </div>
+        
+        <div class="rule-card-amber">
+          <div class="rule-card-amber-header">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>Golden Rule 2: Complement Rule — Mutually Exclusive Probabilities Sum to 1</span>
+          </div>
+          <p>If an event either happens or does not happen, their probabilities add up to 1 (or 100%). Therefore: P(Not A) = 1 − P(A).</p>
+          <div class="rule-highlight-badge">
+            <strong>Golden Rule / Method:</strong> P(Not A) = 1 − P(A)
+          </div>
+        </div>
+        
+    </section>
+    
+
+        <!-- SKILL 1: The 0-to-1 Probability Scale & Equivalent Formats -->
+        <section id="skill-1" class="revision-section">
+          <div class="mfs-topic-card">
+            <div class="mfs-topic-head">
+              <h3 class="mfs-topic-title"><span class="mfs-topic-prefix">Core Skill 1:</span> The 0-to-1 Probability Scale & Equivalent Formats</h3>
+              <p class="mfs-topic-stem">Mapping likelihood terms to exact fractions, decimals, and percentages.</p>
+            </div>
+            <div class="mfs-topic-body" style="padding:20px 24px;">
+              <div class="mfs-probability-master-board" style="background:#ffffff; border:2px solid #bae6fd; border-radius:18px; padding:28px 24px; margin:24px 0; box-shadow:0 4px 20px rgba(15, 23, 42, 0.06); width:100%;">
+  <!-- Header Bar -->
+  <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:12px; margin-bottom:24px; padding-bottom:16px; border-bottom:1px solid #e2e8f0; width:100%;">
+    <div style="display:inline-flex; align-items:center; gap:8px; background:#e0f2fe; color:#0369a1; font-size:1.0rem; font-weight:800; padding:6px 18px; border-radius:999px; text-transform:uppercase; letter-spacing:0.04em;">
+      <i class="fa-solid fa-dice"></i> Master Model: Complete Probability Continuum
+    </div>
+    <div style="color:#0f172a; font-size:1.15rem; font-weight:800;">
+      Scale: <span style="color:#dc2626;">0 (Impossible)</span> &rarr; <span style="color:#15803d;">1 (Certain)</span>
+    </div>
+  </div>
+
+  <!-- 5 Milestone Cards Across the Screen (Full Width Grid) -->
+  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(170px, 1fr)); gap:16px; width:100%; margin-bottom:24px;">
+    <!-- 0 Impossible -->
+    <div style="background:#fef2f2; border:2px solid #f87171; border-radius:14px; padding:18px 14px; text-align:center; box-shadow:0 2px 6px rgba(239, 68, 68, 0.06);">
+      <div style="font-size:1.8rem; font-weight:900; color:#dc2626; margin-bottom:4px;">0</div>
+      <div style="background:#dc2626; color:#ffffff; font-size:0.95rem; font-weight:900; padding:5px 10px; border-radius:6px; text-transform:uppercase; margin-bottom:6px;">Impossible</div>
+      <div style="color:#7f1d1d; font-size:0.9rem; font-weight:700;">0% Chance</div>
+      <div style="color:#475569; font-size:0.98rem; margin-top:8px;">e.g. Rolling a 7 on a 6-sided die</div>
+    </div>
+
+    <!-- 0.25 Unlikely -->
+    <div style="background:#fffbeb; border:2px solid #fbbf24; border-radius:14px; padding:18px 14px; text-align:center; box-shadow:0 2px 6px rgba(245, 158, 11, 0.06);">
+      <div style="font-size:1.8rem; font-weight:900; color:#d97706; margin-bottom:4px;">&frac14; (0.25)</div>
+      <div style="background:#d97706; color:#ffffff; font-size:0.95rem; font-weight:900; padding:5px 10px; border-radius:6px; text-transform:uppercase; margin-bottom:6px;">Unlikely</div>
+      <div style="color:#78350f; font-size:0.9rem; font-weight:700;">25% Chance</div>
+      <div style="color:#475569; font-size:0.98rem; margin-top:8px;">e.g. Drawing a Heart from cards</div>
+    </div>
+
+    <!-- 0.5 Even Chance -->
+    <div style="background:#eff6ff; border:2px solid #60a5fa; border-radius:14px; padding:18px 14px; text-align:center; box-shadow:0 2px 6px rgba(37, 99, 235, 0.06);">
+      <div style="font-size:1.8rem; font-weight:900; color:#0284c7; margin-bottom:4px;">&frac12; (0.50)</div>
+      <div style="background:#0284c7; color:#ffffff; font-size:0.95rem; font-weight:900; padding:5px 10px; border-radius:6px; text-transform:uppercase; margin-bottom:6px;">Even Chance</div>
+      <div style="color:#1e40af; font-size:0.9rem; font-weight:700;">50:50 (50%)</div>
+      <div style="color:#475569; font-size:0.98rem; margin-top:8px;">e.g. Flipping Heads on a coin</div>
+    </div>
+
+    <!-- 0.75 Likely -->
+    <div style="background:#ecfdf5; border:2px solid #34d399; border-radius:14px; padding:18px 14px; text-align:center; box-shadow:0 2px 6px rgba(16, 185, 129, 0.06);">
+      <div style="font-size:1.8rem; font-weight:900; color:#059669; margin-bottom:4px;">&frac34; (0.75)</div>
+      <div style="background:#059669; color:#ffffff; font-size:0.95rem; font-weight:900; padding:5px 10px; border-radius:6px; text-transform:uppercase; margin-bottom:6px;">Likely</div>
+      <div style="color:#064e3b; font-size:0.9rem; font-weight:700;">75% Chance</div>
+      <div style="color:#475569; font-size:0.98rem; margin-top:8px;">e.g. Non-Heart from deck (39/52)</div>
+    </div>
+
+    <!-- 1 Certain -->
+    <div style="background:#f0fdf4; border:2px solid #4ade80; border-radius:14px; padding:18px 14px; text-align:center; box-shadow:0 2px 6px rgba(34, 197, 94, 0.06);">
+      <div style="font-size:1.8rem; font-weight:900; color:#15803d; margin-bottom:4px;">1 (1.00)</div>
+      <div style="background:#15803d; color:#ffffff; font-size:0.95rem; font-weight:900; padding:5px 10px; border-radius:6px; text-transform:uppercase; margin-bottom:6px;">Certain</div>
+      <div style="color:#14532d; font-size:0.9rem; font-weight:700;">100% Chance</div>
+      <div style="color:#475569; font-size:0.98rem; margin-top:8px;">e.g. Drawing a red or black card</div>
+    </div>
+  </div>
+
+  <!-- Universal Formula Card -->
+  <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:12px; padding:18px 22px; width:100%;">
+    <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:8px; margin-bottom:8px;">
+      <span style="background:#0284c7; color:#ffffff; font-size:0.95rem; font-weight:900; padding:3px 10px; border-radius:6px; text-transform:uppercase;">Universal Formula</span>
+      <span style="font-size:1.15rem; font-weight:900; color:#0f172a;">
+        P(Event) = <span style="color:#0284c7;">Successful Outcomes</span> &divide; <span style="color:#0f172a;">Total Possible Outcomes</span>
+      </span>
+    </div>
+    <div style="color:#475569; font-size:0.95rem; font-weight:700; line-height:1.7;">
+      &bull; Example: Rolling an Even Number {2, 4, 6} on a 6-sided die &rarr; 3 outcomes out of 6 = <strong style="color:#15803d;">&sup3;&frasl;&₆ = &frac12; = 0.5 (50% Even Chance)</strong>
+    </div>
+  </div>
+</div>
+              
+                <div class="table-responsive" style="overflow-x:auto; -webkit-overflow-scrolling:touch; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:14px; margin:16px 0;">
+                  <table class="table-stack-mobile" style="width:100%; border-collapse:collapse; text-align:center;">
+                    <thead>
+                      <tr style="background:#0284c7; color:#fff;">
+                        <th style="padding:8px; border:1px solid #cbd5e1;">Likelihood Word</th>
+                        <th style="padding:8px; border:1px solid #cbd5e1;">Decimal Scale</th>
+                        <th style="padding:8px; border:1px solid #cbd5e1;">Fraction</th>
+                        <th style="padding:8px; border:1px solid #cbd5e1;">Percentage</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr><td data-label="Likelihood Word" style="padding:6px; border:1px solid #cbd5e1; font-weight:700;">Impossible</td><td data-label="Decimal Scale" style="padding:6px; border:1px solid #cbd5e1;">0</td><td data-label="Fraction" style="padding:6px; border:1px solid #cbd5e1;">0</td><td data-label="Percentage" style="padding:6px; border:1px solid #cbd5e1;">0%</td></tr>
+                      <tr><td data-label="Likelihood Word" style="padding:6px; border:1px solid #cbd5e1; font-weight:700;">Unlikely</td><td data-label="Decimal Scale" style="padding:6px; border:1px solid #cbd5e1;">0 &lt; P &lt; 0.5</td><td data-label="Fraction" style="padding:6px; border:1px solid #cbd5e1;">e.g. 1/5</td><td data-label="Percentage" style="padding:6px; border:1px solid #cbd5e1;">20%</td></tr>
+                      <tr><td data-label="Likelihood Word" style="padding:6px; border:1px solid #cbd5e1; font-weight:700;">Evens (Equally Likely)</td><td data-label="Decimal Scale" style="padding:6px; border:1px solid #cbd5e1;">0.5</td><td data-label="Fraction" style="padding:6px; border:1px solid #cbd5e1;">1/2</td><td data-label="Percentage" style="padding:6px; border:1px solid #cbd5e1;">50%</td></tr>
+                      <tr><td data-label="Likelihood Word" style="padding:6px; border:1px solid #cbd5e1; font-weight:700;">Likely</td><td data-label="Decimal Scale" style="padding:6px; border:1px solid #cbd5e1;">0.5 &lt; P &lt; 1</td><td data-label="Fraction" style="padding:6px; border:1px solid #cbd5e1;">e.g. 4/5</td><td data-label="Percentage" style="padding:6px; border:1px solid #cbd5e1;">80%</td></tr>
+                      <tr><td data-label="Likelihood Word" style="padding:6px; border:1px solid #cbd5e1; font-weight:700;">Certain</td><td data-label="Decimal Scale" style="padding:6px; border:1px solid #cbd5e1;">1.0</td><td data-label="Fraction" style="padding:6px; border:1px solid #cbd5e1;">1/1</td><td data-label="Percentage" style="padding:6px; border:1px solid #cbd5e1;">100%</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                
+            </div>
+            <div class="mfs-topic-footer" style="display:flex; gap:8px; flex-wrap:wrap; padding-top:14px; border-top:1px solid #e2e8f0; margin-top:16px;">
+              <span class="mfs-pill-l1">Level 1</span>
+              <span class="mfs-pill-board">Pearson Edexcel</span>
+              <span class="mfs-pill-board">City &amp; Guilds</span>
+              <span class="mfs-pill-board">NCFE</span>
+            </div>
+          </div>
+        </section>
+        
+        <!-- SKILL 2: Mutually Exclusive Probability Tables (Sum = 1) -->
+        <section id="skill-2" class="revision-section">
+          <div class="mfs-topic-card">
+            <div class="mfs-topic-head">
+              <h3 class="mfs-topic-title"><span class="mfs-topic-prefix">Core Skill 2:</span> Mutually Exclusive Probability Tables (Sum = 1)</h3>
+              <p class="mfs-topic-stem">Finding missing probabilities when all possible outcomes are listed.</p>
+            </div>
+            <div class="mfs-topic-body" style="padding:20px 24px;">
+              
+              
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:18px; margin:16px 0;">
+                  <p style="color:#334155; line-height:1.7; margin-top:0;">When a table lists every mutually exclusive outcome (e.g. Early = 0.15, On Time = 0.72, Late = ?):</p>
+                  <ul style="padding-left:20px; line-height:1.8; color:#334155;">
+                    <li>Add the known probabilities: 0.15 + 0.72 = <strong>0.87</strong>.</li>
+                    <li>Subtract from 1.00: P(Late) = 1.00 &minus; 0.87 = <strong>0.13</strong>.</li>
+                  </ul>
+                </div>
+                
+            </div>
+            <div class="mfs-topic-footer" style="display:flex; gap:8px; flex-wrap:wrap; padding-top:14px; border-top:1px solid #e2e8f0; margin-top:16px;">
+              <span class="mfs-pill-l1">Level 1</span>
+              <span class="mfs-pill-board">Pearson Edexcel</span>
+              <span class="mfs-pill-board">City &amp; Guilds</span>
+              <span class="mfs-pill-board">NCFE</span>
+            </div>
+          </div>
+        </section>
+        
+        <!-- SKILL 3: Experimental Probability (Relative Frequency) & Sample Size -->
+        <section id="skill-3" class="revision-section">
+          <div class="mfs-topic-card">
+            <div class="mfs-topic-head">
+              <h3 class="mfs-topic-title"><span class="mfs-topic-prefix">Core Skill 3:</span> Experimental Probability (Relative Frequency) & Sample Size</h3>
+              <p class="mfs-topic-stem">Why larger trial counts produce more reliable probability estimates.</p>
+            </div>
+            <div class="mfs-topic-body" style="padding:20px 24px;">
+              
+              
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:18px; margin:16px 0;">
+                  <ul style="padding-left:20px; line-height:1.8; color:#334155;">
+                    <li><strong>Relative Frequency Formula:</strong> Number of observed times event occurred &divide; Total number of trials conducted.</li>
+                    <li><strong>Reliability Rule:</strong> Increasing the number of trials (e.g. testing 500 items instead of 20 items) makes the experimental probability much more reliable.</li>
+                  </ul>
+                </div>
+                
+            </div>
+            <div class="mfs-topic-footer" style="display:flex; gap:8px; flex-wrap:wrap; padding-top:14px; border-top:1px solid #e2e8f0; margin-top:16px;">
+              <span class="mfs-pill-l1">Level 1</span>
+              <span class="mfs-pill-board">Pearson Edexcel</span>
+              <span class="mfs-pill-board">City &amp; Guilds</span>
+              <span class="mfs-pill-board">NCFE</span>
+            </div>
+          </div>
+        </section>
+        
+
+    <!-- WORKED EXAM MODELS -->
+    <section id="worked-exam-models" class="revision-section">
+      <div class="section-header-row">
+        <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i> Pearson Edexcel Step-by-Step Worked Models</h2>
+      </div>
+      
+        <div class="model-example-card" style="margin-bottom:24px;">
+          <div class="model-card-header">
+            <span class="model-badge"><i class="fa-solid fa-graduation-cap"></i> Benchmark Exam Model 1</span>
+            <span class="model-marks-pill">3 Marks (Pearson Edexcel Level 1/2)</span>
+          </div>
+          <div class="model-scenario" style="padding:16px 20px; background:#fff; border-bottom:1px solid #e2e8f0;">
+            <p style="font-weight:600; color:#0f172a; margin-bottom:8px;">Vocational Context: <span style="color:#0369a1;">Transfusion Laboratory Blood Group Storage</span></p>
+            <div class="model-q-stem" style="font-size:1.05rem; line-height:1.7; color:#334155;">A hospital blood bank refrigerator stores <strong>50 units of blood</strong>:<br>• Group O: <strong>22 units</strong> | Group A: <strong>18 units</strong> | Group B: <strong>7 units</strong> | Group AB: <strong>3 units</strong><br>One unit is selected at random.<br>(a) What is the probability that the unit is Group O? Give your answer as a simplified fraction.<br>(b) What is the probability that the unit is NOT Group AB? Give your answer as a decimal.</div>
+          </div>
+          <div class="model-steps-container" style="padding:18px 20px; background:#ffffff;">
+            <!-- 3-Column Header: Step, Description, Criteria -->
+            <div class="model-steps-header-row">
+              <div><i class="fa-solid fa-list-ol" style="color:#0284c7; margin-right:6px;"></i> Step</div>
+              <div><i class="fa-solid fa-calculator" style="color:#0284c7; margin-right:6px;"></i> Description / Working</div>
+              <div><i class="fa-solid fa-clipboard-check" style="color:#0284c7; margin-right:6px;"></i> Criteria</div>
+            </div>
+            
+            <div class="model-step-row model-step-grid-row">
+              <div class="model-step-col-step">
+                <span class="example-step-pill">Step 1</span>
+                <span class="model-step-title">Calculate P(Group O) &amp; Simplify Fraction</span>
+              </div>
+              <div class="model-step-col-desc">
+                <div class="math-visual-card" style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px; padding:12px 16px;">
+                  <div style="font-size:0.95rem; color:#64748b; font-weight:800; text-transform:uppercase; margin-bottom:6px;">Fraction of Total Units</div>
+                  <div style="display:flex; align-items:center; gap:12px; font-size:1.35rem; font-weight:700; color:#0f172a; font-variant-numeric:tabular-nums; flex-wrap:wrap;">
+                    <span>P(Group O) =</span>
+                    <span class="math-stacked-frac"><span class="math-stacked-num">22</span><span class="math-stacked-den">50</span></span>
+                    <span style="color:#0284c7; font-size:1rem;">&divide; 2 &rarr;</span>
+                    <span class="math-target-calc" style="background:#fef08a; padding:4px 10px; border-radius:6px; border:1px solid #eab308; color:#854d0e;">
+                      <span class="math-stacked-frac"><span class="math-stacked-num">11</span><span class="math-stacked-den">25</span></span>
+                    </span>
+                  </div>
+                </div>
+              </div>
+              <div class="model-step-col-criteria">
+                <span class="criteria-badge-teal"><i class="fa-solid fa-award" style="margin-right:6px; opacity:0.85;"></i><strong>Criteria:</strong> M1 / A1: Simplified fraction (11/25)</span>
+              </div>
+            </div>
+            
+            <div class="model-step-row model-step-grid-row">
+              <div class="model-step-col-step">
+                <span class="example-step-pill">Step 2</span>
+                <span class="model-step-title">Calculate P(Group AB) as a Decimal</span>
+              </div>
+              <div class="model-step-col-desc">
+                <div class="math-visual-card" style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px; padding:12px 16px;">
+                  <div style="font-size:0.95rem; color:#64748b; font-weight:800; text-transform:uppercase; margin-bottom:6px;">Decimal Equivalent</div>
+                  <div style="display:flex; align-items:center; gap:10px; font-size:1.35rem; font-weight:700; color:#0f172a; font-variant-numeric:tabular-nums; flex-wrap:wrap;">
+                    <span>P(Group AB) =</span>
+                    <span class="math-stacked-frac"><span class="math-stacked-num">3</span><span class="math-stacked-den">50</span></span>
+                    <span style="color:#64748b; font-size:1.05rem;">= 3 &divide; 50 =</span>
+                    <span class="math-target-calc" style="background:#dcfce7; padding:4px 10px; border-radius:6px; border:1px solid #86efac; color:#166534;">0.06</span>
+                  </div>
+                </div>
+              </div>
+              <div class="model-step-col-criteria">
+                <span class="criteria-badge-teal"><i class="fa-solid fa-award" style="margin-right:6px; opacity:0.85;"></i><strong>Criteria:</strong> M1: Decimal conversion (0.06)</span>
+              </div>
+            </div>
+            
+            <div class="model-step-row model-step-grid-row">
+              <div class="model-step-col-step">
+                <span class="example-step-pill">Step 3</span>
+                <span class="model-step-title">Apply Complement Rule for P(NOT Group AB)</span>
+              </div>
+              <div class="model-step-col-desc">
+                <div class="math-stepdown-board" style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px; padding:12px 16px;">
+                  <div style="font-size:0.95rem; color:#64748b; font-weight:800; text-transform:uppercase; margin-bottom:6px;">Complement Rule</div>
+                  <div style="display:flex; align-items:center; gap:10px; font-size:1.35rem; font-weight:700; color:#0f172a; font-variant-numeric:tabular-nums; flex-wrap:wrap;">
+                    <span>P(NOT AB) = 1.00 &minus; 0.06 =</span>
+                    <span class="math-target-calc" style="background:#dcfce7; padding:4px 10px; border-radius:6px; border:1px solid #86efac; color:#166534;">0.94</span>
+                  </div>
+                  <div style="font-size:1.0rem; color:#475569; margin-top:6px;">Cross-check via remaining blood units: (22 + 18 + 7) &divide; 50 = 47 &divide; 50 = 0.94 &check;</div>
+                </div>
+              </div>
+              <div class="model-step-col-criteria">
+                <span class="criteria-badge-teal"><i class="fa-solid fa-award" style="margin-right:6px; opacity:0.85;"></i><strong>Criteria:</strong> A1: Accurate decimal answer (0.94)</span>
+              </div>
+            </div>
+            
+            <div class="model-final-answer" style="margin-top:16px; padding:12px 18px; background:#f0fdf4; border:1px solid #86efac; border-radius:6px; font-weight:700; color:#166534; font-size:1.05rem;">
+              <i class="fa-solid fa-check-circle"></i> Final Accredited Answer: (a) 11/25 | (b) 0.94
+            </div>
+            <div class="examiner-guidance-box">
+              <div class="examiner-guidance-header">
+                <i class="fa-solid fa-clipboard-check"></i>
+                <span>Method Checklist &amp; Marking Scheme Guidance</span>
+              </div>
+              <div class="examiner-guidance-text">
+                Never write probability as a ratio like &ldquo;11 : 25&rdquo;&mdash;always write 11/25, 0.44, or 44%.
+              </div>
+            </div>
+            <!-- SONYA TUTOR CALLOUT -->
+            <div class="tutor-pro-callout" style="margin-top: 14px; background: #fdf4ff; border-left: 4px solid #a855f7; padding: 12px 16px; border-radius: 8px; display: flex; gap: 14px; align-items: center;">
+              <img src="assets/img/avatars/sonya.png" alt="Sonya Specialist Maths Tutor" style="width: 48px; height: 48px; border-radius: 50%; border: 2px solid #a855f7; flex-shrink: 0; object-fit: cover;">
+              <div style="font-size: 0.92rem; color: #581c87; line-height: 1.5;">
+                <strong>Sonya's Examiner Tip:</strong> Never write a probability as a ratio like &ldquo;11 : 25&rdquo;! Pearson Edexcel mark schemes award zero marks for ratio notation in probability questions. Always state your answer as a simplified fraction (<span style="font-weight:700;">11/25</span>), a decimal (<span style="font-weight:700;">0.44</span>), or a percentage (<span style="font-weight:700;">44%</span>).
+              </div>
+            </div>
+          </div>
+        </div>
+        
+    </section>
+    
+
+    <!-- EXAMINER TRAPS -->
+    <section id="examiner-traps" class="revision-section">
+      <div class="section-header-row">
+        <h2 class="section-title"><i class="fa-solid fa-triangle-exclamation"></i> Critical Examiner Traps &amp; Common Pitfalls</h2>
+      </div>
+      
+        <div class="examiner-pitfall-box">
+          <div class="examiner-pitfall-title">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span>Examiner Pitfall: Writing Probabilities as Ratios (e.g. 1 : 4) or Words ("1 in 5")</span>
+          </div>
+          <div class="examiner-pitfall-desc">
+            Pearson Edexcel mark schemes explicitly reject ratios (1 : 4) and verbal phrases ("likely" or "1 out of 5") when a numerical probability is requested.
+          </div>
+          <div class="examiner-pitfall-fix">
+            <i class="fa-solid fa-shield-halved" style="color:#e11d48; margin-top:2px;"></i>
+            <div><strong>How to Avoid This Pitfall:</strong> Always write a fraction (1/5), a decimal (0.2), or a percentage (20%).</div>
+          </div>
+        </div>
+        
+        <div class="examiner-pitfall-box">
+          <div class="examiner-pitfall-title">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span>Examiner Pitfall: Giving a Probability Greater Than 1</span>
+          </div>
+          <div class="examiner-pitfall-desc">
+            Dividing Total by Favourable (e.g. 50 ÷ 22 = 2.27) produces a number greater than 1, which is impossible for any probability.
+          </div>
+          <div class="examiner-pitfall-fix">
+            <i class="fa-solid fa-shield-halved" style="color:#e11d48; margin-top:2px;"></i>
+            <div><strong>How to Avoid This Pitfall:</strong> The smaller number (part) always goes on top of the larger number (total).</div>
+          </div>
+        </div>
+        
+    </section>
+    
+
+    <!-- PRACTICE QUESTIONS -->
+    <section id="practice-questions" class="revision-section">
+      <div class="section-header-row">
+        <h2 class="section-title"><i class="fa-solid fa-pencil"></i> Interactive Exam Practice Questions</h2>
+      </div>
+      
+        <div class="practice-q-card" style="margin-bottom:20px; border:1px solid #cbd5e1; border-radius:8px; overflow:hidden; background:#fff;">
+          <div class="practice-q-header" style="padding:12px 18px; background:#f8fafc; border-bottom:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-weight:700; color:#1e293b;"><i class="fa-solid fa-pencil"></i> Exam Practice Question 1</span>
+            <span class="practice-marks-pill">2 Marks</span>
+          </div>
+          <div class="practice-q-body" style="padding:18px 20px;">
+            <div class="practice-q-stem" style="font-size:1.05rem; line-height:1.7; color:#334155; margin-bottom:16px;">
+              A medical supply drawer contains <strong>15 blue tourniquets, 10 green tourniquets, and 5 yellow tourniquets</strong>. One is selected at random. What is the probability that it is <strong>green</strong>? Give your answer as a simplified fraction.
+            </div>
+            <div class="practice-interactive-wrap">
+              <label style="display:block; font-weight:600; font-size:0.9rem; color:#475569; margin-bottom:6px;">Your Working / Notes (Auto-saves):</label>
+              <textarea class="practice-scratchpad" rows="3" style="width:100%; border:1px solid #cbd5e1; border-radius:6px; padding:10px; font-family:monospace; font-size:0.95rem;" placeholder="Type your rough working or steps here..."></textarea>
+              <div style="margin-top:12px; display:flex; gap:10px;">
+                <button type="button" class="btn-solution-toggle" onclick="toggleSolution('sol-1')" style="padding:8px 16px; background:#0284c7; color:#fff; border:none; border-radius:6px; font-weight:600; cursor:pointer;">
+                  <i class="fa-solid fa-eye"></i> Show Solution
+                </button>
+              </div>
+              <div id="sol-1" class="practice-solution-drawer" style="display:none; margin-top:14px; padding:16px; background:#f0fdf4; border:1px solid #86efac; border-radius:6px;">
+                <div style="font-weight:700; color:#166534; margin-bottom:6px;"><i class="fa-solid fa-check"></i> Marking Scheme Steps:</div>
+                <div style="line-height:1.7; color:#14532d;">1. Total tourniquets = 15 + 10 + 5 = 30.<br>2. P(Green) = 10 / 30 = 1 / 3.</div>
+                <div style="margin-top:10px; font-weight:800; color:#166534;">Final Correct Answer: 1/3</div>
+                <div style="margin-top:8px; font-size:1.0rem; font-weight:700; color:#15803d; font-style:italic;">Examiner Tip: Add all categories first (15 + 10 + 5 = 30) to find the denominator.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="practice-q-card" style="margin-bottom:20px; border:1px solid #cbd5e1; border-radius:8px; overflow:hidden; background:#fff;">
+          <div class="practice-q-header" style="padding:12px 18px; background:#f8fafc; border-bottom:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-weight:700; color:#1e293b;"><i class="fa-solid fa-pencil"></i> Exam Practice Question 2</span>
+            <span class="practice-marks-pill">3 Marks</span>
+          </div>
+          <div class="practice-q-body" style="padding:18px 20px;">
+            <div class="practice-q-stem" style="font-size:1.05rem; line-height:1.7; color:#334155; margin-bottom:16px;">
+              A staff charity spinner has four sections: <strong>£5 Prize (P = 0.25), £10 Prize (P = 0.10), £20 Prize (P = 3x), and No Prize (P = 10x)</strong>. Calculate the value of <em>x</em> and the probability of winning a <strong>£20 Prize</strong>.
+            </div>
+            <div class="practice-interactive-wrap">
+              <label style="display:block; font-weight:600; font-size:0.9rem; color:#475569; margin-bottom:6px;">Your Working / Notes (Auto-saves):</label>
+              <textarea class="practice-scratchpad" rows="3" style="width:100%; border:1px solid #cbd5e1; border-radius:6px; padding:10px; font-family:monospace; font-size:0.95rem;" placeholder="Type your rough working or steps here..."></textarea>
+              <div style="margin-top:12px; display:flex; gap:10px;">
+                <button type="button" class="btn-solution-toggle" onclick="toggleSolution('sol-2')" style="padding:8px 16px; background:#0284c7; color:#fff; border:none; border-radius:6px; font-weight:600; cursor:pointer;">
+                  <i class="fa-solid fa-eye"></i> Show Solution
+                </button>
+              </div>
+              <div id="sol-2" class="practice-solution-drawer" style="display:none; margin-top:14px; padding:16px; background:#f0fdf4; border:1px solid #86efac; border-radius:6px;">
+                <div style="font-weight:700; color:#166534; margin-bottom:6px;"><i class="fa-solid fa-check"></i> Marking Scheme Steps:</div>
+                <div style="line-height:1.7; color:#14532d;">1. Sum of known probabilities = 0.25 + 0.10 = 0.35.<br>2. Remainder for 3x + 10x (13x) = 1.00 − 0.35 = 0.65.<br>3. x = 0.65 ÷ 13 = 0.05.<br>4. P(£20 Prize) = 3 × 0.05 = 0.15.</div>
+                <div style="margin-top:10px; font-weight:800; color:#166534;">Final Correct Answer: x = 0.05; P(£20 Prize) = 0.15</div>
+                <div style="margin-top:8px; font-size:1.0rem; font-weight:700; color:#15803d; font-style:italic;">Examiner Tip: All mutually exclusive sectors on a spinner must sum to 1.00.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="practice-q-card" style="margin-bottom:20px; border:1px solid #cbd5e1; border-radius:8px; overflow:hidden; background:#fff;">
+          <div class="practice-q-header" style="padding:12px 18px; background:#f8fafc; border-bottom:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-weight:700; color:#1e293b;"><i class="fa-solid fa-pencil"></i> Exam Practice Question 3</span>
+            <span class="practice-marks-pill">2 Marks</span>
+          </div>
+          <div class="practice-q-body" style="padding:18px 20px;">
+            <div class="practice-q-stem" style="font-size:1.05rem; line-height:1.7; color:#334155; margin-bottom:16px;">
+              Two quality inspectors test batches from the same machine. Inspector A tests <strong>20 items</strong> and finds 1 fault. Inspector B tests <strong>500 items</strong> and finds 18 faults. Whose estimate of the fault probability is more reliable, and why?
+            </div>
+            <div class="practice-interactive-wrap">
+              <label style="display:block; font-weight:600; font-size:0.9rem; color:#475569; margin-bottom:6px;">Your Working / Notes (Auto-saves):</label>
+              <textarea class="practice-scratchpad" rows="3" style="width:100%; border:1px solid #cbd5e1; border-radius:6px; padding:10px; font-family:monospace; font-size:0.95rem;" placeholder="Type your rough working or steps here..."></textarea>
+              <div style="margin-top:12px; display:flex; gap:10px;">
+                <button type="button" class="btn-solution-toggle" onclick="toggleSolution('sol-3')" style="padding:8px 16px; background:#0284c7; color:#fff; border:none; border-radius:6px; font-weight:600; cursor:pointer;">
+                  <i class="fa-solid fa-eye"></i> Show Solution
+                </button>
+              </div>
+              <div id="sol-3" class="practice-solution-drawer" style="display:none; margin-top:14px; padding:16px; background:#f0fdf4; border:1px solid #86efac; border-radius:6px;">
+                <div style="font-weight:700; color:#166534; margin-bottom:6px;"><i class="fa-solid fa-check"></i> Marking Scheme Steps:</div>
+                <div style="line-height:1.7; color:#14532d;">1. Inspector B’s estimate (18/500 = 0.036) is more reliable.<br>2. Reason: Inspector B used a much larger sample size (500 trials vs 20 trials).</div>
+                <div style="margin-top:10px; font-weight:800; color:#166534;">Final Correct Answer: Inspector B, because a larger sample size (500 vs 20) gives a more reliable estimate</div>
+                <div style="margin-top:8px; font-size:1.0rem; font-weight:700; color:#15803d; font-style:italic;">Examiner Tip: In statistics, a larger sample size always gives a more reliable relative frequency.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+    </section>
+    
+
+        <!-- DOWNLOADS -->
+        <section id="downloads" class="revision-section">
+          <div class="section-header-row">
+            <h2 class="section-title"><i class="fa-regular fa-file-pdf"></i> Free Revision Worksheets &amp; Exam Papers</h2>
+          </div>
+
+          <div class="download-tiles-grid">
+            <!-- STYLE 1: FLUENCY DRILLS WORKOUT (COMBINED) -->
+            <div class="download-combo-card">
+              <div class="download-combo-header">
+                <div class="download-tile-icon icon-workout"><i class="fa-solid fa-repeat"></i></div>
+                <div class="download-combo-info">
+                  <div class="tile-badge-wrap"><span class="badge-tile-type">Style 1: Fluency Drills</span></div>
+                  <strong class="download-tile-title">Probability Level 1 Practice Drills</strong>
+                  <span class="download-tile-desc">25+ quick calculation drills + real-life maths problems</span>
+                </div>
+              </div>
+              <div class="download-combo-actions">
+                <a href="worksheets/probability-level-1-workout.html" target="_blank" class="download-combo-btn btn-qp">
+                  <i class="fa-regular fa-file-pdf"></i> Question Paper
+                </a>
+                <a href="worksheets/probability-level-1-workout-answers.html" target="_blank" class="download-combo-btn btn-ans">
+                  <i class="fa-solid fa-check-double"></i> Answer Key
+                </a>
+              </div>
+            </div>
+
+            <!-- STYLE 2: EXAM PRACTICE QUESTIONS (COMBINED) -->
+            <div class="download-combo-card">
+              <div class="download-combo-header">
+                <div class="download-tile-icon icon-pdf"><i class="fa-regular fa-file-pdf"></i></div>
+                <div class="download-combo-info">
+                  <div class="tile-badge-wrap"><span class="badge-tile-type exam">Style 2: Practice Questions</span></div>
+                  <strong class="download-tile-title">Probability Level 1 Practice Questions</strong>
+                  <span class="download-tile-desc">Authentic Pearson Edexcel exam questions with [M1][A1] mark scheme</span>
+                </div>
+              </div>
+              <div class="download-combo-actions">
+                <a href="worksheets/probability-level-1-worksheet.html" target="_blank" class="download-combo-btn btn-qp">
+                  <i class="fa-regular fa-file-pdf"></i> Question Paper
+                </a>
+                <a href="worksheets/probability-level-1-answers.html" target="_blank" class="download-combo-btn btn-ans">
+                  <i class="fa-solid fa-award"></i> Mark Scheme
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- NEXT TOPIC BANNER -->
+        <div class="next-topic-banner">
+          <div class="next-topic-info">
+            <strong>All Level 1 Topics Complete!</strong>
+            <span>Review Past Papers & Exam Practice</span>
+          </div>
+          <a href="functional-skills-maths-level-1.html" class="btn-next-topic">
+            Back to Maths Level 1 Hub <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </main>  <!-- FOOTER -->
+  <footer class="mfs-footer" id="site-footer">
+    <div class="mfs-container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="mfs-brand" style="margin-bottom:16px;">
+            <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="mfs-brand-text">
+              <div class="mfs-brand-title" style="color:#ffffff;">MASTER<span>FUNCTIONALSKILLS</span></div>
+              <div class="mfs-brand-subtitle" style="color:#94a3b8;">Delivering Skills • Achieving Goals</div>
+            </div>
+          </div>
+          <p style="font-size:1.0rem; line-height:1.6; margin-bottom:16px;">
+            The UK's dedicated Functional Skills revision specialist. Providing realistic mock exams, step-by-step revision flashcards, diagnostic assessments, and 1-to-1 specialist tuition for Pearson Edexcel, City &amp; Guilds, and all major exam boards.
+          </p>
+          <div style="font-size:0.95rem; color:#cbd5e1;">
+            <p><a href="https://wa.me/447564525425" target="_blank" rel="noopener" style="color:#cbd5e1; text-decoration:none;"><i class="fa-brands fa-whatsapp" style="color:var(--accent); margin-right:8px;"></i> WhatsApp: +44 (0)7564 525425</a></p>
+            <p style="margin-top:6px;"><a href="contact-us.html" style="color:#cbd5e1; text-decoration:none;"><i class="fa-solid fa-envelope" style="color:var(--accent); margin-right:8px;"></i> Contact Tutor Team</a></p>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Maths Revision</h4>
+          <ul class="footer-links">
+            <li><a href="functional-skills-maths-level-1.html">Maths Level 2 Revision</a></li>
+            <li><a href="functional-skills-maths-level-1.html">Maths Level 1 Revision</a></li>
+            <li><a href="entry-level-3-maths.html">Entry Level 3 Maths</a></li>
+            <li><a href="pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="functional-skills-past-papers.html">Free Maths Past Papers</a></li>
+            <li><a href="exam-maths-l2.html">Book Level 2 Maths Exam</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>English &amp; Digital</h4>
+          <ul class="footer-links">
+            <li><a href="functional-skills-english-level-2.html">English Level 2 Revision</a></li>
+            <li><a href="functional-skills-english-level-1.html">English Level 1 Revision</a></li>
+            <li><a href="digital-functional-skills.html">Digital Skills Hub (L1 &amp; E3)</a></li>
+            <li><a href="digital-functional-skills-past-papers.html">DFS Past Papers &amp; Data Files</a></li>
+            <li><a href="functional-skills-past-papers.html?format=online#mock-finder">Online Exam Simulator</a></li>
+            <li><a href="exam-english-l2.html">Book Level 2 English Exam</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Student Support &amp; Tools</h4>
+          <ul class="footer-links">
+            <li><a href="tools.html" style="color:var(--accent); font-weight:700;"><i class="fa-solid fa-screwdriver-wrench" style="margin-right:6px;"></i>All Interactive Tools Hub</a></li>
+            <li><a href="pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="diagnostic-test.html">Diagnostic Skill Checker</a></li>
+            <li><a href="functional-skills-nets.html">3D Net Folding Tool</a></li>
+            <li><a href="digital-functional-skills-mock-exam.html">Pearson DFS Simulator</a></li>
+            <li><a href="revision-cards.html">Revision Cards &amp; Flashcards</a></li>
+            <li><a href="shop.html">Revision Books &amp; Study Packs</a></li>
+            <li><a href="tutors.html">1-to-1 Specialist Tuition</a></li>
+            <li><a href="exams.html">Book Official Online Exam</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Master Functional Skills. All rights reserved. Registered in England &amp; Wales. Ofqual Regulated Qualification Standards.</div>
+        <div style="display:flex; gap:16px; flex-wrap:wrap;">
+          <a href="index.html">Home</a>
+          <a href="tools.html" style="color:var(--accent); font-weight:700;">Tools</a>
+          <a href="functional-skills-past-papers.html">Past Papers</a>
+          <a href="revision-cards.html">Revision Cards</a>
+          <a href="shop.html">Study Shop</a>
+          <a href="tutors.html">Tutors</a>
+          <a href="contact-us.html">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/mfs-revision.js"></script>
+</body>
+</html>

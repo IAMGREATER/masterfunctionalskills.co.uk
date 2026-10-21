@@ -1,0 +1,2446 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-theme="maths" data-tint="cream">
+<head>
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Area Level 1: Formulas, Models & Exam Practice | Master Functional Skills</title>
+  <meta name="description" content="Dyslexia-friendly Area revision guide for Functional Skills Maths Level 1. Clear spacing, structured cards, large color-coded diagrams, formulas, worked exam models, and interactive practice.">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192x192.png">
+  <link rel="apple-touch-icon" href="assets/img/favicon-192x192.png">
+  <link rel="shortcut icon" href="favicon.ico">
+    <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0b172d">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="MFS Skills">
+  <link rel="apple-touch-icon" href="assets/img/favicon-192x192.png">
+  <script src="assets/js/mfs-pwa.js" defer></script>
+  <link rel="stylesheet" href="assets/css/mfs-theme.css?v=20261017j">
+  <link rel="stylesheet" href="assets/css/mfs-mobile.css?v=20261018b">
+  <link rel="stylesheet" href="assets/css/mfs-revision.css?v=20261018b">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <style>
+    /* ==========================================================================
+       DYSLEXIA-FRIENDLY & Master Functional Skills STYLE SPACING & PROPORTIONS
+       ========================================================================== */
+
+    /* Expansive Screen Layout: Pushes contents far left and gives learning materials expansive space */
+    .revision-page-wrapper {
+      width: 98%;
+      max-width: 1720px;
+      margin: 0 auto;
+      padding: 0 20px;
+      box-sizing: border-box;
+    }
+
+    /* Dyslexia-Friendly Typography Defaults */
+    body {
+      line-height: 1.75;
+      color: #1e293b;
+      background-color: var(--bg-page);
+    }
+    p {
+      line-height: 1.75;
+      margin-top: 0;
+      margin-bottom: 20px;
+      color: #334155;
+      font-size: 1.02rem;
+    }
+
+    /* Breadcrumbs Bar */
+    .revision-breadcrumb-bar {
+      background: var(--bg-card);
+      border-bottom: 1px solid var(--border);
+      padding: 14px 0;
+      font-size: 0.88rem;
+    }
+    .revision-breadcrumbs {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      color: var(--text-muted);
+    }
+    .revision-breadcrumbs a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+    .revision-breadcrumbs a:hover {
+      color: var(--accent);
+    }
+    .revision-breadcrumbs i {
+      font-size: 0.7rem;
+      opacity: 0.6;
+    }
+    .revision-breadcrumbs span.current {
+      color: var(--navy-dark);
+      font-weight: 700;
+    }
+
+    /* Hero Header */
+    .revision-hero-card {
+      background: linear-gradient(135deg, var(--navy-dark) 0%, #0d1e3d 100%);
+      color: #ffffff;
+      padding: 40px 0 44px;
+      position: relative;
+      overflow: hidden;
+      border-bottom: 3px solid var(--accent);
+    }
+    .revision-hero-pill-row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 16px;
+    }
+    .badge-pill-accent {
+      background: var(--accent);
+      color: #ffffff;
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 4px 14px;
+      border-radius: var(--radius-full);
+    }
+    .badge-pill-gold {
+      background: #f59e0b;
+      color: #070d1e;
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding: 4px 14px;
+      border-radius: var(--radius-full);
+    }
+    .badge-pill-outline {
+      background: rgba(255, 255, 255, 0.1);
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      color: #e2e8f0;
+      font-size: 0.78rem;
+      font-weight: 600;
+      padding: 4px 14px;
+      border-radius: var(--radius-full);
+    }
+    .revision-hero-title {
+      font-size: 2.35rem;
+      font-weight: 800;
+      line-height: 1.25;
+      margin: 0 0 14px 0;
+      color: #ffffff;
+    }
+    .revision-hero-title span {
+      color: #60a5fa;
+    }
+    .revision-hero-desc {
+      font-size: 1.08rem;
+      line-height: 1.7;
+      color: #cbd5e1;
+      max-width: 900px;
+      margin-bottom: 24px;
+    }
+    .revision-hero-meta-bar {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      font-size: 0.9rem;
+      color: #94a3b8;
+      border-top: 1px solid rgba(255, 255, 255, 0.12);
+      padding-top: 18px;
+    }
+    .hero-meta-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .hero-quick-actions {
+      display: flex;
+      gap: 12px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+    .btn-hero-action {
+      background: #10b981;
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 0.92rem;
+      padding: 10px 22px;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+    .btn-hero-action:hover {
+      background: #059669;
+      transform: translateY(-1px);
+    }
+    .btn-hero-action-secondary {
+      background: rgba(255,255,255,0.12);
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 0.92rem;
+      padding: 10px 20px;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid rgba(255,255,255,0.25);
+      transition: all 0.2s;
+    }
+    .btn-hero-action-secondary:hover {
+      background: rgba(255,255,255,0.2);
+    }
+
+    /* Main 2-Column Revision Layout */
+    .revision-layout {
+      display: grid;
+      grid-template-columns: 210px minmax(0, 1fr);
+      gap: 36px;
+      padding: 34px 0 60px;
+      align-items: start;
+    }
+    @media (max-width: 1024px) {
+      .revision-layout {
+        grid-template-columns: 1fr;
+      }
+      .revision-sidebar {
+        display: none;
+      }
+    }
+
+    /* Left Sticky Sidebar / Table of Contents */
+    .revision-sidebar {
+      position: sticky;
+      top: 90px;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 18px 14px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+    .sidebar-toc-title {
+      font-size: 0.88rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: var(--navy-dark);
+      padding-bottom: 12px;
+      margin-bottom: 12px;
+      border-bottom: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .sidebar-toc-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+    .sidebar-toc-link {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 12px;
+      border-radius: 6px;
+      color: #475569;
+      font-size: 0.88rem;
+      font-weight: 600;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      border-left: 3px solid transparent;
+    }
+    .sidebar-toc-link:hover {
+      color: var(--accent);
+      background: #f0fdf4;
+    }
+    .sidebar-toc-link.active {
+      color: #065f46;
+      background: #ecfdf5;
+      border-left-color: #10b981;
+      font-weight: 700;
+    }
+
+    /* Mobile Quick Nav Bar */
+    .mobile-toc-bar {
+      display: none;
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+      padding: 12px 20px;
+      position: sticky;
+      top: 65px;
+      z-index: 40;
+      align-items: center;
+      justify-content: space-between;
+    }
+    @media (max-width: 991px) {
+      .mobile-toc-bar {
+        display: flex;
+      }
+    }
+    .btn-mobile-toc {
+      background: var(--navy-dark);
+      color: #ffffff;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      font-weight: 600;
+      font-size: 0.85rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    @media (orientation: landscape) and (max-height: 500px) and (max-width: 950px) {
+      .mobile-toc-bar {
+        position: fixed !important;
+        top: 58px !important;
+        right: max(14px, env(safe-area-inset-right, 14px)) !important;
+        left: auto !important;
+        bottom: auto !important;
+        width: auto !important;
+        max-width: fit-content !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        background: transparent !important;
+        border: none !important;
+        box-shadow: none !important;
+        z-index: 9995 !important;
+        pointer-events: none !important;
+      }
+      .mobile-toc-bar > div:first-child,
+      .mobile-toc-bar > div:not(.btn-mobile-toc) {
+        display: none !important;
+      }
+      .btn-mobile-toc {
+        pointer-events: auto !important;
+        border-radius: 9999px !important;
+        border: 1.5px solid rgba(56, 189, 248, 0.45) !important;
+        box-shadow: 0 4px 18px rgba(11, 23, 45, 0.38) !important;
+      }
+    }
+
+    /* Main Educational Content Area */
+    .revision-content {
+      min-width: 0;
+    }
+
+    /* Content Section Blocks */
+    .revision-section {
+      margin-bottom: 46px;
+      scroll-margin-top: 100px;
+    }
+    .section-header-row {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 16px;
+      border-bottom: 2px solid var(--border);
+      padding-bottom: 12px;
+    }
+    .section-title {
+      font-size: 1.7rem;
+      font-weight: 800;
+      color: var(--navy-dark);
+      margin: 0;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .section-lead-text {
+      font-size: 1.08rem;
+      color: #334155;
+      line-height: 1.7;
+      margin-bottom: 24px;
+    }
+
+    /* ==========================================================================
+       Master Functional Skills REVISION CARD DESIGN SYSTEM
+       ========================================================================== */
+    .mfs-topic-card {
+      background: #ffffff;
+      border: 2px solid #00a8ff;
+      border-radius: 8px;
+      padding: 28px 32px;
+      margin-bottom: 30px;
+      box-shadow: 0 1px 4px rgba(0, 168, 255, 0.05);
+      position: relative;
+    }
+    @media (max-width: 640px) {
+      .mfs-topic-card {
+        padding: 20px 18px;
+      }
+    }
+    .mfs-topic-head {
+      margin-bottom: 14px;
+    }
+    .mfs-topic-title {
+      font-size: 1.45rem;
+      font-weight: 800;
+      color: #1e293b;
+      margin: 0 0 8px 0;
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    .mfs-topic-title .mfs-topic-prefix {
+      color: #00a8ff;
+      font-weight: 800;
+    }
+    .mfs-topic-stem {
+      font-size: 1.08rem;
+      color: #334155;
+      margin: 0;
+      line-height: 1.65;
+    }
+
+    /* Proportional 2-Column Content Split Inside Card */
+    .mfs-topic-body {
+      display: grid;
+      grid-template-columns: 1fr 340px;
+      gap: 36px;
+      align-items: center;
+      margin: 20px 0 24px;
+    }
+    @media (max-width: 990px) {
+      .mfs-topic-body {
+        grid-template-columns: 1fr;
+        gap: 22px;
+      }
+    }
+
+    .mfs-math-col {
+      display: flex;
+      flex-direction: column;
+    }
+    .mfs-marks-row {
+      display: flex;
+      justify-content: flex-end;
+      color: #475569;
+      font-weight: 700;
+      font-size: 0.95rem;
+      margin-bottom: 10px;
+    }
+    .mfs-formula-display {
+      font-size: 1.25rem;
+      font-weight: 700;
+      color: #0f172a;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-left: 4px solid #00a8ff;
+      padding: 16px 20px;
+      border-radius: 6px;
+      margin-bottom: 16px;
+      line-height: 1.5;
+    }
+    .mfs-steps-box {
+      background: #ffffff;
+      border: 1px solid #f1f5f9;
+      border-radius: 6px;
+      padding: 14px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .mfs-step-row {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+      font-size: 0.98rem;
+      color: #334155;
+      line-height: 1.6;
+    }
+    .mfs-step-tag {
+      font-weight: 800;
+      color: #00a8ff;
+      font-size: 0.88rem;
+      min-width: 52px;
+      flex-shrink: 0;
+    }
+    .mfs-answer-banner {
+      margin-top: 14px;
+      background: #f0fdf4;
+      border: 1px solid #86efac;
+      border-radius: 6px;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      color: #065f46;
+      font-weight: 700;
+      font-size: 1.02rem;
+    }
+
+    /* Proportional SVG Diagram Column */
+    .mfs-diagram-col {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .mfs-diagram-col svg {
+      width: 100%;
+      max-width: 340px;
+      height: auto;
+      display: block;
+    }
+
+    /* Footer Level & Board Pills */
+    .mfs-topic-footer {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      padding-top: 16px;
+      border-top: 1px solid #f1f5f9;
+    }
+    .mfs-pill-l1 {
+      background: #16a34a;
+      color: #ffffff;
+      font-size: 0.76rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    .mfs-pill-l2 {
+      background: #ea580c;
+      color: #ffffff;
+      font-size: 0.76rem;
+      font-weight: 800;
+      padding: 3px 10px;
+      border-radius: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    .mfs-pill-board {
+      background: #f1f5f9;
+      color: #475569;
+      border: 1px solid #cbd5e1;
+      font-size: 0.76rem;
+      font-weight: 600;
+      padding: 3px 10px;
+      border-radius: 4px;
+    }
+
+    /* Golden Rules (Amber/Gold Dyslexia-Friendly Cards) */
+    .rule-card-amber {
+      background: #fffbeb;
+      border: 1px solid #fde68a;
+      border-left: 5px solid #f59e0b;
+      border-radius: 12px;
+      padding: 22px 26px;
+      margin-bottom: 20px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    }
+    .rule-card-amber-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: #92400e;
+      margin-bottom: 10px;
+    }
+    .rule-highlight-badge {
+      display: inline-block;
+      background: #fef3c7;
+      border: 1px solid #fde68a;
+      padding: 4px 12px;
+      border-radius: 6px;
+      font-weight: 700;
+      color: #b45309;
+      font-size: 0.92rem;
+      margin-top: 8px;
+    }
+
+    /* Worked Exam Models */
+    .worked-exam-model-card {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-top: 4px solid var(--accent);
+      border-radius: 12px;
+      padding: 28px 32px;
+      margin-bottom: 26px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+    }
+    .model-header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    .badge-worked-model {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      color: #1e40af;
+      font-size: 0.85rem;
+      font-weight: 800;
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .model-marks-pill {
+      background: #ecfdf5;
+      border: 1px solid #a7f3d0;
+      color: #065f46;
+      font-size: 0.85rem;
+      font-weight: 700;
+      padding: 4px 12px;
+      border-radius: var(--radius-full);
+    }
+    .model-question-stem {
+      font-size: 1.08rem;
+      line-height: 1.7;
+      color: var(--navy-dark);
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-bottom: 20px;
+    }
+    .model-steps-list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 20px;
+    }
+    .model-step-row {
+      display: flex;
+      gap: 16px;
+      align-items: flex-start;
+    }
+    .step-number-bubble {
+      background: var(--navy-dark);
+      color: #ffffff;
+      font-size: 0.8rem;
+      font-weight: 800;
+      padding: 4px 10px;
+      border-radius: 6px;
+      flex-shrink: 0;
+      line-height: 1.4;
+    }
+    .step-detail-body {
+      flex: 1;
+    }
+    .step-detail-title {
+      font-weight: 700;
+      color: var(--navy-dark);
+      margin-bottom: 4px;
+      font-size: 1rem;
+    }
+    .step-math-line {
+      font-family: inherit;
+      color: #047857;
+      font-weight: 700;
+      margin: 4px 0;
+      font-size: 1.02rem;
+    }
+    .mark-scheme-tag {
+      display: inline-block;
+      background: #f0fdf4;
+      border: 1px solid #86efac;
+      color: #166534;
+      font-size: 0.78rem;
+      font-weight: 800;
+      padding: 2px 8px;
+      border-radius: 4px;
+      margin-top: 4px;
+    }
+    .model-final-answer-callout {
+      background: linear-gradient(135deg, #065f46 0%, #047857 100%);
+      color: #ffffff;
+      padding: 16px 22px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+    .model-final-text {
+      font-size: 1.15rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Examiner Traps */
+    .trap-card-coral {
+      background: #fff1f2;
+      border: 1px solid #fecdd3;
+      border-left: 5px solid #f43f5e;
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin-bottom: 18px;
+    }
+    .trap-card-coral-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 1.12rem;
+      font-weight: 800;
+      color: #9f1239;
+      margin-bottom: 8px;
+    }
+    .trap-solution-badge {
+      display: inline-block;
+      background: #ffffff;
+      border: 1px solid #fecdd3;
+      padding: 6px 14px;
+      border-radius: 6px;
+      color: #881337;
+      font-size: 0.92rem;
+      margin-top: 8px;
+    }
+
+
+
+    /* Specification Quick Reference Table */
+    .spec-table-box {
+      background: #ffffff;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      margin-bottom: 24px;
+      box-shadow: 0 1px 3px rgba(0,0,0,0.02);
+    }
+    .spec-table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+    .spec-table th {
+      background: #f8fafc;
+      color: var(--navy-dark);
+      font-weight: 700;
+      font-size: 0.88rem;
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border);
+    }
+    .spec-table td {
+      padding: 14px 18px;
+      font-size: 0.95rem;
+      color: #334155;
+      border-bottom: 1px solid #f1f5f9;
+    }
+    .spec-table tr:last-child td {
+      border-bottom: none;
+    }
+
+    /* Curriculum Progression Banner */
+    .progression-banner {
+      background: linear-gradient(135deg, var(--navy-dark) 0%, #0d1e3d 100%);
+      color: #ffffff;
+      border-radius: 14px;
+      padding: 34px 40px;
+      margin-top: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 24px;
+    }
+    .progression-text-area {
+      max-width: 600px;
+    }
+    .progression-title {
+      font-size: 1.45rem;
+      font-weight: 800;
+      margin: 0 0 8px 0;
+      color: #ffffff;
+    }
+    .progression-links-group {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn-progression-nav {
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.25);
+      color: #ffffff;
+      font-weight: 700;
+      font-size: 0.9rem;
+      padding: 10px 18px;
+      border-radius: 8px;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.2s;
+    }
+    .btn-progression-nav:hover {
+      background: #10b981;
+      border-color: #10b981;
+    }
+  </style>
+</head>
+<body>
+
+    <!-- TOP TRUST BAR WITH ACCESSIBILITY & CONTACT -->
+  <div class="mfs-top-bar">
+    <div class="mfs-container mfs-top-bar-inner">
+      <div class="top-trust-items">
+        <span class="top-trust-item"><i class="fa-solid fa-building-columns"></i> Pearson Edexcel &amp; City &amp; Guilds Aligned</span>
+      </div>
+      <div class="top-contacts">
+        <div class="mfs-access-bar">
+          <!-- DYSLEXIA BACKGROUND TINT PICKER -->
+          <div class="mfs-tint-dropdown-wrap">
+            <button type="button" id="tintToggle" class="btn-tint-toggle" onclick="toggleTintMenu(event)" title="Change dyslexia background tint">
+              <span class="tint-swatch-indicator" id="tintCurrentSwatch"></span>
+              <span id="tintLabel">Cream Tint</span>
+              <i class="fa-solid fa-chevron-down" style="font-size:0.62rem; opacity:0.75; margin-left:2px;"></i>
+            </button>
+            <div id="tintMenu" class="tint-picker-menu">
+              <div class="tint-picker-title"><i class="fa-solid fa-glasses"></i> Dyslexia Reading Tint</div>
+              <button type="button" class="tint-option-btn active" data-tint="cream" onclick="setSiteTint('cream', event)">
+                <span class="swatch swatch-cream"></span>
+                <span class="tint-name">Cream <small class="tint-badge-def">Default</small></span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="peach" onclick="setSiteTint('peach', event)">
+                <span class="swatch swatch-peach"></span>
+                <span class="tint-name">Soft Peach</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="cool" onclick="setSiteTint('cool', event)">
+                <span class="swatch swatch-cool"></span>
+                <span class="tint-name">Cool Mist</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="sage" onclick="setSiteTint('sage', event)">
+                <span class="swatch swatch-sage"></span>
+                <span class="tint-name">Soft Sage</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <div class="tint-divider"></div>
+              <button type="button" class="tint-option-btn" data-tint="none" onclick="setSiteTint('none', event)">
+                <span class="swatch swatch-none"></span>
+                <span class="tint-name">No Tint (White)</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+            </div>
+          </div>
+          <button id="dyslexiaToggle" class="btn-dyslexia-toggle" onclick="toggleDyslexiaMode()" title="Toggle Dyslexia High-Readability Mode">
+            <i class="fa-solid fa-universal-access"></i> Dyslexia
+          </button>
+          <button id="themeToggle" class="mfs-theme-pill" onclick="toggleTheme()" title="Switch Palette: Sapphire vs Emerald">
+            <i class="fa-solid fa-palette"></i> <span id="themeLabel">Sapphire</span>
+          </button>
+        </div>
+        <a href="contact-us.html" class="top-contact-link"><i class="fa-solid fa-envelope"></i> <strong>Contact Us</strong></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- TOP GLOBAL NAVIGATION NAVBAR -->
+  <!-- ============================================== -->  <!-- MAIN NAVIGATION -->
+  <header class="mfs-navbar">
+    <div class="revision-page-wrapper mfs-navbar-inner">
+      <a href="index.html" class="mfs-brand">
+        <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div class="mfs-brand-text">
+          <div class="mfs-brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
+          <div class="mfs-brand-subtitle">Delivering Skills • Achieving Goals</div>
+        </div>
+      </a>
+
+      <nav class="mfs-nav-wrapper">
+        <ul class="mfs-nav-menu">
+          <!-- 1. SUBJECTS (VISUAL MEGA-MENU) -->
+          <li class="mfs-nav-item">
+            <a href="revise.html" class="mfs-nav-link">
+              <i class="fa-solid fa-book-open-reader" style="color:#0284c7; margin-right:5px;"></i> Subjects <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-revision-hub">
+              <div class="mfs-revision-grid">
+                <!-- Maths Column -->
+                <div class="mfs-revision-col mfs-revision-col-maths">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-calculator"></i> Maths Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="functional-skills-maths-level-1.html" class="mfs-dropdown-item">Maths Level 2</a>
+                    <a href="functional-skills-maths-level-1.html" class="mfs-dropdown-item">Maths Level 1</a>
+                    <a href="entry-level-3-maths.html" class="mfs-dropdown-item">Entry Level 3 Maths</a>
+                  </div>
+                </div>
+                <!-- English Column -->
+                <div class="mfs-revision-col mfs-revision-col-english">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-pen-nib"></i> English Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="functional-skills-english-level-2.html" class="mfs-dropdown-item">English Level 2</a>
+                    <a href="functional-skills-english-level-1.html" class="mfs-dropdown-item">English Level 1</a>
+                  </div>
+                </div>
+                <!-- Digital Skills Column -->
+                <div class="mfs-revision-col mfs-revision-col-digital">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-laptop-code"></i> Digital Skills</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="digital-functional-skills.html" class="mfs-dropdown-item">Digital Skills Hub</a>
+                    <a href="digital-functional-skills-mock-exam.html" class="mfs-dropdown-item">Pearson Mock Exam</a>
+                    <a href="digital-functional-skills-past-papers.html" class="mfs-dropdown-item">Past Papers &amp; Files</a>
+                  </div>
+                </div>
+              </div>
+              <!-- Course & Subject Selector Cross-link Footer inside dropdown -->
+              <div class="mfs-revision-dropdown-footer" style="margin-top:12px; padding-top:10px; border-top:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center; font-size:0.92rem;">
+                <a href="revise.html" style="font-weight:700; color:var(--accent); text-decoration:none;"><i class="fa-solid fa-layer-group" style="margin-right:4px;"></i> View All Subjects &amp; Levels &rarr;</a>
+                <a href="courses.html" style="font-weight:700; color:#059669; text-decoration:none;"><i class="fa-solid fa-graduation-cap" style="margin-right:4px;"></i> Accredited Online Courses &rarr;</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- 2. ONLINE COURSES -->
+          <li class="mfs-nav-item">
+            <a href="courses.html" class="mfs-nav-link">
+              <i class="fa-solid fa-graduation-cap" style="color:#0284c7; margin-right:5px;"></i> Online Courses
+            </a>
+          </li>
+
+          <!-- 3. PAST PAPERS (DIRECT ACCESS) -->
+          <li class="mfs-nav-item">
+            <a href="functional-skills-past-papers.html" class="mfs-nav-link">
+              <i class="fa-regular fa-file-lines" style="color:#0284c7; margin-right:5px;"></i> Past Papers
+            </a>
+          </li>
+
+          <!-- 4. WORKSHEETS DIRECTORY (CORBETT STYLE DUAL ENGINE) -->
+          <li class="mfs-nav-item">
+            <a href="worksheets.html" class="mfs-nav-link">
+              <i class="fa-solid fa-layer-group" style="color:#0284c7; margin-right:5px;"></i> Worksheets
+            </a>
+          </li>
+
+          <!-- 5. FREE TOOLS (COMPACT DROPDOWN) -->
+          <li class="mfs-nav-item">
+            <a href="tools.html" class="mfs-nav-link">
+              <i class="fa-solid fa-screwdriver-wrench" style="color:#0284c7; margin-right:5px;"></i> Free Tools <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-compact">
+              <a href="tools.html" class="mfs-dropdown-item" style="font-weight:700; color:var(--accent);"><i class="fa-solid fa-layer-group" style="font-size:0.85rem; margin-right:6px;"></i> All Free Tools &amp; Simulators &rarr;</a>
+              <div class="mfs-dropdown-divider" style="margin:4px 0; border-top:1px solid #e2e8f0;"></div>
+              <a href="pass-mark-calculator.html" class="mfs-dropdown-item"><i class="fa-solid fa-calculator" style="color:var(--accent); font-size:0.85rem; margin-right:6px;"></i> Pass Mark Calculator</a>
+              <a href="diagnostic-test.html" class="mfs-dropdown-item"><i class="fa-solid fa-chart-pie" style="color:#059669; font-size:0.85rem; margin-right:6px;"></i> Diagnostic Skill Checker</a>
+              <a href="functional-skills-nets.html" class="mfs-dropdown-item"><i class="fa-solid fa-cube" style="color:#0284c7; font-size:0.85rem; margin-right:6px;"></i> 3D Net Folding Tool</a>
+              <a href="video-solution.html" class="mfs-dropdown-item"><i class="fa-solid fa-circle-play" style="color:#ef4444; font-size:0.85rem; margin-right:6px;"></i> Video Walkthrough Station</a>
+            </div>
+          </li>
+
+          <!-- 6. REVISION CARDS -->
+          <li class="mfs-nav-item">
+            <a href="revision-cards.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-layer-group" style="color:#d97706; margin-right:5px;"></i> Revision Cards
+            </a>
+          </li>
+
+          <!-- 7. SHOP -->
+          <li class="mfs-nav-item">
+            <a href="shop.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-basket-shopping" style="color:#d97706; margin-right:5px;"></i> Shop
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- 8. BOOK EXAM ACTION BUTTON -->
+      <div class="mfs-nav-actions">
+        <a href="exams.html" class="btn-nav-exam">
+          <i class="fa-solid fa-calendar-check"></i> Book Exam
+        </a>
+      </div>
+
+      <!-- MOBILE CONTROLS (TINT + MENU PILL) -->
+      <div class="mfs-mobile-controls" id="mfsMobileControls">
+        <button type="button" class="btn-mobile-tint-toggle" id="mfsMobileTintBtn" title="Change Reading Tint" aria-label="Reading Tint">
+          <i class="fa-solid fa-glasses"></i>
+          <span class="mobile-tint-swatch" id="mfsMobileTintSwatch"></span>
+        </button>
+        <button type="button" class="mfs-menu-pill" id="mfsMobileToggleBtn" title="Open Navigation Menu" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+          <span>Menu</span>
+        </button>
+      </div>
+    </div>
+    <!-- MOBILE NAVIGATION ENGINE -->
+    <script src="assets/js/mfs-mobile.js" defer></script>
+  </header>
+
+  <!-- ============================================== -->
+  <!-- BREADCRUMBS BAR -->
+  <!-- ============================================== -->
+  <div class="revision-breadcrumb-bar">
+    <div class="revision-page-wrapper">
+      <div class="revision-breadcrumbs">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a href="functional-skills-maths-level-1.html">Maths Level 1</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a href="functional-skills-maths-level-1.html#measures">Measures, Shape &amp; Space</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span class="current">Area Level 1</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- HERO HEADER (CLEAN & DIRECT TITLE) -->
+  <!-- ============================================== -->
+  <section class="revision-hero-card">
+    <div class="revision-page-wrapper">
+      <div class="revision-hero-grid">
+        <div class="revision-hero-content">
+          <div class="revision-hero-pill-row">
+            <span class="badge-pill-accent"><i class="fa-solid fa-calculator"></i> MATHEMATICS</span>
+            <span class="badge-pill-gold"><i class="fa-solid fa-check-double"></i> LEVEL 1 &amp; LEVEL 2</span>
+            <span class="badge-pill-outline"><i class="fa-solid fa-award"></i> OFQUAL REGULATED STANDARDS</span>
+          </div>
+
+          <h1 class="revision-hero-title">
+            Area Level 1: <span>Formulas, Models &amp; Exam Practice</span>
+          </h1>
+          <p class="revision-hero-desc">
+            Master every Functional Skills area question with clear spacing, color-coded proportional diagrams, step-by-step worked formulas, examiner traps, and real-world vocational and workplace models.
+          </p>
+
+          <div class="revision-hero-meta-bar">
+            <div class="hero-meta-item">
+              <i class="fa-solid fa-clock"></i> <strong>Est. Study Time:</strong> 25-35 Mins
+            </div>
+            <div class="hero-meta-item">
+              <i class="fa-solid fa-book-open"></i> <strong>Curriculum Standards:</strong> Pearson Edexcel &amp; City &amp; Guilds
+            </div>
+            <div class="hero-meta-item">
+              <i class="fa-solid fa-circle-check"></i> <strong>6 Core Shape Examples + 4 Exam Models</strong>
+            </div>
+
+            <div class="hero-quick-actions">
+              <a href="#core-examples" class="btn-hero-action">
+                <i class="fa-solid fa-shapes"></i> View Shape Examples
+              </a>
+              <a href="#practice-questions" class="btn-hero-action-secondary">
+                <i class="fa-solid fa-pencil"></i> Start Exam Practice
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="revision-hero-visual-card">
+          <div class="revision-hero-img-wrap">
+            <img src="assets/img/book_photos/home_diy_decorating/ceramic_floor_tiling.jpg" alt="Area Workplace Application" loading="lazy" />
+          </div>
+          <div class="revision-hero-caption-bar">
+            <strong><i class="fa-solid fa-shapes"></i> Key Visual Concept</strong>
+            Trades installer measuring room dimensions and calculating square meterage for floor tiling.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOBILE TABLE OF CONTENTS BAR -->
+  <div class="mobile-toc-bar">
+    <div style="font-weight:700; color:var(--navy-dark); font-size:0.9rem;">
+      <i class="fa-solid fa-list-check" style="color:var(--accent);"></i> Area Revision Blueprint
+    </div>
+    <button type="button" class="btn-mobile-toc" onclick="toggleMobileToc()">
+      <span>Contents</span> <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+
+  <!-- ============================================== -->
+  <!-- MAIN EXPANSIVE 2-COLUMN LAYOUT -->
+  <!-- ============================================== -->
+  <main class="revision-page-wrapper">
+    <div class="revision-layout">
+
+      <!-- ============================================== -->
+      <!-- LEFT COLUMN: STICKY BLUEPRINT / TABLE OF CONTENTS -->
+      <!-- ============================================== -->
+      <aside class="revision-sidebar" id="sidebarNav">
+        <div class="sidebar-toc-title">
+          <span><i class="fa-solid fa-compass-drafting" style="color:var(--accent);"></i> Topic Contents</span>
+          <span style="font-size:0.90rem; color:#64748b; font-weight:700;">7 Sections</span>
+        </div>
+
+        <ul class="sidebar-toc-list" id="tocList">
+          <li>
+            <a href="#specification" class="sidebar-toc-link active">
+              <i class="fa-solid fa-clipboard-check"></i> Specification
+            </a>
+          </li>
+          <li>
+            <a href="#golden-rules" class="sidebar-toc-link">
+              <i class="fa-solid fa-lightbulb"></i> Golden Rules
+            </a>
+          </li>
+          <li>
+            <a href="#core-examples" class="sidebar-toc-link">
+              <i class="fa-solid fa-shapes"></i> Core Examples
+            </a>
+          </li>
+          <li>
+            <a href="#worked-models" class="sidebar-toc-link">
+              <i class="fa-solid fa-file-signature"></i> Worked Exam Models
+            </a>
+          </li>
+          <li>
+            <a href="#examiner-traps" class="sidebar-toc-link">
+              <i class="fa-solid fa-triangle-exclamation"></i> Examiner Traps
+            </a>
+          </li>
+          <li>
+            <a href="#practice-questions" class="sidebar-toc-link">
+              <i class="fa-solid fa-pencil"></i> Exam Practice
+            </a>
+          </li>
+          <li>
+            <a href="#curriculum-links" class="sidebar-toc-link">
+              <i class="fa-solid fa-arrow-right"></i> Next Topics
+            </a>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- ============================================== -->
+      <!-- RIGHT COLUMN: MAIN EDUCATIONAL REVISION CONTENT -->
+      <!-- ============================================== -->
+      <div class="revision-content">
+
+        <!-- 1. OFQUAL SPECIFICATION & FORMULA SUMMARY TABLE -->
+        <section id="specification" class="revision-section">
+          <div class="section-header-row">
+            <h2 class="section-title"><i class="fa-solid fa-clipboard-check"></i> Curriculum Specification &amp; Formula Guide</h2>
+            <span style="font-size:1.0rem; font-weight:800; color:#059669;"><i class="fa-solid fa-check"></i> Level 1 Criteria</span>
+          </div>
+          <p class="section-lead-text">
+            Area measures the <strong>two-dimensional surface inside a boundary</strong>, always recorded in square units (<strong>mm&sup2;</strong>, <strong>cm&sup2;</strong>, <strong>m&sup2;</strong>, or <strong>km&sup2;</strong>).
+          </p>
+
+          <div class="spec-table-box">
+            <table class="spec-table table-stack-mobile">
+              <thead>
+                <tr>
+                  <th>Shape</th>
+                  <th>Formula</th>
+                  <th>Key Dimension Check</th>
+                  <th>Exam Level</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Shape"><strong>Rectangle / Square</strong></td>
+                  <td data-label="Formula"><code>Area = Length &times; Width</code></td>
+                  <td data-label="Key Dimension Check">Multiply adjacent perpendicular sides</td>
+                  <td data-label="Exam Level"><span class="mfs-pill-l1">Level 1</span> </td>
+                </tr>
+                <tr>
+                  <td data-label="Shape"><strong>Parallelogram</strong></td>
+                  <td data-label="Formula"><code>Area = Base &times; Perpendicular Height</code></td>
+                  <td data-label="Key Dimension Check">Never use the slanted side</td>
+                  <td data-label="Exam Level"></td>
+                </tr>
+                <tr>
+                  <td data-label="Shape"><strong>Triangle</strong></td>
+                  <td data-label="Formula"><code>Area = (Base &times; Height) &divide; 2</code></td>
+                  <td data-label="Key Dimension Check">Always remember to divide by 2</td>
+                  <td data-label="Exam Level"><span class="mfs-pill-l1">Level 1</span> </td>
+                </tr>
+                <tr>
+                  <td data-label="Shape"><strong>Trapezium</strong></td>
+                  <td data-label="Formula"><code>Area = ((a + b) &divide; 2) &times; Height</code></td>
+                  <td data-label="Key Dimension Check">Find mean of parallel sides first</td>
+                  <td data-label="Exam Level"></td>
+                </tr>
+                <tr>
+                  <td data-label="Shape"><strong>Compound Shapes</strong></td>
+                  <td data-label="Formula"><code>Total Area = Area A + Area B</code></td>
+                  <td data-label="Key Dimension Check">Split with a clean dotted line</td>
+                  <td data-label="Exam Level"><span class="mfs-pill-l1">Level 1</span> </td>
+                </tr>
+                <tr>
+                  <td data-label="Shape"><strong>Circle</strong></td>
+                  <td data-label="Formula"><code>Area = π r² = 3.142 &times; r² (where r² = Radius &times; Radius)</code></td>
+                  <td data-label="Key Dimension Check">Halve the diameter if diameter is given</td>
+                  <td data-label="Exam Level"></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+      <!-- Tutor Welcome & Vision Callout -->
+      <div class="tutor-pro-callout">
+        <img src="assets/img/avatars/subi.png" alt="Subi Lead Assessor and Specialist Tutor" class="tutor-avatar-img">
+        <div class="tutor-speech-bubble">
+          <div class="tutor-speech-title"><i class="fa-solid fa-graduation-cap"></i> Subi's Assessor Blueprint: Large Steps &amp; No Squinting on Area!</div>
+          <p class="tutor-speech-text">
+            "Area problems in Pearson Edexcel exams are practical and multi-step. Candidates frequently lose marks not on the geometry formula, but on unit conversions, missing decimal places, or rounding partial packs down instead of up. Follow our <strong>High-Visibility Visual System</strong> below: clear dimensional breakdowns, step-down formula evaluation, and guaranteed method marks!"
+          </p>
+        </div>
+      </div>
+
+        <!-- 2. DYSLEXIA-FRIENDLY GOLDEN RULES -->
+        <section id="golden-rules" class="revision-section">
+          <div class="section-header-row">
+            <h2 class="section-title"><i class="fa-solid fa-lightbulb"></i> Golden Rules &amp; Mental Checklists</h2>
+          </div>
+          <p class="section-lead-text">
+            Keep these four rules in mind to avoid the most common calculation mistakes in exam papers.
+          </p>
+
+          <!-- Golden Rule 1 -->
+          <div class="rule-card-amber">
+            <div class="rule-card-amber-header">
+              <i class="fa-solid fa-ruler-combined"></i>
+              <span>Golden Rule 1: Never Confuse Perimeter and Area</span>
+            </div>
+            <p>
+              <strong>Perimeter</strong> is the <em>one-dimensional distance</em> around the boundary (measured in <strong>cm</strong>, <strong>m</strong>). <br>
+              <strong>Area</strong> is the <em>flat two-dimensional surface</em> inside (always measured in <strong>square units</strong>: <strong>cm&sup2;</strong>, <strong>m&sup2;</strong>).
+            </p>
+            <div class="rule-highlight-badge">
+              Always state area answers with a square exponent: cm&sup2; or m&sup2;
+            </div>
+          </div>
+
+          <!-- Golden Rule 2 -->
+          <div class="rule-card-amber">
+            <div class="rule-card-amber-header">
+              <i class="fa-solid fa-arrows-split-up-and-left"></i>
+              <span>Golden Rule 2: Convert All Dimensions to the SAME Unit First</span>
+            </div>
+            <p>
+              Examiners deliberately mix units (e.g. length = <strong>4.2 m</strong>, width = <strong>70 cm</strong>). You must convert both to metres (<strong>70 cm = 0.7 m</strong>) <em>before</em> multiplying. Multiplying 4.2 &times; 70 gives 294 m&sup2;, which is completely wrong!
+            </p>
+            <div class="rule-highlight-badge">
+              Check: 1 m = 100 cm &bull; 70 cm &divide; 100 = 0.7 m &bull; 4.2 &times; 0.7 = 2.94 m&sup2;
+            </div>
+          </div>
+
+          <!-- Golden Rule 3 -->
+          <div class="rule-card-amber">
+            <div class="rule-card-amber-header">
+              <i class="fa-solid fa-triangle-exclamation"></i>
+              <span>Golden Rule 3: Use Perpendicular Height (Never the Slant)</span>
+            </div>
+            <p>
+              For triangles and parallelograms, the height must form a strict 90&deg; right angle with the base. Never use the slanted edge!
+            </p>
+            <div class="rule-highlight-badge">
+              Triangle Area = (Base &times; Vertical Height) &divide; 2
+            </div>
+          </div>
+
+          <!-- Golden Rule 4 -->
+          <div class="rule-card-amber">
+            <div class="rule-card-amber-header">
+              <i class="fa-solid fa-draw-polygon"></i>
+              <span>Golden Rule 4: Average the Parallel Sides First for Trapeziums</span>
+            </div>
+            <p>
+              Add the two parallel boundary sides (a and b), divide by 2 to find their average, then multiply by the vertical separation (h) between them.
+            </p>
+            <div class="rule-highlight-badge">
+              Trapezium Area = ((a + b) &divide; 2) &times; Height
+            </div>
+          </div>
+        </section>
+
+        <!-- ==========================================================================
+             3. CORE EXAMPLES (Master Functional Skills STYLE CARDS - OUR OWN UNIQUE VALUES)
+             ========================================================================== -->
+        <section id="core-examples" class="revision-section">
+          <div class="section-header-row">
+            <h2 class="section-title"><i class="fa-solid fa-shapes"></i> Core Shape Examples &amp; Step-by-Step Models</h2>
+            <span style="font-size:1.0rem; font-weight:700; color:#00a8ff;"><i class="fa-solid fa-layer-group"></i> Proportional Visual Guides</span>
+          </div>
+          <p class="section-lead-text">
+            Each example below features our distinct practical numbers, clean formulas, and proportional color-coded diagrams designed for quick understanding.
+          </p>
+
+          <!-- ============================================== -->
+          <!-- EXAMPLE 1: AREA OF A RECTANGLE -->
+          <!-- ============================================== -->
+          <div class="mfs-topic-card" id="example-1">
+            <div class="mfs-topic-head">
+              <h3 class="mfs-topic-title">
+                <span class="mfs-topic-prefix">Example 1:</span> Area of a Rectangle
+              </h3>
+              <p class="mfs-topic-stem">
+                Calculate the area of the rectangle shown to the right.
+              </p>
+            </div>
+
+            <div class="mfs-topic-body">
+              <!-- Left Column: Formula & Steps -->
+              <div class="mfs-math-col">
+                <div class="mfs-marks-row">[2 marks]</div>
+                <div class="mfs-formula-display">
+                  Area of rectangle = 14 &times; 6 = 84 m&sup2;
+                </div>
+                <div class="mfs-steps-box">
+                  <div class="mfs-step-row">
+                    <span class="mfs-step-tag">Step 1:</span>
+                    <span>Identify dimensions: Length = <strong>14 m</strong>, Width = <strong>6 m</strong>.</span>
+                  </div>
+                  <div class="mfs-step-row">
+                    <span class="mfs-step-tag">Step 2:</span>
+                    <span>Multiply length by width: <strong>14 &times; 6 = 84</strong>.</span>
+                  </div>
+                  <div class="mfs-step-row">
+                    <span class="mfs-step-tag">Step 3:</span>
+                    <span>Write the correct square units: <strong>m&sup2;</strong>.</span>
+                  </div>
+                </div>
+                <div class="mfs-answer-banner">
+                  <span><i class="fa-solid fa-circle-check"></i> Final Answer: 84 m&sup2;</span>
+                  <span style="font-size:1.0rem;">Full 2 Marks</span>
+                </div>
+              </div>
+
+              <!-- Right Column: Proportional Shape Diagram -->
+              <div class="mfs-diagram-col">
+                <svg viewBox="0 0 340 190">
+                  <defs>
+                    <marker id="arrowDark" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                      <polygon points="0 0, 6 3, 0 6" fill="#0f172a" />
+                    </marker>
+                    <marker id="arrowDarkRev" markerWidth="6" markerHeight="6" refX="1" refY="3" orient="auto">
+                      <polygon points="6 0, 0 3, 6 6" fill="#0f172a" />
+                    </marker>
+                  </defs>
+
+                  <!-- Solid Warm Terracotta/Orange Fill Rectangle -->
+                  <rect x="35" y="30" width="240" height="110" rx="4" fill="#ea580c" stroke="#c2410c" stroke-width="2"/>
+
+                  <!-- Bottom Base Dimension Arrow & Label -->
+                  <line x1="35" y1="160" x2="275" y2="160" stroke="#0f172a" stroke-width="2" marker-start="url(#arrowDarkRev)" marker-end="url(#arrowDark)"/>
+                  <text x="155" y="180" font-family="system-ui, sans-serif" font-size="18" font-weight="800" fill="#0f172a" text-anchor="middle">14 m</text>
+
+                  <!-- Right Height Dimension Arrow & Label -->
+                  <line x1="295" y1="30" x2="295" y2="140" stroke="#0f172a" stroke-width="2" marker-start="url(#arrowDarkRev)" marker-end="url(#arrowDark)"/>
+                  <text x="325" y="92" font-family="system-ui, sans-serif" font-size="18" font-weight="800" fill="#0f172a" text-anchor="middle">6 m</text>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Footer Pills -->
+            <div class="mfs-topic-footer">
+              <span class="mfs-pill-l1">FS Level 1</span>
+              <span class="mfs-pill-l2">FS Level 2</span>
+              <span class="mfs-pill-board">Edexcel</span>
+              <span class="mfs-pill-board">City &amp; Guilds</span>
+              <span class="mfs-pill-board">NCFE</span>
+              <span class="mfs-pill-board">Open Awards</span>
+              <span class="mfs-pill-board">Highfield</span>
+            </div>
+          </div>
+
+          <!-- ============================================== -->
+          <!-- EXAMPLE 2: AREA OF A PARALLELOGRAM -->
+          <!-- ============================================== -->
+          <div class="mfs-topic-card" id="example-2">
+            <div class="mfs-topic-head">
+              <h3 class="mfs-topic-title">
+                <span class="mfs-topic-prefix">Example 2:</span> Area of a Parallelogram
+              </h3>
+              <p class="mfs-topic-stem">
+                Calculate the area of the parallelogram shown to the right.
+              </p>
+            </div>
+
+            <div class="mfs-topic-body">
+              <!-- Left Column: Formula & Steps -->
+              <div class="mfs-math-col">
+                <div class="mfs-marks-row">[2 marks]</div>
+                <div class="mfs-formula-display">
+                  Area of parallelogram = 11 &times; 6 = 66 cm&sup2;
+                </div>
+                <div class="mfs-steps-box">
+                  <div class="mfs-step-row">
+                    <span class="mfs-step-tag">Step 1:</span>
+                    <span>Identify base = <strong>11 cm</strong> and perpendicular vertical height = <strong>6 cm</strong>.</span>
+                  </div>
+                  <div class="mfs-step-row">
+                    <span class="mfs-step-tag">Trap Check:</span>
+                    <span style="color:#b91c1c; font-weight:600;">Ignore the 8 cm slanted side &mdash; slant heights are never used for area!</span>
+                  </div>
+                  <div class="mfs-step-row">
+                    <span class="mfs-step-tag">Step 2:</span>
+                    <span>Multiply: <strong>11 &times; 6 = 66 cm&sup2;</strong>.</span>
+                  </div>
+                </div>
+                <div class="mfs-answer-banner">
+                  <span><i class="fa-solid fa-circle-check"></i> Final Answer: 66 cm&sup2;</span>
+                  <span style="font-size:1.0rem;">Full 2 Marks</span>
+                </div>
+              </div>
+
+              <!-- Right Column: Proportional Shape Diagram -->
+              <div class="mfs-diagram-col">
+                <svg viewBox="0 0 340 190">
+                  <defs>
+                    <marker id="arrowP" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                      <polygon points="0 0, 6 3, 0 6" fill="#0f172a" />
+                    </marker>
+                    <marker id="arrowPRev" markerWidth="6" markerHeight="6" refX="1" refY="3" orient="auto">
+                      <polygon points="6 0, 0 3, 6 6" fill="#0f172a" />
+                    </marker>
+                  </defs>
+
+                  <!-- Solid Sky Blue Parallelogram -->
+                  <polygon points="70,35 290,35 240,140 20,140" fill="#0284c7" stroke="#0369a1" stroke-width="2"/>
+
+                  <!-- Perpendicular Dashed Height Line Inside -->
+                  <line x1="120" y1="35" x2="120" y2="140" stroke="#0f172a" stroke-width="2" stroke-dasharray="5,4"/>
+                  <!-- Right Angle Square -->
+                  <rect x="120" y="125" width="14" height="15" fill="none" stroke="#0f172a" stroke-width="1.8"/>
+                  <text x="142" y="92" font-family="system-ui, sans-serif" font-size="17" font-weight="800" fill="#ffffff">6 cm</text>
+
+                  <!-- Bottom Base Dimension Arrow & Label -->
+                  <line x1="20" y1="162" x2="240" y2="162" stroke="#0f172a" stroke-width="2" marker-start="url(#arrowPRev)" marker-end="url(#arrowP)"/>
+                  <text x="130" y="182" font-family="system-ui, sans-serif" font-size="18" font-weight="800" fill="#0f172a" text-anchor="middle">11 cm</text>
+
+                  <!-- Slanted Side Distractor Label -->
+                  <text x="28" y="80" font-family="system-ui, sans-serif" font-size="15" font-weight="800" fill="#ffffff">8 cm</text>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Footer Pills -->
+            <div class="mfs-topic-footer">
+              <span class="mfs-pill-l2">FS Level 2</span>
+              <span class="mfs-pill-board">Edexcel</span>
+              <span class="mfs-pill-board">City &amp; Guilds</span>
+              <span class="mfs-pill-board">NCFE</span>
+              <span class="mfs-pill-board">Open Awards</span>
+              <span class="mfs-pill-board">Highfield</span>
+            </div>
+          </div>
+
+          <!-- ============================================== -->
+          <!-- EXAMPLE 3: AREA OF A TRIANGLE -->
+          <!-- ============================================== -->
+          <div class="mfs-topic-card" id="example-3">
+            <div class="mfs-topic-head">
+              <h3 class="mfs-topic-title">
+                <span class="mfs-topic-prefix">Example 3:</span> Area of a Triangle
+              </h3>
+              <p class="mfs-topic-stem">
+                Calculate the area of the triangle shown to the right.
+              </p>
+            </div>
+
+            <div class="mfs-topic-body">
+              <!-- Left Column: Formula & Steps -->
+              <div class="mfs-math-col">
+                <div class="mfs-marks-row">[2 marks]</div>
+                <div class="mfs-formula-display">
+                  Area of triangle = &frac12; &times; 14 &times; 7 = 49 cm&sup2;
+                </div>
+                <div class="mfs-steps-box">
+                  <div class="mfs-step-row">
+                    <span class="mfs-step-tag">Step 1:</span>
+                    <span>Multiply base by perpendicular vertical height: <strong>14 &times; 7 = 98</strong>.</span>
+                  </div>
+                  <div class="mfs-step-row">
+                    <span class="mfs-step-tag">Step 2:</span>
+                    <span>Divide by 2: <strong>98 &divide; 2 = 49</strong>.</span>
+                  </div>
+                  <div class="mfs-step-row">
+                    <span class="mfs-step-tag">Step 3:</span>
+                    <span>State the correct metric square units: <strong>49 cm&sup2;</strong>.</span>
+                  </div>
+                </div>
+                <div class="mfs-answer-banner">
+                  <span><i class="fa-solid fa-circle-check"></i> Final Answer: 49 cm&sup2;</span>
+                  <span style="font-size:1.0rem;">Full 2 Marks</span>
+                </div>
+              </div>
+
+              <!-- Right Column: Proportional Shape Diagram -->
+              <div class="mfs-diagram-col">
+                <svg viewBox="0 0 340 210">
+                  <defs>
+                    <marker id="arrowT" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                      <polygon points="0 0, 6 3, 0 6" fill="#0f172a" />
+                    </marker>
+                    <marker id="arrowTRev" markerWidth="6" markerHeight="6" refX="1" refY="3" orient="auto">
+                      <polygon points="6 0, 0 3, 6 6" fill="#0f172a" />
+                    </marker>
+                  </defs>
+
+                  <!-- Solid Olive Green Triangle -->
+                  <polygon points="35,160 285,160 115,35" fill="#6ca33e" stroke="#4d7c0f" stroke-width="2"/>
+
+                  <!-- Perpendicular Vertical Height Line Inside -->
+                  <line x1="115" y1="35" x2="115" y2="160" stroke="#0f172a" stroke-width="2" marker-start="url(#arrowTRev)" marker-end="url(#arrowT)"/>
+                  <!-- Right Angle Indicator -->
+                  <rect x="115" y="146" width="14" height="14" fill="none" stroke="#0f172a" stroke-width="1.8"/>
+                  <text x="145" y="105" font-family="system-ui, sans-serif" font-size="18" font-weight="800" fill="#0f172a">7 cm</text>
+
+                  <!-- Bottom Base Dimension Arrow & Label -->
+                  <line x1="35" y1="182" x2="285" y2="182" stroke="#0f172a" stroke-width="2" marker-start="url(#arrowTRev)" marker-end="url(#arrowT)"/>
+                  <text x="160" y="202" font-family="system-ui, sans-serif" font-size="18" font-weight="800" fill="#0f172a" text-anchor="middle">14 cm</text>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Footer Pills -->
+            <div class="mfs-topic-footer">
+              <span class="mfs-pill-l1">FS Level 1</span>
+              <span class="mfs-pill-l2">FS Level 2</span>
+              <span class="mfs-pill-board">Edexcel</span>
+              <span class="mfs-pill-board">City &amp; Guilds</span>
+              <span class="mfs-pill-board">NCFE</span>
+              <span class="mfs-pill-board">Open Awards</span>
+              <span class="mfs-pill-board">Highfield</span>
+            </div>
+          </div>
+
+          <!-- ============================================== -->
+          <!-- EXAMPLE 4: AREA OF A TRAPEZIUM -->
+          <!-- ============================================== -->
+          <div class="mfs-topic-card" id="example-4">
+            <div class="mfs-topic-head">
+              <h3 class="mfs-topic-title">
+                <span class="mfs-topic-prefix">Example 4:</span> Area of a Trapezium
+              </h3>
+              <p class="mfs-topic-stem">
+                Calculate the area of the trapezium shown to the right.
+              </p>
+            </div>
+
+            <div class="mfs-topic-body">
+              <!-- Left Column: Formula & Steps -->
+              <div class="mfs-math-col">
+                <div class="mfs-marks-row">[2 marks]</div>
+                <div class="mfs-formula-display">
+                  Area = ((8 + 14) &divide; 2) &times; 6 = 11 &times; 6 = 66 cm&sup2;
+                </div>
+                <div class="mfs-steps-box">
+                  <div class="mfs-step-row">
+                    <span class="mfs-step-tag">Step 1:</span>
+                    <span>Add parallel sides a and b: <strong>8 + 14 = 22</strong>.</span>
+                  </div>
+                  <div class="mfs-step-row">
+                    <span class="mfs-step-tag">Step 2:</span>
+                    <span>Divide by 2 to find mean parallel width: <strong>22 &divide; 2 = 11 cm</strong>.</span>
+                  </div>
+                  <div class="mfs-step-row">
+                    <span class="mfs-step-tag">Step 3:</span>
+                    <span>Multiply by perpendicular height: <strong>11 &times; 6 = 66 cm&sup2;</strong>.</span>
+                  </div>
+                </div>
+                <div class="mfs-answer-banner">
+                  <span><i class="fa-solid fa-circle-check"></i> Final Answer: 66 cm&sup2;</span>
+                  <span style="font-size:1.0rem;">Full 2 Marks</span>
+                </div>
+              </div>
+
+              <!-- Right Column: Proportional Shape Diagram -->
+              <div class="mfs-diagram-col">
+                <svg viewBox="0 0 340 210">
+                  <defs>
+                    <marker id="arrowTr" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                      <polygon points="0 0, 6 3, 0 6" fill="#0f172a" />
+                    </marker>
+                    <marker id="arrowTrRev" markerWidth="6" markerHeight="6" refX="1" refY="3" orient="auto">
+                      <polygon points="6 0, 0 3, 6 6" fill="#0f172a" />
+                    </marker>
+                  </defs>
+
+                  <!-- Solid Royal Purple Trapezium -->
+                  <polygon points="80,45 220,45 285,155 35,155" fill="#7c3aed" stroke="#6d28d9" stroke-width="2"/>
+
+                  <!-- Parallel Arrow Indicators >> -->
+                  <text x="150" y="42" fill="#ffffff" font-size="15" font-weight="900" text-anchor="middle">&gt;&gt;</text>
+                  <text x="160" y="152" fill="#ffffff" font-size="15" font-weight="900" text-anchor="middle">&gt;&gt;</text>
+
+                  <!-- Top Side Dimension (8 cm) -->
+                  <line x1="80" y1="26" x2="220" y2="26" stroke="#0f172a" stroke-width="1.8" marker-start="url(#arrowTrRev)" marker-end="url(#arrowTr)"/>
+                  <text x="150" y="20" font-family="system-ui, sans-serif" font-size="16" font-weight="800" fill="#0f172a" text-anchor="middle">8 cm</text>
+
+                  <!-- Bottom Side Dimension (14 cm) -->
+                  <line x1="35" y1="175" x2="285" y2="175" stroke="#0f172a" stroke-width="2" marker-start="url(#arrowTrRev)" marker-end="url(#arrowTr)"/>
+                  <text x="160" y="196" font-family="system-ui, sans-serif" font-size="18" font-weight="800" fill="#0f172a" text-anchor="middle">14 cm</text>
+
+                  <!-- Vertical Height Dashed Line (6 cm) -->
+                  <line x1="80" y1="45" x2="80" y2="155" stroke="#ffffff" stroke-width="2" stroke-dasharray="5,4"/>
+                  <rect x="80" y="141" width="14" height="14" fill="none" stroke="#ffffff" stroke-width="1.8"/>
+                  <text x="104" y="105" font-family="system-ui, sans-serif" font-size="16" font-weight="800" fill="#ffffff">6 cm</text>
+
+                  <!-- Distractor Slanted Side (7.5 cm) -->
+                  <text x="270" y="100" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#0f172a">7.5 cm</text>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Footer Pills -->
+            <div class="mfs-topic-footer">
+              <span class="mfs-pill-l2">FS Level 2</span>
+              <span class="mfs-pill-board">Edexcel</span>
+              <span class="mfs-pill-board">City &amp; Guilds</span>
+              <span class="mfs-pill-board">NCFE</span>
+              <span class="mfs-pill-board">Open Awards</span>
+              <span class="mfs-pill-board">Highfield</span>
+            </div>
+          </div>
+
+          <!-- ============================================== -->
+          <!-- EXAMPLE 5: AREA OF A COMPOUND L-SHAPE -->
+          <!-- ============================================== -->
+          <div class="mfs-topic-card" id="example-5">
+            <div class="mfs-topic-head">
+              <h3 class="mfs-topic-title">
+                <span class="mfs-topic-prefix">Example 5:</span> Area of a Compound Shape (L-Shape)
+              </h3>
+              <p class="mfs-topic-stem">
+                Calculate the total floor area of the L-shaped workshop shown to the right.
+              </p>
+            </div>
+
+            <div class="mfs-topic-body">
+              <!-- Left Column: Formula & Steps -->
+              <div class="mfs-math-col">
+                <div class="mfs-marks-row">[3 marks]</div>
+                <div class="mfs-formula-display">
+                  Total Area = Area A + Area B = 42 + 48 = 90 m&sup2;
+                </div>
+                <div class="mfs-steps-box">
+                  <div class="mfs-step-row">
+                    <span class="mfs-step-tag">Step 1:</span>
+                    <span>Split horizontally: Block A (top) and Block B (bottom).</span>
+                  </div>
+                  <div class="mfs-step-row">
+                    <span class="mfs-step-tag">Step 2:</span>
+                    <span><strong>Area of Block A:</strong> 7 m &times; 6 m = <strong>42 m&sup2;</strong>.</span>
+                  </div>
+                  <div class="mfs-step-row">
+                    <span class="mfs-step-tag">Step 3:</span>
+                    <span><strong>Area of Block B:</strong> 12 m &times; 4 m = <strong>48 m&sup2;</strong>.</span>
+                  </div>
+                  <div class="mfs-step-row">
+                    <span class="mfs-step-tag">Step 4:</span>
+                    <span>Add both areas together: <strong>42 + 48 = 90 m&sup2;</strong>.</span>
+                  </div>
+                </div>
+                <div class="mfs-answer-banner">
+                  <span><i class="fa-solid fa-circle-check"></i> Final Answer: 90 m&sup2;</span>
+                  <span style="font-size:1.0rem;">Full 3 Marks</span>
+                </div>
+              </div>
+
+              <!-- Right Column: Proportional Shape Diagram -->
+              <div class="mfs-diagram-col">
+                <svg viewBox="0 0 340 230">
+                  <defs>
+                    <marker id="arrowC" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                      <polygon points="0 0, 6 3, 0 6" fill="#0f172a" />
+                    </marker>
+                    <marker id="arrowCRev" markerWidth="6" markerHeight="6" refX="1" refY="3" orient="auto">
+                      <polygon points="6 0, 0 3, 6 6" fill="#0f172a" />
+                    </marker>
+                  </defs>
+
+                  <!-- Block A (Top, Sky Blue) -->
+                  <rect x="45" y="30" width="130" height="90" fill="#0284c7" stroke="#0369a1" stroke-width="2"/>
+                  <!-- Block B (Bottom, Emerald Green) -->
+                  <rect x="45" y="120" width="240" height="60" fill="#059669" stroke="#047857" stroke-width="2"/>
+
+                  <!-- Red Dashed Split Line -->
+                  <line x1="45" y1="120" x2="175" y2="120" stroke="#ef4444" stroke-width="3" stroke-dasharray="6,4"/>
+
+                  <!-- Labels Inside Blocks -->
+                  <text x="110" y="80" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="#ffffff" text-anchor="middle">A: 7 &times; 6 = 42</text>
+                  <text x="165" y="155" font-family="system-ui, sans-serif" font-size="14" font-weight="800" fill="#ffffff" text-anchor="middle">B: 12 &times; 4 = 48</text>
+
+                  <!-- Outer Dimension Labels -->
+                  <!-- Top Width (7 m) -->
+                  <text x="110" y="22" font-family="system-ui, sans-serif" font-size="16" font-weight="800" fill="#0f172a" text-anchor="middle">7 m</text>
+                  <!-- Total Left Height (10 m) -->
+                  <line x1="25" y1="30" x2="25" y2="180" stroke="#0f172a" stroke-width="1.8" marker-start="url(#arrowCRev)" marker-end="url(#arrowC)"/>
+                  <text x="14" y="110" font-family="system-ui, sans-serif" font-size="15" font-weight="800" fill="#0f172a" text-anchor="middle">10m</text>
+                  <!-- Total Bottom Width (12 m) -->
+                  <line x1="45" y1="200" x2="285" y2="200" stroke="#0f172a" stroke-width="2" marker-start="url(#arrowCRev)" marker-end="url(#arrowC)"/>
+                  <text x="165" y="220" font-family="system-ui, sans-serif" font-size="17" font-weight="800" fill="#0f172a" text-anchor="middle">12 m</text>
+                  <!-- Right Base Height (4 m) -->
+                  <text x="305" y="155" font-family="system-ui, sans-serif" font-size="15" font-weight="800" fill="#0f172a">4 m</text>
+                  <!-- Inner Step Width (5 m) -->
+                  <text x="230" y="112" font-family="system-ui, sans-serif" font-size="14" font-weight="700" fill="#64748b">5 m</text>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Footer Pills -->
+            <div class="mfs-topic-footer">
+              <span class="mfs-pill-l1">FS Level 1</span>
+              <span class="mfs-pill-l2">FS Level 2</span>
+              <span class="mfs-pill-board">Edexcel</span>
+              <span class="mfs-pill-board">City &amp; Guilds</span>
+              <span class="mfs-pill-board">NCFE</span>
+              <span class="mfs-pill-board">Open Awards</span>
+              <span class="mfs-pill-board">Highfield</span>
+            </div>
+          </div>
+
+          <!-- ============================================== -->
+          <!-- EXAMPLE 6: AREA OF A CIRCLE -->
+          <!-- ============================================== -->
+          <div class="mfs-topic-card" id="example-6">
+            <div class="mfs-topic-head">
+              <h3 class="mfs-topic-title">
+                <span class="mfs-topic-prefix">Example 6:</span> Area of a Circle
+              </h3>
+              <p class="mfs-topic-stem">
+                Calculate the area of the circular hospital helipad shown to the right. Give your answer to 1 decimal place.
+              </p>
+            </div>
+
+            <div class="mfs-topic-body">
+              <!-- Left Column: Formula & Steps -->
+              <div class="mfs-math-col">
+                <div class="mfs-marks-row">[2 marks]</div>
+                <div class="mfs-formula-display">
+                  Area = π r² = 3.142 &times; r² = 3.142 &times; 7² = 3.142 &times; (7 &times; 7) &approx; 153.96 m&sup2;
+                </div>
+                <div class="mfs-steps-box">
+                  <div class="mfs-step-row">
+                    <span class="mfs-step-tag">Step 1:</span>
+                    <span>Identify radius: <strong>Radius = 7 m</strong> (if given diameter, halve it first).</span>
+                  </div>
+                  <div class="mfs-step-row">
+                    <span class="mfs-step-tag">Step 2:</span>
+                    <span>Square the radius (r² = r &times; r): <strong>7² = 7 &times; 7 = 49</strong>.</span>
+                  </div>
+                  <div class="mfs-step-row">
+                    <span class="mfs-step-tag">Step 3:</span>
+                    <span>Multiply by 3.142: <strong>49 &times; 3.142 = 153.958 &approx; 154.0 m&sup2;</strong> (or 153.9 m&sup2; using π).</span>
+                  </div>
+                </div>
+                <div class="mfs-answer-banner">
+                  <span><i class="fa-solid fa-circle-check"></i> Final Answer: 154 m&sup2; (or 153.9 m&sup2;)</span>
+                  <span style="font-size:1.0rem;">Full 2 Marks</span>
+                </div>
+              </div>
+
+              <!-- Right Column: Proportional Shape Diagram -->
+              <div class="mfs-diagram-col">
+                <svg viewBox="0 0 340 200">
+                  <!-- Solid Amber/Orange Circle -->
+                  <circle cx="170" cy="100" r="75" fill="#d97706" stroke="#b45309" stroke-width="2"/>
+                  <!-- Center Point -->
+                  <circle cx="170" cy="100" r="4" fill="#ffffff"/>
+                  <!-- Radius Line -->
+                  <line x1="170" y1="100" x2="245" y2="100" stroke="#ffffff" stroke-width="2.5"/>
+                  <text x="207" y="90" font-family="system-ui, sans-serif" font-size="16" font-weight="800" fill="#ffffff">r = 7 m</text>
+                </svg>
+              </div>
+            </div>
+
+            <!-- Footer Pills -->
+            <div class="mfs-topic-footer">
+              <span class="mfs-pill-l2">FS Level 2</span>
+              <span class="mfs-pill-board">Edexcel</span>
+              <span class="mfs-pill-board">City &amp; Guilds</span>
+              <span class="mfs-pill-board">NCFE</span>
+              <span class="mfs-pill-board">Open Awards</span>
+              <span class="mfs-pill-board">Highfield</span>
+            </div>
+          </div>
+
+        </section>
+
+        <!-- ============================================== -->
+        <!-- 4. PEARSON EDEXCEL WORKED EXAM MODELS -->
+        <!-- ============================================== -->
+        <section id="worked-models" class="revision-section">
+          <div class="section-header-row">
+            <h2 class="section-title"><i class="fa-solid fa-file-signature"></i> Pearson Edexcel Step-by-Step Worked Models</h2>
+            <span style="font-size:1.0rem; font-weight:800; color:#059669;"><i class="fa-solid fa-award"></i> Official Mark Schemes</span>
+          </div>
+          <p class="section-lead-text">
+            These realistic healthcare and vocational exam questions demonstrate how examiners award Method Marks (<strong>M</strong>), Process Marks (<strong>P</strong>), and Accuracy Marks (<strong>A</strong>).
+          </p>
+
+          <!-- MODEL 1: CLINIC FLOOR TILING -->
+          <div class="worked-exam-model-card">
+            <div class="model-header-bar">
+              <span class="badge-worked-model">Worked Exam Model #1 &bull; Level 1</span>
+              <span class="model-marks-pill"><i class="fa-solid fa-check-double"></i> 4 Marks Total</span>
+            </div>
+
+            <div class="model-question-stem">
+              <strong>Exam Context:</strong> A community healthcare clinic manager needs to retile the floor of a new physiotherapy room measuring <strong>8.5 m long</strong> and <strong>4 m wide</strong>. 
+              Each box of non-slip floor tiles covers <strong>3.2 m&sup2;</strong> and costs <strong>£28.50</strong> per box. Tiles are only sold in full boxes. 
+              <br><br>
+              Calculate the total cost to buy enough boxes of tiles for the room floor.
+            </div>
+
+            <div class="model-steps-list">
+            <!-- 3-Column Header: Step, Description, Criteria -->
+            <div class="model-steps-header-row">
+              <div><i class="fa-solid fa-list-ol" style="color:#0284c7; margin-right:6px;"></i> Step</div>
+              <div><i class="fa-solid fa-calculator" style="color:#0284c7; margin-right:6px;"></i> Description / Working</div>
+              <div><i class="fa-solid fa-clipboard-check" style="color:#0284c7; margin-right:6px;"></i> Criteria</div>
+            </div>
+<div class="model-step-row model-step-grid-row">
+              <div class="model-step-col-step">
+                <span class="example-step-pill">Step 1</span>
+                <span class="model-step-title">Calculate room floor surface area</span>
+                <span style="font-size:1.02rem; color:#64748b; font-weight:700; display:block; margin-top:4px;">Area = Length &times; Width</span>
+              </div>
+              <div class="model-step-col-desc">
+                <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:10px; padding:14px 18px;">
+                  <div style="font-size:1.25rem; font-weight:800; color:#0f172a; margin-bottom:6px;">
+                    8.5 m &times; 4.0 m = <span style="color:#0369a1;">34.0 m&sup2;</span>
+                  </div>
+                  <div style="font-size:1.02rem; color:#334155; line-height:1.6;">
+                    Multiplied two perpendicular dimensions. Units are strictly <strong>square metres (m&sup2;)</strong>.
+                  </div>
+                </div>
+              </div>
+              <div class="model-step-col-criteria">
+                <span class="criteria-badge-teal" style="font-size:0.9rem; padding:8px 12px;">
+                  <i class="fa-solid fa-award"></i> <strong>[M1] Method Mark:</strong><br>Accurate rectangular area (8.5 &times; 4)
+                </span>
+              </div>
+            </div>
+
+              <div class="model-step-row model-step-grid-row">
+              <div class="model-step-col-step">
+                <span class="example-step-pill">Step 2</span>
+                <span class="model-step-title">Divide room area by pack coverage</span>
+                <span style="font-size:1.02rem; color:#64748b; font-weight:700; display:block; margin-top:4px;">Total Area &divide; Coverage per pack</span>
+              </div>
+              <div class="model-step-col-desc">
+                <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:10px; padding:14px 18px;">
+                  <div style="font-size:1.25rem; font-weight:800; color:#0f172a; margin-bottom:6px;">
+                    34 &divide; 3.2 = <span style="color:#b45309;">10.625 boxes</span>
+                  </div>
+                  <div style="font-size:1.02rem; color:#334155; line-height:1.6;">
+                    Raw division result: 10 full boxes cover 32 m&sup2;, leaving 2 m&sup2; uncovered.
+                  </div>
+                </div>
+              </div>
+              <div class="model-step-col-criteria">
+                <span class="criteria-badge-teal" style="font-size:0.9rem; padding:8px 12px;">
+                  <i class="fa-solid fa-award"></i> <strong>[P1] Process Mark:</strong><br>Division by 3.2 to find quantity
+                </span>
+              </div>
+            </div>
+
+              <div class="model-step-row model-step-grid-row">
+              <div class="model-step-col-step">
+                <span class="example-step-pill">Step 3</span>
+                <span class="model-step-title">Round UP to whole boxes (Practical Rule)</span>
+                <span style="font-size:1.02rem; color:#64748b; font-weight:700; display:block; margin-top:4px;">Real-world retail constraint</span>
+              </div>
+              <div class="model-step-col-desc">
+                <div style="background:#f0fdf4; border:1.5px solid #86efac; border-radius:10px; padding:14px 18px;">
+                  <div style="font-size:1.25rem; font-weight:800; color:#15803d; margin-bottom:6px;">
+                    10.625 &rarr; <span style="background:#dcfce7; padding:2px 8px; border-radius:6px; border:1px solid #86efac;">11 Full Boxes</span>
+                  </div>
+                  <div style="font-size:0.92rem; color:#166534; line-height:1.5;">
+                    You cannot buy 0.625 of a box. 10 boxes leaves bare floor; 11 boxes ensures full coverage.
+                  </div>
+                </div>
+              </div>
+              <div class="model-step-col-criteria">
+                <span class="criteria-badge-teal" style="font-size:0.9rem; padding:8px 12px;">
+                  <i class="fa-solid fa-award"></i> <strong>[P1] Process Mark:</strong><br>Correct interpretation to round UP
+                </span>
+              </div>
+            </div>
+
+              <div class="model-step-row model-step-grid-row">
+              <div class="model-step-col-step">
+                <span class="example-step-pill">Step 4</span>
+                <span class="model-step-title">Calculate total purchase cost</span>
+                <span style="font-size:1.02rem; color:#64748b; font-weight:700; display:block; margin-top:4px;">11 boxes &times; &pound;28.50</span>
+              </div>
+              <div class="model-step-col-desc">
+                <div style="display:flex; flex-wrap:wrap; gap:16px; align-items:center;">
+                  <div class="math-col-board" style="padding:12px 18px; min-width:210px; background:#f0f7ff; border-color:#93c5fd;">
+                    <div style="font-size:1.0rem; font-weight:800; color:#0369a1; margin-bottom:6px;">Partitioning &pound;28.50 &times; 11:</div>
+                    <div style="font-size:1.05rem; font-weight:800; color:#0f172a; line-height:1.7;">
+                      <div>10 &times; &pound;28.50 = &pound;285.00</div>
+                      <div>1 &times; &pound;28.50 = &pound;28.50</div>
+                      <div style="border-top:1.5px solid #0f172a; margin-top:4px; padding-top:4px; color:#15803d; font-size:1.2rem;">
+                        Total = &pound;313.50
+                      </div>
+                    </div>
+                  </div>
+                  <div style="flex:1; min-width:180px;">
+                    <div style="font-weight:800; color:#15803d; font-size:1.15rem; margin-bottom:4px;">
+                      Total Cost = &pound;313.50
+                    </div>
+                    <p style="font-size:0.92rem; color:#475569; margin:0; line-height:1.5;">
+                      Accurate total with currency symbol and 2 decimal places.
+                    </p>
+                  </div>
+                </div>
+              </div>
+              <div class="model-step-col-criteria">
+                <span class="criteria-badge-teal" style="font-size:0.9rem; padding:8px 12px;">
+                  <i class="fa-solid fa-award"></i> <strong>[A1] Accuracy Mark:</strong><br>Accurate final cost of &pound;313.50
+                </span>
+              </div>
+            </div>
+            </div>
+
+            <div class="model-final-answer-callout">
+              <div class="model-final-text">
+                <i class="fa-solid fa-award"></i> Final Exam Answer: £313.50 (11 Boxes)
+              </div>
+              <span style="font-size:0.9rem; opacity:0.95;">Full 4/4 Marks Achieved</span>
+            </div>
+
+            <!-- Examiner Guidance Box with Sonya Avatar -->
+            <div class="tutor-pro-callout" style="margin-top:20px;">
+              <img src="assets/img/avatars/sonya.png" alt="Sonya Specialist Maths Tutor" class="tutor-avatar-img">
+              <div class="tutor-speech-bubble">
+                <div class="tutor-speech-title"><i class="fa-solid fa-lightbulb"></i> Sonya's Visual Quick-Check: Never Leave Partial Packs or Tins!</div>
+                <p class="tutor-speech-text">
+                  "In Functional Skills, examiners love testing real-life purchasing logic. Whenever a question asks for tins of paint, rolls of carpet, packs of turf, or boxes of tiles, standard math rounding rules DO NOT apply! <strong>10.1 or 10.2 always rounds UP to 11</strong>, because buying 10 means the job is unfinished. Always state both the raw decimal and your rounded whole number."
+                </p>
+              </div>
+            </div>
+          </div>
+
+          <!-- MODEL 2: TRAPEZIUM CAR PARK TARMAC -->
+        
+    </section>
+
+        <!-- ============================================== -->
+        <!-- 5. EXAMINER TRAPS & PITFALLS -->
+        <!-- ============================================== -->
+        <section id="examiner-traps" class="revision-section">
+          <div class="section-header-row">
+            <h2 class="section-title"><i class="fa-solid fa-triangle-exclamation"></i> Examiner Traps to Avoid</h2>
+          </div>
+          <p class="section-lead-text">
+            Official examiner reports from Pearson Edexcel highlight the four most frequent reasons candidates drop marks on area questions.
+          </p>
+
+          <!-- Trap 1 -->
+          <div class="trap-card-coral">
+            <div class="trap-card-coral-header">
+              <i class="fa-solid fa-circle-xmark"></i>
+              <span>Trap 1: Forgetting to Divide by 2 on Triangles</span>
+            </div>
+            <p>
+              Candidates calculate <em>Base &times; Height</em> and immediately write that down as their answer. That gives the area of a rectangle, not a triangle!
+            </p>
+            <div class="trap-solution-badge">
+              <i class="fa-solid fa-check" style="color:#059669;"></i> <strong>Remedy:</strong> Always double check: did I divide by 2? Write &ldquo;&divide; 2&rdquo; in your working immediately.
+            </div>
+          </div>
+
+          <!-- Trap 2 -->
+          <div class="trap-card-coral">
+            <div class="trap-card-coral-header">
+              <i class="fa-solid fa-circle-xmark"></i>
+              <span>Trap 2: Rounding DOWN or Keeping Decimals for Packs/Tins</span>
+            </div>
+            <p>
+              When a question asks for tins of paint or packs of tiles, writing <em>&ldquo;4.3 tins&rdquo;</em> or rounding down to 4 means the job cannot be finished. In the real world, you cannot purchase 0.3 of a tin!
+            </p>
+            <div class="trap-solution-badge">
+              <i class="fa-solid fa-check" style="color:#059669;"></i> <strong>Remedy:</strong> Practical questions require whole units. Always round UP to the nearest whole integer.
+            </div>
+          </div>
+
+          <!-- Trap 3 -->
+          <div class="trap-card-coral">
+            <div class="trap-card-coral-header">
+              <i class="fa-solid fa-circle-xmark"></i>
+              <span>Trap 3: Mixing Centimetres and Metres</span>
+            </div>
+            <p>
+              Length given as 2.4 m and width as 75 cm. Multiplying 2.4 &times; 75 gives 180 m&sup2;, which is completely incorrect!
+            </p>
+            <div class="trap-solution-badge">
+              <i class="fa-solid fa-check" style="color:#059669;"></i> <strong>Remedy:</strong> Convert first: 75 cm &divide; 100 = 0.75 m. Then multiply: 2.4 &times; 0.75 = 1.8 m&sup2;.
+            </div>
+          </div>
+
+          <!-- Trap 4 -->
+          <div class="trap-card-coral">
+            <div class="trap-card-coral-header">
+              <i class="fa-solid fa-circle-xmark"></i>
+              <span>Trap 4: Using Full Dimensions on Split Compound Shapes</span>
+            </div>
+            <p>
+              When splitting an L-shape, candidates frequently use the overall total base for both rectangles, accidentally counting sections twice!
+            </p>
+            <div class="trap-solution-badge">
+              <i class="fa-solid fa-check" style="color:#059669;"></i> <strong>Remedy:</strong> Label each section Block A and Block B. Clearly write the length and width of each block separately.
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================================== -->
+        <!-- 6. INTERACTIVE EXAM PRACTICE TASKS -->
+        <!-- ============================================== -->
+        <section id="practice-questions" class="revision-section">
+          <div class="section-header-row">
+            <h2 class="section-title"><i class="fa-solid fa-pencil"></i> Interactive Exam Practice Tasks</h2>
+            <span style="font-size:1.0rem; font-weight:700; color:var(--accent);"><i class="fa-solid fa-clock"></i> Self-Paced Practice</span>
+          </div>
+          <p class="section-lead-text">
+            Attempt these realistic Pearson Edexcel style exam questions. Type your working in the scratchpad, then reveal the model mark scheme to evaluate your marks.
+          </p>
+
+          <!-- PRACTICE QUESTION 1 -->
+          <div class="practice-q-card">
+            <div class="practice-q-header">
+              <span class="practice-q-title"><span class="mfs-topic-prefix">Practice Task 1:</span> Triangle Roof Gable</span>
+              <span class="practice-marks-pill"><i class="fa-solid fa-award"></i> [2 Marks]</span>
+            </div>
+            <div class="practice-q-stem">
+              <p>A builder needs to cover a triangular roof gable with timber cladding. The gable has a horizontal base of <strong>7.2 m</strong> and a perpendicular height of <strong>2.8 m</strong>.</p>
+              <p>Calculate the total area of cladding required.</p>
+            </div>
+            <div class="working-scratchpad-area">
+              <label class="working-scratchpad-label" for="scratchpad1"><i class="fa-solid fa-calculator"></i> Your Working Scratchpad (Auto-saved):</label>
+              <textarea id="scratchpad1" class="working-scratchpad-input" placeholder="Type your step-by-step working here (e.g. 7.2 * 2.8 / 2 = ...)"></textarea>
+            </div>
+            <div class="practice-q-toolbar">
+              <button type="button" class="btn-reveal-solution" onclick="toggleSolutionDrawer('solDrawer1')">
+                <i class="fa-solid fa-eye"></i> Reveal Step-by-Step Solution &amp; Mark Scheme
+              </button>
+            </div>
+            <div id="solDrawer1" class="solution-drawer">
+              <div class="solution-drawer-title">
+                <div style="display:flex; align-items:center; gap:8px;"><i class="fa-solid fa-circle-check"></i> Official Tutor Step-by-Step Mark Scheme</div>
+                <span class="solution-marks-badge">2 / 2 Marks Awarded</span>
+              </div>
+              <div class="solution-steps-list">
+                <div class="solution-step-item">
+                  <div class="solution-step-header">
+                    <span class="solution-step-tag">Step 1 (Formula &amp; Method)</span>
+                    <span class="solution-step-mark">M1 Method Mark</span>
+                  </div>
+                  <div class="solution-step-math">Area = (Base &times; Height) &divide; 2 = (7.2 &times; 2.8) &divide; 2</div>
+                  <div class="solution-step-content">Substitute the base (7.2 m) and perpendicular height (2.8 m) into the standard triangle area formula.</div>
+                </div>
+                <div class="solution-step-item">
+                  <div class="solution-step-header">
+                    <span class="solution-step-tag">Step 2 (Calculate Final Area)</span>
+                    <span class="solution-step-mark">A1 Accuracy Mark</span>
+                  </div>
+                  <div class="solution-step-math">20.16 &divide; 2 = 10.08 m&sup2;</div>
+                  <div class="solution-step-content">Divide the product by 2. Ensure units are explicitly given as square metres (m&sup2;).</div>
+                </div>
+              </div>
+              <div class="solution-final-answer-box">
+                <div class="solution-final-label"><i class="fa-solid fa-award"></i> Correct Final Answer:</div>
+                <div class="solution-final-value">10.08 m&sup2;</div>
+              </div>
+              <div class="solution-tutor-tip">
+                <i class="fa-solid fa-lightbulb"></i>
+                <span><strong>Examiner Marking Tip:</strong> The most common lost mark on triangle area is forgetting to divide by 2! Always write out the formula clearly to guarantee method marks even if a minor arithmetic slip occurs.</span>
+              </div>
+            </div>
+            <div class="practice-q-footer">
+              <span class="mfs-pill-l1">FS Level 1</span>
+              <span class="mfs-pill-l2">FS Level 2</span>
+              <span class="mfs-pill-board">Edexcel</span>
+              <span class="mfs-pill-board">City &amp; Guilds</span>
+              <span class="mfs-pill-board">NCFE</span>
+              <span class="mfs-pill-board">Open Awards</span>
+              <span class="mfs-pill-board">Highfield</span>
+            </div>
+          </div>
+
+          <!-- PRACTICE QUESTION 2 -->
+          <div class="practice-q-card">
+            <div class="practice-q-header">
+              <span class="practice-q-title"><span class="mfs-topic-prefix">Practice Task 2:</span> Compound L-Shaped Office Suite</span>
+              <span class="practice-marks-pill"><i class="fa-solid fa-award"></i> [4 Marks]</span>
+            </div>
+            <div class="practice-q-stem">
+              <p>An office manager wants to carpet an L-shaped meeting room. The outer dimensions are: total length <strong>9 m</strong>, total width <strong>8 m</strong>, with an indent reducing the width to <strong>5 m</strong> over a <strong>4 m</strong> stretch.</p>
+              <p>Carpet tiles cost <strong>£16.50 per m&sup2;</strong>. Calculate the total cost to carpet the room.</p>
+            </div>
+            <div class="working-scratchpad-area">
+              <label class="working-scratchpad-label" for="scratchpad2"><i class="fa-solid fa-calculator"></i> Your Working Scratchpad (Auto-saved):</label>
+              <textarea id="scratchpad2" class="working-scratchpad-input" placeholder="Type your step-by-step working here..."></textarea>
+            </div>
+            <div class="practice-q-toolbar">
+              <button type="button" class="btn-reveal-solution" onclick="toggleSolutionDrawer('solDrawer2')">
+                <i class="fa-solid fa-eye"></i> Reveal Step-by-Step Solution &amp; Mark Scheme
+              </button>
+            </div>
+            <div id="solDrawer2" class="solution-drawer">
+              <div class="solution-drawer-title">
+                <div style="display:flex; align-items:center; gap:8px;"><i class="fa-solid fa-circle-check"></i> Official Tutor Step-by-Step Mark Scheme</div>
+                <span class="solution-marks-badge">4 / 4 Marks Awarded</span>
+              </div>
+              <div class="solution-steps-list">
+                <div class="solution-step-item">
+                  <div class="solution-step-header">
+                    <span class="solution-step-tag">Step 1 (Split Compound Shape)</span>
+                    <span class="solution-step-mark">M1 Method Mark</span>
+                  </div>
+                  <div class="solution-step-math">Rectangle A = 9 m &times; 5 m = 45 m&sup2;</div>
+                  <div class="solution-step-content">Split the compound floor plan into two simple non-overlapping rectangles. Rectangle A measures 9 m by 5 m.</div>
+                </div>
+                <div class="solution-step-item">
+                  <div class="solution-step-header">
+                    <span class="solution-step-tag">Step 2 (Second Rectangle Area)</span>
+                    <span class="solution-step-mark">M1 Method Mark</span>
+                  </div>
+                  <div class="solution-step-math">Rectangle B = (8 &minus; 5) m &times; 4 m = 3 m &times; 4 m = 12 m&sup2;</div>
+                  <div class="solution-step-content">Calculate the remaining width: 8 &minus; 5 = 3 m. Multiply by length 4 m.</div>
+                </div>
+                <div class="solution-step-item">
+                  <div class="solution-step-header">
+                    <span class="solution-step-tag">Step 3 (Calculate Total Floor Area)</span>
+                    <span class="solution-step-mark">M1 Method Mark</span>
+                  </div>
+                  <div class="solution-step-math">Total Area = 45 m&sup2; + 12 m&sup2; = 57 m&sup2;</div>
+                  <div class="solution-step-content">Add the two areas together (or subtract the cutout: 9 &times; 8 &minus; 5 &times; 3 = 72 &minus; 15 = 57 m&sup2;).</div>
+                </div>
+                <div class="solution-step-item">
+                  <div class="solution-step-header">
+                    <span class="solution-step-tag">Step 4 (Calculate Total Flooring Cost)</span>
+                    <span class="solution-step-mark">A1 Accuracy Mark</span>
+                  </div>
+                  <div class="solution-step-math">Cost = 57 m&sup2; &times; £16.50 = £940.50</div>
+                  <div class="solution-step-content">Multiply total floor area by the rate per square metre. State currency symbol (£) and two decimal places for pence.</div>
+                </div>
+              </div>
+              <div class="solution-final-answer-box">
+                <div class="solution-final-label"><i class="fa-solid fa-award"></i> Correct Final Answer:</div>
+                <div class="solution-final-value">£940.50</div>
+              </div>
+              <div class="solution-tutor-tip">
+                <i class="fa-solid fa-lightbulb"></i>
+                <span><strong>Examiner Marking Tip:</strong> In money answers, always include two decimal places for pence (e.g. £940.50, never £940.5). Missing the second zero will cost an accuracy mark in Functional Skills exams.</span>
+              </div>
+            </div>
+            <div class="practice-q-footer">
+              <span class="mfs-pill-l1">FS Level 1</span>
+              <span class="mfs-pill-l2">FS Level 2</span>
+              <span class="mfs-pill-board">Edexcel</span>
+              <span class="mfs-pill-board">City &amp; Guilds</span>
+              <span class="mfs-pill-board">NCFE</span>
+              <span class="mfs-pill-board">Open Awards</span>
+              <span class="mfs-pill-board">Highfield</span>
+            </div>
+          </div>
+
+          <!-- PRACTICE QUESTION 3 -->
+          <div class="practice-q-card">
+            <div class="practice-q-header">
+              <span class="practice-q-title"><span class="mfs-topic-prefix">Practice Task 3:</span> Compound Reception Lobby</span>
+              <span class="practice-marks-pill"><i class="fa-solid fa-award"></i> [3 Marks]</span>
+            </div>
+            <div class="practice-q-stem">
+              <p>A facilities coordinator needs to carpet an L-shaped reception lobby with dimensions: main section <strong>14.0 m &times; 3.5 m</strong>, connected to a side entrance bay of <strong>9.0 m &times; 5.5 m</strong>.</p>
+              <p>Calculate the total floor area requiring carpet.</p>
+            </div>
+            <div class="working-scratchpad-area">
+              <label class="working-scratchpad-label" for="scratchpad3"><i class="fa-solid fa-calculator"></i> Your Working Scratchpad (Auto-saved):</label>
+              <textarea id="scratchpad3" class="working-scratchpad-input" placeholder="Type your step-by-step working here..."></textarea>
+            </div>
+            <div class="practice-q-toolbar">
+              <button type="button" class="btn-reveal-solution" onclick="toggleSolutionDrawer('solDrawer3')">
+                <i class="fa-solid fa-eye"></i> Reveal Step-by-Step Solution &amp; Mark Scheme
+              </button>
+            </div>
+            <div id="solDrawer3" class="solution-drawer">
+              <div class="solution-drawer-title">
+                <div style="display:flex; align-items:center; gap:8px;"><i class="fa-solid fa-circle-check"></i> Official Tutor Step-by-Step Mark Scheme</div>
+                <span class="solution-marks-badge">3 / 3 Marks Awarded</span>
+              </div>
+              <div class="solution-steps-list">
+                <div class="solution-step-item">
+                  <div class="solution-step-header">
+                    <span class="solution-step-tag">Step 1 (Main Section Area)</span>
+                    <span class="solution-step-mark">M1 Method Mark</span>
+                  </div>
+                  <div class="solution-step-math">Rectangle A = 14.0 m &times; 3.5 m = 49.0 m&sup2;</div>
+                  <div class="solution-step-content">Calculate the area of the first rectangular section.</div>
+                </div>
+                <div class="solution-step-item">
+                  <div class="solution-step-header">
+                    <span class="solution-step-tag">Step 2 (Side Bay Area)</span>
+                    <span class="solution-step-mark">P1 Process Mark</span>
+                  </div>
+                  <div class="solution-step-math">Rectangle B = 9.0 m &times; 5.5 m = 49.5 m&sup2;</div>
+                  <div class="solution-step-content">Calculate the area of the secondary entrance bay.</div>
+                </div>
+                <div class="solution-step-item">
+                  <div class="solution-step-header">
+                    <span class="solution-step-tag">Step 3 (Combine Total Floor Area)</span>
+                    <span class="solution-step-mark">A1 Accuracy Mark</span>
+                  </div>
+                  <div class="solution-step-math">Total Area = 49.0 m&sup2; + 49.5 m&sup2; = 98.5 m&sup2;</div>
+                  <div class="solution-step-content">Sum both non-overlapping rectangular areas for the full lobby floor.</div>
+                </div>
+              </div>
+              <div class="solution-final-answer-box">
+                <div class="solution-final-label"><i class="fa-solid fa-award"></i> Correct Final Answer:</div>
+                <div class="solution-final-value">98.5 m&sup2;</div>
+              </div>
+              <div class="solution-tutor-tip">
+                <i class="fa-solid fa-lightbulb"></i>
+                <span><strong>Examiner Marking Tip:</strong> Reverse Sanity Check: If treating the area as a bounding box of 14.0 &times; 9.0 = 126 m&sup2;, the cutout void is 5.0 &times; 5.5 = 27.5 m&sup2;. 126 &minus; 27.5 = 98.5 m&sup2;.</span>
+              </div>
+            </div>
+            <div class="practice-q-footer">
+              <span class="mfs-pill-l1">FS Level 1</span>
+              <span class="mfs-pill-l2">FS Level 2</span>
+              <span class="mfs-pill-board">Edexcel</span>
+              <span class="mfs-pill-board">City &amp; Guilds</span>
+              <span class="mfs-pill-board">NCFE</span>
+              <span class="mfs-pill-board">Open Awards</span>
+              <span class="mfs-pill-board">Highfield</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============================================== -->
+        <!-- 7. CURRICULUM PROGRESSION -->
+        <!-- ============================================== -->
+                <!-- DOWNLOADS -->
+                <!-- DOWNLOADS -->
+                <!-- DOWNLOADS -->
+                <!-- DOWNLOADS -->
+        <section id="downloads" class="revision-section">
+          <div class="section-header-row">
+            <h2 class="section-title"><i class="fa-regular fa-file-pdf"></i> Free Revision Worksheets &amp; Exam Papers</h2>
+          </div>
+
+          <div class="download-tiles-grid">
+            <!-- STYLE 1: FLUENCY DRILLS WORKOUT (COMBINED) -->
+            <div class="download-combo-card">
+              <div class="download-combo-header">
+                <div class="download-tile-icon icon-workout"><i class="fa-solid fa-repeat"></i></div>
+                <div class="download-combo-info">
+                  <div class="tile-badge-wrap"><span class="badge-tile-type">Style 1: Fluency Drills</span></div>
+                  <strong class="download-tile-title">Area Level 1 Practice Drills</strong>
+                  <span class="download-tile-desc">25+ quick calculation drills + real-life maths problems</span>
+                </div>
+              </div>
+              <div class="download-combo-actions">
+                <a href="worksheets/area-level-1-workout.html" target="_blank" class="download-combo-btn btn-qp">
+                  <i class="fa-regular fa-file-pdf"></i> Question Paper
+                </a>
+                <a href="worksheets/area-level-1-workout-answers.html" target="_blank" class="download-combo-btn btn-ans">
+                  <i class="fa-solid fa-check-double"></i> Answer Key
+                </a>
+              </div>
+            </div>
+
+            <!-- STYLE 2: EXAM PRACTICE QUESTIONS (COMBINED) -->
+            <div class="download-combo-card">
+              <div class="download-combo-header">
+                <div class="download-tile-icon icon-pdf"><i class="fa-regular fa-file-pdf"></i></div>
+                <div class="download-combo-info">
+                  <div class="tile-badge-wrap"><span class="badge-tile-type exam">Style 2: Practice Questions</span></div>
+                  <strong class="download-tile-title">Area Level 1 Practice Questions</strong>
+                  <span class="download-tile-desc">Authentic Pearson Edexcel exam questions with [M1][A1] mark scheme</span>
+                </div>
+              </div>
+              <div class="download-combo-actions">
+                <a href="worksheets/area-level-1-worksheet.html" target="_blank" class="download-combo-btn btn-qp">
+                  <i class="fa-regular fa-file-pdf"></i> Question Paper
+                </a>
+                <a href="worksheets/area-level-1-answers.html" target="_blank" class="download-combo-btn btn-ans">
+                  <i class="fa-solid fa-award"></i> Mark Scheme
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section id="curriculum-links" class="progression-banner">
+          <div class="progression-text-area">
+            <h3 class="progression-title">Ready for Your Next Revision Step?</h3>
+            <p style="color:#cbd5e1; margin:0; line-height:1.6;">
+              Solidify your geometric problem-solving by mastering perimeter and 3D volume next.
+            </p>
+          </div>
+          <div class="progression-links-group">
+            <a href="functional-skills-perimeter.html" class="btn-progression-nav">
+              <i class="fa-solid fa-vector-square"></i> Next: Perimeter Guide
+            </a>
+            <a href="functional-skills-volume.html" class="btn-progression-nav">
+              <i class="fa-solid fa-cube"></i> Volume &amp; 3D Shapes
+            </a>
+            <a href="functional-skills-maths-level-1.html" class="btn-progression-nav">
+              <i class="fa-solid fa-graduation-cap"></i> Maths Index
+            </a>
+          </div>
+        </section>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- ============================================== -->
+  <!-- FOOTER -->
+  <!-- ============================================== -->  <!-- FOOTER -->
+  <footer class="mfs-footer" id="site-footer">
+    <div class="mfs-container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="mfs-brand" style="margin-bottom:16px;">
+            <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="mfs-brand-text">
+              <div class="mfs-brand-title" style="color:#ffffff;">MASTER<span>FUNCTIONALSKILLS</span></div>
+              <div class="mfs-brand-subtitle" style="color:#94a3b8;">Delivering Skills • Achieving Goals</div>
+            </div>
+          </div>
+          <p style="font-size:1.0rem; line-height:1.6; margin-bottom:16px;">
+            The UK's dedicated Functional Skills revision specialist. Providing realistic mock exams, step-by-step revision flashcards, diagnostic assessments, and 1-to-1 specialist tuition for Pearson Edexcel, City &amp; Guilds, and all major exam boards.
+          </p>
+          <div style="font-size:0.95rem; color:#cbd5e1;">
+            <p><a href="https://wa.me/447564525425" target="_blank" rel="noopener" style="color:#cbd5e1; text-decoration:none;"><i class="fa-brands fa-whatsapp" style="color:var(--accent); margin-right:8px;"></i> WhatsApp: +44 (0)7564 525425</a></p>
+            <p style="margin-top:6px;"><a href="contact-us.html" style="color:#cbd5e1; text-decoration:none;"><i class="fa-solid fa-envelope" style="color:var(--accent); margin-right:8px;"></i> Contact Tutor Team</a></p>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Maths Revision</h4>
+          <ul class="footer-links">
+            <li><a href="functional-skills-maths-level-1.html">Maths Level 2 Revision</a></li>
+            <li><a href="functional-skills-maths-level-1.html">Maths Level 1 Revision</a></li>
+            <li><a href="entry-level-3-maths.html">Entry Level 3 Maths</a></li>
+            <li><a href="pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="functional-skills-past-papers.html">Free Maths Past Papers</a></li>
+            <li><a href="exam-maths-l2.html">Book Level 2 Maths Exam</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>English &amp; Digital</h4>
+          <ul class="footer-links">
+            <li><a href="functional-skills-english-level-2.html">English Level 2 Revision</a></li>
+            <li><a href="functional-skills-english-level-1.html">English Level 1 Revision</a></li>
+            <li><a href="digital-functional-skills.html">Digital Skills Hub (L1 &amp; E3)</a></li>
+            <li><a href="digital-functional-skills-past-papers.html">DFS Past Papers &amp; Data Files</a></li>
+            <li><a href="functional-skills-past-papers.html?format=online#mock-finder">Online Exam Simulator</a></li>
+            <li><a href="exam-english-l2.html">Book Level 2 English Exam</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Student Support &amp; Tools</h4>
+          <ul class="footer-links">
+            <li><a href="tools.html" style="color:var(--accent); font-weight:700;"><i class="fa-solid fa-screwdriver-wrench" style="margin-right:6px;"></i>All Interactive Tools Hub</a></li>
+            <li><a href="pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="diagnostic-test.html">Diagnostic Skill Checker</a></li>
+            <li><a href="functional-skills-nets.html">3D Net Folding Tool</a></li>
+            <li><a href="digital-functional-skills-mock-exam.html">Pearson DFS Simulator</a></li>
+            <li><a href="revision-cards.html">Revision Cards &amp; Flashcards</a></li>
+            <li><a href="shop.html">Revision Books &amp; Study Packs</a></li>
+            <li><a href="tutors.html">1-to-1 Specialist Tuition</a></li>
+            <li><a href="exams.html">Book Official Online Exam</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Master Functional Skills. All rights reserved. Registered in England &amp; Wales. Ofqual Regulated Qualification Standards.</div>
+        <div style="display:flex; gap:16px; flex-wrap:wrap;">
+          <a href="index.html">Home</a>
+          <a href="tools.html" style="color:var(--accent); font-weight:700;">Tools</a>
+          <a href="functional-skills-past-papers.html">Past Papers</a>
+          <a href="revision-cards.html">Revision Cards</a>
+          <a href="shop.html">Study Shop</a>
+          <a href="tutors.html">Tutors</a>
+          <a href="contact-us.html">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Interactive JavaScript Scripts -->
+  <script>
+    // Solution Drawer Toggler
+    function toggleSolutionDrawer(id) {
+      var drawer = document.getElementById(id);
+      if (drawer) {
+        drawer.classList.toggle('open');
+      }
+    }
+
+    // Mobile Table of Contents Toggler
+    function toggleMobileToc() {
+      var sidebar = document.getElementById('sidebarNav');
+      if (sidebar) {
+        if (sidebar.style.display === 'block') {
+          sidebar.style.display = 'none';
+        } else {
+          sidebar.style.display = 'block';
+        }
+      }
+    }
+
+    // Dyslexia Background Tint Cycler
+    var tints = ['cream', 'peach', 'mint', 'sage', 'none'];
+    var currentTintIndex = 0;
+    function cycleTint() {
+      currentTintIndex = (currentTintIndex + 1) % tints.length;
+      var selectedTint = tints[currentTintIndex];
+      document.documentElement.setAttribute('data-tint', selectedTint);
+      localStorage.setItem('mfs_user_tint', selectedTint);
+    }
+
+    // Scroll Spy for Table of Contents
+    window.addEventListener('DOMContentLoaded', function() {
+      var savedTint = localStorage.getItem('mfs_user_tint');
+      if (savedTint) {
+        document.documentElement.setAttribute('data-tint', savedTint);
+      }
+
+      var sections = document.querySelectorAll('section.revision-section');
+      var navLinks = document.querySelectorAll('.sidebar-toc-link');
+
+      window.addEventListener('scroll', function() {
+        var fromTop = window.scrollY + 140;
+        sections.forEach(function(section) {
+          var top = section.offsetTop;
+          var height = section.offsetHeight;
+          var id = section.getAttribute('id');
+          if (fromTop >= top && fromTop < top + height) {
+            navLinks.forEach(function(link) {
+              link.classList.remove('active');
+              if (link.getAttribute('href') === '#' + id) {
+                link.classList.add('active');
+              }
+            });
+          }
+        });
+      });
+    });
+  </script>
+
+  <script src="assets/js/mfs-revision.js"></script>
+</body>
+</html>

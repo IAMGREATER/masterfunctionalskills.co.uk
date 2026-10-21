@@ -1,0 +1,953 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Master Functional Skills — Time, 24-Hour Clocks & Timetables Practice Questions Mark Scheme (Level 1 & Level 2)</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/mfs-worksheets.css">
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 12mm 15mm 12mm 15mm;
+    }
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #0f172a;
+      background: #f0fdf4;
+      margin: 0;
+      padding: 0;
+      font-size: 11pt;
+      line-height: 1.5;
+    }
+    .print-bar {
+      background: #064e3b;
+      color: #f8fafc;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    }
+    .print-bar a {
+      color: #a7f3d0;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .print-bar a:hover {
+      color: #ffffff;
+      text-decoration: underline;
+    }
+    .btn-action-print {
+      background: #10b981;
+      color: #ffffff;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s;
+    }
+    .btn-action-print:hover {
+      background: #059669;
+    }
+    .btn-action-mode,
+    .btn-action-answers,
+    .btn-action-practice,
+    .btn-action-sheet {
+      color: #ffffff !important;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none !important;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-right: 12px;
+      transition: background 0.2s;
+    }
+    .old-btn-action-sheet {
+      background: #2563eb;
+      color: #ffffff;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-right: 12px;
+    }
+    .btn-action-sheet:hover {
+      background: #1d4ed8;
+    }
+    .nav-pill-group {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 8px;
+      padding: 3px;
+      margin-right: 12px;
+      vertical-align: middle;
+    }
+    .nav-pill-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 6px 0;
+      width: 115px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: #cbd5e1;
+      text-decoration: none;
+      transition: all 0.15s ease-in-out;
+      cursor: pointer;
+      white-space: nowrap;
+      user-select: none;
+      border: none;
+      background: transparent;
+      box-sizing: border-box;
+    }
+    .nav-pill-btn:hover:not(.active) {
+      background: rgba(255, 255, 255, 0.18);
+      color: #ffffff;
+      text-decoration: none;
+    }
+    .nav-pill-btn.active {
+      background: #059669;
+      color: #ffffff;
+      cursor: default;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+    }
+
+
+    @media (max-width: 900px) {
+      .print-bar {
+        padding: 10px 14px;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 8px;
+      }
+      .print-bar > div:first-child {
+        text-align: left;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        overflow: hidden;
+        display: block;
+      }
+      .print-bar > div:first-child a {
+        font-size: 0.82rem;
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        text-align: left;
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        overflow: hidden;
+        white-space: nowrap;
+        text-overflow: ellipsis;
+        text-decoration: none;
+        color: #93c5fd;
+        font-weight: 600;
+        gap: 6px;
+      }
+      .print-bar > div:first-child a i {
+        flex-shrink: 0;
+        font-size: 0.85rem;
+        display: inline-block;
+      }
+      .print-bar > div:first-child a span,
+      .print-bar > div:first-child a .back-link-text {
+        flex: 1 1 auto;
+        min-width: 0;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        text-align: left;
+        display: block;
+      }
+      .print-bar > div:last-child {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 6px;
+      }
+      .print-bar > div:last-child > * {
+        margin-right: 0 !important;
+      }
+      .btn-action-mode,
+      .btn-action-practice,
+      .btn-action-answers,
+      .btn-action-sheet,
+      .btn-action-print {
+        padding: 6px 12px;
+        font-size: 0.85rem;
+      }
+      .nav-pill-group {
+        margin-right: 0;
+      }
+      .nav-pill-btn {
+        width: 100px;
+        font-size: 0.82rem;
+        padding: 5px 0;
+      }
+    }
+    @media (max-width: 480px) {
+      .print-bar > div:last-child {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 6px;
+      }
+      .nav-pill-group {
+        grid-column: span 2;
+        width: 100%;
+      }
+      .nav-pill-btn {
+        flex: 1;
+        width: auto;
+      }
+      .btn-action-mode,
+      .btn-action-practice,
+      .btn-action-answers,
+      .btn-action-sheet,
+      .btn-action-print {
+        justify-content: center;
+        width: 100%;
+      }
+    }
+    @media print {
+      .print-bar {
+        display: none !important;
+      }
+      body {
+        background: #ffffff !important;
+      }
+      .page-sheet {
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+      }
+      .ans-card {
+        page-break-inside: avoid;
+      }
+    }
+
+    .page-sheet {
+      max-width: 860px;
+      margin: 24px auto;
+      background: #ffffff;
+      padding: 32px 40px;
+      border-radius: 8px;
+      border: 1px solid #bbf7d0;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    }
+    .sheet-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 2.5px solid #064e3b;
+      padding-bottom: 16px;
+      margin-bottom: 20px;
+    }
+    .brand-title {
+      font-size: 1.45rem;
+      font-weight: 900;
+      color: #064e3b;
+      letter-spacing: -0.5px;
+    }
+    .brand-title span {
+      color: #10b981;
+    }
+    .brand-subtitle {
+      font-size: 0.88rem;
+      color: #047857;
+      margin-top: 2px;
+      font-weight: 600;
+    }
+    .sheet-meta-badge {
+      background: #ecfdf5;
+      border: 1.5px solid #a7f3d0;
+      color: #065f46;
+      padding: 8px 16px;
+      border-radius: 6px;
+      text-align: right;
+    }
+    .sheet-meta-badge .topic-name {
+      font-size: 1.15rem;
+      font-weight: 800;
+      display: block;
+    }
+    .sheet-meta-badge .spec-tag {
+      font-size: 0.78rem;
+      color: #059669;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+
+    .scheme-summary-bar {
+      background: #f0fdf4;
+      border: 1px solid #86efac;
+      border-radius: 6px;
+      padding: 12px 18px;
+      margin-bottom: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.95rem;
+      color: #065f46;
+    }
+
+    .tier-divider {
+      background: #f0fdf4;
+      border-left: 4px solid #059669;
+      padding: 6px 12px;
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: #064e3b;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin: 24px 0 16px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .ans-card {
+      border: 1.5px solid #cbd5e1;
+      border-radius: 8px;
+      padding: 18px 20px;
+      margin-bottom: 24px;
+      background: #ffffff;
+    }
+    .ans-card-head {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid #e2e8f0;
+      padding-bottom: 8px;
+      margin-bottom: 12px;
+    }
+    .ans-q-num {
+      font-weight: 800;
+      color: #064e3b;
+      font-size: 1.05rem;
+    }
+    .ans-marks-badge {
+      font-weight: 700;
+      color: #047857;
+      background: #ecfdf5;
+      padding: 3px 10px;
+      border-radius: 4px;
+      border: 1px solid #a7f3d0;
+      font-size: 0.88rem;
+    }
+    .ans-stem-quote {
+      font-size: 0.94rem;
+      color: #475569;
+      background: #f8fafc;
+      border-left: 3px solid #cbd5e1;
+      padding: 8px 12px;
+      margin-bottom: 14px;
+      font-style: italic;
+    }
+
+    .mark-steps-box {
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      padding: 14px 16px;
+      margin-bottom: 14px;
+    }
+    .step-title {
+      font-weight: 800;
+      color: #0f172a;
+      font-size: 0.9rem;
+      margin-bottom: 8px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .step-row {
+      margin-bottom: 8px;
+      line-height: 1.6;
+      font-size: 0.98rem;
+      color: #1e293b;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 1px dashed #f1f5f9;
+      padding-bottom: 6px;
+    }
+    .step-row:last-child {
+      border-bottom: none;
+      padding-bottom: 0;
+      margin-bottom: 0;
+    }
+    .mark-code {
+      font-weight: 800;
+      color: #2563eb;
+      font-family: monospace;
+      font-size: 0.9rem;
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      padding: 1px 6px;
+      border-radius: 4px;
+      white-space: nowrap;
+      margin-left: 12px;
+    }
+
+    .final-award-box {
+      background: #ecfdf5;
+      border: 1.5px solid #10b981;
+      border-radius: 6px;
+      padding: 10px 16px;
+      margin-bottom: 12px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .award-label {
+      font-weight: 800;
+      color: #065f46;
+      font-size: 0.92rem;
+    }
+    .award-val {
+      font-weight: 900;
+      color: #047857;
+      font-size: 1.15rem;
+      font-family: monospace;
+      text-decoration: underline;
+    }
+
+    .pitfall-box {
+      background: #fffbeb;
+      border-left: 4px solid #f59e0b;
+      border-radius: 4px;
+      padding: 10px 14px;
+      margin-bottom: 10px;
+      font-size: 0.9rem;
+      color: #92400e;
+      line-height: 1.5;
+    }
+    .pitfall-box strong {
+      color: #b45309;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .alt-method-box {
+      background: #eff6ff;
+      border-left: 4px solid #3b82f6;
+      border-radius: 4px;
+      padding: 8px 12px;
+      margin-bottom: 10px;
+      font-size: 0.88rem;
+      color: #1e40af;
+      line-height: 1.5;
+    }
+
+    .reverse-check-box {
+      background: #fdf4ff;
+      border-left: 4px solid #c084fc;
+      border-radius: 4px;
+      padding: 8px 12px;
+      font-size: 0.88rem;
+      color: #6b21a8;
+      line-height: 1.5;
+    }
+
+    .sheet-footer {
+      border-top: 1px solid #e2e8f0;
+      padding-top: 14px;
+      margin-top: 30px;
+      display: flex;
+      justify-content: space-between;
+      color: #94a3b8;
+      font-size: 0.8rem;
+    }
+
+    @media screen and (max-width: 768px), screen and (orientation: portrait) and (max-width: 1024px) {
+      html, body {
+        margin: 0 !important;
+        padding: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow-x: hidden !important;
+        background: #f8fafc !important;
+      }
+      .page-sheet {
+        width: calc(100% - 12px) !important;
+        max-width: calc(100% - 12px) !important;
+        margin: 8px auto !important;
+        padding: 14px 10px !important;
+        border: 1px solid #cbd5e1 !important;
+        border-radius: 8px !important;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.04) !important;
+        box-sizing: border-box !important;
+      }
+      .sheet-head, .sheet-header {
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 8px !important;
+        padding-bottom: 10px !important;
+        margin-bottom: 12px !important;
+        border-bottom-width: 1.5px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      .brand-title {
+        font-size: 1.10rem !important;
+        letter-spacing: -0.3px !important;
+        width: 100% !important;
+      }
+      .brand-subtitle, .sheet-sub {
+        font-size: 0.76rem !important;
+        margin-top: 2px !important;
+        width: 100% !important;
+        line-height: 1.35 !important;
+      }
+      .sheet-meta-badge, .header-badges {
+        width: 100% !important;
+        box-sizing: border-box !important;
+        text-align: left !important;
+        padding: 6px 10px !important;
+        display: flex !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        flex-wrap: wrap !important;
+        gap: 4px !important;
+      }
+      .sheet-meta-badge .topic-name {
+        font-size: 0.90rem !important;
+      }
+      .sheet-meta-badge .spec-tag, .badge-level, .badge-spec {
+        font-size: 0.70rem !important;
+      }
+      .learner-bar {
+        display: flex !important;
+        flex-direction: column !important;
+        gap: 6px !important;
+        padding: 6px 10px !important;
+        margin-bottom: 12px !important;
+        font-size: 0.82rem !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      .learner-bar-item {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        width: 100% !important;
+      }
+      .learner-bar-item strong {
+        font-size: 0.80rem !important;
+        min-width: 55px !important;
+      }
+      .learner-bar-item .dotted-line {
+        flex: 1 !important;
+        width: auto !important;
+        margin-left: 6px !important;
+        height: 10px !important;
+      }
+      .recall-banner {
+        padding: 8px 10px !important;
+        font-size: 0.80rem !important;
+        line-height: 1.38 !important;
+        margin-bottom: 12px !important;
+        gap: 6px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      .tier-header {
+        padding: 5px 8px !important;
+        font-size: 0.80rem !important;
+        margin: 14px 0 10px 0 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      .tier-header .tier-marks {
+        font-size: 0.70rem !important;
+        padding: 2px 5px !important;
+      }
+      .q-card, .apply-card, .answer-card {
+        padding: 10px 8px !important;
+        margin-bottom: 12px !important;
+        border-radius: 6px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      .q-card-head, .apply-card-head, .answer-card-head {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        align-items: center !important;
+        gap: 8px !important;
+        padding-bottom: 6px !important;
+        margin-bottom: 8px !important;
+        border-bottom: 1.5px solid #f1f5f9 !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      .q-title, .apply-title, .answer-title {
+        font-size: 0.88rem !important;
+        font-weight: 700 !important;
+        color: #0b172d !important;
+        flex: 1 1 auto !important;
+        min-width: 0 !important;
+        line-height: 1.3 !important;
+      }
+      .q-marks, .apply-marks, .ans-marks, .tier-marks, .sol-mark {
+        font-size: 0.74rem !important;
+        font-weight: 700 !important;
+        padding: 2px 7px !important;
+        border-radius: 4px !important;
+        white-space: nowrap !important;
+        flex-shrink: 0 !important;
+        display: inline-block !important;
+        line-height: 1.2 !important;
+      }
+      .q-stem, .apply-stem {
+        font-size: 0.84rem !important;
+        line-height: 1.45 !important;
+        margin-bottom: 8px !important;
+        overflow-wrap: break-word !important;
+        word-wrap: break-word !important;
+      }
+      .q-diagram-wrap, .apply-diagram-wrap {
+        padding: 4px !important;
+        margin: 8px 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        box-sizing: border-box !important;
+        overflow-x: auto !important;
+      }
+      .q-diagram-wrap svg, .apply-diagram-wrap svg {
+        max-width: 100% !important;
+        height: auto !important;
+      }
+      .q-working-area {
+        margin: 8px 0 !important;
+      }
+      .working-label {
+        font-size: 0.70rem !important;
+        margin-bottom: 3px !important;
+      }
+      .working-lines-box {
+        padding: 0 4px !important;
+      }
+      .working-line {
+        height: 18px !important;
+      }
+      .q-answer-row, .apply-ans-line {
+        margin-top: 10px !important;
+        padding: 8px 12px !important;
+        gap: 6px 8px !important;
+        font-size: 0.84rem !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
+        align-items: center !important;
+        justify-content: flex-end !important;
+        background: #f8fafc !important;
+        border: 1px solid #e2e8f0 !important;
+        border-radius: 6px !important;
+      }
+      .q-answer-label, .ans-label {
+        font-size: 0.84rem !important;
+        font-weight: 700 !important;
+        color: #0b172d !important;
+        text-align: left !important;
+        margin: 0 !important;
+        margin-right: auto !important;
+        flex: 0 1 auto !important;
+        white-space: nowrap !important;
+      }
+      .q-unit-prefix, .q-unit-suffix, .unit-pfx, .unit-sfx {
+        font-size: 0.88rem !important;
+        font-weight: 700 !important;
+        color: #0b172d !important;
+        white-space: nowrap !important;
+        flex-shrink: 0 !important;
+        margin: 0 1px !important;
+      }
+      .q-answer-input-box {
+        height: 30px !important;
+        background: #ffffff !important;
+        border: 1.5px solid #0b172d !important;
+        border-radius: 5px !important;
+        display: inline-block !important;
+        vertical-align: middle !important;
+        box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.05) !important;
+        box-sizing: border-box !important;
+        flex-shrink: 0 !important;
+      }
+      .q-answer-input-box.xs { width: 48px !important; min-width: 48px !important; }
+      .q-answer-input-box.sm { width: 80px !important; min-width: 80px !important; }
+      .q-answer-input-box.md { width: 110px !important; min-width: 110px !important; max-width: 100% !important; }
+      .q-answer-input-box.lg { width: 160px !important; min-width: 130px !important; max-width: 100% !important; }
+      .ans-write-box {
+        width: 110px !important;
+        border-bottom: 2px solid #0b172d !important;
+        height: 24px !important;
+        flex-shrink: 0 !important;
+      }
+      .q-workspace-badge {
+        font-size: 0.74rem !important;
+        padding: 3px 8px !important;
+        margin-right: auto !important;
+      }
+      .q-choice-pills {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 4px !important;
+        padding: 3px 6px !important;
+        font-size: 0.78rem !important;
+        flex-shrink: 0 !important;
+      }
+      .ans-step-row, .model-answer-step, .answer-step, .ans-step-box {
+        font-size: 0.82rem !important;
+        line-height: 1.4 !important;
+        padding: 4px 6px !important;
+      }
+      .ans-mark-tag {
+        font-size: 0.70rem !important;
+        padding: 1px 4px !important;
+      }
+      .ans-explanation, .ans-tip {
+        font-size: 0.76rem !important;
+        line-height: 1.35 !important;
+      }
+      .sheet-footer {
+        font-size: 0.68rem !important;
+        padding-top: 8px !important;
+        margin-top: 12px !important;
+        flex-direction: column !important;
+        align-items: flex-start !important;
+        gap: 3px !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+      }
+      p, span, div, li, td, th, label, h1, h2, h3, h4, .q-stem, .apply-stem {
+        overflow-wrap: break-word !important;
+        word-wrap: break-word !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="print-bar">
+    <div>
+      <a href="../functional-skills-time-level-1.html"><i class="fa-solid fa-arrow-left"></i> <span class="back-link-text">Back to Time, 24-Hour Clocks & Timetables Level 1 Revision Guide</span></a>
+    </div>
+    <div>
+      <div class="nav-pill-group">
+        <a href="time-level-1-worksheet.html" class="nav-pill-btn"><i class="fa-solid fa-file-lines"></i> Questions</a>
+        <span class="nav-pill-btn active"><i class="fa-solid fa-check-double"></i> Answers</span>
+      </div>
+      <button type="button" class="btn-action-print" onclick="window.print()"><i class="fa-solid fa-print"></i> Print / Save to PDF</button>
+    </div>
+  </div>
+
+  <div class="page-sheet">
+    <div class="sheet-head">
+      <div>
+        <div class="brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
+        <div class="brand-subtitle">Practice Questions Mark Scheme &amp; Model Solutions</div>
+      </div>
+      <div class="sheet-meta-badge">
+        <span class="topic-name">Time, 24-Hour Clocks & Timetables</span>
+        <span class="spec-tag">Pearson Edexcel: L1.16 • L1.17 </span>
+      </div>
+    </div>
+
+    <div class="scheme-summary-bar">
+      <div><strong>Total Marks Available:</strong> 10 Marks (Pass Threshold: ~6/10)</div>
+      <div><strong>Examiner Standard:</strong> Full Method (M) and Process (P) marks awarded even if final arithmetic errs.</div>
+    </div>
+
+
+    <div class="tier-divider">
+      <span>Section A: Core Skills (Warm-Up) Solutions</span>
+      <span>Questions 1 & 2 • 4 Marks</span>
+    </div>
+
+    <div class="ans-card">
+      <div class="ans-card-head">
+        <span class="ans-q-num">Question 1 (Level 1 Elapsed Shift Duration) Model Solution</span>
+        <span class="ans-marks-badge">[2 Marks Total]</span>
+      </div>
+      <div class="ans-stem-quote">
+        A phlebotomist starts her morning clinic at <strong>07:45</strong> and finishes at <strong>13:20</strong>.<br>How long is her clinic session in hours and minutes?
+      </div>
+      <div class="mark-steps-box">
+        <div class="step-title">Step-by-Step Marking Criteria:</div>
+
+        <div class="step-row">
+          <span>1. Bridge across hours: 07:45 to 08:00 = 15 mins; 08:00 to 13:00 = 5 hours; 13:00 to 13:20 = 20 mins</span>
+          <span class="mark-code">[M1]</span>
+        </div>
+        <div class="step-row">
+          <span>2. Sum duration: 5 hours 35 minutes (or 335 minutes)</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+      </div>
+      <div class="final-award-box">
+        <span class="award-label">Award Final Answer Mark:</span>
+        <span class="award-val">5 hours 35 minutes</span>
+      </div>
+      <div class="pitfall-box">
+        <strong>⚠️ Common Mistake to Avoid:</strong>
+        Subtracting 13.20 - 7.45 as base-100 decimals to get 5 hours 75 minutes.
+      </div>
+      <div class="reverse-check-box">
+        <strong>🔄 Quick Check:</strong> 07:45 + 5 hrs = 12:45; 12:45 + 35 mins = 13:20.
+      </div>
+    </div>
+
+    <div class="ans-card">
+      <div class="ans-card-head">
+        <span class="ans-q-num">Question 2 (Level 2 Decimal Hours Conversion) Model Solution</span>
+        <span class="ans-marks-badge">[2 Marks Total]</span>
+      </div>
+      <div class="ans-stem-quote">
+        A flight data recorder logs a total airborne time of <strong>3.65 hours</strong>.<br>Convert <strong>3.65 hours</strong> into hours and minutes.
+      </div>
+      <div class="mark-steps-box">
+        <div class="step-title">Step-by-Step Marking Criteria:</div>
+
+        <div class="step-row">
+          <span>1. Multiply decimal fraction of an hour by 60: 0.65 × 60 = 39 minutes</span>
+          <span class="mark-code">[M1]</span>
+        </div>
+        <div class="step-row">
+          <span>2. Combine with whole hours: 3 hours 39 minutes</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+      </div>
+      <div class="final-award-box">
+        <span class="award-label">Award Final Answer Mark:</span>
+        <span class="award-val">3 hours 39 minutes</span>
+      </div>
+      <div class="pitfall-box">
+        <strong>⚠️ Common Mistake to Avoid:</strong>
+        Writing 3 hours 65 minutes (or 4 hours 5 minutes) by treating .65 as 65 minutes.
+      </div>
+      <div class="reverse-check-box">
+        <strong>🔄 Quick Check:</strong> 39 ÷ 60 = 0.65; 3 + 0.65 = 3.65 hours.
+      </div>
+    </div>
+
+    <div class="tier-divider">
+      <span>Section B: Everyday & Workplace Maths Solutions</span>
+      <span>Questions 3 & 4 • 6 Marks</span>
+    </div>
+
+    <div class="ans-card">
+      <div class="ans-card-head">
+        <span class="ans-q-num">Question 3 (Level 1 Multi-Stage Surgical Theatre Schedule) Model Solution</span>
+        <span class="ans-marks-badge">[3 Marks Total]</span>
+      </div>
+      <div class="ans-stem-quote">
+        An operating theatre starts pre-op preparation at <strong>08:50</strong>.<br>• Pre-op preparation takes <strong>35 minutes</strong>.<br>• The surgical procedure lasts <strong>2 hours 40 minutes</strong>.<br>• Post-op theatre deep-cleaning takes <strong>25 minutes</strong>.<br><br>At what time (in 24-hour clock format) is the theatre ready for the next patient?
+      </div>
+      <div class="mark-steps-box">
+        <div class="step-title">Step-by-Step Marking Criteria:</div>
+
+        <div class="step-row">
+          <span>1. Sum total minutes: 35 mins + 160 mins (2h 40m) + 25 mins = 220 minutes</span>
+          <span class="mark-code">[M1]</span>
+        </div>
+        <div class="step-row">
+          <span>2. Convert 220 minutes to hours and minutes: 220 ÷ 60 = 3 hours 40 minutes</span>
+          <span class="mark-code">[P1]</span>
+        </div>
+        <div class="step-row">
+          <span>3. Add to 08:50 start time: 08:50 + 3 hrs = 11:50; 11:50 + 40 mins = 12:30</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+      </div>
+      <div class="final-award-box">
+        <span class="award-label">Award Final Answer Mark:</span>
+        <span class="award-val">12:30</span>
+      </div>
+      <div class="pitfall-box">
+        <strong>⚠️ Common Mistake to Avoid:</strong>
+        Adding 50 mins + 40 mins = 90 mins and writing 11:90 instead of carrying 60 minutes into 12:30.
+      </div>
+      <div class="reverse-check-box">
+        <strong>🔄 Quick Check:</strong> 12:30 - 3 hrs 40 mins = 08:50.
+      </div>
+    </div>
+
+    <div class="ans-card">
+      <div class="ans-card-head">
+        <span class="ans-q-num">Question 4 (Level 2 Overnight Shift Pay Calculation) Model Solution</span>
+        <span class="ans-marks-badge">[3 Marks Total]</span>
+      </div>
+      <div class="ans-stem-quote">
+        A night security officer works from <strong>20:45 on Friday</strong> until <strong>06:15 on Saturday</strong>.<br>Each shift includes an <strong>unpaid break of 30 minutes</strong>.<br>The officer is paid <strong>£13.60 per paid hour</strong>.<br><br>Calculate the officer's gross pay for this night shift.
+      </div>
+      <div class="mark-steps-box">
+        <div class="step-title">Step-by-Step Marking Criteria:</div>
+
+        <div class="step-row">
+          <span>1. Total shift duration across midnight: 20:45 to 24:00 = 3 hrs 15 mins; 00:00 to 06:15 = 6 hrs 15 mins → Total = 9 hrs 30 mins</span>
+          <span class="mark-code">[M1]</span>
+        </div>
+        <div class="step-row">
+          <span>2. Deduct 30-minute unpaid break: 9 hrs 30 mins - 30 mins = 9.0 paid hours</span>
+          <span class="mark-code">[P1]</span>
+        </div>
+        <div class="step-row">
+          <span>3. Multiply paid hours by hourly rate: 9 × £13.60 = £122.40</span>
+          <span class="mark-code">[A1]</span>
+        </div>
+      </div>
+      <div class="final-award-box">
+        <span class="award-label">Award Final Answer Mark:</span>
+        <span class="award-val">£122.40</span>
+      </div>
+      <div class="pitfall-box">
+        <strong>⚠️ Common Mistake to Avoid:</strong>
+        Forgetting to deduct the 30-minute unpaid break (paying for 9.5 hours = £129.20).
+      </div>
+      <div class="reverse-check-box">
+        <strong>🔄 Quick Check:</strong> £122.40 ÷ £13.60 = 9 paid hours + 0.5 hr break = 9.5 hrs (20:45 to 06:15).
+      </div>
+    </div>
+
+    <div class="sheet-footer">
+      <div>Master Functional Skills • Pearson Edexcel Official Marking Guide • 100% Original Content</div>
+      <div>Page 1 of 1 • Rev 2026.1</div>
+    </div>
+  </div>
+</body>
+</html>

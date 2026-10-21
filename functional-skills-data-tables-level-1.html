@@ -1,0 +1,871 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-theme="sapphire" data-tint="cream">
+<head>
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Data Tables & Two-Way Tables Level 1: Key Rules, Models &amp; Exam Practice | Master Functional Skills</title>
+  <meta name="description" content="Dyslexia-friendly Data Tables & Two-Way Tables revision guide for Functional Skills Mathematics Level 1. Clear spacing, structured cards, large numbers, worked models, and interactive practice.">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192x192.png">
+  <link rel="apple-touch-icon" href="assets/img/favicon-192x192.png">
+  <link rel="shortcut icon" href="favicon.ico">
+    <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0b172d">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="MFS Skills">
+  <link rel="apple-touch-icon" href="assets/img/favicon-192x192.png">
+  <script src="assets/js/mfs-pwa.js" defer></script>
+  <link rel="stylesheet" href="assets/css/mfs-theme.css?v=20261017j">
+  <link rel="stylesheet" href="assets/css/mfs-mobile.css?v=20261018b">
+  <link rel="stylesheet" href="assets/css/mfs-revision.css?v=20261018b">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <!-- TOP TRUST BAR WITH ACCESSIBILITY & CONTACT -->
+  <div class="mfs-top-bar">
+    <div class="mfs-container mfs-top-bar-inner">
+      <div class="top-trust-items">
+        <span class="top-trust-item"><i class="fa-solid fa-building-columns"></i> Pearson Edexcel &amp; City &amp; Guilds Aligned</span>
+      </div>
+      <div class="top-contacts">
+        <div class="mfs-access-bar">
+          <!-- DYSLEXIA BACKGROUND TINT PICKER -->
+          <div class="mfs-tint-dropdown-wrap">
+            <button type="button" id="tintToggle" class="btn-tint-toggle" onclick="toggleTintMenu(event)" title="Change dyslexia background tint">
+              <span class="tint-swatch-indicator" id="tintCurrentSwatch"></span>
+              <span id="tintLabel">Cream Tint</span>
+              <i class="fa-solid fa-chevron-down" style="font-size:0.62rem; opacity:0.75; margin-left:2px;"></i>
+            </button>
+            <div id="tintMenu" class="tint-picker-menu">
+              <div class="tint-picker-title"><i class="fa-solid fa-glasses"></i> Dyslexia Reading Tint</div>
+              <button type="button" class="tint-option-btn active" data-tint="cream" onclick="setSiteTint('cream', event)">
+                <span class="swatch swatch-cream"></span>
+                <span class="tint-name">Cream <small class="tint-badge-def">Default</small></span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="peach" onclick="setSiteTint('peach', event)">
+                <span class="swatch swatch-peach"></span>
+                <span class="tint-name">Soft Peach</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="cool" onclick="setSiteTint('cool', event)">
+                <span class="swatch swatch-cool"></span>
+                <span class="tint-name">Cool Mist</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="sage" onclick="setSiteTint('sage', event)">
+                <span class="swatch swatch-sage"></span>
+                <span class="tint-name">Soft Sage</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <div class="tint-divider"></div>
+              <button type="button" class="tint-option-btn" data-tint="none" onclick="setSiteTint('none', event)">
+                <span class="swatch swatch-none"></span>
+                <span class="tint-name">No Tint (White)</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+            </div>
+          </div>
+          <button id="dyslexiaToggle" class="btn-dyslexia-toggle" onclick="toggleDyslexiaMode()" title="Toggle Dyslexia High-Readability Mode">
+            <i class="fa-solid fa-universal-access"></i> Dyslexia
+          </button>
+          <button id="themeToggle" class="mfs-theme-pill" onclick="toggleTheme()" title="Switch Palette: Sapphire vs Emerald">
+            <i class="fa-solid fa-palette"></i> <span id="themeLabel">Sapphire</span>
+          </button>
+        </div>
+        <a href="contact-us.html" class="top-contact-link"><i class="fa-solid fa-envelope"></i> <strong>Contact Us</strong></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->  <!-- MAIN NAVIGATION -->
+  <header class="mfs-navbar">
+    <div class="revision-page-wrapper mfs-navbar-inner">
+      <a href="index.html" class="mfs-brand">
+        <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div class="mfs-brand-text">
+          <div class="mfs-brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
+          <div class="mfs-brand-subtitle">Delivering Skills • Achieving Goals</div>
+        </div>
+      </a>
+
+      <nav class="mfs-nav-wrapper">
+        <ul class="mfs-nav-menu">
+          <!-- 1. SUBJECTS (VISUAL MEGA-MENU) -->
+          <li class="mfs-nav-item">
+            <a href="revise.html" class="mfs-nav-link">
+              <i class="fa-solid fa-book-open-reader" style="color:#0284c7; margin-right:5px;"></i> Subjects <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-revision-hub">
+              <div class="mfs-revision-grid">
+                <!-- Maths Column -->
+                <div class="mfs-revision-col mfs-revision-col-maths">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-calculator"></i> Maths Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="functional-skills-maths-level-1.html" class="mfs-dropdown-item">Maths Level 2</a>
+                    <a href="functional-skills-maths-level-1.html" class="mfs-dropdown-item">Maths Level 1</a>
+                    <a href="entry-level-3-maths.html" class="mfs-dropdown-item">Entry Level 3 Maths</a>
+                  </div>
+                </div>
+                <!-- English Column -->
+                <div class="mfs-revision-col mfs-revision-col-english">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-pen-nib"></i> English Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="functional-skills-english-level-2.html" class="mfs-dropdown-item">English Level 2</a>
+                    <a href="functional-skills-english-level-1.html" class="mfs-dropdown-item">English Level 1</a>
+                  </div>
+                </div>
+                <!-- Digital Skills Column -->
+                <div class="mfs-revision-col mfs-revision-col-digital">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-laptop-code"></i> Digital Skills</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="digital-functional-skills.html" class="mfs-dropdown-item">Digital Skills Hub</a>
+                    <a href="digital-functional-skills-mock-exam.html" class="mfs-dropdown-item">Pearson Mock Exam</a>
+                    <a href="digital-functional-skills-past-papers.html" class="mfs-dropdown-item">Past Papers &amp; Files</a>
+                  </div>
+                </div>
+              </div>
+              <!-- Course & Subject Selector Cross-link Footer inside dropdown -->
+              <div class="mfs-revision-dropdown-footer" style="margin-top:12px; padding-top:10px; border-top:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center; font-size:0.92rem;">
+                <a href="revise.html" style="font-weight:700; color:var(--accent); text-decoration:none;"><i class="fa-solid fa-layer-group" style="margin-right:4px;"></i> View All Subjects &amp; Levels &rarr;</a>
+                <a href="courses.html" style="font-weight:700; color:#059669; text-decoration:none;"><i class="fa-solid fa-graduation-cap" style="margin-right:4px;"></i> Accredited Online Courses &rarr;</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- 2. ONLINE COURSES -->
+          <li class="mfs-nav-item">
+            <a href="courses.html" class="mfs-nav-link">
+              <i class="fa-solid fa-graduation-cap" style="color:#0284c7; margin-right:5px;"></i> Online Courses
+            </a>
+          </li>
+
+          <!-- 3. PAST PAPERS (DIRECT ACCESS) -->
+          <li class="mfs-nav-item">
+            <a href="functional-skills-past-papers.html" class="mfs-nav-link">
+              <i class="fa-regular fa-file-lines" style="color:#0284c7; margin-right:5px;"></i> Past Papers
+            </a>
+          </li>
+
+          <!-- 4. WORKSHEETS DIRECTORY (CORBETT STYLE DUAL ENGINE) -->
+          <li class="mfs-nav-item">
+            <a href="worksheets.html" class="mfs-nav-link">
+              <i class="fa-solid fa-layer-group" style="color:#0284c7; margin-right:5px;"></i> Worksheets
+            </a>
+          </li>
+
+          <!-- 5. FREE TOOLS (COMPACT DROPDOWN) -->
+          <li class="mfs-nav-item">
+            <a href="tools.html" class="mfs-nav-link">
+              <i class="fa-solid fa-screwdriver-wrench" style="color:#0284c7; margin-right:5px;"></i> Free Tools <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-compact">
+              <a href="tools.html" class="mfs-dropdown-item" style="font-weight:700; color:var(--accent);"><i class="fa-solid fa-layer-group" style="font-size:0.85rem; margin-right:6px;"></i> All Free Tools &amp; Simulators &rarr;</a>
+              <div class="mfs-dropdown-divider" style="margin:4px 0; border-top:1px solid #e2e8f0;"></div>
+              <a href="pass-mark-calculator.html" class="mfs-dropdown-item"><i class="fa-solid fa-calculator" style="color:var(--accent); font-size:0.85rem; margin-right:6px;"></i> Pass Mark Calculator</a>
+              <a href="diagnostic-test.html" class="mfs-dropdown-item"><i class="fa-solid fa-chart-pie" style="color:#059669; font-size:0.85rem; margin-right:6px;"></i> Diagnostic Skill Checker</a>
+              <a href="functional-skills-nets.html" class="mfs-dropdown-item"><i class="fa-solid fa-cube" style="color:#0284c7; font-size:0.85rem; margin-right:6px;"></i> 3D Net Folding Tool</a>
+              <a href="video-solution.html" class="mfs-dropdown-item"><i class="fa-solid fa-circle-play" style="color:#ef4444; font-size:0.85rem; margin-right:6px;"></i> Video Walkthrough Station</a>
+            </div>
+          </li>
+
+          <!-- 6. REVISION CARDS -->
+          <li class="mfs-nav-item">
+            <a href="revision-cards.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-layer-group" style="color:#d97706; margin-right:5px;"></i> Revision Cards
+            </a>
+          </li>
+
+          <!-- 7. SHOP -->
+          <li class="mfs-nav-item">
+            <a href="shop.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-basket-shopping" style="color:#d97706; margin-right:5px;"></i> Shop
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- 8. BOOK EXAM ACTION BUTTON -->
+      <div class="mfs-nav-actions">
+        <a href="exams.html" class="btn-nav-exam">
+          <i class="fa-solid fa-calendar-check"></i> Book Exam
+        </a>
+      </div>
+
+      <!-- MOBILE CONTROLS (TINT + MENU PILL) -->
+      <div class="mfs-mobile-controls" id="mfsMobileControls">
+        <button type="button" class="btn-mobile-tint-toggle" id="mfsMobileTintBtn" title="Change Reading Tint" aria-label="Reading Tint">
+          <i class="fa-solid fa-glasses"></i>
+          <span class="mobile-tint-swatch" id="mfsMobileTintSwatch"></span>
+        </button>
+        <button type="button" class="mfs-menu-pill" id="mfsMobileToggleBtn" title="Open Navigation Menu" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+          <span>Menu</span>
+        </button>
+      </div>
+    </div>
+    <!-- MOBILE NAVIGATION ENGINE -->
+    <script src="assets/js/mfs-mobile.js" defer></script>
+  </header>
+
+  <!-- BREADCRUMBS -->
+  <div class="revision-breadcrumb-bar">
+    <div class="revision-page-wrapper">
+      <div class="revision-breadcrumbs">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a href="revise.html">Revise Hub</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a href="functional-skills-maths-level-1.html">Mathematics Level 1</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span class="current">Data Tables & Two-Way Tables Level 1</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="revision-hero-card">
+    <div class="revision-page-wrapper">
+      <div class="revision-hero-grid">
+        <div class="revision-hero-content">
+          <div class="revision-hero-pill-row">
+            <span class="badge-pill-accent"><i class="fa-solid fa-calculator"></i> MATHEMATICS</span>
+            <span class="badge-pill-gold">LEVEL 1 REVISION</span>
+            <span class="badge-pill-outline">OFQUAL SPECIFICATION STANDARDS</span>
+          </div>
+
+          <h1 class="revision-hero-title">
+            Data Tables & Two-Way Tables Level 1: <span>Formulas, Models &amp; Exam Practice</span>
+          </h1>
+
+          <p class="revision-hero-desc">
+            Extract, cross-reference, and complete missing cells in complex two-way frequency tables, mileage charts, and multi-factor clinical rotas, and extract conditional probabilities.
+          </p>
+
+          <div class="revision-hero-meta-bar">
+            <div class="hero-meta-item">
+              <i class="fa-solid fa-clock"></i> <strong>Est. Study Time:</strong> 25-35 Mins
+            </div>
+            <div class="hero-meta-item">
+              <i class="fa-solid fa-book-open"></i> <strong>Curriculum Standards:</strong> Pearson Edexcel &amp; City &amp; Guilds
+            </div>
+            <div class="hero-meta-item">
+              <i class="fa-solid fa-circle-check"></i> <strong>Interactive Practice Tasks Included</strong>
+            </div>
+
+            <div class="hero-quick-actions">
+              <a href="#downloads" class="btn-hero-action">
+                <i class="fa-regular fa-file-pdf"></i> Free Worksheet &amp; Answers (PDF)
+              </a>
+              <a href="#practice-questions" class="btn-hero-action-secondary">
+                <i class="fa-solid fa-pencil"></i> Start Practice Tasks
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="revision-hero-visual-card">
+          <div class="revision-hero-img-wrap">
+            <img src="assets/img/book_photos/charts_data_screens/tablet_spreadsheet.jpg" alt="Data Tables & Two-Way Tables Workplace Application" loading="lazy" />
+          </div>
+          <div class="revision-hero-caption-bar">
+            <strong><i class="fa-solid fa-shapes"></i> Key Visual Concept</strong>
+            Spreadsheet columns, inventory stock tables, and two-way frequency matrices.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOBILE TABLE OF CONTENTS BAR -->
+  <div class="mobile-toc-bar">
+    <div style="font-weight:700; color:var(--navy-dark); font-size:0.9rem;">
+      <i class="fa-solid fa-list-check" style="color:var(--accent);"></i> Data Tables & Two-Way Tables Blueprint
+    </div>
+    <button type="button" class="btn-mobile-toc" onclick="toggleMobileToc()">
+      <span>Table of Contents</span> <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+
+  <!-- MAIN 2-COLUMN RESPONSIVE LAYOUT -->
+  <main class="revision-page-wrapper">
+    <div class="revision-layout">
+
+      <!-- LEFT COLUMN: STICKY BLUEPRINT TOC -->
+      <aside class="revision-sidebar" id="sidebarNav">
+        <div class="sidebar-toc-title">
+          <span><i class="fa-solid fa-compass-drafting" style="color:var(--accent);"></i> Topic Contents</span>
+          <span style="font-size:0.90rem; color:#64748b; font-weight:700;">9 Sections</span>
+        </div>
+
+        <ul class="sidebar-toc-list" id="tocList">
+          
+          <li>
+            <a href="#specification" class="sidebar-toc-link active">
+              <i class="fa-solid fa-clipboard-check"></i> Specification
+            </a>
+          </li>
+          <li>
+            <a href="#golden-rules" class="sidebar-toc-link">
+              <i class="fa-solid fa-lightbulb"></i> Golden Rules
+            </a>
+          </li>
+          <li>
+            <a href="#skill-1" class="sidebar-toc-link">
+              <i class="fa-solid fa-shapes"></i> 1. Completing a Two-Way Table Step-by-Step
+            </a>
+          </li>
+          <li>
+            <a href="#skill-2" class="sidebar-toc-link">
+              <i class="fa-solid fa-shapes"></i> 2. Extracting Percentages & Fractions from Two-Way Tables
+            </a>
+          </li>
+          <li>
+            <a href="#skill-3" class="sidebar-toc-link">
+              <i class="fa-solid fa-shapes"></i> 3. Triangular Distance / Mileage Charts & Multi-Criteria Tariff Tables
+            </a>
+          </li>
+          <li>
+            <a href="#worked-exam-models" class="sidebar-toc-link">
+              <i class="fa-solid fa-graduation-cap"></i> Exam Models
+            </a>
+          </li>
+          <li>
+            <a href="#examiner-traps" class="sidebar-toc-link">
+              <i class="fa-solid fa-triangle-exclamation"></i> Examiner Traps
+            </a>
+          </li>
+          <li>
+            <a href="#practice-questions" class="sidebar-toc-link">
+              <i class="fa-solid fa-pencil"></i> Exam Practice
+            </a>
+          </li>
+          <li>
+            <a href="#downloads" class="sidebar-toc-link">
+              <i class="fa-solid fa-file-pdf"></i> Downloads (PDF)
+            </a>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- RIGHT COLUMN: MAIN LEARNING CONTENT -->
+      <div class="revision-content">
+        
+            <!-- SUBI ASSESSOR BLUEPRINT WELCOME CARD -->
+        <div style="background: linear-gradient(135deg, #f0fdf4 0%, #e0f2fe 100%); border-left: 5px solid #0284c7; padding: 20px 24px; border-radius: 8px; margin-bottom: 28px; display: flex; align-items: flex-start; gap: 18px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);">
+          <img src="assets/img/avatars/subi.png" alt="Subi &mdash; Lead Assessor and Specialist Tutor" style="width: 68px; height: 68px; border-radius: 50%; border: 3px solid #0284c7; flex-shrink: 0; object-fit: cover;">
+          <div style="flex: 1;">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+              <span style="font-weight: 700; color: #0f172a; font-size: 1.05rem;">Subi &mdash; Lead Assessor &amp; Specialist Maths Tutor</span>
+              <span style="background: #0284c7; color: #fff; font-size:0.92rem; font-weight:800; padding:5px 12px; border-radius:12px; text-transform:uppercase;">Examiner Guidance</span>
+            </div>
+            <p style="margin: 0; color: #334155; font-size: 0.95rem; line-height: 1.6;">
+              Welcome to the <strong>Two-Way Data Tables &amp; Contingency Matrices</strong> blueprint. Two-way tables organise multivariate categorical data into rows and columns. In Pearson Edexcel assessments, you must be able to fill in missing frequency cells by subtracting from marginal totals, and compute conditional percentages with total accuracy.
+            </p>
+          </div>
+        </div>
+
+    <!-- SPECIFICATION -->
+    <section id="specification" class="revision-section">
+      <div class="section-header-row">
+        <h2 class="section-title"><i class="fa-solid fa-clipboard-check"></i> Specification &amp; Learning Outcomes</h2>
+      </div>
+      <div class="skill-card-container">
+        <p>Candidates must demonstrate mastery of the following regulated Functional Skills Mathematics outcomes:</p>
+        <ul style="padding-left:20px; line-height:1.8; color:#334155;">
+          <li><strong>L1.24</strong> – Construct, complete, and interpret two-way frequency tables and complex multi-column workplace schedules.</li>
+        </ul>
+      </div>
+    </section>
+    
+
+    <!-- GOLDEN RULES -->
+    <section id="golden-rules" class="revision-section">
+      <div class="section-header-row">
+        <h2 class="section-title"><i class="fa-solid fa-lightbulb"></i> Golden Rules for Data Tables & Two-Way Tables</h2>
+      </div>
+      
+        <div class="rule-card-amber">
+          <div class="rule-card-amber-header">
+            <i class="fa-solid fa-table-cells"></i>
+            <span>Golden Rule 1: Row Totals and Column Totals Must Cross-Check to the Grand Total</span>
+          </div>
+          <p>In every two-way table, the sum of the row totals MUST equal the sum of the column totals in the bottom-right Grand Total cell. Start with any row or column that has only ONE missing number.</p>
+          <div class="rule-highlight-badge">
+            <strong>Golden Rule / Method:</strong> Sum of Row Totals = Sum of Column Totals = Grand Total
+          </div>
+        </div>
+        
+        <div class="rule-card-amber">
+          <div class="rule-card-amber-header">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <span>Golden Rule 2: Read Conditional Probability Denominators Carefully</span>
+          </div>
+          <p>If asked for the probability from "all staff", divide by the Grand Total. If asked "Given that a nurse works the Night Shift...", divide ONLY by the Night Shift row/column total!</p>
+          <div class="rule-highlight-badge">
+            <strong>Golden Rule / Method:</strong> "Of all..." → Divide by Grand Total • "Of the Night Shift..." → Divide by Subgroup Total
+          </div>
+        </div>
+        
+    </section>
+    
+
+        <!-- SKILL 1: Completing a Two-Way Table Step-by-Step -->
+        <section id="skill-1" class="revision-section">
+          <div class="mfs-topic-card">
+            <div class="mfs-topic-head">
+              <h3 class="mfs-topic-title"><span class="mfs-topic-prefix">Core Skill 1:</span> Completing a Two-Way Table Step-by-Step</h3>
+              <p class="mfs-topic-stem">Finding rows or columns with a single unknown and working outwards.</p>
+            </div>
+            <div class="mfs-topic-body" style="padding:20px 24px;">
+              
+              
+                <div class="table-responsive" style="overflow-x:auto; -webkit-overflow-scrolling:touch; background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:14px; margin:16px 0;">
+                  <table class="table-stack-mobile" style="width:100%; border-collapse:collapse; text-align:center;">
+                    <thead>
+                      <tr style="background:#0284c7; color:#fff;">
+                        <th style="padding:8px; border:1px solid #cbd5e1;">Role \ Shift</th>
+                        <th style="padding:8px; border:1px solid #cbd5e1;">Day Shift</th>
+                        <th style="padding:8px; border:1px solid #cbd5e1;">Night Shift</th>
+                        <th style="padding:8px; border:1px solid #cbd5e1;">Total</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr><td data-label="Role \ Shift" style="padding:6px; border:1px solid #cbd5e1; font-weight:700;">Registered Nurses (RN)</td><td data-label="Day Shift" style="padding:6px; border:1px solid #cbd5e1;">20</td><td data-label="Night Shift" style="padding:6px; border:1px solid #cbd5e1; color:#0284c7; font-weight:700;">15</td><td data-label="Total" style="padding:6px; border:1px solid #cbd5e1; font-weight:700;">35</td></tr>
+                      <tr><td data-label="Role \ Shift" style="padding:6px; border:1px solid #cbd5e1; font-weight:700;">Healthcare Assistants (HCA)</td><td data-label="Day Shift" style="padding:6px; border:1px solid #cbd5e1; color:#0284c7; font-weight:700;">18</td><td data-label="Night Shift" style="padding:6px; border:1px solid #cbd5e1; color:#0284c7; font-weight:700;">7</td><td data-label="Total" style="padding:6px; border:1px solid #cbd5e1; color:#0284c7; font-weight:700;">25</td></tr>
+                      <tr style="background:#e0f2fe; font-weight:800; color:#0369a1;"><td data-label="Role \ Shift" style="padding:6px; border:1px solid #cbd5e1;">Total</td><td data-label="Day Shift" style="padding:6px; border:1px solid #cbd5e1;">38</td><td data-label="Night Shift" style="padding:6px; border:1px solid #cbd5e1;">22</td><td data-label="Total" style="padding:6px; border:1px solid #cbd5e1;">60</td></tr>
+                    </tbody>
+                  </table>
+                </div>
+                
+            </div>
+            <div class="mfs-topic-footer" style="display:flex; gap:8px; flex-wrap:wrap; padding-top:14px; border-top:1px solid #e2e8f0; margin-top:16px;">
+              <span class="mfs-pill-l1">Level 1</span>
+              <span class="mfs-pill-board">Pearson Edexcel</span>
+              <span class="mfs-pill-board">City &amp; Guilds</span>
+              <span class="mfs-pill-board">NCFE</span>
+            </div>
+          </div>
+        </section>
+        
+        <!-- SKILL 2: Extracting Percentages & Fractions from Two-Way Tables -->
+        <section id="skill-2" class="revision-section">
+          <div class="mfs-topic-card">
+            <div class="mfs-topic-head">
+              <h3 class="mfs-topic-title"><span class="mfs-topic-prefix">Core Skill 2:</span> Extracting Percentages & Fractions from Two-Way Tables</h3>
+              <p class="mfs-topic-stem">Selecting the right cell and the right total denominator.</p>
+            </div>
+            <div class="mfs-topic-body" style="padding:20px 24px;">
+              
+              
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:18px; margin:16px 0;">
+                  <ul style="padding-left:20px; line-height:1.8; color:#334155;">
+                    <li><strong>Fraction of ALL staff who are Night RNs:</strong> 15 / 60 = <strong>1/4 (25%)</strong>.</li>
+                    <li><strong>Percentage of RNs who work Nights:</strong> (15 &divide; 35) &times; 100 = <strong>42.9%</strong> (Denominator is 35 RNs, not 60!).</li>
+                  </ul>
+                </div>
+                
+            </div>
+            <div class="mfs-topic-footer" style="display:flex; gap:8px; flex-wrap:wrap; padding-top:14px; border-top:1px solid #e2e8f0; margin-top:16px;">
+              <span class="mfs-pill-l1">Level 1</span>
+              <span class="mfs-pill-board">Pearson Edexcel</span>
+              <span class="mfs-pill-board">City &amp; Guilds</span>
+              <span class="mfs-pill-board">NCFE</span>
+            </div>
+          </div>
+        </section>
+        
+        <!-- SKILL 3: Triangular Distance / Mileage Charts & Multi-Criteria Tariff Tables -->
+        <section id="skill-3" class="revision-section">
+          <div class="mfs-topic-card">
+            <div class="mfs-topic-head">
+              <h3 class="mfs-topic-title"><span class="mfs-topic-prefix">Core Skill 3:</span> Triangular Distance / Mileage Charts & Multi-Criteria Tariff Tables</h3>
+              <p class="mfs-topic-stem">Intersecting row and column headers in depot mileage grids.</p>
+            </div>
+            <div class="mfs-topic-body" style="padding:20px 24px;">
+              
+              
+                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:18px; margin:16px 0;">
+                  <p style="color:#334155; line-height:1.7; margin-top:0;">To read a triangular mileage table between two towns (e.g. Oxford and Bristol):</p>
+                  <ol style="padding-left:22px; line-height:1.8; color:#334155;">
+                    <li>Locate <strong>Oxford</strong> along the horizontal row and <strong>Bristol</strong> along the vertical column.</li>
+                    <li>Follow both lines straight until they meet at the single intersecting cell.</li>
+                    <li>For a multi-stop round trip (Depot &rarr; Town A &rarr; Town B &rarr; Depot), extract all three leg distances and add them together.</li>
+                  </ol>
+                </div>
+                
+            </div>
+            <div class="mfs-topic-footer" style="display:flex; gap:8px; flex-wrap:wrap; padding-top:14px; border-top:1px solid #e2e8f0; margin-top:16px;">
+              <span class="mfs-pill-l1">Level 1</span>
+              <span class="mfs-pill-board">Pearson Edexcel</span>
+              <span class="mfs-pill-board">City &amp; Guilds</span>
+              <span class="mfs-pill-board">NCFE</span>
+            </div>
+          </div>
+        </section>
+        
+
+    <!-- WORKED EXAM MODELS -->
+    <section id="worked-exam-models" class="revision-section">
+      <div class="section-header-row">
+        <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i> Pearson Edexcel Step-by-Step Worked Models</h2>
+      </div>
+      
+        <div class="model-example-card" style="margin-bottom:24px;">
+          <div class="model-card-header">
+            <span class="model-badge"><i class="fa-solid fa-graduation-cap"></i> Benchmark Exam Model 1</span>
+            <span class="model-marks-pill">3 Marks (Pearson Edexcel Level 1/2)</span>
+          </div>
+          <div class="model-scenario" style="padding:16px 20px; background:#fff; border-bottom:1px solid #e2e8f0;">
+            <p style="font-weight:600; color:#0f172a; margin-bottom:8px;">Vocational Context: <span style="color:#0369a1;">Healthcare Staffing Workforce Management</span></p>
+            <div class="model-q-stem" style="font-size:1.05rem; line-height:1.7; color:#334155;">A clinical healthcare centre employs <strong>60 nursing staff</strong> across Day and Night shifts. <strong>35 staff are Registered Nurses (RNs)</strong> and the rest are Healthcare Assistants (HCAs). <strong>20 RNs work Day shifts</strong>. In total, <strong>38 staff work Day shifts</strong>.<br>(a) Find how many HCAs work Night shifts.<br>(b) What percentage of the total 60 staff work Night shifts (to 1 decimal place)?</div>
+          </div>
+          <div class="model-steps-container" style="padding:18px 20px; background:#ffffff;">
+            <!-- 3-Column Header: Step, Description, Criteria -->
+            <div class="model-steps-header-row">
+              <div><i class="fa-solid fa-list-ol" style="color:#0284c7; margin-right:6px;"></i> Step</div>
+              <div><i class="fa-solid fa-calculator" style="color:#0284c7; margin-right:6px;"></i> Description / Working</div>
+              <div><i class="fa-solid fa-clipboard-check" style="color:#0284c7; margin-right:6px;"></i> Criteria</div>
+            </div>
+            
+            <div class="model-step-row model-step-grid-row">
+              <div class="model-step-col-step">
+                <span class="example-step-pill">Step 1</span>
+                <span class="model-step-title">Calculate total HCAs and Day HCAs</span>
+              </div>
+              <div class="model-step-col-desc">
+                <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:10px; padding:14px 18px; width:100%;">
+                  <div style="font-size:1.15rem; font-weight:800; color:#0f172a; font-variant-numeric:tabular-nums; margin-bottom:6px;">Total HCAs = 60 &minus; 35 = <span style="background:#e0f2fe; color:#0369a1; padding:2px 8px; border-radius:6px;">25 HCAs</span></div>
+                  <div style="font-size:1.15rem; font-weight:800; color:#0f172a; font-variant-numeric:tabular-nums;">Day HCAs = 38 &minus; 20 = <span style="background:#e0f2fe; color:#0369a1; padding:2px 8px; border-radius:6px;">18 HCAs</span></div>
+                </div>
+              </div>
+              <div class="model-step-col-criteria">
+                <span class="criteria-badge-teal"><i class="fa-solid fa-award" style="margin-right:6px; opacity:0.85;"></i><strong>Criteria:</strong> M1: Row/column subtraction</span>
+              </div>
+            </div>
+            
+            <div class="model-step-row model-step-grid-row">
+              <div class="model-step-col-step">
+                <span class="example-step-pill">Step 2</span>
+                <span class="model-step-title">Calculate Night HCAs</span>
+              </div>
+              <div class="model-step-col-desc">
+                <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:10px; padding:14px 18px; width:100%;">
+                  <div style="font-size:1.20rem; font-weight:800; color:#0f172a; font-variant-numeric:tabular-nums; margin-bottom:6px;">Night HCAs = 25 &minus; 18 = <span style="background:#dcfce7; color:#15803d; padding:2px 8px; border-radius:6px;">7 HCAs</span></div>
+                  <div style="font-size:1.0rem; color:#64748b;">Cross-check: Total Night = 60 &minus; 38 = 22; Night RNs = 35 &minus; 20 = 15; 15 + 7 = 22 &check;</div>
+                </div>
+              </div>
+              <div class="model-step-col-criteria">
+                <span class="criteria-badge-teal"><i class="fa-solid fa-award" style="margin-right:6px; opacity:0.85;"></i><strong>Criteria:</strong> A1: Accurate Night HCA count (7)</span>
+              </div>
+            </div>
+            
+            <div class="model-step-row model-step-grid-row">
+              <div class="model-step-col-step">
+                <span class="example-step-pill">Step 3</span>
+                <span class="model-step-title">Calculate percentage of total staff on Night shift</span>
+              </div>
+              <div class="model-step-col-desc">
+                <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:10px; padding:14px 18px; width:100%;">
+                  <div style="font-size:1.20rem; font-weight:800; color:#0f172a; font-variant-numeric:tabular-nums;">(22 &divide; 60) &times; 100 = 36.666...% &rarr; <span style="background:#dcfce7; color:#15803d; padding:2px 8px; border-radius:6px;">36.7%</span> (1 d.p.)</div>
+                </div>
+              </div>
+              <div class="model-step-col-criteria">
+                <span class="criteria-badge-teal"><i class="fa-solid fa-award" style="margin-right:6px; opacity:0.85;"></i><strong>Criteria:</strong> A1: Accurate percentage (36.7%)</span>
+              </div>
+            </div>
+            
+            <div class="model-final-answer" style="margin-top:16px; padding:12px 18px; background:#f0fdf4; border:1px solid #86efac; border-radius:6px; font-weight:700; color:#166534; font-size:1.05rem;">
+              <i class="fa-solid fa-check-circle"></i> Final Accredited Answer: (a) 7 HCAs work Night shifts | (b) 36.7%
+            </div>
+                        <div class="examiner-guidance-box" style="display: flex; align-items: flex-start; gap: 14px; background: #faf5ff; border: 1px solid #d8b4fe; border-left: 4px solid #a855f7; border-radius: 6px; padding: 14px 18px; margin-top: 16px;">
+              <img src="assets/img/avatars/sonya.png" alt="Sonya &mdash; Functional Skills Assessor" style="width: 48px; height: 48px; border-radius: 50%; border: 2px solid #a855f7; flex-shrink: 0; object-fit: cover;">
+              <div style="flex: 1;">
+                <div style="display: flex; align-items: center; gap: 6px; margin-bottom: 4px;">
+                  <span style="font-weight: 700; color: #581c87; font-size: 0.92rem;">Sonya&rsquo;s Examiner Tip</span>
+                  <span style="background: #a855f7; color: #fff; font-size:0.92rem; font-weight:800; padding:4px 10px; border-radius:12px; text-transform:uppercase;">Examiner Method</span>
+                </div>
+                <div style="font-size: 0.90rem; color: #4c1d95; line-height: 1.55;">
+                  Always cross-check that both row totals (35 + 25 = 60) and column totals (38 + 22 = 60) add up to the Grand Total.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+    </section>
+    
+
+    <!-- EXAMINER TRAPS -->
+    <section id="examiner-traps" class="revision-section">
+      <div class="section-header-row">
+        <h2 class="section-title"><i class="fa-solid fa-triangle-exclamation"></i> Critical Examiner Traps &amp; Common Pitfalls</h2>
+      </div>
+      
+        <div class="examiner-pitfall-box">
+          <div class="examiner-pitfall-title">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span>Examiner Pitfall: Dividing by the Grand Total Instead of the Subgroup Total</span>
+          </div>
+          <div class="examiner-pitfall-desc">
+            When asked "What percentage of the Night Shift staff are RNs?", dividing 15 by 60 instead of 15 by 22.
+          </div>
+          <div class="examiner-pitfall-fix">
+            <i class="fa-solid fa-shield-halved" style="color:#e11d48; margin-top:2px;"></i>
+            <div><strong>How to Avoid This Pitfall:</strong> The group immediately following "of the..." is always your bottom denominator!</div>
+          </div>
+        </div>
+        
+        <div class="examiner-pitfall-box">
+          <div class="examiner-pitfall-title">
+            <i class="fa-solid fa-triangle-exclamation"></i>
+            <span>Examiner Pitfall: Leaving Blank Cells in a Two-Way Table Question</span>
+          </div>
+          <div class="examiner-pitfall-desc">
+            Even if the question only asks for one specific cell at the end, examiners award method marks for filling in the entire table.
+          </div>
+          <div class="examiner-pitfall-fix">
+            <i class="fa-solid fa-shield-halved" style="color:#e11d48; margin-top:2px;"></i>
+            <div><strong>How to Avoid This Pitfall:</strong> Fill in every single cell in the printed two-way table and check all row and column sums.</div>
+          </div>
+        </div>
+        
+    </section>
+    
+
+    <!-- PRACTICE QUESTIONS -->
+    <section id="practice-questions" class="revision-section">
+      <div class="section-header-row">
+        <h2 class="section-title"><i class="fa-solid fa-pencil"></i> Interactive Exam Practice Questions</h2>
+      </div>
+      
+        <div class="practice-q-card" style="margin-bottom:20px; border:1px solid #cbd5e1; border-radius:8px; overflow:hidden; background:#fff;">
+          <div class="practice-q-header" style="padding:12px 18px; background:#f8fafc; border-bottom:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-weight:700; color:#1e293b;"><i class="fa-solid fa-pencil"></i> Exam Practice Question 1</span>
+            <span class="practice-marks-pill">2 Marks</span>
+          </div>
+          <div class="practice-q-body" style="padding:18px 20px;">
+            <div class="practice-q-stem" style="font-size:1.05rem; line-height:1.7; color:#334155; margin-bottom:16px;">
+              In a logistics hub of <strong>100 drivers</strong>, 65 drive daytime routes and 35 drive night routes. <strong>40 of the daytime drivers</strong> operate articulated lorries, and <strong>20 of the night drivers</strong> operate articulated lorries. The rest drive rigid vans. How many night drivers operate rigid vans?
+            </div>
+            <div class="practice-interactive-wrap">
+              <label style="display:block; font-weight:600; font-size:0.9rem; color:#475569; margin-bottom:6px;">Your Working / Notes (Auto-saves):</label>
+              <textarea class="practice-scratchpad" rows="3" style="width:100%; border:1px solid #cbd5e1; border-radius:6px; padding:10px; font-family:monospace; font-size:0.95rem;" placeholder="Type your rough working or steps here..."></textarea>
+              <div style="margin-top:12px; display:flex; gap:10px;">
+                <button type="button" class="btn-solution-toggle" onclick="toggleSolution('sol-1')" style="padding:8px 16px; background:#0284c7; color:#fff; border:none; border-radius:6px; font-weight:600; cursor:pointer;">
+                  <i class="fa-solid fa-eye"></i> Show Solution
+                </button>
+              </div>
+              <div id="sol-1" class="practice-solution-drawer" style="display:none; margin-top:14px; padding:16px; background:#f0fdf4; border:1px solid #86efac; border-radius:6px;">
+                <div style="font-weight:700; color:#166534; margin-bottom:6px;"><i class="fa-solid fa-check"></i> Marking Scheme Steps:</div>
+                <div style="line-height:1.7; color:#14532d;">1. Total night drivers = 35.<br>2. Night articulated drivers = 20.<br>3. Night rigid van drivers = 35 − 20 = 15 drivers.</div>
+                <div style="margin-top:10px; font-weight:800; color:#166534;">Final Correct Answer: 15 drivers</div>
+                <div style="margin-top:8px; font-size:1.0rem; font-weight:700; color:#15803d; font-style:italic;">Examiner Tip: Subtract the 20 night articulated drivers from the 35 total night drivers.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="practice-q-card" style="margin-bottom:20px; border:1px solid #cbd5e1; border-radius:8px; overflow:hidden; background:#fff;">
+          <div class="practice-q-header" style="padding:12px 18px; background:#f8fafc; border-bottom:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-weight:700; color:#1e293b;"><i class="fa-solid fa-pencil"></i> Exam Practice Question 2</span>
+            <span class="practice-marks-pill">3 Marks</span>
+          </div>
+          <div class="practice-q-body" style="padding:18px 20px;">
+            <div class="practice-q-stem" style="font-size:1.05rem; line-height:1.7; color:#334155; margin-bottom:16px;">
+              A café records <strong>200 drink orders</strong> (Hot or Cold, Eat-In or Takeaway). <strong>130 drinks are Hot</strong>. <strong>85 orders are Eat-In</strong>, of which <strong>60 are Hot</strong>.<br>Calculate how many <strong>Cold Takeaway</strong> drinks were ordered.
+            </div>
+            <div class="practice-interactive-wrap">
+              <label style="display:block; font-weight:600; font-size:0.9rem; color:#475569; margin-bottom:6px;">Your Working / Notes (Auto-saves):</label>
+              <textarea class="practice-scratchpad" rows="3" style="width:100%; border:1px solid #cbd5e1; border-radius:6px; padding:10px; font-family:monospace; font-size:0.95rem;" placeholder="Type your rough working or steps here..."></textarea>
+              <div style="margin-top:12px; display:flex; gap:10px;">
+                <button type="button" class="btn-solution-toggle" onclick="toggleSolution('sol-2')" style="padding:8px 16px; background:#0284c7; color:#fff; border:none; border-radius:6px; font-weight:600; cursor:pointer;">
+                  <i class="fa-solid fa-eye"></i> Show Solution
+                </button>
+              </div>
+              <div id="sol-2" class="practice-solution-drawer" style="display:none; margin-top:14px; padding:16px; background:#f0fdf4; border:1px solid #86efac; border-radius:6px;">
+                <div style="font-weight:700; color:#166534; margin-bottom:6px;"><i class="fa-solid fa-check"></i> Marking Scheme Steps:</div>
+                <div style="line-height:1.7; color:#14532d;">1. Total Cold drinks = 200 − 130 = 70.<br>2. Eat-In Cold drinks = 85 − 60 = 25.<br>3. Takeaway Cold drinks = 70 − 25 = 45 drinks.</div>
+                <div style="margin-top:10px; font-weight:800; color:#166534;">Final Correct Answer: 45 Cold Takeaway drinks</div>
+                <div style="margin-top:8px; font-size:1.0rem; font-weight:700; color:#15803d; font-style:italic;">Examiner Tip: Sketch a quick 2×2 grid to keep Hot/Cold and Eat-In/Takeaway clear.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+        <div class="practice-q-card" style="margin-bottom:20px; border:1px solid #cbd5e1; border-radius:8px; overflow:hidden; background:#fff;">
+          <div class="practice-q-header" style="padding:12px 18px; background:#f8fafc; border-bottom:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center;">
+            <span style="font-weight:700; color:#1e293b;"><i class="fa-solid fa-pencil"></i> Exam Practice Question 3</span>
+            <span class="practice-marks-pill">3 Marks</span>
+          </div>
+          <div class="practice-q-body" style="padding:18px 20px;">
+            <div class="practice-q-stem" style="font-size:1.05rem; line-height:1.7; color:#334155; margin-bottom:16px;">
+              Using the café data in Question 2, if one Eat-In customer is chosen at random, what is the probability that they ordered a Cold drink? Give your answer as a simplified fraction.
+            </div>
+            <div class="practice-interactive-wrap">
+              <label style="display:block; font-weight:600; font-size:0.9rem; color:#475569; margin-bottom:6px;">Your Working / Notes (Auto-saves):</label>
+              <textarea class="practice-scratchpad" rows="3" style="width:100%; border:1px solid #cbd5e1; border-radius:6px; padding:10px; font-family:monospace; font-size:0.95rem;" placeholder="Type your rough working or steps here..."></textarea>
+              <div style="margin-top:12px; display:flex; gap:10px;">
+                <button type="button" class="btn-solution-toggle" onclick="toggleSolution('sol-3')" style="padding:8px 16px; background:#0284c7; color:#fff; border:none; border-radius:6px; font-weight:600; cursor:pointer;">
+                  <i class="fa-solid fa-eye"></i> Show Solution
+                </button>
+              </div>
+              <div id="sol-3" class="practice-solution-drawer" style="display:none; margin-top:14px; padding:16px; background:#f0fdf4; border:1px solid #86efac; border-radius:6px;">
+                <div style="font-weight:700; color:#166534; margin-bottom:6px;"><i class="fa-solid fa-check"></i> Marking Scheme Steps:</div>
+                <div style="line-height:1.7; color:#14532d;">1. Total Eat-In customers = 85.<br>2. Eat-In Cold customers = 25.<br>3. Probability = 25 / 85 = 5 / 17 (dividing top and bottom by 5).</div>
+                <div style="margin-top:10px; font-weight:800; color:#166534;">Final Correct Answer: 5/17</div>
+                <div style="margin-top:8px; font-size:1.0rem; font-weight:700; color:#15803d; font-style:italic;">Examiner Tip: Since the customer is chosen from Eat-In customers, the denominator is 85, not 200.</div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+    </section>
+    
+
+        <!-- DOWNLOADS -->
+        <section id="downloads" class="revision-section">
+          <div class="section-header-row">
+            <h2 class="section-title"><i class="fa-regular fa-file-pdf"></i> Free Revision Worksheets &amp; Exam Papers</h2>
+          </div>
+
+          <div class="download-tiles-grid">
+            <!-- STYLE 1: FLUENCY DRILLS WORKOUT (COMBINED) -->
+            <div class="download-combo-card">
+              <div class="download-combo-header">
+                <div class="download-tile-icon icon-workout"><i class="fa-solid fa-repeat"></i></div>
+                <div class="download-combo-info">
+                  <div class="tile-badge-wrap"><span class="badge-tile-type">Style 1: Fluency Drills</span></div>
+                  <strong class="download-tile-title">Data Tables Level 1 Practice Drills</strong>
+                  <span class="download-tile-desc">25+ quick calculation drills + real-life maths problems</span>
+                </div>
+              </div>
+              <div class="download-combo-actions">
+                <a href="worksheets/data-tables-level-1-workout.html" target="_blank" class="download-combo-btn btn-qp">
+                  <i class="fa-regular fa-file-pdf"></i> Question Paper
+                </a>
+                <a href="worksheets/data-tables-level-1-workout-answers.html" target="_blank" class="download-combo-btn btn-ans">
+                  <i class="fa-solid fa-check-double"></i> Answer Key
+                </a>
+              </div>
+            </div>
+
+            <!-- STYLE 2: EXAM PRACTICE QUESTIONS (COMBINED) -->
+            <div class="download-combo-card">
+              <div class="download-combo-header">
+                <div class="download-tile-icon icon-pdf"><i class="fa-regular fa-file-pdf"></i></div>
+                <div class="download-combo-info">
+                  <div class="tile-badge-wrap"><span class="badge-tile-type exam">Style 2: Practice Questions</span></div>
+                  <strong class="download-tile-title">Data Tables Level 1 Practice Questions</strong>
+                  <span class="download-tile-desc">Authentic Pearson Edexcel exam questions with [M1][A1] mark scheme</span>
+                </div>
+              </div>
+              <div class="download-combo-actions">
+                <a href="worksheets/data-tables-level-1-worksheet.html" target="_blank" class="download-combo-btn btn-qp">
+                  <i class="fa-regular fa-file-pdf"></i> Question Paper
+                </a>
+                <a href="worksheets/data-tables-level-1-answers.html" target="_blank" class="download-combo-btn btn-ans">
+                  <i class="fa-solid fa-award"></i> Mark Scheme
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- NEXT TOPIC BANNER -->
+        <div class="next-topic-banner">
+          <div class="next-topic-info">
+            <strong>Next Curriculum Topic</strong>
+            <span>Bar Charts (Level 1)</span>
+          </div>
+          <a href="functional-skills-bar-charts-level-1.html" class="btn-next-topic">
+            Continue Revision <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </main>  <!-- FOOTER -->
+  <footer class="mfs-footer" id="site-footer">
+    <div class="mfs-container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="mfs-brand" style="margin-bottom:16px;">
+            <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="mfs-brand-text">
+              <div class="mfs-brand-title" style="color:#ffffff;">MASTER<span>FUNCTIONALSKILLS</span></div>
+              <div class="mfs-brand-subtitle" style="color:#94a3b8;">Delivering Skills • Achieving Goals</div>
+            </div>
+          </div>
+          <p style="font-size:1.0rem; line-height:1.6; margin-bottom:16px;">
+            The UK's dedicated Functional Skills revision specialist. Providing realistic mock exams, step-by-step revision flashcards, diagnostic assessments, and 1-to-1 specialist tuition for Pearson Edexcel, City &amp; Guilds, and all major exam boards.
+          </p>
+          <div style="font-size:0.95rem; color:#cbd5e1;">
+            <p><a href="https://wa.me/447564525425" target="_blank" rel="noopener" style="color:#cbd5e1; text-decoration:none;"><i class="fa-brands fa-whatsapp" style="color:var(--accent); margin-right:8px;"></i> WhatsApp: +44 (0)7564 525425</a></p>
+            <p style="margin-top:6px;"><a href="contact-us.html" style="color:#cbd5e1; text-decoration:none;"><i class="fa-solid fa-envelope" style="color:var(--accent); margin-right:8px;"></i> Contact Tutor Team</a></p>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Maths Revision</h4>
+          <ul class="footer-links">
+            <li><a href="functional-skills-maths-level-1.html">Maths Level 2 Revision</a></li>
+            <li><a href="functional-skills-maths-level-1.html">Maths Level 1 Revision</a></li>
+            <li><a href="entry-level-3-maths.html">Entry Level 3 Maths</a></li>
+            <li><a href="pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="functional-skills-past-papers.html">Free Maths Past Papers</a></li>
+            <li><a href="exam-maths-l2.html">Book Level 2 Maths Exam</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>English &amp; Digital</h4>
+          <ul class="footer-links">
+            <li><a href="functional-skills-english-level-2.html">English Level 2 Revision</a></li>
+            <li><a href="functional-skills-english-level-1.html">English Level 1 Revision</a></li>
+            <li><a href="digital-functional-skills.html">Digital Skills Hub (L1 &amp; E3)</a></li>
+            <li><a href="digital-functional-skills-past-papers.html">DFS Past Papers &amp; Data Files</a></li>
+            <li><a href="functional-skills-past-papers.html?format=online#mock-finder">Online Exam Simulator</a></li>
+            <li><a href="exam-english-l2.html">Book Level 2 English Exam</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Student Support &amp; Tools</h4>
+          <ul class="footer-links">
+            <li><a href="tools.html" style="color:var(--accent); font-weight:700;"><i class="fa-solid fa-screwdriver-wrench" style="margin-right:6px;"></i>All Interactive Tools Hub</a></li>
+            <li><a href="pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="diagnostic-test.html">Diagnostic Skill Checker</a></li>
+            <li><a href="functional-skills-nets.html">3D Net Folding Tool</a></li>
+            <li><a href="digital-functional-skills-mock-exam.html">Pearson DFS Simulator</a></li>
+            <li><a href="revision-cards.html">Revision Cards &amp; Flashcards</a></li>
+            <li><a href="shop.html">Revision Books &amp; Study Packs</a></li>
+            <li><a href="tutors.html">1-to-1 Specialist Tuition</a></li>
+            <li><a href="exams.html">Book Official Online Exam</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Master Functional Skills. All rights reserved. Registered in England &amp; Wales. Ofqual Regulated Qualification Standards.</div>
+        <div style="display:flex; gap:16px; flex-wrap:wrap;">
+          <a href="index.html">Home</a>
+          <a href="tools.html" style="color:var(--accent); font-weight:700;">Tools</a>
+          <a href="functional-skills-past-papers.html">Past Papers</a>
+          <a href="revision-cards.html">Revision Cards</a>
+          <a href="shop.html">Study Shop</a>
+          <a href="tutors.html">Tutors</a>
+          <a href="contact-us.html">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/mfs-revision.js"></script>
+</body>
+</html>

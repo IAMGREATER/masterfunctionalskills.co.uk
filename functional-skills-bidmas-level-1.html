@@ -1,0 +1,1234 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-theme="sapphire" data-tint="cream">
+<head>
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>BIDMAS / Order of Operations Level 1: Key Rules, Models &amp; Exam Practice | Master Functional Skills</title>
+  <meta name="description" content="Dyslexia-friendly BIDMAS / Order of Operations revision guide for Functional Skills Mathematics Level 1. Clear spacing, structured cards, large numbers, worked models, and interactive practice.">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192x192.png">
+  <link rel="apple-touch-icon" href="assets/img/favicon-192x192.png">
+  <link rel="shortcut icon" href="favicon.ico">
+    <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0b172d">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="MFS Skills">
+  <link rel="apple-touch-icon" href="assets/img/favicon-192x192.png">
+  <script src="assets/js/mfs-pwa.js" defer></script>
+  <link rel="stylesheet" href="assets/css/mfs-theme.css?v=20261017j">
+  <link rel="stylesheet" href="assets/css/mfs-mobile.css?v=20261018b">
+  <link rel="stylesheet" href="assets/css/mfs-revision.css?v=20261018b">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <!-- TOP TRUST BAR WITH ACCESSIBILITY & CONTACT -->
+  <div class="mfs-top-bar">
+    <div class="mfs-container mfs-top-bar-inner">
+      <div class="top-trust-items">
+        <span class="top-trust-item"><i class="fa-solid fa-building-columns"></i> Pearson Edexcel &amp; City &amp; Guilds Aligned</span>
+      </div>
+      <div class="top-contacts">
+        <div class="mfs-access-bar">
+          <!-- DYSLEXIA BACKGROUND TINT PICKER -->
+          <div class="mfs-tint-dropdown-wrap">
+            <button type="button" id="tintToggle" class="btn-tint-toggle" onclick="toggleTintMenu(event)" title="Change dyslexia background tint">
+              <span class="tint-swatch-indicator" id="tintCurrentSwatch"></span>
+              <span id="tintLabel">Cream Tint</span>
+              <i class="fa-solid fa-chevron-down" style="font-size:0.62rem; opacity:0.75; margin-left:2px;"></i>
+            </button>
+            <div id="tintMenu" class="tint-picker-menu">
+              <div class="tint-picker-title"><i class="fa-solid fa-glasses"></i> Dyslexia Reading Tint</div>
+              <button type="button" class="tint-option-btn active" data-tint="cream" onclick="setSiteTint('cream', event)">
+                <span class="swatch swatch-cream"></span>
+                <span class="tint-name">Cream <small class="tint-badge-def">Default</small></span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="peach" onclick="setSiteTint('peach', event)">
+                <span class="swatch swatch-peach"></span>
+                <span class="tint-name">Soft Peach</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="cool" onclick="setSiteTint('cool', event)">
+                <span class="swatch swatch-cool"></span>
+                <span class="tint-name">Cool Mist</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="sage" onclick="setSiteTint('sage', event)">
+                <span class="swatch swatch-sage"></span>
+                <span class="tint-name">Soft Sage</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <div class="tint-divider"></div>
+              <button type="button" class="tint-option-btn" data-tint="none" onclick="setSiteTint('none', event)">
+                <span class="swatch swatch-none"></span>
+                <span class="tint-name">No Tint (White)</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+            </div>
+          </div>
+          <button id="dyslexiaToggle" class="btn-dyslexia-toggle" onclick="toggleDyslexiaMode()" title="Toggle Dyslexia High-Readability Mode">
+            <i class="fa-solid fa-universal-access"></i> Dyslexia
+          </button>
+          <button id="themeToggle" class="mfs-theme-pill" onclick="toggleTheme()" title="Switch Palette: Sapphire vs Emerald">
+            <i class="fa-solid fa-palette"></i> <span id="themeLabel">Sapphire</span>
+          </button>
+        </div>
+        <a href="contact-us.html" class="top-contact-link"><i class="fa-solid fa-envelope"></i> <strong>Contact Us</strong></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->  <!-- MAIN NAVIGATION -->
+  <header class="mfs-navbar">
+    <div class="revision-page-wrapper mfs-navbar-inner">
+      <a href="index.html" class="mfs-brand">
+        <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div class="mfs-brand-text">
+          <div class="mfs-brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
+          <div class="mfs-brand-subtitle">Delivering Skills • Achieving Goals</div>
+        </div>
+      </a>
+
+      <nav class="mfs-nav-wrapper">
+        <ul class="mfs-nav-menu">
+          <!-- 1. SUBJECTS (VISUAL MEGA-MENU) -->
+          <li class="mfs-nav-item">
+            <a href="revise.html" class="mfs-nav-link">
+              <i class="fa-solid fa-book-open-reader" style="color:#0284c7; margin-right:5px;"></i> Subjects <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-revision-hub">
+              <div class="mfs-revision-grid">
+                <!-- Maths Column -->
+                <div class="mfs-revision-col mfs-revision-col-maths">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-calculator"></i> Maths Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="functional-skills-maths-level-1.html" class="mfs-dropdown-item">Maths Level 2</a>
+                    <a href="functional-skills-maths-level-1.html" class="mfs-dropdown-item">Maths Level 1</a>
+                    <a href="entry-level-3-maths.html" class="mfs-dropdown-item">Entry Level 3 Maths</a>
+                  </div>
+                </div>
+                <!-- English Column -->
+                <div class="mfs-revision-col mfs-revision-col-english">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-pen-nib"></i> English Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="functional-skills-english-level-2.html" class="mfs-dropdown-item">English Level 2</a>
+                    <a href="functional-skills-english-level-1.html" class="mfs-dropdown-item">English Level 1</a>
+                  </div>
+                </div>
+                <!-- Digital Skills Column -->
+                <div class="mfs-revision-col mfs-revision-col-digital">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-laptop-code"></i> Digital Skills</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="digital-functional-skills.html" class="mfs-dropdown-item">Digital Skills Hub</a>
+                    <a href="digital-functional-skills-mock-exam.html" class="mfs-dropdown-item">Pearson Mock Exam</a>
+                    <a href="digital-functional-skills-past-papers.html" class="mfs-dropdown-item">Past Papers &amp; Files</a>
+                  </div>
+                </div>
+              </div>
+              <!-- Course & Subject Selector Cross-link Footer inside dropdown -->
+              <div class="mfs-revision-dropdown-footer" style="margin-top:12px; padding-top:10px; border-top:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center; font-size:0.92rem;">
+                <a href="revise.html" style="font-weight:700; color:var(--accent); text-decoration:none;"><i class="fa-solid fa-layer-group" style="margin-right:4px;"></i> View All Subjects &amp; Levels &rarr;</a>
+                <a href="courses.html" style="font-weight:700; color:#059669; text-decoration:none;"><i class="fa-solid fa-graduation-cap" style="margin-right:4px;"></i> Accredited Online Courses &rarr;</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- 2. ONLINE COURSES -->
+          <li class="mfs-nav-item">
+            <a href="courses.html" class="mfs-nav-link">
+              <i class="fa-solid fa-graduation-cap" style="color:#0284c7; margin-right:5px;"></i> Online Courses
+            </a>
+          </li>
+
+          <!-- 3. PAST PAPERS (DIRECT ACCESS) -->
+          <li class="mfs-nav-item">
+            <a href="functional-skills-past-papers.html" class="mfs-nav-link">
+              <i class="fa-regular fa-file-lines" style="color:#0284c7; margin-right:5px;"></i> Past Papers
+            </a>
+          </li>
+
+          <!-- 4. WORKSHEETS DIRECTORY (CORBETT STYLE DUAL ENGINE) -->
+          <li class="mfs-nav-item">
+            <a href="worksheets.html" class="mfs-nav-link">
+              <i class="fa-solid fa-layer-group" style="color:#0284c7; margin-right:5px;"></i> Worksheets
+            </a>
+          </li>
+
+          <!-- 5. FREE TOOLS (COMPACT DROPDOWN) -->
+          <li class="mfs-nav-item">
+            <a href="tools.html" class="mfs-nav-link">
+              <i class="fa-solid fa-screwdriver-wrench" style="color:#0284c7; margin-right:5px;"></i> Free Tools <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-compact">
+              <a href="tools.html" class="mfs-dropdown-item" style="font-weight:700; color:var(--accent);"><i class="fa-solid fa-layer-group" style="font-size:0.85rem; margin-right:6px;"></i> All Free Tools &amp; Simulators &rarr;</a>
+              <div class="mfs-dropdown-divider" style="margin:4px 0; border-top:1px solid #e2e8f0;"></div>
+              <a href="pass-mark-calculator.html" class="mfs-dropdown-item"><i class="fa-solid fa-calculator" style="color:var(--accent); font-size:0.85rem; margin-right:6px;"></i> Pass Mark Calculator</a>
+              <a href="diagnostic-test.html" class="mfs-dropdown-item"><i class="fa-solid fa-chart-pie" style="color:#059669; font-size:0.85rem; margin-right:6px;"></i> Diagnostic Skill Checker</a>
+              <a href="functional-skills-nets.html" class="mfs-dropdown-item"><i class="fa-solid fa-cube" style="color:#0284c7; font-size:0.85rem; margin-right:6px;"></i> 3D Net Folding Tool</a>
+              <a href="video-solution.html" class="mfs-dropdown-item"><i class="fa-solid fa-circle-play" style="color:#ef4444; font-size:0.85rem; margin-right:6px;"></i> Video Walkthrough Station</a>
+            </div>
+          </li>
+
+          <!-- 6. REVISION CARDS -->
+          <li class="mfs-nav-item">
+            <a href="revision-cards.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-layer-group" style="color:#d97706; margin-right:5px;"></i> Revision Cards
+            </a>
+          </li>
+
+          <!-- 7. SHOP -->
+          <li class="mfs-nav-item">
+            <a href="shop.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-basket-shopping" style="color:#d97706; margin-right:5px;"></i> Shop
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- 8. BOOK EXAM ACTION BUTTON -->
+      <div class="mfs-nav-actions">
+        <a href="exams.html" class="btn-nav-exam">
+          <i class="fa-solid fa-calendar-check"></i> Book Exam
+        </a>
+      </div>
+
+      <!-- MOBILE CONTROLS (TINT + MENU PILL) -->
+      <div class="mfs-mobile-controls" id="mfsMobileControls">
+        <button type="button" class="btn-mobile-tint-toggle" id="mfsMobileTintBtn" title="Change Reading Tint" aria-label="Reading Tint">
+          <i class="fa-solid fa-glasses"></i>
+          <span class="mobile-tint-swatch" id="mfsMobileTintSwatch"></span>
+        </button>
+        <button type="button" class="mfs-menu-pill" id="mfsMobileToggleBtn" title="Open Navigation Menu" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+          <span>Menu</span>
+        </button>
+      </div>
+    </div>
+    <!-- MOBILE NAVIGATION ENGINE -->
+    <script src="assets/js/mfs-mobile.js" defer></script>
+  </header>
+
+  <!-- BREADCRUMBS -->
+  <div class="revision-breadcrumb-bar">
+    <div class="revision-page-wrapper">
+      <div class="revision-breadcrumbs">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a href="revise.html">Revise Hub</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a href="functional-skills-maths-level-1.html">Mathematics Level 1</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span class="current">BIDMAS / Order of Operations Level 1</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="revision-hero-card">
+    <div class="revision-page-wrapper">
+      <div class="revision-hero-grid">
+        <div class="revision-hero-content">
+          <div class="revision-hero-pill-row">
+            <span class="badge-pill-accent"><i class="fa-solid fa-calculator"></i> MATHEMATICS</span>
+            <span class="badge-pill-gold">LEVEL 1 REVISION</span>
+            <span class="badge-pill-outline">OFQUAL SPECIFICATION STANDARDS</span>
+          </div>
+
+          <h1 class="revision-hero-title">
+            BIDMAS / Order of Operations Level 1: <span>Formulas, Models &amp; Exam Practice</span>
+          </h1>
+
+          <p class="revision-hero-desc">
+            Apply the standard mathematical hierarchy of operations (Brackets, Indices, Division, Multiplication, Addition, Subtraction) to solve multi-stage financial and clinical calculations.
+          </p>
+
+          <div class="revision-hero-meta-bar">
+            <div class="hero-meta-item">
+              <i class="fa-solid fa-clock"></i> <strong>Est. Study Time:</strong> 25-35 Mins
+            </div>
+            <div class="hero-meta-item">
+              <i class="fa-solid fa-book-open"></i> <strong>Curriculum Standards:</strong> Pearson Edexcel &amp; City &amp; Guilds
+            </div>
+            <div class="hero-meta-item">
+              <i class="fa-solid fa-circle-check"></i> <strong>Interactive Practice Tasks Included</strong>
+            </div>
+
+            <div class="hero-quick-actions">
+              <a href="#downloads" class="btn-hero-action">
+                <i class="fa-regular fa-file-pdf"></i> Free Worksheet &amp; Answers (PDF)
+              </a>
+              <a href="#practice-questions" class="btn-hero-action-secondary">
+                <i class="fa-solid fa-pencil"></i> Start Practice Tasks
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="revision-hero-visual-card">
+          <div class="revision-hero-img-wrap">
+            <img src="assets/img/book_photos/money_shopping_bills/scientific_calculator_display.jpg" alt="BIDMAS / Order of Operations Workplace Application" loading="lazy" />
+          </div>
+          <div class="revision-hero-caption-bar">
+            <strong><i class="fa-solid fa-shapes"></i> Key Visual Concept</strong>
+            Executing multi-step financial formulas following statutory order of operations.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOBILE TABLE OF CONTENTS BAR -->
+  <div class="mobile-toc-bar">
+    <div style="font-weight:700; color:var(--navy-dark); font-size:0.9rem;">
+      <i class="fa-solid fa-list-check" style="color:var(--accent);"></i> BIDMAS / Order of Operations Blueprint
+    </div>
+    <button type="button" class="btn-mobile-toc" onclick="toggleMobileToc()">
+      <span>Table of Contents</span> <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+
+  <!-- MAIN 2-COLUMN RESPONSIVE LAYOUT -->
+  <main class="revision-page-wrapper">
+    <div class="revision-layout">
+
+      <!-- LEFT COLUMN: STICKY BLUEPRINT TOC -->
+      <aside class="revision-sidebar" id="sidebarNav">
+        <div class="sidebar-toc-title">
+          <span><i class="fa-solid fa-compass-drafting" style="color:var(--accent);"></i> Topic Contents</span>
+          <span style="font-size:0.90rem; color:#64748b; font-weight:700;">9 Sections</span>
+        </div>
+
+        <ul class="sidebar-toc-list" id="tocList">
+          
+          <li>
+            <a href="#specification" class="sidebar-toc-link active">
+              <i class="fa-solid fa-clipboard-check"></i> Specification
+            </a>
+          </li>
+          <li>
+            <a href="#golden-rules" class="sidebar-toc-link">
+              <i class="fa-solid fa-lightbulb"></i> Golden Rules
+            </a>
+          </li>
+          <li>
+            <a href="#skill-1" class="sidebar-toc-link">
+              <i class="fa-solid fa-shapes"></i> 1. Skill 1: The BIDMAS Hierarchy Breakdown
+            </a>
+          </li>
+          <li>
+            <a href="#skill-2" class="sidebar-toc-link">
+              <i class="fa-solid fa-shapes"></i> 2. Skill 2: Handling Indices (Squares, Cubes) and Hidden Fraction Brackets
+            </a>
+          </li>
+          <li>
+            <a href="#skill-3" class="sidebar-toc-link">
+              <i class="fa-solid fa-shapes"></i> 3. Skill 3: Left-to-Right Rule for Equal-Priority Operations
+            </a>
+          </li>
+          <li>
+            <a href="#worked-exam-models" class="sidebar-toc-link">
+              <i class="fa-solid fa-graduation-cap"></i> Exam Models
+            </a>
+          </li>
+          <li>
+            <a href="#examiner-traps" class="sidebar-toc-link">
+              <i class="fa-solid fa-triangle-exclamation"></i> Examiner Traps
+            </a>
+          </li>
+          <li>
+            <a href="#practice-questions" class="sidebar-toc-link">
+              <i class="fa-solid fa-pencil"></i> Exam Practice
+            </a>
+          </li>
+          <li>
+            <a href="#downloads" class="sidebar-toc-link">
+              <i class="fa-solid fa-file-pdf"></i> Downloads (PDF)
+            </a>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- RIGHT COLUMN: MAIN LEARNING CONTENT -->
+      <div class="revision-content">
+        
+            <!-- SUBI ASSESSOR BLUEPRINT WELCOME -->
+        <div class="tutor-pro-callout" style="margin-bottom: 28px; background: linear-gradient(135deg, #f0fdf4 0%, #e0f2fe 100%); border-left: 5px solid #0284c7; padding: 20px; border-radius: 12px; display: flex; gap: 18px; align-items: flex-start; box-shadow: 0 4px 14px rgba(0,0,0,0.05);">
+          <img src="assets/img/avatars/subi.png" alt="Subi Lead Assessor and Specialist Tutor" style="width: 68px; height: 68px; border-radius: 50%; border: 3px solid #0284c7; flex-shrink: 0; object-fit: cover;">
+          <div style="flex: 1;">
+            <div style="display: flex; align-items: center; gap: 8px; margin-bottom: 6px;">
+              <span style="font-weight: 700; color: #0f172a; font-size: 1.05rem;">Subi &mdash; Lead Assessor &amp; Specialist Maths Tutor</span>
+              <span style="background: #0284c7; color: #fff; font-size:0.92rem; font-weight:800; padding:5px 12px; border-radius:12px; text-transform:uppercase;">Examiner Guidance</span>
+            </div>
+            <p style="margin: 0; color: #334155; font-size: 0.95rem; line-height: 1.6;">
+              Welcome to the <strong>Order of Operations (BIDMAS)</strong> revision blueprint. In both Level 1 and Level 2 exams, calculating left-to-right without obeying BIDMAS priority is the single biggest cause of lost method marks! Remember: Brackets first, then Indices (powers/roots), then Division &amp; Multiplication (equal priority left to right), and finally Addition &amp; Subtraction. Follow our step-down evaluation boards below!
+            </p>
+          </div>
+        </div>
+
+    <!-- SPECIFICATION -->
+    <section id="specification" class="revision-section">
+      <div class="section-header-row">
+        <h2 class="section-title"><i class="fa-solid fa-clipboard-check"></i> Specification &amp; Learning Outcomes</h2>
+      </div>
+      <div class="skill-card-container">
+        <p>Candidates must demonstrate mastery of the following regulated Functional Skills Mathematics outcomes:</p>
+        <ul style="padding-left:20px; line-height:1.8; color:#334155;">
+          <li><strong>L1.5</strong> – Follow the correct order of operations including brackets, powers, and roots in practical workplace calculations.</li>
+        </ul>
+      </div>
+    </section>
+    
+
+    <!-- GOLDEN RULES -->
+    <section id="golden-rules" class="revision-section">
+      <div class="section-header-row">
+        <h2 class="section-title"><i class="fa-solid fa-lightbulb"></i> Three Non-Negotiable Golden Rules for BIDMAS</h2>
+      </div>
+
+      <!-- Golden Rule 1 -->
+      <div class="math-visual-card" style="margin-bottom:20px; border-left:6px solid #0284c7;">
+        <div class="math-visual-card-title" style="color:#0369a1;">
+          <i class="fa-solid fa-arrow-right-arrow-left"></i> Golden Rule 1: Multiplication and Division Have EQUAL Priority (Left-to-Right)
+        </div>
+        <p class="math-step-explanation" style="font-size:1.05rem;">
+          Multiplication does <strong>NOT</strong> come before Division just because 'M' appears before 'D' in the acronym! They share identical mathematical priority and must be solved strictly from <strong>left to right</strong> as they appear:
+        </p>
+        <div class="math-two-col-grid" style="margin:14px 0;">
+          <div style="background:#fee2e2; border:2px solid #fca5a5; padding:14px 18px; border-radius:10px;">
+            <div style="color:#991b1b; font-weight:800; font-size:1rem; margin-bottom:6px;">
+              <i class="fa-solid fa-circle-xmark"></i> DANGEROUS COMMON TRAP (WRONG)
+            </div>
+            <div style="font-size:1.35rem; font-weight:800; color:#991b1b; font-variant-numeric:tabular-nums;">
+              40 &divide; 5 &times; 2
+            </div>
+            <p style="margin:6px 0 0 0; color:#7f1d1d; font-size:0.95rem;">
+              Multiplying 5 &times; 2 = 10 first &rarr; 40 &divide; 10 = <strong style="font-size:1.2rem;">4</strong> (LOSES ALL MARKS)
+            </p>
+          </div>
+          <div style="background:#dcfce7; border:2px solid #86efac; padding:14px 18px; border-radius:10px;">
+            <div style="color:#166534; font-weight:800; font-size:1rem; margin-bottom:6px;">
+              <i class="fa-solid fa-circle-check"></i> CORRECT LEFT-TO-RIGHT METHOD
+            </div>
+            <div style="font-size:1.35rem; font-weight:800; color:#166534; font-variant-numeric:tabular-nums;">
+              (40 &divide; 5) &times; 2 = 8 &times; 2 = <span style="font-size:1.55rem; color:#15803d; font-weight:900;">16</span> &check;
+            </div>
+            <p style="margin:6px 0 0 0; color:#14532d; font-size:0.95rem;">
+              Evaluate 40 &divide; 5 = 8 first, then multiply by 2 = <strong>16</strong> (MANDATORY ACCREDITED METHOD).
+            </p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Golden Rule 2 -->
+      <div class="math-visual-card" style="margin-bottom:20px; border-left:6px solid #9333ea;">
+        <div class="math-visual-card-title" style="color:#7e22ce;">
+          <i class="fa-solid fa-divide"></i> Golden Rule 2: Horizontal Fraction Bars Contain Invisible Brackets
+        </div>
+        <p class="math-step-explanation" style="font-size:1.05rem;">
+          In Functional Skills exam papers, a horizontal division line acts as a grouping bracket. You must fully evaluate the <strong>entire numerator</strong> and the <strong>entire denominator</strong> before dividing:
+        </p>
+        <div class="math-frac-bracket-board">
+          <div class="math-stacked-frac">
+            <span class="math-stacked-num">18 + 12</span>
+            <span class="math-stacked-den">9 &minus; 4</span>
+          </div>
+          <div style="font-size:1.8rem; font-weight:800; color:#64748b;">&rarr;</div>
+          <div style="font-size:1.25rem; font-weight:800; color:#0f172a; background:#ffffff; padding:12px 18px; border-radius:8px; border:1px solid #cbd5e1;">
+            (18 + 12) &divide; (9 &minus; 4) = 
+            <span style="color:#0284c7;">30</span> &divide; <span style="color:#9333ea;">5</span> = 
+            <span style="color:#15803d; font-size:1.55rem;">6</span> &check;
+          </div>
+        </div>
+      </div>
+
+      <!-- Golden Rule 3 -->
+      <div class="math-visual-card" style="margin-bottom:20px; border-left:6px solid #ea580c;">
+        <div class="math-visual-card-title" style="color:#c2410c;">
+          <i class="fa-solid fa-bolt"></i> Golden Rule 3: Indices (Powers &amp; Roots) ALWAYS Beat Multiplication &amp; Addition
+        </div>
+        <p class="math-step-explanation" style="font-size:1.05rem;">
+          Powers attach exclusively to the base digit directly to their left. Never multiply the base by another number before calculating the power, and never multiply by the power itself:
+        </p>
+        <div style="display:flex; flex-wrap:wrap; gap:14px; margin-top:12px;">
+          <div style="flex:1; min-width:260px; background:#fff7ed; border:2px solid #fed7aa; border-radius:8px; padding:12px 16px;">
+            <div style="font-weight:800; color:#c2410c; margin-bottom:4px;">Rule 3A: Power vs Multiplier</div>
+            <div style="font-size:1.2rem; font-weight:800; color:#0f172a;">
+              5<sup>2</sup> = 5 &times; 5 = <span style="color:#15803d;">25</span> <span style="color:#dc2626; font-size:0.95rem; font-weight:600;">(NEVER 5 &times; 2 = 10)</span>
+            </div>
+          </div>
+          <div style="flex:1; min-width:260px; background:#fff7ed; border:2px solid #fed7aa; border-radius:8px; padding:12px 16px;">
+            <div style="font-weight:800; color:#c2410c; margin-bottom:4px;">Rule 3B: Index Precedence</div>
+            <div style="font-size:1.2rem; font-weight:800; color:#0f172a;">
+              3 &times; 4<sup>2</sup> = 3 &times; 16 = <span style="color:#15803d;">48</span> <span style="color:#dc2626; font-size:0.95rem; font-weight:600;">(NEVER 12<sup>2</sup> = 144)</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CORE SKILL 1: THE 4-TIER BIDMAS HIERARCHY & STEP-DOWN BOARD -->
+    <section id="skill-1" class="revision-section">
+      <div class="math-visual-card" style="margin-bottom:28px;">
+        <div class="math-visual-card-title" style="color:#0284c7;">
+          <i class="fa-solid fa-layer-group"></i> Core Skill 1: The 4-Tier BIDMAS Hierarchy &amp; Master Step-Down Board
+          <span style="font-size:0.95rem; font-weight:800; background:#e0f2fe; color:#0369a1; padding:5px 14px; border-radius:20px; float:right;">Precedence System</span>
+        </div>
+
+        <p class="math-step-explanation" style="font-size:1.05rem;">
+          In mathematics, calculations cannot be solved randomly or purely from left to right. Every mathematical operation belongs to a strict 4-tier hierarchy:
+        </p>
+
+        <!-- 4-Tier Hierarchy Ladder -->
+        <div class="math-bidmas-ladder">
+          <!-- Tier 1: Brackets -->
+          <div class="math-bidmas-tier tier-b">
+            <div class="math-bidmas-tier-badge">
+              <span class="tier-letter">B</span>
+              <span class="tier-order">Tier 1</span>
+            </div>
+            <div class="math-bidmas-tier-body">
+              <strong>Brackets (Parentheses): ( ), [ ], { }</strong>
+              <p>Innermost expressions must always be resolved first. Everything inside brackets takes absolute priority over outside numbers.</p>
+            </div>
+          </div>
+
+          <!-- Tier 2: Indices -->
+          <div class="math-bidmas-tier tier-i">
+            <div class="math-bidmas-tier-badge">
+              <span class="tier-letter">I</span>
+              <span class="tier-order">Tier 2</span>
+            </div>
+            <div class="math-bidmas-tier-body">
+              <strong>Indices (Powers, Exponents &amp; Square Roots): x&sup2;, x&sup3;, &radic;x</strong>
+              <p>Evaluate squares (5&sup2; = 25), cubes (2&sup3; = 8), and roots (&radic;49 = 7) immediately after brackets are cleared.</p>
+            </div>
+          </div>
+
+          <!-- Tier 3: Division & Multiplication -->
+          <div class="math-bidmas-tier tier-dm">
+            <div class="math-bidmas-tier-badge">
+              <span class="tier-letter">DM</span>
+              <span class="tier-order">Tier 3</span>
+            </div>
+            <div class="math-bidmas-tier-body">
+              <strong>Division &amp; Multiplication: &divide; and &times; (EQUAL STANDING)</strong>
+              <p>Division does not beat Multiplication. When both are present, execute strictly from <strong>left to right</strong> as they occur.</p>
+            </div>
+          </div>
+
+          <!-- Tier 4: Addition & Subtraction -->
+          <div class="math-bidmas-tier tier-as">
+            <div class="math-bidmas-tier-badge">
+              <span class="tier-letter">AS</span>
+              <span class="tier-order">Tier 4</span>
+            </div>
+            <div class="math-bidmas-tier-body">
+              <strong>Addition &amp; Subtraction: + and &minus; (EQUAL STANDING)</strong>
+              <p>Addition does not beat Subtraction. When both are present, execute strictly from <strong>left to right</strong> as they occur.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Master Step-Down Evaluation Board -->
+        <div class="math-visual-card" style="background:#ffffff; border:2px solid #bae6fd; margin-top:24px;">
+          <div class="math-visual-card-title" style="color:#0369a1; font-size:1.18rem;">
+            <i class="fa-solid fa-list-check"></i> Master Step-Down Board: Evaluate 5 + 3 &times; (10 &minus; 4)&sup2; &divide; 9
+          </div>
+          <p class="math-step-explanation" style="font-size:1rem; margin-bottom:16px;">
+            Watch how each tier is isolated, calculated, and dropped down into the simplified expression:
+          </p>
+
+          <div class="math-stepdown-board">
+            
+            <!-- Step 1: Brackets -->
+            <div class="math-stepdown-line">
+              <span class="math-stepdown-tag tag-b">1. Brackets</span>
+              <div class="math-stepdown-expr">
+                5 + 3 &times; <span class="math-target-calc">(10 &minus; 4)</span>&sup2; &divide; 9
+              </div>
+              <span style="color:#64748b; font-size:0.95rem; font-weight:600; margin-left:auto;">(10 &minus; 4) = <strong>6</strong></span>
+            </div>
+
+            <div class="math-stepdown-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+
+            <!-- Step 2: Indices -->
+            <div class="math-stepdown-line">
+              <span class="math-stepdown-tag tag-i">2. Indices</span>
+              <div class="math-stepdown-expr">
+                5 + 3 &times; <span class="math-target-calc">6&sup2;</span> &divide; 9
+              </div>
+              <span style="color:#64748b; font-size:0.95rem; font-weight:600; margin-left:auto;">6&sup2; = 6 &times; 6 = <strong>36</strong></span>
+            </div>
+
+            <div class="math-stepdown-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+
+            <!-- Step 3: Multiplication (leftmost DM) -->
+            <div class="math-stepdown-line">
+              <span class="math-stepdown-tag tag-m">3. Multiply (Leftmost DM)</span>
+              <div class="math-stepdown-expr">
+                5 + <span class="math-target-calc">3 &times; 36</span> &divide; 9
+              </div>
+              <span style="color:#64748b; font-size:0.95rem; font-weight:600; margin-left:auto;">3 &times; 36 = <strong>108</strong></span>
+            </div>
+
+            <div class="math-stepdown-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+
+            <!-- Step 4: Division (next DM) -->
+            <div class="math-stepdown-line">
+              <span class="math-stepdown-tag tag-d">4. Divide (Next DM)</span>
+              <div class="math-stepdown-expr">
+                5 + <span class="math-target-calc">108 &divide; 9</span>
+              </div>
+              <span style="color:#64748b; font-size:0.95rem; font-weight:600; margin-left:auto;">108 &divide; 9 = <strong>12</strong></span>
+            </div>
+
+            <div class="math-stepdown-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+
+            <!-- Step 5: Addition -->
+            <div class="math-stepdown-line" style="background:#f0fdf4; border:2px solid #86efac;">
+              <span class="math-stepdown-tag tag-a">5. Add</span>
+              <div class="math-stepdown-expr" style="color:#15803d; font-size:1.55rem; font-weight:900;">
+                <span class="math-target-calc" style="background:#bbf7d0; border-color:#22c55e; color:#14532d;">5 + 12</span> = 17
+              </div>
+              <span style="color:#15803d; font-weight:800; margin-left:auto; font-size:1.15rem;">
+                <i class="fa-solid fa-circle-check"></i> FINAL EVALUATION = 17
+              </span>
+            </div>
+
+          </div>
+
+          <div style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px; padding:12px 18px; font-size:0.98rem; color:#475569;">
+            <strong style="color:#0f172a;"><i class="fa-solid fa-lightbulb" style="color:#f59e0b;"></i> Examiner Mark Scheme Note:</strong>
+            Writing down each simplified line guarantees method marks [M1] even if a minor arithmetic error occurs at the very end.
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- CORE SKILL 2: POWERS, ROOTS & INVISIBLE FRACTION BAR BRACKETS -->
+    <section id="skill-2" class="revision-section">
+      <div class="math-visual-card" style="margin-bottom:28px;">
+        <div class="math-visual-card-title" style="color:#7e22ce;">
+          <i class="fa-solid fa-square-root-variable"></i> Core Skill 2: Handling Indices (Powers &amp; Roots) &amp; Invisible Fraction Bar Brackets
+          <span style="font-size:0.95rem; font-weight:800; background:#f3e8ff; color:#7e22ce; padding:4px 12px; border-radius:20px; float:right;">Level 2 Priority</span>
+        </div>
+
+        <p class="math-step-explanation" style="font-size:1.05rem;">
+          Functional Skills Level 2 exams frequently combine powers (squares and cubes), roots, and compound horizontal fraction bars in practical workplace formulas:
+        </p>
+
+        <div class="math-two-col-grid" style="grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); gap:20px; margin:20px 0;">
+          
+          <!-- Powers & Roots Directory -->
+          <div class="math-visual-card" style="background:#ffffff; border-left:6px solid #9333ea;">
+            <div class="math-visual-card-title" style="color:#7e22ce; font-size:1.1rem;">
+              <i class="fa-solid fa-superscript"></i> Powers vs Multiples Directory
+            </div>
+            <p class="math-step-explanation" style="font-size:0.95rem; margin-bottom:12px;">
+              A power indicates repeated multiplication by itself, never multiplication by the power number:
+            </p>
+
+            <table class="math-master-table table-stack-mobile" style="font-size:0.92rem; width:100%;">
+              <thead>
+                <tr>
+                  <th style="background:#7e22ce; color:#fff; width:28%;">Index</th>
+                  <th style="background:#7e22ce; color:#fff; width:40%;">Calculation</th>
+                  <th style="background:#7e22ce; color:#fff; width:32%;">Accredited Value</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td data-label="Index"><strong style="font-size:1.25rem;">4&sup2;</strong></td>
+                  <td data-label="Calculation">4 &times; 4</td>
+                  <td data-label="Accredited Value"><span class="math-calc-cell-large" style="color:#7e22ce;">16</span> <small style="color:#dc2626;">(&ne; 8)</small></td>
+                </tr>
+                <tr>
+                  <td data-label="Index"><strong style="font-size:1.25rem;">5&sup2;</strong></td>
+                  <td data-label="Calculation">5 &times; 5</td>
+                  <td data-label="Accredited Value"><span class="math-calc-cell-large" style="color:#7e22ce;">25</span> <small style="color:#dc2626;">(&ne; 10)</small></td>
+                </tr>
+                <tr>
+                  <td data-label="Index"><strong style="font-size:1.25rem;">2&sup3;</strong></td>
+                  <td data-label="Calculation">2 &times; 2 &times; 2</td>
+                  <td data-label="Accredited Value"><span class="math-calc-cell-large" style="color:#7e22ce;">8</span> <small style="color:#dc2626;">(&ne; 6)</small></td>
+                </tr>
+                <tr>
+                  <td data-label="Index"><strong style="font-size:1.25rem;">3&sup3;</strong></td>
+                  <td data-label="Calculation">3 &times; 3 &times; 3</td>
+                  <td data-label="Accredited Value"><span class="math-calc-cell-large" style="color:#7e22ce;">27</span> <small style="color:#dc2626;">(&ne; 9)</small></td>
+                </tr>
+                <tr>
+                  <td data-label="Index"><strong style="font-size:1.25rem;">&radic;81</strong></td>
+                  <td data-label="Calculation">What number &times; itself = 81?</td>
+                  <td data-label="Accredited Value"><span class="math-calc-cell-large" style="color:#15803d;">9</span></td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <!-- Compound Fraction Bar Protocol -->
+          <div class="math-visual-card" style="background:#ffffff; border-left:6px solid #0284c7;">
+            <div class="math-visual-card-title" style="color:#0369a1; font-size:1.1rem;">
+              <i class="fa-solid fa-bars-staggered"></i> Fraction Bar 3-Step Protocol
+            </div>
+            <div style="font-size:1.02rem; font-weight:700; color:#0f172a; margin-bottom:14px; display:flex; align-items:center; gap:8px;">
+              <span>Evaluate:</span>
+              <span class="math-stacked-frac" style="font-size:1.15rem; vertical-align:middle;">
+                <span class="math-stacked-num">140 &minus; 5 &times; (4&sup2; &minus; 8)</span>
+                <span class="math-stacked-den">2 + 2&sup3;</span>
+              </span>
+            </div>
+
+            <div style="display:flex; flex-direction:column; gap:10px;">
+              <!-- Step A -->
+              <div style="background:#f0f9ff; border:1px solid #bae6fd; border-radius:8px; padding:10px 14px;">
+                <strong style="color:#0369a1; display:block; margin-bottom:4px;">Stage 1: Solve Numerator (Top)</strong>
+                <div style="font-size:1.05rem; font-weight:700; color:#0f172a;">
+                  4&sup2; = 16 &rarr; (16 &minus; 8) = 8<br>
+                  5 &times; 8 = 40 &rarr; 140 &minus; 40 = <span style="color:#0284c7; font-size:1.2rem;">100</span>
+                </div>
+              </div>
+
+              <!-- Step B -->
+              <div style="background:#faf5ff; border:1px solid #e9d5ff; border-radius:8px; padding:10px 14px;">
+                <strong style="color:#7e22ce; display:block; margin-bottom:4px;">Stage 2: Solve Denominator (Bottom)</strong>
+                <div style="font-size:1.05rem; font-weight:700; color:#0f172a;">
+                  2&sup3; = 8 &rarr; 2 + 8 = <span style="color:#7e22ce; font-size:1.2rem;">10</span>
+                </div>
+              </div>
+
+              <!-- Step C -->
+              <div style="background:#f0fdf4; border:2px solid #86efac; border-radius:8px; padding:10px 14px;">
+                <strong style="color:#15803d; display:block; margin-bottom:4px;">Stage 3: Divide Numerator by Denominator</strong>
+                <div style="font-size:1.25rem; font-weight:900; color:#15803d;">
+                  100 &divide; 10 = 10 &check;
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- CORE SKILL 3: LEFT-TO-RIGHT RULE FOR EQUAL PRIORITY -->
+    <section id="skill-3" class="revision-section">
+      <div class="math-visual-card" style="margin-bottom:28px;">
+        <div class="math-visual-card-title" style="color:#ea580c;">
+          <i class="fa-solid fa-arrows-left-right-to-line"></i> Core Skill 3: The Left-to-Right Rule for Equal-Priority Operations
+          <span style="font-size:0.95rem; font-weight:800; background:#ffedd5; color:#c2410c; padding:5px 14px; border-radius:20px; float:right;">Critical Accuracy</span>
+        </div>
+
+        <p class="math-step-explanation" style="font-size:1.05rem;">
+          In Functional Skills exams, the single most frequent calculation blunder is completing Addition before Subtraction or Multiplication before Division. Compare the differences side-by-side:
+        </p>
+
+        <div style="overflow-x:auto;">
+          <table class="math-master-table table-stack-mobile">
+            <thead>
+              <tr>
+                <th style="background:#ea580c; color:#fff; width:22%;">Expression</th>
+                <th style="background:#dc2626; color:#fff; width:39%;"><i class="fa-solid fa-triangle-exclamation"></i> Common Trap (Wrong)</th>
+                <th style="background:#16a34a; color:#fff; width:39%;"><i class="fa-solid fa-circle-check"></i> Correct Left-to-Right Execution</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td data-label="Expression"><strong style="font-size:1.3rem;">30 &minus; 12 + 8</strong></td>
+                <td data-label="Common Trap (Wrong)" style="color:#991b1b; background:#fef2f2;">
+                  <div style="font-weight:700;">Adding 12 + 8 first:</div>
+                  30 &minus; 20 = <strong style="font-size:1.25rem;">10</strong> &cross; (LOST MARK)
+                </td>
+                <td data-label="Correct Left-to-Right Execution" style="color:#14532d; background:#f0fdf4;">
+                  <div style="font-weight:700;">Subtracting left-to-right first:</div>
+                  (30 &minus; 12) + 8 = 18 + 8 = <strong style="font-size:1.35rem; color:#15803d;">26</strong> &check;
+                </td>
+              </tr>
+              <tr>
+                <td data-label="Expression"><strong style="font-size:1.3rem;">40 &divide; 5 &times; 2</strong></td>
+                <td data-label="Common Trap (Wrong)" style="color:#991b1b; background:#fef2f2;">
+                  <div style="font-weight:700;">Multiplying 5 &times; 2 first:</div>
+                  40 &divide; 10 = <strong style="font-size:1.25rem;">4</strong> &cross; (LOST MARK)
+                </td>
+                <td data-label="Correct Left-to-Right Execution" style="color:#14532d; background:#f0fdf4;">
+                  <div style="font-weight:700;">Dividing left-to-right first:</div>
+                  (40 &divide; 5) &times; 2 = 8 &times; 2 = <strong style="font-size:1.35rem; color:#15803d;">16</strong> &check;
+                </td>
+              </tr>
+              <tr>
+                <td data-label="Expression"><strong style="font-size:1.3rem;">100 &minus; 45 &minus; 25</strong></td>
+                <td data-label="Common Trap (Wrong)" style="color:#991b1b; background:#fef2f2;">
+                  <div style="font-weight:700;">Subtracting 45 &minus; 25 first:</div>
+                  100 &minus; 20 = <strong style="font-size:1.25rem;">80</strong> &cross; (LOST MARK)
+                </td>
+                <td data-label="Correct Left-to-Right Execution" style="color:#14532d; background:#f0fdf4;">
+                  <div style="font-weight:700;">Sequential subtraction left-to-right:</div>
+                  (100 &minus; 45) &minus; 25 = 55 &minus; 25 = <strong style="font-size:1.35rem; color:#15803d;">30</strong> &check;
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <div style="margin-top:16px; background:#fff7ed; border-left:5px solid #ea580c; padding:14px 20px; border-radius:0 8px 8px 0;">
+          <strong style="color:#c2410c;"><i class="fa-solid fa-graduation-cap"></i> Lead Tutor Golden Memory Rule:</strong>
+          Think of BIDMAS as <strong>B &bull; I &bull; [D&ndash;M] &bull; [A&ndash;S]</strong>. Tie a mental rope around D and M, and another around A and S. Whichever member of the pair comes first when reading from left to right wins!
+        </div>
+
+      </div>
+    </section>
+
+    <!-- WORKED EXAM MODELS -->
+    <section id="worked-exam-models" class="revision-section">
+      <div class="section-header-row">
+        <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i> Pearson Edexcel Step-by-Step Worked Models</h2>
+      </div>
+
+      <!-- EXAM MODEL 1 -->
+      <div class="model-example-card" style="margin-bottom:28px;">
+        <div class="model-card-header">
+          <span class="model-badge"><i class="fa-solid fa-award"></i> Benchmark Exam Model 1</span>
+          <span class="model-marks-pill">3 Marks (Pearson Edexcel Level 1/2 Non-Calculator)</span>
+        </div>
+        <div class="model-scenario" style="padding:18px 22px; background:#fff; border-bottom:1px solid #e2e8f0;">
+          <p style="font-weight:700; color:#0f172a; margin-bottom:8px;">
+            Vocational Context: <span style="color:#0369a1;">Clinical Support Worker Overtime &amp; Shift Payroll</span>
+          </p>
+          <div class="model-q-stem" style="font-size:1.1rem; line-height:1.7; color:#1e293b;">
+            A clinical support worker's gross weekly pay is calculated using the accredited payroll formula:<br>
+            <div style="background:#f8fafc; border:2px solid #cbd5e1; border-radius:8px; padding:14px; margin:10px 0; text-align:center; font-size:1.4rem; font-weight:800; color:#0f172a;">
+              Gross Pay = &pound;450 + &pound;15 &times; (40 &minus; 32) &minus; &pound;60
+            </div>
+            Work out the final gross weekly pay value without using a calculator, showing your full step-by-step method.
+          </div>
+        </div>
+
+        <div style="padding:22px; background:#ffffff;">
+          
+          <!-- Step 1 -->
+          <div class="exam-model-big-step">
+            <div class="exam-model-big-step-header">
+              <span class="exam-model-step-badge">Step 1</span>
+              <span class="exam-model-step-title-text">Brackets First: Evaluate (40 &minus; 32)</span>
+              <span class="criteria-badge-teal"><i class="fa-solid fa-check"></i> [M1] Correct Bracket Evaluation</span>
+            </div>
+            <div class="exam-model-big-step-body">
+              <div class="exam-model-calc-block">
+                <div style="font-size:1.02rem; color:#64748b; font-weight:800; margin-bottom:6px;">BRACKET RESOLUTION</div>
+                <div style="font-size:1.6rem; font-weight:900; color:#0284c7;">
+                  40 &minus; 32 = 8
+                </div>
+              </div>
+              <div class="exam-model-calc-explanation">
+                According to BIDMAS, operations inside brackets must be executed before outside numbers. Subtracting 32 from 40 yields <strong>8</strong> overtime shift hours.<br>
+                The expression simplifies to: <code>&pound;450 + &pound;15 &times; 8 &minus; &pound;60</code>.
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 2 -->
+          <div class="exam-model-big-step">
+            <div class="exam-model-big-step-header">
+              <span class="exam-model-step-badge" style="background:#16a34a;">Step 2</span>
+              <span class="exam-model-step-title-text">Multiplication Precedence: Evaluate &pound;15 &times; 8</span>
+              <span class="criteria-badge-teal"><i class="fa-solid fa-check"></i> [M1] Multiplication Precedence</span>
+            </div>
+            <div class="exam-model-big-step-body">
+              <div class="exam-model-calc-block" style="border-color:#bbf7d0;">
+                <div style="font-size:1.02rem; color:#64748b; font-weight:800; margin-bottom:6px;">MULTIPLICATION FIRST</div>
+                <div style="font-size:1.6rem; font-weight:900; color:#16a34a;">
+                  15 &times; 8 = &pound;120
+                </div>
+              </div>
+              <div class="exam-model-calc-explanation">
+                Multiplication takes precedence over addition and subtraction. Compute the overtime rate of &pound;15 multiplied by 8 hours = <strong>&pound;120.00</strong>.<br>
+                The expression simplifies to: <code>&pound;450 + &pound;120 &minus; &pound;60</code>.
+              </div>
+            </div>
+          </div>
+
+          <!-- Step 3 -->
+          <div class="exam-model-big-step">
+            <div class="exam-model-big-step-header">
+              <span class="exam-model-step-badge" style="background:#ea580c;">Step 3</span>
+              <span class="exam-model-step-title-text">Sequential Left-to-Right Addition &amp; Subtraction</span>
+              <span class="criteria-badge-teal"><i class="fa-solid fa-check"></i> [A1] Final Accuracy &amp; Currency Format</span>
+            </div>
+            <div class="exam-model-big-step-body">
+              <div class="exam-model-calc-block" style="border-color:#fed7aa;">
+                <div style="font-size:1.02rem; color:#64748b; font-weight:800; margin-bottom:6px;">LEFT-TO-RIGHT EXECUTION</div>
+                <div style="font-size:1.45rem; font-weight:900; color:#c2410c;">
+                  450 + 120 = 570<br>
+                  570 &minus; 60 = &pound;510
+                </div>
+              </div>
+              <div class="exam-model-calc-explanation">
+                Now perform addition and subtraction sequentially from left to right:<br>
+                1. <code>&pound;450 + &pound;120 = &pound;570</code><br>
+                2. Deduct standard pension/uniform contribution: <code>&pound;570 &minus; &pound;60 = &pound;510.00</code>.
+              </div>
+            </div>
+          </div>
+
+          <!-- Final Answer Banner -->
+          <div class="math-mark-check-pass" style="width:100%; justify-content:center; padding:16px; margin:16px 0;">
+            <i class="fa-solid fa-circle-check"></i> FINAL ACCREDITED ANSWER: Gross Weekly Pay = &pound;510.00
+          </div>
+
+          <div class="examiner-guidance-box" style="margin-top:14px;">
+            <div class="examiner-guidance-header">
+              <i class="fa-solid fa-clipboard-check"></i>
+              <span>Method Checklist &amp; Marking Scheme Guidance</span>
+            </div>
+            <div class="examiner-guidance-text">
+              If you mistakenly added &pound;450 + &pound;15 first (= 465) and multiplied by 8 (= 3,720), you would finish with &pound;3,660 — a colossal blunder that scores 0/3! Always isolate the multiplication first.
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- EXAM MODEL 2 -->
+        
+    </section>
+
+    <!-- EXAMINER TRAPS -->
+    <section id="examiner-traps" class="revision-section">
+      <div class="section-header-row">
+        <h2 class="section-title"><i class="fa-solid fa-triangle-exclamation"></i> Critical Examiner Traps &amp; Common Pitfalls</h2>
+      </div>
+
+      <!-- Trap 1 -->
+      <div class="trap-card-coral">
+        <div class="trap-card-coral-header">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          <span>Pitfall 1: Blind Left-to-Right Evaluation Ignoring Multiplication Precedence</span>
+        </div>
+        <p style="font-size:1.02rem; line-height:1.7; color:#881337; margin-bottom:12px;">
+          When confronted with <code>6 + 4 &times; 5</code>, hurried candidates routinely compute <code>6 + 4 = 10</code>, followed by <code>10 &times; 5 = 50</code>. This is 100% incorrect and forfeits all marks!
+        </p>
+        <div style="background:#ffffff; border:2px solid #fda4af; border-radius:8px; padding:12px 18px; margin-bottom:12px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+            <span style="color:#dc2626; font-weight:800; font-size:1.15rem;">&cross; Candidate Mistake: 6 + 4 = 10 &rarr; 10 &times; 5 = 50</span>
+            <span style="color:#15803d; font-weight:800; font-size:1.15rem;">&check; Accredited Rule: 4 &times; 5 = 20 &rarr; 6 + 20 = 26</span>
+          </div>
+        </div>
+        <div style="font-weight:700; color:#9f1239;">
+          <i class="fa-solid fa-shield-halved"></i> How to Avoid: Grab your pencil and physically underline all multiplication and division chunks before touching addition or subtraction.
+        </div>
+      </div>
+
+      <!-- Trap 2 -->
+      <div class="trap-card-coral">
+        <div class="trap-card-coral-header">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          <span>Pitfall 2: Addition-Before-Subtraction Trap in Equal Standing Operations</span>
+        </div>
+        <p style="font-size:1.02rem; line-height:1.7; color:#881337; margin-bottom:12px;">
+          Candidates who memorise the acronym letters literally often believe the letter 'A' means Addition must always precede Subtraction ('S'). This causes them to evaluate <code>20 &minus; 8 + 4</code> as <code>20 &minus; 12 = 8</code>.
+        </p>
+        <div style="background:#ffffff; border:2px solid #fda4af; border-radius:8px; padding:12px 18px; margin-bottom:12px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+            <span style="color:#dc2626; font-weight:800; font-size:1.15rem;">&cross; Candidate Mistake: 8 + 4 = 12 &rarr; 20 &minus; 12 = 8</span>
+            <span style="color:#15803d; font-weight:800; font-size:1.15rem;">&check; Accredited Rule: (20 &minus; 8) = 12 &rarr; 12 + 4 = 16</span>
+          </div>
+        </div>
+        <div style="font-weight:700; color:#9f1239;">
+          <i class="fa-solid fa-shield-halved"></i> How to Avoid: Remember that Addition and Subtraction are twin operations with equal priority. Calculate them strictly in order from left to right.
+        </div>
+      </div>
+
+      <!-- Trap 3 -->
+      <div class="trap-card-coral">
+        <div class="trap-card-coral-header">
+          <i class="fa-solid fa-triangle-exclamation"></i>
+          <span>Pitfall 3: Multiplying the Base Number by the Power Exponent</span>
+        </div>
+        <p style="font-size:1.02rem; line-height:1.7; color:#881337; margin-bottom:12px;">
+          Under exam pressure, candidates frequently rush indices and write <code>6&sup2; = 12</code> (multiplying 6 by 2) or <code>2&sup3; = 6</code> (multiplying 2 by 3).
+        </p>
+        <div style="background:#ffffff; border:2px solid #fda4af; border-radius:8px; padding:12px 18px; margin-bottom:12px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:10px;">
+            <span style="color:#dc2626; font-weight:800; font-size:1.15rem;">&cross; Candidate Mistake: 6&sup2; = 6 &times; 2 = 12</span>
+            <span style="color:#15803d; font-weight:800; font-size:1.15rem;">&check; Accredited Rule: 6&sup2; = 6 &times; 6 = 36</span>
+          </div>
+        </div>
+        <div style="font-weight:700; color:#9f1239;">
+          <i class="fa-solid fa-shield-halved"></i> How to Avoid: Always expand the power into full multiplication on paper before working out the answer (e.g. write <code>4&sup3; = 4 &times; 4 &times; 4 = 64</code>).
+        </div>
+      </div>
+
+    </section>
+
+    <!-- PRACTICE QUESTIONS -->
+    <section id="practice-questions" class="revision-section">
+      <div class="section-header-row">
+        <h2 class="section-title"><i class="fa-solid fa-pencil"></i> Interactive Exam Practice Questions</h2>
+      </div>
+
+      <!-- Practice Q1 -->
+      <div class="practice-q-card" style="margin-bottom:24px; border:2px solid #cbd5e1; border-radius:12px; overflow:hidden; background:#fff; box-shadow:0 3px 8px rgba(0,0,0,0.03);">
+        <div class="practice-q-header" style="padding:14px 20px; background:#f8fafc; border-bottom:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center;">
+          <span style="font-weight:800; color:#1e293b; font-size:1.05rem;"><i class="fa-solid fa-pencil"></i> Exam Practice Question 1</span>
+          <span class="practice-marks-pill">2 Marks (Non-Calculator)</span>
+        </div>
+        <div class="practice-q-body" style="padding:22px;">
+          <div class="practice-q-stem" style="font-size:1.12rem; line-height:1.7; color:#1e293b; margin-bottom:18px;">
+            Work out the exact value of the expression without a calculator:<br>
+            <div style="background:#f8fafc; border:2px solid #cbd5e1; border-radius:8px; padding:12px; margin:10px 0; text-align:center; font-size:1.35rem; font-weight:800; color:#0f172a;">
+              24 &divide; (8 &minus; 2) + 3&sup2; &times; 2
+            </div>
+          </div>
+          <div class="practice-interactive-wrap">
+            <label style="display:block; font-weight:700; font-size:0.92rem; color:#475569; margin-bottom:6px;">Your Working / Notes (Auto-saves):</label>
+            <textarea class="practice-scratchpad" rows="3" style="width:100%; border:2px solid #cbd5e1; border-radius:8px; padding:12px; font-family:monospace; font-size:1rem;" placeholder="Type your rough working or step-by-step resolution here..."></textarea>
+            <div style="margin-top:14px; display:flex; gap:10px;">
+              <button type="button" class="btn-solution-toggle" onclick="toggleSolution('sol-1')" style="padding:10px 20px; background:#0284c7; color:#fff; border:none; border-radius:8px; font-weight:700; cursor:pointer;">
+                <i class="fa-solid fa-eye"></i> Show Accredited Solution
+              </button>
+            </div>
+            <div id="sol-1" class="practice-solution-drawer" style="display:none; margin-top:16px; padding:20px; background:#f0fdf4; border:2px solid #86efac; border-radius:10px;">
+              <div style="font-weight:800; color:#166534; font-size:1.12rem; margin-bottom:10px;"><i class="fa-solid fa-check-double"></i> Marking Scheme Step-Down Breakdown:</div>
+              <div style="line-height:1.8; color:#14532d; font-size:1.05rem;">
+                <strong>1. Brackets First [M1]:</strong> (8 &minus; 2) = 6 &rarr; Expression: <code>24 &divide; 6 + 3&sup2; &times; 2</code><br>
+                <strong>2. Indices Next:</strong> 3&sup2; = 9 &rarr; Expression: <code>24 &divide; 6 + 9 &times; 2</code><br>
+                <strong>3. Division &amp; Multiplication:</strong> 24 &divide; 6 = 4, and 9 &times; 2 = 18 &rarr; Expression: <code>4 + 18</code><br>
+                <strong>4. Final Addition [A1]:</strong> 4 + 18 = <strong>22</strong>
+              </div>
+              <div class="math-mark-check-pass" style="margin-top:14px;">
+                <i class="fa-solid fa-circle-check"></i> Final Accredited Answer: 22
+              </div>
+              <div style="margin-top:10px; font-size:0.9rem; color:#15803d; font-style:italic;">
+                Examiner Tip: Clearing brackets and indices on the very first line prevents arithmetic clutter.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Practice Q2 -->
+      <div class="practice-q-card" style="margin-bottom:24px; border:2px solid #cbd5e1; border-radius:12px; overflow:hidden; background:#fff; box-shadow:0 3px 8px rgba(0,0,0,0.03);">
+        <div class="practice-q-header" style="padding:14px 20px; background:#f8fafc; border-bottom:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center;">
+          <span style="font-weight:800; color:#1e293b; font-size:1.05rem;"><i class="fa-solid fa-pencil"></i> Exam Practice Question 2</span>
+          <span class="practice-marks-pill">2 Marks (Non-Calculator)</span>
+        </div>
+        <div class="practice-q-body" style="padding:22px;">
+          <div class="practice-q-stem" style="font-size:1.12rem; line-height:1.7; color:#1e293b; margin-bottom:18px;">
+            Work out the value of: <strong>50 &minus; 6 &times; (3 + 4) + 12</strong>.
+          </div>
+          <div class="practice-interactive-wrap">
+            <label style="display:block; font-weight:700; font-size:0.92rem; color:#475569; margin-bottom:6px;">Your Working / Notes (Auto-saves):</label>
+            <textarea class="practice-scratchpad" rows="3" style="width:100%; border:2px solid #cbd5e1; border-radius:8px; padding:12px; font-family:monospace; font-size:1rem;" placeholder="Type your rough working or step-by-step resolution here..."></textarea>
+            <div style="margin-top:14px; display:flex; gap:10px;">
+              <button type="button" class="btn-solution-toggle" onclick="toggleSolution('sol-2')" style="padding:10px 20px; background:#0284c7; color:#fff; border:none; border-radius:8px; font-weight:700; cursor:pointer;">
+                <i class="fa-solid fa-eye"></i> Show Accredited Solution
+              </button>
+            </div>
+            <div id="sol-2" class="practice-solution-drawer" style="display:none; margin-top:16px; padding:20px; background:#f0fdf4; border:2px solid #86efac; border-radius:10px;">
+              <div style="font-weight:800; color:#166534; font-size:1.12rem; margin-bottom:10px;"><i class="fa-solid fa-check-double"></i> Marking Scheme Step-Down Breakdown:</div>
+              <div style="line-height:1.8; color:#14532d; font-size:1.05rem;">
+                <strong>1. Brackets First [M1]:</strong> (3 + 4) = 7 &rarr; Expression: <code>50 &minus; 6 &times; 7 + 12</code><br>
+                <strong>2. Multiplication Next:</strong> 6 &times; 7 = 42 &rarr; Expression: <code>50 &minus; 42 + 12</code><br>
+                <strong>3. Sequential Left-to-Right [A1]:</strong> (50 &minus; 42) + 12 = 8 + 12 = <strong>20</strong>
+              </div>
+              <div class="math-mark-check-pass" style="margin-top:14px;">
+                <i class="fa-solid fa-circle-check"></i> Final Accredited Answer: 20
+              </div>
+              <div style="margin-top:10px; font-size:0.9rem; color:#15803d; font-style:italic;">
+                Examiner Tip: Beware the Addition Trap! Do NOT compute 42 + 12 = 54 first. Subtract 42 from 50 first, then add 12.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Practice Q3 -->
+      <div class="practice-q-card" style="margin-bottom:24px; border:2px solid #cbd5e1; border-radius:12px; overflow:hidden; background:#fff; box-shadow:0 3px 8px rgba(0,0,0,0.03);">
+        <div class="practice-q-header" style="padding:14px 20px; background:#f8fafc; border-bottom:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center;">
+          <span style="font-weight:800; color:#1e293b; font-size:1.05rem;"><i class="fa-solid fa-pencil"></i> Exam Practice Question 3</span>
+          <span class="practice-marks-pill">3 Marks (Level 2 Problem Solving)</span>
+        </div>
+        <div class="practice-q-body" style="padding:22px;">
+          <div class="practice-q-stem" style="font-size:1.12rem; line-height:1.7; color:#1e293b; margin-bottom:18px;">
+            Insert a single pair of brackets (or multiple pairs) into the statement below to make the calculation mathematically true:<br>
+            <div style="background:#f8fafc; border:2px solid #cbd5e1; border-radius:8px; padding:12px; margin:10px 0; text-align:center; font-size:1.4rem; font-weight:800; color:#0f172a;">
+              18 + 6 &divide; 4 &minus; 1 = 8
+            </div>
+          </div>
+          <div class="practice-interactive-wrap">
+            <label style="display:block; font-weight:700; font-size:0.92rem; color:#475569; margin-bottom:6px;">Your Working / Notes (Auto-saves):</label>
+            <textarea class="practice-scratchpad" rows="3" style="width:100%; border:2px solid #cbd5e1; border-radius:8px; padding:12px; font-family:monospace; font-size:1rem;" placeholder="Type your rough working or step-by-step resolution here..."></textarea>
+            <div style="margin-top:14px; display:flex; gap:10px;">
+              <button type="button" class="btn-solution-toggle" onclick="toggleSolution('sol-3')" style="padding:10px 20px; background:#0284c7; color:#fff; border:none; border-radius:8px; font-weight:700; cursor:pointer;">
+                <i class="fa-solid fa-eye"></i> Show Accredited Solution
+              </button>
+            </div>
+            <div id="sol-3" class="practice-solution-drawer" style="display:none; margin-top:16px; padding:20px; background:#f0fdf4; border:2px solid #86efac; border-radius:10px;">
+              <div style="font-weight:800; color:#166534; font-size:1.12rem; margin-bottom:10px;"><i class="fa-solid fa-check-double"></i> Marking Scheme Step-Down Breakdown:</div>
+              <div style="line-height:1.8; color:#14532d; font-size:1.05rem;">
+                <strong>1. Target Recognition [M1]:</strong> The target result is 8. Notice that 24 &divide; 3 = 8.<br>
+                <strong>2. Grouping Numerator &amp; Denominator [M1]:</strong> Group (18 + 6) = 24, and group (4 &minus; 1) = 3.<br>
+                <strong>3. Verification [A1]:</strong> (18 + 6) &divide; (4 &minus; 1) = 24 &divide; 3 = <strong>8</strong> &check;
+              </div>
+              <div class="math-mark-check-pass" style="margin-top:14px;">
+                <i class="fa-solid fa-circle-check"></i> Final Accredited Answer: (18 + 6) &divide; (4 &minus; 1) = 8
+              </div>
+              <div style="margin-top:10px; font-size:0.9rem; color:#15803d; font-style:italic;">
+                Examiner Tip: Factorise the target number (8 = 24 &divide; 3) to discover the hidden bracket placements immediately.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </section>
+
+
+        <!-- DOWNLOADS -->
+        <section id="downloads" class="revision-section">
+          <div class="section-header-row">
+            <h2 class="section-title"><i class="fa-regular fa-file-pdf"></i> Free Revision Worksheets &amp; Exam Papers</h2>
+          </div>
+
+          <div class="download-tiles-grid">
+            <!-- STYLE 1: FLUENCY DRILLS WORKOUT (COMBINED) -->
+            <div class="download-combo-card">
+              <div class="download-combo-header">
+                <div class="download-tile-icon icon-workout"><i class="fa-solid fa-repeat"></i></div>
+                <div class="download-combo-info">
+                  <div class="tile-badge-wrap"><span class="badge-tile-type">Style 1: Fluency Drills</span></div>
+                  <strong class="download-tile-title">Bidmas Level 1 Practice Drills</strong>
+                  <span class="download-tile-desc">25+ quick calculation drills + real-life maths problems</span>
+                </div>
+              </div>
+              <div class="download-combo-actions">
+                <a href="worksheets/bidmas-level-1-workout.html" target="_blank" class="download-combo-btn btn-qp">
+                  <i class="fa-regular fa-file-pdf"></i> Question Paper
+                </a>
+                <a href="worksheets/bidmas-level-1-workout-answers.html" target="_blank" class="download-combo-btn btn-ans">
+                  <i class="fa-solid fa-check-double"></i> Answer Key
+                </a>
+              </div>
+            </div>
+
+            <!-- STYLE 2: EXAM PRACTICE QUESTIONS (COMBINED) -->
+            <div class="download-combo-card">
+              <div class="download-combo-header">
+                <div class="download-tile-icon icon-pdf"><i class="fa-regular fa-file-pdf"></i></div>
+                <div class="download-combo-info">
+                  <div class="tile-badge-wrap"><span class="badge-tile-type exam">Style 2: Practice Questions</span></div>
+                  <strong class="download-tile-title">Bidmas Level 1 Practice Questions</strong>
+                  <span class="download-tile-desc">Authentic Pearson Edexcel exam questions with [M1][A1] mark scheme</span>
+                </div>
+              </div>
+              <div class="download-combo-actions">
+                <a href="worksheets/bidmas-level-1-worksheet.html" target="_blank" class="download-combo-btn btn-qp">
+                  <i class="fa-regular fa-file-pdf"></i> Question Paper
+                </a>
+                <a href="worksheets/bidmas-level-1-answers.html" target="_blank" class="download-combo-btn btn-ans">
+                  <i class="fa-solid fa-award"></i> Mark Scheme
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- NEXT TOPIC BANNER -->
+        <div class="next-topic-banner">
+          <div class="next-topic-info">
+            <strong>Next Curriculum Topic</strong>
+            <span>Fractions (Level 1)</span>
+          </div>
+          <a href="functional-skills-fractions-level-1.html" class="btn-next-topic">
+            Continue Revision <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </main>  <!-- FOOTER -->
+  <footer class="mfs-footer" id="site-footer">
+    <div class="mfs-container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="mfs-brand" style="margin-bottom:16px;">
+            <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="mfs-brand-text">
+              <div class="mfs-brand-title" style="color:#ffffff;">MASTER<span>FUNCTIONALSKILLS</span></div>
+              <div class="mfs-brand-subtitle" style="color:#94a3b8;">Delivering Skills • Achieving Goals</div>
+            </div>
+          </div>
+          <p style="font-size:1.0rem; line-height:1.6; margin-bottom:16px;">
+            The UK's dedicated Functional Skills revision specialist. Providing realistic mock exams, step-by-step revision flashcards, diagnostic assessments, and 1-to-1 specialist tuition for Pearson Edexcel, City &amp; Guilds, and all major exam boards.
+          </p>
+          <div style="font-size:0.95rem; color:#cbd5e1;">
+            <p><a href="https://wa.me/447564525425" target="_blank" rel="noopener" style="color:#cbd5e1; text-decoration:none;"><i class="fa-brands fa-whatsapp" style="color:var(--accent); margin-right:8px;"></i> WhatsApp: +44 (0)7564 525425</a></p>
+            <p style="margin-top:6px;"><a href="contact-us.html" style="color:#cbd5e1; text-decoration:none;"><i class="fa-solid fa-envelope" style="color:var(--accent); margin-right:8px;"></i> Contact Tutor Team</a></p>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Maths Revision</h4>
+          <ul class="footer-links">
+            <li><a href="functional-skills-maths-level-1.html">Maths Level 2 Revision</a></li>
+            <li><a href="functional-skills-maths-level-1.html">Maths Level 1 Revision</a></li>
+            <li><a href="entry-level-3-maths.html">Entry Level 3 Maths</a></li>
+            <li><a href="pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="functional-skills-past-papers.html">Free Maths Past Papers</a></li>
+            <li><a href="exam-maths-l2.html">Book Level 2 Maths Exam</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>English &amp; Digital</h4>
+          <ul class="footer-links">
+            <li><a href="functional-skills-english-level-2.html">English Level 2 Revision</a></li>
+            <li><a href="functional-skills-english-level-1.html">English Level 1 Revision</a></li>
+            <li><a href="digital-functional-skills.html">Digital Skills Hub (L1 &amp; E3)</a></li>
+            <li><a href="digital-functional-skills-past-papers.html">DFS Past Papers &amp; Data Files</a></li>
+            <li><a href="functional-skills-past-papers.html?format=online#mock-finder">Online Exam Simulator</a></li>
+            <li><a href="exam-english-l2.html">Book Level 2 English Exam</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Student Support &amp; Tools</h4>
+          <ul class="footer-links">
+            <li><a href="tools.html" style="color:var(--accent); font-weight:700;"><i class="fa-solid fa-screwdriver-wrench" style="margin-right:6px;"></i>All Interactive Tools Hub</a></li>
+            <li><a href="pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="diagnostic-test.html">Diagnostic Skill Checker</a></li>
+            <li><a href="functional-skills-nets.html">3D Net Folding Tool</a></li>
+            <li><a href="digital-functional-skills-mock-exam.html">Pearson DFS Simulator</a></li>
+            <li><a href="revision-cards.html">Revision Cards &amp; Flashcards</a></li>
+            <li><a href="shop.html">Revision Books &amp; Study Packs</a></li>
+            <li><a href="tutors.html">1-to-1 Specialist Tuition</a></li>
+            <li><a href="exams.html">Book Official Online Exam</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Master Functional Skills. All rights reserved. Registered in England &amp; Wales. Ofqual Regulated Qualification Standards.</div>
+        <div style="display:flex; gap:16px; flex-wrap:wrap;">
+          <a href="index.html">Home</a>
+          <a href="tools.html" style="color:var(--accent); font-weight:700;">Tools</a>
+          <a href="functional-skills-past-papers.html">Past Papers</a>
+          <a href="revision-cards.html">Revision Cards</a>
+          <a href="shop.html">Study Shop</a>
+          <a href="tutors.html">Tutors</a>
+          <a href="contact-us.html">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/mfs-revision.js"></script>
+</body>
+</html>

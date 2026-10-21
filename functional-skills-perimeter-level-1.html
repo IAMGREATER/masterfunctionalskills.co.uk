@@ -1,0 +1,1213 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-theme="sapphire" data-tint="cream">
+<head>
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Perimeter Level 1: Key Rules, Models &amp; Exam Practice | Master Functional Skills</title>
+  <meta name="description" content="Dyslexia-friendly Perimeter revision guide for Functional Skills Mathematics Level 1. Clear spacing, structured cards, large numbers, worked models, and interactive practice.">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192x192.png">
+  <link rel="apple-touch-icon" href="assets/img/favicon-192x192.png">
+  <link rel="shortcut icon" href="favicon.ico">
+    <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0b172d">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="MFS Skills">
+  <link rel="apple-touch-icon" href="assets/img/favicon-192x192.png">
+  <script src="assets/js/mfs-pwa.js" defer></script>
+  <link rel="stylesheet" href="assets/css/mfs-theme.css?v=20261017j">
+  <link rel="stylesheet" href="assets/css/mfs-mobile.css?v=20261018b">
+  <link rel="stylesheet" href="assets/css/mfs-revision.css?v=20261018b">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+    <!-- TOP TRUST BAR WITH ACCESSIBILITY & CONTACT -->
+  <div class="mfs-top-bar">
+    <div class="mfs-container mfs-top-bar-inner">
+      <div class="top-trust-items">
+        <span class="top-trust-item"><i class="fa-solid fa-building-columns"></i> Pearson Edexcel &amp; City &amp; Guilds Aligned</span>
+      </div>
+      <div class="top-contacts">
+        <div class="mfs-access-bar">
+          <!-- DYSLEXIA BACKGROUND TINT PICKER -->
+          <div class="mfs-tint-dropdown-wrap">
+            <button type="button" id="tintToggle" class="btn-tint-toggle" onclick="toggleTintMenu(event)" title="Change dyslexia background tint">
+              <span class="tint-swatch-indicator" id="tintCurrentSwatch"></span>
+              <span id="tintLabel">Cream Tint</span>
+              <i class="fa-solid fa-chevron-down" style="font-size:0.62rem; opacity:0.75; margin-left:2px;"></i>
+            </button>
+            <div id="tintMenu" class="tint-picker-menu">
+              <div class="tint-picker-title"><i class="fa-solid fa-glasses"></i> Dyslexia Reading Tint</div>
+              <button type="button" class="tint-option-btn active" data-tint="cream" onclick="setSiteTint('cream', event)">
+                <span class="swatch swatch-cream"></span>
+                <span class="tint-name">Cream <small class="tint-badge-def">Default</small></span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="peach" onclick="setSiteTint('peach', event)">
+                <span class="swatch swatch-peach"></span>
+                <span class="tint-name">Soft Peach</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="cool" onclick="setSiteTint('cool', event)">
+                <span class="swatch swatch-cool"></span>
+                <span class="tint-name">Cool Mist</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="sage" onclick="setSiteTint('sage', event)">
+                <span class="swatch swatch-sage"></span>
+                <span class="tint-name">Soft Sage</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <div class="tint-divider"></div>
+              <button type="button" class="tint-option-btn" data-tint="none" onclick="setSiteTint('none', event)">
+                <span class="swatch swatch-none"></span>
+                <span class="tint-name">No Tint (White)</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+            </div>
+          </div>
+          <button id="dyslexiaToggle" class="btn-dyslexia-toggle" onclick="toggleDyslexiaMode()" title="Toggle Dyslexia High-Readability Mode">
+            <i class="fa-solid fa-universal-access"></i> Dyslexia
+          </button>
+          <button id="themeToggle" class="mfs-theme-pill" onclick="toggleTheme()" title="Switch Palette: Sapphire vs Emerald">
+            <i class="fa-solid fa-palette"></i> <span id="themeLabel">Sapphire</span>
+          </button>
+        </div>
+        <a href="contact-us.html" class="top-contact-link"><i class="fa-solid fa-envelope"></i> <strong>Contact Us</strong></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVIGATION -->  <!-- MAIN NAVIGATION -->
+  <header class="mfs-navbar">
+    <div class="revision-page-wrapper mfs-navbar-inner">
+      <a href="index.html" class="mfs-brand">
+        <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div class="mfs-brand-text">
+          <div class="mfs-brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
+          <div class="mfs-brand-subtitle">Delivering Skills • Achieving Goals</div>
+        </div>
+      </a>
+
+      <nav class="mfs-nav-wrapper">
+        <ul class="mfs-nav-menu">
+          <!-- 1. SUBJECTS (VISUAL MEGA-MENU) -->
+          <li class="mfs-nav-item">
+            <a href="revise.html" class="mfs-nav-link">
+              <i class="fa-solid fa-book-open-reader" style="color:#0284c7; margin-right:5px;"></i> Subjects <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-revision-hub">
+              <div class="mfs-revision-grid">
+                <!-- Maths Column -->
+                <div class="mfs-revision-col mfs-revision-col-maths">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-calculator"></i> Maths Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="functional-skills-maths-level-1.html" class="mfs-dropdown-item">Maths Level 2</a>
+                    <a href="functional-skills-maths-level-1.html" class="mfs-dropdown-item">Maths Level 1</a>
+                    <a href="entry-level-3-maths.html" class="mfs-dropdown-item">Entry Level 3 Maths</a>
+                  </div>
+                </div>
+                <!-- English Column -->
+                <div class="mfs-revision-col mfs-revision-col-english">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-pen-nib"></i> English Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="functional-skills-english-level-2.html" class="mfs-dropdown-item">English Level 2</a>
+                    <a href="functional-skills-english-level-1.html" class="mfs-dropdown-item">English Level 1</a>
+                  </div>
+                </div>
+                <!-- Digital Skills Column -->
+                <div class="mfs-revision-col mfs-revision-col-digital">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-laptop-code"></i> Digital Skills</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="digital-functional-skills.html" class="mfs-dropdown-item">Digital Skills Hub</a>
+                    <a href="digital-functional-skills-mock-exam.html" class="mfs-dropdown-item">Pearson Mock Exam</a>
+                    <a href="digital-functional-skills-past-papers.html" class="mfs-dropdown-item">Past Papers &amp; Files</a>
+                  </div>
+                </div>
+              </div>
+              <!-- Course & Subject Selector Cross-link Footer inside dropdown -->
+              <div class="mfs-revision-dropdown-footer" style="margin-top:12px; padding-top:10px; border-top:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center; font-size:0.92rem;">
+                <a href="revise.html" style="font-weight:700; color:var(--accent); text-decoration:none;"><i class="fa-solid fa-layer-group" style="margin-right:4px;"></i> View All Subjects &amp; Levels &rarr;</a>
+                <a href="courses.html" style="font-weight:700; color:#059669; text-decoration:none;"><i class="fa-solid fa-graduation-cap" style="margin-right:4px;"></i> Accredited Online Courses &rarr;</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- 2. ONLINE COURSES -->
+          <li class="mfs-nav-item">
+            <a href="courses.html" class="mfs-nav-link">
+              <i class="fa-solid fa-graduation-cap" style="color:#0284c7; margin-right:5px;"></i> Online Courses
+            </a>
+          </li>
+
+          <!-- 3. PAST PAPERS (DIRECT ACCESS) -->
+          <li class="mfs-nav-item">
+            <a href="functional-skills-past-papers.html" class="mfs-nav-link">
+              <i class="fa-regular fa-file-lines" style="color:#0284c7; margin-right:5px;"></i> Past Papers
+            </a>
+          </li>
+
+          <!-- 4. WORKSHEETS DIRECTORY (CORBETT STYLE DUAL ENGINE) -->
+          <li class="mfs-nav-item">
+            <a href="worksheets.html" class="mfs-nav-link">
+              <i class="fa-solid fa-layer-group" style="color:#0284c7; margin-right:5px;"></i> Worksheets
+            </a>
+          </li>
+
+          <!-- 5. FREE TOOLS (COMPACT DROPDOWN) -->
+          <li class="mfs-nav-item">
+            <a href="tools.html" class="mfs-nav-link">
+              <i class="fa-solid fa-screwdriver-wrench" style="color:#0284c7; margin-right:5px;"></i> Free Tools <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-compact">
+              <a href="tools.html" class="mfs-dropdown-item" style="font-weight:700; color:var(--accent);"><i class="fa-solid fa-layer-group" style="font-size:0.85rem; margin-right:6px;"></i> All Free Tools &amp; Simulators &rarr;</a>
+              <div class="mfs-dropdown-divider" style="margin:4px 0; border-top:1px solid #e2e8f0;"></div>
+              <a href="pass-mark-calculator.html" class="mfs-dropdown-item"><i class="fa-solid fa-calculator" style="color:var(--accent); font-size:0.85rem; margin-right:6px;"></i> Pass Mark Calculator</a>
+              <a href="diagnostic-test.html" class="mfs-dropdown-item"><i class="fa-solid fa-chart-pie" style="color:#059669; font-size:0.85rem; margin-right:6px;"></i> Diagnostic Skill Checker</a>
+              <a href="functional-skills-nets.html" class="mfs-dropdown-item"><i class="fa-solid fa-cube" style="color:#0284c7; font-size:0.85rem; margin-right:6px;"></i> 3D Net Folding Tool</a>
+              <a href="video-solution.html" class="mfs-dropdown-item"><i class="fa-solid fa-circle-play" style="color:#ef4444; font-size:0.85rem; margin-right:6px;"></i> Video Walkthrough Station</a>
+            </div>
+          </li>
+
+          <!-- 6. REVISION CARDS -->
+          <li class="mfs-nav-item">
+            <a href="revision-cards.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-layer-group" style="color:#d97706; margin-right:5px;"></i> Revision Cards
+            </a>
+          </li>
+
+          <!-- 7. SHOP -->
+          <li class="mfs-nav-item">
+            <a href="shop.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-basket-shopping" style="color:#d97706; margin-right:5px;"></i> Shop
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- 8. BOOK EXAM ACTION BUTTON -->
+      <div class="mfs-nav-actions">
+        <a href="exams.html" class="btn-nav-exam">
+          <i class="fa-solid fa-calendar-check"></i> Book Exam
+        </a>
+      </div>
+
+      <!-- MOBILE CONTROLS (TINT + MENU PILL) -->
+      <div class="mfs-mobile-controls" id="mfsMobileControls">
+        <button type="button" class="btn-mobile-tint-toggle" id="mfsMobileTintBtn" title="Change Reading Tint" aria-label="Reading Tint">
+          <i class="fa-solid fa-glasses"></i>
+          <span class="mobile-tint-swatch" id="mfsMobileTintSwatch"></span>
+        </button>
+        <button type="button" class="mfs-menu-pill" id="mfsMobileToggleBtn" title="Open Navigation Menu" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+          <span>Menu</span>
+        </button>
+      </div>
+    </div>
+    <!-- MOBILE NAVIGATION ENGINE -->
+    <script src="assets/js/mfs-mobile.js" defer></script>
+  </header>
+
+  <!-- BREADCRUMBS -->
+  <div class="revision-breadcrumb-bar">
+    <div class="revision-page-wrapper">
+      <div class="revision-breadcrumbs">
+        <a href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a href="revise.html">Revise Hub</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a href="functional-skills-maths-level-1.html">Mathematics Level 1</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span class="current">Perimeter Level 1</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="revision-hero-card">
+    <div class="revision-page-wrapper">
+      <div class="revision-hero-grid">
+        <div class="revision-hero-content">
+          <div class="revision-hero-pill-row">
+            <span class="badge-pill-accent"><i class="fa-solid fa-calculator"></i> MATHEMATICS</span>
+            <span class="badge-pill-gold">LEVEL 1 REVISION</span>
+            <span class="badge-pill-outline">OFQUAL SPECIFICATION STANDARDS</span>
+          </div>
+
+          <h1 class="revision-hero-title">
+            Perimeter Level 1: <span>Formulas, Models &amp; Exam Practice</span>
+          </h1>
+
+          <p class="revision-hero-desc">
+            Comprehensive revision guide for Perimeter calibrated to Pearson Edexcel &amp; City &amp; Guilds Functional Skills standards. Master simple shapes, compound L-shapes, circular arcs, worked exam models, and interactive practice.
+          </p>
+
+          <div class="revision-hero-meta-bar">
+            <div class="hero-meta-item">
+              <i class="fa-solid fa-clock"></i> <strong>Est. Study Time:</strong> 25-35 Mins
+            </div>
+            <div class="hero-meta-item">
+              <i class="fa-solid fa-book-open"></i> <strong>Curriculum Standards:</strong> Pearson Edexcel &amp; City &amp; Guilds
+            </div>
+            <div class="hero-meta-item">
+              <i class="fa-solid fa-circle-check"></i> <strong>Interactive Practice Tasks Included</strong>
+            </div>
+
+            <div class="hero-quick-actions">
+              <a href="#downloads" class="btn-hero-action">
+                <i class="fa-regular fa-file-pdf"></i> Free Worksheet &amp; Answers (PDF)
+              </a>
+              <a href="#practice-questions" class="btn-hero-action-secondary">
+                <i class="fa-solid fa-pencil"></i> Start Practice Tasks
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="revision-hero-visual-card">
+          <div class="revision-hero-img-wrap">
+            <img src="assets/img/book_photos/construction_trades/carpenter_laser_measure.jpg" alt="Perimeter Workplace Application" loading="lazy" />
+          </div>
+          <div class="revision-hero-caption-bar">
+            <strong><i class="fa-solid fa-shapes"></i> Key Visual Concept</strong>
+            Site carpenter measuring total room perimeter boundaries for skirting boards and trims.
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MOBILE TABLE OF CONTENTS BAR -->
+  <div class="mobile-toc-bar">
+    <div style="font-weight:700; color:var(--navy-dark); font-size:0.9rem;">
+      <i class="fa-solid fa-list-check" style="color:var(--accent);"></i> Perimeter Blueprint
+    </div>
+    <button type="button" class="btn-mobile-toc" onclick="toggleMobileToc()">
+      <span>Table of Contents</span> <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+
+  <!-- MAIN 2-COLUMN RESPONSIVE LAYOUT -->
+  <main class="revision-page-wrapper">
+    <div class="revision-layout">
+
+      <!-- LEFT COLUMN: STICKY BLUEPRINT TOC -->
+      <aside class="revision-sidebar" id="sidebarNav">
+        <div class="sidebar-toc-title">
+          <span><i class="fa-solid fa-compass-drafting" style="color:var(--accent);"></i> Topic Contents</span>
+          <span style="font-size:0.90rem; color:#64748b; font-weight:700;">10 Sections</span>
+        </div>
+
+        <ul class="sidebar-toc-list" id="tocList">
+          
+          <li>
+            <a href="#specification" class="sidebar-toc-link active">
+              <i class="fa-solid fa-clipboard-check"></i> Specification
+            </a>
+          </li>
+          <li>
+            <a href="#golden-rules" class="sidebar-toc-link">
+              <i class="fa-solid fa-lightbulb"></i> Golden Rules
+            </a>
+          </li>
+          <li>
+            <a href="#skill-1" class="sidebar-toc-link">
+              <i class="fa-solid fa-shapes"></i> 1. Rectangles
+            </a>
+          </li>
+          <li>
+            <a href="#skill-2" class="sidebar-toc-link">
+              <i class="fa-solid fa-shapes"></i> 2. Parallelograms
+            </a>
+          </li>
+          <li>
+            <a href="#skill-3" class="sidebar-toc-link">
+              <i class="fa-solid fa-shapes"></i> 3. Compound L-Shapes
+            </a>
+          </li>
+          <li>
+            <a href="#skill-4" class="sidebar-toc-link">
+              <i class="fa-solid fa-shapes"></i> 4. Shapes with Arcs
+            </a>
+          </li>
+          <li>
+            <a href="#worked-exam-models" class="sidebar-toc-link">
+              <i class="fa-solid fa-graduation-cap"></i> Worked Exam Models
+            </a>
+          </li>
+          <li>
+            <a href="#examiner-traps" class="sidebar-toc-link">
+              <i class="fa-solid fa-triangle-exclamation"></i> Examiner Traps
+            </a>
+          </li>
+          <li>
+            <a href="#practice-questions" class="sidebar-toc-link">
+              <i class="fa-solid fa-pencil"></i> Exam Practice
+            </a>
+          </li>
+          <li>
+            <a href="#downloads" class="sidebar-toc-link">
+              <i class="fa-solid fa-file-pdf"></i> Downloads (PDF)
+            </a>
+          </li>
+        </ul>
+      </aside>
+
+      <!-- RIGHT COLUMN: MAIN LEARNING CONTENT -->
+      <div class="revision-content">
+        
+    <!-- SPECIFICATION -->
+    <section id="specification" class="revision-section">
+      <div class="section-header-row">
+        <h2 class="section-title"><i class="fa-solid fa-clipboard-check"></i> Specification &amp; Learning Outcomes</h2>
+      </div>
+      <div class="skill-card-container">
+        <p>Students must be able to demonstrate mastery of the following regulated outcomes:</p>
+        <ul style="padding-left:20px; line-height:1.75; color:#334155;">
+          <li><strong>L1.22</strong> – Calculate the perimeter of simple shapes, including rectangles and combinations of rectangles.</li>
+          <li><strong>L2.16</strong> – Calculate perimeters of 2D shapes including triangles, circles, and composite shapes (including circular boundaries and non-rectangular compounds).</li>
+          <li>Set out step-by-step mathematical working clearly, stating appropriate units of linear measurement (mm, cm, m).</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Tutor Welcome & Vision Callout -->
+    <div class="tutor-pro-callout">
+      <img src="assets/img/avatars/subi.png" alt="Subi Lead Assessor and Specialist Tutor" class="tutor-avatar-img">
+      <div class="tutor-speech-bubble">
+        <div class="tutor-speech-title"><i class="fa-solid fa-graduation-cap"></i> Subi's Assessor Blueprint: Large Steps &amp; No Squinting on Perimeter!</div>
+        <p class="tutor-speech-text">
+          "Perimeter is one of the most common topics in Pearson Edexcel exams, but candidates frequently lose easy marks on compound L-shapes and missing gate openings. Follow our <strong>High-Visibility Visual System</strong> below: count every external side, step down your arithmetic without cramming, and lock in all method marks!"
+        </p>
+      </div>
+    </div>
+
+    <!-- GOLDEN RULES -->
+    <section id="golden-rules" class="revision-section">
+      <div class="section-header-row">
+        <h2 class="section-title"><i class="fa-solid fa-lightbulb"></i> Golden Rules for Perimeter</h2>
+      </div>
+
+      <div class="rule-card-amber">
+        <div class="rule-card-amber-header">
+          <i class="fa-solid fa-route"></i>
+          <span>Golden Rule 1: Perimeter is the Outside Distance — Walk the Entire Boundary</span>
+        </div>
+        <p>
+          Perimeter is strictly the total distance around the outside edge of a 2D shape. Imagine walking around the perimeter of the field or floor. Never add inside partition lines or dashed splitting lines used in working out compound shapes.
+        </p>
+        <div class="rule-highlight-badge">
+          Examiner Tip: Mark each side with a small tick as you add it to your running total so you don't miss or double-count sides.
+        </div>
+      </div>
+
+      <div class="rule-card-amber">
+        <div class="rule-card-amber-header">
+          <i class="fa-solid fa-ruler-combined"></i>
+          <span>Golden Rule 2: Slant Heights Count for Perimeter; Perpendicular Heights Do Not</span>
+        </div>
+        <p>
+          When finding the perimeter of parallelograms or trapeziums, you must use the outer slanted side lengths. The perpendicular height inside the shape is only used for area calculations, never for perimeter!
+        </p>
+        <div class="rule-highlight-badge">
+          Units Check: Perimeter is always measured in linear units (mm, cm, m) — never square units (cm&sup2; or m&sup2;).
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILL 1: RECTANGLES -->
+    <section id="skill-1" class="revision-section">
+      <div class="pfs-card">
+        <div class="pfs-card-head">
+          <div class="pfs-card-title">
+            <span class="pfs-prefix">Example 1:</span> Perimeter of a Rectangle (Garden Border)
+          </div>
+          <p class="pfs-card-stem">
+            A healthcare facility garden bed is in the shape of a rectangle with length <strong>18 m</strong> and width <strong>7.5 m</strong>. Calculate the total perimeter of the garden bed.
+          </p>
+        </div>
+
+        <div class="pfs-card-body">
+          <div class="pfs-math-col">
+            <div class="pfs-marks-row">[2 Marks]</div>
+            <div class="pfs-formula-display">
+              Perimeter = 2 &times; (Length + Width) &nbsp;or&nbsp; Side + Side + Side + Side
+            </div>
+            <div class="pfs-steps-box">
+              <div class="pfs-step-row">
+                <span class="pfs-step-tag">Step 1:</span>
+                <span>Opposite sides of a rectangle are identical in length (18 m and 7.5 m).</span>
+              </div>
+              <div class="pfs-step-row">
+                <span class="pfs-step-tag">Step 2:</span>
+                <span>Add all four outer sides: 18 + 18 + 7.5 + 7.5 = <strong>51 m</strong>.</span>
+              </div>
+              <div class="pfs-step-row">
+                <span class="pfs-step-tag">Step 3:</span>
+                <span>Alternative formula: 2 &times; (18 + 7.5) = 2 &times; 25.5 = <strong>51 m</strong>.</span>
+              </div>
+            </div>
+
+            <div class="big-answer-row">
+              <div class="big-answer-title"><i class="fa-solid fa-check"></i> Final Perimeter:</div>
+              <div class="big-answer-chips">
+                <span class="big-answer-chip">51 m</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pfs-diagram-col">
+            <svg viewBox="0 0 340 180" width="340" height="180">
+              <rect x="30" y="30" width="280" height="110" fill="#ea580c" fill-opacity="0.12" stroke="#ea580c" stroke-width="3" rx="4" />
+              <text x="170" y="22" font-size="14" font-weight="800" fill="#ea580c" text-anchor="middle">18 m</text>
+              <text x="170" y="162" font-size="14" font-weight="800" fill="#ea580c" text-anchor="middle">18 m</text>
+              <text x="16" y="90" font-size="14" font-weight="800" fill="#ea580c" text-anchor="middle">7.5 m</text>
+              <text x="324" y="90" font-size="14" font-weight="800" fill="#ea580c" text-anchor="middle">7.5 m</text>
+            </svg>
+          </div>
+        </div>
+
+        <div class="pfs-card-footer">
+          <span class="pfs-pill-l1">Level 1</span>
+          <span class="pfs-pill-l2">Level 2</span>
+          <span class="pfs-pill-board">Pearson Edexcel &bull; City &amp; Guilds</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILL 2: PARALLELOGRAMS -->
+    <section id="skill-2" class="revision-section">
+      <div class="pfs-card">
+        <div class="pfs-card-head">
+          <div class="pfs-card-title">
+            <span class="pfs-prefix">Example 2:</span> Perimeter of a Parallelogram (Distractor Traps)
+          </div>
+          <p class="pfs-card-stem">
+            Below is a parallelogram flower border with a horizontal base of <strong>14 m</strong>, a slanted side of <strong>9 m</strong>, and an internal perpendicular height of <strong>7 m</strong>. Calculate the perimeter.
+          </p>
+        </div>
+
+        <div class="pfs-card-body">
+          <div class="pfs-math-col">
+            <div class="pfs-marks-row">[2 Marks]</div>
+            <div class="pfs-formula-display">
+              Perimeter = 2 &times; (Base + Slanted Side)
+            </div>
+            <div class="pfs-steps-box">
+              <div class="pfs-step-row">
+                <span class="pfs-step-tag">Step 1:</span>
+                <span>Identify the boundary edges: Base = 14 m, Slant Side = 9 m.</span>
+              </div>
+              <div class="pfs-step-row">
+                <span class="pfs-step-tag">Step 2:</span>
+                <span style="color:#e11d48; font-weight:700;">Discard the perpendicular height (7 m) — it is a trap intended for area!</span>
+              </div>
+              <div class="pfs-step-row">
+                <span class="pfs-step-tag">Step 3:</span>
+                <span>Add the 4 outer sides: 14 + 14 + 9 + 9 = <strong>46 m</strong>.</span>
+              </div>
+            </div>
+
+            <div class="big-answer-row">
+              <div class="big-answer-title"><i class="fa-solid fa-check"></i> Final Perimeter:</div>
+              <div class="big-answer-chips">
+                <span class="big-answer-chip">46 m</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pfs-diagram-col">
+            <svg viewBox="0 0 340 180" width="340" height="180">
+              <polygon points="70,30 310,30 250,140 10,140" fill="#0284c7" fill-opacity="0.12" stroke="#0284c7" stroke-width="3" />
+              <line x1="70" y1="30" x2="70" y2="140" stroke="#e11d48" stroke-width="2" stroke-dasharray="4,4" />
+              <text x="190" y="22" font-size="14" font-weight="800" fill="#0284c7" text-anchor="middle">14 m</text>
+              <text x="130" y="160" font-size="14" font-weight="800" fill="#0284c7" text-anchor="middle">14 m</text>
+              <text x="295" y="90" font-size="14" font-weight="800" fill="#0284c7">9 m</text>
+              <text x="82" y="90" font-size="13" font-weight="700" fill="#e11d48">7 m (Trap)</text>
+            </svg>
+          </div>
+        </div>
+
+        <div class="pfs-card-footer">
+          <span class="pfs-pill-l1">Level 1</span>
+          <span class="pfs-pill-l2">Level 2</span>
+          <span class="pfs-pill-board">Pearson Edexcel &bull; City &amp; Guilds</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILL 3: COMPOUND L-SHAPES -->
+    <section id="skill-3" class="revision-section">
+      <div class="pfs-card">
+        <div class="pfs-card-head">
+          <div class="pfs-card-title">
+            <span class="pfs-prefix">Example 3:</span> Perimeter of a Compound L-Shape (Finding Missing Sides)
+          </div>
+          <p class="pfs-card-stem">
+            A community healthcare clinic office suite is shaped like an L. The top edge is <strong>16 m</strong>, the left outer edge is <strong>12 m</strong>, the bottom-right step is <strong>9 m</strong> wide, and the bottom-left edge is <strong>7 m</strong> wide. Calculate the total perimeter.
+          </p>
+        </div>
+
+        <div class="pfs-card-body">
+          <div class="pfs-math-col">
+            <div class="pfs-marks-row">[3 Marks]</div>
+            <div class="pfs-steps-box">
+              <div class="pfs-step-row">
+                <span class="pfs-step-tag">Step 1:</span>
+                <span>Find missing horizontal side: Top (16 m) &minus; Bottom-left (7 m) = <strong>9 m</strong> (matches right overhang).</span>
+              </div>
+              <div class="pfs-step-row">
+                <span class="pfs-step-tag">Step 2:</span>
+                <span>Find missing vertical side: Total Left Height (12 m) &minus; Right Step Height (7 m) = <strong>5 m</strong>.</span>
+              </div>
+              <div class="pfs-step-row">
+                <span class="pfs-step-tag">Step 3:</span>
+                <span>Add all 6 outer sides: 16 + 5 + 9 + 7 + 7 + 12 = <strong>56 m</strong>.</span>
+              </div>
+              <div class="pfs-step-row">
+                <span class="pfs-step-tag">Rule:</span>
+                <span>In any rectangular L-shape, Perimeter = 2 &times; (Max Width + Max Height) = 2 &times; (16 + 12) = <strong>56 m</strong>!</span>
+              </div>
+            </div>
+
+            <div class="big-answer-row">
+              <div class="big-answer-title"><i class="fa-solid fa-check"></i> Final Perimeter:</div>
+              <div class="big-answer-chips">
+                <span class="big-answer-chip">56 m</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pfs-diagram-col">
+            <svg viewBox="0 0 340 220" width="340" height="220">
+              <polygon points="20,20 300,20 300,80 150,80 150,190 20,190" fill="#0284c7" fill-opacity="0.12" stroke="#0284c7" stroke-width="3" />
+              <text x="160" y="16" font-size="13" font-weight="800" fill="#0284c7" text-anchor="middle">16 m (Top)</text>
+              <text x="315" y="55" font-size="13" font-weight="800" fill="#e11d48">5 m (?)</text>
+              <text x="225" y="74" font-size="13" font-weight="800" fill="#0284c7" text-anchor="middle">9 m</text>
+              <text x="165" y="140" font-size="13" font-weight="800" fill="#0284c7">7 m</text>
+              <text x="85" y="206" font-size="13" font-weight="800" fill="#0284c7" text-anchor="middle">7 m</text>
+              <text x="12" y="110" font-size="13" font-weight="800" fill="#0284c7" text-anchor="end">12 m</text>
+            </svg>
+          </div>
+        </div>
+
+        <div class="pfs-card-footer">
+          <span class="pfs-pill-l1">Level 1</span>
+          <span class="pfs-pill-l2">Level 2</span>
+          <span class="pfs-pill-board">Pearson Edexcel &bull; City &amp; Guilds</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- SKILL 4: SHAPES WITH ARCS -->
+    <section id="skill-4" class="revision-section">
+      <div class="pfs-card">
+        <div class="pfs-card-head">
+          <div class="pfs-card-title">
+            <span class="pfs-prefix">Example 4:</span> Compound Shape with Semicircular Arc (Level 2)
+          </div>
+          <p class="pfs-card-stem">
+            A hospital emergency entrance door consists of a rectangle measuring <strong>4 m wide</strong> by <strong>6 m high</strong>, topped by a semicircular arch with diameter <strong>4 m</strong>. Calculate the perimeter of the doorway frame (to 2 decimal places).
+          </p>
+        </div>
+
+        <div class="pfs-card-body">
+          <div class="pfs-math-col">
+            <div class="pfs-marks-row">[3 Marks]</div>
+            <div class="pfs-formula-display">
+              Semicircular Arc = &frac12; &times; &pi; &times; d &nbsp;(&pi; &asymp; 3.142)
+            </div>
+            <div class="pfs-steps-box">
+              <div class="pfs-step-row">
+                <span class="pfs-step-tag">Step 1:</span>
+                <span>Full circle circumference = &pi; &times; d = 3.142 &times; 4 = 12.568 m.</span>
+              </div>
+              <div class="pfs-step-row">
+                <span class="pfs-step-tag">Step 2:</span>
+                <span>Half circle arc = 12.568 &divide; 2 = <strong>6.284 m</strong>.</span>
+              </div>
+              <div class="pfs-step-row">
+                <span class="pfs-step-tag">Step 3:</span>
+                <span>Add outer straight sides: Left (6 m) + Right (6 m) + Bottom (4 m) = 16 m.</span>
+              </div>
+              <div class="pfs-step-row">
+                <span class="pfs-step-tag">Step 4:</span>
+                <span>Total perimeter = 16 + 6.284 = <strong>22.28 m</strong>.</span>
+              </div>
+            </div>
+
+            <div class="big-answer-row">
+              <div class="big-answer-title"><i class="fa-solid fa-check"></i> Total Boundary:</div>
+              <div class="big-answer-chips">
+                <span class="big-answer-chip">22.28 m</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="pfs-diagram-col">
+            <svg viewBox="0 0 340 240" width="340" height="240">
+              <path d="M 90,100 A 80,80 0 0,1 250,100 Z" fill="#7c3aed" fill-opacity="0.15" stroke="#7c3aed" stroke-width="3" />
+              <rect x="90" y="100" width="160" height="120" fill="#7c3aed" fill-opacity="0.08" stroke="#7c3aed" stroke-width="3" />
+              <line x1="90" y1="100" x2="250" y2="100" stroke="#7c3aed" stroke-width="2" stroke-dasharray="4,4" />
+              <text x="170" y="15" font-size="13" font-weight="800" fill="#7c3aed" text-anchor="middle">Arc = &frac12;&pi;d</text>
+              <text x="75" y="160" font-size="14" font-weight="800" fill="#7c3aed" text-anchor="end">6 m</text>
+              <text x="265" y="160" font-size="14" font-weight="800" fill="#7c3aed">6 m</text>
+              <text x="170" y="235" font-size="14" font-weight="800" fill="#7c3aed" text-anchor="middle">4 m</text>
+              <text x="170" y="118" font-size="12" font-style="italic" fill="#64748b" text-anchor="middle">Internal line (Do Not Add!)</text>
+            </svg>
+          </div>
+        </div>
+
+        <div class="pfs-card-footer">
+          <span class="pfs-pill-l2">Level 2 Only</span>
+          <span class="pfs-pill-board">Pearson Edexcel &bull; City &amp; Guilds</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORKED EXAM MODELS -->
+    <section id="worked-exam-models" class="revision-section">
+      <div class="section-header-row">
+        <h2 class="section-title"><i class="fa-solid fa-graduation-cap"></i> Pearson Edexcel Worked Exam Model</h2>
+      </div>
+
+      <div class="worked-exam-model-card">
+        <div class="model-header-bar">
+          <span class="badge-worked-model">Pearson Edexcel Level 2 Realistic Scenario</span>
+          <span class="model-marks-pill">[4 Marks &bull; Calculator Allowed]</span>
+        </div>
+        <div class="model-question-stem">
+          <strong>Vocational Healthcare Context:</strong> A community healthcare facility is installing security perimeter fencing around a new staff car park. The car park is a rectangle measuring <strong>45 m</strong> long by <strong>28 m</strong> wide. 
+          A gate opening of width <strong>4 m</strong> is left along one side (no fencing is needed across the gate).<br><br>
+          The fencing contractor charges <strong>&pound;34 per metre</strong> of installed fence.<br>
+          Calculate the total cost of installing the security fencing. Show all your working clearly.
+        </div>
+
+        <div class="model-steps-list">
+          <!-- 3-Column Header: Step, Description, Criteria -->
+          <div class="model-steps-header-row">
+            <div><i class="fa-solid fa-list-ol" style="color:#0284c7; margin-right:6px;"></i> Step &amp; Action</div>
+            <div><i class="fa-solid fa-calculator" style="color:#0284c7; margin-right:6px;"></i> Full Working &amp; Big Visual Calculation</div>
+            <div><i class="fa-solid fa-award" style="color:#0284c7; margin-right:6px;"></i> Edexcel Mark Scheme Criteria</div>
+          </div>
+
+          <div class="model-step-row model-step-grid-row">
+            <div class="model-step-col-step">
+              <span class="example-step-pill">Step 1</span>
+              <span class="model-step-title">Calculate full rectangular perimeter</span>
+              <span style="font-size:1.02rem; color:#64748b; font-weight:700; display:block; margin-top:4px;">2 &times; (Length + Width)</span>
+            </div>
+            <div class="model-step-col-desc">
+              <div class="math-stepdown-board" style="padding:14px 18px; margin:0; background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:10px;">
+                <div style="font-size:0.95rem; font-weight:800; color:#0369a1; text-transform:uppercase; margin-bottom:8px;">Perimeter Step-Down:</div>
+                <div class="math-stepdown-line">
+                  <span class="math-stepdown-tag">Add Length + Width</span>
+                  <span class="math-stepdown-expr">45 m + 28 m = <strong>73 m</strong></span>
+                </div>
+                <div class="math-stepdown-arrow"><i class="fa-solid fa-arrow-down"></i></div>
+                <div class="math-stepdown-line">
+                  <span class="math-stepdown-tag">Double for 4 Sides</span>
+                  <span class="math-stepdown-expr">73 &times; 2 = <strong style="color:#0369a1; font-size:1.25rem;">146 m</strong></span>
+                </div>
+              </div>
+            </div>
+            <div class="model-step-col-criteria">
+              <span class="criteria-badge-teal" style="font-size:0.9rem; padding:8px 12px;">
+                <i class="fa-solid fa-award"></i> <strong>[M1] Method Mark:</strong><br>Valid method to find full rectangle perimeter (146 m)
+              </span>
+            </div>
+          </div>
+
+          <div class="model-step-row model-step-grid-row">
+            <div class="model-step-col-step">
+              <span class="example-step-pill">Step 2</span>
+              <span class="model-step-title">Subtract the un-fenced gate opening</span>
+              <span style="font-size:1.02rem; color:#64748b; font-weight:700; display:block; margin-top:4px;">Full perimeter &minus; 4 m gate</span>
+            </div>
+            <div class="model-step-col-desc">
+              <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:10px; padding:14px 18px;">
+                <div style="font-size:1.25rem; font-weight:800; color:#0f172a; margin-bottom:6px;">
+                  146 m &minus; 4 m = <span style="color:#b45309;">142 m of fencing</span>
+                </div>
+                <div style="font-size:1.02rem; color:#334155; line-height:1.6;">
+                  The 4 m gate opening requires no fence panels.
+                </div>
+              </div>
+            </div>
+            <div class="model-step-col-criteria">
+              <span class="criteria-badge-teal" style="font-size:0.9rem; padding:8px 12px;">
+                <i class="fa-solid fa-award"></i> <strong>[M1] Method Mark:</strong><br>Accurately subtracting 4 m gate from perimeter
+              </span>
+            </div>
+          </div>
+
+          <div class="model-step-row model-step-grid-row">
+            <div class="model-step-col-step">
+              <span class="example-step-pill">Step 3</span>
+              <span class="model-step-title">Multiply length by cost per metre</span>
+              <span style="font-size:1.02rem; color:#64748b; font-weight:700; display:block; margin-top:4px;">142 m &times; &pound;34</span>
+            </div>
+            <div class="model-step-col-desc">
+              <div style="display:flex; flex-wrap:wrap; gap:16px; align-items:center;">
+                <div class="math-col-board" style="padding:12px 18px; min-width:220px; background:#f0f7ff; border-color:#93c5fd;">
+                  <div style="font-size:1.0rem; font-weight:800; color:#0369a1; margin-bottom:6px;">Partitioning 142 &times; &pound;34:</div>
+                  <div style="font-size:1.05rem; font-weight:800; color:#0f172a; line-height:1.7;">
+                    <div>142 &times; &pound;30 = &pound;4,260</div>
+                    <div>142 &times; &pound;4 = &pound;568</div>
+                    <div style="border-top:1.5px solid #0f172a; margin-top:4px; padding-top:4px; color:#15803d; font-size:1.2rem;">
+                      Total = &pound;4,828
+                    </div>
+                  </div>
+                </div>
+                <div style="flex:1; min-width:180px;">
+                  <div style="font-weight:800; color:#15803d; font-size:1.15rem; margin-bottom:4px;">
+                    Total Cost = &pound;4,828
+                  </div>
+                  <p style="font-size:0.92rem; color:#475569; margin:0; line-height:1.5;">
+                    Accurate process mark awarded for multiplying fence length by &pound;34.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="model-step-col-criteria">
+              <span class="criteria-badge-teal" style="font-size:0.9rem; padding:8px 12px;">
+                <i class="fa-solid fa-award"></i> <strong>[M1] Process Mark:</strong><br>Multiplying remaining fence length by &pound;34
+              </span>
+            </div>
+          </div>
+
+          <div class="model-step-row model-step-grid-row">
+            <div class="model-step-col-step">
+              <span class="example-step-pill">Step 4</span>
+              <span class="model-step-title">State final accredited answer</span>
+              <span style="font-size:1.02rem; color:#64748b; font-weight:700; display:block; margin-top:4px;">Accuracy &amp; Currency</span>
+            </div>
+            <div class="model-step-col-desc">
+              <div style="background:#f0fdf4; border:1.5px solid #86efac; border-radius:8px; padding:12px 18px;">
+                <span style="font-size:1.35rem; font-weight:900; color:#15803d;">&pound;4,828</span>
+                <span style="font-size:0.92rem; color:#166534; margin-left:10px; font-weight:700;">(or &pound;4,828.00)</span>
+              </div>
+            </div>
+            <div class="model-step-col-criteria">
+              <span class="criteria-badge-teal" style="font-size:0.9rem; padding:8px 12px;">
+                <i class="fa-solid fa-award"></i> <strong>[A1] Accuracy Mark:</strong><br>Correct final cost with currency symbol &pound;
+              </span>
+            </div>
+          </div>
+        </div>
+
+        <div class="model-final-answer-callout">
+          <div class="model-final-text"><i class="fa-solid fa-award"></i> Official Examiner Award: 4 / 4 Marks</div>
+          <div style="font-size:0.92rem; color:#94a3b8;">Common Loss: Forgetting to subtract the gate opening loses 2 marks!</div>
+        </div>
+
+        <!-- Examiner Guidance Box with Sonya Avatar -->
+        <div class="tutor-pro-callout" style="margin-top:20px;">
+          <img src="assets/img/avatars/sonya.png" alt="Sonya Specialist Maths Tutor" class="tutor-avatar-img">
+          <div class="tutor-speech-bubble">
+            <div class="tutor-speech-title"><i class="fa-solid fa-lightbulb"></i> Sonya's Visual Quick-Check: Don't Fence the Gate Opening!</div>
+            <p class="tutor-speech-text">
+              "Over 35% of candidates calculate the full perimeter (146 m) and immediately multiply by &pound;34 to get &pound;4,964. If you install fencing across the gate opening, cars cannot get into the car park! Always read the stem carefully and underline words like <em>opening</em>, <em>gateway</em>, or <em>gap</em> before doing your final multiplication."
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EXAMINER TRAPS -->
+    <section id="examiner-traps" class="revision-section">
+      <div class="section-header-row">
+        <h2 class="section-title"><i class="fa-solid fa-triangle-exclamation"></i> Examiner Traps &amp; Common Pitfalls</h2>
+      </div>
+
+      <div class="trap-card-coral">
+        <div class="trap-card-coral-header">
+          <i class="fa-solid fa-circle-xmark"></i>
+          <span>Trap 1: Adding Inside Boundary Lines in Compound Shapes</span>
+        </div>
+        <p>
+          When you split a compound shape into rectangles or triangles, students often accidentally add the dotted partition line into their perimeter sum. 
+        </p>
+        <div class="trap-solution-badge">
+          <i class="fa-solid fa-circle-check" style="color:#10b981;"></i> Solution: Highlight only the exterior edge of the shape with a colored pen before doing your calculations.
+        </div>
+      </div>
+
+      <div class="trap-card-coral">
+        <div class="trap-card-coral-header">
+          <i class="fa-solid fa-circle-xmark"></i>
+          <span>Trap 2: Forgetting to Halve the Circle Circumference</span>
+        </div>
+        <p>
+          The formula &pi; &times; d gives the circumference of a whole circle. For a semicircle, you must divide by 2. If the semicircle is standalone, remember to add the straight diameter across the bottom!
+        </p>
+        <div class="trap-solution-badge">
+          <i class="fa-solid fa-circle-check" style="color:#10b981;"></i> Semicircle Perimeter = (&frac12; &times; &pi; &times; d) + d (if enclosed).
+        </div>
+      </div>
+    </section>
+
+    <!-- PRACTICE QUESTIONS -->
+    <section id="practice-questions" class="revision-section">
+      <div class="section-header-row">
+        <h2 class="section-title"><i class="fa-solid fa-pencil"></i> Interactive Exam Practice Questions</h2>
+        <span style="font-size:0.9rem; color:#64748b; font-weight:700;">3 Practice Tasks</span>
+      </div>
+
+      <!-- Question 1 -->
+      <div class="practice-q-card">
+        <div class="practice-q-header">
+          <div class="practice-q-title"><span class="pfs-prefix">Question 1:</span> Warehouse Skirting Board</div>
+          <span class="practice-marks-pill"><i class="fa-solid fa-award"></i> [2 Marks]</span>
+        </div>
+        <div class="practice-q-stem">
+          <p>A storage warehouse room has a rectangular floor measuring <strong>22 m</strong> in length and <strong>8.5 m</strong> in width.</p>
+          <p>Skirting board is to be installed around the perimeter of the room. Calculate the total metres of skirting board needed.</p>
+        </div>
+
+        <div class="working-scratchpad-area">
+          <label class="working-scratchpad-label"><i class="fa-solid fa-calculator"></i> Your Working Scratchpad (Auto-saved):</label>
+          <textarea class="working-scratchpad-input" placeholder="Type your step-by-step working here..."></textarea>
+        </div>
+
+        <div class="practice-q-toolbar">
+          <button type="button" class="btn-reveal-solution" onclick="toggleSolutionDrawer('drawer-q1')">
+            <i class="fa-solid fa-eye"></i> Reveal Step-by-Step Solution &amp; Mark Scheme
+          </button>
+        </div>
+
+        <div id="drawer-q1" class="solution-drawer">
+          <div class="solution-drawer-title">
+            <div style="display:flex; align-items:center; gap:8px;"><i class="fa-solid fa-circle-check"></i> Official Tutor Step-by-Step Mark Scheme</div>
+            <span class="solution-marks-badge">2 / 2 Marks Awarded</span>
+          </div>
+          <div class="solution-steps-list">
+            <div class="solution-step-item">
+              <div class="solution-step-header">
+                <span class="solution-step-tag">Step 1 (Formula &amp; Method)</span>
+                <span class="solution-step-mark">M1 Method Mark</span>
+              </div>
+              <div class="solution-step-math">Perimeter = 2 &times; (Length + Width) = 2 &times; (22 + 8.5)</div>
+              <div class="solution-step-content">Add the two perpendicular dimensions together (30.5 m), then double for both opposite pairs. (Alternative valid method: 22 + 22 + 8.5 + 8.5).</div>
+            </div>
+            <div class="solution-step-item">
+              <div class="solution-step-header">
+                <span class="solution-step-tag">Step 2 (Calculate Final Total)</span>
+                <span class="solution-step-mark">A1 Accuracy Mark</span>
+              </div>
+              <div class="solution-step-math">2 &times; 30.5 = 61 m</div>
+              <div class="solution-step-content">Compute final linear length. Ensure correct metric units (metres) are included.</div>
+            </div>
+          </div>
+          <div class="solution-final-answer-box">
+            <div class="solution-final-label"><i class="fa-solid fa-award"></i> Correct Final Answer:</div>
+            <div class="solution-final-value">61 metres</div>
+          </div>
+          <div class="solution-tutor-tip">
+            <i class="fa-solid fa-lightbulb"></i>
+            <span><strong>Examiner Marking Tip:</strong> Remember that perimeter is linear length (m), NOT square units (m&sup2;). Writing m&sup2; for perimeter will lose accuracy marks in Functional Skills exams!</span>
+          </div>
+        </div>
+        <div class="practice-q-footer">
+          <span class="pfs-pill-l1">FS Level 1</span>
+          <span class="pfs-pill-l2">FS Level 2</span>
+          <span class="pfs-pill-board">Edexcel</span>
+          <span class="pfs-pill-board">City &amp; Guilds</span>
+          <span class="pfs-pill-board">NCFE</span>
+          <span class="pfs-pill-board">Open Awards</span>
+          <span class="pfs-pill-board">Highfield</span>
+        </div>
+      </div>
+
+      <!-- Question 2 -->
+      <div class="practice-q-card">
+        <div class="practice-q-header">
+          <div class="practice-q-title"><span class="pfs-prefix">Question 2:</span> Compound L-Shaped Reception Area</div>
+          <span class="practice-marks-pill"><i class="fa-solid fa-award"></i> [3 Marks]</span>
+        </div>
+        <div class="practice-q-stem">
+          <p>An L-shaped patient reception area has outer measurements: Top = <strong>14 m</strong>, Left = <strong>10 m</strong>, Bottom-left width = <strong>6 m</strong>, and Right-hand drop = <strong>4 m</strong>.</p>
+          <p>Work out the perimeter of the room.</p>
+        </div>
+
+        <div class="working-scratchpad-area">
+          <label class="working-scratchpad-label"><i class="fa-solid fa-calculator"></i> Your Working Scratchpad (Auto-saved):</label>
+          <textarea class="working-scratchpad-input" placeholder="Type your step-by-step working here..."></textarea>
+        </div>
+
+        <div class="practice-q-toolbar">
+          <button type="button" class="btn-reveal-solution" onclick="toggleSolutionDrawer('drawer-q2')">
+            <i class="fa-solid fa-eye"></i> Reveal Step-by-Step Solution &amp; Mark Scheme
+          </button>
+        </div>
+
+        <div id="drawer-q2" class="solution-drawer">
+          <div class="solution-drawer-title">
+            <div style="display:flex; align-items:center; gap:8px;"><i class="fa-solid fa-circle-check"></i> Official Tutor Step-by-Step Mark Scheme</div>
+            <span class="solution-marks-badge">3 / 3 Marks Awarded</span>
+          </div>
+          <div class="solution-steps-list">
+            <div class="solution-step-item">
+              <div class="solution-step-header">
+                <span class="solution-step-tag">Step 1 (Find Missing Horizontal Edge)</span>
+                <span class="solution-step-mark">M1 Method Mark</span>
+              </div>
+              <div class="solution-step-math">Missing horizontal = 14 &minus; 6 = 8 m</div>
+              <div class="solution-step-content">Subtract the known bottom-left segment (6 m) from the total top width (14 m).</div>
+            </div>
+            <div class="solution-step-item">
+              <div class="solution-step-header">
+                <span class="solution-step-tag">Step 2 (Find Missing Vertical Edge)</span>
+                <span class="solution-step-mark">M1 Method Mark</span>
+              </div>
+              <div class="solution-step-math">Missing vertical = 10 &minus; 4 = 6 m</div>
+              <div class="solution-step-content">Subtract the known right-hand drop (4 m) from the total left height (10 m).</div>
+            </div>
+            <div class="solution-step-item">
+              <div class="solution-step-header">
+                <span class="solution-step-tag">Step 3 (Sum All 6 Sides)</span>
+                <span class="solution-step-mark">A1 Accuracy Mark</span>
+              </div>
+              <div class="solution-step-math">14 + 4 + 8 + 6 + 6 + 10 = 48 m</div>
+              <div class="solution-step-content">Add all outer edges together. (Shortcut check for rectilinear L-shapes: 2 &times; (14 + 10) = 48 m).</div>
+            </div>
+          </div>
+          <div class="solution-final-answer-box">
+            <div class="solution-final-label"><i class="fa-solid fa-award"></i> Correct Final Answer:</div>
+            <div class="solution-final-value">48 metres</div>
+          </div>
+          <div class="solution-tutor-tip">
+            <i class="fa-solid fa-lightbulb"></i>
+            <span><strong>Examiner Marking Tip:</strong> When calculating compound perimeters, count tick marks around the perimeter to ensure all 6 sides are included. Never accidentally add internal boundary lines!</span>
+          </div>
+        </div>
+        <div class="practice-q-footer">
+          <span class="pfs-pill-l2">FS Level 2</span>
+          <span class="pfs-pill-board">Edexcel</span>
+          <span class="pfs-pill-board">City &amp; Guilds</span>
+          <span class="pfs-pill-board">NCFE</span>
+          <span class="pfs-pill-board">Open Awards</span>
+          <span class="pfs-pill-board">Highfield</span>
+        </div>
+      </div>
+
+      <!-- Question 3 -->
+      <div class="practice-q-card">
+        <div class="practice-q-header">
+          <div class="practice-q-title"><span class="pfs-prefix">Question 3:</span> Circular Patio Lighting</div>
+          <span class="practice-marks-pill"><i class="fa-solid fa-award"></i> [3 Marks]</span>
+        </div>
+        <div class="practice-q-stem">
+          <p>A circular patio has a diameter of <strong>7 m</strong>. A decorative rope light is to be placed all the way around the outside edge of the patio.</p>
+          <p>Calculate the length of rope light required to 2 decimal places. Use &pi; = 3.142.</p>
+        </div>
+
+        <div class="working-scratchpad-area">
+          <label class="working-scratchpad-label"><i class="fa-solid fa-calculator"></i> Your Working Scratchpad (Auto-saved):</label>
+          <textarea class="working-scratchpad-input" placeholder="Type your step-by-step working here..."></textarea>
+        </div>
+
+        <div class="practice-q-toolbar">
+          <button type="button" class="btn-reveal-solution" onclick="toggleSolutionDrawer('drawer-q3')">
+            <i class="fa-solid fa-eye"></i> Reveal Step-by-Step Solution &amp; Mark Scheme
+          </button>
+        </div>
+
+        <div id="drawer-q3" class="solution-drawer">
+          <div class="solution-drawer-title">
+            <div style="display:flex; align-items:center; gap:8px;"><i class="fa-solid fa-circle-check"></i> Official Tutor Step-by-Step Mark Scheme</div>
+            <span class="solution-marks-badge">3 / 3 Marks Awarded</span>
+          </div>
+          <div class="solution-steps-list">
+            <div class="solution-step-item">
+              <div class="solution-step-header">
+                <span class="solution-step-tag">Step 1 (Circumference Formula)</span>
+                <span class="solution-step-mark">M1 Method Mark</span>
+              </div>
+              <div class="solution-step-math">Circumference = &pi; &times; d = 3.142 &times; 7</div>
+              <div class="solution-step-content">Use the circumference formula for circles with given diameter (d = 7 m).</div>
+            </div>
+            <div class="solution-step-item">
+              <div class="solution-step-header">
+                <span class="solution-step-tag">Step 2 (Perform Multiplication)</span>
+                <span class="solution-step-mark">M1 Method Mark</span>
+              </div>
+              <div class="solution-step-math">3.142 &times; 7 = 21.994 m</div>
+              <div class="solution-step-content">Calculate the raw product before rounding.</div>
+            </div>
+            <div class="solution-step-item">
+              <div class="solution-step-header">
+                <span class="solution-step-tag">Step 3 (Rounding to 2 Decimal Places)</span>
+                <span class="solution-step-mark">A1 Accuracy Mark</span>
+              </div>
+              <div class="solution-step-math">21.994 &rarr; 21.99 m</div>
+              <div class="solution-step-content">Round to 2 decimal places. The third decimal place is 4 (&lt; 5), so round down to 21.99 m.</div>
+            </div>
+          </div>
+          <div class="solution-final-answer-box">
+            <div class="solution-final-label"><i class="fa-solid fa-award"></i> Correct Final Answer:</div>
+            <div class="solution-final-value">21.99 metres</div>
+          </div>
+          <div class="solution-tutor-tip">
+            <i class="fa-solid fa-lightbulb"></i>
+            <span><strong>Examiner Marking Tip:</strong> When the exam states "Use &pi; = 3.142", always type 3.142 into your calculator instead of pressing the &pi; button. Pearson Edexcel mark schemes check against 3.142 arithmetic.</span>
+          </div>
+        </div>
+        <div class="practice-q-footer">
+          <span class="pfs-pill-l2">FS Level 2</span>
+          <span class="pfs-pill-board">Edexcel</span>
+          <span class="pfs-pill-board">City &amp; Guilds</span>
+          <span class="pfs-pill-board">NCFE</span>
+          <span class="pfs-pill-board">Open Awards</span>
+          <span class="pfs-pill-board">Highfield</span>
+        </div>
+      </div>
+    </section>
+    
+
+                <!-- DOWNLOADS -->
+        <section id="downloads" class="revision-section">
+          <div class="section-header-row">
+            <h2 class="section-title"><i class="fa-regular fa-file-pdf"></i> Free Revision Worksheets &amp; Exam Papers</h2>
+          </div>
+
+          <div class="download-tiles-grid">
+            <!-- STYLE 1: FLUENCY DRILLS WORKOUT (COMBINED) -->
+            <div class="download-combo-card">
+              <div class="download-combo-header">
+                <div class="download-tile-icon icon-workout"><i class="fa-solid fa-repeat"></i></div>
+                <div class="download-combo-info">
+                  <div class="tile-badge-wrap"><span class="badge-tile-type">Style 1: Fluency Drills</span></div>
+                  <strong class="download-tile-title">Perimeter Level 1 Practice Drills</strong>
+                  <span class="download-tile-desc">25+ quick calculation drills + real-life maths problems</span>
+                </div>
+              </div>
+              <div class="download-combo-actions">
+                <a href="worksheets/perimeter-level-1-workout.html" target="_blank" class="download-combo-btn btn-qp">
+                  <i class="fa-regular fa-file-pdf"></i> Question Paper
+                </a>
+                <a href="worksheets/perimeter-level-1-workout-answers.html" target="_blank" class="download-combo-btn btn-ans">
+                  <i class="fa-solid fa-check-double"></i> Answer Key
+                </a>
+              </div>
+            </div>
+
+            <!-- STYLE 2: EXAM PRACTICE QUESTIONS (COMBINED) -->
+            <div class="download-combo-card">
+              <div class="download-combo-header">
+                <div class="download-tile-icon icon-pdf"><i class="fa-regular fa-file-pdf"></i></div>
+                <div class="download-combo-info">
+                  <div class="tile-badge-wrap"><span class="badge-tile-type exam">Style 2: Practice Questions</span></div>
+                  <strong class="download-tile-title">Perimeter Level 1 Practice Questions</strong>
+                  <span class="download-tile-desc">Authentic Pearson Edexcel exam questions with [M1][A1] mark scheme</span>
+                </div>
+              </div>
+              <div class="download-combo-actions">
+                <a href="worksheets/perimeter-level-1-worksheet.html" target="_blank" class="download-combo-btn btn-qp">
+                  <i class="fa-regular fa-file-pdf"></i> Question Paper
+                </a>
+                <a href="worksheets/perimeter-level-1-answers.html" target="_blank" class="download-combo-btn btn-ans">
+                  <i class="fa-solid fa-award"></i> Mark Scheme
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- NEXT TOPIC BANNER -->
+        <div class="next-topic-banner">
+          <div class="next-topic-info">
+            <strong>Next Curriculum Topic</strong>
+            <span>Area (Level 1)</span>
+          </div>
+          <a href="functional-skills-area-level-1.html" class="btn-next-topic">
+            Continue Revision <i class="fa-solid fa-arrow-right"></i>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </main>  <!-- FOOTER -->
+  <footer class="mfs-footer" id="site-footer">
+    <div class="mfs-container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="mfs-brand" style="margin-bottom:16px;">
+            <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="mfs-brand-text">
+              <div class="mfs-brand-title" style="color:#ffffff;">MASTER<span>FUNCTIONALSKILLS</span></div>
+              <div class="mfs-brand-subtitle" style="color:#94a3b8;">Delivering Skills • Achieving Goals</div>
+            </div>
+          </div>
+          <p style="font-size:1.0rem; line-height:1.6; margin-bottom:16px;">
+            The UK's dedicated Functional Skills revision specialist. Providing realistic mock exams, step-by-step revision flashcards, diagnostic assessments, and 1-to-1 specialist tuition for Pearson Edexcel, City &amp; Guilds, and all major exam boards.
+          </p>
+          <div style="font-size:0.95rem; color:#cbd5e1;">
+            <p><a href="https://wa.me/447564525425" target="_blank" rel="noopener" style="color:#cbd5e1; text-decoration:none;"><i class="fa-brands fa-whatsapp" style="color:var(--accent); margin-right:8px;"></i> WhatsApp: +44 (0)7564 525425</a></p>
+            <p style="margin-top:6px;"><a href="contact-us.html" style="color:#cbd5e1; text-decoration:none;"><i class="fa-solid fa-envelope" style="color:var(--accent); margin-right:8px;"></i> Contact Tutor Team</a></p>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Maths Revision</h4>
+          <ul class="footer-links">
+            <li><a href="functional-skills-maths-level-1.html">Maths Level 2 Revision</a></li>
+            <li><a href="functional-skills-maths-level-1.html">Maths Level 1 Revision</a></li>
+            <li><a href="entry-level-3-maths.html">Entry Level 3 Maths</a></li>
+            <li><a href="pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="functional-skills-past-papers.html">Free Maths Past Papers</a></li>
+            <li><a href="exam-maths-l2.html">Book Level 2 Maths Exam</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>English &amp; Digital</h4>
+          <ul class="footer-links">
+            <li><a href="functional-skills-english-level-2.html">English Level 2 Revision</a></li>
+            <li><a href="functional-skills-english-level-1.html">English Level 1 Revision</a></li>
+            <li><a href="digital-functional-skills.html">Digital Skills Hub (L1 &amp; E3)</a></li>
+            <li><a href="digital-functional-skills-past-papers.html">DFS Past Papers &amp; Data Files</a></li>
+            <li><a href="functional-skills-past-papers.html?format=online#mock-finder">Online Exam Simulator</a></li>
+            <li><a href="exam-english-l2.html">Book Level 2 English Exam</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Student Support &amp; Tools</h4>
+          <ul class="footer-links">
+            <li><a href="tools.html" style="color:var(--accent); font-weight:700;"><i class="fa-solid fa-screwdriver-wrench" style="margin-right:6px;"></i>All Interactive Tools Hub</a></li>
+            <li><a href="pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="diagnostic-test.html">Diagnostic Skill Checker</a></li>
+            <li><a href="functional-skills-nets.html">3D Net Folding Tool</a></li>
+            <li><a href="digital-functional-skills-mock-exam.html">Pearson DFS Simulator</a></li>
+            <li><a href="revision-cards.html">Revision Cards &amp; Flashcards</a></li>
+            <li><a href="shop.html">Revision Books &amp; Study Packs</a></li>
+            <li><a href="tutors.html">1-to-1 Specialist Tuition</a></li>
+            <li><a href="exams.html">Book Official Online Exam</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Master Functional Skills. All rights reserved. Registered in England &amp; Wales. Ofqual Regulated Qualification Standards.</div>
+        <div style="display:flex; gap:16px; flex-wrap:wrap;">
+          <a href="index.html">Home</a>
+          <a href="tools.html" style="color:var(--accent); font-weight:700;">Tools</a>
+          <a href="functional-skills-past-papers.html">Past Papers</a>
+          <a href="revision-cards.html">Revision Cards</a>
+          <a href="shop.html">Study Shop</a>
+          <a href="tutors.html">Tutors</a>
+          <a href="contact-us.html">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/mfs-revision.js"></script>
+</body>
+</html>

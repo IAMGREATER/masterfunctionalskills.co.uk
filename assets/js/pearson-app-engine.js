@@ -8,6 +8,7 @@ let popTotalScreens = 20;
 let popUserAnswers = {}; // { qNum: optionIdx }
 let popFlaggedQuestions = {}; // { qNum: boolean }
 let popTaskEvidence = {}; // { taskCode: boolean }
+let popRubricChecked = {}; // { rubricCode: boolean }
 let popTimerSeconds = 90 * 60;
 let popTimerActive = false;
 let popTimerHandle = null;
@@ -50,6 +51,7 @@ function loadSetData(setKey) {
   popUserAnswers = {};
   popFlaggedQuestions = {};
   popTaskEvidence = {};
+  popRubricChecked = {};
   
   const set = DFS_MOCK_DATA[setKey] || DFS_MOCK_DATA["set1"];
   popTimerSeconds = set.durationMinutes * 60;
@@ -348,12 +350,15 @@ function renderScreen(index) {
   if (index >= 15 && index < 15 + set.tasks.length) {
     const taskIdx = index - 15;
     const task = set.tasks[taskIdx];
+    const taskMarksEarned = task.rubric.reduce((acc, r) => acc + (popRubricChecked[r.code] ? r.mark : 0), 0);
 
     canvas.innerHTML = `
       <div style="max-width:920px; margin:0 auto; width:100%;">
-        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+        <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; flex-wrap:wrap; gap:8px;">
           <h2 style="margin:0; font-size:1.35rem; color:#111111;">${task.letter}: ${task.title}</h2>
-          <span style="font-size:1.05rem; font-weight:700; color:#333333;">(${task.marks} Marks)</span>
+          <span style="font-size:1.05rem; font-weight:700; color:#0f172a; background:#f1f5f9; padding:4px 12px; border-radius:6px; border:1px solid #cbd5e1;">
+            Awarded: <strong style="color:${taskMarksEarned === task.marks ? '#16a34a' : '#d97706'};">${taskMarksEarned} / ${task.marks} Marks</strong>
+          </span>
         </div>
 
         <p style="font-size:1.02rem; margin:0 0 16px 0; color:#222222;">
@@ -369,12 +374,37 @@ function renderScreen(index) {
         <!-- Integrated Simulator for this Task -->
         ${renderSimulatorForTask(task)}
 
+        <!-- Pearson Assessor Rubric Criteria Checklist -->
+        <div class="pearson-rubric-card" style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px; padding:16px; margin:16px 0;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px; flex-wrap:wrap; gap:8px;">
+            <div style="font-weight:700; font-size:0.95rem; color:#0f172a;">
+              <i class="fa-solid fa-list-check" style="color:var(--pop-orange);"></i> 
+              Pearson Edexcel Assessor Criteria Checklist (${task.marks} Marks Available)
+            </div>
+            <button type="button" class="btn-award-task-all" onclick="awardAllTaskRubric('${task.id}')" style="background:#e0f2fe; color:#0369a1; border:1px solid #bae6fd; border-radius:4px; padding:4px 12px; font-size:0.82rem; font-weight:700; cursor:pointer;">
+              <i class="fa-solid fa-check-double"></i> Award All Evidence for ${task.letter}
+            </button>
+          </div>
+          <div style="display:grid; grid-template-columns:1fr; gap:6px;">
+            ${task.rubric.map(r => `
+              <label style="display:flex; align-items:flex-start; gap:10px; font-size:0.88rem; cursor:pointer; color:#334155; padding:6px 10px; border-radius:4px; background:#ffffff; border:1px solid ${popRubricChecked[r.code] ? '#86efac' : '#e2e8f0'};">
+                <input type="checkbox" id="popRubric_${r.code}" 
+                       ${popRubricChecked[r.code] ? "checked" : ""} 
+                       onchange="togglePopRubricCriterion('${task.id}', '${r.code}', this.checked)"
+                       style="margin-top:2px;">
+                <span style="flex:1;"><strong>[${r.code}]</strong> ${r.desc}</span>
+                <span style="font-weight:700; color:#0284c7; white-space:nowrap;">${r.mark} ${r.mark === 1 ? 'mark' : 'marks'}</span>
+              </label>
+            `).join("")}
+          </div>
+        </div>
+
         <div class="pearson-evidence-check">
           <label style="cursor:pointer; display:flex; align-items:center; gap:10px;">
             <input type="checkbox" id="evCheck_${task.id}" 
                    ${popTaskEvidence[task.id] ? "checked" : ""} 
-                   onchange="popTaskEvidence['${task.id}'] = this.checked">
-            <span>Evidence: I have completed and verified my output for ${task.letter}</span>
+                   onchange="handleTaskEvidenceToggle('${task.id}', this.checked)">
+            <span>Evidence: I have completed and verified my output for ${task.letter} (${task.marks} Marks)</span>
           </label>
         </div>
 
@@ -391,21 +421,50 @@ function renderScreen(index) {
 
   // Screen 20: Section B Summary & Final Generate Report Screen
   if (index >= 15 + set.tasks.length) {
+    let totalSecBScored = 0;
+    set.tasks.forEach(t => {
+      t.rubric.forEach(r => {
+        if (popRubricChecked[r.code]) totalSecBScored += r.mark;
+      });
+    });
+
     canvas.innerHTML = `
       <div class="pearson-summary-wrap">
         <div class="pearson-summary-title">Section B Summary</div>
-        <div class="pearson-summary-subtitle">You have completed all assessment tasks. Generate your official report below.</div>
+        <div class="pearson-summary-subtitle">You have completed all assessment tasks. Review your evidence and generate your official report below.</div>
 
-        <div style="background:#ffffff; border:1px solid #bfbfbf; border-radius:6px; padding:20px; max-width:680px; margin:20px auto;">
-          <h4 style="margin:0 0 12px 0;"><i class="fa-solid fa-clipboard-check" style="color:var(--pop-orange);"></i> Practical Task Evidence Checklist:</h4>
-          ${set.tasks.map(t => `
-            <div style="display:flex; justify-content:space-between; padding:8px 0; border-bottom:1px solid #f1f5f9; font-size:0.95rem;">
-              <span><strong>${t.letter}:</strong> ${t.title}</span>
-              <span style="font-weight:700; color:${popTaskEvidence[t.id] ? "#16a34a" : "#d97706"};">
-                ${popTaskEvidence[t.id] ? "✔ Evidence Recorded" : "⚠ Review Task"}
-              </span>
-            </div>
-          `).join("")}
+        <div style="background:#ffffff; border:1px solid #bfbfbf; border-radius:8px; padding:20px; max-width:760px; margin:20px auto; text-align:left;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:14px; flex-wrap:wrap; gap:10px;">
+            <h4 style="margin:0; font-size:1.1rem; color:#0f172a;"><i class="fa-solid fa-clipboard-check" style="color:var(--pop-orange);"></i> Section B Practical Task Evidence Breakdown:</h4>
+            <button type="button" class="btn-pop-action" onclick="awardAllSectionBEvidence(); renderScreen(popCurrentScreen);" style="padding:4px 12px; font-size:0.82rem;">
+              <i class="fa-solid fa-check-double"></i> Award All Section B Evidence (44/44)
+            </button>
+          </div>
+
+          ${set.tasks.map(t => {
+            const tMarks = t.rubric.reduce((acc, r) => acc + (popRubricChecked[r.code] ? r.mark : 0), 0);
+            return `
+              <div style="display:flex; justify-content:space-between; align-items:center; padding:10px 0; border-bottom:1px solid #f1f5f9; font-size:0.95rem;">
+                <div>
+                  <strong>${t.letter}:</strong> ${t.title}
+                  <span style="color:#64748b; font-size:0.85rem; margin-left:6px;">(${t.marks} Marks Available)</span>
+                </div>
+                <div style="display:flex; align-items:center; gap:12px;">
+                  <span style="font-weight:700; color:${tMarks === t.marks ? "#16a34a" : (tMarks > 0 ? "#0284c7" : "#d97706")};">
+                    ${tMarks} / ${t.marks} Marks Awarded
+                  </span>
+                  <button type="button" onclick="goToScreen(${15 + set.tasks.indexOf(t)})" style="background:none; border:1px solid #cbd5e1; border-radius:4px; padding:2px 8px; font-size:0.8rem; cursor:pointer;">
+                    Edit
+                  </button>
+                </div>
+              </div>
+            `;
+          }).join("")}
+
+          <div style="margin-top:14px; padding-top:10px; display:flex; justify-content:space-between; font-weight:800; font-size:1.05rem; color:#0f172a;">
+            <span>Section B Subtotal:</span>
+            <span style="color:#0284c7;">${totalSecBScored} / 44 Marks</span>
+          </div>
         </div>
 
         <div class="pearson-summary-actions" style="margin-top:28px;">
@@ -589,76 +648,353 @@ document.addEventListener("fullscreenchange", () => {
   updateFullscreenButtons();
 });
 
-// Official Pearson Diagnostic Report Generation
+// Section B Task Evidence and Rubric Toggles
+function togglePopRubricCriterion(taskId, code, isChecked) {
+  popRubricChecked[code] = isChecked;
+  if (typeof rubricChecked !== "undefined") {
+    rubricChecked[code] = isChecked;
+  }
+  const set = DFS_MOCK_DATA[popCurrentSetKey] || DFS_MOCK_DATA["set1"];
+  const task = set.tasks.find(t => t.id === taskId);
+  if (task) {
+    const allChecked = task.rubric.every(r => popRubricChecked[r.code]);
+    popTaskEvidence[taskId] = allChecked;
+    const evBox = document.getElementById("evCheck_" + taskId);
+    if (evBox) evBox.checked = allChecked;
+  }
+}
+
+function handleTaskEvidenceToggle(taskId, isChecked) {
+  popTaskEvidence[taskId] = isChecked;
+  const set = DFS_MOCK_DATA[popCurrentSetKey] || DFS_MOCK_DATA["set1"];
+  const task = set.tasks.find(t => t.id === taskId);
+  if (task) {
+    task.rubric.forEach(r => {
+      popRubricChecked[r.code] = isChecked;
+      if (typeof rubricChecked !== "undefined") {
+        rubricChecked[r.code] = isChecked;
+      }
+      const el = document.getElementById("popRubric_" + r.code);
+      if (el) el.checked = isChecked;
+    });
+  }
+  // Re-render task canvas to update awarded badge
+  if (popCurrentScreen >= 15 && popCurrentScreen < 15 + set.tasks.length) {
+    renderScreen(popCurrentScreen);
+  }
+}
+
+function awardAllTaskRubric(taskId) {
+  handleTaskEvidenceToggle(taskId, true);
+}
+
+function toggleReportRubric(taskId, code, isChecked) {
+  togglePopRubricCriterion(taskId, code, isChecked);
+  showPearsonReportModal();
+}
+
+function awardAllSectionBEvidence() {
+  const set = DFS_MOCK_DATA[popCurrentSetKey] || DFS_MOCK_DATA["set1"];
+  set.tasks.forEach(t => {
+    popTaskEvidence[t.id] = true;
+    t.rubric.forEach(r => {
+      popRubricChecked[r.code] = true;
+      if (typeof rubricChecked !== "undefined") rubricChecked[r.code] = true;
+    });
+  });
+  showPearsonReportModal();
+}
+
+function clearAllSectionBEvidence() {
+  const set = DFS_MOCK_DATA[popCurrentSetKey] || DFS_MOCK_DATA["set1"];
+  set.tasks.forEach(t => {
+    popTaskEvidence[t.id] = false;
+    t.rubric.forEach(r => {
+      popRubricChecked[r.code] = false;
+      if (typeof rubricChecked !== "undefined") rubricChecked[r.code] = false;
+    });
+  });
+  showPearsonReportModal();
+}
+
+// Official Pearson Diagnostic Report Generation (54 Marks: Section A + Section B)
 function showPearsonReportModal() {
   const set = DFS_MOCK_DATA[popCurrentSetKey] || DFS_MOCK_DATA["set1"];
-  let scoreObtained = 0;
 
-  let rowsHtml = "";
+  // 1. Calculate Section A (Computer-Marked Knowledge: 10 Marks)
+  let secAScore = 0;
+  let secARowsHtml = "";
   set.sectionA.forEach((q, idx) => {
     const testNum = PEARSON_TEST_NUMBERS[idx] || (203114 + idx).toString();
     const ans = popUserAnswers[q.qNum];
     const isSkipped = ans === undefined;
     const isFlagged = !!popFlaggedQuestions[q.qNum];
-    const isCorrect = !isSkipped && q.options[ans].isCorrect;
+    const isCorrect = !isSkipped && q.options[ans]?.isCorrect;
 
-    if (isCorrect) scoreObtained += 1;
+    if (isCorrect) secAScore += q.mark;
 
-    rowsHtml += `
+    secARowsHtml += `
       <tr>
         <td>${testNum} (Q${q.qNum})</td>
+        <td style="text-align:left;">${q.title || "Digital Functional Skill"}</td>
         <td>Yes</td>
         <td style="font-weight:700; color:${isCorrect ? "#15803d" : "#b91c1c"};">${isCorrect ? "1" : "0"}</td>
-        <td>${isSkipped ? "Yes" : ""}</td>
-        <td>${isFlagged ? "Yes" : ""}</td>
+        <td>${isSkipped ? '<span style="color:#d97706; font-weight:700;">Yes</span>' : "—"}</td>
+        <td>${isFlagged ? '<span style="color:#f59e0b; font-weight:700;">Yes</span>' : "—"}</td>
       </tr>
     `;
   });
 
-  const totalPossible = 10;
-  const pct = Math.round((scoreObtained / totalPossible) * 100);
+  // 2. Calculate Section B (Practical Tasks & Criteria Rubric: 44 Marks)
+  let secBScore = 0;
+  let secBRowsHtml = "";
+  set.tasks.forEach((t) => {
+    let taskScored = 0;
+    let criteriaRows = "";
+
+    t.rubric.forEach((r) => {
+      const isChecked = !!popRubricChecked[r.code];
+      if (isChecked) {
+        secBScore += r.mark;
+        taskScored += r.mark;
+      }
+      criteriaRows += `
+        <tr style="font-size:0.83rem; background:#fafafa;">
+          <td style="text-align:left; padding-left:24px;">
+            <label style="cursor:pointer; display:flex; align-items:center; gap:8px;">
+              <input type="checkbox" ${isChecked ? "checked" : ""} 
+                     onchange="toggleReportRubric('${t.id}', '${r.code}', this.checked)"
+                     class="pop-no-print">
+              <span><strong>[${r.code}]</strong> ${r.desc}</span>
+            </label>
+          </td>
+          <td>${r.mark}</td>
+          <td style="font-weight:700; color:${isChecked ? "#15803d" : "#94a3b8"};">${isChecked ? r.mark : 0}</td>
+          <td colspan="2">${isChecked ? '<span style="color:#15803d; font-weight:700;">Awarded</span>' : '<span style="color:#94a3b8;">Pending Evidence</span>'}</td>
+        </tr>
+      `;
+    });
+
+    secBRowsHtml += `
+      <tr style="background:#f1f5f9; font-weight:700;">
+        <td style="text-align:left;">
+          <i class="fa-solid fa-folder-open" style="color:var(--pop-orange); margin-right:6px;"></i>
+          ${t.letter}: ${t.title}
+        </td>
+        <td>${t.marks}</td>
+        <td style="color:${taskScored === t.marks ? "#15803d" : "#0284c7"}; font-size:0.95rem;">${taskScored}</td>
+        <td colspan="2" style="font-size:0.82rem;">
+          <button type="button" class="btn-pop-action pop-no-print" style="padding:2px 8px; font-size:0.75rem;" onclick="awardAllTaskRubric('${t.id}'); showPearsonReportModal();">
+            Award Task (${t.marks}m)
+          </button>
+        </td>
+      </tr>
+      ${criteriaRows}
+    `;
+  });
+
+  // 3. Overall Totals & Standard Evaluation
+  const totalScore = secAScore + secBScore;
+  const grandTotalPossible = set.totalMarks || 54;
+  const overallPct = Math.round((totalScore / grandTotalPossible) * 100);
+  const passMark = set.passMark || 35;
+  const isPass = totalScore >= passMark;
+
+  // 4. Ofqual 5 Core DFS Competency Domains Calculation
+  const isQCorrect = (qNum) => {
+    const q = set.sectionA.find(item => item.qNum === qNum);
+    const ans = popUserAnswers[qNum];
+    return (q && ans !== undefined && q.options[ans]?.isCorrect) ? 1 : 0;
+  };
+
+  const taskAScore = set.tasks.find(t => t.id === "taskA")?.rubric.reduce((acc, r) => acc + (popRubricChecked[r.code] ? r.mark : 0), 0) || 0;
+  const taskBScore = set.tasks.find(t => t.id === "taskB")?.rubric.reduce((acc, r) => acc + (popRubricChecked[r.code] ? r.mark : 0), 0) || 0;
+  const taskCScore = set.tasks.find(t => t.id === "taskC")?.rubric.reduce((acc, r) => acc + (popRubricChecked[r.code] ? r.mark : 0), 0) || 0;
+  const taskDScore = set.tasks.find(t => t.id === "taskD")?.rubric.reduce((acc, r) => acc + (popRubricChecked[r.code] ? r.mark : 0), 0) || 0;
+  const taskEScore = set.tasks.find(t => t.id === "taskE")?.rubric.reduce((acc, r) => acc + (popRubricChecked[r.code] ? r.mark : 0), 0) || 0;
+
+  const d1Score = taskEScore + isQCorrect(1) + isQCorrect(4);
+  const d1Max = 8;
+  const d2Score = taskBScore + taskCScore + isQCorrect(5) + isQCorrect(7);
+  const d2Max = 26;
+  const d3Score = taskAScore + isQCorrect(2) + isQCorrect(8);
+  const d3Max = 9;
+  const d4Score = taskDScore + isQCorrect(6);
+  const d4Max = 8;
+  const d5Score = isQCorrect(3) + isQCorrect(9) + isQCorrect(10);
+  const d5Max = 3;
+
+  const domains = [
+    { name: "Using Devices & Handling Information", score: d1Score, max: d1Max },
+    { name: "Creating & Editing (Word Processing & Spreadsheets)", score: d2Score, max: d2Max },
+    { name: "Communicating (Email & Information Search)", score: d3Score, max: d3Max },
+    { name: "Transacting (Digital Portals & Web Form Submissions)", score: d4Score, max: d4Max },
+    { name: "Being Safe & Responsible Online (Cybersecurity & Health)", score: d5Score, max: d5Max }
+  ];
 
   const modalBody = document.getElementById("popReportModalBody");
   if (modalBody) {
     modalBody.innerHTML = `
-      <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
-        <h3 style="margin:0; font-size:1.3rem;">Pearson Onscreen Platform — Diagnostic Score Report</h3>
-        <button type="button" onclick="closePearsonReportModal()" style="background:none; border:none; font-size:1.4rem; cursor:pointer;">✕</button>
+      <div class="pop-report-header">
+        <div>
+          <div style="font-size:0.8rem; text-transform:uppercase; letter-spacing:0.05em; color:#64748b; font-weight:700;">Pearson Onscreen Platform (POP) Assessment Standard</div>
+          <h2 style="margin:2px 0 4px 0; font-size:1.35rem; color:#0f172a;">Diagnostic Assessment & Marking Report</h2>
+          <div style="font-size:0.92rem; color:#334155;"><strong>${set.level}:</strong> ${set.name}</div>
+        </div>
+        <button type="button" onclick="closePearsonReportModal()" class="pop-no-print" style="background:none; border:none; font-size:1.6rem; cursor:pointer; color:#64748b;">✕</button>
       </div>
 
-      <table class="pop-report-table">
+      <!-- Candidate Metadata Table -->
+      <table class="pop-report-table" style="margin-top:0;">
         <tr>
-          <td style="width:200px;"><strong>Candidate name</strong></td>
-          <td colspan="4" style="text-align:left;">
-            <input type="text" value="${popCandidateName}" onchange="popCandidateName = this.value" style="width:100%; border:none; font-weight:bold; font-size:0.95rem;">
+          <td style="width:220px;"><strong>Candidate Name:</strong></td>
+          <td style="text-align:left;">
+            <input type="text" value="${popCandidateName}" onchange="popCandidateName = this.value" style="width:100%; border:none; font-weight:bold; font-size:0.95rem; background:transparent;">
           </td>
+          <td style="width:160px;"><strong>Total Available:</strong></td>
+          <td style="font-weight:700; width:120px;">${grandTotalPossible} Marks</td>
         </tr>
         <tr>
-          <th>Test Number</th>
-          <th>Computer Markable</th>
-          <th>Marks Obtained</th>
-          <th>Skipped</th>
-          <th>Flagged</th>
-        </tr>
-        ${rowsHtml}
-        <tr style="background:#f2f2f2; font-weight:700;">
-          <td colspan="2" style="text-align:right;">Section A Total:</td>
-          <td>${scoreObtained} / 10</td>
-          <td colspan="2"></td>
-        </tr>
-        <tr style="background:#f2f2f2; font-weight:700;">
-          <td colspan="2" style="text-align:right;">Section A Percentage:</td>
-          <td>${pct}%</td>
-          <td colspan="2">${scoreObtained >= 7 ? "PASS STANDARD" : "REVISION REQUIRED"}</td>
+          <td><strong>Assessment Centre:</strong></td>
+          <td style="text-align:left;">Master Functional Skills (Accredited Centre Standard)</td>
+          <td><strong>Pass Benchmark:</strong></td>
+          <td style="font-weight:700; color:#0284c7;">${passMark} Marks (~65%)</td>
         </tr>
       </table>
 
-      <div style="background:#f9f9f9; border:1px solid #e0e0e0; padding:12px; font-size:0.85rem; line-height:1.5; margin-top:12px;">
-        <strong>Examiner Guidance:</strong> Test Numbers 203114–203123 form Section A (computer markable). Section B practical files must be assessed against Pearson criteria rubric checklists.
+      <!-- Overall Result Banner -->
+      <div class="pop-result-banner ${isPass ? "pass" : "fail"}">
+        <div class="pop-result-banner-title">
+          <i class="fa-solid ${isPass ? "fa-circle-check" : "fa-triangle-exclamation"}"></i>
+          ${isPass ? "OVERALL ASSESSMENT RESULT: PASS STANDARD (ACHIEVED)" : "OVERALL ASSESSMENT RESULT: WORKING TOWARDS PASS (REVISION REQUIRED)"}
+        </div>
+        <div class="pop-result-banner-meta">
+          Overall Achieved: <strong>${totalScore} / ${grandTotalPossible} Marks (${overallPct}%)</strong> • Pearson Level 1 Pass Threshold: <strong>${passMark} / ${grandTotalPossible} Marks</strong>
+        </div>
       </div>
 
-      <div style="display:flex; justify-content:center; gap:12px; margin-top:20px;">
-        <button type="button" class="btn-pearson-start" onclick="window.print()"><i class="fa-solid fa-print"></i> Print Official Report</button>
+      <!-- Summary Stat Cards -->
+      <div class="pop-stat-grid">
+        <div class="pop-stat-card">
+          <div class="pop-stat-num" style="color:${isPass ? "#16a34a" : "#dc2626"};">${totalScore} / ${grandTotalPossible}</div>
+          <div class="pop-stat-label">Total Marks (${overallPct}%)</div>
+        </div>
+        <div class="pop-stat-card">
+          <div class="pop-stat-num" style="color:#0284c7;">${secAScore} / 10</div>
+          <div class="pop-stat-label">Section A (Knowledge)</div>
+        </div>
+        <div class="pop-stat-card">
+          <div class="pop-stat-num" style="color:#059669;">${secBScore} / 44</div>
+          <div class="pop-stat-label">Section B (Practical)</div>
+        </div>
+        <div class="pop-stat-card">
+          <div class="pop-stat-num" style="color:#475569;">${passMark} / 54</div>
+          <div class="pop-stat-label">Pass Standard (65%)</div>
+        </div>
+      </div>
+
+      <!-- Section A Breakdown Table -->
+      <h3 style="margin:20px 0 8px 0; font-size:1.08rem; color:#0f172a; display:flex; justify-content:space-between; align-items:center;">
+        <span><i class="fa-solid fa-list-ol" style="color:var(--pop-orange);"></i> Section A: Knowledge & Understanding (Computer Markable)</span>
+        <span style="font-size:0.95rem; font-weight:700; color:#0284c7;">Score: ${secAScore} / 10 Marks</span>
+      </h3>
+      <table class="pop-report-table">
+        <thead>
+          <tr>
+            <th style="width:160px;">Test Number</th>
+            <th>Digital Competency Focus</th>
+            <th style="width:140px;">Computer Markable</th>
+            <th style="width:110px;">Marks Awarded</th>
+            <th style="width:80px;">Skipped</th>
+            <th style="width:80px;">Flagged</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${secARowsHtml}
+          <tr style="background:#f1f5f9; font-weight:800; font-size:0.95rem;">
+            <td colspan="3" style="text-align:right;">Section A Subtotal:</td>
+            <td style="color:${secAScore >= 7 ? "#16a34a" : "#dc2626"};">${secAScore} / 10</td>
+            <td colspan="2">${Math.round((secAScore / 10) * 100)}%</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Section B Breakdown Table -->
+      <div style="display:flex; justify-content:space-between; align-items:center; margin:24px 0 8px 0; flex-wrap:wrap; gap:8px;">
+        <h3 style="margin:0; font-size:1.08rem; color:#0f172a;">
+          <i class="fa-solid fa-laptop-code" style="color:var(--pop-orange);"></i> Section B: Practical Application & Evidence Tasks (44 Marks)
+        </h3>
+        <div class="pop-no-print" style="display:flex; gap:8px;">
+          <button type="button" class="btn-pop-action" onclick="awardAllSectionBEvidence()" style="padding:4px 10px; font-size:0.8rem; background:#ecfdf5; color:#047857; border-color:#a7f3d0;">
+            <i class="fa-solid fa-check-double"></i> Award All Section B Evidence (44/44)
+          </button>
+          <button type="button" class="btn-pop-action" onclick="clearAllSectionBEvidence()" style="padding:4px 10px; font-size:0.8rem;">
+            <i class="fa-solid fa-arrow-rotate-left"></i> Reset
+          </button>
+        </div>
+      </div>
+
+      <div style="font-size:0.85rem; color:#64748b; margin-bottom:8px;">
+        <em>Examiner Guidance: Individual mark scheme criteria can be toggled below to reflect candidate evidence documents and simulator outputs.</em>
+      </div>
+
+      <table class="pop-report-table">
+        <thead>
+          <tr>
+            <th>Task & Assessment Criteria Rubric</th>
+            <th style="width:80px;">Available</th>
+            <th style="width:90px;">Awarded</th>
+            <th colspan="2" style="width:140px;">Evidence Status</th>
+          </tr>
+        </thead>
+        <tbody>
+          ${secBRowsHtml}
+          <tr style="background:#f1f5f9; font-weight:800; font-size:0.95rem;">
+            <td style="text-align:right;">Section B Subtotal:</td>
+            <td>44</td>
+            <td style="color:${secBScore >= 28 ? "#16a34a" : "#dc2626"};">${secBScore}</td>
+            <td colspan="2">${Math.round((secBScore / 44) * 100)}%</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <!-- Ofqual 5 Competency Domains -->
+      <h3 style="margin:24px 0 12px 0; font-size:1.08rem; color:#0f172a;">
+        <i class="fa-solid fa-chart-simple" style="color:var(--pop-orange);"></i> Ofqual Digital Functional Skills Competency Domain Breakdown:
+      </h3>
+      <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:16px; margin-bottom:20px;">
+        ${domains.map(d => {
+          const pct = Math.round((d.score / d.max) * 100);
+          const color = pct >= 70 ? "#16a34a" : (pct >= 50 ? "#0284c7" : "#d97706");
+          return `
+            <div class="pop-domain-row">
+              <div class="pop-domain-meta">
+                <span>${d.name}</span>
+                <span style="color:${color}; font-weight:700;">${d.score} / ${d.max} Marks (${pct}%)</span>
+              </div>
+              <div class="pop-domain-track">
+                <div class="pop-domain-fill" style="width:${pct}%; background:${color};"></div>
+              </div>
+            </div>
+          `;
+        }).join("")}
+      </div>
+
+      <!-- Tutor & Quality Assurance Sign-off -->
+      <div style="background:#ffffff; border:1px dashed #94a3b8; border-radius:6px; padding:12px 16px; font-size:0.85rem; line-height:1.6; margin-bottom:20px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;">
+        <div>
+          <strong>Tutor Assessor:</strong> Abdul (Master Functional Skills)<br>
+          <strong>Internal Quality Assurance:</strong> Verified against Pearson Edexcel DFS L1 Criteria
+        </div>
+        <div>
+          <strong>Report Timestamp:</strong> ${new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}<br>
+          <strong>Assessment Method:</strong> Onscreen Simulation + Practical Candidate Evidence
+        </div>
+      </div>
+
+      <!-- Actions Toolbar -->
+      <div style="display:flex; justify-content:center; gap:12px; margin-top:20px;" class="pop-no-print">
+        <button type="button" class="btn-pearson-start" onclick="window.print()"><i class="fa-solid fa-print"></i> Print Official Report (PDF)</button>
         <button type="button" class="btn-pop-action" onclick="closePearsonReportModal()">Close</button>
       </div>
     `;

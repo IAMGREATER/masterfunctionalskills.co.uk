@@ -2935,7 +2935,8 @@ function validateFlyerSim(taskId) {
   if (orient === "landscape" && img === "6cm" && table === "shaded" && border === "border") {
     fb.style.background = "#dcfce7";
     fb.style.color = "#15803d";
-    fb.innerHTML = '<i class="fa-solid fa-circle-check"></i> <strong>All formatting criteria matched!</strong> Landscape orientation, proportional 6cm cropped image, contrasting table header shading, and outer page border verified.';
+    fb.innerHTML = '<i class="fa-solid fa-circle-check"></i> <strong>All formatting criteria matched!</strong> Landscape orientation, proportional 6cm cropped image, contrasting table header shading, and outer page border verified (All rubric marks awarded).';
+    if (typeof awardAllTaskRubric === "function") awardAllTaskRubric(taskId);
   } else {
     fb.style.background = "#fee2e2";
     fb.style.color = "#b91c1c";
@@ -2970,7 +2971,8 @@ function validateSimEmail(taskId) {
   if (errors.length === 0) {
     fb.style.background = "#dcfce7";
     fb.style.color = "#15803d";
-    fb.innerHTML = '<i class="fa-solid fa-circle-check"></i> <strong>Email verified!</strong> All criteria satisfied (Correct recipient, clear subject, and professional message body).';
+    fb.innerHTML = '<i class="fa-solid fa-circle-check"></i> <strong>Email verified!</strong> All criteria satisfied (Correct recipient, clear subject, and professional message body — rubric marks awarded).';
+    if (typeof awardAllTaskRubric === "function") awardAllTaskRubric(taskId);
   } else {
     fb.style.background = "#fee2e2";
     fb.style.color = "#b91c1c";
@@ -2989,7 +2991,8 @@ function evaluateSimFormula(taskId) {
   if (val.includes("SUM") || val.includes("AVERAGE")) {
     res.style.background = "#dcfce7";
     res.style.color = "#15803d";
-    res.innerHTML = `<i class="fa-solid fa-circle-check"></i> Valid Pearson standard formula: <code>${val}</code> (Award mark for correct function syntax and cell ranges).`;
+    res.innerHTML = `<i class="fa-solid fa-circle-check"></i> Valid Pearson standard formula: <code>${val}</code> (All spreadsheet rubric marks awarded).`;
+    if (typeof awardAllTaskRubric === "function") awardAllTaskRubric(taskId);
   } else {
     res.style.background = "#fef3c7";
     res.style.color = "#92400e";
@@ -3004,7 +3007,8 @@ function handleSimFormSubmit(e, taskId) {
     fb.style.display = "block";
     fb.style.background = "#dcfce7";
     fb.style.color = "#15803d";
-    fb.innerHTML = '<i class="fa-solid fa-circle-check"></i> <strong>Form submission successful!</strong> Data verified and evidence token logged for Pearson assessor review.';
+    fb.innerHTML = '<i class="fa-solid fa-circle-check"></i> <strong>Form submission successful!</strong> Data verified and evidence logged (All portal transacting rubric marks awarded).';
+    if (typeof awardAllTaskRubric === "function") awardAllTaskRubric(taskId);
   }
 }
 
@@ -3021,6 +3025,7 @@ function addSimFolder(taskId) {
     list.innerHTML = simulatedFolders.map((f, i) => `
       <div style="margin-top:4px;">├── <i class="fa-solid fa-folder" style="color:#d97706;"></i> ${f}</div>
     `).join("");
+    if (typeof awardAllTaskRubric === "function") awardAllTaskRubric(taskId);
   }
 }
 

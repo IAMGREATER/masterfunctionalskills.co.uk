@@ -83,6 +83,17 @@
       color: #cbd5e1;
       box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
     }
+    /* Guarantee high-contrast white headings on dark video panel */
+    main.video-main-content h2,
+    main.video-main-content h3,
+    .video-content-panel h2,
+    .video-content-panel h3,
+    .video-sidebar-panel h2,
+    .video-sidebar-panel h3,
+    .mfs-placeholder-heading {
+      color: #ffffff !important;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+    }
     .video-sidebar-panel {
       display: flex;
       flex-direction: column;
@@ -1196,14 +1207,14 @@
     <div class="video-details-grid">
       <!-- Left Content -->
       <div class="video-content-panel">
-        <h2 style="font-size:1.4rem; font-weight:800; margin-top:0; color:#ffffff;" id="panelTitle">
+        <h2 style="font-size:1.4rem; font-weight:800; margin-top:0; color:#ffffff !important;" id="panelTitle">
           What You Learn in this Video Walkthrough
         </h2>
         <p style="font-size:1.02rem; line-height:1.6; color:#cbd5e1;" id="panelDesc">
           In this official Master Functional Skills video walkthrough, your tutor breaks down the core concepts, examiner expectations, and exact calculation methods needed to achieve maximum marks on Pearson Edexcel Functional Skills assessments.
         </p>
 
-        <h3 style="font-size:1.15rem; font-weight:800; margin-top:28px; color:#ffffff;"><i class="fa-solid fa-list-check" style="color:#38bdf8; margin-right:8px;"></i> Assessment Criteria & Method Marks</h3>
+        <h3 style="font-size:1.15rem; font-weight:800; margin-top:28px; color:#ffffff !important;"><i class="fa-solid fa-list-check" style="color:#38bdf8; margin-right:8px;"></i> Assessment Criteria & Method Marks</h3>
         <div class="criteria-grid">
           <div class="criteria-card">
             <div style="font-weight:800; color:#38bdf8; margin-bottom:4px;"><i class="fa-solid fa-bullseye"></i> [M1] Method Marks</div>
@@ -1215,7 +1226,7 @@
           </div>
         </div>
 
-        <h3 style="font-size:1.15rem; font-weight:800; margin-top:28px; color:#ffffff;"><i class="fa-solid fa-triangle-exclamation" style="color:#fbbf24; margin-right:8px;"></i> Common Pitfalls Highlighted by Examiners</h3>
+        <h3 style="font-size:1.15rem; font-weight:800; margin-top:28px; color:#ffffff !important;"><i class="fa-solid fa-triangle-exclamation" style="color:#fbbf24; margin-right:8px;"></i> Common Pitfalls Highlighted by Examiners</h3>
         <ul style="color:#cbd5e1; line-height:1.7; font-size:0.96rem; margin-top:10px; padding-left:20px;">
           <li><strong style="color:#f8fafc;">Placeholder Zeros:</strong> Missing zero in intermediate columns (e.g. writing 2,45,608 instead of 2,045,608).</li>
           <li><strong style="color:#f8fafc;">Unit Omission:</strong> Forgetting money symbols (£ or p) or square units (cm², m²).</li>

@@ -640,19 +640,23 @@
   background: var(--pop-orange-dark);
 }
 
-/* Official Pearson Diagnostic Report Modal */
+/* ==========================================================================
+   OFFICIAL PEARSON DIAGNOSTIC SCORE REPORT & TRANSCRIPT
+   ========================================================================== */
 .pop-report-modal {
   position: fixed;
   top: 0;
   left: 0;
   width: 100vw;
   height: 100vh;
-  background: rgba(0,0,0,0.65);
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
   display: none;
   align-items: center;
   justify-content: center;
   z-index: 1000000;
-  padding: 20px;
+  padding: 24px;
 }
 
 .pop-report-modal.active {
@@ -661,171 +665,646 @@
 
 .pop-report-sheet {
   background: #ffffff;
-  border: 2px solid #333333;
+  border: 1px solid #cbd5e1;
+  border-radius: 12px;
   width: 100%;
-  max-width: 900px;
-  max-height: 92vh;
+  max-width: 940px;
+  max-height: 90vh;
   overflow-y: auto;
-  padding: 30px;
-  box-shadow: 0 14px 40px rgba(0,0,0,0.4);
-  font-family: Arial, sans-serif;
-  color: #000000;
+  padding: 32px 36px;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.35);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: #0f172a;
 }
 
-.pop-report-header {
-  border-bottom: 2px solid #0f172a;
-  padding-bottom: 12px;
-  margin-bottom: 16px;
+/* Header & Accreditation */
+.pop-transcript-header {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
+  padding-bottom: 16px;
+  border-bottom: 2px solid #0f172a;
+  margin-bottom: 18px;
+  gap: 16px;
 }
 
-.pop-result-banner {
+.pop-brand-badge {
+  display: inline-block;
+  background: #002f6c;
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  padding: 3px 8px;
+  border-radius: 4px;
+  text-transform: uppercase;
+  margin-bottom: 6px;
+}
+
+.pop-brand-title {
+  margin: 0;
+  font-size: 1.45rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+  line-height: 1.15;
+}
+
+.pop-brand-subtitle {
+  font-size: 0.85rem;
+  color: #64748b;
+  font-weight: 600;
+  margin-top: 3px;
+}
+
+.pop-doc-meta {
+  text-align: right;
+}
+
+.pop-doc-type {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: #d85c13;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.pop-doc-spec {
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin-top: 2px;
+}
+
+.pop-doc-qan {
+  font-size: 0.78rem;
+  color: #64748b;
+  font-family: ui-monospace, monospace;
+}
+
+/* Candidate & Assessment Metadata Matrix */
+.pop-meta-matrix {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
   border-radius: 8px;
-  padding: 16px 20px;
-  margin: 16px 0 20px 0;
-  border: 2px solid transparent;
+  padding: 12px 14px;
+  margin-bottom: 18px;
 }
 
-.pop-result-banner.pass {
+.pop-meta-cell {
+  font-size: 0.82rem;
+}
+
+.pop-meta-cell-label {
+  color: #64748b;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.72rem;
+  letter-spacing: 0.04em;
+  margin-bottom: 3px;
+}
+
+.pop-meta-cell-val {
+  color: #0f172a;
+  font-weight: 700;
+  font-size: 0.92rem;
+}
+
+.pop-meta-cell-val input {
+  width: 100%;
+  border: 1px dashed #cbd5e1;
+  background: #ffffff;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 0.92rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+
+/* Executive Outcome Banner */
+.pop-outcome-banner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-radius: 10px;
+  padding: 16px 20px;
+  margin-bottom: 20px;
+  border: 2px solid transparent;
+  gap: 16px;
+}
+
+.pop-outcome-banner.pass {
   background: #f0fdf4;
   border-color: #22c55e;
   color: #14532d;
 }
 
-.pop-result-banner.fail {
+.pop-outcome-banner.fail {
   background: #fef2f2;
   border-color: #ef4444;
   color: #7f1d1d;
 }
 
-.pop-result-banner-title {
-  font-size: 1.25rem;
-  font-weight: 800;
+.pop-outcome-left {
   display: flex;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 4px;
+  gap: 14px;
 }
 
-.pop-result-banner-meta {
-  font-size: 0.95rem;
+.pop-outcome-icon {
+  font-size: 2.2rem;
+  line-height: 1;
+}
+
+.pop-outcome-banner.pass .pop-outcome-icon { color: #16a34a; }
+.pop-outcome-banner.fail .pop-outcome-icon { color: #dc2626; }
+
+.pop-outcome-title {
+  font-size: 1.2rem;
+  font-weight: 800;
+  letter-spacing: -0.01em;
+  margin-bottom: 2px;
+}
+
+.pop-outcome-desc {
+  font-size: 0.88rem;
   opacity: 0.9;
 }
 
+.pop-outcome-score {
+  text-align: right;
+  white-space: nowrap;
+}
+
+.pop-score-big {
+  font-size: 2rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.pop-score-pct {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-top: 4px;
+}
+
+/* Summary Metrics Grid */
 .pop-stat-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(4, 1fr);
   gap: 12px;
-  margin-bottom: 20px;
+  margin-bottom: 24px;
 }
 
 .pop-stat-card {
-  background: #f8fafc;
+  background: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: 6px;
-  padding: 12px 16px;
+  border-radius: 8px;
+  padding: 12px 14px;
   text-align: center;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
 }
 
 .pop-stat-num {
-  font-size: 1.6rem;
-  font-weight: 800;
+  font-size: 1.55rem;
+  font-weight: 900;
   line-height: 1.1;
   color: #0f172a;
 }
 
 .pop-stat-label {
-  font-size: 0.8rem;
-  font-weight: 700;
+  font-size: 0.72rem;
+  font-weight: 800;
   text-transform: uppercase;
+  letter-spacing: 0.04em;
   color: #64748b;
   margin-top: 4px;
 }
 
-.pop-report-table {
+/* Tables & Badges */
+.pop-section-title-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 22px 0 10px 0;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.pop-section-heading {
+  margin: 0;
+  font-size: 1.08rem;
+  font-weight: 800;
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pop-table {
   width: 100%;
-  border-collapse: collapse;
-  margin: 14px 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-bottom: 18px;
   font-size: 0.88rem;
 }
 
-.pop-report-table th, .pop-report-table td {
-  border: 1px solid #cbd5e1;
-  padding: 6px 10px;
+.pop-table th {
+  background: #0f172a;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  padding: 8px 12px;
   text-align: center;
+  border: none;
 }
 
-.pop-report-table th {
-  background: #f1f5f9;
-  font-weight: 700;
+.pop-table th:first-child { text-align: left; }
+
+.pop-table td {
+  padding: 8px 12px;
+  border-bottom: 1px solid #f1f5f9;
+  border-right: 1px solid #f1f5f9;
+  text-align: center;
+  color: #334155;
+}
+
+.pop-table td:last-child { border-right: none; }
+.pop-table tr:last-child td { border-bottom: none; }
+
+.pop-table tbody tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+.pop-table-subtotal {
+  background: #0f172a !important;
+  color: #ffffff !important;
+  font-weight: 800;
+  font-size: 0.95rem;
+}
+
+.pop-table-subtotal td {
+  color: #ffffff !important;
+  border-bottom: none !important;
+}
+
+/* Task Blocks for Section B */
+.pop-task-card {
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 8px;
+  margin-bottom: 14px;
+  overflow: hidden;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+}
+
+.pop-task-card-header {
+  background: #f8fafc;
+  border-bottom: 1px solid #e2e8f0;
+  padding: 10px 14px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.pop-task-card-title {
+  font-size: 0.96rem;
+  font-weight: 800;
+  color: #0f172a;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pop-task-card-tally {
+  font-size: 0.88rem;
+  font-weight: 800;
+  padding: 3px 10px;
+  border-radius: 6px;
+  background: #e2e8f0;
   color: #0f172a;
 }
 
-.pop-report-table td:nth-child(1) {
-  text-align: left;
-  font-weight: 600;
+.pop-task-card-tally.full {
+  background: #dcfce7;
+  color: #15803d;
+}
+
+.pop-task-criteria-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.84rem;
+}
+
+.pop-task-criteria-table td {
+  padding: 7px 12px;
+  border-bottom: 1px solid #f1f5f9;
+  color: #334155;
+}
+
+.pop-task-criteria-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Badges & Pills */
+.pop-pill-pass {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #dcfce7;
+  color: #15803d;
+  font-weight: 700;
+  font-size: 0.78rem;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid #bbf7d0;
+}
+
+.pop-pill-fail {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #fee2e2;
+  color: #b91c1c;
+  font-weight: 700;
+  font-size: 0.78rem;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid #fecaca;
+}
+
+.pop-pill-warn {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  background: #fef3c7;
+  color: #b45309;
+  font-weight: 700;
+  font-size: 0.78rem;
+  padding: 2px 8px;
+  border-radius: 999px;
+  border: 1px solid #fde68a;
+}
+
+.pop-status-badge {
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 2px 8px;
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+.pop-status-badge.awarded {
+  background: #dcfce7;
+  color: #15803d;
+  border: 1px solid #86efac;
+}
+
+.pop-status-badge.pending {
+  background: #f1f5f9;
+  color: #94a3b8;
+  border: 1px solid #e2e8f0;
+}
+
+/* Ofqual Domain Progress Profile */
+.pop-domain-profile {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  padding: 16px 18px;
+  margin-bottom: 20px;
 }
 
 .pop-domain-row {
-  margin-bottom: 10px;
+  margin-bottom: 12px;
+}
+
+.pop-domain-row:last-child {
+  margin-bottom: 0;
 }
 
 .pop-domain-meta {
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-size: 0.88rem;
-  font-weight: 600;
+  font-weight: 700;
+  color: #1e293b;
   margin-bottom: 4px;
 }
 
 .pop-domain-track {
   background: #e2e8f0;
   border-radius: 999px;
-  height: 8px;
+  height: 9px;
   overflow: hidden;
 }
 
 .pop-domain-fill {
-  background: #0284c7;
   height: 100%;
   border-radius: 999px;
   transition: width 0.3s ease;
 }
 
+/* Official Sign-off Box */
+.pop-signoff-box {
+  background: #ffffff;
+  border: 1.5px dashed #94a3b8;
+  border-radius: 8px;
+  padding: 14px 18px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  font-size: 0.85rem;
+  line-height: 1.6;
+  margin-bottom: 22px;
+}
+
+.pop-signoff-col {
+  color: #334155;
+}
+
+.pop-signoff-col strong {
+  color: #0f172a;
+}
+
+/* Screen Actions Toolbar */
+.pop-report-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 14px;
+  margin-top: 24px;
+}
+
+/* ==========================================================================
+   PRINT STYLESHEET (A4 PORTRAIT PAGINATION & ZERO CUT-OFF)
+   ========================================================================== */
+.pop-print-only {
+  display: none !important;
+}
+
+.pop-print-only-block {
+  display: none !important;
+}
+
 @media print {
-  body * {
-    visibility: hidden;
+  /* 1. Eliminate everything outside the report modal */
+  body > *:not(#popReportModal) {
+    display: none !important;
   }
-  .pop-report-modal,
-  .pop-report-modal * {
-    visibility: visible;
+
+  html, body {
+    width: 100% !important;
+    height: auto !important;
+    min-height: auto !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #ffffff !important;
+    color: #0f172a !important;
+    overflow: visible !important;
+    font-family: Arial, Helvetica, sans-serif !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
   }
-  .pop-report-modal {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: auto;
-    background: #ffffff;
-    padding: 0;
+
+  /* 2. Unroll modal completely into normal document flow */
+  #popReportModal {
     display: block !important;
+    position: static !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    background: #ffffff !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    backdrop-filter: none !important;
+    -webkit-backdrop-filter: none !important;
+    z-index: auto !important;
   }
+
   .pop-report-sheet {
-    max-width: 100%;
-    border: none;
-    box-shadow: none;
-    padding: 0;
+    max-width: 100% !important;
+    width: 100% !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+    border-radius: 0 !important;
+    box-shadow: none !important;
+    font-size: 9.5pt !important;
+    line-height: 1.35 !important;
   }
-  .btn-pearson-start,
-  .btn-pop-action,
+
+  /* 3. Visibility toggles */
   .pop-no-print {
     display: none !important;
+  }
+
+  .pop-print-only {
+    display: inline !important;
+  }
+
+  .pop-print-only-block {
+    display: block !important;
+  }
+
+  /* 4. Page Break Rules */
+  .pop-page-break {
+    page-break-before: always !important;
+    break-before: page !important;
+    margin-top: 15mm !important;
+  }
+
+  .pop-keep-together {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* 5. Force crisp borders and backgrounds */
+  * {
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  @page {
+    size: A4 portrait;
+    margin: 12mm 10mm 12mm 10mm;
+  }
+
+  .pop-stat-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 8px !important;
+    margin-bottom: 16px !important;
+  }
+
+  .pop-stat-card {
+    padding: 8px 10px !important;
+  }
+
+  .pop-stat-num {
+    font-size: 1.35rem !important;
+  }
+
+  .pop-outcome-banner {
+    padding: 12px 16px !important;
+    margin-bottom: 14px !important;
+  }
+
+  .pop-score-big {
+    font-size: 1.6rem !important;
+  }
+
+  .pop-table th, .pop-table td {
+    padding: 5px 8px !important;
+  }
+
+  .pop-task-criteria-table td {
+    padding: 4px 8px !important;
   }
 }
 
 @media (max-width: 768px) {
+  .pop-transcript-header {
+    flex-direction: column;
+  }
+  .pop-doc-meta {
+    text-align: left;
+  }
+  .pop-meta-matrix {
+    grid-template-columns: 1fr 1fr;
+  }
+  .pop-outcome-banner {
+    flex-direction: column;
+    text-align: center;
+  }
+  .pop-outcome-left {
+    flex-direction: column;
+  }
+  .pop-outcome-score {
+    text-align: center;
+  }
+  .pop-stat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .pop-signoff-box {
+    grid-template-columns: 1fr;
+  }
   .pearson-canvas {
     padding: 20px 16px;
   }

@@ -735,19 +735,24 @@ function showPearsonReportModal() {
 
     secARowsHtml += `
       <tr>
-        <td>${testNum} (Q${q.qNum})</td>
-        <td style="text-align:left;">${q.title || "Digital Functional Skill"}</td>
-        <td>Yes</td>
-        <td style="font-weight:700; color:${isCorrect ? "#15803d" : "#b91c1c"};">${isCorrect ? "1" : "0"}</td>
-        <td>${isSkipped ? '<span style="color:#d97706; font-weight:700;">Yes</span>' : "—"}</td>
-        <td>${isFlagged ? '<span style="color:#f59e0b; font-weight:700;">Yes</span>' : "—"}</td>
+        <td style="font-family:ui-monospace,monospace; font-weight:700;">${testNum} (Q${q.qNum})</td>
+        <td style="text-align:left; font-weight:600;">${q.title || "Digital Functional Skill"}</td>
+        <td style="color:#64748b;">Computer Marked</td>
+        <td style="font-weight:800; color:${isCorrect ? "#15803d" : "#dc2626"}; font-size:0.95rem;">${isCorrect ? "1" : "0"}</td>
+        <td>
+          ${isSkipped 
+            ? '<span class="pop-pill-warn"><i class="fa-regular fa-circle"></i> Skipped</span>' 
+            : (isCorrect 
+                ? '<span class="pop-pill-pass"><i class="fa-solid fa-check"></i> Correct</span>' 
+                : '<span class="pop-pill-fail"><i class="fa-solid fa-xmark"></i> Incorrect</span>')}
+        </td>
       </tr>
     `;
   });
 
   // 2. Calculate Section B (Practical Tasks & Criteria Rubric: 44 Marks)
   let secBScore = 0;
-  let secBRowsHtml = "";
+  let secBTasksHtml = "";
   set.tasks.forEach((t) => {
     let taskScored = 0;
     let criteriaRows = "";
@@ -759,37 +764,47 @@ function showPearsonReportModal() {
         taskScored += r.mark;
       }
       criteriaRows += `
-        <tr style="font-size:0.83rem; background:#fafafa;">
-          <td style="text-align:left; padding-left:24px;">
-            <label style="cursor:pointer; display:flex; align-items:center; gap:8px;">
+        <tr>
+          <td style="width:68%; text-align:left;">
+            <label style="cursor:pointer; display:flex; align-items:flex-start; gap:8px;">
               <input type="checkbox" ${isChecked ? "checked" : ""} 
                      onchange="toggleReportRubric('${t.id}', '${r.code}', this.checked)"
-                     class="pop-no-print">
-              <span><strong>[${r.code}]</strong> ${r.desc}</span>
+                     class="pop-no-print" style="margin-top:3px;">
+              <span><strong style="color:#0f172a;">[${r.code}]</strong> ${r.desc}</span>
             </label>
           </td>
-          <td>${r.mark}</td>
-          <td style="font-weight:700; color:${isChecked ? "#15803d" : "#94a3b8"};">${isChecked ? r.mark : 0}</td>
-          <td colspan="2">${isChecked ? '<span style="color:#15803d; font-weight:700;">Awarded</span>' : '<span style="color:#94a3b8;">Pending Evidence</span>'}</td>
+          <td style="width:12%; text-align:center; color:#64748b;">${r.mark} mark</td>
+          <td style="width:20%; text-align:right;">
+            <span class="pop-status-badge ${isChecked ? 'awarded' : 'pending'}">
+              ${isChecked ? '✓ Awarded' : '○ Pending'}
+            </span>
+          </td>
         </tr>
       `;
     });
 
-    secBRowsHtml += `
-      <tr style="background:#f1f5f9; font-weight:700;">
-        <td style="text-align:left;">
-          <i class="fa-solid fa-folder-open" style="color:var(--pop-orange); margin-right:6px;"></i>
-          ${t.letter}: ${t.title}
-        </td>
-        <td>${t.marks}</td>
-        <td style="color:${taskScored === t.marks ? "#15803d" : "#0284c7"}; font-size:0.95rem;">${taskScored}</td>
-        <td colspan="2" style="font-size:0.82rem;">
-          <button type="button" class="btn-pop-action pop-no-print" style="padding:2px 8px; font-size:0.75rem;" onclick="awardAllTaskRubric('${t.id}'); showPearsonReportModal();">
-            Award Task (${t.marks}m)
-          </button>
-        </td>
-      </tr>
-      ${criteriaRows}
+    secBTasksHtml += `
+      <div class="pop-task-card pop-keep-together">
+        <div class="pop-task-card-header">
+          <div class="pop-task-card-title">
+            <i class="fa-solid fa-folder-open" style="color:var(--pop-orange);"></i>
+            <span>${t.letter}: ${t.title}</span>
+          </div>
+          <div style="display:flex; align-items:center; gap:8px;">
+            <span class="pop-task-card-tally ${taskScored === t.marks ? 'full' : ''}">
+              ${taskScored} / ${t.marks} Marks
+            </span>
+            <button type="button" class="btn-pop-action pop-no-print" style="padding:2px 8px; font-size:0.75rem;" onclick="awardAllTaskRubric('${t.id}'); showPearsonReportModal();">
+              Award Task (${t.marks}m)
+            </button>
+          </div>
+        </div>
+        <table class="pop-task-criteria-table">
+          <tbody>
+            ${criteriaRows}
+          </tbody>
+        </table>
+      </div>
     `;
   });
 
@@ -835,57 +850,80 @@ function showPearsonReportModal() {
   const modalBody = document.getElementById("popReportModalBody");
   if (modalBody) {
     modalBody.innerHTML = `
-      <div class="pop-report-header">
+      <!-- Official Header & Accreditation Banner -->
+      <div class="pop-transcript-header">
         <div>
-          <div style="font-size:0.8rem; text-transform:uppercase; letter-spacing:0.05em; color:#64748b; font-weight:700;">Pearson Onscreen Platform (POP) Assessment Standard</div>
-          <h2 style="margin:2px 0 4px 0; font-size:1.35rem; color:#0f172a;">Diagnostic Assessment & Marking Report</h2>
-          <div style="font-size:0.92rem; color:#334155;"><strong>${set.level}:</strong> ${set.name}</div>
+          <div class="pop-brand-badge">PEARSON EDEXCEL ACCREDITED CENTRE PRACTICE</div>
+          <h1 class="pop-brand-title">MASTER FUNCTIONAL SKILLS</h1>
+          <div class="pop-brand-subtitle">Official Functional Skills Examination & Diagnostic Centre Standard</div>
         </div>
-        <button type="button" onclick="closePearsonReportModal()" class="pop-no-print" style="background:none; border:none; font-size:1.6rem; cursor:pointer; color:#64748b;">✕</button>
-      </div>
-
-      <!-- Candidate Metadata Table -->
-      <table class="pop-report-table" style="margin-top:0;">
-        <tr>
-          <td style="width:220px;"><strong>Candidate Name:</strong></td>
-          <td style="text-align:left;">
-            <input type="text" value="${popCandidateName}" onchange="popCandidateName = this.value" style="width:100%; border:none; font-weight:bold; font-size:0.95rem; background:transparent;">
-          </td>
-          <td style="width:160px;"><strong>Total Available:</strong></td>
-          <td style="font-weight:700; width:120px;">${grandTotalPossible} Marks</td>
-        </tr>
-        <tr>
-          <td><strong>Assessment Centre:</strong></td>
-          <td style="text-align:left;">Master Functional Skills (Accredited Centre Standard)</td>
-          <td><strong>Pass Benchmark:</strong></td>
-          <td style="font-weight:700; color:#0284c7;">${passMark} Marks (~65%)</td>
-        </tr>
-      </table>
-
-      <!-- Overall Result Banner -->
-      <div class="pop-result-banner ${isPass ? "pass" : "fail"}">
-        <div class="pop-result-banner-title">
-          <i class="fa-solid ${isPass ? "fa-circle-check" : "fa-triangle-exclamation"}"></i>
-          ${isPass ? "OVERALL ASSESSMENT RESULT: PASS STANDARD (ACHIEVED)" : "OVERALL ASSESSMENT RESULT: WORKING TOWARDS PASS (REVISION REQUIRED)"}
-        </div>
-        <div class="pop-result-banner-meta">
-          Overall Achieved: <strong>${totalScore} / ${grandTotalPossible} Marks (${overallPct}%)</strong> • Pearson Level 1 Pass Threshold: <strong>${passMark} / ${grandTotalPossible} Marks</strong>
+        <div class="pop-doc-meta">
+          <div class="pop-doc-type">OFFICIAL CANDIDATE DIAGNOSTIC TRANSCRIPT</div>
+          <div class="pop-doc-spec">Pearson Edexcel Digital Functional Skills (${set.level})</div>
+          <div class="pop-doc-qan">Qualification Reference: 603/7133/2</div>
+          <button type="button" onclick="closePearsonReportModal()" class="pop-no-print" style="background:none; border:none; font-size:1.6rem; cursor:pointer; color:#64748b; margin-top:4px;" title="Close">✕</button>
         </div>
       </div>
 
-      <!-- Summary Stat Cards -->
+      <!-- Candidate & Assessment Metadata Matrix -->
+      <div class="pop-meta-matrix">
+        <div class="pop-meta-cell">
+          <div class="pop-meta-cell-label">Candidate Name</div>
+          <div class="pop-meta-cell-val">
+            <input type="text" value="${popCandidateName}" onchange="popCandidateName = this.value" class="pop-no-print" placeholder="Candidate Name">
+            <span class="pop-print-only" style="font-weight:800; font-size:10pt;">${popCandidateName}</span>
+          </div>
+        </div>
+        <div class="pop-meta-cell">
+          <div class="pop-meta-cell-label">Assessment Paper</div>
+          <div class="pop-meta-cell-val">${set.name.split(':')[1] || set.name}</div>
+        </div>
+        <div class="pop-meta-cell">
+          <div class="pop-meta-cell-label">Qualification Level</div>
+          <div class="pop-meta-cell-val">${set.level} (Ofqual Regulated)</div>
+        </div>
+        <div class="pop-meta-cell">
+          <div class="pop-meta-cell-label">Pass Threshold</div>
+          <div class="pop-meta-cell-val" style="color:#0284c7;">${passMark} / ${grandTotalPossible} Marks (65%)</div>
+        </div>
+      </div>
+
+      <!-- Executive Outcome Banner -->
+      <div class="pop-outcome-banner ${isPass ? 'pass' : 'fail'}">
+        <div class="pop-outcome-left">
+          <div class="pop-outcome-icon">
+            <i class="fa-solid ${isPass ? 'fa-circle-check' : 'fa-triangle-exclamation'}"></i>
+          </div>
+          <div class="pop-outcome-text">
+            <div class="pop-outcome-title">
+              ${isPass ? 'OFFICIAL ASSESSMENT OUTCOME: PASS STANDARD (ACHIEVED)' : 'OFFICIAL ASSESSMENT OUTCOME: WORKING TOWARDS PASS STANDARD'}
+            </div>
+            <div class="pop-outcome-desc">
+              ${isPass 
+                ? `The candidate has achieved ${totalScore} marks, successfully meeting or exceeding the Pearson Edexcel Level 1 passing threshold of ${passMark} marks (65%).`
+                : `The candidate has achieved ${totalScore} marks (pass threshold: ${passMark} marks). Review the targeted diagnostic criteria below.`}
+            </div>
+          </div>
+        </div>
+        <div class="pop-outcome-score">
+          <div class="pop-score-big">${totalScore} / ${grandTotalPossible}</div>
+          <div class="pop-score-pct">${overallPct}% Overall Mark</div>
+        </div>
+      </div>
+
+      <!-- Summary Metrics Grid -->
       <div class="pop-stat-grid">
         <div class="pop-stat-card">
-          <div class="pop-stat-num" style="color:${isPass ? "#16a34a" : "#dc2626"};">${totalScore} / ${grandTotalPossible}</div>
+          <div class="pop-stat-num" style="color:${isPass ? '#16a34a' : '#dc2626'};">${totalScore} / ${grandTotalPossible}</div>
           <div class="pop-stat-label">Total Marks (${overallPct}%)</div>
         </div>
         <div class="pop-stat-card">
           <div class="pop-stat-num" style="color:#0284c7;">${secAScore} / 10</div>
-          <div class="pop-stat-label">Section A (Knowledge)</div>
+          <div class="pop-stat-label">Part 1: Section A (Knowledge)</div>
         </div>
         <div class="pop-stat-card">
           <div class="pop-stat-num" style="color:#059669;">${secBScore} / 44</div>
-          <div class="pop-stat-label">Section B (Practical)</div>
+          <div class="pop-stat-label">Part 2: Section B (Practical)</div>
         </div>
         <div class="pop-stat-card">
           <div class="pop-stat-num" style="color:#475569;">${passMark} / 54</div>
@@ -893,109 +931,114 @@ function showPearsonReportModal() {
         </div>
       </div>
 
-      <!-- Section A Breakdown Table -->
-      <h3 style="margin:20px 0 8px 0; font-size:1.08rem; color:#0f172a; display:flex; justify-content:space-between; align-items:center;">
-        <span><i class="fa-solid fa-list-ol" style="color:var(--pop-orange);"></i> Section A: Knowledge & Understanding (Computer Markable)</span>
-        <span style="font-size:0.95rem; font-weight:700; color:#0284c7;">Score: ${secAScore} / 10 Marks</span>
-      </h3>
-      <table class="pop-report-table">
+      <!-- Part 1: Section A Breakdown Table -->
+      <div class="pop-section-title-wrap">
+        <h3 class="pop-section-heading">
+          <i class="fa-solid fa-list-ol" style="color:var(--pop-orange);"></i>
+          Part 1: Section A — Core Digital Knowledge & Understanding (10 Marks)
+        </h3>
+        <span style="font-size:0.92rem; font-weight:800; color:#0284c7;">Subtotal: ${secAScore} / 10 Marks</span>
+      </div>
+
+      <table class="pop-table">
         <thead>
           <tr>
-            <th style="width:160px;">Test Number</th>
+            <th style="width:140px;">Test Item</th>
             <th>Digital Competency Focus</th>
-            <th style="width:140px;">Computer Markable</th>
-            <th style="width:110px;">Marks Awarded</th>
-            <th style="width:80px;">Skipped</th>
-            <th style="width:80px;">Flagged</th>
+            <th style="width:130px;">Format</th>
+            <th style="width:90px;">Marks</th>
+            <th style="width:140px;">Result Status</th>
           </tr>
         </thead>
         <tbody>
           ${secARowsHtml}
-          <tr style="background:#f1f5f9; font-weight:800; font-size:0.95rem;">
-            <td colspan="3" style="text-align:right;">Section A Subtotal:</td>
-            <td style="color:${secAScore >= 7 ? "#16a34a" : "#dc2626"};">${secAScore} / 10</td>
-            <td colspan="2">${Math.round((secAScore / 10) * 100)}%</td>
+          <tr class="pop-table-subtotal">
+            <td colspan="3" style="text-align:right;">Section A Subtotal (Knowledge & Understanding):</td>
+            <td>${secAScore} / 10</td>
+            <td>${Math.round((secAScore / 10) * 100)}%</td>
           </tr>
         </tbody>
       </table>
 
-      <!-- Section B Breakdown Table -->
-      <div style="display:flex; justify-content:space-between; align-items:center; margin:24px 0 8px 0; flex-wrap:wrap; gap:8px;">
-        <h3 style="margin:0; font-size:1.08rem; color:#0f172a;">
-          <i class="fa-solid fa-laptop-code" style="color:var(--pop-orange);"></i> Section B: Practical Application & Evidence Tasks (44 Marks)
+      <!-- Page Break for Clean Print Flow -->
+      <div class="pop-page-break"></div>
+
+      <!-- Part 2: Section B Breakdown -->
+      <div class="pop-section-title-wrap">
+        <h3 class="pop-section-heading">
+          <i class="fa-solid fa-laptop-code" style="color:var(--pop-orange);"></i>
+          Part 2: Section B — Authentic Workplace Tasks & Evidence Portfolio (44 Marks)
         </h3>
         <div class="pop-no-print" style="display:flex; gap:8px;">
-          <button type="button" class="btn-pop-action" onclick="awardAllSectionBEvidence()" style="padding:4px 10px; font-size:0.8rem; background:#ecfdf5; color:#047857; border-color:#a7f3d0;">
+          <button type="button" class="btn-pop-action" onclick="awardAllSectionBEvidence()" style="padding:4px 12px; font-size:0.82rem; background:#ecfdf5; color:#047857; border-color:#a7f3d0;">
             <i class="fa-solid fa-check-double"></i> Award All Section B Evidence (44/44)
           </button>
-          <button type="button" class="btn-pop-action" onclick="clearAllSectionBEvidence()" style="padding:4px 10px; font-size:0.8rem;">
+          <button type="button" class="btn-pop-action" onclick="clearAllSectionBEvidence()" style="padding:4px 12px; font-size:0.82rem;">
             <i class="fa-solid fa-arrow-rotate-left"></i> Reset
           </button>
         </div>
       </div>
 
-      <div style="font-size:0.85rem; color:#64748b; margin-bottom:8px;">
-        <em>Examiner Guidance: Individual mark scheme criteria can be toggled below to reflect candidate evidence documents and simulator outputs.</em>
+      <div style="font-size:0.85rem; color:#64748b; margin-bottom:14px;">
+        <em>Assessor Guidance: Each practical criterion below is evaluated against official Pearson Edexcel Level 1 mark schemes. Criteria may be verified live through integrated simulators or candidate output files.</em>
       </div>
 
-      <table class="pop-report-table">
-        <thead>
-          <tr>
-            <th>Task & Assessment Criteria Rubric</th>
-            <th style="width:80px;">Available</th>
-            <th style="width:90px;">Awarded</th>
-            <th colspan="2" style="width:140px;">Evidence Status</th>
-          </tr>
-        </thead>
-        <tbody>
-          ${secBRowsHtml}
-          <tr style="background:#f1f5f9; font-weight:800; font-size:0.95rem;">
-            <td style="text-align:right;">Section B Subtotal:</td>
-            <td>44</td>
-            <td style="color:${secBScore >= 28 ? "#16a34a" : "#dc2626"};">${secBScore}</td>
-            <td colspan="2">${Math.round((secBScore / 44) * 100)}%</td>
-          </tr>
-        </tbody>
-      </table>
+      ${secBTasksHtml}
 
-      <!-- Ofqual 5 Competency Domains -->
-      <h3 style="margin:24px 0 12px 0; font-size:1.08rem; color:#0f172a;">
-        <i class="fa-solid fa-chart-simple" style="color:var(--pop-orange);"></i> Ofqual Digital Functional Skills Competency Domain Breakdown:
-      </h3>
-      <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:16px; margin-bottom:20px;">
-        ${domains.map(d => {
-          const pct = Math.round((d.score / d.max) * 100);
-          const color = pct >= 70 ? "#16a34a" : (pct >= 50 ? "#0284c7" : "#d97706");
-          return `
-            <div class="pop-domain-row">
-              <div class="pop-domain-meta">
-                <span>${d.name}</span>
-                <span style="color:${color}; font-weight:700;">${d.score} / ${d.max} Marks (${pct}%)</span>
-              </div>
-              <div class="pop-domain-track">
-                <div class="pop-domain-fill" style="width:${pct}%; background:${color};"></div>
-              </div>
-            </div>
-          `;
-        }).join("")}
+      <div style="background:#0f172a; color:#ffffff; border-radius:8px; padding:10px 16px; display:flex; justify-content:space-between; align-items:center; font-weight:800; font-size:0.95rem; margin-bottom:22px;">
+        <span>Section B Subtotal (Practical Tasks & Evidence):</span>
+        <span style="color:#38bdf8;">${secBScore} / 44 Marks (${Math.round((secBScore / 44) * 100)}%)</span>
       </div>
 
-      <!-- Tutor & Quality Assurance Sign-off -->
-      <div style="background:#ffffff; border:1px dashed #94a3b8; border-radius:6px; padding:12px 16px; font-size:0.85rem; line-height:1.6; margin-bottom:20px; display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px;">
-        <div>
-          <strong>Tutor Assessor:</strong> Abdul (Master Functional Skills)<br>
-          <strong>Internal Quality Assurance:</strong> Verified against Pearson Edexcel DFS L1 Criteria
+      <!-- Ofqual 5 Competency Domains Breakdown -->
+      <div class="pop-keep-together">
+        <div class="pop-section-title-wrap">
+          <h3 class="pop-section-heading">
+            <i class="fa-solid fa-chart-simple" style="color:var(--pop-orange);"></i>
+            Ofqual Digital Functional Skills Competency Domain Breakdown:
+          </h3>
         </div>
-        <div>
-          <strong>Report Timestamp:</strong> ${new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}<br>
-          <strong>Assessment Method:</strong> Onscreen Simulation + Practical Candidate Evidence
+        <div class="pop-domain-profile">
+          ${domains.map(d => {
+            const pct = Math.round((d.score / d.max) * 100);
+            const color = pct >= 70 ? "#16a34a" : (pct >= 50 ? "#0284c7" : "#d97706");
+            return `
+              <div class="pop-domain-row">
+                <div class="pop-domain-meta">
+                  <span>${d.name}</span>
+                  <span style="color:${color};">${d.score} / ${d.max} Marks (${pct}%)</span>
+                </div>
+                <div class="pop-domain-track">
+                  <div class="pop-domain-fill" style="width:${pct}%; background:${color};"></div>
+                </div>
+              </div>
+            `;
+          }).join("")}
         </div>
       </div>
 
-      <!-- Actions Toolbar -->
-      <div style="display:flex; justify-content:center; gap:12px; margin-top:20px;" class="pop-no-print">
-        <button type="button" class="btn-pearson-start" onclick="window.print()"><i class="fa-solid fa-print"></i> Print Official Report (PDF)</button>
-        <button type="button" class="btn-pop-action" onclick="closePearsonReportModal()">Close</button>
+      <!-- Official Assessor & Quality Assurance Sign-off -->
+      <div class="pop-signoff-box pop-keep-together">
+        <div class="pop-signoff-col">
+          <div><strong>Tutor Assessor:</strong> Abdul (Lead Functional Skills Specialist)</div>
+          <div><strong>Assessment Centre:</strong> Master Functional Skills (Accredited Centre Standard)</div>
+          <div><strong>Assessment Mode:</strong> Pearson Onscreen Player Simulation & Candidate Output Verification</div>
+        </div>
+        <div class="pop-signoff-col">
+          <div><strong>Specification:</strong> Pearson Edexcel Digital Functional Skills Qualification at Level 1</div>
+          <div><strong>Report Timestamp:</strong> ${new Date().toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' })}</div>
+          <div><strong>Quality Assurance:</strong> Verified against Pearson Edexcel Assessment Rubric</div>
+        </div>
+      </div>
+
+      <!-- Actions Toolbar (Screen Only) -->
+      <div class="pop-report-actions pop-no-print">
+        <button type="button" class="btn-pearson-start" onclick="window.print()" style="padding:10px 24px; font-size:1rem;">
+          <i class="fa-solid fa-print"></i> Print Official Report (PDF)
+        </button>
+        <button type="button" class="btn-pop-action" onclick="closePearsonReportModal()" style="padding:10px 24px; font-size:1rem;">
+          Close Report
+        </button>
       </div>
     `;
   }

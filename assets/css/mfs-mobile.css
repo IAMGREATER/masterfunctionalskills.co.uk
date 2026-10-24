@@ -3332,7 +3332,26 @@
 
     /* Sketches, Diagrams, and SVGs — Proportional Mobile Sizing */
     .sketch-diagram-wrap {
-      display: none !important;
+      display: block !important;
+      width: 100% !important;
+      max-width: 100% !important;
+      margin: 12px 0 !important;
+      padding: 0 !important;
+      overflow: hidden !important;
+      border-radius: 10px !important;
+      box-sizing: border-box !important;
+    }
+    .sketch-diagram-wrap svg,
+    div:has(> svg[viewBox="0 0 860 170"]) svg,
+    svg[viewBox^="0 0 860"],
+    svg[viewBox^="0 0 760"],
+    svg[viewBox^="0 0 780"] {
+      width: 100% !important;
+      max-width: 100% !important;
+      height: auto !important;
+      display: block !important;
+      margin: 0 auto !important;
+      box-sizing: border-box !important;
     }
 
     .diagram-panel-box img,
@@ -3342,29 +3361,32 @@
     .model-example-card img:not(.tutor-avatar-img):not([src*="avatars/"]),
     .practice-question-card img:not(.tutor-avatar-img):not([src*="avatars/"]),
     .practice-q-stem img:not(.tutor-avatar-img):not([src*="avatars/"]),
-    .real-photo-card img {
+    .real-photo-card img,
+    .revision-content img:not(.tutor-avatar-img):not([src*="avatars/"]) {
       width: auto !important;
-      max-width: min(100%, 280px) !important;
+      max-width: min(100%, 290px) !important;
       max-height: 185px !important;
       height: auto !important;
       object-fit: contain !important;
       display: block !important;
       margin: 6px auto !important;
+      border-radius: 8px !important;
       box-sizing: border-box !important;
     }
 
     .mfs-diagram-col svg,
     .pfs-diagram-col svg,
     .diagram-panel-box svg,
-    .mfs-topic-body svg[viewBox^="0 0 340"],
-    .mfs-topic-body svg[viewBox^="0 0 360"],
-    .mfs-topic-body svg[viewBox^="0 0 220"] {
-      width: auto !important;
-      max-width: 220px !important;
-      max-height: 145px !important;
+    .mfs-topic-body svg:not([viewBox="0 0 64 64"]),
+    .model-example-card svg:not([viewBox="0 0 64 64"]),
+    .practice-question-card svg:not([viewBox="0 0 64 64"]),
+    .practice-q-stem svg:not([viewBox="0 0 64 64"]) {
+      width: 100% !important;
+      max-width: min(100%, 300px) !important;
+      max-height: 210px !important;
       height: auto !important;
       display: block !important;
-      margin: 4px auto !important;
+      margin: 6px auto !important;
       box-sizing: border-box !important;
     }
 
@@ -4295,28 +4317,116 @@
     box-shadow: none !important;
   }
 
-  /* 2. Remove Unnecessary Clutter on Mobile Revision Pages (PFS-Style Direct Start) */
+  /* 2. Streamlined Mobile Revision Layout (Proportional Elements, No Desktop Clutter) */
   .revision-breadcrumb-bar,
-  .revision-hero-visual-card,
   .revision-hero-meta-bar,
   .revision-hero-desc,
   .badge-pill-outline,
   section#specification,
-  .tutor-pro-callout,
-  .tutor-insight-callout,
-  .mfs-topic-body > div:has(> img[src*="avatars/"]),
-  .examiner-guidance-box img[src*="avatars/"],
-  img.tutor-avatar-img,
-  img[src*="avatars/"],
-  .mfs-topic-footer,
-  .pfs-card-footer,
-  .practice-q-footer,
   .section-lead-text,
   .section-header-row > span,
-  section#curriculum-links,
+  section#curriculum-links {
+    display: none !important;
+  }
+
+  /* Revision Hero Visual Card & Photo — Proportional Mobile Sizing */
+  .revision-hero-visual-card {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 10px 0 4px 0 !important;
+    padding: 8px !important;
+    border-radius: 12px !important;
+    background: rgba(255, 255, 255, 0.08) !important;
+    border: 1px solid rgba(255, 255, 255, 0.18) !important;
+    box-sizing: border-box !important;
+  }
+
+  .revision-hero-img-wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    aspect-ratio: 16 / 9 !important;
+    max-height: 180px !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+    position: relative !important;
+  }
+
+  .revision-hero-img-wrap img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    display: block !important;
+  }
+
+  .revision-hero-caption-bar {
+    font-size: 0.78rem !important;
+    line-height: 1.35 !important;
+    padding: 6px 4px 2px 4px !important;
+    color: rgba(255, 255, 255, 0.85) !important;
+  }
+
+  /* Tutor Callout Cards & Avatars — Shrunk & Compact */
+  .tutor-pro-callout,
+  .tutor-insight-callout {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: flex-start !important;
+    gap: 10px !important;
+    padding: 10px 12px !important;
+    margin: 10px 0 !important;
+    border-radius: 10px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .tutor-pro-callout img,
+  .tutor-insight-callout img,
+  .examiner-guidance-box img[src*="avatars/"],
+  img.tutor-avatar-img,
+  img[src*="avatars/"] {
+    display: block !important;
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    flex-shrink: 0 !important;
+  }
+
+  .tutor-pro-callout > div,
+  .tutor-insight-callout > div {
+    min-width: 0 !important;
+    flex: 1 !important;
+    font-size: 0.88rem !important;
+    line-height: 1.45 !important;
+  }
+
+  /* Sketches, Whiteboards, and Wide SVGs — Full Responsive Fit */
   .sketch-diagram-wrap,
   div:has(> svg[viewBox="0 0 860 170"]) {
-    display: none !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 10px 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    border-radius: 10px !important;
+    box-sizing: border-box !important;
+  }
+
+  .sketch-diagram-wrap svg,
+  div:has(> svg[viewBox="0 0 860 170"]) svg,
+  svg[viewBox^="0 0 860"],
+  svg[viewBox^="0 0 760"],
+  svg[viewBox^="0 0 780"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
   }
 
   /* 3. Compact PFS-Style Revision Hero Header */
@@ -4446,15 +4556,42 @@
   .mfs-diagram-col svg,
   .pfs-diagram-col svg,
   .diagram-panel-box svg,
-  .mfs-topic-body svg[viewBox^="0 0 340"],
-  .mfs-topic-body svg[viewBox^="0 0 360"],
-  .mfs-topic-body svg[viewBox^="0 0 220"] {
-    width: auto !important;
-    max-width: 220px !important;
-    max-height: 145px !important;
+  .mfs-topic-body svg:not([viewBox="0 0 64 64"]),
+  .model-example-card svg:not([viewBox="0 0 64 64"]),
+  .practice-question-card svg:not([viewBox="0 0 64 64"]),
+  .practice-q-stem svg:not([viewBox="0 0 64 64"]) {
+    width: 100% !important;
+    max-width: min(100%, 300px) !important;
+    max-height: 210px !important;
     height: auto !important;
     margin: 0 auto !important;
     display: block !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Formula Triangles — Shrunk & Centered */
+  .mfs-triangle-master,
+  .triangle-card,
+  .formula-triangle-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    margin: 8px 0 !important;
+    padding: 8px !important;
+    box-sizing: border-box !important;
+  }
+
+  .mfs-triangle-master svg,
+  .triangle-card svg,
+  .formula-triangle-card svg {
+    width: 100% !important;
+    max-width: 240px !important;
+    height: auto !important;
+    max-height: 170px !important;
+    display: block !important;
+    margin: 0 auto !important;
   }
 
   .cube-nets-grid,
@@ -4505,19 +4642,21 @@
 
   .diagram-panel-box img,
   .pfs-diagram-col img,
-  .mfs-topic-body img,
-  .math-visual-card img,
-  .model-example-card img,
-  .practice-q-stem img,
-  .real-photo-card img {
+  .mfs-topic-body img:not(.tutor-avatar-img):not([src*="avatars/"]),
+  .math-visual-card img:not(.tutor-avatar-img):not([src*="avatars/"]),
+  .model-example-card img:not(.tutor-avatar-img):not([src*="avatars/"]),
+  .practice-q-stem img:not(.tutor-avatar-img):not([src*="avatars/"]),
+  .real-photo-card img,
+  .revision-content img:not(.tutor-avatar-img):not([src*="avatars/"]) {
     width: auto !important;
-    max-width: min(100%, 260px) !important;
-    max-height: 175px !important;
+    max-width: min(100%, 290px) !important;
+    max-height: 185px !important;
     height: auto !important;
     object-fit: contain !important;
     margin: 6px auto !important;
     display: block !important;
-    border-radius: 6px !important;
+    border-radius: 8px !important;
+    box-sizing: border-box !important;
   }
 
   /* 7. Unified Proportional Body Text, Steps, Stems & Explanations (0.90rem) */
@@ -4678,6 +4817,149 @@
     width: 10px !important;
     min-width: 10px !important;
     font-size: 1.2rem !important;
+  }
+
+  /* 10. Past Papers Filter Chips & Board Pills — Smooth Touch Scroll & Proportional Logos */
+  .paper-filter-chips {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    gap: 5px !important;
+    padding: 2px 0 6px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .paper-filter-chips::-webkit-scrollbar {
+    display: none !important;
+  }
+  .board-switcher-inner {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    gap: 4px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .board-switcher-inner::-webkit-scrollbar {
+    display: none !important;
+  }
+  .board-pill {
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+    font-size: 0.76rem !important;
+    padding: 4px 8px !important;
+  }
+  .board-pill img {
+    height: 16px !important;
+    max-height: 16px !important;
+    width: auto !important;
+    max-width: 28px !important;
+    object-fit: contain !important;
+    display: inline-block !important;
+    vertical-align: middle !important;
+  }
+
+  /* 11. Worksheets Hub & Direct Revision Subnav — Proportional & Non-Overflowing */
+  .mfs-subnav-strip,
+  .mfs-subnav-inner {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 6px 10px !important;
+    margin: 0 !important;
+    box-sizing: border-box !important;
+  }
+  .subnav-links {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    gap: 6px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 2px 0 !important;
+    box-sizing: border-box !important;
+  }
+  .subnav-links::-webkit-scrollbar {
+    display: none !important;
+  }
+  .subnav-link {
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+    font-size: 0.78rem !important;
+    padding: 5px 10px !important;
+  }
+
+  /* 12. Shop Page — Proportional 3D Book Covers & Touch Filters */
+  .shop-filter-bar {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    gap: 6px !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 6px 0 !important;
+    box-sizing: border-box !important;
+  }
+  .shop-filter-bar::-webkit-scrollbar {
+    display: none !important;
+  }
+  .shop-filter-btn {
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+    font-size: 0.78rem !important;
+    padding: 6px 12px !important;
+  }
+  .product-img-wrap {
+    min-height: 0 !important;
+    height: auto !important;
+    padding: 10px 0 !important;
+  }
+  .product-img-wrap img {
+    max-height: 190px !important;
+    width: auto !important;
+    max-width: 100% !important;
+    object-fit: contain !important;
+    margin: 0 auto !important;
+    display: block !important;
+  }
+
+  /* 13. Video Station — Responsive Player & Shrunk Playlist Thumbnails */
+  .video-player-wrap {
+    width: 100% !important;
+    max-width: 100% !important;
+    aspect-ratio: 16 / 9 !important;
+    box-sizing: border-box !important;
+  }
+  .playlist-thumb-box img,
+  .playlist-thumb-img {
+    width: 60px !important;
+    max-width: 60px !important;
+    height: 38px !important;
+    object-fit: cover !important;
+    border-radius: 4px !important;
+    flex-shrink: 0 !important;
+  }
+
+  /* 14. General Portal Images & Showcase Banners — Shrunk to Fit Width */
+  .hero-square-showcase img,
+  .hero-showcase-img,
+  .card-img-top,
+  .about-hero-img,
+  .trustpilot-stars img,
+  .trustpilot-rating img {
+    max-width: 100% !important;
+    height: auto !important;
+    object-fit: contain !important;
+    box-sizing: border-box !important;
   }
 }
 

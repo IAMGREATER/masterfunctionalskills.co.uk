@@ -3431,26 +3431,60 @@ p {
 
   /* 4. DIAGRAMS & SVGS RESIZING (PROPORTIONAL MOBILE SIZING) */
   .sketch-diagram-wrap {
-    display: none !important;
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 12px 0 !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+    border-radius: 10px !important;
+    box-sizing: border-box !important;
+  }
+  .sketch-diagram-wrap svg,
+  div:has(> svg[viewBox="0 0 860 170"]) svg,
+  svg[viewBox^="0 0 860"],
+  svg[viewBox^="0 0 760"],
+  svg[viewBox^="0 0 780"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    display: block !important;
+    margin: 0 auto !important;
+    box-sizing: border-box !important;
   }
   .diagram-panel-box svg,
   .pfs-diagram-col svg,
-  .mfs-diagram-col svg {
-    width: auto !important;
-    max-width: 220px !important;
-    max-height: 145px !important;
-    height: auto !important;
-    margin: 4px auto !important;
-    display: block !important;
-  }
-  .diagram-panel-box img,
-  .pfs-diagram-col img {
-    width: auto !important;
-    max-width: min(100%, 260px) !important;
-    max-height: 175px !important;
+  .mfs-diagram-col svg,
+  .mfs-topic-body svg:not([viewBox="0 0 64 64"]),
+  .model-example-card svg:not([viewBox="0 0 64 64"]),
+  .practice-question-card svg:not([viewBox="0 0 64 64"]),
+  .practice-q-stem svg:not([viewBox="0 0 64 64"]) {
+    width: 100% !important;
+    max-width: min(100%, 300px) !important;
+    max-height: 210px !important;
     height: auto !important;
     margin: 6px auto !important;
     display: block !important;
+    box-sizing: border-box !important;
+  }
+  .diagram-panel-box img,
+  .pfs-diagram-col img,
+  .mfs-topic-body img:not(.tutor-avatar-img):not([src*="avatars/"]),
+  .math-visual-card img:not(.tutor-avatar-img):not([src*="avatars/"]),
+  .model-example-card img:not(.tutor-avatar-img):not([src*="avatars/"]),
+  .practice-question-card img:not(.tutor-avatar-img):not([src*="avatars/"]),
+  .practice-q-stem img:not(.tutor-avatar-img):not([src*="avatars/"]),
+  .real-photo-card img,
+  .revision-content img:not(.tutor-avatar-img):not([src*="avatars/"]) {
+    width: auto !important;
+    max-width: min(100%, 290px) !important;
+    max-height: 185px !important;
+    height: auto !important;
+    object-fit: contain !important;
+    margin: 6px auto !important;
+    display: block !important;
+    border-radius: 8px !important;
+    box-sizing: border-box !important;
   }
 
   /* 5. TABLES RESPONSIVE SYSTEM (PUSH INFORMATION ONTO LINES) */

@@ -148,6 +148,8 @@ class ModelSolutionAuditor:
             return 'ncfe'
         elif 'tquk' in fname:
             return 'tquk'
+        elif 'nocn' in fname:
+            return 'nocn'
         return 'edexcel'
 
     def check_right_margin_overflow(self):
@@ -174,6 +176,9 @@ class ModelSolutionAuditor:
             scale = page.rect.width / 595.28
             max_limit = base_max_limit * scale
             border_limit = base_border_limit * scale
+            if board == 'edexcel' and 'mfs active reading guide' in page_text:
+                max_limit = 558.5 if page.rect.height > 820 else 535.5
+                border_limit = 588.0 if page.rect.height > 820 else 538.4
 
             text_dict = page.get_text('dict')
             for block in text_dict.get('blocks', []):
@@ -244,44 +249,60 @@ class ModelSolutionAuditor:
             page_text = annot_page.get_text('text').lower()
             if ('section b' in page_text or 'section 2' in page_text) and ('calculator' in page_text or 'candidate' in page_text or 'pmat' in page_text or 'check that you have' in page_text):
                 continue
+            if 'annotated source insert' in page_text:
+                continue
 
-            m = re.search(r'\*[A-Za-z0-9_]+\*', annot_page.get_text('text'))
-            if m and m.group(0).lower() in orig_map:
-                orig_page = self.orig_doc[orig_map[m.group(0).lower()]]
-            else:
-                # Default candidate index is p_idx - 1 (for 1-page inserted promo)
-                cand_idx = p_idx - 1 if (p_idx - 1 < len(self.orig_doc)) else None
-                cand_overlap = 0
-                annot_word_set = set(w[4].lower() for w in annot_page.get_text('words') if len(w[4]) > 3)
-                if cand_idx is not None:
-                    cand_words = set(w[4].lower() for w in self.orig_doc[cand_idx].get_text('words') if len(w[4]) > 3)
-                    cand_overlap = len(annot_word_set & cand_words)
-
-                # If cand_idx matches well or candidate page has very sparse text (e.g. grid/chart answer page), use cand_idx
-                if cand_idx is not None and (cand_overlap >= 8 or len(self.orig_doc[cand_idx].get_text('words')) <= 15):
-                    orig_page = self.orig_doc[cand_idx]
+            is_insert_page = ('mfs active reading guide' in page_text)
+            orig_page = None
+            if not is_insert_page:
+                m = re.search(r'\*[A-Za-z0-9_]+\*', annot_page.get_text('text'))
+                if m and m.group(0).lower() in orig_map:
+                    orig_page = self.orig_doc[orig_map[m.group(0).lower()]]
                 else:
-                    best_idx, best_overlap = -1, 0
-                    for o_idx, o_page in enumerate(self.orig_doc):
-                        o_word_set = set(w[4].lower() for w in o_page.get_text('words') if len(w[4]) > 3)
-                        overlap = len(annot_word_set & o_word_set)
-                        if overlap > best_overlap:
-                            best_overlap = overlap
-                            best_idx = o_idx
-                    if best_overlap >= 8:
-                        orig_page = self.orig_doc[best_idx]
-                    elif cand_idx is not None:
+                    # Default candidate index is p_idx - 1 (for 1-page inserted promo)
+                    cand_idx = p_idx - 1 if (p_idx - 1 < len(self.orig_doc)) else None
+                    cand_overlap = 0
+                    annot_word_set = set(w[4].lower() for w in annot_page.get_text('words') if len(w[4]) > 3)
+                    if cand_idx is not None:
+                        cand_words = set(w[4].lower() for w in self.orig_doc[cand_idx].get_text('words') if len(w[4]) > 3)
+                        cand_overlap = len(annot_word_set & cand_words)
+
+                    # If cand_idx matches well or candidate page has very sparse text (e.g. grid/chart answer page), use cand_idx
+                    if cand_idx is not None and (cand_overlap >= 8 or len(self.orig_doc[cand_idx].get_text('words')) <= 15):
                         orig_page = self.orig_doc[cand_idx]
                     else:
-                        continue
+                        best_idx, best_overlap = -1, 0
+                        for o_idx, o_page in enumerate(self.orig_doc):
+                            o_word_set = set(w[4].lower() for w in o_page.get_text('words') if len(w[4]) > 3)
+                            overlap = len(annot_word_set & o_word_set)
+                            if overlap > best_overlap:
+                                best_overlap = overlap
+                                best_idx = o_idx
+                        if best_overlap >= 8:
+                            orig_page = self.orig_doc[best_idx]
+                        elif cand_idx is not None:
+                            orig_page = self.orig_doc[cand_idx]
+                        else:
+                            continue
 
             # 1. Collect original words (ignore underlines and barcodes)
             orig_words = []
-            for w in orig_page.get_text('words'):
-                txt = w[4].strip()
-                if not txt or '____' in txt or '*P' in txt or txt.startswith('*') or '....' in txt or re.fullmatch(r'[\s._\-–—…\.]+', txt):
-                    continue
-                orig_words.append((pymupdf.Rect(w[:4]), txt))
+            if is_insert_page:
+                for block in annot_page.get_text('dict').get('blocks', []):
+                    for line in block.get('lines', []):
+                        for span in line.get('spans', []):
+                            f = span.get('font', '').lower()
+                            c = span.get('color', 0)
+                            t = span.get('text', '').strip()
+                            if not t or any(k in f for k in ['kalam', 'caveat', 'helvetica']) or c in [0x0f172a, 0x0f766e, 0xdc2626, 0xd97706, 0xffffff]:
+                                continue
+                            orig_words.append((pymupdf.Rect(span['bbox']), t))
+            else:
+                for w in orig_page.get_text('words'):
+                    txt = w[4].strip()
+                    if not txt or '____' in txt or '*P' in txt or txt.startswith('*') or '....' in txt or re.fullmatch(r'[\s._\-–—…\.]+', txt):
+                        continue
+                    orig_words.append((pymupdf.Rect(w[:4]), txt))
 
             # 2. Collect injected handwriting/annot words
             annot_words = []

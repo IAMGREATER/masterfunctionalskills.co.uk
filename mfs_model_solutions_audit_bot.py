@@ -301,6 +301,9 @@ class ModelSolutionAuditor:
             # 3. Check for physical bounding box collisions
             for ar, atxt in annot_words:
                 for ow_r, ow_txt in orig_words:
+                    # Skip if the span in annot_page is an original QP word printed in a script/hand font colliding with itself
+                    if (atxt.strip('\x08 ') == ow_txt.strip('\x08 ') or ow_txt.strip('\x08 ') in atxt.strip('\x08 ')) and (abs(ar.x0 - ow_r.x0) < 5.0 or abs(ar.x1 - ow_r.x1) < 5.0) and abs(ar.y0 - ow_r.y0) < 4.5:
+                        continue
                     inter = ar & ow_r
                     if inter.is_valid and inter.width > 3.0 and inter.height > 3.0:
                         rule_res['collisions'].append({

@@ -29,17 +29,21 @@
     touch-action: manipulation;
   }
 
-  /* Header scrolls away naturally on scroll down - strictly non-persisting across whole site in BOTH orientations on mobiles */
+  /* Sticky Mobile App Bar (PFS .header-sticky-top pattern) — keeps Dyslexia Tint & Menu Drawer 1 tap away */
+  html {
+    scroll-padding-top: 64px !important;
+  }
+
   .mfs-navbar {
-    position: relative !important;
-    top: auto !important;
-    left: auto !important;
-    right: auto !important;
+    position: sticky !important;
+    top: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
     bottom: auto !important;
-    z-index: 100 !important;
+    z-index: 9999 !important;
     padding-top: env(safe-area-inset-top, 0px) !important;
     background: #0b172d !important;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15) !important;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.22) !important;
     border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
   }
 
@@ -4072,6 +4076,175 @@
     color: #15803d !important;
     font-style: italic !important;
     margin-top: 4px !important;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   3B. PFS MOBILE UX PATTERNS, INLINE GRID/FLEX OVERRIDES & LEGACY PAGE FIXES
+   -------------------------------------------------------------------------- */
+@media (max-width: 1024px) {
+  /* Tablet 3-column inline grids step down cleanly to 2 columns or 1 column */
+  div[style*="grid-template-columns: 1.1fr 0.9fr"],
+  div[style*="grid-template-columns:1.1fr 0.9fr"],
+  div[style*="grid-template-columns: 1.15fr 0.85fr"],
+  div[style*="grid-template-columns:1.15fr 0.85fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 24px !important;
+  }
+
+  div[style*="gap: 60px"],
+  div[style*="gap:60px"],
+  div[style*="gap: 50px"],
+  div[style*="gap:50px"] {
+    gap: 24px !important;
+  }
+
+  /* PFS Bootstrap / Unify Collapsible & Dropdown Patterns */
+  .collapse:not(.show) {
+    display: none !important;
+  }
+  .collapse.show {
+    display: block !important;
+  }
+  .dropdown-menu {
+    display: none;
+  }
+  .dropdown-menu.show {
+    display: block !important;
+  }
+  .example-question-btn.collapsed::after {
+    content: "Show Answer";
+  }
+  .example-question-btn:not(.collapsed)::after {
+    content: "Hide Answer";
+  }
+}
+
+@media (max-width: 767px) {
+  /* Universal inline grid collapse on phones */
+  div[style*="grid-template-columns: repeat(3, 1fr)"],
+  div[style*="grid-template-columns:repeat(3, 1fr)"],
+  div[style*="grid-template-columns: repeat(2, 1fr)"],
+  div[style*="grid-template-columns:repeat(2, 1fr)"],
+  div[style*="grid-template-columns: 1fr 1fr"],
+  div[style*="grid-template-columns:1fr 1fr"] {
+    grid-template-columns: 1fr !important;
+    gap: 16px !important;
+  }
+
+  /* Universal inline large padding reduction on phones */
+  section[style*="padding: 80px"],
+  section[style*="padding:80px"],
+  div[style*="padding: 60px"],
+  div[style*="padding:60px"],
+  div[style*="padding: 50px"],
+  div[style*="padding:50px"],
+  div[style*="padding: 40px"],
+  div[style*="padding:40px"],
+  div[style*="padding: 36px"],
+  div[style*="padding:36px"] {
+    padding: 20px 14px !important;
+  }
+
+  /* Inline flex space-between headers wrap cleanly on narrow screens */
+  div[style*="justify-content: space-between"]:not(.mfs-navbar-inner):not(.mfs-drawer-header),
+  div[style*="justify-content:space-between"]:not(.mfs-navbar-inner):not(.mfs-drawer-header) {
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+  }
+
+  /* PFS-Style Past Paper & Subject Hub Action Button Touch Grid */
+  .pp-row {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 10px !important;
+    padding: 12px !important;
+  }
+
+  .pp-actions,
+  .topic-actions,
+  .hub-topic-actions {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+    width: 100% !important;
+  }
+
+  .pp-actions > a,
+  .pp-actions > button,
+  .topic-actions > a,
+  .topic-actions > button,
+  .hub-topic-actions > a {
+    width: 100% !important;
+    min-height: 40px !important;
+    padding: 8px 10px !important;
+    font-size: 0.78rem !important;
+    font-weight: 700 !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
+    margin: 0 !important;
+    white-space: nowrap !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+  }
+
+  /* When an action grid has an odd number of buttons (3 or 5), last button spans full width */
+  .pp-actions > :last-child:nth-child(odd),
+  .topic-actions > :last-child:nth-child(odd),
+  .hub-topic-actions > :last-child:nth-child(odd) {
+    grid-column: 1 / -1 !important;
+  }
+
+  /* PFS-Cloned Legacy WordPress / Kadence / Elementor Mobile Stacking */
+  .wp-block-kadence-rowlayout,
+  .kt-row-column-wrap,
+  .wp-block-columns,
+  .elementor-row,
+  .elementor-container,
+  .table-responsive-stack tr {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+
+  .wp-block-column,
+  .kt-inside-inner-col,
+  .elementor-column,
+  .table-responsive-stack td,
+  .table-responsive-stack th,
+  div[style*="width: 40%"],
+  div[style*="width:40%"],
+  div[style*="min-width: 250px"],
+  div[style*="min-width: 200px"] {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Filter & Board Tab Bars — Smooth Horizontal Touch Scroll */
+  .filter-tabs,
+  .board-tabs,
+  .level-tabs,
+  .shop-filter-bar {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    gap: 8px !important;
+    padding-bottom: 4px !important;
+    max-width: 100% !important;
+  }
+  .filter-tabs::-webkit-scrollbar,
+  .board-tabs::-webkit-scrollbar,
+  .level-tabs::-webkit-scrollbar,
+  .shop-filter-bar::-webkit-scrollbar {
+    display: none !important;
   }
 }
 

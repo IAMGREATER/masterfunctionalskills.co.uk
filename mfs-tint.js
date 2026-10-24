@@ -1,7 +1,7 @@
 /**
- * MASTER FUNCTIONAL SKILLS (UK) — DYSLEXIA READING TINT ENGINE
- * Soft glare-reduction background tints (Default: Light Cream, Peach, Cool Mist, Sage, No Tint)
- * Accessible via top navigation bar & subtle floating pill across all pages.
+ * MASTER FUNCTIONAL SKILLS (UK) — DYSLEXIA ACCESSIBILITY & TINT ENGINE
+ * Glare-reduction background tints: Cream (#faf4e6), Soft Peach (#ffe8d6), Cool Mist (#e3f0f9), Soft Sage (#e3eee5), No Tint (#ffffff)
+ * Controls top access bar: [⚪ Tint ⌵] [🚹 Dyslexia] [🎨 Sapphire] across all pages.
  */
 (function() {
   'use strict';
@@ -14,19 +14,19 @@
   window.none = 'none';
 
   var TINTS = {
-    cream: { name: 'Cream', swatch: '#faf8f2', border: '#e6dfd1', isDefault: true },
-    peach: { name: 'Soft Peach', swatch: '#fdf6ee', border: '#ead9c7' },
-    cool:  { name: 'Cool Mist', swatch: '#f1f6fa', border: '#cfe0ec' },
-    sage:  { name: 'Soft Sage', swatch: '#f2f7f3', border: '#d0e3d4' },
+    cream: { name: 'Cream', swatch: '#faf4e6', border: '#e6dfd1', isDefault: true },
+    peach: { name: 'Soft Peach', swatch: '#ffe8d6', border: '#f0bca0' },
+    cool:  { name: 'Cool Mist', swatch: '#e3f0f9', border: '#bedcf0' },
+    sage:  { name: 'Soft Sage', swatch: '#e3eee5', border: '#bcdcc1' },
     none:  { name: 'No Tint', swatch: '#ffffff', border: '#cbd5e1', isNone: true }
   };
 
   function getSavedTint() {
-    var saved = localStorage.getItem('mfs_tint');
+    var saved = localStorage.getItem('mfs_tint') || localStorage.getItem('mfs_user_tint');
     if (saved && TINTS[saved]) {
       return saved;
     }
-    return 'cream'; // Default is very light cream tint for dyslexia-friendly reading
+    return 'cream'; // Default is calming light cream tint
   }
 
   function applyTint(tintKey, save) {
@@ -34,6 +34,7 @@
     if (save !== false) {
       try {
         localStorage.setItem('mfs_tint', tintKey);
+        localStorage.setItem('mfs_user_tint', tintKey);
       } catch (e) {}
     }
 
@@ -46,7 +47,7 @@
       document.body.classList.add('tint-' + tintKey);
     }
 
-    // Update Top Bar elements if present
+    // Update Top Bar elements
     var label = document.getElementById('tintLabel');
     if (label) {
       label.textContent = tintKey === 'none' ? 'No Tint' : (TINTS[tintKey].name + ' Tint');
@@ -54,14 +55,14 @@
     var currentSwatch = document.getElementById('tintCurrentSwatch');
     if (currentSwatch) {
       currentSwatch.style.background = TINTS[tintKey].swatch;
-      currentSwatch.style.borderColor = tintKey === 'none' ? '#cbd5e1' : 'rgba(255,255,255,0.85)';
+      currentSwatch.style.borderColor = TINTS[tintKey].border;
     }
 
     // Update Floating Pill elements if present
     var floatSwatch = document.getElementById('floatTintSwatch');
     if (floatSwatch) {
       floatSwatch.style.background = TINTS[tintKey].swatch;
-      floatSwatch.style.borderColor = tintKey === 'none' ? '#cbd5e1' : 'rgba(0,0,0,0.18)';
+      floatSwatch.style.borderColor = TINTS[tintKey].border;
     }
     var floatText = document.getElementById('floatTintText');
     if (floatText) {
@@ -132,33 +133,64 @@
     }
   });
 
-  // Floating widget removed per user request (kept in top navigation bar only)
   function ensureFloatingWidget() {
     var existing = document.getElementById('floatingTintWidget');
     if (existing) existing.remove();
   }
 
   // ==========================================================================
-  // THEME ENGINE (Matched to Official Subject & Level Book Accents)
+  // DYSLEXIA HIGH-READABILITY MODE
+  // ==========================================================================
+  function applyDyslexiaMode(enabled, save) {
+    if (save !== false) {
+      try {
+        localStorage.setItem('mfs_dyslexia_mode', enabled ? 'true' : 'false');
+      } catch (e) {}
+    }
+    if (enabled) {
+      document.documentElement.setAttribute('data-dyslexia', 'true');
+      if (document.body) document.body.classList.add('dyslexia-mode');
+    } else {
+      document.documentElement.removeAttribute('data-dyslexia');
+      if (document.body) document.body.classList.remove('dyslexia-mode');
+    }
+    var btn = document.getElementById('dyslexiaToggle');
+    if (btn) {
+      if (enabled) {
+        btn.classList.add('active');
+      } else {
+        btn.classList.remove('active');
+      }
+    }
+  }
+
+  window.toggleDyslexiaMode = function(ev) {
+    if (ev && ev.stopPropagation) ev.stopPropagation();
+    var isCurrentlyOn = document.documentElement.getAttribute('data-dyslexia') === 'true' ||
+                        (document.body && document.body.classList.contains('dyslexia-mode'));
+    applyDyslexiaMode(!isCurrentlyOn, true);
+  };
+
+  // ==========================================================================
+  // THEME ENGINE (Subject Suites & Palette Modes)
   // ==========================================================================
   function getSavedTheme() {
     var docTheme = document.documentElement.getAttribute('data-theme');
-    // If this page specifically sets a curriculum subject theme (maths, english, digital, etc.), honor it
-    if (docTheme) {
+    // If page explicitly declares a subject theme, respect it unconditionally
+    if (docTheme && (docTheme === 'english' || docTheme === 'maths' || docTheme === 'digital' || docTheme === 'violet' || docTheme === 'cyan')) {
       return docTheme;
     }
     var saved = localStorage.getItem('mfs_theme');
-    var validThemes = ['maths', 'english', 'digital', 'sapphire', 'emerald', 'crimson', 'teal', 'oxford-blue', 'violet', 'cyan'];
-    if (saved && validThemes.includes(saved)) {
+    if (saved && (saved === 'emerald' || saved === 'sapphire' || saved === 'crimson' || saved === 'teal' || saved === 'oxford-blue')) {
       return saved;
     }
-    return 'maths'; // Default is Maths Sapphire
+    return docTheme || 'sapphire';
   }
 
   function applyTheme(themeKey, save) {
-    var validThemes = ['maths', 'english', 'digital', 'sapphire', 'emerald', 'crimson', 'teal', 'oxford-blue', 'violet', 'cyan'];
-    if (!validThemes.includes(themeKey)) themeKey = 'maths';
-    if (save !== false) {
+    var validThemes = ['sapphire', 'emerald', 'crimson', 'teal', 'oxford-blue', 'english', 'maths', 'digital', 'violet', 'cyan'];
+    if (!validThemes.includes(themeKey)) themeKey = 'sapphire';
+    if (save !== false && themeKey !== 'english' && themeKey !== 'maths' && themeKey !== 'digital') {
       try {
         localStorage.setItem('mfs_theme', themeKey);
       } catch (e) {}
@@ -167,38 +199,61 @@
     var lbl = document.getElementById('themeLabel');
     if (lbl) {
       var nameMap = {
-        'maths': 'Maths (Sapphire)',
-        'english': 'English (Violet)',
-        'digital': 'Digital (Cyan)',
         'sapphire': 'Sapphire',
         'emerald': 'Emerald',
         'crimson': 'Crimson',
         'teal': 'Teal',
         'oxford-blue': 'Oxford Blue',
-        'violet': 'Violet',
-        'cyan': 'Cyan'
+        'english': 'English',
+        'maths': 'Maths',
+        'digital': 'Digital'
       };
-      lbl.textContent = nameMap[themeKey] || 'Theme';
+      lbl.textContent = nameMap[themeKey] || 'Palette';
     }
     var toggleBtn = document.getElementById('themeToggle');
     if (toggleBtn) {
-      toggleBtn.title = 'Current Theme: ' + themeKey;
+      toggleBtn.title = 'Switch Palette: ' + (themeKey === 'emerald' ? 'Sapphire' : 'Emerald');
     }
   }
 
   window.toggleTheme = function(ev) {
     if (ev && ev.stopPropagation) ev.stopPropagation();
     var current = document.documentElement.getAttribute('data-theme') || getSavedTheme();
-    var next = current === 'emerald' ? 'sapphire' : 'emerald';
+    var orig = document.documentElement.getAttribute('data-orig-theme') || (current === 'english' || current === 'maths' || current === 'digital' ? current : 'sapphire');
+    var next = (current === 'emerald') ? orig : 'emerald';
     applyTheme(next, true);
+  };
+
+  // ==========================================================================
+  // GLOBAL SEARCH SHORTCUT (Ctrl+K)
+  // ==========================================================================
+  window.openGlobalSearch = function(ev) {
+    if (ev && ev.stopPropagation) ev.stopPropagation();
+    if (window.MfsSearch && typeof window.MfsSearch.open === 'function') {
+      window.MfsSearch.open();
+    } else {
+      var q = prompt('Search Functional Skills revision topics & resources:');
+      if (q && q.trim()) {
+        window.location.href = 'revise.html?q=' + encodeURIComponent(q.trim());
+      }
+    }
   };
 
   // Early execution to eliminate any flash of unstyled tint or theme
   var initialTint = getSavedTint();
   document.documentElement.setAttribute('data-tint', initialTint);
 
+  var pageDeclaredTheme = document.documentElement.getAttribute('data-theme');
+  if (pageDeclaredTheme) {
+    document.documentElement.setAttribute('data-orig-theme', pageDeclaredTheme);
+  }
   var initialTheme = getSavedTheme();
   document.documentElement.setAttribute('data-theme', initialTheme);
+
+  var initialDyslexia = localStorage.getItem('mfs_dyslexia_mode') === 'true';
+  if (initialDyslexia) {
+    document.documentElement.setAttribute('data-dyslexia', 'true');
+  }
 
   // Auto-load Global Instant Search engine (Ctrl+K)
   if (!document.getElementById('mfsSearchScript')) {
@@ -208,15 +263,101 @@
     document.head.appendChild(searchScript);
   }
 
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', function() {
-      ensureFloatingWidget();
-      applyTint(initialTint, false);
-      applyTheme(initialTheme, false);
+  function initTouchDropdowns() {
+    if (window.__MFS_TOUCH_DROPDOWNS_INIT) return;
+    window.__MFS_TOUCH_DROPDOWNS_INIT = true;
+
+    function isTouchInteraction(e) {
+      if (e && (e.pointerType === 'touch' || e.pointerType === 'pen')) return true;
+      if (window.matchMedia && window.matchMedia('(hover: none)').matches) return true;
+      if (window.innerWidth <= 1080) return true;
+      return false;
+    }
+
+    function closeAllDropdowns(exceptItem) {
+      var openItems = document.querySelectorAll('.mfs-nav-item.open');
+      for (var i = 0; i < openItems.length; i++) {
+        if (openItems[i] !== exceptItem) {
+          openItems[i].classList.remove('open');
+          var link = openItems[i].querySelector('.mfs-nav-link');
+          if (link) link.setAttribute('aria-expanded', 'false');
+        }
+      }
+    }
+
+    function adjustDropdownPosition(dropdown) {
+      if (!dropdown || window.innerWidth <= 991) return;
+      dropdown.style.left = '';
+      dropdown.style.right = '';
+      var rect = dropdown.getBoundingClientRect();
+      var vw = window.innerWidth;
+      if (rect.right > vw - 12) {
+        var overflowX = rect.right - (vw - 12);
+        dropdown.style.left = (-overflowX) + 'px';
+      }
+    }
+
+    document.addEventListener('click', function(e) {
+      var navLink = e.target.closest('.mfs-nav-item > .mfs-nav-link');
+      var navItem = navLink ? navLink.closest('.mfs-nav-item') : null;
+      var dropdown = navItem ? navItem.querySelector('.mfs-dropdown-menu') : null;
+
+      if (navLink && dropdown) {
+        if (isTouchInteraction(e)) {
+          var isOpen = navItem.classList.contains('open');
+          e.preventDefault();
+          e.stopPropagation();
+
+          if (isOpen) {
+            navItem.classList.remove('open');
+            navLink.setAttribute('aria-expanded', 'false');
+          } else {
+            closeAllDropdowns(navItem);
+            navItem.classList.add('open');
+            navLink.setAttribute('aria-expanded', 'true');
+            adjustDropdownPosition(dropdown);
+          }
+          return;
+        }
+      }
+
+      if (!e.target.closest('.mfs-nav-item')) {
+        closeAllDropdowns(null);
+      }
     });
-  } else {
+
+    document.addEventListener('touchstart', function(e) {
+      if (!e.target.closest('.mfs-navbar')) {
+        closeAllDropdowns(null);
+      }
+    }, { passive: true });
+
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' || e.key === 'Esc') {
+        closeAllDropdowns(null);
+      }
+    });
+
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 1080) {
+        closeAllDropdowns(null);
+      }
+    }, { passive: true });
+  }
+
+  function initDOM() {
     ensureFloatingWidget();
     applyTint(initialTint, false);
     applyTheme(initialTheme, false);
+    if (initialDyslexia) {
+      applyDyslexiaMode(true, false);
+    }
+    initTouchDropdowns();
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initDOM);
+  } else {
+    initDOM();
   }
 })();

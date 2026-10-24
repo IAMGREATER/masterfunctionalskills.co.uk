@@ -1,4 +1,4 @@
-const CACHE_NAME = 'mfs-cache-v20261017i';
+const CACHE_NAME = 'mfs-cache-v20261024a';
 
 const RELATIVE_ASSETS = [
   '',

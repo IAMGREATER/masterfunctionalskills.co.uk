@@ -3922,7 +3922,7 @@ p {
     min-height: 48px !important;
     height: 52px !important;
     padding: 6px 8px !important;
-    font-size: 0.80rem !important;
+    font-size: 16px !important; /* Prevents iOS Safari auto-zoom on focus */
     line-height: 1.35 !important;
     border-radius: 6px !important;
     border: 1px solid #cbd5e1 !important;
@@ -4541,7 +4541,7 @@ p {
     min-height: 48px !important;
     height: 52px !important;
     padding: 6px 8px !important;
-    font-size: 0.80rem !important;
+    font-size: 16px !important; /* Prevents iOS Safari auto-zoom on focus */
     line-height: 1.35 !important;
     border-radius: 6px !important;
     border: 1px solid #cbd5e1 !important;
@@ -4652,5 +4652,118 @@ p {
     color: #15803d !important;
     font-style: italic !important;
     margin-top: 4px !important;
+  }
+}
+
+/* ==========================================================================
+   NARROW PHONE VISUAL MATHEMATICS & MULTI-COLUMN BOARD OPTIMISATION (<= 480px)
+   Preserves "No-Squinting" tabular-nums, .math-pad-zero & .math-digit-slashed
+   while preventing 6-to-8 column boards and 8-to-12 cell bar models from clipping.
+   ========================================================================== */
+@media screen and (max-width: 480px) {
+  .revision-page-wrapper {
+    padding-left: 8px !important;
+    padding-right: 8px !important;
+  }
+
+  .section-card,
+  .revision-section {
+    padding: 14px 10px !important;
+  }
+
+  .math-visual-card,
+  .exam-model-big-step {
+    padding: 12px 10px !important;
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+
+  .exam-model-header,
+  .exam-model-step-header,
+  .practice-card-header {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 6px !important;
+    align-items: center !important;
+  }
+
+  /* Place-Value Column Boards (.math-col-board & .math-pv-row) */
+  .math-col-board {
+    padding: 10px 8px !important;
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    box-sizing: border-box !important;
+  }
+
+  .math-pv-row {
+    grid-template-columns: 22px repeat(var(--cols, 5), minmax(28px, 36px)) !important;
+    gap: 3px !important;
+    font-size: 1.2rem !important;
+    font-variant-numeric: tabular-nums !important;
+  }
+
+  /* 6, 7, and 8-column boards (e.g., thousands + decimals or long division) */
+  .math-pv-row[style*="--cols: 6"],
+  .math-pv-row[style*="--cols:6"],
+  .math-pv-row[style*="--cols: 7"],
+  .math-pv-row[style*="--cols:7"],
+  .math-pv-row[style*="--cols: 8"],
+  .math-pv-row[style*="--cols:8"],
+  .math-pv-row.math-pv-wide {
+    grid-template-columns: 18px repeat(var(--cols, 6), minmax(24px, 31px)) !important;
+    gap: 2px !important;
+    font-size: 1.05rem !important;
+  }
+
+  /* Visual Unit Bar Models (.math-bar-model & .math-bar-cell) */
+  .math-bar-model {
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+  }
+
+  .math-bar-cell {
+    min-width: 0 !important;
+    padding: 6px 2px !important;
+    font-size: clamp(0.68rem, 2.5vw, 0.88rem) !important;
+    word-break: break-word !important;
+    text-align: center !important;
+  }
+
+  .math-bar-model.math-bar-dense .math-bar-cell {
+    font-size: 0.65rem !important;
+    padding: 5px 1px !important;
+  }
+
+  /* BIDMAS Step-Down Boards & Target Calculation Pills */
+  .math-stepdown-board,
+  .math-stepdown-row {
+    white-space: normal !important;
+    word-break: break-word !important;
+    font-size: 1.08rem !important;
+    line-height: 1.55 !important;
+    max-width: 100% !important;
+  }
+
+  .math-target-calc {
+    display: inline-block !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+    padding: 2px 7px !important;
+  }
+
+  .math-bidmas-ladder {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 8px !important;
+  }
+
+  /* Expansive Master Tables (.math-master-table) */
+  .math-master-table th,
+  .math-master-table td {
+    padding: 7px 6px !important;
+    font-size: 0.86rem !important;
+    line-height: 1.35 !important;
   }
 }

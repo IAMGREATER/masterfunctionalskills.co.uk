@@ -842,11 +842,26 @@
   .mock-exam-header-inner {
     flex-direction: column;
     align-items: flex-start;
+    gap: 10px;
   }
   .score-display-box {
     grid-template-columns: 1fr;
   }
   .mock-set-tabs {
     flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    max-width: 100%;
+    padding-bottom: 6px;
+  }
+  .modal-results-content {
+    padding: 20px 14px;
+    border-radius: 14px;
+  }
+  .dfs-workspace-split,
+  .mock-split-container {
+    display: flex !important;
+    flex-direction: column !important;
+    height: auto !important;
   }
 }

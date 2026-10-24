@@ -269,6 +269,18 @@ window.addEventListener('DOMContentLoaded', () => {
 
   initScratchpads();
 
+  // Auto-tag dense visual math boards (.math-pv-row >= 6 cols, .math-bar-model >= 7 cells) for mobile fit
+  document.querySelectorAll('.math-pv-row').forEach(row => {
+    if (row.children.length >= 7) {
+      row.classList.add('math-pv-wide');
+    }
+  });
+  document.querySelectorAll('.math-bar-model').forEach(bar => {
+    if (bar.querySelectorAll('.math-bar-cell').length >= 7) {
+      bar.classList.add('math-bar-dense');
+    }
+  });
+
   // ScrollSpy for Left Sidebar TOC
   const sections = document.querySelectorAll('section[id], div[id].revision-section');
   const navLinks = document.querySelectorAll('.sidebar-toc-link');

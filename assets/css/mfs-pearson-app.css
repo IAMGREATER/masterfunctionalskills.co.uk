@@ -1317,4 +1317,23 @@
     padding: 8px 10px;
     gap: 8px;
   }
+  .pearson-calc-modal,
+  .pearson-floating-calc {
+    max-width: calc(100vw - 20px) !important;
+    left: 10px !important;
+    right: 10px !important;
+  }
+}
+
+@media (max-width: 480px) {
+  .pop-meta-matrix,
+  .pop-stat-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .pearson-summary-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+  }
+  .pearson-canvas {
+    padding: 14px 10px !important;
+  }
 }

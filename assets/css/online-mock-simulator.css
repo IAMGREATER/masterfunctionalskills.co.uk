@@ -39,8 +39,7 @@
 }
 
 /* Fullscreen mode */
-.sim-app-shell:fullscreen,
-.sim-app-shell.fullscreen {
+.sim-app-shell:fullscreen {
   max-width: 100vw;
   width: 100vw;
   height: 100vh;
@@ -465,6 +464,47 @@
   box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.2);
 }
 
+/* Multi-part answer rows (e.g. Parts a, b, c) */
+.sim-subparts-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.sim-subpart-ans-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 8px 12px;
+  transition: all 0.2s ease;
+}
+
+.sim-subpart-ans-row:focus-within {
+  background: #f0fdf4;
+  border-color: #86efac;
+}
+
+.sim-subpart-label {
+  font-weight: 700;
+  font-size: 0.88rem;
+  color: var(--sim-navy);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sim-subpart-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  max-width: 260px;
+}
+
 /* Built-in Onscreen Calculator */
 .sim-calc-drawer {
   background: #1e293b;
@@ -474,6 +514,9 @@
   display: flex;
   flex-direction: column;
   gap: 10px;
+  max-width: 320px;
+  width: 100%;
+  margin: 10px auto 0 auto;
 }
 
 .sim-calc-header {

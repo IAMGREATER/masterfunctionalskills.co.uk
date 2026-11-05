@@ -323,6 +323,7 @@
             <button type="button" class="sim-sym-btn" onclick="insertSymbol('−')">−</button>
             <button type="button" class="sim-sym-btn" onclick="insertSymbol('×')">×</button>
             <button type="button" class="sim-sym-btn" onclick="insertSymbol('÷')">÷</button>
+            <button type="button" class="sim-sym-btn" onclick="insertSymbol('=')">=</button>
             <button type="button" class="sim-sym-btn" onclick="insertSymbol('±')">±</button>
             <button type="button" class="sim-sym-btn" onclick="insertSymbol('√')">√</button>
             <button type="button" class="sim-sym-btn" onclick="insertSymbol('π')">π</button>
@@ -359,11 +360,13 @@
           <div class="sim-final-ans-card" id="simFinalAnsCard">
             <div>
               <div class="sim-final-ans-label">Final Answer:</div>
-              <div style="font-size:0.75rem; color:#64748b;">Record your conclusive value below</div>
+              <div style="font-size:0.75rem; color:#64748b;" id="simFinalAnsSublabel">Record your conclusive value below</div>
             </div>
-            <div class="sim-final-ans-input-wrap">
-              <input type="text" class="sim-final-input" id="simFinalInput" oninput="handleAnswerInput(this.value)" placeholder="Enter value">
-              <span class="sim-unit-badge" id="simUnitBadge">°C</span>
+            <div id="simFinalAnsContainer" class="sim-subparts-container">
+              <div class="sim-final-ans-input-wrap">
+                <input type="text" class="sim-final-input" id="simFinalInput" oninput="handleAnswerInput(this.value)" placeholder="Enter value">
+                <span class="sim-unit-badge" id="simUnitBadge">°C</span>
+              </div>
             </div>
           </div>
 
@@ -415,7 +418,7 @@
 
       <!-- 3. Bottom Simulator Navigation Bar -->
       <div class="sim-bottom-bar">
-        <button type="button" class="sim-nav-btn" id="simPrevBtn" onclick="renderQuestion(simCurrentQuestionIndex - 1)">
+        <button type="button" class="sim-nav-btn" id="simPrevBtn" onclick="prevQuestion()">
           <i class="fa-solid fa-chevron-left"></i> Previous Question
         </button>
 
@@ -425,7 +428,7 @@
         </div>
 
         <div style="display:flex; align-items:center; gap:8px;">
-          <button type="button" class="sim-nav-btn sim-btn-primary" id="simNextBtn" onclick="renderQuestion(simCurrentQuestionIndex + 1)">
+          <button type="button" class="sim-nav-btn sim-btn-primary" id="simNextBtn" onclick="nextQuestion()">
             Next Question <i class="fa-solid fa-chevron-right"></i>
           </button>
           <button type="button" class="sim-nav-btn sim-btn-submit" onclick="openSubmitModal()">

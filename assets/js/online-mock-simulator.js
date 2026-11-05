@@ -46,6 +46,11 @@ const MFS_MOCK_DATA = {
         promptText: '(a) Convert 3 metres into centimetres.\n(b) Work out 3400 ÷ 1000\n(c) Calculate 35 – 15 ÷ 5',
         unit: 'cm',
         expectedType: 'number',
+        parts: [
+          { id: 'a', label: 'Part (a)', placeholder: 'Centimetres', unit: 'cm' },
+          { id: 'b', label: 'Part (b)', placeholder: '3400 ÷ 1000', unit: '' },
+          { id: 'c', label: 'Part (c)', placeholder: '35 − 15 ÷ 5', unit: '' }
+        ],
         modelSolution: '(a) 1 m = 100 cm --> 3 × 100 = 300 cm [B1]\n(b) 3400 ÷ 1000 = 3.4 [B1]\n(c) BIDMAS division first: 15 ÷ 5 = 3; then 35 - 3 = 32 [B1]',
         finalBenchmark: '300 cm / 3.4 / 32'
       },
@@ -74,6 +79,10 @@ const MFS_MOCK_DATA = {
         promptText: '(a) Calculate the perimeter of the field.\n(b) How many kilograms of fertiliser does the farmer need?',
         unit: 'kg',
         expectedType: 'number',
+        parts: [
+          { id: 'a', label: 'Part (a) Perimeter', placeholder: 'Perimeter of field', unit: 'm' },
+          { id: 'b', label: 'Part (b) Fertiliser', placeholder: 'Fertiliser needed', unit: 'kg' }
+        ],
         modelSolution: '(a) Perimeter = 2 × (300 + 200) = 2 × 500 = 1000 m [M1, A1]\n(b) Area = 300 × 200 = 60,000 m² [M1]\nFertiliser needed = 60,000 ÷ 40 = 1500 kg [A1]',
         finalBenchmark: '1000 m / 1500 kg'
       },
@@ -102,6 +111,10 @@ const MFS_MOCK_DATA = {
         promptText: '(a) Write the ratio of the number of cups of tea to the number of cups of coffee in its simplest form.\n(b) Show a check of your answer.',
         unit: '',
         expectedType: 'text',
+        parts: [
+          { id: 'a', label: 'Part (a) Simplest Ratio', placeholder: 'e.g. 4 : 1', unit: '' },
+          { id: 'b', label: 'Part (b) Reverse Check', placeholder: 'e.g. 4 × 12 = 48', unit: '' }
+        ],
         modelSolution: '(a) Ratio Tea : Coffee = 48 : 12 [M1]\nDivide both by 12: 4 : 1 [A1]\n(b) Reverse check: 4 × 12 = 48 [B1]',
         finalBenchmark: '4 : 1'
       },
@@ -158,6 +171,10 @@ const MFS_MOCK_DATA = {
         promptText: '(a) Work out the total number of calls received over the 5 days.\n(b) Work out the range of the number of phone calls.',
         unit: 'calls',
         expectedType: 'number',
+        parts: [
+          { id: 'a', label: 'Part (a) Total Calls', placeholder: 'Total calls over 5 days', unit: 'calls' },
+          { id: 'b', label: 'Part (b) Range', placeholder: 'Range of calls', unit: 'calls' }
+        ],
         modelSolution: '(a) Total = 240 + 140 + 185 + 80 + 225 = 870 calls [M1, A1]\n(b) Range = Highest - Lowest = 240 - 80 = 160 calls [M1, A1]',
         finalBenchmark: '870 calls / Range: 160'
       },
@@ -198,8 +215,12 @@ const MFS_MOCK_DATA = {
         scenarioTitle: 'James House Purchase Deposit Calculation',
         scenarioText: 'James wants to buy a house priced at a quarter of a million pounds (£250,000). The deposit is 15%. James has £18,500 in savings and borrows £15,000 from family.',
         promptText: '(a) Does James have enough money to pay the deposit? Show working to support your decision.\n(b) Show a check of your percentage calculation.',
-        unit: '£',
+        unit: '',
         expectedType: 'decision',
+        parts: [
+          { id: 'a', label: 'Part (a) Decision', placeholder: 'e.g. No, short by £4,000', unit: '' },
+          { id: 'b', label: 'Part (b) Reverse Check', placeholder: 'Show check of 15%', unit: '' }
+        ],
         modelSolution: '(a) Price = £250,000 [M1]\nDeposit = 0.15 × £250,000 = £37,500 [M1]\nJames\'s money = £18,500 + £15,000 = £33,500 [M1]\n£33,500 < £37,500 --> No, he is short by £4,000 [A1]\n(b) Check: 10% = £25,000; 5% = £12,500; £25,000 + £12,500 = £37,500 [B1]',
         finalBenchmark: 'No (short by £4,000)'
       }
@@ -354,6 +375,10 @@ I asked about promotion opportunities on the first day in my current job – I w
         promptText: '(a) According to Text A, where is Sam’s new job?\n(b) Which organisational feature helped you find this information?',
         unit: '',
         expectedType: 'text',
+        parts: [
+          { id: 'a', label: 'Part (a) Location', placeholder: 'Where is Sam’s new job?', unit: '' },
+          { id: 'b', label: 'Part (b) Feature', placeholder: 'Organisational feature identified', unit: '' }
+        ],
         modelSolution: '(a) In the finance team at the hospital [1 mark]\n(b) Email body / first paragraph / subject line [1 mark]',
         finalBenchmark: 'At the hospital (finance team) / Email text'
       },
@@ -696,6 +721,81 @@ function renderQuestionPills(paper) {
   });
 }
 
+// Helper to escape HTML safely
+function escapeHtml(str) {
+  if (str === null || str === undefined) return '';
+  return String(str)
+    .replace(/&/g, '&amp;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#39;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;');
+}
+
+// Subparts helper: returns explicit parts or auto-detects (a), (b), (c)
+function getQuestionParts(q) {
+  if (q.parts && Array.isArray(q.parts) && q.parts.length > 0) {
+    return q.parts;
+  }
+  // Auto-detect (a), (b), (c) in promptText if not explicitly defined
+  if (q.promptText && typeof q.promptText === 'string') {
+    const matches = [...q.promptText.matchAll(/\(([a-d])\)/g)];
+    if (matches.length > 1) {
+      const uniqueIds = [...new Set(matches.map(m => m[1]))];
+      return uniqueIds.map(id => ({
+        id: id,
+        label: `Part (${id})`,
+        placeholder: `Answer for (${id})`,
+        unit: id === 'a' ? (q.unit || '') : ''
+      }));
+    }
+  }
+  return null;
+}
+
+// Render dynamic final answer input box(es)
+function renderFinalAnswerInputs(paper, q) {
+  const container = document.getElementById('simFinalAnsContainer');
+  const sublabel = document.getElementById('simFinalAnsSublabel');
+  if (!container) return;
+  container.innerHTML = '';
+
+  const parts = getQuestionParts(q);
+  const qNum = q.num;
+
+  if (parts && parts.length > 0) {
+    if (sublabel) sublabel.innerText = `Record your separate answers for each part (${parts.map(p => p.id).join(', ')}) below:`;
+
+    parts.forEach(part => {
+      const savedVal = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_q${qNum}_ans_${part.id}`) || '';
+      const row = document.createElement('div');
+      row.className = 'sim-subpart-ans-row';
+      row.innerHTML = `
+        <label class="sim-subpart-label" for="sim_ans_${part.id}">
+          <span style="background:#0284c7; color:#ffffff; padding:3px 9px; border-radius:5px; font-size:0.78rem; font-weight:700; letter-spacing:0.3px;">${escapeHtml(part.label)}</span>
+        </label>
+        <div class="sim-subpart-input-wrap">
+          <input type="text" class="sim-final-input" id="sim_ans_${part.id}" value="${escapeHtml(savedVal)}" placeholder="${escapeHtml(part.placeholder || 'Enter answer')}" oninput="handleSubpartAnswerInput('${part.id}', this.value)">
+          ${part.unit ? `<span class="sim-unit-badge">${escapeHtml(part.unit)}</span>` : ''}
+        </div>
+      `;
+      container.appendChild(row);
+    });
+  } else {
+    if (sublabel) sublabel.innerText = 'Record your conclusive value below:';
+    const savedVal = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_q${qNum}_ans`) || '';
+    const row = document.createElement('div');
+    row.style.width = '100%';
+    row.innerHTML = `
+      <div class="sim-final-ans-input-wrap" style="width:100%; max-width:320px;">
+        <input type="text" class="sim-final-input" id="simFinalInput" value="${escapeHtml(savedVal)}" placeholder="Enter value" oninput="handleAnswerInput(this.value)">
+        <span class="sim-unit-badge" id="simUnitBadge" style="${q.unit ? 'display:inline-flex' : 'display:none'}">${escapeHtml(q.unit || '')}</span>
+      </div>
+    `;
+    container.appendChild(row);
+  }
+}
+
 // Render Active Question
 function renderCurrentQuestion() {
   const paper = getOrCreatePaper(simCurrentPaperKey);
@@ -736,25 +836,17 @@ function renderCurrentQuestion() {
   // Mode Specific UI Adaptations
   adaptUiForSubject(paper, q);
 
-  // Restore User Working & Answers
+  // Restore User Working
   const userWorking = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_q${q.num}_working`) || '';
   const textarea = document.getElementById('simWorkingTextarea');
   if (textarea) textarea.value = userWorking;
 
-  const userAns = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_q${q.num}_ans`) || '';
-  const finalInput = document.getElementById('simFinalInput');
-  if (finalInput) finalInput.value = userAns;
+  // Render Subpart / Final Answer Inputs
+  renderFinalAnswerInputs(paper, q);
 
   // Update Word Counter in Writing Mode
   if (subject === 'writing') {
     updateWordCount(userWorking, q.targetWords);
-  }
-
-  // Unit Badge
-  const unitBadge = document.getElementById('simUnitBadge');
-  if (unitBadge) {
-    unitBadge.innerText = q.unit || '';
-    unitBadge.style.display = q.unit ? 'inline-flex' : 'none';
   }
 
   // Update Pills active state
@@ -866,7 +958,7 @@ function adaptUiForSubject(paper, q) {
     } else {
       if (calcLockedBanner) calcLockedBanner.style.display = 'flex';
       if (calcDrawer) {
-        calcDrawer.style.display = 'block';
+        calcDrawer.style.display = 'none'; // Completely disabled and not there for Non-Calculator Section A
         calcDrawer.classList.add('locked');
       }
     }
@@ -1032,6 +1124,10 @@ function jumpToQuestion(index) {
   }
 }
 
+function renderQuestion(index) {
+  jumpToQuestion(index);
+}
+
 // Input Handlers
 function handleWorkingInput(val) {
   const paper = getOrCreatePaper(simCurrentPaperKey);
@@ -1040,8 +1136,9 @@ function handleWorkingInput(val) {
 
   // Update pill answered status
   const pills = document.querySelectorAll('.sim-q-pill');
+  const userAns = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_q${qNum}_ans`) || '';
   if (pills[simCurrentQuestionIndex]) {
-    pills[simCurrentQuestionIndex].classList.toggle('answered', val.trim().length > 0);
+    pills[simCurrentQuestionIndex].classList.toggle('answered', val.trim().length > 0 || userAns.trim().length > 0);
   }
 
   // Update word counter if writing
@@ -1056,6 +1153,36 @@ function handleAnswerInput(val) {
   const paper = getOrCreatePaper(simCurrentPaperKey);
   const qNum = paper.questions[simCurrentQuestionIndex].num;
   localStorage.setItem(`mfs_sim_${simCurrentPaperKey}_q${qNum}_ans`, val);
+
+  const pills = document.querySelectorAll('.sim-q-pill');
+  const userWorking = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_q${qNum}_working`) || '';
+  if (pills[simCurrentQuestionIndex]) {
+    pills[simCurrentQuestionIndex].classList.toggle('answered', val.trim().length > 0 || userWorking.trim().length > 0);
+  }
+
+  indicateSaveStatus();
+}
+
+function handleSubpartAnswerInput(partId, val) {
+  const paper = getOrCreatePaper(simCurrentPaperKey);
+  const q = paper.questions[simCurrentQuestionIndex];
+  const qNum = q.num;
+  localStorage.setItem(`mfs_sim_${simCurrentPaperKey}_q${qNum}_ans_${partId}`, val);
+
+  const parts = getQuestionParts(q) || [];
+  const fullSummary = parts.map(p => {
+    const v = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_q${qNum}_ans_${p.id}`) || '';
+    return v ? `(${p.id}) ${v}${p.unit ? ' ' + p.unit : ''}` : '';
+  }).filter(Boolean).join('  |  ');
+
+  localStorage.setItem(`mfs_sim_${simCurrentPaperKey}_q${qNum}_ans`, fullSummary);
+
+  const pills = document.querySelectorAll('.sim-q-pill');
+  const userWorking = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_q${qNum}_working`) || '';
+  if (pills[simCurrentQuestionIndex]) {
+    pills[simCurrentQuestionIndex].classList.toggle('answered', fullSummary.trim().length > 0 || userWorking.trim().length > 0);
+  }
+
   indicateSaveStatus();
 }
 
@@ -1163,17 +1290,46 @@ function toggleTimerPause() {
   }
 }
 
-// Fullscreen
+// Fullscreen Management with clean Escape handling
 function toggleSimFullscreen() {
   const shell = document.getElementById('simAppShell');
+  if (!shell) return;
   if (!document.fullscreenElement) {
-    if (shell.requestFullscreen) shell.requestFullscreen();
-    shell.classList.add('fullscreen');
+    if (shell.requestFullscreen) {
+      shell.requestFullscreen().catch(err => console.warn('Fullscreen err:', err));
+    }
   } else {
-    if (document.exitFullscreen) document.exitFullscreen();
-    shell.classList.remove('fullscreen');
+    if (document.exitFullscreen) {
+      document.exitFullscreen().catch(err => console.warn('Exit fullscreen err:', err));
+    }
   }
 }
+
+document.addEventListener('fullscreenchange', () => {
+  const shell = document.getElementById('simAppShell');
+  if (shell) {
+    shell.classList.toggle('fullscreen', !!document.fullscreenElement);
+    if (!document.fullscreenElement) {
+      shell.style.width = '';
+      shell.style.maxWidth = '';
+      shell.style.margin = '';
+    }
+  }
+  const fsBtn = document.querySelector('[onclick="toggleSimFullscreen()"]');
+  if (fsBtn) {
+    if (document.fullscreenElement) {
+      fsBtn.innerHTML = '<i class="fa-solid fa-compress"></i> <span>Exit Full Screen</span>';
+    } else {
+      fsBtn.innerHTML = '<i class="fa-solid fa-expand"></i> <span>Fill Screen</span>';
+    }
+  }
+});
+
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && document.fullscreenElement) {
+    document.exitFullscreen().catch(() => {});
+  }
+});
 
 // Calculator Engine
 function calcDigit(digit) {

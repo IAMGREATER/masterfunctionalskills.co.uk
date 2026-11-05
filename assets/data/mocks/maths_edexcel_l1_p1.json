@@ -1,0 +1,364 @@
+{
+  "id": "maths_edexcel_l1_p1",
+  "title": "Pearson Edexcel Functional Skills Mathematics Level 1 - Past Paper 1",
+  "board": "edexcel",
+  "subject": "maths",
+  "level": "l1",
+  "paper": "1",
+  "totalMarks": 56,
+  "timeMinutes": 105,
+  "sections": [
+    {
+      "id": "sec-a",
+      "name": "Section A: Non-Calculator",
+      "calculatorAllowed": false,
+      "timeMinutes": 25,
+      "totalMarks": 14,
+      "instructions": "Calculators may NOT be used. Check your working and your answers at each stage.",
+      "questions": [
+        {
+          "number": "1",
+          "subpart": "a",
+          "title": "Question 1(a): Metric Conversion",
+          "marks": 1,
+          "prompt": "Convert 3 metres into centimetres.",
+          "unit": "cm",
+          "expectedType": "number",
+          "modelAnswer": "300",
+          "modelSteps": [
+            "Rule: 1 metre = 100 centimetres.",
+            "Calculation: 3 \u00d7 100 = 300 cm.",
+            "Final Answer: 300 cm [B1]"
+          ]
+        },
+        {
+          "number": "1",
+          "subpart": "b",
+          "title": "Question 1(b): Division by Powers of 10",
+          "marks": 1,
+          "prompt": "Work out 3400 \u00f7 1000",
+          "unit": "",
+          "expectedType": "number",
+          "modelAnswer": "3.4",
+          "modelSteps": [
+            "Dividing by 1000 shifts the decimal point 3 places to the left.",
+            "3400.0 --> 340.0 --> 34.0 --> 3.4",
+            "Final Answer: 3.4 [B1]"
+          ]
+        },
+        {
+          "number": "1",
+          "subpart": "c",
+          "title": "Question 1(c): Order of Operations (BIDMAS)",
+          "marks": 1,
+          "prompt": "Calculate 35 \u2013 15 \u00f7 5",
+          "unit": "",
+          "expectedType": "number",
+          "modelAnswer": "32",
+          "modelSteps": [
+            "BIDMAS Priority: Division comes before Subtraction.",
+            "Step 1 (Division): 15 \u00f7 5 = 3",
+            "Step 2 (Subtraction): 35 \u2013 3 = 32",
+            "Final Answer: 32 [B1]"
+          ]
+        },
+        {
+          "number": "2",
+          "subpart": "",
+          "title": "Question 2: Brick Wall Delivery Estimation",
+          "marks": 3,
+          "prompt": "Aaron is building a brick wall. The wall will need 1025 bricks. The weight of each brick is 2.89 kg. Aaron will pay a delivery charge if the total weight of the bricks is over 2500 kg.\n\nUse estimation to work out if you think Aaron will need to pay the delivery charge. You must show your working.",
+          "unit": "",
+          "expectedType": "decision",
+          "modelAnswer": "Yes",
+          "modelSteps": [
+            "Step 1: Round values to 1 significant figure for estimation.",
+            "1025 bricks \u2248 1000 bricks [M1]",
+            "2.89 kg \u2248 3 kg [M1]",
+            "Step 2: Estimate total weight: 1000 \u00d7 3 kg = 3000 kg.",
+            "Step 3: Compare with delivery threshold: 3000 kg > 2500 kg.",
+            "Conclusion: Yes, Aaron will need to pay the delivery charge [A1]."
+          ]
+        },
+        {
+          "number": "3",
+          "subpart": "a",
+          "title": "Question 3(a): Perimeter of Rectangular Field",
+          "marks": 2,
+          "prompt": "A farmer has a rectangular field. The field is 300 m long and 200 m wide.\n\nCalculate the perimeter of the field.",
+          "unit": "m",
+          "expectedType": "number",
+          "modelAnswer": "1000",
+          "modelSteps": [
+            "Perimeter formula for rectangle: 2 \u00d7 (Length + Width) or sum of all 4 sides.",
+            "Calculation: 300 + 200 + 300 + 200 = 1000 m [M1]",
+            "Final Answer: 1000 m [A1]"
+          ]
+        },
+        {
+          "number": "3",
+          "subpart": "b",
+          "title": "Question 3(b): Field Area & Fertiliser Quantity",
+          "marks": 2,
+          "prompt": "The farmer puts fertiliser on the field. He needs 1 kg of fertiliser for every 40 m\u00b2 of field.\n\nHow many kilograms of fertiliser does the farmer need?",
+          "unit": "kg",
+          "expectedType": "number",
+          "modelAnswer": "1500",
+          "modelSteps": [
+            "Step 1: Calculate total area of the field: Area = Length \u00d7 Width = 300 \u00d7 200 = 60,000 m\u00b2 [M1]",
+            "Step 2: Divide by application rate: 60,000 \u00f7 40 = 1,500 kg [A1]",
+            "Final Answer: 1500 kg"
+          ]
+        },
+        {
+          "number": "4",
+          "subpart": "",
+          "title": "Question 4: 5-Year Car Value Comparison",
+          "marks": 4,
+          "prompt": "Saira is buying a new car. She will keep the car for 5 years. Saira has this information:\n\n\u2022 Petrol car: Buying price \u00a314,500; Average total running cost \u00a3775 per year.\n\u2022 Diesel car: Buying price \u00a315,800; Average total running cost \u00a3520 per year.\n\nSaira wants to see whether a diesel car or a petrol car is better value for the 5 years. Which type of car is better value? Show why you think this.",
+          "unit": "",
+          "expectedType": "text",
+          "modelAnswer": "Petrol car is better value by \u00a325",
+          "modelSteps": [
+            "Step 1: Calculate total 5-year cost of Petrol car:",
+            "Running costs: 5 \u00d7 \u00a3775 = \u00a33,875 [M1]",
+            "Total cost: \u00a314,500 + \u00a33,875 = \u00a318,375 [M1]",
+            "Step 2: Calculate total 5-year cost of Diesel car:",
+            "Running costs: 5 \u00d7 \u00a3520 = \u00a32,600",
+            "Total cost: \u00a315,800 + \u00a32,600 = \u00a318,400 [M1]",
+            "Step 3: Compare costs:",
+            "\u00a318,375 < \u00a318,400 (Difference: \u00a318,400 - \u00a318,375 = \u00a325).",
+            "Conclusion: The Petrol car is better value (cheaper by \u00a325 over 5 years) [A1]."
+          ]
+        }
+      ]
+    },
+    {
+      "id": "sec-b",
+      "name": "Section B: Calculator",
+      "calculatorAllowed": true,
+      "timeMinutes": 80,
+      "totalMarks": 42,
+      "instructions": "Calculators MAY be used. Check your working and your answers at each stage.",
+      "questions": [
+        {
+          "number": "1",
+          "subpart": "a",
+          "title": "Question 1(a): Simplifying Ratios",
+          "marks": 2,
+          "prompt": "Johan works in a cafe. One morning he sells 48 cups of tea and 12 cups of coffee.\n\nWrite the ratio of the number of cups of tea to the number of cups of coffee in its simplest form.",
+          "unit": "",
+          "expectedType": "text",
+          "modelAnswer": "4 : 1",
+          "modelSteps": [
+            "Initial ratio (Tea : Coffee) = 48 : 12 [M1]",
+            "Find greatest common divisor (12): 48 \u00f7 12 = 4; 12 \u00f7 12 = 1",
+            "Simplified ratio: 4 : 1 [A1]"
+          ]
+        },
+        {
+          "number": "1",
+          "subpart": "b",
+          "title": "Question 1(b): Ratio Reverse Check",
+          "marks": 1,
+          "prompt": "Show a check of your answer to Question 1(a).",
+          "unit": "",
+          "expectedType": "text",
+          "modelAnswer": "4 \u00d7 12 = 48",
+          "modelSteps": [
+            "Reverse check: 4 \u00d7 12 = 48 and 1 \u00d7 12 = 12 [B1]"
+          ]
+        },
+        {
+          "number": "2",
+          "subpart": "",
+          "title": "Question 2: Office Chairs & 20% VAT",
+          "marks": 3,
+          "prompt": "Sam is a manager in an office. She wants to buy 14 new chairs. Each chair costs \u00a373. Sam will also be charged 20% VAT.\n\nWork out the total amount Sam will pay for the 14 chairs including VAT.",
+          "unit": "\u00a3",
+          "expectedType": "number",
+          "modelAnswer": "1226.40",
+          "modelSteps": [
+            "Step 1: Calculate subtotal before VAT: 14 \u00d7 \u00a373 = \u00a31,022 [M1]",
+            "Step 2: Calculate 20% VAT: \u00a31,022 \u00d7 0.20 = \u00a3204.40 [M1]",
+            "Step 3: Total amount including VAT: \u00a31,022 + \u00a3204.40 = \u00a31,226.40 [A1]",
+            "Final Answer: \u00a31226.40"
+          ]
+        },
+        {
+          "number": "3",
+          "subpart": "",
+          "title": "Question 3: Rectangular Garden & Pond Grass Seed",
+          "marks": 4,
+          "prompt": "Here is a garden and a pond. The garden and the pond are rectangular.\n\u2022 Garden dimensions: 14 m by 9 m\n\u2022 Pond dimensions: 3.8 m by 2.4 m\n\nKayla is covering the garden with grass seed. She will not put any grass seed in the pond. One box of grass seed covers 15 m\u00b2 of garden.\n\nWork out the number of boxes of grass seed Kayla needs to cover the garden.",
+          "unit": "boxes",
+          "expectedType": "number",
+          "modelAnswer": "8",
+          "modelSteps": [
+            "Step 1: Total area of garden = 14 \u00d7 9 = 126 m\u00b2 [M1]",
+            "Step 2: Area of pond = 3.8 \u00d7 2.4 = 9.12 m\u00b2 [M1]",
+            "Step 3: Area needing grass seed = 126 \u2013 9.12 = 116.88 m\u00b2",
+            "Step 4: Number of boxes required = 116.88 \u00f7 15 = 7.792... boxes [M1]",
+            "Rounding: Kayla cannot buy a fraction of a box, so round up to 8 whole boxes.",
+            "Final Answer: 8 boxes [A1]"
+          ]
+        },
+        {
+          "number": "4",
+          "subpart": "",
+          "title": "Question 4: Temperature Formula Conversion",
+          "marks": 3,
+          "prompt": "Dave is going on holiday to Madrid. The temperature tomorrow in Madrid will be 21\u00b0C.\n\nDave uses this rule to convert \u00b0C to \u00b0F:\n\"Multiply the temperature in \u00b0C by 1.8 then add 32\"\n\nWork out the temperature in Madrid in \u00b0F.",
+          "unit": "\u00b0F",
+          "expectedType": "number",
+          "modelAnswer": "69.8",
+          "modelSteps": [
+            "Step 1: Multiply by 1.8: 21 \u00d7 1.8 = 37.8 [M1]",
+            "Step 2: Add 32: 37.8 + 32 = 69.8\u00b0F [M1]",
+            "Final Answer: 69.8\u00b0F [A1]"
+          ]
+        },
+        {
+          "number": "5",
+          "subpart": "",
+          "title": "Question 5: Call Centre Phone Calls Frequency",
+          "marks": 4,
+          "prompt": "Kai works in a call centre. The table shows the number of phone calls he receives each day:\n\n\u2022 Monday: 240\n\u2022 Tuesday: 140\n\u2022 Wednesday: 185\n\u2022 Thursday: 80\n\u2022 Friday: 225\n\nCalculate the total number of calls received and the daily range of phone calls.",
+          "unit": "calls",
+          "expectedType": "number",
+          "modelAnswer": "870",
+          "modelSteps": [
+            "Step 1: Total calls = 240 + 140 + 185 + 80 + 225 = 870 calls [M1, A1]",
+            "Step 2: Range = Highest \u2013 Lowest = 240 \u2013 80 = 160 calls [M1, A1]",
+            "Total: 870 calls, Range: 160 calls"
+          ]
+        },
+        {
+          "number": "6",
+          "subpart": "",
+          "title": "Question 6: Bakery Flour Mean & Mass Conversion",
+          "marks": 4,
+          "prompt": "Seenal is a baker. She buys flour in 50 kg bags. The table shows the number of 50 kg bags of flour she used to make loaves in each of the last 4 weeks:\n\u2022 Week 1: 12 bags\n\u2022 Week 2: 16 bags\n\u2022 Week 3: 13 bags\n\u2022 Week 4: 15 bags\n\nSeenal will make 2400 loaves in week 5. Each of these loaves will need 250 g of flour.\n\nSeenal works out the weekly mean number of 50 kg bags of flour used in these 5 weeks. Work out the weekly mean number of 50 kg bags.",
+          "unit": "bags",
+          "expectedType": "number",
+          "modelAnswer": "13.6",
+          "modelSteps": [
+            "Step 1: Calculate flour needed in Week 5: 2400 \u00d7 250 g = 600,000 g [M1]",
+            "Convert grams to kilograms: 600,000 g \u00f7 1000 = 600 kg",
+            "Convert to 50 kg bags: 600 \u00f7 50 = 12 bags for Week 5 [M1]",
+            "Step 2: Total bags over 5 weeks: 12 + 16 + 13 + 15 + 12 = 68 bags",
+            "Step 3: Weekly mean: 68 \u00f7 5 = 13.6 bags [M1, A1]",
+            "Final Answer: 13.6 bags"
+          ]
+        },
+        {
+          "number": "7",
+          "subpart": "",
+          "title": "Question 7: Slide Dimension & Garden Clearance",
+          "marks": 4,
+          "prompt": "Gordon buys a new slide for his garden. His garden measures 6 m by 7 m.\nThe space for the slide must have a clearance border of at least 1.5 m from the fence on all sides.\nIf the base of the slide is 2 m by 3.5 m, calculate the total space required including clearance, and decide if it will fit safely in the garden.",
+          "unit": "",
+          "expectedType": "decision",
+          "modelAnswer": "Yes",
+          "modelSteps": [
+            "Step 1: Add 1.5 m border on each side to length: 3.5 + 1.5 + 1.5 = 6.5 m [M1]",
+            "Step 2: Add 1.5 m border on each side to width: 2.0 + 1.5 + 1.5 = 5.0 m [M1]",
+            "Step 3: Total required dimensions: 6.5 m by 5.0 m.",
+            "Step 4: Compare with garden dimensions (7 m by 6 m): 6.5 m \u2264 7 m and 5.0 m \u2264 6 m.",
+            "Conclusion: Yes, the slide and clearance area will fit safely [A1]."
+          ]
+        },
+        {
+          "number": "8",
+          "subpart": "",
+          "title": "Question 8: Equal Grouped Frequency Distribution",
+          "marks": 3,
+          "prompt": "Belinda asks 20 people how many hours they spent exercising last month. The data is:\n4, 12, 18, 7, 2, 15, 9, 14, 6, 11, 20, 3, 8, 16, 5, 10, 19, 1, 13, 17.\n\nBelinda wants to show these results in a frequency table with 4 equal groups, starting at 1 hour and ending at 20 hours.\nWork out the width of each group and state the frequency of the first group (1 to 5 hours).",
+          "unit": "people",
+          "expectedType": "number",
+          "modelAnswer": "5",
+          "modelSteps": [
+            "Step 1: Group range: 20 \u00f7 4 = 5 hours per group.",
+            "The groups are: 1\u20135, 6\u201310, 11\u201315, 16\u201320 [M1]",
+            "Step 2: Tally values in group 1\u20135: 4, 2, 3, 5, 1 = 5 people [M1]",
+            "Final Answer: 5 people [A1]"
+          ]
+        },
+        {
+          "number": "9",
+          "subpart": "",
+          "title": "Question 9: Cuboid Container Capacity & Length",
+          "marks": 4,
+          "prompt": "Dennis is making a container for tomato plants. The container will be in the shape of a cuboid.\n\u2022 Height = 40 cm\n\u2022 Width = 55 cm\n\u2022 Capacity of container = 180 litres\n\u2022 1 litre = 1000 cm\u00b3\n\nWork out the length of the container. Give your answer to the nearest whole centimetre.",
+          "unit": "cm",
+          "expectedType": "number",
+          "modelAnswer": "82",
+          "modelSteps": [
+            "Step 1: Convert litres to cm\u00b3: 180 \u00d7 1000 = 180,000 cm\u00b3 [M1]",
+            "Step 2: Base cross-section area: 55 \u00d7 40 = 2,200 cm\u00b2 [M1]",
+            "Step 3: Length = Volume \u00f7 (Width \u00d7 Height) = 180,000 \u00f7 2,200 = 81.818... cm [M1]",
+            "Step 4: Round to nearest whole centimetre: 81.818... \u2248 82 cm [A1]",
+            "Final Answer: 82 cm"
+          ]
+        },
+        {
+          "number": "10",
+          "subpart": "a",
+          "title": "Question 10(a): 3D Shapes & Geometric Nets",
+          "marks": 2,
+          "prompt": "A triangular prism has 5 faces: 2 congruent triangular bases and 3 rectangular faces.\nHow many edges and vertices does a triangular prism have?",
+          "unit": "",
+          "expectedType": "text",
+          "modelAnswer": "9 edges and 6 vertices",
+          "modelSteps": [
+            "Edges: 3 on bottom triangle + 3 on top triangle + 3 vertical = 9 edges [B1]",
+            "Vertices: 3 at bottom + 3 at top = 6 vertices [B1]"
+          ]
+        },
+        {
+          "number": "10",
+          "subpart": "b",
+          "title": "Question 10(b): Plan View of a Cylinder",
+          "marks": 1,
+          "prompt": "A solid cylinder is placed upright on a flat table. What 2D geometric shape is the plan view (view from directly above)?",
+          "unit": "",
+          "expectedType": "text",
+          "modelAnswer": "Circle",
+          "modelSteps": [
+            "The plan view of an upright cylinder viewed from directly above is a circle [B1]."
+          ]
+        },
+        {
+          "number": "11",
+          "subpart": "a",
+          "title": "Question 11(a): House Deposit Percentage Calculation",
+          "marks": 4,
+          "prompt": "James wants to buy a house. The price of the house is a quarter of a million pounds (\u00a3250,000).\nJames has to pay a deposit for the house. The deposit is 15% of the price of the house.\n\nJames already has \u00a318,500 saved and his family will lend him \u00a315,000.\nDoes James have enough money to pay the deposit? Show working to support your decision.",
+          "unit": "",
+          "expectedType": "decision",
+          "modelAnswer": "No",
+          "modelSteps": [
+            "Step 1: Calculate house price: A quarter of a million = \u00a3250,000 [M1]",
+            "Step 2: Calculate 15% deposit: 0.15 \u00d7 \u00a3250,000 = \u00a337,500 [M1]",
+            "Step 3: Calculate James's total available funds: \u00a318,500 + \u00a315,000 = \u00a333,500 [M1]",
+            "Step 4: Compare funds with deposit: \u00a333,500 < \u00a337,500 (Shortfall: \u00a337,500 \u2013 \u00a333,500 = \u00a34,000).",
+            "Conclusion: No, James does not have enough money (he is short by \u00a34,000) [A1]."
+          ]
+        },
+        {
+          "number": "11",
+          "subpart": "b",
+          "title": "Question 11(b): Percentage Calculation Reverse Check",
+          "marks": 1,
+          "prompt": "Show a check of your percentage calculation for Question 11(a).",
+          "unit": "",
+          "expectedType": "text",
+          "modelAnswer": "10% is \u00a325,000; 5% is \u00a312,500; \u00a325,000 + \u00a312,500 = \u00a337,500",
+          "modelSteps": [
+            "Alternative check method: 10% of \u00a3250,000 = \u00a325,000; 5% of \u00a3250,000 = \u00a312,500; \u00a325,000 + \u00a312,500 = \u00a337,500 [B1]"
+          ]
+        }
+      ]
+    }
+  ]
+}

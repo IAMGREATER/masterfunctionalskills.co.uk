@@ -1,0 +1,185 @@
+{
+  "id": "english_reading_edexcel_l1_p10",
+  "title": "Pearson Edexcel Functional Skills English Level 1 - Reading Past Paper 10",
+  "board": "edexcel",
+  "subject": "english",
+  "level": "l1",
+  "paper": "10",
+  "totalMarks": 30,
+  "timeMinutes": 60,
+  "texts": [
+    {
+      "id": "text-a",
+      "label": "Text A: Email",
+      "title": "Email from Sam to Ali",
+      "format": "Email",
+      "content": "From: Sam\nTo: Ali\nSubject: Good news\n\nHey Ali,\n\nGood news \u2013 I\u2019ve passed my Level 2 in Business Administration. The even better news is I\u2019ve got a job in the finance team at the hospital.\n\nI\u2019m thrilled but also a bit nervous so I\u2019m looking for advice. It\u2019s going to be totally different from what I\u2019m doing now \u2013 this new job looks more challenging, but the salary is much better.\n\nThere\u2019s no uniform \u2013 so I\u2019ll have to think about what I\u2019m going to wear. What tips do you have for starting this job \u2013 especially what to do on the first day?\n\nCheers,\nSam"
+    },
+    {
+      "id": "text-b",
+      "label": "Text B: Webpage",
+      "title": "Careers Advice: First Day in a New Job",
+      "format": "Webpage (www.careersadvice.web/firstday)",
+      "content": "First day in a new job\n\nBe prepared\nCongratulations \u2013 you\u2019ve got a new job. Now you need to prepare for the first day. Re-read the job description so you\u2019re clear about what\u2019s expected of you. Have another look at the company website to update yourself on the latest information and check the dress code. Work out your route there and think about transport. Collect the documents you need to take with you, like proof of your address.\n\nGet off to the right start\nIt\u2019s essential to be punctual on your first day \u2013 take care over your appearance and have a suitable workbag. Introduce yourself to people you meet and make sure you smile and look enthusiastic \u2013 this will impress everyone straightaway. Take a folder to keep any material you\u2019re given.\n\nLearn names and roles\nAim to learn the names of people, especially those you\u2019re going to be working with \u2013 it\u2019s helpful to find out people\u2019s roles and responsibilities too. You\u2019ll be given lots of information on the first day so have something with you to note down the things you need to remember.\n\nBecome involved\nIt can be difficult on the first day to know what to do, but if there\u2019s an opportunity, offer to help out with a task or sit in on a meeting \u2013 and ask plenty of questions. You could also make cups of tea (take your own mug) \u2013 this will demonstrate you\u2019re willing and eager to be part of the team.\n\nKnow your workplace\nMake sure you get to know the layout of the building \u2013 the location of the toilets, the staff restroom and the fire exits. It\u2019s useful to know where your line manager is based and how to get to the canteen \u2013 you may be given a work buddy to help you. The first day is exhausting \u2013 but everything will become more familiar and easier as the weeks go by.\n\nGood luck!"
+    },
+    {
+      "id": "text-c",
+      "label": "Text C: Forum",
+      "title": "Careers Advice Web Forum Discussion",
+      "format": "Online Forum (www.careersadvice.web/firstday/chat)",
+      "content": "Chas:\nDo you remember your first day in your first job? I was totally freaked out \u2013 I felt sick with nerves. My grandad said: \u2018Just keep smiling\u2019. That advice helped. It\u2019s important to get ready before your first day, like deciding how to travel to your new workplace.\n\nLilli:\nYes, starting a new job is incredibly challenging \u2013 you don\u2019t know anyone, everything is unfamiliar \u2013 and sometimes there isn\u2019t enough to do. Try to bond with a fellow worker on the first day \u2013 later on, they can advise you about things like holiday entitlement.\n\nSeth:\nIt\u2019s tough for sure, Lilli. Writing everything down really helped me on my first day. There\u2019s useful advice online, including reminders to get your paperwork sorted beforehand. After you\u2019ve been there for a few weeks, find out about sick leave.\n\nLilli:\nIt\u2019s sensible to check what to wear before you start. My last job, I turned up in a dress and discovered everyone else in jeans \u2013 awkward! My tip for the first day is keep your phone off.\n\nChas:\nI asked about promotion opportunities on the first day in my current job \u2013 I was worried it was out of line, but my manager praised my ambition. Now I\u2019ve been in the job a while, I\u2019m planning to request time off to study."
+    }
+  ],
+  "questions": [
+    {
+      "number": "1",
+      "subpart": "a",
+      "basedOn": "Text A",
+      "marks": 1,
+      "prompt": "According to Text A, where is Sam\u2019s new job?",
+      "expectedType": "text",
+      "modelAnswer": "In the finance team at the hospital"
+    },
+    {
+      "number": "1",
+      "subpart": "b",
+      "basedOn": "Text A",
+      "marks": 1,
+      "prompt": "Which organisational feature helped you find this information in Text A?",
+      "expectedType": "text",
+      "modelAnswer": "Email text / first paragraph / body of the email"
+    },
+    {
+      "number": "2",
+      "subpart": "",
+      "basedOn": "Text A",
+      "marks": 1,
+      "prompt": "In Text A, Sam writes: \u2018especially what to do\u2019.\nGive one word or phrase to replace \u2018especially\u2019 that keeps the meaning of this quotation the same.",
+      "expectedType": "text",
+      "modelAnswer": "particularly / specifically / in particular"
+    },
+    {
+      "number": "3",
+      "subpart": "",
+      "basedOn": "Text A",
+      "marks": 2,
+      "prompt": "According to Text A, identify two different feelings Sam has about starting the new job.",
+      "expectedType": "text",
+      "modelAnswer": "1. Thrilled (excited)\n2. Nervous (anxious)"
+    },
+    {
+      "number": "4",
+      "subpart": "",
+      "basedOn": "Text B",
+      "marks": 1,
+      "prompt": "What is the main purpose of Text B?",
+      "options": [
+        "A: To advertise job vacancies at a company",
+        "B: To give practical guidance on preparing for and surviving your first day at work",
+        "C: To explain health and safety laws in office workplaces",
+        "D: To review different types of work bags and mugs"
+      ],
+      "expectedType": "multiple-choice",
+      "modelAnswer": "B: To give practical guidance on preparing for and surviving your first day at work"
+    },
+    {
+      "number": "5",
+      "subpart": "",
+      "basedOn": "Text B",
+      "marks": 2,
+      "prompt": "According to Text B, give two practical items or documents you should collect or take with you on your first day.",
+      "expectedType": "text",
+      "modelAnswer": "Any two from: Proof of address / Suitable workbag / Folder (for keeping materials) / Notepad or pen (something to note things down) / Own mug (for making tea)"
+    },
+    {
+      "number": "6",
+      "subpart": "",
+      "basedOn": "Text B",
+      "marks": 2,
+      "prompt": "According to Text B, what two things should you do to create a positive initial impression when meeting new colleagues?",
+      "expectedType": "text",
+      "modelAnswer": "1. Introduce yourself\n2. Smile and look enthusiastic"
+    },
+    {
+      "number": "7",
+      "subpart": "",
+      "basedOn": "Text B",
+      "marks": 2,
+      "prompt": "According to Text B, what key locations or facilities should you find out about to get to know your workplace layout?",
+      "expectedType": "text",
+      "modelAnswer": "Any two from: Location of the toilets / Staff restroom / Fire exits / Where your line manager is based / How to get to the canteen"
+    },
+    {
+      "number": "8",
+      "subpart": "",
+      "basedOn": "Text B",
+      "marks": 1,
+      "prompt": "Which sub-heading in Text B contains advice on offering to help with tasks and making hot drinks?",
+      "expectedType": "text",
+      "modelAnswer": "Become involved"
+    },
+    {
+      "number": "9",
+      "subpart": "",
+      "basedOn": "Text B",
+      "marks": 1,
+      "prompt": "Text B states that you may be given a \u2018work buddy\u2019. What is the purpose of a work buddy according to Text B?",
+      "expectedType": "text",
+      "modelAnswer": "To help you navigate the workplace and settle in"
+    },
+    {
+      "number": "10",
+      "subpart": "",
+      "basedOn": "Text C",
+      "marks": 1,
+      "prompt": "In Text C, what piece of advice did Chas's grandad give him that helped him cope with his first-day nerves?",
+      "expectedType": "text",
+      "modelAnswer": "\u2018Just keep smiling\u2019"
+    },
+    {
+      "number": "11",
+      "subpart": "",
+      "basedOn": "Text C",
+      "marks": 1,
+      "prompt": "In Text C, why was Lilli embarrassed on her first day in her previous job?",
+      "expectedType": "text",
+      "modelAnswer": "She turned up wearing a dress while everyone else was dressed casually in jeans"
+    },
+    {
+      "number": "12",
+      "subpart": "",
+      "basedOn": "Text C",
+      "marks": 1,
+      "prompt": "In Text C, what important telephone rule does Lilli suggest for your first day?",
+      "expectedType": "text",
+      "modelAnswer": "Keep your phone switched off"
+    },
+    {
+      "number": "13",
+      "subpart": "",
+      "basedOn": "Text C",
+      "marks": 1,
+      "prompt": "In Text C, what question did Chas ask his manager on his first day that earned praise for his ambition?",
+      "expectedType": "text",
+      "modelAnswer": "Asked about promotion opportunities"
+    },
+    {
+      "number": "14",
+      "subpart": "",
+      "basedOn": "Text C",
+      "marks": 2,
+      "prompt": "According to Seth in Text C, what two things should you do regarding paperwork and employment details?",
+      "expectedType": "text",
+      "modelAnswer": "1. Get paperwork sorted beforehand / write everything down\n2. Find out about sick leave after being there a few weeks"
+    },
+    {
+      "number": "15",
+      "subpart": "",
+      "basedOn": "Text B & Text C",
+      "marks": 3,
+      "prompt": "Both Text B and Text C give advice on preparing before your first day and managing your time at work.\nCompare one piece of preparation advice that appears in both texts, and one difference in the specific tips offered.",
+      "expectedType": "text",
+      "modelAnswer": "Similarity: Both advise preparing travel arrangements/route beforehand, checking the dress code/what to wear, and getting paperwork/documents organized.\nDifference: Text B suggests offering to make tea or sit in on meetings to get involved; Text C suggests keeping your phone turned off or asking about future study/promotion."
+    }
+  ]
+}

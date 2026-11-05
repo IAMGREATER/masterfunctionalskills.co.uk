@@ -1,0 +1,58 @@
+{
+  "id": "english_writing_edexcel_l1_p1",
+  "title": "Pearson Edexcel Functional Skills English Level 1 - Writing Practice Paper 1",
+  "board": "edexcel",
+  "subject": "english",
+  "level": "l1",
+  "paper": "practice-1",
+  "totalMarks": 36,
+  "timeMinutes": 60,
+  "tasks": [
+    {
+      "id": "task-1",
+      "name": "Task 1: Workplace Email (Charity Day Proposal)",
+      "marks": 21,
+      "targetWords": "200 to 250 words",
+      "marksBreakdown": "12 marks for composition & organisation, 9 marks for spelling, punctuation & grammar",
+      "scenario": "You receive an email from your workplace colleague, Sam, who is coordinating the company's annual Charity Day:\n\n\"Hi,\nWe're organising our company Charity Day next month to raise money for local good causes. We need ideas for activities and events that everyone can join in with. Some people suggested a cake sale, washing cars, or wearing funny clothes to work. What do you think would work best, and how could you help out on the day?\nThanks,\nSam\"\n\nWrite an email to Sam proposing ideas for Charity Day.",
+      "checklist": [
+        "Give your opinion on the suggested activities (cake sale, washing cars, wearing funny clothes)",
+        "Suggest at least one new fundraising activity of your own with reasons why it would work well",
+        "Explain how you can personally help before or during the event",
+        "Use an appropriate email subject line, salutation, paragraphs, and formal/semi-formal workplace sign-off"
+      ],
+      "modelResponse": {
+        "subject": "Charity Day Fundraising Proposal & Activity Ideas",
+        "salutation": "Dear Sam,",
+        "body": [
+          "I am writing in response to your email regarding our upcoming annual Charity Day. Organising this event is a fantastic opportunity to bring our colleagues together, improve team morale, and raise vital funds for worthwhile local charities in our community.",
+          "I really like the idea of holding a homemade cake sale because freshly baked treats are always very popular during morning coffee breaks. However, washing cars might be impractical if the weather is rainy, and wearing silly clothes can sometimes make visiting clients feel uncomfortable. Instead, I suggest organising a sponsored five-kilometre walk in the nearby park. A community walk is inclusive because people of all fitness levels can participate together. In addition, charging a modest five-pound registration fee and asking local businesses for raffle prizes would boost our fundraising total significantly.",
+          "To help with the event, I would be pleased to bake some chocolate muffins and savoury pastries for the cake stall. In addition, I can design colourful posters to put up across our office, set up tables and chairs on the morning of the event, and stay late afterwards to help count donations and tidy up. Please let me know if you would like to discuss these ideas further during our team meeting tomorrow."
+        ],
+        "signoff": "Best regards,\nJordan Bennett"
+      }
+    },
+    {
+      "id": "task-2",
+      "name": "Task 2: Council Formal Complaint Web Form",
+      "marks": 15,
+      "targetWords": "150 to 200 words",
+      "marksBreakdown": "9 marks for composition & organisation, 6 marks for spelling, punctuation & grammar",
+      "scenario": "You are completing an official online complaint form on your local council website about persistent anti-social behaviour from new tenants living next door at 18 Willow Lane.\n\nOver the past three weeks, their actions have caused major disruption to your neighbourhood.",
+      "checklist": [
+        "Clearly state the reason for your complaint and the address involved",
+        "Describe specifically what the neighbours have been doing (e.g. noise levels, rubbish, behaviour)",
+        "Explain the negative impact this is having on you and your family's daily life and wellbeing",
+        "State what specific action you want the council environmental health team to take"
+      ],
+      "modelResponse": {
+        "body": [
+          "I am submitting this formal complaint regarding the tenants who recently moved into the property next door at 18 Willow Lane. Over the past three weeks, their persistent antisocial behaviour has caused severe distress and disruption to our quiet residential neighbourhood.",
+          "Firstly, they play loud music late into the night and host noisy garden parties on weekday evenings. Secondly, they leave black bin bags of rotting rubbish piled outside their front door. The bags have split open, attracting foxes and creating an awful smell. When I attempted to speak with them politely last weekend, they were extremely aggressive, shouted at me, and slammed the door.",
+          "This constant disturbance is severely affecting my family. We are unable to sleep properly, and my young children are frequently woken up crying. I feel exhausted and stressed at work every day. I urge the council to investigate this matter urgently and take firm enforcement action."
+        ],
+        "signoff": "Yours sincerely,\nJordan Bennett\n16 Willow Lane\njordan.bennett@myemail.co.uk"
+      }
+    }
+  ]
+}

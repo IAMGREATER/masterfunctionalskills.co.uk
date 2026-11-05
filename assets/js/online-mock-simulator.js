@@ -1172,7 +1172,7 @@ function renderCurrentQuestion() {
   const coverContainer = document.getElementById('simCoverContainer');
   const questionPanes = document.getElementById('simQuestionPanes');
   if (coverContainer) coverContainer.style.display = 'none';
-  if (questionPanes) questionPanes.style.display = 'flex';
+  if (questionPanes) questionPanes.style.display = 'grid';
 
   const q = sec.questions[simCurrentQuestionIndex - 1];
   if (!q) return;

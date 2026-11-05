@@ -665,6 +665,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   loadPaper(simCurrentPaperKey);
   startTimer();
+  initSimFontSize();
 });
 
 // Load and Render Paper
@@ -1330,6 +1331,58 @@ document.addEventListener('keydown', (e) => {
     document.exitFullscreen().catch(() => {});
   }
 });
+
+// Dynamic Font Size Resizer (With Smallest / Largest Constraints)
+const SIM_FONT_LEVELS = [
+  { scale: 1.0, label: '100%' },
+  { scale: 1.12, label: '112%' },
+  { scale: 1.24, label: '124%' },
+  { scale: 1.36, label: '136%' }
+];
+let simFontLevelIndex = 0;
+
+function changeFontSize(delta) {
+  const newIndex = simFontLevelIndex + delta;
+  // Strictly enforce minimum (current size) and maximum limits
+  if (newIndex < 0 || newIndex >= SIM_FONT_LEVELS.length) return;
+  simFontLevelIndex = newIndex;
+  applySimFontSize();
+  localStorage.setItem('mfs_sim_font_level', simFontLevelIndex);
+}
+
+function applySimFontSize() {
+  const shell = document.getElementById('simAppShell');
+  const decBtn = document.getElementById('simFontDecBtn');
+  const incBtn = document.getElementById('simFontIncBtn');
+  const badge = document.getElementById('simFontSizeBadge');
+
+  const current = SIM_FONT_LEVELS[simFontLevelIndex] || SIM_FONT_LEVELS[0];
+  if (shell) {
+    shell.style.setProperty('--sim-scale', current.scale);
+  }
+  if (badge) {
+    badge.innerText = current.label;
+  }
+  // Disable A- when at minimum limit (current size)
+  if (decBtn) {
+    decBtn.disabled = simFontLevelIndex === 0;
+  }
+  // Disable A+ when at maximum limit
+  if (incBtn) {
+    incBtn.disabled = simFontLevelIndex === SIM_FONT_LEVELS.length - 1;
+  }
+}
+
+function initSimFontSize() {
+  const saved = localStorage.getItem('mfs_sim_font_level');
+  if (saved !== null) {
+    const idx = parseInt(saved, 10);
+    if (!isNaN(idx) && idx >= 0 && idx < SIM_FONT_LEVELS.length) {
+      simFontLevelIndex = idx;
+    }
+  }
+  applySimFontSize();
+}
 
 // Calculator Engine
 function calcDigit(digit) {

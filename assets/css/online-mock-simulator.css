@@ -115,6 +115,65 @@
   gap: 12px;
 }
 
+/* Font Size Resizer Controls */
+.sim-font-control-group {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(15, 23, 42, 0.6);
+  border: 1px solid #334155;
+  border-radius: 6px;
+  padding: 3px 8px;
+}
+
+.sim-font-control-label {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #94a3b8;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  margin-right: 2px;
+}
+
+.sim-font-btn {
+  background: #1e293b;
+  border: 1px solid #475569;
+  color: #f1f5f9;
+  border-radius: 4px;
+  padding: 3px 8px;
+  font-size: 0.75rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  line-height: 1.2;
+}
+
+.sim-font-btn:hover:not(:disabled) {
+  background: var(--sim-blue);
+  border-color: #38bdf8;
+  color: #ffffff;
+}
+
+.sim-font-btn:disabled {
+  opacity: 0.35;
+  cursor: not-allowed;
+  border-color: #334155;
+}
+
+.sim-font-size-badge {
+  font-size: 0.74rem;
+  font-weight: 700;
+  color: #38bdf8;
+  padding: 0 4px;
+  min-width: 36px;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
 /* Timer Display */
 .sim-timer-box {
   background: rgba(15, 23, 42, 0.7);
@@ -375,7 +434,7 @@
   color: var(--sim-green);
 }
 
-/* Typed Working Area */
+/* Typed Working Area - Expanded for rich calculations & workings */
 .sim-working-card {
   background: #ffffff;
   border: 1px solid var(--sim-slate-300);
@@ -385,16 +444,19 @@
   flex-direction: column;
   gap: 8px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+  flex: 1;
+  min-height: 380px;
 }
 
 .sim-working-textarea {
   width: 100%;
-  min-height: 220px;
+  min-height: 360px;
+  flex: 1;
   border: 1px solid #e2e8f0;
   border-radius: 6px;
   padding: 12px;
   font-family: 'Courier New', Courier, monospace, 'Lexend';
-  font-size: 0.95rem;
+  font-size: calc(0.95rem * var(--sim-scale, 1));
   line-height: 1.6;
   color: #1e293b;
   resize: vertical;
@@ -411,21 +473,21 @@
   box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
 }
 
-/* Final Answer Box */
+/* Final Answer Box - Positioned at bottom of Left Pane */
 .sim-final-ans-card {
   background: #f8fafc;
   border: 2px solid var(--sim-blue);
   border-radius: 8px;
-  padding: 14px 18px;
+  padding: 12px 14px;
   display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-wrap: wrap;
-  gap: 12px;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: auto;
+  box-shadow: 0 2px 5px rgba(2, 132, 199, 0.08);
 }
 
 .sim-final-ans-label {
-  font-size: 0.92rem;
+  font-size: calc(0.92rem * var(--sim-scale, 1));
   font-weight: 800;
   color: var(--sim-navy);
 }
@@ -434,6 +496,7 @@
   display: flex;
   align-items: center;
   gap: 8px;
+  width: 100%;
 }
 
 .sim-unit-badge {
@@ -442,17 +505,18 @@
   padding: 6px 12px;
   border-radius: 6px;
   font-weight: 800;
-  font-size: 0.92rem;
+  font-size: calc(0.92rem * var(--sim-scale, 1));
 }
 
 .sim-final-input {
   border: 2px solid #cbd5e1;
   border-radius: 6px;
-  padding: 8px 14px;
-  font-size: 1.1rem;
+  padding: 7px 12px;
+  font-size: calc(1.05rem * var(--sim-scale, 1));
   font-weight: 800;
   color: var(--sim-navy);
-  width: 180px;
+  width: 100%;
+  max-width: 200px;
   outline: none;
   text-align: right;
   font-variant-numeric: tabular-nums;
@@ -462,6 +526,47 @@
 .sim-final-input:focus {
   border-color: var(--sim-blue);
   box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.2);
+}
+
+/* Font Scaling Variables & Dynamic Resizer Rules */
+.sim-app-shell {
+  --sim-scale: 1;
+}
+
+.sim-q-scenario-card {
+  font-size: calc(0.92rem * var(--sim-scale, 1));
+}
+
+.sim-q-scenario-title {
+  font-size: calc(1rem * var(--sim-scale, 1));
+}
+
+.sim-q-prompt-text {
+  font-size: calc(0.96rem * var(--sim-scale, 1));
+}
+
+#simPromptHeader {
+  font-size: calc(0.8rem * var(--sim-scale, 1));
+}
+
+.sim-source-content-card {
+  font-size: calc(0.92rem * var(--sim-scale, 1));
+}
+
+.sim-planning-textarea {
+  font-size: calc(0.9rem * var(--sim-scale, 1));
+}
+
+.sim-mcq-label {
+  font-size: calc(0.92rem * var(--sim-scale, 1));
+}
+
+.sim-subpart-label {
+  font-size: calc(0.88rem * var(--sim-scale, 1));
+}
+
+.sim-checklist-item {
+  font-size: calc(0.88rem * var(--sim-scale, 1));
 }
 
 /* Multi-part answer rows (e.g. Parts a, b, c) */

@@ -817,6 +817,16 @@ function handlePaperChange(newKey) {
 }
 
 // Switch Active Section (Section A vs Section B)
+// Scroll panes to top without shifting outer page
+function scrollContentToTop() {
+  const coverContainer = document.getElementById('simCoverContainer');
+  const qPane = document.querySelector('.sim-pane-question');
+  const wPane = document.querySelector('.sim-pane-working');
+  if (coverContainer) coverContainer.scrollTop = 0;
+  if (qPane) qPane.scrollTop = 0;
+  if (wPane) wPane.scrollTop = 0;
+}
+
 function switchSection(targetIndex) {
   const paper = getOrCreatePaper(simCurrentPaperKey);
   const sections = getPaperSections(paper);
@@ -839,7 +849,7 @@ function switchSection(targetIndex) {
   renderSectionTabs(paper);
   renderQuestionPills(paper);
   renderCurrentQuestion();
-  window.scrollTo({ top: 120, behavior: 'smooth' });
+  scrollContentToTop();
 }
 
 // Start Section Questions from Cover Page (Jump to Question 1)
@@ -848,7 +858,7 @@ function startSectionQuestions() {
   const paper = getOrCreatePaper(simCurrentPaperKey);
   renderQuestionPills(paper);
   renderCurrentQuestion();
-  window.scrollTo({ top: 120, behavior: 'smooth' });
+  scrollContentToTop();
 }
 
 // Render Section Switcher Tabs Bar
@@ -1109,7 +1119,7 @@ function renderSectionCover() {
             <strong>Candidate 01</strong>
           </div>
           <div class="sim-candidate-row">
-            <span>Section Question Count:</span>
+            <span>Section Questions:</span>
             <strong>${sec.questions.length} Questions (Q1 to Q${sec.questions.length})</strong>
           </div>
 
@@ -1533,7 +1543,7 @@ function nextQuestion() {
   if (simCurrentQuestionIndex < sec.questions.length) {
     simCurrentQuestionIndex++;
     renderCurrentQuestion();
-    window.scrollTo({ top: 120, behavior: 'smooth' });
+    scrollContentToTop();
   } else {
     if (simCurrentSectionIndex < sections.length - 1) {
       switchSection(simCurrentSectionIndex + 1);
@@ -1547,11 +1557,11 @@ function prevQuestion() {
   if (simCurrentQuestionIndex > 1) {
     simCurrentQuestionIndex--;
     renderCurrentQuestion();
-    window.scrollTo({ top: 120, behavior: 'smooth' });
+    scrollContentToTop();
   } else if (simCurrentQuestionIndex === 1) {
     simCurrentQuestionIndex = 0; // Return to Cover
     renderCurrentQuestion();
-    window.scrollTo({ top: 120, behavior: 'smooth' });
+    scrollContentToTop();
   } else if (simCurrentQuestionIndex === 0 && simCurrentSectionIndex > 0) {
     // Go to previous section's last question
     saveCurrentSectionTimer();
@@ -1565,7 +1575,7 @@ function prevQuestion() {
     renderSectionTabs(paper);
     renderQuestionPills(paper);
     renderCurrentQuestion();
-    window.scrollTo({ top: 120, behavior: 'smooth' });
+    scrollContentToTop();
   }
 }
 
@@ -1577,7 +1587,7 @@ function jumpToQuestion(index) {
   if (index >= 0 && index <= sec.questions.length) {
     simCurrentQuestionIndex = index;
     renderCurrentQuestion();
-    window.scrollTo({ top: 120, behavior: 'smooth' });
+    scrollContentToTop();
   }
 }
 

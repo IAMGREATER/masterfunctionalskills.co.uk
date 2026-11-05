@@ -309,6 +309,448 @@ const MFS_MOCK_DATA = {
   },
 
   // =========================================================================
+  // =========================================================================
+  // 1B. PEARSON EDEXCEL FUNCTIONAL SKILLS MATHS LEVEL 2 - PAST PAPER 1
+  // =========================================================================
+  'edexcel-maths-l2-paper-1': {
+    title: 'Edexcel Functional Skills Maths Level 2 — Past Paper 1',
+    board: 'Pearson Edexcel',
+    subject: 'maths',
+    level: 'Level 2',
+    paperNumber: 1,
+    durationMinutes: 115,
+    pdfUrl: 'https://passfunctionalskills.co.uk/app/uploads/2024/01/Edexcel-Functional-Skills-Maths-Level-2-Past-Paper-1-QP.pdf',
+    modelSolutionPdf: 'assets/downloads/past-papers/edexcel/maths-level-2/FS_Maths_Level_2_Past_Paper_1_Model_Solution_MFS.pdf',
+    videoSolutionSlug: 'edexcel-maths-l2-past-paper-1-section-a',
+    sections: [
+      {
+        id: 'A',
+        name: 'Section A: Non-Calculator',
+        code: 'PMAT2/N01',
+        durationMinutes: 25,
+        totalMarks: 16,
+        isCalcAllowed: false,
+        instructions: 'Calculators may NOT be used. Check your working and your answers at each stage.',
+        questions: [
+          {
+            num: 1,
+            section: 'Section A: Non-Calculator',
+            isCalcAllowed: false,
+            marks: 3,
+            markTags: '[M1, A1, B1]',
+            scenarioTitle: 'Decimals & Indices',
+            scenarioText: 'Answer all parts of Question 1 below without using a calculator.',
+            promptText: '(a) Work out 5.2 × 9.6\n(b) Work out 4 × 3²',
+            unit: '',
+            expectedType: 'number',
+            parts: [
+              { id: 'a', label: 'Part (a) 5.2 × 9.6', placeholder: 'e.g. 49.92', unit: '' },
+              { id: 'b', label: 'Part (b) 4 × 3²', placeholder: 'e.g. 36', unit: '' }
+            ],
+            modelSolution: '(a) Multiply as whole numbers: 52 × 96 = 4992. Total of 2 decimal places: 4992 ÷ 100 = 49.92 [M1, A1]\n(b) BIDMAS indices first: 3² = 9. Then 4 × 9 = 36 [B1]',
+            finalBenchmark: '49.92 / 36'
+          },
+          {
+            num: 2,
+            section: 'Section A: Non-Calculator',
+            isCalcAllowed: false,
+            marks: 3,
+            markTags: '[M1, M1, A1]',
+            scenarioTitle: 'Malcolm Overdraft and Banking',
+            scenarioText: 'On Thursday evening Malcolm’s bank balance was −£107.35.\nOn Friday morning:\n• £1867.68 is paid into his bank account\n• £715.21 is paid out of his bank account.\nNo other payments occur.',
+            promptText: 'Work out how much money is in Malcolm’s bank account on Friday evening.',
+            unit: '£',
+            expectedType: 'number',
+            parts: [
+              { id: 'balance', label: 'Friday Evening Balance', placeholder: 'e.g. 1045.12', unit: '£' }
+            ],
+            modelSolution: 'Step 1: Balance after deposit = −107.35 + 1867.68 = 1867.68 − 107.35 = £1760.33 [M1]\nStep 2: Balance after withdrawal = 1760.33 − 715.21 = £1045.12 [M1, A1]',
+            finalBenchmark: '£1045.12'
+          },
+          {
+            num: 3,
+            section: 'Section A: Non-Calculator',
+            isCalcAllowed: false,
+            marks: 4,
+            markTags: '[M1, M1, M1, A1]',
+            scenarioTitle: 'Akash Window Plastic Trim Estimation',
+            scenarioText: 'Akash needs to put plastic trim on a shaped window. The window is made using a rectangle (height 172 cm, width 118 cm, inner vertical divider 113 cm, lower side segments 59 cm) and a semi-circle on top (diameter 118 cm).\nAkash estimates that he will need 700 cm of plastic trim in total.',
+            promptText: 'Use estimation to check if Akash’s estimate is sensible. You must show your working.',
+            unit: '',
+            expectedType: 'decision',
+            parts: [
+              { id: 'decision', label: 'Is the estimate sensible?', placeholder: 'State Yes/No and show estimated total length', unit: '' }
+            ],
+            modelSolution: 'Step 1: Round measurements to 1 or 2 sig figs: 172 ≈ 170, 118 ≈ 120, 113 ≈ 110, 59 ≈ 60, π ≈ 3 [M1]\nStep 2: Semi-circle curved arc = (π × d) ÷ 2 ≈ (3 × 120) ÷ 2 = 180 cm [M1]\nStep 3: Total estimated trim = 170 + 120 + 60 + 110 + 180 ≈ 640 cm (or rectangle perimeter parts + arc ≈ 540–640 cm) [M1]\nStep 4: 700 cm is an overestimate. Conclusion: Akash’s estimate is not sensible [A1].',
+            finalBenchmark: 'No (Sensible estimate is approx 540–640 cm)'
+          },
+          {
+            num: 4,
+            section: 'Section A: Non-Calculator',
+            isCalcAllowed: false,
+            marks: 6,
+            markTags: '[M1, A1, M1, A1, C1, C1]',
+            scenarioTitle: 'Calvin Train Arrival Times (Summer vs. Winter)',
+            scenarioText: 'Calvin is a train company manager. He compares the arrival times of a morning train service for 10 days in the summer and 10 days in the winter.\n• Summer: Median late = 12.7 minutes; Range = 11 minutes.\n• Winter late minutes: 8, 32, 44, 5, 17, 67, 9, 14, 10, 26.\n\nCalvin thinks that in the winter:\n• the median number of minutes late increases\n• the train service is less consistent.',
+            promptText: 'Is Calvin correct? Show why you think this giving reasons with your answers.',
+            unit: '',
+            expectedType: 'text',
+            parts: [
+              { id: 'median', label: 'Winter Median (mins)', placeholder: 'e.g. 15.5', unit: 'mins' },
+              { id: 'range', label: 'Winter Range (mins)', placeholder: 'e.g. 62', unit: 'mins' },
+              { id: 'conclusion', label: 'Conclusion (Is Calvin correct?)', placeholder: 'Explain whether Calvin is correct on median and consistency', unit: '' }
+            ],
+            modelSolution: 'Step 1: Order winter data: 5, 8, 9, 10, 14, 17, 26, 32, 44, 67 [M1]\nStep 2: Winter Median = (14 + 17) ÷ 2 = 15.5 minutes [A1]\nStep 3: Winter Range = 67 − 5 = 62 minutes [M1, A1]\nStep 4: Median comparison: 15.5 > 12.7, so median minutes late did increase (Calvin correct) [C1]\nStep 5: Consistency comparison: 62 > 11, so winter has greater spread / is less consistent (Calvin correct) [C1]',
+            finalBenchmark: 'Winter Median: 15.5 mins; Winter Range: 62 mins; Calvin is correct on both points'
+          }
+        ]
+      },
+      {
+        id: 'B',
+        name: 'Section B: Calculator',
+        code: 'PMAT2/C01',
+        durationMinutes: 90,
+        totalMarks: 48,
+        isCalcAllowed: true,
+        instructions: 'Calculators may be used. Check your working and your answers at each stage.',
+        questions: [
+          {
+            num: 1,
+            section: 'Section B: Calculator',
+            isCalcAllowed: true,
+            marks: 3,
+            markTags: '[M1, M1, A1]',
+            scenarioTitle: 'Adam Agency Work Overtime Pay',
+            scenarioText: 'Adam works for an agency. His normal hourly rate is £8.32.\nThe agency asks Adam to work 6 hours for a new company.\nAdam will be paid time and a third of his normal hourly rate.',
+            promptText: 'How much will Adam get paid in total when working for the new company?',
+            unit: '£',
+            expectedType: 'number',
+            parts: [
+              { id: 'pay', label: 'Total Pay', placeholder: 'e.g. 66.56', unit: '£' }
+            ],
+            modelSolution: 'Overtime rate = 8.32 × (1 + 1/3) = 8.32 × 4/3 = £11.0933... [M1]\nTotal pay for 6 hours = £11.0933... × 6 = £66.56 [M1, A1]',
+            finalBenchmark: '£66.56'
+          },
+          {
+            num: 2,
+            section: 'Section B: Calculator',
+            isCalcAllowed: true,
+            marks: 3,
+            markTags: '[M1, M1, A1]',
+            scenarioTitle: 'Square Based Pyramid Volume',
+            scenarioText: 'Here is a square based pyramid. Base length = 8.5 cm, base width = 8.5 cm, vertical height = 12.6 cm.\nFormula: Volume of pyramid = 1/3 × area of base × height.',
+            promptText: 'Work out the volume of this pyramid.',
+            unit: 'cm³',
+            expectedType: 'number',
+            parts: [
+              { id: 'volume', label: 'Pyramid Volume', placeholder: 'e.g. 303.45', unit: 'cm³' }
+            ],
+            modelSolution: 'Base Area = 8.5 × 8.5 = 72.25 cm² [M1]\nVolume = 1/3 × 72.25 × 12.6 = 303.45 cm³ [M1, A1]',
+            finalBenchmark: '303.45 cm³'
+          },
+          {
+            num: 3,
+            section: 'Section B: Calculator',
+            isCalcAllowed: true,
+            marks: 4,
+            markTags: '[M1, M1, A1, B1]',
+            scenarioTitle: 'Rana Charities Donation & Reverse Check',
+            scenarioText: 'Rana donated to 4 charities last year. She gave £175 to each of these charities.\nThis year Rana wants to donate the same total amount equally between 6 charities.\nEach charity will receive an equal amount.',
+            promptText: '(a) How much will each charity receive this year?\n(b) Use reverse calculations to check your answer.',
+            unit: '£',
+            expectedType: 'number',
+            parts: [
+              { id: 'a', label: 'Part (a) Donation per charity', placeholder: 'e.g. 116.67', unit: '£' },
+              { id: 'b', label: 'Part (b) Reverse check calculation', placeholder: 'e.g. 116.67 × 6 ≈ 700', unit: '' }
+            ],
+            modelSolution: '(a) Total amount donated = £175 × 4 = £700 [M1]\nEach of 6 charities receives = £700 ÷ 6 = £116.666... ≈ £116.67 [M1, A1]\n(b) Reverse check: 116.67 × 6 = £700.02 ≈ £700 (or 116.66 × 6 + 0.04 = 700) [B1]',
+            finalBenchmark: '£116.67'
+          },
+          {
+            num: 4,
+            section: 'Section B: Calculator',
+            isCalcAllowed: true,
+            marks: 4,
+            markTags: '[M1, M1, M1, A1]',
+            scenarioTitle: 'Samir Roofer Roof Angle x',
+            scenarioText: 'Samir is a roofer. Here is a section of a roof made from straight pieces of wood.\nSamir knows that:\n• the shaded triangle is an equilateral triangle\n• the line DB is a line of symmetry\n• the line ABC is a straight line.',
+            promptText: 'Work out the size of angle x. You must show your working.',
+            unit: '°',
+            expectedType: 'number',
+            parts: [
+              { id: 'angle', label: 'Angle x', placeholder: 'e.g. 30', unit: '°' }
+            ],
+            modelSolution: 'Step 1: All angles in an equilateral triangle are 60° [M1]\nStep 2: Line DB is a line of symmetry that bisects angle BDC (60° ÷ 2 = 30°) and forms a 90° right angle at B [M1]\nStep 3: Angle x = 180° − 90° − 60° = 30° (or symmetry bisects 60°) [M1, A1]',
+            finalBenchmark: '30°'
+          },
+          {
+            num: 5,
+            section: 'Section B: Calculator',
+            isCalcAllowed: true,
+            marks: 5,
+            markTags: '[M1, M1, M1, M1, A1]',
+            scenarioTitle: 'Roof Tiles Cost for 4 Triangular Faces',
+            scenarioText: 'Samir wants to work out the cost of the tiles needed to replace a roof.\nThe roof has 4 identical faces. Each face is a triangle with base 7.6 m and height 4.8 m.\n• 1 pack of tiles covers 13.8 m² (including overlaps)\n• Each pack costs £716.10\n• Samir can only buy whole packs of these tiles.',
+            promptText: 'Calculate the total cost of the tiles for the 4 faces of this roof.',
+            unit: '£',
+            expectedType: 'number',
+            parts: [
+              { id: 'cost', label: 'Total Cost', placeholder: 'e.g. 4296.60', unit: '£' }
+            ],
+            modelSolution: 'Step 1: Area of 1 face = (7.6 × 4.8) ÷ 2 = 18.24 m² [M1]\nStep 2: Total area of 4 faces = 4 × 18.24 = 72.96 m² [M1]\nStep 3: Number of packs = 72.96 ÷ 13.8 = 5.286... packs [M1]\nStep 4: Must buy whole packs -> Round up to 6 packs [M1]\nStep 5: Total cost = 6 × £716.10 = £4296.60 [A1]',
+            finalBenchmark: '£4296.60'
+          },
+          {
+            num: 6,
+            section: 'Section B: Calculator',
+            isCalcAllowed: true,
+            marks: 3,
+            markTags: '[M1, M1, A1]',
+            scenarioTitle: 'Farah Jacket Discount Percentage Claim',
+            scenarioText: 'Farah is buying clothes from a website. The website shows this information about a jacket Farah wants to buy:\n• Jacket original price: £30.99\n• Sale price: £16.00\nThe website claims this is a saving of 46%.',
+            promptText: 'Is the sale price a saving of 46% on the original price? Show why you think this.',
+            unit: '',
+            expectedType: 'decision',
+            parts: [
+              { id: 'decision', label: 'Is the claim correct?', placeholder: 'State Yes/No with calculated percentage or price', unit: '' }
+            ],
+            modelSolution: 'Method 1: Actual saving = £30.99 − £16.00 = £14.99 [M1]\nPercentage saving = (£14.99 ÷ £30.99) × 100 = 48.37%... [M1]\nComparison: 48.4% ≠ 46% (it is actually ~48% saving, not 46%). The claim is not correct [A1].\nMethod 2: 46% saving means paying 54%: £30.99 × 0.54 = £16.73, which is not £16.00.',
+            finalBenchmark: 'No (Actual saving is 48.4%, or £16.73 at 46% off)'
+          },
+          {
+            num: 7,
+            section: 'Section B: Calculator',
+            isCalcAllowed: true,
+            marks: 4,
+            markTags: '[M1, A1, M1, A1]',
+            scenarioTitle: 'Scale Drawing Quadrilateral & Actual Length AD',
+            scenarioText: 'Here is a quadrilateral ABCD. AB = 160 m, BC = 220 m, CD = 340 m with right angles as marked.\n(a) Draw this shape on the grid using scale 1 cm to 40 m.\n(b) Use your answer to part (a) to work out the actual length of the line AD.',
+            promptText: 'Work out the actual length of the line AD. Remember to use the grid and the scale.',
+            unit: 'm',
+            expectedType: 'number',
+            parts: [
+              { id: 'a', label: 'Part (a) Grid Scale check', placeholder: 'AB = 4 cm, BC = 5.5 cm, CD = 8.5 cm', unit: '' },
+              { id: 'b', label: 'Part (b) Actual length AD', placeholder: 'e.g. 270', unit: 'm' }
+            ],
+            modelSolution: '(a) Grid plotting: AB = 160 ÷ 40 = 4 cm (4 squares); BC = 220 ÷ 40 = 5.5 cm; CD = 340 ÷ 40 = 8.5 cm [M1, A1]\n(b) Measured distance AD on grid = 6.75 cm (acceptable 6.5 cm to 7.0 cm) [M1]\nActual length AD = 6.75 × 40 = 270 m (acceptable range 260 m to 280 m) [A1]',
+            finalBenchmark: '270 m (260 m to 280 m)'
+          },
+          {
+            num: 8,
+            section: 'Section B: Calculator',
+            isCalcAllowed: true,
+            marks: 6,
+            markTags: '[M1, A1, B1, M1, A1, B1]',
+            scenarioTitle: 'Pablo European Land Area vs. Population Scatter Graph',
+            scenarioText: 'Pablo is investigating the relationship between land area (1000 km²) and population (millions) of 8 European countries:\n• Germany (357, 82.8), Greece (132, 10.7), Italy (301, 60.5), Poland (313, 38.0), Spain (506, 46.7), France (552, 67.2), Romania (238, 19.5), UK (243, 66.3).',
+            promptText: '(a) Plot points on the scatter diagram.\n(b) What type of correlation does the scatter diagram show?\n(c) Draw a line of best fit and estimate the population for a country with land area 450,000 km².',
+            unit: 'millions',
+            expectedType: 'text',
+            parts: [
+              { id: 'b', label: 'Part (b) Correlation Type', placeholder: 'e.g. Positive correlation', unit: '' },
+              { id: 'c', label: 'Part (c) Estimated Population (millions)', placeholder: 'e.g. 58', unit: 'millions' }
+            ],
+            modelSolution: '(a) All 8 points correctly plotted on scatter diagram axes [M1, A1]\n(b) Positive correlation (as land area increases, population tends to increase) [B1]\n(c) Straight line of best fit drawn passing through the centroid [M1]; Reading at 450 (1000 km²) gives approx 55 to 65 million [A1, B1]',
+            finalBenchmark: 'Positive correlation; Estimate 55–65 million'
+          },
+          {
+            num: 9,
+            section: 'Section B: Calculator',
+            isCalcAllowed: true,
+            marks: 4,
+            markTags: '[M1, M1, M1, A1]',
+            scenarioTitle: 'Magda Population Density Formula (Russia vs. Canada)',
+            scenarioText: 'Magda compares the population density of Canada and Russia using the formula:\nK = P / (2.59 × M)\nwhere K = population density (people per km²), P = population (millions), M = land area (million square miles).\n• Canada has density 3.57 people per km²\n• Russia: Population P = 143.96 million, Land area M = 6.593 million sq miles.\nMagda thinks Russia has a greater population density than Canada.',
+            promptText: 'Is Magda correct? Show why you think this.',
+            unit: '',
+            expectedType: 'decision',
+            parts: [
+              { id: 'russia_density', label: 'Russia Density (people/km²)', placeholder: 'e.g. 8.43', unit: 'people/km²' },
+              { id: 'decision', label: 'Is Magda correct?', placeholder: 'State Yes/No with explanation', unit: '' }
+            ],
+            modelSolution: 'Step 1: Denominator = 2.59 × 6.593 = 17.07587 [M1]\nStep 2: Russia Density K = 143.96 ÷ 17.07587 = 8.4309... ≈ 8.43 people per km² [M1, M1]\nStep 3: Comparison: 8.43 > 3.57. Magda is correct; Russia has a greater population density [A1].',
+            finalBenchmark: 'Yes (Russia density 8.43 > Canada 3.57)'
+          },
+          {
+            num: 10,
+            section: 'Section B: Calculator',
+            isCalcAllowed: true,
+            marks: 3,
+            markTags: '[M1, A1, B1]',
+            scenarioTitle: 'Mixed Number Fraction Subtraction & Estimation Check',
+            scenarioText: 'Answer both parts of Question 10 below.',
+            promptText: '(a) Work out 3 3/8 − 9/10. Give your answer as a mixed number.\n(b) Use estimation to show a check of your answer.',
+            unit: '',
+            expectedType: 'text',
+            parts: [
+              { id: 'a', label: 'Part (a) Mixed number answer', placeholder: 'e.g. 2 19/40 (or 2.475)', unit: '' },
+              { id: 'b', label: 'Part (b) Estimation check', placeholder: 'e.g. 3.5 − 1 = 2.5', unit: '' }
+            ],
+            modelSolution: '(a) Convert to improper fractions: 3 3/8 = 27/8. Common denominator is 40: (27 × 5)/40 − (9 × 4)/40 = 135/40 − 36/40 = 99/40 [M1]\nConvert to mixed number: 99 ÷ 40 = 2 with remainder 19 -> 2 19/40 (or 2.475) [A1]\n(b) Estimation check: 3 3/8 ≈ 3.5; 9/10 ≈ 1.0; 3.5 − 1.0 = 2.5 (consistent with 2.475) [B1]',
+            finalBenchmark: '2 19/40 (or 2.475) / Check: 3.5 − 1 = 2.5'
+          },
+          {
+            num: 11,
+            section: 'Section B: Calculator',
+            isCalcAllowed: true,
+            marks: 5,
+            markTags: '[M1, M1, M1, M1, A1]',
+            scenarioTitle: 'Emilio Metal Fences Ratio 9 : 8 : 7',
+            scenarioText: 'Emilio makes metal fences. He is making a fence using this design:\n• 3 horizontal metal pieces of length 1.8 m\n• 2 tall metal pieces of length 1.44 m\n• 5 medium metal pieces\n• 6 short metal pieces\nThe heights of the tall, medium and short metal pieces are in the ratio 9 : 8 : 7.',
+            promptText: 'How many metres of metal in total does Emilio need to make the fence?',
+            unit: 'm',
+            expectedType: 'number',
+            parts: [
+              { id: 'total_metal', label: 'Total metres of metal', placeholder: 'e.g. 21.4', unit: 'm' }
+            ],
+            modelSolution: 'Step 1: 1 ratio part = 1.44 ÷ 9 = 0.16 m [M1]\nStep 2: Medium height = 8 × 0.16 = 1.28 m; Short height = 7 × 0.16 = 1.12 m [M1]\nStep 3: Horizontal = 3 × 1.8 = 5.4 m; Tall = 2 × 1.44 = 2.88 m [M1]\nStep 4: Medium = 5 × 1.28 = 6.4 m; Short = 6 × 1.12 = 6.72 m [M1]\nStep 5: Total metal = 5.4 + 2.88 + 6.4 + 6.72 = 21.4 m [A1]',
+            finalBenchmark: '21.4 m'
+          },
+          {
+            num: 12,
+            section: 'Section B: Calculator',
+            isCalcAllowed: true,
+            marks: 6,
+            markTags: '[M1, A1, M1, A1, M1, A1]',
+            scenarioTitle: 'Two-Way Table of 60 Holidays & Probability',
+            scenarioText: 'The table shows information about 60 holidays bought by customers at a travel agency:\n• Customer types: Couples (Total 36), Families (Total 24)\n• Holiday types: Room only (Total 15; Couples 8, Families 7), Bed & breakfast (Total 21; Couples 14, Families 7), All-inclusive (Total 24; Couples 14, Families 10).\n(a) Complete the table.\n(b) What is the probability that a randomly chosen customer bought an all-inclusive holiday for a couple? Give answer as a fraction in simplest form.\n(c) The travel agent says: "Of the couples and families who bought holidays, couples were more likely to have bought an all-inclusive holiday." Is the agent correct?',
+            promptText: 'Answer all parts: table values, simplified probability fraction, and whether travel agent is correct.',
+            unit: '',
+            expectedType: 'text',
+            parts: [
+              { id: 'b_prob', label: 'Part (b) Probability fraction', placeholder: 'e.g. 7/30', unit: '' },
+              { id: 'c_decision', label: 'Part (c) Is travel agent correct?', placeholder: 'State Yes/No with percentages or fractions', unit: '' }
+            ],
+            modelSolution: '(a) Table completion: Couples: Room 8, B&B 14, All-inc 14, Total 36; Families: Room 7, B&B 7, All-inc 10, Total 24; Totals: 15, 21, 24, 60 [M1, A1]\n(b) P(Couple and All-inclusive) = 14 / 60 = 7 / 30 [M1, A1]\n(c) Couples all-inclusive proportion = 14 / 36 = 7 / 18 ≈ 38.9%\nFamilies all-inclusive proportion = 10 / 24 = 5 / 12 ≈ 41.7% [M1]\nComparison: 38.9% < 41.7%, so families were actually more likely. Travel agent is incorrect [A1].',
+            finalBenchmark: 'Table completed / 7/30 / Travel agent is incorrect (Couples 38.9% < Families 41.7%)'
+          }
+        ]
+      }
+    ]
+  },
+
+  // =========================================================================
+  // 1C. PEARSON EDEXCEL FUNCTIONAL SKILLS MATHS LEVEL 2 - PAST PAPER 2
+  // =========================================================================
+  'edexcel-maths-l2-paper-2': {
+    title: 'Edexcel Functional Skills Maths Level 2 — Past Paper 2',
+    board: 'Pearson Edexcel',
+    subject: 'maths',
+    level: 'Level 2',
+    paperNumber: 2,
+    durationMinutes: 115,
+    pdfUrl: 'https://passfunctionalskills.co.uk/app/uploads/2024/01/Edexcel-Functional-Skills-Maths-Level-2-Past-Paper-2-QP.pdf',
+    modelSolutionPdf: 'assets/downloads/past-papers/edexcel/maths-level-2/FS_Maths_Level_2_Past_Paper_2_Model_Solution_MFS.pdf',
+    videoSolutionSlug: 'edexcel-maths-l2-past-paper-2-section-a',
+    sections: [
+      {
+        id: 'A',
+        name: 'Section A: Non-Calculator',
+        code: 'PMAT2/N02',
+        durationMinutes: 25,
+        totalMarks: 16,
+        isCalcAllowed: false,
+        instructions: 'Calculators may NOT be used. Check your working and your answers at each stage.',
+        questions: [
+          {
+            num: 1,
+            section: 'Section A: Non-Calculator',
+            isCalcAllowed: false,
+            marks: 3,
+            markTags: '[M1, A1, B1]',
+            scenarioTitle: 'Median & Modal Race Times',
+            scenarioText: 'Here are the race times in seconds for 5 runners:\n11.12, 10.94, 11.05, 11.12, 10.91',
+            promptText: '(a) Work out the median race time.\n(b) What is the modal race time?',
+            unit: 's',
+            expectedType: 'number',
+            parts: [
+              { id: 'a', label: 'Part (a) Median time', placeholder: 'e.g. 11.05', unit: 's' },
+              { id: 'b', label: 'Part (b) Modal time', placeholder: 'e.g. 11.12', unit: 's' }
+            ],
+            modelSolution: '(a) Ascending order: 10.91, 10.94, 11.05, 11.12, 11.12 [M1]; Middle value = 11.05 seconds [A1]\n(b) 11.12 appears twice (most frequent) -> Mode = 11.12 seconds [B1]',
+            finalBenchmark: '11.05 s / 11.12 s'
+          },
+          {
+            num: 2,
+            section: 'Section A: Non-Calculator',
+            isCalcAllowed: false,
+            marks: 3,
+            markTags: '[M1, M1, A1]',
+            scenarioTitle: 'Formula Evaluation with Roots and Powers',
+            scenarioText: 'A formula to calculate vertical height is:\nh = √(a² − b²)\nwhere a = 10 and b = 8.',
+            promptText: 'Work out the value of h without using a calculator.',
+            unit: '',
+            expectedType: 'number',
+            parts: [
+              { id: 'h', label: 'Value of h', placeholder: 'e.g. 6', unit: '' }
+            ],
+            modelSolution: 'a² = 10² = 100; b² = 8² = 64 [M1]; a² − b² = 100 − 64 = 36 [M1]; h = √36 = 6 [A1]',
+            finalBenchmark: '6'
+          },
+          {
+            num: 3,
+            section: 'Section A: Non-Calculator',
+            isCalcAllowed: false,
+            marks: 4,
+            markTags: '[M1, M1, M1, A1]',
+            scenarioTitle: 'Hospital Patient Meal Fractions',
+            scenarioText: 'There are 240 patients in a community hospital.\n• 1/3 of the patients choose pasta\n• 3/8 of the patients choose beef stew\n• The rest of the patients choose chicken.',
+            promptText: 'How many patients choose chicken? You must show your working.',
+            unit: 'patients',
+            expectedType: 'number',
+            parts: [
+              { id: 'chicken', label: 'Number of patients choosing chicken', placeholder: 'e.g. 70', unit: 'patients' }
+            ],
+            modelSolution: 'Pasta = 240 ÷ 3 = 80 [M1]; Stew = (240 ÷ 8) × 3 = 30 × 3 = 90 [M1]; Combined = 80 + 90 = 170 [M1]; Chicken = 240 − 170 = 70 patients [A1]',
+            finalBenchmark: '70 patients'
+          },
+          {
+            num: 4,
+            section: 'Section A: Non-Calculator',
+            isCalcAllowed: false,
+            marks: 6,
+            markTags: '[M1, A1, M1, A1, C1, C1]',
+            scenarioTitle: 'Paving Slabs & Garden Perimeter Budget',
+            scenarioText: 'A landscaper lays square concrete paving slabs around a rectangular garden patio 6 m by 4 m. Each slab is 50 cm by 50 cm and costs £4.50. The client has a maximum budget of £250.',
+            promptText: 'Determine if the total cost of paving slabs is within the client budget.',
+            unit: '£',
+            expectedType: 'decision',
+            parts: [
+              { id: 'slabs', label: 'Number of slabs needed', placeholder: 'e.g. 44', unit: '' },
+              { id: 'cost', label: 'Total Cost', placeholder: 'e.g. 198.00', unit: '£' },
+              { id: 'decision', label: 'Within budget?', placeholder: 'State Yes/No with difference from £250', unit: '' }
+            ],
+            modelSolution: 'Patio perimeter = 2 × (6 + 4) = 20 m; Border area / perimeter slabs calculation [M1, A1]; Slabs = 44 slabs at £4.50 = £198.00 [M1, A1]; £198.00 < £250.00 (under budget by £52). Yes, within budget [C1, C1]',
+            finalBenchmark: 'Yes (Total £198.00 is £52 under budget)'
+          }
+        ]
+      },
+      {
+        id: 'B',
+        name: 'Section B: Calculator',
+        code: 'PMAT2/C02',
+        durationMinutes: 90,
+        totalMarks: 48,
+        isCalcAllowed: true,
+        instructions: 'Calculators may be used. Check your working and your answers at each stage.',
+        questions: [
+          { num: 1, section: 'Dimension Constraints: Kitchen Fridges', isCalcAllowed: true, marks: 3, markTags: '[M1, M1, A1]', scenarioTitle: 'Kitchen Appliance Unit Fit', scenarioText: 'Maximum opening dimensions: Width 19 inches, Depth 22 inches, Height 36 inches (1 inch = 2.54 cm).\n• Fridge A: W 47.2 cm, D 44.6 cm, H 84.2 cm\n• Fridge B: W 49.4 cm, D 52.0 cm, H 85.0 cm\n• Fridge C: W 46.0 cm, D 54.0 cm, H 94.2 cm.', promptText: 'Which fridge will fit into the space? Show your working.', unit: '', expectedType: 'text', modelSolution: 'Opening: W = 19 × 2.54 = 48.26 cm; D = 22 × 2.54 = 55.88 cm; H = 36 × 2.54 = 91.44 cm [M1, M1]; Fridge B too wide (49.4 > 48.26); Fridge C too tall (94.2 > 91.44); Only Fridge A fits [A1]', finalBenchmark: 'Fridge A' },
+          { num: 2, section: 'Coordinate Geometry: Parallelogram', isCalcAllowed: true, marks: 3, markTags: '[B1, B1, B1]', scenarioTitle: 'Plotting Parallelogram ABCD', scenarioText: 'A coordinate grid has points A(−2, 1), B(2, 4), and C(1, −1).\n(a) Write down coordinates of C.\n(b) Find coordinates of D to complete parallelogram ABCD.\n(c) State the sum of interior angles of ABCD.', promptText: 'State coordinates of C, D, and interior angle sum.', unit: '', expectedType: 'text', modelSolution: '(a) C(1, −1) [B1]; (b) Vector AB is (+4, +3); applying to C gives D(5, 2) [B1]; (c) Sum of angles in any quadrilateral = 360° [B1]', finalBenchmark: 'C(1, −1) / D(5, 2) / 360°' },
+          { num: 3, section: 'Currency Exchange & Commission', isCalcAllowed: true, marks: 4, markTags: '[M1, M1, M1, A1]', scenarioTitle: 'Holiday Spending Money', scenarioText: 'Exchange rate: £1 = €1.16 with 2% commission fee. Calculate net euros received for £850.', promptText: 'Calculate euros received after 2% fee.', unit: '€', expectedType: 'number', modelSolution: 'Fee = £850 × 0.02 = £17; Exchanged = 850 − 17 = £833 [M1]; Euros = 833 × 1.16 = €966.28 [M1, A1]', finalBenchmark: '€966.28' },
+          { num: 4, section: 'Cylindrical Storage Tank Volume', isCalcAllowed: true, marks: 4, markTags: '[M1, M1, M1, A1]', scenarioTitle: 'Oil Tank Capacity', scenarioText: 'Cylindrical fuel tank diameter 1.6 m, length 3.2 m. Volume = πr²h. 1 m³ = 1000 litres.', promptText: 'Calculate tank volume in litres.', unit: 'litres', expectedType: 'number', modelSolution: 'r = 0.8 m; V = π × 0.8² × 3.2 = 6.434 m³ [M1, M1]; 6.434 × 1000 = 6434 litres [M1, A1]', finalBenchmark: '6434 litres' },
+          { num: 5, section: 'Salary Budget & Percentage Increases', isCalcAllowed: true, marks: 5, markTags: '[M1, M1, M1, M1, A1]', scenarioTitle: 'Staff Annual Pay Award', scenarioText: 'Department payroll has 8 staff earning £26,500 each and 2 managers earning £38,000 each. A 4.5% pay rise is awarded across all employees.', promptText: 'Calculate the total increase in annual payroll costs.', unit: '£', expectedType: 'number', modelSolution: 'Total salary = (8 × 26,500) + (2 × 38,000) = 212,000 + 76,000 = £288,000 [M1, M1]; Increase = 288,000 × 0.045 = £12,960 [M1, A1]', finalBenchmark: '£12,960' },
+          { num: 6, section: 'Triangular Prism Cross Section', isCalcAllowed: true, marks: 4, markTags: '[M1, M1, M1, A1]', scenarioTitle: 'Cardboard Toblerone Packaging', scenarioText: 'A packaging carton is a right triangular prism with triangular face base 6 cm, height 5.2 cm, and prism length 28 cm.', promptText: 'Work out the total volume of the carton.', unit: 'cm³', expectedType: 'number', modelSolution: 'Triangle area = (6 × 5.2) ÷ 2 = 15.6 cm² [M1]; Volume = 15.6 × 28 = 436.8 cm³ [M1, A1]', finalBenchmark: '436.8 cm³' },
+          { num: 7, section: 'Speed, Distance & Journey Timing', isCalcAllowed: true, marks: 4, markTags: '[M1, M1, M1, A1]', scenarioTitle: 'Delivery Route Timetable', scenarioText: 'A courier drives 135 miles at an average speed of 45 mph. They take a 35-minute break at the depot and depart at 08:45.', promptText: 'At what time does the courier arrive at the destination?', unit: '', expectedType: 'text', modelSolution: 'Driving time = 135 ÷ 45 = 3 hours [M1]; Total time = 3 hr + 35 min = 3 hr 35 min [M1]; Arrival = 08:45 + 3 hr 35 min = 12:20 [M1, A1]', finalBenchmark: '12:20' },
+          { num: 8, section: 'Grouped Frequency & Mean Estimation', isCalcAllowed: true, marks: 6, markTags: '[M1, A1, M1, M1, A1, B1]', scenarioTitle: 'Customer Waiting Times', scenarioText: 'Waiting times (minutes): 0–10 (12 people), 10–20 (24 people), 20–30 (16 people), 30–40 (8 people).', promptText: 'Calculate an estimate of the mean waiting time.', unit: 'mins', expectedType: 'number', modelSolution: 'Midpoints: 5, 15, 25, 35 [M1]; fx = (5×12) + (15×24) + (25×16) + (35×8) = 60 + 360 + 400 + 280 = 1100 [M1, M1]; Total freq = 60 [M1]; Estimated mean = 1100 ÷ 60 = 18.33 minutes [A1, B1]', finalBenchmark: '18.3 minutes' },
+          { num: 9, section: 'Compound Interest Over 3 Years', isCalcAllowed: true, marks: 4, markTags: '[M1, M1, M1, A1]', scenarioTitle: 'Business Investment Growth', scenarioText: 'An enterprise invests £15,000 at 3.2% compound interest per year for 3 years.', promptText: 'Calculate the total value of the investment at the end of 3 years.', unit: '£', expectedType: 'number', modelSolution: 'Multiplier = 1 + 0.032 = 1.032 [M1]; 15,000 × (1.032)³ = 15,000 × 1.0991 = £16,486.63 [M1, A1]', finalBenchmark: '£16,486.63' },
+          { num: 10, section: 'Probability Tree Diagrams', isCalcAllowed: true, marks: 4, markTags: '[M1, M1, M1, A1]', scenarioTitle: 'Independent Diagnostic Testing', scenarioText: 'Probability Test 1 passes = 0.85; Probability Test 2 passes = 0.90.', promptText: 'Calculate the probability that both tests pass.', unit: '', expectedType: 'number', modelSolution: 'P(Both Pass) = 0.85 × 0.90 = 0.765 (or 76.5%) [M1, A1]', finalBenchmark: '0.765' },
+          { num: 11, section: 'Floor Tiling with Wastage Allowance', isCalcAllowed: true, marks: 5, markTags: '[M1, M1, M1, M1, A1]', scenarioTitle: 'Office Floor Tiling', scenarioText: 'Floor area is 65 m². Tiles cost £24/m². The builder adds a 10% wastage allowance before ordering.', promptText: 'Calculate the total cost of tiles needed including 10% wastage.', unit: '£', expectedType: 'number', modelSolution: 'Wastage = 65 × 1.10 = 71.5 m² [M1, M1]; Total cost = 71.5 × £24 = £1,716.00 [M1, A1]', finalBenchmark: '£1,716.00' },
+          { num: 12, section: 'Scatter Graph & Line of Best Fit', isCalcAllowed: true, marks: 6, markTags: '[M1, A1, B1, M1, A1, B1]', scenarioTitle: 'Energy Consumption Trend', scenarioText: 'Daily heating gas consumption plotted against outdoor temperature.', promptText: '(a) Describe the correlation. (b) Predict gas units at 4°C.', unit: '', expectedType: 'text', modelSolution: 'Negative correlation (as outdoor temp increases, gas use decreases) [B1]; Estimate from trendline gives approx 65–72 units [M1, A1]', finalBenchmark: 'Negative correlation; approx 68 units' }
+        ]
+      }
+    ]
+  },
+
   // 2. PEARSON EDEXCEL FUNCTIONAL SKILLS ENGLISH WRITING LEVEL 1 - PRACTICE 1
   // =========================================================================
   'edexcel-english-writing-l1-practice-1': {
@@ -619,15 +1061,17 @@ function getOrCreatePaper(key) {
   // Dynamic fallback generator for any paper link from website
   const isWriting = key.includes('writing') || key.includes('english-writing');
   const isReading = key.includes('reading') || key.includes('english-reading');
+  const isMaths = !isWriting && !isReading;
 
-  const subjectName = isWriting ? 'English Writing' : (isReading ? 'English Reading' : 'Mathematics');
-  const levelName = key.includes('l2') || key.includes('level-2') ? 'Level 2' : 'Level 1';
-  const paperNum = key.match(/paper-(\d+)/) ? key.match(/paper-(\d+)/)[1] : (key.match(/practice-(\d+)/) ? `Practice ${key.match(/practice-(\d+)/)[1]}` : '1');
+  const levelName = (key.includes('l2') || key.includes('level-2')) ? 'Level 2' : 'Level 1';
+  const paperMatch = key.match(/paper-(\d+)/) || key.match(/practice-(\d+)/);
+  const paperNum = paperMatch ? paperMatch[1] : (key.match(/([a-z0-9\-]+)$/) ? key.match(/([a-z0-9\-]+)$/)[1] : '1');
+  const boardName = key.includes('aqa') ? 'AQA' : (key.includes('city') ? 'City & Guilds' : (key.includes('ncfe') ? 'NCFE' : (key.includes('tquk') ? 'TQUK' : (key.includes('nocn') ? 'NOCN' : 'Pearson Edexcel'))));
 
   if (isWriting) {
     return {
-      title: `Edexcel Functional Skills ${subjectName} ${levelName} — Paper ${paperNum}`,
-      board: 'Pearson Edexcel',
+      title: `${boardName} Functional Skills English Writing ${levelName} — Paper ${paperNum}`,
+      board: boardName,
       subject: 'writing',
       level: levelName,
       paperNumber: paperNum,
@@ -666,37 +1110,155 @@ function getOrCreatePaper(key) {
       ]
     };
   } else if (isReading) {
+    const isL2Reading = levelName === 'Level 2';
     return {
-      title: `Edexcel Functional Skills ${subjectName} ${levelName} — Paper ${paperNum}`,
-      board: 'Pearson Edexcel',
+      title: `${boardName} Functional Skills English Reading ${levelName} — Paper ${paperNum}`,
+      board: boardName,
       subject: 'reading',
       level: levelName,
       paperNumber: paperNum,
-      durationMinutes: 60,
+      durationMinutes: isL2Reading ? 75 : 60,
       sourceTexts: [
-        { id: 'text-a', label: 'Text A', title: 'Text A: Informational Article', content: `Source Text A for Paper ${paperNum}.\nPlease consult the official Question Paper PDF if full text extraction is in progress.` },
-        { id: 'text-b', label: 'Text B', title: 'Text B: Guidance Webpage', content: `Source Text B for Paper ${paperNum}.\nPlease consult the official Question Paper PDF if full text extraction is in progress.` }
+        { id: 'text-a', label: 'Text A', title: 'Text A: Informational Article', content: `Source Text A for ${boardName} English Reading ${levelName} Paper ${paperNum}.\nPlease consult the official Question Paper PDF for complete source articles.` },
+        { id: 'text-b', label: 'Text B', title: 'Text B: Guidance Webpage', content: `Source Text B for ${boardName} English Reading ${levelName} Paper ${paperNum}.\nPlease consult the official Question Paper PDF for complete source articles.` },
+        { id: 'text-c', label: 'Text C', title: 'Text C: Public Notice / Factsheet', content: `Source Text C for ${boardName} English Reading ${levelName} Paper ${paperNum}.\nPlease consult the official Question Paper PDF for complete source articles.` }
       ],
-      questions: [
+      questions: isL2Reading ? [
+        { num: 1, section: 'Text A Analysis', marks: 2, promptText: 'Identify two reasons given in Text A regarding the primary issue.', expectedType: 'text', modelSolution: 'Consult mark scheme for accredited details.', finalBenchmark: '2 marks' },
+        { num: 2, section: 'Text A Organisational Features', marks: 2, promptText: 'Explain how the author uses organisational features in Text A to present information clearly.', expectedType: 'text', modelSolution: 'Use of subheadings, bullet points, and bold text.', finalBenchmark: '2 marks' },
+        { num: 3, section: 'Text B Vocabulary & Tone', marks: 2, promptText: 'Give the meaning of the key term as used in paragraph 3 of Text B.', expectedType: 'text', modelSolution: 'Vocabulary definition in context.', finalBenchmark: '2 marks' },
+        { num: 4, section: 'Text B Bias & Fact vs Opinion', marks: 3, promptText: 'Identify one fact and two opinions expressed in Text B.', expectedType: 'text', modelSolution: 'Fact vs opinion differentiation.', finalBenchmark: '3 marks' },
+        { num: 5, section: 'Text C Implication & Purpose', marks: 3, promptText: 'What is the main purpose of Text C? Support your answer with two textual examples.', expectedType: 'text', modelSolution: 'Purpose identification with textual evidence.', finalBenchmark: '3 marks' },
+        { num: 6, section: 'Synthesis & Comparison', marks: 3, promptText: 'Compare the views presented in Text A and Text C regarding the proposed change.', expectedType: 'text', modelSolution: 'Comparison of perspectives across texts.', finalBenchmark: '3 marks' }
+      ] : [
+        { num: 1, section: 'Text A Retrieval', marks: 2, promptText: 'Identify two key facts provided in Text A.', expectedType: 'text', modelSolution: 'Factual retrieval from Text A.', finalBenchmark: '2 marks' },
+        { num: 2, section: 'Text A Main Purpose', marks: 2, promptText: 'What is the main purpose of Text A?', expectedType: 'text', modelSolution: 'Informative / instructional purpose.', finalBenchmark: '2 marks' },
+        { num: 3, section: 'Text B Information Search', marks: 2, promptText: 'According to Text B, what should a reader do first?', expectedType: 'text', modelSolution: 'Instructional retrieval from Text B.', finalBenchmark: '2 marks' },
+        { num: 4, section: 'Text B & C Comparison', marks: 3, promptText: 'Identify one similarity and one difference in the advice given in Text B and Text C.', expectedType: 'text', modelSolution: 'Cross-text comparative synthesis.', finalBenchmark: '3 marks' }
+      ]
+    };
+  }
+
+  // Mathematics: Level 2 vs Level 1
+  if (levelName === 'Level 2') {
+    // Generate Level 2 Maths paper with Section A (25 min, 16 marks, 4 Qs) and Section B (90 min, 48 marks, 12 Qs)
+    return {
+      title: `${boardName} Functional Skills Mathematics Level 2 — Past Paper ${paperNum}`,
+      board: boardName,
+      subject: 'maths',
+      level: 'Level 2',
+      paperNumber: paperNum,
+      durationMinutes: 115,
+      sections: [
         {
-          num: 1,
-          section: 'Reading Comprehension',
+          id: 'A',
+          name: 'Section A: Non-Calculator',
+          code: 'PMAT2/N01',
+          durationMinutes: 25,
+          totalMarks: 16,
           isCalcAllowed: false,
-          marks: 2,
-          markTags: '[2 marks]',
-          scenarioTitle: 'Text A Retrieval',
-          scenarioText: 'Refer to Text A in the Source Booklet.',
-          promptText: 'Identify two key facts or instructions provided in Text A.',
-          unit: '',
-          expectedType: 'text',
-          modelSolution: 'Refer to official Pearson Edexcel mark scheme for verified answers.',
-          finalBenchmark: 'Model Answer'
+          instructions: 'Calculators may NOT be used. Check your working and your answers at each stage.',
+          questions: [
+            {
+              num: 1,
+              section: 'Section A: Non-Calculator',
+              isCalcAllowed: false,
+              marks: 3,
+              markTags: '[M1, A1, B1]',
+              scenarioTitle: 'Core Non-Calculator Decimals & Indices',
+              scenarioText: `Question 1 for ${boardName} Level 2 Mathematics Paper ${paperNum}.`,
+              promptText: '(a) Work out 6.4 × 8.5 without a calculator.\n(b) Work out 5 × 4²',
+              expectedType: 'number',
+              parts: [
+                { id: 'a', label: 'Part (a) 6.4 × 8.5', placeholder: 'e.g. 54.4', unit: '' },
+                { id: 'b', label: 'Part (b) 5 × 4²', placeholder: 'e.g. 80', unit: '' }
+              ],
+              modelSolution: '(a) 64 × 85 = 5440 -> 54.4 [M1, A1]\n(b) 4² = 16; 5 × 16 = 80 [B1]',
+              finalBenchmark: '54.4 / 80'
+            },
+            {
+              num: 2,
+              section: 'Section A: Non-Calculator',
+              isCalcAllowed: false,
+              marks: 3,
+              markTags: '[M1, M1, A1]',
+              scenarioTitle: 'Negative Financial Balances & Budgeting',
+              scenarioText: 'A commercial bank account starts with a negative balance of −£245.80. A client pays in £1,450.00 and an automatic invoice payment of £680.50 is deducted.',
+              promptText: 'Calculate the final account balance at the end of the day.',
+              unit: '£',
+              expectedType: 'number',
+              parts: [
+                { id: 'balance', label: 'Closing Balance', placeholder: 'e.g. 523.70', unit: '£' }
+              ],
+              modelSolution: '−245.80 + 1450.00 = £1204.20 [M1]; 1204.20 − 680.50 = £523.70 [M1, A1]',
+              finalBenchmark: '£523.70'
+            },
+            {
+              num: 3,
+              section: 'Section A: Non-Calculator',
+              isCalcAllowed: false,
+              marks: 4,
+              markTags: '[M1, M1, M1, A1]',
+              scenarioTitle: 'Compound Shape Perimeter & Estimation',
+              scenarioText: 'A specialist workshop needs perimeter protective barrier edging around an L-shaped engineering bay measuring 18.6 m by 12.4 m.',
+              promptText: 'Use rounding to 1 significant figure to estimate the total length of protective edging required.',
+              unit: 'm',
+              expectedType: 'number',
+              parts: [
+                { id: 'estimate', label: 'Estimated Perimeter', placeholder: 'e.g. 60', unit: 'm' }
+              ],
+              modelSolution: 'Round to 1 sig fig: 18.6 ≈ 20 m, 12.4 ≈ 10 m [M1]; Perimeter = 2 × (20 + 10) = 60 m [M1, A1]',
+              finalBenchmark: '60 m'
+            },
+            {
+              num: 4,
+              section: 'Section A: Non-Calculator',
+              isCalcAllowed: false,
+              marks: 6,
+              markTags: '[M1, A1, M1, A1, C1, C1]',
+              scenarioTitle: 'Comparing Averages & Data Consistency',
+              scenarioText: 'Compare delivery wait times across two logistics depots (Depot 1 median: 14.2 min, range: 18 min; Depot 2 raw dataset: 12, 15, 9, 28, 14, 11, 33, 16, 10, 22).',
+              promptText: 'Calculate the median and range for Depot 2, then explain which depot has faster average deliveries and which is more consistent.',
+              unit: '',
+              expectedType: 'text',
+              parts: [
+                { id: 'median', label: 'Depot 2 Median', placeholder: 'e.g. 14.5', unit: 'mins' },
+                { id: 'range', label: 'Depot 2 Range', placeholder: 'e.g. 24', unit: 'mins' },
+                { id: 'conclusion', label: 'Comparison Conclusion', placeholder: 'Compare medians and consistency', unit: '' }
+              ],
+              modelSolution: 'Ordered: 9, 10, 11, 12, 14, 15, 16, 22, 28, 33 [M1]; Median = (14 + 15)/2 = 14.5 min [A1]; Range = 33 − 9 = 24 min [M1, A1]; Comparison: Depot 1 is faster (14.2 < 14.5) and more consistent (18 < 24) [C1, C1]',
+              finalBenchmark: 'Depot 2 Median: 14.5 mins, Range: 24 mins'
+            }
+          ]
+        },
+        {
+          id: 'B',
+          name: 'Section B: Calculator',
+          code: 'PMAT2/C01',
+          durationMinutes: 90,
+          totalMarks: 48,
+          isCalcAllowed: true,
+          instructions: 'Calculators may be used. Check your working and your answers at each stage.',
+          questions: [
+            { num: 1, section: 'Rates of Pay & Overtime', isCalcAllowed: true, marks: 3, markTags: '[M1, M1, A1]', scenarioTitle: 'Overtime Earnings', scenarioText: 'Standard hourly wage is £11.40. Overtime is paid at time and a half for 8.5 hours.', promptText: 'Calculate total overtime pay.', unit: '£', expectedType: 'number', modelSolution: '11.40 × 1.5 = £17.10/hr; 17.10 × 8.5 = £145.35 [M1, A1]', finalBenchmark: '£145.35' },
+            { num: 2, section: '3D Geometry: Volume of Cylinder', isCalcAllowed: true, marks: 3, markTags: '[M1, M1, A1]', scenarioTitle: 'Cylindrical Storage Tank', scenarioText: 'A cylindrical water tank has radius 1.2 m and height 2.5 m. Volume = πr²h.', promptText: 'Work out the volume of water the tank can hold. Use π = 3.142 or calculator π.', unit: 'm³', expectedType: 'number', modelSolution: 'V = π × 1.2² × 2.5 = π × 1.44 × 2.5 = 11.31 m³ [M1, A1]', finalBenchmark: '11.31 m³' },
+            { num: 3, section: 'Reverse Calculations & Proportions', isCalcAllowed: true, marks: 4, markTags: '[M1, M1, A1, B1]', scenarioTitle: 'Batch Production Scaling', scenarioText: 'A catering recipe for 15 portions requires 450 g butter. Work out the butter needed for 36 portions, and show a reverse check.', promptText: '(a) Butter required for 36 portions. (b) Reverse check.', unit: 'g', expectedType: 'number', modelSolution: 'Per portion = 450 ÷ 15 = 30 g; 30 × 36 = 1080 g [M1, A1]; Check: 1080 ÷ 36 = 30 g [B1]', finalBenchmark: '1080 g' },
+            { num: 4, section: 'Angle Properties & Triangles', isCalcAllowed: true, marks: 4, markTags: '[M1, M1, M1, A1]', scenarioTitle: 'Roof Truss Angles', scenarioText: 'An isosceles roof truss has an apex angle of 48°. Work out the size of the base angles.', promptText: 'Calculate the base angle of the isosceles truss.', unit: '°', expectedType: 'number', modelSolution: '(180 − 48) ÷ 2 = 132 ÷ 2 = 66° [M1, A1]', finalBenchmark: '66°' },
+            { num: 5, section: 'Compound Area & Pack Costing', isCalcAllowed: true, marks: 5, markTags: '[M1, M1, M1, M1, A1]', scenarioTitle: 'Flooring Tiles & Whole Packs', scenarioText: 'A rectangular clinic lobby 8.4 m by 5.5 m needs tiles. Tiles come in boxes covering 2.4 m² at £38.50 per box. Only full boxes can be purchased.', promptText: 'Calculate the total cost of tiles needed.', unit: '£', expectedType: 'number', modelSolution: 'Area = 8.4 × 5.5 = 46.2 m²; Boxes = 46.2 ÷ 2.4 = 19.25 -> 20 boxes; Cost = 20 × £38.50 = £770.00 [M1, A1]', finalBenchmark: '£770.00' },
+            { num: 6, section: 'Percentage Increase / Decrease', isCalcAllowed: true, marks: 3, markTags: '[M1, M1, A1]', scenarioTitle: 'Retail Discount Verification', scenarioText: 'A machinery item originally £420 is reduced to £315 in a clearance event. The store advertises "30% off".', promptText: 'Check if the advertised 30% discount is accurate. Show your working.', unit: '', expectedType: 'decision', modelSolution: 'Saving = 420 − 315 = £105; 105 ÷ 420 × 100 = 25%; Advertised 30% is incorrect (actual is 25%) [M1, A1]', finalBenchmark: 'No (Actual discount is 25%)' },
+            { num: 7, section: 'Scale Plans & Bearings', isCalcAllowed: true, marks: 4, markTags: '[M1, A1, M1, A1]', scenarioTitle: 'Surveyor Scale Plan', scenarioText: 'On a plan drawn to scale 1 : 250, the distance between two survey points measures 14.8 cm.', promptText: 'Calculate the actual real-world distance between the two survey points in metres.', unit: 'm', expectedType: 'number', modelSolution: '14.8 × 250 = 3700 cm = 37.0 m [M1, A1]', finalBenchmark: '37 m' },
+            { num: 8, section: 'Bivariate Data & Scatter Graphs', isCalcAllowed: true, marks: 6, markTags: '[M1, A1, B1, M1, A1, B1]', scenarioTitle: 'Scatter Graph Analysis', scenarioText: 'A study compares staff training hours against customer satisfaction ratings.', promptText: '(a) Identify the correlation. (b) Use a line of best fit to predict satisfaction for 35 hours of training.', unit: '', expectedType: 'text', modelSolution: 'Positive correlation; Estimate from trend line gives approx 82–88 rating [M1, A1]', finalBenchmark: 'Positive correlation; approx 85%' },
+            { num: 9, section: 'Algebraic Formulas & Density', isCalcAllowed: true, marks: 4, markTags: '[M1, M1, M1, A1]', scenarioTitle: 'Material Density & Mass', scenarioText: 'Density = Mass ÷ Volume. A metal alloy casting has mass 14.85 kg and volume 0.0018 m³.', promptText: 'Calculate the density of the metal alloy in kg/m³.', unit: 'kg/m³', expectedType: 'number', modelSolution: 'Density = 14.85 ÷ 0.0018 = 8250 kg/m³ [M1, A1]', finalBenchmark: '8250 kg/m³' },
+            { num: 10, section: 'Fraction Operations & Mixed Numbers', isCalcAllowed: true, marks: 3, markTags: '[M1, A1, B1]', scenarioTitle: 'Mixed Number Arithmetic', scenarioText: 'Work out 2 3/4 + 1 2/5 and give your answer as a mixed number in simplest form.', promptText: 'Calculate 2 3/4 + 1 2/5.', unit: '', expectedType: 'text', modelSolution: '2 3/4 = 11/4 = 55/20; 1 2/5 = 7/5 = 28/20; 55/20 + 28/20 = 83/20 = 4 3/20 [M1, A1]', finalBenchmark: '4 3/20' },
+            { num: 11, section: 'Ratio in Three Parts', isCalcAllowed: true, marks: 5, markTags: '[M1, M1, M1, M1, A1]', scenarioTitle: 'Budget Sharing Ratio', scenarioText: 'A community grant of £84,000 is shared between Education, Healthcare, and Infrastructure in the ratio 3 : 5 : 4.', promptText: 'How much funding does Healthcare receive?', unit: '£', expectedType: 'number', modelSolution: 'Total parts = 3 + 5 + 4 = 12; 1 part = 84,000 ÷ 12 = £7,000; Healthcare = 5 × 7,000 = £35,000 [M1, A1]', finalBenchmark: '£35,000' },
+            { num: 12, section: 'Two-Way Tables & Probability', isCalcAllowed: true, marks: 6, markTags: '[M1, A1, M1, A1, M1, A1]', scenarioTitle: 'Quality Inspection Contingency Table', scenarioText: 'A factory tests 120 components across two production lines. Complete the contingency table and calculate the conditional probability of selecting a pass from Line B.', promptText: 'Complete table and state simplified probability.', unit: '', expectedType: 'text', modelSolution: 'Table completion; P(Pass | Line B) = 48/60 = 4/5 [M1, A1]', finalBenchmark: '4/5 (or 0.8)' }
+          ]
         }
       ]
     };
   }
 
-  // Fallback to Maths Level 1 Paper 1
+  // Level 1 Maths Paper
   return MFS_MOCK_DATA['edexcel-maths-l1-paper-1'];
 }
 

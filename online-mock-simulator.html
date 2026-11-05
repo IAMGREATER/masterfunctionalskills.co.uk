@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="assets/css/mfs-theme.css?v=20261024c">
   <link rel="stylesheet" href="assets/css/mfs-revision.css?v=20261024c">
   <link rel="stylesheet" href="assets/css/mfs-mobile.css?v=20261024c">
-  <link rel="stylesheet" href="assets/css/online-mock-simulator.css?v=20261105_fixed_pills_cover_v7">
+  <link rel="stylesheet" href="assets/css/online-mock-simulator.css?v=20261105_calc_onscreen_v8">
 </head>
 <body>
 
@@ -375,57 +375,60 @@
           <!-- Multiple Choice Container (Reading Mode) -->
           <div id="simMcqContainer" class="sim-mcq-group" style="display:none;"></div>
 
-          <!-- Main Typed Working Box -->
-          <div class="sim-working-card" id="simWorkingCard">
-            <textarea class="sim-working-textarea" id="simWorkingTextarea" oninput="handleWorkingInput(this.value)" placeholder="Type your working steps, calculations, and intermediate methods here..."></textarea>
-          </div>
-
-          <!-- Proofreading Checklist (Writing Mode) -->
-          <div class="sim-checklist-card" id="simWritingChecklist" style="display:none;">
-            <div class="sim-checklist-title">
-              <i class="fa-solid fa-clipboard-check"></i> Proofreading &amp; Format Checklist:
-            </div>
-            <div id="simChecklistItems"></div>
-          </div>
-
-          <!-- Built-in Onscreen Calculator -->
-          <div>
-            <div id="simCalcLockedBanner" class="sim-calc-locked-banner" style="display:none;">
-              <i class="fa-solid fa-lock" style="font-size:1rem;"></i>
-              <div>
-                <strong>Section A (Non-Calculator):</strong> Calculator is disabled for this section in accordance with official Pearson Edexcel exam regulations.
-              </div>
+          <!-- Working & Calculator Workspace (Side-by-side in Section B, Full-width in Section A) -->
+          <div class="sim-working-workspace" id="simWorkingWorkspace">
+            <!-- Main Typed Working Box -->
+            <div class="sim-working-card" id="simWorkingCard">
+              <textarea class="sim-working-textarea" id="simWorkingTextarea" oninput="handleWorkingInput(this.value)" placeholder="Type your working steps, calculations, and intermediate methods here..."></textarea>
             </div>
 
-            <div id="simCalcDrawer" class="sim-calc-drawer">
-              <div class="sim-calc-header">
-                <span><i class="fa-solid fa-calculator" style="color:var(--sim-sky);"></i> Onscreen Exam Calculator (Section B)</span>
-                <span style="font-size:0.72rem; color:#64748b;">Standard Arithmetic</span>
+            <!-- Proofreading Checklist (Writing Mode) -->
+            <div class="sim-checklist-card" id="simWritingChecklist" style="display:none;">
+              <div class="sim-checklist-title">
+                <i class="fa-solid fa-clipboard-check"></i> Proofreading &amp; Format Checklist:
               </div>
-              <div class="sim-calc-screen" id="simCalcScreen">0</div>
-              <div class="sim-calc-keypad">
-                <button type="button" class="sim-calc-key" onclick="calcClear()">C</button>
-                <button type="button" class="sim-calc-key" onclick="calcSqrt()">√</button>
-                <button type="button" class="sim-calc-key op" onclick="calcOp('÷')">÷</button>
-                <button type="button" class="sim-calc-key op" onclick="calcOp('×')">×</button>
+              <div id="simChecklistItems"></div>
+            </div>
 
-                <button type="button" class="sim-calc-key" onclick="calcDigit(7)">7</button>
-                <button type="button" class="sim-calc-key" onclick="calcDigit(8)">8</button>
-                <button type="button" class="sim-calc-key" onclick="calcDigit(9)">9</button>
-                <button type="button" class="sim-calc-key op" onclick="calcOp('-')">−</button>
+            <!-- Built-in Onscreen Calculator (Docked Side-by-Side in Section B) -->
+            <div id="simCalcDrawerWrap" class="sim-calc-drawer-wrap" style="display:none;">
+              <div id="simCalcLockedBanner" class="sim-calc-locked-banner" style="display:none;">
+                <i class="fa-solid fa-lock" style="font-size:0.95rem;"></i>
+                <div>
+                  <strong>Section A:</strong> Non-calculator section.
+                </div>
+              </div>
 
-                <button type="button" class="sim-calc-key" onclick="calcDigit(4)">4</button>
-                <button type="button" class="sim-calc-key" onclick="calcDigit(5)">5</button>
-                <button type="button" class="sim-calc-key" onclick="calcDigit(6)">6</button>
-                <button type="button" class="sim-calc-key op" onclick="calcOp('+')">+</button>
+              <div id="simCalcDrawer" class="sim-calc-drawer">
+                <div class="sim-calc-header">
+                  <span><i class="fa-solid fa-calculator" style="color:var(--sim-sky);"></i> Exam Calculator</span>
+                  <span style="font-size:0.72rem; color:#94a3b8;">Section B</span>
+                </div>
+                <div class="sim-calc-screen" id="simCalcScreen">0</div>
+                <div class="sim-calc-keypad">
+                  <button type="button" class="sim-calc-key" onclick="calcClear()">C</button>
+                  <button type="button" class="sim-calc-key" onclick="calcSqrt()">√</button>
+                  <button type="button" class="sim-calc-key op" onclick="calcOp('÷')">÷</button>
+                  <button type="button" class="sim-calc-key op" onclick="calcOp('×')">×</button>
 
-                <button type="button" class="sim-calc-key" onclick="calcDigit(1)">1</button>
-                <button type="button" class="sim-calc-key" onclick="calcDigit(2)">2</button>
-                <button type="button" class="sim-calc-key" onclick="calcDigit(3)">3</button>
-                <button type="button" class="sim-calc-key eq" onclick="calcCalculate()" style="grid-row: span 2;">=</button>
+                  <button type="button" class="sim-calc-key" onclick="calcDigit(7)">7</button>
+                  <button type="button" class="sim-calc-key" onclick="calcDigit(8)">8</button>
+                  <button type="button" class="sim-calc-key" onclick="calcDigit(9)">9</button>
+                  <button type="button" class="sim-calc-key op" onclick="calcOp('-')">−</button>
 
-                <button type="button" class="sim-calc-key" onclick="calcDigit(0)" style="grid-column: span 2;">0</button>
-                <button type="button" class="sim-calc-key" onclick="calcDecimal()">.</button>
+                  <button type="button" class="sim-calc-key" onclick="calcDigit(4)">4</button>
+                  <button type="button" class="sim-calc-key" onclick="calcDigit(5)">5</button>
+                  <button type="button" class="sim-calc-key" onclick="calcDigit(6)">6</button>
+                  <button type="button" class="sim-calc-key op" onclick="calcOp('+')">+</button>
+
+                  <button type="button" class="sim-calc-key" onclick="calcDigit(1)">1</button>
+                  <button type="button" class="sim-calc-key" onclick="calcDigit(2)">2</button>
+                  <button type="button" class="sim-calc-key" onclick="calcDigit(3)">3</button>
+                  <button type="button" class="sim-calc-key eq" onclick="calcCalculate()" style="grid-row: span 2;">=</button>
+
+                  <button type="button" class="sim-calc-key" onclick="calcDigit(0)" style="grid-column: span 2;">0</button>
+                  <button type="button" class="sim-calc-key" onclick="calcDecimal()">.</button>
+                </div>
               </div>
             </div>
           </div>
@@ -519,6 +522,6 @@
 
   <!-- Scripts -->
   <script src="assets/js/mfs-tint.js"></script>
-  <script src="assets/js/online-mock-simulator.js?v=20261105_fixed_pills_cover_v7"></script>
+  <script src="assets/js/online-mock-simulator.js?v=20261105_calc_onscreen_v8"></script>
 </body>
 </html>

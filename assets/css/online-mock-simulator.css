@@ -415,13 +415,12 @@ body {
 /* Right Pane: Learner Interactive Working Space (Exactly 50.0% width) */
 .sim-pane-working {
   background: #fbfcfe !important;
-  padding: 24px;
-  overflow-y: scroll !important;
+  padding: 16px 20px !important;
+  overflow-y: hidden !important;
   overflow-x: hidden !important;
-  scrollbar-gutter: stable;
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 10px !important;
   width: 50% !important;
   min-width: 50% !important;
   max-width: 50% !important;
@@ -527,35 +526,53 @@ body {
   color: var(--sim-green);
 }
 
-/* Typed Working Area - Expanded for rich calculations & workings */
+/* Interactive Working & Calculation Workspace (Side-by-side in Section B) */
+.sim-working-workspace {
+  display: flex !important;
+  flex-direction: row !important;
+  gap: 12px !important;
+  flex: 1 1 0 !important;
+  min-height: 0 !important;
+  height: 100% !important;
+  align-items: stretch !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+}
+
 .sim-working-card {
   background: #ffffff;
   border: 1px solid var(--sim-slate-300);
   border-radius: 8px;
-  padding: 12px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
+  padding: 10px;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 6px;
   box-shadow: 0 2px 6px rgba(0,0,0,0.03);
-  flex: 1;
-  min-height: 380px;
+  flex: 1 1 0 !important;
+  min-width: 0 !important;
+  min-height: 0 !important;
+  height: 100% !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
 }
 
 .sim-working-textarea {
-  width: 100%;
-  min-height: 360px;
-  flex: 1;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  flex: 1 1 0 !important;
   border: 1px solid #e2e8f0;
   border-radius: 6px;
-  padding: 12px;
+  padding: 10px 12px;
   font-family: 'Courier New', Courier, monospace, 'Lexend';
-  font-size: calc(0.95rem * var(--sim-scale, 1));
-  line-height: 1.6;
+  font-size: calc(0.92rem * var(--sim-scale, 1));
+  line-height: 1.5;
   color: #1e293b;
-  resize: vertical;
+  resize: none !important;
   background-color: #fafbfc;
   background-image: linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px);
-  background-size: 100% 1.6em;
+  background-size: 100% 1.5em;
   outline: none;
   box-sizing: border-box;
 }
@@ -721,25 +738,42 @@ body {
   min-width: 0;
 }
 
-/* Built-in Onscreen Calculator */
+/* Built-in Onscreen Calculator: Docked side-by-side in Section B, fits on screen without scrolling */
+.sim-calc-drawer-wrap {
+  flex: 0 0 250px !important;
+  width: 250px !important;
+  min-width: 250px !important;
+  max-width: 250px !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: stretch !important;
+  box-sizing: border-box !important;
+}
+
+.sim-calc-drawer-wrap.sim-hidden,
+.sim-calc-drawer-wrap[style*="display: none"] {
+  display: none !important;
+}
+
 .sim-calc-drawer {
   background: #1e293b;
   border-radius: 8px;
-  padding: 12px;
+  padding: 10px;
   color: #ffffff;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-  max-width: 320px;
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 8px;
+  max-width: 250px;
   width: 100%;
-  margin: 10px auto 0 auto;
+  margin: 0 !important;
+  box-shadow: 0 4px 14px rgba(15, 23, 42, 0.2);
 }
 
 .sim-calc-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-size: 0.8rem;
+  font-size: 0.76rem;
   font-weight: 700;
   color: #94a3b8;
 }
@@ -748,20 +782,25 @@ body {
   background: #0f172a;
   border: 1px solid #334155;
   border-radius: 6px;
-  padding: 10px 14px;
-  font-size: 1.25rem;
+  padding: 6px 10px;
+  font-size: 1.15rem;
   font-weight: 700;
   text-align: right;
   font-variant-numeric: tabular-nums;
   color: #38bdf8;
-  min-height: 48px;
+  min-height: 38px;
+  height: 38px;
   overflow: hidden;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .sim-calc-keypad {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 6px;
+  gap: 5px;
 }
 
 .sim-calc-key {
@@ -769,11 +808,16 @@ body {
   border: none;
   color: #ffffff;
   border-radius: 4px;
-  padding: 8px;
-  font-size: 0.95rem;
+  padding: 6px 4px;
+  font-size: 0.9rem;
   font-weight: 700;
   cursor: pointer;
   transition: all 0.1s;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
 }
 
 .sim-calc-key:hover {

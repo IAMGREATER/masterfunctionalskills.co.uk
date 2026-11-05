@@ -1309,6 +1309,7 @@ function adaptUiForSubject(paper, q, sec) {
   const mathToolbar = document.getElementById('simMathToolbar');
   const calcLockedBanner = document.getElementById('simCalcLockedBanner');
   const calcDrawer = document.getElementById('simCalcDrawer');
+  const calcDrawerWrap = document.getElementById('simCalcDrawerWrap');
   const finalAnsCard = document.getElementById('simFinalAnsCard');
 
   const readingSourcePane = document.getElementById('simReadingSourcePane');
@@ -1323,6 +1324,7 @@ function adaptUiForSubject(paper, q, sec) {
   if (subject === 'writing') {
     if (mathToolbar) mathToolbar.style.display = 'none';
     if (calcLockedBanner) calcLockedBanner.style.display = 'none';
+    if (calcDrawerWrap) calcDrawerWrap.style.display = 'none';
     if (calcDrawer) calcDrawer.style.display = 'none';
     if (finalAnsCard) finalAnsCard.style.display = 'none';
     if (readingSourcePane) readingSourcePane.style.display = 'none';
@@ -1340,6 +1342,7 @@ function adaptUiForSubject(paper, q, sec) {
   } else if (subject === 'reading') {
     if (mathToolbar) mathToolbar.style.display = 'none';
     if (calcLockedBanner) calcLockedBanner.style.display = 'none';
+    if (calcDrawerWrap) calcDrawerWrap.style.display = 'none';
     if (calcDrawer) calcDrawer.style.display = 'none';
     if (planningBox) planningBox.style.display = 'none';
     if (wordCountBadge) wordCountBadge.style.display = 'none';
@@ -1377,15 +1380,23 @@ function adaptUiForSubject(paper, q, sec) {
     if (mcqContainer) mcqContainer.style.display = 'none';
     if (workingTitleText) workingTitleText.innerText = 'Type Your Working & Calculations in the Spaces';
 
-    // Calculator Section Check
+    // Calculator Section Check (Docked side-by-side in Section B, completely hidden in Section A)
     if (isCalcAllowed) {
       if (calcLockedBanner) calcLockedBanner.style.display = 'none';
+      if (calcDrawerWrap) {
+        calcDrawerWrap.style.display = 'flex';
+        calcDrawerWrap.classList.remove('sim-hidden');
+      }
       if (calcDrawer) {
-        calcDrawer.style.display = 'block';
+        calcDrawer.style.display = 'flex';
         calcDrawer.classList.remove('locked');
       }
     } else {
-      if (calcLockedBanner) calcLockedBanner.style.display = 'flex';
+      if (calcLockedBanner) calcLockedBanner.style.display = 'none';
+      if (calcDrawerWrap) {
+        calcDrawerWrap.style.display = 'none';
+        calcDrawerWrap.classList.add('sim-hidden');
+      }
       if (calcDrawer) {
         calcDrawer.style.display = 'none'; // Completely disabled/hidden for Section A Non-Calc
         calcDrawer.classList.add('locked');

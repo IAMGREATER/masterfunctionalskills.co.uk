@@ -7,7 +7,8 @@
 
 // Global State
 let simCurrentPaperKey = 'edexcel-maths-l1-paper-1';
-let simCurrentQuestionIndex = 0;
+let simCurrentSectionIndex = 0; // 0 = Section A, 1 = Section B
+let simCurrentQuestionIndex = 0; // 0 = Section Front Cover, 1 = Question 1, 2 = Question 2...
 let simTimerSeconds = 25 * 60;
 let simTimerActive = true;
 let simTimerInterval = null;
@@ -30,199 +31,278 @@ const MFS_MOCK_DATA = {
     subject: 'maths',
     level: 'Level 1',
     paperNumber: 1,
-    durationMinutes: 105,
+    durationMinutes: 115,
     pdfUrl: 'https://passfunctionalskills.co.uk/app/uploads/2024/10/PAST_PAPER_1_FS_Maths_SecAB_PMAT1_N01_Level_1.pdf',
     modelSolutionPdf: 'assets/downloads/past-papers/edexcel/maths-level-1/FS_Maths_Level_1_Past_Paper_1_Model_Solution_MFS.pdf',
     videoSolutionSlug: '',
-    questions: [
+    sections: [
       {
-        num: 1,
-        section: 'Section A: Non-Calculator',
+        id: 'A',
+        name: 'Section A: Non-Calculator',
+        code: 'PMAT1/N01',
+        durationMinutes: 25,
+        totalMarks: 14,
         isCalcAllowed: false,
-        marks: 3,
-        markTags: '[B1, B1, B1]',
-        scenarioTitle: 'Core Arithmetic & Units Conversion',
-        scenarioText: 'Answer all parts of Question 1 below without using a calculator.',
-        promptText: '(a) Convert 3 metres into centimetres.\n(b) Work out 3400 ÷ 1000\n(c) Calculate 35 – 15 ÷ 5',
-        unit: 'cm',
-        expectedType: 'number',
-        parts: [
-          { id: 'a', label: 'Part (a)', placeholder: 'Centimetres', unit: 'cm' },
-          { id: 'b', label: 'Part (b)', placeholder: '3400 ÷ 1000', unit: '' },
-          { id: 'c', label: 'Part (c)', placeholder: '35 − 15 ÷ 5', unit: '' }
-        ],
-        modelSolution: '(a) 1 m = 100 cm --> 3 × 100 = 300 cm [B1]\n(b) 3400 ÷ 1000 = 3.4 [B1]\n(c) BIDMAS division first: 15 ÷ 5 = 3; then 35 - 3 = 32 [B1]',
-        finalBenchmark: '300 cm / 3.4 / 32'
+        questions: [
+          {
+            num: 1,
+            section: 'Section A: Non-Calculator',
+            isCalcAllowed: false,
+            marks: 3,
+            markTags: '[B1, B1, B1]',
+            scenarioTitle: 'Core Arithmetic & Units Conversion',
+            scenarioText: 'Answer all parts of Question 1 below without using a calculator.',
+            promptText: '(a) Convert 3 metres into centimetres.\n(b) Work out 3400 ÷ 1000\n(c) Calculate 35 – 15 ÷ 5',
+            unit: 'cm',
+            expectedType: 'number',
+            parts: [
+              { id: 'a', label: 'Part (a)', placeholder: 'Centimetres', unit: 'cm' },
+              { id: 'b', label: 'Part (b)', placeholder: '3400 ÷ 1000', unit: '' },
+              { id: 'c', label: 'Part (c)', placeholder: '35 − 15 ÷ 5', unit: '' }
+            ],
+            modelSolution: '(a) 1 m = 100 cm --> 3 × 100 = 300 cm [B1]\n(b) 3400 ÷ 1000 = 3.4 [B1]\n(c) BIDMAS division first: 15 ÷ 5 = 3; then 35 - 3 = 32 [B1]',
+            finalBenchmark: '300 cm / 3.4 / 32'
+          },
+          {
+            num: 2,
+            section: 'Section A: Non-Calculator',
+            isCalcAllowed: false,
+            marks: 3,
+            markTags: '[M1, M1, A1]',
+            scenarioTitle: 'Aaron\'s Brick Wall Construction',
+            scenarioText: 'Aaron is building a brick wall. The wall will need 1025 bricks. The weight of each brick is 2.89 kg. Aaron will pay a delivery charge if the total weight of the bricks is over 2500 kg.',
+            promptText: 'Use estimation to work out if you think Aaron will need to pay the delivery charge. You must show your working.',
+            unit: '',
+            expectedType: 'decision',
+            modelSolution: 'Step 1: Round to 1 significant figure:\n  1025 ≈ 1000 bricks [M1]\n  2.89 kg ≈ 3 kg [M1]\nStep 2: Estimated total weight = 1000 × 3 = 3000 kg.\nStep 3: Compare with 2500 kg: 3000 > 2500.\nConclusion: Yes, Aaron will pay the delivery charge [A1].',
+            finalBenchmark: 'Yes (estimated 3000 kg > 2500 kg)'
+          },
+          {
+            num: 3,
+            section: 'Section A: Non-Calculator',
+            isCalcAllowed: false,
+            marks: 4,
+            markTags: '[M1, A1, M1, A1]',
+            scenarioTitle: 'Farmer\'s Rectangular Field & Fertiliser',
+            scenarioText: 'A farmer has a rectangular field. The field is 300 m long and 200 m wide. The farmer puts fertiliser on the field. He needs 1 kg of fertiliser for every 40 m² of field.',
+            promptText: '(a) Calculate the perimeter of the field.\n(b) How many kilograms of fertiliser does the farmer need?',
+            unit: 'kg',
+            expectedType: 'number',
+            parts: [
+              { id: 'a', label: 'Part (a) Perimeter', placeholder: 'Perimeter of field', unit: 'm' },
+              { id: 'b', label: 'Part (b) Fertiliser', placeholder: 'Fertiliser needed', unit: 'kg' }
+            ],
+            modelSolution: '(a) Perimeter = 2 × (300 + 200) = 2 × 500 = 1000 m [M1, A1]\n(b) Area = 300 × 200 = 60,000 m² [M1]\nFertiliser needed = 60,000 ÷ 40 = 1500 kg [A1]',
+            finalBenchmark: '1000 m / 1500 kg'
+          },
+          {
+            num: 4,
+            section: 'Section A: Non-Calculator',
+            isCalcAllowed: false,
+            marks: 4,
+            markTags: '[M1, M1, M1, A1]',
+            scenarioTitle: '5-Year Car Value Comparison (Petrol vs. Diesel)',
+            scenarioText: 'Saira is buying a new car and will keep it for 5 years.\n• Petrol car: Buying price £14,500; Average running cost £775 per year.\n• Diesel car: Buying price £15,800; Average running cost £520 per year.',
+            promptText: 'Which type of car is better value for the 5 years? Show why you think this.',
+            unit: '£',
+            expectedType: 'text',
+            modelSolution: 'Petrol car 5-year cost: £14,500 + (5 × £775) = £14,500 + £3,875 = £18,375 [M1]\nDiesel car 5-year cost: £15,800 + (5 × £520) = £15,800 + £2,600 = £18,400 [M1]\nComparison: £18,375 < £18,400 (Difference: £25) [M1]\nConclusion: The Petrol car is better value by £25 [A1].',
+            finalBenchmark: 'Petrol car (cheaper by £25)'
+          }
+        ]
       },
       {
-        num: 2,
-        section: 'Section A: Non-Calculator',
-        isCalcAllowed: false,
-        marks: 3,
-        markTags: '[M1, M1, A1]',
-        scenarioTitle: 'Aaron\'s Brick Wall Construction',
-        scenarioText: 'Aaron is building a brick wall. The wall will need 1025 bricks. The weight of each brick is 2.89 kg. Aaron will pay a delivery charge if the total weight of the bricks is over 2500 kg.',
-        promptText: 'Use estimation to work out if you think Aaron will need to pay the delivery charge. You must show your working.',
-        unit: '',
-        expectedType: 'decision',
-        modelSolution: 'Step 1: Round to 1 significant figure:\n  1025 ≈ 1000 bricks [M1]\n  2.89 kg ≈ 3 kg [M1]\nStep 2: Estimated total weight = 1000 × 3 = 3000 kg.\nStep 3: Compare with 2500 kg: 3000 > 2500.\nConclusion: Yes, Aaron will pay the delivery charge [A1].',
-        finalBenchmark: 'Yes (estimated 3000 kg > 2500 kg)'
-      },
-      {
-        num: 3,
-        section: 'Section A: Non-Calculator',
-        isCalcAllowed: false,
-        marks: 4,
-        markTags: '[M1, A1, M1, A1]',
-        scenarioTitle: 'Farmer\'s Rectangular Field & Fertiliser',
-        scenarioText: 'A farmer has a rectangular field. The field is 300 m long and 200 m wide. The farmer puts fertiliser on the field. He needs 1 kg of fertiliser for every 40 m² of field.',
-        promptText: '(a) Calculate the perimeter of the field.\n(b) How many kilograms of fertiliser does the farmer need?',
-        unit: 'kg',
-        expectedType: 'number',
-        parts: [
-          { id: 'a', label: 'Part (a) Perimeter', placeholder: 'Perimeter of field', unit: 'm' },
-          { id: 'b', label: 'Part (b) Fertiliser', placeholder: 'Fertiliser needed', unit: 'kg' }
-        ],
-        modelSolution: '(a) Perimeter = 2 × (300 + 200) = 2 × 500 = 1000 m [M1, A1]\n(b) Area = 300 × 200 = 60,000 m² [M1]\nFertiliser needed = 60,000 ÷ 40 = 1500 kg [A1]',
-        finalBenchmark: '1000 m / 1500 kg'
-      },
-      {
-        num: 4,
-        section: 'Section A: Non-Calculator',
-        isCalcAllowed: false,
-        marks: 4,
-        markTags: '[M1, M1, M1, A1]',
-        scenarioTitle: '5-Year Car Value Comparison (Petrol vs. Diesel)',
-        scenarioText: 'Saira is buying a new car and will keep it for 5 years.\n• Petrol car: Buying price £14,500; Average running cost £775 per year.\n• Diesel car: Buying price £15,800; Average running cost £520 per year.',
-        promptText: 'Which type of car is better value for the 5 years? Show why you think this.',
-        unit: '£',
-        expectedType: 'text',
-        modelSolution: 'Petrol car 5-year cost: £14,500 + (5 × £775) = £14,500 + £3,875 = £18,375 [M1]\nDiesel car 5-year cost: £15,800 + (5 × £520) = £15,800 + £2,600 = £18,400 [M1]\nComparison: £18,375 < £18,400 (Difference: £25) [M1]\nConclusion: The Petrol car is better value by £25 [A1].',
-        finalBenchmark: 'Petrol car (cheaper by £25)'
-      },
-      {
-        num: 5,
-        section: 'Section B: Calculator',
+        id: 'B',
+        name: 'Section B: Calculator',
+        code: 'PMAT1/C01',
+        durationMinutes: 90,
+        totalMarks: 42,
         isCalcAllowed: true,
-        marks: 3,
-        markTags: '[M1, A1, B1]',
-        scenarioTitle: 'Cafe Drinks Ratio & Check',
-        scenarioText: 'Johan works in a cafe. One morning he sells 48 cups of tea and 12 cups of coffee.',
-        promptText: '(a) Write the ratio of the number of cups of tea to the number of cups of coffee in its simplest form.\n(b) Show a check of your answer.',
-        unit: '',
-        expectedType: 'text',
-        parts: [
-          { id: 'a', label: 'Part (a) Simplest Ratio', placeholder: 'e.g. 4 : 1', unit: '' },
-          { id: 'b', label: 'Part (b) Reverse Check', placeholder: 'e.g. 4 × 12 = 48', unit: '' }
-        ],
-        modelSolution: '(a) Ratio Tea : Coffee = 48 : 12 [M1]\nDivide both by 12: 4 : 1 [A1]\n(b) Reverse check: 4 × 12 = 48 [B1]',
-        finalBenchmark: '4 : 1'
-      },
-      {
-        num: 6,
-        section: 'Section B: Calculator',
-        isCalcAllowed: true,
-        marks: 3,
-        markTags: '[M1, M1, A1]',
-        scenarioTitle: 'Office Chairs & 20% VAT',
-        scenarioText: 'Sam is a manager in an office. She wants to buy 14 new chairs. Each chair costs £73. Sam will also be charged 20% VAT.',
-        promptText: 'Work out the total amount Sam will pay for the 14 chairs including VAT.',
-        unit: '£',
-        expectedType: 'number',
-        modelSolution: 'Step 1: Subtotal before VAT = 14 × £73 = £1,022 [M1]\nStep 2: 20% VAT = 0.20 × £1,022 = £204.40 [M1]\nStep 3: Total = £1,022 + £204.40 = £1,226.40 [A1]',
-        finalBenchmark: '£1226.40'
-      },
-      {
-        num: 7,
-        section: 'Section B: Calculator',
-        isCalcAllowed: true,
-        marks: 4,
-        markTags: '[M1, M1, M1, A1]',
-        scenarioTitle: 'Garden & Pond Grass Seed Calculation',
-        scenarioText: 'Here is a garden and a pond. Both are rectangular.\n• Garden dimensions: 14 m by 9 m\n• Pond dimensions: 3.8 m by 2.4 m\nKayla will cover the garden with grass seed (excluding the pond). One box of seed covers 15 m².',
-        promptText: 'Work out the number of boxes of grass seed Kayla needs to cover the garden.',
-        unit: 'boxes',
-        expectedType: 'number',
-        modelSolution: 'Step 1: Garden Area = 14 × 9 = 126 m² [M1]\nStep 2: Pond Area = 3.8 × 2.4 = 9.12 m² [M1]\nStep 3: Grass Area = 126 - 9.12 = 116.88 m²\nStep 4: Boxes = 116.88 ÷ 15 = 7.792... boxes [M1]\nRound up to whole boxes: 8 boxes [A1]',
-        finalBenchmark: '8 boxes'
-      },
-      {
-        num: 8,
-        section: 'Section B: Calculator',
-        isCalcAllowed: true,
-        marks: 3,
-        markTags: '[M1, M1, A1]',
-        scenarioTitle: 'Madrid Holiday Temperature Formula',
-        scenarioText: 'Dave is going on holiday to Madrid. The temperature tomorrow in Madrid will be 21 °C. Dave uses this rule:\n"Multiply temperature in °C by 1.8 then add 32"',
-        promptText: 'Work out the temperature in Madrid in °F.',
-        unit: '°F',
-        expectedType: 'number',
-        modelSolution: 'Step 1: 21 × 1.8 = 37.8 [M1]\nStep 2: 37.8 + 32 = 69.8 °F [M1, A1]',
-        finalBenchmark: '69.8 °F'
-      },
-      {
-        num: 9,
-        section: 'Section B: Calculator',
-        isCalcAllowed: true,
-        marks: 4,
-        markTags: '[M1, A1, M1, A1]',
-        scenarioTitle: 'Call Centre Daily Phone Calls Analysis',
-        scenarioText: 'Kai works in a call centre. Phone calls received:\nMonday: 240, Tuesday: 140, Wednesday: 185, Thursday: 80, Friday: 225.',
-        promptText: '(a) Work out the total number of calls received over the 5 days.\n(b) Work out the range of the number of phone calls.',
-        unit: 'calls',
-        expectedType: 'number',
-        parts: [
-          { id: 'a', label: 'Part (a) Total Calls', placeholder: 'Total calls over 5 days', unit: 'calls' },
-          { id: 'b', label: 'Part (b) Range', placeholder: 'Range of calls', unit: 'calls' }
-        ],
-        modelSolution: '(a) Total = 240 + 140 + 185 + 80 + 225 = 870 calls [M1, A1]\n(b) Range = Highest - Lowest = 240 - 80 = 160 calls [M1, A1]',
-        finalBenchmark: '870 calls / Range: 160'
-      },
-      {
-        num: 10,
-        section: 'Section B: Calculator',
-        isCalcAllowed: true,
-        marks: 4,
-        markTags: '[M1, M1, M1, A1]',
-        scenarioTitle: 'Bakery Weekly Mean Flour Consumption',
-        scenarioText: 'Seenal buys flour in 50 kg bags. Bags used:\nWeek 1: 12, Week 2: 16, Week 3: 13, Week 4: 15.\nIn Week 5, she bakes 2400 loaves, each needing 250 g of flour.',
-        promptText: 'Work out the weekly mean number of 50 kg bags of flour used across the 5 weeks.',
-        unit: 'bags',
-        expectedType: 'number',
-        modelSolution: 'Step 1: Week 5 flour = 2400 × 250 g = 600,000 g = 600 kg [M1]\nWeek 5 bags = 600 ÷ 50 = 12 bags [M1]\nStep 2: Total bags = 12 + 16 + 13 + 15 + 12 = 68 bags\nStep 3: Mean = 68 ÷ 5 = 13.6 bags [M1, A1]',
-        finalBenchmark: '13.6 bags'
-      },
-      {
-        num: 11,
-        section: 'Section B: Calculator',
-        isCalcAllowed: true,
-        marks: 4,
-        markTags: '[M1, M1, M1, A1]',
-        scenarioTitle: 'Cuboid Tomato Container Dimensions',
-        scenarioText: 'Dennis is making a cuboid plant container with capacity 180 litres (1 litre = 1000 cm³). The height is 40 cm and width is 55 cm.',
-        promptText: 'Work out the length of the container to the nearest whole centimetre.',
-        unit: 'cm',
-        expectedType: 'number',
-        modelSolution: 'Step 1: Volume = 180 × 1000 = 180,000 cm³ [M1]\nStep 2: Base cross-section = 55 × 40 = 2,200 cm² [M1]\nStep 3: Length = 180,000 ÷ 2,200 = 81.818... cm [M1]\nStep 4: Round to nearest whole cm: 82 cm [A1]',
-        finalBenchmark: '82 cm'
-      },
-      {
-        num: 12,
-        section: 'Section B: Calculator',
-        isCalcAllowed: true,
-        marks: 5,
-        markTags: '[M1, M1, M1, A1, B1]',
-        scenarioTitle: 'James House Purchase Deposit Calculation',
-        scenarioText: 'James wants to buy a house priced at a quarter of a million pounds (£250,000). The deposit is 15%. James has £18,500 in savings and borrows £15,000 from family.',
-        promptText: '(a) Does James have enough money to pay the deposit? Show working to support your decision.\n(b) Show a check of your percentage calculation.',
-        unit: '',
-        expectedType: 'decision',
-        parts: [
-          { id: 'a', label: 'Part (a) Decision', placeholder: 'e.g. No, short by £4,000', unit: '' },
-          { id: 'b', label: 'Part (b) Reverse Check', placeholder: 'Show check of 15%', unit: '' }
-        ],
-        modelSolution: '(a) Price = £250,000 [M1]\nDeposit = 0.15 × £250,000 = £37,500 [M1]\nJames\'s money = £18,500 + £15,000 = £33,500 [M1]\n£33,500 < £37,500 --> No, he is short by £4,000 [A1]\n(b) Check: 10% = £25,000; 5% = £12,500; £25,000 + £12,500 = £37,500 [B1]',
-        finalBenchmark: 'No (short by £4,000)'
+        questions: [
+          {
+            num: 1,
+            section: 'Section B: Calculator',
+            isCalcAllowed: true,
+            marks: 3,
+            markTags: '[M1, A1, B1]',
+            scenarioTitle: 'Cafe Drinks Ratio & Check',
+            scenarioText: 'Johan works in a cafe. One morning he sells 48 cups of tea and 12 cups of coffee.',
+            promptText: '(a) Write the ratio of the number of cups of tea to the number of cups of coffee in its simplest form.\n(b) Show a check of your answer.',
+            unit: '',
+            expectedType: 'text',
+            parts: [
+              { id: 'a', label: 'Part (a) Simplest Ratio', placeholder: 'e.g. 4 : 1', unit: '' },
+              { id: 'b', label: 'Part (b) Reverse Check', placeholder: 'e.g. 4 × 12 = 48', unit: '' }
+            ],
+            modelSolution: '(a) Ratio Tea : Coffee = 48 : 12 [M1]\nDivide both by 12: 4 : 1 [A1]\n(b) Reverse check: 4 × 12 = 48 [B1]',
+            finalBenchmark: '4 : 1'
+          },
+          {
+            num: 2,
+            section: 'Section B: Calculator',
+            isCalcAllowed: true,
+            marks: 3,
+            markTags: '[M1, M1, A1]',
+            scenarioTitle: 'Office Chairs & 20% VAT',
+            scenarioText: 'Sam is a manager in an office. She wants to buy 14 new chairs. Each chair costs £73. Sam will also be charged 20% VAT.',
+            promptText: 'Work out the total amount Sam will pay for the 14 chairs including VAT.',
+            unit: '£',
+            expectedType: 'number',
+            modelSolution: 'Step 1: Subtotal before VAT = 14 × £73 = £1,022 [M1]\nStep 2: 20% VAT = 0.20 × £1,022 = £204.40 [M1]\nStep 3: Total = £1,022 + £204.40 = £1,226.40 [A1]',
+            finalBenchmark: '£1226.40'
+          },
+          {
+            num: 3,
+            section: 'Section B: Calculator',
+            isCalcAllowed: true,
+            marks: 4,
+            markTags: '[M1, M1, M1, A1]',
+            scenarioTitle: 'Garden & Pond Grass Seed Calculation',
+            scenarioText: 'Here is a garden and a pond. Both are rectangular.\n• Garden dimensions: 14 m by 9 m\n• Pond dimensions: 3.8 m by 2.4 m\nKayla will cover the garden with grass seed (excluding the pond). One box of seed covers 15 m².',
+            promptText: 'Work out the number of boxes of grass seed Kayla needs to cover the garden.',
+            unit: 'boxes',
+            expectedType: 'number',
+            modelSolution: 'Step 1: Garden Area = 14 × 9 = 126 m² [M1]\nStep 2: Pond Area = 3.8 × 2.4 = 9.12 m² [M1]\nStep 3: Grass Area = 126 - 9.12 = 116.88 m²\nStep 4: Boxes = 116.88 ÷ 15 = 7.792... boxes [M1]\nRound up to whole boxes: 8 boxes [A1]',
+            finalBenchmark: '8 boxes'
+          },
+          {
+            num: 4,
+            section: 'Section B: Calculator',
+            isCalcAllowed: true,
+            marks: 3,
+            markTags: '[M1, M1, A1]',
+            scenarioTitle: 'Madrid Holiday Temperature Formula',
+            scenarioText: 'Dave is going on holiday to Madrid. The temperature tomorrow in Madrid will be 21 °C. Dave uses this rule:\n"Multiply temperature in °C by 1.8 then add 32"',
+            promptText: 'Work out the temperature in Madrid in °F.',
+            unit: '°F',
+            expectedType: 'number',
+            modelSolution: 'Step 1: 21 × 1.8 = 37.8 [M1]\nStep 2: 37.8 + 32 = 69.8 °F [M1, A1]',
+            finalBenchmark: '69.8 °F'
+          },
+          {
+            num: 5,
+            section: 'Section B: Calculator',
+            isCalcAllowed: true,
+            marks: 4,
+            markTags: '[M1, A1, M1, A1]',
+            scenarioTitle: 'Call Centre Daily Phone Calls Analysis',
+            scenarioText: 'Kai works in a call centre. Phone calls received:\nMonday: 240, Tuesday: 140, Wednesday: 185, Thursday: 80, Friday: 225.',
+            promptText: '(a) Work out the total number of calls received over the 5 days.\n(b) Work out the range of the number of phone calls.',
+            unit: 'calls',
+            expectedType: 'number',
+            parts: [
+              { id: 'a', label: 'Part (a) Total Calls', placeholder: 'Total calls over 5 days', unit: 'calls' },
+              { id: 'b', label: 'Part (b) Range', placeholder: 'Range of calls', unit: 'calls' }
+            ],
+            modelSolution: '(a) Total = 240 + 140 + 185 + 80 + 225 = 870 calls [M1, A1]\n(b) Range = Highest - Lowest = 240 - 80 = 160 calls [M1, A1]',
+            finalBenchmark: '870 calls / Range: 160'
+          },
+          {
+            num: 6,
+            section: 'Section B: Calculator',
+            isCalcAllowed: true,
+            marks: 4,
+            markTags: '[M1, M1, M1, A1]',
+            scenarioTitle: 'Bakery Weekly Mean Flour Consumption',
+            scenarioText: 'Seenal buys flour in 50 kg bags. Bags used:\nWeek 1: 12, Week 2: 16, Week 3: 13, Week 4: 15.\nIn Week 5, she bakes 2400 loaves, each needing 250 g of flour.',
+            promptText: 'Work out the weekly mean number of 50 kg bags of flour used across the 5 weeks.',
+            unit: 'bags',
+            expectedType: 'number',
+            modelSolution: 'Step 1: Week 5 flour = 2400 × 250 g = 600,000 g = 600 kg [M1]\nWeek 5 bags = 600 ÷ 50 = 12 bags [M1]\nStep 2: Total bags = 12 + 16 + 13 + 15 + 12 = 68 bags\nStep 3: Mean = 68 ÷ 5 = 13.6 bags [M1, A1]',
+            finalBenchmark: '13.6 bags'
+          },
+          {
+            num: 7,
+            section: 'Section B: Calculator',
+            isCalcAllowed: true,
+            marks: 3,
+            markTags: '[A1, B1, C1]',
+            scenarioTitle: 'Gordon\'s Garden Slide Scale Plan',
+            scenarioText: 'Gordon buys a new slide for his garden. His garden measures 6 m by 7 m.\nThe space for the slide must be:\n• a rectangle, 3 m by 1.5 m\n• at least 2 m away from the house\n• at least 0.5 m away from a fence or any other feature.\nKey: 1 cm on the grid represents 50 cm in the garden.',
+            promptText: 'Work out the dimensions of the slide space on the grid in squares (1 square = 50 cm), and confirm the clearance distances from the house and shed/fence.',
+            unit: 'squares',
+            expectedType: 'text',
+            parts: [
+              { id: 'length', label: 'Grid Length', placeholder: 'Length in squares (3 m ÷ 50 cm)', unit: 'squares' },
+              { id: 'width', label: 'Grid Width', placeholder: 'Width in squares (1.5 m ÷ 50 cm)', unit: 'squares' },
+              { id: 'clearance', label: 'House Clearance', placeholder: 'Distance from house', unit: 'm' }
+            ],
+            modelSolution: 'Step 1: Length in squares = 300 cm ÷ 50 cm = 6 squares [A1]\nStep 2: Width in squares = 150 cm ÷ 50 cm = 3 squares [A1]\nStep 3: Distance from house >= 2.0 m (>= 4 squares) [C1]\nStep 4: Distance from fence/shed >= 0.5 m (>= 1 square) [B1]',
+            finalBenchmark: '6 squares by 3 squares (>= 2 m from house)'
+          },
+          {
+            num: 8,
+            section: 'Section B: Calculator',
+            isCalcAllowed: true,
+            marks: 3,
+            markTags: '[A1, B1, C1]',
+            scenarioTitle: 'Belinda\'s TV Watching Hours Grouped Data',
+            scenarioText: 'Belinda asks 20 people: ‘How many hours of TV did you watch last week?’\nResults: 3, 17, 4, 4, 6, 11, 14, 14, 1, 20, 9, 8, 9, 6, 12, 7, 8, 13, 13, 9.\nBelinda wants to show these results in a frequency table with 4 equal groups starting with 1 hour and ending with 20 hours.',
+            promptText: 'Complete the frequency table for the 4 groups: 1 to 5, 6 to 10, 11 to 15, and 16 to 20.',
+            unit: '',
+            expectedType: 'text',
+            parts: [
+              { id: 'g1', label: 'Group 1 to 5', placeholder: 'Count of values 1 to 5', unit: 'people' },
+              { id: 'g2', label: 'Group 6 to 10', placeholder: 'Count of values 6 to 10', unit: 'people' },
+              { id: 'g3', label: 'Group 11 to 15', placeholder: 'Count of values 11 to 15', unit: 'people' },
+              { id: 'g4', label: 'Group 16 to 20', placeholder: 'Count of values 16 to 20', unit: 'people' }
+            ],
+            modelSolution: 'Group 1 to 5: 3, 4, 4, 1 --> Frequency = 4 [A1]\nGroup 6 to 10: 6, 9, 8, 9, 6, 7, 8, 9 --> Frequency = 8 [B1]\nGroup 11 to 15: 11, 14, 14, 12, 13, 13 --> Frequency = 6 [C1]\nGroup 16 to 20: 17, 20 --> Frequency = 2 [C1]\nTotal Frequency = 4 + 8 + 6 + 2 = 20',
+            finalBenchmark: '1–5: 4  |  6–10: 8  |  11–15: 6  |  16–20: 2'
+          },
+          {
+            num: 9,
+            section: 'Section B: Calculator',
+            isCalcAllowed: true,
+            marks: 4,
+            markTags: '[A1, B1, M1, D1]',
+            scenarioTitle: 'Cuboid Tomato Container Dimensions',
+            scenarioText: 'Dennis is making a cuboid plant container with capacity 180 litres (1 litre = 1000 cm³). The height is 40 cm and width is 55 cm.',
+            promptText: 'Work out the length of the container to the nearest whole centimetre.',
+            unit: 'cm',
+            expectedType: 'number',
+            modelSolution: 'Step 1: Volume = 180 × 1000 = 180,000 cm³ [A1]\nStep 2: Base cross-section = 55 × 40 = 2,200 cm² [B1]\nStep 3: Length = 180,000 ÷ 2,200 = 81.818... cm [M1]\nStep 4: Round to nearest whole cm: 82 cm [D1]',
+            finalBenchmark: '82 cm'
+          },
+          {
+            num: 10,
+            section: 'Section B: Calculator',
+            isCalcAllowed: true,
+            marks: 3,
+            markTags: '[A1, B1, C1]',
+            scenarioTitle: '3-D Shapes: Geometric Nets & Plan Views',
+            scenarioText: '(a) Match each 3-D shape to its geometric properties:\n• Cube (6 identical square faces)\n• Triangular prism (2 triangular bases + 3 rectangular faces)\n• Square-based pyramid (1 square base + 4 triangular faces)\n(b) Here is a cylinder. Plan view is the view looking directly from above.',
+            promptText: '(a) Identify the shape of the faces and net for the Cube, Triangular Prism, and Square-based Pyramid.\n(b) Which 2-D shape is the plan view of a cylinder?',
+            unit: '',
+            expectedType: 'text',
+            parts: [
+              { id: 'cube', label: 'Cube Net', placeholder: 'Faces on cube net', unit: '' },
+              { id: 'triPrism', label: 'Triangular Prism Net', placeholder: 'Faces on prism net', unit: '' },
+              { id: 'pyramid', label: 'Pyramid Net', placeholder: 'Faces on pyramid net', unit: '' },
+              { id: 'planView', label: 'Cylinder Plan View', placeholder: 'Shape seen from above', unit: '' }
+            ],
+            modelSolution: '(a) Cube net consists of 6 square faces [A1]; Triangular prism net consists of 2 triangles and 3 rectangles [B1]; Square-based pyramid net consists of 1 square and 4 triangles [B1]\n(b) The plan view of a vertical cylinder viewed directly from above is a Circle [C1]',
+            finalBenchmark: 'Cube (6 sq), Prism (2 tri + 3 rect), Pyramid (1 sq + 4 tri), Plan view: Circle'
+          },
+          {
+            num: 11,
+            section: 'Section B: Calculator',
+            isCalcAllowed: true,
+            marks: 5,
+            markTags: '[A1, M1, M1, A1, B1]',
+            scenarioTitle: 'James House Purchase Deposit Calculation',
+            scenarioText: 'James wants to buy a house priced at a quarter of a million pounds (£250,000). The deposit is 15%. James already has £32,000 saved.',
+            promptText: '(a) How much more money does James need for the deposit?\n(b) Show a check of your percentage calculation.',
+            unit: '£',
+            expectedType: 'decision',
+            parts: [
+              { id: 'extra', label: 'Extra Money Needed', placeholder: 'e.g. 5500', unit: '£' },
+              { id: 'check', label: 'Percentage Check', placeholder: 'e.g. 10% = 25000, 5% = 12500', unit: '' }
+            ],
+            modelSolution: 'Step 1: House price = £250,000 [A1]\nStep 2: 15% Deposit = 0.15 × £250,000 = £37,500 [M1]\nStep 3: Extra needed = £37,500 - £32,000 = £5,500 [M1, A1]\nStep 4: Check: 10% = £25,000; 5% = £12,500; £25,000 + £12,500 = £37,500 [B1]',
+            finalBenchmark: '£5,500 extra needed (Deposit: £37,500)'
+          }
+        ]
       }
     ]
   },
@@ -620,6 +700,43 @@ function getOrCreatePaper(key) {
 }
 
 // Initialise Simulator from Query Parameters or Default
+// Helper: Get Paper Sections (with fallback support)
+function getPaperSections(paper) {
+  if (paper.sections && Array.isArray(paper.sections) && paper.sections.length > 0) {
+    return paper.sections;
+  }
+  return [
+    {
+      id: 'A',
+      name: paper.title || 'Examination Questions',
+      code: paper.subject === 'writing' ? 'PENG/W01' : (paper.subject === 'reading' ? 'PENG/R01' : 'PMAT/01'),
+      durationMinutes: paper.durationMinutes || 60,
+      totalMarks: (paper.questions || []).reduce((acc, q) => acc + (q.marks || 0), 0),
+      isCalcAllowed: false,
+      questions: paper.questions || []
+    }
+  ];
+}
+
+function getSavedSectionTimer(paperKey, secId, defaultMins) {
+  const saved = localStorage.getItem(`mfs_sim_${paperKey}_sec_${secId}_timer`);
+  if (saved !== null) {
+    const val = parseInt(saved, 10);
+    if (!isNaN(val) && val >= 0) return val;
+  }
+  return defaultMins * 60;
+}
+
+function saveCurrentSectionTimer() {
+  const paper = getOrCreatePaper(simCurrentPaperKey);
+  const sections = getPaperSections(paper);
+  const sec = sections[simCurrentSectionIndex];
+  if (sec) {
+    localStorage.setItem(`mfs_sim_${simCurrentPaperKey}_sec_${sec.id}_timer`, simTimerSeconds);
+  }
+}
+
+// Initialise Simulator from Query Parameters or Default
 document.addEventListener('DOMContentLoaded', () => {
   const urlParams = new URLSearchParams(window.location.search);
   const board = urlParams.get('board') || 'edexcel';
@@ -672,25 +789,108 @@ document.addEventListener('DOMContentLoaded', () => {
 function loadPaper(paperKey) {
   simCurrentPaperKey = paperKey;
   const paper = getOrCreatePaper(paperKey);
-  simCurrentQuestionIndex = 0;
+  const sections = getPaperSections(paper);
+  simCurrentSectionIndex = 0;
+  simCurrentQuestionIndex = 0; // Front cover of Section A
 
   // Header Title
   const titleDisplay = document.getElementById('simPaperTitleDisplay');
   if (titleDisplay) titleDisplay.innerText = paper.title;
 
-  // Set Timer based on paper duration
-  simTimerSeconds = (paper.durationMinutes || 60) * 60;
+  // Set Timer based on first section
+  const firstSec = sections[0];
+  simTimerSeconds = getSavedSectionTimer(simCurrentPaperKey, firstSec.id, firstSec.durationMinutes);
   updateTimerDisplay();
+
+  // Render section switcher tabs
+  renderSectionTabs(paper);
 
   // Render question pills
   renderQuestionPills(paper);
 
-  // Render first question / task
+  // Render front cover page
   renderCurrentQuestion();
 }
 
 function handlePaperChange(newKey) {
   loadPaper(newKey);
+}
+
+// Switch Active Section (Section A vs Section B)
+function switchSection(targetIndex) {
+  const paper = getOrCreatePaper(simCurrentPaperKey);
+  const sections = getPaperSections(paper);
+  if (targetIndex < 0 || targetIndex >= sections.length) return;
+  if (targetIndex === simCurrentSectionIndex) return;
+
+  // Save outgoing section's timer
+  saveCurrentSectionTimer();
+
+  // Switch section and reset to Front Cover (index 0)
+  simCurrentSectionIndex = targetIndex;
+  simCurrentQuestionIndex = 0;
+
+  // Load timer for new section
+  const sec = sections[simCurrentSectionIndex];
+  simTimerSeconds = getSavedSectionTimer(simCurrentPaperKey, sec.id, sec.durationMinutes);
+  updateTimerDisplay();
+
+  // Re-render UI components
+  renderSectionTabs(paper);
+  renderQuestionPills(paper);
+  renderCurrentQuestion();
+  window.scrollTo({ top: 120, behavior: 'smooth' });
+}
+
+// Start Section Questions from Cover Page (Jump to Question 1)
+function startSectionQuestions() {
+  simCurrentQuestionIndex = 1;
+  const paper = getOrCreatePaper(simCurrentPaperKey);
+  renderQuestionPills(paper);
+  renderCurrentQuestion();
+  window.scrollTo({ top: 120, behavior: 'smooth' });
+}
+
+// Render Section Switcher Tabs Bar
+function renderSectionTabs(paper) {
+  const container = document.getElementById('simSectionTabsBar');
+  if (!container) return;
+  const sections = getPaperSections(paper);
+
+  if (sections.length <= 1) {
+    container.style.display = 'none';
+    container.innerHTML = '';
+    return;
+  }
+
+  container.style.display = 'flex';
+  container.innerHTML = '';
+
+  sections.forEach((sec, idx) => {
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = `sim-sec-tab-btn ${idx === simCurrentSectionIndex ? 'active' : ''}`;
+    
+    const durStr = sec.durationMinutes >= 60 
+      ? (sec.durationMinutes === 90 ? '1 hr 30 mins' : `${Math.floor(sec.durationMinutes / 60)} hrs`)
+      : `${sec.durationMinutes} mins`;
+    const marks = sec.totalMarks || (sec.questions || []).reduce((acc, q) => acc + (q.marks || 0), 0);
+    const calcBadge = sec.isCalcAllowed 
+      ? `<span class="sim-sec-badge calc"><i class="fa-solid fa-calculator"></i> Calculator Allowed</span>`
+      : `<span class="sim-sec-badge"><i class="fa-solid fa-ban"></i> Non-Calculator</span>`;
+
+    btn.innerHTML = `
+      <span class="sim-sec-title"><i class="fa-solid fa-layer-group"></i> ${escapeHtml(sec.name)}</span>
+      <span style="display:flex; align-items:center; gap:6px; flex-wrap:wrap;">
+        <span class="sim-sec-badge"><i class="fa-regular fa-clock"></i> ${durStr}</span>
+        <span class="sim-sec-badge">${marks} Marks</span>
+        ${calcBadge}
+      </span>
+    `;
+
+    btn.onclick = () => switchSection(idx);
+    container.appendChild(btn);
+  });
 }
 
 // Render Navigation Pills
@@ -699,25 +899,42 @@ function renderQuestionPills(paper) {
   if (!container) return;
   container.innerHTML = '';
 
-  paper.questions.forEach((q, idx) => {
+  const sections = getPaperSections(paper);
+  const sec = sections[simCurrentSectionIndex] || sections[0];
+
+  // Pill 0: Cover
+  const coverPill = document.createElement('button');
+  coverPill.type = 'button';
+  coverPill.className = `sim-q-pill cover ${simCurrentQuestionIndex === 0 ? 'active' : ''}`;
+  coverPill.innerHTML = '<i class="fa-solid fa-file-invoice"></i> Cover';
+  coverPill.title = `${sec.name} - Front Cover Page`;
+  coverPill.onclick = () => jumpToQuestion(0);
+  container.appendChild(coverPill);
+
+  // Pills 1..N: Questions
+  sec.questions.forEach((q, idx) => {
+    const pillIdx = idx + 1;
     const pill = document.createElement('button');
     pill.type = 'button';
-    pill.className = `sim-q-pill ${idx === simCurrentQuestionIndex ? 'active' : ''}`;
-    
-    // Label
+    pill.className = `sim-q-pill ${pillIdx === simCurrentQuestionIndex ? 'active' : ''}`;
+
     if (paper.subject === 'writing') {
       pill.innerText = `Task ${q.num}`;
     } else {
       pill.innerText = `Q${q.num}`;
     }
 
-    // Check saved state
-    const saved = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_q${q.num}_working`);
-    if (saved && saved.trim().length > 0) {
+    // Check saved response in localStorage (scoped by section id)
+    const savedWorking = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_sec_${sec.id}_q${q.num}_working`)
+      || (sec.id === 'A' ? localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_q${q.num}_working`) : null);
+    const savedAns = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_sec_${sec.id}_q${q.num}_ans`)
+      || (sec.id === 'A' ? localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_q${q.num}_ans`) : null);
+
+    if ((savedWorking && savedWorking.trim().length > 0) || (savedAns && savedAns.trim().length > 0)) {
       pill.classList.add('answered');
     }
 
-    pill.onclick = () => jumpToQuestion(idx);
+    pill.onclick = () => jumpToQuestion(pillIdx);
     container.appendChild(pill);
   });
 }
@@ -738,7 +955,6 @@ function getQuestionParts(q) {
   if (q.parts && Array.isArray(q.parts) && q.parts.length > 0) {
     return q.parts;
   }
-  // Auto-detect (a), (b), (c) in promptText if not explicitly defined
   if (q.promptText && typeof q.promptText === 'string') {
     const matches = [...q.promptText.matchAll(/\(([a-d])\)/g)];
     if (matches.length > 1) {
@@ -755,12 +971,13 @@ function getQuestionParts(q) {
 }
 
 // Render dynamic final answer input box(es)
-function renderFinalAnswerInputs(paper, q) {
+function renderFinalAnswerInputs(paper, q, sec) {
   const container = document.getElementById('simFinalAnsContainer');
   const sublabel = document.getElementById('simFinalAnsSublabel');
   if (!container) return;
   container.innerHTML = '';
 
+  const secId = sec ? sec.id : 'A';
   const parts = getQuestionParts(q);
   const qNum = q.num;
 
@@ -768,7 +985,9 @@ function renderFinalAnswerInputs(paper, q) {
     if (sublabel) sublabel.innerText = `Record your separate answers for each part (${parts.map(p => p.id).join(', ')}) below:`;
 
     parts.forEach(part => {
-      const savedVal = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_q${qNum}_ans_${part.id}`) || '';
+      const savedVal = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_sec_${secId}_q${qNum}_ans_${part.id}`)
+        || (secId === 'A' ? localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_q${qNum}_ans_${part.id}`) : '')
+        || '';
       const row = document.createElement('div');
       row.className = 'sim-subpart-ans-row';
       row.innerHTML = `
@@ -784,7 +1003,9 @@ function renderFinalAnswerInputs(paper, q) {
     });
   } else {
     if (sublabel) sublabel.innerText = 'Record your conclusive value below:';
-    const savedVal = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_q${qNum}_ans`) || '';
+    const savedVal = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_sec_${secId}_q${qNum}_ans`)
+      || (secId === 'A' ? localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_q${qNum}_ans`) : '')
+      || '';
     const row = document.createElement('div');
     row.style.width = '100%';
     row.innerHTML = `
@@ -797,10 +1018,157 @@ function renderFinalAnswerInputs(paper, q) {
   }
 }
 
+// Render Section Front Cover Sheet
+function renderSectionCover() {
+  const coverContainer = document.getElementById('simCoverContainer');
+  const questionPanes = document.getElementById('simQuestionPanes');
+  if (!coverContainer) return;
+
+  if (questionPanes) questionPanes.style.display = 'none';
+  coverContainer.style.display = 'block';
+
+  const paper = getOrCreatePaper(simCurrentPaperKey);
+  const sections = getPaperSections(paper);
+  const sec = sections[simCurrentSectionIndex] || sections[0];
+
+  const durStr = sec.durationMinutes >= 60
+    ? (sec.durationMinutes === 90 ? '1 hour 30 minutes' : `${Math.floor(sec.durationMinutes / 60)} hours`)
+    : `${sec.durationMinutes} minutes`;
+  const marks = sec.totalMarks || (sec.questions || []).reduce((acc, q) => acc + (q.marks || 0), 0);
+
+  const calcRule = sec.isCalcAllowed
+    ? '<strong>A calculator may be used.</strong> You must ensure your calculator meets official examination regulations.'
+    : '<strong>You must NOT have a calculator</strong> or access to any calculating aid for this non-calculator section.';
+
+  const isMaths = paper.subject === 'maths';
+  const equipment = isMaths
+    ? (sec.isCalcAllowed ? 'Pen (black or blue ink), HB pencil, eraser, ruler, calculator.' : 'Pen (black or blue ink), HB pencil, eraser, ruler. <em>Calculators prohibited.</em>')
+    : 'Pen (black or blue ink), dictionary / spelling aid where permitted.';
+
+  coverContainer.innerHTML = `
+    <div class="sim-cover-sheet">
+      <div class="sim-cover-header">
+        <div class="sim-cover-top-row">
+          <div class="sim-cover-exam-board">
+            <i class="fa-solid fa-graduation-cap"></i> ${escapeHtml(paper.board || 'Pearson Edexcel')} Functional Skills
+          </div>
+          <div class="sim-cover-code-badge">${escapeHtml(sec.code || 'EXAM')}</div>
+        </div>
+        <h1 class="sim-cover-paper-title">${escapeHtml(paper.title)}</h1>
+      </div>
+
+      <div class="sim-cover-section-banner">
+        <div class="sim-cover-sec-title">
+          <i class="fa-solid fa-file-pen"></i> ${escapeHtml(sec.name)}
+        </div>
+        <div class="sim-cover-sec-meta">
+          <span><i class="fa-regular fa-clock"></i> <strong>Time allowed:</strong> ${durStr}</span>
+          <span><i class="fa-solid fa-award"></i> <strong>Total Marks:</strong> ${marks}</span>
+        </div>
+      </div>
+
+      <div class="sim-cover-body">
+        <div class="sim-cover-instructions-card">
+          <div class="sim-cover-card-title">
+            <i class="fa-solid fa-circle-info" style="color:#0284c7;"></i> Instructions to Candidates
+          </div>
+          <ul class="sim-cover-list">
+            <li><strong>Time allowed:</strong> You have <strong>${durStr}</strong> to complete this section.</li>
+            <li><strong>Total marks:</strong> The total mark for this section is <strong>${marks} marks</strong>.</li>
+            <li><strong>Equipment:</strong> ${equipment}</li>
+            <li><strong>Calculator policy:</strong> ${calcRule}</li>
+            <li><strong>Show all working:</strong> Marks are awarded for your methods, calculations, and explanations. Record all intermediate working in the spaces provided.</li>
+            <li><strong>Check your work:</strong> Read each question carefully before you start and check your answers when finished.</li>
+          </ul>
+        </div>
+
+        <div class="sim-cover-candidate-card">
+          <div class="sim-cover-card-title">
+            <i class="fa-solid fa-id-card" style="color:#0284c7;"></i> Candidate Details
+          </div>
+          <div class="sim-candidate-row">
+            <span>Candidate Name:</span>
+            <strong>Subi</strong>
+          </div>
+          <div class="sim-candidate-row">
+            <span>Centre Name:</span>
+            <strong>Master Functional Skills</strong>
+          </div>
+          <div class="sim-candidate-row">
+            <span>Centre Number:</span>
+            <strong>MFS-10928</strong>
+          </div>
+          <div class="sim-candidate-row">
+            <span>Candidate Number:</span>
+            <strong>Candidate 01</strong>
+          </div>
+          <div class="sim-candidate-row">
+            <span>Section Question Count:</span>
+            <strong>${sec.questions.length} Questions (Q1 to Q${sec.questions.length})</strong>
+          </div>
+
+          <div class="sim-cover-declaration">
+            <i class="fa-solid fa-shield-halved"></i>
+            <span>Official Examination Environment &bull; Standard Assessment Regulations apply.</span>
+          </div>
+
+          <button type="button" class="sim-cover-start-btn" onclick="startSectionQuestions()">
+            Open Section Examination Questions <i class="fa-solid fa-arrow-right"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  `;
+
+  // Update pills active state (Cover active)
+  const pills = document.querySelectorAll('.sim-q-pill');
+  pills.forEach((p, idx) => {
+    p.classList.toggle('active', idx === 0);
+  });
+
+  // Prev / Next button state for Cover
+  const prevBtn = document.getElementById('simPrevBtn');
+  const nextBtn = document.getElementById('simNextBtn');
+  if (prevBtn) {
+    if (simCurrentSectionIndex > 0) {
+      prevBtn.disabled = false;
+      prevBtn.innerHTML = '<i class="fa-solid fa-arrow-left"></i> Previous Section';
+      prevBtn.onclick = () => {
+        switchSection(simCurrentSectionIndex - 1);
+      };
+    } else {
+      prevBtn.disabled = true;
+      prevBtn.innerHTML = '<i class="fa-solid fa-arrow-left"></i> Previous';
+      prevBtn.onclick = () => prevQuestion();
+    }
+  }
+
+  if (nextBtn) {
+    nextBtn.innerHTML = 'Open Questions <i class="fa-solid fa-arrow-right"></i>';
+    nextBtn.classList.remove('finish');
+    nextBtn.onclick = () => startSectionQuestions();
+  }
+}
+
 // Render Active Question
 function renderCurrentQuestion() {
   const paper = getOrCreatePaper(simCurrentPaperKey);
-  const q = paper.questions[simCurrentQuestionIndex];
+  const sections = getPaperSections(paper);
+  const sec = sections[simCurrentSectionIndex] || sections[0];
+
+  // If question index is 0, render the Front Cover Page
+  if (simCurrentQuestionIndex === 0) {
+    renderSectionCover();
+    return;
+  }
+
+  // Otherwise, hide cover and show question panes
+  const coverContainer = document.getElementById('simCoverContainer');
+  const questionPanes = document.getElementById('simQuestionPanes');
+  if (coverContainer) coverContainer.style.display = 'none';
+  if (questionPanes) questionPanes.style.display = 'flex';
+
+  const q = sec.questions[simCurrentQuestionIndex - 1];
   if (!q) return;
 
   const subject = paper.subject || 'maths';
@@ -811,43 +1179,53 @@ function renderCurrentQuestion() {
   const qMarksBadge = document.getElementById('simQMarksBadge');
 
   if (subject === 'writing') {
-    if (qNumBadge) qNumBadge.innerText = `Task ${q.num} of ${paper.questions.length}`;
-    if (qSectionTag) qSectionTag.innerText = q.section || 'Written Composition & SPaG';
+    if (qNumBadge) qNumBadge.innerText = `Task ${q.num} of ${sec.questions.length}`;
+    if (qSectionTag) qSectionTag.innerText = q.section || sec.name;
     if (qMarksBadge) qMarksBadge.innerText = `${q.marks} Marks • ${q.markTags || ''}`;
   } else if (subject === 'reading') {
-    if (qNumBadge) qNumBadge.innerText = `Question ${q.num} of ${paper.questions.length}`;
-    if (qSectionTag) qSectionTag.innerText = q.section || 'Reading Comprehension';
+    if (qNumBadge) qNumBadge.innerText = `Question ${q.num} of ${sec.questions.length}`;
+    if (qSectionTag) qSectionTag.innerText = q.section || sec.name;
     if (qMarksBadge) qMarksBadge.innerText = `${q.marks} Mark${q.marks > 1 ? 's' : ''}`;
   } else {
-    if (qNumBadge) qNumBadge.innerText = `Question ${q.num} of ${paper.questions.length}`;
-    if (qSectionTag) qSectionTag.innerText = q.section;
+    const secPrefix = sec.name.includes(':') ? sec.name.split(':')[0] : (sec.id === 'B' ? 'Section B' : 'Section A');
+    if (qNumBadge) qNumBadge.innerText = `${secPrefix}: Question ${q.num} of ${sec.questions.length}`;
+    if (qSectionTag) qSectionTag.innerText = sec.name;
     if (qMarksBadge) qMarksBadge.innerText = `${q.marks} Marks • ${q.markTags || ''}`;
   }
 
   // Scenario
   const scenTitle = document.getElementById('simScenarioTitle');
   const scenText = document.getElementById('simScenarioText');
-  if (scenTitle) scenTitle.innerHTML = `<i class="fa-solid fa-file-circle-check" style="color:var(--sim-blue);"></i> ${q.scenarioTitle}`;
+  if (scenTitle) scenTitle.innerHTML = `<i class="fa-solid fa-file-circle-check" style="color:var(--sim-blue);"></i> ${escapeHtml(q.scenarioTitle)}`;
   if (scenText) scenText.innerText = q.scenarioText;
 
   // Prompt
   const promptText = document.getElementById('simPromptText');
   if (promptText) promptText.innerText = q.promptText;
 
-  // Mode Specific UI Adaptations
-  adaptUiForSubject(paper, q);
+  // Mode Specific UI Adaptations (Calculator visibility, reading sources, etc.)
+  adaptUiForSubject(paper, q, sec);
 
-  // Restore User Working
-  const userWorking = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_q${q.num}_working`) || '';
+  // Restore User Working (scoped by section)
+  const savedWorking = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_sec_${sec.id}_q${q.num}_working`)
+    || (sec.id === 'A' ? localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_q${q.num}_working`) : '')
+    || '';
   const textarea = document.getElementById('simWorkingTextarea');
-  if (textarea) textarea.value = userWorking;
+  if (textarea) textarea.value = savedWorking;
 
   // Render Subpart / Final Answer Inputs
-  renderFinalAnswerInputs(paper, q);
+  renderFinalAnswerInputs(paper, q, sec);
 
   // Update Word Counter in Writing Mode
   if (subject === 'writing') {
-    updateWordCount(userWorking, q.targetWords);
+    updateWordCount(savedWorking, q.targetWords);
+  }
+
+  // Restore Flag status
+  const flagBtn = document.getElementById('simFlagBtn');
+  const isFlagged = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_sec_${sec.id}_q${q.num}_flagged`) === '1';
+  if (flagBtn) {
+    flagBtn.classList.toggle('flagged', isFlagged);
   }
 
   // Update Pills active state
@@ -859,21 +1237,39 @@ function renderCurrentQuestion() {
   // Prev / Next button state
   const prevBtn = document.getElementById('simPrevBtn');
   const nextBtn = document.getElementById('simNextBtn');
-  if (prevBtn) prevBtn.disabled = simCurrentQuestionIndex === 0;
-  if (nextBtn) {
-    if (simCurrentQuestionIndex === paper.questions.length - 1) {
-      nextBtn.innerHTML = '<i class="fa-solid fa-flag-checkered"></i> Finish &amp; Review';
-      nextBtn.classList.add('finish');
+
+  if (prevBtn) {
+    prevBtn.disabled = false;
+    prevBtn.onclick = () => prevQuestion();
+    if (simCurrentQuestionIndex === 1) {
+      prevBtn.innerHTML = '<i class="fa-solid fa-file-invoice"></i> Cover Page';
     } else {
+      prevBtn.innerHTML = '<i class="fa-solid fa-arrow-left"></i> Previous';
+    }
+  }
+
+  if (nextBtn) {
+    nextBtn.onclick = () => nextQuestion();
+    if (simCurrentQuestionIndex < sec.questions.length) {
       nextBtn.innerHTML = 'Next <i class="fa-solid fa-arrow-right"></i>';
       nextBtn.classList.remove('finish');
+    } else {
+      if (simCurrentSectionIndex < sections.length - 1) {
+        const nextSec = sections[simCurrentSectionIndex + 1];
+        nextBtn.innerHTML = `Proceed to ${escapeHtml(nextSec.name)} <i class="fa-solid fa-arrow-right"></i>`;
+        nextBtn.classList.remove('finish');
+      } else {
+        nextBtn.innerHTML = '<i class="fa-solid fa-flag-checkered"></i> Finish &amp; Review All';
+        nextBtn.classList.add('finish');
+      }
     }
   }
 }
 
 // Adapt UI for Subject Modes (Maths vs Writing vs Reading)
-function adaptUiForSubject(paper, q) {
+function adaptUiForSubject(paper, q, sec) {
   const subject = paper.subject || 'maths';
+  const isCalcAllowed = sec ? sec.isCalcAllowed : !!q.isCalcAllowed;
 
   const mathToolbar = document.getElementById('simMathToolbar');
   const calcLockedBanner = document.getElementById('simCalcLockedBanner');
@@ -890,7 +1286,6 @@ function adaptUiForSubject(paper, q) {
   const mcqContainer = document.getElementById('simMcqContainer');
 
   if (subject === 'writing') {
-    // WRITING MODE
     if (mathToolbar) mathToolbar.style.display = 'none';
     if (calcLockedBanner) calcLockedBanner.style.display = 'none';
     if (calcDrawer) calcDrawer.style.display = 'none';
@@ -902,13 +1297,12 @@ function adaptUiForSubject(paper, q) {
     if (wordCountBadge) wordCountBadge.style.display = 'inline-flex';
     if (writingChecklist) {
       writingChecklist.style.display = 'block';
-      renderChecklist(q.checklist || []);
+      renderChecklist(q.checklist || [], sec);
     }
     if (workingTitleText) workingTitleText.innerText = 'Draft Your Written Response in the Spaces';
     if (mcqContainer) mcqContainer.style.display = 'none';
 
   } else if (subject === 'reading') {
-    // READING MODE
     if (mathToolbar) mathToolbar.style.display = 'none';
     if (calcLockedBanner) calcLockedBanner.style.display = 'none';
     if (calcDrawer) calcDrawer.style.display = 'none';
@@ -925,11 +1319,10 @@ function adaptUiForSubject(paper, q) {
 
     if (workingTitleText) workingTitleText.innerText = 'Record Your Reading Comprehension Answer';
 
-    // Handle Multiple Choice vs Open Text
     if (q.expectedType === 'multiple-choice' && q.options) {
       if (mcqContainer) {
         mcqContainer.style.display = 'flex';
-        renderMcqOptions(q.options, q.num);
+        renderMcqOptions(q.options, q.num, sec);
       }
       if (finalAnsCard) finalAnsCard.style.display = 'none';
     } else {
@@ -950,7 +1343,7 @@ function adaptUiForSubject(paper, q) {
     if (workingTitleText) workingTitleText.innerText = 'Type Your Working & Calculations in the Spaces';
 
     // Calculator Section Check
-    if (q.isCalcAllowed) {
+    if (isCalcAllowed) {
       if (calcLockedBanner) calcLockedBanner.style.display = 'none';
       if (calcDrawer) {
         calcDrawer.style.display = 'block';
@@ -959,7 +1352,7 @@ function adaptUiForSubject(paper, q) {
     } else {
       if (calcLockedBanner) calcLockedBanner.style.display = 'flex';
       if (calcDrawer) {
-        calcDrawer.style.display = 'none'; // Completely disabled and not there for Non-Calculator Section A
+        calcDrawer.style.display = 'none'; // Completely disabled/hidden for Section A Non-Calc
         calcDrawer.classList.add('locked');
       }
     }
@@ -977,7 +1370,7 @@ function renderSourceTabs(texts) {
     const btn = document.createElement('button');
     btn.type = 'button';
     btn.className = `sim-source-tab-btn ${idx === simActiveSourceTextTab ? 'active' : ''}`;
-    btn.innerHTML = `<i class="fa-regular fa-file-lines"></i> ${txt.label || txt.title}`;
+    btn.innerHTML = `<i class="fa-regular fa-file-lines"></i> ${escapeHtml(txt.label || txt.title)}`;
     btn.onclick = () => {
       simActiveSourceTextTab = idx;
       renderSourceTabs(texts);
@@ -992,50 +1385,68 @@ function renderSourceTabs(texts) {
 }
 
 // Multiple Choice Option Renderer
-function renderMcqOptions(options, qNum) {
+function renderMcqOptions(options, qNum, sec) {
   const container = document.getElementById('simMcqContainer');
   if (!container) return;
   container.innerHTML = '';
 
-  const savedChoice = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_q${qNum}_ans`) || '';
+  const secId = sec ? sec.id : 'A';
+  const savedChoice = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_sec_${secId}_q${qNum}_ans`)
+    || (secId === 'A' ? localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_q${qNum}_ans`) : '')
+    || '';
 
   options.forEach((opt) => {
     const label = document.createElement('label');
     label.className = `sim-mcq-label ${savedChoice === opt ? 'selected' : ''}`;
     label.innerHTML = `
-      <input type="radio" name="sim_mcq_q${qNum}" value="${opt}" ${savedChoice === opt ? 'checked' : ''} onchange="handleMcqSelect('${opt}', ${qNum})">
-      <span>${opt}</span>
+      <input type="radio" name="sim_mcq_q${qNum}" value="${escapeHtml(opt)}" ${savedChoice === opt ? 'checked' : ''} onchange="handleMcqSelect('${escapeHtml(opt)}', ${qNum})">
+      <span>${escapeHtml(opt)}</span>
     `;
     container.appendChild(label);
   });
 }
 
 function handleMcqSelect(choice, qNum) {
-  localStorage.setItem(`mfs_sim_${simCurrentPaperKey}_q${qNum}_ans`, choice);
+  const paper = getOrCreatePaper(simCurrentPaperKey);
+  const sections = getPaperSections(paper);
+  const sec = sections[simCurrentSectionIndex] || sections[0];
+  const secId = sec.id;
+
+  localStorage.setItem(`mfs_sim_${simCurrentPaperKey}_sec_${secId}_q${qNum}_ans`, choice);
   const labels = document.querySelectorAll('.sim-mcq-label');
   labels.forEach(l => {
     const radio = l.querySelector('input');
     l.classList.toggle('selected', radio && radio.checked);
   });
+
+  const pills = document.querySelectorAll('.sim-q-pill');
+  if (pills[simCurrentQuestionIndex]) {
+    pills[simCurrentQuestionIndex].classList.add('answered');
+  }
+
   indicateSaveStatus();
 }
 
 // Writing Checklist Renderer
-function renderChecklist(items) {
+function renderChecklist(items, sec) {
   const container = document.getElementById('simChecklistItems');
   if (!container) return;
   container.innerHTML = '';
 
   const paper = getOrCreatePaper(simCurrentPaperKey);
-  const qNum = paper.questions[simCurrentQuestionIndex].num;
+  const sections = getPaperSections(paper);
+  const currentSec = sec || sections[simCurrentSectionIndex] || sections[0];
+  if (simCurrentQuestionIndex === 0) return;
+  const qNum = currentSec.questions[simCurrentQuestionIndex - 1].num;
+  const secId = currentSec.id;
 
   items.forEach((item, idx) => {
-    const saved = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_q${qNum}_chk_${idx}`) === '1';
+    const saved = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_sec_${secId}_q${qNum}_chk_${idx}`) === '1';
     const row = document.createElement('label');
     row.className = 'sim-checklist-item';
     row.innerHTML = `
       <input type="checkbox" ${saved ? 'checked' : ''} onchange="handleChecklistToggle(${idx}, this.checked)">
-      <span>${item}</span>
+      <span>${escapeHtml(item)}</span>
     `;
     container.appendChild(row);
   });
@@ -1043,8 +1454,11 @@ function renderChecklist(items) {
 
 function handleChecklistToggle(idx, checked) {
   const paper = getOrCreatePaper(simCurrentPaperKey);
-  const qNum = paper.questions[simCurrentQuestionIndex].num;
-  localStorage.setItem(`mfs_sim_${simCurrentPaperKey}_q${qNum}_chk_${idx}`, checked ? '1' : '0');
+  const sections = getPaperSections(paper);
+  const sec = sections[simCurrentSectionIndex] || sections[0];
+  if (simCurrentQuestionIndex === 0) return;
+  const qNum = sec.questions[simCurrentQuestionIndex - 1].num;
+  localStorage.setItem(`mfs_sim_${simCurrentPaperKey}_sec_${sec.id}_q${qNum}_chk_${idx}`, checked ? '1' : '0');
   indicateSaveStatus();
 }
 
@@ -1091,26 +1505,59 @@ function togglePlanningBox() {
 
 function handlePlanningInput(val) {
   const paper = getOrCreatePaper(simCurrentPaperKey);
-  const qNum = paper.questions[simCurrentQuestionIndex].num;
-  localStorage.setItem(`mfs_sim_${simCurrentPaperKey}_q${qNum}_planning`, val);
+  const sections = getPaperSections(paper);
+  const sec = sections[simCurrentSectionIndex] || sections[0];
+  if (simCurrentQuestionIndex === 0) return;
+  const qNum = sec.questions[simCurrentQuestionIndex - 1].num;
+  localStorage.setItem(`mfs_sim_${simCurrentPaperKey}_sec_${sec.id}_q${qNum}_planning`, val);
   indicateSaveStatus();
 }
 
 // Navigation Handlers
 function nextQuestion() {
   const paper = getOrCreatePaper(simCurrentPaperKey);
-  if (simCurrentQuestionIndex < paper.questions.length - 1) {
+  const sections = getPaperSections(paper);
+  const sec = sections[simCurrentSectionIndex] || sections[0];
+
+  if (simCurrentQuestionIndex === 0) {
+    startSectionQuestions();
+    return;
+  }
+
+  if (simCurrentQuestionIndex < sec.questions.length) {
     simCurrentQuestionIndex++;
     renderCurrentQuestion();
     window.scrollTo({ top: 120, behavior: 'smooth' });
   } else {
-    openSubmitModal();
+    if (simCurrentSectionIndex < sections.length - 1) {
+      switchSection(simCurrentSectionIndex + 1);
+    } else {
+      openSubmitModal();
+    }
   }
 }
 
 function prevQuestion() {
-  if (simCurrentQuestionIndex > 0) {
+  if (simCurrentQuestionIndex > 1) {
     simCurrentQuestionIndex--;
+    renderCurrentQuestion();
+    window.scrollTo({ top: 120, behavior: 'smooth' });
+  } else if (simCurrentQuestionIndex === 1) {
+    simCurrentQuestionIndex = 0; // Return to Cover
+    renderCurrentQuestion();
+    window.scrollTo({ top: 120, behavior: 'smooth' });
+  } else if (simCurrentQuestionIndex === 0 && simCurrentSectionIndex > 0) {
+    // Go to previous section's last question
+    saveCurrentSectionTimer();
+    simCurrentSectionIndex--;
+    const paper = getOrCreatePaper(simCurrentPaperKey);
+    const sections = getPaperSections(paper);
+    const prevSec = sections[simCurrentSectionIndex];
+    simCurrentQuestionIndex = prevSec.questions.length;
+    simTimerSeconds = getSavedSectionTimer(simCurrentPaperKey, prevSec.id, prevSec.durationMinutes);
+    updateTimerDisplay();
+    renderSectionTabs(paper);
+    renderQuestionPills(paper);
     renderCurrentQuestion();
     window.scrollTo({ top: 120, behavior: 'smooth' });
   }
@@ -1118,7 +1565,10 @@ function prevQuestion() {
 
 function jumpToQuestion(index) {
   const paper = getOrCreatePaper(simCurrentPaperKey);
-  if (index >= 0 && index < paper.questions.length) {
+  const sections = getPaperSections(paper);
+  const sec = sections[simCurrentSectionIndex] || sections[0];
+
+  if (index >= 0 && index <= sec.questions.length) {
     simCurrentQuestionIndex = index;
     renderCurrentQuestion();
     window.scrollTo({ top: 120, behavior: 'smooth' });
@@ -1132,19 +1582,25 @@ function renderQuestion(index) {
 // Input Handlers
 function handleWorkingInput(val) {
   const paper = getOrCreatePaper(simCurrentPaperKey);
-  const qNum = paper.questions[simCurrentQuestionIndex].num;
-  localStorage.setItem(`mfs_sim_${simCurrentPaperKey}_q${qNum}_working`, val);
+  const sections = getPaperSections(paper);
+  const sec = sections[simCurrentSectionIndex] || sections[0];
+  if (simCurrentQuestionIndex === 0) return;
+  const q = sec.questions[simCurrentQuestionIndex - 1];
+  const qNum = q.num;
+  const secId = sec.id;
+
+  localStorage.setItem(`mfs_sim_${simCurrentPaperKey}_sec_${secId}_q${qNum}_working`, val);
 
   // Update pill answered status
   const pills = document.querySelectorAll('.sim-q-pill');
-  const userAns = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_q${qNum}_ans`) || '';
+  const userAns = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_sec_${secId}_q${qNum}_ans`) || '';
   if (pills[simCurrentQuestionIndex]) {
     pills[simCurrentQuestionIndex].classList.toggle('answered', val.trim().length > 0 || userAns.trim().length > 0);
   }
 
   // Update word counter if writing
   if (paper.subject === 'writing') {
-    updateWordCount(val, paper.questions[simCurrentQuestionIndex].targetWords);
+    updateWordCount(val, q.targetWords);
   }
 
   indicateSaveStatus();
@@ -1152,11 +1608,17 @@ function handleWorkingInput(val) {
 
 function handleAnswerInput(val) {
   const paper = getOrCreatePaper(simCurrentPaperKey);
-  const qNum = paper.questions[simCurrentQuestionIndex].num;
-  localStorage.setItem(`mfs_sim_${simCurrentPaperKey}_q${qNum}_ans`, val);
+  const sections = getPaperSections(paper);
+  const sec = sections[simCurrentSectionIndex] || sections[0];
+  if (simCurrentQuestionIndex === 0) return;
+  const q = sec.questions[simCurrentQuestionIndex - 1];
+  const qNum = q.num;
+  const secId = sec.id;
+
+  localStorage.setItem(`mfs_sim_${simCurrentPaperKey}_sec_${secId}_q${qNum}_ans`, val);
 
   const pills = document.querySelectorAll('.sim-q-pill');
-  const userWorking = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_q${qNum}_working`) || '';
+  const userWorking = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_sec_${secId}_q${qNum}_working`) || '';
   if (pills[simCurrentQuestionIndex]) {
     pills[simCurrentQuestionIndex].classList.toggle('answered', val.trim().length > 0 || userWorking.trim().length > 0);
   }
@@ -1166,20 +1628,25 @@ function handleAnswerInput(val) {
 
 function handleSubpartAnswerInput(partId, val) {
   const paper = getOrCreatePaper(simCurrentPaperKey);
-  const q = paper.questions[simCurrentQuestionIndex];
+  const sections = getPaperSections(paper);
+  const sec = sections[simCurrentSectionIndex] || sections[0];
+  if (simCurrentQuestionIndex === 0) return;
+  const q = sec.questions[simCurrentQuestionIndex - 1];
   const qNum = q.num;
-  localStorage.setItem(`mfs_sim_${simCurrentPaperKey}_q${qNum}_ans_${partId}`, val);
+  const secId = sec.id;
+
+  localStorage.setItem(`mfs_sim_${simCurrentPaperKey}_sec_${secId}_q${qNum}_ans_${partId}`, val);
 
   const parts = getQuestionParts(q) || [];
   const fullSummary = parts.map(p => {
-    const v = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_q${qNum}_ans_${p.id}`) || '';
+    const v = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_sec_${secId}_q${qNum}_ans_${p.id}`) || '';
     return v ? `(${p.id}) ${v}${p.unit ? ' ' + p.unit : ''}` : '';
   }).filter(Boolean).join('  |  ');
 
-  localStorage.setItem(`mfs_sim_${simCurrentPaperKey}_q${qNum}_ans`, fullSummary);
+  localStorage.setItem(`mfs_sim_${simCurrentPaperKey}_sec_${secId}_q${qNum}_ans`, fullSummary);
 
   const pills = document.querySelectorAll('.sim-q-pill');
-  const userWorking = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_q${qNum}_working`) || '';
+  const userWorking = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_sec_${secId}_q${qNum}_working`) || '';
   if (pills[simCurrentQuestionIndex]) {
     pills[simCurrentQuestionIndex].classList.toggle('answered', fullSummary.trim().length > 0 || userWorking.trim().length > 0);
   }
@@ -1201,14 +1668,20 @@ function indicateSaveStatus() {
 function toggleFlag() {
   const btn = document.getElementById('simFlagBtn');
   const paper = getOrCreatePaper(simCurrentPaperKey);
-  const qNum = paper.questions[simCurrentQuestionIndex].num;
-  const isFlagged = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_q${qNum}_flagged`) === '1';
+  const sections = getPaperSections(paper);
+  const sec = sections[simCurrentSectionIndex] || sections[0];
+  if (simCurrentQuestionIndex === 0) return;
+  const q = sec.questions[simCurrentQuestionIndex - 1];
+  const qNum = q.num;
+  const secId = sec.id;
+
+  const isFlagged = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_sec_${secId}_q${qNum}_flagged`) === '1';
 
   if (isFlagged) {
-    localStorage.setItem(`mfs_sim_${simCurrentPaperKey}_q${qNum}_flagged`, '0');
+    localStorage.setItem(`mfs_sim_${simCurrentPaperKey}_sec_${secId}_q${qNum}_flagged`, '0');
     if (btn) btn.classList.remove('flagged');
   } else {
-    localStorage.setItem(`mfs_sim_${simCurrentPaperKey}_q${qNum}_flagged`, '1');
+    localStorage.setItem(`mfs_sim_${simCurrentPaperKey}_sec_${secId}_q${qNum}_flagged`, '1');
     if (btn) btn.classList.add('flagged');
   }
 }
@@ -1258,13 +1731,16 @@ function clearWorkingSpace() {
   }
 }
 
-// Countdown Timer
+// Countdown Timer with hours formatting
 function startTimer() {
   if (simTimerInterval) clearInterval(simTimerInterval);
   simTimerInterval = setInterval(() => {
     if (simTimerActive && simTimerSeconds > 0) {
       simTimerSeconds--;
       updateTimerDisplay();
+      if (simTimerSeconds % 5 === 0) {
+        saveCurrentSectionTimer();
+      }
     }
   }, 1000);
 }
@@ -1273,9 +1749,16 @@ function updateTimerDisplay() {
   const disp = document.getElementById('simTimerDisplay');
   if (!disp) return;
 
-  const mins = Math.floor(simTimerSeconds / 60);
-  const secs = simTimerSeconds % 60;
-  disp.innerText = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+  if (simTimerSeconds >= 3600) {
+    const hrs = Math.floor(simTimerSeconds / 3600);
+    const mins = Math.floor((simTimerSeconds % 3600) / 60);
+    const secs = simTimerSeconds % 60;
+    disp.innerText = `${hrs}:${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+  } else {
+    const mins = Math.floor(simTimerSeconds / 60);
+    const secs = simTimerSeconds % 60;
+    disp.innerText = `${mins.toString().padStart(2, '0')}:${secs.toString().padStart(2, '0')}`;
+  }
 
   const timerBox = document.getElementById('simTimerBox');
   if (timerBox) {
@@ -1343,7 +1826,6 @@ let simFontLevelIndex = 0;
 
 function changeFontSize(delta) {
   const newIndex = simFontLevelIndex + delta;
-  // Strictly enforce minimum (current size) and maximum limits
   if (newIndex < 0 || newIndex >= SIM_FONT_LEVELS.length) return;
   simFontLevelIndex = newIndex;
   applySimFontSize();
@@ -1363,11 +1845,9 @@ function applySimFontSize() {
   if (badge) {
     badge.innerText = current.label;
   }
-  // Disable A- when at minimum limit (current size)
   if (decBtn) {
     decBtn.disabled = simFontLevelIndex === 0;
   }
-  // Disable A+ when at maximum limit
   if (incBtn) {
     incBtn.disabled = simFontLevelIndex === SIM_FONT_LEVELS.length - 1;
   }
@@ -1456,55 +1936,78 @@ function calcSqrt() {
 // Submit Modal & Side-by-Side Model Solution Comparison
 function openSubmitModal() {
   const paper = getOrCreatePaper(simCurrentPaperKey);
+  const sections = getPaperSections(paper);
   const container = document.getElementById('simReviewList');
+  if (!container) return;
   container.innerHTML = '';
 
-  paper.questions.forEach((q) => {
-    const userWorking = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_q${q.num}_working`) || '(No response entered)';
-    const userAns = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_q${q.num}_ans`) || '';
-
-    const row = document.createElement('div');
-    row.className = 'sim-review-row';
-
-    const itemLabel = paper.subject === 'writing' ? `Task ${q.num}` : `Question ${q.num}`;
-
-    row.innerHTML = `
-      <div>
-        <div class="sim-review-col-title" style="color:var(--sim-navy);">
-          <i class="fa-solid fa-user-pen" style="color:var(--sim-blue);"></i> ${itemLabel}: Your Response &amp; Working
-        </div>
-        <div style="background:#ffffff; border:1px solid #cbd5e1; border-radius:6px; padding:10px; font-size:0.85rem; font-family:'Courier New', monospace; white-space:pre-wrap; min-height:80px; margin-bottom:8px;">${userWorking}</div>
-        ${userAns ? `
-        <div style="font-size:0.9rem; font-weight:800; color:var(--sim-navy);">
-          Your Concluded Answer: <span style="background:#e0f2fe; padding:2px 8px; border-radius:4px; color:#0369a1;">${userAns} ${q.unit || ''}</span>
-        </div>` : ''}
-      </div>
-      <div>
-        <div class="sim-review-col-title" style="color:var(--sim-emerald);">
-          <i class="fa-solid fa-award" style="color:var(--sim-green);"></i> Accredited Master Model &amp; Mark Scheme [${q.markTags || ''}]
-        </div>
-        <div style="background:#f0fdf4; border:1px solid #86efac; border-radius:6px; padding:10px; font-size:0.85rem; font-family:'Courier New', monospace; white-space:pre-wrap; min-height:80px; margin-bottom:8px; color:#14532d;">${q.modelSolution}</div>
-        <div style="font-size:0.9rem; font-weight:800; color:#15803d;">
-          Model Benchmark: <span style="background:#dcfce7; padding:2px 8px; border-radius:4px;">${q.finalBenchmark}</span>
-        </div>
-      </div>
+  sections.forEach((sec) => {
+    // Section Review Header
+    const secHeader = document.createElement('div');
+    secHeader.style.cssText = 'background:#0f172a; color:#ffffff; padding:12px 18px; border-radius:8px; font-weight:800; font-size:1rem; margin:16px 0 10px 0; display:flex; justify-content:space-between; align-items:center; letter-spacing:0.4px; flex-wrap:wrap; gap:8px;';
+    const durStr = sec.durationMinutes >= 60 ? (sec.durationMinutes === 90 ? '1 hr 30 mins' : `${Math.floor(sec.durationMinutes / 60)} hrs`) : `${sec.durationMinutes} mins`;
+    const marks = sec.totalMarks || (sec.questions || []).reduce((acc, q) => acc + (q.marks || 0), 0);
+    secHeader.innerHTML = `
+      <span><i class="fa-solid fa-layer-group" style="color:#38bdf8; margin-right:8px;"></i> ${escapeHtml(sec.name)}</span>
+      <span style="font-size:0.82rem; font-weight:700; opacity:0.9;">${durStr} &bull; ${marks} Marks &bull; ${sec.isCalcAllowed ? 'Calculator Permitted' : 'Non-Calculator'}</span>
     `;
-    container.appendChild(row);
+    container.appendChild(secHeader);
+
+    sec.questions.forEach((q) => {
+      const userWorking = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_sec_${sec.id}_q${q.num}_working`)
+        || (sec.id === 'A' ? localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_q${q.num}_working`) : null)
+        || '(No response recorded)';
+      const userAns = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_sec_${sec.id}_q${q.num}_ans`)
+        || (sec.id === 'A' ? localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_q${q.num}_ans`) : null)
+        || '';
+
+      const row = document.createElement('div');
+      row.className = 'sim-review-row';
+
+      const itemLabel = paper.subject === 'writing' ? `Task ${q.num}` : `${sec.name.includes(':') ? sec.name.split(':')[0] : 'Section ' + sec.id}: Question ${q.num}`;
+
+      row.innerHTML = `
+        <div>
+          <div class="sim-review-col-title" style="color:var(--sim-navy);">
+            <i class="fa-solid fa-user-pen" style="color:var(--sim-blue);"></i> ${escapeHtml(itemLabel)}: Your Response &amp; Working
+          </div>
+          <div style="background:#ffffff; border:1px solid #cbd5e1; border-radius:6px; padding:10px; font-size:0.85rem; font-family:'Courier New', monospace; white-space:pre-wrap; min-height:80px; margin-bottom:8px;">${escapeHtml(userWorking)}</div>
+          ${userAns ? `
+          <div style="font-size:0.9rem; font-weight:800; color:var(--sim-navy);">
+            Your Concluded Answer: <span style="background:#e0f2fe; padding:2px 8px; border-radius:4px; color:#0369a1;">${escapeHtml(userAns)} ${escapeHtml(q.unit || '')}</span>
+          </div>` : ''}
+        </div>
+        <div>
+          <div class="sim-review-col-title" style="color:var(--sim-emerald);">
+            <i class="fa-solid fa-award" style="color:var(--sim-green);"></i> Accredited Master Model &amp; Mark Scheme [${escapeHtml(q.markTags || '')}]
+          </div>
+          <div style="background:#f0fdf4; border:1px solid #86efac; border-radius:6px; padding:10px; font-size:0.85rem; font-family:'Courier New', monospace; white-space:pre-wrap; min-height:80px; margin-bottom:8px; color:#14532d;">${escapeHtml(q.modelSolution)}</div>
+          <div style="font-size:0.9rem; font-weight:800; color:#15803d;">
+            Model Benchmark: <span style="background:#dcfce7; padding:2px 8px; border-radius:4px;">${escapeHtml(q.finalBenchmark)}</span>
+          </div>
+        </div>
+      `;
+      container.appendChild(row);
+    });
   });
 
   // Watch Walkthrough button
   const videoBtn = document.getElementById('simModalWatchVideoBtn');
-  if (paper.videoSolutionSlug) {
-    videoBtn.style.display = 'inline-flex';
-    videoBtn.href = `video-solution.html?topic=${paper.videoSolutionSlug}`;
-  } else {
-    videoBtn.style.display = 'none';
+  if (videoBtn) {
+    if (paper.videoSolutionSlug) {
+      videoBtn.style.display = 'inline-flex';
+      videoBtn.href = `video-solution.html?topic=${paper.videoSolutionSlug}`;
+    } else {
+      videoBtn.style.display = 'none';
+    }
   }
 
   // Open modal
-  document.getElementById('simSubmitModal').classList.add('open');
+  const modal = document.getElementById('simSubmitModal');
+  if (modal) modal.classList.add('open');
 }
 
 function closeSubmitModal() {
-  document.getElementById('simSubmitModal').classList.remove('open');
+  const modal = document.getElementById('simSubmitModal');
+  if (modal) modal.classList.remove('open');
 }

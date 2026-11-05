@@ -1,0 +1,732 @@
+/* Master Functional Skills - Authentic Online Mock Exam Simulator Stylesheet */
+
+:root {
+  --sim-navy: #0f172a;
+  --sim-navy-dark: #090d16;
+  --sim-blue: #0284c7;
+  --sim-blue-hover: #0369a1;
+  --sim-sky: #38bdf8;
+  --sim-emerald: #0f766e;
+  --sim-green: #16a34a;
+  --sim-green-light: #f0fdf4;
+  --sim-amber: #d97706;
+  --sim-amber-light: #fffbeb;
+  --sim-crimson: #dc2626;
+  --sim-slate-50: #f8fafc;
+  --sim-slate-100: #f1f5f9;
+  --sim-slate-200: #e2e8f0;
+  --sim-slate-300: #cbd5e1;
+  --sim-slate-600: #475569;
+  --sim-slate-700: #334155;
+  --sim-slate-900: #0f172a;
+  --sim-border: #cbd5e1;
+  --sim-card-bg: #ffffff;
+}
+
+/* Outer Simulator App Shell */
+.sim-app-shell {
+  max-width: 1400px;
+  margin: 10px auto 40px auto;
+  background: var(--sim-card-bg);
+  border: 1px solid var(--sim-border);
+  border-radius: 10px;
+  box-shadow: 0 12px 40px rgba(15, 23, 42, 0.12);
+  display: flex;
+  flex-direction: column;
+  min-height: 820px;
+  font-family: 'Lexend', system-ui, -apple-system, sans-serif;
+  overflow: hidden;
+}
+
+/* Fullscreen mode */
+.sim-app-shell:fullscreen,
+.sim-app-shell.fullscreen {
+  max-width: 100vw;
+  width: 100vw;
+  height: 100vh;
+  min-height: 100vh;
+  margin: 0;
+  border-radius: 0;
+  border: none;
+}
+
+/* Control Banner (App Titlebar) */
+.sim-control-bar {
+  background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+  color: #ffffff;
+  padding: 10px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+  border-bottom: 2px solid var(--sim-blue);
+}
+
+.sim-brand-block {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.sim-brand-badge {
+  background: var(--sim-blue);
+  color: #ffffff;
+  font-size: 0.72rem;
+  font-weight: 800;
+  padding: 4px 8px;
+  border-radius: 4px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.sim-paper-select-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sim-select-label {
+  font-size: 0.82rem;
+  color: #94a3b8;
+  font-weight: 600;
+}
+
+.sim-paper-dropdown {
+  background: #1e293b;
+  color: #ffffff;
+  border: 1px solid #475569;
+  border-radius: 6px;
+  padding: 6px 12px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  font-family: inherit;
+  outline: none;
+  cursor: pointer;
+}
+
+.sim-paper-dropdown:focus {
+  border-color: var(--sim-sky);
+  box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.3);
+}
+
+.sim-controls-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Timer Display */
+.sim-timer-box {
+  background: rgba(15, 23, 42, 0.7);
+  border: 1px solid #475569;
+  padding: 6px 14px;
+  border-radius: 6px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  color: #38bdf8;
+}
+
+.sim-timer-box.warning {
+  border-color: #ef4444;
+  color: #ef4444;
+  animation: simPulse 1s infinite;
+}
+
+@keyframes simPulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.5; }
+}
+
+.sim-timer-btn {
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  cursor: pointer;
+  padding: 2px;
+  font-size: 0.85rem;
+  transition: color 0.15s;
+}
+
+.sim-timer-btn:hover {
+  color: #ffffff;
+}
+
+/* Save Status Indicator */
+.sim-save-status {
+  font-size: 0.76rem;
+  color: #86efac;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* Dual Pane Canvas */
+.sim-canvas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  flex: 1;
+  min-height: 680px;
+  background: var(--sim-slate-100);
+}
+
+@media (max-width: 992px) {
+  .sim-canvas {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Left Pane: Question Scenario */
+.sim-pane-question {
+  background: #ffffff;
+  padding: 24px;
+  overflow-y: auto;
+  border-right: 2px solid var(--sim-slate-200);
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.sim-q-meta-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--sim-slate-200);
+}
+
+.sim-q-badge-group {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sim-q-num-badge {
+  background: var(--sim-navy);
+  color: #ffffff;
+  font-weight: 800;
+  font-size: 0.82rem;
+  padding: 4px 10px;
+  border-radius: 4px;
+}
+
+.sim-q-section-tag {
+  background: #e0f2fe;
+  color: #0369a1;
+  font-weight: 700;
+  font-size: 0.78rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.sim-q-marks-badge {
+  background: #fef3c7;
+  color: #b45309;
+  font-weight: 700;
+  font-size: 0.78rem;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.sim-q-flag-btn {
+  background: transparent;
+  border: 1px solid var(--sim-slate-300);
+  border-radius: 6px;
+  padding: 5px 10px;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--sim-slate-600);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.15s;
+}
+
+.sim-q-flag-btn.flagged {
+  background: #fffbeb;
+  border-color: #f59e0b;
+  color: #b45309;
+}
+
+.sim-q-scenario-card {
+  background: #f8fafc;
+  border: 1px solid var(--sim-slate-200);
+  border-left: 4px solid var(--sim-blue);
+  border-radius: 6px;
+  padding: 16px;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--sim-slate-900);
+}
+
+.sim-q-scenario-title {
+  font-weight: 800;
+  color: var(--sim-navy);
+  margin-bottom: 8px;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sim-q-prompt-text {
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.5;
+  color: var(--sim-slate-900);
+}
+
+.sim-q-diagram-box {
+  background: #ffffff;
+  border: 1px dashed var(--sim-slate-300);
+  border-radius: 6px;
+  padding: 14px;
+  text-align: center;
+}
+
+/* Right Pane: Learner Interactive Working Space */
+.sim-pane-working {
+  background: #fbfcfe;
+  padding: 24px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.sim-working-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.sim-working-title {
+  font-size: 0.95rem;
+  font-weight: 800;
+  color: var(--sim-navy);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Math Symbol Toolbar */
+.sim-math-toolbar {
+  background: #ffffff;
+  border: 1px solid var(--sim-slate-200);
+  border-radius: 6px;
+  padding: 8px 10px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-items: center;
+}
+
+.sim-toolbar-label {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--sim-slate-600);
+  text-transform: uppercase;
+  margin-right: 4px;
+}
+
+.sim-sym-btn {
+  background: #f1f5f9;
+  border: 1px solid var(--sim-slate-300);
+  color: var(--sim-slate-900);
+  border-radius: 4px;
+  padding: 4px 8px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+
+.sim-sym-btn:hover {
+  background: #e0f2fe;
+  border-color: var(--sim-blue);
+  color: var(--sim-blue);
+  transform: translateY(-1px);
+}
+
+.sim-template-btn {
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  color: var(--sim-emerald);
+  border-radius: 4px;
+  padding: 4px 10px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+
+.sim-template-btn:hover {
+  background: #f0fdf4;
+  border-color: var(--sim-green);
+  color: var(--sim-green);
+}
+
+/* Typed Working Area */
+.sim-working-card {
+  background: #ffffff;
+  border: 1px solid var(--sim-slate-300);
+  border-radius: 8px;
+  padding: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+}
+
+.sim-working-textarea {
+  width: 100%;
+  min-height: 220px;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  padding: 12px;
+  font-family: 'Courier New', Courier, monospace, 'Lexend';
+  font-size: 0.95rem;
+  line-height: 1.6;
+  color: #1e293b;
+  resize: vertical;
+  background-color: #fafbfc;
+  background-image: linear-gradient(rgba(0,0,0,0.02) 1px, transparent 1px);
+  background-size: 100% 1.6em;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.sim-working-textarea:focus {
+  border-color: var(--sim-blue);
+  background-color: #ffffff;
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15);
+}
+
+/* Final Answer Box */
+.sim-final-ans-card {
+  background: #f8fafc;
+  border: 2px solid var(--sim-blue);
+  border-radius: 8px;
+  padding: 14px 18px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.sim-final-ans-label {
+  font-size: 0.92rem;
+  font-weight: 800;
+  color: var(--sim-navy);
+}
+
+.sim-final-ans-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.sim-unit-badge {
+  background: var(--sim-slate-200);
+  color: var(--sim-slate-700);
+  padding: 6px 12px;
+  border-radius: 6px;
+  font-weight: 800;
+  font-size: 0.92rem;
+}
+
+.sim-final-input {
+  border: 2px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 8px 14px;
+  font-size: 1.1rem;
+  font-weight: 800;
+  color: var(--sim-navy);
+  width: 180px;
+  outline: none;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  font-family: inherit;
+}
+
+.sim-final-input:focus {
+  border-color: var(--sim-blue);
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.2);
+}
+
+/* Built-in Onscreen Calculator */
+.sim-calc-drawer {
+  background: #1e293b;
+  border-radius: 8px;
+  padding: 12px;
+  color: #ffffff;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sim-calc-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #94a3b8;
+}
+
+.sim-calc-screen {
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 6px;
+  padding: 10px 14px;
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  color: #38bdf8;
+  min-height: 48px;
+  overflow: hidden;
+}
+
+.sim-calc-keypad {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 6px;
+}
+
+.sim-calc-key {
+  background: #334155;
+  border: none;
+  color: #ffffff;
+  border-radius: 4px;
+  padding: 8px;
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+
+.sim-calc-key:hover {
+  background: #475569;
+}
+
+.sim-calc-key.op {
+  background: #0284c7;
+}
+
+.sim-calc-key.op:hover {
+  background: #0369a1;
+}
+
+.sim-calc-key.eq {
+  background: #16a34a;
+}
+
+.sim-calc-key.eq:hover {
+  background: #15803d;
+}
+
+.sim-calc-locked-banner {
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  color: #991b1b;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Bottom Navigation Bar */
+.sim-bottom-bar {
+  background: #ffffff;
+  border-top: 1px solid var(--sim-border);
+  padding: 12px 24px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.sim-nav-btn {
+  background: #f1f5f9;
+  border: 1px solid var(--sim-slate-300);
+  border-radius: 6px;
+  padding: 8px 16px;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--sim-slate-700);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: all 0.15s;
+}
+
+.sim-nav-btn:hover:not(:disabled) {
+  background: #e2e8f0;
+  color: var(--sim-navy);
+}
+
+.sim-nav-btn:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.sim-btn-primary {
+  background: var(--sim-blue);
+  border-color: var(--sim-blue);
+  color: #ffffff;
+}
+
+.sim-btn-primary:hover:not(:disabled) {
+  background: var(--sim-blue-hover);
+  color: #ffffff;
+}
+
+.sim-btn-submit {
+  background: var(--sim-green);
+  border-color: var(--sim-green);
+  color: #ffffff;
+}
+
+.sim-btn-submit:hover {
+  background: #15803d;
+  color: #ffffff;
+}
+
+/* Question Grid Drawer */
+.sim-q-grid-wrap {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.sim-q-pill {
+  width: 34px;
+  height: 34px;
+  border-radius: 6px;
+  border: 1px solid var(--sim-slate-300);
+  background: #ffffff;
+  color: var(--sim-slate-700);
+  font-size: 0.82rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.15s;
+}
+
+.sim-q-pill:hover {
+  border-color: var(--sim-blue);
+  color: var(--sim-blue);
+}
+
+.sim-q-pill.active {
+  background: var(--sim-navy);
+  color: #ffffff;
+  border-color: var(--sim-navy);
+}
+
+.sim-q-pill.answered {
+  background: #dcfce7;
+  border-color: #86efac;
+  color: #166534;
+}
+
+.sim-q-pill.flagged::after {
+  content: '';
+  position: absolute;
+  top: 2px;
+  right: 2px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #f59e0b;
+}
+
+/* Modal Dialog for Results & Review */
+.sim-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.7);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 20px;
+}
+
+.sim-modal-overlay.open {
+  display: flex;
+}
+
+.sim-modal-card {
+  background: #ffffff;
+  border-radius: 12px;
+  max-width: 900px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  padding: 28px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.sim-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 2px solid var(--sim-slate-200);
+  padding-bottom: 14px;
+}
+
+.sim-modal-title {
+  font-size: 1.35rem;
+  font-weight: 800;
+  color: var(--sim-navy);
+}
+
+.sim-review-row {
+  background: #f8fafc;
+  border: 1px solid var(--sim-slate-200);
+  border-radius: 8px;
+  padding: 16px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+}
+
+@media (max-width: 768px) {
+  .sim-review-row {
+    grid-template-columns: 1fr;
+  }
+}
+
+.sim-review-col-title {
+  font-weight: 800;
+  font-size: 0.88rem;
+  margin-bottom: 8px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}

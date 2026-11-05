@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-theme="maths" data-tint="cream">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Online Mock Exam Simulator | Master Functional Skills</title>
+  <meta name="description" content="Experience authentic Functional Skills online mock examinations in your browser. Type your step-by-step working directly into dedicated exam spaces, use the onscreen math keypad and calculator, and compare against accredited model solutions.">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="alternate icon" href="favicon.ico">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0f172a">
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Core Stylesheets -->
+  <link rel="stylesheet" href="assets/css/mfs-theme.css?v=20261024c">
+  <link rel="stylesheet" href="assets/css/mfs-revision.css?v=20261024c">
+  <link rel="stylesheet" href="assets/css/mfs-mobile.css?v=20261024c">
+  <link rel="stylesheet" href="assets/css/online-mock-simulator.css?v=20261105">
+</head>
+<body>
+
+  <!-- TOP TRUST BAR WITH ACCESSIBILITY & CONTACT -->
+  <div class="mfs-top-bar">
+    <div class="mfs-container mfs-top-bar-inner">
+      <div class="top-trust-items">
+        <span class="top-trust-item"><i class="fa-solid fa-building-columns"></i> Pearson Edexcel &amp; City &amp; Guilds Aligned</span>
+      </div>
+      <div class="top-contacts">
+        <div class="mfs-access-bar">
+          <!-- DYSLEXIA BACKGROUND TINT PICKER -->
+          <div class="mfs-tint-dropdown-wrap">
+            <button type="button" id="tintToggle" class="btn-tint-toggle" onclick="toggleTintMenu(event)" title="Change dyslexia background tint">
+              <span class="tint-swatch-indicator" id="tintCurrentSwatch"></span>
+              <span id="tintLabel">Cream Tint</span>
+              <i class="fa-solid fa-chevron-down" style="font-size:0.62rem; opacity:0.75; margin-left:2px;"></i>
+            </button>
+            <div id="tintMenu" class="tint-picker-menu">
+              <div class="tint-picker-title"><i class="fa-solid fa-glasses"></i> Dyslexia Reading Tint</div>
+              <button type="button" class="tint-option-btn active" data-tint="cream" onclick="setSiteTint('cream', event)">
+                <span class="swatch swatch-cream"></span>
+                <span class="tint-name">Cream (Recommended)</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="peach" onclick="setSiteTint('peach', event)">
+                <span class="swatch swatch-peach"></span>
+                <span class="tint-name">Soft Peach</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="cool" onclick="setSiteTint('cool', event)">
+                <span class="swatch swatch-cool"></span>
+                <span class="tint-name">Cool Mist</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="sage" onclick="setSiteTint('sage', event)">
+                <span class="swatch swatch-sage"></span>
+                <span class="tint-name">Soft Sage</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <div class="tint-divider"></div>
+              <button type="button" class="tint-option-btn" data-tint="none" onclick="setSiteTint('none', event)">
+                <span class="swatch swatch-none"></span>
+                <span class="tint-name">No Tint (White)</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+            </div>
+          </div>
+          <button id="dyslexiaToggle" class="btn-dyslexia-toggle" onclick="toggleDyslexiaMode()" title="Toggle Dyslexia High-Readability Mode">
+            <i class="fa-solid fa-universal-access"></i> Dyslexia
+          </button>
+        </div>
+        <a href="contact-us.html" class="top-contact-link"><i class="fa-solid fa-envelope"></i> <strong>Contact Us</strong></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN NAVIGATION -->
+  <header class="mfs-navbar">
+    <div class="mfs-container mfs-navbar-inner">
+      <a href="index.html" class="mfs-brand">
+        <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div class="mfs-brand-text">
+          <div class="mfs-brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
+          <div class="mfs-brand-subtitle">Delivering Skills • Achieving Goals</div>
+        </div>
+      </a>
+
+      <nav class="mfs-nav-wrapper">
+        <ul class="mfs-nav-menu">
+          <li class="mfs-nav-item">
+            <a href="revise.html" class="mfs-nav-link">
+              <i class="fa-solid fa-book-open-reader" style="color:#0284c7; margin-right:5px;"></i> Revision Hub
+            </a>
+          </li>
+          <li class="mfs-nav-item">
+            <a href="functional-skills-past-papers.html" class="mfs-nav-link active">
+              <i class="fa-regular fa-file-lines" style="color:#0284c7; margin-right:5px;"></i> Past Papers &amp; Mocks
+            </a>
+          </li>
+          <li class="mfs-nav-item">
+            <a href="video-solution.html" class="mfs-nav-link">
+              <i class="fa-solid fa-circle-play" style="color:#ef4444; margin-right:5px;"></i> Video Walkthroughs
+            </a>
+          </li>
+          <li class="mfs-nav-item">
+            <a href="tools.html" class="mfs-nav-link">
+              <i class="fa-solid fa-screwdriver-wrench" style="color:#0284c7; margin-right:5px;"></i> Free Tools
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="mfs-nav-actions">
+        <a href="exams.html" class="btn-nav-exam">
+          <i class="fa-solid fa-calendar-check"></i> Book Exam
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO TITLE & SIMULATOR CONTEXT -->
+  <section style="background:linear-gradient(180deg, #f8fafc 0%, #edf2f7 100%); padding:18px 0 12px; border-bottom:1px solid #cbd5e1;">
+    <div class="mfs-container">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+        <div>
+          <span class="promo-badge" style="background:#0284c7; color:#ffffff; margin-bottom:4px; font-size:0.72rem; padding:3px 8px; display:inline-block; border-radius:4px; font-weight:800;">
+            AUTHENTIC EXAM SIMULATOR • TYPED WORKING WORKSPACE
+          </span>
+          <h1 id="simPaperTitleDisplay" style="font-size:1.6rem; font-weight:800; color:var(--navy-dark); margin:0 0 4px 0;">
+            Online Mock Exam Simulator
+          </h1>
+          <p style="font-size:0.88rem; color:#475569; margin:0; max-width:850px; line-height:1.4;">
+            Sit your Functional Skills mock exam in real time. Type your calculation steps and formulas directly into the interactive working space, use the built-in math keypad and exam calculator, and review against accredited model benchmarks upon completion.
+          </p>
+        </div>
+
+        <div style="display:flex; gap:10px; align-items:center; flex-wrap:wrap;">
+          <button type="button" class="btn-hero-action" style="background:#0284c7; color:#ffffff; padding:8px 14px; font-size:0.82rem; font-weight:700; border-radius:6px; border:none; cursor:pointer; display:inline-flex; align-items:center; gap:6px;" onclick="toggleSimFullscreen()">
+            <i class="fa-solid fa-expand"></i> <span>Fill Screen</span>
+          </button>
+          <a href="functional-skills-past-papers.html" class="btn-card-action" style="padding:8px 14px; font-size:0.82rem; text-decoration:none;">
+            <i class="fa-solid fa-arrow-left"></i> All Mock Papers
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AUTHENTIC EXAM SIMULATOR APP CONTAINER -->
+  <main class="mfs-container" style="padding: 10px 0 30px 0;">
+
+    <div class="sim-app-shell" id="simAppShell">
+
+      <!-- 1. Top Simulator Control Bar -->
+      <div class="sim-control-bar">
+        <div class="sim-brand-block">
+          <span class="sim-brand-badge">MFS Simulator</span>
+          <div class="sim-paper-select-wrap">
+            <span class="sim-select-label">Select Mock Paper:</span>
+            <select class="sim-paper-dropdown" id="simPaperSelector" onchange="handlePaperChange(this.value)">
+              <optgroup label="Pearson Edexcel Maths Level 1 (Ordered 1 to 10)">
+                <option value="edexcel-maths-l1-paper-1" selected>Edexcel Maths Level 1 — Past Paper 1</option>
+                <option value="edexcel-maths-l1-paper-2">Edexcel Maths Level 1 — Past Paper 2</option>
+                <option value="edexcel-maths-l1-paper-3">Edexcel Maths Level 1 — Past Paper 3</option>
+                <option value="edexcel-maths-l1-paper-4">Edexcel Maths Level 1 — Past Paper 4</option>
+                <option value="edexcel-maths-l1-paper-5">Edexcel Maths Level 1 — Past Paper 5</option>
+                <option value="edexcel-maths-l1-paper-6">Edexcel Maths Level 1 — Past Paper 6</option>
+                <option value="edexcel-maths-l1-paper-7">Edexcel Maths Level 1 — Past Paper 7</option>
+                <option value="edexcel-maths-l1-paper-8">Edexcel Maths Level 1 — Past Paper 8</option>
+                <option value="edexcel-maths-l1-paper-9">Edexcel Maths Level 1 — Past Paper 9</option>
+                <option value="edexcel-maths-l1-paper-10">Edexcel Maths Level 1 — Past Paper 10</option>
+                <option value="edexcel-maths-l1-practice-1">Edexcel Maths Level 1 — Practice Paper 1</option>
+                <option value="edexcel-maths-l1-practice-2">Edexcel Maths Level 1 — Practice Paper 2</option>
+                <option value="edexcel-maths-l1-practice-3">Edexcel Maths Level 1 — Practice Paper 3</option>
+              </optgroup>
+              <optgroup label="Pearson Edexcel Maths Level 2 (Ordered 1 to 10)">
+                <option value="edexcel-maths-l2-paper-1">Edexcel Maths Level 2 — Past Paper 1</option>
+                <option value="edexcel-maths-l2-paper-2">Edexcel Maths Level 2 — Past Paper 2</option>
+                <option value="edexcel-maths-l2-paper-3">Edexcel Maths Level 2 — Past Paper 3</option>
+                <option value="edexcel-maths-l2-paper-4">Edexcel Maths Level 2 — Past Paper 4</option>
+                <option value="edexcel-maths-l2-paper-5">Edexcel Maths Level 2 — Past Paper 5</option>
+                <option value="edexcel-maths-l2-paper-6">Edexcel Maths Level 2 — Past Paper 6</option>
+                <option value="edexcel-maths-l2-paper-7">Edexcel Maths Level 2 — Past Paper 7</option>
+                <option value="edexcel-maths-l2-paper-8">Edexcel Maths Level 2 — Past Paper 8</option>
+                <option value="edexcel-maths-l2-paper-9">Edexcel Maths Level 2 — Past Paper 9</option>
+                <option value="edexcel-maths-l2-paper-10">Edexcel Maths Level 2 — Past Paper 10</option>
+                <option value="edexcel-maths-l2-practice-1">Edexcel Maths Level 2 — Practice Paper 1</option>
+                <option value="edexcel-maths-l2-practice-2">Edexcel Maths Level 2 — Practice Paper 2</option>
+                <option value="edexcel-maths-l2-practice-3">Edexcel Maths Level 2 — Practice Paper 3</option>
+              </optgroup>
+            </select>
+          </div>
+        </div>
+
+        <div class="sim-controls-right">
+          <!-- Save status indicator -->
+          <div class="sim-save-status" id="simSaveStatus">
+            <i class="fa-solid fa-circle" style="font-size:0.5rem; color:#86efac;"></i> Autosaved
+          </div>
+
+          <!-- Countdown Timer -->
+          <div class="sim-timer-box" id="simTimerBox">
+            <i class="fa-regular fa-clock"></i>
+            <span id="simTimerDisplay">25:00</span>
+            <button type="button" class="sim-timer-btn" onclick="toggleTimerPause()" title="Pause/Resume Exam Timer">
+              <i class="fa-solid fa-pause" id="simTimerPauseIcon"></i>
+            </button>
+          </div>
+
+          <button type="button" class="sim-nav-btn" style="background:#334155; border-color:#475569; color:#ffffff; padding:6px 12px; font-size:0.8rem;" onclick="toggleSimFullscreen()" title="Fill Screen">
+            <i class="fa-solid fa-expand"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- 2. Dual Pane Interactive Simulator Canvas -->
+      <div class="sim-canvas">
+
+        <!-- Left Pane: Question Scenario & Booklet -->
+        <div class="sim-pane-question">
+          <div class="sim-q-meta-bar">
+            <div class="sim-q-badge-group">
+              <span class="sim-q-num-badge" id="simQNumBadge">Question 1 of 6</span>
+              <span class="sim-q-section-tag" id="simQSectionTag">Section A: Non-Calculator</span>
+              <span class="sim-q-marks-badge" id="simQMarksBadge">3 Marks • [M1, A1, B1]</span>
+            </div>
+            <button type="button" class="sim-q-flag-btn" id="simFlagBtn" onclick="toggleFlag()">
+              <i class="fa-regular fa-flag"></i> Flag Question
+            </button>
+          </div>
+
+          <!-- Scenario Card -->
+          <div class="sim-q-scenario-card">
+            <div class="sim-q-scenario-title" id="simScenarioTitle">
+              <i class="fa-solid fa-file-circle-check" style="color:var(--sim-blue);"></i> Healthcare Facility Logistics: Cold Storage Monitoring
+            </div>
+            <div id="simScenarioText">
+              A healthcare logistics coordinator monitors clinical freezers for temperature-sensitive medications. At 07:00, the temperature in Freezer A is -18 °C. During morning inventory maintenance, the temperature rises by 5 °C. Later, cooling is boosted, dropping the temperature by a further 4 °C.
+            </div>
+          </div>
+
+          <!-- Specific Question Prompt -->
+          <div>
+            <div style="font-size:0.8rem; font-weight:800; color:var(--sim-blue); text-transform:uppercase; margin-bottom:4px;">
+              Your Task:
+            </div>
+            <div class="sim-q-prompt-text" id="simPromptText" style="white-space:pre-wrap;">
+(a) Work out the temperature after the 5 °C rise.
+(b) Work out the final temperature after the 4 °C drop.
+(c) A standard vaccine fridge is kept at +4 °C. Calculate the difference between +4 °C and the original -18 °C.
+            </div>
+          </div>
+
+          <div style="margin-top:auto; padding-top:14px; border-top:1px dashed var(--sim-slate-200); font-size:0.8rem; color:var(--sim-slate-600); display:flex; justify-content:space-between; align-items:center;">
+            <span><i class="fa-solid fa-shield-halved" style="color:var(--sim-blue);"></i> Pearson Edexcel Reform Standard</span>
+            <span style="font-weight:700;">Show all working clearly</span>
+          </div>
+        </div>
+
+        <!-- Right Pane: Learner Interactive Working Space -->
+        <div class="sim-pane-working">
+
+          <div class="sim-working-header">
+            <div class="sim-working-title">
+              <i class="fa-solid fa-pen-to-square" style="color:var(--sim-blue);"></i> Type Your Working &amp; Calculations in the Spaces
+            </div>
+          </div>
+
+          <!-- Maths Symbol Inserter Toolbar -->
+          <div class="sim-math-toolbar">
+            <span class="sim-toolbar-label">Maths Symbols:</span>
+            <button type="button" class="sim-sym-btn" onclick="insertSymbol('+')">+</button>
+            <button type="button" class="sim-sym-btn" onclick="insertSymbol('−')">−</button>
+            <button type="button" class="sim-sym-btn" onclick="insertSymbol('×')">×</button>
+            <button type="button" class="sim-sym-btn" onclick="insertSymbol('÷')">÷</button>
+            <button type="button" class="sim-sym-btn" onclick="insertSymbol('±')">±</button>
+            <button type="button" class="sim-sym-btn" onclick="insertSymbol('√')">√</button>
+            <button type="button" class="sim-sym-btn" onclick="insertSymbol('π')">π</button>
+            <button type="button" class="sim-sym-btn" onclick="insertSymbol('²')">²</button>
+            <button type="button" class="sim-sym-btn" onclick="insertSymbol('³')">³</button>
+            <button type="button" class="sim-sym-btn" onclick="insertSymbol('°C')">°C</button>
+            <button type="button" class="sim-sym-btn" onclick="insertSymbol('£')">£</button>
+            <button type="button" class="sim-sym-btn" onclick="insertSymbol('m²')">m²</button>
+            <button type="button" class="sim-sym-btn" onclick="insertSymbol('km')">km</button>
+            <button type="button" class="sim-sym-btn" onclick="insertSymbol('%')">%</button>
+            <button type="button" class="sim-sym-btn" onclick="insertSymbol('≈')">≈</button>
+            <button type="button" class="sim-template-btn" onclick="insertPlaceValueGrid()" title="Insert 7-Digit Place Value Columns"><i class="fa-solid fa-table-columns"></i> Place Value</button>
+            <button type="button" class="sim-template-btn" onclick="insertFractionTemplate()" title="Insert Stacked Fraction Template"><i class="fa-solid fa-divide"></i> Fraction</button>
+            <button type="button" class="sim-sym-btn" style="background:#fee2e2; border-color:#fca5a5; color:#991b1b; margin-left:auto;" onclick="clearWorkingSpace()" title="Clear Working"><i class="fa-solid fa-eraser"></i> Clear</button>
+          </div>
+
+          <!-- Main Typed Working Box -->
+          <div class="sim-working-card">
+            <textarea class="sim-working-textarea" id="simWorkingTextarea" oninput="handleWorkingInput(this.value)" placeholder="Type your working steps, calculations, and intermediate methods here..."></textarea>
+          </div>
+
+          <!-- Official Final Answer Box -->
+          <div class="sim-final-ans-card">
+            <div>
+              <div class="sim-final-ans-label">Final Answer:</div>
+              <div style="font-size:0.75rem; color:#64748b;">Record your conclusive value below</div>
+            </div>
+            <div class="sim-final-ans-input-wrap">
+              <input type="text" class="sim-final-input" id="simFinalInput" oninput="handleAnswerInput(this.value)" placeholder="Enter value">
+              <span class="sim-unit-badge" id="simUnitBadge">°C</span>
+            </div>
+          </div>
+
+          <!-- Built-in Onscreen Calculator -->
+          <div>
+            <div id="simCalcLockedBanner" class="sim-calc-locked-banner" style="display:none;">
+              <i class="fa-solid fa-lock" style="font-size:1rem;"></i>
+              <div>
+                <strong>Section A (Non-Calculator):</strong> Calculator is disabled for this section in accordance with official Pearson Edexcel exam regulations.
+              </div>
+            </div>
+
+            <div id="simCalcDrawer" class="sim-calc-drawer">
+              <div class="sim-calc-header">
+                <span><i class="fa-solid fa-calculator" style="color:var(--sim-sky);"></i> Onscreen Exam Calculator (Section B)</span>
+                <span style="font-size:0.72rem; color:#64748b;">Standard Arithmetic</span>
+              </div>
+              <div class="sim-calc-screen" id="simCalcScreen">0</div>
+              <div class="sim-calc-keypad">
+                <button type="button" class="sim-calc-key" onclick="calcClear()">C</button>
+                <button type="button" class="sim-calc-key" onclick="calcSqrt()">√</button>
+                <button type="button" class="sim-calc-key op" onclick="calcOp('÷')">÷</button>
+                <button type="button" class="sim-calc-key op" onclick="calcOp('×')">×</button>
+
+                <button type="button" class="sim-calc-key" onclick="calcDigit(7)">7</button>
+                <button type="button" class="sim-calc-key" onclick="calcDigit(8)">8</button>
+                <button type="button" class="sim-calc-key" onclick="calcDigit(9)">9</button>
+                <button type="button" class="sim-calc-key op" onclick="calcOp('-')">−</button>
+
+                <button type="button" class="sim-calc-key" onclick="calcDigit(4)">4</button>
+                <button type="button" class="sim-calc-key" onclick="calcDigit(5)">5</button>
+                <button type="button" class="sim-calc-key" onclick="calcDigit(6)">6</button>
+                <button type="button" class="sim-calc-key op" onclick="calcOp('+')">+</button>
+
+                <button type="button" class="sim-calc-key" onclick="calcDigit(1)">1</button>
+                <button type="button" class="sim-calc-key" onclick="calcDigit(2)">2</button>
+                <button type="button" class="sim-calc-key" onclick="calcDigit(3)">3</button>
+                <button type="button" class="sim-calc-key eq" onclick="calcCalculate()" style="grid-row: span 2;">=</button>
+
+                <button type="button" class="sim-calc-key" onclick="calcDigit(0)" style="grid-column: span 2;">0</button>
+                <button type="button" class="sim-calc-key" onclick="calcDecimal()">.</button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- 3. Bottom Simulator Navigation Bar -->
+      <div class="sim-bottom-bar">
+        <button type="button" class="sim-nav-btn" id="simPrevBtn" onclick="renderQuestion(simCurrentQuestionIndex - 1)">
+          <i class="fa-solid fa-chevron-left"></i> Previous Question
+        </button>
+
+        <!-- Question Pills Grid -->
+        <div class="sim-q-grid-wrap" id="simPillsContainer">
+          <!-- Rendered dynamically -->
+        </div>
+
+        <div style="display:flex; align-items:center; gap:8px;">
+          <button type="button" class="sim-nav-btn sim-btn-primary" id="simNextBtn" onclick="renderQuestion(simCurrentQuestionIndex + 1)">
+            Next Question <i class="fa-solid fa-chevron-right"></i>
+          </button>
+          <button type="button" class="sim-nav-btn sim-btn-submit" onclick="openSubmitModal()">
+            <i class="fa-solid fa-check-double"></i> Submit &amp; Check Answers
+          </button>
+        </div>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- SUBMIT & MODEL SOLUTION COMPARISON MODAL -->
+  <div class="sim-modal-overlay" id="simSubmitModal">
+    <div class="sim-modal-card">
+      <div class="sim-modal-header">
+        <div>
+          <div class="sim-modal-title">
+            <i class="fa-solid fa-graduation-cap" style="color:var(--sim-blue);"></i> Mock Exam Diagnostic Review &amp; Model Benchmark
+          </div>
+          <div style="font-size:0.85rem; color:#64748b;">
+            Compare your typed working step-by-step against accredited Master Functional Skills solutions.
+          </div>
+        </div>
+        <button type="button" class="sim-nav-btn" onclick="closeSubmitModal()" style="padding:6px 12px;">✕ Close</button>
+      </div>
+
+      <!-- Question-by-Question Review List -->
+      <div id="simReviewList" style="display:flex; flex-direction:column; gap:16px;">
+        <!-- Rendered dynamically -->
+      </div>
+
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-top:10px; padding-top:14px; border-top:1px solid #e2e8f0;">
+        <a id="simModalWatchVideoBtn" href="video-solution.html" target="_blank" class="sim-nav-btn sim-btn-primary" style="text-decoration:none;">
+          <i class="fa-solid fa-circle-play"></i> Watch Step-by-Step Video Walkthrough
+        </a>
+        <button type="button" class="sim-nav-btn" onclick="window.print()">
+          <i class="fa-solid fa-print"></i> Print Your Mock Working Record
+        </button>
+        <button type="button" class="sim-nav-btn sim-btn-submit" onclick="closeSubmitModal()">
+          Return to Simulator
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- SITE FOOTER -->
+  <footer class="mfs-footer" style="background:#0b172d; color:#94a3b8; padding:35px 0 25px 0; margin-top:40px; border-top:3px solid var(--accent);">
+    <div class="mfs-container">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:15px; border-bottom:1px solid #1e293b; padding-bottom:20px; margin-bottom:20px;">
+        <div class="mfs-brand">
+          <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div class="mfs-brand-text">
+            <div class="mfs-brand-title" style="color:#ffffff;">MASTER<span style="color:#38bdf8;">FUNCTIONALSKILLS</span></div>
+            <div class="mfs-brand-subtitle" style="color:#94a3b8;">Delivering Skills • Achieving Goals</div>
+          </div>
+        </div>
+        <div style="display:flex; gap:20px; flex-wrap:wrap; font-size:0.85rem;">
+          <a href="functional-skills-past-papers.html" style="color:#94a3b8; text-decoration:none;">Past Papers</a>
+          <a href="revise.html" style="color:#94a3b8; text-decoration:none;">Revision Hub</a>
+          <a href="video-solution.html" style="color:#94a3b8; text-decoration:none;">Video Walkthroughs</a>
+          <a href="contact-us.html" style="color:#94a3b8; text-decoration:none;">Contact</a>
+        </div>
+      </div>
+      <div style="font-size:0.75rem; text-align:center; color:#64748b;">
+        &copy; 2026 Master Functional Skills. All rights reserved. Specialist Functional Skills education, diagnostic assessments, and revision resources.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="assets/js/mfs-tint.js"></script>
+  <script src="assets/js/online-mock-simulator.js?v=20261105"></script>
+</body>
+</html>

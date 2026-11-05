@@ -1,5 +1,10 @@
 /* Master Functional Skills - Authentic Online Mock Exam Simulator Stylesheet */
 
+html {
+  overflow-y: scroll !important;
+  scrollbar-gutter: stable !important;
+}
+
 :root {
   --sim-navy: #0f172a;
   --sim-navy-dark: #090d16;
@@ -224,56 +229,56 @@
   gap: 5px;
 }
 
-/* Dual Pane Canvas */
-.sim-canvas {
-  display: grid;
-  grid-template-columns: 50% 50%;
+/* Dual Pane Canvas: Strictly locked at exactly 50% / 50% across all questions */
+.sim-canvas,
+#simQuestionPanes {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
   flex: 1;
   min-height: 680px;
   background: var(--sim-slate-100);
-  width: 100%;
-  box-sizing: border-box;
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
 }
 
-@media (min-width: 993px) {
-  .sim-canvas {
-    display: grid !important;
-    grid-template-columns: 50% 50% !important;
-  }
-  .sim-pane-question {
-    width: 100% !important;
-    max-width: 100% !important;
-    flex: 0 0 50% !important;
-  }
-  .sim-pane-working {
-    width: 100% !important;
-    max-width: 100% !important;
-    flex: 0 0 50% !important;
+@media (max-width: 900px) {
+  .sim-canvas,
+  #simQuestionPanes {
+    flex-direction: column !important;
   }
 }
 
-@media (max-width: 992px) {
-  .sim-canvas {
-    grid-template-columns: 1fr;
-  }
-}
-
-/* Left Pane: Question Scenario */
+/* Left Pane: Question Scenario (Exactly 50.0% width, dead centre dividing line) */
 .sim-pane-question {
-  background: #ffffff;
+  background: #ffffff !important;
   padding: 24px;
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
   scrollbar-gutter: stable;
-  border-right: 2px solid var(--sim-slate-200);
+  border-right: 2px solid var(--sim-slate-300) !important;
   display: flex;
   flex-direction: column;
   gap: 18px;
-  min-width: 0;
-  max-width: 100%;
-  box-sizing: border-box;
+  width: 50% !important;
+  min-width: 50% !important;
+  max-width: 50% !important;
+  flex: 0 0 50% !important;
+  box-sizing: border-box !important;
   word-break: break-word;
   overflow-wrap: break-word;
+}
+
+@media (max-width: 900px) {
+  .sim-pane-question {
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 auto !important;
+    border-right: none !important;
+    border-bottom: 2px solid var(--sim-slate-300) !important;
+  }
 }
 
 .sim-q-meta-bar {
@@ -376,21 +381,32 @@
   text-align: center;
 }
 
-/* Right Pane: Learner Interactive Working Space */
+/* Right Pane: Learner Interactive Working Space (Exactly 50.0% width) */
 .sim-pane-working {
-  background: #fbfcfe;
+  background: #fbfcfe !important;
   padding: 24px;
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow-y: auto !important;
+  overflow-x: hidden !important;
   scrollbar-gutter: stable;
   display: flex;
   flex-direction: column;
   gap: 16px;
-  min-width: 0;
-  max-width: 100%;
-  box-sizing: border-box;
+  width: 50% !important;
+  min-width: 50% !important;
+  max-width: 50% !important;
+  flex: 0 0 50% !important;
+  box-sizing: border-box !important;
   word-break: break-word;
   overflow-wrap: break-word;
+}
+
+@media (max-width: 900px) {
+  .sim-pane-working {
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    flex: 0 0 auto !important;
+  }
 }
 
 .sim-working-header {

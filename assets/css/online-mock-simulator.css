@@ -227,10 +227,12 @@
 /* Dual Pane Canvas */
 .sim-canvas {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 46% 54%;
   flex: 1;
   min-height: 680px;
   background: var(--sim-slate-100);
+  width: 100%;
+  box-sizing: border-box;
 }
 
 @media (max-width: 992px) {
@@ -244,10 +246,17 @@
   background: #ffffff;
   padding: 24px;
   overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-gutter: stable;
   border-right: 2px solid var(--sim-slate-200);
   display: flex;
   flex-direction: column;
   gap: 18px;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .sim-q-meta-bar {
@@ -355,9 +364,16 @@
   background: #fbfcfe;
   padding: 24px;
   overflow-y: auto;
+  overflow-x: hidden;
+  scrollbar-gutter: stable;
   display: flex;
   flex-direction: column;
   gap: 16px;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .sim-working-header {
@@ -478,16 +494,17 @@
   background: #f8fafc;
   border: 2px solid var(--sim-blue);
   border-radius: 8px;
-  padding: 12px 14px;
+  padding: 10px 14px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
   margin-top: auto;
   box-shadow: 0 2px 5px rgba(2, 132, 199, 0.08);
+  box-sizing: border-box;
 }
 
 .sim-final-ans-label {
-  font-size: calc(0.92rem * var(--sim-scale, 1));
+  font-size: calc(0.88rem * var(--sim-scale, 1));
   font-weight: 800;
   color: var(--sim-navy);
 }
@@ -497,30 +514,43 @@
   align-items: center;
   gap: 8px;
   width: 100%;
+  box-sizing: border-box;
 }
 
 .sim-unit-badge {
   background: var(--sim-slate-200);
   color: var(--sim-slate-700);
-  padding: 6px 12px;
+  padding: 5px 10px;
   border-radius: 6px;
-  font-weight: 800;
-  font-size: calc(0.92rem * var(--sim-scale, 1));
+  font-weight: 700;
+  font-size: calc(0.82rem * var(--sim-scale, 1));
+  white-space: nowrap;
+  flex-shrink: 0;
 }
 
 .sim-final-input {
   border: 2px solid #cbd5e1;
   border-radius: 6px;
-  padding: 7px 12px;
-  font-size: calc(1.05rem * var(--sim-scale, 1));
-  font-weight: 800;
+  padding: 6px 10px;
+  font-size: calc(0.88rem * var(--sim-scale, 1));
+  font-weight: 700;
   color: var(--sim-navy);
   width: 100%;
-  max-width: 200px;
+  max-width: 100%;
+  flex: 1;
   outline: none;
-  text-align: right;
+  text-align: left;
   font-variant-numeric: tabular-nums;
   font-family: inherit;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.sim-final-input::placeholder {
+  font-size: 0.82rem;
+  font-weight: 500;
+  color: #94a3b8;
+  opacity: 0.85;
 }
 
 .sim-final-input:focus {
@@ -573,7 +603,7 @@
 .sim-subparts-container {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
   width: 100%;
 }
 
@@ -581,12 +611,13 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 12px;
+  gap: 10px;
   background: #f8fafc;
   border: 1px solid #e2e8f0;
   border-radius: 6px;
-  padding: 8px 12px;
+  padding: 6px 10px;
   transition: all 0.2s ease;
+  box-sizing: border-box;
 }
 
 .sim-subpart-ans-row:focus-within {
@@ -596,18 +627,21 @@
 
 .sim-subpart-label {
   font-weight: 700;
-  font-size: 0.88rem;
+  font-size: 0.84rem;
   color: var(--sim-navy);
   display: flex;
   align-items: center;
   gap: 6px;
+  flex-shrink: 0;
 }
 
 .sim-subpart-input-wrap {
   display: flex;
   align-items: center;
   gap: 6px;
-  max-width: 260px;
+  flex: 1;
+  max-width: 340px;
+  min-width: 0;
 }
 
 /* Built-in Onscreen Calculator */
@@ -1001,10 +1035,53 @@
 .sim-candidate-row {
   display: flex;
   justify-content: space-between;
-  font-size: 0.85rem;
-  padding: 6px 0;
+  align-items: center;
+  font-size: 0.86rem;
+  padding: 8px 0;
   border-bottom: 1px dashed #e2e8f0;
   color: #334155;
+  gap: 14px;
+}
+
+.sim-candidate-row span {
+  flex-shrink: 0;
+  font-weight: 500;
+}
+
+.sim-candidate-row strong {
+  text-align: right;
+  margin-left: auto;
+  font-weight: 800;
+  color: var(--sim-navy);
+}
+
+.sim-candidate-input {
+  border: 1px solid #cbd5e1;
+  border-radius: 4px;
+  padding: 5px 10px;
+  font-size: 0.86rem;
+  font-weight: 800;
+  color: var(--sim-navy);
+  text-align: right;
+  margin-left: auto;
+  width: 100%;
+  max-width: 240px;
+  background: #ffffff;
+  outline: none;
+  font-family: inherit;
+  transition: all 0.15s ease;
+  box-sizing: border-box;
+}
+
+.sim-candidate-input:focus {
+  border-color: #0284c7;
+  box-shadow: 0 0 0 2px rgba(2, 132, 199, 0.15);
+}
+
+.sim-candidate-input::placeholder {
+  color: #94a3b8;
+  font-weight: 400;
+  text-align: right;
 }
 
 .sim-cover-declaration {

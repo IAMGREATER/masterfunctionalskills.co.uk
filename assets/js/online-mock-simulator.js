@@ -1009,13 +1009,18 @@ function renderFinalAnswerInputs(paper, q, sec) {
     const row = document.createElement('div');
     row.style.width = '100%';
     row.innerHTML = `
-      <div class="sim-final-ans-input-wrap" style="width:100%; max-width:320px;">
+      <div class="sim-final-ans-input-wrap" style="width:100%;">
         <input type="text" class="sim-final-input" id="simFinalInput" value="${escapeHtml(savedVal)}" placeholder="Enter value" oninput="handleAnswerInput(this.value)">
         <span class="sim-unit-badge" id="simUnitBadge" style="${q.unit ? 'display:inline-flex' : 'display:none'}">${escapeHtml(q.unit || '')}</span>
       </div>
     `;
     container.appendChild(row);
   }
+}
+
+// Handler for Candidate Name Input on Cover Page
+function handleCandidateNameInput(val) {
+  localStorage.setItem('mfs_sim_candidate_name', val);
 }
 
 // Render Section Front Cover Sheet
@@ -1030,6 +1035,7 @@ function renderSectionCover() {
   const paper = getOrCreatePaper(simCurrentPaperKey);
   const sections = getPaperSections(paper);
   const sec = sections[simCurrentSectionIndex] || sections[0];
+  const savedCandidateName = localStorage.getItem('mfs_sim_candidate_name') || '';
 
   const durStr = sec.durationMinutes >= 60
     ? (sec.durationMinutes === 90 ? '1 hour 30 minutes' : `${Math.floor(sec.durationMinutes / 60)} hours`)
@@ -1088,7 +1094,7 @@ function renderSectionCover() {
           </div>
           <div class="sim-candidate-row">
             <span>Candidate Name:</span>
-            <strong>Subi</strong>
+            <input type="text" id="simCandidateNameInput" class="sim-candidate-input" value="${escapeHtml(savedCandidateName)}" placeholder="Enter candidate name..." oninput="handleCandidateNameInput(this.value)">
           </div>
           <div class="sim-candidate-row">
             <span>Centre Name:</span>

@@ -245,7 +245,7 @@ body {
 /* Dual Pane Canvas: Strictly locked at exactly 50% / 50% across all questions */
 .sim-canvas,
 #simQuestionPanes {
-  display: flex !important;
+  display: flex;
   flex-direction: row !important;
   flex-wrap: nowrap !important;
   flex: 1 1 0 !important;
@@ -256,6 +256,20 @@ body {
   width: 100% !important;
   max-width: 100% !important;
   box-sizing: border-box !important;
+}
+
+#simQuestionPanes.sim-hidden,
+.sim-canvas.sim-hidden,
+#simQuestionPanes[style*="display: none"],
+.sim-canvas[style*="display: none"] {
+  display: none !important;
+}
+
+#simCoverContainer.sim-hidden,
+.sim-cover-container.sim-hidden,
+#simCoverContainer[style*="display: none"],
+.sim-cover-container[style*="display: none"] {
+  display: none !important;
 }
 
 @media (max-width: 900px) {
@@ -801,10 +815,10 @@ body {
   border-top: 2px solid var(--sim-slate-200) !important;
   padding: 10px 24px !important;
   display: flex !important;
-  justify-content: space-between !important;
+  justify-content: flex-start !important;
   align-items: center !important;
   flex-wrap: nowrap !important;
-  gap: 12px !important;
+  gap: 16px !important;
   flex: 0 0 auto !important;
   position: sticky !important;
   bottom: 0 !important;
@@ -815,12 +829,23 @@ body {
   box-sizing: border-box !important;
 }
 
+#simPrevBtn {
+  flex: 0 0 140px !important;
+  width: 140px !important;
+  min-width: 140px !important;
+  max-width: 140px !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+  white-space: nowrap !important;
+}
+
 @media (max-width: 900px) {
   .sim-bottom-bar {
     flex-wrap: wrap !important;
     height: auto !important;
     min-height: 60px !important;
     padding: 8px 14px !important;
+    gap: 8px !important;
   }
 }
 
@@ -871,17 +896,20 @@ body {
   color: #ffffff;
 }
 
-/* Question Grid Drawer */
+/* Question & Cover Pills Container: Anchored in a completely fixed horizontal location */
 .sim-q-grid-wrap {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  flex-wrap: wrap;
+  display: flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  flex-wrap: nowrap !important;
+  flex: 0 0 auto !important;
 }
 
 .sim-q-pill {
-  width: 34px;
-  height: 34px;
+  width: 36px !important;
+  min-width: 36px !important;
+  max-width: 36px !important;
+  height: 36px !important;
   border-radius: 6px;
   border: 1px solid var(--sim-slate-300);
   background: #ffffff;
@@ -894,13 +922,40 @@ body {
   cursor: pointer;
   position: relative;
   transition: all 0.15s;
+  box-sizing: border-box;
 }
 
 .sim-q-pill.cover {
-  width: auto;
-  padding: 0 10px;
-  font-size: 0.76rem;
+  width: 78px !important;
+  min-width: 78px !important;
+  max-width: 78px !important;
+  padding: 0 8px !important;
+  font-size: 0.78rem !important;
   letter-spacing: 0.3px;
+  gap: 4px;
+}
+
+.sim-bottom-actions {
+  display: flex !important;
+  align-items: center !important;
+  gap: 10px !important;
+  margin-left: auto !important;
+  flex: 0 0 auto !important;
+}
+
+#simNextBtn {
+  min-width: 140px !important;
+  justify-content: center !important;
+  box-sizing: border-box !important;
+  white-space: nowrap !important;
+}
+
+@media (max-width: 900px) {
+  .sim-bottom-actions {
+    margin-left: 0 !important;
+    width: 100% !important;
+    justify-content: space-between !important;
+  }
 }
 
 .sim-q-pill:hover {

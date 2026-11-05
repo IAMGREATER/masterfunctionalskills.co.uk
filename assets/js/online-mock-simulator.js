@@ -9,6 +9,7 @@
 let simCurrentPaperKey = 'edexcel-maths-l1-paper-1';
 let simCurrentSectionIndex = 0; // 0 = Section A, 1 = Section B
 let simCurrentQuestionIndex = 0; // 0 = Section Front Cover, 1 = Question 1, 2 = Question 2...
+let simStartedSections = {}; // Tracks sections that have been opened: { 'A': true, 'B': true }
 let simTimerSeconds = 25 * 60;
 let simTimerActive = true;
 let simTimerInterval = null;
@@ -788,10 +789,11 @@ document.addEventListener('DOMContentLoaded', () => {
 // Load and Render Paper
 function loadPaper(paperKey) {
   simCurrentPaperKey = paperKey;
+  simStartedSections = {};
   const paper = getOrCreatePaper(paperKey);
   const sections = getPaperSections(paper);
   simCurrentSectionIndex = 0;
-  simCurrentQuestionIndex = 0; // Front cover of Section A
+  simCurrentQuestionIndex = 0; // Front cover of Section A (start of exam)
 
   // Header Title
   const titleDisplay = document.getElementById('simPaperTitleDisplay');
@@ -827,21 +829,28 @@ function scrollContentToTop() {
   if (wPane) wPane.scrollTop = 0;
 }
 
-function switchSection(targetIndex) {
+function switchSection(targetIndex, forceQuestions = false) {
   const paper = getOrCreatePaper(simCurrentPaperKey);
   const sections = getPaperSections(paper);
   if (targetIndex < 0 || targetIndex >= sections.length) return;
-  if (targetIndex === simCurrentSectionIndex) return;
+  if (targetIndex === simCurrentSectionIndex && !forceQuestions) return;
 
   // Save outgoing section's timer
   saveCurrentSectionTimer();
 
-  // Switch section and reset to Front Cover (index 0)
+  // Switch section
   simCurrentSectionIndex = targetIndex;
-  simCurrentQuestionIndex = 0;
+  const sec = sections[simCurrentSectionIndex];
+
+  // If section was already started or forceQuestions is true, go directly to question 1
+  // Otherwise show the section cover page (start of exam or middle transition)
+  if (simStartedSections[sec.id] || forceQuestions) {
+    simCurrentQuestionIndex = 1;
+  } else {
+    simCurrentQuestionIndex = 0;
+  }
 
   // Load timer for new section
-  const sec = sections[simCurrentSectionIndex];
   simTimerSeconds = getSavedSectionTimer(simCurrentPaperKey, sec.id, sec.durationMinutes);
   updateTimerDisplay();
 
@@ -854,8 +863,11 @@ function switchSection(targetIndex) {
 
 // Start Section Questions from Cover Page (Jump to Question 1)
 function startSectionQuestions() {
-  simCurrentQuestionIndex = 1;
   const paper = getOrCreatePaper(simCurrentPaperKey);
+  const sections = getPaperSections(paper);
+  const sec = sections[simCurrentSectionIndex] || sections[0];
+  simStartedSections[sec.id] = true;
+  simCurrentQuestionIndex = 1;
   renderQuestionPills(paper);
   renderCurrentQuestion();
   scrollContentToTop();
@@ -903,7 +915,7 @@ function renderSectionTabs(paper) {
   });
 }
 
-// Render Navigation Pills
+// Render Navigation Pills (Fixed Position: Cover pill + Question Page pills)
 function renderQuestionPills(paper) {
   const container = document.getElementById('simPillsContainer');
   if (!container) return;
@@ -912,7 +924,7 @@ function renderQuestionPills(paper) {
   const sections = getPaperSections(paper);
   const sec = sections[simCurrentSectionIndex] || sections[0];
 
-  // Pill 0: Cover
+  // Pill 0: Cover button (stays at fixed position at start of pills container)
   const coverPill = document.createElement('button');
   coverPill.type = 'button';
   coverPill.className = `sim-q-pill cover ${simCurrentQuestionIndex === 0 ? 'active' : ''}`;
@@ -1039,8 +1051,12 @@ function renderSectionCover() {
   const questionPanes = document.getElementById('simQuestionPanes');
   if (!coverContainer) return;
 
-  if (questionPanes) questionPanes.style.display = 'none';
-  coverContainer.style.display = 'block';
+  if (questionPanes) {
+    questionPanes.classList.add('sim-hidden');
+    questionPanes.style.setProperty('display', 'none', 'important');
+  }
+  coverContainer.classList.remove('sim-hidden');
+  coverContainer.style.setProperty('display', 'block', 'important');
 
   const paper = getOrCreatePaper(simCurrentPaperKey);
   const sections = getPaperSections(paper);
@@ -1148,18 +1164,19 @@ function renderSectionCover() {
   if (prevBtn) {
     if (simCurrentSectionIndex > 0) {
       prevBtn.disabled = false;
-      prevBtn.innerHTML = '<i class="fa-solid fa-arrow-left"></i> Previous Section';
+      prevBtn.innerHTML = '<i class="fa-solid fa-arrow-left"></i> Return to Section A';
       prevBtn.onclick = () => {
-        switchSection(simCurrentSectionIndex - 1);
+        switchSection(simCurrentSectionIndex - 1, true);
       };
     } else {
       prevBtn.disabled = true;
       prevBtn.innerHTML = '<i class="fa-solid fa-arrow-left"></i> Previous';
-      prevBtn.onclick = () => prevQuestion();
+      prevBtn.onclick = null;
     }
   }
 
   if (nextBtn) {
+    nextBtn.disabled = false;
     nextBtn.innerHTML = 'Open Questions <i class="fa-solid fa-arrow-right"></i>';
     nextBtn.classList.remove('finish');
     nextBtn.onclick = () => startSectionQuestions();
@@ -1178,11 +1195,17 @@ function renderCurrentQuestion() {
     return;
   }
 
-  // Otherwise, hide cover and show question panes
+  // Otherwise, hide cover completely and show question panes
   const coverContainer = document.getElementById('simCoverContainer');
   const questionPanes = document.getElementById('simQuestionPanes');
-  if (coverContainer) coverContainer.style.display = 'none';
-  if (questionPanes) questionPanes.style.display = 'flex';
+  if (coverContainer) {
+    coverContainer.classList.add('sim-hidden');
+    coverContainer.style.setProperty('display', 'none', 'important');
+  }
+  if (questionPanes) {
+    questionPanes.classList.remove('sim-hidden');
+    questionPanes.style.setProperty('display', 'flex', 'important');
+  }
 
   const q = sec.questions[simCurrentQuestionIndex - 1];
   if (!q) return;
@@ -1257,11 +1280,7 @@ function renderCurrentQuestion() {
   if (prevBtn) {
     prevBtn.disabled = false;
     prevBtn.onclick = () => prevQuestion();
-    if (simCurrentQuestionIndex === 1) {
-      prevBtn.innerHTML = '<i class="fa-solid fa-file-invoice"></i> Cover Page';
-    } else {
-      prevBtn.innerHTML = '<i class="fa-solid fa-arrow-left"></i> Previous';
-    }
+    prevBtn.innerHTML = '<i class="fa-solid fa-arrow-left"></i> Previous';
   }
 
   if (nextBtn) {
@@ -1585,6 +1604,9 @@ function jumpToQuestion(index) {
   const sec = sections[simCurrentSectionIndex] || sections[0];
 
   if (index >= 0 && index <= sec.questions.length) {
+    if (index >= 1) {
+      simStartedSections[sec.id] = true;
+    }
     simCurrentQuestionIndex = index;
     renderCurrentQuestion();
     scrollContentToTop();

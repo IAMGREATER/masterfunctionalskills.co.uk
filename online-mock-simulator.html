@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="assets/css/mfs-theme.css?v=20261024c">
   <link rel="stylesheet" href="assets/css/mfs-revision.css?v=20261024c">
   <link rel="stylesheet" href="assets/css/mfs-mobile.css?v=20261024c">
-  <link rel="stylesheet" href="assets/css/online-mock-simulator.css?v=20261105_anchored_cover_v6">
+  <link rel="stylesheet" href="assets/css/online-mock-simulator.css?v=20261105_fixed_pills_cover_v7">
 </head>
 <body>
 
@@ -437,7 +437,7 @@
       <!-- 3. Bottom Simulator Navigation Bar -->
       <div class="sim-bottom-bar">
         <button type="button" class="sim-nav-btn" id="simPrevBtn" onclick="prevQuestion()">
-          <i class="fa-solid fa-chevron-left"></i> Previous Question
+          <i class="fa-solid fa-arrow-left"></i> Previous
         </button>
 
         <!-- Question Pills Grid -->
@@ -445,9 +445,9 @@
           <!-- Rendered dynamically -->
         </div>
 
-        <div style="display:flex; align-items:center; gap:8px;">
+        <div class="sim-bottom-actions">
           <button type="button" class="sim-nav-btn sim-btn-primary" id="simNextBtn" onclick="nextQuestion()">
-            Next Question <i class="fa-solid fa-chevron-right"></i>
+            Next <i class="fa-solid fa-arrow-right"></i>
           </button>
           <button type="button" class="sim-nav-btn sim-btn-submit" onclick="openSubmitModal()">
             <i class="fa-solid fa-check-double"></i> Submit &amp; Check Answers
@@ -519,6 +519,6 @@
 
   <!-- Scripts -->
   <script src="assets/js/mfs-tint.js"></script>
-  <script src="assets/js/online-mock-simulator.js?v=20261105_anchored_cover_v6"></script>
+  <script src="assets/js/online-mock-simulator.js?v=20261105_fixed_pills_cover_v7"></script>
 </body>
 </html>

@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-theme="maths" data-tint="cream">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Inserting and Resizing Images | Entry 3 Digital Skills Revision | Master Functional Skills</title>
+  <meta name="description" content="Master Inserting and Resizing Images for Entry 3 Digital Functional Skills. Step-by-step explanations, authentic visual UI breakdowns, video walkthroughs, fluency drills, and Pearson Edexcel aligned mock questions.">
+  <link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg">
+  <link rel="alternate icon" href="../../favicon.ico">
+  <meta name="theme-color" content="#0f172a">
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Dedicated Digital Skills Revision Styles -->
+  <link rel="stylesheet" href="../../assets/css/mfs-dfs-revision.css?v=20261106_v2">
+</head>
+<body data-tint="cream">
+
+  <!-- TOP TRUST BAR & ACCESSIBILITY CONTROLS -->
+  <div class="mfs-top-bar">
+    <div class="mfs-container mfs-top-bar-inner">
+      <div class="top-trust-items">
+        <span class="top-trust-item"><i class="fa-solid fa-building-columns"></i> Pearson Edexcel &amp; City &amp; Guilds Aligned</span>
+        <span class="top-trust-item"><i class="fa-solid fa-graduation-cap"></i> Specialist Functional Skills Tuition</span>
+      </div>
+      <div class="top-contacts">
+        <div class="mfs-access-bar">
+          <div class="mfs-tint-dropdown-wrap">
+            <button type="button" id="tintToggle" class="btn-tint-toggle" onclick="toggleTintMenu(event)" title="Change dyslexia background tint">
+              <span class="tint-swatch-indicator" id="tintCurrentSwatch"></span>
+              <span id="tintLabel">Cream Tint</span>
+              <i class="fa-solid fa-chevron-down" style="font-size:0.62rem; opacity:0.75; margin-left:2px;"></i>
+            </button>
+            <div id="tintMenu" class="tint-picker-menu">
+              <div class="tint-picker-title"><i class="fa-solid fa-glasses"></i> Dyslexia Reading Tint</div>
+              <button type="button" class="tint-option-btn active" data-tint="cream" onclick="setSiteTint('cream', event)">
+                <span class="swatch swatch-cream"></span>
+                <span class="tint-name">Cream (Recommended)</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="peach" onclick="setSiteTint('peach', event)">
+                <span class="swatch swatch-peach"></span>
+                <span class="tint-name">Soft Peach</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="cool" onclick="setSiteTint('cool', event)">
+                <span class="swatch swatch-cool"></span>
+                <span class="tint-name">Cool Mist</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="sage" onclick="setSiteTint('sage', event)">
+                <span class="swatch swatch-sage"></span>
+                <span class="tint-name">Soft Sage</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <div class="tint-divider" style="height:1px; background:#e2e8f0; margin:6px 0;"></div>
+              <button type="button" class="tint-option-btn" data-tint="none" onclick="setSiteTint('none', event)">
+                <span class="swatch swatch-none"></span>
+                <span class="tint-name">No Tint (White)</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+            </div>
+          </div>
+          <button id="dyslexiaToggle" class="btn-dyslexia-toggle" onclick="toggleDyslexiaMode()" title="Toggle Dyslexia High-Readability Mode">
+            <i class="fa-solid fa-universal-access"></i> Dyslexia
+          </button>
+        </div>
+        <a href="../../contact-us.html" class="btn-tint-toggle" style="text-decoration:none;"><i class="fa-solid fa-envelope"></i> Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN NAVIGATION -->
+  <header class="mfs-navbar">
+    <div class="mfs-container mfs-navbar-inner">
+      <a href="../../index.html" class="mfs-brand">
+        <div class="mfs-brand-icon"><i class="fa-solid fa-laptop-code"></i></div>
+        <div class="mfs-brand-text">
+          <div class="mfs-brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
+          <div class="mfs-brand-subtitle">Delivering Skills • Achieving Goals</div>
+        </div>
+      </a>
+
+      <nav class="mfs-nav-wrapper">
+        <ul class="mfs-nav-menu">
+          <li><a href="../../revise.html" class="mfs-nav-link"><i class="fa-solid fa-book-open-reader"></i> Revision Hub</a></li>
+          <li><a href="index.html" class="mfs-nav-link active"><i class="fa-solid fa-list-check"></i> Entry 3 Directory</a></li>
+          <li><a href="../../digital-functional-skills-past-papers.html" class="mfs-nav-link"><i class="fa-solid fa-file-lines"></i> Past Papers</a></li>
+          <li><a href="../../digital-functional-skills-mock-exam.html" class="mfs-nav-link btn-nav-exam"><i class="fa-solid fa-desktop"></i> Mock Simulator</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- SUBNAV & BREADCRUMBS -->
+  <div class="dfs-subnav-bar">
+    <div class="mfs-container dfs-subnav-inner">
+      <div class="dfs-breadcrumbs">
+        <a href="../../index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a href="../../revise.html">Revision</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a href="index.html">Entry 3 Digital Skills</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span style="color:#ffffff; font-weight:600;">Inserting and Resizing Images</span>
+      </div>
+      <div>
+        <span class="dfs-level-badge-pill e3">Entry 3 DFSQ</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="dfs-hero-header">
+    <div class="mfs-container">
+      <div class="dfs-hero-meta">
+        <span class="dfs-spec-code">E3.2.3</span>
+        <span style="color:#38bdf8; font-size:0.85rem; font-weight:600;"><i class="fa-solid fa-folder-open"></i> 2. Creating and Editing</span>
+        <span class="dfs-time-tag"><i class="fa-regular fa-clock"></i> 15 Mins Study Time</span>
+      </div>
+      <h1 class="dfs-hero-title">Inserting and Resizing Images</h1>
+      <p class="dfs-hero-lead">Learn how to insert pictures and digital logos into documents, resize images proportionally from corner handles without stretching, crop unwanted borders, and position them neatly alongside text.</p>
+      <div class="dfs-hero-objectives">
+        <span class="dfs-obj-tag"><i class="fa-solid fa-check"></i> Insert an image into a document from your computer or cloud storage</span><span class="dfs-obj-tag"><i class="fa-solid fa-check"></i> Resize images proportionally using corner handles without distortion</span><span class="dfs-obj-tag"><i class="fa-solid fa-check"></i> Use Crop to cut away unwanted outer borders and position images neatly</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN LEARNING CONTENT -->
+  <main class="dfs-layout-wrap">
+    <div class="mfs-container">
+      <div class="dfs-grid">
+
+        <!-- 1. YOUTUBE VIDEO WALKTHROUGH EMBED -->
+        <section id="video" class="dfs-section">
+          <div class="dfs-section-header">
+            <h2 class="dfs-section-title"><i class="fa-brands fa-youtube" style="color:#dc2626;"></i> Video Lesson &amp; Walkthrough</h2>
+            <span class="dfs-section-badge">Tutor Guided Video</span>
+          </div>
+          <div class="dfs-video-box">
+            <div class="dfs-video-player-wrap">
+              
+        <div class="dfs-video-card-fallback">
+          <i class="fa-brands fa-youtube play-icon"></i>
+          <h3 style="font-size:1.3rem; margin-bottom:8px;">Entry 3 Digital Skills - Inserting & Resizing Pictures</h3>
+          <p style="color:#94a3b8; max-width:580px; font-size:0.92rem; margin-bottom:16px;">Watch step-by-step visual demonstration with clear instructional narration and exam mark scheme commentary.</p>
+          <a href="https://www.youtube.com/@MasterFunctionalSkills" target="_blank" rel="noopener noreferrer" class="btn-yt-direct">
+            <i class="fa-brands fa-youtube"></i> Watch on Master Functional Skills YouTube
+          </a>
+        </div>
+        
+            </div>
+            <div class="dfs-video-bar">
+              <div><strong>Topic Focus:</strong> Inserting and Resizing Images (E3.2.3)</div>
+              <div><i class="fa-solid fa-volume-high" style="color:#38bdf8; margin-right:5px;"></i> Sonia Neural Clear British RP Cadence</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. STEP-BY-STEP TEACHING & VISUAL UI MOCKUPS -->
+        <section id="teaching" class="dfs-section">
+          <div class="dfs-section-header">
+            <h2 class="dfs-section-title"><i class="fa-solid fa-book-open"></i> Step-by-Step Teaching &amp; Key Concepts</h2>
+            <span class="dfs-section-badge">Core Knowledge</span>
+          </div>
+          
+          <div class="dfs-steps-flow">
+            
+        <div class="dfs-step-card">
+          <div class="dfs-step-header">
+            <div class="dfs-step-num">1</div>
+            <div class="dfs-step-title">Inserting a Picture</div>
+          </div>
+          <div class="dfs-step-body">
+            <p>Adding photos or company logos enhances visual interest and communication:</p><ol><li>Click on the page where you want the picture to appear.</li><li>Go to the <strong>Insert</strong> tab on the top ribbon.</li><li>Click <strong>Pictures &gt; This Device</strong>.</li><li>Browse to your folder (e.g. <strong>Pictures</strong>), click your file, and click <strong>Insert</strong>.</li></ol>
+            
+            <div style="margin-top:10px; font-size:0.88rem; color:#475569;"><i class="fa-regular fa-keyboard" style="color:#0284c7; margin-right:4px;"></i> <strong>Copy Picture:</strong> <kbd class="dfs-kbd">Ctrl + C</kbd> &bull; <strong>Paste Picture:</strong> <kbd class="dfs-kbd">Ctrl + V</kbd></div>
+            
+          </div>
+        </div>
+        
+        <div class="dfs-step-card">
+          <div class="dfs-step-header">
+            <div class="dfs-step-num">2</div>
+            <div class="dfs-step-title">Resizing Images Proportionally (No Squashing!)</div>
+          </div>
+          <div class="dfs-step-body">
+            <p>When you click on an inserted picture, a border with eight small circular dots (called <strong>sizing handles</strong>) appears around the edges.</p><ul><li><strong>CORRECT: Drag from a CORNER handle:</strong> Both the width and height change together equally. The image stays proportional and natural.</li><li><strong>INCORRECT: Dragging from side or top handles:</strong> This squashes or stretches the photo, making people look abnormally wide or squashed.</li></ul>
+            
+            
+            
+            <div class="dfs-callout dfs-callout-warning">
+              <i class="fa-solid fa-triangle-exclamation"></i>
+              <div><strong>Examiner Marking Trap:</strong> Examiners will deduct marks if an image appears visibly stretched or distorted. Always drag from the <strong>corner circles</strong>!</div>
+            </div>
+            
+          </div>
+        </div>
+        
+        <div class="dfs-step-card">
+          <div class="dfs-step-header">
+            <div class="dfs-step-num">3</div>
+            <div class="dfs-step-title">Cropping and Text Wrapping</div>
+          </div>
+          <div class="dfs-step-body">
+            <p>To trim away unwanted background clutter:</p><ol><li>Click the picture to open the <strong>Picture Format</strong> tab.</li><li>Click the <strong>Crop tool</strong> (<i class='fa-solid fa-crop-simple'></i>).</li><li>Drag the black crop bars inward to cut away unwanted parts, then press <kbd class='dfs-kbd'>Enter</kbd>.</li><li>Click <strong>Wrap Text &gt; Square</strong> so your text flows smoothly around the image rather than pushing it onto a new page.</li></ol>
+            
+            <div class="dfs-ui-sim">
+              <div class="dfs-ui-sim-bar">
+                <div class="dfs-ui-sim-dots"><span></span><span></span><span></span></div>
+                <div>Picture Format & Sizing Handles</div>
+                <div><i class="fa-solid fa-desktop"></i></div>
+              </div>
+              <div class="dfs-ui-sim-content">
+                <div style='display:flex; justify-content:center; padding:16px; background:#f1f5f9; border-radius:4px;'><div style='border:2px dashed #0284c7; padding:10px; background:#ffffff; position:relative; width:160px; text-align:center;'><span style='position:absolute; top:-5px; left:-5px; width:10px; height:10px; background:#0284c7; border-radius:50%;'></span><span style='position:absolute; top:-5px; right:-5px; width:10px; height:10px; background:#0284c7; border-radius:50%;'></span><span style='position:absolute; bottom:-5px; left:-5px; width:10px; height:10px; background:#0284c7; border-radius:50%;'></span><span style='position:absolute; bottom:-5px; right:-5px; width:10px; height:10px; background:#0284c7; border-radius:50%;'></span><i class='fa-regular fa-image' style='font-size:2rem; color:#64748b;'></i><div style='font-size:0.75rem; color:#0284c7; font-weight:700; margin-top:4px;'>Drag Corners Only</div></div></div>
+              </div>
+            </div>
+            
+            
+            
+          </div>
+        </div>
+        
+          </div>
+        </section>
+
+        <!-- 3. AUTHENTIC EXAM MODEL WALKTHROUGH -->
+        <section id="model" class="dfs-section">
+          <div class="dfs-section-header">
+            <h2 class="dfs-section-title"><i class="fa-solid fa-award"></i> Authentic Pearson Edexcel Exam Model</h2>
+            <span class="dfs-section-badge" style="background:#fee2e2; color:#dc2626;">Accredited Model</span>
+          </div>
+          <p style="color:#475569; font-size:0.95rem; margin-bottom:14px;">Here is how this skill is tested in the real Pearson Edexcel onscreen digital assessment, broken down with official examiner mark codes (<span class="dfs-mark-tag" style="display:inline-block; margin:0 3px;">[B1]</span> knowledge, <span class="dfs-mark-tag" style="background:#0284c7; display:inline-block; margin:0 3px;">[M1]</span> process, <span class="dfs-mark-tag" style="background:#0f766e; display:inline-block; margin:0 3px;">[A1]</span> accuracy).</p>
+          
+    <div class="dfs-exam-model">
+      <div class="dfs-model-stem">
+        <strong><i class="fa-solid fa-clipboard-question"></i> Exam Scenario Prompt:</strong> A health worker inserts a photo of an ambulance into a safety poster. The photo is too large and spills onto page 2. Explain how to reduce the size of the photo without distorting its shape.
+      </div>
+      
+        <div class="dfs-model-step-card">
+          <div class="dfs-model-step-title">
+            <span>Step 1: Select the picture</span>
+            <span class="dfs-mark-tag">[B1]</span>
+          </div>
+          <div class="dfs-model-solution-text">Click on the ambulance photo to display the sizing handles.</div>
+          <div class="dfs-tutor-rationale">
+            <i class="fa-solid fa-circle-check"></i>
+            <div><strong>Tutor Marking Rationale:</strong> Sizing handles must be active to resize.</div>
+          </div>
+        </div>
+        
+        <div class="dfs-model-step-card">
+          <div class="dfs-model-step-title">
+            <span>Step 2: Resize proportionally</span>
+            <span class="dfs-mark-tag">[M1]</span>
+          </div>
+          <div class="dfs-model-solution-text">Click and drag inward from one of the four CORNER handles until the photo fits neatly on page 1.</div>
+          <div class="dfs-tutor-rationale">
+            <i class="fa-solid fa-circle-check"></i>
+            <div><strong>Tutor Marking Rationale:</strong> Corner handles scale width and height simultaneously to maintain aspect ratio.</div>
+          </div>
+        </div>
+        
+      <div class="dfs-callout dfs-callout-tutor" style="margin-top:16px;">
+        <i class="fa-solid fa-award"></i>
+        <div><strong>Tutor Abdul's Exam Golden Rule:</strong> Always use the word 'corner' when answering image resizing questions in the exam.</div>
+      </div>
+    </div>
+    
+        </section>
+
+        <!-- 4. INTERACTIVE FLUENCY DRILLS -->
+        <section id="drills" class="dfs-section">
+          <div class="dfs-section-header">
+            <h2 class="dfs-section-title"><i class="fa-solid fa-bolt"></i> Interactive Fluency Drills</h2>
+            <span class="dfs-section-badge" style="background:#d1fae5; color:#065f46;">Instant Check</span>
+          </div>
+          <p style="color:#475569; font-size:0.95rem; margin-bottom:14px;">Test your knowledge right now. Select an answer to receive immediate diagnostic feedback and tutor explanations.</p>
+          <div class="dfs-drill-box">
+            
+        <div class="dfs-drill-question-card">
+          <div class="dfs-drill-q-title">
+            <span class="dfs-drill-q-num">Drill 1</span>
+            <span>Which handle should you drag to resize an image without making it look squashed or stretched?</span>
+          </div>
+          <div class="dfs-drill-options">
+            
+            <button type="button" class="dfs-drill-opt-btn" data-correct="true" onclick="checkDrill(this, true, 'drillFeedback_e3-combining-images-text_1')">
+              <span>A corner handle</span>
+              <i class="fa-solid fa-arrow-right" style="opacity:0.4; font-size:0.8rem;"></i>
+            </button>
+            
+            <button type="button" class="dfs-drill-opt-btn" data-correct="false" onclick="checkDrill(this, false, 'drillFeedback_e3-combining-images-text_1')">
+              <span>The top middle handle</span>
+              <i class="fa-solid fa-arrow-right" style="opacity:0.4; font-size:0.8rem;"></i>
+            </button>
+            
+            <button type="button" class="dfs-drill-opt-btn" data-correct="false" onclick="checkDrill(this, false, 'drillFeedback_e3-combining-images-text_1')">
+              <span>The left side handle</span>
+              <i class="fa-solid fa-arrow-right" style="opacity:0.4; font-size:0.8rem;"></i>
+            </button>
+            
+            <button type="button" class="dfs-drill-opt-btn" data-correct="false" onclick="checkDrill(this, false, 'drillFeedback_e3-combining-images-text_1')">
+              <span>The bottom middle handle</span>
+              <i class="fa-solid fa-arrow-right" style="opacity:0.4; font-size:0.8rem;"></i>
+            </button>
+            
+          </div>
+          <div id="drillFeedback_e3-combining-images-text_1" class="dfs-drill-feedback" data-explanation="Dragging corner handles resizes the image proportionally (maintaining the aspect ratio)."></div>
+        </div>
+        
+        <div class="dfs-drill-question-card">
+          <div class="dfs-drill-q-title">
+            <span class="dfs-drill-q-num">Drill 2</span>
+            <span>What is the name of the tool used to cut away unwanted outer edges of a picture?</span>
+          </div>
+          <div class="dfs-drill-options">
+            
+            <button type="button" class="dfs-drill-opt-btn" data-correct="true" onclick="checkDrill(this, true, 'drillFeedback_e3-combining-images-text_2')">
+              <span>Crop Tool</span>
+              <i class="fa-solid fa-arrow-right" style="opacity:0.4; font-size:0.8rem;"></i>
+            </button>
+            
+            <button type="button" class="dfs-drill-opt-btn" data-correct="false" onclick="checkDrill(this, false, 'drillFeedback_e3-combining-images-text_2')">
+              <span>Spell Check Tool</span>
+              <i class="fa-solid fa-arrow-right" style="opacity:0.4; font-size:0.8rem;"></i>
+            </button>
+            
+            <button type="button" class="dfs-drill-opt-btn" data-correct="false" onclick="checkDrill(this, false, 'drillFeedback_e3-combining-images-text_2')">
+              <span>Recycle Bin</span>
+              <i class="fa-solid fa-arrow-right" style="opacity:0.4; font-size:0.8rem;"></i>
+            </button>
+            
+            <button type="button" class="dfs-drill-opt-btn" data-correct="false" onclick="checkDrill(this, false, 'drillFeedback_e3-combining-images-text_2')">
+              <span>Format Painter</span>
+              <i class="fa-solid fa-arrow-right" style="opacity:0.4; font-size:0.8rem;"></i>
+            </button>
+            
+          </div>
+          <div id="drillFeedback_e3-combining-images-text_2" class="dfs-drill-feedback" data-explanation="The Crop tool trims away outer edges or backgrounds from an image."></div>
+        </div>
+        
+        <div class="dfs-drill-question-card">
+          <div class="dfs-drill-q-title">
+            <span class="dfs-drill-q-num">Drill 3</span>
+            <span>Where on the ribbon do you go to insert a picture stored on your computer?</span>
+          </div>
+          <div class="dfs-drill-options">
+            
+            <button type="button" class="dfs-drill-opt-btn" data-correct="true" onclick="checkDrill(this, true, 'drillFeedback_e3-combining-images-text_3')">
+              <span>Insert Tab &gt; Pictures</span>
+              <i class="fa-solid fa-arrow-right" style="opacity:0.4; font-size:0.8rem;"></i>
+            </button>
+            
+            <button type="button" class="dfs-drill-opt-btn" data-correct="false" onclick="checkDrill(this, false, 'drillFeedback_e3-combining-images-text_3')">
+              <span>Home Tab &gt; Font</span>
+              <i class="fa-solid fa-arrow-right" style="opacity:0.4; font-size:0.8rem;"></i>
+            </button>
+            
+            <button type="button" class="dfs-drill-opt-btn" data-correct="false" onclick="checkDrill(this, false, 'drillFeedback_e3-combining-images-text_3')">
+              <span>View Tab &gt; Zoom</span>
+              <i class="fa-solid fa-arrow-right" style="opacity:0.4; font-size:0.8rem;"></i>
+            </button>
+            
+            <button type="button" class="dfs-drill-opt-btn" data-correct="false" onclick="checkDrill(this, false, 'drillFeedback_e3-combining-images-text_3')">
+              <span>File Tab &gt; Print</span>
+              <i class="fa-solid fa-arrow-right" style="opacity:0.4; font-size:0.8rem;"></i>
+            </button>
+            
+          </div>
+          <div id="drillFeedback_e3-combining-images-text_3" class="dfs-drill-feedback" data-explanation="The Insert tab contains tools for adding Pictures, Shapes, Tables, and Icons."></div>
+        </div>
+        
+          </div>
+        </section>
+
+        <!-- 5. EXAM-STYLE PRACTICE QUESTION & AUTO-SAVING SCRATCHPAD -->
+        <section id="practice" class="dfs-section">
+          <div class="dfs-section-header">
+            <h2 class="dfs-section-title"><i class="fa-solid fa-pen-ruler"></i> Independent Practice Exam Task</h2>
+            <span class="dfs-section-badge">Auto-Saving Scratchpad</span>
+          </div>
+          <p style="color:#475569; font-size:0.95rem; margin-bottom:14px;">Complete this practice task under exam conditions. Your working is saved automatically in your browser so you can return to it anytime.</p>
+          
+    <div class="dfs-practice-box">
+      <div class="dfs-task-stem">
+        <div style="font-weight:700; color:#0f172a; margin-bottom:6px;"><i class="fa-solid fa-pen-to-square" style="color:#0284c7;"></i> Onscreen Assessment Task:</div>
+        <div>A student needs to add a logo to a company newsletter. Write down the steps to insert the logo from their Pictures folder and position it at the top right of the newsletter.</div>
+      </div>
+
+      <div class="dfs-scratchpad-wrap">
+        <div class="dfs-scratchpad-label">
+          <span><i class="fa-solid fa-keyboard"></i> Your Working &amp; Answer Scratchpad:</span>
+          <span class="dfs-autosave-status"><i class="fa-solid fa-circle-check"></i> Auto-saves in browser</span>
+        </div>
+        <textarea class="dfs-scratchpad-area" data-storage-key="dfs_scratch_e3-combining-images-text" placeholder="Type your step-by-step working, method, or draft response here...">Step 1 (Insert): 
+Step 2 (Position/Wrap): </textarea>
+      </div>
+
+      <button type="button" id="solBtn_e3-combining-images-text" class="dfs-solution-toggle-btn" onclick="toggleSolutionDrawer('solDrawer_e3-combining-images-text', 'solBtn_e3-combining-images-text')">
+        <i class="fa-solid fa-chevron-down"></i> View Accredited Model Solution &amp; Mark Scheme
+      </button>
+
+      <div id="solDrawer_e3-combining-images-text" class="dfs-solution-drawer">
+        <h4><i class="fa-solid fa-circle-check"></i> Pearson Edexcel Benchmark Solution</h4>
+        <div style="font-size:0.95rem; color:#14532d; line-height:1.6; margin-bottom:14px; background:#ffffff; padding:14px; border-radius:6px; border:1px solid #bbf7d0;">
+          Step 1: Click the Insert tab, select Pictures > This Device, browse to the Pictures folder, choose the logo file and click Insert.
+Step 2: Select the image, click Wrap Text > Square, and drag the logo to the top right corner of the page.
+        </div>
+        <div style="font-weight:700; color:#166534; font-size:0.92rem; margin-bottom:6px;">Official Marking Criteria:</div>
+        <ul class="dfs-marking-criteria-list">
+          <li><i class="fa-solid fa-check"></i> <div><strong>[1 Mark]:</strong> Correct pathway: Insert > Pictures > Select file.</div></li><li><i class="fa-solid fa-check"></i> <div><strong>[1 Mark]:</strong> Using Wrap Text and positioning the image at the top right.</div></li>
+        </ul>
+      </div>
+    </div>
+    
+        </section>
+
+        <!-- OFFICIAL ASSESSMENT & MOCK TESTING BRIDGE -->
+        <div class="dfs-exam-bridge-card">
+          <div class="exam-bridge-icon"><i class="fa-solid fa-desktop"></i></div>
+          <div class="exam-bridge-content">
+            <h4>Ready to test in the official Pearson exam environment?</h4>
+            <p>Put your knowledge into timed exam practice using authentic candidate data files (.ZIP) in the Pearson onscreen test player.</p>
+            <div class="exam-bridge-actions">
+              <a href="../../digital-functional-skills-mock-exam.html" class="btn-exam-bridge primary" target="_blank"><i class="fa-solid fa-play"></i> Launch Online Mock Simulator &rarr;</a>
+              <a href="../../digital-functional-skills-past-papers.html" class="btn-exam-bridge secondary" target="_blank"><i class="fa-solid fa-file-zipper"></i> Past Papers &amp; Data Files (.ZIP) &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. LINKS TO REVISE & CONTINUOUS LEARNING -->
+        <div class="dfs-rev-links-wrap">
+          <div class="dfs-rev-links-title"><i class="fa-solid fa-diagram-project"></i> Links to Revise &amp; Connected Topics</div>
+          <div class="dfs-pills-row">
+            <a href="e3-word-processing-basics.html" class="dfs-pill-link"><i class="fa-solid fa-bookmark" style="font-size:0.75rem;"></i> Word Processing Basics</a><a href="e3-formatting-aligning-bullets.html" class="dfs-pill-link"><i class="fa-solid fa-bookmark" style="font-size:0.75rem;"></i> Document Formatting & Bullets</a><a href="e3-spellcheck-proofing-saving.html" class="dfs-pill-link"><i class="fa-solid fa-bookmark" style="font-size:0.75rem;"></i> Spellchecking & Saving</a>
+            <a href="../../assets/downloads/past-papers/digital-skills/DFS_Handbook_MFS.pdf" class="dfs-pill-link" style="border-color:#86efac; color:#166534;"><i class="fa-solid fa-file-pdf"></i> Download Entry 3 Revision Notes PDF</a>
+            <a href="index.html" class="dfs-pill-link" style="border-color:#cbd5e1; color:#475569;"><i class="fa-solid fa-table-cells"></i> View All Entry 3 Topics</a>
+          </div>
+        </div>
+
+        <!-- TOPIC NAVIGATION BAR -->
+        <div class="dfs-topic-nav-bar">
+          <div><a href="e3-formatting-aligning-bullets.html" class="dfs-nav-btn"><i class="fa-solid fa-arrow-left"></i> Previous: Document Formatting and Bullet Lists</a></div>
+          <div><a href="e3-spellcheck-proofing-saving.html" class="dfs-nav-btn primary">Next: Spellcheck, Proofreading and Saving Files <i class="fa-solid fa-arrow-right"></i></a></div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer style="background:#0f172a; color:#94a3b8; padding:40px 0 24px; border-top:1px solid #1e293b; font-size:0.88rem;">
+    <div class="mfs-container">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px; margin-bottom:24px; padding-bottom:20px; border-bottom:1px solid #1e293b;">
+        <div class="mfs-brand">
+          <div class="mfs-brand-icon"><i class="fa-solid fa-laptop-code"></i></div>
+          <div class="mfs-brand-text">
+            <div class="mfs-brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
+            <div class="mfs-brand-subtitle">Delivering Skills • Achieving Goals</div>
+          </div>
+        </div>
+        <div style="display:flex; gap:16px; flex-wrap:wrap;">
+          <a href="index.html" style="color:#cbd5e1; text-decoration:none;">Entry 3 Hub</a>
+          <a href="../../digital-functional-skills-past-papers.html" style="color:#cbd5e1; text-decoration:none;">Past Papers &amp; Data Files</a>
+          <a href="../../digital-functional-skills-mock-exam.html" style="color:#cbd5e1; text-decoration:none;">Online Mock Simulator</a>
+          <a href="../../revise.html" style="color:#cbd5e1; text-decoration:none;">All Subjects</a>
+          <a href="../../contact-us.html" style="color:#cbd5e1; text-decoration:none;">Contact Tutor</a>
+        </div>
+      </div>
+      <div style="text-align:center; font-size:0.78rem; color:#64748b;">
+        &copy; 2026 Master Functional Skills. All rights reserved. Pearson Edexcel and City &amp; Guilds aligned Digital Functional Skills Qualifications (DFSQ).
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../../assets/js/dfs-revision-engine.js?v=20261106_v1"></script>
+</body>
+</html>

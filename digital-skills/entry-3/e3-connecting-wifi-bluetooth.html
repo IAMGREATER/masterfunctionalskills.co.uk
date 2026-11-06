@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-theme="maths" data-tint="cream">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Connecting to Wi-Fi and Bluetooth Networks | Entry 3 Digital Skills Revision | Master Functional Skills</title>
+  <meta name="description" content="Master Connecting to Wi-Fi and Bluetooth Networks for Entry 3 Digital Functional Skills. Step-by-step explanations, authentic visual UI breakdowns, video walkthroughs, fluency drills, and Pearson Edexcel aligned mock questions.">
+  <link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg">
+  <link rel="alternate icon" href="../../favicon.ico">
+  <meta name="theme-color" content="#0f172a">
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Dedicated Digital Skills Revision Styles -->
+  <link rel="stylesheet" href="../../assets/css/mfs-dfs-revision.css?v=20261106_v2">
+</head>
+<body data-tint="cream">
+
+  <!-- TOP TRUST BAR & ACCESSIBILITY CONTROLS -->
+  <div class="mfs-top-bar">
+    <div class="mfs-container mfs-top-bar-inner">
+      <div class="top-trust-items">
+        <span class="top-trust-item"><i class="fa-solid fa-building-columns"></i> Pearson Edexcel &amp; City &amp; Guilds Aligned</span>
+        <span class="top-trust-item"><i class="fa-solid fa-graduation-cap"></i> Specialist Functional Skills Tuition</span>
+      </div>
+      <div class="top-contacts">
+        <div class="mfs-access-bar">
+          <div class="mfs-tint-dropdown-wrap">
+            <button type="button" id="tintToggle" class="btn-tint-toggle" onclick="toggleTintMenu(event)" title="Change dyslexia background tint">
+              <span class="tint-swatch-indicator" id="tintCurrentSwatch"></span>
+              <span id="tintLabel">Cream Tint</span>
+              <i class="fa-solid fa-chevron-down" style="font-size:0.62rem; opacity:0.75; margin-left:2px;"></i>
+            </button>
+            <div id="tintMenu" class="tint-picker-menu">
+              <div class="tint-picker-title"><i class="fa-solid fa-glasses"></i> Dyslexia Reading Tint</div>
+              <button type="button" class="tint-option-btn active" data-tint="cream" onclick="setSiteTint('cream', event)">
+                <span class="swatch swatch-cream"></span>
+                <span class="tint-name">Cream (Recommended)</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="peach" onclick="setSiteTint('peach', event)">
+                <span class="swatch swatch-peach"></span>
+                <span class="tint-name">Soft Peach</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="cool" onclick="setSiteTint('cool', event)">
+                <span class="swatch swatch-cool"></span>
+                <span class="tint-name">Cool Mist</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="sage" onclick="setSiteTint('sage', event)">
+                <span class="swatch swatch-sage"></span>
+                <span class="tint-name">Soft Sage</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <div class="tint-divider" style="height:1px; background:#e2e8f0; margin:6px 0;"></div>
+              <button type="button" class="tint-option-btn" data-tint="none" onclick="setSiteTint('none', event)">
+                <span class="swatch swatch-none"></span>
+                <span class="tint-name">No Tint (White)</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+            </div>
+          </div>
+          <button id="dyslexiaToggle" class="btn-dyslexia-toggle" onclick="toggleDyslexiaMode()" title="Toggle Dyslexia High-Readability Mode">
+            <i class="fa-solid fa-universal-access"></i> Dyslexia
+          </button>
+        </div>
+        <a href="../../contact-us.html" class="btn-tint-toggle" style="text-decoration:none;"><i class="fa-solid fa-envelope"></i> Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN NAVIGATION -->
+  <header class="mfs-navbar">
+    <div class="mfs-container mfs-navbar-inner">
+      <a href="../../index.html" class="mfs-brand">
+        <div class="mfs-brand-icon"><i class="fa-solid fa-laptop-code"></i></div>
+        <div class="mfs-brand-text">
+          <div class="mfs-brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
+          <div class="mfs-brand-subtitle">Delivering Skills • Achieving Goals</div>
+        </div>
+      </a>
+
+      <nav class="mfs-nav-wrapper">
+        <ul class="mfs-nav-menu">
+          <li><a href="../../revise.html" class="mfs-nav-link"><i class="fa-solid fa-book-open-reader"></i> Revision Hub</a></li>
+          <li><a href="index.html" class="mfs-nav-link active"><i class="fa-solid fa-list-check"></i> Entry 3 Directory</a></li>
+          <li><a href="../../digital-functional-skills-past-papers.html" class="mfs-nav-link"><i class="fa-solid fa-file-lines"></i> Past Papers</a></li>
+          <li><a href="../../digital-functional-skills-mock-exam.html" class="mfs-nav-link btn-nav-exam"><i class="fa-solid fa-desktop"></i> Mock Simulator</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- SUBNAV & BREADCRUMBS -->
+  <div class="dfs-subnav-bar">
+    <div class="mfs-container dfs-subnav-inner">
+      <div class="dfs-breadcrumbs">
+        <a href="../../index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a href="../../revise.html">Revision</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a href="index.html">Entry 3 Digital Skills</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span style="color:#ffffff; font-weight:600;">Connecting to Wi-Fi and Bluetooth Networks</span>
+      </div>
+      <div>
+        <span class="dfs-level-badge-pill e3">Entry 3 DFSQ</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="dfs-hero-header">
+    <div class="mfs-container">
+      <div class="dfs-hero-meta">
+        <span class="dfs-spec-code">E3.1.3</span>
+        <span style="color:#38bdf8; font-size:0.85rem; font-weight:600;"><i class="fa-solid fa-folder-open"></i> 1. Using Devices and Handling Information</span>
+        <span class="dfs-time-tag"><i class="fa-regular fa-clock"></i> 15 Mins Study Time</span>
+      </div>
+      <h1 class="dfs-hero-title">Connecting to Wi-Fi and Bluetooth Networks</h1>
+      <p class="dfs-hero-lead">Learn how to find and connect your device to wireless internet (Wi-Fi), enter network security keys safely, and pair Bluetooth devices like wireless mice and headsets.</p>
+      <div class="dfs-hero-objectives">
+        <span class="dfs-obj-tag"><i class="fa-solid fa-check"></i> Locate available Wi-Fi networks using the network icon</span><span class="dfs-obj-tag"><i class="fa-solid fa-check"></i> Connect to a secure Wi-Fi network using the correct password / security key</span><span class="dfs-obj-tag"><i class="fa-solid fa-check"></i> Pair and connect Bluetooth peripherals (wireless mouse, headphones)</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN LEARNING CONTENT -->
+  <main class="dfs-layout-wrap">
+    <div class="mfs-container">
+      <div class="dfs-grid">
+
+        <!-- 1. YOUTUBE VIDEO WALKTHROUGH EMBED -->
+        <section id="video" class="dfs-section">
+          <div class="dfs-section-header">
+            <h2 class="dfs-section-title"><i class="fa-brands fa-youtube" style="color:#dc2626;"></i> Video Lesson &amp; Walkthrough</h2>
+            <span class="dfs-section-badge">Tutor Guided Video</span>
+          </div>
+          <div class="dfs-video-box">
+            <div class="dfs-video-player-wrap">
+              
+        <div class="dfs-video-card-fallback">
+          <i class="fa-brands fa-youtube play-icon"></i>
+          <h3 style="font-size:1.3rem; margin-bottom:8px;">Entry 3 Digital Skills - Wi-Fi Connections & Bluetooth Pairing</h3>
+          <p style="color:#94a3b8; max-width:580px; font-size:0.92rem; margin-bottom:16px;">Watch step-by-step visual demonstration with clear instructional narration and exam mark scheme commentary.</p>
+          <a href="https://www.youtube.com/@MasterFunctionalSkills" target="_blank" rel="noopener noreferrer" class="btn-yt-direct">
+            <i class="fa-brands fa-youtube"></i> Watch on Master Functional Skills YouTube
+          </a>
+        </div>
+        
+            </div>
+            <div class="dfs-video-bar">
+              <div><strong>Topic Focus:</strong> Connecting to Wi-Fi and Bluetooth Networks (E3.1.3)</div>
+              <div><i class="fa-solid fa-volume-high" style="color:#38bdf8; margin-right:5px;"></i> Sonia Neural Clear British RP Cadence</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. STEP-BY-STEP TEACHING & VISUAL UI MOCKUPS -->
+        <section id="teaching" class="dfs-section">
+          <div class="dfs-section-header">
+            <h2 class="dfs-section-title"><i class="fa-solid fa-book-open"></i> Step-by-Step Teaching &amp; Key Concepts</h2>
+            <span class="dfs-section-badge">Core Knowledge</span>
+          </div>
+          
+          <div class="dfs-steps-flow">
+            
+        <div class="dfs-step-card">
+          <div class="dfs-step-header">
+            <div class="dfs-step-num">1</div>
+            <div class="dfs-step-title">Connecting to a Wi-Fi Network</div>
+          </div>
+          <div class="dfs-step-body">
+            <p>Wi-Fi allows your device to connect to the internet without plugging in a physical cable:</p><ol><li>Click the <strong>Network / Wi-Fi icon</strong> in the bottom right taskbar (or top right on mobile devices).</li><li>A list of available network names (SSIDs) will appear. Click on your organisation or home network name.</li><li>Ensure <strong>'Connect automatically'</strong> is ticked if it is a trusted network.</li><li>Click <strong>Connect</strong> and type the exact <strong>Network Security Key (password)</strong>. Passwords are case-sensitive.</li></ol>
+            
+            <div class="dfs-ui-sim">
+              <div class="dfs-ui-sim-bar">
+                <div class="dfs-ui-sim-dots"><span></span><span></span><span></span></div>
+                <div>Wi-Fi Network Selection Dialogue</div>
+                <div><i class="fa-solid fa-desktop"></i></div>
+              </div>
+              <div class="dfs-ui-sim-content">
+                <div style='background:#f1f5f9; padding:12px; border-radius:6px;'><div style='display:flex; justify-content:space-between; margin-bottom:8px; font-weight:700;'><span style='color:#0f172a;'><i class='fa-solid fa-wifi' style='color:#0284c7;'></i> Clinic_Staff_Secure</span><span style='color:#0f766e;'><i class='fa-solid fa-lock'></i> Secured</span></div><div style='background:#ffffff; border:1px solid #cbd5e1; padding:8px 12px; border-radius:4px; font-size:0.9rem; margin-bottom:8px;'><i class='fa-solid fa-key' style='color:#94a3b8; margin-right:6px;'></i> Enter network security key: &bull;&bull;&bull;&bull;&bull;&bull;&bull;&bull;</div><button style='background:#0284c7; color:#ffffff; border:none; padding:6px 14px; border-radius:4px; font-weight:700; cursor:pointer;'>Connect</button></div>
+              </div>
+            </div>
+            
+            
+            
+          </div>
+        </div>
+        
+        <div class="dfs-step-card">
+          <div class="dfs-step-header">
+            <div class="dfs-step-num">2</div>
+            <div class="dfs-step-title">Recognising Secure vs Open Wi-Fi</div>
+          </div>
+          <div class="dfs-step-body">
+            <p>When viewing Wi-Fi networks, look closely at the symbol:</p><ul><li><strong>Padlock Icon:</strong> Indicates a <strong>Secured Network</strong>. You must enter a password. Data transmitted between your device and the router is encrypted.</li><li><strong>No Padlock / Shield Warning:</strong> Indicates an <strong>Open Public Network</strong> (e.g. at a café or train station). Anyone can connect without a password, but your data could be monitored by others.</li></ul>
+            
+            
+            
+            <div class="dfs-callout dfs-callout-warning">
+              <i class="fa-solid fa-triangle-exclamation"></i>
+              <div><strong>Security Golden Rule:</strong> Never carry out online banking, input credit card numbers, or view confidential medical records on an unsecured public Wi-Fi network without encryption.</div>
+            </div>
+            
+          </div>
+        </div>
+        
+        <div class="dfs-step-card">
+          <div class="dfs-step-header">
+            <div class="dfs-step-num">3</div>
+            <div class="dfs-step-title">Connecting Bluetooth Peripherals</div>
+          </div>
+          <div class="dfs-step-body">
+            <p><strong>Bluetooth</strong> is a short-range wireless technology used to connect nearby accessories (typically within 10 metres) such as wireless mice, keyboards, and headsets.</p><p>To pair a device: Turn on Bluetooth on your computer, switch your accessory into pairing mode, click <strong>Add Bluetooth Device</strong> in Settings, and choose your accessory from the list.</p>
+            
+            <div style="margin-top:10px; font-size:0.88rem; color:#475569;"><i class="fa-regular fa-keyboard" style="color:#0284c7; margin-right:4px;"></i> <strong>Quick Settings Panel:</strong> <kbd class="dfs-kbd">Win + A</kbd></div>
+            
+          </div>
+        </div>
+        
+          </div>
+        </section>
+
+        <!-- 3. AUTHENTIC EXAM MODEL WALKTHROUGH -->
+        <section id="model" class="dfs-section">
+          <div class="dfs-section-header">
+            <h2 class="dfs-section-title"><i class="fa-solid fa-award"></i> Authentic Pearson Edexcel Exam Model</h2>
+            <span class="dfs-section-badge" style="background:#fee2e2; color:#dc2626;">Accredited Model</span>
+          </div>
+          <p style="color:#475569; font-size:0.95rem; margin-bottom:14px;">Here is how this skill is tested in the real Pearson Edexcel onscreen digital assessment, broken down with official examiner mark codes (<span class="dfs-mark-tag" style="display:inline-block; margin:0 3px;">[B1]</span> knowledge, <span class="dfs-mark-tag" style="background:#0284c7; display:inline-block; margin:0 3px;">[M1]</span> process, <span class="dfs-mark-tag" style="background:#0f766e; display:inline-block; margin:0 3px;">[A1]</span> accuracy).</p>
+          
+    <div class="dfs-exam-model">
+      <div class="dfs-model-stem">
+        <strong><i class="fa-solid fa-clipboard-question"></i> Exam Scenario Prompt:</strong> A community worker arrives at a new office with their work laptop. They need to connect to the office internet. The network list shows 'Office_Staff' with a padlock icon, and 'Guest_Free' with no padlock. Explain which network they should choose and what information they will need.
+      </div>
+      
+        <div class="dfs-model-step-card">
+          <div class="dfs-model-step-title">
+            <span>Step 1: Select the correct network</span>
+            <span class="dfs-mark-tag">[B1]</span>
+          </div>
+          <div class="dfs-model-solution-text">Office_Staff</div>
+          <div class="dfs-tutor-rationale">
+            <i class="fa-solid fa-circle-check"></i>
+            <div><strong>Tutor Marking Rationale:</strong> It is a secured network with a padlock icon, protecting work data from being intercepted.</div>
+          </div>
+        </div>
+        
+        <div class="dfs-model-step-card">
+          <div class="dfs-model-step-title">
+            <span>Step 2: Identify the required credential</span>
+            <span class="dfs-mark-tag">[B1]</span>
+          </div>
+          <div class="dfs-model-solution-text">Network security key / Wi-Fi password</div>
+          <div class="dfs-tutor-rationale">
+            <i class="fa-solid fa-circle-check"></i>
+            <div><strong>Tutor Marking Rationale:</strong> A secured network requires an authorized password or security key to connect.</div>
+          </div>
+        </div>
+        
+      <div class="dfs-callout dfs-callout-tutor" style="margin-top:16px;">
+        <i class="fa-solid fa-award"></i>
+        <div><strong>Tutor Abdul's Exam Golden Rule:</strong> Always look for the padlock icon in exam screenshots. Padlock means secured and encrypted.</div>
+      </div>
+    </div>
+    
+        </section>
+
+        <!-- 4. INTERACTIVE FLUENCY DRILLS -->
+        <section id="drills" class="dfs-section">
+          <div class="dfs-section-header">
+            <h2 class="dfs-section-title"><i class="fa-solid fa-bolt"></i> Interactive Fluency Drills</h2>
+            <span class="dfs-section-badge" style="background:#d1fae5; color:#065f46;">Instant Check</span>
+          </div>
+          <p style="color:#475569; font-size:0.95rem; margin-bottom:14px;">Test your knowledge right now. Select an answer to receive immediate diagnostic feedback and tutor explanations.</p>
+          <div class="dfs-drill-box">
+            
+        <div class="dfs-drill-question-card">
+          <div class="dfs-drill-q-title">
+            <span class="dfs-drill-q-num">Drill 1</span>
+            <span>What does a padlock icon next to a Wi-Fi network name mean?</span>
+          </div>
+          <div class="dfs-drill-options">
+            
+            <button type="button" class="dfs-drill-opt-btn" data-correct="false" onclick="checkDrill(this, false, 'drillFeedback_e3-connecting-wifi-bluetooth_1')">
+              <span>The network is broken and cannot be used</span>
+              <i class="fa-solid fa-arrow-right" style="opacity:0.4; font-size:0.8rem;"></i>
+            </button>
+            
+            <button type="button" class="dfs-drill-opt-btn" data-correct="true" onclick="checkDrill(this, true, 'drillFeedback_e3-connecting-wifi-bluetooth_1')">
+              <span>The network is password-protected and secure</span>
+              <i class="fa-solid fa-arrow-right" style="opacity:0.4; font-size:0.8rem;"></i>
+            </button>
+            
+            <button type="button" class="dfs-drill-opt-btn" data-correct="false" onclick="checkDrill(this, false, 'drillFeedback_e3-connecting-wifi-bluetooth_1')">
+              <span>The network is only available to guests</span>
+              <i class="fa-solid fa-arrow-right" style="opacity:0.4; font-size:0.8rem;"></i>
+            </button>
+            
+            <button type="button" class="dfs-drill-opt-btn" data-correct="false" onclick="checkDrill(this, false, 'drillFeedback_e3-connecting-wifi-bluetooth_1')">
+              <span>The network has no internet connection</span>
+              <i class="fa-solid fa-arrow-right" style="opacity:0.4; font-size:0.8rem;"></i>
+            </button>
+            
+          </div>
+          <div id="drillFeedback_e3-connecting-wifi-bluetooth_1" class="dfs-drill-feedback" data-explanation="A padlock icon indicates a secured network that requires a password/key and encrypts your connection."></div>
+        </div>
+        
+        <div class="dfs-drill-question-card">
+          <div class="dfs-drill-q-title">
+            <span class="dfs-drill-q-num">Drill 2</span>
+            <span>Which wireless technology is typically used to connect a wireless mouse or headset to a laptop over short distances?</span>
+          </div>
+          <div class="dfs-drill-options">
+            
+            <button type="button" class="dfs-drill-opt-btn" data-correct="true" onclick="checkDrill(this, true, 'drillFeedback_e3-connecting-wifi-bluetooth_2')">
+              <span>Bluetooth</span>
+              <i class="fa-solid fa-arrow-right" style="opacity:0.4; font-size:0.8rem;"></i>
+            </button>
+            
+            <button type="button" class="dfs-drill-opt-btn" data-correct="false" onclick="checkDrill(this, false, 'drillFeedback_e3-connecting-wifi-bluetooth_2')">
+              <span>Satellite Broadband</span>
+              <i class="fa-solid fa-arrow-right" style="opacity:0.4; font-size:0.8rem;"></i>
+            </button>
+            
+            <button type="button" class="dfs-drill-opt-btn" data-correct="false" onclick="checkDrill(this, false, 'drillFeedback_e3-connecting-wifi-bluetooth_2')">
+              <span>Ethernet Cable</span>
+              <i class="fa-solid fa-arrow-right" style="opacity:0.4; font-size:0.8rem;"></i>
+            </button>
+            
+            <button type="button" class="dfs-drill-opt-btn" data-correct="false" onclick="checkDrill(this, false, 'drillFeedback_e3-connecting-wifi-bluetooth_2')">
+              <span>4G Mobile Data</span>
+              <i class="fa-solid fa-arrow-right" style="opacity:0.4; font-size:0.8rem;"></i>
+            </button>
+            
+          </div>
+          <div id="drillFeedback_e3-connecting-wifi-bluetooth_2" class="dfs-drill-feedback" data-explanation="Bluetooth is designed specifically for short-range cable-free connections between devices and nearby accessories."></div>
+        </div>
+        
+        <div class="dfs-drill-question-card">
+          <div class="dfs-drill-q-title">
+            <span class="dfs-drill-q-num">Drill 3</span>
+            <span>True or False: Passwords for Wi-Fi networks are case-sensitive, meaning capital letters and lowercase letters must match exactly.</span>
+          </div>
+          <div class="dfs-drill-options">
+            
+            <button type="button" class="dfs-drill-opt-btn" data-correct="true" onclick="checkDrill(this, true, 'drillFeedback_e3-connecting-wifi-bluetooth_3')">
+              <span>True</span>
+              <i class="fa-solid fa-arrow-right" style="opacity:0.4; font-size:0.8rem;"></i>
+            </button>
+            
+            <button type="button" class="dfs-drill-opt-btn" data-correct="false" onclick="checkDrill(this, false, 'drillFeedback_e3-connecting-wifi-bluetooth_3')">
+              <span>False</span>
+              <i class="fa-solid fa-arrow-right" style="opacity:0.4; font-size:0.8rem;"></i>
+            </button>
+            
+          </div>
+          <div id="drillFeedback_e3-connecting-wifi-bluetooth_3" class="dfs-drill-feedback" data-explanation="True! Network security keys treat 'Password' and 'password' as completely different words."></div>
+        </div>
+        
+          </div>
+        </section>
+
+        <!-- 5. EXAM-STYLE PRACTICE QUESTION & AUTO-SAVING SCRATCHPAD -->
+        <section id="practice" class="dfs-section">
+          <div class="dfs-section-header">
+            <h2 class="dfs-section-title"><i class="fa-solid fa-pen-ruler"></i> Independent Practice Exam Task</h2>
+            <span class="dfs-section-badge">Auto-Saving Scratchpad</span>
+          </div>
+          <p style="color:#475569; font-size:0.95rem; margin-bottom:14px;">Complete this practice task under exam conditions. Your working is saved automatically in your browser so you can return to it anytime.</p>
+          
+    <div class="dfs-practice-box">
+      <div class="dfs-task-stem">
+        <div style="font-weight:700; color:#0f172a; margin-bottom:6px;"><i class="fa-solid fa-pen-to-square" style="color:#0284c7;"></i> Onscreen Assessment Task:</div>
+        <div>A student needs to connect their tablet to their home Wi-Fi. Write down the three steps they must follow using the onscreen settings menu.</div>
+      </div>
+
+      <div class="dfs-scratchpad-wrap">
+        <div class="dfs-scratchpad-label">
+          <span><i class="fa-solid fa-keyboard"></i> Your Working &amp; Answer Scratchpad:</span>
+          <span class="dfs-autosave-status"><i class="fa-solid fa-circle-check"></i> Auto-saves in browser</span>
+        </div>
+        <textarea class="dfs-scratchpad-area" data-storage-key="dfs_scratch_e3-connecting-wifi-bluetooth" placeholder="Type your step-by-step working, method, or draft response here...">Step 1: Open the Wi-Fi list by...
+Step 2: Tap on...
+Step 3: Type the...</textarea>
+      </div>
+
+      <button type="button" id="solBtn_e3-connecting-wifi-bluetooth" class="dfs-solution-toggle-btn" onclick="toggleSolutionDrawer('solDrawer_e3-connecting-wifi-bluetooth', 'solBtn_e3-connecting-wifi-bluetooth')">
+        <i class="fa-solid fa-chevron-down"></i> View Accredited Model Solution &amp; Mark Scheme
+      </button>
+
+      <div id="solDrawer_e3-connecting-wifi-bluetooth" class="dfs-solution-drawer">
+        <h4><i class="fa-solid fa-circle-check"></i> Pearson Edexcel Benchmark Solution</h4>
+        <div style="font-size:0.95rem; color:#14532d; line-height:1.6; margin-bottom:14px; background:#ffffff; padding:14px; border-radius:6px; border:1px solid #bbf7d0;">
+          Step 1: Tap the Wi-Fi or network icon to display available networks.
+Step 2: Select their home network name (SSID) from the list.
+Step 3: Enter the correct network security key (Wi-Fi password) and tap Connect.
+        </div>
+        <div style="font-weight:700; color:#166534; font-size:0.92rem; margin-bottom:6px;">Official Marking Criteria:</div>
+        <ul class="dfs-marking-criteria-list">
+          <li><i class="fa-solid fa-check"></i> <div><strong>[1 Mark]:</strong> Opening/viewing available network list.</div></li><li><i class="fa-solid fa-check"></i> <div><strong>[1 Mark]:</strong> Selecting the correct network and entering the security key/password.</div></li>
+        </ul>
+      </div>
+    </div>
+    
+        </section>
+
+        <!-- OFFICIAL ASSESSMENT & MOCK TESTING BRIDGE -->
+        <div class="dfs-exam-bridge-card">
+          <div class="exam-bridge-icon"><i class="fa-solid fa-desktop"></i></div>
+          <div class="exam-bridge-content">
+            <h4>Ready to test in the official Pearson exam environment?</h4>
+            <p>Put your knowledge into timed exam practice using authentic candidate data files (.ZIP) in the Pearson onscreen test player.</p>
+            <div class="exam-bridge-actions">
+              <a href="../../digital-functional-skills-mock-exam.html" class="btn-exam-bridge primary" target="_blank"><i class="fa-solid fa-play"></i> Launch Online Mock Simulator &rarr;</a>
+              <a href="../../digital-functional-skills-past-papers.html" class="btn-exam-bridge secondary" target="_blank"><i class="fa-solid fa-file-zipper"></i> Past Papers &amp; Data Files (.ZIP) &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. LINKS TO REVISE & CONTINUOUS LEARNING -->
+        <div class="dfs-rev-links-wrap">
+          <div class="dfs-rev-links-title"><i class="fa-solid fa-diagram-project"></i> Links to Revise &amp; Connected Topics</div>
+          <div class="dfs-pills-row">
+            <a href="e3-device-controls-navigation.html" class="dfs-pill-link"><i class="fa-solid fa-bookmark" style="font-size:0.75rem;"></i> Power & Navigation</a><a href="e3-passwords-privacy-scams.html" class="dfs-pill-link"><i class="fa-solid fa-bookmark" style="font-size:0.75rem;"></i> Online Passwords & Scams</a><a href="e3-email-attachments-contacts.html" class="dfs-pill-link"><i class="fa-solid fa-bookmark" style="font-size:0.75rem;"></i> Email Attachments</a>
+            <a href="../../assets/downloads/past-papers/digital-skills/DFS_Handbook_MFS.pdf" class="dfs-pill-link" style="border-color:#86efac; color:#166534;"><i class="fa-solid fa-file-pdf"></i> Download Entry 3 Revision Notes PDF</a>
+            <a href="index.html" class="dfs-pill-link" style="border-color:#cbd5e1; color:#475569;"><i class="fa-solid fa-table-cells"></i> View All Entry 3 Topics</a>
+          </div>
+        </div>
+
+        <!-- TOPIC NAVIGATION BAR -->
+        <div class="dfs-topic-nav-bar">
+          <div><a href="e3-device-controls-navigation.html" class="dfs-nav-btn"><i class="fa-solid fa-arrow-left"></i> Previous: Power, Login and Desktop Navigation</a></div>
+          <div><a href="e3-accessibility-display-settings.html" class="dfs-nav-btn primary">Next: Display and Accessibility Settings <i class="fa-solid fa-arrow-right"></i></a></div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer style="background:#0f172a; color:#94a3b8; padding:40px 0 24px; border-top:1px solid #1e293b; font-size:0.88rem;">
+    <div class="mfs-container">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px; margin-bottom:24px; padding-bottom:20px; border-bottom:1px solid #1e293b;">
+        <div class="mfs-brand">
+          <div class="mfs-brand-icon"><i class="fa-solid fa-laptop-code"></i></div>
+          <div class="mfs-brand-text">
+            <div class="mfs-brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
+            <div class="mfs-brand-subtitle">Delivering Skills • Achieving Goals</div>
+          </div>
+        </div>
+        <div style="display:flex; gap:16px; flex-wrap:wrap;">
+          <a href="index.html" style="color:#cbd5e1; text-decoration:none;">Entry 3 Hub</a>
+          <a href="../../digital-functional-skills-past-papers.html" style="color:#cbd5e1; text-decoration:none;">Past Papers &amp; Data Files</a>
+          <a href="../../digital-functional-skills-mock-exam.html" style="color:#cbd5e1; text-decoration:none;">Online Mock Simulator</a>
+          <a href="../../revise.html" style="color:#cbd5e1; text-decoration:none;">All Subjects</a>
+          <a href="../../contact-us.html" style="color:#cbd5e1; text-decoration:none;">Contact Tutor</a>
+        </div>
+      </div>
+      <div style="text-align:center; font-size:0.78rem; color:#64748b;">
+        &copy; 2026 Master Functional Skills. All rights reserved. Pearson Edexcel and City &amp; Guilds aligned Digital Functional Skills Qualifications (DFSQ).
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../../assets/js/dfs-revision-engine.js?v=20261106_v1"></script>
+</body>
+</html>

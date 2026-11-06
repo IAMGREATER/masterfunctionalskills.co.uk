@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-theme="maths" data-tint="cream">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Entering Data into Simple Spreadsheets | Entry 3 Digital Skills Revision | Master Functional Skills</title>
+  <meta name="description" content="Master Entering Data into Simple Spreadsheets for Entry 3 Digital Functional Skills. Step-by-step explanations, authentic visual UI breakdowns, video walkthroughs, fluency drills, and Pearson Edexcel aligned mock questions.">
+  <link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg">
+  <link rel="alternate icon" href="../../favicon.ico">
+  <meta name="theme-color" content="#0f172a">
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Dedicated Digital Skills Revision Styles -->
+  <link rel="stylesheet" href="../../assets/css/mfs-dfs-revision.css?v=20261106_v2">
+</head>
+<body data-tint="cream">
+
+  <!-- TOP TRUST BAR & ACCESSIBILITY CONTROLS -->
+  <div class="mfs-top-bar">
+    <div class="mfs-container mfs-top-bar-inner">
+      <div class="top-trust-items">
+        <span class="top-trust-item"><i class="fa-solid fa-building-columns"></i> Pearson Edexcel &amp; City &amp; Guilds Aligned</span>
+        <span class="top-trust-item"><i class="fa-solid fa-graduation-cap"></i> Specialist Functional Skills Tuition</span>
+      </div>
+      <div class="top-contacts">
+        <div class="mfs-access-bar">
+          <div class="mfs-tint-dropdown-wrap">
+            <button type="button" id="tintToggle" class="btn-tint-toggle" onclick="toggleTintMenu(event)" title="Change dyslexia background tint">
+              <span class="tint-swatch-indicator" id="tintCurrentSwatch"></span>
+              <span id="tintLabel">Cream Tint</span>
+              <i class="fa-solid fa-chevron-down" style="font-size:0.62rem; opacity:0.75; margin-left:2px;"></i>
+            </button>
+            <div id="tintMenu" class="tint-picker-menu">
+              <div class="tint-picker-title"><i class="fa-solid fa-glasses"></i> Dyslexia Reading Tint</div>
+              <button type="button" class="tint-option-btn active" data-tint="cream" onclick="setSiteTint('cream', event)">
+                <span class="swatch swatch-cream"></span>
+                <span class="tint-name">Cream (Recommended)</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="peach" onclick="setSiteTint('peach', event)">
+                <span class="swatch swatch-peach"></span>
+                <span class="tint-name">Soft Peach</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="cool" onclick="setSiteTint('cool', event)">
+                <span class="swatch swatch-cool"></span>
+                <span class="tint-name">Cool Mist</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="sage" onclick="setSiteTint('sage', event)">
+                <span class="swatch swatch-sage"></span>
+                <span class="tint-name">Soft Sage</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <div class="tint-divider" style="height:1px; background:#e2e8f0; margin:6px 0;"></div>
+              <button type="button" class="tint-option-btn" data-tint="none" onclick="setSiteTint('none', event)">
+                <span class="swatch swatch-none"></span>
+                <span class="tint-name">No Tint (White)</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+            </div>
+          </div>
+          <button id="dyslexiaToggle" class="btn-dyslexia-toggle" onclick="toggleDyslexiaMode()" title="Toggle Dyslexia High-Readability Mode">
+            <i class="fa-solid fa-universal-access"></i> Dyslexia
+          </button>
+        </div>
+        <a href="../../contact-us.html" class="btn-tint-toggle" style="text-decoration:none;"><i class="fa-solid fa-envelope"></i> Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN NAVIGATION -->
+  <header class="mfs-navbar">
+    <div class="mfs-container mfs-navbar-inner">
+      <a href="../../index.html" class="mfs-brand">
+        <div class="mfs-brand-icon"><i class="fa-solid fa-laptop-code"></i></div>
+        <div class="mfs-brand-text">
+          <div class="mfs-brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
+          <div class="mfs-brand-subtitle">Delivering Skills • Achieving Goals</div>
+        </div>
+      </a>
+
+      <nav class="mfs-nav-wrapper">
+        <ul class="mfs-nav-menu">
+          <li><a href="../../revise.html" class="mfs-nav-link"><i class="fa-solid fa-book-open-reader"></i> Revision Hub</a></li>
+          <li><a href="index.html" class="mfs-nav-link active"><i class="fa-solid fa-list-check"></i> Entry 3 Directory</a></li>
+          <li><a href="../../digital-functional-skills-past-papers.html" class="mfs-nav-link"><i class="fa-solid fa-file-lines"></i> Past Papers</a></li>
+          <li><a href="../../digital-functional-skills-mock-exam.html" class="mfs-nav-link btn-nav-exam"><i class="fa-solid fa-desktop"></i> Mock Simulator</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- SUBNAV & BREADCRUMBS -->
+  <div class="dfs-subnav-bar">
+    <div class="mfs-container dfs-subnav-inner">
+      <div class="dfs-breadcrumbs">
+        <a href="../../index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a href="../../revise.html">Revision</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a href="index.html">Entry 3 Digital Skills</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span style="color:#ffffff; font-weight:600;">Entering Data into Simple Spreadsheets</span>
+      </div>
+      <div>
+        <span class="dfs-level-badge-pill e3">Entry 3 DFSQ</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="dfs-hero-header">
+    <div class="mfs-container">
+      <div class="dfs-hero-meta">
+        <span class="dfs-spec-code">E3.2.5</span>
+        <span style="color:#38bdf8; font-size:0.85rem; font-weight:600;"><i class="fa-solid fa-folder-open"></i> 2. Creating and Editing</span>
+        <span class="dfs-time-tag"><i class="fa-regular fa-clock"></i> 15 Mins Study Time</span>
+      </div>
+      <h1 class="dfs-hero-title">Entering Data into Simple Spreadsheets</h1>
+      <p class="dfs-hero-lead">Understand rows, columns, and cell references in spreadsheet software like Excel, enter text labels and numbers accurately, format numbers as currency, and use simple addition formulas.</p>
+      <div class="dfs-hero-objectives">
+        <span class="dfs-obj-tag"><i class="fa-solid fa-check"></i> Identify columns (letters), rows (numbers), and cell references (e.g. B4)</span><span class="dfs-obj-tag"><i class="fa-solid fa-check"></i> Enter text labels and numerical values into correct cells</span><span class="dfs-obj-tag"><i class="fa-solid fa-check"></i> Format numerical data as Currency (£) and use basic formulas (=SUM or +)</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN LEARNING CONTENT -->
+  <main class="dfs-layout-wrap">
+    <div class="mfs-container">
+      <div class="dfs-grid">
+
+        <!-- 1. YOUTUBE VIDEO WALKTHROUGH EMBED -->
+        <section id="video" class="dfs-section">
+          <div class="dfs-section-header">
+            <h2 class="dfs-section-title"><i class="fa-brands fa-youtube" style="color:#dc2626;"></i> Video Lesson &amp; Walkthrough</h2>
+            <span class="dfs-section-badge">Tutor Guided Video</span>
+          </div>
+          <div class="dfs-video-box">
+            <div class="dfs-video-player-wrap">
+              
+        <div class="dfs-video-card-fallback">
+          <i class="fa-brands fa-youtube play-icon"></i>
+          <h3 style="font-size:1.3rem; margin-bottom:8px;">Entry 3 Digital Skills - Spreadsheet Cells & Simple Totals</h3>
+          <p style="color:#94a3b8; max-width:580px; font-size:0.92rem; margin-bottom:16px;">Watch step-by-step visual demonstration with clear instructional narration and exam mark scheme commentary.</p>
+          <a href="https://www.youtube.com/@MasterFunctionalSkills" target="_blank" rel="noopener noreferrer" class="btn-yt-direct">
+            <i class="fa-brands fa-youtube"></i> Watch on Master Functional Skills YouTube
+          </a>
+        </div>
+        
+            </div>
+            <div class="dfs-video-bar">
+              <div><strong>Topic Focus:</strong> Entering Data into Simple Spreadsheets (E3.2.5)</div>
+              <div><i class="fa-solid fa-volume-high" style="color:#38bdf8; margin-right:5px;"></i> Sonia Neural Clear British RP Cadence</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. STEP-BY-STEP TEACHING & VISUAL UI MOCKUPS -->
+        <section id="teaching" class="dfs-section">
+          <div class="dfs-section-header">
+            <h2 class="dfs-section-title"><i class="fa-solid fa-book-open"></i> Step-by-Step Teaching &amp; Key Concepts</h2>
+            <span class="dfs-section-badge">Core Knowledge</span>
+          </div>
+          
+          <div class="dfs-steps-flow">
+            
+        <div class="dfs-step-card">
+          <div class="dfs-step-header">
+            <div class="dfs-step-num">1</div>
+            <div class="dfs-step-title">Understanding the Spreadsheet Grid</div>
+          </div>
+          <div class="dfs-step-body">
+            <p>A spreadsheet is a powerful grid used for storing lists, managing budgets, and calculating totals:</p><ul><li><strong>Columns:</strong> Run vertically up and down, labelled with letters (<strong>A, B, C, D...</strong>).</li><li><strong>Rows:</strong> Run horizontally left to right, labelled with numbers (<strong>1, 2, 3, 4...</strong>).</li><li><strong>Cell Reference:</strong> The intersection of a column and a row. Column letter comes first, followed by the row number (e.g. cell <strong>C5</strong> is column C, row 5).</li></ul>
+            
+            <div class="dfs-ui-sim">
+              <div class="dfs-ui-sim-bar">
+                <div class="dfs-ui-sim-dots"><span></span><span></span><span></span></div>
+                <div>Spreadsheet Grid & Cell Address</div>
+                <div><i class="fa-solid fa-desktop"></i></div>
+              </div>
+              <div class="dfs-ui-sim-content">
+                <table style='width:100%; border-collapse:collapse; background:#ffffff; font-family:monospace; font-size:0.9rem;'><tr style='background:#e2e8f0; text-align:center;'><th style='width:40px; border:1px solid #cbd5e1;'></th><th style='border:1px solid #cbd5e1;'>A</th><th style='border:1px solid #cbd5e1;'>B</th><th style='border:1px solid #cbd5e1;'>C</th></tr><tr><td style='background:#e2e8f0; text-align:center; font-weight:700; border:1px solid #cbd5e1;'>1</td><td style='border:1px solid #cbd5e1; font-weight:700;'>Item Name</td><td style='border:1px solid #cbd5e1; font-weight:700;'>Quantity</td><td style='border:1px solid #cbd5e1; font-weight:700;'>Cost (£)</td></tr><tr><td style='background:#e2e8f0; text-align:center; font-weight:700; border:1px solid #cbd5e1;'>2</td><td style='border:1px solid #cbd5e1;'>Bandages</td><td style='border:1px solid #cbd5e1;'>10</td><td style='border:1px solid #cbd5e1;'>£15.00</td></tr><tr><td style='background:#e2e8f0; text-align:center; font-weight:700; border:1px solid #cbd5e1;'>3</td><td style='border:1px solid #cbd5e1;'>Gloves</td><td style='border:1px solid #cbd5e1;'>25</td><td style='border:1px solid #cbd5e1; background:#fef3c7; border:2px solid #d97706;'>£22.50</td></tr></table>
+              </div>
+            </div>
+            
+            
+            
+          </div>
+        </div>
+        
+        <div class="dfs-step-card">
+          <div class="dfs-step-header">
+            <div class="dfs-step-num">2</div>
+            <div class="dfs-step-title">Entering Labels and Numbers</div>
+          </div>
+          <div class="dfs-step-body">
+            <p>Click into any cell to type:</p><ul><li><strong>Labels (Text):</strong> Word descriptions (e.g. 'Stationery', 'Total'). Automatically align to the left.</li><li><strong>Numbers / Values:</strong> Digits used for maths. Automatically align to the right.</li><li><strong>Currency Format:</strong> Highlight the numbers and click the <strong>£ (Currency)</strong> button on the ribbon so pennies display neatly with two decimal places (e.g. <code>£15.00</code> instead of <code>15</code>).</li></ul>
+            
+            
+            
+            <div class="dfs-callout dfs-callout-vocational">
+              <i class="fa-solid fa-user-nurse"></i>
+              <div><strong>Workplace Supply Tracking:</strong> Clinics and dental practices track stock replenishment in spreadsheets so supervisors know exactly when medical gloves or sterile swabs need reordering.</div>
+            </div>
+            
+          </div>
+        </div>
+        
+        <div class="dfs-step-card">
+          <div class="dfs-step-header">
+            <div class="dfs-step-num">3</div>
+            <div class="dfs-step-title">Simple Formulas and AutoSum</div>
+          </div>
+          <div class="dfs-step-body">
+            <p>Every spreadsheet formula MUST begin with an <strong>equals sign (=)</strong>:</p><ul><li><strong>Simple Addition:</strong> Type <code>=B2+B3</code> and press <kbd class='dfs-kbd'>Enter</kbd>.</li><li><strong>AutoSum Function:</strong> Highlight your numbers and click the <strong>AutoSum (&Sigma;)</strong> button on the ribbon. It automatically inserts <code>=SUM(C2:C5)</code> to add all numbers in that range.</li></ul>
+            
+            <div style="margin-top:10px; font-size:0.88rem; color:#475569;"><i class="fa-regular fa-keyboard" style="color:#0284c7; margin-right:4px;"></i> <strong>AutoSum Shortcut:</strong> <kbd class="dfs-kbd">Alt + =</kbd></div>
+            
+          </div>
+        </div>
+        
+          </div>
+        </section>
+
+        <!-- 3. AUTHENTIC EXAM MODEL WALKTHROUGH -->
+        <section id="model" class="dfs-section">
+          <div class="dfs-section-header">
+            <h2 class="dfs-section-title"><i class="fa-solid fa-award"></i> Authentic Pearson Edexcel Exam Model</h2>
+            <span class="dfs-section-badge" style="background:#fee2e2; color:#dc2626;">Accredited Model</span>
+          </div>
+          <p style="color:#475569; font-size:0.95rem; margin-bottom:14px;">Here is how this skill is tested in the real Pearson Edexcel onscreen digital assessment, broken down with official examiner mark codes (<span class="dfs-mark-tag" style="display:inline-block; margin:0 3px;">[B1]</span> knowledge, <span class="dfs-mark-tag" style="background:#0284c7; display:inline-block; margin:0 3px;">[M1]</span> process, <span class="dfs-mark-tag" style="background:#0f766e; display:inline-block; margin:0 3px;">[A1]</span> accuracy).</p>
+          
+    <div class="dfs-exam-model">
+      <div class="dfs-model-stem">
+        <strong><i class="fa-solid fa-clipboard-question"></i> Exam Scenario Prompt:</strong> A community nursery tracks juice carton expenses in a spreadsheet. In cell C2 the cost is 12.5 and in C3 the cost is 8. Explain how to format the numbers as currency and write the formula needed in cell C4 to calculate the total cost.
+      </div>
+      
+        <div class="dfs-model-step-card">
+          <div class="dfs-model-step-title">
+            <span>Step 1: Format as Currency</span>
+            <span class="dfs-mark-tag">[B1]</span>
+          </div>
+          <div class="dfs-model-solution-text">Select cells C2 to C4 and click the Currency (£) button on the Home ribbon.</div>
+          <div class="dfs-tutor-rationale">
+            <i class="fa-solid fa-circle-check"></i>
+            <div><strong>Tutor Marking Rationale:</strong> Formats numbers to display the pound symbol and two decimal places (£12.50 and £8.00).</div>
+          </div>
+        </div>
+        
+        <div class="dfs-model-step-card">
+          <div class="dfs-model-step-title">
+            <span>Step 2: Write the calculation formula</span>
+            <span class="dfs-mark-tag">[B1]</span>
+          </div>
+          <div class="dfs-model-solution-text">=C2+C3  (or =SUM(C2:C3))</div>
+          <div class="dfs-tutor-rationale">
+            <i class="fa-solid fa-circle-check"></i>
+            <div><strong>Tutor Marking Rationale:</strong> Formula correctly starts with '=' and adds the two cell references.</div>
+          </div>
+        </div>
+        
+      <div class="dfs-callout dfs-callout-tutor" style="margin-top:16px;">
+        <i class="fa-solid fa-award"></i>
+        <div><strong>Tutor Abdul's Exam Golden Rule:</strong> Never type '=12.5+8' into cell C4 in an exam! You MUST use the cell references (=C2+C3) so that if prices change, the total updates automatically.</div>
+      </div>
+    </div>
+    
+        </section>
+
+        <!-- 4. INTERACTIVE FLUENCY DRILLS -->
+        <section id="drills" class="dfs-section">
+          <div class="dfs-section-header">
+            <h2 class="dfs-section-title"><i class="fa-solid fa-bolt"></i> Interactive Fluency Drills</h2>
+            <span class="dfs-section-badge" style="background:#d1fae5; color:#065f46;">Instant Check</span>
+          </div>
+          <p style="color:#475569; font-size:0.95rem; margin-bottom:14px;">Test your knowledge right now. Select an answer to receive immediate diagnostic feedback and tutor explanations.</p>
+          <div class="dfs-drill-box">
+            
+        <div class="dfs-drill-question-card">
+          <div class="dfs-drill-q-title">
+            <span class="dfs-drill-q-num">Drill 1</span>
+            <span>What symbol MUST every spreadsheet formula start with?</span>
+          </div>
+          <div class="dfs-drill-options">
+            
+            <button type="button" class="dfs-drill-opt-btn" data-correct="true" onclick="checkDrill(this, true, 'drillFeedback_e3-spreadsheets-simple-data_1')">
+              <span>= (Equals sign)</span>
+              <i class="fa-solid fa-arrow-right" style="opacity:0.4; font-size:0.8rem;"></i>
+            </button>
+            
+            <button type="button" class="dfs-drill-opt-btn" data-correct="false" onclick="checkDrill(this, false, 'drillFeedback_e3-spreadsheets-simple-data_1')">
+              <span>+ (Plus sign)</span>
+              <i class="fa-solid fa-arrow-right" style="opacity:0.4; font-size:0.8rem;"></i>
+            </button>
+            
+            <button type="button" class="dfs-drill-opt-btn" data-correct="false" onclick="checkDrill(this, false, 'drillFeedback_e3-spreadsheets-simple-data_1')">
+              <span># (Hashtag)</span>
+              <i class="fa-solid fa-arrow-right" style="opacity:0.4; font-size:0.8rem;"></i>
+            </button>
+            
+            <button type="button" class="dfs-drill-opt-btn" data-correct="false" onclick="checkDrill(this, false, 'drillFeedback_e3-spreadsheets-simple-data_1')">
+              <span>£ (Pound sign)</span>
+              <i class="fa-solid fa-arrow-right" style="opacity:0.4; font-size:0.8rem;"></i>
+            </button>
+            
+          </div>
+          <div id="drillFeedback_e3-spreadsheets-simple-data_1" class="dfs-drill-feedback" data-explanation="All formulas in Excel and Google Sheets must begin with an equals sign (=) to trigger calculation."></div>
+        </div>
+        
+        <div class="dfs-drill-question-card">
+          <div class="dfs-drill-q-title">
+            <span class="dfs-drill-q-num">Drill 2</span>
+            <span>What is the cell reference for the cell in Column D and Row 7?</span>
+          </div>
+          <div class="dfs-drill-options">
+            
+            <button type="button" class="dfs-drill-opt-btn" data-correct="true" onclick="checkDrill(this, true, 'drillFeedback_e3-spreadsheets-simple-data_2')">
+              <span>D7</span>
+              <i class="fa-solid fa-arrow-right" style="opacity:0.4; font-size:0.8rem;"></i>
+            </button>
+            
+            <button type="button" class="dfs-drill-opt-btn" data-correct="false" onclick="checkDrill(this, false, 'drillFeedback_e3-spreadsheets-simple-data_2')">
+              <span>7D</span>
+              <i class="fa-solid fa-arrow-right" style="opacity:0.4; font-size:0.8rem;"></i>
+            </button>
+            
+            <button type="button" class="dfs-drill-opt-btn" data-correct="false" onclick="checkDrill(this, false, 'drillFeedback_e3-spreadsheets-simple-data_2')">
+              <span>Row D</span>
+              <i class="fa-solid fa-arrow-right" style="opacity:0.4; font-size:0.8rem;"></i>
+            </button>
+            
+            <button type="button" class="dfs-drill-opt-btn" data-correct="false" onclick="checkDrill(this, false, 'drillFeedback_e3-spreadsheets-simple-data_2')">
+              <span>D+7</span>
+              <i class="fa-solid fa-arrow-right" style="opacity:0.4; font-size:0.8rem;"></i>
+            </button>
+            
+          </div>
+          <div id="drillFeedback_e3-spreadsheets-simple-data_2" class="dfs-drill-feedback" data-explanation="Cell references always write the column letter first, followed by the row number (D7)."></div>
+        </div>
+        
+        <div class="dfs-drill-question-card">
+          <div class="dfs-drill-q-title">
+            <span class="dfs-drill-q-num">Drill 3</span>
+            <span>Which ribbon tool automatically adds up a column of numbers in a spreadsheet?</span>
+          </div>
+          <div class="dfs-drill-options">
+            
+            <button type="button" class="dfs-drill-opt-btn" data-correct="true" onclick="checkDrill(this, true, 'drillFeedback_e3-spreadsheets-simple-data_3')">
+              <span>AutoSum (Σ)</span>
+              <i class="fa-solid fa-arrow-right" style="opacity:0.4; font-size:0.8rem;"></i>
+            </button>
+            
+            <button type="button" class="dfs-drill-opt-btn" data-correct="false" onclick="checkDrill(this, false, 'drillFeedback_e3-spreadsheets-simple-data_3')">
+              <span>Spell Check (F7)</span>
+              <i class="fa-solid fa-arrow-right" style="opacity:0.4; font-size:0.8rem;"></i>
+            </button>
+            
+            <button type="button" class="dfs-drill-opt-btn" data-correct="false" onclick="checkDrill(this, false, 'drillFeedback_e3-spreadsheets-simple-data_3')">
+              <span>Wrap Text</span>
+              <i class="fa-solid fa-arrow-right" style="opacity:0.4; font-size:0.8rem;"></i>
+            </button>
+            
+            <button type="button" class="dfs-drill-opt-btn" data-correct="false" onclick="checkDrill(this, false, 'drillFeedback_e3-spreadsheets-simple-data_3')">
+              <span>Find and Replace</span>
+              <i class="fa-solid fa-arrow-right" style="opacity:0.4; font-size:0.8rem;"></i>
+            </button>
+            
+          </div>
+          <div id="drillFeedback_e3-spreadsheets-simple-data_3" class="dfs-drill-feedback" data-explanation="The AutoSum button calculates the total of adjacent numbers using the =SUM() function."></div>
+        </div>
+        
+          </div>
+        </section>
+
+        <!-- 5. EXAM-STYLE PRACTICE QUESTION & AUTO-SAVING SCRATCHPAD -->
+        <section id="practice" class="dfs-section">
+          <div class="dfs-section-header">
+            <h2 class="dfs-section-title"><i class="fa-solid fa-pen-ruler"></i> Independent Practice Exam Task</h2>
+            <span class="dfs-section-badge">Auto-Saving Scratchpad</span>
+          </div>
+          <p style="color:#475569; font-size:0.95rem; margin-bottom:14px;">Complete this practice task under exam conditions. Your working is saved automatically in your browser so you can return to it anytime.</p>
+          
+    <div class="dfs-practice-box">
+      <div class="dfs-task-stem">
+        <div style="font-weight:700; color:#0f172a; margin-bottom:6px;"><i class="fa-solid fa-pen-to-square" style="color:#0284c7;"></i> Onscreen Assessment Task:</div>
+        <div>Look at the table below:<br>Cell B2: 15<br>Cell B3: 25<br>Cell B4: 10<br><br>Write down the exact formula you should enter into cell B5 to find the total of all three cells.</div>
+      </div>
+
+      <div class="dfs-scratchpad-wrap">
+        <div class="dfs-scratchpad-label">
+          <span><i class="fa-solid fa-keyboard"></i> Your Working &amp; Answer Scratchpad:</span>
+          <span class="dfs-autosave-status"><i class="fa-solid fa-circle-check"></i> Auto-saves in browser</span>
+        </div>
+        <textarea class="dfs-scratchpad-area" data-storage-key="dfs_scratch_e3-spreadsheets-simple-data" placeholder="Type your step-by-step working, method, or draft response here...">Formula in cell B5: =</textarea>
+      </div>
+
+      <button type="button" id="solBtn_e3-spreadsheets-simple-data" class="dfs-solution-toggle-btn" onclick="toggleSolutionDrawer('solDrawer_e3-spreadsheets-simple-data', 'solBtn_e3-spreadsheets-simple-data')">
+        <i class="fa-solid fa-chevron-down"></i> View Accredited Model Solution &amp; Mark Scheme
+      </button>
+
+      <div id="solDrawer_e3-spreadsheets-simple-data" class="dfs-solution-drawer">
+        <h4><i class="fa-solid fa-circle-check"></i> Pearson Edexcel Benchmark Solution</h4>
+        <div style="font-size:0.95rem; color:#14532d; line-height:1.6; margin-bottom:14px; background:#ffffff; padding:14px; border-radius:6px; border:1px solid #bbf7d0;">
+          =SUM(B2:B4)   (or =B2+B3+B4)
+        </div>
+        <div style="font-weight:700; color:#166534; font-size:0.92rem; margin-bottom:6px;">Official Marking Criteria:</div>
+        <ul class="dfs-marking-criteria-list">
+          <li><i class="fa-solid fa-check"></i> <div><strong>[1 Mark]:</strong> Starting formula with the '=' sign.</div></li><li><i class="fa-solid fa-check"></i> <div><strong>[1 Mark]:</strong> Using correct cell references (B2+B3+B4 or SUM(B2:B4)).</div></li>
+        </ul>
+      </div>
+    </div>
+    
+        </section>
+
+        <!-- OFFICIAL ASSESSMENT & MOCK TESTING BRIDGE -->
+        <div class="dfs-exam-bridge-card">
+          <div class="exam-bridge-icon"><i class="fa-solid fa-desktop"></i></div>
+          <div class="exam-bridge-content">
+            <h4>Ready to test in the official Pearson exam environment?</h4>
+            <p>Put your knowledge into timed exam practice using authentic candidate data files (.ZIP) in the Pearson onscreen test player.</p>
+            <div class="exam-bridge-actions">
+              <a href="../../digital-functional-skills-mock-exam.html" class="btn-exam-bridge primary" target="_blank"><i class="fa-solid fa-play"></i> Launch Online Mock Simulator &rarr;</a>
+              <a href="../../digital-functional-skills-past-papers.html" class="btn-exam-bridge secondary" target="_blank"><i class="fa-solid fa-file-zipper"></i> Past Papers &amp; Data Files (.ZIP) &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. LINKS TO REVISE & CONTINUOUS LEARNING -->
+        <div class="dfs-rev-links-wrap">
+          <div class="dfs-rev-links-title"><i class="fa-solid fa-diagram-project"></i> Links to Revise &amp; Connected Topics</div>
+          <div class="dfs-pills-row">
+            <a href="e3-organising-files-folders.html" class="dfs-pill-link"><i class="fa-solid fa-bookmark" style="font-size:0.75rem;"></i> Organising Files & Folders</a><a href="e3-spellcheck-proofing-saving.html" class="dfs-pill-link"><i class="fa-solid fa-bookmark" style="font-size:0.75rem;"></i> Saving Documents</a><a href="e3-word-processing-basics.html" class="dfs-pill-link"><i class="fa-solid fa-bookmark" style="font-size:0.75rem;"></i> Word Processing Basics</a>
+            <a href="../../assets/downloads/past-papers/digital-skills/DFS_Handbook_MFS.pdf" class="dfs-pill-link" style="border-color:#86efac; color:#166534;"><i class="fa-solid fa-file-pdf"></i> Download Entry 3 Revision Notes PDF</a>
+            <a href="index.html" class="dfs-pill-link" style="border-color:#cbd5e1; color:#475569;"><i class="fa-solid fa-table-cells"></i> View All Entry 3 Topics</a>
+          </div>
+        </div>
+
+        <!-- TOPIC NAVIGATION BAR -->
+        <div class="dfs-topic-nav-bar">
+          <div><a href="e3-spellcheck-proofing-saving.html" class="dfs-nav-btn"><i class="fa-solid fa-arrow-left"></i> Previous: Spellcheck, Proofreading and Saving Files</a></div>
+          <div><a href="e3-email-compose-reply-forward.html" class="dfs-nav-btn primary">Next: Composing, Replying and Forwarding Emails <i class="fa-solid fa-arrow-right"></i></a></div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer style="background:#0f172a; color:#94a3b8; padding:40px 0 24px; border-top:1px solid #1e293b; font-size:0.88rem;">
+    <div class="mfs-container">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px; margin-bottom:24px; padding-bottom:20px; border-bottom:1px solid #1e293b;">
+        <div class="mfs-brand">
+          <div class="mfs-brand-icon"><i class="fa-solid fa-laptop-code"></i></div>
+          <div class="mfs-brand-text">
+            <div class="mfs-brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
+            <div class="mfs-brand-subtitle">Delivering Skills • Achieving Goals</div>
+          </div>
+        </div>
+        <div style="display:flex; gap:16px; flex-wrap:wrap;">
+          <a href="index.html" style="color:#cbd5e1; text-decoration:none;">Entry 3 Hub</a>
+          <a href="../../digital-functional-skills-past-papers.html" style="color:#cbd5e1; text-decoration:none;">Past Papers &amp; Data Files</a>
+          <a href="../../digital-functional-skills-mock-exam.html" style="color:#cbd5e1; text-decoration:none;">Online Mock Simulator</a>
+          <a href="../../revise.html" style="color:#cbd5e1; text-decoration:none;">All Subjects</a>
+          <a href="../../contact-us.html" style="color:#cbd5e1; text-decoration:none;">Contact Tutor</a>
+        </div>
+      </div>
+      <div style="text-align:center; font-size:0.78rem; color:#64748b;">
+        &copy; 2026 Master Functional Skills. All rights reserved. Pearson Edexcel and City &amp; Guilds aligned Digital Functional Skills Qualifications (DFSQ).
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../../assets/js/dfs-revision-engine.js?v=20261106_v1"></script>
+</body>
+</html>

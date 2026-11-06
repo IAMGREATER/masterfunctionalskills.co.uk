@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-theme="maths" data-tint="cream">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Functional Skills Digital Entry 3 | Master Functional Skills</title>
+  <meta name="description" content="Master Functional Skills Digital Entry 3. Complete topic-by-topic revision guides, software UI simulations, video walkthroughs, fluency drills, and accredited onscreen practice tests.">
+  <link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg">
+  <link rel="alternate icon" href="../../favicon.ico">
+  <meta name="theme-color" content="#0f172a">
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Dedicated Digital Skills Revision Styles -->
+  <link rel="stylesheet" href="../../assets/css/mfs-dfs-revision.css?v=20261106_v2">
+</head>
+<body data-tint="cream">
+
+  <!-- TOP TRUST BAR & ACCESSIBILITY CONTROLS -->
+  <div class="mfs-top-bar">
+    <div class="mfs-container mfs-top-bar-inner">
+      <div class="top-trust-items">
+        <span class="top-trust-item"><i class="fa-solid fa-building-columns"></i> Pearson Edexcel &amp; City &amp; Guilds Aligned</span>
+        <span class="top-trust-item"><i class="fa-solid fa-award"></i> Accredited DFSQ Course Material</span>
+      </div>
+      <div class="top-contacts">
+        <div class="mfs-access-bar">
+          <div class="mfs-tint-dropdown-wrap">
+            <button type="button" id="tintToggle" class="btn-tint-toggle" onclick="toggleTintMenu(event)" title="Change dyslexia background tint">
+              <span class="tint-swatch-indicator" id="tintCurrentSwatch"></span>
+              <span id="tintLabel">Cream Tint</span>
+              <i class="fa-solid fa-chevron-down" style="font-size:0.62rem; opacity:0.75; margin-left:2px;"></i>
+            </button>
+            <div id="tintMenu" class="tint-picker-menu">
+              <div class="tint-picker-title"><i class="fa-solid fa-glasses"></i> Dyslexia Reading Tint</div>
+              <button type="button" class="tint-option-btn active" data-tint="cream" onclick="setSiteTint('cream', event)">
+                <span class="swatch swatch-cream"></span>
+                <span class="tint-name">Cream (Recommended)</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="peach" onclick="setSiteTint('peach', event)">
+                <span class="swatch swatch-peach"></span>
+                <span class="tint-name">Soft Peach</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="cool" onclick="setSiteTint('cool', event)">
+                <span class="swatch swatch-cool"></span>
+                <span class="tint-name">Cool Mist</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="sage" onclick="setSiteTint('sage', event)">
+                <span class="swatch swatch-sage"></span>
+                <span class="tint-name">Soft Sage</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <div class="tint-divider" style="height:1px; background:#e2e8f0; margin:6px 0;"></div>
+              <button type="button" class="tint-option-btn" data-tint="none" onclick="setSiteTint('none', event)">
+                <span class="swatch swatch-none"></span>
+                <span class="tint-name">No Tint (White)</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+            </div>
+          </div>
+          <button id="dyslexiaToggle" class="btn-dyslexia-toggle" onclick="toggleDyslexiaMode()" title="Toggle Dyslexia High-Readability Mode">
+            <i class="fa-solid fa-universal-access"></i> Dyslexia
+          </button>
+        </div>
+        <a href="../../contact-us.html" class="btn-tint-toggle" style="text-decoration:none;"><i class="fa-solid fa-envelope"></i> Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN NAVIGATION -->
+  <header class="mfs-navbar">
+    <div class="mfs-container mfs-navbar-inner">
+      <a href="../../index.html" class="mfs-brand">
+        <div class="mfs-brand-icon"><i class="fa-solid fa-laptop-code"></i></div>
+        <div class="mfs-brand-text">
+          <div class="mfs-brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
+          <div class="mfs-brand-subtitle">Delivering Skills • Achieving Goals</div>
+        </div>
+      </a>
+
+      <nav class="mfs-nav-wrapper">
+        <ul class="mfs-nav-menu">
+          <li><a href="../../revise.html" class="mfs-nav-link"><i class="fa-solid fa-book-open-reader"></i> Revision Hub</a></li>
+          <li><a href="index.html" class="mfs-nav-link active"><i class="fa-solid fa-list-check"></i> Entry 3 Directory</a></li>
+          <li><a href="../level-1/index.html" class="mfs-nav-link"><i class="fa-solid fa-arrow-right-arrow-left"></i> Switch to Level 1</a></li>
+          <li><a href="../../digital-functional-skills-past-papers.html" class="mfs-nav-link"><i class="fa-solid fa-file-lines"></i> Past Papers</a></li>
+          <li><a href="../../digital-functional-skills-mock-exam.html" class="mfs-nav-link btn-nav-exam"><i class="fa-solid fa-desktop"></i> Mock Simulator</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- SUBNAV & BREADCRUMBS -->
+  <div class="dfs-subnav-bar">
+    <div class="mfs-container dfs-subnav-inner">
+      <div class="dfs-breadcrumbs">
+        <a href="../../index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a href="../../revise.html">Revision</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a href="../../digital-skills/index.html">Digital Skills Hub</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span style="color:#ffffff; font-weight:600;">Entry 3 Digital Skills</span>
+      </div>
+      <div>
+        <span class="dfs-level-badge-pill e3">Entry 3 DFSQ</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="dfs-hero-header">
+    <div class="mfs-container">
+      <div class="dfs-hero-meta">
+        <span class="dfs-spec-code">Pearson Edexcel &amp; City &amp; Guilds Specification</span>
+        <span class="dfs-time-tag"><i class="fa-solid fa-layer-group"></i> 18 Dedicated Topics</span>
+      </div>
+      <h1 class="dfs-hero-title">Functional Skills Digital Entry 3 Revision Portal</h1>
+      <p class="dfs-hero-lead">Every criterion has its own dedicated master revision page featuring clear explanations, software UI guides, video walkthroughs, fluency drills, and Pearson Edexcel style practice tasks.</p>
+
+      <!-- 3 Feature Action Cards -->
+      <div class="feature-cards-row">
+        <div class="feature-action-card">
+          <div class="feature-card-top">
+            <div class="feature-icon-badge"><i class="fa-solid fa-book-open"></i></div>
+            <div class="feature-card-body">
+              <h3>Revise Entry 3 Topics</h3>
+              <p>Explore 18 dedicated guides with UI simulations, tutor rules, and worked models.</p>
+            </div>
+          </div>
+          <a href="#curriculumSection" class="btn-card-action">View Topic Directory &darr;</a>
+        </div>
+
+        <div class="feature-action-card">
+          <div class="feature-card-top">
+            <div class="feature-icon-badge" style="background:#d1fae5; color:#065f46;"><i class="fa-solid fa-desktop"></i></div>
+            <div class="feature-card-body">
+              <h3>Onscreen Mock Simulator</h3>
+              <p>Practice authentic computer-based exams directly in your browser with self-marking solutions.</p>
+            </div>
+          </div>
+          <a href="../../digital-functional-skills-mock-exam.html" class="btn-card-action" style="color:#0f766e;">Launch Exam Simulator &rarr;</a>
+        </div>
+
+        <div class="feature-action-card">
+          <div class="feature-card-top">
+            <div class="feature-icon-badge" style="background:#fee2e2; color:#dc2626;"><i class="fa-regular fa-file-pdf"></i></div>
+            <div class="feature-card-body">
+              <h3>Past Papers &amp; Data Files</h3>
+              <p>Download official sample assessment materials, mark schemes, and practice datasets.</p>
+            </div>
+          </div>
+          <a href="../../digital-functional-skills-past-papers.html" class="btn-card-action" style="color:#dc2626;">Download Past Papers &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE SEARCHABLE DIRECTORY SECTION -->
+  <main class="mfs-directory-section" id="curriculumSection">
+    <div class="mfs-container">
+      
+      <!-- DUAL MOCK TESTING & PAST PAPERS CHANNELS BANNER -->
+      <div class="dfs-mocks-hero-banner">
+        <div class="dfs-mocks-banner-header">
+          <div class="dfs-mocks-banner-title">
+            <i class="fa-solid fa-laptop-code" style="color:#38bdf8;"></i> Authentic Pearson DFSQ Examination Environment
+          </div>
+          <div class="dfs-mocks-banner-badge">Essential Assessment Links</div>
+        </div>
+        <div class="dfs-mocks-banner-grid">
+          <div class="dfs-mock-channel-card">
+            <div>
+              <div class="dfs-mock-card-icon icon-simulator"><i class="fa-solid fa-desktop"></i></div>
+              <div class="dfs-mock-card-title">Browser Mock Exam Simulator</div>
+              <p class="dfs-mock-card-desc">
+                Experience the authentic Pearson Edexcel onscreen test player in your browser. Screen-by-screen navigation, grey question banners, option pills, section review screen, and official diagnostic score report.
+              </p>
+            </div>
+            <a href="../../digital-functional-skills-mock-exam.html" class="btn-mock-channel btn-mock-channel-primary">
+              <i class="fa-solid fa-play"></i> Launch Online Mock Exam Simulator &rarr;
+            </a>
+          </div>
+
+          <div class="dfs-mock-channel-card">
+            <div>
+              <div class="dfs-mock-card-icon icon-papers"><i class="fa-solid fa-file-zipper"></i></div>
+              <div class="dfs-mock-card-title">Past Papers, Data Files &amp; Mark Schemes</div>
+              <p class="dfs-mock-card-desc">
+                Download authentic Pearson Edexcel Digital Functional Skills question papers, full candidate data file packages (.ZIP) with starter spreadsheets, images, and official examiner mark schemes.
+              </p>
+            </div>
+            <a href="../../digital-functional-skills-past-papers.html" class="btn-mock-channel btn-mock-channel-secondary">
+              <i class="fa-solid fa-download"></i> Download Papers &amp; Data Files (.ZIP) &rarr;
+            </a>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Directory Head Card with Search & Dual-View Toggle -->
+      <div class="directory-head-card">
+        <div class="directory-head-title-wrap">
+          <h2>
+            <i class="fa-solid fa-list-check" style="color:#0284c7;"></i>
+            Functional Skills Digital Entry 3 Curriculum
+            <span class="badge-count" id="badgeTopicCount">18 Topics</span>
+          </h2>
+        </div>
+
+        <div class="directory-controls-wrap">
+          <!-- View Switcher -->
+          <div class="view-mode-toggle-group">
+            <button type="button" id="btnViewTable" class="btn-view-toggle active" onclick="switchView('table')">
+              <i class="fa-solid fa-table-list"></i> Table View
+            </button>
+            <button type="button" id="btnViewCards" class="btn-view-toggle" onclick="switchView('cards')">
+              <i class="fa-solid fa-grip"></i> Visual Cards
+            </button>
+          </div>
+
+          <!-- Instant Search -->
+          <div class="directory-search-wrapper">
+            <i class="fa-solid fa-magnifying-glass"></i>
+            <input type="search" class="directory-search-input" id="topicSearchInput" placeholder="Search topics, formulas, keywords...">
+          </div>
+        </div>
+      </div>
+
+      <!-- Category Filter Bar -->
+      <div class="category-filter-bar">
+        <button type="button" class="btn-cat-filter active" data-filter="all" onclick="filterCategory('all', this)">
+          <i class="fa-solid fa-asterisk"></i> All Topics (18)
+        </button>
+        <button type="button" class="btn-cat-filter" data-filter="devices" onclick="filterCategory('devices', this)">
+          <i class="fa-solid fa-desktop" style="color:#0284c7;"></i> 1. Using Devices
+        </button>
+        <button type="button" class="btn-cat-filter" data-filter="creating" onclick="filterCategory('creating', this)">
+          <i class="fa-solid fa-file-lines" style="color:#0f766e;"></i> 2. Creating &amp; Editing
+        </button>
+        <button type="button" class="btn-cat-filter" data-filter="communicating" onclick="filterCategory('communicating', this)">
+          <i class="fa-solid fa-envelope" style="color:#d97706;"></i> 3. Communicating
+        </button>
+        <button type="button" class="btn-cat-filter" data-filter="transacting" onclick="filterCategory('transacting', this)">
+          <i class="fa-solid fa-credit-card" style="color:#dc2626;"></i> 4. Transacting
+        </button>
+        <button type="button" class="btn-cat-filter" data-filter="safety" onclick="filterCategory('safety', this)">
+          <i class="fa-solid fa-shield-halved" style="color:#7c3aed;"></i> 5. Being Safe Online
+        </button>
+      </div>
+
+      <!-- VIEW 1: SEARCHABLE TABLE VIEW (Corbett / Action Row Style) -->
+      <div id="tableViewContainer">
+        <div class="topic-table-bar">
+          <span>Topic Name &amp; Skill Area</span>
+          <span>Dedicated Revision &amp; Study Resources</span>
+        </div>
+        <div class="topic-rows-container" id="topicsContainer">
+          
+        <div class="topic-row" data-cat="devices">
+          <div class="topic-meta">
+            <div class="topic-title">Hardware, Software and Digital Devices</div>
+            <div class="topic-category-tag tag-devices">
+              <i class="fa-solid fa-tag"></i> Using Devices (E3.1.1)
+            </div>
+          </div>
+          <div class="topic-actions-group">
+            <a href="e3-hardware-software-devices.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+            <a href="e3-hardware-software-devices.html#drills" class="btn-mfs-sheet btn-mfs-workout" title="Interactive Fluency Drill"><i class="fa-solid fa-bolt"></i> Fluency Drill</a>
+            <a href="e3-hardware-software-devices.html#practice" class="btn-mfs-sheet" title="Exam Practice &amp; Scratchpad"><i class="fa-solid fa-pen-ruler"></i> Practice Exam</a>
+            <a href="e3-hardware-software-devices.html#video" class="btn-mfs-video" title="Video Lesson"><i class="fa-brands fa-youtube"></i> Video Lesson</a>
+          </div>
+        </div>
+        
+        <div class="topic-row" data-cat="devices">
+          <div class="topic-meta">
+            <div class="topic-title">Power, Login and Desktop Navigation</div>
+            <div class="topic-category-tag tag-devices">
+              <i class="fa-solid fa-tag"></i> Using Devices (E3.1.2)
+            </div>
+          </div>
+          <div class="topic-actions-group">
+            <a href="e3-device-controls-navigation.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+            <a href="e3-device-controls-navigation.html#drills" class="btn-mfs-sheet btn-mfs-workout" title="Interactive Fluency Drill"><i class="fa-solid fa-bolt"></i> Fluency Drill</a>
+            <a href="e3-device-controls-navigation.html#practice" class="btn-mfs-sheet" title="Exam Practice &amp; Scratchpad"><i class="fa-solid fa-pen-ruler"></i> Practice Exam</a>
+            <a href="e3-device-controls-navigation.html#video" class="btn-mfs-video" title="Video Lesson"><i class="fa-brands fa-youtube"></i> Video Lesson</a>
+          </div>
+        </div>
+        
+        <div class="topic-row" data-cat="devices">
+          <div class="topic-meta">
+            <div class="topic-title">Connecting to Wi-Fi and Bluetooth Networks</div>
+            <div class="topic-category-tag tag-devices">
+              <i class="fa-solid fa-tag"></i> Using Devices (E3.1.3)
+            </div>
+          </div>
+          <div class="topic-actions-group">
+            <a href="e3-connecting-wifi-bluetooth.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+            <a href="e3-connecting-wifi-bluetooth.html#drills" class="btn-mfs-sheet btn-mfs-workout" title="Interactive Fluency Drill"><i class="fa-solid fa-bolt"></i> Fluency Drill</a>
+            <a href="e3-connecting-wifi-bluetooth.html#practice" class="btn-mfs-sheet" title="Exam Practice &amp; Scratchpad"><i class="fa-solid fa-pen-ruler"></i> Practice Exam</a>
+            <a href="e3-connecting-wifi-bluetooth.html#video" class="btn-mfs-video" title="Video Lesson"><i class="fa-brands fa-youtube"></i> Video Lesson</a>
+          </div>
+        </div>
+        
+        <div class="topic-row" data-cat="devices">
+          <div class="topic-meta">
+            <div class="topic-title">Display and Accessibility Settings</div>
+            <div class="topic-category-tag tag-devices">
+              <i class="fa-solid fa-tag"></i> Using Devices (E3.1.4)
+            </div>
+          </div>
+          <div class="topic-actions-group">
+            <a href="e3-accessibility-display-settings.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+            <a href="e3-accessibility-display-settings.html#drills" class="btn-mfs-sheet btn-mfs-workout" title="Interactive Fluency Drill"><i class="fa-solid fa-bolt"></i> Fluency Drill</a>
+            <a href="e3-accessibility-display-settings.html#practice" class="btn-mfs-sheet" title="Exam Practice &amp; Scratchpad"><i class="fa-solid fa-pen-ruler"></i> Practice Exam</a>
+            <a href="e3-accessibility-display-settings.html#video" class="btn-mfs-video" title="Video Lesson"><i class="fa-brands fa-youtube"></i> Video Lesson</a>
+          </div>
+        </div>
+        
+        <div class="topic-row" data-cat="devices">
+          <div class="topic-meta">
+            <div class="topic-title">Organising Files and Folders</div>
+            <div class="topic-category-tag tag-devices">
+              <i class="fa-solid fa-tag"></i> Using Devices (E3.1.5)
+            </div>
+          </div>
+          <div class="topic-actions-group">
+            <a href="e3-organising-files-folders.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+            <a href="e3-organising-files-folders.html#drills" class="btn-mfs-sheet btn-mfs-workout" title="Interactive Fluency Drill"><i class="fa-solid fa-bolt"></i> Fluency Drill</a>
+            <a href="e3-organising-files-folders.html#practice" class="btn-mfs-sheet" title="Exam Practice &amp; Scratchpad"><i class="fa-solid fa-pen-ruler"></i> Practice Exam</a>
+            <a href="e3-organising-files-folders.html#video" class="btn-mfs-video" title="Video Lesson"><i class="fa-brands fa-youtube"></i> Video Lesson</a>
+          </div>
+        </div>
+        
+        <div class="topic-row" data-cat="devices">
+          <div class="topic-meta">
+            <div class="topic-title">Searching Files and Local vs Cloud Storage</div>
+            <div class="topic-category-tag tag-devices">
+              <i class="fa-solid fa-tag"></i> Using Devices (E3.1.6)
+            </div>
+          </div>
+          <div class="topic-actions-group">
+            <a href="e3-searching-files-local-cloud.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+            <a href="e3-searching-files-local-cloud.html#drills" class="btn-mfs-sheet btn-mfs-workout" title="Interactive Fluency Drill"><i class="fa-solid fa-bolt"></i> Fluency Drill</a>
+            <a href="e3-searching-files-local-cloud.html#practice" class="btn-mfs-sheet" title="Exam Practice &amp; Scratchpad"><i class="fa-solid fa-pen-ruler"></i> Practice Exam</a>
+            <a href="e3-searching-files-local-cloud.html#video" class="btn-mfs-video" title="Video Lesson"><i class="fa-brands fa-youtube"></i> Video Lesson</a>
+          </div>
+        </div>
+        
+        <div class="topic-row" data-cat="creating">
+          <div class="topic-meta">
+            <div class="topic-title">Word Processing: Entering Text and Fonts</div>
+            <div class="topic-category-tag tag-creating">
+              <i class="fa-solid fa-tag"></i> Creating & Editing (E3.2.1)
+            </div>
+          </div>
+          <div class="topic-actions-group">
+            <a href="e3-word-processing-basics.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+            <a href="e3-word-processing-basics.html#drills" class="btn-mfs-sheet btn-mfs-workout" title="Interactive Fluency Drill"><i class="fa-solid fa-bolt"></i> Fluency Drill</a>
+            <a href="e3-word-processing-basics.html#practice" class="btn-mfs-sheet" title="Exam Practice &amp; Scratchpad"><i class="fa-solid fa-pen-ruler"></i> Practice Exam</a>
+            <a href="e3-word-processing-basics.html#video" class="btn-mfs-video" title="Video Lesson"><i class="fa-brands fa-youtube"></i> Video Lesson</a>
+          </div>
+        </div>
+        
+        <div class="topic-row" data-cat="creating">
+          <div class="topic-meta">
+            <div class="topic-title">Document Formatting and Bullet Lists</div>
+            <div class="topic-category-tag tag-creating">
+              <i class="fa-solid fa-tag"></i> Creating & Editing (E3.2.2)
+            </div>
+          </div>
+          <div class="topic-actions-group">
+            <a href="e3-formatting-aligning-bullets.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+            <a href="e3-formatting-aligning-bullets.html#drills" class="btn-mfs-sheet btn-mfs-workout" title="Interactive Fluency Drill"><i class="fa-solid fa-bolt"></i> Fluency Drill</a>
+            <a href="e3-formatting-aligning-bullets.html#practice" class="btn-mfs-sheet" title="Exam Practice &amp; Scratchpad"><i class="fa-solid fa-pen-ruler"></i> Practice Exam</a>
+            <a href="e3-formatting-aligning-bullets.html#video" class="btn-mfs-video" title="Video Lesson"><i class="fa-brands fa-youtube"></i> Video Lesson</a>
+          </div>
+        </div>
+        
+        <div class="topic-row" data-cat="creating">
+          <div class="topic-meta">
+            <div class="topic-title">Inserting and Resizing Images</div>
+            <div class="topic-category-tag tag-creating">
+              <i class="fa-solid fa-tag"></i> Creating & Editing (E3.2.3)
+            </div>
+          </div>
+          <div class="topic-actions-group">
+            <a href="e3-combining-images-text.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+            <a href="e3-combining-images-text.html#drills" class="btn-mfs-sheet btn-mfs-workout" title="Interactive Fluency Drill"><i class="fa-solid fa-bolt"></i> Fluency Drill</a>
+            <a href="e3-combining-images-text.html#practice" class="btn-mfs-sheet" title="Exam Practice &amp; Scratchpad"><i class="fa-solid fa-pen-ruler"></i> Practice Exam</a>
+            <a href="e3-combining-images-text.html#video" class="btn-mfs-video" title="Video Lesson"><i class="fa-brands fa-youtube"></i> Video Lesson</a>
+          </div>
+        </div>
+        
+        <div class="topic-row" data-cat="creating">
+          <div class="topic-meta">
+            <div class="topic-title">Spellcheck, Proofreading and Saving Files</div>
+            <div class="topic-category-tag tag-creating">
+              <i class="fa-solid fa-tag"></i> Creating & Editing (E3.2.4)
+            </div>
+          </div>
+          <div class="topic-actions-group">
+            <a href="e3-spellcheck-proofing-saving.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+            <a href="e3-spellcheck-proofing-saving.html#drills" class="btn-mfs-sheet btn-mfs-workout" title="Interactive Fluency Drill"><i class="fa-solid fa-bolt"></i> Fluency Drill</a>
+            <a href="e3-spellcheck-proofing-saving.html#practice" class="btn-mfs-sheet" title="Exam Practice &amp; Scratchpad"><i class="fa-solid fa-pen-ruler"></i> Practice Exam</a>
+            <a href="e3-spellcheck-proofing-saving.html#video" class="btn-mfs-video" title="Video Lesson"><i class="fa-brands fa-youtube"></i> Video Lesson</a>
+          </div>
+        </div>
+        
+        <div class="topic-row" data-cat="creating">
+          <div class="topic-meta">
+            <div class="topic-title">Entering Data into Simple Spreadsheets</div>
+            <div class="topic-category-tag tag-creating">
+              <i class="fa-solid fa-tag"></i> Creating & Editing (E3.2.5)
+            </div>
+          </div>
+          <div class="topic-actions-group">
+            <a href="e3-spreadsheets-simple-data.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+            <a href="e3-spreadsheets-simple-data.html#drills" class="btn-mfs-sheet btn-mfs-workout" title="Interactive Fluency Drill"><i class="fa-solid fa-bolt"></i> Fluency Drill</a>
+            <a href="e3-spreadsheets-simple-data.html#practice" class="btn-mfs-sheet" title="Exam Practice &amp; Scratchpad"><i class="fa-solid fa-pen-ruler"></i> Practice Exam</a>
+            <a href="e3-spreadsheets-simple-data.html#video" class="btn-mfs-video" title="Video Lesson"><i class="fa-brands fa-youtube"></i> Video Lesson</a>
+          </div>
+        </div>
+        
+        <div class="topic-row" data-cat="communicating">
+          <div class="topic-meta">
+            <div class="topic-title">Composing, Replying and Forwarding Emails</div>
+            <div class="topic-category-tag tag-communicating">
+              <i class="fa-solid fa-tag"></i> Communicating (E3.3.1)
+            </div>
+          </div>
+          <div class="topic-actions-group">
+            <a href="e3-email-compose-reply-forward.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+            <a href="e3-email-compose-reply-forward.html#drills" class="btn-mfs-sheet btn-mfs-workout" title="Interactive Fluency Drill"><i class="fa-solid fa-bolt"></i> Fluency Drill</a>
+            <a href="e3-email-compose-reply-forward.html#practice" class="btn-mfs-sheet" title="Exam Practice &amp; Scratchpad"><i class="fa-solid fa-pen-ruler"></i> Practice Exam</a>
+            <a href="e3-email-compose-reply-forward.html#video" class="btn-mfs-video" title="Video Lesson"><i class="fa-brands fa-youtube"></i> Video Lesson</a>
+          </div>
+        </div>
+        
+        <div class="topic-row" data-cat="communicating">
+          <div class="topic-meta">
+            <div class="topic-title">Email Attachments and Contacts List</div>
+            <div class="topic-category-tag tag-communicating">
+              <i class="fa-solid fa-tag"></i> Communicating (E3.3.2)
+            </div>
+          </div>
+          <div class="topic-actions-group">
+            <a href="e3-email-attachments-contacts.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+            <a href="e3-email-attachments-contacts.html#drills" class="btn-mfs-sheet btn-mfs-workout" title="Interactive Fluency Drill"><i class="fa-solid fa-bolt"></i> Fluency Drill</a>
+            <a href="e3-email-attachments-contacts.html#practice" class="btn-mfs-sheet" title="Exam Practice &amp; Scratchpad"><i class="fa-solid fa-pen-ruler"></i> Practice Exam</a>
+            <a href="e3-email-attachments-contacts.html#video" class="btn-mfs-video" title="Video Lesson"><i class="fa-brands fa-youtube"></i> Video Lesson</a>
+          </div>
+        </div>
+        
+        <div class="topic-row" data-cat="communicating">
+          <div class="topic-meta">
+            <div class="topic-title">Video Calling and Digital Messaging</div>
+            <div class="topic-category-tag tag-communicating">
+              <i class="fa-solid fa-tag"></i> Communicating (E3.3.3)
+            </div>
+          </div>
+          <div class="topic-actions-group">
+            <a href="e3-messaging-video-calls.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+            <a href="e3-messaging-video-calls.html#drills" class="btn-mfs-sheet btn-mfs-workout" title="Interactive Fluency Drill"><i class="fa-solid fa-bolt"></i> Fluency Drill</a>
+            <a href="e3-messaging-video-calls.html#practice" class="btn-mfs-sheet" title="Exam Practice &amp; Scratchpad"><i class="fa-solid fa-pen-ruler"></i> Practice Exam</a>
+            <a href="e3-messaging-video-calls.html#video" class="btn-mfs-video" title="Video Lesson"><i class="fa-brands fa-youtube"></i> Video Lesson</a>
+          </div>
+        </div>
+        
+        <div class="topic-row" data-cat="transacting">
+          <div class="topic-meta">
+            <div class="topic-title">Filling Online Forms and Account Registration</div>
+            <div class="topic-category-tag tag-transacting">
+              <i class="fa-solid fa-tag"></i> Transacting (E3.4.1)
+            </div>
+          </div>
+          <div class="topic-actions-group">
+            <a href="e3-online-forms-account-setup.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+            <a href="e3-online-forms-account-setup.html#drills" class="btn-mfs-sheet btn-mfs-workout" title="Interactive Fluency Drill"><i class="fa-solid fa-bolt"></i> Fluency Drill</a>
+            <a href="e3-online-forms-account-setup.html#practice" class="btn-mfs-sheet" title="Exam Practice &amp; Scratchpad"><i class="fa-solid fa-pen-ruler"></i> Practice Exam</a>
+            <a href="e3-online-forms-account-setup.html#video" class="btn-mfs-video" title="Video Lesson"><i class="fa-brands fa-youtube"></i> Video Lesson</a>
+          </div>
+        </div>
+        
+        <div class="topic-row" data-cat="transacting">
+          <div class="topic-meta">
+            <div class="topic-title">Searching, Buying and Booking Services Online</div>
+            <div class="topic-category-tag tag-transacting">
+              <i class="fa-solid fa-tag"></i> Transacting (E3.4.2)
+            </div>
+          </div>
+          <div class="topic-actions-group">
+            <a href="e3-online-shopping-booking.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+            <a href="e3-online-shopping-booking.html#drills" class="btn-mfs-sheet btn-mfs-workout" title="Interactive Fluency Drill"><i class="fa-solid fa-bolt"></i> Fluency Drill</a>
+            <a href="e3-online-shopping-booking.html#practice" class="btn-mfs-sheet" title="Exam Practice &amp; Scratchpad"><i class="fa-solid fa-pen-ruler"></i> Practice Exam</a>
+            <a href="e3-online-shopping-booking.html#video" class="btn-mfs-video" title="Video Lesson"><i class="fa-brands fa-youtube"></i> Video Lesson</a>
+          </div>
+        </div>
+        
+        <div class="topic-row" data-cat="safety">
+          <div class="topic-meta">
+            <div class="topic-title">Strong Passwords, Personal Privacy and Spotting Scams</div>
+            <div class="topic-category-tag tag-safety">
+              <i class="fa-solid fa-tag"></i> Being Safe Online (E3.5.1)
+            </div>
+          </div>
+          <div class="topic-actions-group">
+            <a href="e3-passwords-privacy-scams.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+            <a href="e3-passwords-privacy-scams.html#drills" class="btn-mfs-sheet btn-mfs-workout" title="Interactive Fluency Drill"><i class="fa-solid fa-bolt"></i> Fluency Drill</a>
+            <a href="e3-passwords-privacy-scams.html#practice" class="btn-mfs-sheet" title="Exam Practice &amp; Scratchpad"><i class="fa-solid fa-pen-ruler"></i> Practice Exam</a>
+            <a href="e3-passwords-privacy-scams.html#video" class="btn-mfs-video" title="Video Lesson"><i class="fa-brands fa-youtube"></i> Video Lesson</a>
+          </div>
+        </div>
+        
+        <div class="topic-row" data-cat="safety">
+          <div class="topic-meta">
+            <div class="topic-title">Digital Wellbeing, Screen Breaks and Online Footprints</div>
+            <div class="topic-category-tag tag-safety">
+              <i class="fa-solid fa-tag"></i> Being Safe Online (E3.5.2)
+            </div>
+          </div>
+          <div class="topic-actions-group">
+            <a href="e3-digital-wellbeing-posture.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
+            <a href="e3-digital-wellbeing-posture.html#drills" class="btn-mfs-sheet btn-mfs-workout" title="Interactive Fluency Drill"><i class="fa-solid fa-bolt"></i> Fluency Drill</a>
+            <a href="e3-digital-wellbeing-posture.html#practice" class="btn-mfs-sheet" title="Exam Practice &amp; Scratchpad"><i class="fa-solid fa-pen-ruler"></i> Practice Exam</a>
+            <a href="e3-digital-wellbeing-posture.html#video" class="btn-mfs-video" title="Video Lesson"><i class="fa-brands fa-youtube"></i> Video Lesson</a>
+          </div>
+        </div>
+        
+        </div>
+      </div>
+
+      <!-- VIEW 2: VISUAL CARDS GRID (Modern Card Style) -->
+      <div id="cardsViewContainer" style="display:none; padding-top:24px;">
+        
+        <div class="dfs-hub-section">
+          <div class="dfs-hub-skill-header">
+            <span class="dfs-hub-skill-num">Skill Area 1</span>
+            <h2 class="dfs-hub-skill-title"><i class="fa-solid fa-desktop" style="color:#0284c7; margin-right:8px;"></i> Using Devices and Handling Information</h2>
+          </div>
+          <div class="dfs-topic-cards-grid">
+            
+            <a href="e3-hardware-software-devices.html" class="dfs-topic-card">
+              <div class="dfs-card-top-meta">
+                <span class="dfs-card-code">E3.1.1</span>
+                <span class="dfs-card-time"><i class="fa-regular fa-clock"></i> 15 Mins</span>
+              </div>
+              <h3 class="dfs-card-title">Hardware, Software and Digital Devices</h3>
+              <p class="dfs-card-desc">Understand the difference between computer hardware and software, recognise common digital devices used at work and home, and identify essen...</p>
+              <div class="dfs-card-footer">
+                <span>Start Topic Revision</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </a>
+            
+            <a href="e3-device-controls-navigation.html" class="dfs-topic-card">
+              <div class="dfs-card-top-meta">
+                <span class="dfs-card-code">E3.1.2</span>
+                <span class="dfs-card-time"><i class="fa-regular fa-clock"></i> 15 Mins</span>
+              </div>
+              <h3 class="dfs-card-title">Power, Login and Desktop Navigation</h3>
+              <p class="dfs-card-desc">Master safe startup, unlocking, login credentials, sleep mode, restart, and shutting down digital devices, alongside confident desktop navig...</p>
+              <div class="dfs-card-footer">
+                <span>Start Topic Revision</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </a>
+            
+            <a href="e3-connecting-wifi-bluetooth.html" class="dfs-topic-card">
+              <div class="dfs-card-top-meta">
+                <span class="dfs-card-code">E3.1.3</span>
+                <span class="dfs-card-time"><i class="fa-regular fa-clock"></i> 15 Mins</span>
+              </div>
+              <h3 class="dfs-card-title">Connecting to Wi-Fi and Bluetooth Networks</h3>
+              <p class="dfs-card-desc">Learn how to find and connect your device to wireless internet (Wi-Fi), enter network security keys safely, and pair Bluetooth devices like ...</p>
+              <div class="dfs-card-footer">
+                <span>Start Topic Revision</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </a>
+            
+            <a href="e3-accessibility-display-settings.html" class="dfs-topic-card">
+              <div class="dfs-card-top-meta">
+                <span class="dfs-card-code">E3.1.4</span>
+                <span class="dfs-card-time"><i class="fa-regular fa-clock"></i> 15 Mins</span>
+              </div>
+              <h3 class="dfs-card-title">Display and Accessibility Settings</h3>
+              <p class="dfs-card-desc">Customise your computer screen and sound settings to suit your personal needs, including screen brightness, font size, high contrast, volume...</p>
+              <div class="dfs-card-footer">
+                <span>Start Topic Revision</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </a>
+            
+            <a href="e3-organising-files-folders.html" class="dfs-topic-card">
+              <div class="dfs-card-top-meta">
+                <span class="dfs-card-code">E3.1.5</span>
+                <span class="dfs-card-time"><i class="fa-regular fa-clock"></i> 15 Mins</span>
+              </div>
+              <h3 class="dfs-card-title">Organising Files and Folders</h3>
+              <p class="dfs-card-desc">Learn how to structure your work logically: create new folders, give meaningful names to files, move documents between folders, delete unwan...</p>
+              <div class="dfs-card-footer">
+                <span>Start Topic Revision</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </a>
+            
+            <a href="e3-searching-files-local-cloud.html" class="dfs-topic-card">
+              <div class="dfs-card-top-meta">
+                <span class="dfs-card-code">E3.1.6</span>
+                <span class="dfs-card-time"><i class="fa-regular fa-clock"></i> 15 Mins</span>
+              </div>
+              <h3 class="dfs-card-title">Searching Files and Local vs Cloud Storage</h3>
+              <p class="dfs-card-desc">Master quick file searching using search bars and keywords, and understand the difference between saving files locally on your device versus...</p>
+              <div class="dfs-card-footer">
+                <span>Start Topic Revision</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </a>
+            
+          </div>
+        </div>
+        
+        <div class="dfs-hub-section">
+          <div class="dfs-hub-skill-header">
+            <span class="dfs-hub-skill-num">Skill Area 2</span>
+            <h2 class="dfs-hub-skill-title"><i class="fa-solid fa-file-lines" style="color:#0284c7; margin-right:8px;"></i> Creating and Editing</h2>
+          </div>
+          <div class="dfs-topic-cards-grid">
+            
+            <a href="e3-word-processing-basics.html" class="dfs-topic-card">
+              <div class="dfs-card-top-meta">
+                <span class="dfs-card-code">E3.2.1</span>
+                <span class="dfs-card-time"><i class="fa-regular fa-clock"></i> 15 Mins</span>
+              </div>
+              <h3 class="dfs-card-title">Word Processing: Entering Text and Fonts</h3>
+              <p class="dfs-card-desc">Learn how to open a word processor, enter text cleanly, select words and paragraphs, change font styles and sizes, and apply bold, italic, a...</p>
+              <div class="dfs-card-footer">
+                <span>Start Topic Revision</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </a>
+            
+            <a href="e3-formatting-aligning-bullets.html" class="dfs-topic-card">
+              <div class="dfs-card-top-meta">
+                <span class="dfs-card-code">E3.2.2</span>
+                <span class="dfs-card-time"><i class="fa-regular fa-clock"></i> 15 Mins</span>
+              </div>
+              <h3 class="dfs-card-title">Document Formatting and Bullet Lists</h3>
+              <p class="dfs-card-desc">Master paragraph alignment (left, centre, right), line spacing, creating bulleted lists for key points, and numbered lists for sequential st...</p>
+              <div class="dfs-card-footer">
+                <span>Start Topic Revision</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </a>
+            
+            <a href="e3-combining-images-text.html" class="dfs-topic-card">
+              <div class="dfs-card-top-meta">
+                <span class="dfs-card-code">E3.2.3</span>
+                <span class="dfs-card-time"><i class="fa-regular fa-clock"></i> 15 Mins</span>
+              </div>
+              <h3 class="dfs-card-title">Inserting and Resizing Images</h3>
+              <p class="dfs-card-desc">Learn how to insert pictures and digital logos into documents, resize images proportionally from corner handles without stretching, crop unw...</p>
+              <div class="dfs-card-footer">
+                <span>Start Topic Revision</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </a>
+            
+            <a href="e3-spellcheck-proofing-saving.html" class="dfs-topic-card">
+              <div class="dfs-card-top-meta">
+                <span class="dfs-card-code">E3.2.4</span>
+                <span class="dfs-card-time"><i class="fa-regular fa-clock"></i> 15 Mins</span>
+              </div>
+              <h3 class="dfs-card-title">Spellcheck, Proofreading and Saving Files</h3>
+              <p class="dfs-card-desc">Produce error-free professional documents by running automated spelling and grammar checkers, proofreading text manually, and mastering the ...</p>
+              <div class="dfs-card-footer">
+                <span>Start Topic Revision</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </a>
+            
+            <a href="e3-spreadsheets-simple-data.html" class="dfs-topic-card">
+              <div class="dfs-card-top-meta">
+                <span class="dfs-card-code">E3.2.5</span>
+                <span class="dfs-card-time"><i class="fa-regular fa-clock"></i> 15 Mins</span>
+              </div>
+              <h3 class="dfs-card-title">Entering Data into Simple Spreadsheets</h3>
+              <p class="dfs-card-desc">Understand rows, columns, and cell references in spreadsheet software like Excel, enter text labels and numbers accurately, format numbers a...</p>
+              <div class="dfs-card-footer">
+                <span>Start Topic Revision</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </a>
+            
+          </div>
+        </div>
+        
+        <div class="dfs-hub-section">
+          <div class="dfs-hub-skill-header">
+            <span class="dfs-hub-skill-num">Skill Area 3</span>
+            <h2 class="dfs-hub-skill-title"><i class="fa-solid fa-envelope" style="color:#0284c7; margin-right:8px;"></i> Communicating</h2>
+          </div>
+          <div class="dfs-topic-cards-grid">
+            
+            <a href="e3-email-compose-reply-forward.html" class="dfs-topic-card">
+              <div class="dfs-card-top-meta">
+                <span class="dfs-card-code">E3.3.1</span>
+                <span class="dfs-card-time"><i class="fa-regular fa-clock"></i> 15 Mins</span>
+              </div>
+              <h3 class="dfs-card-title">Composing, Replying and Forwarding Emails</h3>
+              <p class="dfs-card-desc">Master everyday workplace email: write clear subject lines, compose polite messages with appropriate greetings and sign-offs, reply to incom...</p>
+              <div class="dfs-card-footer">
+                <span>Start Topic Revision</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </a>
+            
+            <a href="e3-email-attachments-contacts.html" class="dfs-topic-card">
+              <div class="dfs-card-top-meta">
+                <span class="dfs-card-code">E3.3.2</span>
+                <span class="dfs-card-time"><i class="fa-regular fa-clock"></i> 15 Mins</span>
+              </div>
+              <h3 class="dfs-card-title">Email Attachments and Contacts List</h3>
+              <p class="dfs-card-desc">Learn how to attach documents and photos to emails, open and save received attachments safely, and create contacts in your email address boo...</p>
+              <div class="dfs-card-footer">
+                <span>Start Topic Revision</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </a>
+            
+            <a href="e3-messaging-video-calls.html" class="dfs-topic-card">
+              <div class="dfs-card-top-meta">
+                <span class="dfs-card-code">E3.3.3</span>
+                <span class="dfs-card-time"><i class="fa-regular fa-clock"></i> 15 Mins</span>
+              </div>
+              <h3 class="dfs-card-title">Video Calling and Digital Messaging</h3>
+              <p class="dfs-card-desc">Participate confidently in workplace video meetings (such as Microsoft Teams or Zoom): join meetings via links, mute/unmute your microphone,...</p>
+              <div class="dfs-card-footer">
+                <span>Start Topic Revision</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </a>
+            
+          </div>
+        </div>
+        
+        <div class="dfs-hub-section">
+          <div class="dfs-hub-skill-header">
+            <span class="dfs-hub-skill-num">Skill Area 4</span>
+            <h2 class="dfs-hub-skill-title"><i class="fa-solid fa-credit-card" style="color:#0284c7; margin-right:8px;"></i> Transacting</h2>
+          </div>
+          <div class="dfs-topic-cards-grid">
+            
+            <a href="e3-online-forms-account-setup.html" class="dfs-topic-card">
+              <div class="dfs-card-top-meta">
+                <span class="dfs-card-code">E3.4.1</span>
+                <span class="dfs-card-time"><i class="fa-regular fa-clock"></i> 15 Mins</span>
+              </div>
+              <h3 class="dfs-card-title">Filling Online Forms and Account Registration</h3>
+              <p class="dfs-card-desc">Master navigating and completing online forms accurately: identify required fields (asterisks), text boxes, drop-down menus, radio buttons, ...</p>
+              <div class="dfs-card-footer">
+                <span>Start Topic Revision</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </a>
+            
+            <a href="e3-online-shopping-booking.html" class="dfs-topic-card">
+              <div class="dfs-card-top-meta">
+                <span class="dfs-card-code">E3.4.2</span>
+                <span class="dfs-card-time"><i class="fa-regular fa-clock"></i> 15 Mins</span>
+              </div>
+              <h3 class="dfs-card-title">Searching, Buying and Booking Services Online</h3>
+              <p class="dfs-card-desc">Learn how to search for products and services online, apply filters, manage a digital shopping basket, and verify secure payment pages using...</p>
+              <div class="dfs-card-footer">
+                <span>Start Topic Revision</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </a>
+            
+          </div>
+        </div>
+        
+        <div class="dfs-hub-section">
+          <div class="dfs-hub-skill-header">
+            <span class="dfs-hub-skill-num">Skill Area 5</span>
+            <h2 class="dfs-hub-skill-title"><i class="fa-solid fa-shield-halved" style="color:#0284c7; margin-right:8px;"></i> Being Safe and Responsible Online</h2>
+          </div>
+          <div class="dfs-topic-cards-grid">
+            
+            <a href="e3-passwords-privacy-scams.html" class="dfs-topic-card">
+              <div class="dfs-card-top-meta">
+                <span class="dfs-card-code">E3.5.1</span>
+                <span class="dfs-card-time"><i class="fa-regular fa-clock"></i> 15 Mins</span>
+              </div>
+              <h3 class="dfs-card-title">Strong Passwords, Personal Privacy and Spotting Scams</h3>
+              <p class="dfs-card-desc">Protect yourself and your workplace from online crime: create strong, unbreakable passwords, keep personal data private, and spot scam email...</p>
+              <div class="dfs-card-footer">
+                <span>Start Topic Revision</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </a>
+            
+            <a href="e3-digital-wellbeing-posture.html" class="dfs-topic-card">
+              <div class="dfs-card-top-meta">
+                <span class="dfs-card-code">E3.5.2</span>
+                <span class="dfs-card-time"><i class="fa-regular fa-clock"></i> 15 Mins</span>
+              </div>
+              <h3 class="dfs-card-title">Digital Wellbeing, Screen Breaks and Online Footprints</h3>
+              <p class="dfs-card-desc">Protect your physical health and mental wellbeing while working on digital devices: apply healthy workstation ergonomics, take regular scree...</p>
+              <div class="dfs-card-footer">
+                <span>Start Topic Revision</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </div>
+            </a>
+            
+          </div>
+        </div>
+        
+      </div>
+
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer style="background:#0f172a; color:#94a3b8; padding:40px 0 24px; border-top:1px solid #1e293b; font-size:0.88rem;">
+    <div class="mfs-container">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px; margin-bottom:24px; padding-bottom:20px; border-bottom:1px solid #1e293b;">
+        <div class="mfs-brand">
+          <div class="mfs-brand-icon"><i class="fa-solid fa-laptop-code"></i></div>
+          <div class="mfs-brand-text">
+            <div class="mfs-brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
+            <div class="mfs-brand-subtitle">Delivering Skills • Achieving Goals</div>
+          </div>
+        </div>
+        <div style="display:flex; gap:16px; flex-wrap:wrap;">
+          <a href="../../revise.html" style="color:#cbd5e1; text-decoration:none;">Revision Hub</a>
+          <a href="../level-1/index.html" style="color:#cbd5e1; text-decoration:none;">Level 1 Digital Skills</a>
+          <a href="../../digital-functional-skills-past-papers.html" style="color:#cbd5e1; text-decoration:none;">Past Papers &amp; Data Files</a>
+          <a href="../../digital-functional-skills-mock-exam.html" style="color:#cbd5e1; text-decoration:none;">Online Mock Simulator</a>
+          <a href="../../contact-us.html" style="color:#cbd5e1; text-decoration:none;">Contact Tutor</a>
+        </div>
+      </div>
+      <div style="text-align:center; font-size:0.78rem; color:#64748b;">
+        &copy; 2026 Master Functional Skills. All rights reserved.
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../../assets/js/dfs-revision-engine.js?v=20261106_v1"></script>
+  <script>
+    // Dual View Switcher Logic
+    function switchView(mode) {
+      var tableContainer = document.getElementById('tableViewContainer');
+      var cardsContainer = document.getElementById('cardsViewContainer');
+      var btnTable = document.getElementById('btnViewTable');
+      var btnCards = document.getElementById('btnViewCards');
+
+      if (mode === 'cards') {
+        tableContainer.style.display = 'none';
+        cardsContainer.style.display = 'block';
+        btnTable.classList.remove('active');
+        btnCards.classList.add('active');
+      } else {
+        tableContainer.style.display = 'block';
+        cardsContainer.style.display = 'none';
+        btnTable.classList.add('active');
+        btnCards.classList.remove('active');
+      }
+    }
+
+    // Instant Search & Category Filter Logic
+    var activeCategory = 'all';
+
+    function filterCategory(cat, btn) {
+      activeCategory = cat;
+      document.querySelectorAll('.btn-cat-filter').forEach(function(b) {
+        b.classList.remove('active');
+      });
+      if (btn) btn.classList.add('active');
+      applyCombinedFilter();
+    }
+
+    function applyCombinedFilter() {
+      var searchInput = document.getElementById('topicSearchInput');
+      var query = searchInput ? searchInput.value.toLowerCase().trim() : '';
+      var rows = document.querySelectorAll('#topicsContainer .topic-row');
+      var count = 0;
+
+      rows.forEach(function(row) {
+        var rowCat = row.getAttribute('data-cat');
+        var rowText = row.textContent.toLowerCase();
+
+        var matchesCat = (activeCategory === 'all' || rowCat === activeCategory);
+        var matchesQuery = (query === '' || rowText.includes(query));
+
+        if (matchesCat && matchesQuery) {
+          row.style.display = 'flex';
+          count++;
+        } else {
+          row.style.display = 'none';
+        }
+      });
+
+      var badge = document.getElementById('badgeTopicCount');
+      if (badge) {
+        badge.textContent = count + ' Topics';
+      }
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+      var searchInput = document.getElementById('topicSearchInput');
+      if (searchInput) {
+        searchInput.addEventListener('input', applyCombinedFilter);
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-theme="maths" data-tint="cream">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Spreadsheet Layout, Sorting and Formatting | Level 1 Digital Skills Revision | Master Functional Skills</title>
+  <meta name="description" content="Master Spreadsheet Layout, Sorting and Formatting for Level 1 Digital Functional Skills. Step-by-step explanations, authentic visual UI breakdowns, video walkthroughs, fluency drills, and Pearson Edexcel aligned mock questions.">
+  <link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg">
+  <link rel="alternate icon" href="../../favicon.ico">
+  <meta name="theme-color" content="#0f172a">
+  
+  <!-- Fonts & Icons -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <!-- Dedicated Digital Skills Revision Styles -->
+  <link rel="stylesheet" href="../../assets/css/mfs-dfs-revision.css?v=20261106_v2">
+</head>
+<body data-tint="cream">
+
+  <!-- TOP TRUST BAR & ACCESSIBILITY CONTROLS -->
+  <div class="mfs-top-bar">
+    <div class="mfs-container mfs-top-bar-inner">
+      <div class="top-trust-items">
+        <span class="top-trust-item"><i class="fa-solid fa-building-columns"></i> Pearson Edexcel &amp; City &amp; Guilds Aligned</span>
+        <span class="top-trust-item"><i class="fa-solid fa-graduation-cap"></i> Specialist Functional Skills Tuition</span>
+      </div>
+      <div class="top-contacts">
+        <div class="mfs-access-bar">
+          <div class="mfs-tint-dropdown-wrap">
+            <button type="button" id="tintToggle" class="btn-tint-toggle" onclick="toggleTintMenu(event)" title="Change dyslexia background tint">
+              <span class="tint-swatch-indicator" id="tintCurrentSwatch"></span>
+              <span id="tintLabel">Cream Tint</span>
+              <i class="fa-solid fa-chevron-down" style="font-size:0.62rem; opacity:0.75; margin-left:2px;"></i>
+            </button>
+            <div id="tintMenu" class="tint-picker-menu">
+              <div class="tint-picker-title"><i class="fa-solid fa-glasses"></i> Dyslexia Reading Tint</div>
+              <button type="button" class="tint-option-btn active" data-tint="cream" onclick="setSiteTint('cream', event)">
+                <span class="swatch swatch-cream"></span>
+                <span class="tint-name">Cream (Recommended)</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="peach" onclick="setSiteTint('peach', event)">
+                <span class="swatch swatch-peach"></span>
+                <span class="tint-name">Soft Peach</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="cool" onclick="setSiteTint('cool', event)">
+                <span class="swatch swatch-cool"></span>
+                <span class="tint-name">Cool Mist</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="sage" onclick="setSiteTint('sage', event)">
+                <span class="swatch swatch-sage"></span>
+                <span class="tint-name">Soft Sage</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <div class="tint-divider" style="height:1px; background:#e2e8f0; margin:6px 0;"></div>
+              <button type="button" class="tint-option-btn" data-tint="none" onclick="setSiteTint('none', event)">
+                <span class="swatch swatch-none"></span>
+                <span class="tint-name">No Tint (White)</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+            </div>
+          </div>
+          <button id="dyslexiaToggle" class="btn-dyslexia-toggle" onclick="toggleDyslexiaMode()" title="Toggle Dyslexia High-Readability Mode">
+            <i class="fa-solid fa-universal-access"></i> Dyslexia
+          </button>
+        </div>
+        <a href="../../contact-us.html" class="btn-tint-toggle" style="text-decoration:none;"><i class="fa-solid fa-envelope"></i> Contact</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN NAVIGATION -->
+  <header class="mfs-navbar">
+    <div class="mfs-container mfs-navbar-inner">
+      <a href="../../index.html" class="mfs-brand">
+        <div class="mfs-brand-icon"><i class="fa-solid fa-laptop-code"></i></div>
+        <div class="mfs-brand-text">
+          <div class="mfs-brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
+          <div class="mfs-brand-subtitle">Delivering Skills • Achieving Goals</div>
+        </div>
+      </a>
+
+      <nav class="mfs-nav-wrapper">
+        <ul class="mfs-nav-menu">
+          <li><a href="../../revise.html" class="mfs-nav-link"><i class="fa-solid fa-book-open-reader"></i> Revision Hub</a></li>
+          <li><a href="index.html" class="mfs-nav-link active"><i class="fa-solid fa-list-check"></i> Level 1 Directory</a></li>
+          <li><a href="../../digital-functional-skills-past-papers.html" class="mfs-nav-link"><i class="fa-solid fa-file-lines"></i> Past Papers</a></li>
+          <li><a href="../../digital-functional-skills-mock-exam.html" class="mfs-nav-link btn-nav-exam"><i class="fa-solid fa-desktop"></i> Mock Simulator</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <!-- SUBNAV & BREADCRUMBS -->
+  <div class="dfs-subnav-bar">
+    <div class="mfs-container dfs-subnav-inner">
+      <div class="dfs-breadcrumbs">
+        <a href="../../index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a href="../../revise.html">Revision</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a href="index.html">Level 1 Digital Skills</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span style="color:#ffffff; font-weight:600;">Spreadsheet Layout, Sorting and Formatting</span>
+      </div>
+      <div>
+        <span class="dfs-level-badge-pill l1">Level 1 DFSQ</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- HERO SECTION -->
+  <section class="dfs-hero-header">
+    <div class="mfs-container">
+      <div class="dfs-hero-meta">
+        <span class="dfs-spec-code">L1.2.2</span>
+        <span style="color:#38bdf8; font-size:0.85rem; font-weight:600;"><i class="fa-solid fa-folder-open"></i> 2. Creating and Editing</span>
+        <span class="dfs-time-tag"><i class="fa-regular fa-clock"></i> 15 Mins Study Time</span>
+      </div>
+      <h1 class="dfs-hero-title">Spreadsheet Layout, Sorting and Formatting</h1>
+      <p class="dfs-hero-lead">Design clear, readable spreadsheets for workplace use: format numbers as currency and percentages, adjust column widths to prevent ### overflow errors, merge and centre title cells, and sort data alphabetically and numerically.</p>
+      <div class="dfs-hero-objectives">
+        <span class="dfs-obj-tag"><i class="fa-solid fa-check"></i> Format data types: Currency (£), Percentages (%), Decimals, and Dates</span><span class="dfs-obj-tag"><i class="fa-solid fa-check"></i> Adjust column widths and row heights to eliminate '###' display errors and text truncation</span><span class="dfs-obj-tag"><i class="fa-solid fa-check"></i> Sort data records in Ascending (A-Z, lowest first) and Descending (Z-A, highest first) order</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN LEARNING CONTENT -->
+  <main class="dfs-layout-wrap">
+    <div class="mfs-container">
+      <div class="dfs-grid">
+
+        <!-- 1. YOUTUBE VIDEO WALKTHROUGH EMBED -->
+        <section id="video" class="dfs-section">
+          <div class="dfs-section-header">
+            <h2 class="dfs-section-title"><i class="fa-brands fa-youtube" style="color:#dc2626;"></i> Video Lesson &amp; Walkthrough</h2>
+            <span class="dfs-section-badge">Tutor Guided Video</span>
+          </div>
+          <div class="dfs-video-box">
+            <div class="dfs-video-player-wrap">
+              
+        <div class="dfs-video-card-fallback">
+          <i class="fa-brands fa-youtube play-icon"></i>
+          <h3 style="font-size:1.3rem; margin-bottom:8px;">Level 1 Digital Skills - Spreadsheet Layout & Sorting</h3>
+          <p style="color:#94a3b8; max-width:580px; font-size:0.92rem; margin-bottom:16px;">Watch step-by-step visual demonstration with clear instructional narration and exam mark scheme commentary.</p>
+          <a href="https://www.youtube.com/@MasterFunctionalSkills" target="_blank" rel="noopener noreferrer" class="btn-yt-direct">
+            <i class="fa-brands fa-youtube"></i> Watch on Master Functional Skills YouTube
+          </a>
+        </div>
+        
+            </div>
+            <div class="dfs-video-bar">
+              <div><strong>Topic Focus:</strong> Spreadsheet Layout, Sorting and Formatting (L1.2.2)</div>
+              <div><i class="fa-solid fa-volume-high" style="color:#38bdf8; margin-right:5px;"></i> Sonia Neural Clear British RP Cadence</div>
+            </div>
+          </div>
+        </section>
+
+        <!-- 2. STEP-BY-STEP TEACHING & VISUAL UI MOCKUPS -->
+        <section id="teaching" class="dfs-section">
+          <div class="dfs-section-header">
+            <h2 class="dfs-section-title"><i class="fa-solid fa-book-open"></i> Step-by-Step Teaching &amp; Key Concepts</h2>
+            <span class="dfs-section-badge">Core Knowledge</span>
+          </div>
+          
+          <div class="dfs-steps-flow">
+            
+        <div class="dfs-step-card">
+          <div class="dfs-step-header">
+            <div class="dfs-step-num">1</div>
+            <div class="dfs-step-title">Fixing the '###' Display Error (Column Widths)</div>
+          </div>
+          <div class="dfs-step-body">
+            <p>When a number or date is too wide to fit inside its column, Excel does not cut off the digits — it displays <strong>###</strong> across the cell to warn you that data is hidden.</p><p>To fix this: Double-click the <strong>divider line between the column letters</strong> at the top (e.g. between column B and C). The column will automatically expand to fit the widest entry (AutoFit)!</p>
+            
+            <div style="margin-top:10px; font-size:0.88rem; color:#475569;"><i class="fa-regular fa-keyboard" style="color:#0284c7; margin-right:4px;"></i> <strong>Select Entire Column:</strong> <kbd class="dfs-kbd">Ctrl + Space</kbd> &bull; <strong>Select Entire Row:</strong> <kbd class="dfs-kbd">Shift + Space</kbd></div>
+            
+          </div>
+        </div>
+        
+        <div class="dfs-step-card">
+          <div class="dfs-step-header">
+            <div class="dfs-step-num">2</div>
+            <div class="dfs-step-title">Formatting Numbers: Currency, Decimals, and Percentages</div>
+          </div>
+          <div class="dfs-step-body">
+            <p>Raw numbers look unprofessional. Format them on the <strong>Number group</strong> of the ribbon:</p><ul><li><strong>Currency (£):</strong> Formats figures with a pound sign and 2 decimal places (e.g. <code>£45.50</code>).</li><li><strong>Increase / Decrease Decimals:</strong> Controls decimal precision (e.g. rounding <code>14.2857</code> to <code>14.3</code>).</li><li><strong>Percentage (%):</strong> Multiplies by 100 and displays the percent sign (e.g. <code>0.15</code> becomes <code>15%</code>).</li><li><strong>Merge &amp; Centre:</strong> Combines multiple cells across the top of a table into one wide header banner.</li></ul>
+            
+            
+            
+          </div>
+        </div>
+        
+        <div class="dfs-step-card">
+          <div class="dfs-step-header">
+            <div class="dfs-step-num">3</div>
+            <div class="dfs-step-title">Sorting Data Records (Ascending vs Descending)</div>
+          </div>
+          <div class="dfs-step-body">
+            <p>Sorting organises records logically without re-typing:</p><ul><li><strong>Ascending (A to Z / Smallest to Largest):</strong> Alphabetical order from A to Z, or numbers from lowest to highest.</li><li><strong>Descending (Z to A / Largest to Smallest):</strong> Reverse alphabetical, or numbers from highest to lowest.</li></ul><p>Always highlight the entire table before sorting to ensure related columns stay together!</p>
+            
+            <div class="dfs-ui-sim">
+              <div class="dfs-ui-sim-bar">
+                <div class="dfs-ui-sim-dots"><span></span><span></span><span></span></div>
+                <div>Spreadsheet Sort & Filter Ribbon</div>
+                <div><i class="fa-solid fa-desktop"></i></div>
+              </div>
+              <div class="dfs-ui-sim-content">
+                <div style='display:flex; gap:12px; align-items:center; background:#f8fafc; padding:8px 14px; border-radius:4px; border:1px solid #cbd5e1;'><button style='background:#ffffff; border:1px solid #94a3b8; padding:4px 10px; border-radius:4px; font-weight:700;'><i class='fa-solid fa-arrow-down-a-z' style='color:#0284c7;'></i> Sort A to Z</button><button style='background:#ffffff; border:1px solid #94a3b8; padding:4px 10px; border-radius:4px; font-weight:700;'><i class='fa-solid fa-arrow-down-z-a' style='color:#0284c7;'></i> Sort Z to A</button><button style='background:#ffffff; border:1px solid #94a3b8; padding:4px 10px; border-radius:4px;'><i class='fa-solid fa-filter' style='color:#f59e0b;'></i> Filter</button></div>
+              </div>
+            </div>
+            
+            
+            
+          </div>
+        </div>
+        
+          </div>
+        </section>
+
+        <!-- 3. AUTHENTIC EXAM MODEL WALKTHROUGH -->
+        <section id="model" class="dfs-section">
+          <div class="dfs-section-header">
+            <h2 class="dfs-section-title"><i class="fa-solid fa-award"></i> Authentic Pearson Edexcel Exam Model</h2>
+            <span class="dfs-section-badge" style="background:#fee2e2; color:#dc2626;">Accredited Model</span>
+          </div>
+          <p style="color:#475569; font-size:0.95rem; margin-bottom:14px;">Here is how this skill is tested in the real Pearson Edexcel onscreen digital assessment, broken down with official examiner mark codes (<span class="dfs-mark-tag" style="display:inline-block; margin:0 3px;">[B1]</span> knowledge, <span class="dfs-mark-tag" style="background:#0284c7; display:inline-block; margin:0 3px;">[M1]</span> process, <span class="dfs-mark-tag" style="background:#0f766e; display:inline-block; margin:0 3px;">[A1]</span> accuracy).</p>
+          
+    <div class="dfs-exam-model">
+      <div class="dfs-model-stem">
+        <strong><i class="fa-solid fa-clipboard-question"></i> Exam Scenario Prompt:</strong> A medical supplies spreadsheet shows cell C4 displaying '#####'. The instructions state: 'Make all data in column C fully visible, format cells C2:C10 as Currency to two decimal places, and sort the table by Cost in descending order.' Describe the actions required.
+      </div>
+      
+        <div class="dfs-model-step-card">
+          <div class="dfs-model-step-title">
+            <span>Step 1: Fix column width</span>
+            <span class="dfs-mark-tag">[B1]</span>
+          </div>
+          <div class="dfs-model-solution-text">Double-click the boundary between column C and column D headers to AutoFit column width.</div>
+          <div class="dfs-tutor-rationale">
+            <i class="fa-solid fa-circle-check"></i>
+            <div><strong>Tutor Marking Rationale:</strong> Resolves number clipping / ### display issue.</div>
+          </div>
+        </div>
+        
+        <div class="dfs-model-step-card">
+          <div class="dfs-model-step-title">
+            <span>Step 2: Format currency</span>
+            <span class="dfs-mark-tag">[B1]</span>
+          </div>
+          <div class="dfs-model-solution-text">Select C2:C10 and apply Currency format (£) with 2 decimal places.</div>
+          <div class="dfs-tutor-rationale">
+            <i class="fa-solid fa-circle-check"></i>
+            <div><strong>Tutor Marking Rationale:</strong> Standard financial formatting.</div>
+          </div>
+        </div>
+        
+        <div class="dfs-model-step-card">
+          <div class="dfs-model-step-title">
+            <span>Step 3: Sort descending</span>
+            <span class="dfs-mark-tag">[M1]</span>
+          </div>
+          <div class="dfs-model-solution-text">Select the table and sort by Column C (Cost) from Largest to Smallest (Descending).</div>
+          <div class="dfs-tutor-rationale">
+            <i class="fa-solid fa-circle-check"></i>
+            <div><strong>Tutor Marking Rationale:</strong> Applies descending numerical sort.</div>
+          </div>
+        </div>
+        
+      <div class="dfs-callout dfs-callout-tutor" style="margin-top:16px;">
+        <i class="fa-solid fa-award"></i>
+        <div><strong>Tutor Abdul's Exam Golden Rule:</strong> In Level 1 exams, marks are always allocated for: 1. Making all data visible (no clipped text or ###); 2. Correct currency formatting; 3. Proper sort direction.</div>
+      </div>
+    </div>
+    
+        </section>
+
+        <!-- 4. INTERACTIVE FLUENCY DRILLS -->
+        <section id="drills" class="dfs-section">
+          <div class="dfs-section-header">
+            <h2 class="dfs-section-title"><i class="fa-solid fa-bolt"></i> Interactive Fluency Drills</h2>
+            <span class="dfs-section-badge" style="background:#d1fae5; color:#065f46;">Instant Check</span>
+          </div>
+          <p style="color:#475569; font-size:0.95rem; margin-bottom:14px;">Test your knowledge right now. Select an answer to receive immediate diagnostic feedback and tutor explanations.</p>
+          <div class="dfs-drill-box">
+            
+        <div class="dfs-drill-question-card">
+          <div class="dfs-drill-q-title">
+            <span class="dfs-drill-q-num">Drill 1</span>
+            <span>What does a row of hashtags '######' displayed inside a spreadsheet cell mean?</span>
+          </div>
+          <div class="dfs-drill-options">
+            
+            <button type="button" class="dfs-drill-opt-btn" data-correct="true" onclick="checkDrill(this, true, 'drillFeedback_l1-spreadsheet-design-formatting_1')">
+              <span>The number or date is too wide to fit in the current column width</span>
+              <i class="fa-solid fa-arrow-right" style="opacity:0.4; font-size:0.8rem;"></i>
+            </button>
+            
+            <button type="button" class="dfs-drill-opt-btn" data-correct="false" onclick="checkDrill(this, false, 'drillFeedback_l1-spreadsheet-design-formatting_1')">
+              <span>The formula contains a spelling mistake</span>
+              <i class="fa-solid fa-arrow-right" style="opacity:0.4; font-size:0.8rem;"></i>
+            </button>
+            
+            <button type="button" class="dfs-drill-opt-btn" data-correct="false" onclick="checkDrill(this, false, 'drillFeedback_l1-spreadsheet-design-formatting_1')">
+              <span>The computer is infected with a virus</span>
+              <i class="fa-solid fa-arrow-right" style="opacity:0.4; font-size:0.8rem;"></i>
+            </button>
+            
+            <button type="button" class="dfs-drill-opt-btn" data-correct="false" onclick="checkDrill(this, false, 'drillFeedback_l1-spreadsheet-design-formatting_1')">
+              <span>The cell has been permanently deleted</span>
+              <i class="fa-solid fa-arrow-right" style="opacity:0.4; font-size:0.8rem;"></i>
+            </button>
+            
+          </div>
+          <div id="drillFeedback_l1-spreadsheet-design-formatting_1" class="dfs-drill-feedback" data-explanation="Hashtags appear when a numeric value or date exceeds the visible column boundary."></div>
+        </div>
+        
+        <div class="dfs-drill-question-card">
+          <div class="dfs-drill-q-title">
+            <span class="dfs-drill-q-num">Drill 2</span>
+            <span>If you sort a staff list by 'Salary' in DESCENDING order, which salary will be at the very top of the table?</span>
+          </div>
+          <div class="dfs-drill-options">
+            
+            <button type="button" class="dfs-drill-opt-btn" data-correct="true" onclick="checkDrill(this, true, 'drillFeedback_l1-spreadsheet-design-formatting_2')">
+              <span>The highest salary</span>
+              <i class="fa-solid fa-arrow-right" style="opacity:0.4; font-size:0.8rem;"></i>
+            </button>
+            
+            <button type="button" class="dfs-drill-opt-btn" data-correct="false" onclick="checkDrill(this, false, 'drillFeedback_l1-spreadsheet-design-formatting_2')">
+              <span>The lowest salary</span>
+              <i class="fa-solid fa-arrow-right" style="opacity:0.4; font-size:0.8rem;"></i>
+            </button>
+            
+            <button type="button" class="dfs-drill-opt-btn" data-correct="false" onclick="checkDrill(this, false, 'drillFeedback_l1-spreadsheet-design-formatting_2')">
+              <span>The average salary</span>
+              <i class="fa-solid fa-arrow-right" style="opacity:0.4; font-size:0.8rem;"></i>
+            </button>
+            
+            <button type="button" class="dfs-drill-opt-btn" data-correct="false" onclick="checkDrill(this, false, 'drillFeedback_l1-spreadsheet-design-formatting_2')">
+              <span>Zero</span>
+              <i class="fa-solid fa-arrow-right" style="opacity:0.4; font-size:0.8rem;"></i>
+            </button>
+            
+          </div>
+          <div id="drillFeedback_l1-spreadsheet-design-formatting_2" class="dfs-drill-feedback" data-explanation="Descending order sorts from largest to smallest (Z-A / highest to lowest)."></div>
+        </div>
+        
+        <div class="dfs-drill-question-card">
+          <div class="dfs-drill-q-title">
+            <span class="dfs-drill-q-num">Drill 3</span>
+            <span>What tool combines multiple adjacent cells into a single wide cell across a table header?</span>
+          </div>
+          <div class="dfs-drill-options">
+            
+            <button type="button" class="dfs-drill-opt-btn" data-correct="true" onclick="checkDrill(this, true, 'drillFeedback_l1-spreadsheet-design-formatting_3')">
+              <span>Merge & Centre</span>
+              <i class="fa-solid fa-arrow-right" style="opacity:0.4; font-size:0.8rem;"></i>
+            </button>
+            
+            <button type="button" class="dfs-drill-opt-btn" data-correct="false" onclick="checkDrill(this, false, 'drillFeedback_l1-spreadsheet-design-formatting_3')">
+              <span>AutoSum</span>
+              <i class="fa-solid fa-arrow-right" style="opacity:0.4; font-size:0.8rem;"></i>
+            </button>
+            
+            <button type="button" class="dfs-drill-opt-btn" data-correct="false" onclick="checkDrill(this, false, 'drillFeedback_l1-spreadsheet-design-formatting_3')">
+              <span>Crop</span>
+              <i class="fa-solid fa-arrow-right" style="opacity:0.4; font-size:0.8rem;"></i>
+            </button>
+            
+            <button type="button" class="dfs-drill-opt-btn" data-correct="false" onclick="checkDrill(this, false, 'drillFeedback_l1-spreadsheet-design-formatting_3')">
+              <span>Page Break</span>
+              <i class="fa-solid fa-arrow-right" style="opacity:0.4; font-size:0.8rem;"></i>
+            </button>
+            
+          </div>
+          <div id="drillFeedback_l1-spreadsheet-design-formatting_3" class="dfs-drill-feedback" data-explanation="Merge & Centre combines selected cells into one unified banner cell."></div>
+        </div>
+        
+          </div>
+        </section>
+
+        <!-- 5. EXAM-STYLE PRACTICE QUESTION & AUTO-SAVING SCRATCHPAD -->
+        <section id="practice" class="dfs-section">
+          <div class="dfs-section-header">
+            <h2 class="dfs-section-title"><i class="fa-solid fa-pen-ruler"></i> Independent Practice Exam Task</h2>
+            <span class="dfs-section-badge">Auto-Saving Scratchpad</span>
+          </div>
+          <p style="color:#475569; font-size:0.95rem; margin-bottom:14px;">Complete this practice task under exam conditions. Your working is saved automatically in your browser so you can return to it anytime.</p>
+          
+    <div class="dfs-practice-box">
+      <div class="dfs-task-stem">
+        <div style="font-weight:700; color:#0f172a; margin-bottom:6px;"><i class="fa-solid fa-pen-to-square" style="color:#0284c7;"></i> Onscreen Assessment Task:</div>
+        <div>A department manager asks you to prepare a staff overtime table. Explain how you would format the numbers in the 'Overtime Pay' column as British pounds and pence, and sort the list alphabetically by staff surname.</div>
+      </div>
+
+      <div class="dfs-scratchpad-wrap">
+        <div class="dfs-scratchpad-label">
+          <span><i class="fa-solid fa-keyboard"></i> Your Working &amp; Answer Scratchpad:</span>
+          <span class="dfs-autosave-status"><i class="fa-solid fa-circle-check"></i> Auto-saves in browser</span>
+        </div>
+        <textarea class="dfs-scratchpad-area" data-storage-key="dfs_scratch_l1-spreadsheet-design-formatting" placeholder="Type your step-by-step working, method, or draft response here...">Formatting pay: 
+Sorting surnames: </textarea>
+      </div>
+
+      <button type="button" id="solBtn_l1-spreadsheet-design-formatting" class="dfs-solution-toggle-btn" onclick="toggleSolutionDrawer('solDrawer_l1-spreadsheet-design-formatting', 'solBtn_l1-spreadsheet-design-formatting')">
+        <i class="fa-solid fa-chevron-down"></i> View Accredited Model Solution &amp; Mark Scheme
+      </button>
+
+      <div id="solDrawer_l1-spreadsheet-design-formatting" class="dfs-solution-drawer">
+        <h4><i class="fa-solid fa-circle-check"></i> Pearson Edexcel Benchmark Solution</h4>
+        <div style="font-size:0.95rem; color:#14532d; line-height:1.6; margin-bottom:14px; background:#ffffff; padding:14px; border-radius:6px; border:1px solid #bbf7d0;">
+          Formatting pay: Highlight the overtime pay column and choose 'Currency' from the Number Format dropdown, ensuring the '£' symbol and two decimal places are set.
+Sorting surnames: Select the entire table data, click Sort & Filter > Custom Sort, choose 'Surname' column, and sort in Ascending order (A to Z).
+        </div>
+        <div style="font-weight:700; color:#166534; font-size:0.92rem; margin-bottom:6px;">Official Marking Criteria:</div>
+        <ul class="dfs-marking-criteria-list">
+          <li><i class="fa-solid fa-check"></i> <div><strong>[1 Mark]:</strong> Applying Currency (£) format with 2 decimal places.</div></li><li><i class="fa-solid fa-check"></i> <div><strong>[1 Mark]:</strong> Sorting by Surname in Ascending (A to Z) order.</div></li>
+        </ul>
+      </div>
+    </div>
+    
+        </section>
+
+        <!-- OFFICIAL ASSESSMENT & MOCK TESTING BRIDGE -->
+        <div class="dfs-exam-bridge-card">
+          <div class="exam-bridge-icon"><i class="fa-solid fa-desktop"></i></div>
+          <div class="exam-bridge-content">
+            <h4>Ready to test in the official Pearson exam environment?</h4>
+            <p>Put your knowledge into timed exam practice using authentic candidate data files (.ZIP) in the Pearson onscreen test player.</p>
+            <div class="exam-bridge-actions">
+              <a href="../../digital-functional-skills-mock-exam.html" class="btn-exam-bridge primary" target="_blank"><i class="fa-solid fa-play"></i> Launch Online Mock Simulator &rarr;</a>
+              <a href="../../digital-functional-skills-past-papers.html" class="btn-exam-bridge secondary" target="_blank"><i class="fa-solid fa-file-zipper"></i> Past Papers &amp; Data Files (.ZIP) &rarr;</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 6. LINKS TO REVISE & CONTINUOUS LEARNING -->
+        <div class="dfs-rev-links-wrap">
+          <div class="dfs-rev-links-title"><i class="fa-solid fa-diagram-project"></i> Links to Revise &amp; Connected Topics</div>
+          <div class="dfs-pills-row">
+            <a href="l1-spreadsheet-formulas-functions.html" class="dfs-pill-link"><i class="fa-solid fa-bookmark" style="font-size:0.75rem;"></i> Spreadsheet Formulas & Functions</a><a href="l1-data-visualisation-charts.html" class="dfs-pill-link"><i class="fa-solid fa-bookmark" style="font-size:0.75rem;"></i> Charts & Data Visualisation</a><a href="l1-combining-software-pdf-export.html" class="dfs-pill-link"><i class="fa-solid fa-bookmark" style="font-size:0.75rem;"></i> Combining Software & PDF Export</a>
+            <a href="../../assets/downloads/past-papers/digital-skills/DFS_Handbook_MFS.pdf" class="dfs-pill-link" style="border-color:#86efac; color:#166534;"><i class="fa-solid fa-file-pdf"></i> Download Level 1 Revision Notes PDF</a>
+            <a href="index.html" class="dfs-pill-link" style="border-color:#cbd5e1; color:#475569;"><i class="fa-solid fa-table-cells"></i> View All Level 1 Topics</a>
+          </div>
+        </div>
+
+        <!-- TOPIC NAVIGATION BAR -->
+        <div class="dfs-topic-nav-bar">
+          <div><a href="l1-word-processing-professional.html" class="dfs-nav-btn"><i class="fa-solid fa-arrow-left"></i> Previous: Professional Document Formatting and Styles</a></div>
+          <div><a href="l1-spreadsheet-formulas-functions.html" class="dfs-nav-btn primary">Next: Spreadsheet Formulas: SUM, AVERAGE and COUNT <i class="fa-solid fa-arrow-right"></i></a></div>
+        </div>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- FOOTER -->
+  <footer style="background:#0f172a; color:#94a3b8; padding:40px 0 24px; border-top:1px solid #1e293b; font-size:0.88rem;">
+    <div class="mfs-container">
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px; margin-bottom:24px; padding-bottom:20px; border-bottom:1px solid #1e293b;">
+        <div class="mfs-brand">
+          <div class="mfs-brand-icon"><i class="fa-solid fa-laptop-code"></i></div>
+          <div class="mfs-brand-text">
+            <div class="mfs-brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
+            <div class="mfs-brand-subtitle">Delivering Skills • Achieving Goals</div>
+          </div>
+        </div>
+        <div style="display:flex; gap:16px; flex-wrap:wrap;">
+          <a href="index.html" style="color:#cbd5e1; text-decoration:none;">Level 1 Hub</a>
+          <a href="../../digital-functional-skills-past-papers.html" style="color:#cbd5e1; text-decoration:none;">Past Papers &amp; Data Files</a>
+          <a href="../../digital-functional-skills-mock-exam.html" style="color:#cbd5e1; text-decoration:none;">Online Mock Simulator</a>
+          <a href="../../revise.html" style="color:#cbd5e1; text-decoration:none;">All Subjects</a>
+          <a href="../../contact-us.html" style="color:#cbd5e1; text-decoration:none;">Contact Tutor</a>
+        </div>
+      </div>
+      <div style="text-align:center; font-size:0.78rem; color:#64748b;">
+        &copy; 2026 Master Functional Skills. All rights reserved. Pearson Edexcel and City &amp; Guilds aligned Digital Functional Skills Qualifications (DFSQ).
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="../../assets/js/dfs-revision-engine.js?v=20261106_v1"></script>
+</body>
+</html>

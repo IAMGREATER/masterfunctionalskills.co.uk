@@ -14,12 +14,14 @@ let simTimerSeconds = 25 * 60;
 let simTimerActive = true;
 let simTimerInterval = null;
 let simActiveSourceTextTab = 0;
+let sim5MinWarningShown = {}; // Tracks per-section 5-min warning
+let simLockedSections = {}; // Tracks locked sections: { 'A': true, 'B': true }
+let simPendingLockAction = null;
 
-// Calculator state
-let calcCurrentVal = '0';
-let calcMemory = 0;
-let calcPendingOp = null;
-let calcWaitingForOperand = false;
+// Calculator state: live expression display until '=' is pressed
+let calcExpression = '';
+let calcResult = '0';
+let calcJustEvaluated = false;
 
 // Authenticated Mock Papers Database
 const MFS_MOCK_DATA = {
@@ -1352,8 +1354,16 @@ document.addEventListener('DOMContentLoaded', () => {
 function loadPaper(paperKey) {
   simCurrentPaperKey = paperKey;
   simStartedSections = {};
+  sim5MinWarningShown = {};
+  simLockedSections = {};
   const paper = getOrCreatePaper(paperKey);
   const sections = getPaperSections(paper);
+  sections.forEach((s) => {
+    if (localStorage.getItem(`mfs_sim_${paperKey}_sec_${s.id}_locked`) === 'true') {
+      simLockedSections[s.id] = true;
+    }
+  });
+
   simCurrentSectionIndex = 0;
   simCurrentQuestionIndex = 0; // Front cover of Section A (start of exam)
 
@@ -1380,6 +1390,73 @@ function handlePaperChange(newKey) {
   loadPaper(newKey);
 }
 
+// Section Locking & Verification Helpers
+function isSectionLocked(secId) {
+  if (!secId) return false;
+  if (simLockedSections[secId]) return true;
+  const saved = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_sec_${secId}_locked`);
+  if (saved === 'true') {
+    simLockedSections[secId] = true;
+    return true;
+  }
+  return false;
+}
+
+function lockSection(secId) {
+  if (!secId) return;
+  simLockedSections[secId] = true;
+  localStorage.setItem(`mfs_sim_${simCurrentPaperKey}_sec_${secId}_locked`, 'true');
+  const paper = getOrCreatePaper(simCurrentPaperKey);
+  renderSectionTabs(paper);
+}
+
+function promptSectionLock(actionCallback, targetSec = null) {
+  const paper = getOrCreatePaper(simCurrentPaperKey);
+  const sections = getPaperSections(paper);
+  const currentSec = targetSec || sections[simCurrentSectionIndex];
+
+  // If section already locked, proceed directly
+  if (!currentSec || isSectionLocked(currentSec.id)) {
+    if (typeof actionCallback === 'function') actionCallback();
+    return;
+  }
+
+  const modal = document.getElementById('simSectionLockModal');
+  const titleEl = document.getElementById('simLockModalTitle');
+  const msgEl = document.getElementById('simLockModalMessage');
+
+  if (currentSec.isCalcAllowed) {
+    if (titleEl) titleEl.innerHTML = '<i class="fa-solid fa-calculator" style="color:var(--sim-sky);"></i> End of Calculator Section';
+    if (msgEl) msgEl.innerText = 'This will be the end of the calculator section and you cannot return.';
+  } else {
+    if (titleEl) titleEl.innerHTML = '<i class="fa-solid fa-ban" style="color:#ef4444;"></i> End of Non-Calculator Section';
+    if (msgEl) msgEl.innerText = `This will be the end of ${currentSec.name} and you cannot return once you proceed.`;
+  }
+
+  simPendingLockAction = () => {
+    lockSection(currentSec.id);
+    if (typeof actionCallback === 'function') actionCallback();
+  };
+
+  if (modal) modal.classList.add('open');
+}
+
+function cancelSectionLock() {
+  const modal = document.getElementById('simSectionLockModal');
+  if (modal) modal.classList.remove('open');
+  simPendingLockAction = null;
+}
+
+function confirmSectionLock() {
+  const modal = document.getElementById('simSectionLockModal');
+  if (modal) modal.classList.remove('open');
+  if (typeof simPendingLockAction === 'function') {
+    const action = simPendingLockAction;
+    simPendingLockAction = null;
+    action();
+  }
+}
+
 // Switch Active Section (Section A vs Section B)
 // Scroll panes to top without shifting outer page
 function scrollContentToTop() {
@@ -1396,6 +1473,30 @@ function switchSection(targetIndex, forceQuestions = false) {
   const sections = getPaperSections(paper);
   if (targetIndex < 0 || targetIndex >= sections.length) return;
   if (targetIndex === simCurrentSectionIndex && !forceQuestions) return;
+
+  const targetSec = sections[targetIndex];
+  const currentSec = sections[simCurrentSectionIndex];
+
+  // Prevent entering a section that is already locked
+  if (isSectionLocked(targetSec.id)) {
+    alert(`This section (${targetSec.name}) is locked. You have completed and left this section, and cannot return.`);
+    return;
+  }
+
+  // If moving forward from an active section, prompt lock warning
+  if (targetIndex > simCurrentSectionIndex && currentSec && !isSectionLocked(currentSec.id)) {
+    promptSectionLock(() => {
+      performSwitchSection(targetIndex, forceQuestions);
+    }, currentSec);
+    return;
+  }
+
+  performSwitchSection(targetIndex, forceQuestions);
+}
+
+function performSwitchSection(targetIndex, forceQuestions = false) {
+  const paper = getOrCreatePaper(simCurrentPaperKey);
+  const sections = getPaperSections(paper);
 
   // Save outgoing section's timer
   saveCurrentSectionTimer();
@@ -1451,20 +1552,23 @@ function renderSectionTabs(paper) {
   container.innerHTML = '';
 
   sections.forEach((sec, idx) => {
+    const isLocked = isSectionLocked(sec.id);
     const btn = document.createElement('button');
     btn.type = 'button';
-    btn.className = `sim-sec-tab-btn ${idx === simCurrentSectionIndex ? 'active' : ''}`;
+    btn.className = `sim-sec-tab-btn ${idx === simCurrentSectionIndex ? 'active' : ''} ${isLocked ? 'locked' : ''}`;
     
     const durStr = sec.durationMinutes >= 60 
       ? (sec.durationMinutes === 90 ? '1 hr 30 mins' : `${Math.floor(sec.durationMinutes / 60)} hrs`)
       : `${sec.durationMinutes} mins`;
     const marks = sec.totalMarks || (sec.questions || []).reduce((acc, q) => acc + (q.marks || 0), 0);
-    const calcBadge = sec.isCalcAllowed 
-      ? `<span class="sim-sec-badge calc"><i class="fa-solid fa-calculator"></i> Calculator Allowed</span>`
-      : `<span class="sim-sec-badge"><i class="fa-solid fa-ban"></i> Non-Calculator</span>`;
+    const calcBadge = isLocked
+      ? `<span class="sim-sec-badge locked"><i class="fa-solid fa-lock"></i> Locked</span>`
+      : (sec.isCalcAllowed 
+        ? `<span class="sim-sec-badge calc"><i class="fa-solid fa-calculator"></i> Calculator Allowed</span>`
+        : `<span class="sim-sec-badge"><i class="fa-solid fa-ban"></i> Non-Calculator</span>`);
 
     btn.innerHTML = `
-      <span class="sim-sec-title"><i class="fa-solid fa-layer-group"></i> ${escapeHtml(sec.name)}</span>
+      <span class="sim-sec-title"><i class="fa-solid ${isLocked ? 'fa-lock' : 'fa-layer-group'}"></i> ${escapeHtml(sec.name)}</span>
       <span style="display:flex; align-items:center; gap:6px; flex-wrap:wrap;">
         <span class="sim-sec-badge"><i class="fa-regular fa-clock"></i> ${durStr}</span>
         <span class="sim-sec-badge">${marks} Marks</span>
@@ -1472,7 +1576,13 @@ function renderSectionTabs(paper) {
       </span>
     `;
 
-    btn.onclick = () => switchSection(idx);
+    btn.onclick = () => {
+      if (isLocked) {
+        alert(`This section (${sec.name}) is locked and cannot be reopened.`);
+        return;
+      }
+      switchSection(idx);
+    };
     container.appendChild(btn);
   });
 }
@@ -1725,11 +1835,18 @@ function renderSectionCover() {
   const nextBtn = document.getElementById('simNextBtn');
   if (prevBtn) {
     if (simCurrentSectionIndex > 0) {
-      prevBtn.disabled = false;
-      prevBtn.innerHTML = '<i class="fa-solid fa-arrow-left"></i> Return to Section A';
-      prevBtn.onclick = () => {
-        switchSection(simCurrentSectionIndex - 1, true);
-      };
+      const prevSec = sections[simCurrentSectionIndex - 1];
+      if (isSectionLocked(prevSec.id)) {
+        prevBtn.disabled = true;
+        prevBtn.innerHTML = `<i class="fa-solid fa-lock"></i> ${escapeHtml(prevSec.name)} Locked`;
+        prevBtn.onclick = null;
+      } else {
+        prevBtn.disabled = false;
+        prevBtn.innerHTML = `<i class="fa-solid fa-arrow-left"></i> Return to ${escapeHtml(prevSec.name)}`;
+        prevBtn.onclick = () => {
+          switchSection(simCurrentSectionIndex - 1, true);
+        };
+      }
     } else {
       prevBtn.disabled = true;
       prevBtn.innerHTML = '<i class="fa-solid fa-arrow-left"></i> Previous';
@@ -1739,6 +1856,7 @@ function renderSectionCover() {
 
   if (nextBtn) {
     nextBtn.disabled = false;
+    nextBtn.style.display = 'inline-flex';
     nextBtn.innerHTML = 'Open Questions <i class="fa-solid fa-arrow-right"></i>';
     nextBtn.classList.remove('finish');
     nextBtn.onclick = () => startSectionQuestions();
@@ -1840,24 +1958,35 @@ function renderCurrentQuestion() {
   const nextBtn = document.getElementById('simNextBtn');
 
   if (prevBtn) {
-    prevBtn.disabled = false;
-    prevBtn.onclick = () => prevQuestion();
-    prevBtn.innerHTML = '<i class="fa-solid fa-arrow-left"></i> Previous';
+    if (simCurrentQuestionIndex > 1) {
+      prevBtn.disabled = false;
+      prevBtn.onclick = () => prevQuestion();
+      prevBtn.innerHTML = '<i class="fa-solid fa-arrow-left"></i> Previous';
+    } else {
+      prevBtn.disabled = false;
+      prevBtn.onclick = () => prevQuestion();
+      prevBtn.innerHTML = '<i class="fa-solid fa-arrow-left"></i> Cover Page';
+    }
   }
 
   if (nextBtn) {
-    nextBtn.onclick = () => nextQuestion();
     if (simCurrentQuestionIndex < sec.questions.length) {
+      nextBtn.style.display = 'inline-flex';
+      nextBtn.disabled = false;
+      nextBtn.onclick = () => nextQuestion();
       nextBtn.innerHTML = 'Next <i class="fa-solid fa-arrow-right"></i>';
       nextBtn.classList.remove('finish');
     } else {
       if (simCurrentSectionIndex < sections.length - 1) {
         const nextSec = sections[simCurrentSectionIndex + 1];
+        nextBtn.style.display = 'inline-flex';
+        nextBtn.disabled = false;
+        nextBtn.onclick = () => nextQuestion();
         nextBtn.innerHTML = `Proceed to ${escapeHtml(nextSec.name)} <i class="fa-solid fa-arrow-right"></i>`;
         nextBtn.classList.remove('finish');
       } else {
-        nextBtn.innerHTML = '<i class="fa-solid fa-flag-checkered"></i> Finish &amp; Review All';
-        nextBtn.classList.add('finish');
+        // Last question of last section: Hide nextBtn to prevent duplicate "Finish & Review All" button
+        nextBtn.style.display = 'none';
       }
     }
   }
@@ -2375,6 +2504,33 @@ function updateTimerDisplay() {
   if (timerBox) {
     timerBox.classList.toggle('warning', simTimerSeconds < 300);
   }
+
+  // 5-Minute Warning Sign Alert (Fired per section)
+  const paper = getOrCreatePaper(simCurrentPaperKey);
+  const sections = getPaperSections(paper);
+  const sec = sections[simCurrentSectionIndex] || sections[0];
+  if (sec && simTimerSeconds <= 300 && simTimerSeconds > 0 && !sim5MinWarningShown[sec.id]) {
+    sim5MinWarningShown[sec.id] = true;
+    show5MinWarning(sec);
+  }
+}
+
+function show5MinWarning(sec) {
+  const banner = document.getElementById('sim5MinWarningBanner');
+  const desc = document.getElementById('sim5MinWarningDesc');
+  if (desc && sec) {
+    desc.innerText = `There are 5 minutes left to complete ${sec.name}. Please conclude your answers and check your working.`;
+  }
+  if (banner) {
+    banner.style.display = 'block';
+  }
+}
+
+function dismiss5MinWarning() {
+  const banner = document.getElementById('sim5MinWarningBanner');
+  if (banner) {
+    banner.style.display = 'none';
+  }
 }
 
 function toggleTimerPause() {
@@ -2386,6 +2542,24 @@ function toggleTimerPause() {
 }
 
 // Fullscreen Management with clean Escape handling
+function exitFullscreenIfActive() {
+  if (document.fullscreenElement || document.webkitFullscreenElement || document.mozFullScreenElement || document.msFullscreenElement) {
+    try {
+      if (document.exitFullscreen) {
+        document.exitFullscreen().catch(err => console.warn('Exit fullscreen err:', err));
+      } else if (document.webkitExitFullscreen) {
+        document.webkitExitFullscreen();
+      } else if (document.mozCancelFullScreen) {
+        document.mozCancelFullScreen();
+      } else if (document.msExitFullscreen) {
+        document.msExitFullscreen();
+      }
+    } catch (e) {
+      console.warn('Exit fullscreen err:', e);
+    }
+  }
+}
+
 function toggleSimFullscreen() {
   const shell = document.getElementById('simAppShell');
   if (!shell) return;
@@ -2475,77 +2649,312 @@ function initSimFontSize() {
   applySimFontSize();
 }
 
-// Calculator Engine
-function calcDigit(digit) {
-  const screen = document.getElementById('simCalcScreen');
-  if (calcWaitingForOperand) {
-    calcCurrentVal = String(digit);
-    calcWaitingForOperand = false;
+// Calculator Engine: Live expression display with operations visible until '=' is pressed
+function updateCalcDisplay() {
+  const exprEl = document.getElementById('simCalcExpr');
+  const screenEl = document.getElementById('simCalcScreen');
+  if (!screenEl) return;
+
+  if (calcJustEvaluated) {
+    if (exprEl) exprEl.innerText = calcExpression + ' =';
+    screenEl.innerText = calcResult;
   } else {
-    calcCurrentVal = calcCurrentVal === '0' ? String(digit) : calcCurrentVal + digit;
+    if (exprEl) exprEl.innerText = '';
+    screenEl.innerText = calcExpression || '0';
   }
-  screen.innerText = calcCurrentVal;
+}
+
+function calcDigit(digit) {
+  if (calcJustEvaluated) {
+    calcExpression = String(digit);
+    calcJustEvaluated = false;
+  } else {
+    if (calcExpression === '0') {
+      calcExpression = String(digit);
+    } else {
+      calcExpression += String(digit);
+    }
+  }
+  updateCalcDisplay();
 }
 
 function calcDecimal() {
-  const screen = document.getElementById('simCalcScreen');
-  if (calcWaitingForOperand) {
-    calcCurrentVal = '0.';
-    calcWaitingForOperand = false;
-  } else if (!calcCurrentVal.includes('.')) {
-    calcCurrentVal += '.';
+  if (calcJustEvaluated) {
+    calcExpression = '0.';
+    calcJustEvaluated = false;
+  } else {
+    const parts = calcExpression.split(/[\s+−×÷-]+/);
+    const lastPart = parts[parts.length - 1];
+    if (!lastPart.includes('.')) {
+      if (lastPart === '' || calcExpression === '') {
+        calcExpression += '0.';
+      } else {
+        calcExpression += '.';
+      }
+    }
   }
-  screen.innerText = calcCurrentVal;
+  updateCalcDisplay();
 }
 
 function calcOp(op) {
-  const screen = document.getElementById('simCalcScreen');
-  const inputVal = parseFloat(calcCurrentVal);
-
-  if (calcPendingOp && !calcWaitingForOperand) {
-    calcCalculate();
+  if (calcJustEvaluated) {
+    calcExpression = calcResult + ' ' + op + ' ';
+    calcJustEvaluated = false;
   } else {
-    calcMemory = inputVal;
+    if (calcExpression === '') {
+      if (op === '−') {
+        calcExpression = '−';
+      } else {
+        calcExpression = '0 ' + op + ' ';
+      }
+    } else if (/\s[+−×÷]\s$/.test(calcExpression)) {
+      calcExpression = calcExpression.replace(/\s[+−×÷]\s$/, ` ${op} `);
+    } else {
+      calcExpression += ` ${op} `;
+    }
   }
-
-  calcPendingOp = op;
-  calcWaitingForOperand = true;
+  updateCalcDisplay();
 }
 
 function calcCalculate() {
-  const screen = document.getElementById('simCalcScreen');
-  const inputVal = parseFloat(calcCurrentVal);
+  if (!calcExpression) return;
 
-  if (calcPendingOp === '+') calcMemory += inputVal;
-  else if (calcPendingOp === '-') calcMemory -= inputVal;
-  else if (calcPendingOp === '×') calcMemory *= inputVal;
-  else if (calcPendingOp === '÷') calcMemory = inputVal !== 0 ? calcMemory / inputVal : 'Error';
+  let trimmed = calcExpression.trim();
+  if (/[+−×÷]$/.test(trimmed)) {
+    trimmed = trimmed.replace(/[+−×÷]$/, '').trim();
+  }
+  if (!trimmed) return;
 
-  calcCurrentVal = String(calcMemory);
-  calcPendingOp = null;
-  calcWaitingForOperand = true;
-  screen.innerText = calcCurrentVal;
-}
+  const safeStr = trimmed
+    .replace(/×/g, '*')
+    .replace(/÷/g, '/')
+    .replace(/−/g, '-');
 
-function calcClear() {
-  calcCurrentVal = '0';
-  calcMemory = 0;
-  calcPendingOp = null;
-  calcWaitingForOperand = false;
-  document.getElementById('simCalcScreen').innerText = '0';
-}
+  if (!/^[0-9+\-*/. ()]+$/.test(safeStr)) {
+    const screenEl = document.getElementById('simCalcScreen');
+    if (screenEl) screenEl.innerText = 'Error';
+    return;
+  }
 
-function calcSqrt() {
-  const val = parseFloat(calcCurrentVal);
-  if (val >= 0) {
-    calcCurrentVal = String(Math.sqrt(val));
-    calcWaitingForOperand = true;
-    document.getElementById('simCalcScreen').innerText = calcCurrentVal;
+  try {
+    if (/\/\s*0(?!\.)/.test(safeStr)) {
+      const screenEl = document.getElementById('simCalcScreen');
+      if (screenEl) screenEl.innerText = 'Cannot divide by 0';
+      return;
+    }
+    const evaluated = Function(`'use strict'; return (${safeStr})`)();
+    if (typeof evaluated === 'number' && isFinite(evaluated)) {
+      const rounded = Math.round(evaluated * 1e10) / 1e10;
+      calcResult = String(rounded);
+      calcJustEvaluated = true;
+      updateCalcDisplay();
+    } else {
+      const screenEl = document.getElementById('simCalcScreen');
+      if (screenEl) screenEl.innerText = 'Error';
+    }
+  } catch (err) {
+    const screenEl = document.getElementById('simCalcScreen');
+    if (screenEl) screenEl.innerText = 'Error';
   }
 }
 
-// Submit Modal & Side-by-Side Model Solution Comparison
+function calcClear() {
+  calcExpression = '';
+  calcResult = '0';
+  calcJustEvaluated = false;
+  updateCalcDisplay();
+}
+
+function calcSqrt() {
+  let valToRoot = 0;
+  if (calcJustEvaluated) {
+    valToRoot = parseFloat(calcResult);
+  } else {
+    calcCalculate();
+    valToRoot = parseFloat(calcResult);
+  }
+
+  if (!isNaN(valToRoot) && valToRoot >= 0) {
+    const res = Math.round(Math.sqrt(valToRoot) * 1e10) / 1e10;
+    calcExpression = `√(${valToRoot})`;
+    calcResult = String(res);
+    calcJustEvaluated = true;
+    updateCalcDisplay();
+  } else {
+    const screenEl = document.getElementById('simCalcScreen');
+    if (screenEl) screenEl.innerText = 'Error';
+  }
+}
+
+// Download Candidate Answers Handler & Modal
+function handleDownloadAnswersClick() {
+  exitFullscreenIfActive();
+  const paper = getOrCreatePaper(simCurrentPaperKey);
+  const sections = getPaperSections(paper);
+  const currentSec = sections[simCurrentSectionIndex];
+
+  // If in calculator section and not locked, prompt warning before leaving section
+  if (currentSec && currentSec.isCalcAllowed && !isSectionLocked(currentSec.id)) {
+    promptSectionLock(() => {
+      openCandidateAnswersModal();
+    });
+  } else {
+    openCandidateAnswersModal();
+  }
+}
+
+function openCandidateAnswersModal() {
+  exitFullscreenIfActive();
+  const paper = getOrCreatePaper(simCurrentPaperKey);
+  const sections = getPaperSections(paper);
+  const container = document.getElementById('simCandidateReviewList');
+  if (!container) return;
+  container.innerHTML = '';
+
+  const subTitle = document.getElementById('simCandidateAnswersSubtitle');
+  if (subTitle) {
+    subTitle.innerText = `${paper.title} — Recorded Candidate Answers & Working`;
+  }
+
+  sections.forEach((sec) => {
+    // Section Header
+    const secHeader = document.createElement('div');
+    secHeader.style.cssText = 'background:#0f172a; color:#ffffff; padding:12px 18px; border-radius:8px; font-weight:800; font-size:1rem; margin:16px 0 10px 0; display:flex; justify-content:space-between; align-items:center; letter-spacing:0.4px; flex-wrap:wrap; gap:8px;';
+    const durStr = sec.durationMinutes >= 60 ? (sec.durationMinutes === 90 ? '1 hr 30 mins' : `${Math.floor(sec.durationMinutes / 60)} hrs`) : `${sec.durationMinutes} mins`;
+    const marks = sec.totalMarks || (sec.questions || []).reduce((acc, q) => acc + (q.marks || 0), 0);
+    secHeader.innerHTML = `
+      <span><i class="fa-solid fa-layer-group" style="color:#38bdf8; margin-right:8px;"></i> ${escapeHtml(sec.name)}</span>
+      <span style="font-size:0.82rem; font-weight:700; opacity:0.9;">${durStr} &bull; ${marks} Marks &bull; ${sec.isCalcAllowed ? 'Calculator Permitted' : 'Non-Calculator'}</span>
+    `;
+    container.appendChild(secHeader);
+
+    sec.questions.forEach((q) => {
+      const userWorking = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_sec_${sec.id}_q${q.num}_working`)
+        || (sec.id === 'A' ? localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_q${q.num}_working`) : null)
+        || '(No response recorded)';
+      const userAns = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_sec_${sec.id}_q${q.num}_ans`)
+        || (sec.id === 'A' ? localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_q${q.num}_ans`) : null)
+        || '';
+
+      const itemCard = document.createElement('div');
+      itemCard.style.cssText = 'background:#ffffff; border:1px solid #cbd5e1; border-radius:8px; padding:14px 16px; margin-bottom:10px; box-shadow:0 1px 3px rgba(0,0,0,0.05);';
+
+      const itemLabel = paper.subject === 'writing' ? `Task ${q.num}` : `${sec.name.includes(':') ? sec.name.split(':')[0] : 'Section ' + sec.id}: Question ${q.num}`;
+
+      itemCard.innerHTML = `
+        <div style="font-weight:800; font-size:0.95rem; color:var(--sim-navy); margin-bottom:6px; display:flex; justify-content:space-between; align-items:center;">
+          <span><i class="fa-solid fa-file-signature" style="color:var(--sim-blue); margin-right:6px;"></i> ${escapeHtml(itemLabel)}: ${escapeHtml(q.scenarioTitle || '')}</span>
+          <span style="font-size:0.8rem; background:#f1f5f9; padding:2px 8px; border-radius:4px; color:#475569;">${q.marks || 0} Marks</span>
+        </div>
+        <div style="font-size:0.82rem; color:#64748b; margin-bottom:8px;">${escapeHtml(q.promptText || '')}</div>
+        <div style="font-size:0.75rem; font-weight:700; color:#475569; text-transform:uppercase; margin-bottom:4px;">Your Typed Working / Steps:</div>
+        <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; padding:10px; font-size:0.85rem; font-family:'Courier New', monospace; white-space:pre-wrap; min-height:60px; margin-bottom:8px; color:#0f172a;">${escapeHtml(userWorking)}</div>
+        ${userAns ? `
+        <div style="font-size:0.9rem; font-weight:800; color:var(--sim-navy);">
+          Your Concluded Answer: <span style="background:#e0f2fe; padding:2px 10px; border-radius:4px; color:#0369a1;">${escapeHtml(userAns)} ${escapeHtml(q.unit || '')}</span>
+        </div>` : '<div style="font-size:0.85rem; color:#94a3b8; font-style:italic;">No final answer entered</div>'}
+      `;
+      container.appendChild(itemCard);
+    });
+  });
+
+  const modal = document.getElementById('simCandidateAnswersModal');
+  if (modal) modal.classList.add('open');
+}
+
+function closeCandidateAnswersModal() {
+  const modal = document.getElementById('simCandidateAnswersModal');
+  if (modal) modal.classList.remove('open');
+}
+
+function downloadCandidateAnswersFile() {
+  const paper = getOrCreatePaper(simCurrentPaperKey);
+  const sections = getPaperSections(paper);
+  const now = new Date();
+  const dateStr = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+
+  let itemsHtml = '';
+  sections.forEach((sec) => {
+    itemsHtml += `
+      <div style="background:#0f172a; color:#ffffff; padding:10px 16px; border-radius:6px; margin:24px 0 12px 0; font-weight:bold; font-size:16px;">
+        ${escapeHtml(sec.name)} &bull; ${sec.durationMinutes} mins &bull; ${sec.isCalcAllowed ? 'Calculator Allowed' : 'Non-Calculator'}
+      </div>
+    `;
+    sec.questions.forEach((q) => {
+      const userWorking = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_sec_${sec.id}_q${q.num}_working`)
+        || (sec.id === 'A' ? localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_q${q.num}_working`) : null)
+        || '(No response recorded)';
+      const userAns = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_sec_${sec.id}_q${q.num}_ans`)
+        || (sec.id === 'A' ? localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_q${q.num}_ans`) : null)
+        || '';
+
+      itemsHtml += `
+        <div style="border:1px solid #cbd5e1; border-radius:6px; padding:14px; margin-bottom:14px; background:#ffffff; page-break-inside:avoid;">
+          <div style="font-weight:bold; font-size:15px; color:#0f172a; margin-bottom:4px;">
+            Question ${q.num}: ${escapeHtml(q.scenarioTitle || '')} (${q.marks || 0} Marks)
+          </div>
+          <div style="font-size:13px; color:#475569; margin-bottom:8px; white-space:pre-wrap;">${escapeHtml(q.promptText || '')}</div>
+          <div style="font-size:12px; font-weight:bold; color:#64748b; text-transform:uppercase;">Candidate Working:</div>
+          <pre style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:4px; padding:10px; font-size:13px; white-space:pre-wrap; font-family:'Courier New', monospace; color:#0f172a;">${escapeHtml(userWorking)}</pre>
+          ${userAns ? `<div style="font-size:14px; font-weight:bold; color:#0369a1; margin-top:8px;">Concluded Final Answer: <span style="background:#e0f2fe; padding:2px 8px; border-radius:4px;">${escapeHtml(userAns)} ${escapeHtml(q.unit || '')}</span></div>` : ''}
+        </div>
+      `;
+    });
+  });
+
+  const fullHtml = `<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <title>${escapeHtml(paper.title)} - Candidate Answers</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.5; color: #0f172a; max-width: 900px; margin: 0 auto; padding: 24px; }
+    h1 { font-size: 22px; color: #0f172a; margin-bottom: 4px; }
+    .meta { font-size: 13px; color: #64748b; margin-bottom: 20px; border-bottom: 2px solid #0284c7; padding-bottom: 12px; }
+    @media print { body { padding: 0; } }
+  </style>
+</head>
+<body>
+  <h1>${escapeHtml(paper.title)}</h1>
+  <div class="meta">
+    <strong>Master Functional Skills &bull; Candidate Response Record</strong><br>
+    Date/Time: ${dateStr} &bull; Exam Board: ${escapeHtml(paper.board || 'Pearson Edexcel')} &bull; Subject: ${escapeHtml(paper.subject || 'Maths')} (${escapeHtml(paper.level || 'L1')})
+  </div>
+  ${itemsHtml}
+</body>
+</html>`;
+
+  const blob = new Blob([fullHtml], { type: 'text/html;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  const safeTitle = (paper.title || 'Mock_Exam').replace(/[^a-zA-Z0-9_-]/g, '_');
+  a.download = `${safeTitle}_Candidate_Answers.html`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+// Check Answers Handler & Side-by-Side Model Comparison Modal
+function handleCheckAnswersClick() {
+  exitFullscreenIfActive();
+  const paper = getOrCreatePaper(simCurrentPaperKey);
+  const sections = getPaperSections(paper);
+  const currentSec = sections[simCurrentSectionIndex];
+
+  // If in calculator section and not locked, prompt warning before leaving section
+  if (currentSec && currentSec.isCalcAllowed && !isSectionLocked(currentSec.id)) {
+    promptSectionLock(() => {
+      openSubmitModal();
+    });
+  } else {
+    openSubmitModal();
+  }
+}
+
 function openSubmitModal() {
+  exitFullscreenIfActive();
   const paper = getOrCreatePaper(simCurrentPaperKey);
   const sections = getPaperSections(paper);
   const container = document.getElementById('simReviewList');
@@ -2621,4 +3030,81 @@ function openSubmitModal() {
 function closeSubmitModal() {
   const modal = document.getElementById('simSubmitModal');
   if (modal) modal.classList.remove('open');
+}
+
+function downloadMarkedReviewFile() {
+  const paper = getOrCreatePaper(simCurrentPaperKey);
+  const sections = getPaperSections(paper);
+  const now = new Date();
+  const dateStr = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+
+  let itemsHtml = '';
+  sections.forEach((sec) => {
+    itemsHtml += `
+      <div style="background:#0f172a; color:#ffffff; padding:10px 16px; border-radius:6px; margin:24px 0 12px 0; font-weight:bold; font-size:16px;">
+        ${escapeHtml(sec.name)} &bull; ${sec.durationMinutes} mins &bull; ${sec.isCalcAllowed ? 'Calculator Allowed' : 'Non-Calculator'}
+      </div>
+    `;
+    sec.questions.forEach((q) => {
+      const userWorking = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_sec_${sec.id}_q${q.num}_working`)
+        || (sec.id === 'A' ? localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_q${q.num}_working`) : null)
+        || '(No response recorded)';
+      const userAns = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_sec_${sec.id}_q${q.num}_ans`)
+        || (sec.id === 'A' ? localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_q${q.num}_ans`) : null)
+        || '';
+
+      itemsHtml += `
+        <div style="border:1px solid #cbd5e1; border-radius:6px; padding:14px; margin-bottom:14px; background:#ffffff; page-break-inside:avoid;">
+          <div style="font-weight:bold; font-size:15px; color:#0f172a; margin-bottom:8px;">
+            Question ${q.num}: ${escapeHtml(q.scenarioTitle || '')} [${escapeHtml(q.markTags || '')}]
+          </div>
+          <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
+            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; padding:10px;">
+              <div style="font-size:12px; font-weight:bold; color:#0369a1; margin-bottom:4px;">Candidate Working:</div>
+              <pre style="font-size:13px; font-family:'Courier New', monospace; white-space:pre-wrap; margin:0; color:#0f172a;">${escapeHtml(userWorking)}</pre>
+              ${userAns ? `<div style="font-size:13px; font-weight:bold; color:#0369a1; margin-top:8px;">Concluded: ${escapeHtml(userAns)} ${escapeHtml(q.unit || '')}</div>` : ''}
+            </div>
+            <div style="background:#f0fdf4; border:1px solid #86efac; border-radius:6px; padding:10px;">
+              <div style="font-size:12px; font-weight:bold; color:#15803d; margin-bottom:4px;">Master Model Solution [${escapeHtml(q.markTags || '')}]:</div>
+              <pre style="font-size:13px; font-family:'Courier New', monospace; white-space:pre-wrap; margin:0; color:#14532d;">${escapeHtml(q.modelSolution)}</pre>
+              <div style="font-size:13px; font-weight:bold; color:#15803d; margin-top:8px;">Benchmark: ${escapeHtml(q.finalBenchmark)}</div>
+            </div>
+          </div>
+        </div>
+      `;
+    });
+  });
+
+  const fullHtml = `<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <title>${escapeHtml(paper.title)} - Marked Model Review</title>
+  <style>
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.5; color: #0f172a; max-width: 960px; margin: 0 auto; padding: 24px; }
+    h1 { font-size: 22px; color: #0f172a; margin-bottom: 4px; }
+    .meta { font-size: 13px; color: #64748b; margin-bottom: 20px; border-bottom: 2px solid #0284c7; padding-bottom: 12px; }
+    @media print { body { padding: 0; } }
+  </style>
+</head>
+<body>
+  <h1>${escapeHtml(paper.title)} — Diagnostic Marked Review</h1>
+  <div class="meta">
+    <strong>Master Functional Skills &bull; Model Solution & Mark Scheme Comparison</strong><br>
+    Date/Time: ${dateStr} &bull; Exam Board: ${escapeHtml(paper.board || 'Pearson Edexcel')} &bull; Subject: ${escapeHtml(paper.subject || 'Maths')} (${escapeHtml(paper.level || 'L1')})
+  </div>
+  ${itemsHtml}
+</body>
+</html>`;
+
+  const blob = new Blob([fullHtml], { type: 'text/html;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  const safeTitle = (paper.title || 'Mock_Exam').replace(/[^a-zA-Z0-9_-]/g, '_');
+  a.download = `${safeTitle}_Marked_Model_Review.html`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
 }

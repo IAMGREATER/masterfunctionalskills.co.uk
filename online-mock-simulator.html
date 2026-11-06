@@ -404,7 +404,10 @@
                   <span><i class="fa-solid fa-calculator" style="color:var(--sim-sky);"></i> Exam Calculator</span>
                   <span style="font-size:0.72rem; color:#94a3b8;">Section B</span>
                 </div>
-                <div class="sim-calc-screen" id="simCalcScreen">0</div>
+                <div class="sim-calc-screen-box">
+                  <div class="sim-calc-expr" id="simCalcExpr"></div>
+                  <div class="sim-calc-screen" id="simCalcScreen">0</div>
+                </div>
                 <div class="sim-calc-keypad">
                   <button type="button" class="sim-calc-key" onclick="calcClear()">C</button>
                   <button type="button" class="sim-calc-key" onclick="calcSqrt()">√</button>
@@ -414,7 +417,7 @@
                   <button type="button" class="sim-calc-key" onclick="calcDigit(7)">7</button>
                   <button type="button" class="sim-calc-key" onclick="calcDigit(8)">8</button>
                   <button type="button" class="sim-calc-key" onclick="calcDigit(9)">9</button>
-                  <button type="button" class="sim-calc-key op" onclick="calcOp('-')">−</button>
+                  <button type="button" class="sim-calc-key op" onclick="calcOp('−')">−</button>
 
                   <button type="button" class="sim-calc-key" onclick="calcDigit(4)">4</button>
                   <button type="button" class="sim-calc-key" onclick="calcDigit(5)">5</button>
@@ -452,8 +455,11 @@
           <button type="button" class="sim-nav-btn sim-btn-primary" id="simNextBtn" onclick="nextQuestion()">
             Next <i class="fa-solid fa-arrow-right"></i>
           </button>
-          <button type="button" class="sim-nav-btn sim-btn-submit" onclick="openSubmitModal()">
-            <i class="fa-solid fa-check-double"></i> Submit &amp; Check Answers
+          <button type="button" class="sim-nav-btn sim-btn-download-answers" id="simDownloadAnswersBtn" onclick="handleDownloadAnswersClick()">
+            <i class="fa-solid fa-file-arrow-down"></i> Download All Answers
+          </button>
+          <button type="button" class="sim-nav-btn sim-btn-submit" id="simCheckAnswersBtn" onclick="handleCheckAnswersClick()">
+            <i class="fa-solid fa-check-double"></i> Check Answers
           </button>
         </div>
       </div>
@@ -461,6 +467,43 @@
     </div>
 
   </main>
+
+  <!-- CANDIDATE ANSWERS REVIEW & DOWNLOAD MODAL -->
+  <div class="sim-modal-overlay" id="simCandidateAnswersModal">
+    <div class="sim-modal-card">
+      <div class="sim-modal-header">
+        <div>
+          <div class="sim-modal-title">
+            <i class="fa-solid fa-file-lines" style="color:var(--sim-blue);"></i> Your Exam Answers Record
+          </div>
+          <div style="font-size:0.85rem; color:#64748b;" id="simCandidateAnswersSubtitle">
+            Review your recorded typed working and concluded answers across all sections.
+          </div>
+        </div>
+        <button type="button" class="sim-nav-btn" onclick="closeCandidateAnswersModal()" style="padding:6px 12px;">✕ Close</button>
+      </div>
+
+      <!-- Question-by-Question Candidate Responses List -->
+      <div id="simCandidateReviewList" style="display:flex; flex-direction:column; gap:16px;">
+        <!-- Rendered dynamically -->
+      </div>
+
+      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px; margin-top:10px; padding-top:14px; border-top:1px solid #e2e8f0;">
+        <button type="button" class="sim-nav-btn sim-btn-primary" onclick="downloadCandidateAnswersFile()">
+          <i class="fa-solid fa-download"></i> Download All Answers (.html)
+        </button>
+        <button type="button" class="sim-nav-btn" onclick="window.print()">
+          <i class="fa-solid fa-print"></i> Print / Save as PDF
+        </button>
+        <button type="button" class="sim-nav-btn sim-btn-submit" onclick="closeCandidateAnswersModal(); handleCheckAnswersClick();">
+          <i class="fa-solid fa-check-double"></i> Check Against Model Answers
+        </button>
+        <button type="button" class="sim-nav-btn" onclick="closeCandidateAnswersModal()">
+          Return to Simulator
+        </button>
+      </div>
+    </div>
+  </div>
 
   <!-- SUBMIT & MODEL SOLUTION COMPARISON MODAL -->
   <div class="sim-modal-overlay" id="simSubmitModal">
@@ -486,6 +529,9 @@
         <a id="simModalWatchVideoBtn" href="video-solution.html" target="_blank" class="sim-nav-btn sim-btn-primary" style="text-decoration:none;">
           <i class="fa-solid fa-circle-play"></i> Watch Step-by-Step Video Walkthrough
         </a>
+        <button type="button" class="sim-nav-btn" style="background:#0f766e; border-color:#0f766e; color:#ffffff;" onclick="downloadMarkedReviewFile()">
+          <i class="fa-solid fa-download"></i> Download Marked Review (.html)
+        </button>
         <button type="button" class="sim-nav-btn" onclick="window.print()">
           <i class="fa-solid fa-print"></i> Print Your Mock Working Record
         </button>
@@ -493,6 +539,47 @@
           Return to Simulator
         </button>
       </div>
+    </div>
+  </div>
+
+  <!-- SECTION LOCK WARNING MODAL -->
+  <div class="sim-modal-overlay" id="simSectionLockModal">
+    <div class="sim-modal-card" style="max-width:540px; text-align:center; padding:28px 24px;">
+      <div style="font-size:3.2rem; color:#f59e0b; margin-bottom:12px; line-height:1;">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+      </div>
+      <div style="font-size:1.3rem; font-weight:800; color:var(--sim-navy); margin-bottom:10px;" id="simLockModalTitle">
+        End of Calculator Section
+      </div>
+      <div style="font-size:0.98rem; color:#334155; line-height:1.55; margin-bottom:24px;" id="simLockModalMessage">
+        This will be the end of the calculator section and you cannot return.
+      </div>
+      <div style="display:flex; justify-content:center; gap:12px; flex-wrap:wrap;">
+        <button type="button" class="sim-nav-btn" onclick="cancelSectionLock()" style="padding:10px 18px; font-weight:700;">
+          <i class="fa-solid fa-arrow-left"></i> Return &amp; Check Working
+        </button>
+        <button type="button" class="sim-nav-btn" id="simConfirmLockBtn" onclick="confirmSectionLock()" style="padding:10px 18px; background:#dc2626; border-color:#dc2626; color:#ffffff; font-weight:800;">
+          <i class="fa-solid fa-lock"></i> Confirm &amp; Leave Section
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 5-MINUTE REMAINING WARNING SIGN -->
+  <div class="sim-5min-warning-banner" id="sim5MinWarningBanner" style="display:none;">
+    <div class="sim-5min-warning-content">
+      <div class="sim-5min-warning-icon">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+      </div>
+      <div class="sim-5min-warning-body">
+        <div class="sim-5min-warning-title">5 Minutes Remaining!</div>
+        <div class="sim-5min-warning-desc" id="sim5MinWarningDesc">
+          There are 5 minutes left to complete this section. Please conclude your answers and check your working.
+        </div>
+      </div>
+      <button type="button" class="sim-5min-warning-btn" onclick="dismiss5MinWarning()">
+        <i class="fa-solid fa-check"></i> I Understand
+      </button>
     </div>
   </div>
 

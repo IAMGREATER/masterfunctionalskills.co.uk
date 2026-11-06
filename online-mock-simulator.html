@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="assets/css/mfs-theme.css?v=20261024c">
   <link rel="stylesheet" href="assets/css/mfs-revision.css?v=20261024c">
   <link rel="stylesheet" href="assets/css/mfs-mobile.css?v=20261024c">
-  <link rel="stylesheet" href="assets/css/online-mock-simulator.css?v=20261106_v19">
+  <link rel="stylesheet" href="assets/css/online-mock-simulator.css?v=20261106_v20">
 </head>
 <body>
 
@@ -344,6 +344,15 @@
               </div>
             </div>
 
+            <!-- Optional Notes and Planning (Writing Mode - Positioned at bottom of Left Pane) -->
+            <div class="sim-planning-box" id="simPlanningBox" style="display:none; margin-top:auto;">
+              <div class="sim-planning-header" onclick="togglePlanningBox()">
+                <span id="simPlanningToggleText"><i class="fa-solid fa-lightbulb"></i> Optional Planning Notes &amp; Brainstorming (Click to expand)</span>
+                <i class="fa-solid fa-chevron-down" id="simPlanningIcon"></i>
+              </div>
+              <textarea class="sim-planning-textarea" id="simPlanningTextarea" placeholder="Jot down bullet points, key vocabulary, or paragraph plan here..." oninput="handlePlanningInput(this.value)" style="display:none;"></textarea>
+            </div>
+
             <div id="simLeftFooterAdvice" style="padding-top:14px; border-top:1px dashed var(--sim-slate-200); font-size:0.8rem; color:var(--sim-slate-600); display:flex; justify-content:space-between; align-items:center;">
               <span><i class="fa-solid fa-shield-halved" style="color:var(--sim-blue);"></i> Pearson Edexcel Reform Standard</span>
               <span style="font-weight:700;" id="simFooterAdvice">Show all working clearly</span>
@@ -492,15 +501,6 @@
                   </div>
                 </div>
               </div>
-            </div>
-
-            <!-- Planning Scratchpad (Writing Mode - Positioned cleanly at bottom of right pane) -->
-            <div class="sim-planning-box" id="simPlanningBox" style="display:none;">
-              <div class="sim-planning-header" onclick="togglePlanningBox()">
-                <span id="simPlanningToggleText"><i class="fa-solid fa-lightbulb"></i> Optional Planning Notes &amp; Brainstorming (Click to expand)</span>
-                <i class="fa-solid fa-chevron-down" id="simPlanningIcon"></i>
-              </div>
-              <textarea class="sim-planning-textarea" id="simPlanningTextarea" placeholder="Jot down bullet points, key vocabulary, or paragraph plan here..." oninput="handlePlanningInput(this.value)" style="display:none;"></textarea>
             </div>
 
             <!-- Proofreading Checklist (Writing Mode - At the very bottom, ultra-compact) -->
@@ -708,6 +708,6 @@
 
   <!-- Scripts -->
   <script src="assets/js/mfs-tint.js"></script>
-  <script src="assets/js/online-mock-simulator.js?v=20261106_v19"></script>
+  <script src="assets/js/online-mock-simulator.js?v=20261106_v20"></script>
 </body>
 </html>

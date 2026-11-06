@@ -1856,13 +1856,21 @@ body {
    ENGLISH WRITING MODE LAYOUT (Spacious 60% writing desk, 40% stimulus)
    ========================================================================= */
 .sim-mode-writing .sim-pane-question {
-  flex: 0.85 1 0 !important;
-  max-width: 42% !important;
+  width: 40% !important;
+  min-width: 40% !important;
+  max-width: 40% !important;
+  flex: 0 0 40% !important;
+  box-sizing: border-box !important;
+  overflow-x: hidden !important;
 }
 
 .sim-mode-writing .sim-pane-working {
-  flex: 1.25 1 0 !important;
-  min-width: 58% !important;
+  width: 60% !important;
+  min-width: 60% !important;
+  max-width: 60% !important;
+  flex: 0 0 60% !important;
+  box-sizing: border-box !important;
+  overflow-x: hidden !important;
 }
 
 .sim-mode-writing .sim-q-scenario-card {
@@ -1914,6 +1922,10 @@ body {
 }
 
 .sim-mode-writing #simStandardRightPane {
+  width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
+  overflow-x: hidden !important;
   gap: 6px !important;
 }
 
@@ -1924,10 +1936,13 @@ body {
   min-height: 520px !important;
   height: 100% !important;
   width: 100% !important;
+  max-width: 100% !important;
+  box-sizing: border-box !important;
 }
 
 .sim-mode-writing .sim-working-card {
   width: 100% !important;
+  max-width: 100% !important;
   flex: 1 1 auto !important;
   min-height: 500px !important;
   height: 100% !important;
@@ -1936,10 +1951,12 @@ body {
   border: 1.5px solid #94a3b8 !important;
   border-radius: 8px !important;
   box-shadow: 0 2px 8px rgba(0,0,0,0.04) !important;
+  box-sizing: border-box !important;
 }
 
 .sim-mode-writing .sim-working-textarea {
   width: 100% !important;
+  max-width: 100% !important;
   height: 100% !important;
   min-height: 470px !important;
   flex: 1 1 auto !important;
@@ -1965,14 +1982,22 @@ body {
    ENGLISH READING MODE LAYOUT (Dual pane: 52% source text, 48% questions)
    ========================================================================= */
 .sim-mode-reading .sim-pane-question {
-  flex: 1.15 1 0 !important;
-  max-width: 53% !important;
+  width: 52% !important;
+  min-width: 52% !important;
+  max-width: 52% !important;
+  flex: 0 0 52% !important;
+  box-sizing: border-box !important;
+  overflow-x: hidden !important;
   height: 100% !important;
 }
 
 .sim-mode-reading .sim-pane-working {
-  flex: 0.85 1 0 !important;
-  min-width: 47% !important;
+  width: 48% !important;
+  min-width: 48% !important;
+  max-width: 48% !important;
+  flex: 0 0 48% !important;
+  box-sizing: border-box !important;
+  overflow-x: hidden !important;
   height: 100% !important;
 }
 

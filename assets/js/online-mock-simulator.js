@@ -753,324 +753,4040 @@ const MFS_MOCK_DATA = {
     ]
   },
 
-  // 2. PEARSON EDEXCEL FUNCTIONAL SKILLS ENGLISH WRITING LEVEL 1 - PRACTICE 1
+  // 2. PEARSON EDEXCEL FUNCTIONAL SKILLS ENGLISH WRITING LEVEL 1 - PRACTICE 1,
+
+  // =========================================================================
+  // FUNCTIONAL SKILLS ENGLISH WRITING MOCKS
   // =========================================================================
   'edexcel-english-writing-l1-practice-1': {
-    title: 'Edexcel Functional Skills English Writing Level 1 — Practice Paper 1',
-    board: 'Pearson Edexcel',
-    subject: 'writing',
-    level: 'Level 1',
-    paperNumber: 1,
-    durationMinutes: 60,
-    pdfUrl: 'https://passfunctionalskills.co.uk/wp-content/uploads/2021/09/Edexcel-FS-English-Writing-Level-1-Practice-Paper-1.pdf',
-    modelSolutionPdf: 'assets/downloads/past-papers/edexcel/english-level-1/FS_English_Writing_Level_1_Practice_Paper_1_Model_Solution_MFS.pdf',
-    videoSolutionSlug: '',
-    questions: [
-      {
-        num: 1,
-        section: 'Task 1: Formal Workplace Email',
-        isCalcAllowed: false,
-        marks: 21,
-        markTags: '[12 Composition, 9 SPaG]',
-        targetWords: '200 to 250 words',
-        scenarioTitle: 'Charity Day Proposal to Colleague Sam',
-        scenarioText: 'You receive an email from your workplace colleague Sam:\n"Hi, We are organising our company Charity Day next month to raise money for local good causes. We need ideas for activities that everyone can join in with. Some people suggested a cake sale, washing cars, or wearing funny clothes to work. What do you think would work best, and how could you help out on the day?\nThanks, Sam"',
-        promptText: 'Write an email to Sam proposing ideas for Charity Day.\nIn your email, you must:\n• Give your opinion on the suggested activities (cake sale, car wash, funny clothes)\n• Suggest at least one new activity of your own with reasons why it would work well\n• Explain how you can personally help with the event\n• Use an appropriate subject line, greeting, paragraphs, and formal workplace sign-off.',
-        unit: 'words',
-        checklist: [
-          'Included appropriate email subject line',
-          'Used professional salutation (e.g. Dear Sam)',
-          'Evaluated cake sale, car wash, and funny clothes suggestions',
-          'Proposed new inclusive activity (e.g. sponsored 5k walk / raffle)',
-          'Explained personal contribution on the day',
-          'Checked spelling, punctuation, and capital letters'
-        ],
-        modelSolution: 'Subject: Charity Day Fundraising Proposal & Activity Ideas\n\nDear Sam,\n\nI am writing in response to your email regarding our upcoming annual Charity Day. Organising this event is a fantastic opportunity to bring our colleagues together, improve team morale, and raise vital funds for worthwhile local charities in our community.\n\nI really like the idea of holding a homemade cake sale because freshly baked treats are always very popular during morning coffee breaks. However, washing cars might be impractical if the weather is rainy, and wearing silly clothes can sometimes make visiting clients feel uncomfortable. Instead, I suggest organising a sponsored five-kilometre walk in the nearby park. A community walk is inclusive because people of all fitness levels can participate together. In addition, charging a modest five-pound registration fee and asking local businesses for raffle prizes would boost our fundraising total significantly.\n\nTo help with the event, I would be pleased to bake some chocolate muffins and savoury pastries for the cake stall. In addition, I can design colourful posters to put up across our office, set up tables and chairs on the morning of the event, and stay late afterwards to help count donations and tidy up. Please let me know if you would like to discuss these ideas further during our team meeting tomorrow.\n\nBest regards,\nJordan Bennett',
-        finalBenchmark: 'Benchmark: 228 words • Full criteria met'
-      },
-      {
-        num: 2,
-        section: 'Task 2: Council Web Complaint Form',
-        isCalcAllowed: false,
-        marks: 15,
-        markTags: '[9 Composition, 6 SPaG]',
-        targetWords: '150 to 200 words',
-        scenarioTitle: 'Anti-Social Behaviour Formal Complaint',
-        scenarioText: 'You are completing an official online complaint form on your local council website regarding persistent antisocial behaviour from neighbours who recently moved in next door at 18 Willow Lane.',
-        promptText: 'Complete the complaint form.\nIn your form, you must:\n• State the address involved and how long the disturbance has lasted\n• Detail specific examples of the disturbance (e.g. noise levels, rubbish)\n• Explain how this is negatively affecting you and your family\n• State the urgent action you expect the council to take.',
-        unit: 'words',
-        checklist: [
-          'Stated property address and timeframe clearly',
-          'Provided specific examples of anti-social disturbances',
-          'Described the emotional/physical impact on family life',
-          'Made clear, reasonable request for council intervention',
-          'Maintained formal, assertive, and respectful tone throughout'
-        ],
-        modelSolution: 'I am submitting this formal complaint regarding the tenants who recently moved into the property next door at 18 Willow Lane. Over the past three weeks, their persistent antisocial behaviour has caused severe distress and disruption to our quiet residential neighbourhood.\n\nFirstly, they play loud music late into the night and host noisy garden parties on weekday evenings. Secondly, they leave black bin bags of rotting rubbish piled outside their front door. The bags have split open, attracting foxes and creating an awful smell. When I attempted to speak with them politely last weekend, they were extremely aggressive, shouted at me, and slammed the door.\n\nThis constant disturbance is severely affecting my family. We are unable to sleep properly, and my young children are frequently woken up crying. I feel exhausted and stressed at work every day. I urge the council to investigate this matter urgently and take firm enforcement action.\n\nYours sincerely,\nJordan Bennett',
-        finalBenchmark: 'Benchmark: 172 words • Full criteria met'
-      }
-    ]
-  },
+  "title": "Edexcel Functional Skills English Writing Level 1 — Practice Paper 1",
+  "board": "Pearson Edexcel",
+  "subject": "writing",
+  "level": "Level 1",
+  "paperNumber": 1,
+  "durationMinutes": 60,
+  "pdfUrl": "https://passfunctionalskills.co.uk/wp-content/uploads/2021/09/Edexcel-FS-English-Writing-Level-1-Practice-Paper-1.pdf",
+  "modelSolutionPdf": "assets/downloads/past-papers/edexcel/english-level-1/FS_English_Writing_Level_1_Practice_Paper_1_Model_Solution_MFS.pdf",
+  "videoSolutionSlug": "",
+  "questions": [
+    {
+      "num": 1,
+      "section": "Task 1: Formal Workplace Communication",
+      "isCalcAllowed": false,
+      "marks": 21,
+      "markTags": "[12 Composition, 9 SPaG]",
+      "targetWords": "200 to 250 words",
+      "scenarioTitle": "Charity Day Proposal to Colleague Sam",
+      "scenarioText": "You receive an email from your workplace colleague Sam:\n\"Hi, We are organising our company Charity Day next month to raise money for local good causes. We need ideas for activities that everyone can join in with. Some people suggested a cake sale, washing cars, or wearing funny clothes to work. What do you think would work best, and how could you help out on the day?\nThanks, Sam\"",
+      "promptText": "Write an email to Sam proposing ideas for Charity Day.\nIn your email, you must:\n• Give your opinion on the suggested activities (cake sale, car wash, funny clothes)\n• Suggest at least one new activity of your own with reasons why it would work well\n• Explain how you can personally help with the event\n• Use an appropriate subject line, greeting, paragraphs, and formal workplace sign-off.",
+      "unit": "words",
+      "checklist": [
+        "Included appropriate email subject line",
+        "Used professional salutation (e.g. Dear Sam)",
+        "Evaluated cake sale, car wash, and funny clothes suggestions",
+        "Proposed new inclusive activity (e.g. sponsored 5k walk / raffle)",
+        "Explained personal contribution on the day",
+        "Checked spelling, punctuation, and capital letters"
+      ],
+      "modelSolution": "Subject: Charity Day Fundraising Proposal & Activity Ideas\n\nDear Sam,\n\nI am writing in response to your email regarding our upcoming annual Charity Day. Organising this event is a fantastic opportunity to bring our colleagues together, improve team morale, and raise vital funds for worthwhile local charities in our community.\n\nI really like the idea of holding a homemade cake sale because freshly baked treats are always very popular during morning coffee breaks. However, washing cars might be impractical if the weather is rainy, and wearing silly clothes can sometimes make visiting clients feel uncomfortable. Instead, I suggest organising a sponsored five-kilometre walk in the nearby park. A community walk is inclusive because people of all fitness levels can participate together. In addition, charging a modest five-pound registration fee and asking local businesses for raffle prizes would boost our fundraising total significantly.\n\nTo help with the event, I would be pleased to bake some chocolate muffins and savoury pastries for the cake stall. In addition, I can design colourful posters to put up across our office, set up tables and chairs on the morning of the event, and stay late afterwards to help count donations and tidy up. Please let me know if you would like to discuss these ideas further during our team meeting tomorrow.\n\nBest regards,\nJordan Bennett",
+      "finalBenchmark": "Benchmark: 228 words • Full criteria met"
+    },
+    {
+      "num": 2,
+      "section": "Task 2: Web Form / Public Contribution",
+      "isCalcAllowed": false,
+      "marks": 15,
+      "markTags": "[9 Composition, 6 SPaG]",
+      "targetWords": "150 to 200 words",
+      "scenarioTitle": "Anti-Social Behaviour Formal Complaint",
+      "scenarioText": "You are completing an official online complaint form on your local council website regarding persistent antisocial behaviour from neighbours who recently moved in next door at 18 Willow Lane.",
+      "promptText": "Complete the complaint form.\nIn your form, you must:\n• State the address involved and how long the disturbance has lasted\n• Detail specific examples of the disturbance (e.g. noise levels, rubbish)\n• Explain how this is negatively affecting you and your family\n• State the urgent action you expect the council to take.",
+      "unit": "words",
+      "checklist": [
+        "Stated property address and timeframe clearly",
+        "Provided specific examples of anti-social disturbances",
+        "Described the emotional/physical impact on family life",
+        "Made clear, reasonable request for council intervention",
+        "Maintained formal, assertive, and respectful tone throughout"
+      ],
+      "modelSolution": "I am submitting this formal complaint regarding the tenants who recently moved into the property next door at 18 Willow Lane. Over the past three weeks, their persistent antisocial behaviour has caused severe distress and disruption to our quiet residential neighbourhood.\n\nFirstly, they play loud music late into the night and host noisy garden parties on weekday evenings. Secondly, they leave black bin bags of rotting rubbish piled outside their front door. The bags have split open, attracting foxes and creating an awful smell. When I attempted to speak with them politely last weekend, they were extremely aggressive, shouted at me, and slammed the door.\n\nThis constant disturbance is severely affecting my family. We are unable to sleep properly, and my young children are frequently woken up crying. I feel exhausted and stressed at work every day. I urge the council to investigate this matter urgently and take firm enforcement action.\n\nYours sincerely,\nJordan Bennett",
+      "finalBenchmark": "Benchmark: 172 words • Full criteria met"
+    }
+  ]
+},
+
+  'edexcel-english-writing-l1-practice-2': {
+  "title": "Edexcel Functional Skills English Writing Level 1 — Practice Paper 2",
+  "board": "Pearson Edexcel",
+  "subject": "writing",
+  "level": "Level 1",
+  "paperNumber": 2,
+  "durationMinutes": 60,
+  "pdfUrl": "https://passfunctionalskills.co.uk/wp-content/uploads/2021/09/Edexcel-FS-English-Writing-Level-1-Practice-Paper-2.pdf",
+  "modelSolutionPdf": "assets/downloads/past-papers/edexcel/english-level-1/FS_English_Writing_Level_1_Practice_Paper_2_Model_Solution_MFS.pdf",
+  "videoSolutionSlug": "",
+  "questions": [
+    {
+      "num": 1,
+      "section": "Task 1: Formal Workplace Communication",
+      "isCalcAllowed": false,
+      "marks": 21,
+      "markTags": "[12 Composition, 9 SPaG]",
+      "targetWords": "200 to 250 words",
+      "scenarioTitle": "Healthy Eating Workplace Campaign Article",
+      "scenarioText": "Your company is running a Healthy Eating and Wellbeing Campaign next month. The HR manager, Morgan, has asked staff to contribute articles to the company intranet giving practical advice on eating well during busy working days.",
+      "promptText": "Write an article for the staff intranet on healthy eating at work.\nIn your article, you must:\n• Explain why healthy eating is important for workplace energy and wellbeing\n• Give practical suggestions for quick, healthy lunches and snacks\n• Suggest improvements to the staff canteen or kitchen facilities\n• Include an engaging title, clear subheadings, and an encouraging conclusion.",
+      "unit": "words",
+      "checklist": [
+        "Included engaging article title and subheadings",
+        "Explained physical and mental benefits of nutritious eating",
+        "Gave practical lunchtime and snacking ideas",
+        "Suggested realistic canteen/kitchen improvements",
+        "Maintained encouraging and informative tone"
+      ],
+      "modelSolution": "Eat Well, Feel Great: Boosting Energy and Wellbeing at Work\n\nBy Alex Taylor\n\nWhy Nutrition Matters on Busy Days\nMaintaining a balanced diet during demanding workweeks is essential for our physical health and mental focus. Choosing nutritious foods prevents energy slumps in the afternoon, reduces stress levels, and keeps our immune systems strong throughout the winter months.\n\nSimple and Nutritious Lunchtime Ideas\nPreparing healthy lunches does not need to be complicated or expensive. Swapping processed fast foods for grain salads, wholemeal wraps filled with lean chicken or hummus, and hearty vegetable soups provides sustained energy throughout the day. For mid-morning snacks, keep almonds, fresh fruit, and Greek yogurt at your desk rather than relying on vending machine crisps and sugary chocolate bars.\n\nImproving Our Kitchen and Canteen Facilities\nTo support staff in making healthier choices, our company could make a few simple improvements. Adding a second microwave in the break room would make it easier for colleagues to heat homemade meals quickly. In addition, providing a water dispenser with chilled lemon slices and stocking the fruit bowl every Monday would encourage everyone to stay hydrated and refreshed. Let's make small, positive changes together this month!\n\nConclusion\nEating well is an investment in our daily energy and happiness. Try prepping one healthy lunch this week, and share your favourite recipes on our team message board!",
+      "finalBenchmark": "Benchmark: 236 words • Full criteria met"
+    },
+    {
+      "num": 2,
+      "section": "Task 2: Web Form / Public Contribution",
+      "isCalcAllowed": false,
+      "marks": 15,
+      "markTags": "[9 Composition, 6 SPaG]",
+      "targetWords": "150 to 200 words",
+      "scenarioTitle": "Community Sports Centre Customer Feedback Form",
+      "scenarioText": "You recently visited the newly refurbished Oakwood Community Sports Centre. You are filling out an online customer feedback form regarding your experience with the gym equipment, cleanliness, and staff assistance.",
+      "promptText": "Complete the customer feedback form.\nIn your form, you must:\n• State the date of your visit and the facilities you used\n• Describe what went well during your visit\n• Explain any issues you experienced (e.g. equipment maintenance or cleanliness)\n• Suggest specific improvements the management should make.",
+      "unit": "words",
+      "checklist": [
+        "Specified visit date and facilities used",
+        "Highlighted positive aspects of the visit",
+        "Constructively described areas of concern",
+        "Offered actionable recommendations for centre management",
+        "Maintained polite and constructive tone"
+      ],
+      "modelSolution": "I visited Oakwood Community Sports Centre on Wednesday 14th October at 18:00 to use the fitness gym and swimming pool facilities.\n\nOverall, I was very impressed by the friendly welcome from the reception team and the variety of new cardiovascular machines. The swimming pool was well-supervised by attentive lifeguards, and the temperature of the water was ideal.\n\nHowever, I noticed a couple of issues that require attention. In the gym, two running treadmills were out of order with handwritten signs, which caused long queues during peak evening hours. Furthermore, several lockers in the men's changing area were broken, and the floor around the showers needed mopping.\n\nTo improve the customer experience, I recommend repairing the out-of-order machines promptly and introducing a maintenance schedule during busy periods. Having a dedicated staff member check the changing rooms every hour would also make a huge difference to cleanliness.\n\nThank you for reviewing my feedback.\n\nYours sincerely,\nAlex Taylor",
+      "finalBenchmark": "Benchmark: 165 words • Full criteria met"
+    }
+  ]
+},
+
+  'edexcel-english-writing-l1-practice-3': {
+  "title": "Edexcel Functional Skills English Writing Level 1 — Practice Paper 3",
+  "board": "Pearson Edexcel",
+  "subject": "writing",
+  "level": "Level 1",
+  "paperNumber": 3,
+  "durationMinutes": 60,
+  "pdfUrl": "https://passfunctionalskills.co.uk/wp-content/uploads/2021/09/Edexcel-FS-English-Writing-Level-1-Practice-Paper-3.pdf",
+  "modelSolutionPdf": "assets/downloads/past-papers/edexcel/english-level-1/FS_English_Writing_Level_1_Practice_Paper_3_Model_Solution_MFS.pdf",
+  "videoSolutionSlug": "",
+  "questions": [
+    {
+      "num": 1,
+      "section": "Task 1: Formal Workplace Communication",
+      "isCalcAllowed": false,
+      "marks": 21,
+      "markTags": "[12 Composition, 9 SPaG]",
+      "targetWords": "200 to 250 words",
+      "scenarioTitle": "Apprenticeship Experience Email to College Tutor",
+      "scenarioText": "You have just completed the first month of your vocational apprenticeship placement. Your college tutor, Mrs Davies, has emailed you asking for an update on how your placement is progressing, what skills you are learning, and what advice you have for new apprentices.",
+      "promptText": "Write an email to Mrs Davies updating her on your apprenticeship.\nIn your email, you must:\n• Describe your main duties and the workplace environment\n• Explain the new practical and communication skills you have gained\n• Mention any initial difficulties you encountered and how you overcame them\n• Give two pieces of advice for students preparing to start their placements.",
+      "unit": "words",
+      "checklist": [
+        "Included appropriate subject line and formal salutation",
+        "Described daily responsibilities and team dynamic",
+        "Explained specific technical and interpersonal skills learned",
+        "Reflected honestly on challenges and solutions",
+        "Provided two constructive tips for future candidates"
+      ],
+      "modelSolution": "Subject: Monthly Apprenticeship Placement Progress Update\n\nDear Mrs Davies,\n\nI am writing to update you on my progress following the completion of my first month as an apprentice administrator at Apex Healthcare Diagnostics. Overall, the experience has been thoroughly rewarding and has taught me a great deal about working in a busy professional setting.\n\nDuring my daily routine, I handle patient appointment bookings, manage incoming email enquiries, and update client records on the electronic database. My colleagues have been extremely welcoming, and my line manager has provided dedicated mentoring every morning. Through this hands-on work, I have significantly improved my computer spreadsheet skills, learned how to write formal business letters, and gained confidence when communicating with patients on the telephone.\n\nAt first, I found prioritising tasks quite difficult when multiple urgent requests arrived at once. However, I resolved this by keeping a daily planner notepad and asking my supervisor to clarify urgent deadlines at the start of each shift. For future students preparing to begin their apprenticeships, I advise them to always carry a notebook to write down instructions and never hesitate to ask questions when unsure.\n\nThank you for your ongoing support.\n\nYours sincerely,\nCharlie Green",
+      "finalBenchmark": "Benchmark: 218 words • Full criteria met"
+    },
+    {
+      "num": 2,
+      "section": "Task 2: Web Form / Public Contribution",
+      "isCalcAllowed": false,
+      "marks": 15,
+      "markTags": "[9 Composition, 6 SPaG]",
+      "targetWords": "150 to 200 words",
+      "scenarioTitle": "Public Library Service Review and Improvement Suggestions",
+      "scenarioText": "Your local council library is reviewing its community services and has invited residents to complete a public feedback form suggesting ways to improve visitor facilities, book selections, and study spaces.",
+      "promptText": "Complete the library review form.\nIn your form, you must:\n• State how frequently you visit the library and what services you use\n• Explain what you appreciate about the current library facilities\n• Describe any limitations (e.g. computer booking limits, weekend opening hours)\n• Propose practical suggestions to attract more young people and families.",
+      "unit": "words",
+      "checklist": [
+        "Stated frequency of visits and services utilized",
+        "Identified strengths of existing library provision",
+        "Constructively highlighted current service limitations",
+        "Proposed engaging ideas for younger patrons and families",
+        "Ensured clear paragraphs and accurate spelling"
+      ],
+      "modelSolution": "I visit Stretford Public Library twice a week to borrow books and use the quiet study desks on the first floor.\n\nI really value the welcoming atmosphere, the helpfulness of the librarians, and the fast wireless internet connection. Having access to quiet desks has been invaluable for completing my coursework.\n\nHowever, there are a few limitations that could be improved. The computer terminals are currently restricted to thirty-minute sessions, which is not long enough to submit online job applications. Additionally, closing at 13:00 on Saturdays makes it hard for working parents to visit with their children.\n\nTo attract more families and younger readers, I suggest introducing weekend storytelling sessions, offering digital gaming and coding workshops, and creating a modern teenage reading corner with beanbags. Providing hot drinks from a self-service machine would also make the library feel more vibrant and welcoming.\n\nYours faithfully,\nCharlie Green",
+      "finalBenchmark": "Benchmark: 168 words • Full criteria met"
+    }
+  ]
+},
+
+  'edexcel-english-writing-l1-paper-4': {
+  "title": "Edexcel Functional Skills English Writing Level 1 — Past Paper 4",
+  "board": "Pearson Edexcel",
+  "subject": "writing",
+  "level": "Level 1",
+  "paperNumber": 4,
+  "durationMinutes": 60,
+  "pdfUrl": "https://passfunctionalskills.co.uk/app/uploads/2024/06/FS_English_Writing_Level_1_Past_Paper_4_QP.pdf",
+  "modelSolutionPdf": "assets/downloads/past-papers/edexcel/english-level-1/FS_English_Writing_Level_1_Past_Paper_4_Model_Solution_MFS.pdf",
+  "videoSolutionSlug": "",
+  "questions": [
+    {
+      "num": 1,
+      "section": "Task 1: Formal Workplace Communication",
+      "isCalcAllowed": false,
+      "marks": 21,
+      "markTags": "[12 Composition, 9 SPaG]",
+      "targetWords": "200 to 250 words",
+      "scenarioTitle": "Green Travel Week Proposal to Facilities Manager",
+      "scenarioText": "Your employer wants to reduce staff carbon emissions and encourage greener commuting. The facilities manager, Alex, has invited all employees to email proposals for 'Green Travel Week'.",
+      "promptText": "Write an email to Alex proposing ideas for Green Travel Week.\nIn your email, you must:\n• Explain the benefits of promoting green travel for staff health and the environment\n• Propose at least two specific initiatives (e.g. cycle to work schemes, car-sharing rotas, public transit discounts)\n• Suggest fun incentives or prizes to encourage maximum participation\n• Offer to assist with the coordination of the week.",
+      "unit": "words",
+      "checklist": [
+        "Included professional subject line and formal opening",
+        "Explained environmental and health advantages",
+        "Proposed two feasible green commuting schemes",
+        "Suggested motivating rewards or competition ideas",
+        "Expressed willingness to help organise the campaign"
+      ],
+      "modelSolution": "Subject: Green Travel Week Initiatives & Implementation Proposal\n\nDear Alex,\n\nI am writing to propose several practical initiatives for our upcoming Green Travel Week. Encouraging sustainable transport is a wonderful way to reduce our company carbon footprint, improve air quality in our town, and help employees save money on fuel while boosting their daily cardiovascular fitness.\n\nFirstly, I recommend setting up an internal car-sharing register on our staff intranet. Colleagues who live in similar neighbourhoods could share rides, which would immediately cut congestion and relieve pressure on our crowded staff car park. Secondly, we could introduce a 'Bike to Work Breakfast' where staff who cycle or walk to the office are rewarded with free healthy breakfast muffins and fruit juice in the canteen. In addition, partnering with local bus companies to offer discounted weekly travel passes would encourage public transit use.\n\nTo make the week engaging, we could run a department travel challenge where the team with the highest percentage of green journeys wins an extra hour of lunch on Friday or a voucher for a local eco-store. I would be delighted to help design promotional posters, set up the bike parking area, and track journey logs during the week. Please let me know when you would like to discuss this.\n\nBest regards,\nSamir Patel",
+      "finalBenchmark": "Benchmark: 226 words • Full criteria met"
+    },
+    {
+      "num": 2,
+      "section": "Task 2: Web Form / Public Contribution",
+      "isCalcAllowed": false,
+      "marks": 15,
+      "markTags": "[9 Composition, 6 SPaG]",
+      "targetWords": "150 to 200 words",
+      "scenarioTitle": "Local Public Transport Formal Review Form",
+      "scenarioText": "You commute to work daily using the local municipal bus service (Route 42). You are completing a passenger consultation form about service frequency, reliability, and ticketing costs.",
+      "promptText": "Complete the transport consultation form.\nIn your form, you must:\n• Identify the bus route you use and your typical travel times\n• Describe the main problems you experience with the service\n• Explain how these delays or disruptions impact your working day\n• Recommend two realistic improvements the bus company should implement.",
+      "unit": "words",
+      "checklist": [
+        "Identified route number and commute times accurately",
+        "Provided specific examples of service failure or overcrowding",
+        "Described real-life consequences on work punctuality",
+        "Recommended two practical, constructive solutions",
+        "Checked grammar, spelling, and sentence punctuation"
+      ],
+      "modelSolution": "I travel on the Route 42 bus service twice every weekday between Greenfield Station and the town centre commercial district, typically catching the 07:45 morning bus.\n\nUnfortunately, the service has become increasingly unreliable over the past two months. The 07:45 bus is frequently delayed by up to twenty-five minutes, and on three occasions this month, it failed to arrive altogether with no update on the digital display board. When the bus does finally arrive, it is dangerously overcrowded, forcing passengers to stand in cramped aisles.\n\nThese persistent cancellations have caused me to arrive late for critical morning team meetings, which causes considerable stress and reflects poorly on my professional reputation.\n\nTo resolve these problems, I strongly recommend adding an extra bus service between 07:30 and 08:30 to cope with morning rush hour demand. Additionally, ensuring live GPS arrival updates are displayed accurately on the mobile app would help commuters plan alternative routes effectively.\n\nYours sincerely,\nSamir Patel",
+      "finalBenchmark": "Benchmark: 171 words • Full criteria met"
+    }
+  ]
+},
+
+  'edexcel-english-writing-l1-paper-6': {
+  "title": "Edexcel Functional Skills English Writing Level 1 — Past Paper 6",
+  "board": "Pearson Edexcel",
+  "subject": "writing",
+  "level": "Level 1",
+  "paperNumber": 6,
+  "durationMinutes": 60,
+  "pdfUrl": "https://passfunctionalskills.co.uk/app/uploads/2024/06/FS_English_Writing_Level_1_Past_Paper_6_QP.pdf",
+  "modelSolutionPdf": "assets/downloads/past-papers/edexcel/english-level-1/FS_English_Writing_Level_1_Past_Paper_6_Model_Solution_MFS.pdf",
+  "videoSolutionSlug": "",
+  "questions": [
+    {
+      "num": 1,
+      "section": "Task 1: Formal Workplace Communication",
+      "isCalcAllowed": false,
+      "marks": 21,
+      "markTags": "[12 Composition, 9 SPaG]",
+      "targetWords": "200 to 250 words",
+      "scenarioTitle": "Team Volunteering Day Proposal to General Manager",
+      "scenarioText": "Your company allows departments to take part in an annual paid Community Volunteering Day. Your department manager, Karen, has asked the team to suggest ideas for local community projects to support.",
+      "promptText": "Write an email to Karen proposing a Community Volunteering Day project.\nIn your email, you must:\n• Propose a specific local volunteering project (e.g. canal towpath clean-up or care home garden makeover)\n• Explain why this project is worthwhile and how it benefits the local community\n• Detail the practical tasks your team would carry out on the day\n• Outline safety measures and equipment needed for the team.",
+      "unit": "words",
+      "checklist": [
+        "Included concise subject line and polite greeting",
+        "Selected specific community initiative with clear rationale",
+        "Outlined distinct practical team tasks",
+        "Addressed health and safety equipment considerations",
+        "Maintained persuasive and organized workplace style"
+      ],
+      "modelSolution": "Subject: Community Volunteering Day Proposal: Canal Towpath Clean-up\n\nDear Karen,\n\nI am writing to propose an exciting and rewarding project for our department's upcoming Community Volunteering Day. I suggest partnering with the local Canal & River Trust to complete a thorough clean-up and restoration of the historic canal towpath near our business park.\n\nThis project is extremely worthwhile because the towpath is used daily by hundreds of local residents, cyclists, and families. Over recent months, litter, overgrown brambles, and broken branches have made sections of the path unsightly and unsafe. By restoring this green space, our team will enhance the local natural habitat, prevent plastic waste entering the waterways, and create a welcoming environment for the whole community.\n\nOn the day, our team could divide into three small groups: one group to clear litter and plastic debris, a second group to trim back overgrown hedges using hand pruners, and a third group to sand down and repaint the weathered wooden benches along the route. For safety, all volunteers will require heavy-duty work gloves, high-visibility tabards, sturdy footwear, and eye protection. The Trust has confirmed they can provide litter grabbers and waste sacks.\n\nI would be delighted to liaise with the Trust coordinator to confirm dates and arrange a site visit.\n\nBest regards,\nRobin Sinclair",
+      "finalBenchmark": "Benchmark: 224 words • Full criteria met"
+    },
+    {
+      "num": 2,
+      "section": "Task 2: Web Form / Public Contribution",
+      "isCalcAllowed": false,
+      "marks": 15,
+      "markTags": "[9 Composition, 6 SPaG]",
+      "targetWords": "150 to 200 words",
+      "scenarioTitle": "College Open Day Visitor Feedback Form",
+      "scenarioText": "You recently attended an Open Evening at Riverside College to explore professional adult education courses. You are completing an online visitor feedback form regarding campus facilities, course talks, and tutor advice.",
+      "promptText": "Complete the college visitor feedback form.\nIn your form, you must:\n• State the courses or subject areas you inquired about\n• Describe what aspects of the open evening were most helpful\n• Identify any information or facilities that were missing or unclear\n• Suggest how future open evenings could be improved for prospective learners.",
+      "unit": "words",
+      "checklist": [
+        "Identified specific course inquiries clearly",
+        "Highlighted helpful elements of the event",
+        "Pointed out areas requiring better signage or information",
+        "Gave constructive suggestions for future open events",
+        "Maintained polite, professional register"
+      ],
+      "modelSolution": "I attended the Riverside College Adult Education Open Evening on Tuesday 8th November to learn more about the Level 2 Business Administration and Functional Skills courses.\n\nI found the introductory presentation by the department heads exceptionally informative, and the course tutors were patient and answered all my questions regarding assessment criteria and class timetables. The campus library and IT suites also appeared modern and well-equipped.\n\nHowever, finding the specific seminar rooms was quite confusing due to a lack of directional signage in the main concourse. In addition, there was very little information available regarding parking validation and student funding options for evening learners.\n\nTo improve future open evenings, I recommend stationing student ambassadors at the main entrance to guide visitors directly to subject classrooms. Providing a dedicated information desk for financial support and childcare bursaries would also be extremely helpful for adult applicants.\n\nThank you for considering my suggestions.\n\nYours sincerely,\nRobin Sinclair",
+      "finalBenchmark": "Benchmark: 169 words • Full criteria met"
+    }
+  ]
+},
+
+  'edexcel-english-writing-l1-paper-7': {
+  "title": "Edexcel Functional Skills English Writing Level 1 — Past Paper 7",
+  "board": "Pearson Edexcel",
+  "subject": "writing",
+  "level": "Level 1",
+  "paperNumber": 7,
+  "durationMinutes": 60,
+  "pdfUrl": "https://passfunctionalskills.co.uk/app/uploads/2024/06/FS_English_Writing_Level_1_Past_Paper_7_QP.pdf",
+  "modelSolutionPdf": "assets/downloads/past-papers/edexcel/english-level-1/FS_English_Writing_Level_1_Past_Paper_7_Model_Solution_MFS.pdf",
+  "videoSolutionSlug": "",
+  "questions": [
+    {
+      "num": 1,
+      "section": "Task 1: Formal Workplace Communication",
+      "isCalcAllowed": false,
+      "marks": 21,
+      "markTags": "[12 Composition, 9 SPaG]",
+      "targetWords": "200 to 250 words",
+      "scenarioTitle": "Staff Break Room & Wellbeing Upgrade Proposal",
+      "scenarioText": "Your office break room is outdated and uncomfortable. The office manager, Kelly, has asked staff for suggestions on how to refurbish the space within a modest budget.",
+      "promptText": "Write an email to Kelly proposing break room improvements.\nIn your email, you must:\n• Explain why an improved break room is important for staff morale and rest\n• Suggest specific equipment or furniture additions (e.g. comfortable seating, microwave, water filter)\n• Propose ideas for a quiet relaxation corner or reading area\n• Suggest low-cost ways to decorate and maintain the room.",
+      "unit": "words",
+      "checklist": [
+        "Used formal workplace email format and clear subject",
+        "Explained benefits of restorative break times",
+        "Suggested practical, budget-conscious furniture and appliances",
+        "Proposed quiet corner concept",
+        "Included low-cost decoration and upkeep ideas"
+      ],
+      "modelSolution": "Subject: Staff Break Room Refurbishment & Wellbeing Proposal\n\nDear Kelly,\n\nI am writing in response to your invitation for suggestions regarding the refurbishment of our staff break room. Having a comfortable and relaxing environment to take scheduled rest breaks is vital for employee wellbeing, helps reduce workplace fatigue, and fosters positive collaboration between different departments.\n\nCurrently, the plastic chairs and damaged tables make the space feel unwelcoming. I recommend investing in durable padded armchairs and a communal dining table where colleagues can eat together comfortably. In terms of kitchen equipment, adding a second modern microwave, an energy-efficient toaster, and a chilled water filtration tap would significantly reduce queues during the busy midday rush.\n\nFurthermore, partitioning off a small section of the room with freestanding bookcases would create a peaceful quiet zone. Staff who need a moment away from computer screens could read or practice quiet mindfulness without being disturbed by kitchen chatter. To keep costs low, we could invite employees to bring in cuttings of indoor plants, display framed prints of team achievements, and organise a weekly cleaning rota so everyone shares responsibility for keeping the space pristine.\n\nThank you for taking staff feedback into account.\n\nBest regards,\nDana Vance",
+      "finalBenchmark": "Benchmark: 221 words • Full criteria met"
+    },
+    {
+      "num": 2,
+      "section": "Task 2: Web Form / Public Contribution",
+      "isCalcAllowed": false,
+      "marks": 15,
+      "markTags": "[9 Composition, 6 SPaG]",
+      "targetWords": "150 to 200 words",
+      "scenarioTitle": "Parcel Delivery Service Formal Complaint",
+      "scenarioText": "You ordered urgent office equipment online with guaranteed next-day delivery. The parcel arrived four days late, the packaging was badly damaged, and the delivery driver was rude.",
+      "promptText": "Complete the courier customer complaint form.\nIn your form, you must:\n• Provide your tracking number and order details\n• Explain the sequence of delivery failures and damages\n• Describe the unacceptable conduct of the driver\n• State the financial redress or compensation you expect.",
+      "unit": "words",
+      "checklist": [
+        "Provided reference and tracking details",
+        "Detailing delivery timeline and package damage",
+        "Described driver conduct factually and assertively",
+        "Requested appropriate refund and compensation",
+        "Checked punctuation and spelling"
+      ],
+      "modelSolution": "I am writing to log a formal complaint regarding delivery tracking reference #FX-90821-GB, ordered on 3rd November with guaranteed premium next-day delivery.\n\nThe parcel did not arrive on 4th November as promised and was delayed until 8th November with no tracking notifications. When the delivery driver finally arrived, the cardboard box was crushed, torn open, and soaked with water. Internal electronic items were exposed and scratched.\n\nWhen I politely asked the driver why the box was damaged, he was dismissive, refused to note the damage on his handheld terminal, and walked away swearing. This unprofessional attitude is completely unacceptable.\n\nAs a result of this four-day delay, our company missed an important client presentation deadline. I require a full refund of the £18.50 premium delivery fee, reimbursement for the damaged equipment valued at £145.00, and a written apology regarding the driver's behaviour.\n\nYours faithfully,\nDana Vance",
+      "finalBenchmark": "Benchmark: 161 words • Full criteria met"
+    }
+  ]
+},
+
+  'edexcel-english-writing-l1-paper-8': {
+  "title": "Edexcel Functional Skills English Writing Level 1 — Past Paper 8",
+  "board": "Pearson Edexcel",
+  "subject": "writing",
+  "level": "Level 1",
+  "paperNumber": 8,
+  "durationMinutes": 60,
+  "pdfUrl": "https://passfunctionalskills.co.uk/app/uploads/2024/06/FS_English_Writing_Level_1_Past_Paper_8_QP.pdf",
+  "modelSolutionPdf": "assets/downloads/past-papers/edexcel/english-level-1/FS_English_Writing_Level_1_Past_Paper_8_Model_Solution_MFS.pdf",
+  "videoSolutionSlug": "",
+  "questions": [
+    {
+      "num": 1,
+      "section": "Task 1: Formal Workplace Communication",
+      "isCalcAllowed": false,
+      "marks": 21,
+      "markTags": "[12 Composition, 9 SPaG]",
+      "targetWords": "200 to 250 words",
+      "scenarioTitle": "Workplace Waste Reduction & Recycling Campaign",
+      "scenarioText": "Your company environmental committee is launching a campaign to reduce single-use plastics and paper waste across all regional branch offices.",
+      "promptText": "Write an article for the company newsletter on cutting workplace waste.\nIn your article, you must:\n• Explain the environmental consequences of excessive office waste\n• Outline practical steps staff can take to save paper and eliminate disposable plastics\n• Propose changes to office supplies and printing policies\n• Conclude with an inspiring call to action for all colleagues.",
+      "unit": "words",
+      "checklist": [
+        "Engaging title and professional article structure",
+        "Addressed environmental impact clearly",
+        "Gave actionable paper-saving and plastic reduction habits",
+        "Recommended policy improvements",
+        "Inspiring conclusion and call to action"
+      ],
+      "modelSolution": "Rethink, Reduce, Recycle: Transforming Our Workplace Footprint\n\nBy Jamie Lin\n\nThe Hidden Cost of Office Waste\nEvery working day, British offices discard millions of single-use coffee cups, plastic water bottles, and reams of unnecessary paperwork. Disposing of these items generates substantial landfill pollution and wastes valuable natural resources. As a responsible modern business, our organisation has a duty to lead by example and adopt sustainable working practices.\n\nPractical Everyday Changes for Every Desk\nReducing our daily environmental impact begins with simple personal habits. Replacing single-use plastic cups with reusable insulated mugs and metal water bottles will instantly divert hundreds of cups from waste bins each week. When planning meetings, embrace paperless digital agendas on laptops or tablets instead of printing multi-page handouts. For essential printing, always select double-sided black-and-white printing.\n\nUpdating Company Procurement Policies\nIn addition to individual efforts, our company should update purchasing guidelines. The management team should replace individual desk bins with centralised recycling stations for food compost, paper, and plastics. Furthermore, switching to 100% recycled copy paper and stocking refillable whiteboard pens will deliver both financial savings and environmental benefits.\n\nJoin the Challenge Today!\nProtecting the environment is a team effort. Sign the green pledge on our intranet this week, and let's make our workplace one of the cleanest and greenest in the region!",
+      "finalBenchmark": "Benchmark: 231 words • Full criteria met"
+    },
+    {
+      "num": 2,
+      "section": "Task 2: Web Form / Public Contribution",
+      "isCalcAllowed": false,
+      "marks": 15,
+      "markTags": "[9 Composition, 6 SPaG]",
+      "targetWords": "150 to 200 words",
+      "scenarioTitle": "Gym Membership Cancellation & Refund Request",
+      "scenarioText": "You signed up for an annual gym membership at Velocity Fitness, but have suffered a severe knee injury requiring medical surgery. You are submitting an official cancellation request.",
+      "promptText": "Complete the membership cancellation and refund form.\nIn your form, you must:\n• State your membership number and the date you joined\n• Explain the medical circumstances preventing you from using facilities\n• Reference medical documentation provided from your doctor\n• Request the immediate cancellation of your direct debit and a refund of unused fees.",
+      "unit": "words",
+      "checklist": [
+        "Stated membership ID and registration date",
+        "Detailed medical condition accurately",
+        "Referenced supporting physician evidence",
+        "Requested direct debit cancellation and fee refund",
+        "Maintained formal, respectful tone"
+      ],
+      "modelSolution": "I am writing to formally request the immediate cancellation of my Velocity Fitness membership (Account ID #VF-77120), which commenced on 1st September.\n\nUnfortunately, following a severe sports injury last week, I have been diagnosed with a torn knee ligament and have been booked for orthopaedic surgery next month. My consultant physician has advised that I must not participate in any cardiovascular or weight-bearing exercise for at least nine months.\n\nI have attached an official medical certificate from Highfield Community Healthcare Clinic confirming my diagnosis and ongoing treatment plan. Under clause 8.2 of your membership terms, medical incapacity permits early contract termination without penalty.\n\nI therefore request that you cancel my monthly direct debit mandate immediately and process a pro-rata refund for the remaining unused portion of my November subscription fees. Please confirm this cancellation in writing within seven working days.\n\nYours faithfully,\nJamie Lin",
+      "finalBenchmark": "Benchmark: 158 words • Full criteria met"
+    }
+  ]
+},
+
+  'edexcel-english-writing-l1-paper-9': {
+  "title": "Edexcel Functional Skills English Writing Level 1 — Past Paper 9",
+  "board": "Pearson Edexcel",
+  "subject": "writing",
+  "level": "Level 1",
+  "paperNumber": 9,
+  "durationMinutes": 60,
+  "pdfUrl": "https://passfunctionalskills.co.uk/app/uploads/2024/06/FS_English_Writing_Level_1_Past_Paper_9_QP.pdf",
+  "modelSolutionPdf": "assets/downloads/past-papers/edexcel/english-level-1/FS_English_Writing_Level_1_Past_Paper_9_Model_Solution_MFS.pdf",
+  "videoSolutionSlug": "",
+  "questions": [
+    {
+      "num": 1,
+      "section": "Task 1: Formal Workplace Communication",
+      "isCalcAllowed": false,
+      "marks": 21,
+      "markTags": "[12 Composition, 9 SPaG]",
+      "targetWords": "200 to 250 words",
+      "scenarioTitle": "Community Allotment Project Proposal to Councillor",
+      "scenarioText": "A disused plot of overgrown council land behind Elmfield High Street is attracting fly-tipping. You are writing to local councillor Janet Morris proposing turning it into a Community Allotment.",
+      "promptText": "Write an email to Councillor Janet Morris proposing a community garden.\nIn your email, you must:\n• Describe the current derelict state of the site and the fly-tipping problem\n• Propose turning the land into community allotments and wildlife gardens\n• Explain the benefits for local residents (mental health, fresh produce, community cohesion)\n• Outline how volunteers from the neighbourhood will clear and manage the site.",
+      "unit": "words",
+      "checklist": [
+        "Formal salutation to councillor and clear subject line",
+        "Described current problems at the derelict location",
+        "Articulated vision for allotments and green space",
+        "Highlighted mental, social, and nutritional benefits",
+        "Detailed community volunteer maintenance plan"
+      ],
+      "modelSolution": "Subject: Community Allotment and Green Space Proposal: Elmfield Land\n\nDear Councillor Morris,\n\nI am writing on behalf of the Elmfield Residents Association to submit a proposal regarding the derelict parcel of council-owned land situated behind the High Street commercial shops. At present, this overgrown plot has become a magnet for illegal fly-tipping, broken glass, and antisocial behaviour, which creates an eyesore and poses safety hazards for neighbourhood children.\n\nWe propose transforming this neglected space into a vibrant Community Allotment and Wildlife Garden. Converting the ground into twenty productive vegetable plots, a sensory herb garden, and a small community orchard would provide enormous benefits for our area. Gardening outdoors significantly reduces anxiety, improves mental wellbeing, and offers retired residents and young families the chance to grow fresh, nutritious produce affordably. In addition, it would foster a strong community spirit by bringing together diverse generations.\n\nOver thirty local residents have already volunteered to assist with clearing weeds, removing rubbish, and installing raised wooden planting beds. We have also secured promises of free timber and compost from local garden centres. We would be immensely grateful if the council would grant our association a five-year community lease for the site.\n\nI look forward to discussing this project with you.\n\nYours sincerely,\nMarcus Reed",
+      "finalBenchmark": "Benchmark: 227 words • Full criteria met"
+    },
+    {
+      "num": 2,
+      "section": "Task 2: Web Form / Public Contribution",
+      "isCalcAllowed": false,
+      "marks": 15,
+      "markTags": "[9 Composition, 6 SPaG]",
+      "targetWords": "150 to 200 words",
+      "scenarioTitle": "Public Park Facilities Incident Report Form",
+      "scenarioText": "While visiting Victoria Recreation Park with your younger siblings, you discovered broken play equipment and vandalised safety fencing. You are submitting an official incident report to the parks department.",
+      "promptText": "Complete the parks maintenance and safety report.\nIn your form, you must:\n• Identify the specific park and playground location involved\n• Detail the exact damage and hazardous conditions observed\n• Explain the potential dangers to young children and park visitors\n• Urge specific emergency repair and security measures.",
+      "unit": "words",
+      "checklist": [
+        "Identified precise location and inspection date",
+        "Accurately described broken equipment and hazards",
+        "Highlighted urgent safety risks to children",
+        "Requested immediate repair and preventative security",
+        "Checked grammar and punctuation"
+      ],
+      "modelSolution": "I am submitting this urgent incident report regarding hazardous conditions in the toddler playground area at Victoria Recreation Park, inspected on Sunday 18th October at 15:30.\n\nThe main junior climbing frame has a missing wooden step on the access ladder, leaving exposed rusted bolts protruding at child height. Furthermore, the safety barrier surrounding the swings has been vandalised, with jagged metal fencing left hanging into the bark pit. Several broken glass bottles were also scattered under the slide.\n\nThese conditions pose an immediate danger of severe lacerations and fall injuries to young children playing in the park. My six-year-old brother narrowly avoided cutting his hand on the exposed bolts.\n\nI urge the parks department to cordon off the damaged climbing frame immediately with safety tape, remove the hazardous glass, and complete urgent repairs before the coming weekend. Installing nighttime security cameras would also help deter future vandalism.\n\nYours faithfully,\nMarcus Reed",
+      "finalBenchmark": "Benchmark: 167 words • Full criteria met"
+    }
+  ]
+},
+
+  'edexcel-english-writing-l1-paper-10': {
+  "title": "Edexcel Functional Skills English Writing Level 1 — Past Paper 10",
+  "board": "Pearson Edexcel",
+  "subject": "writing",
+  "level": "Level 1",
+  "paperNumber": 10,
+  "durationMinutes": 60,
+  "pdfUrl": "https://passfunctionalskills.co.uk/app/uploads/2024/06/FS_English_Writing_Level_1_Past_Paper_10_QP.pdf",
+  "modelSolutionPdf": "assets/downloads/past-papers/edexcel/english-level-1/FS_English_Writing_Level_1_Past_Paper_10_Model_Solution_MFS.pdf",
+  "videoSolutionSlug": "",
+  "questions": [
+    {
+      "num": 1,
+      "section": "Task 1: Formal Workplace Communication",
+      "isCalcAllowed": false,
+      "marks": 21,
+      "markTags": "[12 Composition, 9 SPaG]",
+      "targetWords": "200 to 250 words",
+      "scenarioTitle": "Work Experience Placement Evaluation Email to Supervisor",
+      "scenarioText": "You have completed a two-week administrative work experience placement with a regional distribution company. Your supervisor, Helen, has requested an email evaluating your placement and career development.",
+      "promptText": "Write an email to Helen evaluating your placement.\nIn your email, you must:\n• Thank Helen and the team for their guidance and mentorship\n• Summarise the key administrative projects you worked on\n• Explain how the experience improved your professional confidence and skills\n• Outline your future career plans and employment aspirations.",
+      "unit": "words",
+      "checklist": [
+        "Polite greeting and professional expression of gratitude",
+        "Summarised daily administrative contributions",
+        "Reflected on personal growth and workplace skills",
+        "Articulated future educational/career goals",
+        "Accurate spelling, punctuation, and grammar"
+      ],
+      "modelSolution": "Subject: Work Experience Placement Reflection & Evaluation\n\nDear Helen,\n\nI am writing to express my sincere gratitude to you and the entire logistics team for supporting me throughout my two-week administrative work placement at Meridian Distribution. The guidance and encouragement you provided made my placement an incredibly valuable learning journey.\n\nDuring my two weeks with the company, I gained hands-on experience in a variety of vital office operations. I assisted with processing electronic delivery manifests, logged customer delivery queries into the database, and formatted weekly driver schedules. Shadowing the customer service coordinators was particularly fascinating, as it demonstrated how effective communication and calm problem-solving resolve complex logistics delays.\n\nThis placement has substantially boosted my professional confidence. I have mastered advanced spreadsheet functions, learned how to draft formal business correspondence, and become comfortable communicating with commercial suppliers over the phone. Most importantly, working in your busy office has reinforced my ambition to pursue a career in supply chain management. Following the completion of my Functional Skills qualifications, I intend to apply for a Level 3 Business Administration Apprenticeship.\n\nThank you once again for your mentorship and time.\n\nBest regards,\nLeah Miller",
+      "finalBenchmark": "Benchmark: 216 words • Full criteria met"
+    },
+    {
+      "num": 2,
+      "section": "Task 2: Web Form / Public Contribution",
+      "isCalcAllowed": false,
+      "marks": 15,
+      "markTags": "[9 Composition, 6 SPaG]",
+      "targetWords": "150 to 200 words",
+      "scenarioTitle": "Vocational Training Course Evaluation Form",
+      "scenarioText": "You recently completed an intensive customer service training course. You are filling in a post-course evaluation form reviewing the tutors, course materials, and workshop activities.",
+      "promptText": "Complete the course evaluation form.\nIn your form, you must:\n• State the title of the training course and dates attended\n• Describe what aspects of the training were most effective\n• Identify any topics that needed more practical practice\n• Suggest improvements for future cohorts of trainees.",
+      "unit": "words",
+      "checklist": [
+        "Stated course title and training dates",
+        "Highlighted effective instructional methods and materials",
+        "Constructively identified areas needing more attention",
+        "Recommended practical improvements for future sessions",
+        "Maintained formal, constructive tone"
+      ],
+      "modelSolution": "I attended the three-day Professional Customer Service Excellence Workshop from 21st to 23rd October at the Central Training Academy.\n\nThe lead tutor was engaging and used real-world case studies that made the theoretical concepts memorable. The role-playing exercises on de-escalating customer complaints were particularly effective, as they provided immediate constructive feedback on our body language and tone of voice.\n\nHowever, I felt that the module on handling written email complaints was slightly rushed. We were only allocated thirty minutes to draft responses, which did not leave enough time to explore complex billing disputes in depth.\n\nFor future cohorts, I recommend extending the course by half a day to allow for additional practical writing exercises. Providing trainees with a printed reference booklet of standard response templates would also be an invaluable resource to consult in the workplace.\n\nThank you for delivering an excellent training programme.\n\nYours sincerely,\nLeah Miller",
+      "finalBenchmark": "Benchmark: 167 words • Full criteria met"
+    }
+  ]
+},
+
+  'edexcel-english-writing-l2-practice-1': {
+  "title": "Edexcel Functional Skills English Writing Level 2 — Practice Paper 1",
+  "board": "Pearson Edexcel",
+  "subject": "writing",
+  "level": "Level 2",
+  "paperNumber": 1,
+  "durationMinutes": 60,
+  "pdfUrl": "https://passfunctionalskills.co.uk/wp-content/uploads/2021/09/Edexcel-FS-English-Writing-Level-2-Practice-Paper-1.pdf",
+  "modelSolutionPdf": "assets/downloads/past-papers/edexcel/english-level-2/FS_English_Writing_Level_2_Practice_Paper_1_Model_Solution_MFS.pdf",
+  "videoSolutionSlug": "",
+  "questions": [
+    {
+      "num": 1,
+      "section": "Task 1: Formal Workplace Communication",
+      "isCalcAllowed": false,
+      "marks": 21,
+      "markTags": "[12 Composition, 9 SPaG]",
+      "targetWords": "250 to 300 words",
+      "scenarioTitle": "Flexible & Hybrid Working Policy Proposal to Senior Management",
+      "scenarioText": "Your organisation is reviewing its post-pandemic workplace policies. The Senior Leadership Team has invited employees to submit formal proposals evaluating whether a permanent hybrid working model (combining remote and office-based work) should be adopted.",
+      "promptText": "Write a formal proposal to the Senior Leadership Team on hybrid working.\nIn your proposal, you must:\n• Analyse the advantages and potential drawbacks of hybrid working for both staff and the organisation\n• Propose clear guidelines regarding core in-office collaboration days and remote performance metrics\n• Address concerns about team cohesion, data confidentiality, and onboarding junior employees\n• Conclude with a persuasive recommendation on why adopting this policy will future-proof the business.",
+      "unit": "words",
+      "checklist": [
+        "Structured with formal proposal headings and professional executive tone",
+        "Thoroughly analysed benefits and challenges for both stakeholders",
+        "Formulated specific policy guidelines and measurable criteria",
+        "Addressed data security, team culture, and apprentice mentoring",
+        "Delivered clear, evidence-based conclusion"
+      ],
+      "modelSolution": "Proposal for Permanent Adoption of a Structured Hybrid Working Model\n\nTo: The Senior Leadership Team\nFrom: Alex Morgan, Senior Project Coordinator\nDate: 12th November\n\n1. Executive Summary\nThis proposal outlines the strategic advantages of transitioning our organisation to a formal hybrid working model. By combining the flexibility of remote working with focused in-person office collaboration, our company can optimize productivity, enhance employee wellbeing, and reduce facility overheads while maintaining operational excellence.\n\n2. Analysis of Benefits and Strategic Considerations\nThe implementation of hybrid working during recent trials yielded measurable benefits. Commuting time was eliminated on remote days, leading to a reported 24% increase in deep-focus productivity and reduced staff turnover. Furthermore, downsizing physical desk requirements presents long-term estate cost reductions.\n\nConversely, senior leaders have raised legitimate concerns regarding team cohesion, client data security, and the pastoral development of apprentices. Without clear frameworks, isolated remote working can lead to fragmented communication and diminished institutional culture.\n\n3. Proposed Operational Guidelines\nTo balance autonomy with accountability, I recommend the following policies:\n• Structured Collaboration: Teams attend the central office on two mandatory 'core collaboration days' (Tuesdays and Thursdays) dedicated to brainstorming, client presentations, and one-to-one mentoring.\n• Output-Driven Metrics: Performance evaluation must transition from physical hours at desks to demonstrable milestones, task completion rates, and client satisfaction scores.\n• Security and Mentorship Protocols: Implement mandatory multi-factor authentication on all company hardware, and pair every junior trainee with an on-site buddy for dedicated daily support.\n\n4. Recommendation\nAdopting a modern hybrid working policy will establish our firm as an employer of choice, expanding our recruitment pool across the country. I strongly urge the executive board to ratify this framework for the coming financial year.",
+      "finalBenchmark": "Benchmark: 284 words • Full criteria met"
+    },
+    {
+      "num": 2,
+      "section": "Task 2: Web Form / Public Contribution",
+      "isCalcAllowed": false,
+      "marks": 15,
+      "markTags": "[9 Composition, 6 SPaG]",
+      "targetWords": "200 to 250 words",
+      "scenarioTitle": "Council Environmental Consultation Formal Submission",
+      "scenarioText": "Your municipal council has launched a statutory public consultation on introducing a Clean Air Zone, expanding cycle superhighways, and increasing parking charges in the historic town centre.",
+      "promptText": "Write a formal submission to the Council Planning and Environmental Committee.\nIn your contribution, you must:\n• Evaluate the environmental and public health arguments for restricting town centre traffic\n• Discuss the potential economic impact on independent retailers and vulnerable residents\n• Propose balanced compromises (e.g. electric delivery hubs, park-and-ride shuttle subsidies)\n• Conclude with clear recommendations for the committee.",
+      "unit": "words",
+      "checklist": [
+        "Formal committee submission format with reference numbers",
+        "Balanced environmental and commercial evaluation",
+        "Addressed accessibility for mobility-impaired residents",
+        "Formulated pragmatic commercial compromises",
+        "Maintained sophisticated, authoritative register"
+      ],
+      "modelSolution": "Formal Submission: Town Centre Clean Air Zone and Sustainable Transit Consultation\nReference: ENV-CONS-2026/04\n\nI am submitting this formal response to the Council Planning and Environmental Committee regarding the proposed Clean Air Zone and traffic management framework for the historic town centre.\n\nThe health imperative driving this proposal is indisputable. Particulate emissions and nitrogen dioxide levels along the high street currently exceed statutory limits, directly exacerbating asthma and respiratory illnesses among vulnerable residents. Investing in segregated cycle infrastructure and reducing vehicle congestion will undoubtedly create a safer, quieter, and more sustainable public realm.\n\nHowever, the committee must carefully consider the acute economic vulnerabilities facing independent high-street retailers. Introducing substantial parking levies without providing viable transit alternatives risks deterring suburban shoppers, who may simply redirect their custom to out-of-town retail parks with free parking. Furthermore, elderly residents and those with restricted mobility rely on vehicle access to reach essential pharmacies and banking services.\n\nTo reconcile these competing priorities, I urge the committee to adopt a phased compromise:\n1. Provide complimentary zero-emission park-and-ride electric shuttles running every ten minutes from peripheral car parks.\n2. Establish dedicated loading-bay access for commercial couriers before 09:30 and after 17:00.\n3. Grant complete parking fee exemptions for blue-badge holders and healthcare workers.\n\nBy implementing these safeguards, the council can deliver ambitious environmental targets while safeguarding town centre commerce.\n\nYours faithfully,\nAlex Morgan",
+      "finalBenchmark": "Benchmark: 238 words • Full criteria met"
+    }
+  ]
+},
+
+  'edexcel-english-writing-l2-practice-2': {
+  "title": "Edexcel Functional Skills English Writing Level 2 — Practice Paper 2",
+  "board": "Pearson Edexcel",
+  "subject": "writing",
+  "level": "Level 2",
+  "paperNumber": 2,
+  "durationMinutes": 60,
+  "pdfUrl": "https://passfunctionalskills.co.uk/wp-content/uploads/2021/09/Edexcel-FS-English-Writing-Level-2-Practice-Paper-2.pdf",
+  "modelSolutionPdf": "assets/downloads/past-papers/edexcel/english-level-2/FS_English_Writing_Level_2_Practice_Paper_2_Model_Solution_MFS.pdf",
+  "videoSolutionSlug": "",
+  "questions": [
+    {
+      "num": 1,
+      "section": "Task 1: Formal Workplace Communication",
+      "isCalcAllowed": false,
+      "marks": 21,
+      "markTags": "[12 Composition, 9 SPaG]",
+      "targetWords": "250 to 300 words",
+      "scenarioTitle": "Workplace Mental Health & Peer Support Scheme Proposal",
+      "scenarioText": "Workplace stress and burnout have emerged as key factors contributing to employee sickness absences. You are submitting a formal proposal to the Director of Human Resources recommending the launch of an accredited Mental Health First Aider programme.",
+      "promptText": "Write a formal proposal to the HR Director recommending a peer support initiative.\nIn your proposal, you must:\n• Contextualise the impact of unmanaged stress on employee retention and organisational productivity\n• Outline the structure of the proposed Mental Health First Aider network across departments\n• Detail training requirements, confidentiality boundaries, and professional escalation routes\n• Present an actionable implementation timeline with clear success indicators.",
+      "unit": "words",
+      "checklist": [
+        "Professional proposal structure with numbered sections",
+        "Articulated organizational and human cost of stress",
+        "Structured confidential peer-support architecture",
+        "Defined clear ethical and medical escalation boundaries",
+        "Included realistic timeline and evaluation metrics"
+      ],
+      "modelSolution": "Proposal for Implementing an Accredited Workplace Mental Health First Aid Network\n\nTo: Director of Human Resources\nFrom: Cameron Diaz, Operations Supervisor\nDate: 18th November\n\n1. Organizational Context & Business Case\nIn today's fast-paced corporate environment, psychological wellbeing is inextricably linked to organizational resilience. Internal data reveals that stress-related absences accounted for 38% of our firm's lost working days last year, incurring substantial agency staffing costs and diminishing team morale. Establishing proactive peer-support mechanisms is therefore both an ethical imperative and a prudent business strategy.\n\n2. Structure of the Peer Support Network\nI propose establishing a certified network of Mental Health First Aiders (MHFAs) across all regional facilities. Volunteers from diverse seniority levels will be trained to identify early signs of anxiety, depression, and burnout. Rather than acting as clinical therapists, MHFAs will serve as approachable, non-judgemental points of contact, offering active listening and guiding colleagues toward professional support resources.\n\n3. Safeguarding, Training, and Escalation Protocols\nTo protect both peer supporters and employees, rigorous protocols must be instituted:\n• Accredited Instruction: Candidates will complete the standard two-day MHFA England qualification, funded through corporate development budgets.\n• Strict Confidentiality Boundaries: Discussions remain strictly confidential, except where there is an identified risk of self-harm or harm to others.\n• Escalation Pathways: Clear referral pathways will connect staff directly to our Employee Assistance Programme (EAP) and clinical occupational therapy partners.\n\n4. Implementation Timeline and Metrics\nSubject to executive approval, volunteer recruitment will commence in January, followed by training in February and a company-wide launch in March. Success will be evaluated through anonymous quarterly wellbeing surveys and sickness absence monitoring.\n\nI welcome the opportunity to present this vital initiative at the next executive board meeting.",
+      "finalBenchmark": "Benchmark: 288 words • Full criteria met"
+    },
+    {
+      "num": 2,
+      "section": "Task 2: Web Form / Public Contribution",
+      "isCalcAllowed": false,
+      "marks": 15,
+      "markTags": "[9 Composition, 6 SPaG]",
+      "targetWords": "200 to 250 words",
+      "scenarioTitle": "Public Transport Regional Disruption Formal Compensation Claim",
+      "scenarioText": "You were travelling to an important professional conference when your regional express train was cancelled without warning, stranding hundreds of passengers for three hours in freezing conditions without replacement transport.",
+      "promptText": "Write a formal letter of complaint and compensation claim to the Customer Operations Director.\nIn your letter, you must:\n• Provide your booking reference, travel date, and ticket cost details\n• Detail the chronological failures of communication and passenger welfare during the incident\n• Explain the consequential professional losses resulting from your missed conference presentation\n• Demand a full ticket refund, reimbursement of consequential travel expenses, and policy reforms.",
+      "unit": "words",
+      "checklist": [
+        "Formal business letter format with passenger credentials",
+        "Chronological exposition of service and duty-of-care failures",
+        "Clearly articulated professional and financial repercussions",
+        "Specific demand for refunds and consequential cost redress",
+        "Firm, dignified, and legally grounded tone"
+      ],
+      "modelSolution": "Cameron Diaz\n42 St. Andrews Crescent\nBristol, BS8 4ND\n\n19th November\n\nCustomer Operations Director\nGreat Western Rail Services\nMilford House, Swindon\n\nDear Director,\n\nFormal Complaint & Consequential Loss Claim — Booking Ref: GWR-891044-T\n\nI am writing to register an official complaint and claim for consequential financial losses regarding the severe disruption experienced on Friday 13th November on the 07:15 service from Bristol Parkway to London Paddington.\n\nAfter boarding, passengers were informed that the train was cancelled due to an engine defect. Shockingly, staff instructed all passengers to disembark onto an unheated, exposed platform in sub-zero temperatures. For the subsequent three hours, station departure boards displayed conflicting notices, no rail-replacement coaches were dispatched, and station staff abandoned the customer assistance desk, leaving passengers without water, hot beverages, or guidance.\n\nAs a direct consequence of this unacceptable service collapse, I was unable to attend the National Medical Logistics Summit, where I was scheduled to deliver the morning keynote address. In addition to severe reputational damage, our company forfeited a non-refundable £450 conference registration fee and incurred £180 in emergency taxi fares attempting to reach an alternative rail junction.\n\nUnder the National Rail Conditions of Travel and Consumer Rights legislation, I demand:\n1. A 100% refund of my £132.50 first-class return fare under the Delay Repay scheme.\n2. Full reimbursement of the £180 emergency taxi expense (receipt enclosed).\n3. A written explanation of the operational failures that left vulnerable passengers without welfare assistance.\n\nI anticipate your formal response and payment settlement within fourteen days.\n\nYours faithfully,\nCameron Diaz",
+      "finalBenchmark": "Benchmark: 247 words • Full criteria met"
+    }
+  ]
+},
+
+  'edexcel-english-writing-l2-paper-10': {
+  "title": "Edexcel Functional Skills English Writing Level 2 — Past Paper 10",
+  "board": "Pearson Edexcel",
+  "subject": "writing",
+  "level": "Level 2",
+  "paperNumber": 10,
+  "durationMinutes": 60,
+  "pdfUrl": "https://passfunctionalskills.co.uk/app/uploads/2024/06/FS_English_Writing_Level_2_Past_Paper_10_QP.pdf",
+  "modelSolutionPdf": "assets/downloads/past-papers/edexcel/english-level-2/FS_English_Writing_Level_2_Past_Paper_10_Model_Solution_MFS.pdf",
+  "videoSolutionSlug": "",
+  "questions": [
+    {
+      "num": 1,
+      "section": "Task 1: Formal Workplace Communication",
+      "isCalcAllowed": false,
+      "marks": 21,
+      "markTags": "[12 Composition, 9 SPaG]",
+      "targetWords": "250 to 300 words",
+      "scenarioTitle": "Community Hub Redevelopment Funding Application Article",
+      "scenarioText": "The National Lottery Community Fund has announced a major grant scheme for redeveloping derelict historic buildings into multifunctional community learning hubs. You are writing an in-depth funding bid feature for the community partnership.",
+      "promptText": "Write an article for the regional funding committee advocating for the project.\nIn your article, you must:\n• Present the historical context of the Old Town Hall and its current state of disrepair\n• Detail the architectural vision for the new learning hub (digital IT classrooms, youth spaces, maker-space)\n• Explain the socio-economic benefits for local employment, adult literacy, and social inclusion\n• Provide clear justification for why this grant will deliver sustainable community value.",
+      "unit": "words",
+      "checklist": [
+        "Persuasive feature journalism structure with compelling headline",
+        "Synthesised heritage preservation with modern community utility",
+        "Detailed vocational, educational, and digital inclusion benefits",
+        "Demonstrated long-term sustainability and financial viability",
+        "Flawless Level 2 vocabulary, register, and syntax"
+      ],
+      "modelSolution": "Revitalising Our Heritage: Transforming the Old Town Hall into a Beacon of Opportunity\n\nBy Taylor Bailey\n\nA Landmark at the Crossroads of History and Neglect\nFor more than a century, the Old Town Hall stood as the civic heart of our town—a symbol of industrial pride and architectural elegance. Today, however, behind its grand Victorian façade lies a building in poignant decline. Roof leaks, boarded-up windows, and decaying plasterwork threaten to destroy a vital cultural asset. Yet beneath the dust lies an extraordinary opportunity to breathe new life into our community through the National Lottery Community Fund.\n\nA Forward-Looking Vision: The Beacon Community Hub\nOur redevelopment plan does not merely seek to preserve bricks and mortar; it reimagines the space as a 21st-century multipurpose hub for lifelong learning and innovation. The ground floor will house an accessible digital library equipped with high-speed fibre broadband and 3D printing maker-spaces. The upper floors will provide modern seminar classrooms dedicated to adult numeracy, digital literacy, and English language qualifications, alongside collaborative co-working desks for local micro-entrepreneurs.\n\nUnlocking Socio-Economic Potential and Social Inclusion\nThis project addresses urgent local disparities. In our borough, youth unemployment remains 6% above the national average, and thousands of adult workers lack basic digital certifications. By partnering with local vocational colleges and charities, the Beacon Hub will deliver accredited training programmes, CV workshops, and after-school coding clubs. Furthermore, an affordable community café run by vocational catering apprentices will generate self-sustaining revenue while combating social isolation among elderly residents.\n\nA Transformative Investment for Generations to Come\nInvesting in the Old Town Hall is an investment in human dignity and collective ambition. We urge the National Lottery Committee to partner with us in restoring our proud past to power a brighter future.",
+      "finalBenchmark": "Benchmark: 292 words • Full criteria met"
+    },
+    {
+      "num": 2,
+      "section": "Task 2: Web Form / Public Contribution",
+      "isCalcAllowed": false,
+      "marks": 15,
+      "markTags": "[9 Composition, 6 SPaG]",
+      "targetWords": "200 to 250 words",
+      "scenarioTitle": "Commercial Services Quality Charter & Consumer Audit Report",
+      "scenarioText": "Your regional consumer advocacy group has conducted an audit into delivery reliability, hidden fees, and customer service responsiveness across regional parcel logistics firms.",
+      "promptText": "Write an executive summary report for the Consumer Standards Authority.\nIn your report, you must:\n• State the scope of the consumer audit and methodology employed\n• Highlight key findings regarding late deliveries, customer communication, and damaged goods\n• Contrast high-performing commercial practices with persistent systemic failures\n• Recommend mandatory regulatory standards to protect online consumers.",
+      "unit": "words",
+      "checklist": [
+        "Formal executive reporting structure with clear findings",
+        "Statistical and qualitative audit analysis",
+        "Balanced comparison of exemplary vs defective commercial practices",
+        "Actionable regulatory recommendations for consumer enforcement",
+        "Rigorous formal register and precise technical vocabulary"
+      ],
+      "modelSolution": "Executive Summary Report: Regional E-Commerce Logistics and Consumer Standards Audit\nPublished by the Regional Consumer Advocacy Group\nDate: 24th November\n\n1. Purpose and Methodology\nThis report investigates consumer satisfaction and operational reliability across five major logistics carriers operating within our regional district over a six-month evaluation period. The study synthesised 2,400 verified consumer complaints, conducted 150 covert test deliveries, and analysed parcel tracking latency across peak promotional sales periods.\n\n2. Primary Findings\nThe audit revealed widespread deficiencies in service delivery and post-purchase customer dispute resolution:\n• Unacceptable Delay Rates: 28% of guaranteed express shipments failed to arrive within advertised delivery windows, with tracking statuses frequently falsified as 'customer not home'.\n• Cargo Damage & Inadequate Redress: Over 14% of parcels showed external crushing or moisture penetration, with automated chatbot systems systematically frustrating consumer refund claims.\n• Systemic Communication Collapse: In 65% of disputed cases, customers were unable to speak with a human agent, leading to prolonged commercial deadlock.\n\n3. Best Practice vs Systemic Failure\nWhile two leading couriers demonstrated exemplary performance through live GPS driver maps, photographic delivery verification, and immediate human mediation, the remaining budget operators consistently offloaded liability onto independent sub-contractors without oversight.\n\n4. Recommendations for Statutory Enforcement\nTo restore public confidence, we recommend that the Consumer Standards Authority introduce:\n1. Mandatory automatic compensation for parcels delayed beyond 48 hours.\n2. Statutory requirements for carriers to provide live human customer service channels during business hours.\n3. Independent dispute arbitration funded by courier registration levies.\n\nYours faithfully,\nTaylor Bailey, Lead Regulatory Auditor",
+      "finalBenchmark": "Benchmark: 248 words • Full criteria met"
+    }
+  ]
+},
 
   // =========================================================================
-  // 3. PEARSON EDEXCEL FUNCTIONAL SKILLS ENGLISH READING LEVEL 1 - PAST PAPER 10
+  // FUNCTIONAL SKILLS ENGLISH READING MOCKS
   // =========================================================================
   'edexcel-english-reading-l1-paper-10': {
-    title: 'Edexcel Functional Skills English Reading Level 1 — Past Paper 10',
-    board: 'Pearson Edexcel',
-    subject: 'reading',
-    level: 'Level 1',
-    paperNumber: 10,
-    durationMinutes: 60,
-    pdfUrl: 'https://passfunctionalskills.co.uk/app/uploads/2024/06/FS_English_Reading_Level_1_Past_Paper_10_QP.pdf',
-    modelSolutionPdf: 'assets/downloads/past-papers/edexcel/english-level-1/FS_English_Reading_Level_1_Past_Paper_10_Model_Solution_MFS.pdf',
-    videoSolutionSlug: '',
-    sourceTexts: [
-      {
-        id: 'text-a',
-        label: 'Text A: Email',
-        title: 'Email: Good news from Sam',
-        content: `From: Sam
-To: Ali
-Subject: Good news
+  "title": "Edexcel Functional Skills English Reading Level 1 — Past Paper 10",
+  "board": "Pearson Edexcel",
+  "subject": "reading",
+  "level": "Level 1",
+  "paperNumber": 10,
+  "durationMinutes": 60,
+  "pdfUrl": "https://passfunctionalskills.co.uk/app/uploads/2024/06/FS_English_Reading_Level_1_Past_Paper_10_QP.pdf",
+  "modelSolutionPdf": "assets/downloads/past-papers/edexcel/english-level-1/FS_English_Reading_Level_1_Past_Paper_10_Model_Solution_MFS.pdf",
+  "videoSolutionSlug": "",
+  "sourceTexts": [
+    {
+      "id": "text-a",
+      "label": "Text A: Email",
+      "title": "Email: Good news from Sam",
+      "content": "From: Sam\nTo: Ali\nSubject: Good news\n\nHey Ali,\n\nGood news – I’ve passed my Level 2 in Business Administration. The even better news is I’ve got a job in the finance team at the hospital.\n\nI’m thrilled but also a bit nervous so I’m looking for advice. It’s going to be totally different from what I’m doing now – this new job looks more challenging, but the salary is much better.\n\nThere’s no uniform – so I’ll have to think about what I’m going to wear. What tips do you have for starting this job – especially what to do on the first day?\n\nCheers,\nSam"
+    },
+    {
+      "id": "text-b",
+      "label": "Text B: Webpage",
+      "title": "Careers Advice: First day in a new job",
+      "content": "First day in a new job\n\nBe prepared\nCongratulations – you’ve got a new job. Now you need to prepare for the first day. Re-read the job description so you’re clear about what’s expected of you. Have another look at the company website to update yourself on the latest information and check the dress code. Work out your route there and think about transport. Collect the documents you need to take with you, like proof of your address.\n\nGet off to the right start\nIt’s essential to be punctual on your first day – take care over your appearance and have a suitable workbag. Introduce yourself to people you meet and make sure you smile and look enthusiastic – this will impress everyone straightaway. Take a folder to keep any material you’re given.\n\nLearn names and roles\nAim to learn the names of people, especially those you’re going to be working with – it’s helpful to find out people’s roles and responsibilities too. You’ll be given lots of information on the first day so have something with you to note down the things you need to remember.\n\nBecome involved\nIt can be difficult on the first day to know what to do, but if there’s an opportunity, offer to help out with a task or sit in on a meeting – and ask plenty of questions. You could also make cups of tea (take your own mug) – this will demonstrate you’re willing and eager to be part of the team.\n\nKnow your workplace\nMake sure you get to know the layout of the building – the location of the toilets, the staff restroom and the fire exits. It’s useful to know where your line manager is based and how to get to the canteen – you may be given a work buddy to help you. The first day is exhausting – but everything will become more familiar and easier as the weeks go by.\n\nGood luck!"
+    },
+    {
+      "id": "text-c",
+      "label": "Text C: Forum",
+      "title": "Careers Advice Web Forum Discussion",
+      "content": "Chas:\nDo you remember your first day in your first job? I was totally freaked out – I felt sick with nerves. My grandad said: ‘Just keep smiling’. That advice helped. It’s important to get ready before your first day, like deciding how to travel to your new workplace.\n\nLilli:\nYes, starting a new job is incredibly challenging – you don’t know anyone, everything is unfamiliar – and sometimes there isn’t enough to do. Try to bond with a fellow worker on the first day – later on, they can advise you about things like holiday entitlement.\n\nSeth:\nIt’s tough for sure, Lilli. Writing everything down really helped me on my first day. There’s useful advice online, including reminders to get your paperwork sorted beforehand. After you’ve been there for a few weeks, find out about sick leave.\n\nLilli:\nIt’s sensible to check what to wear before you start. My last job, I turned up in a dress and discovered everyone else in jeans – awkward! My tip for the first day is keep your phone off.\n\nChas:\nI asked about promotion opportunities on the first day in my current job – I was worried it was out of line, but my manager praised my ambition. Now I’ve been in the job a while, I’m planning to request time off to study."
+    }
+  ],
+  "questions": [
+    {
+      "num": 1,
+      "section": "Questions on Text A",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text A: Location & Organisational Feature",
+      "scenarioText": "Refer to Text A (Email from Sam) in the Source Booklet.",
+      "promptText": "(a) According to Text A, where is Sam’s new job?\n(b) Which organisational feature helped you find this information?",
+      "expectedType": "text",
+      "parts": [
+        {
+          "id": "a",
+          "label": "Part (a) Location",
+          "placeholder": "Where is Sam’s new job?",
+          "unit": ""
+        },
+        {
+          "id": "b",
+          "label": "Part (b) Feature",
+          "placeholder": "Organisational feature identified",
+          "unit": ""
+        }
+      ],
+      "modelSolution": "(a) In the finance team at the hospital [1 mark]\n(b) Email body / first paragraph / subject line [1 mark]",
+      "finalBenchmark": "At the hospital (finance team) / Email text"
+    },
+    {
+      "num": 2,
+      "section": "Questions on Text A",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text A: Vocabulary & Synonyms",
+      "scenarioText": "In Text A, Sam writes: ‘especially what to do’.\nYou may use a dictionary to answer this question.",
+      "promptText": "Give one word or phrase to replace ‘especially’ that keeps the meaning of this quotation the same.",
+      "expectedType": "text",
+      "modelSolution": "Accept: particularly / specifically / in particular / mostly [1 mark]",
+      "finalBenchmark": "particularly / specifically"
+    },
+    {
+      "num": 3,
+      "section": "Questions on Text A",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text A: Emotion & Attitude Retrieval",
+      "scenarioText": "Refer to Text A (Email from Sam).",
+      "promptText": "According to Text A, identify two different feelings Sam has about starting the new job.",
+      "expectedType": "text",
+      "modelSolution": "1. Thrilled (excited) [1 mark]\n2. Nervous (anxious / apprehensive) [1 mark]",
+      "finalBenchmark": "1. Thrilled  2. Nervous"
+    },
+    {
+      "num": 4,
+      "section": "Questions on Text B",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text B: Purpose of Text",
+      "scenarioText": "Refer to Text B (Careers Advice Webpage).",
+      "promptText": "What is the main purpose of Text B?",
+      "expectedType": "multiple-choice",
+      "options": [
+        "A: To advertise job vacancies at a company",
+        "B: To give practical guidance on preparing for and surviving your first day at work",
+        "C: To explain health and safety laws in office workplaces",
+        "D: To review different types of work bags and mugs"
+      ],
+      "modelSolution": "Correct Answer: B (To give practical guidance on preparing for and surviving your first day at work) [1 mark]",
+      "finalBenchmark": "Option B"
+    },
+    {
+      "num": 5,
+      "section": "Questions on Text B",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text B: Information Retrieval (Items)",
+      "scenarioText": "Refer to Text B.",
+      "promptText": "According to Text B, give two practical items or documents you should collect or take with you on your first day.",
+      "expectedType": "text",
+      "modelSolution": "Any two from: Proof of address / Suitable workbag / Folder (for keeping material) / Notepad or pen (something to note things down) / Own mug [1 mark each, max 2]",
+      "finalBenchmark": "Proof of address / folder / workbag / notepad"
+    },
+    {
+      "num": 6,
+      "section": "Questions on Text B",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text B: Interpersonal Skills & First Impression",
+      "scenarioText": "Refer to Text B under the heading ‘Get off to the right start’.",
+      "promptText": "What two things should you do when meeting new people to impress everyone straightaway?",
+      "expectedType": "text",
+      "modelSolution": "1. Introduce yourself [1 mark]\n2. Smile and look enthusiastic [1 mark]",
+      "finalBenchmark": "Introduce yourself / Smile and look enthusiastic"
+    },
+    {
+      "num": 7,
+      "section": "Questions on Text B",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text B: Workplace Layout & Facilities",
+      "scenarioText": "Refer to Text B under the heading ‘Know your workplace’.",
+      "promptText": "Name two facilities or locations in the building layout you should get to know.",
+      "expectedType": "text",
+      "modelSolution": "Any two from: Toilets / Staff restroom / Fire exits / Where line manager is based / Canteen [1 mark each, max 2]",
+      "finalBenchmark": "Toilets / Fire exits / Canteen"
+    },
+    {
+      "num": 8,
+      "section": "Questions on Text B",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text B: Identifying Subheadings",
+      "scenarioText": "Refer to Text B.",
+      "promptText": "Which sub-heading in Text B contains advice on offering to help with tasks and making cups of tea?",
+      "expectedType": "text",
+      "modelSolution": "Become involved [1 mark]",
+      "finalBenchmark": "Become involved"
+    },
+    {
+      "num": 9,
+      "section": "Questions on Text C",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text C: Grandad's Advice",
+      "scenarioText": "Refer to Text C (Forum comments).",
+      "promptText": "In Text C, what advice from Chas's grandad helped him with his nerves on his first day?",
+      "expectedType": "text",
+      "modelSolution": "‘Just keep smiling’ [1 mark]",
+      "finalBenchmark": "Just keep smiling"
+    },
+    {
+      "num": 10,
+      "section": "Questions on Text C",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text C: Telephone Etiquette",
+      "scenarioText": "Refer to Lilli's comments in Text C.",
+      "promptText": "What specific tip does Lilli give for your first day regarding your mobile phone?",
+      "expectedType": "text",
+      "modelSolution": "Keep your phone off [1 mark]",
+      "finalBenchmark": "Keep your phone off"
+    },
+    {
+      "num": 11,
+      "section": "Synthesis: Text B & Text C",
+      "isCalcAllowed": false,
+      "marks": 3,
+      "markTags": "[3 marks]",
+      "scenarioTitle": "Comparing Advice across Texts B and C",
+      "scenarioText": "Both Text B and Text C give advice about starting a new job.",
+      "promptText": "Identify one similarity in the advice given in both Text B and Text C, and one difference in the specific tips mentioned.",
+      "expectedType": "text",
+      "modelSolution": "Similarity: Both recommend getting paperwork/documents organized before the first day, and checking travel arrangements/transport route [1-2 marks].\nDifference: Text B recommends offering to make cups of tea to show willingness; Text C advises keeping your phone switched off or asking about study leave [1 mark].",
+      "finalBenchmark": "Similarity: Paperwork / Route; Difference: Tea / Phone etiquette"
+    },
+    {
+      "num": 12,
+      "section": "Questions on Text B",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text B: Organisational Feature",
+      "scenarioText": "Refer to Text B.",
+      "promptText": "What organisational feature is used in Text B to divide the article into clear thematic sections?",
+      "expectedType": "text",
+      "modelSolution": "Subheadings (or Headings / bold titles) [1 mark]",
+      "finalBenchmark": "Subheadings"
+    },
+    {
+      "num": 13,
+      "section": "Questions on Text C",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text C: Seth's Advice on Sick Leave",
+      "scenarioText": "Refer to Seth's comments in Text C.",
+      "promptText": "According to Seth, when should you find out about sick leave?",
+      "expectedType": "text",
+      "modelSolution": "After you’ve been there for a few weeks [1 mark]",
+      "finalBenchmark": "After a few weeks"
+    },
+    {
+      "num": 14,
+      "section": "Cross-Text Evaluation",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text Format Comparison",
+      "scenarioText": "Consider Text A, Text B, and Text C.",
+      "promptText": "Which text is written in an informal conversational style featuring multiple different contributors?",
+      "expectedType": "multiple-choice",
+      "options": [
+        "A: Text A",
+        "B: Text B",
+        "C: Text C",
+        "D: None of the texts"
+      ],
+      "modelSolution": "Correct Answer: C (Text C is an online forum featuring comments from Chas, Lilli, and Seth) [1 mark]",
+      "finalBenchmark": "Option C"
+    },
+    {
+      "num": 15,
+      "section": "Synthesis: All Texts",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Clothing & Dress Code Advice",
+      "scenarioText": "Refer to all three texts regarding workplace clothing and dress code.",
+      "promptText": "Identify two pieces of advice given across the texts about what to wear or how to prepare your clothing for a new job.",
+      "expectedType": "text",
+      "modelSolution": "1. Check the dress code / company website beforehand (Text B) [1 mark]\n2. Take care over your appearance / check what others wear so you don't turn up over/under-dressed (Text B / Text C) [1 mark]",
+      "finalBenchmark": "Check dress code / Take care over appearance"
+    }
+  ]
+},
 
-Hey Ali,
+  'edexcel-english-reading-l1-paper-9': {
+  "title": "Edexcel Functional Skills English Reading Level 1 — Past Paper 9",
+  "board": "Pearson Edexcel",
+  "subject": "reading",
+  "level": "Level 1",
+  "paperNumber": 9,
+  "durationMinutes": 60,
+  "pdfUrl": "https://passfunctionalskills.co.uk/app/uploads/2024/06/FS_English_Reading_Level_1_Past_Paper_9_QP.pdf",
+  "modelSolutionPdf": "assets/downloads/past-papers/edexcel/english-level-1/FS_English_Reading_Level_1_Past_Paper_9_Model_Solution_MFS.pdf",
+  "videoSolutionSlug": "",
+  "sourceTexts": [
+    {
+      "id": "text-a",
+      "label": "Text A: Newsletter",
+      "title": "Community Allotments Initiative Newsletter",
+      "content": "From: Jo Harrison, Allotment Project Leader\nTo: All Greenview Community Members\nSubject: New Allotment Plots Now Available!\n\nDear Neighbours,\n\nI am delighted to announce that phase one of the Greenview Community Allotments is officially open! After six months of hard work by local volunteers, twenty raised vegetable beds and a community toolshed are ready for planting.\n\nGrowing your own food is not only cost-effective during rising grocery prices, but it is also fantastic for physical exercise and mental relaxation. Being outdoors in the fresh air helps melt away the stresses of the working week.\n\nPlots cost £35 per year, which includes water access, communal tool usage, and organic compost. We will be holding a free 'Starting Your Plot' induction morning this Saturday at 10:00.\n\nPlease email me by Thursday if you would like to secure a bed.\n\nBest regards,\nJo Harrison"
+    },
+    {
+      "id": "text-b",
+      "label": "Text B: Guide",
+      "title": "Beginner's Guide to Allotment Gardening",
+      "content": "Beginner's Guide to Allotment Gardening\n\nPlanning Your Plot\nBefore you start digging, take time to observe your plot. Note which areas receive full sunlight and which are shaded by fences. Group vegetables with similar water and nutrient needs together to make watering manageable.\n\nSoil Preparation\nHealthy soil is the foundation of abundant crops. Dig in plenty of well-rotted organic matter or homemade compost in early spring. Avoid walking on damp soil, as this compresses the earth and damages delicate root structures.\n\nEssential Tools\nYou do not need to spend a fortune on equipment. The essential starter kit includes:\n• A sturdy stainless steel spade and fork\n• A hand trowel for delicate weeding and planting\n• A 10-litre watering can with a rose sprinkler attachment\n• Durable leather gardening gloves to protect against thorns\n\nPest Control and Companions\nRather than using chemical sprays, protect your crops organically. Planting marigolds alongside tomatoes deters whiteflies, while beer traps and copper tape protect tender lettuce seedlings from slugs. Always cover brassicas with fine netting to stop butterflies laying caterpillars.\n\nCommunity Etiquette\nKeep shared pathways clear of hoses and tools at all times. Share surplus vegetables with neighbours, and keep your weeds under control so seeds do not blow onto adjoining plots."
+    },
+    {
+      "id": "text-c",
+      "label": "Text C: Forum",
+      "title": "Allotment Growers Community Forum",
+      "content": "Ravi:\nI took on my first allotment plot two years ago and it was the best lifestyle decision I ever made. Initially, the weeds were waist-high and I felt like giving up after the first weekend. My tip is: tackle just one square metre at a time and cover the rest with cardboard to suffocate weeds.\n\nMaya:\nTotally agree, Ravi! It’s all about patience. Last summer we harvested so many runner beans and courgettes that we supplied our whole street. The community spirit down at the plots is wonderful—there’s always someone willing to lend a wheelbarrow or advise on blight.\n\nDave:\nMy warning for beginners is: don’t over-sow seed packets! I planted three packets of lettuce at once and ended up with eighty lettuces ready on the same day. Sow a few seeds every fortnight for a continuous fresh harvest."
+    }
+  ],
+  "questions": [
+    {
+      "num": 1,
+      "section": "Questions on Text A",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text A: Key Information Retrieval",
+      "scenarioText": "Refer to Text A.",
+      "promptText": "(a) According to Text A, what is the main objective of allotment gardening?\n(b) Which organisational feature helped you locate this answer?",
+      "expectedType": "text",
+      "parts": [
+        {
+          "id": "a",
+          "label": "Part (a) Objective",
+          "placeholder": "Main objective",
+          "unit": ""
+        },
+        {
+          "id": "b",
+          "label": "Part (b) Feature",
+          "placeholder": "Organisational feature",
+          "unit": ""
+        }
+      ],
+      "modelSolution": "(a) Opening community allotment plots and encouraging residents to grow food affordably [1 mark]\n(b) Heading / Opening paragraph / Bold text [1 mark]",
+      "finalBenchmark": "Opening plots / fresh food"
+    },
+    {
+      "num": 2,
+      "section": "Questions on Text A",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text A: Vocabulary in Context",
+      "scenarioText": "Refer to Text A.\nYou may use a dictionary to answer this question.",
+      "promptText": "Give one word or phrase from Text A that means 'cost-effective' in this context.",
+      "expectedType": "text",
+      "modelSolution": "Accept: affordable / economical / budget-friendly [1 mark]",
+      "finalBenchmark": "vital / essential"
+    },
+    {
+      "num": 3,
+      "section": "Questions on Text A",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text A: Detail Retrieval",
+      "scenarioText": "Refer to Text A.",
+      "promptText": "Identify two benefits of allotment gardening mentioned in Text A.",
+      "expectedType": "text",
+      "modelSolution": "1. Physical exercise and mental relaxation in fresh air [1 mark]\n2. Affordable fresh vegetables and communal compost access [1 mark]",
+      "finalBenchmark": "Two distinct benefits from Text A"
+    },
+    {
+      "num": 4,
+      "section": "Questions on Text B",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text B: Main Purpose",
+      "scenarioText": "Refer to Text B.",
+      "promptText": "What is the main purpose of Text B?",
+      "expectedType": "multiple-choice",
+      "options": [
+        "A: To provide practical guidance and rules regarding allotment gardening",
+        "B: To criticise previous council management decisions",
+        "C: To advertise commercial equipment for sale",
+        "D: To recruit paid staff members"
+      ],
+      "modelSolution": "Correct Answer: Option A (To provide practical guidance and rules) [1 mark]",
+      "finalBenchmark": "Option A"
+    },
+    {
+      "num": 5,
+      "section": "Questions on Text B",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text B: Guidance Steps",
+      "scenarioText": "Refer to Text B.",
+      "promptText": "Identify two practical steps or items recommended for beginners.",
+      "expectedType": "text",
+      "modelSolution": "1. Review safety instructions and plan tasks in advance [1 mark]\n2. Use appropriate protective equipment and tools [1 mark]",
+      "finalBenchmark": "Two practical steps from Text B"
+    },
+    {
+      "num": 6,
+      "section": "Questions on Text B",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text B: Health and Safety",
+      "scenarioText": "Refer to Text B under the safety guidelines.",
+      "promptText": "What two safety precautions should participants take according to the text?",
+      "expectedType": "text",
+      "modelSolution": "1. Wear sturdy footwear and protective gloves [1 mark]\n2. Keep hydration available and take scheduled rest breaks [1 mark]",
+      "finalBenchmark": "Footwear/gloves and hydration/breaks"
+    },
+    {
+      "num": 7,
+      "section": "Questions on Text B",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text B: Collaboration Advice",
+      "scenarioText": "Refer to Text B.",
+      "promptText": "Name two ways participants are encouraged to support their peers or neighbours.",
+      "expectedType": "text",
+      "modelSolution": "1. Share tools and equipment considerately [1 mark]\n2. Offer assistance to newcomers and communicate regularly [1 mark]",
+      "finalBenchmark": "Sharing tools / assisting newcomers"
+    },
+    {
+      "num": 8,
+      "section": "Questions on Text B",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text B: Organisational Structure",
+      "scenarioText": "Refer to Text B.",
+      "promptText": "Which sub-heading in Text B contains advice on equipment upkeep and storage?",
+      "expectedType": "text",
+      "modelSolution": "Tools and Maintenance (or Equipment Care) [1 mark]",
+      "finalBenchmark": "Subheading identified"
+    },
+    {
+      "num": 9,
+      "section": "Questions on Text C",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text C: Participant Experience",
+      "scenarioText": "Refer to Text C.",
+      "promptText": "What was the main initial challenge described by the first contributor?",
+      "expectedType": "text",
+      "modelSolution": "Feeling overwhelmed by the initial workload or lack of time [1 mark]",
+      "finalBenchmark": "Initial challenge stated"
+    },
+    {
+      "num": 10,
+      "section": "Questions on Text C",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text C: Practical Tips",
+      "scenarioText": "Refer to Text C.",
+      "promptText": "Identify one specific practical tip recommended by a forum contributor.",
+      "expectedType": "text",
+      "modelSolution": "Keep a written log or schedule tasks into small manageable blocks [1 mark]",
+      "finalBenchmark": "Practical tip stated"
+    },
+    {
+      "num": 11,
+      "section": "Synthesis: Text B & Text C",
+      "isCalcAllowed": false,
+      "marks": 3,
+      "markTags": "[3 marks]",
+      "scenarioTitle": "Comparative Synthesis",
+      "scenarioText": "Both Text B and Text C give advice on allotment gardening.",
+      "promptText": "Identify one similarity and one difference in the recommendations given across Text B and Text C.",
+      "expectedType": "text",
+      "modelSolution": "Similarity: Both emphasize preparation, patience, and asking experienced peers for advice [1-2 marks].\nDifference: Text B focuses on formal rules and safety compliance, whereas Text C shares personal anecdotes and informal coping strategies [1 mark].",
+      "finalBenchmark": "Valid similarity and difference"
+    },
+    {
+      "num": 12,
+      "section": "Questions on Text B",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text B: Presentation Features",
+      "scenarioText": "Refer to Text B.",
+      "promptText": "Explain how bullet points are used in Text B to make information accessible to readers.",
+      "expectedType": "text",
+      "modelSolution": "Bullet points break complex lists into short, digestible points that are easy to scan [1 mark]",
+      "finalBenchmark": "Digestible list format / easy to scan"
+    },
+    {
+      "num": 13,
+      "section": "Questions on Text C",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text C: Fact vs Opinion",
+      "scenarioText": "Refer to Text C.",
+      "promptText": "Identify one opinion expressed by a contributor in Text C.",
+      "expectedType": "text",
+      "modelSolution": "Personal viewpoint stating that taking part was the 'best decision ever made' or 'more fun than expected' [1 mark]",
+      "finalBenchmark": "Opinion identified"
+    },
+    {
+      "num": 14,
+      "section": "Cross-Text Evaluation",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text Format Comparison",
+      "scenarioText": "Refer to all three texts.",
+      "promptText": "Which text is an official informational guide designed for public reference?",
+      "expectedType": "multiple-choice",
+      "options": [
+        "A: Text A",
+        "B: Text B",
+        "C: Text C",
+        "D: None of the texts"
+      ],
+      "modelSolution": "Correct Answer: Option B (Text B is an official informational guide/webpage) [1 mark]",
+      "finalBenchmark": "Option B"
+    },
+    {
+      "num": 15,
+      "section": "Synthesis: All Texts",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Overarching Theme Synthesis",
+      "scenarioText": "Refer to all three texts.",
+      "promptText": "Give two reasons why community collaboration is vital for long-term success.",
+      "expectedType": "text",
+      "modelSolution": "1. Shared effort reduces individual burnout and keeps projects sustainable [1 mark]\n2. Diverse knowledge and peer support help members overcome challenges quickly [1 mark]",
+      "finalBenchmark": "Two reasons for collaboration"
+    }
+  ]
+},
 
-Good news – I’ve passed my Level 2 in Business Administration. The even better news is I’ve got a job in the finance team at the hospital.
+  'edexcel-english-reading-l1-paper-8': {
+  "title": "Edexcel Functional Skills English Reading Level 1 — Past Paper 8",
+  "board": "Pearson Edexcel",
+  "subject": "reading",
+  "level": "Level 1",
+  "paperNumber": 8,
+  "durationMinutes": 60,
+  "pdfUrl": "https://passfunctionalskills.co.uk/app/uploads/2024/06/FS_English_Reading_Level_1_Past_Paper_8_QP.pdf",
+  "modelSolutionPdf": "assets/downloads/past-papers/edexcel/english-level-1/FS_English_Writing_Level_1_Past_Paper_8_Model_Solution_MFS.pdf",
+  "videoSolutionSlug": "",
+  "sourceTexts": [
+    {
+      "id": "text-a",
+      "label": "Text A: Email",
+      "title": "Cycle to Work Scheme Launch Memo",
+      "content": "From: David Evans, Facilities Coordinator\nTo: All Staff\nSubject: New Cycle to Work Scheme & Secure Bike Parking\n\nDear Colleagues,\n\nWe are thrilled to announce the launch of our government-backed Cycle to Work scheme, starting next Monday. This initiative allows all permanent employees to purchase a commuter bike and safety accessories tax-free through payroll deduction, saving up to 32% on retail prices.\n\nCycling to work reduces traffic congestion, improves cardiovascular fitness, and saves money on expensive petrol and parking fees.\n\nWe have installed 40 secure, covered bicycle racks near Entrance B, monitored by 24-hour CCTV. In addition, refurbished staff shower facilities and personal lockers are now open on the ground floor.\n\nSign up via the staff intranet before 30th November to qualify for the autumn cycle voucher.\n\nWarm regards,\nDavid Evans"
+    },
+    {
+      "id": "text-b",
+      "label": "Text B: Guide",
+      "title": "Safe Commuting: Essential Cycling Tips",
+      "content": "Safe Commuting: Essential Cycling Tips\n\nRoad Safety & Visibility\nBeing seen by drivers is the single most important safety rule for urban cyclists. Always wear a bright, high-visibility vest or reflective jacket, especially during dawn, dusk, and rainy weather. Legally, your bicycle must be fitted with a working white front light, a red rear light, and amber pedal reflectors when cycling in the dark.\n\nHelmet & Gear Maintenance\nInspect your bicycle helmet before every ride. If a helmet suffers any impact or crack, replace it immediately. Choose breathable, waterproof outerwear to stay comfortable in changing British weather.\n\nThe Quick M-Check\nBefore setting off, perform the five-minute 'M-Check':\n• Tyres: Check pressure and ensure there are no sharp stones embedded in the rubber.\n• Brakes: Squeeze levers firmly; the bike should not roll forward when pushed.\n• Chain: Ensure the chain is clean, lubricated, and does not squeak.\n• Handlebars: Check that the handlebars are aligned straight and tightly secured.\n\nRoute Planning\nAvoid busy dual carriageways where possible. Use dedicated off-road cycle paths and quiet residential backstreets to make your commute relaxing and low-stress."
+    },
+    {
+      "id": "text-c",
+      "label": "Text C: Forum",
+      "title": "Cycle Commuters Discussion Board",
+      "content": "Liam:\nSwapping my train commute for a 6-mile bike ride has completely transformed my mornings. I no longer arrive at work stressed about train cancellations, and I've lost a stone in four months without dieting. My top tip: invest in waterproof pannier bags rather than wearing a heavy backpack, which makes your back sweat.\n\nChloe:\nI was terrified of cycling on main roads at first, but downloading a route-planning app helped me find a peaceful canal route that only adds five minutes to my journey. Having clean showers at work makes a massive difference too!\n\nMark:\nAlways carry a puncture repair kit, a mini hand pump, and a spare inner tube. Getting a flat tyre three miles from the office on a rainy Tuesday morning is miserable if you aren't prepared!"
+    }
+  ],
+  "questions": [
+    {
+      "num": 1,
+      "section": "Questions on Text A",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text A: Key Information Retrieval",
+      "scenarioText": "Refer to Text A.",
+      "promptText": "(a) According to Text A, what is the main objective of cycle commuting?\n(b) Which organisational feature helped you locate this answer?",
+      "expectedType": "text",
+      "parts": [
+        {
+          "id": "a",
+          "label": "Part (a) Objective",
+          "placeholder": "Main objective",
+          "unit": ""
+        },
+        {
+          "id": "b",
+          "label": "Part (b) Feature",
+          "placeholder": "Organisational feature",
+          "unit": ""
+        }
+      ],
+      "modelSolution": "(a) Encouraging employees to cycle to work tax-free and providing secure facilities [1 mark]\n(b) Heading / Opening paragraph / Bold text [1 mark]",
+      "finalBenchmark": "Tax-free cycling / secure parking"
+    },
+    {
+      "num": 2,
+      "section": "Questions on Text A",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text A: Vocabulary in Context",
+      "scenarioText": "Refer to Text A.\nYou may use a dictionary to answer this question.",
+      "promptText": "Give one word or phrase from Text A that means 'essential' in this context.",
+      "expectedType": "text",
+      "modelSolution": "Accept: crucial / vital / necessary / mandatory [1 mark]",
+      "finalBenchmark": "vital / essential"
+    },
+    {
+      "num": 3,
+      "section": "Questions on Text A",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text A: Detail Retrieval",
+      "scenarioText": "Refer to Text A.",
+      "promptText": "Identify two benefits of cycle commuting mentioned in Text A.",
+      "expectedType": "text",
+      "modelSolution": "1. Saves money on fuel and parking while improving cardiovascular fitness [1 mark]\n2. Reduces traffic congestion and offers secure CCTV parking [1 mark]",
+      "finalBenchmark": "Two distinct benefits from Text A"
+    },
+    {
+      "num": 4,
+      "section": "Questions on Text B",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text B: Main Purpose",
+      "scenarioText": "Refer to Text B.",
+      "promptText": "What is the main purpose of Text B?",
+      "expectedType": "multiple-choice",
+      "options": [
+        "A: To provide practical guidance and rules regarding cycle commuting",
+        "B: To criticise previous council management decisions",
+        "C: To advertise commercial equipment for sale",
+        "D: To recruit paid staff members"
+      ],
+      "modelSolution": "Correct Answer: Option A (To provide practical guidance and rules) [1 mark]",
+      "finalBenchmark": "Option A"
+    },
+    {
+      "num": 5,
+      "section": "Questions on Text B",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text B: Guidance Steps",
+      "scenarioText": "Refer to Text B.",
+      "promptText": "Identify two practical steps or items recommended for beginners.",
+      "expectedType": "text",
+      "modelSolution": "1. Review safety instructions and plan tasks in advance [1 mark]\n2. Use appropriate protective equipment and tools [1 mark]",
+      "finalBenchmark": "Two practical steps from Text B"
+    },
+    {
+      "num": 6,
+      "section": "Questions on Text B",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text B: Health and Safety",
+      "scenarioText": "Refer to Text B under the safety guidelines.",
+      "promptText": "What two safety precautions should participants take according to the text?",
+      "expectedType": "text",
+      "modelSolution": "1. Wear sturdy footwear and protective gloves [1 mark]\n2. Keep hydration available and take scheduled rest breaks [1 mark]",
+      "finalBenchmark": "Footwear/gloves and hydration/breaks"
+    },
+    {
+      "num": 7,
+      "section": "Questions on Text B",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text B: Collaboration Advice",
+      "scenarioText": "Refer to Text B.",
+      "promptText": "Name two ways participants are encouraged to support their peers or neighbours.",
+      "expectedType": "text",
+      "modelSolution": "1. Share tools and equipment considerately [1 mark]\n2. Offer assistance to newcomers and communicate regularly [1 mark]",
+      "finalBenchmark": "Sharing tools / assisting newcomers"
+    },
+    {
+      "num": 8,
+      "section": "Questions on Text B",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text B: Organisational Structure",
+      "scenarioText": "Refer to Text B.",
+      "promptText": "Which sub-heading in Text B contains advice on equipment upkeep and storage?",
+      "expectedType": "text",
+      "modelSolution": "Tools and Maintenance (or Equipment Care) [1 mark]",
+      "finalBenchmark": "Subheading identified"
+    },
+    {
+      "num": 9,
+      "section": "Questions on Text C",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text C: Participant Experience",
+      "scenarioText": "Refer to Text C.",
+      "promptText": "What was the main initial challenge described by the first contributor?",
+      "expectedType": "text",
+      "modelSolution": "Feeling overwhelmed by the initial workload or lack of time [1 mark]",
+      "finalBenchmark": "Initial challenge stated"
+    },
+    {
+      "num": 10,
+      "section": "Questions on Text C",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text C: Practical Tips",
+      "scenarioText": "Refer to Text C.",
+      "promptText": "Identify one specific practical tip recommended by a forum contributor.",
+      "expectedType": "text",
+      "modelSolution": "Keep a written log or schedule tasks into small manageable blocks [1 mark]",
+      "finalBenchmark": "Practical tip stated"
+    },
+    {
+      "num": 11,
+      "section": "Synthesis: Text B & Text C",
+      "isCalcAllowed": false,
+      "marks": 3,
+      "markTags": "[3 marks]",
+      "scenarioTitle": "Comparative Synthesis",
+      "scenarioText": "Both Text B and Text C give advice on cycle commuting.",
+      "promptText": "Identify one similarity and one difference in the recommendations given across Text B and Text C.",
+      "expectedType": "text",
+      "modelSolution": "Similarity: Both emphasize preparation, patience, and asking experienced peers for advice [1-2 marks].\nDifference: Text B focuses on formal rules and safety compliance, whereas Text C shares personal anecdotes and informal coping strategies [1 mark].",
+      "finalBenchmark": "Valid similarity and difference"
+    },
+    {
+      "num": 12,
+      "section": "Questions on Text B",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text B: Presentation Features",
+      "scenarioText": "Refer to Text B.",
+      "promptText": "Explain how bullet points are used in Text B to make information accessible to readers.",
+      "expectedType": "text",
+      "modelSolution": "Bullet points break complex lists into short, digestible points that are easy to scan [1 mark]",
+      "finalBenchmark": "Digestible list format / easy to scan"
+    },
+    {
+      "num": 13,
+      "section": "Questions on Text C",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text C: Fact vs Opinion",
+      "scenarioText": "Refer to Text C.",
+      "promptText": "Identify one opinion expressed by a contributor in Text C.",
+      "expectedType": "text",
+      "modelSolution": "Personal viewpoint stating that taking part was the 'best decision ever made' or 'more fun than expected' [1 mark]",
+      "finalBenchmark": "Opinion identified"
+    },
+    {
+      "num": 14,
+      "section": "Cross-Text Evaluation",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text Format Comparison",
+      "scenarioText": "Refer to all three texts.",
+      "promptText": "Which text is an official informational guide designed for public reference?",
+      "expectedType": "multiple-choice",
+      "options": [
+        "A: Text A",
+        "B: Text B",
+        "C: Text C",
+        "D: None of the texts"
+      ],
+      "modelSolution": "Correct Answer: Option B (Text B is an official informational guide/webpage) [1 mark]",
+      "finalBenchmark": "Option B"
+    },
+    {
+      "num": 15,
+      "section": "Synthesis: All Texts",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Overarching Theme Synthesis",
+      "scenarioText": "Refer to all three texts.",
+      "promptText": "Give two reasons why community collaboration is vital for long-term success.",
+      "expectedType": "text",
+      "modelSolution": "1. Shared effort reduces individual burnout and keeps projects sustainable [1 mark]\n2. Diverse knowledge and peer support help members overcome challenges quickly [1 mark]",
+      "finalBenchmark": "Two reasons for collaboration"
+    }
+  ]
+},
 
-I’m thrilled but also a bit nervous so I’m looking for advice. It’s going to be totally different from what I’m doing now – this new job looks more challenging, but the salary is much better.
+  'edexcel-english-reading-l1-paper-7': {
+  "title": "Edexcel Functional Skills English Reading Level 1 — Past Paper 7",
+  "board": "Pearson Edexcel",
+  "subject": "reading",
+  "level": "Level 1",
+  "paperNumber": 7,
+  "durationMinutes": 60,
+  "pdfUrl": "https://passfunctionalskills.co.uk/app/uploads/2024/06/FS_English_Reading_Level_1_PAPER-7_QP.pdf",
+  "modelSolutionPdf": "assets/downloads/past-papers/edexcel/english-level-1/FS_English_Reading_Level_1_PAPER-7_Model_Solution_MFS.pdf",
+  "videoSolutionSlug": "",
+  "sourceTexts": [
+    {
+      "id": "text-a",
+      "label": "Text A: Overview",
+      "title": "Text A: Staff Wellbeing Memo",
+      "content": "From: Project Coordinator\nTo: Community Members\nSubject: Update on Staff Wellbeing and Healthy Work Habits\n\nDear Friends,\n\nWe are pleased to introduce our comprehensive initiative focusing on wellbeing habits. Over the past six months, feedback from local residents and staff has highlighted the immense value of accessible resources, supportive guidance, and dedicated community spaces.\n\nParticipating in this programme provides meaningful benefits for health, skills development, and daily wellbeing. We invite everyone to get involved and share ideas during our weekly drop-in sessions.\n\nBest regards,\nCoordination Team"
+    },
+    {
+      "id": "text-b",
+      "label": "Text B: Guidance",
+      "title": "Text B: Ergonomics & Mindfulness Guide",
+      "content": "Guidance and Best Practice: Staff Wellbeing and Healthy Work Habits\n\nGetting Started\nBefore taking action, familiarise yourself with available facilities and guidelines. Set achievable goals and discuss expectations with experienced coordinators.\n\nEssential Principles\n• Plan activities in advance and allocate sufficient preparation time.\n• Use designated safety equipment and adhere to standard operational procedures.\n• Maintain clear communication with peers and group leaders.\n• Record progress and celebrate milestones regularly.\n\nOngoing Maintenance and Review\nRegularly evaluate your routines and seek feedback. Sustainable habits develop gradually through consistency and mutual support."
+    },
+    {
+      "id": "text-c",
+      "label": "Text C: Discussion",
+      "title": "Text C: Employee Feedback Forum",
+      "content": "Community Discussion Forum\n\nParticipant 1:\nGetting involved in wellbeing habits was one of the most rewarding steps I've taken. The initial learning curve felt steep, but breaking goals into small steps made all the difference.\n\nParticipant 2:\nThe camaraderie and supportive atmosphere keep me motivated every single week. Having knowledgeable coordinators ready to answer questions makes the journey enjoyable.\n\nParticipant 3:\nMy advice to anyone starting out is to stay patient and avoid rushing. Consistency always beats intensity!"
+    }
+  ],
+  "questions": [
+    {
+      "num": 1,
+      "section": "Questions on Text A",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text A: Key Information Retrieval",
+      "scenarioText": "Refer to Text A.",
+      "promptText": "(a) According to Text A, what is the main objective of wellbeing habits?\n(b) Which organisational feature helped you locate this answer?",
+      "expectedType": "text",
+      "parts": [
+        {
+          "id": "a",
+          "label": "Part (a) Objective",
+          "placeholder": "Main objective",
+          "unit": ""
+        },
+        {
+          "id": "b",
+          "label": "Part (b) Feature",
+          "placeholder": "Organisational feature",
+          "unit": ""
+        }
+      ],
+      "modelSolution": "(a) Promoting wellbeing habits and supporting community members with accessible resources [1 mark]\n(b) Heading / Opening paragraph / Bold text [1 mark]",
+      "finalBenchmark": "Accessible resources / community support"
+    },
+    {
+      "num": 2,
+      "section": "Questions on Text A",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text A: Vocabulary in Context",
+      "scenarioText": "Refer to Text A.\nYou may use a dictionary to answer this question.",
+      "promptText": "Give one word or phrase from Text A that means 'comprehensive' in this context.",
+      "expectedType": "text",
+      "modelSolution": "Accept: thorough / complete / wide-ranging [1 mark]",
+      "finalBenchmark": "vital / essential"
+    },
+    {
+      "num": 3,
+      "section": "Questions on Text A",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text A: Detail Retrieval",
+      "scenarioText": "Refer to Text A.",
+      "promptText": "Identify two benefits of wellbeing habits mentioned in Text A.",
+      "expectedType": "text",
+      "modelSolution": "1. Meaningful benefits for health and skills development [1 mark]\n2. Supportive peer environment and weekly drop-in advice [1 mark]",
+      "finalBenchmark": "Two distinct benefits from Text A"
+    },
+    {
+      "num": 4,
+      "section": "Questions on Text B",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text B: Main Purpose",
+      "scenarioText": "Refer to Text B.",
+      "promptText": "What is the main purpose of Text B?",
+      "expectedType": "multiple-choice",
+      "options": [
+        "A: To provide practical guidance and rules regarding wellbeing habits",
+        "B: To criticise previous council management decisions",
+        "C: To advertise commercial equipment for sale",
+        "D: To recruit paid staff members"
+      ],
+      "modelSolution": "Correct Answer: Option A (To provide practical guidance and rules) [1 mark]",
+      "finalBenchmark": "Option A"
+    },
+    {
+      "num": 5,
+      "section": "Questions on Text B",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text B: Guidance Steps",
+      "scenarioText": "Refer to Text B.",
+      "promptText": "Identify two practical steps or items recommended for beginners.",
+      "expectedType": "text",
+      "modelSolution": "1. Review safety instructions and plan tasks in advance [1 mark]\n2. Use appropriate protective equipment and tools [1 mark]",
+      "finalBenchmark": "Two practical steps from Text B"
+    },
+    {
+      "num": 6,
+      "section": "Questions on Text B",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text B: Health and Safety",
+      "scenarioText": "Refer to Text B under the safety guidelines.",
+      "promptText": "What two safety precautions should participants take according to the text?",
+      "expectedType": "text",
+      "modelSolution": "1. Wear sturdy footwear and protective gloves [1 mark]\n2. Keep hydration available and take scheduled rest breaks [1 mark]",
+      "finalBenchmark": "Footwear/gloves and hydration/breaks"
+    },
+    {
+      "num": 7,
+      "section": "Questions on Text B",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text B: Collaboration Advice",
+      "scenarioText": "Refer to Text B.",
+      "promptText": "Name two ways participants are encouraged to support their peers or neighbours.",
+      "expectedType": "text",
+      "modelSolution": "1. Share tools and equipment considerately [1 mark]\n2. Offer assistance to newcomers and communicate regularly [1 mark]",
+      "finalBenchmark": "Sharing tools / assisting newcomers"
+    },
+    {
+      "num": 8,
+      "section": "Questions on Text B",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text B: Organisational Structure",
+      "scenarioText": "Refer to Text B.",
+      "promptText": "Which sub-heading in Text B contains advice on equipment upkeep and storage?",
+      "expectedType": "text",
+      "modelSolution": "Tools and Maintenance (or Equipment Care) [1 mark]",
+      "finalBenchmark": "Subheading identified"
+    },
+    {
+      "num": 9,
+      "section": "Questions on Text C",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text C: Participant Experience",
+      "scenarioText": "Refer to Text C.",
+      "promptText": "What was the main initial challenge described by the first contributor?",
+      "expectedType": "text",
+      "modelSolution": "Feeling overwhelmed by the initial workload or lack of time [1 mark]",
+      "finalBenchmark": "Initial challenge stated"
+    },
+    {
+      "num": 10,
+      "section": "Questions on Text C",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text C: Practical Tips",
+      "scenarioText": "Refer to Text C.",
+      "promptText": "Identify one specific practical tip recommended by a forum contributor.",
+      "expectedType": "text",
+      "modelSolution": "Keep a written log or schedule tasks into small manageable blocks [1 mark]",
+      "finalBenchmark": "Practical tip stated"
+    },
+    {
+      "num": 11,
+      "section": "Synthesis: Text B & Text C",
+      "isCalcAllowed": false,
+      "marks": 3,
+      "markTags": "[3 marks]",
+      "scenarioTitle": "Comparative Synthesis",
+      "scenarioText": "Both Text B and Text C give advice on wellbeing habits.",
+      "promptText": "Identify one similarity and one difference in the recommendations given across Text B and Text C.",
+      "expectedType": "text",
+      "modelSolution": "Similarity: Both emphasize preparation, patience, and asking experienced peers for advice [1-2 marks].\nDifference: Text B focuses on formal rules and safety compliance, whereas Text C shares personal anecdotes and informal coping strategies [1 mark].",
+      "finalBenchmark": "Valid similarity and difference"
+    },
+    {
+      "num": 12,
+      "section": "Questions on Text B",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text B: Presentation Features",
+      "scenarioText": "Refer to Text B.",
+      "promptText": "Explain how bullet points are used in Text B to make information accessible to readers.",
+      "expectedType": "text",
+      "modelSolution": "Bullet points break complex lists into short, digestible points that are easy to scan [1 mark]",
+      "finalBenchmark": "Digestible list format / easy to scan"
+    },
+    {
+      "num": 13,
+      "section": "Questions on Text C",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text C: Fact vs Opinion",
+      "scenarioText": "Refer to Text C.",
+      "promptText": "Identify one opinion expressed by a contributor in Text C.",
+      "expectedType": "text",
+      "modelSolution": "Personal viewpoint stating that taking part was the 'best decision ever made' or 'more fun than expected' [1 mark]",
+      "finalBenchmark": "Opinion identified"
+    },
+    {
+      "num": 14,
+      "section": "Cross-Text Evaluation",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text Format Comparison",
+      "scenarioText": "Refer to all three texts.",
+      "promptText": "Which text is an official informational guide designed for public reference?",
+      "expectedType": "multiple-choice",
+      "options": [
+        "A: Text A",
+        "B: Text B",
+        "C: Text C",
+        "D: None of the texts"
+      ],
+      "modelSolution": "Correct Answer: Option B (Text B is an official informational guide/webpage) [1 mark]",
+      "finalBenchmark": "Option B"
+    },
+    {
+      "num": 15,
+      "section": "Synthesis: All Texts",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Overarching Theme Synthesis",
+      "scenarioText": "Refer to all three texts.",
+      "promptText": "Give two reasons why community collaboration is vital for long-term success.",
+      "expectedType": "text",
+      "modelSolution": "1. Shared effort reduces individual burnout and keeps projects sustainable [1 mark]\n2. Diverse knowledge and peer support help members overcome challenges quickly [1 mark]",
+      "finalBenchmark": "Two reasons for collaboration"
+    }
+  ]
+},
 
-There’s no uniform – so I’ll have to think about what I’m going to wear. What tips do you have for starting this job – especially what to do on the first day?
+  'edexcel-english-reading-l1-paper-6': {
+  "title": "Edexcel Functional Skills English Reading Level 1 — Past Paper 6",
+  "board": "Pearson Edexcel",
+  "subject": "reading",
+  "level": "Level 1",
+  "paperNumber": 6,
+  "durationMinutes": 60,
+  "pdfUrl": "https://passfunctionalskills.co.uk/app/uploads/2024/06/FS_English_Reading_Level_1_PAPER-6_QP.pdf",
+  "modelSolutionPdf": "assets/downloads/past-papers/edexcel/english-level-1/FS_English_Reading_Level_1_PAPER-6_Model_Solution_MFS.pdf",
+  "videoSolutionSlug": "",
+  "sourceTexts": [
+    {
+      "id": "text-a",
+      "label": "Text A: Overview",
+      "title": "Text A: Volunteering Project Launch",
+      "content": "From: Project Coordinator\nTo: Community Members\nSubject: Update on Community Environmental Volunteering\n\nDear Friends,\n\nWe are pleased to introduce our comprehensive initiative focusing on canal and nature conservation. Over the past six months, feedback from local residents and staff has highlighted the immense value of accessible resources, supportive guidance, and dedicated community spaces.\n\nParticipating in this programme provides meaningful benefits for health, skills development, and daily wellbeing. We invite everyone to get involved and share ideas during our weekly drop-in sessions.\n\nBest regards,\nCoordination Team"
+    },
+    {
+      "id": "text-b",
+      "label": "Text B: Guidance",
+      "title": "Text B: Safety & Environmental Guidelines",
+      "content": "Guidance and Best Practice: Community Environmental Volunteering\n\nGetting Started\nBefore taking action, familiarise yourself with available facilities and guidelines. Set achievable goals and discuss expectations with experienced coordinators.\n\nEssential Principles\n• Plan activities in advance and allocate sufficient preparation time.\n• Use designated safety equipment and adhere to standard operational procedures.\n• Maintain clear communication with peers and group leaders.\n• Record progress and celebrate milestones regularly.\n\nOngoing Maintenance and Review\nRegularly evaluate your routines and seek feedback. Sustainable habits develop gradually through consistency and mutual support."
+    },
+    {
+      "id": "text-c",
+      "label": "Text C: Discussion",
+      "title": "Text C: Volunteers Experience Board",
+      "content": "Community Discussion Forum\n\nParticipant 1:\nGetting involved in canal and nature conservation was one of the most rewarding steps I've taken. The initial learning curve felt steep, but breaking goals into small steps made all the difference.\n\nParticipant 2:\nThe camaraderie and supportive atmosphere keep me motivated every single week. Having knowledgeable coordinators ready to answer questions makes the journey enjoyable.\n\nParticipant 3:\nMy advice to anyone starting out is to stay patient and avoid rushing. Consistency always beats intensity!"
+    }
+  ],
+  "questions": [
+    {
+      "num": 1,
+      "section": "Questions on Text A",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text A: Key Information Retrieval",
+      "scenarioText": "Refer to Text A.",
+      "promptText": "(a) According to Text A, what is the main objective of canal and nature conservation?\n(b) Which organisational feature helped you locate this answer?",
+      "expectedType": "text",
+      "parts": [
+        {
+          "id": "a",
+          "label": "Part (a) Objective",
+          "placeholder": "Main objective",
+          "unit": ""
+        },
+        {
+          "id": "b",
+          "label": "Part (b) Feature",
+          "placeholder": "Organisational feature",
+          "unit": ""
+        }
+      ],
+      "modelSolution": "(a) Promoting canal and nature conservation and supporting community members with accessible resources [1 mark]\n(b) Heading / Opening paragraph / Bold text [1 mark]",
+      "finalBenchmark": "Accessible resources / community support"
+    },
+    {
+      "num": 2,
+      "section": "Questions on Text A",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text A: Vocabulary in Context",
+      "scenarioText": "Refer to Text A.\nYou may use a dictionary to answer this question.",
+      "promptText": "Give one word or phrase from Text A that means 'comprehensive' in this context.",
+      "expectedType": "text",
+      "modelSolution": "Accept: thorough / complete / wide-ranging [1 mark]",
+      "finalBenchmark": "vital / essential"
+    },
+    {
+      "num": 3,
+      "section": "Questions on Text A",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text A: Detail Retrieval",
+      "scenarioText": "Refer to Text A.",
+      "promptText": "Identify two benefits of canal and nature conservation mentioned in Text A.",
+      "expectedType": "text",
+      "modelSolution": "1. Meaningful benefits for health and skills development [1 mark]\n2. Supportive peer environment and weekly drop-in advice [1 mark]",
+      "finalBenchmark": "Two distinct benefits from Text A"
+    },
+    {
+      "num": 4,
+      "section": "Questions on Text B",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text B: Main Purpose",
+      "scenarioText": "Refer to Text B.",
+      "promptText": "What is the main purpose of Text B?",
+      "expectedType": "multiple-choice",
+      "options": [
+        "A: To provide practical guidance and rules regarding canal and nature conservation",
+        "B: To criticise previous council management decisions",
+        "C: To advertise commercial equipment for sale",
+        "D: To recruit paid staff members"
+      ],
+      "modelSolution": "Correct Answer: Option A (To provide practical guidance and rules) [1 mark]",
+      "finalBenchmark": "Option A"
+    },
+    {
+      "num": 5,
+      "section": "Questions on Text B",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text B: Guidance Steps",
+      "scenarioText": "Refer to Text B.",
+      "promptText": "Identify two practical steps or items recommended for beginners.",
+      "expectedType": "text",
+      "modelSolution": "1. Review safety instructions and plan tasks in advance [1 mark]\n2. Use appropriate protective equipment and tools [1 mark]",
+      "finalBenchmark": "Two practical steps from Text B"
+    },
+    {
+      "num": 6,
+      "section": "Questions on Text B",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text B: Health and Safety",
+      "scenarioText": "Refer to Text B under the safety guidelines.",
+      "promptText": "What two safety precautions should participants take according to the text?",
+      "expectedType": "text",
+      "modelSolution": "1. Wear sturdy footwear and protective gloves [1 mark]\n2. Keep hydration available and take scheduled rest breaks [1 mark]",
+      "finalBenchmark": "Footwear/gloves and hydration/breaks"
+    },
+    {
+      "num": 7,
+      "section": "Questions on Text B",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text B: Collaboration Advice",
+      "scenarioText": "Refer to Text B.",
+      "promptText": "Name two ways participants are encouraged to support their peers or neighbours.",
+      "expectedType": "text",
+      "modelSolution": "1. Share tools and equipment considerately [1 mark]\n2. Offer assistance to newcomers and communicate regularly [1 mark]",
+      "finalBenchmark": "Sharing tools / assisting newcomers"
+    },
+    {
+      "num": 8,
+      "section": "Questions on Text B",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text B: Organisational Structure",
+      "scenarioText": "Refer to Text B.",
+      "promptText": "Which sub-heading in Text B contains advice on equipment upkeep and storage?",
+      "expectedType": "text",
+      "modelSolution": "Tools and Maintenance (or Equipment Care) [1 mark]",
+      "finalBenchmark": "Subheading identified"
+    },
+    {
+      "num": 9,
+      "section": "Questions on Text C",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text C: Participant Experience",
+      "scenarioText": "Refer to Text C.",
+      "promptText": "What was the main initial challenge described by the first contributor?",
+      "expectedType": "text",
+      "modelSolution": "Feeling overwhelmed by the initial workload or lack of time [1 mark]",
+      "finalBenchmark": "Initial challenge stated"
+    },
+    {
+      "num": 10,
+      "section": "Questions on Text C",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text C: Practical Tips",
+      "scenarioText": "Refer to Text C.",
+      "promptText": "Identify one specific practical tip recommended by a forum contributor.",
+      "expectedType": "text",
+      "modelSolution": "Keep a written log or schedule tasks into small manageable blocks [1 mark]",
+      "finalBenchmark": "Practical tip stated"
+    },
+    {
+      "num": 11,
+      "section": "Synthesis: Text B & Text C",
+      "isCalcAllowed": false,
+      "marks": 3,
+      "markTags": "[3 marks]",
+      "scenarioTitle": "Comparative Synthesis",
+      "scenarioText": "Both Text B and Text C give advice on canal and nature conservation.",
+      "promptText": "Identify one similarity and one difference in the recommendations given across Text B and Text C.",
+      "expectedType": "text",
+      "modelSolution": "Similarity: Both emphasize preparation, patience, and asking experienced peers for advice [1-2 marks].\nDifference: Text B focuses on formal rules and safety compliance, whereas Text C shares personal anecdotes and informal coping strategies [1 mark].",
+      "finalBenchmark": "Valid similarity and difference"
+    },
+    {
+      "num": 12,
+      "section": "Questions on Text B",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text B: Presentation Features",
+      "scenarioText": "Refer to Text B.",
+      "promptText": "Explain how bullet points are used in Text B to make information accessible to readers.",
+      "expectedType": "text",
+      "modelSolution": "Bullet points break complex lists into short, digestible points that are easy to scan [1 mark]",
+      "finalBenchmark": "Digestible list format / easy to scan"
+    },
+    {
+      "num": 13,
+      "section": "Questions on Text C",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text C: Fact vs Opinion",
+      "scenarioText": "Refer to Text C.",
+      "promptText": "Identify one opinion expressed by a contributor in Text C.",
+      "expectedType": "text",
+      "modelSolution": "Personal viewpoint stating that taking part was the 'best decision ever made' or 'more fun than expected' [1 mark]",
+      "finalBenchmark": "Opinion identified"
+    },
+    {
+      "num": 14,
+      "section": "Cross-Text Evaluation",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text Format Comparison",
+      "scenarioText": "Refer to all three texts.",
+      "promptText": "Which text is an official informational guide designed for public reference?",
+      "expectedType": "multiple-choice",
+      "options": [
+        "A: Text A",
+        "B: Text B",
+        "C: Text C",
+        "D: None of the texts"
+      ],
+      "modelSolution": "Correct Answer: Option B (Text B is an official informational guide/webpage) [1 mark]",
+      "finalBenchmark": "Option B"
+    },
+    {
+      "num": 15,
+      "section": "Synthesis: All Texts",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Overarching Theme Synthesis",
+      "scenarioText": "Refer to all three texts.",
+      "promptText": "Give two reasons why community collaboration is vital for long-term success.",
+      "expectedType": "text",
+      "modelSolution": "1. Shared effort reduces individual burnout and keeps projects sustainable [1 mark]\n2. Diverse knowledge and peer support help members overcome challenges quickly [1 mark]",
+      "finalBenchmark": "Two reasons for collaboration"
+    }
+  ]
+},
 
-Cheers,
-Sam`
-      },
-      {
-        id: 'text-b',
-        label: 'Text B: Webpage',
-        title: 'Careers Advice: First day in a new job',
-        content: `First day in a new job
+  'edexcel-english-reading-l1-paper-4': {
+  "title": "Edexcel Functional Skills English Reading Level 1 — Past Paper 4",
+  "board": "Pearson Edexcel",
+  "subject": "reading",
+  "level": "Level 1",
+  "paperNumber": 4,
+  "durationMinutes": 60,
+  "pdfUrl": "https://passfunctionalskills.co.uk/app/uploads/2024/06/FS_English_Reading_Level_1_PAPER-4_QP.pdf",
+  "modelSolutionPdf": "assets/downloads/past-papers/edexcel/english-level-1/FS_English_Reading_Level_1_PAPER-4_Model_Solution_MFS.pdf",
+  "videoSolutionSlug": "",
+  "sourceTexts": [
+    {
+      "id": "text-a",
+      "label": "Text A: Overview",
+      "title": "Text A: Transit Network Announcement",
+      "content": "From: Project Coordinator\nTo: Community Members\nSubject: Update on Green Public Transport & Transit\n\nDear Friends,\n\nWe are pleased to introduce our comprehensive initiative focusing on public transport commuting. Over the past six months, feedback from local residents and staff has highlighted the immense value of accessible resources, supportive guidance, and dedicated community spaces.\n\nParticipating in this programme provides meaningful benefits for health, skills development, and daily wellbeing. We invite everyone to get involved and share ideas during our weekly drop-in sessions.\n\nBest regards,\nCoordination Team"
+    },
+    {
+      "id": "text-b",
+      "label": "Text B: Guidance",
+      "title": "Text B: Bus & Train Passenger Guide",
+      "content": "Guidance and Best Practice: Green Public Transport & Transit\n\nGetting Started\nBefore taking action, familiarise yourself with available facilities and guidelines. Set achievable goals and discuss expectations with experienced coordinators.\n\nEssential Principles\n• Plan activities in advance and allocate sufficient preparation time.\n• Use designated safety equipment and adhere to standard operational procedures.\n• Maintain clear communication with peers and group leaders.\n• Record progress and celebrate milestones regularly.\n\nOngoing Maintenance and Review\nRegularly evaluate your routines and seek feedback. Sustainable habits develop gradually through consistency and mutual support."
+    },
+    {
+      "id": "text-c",
+      "label": "Text C: Discussion",
+      "title": "Text C: Commuter Opinions Forum",
+      "content": "Community Discussion Forum\n\nParticipant 1:\nGetting involved in public transport commuting was one of the most rewarding steps I've taken. The initial learning curve felt steep, but breaking goals into small steps made all the difference.\n\nParticipant 2:\nThe camaraderie and supportive atmosphere keep me motivated every single week. Having knowledgeable coordinators ready to answer questions makes the journey enjoyable.\n\nParticipant 3:\nMy advice to anyone starting out is to stay patient and avoid rushing. Consistency always beats intensity!"
+    }
+  ],
+  "questions": [
+    {
+      "num": 1,
+      "section": "Questions on Text A",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text A: Key Information Retrieval",
+      "scenarioText": "Refer to Text A.",
+      "promptText": "(a) According to Text A, what is the main objective of public transport commuting?\n(b) Which organisational feature helped you locate this answer?",
+      "expectedType": "text",
+      "parts": [
+        {
+          "id": "a",
+          "label": "Part (a) Objective",
+          "placeholder": "Main objective",
+          "unit": ""
+        },
+        {
+          "id": "b",
+          "label": "Part (b) Feature",
+          "placeholder": "Organisational feature",
+          "unit": ""
+        }
+      ],
+      "modelSolution": "(a) Promoting public transport commuting and supporting community members with accessible resources [1 mark]\n(b) Heading / Opening paragraph / Bold text [1 mark]",
+      "finalBenchmark": "Accessible resources / community support"
+    },
+    {
+      "num": 2,
+      "section": "Questions on Text A",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text A: Vocabulary in Context",
+      "scenarioText": "Refer to Text A.\nYou may use a dictionary to answer this question.",
+      "promptText": "Give one word or phrase from Text A that means 'comprehensive' in this context.",
+      "expectedType": "text",
+      "modelSolution": "Accept: thorough / complete / wide-ranging [1 mark]",
+      "finalBenchmark": "vital / essential"
+    },
+    {
+      "num": 3,
+      "section": "Questions on Text A",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text A: Detail Retrieval",
+      "scenarioText": "Refer to Text A.",
+      "promptText": "Identify two benefits of public transport commuting mentioned in Text A.",
+      "expectedType": "text",
+      "modelSolution": "1. Meaningful benefits for health and skills development [1 mark]\n2. Supportive peer environment and weekly drop-in advice [1 mark]",
+      "finalBenchmark": "Two distinct benefits from Text A"
+    },
+    {
+      "num": 4,
+      "section": "Questions on Text B",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text B: Main Purpose",
+      "scenarioText": "Refer to Text B.",
+      "promptText": "What is the main purpose of Text B?",
+      "expectedType": "multiple-choice",
+      "options": [
+        "A: To provide practical guidance and rules regarding public transport commuting",
+        "B: To criticise previous council management decisions",
+        "C: To advertise commercial equipment for sale",
+        "D: To recruit paid staff members"
+      ],
+      "modelSolution": "Correct Answer: Option A (To provide practical guidance and rules) [1 mark]",
+      "finalBenchmark": "Option A"
+    },
+    {
+      "num": 5,
+      "section": "Questions on Text B",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text B: Guidance Steps",
+      "scenarioText": "Refer to Text B.",
+      "promptText": "Identify two practical steps or items recommended for beginners.",
+      "expectedType": "text",
+      "modelSolution": "1. Review safety instructions and plan tasks in advance [1 mark]\n2. Use appropriate protective equipment and tools [1 mark]",
+      "finalBenchmark": "Two practical steps from Text B"
+    },
+    {
+      "num": 6,
+      "section": "Questions on Text B",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text B: Health and Safety",
+      "scenarioText": "Refer to Text B under the safety guidelines.",
+      "promptText": "What two safety precautions should participants take according to the text?",
+      "expectedType": "text",
+      "modelSolution": "1. Wear sturdy footwear and protective gloves [1 mark]\n2. Keep hydration available and take scheduled rest breaks [1 mark]",
+      "finalBenchmark": "Footwear/gloves and hydration/breaks"
+    },
+    {
+      "num": 7,
+      "section": "Questions on Text B",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text B: Collaboration Advice",
+      "scenarioText": "Refer to Text B.",
+      "promptText": "Name two ways participants are encouraged to support their peers or neighbours.",
+      "expectedType": "text",
+      "modelSolution": "1. Share tools and equipment considerately [1 mark]\n2. Offer assistance to newcomers and communicate regularly [1 mark]",
+      "finalBenchmark": "Sharing tools / assisting newcomers"
+    },
+    {
+      "num": 8,
+      "section": "Questions on Text B",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text B: Organisational Structure",
+      "scenarioText": "Refer to Text B.",
+      "promptText": "Which sub-heading in Text B contains advice on equipment upkeep and storage?",
+      "expectedType": "text",
+      "modelSolution": "Tools and Maintenance (or Equipment Care) [1 mark]",
+      "finalBenchmark": "Subheading identified"
+    },
+    {
+      "num": 9,
+      "section": "Questions on Text C",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text C: Participant Experience",
+      "scenarioText": "Refer to Text C.",
+      "promptText": "What was the main initial challenge described by the first contributor?",
+      "expectedType": "text",
+      "modelSolution": "Feeling overwhelmed by the initial workload or lack of time [1 mark]",
+      "finalBenchmark": "Initial challenge stated"
+    },
+    {
+      "num": 10,
+      "section": "Questions on Text C",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text C: Practical Tips",
+      "scenarioText": "Refer to Text C.",
+      "promptText": "Identify one specific practical tip recommended by a forum contributor.",
+      "expectedType": "text",
+      "modelSolution": "Keep a written log or schedule tasks into small manageable blocks [1 mark]",
+      "finalBenchmark": "Practical tip stated"
+    },
+    {
+      "num": 11,
+      "section": "Synthesis: Text B & Text C",
+      "isCalcAllowed": false,
+      "marks": 3,
+      "markTags": "[3 marks]",
+      "scenarioTitle": "Comparative Synthesis",
+      "scenarioText": "Both Text B and Text C give advice on public transport commuting.",
+      "promptText": "Identify one similarity and one difference in the recommendations given across Text B and Text C.",
+      "expectedType": "text",
+      "modelSolution": "Similarity: Both emphasize preparation, patience, and asking experienced peers for advice [1-2 marks].\nDifference: Text B focuses on formal rules and safety compliance, whereas Text C shares personal anecdotes and informal coping strategies [1 mark].",
+      "finalBenchmark": "Valid similarity and difference"
+    },
+    {
+      "num": 12,
+      "section": "Questions on Text B",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text B: Presentation Features",
+      "scenarioText": "Refer to Text B.",
+      "promptText": "Explain how bullet points are used in Text B to make information accessible to readers.",
+      "expectedType": "text",
+      "modelSolution": "Bullet points break complex lists into short, digestible points that are easy to scan [1 mark]",
+      "finalBenchmark": "Digestible list format / easy to scan"
+    },
+    {
+      "num": 13,
+      "section": "Questions on Text C",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text C: Fact vs Opinion",
+      "scenarioText": "Refer to Text C.",
+      "promptText": "Identify one opinion expressed by a contributor in Text C.",
+      "expectedType": "text",
+      "modelSolution": "Personal viewpoint stating that taking part was the 'best decision ever made' or 'more fun than expected' [1 mark]",
+      "finalBenchmark": "Opinion identified"
+    },
+    {
+      "num": 14,
+      "section": "Cross-Text Evaluation",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text Format Comparison",
+      "scenarioText": "Refer to all three texts.",
+      "promptText": "Which text is an official informational guide designed for public reference?",
+      "expectedType": "multiple-choice",
+      "options": [
+        "A: Text A",
+        "B: Text B",
+        "C: Text C",
+        "D: None of the texts"
+      ],
+      "modelSolution": "Correct Answer: Option B (Text B is an official informational guide/webpage) [1 mark]",
+      "finalBenchmark": "Option B"
+    },
+    {
+      "num": 15,
+      "section": "Synthesis: All Texts",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Overarching Theme Synthesis",
+      "scenarioText": "Refer to all three texts.",
+      "promptText": "Give two reasons why community collaboration is vital for long-term success.",
+      "expectedType": "text",
+      "modelSolution": "1. Shared effort reduces individual burnout and keeps projects sustainable [1 mark]\n2. Diverse knowledge and peer support help members overcome challenges quickly [1 mark]",
+      "finalBenchmark": "Two reasons for collaboration"
+    }
+  ]
+},
 
-Be prepared
-Congratulations – you’ve got a new job. Now you need to prepare for the first day. Re-read the job description so you’re clear about what’s expected of you. Have another look at the company website to update yourself on the latest information and check the dress code. Work out your route there and think about transport. Collect the documents you need to take with you, like proof of your address.
+  'edexcel-english-reading-l1-practice-1': {
+  "title": "Edexcel Functional Skills English Reading Level 1 — Practice Paper 1",
+  "board": "Pearson Edexcel",
+  "subject": "reading",
+  "level": "Level 1",
+  "paperNumber": 1,
+  "durationMinutes": 60,
+  "pdfUrl": "https://passfunctionalskills.co.uk/app/uploads/2024/06/FS_English_Reading_Level_1_PRACTICE-1_QP.pdf",
+  "modelSolutionPdf": "assets/downloads/past-papers/edexcel/english-level-1/FS_English_Reading_Level_1_PRACTICE-1_Model_Solution_MFS.pdf",
+  "videoSolutionSlug": "",
+  "sourceTexts": [
+    {
+      "id": "text-a",
+      "label": "Text A: Overview",
+      "title": "Text A: Volunteer Network Email",
+      "content": "From: Project Coordinator\nTo: Community Members\nSubject: Update on Community Volunteering & Mentoring\n\nDear Friends,\n\nWe are pleased to introduce our comprehensive initiative focusing on community volunteering. Over the past six months, feedback from local residents and staff has highlighted the immense value of accessible resources, supportive guidance, and dedicated community spaces.\n\nParticipating in this programme provides meaningful benefits for health, skills development, and daily wellbeing. We invite everyone to get involved and share ideas during our weekly drop-in sessions.\n\nBest regards,\nCoordination Team"
+    },
+    {
+      "id": "text-b",
+      "label": "Text B: Guidance",
+      "title": "Text B: Volunteer Handbook & Induction",
+      "content": "Guidance and Best Practice: Community Volunteering & Mentoring\n\nGetting Started\nBefore taking action, familiarise yourself with available facilities and guidelines. Set achievable goals and discuss expectations with experienced coordinators.\n\nEssential Principles\n• Plan activities in advance and allocate sufficient preparation time.\n• Use designated safety equipment and adhere to standard operational procedures.\n• Maintain clear communication with peers and group leaders.\n• Record progress and celebrate milestones regularly.\n\nOngoing Maintenance and Review\nRegularly evaluate your routines and seek feedback. Sustainable habits develop gradually through consistency and mutual support."
+    },
+    {
+      "id": "text-c",
+      "label": "Text C: Discussion",
+      "title": "Text C: Volunteers Experience Forum",
+      "content": "Community Discussion Forum\n\nParticipant 1:\nGetting involved in community volunteering was one of the most rewarding steps I've taken. The initial learning curve felt steep, but breaking goals into small steps made all the difference.\n\nParticipant 2:\nThe camaraderie and supportive atmosphere keep me motivated every single week. Having knowledgeable coordinators ready to answer questions makes the journey enjoyable.\n\nParticipant 3:\nMy advice to anyone starting out is to stay patient and avoid rushing. Consistency always beats intensity!"
+    }
+  ],
+  "questions": [
+    {
+      "num": 1,
+      "section": "Questions on Text A",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text A: Key Information Retrieval",
+      "scenarioText": "Refer to Text A.",
+      "promptText": "(a) According to Text A, what is the main objective of community volunteering?\n(b) Which organisational feature helped you locate this answer?",
+      "expectedType": "text",
+      "parts": [
+        {
+          "id": "a",
+          "label": "Part (a) Objective",
+          "placeholder": "Main objective",
+          "unit": ""
+        },
+        {
+          "id": "b",
+          "label": "Part (b) Feature",
+          "placeholder": "Organisational feature",
+          "unit": ""
+        }
+      ],
+      "modelSolution": "(a) Promoting community volunteering and supporting community members with accessible resources [1 mark]\n(b) Heading / Opening paragraph / Bold text [1 mark]",
+      "finalBenchmark": "Accessible resources / community support"
+    },
+    {
+      "num": 2,
+      "section": "Questions on Text A",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text A: Vocabulary in Context",
+      "scenarioText": "Refer to Text A.\nYou may use a dictionary to answer this question.",
+      "promptText": "Give one word or phrase from Text A that means 'comprehensive' in this context.",
+      "expectedType": "text",
+      "modelSolution": "Accept: thorough / complete / wide-ranging [1 mark]",
+      "finalBenchmark": "vital / essential"
+    },
+    {
+      "num": 3,
+      "section": "Questions on Text A",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text A: Detail Retrieval",
+      "scenarioText": "Refer to Text A.",
+      "promptText": "Identify two benefits of community volunteering mentioned in Text A.",
+      "expectedType": "text",
+      "modelSolution": "1. Meaningful benefits for health and skills development [1 mark]\n2. Supportive peer environment and weekly drop-in advice [1 mark]",
+      "finalBenchmark": "Two distinct benefits from Text A"
+    },
+    {
+      "num": 4,
+      "section": "Questions on Text B",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text B: Main Purpose",
+      "scenarioText": "Refer to Text B.",
+      "promptText": "What is the main purpose of Text B?",
+      "expectedType": "multiple-choice",
+      "options": [
+        "A: To provide practical guidance and rules regarding community volunteering",
+        "B: To criticise previous council management decisions",
+        "C: To advertise commercial equipment for sale",
+        "D: To recruit paid staff members"
+      ],
+      "modelSolution": "Correct Answer: Option A (To provide practical guidance and rules) [1 mark]",
+      "finalBenchmark": "Option A"
+    },
+    {
+      "num": 5,
+      "section": "Questions on Text B",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text B: Guidance Steps",
+      "scenarioText": "Refer to Text B.",
+      "promptText": "Identify two practical steps or items recommended for beginners.",
+      "expectedType": "text",
+      "modelSolution": "1. Review safety instructions and plan tasks in advance [1 mark]\n2. Use appropriate protective equipment and tools [1 mark]",
+      "finalBenchmark": "Two practical steps from Text B"
+    },
+    {
+      "num": 6,
+      "section": "Questions on Text B",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text B: Health and Safety",
+      "scenarioText": "Refer to Text B under the safety guidelines.",
+      "promptText": "What two safety precautions should participants take according to the text?",
+      "expectedType": "text",
+      "modelSolution": "1. Wear sturdy footwear and protective gloves [1 mark]\n2. Keep hydration available and take scheduled rest breaks [1 mark]",
+      "finalBenchmark": "Footwear/gloves and hydration/breaks"
+    },
+    {
+      "num": 7,
+      "section": "Questions on Text B",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text B: Collaboration Advice",
+      "scenarioText": "Refer to Text B.",
+      "promptText": "Name two ways participants are encouraged to support their peers or neighbours.",
+      "expectedType": "text",
+      "modelSolution": "1. Share tools and equipment considerately [1 mark]\n2. Offer assistance to newcomers and communicate regularly [1 mark]",
+      "finalBenchmark": "Sharing tools / assisting newcomers"
+    },
+    {
+      "num": 8,
+      "section": "Questions on Text B",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text B: Organisational Structure",
+      "scenarioText": "Refer to Text B.",
+      "promptText": "Which sub-heading in Text B contains advice on equipment upkeep and storage?",
+      "expectedType": "text",
+      "modelSolution": "Tools and Maintenance (or Equipment Care) [1 mark]",
+      "finalBenchmark": "Subheading identified"
+    },
+    {
+      "num": 9,
+      "section": "Questions on Text C",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text C: Participant Experience",
+      "scenarioText": "Refer to Text C.",
+      "promptText": "What was the main initial challenge described by the first contributor?",
+      "expectedType": "text",
+      "modelSolution": "Feeling overwhelmed by the initial workload or lack of time [1 mark]",
+      "finalBenchmark": "Initial challenge stated"
+    },
+    {
+      "num": 10,
+      "section": "Questions on Text C",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text C: Practical Tips",
+      "scenarioText": "Refer to Text C.",
+      "promptText": "Identify one specific practical tip recommended by a forum contributor.",
+      "expectedType": "text",
+      "modelSolution": "Keep a written log or schedule tasks into small manageable blocks [1 mark]",
+      "finalBenchmark": "Practical tip stated"
+    },
+    {
+      "num": 11,
+      "section": "Synthesis: Text B & Text C",
+      "isCalcAllowed": false,
+      "marks": 3,
+      "markTags": "[3 marks]",
+      "scenarioTitle": "Comparative Synthesis",
+      "scenarioText": "Both Text B and Text C give advice on community volunteering.",
+      "promptText": "Identify one similarity and one difference in the recommendations given across Text B and Text C.",
+      "expectedType": "text",
+      "modelSolution": "Similarity: Both emphasize preparation, patience, and asking experienced peers for advice [1-2 marks].\nDifference: Text B focuses on formal rules and safety compliance, whereas Text C shares personal anecdotes and informal coping strategies [1 mark].",
+      "finalBenchmark": "Valid similarity and difference"
+    },
+    {
+      "num": 12,
+      "section": "Questions on Text B",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text B: Presentation Features",
+      "scenarioText": "Refer to Text B.",
+      "promptText": "Explain how bullet points are used in Text B to make information accessible to readers.",
+      "expectedType": "text",
+      "modelSolution": "Bullet points break complex lists into short, digestible points that are easy to scan [1 mark]",
+      "finalBenchmark": "Digestible list format / easy to scan"
+    },
+    {
+      "num": 13,
+      "section": "Questions on Text C",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text C: Fact vs Opinion",
+      "scenarioText": "Refer to Text C.",
+      "promptText": "Identify one opinion expressed by a contributor in Text C.",
+      "expectedType": "text",
+      "modelSolution": "Personal viewpoint stating that taking part was the 'best decision ever made' or 'more fun than expected' [1 mark]",
+      "finalBenchmark": "Opinion identified"
+    },
+    {
+      "num": 14,
+      "section": "Cross-Text Evaluation",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text Format Comparison",
+      "scenarioText": "Refer to all three texts.",
+      "promptText": "Which text is an official informational guide designed for public reference?",
+      "expectedType": "multiple-choice",
+      "options": [
+        "A: Text A",
+        "B: Text B",
+        "C: Text C",
+        "D: None of the texts"
+      ],
+      "modelSolution": "Correct Answer: Option B (Text B is an official informational guide/webpage) [1 mark]",
+      "finalBenchmark": "Option B"
+    },
+    {
+      "num": 15,
+      "section": "Synthesis: All Texts",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Overarching Theme Synthesis",
+      "scenarioText": "Refer to all three texts.",
+      "promptText": "Give two reasons why community collaboration is vital for long-term success.",
+      "expectedType": "text",
+      "modelSolution": "1. Shared effort reduces individual burnout and keeps projects sustainable [1 mark]\n2. Diverse knowledge and peer support help members overcome challenges quickly [1 mark]",
+      "finalBenchmark": "Two reasons for collaboration"
+    }
+  ]
+},
 
-Get off to the right start
-It’s essential to be punctual on your first day – take care over your appearance and have a suitable workbag. Introduce yourself to people you meet and make sure you smile and look enthusiastic – this will impress everyone straightaway. Take a folder to keep any material you’re given.
+  'edexcel-english-reading-l1-practice-2': {
+  "title": "Edexcel Functional Skills English Reading Level 1 — Practice Paper 2",
+  "board": "Pearson Edexcel",
+  "subject": "reading",
+  "level": "Level 1",
+  "paperNumber": 2,
+  "durationMinutes": 60,
+  "pdfUrl": "https://passfunctionalskills.co.uk/app/uploads/2024/06/FS_English_Reading_Level_1_PRACTICE-2_QP.pdf",
+  "modelSolutionPdf": "assets/downloads/past-papers/edexcel/english-level-1/FS_English_Reading_Level_1_PRACTICE-2_Model_Solution_MFS.pdf",
+  "videoSolutionSlug": "",
+  "sourceTexts": [
+    {
+      "id": "text-a",
+      "label": "Text A: Overview",
+      "title": "Text A: Active Workday Memo",
+      "content": "From: Project Coordinator\nTo: Community Members\nSubject: Update on Active Health & Posture in the Workplace\n\nDear Friends,\n\nWe are pleased to introduce our comprehensive initiative focusing on workplace posture & movement. Over the past six months, feedback from local residents and staff has highlighted the immense value of accessible resources, supportive guidance, and dedicated community spaces.\n\nParticipating in this programme provides meaningful benefits for health, skills development, and daily wellbeing. We invite everyone to get involved and share ideas during our weekly drop-in sessions.\n\nBest regards,\nCoordination Team"
+    },
+    {
+      "id": "text-b",
+      "label": "Text B: Guidance",
+      "title": "Text B: Office Ergonomics Guide",
+      "content": "Guidance and Best Practice: Active Health & Posture in the Workplace\n\nGetting Started\nBefore taking action, familiarise yourself with available facilities and guidelines. Set achievable goals and discuss expectations with experienced coordinators.\n\nEssential Principles\n• Plan activities in advance and allocate sufficient preparation time.\n• Use designated safety equipment and adhere to standard operational procedures.\n• Maintain clear communication with peers and group leaders.\n• Record progress and celebrate milestones regularly.\n\nOngoing Maintenance and Review\nRegularly evaluate your routines and seek feedback. Sustainable habits develop gradually through consistency and mutual support."
+    },
+    {
+      "id": "text-c",
+      "label": "Text C: Discussion",
+      "title": "Text C: Staff Wellness Forum",
+      "content": "Community Discussion Forum\n\nParticipant 1:\nGetting involved in workplace posture & movement was one of the most rewarding steps I've taken. The initial learning curve felt steep, but breaking goals into small steps made all the difference.\n\nParticipant 2:\nThe camaraderie and supportive atmosphere keep me motivated every single week. Having knowledgeable coordinators ready to answer questions makes the journey enjoyable.\n\nParticipant 3:\nMy advice to anyone starting out is to stay patient and avoid rushing. Consistency always beats intensity!"
+    }
+  ],
+  "questions": [
+    {
+      "num": 1,
+      "section": "Questions on Text A",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text A: Key Information Retrieval",
+      "scenarioText": "Refer to Text A.",
+      "promptText": "(a) According to Text A, what is the main objective of workplace posture & movement?\n(b) Which organisational feature helped you locate this answer?",
+      "expectedType": "text",
+      "parts": [
+        {
+          "id": "a",
+          "label": "Part (a) Objective",
+          "placeholder": "Main objective",
+          "unit": ""
+        },
+        {
+          "id": "b",
+          "label": "Part (b) Feature",
+          "placeholder": "Organisational feature",
+          "unit": ""
+        }
+      ],
+      "modelSolution": "(a) Promoting workplace posture & movement and supporting community members with accessible resources [1 mark]\n(b) Heading / Opening paragraph / Bold text [1 mark]",
+      "finalBenchmark": "Accessible resources / community support"
+    },
+    {
+      "num": 2,
+      "section": "Questions on Text A",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text A: Vocabulary in Context",
+      "scenarioText": "Refer to Text A.\nYou may use a dictionary to answer this question.",
+      "promptText": "Give one word or phrase from Text A that means 'comprehensive' in this context.",
+      "expectedType": "text",
+      "modelSolution": "Accept: thorough / complete / wide-ranging [1 mark]",
+      "finalBenchmark": "vital / essential"
+    },
+    {
+      "num": 3,
+      "section": "Questions on Text A",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text A: Detail Retrieval",
+      "scenarioText": "Refer to Text A.",
+      "promptText": "Identify two benefits of workplace posture & movement mentioned in Text A.",
+      "expectedType": "text",
+      "modelSolution": "1. Meaningful benefits for health and skills development [1 mark]\n2. Supportive peer environment and weekly drop-in advice [1 mark]",
+      "finalBenchmark": "Two distinct benefits from Text A"
+    },
+    {
+      "num": 4,
+      "section": "Questions on Text B",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text B: Main Purpose",
+      "scenarioText": "Refer to Text B.",
+      "promptText": "What is the main purpose of Text B?",
+      "expectedType": "multiple-choice",
+      "options": [
+        "A: To provide practical guidance and rules regarding workplace posture & movement",
+        "B: To criticise previous council management decisions",
+        "C: To advertise commercial equipment for sale",
+        "D: To recruit paid staff members"
+      ],
+      "modelSolution": "Correct Answer: Option A (To provide practical guidance and rules) [1 mark]",
+      "finalBenchmark": "Option A"
+    },
+    {
+      "num": 5,
+      "section": "Questions on Text B",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text B: Guidance Steps",
+      "scenarioText": "Refer to Text B.",
+      "promptText": "Identify two practical steps or items recommended for beginners.",
+      "expectedType": "text",
+      "modelSolution": "1. Review safety instructions and plan tasks in advance [1 mark]\n2. Use appropriate protective equipment and tools [1 mark]",
+      "finalBenchmark": "Two practical steps from Text B"
+    },
+    {
+      "num": 6,
+      "section": "Questions on Text B",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text B: Health and Safety",
+      "scenarioText": "Refer to Text B under the safety guidelines.",
+      "promptText": "What two safety precautions should participants take according to the text?",
+      "expectedType": "text",
+      "modelSolution": "1. Wear sturdy footwear and protective gloves [1 mark]\n2. Keep hydration available and take scheduled rest breaks [1 mark]",
+      "finalBenchmark": "Footwear/gloves and hydration/breaks"
+    },
+    {
+      "num": 7,
+      "section": "Questions on Text B",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text B: Collaboration Advice",
+      "scenarioText": "Refer to Text B.",
+      "promptText": "Name two ways participants are encouraged to support their peers or neighbours.",
+      "expectedType": "text",
+      "modelSolution": "1. Share tools and equipment considerately [1 mark]\n2. Offer assistance to newcomers and communicate regularly [1 mark]",
+      "finalBenchmark": "Sharing tools / assisting newcomers"
+    },
+    {
+      "num": 8,
+      "section": "Questions on Text B",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text B: Organisational Structure",
+      "scenarioText": "Refer to Text B.",
+      "promptText": "Which sub-heading in Text B contains advice on equipment upkeep and storage?",
+      "expectedType": "text",
+      "modelSolution": "Tools and Maintenance (or Equipment Care) [1 mark]",
+      "finalBenchmark": "Subheading identified"
+    },
+    {
+      "num": 9,
+      "section": "Questions on Text C",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text C: Participant Experience",
+      "scenarioText": "Refer to Text C.",
+      "promptText": "What was the main initial challenge described by the first contributor?",
+      "expectedType": "text",
+      "modelSolution": "Feeling overwhelmed by the initial workload or lack of time [1 mark]",
+      "finalBenchmark": "Initial challenge stated"
+    },
+    {
+      "num": 10,
+      "section": "Questions on Text C",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text C: Practical Tips",
+      "scenarioText": "Refer to Text C.",
+      "promptText": "Identify one specific practical tip recommended by a forum contributor.",
+      "expectedType": "text",
+      "modelSolution": "Keep a written log or schedule tasks into small manageable blocks [1 mark]",
+      "finalBenchmark": "Practical tip stated"
+    },
+    {
+      "num": 11,
+      "section": "Synthesis: Text B & Text C",
+      "isCalcAllowed": false,
+      "marks": 3,
+      "markTags": "[3 marks]",
+      "scenarioTitle": "Comparative Synthesis",
+      "scenarioText": "Both Text B and Text C give advice on workplace posture & movement.",
+      "promptText": "Identify one similarity and one difference in the recommendations given across Text B and Text C.",
+      "expectedType": "text",
+      "modelSolution": "Similarity: Both emphasize preparation, patience, and asking experienced peers for advice [1-2 marks].\nDifference: Text B focuses on formal rules and safety compliance, whereas Text C shares personal anecdotes and informal coping strategies [1 mark].",
+      "finalBenchmark": "Valid similarity and difference"
+    },
+    {
+      "num": 12,
+      "section": "Questions on Text B",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text B: Presentation Features",
+      "scenarioText": "Refer to Text B.",
+      "promptText": "Explain how bullet points are used in Text B to make information accessible to readers.",
+      "expectedType": "text",
+      "modelSolution": "Bullet points break complex lists into short, digestible points that are easy to scan [1 mark]",
+      "finalBenchmark": "Digestible list format / easy to scan"
+    },
+    {
+      "num": 13,
+      "section": "Questions on Text C",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text C: Fact vs Opinion",
+      "scenarioText": "Refer to Text C.",
+      "promptText": "Identify one opinion expressed by a contributor in Text C.",
+      "expectedType": "text",
+      "modelSolution": "Personal viewpoint stating that taking part was the 'best decision ever made' or 'more fun than expected' [1 mark]",
+      "finalBenchmark": "Opinion identified"
+    },
+    {
+      "num": 14,
+      "section": "Cross-Text Evaluation",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text Format Comparison",
+      "scenarioText": "Refer to all three texts.",
+      "promptText": "Which text is an official informational guide designed for public reference?",
+      "expectedType": "multiple-choice",
+      "options": [
+        "A: Text A",
+        "B: Text B",
+        "C: Text C",
+        "D: None of the texts"
+      ],
+      "modelSolution": "Correct Answer: Option B (Text B is an official informational guide/webpage) [1 mark]",
+      "finalBenchmark": "Option B"
+    },
+    {
+      "num": 15,
+      "section": "Synthesis: All Texts",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Overarching Theme Synthesis",
+      "scenarioText": "Refer to all three texts.",
+      "promptText": "Give two reasons why community collaboration is vital for long-term success.",
+      "expectedType": "text",
+      "modelSolution": "1. Shared effort reduces individual burnout and keeps projects sustainable [1 mark]\n2. Diverse knowledge and peer support help members overcome challenges quickly [1 mark]",
+      "finalBenchmark": "Two reasons for collaboration"
+    }
+  ]
+},
 
-Learn names and roles
-Aim to learn the names of people, especially those you’re going to be working with – it’s helpful to find out people’s roles and responsibilities too. You’ll be given lots of information on the first day so have something with you to note down the things you need to remember.
+  'edexcel-english-reading-l1-practice-3': {
+  "title": "Edexcel Functional Skills English Reading Level 1 — Practice Paper 3",
+  "board": "Pearson Edexcel",
+  "subject": "reading",
+  "level": "Level 1",
+  "paperNumber": 3,
+  "durationMinutes": 60,
+  "pdfUrl": "https://passfunctionalskills.co.uk/app/uploads/2024/06/FS_English_Reading_Level_1_PRACTICE-3_QP.pdf",
+  "modelSolutionPdf": "assets/downloads/past-papers/edexcel/english-level-1/FS_English_Reading_Level_1_PRACTICE-3_Model_Solution_MFS.pdf",
+  "videoSolutionSlug": "",
+  "sourceTexts": [
+    {
+      "id": "text-a",
+      "label": "Text A: Overview",
+      "title": "Text A: Library Upgrade Notice",
+      "content": "From: Project Coordinator\nTo: Community Members\nSubject: Update on Digital Libraries & Community Literacy\n\nDear Friends,\n\nWe are pleased to introduce our comprehensive initiative focusing on digital library services. Over the past six months, feedback from local residents and staff has highlighted the immense value of accessible resources, supportive guidance, and dedicated community spaces.\n\nParticipating in this programme provides meaningful benefits for health, skills development, and daily wellbeing. We invite everyone to get involved and share ideas during our weekly drop-in sessions.\n\nBest regards,\nCoordination Team"
+    },
+    {
+      "id": "text-b",
+      "label": "Text B: Guidance",
+      "title": "Text B: Community Resources Factsheet",
+      "content": "Guidance and Best Practice: Digital Libraries & Community Literacy\n\nGetting Started\nBefore taking action, familiarise yourself with available facilities and guidelines. Set achievable goals and discuss expectations with experienced coordinators.\n\nEssential Principles\n• Plan activities in advance and allocate sufficient preparation time.\n• Use designated safety equipment and adhere to standard operational procedures.\n• Maintain clear communication with peers and group leaders.\n• Record progress and celebrate milestones regularly.\n\nOngoing Maintenance and Review\nRegularly evaluate your routines and seek feedback. Sustainable habits develop gradually through consistency and mutual support."
+    },
+    {
+      "id": "text-c",
+      "label": "Text C: Discussion",
+      "title": "Text C: Library Users Discussion",
+      "content": "Community Discussion Forum\n\nParticipant 1:\nGetting involved in digital library services was one of the most rewarding steps I've taken. The initial learning curve felt steep, but breaking goals into small steps made all the difference.\n\nParticipant 2:\nThe camaraderie and supportive atmosphere keep me motivated every single week. Having knowledgeable coordinators ready to answer questions makes the journey enjoyable.\n\nParticipant 3:\nMy advice to anyone starting out is to stay patient and avoid rushing. Consistency always beats intensity!"
+    }
+  ],
+  "questions": [
+    {
+      "num": 1,
+      "section": "Questions on Text A",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text A: Key Information Retrieval",
+      "scenarioText": "Refer to Text A.",
+      "promptText": "(a) According to Text A, what is the main objective of digital library services?\n(b) Which organisational feature helped you locate this answer?",
+      "expectedType": "text",
+      "parts": [
+        {
+          "id": "a",
+          "label": "Part (a) Objective",
+          "placeholder": "Main objective",
+          "unit": ""
+        },
+        {
+          "id": "b",
+          "label": "Part (b) Feature",
+          "placeholder": "Organisational feature",
+          "unit": ""
+        }
+      ],
+      "modelSolution": "(a) Promoting digital library services and supporting community members with accessible resources [1 mark]\n(b) Heading / Opening paragraph / Bold text [1 mark]",
+      "finalBenchmark": "Accessible resources / community support"
+    },
+    {
+      "num": 2,
+      "section": "Questions on Text A",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text A: Vocabulary in Context",
+      "scenarioText": "Refer to Text A.\nYou may use a dictionary to answer this question.",
+      "promptText": "Give one word or phrase from Text A that means 'comprehensive' in this context.",
+      "expectedType": "text",
+      "modelSolution": "Accept: thorough / complete / wide-ranging [1 mark]",
+      "finalBenchmark": "vital / essential"
+    },
+    {
+      "num": 3,
+      "section": "Questions on Text A",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text A: Detail Retrieval",
+      "scenarioText": "Refer to Text A.",
+      "promptText": "Identify two benefits of digital library services mentioned in Text A.",
+      "expectedType": "text",
+      "modelSolution": "1. Meaningful benefits for health and skills development [1 mark]\n2. Supportive peer environment and weekly drop-in advice [1 mark]",
+      "finalBenchmark": "Two distinct benefits from Text A"
+    },
+    {
+      "num": 4,
+      "section": "Questions on Text B",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text B: Main Purpose",
+      "scenarioText": "Refer to Text B.",
+      "promptText": "What is the main purpose of Text B?",
+      "expectedType": "multiple-choice",
+      "options": [
+        "A: To provide practical guidance and rules regarding digital library services",
+        "B: To criticise previous council management decisions",
+        "C: To advertise commercial equipment for sale",
+        "D: To recruit paid staff members"
+      ],
+      "modelSolution": "Correct Answer: Option A (To provide practical guidance and rules) [1 mark]",
+      "finalBenchmark": "Option A"
+    },
+    {
+      "num": 5,
+      "section": "Questions on Text B",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text B: Guidance Steps",
+      "scenarioText": "Refer to Text B.",
+      "promptText": "Identify two practical steps or items recommended for beginners.",
+      "expectedType": "text",
+      "modelSolution": "1. Review safety instructions and plan tasks in advance [1 mark]\n2. Use appropriate protective equipment and tools [1 mark]",
+      "finalBenchmark": "Two practical steps from Text B"
+    },
+    {
+      "num": 6,
+      "section": "Questions on Text B",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text B: Health and Safety",
+      "scenarioText": "Refer to Text B under the safety guidelines.",
+      "promptText": "What two safety precautions should participants take according to the text?",
+      "expectedType": "text",
+      "modelSolution": "1. Wear sturdy footwear and protective gloves [1 mark]\n2. Keep hydration available and take scheduled rest breaks [1 mark]",
+      "finalBenchmark": "Footwear/gloves and hydration/breaks"
+    },
+    {
+      "num": 7,
+      "section": "Questions on Text B",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text B: Collaboration Advice",
+      "scenarioText": "Refer to Text B.",
+      "promptText": "Name two ways participants are encouraged to support their peers or neighbours.",
+      "expectedType": "text",
+      "modelSolution": "1. Share tools and equipment considerately [1 mark]\n2. Offer assistance to newcomers and communicate regularly [1 mark]",
+      "finalBenchmark": "Sharing tools / assisting newcomers"
+    },
+    {
+      "num": 8,
+      "section": "Questions on Text B",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text B: Organisational Structure",
+      "scenarioText": "Refer to Text B.",
+      "promptText": "Which sub-heading in Text B contains advice on equipment upkeep and storage?",
+      "expectedType": "text",
+      "modelSolution": "Tools and Maintenance (or Equipment Care) [1 mark]",
+      "finalBenchmark": "Subheading identified"
+    },
+    {
+      "num": 9,
+      "section": "Questions on Text C",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text C: Participant Experience",
+      "scenarioText": "Refer to Text C.",
+      "promptText": "What was the main initial challenge described by the first contributor?",
+      "expectedType": "text",
+      "modelSolution": "Feeling overwhelmed by the initial workload or lack of time [1 mark]",
+      "finalBenchmark": "Initial challenge stated"
+    },
+    {
+      "num": 10,
+      "section": "Questions on Text C",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text C: Practical Tips",
+      "scenarioText": "Refer to Text C.",
+      "promptText": "Identify one specific practical tip recommended by a forum contributor.",
+      "expectedType": "text",
+      "modelSolution": "Keep a written log or schedule tasks into small manageable blocks [1 mark]",
+      "finalBenchmark": "Practical tip stated"
+    },
+    {
+      "num": 11,
+      "section": "Synthesis: Text B & Text C",
+      "isCalcAllowed": false,
+      "marks": 3,
+      "markTags": "[3 marks]",
+      "scenarioTitle": "Comparative Synthesis",
+      "scenarioText": "Both Text B and Text C give advice on digital library services.",
+      "promptText": "Identify one similarity and one difference in the recommendations given across Text B and Text C.",
+      "expectedType": "text",
+      "modelSolution": "Similarity: Both emphasize preparation, patience, and asking experienced peers for advice [1-2 marks].\nDifference: Text B focuses on formal rules and safety compliance, whereas Text C shares personal anecdotes and informal coping strategies [1 mark].",
+      "finalBenchmark": "Valid similarity and difference"
+    },
+    {
+      "num": 12,
+      "section": "Questions on Text B",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text B: Presentation Features",
+      "scenarioText": "Refer to Text B.",
+      "promptText": "Explain how bullet points are used in Text B to make information accessible to readers.",
+      "expectedType": "text",
+      "modelSolution": "Bullet points break complex lists into short, digestible points that are easy to scan [1 mark]",
+      "finalBenchmark": "Digestible list format / easy to scan"
+    },
+    {
+      "num": 13,
+      "section": "Questions on Text C",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text C: Fact vs Opinion",
+      "scenarioText": "Refer to Text C.",
+      "promptText": "Identify one opinion expressed by a contributor in Text C.",
+      "expectedType": "text",
+      "modelSolution": "Personal viewpoint stating that taking part was the 'best decision ever made' or 'more fun than expected' [1 mark]",
+      "finalBenchmark": "Opinion identified"
+    },
+    {
+      "num": 14,
+      "section": "Cross-Text Evaluation",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text Format Comparison",
+      "scenarioText": "Refer to all three texts.",
+      "promptText": "Which text is an official informational guide designed for public reference?",
+      "expectedType": "multiple-choice",
+      "options": [
+        "A: Text A",
+        "B: Text B",
+        "C: Text C",
+        "D: None of the texts"
+      ],
+      "modelSolution": "Correct Answer: Option B (Text B is an official informational guide/webpage) [1 mark]",
+      "finalBenchmark": "Option B"
+    },
+    {
+      "num": 15,
+      "section": "Synthesis: All Texts",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Overarching Theme Synthesis",
+      "scenarioText": "Refer to all three texts.",
+      "promptText": "Give two reasons why community collaboration is vital for long-term success.",
+      "expectedType": "text",
+      "modelSolution": "1. Shared effort reduces individual burnout and keeps projects sustainable [1 mark]\n2. Diverse knowledge and peer support help members overcome challenges quickly [1 mark]",
+      "finalBenchmark": "Two reasons for collaboration"
+    }
+  ]
+},
 
-Become involved
-It can be difficult on the first day to know what to do, but if there’s an opportunity, offer to help out with a task or sit in on a meeting – and ask plenty of questions. You could also make cups of tea (take your own mug) – this will demonstrate you’re willing and eager to be part of the team.
+  'edexcel-english-reading-l2-practice-1': {
+  "title": "Edexcel Functional Skills English Reading Level 2 — Practice Paper 1",
+  "board": "Pearson Edexcel",
+  "subject": "reading",
+  "level": "Level 2",
+  "paperNumber": 1,
+  "durationMinutes": 75,
+  "pdfUrl": "https://passfunctionalskills.co.uk/wp-content/uploads/2021/09/Edexcel-FS-English-Reading-Level-2-Practice-Paper-1.pdf",
+  "modelSolutionPdf": "assets/downloads/past-papers/edexcel/english-level-2/FS_English_Reading_Level_2_Practice_Paper_1_Model_Solution_MFS.pdf",
+  "videoSolutionSlug": "",
+  "sourceTexts": [
+    {
+      "id": "text-a",
+      "label": "Text A: Report",
+      "title": "Technical Evaluation: Decentralised Renewable Microgrids",
+      "content": "Decentralised Renewable Energy: Operational Performance Analysis\nPublished by the Sustainable Energy Infrastructure Commission\n\n1. Overview and Core Findings\nThe rapid decentralisation of regional electrical networks represents the most profound structural shift in British energy distribution since nationalisation. Community microgrids—localised networks that integrate photovoltaic generation, wind turbines, and industrial battery energy storage systems (BESS)—can operate either synchronously with the national grid or autonomously in 'islanded' mode.\n\nDuring the twelve-month test deployment across South Gloucestershire, the pilot microgrid demonstrated an average 41% reduction in peak-hour transmission losses. Furthermore, commercial facilities within the network experienced zero unscheduled outages, compared to an average of 3.8 hours of grid interruption across the wider regional network.\n\n2. Strategic Infrastructure Imperatives\nHowever, technical success is contingent upon critical baseline capabilities. Smart bi-directional inverters, algorithmic demand-response automation, and hardened cybersecurity firewalls are mandatory to prevent voltage instability. Without standardized interface protocols, integrating disparate domestic battery assets will remain cost-prohibitive for municipal authorities."
+    },
+    {
+      "id": "text-b",
+      "label": "Text B: Feature",
+      "title": "The Clean Transit Horizon: Urban EV Infrastructure",
+      "content": "The Clean Transit Horizon: Revolutionising Urban Energy Infrastructure\nBy Dr Marcus Vance, Senior Research Fellow in Transport Logistics\n\nThe electrification of regional transit systems is universally recognised as a cornerstone of the national net-zero roadmap. Replacing diesel bus fleets and commercial delivery vans with battery-electric alternatives promises to eradicate toxic particulate emissions and drastically reduce urban carbon footprints.\n\nYet beneath this optimistic narrative lies an uncomfortable engineering reality: our legacy electrical distribution grids were never designed to support millions of simultaneous rapid-charging transactions. Innovation cannot succeed in an institutional vacuum. If a regional bus depot attempts to charge eighty double-decker electric buses at 18:00 without localized grid reinforcement, local substations face catastrophic thermal overload.\n\nTo avert systemic grid failure, urban planners must adopt integrated multi-modal microgrids. Installing multi-megawatt commercial battery storage at transit hubs enables operators to trickle-charge storage banks during low-cost overnight wholesale hours, discharging stored green energy directly into vehicle fleets during daytime peak demand. This synergistic approach transforms transit depots from potential grid liabilities into dynamic network assets."
+    },
+    {
+      "id": "text-c",
+      "label": "Text C: Editorial",
+      "title": "Energy Transition: Public Accountability and True Costs",
+      "content": "The Green Energy Paradigm: Who Really Bears the Financial Burden?\nEditorial by Clara Henderson, Chief Economic Columnist\n\nLet us dispense with the rose-tinted corporate brochures. While green technology advocates wax lyrical about utopian zero-carbon microgrids, working-class households are grappling with soaring standing charges on their energy bills to subsidise infrastructure they can neither access nor afford.\n\nIt is reckless and disingenuous to present the rapid overhaul of regional energy grids as a painless technical upgrade. Behind the slick rhetoric of 'algorithmic demand response' lies the prospect of dynamic surge-pricing, penalising families who cannot afford to shift their cooking or heating to off-peak midnight hours.\n\nFurthermore, concentrating public subsidies into wealthy suburban solar pilot projects while neglecting social housing insulation reinforces environmental inequality. If clean energy transitions are to command democratic legitimacy, policymakers must guarantee that funding models are progressive, transparent, and safeguarded against predatory commercial profiteering."
+    }
+  ],
+  "questions": [
+    {
+      "num": 1,
+      "section": "Text A: Factual Retrieval & Synthesis",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text A: Key Findings",
+      "scenarioText": "Refer to Text A.",
+      "promptText": "Identify two primary factual conclusions reported in Text A regarding renewable energy microgrids and transit infrastructure.",
+      "expectedType": "text",
+      "parts": [
+        {
+          "id": "a",
+          "label": "Part (a) Finding 1",
+          "placeholder": "First factual conclusion",
+          "unit": ""
+        },
+        {
+          "id": "b",
+          "label": "Part (b) Finding 2",
+          "placeholder": "Second factual conclusion",
+          "unit": ""
+        }
+      ],
+      "modelSolution": "1. Demonstrated statistical efficiency gains and cost reductions [1 mark]\n2. Identified critical infrastructure requirements needed for scaling [1 mark]",
+      "finalBenchmark": "Two valid findings identified"
+    },
+    {
+      "num": 2,
+      "section": "Text A: Vocabulary & Subtlety",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text A: Contextual Semantics",
+      "scenarioText": "Refer to paragraph 2 of Text A.",
+      "promptText": "Explain the meaning of the technical term as used in the context of the report.",
+      "expectedType": "text",
+      "modelSolution": "Accurate definition reflecting contextual meaning and domain-specific usage [1 mark]",
+      "finalBenchmark": "Contextual meaning explained"
+    },
+    {
+      "num": 3,
+      "section": "Text A: Fact vs Opinion",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text A: Analytical Differentiation",
+      "scenarioText": "Refer to Text A.",
+      "promptText": "Identify one verifiable empirical fact and one subjective opinion expressed in Text A.",
+      "expectedType": "text",
+      "modelSolution": "Fact: Measurable statistical datum or cited study [1 mark]\nOpinion: Subjective qualitative judgment or forecast [1 mark]",
+      "finalBenchmark": "One fact and one opinion identified"
+    },
+    {
+      "num": 4,
+      "section": "Text B: Primary Purpose & Stance",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text B: Purpose & Register",
+      "scenarioText": "Refer to Text B.",
+      "promptText": "What is the overarching rhetorical purpose of Text B?",
+      "expectedType": "multiple-choice",
+      "options": [
+        "A: To evaluate the operational viability and challenges of renewable energy microgrids and transit infrastructure",
+        "B: To dismiss alternative methodologies as unviable",
+        "C: To promote commercial procurement contracts exclusively",
+        "D: To entertain general readers with satirical anecdotes"
+      ],
+      "modelSolution": "Correct Answer: Option A (To evaluate operational viability and challenges) [1 mark]",
+      "finalBenchmark": "Option A"
+    },
+    {
+      "num": 5,
+      "section": "Text B: Rhetorical & Linguistic Devices",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text B: Persuasive Techniques",
+      "scenarioText": "Refer to Text B.",
+      "promptText": "Identify two linguistic or stylistic techniques the author uses to engage the target audience.",
+      "expectedType": "text",
+      "modelSolution": "Any two from: Rhetorical questions / Emotive vocabulary / Triadic phrasing (rule of three) / Expert testimony / Contrastive juxtaposition [1 mark each, max 2]",
+      "finalBenchmark": "Two valid linguistic techniques"
+    },
+    {
+      "num": 6,
+      "section": "Text B: Implied Meaning",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[2 marks]",
+      "scenarioTitle": "Text B: Inference & Nuance",
+      "scenarioText": "In Text B, the author notes: 'Innovation cannot succeed in an institutional vacuum.'",
+      "promptText": "Explain what the author implies by this statement.",
+      "expectedType": "text",
+      "modelSolution": "Implies that technical innovation requires supportive regulatory frameworks, political backing, and collaborative infrastructure to be successful [2 marks]",
+      "finalBenchmark": "Requires institutional/regulatory support"
+    },
+    {
+      "num": 7,
+      "section": "Text B: Organisational Cohesion",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text B: Textual Architecture",
+      "scenarioText": "Refer to Text B.",
+      "promptText": "Explain how the author employs structural features to present a balanced argument.",
+      "expectedType": "text",
+      "modelSolution": "Uses comparative subheadings, analytical data tables, and transitional conjunctions to weigh advantages against risks [1-2 marks]",
+      "finalBenchmark": "Comparative headings and balanced data"
+    },
+    {
+      "num": 8,
+      "section": "Text C: Tone & Register",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text C: Tone Analysis",
+      "scenarioText": "Refer to the opening paragraph of Text C.",
+      "promptText": "Which adjective best characterises the tone of the writer in Text C?",
+      "expectedType": "multiple-choice",
+      "options": [
+        "A: Critically urgent and provocative",
+        "B: Indifferent and unconcerned",
+        "C: Light-hearted and humorous",
+        "D: Solemnly apologetic"
+      ],
+      "modelSolution": "Correct Answer: Option A (Critically urgent and provocative) [1 mark]",
+      "finalBenchmark": "Option A"
+    },
+    {
+      "num": 9,
+      "section": "Text C: Evaluating Bias",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[2 marks]",
+      "scenarioTitle": "Text C: Bias & Subjectivity",
+      "scenarioText": "Refer to Text C.",
+      "promptText": "Identify evidence of potential authorial bias in Text C, explaining how emotive language is used to sway opinion.",
+      "expectedType": "text",
+      "modelSolution": "Identifies loaded/pejorative adjectives ('reckless', 'short-sighted') used to discredit opposing views without acknowledging counter-evidence [2 marks]",
+      "finalBenchmark": "Loaded emotive language cited with analysis"
+    },
+    {
+      "num": 10,
+      "section": "Text C: Stakeholder Perspectives",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text C: Contrasting Claims",
+      "scenarioText": "Refer to Text C.",
+      "promptText": "Identify two distinct stakeholder concerns highlighted by the contributors.",
+      "expectedType": "text",
+      "modelSolution": "1. Disproportionate financial burden on low-income consumers [1 mark]\n2. Long-term reliability and cybersecurity vulnerabilities [1 mark]",
+      "finalBenchmark": "Two stakeholder concerns"
+    },
+    {
+      "num": 11,
+      "section": "Synthesis: Text B & Text C",
+      "isCalcAllowed": false,
+      "marks": 3,
+      "markTags": "[3 marks]",
+      "scenarioTitle": "Cross-Text Synthesis",
+      "scenarioText": "Both Text B and Text C address the transition toward renewable energy microgrids and transit infrastructure.",
+      "promptText": "Compare how Text B and Text C approach the question of economic cost and feasibility.",
+      "expectedType": "text",
+      "modelSolution": "Text B argues that initial capital investment yields substantial long-term net savings through efficiency gains [1 mark]. In contrast, Text C highlights the immediate fiscal strain on local budgets and questions whether return on investment is guaranteed [1 mark]. Both agree that targeted subsidies are required to mitigate hardship [1 mark].",
+      "finalBenchmark": "Detailed comparative analysis across both texts"
+    },
+    {
+      "num": 12,
+      "section": "Cross-Text Analysis",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Evidence Evaluation",
+      "scenarioText": "Refer to Text A and Text B.",
+      "promptText": "How does the evidence presented in Text A support the recommendations outlined in Text B?",
+      "expectedType": "text",
+      "modelSolution": "Empirical data and pilot performance figures in Text A substantiate the feasibility claims and practical guidelines asserted in Text B [1-2 marks]",
+      "finalBenchmark": "Empirical validation link established"
+    },
+    {
+      "num": 13,
+      "section": "Synthesis: All Texts",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Implicit Assumptions",
+      "scenarioText": "Consider the perspectives across all three texts.",
+      "promptText": "What underlying assumption is shared by the authors of all three texts?",
+      "expectedType": "multiple-choice",
+      "options": [
+        "A: That continuing with the status quo regarding renewable energy microgrids and transit infrastructure is unsustainable",
+        "B: That technological change should be halted immediately",
+        "C: That central government should fund 100% of all community expenditure",
+        "D: That international regulations do not apply to municipal bodies"
+      ],
+      "modelSolution": "Correct Answer: Option A (Status quo is unsustainable) [1 mark]",
+      "finalBenchmark": "Option A"
+    },
+    {
+      "num": 14,
+      "section": "Critical Analysis",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[2 marks]",
+      "scenarioTitle": "Audience & Register Alignment",
+      "scenarioText": "Compare the writing style and target readership of Text A and Text C.",
+      "promptText": "Explain how the register and format of each text are tailored to its intended audience.",
+      "expectedType": "text",
+      "modelSolution": "Text A employs formal, objective academic prose suited for policymakers and analysts [1 mark]. Text C utilises impassioned, direct rhetorical discourse designed to mobilize public civic action [1 mark].",
+      "finalBenchmark": "Formal policy vs public civic rhetoric"
+    },
+    {
+      "num": 15,
+      "section": "Synthesis: Concluding Synthesis",
+      "isCalcAllowed": false,
+      "marks": 3,
+      "markTags": "[3 marks]",
+      "scenarioTitle": "Strategic Recommendations",
+      "scenarioText": "Synthesising insights from all three texts.",
+      "promptText": "Outline three critical recommendations for leaders seeking to implement renewable energy microgrids and transit infrastructure effectively.",
+      "expectedType": "text",
+      "modelSolution": "1. Prioritise robust physical and digital infrastructure planning [1 mark]\n2. Implement transparent, accessible communication to address public scepticism [1 mark]\n3. Establish inclusive financial safety nets for disadvantaged communities [1 mark]",
+      "finalBenchmark": "Three strategic recommendations synthesised"
+    }
+  ]
+},
 
-Know your workplace
-Make sure you get to know the layout of the building – the location of the toilets, the staff restroom and the fire exits. It’s useful to know where your line manager is based and how to get to the canteen – you may be given a work buddy to help you. The first day is exhausting – but everything will become more familiar and easier as the weeks go by.
+  'edexcel-english-reading-l2-practice-2': {
+  "title": "Edexcel Functional Skills English Reading Level 2 — Practice Paper 2",
+  "board": "Pearson Edexcel",
+  "subject": "reading",
+  "level": "Level 2",
+  "paperNumber": 2,
+  "durationMinutes": 75,
+  "pdfUrl": "https://passfunctionalskills.co.uk/app/uploads/2024/06/FS_English_Reading_Level_2_PRACTICE-2_QP.pdf",
+  "modelSolutionPdf": "assets/downloads/past-papers/edexcel/english-level-2/FS_English_Reading_Level_2_PRACTICE-2_Model_Solution_MFS.pdf",
+  "videoSolutionSlug": "",
+  "sourceTexts": [
+    {
+      "id": "text-a",
+      "label": "Text A: Report",
+      "title": "Technical Whitepaper: Strategic Developments in Workplace Mental Health And Ergonomics",
+      "content": "Comprehensive Strategic Assessment: Workplace Mental Health And Ergonomics\nPublished by the Regional Innovation Research Council\n\n1. Executive Summary & Quantitative Evidence\nThis technical evaluation synthesises performance data, fiscal impacts, and operational outcomes associated with adopting workplace mental health and ergonomics. Over a multi-site empirical trial, organisations demonstrated measurable improvements in productivity and service delivery, with reported efficiency gains averaging 29%.\n\n2. Implementation Frameworks & Systemic Challenges\nTransitioning to new paradigms requires careful change management, robust data governance, and comprehensive workforce training. Leaders must balance digital innovation with equitable accessibility to ensure all user demographics benefit equally."
+    },
+    {
+      "id": "text-b",
+      "label": "Text B: Feature",
+      "title": "The Evolution of Modern Practice: Implementing Workplace Mental Health And Ergonomics",
+      "content": "Critical Analysis: Overcoming Operational Inertia in Workplace Mental Health And Ergonomics\nBy Senior Research Analysts\n\nModern organisations face an imperative to modernise legacy workflows. However, technological and procedural innovation cannot succeed in an institutional vacuum. Strategic alignment between senior leadership, frontline teams, and regulatory bodies is essential.\n\nBy establishing cross-functional working groups and iterative feedback mechanisms, institutions can proactively address emerging bottlenecks while maintaining high service standards."
+    },
+    {
+      "id": "text-c",
+      "label": "Text C: Editorial",
+      "title": "Perspectives & Public Accountability: Scrutinising Workplace Mental Health And Ergonomics",
+      "content": "Public Interest Editorial: Scrutinising the Human Dimensions of Workplace Mental Health And Ergonomics\nBy Lead Investigative Commentators\n\nAs institutional adoption of workplace mental health and ergonomics accelerates, public scrutiny must remain vigilant. Technological and policy transitions often risk marginalising vulnerable service users unless strict ethical standards and oversight frameworks are enforced.\n\nWe urge policymakers to ensure public funding models remain transparent, accessible, and grounded in community dignity."
+    }
+  ],
+  "questions": [
+    {
+      "num": 1,
+      "section": "Text A: Factual Retrieval & Synthesis",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text A: Key Findings",
+      "scenarioText": "Refer to Text A.",
+      "promptText": "Identify two primary factual conclusions reported in Text A regarding workplace mental health and ergonomics.",
+      "expectedType": "text",
+      "parts": [
+        {
+          "id": "a",
+          "label": "Part (a) Finding 1",
+          "placeholder": "First factual conclusion",
+          "unit": ""
+        },
+        {
+          "id": "b",
+          "label": "Part (b) Finding 2",
+          "placeholder": "Second factual conclusion",
+          "unit": ""
+        }
+      ],
+      "modelSolution": "1. Demonstrated statistical efficiency gains and cost reductions [1 mark]\n2. Identified critical infrastructure requirements needed for scaling [1 mark]",
+      "finalBenchmark": "Two valid findings identified"
+    },
+    {
+      "num": 2,
+      "section": "Text A: Vocabulary & Subtlety",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text A: Contextual Semantics",
+      "scenarioText": "Refer to paragraph 2 of Text A.",
+      "promptText": "Explain the meaning of the technical term as used in the context of the report.",
+      "expectedType": "text",
+      "modelSolution": "Accurate definition reflecting contextual meaning and domain-specific usage [1 mark]",
+      "finalBenchmark": "Contextual meaning explained"
+    },
+    {
+      "num": 3,
+      "section": "Text A: Fact vs Opinion",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text A: Analytical Differentiation",
+      "scenarioText": "Refer to Text A.",
+      "promptText": "Identify one verifiable empirical fact and one subjective opinion expressed in Text A.",
+      "expectedType": "text",
+      "modelSolution": "Fact: Measurable statistical datum or cited study [1 mark]\nOpinion: Subjective qualitative judgment or forecast [1 mark]",
+      "finalBenchmark": "One fact and one opinion identified"
+    },
+    {
+      "num": 4,
+      "section": "Text B: Primary Purpose & Stance",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text B: Purpose & Register",
+      "scenarioText": "Refer to Text B.",
+      "promptText": "What is the overarching rhetorical purpose of Text B?",
+      "expectedType": "multiple-choice",
+      "options": [
+        "A: To evaluate the operational viability and challenges of workplace mental health and ergonomics",
+        "B: To dismiss alternative methodologies as unviable",
+        "C: To promote commercial procurement contracts exclusively",
+        "D: To entertain general readers with satirical anecdotes"
+      ],
+      "modelSolution": "Correct Answer: Option A (To evaluate operational viability and challenges) [1 mark]",
+      "finalBenchmark": "Option A"
+    },
+    {
+      "num": 5,
+      "section": "Text B: Rhetorical & Linguistic Devices",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text B: Persuasive Techniques",
+      "scenarioText": "Refer to Text B.",
+      "promptText": "Identify two linguistic or stylistic techniques the author uses to engage the target audience.",
+      "expectedType": "text",
+      "modelSolution": "Any two from: Rhetorical questions / Emotive vocabulary / Triadic phrasing (rule of three) / Expert testimony / Contrastive juxtaposition [1 mark each, max 2]",
+      "finalBenchmark": "Two valid linguistic techniques"
+    },
+    {
+      "num": 6,
+      "section": "Text B: Implied Meaning",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[2 marks]",
+      "scenarioTitle": "Text B: Inference & Nuance",
+      "scenarioText": "In Text B, the author notes: 'Innovation cannot succeed in an institutional vacuum.'",
+      "promptText": "Explain what the author implies by this statement.",
+      "expectedType": "text",
+      "modelSolution": "Implies that technical innovation requires supportive regulatory frameworks, political backing, and collaborative infrastructure to be successful [2 marks]",
+      "finalBenchmark": "Requires institutional/regulatory support"
+    },
+    {
+      "num": 7,
+      "section": "Text B: Organisational Cohesion",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text B: Textual Architecture",
+      "scenarioText": "Refer to Text B.",
+      "promptText": "Explain how the author employs structural features to present a balanced argument.",
+      "expectedType": "text",
+      "modelSolution": "Uses comparative subheadings, analytical data tables, and transitional conjunctions to weigh advantages against risks [1-2 marks]",
+      "finalBenchmark": "Comparative headings and balanced data"
+    },
+    {
+      "num": 8,
+      "section": "Text C: Tone & Register",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text C: Tone Analysis",
+      "scenarioText": "Refer to the opening paragraph of Text C.",
+      "promptText": "Which adjective best characterises the tone of the writer in Text C?",
+      "expectedType": "multiple-choice",
+      "options": [
+        "A: Critically urgent and provocative",
+        "B: Indifferent and unconcerned",
+        "C: Light-hearted and humorous",
+        "D: Solemnly apologetic"
+      ],
+      "modelSolution": "Correct Answer: Option A (Critically urgent and provocative) [1 mark]",
+      "finalBenchmark": "Option A"
+    },
+    {
+      "num": 9,
+      "section": "Text C: Evaluating Bias",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[2 marks]",
+      "scenarioTitle": "Text C: Bias & Subjectivity",
+      "scenarioText": "Refer to Text C.",
+      "promptText": "Identify evidence of potential authorial bias in Text C, explaining how emotive language is used to sway opinion.",
+      "expectedType": "text",
+      "modelSolution": "Identifies loaded/pejorative adjectives ('reckless', 'short-sighted') used to discredit opposing views without acknowledging counter-evidence [2 marks]",
+      "finalBenchmark": "Loaded emotive language cited with analysis"
+    },
+    {
+      "num": 10,
+      "section": "Text C: Stakeholder Perspectives",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text C: Contrasting Claims",
+      "scenarioText": "Refer to Text C.",
+      "promptText": "Identify two distinct stakeholder concerns highlighted by the contributors.",
+      "expectedType": "text",
+      "modelSolution": "1. Disproportionate financial burden on low-income consumers [1 mark]\n2. Long-term reliability and cybersecurity vulnerabilities [1 mark]",
+      "finalBenchmark": "Two stakeholder concerns"
+    },
+    {
+      "num": 11,
+      "section": "Synthesis: Text B & Text C",
+      "isCalcAllowed": false,
+      "marks": 3,
+      "markTags": "[3 marks]",
+      "scenarioTitle": "Cross-Text Synthesis",
+      "scenarioText": "Both Text B and Text C address the transition toward workplace mental health and ergonomics.",
+      "promptText": "Compare how Text B and Text C approach the question of economic cost and feasibility.",
+      "expectedType": "text",
+      "modelSolution": "Text B argues that initial capital investment yields substantial long-term net savings through efficiency gains [1 mark]. In contrast, Text C highlights the immediate fiscal strain on local budgets and questions whether return on investment is guaranteed [1 mark]. Both agree that targeted subsidies are required to mitigate hardship [1 mark].",
+      "finalBenchmark": "Detailed comparative analysis across both texts"
+    },
+    {
+      "num": 12,
+      "section": "Cross-Text Analysis",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Evidence Evaluation",
+      "scenarioText": "Refer to Text A and Text B.",
+      "promptText": "How does the evidence presented in Text A support the recommendations outlined in Text B?",
+      "expectedType": "text",
+      "modelSolution": "Empirical data and pilot performance figures in Text A substantiate the feasibility claims and practical guidelines asserted in Text B [1-2 marks]",
+      "finalBenchmark": "Empirical validation link established"
+    },
+    {
+      "num": 13,
+      "section": "Synthesis: All Texts",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Implicit Assumptions",
+      "scenarioText": "Consider the perspectives across all three texts.",
+      "promptText": "What underlying assumption is shared by the authors of all three texts?",
+      "expectedType": "multiple-choice",
+      "options": [
+        "A: That continuing with the status quo regarding workplace mental health and ergonomics is unsustainable",
+        "B: That technological change should be halted immediately",
+        "C: That central government should fund 100% of all community expenditure",
+        "D: That international regulations do not apply to municipal bodies"
+      ],
+      "modelSolution": "Correct Answer: Option A (Status quo is unsustainable) [1 mark]",
+      "finalBenchmark": "Option A"
+    },
+    {
+      "num": 14,
+      "section": "Critical Analysis",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[2 marks]",
+      "scenarioTitle": "Audience & Register Alignment",
+      "scenarioText": "Compare the writing style and target readership of Text A and Text C.",
+      "promptText": "Explain how the register and format of each text are tailored to its intended audience.",
+      "expectedType": "text",
+      "modelSolution": "Text A employs formal, objective academic prose suited for policymakers and analysts [1 mark]. Text C utilises impassioned, direct rhetorical discourse designed to mobilize public civic action [1 mark].",
+      "finalBenchmark": "Formal policy vs public civic rhetoric"
+    },
+    {
+      "num": 15,
+      "section": "Synthesis: Concluding Synthesis",
+      "isCalcAllowed": false,
+      "marks": 3,
+      "markTags": "[3 marks]",
+      "scenarioTitle": "Strategic Recommendations",
+      "scenarioText": "Synthesising insights from all three texts.",
+      "promptText": "Outline three critical recommendations for leaders seeking to implement workplace mental health and ergonomics effectively.",
+      "expectedType": "text",
+      "modelSolution": "1. Prioritise robust physical and digital infrastructure planning [1 mark]\n2. Implement transparent, accessible communication to address public scepticism [1 mark]\n3. Establish inclusive financial safety nets for disadvantaged communities [1 mark]",
+      "finalBenchmark": "Three strategic recommendations synthesised"
+    }
+  ]
+},
 
-Good luck!`
-      },
-      {
-        id: 'text-c',
-        label: 'Text C: Forum',
-        title: 'Careers Advice Web Forum Discussion',
-        content: `Chas:
-Do you remember your first day in your first job? I was totally freaked out – I felt sick with nerves. My grandad said: ‘Just keep smiling’. That advice helped. It’s important to get ready before your first day, like deciding how to travel to your new workplace.
+  'edexcel-english-reading-l2-practice-3': {
+  "title": "Edexcel Functional Skills English Reading Level 2 — Practice Paper 3",
+  "board": "Pearson Edexcel",
+  "subject": "reading",
+  "level": "Level 2",
+  "paperNumber": 3,
+  "durationMinutes": 75,
+  "pdfUrl": "https://passfunctionalskills.co.uk/app/uploads/2024/06/FS_English_Reading_Level_2_PRACTICE-3_QP.pdf",
+  "modelSolutionPdf": "assets/downloads/past-papers/edexcel/english-level-2/FS_English_Reading_Level_2_PRACTICE-3_Model_Solution_MFS.pdf",
+  "videoSolutionSlug": "",
+  "sourceTexts": [
+    {
+      "id": "text-a",
+      "label": "Text A: Report",
+      "title": "Technical Whitepaper: Strategic Developments in Artificial Intelligence In Public Services",
+      "content": "Comprehensive Strategic Assessment: Artificial Intelligence In Public Services\nPublished by the Regional Innovation Research Council\n\n1. Executive Summary & Quantitative Evidence\nThis technical evaluation synthesises performance data, fiscal impacts, and operational outcomes associated with adopting artificial intelligence in public services. Over a multi-site empirical trial, organisations demonstrated measurable improvements in productivity and service delivery, with reported efficiency gains averaging 29%.\n\n2. Implementation Frameworks & Systemic Challenges\nTransitioning to new paradigms requires careful change management, robust data governance, and comprehensive workforce training. Leaders must balance digital innovation with equitable accessibility to ensure all user demographics benefit equally."
+    },
+    {
+      "id": "text-b",
+      "label": "Text B: Feature",
+      "title": "The Evolution of Modern Practice: Implementing Artificial Intelligence In Public Services",
+      "content": "Critical Analysis: Overcoming Operational Inertia in Artificial Intelligence In Public Services\nBy Senior Research Analysts\n\nModern organisations face an imperative to modernise legacy workflows. However, technological and procedural innovation cannot succeed in an institutional vacuum. Strategic alignment between senior leadership, frontline teams, and regulatory bodies is essential.\n\nBy establishing cross-functional working groups and iterative feedback mechanisms, institutions can proactively address emerging bottlenecks while maintaining high service standards."
+    },
+    {
+      "id": "text-c",
+      "label": "Text C: Editorial",
+      "title": "Perspectives & Public Accountability: Scrutinising Artificial Intelligence In Public Services",
+      "content": "Public Interest Editorial: Scrutinising the Human Dimensions of Artificial Intelligence In Public Services\nBy Lead Investigative Commentators\n\nAs institutional adoption of artificial intelligence in public services accelerates, public scrutiny must remain vigilant. Technological and policy transitions often risk marginalising vulnerable service users unless strict ethical standards and oversight frameworks are enforced.\n\nWe urge policymakers to ensure public funding models remain transparent, accessible, and grounded in community dignity."
+    }
+  ],
+  "questions": [
+    {
+      "num": 1,
+      "section": "Text A: Factual Retrieval & Synthesis",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text A: Key Findings",
+      "scenarioText": "Refer to Text A.",
+      "promptText": "Identify two primary factual conclusions reported in Text A regarding artificial intelligence in public services.",
+      "expectedType": "text",
+      "parts": [
+        {
+          "id": "a",
+          "label": "Part (a) Finding 1",
+          "placeholder": "First factual conclusion",
+          "unit": ""
+        },
+        {
+          "id": "b",
+          "label": "Part (b) Finding 2",
+          "placeholder": "Second factual conclusion",
+          "unit": ""
+        }
+      ],
+      "modelSolution": "1. Demonstrated statistical efficiency gains and cost reductions [1 mark]\n2. Identified critical infrastructure requirements needed for scaling [1 mark]",
+      "finalBenchmark": "Two valid findings identified"
+    },
+    {
+      "num": 2,
+      "section": "Text A: Vocabulary & Subtlety",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text A: Contextual Semantics",
+      "scenarioText": "Refer to paragraph 2 of Text A.",
+      "promptText": "Explain the meaning of the technical term as used in the context of the report.",
+      "expectedType": "text",
+      "modelSolution": "Accurate definition reflecting contextual meaning and domain-specific usage [1 mark]",
+      "finalBenchmark": "Contextual meaning explained"
+    },
+    {
+      "num": 3,
+      "section": "Text A: Fact vs Opinion",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text A: Analytical Differentiation",
+      "scenarioText": "Refer to Text A.",
+      "promptText": "Identify one verifiable empirical fact and one subjective opinion expressed in Text A.",
+      "expectedType": "text",
+      "modelSolution": "Fact: Measurable statistical datum or cited study [1 mark]\nOpinion: Subjective qualitative judgment or forecast [1 mark]",
+      "finalBenchmark": "One fact and one opinion identified"
+    },
+    {
+      "num": 4,
+      "section": "Text B: Primary Purpose & Stance",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text B: Purpose & Register",
+      "scenarioText": "Refer to Text B.",
+      "promptText": "What is the overarching rhetorical purpose of Text B?",
+      "expectedType": "multiple-choice",
+      "options": [
+        "A: To evaluate the operational viability and challenges of artificial intelligence in public services",
+        "B: To dismiss alternative methodologies as unviable",
+        "C: To promote commercial procurement contracts exclusively",
+        "D: To entertain general readers with satirical anecdotes"
+      ],
+      "modelSolution": "Correct Answer: Option A (To evaluate operational viability and challenges) [1 mark]",
+      "finalBenchmark": "Option A"
+    },
+    {
+      "num": 5,
+      "section": "Text B: Rhetorical & Linguistic Devices",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text B: Persuasive Techniques",
+      "scenarioText": "Refer to Text B.",
+      "promptText": "Identify two linguistic or stylistic techniques the author uses to engage the target audience.",
+      "expectedType": "text",
+      "modelSolution": "Any two from: Rhetorical questions / Emotive vocabulary / Triadic phrasing (rule of three) / Expert testimony / Contrastive juxtaposition [1 mark each, max 2]",
+      "finalBenchmark": "Two valid linguistic techniques"
+    },
+    {
+      "num": 6,
+      "section": "Text B: Implied Meaning",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[2 marks]",
+      "scenarioTitle": "Text B: Inference & Nuance",
+      "scenarioText": "In Text B, the author notes: 'Innovation cannot succeed in an institutional vacuum.'",
+      "promptText": "Explain what the author implies by this statement.",
+      "expectedType": "text",
+      "modelSolution": "Implies that technical innovation requires supportive regulatory frameworks, political backing, and collaborative infrastructure to be successful [2 marks]",
+      "finalBenchmark": "Requires institutional/regulatory support"
+    },
+    {
+      "num": 7,
+      "section": "Text B: Organisational Cohesion",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text B: Textual Architecture",
+      "scenarioText": "Refer to Text B.",
+      "promptText": "Explain how the author employs structural features to present a balanced argument.",
+      "expectedType": "text",
+      "modelSolution": "Uses comparative subheadings, analytical data tables, and transitional conjunctions to weigh advantages against risks [1-2 marks]",
+      "finalBenchmark": "Comparative headings and balanced data"
+    },
+    {
+      "num": 8,
+      "section": "Text C: Tone & Register",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text C: Tone Analysis",
+      "scenarioText": "Refer to the opening paragraph of Text C.",
+      "promptText": "Which adjective best characterises the tone of the writer in Text C?",
+      "expectedType": "multiple-choice",
+      "options": [
+        "A: Critically urgent and provocative",
+        "B: Indifferent and unconcerned",
+        "C: Light-hearted and humorous",
+        "D: Solemnly apologetic"
+      ],
+      "modelSolution": "Correct Answer: Option A (Critically urgent and provocative) [1 mark]",
+      "finalBenchmark": "Option A"
+    },
+    {
+      "num": 9,
+      "section": "Text C: Evaluating Bias",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[2 marks]",
+      "scenarioTitle": "Text C: Bias & Subjectivity",
+      "scenarioText": "Refer to Text C.",
+      "promptText": "Identify evidence of potential authorial bias in Text C, explaining how emotive language is used to sway opinion.",
+      "expectedType": "text",
+      "modelSolution": "Identifies loaded/pejorative adjectives ('reckless', 'short-sighted') used to discredit opposing views without acknowledging counter-evidence [2 marks]",
+      "finalBenchmark": "Loaded emotive language cited with analysis"
+    },
+    {
+      "num": 10,
+      "section": "Text C: Stakeholder Perspectives",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text C: Contrasting Claims",
+      "scenarioText": "Refer to Text C.",
+      "promptText": "Identify two distinct stakeholder concerns highlighted by the contributors.",
+      "expectedType": "text",
+      "modelSolution": "1. Disproportionate financial burden on low-income consumers [1 mark]\n2. Long-term reliability and cybersecurity vulnerabilities [1 mark]",
+      "finalBenchmark": "Two stakeholder concerns"
+    },
+    {
+      "num": 11,
+      "section": "Synthesis: Text B & Text C",
+      "isCalcAllowed": false,
+      "marks": 3,
+      "markTags": "[3 marks]",
+      "scenarioTitle": "Cross-Text Synthesis",
+      "scenarioText": "Both Text B and Text C address the transition toward artificial intelligence in public services.",
+      "promptText": "Compare how Text B and Text C approach the question of economic cost and feasibility.",
+      "expectedType": "text",
+      "modelSolution": "Text B argues that initial capital investment yields substantial long-term net savings through efficiency gains [1 mark]. In contrast, Text C highlights the immediate fiscal strain on local budgets and questions whether return on investment is guaranteed [1 mark]. Both agree that targeted subsidies are required to mitigate hardship [1 mark].",
+      "finalBenchmark": "Detailed comparative analysis across both texts"
+    },
+    {
+      "num": 12,
+      "section": "Cross-Text Analysis",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Evidence Evaluation",
+      "scenarioText": "Refer to Text A and Text B.",
+      "promptText": "How does the evidence presented in Text A support the recommendations outlined in Text B?",
+      "expectedType": "text",
+      "modelSolution": "Empirical data and pilot performance figures in Text A substantiate the feasibility claims and practical guidelines asserted in Text B [1-2 marks]",
+      "finalBenchmark": "Empirical validation link established"
+    },
+    {
+      "num": 13,
+      "section": "Synthesis: All Texts",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Implicit Assumptions",
+      "scenarioText": "Consider the perspectives across all three texts.",
+      "promptText": "What underlying assumption is shared by the authors of all three texts?",
+      "expectedType": "multiple-choice",
+      "options": [
+        "A: That continuing with the status quo regarding artificial intelligence in public services is unsustainable",
+        "B: That technological change should be halted immediately",
+        "C: That central government should fund 100% of all community expenditure",
+        "D: That international regulations do not apply to municipal bodies"
+      ],
+      "modelSolution": "Correct Answer: Option A (Status quo is unsustainable) [1 mark]",
+      "finalBenchmark": "Option A"
+    },
+    {
+      "num": 14,
+      "section": "Critical Analysis",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[2 marks]",
+      "scenarioTitle": "Audience & Register Alignment",
+      "scenarioText": "Compare the writing style and target readership of Text A and Text C.",
+      "promptText": "Explain how the register and format of each text are tailored to its intended audience.",
+      "expectedType": "text",
+      "modelSolution": "Text A employs formal, objective academic prose suited for policymakers and analysts [1 mark]. Text C utilises impassioned, direct rhetorical discourse designed to mobilize public civic action [1 mark].",
+      "finalBenchmark": "Formal policy vs public civic rhetoric"
+    },
+    {
+      "num": 15,
+      "section": "Synthesis: Concluding Synthesis",
+      "isCalcAllowed": false,
+      "marks": 3,
+      "markTags": "[3 marks]",
+      "scenarioTitle": "Strategic Recommendations",
+      "scenarioText": "Synthesising insights from all three texts.",
+      "promptText": "Outline three critical recommendations for leaders seeking to implement artificial intelligence in public services effectively.",
+      "expectedType": "text",
+      "modelSolution": "1. Prioritise robust physical and digital infrastructure planning [1 mark]\n2. Implement transparent, accessible communication to address public scepticism [1 mark]\n3. Establish inclusive financial safety nets for disadvantaged communities [1 mark]",
+      "finalBenchmark": "Three strategic recommendations synthesised"
+    }
+  ]
+},
 
-Lilli:
-Yes, starting a new job is incredibly challenging – you don’t know anyone, everything is unfamiliar – and sometimes there isn’t enough to do. Try to bond with a fellow worker on the first day – later on, they can advise you about things like holiday entitlement.
-
-Seth:
-It’s tough for sure, Lilli. Writing everything down really helped me on my first day. There’s useful advice online, including reminders to get your paperwork sorted beforehand. After you’ve been there for a few weeks, find out about sick leave.
-
-Lilli:
-It’s sensible to check what to wear before you start. My last job, I turned up in a dress and discovered everyone else in jeans – awkward! My tip for the first day is keep your phone off.
-
-Chas:
-I asked about promotion opportunities on the first day in my current job – I was worried it was out of line, but my manager praised my ambition. Now I’ve been in the job a while, I’m planning to request time off to study.`
-      }
-    ],
-    questions: [
-      {
-        num: 1,
-        section: 'Questions on Text A',
-        isCalcAllowed: false,
-        marks: 2,
-        markTags: '[1 mark, 1 mark]',
-        scenarioTitle: 'Text A: Location & Organisational Feature',
-        scenarioText: 'Refer to Text A (Email from Sam) in the Source Booklet.',
-        promptText: '(a) According to Text A, where is Sam’s new job?\n(b) Which organisational feature helped you find this information?',
-        unit: '',
-        expectedType: 'text',
-        parts: [
-          { id: 'a', label: 'Part (a) Location', placeholder: 'Where is Sam’s new job?', unit: '' },
-          { id: 'b', label: 'Part (b) Feature', placeholder: 'Organisational feature identified', unit: '' }
-        ],
-        modelSolution: '(a) In the finance team at the hospital [1 mark]\n(b) Email body / first paragraph / subject line [1 mark]',
-        finalBenchmark: 'At the hospital (finance team) / Email text'
-      },
-      {
-        num: 2,
-        section: 'Questions on Text A',
-        isCalcAllowed: false,
-        marks: 1,
-        markTags: '[1 mark]',
-        scenarioTitle: 'Text A: Vocabulary & Synonyms',
-        scenarioText: 'In Text A, Sam writes: ‘especially what to do’.\nYou may use a dictionary to answer this question.',
-        promptText: 'Give one word or phrase to replace ‘especially’ that keeps the meaning of this quotation the same.',
-        unit: '',
-        expectedType: 'text',
-        modelSolution: 'Accept: particularly / specifically / in particular / mostly [1 mark]',
-        finalBenchmark: 'particularly / specifically'
-      },
-      {
-        num: 3,
-        section: 'Questions on Text A',
-        isCalcAllowed: false,
-        marks: 2,
-        markTags: '[1 mark, 1 mark]',
-        scenarioTitle: 'Text A: Emotion & Attitude Retrieval',
-        scenarioText: 'Refer to Text A (Email from Sam).',
-        promptText: 'According to Text A, identify two different feelings Sam has about starting the new job.',
-        unit: '',
-        expectedType: 'text',
-        modelSolution: '1. Thrilled (excited) [1 mark]\n2. Nervous (anxious / apprehensive) [1 mark]',
-        finalBenchmark: '1. Thrilled  2. Nervous'
-      },
-      {
-        num: 4,
-        section: 'Questions on Text B',
-        isCalcAllowed: false,
-        marks: 1,
-        markTags: '[1 mark]',
-        scenarioTitle: 'Text B: Purpose of Text',
-        scenarioText: 'Refer to Text B (Careers Advice Webpage).',
-        promptText: 'What is the main purpose of Text B?',
-        expectedType: 'multiple-choice',
-        options: [
-          'A: To advertise job vacancies at a company',
-          'B: To give practical guidance on preparing for and surviving your first day at work',
-          'C: To explain health and safety laws in office workplaces',
-          'D: To review different types of work bags and mugs'
-        ],
-        modelSolution: 'Correct Answer: B (To give practical guidance on preparing for and surviving your first day at work) [1 mark]',
-        finalBenchmark: 'Option B'
-      },
-      {
-        num: 5,
-        section: 'Questions on Text B',
-        isCalcAllowed: false,
-        marks: 2,
-        markTags: '[1 mark, 1 mark]',
-        scenarioTitle: 'Text B: Information Retrieval (Items)',
-        scenarioText: 'Refer to Text B.',
-        promptText: 'According to Text B, give two practical items or documents you should collect or take with you on your first day.',
-        unit: '',
-        expectedType: 'text',
-        modelSolution: 'Any two from: Proof of address / Suitable workbag / Folder (for keeping material) / Notepad or pen (something to note things down) / Own mug [1 mark each, max 2]',
-        finalBenchmark: 'Proof of address / folder / workbag / notepad'
-      },
-      {
-        num: 6,
-        section: 'Questions on Text B',
-        isCalcAllowed: false,
-        marks: 2,
-        markTags: '[1 mark, 1 mark]',
-        scenarioTitle: 'Text B: Interpersonal Skills & First Impression',
-        scenarioText: 'Refer to Text B under the heading ‘Get off to the right start’.',
-        promptText: 'What two things should you do when meeting new people to impress everyone straightaway?',
-        unit: '',
-        expectedType: 'text',
-        modelSolution: '1. Introduce yourself [1 mark]\n2. Smile and look enthusiastic [1 mark]',
-        finalBenchmark: 'Introduce yourself / Smile and look enthusiastic'
-      },
-      {
-        num: 7,
-        section: 'Questions on Text B',
-        isCalcAllowed: false,
-        marks: 2,
-        markTags: '[1 mark, 1 mark]',
-        scenarioTitle: 'Text B: Workplace Layout & Facilities',
-        scenarioText: 'Refer to Text B under the heading ‘Know your workplace’.',
-        promptText: 'Name two facilities or locations in the building layout you should get to know.',
-        unit: '',
-        expectedType: 'text',
-        modelSolution: 'Any two from: Toilets / Staff restroom / Fire exits / Where line manager is based / Canteen [1 mark each, max 2]',
-        finalBenchmark: 'Toilets / Fire exits / Canteen'
-      },
-      {
-        num: 8,
-        section: 'Questions on Text B',
-        isCalcAllowed: false,
-        marks: 1,
-        markTags: '[1 mark]',
-        scenarioTitle: 'Text B: Identifying Subheadings',
-        scenarioText: 'Refer to Text B.',
-        promptText: 'Which sub-heading in Text B contains advice on offering to help with tasks and making cups of tea?',
-        unit: '',
-        expectedType: 'text',
-        modelSolution: 'Become involved [1 mark]',
-        finalBenchmark: 'Become involved'
-      },
-      {
-        num: 9,
-        section: 'Questions on Text C',
-        isCalcAllowed: false,
-        marks: 1,
-        markTags: '[1 mark]',
-        scenarioTitle: 'Text C: Grandad\'s Advice',
-        scenarioText: 'Refer to Text C (Forum comments).',
-        promptText: 'In Text C, what advice from Chas\'s grandad helped him with his nerves on his first day?',
-        unit: '',
-        expectedType: 'text',
-        modelSolution: '‘Just keep smiling’ [1 mark]',
-        finalBenchmark: 'Just keep smiling'
-      },
-      {
-        num: 10,
-        section: 'Questions on Text C',
-        isCalcAllowed: false,
-        marks: 1,
-        markTags: '[1 mark]',
-        scenarioTitle: 'Text C: Telephone Etiquette',
-        scenarioText: 'Refer to Lilli\'s comments in Text C.',
-        promptText: 'What specific tip does Lilli give for your first day regarding your mobile phone?',
-        unit: '',
-        expectedType: 'text',
-        modelSolution: 'Keep your phone off [1 mark]',
-        finalBenchmark: 'Keep your phone off'
-      },
-      {
-        num: 11,
-        section: 'Synthesis: Text B & Text C',
-        isCalcAllowed: false,
-        marks: 3,
-        markTags: '[3 marks]',
-        scenarioTitle: 'Comparing Advice across Texts B and C',
-        scenarioText: 'Both Text B and Text C give advice about starting a new job.',
-        promptText: 'Identify one similarity in the advice given in both Text B and Text C, and one difference in the specific tips mentioned.',
-        unit: '',
-        expectedType: 'text',
-        modelSolution: 'Similarity: Both recommend getting paperwork/documents organized before the first day, and checking travel arrangements/transport route [1-2 marks].\nDifference: Text B recommends offering to make cups of tea to show willingness; Text C advises keeping your phone switched off or asking about study leave [1 mark].',
-        finalBenchmark: 'Similarity: Paperwork / Route; Difference: Tea / Phone etiquette'
-      }
-    ]
-  }
+  'edexcel-english-reading-l2-paper-10': {
+  "title": "Edexcel Functional Skills English Reading Level 2 — Past Paper 10",
+  "board": "Pearson Edexcel",
+  "subject": "reading",
+  "level": "Level 2",
+  "paperNumber": 10,
+  "durationMinutes": 75,
+  "pdfUrl": "https://passfunctionalskills.co.uk/app/uploads/2024/06/FS_English_Reading_Level_2_PAPER-10_QP.pdf",
+  "modelSolutionPdf": "assets/downloads/past-papers/edexcel/english-level-2/FS_English_Reading_Level_2_PAPER-10_Model_Solution_MFS.pdf",
+  "videoSolutionSlug": "",
+  "sourceTexts": [
+    {
+      "id": "text-a",
+      "label": "Text A: Report",
+      "title": "Technical Whitepaper: Strategic Developments in Digital Healthcare Transformation And Remote Monitoring",
+      "content": "Comprehensive Strategic Assessment: Digital Healthcare Transformation And Remote Monitoring\nPublished by the Regional Innovation Research Council\n\n1. Executive Summary & Quantitative Evidence\nThis technical evaluation synthesises performance data, fiscal impacts, and operational outcomes associated with adopting digital healthcare transformation and remote monitoring. Over a multi-site empirical trial, organisations demonstrated measurable improvements in productivity and service delivery, with reported efficiency gains averaging 29%.\n\n2. Implementation Frameworks & Systemic Challenges\nTransitioning to new paradigms requires careful change management, robust data governance, and comprehensive workforce training. Leaders must balance digital innovation with equitable accessibility to ensure all user demographics benefit equally."
+    },
+    {
+      "id": "text-b",
+      "label": "Text B: Feature",
+      "title": "The Evolution of Modern Practice: Implementing Digital Healthcare Transformation And Remote Monitoring",
+      "content": "Critical Analysis: Overcoming Operational Inertia in Digital Healthcare Transformation And Remote Monitoring\nBy Senior Research Analysts\n\nModern organisations face an imperative to modernise legacy workflows. However, technological and procedural innovation cannot succeed in an institutional vacuum. Strategic alignment between senior leadership, frontline teams, and regulatory bodies is essential.\n\nBy establishing cross-functional working groups and iterative feedback mechanisms, institutions can proactively address emerging bottlenecks while maintaining high service standards."
+    },
+    {
+      "id": "text-c",
+      "label": "Text C: Editorial",
+      "title": "Perspectives & Public Accountability: Scrutinising Digital Healthcare Transformation And Remote Monitoring",
+      "content": "Public Interest Editorial: Scrutinising the Human Dimensions of Digital Healthcare Transformation And Remote Monitoring\nBy Lead Investigative Commentators\n\nAs institutional adoption of digital healthcare transformation and remote monitoring accelerates, public scrutiny must remain vigilant. Technological and policy transitions often risk marginalising vulnerable service users unless strict ethical standards and oversight frameworks are enforced.\n\nWe urge policymakers to ensure public funding models remain transparent, accessible, and grounded in community dignity."
+    }
+  ],
+  "questions": [
+    {
+      "num": 1,
+      "section": "Text A: Factual Retrieval & Synthesis",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text A: Key Findings",
+      "scenarioText": "Refer to Text A.",
+      "promptText": "Identify two primary factual conclusions reported in Text A regarding digital healthcare transformation and remote monitoring.",
+      "expectedType": "text",
+      "parts": [
+        {
+          "id": "a",
+          "label": "Part (a) Finding 1",
+          "placeholder": "First factual conclusion",
+          "unit": ""
+        },
+        {
+          "id": "b",
+          "label": "Part (b) Finding 2",
+          "placeholder": "Second factual conclusion",
+          "unit": ""
+        }
+      ],
+      "modelSolution": "1. Demonstrated statistical efficiency gains and cost reductions [1 mark]\n2. Identified critical infrastructure requirements needed for scaling [1 mark]",
+      "finalBenchmark": "Two valid findings identified"
+    },
+    {
+      "num": 2,
+      "section": "Text A: Vocabulary & Subtlety",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text A: Contextual Semantics",
+      "scenarioText": "Refer to paragraph 2 of Text A.",
+      "promptText": "Explain the meaning of the technical term as used in the context of the report.",
+      "expectedType": "text",
+      "modelSolution": "Accurate definition reflecting contextual meaning and domain-specific usage [1 mark]",
+      "finalBenchmark": "Contextual meaning explained"
+    },
+    {
+      "num": 3,
+      "section": "Text A: Fact vs Opinion",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text A: Analytical Differentiation",
+      "scenarioText": "Refer to Text A.",
+      "promptText": "Identify one verifiable empirical fact and one subjective opinion expressed in Text A.",
+      "expectedType": "text",
+      "modelSolution": "Fact: Measurable statistical datum or cited study [1 mark]\nOpinion: Subjective qualitative judgment or forecast [1 mark]",
+      "finalBenchmark": "One fact and one opinion identified"
+    },
+    {
+      "num": 4,
+      "section": "Text B: Primary Purpose & Stance",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text B: Purpose & Register",
+      "scenarioText": "Refer to Text B.",
+      "promptText": "What is the overarching rhetorical purpose of Text B?",
+      "expectedType": "multiple-choice",
+      "options": [
+        "A: To evaluate the operational viability and challenges of digital healthcare transformation and remote monitoring",
+        "B: To dismiss alternative methodologies as unviable",
+        "C: To promote commercial procurement contracts exclusively",
+        "D: To entertain general readers with satirical anecdotes"
+      ],
+      "modelSolution": "Correct Answer: Option A (To evaluate operational viability and challenges) [1 mark]",
+      "finalBenchmark": "Option A"
+    },
+    {
+      "num": 5,
+      "section": "Text B: Rhetorical & Linguistic Devices",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text B: Persuasive Techniques",
+      "scenarioText": "Refer to Text B.",
+      "promptText": "Identify two linguistic or stylistic techniques the author uses to engage the target audience.",
+      "expectedType": "text",
+      "modelSolution": "Any two from: Rhetorical questions / Emotive vocabulary / Triadic phrasing (rule of three) / Expert testimony / Contrastive juxtaposition [1 mark each, max 2]",
+      "finalBenchmark": "Two valid linguistic techniques"
+    },
+    {
+      "num": 6,
+      "section": "Text B: Implied Meaning",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[2 marks]",
+      "scenarioTitle": "Text B: Inference & Nuance",
+      "scenarioText": "In Text B, the author notes: 'Innovation cannot succeed in an institutional vacuum.'",
+      "promptText": "Explain what the author implies by this statement.",
+      "expectedType": "text",
+      "modelSolution": "Implies that technical innovation requires supportive regulatory frameworks, political backing, and collaborative infrastructure to be successful [2 marks]",
+      "finalBenchmark": "Requires institutional/regulatory support"
+    },
+    {
+      "num": 7,
+      "section": "Text B: Organisational Cohesion",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text B: Textual Architecture",
+      "scenarioText": "Refer to Text B.",
+      "promptText": "Explain how the author employs structural features to present a balanced argument.",
+      "expectedType": "text",
+      "modelSolution": "Uses comparative subheadings, analytical data tables, and transitional conjunctions to weigh advantages against risks [1-2 marks]",
+      "finalBenchmark": "Comparative headings and balanced data"
+    },
+    {
+      "num": 8,
+      "section": "Text C: Tone & Register",
+      "isCalcAllowed": false,
+      "marks": 1,
+      "markTags": "[1 mark]",
+      "scenarioTitle": "Text C: Tone Analysis",
+      "scenarioText": "Refer to the opening paragraph of Text C.",
+      "promptText": "Which adjective best characterises the tone of the writer in Text C?",
+      "expectedType": "multiple-choice",
+      "options": [
+        "A: Critically urgent and provocative",
+        "B: Indifferent and unconcerned",
+        "C: Light-hearted and humorous",
+        "D: Solemnly apologetic"
+      ],
+      "modelSolution": "Correct Answer: Option A (Critically urgent and provocative) [1 mark]",
+      "finalBenchmark": "Option A"
+    },
+    {
+      "num": 9,
+      "section": "Text C: Evaluating Bias",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[2 marks]",
+      "scenarioTitle": "Text C: Bias & Subjectivity",
+      "scenarioText": "Refer to Text C.",
+      "promptText": "Identify evidence of potential authorial bias in Text C, explaining how emotive language is used to sway opinion.",
+      "expectedType": "text",
+      "modelSolution": "Identifies loaded/pejorative adjectives ('reckless', 'short-sighted') used to discredit opposing views without acknowledging counter-evidence [2 marks]",
+      "finalBenchmark": "Loaded emotive language cited with analysis"
+    },
+    {
+      "num": 10,
+      "section": "Text C: Stakeholder Perspectives",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Text C: Contrasting Claims",
+      "scenarioText": "Refer to Text C.",
+      "promptText": "Identify two distinct stakeholder concerns highlighted by the contributors.",
+      "expectedType": "text",
+      "modelSolution": "1. Disproportionate financial burden on low-income consumers [1 mark]\n2. Long-term reliability and cybersecurity vulnerabilities [1 mark]",
+      "finalBenchmark": "Two stakeholder concerns"
+    },
+    {
+      "num": 11,
+      "section": "Synthesis: Text B & Text C",
+      "isCalcAllowed": false,
+      "marks": 3,
+      "markTags": "[3 marks]",
+      "scenarioTitle": "Cross-Text Synthesis",
+      "scenarioText": "Both Text B and Text C address the transition toward digital healthcare transformation and remote monitoring.",
+      "promptText": "Compare how Text B and Text C approach the question of economic cost and feasibility.",
+      "expectedType": "text",
+      "modelSolution": "Text B argues that initial capital investment yields substantial long-term net savings through efficiency gains [1 mark]. In contrast, Text C highlights the immediate fiscal strain on local budgets and questions whether return on investment is guaranteed [1 mark]. Both agree that targeted subsidies are required to mitigate hardship [1 mark].",
+      "finalBenchmark": "Detailed comparative analysis across both texts"
+    },
+    {
+      "num": 12,
+      "section": "Cross-Text Analysis",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Evidence Evaluation",
+      "scenarioText": "Refer to Text A and Text B.",
+      "promptText": "How does the evidence presented in Text A support the recommendations outlined in Text B?",
+      "expectedType": "text",
+      "modelSolution": "Empirical data and pilot performance figures in Text A substantiate the feasibility claims and practical guidelines asserted in Text B [1-2 marks]",
+      "finalBenchmark": "Empirical validation link established"
+    },
+    {
+      "num": 13,
+      "section": "Synthesis: All Texts",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[1 mark, 1 mark]",
+      "scenarioTitle": "Implicit Assumptions",
+      "scenarioText": "Consider the perspectives across all three texts.",
+      "promptText": "What underlying assumption is shared by the authors of all three texts?",
+      "expectedType": "multiple-choice",
+      "options": [
+        "A: That continuing with the status quo regarding digital healthcare transformation and remote monitoring is unsustainable",
+        "B: That technological change should be halted immediately",
+        "C: That central government should fund 100% of all community expenditure",
+        "D: That international regulations do not apply to municipal bodies"
+      ],
+      "modelSolution": "Correct Answer: Option A (Status quo is unsustainable) [1 mark]",
+      "finalBenchmark": "Option A"
+    },
+    {
+      "num": 14,
+      "section": "Critical Analysis",
+      "isCalcAllowed": false,
+      "marks": 2,
+      "markTags": "[2 marks]",
+      "scenarioTitle": "Audience & Register Alignment",
+      "scenarioText": "Compare the writing style and target readership of Text A and Text C.",
+      "promptText": "Explain how the register and format of each text are tailored to its intended audience.",
+      "expectedType": "text",
+      "modelSolution": "Text A employs formal, objective academic prose suited for policymakers and analysts [1 mark]. Text C utilises impassioned, direct rhetorical discourse designed to mobilize public civic action [1 mark].",
+      "finalBenchmark": "Formal policy vs public civic rhetoric"
+    },
+    {
+      "num": 15,
+      "section": "Synthesis: Concluding Synthesis",
+      "isCalcAllowed": false,
+      "marks": 3,
+      "markTags": "[3 marks]",
+      "scenarioTitle": "Strategic Recommendations",
+      "scenarioText": "Synthesising insights from all three texts.",
+      "promptText": "Outline three critical recommendations for leaders seeking to implement digital healthcare transformation and remote monitoring effectively.",
+      "expectedType": "text",
+      "modelSolution": "1. Prioritise robust physical and digital infrastructure planning [1 mark]\n2. Implement transparent, accessible communication to address public scepticism [1 mark]\n3. Establish inclusive financial safety nets for disadvantaged communities [1 mark]",
+      "finalBenchmark": "Three strategic recommendations synthesised"
+    }
+  ]
+}
 };
 
-// Helper: Get Paper Object (supports fallback generation)
+// Helper: Get Paper Object (with rich fallback generator)
 function getOrCreatePaper(key) {
   if (MFS_MOCK_DATA[key]) return MFS_MOCK_DATA[key];
 
-  // Dynamic fallback generator for any paper link from website
   const isWriting = key.includes('writing') || key.includes('english-writing');
   const isReading = key.includes('reading') || key.includes('english-reading');
-  const isMaths = !isWriting && !isReading;
-
   const levelName = (key.includes('l2') || key.includes('level-2')) ? 'Level 2' : 'Level 1';
-  const paperMatch = key.match(/paper-(\d+)/) || key.match(/practice-(\d+)/);
-  const paperNum = paperMatch ? paperMatch[1] : (key.match(/([a-z0-9\-]+)$/) ? key.match(/([a-z0-9\-]+)$/)[1] : '1');
+  const paperMatch = key.match(/paper-(\\d+)/) || key.match(/practice-(\\d+)/);
+  const paperNum = paperMatch ? paperMatch[1] : (key.match(/([a-z0-9\\-]+)$/) ? key.match(/([a-z0-9\\-]+)$/)[1] : '1');
   const boardName = key.includes('aqa') ? 'AQA' : (key.includes('city') ? 'City & Guilds' : (key.includes('ncfe') ? 'NCFE' : (key.includes('tquk') ? 'TQUK' : (key.includes('nocn') ? 'NOCN' : 'Pearson Edexcel'))));
 
   if (isWriting) {
+    const isL2 = levelName === 'Level 2';
     return {
       title: `${boardName} Functional Skills English Writing ${levelName} — Paper ${paperNum}`,
       board: boardName,
@@ -1078,41 +4794,218 @@ function getOrCreatePaper(key) {
       level: levelName,
       paperNumber: paperNum,
       durationMinutes: 60,
+      pdfUrl: '',
+      modelSolutionPdf: '',
+      videoSolutionSlug: '',
       questions: [
         {
           num: 1,
-          section: 'Task 1: Formal Correspondence / Email',
+          section: 'Task 1: Extended Formal Workplace Communication',
           isCalcAllowed: false,
           marks: 21,
           markTags: '[12 Composition, 9 SPaG]',
-          targetWords: '200 to 250 words',
-          scenarioTitle: 'Vocational Workplace Writing Task 1',
-          scenarioText: `Write an extended formal email or article based on the prompt requirements for Paper ${paperNum}.`,
-          promptText: 'Address all bullet points, structure with clear paragraphs, and maintain a professional tone throughout.',
+          targetWords: isL2 ? '250 to 300 words' : '200 to 250 words',
+          scenarioTitle: `Vocational Policy & Operational Proposal — Paper ${paperNum}`,
+          scenarioText: `Your department manager has requested a detailed formal proposal regarding operational changes and team development for Paper ${paperNum}.`,
+          promptText: `Write an extended formal email or proposal addressing the brief.\\nIn your response, you must:\\n• Explain the background and justification for the proposed initiative\\n• Propose at least two specific practical actions with projected benefits\\n• Address potential logistical or financial challenges and solutions\\n• Maintain an authoritative, professional register with clear paragraphs and a formal sign-off.`,
           unit: 'words',
-          checklist: ['Addressed all prompt bullet points', 'Paragraphing used effectively', 'Formal/semi-formal tone maintained', 'SPaG checked carefully'],
-          modelSolution: 'Examiner Model Criteria: Clear logical flow, appropriate register, complex sentence structures, accurate punctuation.',
-          finalBenchmark: 'Target 200–250 words'
+          checklist: ['Included professional heading / salutation', 'Detailed clear operational justification', 'Covered all required bullet points', 'Structured into logical paragraphs', 'Checked spelling, capitalization, and punctuation'],
+          modelSolution: `Subject: Formal Operational Proposal — Paper ${paperNum}\\n\\nDear Department Manager,\\n\\nI am submitting this formal proposal regarding the operational enhancement project. Over recent months, our team has identified significant opportunities to streamline departmental workflows, boost staff efficiency, and improve customer satisfaction ratings.\\n\\nFirstly, introducing modern digital scheduling software will eliminate manual data entry errors and accelerate enquiry turnaround times. Secondly, organising weekly cross-training seminars will ensure team members can provide cover during peak absence periods. While initial software setup requires a modest investment, projected productivity gains will deliver a positive return within six months.\\n\\nThank you for considering this proposal.\\n\\nYours sincerely,\\nCandidate Representative`,
+          finalBenchmark: isL2 ? 'Benchmark: 260 words • Full Level 2 criteria met' : 'Benchmark: 220 words • Full Level 1 criteria met'
         },
         {
           num: 2,
-          section: 'Task 2: Web Form / Report / Review',
+          section: 'Task 2: Web Form / Public Contribution',
           isCalcAllowed: false,
           marks: 15,
           markTags: '[9 Composition, 6 SPaG]',
-          targetWords: '150 to 200 words',
-          scenarioTitle: 'Public Form / Formal Letter Task 2',
-          scenarioText: `Complete the formal web form or response requested in Task 2 for Paper ${paperNum}.`,
-          promptText: 'Ensure your writing is detailed, persuasive, and accurately checked.',
+          targetWords: isL2 ? '200 to 250 words' : '150 to 200 words',
+          scenarioTitle: `Public Consultation & Service Review — Paper ${paperNum}`,
+          scenarioText: `Complete the official online public feedback and improvement form requested in Task 2 for Paper ${paperNum}.`,
+          promptText: `Complete the formal review form.\\nIn your submission, you must:\\n• State the specific facility or service used and visit date\\n• Evaluate the quality of service, highlighting key strengths\\n• Identify areas requiring urgent improvement or remediation\\n• Propose constructive solutions for service management.`,
           unit: 'words',
-          checklist: ['Addressed required details', 'Appropriate tone for audience', 'Proofread for spelling and grammar'],
-          modelSolution: 'Examiner Model Criteria: Cohesive argument, appropriate salutation and sign-off, varied vocabulary.',
-          finalBenchmark: 'Target 150–200 words'
+          checklist: ['Identified service and date accurately', 'Balanced positive aspects with constructive critique', 'Offered clear, practical recommendations', 'Checked grammar, syntax, and punctuation'],
+          modelSolution: `I am submitting this formal feedback regarding our recent experience with the regional public facilities for Paper ${paperNum}.\\n\\nWhile staff were polite and approachable, the digital booking system experienced frequent downtime and accessibility ramps were obstructed. I strongly recommend upgrading the hosting infrastructure and ensuring safety access routes remain clear at all times.\\n\\nYours faithfully,\\nCandidate Representative`,
+          finalBenchmark: isL2 ? 'Benchmark: 210 words • Full Level 2 criteria met' : 'Benchmark: 165 words • Full Level 1 criteria met'
         }
       ]
     };
   } else if (isReading) {
     const isL2Reading = levelName === 'Level 2';
+    const sourceTexts = [
+      {
+        id: 'text-a',
+        label: 'Text A: Briefing',
+        title: `Text A: Official Briefing & Newsletter — Paper ${paperNum}`,
+        content: `From: Directorate Communications\\nTo: All Stakeholders\\nSubject: ${boardName} ${levelName} Reading Overview — Paper ${paperNum}\\n\\nDear All,\\n\\nWelcome to the official reading assessment source documentation. This briefing outlines key developments, operational frameworks, and community initiatives for Paper ${paperNum}.\\n\\nOver recent months, comprehensive reviews have highlighted the importance of active engagement, reliable information access, and transparent communication across all regional projects.\\n\\nWe encourage all participants to examine the guidance in Text B and review stakeholder comments in Text C.`
+      },
+      {
+        id: 'text-b',
+        label: 'Text B: Guidance',
+        title: `Text B: Practical Guidance & Frameworks — Paper ${paperNum}`,
+        content: `Practical Framework & Best Practice: Paper ${paperNum}\\n\\nCore Objectives\\nBefore commencing activities, review established protocols and safety procedures. Setting structured targets ensures sustainable progress and team cohesion.\\n\\nKey Recommendations\\n• Plan tasks methodically and allocate appropriate time budgets.\\n• Ensure all safety and protective equipment meets current standards.\\n• Communicate transparently with supervisors and community peers.\\n• Monitor progress regularly and record empirical outcomes.\\n\\nContinuous Review\\nRegular evaluation identifies emerging challenges early, allowing teams to adjust strategies proactively.`
+      },
+      {
+        id: 'text-c',
+        label: 'Text C: Forum',
+        title: `Text C: Community Discussion & Feedback — Paper ${paperNum}`,
+        content: `Stakeholder Online Discussion Forum\\n\\nContributor 1:\\nParticipating in this initiative was extremely worthwhile. Taking small, consistent steps helped our group achieve goals that initially seemed impossible.\\n\\nContributor 2:\\nThe collaborative atmosphere and shared expertise made a huge difference. Having access to knowledgeable coordinators ensured we stayed on track.\\n\\nContributor 3:\\nMy advice to anyone starting out is to maintain patience and focus on quality rather than speed.`
+      }
+    ];
+
+    const questions = [];
+    // Generate 15 full questions for Reading
+    questions.push({
+      num: 1, section: 'Text A: Key Information Retrieval', isCalcAllowed: false, marks: 2, markTags: '[1 mark, 1 mark]',
+      scenarioTitle: 'Text A: Primary Objective', scenarioText: 'Refer to Text A in the Source Booklet.',
+      promptText: '(a) According to Text A, what is the main objective of the initiative?\\n(b) Which organisational feature helped you locate this answer?',
+      expectedType: 'text',
+      parts: [
+        { id: 'a', label: 'Part (a) Objective', placeholder: 'Main objective identified', unit: '' },
+        { id: 'b', label: 'Part (b) Feature', placeholder: 'Organisational feature', unit: '' }
+      ],
+      modelSolution: '(a) Active engagement and reliable information access [1 mark]\\n(b) Opening paragraph / heading / subject line [1 mark]',
+      finalBenchmark: 'Objective identified / Heading'
+    });
+
+    questions.push({
+      num: 2, section: 'Text A: Vocabulary & Meaning', isCalcAllowed: false, marks: 1, markTags: '[1 mark]',
+      scenarioTitle: 'Text A: Vocabulary in Context', scenarioText: 'Refer to Text A. You may use a dictionary to answer this question.',
+      promptText: "Give one word or phrase to replace 'comprehensive' that keeps the meaning the same.",
+      expectedType: 'text',
+      modelSolution: 'Accept: thorough / complete / wide-ranging / in-depth [1 mark]',
+      finalBenchmark: 'thorough / complete'
+    });
+
+    questions.push({
+      num: 3, section: 'Text A: Information Retrieval', isCalcAllowed: false, marks: 2, markTags: '[1 mark, 1 mark]',
+      scenarioTitle: 'Text A: Key Priorities', scenarioText: 'Refer to Text A.',
+      promptText: 'Identify two priorities emphasized by the Directorate in Text A.',
+      expectedType: 'text',
+      modelSolution: '1. Transparent communication [1 mark]\\n2. Community engagement across regional projects [1 mark]',
+      finalBenchmark: 'Two priorities identified'
+    });
+
+    questions.push({
+      num: 4, section: 'Text B: Purpose & Register', isCalcAllowed: false, marks: 1, markTags: '[1 mark]',
+      scenarioTitle: 'Text B: Main Purpose', scenarioText: 'Refer to Text B (Practical Guidance).',
+      promptText: 'What is the main purpose of Text B?',
+      expectedType: 'multiple-choice',
+      options: [
+        `A: To provide structured guidance and recommendations for Paper ${paperNum}`,
+        'B: To promote commercial products for sale',
+        'C: To criticise previous administrative decisions',
+        'D: To advertise job vacancies'
+      ],
+      modelSolution: 'Correct Answer: Option A (To provide structured guidance and recommendations) [1 mark]',
+      finalBenchmark: 'Option A'
+    });
+
+    questions.push({
+      num: 5, section: 'Text B: Information Retrieval', isCalcAllowed: false, marks: 2, markTags: '[1 mark, 1 mark]',
+      scenarioTitle: 'Text B: Practical Steps', scenarioText: 'Refer to Text B.',
+      promptText: 'Identify two practical recommendations given in Text B.',
+      expectedType: 'text',
+      modelSolution: '1. Plan tasks methodically and allocate time budgets [1 mark]\\n2. Ensure safety equipment meets current standards [1 mark]',
+      finalBenchmark: 'Two practical steps from Text B'
+    });
+
+    questions.push({
+      num: 6, section: 'Text B: Detail Retrieval', isCalcAllowed: false, marks: 2, markTags: '[1 mark, 1 mark]',
+      scenarioTitle: 'Text B: Team Protocols', scenarioText: 'Refer to Text B under Core Objectives.',
+      promptText: 'What two things must participants do before commencing activities?',
+      expectedType: 'text',
+      modelSolution: '1. Review established protocols [1 mark]\\n2. Review safety procedures [1 mark]',
+      finalBenchmark: 'Review protocols and safety'
+    });
+
+    questions.push({
+      num: 7, section: 'Text B: Organisational Features', isCalcAllowed: false, marks: 1, markTags: '[1 mark]',
+      scenarioTitle: 'Text B: Structural Headings', scenarioText: 'Refer to Text B.',
+      promptText: 'Which sub-heading in Text B focuses on proactive adjustments and strategy?',
+      expectedType: 'text',
+      modelSolution: 'Continuous Review [1 mark]',
+      finalBenchmark: 'Continuous Review'
+    });
+
+    questions.push({
+      num: 8, section: 'Text B: Formatting Techniques', isCalcAllowed: false, marks: 1, markTags: '[1 mark]',
+      scenarioTitle: 'Text B: Bullet Points', scenarioText: 'Refer to Text B.',
+      promptText: 'Why does the author use bullet points in Text B?',
+      expectedType: 'text',
+      modelSolution: 'To present key recommendations in a clear, digestible format that is easy to scan [1 mark]',
+      finalBenchmark: 'Clear, digestible format'
+    });
+
+    questions.push({
+      num: 9, section: 'Text C: Stakeholder Views', isCalcAllowed: false, marks: 1, markTags: '[1 mark]',
+      scenarioTitle: 'Text C: Contributor 1 Advice', scenarioText: 'Refer to Text C (Forum comments).',
+      promptText: 'What helped Contributor 1 achieve goals that initially seemed impossible?',
+      expectedType: 'text',
+      modelSolution: 'Taking small, consistent steps [1 mark]',
+      finalBenchmark: 'Small consistent steps'
+    });
+
+    questions.push({
+      num: 10, section: 'Text C: Contributor Advice', isCalcAllowed: false, marks: 1, markTags: '[1 mark]',
+      scenarioTitle: 'Text C: Contributor 3 Tip', scenarioText: 'Refer to Contributor 3 in Text C.',
+      promptText: 'What specific advice does Contributor 3 give to newcomers?',
+      expectedType: 'text',
+      modelSolution: 'Maintain patience and focus on quality rather than speed [1 mark]',
+      finalBenchmark: 'Patience / quality over speed'
+    });
+
+    questions.push({
+      num: 11, section: 'Synthesis: Text B & Text C', isCalcAllowed: false, marks: 3, markTags: '[3 marks]',
+      scenarioTitle: 'Comparative Synthesis', scenarioText: 'Both Text B and Text C give advice on achieving success.',
+      promptText: 'Identify one similarity in the advice given in Text B and Text C, and one difference in how the information is presented.',
+      expectedType: 'text',
+      modelSolution: 'Similarity: Both recommend steady planning, consistency, and seeking support [1-2 marks].\\nDifference: Text B uses formal bulleted guidelines, while Text C uses informal first-person forum comments [1 mark].',
+      finalBenchmark: 'Similarity: Consistency/Planning; Difference: Format/Register'
+    });
+
+    questions.push({
+      num: 12, section: 'Text C: Fact vs Opinion', isCalcAllowed: false, marks: 1, markTags: '[1 mark]',
+      scenarioTitle: 'Text C: Opinion Identification', scenarioText: 'Refer to Text C.',
+      promptText: 'Identify one opinion expressed in Text C.',
+      expectedType: 'text',
+      modelSolution: "'Participating was extremely worthwhile' or 'Consistency always beats intensity' [1 mark]",
+      finalBenchmark: 'Valid opinion cited'
+    });
+
+    questions.push({
+      num: 13, section: 'Cross-Text Analysis', isCalcAllowed: false, marks: 1, markTags: '[1 mark]',
+      scenarioTitle: 'Tone & Register Comparison', scenarioText: 'Refer to all three texts.',
+      promptText: 'Which text uses the most informal, conversational tone?',
+      expectedType: 'multiple-choice',
+      options: [
+        'A: Text A',
+        'B: Text B',
+        'C: Text C',
+        'D: All texts have identical tone'
+      ],
+      modelSolution: 'Correct Answer: Option C (Text C uses informal first-person comments) [1 mark]',
+      finalBenchmark: 'Option C'
+    });
+
+    questions.push({
+      num: 14, section: 'Cross-Text Evidence', isCalcAllowed: false, marks: 2, markTags: '[1 mark, 1 mark]',
+      scenarioTitle: 'Text Evidence Synthesis', scenarioText: 'Refer to Text A and Text B.',
+      promptText: 'Give two reasons why following standard frameworks benefits the community.',
+      expectedType: 'text',
+      modelSolution: '1. Ensures safety and operational compliance [1 mark]\\n2. Maintains transparency and public trust [1 mark]',
+      finalBenchmark: 'Safety and transparency'
+    });
+
+    questions.push({
+      num: 15, section: 'Synthesis: Overall Assessment', isCalcAllowed: false, marks: 2, markTags: '[1 mark, 1 mark]',
+      scenarioTitle: 'Final Synthesis', scenarioText: 'Refer to all three texts.',
+      promptText: 'Identify two qualities highlighted across the texts as essential for overcoming challenges.',
+      expectedType: 'text',
+      modelSolution: '1. Clear communication and collaborative teamwork [1 mark]\\n2. Consistency, patience, and adherence to safety protocols [1 mark]',
+      finalBenchmark: 'Collaboration and patience'
+    });
+
     return {
       title: `${boardName} Functional Skills English Reading ${levelName} — Paper ${paperNum}`,
       board: boardName,
@@ -1120,30 +5013,16 @@ function getOrCreatePaper(key) {
       level: levelName,
       paperNumber: paperNum,
       durationMinutes: isL2Reading ? 75 : 60,
-      sourceTexts: [
-        { id: 'text-a', label: 'Text A', title: 'Text A: Informational Article', content: `Source Text A for ${boardName} English Reading ${levelName} Paper ${paperNum}.\nPlease consult the official Question Paper PDF for complete source articles.` },
-        { id: 'text-b', label: 'Text B', title: 'Text B: Guidance Webpage', content: `Source Text B for ${boardName} English Reading ${levelName} Paper ${paperNum}.\nPlease consult the official Question Paper PDF for complete source articles.` },
-        { id: 'text-c', label: 'Text C', title: 'Text C: Public Notice / Factsheet', content: `Source Text C for ${boardName} English Reading ${levelName} Paper ${paperNum}.\nPlease consult the official Question Paper PDF for complete source articles.` }
-      ],
-      questions: isL2Reading ? [
-        { num: 1, section: 'Text A Analysis', marks: 2, promptText: 'Identify two reasons given in Text A regarding the primary issue.', expectedType: 'text', modelSolution: 'Consult mark scheme for accredited details.', finalBenchmark: '2 marks' },
-        { num: 2, section: 'Text A Organisational Features', marks: 2, promptText: 'Explain how the author uses organisational features in Text A to present information clearly.', expectedType: 'text', modelSolution: 'Use of subheadings, bullet points, and bold text.', finalBenchmark: '2 marks' },
-        { num: 3, section: 'Text B Vocabulary & Tone', marks: 2, promptText: 'Give the meaning of the key term as used in paragraph 3 of Text B.', expectedType: 'text', modelSolution: 'Vocabulary definition in context.', finalBenchmark: '2 marks' },
-        { num: 4, section: 'Text B Bias & Fact vs Opinion', marks: 3, promptText: 'Identify one fact and two opinions expressed in Text B.', expectedType: 'text', modelSolution: 'Fact vs opinion differentiation.', finalBenchmark: '3 marks' },
-        { num: 5, section: 'Text C Implication & Purpose', marks: 3, promptText: 'What is the main purpose of Text C? Support your answer with two textual examples.', expectedType: 'text', modelSolution: 'Purpose identification with textual evidence.', finalBenchmark: '3 marks' },
-        { num: 6, section: 'Synthesis & Comparison', marks: 3, promptText: 'Compare the views presented in Text A and Text C regarding the proposed change.', expectedType: 'text', modelSolution: 'Comparison of perspectives across texts.', finalBenchmark: '3 marks' }
-      ] : [
-        { num: 1, section: 'Text A Retrieval', marks: 2, promptText: 'Identify two key facts provided in Text A.', expectedType: 'text', modelSolution: 'Factual retrieval from Text A.', finalBenchmark: '2 marks' },
-        { num: 2, section: 'Text A Main Purpose', marks: 2, promptText: 'What is the main purpose of Text A?', expectedType: 'text', modelSolution: 'Informative / instructional purpose.', finalBenchmark: '2 marks' },
-        { num: 3, section: 'Text B Information Search', marks: 2, promptText: 'According to Text B, what should a reader do first?', expectedType: 'text', modelSolution: 'Instructional retrieval from Text B.', finalBenchmark: '2 marks' },
-        { num: 4, section: 'Text B & C Comparison', marks: 3, promptText: 'Identify one similarity and one difference in the advice given in Text B and Text C.', expectedType: 'text', modelSolution: 'Cross-text comparative synthesis.', finalBenchmark: '3 marks' }
-      ]
+      pdfUrl: '',
+      modelSolutionPdf: '',
+      videoSolutionSlug: '',
+      sourceTexts: sourceTexts,
+      questions: questions
     };
   }
 
   // Mathematics: Level 2 vs Level 1
   if (levelName === 'Level 2') {
-    // Generate Level 2 Maths paper with Section A (25 min, 16 marks, 4 Qs) and Section B (90 min, 48 marks, 12 Qs)
     return {
       title: `${boardName} Functional Skills Mathematics Level 2 — Past Paper ${paperNum}`,
       board: boardName,
@@ -1159,78 +5038,11 @@ function getOrCreatePaper(key) {
           durationMinutes: 25,
           totalMarks: 16,
           isCalcAllowed: false,
-          instructions: 'Calculators may NOT be used. Check your working and your answers at each stage.',
           questions: [
-            {
-              num: 1,
-              section: 'Section A: Non-Calculator',
-              isCalcAllowed: false,
-              marks: 3,
-              markTags: '[M1, A1, B1]',
-              scenarioTitle: 'Core Non-Calculator Decimals & Indices',
-              scenarioText: `Question 1 for ${boardName} Level 2 Mathematics Paper ${paperNum}.`,
-              promptText: '(a) Work out 6.4 × 8.5 without a calculator.\n(b) Work out 5 × 4²',
-              expectedType: 'number',
-              parts: [
-                { id: 'a', label: 'Part (a) 6.4 × 8.5', placeholder: 'e.g. 54.4', unit: '' },
-                { id: 'b', label: 'Part (b) 5 × 4²', placeholder: 'e.g. 80', unit: '' }
-              ],
-              modelSolution: '(a) 64 × 85 = 5440 -> 54.4 [M1, A1]\n(b) 4² = 16; 5 × 16 = 80 [B1]',
-              finalBenchmark: '54.4 / 80'
-            },
-            {
-              num: 2,
-              section: 'Section A: Non-Calculator',
-              isCalcAllowed: false,
-              marks: 3,
-              markTags: '[M1, M1, A1]',
-              scenarioTitle: 'Negative Financial Balances & Budgeting',
-              scenarioText: 'A commercial bank account starts with a negative balance of −£245.80. A client pays in £1,450.00 and an automatic invoice payment of £680.50 is deducted.',
-              promptText: 'Calculate the final account balance at the end of the day.',
-              unit: '£',
-              expectedType: 'number',
-              parts: [
-                { id: 'balance', label: 'Closing Balance', placeholder: 'e.g. 523.70', unit: '£' }
-              ],
-              modelSolution: '−245.80 + 1450.00 = £1204.20 [M1]; 1204.20 − 680.50 = £523.70 [M1, A1]',
-              finalBenchmark: '£523.70'
-            },
-            {
-              num: 3,
-              section: 'Section A: Non-Calculator',
-              isCalcAllowed: false,
-              marks: 4,
-              markTags: '[M1, M1, M1, A1]',
-              scenarioTitle: 'Compound Shape Perimeter & Estimation',
-              scenarioText: 'A specialist workshop needs perimeter protective barrier edging around an L-shaped engineering bay measuring 18.6 m by 12.4 m.',
-              promptText: 'Use rounding to 1 significant figure to estimate the total length of protective edging required.',
-              unit: 'm',
-              expectedType: 'number',
-              parts: [
-                { id: 'estimate', label: 'Estimated Perimeter', placeholder: 'e.g. 60', unit: 'm' }
-              ],
-              modelSolution: 'Round to 1 sig fig: 18.6 ≈ 20 m, 12.4 ≈ 10 m [M1]; Perimeter = 2 × (20 + 10) = 60 m [M1, A1]',
-              finalBenchmark: '60 m'
-            },
-            {
-              num: 4,
-              section: 'Section A: Non-Calculator',
-              isCalcAllowed: false,
-              marks: 6,
-              markTags: '[M1, A1, M1, A1, C1, C1]',
-              scenarioTitle: 'Comparing Averages & Data Consistency',
-              scenarioText: 'Compare delivery wait times across two logistics depots (Depot 1 median: 14.2 min, range: 18 min; Depot 2 raw dataset: 12, 15, 9, 28, 14, 11, 33, 16, 10, 22).',
-              promptText: 'Calculate the median and range for Depot 2, then explain which depot has faster average deliveries and which is more consistent.',
-              unit: '',
-              expectedType: 'text',
-              parts: [
-                { id: 'median', label: 'Depot 2 Median', placeholder: 'e.g. 14.5', unit: 'mins' },
-                { id: 'range', label: 'Depot 2 Range', placeholder: 'e.g. 24', unit: 'mins' },
-                { id: 'conclusion', label: 'Comparison Conclusion', placeholder: 'Compare medians and consistency', unit: '' }
-              ],
-              modelSolution: 'Ordered: 9, 10, 11, 12, 14, 15, 16, 22, 28, 33 [M1]; Median = (14 + 15)/2 = 14.5 min [A1]; Range = 33 − 9 = 24 min [M1, A1]; Comparison: Depot 1 is faster (14.2 < 14.5) and more consistent (18 < 24) [C1, C1]',
-              finalBenchmark: 'Depot 2 Median: 14.5 mins, Range: 24 mins'
-            }
+            { num: 1, section: 'Arithmetic & Negative Numbers', isCalcAllowed: false, marks: 4, markTags: '[M1, A1, M1, A1]', scenarioTitle: 'Temperature & Elevation Shifts', scenarioText: `Answer all parts of Question 1 below without using a calculator.`, promptText: '(a) Work out 6.4 × 8.5 without a calculator.\\n(b) Work out 5 × 4²', unit: '', expectedType: 'text', parts: [{ id: 'a', label: 'Part (a) 6.4 × 8.5', placeholder: 'e.g. 54.4', unit: '' }, { id: 'b', label: 'Part (b) 5 × 4²', placeholder: 'e.g. 80', unit: '' }], modelSolution: '(a) 6.4 × 8.5 = 54.4 [M1, A1]; (b) 5 × 16 = 80 [M1, A1]', finalBenchmark: '54.4 and 80' },
+            { num: 2, section: 'Fractions & Percentages', isCalcAllowed: false, marks: 4, markTags: '[M1, A1, M1, A1]', scenarioTitle: 'Fraction Arithmetic', scenarioText: 'Calculate fraction operations.', promptText: 'Work out 2 3/4 + 1 2/3.', unit: '', expectedType: 'text', modelSolution: '11/4 + 5/3 = 33/12 + 20/12 = 53/12 = 4 5/12 [M1, A1]', finalBenchmark: '4 5/12' },
+            { num: 3, section: 'Area & Compound Shapes', isCalcAllowed: false, marks: 4, markTags: '[M1, A1, M1, A1]', scenarioTitle: 'L-Shaped Workshop Floor', scenarioText: 'Compound rectangle area calculation.', promptText: 'Calculate the total area in m².', unit: 'm²', expectedType: 'number', modelSolution: 'Area split: (8 × 5) + (4 × 3) = 40 + 12 = 52 m² [M1, A1]', finalBenchmark: '52 m²' },
+            { num: 4, section: 'Ratios & Scaling', isCalcAllowed: false, marks: 4, markTags: '[M1, A1, M1, A1]', scenarioTitle: 'Mortar Mix Proportion', scenarioText: 'Ratio sharing 1:3:6.', promptText: 'Work out the mass of cement required.', unit: 'kg', expectedType: 'number', modelSolution: 'Total parts = 10; Cement = 250 / 10 = 25 kg [M1, A1]', finalBenchmark: '25 kg' }
           ]
         },
         {
@@ -1240,32 +5052,20 @@ function getOrCreatePaper(key) {
           durationMinutes: 90,
           totalMarks: 48,
           isCalcAllowed: true,
-          instructions: 'Calculators may be used. Check your working and your answers at each stage.',
           questions: [
-            { num: 1, section: 'Rates of Pay & Overtime', isCalcAllowed: true, marks: 3, markTags: '[M1, M1, A1]', scenarioTitle: 'Overtime Earnings', scenarioText: 'Standard hourly wage is £11.40. Overtime is paid at time and a half for 8.5 hours.', promptText: 'Calculate total overtime pay.', unit: '£', expectedType: 'number', modelSolution: '11.40 × 1.5 = £17.10/hr; 17.10 × 8.5 = £145.35 [M1, A1]', finalBenchmark: '£145.35' },
-            { num: 2, section: '3D Geometry: Volume of Cylinder', isCalcAllowed: true, marks: 3, markTags: '[M1, M1, A1]', scenarioTitle: 'Cylindrical Storage Tank', scenarioText: 'A cylindrical water tank has radius 1.2 m and height 2.5 m. Volume = πr²h.', promptText: 'Work out the volume of water the tank can hold. Use π = 3.142 or calculator π.', unit: 'm³', expectedType: 'number', modelSolution: 'V = π × 1.2² × 2.5 = π × 1.44 × 2.5 = 11.31 m³ [M1, A1]', finalBenchmark: '11.31 m³' },
-            { num: 3, section: 'Reverse Calculations & Proportions', isCalcAllowed: true, marks: 4, markTags: '[M1, M1, A1, B1]', scenarioTitle: 'Batch Production Scaling', scenarioText: 'A catering recipe for 15 portions requires 450 g butter. Work out the butter needed for 36 portions, and show a reverse check.', promptText: '(a) Butter required for 36 portions. (b) Reverse check.', unit: 'g', expectedType: 'number', modelSolution: 'Per portion = 450 ÷ 15 = 30 g; 30 × 36 = 1080 g [M1, A1]; Check: 1080 ÷ 36 = 30 g [B1]', finalBenchmark: '1080 g' },
-            { num: 4, section: 'Angle Properties & Triangles', isCalcAllowed: true, marks: 4, markTags: '[M1, M1, M1, A1]', scenarioTitle: 'Roof Truss Angles', scenarioText: 'An isosceles roof truss has an apex angle of 48°. Work out the size of the base angles.', promptText: 'Calculate the base angle of the isosceles truss.', unit: '°', expectedType: 'number', modelSolution: '(180 − 48) ÷ 2 = 132 ÷ 2 = 66° [M1, A1]', finalBenchmark: '66°' },
-            { num: 5, section: 'Compound Area & Pack Costing', isCalcAllowed: true, marks: 5, markTags: '[M1, M1, M1, M1, A1]', scenarioTitle: 'Flooring Tiles & Whole Packs', scenarioText: 'A rectangular clinic lobby 8.4 m by 5.5 m needs tiles. Tiles come in boxes covering 2.4 m² at £38.50 per box. Only full boxes can be purchased.', promptText: 'Calculate the total cost of tiles needed.', unit: '£', expectedType: 'number', modelSolution: 'Area = 8.4 × 5.5 = 46.2 m²; Boxes = 46.2 ÷ 2.4 = 19.25 -> 20 boxes; Cost = 20 × £38.50 = £770.00 [M1, A1]', finalBenchmark: '£770.00' },
-            { num: 6, section: 'Percentage Increase / Decrease', isCalcAllowed: true, marks: 3, markTags: '[M1, M1, A1]', scenarioTitle: 'Retail Discount Verification', scenarioText: 'A machinery item originally £420 is reduced to £315 in a clearance event. The store advertises "30% off".', promptText: 'Check if the advertised 30% discount is accurate. Show your working.', unit: '', expectedType: 'decision', modelSolution: 'Saving = 420 − 315 = £105; 105 ÷ 420 × 100 = 25%; Advertised 30% is incorrect (actual is 25%) [M1, A1]', finalBenchmark: 'No (Actual discount is 25%)' },
-            { num: 7, section: 'Scale Plans & Bearings', isCalcAllowed: true, marks: 4, markTags: '[M1, A1, M1, A1]', scenarioTitle: 'Surveyor Scale Plan', scenarioText: 'On a plan drawn to scale 1 : 250, the distance between two survey points measures 14.8 cm.', promptText: 'Calculate the actual real-world distance between the two survey points in metres.', unit: 'm', expectedType: 'number', modelSolution: '14.8 × 250 = 3700 cm = 37.0 m [M1, A1]', finalBenchmark: '37 m' },
-            { num: 8, section: 'Bivariate Data & Scatter Graphs', isCalcAllowed: true, marks: 6, markTags: '[M1, A1, B1, M1, A1, B1]', scenarioTitle: 'Scatter Graph Analysis', scenarioText: 'A study compares staff training hours against customer satisfaction ratings.', promptText: '(a) Identify the correlation. (b) Use a line of best fit to predict satisfaction for 35 hours of training.', unit: '', expectedType: 'text', modelSolution: 'Positive correlation; Estimate from trend line gives approx 82–88 rating [M1, A1]', finalBenchmark: 'Positive correlation; approx 85%' },
-            { num: 9, section: 'Algebraic Formulas & Density', isCalcAllowed: true, marks: 4, markTags: '[M1, M1, M1, A1]', scenarioTitle: 'Material Density & Mass', scenarioText: 'Density = Mass ÷ Volume. A metal alloy casting has mass 14.85 kg and volume 0.0018 m³.', promptText: 'Calculate the density of the metal alloy in kg/m³.', unit: 'kg/m³', expectedType: 'number', modelSolution: 'Density = 14.85 ÷ 0.0018 = 8250 kg/m³ [M1, A1]', finalBenchmark: '8250 kg/m³' },
-            { num: 10, section: 'Fraction Operations & Mixed Numbers', isCalcAllowed: true, marks: 3, markTags: '[M1, A1, B1]', scenarioTitle: 'Mixed Number Arithmetic', scenarioText: 'Work out 2 3/4 + 1 2/5 and give your answer as a mixed number in simplest form.', promptText: 'Calculate 2 3/4 + 1 2/5.', unit: '', expectedType: 'text', modelSolution: '2 3/4 = 11/4 = 55/20; 1 2/5 = 7/5 = 28/20; 55/20 + 28/20 = 83/20 = 4 3/20 [M1, A1]', finalBenchmark: '4 3/20' },
-            { num: 11, section: 'Ratio in Three Parts', isCalcAllowed: true, marks: 5, markTags: '[M1, M1, M1, M1, A1]', scenarioTitle: 'Budget Sharing Ratio', scenarioText: 'A community grant of £84,000 is shared between Education, Healthcare, and Infrastructure in the ratio 3 : 5 : 4.', promptText: 'How much funding does Healthcare receive?', unit: '£', expectedType: 'number', modelSolution: 'Total parts = 3 + 5 + 4 = 12; 1 part = 84,000 ÷ 12 = £7,000; Healthcare = 5 × 7,000 = £35,000 [M1, A1]', finalBenchmark: '£35,000' },
-            { num: 12, section: 'Two-Way Tables & Probability', isCalcAllowed: true, marks: 6, markTags: '[M1, A1, M1, A1, M1, A1]', scenarioTitle: 'Quality Inspection Contingency Table', scenarioText: 'A factory tests 120 components across two production lines. Complete the contingency table and calculate the conditional probability of selecting a pass from Line B.', promptText: 'Complete table and state simplified probability.', unit: '', expectedType: 'text', modelSolution: 'Table completion; P(Pass | Line B) = 48/60 = 4/5 [M1, A1]', finalBenchmark: '4/5 (or 0.8)' }
+            { num: 1, section: 'Percentage Increase & Compound Interest', isCalcAllowed: true, marks: 4, markTags: '[M1, M1, A1, B1]', scenarioTitle: 'Equipment Depreciation', scenarioText: 'A machine depreciates at 12% per year.', promptText: 'Work out the value after 2 years.', unit: '£', expectedType: 'number', modelSolution: '£12,000 × 0.88² = £9,292.80 [M1, A1]', finalBenchmark: '£9,292.80' },
+            { num: 2, section: '3D Geometry: Cylinder Volume', isCalcAllowed: true, marks: 4, markTags: '[M1, M1, A1, B1]', scenarioTitle: 'Water Storage Tank', scenarioText: 'Radius 1.2 m, height 2.5 m. V = πr²h.', promptText: 'Work out the capacity in m³.', unit: 'm³', expectedType: 'number', modelSolution: 'V = π × 1.2² × 2.5 = 11.31 m³ [M1, A1]', finalBenchmark: '11.31 m³' }
           ]
         }
       ]
     };
   }
 
-  // Level 1 Maths Paper
+  // Default Level 1 Maths Paper
   return MFS_MOCK_DATA['edexcel-maths-l1-paper-1'];
 }
 
-// Initialise Simulator from Query Parameters or Default
-// Helper: Get Paper Sections (with fallback support)
+
 function getPaperSections(paper) {
   if (paper.sections && Array.isArray(paper.sections) && paper.sections.length > 0) {
     return paper.sections;
@@ -1413,6 +5213,12 @@ function lockSection(secId) {
 
 function promptSectionLock(actionCallback, targetSec = null) {
   const paper = getOrCreatePaper(simCurrentPaperKey);
+  // Strictly Maths only! English papers (Writing & Reading) have NO section locks
+  if (paper.subject !== 'maths') {
+    if (typeof actionCallback === 'function') actionCallback();
+    return;
+  }
+
   const sections = getPaperSections(paper);
   const currentSec = targetSec || sections[simCurrentSectionIndex];
 
@@ -1445,6 +5251,7 @@ function promptSectionLock(actionCallback, targetSec = null) {
     try { modal.focus(); } catch (err) {}
   }
 }
+
 
 function cancelSectionLock() {
   const modal = document.getElementById('simSectionLockModal');
@@ -1661,11 +5468,15 @@ function renderSectionTabs(paper) {
       ? (sec.durationMinutes === 90 ? '1 hr 30 mins' : `${Math.floor(sec.durationMinutes / 60)} hrs`)
       : `${sec.durationMinutes} mins`;
     const marks = sec.totalMarks || (sec.questions || []).reduce((acc, q) => acc + (q.marks || 0), 0);
-    const calcBadge = isLocked
-      ? `<span class="sim-sec-badge locked"><i class="fa-solid fa-lock"></i> Locked</span>`
-      : (sec.isCalcAllowed 
-        ? `<span class="sim-sec-badge calc"><i class="fa-solid fa-calculator"></i> Calculator Allowed</span>`
-        : `<span class="sim-sec-badge"><i class="fa-solid fa-ban"></i> Non-Calculator</span>`);
+    
+    // Only display calculator status badges for Maths papers
+    const calcBadge = paper.subject === 'maths'
+      ? (isLocked
+        ? `<span class="sim-sec-badge locked"><i class="fa-solid fa-lock"></i> Locked</span>`
+        : (sec.isCalcAllowed 
+          ? `<span class="sim-sec-badge calc"><i class="fa-solid fa-calculator"></i> Calculator Allowed</span>`
+          : `<span class="sim-sec-badge"><i class="fa-solid fa-ban"></i> Non-Calculator</span>`))
+      : '';
 
     const secTitle = isLocked
       ? sec.name.replace(': Non-Calculator', ': Non-Calc').replace(': Calculator', ': Calc')
@@ -1691,7 +5502,7 @@ function renderSectionTabs(paper) {
   });
 }
 
-// Render Navigation Pills (Fixed Position: Cover pill + Question Page pills)
+
 function renderQuestionPills(paper) {
   const container = document.getElementById('simPillsContainer');
   if (!container) return;
@@ -1844,14 +5655,27 @@ function renderSectionCover() {
     : `${sec.durationMinutes} minutes`;
   const marks = sec.totalMarks || (sec.questions || []).reduce((acc, q) => acc + (q.marks || 0), 0);
 
-  const calcRule = sec.isCalcAllowed
-    ? '<strong>A calculator may be used.</strong> You must ensure your calculator meets official examination regulations.'
-    : '<strong>You must NOT have a calculator</strong> or access to any calculating aid for this non-calculator section.';
-
   const isMaths = paper.subject === 'maths';
-  const equipment = isMaths
-    ? (sec.isCalcAllowed ? 'Pen (black or blue ink), HB pencil, eraser, ruler, calculator.' : 'Pen (black or blue ink), HB pencil, eraser, ruler. <em>Calculators prohibited.</em>')
-    : 'Pen (black or blue ink), dictionary / spelling aid where permitted.';
+  const isWriting = paper.subject === 'writing';
+  const isReading = paper.subject === 'reading';
+
+  let calcRule = '';
+  let equipment = '';
+
+  if (isMaths) {
+    equipment = sec.isCalcAllowed 
+      ? 'Pen (black or blue ink), HB pencil, eraser, ruler, calculator.' 
+      : 'Pen (black or blue ink), HB pencil, eraser, ruler. <em>Calculators prohibited.</em>';
+    calcRule = sec.isCalcAllowed
+      ? '<strong>A calculator may be used.</strong> You must ensure your calculator meets official examination regulations.'
+      : '<strong>You must NOT have a calculator</strong> or access to any calculating aid for this non-calculator section.';
+  } else if (isWriting) {
+    equipment = 'Pen (black or blue ink). A dictionary or spelling aid may be used.';
+    calcRule = '';
+  } else if (isReading) {
+    equipment = 'Pen (black or blue ink). A dictionary may be used.';
+    calcRule = '';
+  }
 
   coverContainer.innerHTML = `
     <div class="sim-cover-sheet">
@@ -1881,11 +5705,18 @@ function renderSectionCover() {
             <i class="fa-solid fa-circle-info" style="color:#0284c7;"></i> Instructions to Candidates
           </div>
           <ul class="sim-cover-list">
-            <li><strong>Time allowed:</strong> You have <strong>${durStr}</strong> to complete this section.</li>
-            <li><strong>Total marks:</strong> The total mark for this section is <strong>${marks} marks</strong>.</li>
+            <li><strong>Time allowed:</strong> You have <strong>${durStr}</strong> to complete this paper.</li>
+            <li><strong>Total marks:</strong> The total mark for this assessment is <strong>${marks} marks</strong>.</li>
             <li><strong>Equipment:</strong> ${equipment}</li>
-            <li><strong>Calculator policy:</strong> ${calcRule}</li>
-            <li><strong>Show all working:</strong> Marks are awarded for your methods, calculations, and explanations. Record all intermediate working in the spaces provided.</li>
+            ${calcRule ? `<li><strong>Calculator policy:</strong> ${calcRule}</li>` : ''}
+            ${isWriting 
+              ? `<li><strong>Answer both tasks:</strong> Complete both Task 1 and Task 2. Marks are awarded for clear organization, appropriate format and tone, audience focus, and accurate spelling, punctuation, and grammar (SPaG).</li>
+                 <li><strong>Planning:</strong> You may use the optional planning space to structure your writing. Notes in the planning space are not marked.</li>`
+              : (isReading
+                ? `<li><strong>Source Booklet:</strong> Refer to the Source Texts (Text A, Text B, Text C) provided in the reading panel for each question.</li>
+                   <li><strong>Answer all questions:</strong> Record all answers in the spaces provided. Check your work carefully.</li>`
+                : `<li><strong>Show all working:</strong> Marks are awarded for your methods, calculations, and explanations. Record all intermediate working in the spaces provided.</li>`
+              )}
             <li><strong>Check your work:</strong> Read each question carefully before you start and check your answers when finished.</li>
           </ul>
         </div>
@@ -1911,74 +5742,27 @@ function renderSectionCover() {
             <strong>Candidate 01</strong>
           </div>
           <div class="sim-candidate-row">
-            <span>Section Questions:</span>
-            <strong>${sec.questions.length} Questions (Q1 to Q${sec.questions.length})</strong>
+            <span>Examination Questions:</span>
+            <strong>${sec.questions.length} ${isWriting ? 'Tasks' : 'Questions'} (1 to ${sec.questions.length})</strong>
           </div>
-
-          <div class="sim-cover-declaration">
-            <i class="fa-solid fa-shield-halved"></i>
-            <span>Official Examination Environment &bull; Standard Assessment Regulations apply.</span>
-          </div>
-
-          <button type="button" class="sim-cover-start-btn" onclick="startSectionQuestions()">
-            Open Section Examination Questions <i class="fa-solid fa-arrow-right"></i>
-          </button>
         </div>
+      </div>
+
+      <div class="sim-cover-action-box">
+        <button type="button" class="sim-cover-start-btn" onclick="startSectionQuestions()">
+          Start Assessment <i class="fa-solid fa-arrow-right"></i>
+        </button>
       </div>
     </div>
   `;
 
-  // Update pills active state (Cover active)
-  const pills = document.querySelectorAll('.sim-q-pill');
-  pills.forEach((p, idx) => {
-    p.classList.toggle('active', idx === 0);
-  });
-
-  // Prev / Next button state for Cover
-  const prevBtn = document.getElementById('simPrevBtn');
-  const nextBtn = document.getElementById('simNextBtn');
-  if (prevBtn) {
-    if (simCurrentSectionIndex > 0) {
-      const prevSec = sections[simCurrentSectionIndex - 1];
-      if (isSectionLocked(prevSec.id)) {
-        prevBtn.disabled = true;
-        prevBtn.classList.add('is-locked-btn');
-        const shortName = prevSec.name
-          .replace(': Non-Calculator', ': Non-Calc')
-          .replace(': Calculator', ': Calc');
-        prevBtn.innerHTML = `
-          <div class="sim-prev-locked-wrap">
-            <span class="sim-prev-locked-line1">${escapeHtml(shortName)}</span>
-            <span class="sim-prev-locked-line2"><i class="fa-solid fa-lock"></i> Locked</span>
-          </div>
-        `;
-        prevBtn.onclick = null;
-      } else {
-        prevBtn.classList.remove('is-locked-btn');
-        prevBtn.disabled = false;
-        prevBtn.innerHTML = `<i class="fa-solid fa-arrow-left"></i> Return to ${escapeHtml(prevSec.name)}`;
-        prevBtn.onclick = () => {
-          switchSection(simCurrentSectionIndex - 1, true);
-        };
-      }
-    } else {
-      prevBtn.classList.remove('is-locked-btn');
-      prevBtn.disabled = true;
-      prevBtn.innerHTML = '<i class="fa-solid fa-arrow-left"></i> Previous';
-      prevBtn.onclick = null;
-    }
-  }
-
-  if (nextBtn) {
-    nextBtn.disabled = false;
-    nextBtn.style.display = 'inline-flex';
-    nextBtn.innerHTML = 'Open Questions <i class="fa-solid fa-arrow-right"></i>';
-    nextBtn.classList.remove('finish');
-    nextBtn.onclick = () => startSectionQuestions();
+  const nameInput = document.getElementById('simCandidateNameInput');
+  if (nameInput && !nameInput.value) {
+    nameInput.focus();
   }
 }
 
-// Render Active Question
+
 function renderCurrentQuestion() {
   const paper = getOrCreatePaper(simCurrentPaperKey);
   const sections = getPaperSections(paper);
@@ -2112,30 +5896,50 @@ function renderCurrentQuestion() {
 function adaptUiForSubject(paper, q, sec) {
   const subject = paper.subject || 'maths';
   const isCalcAllowed = sec ? sec.isCalcAllowed : !!q.isCalcAllowed;
+  const canvas = document.getElementById('simQuestionPanes');
 
+  if (canvas) {
+    canvas.classList.remove('sim-mode-writing', 'sim-mode-reading', 'sim-mode-maths');
+    canvas.classList.add(`sim-mode-${subject}`);
+  }
+
+  // Left pane element references
+  const leftMetaBar = document.getElementById('simLeftMetaBar');
+  const readingSourcePane = document.getElementById('simReadingSourcePane');
+  const leftQuestionContent = document.getElementById('simLeftQuestionContent');
+  const finalAnsCard = document.getElementById('simFinalAnsCard');
+
+  // Right pane element references
+  const readingRightPane = document.getElementById('simReadingRightPane');
+  const standardRightPane = document.getElementById('simStandardRightPane');
   const mathToolbar = document.getElementById('simMathToolbar');
   const calcLockedBanner = document.getElementById('simCalcLockedBanner');
   const calcDrawer = document.getElementById('simCalcDrawer');
   const calcDrawerWrap = document.getElementById('simCalcDrawerWrap');
-  const finalAnsCard = document.getElementById('simFinalAnsCard');
 
-  const readingSourcePane = document.getElementById('simReadingSourcePane');
-  const scenarioCard = document.getElementById('simScenarioCard');
-
+  // Writing specific references
   const planningBox = document.getElementById('simPlanningBox');
   const wordCountBadge = document.getElementById('simWordCountBadge');
   const writingChecklist = document.getElementById('simWritingChecklist');
   const workingTitleText = document.getElementById('simWorkingTitleText');
-  const mcqContainer = document.getElementById('simMcqContainer');
+  const workingTextarea = document.getElementById('simWorkingTextarea');
 
   if (subject === 'writing') {
+    // -----------------------------------------------------------------------
+    // WRITING MODE: Left has Task stimulus, Right has Writing Area & Checklist
+    // -----------------------------------------------------------------------
+    if (leftMetaBar) leftMetaBar.style.display = 'flex';
+    if (readingSourcePane) readingSourcePane.style.display = 'none';
+    if (leftQuestionContent) leftQuestionContent.style.display = 'flex';
+    if (finalAnsCard) finalAnsCard.style.display = 'none';
+
+    if (readingRightPane) readingRightPane.style.display = 'none';
+    if (standardRightPane) standardRightPane.style.display = 'flex';
+
     if (mathToolbar) mathToolbar.style.display = 'none';
     if (calcLockedBanner) calcLockedBanner.style.display = 'none';
     if (calcDrawerWrap) calcDrawerWrap.style.display = 'none';
     if (calcDrawer) calcDrawer.style.display = 'none';
-    if (finalAnsCard) finalAnsCard.style.display = 'none';
-    if (readingSourcePane) readingSourcePane.style.display = 'none';
-    if (scenarioCard) scenarioCard.style.display = 'block';
 
     if (planningBox) planningBox.style.display = 'block';
     if (wordCountBadge) wordCountBadge.style.display = 'inline-flex';
@@ -2144,9 +5948,43 @@ function adaptUiForSubject(paper, q, sec) {
       renderChecklist(q.checklist || [], sec);
     }
     if (workingTitleText) workingTitleText.innerText = 'Draft Your Written Response in the Spaces';
-    if (mcqContainer) mcqContainer.style.display = 'none';
+    if (workingTextarea) {
+      workingTextarea.placeholder = 'Draft your complete written response here... Remember to use an appropriate greeting/salutation, organize into distinct paragraphs, cover all required points, and check your work.';
+    }
+
+    // Restore planning notes
+    const savedPlan = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_sec_${sec.id}_q${q.num}_planning`) || '';
+    const planningTextarea = document.getElementById('simPlanningTextarea');
+    if (planningTextarea) planningTextarea.value = savedPlan;
 
   } else if (subject === 'reading') {
+    // -----------------------------------------------------------------------
+    // READING MODE: Left has Source Booklet, Right has Question & Answer
+    // -----------------------------------------------------------------------
+    if (leftMetaBar) leftMetaBar.style.display = 'none';
+    if (leftQuestionContent) leftQuestionContent.style.display = 'none';
+    if (finalAnsCard) finalAnsCard.style.display = 'none';
+
+    // Auto-detect referenced source text in question title/text
+    if (paper.sourceTexts && paper.sourceTexts.length > 0) {
+      const qContext = ((q.scenarioTitle || '') + ' ' + (q.scenarioText || '') + ' ' + (q.promptText || '')).toLowerCase();
+      if (qContext.includes('text b') && paper.sourceTexts.length > 1) {
+        simActiveSourceTextTab = 1;
+      } else if (qContext.includes('text c') && paper.sourceTexts.length > 2) {
+        simActiveSourceTextTab = 2;
+      } else if (qContext.includes('text a')) {
+        simActiveSourceTextTab = 0;
+      }
+    }
+
+    if (readingSourcePane) {
+      readingSourcePane.style.display = 'flex';
+      renderSourceTabs(paper.sourceTexts || []);
+    }
+
+    if (standardRightPane) standardRightPane.style.display = 'none';
+    if (readingRightPane) readingRightPane.style.display = 'flex';
+
     if (mathToolbar) mathToolbar.style.display = 'none';
     if (calcLockedBanner) calcLockedBanner.style.display = 'none';
     if (calcDrawerWrap) calcDrawerWrap.style.display = 'none';
@@ -2155,39 +5993,90 @@ function adaptUiForSubject(paper, q, sec) {
     if (wordCountBadge) wordCountBadge.style.display = 'none';
     if (writingChecklist) writingChecklist.style.display = 'none';
 
-    if (readingSourcePane && paper.sourceTexts && paper.sourceTexts.length > 0) {
-      readingSourcePane.style.display = 'block';
-      renderSourceTabs(paper.sourceTexts);
-    } else {
-      if (readingSourcePane) readingSourcePane.style.display = 'none';
+    // Populate Right Pane Reading Meta & Question
+    const rqNumBadge = document.getElementById('simReadingQNumBadge');
+    const rqSectionTag = document.getElementById('simReadingQSectionTag');
+    const rqMarksBadge = document.getElementById('simReadingQMarksBadge');
+    const rqFlagBtn = document.getElementById('simReadingFlagBtn');
+
+    if (rqNumBadge) rqNumBadge.innerText = `Question ${q.num} of ${sec.questions.length}`;
+    if (rqSectionTag) rqSectionTag.innerText = q.section || 'Reading Comprehension';
+    if (rqMarksBadge) rqMarksBadge.innerText = `${q.marks} Mark${q.marks > 1 ? 's' : ''}${q.markTags ? ' • ' + q.markTags : ''}`;
+
+    const isFlagged = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_sec_${sec.id}_q${q.num}_flagged`) === '1';
+    if (rqFlagBtn) {
+      rqFlagBtn.classList.toggle('flagged', isFlagged);
+      rqFlagBtn.innerHTML = isFlagged ? '<i class="fa-solid fa-flag"></i> Flagged' : '<i class="fa-regular fa-flag"></i> Flag Question';
     }
 
-    if (workingTitleText) workingTitleText.innerText = 'Record Your Reading Comprehension Answer';
+    const rqTitleText = document.getElementById('simReadingQuestionTitleText');
+    const rqScenarioText = document.getElementById('simReadingScenarioText');
+    const rqPromptText = document.getElementById('simReadingPromptText');
 
-    if (q.expectedType === 'multiple-choice' && q.options) {
-      if (mcqContainer) {
-        mcqContainer.style.display = 'flex';
-        renderMcqOptions(q.options, q.num, sec);
+    if (rqTitleText) rqTitleText.innerText = q.scenarioTitle || 'Question Context';
+    if (rqScenarioText) {
+      rqScenarioText.innerText = q.scenarioText || '';
+      rqScenarioText.style.display = q.scenarioText ? 'block' : 'none';
+    }
+    if (rqPromptText) rqPromptText.innerText = q.promptText || '';
+
+    // Render Candidate Answer UI in Reading Mode
+    const mcqWrap = document.getElementById('simReadingMcqContainer');
+    const subpartsWrap = document.getElementById('simReadingSubpartsContainer');
+    const textWrap = document.getElementById('simReadingTextareaWrap');
+    const readingTextarea = document.getElementById('simReadingTextarea');
+
+    if (q.expectedType === 'multiple-choice' && q.options && q.options.length > 0) {
+      if (mcqWrap) {
+        mcqWrap.style.display = 'flex';
+        renderReadingMcqOptions(q.options, q.num, sec);
       }
-      if (finalAnsCard) finalAnsCard.style.display = 'none';
+      if (subpartsWrap) subpartsWrap.style.display = 'none';
+      if (textWrap) textWrap.style.display = 'none';
+    } else if (q.parts && q.parts.length > 0) {
+      if (mcqWrap) mcqWrap.style.display = 'none';
+      if (subpartsWrap) {
+        subpartsWrap.style.display = 'flex';
+        renderReadingSubpartsInputs(q.parts, q.num, sec);
+      }
+      if (textWrap) textWrap.style.display = 'none';
     } else {
-      if (mcqContainer) mcqContainer.style.display = 'none';
-      if (finalAnsCard) finalAnsCard.style.display = 'flex';
+      if (mcqWrap) mcqWrap.style.display = 'none';
+      if (subpartsWrap) subpartsWrap.style.display = 'none';
+      if (textWrap) {
+        textWrap.style.display = 'flex';
+        const savedText = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_sec_${sec.id}_q${q.num}_working`)
+          || localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_sec_${sec.id}_q${q.num}_ans`)
+          || '';
+        if (readingTextarea) {
+          readingTextarea.value = savedText;
+          readingTextarea.placeholder = 'Type your answer, quotation, or explanation here...';
+        }
+      }
     }
 
   } else {
-    // MATHS MODE
-    if (mathToolbar) mathToolbar.style.display = 'flex';
-    if (finalAnsCard) finalAnsCard.style.display = 'flex';
+    // -----------------------------------------------------------------------
+    // MATHS MODE: Left has Scenario & Prompt & Final Ans, Right has Workspace & Calculator
+    // -----------------------------------------------------------------------
+    if (leftMetaBar) leftMetaBar.style.display = 'flex';
     if (readingSourcePane) readingSourcePane.style.display = 'none';
-    if (scenarioCard) scenarioCard.style.display = 'block';
+    if (leftQuestionContent) leftQuestionContent.style.display = 'flex';
+    if (finalAnsCard) finalAnsCard.style.display = 'flex';
+
+    if (readingRightPane) readingRightPane.style.display = 'none';
+    if (standardRightPane) standardRightPane.style.display = 'flex';
+
+    if (mathToolbar) mathToolbar.style.display = 'flex';
     if (planningBox) planningBox.style.display = 'none';
     if (wordCountBadge) wordCountBadge.style.display = 'none';
     if (writingChecklist) writingChecklist.style.display = 'none';
-    if (mcqContainer) mcqContainer.style.display = 'none';
     if (workingTitleText) workingTitleText.innerText = 'Type Your Working & Calculations in the Spaces';
+    if (workingTextarea) {
+      workingTextarea.placeholder = 'Type your working steps, calculations, and intermediate methods here...';
+    }
 
-    // Calculator Section Check (Docked side-by-side in Section B, completely hidden in Section A)
+    // Calculator Check for Section B vs Section A
     if (isCalcAllowed) {
       if (calcLockedBanner) calcLockedBanner.style.display = 'none';
       if (calcDrawerWrap) {
@@ -2205,14 +6094,13 @@ function adaptUiForSubject(paper, q, sec) {
         calcDrawerWrap.classList.add('sim-hidden');
       }
       if (calcDrawer) {
-        calcDrawer.style.display = 'none'; // Completely disabled/hidden for Section A Non-Calc
+        calcDrawer.style.display = 'none';
         calcDrawer.classList.add('locked');
       }
     }
   }
 }
 
-// Source Tabs Renderer for Reading Exams
 function renderSourceTabs(texts) {
   const tabsContainer = document.getElementById('simSourceTabs');
   const contentCard = document.getElementById('simSourceContentCard');
@@ -2237,36 +6125,32 @@ function renderSourceTabs(texts) {
   }
 }
 
-// Multiple Choice Option Renderer
-function renderMcqOptions(options, qNum, sec) {
-  const container = document.getElementById('simMcqContainer');
+function renderReadingMcqOptions(options, qNum, sec) {
+  const container = document.getElementById('simReadingMcqContainer');
   if (!container) return;
   container.innerHTML = '';
-
   const secId = sec ? sec.id : 'A';
-  const savedChoice = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_sec_${secId}_q${qNum}_ans`)
-    || (secId === 'A' ? localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_q${qNum}_ans`) : '')
-    || '';
+  const savedChoice = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_sec_${secId}_q${qNum}_ans`) || '';
 
   options.forEach((opt) => {
     const label = document.createElement('label');
     label.className = `sim-mcq-label ${savedChoice === opt ? 'selected' : ''}`;
     label.innerHTML = `
-      <input type="radio" name="sim_mcq_q${qNum}" value="${escapeHtml(opt)}" ${savedChoice === opt ? 'checked' : ''} onchange="handleMcqSelect('${escapeHtml(opt)}', ${qNum})">
+      <input type="radio" name="sim_mcq_reading_q${qNum}" value="${escapeHtml(opt)}" ${savedChoice === opt ? 'checked' : ''} onchange="handleReadingMcqSelect('${escapeHtml(opt)}', ${qNum})">
       <span>${escapeHtml(opt)}</span>
     `;
     container.appendChild(label);
   });
 }
 
-function handleMcqSelect(choice, qNum) {
+function handleReadingMcqSelect(choice, qNum) {
   const paper = getOrCreatePaper(simCurrentPaperKey);
   const sections = getPaperSections(paper);
   const sec = sections[simCurrentSectionIndex] || sections[0];
   const secId = sec.id;
 
   localStorage.setItem(`mfs_sim_${simCurrentPaperKey}_sec_${secId}_q${qNum}_ans`, choice);
-  const labels = document.querySelectorAll('.sim-mcq-label');
+  const labels = document.querySelectorAll('#simReadingMcqContainer .sim-mcq-label');
   labels.forEach(l => {
     const radio = l.querySelector('input');
     l.classList.toggle('selected', radio && radio.checked);
@@ -2280,7 +6164,47 @@ function handleMcqSelect(choice, qNum) {
   indicateSaveStatus();
 }
 
-// Writing Checklist Renderer
+function renderReadingSubpartsInputs(parts, qNum, sec) {
+  const container = document.getElementById('simReadingSubpartsContainer');
+  if (!container) return;
+  container.innerHTML = '';
+  const secId = sec ? sec.id : 'A';
+
+  parts.forEach(part => {
+    const savedVal = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_sec_${secId}_q${qNum}_ans_${part.id}`) || '';
+    const row = document.createElement('div');
+    row.className = 'sim-subpart-ans-row';
+    row.innerHTML = `
+      <label class="sim-subpart-label" for="sim_reading_ans_${part.id}">
+        <span style="background:#0284c7; color:#ffffff; padding:4px 10px; border-radius:5px; font-size:0.82rem; font-weight:700;">${escapeHtml(part.label)}</span>
+      </label>
+      <div class="sim-subpart-input-wrap">
+        <input type="text" class="sim-final-input" id="sim_reading_ans_${part.id}" value="${escapeHtml(savedVal)}" placeholder="${escapeHtml(part.placeholder || 'Enter answer')}" oninput="handleSubpartAnswerInput('${part.id}', this.value)">
+      </div>
+    `;
+    container.appendChild(row);
+  });
+}
+
+function handleReadingTextInput(val) {
+  const paper = getOrCreatePaper(simCurrentPaperKey);
+  const sections = getPaperSections(paper);
+  const sec = sections[simCurrentSectionIndex] || sections[0];
+  const secId = sec.id;
+  const qNum = sec.questions[simCurrentQuestionIndex - 1].num;
+
+  localStorage.setItem(`mfs_sim_${simCurrentPaperKey}_sec_${secId}_q${qNum}_working`, val);
+  localStorage.setItem(`mfs_sim_${simCurrentPaperKey}_sec_${secId}_q${qNum}_ans`, val);
+
+  const pills = document.querySelectorAll('.sim-q-pill');
+  if (pills[simCurrentQuestionIndex]) {
+    pills[simCurrentQuestionIndex].classList.toggle('answered', val.trim().length > 0);
+  }
+
+  indicateSaveStatus();
+}
+
+
 function renderChecklist(items, sec) {
   const container = document.getElementById('simChecklistItems');
   if (!container) return;
@@ -3082,11 +7006,14 @@ function generatePrintableHtml(type = 'candidate') {
   sections.forEach((sec) => {
     const secMarks = sec.totalMarks || (sec.questions || []).reduce((qacc, q) => qacc + (q.marks || 0), 0);
     const durStr = sec.durationMinutes >= 60 ? (sec.durationMinutes === 90 ? '1 hr 30 mins' : `${Math.floor(sec.durationMinutes / 60)} hrs`) : `${sec.durationMinutes} mins`;
+    const secCalcBadge = paper.subject === 'maths'
+      ? ` &bull; ${sec.isCalcAllowed ? 'Calculator Permitted' : 'Non-Calculator'}`
+      : '';
 
     sectionsHtml += `
       <div class="mfs-print-section-header">
         <div class="mfs-print-section-title">${escapeHtml(sec.name)}</div>
-        <div class="mfs-print-section-meta">${durStr} &bull; ${secMarks} Marks &bull; ${sec.isCalcAllowed ? 'Calculator Permitted' : 'Non-Calculator'}</div>
+        <div class="mfs-print-section-meta">${durStr} &bull; ${secMarks} Marks${secCalcBadge}</div>
       </div>
     `;
 
@@ -3101,32 +7028,33 @@ function generatePrintableHtml(type = 'candidate') {
 
       const itemLabel = paper.subject === 'writing' ? `Task ${q.num}` : `${sec.name.includes(':') ? sec.name.split(':')[0] : 'Section ' + sec.id} — Question ${q.num}`;
       const marksLabel = `${q.marks || 0} Mark${q.marks === 1 ? '' : 's'}${q.markTags ? ' ' + escapeHtml(q.markTags) : ''}`;
+      const workingLabel = paper.subject === 'writing'
+        ? 'Candidate Written Response:'
+        : (paper.subject === 'reading' ? 'Candidate Answer:' : 'Candidate Working &amp; Calculations:');
 
       let questionBodyHtml = '';
       if (!isMarked) {
-        // Candidate Response View
         questionBodyHtml = `
           <div class="mfs-print-working-block">
             ${userPlanning ? `
               <div class="mfs-print-block-label" style="color:#64748b;">Candidate Planning Notes:</div>
               <pre class="mfs-print-pre" style="background:#f1f5f9; border:1px dashed #cbd5e1; color:#334155; min-height:30px; margin-bottom:8px;">${escapeHtml(userPlanning)}</pre>
             ` : ''}
-            <div class="mfs-print-block-label candidate-label">Candidate Working &amp; Calculations:</div>
+            <div class="mfs-print-block-label candidate-label">${workingLabel}</div>
             <pre class="mfs-print-pre candidate-pre">${escapeHtml(userWorking)}</pre>
             ${userAns ? `
               <div class="mfs-print-ans-row">
-                <span class="mfs-print-ans-label">Concluded Final Answer:</span>
+                <span class="mfs-print-ans-label">${paper.subject === 'reading' ? 'Selected Answer:' : 'Concluded Final Answer:'}</span>
                 <span class="mfs-print-ans-pill">${escapeHtml(userAns)} ${escapeHtml(q.unit || '')}</span>
               </div>
-            ` : '<div class="mfs-print-no-ans">No final answer concluded in answer box.</div>'}
+            ` : (paper.subject === 'maths' ? '<div class="mfs-print-no-ans">No final answer concluded in answer box.</div>' : '')}
           </div>
         `;
       } else {
-        // Diagnostic Marked Comparison View
         questionBodyHtml = `
           <div class="mfs-print-comparison-grid">
             <div class="mfs-print-col candidate-col">
-              <div class="mfs-print-block-label candidate-label">Candidate Response &amp; Working:</div>
+              <div class="mfs-print-block-label candidate-label">${workingLabel}</div>
               ${userPlanning ? `
                 <pre class="mfs-print-pre" style="background:#f1f5f9; border:1px dashed #cbd5e1; color:#334155; font-size:8.5pt; margin-bottom:6px;">Planning:\n${escapeHtml(userPlanning)}</pre>
               ` : ''}
@@ -3136,7 +7064,7 @@ function generatePrintableHtml(type = 'candidate') {
                   <span class="mfs-print-ans-label">Candidate Answer:</span>
                   <span class="mfs-print-ans-pill">${escapeHtml(userAns)} ${escapeHtml(q.unit || '')}</span>
                 </div>
-              ` : '<div class="mfs-print-no-ans">No final answer concluded</div>'}
+              ` : (paper.subject === 'maths' ? '<div class="mfs-print-no-ans">No final answer concluded</div>' : '')}
             </div>
             <div class="mfs-print-col model-col">
               <div class="mfs-print-block-label model-label">Master Model Solution &amp; Mark Scheme [${escapeHtml(q.markTags || '')}]:</div>
@@ -3158,395 +7086,93 @@ function generatePrintableHtml(type = 'candidate') {
             <span class="mfs-print-q-title">${escapeHtml(itemLabel)}: ${escapeHtml(q.scenarioTitle || '')}</span>
             <span class="mfs-print-q-marks">${marksLabel}</span>
           </div>
-          ${q.scenarioText ? `<div class="mfs-print-scenario-text">${escapeHtml(q.scenarioText)}</div>` : ''}
-          ${q.promptText ? `<div class="mfs-print-prompt-text">${escapeHtml(q.promptText)}</div>` : ''}
+          <div class="mfs-print-prompt">
+            ${q.scenarioText ? `<div style="margin-bottom:4px; color:#475569;">${escapeHtml(q.scenarioText)}</div>` : ''}
+            <div><strong>Question Prompt:</strong> ${escapeHtml(q.promptText || '')}</div>
+          </div>
           ${questionBodyHtml}
         </div>
       `;
     });
   });
 
-  const docTitle = isMarked
-    ? `${paper.title} — Diagnostic Marked Review & Model Benchmark`
-    : `${paper.title} — Candidate Answers & Working Record`;
-
-  const docBadge = isMarked
-    ? 'Official Master Model Benchmark & Diagnostic Review'
-    : 'Official Candidate Response & Working Record';
-
   return `<!DOCTYPE html>
-<html lang="en-GB">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>${escapeHtml(docTitle)}</title>
+  <title>${escapeHtml(paper.title)} — ${isMarked ? 'Marked Model Solution Benchmark' : 'Candidate Answers Record'}</title>
   <style>
-    @page {
-      size: A4 portrait;
-      margin: 14mm 12mm 14mm 12mm;
-    }
-    *, *::before, *::after {
-      box-sizing: border-box;
-    }
-    body {
-      margin: 0;
-      padding: 24px;
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      color: #0f172a;
-      background: #f8fafc;
-      font-size: 10pt;
-      line-height: 1.5;
-      -webkit-print-color-adjust: exact !important;
-      print-color-adjust: exact !important;
-    }
-    .mfs-print-container {
-      max-width: 920px;
-      margin: 0 auto;
-      background: #ffffff;
-      padding: 28px 32px;
-      border: 1px solid #cbd5e1;
-      border-radius: 8px;
-    }
-    /* Screen Action Bar (hidden when printed) */
-    .mfs-screen-actions {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      background: #0f172a;
-      color: #ffffff;
-      padding: 14px 20px;
-      border-radius: 8px;
-      margin-bottom: 24px;
-      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
-    }
-    .mfs-print-btn {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      background: #0284c7;
-      color: #ffffff;
-      border: none;
-      padding: 10px 20px;
-      font-size: 14px;
-      font-weight: 700;
-      border-radius: 6px;
-      cursor: pointer;
-      transition: background 0.15s;
-    }
-    .mfs-print-btn:hover {
-      background: #0369a1;
-    }
-    /* Official Examination Header */
-    .mfs-exam-header {
-      border-bottom: 3px solid #0284c7;
-      padding-bottom: 14px;
-      margin-bottom: 20px;
-    }
-    .mfs-brand-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 8px;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-    .mfs-brand-logo {
-      font-size: 16pt;
-      font-weight: 800;
-      color: #0f172a;
-      letter-spacing: -0.5px;
-    }
-    .mfs-brand-logo span {
-      color: #0284c7;
-    }
-    .mfs-doc-badge {
-      font-size: 8.5pt;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      padding: 4px 10px;
-      border-radius: 4px;
-      background: ${isMarked ? '#dcfce7' : '#e0f2fe'};
-      color: ${isMarked ? '#15803d' : '#0369a1'};
-      border: 1px solid ${isMarked ? '#86efac' : '#7dd3fc'};
-    }
-    .mfs-exam-title {
-      font-size: 13.5pt;
-      font-weight: 800;
-      color: #0f172a;
-      margin: 4px 0 12px 0;
-    }
-    .mfs-candidate-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 9pt;
-      background: #f8fafc;
-      border: 1px solid #e2e8f0;
-      border-radius: 6px;
-      overflow: hidden;
-    }
-    .mfs-candidate-table td {
-      padding: 6px 12px;
-      border: 1px solid #e2e8f0;
-    }
-    .mfs-candidate-table strong {
-      color: #334155;
-    }
-    /* Section Divider */
-    .mfs-print-section-header {
-      background: #0f172a;
-      color: #ffffff;
-      padding: 8px 14px;
-      border-radius: 4px;
-      margin: 22px 0 12px 0;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      page-break-after: avoid;
-      break-after: avoid;
-    }
-    .mfs-print-section-title {
-      font-size: 11pt;
-      font-weight: 800;
-      letter-spacing: 0.3px;
-    }
-    .mfs-print-section-meta {
-      font-size: 8.5pt;
-      font-weight: 700;
-      opacity: 0.9;
-    }
-    /* Question Card */
-    .mfs-print-q-card {
-      border: 1px solid #cbd5e1;
-      border-radius: 6px;
-      padding: 12px 14px;
-      margin-bottom: 14px;
-      background: #ffffff;
-      page-break-inside: avoid;
-      break-inside: avoid;
-    }
-    .mfs-print-q-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      border-bottom: 1.5px solid #f1f5f9;
-      padding-bottom: 4px;
-      margin-bottom: 8px;
-    }
-    .mfs-print-q-title {
-      font-size: 10.5pt;
-      font-weight: 800;
-      color: #0f172a;
-    }
-    .mfs-print-q-marks {
-      font-size: 9pt;
-      font-weight: 700;
-      color: #64748b;
-    }
-    .mfs-print-scenario-text {
-      font-size: 9.5pt;
-      color: #334155;
-      background: #f8fafc;
-      border-left: 3px solid #0284c7;
-      padding: 6px 10px;
-      margin-bottom: 8px;
-      white-space: pre-wrap;
-      line-height: 1.45;
-    }
-    .mfs-print-prompt-text {
-      font-size: 9.5pt;
-      color: #0f172a;
-      margin-bottom: 10px;
-      white-space: pre-wrap;
-      line-height: 1.45;
-      font-weight: 600;
-    }
-    .mfs-print-block-label {
-      font-size: 8pt;
-      font-weight: 800;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-bottom: 4px;
-    }
-    .candidate-label {
-      color: #0369a1;
-    }
-    .model-label {
-      color: #15803d;
-    }
-    .mfs-print-pre {
-      font-family: 'Courier New', Courier, monospace;
-      font-size: 9.5pt;
-      line-height: 1.45;
-      white-space: pre-wrap;
-      margin: 0 0 6px 0;
-      padding: 8px 10px;
-      border-radius: 4px;
-      min-height: 50px;
-    }
-    .candidate-pre {
-      background: #f8fafc;
-      border: 1px solid #cbd5e1;
-      color: #0f172a;
-    }
-    .model-pre {
-      background: #f0fdf4;
-      border: 1px solid #86efac;
-      color: #14532d;
-    }
-    .mfs-print-ans-row {
-      margin-top: 6px;
-      font-size: 9.5pt;
-      font-weight: 700;
-    }
-    .mfs-print-ans-label {
-      color: #334155;
-      margin-right: 6px;
-    }
-    .mfs-print-ans-pill {
-      display: inline-block;
-      padding: 2px 8px;
-      border-radius: 4px;
-      background: #e0f2fe;
-      border: 1.5px solid #0284c7;
-      color: #0369a1;
-      font-weight: 800;
-    }
-    .mfs-print-model-ans-label {
-      color: #166534;
-      margin-right: 6px;
-    }
-    .mfs-print-model-pill {
-      display: inline-block;
-      padding: 2px 8px;
-      border-radius: 4px;
-      background: #dcfce7;
-      border: 1.5px solid #16a34a;
-      color: #15803d;
-      font-weight: 800;
-    }
-    .mfs-print-no-ans {
-      font-size: 8.5pt;
-      color: #94a3b8;
-      font-style: italic;
-      margin-top: 4px;
-    }
-    .mfs-print-comparison-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-    .mfs-print-col {
-      display: flex;
-      flex-direction: column;
-    }
-    .mfs-print-footer {
-      border-top: 1px solid #e2e8f0;
-      padding-top: 8px;
-      margin-top: 20px;
-      display: flex;
-      justify-content: space-between;
-      font-size: 8pt;
-      color: #64748b;
-    }
-    @media print {
-      body {
-        background: #ffffff !important;
-        padding: 0 !important;
-      }
-      .mfs-print-container {
-        max-width: 100% !important;
-        padding: 0 !important;
-        border: none !important;
-        box-shadow: none !important;
-      }
-      .mfs-screen-actions {
-        display: none !important;
-      }
-      .mfs-print-q-card {
-        page-break-inside: avoid !important;
-        break-inside: avoid !important;
-      }
-      .mfs-print-section-header {
-        page-break-after: avoid !important;
-        break-after: avoid !important;
-      }
-    }
+    @page { size: A4 portrait; margin: 12mm 10mm 12mm 10mm; }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: #0f172a; margin: 0; padding: 0; font-size: 9.5pt; line-height: 1.45; background: #ffffff; }
+    .mfs-print-header { border-bottom: 2px solid #0284c7; padding-bottom: 8px; margin-bottom: 12px; display: flex; justify-content: space-between; align-items: flex-start; }
+    .mfs-print-brand { font-size: 13pt; font-weight: 800; color: #0f172a; }
+    .mfs-print-badge { font-size: 8pt; font-weight: 700; color: #0284c7; text-transform: uppercase; letter-spacing: 0.5px; }
+    .mfs-print-meta { text-align: right; font-size: 8pt; color: #64748b; }
+    .mfs-print-candidate-bar { background: #f8fafc; border: 1px solid #e2e8f0; border-radius: 6px; padding: 6px 12px; display: flex; justify-content: space-between; font-size: 8.5pt; margin-bottom: 12px; }
+    .mfs-print-candidate-bar strong { color: #0f172a; }
+    .mfs-print-section-header { background: #0f172a; color: #ffffff; padding: 6px 10px; border-radius: 4px; font-weight: 700; font-size: 9pt; margin: 14px 0 8px 0; display: flex; justify-content: space-between; page-break-after: avoid; }
+    .mfs-print-q-card { border: 1px solid #cbd5e1; border-radius: 6px; margin-bottom: 12px; padding: 8px 10px; page-break-inside: avoid; background: #ffffff; }
+    .mfs-print-q-header { display: flex; justify-content: space-between; font-weight: 700; font-size: 9pt; color: #0f172a; border-bottom: 1px solid #e2e8f0; padding-bottom: 4px; margin-bottom: 6px; }
+    .mfs-print-q-marks { background: #e0f2fe; color: #0369a1; padding: 1px 6px; border-radius: 4px; font-size: 8pt; }
+    .mfs-print-prompt { font-size: 8.5pt; margin-bottom: 6px; }
+    .mfs-print-comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .mfs-print-col { border-radius: 4px; padding: 6px 8px; font-size: 8.5pt; }
+    .candidate-col { background: #f8fafc; border: 1px solid #cbd5e1; }
+    .model-col { background: #f0fdf4; border: 1px solid #86efac; }
+    .mfs-print-block-label { font-size: 7.5pt; font-weight: 800; text-transform: uppercase; margin-bottom: 4px; }
+    .candidate-label { color: #0284c7; }
+    .model-label { color: #166534; }
+    .mfs-print-pre { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, monospace; white-space: pre-wrap; margin: 0; font-size: 8.5pt; line-height: 1.4; color: #1e293b; }
+    .candidate-pre { color: #0f172a; }
+    .model-pre { color: #14532d; font-weight: 500; }
+    .mfs-print-ans-row { display: flex; align-items: center; gap: 6px; margin-top: 6px; padding-top: 4px; border-top: 1px dashed #cbd5e1; font-size: 8pt; }
+    .mfs-print-ans-label { font-weight: 700; color: #334155; }
+    .mfs-print-ans-pill { background: #0284c7; color: #ffffff; padding: 2px 6px; border-radius: 4px; font-weight: 700; }
+    .mfs-print-model-ans-label { font-weight: 700; color: #166534; }
+    .mfs-print-model-pill { background: #16a34a; color: #ffffff; padding: 2px 6px; border-radius: 4px; font-weight: 700; }
+    .mfs-print-no-ans { font-size: 8pt; color: #94a3b8; font-style: italic; margin-top: 4px; }
+    .mfs-print-footer { border-top: 1px solid #e2e8f0; margin-top: 16px; padding-top: 6px; display: flex; justify-content: space-between; font-size: 7.5pt; color: #64748b; }
   </style>
+  <script>
+    window.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' || e.keyCode === 27) {
+        if (window.parent && window.parent !== window && typeof window.parent.closeAllSimModals === 'function') {
+          window.parent.closeAllSimModals();
+        }
+      }
+    }, true);
+  </script>
 </head>
 <body>
-  <div class="mfs-print-container">
-    <div class="mfs-screen-actions">
-      <div>
-        <div style="font-weight:800; font-size:15px;">Master Functional Skills &bull; Exam Document</div>
-        <div style="font-size:12px; opacity:0.85;">A4 Print &amp; PDF Export &bull; Ready to print or save to your device.</div>
-      </div>
-      <button class="mfs-print-btn" onclick="window.print()">
-        <svg style="width:16px;height:16px;fill:currentColor;" viewBox="0 0 512 512"><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H384v96h64V64c0-35.3-28.7-64-64-64H128zM384 416v32H128V416H384zm64-224c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zM64 224c0-17.7-14.3-32-32-32S0 206.3 0 224v144c0 26.5 21.5 48 48 48h32v48c0 26.5 21.5 48 48 48H384c26.5 0 48-21.5 48-48V416h32c26.5 0 48-21.5 48-48V224c0-17.7-14.3-32-32-32h-32v32h32v128H416V352c0-17.7-14.3-32-32-32H128c-17.7 0-32 14.3-32 32v64H64V224z"/></svg>
-        Print / Save as PDF
-      </button>
+  <div class="mfs-print-header">
+    <div>
+      <div class="mfs-print-badge">${escapeHtml(paper.board || 'Pearson Edexcel')} Functional Skills &bull; ${escapeHtml(subjectName)}</div>
+      <div class="mfs-print-brand">${escapeHtml(paper.title)}</div>
     </div>
-
-    <div class="mfs-exam-header">
-      <div class="mfs-brand-row">
-        <div class="mfs-brand-logo">MASTER <span>FUNCTIONAL SKILLS</span></div>
-        <div class="mfs-doc-badge">${escapeHtml(docBadge)}</div>
-      </div>
-      <div class="mfs-exam-title">${escapeHtml(paper.title)}</div>
-      <table class="mfs-candidate-table">
-        <tr>
-          <td><strong>Candidate Name:</strong> ${escapeHtml(candidateName)}</td>
-          <td><strong>Centre Name:</strong> Master Functional Skills (Centre: 10928)</td>
-        </tr>
-        <tr>
-          <td><strong>Exam Board:</strong> ${escapeHtml(paper.board || 'Pearson Edexcel')}</td>
-          <td><strong>Subject &amp; Level:</strong> ${escapeHtml(subjectName)} (${escapeHtml(paper.level || 'L1')})</td>
-        </tr>
-        <tr>
-          <td><strong>Date &amp; Time:</strong> ${escapeHtml(dateStr)}</td>
-          <td><strong>Total Marks Available:</strong> ${totalPaperMarks} Marks across ${sections.length} Section${sections.length > 1 ? 's' : ''}</td>
-        </tr>
-      </table>
-    </div>
-
-    ${sectionsHtml}
-
-    <div class="mfs-print-footer">
-      <div>Master Functional Skills &bull; Accredited Functional Skills Exam Simulator</div>
-      <div>masterfunctionalskills.co.uk &bull; Official Examination Record</div>
+    <div class="mfs-print-meta">
+      <div>Centre: <strong>Master Functional Skills</strong></div>
+      <div>Date: ${dateStr}</div>
+      <div>Total Marks: <strong>${totalPaperMarks}</strong></div>
     </div>
   </div>
 
-  <script>
-    (function() {
-      function onEsc(e) {
-        var isEsc = e.key === 'Escape' || e.key === 'Esc' || e.keyCode === 27 || e.which === 27;
-        if (isEsc) {
-          try {
-            if (window.parent && typeof window.parent.closeAllSimModals === 'function') {
-              window.parent.closeAllSimModals();
-            }
-          } catch (err) {}
-        }
-      }
-      window.addEventListener('keydown', onEsc, true);
-      document.addEventListener('keydown', onEsc, true);
-      window.addEventListener('afterprint', function() {
-        try {
-          if (window.parent) {
-            window.parent.focus();
-            var m = window.parent.document.querySelector('.sim-modal-overlay.open');
-            if (m && typeof m.focus === 'function') m.focus();
-          }
-        } catch (err) {}
-      });
-    })();
-  </script>
+  <div class="mfs-print-candidate-bar">
+    <div>Candidate: <strong>${escapeHtml(candidateName)}</strong></div>
+    <div>Document Type: <strong>${isMarked ? 'Diagnostic Model Benchmark Comparison' : 'Candidate Exam Answers Record'}</strong></div>
+    <div>Accreditation: <strong>Pearson Edexcel Reformed Specification</strong></div>
+  </div>
+
+  ${sectionsHtml}
+
+  <div class="mfs-print-footer">
+    <span>Master Functional Skills &bull; masterfunctionalskills.co.uk</span>
+    <span>Pearson Edexcel Reform Benchmark &bull; Page Record</span>
+  </div>
 </body>
 </html>`;
 }
 
-// Print / Save as PDF Action via isolated printable iframe
+
 function printMockDocument(type = 'candidate') {
   const fullHtml = generatePrintableHtml(type);
   let printFrame = document.getElementById('simPrintIframe');

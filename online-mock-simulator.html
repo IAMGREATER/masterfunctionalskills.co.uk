@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="assets/css/mfs-theme.css?v=20261024c">
   <link rel="stylesheet" href="assets/css/mfs-revision.css?v=20261024c">
   <link rel="stylesheet" href="assets/css/mfs-mobile.css?v=20261024c">
-  <link rel="stylesheet" href="assets/css/online-mock-simulator.css?v=20261106_v16">
+  <link rel="stylesheet" href="assets/css/online-mock-simulator.css?v=20261106_v17">
 </head>
 <body>
 
@@ -214,6 +214,18 @@
                 <option value="edexcel-english-reading-l1-practice-2">Edexcel English Reading L1 — Practice Paper 2</option>
                 <option value="edexcel-english-reading-l1-practice-3">Edexcel English Reading L1 — Practice Paper 3</option>
               </optgroup>
+              <optgroup label="Pearson Edexcel English Writing Level 2">
+                <option value="edexcel-english-writing-l2-practice-1">Edexcel English Writing L2 — Practice Paper 1</option>
+                <option value="edexcel-english-writing-l2-practice-2">Edexcel English Writing L2 — Practice Paper 2</option>
+                <option value="edexcel-english-writing-l2-practice-3">Edexcel English Writing L2 — Practice Paper 3</option>
+                <option value="edexcel-english-writing-l2-paper-10">Edexcel English Writing L2 — Past Paper 10</option>
+              </optgroup>
+              <optgroup label="Pearson Edexcel English Reading Level 2">
+                <option value="edexcel-english-reading-l2-practice-1">Edexcel English Reading L2 — Practice Paper 1</option>
+                <option value="edexcel-english-reading-l2-practice-2">Edexcel English Reading L2 — Practice Paper 2</option>
+                <option value="edexcel-english-reading-l2-practice-3">Edexcel English Reading L2 — Practice Paper 3</option>
+                <option value="edexcel-english-reading-l2-paper-10">Edexcel English Reading L2 — Past Paper 10</option>
+              </optgroup>
             </select>
           </div>
         </div>
@@ -265,8 +277,9 @@
       <div class="sim-canvas" id="simQuestionPanes">
 
         <!-- Left Pane: Question Scenario & Booklet -->
-        <div class="sim-pane-question">
-          <div class="sim-q-meta-bar">
+        <div class="sim-pane-question" id="simPaneQuestion">
+          <!-- Meta Bar (Maths & Writing) -->
+          <div class="sim-q-meta-bar" id="simLeftMetaBar">
             <div class="sim-q-badge-group">
               <span class="sim-q-num-badge" id="simQNumBadge">Question 1 of 6</span>
               <span class="sim-q-section-tag" id="simQSectionTag">Section A: Non-Calculator</span>
@@ -278,7 +291,13 @@
           </div>
 
           <!-- English Reading Source Insert Pane (Visible in Reading Mode) -->
-          <div id="simReadingSourcePane" style="display:none;">
+          <div id="simReadingSourcePane" class="sim-reading-source-pane" style="display:none;">
+            <div class="sim-source-booklet-header">
+              <div class="sim-source-booklet-title">
+                <i class="fa-solid fa-book-open" style="color:var(--sim-blue);"></i> Reading Source Booklet
+              </div>
+              <div class="sim-source-booklet-sub">Refer to the relevant source text below to answer each question:</div>
+            </div>
             <div class="sim-source-tabs" id="simSourceTabs">
               <!-- Dynamically rendered tabs: Text A, Text B, Text C -->
             </div>
@@ -287,154 +306,207 @@
             </div>
           </div>
 
-          <!-- Scenario Card -->
-          <div class="sim-q-scenario-card" id="simScenarioCard">
-            <div class="sim-q-scenario-title" id="simScenarioTitle">
-              <i class="fa-solid fa-file-circle-check" style="color:var(--sim-blue);"></i> Healthcare Facility Logistics: Cold Storage Monitoring
+          <!-- Maths & Writing Left Content Card (Hidden in Reading mode) -->
+          <div id="simLeftQuestionContent" style="display:flex; flex-direction:column; gap:14px; flex:1;">
+            <!-- Scenario Card -->
+            <div class="sim-q-scenario-card" id="simScenarioCard">
+              <div class="sim-q-scenario-title" id="simScenarioTitle">
+                <i class="fa-solid fa-file-circle-check" style="color:var(--sim-blue);"></i> Healthcare Facility Logistics: Cold Storage Monitoring
+              </div>
+              <div id="simScenarioText">
+                A healthcare logistics coordinator monitors clinical freezers for temperature-sensitive medications. At 07:00, the temperature in Freezer A is -18 °C. During morning inventory maintenance, the temperature rises by 5 °C. Later, cooling is boosted, dropping the temperature by a further 4 °C.
+              </div>
             </div>
-            <div id="simScenarioText">
-              A healthcare logistics coordinator monitors clinical freezers for temperature-sensitive medications. At 07:00, the temperature in Freezer A is -18 °C. During morning inventory maintenance, the temperature rises by 5 °C. Later, cooling is boosted, dropping the temperature by a further 4 °C.
-            </div>
-          </div>
 
-          <!-- Specific Question Prompt -->
-          <div>
-            <div style="font-size:0.8rem; font-weight:800; color:var(--sim-blue); text-transform:uppercase; margin-bottom:4px;" id="simPromptHeader">
-              Your Task:
-            </div>
-            <div class="sim-q-prompt-text" id="simPromptText" style="white-space:pre-wrap;">
+            <!-- Specific Question Prompt -->
+            <div id="simPromptWrap">
+              <div style="font-size:0.8rem; font-weight:800; color:var(--sim-blue); text-transform:uppercase; margin-bottom:4px;" id="simPromptHeader">
+                Your Task:
+              </div>
+              <div class="sim-q-prompt-text" id="simPromptText" style="white-space:pre-wrap;">
 (a) Work out the temperature after the 5 °C rise.
 (b) Work out the final temperature after the 4 °C drop.
 (c) A standard vaccine fridge is kept at +4 °C. Calculate the difference between +4 °C and the original -18 °C.
-            </div>
-          </div>
-
-          <!-- Official Final Answer Box (Positioned at bottom of Left Pane) -->
-          <div class="sim-final-ans-card" id="simFinalAnsCard" style="margin-top:auto;">
-            <div>
-              <div class="sim-final-ans-label">Final Answer:</div>
-              <div style="font-size:0.75rem; color:#64748b;" id="simFinalAnsSublabel">Record your conclusive value below</div>
-            </div>
-            <div id="simFinalAnsContainer" class="sim-subparts-container">
-              <div class="sim-final-ans-input-wrap">
-                <input type="text" class="sim-final-input" id="simFinalInput" oninput="handleAnswerInput(this.value)" placeholder="Enter value">
-                <span class="sim-unit-badge" id="simUnitBadge">°C</span>
               </div>
             </div>
-          </div>
 
-          <div style="padding-top:14px; border-top:1px dashed var(--sim-slate-200); font-size:0.8rem; color:var(--sim-slate-600); display:flex; justify-content:space-between; align-items:center;">
-            <span><i class="fa-solid fa-shield-halved" style="color:var(--sim-blue);"></i> Pearson Edexcel Reform Standard</span>
-            <span style="font-weight:700;" id="simFooterAdvice">Show all working clearly</span>
+            <!-- Official Final Answer Box (Positioned at bottom of Left Pane for Maths) -->
+            <div class="sim-final-ans-card" id="simFinalAnsCard" style="margin-top:auto;">
+              <div>
+                <div class="sim-final-ans-label">Final Answer:</div>
+                <div style="font-size:0.75rem; color:#64748b;" id="simFinalAnsSublabel">Record your conclusive value below</div>
+              </div>
+              <div id="simFinalAnsContainer" class="sim-subparts-container">
+                <div class="sim-final-ans-input-wrap">
+                  <input type="text" class="sim-final-input" id="simFinalInput" oninput="handleAnswerInput(this.value)" placeholder="Enter value">
+                  <span class="sim-unit-badge" id="simUnitBadge">°C</span>
+                </div>
+              </div>
+            </div>
+
+            <div id="simLeftFooterAdvice" style="padding-top:14px; border-top:1px dashed var(--sim-slate-200); font-size:0.8rem; color:var(--sim-slate-600); display:flex; justify-content:space-between; align-items:center;">
+              <span><i class="fa-solid fa-shield-halved" style="color:var(--sim-blue);"></i> Pearson Edexcel Reform Standard</span>
+              <span style="font-weight:700;" id="simFooterAdvice">Show all working clearly</span>
+            </div>
           </div>
         </div>
 
-        <!-- Right Pane: Learner Interactive Working Space -->
-        <div class="sim-pane-working">
+        <!-- Right Pane: Learner Interactive Working Space & Reading Question Area -->
+        <div class="sim-pane-working" id="simPaneWorking">
 
-          <div class="sim-working-header">
-            <div class="sim-working-title" id="simWorkingTitle">
-              <i class="fa-solid fa-pen-to-square" style="color:var(--sim-blue);"></i> <span id="simWorkingTitleText">Type Your Working &amp; Calculations in the Spaces</span>
-            </div>
-            <!-- Live Word Count Badge (Writing Mode) -->
-            <div class="sim-word-count-badge" id="simWordCountBadge" style="display:none;">
-              <i class="fa-solid fa-file-word"></i> Words: <span id="simWordCountNumber">0</span>
-              <span id="simWordTargetNotice" style="font-size:0.75rem; opacity:0.85;">(Target: 200–250)</span>
-            </div>
-          </div>
-
-          <!-- Planning Scratchpad (Writing Mode) -->
-          <div class="sim-planning-box" id="simPlanningBox" style="display:none;">
-            <div class="sim-planning-header" onclick="togglePlanningBox()">
-              <span><i class="fa-solid fa-lightbulb"></i> Optional Planning Notes &amp; Brainstorming (Not Marked)</span>
-              <i class="fa-solid fa-chevron-down" id="simPlanningIcon"></i>
-            </div>
-            <textarea class="sim-planning-textarea" id="simPlanningTextarea" placeholder="Jot down bullet points, key vocabulary, or paragraph plan here..." oninput="handlePlanningInput(this.value)"></textarea>
-          </div>
-
-          <!-- Maths Symbol Inserter Toolbar -->
-          <div class="sim-math-toolbar" id="simMathToolbar">
-            <span class="sim-toolbar-label">Maths Symbols:</span>
-            <button type="button" class="sim-sym-btn" onclick="insertSymbol('+')">+</button>
-            <button type="button" class="sim-sym-btn" onclick="insertSymbol('−')">−</button>
-            <button type="button" class="sim-sym-btn" onclick="insertSymbol('×')">×</button>
-            <button type="button" class="sim-sym-btn" onclick="insertSymbol('÷')">÷</button>
-            <button type="button" class="sim-sym-btn" onclick="insertSymbol('=')">=</button>
-            <button type="button" class="sim-sym-btn" onclick="insertSymbol('±')">±</button>
-            <button type="button" class="sim-sym-btn" onclick="insertSymbol('√')">√</button>
-            <button type="button" class="sim-sym-btn" onclick="insertSymbol('π')">π</button>
-            <button type="button" class="sim-sym-btn" onclick="insertSymbol('²')">²</button>
-            <button type="button" class="sim-sym-btn" onclick="insertSymbol('³')">³</button>
-            <button type="button" class="sim-sym-btn" onclick="insertSymbol('°C')">°C</button>
-            <button type="button" class="sim-sym-btn" onclick="insertSymbol('£')">£</button>
-            <button type="button" class="sim-sym-btn" onclick="insertSymbol('m²')">m²</button>
-            <button type="button" class="sim-sym-btn" onclick="insertSymbol('km')">km</button>
-            <button type="button" class="sim-sym-btn" onclick="insertSymbol('%')">%</button>
-            <button type="button" class="sim-sym-btn" onclick="insertSymbol('≈')">≈</button>
-            <button type="button" class="sim-template-btn" onclick="insertPlaceValueGrid()" title="Insert 7-Digit Place Value Columns"><i class="fa-solid fa-table-columns"></i> Place Value</button>
-            <button type="button" class="sim-template-btn" onclick="insertFractionTemplate()" title="Insert Stacked Fraction Template"><i class="fa-solid fa-divide"></i> Fraction</button>
-            <button type="button" class="sim-sym-btn" style="background:#fee2e2; border-color:#fca5a5; color:#991b1b; margin-left:auto;" onclick="clearWorkingSpace()" title="Clear Working"><i class="fa-solid fa-eraser"></i> Clear</button>
-          </div>
-
-          <!-- Multiple Choice Container (Reading Mode) -->
-          <div id="simMcqContainer" class="sim-mcq-group" style="display:none;"></div>
-
-          <!-- Working & Calculator Workspace (Side-by-side in Section B, Full-width in Section A) -->
-          <div class="sim-working-workspace" id="simWorkingWorkspace">
-            <!-- Main Typed Working Box -->
-            <div class="sim-working-card" id="simWorkingCard">
-              <textarea class="sim-working-textarea" id="simWorkingTextarea" oninput="handleWorkingInput(this.value)" placeholder="Type your working steps, calculations, and intermediate methods here..."></textarea>
-            </div>
-
-            <!-- Proofreading Checklist (Writing Mode) -->
-            <div class="sim-checklist-card" id="simWritingChecklist" style="display:none;">
-              <div class="sim-checklist-title">
-                <i class="fa-solid fa-clipboard-check"></i> Proofreading &amp; Format Checklist:
+          <!-- Reading Mode Question & Answer Area (Shown only in Reading mode) -->
+          <div id="simReadingRightPane" class="sim-reading-right-pane" style="display:none;">
+            <!-- Meta Bar for Reading Question -->
+            <div class="sim-q-meta-bar" id="simReadingMetaBar">
+              <div class="sim-q-badge-group">
+                <span class="sim-q-num-badge" id="simReadingQNumBadge">Question 1 of 15</span>
+                <span class="sim-q-section-tag" id="simReadingQSectionTag">Text A Comprehension</span>
+                <span class="sim-q-marks-badge" id="simReadingQMarksBadge">2 Marks</span>
               </div>
-              <div id="simChecklistItems"></div>
+              <button type="button" class="sim-q-flag-btn" id="simReadingFlagBtn" onclick="toggleFlag()">
+                <i class="fa-regular fa-flag"></i> Flag Question
+              </button>
             </div>
 
-            <!-- Built-in Onscreen Calculator (Docked Side-by-Side in Section B) -->
-            <div id="simCalcDrawerWrap" class="sim-calc-drawer-wrap" style="display:none;">
-              <div id="simCalcLockedBanner" class="sim-calc-locked-banner" style="display:none;">
-                <i class="fa-solid fa-lock" style="font-size:0.95rem;"></i>
-                <div>
-                  <strong>Section A:</strong> Non-calculator section.
+            <!-- Reading Question Card -->
+            <div class="sim-q-scenario-card" id="simReadingQuestionCard">
+              <div class="sim-q-scenario-title" id="simReadingQuestionTitle">
+                <i class="fa-solid fa-circle-question" style="color:var(--sim-blue);"></i> <span id="simReadingQuestionTitleText">Question Context</span>
+              </div>
+              <div id="simReadingScenarioText" style="font-size:0.92rem; line-height:1.55; color:#334155; margin-bottom:10px;"></div>
+              <div style="font-size:0.8rem; font-weight:800; color:var(--sim-blue); text-transform:uppercase; margin-bottom:4px;" id="simReadingPromptHeader">
+                Question:
+              </div>
+              <div class="sim-q-prompt-text" id="simReadingPromptText" style="white-space:pre-wrap; font-weight:600; color:#0f172a;"></div>
+            </div>
+
+            <!-- Reading Answer Container -->
+            <div class="sim-reading-answer-area" id="simReadingAnswerArea">
+              <div class="sim-working-header" style="margin-bottom:8px;">
+                <div class="sim-working-title">
+                  <i class="fa-solid fa-pen-to-square" style="color:var(--sim-blue);"></i> <span>Record Your Answer Below:</span>
                 </div>
               </div>
 
-              <div id="simCalcDrawer" class="sim-calc-drawer">
-                <div class="sim-calc-header">
-                  <span><i class="fa-solid fa-calculator" style="color:var(--sim-sky);"></i> Exam Calculator</span>
-                  <span style="font-size:0.72rem; color:#94a3b8;">Section B</span>
+              <!-- MCQ Options (if expectedType === 'multiple-choice') -->
+              <div id="simReadingMcqContainer" class="sim-mcq-group" style="display:none;"></div>
+
+              <!-- Labeled Subpart Inputs (if parts exist) -->
+              <div id="simReadingSubpartsContainer" class="sim-subparts-container" style="display:none;"></div>
+
+              <!-- Text Response Area (for written/explanation questions) -->
+              <div id="simReadingTextareaWrap" class="sim-reading-textarea-wrap" style="display:none;">
+                <textarea class="sim-working-textarea" id="simReadingTextarea" oninput="handleReadingTextInput(this.value)" placeholder="Type your answer, quotation, or explanation here..."></textarea>
+              </div>
+            </div>
+          </div>
+
+          <!-- Standard Maths & Writing Working Pane (Hidden in Reading mode) -->
+          <div id="simStandardRightPane" style="display:flex; flex-direction:column; gap:12px; width:100%; height:100%;">
+            <div class="sim-working-header">
+              <div class="sim-working-title" id="simWorkingTitle">
+                <i class="fa-solid fa-pen-to-square" style="color:var(--sim-blue);"></i> <span id="simWorkingTitleText">Type Your Working &amp; Calculations in the Spaces</span>
+              </div>
+              <!-- Live Word Count Badge (Writing Mode) -->
+              <div class="sim-word-count-badge" id="simWordCountBadge" style="display:none;">
+                <i class="fa-solid fa-file-word"></i> Words: <span id="simWordCountNumber">0</span>
+                <span id="simWordTargetNotice" style="font-size:0.75rem; opacity:0.85;">(Target: 200–250)</span>
+              </div>
+            </div>
+
+            <!-- Planning Scratchpad (Writing Mode) -->
+            <div class="sim-planning-box" id="simPlanningBox" style="display:none;">
+              <div class="sim-planning-header" onclick="togglePlanningBox()">
+                <span><i class="fa-solid fa-lightbulb"></i> Optional Planning Notes &amp; Brainstorming (Not Marked)</span>
+                <i class="fa-solid fa-chevron-down" id="simPlanningIcon"></i>
+              </div>
+              <textarea class="sim-planning-textarea" id="simPlanningTextarea" placeholder="Jot down bullet points, key vocabulary, or paragraph plan here..." oninput="handlePlanningInput(this.value)"></textarea>
+            </div>
+
+            <!-- Maths Symbol Inserter Toolbar -->
+            <div class="sim-math-toolbar" id="simMathToolbar">
+              <span class="sim-toolbar-label">Maths Symbols:</span>
+              <button type="button" class="sim-sym-btn" onclick="insertSymbol('+')">+</button>
+              <button type="button" class="sim-sym-btn" onclick="insertSymbol('−')">−</button>
+              <button type="button" class="sim-sym-btn" onclick="insertSymbol('×')">×</button>
+              <button type="button" class="sim-sym-btn" onclick="insertSymbol('÷')">÷</button>
+              <button type="button" class="sim-sym-btn" onclick="insertSymbol('=')">=</button>
+              <button type="button" class="sim-sym-btn" onclick="insertSymbol('±')">±</button>
+              <button type="button" class="sim-sym-btn" onclick="insertSymbol('√')">√</button>
+              <button type="button" class="sim-sym-btn" onclick="insertSymbol('π')">π</button>
+              <button type="button" class="sim-sym-btn" onclick="insertSymbol('²')">²</button>
+              <button type="button" class="sim-sym-btn" onclick="insertSymbol('³')">³</button>
+              <button type="button" class="sim-sym-btn" onclick="insertSymbol('°C')">°C</button>
+              <button type="button" class="sim-sym-btn" onclick="insertSymbol('£')">£</button>
+              <button type="button" class="sim-sym-btn" onclick="insertSymbol('m²')">m²</button>
+              <button type="button" class="sim-sym-btn" onclick="insertSymbol('km')">km</button>
+              <button type="button" class="sim-sym-btn" onclick="insertSymbol('%')">%</button>
+              <button type="button" class="sim-sym-btn" onclick="insertSymbol('≈')">≈</button>
+              <button type="button" class="sim-template-btn" onclick="insertPlaceValueGrid()" title="Insert 7-Digit Place Value Columns"><i class="fa-solid fa-table-columns"></i> Place Value</button>
+              <button type="button" class="sim-template-btn" onclick="insertFractionTemplate()" title="Insert Stacked Fraction Template"><i class="fa-solid fa-divide"></i> Fraction</button>
+              <button type="button" class="sim-sym-btn" style="background:#fee2e2; border-color:#fca5a5; color:#991b1b; margin-left:auto;" onclick="clearWorkingSpace()" title="Clear Working"><i class="fa-solid fa-eraser"></i> Clear</button>
+            </div>
+
+            <!-- Multiple Choice Container (Reading Mode) -->
+            <div id="simMcqContainer" class="sim-mcq-group" style="display:none;"></div>
+
+            <!-- Working & Calculator Workspace (Side-by-side in Section B, Full-width in Section A) -->
+            <div class="sim-working-workspace" id="simWorkingWorkspace">
+              <!-- Main Typed Working Box -->
+              <div class="sim-working-card" id="simWorkingCard">
+                <textarea class="sim-working-textarea" id="simWorkingTextarea" oninput="handleWorkingInput(this.value)" placeholder="Type your working steps, calculations, and intermediate methods here..."></textarea>
+              </div>
+
+              <!-- Proofreading Checklist (Writing Mode) -->
+              <div class="sim-checklist-card" id="simWritingChecklist" style="display:none;">
+                <div class="sim-checklist-title">
+                  <i class="fa-solid fa-clipboard-check"></i> Proofreading &amp; Format Checklist:
                 </div>
-                <div class="sim-calc-screen-box">
-                  <div class="sim-calc-expr" id="simCalcExpr"></div>
-                  <div class="sim-calc-screen" id="simCalcScreen">0</div>
+                <div id="simChecklistItems"></div>
+              </div>
+
+              <!-- Built-in Onscreen Calculator (Docked Side-by-Side in Section B) -->
+              <div id="simCalcDrawerWrap" class="sim-calc-drawer-wrap" style="display:none;">
+                <div id="simCalcLockedBanner" class="sim-calc-locked-banner" style="display:none;">
+                  <i class="fa-solid fa-lock" style="font-size:0.95rem;"></i>
+                  <div>
+                    <strong>Section A:</strong> Non-calculator section.
+                  </div>
                 </div>
-                <div class="sim-calc-keypad">
-                  <button type="button" class="sim-calc-key" onclick="calcClear()">C</button>
-                  <button type="button" class="sim-calc-key" onclick="calcSqrt()">√</button>
-                  <button type="button" class="sim-calc-key op" onclick="calcOp('÷')">÷</button>
-                  <button type="button" class="sim-calc-key op" onclick="calcOp('×')">×</button>
 
-                  <button type="button" class="sim-calc-key" onclick="calcDigit(7)">7</button>
-                  <button type="button" class="sim-calc-key" onclick="calcDigit(8)">8</button>
-                  <button type="button" class="sim-calc-key" onclick="calcDigit(9)">9</button>
-                  <button type="button" class="sim-calc-key op" onclick="calcOp('−')">−</button>
+                <div id="simCalcDrawer" class="sim-calc-drawer">
+                  <div class="sim-calc-header">
+                    <span><i class="fa-solid fa-calculator" style="color:var(--sim-sky);"></i> Exam Calculator</span>
+                    <span style="font-size:0.72rem; color:#94a3b8;">Section B</span>
+                  </div>
+                  <div class="sim-calc-screen-box">
+                    <div class="sim-calc-expr" id="simCalcExpr"></div>
+                    <div class="sim-calc-screen" id="simCalcScreen">0</div>
+                  </div>
+                  <div class="sim-calc-keypad">
+                    <button type="button" class="sim-calc-key" onclick="calcClear()">C</button>
+                    <button type="button" class="sim-calc-key" onclick="calcSqrt()">√</button>
+                    <button type="button" class="sim-calc-key op" onclick="calcOp('÷')">÷</button>
+                    <button type="button" class="sim-calc-key op" onclick="calcOp('×')">×</button>
 
-                  <button type="button" class="sim-calc-key" onclick="calcDigit(4)">4</button>
-                  <button type="button" class="sim-calc-key" onclick="calcDigit(5)">5</button>
-                  <button type="button" class="sim-calc-key" onclick="calcDigit(6)">6</button>
-                  <button type="button" class="sim-calc-key op" onclick="calcOp('+')">+</button>
+                    <button type="button" class="sim-calc-key" onclick="calcDigit(7)">7</button>
+                    <button type="button" class="sim-calc-key" onclick="calcDigit(8)">8</button>
+                    <button type="button" class="sim-calc-key" onclick="calcDigit(9)">9</button>
+                    <button type="button" class="sim-calc-key op" onclick="calcOp('−')">−</button>
 
-                  <button type="button" class="sim-calc-key" onclick="calcDigit(1)">1</button>
-                  <button type="button" class="sim-calc-key" onclick="calcDigit(2)">2</button>
-                  <button type="button" class="sim-calc-key" onclick="calcDigit(3)">3</button>
-                  <button type="button" class="sim-calc-key eq" onclick="calcCalculate()" style="grid-row: span 2;">=</button>
+                    <button type="button" class="sim-calc-key" onclick="calcDigit(4)">4</button>
+                    <button type="button" class="sim-calc-key" onclick="calcDigit(5)">5</button>
+                    <button type="button" class="sim-calc-key" onclick="calcDigit(6)">6</button>
+                    <button type="button" class="sim-calc-key op" onclick="calcOp('+')">+</button>
 
-                  <button type="button" class="sim-calc-key" onclick="calcDigit(0)" style="grid-column: span 2;">0</button>
-                  <button type="button" class="sim-calc-key" onclick="calcDecimal()">.</button>
+                    <button type="button" class="sim-calc-key" onclick="calcDigit(1)">1</button>
+                    <button type="button" class="sim-calc-key" onclick="calcDigit(2)">2</button>
+                    <button type="button" class="sim-calc-key" onclick="calcDigit(3)">3</button>
+                    <button type="button" class="sim-calc-key eq" onclick="calcCalculate()" style="grid-row: span 2;">=</button>
+
+                    <button type="button" class="sim-calc-key" onclick="calcDigit(0)" style="grid-column: span 2;">0</button>
+                    <button type="button" class="sim-calc-key" onclick="calcDecimal()">.</button>
+                  </div>
                 </div>
               </div>
             </div>
@@ -636,6 +708,6 @@
 
   <!-- Scripts -->
   <script src="assets/js/mfs-tint.js"></script>
-  <script src="assets/js/online-mock-simulator.js?v=20261106_v16"></script>
+  <script src="assets/js/online-mock-simulator.js?v=20261106_v17"></script>
 </body>
 </html>

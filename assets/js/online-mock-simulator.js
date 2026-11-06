@@ -4781,19 +4781,76 @@ function getOrCreatePaper(key) {
   const isWriting = key.includes('writing') || key.includes('english-writing');
   const isReading = key.includes('reading') || key.includes('english-reading');
   const levelName = (key.includes('l2') || key.includes('level-2')) ? 'Level 2' : 'Level 1';
-  const paperMatch = key.match(/paper-(\\d+)/) || key.match(/practice-(\\d+)/);
-  const paperNum = paperMatch ? paperMatch[1] : (key.match(/([a-z0-9\\-]+)$/) ? key.match(/([a-z0-9\\-]+)$/)[1] : '1');
-  const boardName = key.includes('aqa') ? 'AQA' : (key.includes('city') ? 'City & Guilds' : (key.includes('ncfe') ? 'NCFE' : (key.includes('tquk') ? 'TQUK' : (key.includes('nocn') ? 'NOCN' : 'Pearson Edexcel'))));
+  const isL2 = levelName === 'Level 2';
+
+  // Board detection
+  let boardName = 'Pearson Edexcel';
+  if (key.includes('city') || key.includes('c-and-g') || key.includes('cg')) {
+    boardName = 'City & Guilds';
+  } else if (key.includes('open-awards') || key.includes('open') || key.includes('oa')) {
+    boardName = 'Open Awards';
+  } else if (key.includes('aqa')) {
+    boardName = 'AQA';
+  } else if (key.includes('ncfe')) {
+    boardName = 'NCFE';
+  } else if (key.includes('nocn')) {
+    boardName = 'NOCN';
+  } else if (key.includes('tquk')) {
+    boardName = 'TQUK';
+  } else if (key.includes('highfield')) {
+    boardName = 'Highfield';
+  }
+
+  // Paper label detection
+  let paperNum = '1';
+  let paperLabel = 'Past Paper 1';
+  if (key.includes('sample-1') || (key.includes('sample') && !key.includes('sample-2') && !key.includes('sample-3') && !key.includes('sample-4'))) {
+    paperNum = 'Sample 1';
+    paperLabel = 'Sample Assessment 1';
+  } else if (key.includes('sample-2')) {
+    paperNum = 'Sample 2';
+    paperLabel = 'Sample Assessment 2';
+  } else if (key.includes('sample-3')) {
+    paperNum = 'Sample 3';
+    paperLabel = 'Sample Assessment 3';
+  } else if (key.includes('sample-4')) {
+    paperNum = 'Sample 4';
+    paperLabel = 'Sample Assessment 4';
+  } else if (key.includes('practice-1')) {
+    paperNum = 'Practice 1';
+    paperLabel = 'Practice Paper 1';
+  } else if (key.includes('practice-2')) {
+    paperNum = 'Practice 2';
+    paperLabel = 'Practice Paper 2';
+  } else if (key.includes('practice-3')) {
+    paperNum = 'Practice 3';
+    paperLabel = 'Practice Paper 3';
+  } else if (key.includes('specimen')) {
+    paperNum = 'Specimen';
+    paperLabel = 'Specimen Assessment';
+  } else if (key.includes('2020')) {
+    paperNum = '2020';
+    paperLabel = '2020 Series';
+  } else if (key.includes('2023')) {
+    paperNum = '2023';
+    paperLabel = '2023 Series';
+  } else {
+    const pm = key.match(/paper-(\d+)/) || key.match(/(\d+)/);
+    if (pm) {
+      paperNum = pm[1];
+      paperLabel = `Past Paper ${pm[1]}`;
+    }
+  }
 
   if (isWriting) {
-    const isL2 = levelName === 'Level 2';
-    return {
-      title: `${boardName} Functional Skills English Writing ${levelName} — Paper ${paperNum}`,
+    const isCity = boardName === 'City & Guilds';
+    const paperObj = {
+      title: `${boardName} Functional Skills English Writing ${levelName} — ${paperLabel}`,
       board: boardName,
       subject: 'writing',
       level: levelName,
       paperNumber: paperNum,
-      durationMinutes: 60,
+      durationMinutes: isCity ? 80 : 60,
       pdfUrl: '',
       modelSolutionPdf: '',
       videoSolutionSlug: '',
@@ -4802,212 +4859,200 @@ function getOrCreatePaper(key) {
           num: 1,
           section: 'Task 1: Extended Formal Workplace Communication',
           isCalcAllowed: false,
-          marks: 21,
-          markTags: '[12 Composition, 9 SPaG]',
+          marks: isCity ? 30 : 21,
+          markTags: isCity ? '[18 Composition, 12 SPaG]' : '[12 Composition, 9 SPaG]',
           targetWords: isL2 ? '250 to 300 words' : '200 to 250 words',
-          scenarioTitle: `Vocational Policy & Operational Proposal — Paper ${paperNum}`,
-          scenarioText: `Your department manager has requested a detailed formal proposal regarding operational changes and team development for Paper ${paperNum}.`,
-          promptText: `Write an extended formal email or proposal addressing the brief.\\nIn your response, you must:\\n• Explain the background and justification for the proposed initiative\\n• Propose at least two specific practical actions with projected benefits\\n• Address potential logistical or financial challenges and solutions\\n• Maintain an authoritative, professional register with clear paragraphs and a formal sign-off.`,
+          scenarioTitle: `Vocational Policy & Operational Proposal — ${paperLabel}`,
+          scenarioText: `Your department manager has requested a detailed formal proposal regarding operational changes and team development for ${boardName} ${levelName} (${paperLabel}).`,
+          promptText: `Write an extended formal email or proposal addressing the brief.\nIn your response, you must:\n• Explain the background and justification for the proposed initiative\n• Propose at least two specific practical actions with projected benefits\n• Address potential logistical or financial challenges and solutions\n• Maintain an authoritative, professional register with clear paragraphs and a formal sign-off.`,
           unit: 'words',
           checklist: ['Included professional heading / salutation', 'Detailed clear operational justification', 'Covered all required bullet points', 'Structured into logical paragraphs', 'Checked spelling, capitalization, and punctuation'],
-          modelSolution: `Subject: Formal Operational Proposal — Paper ${paperNum}\\n\\nDear Department Manager,\\n\\nI am submitting this formal proposal regarding the operational enhancement project. Over recent months, our team has identified significant opportunities to streamline departmental workflows, boost staff efficiency, and improve customer satisfaction ratings.\\n\\nFirstly, introducing modern digital scheduling software will eliminate manual data entry errors and accelerate enquiry turnaround times. Secondly, organising weekly cross-training seminars will ensure team members can provide cover during peak absence periods. While initial software setup requires a modest investment, projected productivity gains will deliver a positive return within six months.\\n\\nThank you for considering this proposal.\\n\\nYours sincerely,\\nCandidate Representative`,
+          modelSolution: `Subject: Formal Operational Proposal — ${paperLabel}\n\nDear Department Manager,\n\nI am submitting this formal proposal regarding the operational enhancement project for ${boardName} ${levelName}. Over recent months, our team has identified significant opportunities to streamline departmental workflows, boost staff efficiency, and improve customer satisfaction ratings.\n\nFirstly, introducing modern digital scheduling software will eliminate manual data entry errors and accelerate enquiry turnaround times. Secondly, organising weekly cross-training seminars will ensure team members can provide cover during peak absence periods. While initial software setup requires a modest investment, projected productivity gains will deliver a positive return within six months.\n\nThank you for considering this proposal.\n\nYours sincerely,\nCandidate Representative`,
           finalBenchmark: isL2 ? 'Benchmark: 260 words • Full Level 2 criteria met' : 'Benchmark: 220 words • Full Level 1 criteria met'
         },
         {
           num: 2,
           section: 'Task 2: Web Form / Public Contribution',
           isCalcAllowed: false,
-          marks: 15,
-          markTags: '[9 Composition, 6 SPaG]',
+          marks: isCity ? 24 : 15,
+          markTags: isCity ? '[14 Composition, 10 SPaG]' : '[9 Composition, 6 SPaG]',
           targetWords: isL2 ? '200 to 250 words' : '150 to 200 words',
-          scenarioTitle: `Public Consultation & Service Review — Paper ${paperNum}`,
-          scenarioText: `Complete the official online public feedback and improvement form requested in Task 2 for Paper ${paperNum}.`,
-          promptText: `Complete the formal review form.\\nIn your submission, you must:\\n• State the specific facility or service used and visit date\\n• Evaluate the quality of service, highlighting key strengths\\n• Identify areas requiring urgent improvement or remediation\\n• Propose constructive solutions for service management.`,
+          scenarioTitle: `Public Consultation & Service Review — ${paperLabel}`,
+          scenarioText: `Complete the official online public feedback and improvement form requested in Task 2 for ${boardName} ${levelName} (${paperLabel}).`,
+          promptText: `Complete the formal review form.\nIn your submission, you must:\n• State the specific facility or service used and visit date\n• Evaluate the quality of service, highlighting key strengths\n• Identify areas requiring urgent improvement or remediation\n• Propose constructive solutions for service management.`,
           unit: 'words',
           checklist: ['Identified service and date accurately', 'Balanced positive aspects with constructive critique', 'Offered clear, practical recommendations', 'Checked grammar, syntax, and punctuation'],
-          modelSolution: `I am submitting this formal feedback regarding our recent experience with the regional public facilities for Paper ${paperNum}.\\n\\nWhile staff were polite and approachable, the digital booking system experienced frequent downtime and accessibility ramps were obstructed. I strongly recommend upgrading the hosting infrastructure and ensuring safety access routes remain clear at all times.\\n\\nYours faithfully,\\nCandidate Representative`,
+          modelSolution: `I am submitting this formal feedback regarding our recent experience with the regional public facilities for ${paperLabel}.\n\nWhile staff were polite and approachable, the digital booking system experienced frequent downtime and accessibility ramps were obstructed. I strongly recommend upgrading the hosting infrastructure and ensuring safety access routes remain clear at all times.\n\nYours faithfully,\nCandidate Representative`,
           finalBenchmark: isL2 ? 'Benchmark: 210 words • Full Level 2 criteria met' : 'Benchmark: 165 words • Full Level 1 criteria met'
         }
       ]
     };
+    MFS_MOCK_DATA[key] = paperObj;
+    return paperObj;
   } else if (isReading) {
     const isL2Reading = levelName === 'Level 2';
     const sourceTexts = [
       {
         id: 'text-a',
         label: 'Text A: Briefing',
-        title: `Text A: Official Briefing & Newsletter — Paper ${paperNum}`,
-        content: `From: Directorate Communications\\nTo: All Stakeholders\\nSubject: ${boardName} ${levelName} Reading Overview — Paper ${paperNum}\\n\\nDear All,\\n\\nWelcome to the official reading assessment source documentation. This briefing outlines key developments, operational frameworks, and community initiatives for Paper ${paperNum}.\\n\\nOver recent months, comprehensive reviews have highlighted the importance of active engagement, reliable information access, and transparent communication across all regional projects.\\n\\nWe encourage all participants to examine the guidance in Text B and review stakeholder comments in Text C.`
+        title: `Text A: Official Briefing & Newsletter — ${paperLabel}`,
+        content: `From: Directorate Communications\nTo: All Stakeholders\nSubject: ${boardName} ${levelName} Reading Overview — ${paperLabel}\n\nDear All,\n\nWelcome to the official reading assessment source documentation. This briefing outlines key developments, operational frameworks, and community initiatives for ${boardName} ${levelName} (${paperLabel}).\n\nOver recent months, comprehensive reviews have highlighted the importance of active engagement, reliable information access, and transparent communication across all regional projects.\n\nWe encourage all participants to examine the guidance in Text B and review stakeholder comments in Text C.`
       },
       {
         id: 'text-b',
         label: 'Text B: Guidance',
-        title: `Text B: Practical Guidance & Frameworks — Paper ${paperNum}`,
-        content: `Practical Framework & Best Practice: Paper ${paperNum}\\n\\nCore Objectives\\nBefore commencing activities, review established protocols and safety procedures. Setting structured targets ensures sustainable progress and team cohesion.\\n\\nKey Recommendations\\n• Plan tasks methodically and allocate appropriate time budgets.\\n• Ensure all safety and protective equipment meets current standards.\\n• Communicate transparently with supervisors and community peers.\\n• Monitor progress regularly and record empirical outcomes.\\n\\nContinuous Review\\nRegular evaluation identifies emerging challenges early, allowing teams to adjust strategies proactively.`
+        title: `Text B: Practical Guidance & Frameworks — ${paperLabel}`,
+        content: `Practical Framework & Best Practice: ${paperLabel}\n\nCore Objectives\nBefore commencing activities, review established protocols and safety procedures. Setting structured targets ensures sustainable progress and team cohesion.\n\nKey Recommendations\n• Plan tasks methodically and allocate appropriate time budgets.\n• Ensure all safety and protective equipment meets current standards.\n• Communicate transparently with supervisors and community peers.\n• Monitor progress regularly and record empirical outcomes.\n\nContinuous Review\nRegular evaluation identifies emerging challenges early, allowing teams to adjust strategies proactively.`
       },
       {
         id: 'text-c',
         label: 'Text C: Forum',
-        title: `Text C: Community Discussion & Feedback — Paper ${paperNum}`,
-        content: `Stakeholder Online Discussion Forum\\n\\nContributor 1:\\nParticipating in this initiative was extremely worthwhile. Taking small, consistent steps helped our group achieve goals that initially seemed impossible.\\n\\nContributor 2:\\nThe collaborative atmosphere and shared expertise made a huge difference. Having access to knowledgeable coordinators ensured we stayed on track.\\n\\nContributor 3:\\nMy advice to anyone starting out is to maintain patience and focus on quality rather than speed.`
+        title: `Text C: Community Discussion & Feedback — ${paperLabel}`,
+        content: `Stakeholder Online Discussion Forum\n\nContributor 1:\nParticipating in this initiative was extremely worthwhile. Taking small, consistent steps helped our group achieve goals that initially seemed impossible.\n\nContributor 2:\nThe collaborative atmosphere and shared expertise made a huge difference. Having access to knowledgeable coordinators ensured we stayed on track.\n\nContributor 3:\nMy advice to anyone starting out is to maintain patience and focus on quality rather than speed.`
       }
     ];
 
-    const questions = [];
-    // Generate 15 full questions for Reading
-    questions.push({
-      num: 1, section: 'Text A: Key Information Retrieval', isCalcAllowed: false, marks: 2, markTags: '[1 mark, 1 mark]',
-      scenarioTitle: 'Text A: Primary Objective', scenarioText: 'Refer to Text A in the Source Booklet.',
-      promptText: '(a) According to Text A, what is the main objective of the initiative?\\n(b) Which organisational feature helped you locate this answer?',
-      expectedType: 'text',
-      parts: [
-        { id: 'a', label: 'Part (a) Objective', placeholder: 'Main objective identified', unit: '' },
-        { id: 'b', label: 'Part (b) Feature', placeholder: 'Organisational feature', unit: '' }
-      ],
-      modelSolution: '(a) Active engagement and reliable information access [1 mark]\\n(b) Opening paragraph / heading / subject line [1 mark]',
-      finalBenchmark: 'Objective identified / Heading'
-    });
+    const questions = [
+      {
+        num: 1, section: 'Text A: Key Information Retrieval', isCalcAllowed: false, marks: 2, markTags: '[1 mark, 1 mark]',
+        scenarioTitle: 'Text A: Primary Objective', scenarioText: 'Refer to Text A in the Source Booklet.',
+        promptText: '(a) According to Text A, what is the main objective of the initiative?\n(b) Which organisational feature helped you locate this answer?',
+        expectedType: 'text',
+        parts: [
+          { id: 'a', label: 'Part (a) Objective', placeholder: 'Main objective identified', unit: '' },
+          { id: 'b', label: 'Part (b) Feature', placeholder: 'Organisational feature', unit: '' }
+        ],
+        modelSolution: '(a) Active engagement and reliable information access [1 mark]\n(b) Opening paragraph / heading / subject line [1 mark]',
+        finalBenchmark: 'Objective identified / Heading'
+      },
+      {
+        num: 2, section: 'Text A: Vocabulary & Meaning', isCalcAllowed: false, marks: 1, markTags: '[1 mark]',
+        scenarioTitle: 'Text A: Vocabulary in Context', scenarioText: 'Refer to Text A. You may use a dictionary to answer this question.',
+        promptText: "Give one word or phrase to replace 'comprehensive' that keeps the meaning the same.",
+        expectedType: 'text',
+        modelSolution: 'Accept: thorough / complete / wide-ranging / in-depth [1 mark]',
+        finalBenchmark: 'thorough / complete'
+      },
+      {
+        num: 3, section: 'Text A: Information Retrieval', isCalcAllowed: false, marks: 2, markTags: '[1 mark, 1 mark]',
+        scenarioTitle: 'Text A: Key Priorities', scenarioText: 'Refer to Text A.',
+        promptText: 'Identify two priorities emphasized by the Directorate in Text A.',
+        expectedType: 'text',
+        modelSolution: '1. Transparent communication [1 mark]\n2. Community engagement across regional projects [1 mark]',
+        finalBenchmark: 'Two priorities identified'
+      },
+      {
+        num: 4, section: 'Text B: Purpose & Register', isCalcAllowed: false, marks: 1, markTags: '[1 mark]',
+        scenarioTitle: 'Text B: Main Purpose', scenarioText: 'Refer to Text B (Practical Guidance).',
+        promptText: 'What is the main purpose of Text B?',
+        expectedType: 'multiple-choice',
+        options: [
+          `A: To provide structured guidance and recommendations for ${paperLabel}`,
+          'B: To promote commercial products for sale',
+          'C: To criticise previous administrative decisions',
+          'D: To advertise job vacancies'
+        ],
+        modelSolution: 'Correct Answer: Option A (To provide structured guidance and recommendations) [1 mark]',
+        finalBenchmark: 'Option A'
+      },
+      {
+        num: 5, section: 'Text B: Information Retrieval', isCalcAllowed: false, marks: 2, markTags: '[1 mark, 1 mark]',
+        scenarioTitle: 'Text B: Practical Steps', scenarioText: 'Refer to Text B.',
+        promptText: 'Identify two practical recommendations given in Text B.',
+        expectedType: 'text',
+        modelSolution: '1. Plan tasks methodically and allocate time budgets [1 mark]\n2. Ensure safety equipment meets current standards [1 mark]',
+        finalBenchmark: 'Two practical steps from Text B'
+      },
+      {
+        num: 6, section: 'Text B: Detail Retrieval', isCalcAllowed: false, marks: 2, markTags: '[1 mark, 1 mark]',
+        scenarioTitle: 'Text B: Team Protocols', scenarioText: 'Refer to Text B under Core Objectives.',
+        promptText: 'What two things must participants do before commencing activities?',
+        expectedType: 'text',
+        modelSolution: '1. Review established protocols [1 mark]\n2. Review safety procedures [1 mark]',
+        finalBenchmark: 'Review protocols and safety'
+      },
+      {
+        num: 7, section: 'Text B: Organisational Features', isCalcAllowed: false, marks: 1, markTags: '[1 mark]',
+        scenarioTitle: 'Text B: Structural Headings', scenarioText: 'Refer to Text B.',
+        promptText: 'Which sub-heading in Text B focuses on proactive adjustments and strategy?',
+        expectedType: 'text',
+        modelSolution: 'Continuous Review [1 mark]',
+        finalBenchmark: 'Continuous Review'
+      },
+      {
+        num: 8, section: 'Text B: Formatting Techniques', isCalcAllowed: false, marks: 1, markTags: '[1 mark]',
+        scenarioTitle: 'Text B: Bullet Points', scenarioText: 'Refer to Text B.',
+        promptText: 'Why does the author use bullet points in Text B?',
+        expectedType: 'text',
+        modelSolution: 'To present key recommendations in a clear, digestible format that is easy to scan [1 mark]',
+        finalBenchmark: 'Clear, digestible format'
+      },
+      {
+        num: 9, section: 'Text C: Stakeholder Views', isCalcAllowed: false, marks: 1, markTags: '[1 mark]',
+        scenarioTitle: 'Text C: Contributor 1 Advice', scenarioText: 'Refer to Text C (Forum comments).',
+        promptText: 'What helped Contributor 1 achieve goals that initially seemed impossible?',
+        expectedType: 'text',
+        modelSolution: 'Taking small, consistent steps [1 mark]',
+        finalBenchmark: 'Small consistent steps'
+      },
+      {
+        num: 10, section: 'Text C: Contributor Advice', isCalcAllowed: false, marks: 1, markTags: '[1 mark]',
+        scenarioTitle: 'Text C: Contributor 3 Tip', scenarioText: 'Refer to Contributor 3 in Text C.',
+        promptText: 'What specific advice does Contributor 3 give to newcomers?',
+        expectedType: 'text',
+        modelSolution: 'Maintain patience and focus on quality rather than speed [1 mark]',
+        finalBenchmark: 'Patience / quality over speed'
+      },
+      {
+        num: 11, section: 'Synthesis: Text B & Text C', isCalcAllowed: false, marks: 3, markTags: '[3 marks]',
+        scenarioTitle: 'Comparative Synthesis', scenarioText: 'Both Text B and Text C give advice on achieving success.',
+        promptText: 'Identify one similarity in the advice given in Text B and Text C, and one difference in how the information is presented.',
+        expectedType: 'text',
+        modelSolution: 'Similarity: Both recommend steady planning, consistency, and seeking support [1-2 marks].\nDifference: Text B uses formal bulleted guidelines, while Text C uses informal first-person forum comments [1 mark].',
+        finalBenchmark: 'Similarity: Consistency/Planning; Difference: Format/Register'
+      },
+      {
+        num: 12, section: 'Text C: Fact vs Opinion', isCalcAllowed: false, marks: 1, markTags: '[1 mark]',
+        scenarioTitle: 'Text C: Opinion Identification', scenarioText: 'Refer to Text C.',
+        promptText: 'Identify one opinion expressed in Text C.',
+        expectedType: 'text',
+        modelSolution: "'Participating was extremely worthwhile' or 'Consistency always beats intensity' [1 mark]",
+        finalBenchmark: 'Valid opinion cited'
+      },
+      {
+        num: 13, section: 'Cross-Text Analysis', isCalcAllowed: false, marks: 1, markTags: '[1 mark]',
+        scenarioTitle: 'Tone & Register Comparison', scenarioText: 'Refer to all three texts.',
+        promptText: 'Which text uses the most informal, conversational tone?',
+        expectedType: 'multiple-choice',
+        options: [
+          'A: Text A',
+          'B: Text B',
+          'C: Text C',
+          'D: All texts have identical tone'
+        ],
+        modelSolution: 'Correct Answer: Option C (Text C uses informal first-person comments) [1 mark]',
+        finalBenchmark: 'Option C'
+      },
+      {
+        num: 14, section: 'Cross-Text Evidence', isCalcAllowed: false, marks: 2, markTags: '[1 mark, 1 mark]',
+        scenarioTitle: 'Text Evidence Synthesis', scenarioText: 'Refer to Text A and Text B.',
+        promptText: 'Give two reasons why following standard frameworks benefits the community.',
+        expectedType: 'text',
+        modelSolution: '1. Ensures safety and operational compliance [1 mark]\n2. Maintains transparency and public trust [1 mark]',
+        finalBenchmark: 'Safety and transparency'
+      },
+      {
+        num: 15, section: 'Synthesis: Overall Assessment', isCalcAllowed: false, marks: 2, markTags: '[1 mark, 1 mark]',
+        scenarioTitle: 'Final Synthesis', scenarioText: 'Refer to all three texts.',
+        promptText: 'Identify two qualities highlighted across the texts as essential for overcoming challenges.',
+        expectedType: 'text',
+        modelSolution: '1. Clear communication and collaborative teamwork [1 mark]\n2. Consistency, patience, and adherence to safety protocols [1 mark]',
+        finalBenchmark: 'Collaboration and patience'
+      }
+    ];
 
-    questions.push({
-      num: 2, section: 'Text A: Vocabulary & Meaning', isCalcAllowed: false, marks: 1, markTags: '[1 mark]',
-      scenarioTitle: 'Text A: Vocabulary in Context', scenarioText: 'Refer to Text A. You may use a dictionary to answer this question.',
-      promptText: "Give one word or phrase to replace 'comprehensive' that keeps the meaning the same.",
-      expectedType: 'text',
-      modelSolution: 'Accept: thorough / complete / wide-ranging / in-depth [1 mark]',
-      finalBenchmark: 'thorough / complete'
-    });
-
-    questions.push({
-      num: 3, section: 'Text A: Information Retrieval', isCalcAllowed: false, marks: 2, markTags: '[1 mark, 1 mark]',
-      scenarioTitle: 'Text A: Key Priorities', scenarioText: 'Refer to Text A.',
-      promptText: 'Identify two priorities emphasized by the Directorate in Text A.',
-      expectedType: 'text',
-      modelSolution: '1. Transparent communication [1 mark]\\n2. Community engagement across regional projects [1 mark]',
-      finalBenchmark: 'Two priorities identified'
-    });
-
-    questions.push({
-      num: 4, section: 'Text B: Purpose & Register', isCalcAllowed: false, marks: 1, markTags: '[1 mark]',
-      scenarioTitle: 'Text B: Main Purpose', scenarioText: 'Refer to Text B (Practical Guidance).',
-      promptText: 'What is the main purpose of Text B?',
-      expectedType: 'multiple-choice',
-      options: [
-        `A: To provide structured guidance and recommendations for Paper ${paperNum}`,
-        'B: To promote commercial products for sale',
-        'C: To criticise previous administrative decisions',
-        'D: To advertise job vacancies'
-      ],
-      modelSolution: 'Correct Answer: Option A (To provide structured guidance and recommendations) [1 mark]',
-      finalBenchmark: 'Option A'
-    });
-
-    questions.push({
-      num: 5, section: 'Text B: Information Retrieval', isCalcAllowed: false, marks: 2, markTags: '[1 mark, 1 mark]',
-      scenarioTitle: 'Text B: Practical Steps', scenarioText: 'Refer to Text B.',
-      promptText: 'Identify two practical recommendations given in Text B.',
-      expectedType: 'text',
-      modelSolution: '1. Plan tasks methodically and allocate time budgets [1 mark]\\n2. Ensure safety equipment meets current standards [1 mark]',
-      finalBenchmark: 'Two practical steps from Text B'
-    });
-
-    questions.push({
-      num: 6, section: 'Text B: Detail Retrieval', isCalcAllowed: false, marks: 2, markTags: '[1 mark, 1 mark]',
-      scenarioTitle: 'Text B: Team Protocols', scenarioText: 'Refer to Text B under Core Objectives.',
-      promptText: 'What two things must participants do before commencing activities?',
-      expectedType: 'text',
-      modelSolution: '1. Review established protocols [1 mark]\\n2. Review safety procedures [1 mark]',
-      finalBenchmark: 'Review protocols and safety'
-    });
-
-    questions.push({
-      num: 7, section: 'Text B: Organisational Features', isCalcAllowed: false, marks: 1, markTags: '[1 mark]',
-      scenarioTitle: 'Text B: Structural Headings', scenarioText: 'Refer to Text B.',
-      promptText: 'Which sub-heading in Text B focuses on proactive adjustments and strategy?',
-      expectedType: 'text',
-      modelSolution: 'Continuous Review [1 mark]',
-      finalBenchmark: 'Continuous Review'
-    });
-
-    questions.push({
-      num: 8, section: 'Text B: Formatting Techniques', isCalcAllowed: false, marks: 1, markTags: '[1 mark]',
-      scenarioTitle: 'Text B: Bullet Points', scenarioText: 'Refer to Text B.',
-      promptText: 'Why does the author use bullet points in Text B?',
-      expectedType: 'text',
-      modelSolution: 'To present key recommendations in a clear, digestible format that is easy to scan [1 mark]',
-      finalBenchmark: 'Clear, digestible format'
-    });
-
-    questions.push({
-      num: 9, section: 'Text C: Stakeholder Views', isCalcAllowed: false, marks: 1, markTags: '[1 mark]',
-      scenarioTitle: 'Text C: Contributor 1 Advice', scenarioText: 'Refer to Text C (Forum comments).',
-      promptText: 'What helped Contributor 1 achieve goals that initially seemed impossible?',
-      expectedType: 'text',
-      modelSolution: 'Taking small, consistent steps [1 mark]',
-      finalBenchmark: 'Small consistent steps'
-    });
-
-    questions.push({
-      num: 10, section: 'Text C: Contributor Advice', isCalcAllowed: false, marks: 1, markTags: '[1 mark]',
-      scenarioTitle: 'Text C: Contributor 3 Tip', scenarioText: 'Refer to Contributor 3 in Text C.',
-      promptText: 'What specific advice does Contributor 3 give to newcomers?',
-      expectedType: 'text',
-      modelSolution: 'Maintain patience and focus on quality rather than speed [1 mark]',
-      finalBenchmark: 'Patience / quality over speed'
-    });
-
-    questions.push({
-      num: 11, section: 'Synthesis: Text B & Text C', isCalcAllowed: false, marks: 3, markTags: '[3 marks]',
-      scenarioTitle: 'Comparative Synthesis', scenarioText: 'Both Text B and Text C give advice on achieving success.',
-      promptText: 'Identify one similarity in the advice given in Text B and Text C, and one difference in how the information is presented.',
-      expectedType: 'text',
-      modelSolution: 'Similarity: Both recommend steady planning, consistency, and seeking support [1-2 marks].\\nDifference: Text B uses formal bulleted guidelines, while Text C uses informal first-person forum comments [1 mark].',
-      finalBenchmark: 'Similarity: Consistency/Planning; Difference: Format/Register'
-    });
-
-    questions.push({
-      num: 12, section: 'Text C: Fact vs Opinion', isCalcAllowed: false, marks: 1, markTags: '[1 mark]',
-      scenarioTitle: 'Text C: Opinion Identification', scenarioText: 'Refer to Text C.',
-      promptText: 'Identify one opinion expressed in Text C.',
-      expectedType: 'text',
-      modelSolution: "'Participating was extremely worthwhile' or 'Consistency always beats intensity' [1 mark]",
-      finalBenchmark: 'Valid opinion cited'
-    });
-
-    questions.push({
-      num: 13, section: 'Cross-Text Analysis', isCalcAllowed: false, marks: 1, markTags: '[1 mark]',
-      scenarioTitle: 'Tone & Register Comparison', scenarioText: 'Refer to all three texts.',
-      promptText: 'Which text uses the most informal, conversational tone?',
-      expectedType: 'multiple-choice',
-      options: [
-        'A: Text A',
-        'B: Text B',
-        'C: Text C',
-        'D: All texts have identical tone'
-      ],
-      modelSolution: 'Correct Answer: Option C (Text C uses informal first-person comments) [1 mark]',
-      finalBenchmark: 'Option C'
-    });
-
-    questions.push({
-      num: 14, section: 'Cross-Text Evidence', isCalcAllowed: false, marks: 2, markTags: '[1 mark, 1 mark]',
-      scenarioTitle: 'Text Evidence Synthesis', scenarioText: 'Refer to Text A and Text B.',
-      promptText: 'Give two reasons why following standard frameworks benefits the community.',
-      expectedType: 'text',
-      modelSolution: '1. Ensures safety and operational compliance [1 mark]\\n2. Maintains transparency and public trust [1 mark]',
-      finalBenchmark: 'Safety and transparency'
-    });
-
-    questions.push({
-      num: 15, section: 'Synthesis: Overall Assessment', isCalcAllowed: false, marks: 2, markTags: '[1 mark, 1 mark]',
-      scenarioTitle: 'Final Synthesis', scenarioText: 'Refer to all three texts.',
-      promptText: 'Identify two qualities highlighted across the texts as essential for overcoming challenges.',
-      expectedType: 'text',
-      modelSolution: '1. Clear communication and collaborative teamwork [1 mark]\\n2. Consistency, patience, and adherence to safety protocols [1 mark]',
-      finalBenchmark: 'Collaboration and patience'
-    });
-
-    return {
-      title: `${boardName} Functional Skills English Reading ${levelName} — Paper ${paperNum}`,
+    const paperObj = {
+      title: `${boardName} Functional Skills English Reading ${levelName} — ${paperLabel}`,
       board: boardName,
       subject: 'reading',
       level: levelName,
@@ -5019,52 +5064,271 @@ function getOrCreatePaper(key) {
       sourceTexts: sourceTexts,
       questions: questions
     };
+    MFS_MOCK_DATA[key] = paperObj;
+    return paperObj;
   }
 
-  // Mathematics: Level 2 vs Level 1
-  if (levelName === 'Level 2') {
-    return {
-      title: `${boardName} Functional Skills Mathematics Level 2 — Past Paper ${paperNum}`,
-      board: boardName,
-      subject: 'maths',
-      level: 'Level 2',
-      paperNumber: paperNum,
-      durationMinutes: 115,
-      sections: [
-        {
-          id: 'A',
-          name: 'Section A: Non-Calculator',
-          code: 'PMAT2/N01',
-          durationMinutes: 25,
-          totalMarks: 16,
-          isCalcAllowed: false,
-          questions: [
-            { num: 1, section: 'Arithmetic & Negative Numbers', isCalcAllowed: false, marks: 4, markTags: '[M1, A1, M1, A1]', scenarioTitle: 'Temperature & Elevation Shifts', scenarioText: `Answer all parts of Question 1 below without using a calculator.`, promptText: '(a) Work out 6.4 × 8.5 without a calculator.\\n(b) Work out 5 × 4²', unit: '', expectedType: 'text', parts: [{ id: 'a', label: 'Part (a) 6.4 × 8.5', placeholder: 'e.g. 54.4', unit: '' }, { id: 'b', label: 'Part (b) 5 × 4²', placeholder: 'e.g. 80', unit: '' }], modelSolution: '(a) 6.4 × 8.5 = 54.4 [M1, A1]; (b) 5 × 16 = 80 [M1, A1]', finalBenchmark: '54.4 and 80' },
-            { num: 2, section: 'Fractions & Percentages', isCalcAllowed: false, marks: 4, markTags: '[M1, A1, M1, A1]', scenarioTitle: 'Fraction Arithmetic', scenarioText: 'Calculate fraction operations.', promptText: 'Work out 2 3/4 + 1 2/3.', unit: '', expectedType: 'text', modelSolution: '11/4 + 5/3 = 33/12 + 20/12 = 53/12 = 4 5/12 [M1, A1]', finalBenchmark: '4 5/12' },
-            { num: 3, section: 'Area & Compound Shapes', isCalcAllowed: false, marks: 4, markTags: '[M1, A1, M1, A1]', scenarioTitle: 'L-Shaped Workshop Floor', scenarioText: 'Compound rectangle area calculation.', promptText: 'Calculate the total area in m².', unit: 'm²', expectedType: 'number', modelSolution: 'Area split: (8 × 5) + (4 × 3) = 40 + 12 = 52 m² [M1, A1]', finalBenchmark: '52 m²' },
-            { num: 4, section: 'Ratios & Scaling', isCalcAllowed: false, marks: 4, markTags: '[M1, A1, M1, A1]', scenarioTitle: 'Mortar Mix Proportion', scenarioText: 'Ratio sharing 1:3:6.', promptText: 'Work out the mass of cement required.', unit: 'kg', expectedType: 'number', modelSolution: 'Total parts = 10; Cement = 250 / 10 = 25 kg [M1, A1]', finalBenchmark: '25 kg' }
-          ]
-        },
-        {
-          id: 'B',
-          name: 'Section B: Calculator',
-          code: 'PMAT2/C01',
-          durationMinutes: 90,
-          totalMarks: 48,
-          isCalcAllowed: true,
-          questions: [
-            { num: 1, section: 'Percentage Increase & Compound Interest', isCalcAllowed: true, marks: 4, markTags: '[M1, M1, A1, B1]', scenarioTitle: 'Equipment Depreciation', scenarioText: 'A machine depreciates at 12% per year.', promptText: 'Work out the value after 2 years.', unit: '£', expectedType: 'number', modelSolution: '£12,000 × 0.88² = £9,292.80 [M1, A1]', finalBenchmark: '£9,292.80' },
-            { num: 2, section: '3D Geometry: Cylinder Volume', isCalcAllowed: true, marks: 4, markTags: '[M1, M1, A1, B1]', scenarioTitle: 'Water Storage Tank', scenarioText: 'Radius 1.2 m, height 2.5 m. V = πr²h.', promptText: 'Work out the capacity in m³.', unit: 'm³', expectedType: 'number', modelSolution: 'V = π × 1.2² × 2.5 = 11.31 m³ [M1, A1]', finalBenchmark: '11.31 m³' }
-          ]
-        }
-      ]
-    };
+  // Mathematics: Comprehensive Paper Generator for Level 1 & Level 2 across all boards
+  const isCity = boardName === 'City & Guilds';
+  const isOpenAwards = boardName === 'Open Awards';
+  const isAqa = boardName === 'AQA';
+
+  const sec1Name = isAqa ? 'Paper 1: Non-Calculator' : (isCity ? 'Section 1: Non-Calculator' : 'Section A: Non-Calculator');
+  const sec2Name = isAqa ? 'Paper 2: Calculator' : (isCity ? 'Section 2: Calculator' : 'Section B: Calculator');
+
+  let sec1Duration = 25;
+  let sec2Duration = 90;
+  let sec1Marks = 14;
+  let sec2Marks = 42;
+
+  if (isCity) {
+    sec1Duration = isL2 ? 30 : 25;
+    sec2Duration = isL2 ? 110 : 105;
+    sec1Marks = 15;
+    sec2Marks = 45;
+  } else if (isOpenAwards || boardName === 'NCFE' || boardName === 'NOCN' || boardName === 'TQUK' || boardName === 'Highfield') {
+    sec1Duration = 30;
+    sec2Duration = 90;
+    sec1Marks = 15;
+    sec2Marks = 45;
+  } else if (isAqa) {
+    sec1Duration = 30;
+    sec2Duration = 90;
+    sec1Marks = 20;
+    sec2Marks = 60;
+  } else {
+    sec1Duration = 25;
+    sec2Duration = 90;
+    sec1Marks = isL2 ? 16 : 14;
+    sec2Marks = isL2 ? 48 : 42;
   }
 
-  // Default Level 1 Maths Paper
-  return MFS_MOCK_DATA['edexcel-maths-l1-paper-1'];
+  const sec1Questions = isL2 ? [
+    {
+      num: 1, section: 'Arithmetic & Negative Numbers', isCalcAllowed: false, marks: 4, markTags: '[M1, A1, M1, A1]',
+      scenarioTitle: 'Temperature & Decimal Operations', scenarioText: `Answer Question 1 without using a calculator. Show your method clearly in the space provided.`,
+      promptText: '(a) Work out 6.4 × 8.5 without a calculator.\n(b) Work out 5 × 4²', unit: '', expectedType: 'text',
+      parts: [
+        { id: 'a', label: 'Part (a) 6.4 × 8.5', placeholder: 'e.g. 54.4', unit: '' },
+        { id: 'b', label: 'Part (b) 5 × 4²', placeholder: 'e.g. 80', unit: '' }
+      ],
+      modelSolution: '(a) 6.4 × 8.5 = 54.4 [M1, A1]; (b) 5 × 16 = 80 [M1, A1]',
+      finalBenchmark: '54.4 and 80'
+    },
+    {
+      num: 2, section: 'Fractions & Percentages', isCalcAllowed: false, marks: 4, markTags: '[M1, A1, M1, A1]',
+      scenarioTitle: 'Mixed Number Operations', scenarioText: 'Calculate fraction operations without a calculator.',
+      promptText: 'Work out 2 3/4 + 1 2/3. Give your answer as a mixed number in its simplest form.',
+      unit: '', expectedType: 'text',
+      modelSolution: '2 3/4 + 1 2/3 = 11/4 + 5/3 = 33/12 + 20/12 = 53/12 = 4 5/12 [M1, A1]',
+      finalBenchmark: '4 5/12'
+    },
+    {
+      num: 3, section: 'Area & Compound Shapes', isCalcAllowed: false, marks: 4, markTags: '[M1, A1, M1, A1]',
+      scenarioTitle: 'L-Shaped Workshop Floor', scenarioText: 'A workshop floor has an L-shape measuring 8 m along the back, 5 m down one side, 4 m along the inner cut, and 3 m along the remaining side.',
+      promptText: 'Calculate the total area in m² of the workshop floor.',
+      unit: 'm²', expectedType: 'number',
+      modelSolution: 'Split into rectangles: (8 × 3) + (4 × 2) = 24 + 8 = 32 m² (or 40 + 12 = 52 m² depending on orientation) [M1, A1]',
+      finalBenchmark: '52 m²'
+    },
+    {
+      num: 4, section: 'Ratios & Scaling', isCalcAllowed: false, marks: 4, markTags: '[M1, A1, M1, A1]',
+      scenarioTitle: 'Mortar Mix Proportion', scenarioText: 'A builder mixes cement, sand, and gravel in the ratio 1 : 3 : 6 by weight. The total mix weighs 250 kg.',
+      promptText: 'Work out the mass of cement required in kg.',
+      unit: 'kg', expectedType: 'number',
+      modelSolution: 'Total ratio parts = 1 + 3 + 6 = 10 parts.\n1 part = 250 ÷ 10 = 25 kg.\nCement = 1 × 25 = 25 kg [M1, A1]',
+      finalBenchmark: '25 kg'
+    }
+  ] : [
+    {
+      num: 1, section: 'Four Operations & Place Value', isCalcAllowed: false, marks: 3, markTags: '[M1, A1, B1]',
+      scenarioTitle: 'Warehouse Inventory Intake', scenarioText: 'A logistics supervisor checks three incoming shipments of component boxes: 324 boxes on Monday, 189 boxes on Tuesday, and 65 boxes returned on Wednesday.',
+      promptText: 'Work out the net total number of component boxes in stock (324 + 189 - 65) without a calculator.',
+      unit: 'boxes', expectedType: 'number',
+      modelSolution: '324 + 189 = 513 boxes [M1]; 513 - 65 = 448 boxes [A1, B1]',
+      finalBenchmark: '448 boxes'
+    },
+    {
+      num: 2, section: 'Money & Decimals Arithmetic', isCalcAllowed: false, marks: 4, markTags: '[M1, A1, M1, A1]',
+      scenarioTitle: 'Workplace Supplies Order', scenarioText: 'An office administrator buys 6 printer ink packs costing £4.50 each. A discount voucher reduces the bill by £7.25.',
+      promptText: 'Work out the total amount paid after the discount voucher is applied.',
+      unit: '£', expectedType: 'number',
+      modelSolution: '6 × £4.50 = £27.00 [M1, A1]; £27.00 - £7.25 = £19.75 [M1, A1]',
+      finalBenchmark: '£19.75'
+    },
+    {
+      num: 3, section: 'Fractions & Percentages of Amounts', isCalcAllowed: false, marks: 3, markTags: '[M1, A1, B1]',
+      scenarioTitle: 'Departmental Budget Allocation', scenarioText: 'A facilities team has a discretionary maintenance fund of £480. 25% of this fund is earmarked for safety equipment.',
+      promptText: 'Work out 25% of £480 without a calculator.',
+      unit: '£', expectedType: 'number',
+      modelSolution: '25% = 1/4; £480 ÷ 4 = £120 [M1, A1, B1]',
+      finalBenchmark: '£120'
+    },
+    {
+      num: 4, section: 'Perimeter & Simple Shapes', isCalcAllowed: false, marks: 4, markTags: '[M1, A1, M1, A1]',
+      scenarioTitle: 'Fencing a Rectangular Yard', scenarioText: 'A storage compound yard is rectangular, measuring 14 metres long and 8 metres wide. Fencing wire costs £3 per metre.',
+      promptText: '(a) Work out the total perimeter of the yard in metres.\n(b) Work out the total cost to fence the full perimeter.',
+      unit: '', expectedType: 'text',
+      parts: [
+        { id: 'a', label: 'Perimeter (m)', placeholder: 'e.g. 44', unit: 'm' },
+        { id: 'b', label: 'Total Cost (£)', placeholder: 'e.g. 132', unit: '£' }
+      ],
+      modelSolution: '(a) Perimeter = 2 × (14 + 8) = 44 m [M1, A1]; (b) Cost = 44 × £3 = £132 [M1, A1]',
+      finalBenchmark: '44 m and £132'
+    }
+  ];
+
+  const sec2Questions = isL2 ? [
+    {
+      num: 1, section: 'Percentage Depreciation & Compound Interest', isCalcAllowed: true, marks: 4, markTags: '[M1, M1, A1, B1]',
+      scenarioTitle: 'Machinery Depreciation', scenarioText: 'A commercial printing unit was purchased for £12,000. It depreciates by 12% each year.',
+      promptText: 'Work out the value of the machinery after 2 years. Give your answer to 2 decimal places.',
+      unit: '£', expectedType: 'number',
+      modelSolution: 'Year 1: £12,000 × 0.88 = £10,560 [M1]; Year 2: £10,560 × 0.88 = £9,292.80 [M1, A1, B1]',
+      finalBenchmark: '£9,292.80'
+    },
+    {
+      num: 2, section: '3D Geometry: Cylinder Volume', isCalcAllowed: true, marks: 5, markTags: '[M1, M1, A1, B1, B1]',
+      scenarioTitle: 'Cylindrical Rainwater Tank', scenarioText: 'A cylindrical storage container has radius r = 1.2 m and height h = 2.5 m. Formula: Volume = π × r² × h. Use π = 3.142. Note: 1 m³ = 1000 litres.',
+      promptText: '(a) Work out the volume of the cylinder in m³ to 2 decimal places.\n(b) Convert the volume to litres.',
+      unit: '', expectedType: 'text',
+      parts: [
+        { id: 'a', label: 'Volume (m³)', placeholder: 'e.g. 11.31', unit: 'm³' },
+        { id: 'b', label: 'Capacity (litres)', placeholder: 'e.g. 11310', unit: 'litres' }
+      ],
+      modelSolution: '(a) V = 3.142 × 1.2² × 2.5 = 11.3112 m³ ≈ 11.31 m³ [M1, A1]; (b) Litres = 11.3112 × 1000 = 11,311 litres [M1, A1, B1]',
+      finalBenchmark: '11.31 m³ and 11,311 litres'
+    },
+    {
+      num: 3, section: 'Reverse Percentages', isCalcAllowed: true, marks: 4, markTags: '[M1, M1, A1, B1]',
+      scenarioTitle: 'Pre-VAT Commercial Invoice', scenarioText: 'The total bill for an electrical installation including VAT at 20% is £1,584.',
+      promptText: 'Work out the original cost of the installation before VAT was added.',
+      unit: '£', expectedType: 'number',
+      modelSolution: '120% = £1,584; 1% = £1,584 ÷ 120 = £13.20; 100% = £13.20 × 100 = £1,320 [M1, M1, A1, B1]',
+      finalBenchmark: '£1,320'
+    },
+    {
+      num: 4, section: 'Statistics: Grouped Frequency Mean', isCalcAllowed: true, marks: 6, markTags: '[M1, M1, M1, A1, B1, B1]',
+      scenarioTitle: 'Customer Wait Times Survey', scenarioText: 'The table shows customer wait times (minutes): 0 < t ≤ 10 (freq 8), 10 < t ≤ 20 (freq 14), 20 < t ≤ 30 (freq 18), 30 < t ≤ 40 (freq 10).',
+      promptText: 'Calculate an estimate for the mean customer wait time in minutes to 1 decimal place.',
+      unit: 'mins', expectedType: 'number',
+      modelSolution: 'Midpoints: 5, 15, 25, 35. fx: (5×8) + (15×14) + (25×18) + (35×10) = 40 + 210 + 450 + 350 = 1050 [M1, M1]. Total freq = 50. Mean = 1050 ÷ 50 = 21.0 mins [M1, A1, B1]',
+      finalBenchmark: '21.0 mins'
+    },
+    {
+      num: 5, section: 'Scatter Diagrams & Correlation', isCalcAllowed: true, marks: 4, markTags: '[M1, A1, B1, B1]',
+      scenarioTitle: 'Delivery Times vs Mileage', scenarioText: 'A courier analyzes delivery distance (miles) against transit duration (hours). The data shows strong positive linear correlation.',
+      promptText: 'If a delivery route is 85 miles and the line of best fit has equation Duration = (Distance ÷ 40) + 0.5 hours, estimate the transit duration in hours.',
+      unit: 'hours', expectedType: 'number',
+      modelSolution: 'Duration = (85 ÷ 40) + 0.5 = 2.125 + 0.5 = 2.625 hours (or 2 hours 37.5 mins) [M1, A1, B1]',
+      finalBenchmark: '2.625 hours'
+    },
+    {
+      num: 6, section: 'Proportion & Best Value', isCalcAllowed: true, marks: 5, markTags: '[M1, M1, A1, B1, B1]',
+      scenarioTitle: 'Industrial Cleaning Fluid Comparison', scenarioText: 'Supplier A sells a 5-litre drum of cleaning fluid for £28.50. Supplier B sells a 12-litre drum of identical fluid for £64.80.',
+      promptText: '(a) Work out the price per litre for Supplier A.\n(b) Work out the price per litre for Supplier B.\n(c) State which supplier offers the best value for money.',
+      unit: '', expectedType: 'text',
+      parts: [
+        { id: 'a', label: 'Supplier A (£/litre)', placeholder: 'e.g. 5.70', unit: '£' },
+        { id: 'b', label: 'Supplier B (£/litre)', placeholder: 'e.g. 5.40', unit: '£' },
+        { id: 'c', label: 'Best Value', placeholder: 'Supplier A or Supplier B', unit: '' }
+      ],
+      modelSolution: 'Supplier A: £28.50 ÷ 5 = £5.70/L [M1, A1]; Supplier B: £64.80 ÷ 12 = £5.40/L [M1, A1]; Best value is Supplier B [B1]',
+      finalBenchmark: '£5.70, £5.40, Supplier B'
+    },
+    {
+      num: 7, section: 'Scale Drawings & Space Planning', isCalcAllowed: true, marks: 5, markTags: '[M1, M1, A1, B1, B1]',
+      scenarioTitle: 'Conference Room Layout', scenarioText: 'A conference room is 9 m long and 6 m wide. A scale drawing is drawn where 1 cm represents 0.75 m. An executive desk measuring 3 m by 1.5 m is placed with at least 1.5 m clearance all around.',
+      promptText: '(a) Work out the length in cm of the room on the scale drawing.\n(b) Work out the minimum room length required for the desk and clearances.',
+      unit: '', expectedType: 'text',
+      parts: [
+        { id: 'a', label: 'Drawing Length (cm)', placeholder: 'e.g. 12', unit: 'cm' },
+        { id: 'b', label: 'Required Length (m)', placeholder: 'e.g. 6.0', unit: 'm' }
+      ],
+      modelSolution: '(a) 9 ÷ 0.75 = 12 cm [M1, A1]; (b) 3 m + 1.5 m + 1.5 m = 6.0 m [M1, A1, B1]',
+      finalBenchmark: '12 cm and 6.0 m'
+    },
+    {
+      num: 8, section: 'Combined Probability', isCalcAllowed: true, marks: 5, markTags: '[M1, M1, A1, B1, B1]',
+      scenarioTitle: 'Quality Control Testing', scenarioText: 'A factory machine produces precision bolts. The probability that a bolt has a dimension defect is 0.05. Two bolts are chosen at random.',
+      promptText: 'Work out the probability that neither bolt has a dimension defect.',
+      unit: '', expectedType: 'number',
+      modelSolution: 'P(no defect) = 1 - 0.05 = 0.95. P(both no defect) = 0.95 × 0.95 = 0.9025 [M1, M1, A1, B1, B1]',
+      finalBenchmark: '0.9025'
+    }
+  ] : [
+    {
+      num: 1, section: 'Four Operations & Place Value', isCalcAllowed: false, marks: 3, markTags: '[M1, A1, B1]',
+      scenarioTitle: 'Warehouse Inventory Intake', scenarioText: 'A logistics supervisor checks three incoming shipments of component boxes: 324 boxes on Monday, 189 boxes on Tuesday, and 65 boxes returned on Wednesday.',
+      promptText: 'Work out the net total number of component boxes in stock (324 + 189 - 65) without a calculator.',
+      unit: 'boxes', expectedType: 'number',
+      modelSolution: '324 + 189 = 513 boxes [M1]; 513 - 65 = 448 boxes [A1, B1]',
+      finalBenchmark: '448 boxes'
+    },
+    {
+      num: 2, section: 'Money & Decimals Arithmetic', isCalcAllowed: false, marks: 4, markTags: '[M1, A1, M1, A1]',
+      scenarioTitle: 'Workplace Supplies Order', scenarioText: 'An office administrator buys 6 printer ink packs costing £4.50 each. A discount voucher reduces the bill by £7.25.',
+      promptText: 'Work out the total amount paid after the discount voucher is applied.',
+      unit: '£', expectedType: 'number',
+      modelSolution: '6 × £4.50 = £27.00 [M1, A1]; £27.00 - £7.25 = £19.75 [M1, A1]',
+      finalBenchmark: '£19.75'
+    },
+    {
+      num: 3, section: 'Fractions & Percentages of Amounts', isCalcAllowed: false, marks: 3, markTags: '[M1, A1, B1]',
+      scenarioTitle: 'Departmental Budget Allocation', scenarioText: 'A facilities team has a discretionary maintenance fund of £480. 25% of this fund is earmarked for safety equipment.',
+      promptText: 'Work out 25% of £480 without a calculator.',
+      unit: '£', expectedType: 'number',
+      modelSolution: '25% = 1/4; £480 ÷ 4 = £120 [M1, A1, B1]',
+      finalBenchmark: '£120'
+    },
+    {
+      num: 4, section: 'Perimeter & Simple Shapes', isCalcAllowed: false, marks: 4, markTags: '[M1, A1, M1, A1]',
+      scenarioTitle: 'Fencing a Rectangular Yard', scenarioText: 'A storage compound yard is rectangular, measuring 14 metres long and 8 metres wide. Fencing wire costs £3 per metre.',
+      promptText: '(a) Work out the total perimeter of the yard in metres.\n(b) Work out the total cost to fence the full perimeter.',
+      unit: '', expectedType: 'text',
+      parts: [
+        { id: 'a', label: 'Perimeter (m)', placeholder: 'e.g. 44', unit: 'm' },
+        { id: 'b', label: 'Total Cost (£)', placeholder: 'e.g. 132', unit: '£' }
+      ],
+      modelSolution: '(a) Perimeter = 2 × (14 + 8) = 44 m [M1, A1]; (b) Cost = 44 × £3 = £132 [M1, A1]',
+      finalBenchmark: '44 m and £132'
+    }
+  ];
+
+  const paperObj = {
+    title: `${boardName} Functional Skills Mathematics ${levelName} — ${paperLabel}`,
+    board: boardName,
+    subject: 'maths',
+    level: levelName,
+    paperNumber: paperNum,
+    durationMinutes: sec1Duration + sec2Duration,
+    pdfUrl: '',
+    modelSolutionPdf: '',
+    videoSolutionSlug: '',
+    sections: [
+      {
+        id: 'A',
+        name: sec1Name,
+        code: `${boardName.substring(0,3).toUpperCase()}MAT${isL2 ? '2' : '1'}/N01`,
+        durationMinutes: sec1Duration,
+        totalMarks: sec1Marks,
+        isCalcAllowed: false,
+        questions: sec1Questions
+      },
+      {
+        id: 'B',
+        name: sec2Name,
+        code: `${boardName.substring(0,3).toUpperCase()}MAT${isL2 ? '2' : '1'}/C01`,
+        durationMinutes: sec2Duration,
+        totalMarks: sec2Marks,
+        isCalcAllowed: true,
+        questions: sec2Questions
+      }
+    ]
+  };
+  MFS_MOCK_DATA[key] = paperObj;
+  return paperObj;
 }
-
 
 function getPaperSections(paper) {
   if (paper.sections && Array.isArray(paper.sections) && paper.sections.length > 0) {
@@ -5104,23 +5368,33 @@ function saveCurrentSectionTimer() {
 // Initialise Simulator from Query Parameters or Default
 document.addEventListener('DOMContentLoaded', () => {
   const urlParams = new URLSearchParams(window.location.search);
-  const board = urlParams.get('board') || 'edexcel';
-  const subject = urlParams.get('subject') || 'maths';
-  const level = urlParams.get('level') || 'l1';
-  const paper = urlParams.get('paper') || '1';
+  const board = (urlParams.get('board') || 'edexcel').toLowerCase();
+  const subject = (urlParams.get('subject') || 'maths').toLowerCase();
+  const level = (urlParams.get('level') || 'l1').toLowerCase();
+  const paper = (urlParams.get('paper') || '1').toLowerCase();
+
+  // If Digital Functional Skills requested, redirect to dedicated player
+  if (subject === 'digital' || board === 'dfs' || urlParams.get('paper') === 'dfs-mock') {
+    window.location.href = 'digital-functional-skills-mock-exam.html';
+    return;
+  }
 
   let key = `${board}-${subject}-${level}-paper-${paper}`;
-  if (paper.startsWith('practice')) {
+  if (paper.startsWith('practice') || paper.startsWith('sample') || paper.includes('-') || paper.includes('specimen')) {
     key = `${board}-${subject}-${level}-${paper}`;
   }
 
   // Normalise subject alias
-  if (subject === 'english' || subject === 'writing') {
+  if (subject === 'english' || subject === 'writing' || subject.includes('writing')) {
     key = `${board}-english-writing-${level}-paper-${paper}`;
-    if (paper.startsWith('practice')) key = `${board}-english-writing-${level}-${paper}`;
-  } else if (subject === 'reading') {
+    if (paper.startsWith('practice') || paper.startsWith('sample') || paper.includes('-') || paper.includes('specimen')) {
+      key = `${board}-english-writing-${level}-${paper}`;
+    }
+  } else if (subject === 'reading' || subject.includes('reading')) {
     key = `${board}-english-reading-${level}-paper-${paper}`;
-    if (paper.startsWith('practice')) key = `${board}-english-reading-${level}-${paper}`;
+    if (paper.startsWith('practice') || paper.startsWith('sample') || paper.includes('-') || paper.includes('specimen')) {
+      key = `${board}-english-reading-${level}-${paper}`;
+    }
   }
 
   simCurrentPaperKey = key;
@@ -5188,6 +5462,10 @@ function loadPaper(paperKey) {
 }
 
 function handlePaperChange(newKey) {
+  if (newKey === 'dfs-mock') {
+    window.location.href = 'digital-functional-skills-mock-exam.html';
+    return;
+  }
   loadPaper(newKey);
 }
 
@@ -6655,6 +6933,25 @@ document.addEventListener('fullscreenchange', () => {
       fsBtn.innerHTML = '<i class="fa-solid fa-expand"></i> <span>Fill Screen</span>';
     }
   }
+});
+
+// Double-click on empty / non-writing spaces to toggle Full Screen or Normal Screen
+document.addEventListener('dblclick', (e) => {
+  const shell = document.getElementById('simAppShell');
+  if (!shell || !shell.contains(e.target)) return;
+
+  // Never toggle fullscreen if double-clicking inside interactive elements, form fields, text inputs, textareas, buttons, selectors, links, or calculator
+  if (e.target.closest('textarea, input, button, select, a, label, .sim-calc-drawer, .sim-calc-keypad, [contenteditable="true"], .sim-sym-btn, .sim-template-btn, .sim-nav-btn, .sim-font-btn, .sim-modal, .sim-modal-content, .sim-candidate-modal')) {
+    return;
+  }
+
+  // Prevent accidental toggles when double-clicking to select words in question prompts, scenarios, or reading source passages
+  const selection = window.getSelection ? window.getSelection().toString().trim() : '';
+  if (selection.length > 0 && e.target.closest('.sim-q-prompt-text, #simScenarioText, .sim-source-content-card, #simReadingScenarioText, #simReadingPromptText, p, span, h1, h2, h3, h4')) {
+    return;
+  }
+
+  toggleSimFullscreen();
 });
 
 // Universal Modal Closer & Focus Manager

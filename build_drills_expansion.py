@@ -1,0 +1,1320 @@
+#!/usr/bin/env python3
+"""
+Master Functional Skills (MFS) - DFS Drills Expansion Dataset Generator
+Author: Abdul (MFS Pedagogical Systems)
+Generates 117 authentic, curriculum-aligned fluency drill questions (3 per topic)
+Doubles the fluency drill count from 3 to 6 per topic across all 39 DFS topics.
+"""
+
+import os
+import json
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+OUTPUT_FILE = os.path.join(BASE_DIR, "dfs_drills_expansion.py")
+
+# We will author the dictionary mapping each slug to 3 rich drills.
+
+ENTRY_3_EXTRA_DRILLS = {
+    "e3-hardware-software-devices": [
+        {
+            "question": "Which of the following components is primarily used to store files and data permanently, even when the computer is turned off?",
+            "options": [
+                {"text": "Random Access Memory (RAM)", "correct": False},
+                {"text": "Hard Disk Drive or SSD", "correct": True},
+                {"text": "Computer Monitor", "correct": False},
+                {"text": "Central Processing Unit (CPU)", "correct": False}
+            ],
+            "explanation": "A Hard Disk Drive (HDD) or Solid State Drive (SSD) provides non-volatile permanent storage for documents and operating system files. RAM only holds data temporarily while the power is on."
+        },
+        {
+            "question": "Which one of the following is an example of an Operating System rather than an application?",
+            "options": [
+                {"text": "Microsoft Word", "correct": False},
+                {"text": "Microsoft Windows 11", "correct": True},
+                {"text": "Google Chrome Browser", "correct": False},
+                {"text": "Adobe Acrobat Reader", "correct": False}
+            ],
+            "explanation": "Microsoft Windows 11 is an operating system that manages the computer hardware and software resources. Word, Chrome, and Acrobat are applications that run on top of an operating system."
+        },
+        {
+            "question": "A clinic self-service kiosk allows patients to tap the screen to check in and displays their room number. What type of device is the touchscreen?",
+            "options": [
+                {"text": "Input device only", "correct": False},
+                {"text": "Output device only", "correct": False},
+                {"text": "Both an Input and an Output device", "correct": True},
+                {"text": "A network storage device", "correct": False}
+            ],
+            "explanation": "A touchscreen serves as an input device when a patient touches buttons on the screen, and as an output device when it visually displays text, confirmations, and queue directions."
+        }
+    ],
+
+    "e3-device-controls-navigation": [
+        {
+            "question": "When you need to step away from your workstation for lunch or a meeting, what is the quickest and most secure action to protect patient or customer data?",
+            "options": [
+                {"text": "Turn off the monitor screen only", "correct": False},
+                {"text": "Lock the workstation (e.g. Windows Key + L)", "correct": True},
+                {"text": "Close all open browser tabs and leave the computer on", "correct": False},
+                {"text": "Unplug the keyboard and mouse", "correct": False}
+            ],
+            "explanation": "Locking the screen immediately protects confidential workplace data from unauthorized viewing while keeping all open programs and working documents securely open in the background."
+        },
+        {
+            "question": "You minimise an open word processing document. Where does it go so you can reopen it with a single click?",
+            "options": [
+                {"text": "To the Recycle Bin", "correct": False},
+                {"text": "To the Taskbar at the bottom of the screen", "correct": True},
+                {"text": "It is permanently closed and must be re-launched", "correct": False},
+                {"text": "To the printer queue", "correct": False}
+            ],
+            "explanation": "Minimising a window shrinks it down to an icon on the Taskbar at the bottom of the screen without closing the application, allowing you to restore it instantly."
+        },
+        {
+            "question": "What is the recommended procedure when shutting down a computer at the end of the working day?",
+            "options": [
+                {"text": "Switch off the main wall socket immediately", "correct": False},
+                {"text": "Press and hold the physical power button for 10 seconds", "correct": False},
+                {"text": "Save all open files, close programs, and select 'Shut down' from the Start menu", "correct": True},
+                {"text": "Leave all files unsaved and close the laptop lid", "correct": False}
+            ],
+            "explanation": "Selecting 'Shut down' from the Start menu allows the operating system to safely save system states, close active background processes, and prevent file corruption."
+        }
+    ],
+
+    "e3-connecting-wifi-bluetooth": [
+        {
+            "question": "What does a padlock icon next to a Wi-Fi network name in your device settings indicate?",
+            "options": [
+                {"text": "The Wi-Fi network is broken and cannot be used", "correct": False},
+                {"text": "The network is secured with a password / encryption key", "correct": True},
+                {"text": "The network is only available for staff with wired cables", "correct": False},
+                {"text": "The network has no internet connection", "correct": False}
+            ],
+            "explanation": "A padlock icon signifies a secure, encrypted Wi-Fi network that requires an authorized password or security key to connect, protecting transmitted data from basic eavesdropping."
+        },
+        {
+            "question": "When pairing a wireless Bluetooth barcode scanner or mouse to a laptop for the first time, what must you do first on the peripheral device?",
+            "options": [
+                {"text": "Put the device into 'Pairing' or 'Discovery' mode", "correct": True},
+                {"text": "Format the laptop hard drive", "correct": False},
+                {"text": "Connect an Ethernet cable to the wall socket", "correct": False},
+                {"text": "Restart the office broadband router", "correct": False}
+            ],
+            "explanation": "Wireless Bluetooth devices must be placed into pairing/discovery mode (often by holding down the power or connect button until an LED flashes) so the computer can detect and connect to them."
+        },
+        {
+            "question": "Why does enabling 'Airplane Mode' prevent a tablet from printing to an office wireless printer?",
+            "options": [
+                {"text": "It disables all wireless communications, including Wi-Fi and Bluetooth", "correct": True},
+                {"text": "It turns off the tablet battery completely", "correct": False},
+                {"text": "It uninstalls the printer software drivers", "correct": False},
+                {"text": "It encrypts all documents so they cannot be printed", "correct": False}
+            ],
+            "explanation": "Airplane Mode turns off all wireless transmitters (Wi-Fi, Bluetooth, cellular), severing any connection to wireless printers, internet routers, or peripheral devices."
+        }
+    ],
+
+    "e3-accessibility-display-settings": [
+        {
+            "question": "A worker with visual impairment has difficulty reading small text across multiple software applications. What built-in operating system tool should they use?",
+            "options": [
+                {"text": "Magnifier / Display Text Scaling", "correct": True},
+                {"text": "Disk Defragmenter", "correct": False},
+                {"text": "Task Manager", "correct": False},
+                {"text": "Device Manager", "correct": False}
+            ],
+            "explanation": "The built-in Magnifier tool or display text scaling settings enlarge portions of the screen or increase overall text size system-wide without changing document underlying data."
+        },
+        {
+            "question": "If an administrative staff member struggles with hand tremors when using a computer mouse, which setting in Windows Settings can help?",
+            "options": [
+                {"text": "Adjusting mouse pointer speed and double-click sensitivity", "correct": True},
+                {"text": "Changing the desktop background wallpaper", "correct": False},
+                {"text": "Increasing screen resolution to 4K", "correct": False},
+                {"text": "Turning on Airplane Mode", "correct": False}
+            ],
+            "explanation": "Accessibility settings allow users to adjust mouse pointer speed, increase cursor size, and slow down the required double-click speed to make navigation easier and more reliable."
+        },
+        {
+            "question": "What is the primary benefit of enabling 'High Contrast' mode on an office computer?",
+            "options": [
+                {"text": "It makes documents look more colorful for marketing", "correct": False},
+                {"text": "It enhances distinction between text and background, making it easier to read", "correct": True},
+                {"text": "It speeds up the computer's processor", "correct": False},
+                {"text": "It automatically corrects spelling mistakes", "correct": False}
+            ],
+            "explanation": "High Contrast mode uses distinct color combinations (such as white text on pure black, or yellow on black) to reduce eye strain and make items clearly distinguishable for users with low vision or dyslexia."
+        }
+    ],
+
+    "e3-organising-files-folders": [
+        {
+            "question": "You need to select five non-consecutive files from a long list in File Explorer. Which keyboard key should you hold while clicking each file?",
+            "options": [
+                {"text": "Shift key", "correct": False},
+                {"text": "Ctrl key", "correct": True},
+                {"text": "Alt key", "correct": False},
+                {"text": "Tab key", "correct": False}
+            ],
+            "explanation": "Holding down the 'Ctrl' key allows you to click and select multiple individual files that are not adjacent to each other. The 'Shift' key selects all files in a continuous block between two points."
+        },
+        {
+            "question": "You accidentally delete a client spreadsheet from your local Documents folder. How can you recover it quickly?",
+            "options": [
+                {"text": "Open the Recycle Bin, right-click the file, and choose 'Restore'", "correct": True},
+                {"text": "Re-install the operating system", "correct": False},
+                {"text": "Search for the file on Google", "correct": False},
+                {"text": "Create a new folder with the same name", "correct": False}
+            ],
+            "explanation": "Locally deleted files are moved to the Recycle Bin. Opening the Recycle Bin, right-clicking the deleted item, and selecting 'Restore' returns it to its original folder immediately."
+        },
+        {
+            "question": "Which of the following folder names best follows professional file organisation best practice?",
+            "options": [
+                {"text": "New Folder (3)", "correct": False},
+                {"text": "Stuff to sort later", "correct": False},
+                {"text": "Staff_Training_Records_2026", "correct": True},
+                {"text": "Misc Files 999", "correct": False}
+            ],
+            "explanation": "Descriptive, standardized folder names that identify the topic ('Staff Training Records') and the year ('2026') make it easy for team members to locate records quickly without confusion."
+        }
+    ],
+
+    "e3-searching-files-local-cloud": [
+        {
+            "question": "You know you saved an important PDF document last month, but cannot remember the full title. What search term in File Explorer will find all PDF files?",
+            "options": [
+                {"text": "*.pdf", "correct": True},
+                {"text": "find_all_docs", "correct": False},
+                {"text": "#document", "correct": False},
+                {"text": "open:pdf", "correct": False}
+            ],
+            "explanation": "Typing '*.pdf' into the search box uses the asterisk wildcard to search for any filename ending with the '.pdf' extension, instantly listing all PDF files in that folder or drive."
+        },
+        {
+            "question": "You search for 'Meeting Notes' and get 25 results. How can you quickly arrange them so the most recently updated notes appear at the top?",
+            "options": [
+                {"text": "Sort by 'Name' ascending", "correct": False},
+                {"text": "Sort by 'Date modified' descending (newest to oldest)", "correct": True},
+                {"text": "Sort by 'File size' smallest to largest", "correct": False},
+                {"text": "Rename all 25 files", "correct": False}
+            ],
+            "explanation": "Clicking the 'Date modified' column header sorts files chronologically, allowing you to see the latest saved versions at the very top of the list."
+        },
+        {
+            "question": "In a cloud storage folder (such as OneDrive or Google Drive), what does a green circle with a white checkmark next to a file indicate?",
+            "options": [
+                {"text": "The file is corrupt and cannot be opened", "correct": False},
+                {"text": "The file is fully downloaded and available locally on this device", "correct": True},
+                {"text": "The file has been permanently deleted from the cloud", "correct": False},
+                {"text": "The file is currently being edited by someone else", "correct": False}
+            ],
+            "explanation": "A solid green checkmark icon indicates that the file is synced and stored locally on your device's hard drive as well as in the cloud, so it can be opened even when offline."
+        }
+    ],
+
+    "e3-word-processing-basics": [
+        {
+            "question": "You accidentally highlight and delete two paragraphs of text while drafting a report. What is the quickest way to restore the deleted text?",
+            "options": [
+                {"text": "Press Ctrl + Z (Undo)", "correct": True},
+                {"text": "Press Ctrl + S (Save)", "correct": False},
+                {"text": "Close the program without saving and restart the computer", "correct": False},
+                {"text": "Press Ctrl + P (Print)", "correct": False}
+            ],
+            "explanation": "The keyboard shortcut Ctrl + Z (or clicking the curved Undo arrow on the toolbar) immediately reverses the last action and restores the accidentally deleted text."
+        },
+        {
+            "question": "In a professional business letter, which font size is standard and recommended for the main body paragraphs?",
+            "options": [
+                {"text": "6 pt or 8 pt", "correct": False},
+                {"text": "11 pt or 12 pt", "correct": True},
+                {"text": "24 pt or 28 pt", "correct": False},
+                {"text": "48 pt", "correct": False}
+            ],
+            "explanation": "Standard business typography recommendations use 11 pt or 12 pt for body text. Fonts smaller than 10 pt are difficult to read, while 24 pt and larger are reserved for headings and posters."
+        },
+        {
+            "question": "You are editing an existing company policy document and want to keep the original copy unchanged while creating an updated version. What command should you use?",
+            "options": [
+                {"text": "Save (Ctrl + S)", "correct": False},
+                {"text": "Save As", "correct": True},
+                {"text": "Export to Audio", "correct": False},
+                {"text": "Print Preview", "correct": False}
+            ],
+            "explanation": "'Save As' prompts you to choose a new filename and storage location, creating an updated separate copy while leaving the original master document completely untouched."
+        }
+    ],
+
+    "e3-formatting-aligning-bullets": [
+        {
+            "question": "When writing step-by-step instructions on how to use a digital thermometer, which formatting tool should you choose?",
+            "options": [
+                {"text": "A numbered list (1, 2, 3...)", "correct": True},
+                {"text": "Random decorative bullet shapes", "correct": False},
+                {"text": "Center-aligned paragraphs without punctuation", "correct": False},
+                {"text": "All text set in bold italics", "correct": False}
+            ],
+            "explanation": "Numbered lists are specifically used when items must be followed in a strict sequential order (Step 1, Step 2, Step 3). Bullet points are used for unordered lists."
+        },
+        {
+            "question": "To improve readability for colleagues with visual fatigue or dyslexia, what line spacing adjustment is recommended?",
+            "options": [
+                {"text": "Tight single spacing (0.8 lines)", "correct": False},
+                {"text": "1.15 to 1.5 line spacing with clear paragraph spacing", "correct": True},
+                {"text": "Triple spacing (3.0 lines) on every paragraph", "correct": False},
+                {"text": "Zero spacing between words", "correct": False}
+            ],
+            "explanation": "Setting line spacing to 1.15 or 1.5 lines provides comfortable breathing space between lines of text, preventing lines from running together and greatly assisting dyslexic readers."
+        },
+        {
+            "question": "Why is left-aligned text (ragged right) preferred over full justification in standard functional workplace documents?",
+            "options": [
+                {"text": "It creates an even left margin without irregular gaps between words", "correct": True},
+                {"text": "It cuts ink usage in half", "correct": False},
+                {"text": "Justified text cannot be printed", "correct": False},
+                {"text": "Left alignment automatically translates text to French", "correct": False}
+            ],
+            "explanation": "Left alignment maintains consistent spacing between letters and words. Full justification can create uneven white spaces ('rivers of white') that make text harder to read."
+        }
+    ],
+
+    "e3-combining-images-text": [
+        {
+            "question": "When resizing an image of an organisation logo in a document, how do you prevent the logo from becoming squashed or distorted?",
+            "options": [
+                {"text": "Drag the corner handles while maintaining aspect ratio (or hold Shift)", "correct": True},
+                {"text": "Drag only the middle top handle upwards", "correct": False},
+                {"text": "Drag only the middle side handle inwards", "correct": False},
+                {"text": "Double-click the center of the image rapidly", "correct": False}
+            ],
+            "explanation": "Dragging the corner sizing handles scales both width and height proportionally, preserving the image's original aspect ratio without distortion."
+        },
+        {
+            "question": "You insert a photo into an information leaflet, but it pushes all the text down leaving large blank gaps. What setting should you adjust?",
+            "options": [
+                {"text": "Text Wrap (change to 'Square' or 'Tight')", "correct": True},
+                {"text": "Change font to Comic Sans", "correct": False},
+                {"text": "Delete all the text", "correct": False},
+                {"text": "Turn up the screen brightness", "correct": False}
+            ],
+            "explanation": "Changing Text Wrap from 'In line with text' to 'Square' or 'Tight' allows sentences to flow smoothly around the borders of the image, producing a professional layout."
+        },
+        {
+            "question": "What is the purpose of adding 'Alt Text' (Alternative Text) to an image on a company web page or digital bulletin?",
+            "options": [
+                {"text": "To describe the image content for people using screen readers", "correct": True},
+                {"text": "To change the colors of the image automatically", "correct": False},
+                {"text": "To hide the image from search engines", "correct": False},
+                {"text": "To compress the image into a zip file", "correct": False}
+            ],
+            "explanation": "Alt Text provides a concise text description of the image that screen reader software reads aloud to visually impaired users, satisfying accessibility regulations."
+        }
+    ],
+
+    "e3-spellcheck-proofing-saving": [
+        {
+            "question": "A red wavy line appears under the name of a medical staff member 'Dr Al-Sayed'. What does this red underline indicate?",
+            "options": [
+                {"text": "The computer has detected a potential spelling error or unrecognized word", "correct": True},
+                {"text": "The file has failed to save to disk", "correct": False},
+                {"text": "The word will be printed in red ink", "correct": False},
+                {"text": "The document contains a computer virus", "correct": False}
+            ],
+            "explanation": "A red wavy line indicates that the word does not appear in the word processor's built-in dictionary. If the name is spelled correctly, you can choose 'Ignore All' or 'Add to Dictionary'."
+        },
+        {
+            "question": "Which of the following sentences contains a homophone error that an automated spellcheck might fail to catch?",
+            "options": [
+                {"text": "The manager asked for *there* attendance report.", "correct": True},
+                {"text": "The manager asked for their attendance report.", "correct": False},
+                {"text": "The manager requested the attendance report today.", "correct": False},
+                {"text": "The team submitted their reports on time.", "correct": False}
+            ],
+            "explanation": "Using 'there' instead of 'their' is a grammatical homophone error. Because 'there' is spelled correctly, basic spellcheckers often overlook it, making human proofreading essential."
+        },
+        {
+            "question": "What keyboard shortcut should you press frequently while typing a long report to save your progress instantly?",
+            "options": [
+                {"text": "Ctrl + S", "correct": True},
+                {"text": "Ctrl + P", "correct": False},
+                {"text": "Ctrl + X", "correct": False},
+                {"text": "Alt + F4", "correct": False}
+            ],
+            "explanation": "Ctrl + S is the universal keyboard shortcut to save the active document. Regularly pressing Ctrl + S ensures your latest work is safely written to disk in case of power failure."
+        }
+    ],
+
+    "e3-spreadsheets-simple-data": [
+        {
+            "question": "In a spreadsheet, what does the cell reference 'C7' represent?",
+            "options": [
+                {"text": "The intersection of Column C and Row 7", "correct": True},
+                {"text": "The total value of 7 items multiplied by 3", "correct": False},
+                {"text": "The 7th worksheet in workbook C", "correct": False},
+                {"text": "A formula to calculate percentage", "correct": False}
+            ],
+            "explanation": "In spreadsheet grids, columns are labeled with letters (A, B, C...) and rows are numbered (1, 2, 3...). 'C7' specifies the cell at Column C, Row 7."
+        },
+        {
+            "question": "When entering financial numbers (such as cost prices) into an Excel spreadsheet, what is the best practice?",
+            "options": [
+                {"text": "Type just the plain numbers and apply 'Currency' cell formatting", "correct": True},
+                {"text": "Manually type '£', commas, and words like 'pounds' into every cell", "correct": False},
+                {"text": "Write the amounts in words only", "correct": False},
+                {"text": "Highlight the numbers in bright yellow marker", "correct": False}
+            ],
+            "explanation": "Typing plain numbers (e.g. 45.50) and applying Currency formatting allows spreadsheet formulas (=SUM, =AVERAGE) to calculate correctly. Typing letters or manual symbols can cause calculation errors."
+        },
+        {
+            "question": "Which tool on the spreadsheet ribbon can automatically sum a whole vertical column of figures without typing out a long formula?",
+            "options": [
+                {"text": "AutoSum (the Greek Sigma symbol Σ)", "correct": True},
+                {"text": "Spell Check", "correct": False},
+                {"text": "Find and Replace", "correct": False},
+                {"text": "Conditional Formatting", "correct": False}
+            ],
+            "explanation": "Clicking the AutoSum button (Σ) automatically detects adjacent numbers and inserts the `=SUM()` formula, calculating the column total in a single click."
+        }
+    ],
+
+    "e3-email-compose-reply-forward": [
+        {
+            "question": "A team leader emails 12 staff members with meeting details. You only want to ask the team leader a personal question. Which button should you click?",
+            "options": [
+                {"text": "Reply (to sender only)", "correct": True},
+                {"text": "Reply All", "correct": False},
+                {"text": "Forward to Everyone", "correct": False},
+                {"text": "Report Phishing", "correct": False}
+            ],
+            "explanation": "'Reply' sends your message solely to the original sender. Clicking 'Reply All' would send your private inquiry to all 12 staff members, cluttering their inboxes."
+        },
+        {
+            "question": "Which of the following email subject lines is the most professional and informative?",
+            "options": [
+                {"text": "Staff Meeting Agenda — Tuesday 18 November 2026", "correct": True},
+                {"text": "Hey check this out ASAP!!!", "correct": False},
+                {"text": "URGENT READ NOW", "correct": False},
+                {"text": "(No Subject)", "correct": False}
+            ],
+            "explanation": "A professional subject line specifies the topic and the date clearly, helping the recipient prioritize their inbox and locate the message quickly in future searches."
+        },
+        {
+            "question": "When you 'Forward' an email to a colleague, what happens to the attachments and previous thread history?",
+            "options": [
+                {"text": "The existing email body, history, and attachments are copied into the new message", "correct": True},
+                {"text": "All attachments are automatically deleted permanently", "correct": False},
+                {"text": "The sender's account is closed", "correct": False},
+                {"text": "The email is sent as an SMS text message", "correct": False}
+            ],
+            "explanation": "Forwarding copies the original email body, previous back-and-forth messages, and attached documents so the new recipient has full context of the discussion."
+        }
+    ],
+
+    "e3-email-attachments-contacts": [
+        {
+            "question": "You attempt to attach a 65 MB raw video file to an email, but the email client displays an error. Why did this occur?",
+            "options": [
+                {"text": "Most standard email servers enforce an attachment limit of 20 MB to 25 MB", "correct": True},
+                {"text": "Videos are strictly illegal to send by email", "correct": False},
+                {"text": "The computer monitor is not set to high definition", "correct": False},
+                {"text": "The recipient's screen is turned off", "correct": False}
+            ],
+            "explanation": "Standard email services (Outlook, Gmail) typically restrict attachment sizes to 20 MB or 25 MB. Larger files must be shared via cloud storage links or compressed into ZIP files."
+        },
+        {
+            "question": "What is the primary benefit of saving regular work contacts into your email address book?",
+            "options": [
+                {"text": "It prevents typing errors in email addresses and allows quick auto-complete", "correct": True},
+                {"text": "It gives you free unlimited internet bandwidth", "correct": False},
+                {"text": "It stops all spam emails from arriving", "correct": False},
+                {"text": "It automatically writes email replies for you", "correct": False}
+            ],
+            "explanation": "Saving contacts prevents accidental typos in email addresses (which could send confidential data to the wrong person) and allows quick address auto-completion."
+        },
+        {
+            "question": "You receive an unexpected email from an unknown sender with an attached file named 'Invoice_Overdue.exe'. What should you do?",
+            "options": [
+                {"text": "Do not open the attachment; delete it or report it to IT security", "correct": True},
+                {"text": "Double-click it immediately to see how much money is owed", "correct": False},
+                {"text": "Forward it to all your colleagues to see if it belongs to them", "correct": False},
+                {"text": "Save it to your desktop and run it as administrator", "correct": False}
+            ],
+            "explanation": "An '.exe' file is an executable application that can install dangerous malware or ransomware when opened. Never open unexpected executable files from unknown senders."
+        }
+    ],
+
+    "e3-messaging-video-calls": [
+        {
+            "question": "During a multi-person video call on Microsoft Teams or Zoom, what should you do when someone else is presenting?",
+            "options": [
+                {"text": "Mute your microphone to eliminate background noise and echo", "correct": True},
+                {"text": "Leave your microphone unmuted and play music in the background", "correct": False},
+                {"text": "Turn off your Wi-Fi router", "correct": False},
+                {"text": "Repeatedly click the share screen button", "correct": False}
+            ],
+            "explanation": "Muting your microphone while others are speaking cuts out ambient room noise, typing sounds, and echo, ensuring high audio clarity for all attendees."
+        },
+        {
+            "question": "If you wish to ask a question during a large formal company presentation without interrupting the speaker, which feature should you use?",
+            "options": [
+                {"text": "The 'Raise Hand' button or meeting chat panel", "correct": True},
+                {"text": "Unmute and speak loudly over the presenter", "correct": False},
+                {"text": "Hang up and call the presenter's mobile phone", "correct": False},
+                {"text": "Toggle your camera rapidly on and off", "correct": False}
+            ],
+            "explanation": "Using the 'Raise Hand' feature signals the host that you have a contribution, allowing them to invite you to speak at a suitable break in the presentation."
+        },
+        {
+            "question": "When attending a professional video conference from a home or shared office, why should you enable background blur?",
+            "options": [
+                {"text": "To protect privacy and prevent visual distractions behind you", "correct": True},
+                {"text": "To make the video stream download faster", "correct": False},
+                {"text": "To hide your face from the camera", "correct": False},
+                {"text": "To improve computer battery life", "correct": False}
+            ],
+            "explanation": "Background blur conceals personal domestic environments, passersby, and confidential notices on walls, maintaining privacy and professional meeting standards."
+        }
+    ],
+
+    "e3-online-forms-account-setup": [
+        {
+            "question": "When registering for an online government or vocational training portal, what does a red asterisk (*) next to a field name mean?",
+            "options": [
+                {"text": "The field is mandatory and must be completed to submit the form", "correct": True},
+                {"text": "The field is optional and can be skipped", "correct": False},
+                {"text": "The information in this field will be published publicly", "correct": False},
+                {"text": "The system will delete the text entered in this field", "correct": False}
+            ],
+            "explanation": "In web forms, a red asterisk universally denotes a required (mandatory) field. If left blank, form validation will prevent submission and highlight the missing field in red."
+        },
+        {
+            "question": "When creating a new password on an account registration form, which of the following represents the strongest password choice?",
+            "options": [
+                {"text": "Blue78Falcon#River2026", "correct": True},
+                {"text": "password123", "correct": False},
+                {"text": "Admin2024", "correct": False},
+                {"text": "12345678", "correct": False}
+            ],
+            "explanation": "'Blue78Falcon#River2026' uses the recommended three-to-four random word method combined with numbers and symbols, making it extremely difficult for automated brute-force attacks to crack."
+        },
+        {
+            "question": "What is the purpose of a CAPTCHA challenge (such as selecting images containing traffic lights) before submitting a form?",
+            "options": [
+                {"text": "To verify that the form is being submitted by a human rather than an automated bot", "correct": True},
+                {"text": "To test the user's driving knowledge", "correct": False},
+                {"text": "To speed up internet connection speed", "correct": False},
+                {"text": "To charge a payment processing fee", "correct": False}
+            ],
+            "explanation": "CAPTCHA stands for Completely Automated Public Turing test to tell Computers and Humans Apart. It blocks automated spam bots from flooding online databases with fake registrations."
+        }
+    ],
+
+    "e3-online-shopping-booking": [
+        {
+            "question": "Before entering payment card details on an online shopping or booking site, which security indicator should you always verify in the browser address bar?",
+            "options": [
+                {"text": "A padlock icon and 'https://' at the start of the website address", "correct": True},
+                {"text": "A flashing red banner advertising 90% discounts", "correct": False},
+                {"text": "A countdown timer urging you to pay within 60 seconds", "correct": False},
+                {"text": "A pop-up message asking for your email password", "correct": False}
+            ],
+            "explanation": "The padlock icon and 'https://' indicate that the connection is encrypted using SSL/TLS, preventing third parties from intercepting payment card data during transmission."
+        },
+        {
+            "question": "After completing a train ticket booking online, what evidence should you check for to confirm the transaction was successful?",
+            "options": [
+                {"text": "A booking confirmation screen displaying a reference code and a confirmation email", "correct": True},
+                {"text": "A blank white web browser window", "correct": False},
+                {"text": "A pop-up asking you to install a new media player", "correct": False},
+                {"text": "A warning from your computer antivirus", "correct": False}
+            ],
+            "explanation": "Reputable booking systems always provide an on-screen reference booking number and simultaneously dispatch a confirmation receipt to your registered email address."
+        },
+        {
+            "question": "When comparing two online vendors selling the same office supplies, how can you spot a potentially fraudulent website?",
+            "options": [
+                {"text": "Prices are suspiciously 80% below market rate and payment is only accepted via direct bank transfer or crypto", "correct": True},
+                {"text": "The vendor accepts major credit cards and has verifiable contact details", "correct": False},
+                {"text": "The site provides clear UK returns policy and company registration details", "correct": False},
+                {"text": "The website uses clean, professional grammar and https encryption", "correct": False}
+            ],
+            "explanation": "Unrealistic low prices coupled with demands for non-reversible payment methods (gift cards, crypto, direct bank transfers) without credit card buyer protection are classic hallmarks of scam websites."
+        }
+    ],
+
+    "e3-passwords-privacy-scams": [
+        {
+            "question": "You receive a text message stating: 'Your parcel could not be delivered. Click this link immediately to pay £1.50 fee or parcel will be returned.' What type of attack is this?",
+            "options": [
+                {"text": "A Smishing (SMS phishing) scam designed to steal your bank card details", "correct": True},
+                {"text": "A routine notification from your phone manufacturer", "correct": False},
+                {"text": "An operating system update alert", "correct": False},
+                {"text": "A legitimate delivery request that you should pay immediately", "correct": False}
+            ],
+            "explanation": "Delivery fee scam messages sent via SMS are known as Smishing. They rely on artificial urgency and small sums to trick victims into entering bank card numbers on fake spoofed websites."
+        },
+        {
+            "question": "A caller claiming to be from your bank's fraud team calls and asks you to read aloud the 6-digit one-time passcode (OTP) just sent to your phone. What should you do?",
+            "options": [
+                {"text": "Refuse and hang up; banks explicitly warn never to share one-time security codes", "correct": True},
+                {"text": "Read the code immediately to help the fraud team", "correct": False},
+                {"text": "Give them your full card PIN number as well", "correct": False},
+                {"text": "Ask them to hold while you transfer all your savings into their account", "correct": False}
+            ],
+            "explanation": "One-time passcodes (OTPs) are for your personal use only to authorise transactions. Legitimate bank staff will never ask you to reveal or read back an OTP code over the phone."
+        },
+        {
+            "question": "Why is it dangerous to use the same password across multiple online accounts (such as email, banking, and shopping)?",
+            "options": [
+                {"text": "If one website suffers a data breach, criminals can use your password to compromise all your other accounts", "correct": True},
+                {"text": "It uses up too much computer hard drive space", "correct": False},
+                {"text": "The computer monitor will lock permanently", "correct": False},
+                {"text": "It slows down your broadband download speed", "correct": False}
+            ],
+            "explanation": "Credential stuffing attacks occur when hackers steal leaked password lists from one compromised site and automate login attempts across hundreds of other services (banks, emails, social media)."
+        }
+    ],
+
+    "e3-digital-wellbeing-posture": [
+        {
+            "question": "According to ergonomic guidelines, what is the '20-20-20 rule' recommended to prevent digital eye strain?",
+            "options": [
+                {"text": "Every 20 minutes, look at an object at least 20 feet away for at least 20 seconds", "correct": True},
+                {"text": "Work for 20 hours, take 20 minutes break, drink 20 glasses of water", "correct": False},
+                {"text": "Blink 20 times every 20 seconds at 20% brightness", "correct": False},
+                {"text": "Keep your computer monitor 20 inches from the ceiling", "correct": False}
+            ],
+            "explanation": "The 20-20-20 rule allows the ciliary muscles in your eyes to relax by shifting focus to a distant object (20 feet) for 20 seconds every 20 minutes of continuous screen use."
+        },
+        {
+            "question": "How should an office workstation chair and computer monitor be positioned to support healthy posture?",
+            "options": [
+                {"text": "Feet flat on the floor, thighs parallel to ground, top of monitor at eye level", "correct": True},
+                {"text": "Slouching backwards with monitor placed far to the left side", "correct": False},
+                {"text": "Looking straight up at a high ceiling-mounted screen with feet dangling", "correct": False},
+                {"text": "Sitting cross-legged on the desk surface", "correct": False}
+            ],
+            "explanation": "Proper DSE ergonomics require feet flat on the floor (or footrest), lower back supported, forearms horizontal, and the top of the monitor positioned at or slightly below eye level."
+        },
+        {
+            "question": "What is an individual's 'digital footprint'?",
+            "options": [
+                {"text": "The trail of data, search history, comments, and posts left behind when using the internet", "correct": True},
+                {"text": "The physical dimensions of a computer mouse pad", "correct": False},
+                {"text": "The amount of electricity consumed by a laptop charger", "correct": False},
+                {"text": "The brand of printer installed in the workplace", "correct": False}
+            ],
+            "explanation": "A digital footprint consists of all active and passive traces left by a user online, including public comments, social media uploads, account registrations, and browsing history."
+        }
+    ]
+}
+
+LEVEL_1_EXTRA_DRILLS = {
+    "l1-file-management-hierarchies": [
+        {
+            "question": "A staff member has a 32 GB USB drive that currently contains 28.5 GB of archived training videos. They need to save three PDF documents of 450 MB each. Will these files fit on the USB drive?",
+            "options": [
+                {"text": "Yes, because the remaining space is 3.5 GB (3,500 MB) and the new files require 1.35 GB (1,350 MB)", "correct": True},
+                {"text": "No, because 450 MB is larger than 32 GB", "correct": False},
+                {"text": "No, because USB drives can only hold video files", "correct": False},
+                {"text": "Yes, but only if all videos on the drive are deleted first", "correct": False}
+            ],
+            "explanation": "32 GB - 28.5 GB = 3.5 GB available space (~3,500 MB). Three 450 MB files equal 1,350 MB (~1.35 GB), leaving over 2 GB of free space."
+        },
+        {
+            "question": "Which of the following filenames is invalid on a Windows operating system because it contains an illegal special character?",
+            "options": [
+                {"text": "Staff_Appraisal_Report_2026.docx", "correct": False},
+                {"text": "Patient/Client_Assessment_Summary.pdf", "correct": True},
+                {"text": "Financial Summary Q3 2026.xlsx", "correct": False},
+                {"text": "Training Notes - Version 2.pptx", "correct": False}
+            ],
+            "explanation": "Forward slashes (/) and backward slashes (\\) are reserved by operating systems as path folder separators and are illegal in file names along with : * ? \" < > |."
+        },
+        {
+            "question": "What is the key functional difference between using 'Cut and Paste' (Ctrl + X then Ctrl + V) versus 'Copy and Paste' (Ctrl + C then Ctrl + V)?",
+            "options": [
+                {"text": "'Cut and Paste' moves the file to a new location, leaving no original behind; 'Copy and Paste' creates an identical duplicate", "correct": True},
+                {"text": "'Cut and Paste' deletes the file permanently without storing it anywhere", "correct": False},
+                {"text": "'Copy and Paste' shrinks the file size by 50%", "correct": False},
+                {"text": "'Cut and Paste' converts Word files into Excel spreadsheets", "correct": False}
+            ],
+            "explanation": "Cut and Paste moves the file completely from source to destination. Copy and Paste leaves the original file in its initial directory and creates a duplicate copy in the destination."
+        }
+    ],
+
+    "l1-file-compression-zipping": [
+        {
+            "question": "Why is it dangerous or problematic to edit a document directly from within a ZIP folder without clicking 'Extract All' first?",
+            "options": [
+                {"text": "The file opens in a temporary read-only state; edits and changes will not be saved back to the original archive", "correct": True},
+                {"text": "Opening an unextracted file automatically erases your computer's operating system", "correct": False},
+                {"text": "The text inside the document will be converted into binary code", "correct": False},
+                {"text": "It sends a copy of the document to all network printers", "correct": False}
+            ],
+            "explanation": "Opening files directly inside a ZIP views them in a temporary cache. Edits made without first extracting the files are saved to temp memory and lost once the window is closed."
+        },
+        {
+            "question": "An administrator needs to email 15 high-resolution event photographs totaling 85 MB. What is the standard workplace procedure to send these files efficiently?",
+            "options": [
+                {"text": "Compress the images into a single ZIP archive or upload them to secure cloud storage and share a link", "correct": True},
+                {"text": "Send 15 separate blank emails with no attachments", "correct": False},
+                {"text": "Take low-quality photos of the monitor screen using a mobile phone", "correct": False},
+                {"text": "Print all 15 images on paper and post them", "correct": False}
+            ],
+            "explanation": "Compressing into a ZIP reduces transmission overhead, or using an enterprise cloud link (OneDrive, Google Drive) avoids email attachment size limits altogether."
+        },
+        {
+            "question": "You receive a password-protected ZIP archive containing confidential payroll figures from head office. How should the sender securely convey the password to you?",
+            "options": [
+                {"text": "Via a separate communication channel (e.g. phone call or secure SMS), never in the same email", "correct": True},
+                {"text": "In the subject line of the email containing the ZIP file", "correct": False},
+                {"text": "In the email body directly below the attachment", "correct": False},
+                {"text": "Posted publicly on the organisation's social media page", "correct": False}
+            ],
+            "explanation": "Sending the password via an out-of-band separate channel (such as phone call or encrypted text) ensures that an unauthorized party intercepting the email cannot decrypt the data."
+        }
+    ],
+
+    "l1-network-connections-security": [
+        {
+            "question": "When working remotely from a public coffee shop or airport, what technology should an employee use to securely connect to company servers?",
+            "options": [
+                {"text": "A Virtual Private Network (VPN)", "correct": True},
+                {"text": "Bluetooth Tethering without security", "correct": False},
+                {"text": "Public Wi-Fi Guest Network without password", "correct": False},
+                {"text": "Incognito Browser Mode only", "correct": False}
+            ],
+            "explanation": "A VPN creates an encrypted tunnel across untrusted public networks, protecting confidential corporate data and credentials from interception by packet sniffers."
+        },
+        {
+            "question": "What is a major security danger of connecting a corporate laptop to an open, unencrypted public Wi-Fi hotspot?",
+            "options": [
+                {"text": "A Man-in-the-Middle (MitM) attacker on the same network can inspect or alter unencrypted network traffic", "correct": True},
+                {"text": "The laptop screen resolution will drop to standard definition", "correct": False},
+                {"text": "The laptop keyboard will type only capital letters", "correct": False},
+                {"text": "The operating system will instantly deactivate its license", "correct": False}
+            ],
+            "explanation": "On unencrypted open Wi-Fi, malicious actors can position themselves between the user and the router (MitM attack) to intercept sensitive session tokens, passwords, and form submissions."
+        },
+        {
+            "question": "Why should mobile devices and laptops have automatic Wi-Fi connection and public Bluetooth discovery disabled when travelling?",
+            "options": [
+                {"text": "To prevent devices from automatically joining rogue 'evil twin' networks or receiving unsolicited malware files", "correct": True},
+                {"text": "Because Bluetooth is illegal on public transport in the UK", "correct": False},
+                {"text": "To stop the laptop's clock from changing time zones", "correct": False},
+                {"text": "Because public Wi-Fi drains the device storage memory", "correct": False}
+            ],
+            "explanation": "Disabling automatic Wi-Fi auto-join stops your device from automatically connecting to spoofed rogue networks disguised as known legitimate Wi-Fi access points."
+        }
+    ],
+
+    "l1-troubleshooting-system-errors": [
+        {
+            "question": "A complex data analysis application freezes and stops responding, preventing you from clicking any menu buttons. What is the standard troubleshooting shortcut to open Task Manager?",
+            "options": [
+                {"text": "Ctrl + Shift + Esc", "correct": True},
+                {"text": "Ctrl + Alt + Delete only", "correct": False},
+                {"text": "Alt + F1", "correct": False},
+                {"text": "Windows Key + Spacebar", "correct": False}
+            ],
+            "explanation": "Ctrl + Shift + Esc immediately opens the Task Manager directly in Windows, enabling the user to identify frozen ('Not Responding') programs and select 'End Task'."
+        },
+        {
+            "question": "An office network printer displays a status of 'Offline' and print jobs are stuck in the queue. Which of the following is the first logical diagnostic step?",
+            "options": [
+                {"text": "Check that the printer is powered on and that network cables / Wi-Fi connections are secure", "correct": True},
+                {"text": "Re-install Windows operating system on all office laptops", "correct": False},
+                {"text": "Order a brand new replacement printer online immediately", "correct": False},
+                {"text": "Delete all company documents from the local hard drive", "correct": False}
+            ],
+            "explanation": "First-line IT troubleshooting always begins with physical hardware verification: checking power indicators, paper trays, ink/toner, and network cable connections."
+        },
+        {
+            "question": "When an employee tries to access an internal web portal, the browser displays old, outdated data and broken form layouts. What is the best troubleshooting fix?",
+            "options": [
+                {"text": "Clear the browser cache and temporary internet files", "correct": True},
+                {"text": "Turn off the office firewall", "correct": False},
+                {"text": "Buy a higher resolution monitor", "correct": False},
+                {"text": "Install an extra hard drive", "correct": False}
+            ],
+            "explanation": "Clearing the web browser cache removes cached outdated stylesheets and scripts, forcing the browser to download the fresh, updated versions directly from the web server."
+        }
+    ],
+
+    "l1-backups-cloud-sync": [
+        {
+            "question": "According to enterprise IT best practices, what does the '3-2-1 Backup Strategy' dictate?",
+            "options": [
+                {"text": "Keep 3 copies of data on 2 different media types, with 1 copy stored offsite or in the cloud", "correct": True},
+                {"text": "Backup data every 3 hours, for 2 days, on 1 USB drive", "correct": False},
+                {"text": "Store data on 3 computers, 2 phones, and 1 tablet", "correct": False},
+                {"text": "Save files 3 times into the same folder on the primary hard drive", "correct": False}
+            ],
+            "explanation": "The 3-2-1 rule is the industry gold standard: 3 copies of important data, stored on 2 different physical media types (e.g. SSD and cloud/NAS), with at least 1 copy offsite to survive physical disasters."
+        },
+        {
+            "question": "Two colleagues edit the same cloud spreadsheet while working offline on a train. When both reconnect to Wi-Fi, what will the cloud storage system likely do?",
+            "options": [
+                {"text": "Flag a 'Sync Conflict' and save a second copy containing the conflicting edits so neither user loses work", "correct": True},
+                {"text": "Permanently delete the entire spreadsheet without warning", "correct": False},
+                {"text": "Crash both laptops simultaneously", "correct": False},
+                {"text": "Combine all numbers into one cell", "correct": False}
+            ],
+            "explanation": "Cloud synchronization engines detect conflicting timestamps and create a conflict file (e.g. 'Document_Conflict_UserB') so an administrator can manually review and merge changes."
+        },
+        {
+            "question": "What is the main operational advantage of an 'Incremental Backup' compared to a 'Full Backup'?",
+            "options": [
+                {"text": "It only backs up data that has changed since the last backup, completing much faster and using less storage", "correct": True},
+                {"text": "It deletes all previous files to make space", "correct": False},
+                {"text": "It requires no internet connection or power to run", "correct": False},
+                {"text": "It automatically prints out physical paper copies of every spreadsheet", "correct": False}
+            ],
+            "explanation": "An incremental backup only copies newly created or modified files since the last backup run, drastically reducing network bandwidth consumption and backup runtime."
+        }
+    ],
+
+    "l1-word-processing-professional": [
+        {
+            "question": "In a 20-page workplace report, how should an employee structure section headings to allow an automated Table of Contents to be created?",
+            "options": [
+                {"text": "Apply built-in Heading Styles (e.g. Heading 1, Heading 2, Heading 3)", "correct": True},
+                {"text": "Manually make the text bold and increase font size to 18 pt", "correct": False},
+                {"text": "Underline every paragraph with red pen", "correct": False},
+                {"text": "Type the table of contents manually with series of dotted periods", "correct": False}
+            ],
+            "explanation": "Word processing tools rely on structural Heading Styles (Heading 1, Heading 2) to identify document hierarchy and dynamically generate a hyperlinked, auto-updating Table of Contents."
+        },
+        {
+            "question": "When formatting a multi-page document, why should you insert a 'Page Break' (Ctrl + Enter) rather than pressing the Enter key repeatedly?",
+            "options": [
+                {"text": "It forces the new section onto a fresh page cleanly, even if preceding paragraphs are edited or added later", "correct": True},
+                {"text": "It cuts down on paper printer ink", "correct": False},
+                {"text": "It encrypts the following page with a password", "correct": False},
+                {"text": "Repeated Enter presses are strictly blocked by antivirus software", "correct": False}
+            ],
+            "explanation": "Pressing Enter repeatedly creates blank paragraphs that shift down whenever text is added above. A Page Break cleanly splits pages without shifting following content."
+        },
+        {
+            "question": "What is the correct way to display page numbers in a formal workplace report so readers know the document is complete?",
+            "options": [
+                {"text": "Insert a dynamic Page Number field formatted as 'Page X of Y' in the footer", "correct": True},
+                {"text": "Manually type numbers '1', '2', '3' at the bottom of every page", "correct": False},
+                {"text": "Write the page numbers in pencil after printing", "correct": False},
+                {"text": "Only number the very last page", "correct": False}
+            ],
+            "explanation": "Dynamic fields like 'Page X of Y' (e.g. 'Page 3 of 12') automatically update as pages are added and immediately reveal if a page is missing from a printed or exported report."
+        }
+    ],
+
+    "l1-spreadsheet-design-formatting": [
+        {
+            "question": "A spreadsheet cell displays '###' across the entire column instead of a financial figure. What is the cause of this display issue?",
+            "options": [
+                {"text": "The column width is too narrow to display the formatted number completely", "correct": True},
+                {"text": "The computer has encountered a fatal calculation crash", "correct": False},
+                {"text": "The formula contains an illegal division by zero", "correct": False},
+                {"text": "The currency has been deleted by an administrator", "correct": False}
+            ],
+            "explanation": "When a formatted number (especially with currency or dates) exceeds the visible column width, Excel displays '###' to prevent misreading truncated digits. Double-clicking the column border resolves it."
+        },
+        {
+            "question": "When working with a massive inventory table with over 1,500 rows, how can you keep the table column headings visible while scrolling down?",
+            "options": [
+                {"text": "Use the 'Freeze Panes' (Freeze Top Row) command", "correct": True},
+                {"text": "Re-type the headings every 20 rows", "correct": False},
+                {"text": "Reduce the zoom level to 10%", "correct": False},
+                {"text": "Delete all rows that don't fit on the first screen", "correct": False}
+            ],
+            "explanation": "'Freeze Panes' locks designated rows (such as header rows) or columns in place, keeping them pinned to the top of the screen as you scroll through thousands of data records."
+        },
+        {
+            "question": "A finance manager wants all overdue invoices over 30 days old to automatically turn light red with dark red text. What spreadsheet feature should be used?",
+            "options": [
+                {"text": "Conditional Formatting", "correct": True},
+                {"text": "Sort Ascending", "correct": False},
+                {"text": "Find and Replace", "correct": False},
+                {"text": "Data Validation dropdown", "correct": False}
+            ],
+            "explanation": "Conditional Formatting automatically applies visual styling (colors, data bars, highlights) to cells that meet specified logical rules (e.g. Days_Overdue > 30)."
+        }
+    ],
+
+    "l1-spreadsheet-formulas-functions": [
+        {
+            "question": "In a spreadsheet column containing 10 employee names and 5 blank rows, which formula will count only the cells that contain text?",
+            "options": [
+                {"text": "=COUNTA(A2:A16)", "correct": True},
+                {"text": "=COUNT(A2:A16)", "correct": False},
+                {"text": "=SUM(A2:A16)", "correct": False},
+                {"text": "=AVERAGE(A2:A16)", "correct": False}
+            ],
+            "explanation": "The `=COUNTA()` function counts all non-empty cells (including text and numbers). The `=COUNT()` function counts only cells containing numerical values."
+        },
+        {
+            "question": "You enter the formula `=D5/0` in Excel. Which error code will the cell display?",
+            "options": [
+                {"text": "#DIV/0!", "correct": True},
+                {"text": "#VALUE!", "correct": False},
+                {"text": "#REF!", "correct": False},
+                {"text": "#NAME?", "correct": False}
+            ],
+            "explanation": "`#DIV/0!` indicates an attempted mathematical division by zero or by an empty cell. `#VALUE!` occurs when text is used in a math formula, and `#REF!` occurs when a referenced cell was deleted."
+        },
+        {
+            "question": "When copying a formula down a column to calculate 20% VAT using a single fixed cell `B1`, how should you write the formula in row 5?",
+            "options": [
+                {"text": "=C5 * $B$1", "correct": True},
+                {"text": "=C5 * B1", "correct": False},
+                {"text": "=C5 * B$1$", "correct": False},
+                {"text": "=C5 * &B&1", "correct": False}
+            ],
+            "explanation": "Using dollar signs (`$B$1`) creates an Absolute Cell Reference. When the formula is copied down to C6, C7, etc., the reference to B1 remains fixed and does not drift down to B2 or B3."
+        }
+    ],
+
+    "l1-data-visualisation-charts": [
+        {
+            "question": "A clinic manager needs to present monthly patient attendance figures across 12 months from January to December. Which chart type best illustrates this continuous trend over time?",
+            "options": [
+                {"text": "Line Chart", "correct": True},
+                {"text": "Pie Chart with 12 tiny slices", "correct": False},
+                {"text": "Doughnut Chart", "correct": False},
+                {"text": "Scatter plot without connection lines", "correct": False}
+            ],
+            "explanation": "Line charts are designed specifically to display continuous data and trends over regular time intervals (months, quarters, years). Pie charts with 12 slices are difficult to read and interpret."
+        },
+        {
+            "question": "When creating a chart in Functional Skills exams, what key components must be included to ensure full marks for clarity?",
+            "options": [
+                {"text": "A meaningful chart title, labeled horizontal (X) and vertical (Y) axes, and appropriate units", "correct": True},
+                {"text": "Bright neon background patterns and 3D spinning effects", "correct": False},
+                {"text": "At least 15 different font families", "correct": False},
+                {"text": "No labels so the examiner can guess the values", "correct": False}
+            ],
+            "explanation": "Mark schemes allocate marks specifically for communication clarity: a descriptive title, clearly labeled category and value axes, and clear unit indicators (e.g. 'Patients Seen', 'Cost (£)')."
+        },
+        {
+            "question": "Why is a 3D exploded pie chart generally discouraged in professional business data reporting?",
+            "options": [
+                {"text": "The 3D tilt distorts visual perspective, making front slices look artificially larger than back slices", "correct": True},
+                {"text": "3D charts cannot be displayed on LCD monitors", "correct": False},
+                {"text": "3D charts erase underlying spreadsheet numbers", "correct": False},
+                {"text": "Operating systems charge a royalty fee for 3D graphics", "correct": False}
+            ],
+            "explanation": "Perspective distortion in 3D pie charts skews perception, making slices closest to the viewer appear larger than slices in the background even if their numerical values are smaller."
+        }
+    ],
+
+    "l1-presentations-multimedia": [
+        {
+            "question": "How can a presenter ensure that the organisation logo, corporate color theme, and footer disclaimer appear consistently across all 30 slides in a slide deck?",
+            "options": [
+                {"text": "Add them to the Slide Master (Master Slide template)", "correct": True},
+                {"text": "Manually paste them onto each individual slide one by one", "correct": False},
+                {"text": "Tell the audience to imagine the logo", "correct": False},
+                {"text": "Print them onto stickers and place them on the projector screen", "correct": False}
+            ],
+            "explanation": "The Slide Master controls the default design, formatting, and background elements for the entire presentation. Any element added to the Slide Master appears on all dependent layout slides."
+        },
+        {
+            "question": "What is the recommended rule regarding animations and transitions in a formal workplace business presentation?",
+            "options": [
+                {"text": "Use simple, subtle transitions (such as Fade) and avoid loud sound effects or excessive flying animations", "correct": True},
+                {"text": "Apply a different flashy 3D transition with explosion sounds to every single bullet point", "correct": False},
+                {"text": "Make all text bounce across the screen continuously for 10 minutes", "correct": False},
+                {"text": "Never change slides during a meeting", "correct": False}
+            ],
+            "explanation": "Excessive animations and sound effects distract audiences and appear unprofessional. Subtle transitions maintain focus on the core information."
+        },
+        {
+            "question": "While delivering a presentation on a connected digital projector, which PowerPoint/Keynote feature allows the speaker to see private speaking notes and upcoming slides while the audience only sees the active slide?",
+            "options": [
+                {"text": "Presenter View", "correct": True},
+                {"text": "Slide Sorter View", "correct": False},
+                {"text": "Reading View", "correct": False},
+                {"text": "Outline View", "correct": False}
+            ],
+            "explanation": "Presenter View leverages dual monitors: the audience sees the full-screen slide on the projector, while the speaker sees private prompts, a timer, and slide previews on their laptop."
+        }
+    ],
+
+    "l1-combining-software-pdf-export": [
+        {
+            "question": "An administrator creates a financial report in Microsoft Word that includes a dynamic chart linked to an Excel workbook. What happens when the underlying Excel data is updated?",
+            "options": [
+                {"text": "The chart in Word automatically updates to reflect the latest figures when opened", "correct": True},
+                {"text": "The Word document is permanently corrupted and erased", "correct": False},
+                {"text": "The computer reboots immediately", "correct": False},
+                {"text": "The Excel file is converted into an audio podcast", "correct": False}
+            ],
+            "explanation": "Linking embedded objects (OLE) creates an active connection between files; changes in the source spreadsheet propagate directly into the linked Word report."
+        },
+        {
+            "question": "Why is exporting a finalized quotation or contract to PDF format strongly recommended before emailing it to a client?",
+            "options": [
+                {"text": "PDF preserves exact fonts, layouts, and page formatting across all operating systems and prevents easy tampering", "correct": True},
+                {"text": "PDF files cannot be opened on mobile phones", "correct": False},
+                {"text": "PDF files delete the sender's contact details for safety", "correct": False},
+                {"text": "Email systems only accept PDF attachments", "correct": False}
+            ],
+            "explanation": "PDF (Portable Document Format) locks layout, typography, and page boundaries identically across Windows, macOS, Android, and iOS, ensuring the client views an exact replica."
+        },
+        {
+            "question": "When capturing evidence of an on-screen error message for IT support, which built-in Windows utility captures clean screenshots without capturing unwanted background desks?",
+            "options": [
+                {"text": "Snipping Tool / Windows Key + Shift + S", "correct": True},
+                {"text": "Notepad", "correct": False},
+                {"text": "Disk Cleanup", "correct": False},
+                {"text": "Calculator", "correct": False}
+            ],
+            "explanation": "The Snipping Tool (or shortcut Win + Shift + S) allows users to capture a crisp rectangular selection or specific active application window to paste into support tickets."
+        }
+    ],
+
+    "l1-workplace-email-etiquette": [
+        {
+            "question": "An executive assistant is sending an announcement to 350 external conference attendees. In which field should the attendees' email addresses be entered to comply with UK GDPR data privacy?",
+            "options": [
+                {"text": "Bcc (Blind Carbon Copy)", "correct": True},
+                {"text": "Cc (Carbon Copy)", "correct": False},
+                {"text": "To field", "correct": False},
+                {"text": "Subject line", "correct": False}
+            ],
+            "explanation": "Putting recipient addresses in Bcc hides them from all other recipients. Placing 350 personal email addresses in 'To' or 'Cc' exposes private contact details to everyone, violating UK GDPR."
+        },
+        {
+            "question": "When setting up an 'Out of Office' automated email reply before going on annual leave, which information should NOT be included?",
+            "options": [
+                {"text": "Your home address, exact holiday destination, and confirmation that your house will be empty", "correct": True},
+                {"text": "The date of your return to the office", "correct": False},
+                {"text": "The name and email address of a colleague handling urgent queries in your absence", "correct": False},
+                {"text": "A statement that you will have limited access to emails", "correct": False}
+            ],
+            "explanation": "Out of office notices should provide professional handover contacts and return dates, but must never reveal sensitive personal information or domestic security details."
+        },
+        {
+            "question": "Why should employees avoid typing workplace emails entirely in CAPITAL LETTERS?",
+            "options": [
+                {"text": "In digital communication etiquette, ALL CAPS is interpreted as shouting and can be considered aggressive", "correct": True},
+                {"text": "Email servers automatically delete emails that contain capital letters", "correct": False},
+                {"text": "Capital letters increase the file size by 500%", "correct": False},
+                {"text": "Antivirus software flags all uppercase text as malware", "correct": False}
+            ],
+            "explanation": "Netiquette standard conventions dictate that words written in continuous capital letters convey shouting, anger, or rudeness, and are significantly harder to read than sentence case."
+        }
+    ],
+
+    "l1-calendar-meeting-scheduling": [
+        {
+            "question": "A department manager needs to schedule a project catch-up with five colleagues across three different branch offices. What Outlook feature shows when everyone is free before sending the invite?",
+            "options": [
+                {"text": "Scheduling Assistant / Free-Busy availability view", "correct": True},
+                {"text": "Spam filter settings", "correct": False},
+                {"text": "Quick Steps archive", "correct": False},
+                {"text": "Mailbox cleanup wizard", "correct": False}
+            ],
+            "explanation": "The Scheduling Assistant visualizes the published calendar free/busy availability of all invited internal attendees, allowing the organizer to pick a mutually available timeslot."
+        },
+        {
+            "question": "You need to book a weekly team review meeting that takes place every Wednesday morning at 09:30 for the next six months. How should you create this in digital calendars?",
+            "options": [
+                {"text": "Set the appointment recurrence to 'Weekly' on Wednesday", "correct": True},
+                {"text": "Manually create 26 separate individual meeting entries one by one", "correct": False},
+                {"text": "Send 26 text messages to attendees every Wednesday morning", "correct": False},
+                {"text": "Book an all-day event for the entire six months continuously", "correct": False}
+            ],
+            "explanation": "Configuring the appointment recurrence pattern to 'Weekly, every Wednesday' creates the series automatically across the six months with a single setup action."
+        },
+        {
+            "question": "When sending a calendar invitation for a remote hybrid meeting, what essential details should be included in the meeting description body?",
+            "options": [
+                {"text": "A clickable video conference link (Teams/Zoom), dial-in numbers, and the meeting agenda or discussion topics", "correct": True},
+                {"text": "Personal social media profiles of all attendees", "correct": False},
+                {"text": "A copy of the entire company employee handbook", "correct": False},
+                {"text": "No text at all to keep it surprising", "correct": False}
+            ],
+            "explanation": "A complete meeting invite must equip attendees with the digital connection link, phone dial-in details, and an agenda so participants can prepare effectively."
+        }
+    ],
+
+    "l1-collaborative-tools-cloud-sharing": [
+        {
+            "question": "An administrator shares a master spreadsheet containing sensitive formula models with a temporary student intern. Which sharing permission should they assign?",
+            "options": [
+                {"text": "'Can view' (View only)", "correct": True},
+                {"text": "'Can edit' (Full editing access)", "correct": False},
+                {"text": "'Make Owner' (Transfer ownership)", "correct": False},
+                {"text": "'Co-Administrator'", "correct": False}
+            ],
+            "explanation": "'Can view' permission allows the intern to read and inspect the data without any risk of them accidentally overwriting, editing, or deleting critical formulas."
+        },
+        {
+            "question": "A colleague accidentally deletes an entire section of text from a collaborative cloud document. How can the team restore the missing text?",
+            "options": [
+                {"text": "Open 'Version History', inspect previous timestamps, and restore an earlier revision", "correct": True},
+                {"text": "Delete the entire document from the cloud drive", "correct": False},
+                {"text": "Close the browser and wait 24 hours", "correct": False},
+                {"text": "Create a brand new blank document from scratch", "correct": False}
+            ],
+            "explanation": "Cloud collaborative platforms maintain a complete Version History showing who made edits at each timestamp, allowing users to restore previous versions with a single click."
+        },
+        {
+            "question": "When sharing an internal financial summary file via cloud link, which sharing method is the most secure?",
+            "options": [
+                {"text": "Share with 'Specific People' by entering their verified organisation email addresses", "correct": True},
+                {"text": "Select 'Anyone with the link can view' and post it on a public forum", "correct": False},
+                {"text": "Email the link to an anonymous chatroom", "correct": False},
+                {"text": "Disable all passwords on the company cloud drive", "correct": False}
+            ],
+            "explanation": "Restricting access to 'Specific People' ensures that only authenticated users logging in with verified corporate email accounts can open and view the document."
+        }
+    ],
+
+    "l1-evaluating-online-services": [
+        {
+            "question": "When researching official UK statutory employment guidelines, which website domain indicates an official, authoritative government source?",
+            "options": [
+                {"text": ".gov.uk", "correct": True},
+                {"text": ".com", "correct": False},
+                {"text": ".biz", "correct": False},
+                {"text": ".co", "correct": False}
+            ],
+            "explanation": "In the United Kingdom, `.gov.uk` is strictly regulated and reserved exclusively for accredited government departments, agencies, and public bodies."
+        },
+        {
+            "question": "A blog article praises a new ergonomic keyboard as 'the only device that prevents RSI', but you notice small text saying 'Sponsored Post / Affiliate Commissions Earned'. How should you evaluate this information?",
+            "options": [
+                {"text": "Recognise commercial bias and seek independent medical / ergonomic evaluations before making purchasing decisions", "correct": True},
+                {"text": "Believe every claim because it is published on the internet", "correct": False},
+                {"text": "Assume the government wrote the article", "correct": False},
+                {"text": "Order 100 keyboards immediately", "correct": False}
+            ],
+            "explanation": "Sponsored content indicates that the author has a financial incentive to promote the product, requiring readers to cross-reference claims against impartial sources."
+        },
+        {
+            "question": "You find statistical data on healthcare trends from an article dated 2012. Why might this information be unreliable for a 2026 workplace planning report?",
+            "options": [
+                {"text": "Information can become obsolete; digital guidelines, laws, and statistics change significantly over time", "correct": True},
+                {"text": "Articles written before 2020 are automatically deleted from the internet", "correct": False},
+                {"text": "Old websites cannot be displayed on modern laptops", "correct": False},
+                {"text": "Numbers change their mathematical value after 10 years", "correct": False}
+            ],
+            "explanation": "Currency of information is a key evaluation criterion. Outdated data does not reflect current legislation, clinical standards, or technological developments."
+        }
+    ],
+
+    "l1-multi-factor-authentication-banking": [
+        {
+            "question": "When setting up Multi-Factor Authentication (MFA), why is a dedicated Authenticator App (such as Microsoft Authenticator) considered more secure than SMS text verification?",
+            "options": [
+                {"text": "Authenticator apps are immune to SIM-swapping attacks and mobile network interception", "correct": True},
+                {"text": "SMS text messages only work on desktop computers", "correct": False},
+                {"text": "Authenticator apps delete your password after every login", "correct": False},
+                {"text": "Mobile network operators charge £5 for every SMS code received", "correct": False}
+            ],
+            "explanation": "Criminals can execute SIM-swap fraud to divert SMS texts to a rogue SIM card. Authenticator apps generate time-based one-time passcodes (TOTP) locally on the device securely."
+        },
+        {
+            "question": "What are the three common authentication factors used in digital identity verification systems?",
+            "options": [
+                {"text": "Something you know (password), something you have (phone/token), and something you are (biometrics)", "correct": True},
+                {"text": "Your name, your age, and your car registration", "correct": False},
+                {"text": "Your job title, your desk number, and your lunch hour", "correct": False},
+                {"text": "Your browser brand, your Wi-Fi name, and your screen size", "correct": False}
+            ],
+            "explanation": "True MFA requires combining at least two distinct categories: Knowledge (password/PIN), Possession (smartcard/authenticator token), and Inherence (fingerprint/facial scan)."
+        },
+        {
+            "question": "After completing online business banking transactions on a shared workplace computer, what two actions must you perform to secure the session?",
+            "options": [
+                {"text": "Click 'Log Out' explicitly and close all browser windows", "correct": True},
+                {"text": "Just close the browser tab without logging out", "correct": False},
+                {"text": "Leave the browser open on the screen so colleagues can check your work", "correct": False},
+                {"text": "Turn off the mouse only", "correct": False}
+            ],
+            "explanation": "Explicitly clicking 'Log Out' invalidates the session token on the bank's server. Closing the browser ensures temporary cache tokens cannot be hijacked by the next user."
+        }
+    ],
+
+    "l1-portal-uploads-customer-support": [
+        {
+            "question": "A digital portal for submitting accreditation evidence specifies: 'Upload PDF or JPG files only, maximum 5 MB per file'. You have an 8 MB Word (.docx) document. How must you prepare the file?",
+            "options": [
+                {"text": "Save/export the Word file as a compressed PDF ensuring the final size is under 5 MB", "correct": True},
+                {"text": "Simply rename the file extension from .docx to .pdf in File Explorer", "correct": False},
+                {"text": "Upload the 8 MB file anyway and ignore the portal warning", "correct": False},
+                {"text": "Take a video of the document and upload that instead", "correct": False}
+            ],
+            "explanation": "Manually changing the file extension does not convert the file format and will cause an upload failure. You must export/save as PDF using compression to stay below the 5 MB limit."
+        },
+        {
+            "question": "After submitting an urgent service request ticket on an IT portal, what reference item should you record to follow up on the status?",
+            "options": [
+                {"text": "The unique Ticket Reference Number (e.g. #INC-89421)", "correct": True},
+                {"text": "The color of the submit button on the website", "correct": False},
+                {"text": "The time your computer monitor was manufactured", "correct": False},
+                {"text": "The office postcode", "correct": False}
+            ],
+            "explanation": "The system-generated ticket reference number is the unique key used by support agents to track, update, and resolve service issues."
+        },
+        {
+            "question": "When communicating with an automated customer support AI chatbot, what should you do if the bot fails to resolve your complex issue?",
+            "options": [
+                {"text": "Request to be transferred or escalated to a human customer service agent", "correct": True},
+                {"text": "Keep typing the same sentence 50 times in a row", "correct": False},
+                {"text": "Unplug your office broadband router", "correct": False},
+                {"text": "Leave the chat open forever", "correct": False}
+            ],
+            "explanation": "Chatbots are designed to handle standard FAQs. For non-standard or complex issues, modern support portals offer an option to escalate to a live human representative."
+        }
+    ],
+
+    "l1-cybersecurity-malware-defence": [
+        {
+            "question": "An office computer displays a sudden pop-up stating that all files have been encrypted and demands £500 in cryptocurrency to provide the decryption key. What type of malware is this?",
+            "options": [
+                {"text": "Ransomware", "correct": True},
+                {"text": "Adware", "correct": False},
+                {"text": "Cookie", "correct": False},
+                {"text": "Screen saver", "correct": False}
+            ],
+            "explanation": "Ransomware encrypts user files and demands extortion payments. The primary defence is maintaining regular, offline (air-gapped) backups so data can be restored without paying."
+        },
+        {
+            "question": "What is the key difference between a computer virus and a computer worm?",
+            "options": [
+                {"text": "A virus requires human action to spread (e.g. running an infected file); a worm self-replicates across networks automatically", "correct": True},
+                {"text": "A virus only affects printers, while a worm only affects keyboards", "correct": False},
+                {"text": "Worms are beneficial programs that speed up computers", "correct": False},
+                {"text": "Viruses can only spread on Tuesdays", "correct": False}
+            ],
+            "explanation": "Viruses attach to host files and need human execution to spread. Worms are standalone programs that exploit network vulnerabilities to replicate across connected systems autonomously."
+        },
+        {
+            "question": "Why is it vital to install operating system security patches (e.g. Windows Updates) as soon as they are released?",
+            "options": [
+                {"text": "Patches fix known security vulnerabilities before cybercriminals can exploit them", "correct": True},
+                {"text": "To make the computer consume less electricity", "correct": False},
+                {"text": "Because unpatched computers delete all spreadsheets automatically", "correct": False},
+                {"text": "To change the default desktop font every week", "correct": False}
+            ],
+            "explanation": "Software vendors release security patches to close newly discovered security holes (vulnerabilities). Delaying updates leaves systems exposed to automated exploit kits."
+        }
+    ],
+
+    "l1-phishing-social-engineering": [
+        {
+            "question": "You receive an email claiming to be from your company IT department asking you to click a link to 'verify your mailbox password'. How can you safely verify the link's true destination?",
+            "options": [
+                {"text": "Hover your mouse cursor over the link without clicking to inspect the true URL displayed in the status bar", "correct": True},
+                {"text": "Click the link immediately on five different computers", "correct": False},
+                {"text": "Forward the email to all company clients", "correct": False},
+                {"text": "Reply to the email with your password to ask if it is real", "correct": False}
+            ],
+            "explanation": "Hovering over a hyperlink reveals the actual web address (URL) it points to. If the text says 'it-support.com' but hovers as 'scam-login-portal.ru', it is a phishing attack."
+        },
+        {
+            "question": "What is 'Spear Phishing'?",
+            "options": [
+                {"text": "A highly targeted phishing attack customized with specific personal or job details to deceive an individual employee", "correct": True},
+                {"text": "An automated spam email sent to 10 million random addresses", "correct": False},
+                {"text": "A fishing game app downloaded from the app store", "correct": False},
+                {"text": "A physical theft of computer monitors from an office", "correct": False}
+            ],
+            "explanation": "Spear phishing uses researched personal information (e.g. employee's name, role, manager's name) to craft highly believable, personalized fraudulent requests."
+        },
+        {
+            "question": "An administrative worker receives a phone call from someone claiming to be an IT technician demanding immediate remote access to 'fix an urgent server virus'. What social engineering tactic is being used?",
+            "options": [
+                {"text": "Vishing (voice phishing) using false authority and artificial urgency", "correct": True},
+                {"text": "Routine software maintenance", "correct": False},
+                {"text": "A legitimate hardware inspection", "correct": False},
+                {"text": "Two-factor authentication", "correct": False}
+            ],
+            "explanation": "Social engineering attackers impersonate figures of authority (IT managers, bank fraud officers) and create a sense of panic/urgency to trick victims into bypassing security rules."
+        }
+    ],
+
+    "l1-uk-gdpr-data-protection-privacy": [
+        {
+            "question": "Under the UK General Data Protection Regulation (UK GDPR), which of the following is defined as 'Special Category' (sensitive) personal data?",
+            "options": [
+                {"text": "Health/medical records, biometric data, and ethnic origin", "correct": True},
+                {"text": "A company office business address", "correct": False},
+                {"text": "A public corporate telephone switchboard number", "correct": False},
+                {"text": "A list of office stationary items", "correct": False}
+            ],
+            "explanation": "Special Category data includes health records, biometric templates, religious beliefs, and trade union membership, and requires much stricter legal protections under UK GDPR."
+        },
+        {
+            "question": "An organisation discovers that an unencrypted spreadsheet containing 500 patient names and medical conditions was accidentally emailed to an external marketing agency. What is the legal requirement under UK GDPR?",
+            "options": [
+                {"text": "Notify the Data Protection Officer (DPO) and report the breach to the ICO within 72 hours if there is a risk to individuals' rights", "correct": True},
+                {"text": "Keep it secret and hope nobody notices", "correct": False},
+                {"text": "Delete all emails from the company servers and deny the breach occurred", "correct": False},
+                {"text": "Wait 6 months before informing anyone", "correct": False}
+            ],
+            "explanation": "UK GDPR mandates that serious personal data breaches presenting a risk to individuals must be reported to the Information Commissioner's Office (ICO) within 72 hours of becoming aware."
+        },
+        {
+            "question": "What is the UK GDPR principle of 'Data Minimisation'?",
+            "options": [
+                {"text": "Organisations must only collect personal data that is strictly adequate, relevant, and limited to what is necessary for the specified purpose", "correct": True},
+                {"text": "Documents must be typed using 6 pt font size to make them minimal", "correct": False},
+                {"text": "All customer records must be deleted after 1 hour", "correct": False},
+                {"text": "Organisations are forbidden from storing data on computers", "correct": False}
+            ],
+            "explanation": "Data Minimisation prevents organisations from collecting excessive or unnecessary personal data 'just in case' — they may only gather what is strictly required for the service."
+        }
+    ],
+
+    "l1-copyright-plagiarism-dse": [
+        {
+            "question": "An employee downloads an image from a Google image search and uses it on a commercial marketing flyer without permission. What legal violation has occurred?",
+            "options": [
+                {"text": "Copyright infringement", "correct": True},
+                {"text": "Defamation", "correct": False},
+                {"text": "Data breach under GDPR", "correct": False},
+                {"text": "Computer Misuse Act offence", "correct": False}
+            ],
+            "explanation": "Images found on the web are protected by copyright law. Using copyrighted work commercially without obtaining a license or permission from the copyright owner is illegal."
+        },
+        {
+            "question": "What does a 'Creative Commons CC BY' license allow an organisation to do with digital media?",
+            "options": [
+                {"text": "Use, share, and adapt the media, provided appropriate credit and attribution are given to the original creator", "correct": True},
+                {"text": "Claim that they created the image themselves and sue the original author", "correct": False},
+                {"text": "Only view the image between 9am and 5pm", "correct": False},
+                {"text": "Only use the image if it is printed in black and white", "correct": False}
+            ],
+            "explanation": "'CC BY' (Attribution) permits sharing, adapting, and commercial reuse, provided the user gives proper attribution, provides a link to the license, and indicates if changes were made."
+        },
+        {
+            "question": "Under Display Screen Equipment (DSE) health and safety regulations, what should an employer provide to employees who work continuously with display screens?",
+            "options": [
+                {"text": "Workstation ergonomics assessments, adjustable seating, and regular breaks or activity changes", "correct": True},
+                {"text": "Free unlimited video games during working hours", "correct": False},
+                {"text": "Sunglasses to wear while typing", "correct": False},
+                {"text": "Cash payments to replace office chairs", "correct": False}
+            ],
+            "explanation": "UK Health and Safety (Display Screen Equipment) Regulations require employers to perform DSE workstation risk assessments, provide adjustable furniture, and plan work breaks to prevent musculoskeletal injuries."
+        }
+    ]
+}
+
+ALL_EXTRA_DRILLS = {}
+ALL_EXTRA_DRILLS.update(ENTRY_3_EXTRA_DRILLS)
+ALL_EXTRA_DRILLS.update(LEVEL_1_EXTRA_DRILLS)
+
+print(f"Total topics with extra drills: {len(ALL_EXTRA_DRILLS)}")
+total_drills = sum(len(v) for v in ALL_EXTRA_DRILLS.values())
+print(f"Total extra drill questions authored: {total_drills}")
+
+with open(OUTPUT_FILE, "w", encoding="utf-8") as f:
+    f.write('"""\nMaster Functional Skills (MFS) - DFS Drills Expansion Dataset\nGenerated automatically with authentic exam-standard questions.\n"""\n\n')
+    f.write(f"EXTRA_DRILLS = {repr(ALL_EXTRA_DRILLS)}\n")
+
+print(f"Successfully generated {OUTPUT_FILE}!")

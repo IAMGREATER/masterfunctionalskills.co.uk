@@ -20,6 +20,7 @@ os.makedirs(WORKSHEETS_DIR, exist_ok=True)
 sys.path.insert(0, BASE_DIR)
 from dfs_data_entry3 import ALL_ENTRY_3_TOPICS
 from dfs_data_level1 import ALL_LEVEL_1_TOPICS
+from dfs_drills_expansion import EXTRA_DRILLS
 
 
 def clean_html_text(text):
@@ -35,7 +36,7 @@ def render_workout_html(topic, level_code, level_title):
     title = topic['title']
     code = topic['code']
     skill_area = topic['skill_area']
-    drills = topic.get('drills', [])
+    drills = list(topic.get('drills', [])) + EXTRA_DRILLS.get(slug, [])
     guide_url = f"../digital-skills/{level_code}/{slug}.html"
     answers_url = f"{slug}-workout-answers.html"
 
@@ -483,11 +484,11 @@ def render_workout_html(topic, level_code, level_title):
       </div>
     </div>
 
-    <!-- Candidate Info -->
+    <!-- Candidate Info (6 Drills + Recall: 15 Marks Total) -->
     <div class="candidate-info-box">
       <div class="candidate-info-item"><strong>Candidate Name:</strong> <span class="field-line"></span></div>
       <div class="candidate-info-item"><strong>Date:</strong> <span class="field-line"></span></div>
-      <div class="candidate-info-item" style="max-width:140px;"><strong>Marks:</strong> <span class="field-line"></span> / 7</div>
+      <div class="candidate-info-item" style="max-width:140px;"><strong>Marks:</strong> <span class="field-line"></span> / 15</div>
     </div>
 
     <!-- Hero Title Banner -->
@@ -496,7 +497,7 @@ def render_workout_html(topic, level_code, level_title):
         <h1 class="hero-title">{html.escape(title)}</h1>
         <div class="hero-subtitle">{skill_area} &bull; Standard Code: {code}</div>
       </div>
-      <div class="hero-tag">Style 1: Workout</div>
+      <div class="hero-tag">Style 1: Workout (6 Drills)</div>
     </div>
 
     <!-- Key Method Rules Summary -->
@@ -525,7 +526,7 @@ def render_workout_answers_html(topic, level_code, level_title):
     title = topic['title']
     code = topic['code']
     skill_area = topic['skill_area']
-    drills = topic.get('drills', [])
+    drills = list(topic.get('drills', [])) + EXTRA_DRILLS.get(slug, [])
     workout_url = f"{slug}-workout.html"
     guide_url = f"../digital-skills/{level_code}/{slug}.html"
 
@@ -929,7 +930,7 @@ def render_workout_answers_html(topic, level_code, level_title):
         <h1 class="hero-title">{html.escape(title)} — Answer Key</h1>
         <div class="hero-subtitle">{skill_area} &bull; Standard Code: {code}</div>
       </div>
-      <div class="hero-tag">Style 1: Solutions</div>
+      <div class="hero-tag">Style 1: Solutions (6 Drills)</div>
     </div>
 
     <!-- Drills Answers List -->

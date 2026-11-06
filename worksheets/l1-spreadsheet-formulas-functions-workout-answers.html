@@ -344,7 +344,7 @@
         <h1 class="hero-title">Spreadsheet Formulas: SUM, AVERAGE and COUNT — Answer Key</h1>
         <div class="hero-subtitle">2. Creating and Editing &bull; Standard Code: L1.2.3</div>
       </div>
-      <div class="hero-tag">Style 1: Solutions</div>
+      <div class="hero-tag">Style 1: Solutions (6 Drills)</div>
     </div>
 
     <!-- Drills Answers List -->
@@ -451,6 +451,111 @@
           <div class="answer-diagnostic-box">
             <div class="diag-header"><i class="fa-solid fa-circle-info"></i> Tutor Diagnostic Explanation:</div>
             <p class="diag-body">Relative cell references increment automatically when copied with the Fill Handle.</p>
+          </div>
+        </div>
+        
+        <div class="workout-question-card">
+          <div class="wq-header">
+            <span class="wq-number">Task 4 — Model Solution</span>
+            <span class="wq-marks">[2 Marks]</span>
+          </div>
+          <p class="wq-prompt">In a spreadsheet column containing 10 employee names and 5 blank rows, which formula will count only the cells that contain text?</p>
+          <div class="wq-options-grid">
+            
+                <div class="drill-option-item correct">
+                  <span class="option-check-box correct"><i class="fa-solid fa-check"></i></span>
+                  <span class="option-letter correct">A.</span>
+                  <span class="option-text correct"><strong>=COUNTA(A2:A16)</strong> (CORRECT)</span>
+                </div>
+                <div class="drill-option-item">
+                  <span class="option-check-box"></span>
+                  <span class="option-letter">B.</span>
+                  <span class="option-text">=COUNT(A2:A16)</span>
+                </div>
+                <div class="drill-option-item">
+                  <span class="option-check-box"></span>
+                  <span class="option-letter">C.</span>
+                  <span class="option-text">=SUM(A2:A16)</span>
+                </div>
+                <div class="drill-option-item">
+                  <span class="option-check-box"></span>
+                  <span class="option-letter">D.</span>
+                  <span class="option-text">=AVERAGE(A2:A16)</span>
+                </div>
+          </div>
+          <div class="answer-diagnostic-box">
+            <div class="diag-header"><i class="fa-solid fa-circle-info"></i> Tutor Diagnostic Explanation:</div>
+            <p class="diag-body">The `=COUNTA()` function counts all non-empty cells (including text and numbers). The `=COUNT()` function counts only cells containing numerical values.</p>
+          </div>
+        </div>
+        
+        <div class="workout-question-card">
+          <div class="wq-header">
+            <span class="wq-number">Task 5 — Model Solution</span>
+            <span class="wq-marks">[2 Marks]</span>
+          </div>
+          <p class="wq-prompt">You enter the formula `=D5/0` in Excel. Which error code will the cell display?</p>
+          <div class="wq-options-grid">
+            
+                <div class="drill-option-item correct">
+                  <span class="option-check-box correct"><i class="fa-solid fa-check"></i></span>
+                  <span class="option-letter correct">A.</span>
+                  <span class="option-text correct"><strong>#DIV/0!</strong> (CORRECT)</span>
+                </div>
+                <div class="drill-option-item">
+                  <span class="option-check-box"></span>
+                  <span class="option-letter">B.</span>
+                  <span class="option-text">#VALUE!</span>
+                </div>
+                <div class="drill-option-item">
+                  <span class="option-check-box"></span>
+                  <span class="option-letter">C.</span>
+                  <span class="option-text">#REF!</span>
+                </div>
+                <div class="drill-option-item">
+                  <span class="option-check-box"></span>
+                  <span class="option-letter">D.</span>
+                  <span class="option-text">#NAME?</span>
+                </div>
+          </div>
+          <div class="answer-diagnostic-box">
+            <div class="diag-header"><i class="fa-solid fa-circle-info"></i> Tutor Diagnostic Explanation:</div>
+            <p class="diag-body">`#DIV/0!` indicates an attempted mathematical division by zero or by an empty cell. `#VALUE!` occurs when text is used in a math formula, and `#REF!` occurs when a referenced cell was deleted.</p>
+          </div>
+        </div>
+        
+        <div class="workout-question-card">
+          <div class="wq-header">
+            <span class="wq-number">Task 6 — Model Solution</span>
+            <span class="wq-marks">[2 Marks]</span>
+          </div>
+          <p class="wq-prompt">When copying a formula down a column to calculate 20% VAT using a single fixed cell `B1`, how should you write the formula in row 5?</p>
+          <div class="wq-options-grid">
+            
+                <div class="drill-option-item correct">
+                  <span class="option-check-box correct"><i class="fa-solid fa-check"></i></span>
+                  <span class="option-letter correct">A.</span>
+                  <span class="option-text correct"><strong>=C5 * $B$1</strong> (CORRECT)</span>
+                </div>
+                <div class="drill-option-item">
+                  <span class="option-check-box"></span>
+                  <span class="option-letter">B.</span>
+                  <span class="option-text">=C5 * B1</span>
+                </div>
+                <div class="drill-option-item">
+                  <span class="option-check-box"></span>
+                  <span class="option-letter">C.</span>
+                  <span class="option-text">=C5 * B$1$</span>
+                </div>
+                <div class="drill-option-item">
+                  <span class="option-check-box"></span>
+                  <span class="option-letter">D.</span>
+                  <span class="option-text">=C5 * &amp;B&amp;1</span>
+                </div>
+          </div>
+          <div class="answer-diagnostic-box">
+            <div class="diag-header"><i class="fa-solid fa-circle-info"></i> Tutor Diagnostic Explanation:</div>
+            <p class="diag-body">Using dollar signs (`$B$1`) creates an Absolute Cell Reference. When the formula is copied down to C6, C7, etc., the reference to B1 remains fixed and does not drift down to B2 or B3.</p>
           </div>
         </div>
         

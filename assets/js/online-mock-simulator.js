@@ -224,7 +224,8 @@ const MFS_MOCK_DATA = {
             marks: 3,
             markTags: '[A1, B1, C1]',
             scenarioTitle: 'Gordon\'s Garden Slide Scale Plan',
-            diagramHtml: "<div style=\"width:100%; max-width:440px; margin:0 auto;\">\n  <svg viewBox=\"0 0 420 300\" style=\"width:100%; height:auto; display:block;\">\n    <defs>\n      <pattern id=\"gordonGrid\" width=\"25\" height=\"20\" patternUnits=\"userSpaceOnUse\">\n        <rect width=\"25\" height=\"20\" fill=\"none\" stroke=\"#cbd5e1\" stroke-width=\"1\"/>\n      </pattern>\n    </defs>\n    <!-- House Boundary Top -->\n    <rect x=\"35\" y=\"15\" width=\"350\" height=\"20\" fill=\"#334155\" stroke=\"#0f172a\"/>\n    <text x=\"210\" y=\"29\" font-size=\"11\" font-weight=\"800\" text-anchor=\"middle\" fill=\"#ffffff\">HOUSE</text>\n    \n    <!-- 14 columns x 12 rows Grid = 350 x 240 -->\n    <rect x=\"35\" y=\"35\" width=\"350\" height=\"240\" fill=\"url(#gordonGrid)\" stroke=\"#0f172a\" stroke-width=\"2\"/>\n    \n    <!-- Fence along left, bottom, right -->\n    <line x1=\"35\" y1=\"35\" x2=\"35\" y2=\"275\" stroke=\"#b45309\" stroke-width=\"4\"/>\n    <line x1=\"35\" y1=\"275\" x2=\"385\" y2=\"275\" stroke=\"#b45309\" stroke-width=\"4\"/>\n    <line x1=\"385\" y1=\"35\" x2=\"385\" y2=\"275\" stroke=\"#b45309\" stroke-width=\"4\"/>\n    <text x=\"210\" y=\"292\" font-size=\"10.5\" font-weight=\"800\" text-anchor=\"middle\" fill=\"#b45309\">FENCE</text>\n    \n    <!-- Key box -->\n    <rect x=\"260\" y=\"45\" width=\"115\" height=\"26\" fill=\"#ffffff\" stroke=\"#0f172a\" stroke-width=\"1\"/>\n    <text x=\"317\" y=\"62\" font-size=\"10\" font-weight=\"800\" text-anchor=\"middle\" fill=\"#0f172a\">1 square = 50 cm</text>\n  </svg>\n  <div class=\"sim-diagram-caption\">Garden Scale Plan (6 m \u00d7 7 m) \u2022 1 square represents 50 cm</div>\n</div>",
+            diagramHtml: "<div style=\"background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px; padding:14px; margin:10px 0;\"><div style=\"font-weight:800; color:#0f172a; margin-bottom:8px; display:flex; align-items:center; gap:6px;\"><i class=\"fa-solid fa-ruler-combined\" style=\"color:#0284c7;\"></i> Garden & Slide Specifications:</div><ul style=\"margin:0; padding-left:20px; font-size:0.9rem; line-height:1.6; color:#334155;\"><li>Rectangular space for slide: <strong>1.5 m by 2.5 m</strong></li><li>Distance from house wall: <strong>at least 2 m</strong></li><li>Distance from fence: <strong>at least 1 m</strong></li><li>Grid scale: <strong>1 square = 50 cm</strong> (0.5 m)</li></ul></div>",
+            workspaceDiagramHtml: "<svg viewBox=\"0 0 520 360\" style=\"width:100%; max-width:620px; height:auto; display:block; margin:0 auto;\"><defs><pattern id=\"gordonGridWs\" width=\"30\" height=\"24\" patternUnits=\"userSpaceOnUse\"><rect width=\"30\" height=\"24\" fill=\"none\" stroke=\"#cbd5e1\" stroke-width=\"1.2\"/></pattern></defs><rect x=\"40\" y=\"15\" width=\"420\" height=\"24\" fill=\"#334155\" stroke=\"#0f172a\"/><text x=\"250\" y=\"32\" font-size=\"13\" font-weight=\"900\" text-anchor=\"middle\" fill=\"#ffffff\" letter-spacing=\"2\">HOUSE WALL</text><rect x=\"40\" y=\"39\" width=\"420\" height=\"288\" fill=\"url(#gordonGridWs)\" stroke=\"#0f172a\" stroke-width=\"2.5\"/><line x1=\"40\" y1=\"39\" x2=\"40\" y2=\"327\" stroke=\"#b45309\" stroke-width=\"4.5\"/><line x1=\"40\" y1=\"327\" x2=\"460\" y2=\"327\" stroke=\"#b45309\" stroke-width=\"4.5\"/><line x1=\"460\" y1=\"39\" x2=\"460\" y2=\"327\" stroke=\"#b45309\" stroke-width=\"4.5\"/><text x=\"250\" y=\"348\" font-size=\"12\" font-weight=\"900\" text-anchor=\"middle\" fill=\"#b45309\" letter-spacing=\"1\">FENCE</text><rect x=\"310\" y=\"50\" width=\"135\" height=\"30\" fill=\"#ffffff\" stroke=\"#0f172a\" stroke-width=\"1.5\" rx=\"3\"/><text x=\"377\" y=\"70\" font-size=\"11\" font-weight=\"800\" text-anchor=\"middle\" fill=\"#0f172a\">Key: 1 square = 50 cm</text></svg>",
             scenarioText: 'Gordon buys a new slide for his garden. His garden measures 6 m by 7 m.\nThe space for the slide must be:\n• a rectangle, 3 m by 1.5 m\n• at least 2 m away from the house\n• at least 0.5 m away from a fence or any other feature.\nKey: 1 cm on the grid represents 50 cm in the garden.',
             promptText: 'Work out the dimensions of the slide space on the grid in squares (1 square = 50 cm), and confirm the clearance distances from the house and shed/fence.',
             unit: 'squares',
@@ -538,7 +539,8 @@ const MFS_MOCK_DATA = {
             marks: 4,
             markTags: '[M1, A1, M1, A1]',
             scenarioTitle: 'Scale Drawing Quadrilateral ABCD on Grid',
-            diagramHtml: "<div style=\"display:flex; flex-direction:column; gap:16px; align-items:center; margin:10px 0;\">\n  <!-- Quadrilateral Diagram -->\n  <svg viewBox=\"0 0 460 160\" style=\"max-width:440px; width:100%; height:auto; display:block;\">\n    <!-- Shape ABCD -->\n    <polygon points=\"200,30 380,30 380,130 90,130\" fill=\"#f8fafc\" stroke=\"#0f172a\" stroke-width=\"2.5\"/>\n    <!-- Right angle symbols at B(380,30) and C(380,130) -->\n    <polygon points=\"380,42 368,42 368,30 380,30\" fill=\"none\" stroke=\"#0f172a\" stroke-width=\"1.5\"/>\n    <polygon points=\"380,118 368,118 368,130 380,130\" fill=\"none\" stroke=\"#0f172a\" stroke-width=\"1.5\"/>\n    <!-- Vertex Labels -->\n    <text x=\"195\" y=\"22\" font-size=\"14\" font-weight=\"900\" fill=\"#0f172a\">A</text>\n    <text x=\"390\" y=\"26\" font-size=\"14\" font-weight=\"900\" fill=\"#0f172a\">B</text>\n    <text x=\"390\" y=\"136\" font-size=\"14\" font-weight=\"900\" fill=\"#0f172a\">C</text>\n    <text x=\"75\" y=\"136\" font-size=\"14\" font-weight=\"900\" fill=\"#0f172a\">D</text>\n    <!-- Dimension Labels -->\n    <text x=\"290\" y=\"22\" font-size=\"13\" font-weight=\"800\" text-anchor=\"middle\" fill=\"#0f172a\">220 m</text>\n    <text x=\"400\" y=\"85\" font-size=\"13\" font-weight=\"800\" text-anchor=\"start\" fill=\"#0f172a\">160 m</text>\n    <text x=\"235\" y=\"150\" font-size=\"13\" font-weight=\"800\" text-anchor=\"middle\" fill=\"#0f172a\">340 m</text>\n  </svg>\n  \n  <!-- Authentic Blank 10x6 Grid from Exam Paper -->\n  <div style=\"width:100%; max-width:440px;\">\n    <div style=\"font-size:0.85rem; font-weight:700; color:#334155; margin-bottom:6px;\">Use the scale 1 cm to 40 m:</div>\n    <svg viewBox=\"0 0 440 250\" style=\"width:100%; height:auto; display:block;\">\n      <defs>\n        <pattern id=\"scaleGrid40\" width=\"40\" height=\"35\" patternUnits=\"userSpaceOnUse\">\n          <rect width=\"40\" height=\"35\" fill=\"none\" stroke=\"#cbd5e1\" stroke-width=\"1\"/>\n        </pattern>\n      </defs>\n      <!-- Scale Arrow Indicators 1cm x 1cm -->\n      <line x1=\"20\" y1=\"12\" x2=\"60\" y2=\"12\" stroke=\"#0f172a\" stroke-width=\"1.5\"/>\n      <polyline points=\"26,8 20,12 26,16\" fill=\"none\" stroke=\"#0f172a\" stroke-width=\"1.5\"/>\n      <polyline points=\"54,8 60,12 54,16\" fill=\"none\" stroke=\"#0f172a\" stroke-width=\"1.5\"/>\n      <text x=\"40\" y=\"8\" font-size=\"11\" font-weight=\"800\" text-anchor=\"middle\" fill=\"#0f172a\">1 cm</text>\n      \n      <line x1=\"8\" y1=\"25\" x2=\"8\" y2=\"60\" stroke=\"#0f172a\" stroke-width=\"1.5\"/>\n      <polyline points=\"4,31 8,25 12,31\" fill=\"none\" stroke=\"#0f172a\" stroke-width=\"1.5\"/>\n      <polyline points=\"4,54 8,60 12,54\" fill=\"none\" stroke=\"#0f172a\" stroke-width=\"1.5\"/>\n      <text x=\"6\" y=\"72\" font-size=\"11\" font-weight=\"800\" text-anchor=\"end\" fill=\"#0f172a\">1 cm</text>\n      \n      <!-- 10 columns by 6 rows Grid = 400 x 210 -->\n      <rect x=\"20\" y=\"25\" width=\"400\" height=\"210\" fill=\"url(#scaleGrid40)\" stroke=\"#0f172a\" stroke-width=\"2\"/>\n    </svg>\n    <div class=\"sim-diagram-caption\">Grid (10 \u00d7 6 cm) \u2022 Scale: 1 cm represents 40 m</div>\n  </div>\n</div>",
+            diagramHtml: "<div style=\"width:100%; max-width:440px; margin:10px auto;\"><svg viewBox=\"0 0 460 170\" style=\"max-width:440px; width:100%; height:auto; display:block; margin:0 auto;\"><polygon points=\"200,30 380,30 380,130 90,130\" fill=\"#f8fafc\" stroke=\"#0f172a\" stroke-width=\"2.5\"/><polygon points=\"380,42 368,42 368,30 380,30\" fill=\"none\" stroke=\"#0f172a\" stroke-width=\"1.5\"/><polygon points=\"380,118 368,118 368,130 380,130\" fill=\"none\" stroke=\"#0f172a\" stroke-width=\"1.5\"/><text x=\"195\" y=\"22\" font-size=\"14\" font-weight=\"900\" fill=\"#0f172a\">A</text><text x=\"390\" y=\"26\" font-size=\"14\" font-weight=\"900\" fill=\"#0f172a\">B</text><text x=\"390\" y=\"136\" font-size=\"14\" font-weight=\"900\" fill=\"#0f172a\">C</text><text x=\"75\" y=\"136\" font-size=\"14\" font-weight=\"900\" fill=\"#0f172a\">D</text><text x=\"290\" y=\"22\" font-size=\"13\" font-weight=\"800\" text-anchor=\"middle\" fill=\"#0f172a\">220 m</text><text x=\"400\" y=\"85\" font-size=\"13\" font-weight=\"800\" text-anchor=\"start\" fill=\"#0f172a\">160 m</text><text x=\"235\" y=\"150\" font-size=\"13\" font-weight=\"800\" text-anchor=\"middle\" fill=\"#0f172a\">340 m</text><text x=\"230\" y=\"165\" font-size=\"10\" font-weight=\"700\" fill=\"#64748b\" text-anchor=\"middle\">DIAGRAM NOT ACCURATELY DRAWN TO SCALE</text></svg></div>",
+            workspaceDiagramHtml: "<svg viewBox=\"0 0 540 320\" style=\"width:100%; max-width:620px; height:auto; display:block; margin:0 auto;\"><defs><pattern id=\"scaleGrid40ws\" width=\"50\" height=\"45\" patternUnits=\"userSpaceOnUse\"><rect width=\"50\" height=\"45\" fill=\"none\" stroke=\"#cbd5e1\" stroke-width=\"1.2\"/></pattern></defs><line x1=\"20\" y1=\"14\" x2=\"70\" y2=\"14\" stroke=\"#0f172a\" stroke-width=\"1.5\"/><polyline points=\"28,10 20,14 28,18\" fill=\"none\" stroke=\"#0f172a\" stroke-width=\"1.5\"/><polyline points=\"62,10 70,14 62,18\" fill=\"none\" stroke=\"#0f172a\" stroke-width=\"1.5\"/><text x=\"45\" y=\"10\" font-size=\"11\" font-weight=\"800\" text-anchor=\"middle\" fill=\"#0f172a\">1 cm</text><line x1=\"12\" y1=\"20\" x2=\"12\" y2=\"65\" stroke=\"#0f172a\" stroke-width=\"1.5\"/><polyline points=\"8,28 12,20 16,28\" fill=\"none\" stroke=\"#0f172a\" stroke-width=\"1.5\"/><polyline points=\"8,57 12,65 16,57\" fill=\"none\" stroke=\"#0f172a\" stroke-width=\"1.5\"/><text x=\"8\" y=\"46\" font-size=\"11\" font-weight=\"800\" text-anchor=\"end\" fill=\"#0f172a\">1 cm</text><rect x=\"20\" y=\"20\" width=\"500\" height=\"270\" fill=\"url(#scaleGrid40ws)\" stroke=\"#0f172a\" stroke-width=\"2.5\"/><text x=\"270\" y=\"310\" font-size=\"12\" font-weight=\"800\" fill=\"#0284c7\" text-anchor=\"middle\">Scale: 1 cm represents 40 m (1 square = 40 m × 40 m)</text></svg>",
             scenarioText: 'Here is a quadrilateral ABCD. AB = 160 m, BC = 220 m, CD = 340 m with right angles as marked.\n(a) Draw this shape on the grid using scale 1 cm to 40 m.\n(b) Use your answer to part (a) to work out the actual length of the line AD.',
             promptText: 'Work out the actual length of the line AD. Remember to use the grid and the scale.',
             unit: 'm',
@@ -557,7 +559,8 @@ const MFS_MOCK_DATA = {
             marks: 6,
             markTags: '[M1, A1, B1, M1, A1, B1]',
             scenarioTitle: 'Pablo European Land Area vs. Population Scatter Graph',
-            diagramHtml: "<div style=\"display:flex; flex-wrap:wrap; gap:16px; align-items:flex-start; justify-content:center; margin:10px 0;\">\n  <!-- Data Table with Blanks for UK -->\n  <div style=\"flex:1; min-width:280px; max-width:340px;\">\n    <table style=\"width:100%; border-collapse:collapse; font-size:0.85rem; text-align:center;\">\n      <thead>\n        <tr style=\"background:#0f172a; color:#ffffff;\">\n          <th style=\"padding:6px 8px; border:1px solid #334155; text-align:left;\">Country</th>\n          <th style=\"padding:6px 8px; border:1px solid #334155;\">Land area<br>(1000 km\u00b2)</th>\n          <th style=\"padding:6px 8px; border:1px solid #334155;\">Population in 2018<br>(millions)</th>\n        </tr>\n      </thead>\n      <tbody>\n        <tr><td style=\"padding:4px 8px; border:1px solid #cbd5e1; text-align:left; font-weight:700;\">Germany</td><td style=\"border:1px solid #cbd5e1;\">360</td><td style=\"border:1px solid #cbd5e1;\">83</td></tr>\n        <tr style=\"background:#f8fafc;\"><td style=\"padding:4px 8px; border:1px solid #cbd5e1; text-align:left; font-weight:700;\">Greece</td><td style=\"border:1px solid #cbd5e1;\">130</td><td style=\"border:1px solid #cbd5e1;\">11</td></tr>\n        <tr><td style=\"padding:4px 8px; border:1px solid #cbd5e1; text-align:left; font-weight:700;\">Italy</td><td style=\"border:1px solid #cbd5e1;\">300</td><td style=\"border:1px solid #cbd5e1;\">58</td></tr>\n        <tr style=\"background:#f8fafc;\"><td style=\"padding:4px 8px; border:1px solid #cbd5e1; text-align:left; font-weight:700;\">Poland</td><td style=\"border:1px solid #cbd5e1;\">310</td><td style=\"border:1px solid #cbd5e1;\">39</td></tr>\n        <tr><td style=\"padding:4px 8px; border:1px solid #cbd5e1; text-align:left; font-weight:700;\">Spain</td><td style=\"border:1px solid #cbd5e1;\">510</td><td style=\"border:1px solid #cbd5e1;\">47</td></tr>\n        <tr style=\"background:#f8fafc;\"><td style=\"padding:4px 8px; border:1px solid #cbd5e1; text-align:left; font-weight:700;\">France</td><td style=\"border:1px solid #cbd5e1;\">640</td><td style=\"border:1px solid #cbd5e1;\">67</td></tr>\n        <tr><td style=\"padding:4px 8px; border:1px solid #cbd5e1; text-align:left; font-weight:700;\">Romania</td><td style=\"border:1px solid #cbd5e1;\">240</td><td style=\"border:1px solid #cbd5e1;\">19</td></tr>\n        <tr style=\"background:#eff6ff; font-weight:800;\"><td style=\"padding:6px 8px; border:1px solid #93c5fd; text-align:left; color:#1e40af;\">United Kingdom</td><td style=\"border:1px solid #93c5fd; color:#64748b;\">.........</td><td style=\"border:1px solid #93c5fd; color:#64748b;\">.........</td></tr>\n      </tbody>\n    </table>\n    <div style=\"font-size:0.8rem; color:#475569; margin-top:6px;\">UK info: 93 400 sq miles \u2022 2011 pop 56.1m (+19.6% by 2018) \u2022 1 sq mile = 2.6 km\u00b2</div>\n  </div>\n  \n  <!-- Authentic Blank Calibrated Grid (NO plotted points, NO line of best fit) -->\n  <div style=\"flex:1; min-width:320px; max-width:400px;\">\n    <svg viewBox=\"0 0 420 280\" style=\"width:100%; height:auto; display:block;\">\n      <defs>\n        <pattern id=\"scatterBlankGrid\" width=\"40\" height=\"22\" patternUnits=\"userSpaceOnUse\">\n          <line x1=\"0\" y1=\"0\" x2=\"40\" y2=\"0\" stroke=\"#e2e8f0\" stroke-width=\"1\"/>\n          <line x1=\"0\" y1=\"0\" x2=\"0\" y2=\"22\" stroke=\"#e2e8f0\" stroke-width=\"1\"/>\n        </pattern>\n      </defs>\n      <!-- Grid Area: 8 columns (0 to 800) x 10 rows (0 to 100) -->\n      <rect x=\"50\" y=\"20\" width=\"320\" height=\"220\" fill=\"url(#scatterBlankGrid)\" stroke=\"#0f172a\" stroke-width=\"2\"/>\n      \n      <!-- Axis Lines -->\n      <line x1=\"50\" y1=\"20\" x2=\"50\" y2=\"240\" stroke=\"#0f172a\" stroke-width=\"2\"/>\n      <line x1=\"50\" y1=\"240\" x2=\"370\" y2=\"240\" stroke=\"#0f172a\" stroke-width=\"2\"/>\n      <polygon points=\"50,15 46,23 54,23\" fill=\"#0f172a\"/>\n      <polygon points=\"375,240 367,236 367,244\" fill=\"#0f172a\"/>\n      \n      <!-- X-axis ticks & labels -->\n      <text x=\"50\" y=\"255\" font-size=\"9\" text-anchor=\"middle\">0</text>\n      <text x=\"90\" y=\"255\" font-size=\"9\" text-anchor=\"middle\">100</text>\n      <text x=\"130\" y=\"255\" font-size=\"9\" text-anchor=\"middle\">200</text>\n      <text x=\"170\" y=\"255\" font-size=\"9\" text-anchor=\"middle\">300</text>\n      <text x=\"210\" y=\"255\" font-size=\"9\" text-anchor=\"middle\">400</text>\n      <text x=\"250\" y=\"255\" font-size=\"9\" text-anchor=\"middle\">500</text>\n      <text x=\"290\" y=\"255\" font-size=\"9\" text-anchor=\"middle\">600</text>\n      <text x=\"330\" y=\"255\" font-size=\"9\" text-anchor=\"middle\">700</text>\n      <text x=\"370\" y=\"255\" font-size=\"9\" text-anchor=\"middle\">800</text>\n      <text x=\"210\" y=\"272\" font-size=\"11\" font-weight=\"800\" text-anchor=\"middle\" fill=\"#0f172a\">Land area (1000 km\u00b2)</text>\n      \n      <!-- Y-axis ticks & labels -->\n      <text x=\"44\" y=\"243\" font-size=\"9\" text-anchor=\"end\">0</text>\n      <text x=\"44\" y=\"199\" font-size=\"9\" text-anchor=\"end\">20</text>\n      <text x=\"44\" y=\"155\" font-size=\"9\" text-anchor=\"end\">40</text>\n      <text x=\"44\" y=\"111\" font-size=\"9\" text-anchor=\"end\">60</text>\n      <text x=\"44\" y=\"67\" font-size=\"9\" text-anchor=\"end\">80</text>\n      <text x=\"44\" y=\"24\" font-size=\"9\" text-anchor=\"end\">100</text>\n      <text x=\"15\" y=\"130\" font-size=\"11\" font-weight=\"800\" text-anchor=\"middle\" fill=\"#0f172a\" transform=\"rotate(-90 15 130)\">Population (millions)</text>\n    </svg>\n    <div class=\"sim-diagram-caption\">Scatter Graph Grid (0 to 800 km\u00b2 vs 0 to 100 million)</div>\n  </div>\n</div>",
+            diagramHtml: "<div style=\"width:100%; max-width:380px; margin:10px auto;\"><table style=\"width:100%; border-collapse:collapse; font-size:0.85rem; text-align:center;\"><thead><tr style=\"background:#0f172a; color:#ffffff;\"><th style=\"padding:6px 8px; border:1px solid #334155; text-align:left;\">Country</th><th style=\"padding:6px 8px; border:1px solid #334155;\">Land area<br>(1000 km²)</th><th style=\"padding:6px 8px; border:1px solid #334155;\">Population in 2018<br>(millions)</th></tr></thead><tbody><tr><td style=\"padding:4px 8px; border:1px solid #cbd5e1; text-align:left; font-weight:700;\">Germany</td><td style=\"border:1px solid #cbd5e1;\">360</td><td style=\"border:1px solid #cbd5e1;\">83</td></tr><tr style=\"background:#f8fafc;\"><td style=\"padding:4px 8px; border:1px solid #cbd5e1; text-align:left; font-weight:700;\">Greece</td><td style=\"border:1px solid #cbd5e1;\">130</td><td style=\"border:1px solid #cbd5e1;\">11</td></tr><tr><td style=\"padding:4px 8px; border:1px solid #cbd5e1; text-align:left; font-weight:700;\">Italy</td><td style=\"border:1px solid #cbd5e1;\">300</td><td style=\"border:1px solid #cbd5e1;\">58</td></tr><tr style=\"background:#f8fafc;\"><td style=\"padding:4px 8px; border:1px solid #cbd5e1; text-align:left; font-weight:700;\">Poland</td><td style=\"border:1px solid #cbd5e1;\">310</td><td style=\"border:1px solid #cbd5e1;\">39</td></tr><tr><td style=\"padding:4px 8px; border:1px solid #cbd5e1; text-align:left; font-weight:700;\">Spain</td><td style=\"border:1px solid #cbd5e1;\">510</td><td style=\"border:1px solid #cbd5e1;\">47</td></tr><tr style=\"background:#f8fafc;\"><td style=\"padding:4px 8px; border:1px solid #cbd5e1; text-align:left; font-weight:700;\">France</td><td style=\"border:1px solid #cbd5e1;\">640</td><td style=\"border:1px solid #cbd5e1;\">67</td></tr><tr><td style=\"padding:4px 8px; border:1px solid #cbd5e1; text-align:left; font-weight:700;\">Romania</td><td style=\"border:1px solid #cbd5e1;\">240</td><td style=\"border:1px solid #cbd5e1;\">19</td></tr><tr style=\"background:#e0f2fe; font-weight:800; color:#0369a1;\"><td style=\"padding:5px 8px; border:1px solid #0284c7; text-align:left;\">United Kingdom</td><td style=\"border:1px solid #0284c7; letter-spacing:2px;\">.........</td><td style=\"border:1px solid #0284c7; letter-spacing:2px;\">.........</td></tr></tbody></table><div style=\"font-size:0.75rem; color:#64748b; margin-top:6px; line-height:1.4;\">UK info: 93 400 sq miles • 2011 pop 56.1m (+19.6% by 2018) • 1 sq mile = 2.6 km²</div></div>",
+            workspaceDiagramHtml: "<svg viewBox=\"0 0 540 380\" style=\"width:100%; max-width:620px; height:auto; display:block; margin:0 auto;\"><defs><pattern id=\"scatterGridBlankWs\" width=\"12\" height=\"15\" patternUnits=\"userSpaceOnUse\"><rect width=\"12\" height=\"15\" fill=\"none\" stroke=\"#f1f5f9\" stroke-width=\"0.75\"/></pattern><pattern id=\"scatterGridMajorWs\" width=\"60\" height=\"75\" patternUnits=\"userSpaceOnUse\"><rect width=\"60\" height=\"75\" fill=\"none\" stroke=\"#cbd5e1\" stroke-width=\"1.2\"/></pattern></defs><rect x=\"65\" y=\"20\" width=\"450\" height=\"300\" fill=\"url(#scatterGridBlankWs)\" stroke=\"#cbd5e1\" stroke-width=\"1\"/><rect x=\"65\" y=\"20\" width=\"450\" height=\"300\" fill=\"url(#scatterGridMajorWs)\" stroke=\"#0f172a\" stroke-width=\"2\"/><line x1=\"65\" y1=\"320\" x2=\"520\" y2=\"320\" stroke=\"#0f172a\" stroke-width=\"2.5\"/><line x1=\"65\" y1=\"15\" x2=\"65\" y2=\"320\" stroke=\"#0f172a\" stroke-width=\"2.5\"/><text x=\"290\" y=\"360\" font-size=\"13\" font-weight=\"800\" fill=\"#0f172a\" text-anchor=\"middle\">Land area (1000 km²)</text><text x=\"20\" y=\"170\" font-size=\"13\" font-weight=\"800\" fill=\"#0f172a\" text-anchor=\"middle\" transform=\"rotate(-90 20 170)\">Population in 2018 (millions)</text><text x=\"65\" y=\"336\" font-size=\"11\" font-weight=\"700\" text-anchor=\"middle\">0</text><text x=\"121\" y=\"336\" font-size=\"11\" text-anchor=\"middle\">100</text><text x=\"177\" y=\"336\" font-size=\"11\" text-anchor=\"middle\">200</text><text x=\"233\" y=\"336\" font-size=\"11\" text-anchor=\"middle\">300</text><text x=\"290\" y=\"336\" font-size=\"11\" text-anchor=\"middle\">400</text><text x=\"346\" y=\"336\" font-size=\"11\" text-anchor=\"middle\">500</text><text x=\"402\" y=\"336\" font-size=\"11\" text-anchor=\"middle\">600</text><text x=\"458\" y=\"336\" font-size=\"11\" text-anchor=\"middle\">700</text><text x=\"515\" y=\"336\" font-size=\"11\" font-weight=\"700\" text-anchor=\"middle\">800</text><text x=\"58\" y=\"324\" font-size=\"11\" font-weight=\"700\" text-anchor=\"end\">0</text><text x=\"58\" y=\"264\" font-size=\"11\" text-anchor=\"end\">20</text><text x=\"58\" y=\"204\" font-size=\"11\" text-anchor=\"end\">40</text><text x=\"58\" y=\"144\" font-size=\"11\" text-anchor=\"end\">60</text><text x=\"58\" y=\"84\" font-size=\"11\" text-anchor=\"end\">80</text><text x=\"58\" y=\"24\" font-size=\"11\" font-weight=\"700\" text-anchor=\"end\">100</text></svg>",
             scenarioText: 'Pablo is investigating the relationship between land area (1000 km²) and population (millions) of 8 European countries:\n• Germany (357, 82.8), Greece (132, 10.7), Italy (301, 60.5), Poland (313, 38.0), Spain (506, 46.7), France (552, 67.2), Romania (238, 19.5), UK (243, 66.3).',
             promptText: '(a) Plot points on the scatter diagram.\n(b) What type of correlation does the scatter diagram show?\n(c) Draw a line of best fit and estimate the population for a country with land area 450,000 km².',
             unit: 'millions',
@@ -753,7 +756,8 @@ const MFS_MOCK_DATA = {
         questions: [
           { num: 1, section: 'Dimension Constraints: Kitchen Fridges', isCalcAllowed: true, marks: 3, markTags: '[M1, M1, A1]', scenarioTitle: 'Kitchen Appliance Unit Fit', scenarioText: 'Maximum opening dimensions: Width 19 inches, Depth 22 inches, Height 36 inches (1 inch = 2.54 cm).\n• Fridge A: W 47.2 cm, D 44.6 cm, H 84.2 cm\n• Fridge B: W 49.4 cm, D 52.0 cm, H 85.0 cm\n• Fridge C: W 46.0 cm, D 54.0 cm, H 94.2 cm.', promptText: 'Which fridge will fit into the space? Show your working.', unit: '', expectedType: 'text', modelSolution: 'Opening: W = 19 × 2.54 = 48.26 cm; D = 22 × 2.54 = 55.88 cm; H = 36 × 2.54 = 91.44 cm [M1, M1]; Fridge B too wide (49.4 > 48.26); Fridge C too tall (94.2 > 91.44); Only Fridge A fits [A1]', finalBenchmark: 'Fridge A' },
           { num: 2, section: 'Coordinate Geometry: Parallelogram', isCalcAllowed: true, marks: 3, markTags: '[B1, B1, B1]', scenarioTitle: 'Plotting Parallelogram ABCD',
-            diagramHtml: "<svg viewBox=\"0 0 460 260\" style=\"max-width:440px; margin:0 auto; display:block;\">\n  <defs>\n    <pattern id=\"coordGridBlank\" width=\"25\" height=\"25\" patternUnits=\"userSpaceOnUse\">\n      <path d=\"M 25 0 L 0 0 0 25\" fill=\"none\" stroke=\"#e2e8f0\" stroke-width=\"1\"/>\n    </pattern>\n  </defs>\n  <rect x=\"30\" y=\"20\" width=\"400\" height=\"200\" fill=\"url(#coordGridBlank)\" stroke=\"#cbd5e1\" stroke-width=\"1.5\"/>\n  <line x1=\"30\" y1=\"145\" x2=\"430\" y2=\"145\" stroke=\"#0f172a\" stroke-width=\"2\"/>\n  <line x1=\"155\" y1=\"20\" x2=\"155\" y2=\"220\" stroke=\"#0f172a\" stroke-width=\"2\"/>\n  <text x=\"425\" y=\"140\" font-size=\"12\" font-weight=\"900\">x</text>\n  <text x=\"162\" y=\"32\" font-size=\"12\" font-weight=\"900\">y</text>\n  <text x=\"145\" y=\"160\" font-size=\"10\" font-weight=\"700\">0</text>\n  <text x=\"105\" y=\"160\" font-size=\"10\">-2</text>\n  <text x=\"205\" y=\"160\" font-size=\"10\">2</text>\n  <text x=\"255\" y=\"160\" font-size=\"10\">4</text>\n  <text x=\"145\" y=\"120\" font-size=\"10\">1</text>\n  <text x=\"145\" y=\"95\" font-size=\"10\">2</text>\n  <text x=\"145\" y=\"45\" font-size=\"10\">4</text>\n  <text x=\"145\" y=\"170\" font-size=\"10\">-1</text>\n  \n  <!-- Plotted points A, B, C only (D is NOT plotted!) -->\n  <circle cx=\"105\" cy=\"120\" r=\"5\" fill=\"#0f172a\"/>\n  <text x=\"90\" y=\"115\" font-size=\"13\" font-weight=\"900\" fill=\"#0f172a\">A(-2, 1)</text>\n  <circle cx=\"205\" cy=\"45\" r=\"5\" fill=\"#0f172a\"/>\n  <text x=\"215\" y=\"45\" font-size=\"13\" font-weight=\"900\" fill=\"#0f172a\">B(2, 4)</text>\n  <circle cx=\"180\" cy=\"170\" r=\"5\" fill=\"#0f172a\"/>\n  <text x=\"188\" y=\"185\" font-size=\"13\" font-weight=\"900\" fill=\"#0f172a\">C(1, -1)</text>\n  \n  <!-- Lines AB and BC connected -->\n  <line x1=\"105\" y1=\"120\" x2=\"205\" y2=\"45\" stroke=\"#0f172a\" stroke-width=\"2\"/>\n  <line x1=\"205\" y1=\"45\" x2=\"180\" y2=\"170\" stroke=\"#0f172a\" stroke-width=\"2\"/>\n</svg>\n<div class=\"sim-diagram-caption\">Points A, B, and C plotted on grid \u2022 Find coordinates of D to complete ABCD</div>",
+            diagramHtml: "<div style=\"background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px; padding:14px; margin:10px 0;\"><div style=\"font-weight:800; color:#0f172a; margin-bottom:8px; display:flex; align-items:center; gap:6px;\"><i class=\"fa-solid fa-shapes\" style=\"color:#0284c7;\"></i> Given Coordinate Vertices:</div><div style=\"display:flex; gap:10px; flex-wrap:wrap; margin-bottom:10px;\"><span style=\"background:#0f172a; color:#ffffff; padding:4px 10px; border-radius:4px; font-weight:800; font-size:0.9rem;\">A(−2, 1)</span><span style=\"background:#0f172a; color:#ffffff; padding:4px 10px; border-radius:4px; font-weight:800; font-size:0.9rem;\">B(2, 4)</span><span style=\"background:#0f172a; color:#ffffff; padding:4px 10px; border-radius:4px; font-weight:800; font-size:0.9rem;\">C(1, −1)</span></div><div style=\"font-size:0.86rem; color:#475569; line-height:1.5;\">ABCD forms a parallelogram. Opposite sides are parallel and equal in length. Plot vertex D on the coordinate grid on the right and draw the completed parallelogram.</div></div>",
+            workspaceDiagramHtml: "<svg viewBox=\"0 0 540 320\" style=\"width:100%; max-width:620px; height:auto; display:block; margin:0 auto;\"><defs><pattern id=\"coordGridWs\" width=\"30\" height=\"30\" patternUnits=\"userSpaceOnUse\"><path d=\"M 30 0 L 0 0 0 30\" fill=\"none\" stroke=\"#e2e8f0\" stroke-width=\"1.2\"/></pattern></defs><rect x=\"30\" y=\"20\" width=\"480\" height=\"260\" fill=\"url(#coordGridWs)\" stroke=\"#cbd5e1\" stroke-width=\"1.5\"/><line x1=\"30\" y1=\"170\" x2=\"510\" y2=\"170\" stroke=\"#0f172a\" stroke-width=\"2.5\"/><line x1=\"180\" y1=\"20\" x2=\"180\" y2=\"280\" stroke=\"#0f172a\" stroke-width=\"2.5\"/><text x=\"500\" y=\"162\" font-size=\"14\" font-weight=\"900\">x</text><text x=\"188\" y=\"35\" font-size=\"14\" font-weight=\"900\">y</text><text x=\"168\" y=\"188\" font-size=\"11\" font-weight=\"700\">0</text><text x=\"120\" y=\"188\" font-size=\"11\">-2</text><text x=\"240\" y=\"188\" font-size=\"11\">2</text><text x=\"300\" y=\"188\" font-size=\"11\">4</text><text x=\"168\" y=\"140\" font-size=\"11\">1</text><text x=\"168\" y=\"110\" font-size=\"11\">2</text><text x=\"168\" y=\"50\" font-size=\"11\">4</text><text x=\"168\" y=\"200\" font-size=\"11\">-1</text><circle cx=\"120\" cy=\"140\" r=\"5\" fill=\"#0f172a\"/><text x=\"100\" y=\"135\" font-size=\"13\" font-weight=\"900\" fill=\"#0f172a\">A(-2, 1)</text><circle cx=\"240\" cy=\"50\" r=\"5\" fill=\"#0f172a\"/><text x=\"250\" y=\"46\" font-size=\"13\" font-weight=\"900\" fill=\"#0f172a\">B(2, 4)</text><circle cx=\"210\" cy=\"200\" r=\"5\" fill=\"#0f172a\"/><text x=\"220\" y=\"215\" font-size=\"13\" font-weight=\"900\" fill=\"#0f172a\">C(1, -1)</text><line x1=\"120\" y1=\"140\" x2=\"240\" y2=\"50\" stroke=\"#0f172a\" stroke-width=\"2\"/><line x1=\"240\" y1=\"50\" x2=\"210\" y2=\"200\" stroke=\"#0f172a\" stroke-width=\"2\"/></svg>",
             scenarioText: 'A coordinate grid has points A(−2, 1), B(2, 4), and C(1, −1).\n(a) Write down coordinates of C.\n(b) Find coordinates of D to complete parallelogram ABCD.\n(c) State the sum of interior angles of ABCD.', promptText: 'State coordinates of C, D, and interior angle sum.', unit: '', expectedType: 'text', modelSolution: '(a) C(1, −1) [B1]; (b) Vector AB is (+4, +3); applying to C gives D(5, 2) [B1]; (c) Sum of angles in any quadrilateral = 360° [B1]', finalBenchmark: 'C(1, −1) / D(5, 2) / 360°' },
           { num: 3, section: 'Currency Exchange & Commission', isCalcAllowed: true, marks: 4, markTags: '[M1, M1, M1, A1]', scenarioTitle: 'Holiday Spending Money', scenarioText: 'Exchange rate: £1 = €1.16 with 2% commission fee. Calculate net euros received for £850.', promptText: 'Calculate euros received after 2% fee.', unit: '€', expectedType: 'number', modelSolution: 'Fee = £850 × 0.02 = £17; Exchanged = 850 − 17 = £833 [M1]; Euros = 833 × 1.16 = €966.28 [M1, A1]', finalBenchmark: '€966.28' },
           { num: 4, section: 'Cylindrical Storage Tank Volume', isCalcAllowed: true, marks: 4, markTags: '[M1, M1, M1, A1]', scenarioTitle: 'Oil Tank Capacity',
@@ -773,7 +777,8 @@ const MFS_MOCK_DATA = {
             scenarioText: 'Probability Test 1 passes = 0.85; Probability Test 2 passes = 0.90.', promptText: 'Calculate the probability that both tests pass.', unit: '', expectedType: 'number', modelSolution: 'P(Both Pass) = 0.85 × 0.90 = 0.765 (or 76.5%) [M1, A1]', finalBenchmark: '0.765' },
           { num: 11, section: 'Floor Tiling with Wastage Allowance', isCalcAllowed: true, marks: 5, markTags: '[M1, M1, M1, M1, A1]', scenarioTitle: 'Office Floor Tiling', scenarioText: 'Floor area is 65 m². Tiles cost £24/m². The builder adds a 10% wastage allowance before ordering.', promptText: 'Calculate the total cost of tiles needed including 10% wastage.', unit: '£', expectedType: 'number', modelSolution: 'Wastage = 65 × 1.10 = 71.5 m² [M1, M1]; Total cost = 71.5 × £24 = £1,716.00 [M1, A1]', finalBenchmark: '£1,716.00' },
           { num: 12, section: 'Scatter Graph & Line of Best Fit', isCalcAllowed: true, marks: 6, markTags: '[M1, A1, B1, M1, A1, B1]', scenarioTitle: 'Energy Consumption Trend',
-            diagramHtml: "<svg viewBox=\"0 0 460 260\" style=\"max-width:440px; margin:0 auto; display:block;\">\n  <line x1=\"50\" y1=\"210\" x2=\"430\" y2=\"210\" stroke=\"#0f172a\" stroke-width=\"2\"/>\n  <line x1=\"50\" y1=\"20\" x2=\"50\" y2=\"210\" stroke=\"#0f172a\" stroke-width=\"2\"/>\n  <text x=\"240\" y=\"248\" font-size=\"12\" font-weight=\"800\" fill=\"#0f172a\" text-anchor=\"middle\">Outdoor Temperature (\u00b0C)</text>\n  <text x=\"15\" y=\"115\" font-size=\"11\" font-weight=\"800\" fill=\"#0f172a\" text-anchor=\"middle\" transform=\"rotate(-90 15 115)\">Gas Units Used</text>\n  <text x=\"50\" y=\"225\" font-size=\"10\" text-anchor=\"middle\">0</text>\n  <text x=\"126\" y=\"225\" font-size=\"10\" text-anchor=\"middle\">4</text>\n  <text x=\"202\" y=\"225\" font-size=\"10\" text-anchor=\"middle\">8</text>\n  <text x=\"278\" y=\"225\" font-size=\"10\" text-anchor=\"middle\">12</text>\n  <text x=\"354\" y=\"225\" font-size=\"10\" text-anchor=\"middle\">16</text>\n  <text x=\"430\" y=\"225\" font-size=\"10\" text-anchor=\"middle\">20</text>\n  <text x=\"42\" y=\"214\" font-size=\"10\" text-anchor=\"end\">0</text>\n  <text x=\"42\" y=\"164\" font-size=\"10\" text-anchor=\"end\">25</text>\n  <text x=\"42\" y=\"114\" font-size=\"10\" text-anchor=\"end\">50</text>\n  <text x=\"42\" y=\"64\" font-size=\"10\" text-anchor=\"end\">75</text>\n  <text x=\"42\" y=\"24\" font-size=\"10\" text-anchor=\"end\">100</text>\n  <!-- Plotted data points ONLY (NO line of best fit, NO projection lines) -->\n  <circle cx=\"90\" cy=\"55\" r=\"4.5\" fill=\"#0f172a\"/>\n  <circle cx=\"110\" cy=\"70\" r=\"4.5\" fill=\"#0f172a\"/>\n  <circle cx=\"160\" cy=\"95\" r=\"4.5\" fill=\"#0f172a\"/>\n  <circle cx=\"210\" cy=\"115\" r=\"4.5\" fill=\"#0f172a\"/>\n  <circle cx=\"260\" cy=\"140\" r=\"4.5\" fill=\"#0f172a\"/>\n  <circle cx=\"310\" cy=\"160\" r=\"4.5\" fill=\"#0f172a\"/>\n  <circle cx=\"370\" cy=\"185\" r=\"4.5\" fill=\"#0f172a\"/>\n</svg>\n<div class=\"sim-diagram-caption\">Scatter Graph: Outdoor Temperature vs Gas Units Used</div>",
+            diagramHtml: "<div style=\"background:#f8fafc; border:1px solid #cbd5e1; border-radius:8px; padding:14px; margin:10px 0;\"><div style=\"font-weight:800; color:#0f172a; margin-bottom:8px; display:flex; align-items:center; gap:6px;\"><i class=\"fa-solid fa-chart-line\" style=\"color:#0284c7;\"></i> Scatter Graph Context:</div><div style=\"font-size:0.9rem; line-height:1.55; color:#334155;\">The scatter graph on the right displays the daily gas units used by a central heating system against the mean outdoor temperature (°C). Use the ruler/line tool on the graph to draw a straight line of best fit.</div></div>",
+            workspaceDiagramHtml: "<svg viewBox=\"0 0 540 340\" style=\"width:100%; max-width:620px; height:auto; display:block; margin:0 auto;\"><line x1=\"60\" y1=\"260\" x2=\"510\" y2=\"260\" stroke=\"#0f172a\" stroke-width=\"2.5\"/><line x1=\"60\" y1=\"20\" x2=\"60\" y2=\"260\" stroke=\"#0f172a\" stroke-width=\"2.5\"/><text x=\"285\" y=\"305\" font-size=\"13\" font-weight=\"800\" fill=\"#0f172a\" text-anchor=\"middle\">Outdoor Temperature (°C)</text><text x=\"20\" y=\"140\" font-size=\"13\" font-weight=\"800\" fill=\"#0f172a\" text-anchor=\"middle\" transform=\"rotate(-90 20 140)\">Gas Units Used</text><text x=\"60\" y=\"278\" font-size=\"11\" text-anchor=\"middle\">0</text><text x=\"150\" y=\"278\" font-size=\"11\" text-anchor=\"middle\">4</text><text x=\"240\" y=\"278\" font-size=\"11\" text-anchor=\"middle\">8</text><text x=\"330\" y=\"278\" font-size=\"11\" text-anchor=\"middle\">12</text><text x=\"420\" y=\"278\" font-size=\"11\" text-anchor=\"middle\">16</text><text x=\"510\" y=\"278\" font-size=\"11\" text-anchor=\"middle\">20</text><text x=\"52\" y=\"264\" font-size=\"11\" text-anchor=\"end\">0</text><text x=\"52\" y=\"204\" font-size=\"11\" text-anchor=\"end\">25</text><text x=\"52\" y=\"144\" font-size=\"11\" text-anchor=\"end\">50</text><text x=\"52\" y=\"84\" font-size=\"11\" text-anchor=\"end\">75</text><text x=\"52\" y=\"24\" font-size=\"11\" text-anchor=\"end\">100</text><circle cx=\"95\" cy=\"74\" r=\"4.5\" fill=\"#0f172a\"/><circle cx=\"125\" cy=\"98\" r=\"4.5\" fill=\"#0f172a\"/><circle cx=\"160\" cy=\"118\" r=\"4.5\" fill=\"#0f172a\"/><circle cx=\"205\" cy=\"144\" r=\"4.5\" fill=\"#0f172a\"/><circle cx=\"235\" cy=\"138\" r=\"4.5\" fill=\"#0f172a\"/><circle cx=\"270\" cy=\"168\" r=\"4.5\" fill=\"#0f172a\"/><circle cx=\"310\" cy=\"180\" r=\"4.5\" fill=\"#0f172a\"/><circle cx=\"345\" cy=\"204\" r=\"4.5\" fill=\"#0f172a\"/><circle cx=\"390\" cy=\"220\" r=\"4.5\" fill=\"#0f172a\"/><circle cx=\"435\" cy=\"242\" r=\"4.5\" fill=\"#0f172a\"/></svg>",
             scenarioText: 'Daily heating gas consumption plotted against outdoor temperature.', promptText: '(a) Describe the correlation. (b) Predict gas units at 4°C.', unit: '', expectedType: 'text', modelSolution: 'Negative correlation (as outdoor temp increases, gas use decreases) [B1]; Estimate from trendline gives approx 65–72 units [M1, A1]', finalBenchmark: 'Negative correlation; approx 68 units' }
         ]
       }
@@ -5251,7 +5256,8 @@ function getOrCreatePaper(key) {
     {
       num: 5, section: 'Scatter Diagrams & Correlation', isCalcAllowed: true, marks: 4, markTags: '[M1, A1, B1, B1]',
       scenarioTitle: 'Delivery Times vs Mileage',
-      diagramHtml: "<svg viewBox=\"0 0 460 240\" style=\"max-width:440px; margin:0 auto; display:block;\">\n  <line x1=\"50\" y1=\"200\" x2=\"430\" y2=\"200\" stroke=\"#0f172a\" stroke-width=\"2\"/>\n  <line x1=\"50\" y1=\"20\" x2=\"50\" y2=\"200\" stroke=\"#0f172a\" stroke-width=\"2\"/>\n  <text x=\"240\" y=\"235\" font-size=\"12\" font-weight=\"800\" fill=\"#0f172a\" text-anchor=\"middle\">Delivery Distance (Miles)</text>\n  <text x=\"15\" y=\"110\" font-size=\"11\" font-weight=\"800\" fill=\"#0f172a\" text-anchor=\"middle\" transform=\"rotate(-90 15 110)\">Transit Duration (Hours)</text>\n  <text x=\"50\" y=\"215\" font-size=\"10\" text-anchor=\"middle\">0</text>\n  <text x=\"145\" y=\"215\" font-size=\"10\" text-anchor=\"middle\">30</text>\n  <text x=\"240\" y=\"215\" font-size=\"10\" text-anchor=\"middle\">60</text>\n  <text x=\"335\" y=\"215\" font-size=\"10\" text-anchor=\"middle\">90</text>\n  <text x=\"430\" y=\"215\" font-size=\"10\" text-anchor=\"middle\">120</text>\n  <!-- Data points only (no line of best fit) -->\n  <circle cx=\"110\" cy=\"155\" r=\"4.5\" fill=\"#0f172a\"/>\n  <circle cx=\"160\" cy=\"135\" r=\"4.5\" fill=\"#0f172a\"/>\n  <circle cx=\"210\" cy=\"115\" r=\"4.5\" fill=\"#0f172a\"/>\n  <circle cx=\"280\" cy=\"90\" r=\"4.5\" fill=\"#0f172a\"/>\n  <circle cx=\"360\" cy=\"65\" r=\"4.5\" fill=\"#0f172a\"/>\n</svg>\n<div class=\"sim-diagram-caption\">Scatter Diagram: Delivery Distance vs Duration</div>", scenarioText: 'A courier analyzes delivery distance (miles) against transit duration (hours). The data shows strong positive linear correlation.',
+      diagramHtml: "<svg viewBox=\"0 0 460 240\" style=\"max-width:440px; margin:0 auto; display:block;\">\n  <line x1=\"50\" y1=\"200\" x2=\"430\" y2=\"200\" stroke=\"#0f172a\" stroke-width=\"2\"/>\n  <line x1=\"50\" y1=\"20\" x2=\"50\" y2=\"200\" stroke=\"#0f172a\" stroke-width=\"2\"/>\n  <text x=\"240\" y=\"235\" font-size=\"12\" font-weight=\"800\" fill=\"#0f172a\" text-anchor=\"middle\">Delivery Distance (Miles)</text>\n  <text x=\"15\" y=\"110\" font-size=\"11\" font-weight=\"800\" fill=\"#0f172a\" text-anchor=\"middle\" transform=\"rotate(-90 15 110)\">Transit Duration (Hours)</text>\n  <text x=\"50\" y=\"215\" font-size=\"10\" text-anchor=\"middle\">0</text>\n  <text x=\"145\" y=\"215\" font-size=\"10\" text-anchor=\"middle\">30</text>\n  <text x=\"240\" y=\"215\" font-size=\"10\" text-anchor=\"middle\">60</text>\n  <text x=\"335\" y=\"215\" font-size=\"10\" text-anchor=\"middle\">90</text>\n  <text x=\"430\" y=\"215\" font-size=\"10\" text-anchor=\"middle\">120</text>\n  <!-- Data points only (no line of best fit) -->\n  <circle cx=\"110\" cy=\"155\" r=\"4.5\" fill=\"#0f172a\"/>\n  <circle cx=\"160\" cy=\"135\" r=\"4.5\" fill=\"#0f172a\"/>\n  <circle cx=\"210\" cy=\"115\" r=\"4.5\" fill=\"#0f172a\"/>\n  <circle cx=\"280\" cy=\"90\" r=\"4.5\" fill=\"#0f172a\"/>\n  <circle cx=\"360\" cy=\"65\" r=\"4.5\" fill=\"#0f172a\"/>\n</svg>\n<div class=\"sim-diagram-caption\">Scatter Diagram: Delivery Distance vs Duration</div>",
+      workspaceDiagramHtml: "<svg viewBox=\"0 0 540 340\" style=\"width:100%; max-width:620px; height:auto; display:block; margin:0 auto;\"><defs><pattern id=\"delivGridWs\" width=\"50\" height=\"30\" patternUnits=\"userSpaceOnUse\"><rect width=\"50\" height=\"30\" fill=\"none\" stroke=\"#f1f5f9\" stroke-width=\"1\"/></pattern></defs><rect x=\"60\" y=\"20\" width=\"450\" height=\"240\" fill=\"url(#delivGridWs)\" stroke=\"#cbd5e1\" stroke-width=\"1.5\"/><line x1=\"60\" y1=\"260\" x2=\"510\" y2=\"260\" stroke=\"#0f172a\" stroke-width=\"2.5\"/><line x1=\"60\" y1=\"20\" x2=\"60\" y2=\"260\" stroke=\"#0f172a\" stroke-width=\"2.5\"/><text x=\"285\" y=\"305\" font-size=\"13\" font-weight=\"800\" fill=\"#0f172a\" text-anchor=\"middle\">Delivery Distance (miles)</text><text x=\"20\" y=\"140\" font-size=\"13\" font-weight=\"800\" fill=\"#0f172a\" text-anchor=\"middle\" transform=\"rotate(-90 20 140)\">Duration (hours)</text><circle cx=\"110\" cy=\"210\" r=\"4.5\" fill=\"#0f172a\"/><circle cx=\"160\" cy=\"180\" r=\"4.5\" fill=\"#0f172a\"/><circle cx=\"210\" cy=\"150\" r=\"4.5\" fill=\"#0f172a\"/><circle cx=\"260\" cy=\"140\" r=\"4.5\" fill=\"#0f172a\"/><circle cx=\"310\" cy=\"110\" r=\"4.5\" fill=\"#0f172a\"/><circle cx=\"360\" cy=\"90\" r=\"4.5\" fill=\"#0f172a\"/><circle cx=\"410\" cy=\"70\" r=\"4.5\" fill=\"#0f172a\"/><circle cx=\"460\" cy=\"50\" r=\"4.5\" fill=\"#0f172a\"/></svg>", scenarioText: 'A courier analyzes delivery distance (miles) against transit duration (hours). The data shows strong positive linear correlation.',
       promptText: 'If a delivery route is 85 miles and the line of best fit has equation Duration = (Distance ÷ 40) + 0.5 hours, estimate the transit duration in hours.',
       unit: 'hours', expectedType: 'number',
       modelSolution: 'Duration = (85 ÷ 40) + 0.5 = 2.125 + 0.5 = 2.625 hours (or 2 hours 37.5 mins) [M1, A1, B1]',
@@ -5273,7 +5279,8 @@ function getOrCreatePaper(key) {
     {
       num: 7, section: 'Scale Drawings & Space Planning', isCalcAllowed: true, marks: 5, markTags: '[M1, M1, A1, B1, B1]',
       scenarioTitle: 'Conference Room Layout',
-      diagramHtml: "<svg viewBox=\"0 0 460 230\" style=\"max-width:440px; margin:0 auto; display:block;\">\n  <rect x=\"40\" y=\"30\" width=\"360\" height=\"170\" fill=\"#f8fafc\" stroke=\"#0f172a\" stroke-width=\"2.5\"/>\n  <text x=\"220\" y=\"20\" font-size=\"13\" font-weight=\"800\" text-anchor=\"middle\">Room: 9 m \u00d7 6 m</text>\n  <rect x=\"160\" y=\"85\" width=\"120\" height=\"60\" fill=\"#f1f5f9\" stroke=\"#0f172a\" stroke-width=\"2\"/>\n  <text x=\"220\" y=\"120\" font-size=\"12\" font-weight=\"800\" text-anchor=\"middle\">Desk (3 m \u00d7 1.5 m)</text>\n  <rect x=\"280\" y=\"160\" width=\"115\" height=\"32\" rx=\"4\" fill=\"#ffffff\" stroke=\"#0f172a\"/>\n  <text x=\"337\" y=\"180\" font-size=\"10.5\" font-weight=\"800\" text-anchor=\"middle\">Scale: 1 cm = 0.75 m</text>\n</svg>\n<div class=\"sim-diagram-caption\">Conference Room Space Planning \u2022 Minimum 1.5 m clearance required</div>", scenarioText: 'A conference room is 9 m long and 6 m wide. A scale drawing is drawn where 1 cm represents 0.75 m. An executive desk measuring 3 m by 1.5 m is placed with at least 1.5 m clearance all around.',
+      diagramHtml: "<svg viewBox=\"0 0 460 230\" style=\"max-width:440px; margin:0 auto; display:block;\">\n  <rect x=\"40\" y=\"30\" width=\"360\" height=\"170\" fill=\"#f8fafc\" stroke=\"#0f172a\" stroke-width=\"2.5\"/>\n  <text x=\"220\" y=\"20\" font-size=\"13\" font-weight=\"800\" text-anchor=\"middle\">Room: 9 m \u00d7 6 m</text>\n  <rect x=\"160\" y=\"85\" width=\"120\" height=\"60\" fill=\"#f1f5f9\" stroke=\"#0f172a\" stroke-width=\"2\"/>\n  <text x=\"220\" y=\"120\" font-size=\"12\" font-weight=\"800\" text-anchor=\"middle\">Desk (3 m \u00d7 1.5 m)</text>\n  <rect x=\"280\" y=\"160\" width=\"115\" height=\"32\" rx=\"4\" fill=\"#ffffff\" stroke=\"#0f172a\"/>\n  <text x=\"337\" y=\"180\" font-size=\"10.5\" font-weight=\"800\" text-anchor=\"middle\">Scale: 1 cm = 0.75 m</text>\n</svg>\n<div class=\"sim-diagram-caption\">Conference Room Space Planning \u2022 Minimum 1.5 m clearance required</div>",
+      workspaceDiagramHtml: "<svg viewBox=\"0 0 540 320\" style=\"width:100%; max-width:620px; height:auto; display:block; margin:0 auto;\"><defs><pattern id=\"confGridWs\" width=\"45\" height=\"45\" patternUnits=\"userSpaceOnUse\"><rect width=\"45\" height=\"45\" fill=\"none\" stroke=\"#cbd5e1\" stroke-width=\"1.2\"/></pattern></defs><rect x=\"20\" y=\"20\" width=\"500\" height=\"270\" fill=\"url(#confGridWs)\" stroke=\"#0f172a\" stroke-width=\"2.5\"/><text x=\"270\" y=\"310\" font-size=\"12\" font-weight=\"800\" fill=\"#0284c7\" text-anchor=\"middle\">Conference Room Grid: 1 square = 50 cm &bull; Use ruler/line tool to sketch layout</text></svg>", scenarioText: 'A conference room is 9 m long and 6 m wide. A scale drawing is drawn where 1 cm represents 0.75 m. An executive desk measuring 3 m by 1.5 m is placed with at least 1.5 m clearance all around.',
       promptText: '(a) Work out the length in cm of the room on the scale drawing.\n(b) Work out the minimum room length required for the desk and clearances.',
       unit: '', expectedType: 'text',
       parts: [
@@ -5312,7 +5319,8 @@ function getOrCreatePaper(key) {
     {
       num: 3, section: 'Scale Drawings & Maps', isCalcAllowed: true, marks: 4, markTags: '[M1, M1, A1, B1]',
       scenarioTitle: 'Site Layout Plan',
-      diagramHtml: "<svg viewBox=\"0 0 460 190\" style=\"max-width:440px; margin:0 auto; display:block;\">\n  <rect x=\"30\" y=\"20\" width=\"400\" height=\"140\" fill=\"#f8fafc\" stroke=\"#334155\" stroke-width=\"1.5\"/>\n  <circle cx=\"80\" cy=\"90\" r=\"7\" fill=\"#0f172a\"/>\n  <text x=\"80\" y=\"120\" font-size=\"12\" font-weight=\"800\" text-anchor=\"middle\" fill=\"#0f172a\">Site Gate</text>\n  <circle cx=\"360\" cy=\"90\" r=\"7\" fill=\"#0f172a\"/>\n  <text x=\"360\" y=\"120\" font-size=\"12\" font-weight=\"800\" text-anchor=\"middle\" fill=\"#0f172a\">Loading Bay</text>\n  <line x1=\"87\" y1=\"90\" x2=\"353\" y2=\"90\" stroke=\"#0f172a\" stroke-width=\"2\" stroke-dasharray=\"6,4\"/>\n  <text x=\"220\" y=\"80\" font-size=\"13\" font-weight=\"800\" fill=\"#0f172a\" text-anchor=\"middle\">Distance on map = 7.4 cm</text>\n  <rect x=\"290\" y=\"30\" width=\"130\" height=\"30\" rx=\"4\" fill=\"#ffffff\" stroke=\"#0f172a\"/>\n  <text x=\"355\" y=\"49\" font-size=\"11\" font-weight=\"800\" text-anchor=\"middle\" fill=\"#0f172a\">Scale: 1 cm = 25 m</text>\n</svg>\n<div class=\"sim-diagram-caption\">Site Layout Plan \u2022 Scale: 1 cm represents 25 m</div>", scenarioText: 'The scale plan shows the distance from the Site Gate to the Loading Bay. The scale is 1 cm represents 25 metres. On the plan, the direct line measures 7.4 cm.',
+      diagramHtml: "<svg viewBox=\"0 0 460 190\" style=\"max-width:440px; margin:0 auto; display:block;\">\n  <rect x=\"30\" y=\"20\" width=\"400\" height=\"140\" fill=\"#f8fafc\" stroke=\"#334155\" stroke-width=\"1.5\"/>\n  <circle cx=\"80\" cy=\"90\" r=\"7\" fill=\"#0f172a\"/>\n  <text x=\"80\" y=\"120\" font-size=\"12\" font-weight=\"800\" text-anchor=\"middle\" fill=\"#0f172a\">Site Gate</text>\n  <circle cx=\"360\" cy=\"90\" r=\"7\" fill=\"#0f172a\"/>\n  <text x=\"360\" y=\"120\" font-size=\"12\" font-weight=\"800\" text-anchor=\"middle\" fill=\"#0f172a\">Loading Bay</text>\n  <line x1=\"87\" y1=\"90\" x2=\"353\" y2=\"90\" stroke=\"#0f172a\" stroke-width=\"2\" stroke-dasharray=\"6,4\"/>\n  <text x=\"220\" y=\"80\" font-size=\"13\" font-weight=\"800\" fill=\"#0f172a\" text-anchor=\"middle\">Distance on map = 7.4 cm</text>\n  <rect x=\"290\" y=\"30\" width=\"130\" height=\"30\" rx=\"4\" fill=\"#ffffff\" stroke=\"#0f172a\"/>\n  <text x=\"355\" y=\"49\" font-size=\"11\" font-weight=\"800\" text-anchor=\"middle\" fill=\"#0f172a\">Scale: 1 cm = 25 m</text>\n</svg>\n<div class=\"sim-diagram-caption\">Site Layout Plan \u2022 Scale: 1 cm represents 25 m</div>",
+      workspaceDiagramHtml: "<svg viewBox=\"0 0 540 320\" style=\"width:100%; max-width:620px; height:auto; display:block; margin:0 auto;\"><defs><pattern id=\"siteGridWs\" width=\"40\" height=\"40\" patternUnits=\"userSpaceOnUse\"><rect width=\"40\" height=\"40\" fill=\"none\" stroke=\"#cbd5e1\" stroke-width=\"1.2\"/></pattern></defs><rect x=\"20\" y=\"20\" width=\"500\" height=\"260\" fill=\"url(#siteGridWs)\" stroke=\"#0f172a\" stroke-width=\"2.5\"/><text x=\"270\" y=\"305\" font-size=\"12\" font-weight=\"800\" fill=\"#0284c7\" text-anchor=\"middle\">Site Plan Grid: Scale 1 cm represents 25 m &bull; Sketch layout below</text></svg>", scenarioText: 'The scale plan shows the distance from the Site Gate to the Loading Bay. The scale is 1 cm represents 25 metres. On the plan, the direct line measures 7.4 cm.',
       promptText: 'Work out the actual real-world distance from the Site Gate to the Loading Bay in metres.',
       unit: 'm', expectedType: 'number',
       modelSolution: 'Actual distance = 7.4 × 25 = 185 metres [M1, M1, A1, B1]',
@@ -5565,7 +5573,7 @@ function lockSection(secId) {
   renderSectionTabs(paper);
 }
 
-function promptSectionLock(actionCallback, targetSec = null) {
+function promptSectionLock(actionCallback, targetSec = null, isFinalSubmission = false) {
   const paper = getOrCreatePaper(simCurrentPaperKey);
   // Strictly Maths only! English papers (Writing & Reading) have NO section locks
   if (paper.subject !== 'maths') {
@@ -5576,8 +5584,7 @@ function promptSectionLock(actionCallback, targetSec = null) {
   const sections = getPaperSections(paper);
   const currentSec = targetSec || sections[simCurrentSectionIndex];
 
-  // If section already locked, proceed directly
-  if (!currentSec || isSectionLocked(currentSec.id)) {
+  if (!currentSec) {
     if (typeof actionCallback === 'function') actionCallback();
     return;
   }
@@ -5585,13 +5592,16 @@ function promptSectionLock(actionCallback, targetSec = null) {
   const modal = document.getElementById('simSectionLockModal');
   const titleEl = document.getElementById('simLockModalTitle');
   const msgEl = document.getElementById('simLockModalMessage');
+  const confirmBtn = document.getElementById('simConfirmLockBtn');
 
-  if (currentSec.isCalcAllowed) {
-    if (titleEl) titleEl.innerHTML = '<i class="fa-solid fa-calculator" style="color:var(--sim-sky);"></i> End of Calculator Section';
-    if (msgEl) msgEl.innerText = 'This will be the end of the calculator section and you cannot return.';
+  if (isFinalSubmission || currentSec.id === 'B' || simCurrentSectionIndex === sections.length - 1) {
+    if (titleEl) titleEl.innerHTML = '<i class="fa-solid fa-flag-checkered" style="color:var(--sim-navy);"></i> End of Calculator Section &amp; Exam';
+    if (msgEl) msgEl.innerText = 'This will be the end of Section B: Calculator and your mock exam. You will not be able to modify your working or change your answers once you finish. Are you ready to submit and review your benchmark marks?';
+    if (confirmBtn) confirmBtn.innerHTML = '<i class="fa-solid fa-check-double"></i> Confirm &amp; Finish Exam';
   } else {
     if (titleEl) titleEl.innerHTML = '<i class="fa-solid fa-ban" style="color:#ef4444;"></i> End of Non-Calculator Section';
-    if (msgEl) msgEl.innerText = `This will be the end of ${currentSec.name} and you cannot return once you proceed.`;
+    if (msgEl) msgEl.innerText = `This will be the end of ${currentSec.name} and you cannot return once you proceed to Section B.`;
+    if (confirmBtn) confirmBtn.innerHTML = '<i class="fa-solid fa-lock"></i> Confirm &amp; Proceed to Section B';
   }
 
   simPendingLockAction = () => {
@@ -5745,7 +5755,7 @@ function switchSection(targetIndex, forceQuestions = false) {
   }
 
   // If moving forward from an active section, prompt lock warning
-  if (targetIndex > simCurrentSectionIndex && currentSec && !isSectionLocked(currentSec.id)) {
+  if (targetIndex > simCurrentSectionIndex && currentSec) {
     promptSectionLock(() => {
       performSwitchSection(targetIndex, forceQuestions);
     }, currentSec);
@@ -6117,6 +6127,180 @@ function renderSectionCover() {
 }
 
 
+
+// =========================================================================
+// INTERACTIVE WORKSPACE DRAWING & ANSWER GRID SYSTEM (MATHS MODE)
+// =========================================================================
+let simCurrentDrawTool = 'pen'; // 'pen' or 'line'
+let simDrawingActive = false;
+let simLineStartX = 0;
+let simLineStartY = 0;
+let simCanvasSnapshot = null;
+
+function setSimDrawTool(tool) {
+  simCurrentDrawTool = tool;
+  const penBtn = document.getElementById('simDrawToolPen');
+  const lineBtn = document.getElementById('simDrawToolLine');
+  if (penBtn) penBtn.classList.toggle('active', tool === 'pen');
+  if (lineBtn) lineBtn.classList.toggle('active', tool === 'line');
+}
+
+function clearSimDrawing() {
+  const canvas = document.getElementById('simDrawingCanvas');
+  if (!canvas) return;
+  const ctx = canvas.getContext('2d');
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  simCanvasSnapshot = null;
+
+  const paper = getOrCreatePaper(simCurrentPaperKey);
+  const sections = getPaperSections(paper);
+  const sec = sections[simCurrentSectionIndex] || sections[0];
+  if (simCurrentQuestionIndex > 0 && sec.questions[simCurrentQuestionIndex - 1]) {
+    const qNum = sec.questions[simCurrentQuestionIndex - 1].num;
+    localStorage.removeItem(`mfs_sim_${simCurrentPaperKey}_sec_${sec.id}_q${qNum}_drawing`);
+  }
+}
+
+function setupCanvasDrawingEvents(canvas, q, sec) {
+  if (canvas._hasSimListeners) return;
+  canvas._hasSimListeners = true;
+
+  const ctx = canvas.getContext('2d');
+
+  function getCoords(e) {
+    const r = canvas.getBoundingClientRect();
+    const scaleX = canvas.width / r.width;
+    const scaleY = canvas.height / r.height;
+    return {
+      x: (e.clientX - r.left) * scaleX,
+      y: (e.clientY - r.top) * scaleY
+    };
+  }
+
+  function saveDrawing() {
+    try {
+      const dataUrl = canvas.toDataURL('image/png');
+      const paper = getOrCreatePaper(simCurrentPaperKey);
+      const sections = getPaperSections(paper);
+      const currentSec = sections[simCurrentSectionIndex] || sections[0];
+      if (simCurrentQuestionIndex > 0 && currentSec.questions[simCurrentQuestionIndex - 1]) {
+        const curQ = currentSec.questions[simCurrentQuestionIndex - 1];
+        localStorage.setItem(`mfs_sim_${simCurrentPaperKey}_sec_${currentSec.id}_q${curQ.num}_drawing`, dataUrl);
+      }
+    } catch (err) {}
+  }
+
+  canvas.addEventListener('pointerdown', (e) => {
+    canvas.setPointerCapture(e.pointerId);
+    simDrawingActive = true;
+    const pt = getCoords(e);
+    simLineStartX = pt.x;
+    simLineStartY = pt.y;
+
+    try {
+      simCanvasSnapshot = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    } catch (err) {}
+
+    ctx.strokeStyle = '#0284c7'; // high-contrast sky/navy ink
+    ctx.lineWidth = 3;
+    ctx.lineCap = 'round';
+    ctx.lineJoin = 'round';
+
+    if (simCurrentDrawTool === 'pen') {
+      ctx.beginPath();
+      ctx.moveTo(pt.x, pt.y);
+    }
+  });
+
+  canvas.addEventListener('pointermove', (e) => {
+    if (!simDrawingActive) return;
+    const pt = getCoords(e);
+
+    if (simCurrentDrawTool === 'pen') {
+      ctx.lineTo(pt.x, pt.y);
+      ctx.stroke();
+    } else if (simCurrentDrawTool === 'line') {
+      if (simCanvasSnapshot) {
+        ctx.putImageData(simCanvasSnapshot, 0, 0);
+      } else {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+      }
+      ctx.beginPath();
+      ctx.moveTo(simLineStartX, simLineStartY);
+      ctx.lineTo(pt.x, pt.y);
+      ctx.stroke();
+    }
+  });
+
+  const onPointerUp = (e) => {
+    if (!simDrawingActive) return;
+    simDrawingActive = false;
+    try {
+      canvas.releasePointerCapture(e.pointerId);
+    } catch (err) {}
+
+    try {
+      simCanvasSnapshot = ctx.getImageData(0, 0, canvas.width, canvas.height);
+    } catch (err) {}
+
+    saveDrawing();
+  };
+
+  canvas.addEventListener('pointerup', onPointerUp);
+  canvas.addEventListener('pointercancel', onPointerUp);
+}
+
+function initSimWorkspaceDiagram(paper, q, sec) {
+  const wrap = document.getElementById('simWorkspaceDiagramWrap');
+  const svgBox = document.getElementById('simWorkspaceDiagramSvg');
+  const canvas = document.getElementById('simDrawingCanvas');
+  const workingCard = document.getElementById('simWorkingCard');
+  const workingTextarea = document.getElementById('simWorkingTextarea');
+
+  if (!wrap || !svgBox || !canvas) return;
+
+  if (paper.subject === 'maths' && q.workspaceDiagramHtml) {
+    wrap.style.display = 'flex';
+    svgBox.innerHTML = q.workspaceDiagramHtml;
+
+    if (workingCard) workingCard.style.minHeight = '130px';
+    if (workingTextarea) workingTextarea.style.minHeight = '120px';
+
+    setTimeout(() => {
+      const rect = svgBox.getBoundingClientRect();
+      const w = Math.max(Math.floor(rect.width), 300);
+      const h = Math.max(Math.floor(rect.height), 200);
+      canvas.width = w;
+      canvas.height = h;
+
+      const ctx = canvas.getContext('2d');
+      ctx.clearRect(0, 0, w, h);
+
+      const saved = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_sec_${sec.id}_q${q.num}_drawing`);
+      if (saved) {
+        const img = new Image();
+        img.onload = () => {
+          ctx.drawImage(img, 0, 0, w, h);
+          try {
+            simCanvasSnapshot = ctx.getImageData(0, 0, w, h);
+          } catch (e) {}
+        };
+        img.src = saved;
+      } else {
+        simCanvasSnapshot = null;
+      }
+    }, 80);
+
+    setupCanvasDrawingEvents(canvas, q, sec);
+  } else {
+    wrap.style.display = 'none';
+    svgBox.innerHTML = '';
+    if (workingCard) workingCard.style.minHeight = '';
+    if (workingTextarea) workingTextarea.style.minHeight = '';
+  }
+}
+
+
 function renderCurrentQuestion() {
   const paper = getOrCreatePaper(simCurrentPaperKey);
   const sections = getPaperSections(paper);
@@ -6190,6 +6374,9 @@ function renderCurrentQuestion() {
   // Mode Specific UI Adaptations (Calculator visibility, reading sources, etc.)
   adaptUiForSubject(paper, q, sec);
 
+  // Workspace Drawing / Grid in Right Pane (if q.workspaceDiagramHtml exists)
+  initSimWorkspaceDiagram(paper, q, sec);
+
   // Restore User Working (scoped by section)
   const savedWorking = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_sec_${sec.id}_q${q.num}_working`)
     || (sec.id === 'A' ? localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_q${q.num}_working`) : '')
@@ -6251,8 +6438,12 @@ function renderCurrentQuestion() {
         nextBtn.innerHTML = `Proceed to ${escapeHtml(nextSec.name)} <i class="fa-solid fa-arrow-right"></i>`;
         nextBtn.classList.remove('finish');
       } else {
-        // Last question of last section: Hide nextBtn to prevent duplicate "Finish & Review All" button
-        nextBtn.style.display = 'none';
+        // Last question of last section: Provide explicit Finish & Review button
+        nextBtn.style.display = 'inline-flex';
+        nextBtn.disabled = false;
+        nextBtn.onclick = () => finishPaperOrPromptLock();
+        nextBtn.innerHTML = 'Finish Exam &amp; Review <i class="fa-solid fa-flag-checkered"></i>';
+        nextBtn.classList.add('finish');
       }
     }
   }
@@ -6698,7 +6889,7 @@ function nextQuestion() {
     if (simCurrentSectionIndex < sections.length - 1) {
       switchSection(simCurrentSectionIndex + 1);
     } else {
-      openSubmitModal();
+      finishPaperOrPromptLock();
     }
   }
 }
@@ -7088,6 +7279,43 @@ function handleGlobalEscKey(e) {
   }
 }
 
+
+// Keyboard Arrow Keys Navigation (Left: Previous, Right: Next)
+function handleGlobalArrowKeys(e) {
+  const isLeft = e.key === 'ArrowLeft';
+  const isRight = e.key === 'ArrowRight';
+  if (!isLeft && !isRight) return;
+
+  // Do not navigate if any modal overlay is open
+  const activeModal = document.querySelector('.sim-modal-overlay.open');
+  if (activeModal) return;
+
+  const target = e.target;
+  const tagName = target ? target.tagName.toUpperCase() : '';
+  const isEditable = target && (tagName === 'INPUT' || tagName === 'TEXTAREA' || tagName === 'SELECT' || target.isContentEditable);
+
+  if (isEditable) {
+    // If user holds Alt key (Alt+Left or Alt+Right), allow question switching even while typing!
+    if (e.altKey) {
+      e.preventDefault();
+      if (isLeft) prevQuestion();
+      else nextQuestion();
+    }
+    return;
+  }
+
+  // Not inside an input: switch question / page immediately
+  e.preventDefault();
+  if (isLeft) {
+    prevQuestion();
+  } else {
+    nextQuestion();
+  }
+}
+
+window.addEventListener('keydown', handleGlobalArrowKeys, false);
+document.addEventListener('keydown', handleGlobalArrowKeys, false);
+
 window.addEventListener('keydown', handleGlobalEscKey, true);
 document.addEventListener('keydown', handleGlobalEscKey, true);
 window.addEventListener('focus', () => {
@@ -7332,6 +7560,7 @@ function openCandidateAnswersModal() {
       const userAns = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_sec_${sec.id}_q${q.num}_ans`)
         || (sec.id === 'A' ? localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_q${q.num}_ans`) : null)
         || '';
+      const userDrawing = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_sec_${sec.id}_q${q.num}_drawing`);
 
       const itemCard = document.createElement('div');
       itemCard.style.cssText = 'background:#ffffff; border:1px solid #cbd5e1; border-radius:8px; padding:14px 16px; margin-bottom:10px; box-shadow:0 1px 3px rgba(0,0,0,0.05);';
@@ -7433,6 +7662,7 @@ function generatePrintableHtml(type = 'candidate') {
         || (sec.id === 'A' ? localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_q${q.num}_ans`) : null)
         || '';
       const userPlanning = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_sec_${sec.id}_q${q.num}_planning`);
+      const userDrawing = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_sec_${sec.id}_q${q.num}_drawing`);
 
       const itemLabel = paper.subject === 'writing' ? `Task ${q.num}` : `${sec.name.includes(':') ? sec.name.split(':')[0] : 'Section ' + sec.id} — Question ${q.num}`;
       const marksLabel = `${q.marks || 0} Mark${q.marks === 1 ? '' : 's'}${q.markTags ? ' ' + escapeHtml(q.markTags) : ''}`;
@@ -7450,6 +7680,10 @@ function generatePrintableHtml(type = 'candidate') {
             ` : ''}
             <div class="mfs-print-block-label candidate-label">${workingLabel}</div>
             <pre class="mfs-print-pre candidate-pre">${escapeHtml(userWorking)}</pre>
+              ${userDrawing ? `
+                <div class="mfs-print-block-label candidate-label" style="margin-top:6px;">Candidate Drawing / Grid:</div>
+                <img src="${userDrawing}" style="max-width:100%; max-height:160px; border:1px solid #cbd5e1; border-radius:4px; margin-top:4px; display:block; background:#ffffff;" />
+              ` : ''}
             ${userAns ? `
               <div class="mfs-print-ans-row">
                 <span class="mfs-print-ans-label">${paper.subject === 'reading' ? 'Selected Answer:' : 'Concluded Final Answer:'}</span>
@@ -7668,19 +7902,24 @@ function printMockDocument(type = 'candidate') {
 
 // Check Answers Handler & Side-by-Side Model Comparison Modal
 function handleCheckAnswersClick() {
+  finishPaperOrPromptLock();
+}
+
+function finishPaperOrPromptLock() {
   exitFullscreenIfActive();
   const paper = getOrCreatePaper(simCurrentPaperKey);
   const sections = getPaperSections(paper);
   const currentSec = sections[simCurrentSectionIndex];
 
-  // If in calculator section and not locked, prompt warning before leaving section
-  if (currentSec && currentSec.isCalcAllowed && !isSectionLocked(currentSec.id)) {
+  // If in maths and section not locked, prompt warning before concluding section / exam
+  if (paper.subject === 'maths' && currentSec && !isSectionLocked(currentSec.id)) {
     promptSectionLock(() => {
       openSubmitModal();
-    });
-  } else {
-    openSubmitModal();
+    }, currentSec, true);
+    return;
   }
+
+  openSubmitModal();
 }
 
 function openSubmitModal() {
@@ -7710,6 +7949,7 @@ function openSubmitModal() {
       const userAns = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_sec_${sec.id}_q${q.num}_ans`)
         || (sec.id === 'A' ? localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_q${q.num}_ans`) : null)
         || '';
+      const userDrawing = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_sec_${sec.id}_q${q.num}_drawing`);
 
       const row = document.createElement('div');
       row.className = 'sim-review-row';

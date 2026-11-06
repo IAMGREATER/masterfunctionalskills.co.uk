@@ -615,6 +615,25 @@
               </div>
             </div>
 
+            <!-- Workspace Answer Grid / Graph (Maths Mode - when question requires drawing/plotting) -->
+            <div class="sim-workspace-diagram-wrap" id="simWorkspaceDiagramWrap" style="display:none;">
+              <div class="sim-workspace-diagram-header">
+                <div style="display:flex; align-items:center; gap:8px; flex-wrap:wrap;">
+                  <span class="sim-workspace-diagram-badge"><i class="fa-solid fa-pen-ruler"></i> Drawing &amp; Answer Grid</span>
+                  <span class="sim-workspace-diagram-note" id="simWorkspaceDiagramNote">Official Exam Answer Grid — Reference, sketch, or plot directly below:</span>
+                </div>
+                <div class="sim-draw-tools" id="simDrawTools">
+                  <button type="button" class="sim-draw-tool-btn active" id="simDrawToolPen" onclick="setSimDrawTool('pen')" title="Freehand Pen"><i class="fa-solid fa-pencil"></i> Draw</button>
+                  <button type="button" class="sim-draw-tool-btn" id="simDrawToolLine" onclick="setSimDrawTool('line')" title="Straight Line / Ruler"><i class="fa-solid fa-ruler-horizontal"></i> Line</button>
+                  <button type="button" class="sim-draw-tool-btn danger" onclick="clearSimDrawing()" title="Clear Drawing"><i class="fa-solid fa-eraser"></i> Clear Drawing</button>
+                </div>
+              </div>
+              <div class="sim-workspace-diagram-canvas-box" id="simWorkspaceDiagramCanvasBox">
+                <div id="simWorkspaceDiagramSvg" class="sim-workspace-diagram-svg"></div>
+                <canvas id="simDrawingCanvas" class="sim-drawing-canvas"></canvas>
+              </div>
+            </div>
+
             <!-- Proofreading Checklist (Writing Mode - At the very bottom, ultra-compact) -->
             <div class="sim-checklist-card" id="simWritingChecklist" style="display:none;">
               <div class="sim-checklist-title">
@@ -820,6 +839,6 @@
 
   <!-- Scripts -->
   <script src="assets/js/mfs-tint.js"></script>
-  <script src="assets/js/online-mock-simulator.js?v=20261106_v24"></script>
+  <script src="assets/js/online-mock-simulator.js?v=20261106_v25"></script>
 </body>
 </html>

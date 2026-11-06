@@ -1620,68 +1620,102 @@ body {
   color: #b91c1c;
 }
 
-/* Planning Scratchpad (English Writing) */
+/* Planning Scratchpad (English Writing - Bottom Positioned) */
 .sim-planning-box {
-  background: #fffbeb;
+  background: #fffdf5;
   border: 1px dashed #f59e0b;
-  border-radius: 8px;
-  padding: 12px;
-  margin-bottom: 14px;
+  border-radius: 6px;
+  padding: 4px 10px;
+  margin-top: 4px;
+  margin-bottom: 0;
+  width: 100%;
+  box-sizing: border-box;
 }
 .sim-planning-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  font-weight: 800;
-  font-size: 0.82rem;
+  font-weight: 700;
+  font-size: 0.74rem;
   color: #b45309;
   cursor: pointer;
+  user-select: none;
+  padding: 1px 0;
 }
 .sim-planning-textarea {
   width: 100%;
   border: 1px solid #fde68a;
-  border-radius: 6px;
-  padding: 8px 10px;
-  font-size: 0.88rem;
-  font-family: inherit;
+  border-radius: 5px;
+  padding: 6px 10px;
+  font-size: 0.86rem;
+  font-family: 'Lexend', system-ui, sans-serif;
   background: #ffffff;
   color: #1e293b;
   resize: vertical;
-  min-height: 70px;
-  margin-top: 8px;
+  min-height: 60px;
+  height: 60px;
+  margin-top: 4px;
+  box-sizing: border-box;
 }
 
-/* Proofreading Checklist (English Writing) */
+/* Proofreading & Format Checklist (English Writing - Very bottom, ultra-compact) */
 .sim-checklist-card {
   background: #f0fdf4;
-  border: 1px solid #86efac;
-  border-radius: 8px;
-  padding: 12px;
-  margin-top: 14px;
+  border: 1px solid #bbf7d0;
+  border-radius: 6px;
+  padding: 4px 10px;
+  margin-top: 4px;
+  width: 100%;
+  box-sizing: border-box;
 }
 .sim-checklist-title {
-  font-size: 0.82rem;
-  font-weight: 800;
+  font-size: 0.72rem;
+  font-weight: 700;
   color: #166534;
-  margin-bottom: 8px;
+  margin-bottom: 3px;
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 5px;
+}
+.sim-checklist-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 3px 10px;
+  margin: 0;
 }
 .sim-checklist-item {
-  display: flex;
+  display: inline-flex;
   align-items: center;
-  gap: 8px;
-  font-size: 0.82rem;
+  gap: 4px;
+  font-size: 0.72rem;
   color: #14532d;
-  margin-bottom: 6px;
+  background: #ffffff;
+  border: 1px solid #dcfce7;
+  border-radius: 3px;
+  padding: 1px 6px;
   cursor: pointer;
+  line-height: 1.25;
+  user-select: none;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.sim-checklist-item span {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.sim-checklist-item:hover {
+  background: #f0fdf4;
+  border-color: #86efac;
 }
 .sim-checklist-item input[type="checkbox"] {
   accent-color: #16a34a;
-  width: 16px;
-  height: 16px;
+  width: 12px;
+  height: 12px;
+  margin: 0;
   cursor: pointer;
+  flex-shrink: 0;
 }
 
 /* Reading Source Booklet Header & Panes */
@@ -1879,35 +1913,40 @@ body {
   font-family: 'Lexend', system-ui, -apple-system, sans-serif !important;
 }
 
+.sim-mode-writing #simStandardRightPane {
+  gap: 6px !important;
+}
+
 .sim-mode-writing .sim-working-workspace {
   flex-direction: column !important;
-  gap: 12px !important;
-  flex: 1 1 0 !important;
-  min-height: 480px !important;
+  gap: 0 !important;
+  flex: 1 1 auto !important;
+  min-height: 520px !important;
+  height: 100% !important;
   width: 100% !important;
 }
 
 .sim-mode-writing .sim-working-card {
   width: 100% !important;
-  flex: 1 1 0 !important;
-  min-height: 460px !important;
+  flex: 1 1 auto !important;
+  min-height: 500px !important;
   height: 100% !important;
-  padding: 14px 16px !important;
+  padding: 12px 14px !important;
   background: #ffffff !important;
   border: 1.5px solid #94a3b8 !important;
   border-radius: 8px !important;
-  box-shadow: 0 3px 8px rgba(0,0,0,0.04) !important;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.04) !important;
 }
 
 .sim-mode-writing .sim-working-textarea {
   width: 100% !important;
   height: 100% !important;
-  min-height: 430px !important;
-  flex: 1 1 0 !important;
+  min-height: 470px !important;
+  flex: 1 1 auto !important;
   font-family: 'Lexend', system-ui, -apple-system, sans-serif !important;
   font-size: calc(1rem * var(--sim-scale, 1)) !important;
   line-height: 1.8 !important;
-  padding: 16px 20px !important;
+  padding: 14px 18px !important;
   color: #0f172a !important;
   background-color: #ffffff !important;
   border: 1px solid #cbd5e1 !important;
@@ -1944,12 +1983,6 @@ body {
   padding: 20px 24px !important;
 }
 
-.sim-checklist-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 8px 16px;
-  margin-top: 6px;
-}
 
 /* Multiple Choice Option Radios (English Reading) */
 .sim-mcq-group {

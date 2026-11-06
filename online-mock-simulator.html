@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="assets/css/mfs-theme.css?v=20261024c">
   <link rel="stylesheet" href="assets/css/mfs-revision.css?v=20261024c">
   <link rel="stylesheet" href="assets/css/mfs-mobile.css?v=20261024c">
-  <link rel="stylesheet" href="assets/css/online-mock-simulator.css?v=20261106_v18">
+  <link rel="stylesheet" href="assets/css/online-mock-simulator.css?v=20261106_v19">
 </head>
 <body>
 
@@ -402,7 +402,7 @@
           </div>
 
           <!-- Standard Maths & Writing Working Pane (Hidden in Reading mode) -->
-          <div id="simStandardRightPane" style="display:flex; flex-direction:column; gap:12px; width:100%; height:100%;">
+          <div id="simStandardRightPane" style="display:flex; flex-direction:column; gap:8px; width:100%; height:100%;">
             <div class="sim-working-header">
               <div class="sim-working-title" id="simWorkingTitle">
                 <i class="fa-solid fa-pen-to-square" style="color:var(--sim-blue);"></i> <span id="simWorkingTitleText">Type Your Working &amp; Calculations in the Spaces</span>
@@ -412,15 +412,6 @@
                 <i class="fa-solid fa-file-word"></i> Words: <span id="simWordCountNumber">0</span>
                 <span id="simWordTargetNotice" style="font-size:0.75rem; opacity:0.85;">(Target: 200–250)</span>
               </div>
-            </div>
-
-            <!-- Planning Scratchpad (Writing Mode) -->
-            <div class="sim-planning-box" id="simPlanningBox" style="display:none;">
-              <div class="sim-planning-header" onclick="togglePlanningBox()">
-                <span id="simPlanningToggleText"><i class="fa-solid fa-lightbulb"></i> Optional Planning Notes &amp; Brainstorming (Click to expand)</span>
-                <i class="fa-solid fa-chevron-down" id="simPlanningIcon"></i>
-              </div>
-              <textarea class="sim-planning-textarea" id="simPlanningTextarea" placeholder="Jot down bullet points, key vocabulary, or paragraph plan here..." oninput="handlePlanningInput(this.value)" style="display:none;"></textarea>
             </div>
 
             <!-- Maths Symbol Inserter Toolbar -->
@@ -503,10 +494,19 @@
               </div>
             </div>
 
-            <!-- Proofreading Checklist (Writing Mode - Rendered beneath the writing canvas) -->
+            <!-- Planning Scratchpad (Writing Mode - Positioned cleanly at bottom of right pane) -->
+            <div class="sim-planning-box" id="simPlanningBox" style="display:none;">
+              <div class="sim-planning-header" onclick="togglePlanningBox()">
+                <span id="simPlanningToggleText"><i class="fa-solid fa-lightbulb"></i> Optional Planning Notes &amp; Brainstorming (Click to expand)</span>
+                <i class="fa-solid fa-chevron-down" id="simPlanningIcon"></i>
+              </div>
+              <textarea class="sim-planning-textarea" id="simPlanningTextarea" placeholder="Jot down bullet points, key vocabulary, or paragraph plan here..." oninput="handlePlanningInput(this.value)" style="display:none;"></textarea>
+            </div>
+
+            <!-- Proofreading Checklist (Writing Mode - At the very bottom, ultra-compact) -->
             <div class="sim-checklist-card" id="simWritingChecklist" style="display:none;">
               <div class="sim-checklist-title">
-                <i class="fa-solid fa-clipboard-check"></i> Proofreading &amp; Format Review Checklist:
+                <i class="fa-solid fa-clipboard-check"></i> Proofreading &amp; Format Checklist:
               </div>
               <div id="simChecklistItems" class="sim-checklist-grid"></div>
             </div>
@@ -708,6 +708,6 @@
 
   <!-- Scripts -->
   <script src="assets/js/mfs-tint.js"></script>
-  <script src="assets/js/online-mock-simulator.js?v=20261106_v18"></script>
+  <script src="assets/js/online-mock-simulator.js?v=20261106_v19"></script>
 </body>
 </html>

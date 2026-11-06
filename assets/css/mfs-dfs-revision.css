@@ -1592,6 +1592,17 @@ body {
   border-color: #10b981;
 }
 
+.btn-mfs-sheet.btn-mfs-practice {
+  color: #6d28d9 !important;
+  border-color: #ddd6fe;
+  background: #f5f3ff;
+}
+
+.btn-mfs-sheet.btn-mfs-practice:hover {
+  background: #ede9fe;
+  border-color: #8b5cf6;
+}
+
 .btn-mfs-video {
   background: #ffffff;
   color: #dc2626 !important;

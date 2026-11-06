@@ -1661,8 +1661,12 @@ function renderSectionTabs(paper) {
         ? `<span class="sim-sec-badge calc"><i class="fa-solid fa-calculator"></i> Calculator Allowed</span>`
         : `<span class="sim-sec-badge"><i class="fa-solid fa-ban"></i> Non-Calculator</span>`);
 
+    const secTitle = isLocked
+      ? sec.name.replace(': Non-Calculator', ': Non-Calc').replace(': Calculator', ': Calc')
+      : sec.name;
+
     btn.innerHTML = `
-      <span class="sim-sec-title"><i class="fa-solid ${isLocked ? 'fa-lock' : 'fa-layer-group'}"></i> ${escapeHtml(sec.name)}</span>
+      <span class="sim-sec-title"><i class="fa-solid ${isLocked ? 'fa-lock' : 'fa-layer-group'}"></i> ${escapeHtml(secTitle)}</span>
       <span style="display:flex; align-items:center; gap:6px; flex-wrap:wrap;">
         <span class="sim-sec-badge"><i class="fa-regular fa-clock"></i> ${durStr}</span>
         <span class="sim-sec-badge">${marks} Marks</span>
@@ -1932,9 +1936,19 @@ function renderSectionCover() {
       const prevSec = sections[simCurrentSectionIndex - 1];
       if (isSectionLocked(prevSec.id)) {
         prevBtn.disabled = true;
-        prevBtn.innerHTML = `<i class="fa-solid fa-lock"></i> ${escapeHtml(prevSec.name)} Locked`;
+        prevBtn.classList.add('is-locked-btn');
+        const shortName = prevSec.name
+          .replace(': Non-Calculator', ': Non-Calc')
+          .replace(': Calculator', ': Calc');
+        prevBtn.innerHTML = `
+          <div class="sim-prev-locked-wrap">
+            <span class="sim-prev-locked-line1">${escapeHtml(shortName)}</span>
+            <span class="sim-prev-locked-line2"><i class="fa-solid fa-lock"></i> Locked</span>
+          </div>
+        `;
         prevBtn.onclick = null;
       } else {
+        prevBtn.classList.remove('is-locked-btn');
         prevBtn.disabled = false;
         prevBtn.innerHTML = `<i class="fa-solid fa-arrow-left"></i> Return to ${escapeHtml(prevSec.name)}`;
         prevBtn.onclick = () => {
@@ -1942,6 +1956,7 @@ function renderSectionCover() {
         };
       }
     } else {
+      prevBtn.classList.remove('is-locked-btn');
       prevBtn.disabled = true;
       prevBtn.innerHTML = '<i class="fa-solid fa-arrow-left"></i> Previous';
       prevBtn.onclick = null;
@@ -2052,6 +2067,7 @@ function renderCurrentQuestion() {
   const nextBtn = document.getElementById('simNextBtn');
 
   if (prevBtn) {
+    prevBtn.classList.remove('is-locked-btn');
     if (simCurrentQuestionIndex > 1) {
       prevBtn.disabled = false;
       prevBtn.onclick = () => prevQuestion();

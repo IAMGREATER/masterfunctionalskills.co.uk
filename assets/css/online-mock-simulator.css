@@ -584,6 +584,11 @@ body {
   width: 100% !important;
   box-sizing: border-box !important;
   overflow: hidden !important;
+  position: relative !important;
+}
+
+.sim-working-workspace.has-shrunk-calc {
+  overflow: visible !important;
 }
 
 .sim-working-card {
@@ -797,11 +802,103 @@ body {
   margin-top: auto !important;
   margin-left: auto !important;
   box-sizing: border-box !important;
+  position: relative !important;
 }
 
 .sim-calc-drawer-wrap.sim-hidden,
 .sim-calc-drawer-wrap[style*="display: none"] {
   display: none !important;
+}
+
+/* Shrunk Calculator Icon Mode (On questions with grid / diagram) */
+.sim-calc-shrunk-icon-btn {
+  display: none;
+}
+
+.sim-calc-close-floating-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  color: #94a3b8;
+  font-size: 0.95rem;
+  cursor: pointer;
+  padding: 2px 5px;
+  line-height: 1;
+  border-radius: 4px;
+  transition: all 0.15s ease;
+}
+
+.sim-calc-close-floating-btn:hover {
+  color: #ef4444;
+  background: rgba(239, 68, 68, 0.12);
+}
+
+.sim-calc-drawer-wrap.shrunk-to-icon {
+  flex: 0 0 auto !important;
+  width: auto !important;
+  min-width: 0 !important;
+  max-width: none !important;
+  align-self: flex-start !important;
+  margin-top: 0 !important;
+  margin-left: auto !important;
+  z-index: 110 !important;
+}
+
+.sim-calc-drawer-wrap.shrunk-to-icon .sim-calc-shrunk-icon-btn {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 7px !important;
+  padding: 6px 12px !important;
+  background: #1e293b !important;
+  color: #38bdf8 !important;
+  border: 1.5px solid #38bdf8 !important;
+  border-radius: 8px !important;
+  font-weight: 700 !important;
+  font-size: 0.8rem !important;
+  cursor: pointer !important;
+  box-shadow: 0 3px 8px rgba(15, 23, 42, 0.2) !important;
+  transition: all 0.15s ease !important;
+  user-select: none !important;
+}
+
+.sim-calc-drawer-wrap.shrunk-to-icon .sim-calc-shrunk-icon-btn:hover {
+  background: #0f172a !important;
+  border-color: #7dd3fc !important;
+  color: #ffffff !important;
+  transform: translateY(-1px) !important;
+  box-shadow: 0 5px 12px rgba(15, 23, 42, 0.3) !important;
+}
+
+.sim-calc-drawer-wrap.shrunk-to-icon:not(.floating-open) .sim-calc-drawer {
+  display: none !important;
+}
+
+.sim-calc-drawer-wrap.shrunk-to-icon.floating-open .sim-calc-drawer {
+  display: flex !important;
+  position: absolute !important;
+  top: 0 !important;
+  right: 0 !important;
+  width: 250px !important;
+  max-width: 250px !important;
+  z-index: 150 !important;
+  box-shadow: 0 14px 34px rgba(0, 0, 0, 0.45), 0 0 0 2px #38bdf8 !important;
+  border-radius: 10px !important;
+  animation: simCalcPopIn 0.15s cubic-bezier(0.16, 1, 0.3, 1) forwards !important;
+}
+
+.sim-calc-drawer-wrap.shrunk-to-icon.floating-open .sim-calc-close-floating-btn {
+  display: inline-flex !important;
+}
+
+@keyframes simCalcPopIn {
+  from {
+    opacity: 0;
+    transform: translateY(-6px) scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 .sim-calc-drawer {

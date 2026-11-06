@@ -571,6 +571,12 @@
 
               <!-- Built-in Onscreen Calculator (Docked Side-by-Side in Section B) -->
               <div id="simCalcDrawerWrap" class="sim-calc-drawer-wrap" style="display:none;">
+                <!-- Shrunk Calculator Icon Button (Active on questions with grid / diagram) -->
+                <button type="button" id="simCalcShrunkIconBtn" class="sim-calc-shrunk-icon-btn" onclick="toggleSimFloatingCalc(event)" title="Open Exam Calculator">
+                  <i class="fa-solid fa-calculator"></i>
+                  <span class="sim-calc-shrunk-label">Calculator</span>
+                </button>
+
                 <div id="simCalcLockedBanner" class="sim-calc-locked-banner" style="display:none;">
                   <i class="fa-solid fa-lock" style="font-size:0.95rem;"></i>
                   <div>
@@ -581,7 +587,12 @@
                 <div id="simCalcDrawer" class="sim-calc-drawer">
                   <div class="sim-calc-header">
                     <span><i class="fa-solid fa-calculator" style="color:var(--sim-sky);"></i> Exam Calculator</span>
-                    <span style="font-size:0.72rem; color:#94a3b8;">Section B</span>
+                    <div style="display:flex; align-items:center; gap:6px;">
+                      <span style="font-size:0.72rem; color:#94a3b8;">Section B</span>
+                      <button type="button" id="simCalcCloseFloatingBtn" class="sim-calc-close-floating-btn" onclick="closeSimFloatingCalc(event)" title="Minimise to icon" style="display:none;">
+                        <i class="fa-solid fa-xmark"></i>
+                      </button>
+                    </div>
                   </div>
                   <div class="sim-calc-screen-box">
                     <div class="sim-calc-expr" id="simCalcExpr"></div>

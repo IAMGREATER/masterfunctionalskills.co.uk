@@ -6256,15 +6256,27 @@ function initSimWorkspaceDiagram(paper, q, sec) {
   const canvas = document.getElementById('simDrawingCanvas');
   const workingCard = document.getElementById('simWorkingCard');
   const workingTextarea = document.getElementById('simWorkingTextarea');
+  const calcDrawerWrap = document.getElementById('simCalcDrawerWrap');
+  const workingWorkspace = document.getElementById('simWorkingWorkspace');
 
   if (!wrap || !svgBox || !canvas) return;
 
-  if (paper.subject === 'maths' && q.workspaceDiagramHtml) {
+  const isCalcAllowed = sec && (sec.id === 'B' || sec.isCalculatorAllowed);
+  const hasWorkspaceGrid = paper.subject === 'maths' && Boolean(q.workspaceDiagramHtml);
+
+  if (hasWorkspaceGrid) {
     wrap.style.display = 'flex';
     svgBox.innerHTML = q.workspaceDiagramHtml;
 
     if (workingCard) workingCard.style.minHeight = '130px';
     if (workingTextarea) workingTextarea.style.minHeight = '120px';
+
+    // If in calculator section, shrink calculator down to an icon so it leaves room for the grid
+    if (calcDrawerWrap && isCalcAllowed) {
+      calcDrawerWrap.classList.add('shrunk-to-icon');
+      calcDrawerWrap.classList.remove('floating-open');
+      if (workingWorkspace) workingWorkspace.classList.add('has-shrunk-calc');
+    }
 
     setTimeout(() => {
       const rect = svgBox.getBoundingClientRect();
@@ -6297,6 +6309,14 @@ function initSimWorkspaceDiagram(paper, q, sec) {
     svgBox.innerHTML = '';
     if (workingCard) workingCard.style.minHeight = '';
     if (workingTextarea) workingTextarea.style.minHeight = '';
+
+    // Restore standard docked calculator on normal questions without workspace diagram
+    if (calcDrawerWrap) {
+      calcDrawerWrap.classList.remove('shrunk-to-icon', 'floating-open');
+    }
+    if (workingWorkspace) {
+      workingWorkspace.classList.remove('has-shrunk-calc');
+    }
   }
 }
 
@@ -7236,6 +7256,14 @@ document.addEventListener('dblclick', (e) => {
 // Universal Modal Closer & Focus Manager
 function closeAllSimModals() {
   let closed = false;
+
+  // If floating calculator is open, minimise it
+  const calcWrap = document.getElementById('simCalcDrawerWrap');
+  if (calcWrap && calcWrap.classList.contains('floating-open')) {
+    calcWrap.classList.remove('floating-open');
+    closed = true;
+  }
+
   const modals = [
     { id: 'simCandidateAnswersModal', closeFn: closeCandidateAnswersModal },
     { id: 'simSubmitModal', closeFn: closeSubmitModal },
@@ -7279,8 +7307,49 @@ function handleGlobalEscKey(e) {
   }
 }
 
+// Floating Calculator Handlers (When shrunk to icon on grid/diagram pages)
+function toggleSimFloatingCalc(e) {
+  if (e) {
+    e.preventDefault();
+    e.stopPropagation();
+  }
+  const wrap = document.getElementById('simCalcDrawerWrap');
+  if (!wrap) return;
+  if (wrap.classList.contains('floating-open')) {
+    wrap.classList.remove('floating-open');
+  } else {
+    wrap.classList.add('floating-open');
+  }
+}
+window.toggleSimFloatingCalc = toggleSimFloatingCalc;
+
+function closeSimFloatingCalc(e) {
+  if (e) {
+    e.preventDefault();
+    e.stopPropagation();
+  }
+  const wrap = document.getElementById('simCalcDrawerWrap');
+  if (wrap) {
+    wrap.classList.remove('floating-open');
+  }
+}
+window.closeSimFloatingCalc = closeSimFloatingCalc;
+
+// Global click/pointer handler: If floating calculator is open and user clicks back on the page, minimise it back to the icon
+document.addEventListener('pointerdown', (e) => {
+  const wrap = document.getElementById('simCalcDrawerWrap');
+  if (!wrap || !wrap.classList.contains('floating-open')) return;
+  const drawer = document.getElementById('simCalcDrawer');
+  const iconBtn = document.getElementById('simCalcShrunkIconBtn');
+  if (drawer && !drawer.contains(e.target) && iconBtn && !iconBtn.contains(e.target)) {
+    wrap.classList.remove('floating-open');
+  }
+}, true);
+
 
 // Keyboard Arrow Keys Navigation (Left: Previous, Right: Next)
+let simLastArrowNavTime = 0;
+
 function handleGlobalArrowKeys(e) {
   const isLeft = e.key === 'ArrowLeft';
   const isRight = e.key === 'ArrowRight';
@@ -7290,22 +7359,67 @@ function handleGlobalArrowKeys(e) {
   const activeModal = document.querySelector('.sim-modal-overlay.open');
   if (activeModal) return;
 
+  const now = Date.now();
+  if (now - simLastArrowNavTime < 180) {
+    e.preventDefault();
+    return;
+  }
+
   const target = e.target;
   const tagName = target ? target.tagName.toUpperCase() : '';
+  const isCandidateName = target && target.id === 'simCandidateNameInput';
+
+  // If on Cover Page (Question 0) and in candidate name input, pressing ArrowRight advances to Question 1!
+  if (isCandidateName && simCurrentQuestionIndex === 0) {
+    if (isRight) {
+      e.preventDefault();
+      simLastArrowNavTime = now;
+      startSectionQuestions();
+      return;
+    }
+    return;
+  }
+
   const isEditable = target && (tagName === 'INPUT' || tagName === 'TEXTAREA' || tagName === 'SELECT' || target.isContentEditable);
 
   if (isEditable) {
     // If user holds Alt key (Alt+Left or Alt+Right), allow question switching even while typing!
     if (e.altKey) {
       e.preventDefault();
+      simLastArrowNavTime = now;
       if (isLeft) prevQuestion();
       else nextQuestion();
+      return;
+    }
+
+    // Boundary traversal: if at start of input and pressing Left, or at end and pressing Right
+    if (tagName === 'TEXTAREA' || tagName === 'INPUT') {
+      const val = target.value || '';
+      const start = target.selectionStart;
+      const end = target.selectionEnd;
+      const isCollapsed = (typeof start === 'number' && typeof end === 'number' && start === end);
+
+      if (isCollapsed) {
+        if (isLeft && start === 0) {
+          e.preventDefault();
+          simLastArrowNavTime = now;
+          prevQuestion();
+          return;
+        }
+        if (isRight && start === val.length) {
+          e.preventDefault();
+          simLastArrowNavTime = now;
+          nextQuestion();
+          return;
+        }
+      }
     }
     return;
   }
 
   // Not inside an input: switch question / page immediately
   e.preventDefault();
+  simLastArrowNavTime = now;
   if (isLeft) {
     prevQuestion();
   } else {
@@ -7313,8 +7427,8 @@ function handleGlobalArrowKeys(e) {
   }
 }
 
-window.addEventListener('keydown', handleGlobalArrowKeys, false);
-document.addEventListener('keydown', handleGlobalArrowKeys, false);
+// Single capture-phase listener on window to guarantee 1-to-1 key navigation and prevent bubbled double-triggering
+window.addEventListener('keydown', handleGlobalArrowKeys, true);
 
 window.addEventListener('keydown', handleGlobalEscKey, true);
 document.addEventListener('keydown', handleGlobalEscKey, true);

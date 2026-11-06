@@ -405,11 +405,57 @@ body {
 }
 
 .sim-q-diagram-box {
-  background: #ffffff;
-  border: 1px dashed var(--sim-slate-300);
-  border-radius: 6px;
-  padding: 14px;
+  background: #f8fafc;
+  border: 1px solid var(--sim-slate-300);
+  border-radius: 8px;
+  padding: 14px 16px;
   text-align: center;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.03);
+  margin: 6px 0 10px 0;
+  overflow-x: auto;
+  box-sizing: border-box;
+}
+
+.sim-q-diagram-box svg {
+  max-width: 100% !important;
+  height: auto !important;
+  display: block;
+  margin: 0 auto;
+}
+
+.sim-q-diagram-box .sim-diagram-caption {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 8px;
+}
+
+.sim-q-diagram-box table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  margin: 4px auto;
+  font-variant-numeric: tabular-nums;
+  background: #ffffff;
+}
+
+.sim-q-diagram-box th,
+.sim-q-diagram-box td {
+  padding: 8px 10px;
+  border: 1px solid #cbd5e1;
+  text-align: center;
+}
+
+.sim-q-diagram-box th {
+  background: #f1f5f9;
+  color: var(--sim-navy);
+  font-weight: 700;
+}
+
+.sim-q-diagram-box tr:nth-child(even) td {
+  background: #f8fafc;
 }
 
 /* Right Pane: Learner Interactive Working Space (Exactly 50.0% width) */

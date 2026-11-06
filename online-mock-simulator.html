@@ -431,6 +431,26 @@
 
         <!-- Left Pane: Question Scenario & Booklet -->
         <div class="sim-pane-question" id="simPaneQuestion">
+          <!-- Simulator View Mode Bar (Interactive Questions vs Official Exam Paper PDF) -->
+          <div class="sim-pane-mode-tabs" id="simPaneModeTabs" style="display:flex; align-items:center; justify-content:space-between; gap:8px; padding:6px 12px; background:#e2e8f0; border-radius:8px; margin-bottom:10px;">
+            <div style="display:flex; gap:6px;">
+              <button type="button" class="sim-mode-tab active" id="simModeInteractiveBtn" onclick="setSimQuestionViewMode('interactive')" style="font-size:0.8rem; font-weight:700; padding:5px 12px; border-radius:6px; border:none; cursor:pointer; background:var(--sim-blue); color:#fff;">
+                <i class="fa-solid fa-pen-to-square"></i> Questions
+              </button>
+              <button type="button" class="sim-mode-tab" id="simModePdfBtn" onclick="setSimQuestionViewMode('pdf')" style="font-size:0.8rem; font-weight:700; padding:5px 12px; border-radius:6px; border:none; cursor:pointer; background:#fff; color:#334155;">
+                <i class="fa-solid fa-file-pdf"></i> Official Exam Paper
+              </button>
+            </div>
+            <a href="#" id="simOpenPdfExternalBtn" target="_blank" rel="noopener" style="font-size:0.75rem; font-weight:700; color:var(--sim-blue); text-decoration:none; display:inline-flex; align-items:center; gap:4px;">
+              <i class="fa-solid fa-arrow-up-right-from-square"></i> Open Original Paper PDF ↗
+            </a>
+          </div>
+
+          <!-- Embedded Official PDF Viewer -->
+          <div id="simPdfViewerWrap" style="display:none; width:100%; height:calc(100% - 50px); min-height:550px; flex:1;">
+            <iframe id="simPdfIframe" src="" style="width:100%; height:100%; min-height:550px; border:1px solid #cbd5e1; border-radius:8px; background:#fff;"></iframe>
+          </div>
+
           <!-- Meta Bar (Maths & Writing) -->
           <div class="sim-q-meta-bar" id="simLeftMetaBar">
             <div class="sim-q-badge-group">

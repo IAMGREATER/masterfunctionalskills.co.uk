@@ -4804,9 +4804,610 @@ const MFS_MOCK_DATA = {
     }
   ]
 }
+,
+  'city-and-guilds-maths-l1-sample-1': {
+  "title": "City & Guilds Functional Skills Maths Level 1 \u2014 Sample Assessment 1",
+  "board": "City & Guilds",
+  "subject": "maths",
+  "level": "Level 1",
+  "paperNumber": "Sample 1",
+  "durationMinutes": 105,
+  "pdfUrl": "https://passfunctionalskills.co.uk/app/uploads/2024/10/CG-L1-Paper-1.pdf",
+  "modelSolutionPdf": "assets/downloads/past-papers/city-and-guilds/l1/City_and_Guilds_Functional_Skills_Maths_Level_1_Sample_1_Model_Solutions.pdf",
+  "videoSolutionSlug": "",
+  "sections": [
+    {
+      "id": "A",
+      "name": "Section 1: Calculator NOT Permitted",
+      "code": "4748-01-S1",
+      "durationMinutes": 25,
+      "totalMarks": 15,
+      "isCalcAllowed": false,
+      "questions": [
+        {
+          "num": 1,
+          "section": "Section 1: Non-Calculator",
+          "isCalcAllowed": false,
+          "marks": 1,
+          "markTags": "[1 mark]",
+          "scenarioTitle": "Order of Operations",
+          "scenarioText": "Answer Question 1 without using a calculator.",
+          "promptText": "Work out: 4 + 3 \u00d7 2",
+          "unit": "",
+          "expectedType": "number",
+          "modelSolution": "Multiplication first: 3 \u00d7 2 = 6; 4 + 6 = 10 [1 mark]",
+          "finalBenchmark": "10"
+        },
+        {
+          "num": 2,
+          "section": "Section 1: Non-Calculator",
+          "isCalcAllowed": false,
+          "marks": 1,
+          "markTags": "[1 mark]",
+          "scenarioTitle": "Squaring Numbers",
+          "scenarioText": "Answer Question 2 without using a calculator.",
+          "promptText": "Work out: 25\u00b2",
+          "unit": "",
+          "expectedType": "number",
+          "modelSolution": "25 \u00d7 25 = 625 [1 mark]",
+          "finalBenchmark": "625"
+        },
+        {
+          "num": 3,
+          "section": "Section 1: Non-Calculator",
+          "isCalcAllowed": false,
+          "marks": 1,
+          "markTags": "[1 mark]",
+          "scenarioTitle": "Fractions to Decimals",
+          "scenarioText": "Answer Question 3 without using a calculator.",
+          "promptText": "What is 3/5 as a decimal?",
+          "unit": "",
+          "expectedType": "number",
+          "modelSolution": "3 \u00f7 5 = 6/10 = 0.6 [1 mark]",
+          "finalBenchmark": "0.6"
+        },
+        {
+          "num": 4,
+          "section": "Section 1: Non-Calculator",
+          "isCalcAllowed": false,
+          "marks": 1,
+          "markTags": "[1 mark]",
+          "scenarioTitle": "Negative Numbers Addition",
+          "scenarioText": "Answer Question 4 without using a calculator.",
+          "promptText": "Calculate: \u201312 + 13\nSelect the correct option:\nA: 1\nB: \u20131\nC: 25\nD: \u201325",
+          "unit": "",
+          "expectedType": "multiple-choice",
+          "options": [
+            "A: 1",
+            "B: \u20131",
+            "C: 25",
+            "D: \u201325"
+          ],
+          "modelSolution": "-12 + 13 = +1. Option A [1 mark]",
+          "finalBenchmark": "Option A (1)"
+        },
+        {
+          "num": 5,
+          "section": "Section 1: Non-Calculator",
+          "isCalcAllowed": false,
+          "marks": 1,
+          "markTags": "[1 mark]",
+          "scenarioTitle": "Percentage of Mass",
+          "scenarioText": "Answer Question 5 without using a calculator.",
+          "promptText": "60% of 300g is:\nA: 18g\nB: 50g\nC: 180g\nD: 200g",
+          "unit": "g",
+          "expectedType": "multiple-choice",
+          "options": [
+            "A: 18g",
+            "B: 50g",
+            "C: 180g",
+            "D: 200g"
+          ],
+          "modelSolution": "10% of 300g = 30g; 60% = 6 \u00d7 30g = 180g. Option C [1 mark]",
+          "finalBenchmark": "Option C (180g)"
+        },
+        {
+          "num": 6,
+          "section": "Section 1: Non-Calculator",
+          "isCalcAllowed": false,
+          "marks": 1,
+          "markTags": "[1 mark]",
+          "scenarioTitle": "Range of Data",
+          "scenarioText": "Given the dataset: 155, 125, 145, 95, 150, 155, 125, 99, 100, 178, 95, 180.",
+          "promptText": "What is the range of these numbers?",
+          "unit": "",
+          "expectedType": "number",
+          "modelSolution": "Highest = 180; Lowest = 95. Range = 180 - 95 = 85 [1 mark]",
+          "finalBenchmark": "85"
+        },
+        {
+          "num": 7,
+          "section": "Section 1: Non-Calculator",
+          "isCalcAllowed": false,
+          "marks": 1,
+          "markTags": "[1 mark]",
+          "scenarioTitle": "Annual Savings Interest",
+          "scenarioText": "A man puts \u00a33000 into a savings account with an interest rate of 5% per year.",
+          "promptText": "How much will the interest be for the first year in \u00a3?",
+          "unit": "\u00a3",
+          "expectedType": "number",
+          "modelSolution": "10% of \u00a33000 = \u00a3300; 5% = \u00a3300 \u00f7 2 = \u00a3150 [1 mark]",
+          "finalBenchmark": "\u00a3150"
+        },
+        {
+          "num": 8,
+          "section": "Section 1: Non-Calculator",
+          "isCalcAllowed": false,
+          "marks": 1,
+          "markTags": "[1 mark]",
+          "scenarioTitle": "Probability Scale",
+          "diagramHtml": "<svg viewBox=\"0 0 340 70\" style=\"max-width:320px; margin:0 auto; display:block;\"><line x1=\"30\" y1=\"35\" x2=\"310\" y2=\"35\" stroke=\"#0f172a\" stroke-width=\"2\"/><line x1=\"30\" y1=\"25\" x2=\"30\" y2=\"45\" stroke=\"#0f172a\" stroke-width=\"2\"/><line x1=\"310\" y1=\"25\" x2=\"310\" y2=\"45\" stroke=\"#0f172a\" stroke-width=\"2\"/><text x=\"30\" y=\"58\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">0</text><text x=\"310\" y=\"58\" font-size=\"12\" font-weight=\"700\" text-anchor=\"middle\">1</text><polygon points=\"86,15 80,5 92,5\" fill=\"#dc2626\"/><line x1=\"86\" y1=\"15\" x2=\"86\" y2=\"35\" stroke=\"#dc2626\" stroke-width=\"2.5\"/></svg><div class=\"sim-diagram-caption\">Probability Scale (0 to 1)</div>",
+          "scenarioText": "The scale above shows the probability that an event will occur (arrow at approximately 0.2).",
+          "promptText": "What probability does the scale show?\nA: impossible\nB: certain\nC: unlikely\nD: likely",
+          "unit": "",
+          "expectedType": "multiple-choice",
+          "options": [
+            "A: impossible",
+            "B: certain",
+            "C: unlikely",
+            "D: likely"
+          ],
+          "modelSolution": "Value between 0 and 0.5 represents unlikely. Option C [1 mark]",
+          "finalBenchmark": "Option C (unlikely)"
+        },
+        {
+          "num": 9,
+          "section": "Section 1: Non-Calculator",
+          "isCalcAllowed": false,
+          "marks": 1,
+          "markTags": "[1 mark]",
+          "scenarioTitle": "Volume of a Cube",
+          "diagramHtml": "<svg viewBox=\"0 0 200 160\" style=\"max-width:180px; margin:0 auto; display:block;\"><polygon points=\"40,60 100,20 160,60 100,100\" fill=\"#f1f5f9\" stroke=\"#0f172a\" stroke-width=\"2\"/><polygon points=\"40,60 100,100 100,145 40,105\" fill=\"#e2e8f0\" stroke=\"#0f172a\" stroke-width=\"2\"/><polygon points=\"100,100 160,60 160,105 100,145\" fill=\"#cbd5e1\" stroke=\"#0f172a\" stroke-width=\"2\"/><text x=\"70\" y=\"135\" font-size=\"12\" font-weight=\"700\">10 cm</text></svg><div class=\"sim-diagram-caption\">Cube (Length = 10 cm)</div>",
+          "scenarioText": "A solid cube has sides measuring 10 cm.",
+          "promptText": "What is the volume of this cube in cm\u00b3?",
+          "unit": "cm\u00b3",
+          "expectedType": "number",
+          "modelSolution": "Volume = 10 \u00d7 10 \u00d7 10 = 1000 cm\u00b3 [1 mark]",
+          "finalBenchmark": "1000 cm\u00b3"
+        },
+        {
+          "num": 10,
+          "section": "Section 1: Non-Calculator",
+          "isCalcAllowed": false,
+          "marks": 1,
+          "markTags": "[1 mark]",
+          "scenarioTitle": "Mixed Numbers to Improper Fractions",
+          "scenarioText": "Answer Question 10 without using a calculator.",
+          "promptText": "Convert 2 2/5 to an improper fraction.",
+          "unit": "",
+          "expectedType": "text",
+          "modelSolution": "(2 \u00d7 5 + 2) / 5 = 12/5 [1 mark]",
+          "finalBenchmark": "12/5"
+        },
+        {
+          "num": 11,
+          "section": "Section 1: Non-Calculator",
+          "isCalcAllowed": false,
+          "marks": 2,
+          "markTags": "[1 mark, 1 mark]",
+          "scenarioTitle": "Clothes Shop Sale Discount",
+          "scenarioText": "A customer wants to buy a winter coat with an original ticket price of \u00a340. A sale sign states: \"SALE \u2014 All coats reduced to 70% of ticket price\". The customer has \u00a330 in cash.",
+          "promptText": "Can the customer afford to buy the coat? State Yes or No and show your calculation.",
+          "unit": "",
+          "expectedType": "text",
+          "modelSolution": "70% of \u00a340 = 0.70 \u00d7 \u00a340 = \u00a328.00. \u00a328 <= \u00a330, so Yes, the customer can afford it [2 marks]",
+          "finalBenchmark": "Yes (\u00a328)"
+        },
+        {
+          "num": 12,
+          "section": "Section 1: Non-Calculator",
+          "isCalcAllowed": false,
+          "marks": 1,
+          "markTags": "[1 mark]",
+          "scenarioTitle": "Ratio Bread Sharing",
+          "scenarioText": "A sandwich shop owner makes 1 sandwich with brown bread for every 4 sandwiches made with white bread (Ratio 1 : 4). Today he prepares 600 sandwiches altogether.",
+          "promptText": "How many sandwiches should he make with brown bread today?",
+          "unit": "sandwiches",
+          "expectedType": "number",
+          "modelSolution": "Total ratio parts = 1 + 4 = 5 parts. 1 part = 600 \u00f7 5 = 120 brown sandwiches [1 mark]",
+          "finalBenchmark": "120"
+        },
+        {
+          "num": 13,
+          "section": "Section 1: Non-Calculator",
+          "isCalcAllowed": false,
+          "marks": 1,
+          "markTags": "[1 mark]",
+          "scenarioTitle": "Checkout Allocation Probability",
+          "scenarioText": "In a supermarket, 5 tills are randomly allocated to 5 checkout assistants at the start of each shift. Only 1 till is next to the entrance door.",
+          "promptText": "What is the probability that Jon gets allocated the till next to the door today? Give your answer as a fraction in its simplest form.",
+          "unit": "",
+          "expectedType": "text",
+          "modelSolution": "1 favorable outcome out of 5 equally likely outcomes = 1/5 [1 mark]",
+          "finalBenchmark": "1/5"
+        },
+        {
+          "num": 14,
+          "section": "Section 1: Non-Calculator",
+          "isCalcAllowed": false,
+          "marks": 1,
+          "markTags": "[1 mark]",
+          "scenarioTitle": "Fuel Gauge Estimation",
+          "diagramHtml": "<svg viewBox=\"0 0 280 80\" style=\"max-width:260px; margin:0 auto; display:block;\"><path d=\"M 40 60 A 100 100 0 0 1 240 60\" stroke=\"#0f172a\" stroke-width=\"6\" fill=\"none\"/><line x1=\"40\" y1=\"60\" x2=\"30\" y2=\"60\" stroke=\"#0f172a\" stroke-width=\"3\"/><line x1=\"240\" y1=\"60\" x2=\"250\" y2=\"60\" stroke=\"#0f172a\" stroke-width=\"3\"/><text x=\"20\" y=\"65\" font-size=\"11\" font-weight=\"800\">E</text><text x=\"255\" y=\"65\" font-size=\"11\" font-weight=\"800\">F</text><line x1=\"140\" y1=\"60\" x2=\"90\" y2=\"25\" stroke=\"#dc2626\" stroke-width=\"3.5\" stroke-linecap=\"round\"/><circle cx=\"140\" cy=\"60\" r=\"6\" fill=\"#0f172a\"/></svg><div class=\"sim-diagram-caption\">Fuel Gauge (~1/4 Full)</div>",
+          "scenarioText": "A van has a fuel tank that holds 60 litres when full. The dashboard needle indicates approximately 1/4 full.",
+          "promptText": "Approximately how many litres of fuel are left in the tank? Give your answer as a whole number of litres.",
+          "unit": "litres",
+          "expectedType": "number",
+          "modelSolution": "1/4 of 60 litres = 60 \u00f7 4 = 15 litres [1 mark]",
+          "finalBenchmark": "15 litres"
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "name": "Section 2: Calculator Permitted",
+      "code": "4748-01-S2",
+      "durationMinutes": 80,
+      "totalMarks": 45,
+      "isCalcAllowed": true,
+      "questions": [
+        {
+          "num": 1,
+          "section": "Section 2: Calculator Permitted",
+          "isCalcAllowed": true,
+          "marks": 3,
+          "markTags": "[3 marks]",
+          "scenarioTitle": "City & Guilds Level 1 Sample 1 \u2014 Section 2",
+          "scenarioText": "Refer to Section 2 of the official City & Guilds Sample Paper 1 booklet.",
+          "promptText": "Use your calculator and show full step-by-step working for Question 1.",
+          "unit": "",
+          "expectedType": "text",
+          "modelSolution": "Full method steps and calculations evaluated accurately. [3 marks]",
+          "finalBenchmark": "Full criteria met"
+        }
+      ]
+    }
+  ]
+},
+  'city-and-guilds-maths-l2-sample-1': {
+  "title": "City & Guilds Functional Skills Maths Level 2 \u2014 Sample Assessment 1",
+  "board": "City & Guilds",
+  "subject": "maths",
+  "level": "Level 2",
+  "paperNumber": "Sample 1",
+  "durationMinutes": 105,
+  "pdfUrl": "https://passfunctionalskills.co.uk/wp-content/uploads/2022/06/Task-1-non-calc.pdf",
+  "calcPdfUrl": "https://passfunctionalskills.co.uk/wp-content/uploads/2022/06/Task-1-calc.pdf",
+  "modelSolutionPdf": "assets/downloads/past-papers/city-and-guilds/l2/City_and_Guilds_Functional_Skills_Maths_Level_2_Sample_1_Model_Solutions.pdf",
+  "videoSolutionSlug": "",
+  "sections": [
+    {
+      "id": "A",
+      "name": "Section 1: Calculator NOT Permitted",
+      "code": "4748-02-S1",
+      "durationMinutes": 25,
+      "totalMarks": 15,
+      "isCalcAllowed": false,
+      "questions": [
+        {
+          "num": 1,
+          "section": "Section 1: Non-Calculator",
+          "isCalcAllowed": false,
+          "marks": 1,
+          "markTags": "[1 mark]",
+          "scenarioTitle": "Percentage Conversion",
+          "scenarioText": "Answer Question 1 without using a calculator. Show your method in the working area.",
+          "promptText": "What is 2/3 as a percentage? Give your answer rounded to two decimal places.",
+          "unit": "%",
+          "expectedType": "number",
+          "modelSolution": "2 \u00f7 3 = 0.6666... \u00d7 100 = 66.67% [1 mark]",
+          "finalBenchmark": "66.67%"
+        },
+        {
+          "num": 2,
+          "section": "Section 1: Non-Calculator",
+          "isCalcAllowed": false,
+          "marks": 1,
+          "markTags": "[1 mark]",
+          "scenarioTitle": "Percentage of Amount",
+          "scenarioText": "Answer Question 2 without using a calculator.",
+          "promptText": "What is 14% of 200?",
+          "unit": "",
+          "expectedType": "number",
+          "modelSolution": "10% of 200 = 20; 1% = 2; 4% = 8; 20 + 8 = 28 [1 mark]",
+          "finalBenchmark": "28"
+        },
+        {
+          "num": 3,
+          "section": "Section 1: Non-Calculator",
+          "isCalcAllowed": false,
+          "marks": 1,
+          "markTags": "[1 mark]",
+          "scenarioTitle": "Mixed Numbers Addition",
+          "scenarioText": "Answer Question 3 without using a calculator.",
+          "promptText": "Calculate: 2 1/2 + 3 3/4\nSelect the correct option:\nA: 5 1/4\nB: 5 4/6\nC: 6 1/4\nD: 6 4/6",
+          "unit": "",
+          "expectedType": "multiple-choice",
+          "options": [
+            "A: 5 1/4",
+            "B: 5 4/6",
+            "C: 6 1/4",
+            "D: 6 4/6"
+          ],
+          "modelSolution": "2 1/2 = 2 2/4; 2 2/4 + 3 3/4 = 5 5/4 = 6 1/4. Option C [1 mark]",
+          "finalBenchmark": "Option C (6 1/4)"
+        },
+        {
+          "num": 4,
+          "section": "Section 1: Non-Calculator",
+          "isCalcAllowed": false,
+          "marks": 1,
+          "markTags": "[1 mark]",
+          "scenarioTitle": "Fractions Simplification",
+          "scenarioText": "Answer Question 4 without using a calculator.",
+          "promptText": "What is 75 as a fraction of 125? Give your answer in its simplest form.",
+          "unit": "",
+          "expectedType": "text",
+          "modelSolution": "75/125 = (75 \u00f7 25) / (125 \u00f7 25) = 3/5 [1 mark]",
+          "finalBenchmark": "3/5"
+        },
+        {
+          "num": 5,
+          "section": "Section 1: Non-Calculator",
+          "isCalcAllowed": false,
+          "marks": 1,
+          "markTags": "[1 mark]",
+          "scenarioTitle": "Fraction Subtraction",
+          "scenarioText": "Answer Question 5 without using a calculator.",
+          "promptText": "Work out: 1/2 \u2013 2/7\nGive your answer in its simplest form.",
+          "unit": "",
+          "expectedType": "text",
+          "modelSolution": "Common denominator = 14: 7/14 - 4/14 = 3/14 [1 mark]",
+          "finalBenchmark": "3/14"
+        },
+        {
+          "num": 6,
+          "section": "Section 1: Non-Calculator",
+          "isCalcAllowed": false,
+          "marks": 1,
+          "markTags": "[1 mark]",
+          "scenarioTitle": "Order of Operations (BIDMAS)",
+          "scenarioText": "Answer Question 6 without using a calculator.",
+          "promptText": "Work out: (8 + 2 \u00d7 6)\u00b2",
+          "unit": "",
+          "expectedType": "number",
+          "modelSolution": "Inside brackets: 2 \u00d7 6 = 12; 8 + 12 = 20; Then 20\u00b2 = 400 [1 mark]",
+          "finalBenchmark": "400"
+        },
+        {
+          "num": 7,
+          "section": "Section 1: Non-Calculator",
+          "isCalcAllowed": false,
+          "marks": 1,
+          "markTags": "[1 mark]",
+          "scenarioTitle": "Algebraic Substitution",
+          "scenarioText": "Answer Question 7 without using a calculator.",
+          "promptText": "What is the value of 3ab when a = 5 and b = 6?",
+          "unit": "",
+          "expectedType": "number",
+          "modelSolution": "3 \u00d7 5 \u00d7 6 = 15 \u00d7 6 = 90 [1 mark]",
+          "finalBenchmark": "90"
+        },
+        {
+          "num": 8,
+          "section": "Section 1: Non-Calculator",
+          "isCalcAllowed": false,
+          "marks": 1,
+          "markTags": "[1 mark]",
+          "scenarioTitle": "Angles in a Triangle",
+          "diagramHtml": "<svg viewBox=\"0 0 320 180\" style=\"max-width:300px; margin:0 auto; display:block;\"><polygon points=\"40,150 280,150 160,30\" fill=\"#f8fafc\" stroke=\"#0f172a\" stroke-width=\"2.5\"/><text x=\"75\" y=\"142\" font-size=\"12\" font-weight=\"700\">80\u00b0</text><text x=\"230\" y=\"142\" font-size=\"12\" font-weight=\"700\">30\u00b0</text><text x=\"160\" y=\"60\" font-size=\"13\" font-weight=\"900\" fill=\"#dc2626\" text-anchor=\"middle\">A</text></svg><div class=\"sim-diagram-caption\">Triangle (Diagram NOT to scale)</div>",
+          "scenarioText": "A triangle has two interior angles measuring 80\u00b0 and 30\u00b0 as shown.",
+          "promptText": "Calculate the size of angle A in degrees.",
+          "unit": "\u00b0",
+          "expectedType": "number",
+          "modelSolution": "Angles in triangle sum to 180\u00b0: 180\u00b0 - (80\u00b0 + 30\u00b0) = 180\u00b0 - 110\u00b0 = 70\u00b0 [1 mark]",
+          "finalBenchmark": "70\u00b0"
+        },
+        {
+          "num": 9,
+          "section": "Section 1: Non-Calculator",
+          "isCalcAllowed": false,
+          "marks": 1,
+          "markTags": "[1 mark]",
+          "scenarioTitle": "Arithmetic Operations",
+          "scenarioText": "Answer Question 9 without using a calculator.",
+          "promptText": "Work out: 900 + 1500 \u00f7 300",
+          "unit": "",
+          "expectedType": "number",
+          "modelSolution": "Division first: 1500 \u00f7 300 = 5; 900 + 5 = 905 [1 mark]",
+          "finalBenchmark": "905"
+        },
+        {
+          "num": 10,
+          "section": "Section 1: Non-Calculator",
+          "isCalcAllowed": false,
+          "marks": 1,
+          "markTags": "[1 mark]",
+          "scenarioTitle": "Decimal Subtraction",
+          "scenarioText": "Answer Question 10 without using a calculator.",
+          "promptText": "Work out: 147.206 \u2013 95.438",
+          "unit": "",
+          "expectedType": "number",
+          "modelSolution": "147.206 - 95.438 = 51.768 [1 mark]",
+          "finalBenchmark": "51.768"
+        },
+        {
+          "num": 11,
+          "section": "Section 1: Non-Calculator",
+          "isCalcAllowed": false,
+          "marks": 1,
+          "markTags": "[1 mark]",
+          "scenarioTitle": "Vehicle Fuel & Distance",
+          "scenarioText": "A car can travel 480 miles on a full tank of petrol. The tank holds 60 litres. The fuel gauge shows there are 15 litres left in the tank.",
+          "promptText": "How many more miles can the car travel before it runs out of petrol?",
+          "unit": "miles",
+          "expectedType": "number",
+          "modelSolution": "Miles per litre = 480 \u00f7 60 = 8 miles/litre. With 15 litres: 15 \u00d7 8 = 120 miles [1 mark]",
+          "finalBenchmark": "120 miles"
+        },
+        {
+          "num": 12,
+          "section": "Section 1: Non-Calculator",
+          "isCalcAllowed": false,
+          "marks": 1,
+          "markTags": "[1 mark]",
+          "scenarioTitle": "Combined Probability",
+          "scenarioText": "The probability that a salesperson will get an order from a visit to a customer is 1/4. She has 2 visits tomorrow.",
+          "promptText": "What is the probability that she will get orders from both visits tomorrow? Give your answer as a fraction in its simplest form.",
+          "unit": "",
+          "expectedType": "text",
+          "modelSolution": "Independent events: 1/4 \u00d7 1/4 = 1/16 [1 mark]",
+          "finalBenchmark": "1/16"
+        },
+        {
+          "num": 13,
+          "section": "Section 1: Non-Calculator",
+          "isCalcAllowed": false,
+          "marks": 1,
+          "markTags": "[1 mark]",
+          "scenarioTitle": "Catering Waste Allowance",
+          "scenarioText": "A commercial chef estimates a 25% weight loss when peeling potatoes. The chef needs 6 kg of peeled potatoes for a dinner function.",
+          "promptText": "What mass in kg of unpeeled potatoes should the chef buy?",
+          "unit": "kg",
+          "expectedType": "number",
+          "modelSolution": "75% = 6 kg; 100% = 6 \u00f7 0.75 = 8 kg [1 mark]",
+          "finalBenchmark": "8 kg"
+        },
+        {
+          "num": 14,
+          "section": "Section 1: Non-Calculator",
+          "isCalcAllowed": false,
+          "marks": 1,
+          "markTags": "[1 mark]",
+          "scenarioTitle": "Rectangular Perimeter",
+          "scenarioText": "A garden designer plans a rectangular paved area measuring 4.5 m in length and 3.2 m in width.",
+          "promptText": "Calculate the total perimeter in metres of the paved area.",
+          "unit": "m",
+          "expectedType": "number",
+          "modelSolution": "2 \u00d7 (4.5 + 3.2) = 2 \u00d7 7.7 = 15.4 m [1 mark]",
+          "finalBenchmark": "15.4 m"
+        },
+        {
+          "num": 15,
+          "section": "Section 1: Non-Calculator",
+          "isCalcAllowed": false,
+          "marks": 1,
+          "markTags": "[1 mark]",
+          "scenarioTitle": "Data Set Median",
+          "scenarioText": "A supervisor records weekly staff overtime hours: 6, 4, 9, 3, 7, 5, 8.",
+          "promptText": "Work out the median number of overtime hours.",
+          "unit": "hours",
+          "expectedType": "number",
+          "modelSolution": "Ordered list: 3, 4, 5, 6, 7, 8, 9. Middle value = 6 hours [1 mark]",
+          "finalBenchmark": "6 hours"
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "name": "Section 2: Calculator Permitted",
+      "code": "4748-02-S2",
+      "durationMinutes": 80,
+      "totalMarks": 45,
+      "isCalcAllowed": true,
+      "questions": [
+        {
+          "num": 1,
+          "section": "Section 2: Calculator Permitted",
+          "isCalcAllowed": true,
+          "marks": 4,
+          "markTags": "[4 marks]",
+          "scenarioTitle": "City & Guilds Level 2 Sample 1 \u2014 Task 2",
+          "scenarioText": "Refer to Section 2 (Calculator Permitted) of the official City & Guilds Sample Paper 1 booklet.",
+          "promptText": "Use your calculator and show full step-by-step working for Question 1.",
+          "unit": "",
+          "expectedType": "text",
+          "modelSolution": "Full method steps and calculations evaluated accurately. [4 marks]",
+          "finalBenchmark": "Full criteria met"
+        }
+      ]
+    }
+  ]
+}
 };
 
 // Helper: Get Paper Object (with rich fallback generator)
+
+// Comprehensive Official PDF Map for All Awarding Organisations
+const MFS_PAPER_PDF_MAP = {
+  'city-and-guilds-maths-l1-sample-1': 'https://passfunctionalskills.co.uk/app/uploads/2024/10/CG-L1-Paper-1.pdf',
+  'city-and-guilds-maths-l1-sample-2': 'https://passfunctionalskills.co.uk/app/uploads/2024/10/CG-L1-Paper-2.pdf',
+  'city-and-guilds-maths-l1-sample-3': 'https://passfunctionalskills.co.uk/app/uploads/2024/10/CG-L1-Paper-3.pdf',
+  'city-and-guilds-maths-l1-sample-4': 'https://passfunctionalskills.co.uk/app/uploads/2024/10/CG-L1-Paper-4.pdf',
+  'city-and-guilds-maths-l2-sample-1': 'https://passfunctionalskills.co.uk/wp-content/uploads/2022/06/Task-1-non-calc.pdf',
+  'city-and-guilds-maths-l2-sample-2': 'https://passfunctionalskills.co.uk/wp-content/uploads/2021/09/non-calc-paper-2.pdf',
+  'city-and-guilds-maths-l2-sample-3': 'https://passfunctionalskills.co.uk/wp-content/uploads/2022/06/City-and-Guilds-Functional-Skills-Level-2-Paper-3-Non-calculator.pdf',
+  'city-and-guilds-maths-l2-sample-4': 'https://passfunctionalskills.co.uk/wp-content/uploads/2022/06/Paper-4-Non-calc-FS-Mathematics-Level-2.pdf',
+  'city-and-guilds-english-reading-l1-sample-1': 'https://passfunctionalskills.co.uk/wp-content/uploads/2021/09/Paper-1-questions-1.pdf',
+  'city-and-guilds-english-writing-l1-sample-1': 'https://passfunctionalskills.co.uk/wp-content/uploads/2021/09/Paper-1-questions-2.pdf',
+  'city-and-guilds-english-reading-l1-sample-2': 'https://passfunctionalskills.co.uk/wp-content/uploads/2021/09/Paper-2-questions-1.pdf',
+  'city-and-guilds-english-writing-l1-sample-2': 'https://passfunctionalskills.co.uk/wp-content/uploads/2021/09/Paper-2-questions-2.pdf',
+  'city-and-guilds-english-reading-l1-sample-3': 'https://passfunctionalskills.co.uk/wp-content/uploads/2021/09/Paper-3-questions-1.pdf',
+  'city-and-guilds-english-writing-l1-sample-3': 'https://passfunctionalskills.co.uk/wp-content/uploads/2021/09/Paper-3-questions-2.pdf',
+  'city-and-guilds-english-reading-l1-sample-4': 'https://passfunctionalskills.co.uk/wp-content/uploads/2021/09/Paper-4-questions-1.pdf',
+  'city-and-guilds-english-writing-l1-sample-4': 'https://passfunctionalskills.co.uk/wp-content/uploads/2021/09/Ppaer-4-questions.pdf',
+  'city-and-guilds-english-reading-l2-sample-1': 'https://passfunctionalskills.co.uk/wp-content/uploads/2021/09/Paper-1-questions.pdf',
+  'city-and-guilds-english-writing-l2-sample-1': 'https://passfunctionalskills.co.uk/wp-content/uploads/2021/09/Paper-1-writing-questions.pdf',
+  'city-and-guilds-english-reading-l2-sample-2': 'https://passfunctionalskills.co.uk/wp-content/uploads/2021/09/Paper-2-questions.pdf',
+  'city-and-guilds-english-writing-l2-sample-2': 'https://passfunctionalskills.co.uk/wp-content/uploads/2021/09/Paper-2-writing-questions.pdf',
+  'city-and-guilds-english-reading-l2-sample-3': 'https://passfunctionalskills.co.uk/wp-content/uploads/2021/09/Paper-3-questions-1.pdf',
+  'city-and-guilds-english-writing-l2-sample-3': 'https://passfunctionalskills.co.uk/wp-content/uploads/2021/09/Paper-3-writing-questions.pdf',
+  'city-and-guilds-english-reading-l2-sample-4': 'https://passfunctionalskills.co.uk/wp-content/uploads/2021/09/Paper-4-questions.pdf',
+  'city-and-guilds-english-writing-l2-sample-4': 'https://passfunctionalskills.co.uk/wp-content/uploads/2021/09/Paper-4-writing-questions.pdf',
+  'city-and-guilds-english-reading-l2-paper-1': 'https://passfunctionalskills.co.uk/wp-content/uploads/2021/09/City-and-Guilds-Reading-Level-2-Paper-1.pdf',
+  'city-and-guilds-english-writing-l2-paper-1': 'https://passfunctionalskills.co.uk/wp-content/uploads/2021/09/City-and-Guilds-Writing-Level-2-Paper-1.pdf',
+  'open-awards-maths-l1-practice-1': 'https://passfunctionalskills.co.uk/app/uploads/2024/10/OPEN_AWARDS_MATHS_L1_MOCK1_PMAT1.pdf',
+  'open-awards-maths-l1-practice-2': 'https://passfunctionalskills.co.uk/app/uploads/2024/10/OPEN_AWARDS_MATHS_L1_MOCK2_PMAT1.pdf',
+  'open-awards-maths-l1-practice-3': 'https://passfunctionalskills.co.uk/app/uploads/2024/10/OPEN_AWARDS_MATHS_L1_MOCK3_PMAT1.pdf',
+  'open-awards-maths-l1-sample-2020': 'https://passfunctionalskills.co.uk/app/uploads/2024/10/OPEN_AWARDS_MATHS_L1_SAM_PMAT1.pdf',
+  'open-awards-maths-l1-practice-paper': 'https://passfunctionalskills.co.uk/wp-content/uploads/2022/01/Open-Awards-Level-1-Maths-paper.pdf',
+  'open-awards-maths-l2-practice-1': 'https://passfunctionalskills.co.uk/app/uploads/2024/10/OPEN_AWARDS_MATHS_L2_MOCK1_PMAT2.pdf',
+  'open-awards-maths-l2-practice-2': 'https://passfunctionalskills.co.uk/app/uploads/2024/10/OPEN_AWARDS_MATHS_L2_MOCK2_PMAT2.pdf',
+  'open-awards-maths-l2-practice-3': 'https://passfunctionalskills.co.uk/app/uploads/2024/10/OPEN_AWARDS_MATHS_L2_MOCK3_PMAT2.pdf',
+  'open-awards-maths-l2-sample-2020': 'assets/papers/open-awards/maths/Open_Awards_Maths_Level_2_SAM.pdf',
+  'open-awards-maths-l2-practice-paper': 'https://passfunctionalskills.co.uk/wp-content/uploads/2022/01/Pass-FS-Open-Awards-Maths-Level-2-paper.pdf',
+  'open-awards-english-reading-l1-practice-1': 'https://passfunctionalskills.co.uk/app/uploads/2024/10/OPEN_AWARDS_ENGLISH_READING_L1_MOCK1_PREA1.pdf',
+  'open-awards-english-writing-l1-practice-1': 'https://passfunctionalskills.co.uk/app/uploads/2024/10/OPEN_AWARDS_ENGLISH_WRITING_L1_MOCK1_PWRI1.pdf',
+  'open-awards-english-reading-l1-exam': 'assets/papers/open-awards/english/Open_Awards_English_Level_1_Reading_SAM.pdf',
+  'open-awards-english-reading-l2-exam-1': 'https://passfunctionalskills.co.uk/app/uploads/2024/10/Open-Awards-L2-Reading-Exam-1.pdf',
+  'open-awards-english-writing-l2-exam-1': 'https://passfunctionalskills.co.uk/app/uploads/2024/10/Open-Awards-L2-Writing-Exam-1.pdf',
+  'open-awards-english-reading-l2-exam-3': 'https://passfunctionalskills.co.uk/app/uploads/2024/10/Open-Awards-L2-Reading-Exam-1.pdf',
+  'open-awards-english-writing-l2-exam-3': 'https://passfunctionalskills.co.uk/app/uploads/2024/10/Open-Awards-L2-Writing-Exam-1.pdf',
+  'open-awards-english-reading-l2-exam-4': 'https://passfunctionalskills.co.uk/app/uploads/2024/10/Open-Awards-L2-Reading-Exam-1.pdf',
+  'open-awards-english-writing-l2-exam-4': 'https://passfunctionalskills.co.uk/app/uploads/2024/10/Open-Awards-L2-Writing-Exam-1.pdf',
+  'open-awards-english-reading-l2-sample-2020': 'assets/papers/open-awards/english/Open_Awards_English_Level_2_Reading_SAM.pdf',
+  'open-awards-english-writing-l2-sample-2020': 'assets/papers/open-awards/english/Open_Awards_English_Level_2_Writing_SAM.pdf',
+  'ncfe-maths-l2-practice-1': 'https://passfunctionalskills.co.uk/wp-content/uploads/2021/09/Practice-Paper-1-Section-A.pdf',
+  'ncfe-maths-l2-practice-2': 'https://passfunctionalskills.co.uk/wp-content/uploads/2021/09/Practice-Paper-2-Section-A.pdf',
+  'ncfe-maths-l2-sample-1': 'https://passfunctionalskills.co.uk/wp-content/uploads/2021/09/Level-2-Section-A-Non-Calculator.pdf',
+  'ncfe-maths-l2-paper-1': 'https://passfunctionalskills.co.uk/wp-content/uploads/2021/09/NCFE-Maths-Level-2-Past-Paper-Section-A.pdf',
+  'ncfe-maths-l2-2023': 'https://passfunctionalskills.co.uk/app/uploads/2024/02/NCFE-Level-2-Maths-Section-A-60350611-Nov-23.pdf',
+  'edexcel-english-reading-l2-paper-6': 'https://passfunctionalskills.co.uk/app/uploads/2024/06/FS_English_Reading_Level_2_PAPER-6_QP.pdf',
+  'edexcel-english-writing-l2-paper-6': 'https://passfunctionalskills.co.uk/app/uploads/2024/06/FS_English_Writing_Level_2_PAPER-6_QP.pdf',
+  'edexcel-english-reading-l2-paper-7': 'https://passfunctionalskills.co.uk/app/uploads/2024/06/FS_English_Reading_Level_2_PAPER-7_QP.pdf',
+  'edexcel-english-writing-l2-paper-7': 'https://passfunctionalskills.co.uk/app/uploads/2024/06/FS_English_Writing_Level_2_PAPER-7_QP.pdf',
+  'edexcel-english-reading-l2-paper-8': 'https://passfunctionalskills.co.uk/app/uploads/2024/06/FS_English_Reading_Level_2_PAPER-8_QP.pdf',
+  'edexcel-english-writing-l2-paper-8': 'https://passfunctionalskills.co.uk/app/uploads/2024/06/FS_English_Writing_Level_2_PAPER-8_QP.pdf',
+  'edexcel-english-reading-l2-paper-9': 'https://passfunctionalskills.co.uk/app/uploads/2024/06/FS_English_Reading_Level_2_PAPER-9_QP.pdf',
+  'edexcel-english-writing-l2-paper-9': 'https://passfunctionalskills.co.uk/app/uploads/2024/06/FS_English_Writing_Level_2_PAPER-9_QP.pdf',
+  'edexcel-english-reading-l2-practice-4': 'https://passfunctionalskills.co.uk/app/uploads/2024/06/FS_English_Reading_Level_2_PRACTICE-4_QP.pdf',
+  'edexcel-english-writing-l2-practice-4': 'https://passfunctionalskills.co.uk/app/uploads/2024/06/FS_English_Writing_Level_2_PRACTICE-4_QP.pdf',
+  'edexcel-english-reading-l2-practice-5': 'https://passfunctionalskills.co.uk/app/uploads/2024/06/FS_English_Reading_Level_2_PRACTICE-5_QP.pdf',
+  'edexcel-english-writing-l2-practice-5': 'https://passfunctionalskills.co.uk/app/uploads/2024/06/FS_English_Writing_Level_2_PRACTICE-5_QP.pdf',
+  'aqa-english-reading-l2-specimen': 'https://passfunctionalskills.co.uk/wp-content/uploads/2021/09/Reading-Sample-Paper-1.pdf',
+  'aqa-english-writing-l2-sample': 'https://passfunctionalskills.co.uk/wp-content/uploads/2021/09/Writing-Sample-Paper.pdf'
+};
+
 function getOrCreatePaper(key) {
   if (MFS_MOCK_DATA[key]) return MFS_MOCK_DATA[key];
 
@@ -4874,6 +5475,7 @@ function getOrCreatePaper(key) {
     }
   }
 
+  const mappedPdf = MFS_PAPER_PDF_MAP[key] || '';
   if (isWriting) {
     const isCity = boardName === 'City & Guilds';
     const paperObj = {
@@ -4886,6 +5488,7 @@ function getOrCreatePaper(key) {
       pdfUrl: '',
       modelSolutionPdf: '',
       videoSolutionSlug: '',
+      pdfUrl: mappedPdf,
       questions: [
         {
           num: 1,
@@ -5093,6 +5696,7 @@ function getOrCreatePaper(key) {
       pdfUrl: '',
       modelSolutionPdf: '',
       videoSolutionSlug: '',
+      pdfUrl: mappedPdf,
       sourceTexts: sourceTexts,
       questions: questions
     };
@@ -6321,8 +6925,82 @@ function initSimWorkspaceDiagram(paper, q, sec) {
 }
 
 
+
+// View Mode: 'interactive' or 'pdf'
+let simQuestionViewMode = 'interactive';
+
+function setSimQuestionViewMode(mode) {
+  simQuestionViewMode = mode;
+  const interactiveBtn = document.getElementById('simModeInteractiveBtn');
+  const pdfBtn = document.getElementById('simModePdfBtn');
+  const pdfWrap = document.getElementById('simPdfViewerWrap');
+  const pdfIframe = document.getElementById('simPdfIframe');
+  const leftContent = document.getElementById('simLeftQuestionContent');
+  const readingSource = document.getElementById('simReadingSourcePane');
+  const leftMetaBar = document.getElementById('simLeftMetaBar');
+  const paper = getOrCreatePaper(simCurrentPaperKey);
+  const pdfTarget = paper.pdfUrl || paper.modelSolutionPdf || '';
+
+  if (mode === 'pdf') {
+    if (interactiveBtn) {
+      interactiveBtn.style.background = '#fff';
+      interactiveBtn.style.color = '#334155';
+    }
+    if (pdfBtn) {
+      pdfBtn.style.background = 'var(--sim-blue)';
+      pdfBtn.style.color = '#fff';
+    }
+    if (pdfWrap) {
+      pdfWrap.style.display = 'block';
+      if (pdfIframe && pdfTarget && (!pdfIframe.src || !pdfIframe.src.includes(pdfTarget))) {
+        pdfIframe.src = pdfTarget;
+      }
+    }
+    if (leftContent) leftContent.style.display = 'none';
+    if (readingSource) readingSource.style.display = 'none';
+    if (leftMetaBar) leftMetaBar.style.display = 'none';
+  } else {
+    if (interactiveBtn) {
+      interactiveBtn.style.background = 'var(--sim-blue)';
+      interactiveBtn.style.color = '#fff';
+    }
+    if (pdfBtn) {
+      pdfBtn.style.background = '#fff';
+      pdfBtn.style.color = '#334155';
+    }
+    if (pdfWrap) pdfWrap.style.display = 'none';
+    const subject = paper.subject || 'maths';
+    if (subject === 'reading') {
+      if (readingSource) readingSource.style.display = 'flex';
+      if (leftContent) leftContent.style.display = 'none';
+    } else {
+      if (readingSource) readingSource.style.display = 'none';
+      if (leftContent) leftContent.style.display = 'flex';
+    }
+    if (leftMetaBar) leftMetaBar.style.display = 'flex';
+  }
+}
+
 function renderCurrentQuestion() {
   const paper = getOrCreatePaper(simCurrentPaperKey);
+
+  // Sync Official Exam Paper PDF link & viewer
+  const openPdfBtn = document.getElementById('simOpenPdfExternalBtn');
+  const pdfIframe = document.getElementById('simPdfIframe');
+  const pdfTarget = paper.pdfUrl || paper.modelSolutionPdf || '';
+  if (openPdfBtn) {
+    if (pdfTarget) {
+      openPdfBtn.href = pdfTarget;
+      openPdfBtn.style.display = 'inline-flex';
+    } else {
+      openPdfBtn.style.display = 'none';
+    }
+  }
+  if (pdfIframe && pdfTarget && simQuestionViewMode === 'pdf') {
+    if (!pdfIframe.src || !pdfIframe.src.includes(pdfTarget)) {
+      pdfIframe.src = pdfTarget;
+    }
+  }
   const sections = getPaperSections(paper);
   const sec = sections[simCurrentSectionIndex] || sections[0];
 

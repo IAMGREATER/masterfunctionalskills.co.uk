@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Master Functional Skills — Network Security and Public Wi-Fi Risks Mark Scheme (Level 1)</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/mfs-worksheets.css?v=20261024c">
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 12mm 15mm 12mm 15mm;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #0f172a;
+      background: #f8fafc;
+      margin: 0;
+      padding: 0;
+      font-size: 10.5pt;
+      line-height: 1.5;
+    }
+    .print-bar {
+      background: #0b172d;
+      color: #f8fafc;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    }
+    .print-bar a {
+      color: #93c5fd;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .print-bar a:hover { color: #ffffff; text-decoration: underline; }
+    .btn-action-print {
+      background: #059669;
+      color: #ffffff;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s;
+    }
+    .btn-action-print:hover { background: #047857; }
+    .nav-pill-group {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 8px;
+      padding: 3px;
+      margin-right: 12px;
+    }
+    .nav-pill-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: #cbd5e1;
+      text-decoration: none;
+    }
+    .nav-pill-btn:hover:not(.active) { background: rgba(255, 255, 255, 0.18); color: #ffffff; }
+    .nav-pill-btn.active {
+      background: #059669;
+      color: #ffffff;
+      cursor: default;
+    }
+
+    @media print {
+      .print-bar { display: none !important; }
+      body { background: #ffffff !important; }
+      .page-sheet {
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+      }
+      .mark-scheme-box, .model-answer-card { page-break-inside: avoid; }
+    }
+
+    .page-sheet {
+      max-width: 900px;
+      margin: 24px auto;
+      background: #ffffff;
+      padding: 32px 40px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+    }
+    .sheet-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 2px solid #0f172a;
+      padding-bottom: 16px;
+      margin-bottom: 20px;
+    }
+    .brand-title {
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: #0b172d;
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .brand-title i { color: #059669; }
+    .sheet-sub {
+      font-size: 0.9rem;
+      color: #475569;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+    .header-badges { text-align: right; }
+    .badge-level {
+      background: #dcfce7;
+      color: #166534;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.82rem;
+      border: 1px solid #86efac;
+      display: inline-block;
+      margin-bottom: 4px;
+    }
+    .badge-spec {
+      font-size: 0.78rem;
+      color: #64748b;
+      font-weight: 600;
+    }
+
+    .hero-banner {
+      background: linear-gradient(135deg, #064e3b 0%, #0f766e 100%);
+      color: #ffffff;
+      padding: 16px 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .hero-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      margin: 0;
+    }
+    .hero-subtitle {
+      font-size: 0.85rem;
+      color: #a7f3d0;
+      margin-top: 4px;
+    }
+    .hero-tag {
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .model-answer-card {
+      background: #f0fdf4;
+      border: 1.5px solid #86efac;
+      border-radius: 8px;
+      padding: 18px 20px;
+      margin-bottom: 22px;
+    }
+    .model-card-title {
+      font-weight: 800;
+      color: #166534;
+      font-size: 1rem;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .model-body-text {
+      font-size: 0.95rem;
+      color: #14532d;
+      line-height: 1.6;
+      white-space: pre-wrap;
+    }
+
+    .mark-scheme-box {
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+      overflow: hidden;
+      margin-bottom: 20px;
+    }
+    .scheme-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+    .scheme-table th {
+      background: #0f172a;
+      color: #ffffff;
+      padding: 10px 14px;
+      text-align: left;
+      font-weight: 700;
+    }
+    .scheme-table td {
+      padding: 10px 14px;
+      border-bottom: 1px solid #e2e8f0;
+      vertical-align: top;
+      color: #334155;
+    }
+    .scheme-table tr:nth-child(even) td {
+      background: #f8fafc;
+    }
+
+    .tutor-note-card {
+      background: #f8fafc;
+      border-left: 4px solid #0284c7;
+      padding: 12px 16px;
+      border-radius: 6px;
+      font-size: 0.88rem;
+      color: #475569;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Sticky Navigation & Print Bar -->
+  <div class="print-bar">
+    <div>
+      <a href="../worksheets.html#digital-skills"><i class="fa-solid fa-arrow-left"></i> Worksheets Directory</a>
+    </div>
+    <div>
+      <div class="nav-pill-group">
+        <a href="l1-network-connections-security-workout.html" class="nav-pill-btn"><i class="fa-solid fa-bolt"></i> Fluency Drills</a>
+        <a href="l1-network-connections-security-worksheet.html" class="nav-pill-btn"><i class="fa-solid fa-file-pen"></i> Practice Exam</a>
+        <span class="nav-pill-btn active"><i class="fa-solid fa-award"></i> Mark Scheme</span>
+      </div>
+      <a href="../digital-skills/level-1/l1-network-connections-security.html" class="btn-action-answers" target="_blank" style="background:#0284c7;"><i class="fa-solid fa-book-open"></i> Study Guide</a>
+      <button class="btn-action-print" onclick="window.print()"><i class="fa-solid fa-print"></i> Print / Save PDF</button>
+    </div>
+  </div>
+
+  <div class="page-sheet">
+    <!-- Sheet Header -->
+    <div class="sheet-header">
+      <div>
+        <div class="brand-title"><i class="fa-solid fa-award"></i> MASTER FUNCTIONAL SKILLS</div>
+        <div class="sheet-sub">Official Pearson Edexcel Aligned Marking Scheme &amp; Model Solutions</div>
+      </div>
+      <div class="header-badges">
+        <div class="badge-level">Level 1 Mark Scheme</div><br>
+        <span class="badge-spec">Tutor Abdul &bull; Accredited Guide</span>
+      </div>
+    </div>
+
+    <!-- Hero Title Banner -->
+    <div class="hero-banner">
+      <div>
+        <h1 class="hero-title">Network Security and Public Wi-Fi Risks — Mark Scheme</h1>
+        <div class="hero-subtitle">1. Using Devices and Handling Information &bull; Standard Code: L1.1.3</div>
+      </div>
+      <div class="hero-tag">Style 2: Solutions</div>
+    </div>
+
+    <!-- Model Answer -->
+    <div class="model-answer-card">
+      <div class="model-card-title"><i class="fa-solid fa-star"></i> Benchmark Model Solution:</div>
+      <div class="model-body-text">Rule 1: Staff must never conduct confidential work on open, password-free public Wi-Fi networks without an active corporate VPN.
+Rule 2: Staff should use password-protected personal mobile hotspots (tethering) or an approved VPN connection at all times when working remotely.</div>
+    </div>
+
+    <!-- Mark Scheme Criteria Table -->
+    <div class="mark-scheme-box">
+      <table class="scheme-table">
+        <thead>
+          <tr>
+            <th style="width:100px;">Task</th>
+            <th>Assessment Criteria &amp; Expected Candidate Performance</th>
+            <th style="width:90px; text-align:center;">Marks</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+        <tr>
+          <td style="font-weight:700; color:#0f172a;">Task 1</td>
+          <td>Mandating VPN usage when connecting over public networks.</td>
+          <td style="font-weight:700; color:#16a34a; text-align:center;">[1 Mark]</td>
+        </tr>
+        <tr>
+          <td style="font-weight:700; color:#0f172a;">Task 2</td>
+          <td>Requiring secure/encrypted connections or personal mobile hotspots.</td>
+          <td style="font-weight:700; color:#16a34a; text-align:center;">[1 Mark]</td>
+        </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Tutor Guidance Note -->
+    <div class="tutor-note-card">
+      <strong><i class="fa-solid fa-chalkboard-user"></i> Tutor Abdul's Marking Tip:</strong>
+      In Level 1 exams, whenever public Wi-Fi is mentioned in a scenario, the accredited answers are: 1. Use a VPN; 2. Use a secure personal mobile hotspot.
+    </div>
+
+  </div>
+
+</body>
+</html>

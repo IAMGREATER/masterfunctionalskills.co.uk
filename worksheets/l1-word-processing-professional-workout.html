@@ -1,0 +1,540 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Master Functional Skills — Professional Document Formatting and Styles Fluency Drills (Level 1)</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="../assets/css/mfs-worksheets.css?v=20261024c">
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 12mm 15mm 12mm 15mm;
+    }
+    *, *::before, *::after { box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      color: #0f172a;
+      background: #f8fafc;
+      margin: 0;
+      padding: 0;
+      font-size: 10.5pt;
+      line-height: 1.5;
+    }
+    .print-bar {
+      background: #0b172d;
+      color: #f8fafc;
+      padding: 12px 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.15);
+    }
+    .print-bar a {
+      color: #93c5fd;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.95rem;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .print-bar a:hover { color: #ffffff; text-decoration: underline; }
+    .btn-action-print {
+      background: #2563eb;
+      color: #ffffff;
+      border: none;
+      padding: 8px 20px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: background 0.2s;
+    }
+    .btn-action-print:hover { background: #1d4ed8; }
+    .btn-action-answers {
+      background: #059669;
+      color: #ffffff;
+      border: none;
+      padding: 8px 18px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.95rem;
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-left: 10px;
+      transition: background 0.2s;
+    }
+    .btn-action-answers:hover { background: #047857; color: #ffffff; }
+    .nav-pill-group {
+      display: inline-flex;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.22);
+      border-radius: 8px;
+      padding: 3px;
+      margin-right: 12px;
+    }
+    .nav-pill-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      padding: 6px 14px;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.88rem;
+      color: #cbd5e1;
+      text-decoration: none;
+      transition: all 0.15s ease;
+    }
+    .nav-pill-btn:hover:not(.active) { background: rgba(255, 255, 255, 0.18); color: #ffffff; }
+    .nav-pill-btn.active {
+      background: #2563eb;
+      color: #ffffff;
+      cursor: default;
+    }
+
+    @media print {
+      .print-bar { display: none !important; }
+      body { background: #ffffff !important; }
+      .page-sheet {
+        box-shadow: none !important;
+        border: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+        max-width: 100% !important;
+      }
+      .workout-question-card { page-break-inside: avoid; }
+    }
+
+    .page-sheet {
+      max-width: 900px;
+      margin: 24px auto;
+      background: #ffffff;
+      padding: 32px 40px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+      border-radius: 8px;
+      border: 1px solid #e2e8f0;
+    }
+    .sheet-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      border-bottom: 2px solid #0f172a;
+      padding-bottom: 16px;
+      margin-bottom: 20px;
+    }
+    .brand-title {
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: #0b172d;
+      letter-spacing: -0.5px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .brand-title i { color: #2563eb; }
+    .sheet-sub {
+      font-size: 0.9rem;
+      color: #475569;
+      font-weight: 600;
+      margin-top: 4px;
+    }
+    .header-badges { text-align: right; }
+    .badge-level {
+      background: #eff6ff;
+      color: #1e40af;
+      padding: 4px 10px;
+      border-radius: 4px;
+      font-weight: 700;
+      font-size: 0.82rem;
+      border: 1px solid #bfdbfe;
+      display: inline-block;
+      margin-bottom: 4px;
+    }
+    .badge-spec {
+      font-size: 0.78rem;
+      color: #64748b;
+      font-weight: 600;
+    }
+
+    .candidate-info-box {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 16px;
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 12px 16px;
+      margin-bottom: 20px;
+    }
+    .candidate-info-item {
+      font-size: 0.88rem;
+      color: #334155;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .field-line {
+      flex: 1;
+      border-bottom: 1px dotted #94a3b8;
+      height: 18px;
+    }
+
+    .hero-banner {
+      background: linear-gradient(135deg, #1e3a8a 0%, #0369a1 100%);
+      color: #ffffff;
+      padding: 16px 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .hero-title {
+      font-size: 1.35rem;
+      font-weight: 800;
+      margin: 0;
+    }
+    .hero-subtitle {
+      font-size: 0.85rem;
+      color: #bae6fd;
+      margin-top: 4px;
+    }
+    .hero-tag {
+      background: rgba(255, 255, 255, 0.15);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      padding: 6px 14px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+      font-weight: 700;
+    }
+
+    .rules-card {
+      background: #f0fdf4;
+      border: 1.5px solid #86efac;
+      border-radius: 8px;
+      padding: 16px 20px;
+      margin-bottom: 24px;
+    }
+    .rules-card-title {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: #166534;
+      margin-bottom: 10px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    .rules-list {
+      margin: 0;
+      padding-left: 0;
+      list-style: none;
+    }
+    .rules-list li {
+      font-size: 0.9rem;
+      color: #14532d;
+      margin-bottom: 8px;
+      line-height: 1.45;
+    }
+
+    .workout-question-card {
+      background: #ffffff;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 8px;
+      padding: 18px 20px;
+      margin-bottom: 20px;
+    }
+    .wq-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 10px;
+    }
+    .wq-number {
+      font-size: 1rem;
+      font-weight: 800;
+      color: #1e3a8a;
+    }
+    .wq-marks {
+      font-size: 0.85rem;
+      font-weight: 700;
+      color: #64748b;
+      background: #f1f5f9;
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+    .wq-prompt {
+      font-size: 0.98rem;
+      font-weight: 600;
+      color: #0f172a;
+      margin: 0 0 14px 0;
+      line-height: 1.5;
+    }
+    .wq-options-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+    @media (max-width: 600px) {
+      .wq-options-grid { grid-template-columns: 1fr; }
+    }
+    .drill-option-item {
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 10px 14px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: #ffffff;
+    }
+    .option-check-box {
+      width: 18px;
+      height: 18px;
+      border: 2px solid #64748b;
+      border-radius: 4px;
+      display: inline-block;
+      flex-shrink: 0;
+    }
+    .option-letter {
+      font-weight: 800;
+      color: #1e3a8a;
+      width: 18px;
+      flex-shrink: 0;
+    }
+    .option-text {
+      font-size: 0.92rem;
+      color: #1e293b;
+    }
+    .wq-working-space {
+      border-top: 1px dashed #cbd5e1;
+      padding-top: 10px;
+      margin-top: 12px;
+    }
+    .working-hint {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .write-lines {
+      height: 38px;
+      border-bottom: 1px dotted #cbd5e1;
+    }
+
+    .rapid-lines-box {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin-top: 12px;
+    }
+    .rapid-line {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.92rem;
+    }
+    .write-line {
+      flex: 1;
+      border-bottom: 1px dotted #94a3b8;
+      height: 20px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top Sticky Navigation & Print Bar -->
+  <div class="print-bar">
+    <div>
+      <a href="../worksheets.html#digital-skills"><i class="fa-solid fa-arrow-left"></i> Worksheets Directory</a>
+    </div>
+    <div>
+      <div class="nav-pill-group">
+        <span class="nav-pill-btn active"><i class="fa-solid fa-bolt"></i> Fluency Drills</span>
+        <a href="l1-word-processing-professional-workout-answers.html" class="nav-pill-btn"><i class="fa-solid fa-check"></i> Answers</a>
+        <a href="l1-word-processing-professional-worksheet.html" class="nav-pill-btn"><i class="fa-solid fa-file-pen"></i> Practice Exam</a>
+      </div>
+      <a href="../digital-skills/level-1/l1-word-processing-professional.html" class="btn-action-answers" target="_blank" style="background:#0284c7;"><i class="fa-solid fa-book-open"></i> Study Guide</a>
+      <button class="btn-action-print" onclick="window.print()"><i class="fa-solid fa-print"></i> Print / Save PDF</button>
+    </div>
+  </div>
+
+  <div class="page-sheet">
+    <!-- Sheet Header -->
+    <div class="sheet-header">
+      <div>
+        <div class="brand-title"><i class="fa-solid fa-graduation-cap"></i> MASTER FUNCTIONAL SKILLS</div>
+        <div class="sheet-sub">Pearson Edexcel &amp; City &amp; Guilds Aligned Corbett-Style Fluency Workout</div>
+      </div>
+      <div class="header-badges">
+        <div class="badge-level">Level 1 DFSQ</div><br>
+        <span class="badge-spec">Ofqual Regulated Criteria</span>
+      </div>
+    </div>
+
+    <!-- Candidate Info -->
+    <div class="candidate-info-box">
+      <div class="candidate-info-item"><strong>Candidate Name:</strong> <span class="field-line"></span></div>
+      <div class="candidate-info-item"><strong>Date:</strong> <span class="field-line"></span></div>
+      <div class="candidate-info-item" style="max-width:140px;"><strong>Marks:</strong> <span class="field-line"></span> / 7</div>
+    </div>
+
+    <!-- Hero Title Banner -->
+    <div class="hero-banner">
+      <div>
+        <h1 class="hero-title">Professional Document Formatting and Styles</h1>
+        <div class="hero-subtitle">2. Creating and Editing &bull; Standard Code: L1.2.1</div>
+      </div>
+      <div class="hero-tag">Style 1: Workout</div>
+    </div>
+
+    <!-- Key Method Rules Summary -->
+    <div class="rules-card">
+      <div class="rules-card-title"><i class="fa-solid fa-lightbulb"></i> Core Rules &amp; Methods to Remember:</div>
+      <ul class="rules-list">
+        <li><i class="fa-solid fa-circle-check" style="color:#16a34a; margin-right:8px;"></i><strong>Headers, Footers, and Automated Page Numbers:</strong> Professional multi-page reports require consistent headers and footers:Header (Top Margin): Typically contains the organisation name, document title, </li>
+<li><i class="fa-solid fa-circle-check" style="color:#16a34a; margin-right:8px;"></i><strong>Using Built-In Heading Styles (Accessibility):</strong> Do not simply make titles bigger and bold manually. Use the Styles Gallery on the Home ribbon:Heading 1: Main topic or chapter titles.Heading 2: Subse</li>
+<li><i class="fa-solid fa-circle-check" style="color:#16a34a; margin-right:8px;"></i><strong>Inserting and Formatting Tables:</strong> To present structured information neatly:Click Insert &amp;gt; Table and drag across the grid to choose rows and columns (e.g. 3 columns × 4 rows).Format </li>
+
+      </ul>
+    </div>
+
+    <!-- Drill Questions -->
+    
+        <div class="workout-question-card">
+          <div class="wq-header">
+            <span class="wq-number">Task 1</span>
+            <span class="wq-marks">[2 Marks]</span>
+          </div>
+          <p class="wq-prompt">Why should you use the &#x27;Page Number&#x27; tool instead of typing numbers at the bottom of each page manually?</p>
+          <div class="wq-options-grid">
+            
+            <div class="drill-option-item">
+              <span class="option-check-box"></span>
+              <span class="option-letter">A.</span>
+              <span class="option-text">Automated page numbers update correctly on every page, whereas typing manually repeats the same number on every page</span>
+            </div>
+            <div class="drill-option-item">
+              <span class="option-check-box"></span>
+              <span class="option-letter">B.</span>
+              <span class="option-text">Manual numbers take up too much memory</span>
+            </div>
+            <div class="drill-option-item">
+              <span class="option-check-box"></span>
+              <span class="option-letter">C.</span>
+              <span class="option-text">Typing numbers deletes the text in your document</span>
+            </div>
+            <div class="drill-option-item">
+              <span class="option-check-box"></span>
+              <span class="option-letter">D.</span>
+              <span class="option-text">Printers refuse to print manual numbers</span>
+            </div>
+          </div>
+          <div class="wq-working-space">
+            <span class="working-hint">Reasoning / Notes:</span>
+            <div class="write-lines"></div>
+          </div>
+        </div>
+        
+        <div class="workout-question-card">
+          <div class="wq-header">
+            <span class="wq-number">Task 2</span>
+            <span class="wq-marks">[2 Marks]</span>
+          </div>
+          <p class="wq-prompt">What keyboard shortcut inserts a clean Page Break to start the next section on a fresh page?</p>
+          <div class="wq-options-grid">
+            
+            <div class="drill-option-item">
+              <span class="option-check-box"></span>
+              <span class="option-letter">A.</span>
+              <span class="option-text">Ctrl + Enter</span>
+            </div>
+            <div class="drill-option-item">
+              <span class="option-check-box"></span>
+              <span class="option-letter">B.</span>
+              <span class="option-text">Shift + Delete</span>
+            </div>
+            <div class="drill-option-item">
+              <span class="option-check-box"></span>
+              <span class="option-letter">C.</span>
+              <span class="option-text">Alt + F4</span>
+            </div>
+            <div class="drill-option-item">
+              <span class="option-check-box"></span>
+              <span class="option-letter">D.</span>
+              <span class="option-text">Tab + Space</span>
+            </div>
+          </div>
+          <div class="wq-working-space">
+            <span class="working-hint">Reasoning / Notes:</span>
+            <div class="write-lines"></div>
+          </div>
+        </div>
+        
+        <div class="workout-question-card">
+          <div class="wq-header">
+            <span class="wq-number">Task 3</span>
+            <span class="wq-marks">[2 Marks]</span>
+          </div>
+          <p class="wq-prompt">What is the primary benefit of using built-in Heading Styles (Heading 1, Heading 2) in long documents?</p>
+          <div class="wq-options-grid">
+            
+            <div class="drill-option-item">
+              <span class="option-check-box"></span>
+              <span class="option-letter">A.</span>
+              <span class="option-text">It structures the document for accessibility, screen readers, and automatic tables of contents</span>
+            </div>
+            <div class="drill-option-item">
+              <span class="option-check-box"></span>
+              <span class="option-letter">B.</span>
+              <span class="option-text">It sends the document to your printer automatically</span>
+            </div>
+            <div class="drill-option-item">
+              <span class="option-check-box"></span>
+              <span class="option-letter">C.</span>
+              <span class="option-text">It translates the text into other languages</span>
+            </div>
+            <div class="drill-option-item">
+              <span class="option-check-box"></span>
+              <span class="option-letter">D.</span>
+              <span class="option-text">It compresses the file into a ZIP archive</span>
+            </div>
+          </div>
+          <div class="wq-working-space">
+            <span class="working-hint">Reasoning / Notes:</span>
+            <div class="write-lines"></div>
+          </div>
+        </div>
+        
+
+    <!-- Rapid Recall Check -->
+    
+    <div class="workout-question-card">
+      <div class="wq-header">
+        <span class="wq-number">Task 4 — Rapid Terminology &amp; Rule Check</span>
+        <span class="wq-marks">[3 Marks]</span>
+      </div>
+      <p class="wq-prompt">State three essential digital rules or guidelines to follow when dealing with <strong>Professional Document Formatting and Styles</strong>:</p>
+      <div class="rapid-lines-box">
+        <div class="rapid-line"><strong>1.</strong> <span class="write-line"></span></div>
+        <div class="rapid-line"><strong>2.</strong> <span class="write-line"></span></div>
+        <div class="rapid-line"><strong>3.</strong> <span class="write-line"></span></div>
+      </div>
+    </div>
+    
+
+  </div>
+
+</body>
+</html>

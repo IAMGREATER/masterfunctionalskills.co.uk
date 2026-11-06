@@ -1348,6 +1348,7 @@ document.addEventListener('DOMContentLoaded', () => {
   loadPaper(simCurrentPaperKey);
   startTimer();
   initSimFontSize();
+  setupModalBackdropDismiss();
 });
 
 // Load and Render Paper
@@ -1455,6 +1456,99 @@ function confirmSectionLock() {
     simPendingLockAction = null;
     action();
   }
+}
+
+// Reset Whole Paper Functionality (Prompt, Modal, and Execution)
+function promptResetPaper() {
+  const modal = document.getElementById('simResetConfirmModal');
+  if (modal) {
+    modal.classList.add('open');
+  } else if (confirm('Are you sure you want to reset this whole paper? All your recorded working, concluded answers, section locks, and timer progress will be cleared so you can re-attempt the exam fresh.')) {
+    confirmResetPaper();
+  }
+}
+
+function closeResetModal() {
+  const modal = document.getElementById('simResetConfirmModal');
+  if (modal) modal.classList.remove('open');
+}
+
+function confirmResetPaper() {
+  closeResetModal();
+  resetWholePaper();
+}
+
+function resetWholePaper() {
+  const paper = getOrCreatePaper(simCurrentPaperKey);
+  const prefix = `mfs_sim_${simCurrentPaperKey}_`;
+  const keysToRemove = [];
+  for (let i = 0; i < localStorage.length; i++) {
+    const k = localStorage.key(i);
+    if (k && k.startsWith(prefix)) {
+      keysToRemove.push(k);
+    }
+  }
+  keysToRemove.forEach(k => localStorage.removeItem(k));
+
+  // Reset in-memory tracking states
+  simLockedSections = {};
+  sim5MinWarningShown = {};
+  dismiss5MinWarning();
+
+  // Close any open modals
+  closeCandidateAnswersModal();
+  closeSubmitModal();
+  cancelSectionLock();
+  closeResetModal();
+
+  // Reset question and section index to start of paper (Cover)
+  simCurrentSectionIndex = 0;
+  simCurrentQuestionIndex = 0;
+
+  // Reset timer to original duration for Section A
+  const sections = getPaperSections(paper);
+  const firstSec = sections[0];
+  if (firstSec) {
+    simTimerSeconds = (firstSec.durationMinutes || 25) * 60;
+  }
+  simTimerActive = true;
+  updateTimerDisplay();
+
+  // Reset calculator expression and state
+  calcClear();
+
+  // Re-render simulator UI components
+  renderSectionTabs(paper);
+  renderQuestionPills(paper);
+  renderCurrentQuestion();
+  scrollContentToTop();
+
+  // Status indicator feedback
+  const saveStatus = document.getElementById('simSaveStatus');
+  if (saveStatus) {
+    saveStatus.innerHTML = '<i class="fa-solid fa-rotate-left" style="font-size:0.6rem; color:#38bdf8;"></i> Paper Reset Fresh';
+    setTimeout(() => {
+      saveStatus.innerHTML = '<i class="fa-solid fa-circle" style="font-size:0.5rem; color:#86efac;"></i> Autosaved';
+    }, 2500);
+  }
+}
+
+// Modal Backdrop Click Helper
+function setupModalBackdropDismiss() {
+  ['simCandidateAnswersModal', 'simSubmitModal', 'simSectionLockModal', 'simResetConfirmModal'].forEach((id) => {
+    const modal = document.getElementById(id);
+    if (modal && !modal._hasBackdropDismiss) {
+      modal._hasBackdropDismiss = true;
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) {
+          if (id === 'simCandidateAnswersModal') closeCandidateAnswersModal();
+          else if (id === 'simSubmitModal') closeSubmitModal();
+          else if (id === 'simSectionLockModal') cancelSectionLock();
+          else if (id === 'simResetConfirmModal') closeResetModal();
+        }
+      });
+    }
+  });
 }
 
 // Switch Active Section (Section A vs Section B)
@@ -2595,8 +2689,39 @@ document.addEventListener('fullscreenchange', () => {
 });
 
 document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' && document.fullscreenElement) {
-    document.exitFullscreen().catch(() => {});
+  if (e.key === 'Escape' || e.key === 'Esc') {
+    const candModal = document.getElementById('simCandidateAnswersModal');
+    const submitModal = document.getElementById('simSubmitModal');
+    const lockModal = document.getElementById('simSectionLockModal');
+    const resetModal = document.getElementById('simResetConfirmModal');
+
+    let modalClosed = false;
+    if (resetModal && resetModal.classList.contains('open')) {
+      closeResetModal();
+      modalClosed = true;
+    }
+    if (candModal && candModal.classList.contains('open')) {
+      closeCandidateAnswersModal();
+      modalClosed = true;
+    }
+    if (submitModal && submitModal.classList.contains('open')) {
+      closeSubmitModal();
+      modalClosed = true;
+    }
+    if (lockModal && lockModal.classList.contains('open')) {
+      cancelSectionLock();
+      modalClosed = true;
+    }
+
+    if (modalClosed) {
+      e.preventDefault();
+      e.stopPropagation();
+      return;
+    }
+
+    if (document.fullscreenElement) {
+      document.exitFullscreen().catch(() => {});
+    }
   }
 });
 

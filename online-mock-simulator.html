@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="assets/css/mfs-theme.css?v=20261024c">
   <link rel="stylesheet" href="assets/css/mfs-revision.css?v=20261024c">
   <link rel="stylesheet" href="assets/css/mfs-mobile.css?v=20261024c">
-  <link rel="stylesheet" href="assets/css/online-mock-simulator.css?v=20261106_v13">
+  <link rel="stylesheet" href="assets/css/online-mock-simulator.css?v=20261106_v14">
 </head>
 <body>
 
@@ -465,9 +465,6 @@
           <button type="button" class="sim-nav-btn sim-btn-submit" id="simCheckAnswersBtn" onclick="handleCheckAnswersClick()">
             <i class="fa-solid fa-check-double"></i> Check Answers
           </button>
-          <button type="button" class="sim-nav-btn sim-btn-reset-paper" id="simResetPaperBtn" onclick="promptResetPaper()" style="background:#fee2e2; border-color:#fca5a5; color:#991b1b; font-weight:700;" title="Reset whole paper to attempt fresh">
-            <i class="fa-solid fa-rotate-left"></i> Reset Paper
-          </button>
         </div>
       </div>
 
@@ -500,9 +497,6 @@
             </button>
             <button type="button" class="sim-nav-btn sim-btn-submit" onclick="closeCandidateAnswersModal(); handleCheckAnswersClick();">
               <i class="fa-solid fa-check-double"></i> Check Against Model Answers
-            </button>
-            <button type="button" class="sim-nav-btn" style="background:#fee2e2; border-color:#fca5a5; color:#991b1b;" onclick="promptResetPaper()">
-              <i class="fa-solid fa-rotate-left"></i> Reset Paper
             </button>
             <button type="button" class="sim-nav-btn" onclick="closeCandidateAnswersModal()">
               Return to Simulator
@@ -540,9 +534,6 @@
             </button>
             <button type="button" class="sim-nav-btn" onclick="printMockDocument('marked')">
               <i class="fa-solid fa-print"></i> Print / Save as PDF
-            </button>
-            <button type="button" class="sim-nav-btn" style="background:#fee2e2; border-color:#fca5a5; color:#991b1b;" onclick="promptResetPaper()">
-              <i class="fa-solid fa-rotate-left"></i> Reset Paper
             </button>
             <button type="button" class="sim-nav-btn sim-btn-submit" onclick="closeSubmitModal()">
               Return to Simulator
@@ -645,6 +636,6 @@
 
   <!-- Scripts -->
   <script src="assets/js/mfs-tint.js"></script>
-  <script src="assets/js/online-mock-simulator.js?v=20261106_v13"></script>
+  <script src="assets/js/online-mock-simulator.js?v=20261106_v14"></script>
 </body>
 </html>

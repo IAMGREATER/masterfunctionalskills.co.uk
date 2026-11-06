@@ -1456,7 +1456,7 @@ body {
   display: none;
   align-items: center;
   justify-content: center;
-  z-index: 9999;
+  z-index: 999999;
   padding: 20px;
 }
 
@@ -1692,4 +1692,133 @@ body {
 .sim-mcq-label input[type="radio"] {
   margin-top: 3px;
   accent-color: #0284c7;
+}
+
+/* ==========================================================================
+   PRINT / PDF EXPORT STYLING (A4 Optimised & Clutter-Free)
+   ========================================================================== */
+@media print {
+  @page {
+    size: A4 portrait;
+    margin: 14mm 12mm 14mm 12mm;
+  }
+
+  /* Hide website chrome, headers, navbars, and interactive simulator tools */
+  header,
+  footer,
+  nav,
+  .mfs-top-bar,
+  .mfs-header,
+  .page-banner,
+  .sim-control-bar,
+  .sim-left-col,
+  .sim-bottom-actions,
+  .sim-dock-calc,
+  .sim-calc-backdrop,
+  .sim-5min-warning-banner,
+  .sim-status-chip,
+  .sim-save-status,
+  .sim-font-control-group,
+  .sim-timer-box,
+  .btn-card-action,
+  .no-print {
+    display: none !important;
+  }
+
+  body {
+    background: #ffffff !important;
+    color: #0f172a !important;
+    font-size: 10pt !important;
+    line-height: 1.45 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  /* Expand shell and eliminate viewport scrolling boundaries */
+  .sim-app-shell {
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    border: none !important;
+    box-shadow: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+  }
+
+  .sim-body-split {
+    height: auto !important;
+    overflow: visible !important;
+    display: block !important;
+  }
+
+  .sim-right-col {
+    height: auto !important;
+    overflow: visible !important;
+    border: none !important;
+    padding: 0 !important;
+  }
+
+  .sim-panes-wrap {
+    height: auto !important;
+    overflow: visible !important;
+    display: block !important;
+  }
+
+  .sim-pane-question,
+  .sim-pane-working {
+    height: auto !important;
+    overflow: visible !important;
+    max-height: none !important;
+    border: none !important;
+    padding: 10px 0 !important;
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+  }
+
+  /* If a modal is open when printing via Ctrl+P */
+  .sim-modal-overlay.open {
+    position: static !important;
+    inset: auto !important;
+    background: transparent !important;
+    padding: 0 !important;
+    display: block !important;
+    overflow: visible !important;
+    height: auto !important;
+    max-height: none !important;
+    z-index: auto !important;
+  }
+
+  .sim-modal-overlay.open .sim-modal-card {
+    max-width: 100% !important;
+    max-height: none !important;
+    overflow: visible !important;
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    margin: 0 !important;
+  }
+
+  .sim-modal-header {
+    border-bottom: 2px solid #0284c7 !important;
+    padding-bottom: 8px !important;
+    margin-bottom: 14px !important;
+  }
+
+  .sim-modal-header button,
+  .sim-modal-card > div:last-child {
+    display: none !important;
+  }
+
+  .sim-review-row {
+    page-break-inside: avoid !important;
+    break-inside: avoid !important;
+    margin-bottom: 16px !important;
+    border: 1px solid #cbd5e1 !important;
+    border-radius: 6px !important;
+    padding: 12px !important;
+  }
 }

@@ -2869,17 +2869,49 @@ function closeCandidateAnswersModal() {
 
 function downloadCandidateAnswersFile() {
   const paper = getOrCreatePaper(simCurrentPaperKey);
+  const fullHtml = generatePrintableHtml('candidate');
+  const blob = new Blob([fullHtml], { type: 'text/html;charset=utf-8;' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  const safeTitle = (paper.title || 'Mock Exam').replace(/[^a-zA-Z0-9 -]/g, '').trim().replace(/\s+/g, ' ');
+  a.download = `${safeTitle} Candidate Answers.html`;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
+// Dedicated Printable HTML Generator for A4 Print, Save as PDF & Downloads
+function generatePrintableHtml(type = 'candidate') {
+  const paper = getOrCreatePaper(simCurrentPaperKey);
   const sections = getPaperSections(paper);
   const now = new Date();
   const dateStr = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' });
+  const isMarked = type === 'marked';
+  const candidateName = localStorage.getItem('mfs_sim_candidate_name') || 'Learner';
+  const subjectName = paper.subject === 'writing'
+    ? 'Functional Skills English Writing'
+    : paper.subject === 'reading'
+      ? 'Functional Skills English Reading'
+      : 'Functional Skills Mathematics';
 
-  let itemsHtml = '';
+  const totalPaperMarks = sections.reduce((acc, s) => {
+    return acc + (s.totalMarks || (s.questions || []).reduce((qacc, q) => qacc + (q.marks || 0), 0));
+  }, 0);
+
+  let sectionsHtml = '';
   sections.forEach((sec) => {
-    itemsHtml += `
-      <div style="background:#0f172a; color:#ffffff; padding:10px 16px; border-radius:6px; margin:24px 0 12px 0; font-weight:bold; font-size:16px;">
-        ${escapeHtml(sec.name)} &bull; ${sec.durationMinutes} mins &bull; ${sec.isCalcAllowed ? 'Calculator Allowed' : 'Non-Calculator'}
+    const secMarks = sec.totalMarks || (sec.questions || []).reduce((qacc, q) => qacc + (q.marks || 0), 0);
+    const durStr = sec.durationMinutes >= 60 ? (sec.durationMinutes === 90 ? '1 hr 30 mins' : `${Math.floor(sec.durationMinutes / 60)} hrs`) : `${sec.durationMinutes} mins`;
+
+    sectionsHtml += `
+      <div class="mfs-print-section-header">
+        <div class="mfs-print-section-title">${escapeHtml(sec.name)}</div>
+        <div class="mfs-print-section-meta">${durStr} &bull; ${secMarks} Marks &bull; ${sec.isCalcAllowed ? 'Calculator Permitted' : 'Non-Calculator'}</div>
       </div>
     `;
+
     sec.questions.forEach((q) => {
       const userWorking = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_sec_${sec.id}_q${q.num}_working`)
         || (sec.id === 'A' ? localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_q${q.num}_working`) : null)
@@ -2887,53 +2919,459 @@ function downloadCandidateAnswersFile() {
       const userAns = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_sec_${sec.id}_q${q.num}_ans`)
         || (sec.id === 'A' ? localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_q${q.num}_ans`) : null)
         || '';
+      const userPlanning = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_sec_${sec.id}_q${q.num}_planning`);
 
-      itemsHtml += `
-        <div style="border:1px solid #cbd5e1; border-radius:6px; padding:14px; margin-bottom:14px; background:#ffffff; page-break-inside:avoid;">
-          <div style="font-weight:bold; font-size:15px; color:#0f172a; margin-bottom:4px;">
-            Question ${q.num}: ${escapeHtml(q.scenarioTitle || '')} (${q.marks || 0} Marks)
+      const itemLabel = paper.subject === 'writing' ? `Task ${q.num}` : `${sec.name.includes(':') ? sec.name.split(':')[0] : 'Section ' + sec.id} — Question ${q.num}`;
+      const marksLabel = `${q.marks || 0} Mark${q.marks === 1 ? '' : 's'}${q.markTags ? ' ' + escapeHtml(q.markTags) : ''}`;
+
+      let questionBodyHtml = '';
+      if (!isMarked) {
+        // Candidate Response View
+        questionBodyHtml = `
+          <div class="mfs-print-working-block">
+            ${userPlanning ? `
+              <div class="mfs-print-block-label" style="color:#64748b;">Candidate Planning Notes:</div>
+              <pre class="mfs-print-pre" style="background:#f1f5f9; border:1px dashed #cbd5e1; color:#334155; min-height:30px; margin-bottom:8px;">${escapeHtml(userPlanning)}</pre>
+            ` : ''}
+            <div class="mfs-print-block-label candidate-label">Candidate Working &amp; Calculations:</div>
+            <pre class="mfs-print-pre candidate-pre">${escapeHtml(userWorking)}</pre>
+            ${userAns ? `
+              <div class="mfs-print-ans-row">
+                <span class="mfs-print-ans-label">Concluded Final Answer:</span>
+                <span class="mfs-print-ans-pill">${escapeHtml(userAns)} ${escapeHtml(q.unit || '')}</span>
+              </div>
+            ` : '<div class="mfs-print-no-ans">No final answer concluded in answer box.</div>'}
           </div>
-          <div style="font-size:13px; color:#475569; margin-bottom:8px; white-space:pre-wrap;">${escapeHtml(q.promptText || '')}</div>
-          <div style="font-size:12px; font-weight:bold; color:#64748b; text-transform:uppercase;">Candidate Working:</div>
-          <pre style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:4px; padding:10px; font-size:13px; white-space:pre-wrap; font-family:'Courier New', monospace; color:#0f172a;">${escapeHtml(userWorking)}</pre>
-          ${userAns ? `<div style="font-size:14px; font-weight:bold; color:#0369a1; margin-top:8px;">Concluded Final Answer: <span style="background:#e0f2fe; padding:2px 8px; border-radius:4px;">${escapeHtml(userAns)} ${escapeHtml(q.unit || '')}</span></div>` : ''}
+        `;
+      } else {
+        // Diagnostic Marked Comparison View
+        questionBodyHtml = `
+          <div class="mfs-print-comparison-grid">
+            <div class="mfs-print-col candidate-col">
+              <div class="mfs-print-block-label candidate-label">Candidate Response &amp; Working:</div>
+              ${userPlanning ? `
+                <pre class="mfs-print-pre" style="background:#f1f5f9; border:1px dashed #cbd5e1; color:#334155; font-size:8.5pt; margin-bottom:6px;">Planning:\n${escapeHtml(userPlanning)}</pre>
+              ` : ''}
+              <pre class="mfs-print-pre candidate-pre">${escapeHtml(userWorking)}</pre>
+              ${userAns ? `
+                <div class="mfs-print-ans-row">
+                  <span class="mfs-print-ans-label">Candidate Answer:</span>
+                  <span class="mfs-print-ans-pill">${escapeHtml(userAns)} ${escapeHtml(q.unit || '')}</span>
+                </div>
+              ` : '<div class="mfs-print-no-ans">No final answer concluded</div>'}
+            </div>
+            <div class="mfs-print-col model-col">
+              <div class="mfs-print-block-label model-label">Master Model Solution &amp; Mark Scheme [${escapeHtml(q.markTags || '')}]:</div>
+              <pre class="mfs-print-pre model-pre">${escapeHtml(q.modelSolution || '(Accredited model solution)')}</pre>
+              ${q.finalBenchmark ? `
+                <div class="mfs-print-ans-row">
+                  <span class="mfs-print-model-ans-label">Model Benchmark:</span>
+                  <span class="mfs-print-model-pill">${escapeHtml(q.finalBenchmark)}</span>
+                </div>
+              ` : ''}
+            </div>
+          </div>
+        `;
+      }
+
+      sectionsHtml += `
+        <div class="mfs-print-q-card">
+          <div class="mfs-print-q-header">
+            <span class="mfs-print-q-title">${escapeHtml(itemLabel)}: ${escapeHtml(q.scenarioTitle || '')}</span>
+            <span class="mfs-print-q-marks">${marksLabel}</span>
+          </div>
+          ${q.scenarioText ? `<div class="mfs-print-scenario-text">${escapeHtml(q.scenarioText)}</div>` : ''}
+          ${q.promptText ? `<div class="mfs-print-prompt-text">${escapeHtml(q.promptText)}</div>` : ''}
+          ${questionBodyHtml}
         </div>
       `;
     });
   });
 
-  const fullHtml = `<!DOCTYPE html>
+  const docTitle = isMarked
+    ? `${paper.title} — Diagnostic Marked Review & Model Benchmark`
+    : `${paper.title} — Candidate Answers & Working Record`;
+
+  const docBadge = isMarked
+    ? 'Official Master Model Benchmark & Diagnostic Review'
+    : 'Official Candidate Response & Working Record';
+
+  return `<!DOCTYPE html>
 <html lang="en-GB">
 <head>
   <meta charset="UTF-8">
-  <title>${escapeHtml(paper.title)} - Candidate Answers</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>${escapeHtml(docTitle)}</title>
   <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.5; color: #0f172a; max-width: 900px; margin: 0 auto; padding: 24px; }
-    h1 { font-size: 22px; color: #0f172a; margin-bottom: 4px; }
-    .meta { font-size: 13px; color: #64748b; margin-bottom: 20px; border-bottom: 2px solid #0284c7; padding-bottom: 12px; }
-    @media print { body { padding: 0; } }
+    @page {
+      size: A4 portrait;
+      margin: 14mm 12mm 14mm 12mm;
+    }
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+    body {
+      margin: 0;
+      padding: 24px;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      color: #0f172a;
+      background: #f8fafc;
+      font-size: 10pt;
+      line-height: 1.5;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+    .mfs-print-container {
+      max-width: 920px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 28px 32px;
+      border: 1px solid #cbd5e1;
+      border-radius: 8px;
+    }
+    /* Screen Action Bar (hidden when printed) */
+    .mfs-screen-actions {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: #0f172a;
+      color: #ffffff;
+      padding: 14px 20px;
+      border-radius: 8px;
+      margin-bottom: 24px;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.15);
+    }
+    .mfs-print-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #0284c7;
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      font-size: 14px;
+      font-weight: 700;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background 0.15s;
+    }
+    .mfs-print-btn:hover {
+      background: #0369a1;
+    }
+    /* Official Examination Header */
+    .mfs-exam-header {
+      border-bottom: 3px solid #0284c7;
+      padding-bottom: 14px;
+      margin-bottom: 20px;
+    }
+    .mfs-brand-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .mfs-brand-logo {
+      font-size: 16pt;
+      font-weight: 800;
+      color: #0f172a;
+      letter-spacing: -0.5px;
+    }
+    .mfs-brand-logo span {
+      color: #0284c7;
+    }
+    .mfs-doc-badge {
+      font-size: 8.5pt;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      padding: 4px 10px;
+      border-radius: 4px;
+      background: ${isMarked ? '#dcfce7' : '#e0f2fe'};
+      color: ${isMarked ? '#15803d' : '#0369a1'};
+      border: 1px solid ${isMarked ? '#86efac' : '#7dd3fc'};
+    }
+    .mfs-exam-title {
+      font-size: 13.5pt;
+      font-weight: 800;
+      color: #0f172a;
+      margin: 4px 0 12px 0;
+    }
+    .mfs-candidate-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 9pt;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      border-radius: 6px;
+      overflow: hidden;
+    }
+    .mfs-candidate-table td {
+      padding: 6px 12px;
+      border: 1px solid #e2e8f0;
+    }
+    .mfs-candidate-table strong {
+      color: #334155;
+    }
+    /* Section Divider */
+    .mfs-print-section-header {
+      background: #0f172a;
+      color: #ffffff;
+      padding: 8px 14px;
+      border-radius: 4px;
+      margin: 22px 0 12px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      page-break-after: avoid;
+      break-after: avoid;
+    }
+    .mfs-print-section-title {
+      font-size: 11pt;
+      font-weight: 800;
+      letter-spacing: 0.3px;
+    }
+    .mfs-print-section-meta {
+      font-size: 8.5pt;
+      font-weight: 700;
+      opacity: 0.9;
+    }
+    /* Question Card */
+    .mfs-print-q-card {
+      border: 1px solid #cbd5e1;
+      border-radius: 6px;
+      padding: 12px 14px;
+      margin-bottom: 14px;
+      background: #ffffff;
+      page-break-inside: avoid;
+      break-inside: avoid;
+    }
+    .mfs-print-q-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      border-bottom: 1.5px solid #f1f5f9;
+      padding-bottom: 4px;
+      margin-bottom: 8px;
+    }
+    .mfs-print-q-title {
+      font-size: 10.5pt;
+      font-weight: 800;
+      color: #0f172a;
+    }
+    .mfs-print-q-marks {
+      font-size: 9pt;
+      font-weight: 700;
+      color: #64748b;
+    }
+    .mfs-print-scenario-text {
+      font-size: 9.5pt;
+      color: #334155;
+      background: #f8fafc;
+      border-left: 3px solid #0284c7;
+      padding: 6px 10px;
+      margin-bottom: 8px;
+      white-space: pre-wrap;
+      line-height: 1.45;
+    }
+    .mfs-print-prompt-text {
+      font-size: 9.5pt;
+      color: #0f172a;
+      margin-bottom: 10px;
+      white-space: pre-wrap;
+      line-height: 1.45;
+      font-weight: 600;
+    }
+    .mfs-print-block-label {
+      font-size: 8pt;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 4px;
+    }
+    .candidate-label {
+      color: #0369a1;
+    }
+    .model-label {
+      color: #15803d;
+    }
+    .mfs-print-pre {
+      font-family: 'Courier New', Courier, monospace;
+      font-size: 9.5pt;
+      line-height: 1.45;
+      white-space: pre-wrap;
+      margin: 0 0 6px 0;
+      padding: 8px 10px;
+      border-radius: 4px;
+      min-height: 50px;
+    }
+    .candidate-pre {
+      background: #f8fafc;
+      border: 1px solid #cbd5e1;
+      color: #0f172a;
+    }
+    .model-pre {
+      background: #f0fdf4;
+      border: 1px solid #86efac;
+      color: #14532d;
+    }
+    .mfs-print-ans-row {
+      margin-top: 6px;
+      font-size: 9.5pt;
+      font-weight: 700;
+    }
+    .mfs-print-ans-label {
+      color: #334155;
+      margin-right: 6px;
+    }
+    .mfs-print-ans-pill {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: #e0f2fe;
+      border: 1.5px solid #0284c7;
+      color: #0369a1;
+      font-weight: 800;
+    }
+    .mfs-print-model-ans-label {
+      color: #166534;
+      margin-right: 6px;
+    }
+    .mfs-print-model-pill {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 4px;
+      background: #dcfce7;
+      border: 1.5px solid #16a34a;
+      color: #15803d;
+      font-weight: 800;
+    }
+    .mfs-print-no-ans {
+      font-size: 8.5pt;
+      color: #94a3b8;
+      font-style: italic;
+      margin-top: 4px;
+    }
+    .mfs-print-comparison-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+    .mfs-print-col {
+      display: flex;
+      flex-direction: column;
+    }
+    .mfs-print-footer {
+      border-top: 1px solid #e2e8f0;
+      padding-top: 8px;
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 8pt;
+      color: #64748b;
+    }
+    @media print {
+      body {
+        background: #ffffff !important;
+        padding: 0 !important;
+      }
+      .mfs-print-container {
+        max-width: 100% !important;
+        padding: 0 !important;
+        border: none !important;
+        box-shadow: none !important;
+      }
+      .mfs-screen-actions {
+        display: none !important;
+      }
+      .mfs-print-q-card {
+        page-break-inside: avoid !important;
+        break-inside: avoid !important;
+      }
+      .mfs-print-section-header {
+        page-break-after: avoid !important;
+        break-after: avoid !important;
+      }
+    }
   </style>
 </head>
 <body>
-  <h1>${escapeHtml(paper.title)}</h1>
-  <div class="meta">
-    <strong>Master Functional Skills &bull; Candidate Response Record</strong><br>
-    Date/Time: ${dateStr} &bull; Exam Board: ${escapeHtml(paper.board || 'Pearson Edexcel')} &bull; Subject: ${escapeHtml(paper.subject || 'Maths')} (${escapeHtml(paper.level || 'L1')})
+  <div class="mfs-print-container">
+    <div class="mfs-screen-actions">
+      <div>
+        <div style="font-weight:800; font-size:15px;">Master Functional Skills &bull; Exam Document</div>
+        <div style="font-size:12px; opacity:0.85;">A4 Print &amp; PDF Export &bull; Ready to print or save to your device.</div>
+      </div>
+      <button class="mfs-print-btn" onclick="window.print()">
+        <svg style="width:16px;height:16px;fill:currentColor;" viewBox="0 0 512 512"><path d="M128 0C92.7 0 64 28.7 64 64v96h64V64H384v96h64V64c0-35.3-28.7-64-64-64H128zM384 416v32H128V416H384zm64-224c-17.7 0-32 14.3-32 32s14.3 32 32 32 32-14.3 32-32-14.3-32-32-32zM64 224c0-17.7-14.3-32-32-32S0 206.3 0 224v144c0 26.5 21.5 48 48 48h32v48c0 26.5 21.5 48 48 48H384c26.5 0 48-21.5 48-48V416h32c26.5 0 48-21.5 48-48V224c0-17.7-14.3-32-32-32h-32v32h32v128H416V352c0-17.7-14.3-32-32-32H128c-17.7 0-32 14.3-32 32v64H64V224z"/></svg>
+        Print / Save as PDF
+      </button>
+    </div>
+
+    <div class="mfs-exam-header">
+      <div class="mfs-brand-row">
+        <div class="mfs-brand-logo">MASTER <span>FUNCTIONAL SKILLS</span></div>
+        <div class="mfs-doc-badge">${escapeHtml(docBadge)}</div>
+      </div>
+      <div class="mfs-exam-title">${escapeHtml(paper.title)}</div>
+      <table class="mfs-candidate-table">
+        <tr>
+          <td><strong>Candidate Name:</strong> ${escapeHtml(candidateName)}</td>
+          <td><strong>Centre Name:</strong> Master Functional Skills (Centre: 10928)</td>
+        </tr>
+        <tr>
+          <td><strong>Exam Board:</strong> ${escapeHtml(paper.board || 'Pearson Edexcel')}</td>
+          <td><strong>Subject &amp; Level:</strong> ${escapeHtml(subjectName)} (${escapeHtml(paper.level || 'L1')})</td>
+        </tr>
+        <tr>
+          <td><strong>Date &amp; Time:</strong> ${escapeHtml(dateStr)}</td>
+          <td><strong>Total Marks Available:</strong> ${totalPaperMarks} Marks across ${sections.length} Section${sections.length > 1 ? 's' : ''}</td>
+        </tr>
+      </table>
+    </div>
+
+    ${sectionsHtml}
+
+    <div class="mfs-print-footer">
+      <div>Master Functional Skills &bull; Accredited Functional Skills Exam Simulator</div>
+      <div>masterfunctionalskills.co.uk &bull; Official Examination Record</div>
+    </div>
   </div>
-  ${itemsHtml}
 </body>
 </html>`;
+}
 
-  const blob = new Blob([fullHtml], { type: 'text/html;charset=utf-8;' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  const safeTitle = (paper.title || 'Mock_Exam').replace(/[^a-zA-Z0-9_-]/g, '_');
-  a.download = `${safeTitle}_Candidate_Answers.html`;
-  document.body.appendChild(a);
-  a.click();
-  document.body.removeChild(a);
-  URL.revokeObjectURL(url);
+// Print / Save as PDF Action via isolated printable iframe
+function printMockDocument(type = 'candidate') {
+  const fullHtml = generatePrintableHtml(type);
+  let printFrame = document.getElementById('simPrintIframe');
+  if (!printFrame) {
+    printFrame = document.createElement('iframe');
+    printFrame.id = 'simPrintIframe';
+    printFrame.setAttribute('style', 'position:fixed; top:-9999px; left:-9999px; width:1px; height:1px; opacity:0; border:none; pointer-events:none;');
+    document.body.appendChild(printFrame);
+  }
+  const pDoc = printFrame.contentWindow.document;
+  pDoc.open();
+  pDoc.write(fullHtml);
+  pDoc.close();
+  setTimeout(() => {
+    try {
+      printFrame.contentWindow.focus();
+      printFrame.contentWindow.print();
+    } catch (e) {
+      console.warn('Print iframe error:', e);
+      const printWin = window.open('', '_blank');
+      if (printWin) {
+        printWin.document.open();
+        printWin.document.write(fullHtml);
+        printWin.document.close();
+        printWin.focus();
+        printWin.print();
+      }
+    }
+  }, 350);
 }
 
 // Check Answers Handler & Side-by-Side Model Comparison Modal
@@ -3034,75 +3472,13 @@ function closeSubmitModal() {
 
 function downloadMarkedReviewFile() {
   const paper = getOrCreatePaper(simCurrentPaperKey);
-  const sections = getPaperSections(paper);
-  const now = new Date();
-  const dateStr = now.toLocaleDateString('en-GB', { day: 'numeric', month: 'short', year: 'numeric', hour: '2-digit', minute: '2-digit' });
-
-  let itemsHtml = '';
-  sections.forEach((sec) => {
-    itemsHtml += `
-      <div style="background:#0f172a; color:#ffffff; padding:10px 16px; border-radius:6px; margin:24px 0 12px 0; font-weight:bold; font-size:16px;">
-        ${escapeHtml(sec.name)} &bull; ${sec.durationMinutes} mins &bull; ${sec.isCalcAllowed ? 'Calculator Allowed' : 'Non-Calculator'}
-      </div>
-    `;
-    sec.questions.forEach((q) => {
-      const userWorking = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_sec_${sec.id}_q${q.num}_working`)
-        || (sec.id === 'A' ? localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_q${q.num}_working`) : null)
-        || '(No response recorded)';
-      const userAns = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_sec_${sec.id}_q${q.num}_ans`)
-        || (sec.id === 'A' ? localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_q${q.num}_ans`) : null)
-        || '';
-
-      itemsHtml += `
-        <div style="border:1px solid #cbd5e1; border-radius:6px; padding:14px; margin-bottom:14px; background:#ffffff; page-break-inside:avoid;">
-          <div style="font-weight:bold; font-size:15px; color:#0f172a; margin-bottom:8px;">
-            Question ${q.num}: ${escapeHtml(q.scenarioTitle || '')} [${escapeHtml(q.markTags || '')}]
-          </div>
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:14px;">
-            <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; padding:10px;">
-              <div style="font-size:12px; font-weight:bold; color:#0369a1; margin-bottom:4px;">Candidate Working:</div>
-              <pre style="font-size:13px; font-family:'Courier New', monospace; white-space:pre-wrap; margin:0; color:#0f172a;">${escapeHtml(userWorking)}</pre>
-              ${userAns ? `<div style="font-size:13px; font-weight:bold; color:#0369a1; margin-top:8px;">Concluded: ${escapeHtml(userAns)} ${escapeHtml(q.unit || '')}</div>` : ''}
-            </div>
-            <div style="background:#f0fdf4; border:1px solid #86efac; border-radius:6px; padding:10px;">
-              <div style="font-size:12px; font-weight:bold; color:#15803d; margin-bottom:4px;">Master Model Solution [${escapeHtml(q.markTags || '')}]:</div>
-              <pre style="font-size:13px; font-family:'Courier New', monospace; white-space:pre-wrap; margin:0; color:#14532d;">${escapeHtml(q.modelSolution)}</pre>
-              <div style="font-size:13px; font-weight:bold; color:#15803d; margin-top:8px;">Benchmark: ${escapeHtml(q.finalBenchmark)}</div>
-            </div>
-          </div>
-        </div>
-      `;
-    });
-  });
-
-  const fullHtml = `<!DOCTYPE html>
-<html lang="en-GB">
-<head>
-  <meta charset="UTF-8">
-  <title>${escapeHtml(paper.title)} - Marked Model Review</title>
-  <style>
-    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; line-height: 1.5; color: #0f172a; max-width: 960px; margin: 0 auto; padding: 24px; }
-    h1 { font-size: 22px; color: #0f172a; margin-bottom: 4px; }
-    .meta { font-size: 13px; color: #64748b; margin-bottom: 20px; border-bottom: 2px solid #0284c7; padding-bottom: 12px; }
-    @media print { body { padding: 0; } }
-  </style>
-</head>
-<body>
-  <h1>${escapeHtml(paper.title)} — Diagnostic Marked Review</h1>
-  <div class="meta">
-    <strong>Master Functional Skills &bull; Model Solution & Mark Scheme Comparison</strong><br>
-    Date/Time: ${dateStr} &bull; Exam Board: ${escapeHtml(paper.board || 'Pearson Edexcel')} &bull; Subject: ${escapeHtml(paper.subject || 'Maths')} (${escapeHtml(paper.level || 'L1')})
-  </div>
-  ${itemsHtml}
-</body>
-</html>`;
-
+  const fullHtml = generatePrintableHtml('marked');
   const blob = new Blob([fullHtml], { type: 'text/html;charset=utf-8;' });
   const url = URL.createObjectURL(blob);
   const a = document.createElement('a');
   a.href = url;
-  const safeTitle = (paper.title || 'Mock_Exam').replace(/[^a-zA-Z0-9_-]/g, '_');
-  a.download = `${safeTitle}_Marked_Model_Review.html`;
+  const safeTitle = (paper.title || 'Mock Exam').replace(/[^a-zA-Z0-9 -]/g, '').trim().replace(/\s+/g, ' ');
+  a.download = `${safeTitle} Marked Model Review.html`;
   document.body.appendChild(a);
   a.click();
   document.body.removeChild(a);

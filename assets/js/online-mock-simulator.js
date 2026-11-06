@@ -1439,7 +1439,11 @@ function promptSectionLock(actionCallback, targetSec = null) {
     if (typeof actionCallback === 'function') actionCallback();
   };
 
-  if (modal) modal.classList.add('open');
+  if (modal) {
+    modal.setAttribute('tabindex', '-1');
+    modal.classList.add('open');
+    try { modal.focus(); } catch (err) {}
+  }
 }
 
 function cancelSectionLock() {
@@ -1462,7 +1466,9 @@ function confirmSectionLock() {
 function promptResetPaper() {
   const modal = document.getElementById('simResetConfirmModal');
   if (modal) {
+    modal.setAttribute('tabindex', '-1');
     modal.classList.add('open');
+    try { modal.focus(); } catch (err) {}
   } else if (confirm('Are you sure you want to reset this whole paper? All your recorded working, concluded answers, section locks, and timer progress will be cleared so you can re-attempt the exam fresh.')) {
     confirmResetPaper();
   }
@@ -2704,40 +2710,58 @@ document.addEventListener('fullscreenchange', () => {
   }
 });
 
-document.addEventListener('keydown', (e) => {
-  if (e.key === 'Escape' || e.key === 'Esc') {
-    const candModal = document.getElementById('simCandidateAnswersModal');
-    const submitModal = document.getElementById('simSubmitModal');
-    const lockModal = document.getElementById('simSectionLockModal');
-    const resetModal = document.getElementById('simResetConfirmModal');
+// Universal Modal Closer & Focus Manager
+function closeAllSimModals() {
+  let closed = false;
+  const modals = [
+    { id: 'simCandidateAnswersModal', closeFn: closeCandidateAnswersModal },
+    { id: 'simSubmitModal', closeFn: closeSubmitModal },
+    { id: 'simSectionLockModal', closeFn: cancelSectionLock },
+    { id: 'simResetConfirmModal', closeFn: closeResetModal }
+  ];
+  for (const m of modals) {
+    const el = document.getElementById(m.id);
+    if (el && el.classList.contains('open')) {
+      m.closeFn();
+      closed = true;
+    }
+  }
+  if (closed) {
+    try {
+      window.focus();
+      const shell = document.getElementById('simAppShell');
+      if (shell) shell.focus();
+      else if (document.body) document.body.focus();
+    } catch (e) {}
+  }
+  return closed;
+}
+window.closeAllSimModals = closeAllSimModals;
 
-    let modalClosed = false;
-    if (resetModal && resetModal.classList.contains('open')) {
-      closeResetModal();
-      modalClosed = true;
-    }
-    if (candModal && candModal.classList.contains('open')) {
-      closeCandidateAnswersModal();
-      modalClosed = true;
-    }
-    if (submitModal && submitModal.classList.contains('open')) {
-      closeSubmitModal();
-      modalClosed = true;
-    }
-    if (lockModal && lockModal.classList.contains('open')) {
-      cancelSectionLock();
-      modalClosed = true;
-    }
+function handleGlobalEscKey(e) {
+  const isEsc = e.key === 'Escape' || e.key === 'Esc' || e.keyCode === 27 || e.which === 27;
+  if (!isEsc) return;
 
-    if (modalClosed) {
-      e.preventDefault();
-      e.stopPropagation();
-      return;
+  if (closeAllSimModals()) {
+    e.preventDefault();
+    e.stopPropagation();
+    if (typeof e.stopImmediatePropagation === 'function') {
+      e.stopImmediatePropagation();
     }
+    return;
+  }
 
-    if (document.fullscreenElement) {
-      document.exitFullscreen().catch(() => {});
-    }
+  if (document.fullscreenElement) {
+    document.exitFullscreen().catch(() => {});
+  }
+}
+
+window.addEventListener('keydown', handleGlobalEscKey, true);
+document.addEventListener('keydown', handleGlobalEscKey, true);
+window.addEventListener('focus', () => {
+  const activeModal = document.querySelector('.sim-modal-overlay.open');
+  if (activeModal && typeof activeModal.focus === 'function') {
+    activeModal.focus();
   }
 });
 
@@ -3000,12 +3024,20 @@ function openCandidateAnswersModal() {
   });
 
   const modal = document.getElementById('simCandidateAnswersModal');
-  if (modal) modal.classList.add('open');
+  if (modal) {
+    modal.setAttribute('tabindex', '-1');
+    modal.classList.add('open');
+    try { modal.focus(); } catch (err) {}
+  }
 }
 
 function closeCandidateAnswersModal() {
   const modal = document.getElementById('simCandidateAnswersModal');
   if (modal) modal.classList.remove('open');
+  try {
+    const shell = document.getElementById('simAppShell');
+    if (shell) shell.focus();
+  } catch (err) {}
 }
 
 function downloadCandidateAnswersFile() {
@@ -3021,6 +3053,11 @@ function downloadCandidateAnswersFile() {
   a.click();
   document.body.removeChild(a);
   URL.revokeObjectURL(url);
+  setTimeout(() => {
+    window.focus();
+    const m = document.getElementById('simCandidateAnswersModal');
+    if (m && m.classList.contains('open') && typeof m.focus === 'function') m.focus();
+  }, 50);
 }
 
 // Dedicated Printable HTML Generator for A4 Print, Save as PDF & Downloads
@@ -3479,6 +3516,32 @@ function generatePrintableHtml(type = 'candidate') {
       <div>masterfunctionalskills.co.uk &bull; Official Examination Record</div>
     </div>
   </div>
+
+  <script>
+    (function() {
+      function onEsc(e) {
+        var isEsc = e.key === 'Escape' || e.key === 'Esc' || e.keyCode === 27 || e.which === 27;
+        if (isEsc) {
+          try {
+            if (window.parent && typeof window.parent.closeAllSimModals === 'function') {
+              window.parent.closeAllSimModals();
+            }
+          } catch (err) {}
+        }
+      }
+      window.addEventListener('keydown', onEsc, true);
+      document.addEventListener('keydown', onEsc, true);
+      window.addEventListener('afterprint', function() {
+        try {
+          if (window.parent) {
+            window.parent.focus();
+            var m = window.parent.document.querySelector('.sim-modal-overlay.open');
+            if (m && typeof m.focus === 'function') m.focus();
+          }
+        } catch (err) {}
+      });
+    })();
+  </script>
 </body>
 </html>`;
 }
@@ -3497,8 +3560,47 @@ function printMockDocument(type = 'candidate') {
   pDoc.open();
   pDoc.write(fullHtml);
   pDoc.close();
+
+  const attachIframeEscape = () => {
+    try {
+      const iWin = printFrame.contentWindow;
+      const iDoc = printFrame.contentDocument || (iWin && iWin.document);
+      const onIframeEsc = (e) => {
+        const isEsc = e.key === 'Escape' || e.key === 'Esc' || e.keyCode === 27 || e.which === 27;
+        if (isEsc) {
+          e.preventDefault();
+          e.stopPropagation();
+          closeAllSimModals();
+        }
+      };
+      if (iWin) {
+        iWin.removeEventListener('keydown', onIframeEsc, true);
+        iWin.addEventListener('keydown', onIframeEsc, true);
+        iWin.onafterprint = () => {
+          setTimeout(() => {
+            try {
+              if (iWin.blur) iWin.blur();
+              window.focus();
+              const activeModal = document.querySelector('.sim-modal-overlay.open');
+              if (activeModal && typeof activeModal.focus === 'function') activeModal.focus();
+            } catch (err) {}
+          }, 80);
+        };
+      }
+      if (iDoc) {
+        iDoc.removeEventListener('keydown', onIframeEsc, true);
+        iDoc.addEventListener('keydown', onIframeEsc, true);
+      }
+    } catch (err) {
+      console.warn('Unable to attach iframe listeners:', err);
+    }
+  };
+
+  attachIframeEscape();
+
   setTimeout(() => {
     try {
+      attachIframeEscape();
       printFrame.contentWindow.focus();
       printFrame.contentWindow.print();
     } catch (e) {
@@ -3511,6 +3613,21 @@ function printMockDocument(type = 'candidate') {
         printWin.focus();
         printWin.print();
       }
+    } finally {
+      const refocusParent = () => {
+        try {
+          if (printFrame && printFrame.contentWindow && printFrame.contentWindow.blur) {
+            printFrame.contentWindow.blur();
+          }
+          window.focus();
+          const activeModal = document.querySelector('.sim-modal-overlay.open');
+          if (activeModal && typeof activeModal.focus === 'function') activeModal.focus();
+        } catch (err) {}
+      };
+      setTimeout(refocusParent, 200);
+      setTimeout(refocusParent, 600);
+      setTimeout(refocusParent, 1200);
+      setTimeout(refocusParent, 2500);
     }
   }, 350);
 }
@@ -3603,12 +3720,20 @@ function openSubmitModal() {
 
   // Open modal
   const modal = document.getElementById('simSubmitModal');
-  if (modal) modal.classList.add('open');
+  if (modal) {
+    modal.setAttribute('tabindex', '-1');
+    modal.classList.add('open');
+    try { modal.focus(); } catch (err) {}
+  }
 }
 
 function closeSubmitModal() {
   const modal = document.getElementById('simSubmitModal');
   if (modal) modal.classList.remove('open');
+  try {
+    const shell = document.getElementById('simAppShell');
+    if (shell) shell.focus();
+  } catch (err) {}
 }
 
 function downloadMarkedReviewFile() {
@@ -3624,4 +3749,9 @@ function downloadMarkedReviewFile() {
   a.click();
   document.body.removeChild(a);
   URL.revokeObjectURL(url);
+  setTimeout(() => {
+    window.focus();
+    const m = document.getElementById('simSubmitModal');
+    if (m && m.classList.contains('open') && typeof m.focus === 'function') m.focus();
+  }, 50);
 }

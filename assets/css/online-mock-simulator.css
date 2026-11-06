@@ -1526,6 +1526,7 @@ body {
   justify-content: center;
   z-index: 999999;
   padding: 20px;
+  outline: none;
 }
 
 .sim-modal-overlay.open {

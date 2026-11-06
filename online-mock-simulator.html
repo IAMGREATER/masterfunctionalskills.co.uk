@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="assets/css/mfs-theme.css?v=20261024c">
   <link rel="stylesheet" href="assets/css/mfs-revision.css?v=20261024c">
   <link rel="stylesheet" href="assets/css/mfs-mobile.css?v=20261024c">
-  <link rel="stylesheet" href="assets/css/online-mock-simulator.css?v=20261106_v14">
+  <link rel="stylesheet" href="assets/css/online-mock-simulator.css?v=20261106_v16">
 </head>
 <body>
 
@@ -469,7 +469,7 @@
       </div>
 
       <!-- CANDIDATE ANSWERS REVIEW & DOWNLOAD MODAL (Nested inside shell so it renders in fullscreen) -->
-      <div class="sim-modal-overlay" id="simCandidateAnswersModal">
+      <div class="sim-modal-overlay" id="simCandidateAnswersModal" tabindex="-1">
         <div class="sim-modal-card">
           <div class="sim-modal-header">
             <div>
@@ -506,7 +506,7 @@
       </div>
 
       <!-- SUBMIT & MODEL SOLUTION COMPARISON MODAL (Nested inside shell so it renders in fullscreen) -->
-      <div class="sim-modal-overlay" id="simSubmitModal">
+      <div class="sim-modal-overlay" id="simSubmitModal" tabindex="-1">
         <div class="sim-modal-card">
           <div class="sim-modal-header">
             <div>
@@ -543,7 +543,7 @@
       </div>
 
       <!-- SECTION LOCK WARNING MODAL (Nested inside shell so it renders in fullscreen) -->
-      <div class="sim-modal-overlay" id="simSectionLockModal">
+      <div class="sim-modal-overlay" id="simSectionLockModal" tabindex="-1">
         <div class="sim-modal-card" style="max-width:540px; text-align:center; padding:28px 24px;">
           <div style="font-size:3.2rem; color:#f59e0b; margin-bottom:12px; line-height:1;">
             <i class="fa-solid fa-triangle-exclamation"></i>
@@ -566,7 +566,7 @@
       </div>
 
       <!-- RESET WHOLE PAPER CONFIRMATION MODAL (Nested inside shell so it renders in fullscreen) -->
-      <div class="sim-modal-overlay" id="simResetConfirmModal">
+      <div class="sim-modal-overlay" id="simResetConfirmModal" tabindex="-1">
         <div class="sim-modal-card" style="max-width:540px; text-align:center; padding:28px 24px;">
           <div style="font-size:3.2rem; color:#dc2626; margin-bottom:12px; line-height:1;">
             <i class="fa-solid fa-rotate-left"></i>
@@ -636,6 +636,6 @@
 
   <!-- Scripts -->
   <script src="assets/js/mfs-tint.js"></script>
-  <script src="assets/js/online-mock-simulator.js?v=20261106_v14"></script>
+  <script src="assets/js/online-mock-simulator.js?v=20261106_v16"></script>
 </body>
 </html>

@@ -20,7 +20,7 @@
   <link rel="stylesheet" href="assets/css/mfs-theme.css?v=20261024c">
   <link rel="stylesheet" href="assets/css/mfs-revision.css?v=20261024c">
   <link rel="stylesheet" href="assets/css/mfs-mobile.css?v=20261024c">
-  <link rel="stylesheet" href="assets/css/online-mock-simulator.css?v=20261106_v17">
+  <link rel="stylesheet" href="assets/css/online-mock-simulator.css?v=20261106_v18">
 </head>
 <body>
 
@@ -417,10 +417,10 @@
             <!-- Planning Scratchpad (Writing Mode) -->
             <div class="sim-planning-box" id="simPlanningBox" style="display:none;">
               <div class="sim-planning-header" onclick="togglePlanningBox()">
-                <span><i class="fa-solid fa-lightbulb"></i> Optional Planning Notes &amp; Brainstorming (Not Marked)</span>
+                <span id="simPlanningToggleText"><i class="fa-solid fa-lightbulb"></i> Optional Planning Notes &amp; Brainstorming (Click to expand)</span>
                 <i class="fa-solid fa-chevron-down" id="simPlanningIcon"></i>
               </div>
-              <textarea class="sim-planning-textarea" id="simPlanningTextarea" placeholder="Jot down bullet points, key vocabulary, or paragraph plan here..." oninput="handlePlanningInput(this.value)"></textarea>
+              <textarea class="sim-planning-textarea" id="simPlanningTextarea" placeholder="Jot down bullet points, key vocabulary, or paragraph plan here..." oninput="handlePlanningInput(this.value)" style="display:none;"></textarea>
             </div>
 
             <!-- Maths Symbol Inserter Toolbar -->
@@ -450,19 +450,11 @@
             <!-- Multiple Choice Container (Reading Mode) -->
             <div id="simMcqContainer" class="sim-mcq-group" style="display:none;"></div>
 
-            <!-- Working & Calculator Workspace (Side-by-side in Section B, Full-width in Section A) -->
+            <!-- Working & Calculator Workspace (Side-by-side in Section B, Full-width in Section A & Writing Mode) -->
             <div class="sim-working-workspace" id="simWorkingWorkspace">
               <!-- Main Typed Working Box -->
               <div class="sim-working-card" id="simWorkingCard">
                 <textarea class="sim-working-textarea" id="simWorkingTextarea" oninput="handleWorkingInput(this.value)" placeholder="Type your working steps, calculations, and intermediate methods here..."></textarea>
-              </div>
-
-              <!-- Proofreading Checklist (Writing Mode) -->
-              <div class="sim-checklist-card" id="simWritingChecklist" style="display:none;">
-                <div class="sim-checklist-title">
-                  <i class="fa-solid fa-clipboard-check"></i> Proofreading &amp; Format Checklist:
-                </div>
-                <div id="simChecklistItems"></div>
               </div>
 
               <!-- Built-in Onscreen Calculator (Docked Side-by-Side in Section B) -->
@@ -509,6 +501,14 @@
                   </div>
                 </div>
               </div>
+            </div>
+
+            <!-- Proofreading Checklist (Writing Mode - Rendered beneath the writing canvas) -->
+            <div class="sim-checklist-card" id="simWritingChecklist" style="display:none;">
+              <div class="sim-checklist-title">
+                <i class="fa-solid fa-clipboard-check"></i> Proofreading &amp; Format Review Checklist:
+              </div>
+              <div id="simChecklistItems" class="sim-checklist-grid"></div>
             </div>
           </div>
 
@@ -708,6 +708,6 @@
 
   <!-- Scripts -->
   <script src="assets/js/mfs-tint.js"></script>
-  <script src="assets/js/online-mock-simulator.js?v=20261106_v17"></script>
+  <script src="assets/js/online-mock-simulator.js?v=20261106_v18"></script>
 </body>
 </html>

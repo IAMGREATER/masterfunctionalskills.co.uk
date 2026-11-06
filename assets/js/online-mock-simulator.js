@@ -5952,10 +5952,28 @@ function adaptUiForSubject(paper, q, sec) {
       workingTextarea.placeholder = 'Draft your complete written response here... Remember to use an appropriate greeting/salutation, organize into distinct paragraphs, cover all required points, and check your work.';
     }
 
-    // Restore planning notes
+    const leftFooter = document.getElementById('simLeftFooterAdvice');
+    if (leftFooter) {
+      leftFooter.innerHTML = '<span><i class="fa-solid fa-feather-pointed" style="color:var(--sim-blue);"></i> Pearson Edexcel Functional Skills English Writing</span><span style="font-weight:700;">Check your work carefully (SPaG)</span>';
+    }
+
+    // Restore planning notes (open if user has notes, otherwise collapsed)
     const savedPlan = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_sec_${sec.id}_q${q.num}_planning`) || '';
     const planningTextarea = document.getElementById('simPlanningTextarea');
-    if (planningTextarea) planningTextarea.value = savedPlan;
+    const planningIcon = document.getElementById('simPlanningIcon');
+    const planningToggleText = document.getElementById('simPlanningToggleText');
+    if (planningTextarea) {
+      planningTextarea.value = savedPlan;
+      if (savedPlan.trim()) {
+        planningTextarea.style.display = 'block';
+        if (planningIcon) planningIcon.className = 'fa-solid fa-chevron-up';
+        if (planningToggleText) planningToggleText.innerHTML = '<i class="fa-solid fa-lightbulb"></i> Optional Planning Notes &amp; Brainstorming (Click to collapse)';
+      } else {
+        planningTextarea.style.display = 'none';
+        if (planningIcon) planningIcon.className = 'fa-solid fa-chevron-down';
+        if (planningToggleText) planningToggleText.innerHTML = '<i class="fa-solid fa-lightbulb"></i> Optional Planning Notes &amp; Brainstorming (Click to expand)';
+      }
+    }
 
   } else if (subject === 'reading') {
     // -----------------------------------------------------------------------
@@ -6208,6 +6226,7 @@ function handleReadingTextInput(val) {
 function renderChecklist(items, sec) {
   const container = document.getElementById('simChecklistItems');
   if (!container) return;
+  container.className = 'sim-checklist-grid';
   container.innerHTML = '';
 
   const paper = getOrCreatePaper(simCurrentPaperKey);
@@ -6269,14 +6288,18 @@ function updateWordCount(text, targetNotice) {
 function togglePlanningBox() {
   const textarea = document.getElementById('simPlanningTextarea');
   const icon = document.getElementById('simPlanningIcon');
-  if (!textarea || !icon) return;
+  const toggleText = document.getElementById('simPlanningToggleText');
+  if (!textarea) return;
 
-  if (textarea.style.display === 'none') {
+  const isHidden = textarea.style.display === 'none' || getComputedStyle(textarea).display === 'none';
+  if (isHidden) {
     textarea.style.display = 'block';
-    icon.className = 'fa-solid fa-chevron-up';
+    if (icon) icon.className = 'fa-solid fa-chevron-up';
+    if (toggleText) toggleText.innerHTML = '<i class="fa-solid fa-lightbulb"></i> Optional Planning Notes &amp; Brainstorming (Click to collapse)';
   } else {
     textarea.style.display = 'none';
-    icon.className = 'fa-solid fa-chevron-down';
+    if (icon) icon.className = 'fa-solid fa-chevron-down';
+    if (toggleText) toggleText.innerHTML = '<i class="fa-solid fa-lightbulb"></i> Optional Planning Notes &amp; Brainstorming (Click to expand)';
   }
 }
 

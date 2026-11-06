@@ -1818,23 +1818,137 @@ body {
   display: none !important;
 }
 
+/* =========================================================================
+   ENGLISH WRITING MODE LAYOUT (Spacious 60% writing desk, 40% stimulus)
+   ========================================================================= */
+.sim-mode-writing .sim-pane-question {
+  flex: 0.85 1 0 !important;
+  max-width: 42% !important;
+}
+
+.sim-mode-writing .sim-pane-working {
+  flex: 1.25 1 0 !important;
+  min-width: 58% !important;
+}
+
+.sim-mode-writing .sim-q-scenario-card {
+  background: #f8fafc !important;
+  border: 1.5px solid #cbd5e1 !important;
+  border-left: 5px solid #0284c7 !important;
+  border-radius: 8px !important;
+  padding: 16px 18px !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.03) !important;
+}
+
+.sim-mode-writing .sim-q-scenario-title {
+  font-size: 1.05rem !important;
+  font-weight: 800 !important;
+  color: #0f172a !important;
+  margin-bottom: 8px !important;
+}
+
+.sim-mode-writing #simScenarioText {
+  font-size: 0.95rem !important;
+  line-height: 1.65 !important;
+  color: #334155 !important;
+}
+
+.sim-mode-writing #simPromptWrap {
+  background: #ffffff !important;
+  border: 1.5px solid #e2e8f0 !important;
+  border-radius: 8px !important;
+  padding: 16px 18px !important;
+  margin-top: 10px !important;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.02) !important;
+}
+
+.sim-mode-writing #simPromptHeader {
+  font-size: 0.82rem !important;
+  font-weight: 800 !important;
+  color: #0284c7 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  margin-bottom: 8px !important;
+}
+
+.sim-mode-writing .sim-q-prompt-text {
+  font-size: 0.95rem !important;
+  line-height: 1.7 !important;
+  color: #0f172a !important;
+  white-space: pre-wrap !important;
+  font-family: 'Lexend', system-ui, -apple-system, sans-serif !important;
+}
+
+.sim-mode-writing .sim-working-workspace {
+  flex-direction: column !important;
+  gap: 12px !important;
+  flex: 1 1 0 !important;
+  min-height: 480px !important;
+  width: 100% !important;
+}
+
 .sim-mode-writing .sim-working-card {
   width: 100% !important;
   flex: 1 1 0 !important;
+  min-height: 460px !important;
+  height: 100% !important;
+  padding: 14px 16px !important;
+  background: #ffffff !important;
+  border: 1.5px solid #94a3b8 !important;
+  border-radius: 8px !important;
+  box-shadow: 0 3px 8px rgba(0,0,0,0.04) !important;
 }
 
 .sim-mode-writing .sim-working-textarea {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 430px !important;
+  flex: 1 1 0 !important;
   font-family: 'Lexend', system-ui, -apple-system, sans-serif !important;
-  font-size: calc(0.95rem * var(--sim-scale, 1)) !important;
-  line-height: 1.7 !important;
+  font-size: calc(1rem * var(--sim-scale, 1)) !important;
+  line-height: 1.8 !important;
+  padding: 16px 20px !important;
+  color: #0f172a !important;
+  background-color: #ffffff !important;
+  border: 1px solid #cbd5e1 !important;
+  border-radius: 6px !important;
+  box-sizing: border-box !important;
+  resize: vertical !important;
 }
 
+.sim-mode-writing .sim-working-textarea:focus {
+  border-color: #0284c7 !important;
+  outline: none !important;
+  box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.15) !important;
+}
+
+/* =========================================================================
+   ENGLISH READING MODE LAYOUT (Dual pane: 52% source text, 48% questions)
+   ========================================================================= */
 .sim-mode-reading .sim-pane-question {
-  flex: 1.1 1 0 !important;
+  flex: 1.15 1 0 !important;
+  max-width: 53% !important;
+  height: 100% !important;
 }
 
 .sim-mode-reading .sim-pane-working {
-  flex: 0.9 1 0 !important;
+  flex: 0.85 1 0 !important;
+  min-width: 47% !important;
+  height: 100% !important;
+}
+
+.sim-source-content-card {
+  min-height: 480px !important;
+  font-size: calc(0.96rem * var(--sim-scale, 1)) !important;
+  line-height: 1.75 !important;
+  padding: 20px 24px !important;
+}
+
+.sim-checklist-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 8px 16px;
+  margin-top: 6px;
 }
 
 /* Multiple Choice Option Radios (English Reading) */

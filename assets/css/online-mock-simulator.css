@@ -2440,3 +2440,128 @@ body {
   touch-action: none;
 }
 
+/* ==========================================================================
+   MOCK EXAM DIAGRAM & CANVAS DRAWING COMPOSITE REVIEW / DOWNLOAD
+   ========================================================================== */
+.mfs-print-diagram-box {
+  background: #f8fafc;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  padding: 10px;
+  margin: 10px 0;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+.mfs-print-diagram-box svg {
+  max-width: 100% !important;
+  height: auto !important;
+  display: block;
+  margin: 0 auto;
+}
+
+.mfs-print-diagram-box table {
+  width: 100%;
+  max-width: 500px;
+  margin: 6px auto;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+  font-variant-numeric: tabular-nums;
+  background: #ffffff;
+}
+
+.mfs-print-diagram-box th,
+.mfs-print-diagram-box td {
+  border: 1px solid #cbd5e1;
+  padding: 6px 10px;
+  text-align: center;
+}
+
+.mfs-print-diagram-box th {
+  background: #0f172a;
+  color: #ffffff;
+  font-weight: 700;
+}
+
+.mfs-print-diagram-box .sim-diagram-caption {
+  font-size: 0.76rem;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-top: 8px;
+}
+
+.mfs-print-workspace-block {
+  margin-top: 10px;
+}
+
+.mfs-composite-diagram-wrap {
+  position: relative;
+  width: 100%;
+  max-width: 540px;
+  margin: 8px auto;
+  background: #ffffff;
+  border: 1px solid #cbd5e1;
+  border-radius: 6px;
+  overflow: hidden;
+  display: block;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.06);
+}
+
+.mfs-composite-svg-underlay {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1;
+}
+
+.mfs-composite-svg-underlay svg {
+  width: 100% !important;
+  max-width: 100% !important;
+  height: auto !important;
+  display: block;
+  margin: 0 auto;
+}
+
+.mfs-composite-drawing-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  pointer-events: none;
+  z-index: 5;
+}
+
+.mfs-diagram-status-note {
+  font-size: 0.78rem;
+  margin-top: 5px;
+  text-align: center;
+}
+
+.mfs-diagram-status-note .status-drawn {
+  color: #0284c7;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.mfs-diagram-status-note .status-empty {
+  color: #94a3b8;
+  font-style: italic;
+}
+
+.mfs-diagram-status-note .status-model {
+  color: #166534;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+

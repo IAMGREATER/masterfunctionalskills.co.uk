@@ -8303,8 +8303,119 @@ function calcSqrt() {
   }
 }
 
+// ==========================================================================
+// CANDIDATE ANSWERS, DIAGRAMS & DRAWING PERSISTENCE HELPERS
+// ==========================================================================
+
+function syncCurrentCanvasDrawing() {
+  try {
+    const canvas = document.getElementById('simDrawingCanvas');
+    const wrap = document.getElementById('simWorkspaceDiagramWrap');
+    if (!canvas || !wrap || wrap.style.display === 'none') return;
+
+    const ctx = canvas.getContext('2d');
+    const w = canvas.width;
+    const h = canvas.height;
+    if (!w || !h) return;
+
+    const imgData = ctx.getImageData(0, 0, w, h);
+    const data = imgData.data;
+    let hasStrokes = false;
+    // Fast step check on alpha channel
+    for (let i = 3; i < data.length; i += 16) {
+      if (data[i] > 10) {
+        hasStrokes = true;
+        break;
+      }
+    }
+
+    const paper = getOrCreatePaper(simCurrentPaperKey);
+    const sections = getPaperSections(paper);
+    const currentSec = sections[simCurrentSectionIndex] || sections[0];
+    if (simCurrentQuestionIndex > 0 && currentSec && currentSec.questions[simCurrentQuestionIndex - 1]) {
+      const curQ = currentSec.questions[simCurrentQuestionIndex - 1];
+      const key = `mfs_sim_${simCurrentPaperKey}_sec_${currentSec.id}_q${curQ.num}_drawing`;
+      if (hasStrokes) {
+        const dataUrl = canvas.toDataURL('image/png');
+        localStorage.setItem(key, dataUrl);
+      }
+    }
+  } catch (err) {
+    console.warn('Canvas drawing sync error:', err);
+  }
+}
+
+function renderQuestionDiagramHtml(q) {
+  if (!q || !q.diagramHtml) return '';
+  return `
+    <div class="mfs-print-diagram-box">
+      ${q.diagramHtml}
+    </div>
+  `;
+}
+
+function renderWorkspaceDiagramWithDrawing(q, userDrawing, isModelRef = false) {
+  if (!q) return '';
+  const hasWorkspaceSvg = Boolean(q.workspaceDiagramHtml);
+  const hasDrawing = Boolean(userDrawing && userDrawing.length > 100);
+
+  if (hasWorkspaceSvg) {
+    if (isModelRef) {
+      return `
+        <div class="mfs-print-workspace-block">
+          <div class="mfs-print-block-label model-label" style="margin-top:8px;">
+            <i class="fa-solid fa-award" style="margin-right:4px;"></i> Benchmark Reference Grid:
+          </div>
+          <div class="mfs-composite-diagram-wrap">
+            <div class="mfs-composite-svg-underlay">
+              ${q.workspaceDiagramHtml}
+            </div>
+          </div>
+          <div class="mfs-diagram-status-note">
+            <span class="status-model"><i class="fa-solid fa-circle-check"></i> Official exam grid benchmark reference</span>
+          </div>
+        </div>
+      `;
+    }
+
+    return `
+      <div class="mfs-print-workspace-block">
+        <div class="mfs-print-block-label candidate-label" style="margin-top:8px;">
+          <i class="fa-solid fa-chart-line" style="margin-right:4px;"></i> Candidate Answer on Diagram / Grid:
+        </div>
+        <div class="mfs-composite-diagram-wrap">
+          <div class="mfs-composite-svg-underlay">
+            ${q.workspaceDiagramHtml}
+          </div>
+          ${hasDrawing ? `<img src="${userDrawing}" class="mfs-composite-drawing-overlay" alt="Candidate Plotted Answer" />` : ''}
+        </div>
+        <div class="mfs-diagram-status-note">
+          ${hasDrawing
+            ? '<span class="status-drawn"><i class="fa-solid fa-circle-check"></i> Candidate plotted answer recorded on diagram / chart above</span>'
+            : '<span class="status-empty">No visual drawing recorded on this chart</span>'}
+        </div>
+      </div>
+    `;
+  }
+
+  // Fallback if there is a drawing but no workspace diagram
+  if (hasDrawing) {
+    return `
+      <div class="mfs-print-workspace-block">
+        <div class="mfs-print-block-label candidate-label" style="margin-top:8px;">Candidate Visual Drawing:</div>
+        <div class="mfs-composite-diagram-wrap" style="padding:8px; text-align:center;">
+          <img src="${userDrawing}" style="max-width:100%; height:auto; display:block; margin:0 auto; border:1px solid #cbd5e1; border-radius:4px;" alt="Candidate Drawing" />
+        </div>
+      </div>
+    `;
+  }
+
+  return '';
+}
+
 // Download Candidate Answers Handler & Modal
 function handleDownloadAnswersClick() {
+  syncCurrentCanvasDrawing();
   exitFullscreenIfActive();
   const paper = getOrCreatePaper(simCurrentPaperKey);
   const sections = getPaperSections(paper);
@@ -8321,6 +8432,7 @@ function handleDownloadAnswersClick() {
 }
 
 function openCandidateAnswersModal() {
+  syncCurrentCanvasDrawing();
   exitFullscreenIfActive();
   const paper = getOrCreatePaper(simCurrentPaperKey);
   const sections = getPaperSections(paper);
@@ -8352,10 +8464,12 @@ function openCandidateAnswersModal() {
       const userAns = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_sec_${sec.id}_q${q.num}_ans`)
         || (sec.id === 'A' ? localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_q${q.num}_ans`) : null)
         || '';
-      const userDrawing = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_sec_${sec.id}_q${q.num}_drawing`);
+      const userPlanning = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_sec_${sec.id}_q${q.num}_planning`);
+      const userDrawing = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_sec_${sec.id}_q${q.num}_drawing`)
+        || (sec.id === 'A' ? localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_q${q.num}_drawing`) : null);
 
       const itemCard = document.createElement('div');
-      itemCard.style.cssText = 'background:#ffffff; border:1px solid #cbd5e1; border-radius:8px; padding:14px 16px; margin-bottom:10px; box-shadow:0 1px 3px rgba(0,0,0,0.05);';
+      itemCard.style.cssText = 'background:#ffffff; border:1px solid #cbd5e1; border-radius:8px; padding:14px 16px; margin-bottom:12px; box-shadow:0 1px 3px rgba(0,0,0,0.05);';
 
       const itemLabel = paper.subject === 'writing' ? `Task ${q.num}` : `${sec.name.includes(':') ? sec.name.split(':')[0] : 'Section ' + sec.id}: Question ${q.num}`;
 
@@ -8364,13 +8478,20 @@ function openCandidateAnswersModal() {
           <span><i class="fa-solid fa-file-signature" style="color:var(--sim-blue); margin-right:6px;"></i> ${escapeHtml(itemLabel)}: ${escapeHtml(q.scenarioTitle || '')}</span>
           <span style="font-size:0.8rem; background:#f1f5f9; padding:2px 8px; border-radius:4px; color:#475569;">${q.marks || 0} Marks</span>
         </div>
-        <div style="font-size:0.82rem; color:#64748b; margin-bottom:8px;">${escapeHtml(q.promptText || '')}</div>
+        ${q.scenarioText ? `<div style="font-size:0.85rem; color:#475569; margin-bottom:6px; line-height:1.45;">${escapeHtml(q.scenarioText)}</div>` : ''}
+        <div style="font-size:0.85rem; color:#1e293b; margin-bottom:8px;"><strong>Question:</strong> ${escapeHtml(q.promptText || '')}</div>
+        ${renderQuestionDiagramHtml(q)}
+        ${userPlanning ? `
+          <div style="font-size:0.75rem; font-weight:700; color:#64748b; text-transform:uppercase; margin-bottom:3px;">Your Planning Notes:</div>
+          <div style="background:#f1f5f9; border:1px dashed #cbd5e1; border-radius:6px; padding:8px 10px; font-size:0.82rem; font-family:'Courier New', monospace; white-space:pre-wrap; margin-bottom:8px; color:#334155;">${escapeHtml(userPlanning)}</div>
+        ` : ''}
         <div style="font-size:0.75rem; font-weight:700; color:#475569; text-transform:uppercase; margin-bottom:4px;">Your Typed Working / Steps:</div>
-        <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; padding:10px; font-size:0.85rem; font-family:'Courier New', monospace; white-space:pre-wrap; min-height:60px; margin-bottom:8px; color:#0f172a;">${escapeHtml(userWorking)}</div>
+        <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:6px; padding:10px; font-size:0.85rem; font-family:'Courier New', monospace; white-space:pre-wrap; min-height:50px; margin-bottom:8px; color:#0f172a;">${escapeHtml(userWorking)}</div>
+        ${renderWorkspaceDiagramWithDrawing(q, userDrawing)}
         ${userAns ? `
-        <div style="font-size:0.9rem; font-weight:800; color:var(--sim-navy);">
+        <div style="font-size:0.9rem; font-weight:800; color:var(--sim-navy); margin-top:8px;">
           Your Concluded Answer: <span style="background:#e0f2fe; padding:2px 10px; border-radius:4px; color:#0369a1;">${escapeHtml(userAns)} ${escapeHtml(q.unit || '')}</span>
-        </div>` : '<div style="font-size:0.85rem; color:#94a3b8; font-style:italic;">No final answer entered</div>'}
+        </div>` : '<div style="font-size:0.85rem; color:#94a3b8; font-style:italic; margin-top:6px;">No final answer entered</div>'}
       `;
       container.appendChild(itemCard);
     });
@@ -8394,6 +8515,7 @@ function closeCandidateAnswersModal() {
 }
 
 function downloadCandidateAnswersFile() {
+  syncCurrentCanvasDrawing();
   const paper = getOrCreatePaper(simCurrentPaperKey);
   const fullHtml = generatePrintableHtml('candidate');
   const blob = new Blob([fullHtml], { type: 'text/html;charset=utf-8;' });
@@ -8415,6 +8537,7 @@ function downloadCandidateAnswersFile() {
 
 // Dedicated Printable HTML Generator for A4 Print, Save as PDF & Downloads
 function generatePrintableHtml(type = 'candidate') {
+  syncCurrentCanvasDrawing();
   const paper = getOrCreatePaper(simCurrentPaperKey);
   const sections = getPaperSections(paper);
   const now = new Date();
@@ -8454,7 +8577,8 @@ function generatePrintableHtml(type = 'candidate') {
         || (sec.id === 'A' ? localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_q${q.num}_ans`) : null)
         || '';
       const userPlanning = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_sec_${sec.id}_q${q.num}_planning`);
-      const userDrawing = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_sec_${sec.id}_q${q.num}_drawing`);
+      const userDrawing = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_sec_${sec.id}_q${q.num}_drawing`)
+        || (sec.id === 'A' ? localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_q${q.num}_drawing`) : null);
 
       const itemLabel = paper.subject === 'writing' ? `Task ${q.num}` : `${sec.name.includes(':') ? sec.name.split(':')[0] : 'Section ' + sec.id} — Question ${q.num}`;
       const marksLabel = `${q.marks || 0} Mark${q.marks === 1 ? '' : 's'}${q.markTags ? ' ' + escapeHtml(q.markTags) : ''}`;
@@ -8472,10 +8596,7 @@ function generatePrintableHtml(type = 'candidate') {
             ` : ''}
             <div class="mfs-print-block-label candidate-label">${workingLabel}</div>
             <pre class="mfs-print-pre candidate-pre">${escapeHtml(userWorking)}</pre>
-              ${userDrawing ? `
-                <div class="mfs-print-block-label candidate-label" style="margin-top:6px;">Candidate Drawing / Grid:</div>
-                <img src="${userDrawing}" style="max-width:100%; max-height:160px; border:1px solid #cbd5e1; border-radius:4px; margin-top:4px; display:block; background:#ffffff;" />
-              ` : ''}
+            ${renderWorkspaceDiagramWithDrawing(q, userDrawing)}
             ${userAns ? `
               <div class="mfs-print-ans-row">
                 <span class="mfs-print-ans-label">${paper.subject === 'reading' ? 'Selected Answer:' : 'Concluded Final Answer:'}</span>
@@ -8493,6 +8614,7 @@ function generatePrintableHtml(type = 'candidate') {
                 <pre class="mfs-print-pre" style="background:#f1f5f9; border:1px dashed #cbd5e1; color:#334155; font-size:8.5pt; margin-bottom:6px;">Planning:\n${escapeHtml(userPlanning)}</pre>
               ` : ''}
               <pre class="mfs-print-pre candidate-pre">${escapeHtml(userWorking)}</pre>
+              ${renderWorkspaceDiagramWithDrawing(q, userDrawing)}
               ${userAns ? `
                 <div class="mfs-print-ans-row">
                   <span class="mfs-print-ans-label">Candidate Answer:</span>
@@ -8503,6 +8625,7 @@ function generatePrintableHtml(type = 'candidate') {
             <div class="mfs-print-col model-col">
               <div class="mfs-print-block-label model-label">Master Model Solution &amp; Mark Scheme [${escapeHtml(q.markTags || '')}]:</div>
               <pre class="mfs-print-pre model-pre">${escapeHtml(q.modelSolution || '(Accredited model solution)')}</pre>
+              ${q.workspaceDiagramHtml ? renderWorkspaceDiagramWithDrawing(q, null, true) : ''}
               ${q.finalBenchmark ? `
                 <div class="mfs-print-ans-row">
                   <span class="mfs-print-model-ans-label">Model Benchmark:</span>
@@ -8521,8 +8644,9 @@ function generatePrintableHtml(type = 'candidate') {
             <span class="mfs-print-q-marks">${marksLabel}</span>
           </div>
           <div class="mfs-print-prompt">
-            ${q.scenarioText ? `<div style="margin-bottom:4px; color:#475569;">${escapeHtml(q.scenarioText)}</div>` : ''}
+            ${q.scenarioText ? `<div style="margin-bottom:4px; color:#475569; line-height:1.45;">${escapeHtml(q.scenarioText)}</div>` : ''}
             <div><strong>Question Prompt:</strong> ${escapeHtml(q.promptText || '')}</div>
+            ${renderQuestionDiagramHtml(q)}
           </div>
           ${questionBodyHtml}
         </div>
@@ -8535,6 +8659,7 @@ function generatePrintableHtml(type = 'candidate') {
 <head>
   <meta charset="UTF-8">
   <title>${escapeHtml(paper.title)} — ${isMarked ? 'Marked Model Solution Benchmark' : 'Candidate Answers Record'}</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
   <style>
     @page { size: A4 portrait; margin: 12mm 10mm 12mm 10mm; }
     body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; color: #0f172a; margin: 0; padding: 0; font-size: 9.5pt; line-height: 1.45; background: #ffffff; }
@@ -8549,7 +8674,24 @@ function generatePrintableHtml(type = 'candidate') {
     .mfs-print-q-header { display: flex; justify-content: space-between; font-weight: 700; font-size: 9pt; color: #0f172a; border-bottom: 1px solid #e2e8f0; padding-bottom: 4px; margin-bottom: 6px; }
     .mfs-print-q-marks { background: #e0f2fe; color: #0369a1; padding: 1px 6px; border-radius: 4px; font-size: 8pt; }
     .mfs-print-prompt { font-size: 8.5pt; margin-bottom: 6px; }
+    .mfs-print-diagram-box { background: #f8fafc; border: 1px solid #cbd5e1; border-radius: 6px; padding: 8px; margin: 8px 0; text-align: center; page-break-inside: avoid; }
+    .mfs-print-diagram-box svg { max-width: 100% !important; height: auto !important; display: block; margin: 0 auto; }
+    .mfs-print-diagram-box table { width: 100%; max-width: 480px; margin: 6px auto; border-collapse: collapse; font-size: 8pt; font-variant-numeric: tabular-nums; background: #ffffff; }
+    .mfs-print-diagram-box th, .mfs-print-diagram-box td { border: 1px solid #cbd5e1; padding: 4px 6px; text-align: center; }
+    .mfs-print-diagram-box th { background: #0f172a; color: #ffffff; font-weight: 700; }
+    .mfs-print-diagram-box .sim-diagram-caption { font-size: 7.5pt; font-weight: 700; color: #64748b; text-transform: uppercase; letter-spacing: 0.5px; margin-top: 6px; }
+    .mfs-print-workspace-block { margin-top: 8px; page-break-inside: avoid; }
+    .mfs-composite-diagram-wrap { position: relative; width: 100%; max-width: 500px; margin: 6px auto; background: #ffffff; border: 1px solid #cbd5e1; border-radius: 6px; overflow: hidden; display: block; box-shadow: 0 1px 2px rgba(0,0,0,0.04); page-break-inside: avoid; }
+    .mfs-composite-svg-underlay { position: relative; width: 100%; display: flex; justify-content: center; align-items: center; z-index: 1; }
+    .mfs-composite-svg-underlay svg { width: 100% !important; max-width: 100% !important; height: auto !important; display: block; margin: 0 auto; }
+    .mfs-composite-drawing-overlay { position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: block; pointer-events: none; z-index: 5; }
+    .mfs-diagram-status-note { font-size: 7.5pt; margin-top: 4px; text-align: center; }
+    .mfs-diagram-status-note .status-drawn { color: #0284c7; font-weight: 700; }
+    .mfs-diagram-status-note .status-empty { color: #94a3b8; font-style: italic; }
+    .mfs-diagram-status-note .status-model { color: #166534; font-weight: 700; }
     .mfs-print-comparison-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+    .mfs-print-comparison-grid .mfs-composite-diagram-wrap { max-width: 100% !important; }
+    .mfs-print-comparison-grid .mfs-print-diagram-box { max-width: 100% !important; }
     .mfs-print-col { border-radius: 4px; padding: 6px 8px; font-size: 8.5pt; }
     .candidate-col { background: #f8fafc; border: 1px solid #cbd5e1; }
     .model-col { background: #f0fdf4; border: 1px solid #86efac; }
@@ -8698,6 +8840,7 @@ function handleCheckAnswersClick() {
 }
 
 function finishPaperOrPromptLock() {
+  syncCurrentCanvasDrawing();
   exitFullscreenIfActive();
   const paper = getOrCreatePaper(simCurrentPaperKey);
   const sections = getPaperSections(paper);
@@ -8715,6 +8858,7 @@ function finishPaperOrPromptLock() {
 }
 
 function openSubmitModal() {
+  syncCurrentCanvasDrawing();
   exitFullscreenIfActive();
   const paper = getOrCreatePaper(simCurrentPaperKey);
   const sections = getPaperSections(paper);
@@ -8741,35 +8885,48 @@ function openSubmitModal() {
       const userAns = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_sec_${sec.id}_q${q.num}_ans`)
         || (sec.id === 'A' ? localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_q${q.num}_ans`) : null)
         || '';
-      const userDrawing = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_sec_${sec.id}_q${q.num}_drawing`);
+      const userDrawing = localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_sec_${sec.id}_q${q.num}_drawing`)
+        || (sec.id === 'A' ? localStorage.getItem(`mfs_sim_${simCurrentPaperKey}_q${q.num}_drawing`) : null);
 
-      const row = document.createElement('div');
-      row.className = 'sim-review-row';
+      const qCard = document.createElement('div');
+      qCard.style.cssText = 'background:#ffffff; border:1px solid #cbd5e1; border-radius:8px; padding:14px 16px; margin-bottom:14px; box-shadow:0 1px 3px rgba(0,0,0,0.05);';
 
       const itemLabel = paper.subject === 'writing' ? `Task ${q.num}` : `${sec.name.includes(':') ? sec.name.split(':')[0] : 'Section ' + sec.id}: Question ${q.num}`;
 
-      row.innerHTML = `
-        <div>
-          <div class="sim-review-col-title" style="color:var(--sim-navy);">
-            <i class="fa-solid fa-user-pen" style="color:var(--sim-blue);"></i> ${escapeHtml(itemLabel)}: Your Response &amp; Working
-          </div>
-          <div style="background:#ffffff; border:1px solid #cbd5e1; border-radius:6px; padding:10px; font-size:0.85rem; font-family:'Courier New', monospace; white-space:pre-wrap; min-height:80px; margin-bottom:8px;">${escapeHtml(userWorking)}</div>
-          ${userAns ? `
-          <div style="font-size:0.9rem; font-weight:800; color:var(--sim-navy);">
-            Your Concluded Answer: <span style="background:#e0f2fe; padding:2px 8px; border-radius:4px; color:#0369a1;">${escapeHtml(userAns)} ${escapeHtml(q.unit || '')}</span>
-          </div>` : ''}
+      qCard.innerHTML = `
+        <div style="font-weight:800; font-size:0.95rem; color:var(--sim-navy); margin-bottom:6px; display:flex; justify-content:space-between; align-items:center;">
+          <span><i class="fa-solid fa-file-signature" style="color:var(--sim-blue); margin-right:6px;"></i> ${escapeHtml(itemLabel)}: ${escapeHtml(q.scenarioTitle || '')}</span>
+          <span style="font-size:0.8rem; background:#f1f5f9; padding:2px 8px; border-radius:4px; color:#475569;">${q.marks || 0} Marks</span>
         </div>
-        <div>
-          <div class="sim-review-col-title" style="color:var(--sim-emerald);">
-            <i class="fa-solid fa-award" style="color:var(--sim-green);"></i> Accredited Master Model &amp; Mark Scheme [${escapeHtml(q.markTags || '')}]
+        ${q.scenarioText ? `<div style="font-size:0.85rem; color:#475569; margin-bottom:6px; line-height:1.45;">${escapeHtml(q.scenarioText)}</div>` : ''}
+        <div style="font-size:0.85rem; color:#1e293b; margin-bottom:8px;"><strong>Question:</strong> ${escapeHtml(q.promptText || '')}</div>
+        ${renderQuestionDiagramHtml(q)}
+
+        <div class="sim-review-row" style="margin-top:10px;">
+          <div>
+            <div class="sim-review-col-title" style="color:var(--sim-navy);">
+              <i class="fa-solid fa-user-pen" style="color:var(--sim-blue);"></i> Your Response &amp; Working
+            </div>
+            <div style="background:#ffffff; border:1px solid #cbd5e1; border-radius:6px; padding:10px; font-size:0.85rem; font-family:'Courier New', monospace; white-space:pre-wrap; min-height:60px; margin-bottom:8px;">${escapeHtml(userWorking)}</div>
+            ${renderWorkspaceDiagramWithDrawing(q, userDrawing)}
+            ${userAns ? `
+            <div style="font-size:0.9rem; font-weight:800; color:var(--sim-navy); margin-top:8px;">
+              Your Concluded Answer: <span style="background:#e0f2fe; padding:2px 8px; border-radius:4px; color:#0369a1;">${escapeHtml(userAns)} ${escapeHtml(q.unit || '')}</span>
+            </div>` : '<div style="font-size:0.85rem; color:#94a3b8; font-style:italic; margin-top:6px;">No final answer entered</div>'}
           </div>
-          <div style="background:#f0fdf4; border:1px solid #86efac; border-radius:6px; padding:10px; font-size:0.85rem; font-family:'Courier New', monospace; white-space:pre-wrap; min-height:80px; margin-bottom:8px; color:#14532d;">${escapeHtml(q.modelSolution)}</div>
-          <div style="font-size:0.9rem; font-weight:800; color:#15803d;">
-            Model Benchmark: <span style="background:#dcfce7; padding:2px 8px; border-radius:4px;">${escapeHtml(q.finalBenchmark)}</span>
+          <div>
+            <div class="sim-review-col-title" style="color:var(--sim-emerald);">
+              <i class="fa-solid fa-award" style="color:var(--sim-green);"></i> Accredited Master Model &amp; Mark Scheme [${escapeHtml(q.markTags || '')}]
+            </div>
+            <div style="background:#f0fdf4; border:1px solid #86efac; border-radius:6px; padding:10px; font-size:0.85rem; font-family:'Courier New', monospace; white-space:pre-wrap; min-height:60px; margin-bottom:8px; color:#14532d;">${escapeHtml(q.modelSolution)}</div>
+            ${q.workspaceDiagramHtml ? renderWorkspaceDiagramWithDrawing(q, null, true) : ''}
+            <div style="font-size:0.9rem; font-weight:800; color:#15803d; margin-top:8px;">
+              Model Benchmark: <span style="background:#dcfce7; padding:2px 8px; border-radius:4px;">${escapeHtml(q.finalBenchmark)}</span>
+            </div>
           </div>
         </div>
       `;
-      container.appendChild(row);
+      container.appendChild(qCard);
     });
   });
 
@@ -8803,6 +8960,7 @@ function closeSubmitModal() {
 }
 
 function downloadMarkedReviewFile() {
+  syncCurrentCanvasDrawing();
   const paper = getOrCreatePaper(simCurrentPaperKey);
   const fullHtml = generatePrintableHtml('marked');
   const blob = new Blob([fullHtml], { type: 'text/html;charset=utf-8;' });

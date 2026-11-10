@@ -9,6 +9,68 @@
   // Available videos dictionary (slug/topic -> video details)
   // Available videos dictionary (slug/topic -> video details)
   const KNOWN_VIDEOS = {
+    // Topic Masterclasses (Level 2 Maths)
+    'numbers-and-place-value': {
+      ytId: 'Ty9VhQvYT34',
+      title: 'Numbers and Place Value • Masterclass Walkthrough',
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: 'Tutor Sonya',
+      localVideo: 'assets/video/sonya-numbers-and-place-value-walkthrough.mp4',
+      poster: 'assets/img/numbers-place-value-sonya-poster.png',
+      companionSlug: 'ordering-numbers',
+      companionLabel: 'Next: Ordering Numbers (Subi)'
+    },
+    'numbers and place value': {
+      ytId: 'Ty9VhQvYT34',
+      title: 'Numbers and Place Value • Masterclass Walkthrough',
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: 'Tutor Sonya',
+      localVideo: 'assets/video/sonya-numbers-and-place-value-walkthrough.mp4',
+      poster: 'assets/img/numbers-place-value-sonya-poster.png',
+      companionSlug: 'ordering-numbers',
+      companionLabel: 'Next: Ordering Numbers (Subi)'
+    },
+    'ordering-numbers': {
+      ytId: 'STO1b_bOvbw',
+      title: 'Ordering Numbers • Masterclass Walkthrough',
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: 'Tutor Subi',
+      localVideo: 'assets/video/subi-ordering-numbers-walkthrough.mp4',
+      poster: 'assets/img/ordering-numbers-subi-poster.png',
+      companionSlug: 'addition-and-subtraction',
+      companionLabel: 'Next: Addition & Subtraction (Emma)'
+    },
+    'ordering numbers': {
+      ytId: 'STO1b_bOvbw',
+      title: 'Ordering Numbers • Masterclass Walkthrough',
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: 'Tutor Subi',
+      localVideo: 'assets/video/subi-ordering-numbers-walkthrough.mp4',
+      poster: 'assets/img/ordering-numbers-subi-poster.png',
+      companionSlug: 'addition-and-subtraction',
+      companionLabel: 'Next: Addition & Subtraction (Emma)'
+    },
+    'addition-and-subtraction': {
+      ytId: 'lZno-Cxkp80',
+      title: 'Addition and Subtraction • Masterclass Walkthrough',
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: 'Tutor Emma',
+      localVideo: 'assets/video/emma-addition-subtraction-walkthrough.mp4',
+      poster: 'assets/img/addition-subtraction-emma-poster.png',
+      companionSlug: 'numbers-and-place-value',
+      companionLabel: 'Prev: Numbers & Place Value (Sonya)'
+    },
+    'addition and subtraction': {
+      ytId: 'lZno-Cxkp80',
+      title: 'Addition and Subtraction • Masterclass Walkthrough',
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: 'Tutor Emma',
+      localVideo: 'assets/video/emma-addition-subtraction-walkthrough.mp4',
+      poster: 'assets/img/addition-subtraction-emma-poster.png',
+      companionSlug: 'numbers-and-place-value',
+      companionLabel: 'Prev: Numbers & Place Value (Sonya)'
+    },
+
     // Past Paper 10
     'edexcel-maths-l2-past-paper-10-section-a': {
       ytId: 'muSRa0fEsSs',

@@ -71,7 +71,7 @@
       companionLabel: 'Next: Multiplication (Sonya)'
     },
     'multiplication': {
-      ytId: 'SFGMKJqkn6c',
+      ytId: 'JFnv0TXY8NE',
       title: 'Multiplication (Whole Numbers & Decimals) • Masterclass Walkthrough',
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: 'Tutor Sonya',
@@ -81,7 +81,7 @@
       companionLabel: 'Prev: Addition & Subtraction (Emma)'
     },
     'functional-skills-multiplication': {
-      ytId: 'SFGMKJqkn6c',
+      ytId: 'JFnv0TXY8NE',
       title: 'Multiplication (Whole Numbers & Decimals) • Masterclass Walkthrough',
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: 'Tutor Sonya',

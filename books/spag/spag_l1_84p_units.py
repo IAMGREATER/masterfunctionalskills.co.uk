@@ -142,7 +142,7 @@ L1_UNITS_26 = [
 </div>
 <ul style="margin:4px 0 0 16px; padding:0; font-size:7.9pt; line-height:1.42;">
   <li><strong>Months &amp; Days:</strong> Always capitalise <em>Monday, Friday, January, September</em>. Do not capitalise general seasons (<em>spring, autumn</em>) unless part of a proper title.</li>
-  <li><strong>Names, Places &amp; Nationalities:</strong> <em>Sarah Jenkins, Manchester, British, English, NHS</em>.</li>
+  <li><strong>Names, Places &amp; Nationalities:</strong> <em>Sarah Jenkins, Manchester, British, English, HSE</em>.</li>
   <li><strong>Job Titles &amp; Honorifics:</strong> Capitalise specific individual titles (<em>Dr Evans, Prime Minister, General Manager Patel</em>), but use lowercase for general job roles (<em>our manager, the technician</em>).</li>
   <li><strong>Acronyms:</strong> Initialisms and acronyms are set in full capitals: <em>UK, Ofqual, PPE, CCTV, HR</em>.</li>
 </ul>""",
@@ -161,7 +161,7 @@ L1_UNITS_26 = [
              ["A) Security reviewed the cctv footage recorded in Birmingham.", "B) Security reviewed the CCTV footage recorded in Birmingham.", "C) Security reviewed the CCTV footage recorded in birmingham."],
              "B"),
             ("Identify the sentence with no capitalisation errors:",
-             ["A) We are visiting london in August to attend an NHS training workshop.", "B) We are visiting London in august to attend an NHS training workshop.", "C) We are visiting London in August to attend an NHS training workshop."],
+             ["A) We are visiting london in August to attend an HSE training workshop.", "B) We are visiting London in august to attend an HSE training workshop.", "C) We are visiting London in August to attend an HSE training workshop."],
              "C")
         ],
         "exercise_b": [

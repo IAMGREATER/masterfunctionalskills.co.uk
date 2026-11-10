@@ -268,9 +268,9 @@ h3 {{ font-family:'Lexend',sans-serif; font-weight:700; font-size:15pt; margin:0
 .hero {{ position:relative; border-radius:8px; overflow:hidden; background:var(--light);
          border:1.5px solid var(--soft); display:flex; flex-direction:column; }}
 .hero .imgwrap {{ position:relative; flex:1 1 auto; min-height:0; }}
-.hero img {{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:center top; display:block; }}
-.hero .cap {{ flex:0 0 auto; font-size:12pt; color:var(--ink); background:#fff; padding:2mm 4mm;
-              border-top:1.5px solid var(--soft); }}
+.hero img {{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:var(--pos, center center); display:block; }}
+.hero .cap {{ flex:0 0 auto; font-size:7.6pt; /* hf-ok */ line-height:1.15; color:var(--ink); background:#fff; padding:0.7mm 2.5mm;
+              border-top:1px solid var(--soft); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }}
 .ph {{ position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center;
        gap:2mm; color:var(--primary); font-weight:700; font-size:14pt; text-align:center; padding:4mm;
        background:repeating-linear-gradient(135deg, var(--light) 0 14px, #ffffff 14px 28px); }}
@@ -548,12 +548,14 @@ def _img_or_placeholder(path, label: str = "") -> str:
     return f'<div class="ph">{_CAMERA_SVG}<div>{E(label) or "Photo"}</div><small>photo coming soon</small></div>'
 
 
-def hero_image(path, caption: str = "", height_mm: float | None = 80, fill: bool = False) -> str:
+def hero_image(path, caption: str = "", height_mm: float | None = 80, fill: bool = False, pos: str = "center center") -> str:
     """Full-width photo (object-fit:cover, rounded).  fill=True -> grows to fill the page
     (height_mm then acts as the minimum height)."""
     cls = "hero fill" if fill else "hero"
     h = height_mm or 70
     style = f"min-height:{h}mm;" if fill else f"height:{h}mm;"
+    if pos:
+        style += f"--pos:{pos};"
     cap = f'<div class="cap">{caption}</div>' if caption else ""
     return f'<div class="{cls}" style="{style}"><div class="imgwrap">{_img_or_placeholder(path, "" if caption else "Photo")}</div>{cap}</div>'
 
@@ -782,8 +784,8 @@ def ref_pages(title: str, blocks, book: str, start_page: int, header_right: str 
     usable_w = 182.0
     col_w = (usable_w - 6.0 * (cols - 1)) / cols
     heights = _measure_blocks(blocks, col_w, theme)
-    title_mm = 13.5 if subtitle else 10.5
-    cap = (253.0 - title_mm - 2.0) * 0.985           # per column, safety margin
+    title_mm = 19.0 if (subtitle or len(title) > 35) else 12.5
+    cap = (253.0 - title_mm - 2.0) * 0.94           # per column, safety margin for 2-line titles
     pages_cols: list[list[list[int]]] = []
     cur, col = [[]], 0
     used = 0.0
@@ -800,6 +802,18 @@ def ref_pages(title: str, blocks, book: str, start_page: int, header_right: str 
         used += hgt
     pages_cols.append(cur)
 
+    def _grid_cols_html(pcols_list):
+        col_divs = []
+        for ci in range(cols):
+            c_idx = pcols_list[ci] if ci < len(pcols_list) else []
+            c_html = "".join(blocks[i] for i in c_idx)
+            bdr = "border-right:0.5px solid #000;padding-right:3mm;" if ci < cols - 1 else ""
+            pad_l = "padding-left:3mm;" if ci > 0 else ""
+            col_divs.append(f'<div style="min-width:0;{bdr}{pad_l}">{c_html}</div>')
+        return (f'<div class="ref-body" style="column-count:1;display:grid;'
+                f'grid-template-columns:repeat({cols},minmax(0,1fr));column-gap:0;">'
+                f'{"".join(col_divs)}</div>')
+
     out = []
     sub = f"<small>{subtitle}</small>" if subtitle else ""
     for pi, pcols in enumerate(pages_cols):
@@ -807,24 +821,23 @@ def ref_pages(title: str, blocks, book: str, start_page: int, header_right: str 
         cont = "" if pi == 0 else " (continued)"
         head = f'<div class="ref-title">{title}{cont}{sub if pi == 0 else ""}</div>'
         if not last:
-            # explicit column breaks so each column holds exactly the packed blocks
-            inner = '<div style="break-after:column;height:0"></div>'.join(
-                "".join(blocks[i] for i in c) for c in pcols)
-            body = head + f'<div class="ref-body" style="--cols:{cols}">{inner}</div>'
+            body = head + _grid_cols_html(pcols)
         else:
             idx = [i for c in pcols for i in c]
             tot = sum(heights[i] for i in idx)
             need = max(tot / cols * 1.10 + 4, max(heights[i] for i in idx) + 3)
-            inner = "".join(blocks[i] for i in idx)
-            full_h = cap / 0.985
-            if need + 22 <= full_h:
+            full_h = cap / 0.94
+            if need + 22 <= full_h and len(pcols) == 1:
+                inner = "".join(blocks[i] for i in idx)
                 body = (head + f'<div class="ref-body" style="--cols:{cols};flex:0 0 auto;column-fill:balance;'
                         f'height:{need:.1f}mm">{inner}</div>'
                         f'<div class="ref-notes fill"><div class="nt">{notes_title}</div><div class="nl"></div></div>')
-            else:  # page is (nearly) full: keep greedy packing, no notes
-                inner = '<div style="break-after:column;height:0"></div>'.join(
-                    "".join(blocks[i] for i in c) for c in pcols)
-                body = head + f'<div class="ref-body" style="--cols:{cols}">{inner}</div>'
+            elif max(sum(heights[i] for i in c) for c in pcols) + 32 <= full_h:
+                body = (head + _grid_cols_html(pcols).replace('class="ref-body"', 'class="ref-body" style="flex:0 0 auto;"', 1)
+                        .replace('style="flex:0 0 auto;" style="', 'style="flex:0 0 auto;')
+                        + f'<div class="ref-notes fill"><div class="nt">{notes_title}</div><div class="nl"></div></div>')
+            else:
+                body = head + _grid_cols_html(pcols)
         out.append(page(body, header=(book, header_right or title), footer=book,
                         page_no=start_page + pi, extra_class="ref"))
     return out
@@ -1289,12 +1302,13 @@ window.addEventListener('load', function(){
   var bad=[];
   document.querySelectorAll('section.page').forEach(function(p,i){
     var b=p.querySelector('.body'); if(!b) return;
-    var extra = b.scrollHeight - b.clientHeight;
-    b.querySelectorAll('.fill').forEach(function(f){
-      var cs = getComputedStyle(f), mh = parseFloat(cs.minHeight)||0;
-      if (f.getBoundingClientRect().height <= mh + 1 && extra > 2) {}
+    var extraY = b.scrollHeight - b.clientHeight;
+    var extraX = b.scrollWidth - b.clientWidth;
+    b.querySelectorAll('.ref-body').forEach(function(rb){
+      extraX = Math.max(extraX, rb.scrollWidth - rb.clientWidth);
     });
-    if (extra > 2) bad.push((i+1) + ':' + (extra/3.7795).toFixed(0));
+    var extra = Math.max(extraY, extraX);
+    if (extra > 2) bad.push((i+1) + ':' + Math.max(1, Math.round(extra/3.7795)));
   });
   document.body.setAttribute('data-overflow', bad.join(','));
 });

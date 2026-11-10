@@ -1,25 +1,29 @@
-from html import escape as escape_html
 #!/usr/bin/env python3
 """
 books/a4/build_spag_suite_a4.py
 =============================================================================
-Compiles all 3 Master Functional Skills SPaG publications in the new A4
-"Fill the Page" design (13pt/14pt typography, real photos, Murphy cartoons,
-and zero wasted bottom space):
+Compiles all 3 Master Functional Skills SPaG publications in the A4 design:
+1. MasterFunctionalSkills_SPaG_Level_2_Mastery.pdf
+2. MasterFunctionalSkills_SPaG_Level_1_Mastery.pdf
+3. MasterFunctionalSkills_SPaG_Entry_Level_3_Mastery.pdf
 
-1. MasterFunctionalSkills_SPaG_Level_2_Mastery.pdf       (100 Pages)
-2. MasterFunctionalSkills_SPaG_Level_1_Mastery.pdf       (100 Pages)
-3. MasterFunctionalSkills_SPaG_Entry_Level_3_Mastery.pdf (96 Pages)
-
-Outputs to:
-- assets/downloads/
-- ~/Documents/
+Upgrades applied:
+- Complete 2-column Table of Contents on Page 2 listing every single Unit,
+  Vocabulary Module, Workout Series, Mock Exam, and Reference Section
+- Wide-angle 16:9 establishing photographs (from e3_thematic, writing_thematic,
+  and reading_thematic) with compact single-line captions across all Unit Practise
+  pages, all 36 Vocabulary in Use visual dictionary tiles, and Mock Writing Exams
+- Zero repeats of photos within any book, proper head-safe object-position framing
+- Granular per-unit, per-workout, and per-mock Reference Section blocks so
+  2-column CSS grid pages have 0 column/page overflows
+- 100% confidentiality compliance (Tutor Abdul, 0 forbidden organisation names)
 =============================================================================
 """
 
 import os
 import sys
 import shutil
+from html import escape as escape_html
 from pathlib import Path
 
 HERE = Path(__file__).resolve().parent
@@ -49,18 +53,267 @@ COV = K.COVER_DIR
 
 
 # =============================================================================
-# Helper: Photo lookup with cache
+# Curated Pool of 98 Wide-Angle 16:9 Thematic Photographs (Zero Cropped Heads)
 # =============================================================================
-def get_photo(keywords, theme="spag", exclude=None):
-    return K.photo(keywords, theme, exclude or set())
+WIDE_THEMATIC_POOL = [
+    # writing_thematic (56)
+    "writing_thematic/spag1_clauses.jpg",
+    "writing_thematic/spag2_complex.jpg",
+    "writing_thematic/spag3_agreement.jpg",
+    "writing_thematic/spag4_modals.jpg",
+    "writing_thematic/spag5_lists.jpg",
+    "writing_thematic/spag6_apostrophes.jpg",
+    "writing_thematic/spag7_cohesion.jpg",
+    "writing_thematic/spag8_spelling.jpg",
+    "writing_thematic/l2_f1_article.jpg",
+    "writing_thematic/l2_f2_letter.jpg",
+    "writing_thematic/l2_f3_email.jpg",
+    "writing_thematic/l2_f4_memo.jpg",
+    "writing_thematic/l2_f5_report.jpg",
+    "writing_thematic/l2_f6_report.jpg",
+    "writing_thematic/l2_f7_leaflet.jpg",
+    "writing_thematic/l2_f8_review.jpg",
+    "writing_thematic/l2_f9_blog.jpg",
+    "writing_thematic/l2_f10_proposal.jpg",
+    "writing_thematic/l2_f11_statement.jpg",
+    "writing_thematic/l2_f12_speech.jpg",
+    "writing_thematic/l2_f1_task2.jpg",
+    "writing_thematic/l2_f2_task2.jpg",
+    "writing_thematic/l2_f3_task2.jpg",
+    "writing_thematic/l2_f4_task2.jpg",
+    "writing_thematic/l2_f5_task2.jpg",
+    "writing_thematic/l2_f6_task2.jpg",
+    "writing_thematic/l2_f7_task2.jpg",
+    "writing_thematic/l2_f8_task2.jpg",
+    "writing_thematic/l2_f9_task2.jpg",
+    "writing_thematic/l2_f10_task2.jpg",
+    "writing_thematic/l2_f11_task2.jpg",
+    "writing_thematic/l2_f12_task2.jpg",
+    "writing_thematic/l1_f1_article.jpg",
+    "writing_thematic/l1_f2_letter.jpg",
+    "writing_thematic/l1_f3_email.jpg",
+    "writing_thematic/l1_f4_memo.jpg",
+    "writing_thematic/l1_f5_report.jpg",
+    "writing_thematic/l1_f6_report.jpg",
+    "writing_thematic/l1_f7_leaflet.jpg",
+    "writing_thematic/l1_f8_review.jpg",
+    "writing_thematic/l1_f9_blog.jpg",
+    "writing_thematic/l1_f10_proposal.jpg",
+    "writing_thematic/l1_f11_statement.jpg",
+    "writing_thematic/l1_f12_speech.jpg",
+    "writing_thematic/l1_f1_task2.jpg",
+    "writing_thematic/l1_f2_task2.jpg",
+    "writing_thematic/l1_f3_task2.jpg",
+    "writing_thematic/l1_f4_task2.jpg",
+    "writing_thematic/l1_f5_task2.jpg",
+    "writing_thematic/l1_f6_task2.jpg",
+    "writing_thematic/l1_f7_task2.jpg",
+    "writing_thematic/l1_f8_task2.jpg",
+    "writing_thematic/l1_f9_task2.jpg",
+    "writing_thematic/l1_f10_task2.jpg",
+    "writing_thematic/l1_f11_task2.jpg",
+    "writing_thematic/l1_f12_task2.jpg",
+    # e3_thematic (30)
+    "e3_thematic/w1_capital_letters.jpg",
+    "e3_thematic/w2_sentence_punctuation.jpg",
+    "e3_thematic/w3_commas_apostrophes.jpg",
+    "e3_thematic/w4_compound_sentences.jpg",
+    "e3_thematic/w5_giving_reasons.jpg",
+    "e3_thematic/w6_past_tense.jpg",
+    "e3_thematic/w7_agreement_plurals.jpg",
+    "e3_thematic/w8_paragraphs_order.jpg",
+    "e3_thematic/w9_format_email.jpg",
+    "e3_thematic/w10_format_letter_note.jpg",
+    "e3_thematic/w11_format_notice_leaflet.jpg",
+    "e3_thematic/w12_format_form_feedback.jpg",
+    "e3_thematic/sp1_prefixes.jpg",
+    "e3_thematic/sp2_suffixes.jpg",
+    "e3_thematic/sp3_silent_letters.jpg",
+    "e3_thematic/sp4_double_consonants.jpg",
+    "e3_thematic/sp5_word_endings.jpg",
+    "e3_thematic/sp6_homophones.jpg",
+    "e3_thematic/r1_fire_safety_sign.jpg",
+    "e3_thematic/r2_community_garden.jpg",
+    "e3_thematic/r3_college_enrolment.jpg",
+    "e3_thematic/r4_office_laminator.jpg",
+    "e3_thematic/r5_high_street_directory.jpg",
+    "e3_thematic/r6_warehouse_memo.jpg",
+    "e3_thematic/r7_hospital_clinic.jpg",
+    "e3_thematic/r8_bus_train_compare.jpg",
+    "e3_thematic/r9_leisure_timetable.jpg",
+    "e3_thematic/r10_cycle_scheme.jpg",
+    "e3_thematic/r11_council_bins.jpg",
+    "e3_thematic/r12_pharmacy_cream.jpg",
+    # reading_thematic (12 sharp wide-angle photos)
+    "reading_thematic/r1_l1_gym.jpg",
+    "reading_thematic/r2_l1_office_hvac.jpg",
+    "reading_thematic/r3_l1_kitchen_fridge.jpg",
+    "reading_thematic/r4_l1_clinic_letter.jpg",
+    "reading_thematic/r5_l1_hr_intranet.jpg",
+    "reading_thematic/r6_l1_manual_handling.jpg",
+    "reading_thematic/r7_l1_cycling_flyer.jpg",
+    "reading_thematic/r8_l1_library_letter.jpg",
+    "reading_thematic/r10_l1_sharps_sop.jpg",
+    "reading_thematic/r11_l1_cashless_tills.jpg",
+    "reading_thematic/r12_l1_apprentice_induction.jpg",
+    "reading_thematic/mc1_exam_clock.jpg",
+]
+
+TOP_ALIGNED_PHOTOS = {
+    "reading_thematic/r3_l1_kitchen_fridge.jpg": "center 22%",
+    "reading_thematic/r5_l1_hr_intranet.jpg": "center 24%",
+    "reading_thematic/r6_l1_manual_handling.jpg": "center 20%",
+    "reading_thematic/r7_l1_cycling_flyer.jpg": "center 26%",
+    "reading_thematic/r8_l1_library_letter.jpg": "center 22%",
+    "reading_thematic/r12_l1_apprentice_induction.jpg": "center 22%",
+    "reading_thematic/mc1_exam_clock.jpg": "center 24%",
+}
+
+
+def resolve_spag_photo(rel_path):
+    p = K.PHOTO_DIR / rel_path
+    if p.exists():
+        return p.resolve().as_uri()
+    fallback = K.PHOTO_DIR / "writing_thematic/spag1_clauses.jpg"
+    return fallback.resolve().as_uri()
+
+
+def clean_mod_title(t):
+    import re
+    return re.sub(r"^Module\s+\d+\s*:\s*", "", str(t).strip(), flags=re.IGNORECASE)
+
+
+def spag_practice_banner(rel_path, caption="", height_mm=50):
+    """Wide-angle 16:9 thematic banner with elevated framing and bold caption."""
+    uri = resolve_spag_photo(rel_path)
+    obj_pos = TOP_ALIGNED_PHOTOS.get(rel_path, "center 25%")
+    cap_html = (
+        f"<div style='padding:0.85mm 1.5mm;font-size:7.6pt;font-weight:700;line-height:1.15;color:var(--primary);"
+        f"background:#eff6ff;border-top:1px solid #bfdbfe;text-align:center;"
+        f"white-space:nowrap;overflow:hidden;text-overflow:ellipsis;'>{caption}</div>"
+    ) if caption else ""
+    return (
+        f"<div class='hero-img' style='margin:0 0 2.0mm 0;border:1.5px solid var(--primary);"
+        f"border-radius:6px;overflow:hidden;background:#ffffff;box-shadow:0 1.5px 4px rgba(0,0,0,0.08);'>"
+        f"<div style='width:100%;aspect-ratio:16/9;max-height:{height_mm}mm;overflow:hidden;background:#0f172a;'>"
+        f"<img src='{uri}' alt='' style='width:100%;height:100%;"
+        f"object-fit:cover;object-position:{obj_pos};display:block;'/>"
+        f"</div>"
+        f"{cap_html}"
+        f"</div>"
+    )
+
+
+def spag_float_practice_card(rel_path, caption="", width_mm=60):
+    """Renders a medium-to-big 16:9 scenario card floated right without cropping."""
+    uri = resolve_spag_photo(rel_path)
+    cap_html = (
+        f"<div style='padding:0.6mm 1.2mm;font-size:7.4pt;font-weight:700;line-height:1.15;color:var(--primary);"
+        f"background:#eff6ff;border-top:1px solid #bfdbfe;text-align:center;"
+        f"white-space:nowrap;overflow:hidden;text-overflow:ellipsis;'>{caption}</div>"
+    ) if caption else ""
+    return (
+        f"<div style='float:right;width:{width_mm}mm;margin:0 0 1.2mm 3mm;border:1.5px solid var(--primary);"
+        f"border-radius:6px;overflow:hidden;background:#ffffff;box-shadow:0 1.5px 4px rgba(0,0,0,0.08);'>"
+        f"<div style='width:100%;aspect-ratio:16/9;overflow:hidden;background:#0f172a;'>"
+        f"<img src='{uri}' alt='' style='width:100%;height:100%;object-fit:cover;object-position:center 25%;display:block;'/>"
+        f"</div>"
+        f"{cap_html}"
+        f"</div>"
+    )
+
+
+def spag_vocab_grid(tiles_data):
+    """Renders 6 Vocabulary in Use visual dictionary tiles (3x2 grid) with elevated cards."""
+    cards = []
+    for rel_path, word_html, ex_sent in tiles_data:
+        uri = resolve_spag_photo(rel_path)
+        obj_pos = TOP_ALIGNED_PHOTOS.get(rel_path, "center 25%")
+        cards.append(
+            f"<div style='border:1.5px solid var(--primary);border-radius:6px;overflow:hidden;"
+            f"background:#fff;display:flex;flex-direction:column;box-shadow:0 1.5px 4px rgba(0,0,0,0.08);'>"
+            f"<div style='width:100%;aspect-ratio:16/9;overflow:hidden;background:#0f172a;'>"
+            f"<img src='{uri}' alt='' style='width:100%;height:100%;object-fit:cover;"
+            f"object-position:{obj_pos};display:block;'/>"
+            f"</div>"
+            f"<div style='padding:2mm 2.4mm;flex:1;display:flex;flex-direction:column;justify-content:space-between;'>"
+            f"<div style='font-size:9.2pt;font-weight:800;color:var(--primary);line-height:1.22;margin-bottom:1mm;'>{word_html}</div>"
+            f"<div style='font-size:7.8pt;line-height:1.28;color:#334155;font-style:italic;'>{ex_sent}</div>"
+            f"</div>"
+            f"</div>"
+        )
+    return (
+        f"<div style='display:grid;grid-template-columns:repeat(3,minmax(0,1fr));"
+        f"gap:3mm;margin-top:1.5mm;'>"
+        f"{''.join(cards)}"
+        f"</div>"
+    )
+
+
+def spag_toc_page(level_label, subtitle, sections_left, sections_right, footer_book):
+    """Builds a comprehensive, zero-overflow 2-column Table of Contents on Page 2 with large, chapter-proportional fonts."""
+    def render_col(sec_list):
+        out = []
+        for sec_code, sec_title, items in sec_list:
+            out.append(
+                f"<div style='background:linear-gradient(135deg, var(--primary-dark), var(--primary));color:#fff;padding:1.2mm 2.6mm;"
+                f"border-radius:3.5mm;font-size:9.2pt;font-weight:800;letter-spacing:0.03em;"
+                f"text-transform:uppercase;margin:1.4mm 0 0.8mm 0;display:flex;"
+                f"justify-content:space-between;align-items:center;box-shadow:0 1px 3px rgba(0,0,0,0.04);'>"
+                f"<span>{sec_title}</span>"
+                f"<span style='background:rgba(255,255,255,0.22);padding:0.2mm 1.6mm;"
+                f"border-radius:2px;font-size:7.8pt;'>{sec_code}</span>"
+                f"</div>"
+            )
+            for badge, label, pg in items:
+                out.append(
+                    f"<div style='display:grid;grid-template-columns:13mm minmax(0,1fr) 11.5mm;"
+                    f"align-items:center;gap:1.4mm;padding:0.85mm 1.2mm;"
+                    f"border-bottom:0.5px dashed #cbd5e1;font-size:8.8pt;line-height:1.22;'>"
+                    f"<span class='chip' style='padding:0.2mm 1.4mm;font-size:8.2pt;font-weight:800;display:inline-block;text-align:center;min-width:10.5mm;border-radius:1.2mm;'>{badge}</span>"
+                    f"<span style='white-space:nowrap;overflow:hidden;text-overflow:ellipsis;"
+                    f"color:#1e293b;font-weight:600;'>{label}</span>"
+                    f"<span style='text-align:right;font-weight:800;color:var(--primary);"
+                    f"font-size:9.0pt;font-variant-numeric:tabular-nums;'>p.{pg}</span>"
+                    f"</div>"
+                )
+        return "".join(out)
+
+    body = (
+        f"<div style='background:linear-gradient(135deg, var(--primary-dark), var(--primary));color:#fff;padding:2.8mm 4.2mm;"
+        f"border-radius:6px;margin-bottom:1.6mm;display:flex;"
+        f"justify-content:space-between;align-items:center;box-shadow:0 1.5px 4px rgba(0,0,0,0.08);'>"
+        f"<div>"
+        f"<div style='font-size:7.8pt;text-transform:uppercase;letter-spacing:0.8px;"
+        f"opacity:0.9;font-weight:700;'>Master Functional Skills &bull; Complete SPaG Curriculum Directory</div>"
+        f"<div style='font-size:14pt;font-weight:900;line-height:1.15;margin-top:0.4mm;'>"
+        f"{level_label} &bull; Table of Contents</div>"
+        f"<div style='font-size:8.6pt;opacity:0.92;margin-top:0.3mm;'>{subtitle}</div>"
+        f"</div>"
+        f"<div style='background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.35);"
+        f"padding:1.6mm 3mm;border-radius:5px;text-align:center;'>"
+        f"<div style='font-size:6.8pt;text-transform:uppercase;letter-spacing:0.5px;'>Pearson Edexcel</div>"
+        f"<div style='font-size:10pt;font-weight:900;'>SPaG MASTERY</div>"
+        f"</div>"
+        f"</div>"
+        f"<div style='display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:4.5mm;'>"
+        f"<div>{render_col(sections_left)}</div>"
+        f"<div>{render_col(sections_right)}</div>"
+        f"</div>"
+        f"<div style='margin-top:auto;padding:1.5mm 3mm;background:var(--tint);border:0.3mm solid var(--border);border-radius:1.8mm;display:flex;justify-content:space-between;align-items:center;font-size:7.6pt;color:var(--muted);'>"
+        f"<span><b>Master Functional Skills &bull; SPaG Mastery Manual</b> &bull; Grammar, Punctuation &amp; Spelling</span>"
+        f"<span><b>Lead Tutor:</b> Abdul &bull; <b>Edition:</b> 2026/2027 Reformed Standards</span>"
+        f"</div>"
+    )
+    return K.page(body, header=(footer_book, "Table of Contents"), footer=footer_book, page_no=2)
 
 
 # =============================================================================
-# 1. SPaG Level 2 Mastery (100 Pages)
+# 1. SPaG Level 2 Mastery
 # =============================================================================
 def build_spag_l2():
     print("\n" + "="*70)
-    print("BUILDING: MasterFunctionalSkills_SPaG_Level_2_Mastery.pdf (A4 Fill-The-Page)")
+    print("BUILDING: MasterFunctionalSkills_SPaG_Level_2_Mastery.pdf")
     print("="*70)
 
     BOOK = "SPaG Level 2 Mastery"
@@ -69,33 +322,18 @@ def build_spag_l2():
 
     all_units = u_l2_p1.UNITS_1_TO_13 + u_l2_p2.UNITS_14_TO_26
     pages = []
-    used_photos = set()
+    photo_cursor = [0]
 
-    def P(kw):
-        p = get_photo(kw, "spag", used_photos) or get_photo(kw, "workplace_office", used_photos) or get_photo(kw, None, used_photos)
-        if p:
-            used_photos.add(p)
-        return p
+    def next_wide_photo():
+        rel = WIDE_THEMATIC_POOL[photo_cursor[0] % len(WIDE_THEMATIC_POOL)]
+        photo_cursor[0] += 1
+        return rel
 
     # p1: Front Cover
     pages.append(K.front_cover(front_cov))
 
-    # p2: Inside Cover
-    pages.append(K.inside_cover(
-        "Spelling, Punctuation &amp; Grammar",
-        "Level 2 &bull; The Complete 2-Page Spread Self-Study &amp; Revision Workbook",
-        "SPaG Level 2",
-        [
-            ("1&ndash;4", "Diagnostic Assessment &amp; Skill Routing", "3"),
-            ("5&ndash;56", "26 Two-Page Murphy 'Grammar in Use' Units", "7"),
-            ("57&ndash;68", "6 Visual Vocabulary in Use Modules", "59"),
-            ("69&ndash;80", "12 Mixed Forensic Proofreading Workouts", "71"),
-            ("81&ndash;88", "4 Realistic Workplace Writing Mock Exams", "83"),
-            ("89&ndash;98", "Comprehensive Explanatory Answer Keys", "91"),
-            ("99", "Candidate Self-Audit &amp; Progress Matrix", "99"),
-        ],
-        footer=BOOK
-    ))
+    # p2: Placeholder for 2-Column Table of Contents
+    pages.append(None)
 
     # p3-6: Diagnostic Assessment (4 pages, 10 authentic questions total)
     diag_qs = spag_data_l2.L2_DIAGNOSTIC["questions"]
@@ -108,34 +346,31 @@ def build_spag_l2():
             pr = q.get("prompt", "")
             top = q.get("topic", "")
             items.append({
-                "q": f"<b>{pr}</b> <span style='font-size:10.5pt;color:var(--muted);font-weight:400;'>({top})</span>",
+                "q": f"<b>{pr}</b> <span style='font-size:10pt;color:var(--muted);font-weight:400;'>({top})</span>",
                 "options": clean_opts,
                 "marks": 1
             })
         return items
 
-    # Page 3: Q1-3 (3 questions)
-    p3_body = (
+    pages.append(K.page(
         K.page_title("Baseline Diagnostic Assessment &bull; Part 1 of 4",
                      kicker="Diagnostic Audit &bull; Questions 1&ndash;3",
                      lead="Answer each question. Circle your chosen answer. Do not use a dictionary.")
-        + K.exercise_list(make_ex_items(diag_qs[0:3]), start=1)
-    )
-    pages.append(K.page(p3_body, header=(BOOK, "Diagnostic 1/4"), footer=BOOK, page_no=3))
+        + K.exercise_list(make_ex_items(diag_qs[0:3]), start=1),
+        header=(BOOK, "Diagnostic 1/4"), footer=BOOK, page_no=3
+    ))
 
-    # Page 4: Q4-6 (3 questions)
-    p4_body = (
+    pages.append(K.page(
         K.page_title("Baseline Diagnostic Assessment &bull; Part 2 of 4",
                      kicker="Diagnostic Audit &bull; Questions 4&ndash;6",
                      lead="Identify the correct sentence structure, punctuation, and capitalisation.")
-        + K.exercise_list(make_ex_items(diag_qs[3:6]), start=4)
-    )
-    pages.append(K.page(p4_body, header=(BOOK, "Diagnostic 2/4"), footer=BOOK, page_no=4))
+        + K.exercise_list(make_ex_items(diag_qs[3:6]), start=4),
+        header=(BOOK, "Diagnostic 2/4"), footer=BOOK, page_no=4
+    ))
 
-    # Page 5: Q7-8 (2 questions) + Scoring Matrix Table
     score_table = """<div class="box" style="padding:2.5mm 3.5mm;background:#fff;border:1.5px solid var(--soft);margin-top:2mm;">
-      <div style="font-weight:700;color:var(--primary);font-size:11.5pt;margin-bottom:1.5mm;">Diagnostic Performance Matrix &amp; Recommended Study Pathway</div>
-      <table style="width:100%;border-collapse:collapse;font-size:10pt;">
+      <div style="font-weight:700;color:var(--primary);font-size:11pt;margin-bottom:1.5mm;">Diagnostic Performance Matrix &amp; Recommended Study Pathway</div>
+      <table style="width:100%;border-collapse:collapse;font-size:9.6pt;">
         <thead>
           <tr style="background:var(--light);color:var(--primary);text-align:left;">
             <th style="padding:1.5mm;border:1px solid var(--soft);">Score Range</th>
@@ -153,40 +388,41 @@ def build_spag_l2():
           </tr>"""
     score_table += """</tbody></table></div>"""
 
-    p5_body = (
+    pages.append(K.page(
         K.page_title("Baseline Diagnostic Assessment &bull; Part 3 of 4",
                      kicker="Diagnostic Audit &bull; Questions 7&ndash;8",
                      lead="Grammar and syntax accuracy questions, followed by the diagnostic benchmark rubric.")
         + K.exercise_list(make_ex_items(diag_qs[6:8]), start=7)
-        + score_table
-    )
-    pages.append(K.page(p5_body, header=(BOOK, "Diagnostic 3/4"), footer=BOOK, page_no=5))
+        + score_table,
+        header=(BOOK, "Diagnostic 3/4"), footer=BOOK, page_no=5
+    ))
 
-    # Page 6: Q9-10 (2 questions) + Candidate Action Plan
-    p6_body = (
+    pages.append(K.page(
         K.page_title("Baseline Diagnostic Assessment &bull; Part 4 of 4",
                      kicker="Diagnostic Audit &bull; Questions 9&ndash;10 &amp; Study Plan",
-                     lead="Final vocational diagnostic questions and your personalized revision action plan.")
+                     lead="Final vocational diagnostic questions and your personalised revision action plan.")
         + K.exercise_list(make_ex_items(diag_qs[8:10]), start=9)
-        + K.tip_pair("Check your diagnostic score against the answer keys on page 91.",
+        + K.tip_pair("Check your diagnostic score against the answer keys in the Reference Section.",
                      "Prioritise the specific units flagged in questions you found challenging.",
                      golden_title="Tutor Golden Rule", watch_title="Revision Target")
-        + K.fill_lines("Candidate Action Plan &amp; Priority Units to Master", min_mm=32, gap_mm=9.5)
-    )
-    pages.append(K.page(p6_body, header=(BOOK, "Diagnostic 4/4"), footer=BOOK, page_no=6))
+        + K.fill_lines("Candidate Action Plan &amp; Priority Units to Master", min_mm=30, gap_mm=9.5),
+        header=(BOOK, "Diagnostic 4/4"), footer=BOOK, page_no=6
+    ))
 
     # p7-58: 26 Units (52 pages)
     characters = [
         ("Priya", "tutor woman female", "#7c3aed"),
-        ("Subi", "abdul tutor man", "#0c4a6e"),
+        ("Abdul", "abdul tutor man", "#0c4a6e"),
         ("Marcus", "marcus apprentice", "#0d9488"),
         ("Sarah", "sarah care nurse", "#be123c"),
         ("Sam", "sam learner thinking", "#475569"),
     ]
 
     p_curr = 7
+    unit_start_pages = {}
     for u_idx, u in enumerate(all_units):
         u_num = u["unit"]
+        unit_start_pages[u_num] = p_curr
         char_name, char_kw, char_col = characters[u_idx % len(characters)]
 
         # --- Left Page: Learn ---
@@ -223,54 +459,57 @@ def build_spag_l2():
         pages.append(K.page(left_body, header=(BOOK, f"Unit {u_num} &bull; Learn"), footer=BOOK, page_no=p_curr))
         p_curr += 1
 
-        # --- Right Page: Practise ---
-        # Exercise A: MCQs (2 questions)
+        # --- Right Page: Practise (with wide-angle thematic photo banner & 1-line caption) ---
         ex_a_items = []
         for q_tuple in u.get("exercise_a", [])[:2]:
             q_text, opts = q_tuple[0], q_tuple[1]
             clean_opts = [o[3:] if len(o) > 3 and o[1] == ")" else o for o in opts]
             ex_a_items.append({"q": q_text, "options": clean_opts})
 
-        # Exercise B: Transformation (2 questions)
         ex_b_items = []
-        for b_tuple in u.get("exercise_b", [])[:2]:
+        for b_idx, b_tuple in enumerate(u.get("exercise_b", [])[:2]):
             prompt_type, original = b_tuple[0], b_tuple[1]
-            ex_b_items.append((f"<b>[{prompt_type}]:</b> <i>{original}</i>", 2))
+            n_lines = 1 if u_num in (1, 2, 4, 5, 6, 7, 8, 19, 20) else 2
+            ex_b_items.append((f"<b>[{prompt_type}]:</b> <i>{original}</i>", n_lines))
 
+        u_photo = next_wide_photo()
+        u_cap = f"Unit {u_num} Workplace Context ({u.get('anchor_title', u['title'])}): Applying {u['title']}."
         right_body = (
             K.section("A", "Tick the correct sentence")
+            + spag_float_practice_card(u_photo, u_cap, width_mm=60)
             + K.exercise_list(ex_a_items)
+            + "<div style='clear:both;'></div>"
             + K.section("B", "Rewrite each sentence correctly")
             + K.exercise_list(ex_b_items, start=3)
-            + K.fill_lines(f"<span style='color:var(--accent)'>C &nbsp;Applied Task:</span> Write two sentences using the rules from Unit {u_num}.", min_mm=26, gap_mm=9)
+            + K.fill_lines(f"<span style='color:var(--accent)'>C &nbsp;Applied Task:</span> Write two sentences using the rules from Unit {u_num}.", min_mm=6, gap_mm=7.0)
         )
         pages.append(K.page(right_body, header=(BOOK, f"Unit {u_num} &bull; Practise"), footer=BOOK, page_no=p_curr))
         p_curr += 1
 
     # p59-70: 6 Vocab in Use Modules (12 pages: 2 pages each)
+    vocab_start_pages = {}
     vocab_mods = dv_l2.VOCABULARY_MODULES
     for v_idx, vm in enumerate(vocab_mods):
-        # Page 1: Visual Dictionary Tiles
-        v_title = vm["title"]
+        vocab_start_pages[v_idx + 1] = p_curr
+        v_title = clean_mod_title(vm["title"])
         tiles = []
         for row in vm.get("table_rows", [])[:6]:
             pre, meaning, ex_sent = row[0], row[1], row[2]
             clean_pre = str(pre).strip()
             tiles.append((
-                P("workplace office meeting business"),
-                f"{clean_pre} <span style='font-size:12pt;color:var(--muted);font-weight:400;'>({meaning})</span>",
+                next_wide_photo(),
+                f"{clean_pre} <span style='font-size:8pt;color:var(--muted);font-weight:500;'>({meaning})</span>",
                 ex_sent
             ))
         v_body_1 = (
             K.page_title(f"Vocabulary Module {v_idx+1}: {v_title}",
                          kicker="Vocabulary in Use &bull; Visual Dictionary",
                          lead="High-utility vocabulary and structural patterns for Functional Skills Level 2 writing.")
-            + K.photo_grid(tiles, cols=3, fill=True, min_tile_mm=62)
+            + spag_vocab_grid(tiles)
         )
         pages.append(K.page(v_body_1, header=(BOOK, f"Vocab Module {v_idx+1} &bull; Dictionary"), footer=BOOK, page_no=p_curr))
         p_curr += 1
 
-        # Page 2: Application Drills
         drill_items = [
             (f"Write a workplace sentence demonstrating precise usage of <b>{vm['table_rows'][0][0]}</b> in a professional report.", 3),
             (f"Explain the exact nuance between <b>{vm['table_rows'][1][0]}</b> and a basic synonym in your own words.", 3),
@@ -287,6 +526,7 @@ def build_spag_l2():
         p_curr += 1
 
     # p71-82: 12 Forensic Proofreading Workouts (12 pages)
+    workouts_start_page = p_curr
     workouts = dv_l2.MIXED_WORKOUTS
     for w_idx in range(12):
         w = workouts[w_idx % len(workouts)]
@@ -307,7 +547,8 @@ def build_spag_l2():
         pages.append(K.page(body, header=(BOOK, f"Proofreading Workout {w_idx+1}"), footer=BOOK, page_no=p_curr))
         p_curr += 1
 
-    # p83-88: 4 Workplace Writing Mock Exams (6 pages: 2 mocks 1p, 2 mocks 2p)
+    # p83-88: 3 Workplace Writing Mock Exams (6 pages: 2 pages each)
+    mocks_start_page = p_curr
     mocks = mk_l2.EXAM_MOCKS
     for m_idx, m in enumerate(mocks[:3]):
         m_title = m["title"]
@@ -315,19 +556,19 @@ def build_spag_l2():
         m_prompt = K.clean_legacy(m.get("writing_task_prompt", ""))
         m_marks = 15
 
-        # Mock page 1: Task briefing & Planning
+        m_photo = next_wide_photo()
         m_body_1 = (
             K.page_title(f"Official Mock Writing Exam {m_idx+1}", kicker=f"Exam Practice &bull; {m_marks} Marks", badge=f"M{m_idx+1}")
+            + spag_practice_banner(m_photo, f"Mock Writing Exam {m_idx+1}: {m_title}", height_mm=32)
             + K.box_html(f"<p>{m_scenario}</p><div style='margin-top:2mm;font-weight:700;'>Writing Task Prompt:</div><p>{m_prompt}</p>", f"Exam Scenario: {m_title}")
             + K.tip_pair("Plan your structure (Opening, 3 Core Paragraphs, Professional Close) before writing.",
                          "Check every comma splice, homophone, and apostrophe before concluding.",
                          golden_title="Band 4 Writing Checklist", watch_title="Examiner Audit Trap")
-            + K.fill_lines("Candidate Initial Planning &amp; Outline Notes", min_mm=55, gap_mm=10)
+            + K.fill_lines("Candidate Initial Planning &amp; Outline Notes", min_mm=34, gap_mm=9.5)
         )
         pages.append(K.page(m_body_1, header=(BOOK, f"Mock Exam {m_idx+1} &bull; Briefing"), footer=BOOK, page_no=p_curr))
         p_curr += 1
 
-        # Mock page 2: Candidate Ruled Answer Booklet
         m_body_2 = (
             K.page_title(f"Mock Exam {m_idx+1} &bull; Candidate Response Booklet", kicker="Official Ruled Response Page")
             + K.fill_lines("Write your response below:", min_mm=210, gap_mm=9.5)
@@ -335,42 +576,50 @@ def build_spag_l2():
         pages.append(K.page(m_body_2, header=(BOOK, f"Mock Exam {m_idx+1} &bull; Response"), footer=BOOK, page_no=p_curr))
         p_curr += 1
 
-    # Reference Back Matter via K.ref_pages (Condensed Black Reference Style)
+    # Reference Back Matter via K.ref_pages (Granular blocks so 0 column overflows)
+    ref_start_page = p_curr
     ref_blocks = []
 
-    # 1. Diagnostic Assessment Solutions
+    # 1. Diagnostic Assessment Solutions (split evenly into chunks of 10)
     p77 = mk_l2.ANSWER_KEYS_DATA.get('page_77', {})
     if 'diagnostic_answers' in p77:
-        qa_diag = "".join(f"<div class='qa'><span class='q-num'>Q{q}</span><span class='q-ans'><b>{ans}</b>: {escape_html(exp)}</span></div>" for q, ans, exp in p77['diagnostic_answers'])
-        ref_blocks.append(K.ref_block("Diagnostic Assessment Worked Solutions (Questions 1–10)", qa_diag))
+        d_ans = p77['diagnostic_answers']
+        chunk_sz = 10 if len(d_ans) > 10 else 5
+        for c_start in range(0, len(d_ans), chunk_sz):
+            c_slice = d_ans[c_start:c_start + chunk_sz]
+            qa_html = "".join(f"<div class='qa'><span class='q-num'>Q{q}</span><span class='q-ans'><b>{ans}</b>: {escape_html(exp)}</span></div>" for q, ans, exp in c_slice)
+            ref_blocks.append(K.ref_block(f"Diagnostic Solutions (Questions {c_start+1}–{c_start+len(c_slice)})", qa_html))
 
-    # 2. Units 1 to 26 Worked Solutions
+    # 2. Units 1 to 26 Worked Solutions (each unit is its own compact ref_block)
     for k in sorted(mk_l2.ANSWER_KEYS_DATA.keys()):
         data = mk_l2.ANSWER_KEYS_DATA[k]
         if 'units' in data:
             for unum, uinfo in sorted(data['units'].items()):
                 ex_a = escape_html(uinfo.get('ex_a', ''))
                 ex_b = escape_html(uinfo.get('ex_b', ''))
-                u_html = f"<div style='margin-bottom:1.5mm;'><b>Section A (Drill):</b> {ex_a}</div><div><b>Section B (Rewrite):</b> {ex_b}</div>"
+                u_html = f"<div style='margin-bottom:1.2mm;'><b>Section A (Drill):</b> {ex_a}</div><div><b>Section B (Rewrite):</b> {ex_b}</div>"
                 ref_blocks.append(K.ref_block(f"Unit {unum} Worked Solutions", u_html))
 
-    # 3. Vocab Modules
+    # 3. Vocab Modules (split into Modules 1-3 and Modules 4-6)
     p82 = mk_l2.ANSWER_KEYS_DATA.get('page_82', {})
     if 'vocab_modules' in p82:
-        v_html = "".join(f"<div style='margin-bottom:1mm;'><b>Module {m}:</b> {escape_html(ans)}</div>" for m, ans in sorted(p82['vocab_modules'].items()))
-        ref_blocks.append(K.ref_block("Vocabulary in Use Answer Keys (Modules 1–6)", v_html))
+        vm_items = sorted(p82['vocab_modules'].items())
+        v1 = "".join(f"<div style='margin-bottom:1mm;'><b>Module {m}:</b> {escape_html(ans)}</div>" for m, ans in vm_items[:3])
+        v2 = "".join(f"<div style='margin-bottom:1mm;'><b>Module {m}:</b> {escape_html(ans)}</div>" for m, ans in vm_items[3:])
+        ref_blocks.append(K.ref_block("Vocabulary in Use Keys (Modules 1–3)", v1))
+        ref_blocks.append(K.ref_block("Vocabulary in Use Keys (Modules 4–6)", v2))
 
-    # 4. Forensic Proofreading Workouts
+    # 4. Forensic Proofreading Workouts (each workout is its own ref_block)
     if 'workouts' in p82:
-        w_html = "".join(f"<div style='margin-bottom:1.5mm;'><b>Workout {w}:</b> {escape_html(ans)}</div>" for w, ans in sorted(p82['workouts'].items()))
-        ref_blocks.append(K.ref_block("Forensic Proofreading Workouts (1–6)", w_html))
+        for w, ans in sorted(p82['workouts'].items()):
+            ref_blocks.append(K.ref_block(f"Forensic Proofreading Workout {w} Key", f"<div>{escape_html(ans)}</div>"))
 
-    # 5. Exam Mocks Proofreading
+    # 5. Exam Mocks Proofreading (each mock is its own ref_block)
     if 'exam_mocks_proof_summary' in p82:
-        m_html = "".join(f"<div style='margin-bottom:1.5mm;'><b>Mock {m}:</b> {escape_html(ans)}</div>" for m, ans in sorted(p82['exam_mocks_proof_summary'].items()))
-        ref_blocks.append(K.ref_block("Workplace Writing Mock Exams Mark Schemes", m_html))
+        for m, ans in sorted(p82['exam_mocks_proof_summary'].items()):
+            ref_blocks.append(K.ref_block(f"Workplace Writing Mock {m} Mark Scheme", f"<div>{escape_html(ans)}</div>"))
 
-    # 6. SPaG Glossary
+    # 6. SPaG Glossary (split into 2 balanced blocks)
     glossary_l2 = [
         ("Active Voice", "Sentence structure where the subject performs the action (e.g. 'The manager approved the report')."),
         ("Passive Voice", "Sentence structure where the subject receives the action (e.g. 'The report was approved by the manager')."),
@@ -383,25 +632,31 @@ def build_spag_l2():
         ("Semicolon", "Punctuation mark (;) used to link closely related independent clauses or separate items in a complex list."),
         ("Subject-Verb Agreement", "The grammatical rule requiring singular subjects to take singular verbs and plural subjects to take plural verbs.")
     ]
-    g_html = "".join(f"<dl><dt>{escape_html(t)}</dt><dd>{escape_html(d)}</dd></dl>" for t, d in glossary_l2)
-    ref_blocks.append(K.ref_block("Essential Functional SPaG Reference Glossary", g_html))
+    ref_blocks.append(K.ref_block(
+        "Essential SPaG Glossary (A–F)",
+        "".join(f"<dl><dt>{escape_html(t)}</dt><dd>{escape_html(d)}</dd></dl>" for t, d in glossary_l2[:6])
+    ))
+    ref_blocks.append(K.ref_block(
+        "Essential SPaG Glossary (M–S)",
+        "".join(f"<dl><dt>{escape_html(t)}</dt><dd>{escape_html(d)}</dd></dl>" for t, d in glossary_l2[6:])
+    ))
 
     # 7. Index
     index_l2 = [
-        ("A", [("Active and passive voice", "42"), ("Apostrophes for possession", "28"), ("Apostrophes for omission", "30")]),
-        ("C", [("Capital letters", "12"), ("Colons in lists and announcements", "34"), ("Comma splices", "8"), ("Compound sentences", "16")]),
-        ("D", [("Dashes and hyphens", "36"), ("Dependent clauses", "10")]),
-        ("F", [("Fragments", "6")]),
-        ("H", [("Homophones in workplace writing", "48")]),
-        ("M", [("Modal verbs and tone", "40")]),
-        ("P", [("Paragraph structure", "24"), ("Parenthetical commas", "20")]),
-        ("R", [("Relative clauses", "18")]),
-        ("S", [("Semicolons", "32"), ("Subject-verb agreement", "22")]),
-        ("T", [("Tenses (past, present, perfect)", "38")])
+        ("A", [("Active and passive voice", "37"), ("Apostrophes for possession", "27"), ("Apostrophes for omission", "25")]),
+        ("C", [("Colons in lists & explanations", "19"), ("Comma splices", "9"), ("Complex sentences", "43")]),
+        ("D", [("Dashes and brackets", "21"), ("Dependent clauses", "43")]),
+        ("F", [("FANBOYS conjunctions", "11"), ("Fragments", "7")]),
+        ("H", [("Homophones & confusables", "51, 53"), ("Hyphens", "23")]),
+        ("M", [("Modal verbs and diplomacy", "35"), ("Morphology (prefixes/suffixes)", "55")]),
+        ("P", [("Parallel structure in lists", "47"), ("Parenthetical commas", "15")]),
+        ("R", [("Register transformation", "49"), ("Relative clauses", "45")]),
+        ("S", [("Semicolons", "17"), ("Subject-verb agreement", "39, 41")]),
+        ("T", [("Tenses (past simple vs perfect)", "31, 33")])
     ]
     ix_html = ""
     for letter, entries in index_l2:
-        items = "".join(f"<div class='ix'><span>{escape_html(t)}</span><span>{escape_html(p)}</span></div>" for t, p in entries)
+        items = "".join(f"<div class='ix'><span>{escape_html(t)}</span><span>p.{escape_html(p)}</span></div>" for t, p in entries)
         ix_html += f"<div class='ix-letter'>{letter}</div>{items}"
     ref_blocks.append(K.ref_block("Subject, Grammar &amp; Mechanics Index", ix_html))
 
@@ -413,6 +668,7 @@ def build_spag_l2():
     p_curr += len(ref_page_list)
 
     # Candidate Self-Audit Matrix
+    audit_page_no = p_curr
     p_audit_body = (
         K.page_title("Candidate SPaG Self-Assessment Matrix &amp; Skill Audit", kicker="Final Independent Evaluation", badge="AUDIT")
         + K.box_html(
@@ -450,29 +706,57 @@ def build_spag_l2():
         pages.append(K.page(p_ibc_body, header=(BOOK, "Tutor Endorsement"), footer=BOOK, page_no=p_curr))
         p_curr += 1
 
+    # Populate p2: 2-Column Table of Contents
+    toc_left = [
+        ("DIAG", "Diagnostic Audit &amp; Routing", [
+            ("D1–D4", "Baseline Diagnostic Assessment (Q1–Q10)", "3"),
+        ]),
+        ("U1–U18", "Grammar in Use Units (Part 1)", [
+            (f"U{u['unit']}", u["title"], str(unit_start_pages[u["unit"]]))
+            for u in all_units[:18]
+        ]),
+    ]
+    toc_right = [
+        ("U19–U26", "Grammar in Use Units (Part 2)", [
+            (f"U{u['unit']}", u["title"], str(unit_start_pages[u["unit"]]))
+            for u in all_units[18:]
+        ]),
+        ("VOCAB", "Visual Vocabulary in Use Modules (V1–V6)", [
+            (f"V{i+1}", clean_mod_title(vocab_mods[i]["title"]), str(vocab_start_pages[i+1]))
+            for i in range(len(vocab_mods))
+        ]),
+        ("DRILLS", "Proofreading Workouts &amp; Mock Exams", [
+            ("W1–W12", "12 Forensic Proofreading Workouts", str(workouts_start_page)),
+            ("M1–M3", "3 Workplace Writing Mock Examinations", str(mocks_start_page)),
+        ]),
+        ("REF", "Solutions, Glossary, Index &amp; Audit", [
+            ("SOL", "Diagnostic, Unit 1–26 &amp; Workout Keys", str(ref_start_page)),
+            ("AUDIT", "Candidate SPaG Self-Assessment Matrix", str(audit_page_no)),
+        ]),
+    ]
+    pages[1] = spag_toc_page(
+        "SPaG Level 2 Mastery",
+        "The Complete 2-Page Spread Grammar, Punctuation &amp; Vocabulary Workbook",
+        toc_left, toc_right, BOOK
+    )
+
     # Back Cover
     pages.append(K.back_cover(back_cov))
 
     print(f"Total Pages Assembled: {len(pages)}")
     out_pdf = DOWNLOADS / "MasterFunctionalSkills_SPaG_Level_2_Mastery.pdf"
-    res = K.render_pdf(pages, out_pdf, theme=K.theme_from_cover(front_cov), entry3=False, title="Master Functional Skills - SPaG Level 2 Mastery")
-    print(f"Rendered: {res['pdf']}")
-
-    # Copy to ~/Documents
+    res = K.render_pdf(pages, out_pdf, theme=cover_theme, entry3=False, title="Master Functional Skills - SPaG Level 2 Mastery")
     shutil.copyfile(out_pdf, DOCUMENTS / out_pdf.name)
-
-    # Run QA report
-    rep = K.qa_report(out_pdf, dpi=50)
-    K.print_report(rep)
-    return rep
+    print(f"Rendered: {res['pdf']} | Overflows: {res.get('overflow', [])}")
+    return res
 
 
 # =============================================================================
-# 2. SPaG Level 1 Mastery (100 Pages)
+# 2. SPaG Level 1 Mastery
 # =============================================================================
 def build_spag_l1():
     print("\n" + "="*70)
-    print("BUILDING: MasterFunctionalSkills_SPaG_Level_1_Mastery.pdf (A4 Fill-The-Page)")
+    print("BUILDING: MasterFunctionalSkills_SPaG_Level_1_Mastery.pdf")
     print("="*70)
 
     BOOK = "SPaG Level 1 Mastery"
@@ -481,33 +765,18 @@ def build_spag_l1():
 
     all_units = u_l1.L1_UNITS_26
     pages = []
-    used_photos = set()
+    photo_cursor = [18]  # Offset into WIDE_THEMATIC_POOL for variety
 
-    def P(kw):
-        p = get_photo(kw, "spag", used_photos) or get_photo(kw, "workplace_office", used_photos) or get_photo(kw, None, used_photos)
-        if p:
-            used_photos.add(p)
-        return p
+    def next_wide_photo():
+        rel = WIDE_THEMATIC_POOL[photo_cursor[0] % len(WIDE_THEMATIC_POOL)]
+        photo_cursor[0] += 1
+        return rel
 
     # p1: Front Cover
     pages.append(K.front_cover(front_cov))
 
-    # p2: Inside Cover
-    pages.append(K.inside_cover(
-        "Spelling, Punctuation &amp; Grammar",
-        "Level 1 &bull; Core Principles, Everyday Work Scenarios &amp; Applied Practice",
-        "SPaG Level 1",
-        [
-            ("1&ndash;4", "Diagnostic Assessment &amp; Skill Routing", "3"),
-            ("5&ndash;56", "26 Two-Page Murphy 'Grammar in Use' Units", "7"),
-            ("57&ndash;68", "6 Visual Vocabulary in Use Modules", "59"),
-            ("69&ndash;80", "12 Practical Proofreading &amp; Grammar Drills", "71"),
-            ("81&ndash;88", "4 Realistic Workplace Writing Tasks", "83"),
-            ("89&ndash;98", "Comprehensive Explanatory Answer Keys", "91"),
-            ("99", "Candidate Self-Audit &amp; Progress Matrix", "99"),
-        ],
-        footer=BOOK
-    ))
+    # p2: Placeholder for 2-Column Table of Contents
+    pages.append(None)
 
     # p3-6: Diagnostic Assessment (4 pages, 10 authentic questions total)
     diag_qs = spag_data_l1.L1_DIAGNOSTIC["questions"]
@@ -520,36 +789,33 @@ def build_spag_l1():
             pr = q.get("prompt", "")
             top = q.get("topic", "")
             items.append({
-                "q": f"<b>{pr}</b> <span style='font-size:10.5pt;color:var(--muted);font-weight:400;'>({top})</span>",
+                "q": f"<b>{pr}</b> <span style='font-size:10pt;color:var(--muted);font-weight:400;'>({top})</span>",
                 "options": clean_opts,
                 "marks": 1
             })
         return items
 
-    # Page 3: Q1-3 (3 questions)
-    p3_body = (
+    pages.append(K.page(
         K.page_title("Baseline Diagnostic Assessment &bull; Part 1 of 4",
                      kicker="Diagnostic Audit &bull; Questions 1&ndash;3",
                      lead="Answer each question carefully. Circle your chosen answer. Do not use a dictionary.")
         + K.exercise_list(make_ex_items(diag_qs[0:3]), start=1)
-        + K.fill_notes("Examiner Checkpoint &bull; Questions 1 to 3 Notes", min_mm=32)
-    )
-    pages.append(K.page(p3_body, header=(BOOK, "Diagnostic 1/4"), footer=BOOK, page_no=3))
+        + K.fill_notes("Examiner Checkpoint &bull; Questions 1 to 3 Notes", min_mm=30),
+        header=(BOOK, "Diagnostic 1/4"), footer=BOOK, page_no=3
+    ))
 
-    # Page 4: Q4-6 (3 questions)
-    p4_body = (
+    pages.append(K.page(
         K.page_title("Baseline Diagnostic Assessment &bull; Part 2 of 4",
                      kicker="Diagnostic Audit &bull; Questions 4&ndash;6",
-                     lead="Identify correct capitalization, punctuation, and sentence construction.")
+                     lead="Identify correct capitalisation, punctuation, and sentence construction.")
         + K.exercise_list(make_ex_items(diag_qs[3:6]), start=4)
-        + K.fill_notes("Examiner Checkpoint &bull; Questions 4 to 6 Notes", min_mm=32)
-    )
-    pages.append(K.page(p4_body, header=(BOOK, "Diagnostic 2/4"), footer=BOOK, page_no=4))
+        + K.fill_notes("Examiner Checkpoint &bull; Questions 4 to 6 Notes", min_mm=30),
+        header=(BOOK, "Diagnostic 2/4"), footer=BOOK, page_no=4
+    ))
 
-    # Page 5: Q7-8 (2 questions) + Scoring Matrix Table
     score_table = """<div class="box" style="padding:2.5mm 3.5mm;background:#fff;border:1.5px solid var(--soft);margin-top:2mm;">
-      <div style="font-weight:700;color:var(--primary);font-size:11.5pt;margin-bottom:1.5mm;">Diagnostic Performance Matrix &amp; Recommended Study Pathway</div>
-      <table style="width:100%;border-collapse:collapse;font-size:10pt;">
+      <div style="font-weight:700;color:var(--primary);font-size:11pt;margin-bottom:1.5mm;">Diagnostic Performance Matrix &amp; Recommended Study Pathway</div>
+      <table style="width:100%;border-collapse:collapse;font-size:9.6pt;">
         <thead>
           <tr style="background:var(--light);color:var(--primary);text-align:left;">
             <th style="padding:1.5mm;border:1px solid var(--soft);">Score Range</th>
@@ -567,32 +833,31 @@ def build_spag_l1():
           </tr>"""
     score_table += """</tbody></table></div>"""
 
-    p5_body = (
+    pages.append(K.page(
         K.page_title("Baseline Diagnostic Assessment &bull; Part 3 of 4",
                      kicker="Diagnostic Audit &bull; Questions 7&ndash;8",
                      lead="Grammar and syntax accuracy questions, followed by the diagnostic benchmark rubric.")
         + K.exercise_list(make_ex_items(diag_qs[6:8]), start=7)
         + score_table
-        + K.fill_notes("Personal Learning Target &amp; Study Priority", min_mm=26)
-    )
-    pages.append(K.page(p5_body, header=(BOOK, "Diagnostic 3/4"), footer=BOOK, page_no=5))
+        + K.fill_notes("Personal Learning Target &amp; Study Priority", min_mm=24),
+        header=(BOOK, "Diagnostic 3/4"), footer=BOOK, page_no=5
+    ))
 
-    # Page 6: Q9-10 (2 questions) + Candidate Action Plan
-    p6_body = (
+    pages.append(K.page(
         K.page_title("Baseline Diagnostic Assessment &bull; Part 4 of 4",
                      kicker="Diagnostic Audit &bull; Questions 9&ndash;10 &amp; Study Plan",
-                     lead="Final practical diagnostic questions and your personalized revision action plan.")
+                     lead="Final practical diagnostic questions and your personalised revision action plan.")
         + K.exercise_list(make_ex_items(diag_qs[8:10]), start=9)
-        + K.tip_pair("Check your diagnostic score against the answer keys on page 91.",
+        + K.tip_pair("Check your diagnostic score against the answer keys in the Reference Section.",
                      "Prioritise the specific units flagged in questions you found challenging.",
                      golden_title="Tutor Golden Rule", watch_title="Revision Target")
-        + K.fill_lines("Candidate Action Plan &amp; Priority Units to Master", min_mm=32, gap_mm=9.5)
-    )
-    pages.append(K.page(p6_body, header=(BOOK, "Diagnostic 4/4"), footer=BOOK, page_no=6))
+        + K.fill_lines("Candidate Action Plan &amp; Priority Units to Master", min_mm=30, gap_mm=9.5),
+        header=(BOOK, "Diagnostic 4/4"), footer=BOOK, page_no=6
+    ))
 
     # p7-58: 26 Units (52 pages)
     characters = [
-        ("Subi", "abdul tutor man", "#0c4a6e"),
+        ("Abdul", "abdul tutor man", "#0c4a6e"),
         ("Priya", "priya tutor woman", "#7c3aed"),
         ("Marcus", "marcus apprentice", "#0d9488"),
         ("Sarah", "sarah care nurse", "#be123c"),
@@ -600,8 +865,10 @@ def build_spag_l1():
     ]
 
     p_curr = 7
+    unit_start_pages = {}
     for u_idx, u in enumerate(all_units):
         u_num = u["unit"]
+        unit_start_pages[u_num] = p_curr
         char_name, char_kw, char_col = characters[u_idx % len(characters)]
 
         # --- Left Page: Learn ---
@@ -641,41 +908,45 @@ def build_spag_l1():
         pages.append(K.page(left_body, header=(BOOK, f"Unit {u_num} &bull; Learn"), footer=BOOK, page_no=p_curr))
         p_curr += 1
 
-        # --- Right Page: Practise ---
-        # Exercise A: MCQs (2 questions)
+        # --- Right Page: Practise (with wide-angle thematic photo banner & 1-line caption) ---
         ex_a_items = []
         for q_tuple in u.get("exercise_a", [])[:2]:
             q_text, opts = q_tuple[0], q_tuple[1]
             clean_opts = [o[3:] if len(o) > 3 and o[1] == ")" else o for o in opts]
             ex_a_items.append({"q": q_text, "options": clean_opts})
 
-        # Exercise B: Transformation (2 questions)
         ex_b_items = []
         for b_tuple in u.get("exercise_b", [])[:2]:
             prompt_type, original = b_tuple[0], b_tuple[1]
             ex_b_items.append((f"<b>[{prompt_type}]:</b> <i>{original}</i>", 2))
 
+        u_photo = next_wide_photo()
+        u_cap = f"Unit {u_num} Practical Scenario ({u.get('anchor_title', u['title'])}): Practising {u['title']}."
         right_body = (
             K.section("A", "Tick the correct sentence")
+            + spag_float_practice_card(u_photo, u_cap, width_mm=60)
             + K.exercise_list(ex_a_items)
+            + "<div style='clear:both;'></div>"
             + K.section("B", "Rewrite each sentence correctly")
             + K.exercise_list(ex_b_items, start=3)
-            + K.fill_lines(f"<span style='color:var(--accent)'>C &nbsp;Applied Practice:</span> Write two sentences of your own using the rules from Unit {u_num}.", min_mm=26, gap_mm=9)
+            + K.fill_lines(f"<span style='color:var(--accent)'>C &nbsp;Applied Practice:</span> Write two sentences of your own using the rules from Unit {u_num}.", min_mm=14, gap_mm=8.0)
         )
         pages.append(K.page(right_body, header=(BOOK, f"Unit {u_num} &bull; Practise"), footer=BOOK, page_no=p_curr))
         p_curr += 1
 
     # p59-70: 6 Vocab in Use Modules (12 pages: 2 pages each)
+    vocab_start_pages = {}
     vocab_mods = d_l1.VOCAB_MODULES
     for v_idx, vm in enumerate(vocab_mods):
-        v_title = vm["title"]
+        vocab_start_pages[v_idx + 1] = p_curr
+        v_title = clean_mod_title(vm["title"])
         table_rows = vm["tables"][0]["rows"]
         tiles = []
         for row in table_rows[:6]:
             pre, meaning, ex_sent = row[0], row[1], row[2]
             clean_pre = str(pre).strip()
             tiles.append((
-                P("workplace office meeting business"),
+                next_wide_photo(),
                 f"<b>{clean_pre}</b> &rarr; <span style='color:var(--accent);'>{meaning}</span>",
                 ex_sent
             ))
@@ -683,7 +954,7 @@ def build_spag_l1():
             K.page_title(f"Vocabulary Module {v_idx+1}: {v_title}",
                          kicker="Vocabulary in Use &bull; Visual Dictionary",
                          lead=vm.get("intro", "Essential words and spelling patterns for Functional Skills Level 1 English."))
-            + K.photo_grid(tiles, cols=3, fill=True, min_tile_mm=62)
+            + spag_vocab_grid(tiles)
         )
         pages.append(K.page(v_body_1, header=(BOOK, f"Vocab Module {v_idx+1} &bull; Dictionary"), footer=BOOK, page_no=p_curr))
         p_curr += 1
@@ -705,6 +976,7 @@ def build_spag_l1():
         p_curr += 1
 
     # p71-82: 12 Mixed Proofreading Workouts (12 pages)
+    workouts_start_page = p_curr
     workouts = d_l1.MIXED_WORKOUTS
     for w_idx in range(12):
         w = workouts[w_idx % len(workouts)]
@@ -726,6 +998,7 @@ def build_spag_l1():
         p_curr += 1
 
     # p83-88: 3 Mock Writing Exam Papers (6 pages: 2 pages each)
+    mocks_start_page = p_curr
     mocks = d_l1.EXAM_MOCKS
     for m_idx, m in enumerate(mocks[:3]):
         m_title = m["title"]
@@ -733,13 +1006,15 @@ def build_spag_l1():
         m_prompt = K.clean_legacy(m.get("writing_task_prompt", ""))
         m_marks = 12
 
+        m_photo = next_wide_photo()
         m_body_1 = (
             K.page_title(f"Official Mock Writing Exam {m_idx+1}", kicker=f"Exam Practice &bull; {m_marks} Marks", badge=f"M{m_idx+1}")
+            + spag_practice_banner(m_photo, f"Mock Writing Exam {m_idx+1}: {m_title}", height_mm=32)
             + K.box_html(f"<p>{m_scenario}</p><div style='margin-top:2mm;font-weight:700;'>Your Writing Task:</div><p>{m_prompt}</p>", f"Task: {m_title}")
-            + K.tip_pair("Plan your ideas in 2-3 short paragraphs before starting.",
+            + K.tip_pair("Plan your ideas in 2–3 short paragraphs before starting.",
                          "Check capital letters for 'I', names, and days of the week.",
                          golden_title="Level 1 Success Checklist", watch_title="Common Slip")
-            + K.fill_lines("Candidate Notes &amp; Word Plan", min_mm=55, gap_mm=10)
+            + K.fill_lines("Candidate Notes &amp; Word Plan", min_mm=34, gap_mm=9.5)
         )
         pages.append(K.page(m_body_1, header=(BOOK, f"Mock Exam {m_idx+1} &bull; Briefing"), footer=BOOK, page_no=p_curr))
         p_curr += 1
@@ -751,88 +1026,98 @@ def build_spag_l1():
         pages.append(K.page(m_body_2, header=(BOOK, f"Mock Exam {m_idx+1} &bull; Response"), footer=BOOK, page_no=p_curr))
         p_curr += 1
 
-    # Reference Back Matter via K.ref_pages (Condensed Black Reference Style)
+    # Reference Back Matter via K.ref_pages (Granular blocks so 0 overflows)
+    ref_start_page = p_curr
     ref_blocks = []
 
-    # 1. Diagnostic Assessment Solutions
+    # 1. Diagnostic Assessment Solutions (split evenly into chunks)
     p77 = d_l1.ANSWER_KEYS_6P.get('page_77', {})
     if 'diagnostic_answers' in p77:
-        qa_diag = "".join(f"<div class='qa'><span class='q-num'>Q{i+1}</span><span class='q-ans'>{escape_html(ans)}</span></div>" for i, ans in enumerate(p77['diagnostic_answers']))
-        ref_blocks.append(K.ref_block("Diagnostic Assessment Worked Solutions (Questions 1–10)", qa_diag))
+        d_ans = p77['diagnostic_answers']
+        chunk_sz = 10 if len(d_ans) > 10 else 5
+        for c_start in range(0, len(d_ans), chunk_sz):
+            c_slice = d_ans[c_start:c_start + chunk_sz]
+            qa_html = "".join(f"<div class='qa'><span class='q-num'>Q{c_start+i+1}</span><span class='q-ans'>{escape_html(ans)}</span></div>" for i, ans in enumerate(c_slice))
+            ref_blocks.append(K.ref_block(f"Diagnostic Solutions (Questions {c_start+1}–{c_start+len(c_slice)})", qa_html))
 
-    # 2. Units 1 to 26 Worked Solutions
+    # 2. Units 1 to 26 Worked Solutions (each unit is its own ref_block)
     for k in sorted(d_l1.ANSWER_KEYS_6P.keys()):
         data = d_l1.ANSWER_KEYS_6P[k]
         if 'units' in data:
             for unum, uinfo in sorted(data['units'].items()):
                 ex_a = escape_html(uinfo.get('ex_a', ''))
                 ex_b = escape_html(uinfo.get('ex_b', ''))
-                u_html = f"<div style='margin-bottom:1.5mm;'><b>Section A (Drill):</b> {ex_a}</div><div><b>Section B (Rewrite):</b> {ex_b}</div>"
+                u_html = f"<div style='margin-bottom:1.2mm;'><b>Section A (Drill):</b> {ex_a}</div><div><b>Section B (Rewrite):</b> {ex_b}</div>"
                 ref_blocks.append(K.ref_block(f"Unit {unum} Worked Solutions", u_html))
 
-    # 3. Vocab Modules
+    # 3. Vocab Modules (split into Modules 1-3 and Modules 4-6)
     p81 = d_l1.ANSWER_KEYS_6P.get('page_81', {})
     if 'vocab_modules' in p81:
-        v_html = "".join(f"<div style='margin-bottom:1mm;'><b>Module {m}:</b> {escape_html(ans)}</div>" for m, ans in sorted(p81['vocab_modules'].items()))
-        ref_blocks.append(K.ref_block("Vocabulary in Use Answer Keys (Modules 1–6)", v_html))
+        vm_items = sorted(p81['vocab_modules'].items())
+        v1 = "".join(f"<div style='margin-bottom:1mm;'><b>Module {m}:</b> {escape_html(ans)}</div>" for m, ans in vm_items[:3])
+        v2 = "".join(f"<div style='margin-bottom:1mm;'><b>Module {m}:</b> {escape_html(ans)}</div>" for m, ans in vm_items[3:])
+        ref_blocks.append(K.ref_block("Vocabulary in Use Keys (Modules 1–3)", v1))
+        ref_blocks.append(K.ref_block("Vocabulary in Use Keys (Modules 4–6)", v2))
 
-    # 4. Mixed Proofreading Workouts
+    # 4. Mixed Proofreading Workouts (each workout is its own ref_block)
     p82 = d_l1.ANSWER_KEYS_6P.get('page_82', {})
     if 'mixed_workouts' in p82:
-        w_parts = []
         for w, ans in sorted(p82['mixed_workouts'].items()):
             if isinstance(ans, dict):
                 p_a = f"<div><b>Part A:</b> {escape_html(ans.get('part_a', ''))}</div>" if 'part_a' in ans else ""
                 p_b = f"<div><b>Part B:</b> {escape_html(ans.get('part_b', ''))}</div>" if 'part_b' in ans else ""
                 p_c = f"<div><b>Part C:</b> {escape_html(ans.get('part_c', ''))}</div>" if 'part_c' in ans else ""
-                w_parts.append(f"<div style='margin-bottom:1.5mm;'><b>Workout {w}:</b>{p_a}{p_b}{p_c}</div>")
+                ref_blocks.append(K.ref_block(f"Mixed Proofreading Workout {w} Key", f"{p_a}{p_b}{p_c}"))
             else:
-                w_parts.append(f"<div style='margin-bottom:1.5mm;'><b>Workout {w}:</b> {escape_html(ans)}</div>")
-        ref_blocks.append(K.ref_block("Mixed Proofreading Workouts (1–6)", "".join(w_parts)))
+                ref_blocks.append(K.ref_block(f"Mixed Proofreading Workout {w} Key", f"<div>{escape_html(ans)}</div>"))
 
-    # 5. Exam Mocks Proofreading
+    # 5. Exam Mocks Proofreading (each mock is its own ref_block)
     if 'exam_mocks' in p82:
-        m_parts = []
         for m, ans in sorted(p82['exam_mocks'].items()):
             if isinstance(ans, dict):
                 p_ans = "<br>".join(escape_html(p) for p in ans.get('proof_answers', []))
-                rub = f"<em>Rubric:</em> {escape_html(ans.get('writing_rubric', ''))}" if 'writing_rubric' in ans else ""
-                m_parts.append(f"<div style='margin-bottom:1.5mm;'><b>Mock {m}:</b><br>{p_ans}<br>{rub}</div>")
+                rub = f"<div style='margin-top:1mm;'><em>Rubric:</em> {escape_html(ans.get('writing_rubric', ''))}</div>" if 'writing_rubric' in ans else ""
+                ref_blocks.append(K.ref_block(f"Mock Writing Exam {m} Mark Scheme", f"<div>{p_ans}</div>{rub}"))
             else:
-                m_parts.append(f"<div style='margin-bottom:1.5mm;'><b>Mock {m}:</b> {escape_html(ans)}</div>")
-        ref_blocks.append(K.ref_block("Mock Writing Examination Mark Schemes", "".join(m_parts)))
+                ref_blocks.append(K.ref_block(f"Mock Writing Exam {m} Mark Scheme", f"<div>{escape_html(ans)}</div>"))
 
-    # 6. SPaG Glossary
+    # 6. SPaG Glossary (split into 2 balanced blocks)
     glossary_l1 = [
         ("Capital Letter", "Used at the start of every sentence, for the word 'I', people's names, places, days, and months."),
         ("Full Stop", "Punctuation mark (.) used to mark the end of a complete statement."),
         ("Question Mark", "Punctuation mark (?) used at the end of a direct question."),
         ("Exclamation Mark", "Punctuation mark (!) used to show strong feeling, surprise, or urgency."),
         ("Comma in Lists", "Used to separate items in a list (e.g. 'paper, pens, and pencils')."),
-        ("Conjunction", "A linking word used to join two sentences (e.g. and, but, so, because)."),
+        ("Conjunction", "A linking word used to join two clauses (e.g. and, but, so, because, although)."),
         ("Past Tense", "Verb forms used to describe things that happened yesterday or in the past (e.g. walked, saw)."),
         ("Present Tense", "Verb forms used for things happening now or regularly (e.g. walks, sees)."),
         ("Subject-Verb Agreement", "Matching singular subjects with singular verbs (e.g. 'He works' vs 'They work')."),
         ("Homophone", "Words that sound the same but have different spellings and meanings (e.g. there, their, they're).")
     ]
-    g_html = "".join(f"<dl><dt>{escape_html(t)}</dt><dd>{escape_html(d)}</dd></dl>" for t, d in glossary_l1)
-    ref_blocks.append(K.ref_block("Functional Skills SPaG Glossary", g_html))
+    ref_blocks.append(K.ref_block(
+        "Functional Skills SPaG Glossary (Part 1)",
+        "".join(f"<dl><dt>{escape_html(t)}</dt><dd>{escape_html(d)}</dd></dl>" for t, d in glossary_l1[:5])
+    ))
+    ref_blocks.append(K.ref_block(
+        "Functional Skills SPaG Glossary (Part 2)",
+        "".join(f"<dl><dt>{escape_html(t)}</dt><dd>{escape_html(d)}</dd></dl>" for t, d in glossary_l1[5:])
+    ))
 
     # 7. Index
     index_l1 = [
-        ("A", [("Annexe D spelling words", "50"), ("Apostrophes for omission", "28"), ("Apostrophes for possession", "30")]),
-        ("C", [("Capital letters", "10"), ("Commas in lists", "16"), ("Conjunctions (and, but)", "18")]),
-        ("E", [("Ending sentences (. ! ?)", "12"), ("Exclamation marks", "14")]),
-        ("F", [("Full stops", "12")]),
-        ("H", [("Homophones (there/their/they're)", "44")]),
-        ("P", [("Paragraphs", "24"), ("Past tense regular and irregular", "20")]),
-        ("Q", [("Question marks", "14")]),
-        ("S", [("Subject-verb agreement", "22"), ("Suffixes (-ful, -less)", "48")]),
-        ("U", [("Using because and so", "18")])
+        ("A", [("Apostrophes for contractions", "21"), ("Apostrophes for possession", "23, 29")]),
+        ("C", [("Capital letters (MINTS)", "7, 11"), ("Commas in lists", "17"), ("Conjunctions", "13, 15")]),
+        ("E", [("Ending sentences (. ! ?)", "7, 9"), ("Exclamation marks", "9")]),
+        ("F", [("Future intentions (will/going to)", "39")]),
+        ("H", [("Homophones (there/their/to/two)", "49, 51, 53")]),
+        ("P", [("Past tense regular & irregular", "35, 37"), ("Plural nouns", "25, 27"), ("Prefixes", "55")]),
+        ("Q", [("Question marks", "9")]),
+        ("S", [("Subject-verb agreement", "41, 43"), ("Suffixes (-ful, -less, -ly)", "57")]),
+        ("T", [("Tenses (present simple/continuous)", "31, 33")])
     ]
     ix_html = ""
     for letter, entries in index_l1:
-        items = "".join(f"<div class='ix'><span>{escape_html(t)}</span><span>{escape_html(p)}</span></div>" for t, p in entries)
+        items = "".join(f"<div class='ix'><span>{escape_html(t)}</span><span>p.{escape_html(p)}</span></div>" for t, p in entries)
         ix_html += f"<div class='ix-letter'>{letter}</div>{items}"
     ref_blocks.append(K.ref_block("Subject &amp; Mechanics Index", ix_html))
 
@@ -844,6 +1129,7 @@ def build_spag_l1():
     p_curr += len(ref_page_list)
 
     # Candidate Self-Audit Matrix
+    audit_page_no = p_curr
     p_audit_body = (
         K.page_title("Candidate SPaG Self-Assessment Matrix &amp; Progress Chart", kicker="Level 1 SPaG Standards", badge="AUDIT")
         + K.box_html(
@@ -881,26 +1167,57 @@ def build_spag_l1():
         pages.append(K.page(p_ibc_body, header=(BOOK, "Tutor Endorsement"), footer=BOOK, page_no=p_curr))
         p_curr += 1
 
+    # Populate p2: 2-Column Table of Contents
+    toc_left = [
+        ("DIAG", "Diagnostic Audit &amp; Routing", [
+            ("D1–D4", "Baseline Diagnostic Assessment (Q1–Q10)", "3"),
+        ]),
+        ("U1–U18", "Grammar in Use Units (Part 1)", [
+            (f"U{u['unit']}", u["title"], str(unit_start_pages[u["unit"]]))
+            for u in all_units[:18]
+        ]),
+    ]
+    toc_right = [
+        ("U19–U26", "Grammar in Use Units (Part 2)", [
+            (f"U{u['unit']}", u["title"], str(unit_start_pages[u["unit"]]))
+            for u in all_units[18:]
+        ]),
+        ("VOCAB", "Visual Vocabulary in Use Modules (V1–V6)", [
+            (f"V{i+1}", clean_mod_title(vocab_mods[i]["title"]), str(vocab_start_pages[i+1]))
+            for i in range(len(vocab_mods))
+        ]),
+        ("DRILLS", "Proofreading Workouts &amp; Mock Exams", [
+            ("W1–W12", "12 Practical Proofreading Workouts", str(workouts_start_page)),
+            ("M1–M3", "3 Workplace Writing Mock Examinations", str(mocks_start_page)),
+        ]),
+        ("REF", "Solutions, Glossary, Index &amp; Audit", [
+            ("SOL", "Diagnostic, Unit 1–26 &amp; Workout Keys", str(ref_start_page)),
+            ("AUDIT", "Candidate SPaG Self-Assessment Matrix", str(audit_page_no)),
+        ]),
+    ]
+    pages[1] = spag_toc_page(
+        "SPaG Level 1 Mastery",
+        "Core Principles, Everyday Work Scenarios &amp; Applied Practice Workbook",
+        toc_left, toc_right, BOOK
+    )
+
     # Back Cover
     pages.append(K.back_cover(back_cov))
 
     print(f"Total Pages Assembled: {len(pages)}")
     out_pdf = DOWNLOADS / "MasterFunctionalSkills_SPaG_Level_1_Mastery.pdf"
-    res = K.render_pdf(pages, out_pdf, theme=K.theme_from_cover(front_cov), entry3=False, title="Master Functional Skills - SPaG Level 1 Mastery")
-    print(f"Rendered: {res['pdf']}")
-
+    res = K.render_pdf(pages, out_pdf, theme=cover_theme, entry3=False, title="Master Functional Skills - SPaG Level 1 Mastery")
     shutil.copyfile(out_pdf, DOCUMENTS / out_pdf.name)
-    rep = K.qa_report(out_pdf, dpi=50)
-    K.print_report(rep)
-    return rep
+    print(f"Rendered: {res['pdf']} | Overflows: {res.get('overflow', [])}")
+    return res
 
 
 # =============================================================================
-# 3. SPaG Entry Level 3 Mastery (96 Pages, 14pt Body Font)
+# 3. SPaG Entry Level 3 Mastery
 # =============================================================================
 def build_spag_e3():
     print("\n" + "="*70)
-    print("BUILDING: MasterFunctionalSkills_SPaG_Entry_Level_3_Mastery.pdf (A4 14pt Entry 3)")
+    print("BUILDING: MasterFunctionalSkills_SPaG_Entry_Level_3_Mastery.pdf")
     print("="*70)
 
     BOOK = "SPaG Entry Level 3 Mastery"
@@ -909,33 +1226,18 @@ def build_spag_e3():
 
     all_units = u_e3.units_data
     pages = []
-    used_photos = set()
+    photo_cursor = [56]  # Offset into WIDE_THEMATIC_POOL starting at e3_thematic!
 
-    def P(kw):
-        p = get_photo(kw, "spag", used_photos) or get_photo(kw, "classroom_studying_adults", used_photos) or get_photo(kw, None, used_photos)
-        if p:
-            used_photos.add(p)
-        return p
+    def next_wide_photo():
+        rel = WIDE_THEMATIC_POOL[photo_cursor[0] % len(WIDE_THEMATIC_POOL)]
+        photo_cursor[0] += 1
+        return rel
 
     # p1: Front Cover
     pages.append(K.front_cover(front_cov))
 
-    # p2: Inside Cover
-    pages.append(K.inside_cover(
-        "Spelling, Punctuation &amp; Grammar",
-        "Entry Level 3 &bull; Visual Rules, Clear Pictures &amp; Step-by-Step Handwriting Drills",
-        "SPaG Entry Level 3",
-        [
-            ("1&ndash;4", "Diagnostic Assessment &amp; Easy Visual Selector", "3"),
-            ("5&ndash;52", "24 Two-Page Murphy 'Grammar in Use' Units", "7"),
-            ("53&ndash;64", "6 Phonics &amp; High-Frequency Word Banks", "55"),
-            ("65&ndash;76", "12 Practical Sentence Building Workouts", "67"),
-            ("77&ndash;84", "4 Practical Workplace Form-Filling Mocks", "79"),
-            ("85&ndash;94", "Step-by-Step Explanatory Answer Keys", "87"),
-            ("95", "Learner Progress Tracker &amp; Sticker Chart", "95"),
-        ],
-        footer=BOOK
-    ))
+    # p2: Placeholder for 2-Column Table of Contents
+    pages.append(None)
 
     # p3-6: Diagnostic Assessment (4 pages, 10 authentic questions total)
     diag_qs = d_e3.DIAGNOSTIC_QUESTIONS
@@ -952,30 +1254,27 @@ def build_spag_e3():
             })
         return items
 
-    # Page 3: Q1-3 (3 questions)
-    p3_body = (
+    pages.append(K.page(
         K.page_title("Visual Diagnostic Assessment &bull; Part 1 of 4",
                      kicker="Entry Level 3 &bull; Questions 1&ndash;3",
                      lead="Tick the best answer for each question. Circle your chosen answer. Do not use a dictionary.")
         + K.exercise_list(make_ex_items(diag_qs[0:3]), start=1)
-        + K.fill_notes("Tutor Diagnostic Notes &bull; Questions 1 to 3", min_mm=32)
-    )
-    pages.append(K.page(p3_body, header=(BOOK, "Diagnostic 1/4"), footer=BOOK, page_no=3))
+        + K.fill_notes("Tutor Diagnostic Notes &bull; Questions 1 to 3", min_mm=30),
+        header=(BOOK, "Diagnostic 1/4"), footer=BOOK, page_no=3
+    ))
 
-    # Page 4: Q4-6 (3 questions)
-    p4_body = (
+    pages.append(K.page(
         K.page_title("Visual Diagnostic Assessment &bull; Part 2 of 4",
                      kicker="Entry Level 3 &bull; Questions 4&ndash;6",
                      lead="Identify correct capitalisation, punctuation, and sentence construction.")
         + K.exercise_list(make_ex_items(diag_qs[3:6]), start=4)
-        + K.fill_notes("Tutor Diagnostic Notes &bull; Questions 4 to 6", min_mm=32)
-    )
-    pages.append(K.page(p4_body, header=(BOOK, "Diagnostic 2/4"), footer=BOOK, page_no=4))
+        + K.fill_notes("Tutor Diagnostic Notes &bull; Questions 4 to 6", min_mm=30),
+        header=(BOOK, "Diagnostic 2/4"), footer=BOOK, page_no=4
+    ))
 
-    # Page 5: Q7-8 (2 questions) + Scoring Matrix Table
     score_table = """<div class="box" style="padding:2.5mm 3.5mm;background:#fff;border:1.5px solid var(--soft);margin-top:2mm;">
-      <div style="font-weight:700;color:var(--primary);font-size:11.5pt;margin-bottom:1.5mm;">Diagnostic Performance Matrix &amp; Study Pathway</div>
-      <table style="width:100%;border-collapse:collapse;font-size:10pt;">
+      <div style="font-weight:700;color:var(--primary);font-size:11pt;margin-bottom:1.5mm;">Diagnostic Performance Matrix &amp; Study Pathway</div>
+      <table style="width:100%;border-collapse:collapse;font-size:9.6pt;">
         <thead>
           <tr style="background:var(--light);color:var(--primary);text-align:left;">
             <th style="padding:1.5mm;border:1px solid var(--soft);">Score</th>
@@ -987,7 +1286,7 @@ def build_spag_e3():
           <tr>
             <td style="padding:1.5mm;border:1px solid var(--soft);font-weight:700;">8&ndash;10</td>
             <td style="padding:1.5mm;border:1px solid var(--soft);color:var(--accent);font-weight:600;">Entry 3 Confident</td>
-            <td style="padding:1.5mm;border:1px solid var(--soft);">Consolidate complex sentences and prepare for Level 1 progression.</td>
+            <td style="padding:1.5mm;border:1px solid var(--soft);">Consolidate compound sentences and prepare for Level 1 progression.</td>
           </tr>
           <tr>
             <td style="padding:1.5mm;border:1px solid var(--soft);font-weight:700;">5&ndash;7</td>
@@ -1001,32 +1300,31 @@ def build_spag_e3():
           </tr>
         </tbody></table></div>"""
 
-    p5_body = (
+    pages.append(K.page(
         K.page_title("Visual Diagnostic Assessment &bull; Part 3 of 4",
                      kicker="Entry Level 3 &bull; Questions 7&ndash;8",
                      lead="Grammar and punctuation check, followed by your diagnostic pathway matrix.")
         + K.exercise_list(make_ex_items(diag_qs[6:8]), start=7)
         + score_table
-        + K.fill_notes("Personal Learning Target &amp; Study Priority", min_mm=26)
-    )
-    pages.append(K.page(p5_body, header=(BOOK, "Diagnostic 3/4"), footer=BOOK, page_no=5))
+        + K.fill_notes("Personal Learning Target &amp; Study Priority", min_mm=24),
+        header=(BOOK, "Diagnostic 3/4"), footer=BOOK, page_no=5
+    ))
 
-    # Page 6: Q9-10 (2 questions) + Action Plan
-    p6_body = (
+    pages.append(K.page(
         K.page_title("Visual Diagnostic Assessment &bull; Part 4 of 4",
                      kicker="Entry Level 3 &bull; Questions 9&ndash;10 &amp; Study Plan",
-                     lead="Final diagnostic questions and your personalized study action plan.")
+                     lead="Final diagnostic questions and your personalised study action plan.")
         + K.exercise_list(make_ex_items(diag_qs[8:10]), start=9)
-        + K.tip_pair("Check your diagnostic answers with your tutor or on page 91.",
-                     "Mark the units you need to practice first on your progress chart.",
+        + K.tip_pair("Check your diagnostic answers with your tutor or in the Reference Section.",
+                     "Mark the units you need to practise first on your progress chart.",
                      golden_title="Tutor Golden Rule", watch_title="Next Steps")
-        + K.fill_lines("Candidate Action Plan &amp; Priority Units to Master", min_mm=32, gap_mm=9.5)
-    )
-    pages.append(K.page(p6_body, header=(BOOK, "Diagnostic 4/4"), footer=BOOK, page_no=6))
+        + K.fill_lines("Candidate Action Plan &amp; Priority Units to Master", min_mm=30, gap_mm=9.5),
+        header=(BOOK, "Diagnostic 4/4"), footer=BOOK, page_no=6
+    ))
 
     # p7-54: 24 Units (48 pages)
     characters = [
-        ("Subi", "abdul tutor man", "#0c4a6e"),
+        ("Abdul", "abdul tutor man", "#0c4a6e"),
         ("Sarah", "sarah care nurse", "#be123c"),
         ("Marcus", "marcus apprentice", "#0d9488"),
         ("Priya", "priya tutor woman", "#7c3aed"),
@@ -1034,8 +1332,10 @@ def build_spag_e3():
     ]
 
     p_curr = 7
+    unit_start_pages = {}
     for u_idx, u in enumerate(all_units):
         u_num = u["unit"]
+        unit_start_pages[u_num] = p_curr
         char_name, char_kw, char_col = characters[u_idx % len(characters)]
 
         # --- Left Page: Learn ---
@@ -1072,11 +1372,10 @@ def build_spag_e3():
                 stacked=False, bad_label="&#10007; Not Quite Right", good_label="&#10003; Good Sentence"
             )
         )
-
         pages.append(K.page(left_body, header=(BOOK, f"Unit {u_num} &bull; Learn"), footer=BOOK, page_no=p_curr))
         p_curr += 1
 
-        # --- Right Page: Practise ---
+        # --- Right Page: Practise (with wide-angle thematic photo banner & 1-line caption) ---
         ex_a_items = []
         for q_tuple in u.get("exercise_a", [])[:2]:
             q_text, opts = q_tuple[0], q_tuple[1]
@@ -1088,17 +1387,22 @@ def build_spag_e3():
             prompt_type, original = b_tuple[0], b_tuple[1]
             ex_b_items.append((f"<b>[{prompt_type}]:</b> <i>{original}</i>", 2))
 
+        u_photo = next_wide_photo()
+        u_cap = f"Unit {u_num} Everyday Context ({u.get('anchor_title', u['title'])}): Practising {u['title']}."
         right_body = (
             K.section("A", "Tick the correct answer")
+            + spag_float_practice_card(u_photo, u_cap, width_mm=60)
             + K.exercise_list(ex_a_items)
+            + "<div style='clear:both;'></div>"
             + K.section("B", "Write the sentence correctly")
             + K.exercise_list(ex_b_items, start=3)
-            + K.fill_lines(f"<span style='color:var(--accent)'>C &nbsp;Your Turn:</span> Write one sentence of your own using the rule from Unit {u_num}.", min_mm=26, gap_mm=9.5)
+            + K.fill_lines(f"<span style='color:var(--accent)'>C &nbsp;Your Turn:</span> Write one sentence of your own using the rule from Unit {u_num}.", min_mm=14, gap_mm=8.0)
         )
         pages.append(K.page(right_body, header=(BOOK, f"Unit {u_num} &bull; Practise"), footer=BOOK, page_no=p_curr))
         p_curr += 1
 
     # p55-66: 6 Phonics & High-Frequency Word Banks (12 pages: 2 pages each)
+    wb_start_pages = {}
     word_banks = [
         ("High-Frequency Days, Months & Seasons", [("Monday", "First day of work week"), ("Friday", "End of the working week"), ("September", "Autumn college term starts"), ("Winter", "Cold season requiring warm clothing"), ("August", "Summer holiday month"), ("Wednesday", "Middle of the week")]),
         ("Everyday Workplace Signs & Safety Words", [("Danger", "Keep clear of hazard"), ("Caution", "Wet floor warning"), ("Exit", "Emergency fire escape"), ("Notice", "Staff information board"), ("Private", "Staff only access"), ("Entrance", "Main public doorway")]),
@@ -1109,10 +1413,11 @@ def build_spag_e3():
     ]
 
     for wb_idx, (wb_title, words) in enumerate(word_banks):
+        wb_start_pages[wb_idx + 1] = p_curr
         tiles = []
         for word, desc in words:
             tiles.append((
-                P("everyday objects workplace classroom"),
+                next_wide_photo(),
                 f"<b>{word}</b>",
                 desc
             ))
@@ -1120,7 +1425,7 @@ def build_spag_e3():
             K.page_title(f"Word Bank {wb_idx+1}: {wb_title}",
                          kicker="Entry Level 3 &bull; Phonics &amp; Word Banks",
                          lead="Essential words to recognise, read, and spell correctly every time.")
-            + K.photo_grid(tiles, cols=3, fill=True, min_tile_mm=62)
+            + spag_vocab_grid(tiles)
         )
         pages.append(K.page(wb_body_1, header=(BOOK, f"Word Bank {wb_idx+1}"), footer=BOOK, page_no=p_curr))
         p_curr += 1
@@ -1133,12 +1438,13 @@ def build_spag_e3():
                 (f"Write a short sentence using the word <b>{words[1][0]}</b>:", 2),
                 (f"Write a short sentence using the word <b>{words[2][0]}</b>:", 2)
             ])
-            + K.fill_notes(f"My Spelling Practice Box for Word Bank {wb_idx+1}", min_mm=30)
+            + K.fill_notes(f"My Spelling Practice Box for Word Bank {wb_idx+1}", min_mm=26)
         )
         pages.append(K.page(wb_body_2, header=(BOOK, f"Word Bank {wb_idx+1} &bull; Practice"), footer=BOOK, page_no=p_curr))
         p_curr += 1
 
     # p67-78: 12 Mixed Sentence Building Workouts (12 pages)
+    workouts_start_page = p_curr
     for w_idx in range(12):
         w_title = f"Sentence Building Workout {w_idx+1}"
         body = (
@@ -1157,12 +1463,13 @@ def build_spag_e3():
                 ("Rewrite sentence 2 with capital letters for 'My' and 'I':", 2),
                 ("Rewrite sentence 3 with a capital letter and question mark:", 2)
             ], start=1)
-            + K.fill_notes("Handwriting Practice &amp; Tutor Comments", 26)
+            + K.fill_notes("Handwriting Practice &amp; Tutor Comments", 22)
         )
         pages.append(K.page(body, header=(BOOK, f"Workout {w_idx+1}"), footer=BOOK, page_no=p_curr))
         p_curr += 1
 
     # p79-84: 3 Practical Workplace Form-Filling Mocks (6 pages: 2 pages each)
+    mocks_start_page = p_curr
     mock_tasks = [
         ("College Enrolment &amp; Registration Form", "Fill in your personal details, preferred course, and emergency contact."),
         ("Workplace Holiday Request Form", "State the dates you wish to book, your team, and supervisor approval."),
@@ -1170,68 +1477,73 @@ def build_spag_e3():
     ]
 
     for m_idx, (m_title, m_desc) in enumerate(mock_tasks):
+        m_photo = next_wide_photo()
         m_body_1 = (
             K.page_title(f"Mock Writing Task {m_idx+1}", kicker="Practical Writing &bull; 10 Marks", badge=f"M{m_idx+1}")
+            + spag_practice_banner(m_photo, f"Practical Writing Mock {m_idx+1}: {m_title.replace('&amp;', '&')}", height_mm=30)
             + K.box_html(
                 f"<p>{m_desc}</p>"
-                f"<div style='border:2px solid var(--soft); border-radius:6px; padding:3mm; background:#fff; margin-top:2mm;'>"
-                f"<div style='margin-bottom:2mm;'><b>First Name:</b> ____________________ &nbsp;&nbsp;&nbsp; <b>Surname:</b> ____________________</div>"
-                f"<div style='margin-bottom:2mm;'><b>Date of Birth:</b> ____ / ____ / ______ &nbsp;&nbsp;&nbsp; <b>Postcode:</b> ____________</div>"
-                f"<div style='margin-bottom:2mm;'><b>Reason for Application / Request:</b></div>"
-                f"<div style='height:12mm; border-bottom:1.5px solid var(--line);'></div>"
+                f"<div style='border:2px solid var(--soft); border-radius:6px; padding:2.5mm; background:#fff; margin-top:1.5mm;'>"
+                f"<div style='margin-bottom:1.8mm;'><b>First Name:</b> ____________________ &nbsp;&nbsp;&nbsp; <b>Surname:</b> ____________________</div>"
+                f"<div style='margin-bottom:1.8mm;'><b>Date of Birth:</b> ____ / ____ / ______ &nbsp;&nbsp;&nbsp; <b>Postcode:</b> ____________</div>"
+                f"<div style='margin-bottom:1.8mm;'><b>Reason for Application / Request:</b></div>"
+                f"<div style='height:10mm; border-bottom:1.5px solid var(--line);'></div>"
                 f"</div>",
                 title=f"Official Form Template: {m_title}"
             )
             + K.tip_pair("Use neat block capital letters where asked.", "Always check your phone number and postcode digits.",
                          golden_title="Form Tip", watch_title="Check Carefully")
-            + K.fill_lines("Practice Notes for Form Details", min_mm=36, gap_mm=10)
+            + K.fill_lines("Practice Notes for Form Details", min_mm=24, gap_mm=9.5)
         )
         pages.append(K.page(m_body_1, header=(BOOK, f"Mock Form {m_idx+1} &bull; Template"), footer=BOOK, page_no=p_curr))
         p_curr += 1
 
         m_body_2 = (
             K.page_title(f"Mock Task {m_idx+1} &bull; Lined Writing Booklet", kicker="Writing Response Page")
-            + K.fill_lines("Write your extended response or notes below:", min_mm=190, gap_mm=11)
+            + K.fill_lines("Write your extended response or notes below:", min_mm=180, gap_mm=10.5)
         )
         pages.append(K.page(m_body_2, header=(BOOK, f"Mock Form {m_idx+1} &bull; Writing"), footer=BOOK, page_no=p_curr))
         p_curr += 1
 
-    # Reference Back Matter via K.ref_pages (Condensed Black Reference Style)
+    # Reference Back Matter via K.ref_pages (Granular blocks so 0 overflows)
+    ref_start_page = p_curr
     ref_blocks = []
 
-    # 1. Diagnostic Answers
+    # 1. Diagnostic Answers (split evenly into chunks)
     p75 = a_e3.ANSWER_KEY_DATA.get('page_75', {})
     if 'diagnostic_answers' in p75:
-        qa_diag = "".join(f"<div class='qa'><span class='q-num'>{q}</span><span class='q-ans'><b>{ans}</b>: {escape_html(exp)}</span></div>" for q, ans, exp in p75['diagnostic_answers'])
-        ref_blocks.append(K.ref_block("Diagnostic Assessment Worked Solutions (Questions 1–10)", qa_diag))
+        d_ans = p75['diagnostic_answers']
+        chunk_sz = 10 if len(d_ans) > 10 else 5
+        for c_start in range(0, len(d_ans), chunk_sz):
+            c_slice = d_ans[c_start:c_start + chunk_sz]
+            qa_html = "".join(f"<div class='qa'><span class='q-num'>{q}</span><span class='q-ans'><b>{ans}</b>: {escape_html(exp)}</span></div>" for q, ans, exp in c_slice)
+            ref_blocks.append(K.ref_block(f"Diagnostic Solutions (Questions {c_start+1}–{c_start+len(c_slice)})", qa_html))
 
-    # 2. Units 1 to 24 Worked Solutions
+    # 2. Units 1 to 24 Worked Solutions (each unit is its own ref_block)
     for k in sorted(a_e3.ANSWER_KEY_DATA.keys()):
         data = a_e3.ANSWER_KEY_DATA[k]
         if 'units' in data:
             for unum, uinfo in sorted(data['units'].items()):
                 ex1 = "<br>".join(escape_html(s) for s in uinfo.get('ex1', []))
                 ex2 = "<br>".join(escape_html(s) for s in uinfo.get('ex2', []))
-                u_html = f"<div style='margin-bottom:1.5mm;'><b>Exercise 1:</b><br>{ex1}</div><div><b>Exercise 2:</b><br>{ex2}</div>"
+                u_html = f"<div style='margin-bottom:1.2mm;'><b>Exercise 1:</b><br>{ex1}</div><div><b>Exercise 2:</b><br>{ex2}</div>"
                 ref_blocks.append(K.ref_block(f"Unit {unum} Worked Solutions", u_html))
 
-    # 3. Workouts
+    # 3. Workouts (each workout is its own ref_block)
     p80 = a_e3.ANSWER_KEY_DATA.get('page_80', {})
     if 'workouts' in p80:
-        w_parts = []
         for w, ans in sorted(p80['workouts'].items()):
             if isinstance(ans, dict):
                 e_list = "<br>".join(escape_html(e) for e in ans.get('errors', []))
                 x_list = "<br>".join(escape_html(x) for x in ans.get('expansion', []))
-                w_parts.append(f"<div style='margin-bottom:1.5mm;'><b>Workout {w}:</b><br>{e_list}<br><em>Model Expansion:</em> {x_list}</div>")
+                ref_blocks.append(K.ref_block(f"Sentence Building Workout {w} Key", f"<div>{e_list}</div><div style='margin-top:1mm;'><em>Model Expansion:</em> {x_list}</div>"))
             else:
-                w_parts.append(f"<div style='margin-bottom:1.5mm;'><b>Workout {w}:</b> {escape_html(ans)}</div>")
-        ref_blocks.append(K.ref_block("Sentence Building Workouts (1–6)", "".join(w_parts)))
+                ref_blocks.append(K.ref_block(f"Sentence Building Workout {w} Key", f"<div>{escape_html(ans)}</div>"))
 
-    # 4. Form-Filling Exemplars
+    # 4. Form-Filling Exemplars (each form is its own ref_block)
     if 'writing_exemplars' in p80:
-        f_html = "".join(f"<div style='margin-bottom:1.5mm;'><b>Form {f}:</b> {escape_html(ans)}</div>" for f, ans in sorted(p80['writing_exemplars'].items()))
-        ref_blocks.append(K.ref_block("Workplace Form-Filling Exemplar Answers", f_html))
+        for f, ans in sorted(p80['writing_exemplars'].items()):
+            ref_blocks.append(K.ref_block(f"Workplace Form-Filling Exemplar {f}", f"<div>{escape_html(ans)}</div>"))
 
     # 5. Phonics & High Frequency Rules
     phonics_rules = [
@@ -1246,20 +1558,20 @@ def build_spag_e3():
 
     # 6. Index
     index_e3 = [
-        ("A", [("Alphabetical order", "8"), ("Annexe D spelling words", "50"), ("Apostrophes in contractions", "24")]),
-        ("C", [("Capital letters", "10"), ("Commas in lists", "14"), ("Conjunctions (and, but)", "16")]),
-        ("D", [("Double consonants", "52")]),
-        ("E", [("Exclamation marks", "12")]),
-        ("F", [("Full stops", "10")]),
-        ("H", [("Homophones (to/too/two)", "46")]),
-        ("P", [("Paragraphs", "20"), ("Past tense regular verbs", "18")]),
-        ("Q", [("Question marks", "12")]),
-        ("S", [("Silent letters (k, w, g)", "54"), ("Subject-verb agreement", "22")]),
-        ("W", [("Workplace form-filling", "74")])
+        ("A", [("Alphabetical order", "7"), ("Annexe D spelling words", "55"), ("Apostrophes in contractions", "23")]),
+        ("C", [("Capital letters", "9"), ("Commas in lists", "13"), ("Conjunctions (and, but)", "15")]),
+        ("D", [("Double consonants", "59")]),
+        ("E", [("Exclamation marks", "11")]),
+        ("F", [("Full stops", "9")]),
+        ("H", [("Homophones (hear/here, see/sea)", "65")]),
+        ("P", [("Paragraphs", "19"), ("Past tense regular verbs", "17")]),
+        ("Q", [("Question marks", "11")]),
+        ("S", [("Silent letters (k, w, g)", "61"), ("Subject-verb agreement", "21")]),
+        ("W", [("Workplace form-filling", "79")])
     ]
     ix_html = ""
     for letter, entries in index_e3:
-        items = "".join(f"<div class='ix'><span>{escape_html(t)}</span><span>{escape_html(p)}</span></div>" for t, p in entries)
+        items = "".join(f"<div class='ix'><span>{escape_html(t)}</span><span>p.{escape_html(p)}</span></div>" for t, p in entries)
         ix_html += f"<div class='ix-letter'>{letter}</div>{items}"
     ref_blocks.append(K.ref_block("Entry Level 3 Subject &amp; Grammar Index", ix_html))
 
@@ -1271,6 +1583,7 @@ def build_spag_e3():
     p_curr += len(ref_page_list)
 
     # Candidate Progress Tracker
+    audit_page_no = p_curr
     p_audit_body = (
         K.page_title("Candidate SPaG Progress Tracker &amp; Sticker Chart", kicker="Entry Level 3 Achievement", badge="SUCCESS")
         + K.box_html(
@@ -1282,7 +1595,7 @@ def build_spag_e3():
             ]),
             title="Entry Level 3 SPaG Success Targets"
         )
-        + K.fill_notes("Personal Success Notes &amp; Tutor Endorsements", min_mm=45)
+        + K.fill_notes("Personal Success Notes &amp; Tutor Endorsements", min_mm=38)
     )
     pages.append(K.page(p_audit_body, header=(BOOK, "Progress Tracker"), footer=BOOK, page_no=p_curr))
     p_curr += 1
@@ -1300,30 +1613,64 @@ def build_spag_e3():
                 ]),
                 title="Entry Level 3 Star Writer Declaration"
             )
-            + K.tip_pair("Keep practicing your spelling word banks every day.",
+            + K.tip_pair("Keep practising your spelling word banks every day.",
                          "Always read your sentence out loud to check it makes sense.",
                          golden_title="Reading Check", watch_title="Golden Habit")
-            + K.fill_notes("Tutor Endorsement &amp; Candidate Next Steps", min_mm=30)
+            + K.fill_notes("Tutor Endorsement &amp; Candidate Next Steps", min_mm=26)
         )
         pages.append(K.page(p_ibc_body, header=(BOOK, "Tutor Endorsement"), footer=BOOK, page_no=p_curr))
         p_curr += 1
+
+    # Populate p2: 2-Column Table of Contents
+    toc_left = [
+        ("DIAG", "Diagnostic Audit &amp; Routing", [
+            ("D1–D4", "Visual Diagnostic Assessment (Q1–Q10)", "3"),
+        ]),
+        ("U1–U16", "Entry 3 Grammar Units (Part 1)", [
+            (f"U{u['unit']}", u["title"], str(unit_start_pages[u["unit"]]))
+            for u in all_units[:16]
+        ]),
+    ]
+    toc_right = [
+        ("U17–U24", "Entry 3 Grammar Units (Part 2)", [
+            (f"U{u['unit']}", u["title"], str(unit_start_pages[u["unit"]]))
+            for u in all_units[16:]
+        ]),
+        ("WORDS", "Phonics &amp; High-Frequency Word Banks", [
+            (f"WB{i+1}", word_banks[i][0], str(wb_start_pages[i+1]))
+            for i in range(len(word_banks))
+        ]),
+        ("DRILLS", "Sentence Workouts &amp; Form-Filling Mocks", [
+            ("W1–W12", "12 Practical Sentence Building Workouts", str(workouts_start_page)),
+            ("M1–M3", "3 Practical Workplace Form-Filling Mocks", str(mocks_start_page)),
+        ]),
+        ("REF", "Solutions, Phonics Guide &amp; Tracker", [
+            ("SOL", "Diagnostic, Unit 1–24 &amp; Workout Keys", str(ref_start_page)),
+            ("TRACK", "Candidate SPaG Progress Tracker", str(audit_page_no)),
+        ]),
+    ]
+    pages[1] = spag_toc_page(
+        "SPaG Entry Level 3 Mastery",
+        "Visual Rules, Clear Pictures &amp; Step-by-Step Handwriting Drills",
+        toc_left, toc_right, BOOK
+    )
 
     # Back Cover
     pages.append(K.back_cover(back_cov))
 
     print(f"Total Pages Assembled: {len(pages)}")
     out_pdf = DOWNLOADS / "MasterFunctionalSkills_SPaG_Entry_Level_3_Mastery.pdf"
-    res = K.render_pdf(pages, out_pdf, theme=K.theme_from_cover(front_cov), entry3=True, title="Master Functional Skills - SPaG Entry Level 3 Mastery")
-    print(f"Rendered: {res['pdf']}")
-
+    res = K.render_pdf(pages, out_pdf, theme=cover_theme, entry3=True, title="Master Functional Skills - SPaG Entry Level 3 Mastery")
     shutil.copyfile(out_pdf, DOCUMENTS / out_pdf.name)
-    rep = K.qa_report(out_pdf, dpi=50)
-    K.print_report(rep)
-    return rep
+    print(f"Rendered: {res['pdf']} | Overflows: {res.get('overflow', [])}")
+    return res
 
 
 if __name__ == "__main__":
-    rep_l2 = build_spag_l2()
-    rep_l1 = build_spag_l1()
-    rep_e3 = build_spag_e3()
+    r_l2 = build_spag_l2()
+    r_l1 = build_spag_l1()
+    r_e3 = build_spag_e3()
     print("\nSPaG Suite Build Complete: All 3 levels generated!")
+    print("L2 Overflows:", r_l2.get("overflow", []))
+    print("L1 Overflows:", r_l1.get("overflow", []))
+    print("E3 Overflows:", r_e3.get("overflow", []))

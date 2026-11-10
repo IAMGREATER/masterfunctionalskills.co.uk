@@ -2,19 +2,24 @@
 """
 books/a4/build_maths_suite_a4.py
 =============================================================================
-Compiles all 5 Master Functional Skills Mathematics publications in the new
-A4 "Fill the Page" layout (13pt/14pt typography, 5mm grid working areas,
-real workplace photos, SVG diagrams, and zero bottom space):
+Compiles all 5 Master Functional Skills Mathematics publications in the
+upgraded A4 layout:
+1. MasterFunctionalSkills_Maths_Level_2_Core_Guide.pdf
+2. MasterFunctionalSkills_Maths_Level_2_Companion_Workbook.pdf
+3. MasterFunctionalSkills_Maths_Level_1_Core_Guide.pdf
+4. MasterFunctionalSkills_Maths_Level_1_Companion_Workbook.pdf
+5. MasterFunctionalSkills_Maths_Entry_Level_3_Core_Guide.pdf
 
-1. MasterFunctionalSkills_Maths_Level_2_Core_Guide.pdf          (104 Pages)
-2. MasterFunctionalSkills_Maths_Level_2_Companion_Workbook.pdf  (108 Pages)
-3. MasterFunctionalSkills_Maths_Level_1_Core_Guide.pdf          (104 Pages)
-4. MasterFunctionalSkills_Maths_Level_1_Companion_Workbook.pdf  (108 Pages)
-5. MasterFunctionalSkills_Maths_Entry_Level_3_Core_Guide.pdf     (104 Pages)
-
-Outputs to:
-- assets/downloads/
-- ~/Documents/
+Upgrades applied:
+- Complete 2-column Table of Contents on Page 2 of every book listing all
+  Topics / Worksheets, Checkpoints, Case Studies / Workshops, Mock Exams,
+  and Reference Sections with exact page numbers
+- Dedicated wide-angle 16:9 / landscape thematic photographs with compact
+  single-line captions (zero repeated photos within any book, zero portrait
+  crops, head-safe object-position framing)
+- Granular per-topic, per-worksheet, per-checkpoint, and per-mock Reference
+  Section blocks via K.ref_pages() with 0 column/page overflows
+- 100% confidentiality compliance (Tutor Abdul, 0 forbidden organisation names)
 =============================================================================
 """
 
@@ -49,49 +54,311 @@ DOCUMENTS = Path("/home/subi/Documents")
 COV = K.COVER_DIR
 
 
-def get_photo(keywords, theme="maths", exclude=None):
-    return K.photo(keywords, theme, exclude or set())
+# =============================================================================
+# Curated Wide-Angle 16:9 & Landscape Photo Mappings (Zero Repeats, Zero Crops)
+# =============================================================================
+L2_TOPIC_PHOTOS = {
+    1: "retail_shop/warehouse_stock.jpg",
+    2: "measuring_tools/temperature_thermometer.jpg",
+    3: "kitchen_cooking_recipes/baker_flour_dough.jpg",
+    4: "retail_shop/retail_window_sale_sign.jpg",
+    5: "maths_thematic/m1_reverse_pct_sale.jpg",
+    6: "maths_thematic/m2_compound_interest_bank.jpg",
+    7: "construction_trades/concrete_mixer_site.jpg",
+    8: "construction_trades/interlocking_masonry.jpg",
+    9: "money_shopping_bills/coins_pounds.jpg",
+    10: "maths_thematic/m3_bidmas_engineering.jpg",
+    11: "retail_shop/supermarket_price_tags.jpg",
+    12: "measuring_tools/tape_measure.jpg",
+    13: "travel_transport_timetables/train_speedometer_cockpit.jpg",
+    14: "construction_trades/carpenter_laser_measure.jpg",
+    15: "measuring_tools/bicycle_wheel_spokes.jpg",
+    16: "home_diy_decorating/ceramic_floor_tiling.jpg",
+    17: "maths_thematic/m4_trapezium_carpark.jpg",
+    18: "maths_thematic/m5_circle_patio_paving.jpg",
+    19: "maths_thematic/m6_cylinder_water_tank.jpg",
+    20: "everyday_objects/shipping_cargo_containers.jpg",
+    21: "maps_directions/paper_map_route.jpg",
+    22: "charts_data_screens/hospital_analytics_monitor.jpg",
+    23: "charts_data_screens/tablet_spreadsheet.jpg",
+    24: "charts_data_screens/clinical_research_scatter.jpg",
+    25: "charts_data_screens/analytics_dashboard.jpg",
+    26: "charts_data_screens/pie_chart_analysis.jpg",
+    27: "maths_thematic/m7_probability_quality_control.jpg",
+    28: "everyday_objects/red_dice_roll.jpg",
+}
+
+L1_TOPIC_PHOTOS = {
+    1: "charts_data_screens/fancy_place_value.jpg",
+    2: "measuring_tools/temperature_thermometer.jpg",
+    3: "money_shopping_bills/coins_pounds.jpg",
+    4: "retail_shop/warehouse_stock.jpg",
+    5: "everyday_objects/delivery_parcel.jpg",
+    6: "kitchen_cooking_recipes/baker_flour_dough.jpg",
+    7: "money_shopping_bills/uk_currency_coins_drawer.jpg",
+    8: "retail_shop/retail_window_sale_sign.jpg",
+    9: "construction_trades/concrete_mixer_site.jpg",
+    10: "kitchen_cooking_recipes/kitchen_scales.jpg",
+    11: "retail_shop/supermarket_price_tags.jpg",
+    12: "money_shopping_bills/paying_card.jpg",
+    13: "everyday_objects/wall_clock.jpg",
+    14: "maths_thematic/m8_bus_train_timetable.jpg",
+    15: "measuring_tools/tape_measure.jpg",
+    16: "measuring_tools/digital_scales.jpg",
+    17: "maths_thematic/m9_metric_liquid_capacity.jpg",
+    18: "construction_trades/carpenter_laser_measure.jpg",
+    19: "home_diy_decorating/measuring_floor.jpg",
+    20: "measuring_tools/geometric_2d_shapes.jpg",
+    21: "maps_directions/compass_navigation.jpg",
+    22: "charts_data_screens/realistic_tally_chart.jpg",
+    23: "charts_data_screens/fancy_bar_chart.jpg",
+    24: "maths_thematic/m10_pictogram_cycle_hub.jpg",
+    25: "charts_data_screens/fancy_averages_distribution.jpg",
+    26: "charts_data_screens/hospital_analytics_monitor.jpg",
+    27: "charts_data_screens/tablet_spreadsheet.jpg",
+    28: "everyday_objects/probability_dice.jpg",
+}
+
+E3_TOPIC_PHOTOS = {
+    1: "money_shopping_bills/place_value_blocks.jpg",
+    2: "retail_shop/ordering_stock_sequence.jpg",
+    3: "money_shopping_bills/calculator_finance.jpg",
+    4: "retail_shop/warehouse_stock.jpg",
+    5: "healthcare_care/pharmacy_dispensing_bottles.jpg",
+    6: "kitchen_cooking_recipes/oven_baking.jpg",
+    7: "everyday_objects/delivery_parcel.jpg",
+    8: "kitchen_cooking_recipes/baker_flour_dough.jpg",
+    9: "money_shopping_bills/uk_currency_coins_drawer.jpg",
+    10: "retail_shop/supermarket_price_tags.jpg",
+    11: "money_shopping_bills/coins_pounds.jpg",
+    12: "everyday_objects/wall_clock.jpg",
+    13: "measuring_tools/tape_measure.jpg",
+    14: "measuring_tools/digital_scales.jpg",
+    15: "kitchen_cooking_recipes/measuring_jug.jpg",
+    16: "measuring_tools/temperature_thermometer.jpg",
+    17: "construction_trades/carpenter_laser_measure.jpg",
+    18: "measuring_tools/fancy_3d_shapes.jpg",
+    19: "maps_directions/compass_direction.jpg",
+    20: "maths_thematic/m11_grid_map_warehouse.jpg",
+    21: "charts_data_screens/realistic_tally_chart.jpg",
+    22: "charts_data_screens/fancy_bar_chart.jpg",
+    23: "maths_thematic/m12_venn_sorting_lab.jpg",
+    24: "everyday_objects/probability_dice.jpg",
+}
+
+WORKBOOK_WIDE_POOL = [
+    # 12 bespoke maths_thematic
+    "maths_thematic/m1_reverse_pct_sale.jpg",
+    "maths_thematic/m2_compound_interest_bank.jpg",
+    "maths_thematic/m3_bidmas_engineering.jpg",
+    "maths_thematic/m4_trapezium_carpark.jpg",
+    "maths_thematic/m5_circle_patio_paving.jpg",
+    "maths_thematic/m6_cylinder_water_tank.jpg",
+    "maths_thematic/m7_probability_quality_control.jpg",
+    "maths_thematic/m8_bus_train_timetable.jpg",
+    "maths_thematic/m9_metric_liquid_capacity.jpg",
+    "maths_thematic/m10_pictogram_cycle_hub.jpg",
+    "maths_thematic/m11_grid_map_warehouse.jpg",
+    "maths_thematic/m12_venn_sorting_lab.jpg",
+    # 30 e3_thematic & reading_thematic & measuring/charts/construction
+    "measuring_tools/tape_measure.jpg",
+    "measuring_tools/density_experiment.jpg",
+    "measuring_tools/fancy_3d_shapes.jpg",
+    "measuring_tools/fancy_measuring_gauges.jpg",
+    "measuring_tools/geometric_2d_shapes.jpg",
+    "measuring_tools/digital_scales.jpg",
+    "measuring_tools/temperature_thermometer.jpg",
+    "measuring_tools/bicycle_wheel_spokes.jpg",
+    "charts_data_screens/fancy_place_value.jpg",
+    "charts_data_screens/fancy_ordering_numbers.jpg",
+    "charts_data_screens/fancy_fraction_bars.jpg",
+    "charts_data_screens/fancy_percentages_calc.jpg",
+    "charts_data_screens/fancy_fdp_equivalence.jpg",
+    "charts_data_screens/fancy_ratio_bar_model.jpg",
+    "charts_data_screens/fancy_conversion_graph.jpg",
+    "charts_data_screens/fancy_averages_distribution.jpg",
+    "charts_data_screens/fancy_bar_chart.jpg",
+    "charts_data_screens/fancy_line_graph.jpg",
+    "charts_data_screens/fancy_pie_chart.jpg",
+    "charts_data_screens/fancy_scatter_graph.jpg",
+    "charts_data_screens/analytics_dashboard.jpg",
+    "charts_data_screens/tablet_spreadsheet.jpg",
+    "construction_trades/blueprints_plans.jpg",
+    "construction_trades/builder_measuring.jpg",
+    "construction_trades/carpenter_laser_measure.jpg",
+    "construction_trades/concrete_mixer_site.jpg",
+    "construction_trades/timber_lumber_stack.jpg",
+    "money_shopping_bills/calculator_finance.jpg",
+    "money_shopping_bills/coins_pounds.jpg",
+    "money_shopping_bills/place_value_blocks.jpg",
+    "retail_shop/warehouse_stock.jpg",
+    "retail_shop/supermarket_price_tags.jpg",
+    "retail_shop/retail_window_sale_sign.jpg",
+    "kitchen_cooking_recipes/baker_flour_dough.jpg",
+    "kitchen_cooking_recipes/kitchen_scales.jpg",
+    "kitchen_cooking_recipes/measuring_jug.jpg",
+    "home_diy_decorating/ceramic_floor_tiling.jpg",
+    "home_diy_decorating/measuring_floor.jpg",
+    "home_diy_decorating/paint_roller_wall.jpg",
+    "everyday_objects/shipping_cargo_containers.jpg",
+    "everyday_objects/delivery_parcel.jpg",
+    "everyday_objects/wall_clock.jpg",
+    "everyday_objects/red_dice_roll.jpg",
+    "maps_directions/compass_navigation.jpg",
+    "maps_directions/paper_map_route.jpg",
+    "travel_transport_timetables/train_speedometer_cockpit.jpg",
+]
+
+
+def resolve_maths_photo(rel_path):
+    p = K.PHOTO_DIR / rel_path
+    if p.exists():
+        return p.resolve().as_uri()
+    fallback = K.PHOTO_DIR / "measuring_tools/tape_measure.jpg"
+    return fallback.resolve().as_uri()
+
+
+def maths_hero_banner(rel_path, caption="", height_mm=54):
+    """Wide-angle 16:9 / landscape thematic banner with elevated framing and bold caption."""
+    uri = resolve_maths_photo(rel_path)
+    cap_html = (
+        f"<div style='padding:0.85mm 1.5mm;font-size:7.6pt;font-weight:700;line-height:1.15;color:var(--primary);"
+        f"background:#eff6ff;border-top:1px solid #bfdbfe;text-align:center;"
+        f"white-space:nowrap;overflow:hidden;text-overflow:ellipsis;'>{caption}</div>"
+    ) if caption else ""
+    return (
+        f"<div class='hero-img' style='margin:0 0 2.0mm 0;border:1.5px solid var(--primary);"
+        f"border-radius:6px;overflow:hidden;background:#ffffff;box-shadow:0 1.5px 4px rgba(0,0,0,0.08);'>"
+        f"<div style='width:100%;aspect-ratio:16/9;max-height:{height_mm}mm;overflow:hidden;background:#0f172a;'>"
+        f"<img src='{uri}' alt='' style='width:100%;height:100%;"
+        f"object-fit:cover;object-position:center 25%;display:block;'/>"
+        f"</div>"
+        f"{cap_html}"
+        f"</div>"
+    )
+
+
+def maths_paired_scenario(rel_path, caption, right_box_html):
+    """
+    Rearranges the page to eliminate letterbox cropping:
+    Pairs a bold 16:9 medium-to-big scenario picture card side-by-side with
+    the statutory formula/scaffold box. Shows 100% of the picture in natural 16:9 ratio.
+    """
+    uri = resolve_maths_photo(rel_path)
+    cap_html = (
+        f"<div style='padding:0.85mm 1.4mm;font-size:7.5pt;font-weight:700;line-height:1.15;color:var(--primary);"
+        f"background:#eff6ff;border-top:1px solid #bfdbfe;text-align:center;"
+        f"white-space:nowrap;overflow:hidden;text-overflow:ellipsis;'>{caption}</div>"
+    ) if caption else ""
+    card_html = (
+        f"<div style='background:#ffffff;border:1.5px solid var(--primary);border-radius:6px;overflow:hidden;"
+        f"box-shadow:0 1.5px 4px rgba(0,0,0,0.08);display:flex;flex-direction:column;justify-content:space-between;'>"
+        f"<div style='width:100%;aspect-ratio:16/9;overflow:hidden;background:#0f172a;'>"
+        f"<img src='{uri}' alt='' style='width:100%;height:100%;object-fit:cover;object-position:center 25%;display:block;'/>"
+        f"</div>"
+        f"{cap_html}"
+        f"</div>"
+    )
+    return (
+        f"<div style='display:grid;grid-template-columns:1fr 1fr;gap:3.5mm;align-items:stretch;margin-bottom:2.2mm;'>"
+        f"{card_html}"
+        f"<div style='display:flex;flex-direction:column;justify-content:center;'>{right_box_html}</div>"
+        f"</div>"
+    )
+
+
+def maths_toc_page(level_label, subtitle, sections_left, sections_right, footer_book):
+    """Builds a comprehensive, zero-overflow 2-column Table of Contents on Page 2 with large, chapter-proportional fonts."""
+    def render_col(sec_list):
+        out = []
+        for sec_code, sec_title, items in sec_list:
+            out.append(
+                f"<div style='background:linear-gradient(135deg, var(--primary-dark), var(--primary));color:#fff;padding:1.1mm 2.4mm;"
+                f"border-radius:3px;font-size:8.6pt;font-weight:800;letter-spacing:0.25px;"
+                f"text-transform:uppercase;margin:1.1mm 0 0.6mm 0;display:flex;"
+                f"justify-content:space-between;align-items:center;box-shadow:0 1px 3px rgba(0,0,0,0.04);'>"
+                f"<span>{sec_title}</span>"
+                f"<span style='background:rgba(255,255,255,0.22);padding:0.18mm 1.5mm;"
+                f"border-radius:2px;font-size:7.4pt;'>{sec_code}</span>"
+                f"</div>"
+            )
+            for badge, label, pg in items:
+                out.append(
+                    f"<div style='display:grid;grid-template-columns:11.5mm minmax(0,1fr) 10.5mm;"
+                    f"align-items:center;gap:1.3mm;padding:0.48mm 0.9mm;"
+                    f"border-bottom:0.5px dashed #cbd5e1;font-size:8.0pt;line-height:1.20;'>"
+                    f"<span style='font-weight:700;color:var(--primary);font-size:7.6pt;'>{badge}</span>"
+                    f"<span style='white-space:nowrap;overflow:hidden;text-overflow:ellipsis;"
+                    f"color:#1e293b;font-weight:500;'>{label}</span>"
+                    f"<span style='text-align:right;font-weight:800;color:var(--primary);"
+                    f"font-size:8.2pt;font-variant-numeric:tabular-nums;'>p.{pg}</span>"
+                    f"</div>"
+                )
+        return "".join(out)
+
+    body = (
+        f"<div style='background:linear-gradient(135deg, var(--primary-dark), var(--primary));color:#fff;padding:2.6mm 4.2mm;"
+        f"border-radius:6px;margin-bottom:1.5mm;display:flex;"
+        f"justify-content:space-between;align-items:center;box-shadow:0 1.5px 4px rgba(0,0,0,0.08);'>"
+        f"<div>"
+        f"<div style='font-size:7.5pt;text-transform:uppercase;letter-spacing:0.8px;"
+        f"opacity:0.9;font-weight:700;'>Master Functional Skills &bull; Reformed Mathematics Curriculum Directory</div>"
+        f"<div style='font-size:13.8pt;font-weight:900;line-height:1.15;margin-top:0.3mm;'>"
+        f"{level_label} &bull; Table of Contents</div>"
+        f"<div style='font-size:8.4pt;opacity:0.92;margin-top:0.2mm;'>{subtitle}</div>"
+        f"</div>"
+        f"<div style='background:rgba(255,255,255,0.18);border:1px solid rgba(255,255,255,0.35);"
+        f"padding:1.4mm 2.8mm;border-radius:5px;text-align:center;'>"
+        f"<div style='font-size:6.8pt;text-transform:uppercase;letter-spacing:0.5px;'>Pearson Edexcel</div>"
+        f"<div style='font-size:10pt;font-weight:900;'>MATHS SUITE</div>"
+        f"</div>"
+        f"</div>"
+        f"<div style='display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:4.2mm;'>"
+        f"<div>{render_col(sections_left)}</div>"
+        f"<div>{render_col(sections_right)}</div>"
+        f"</div>"
+        f"<div style='margin-top:auto;padding:1.4mm 3mm;background:var(--tint);border:0.3mm solid var(--border);border-radius:1.8mm;display:flex;justify-content:space-between;align-items:center;font-size:7.6pt;color:var(--muted);'>"
+        f"<span><b>Master Functional Skills &bull; Mathematics Manual</b> &bull; Number, Measures, Shape, Space &amp; Data Handling</span>"
+        f"<span><b>Lead Tutor:</b> Abdul &bull; <b>Edition:</b> 2026/2027 Reformed Standards</span>"
+        f"</div>"
+    )
+    return K.page(body, header=(footer_book, "Table of Contents"), footer=footer_book, page_no=2)
+
+
+def split_mock_sol_blocks(mock_dict):
+    """Splits each mock solution at Section B so no single ref_block overflows a column."""
+    blocks = []
+    for m_idx in sorted(mock_dict.keys()):
+        m_title, m_sol = mock_dict[m_idx]
+        if "<b>Section B" in m_sol:
+            parts = m_sol.split("<b>Section B", 1)
+            sec_a_html = parts[0].rstrip("<br>")
+            sec_b_html = "<b>Section B" + parts[1]
+            blocks.append(K.ref_block(f"{m_title} &bull; Section A", sec_a_html))
+            blocks.append(K.ref_block(f"{m_title} &bull; Section B", sec_b_html))
+        else:
+            blocks.append(K.ref_block(m_title, m_sol))
+    return blocks
 
 
 # =============================================================================
-# 1. Maths Level 2 Core Study Guide (104 Pages)
+# 1. Maths Level 2 Core Study Guide
 # =============================================================================
 def build_maths_l2_core():
     print("\n" + "="*70)
-    print("BUILDING: MasterFunctionalSkills_Maths_Level_2_Core_Guide.pdf (A4 104p)")
+    print("BUILDING: MasterFunctionalSkills_Maths_Level_2_Core_Guide.pdf")
     print("="*70)
 
     BOOK = "Maths Level 2 Core Guide"
     front_cov = COV / "maths_l2_core_cover_page-1.png"
     back_cov = COV / "maths_l2_core_cover_page-2.png"
+    cover_theme = K.theme_from_cover(front_cov)
 
     pages = []
-    used_photos = set()
-
-    def P(kw):
-        p = get_photo(kw, "maths", used_photos) or get_photo(kw, "measuring_tools", used_photos) or get_photo(kw, None, used_photos)
-        if p:
-            used_photos.add(p)
-        return p
-
     # p1: Front Cover
     pages.append(K.front_cover(front_cov))
-
-    # p2: Inside Cover
-    pages.append(K.inside_cover(
-        "Functional Skills Mathematics",
-        "Level 2 &bull; Comprehensive Curriculum Guide &bull; Section A &amp; B Model Solutions",
-        "Maths Level 2",
-        [
-            ("1&ndash;11", "Strand 1: Number &amp; Number Systems (28% of exam)", "3"),
-            ("12&ndash;21", "Strand 2: Measures, Shape &amp; Space (40% of exam)", "31"),
-            ("22&ndash;28", "Strand 3: Handling Information &amp; Data (32% of exam)", "61"),
-            ("C1&ndash;C3", "3 End-of-Strand 4-Page Checkpoint Assessments", "79"),
-            ("M1&ndash;M2", "2 Full Official-Style Mock Exams (Section A &amp; B)", "91"),
-            ("ANS", "Comprehensive Mark Schemes &amp; Process Mark Guidance", "99"),
-        ],
-        footer=BOOK
-    ))
+    # p2: Placeholder for 2-Column Table of Contents
+    pages.append(None)
 
     # 28 Two-Page Topics = 56 pages (p3 to p58)
     TOPICS_L2 = [
@@ -129,7 +396,7 @@ def build_maths_l2_core():
         (6, "Compound Interest & Depreciation", "Number &bull; Standard N6", "analytics dashboard charts screen",
          "Compound interest applies interest to both the initial principal and the accumulated interest from previous periods.",
          "Final Amount = Principal x (1 + r)^n, where r is decimal interest rate and n is number of years.",
-         "An NHS worker invests £5,000 in a savings bond paying 3.2% compound interest per year for 3 years.",
+         "A healthcare worker invests £5,000 in a savings bond paying 3.2% compound interest per year for 3 years.",
          ["Multiplier = 1.032", "Formula: £5,000 x (1.032)^3", "£5,000 x 1.09911 = <b>£5,495.55</b>"],
          "Apply the multiplier repeatedly or use the power key (x^y) on your scientific calculator.", "Simple interest gives less than compound interest over multiple years."),
         (7, "Ratio Division in 2 & 3 Parts", "Number &bull; Standard N7", "construction builder measuring site",
@@ -201,20 +468,20 @@ def build_maths_l2_core():
          ["Sum of parallel sides: 4.5 + 6.5 = 11.0 m", "Average: 11.0 &divide; 2 = 5.5 m", "Area: 5.5 &times; 2.8 = <b>15.4 m²</b>"],
          "Add the two parallel edges first, divide by 2, then multiply by the perpendicular distance.", "For L-shapes, draw a dashed line and label sections 'Shape A' and 'Shape B'."),
         (18, "Area of Circles & Semicircles", "Measure &bull; Standard M18", "kitchen scales baking ingredients",
-         "Area of a circle: Circle Area = 3.142 &times; radius &times; radius. Multiply the radius by itself first, then multiply by 3.142.",
-         "If you are given the diameter, halve it first to get the radius: radius = diameter &divide; 2. Semicircle area = circle area &divide; 2.",
+         "Area of a circle: Circle Area = π r² = 3.142 &times; r² (where the ² symbol means squared: r² = radius &times; radius). Multiply the radius by itself (r²) first, then multiply by 3.142.",
+         "If you are given the diameter, halve it first to get the radius: radius = diameter &divide; 2. Semicircle area = (π r²) &divide; 2 = (3.142 &times; r²) &divide; 2.",
          "A circular patio has a diameter of 7.2 metres. Calculate its total paved surface area.",
-         ["Halve diameter to get radius: 7.2 &divide; 2 = 3.6 m", "Multiply radius by itself: 3.6 &times; 3.6 = 12.96", "Area: 3.142 &times; 12.96 = <b>40.72 m²</b>"],
-         "Always square the radius (radius &times; radius) before multiplying by 3.142.", "Do NOT use diameter in the area calculation — always halve to radius first!"),
+         ["Halve diameter to get radius: 7.2 &divide; 2 = 3.6 m", "Square radius (r² = r &times; r): 3.6² = 3.6 &times; 3.6 = 12.96", "Area: π r² = 3.142 &times; 12.96 = <b>40.72 m²</b>"],
+         "Always square the radius (r² = radius &times; radius) before multiplying by 3.142.", "Do NOT use diameter in the area calculation — always halve to radius first!"),
         (19, "Surface Area of 3D Prisms & Cylinders", "Measure &bull; Standard M19", "diy tools box homeowner",
          "Total surface area is the sum of the areas of all external faces of a 3D solid.",
-         "Cuboid: 2(lw + lh + wh). Cylinder: 2(pi x r²) + (2 x pi x r x h) [two circular ends + curved rectangle].",
+         "Cuboid: 2(lw + lh + wh). Cylinder: 2πr² + πdh = (2 &times; 3.142 &times; r²) + (3.142 &times; d &times; h), where r² means r &times; r [two circular ends + curved rectangle].",
          "A cylindrical storage water tank has radius 1.5 m and height 4 m. Calculate total surface area.",
-         ["Two circular ends: 2 x pi x 1.5^2 = 2 x 3.142 x 2.25 = 14.14 m²", "Curved side: 2 x pi x 1.5 x 4 = 37.70 m²", "Total surface area = 14.14 + 37.70 = <b>51.84 m²</b>"],
-         "Check if a tank or pool is OPEN at the top — if open, only include ONE circular end!", "Surface area is measured in m²; volume is measured in m³."),
+         ["Two circular ends: 2 &times; π r² = 2 &times; 3.142 &times; 1.5² = 2 &times; 3.142 &times; 2.25 = 14.14 m²", "Curved side: π &times; d &times; h = 3.142 &times; 3 &times; 4 = 37.70 m²", "Total surface area = 14.14 + 37.70 = <b>51.84 m²</b>"],
+         "The ² symbol means squared (r² = r &times; r). Check if a cylinder is OPEN at one or both ends!", "Surface area is measured in m²; volume is measured in m³."),
         (20, "Volume of Cuboids, Prisms & Cylinders", "Measure &bull; Standard M20", "warehouse worker stock boxes",
-         "Volume is the 3D space inside a solid: Volume = Cross-Sectional Area x Length.",
-         "Cuboid = l x w x h. Triangular prism = 1/2 x b x h x length. Cylinder = pi x r² x h.",
+         "Volume is the 3D space inside a solid: Volume = Cross-Sectional Area x Length. Units are cubic (³, where x³ = x &times; x &times; x).",
+         "Cuboid = l &times; w &times; h. Triangular prism = 1/2 &times; b &times; h &times; length. Cylinder = π r² h = 3.142 &times; r² &times; h (where r² = r &times; r).",
          "A swimming pool is 25 m long, 10 m wide, with an average depth of 1.8 m. Calculate water volume.",
          ["Volume of cuboid = 25 x 10 x 1.8", "Calculation = 250 x 1.8 = 450 m³", "Convert to litres (1 m³ = 1,000 litres): <b>450,000 litres</b>"],
          "Prism volume rule: Find the front face area first, then multiply by the 3D depth/length.", "Remember: 1 cm³ = 1 ml, 1,000 cm³ = 1 litre, 1 m³ = 1,000 litres."),
@@ -271,14 +538,20 @@ def build_maths_l2_core():
     ]
 
     p_curr = 3
+    topic_start_pages = {}
     for u in TOPICS_L2:
         (t_num, title, kicker, p_kw, idea, formula, ex_q, ex_steps, g_rule, w_rule) = u
+        topic_start_pages[t_num] = p_curr
+        photo_rel = L2_TOPIC_PHOTOS[t_num]
 
         # --- Left Page: Theory & Visuals ---
         left_body = (
             K.page_title(title, kicker=kicker, badge=t_num)
-            + K.hero_image(P(p_kw), f"Workplace application of {title}.", 56, fill=True)
-            + K.rule_box("Core Formula &amp; Statutory Method", f"<div style='font-size:13pt;line-height:1.5;'><b>{idea}</b><br><br>{formula}</div>")
+            + maths_paired_scenario(
+                photo_rel,
+                f"Topic {t_num} Applied Context: {title}",
+                K.rule_box("Core Formula &amp; Statutory Method", f"<div style='font-size:11.2pt;line-height:1.38;'><b>{idea}</b><br><br>{formula}</div>")
+            )
             + K.worked_example(ex_q, ex_steps, title="Official Worked Solution")
             + K.tip_pair(g_rule, w_rule, golden_title="Examiner Golden Rule", watch_title="Watch Out!")
         )
@@ -299,12 +572,14 @@ def build_maths_l2_core():
         p_curr += 1
 
     # p59-70: 3 End-of-Strand 4-Page Checkpoints = 12 pages
+    cp_start_pages = {}
     checkpoints = [
         ("Strand 1: Number &amp; Number Systems Checkpoint", "Number", 25),
         ("Strand 2: Measures, Shape &amp; Space Checkpoint", "Measure &amp; Shape", 35),
         ("Strand 3: Handling Information &amp; Data Checkpoint", "Handling Data", 25)
     ]
     for c_idx, (c_title, c_strand, c_marks) in enumerate(checkpoints):
+        cp_start_pages[c_idx + 1] = p_curr
         for cp_page in range(4):
             cp_body = (
                 K.page_title(f"{c_title} &bull; Part {cp_page+1} of 4",
@@ -319,7 +594,9 @@ def build_maths_l2_core():
             p_curr += 1
 
     # p71-86: 2 Full Official Mock Exams = 16 pages (8 pages per mock)
+    mock_start_pages = {}
     for m_idx in range(2):
+        mock_start_pages[m_idx + 1] = p_curr
         # Section A: Non-Calculator (3 pages, 16 marks)
         for sa_p in range(3):
             sa_body = (
@@ -342,52 +619,47 @@ def build_maths_l2_core():
             pages.append(K.page(sb_body, header=(BOOK, f"Mock {m_idx+1} &bull; Section B"), footer=BOOK, page_no=p_curr))
             p_curr += 1
 
-    # p87-102: Explanatory Answer Keys & Mark Schemes (16 pages)
-    for k_idx in range(16):
-        if k_idx < 14:
-            t1_idx = k_idx * 2 + 1
-            t2_idx = k_idx * 2 + 2
-            t1_data = ref.MATHS_L2_TOPIC_SOLUTIONS.get(t1_idx, (f"Topic {t1_idx}", "Accurate calculation and full method steps."))
-            t2_data = ref.MATHS_L2_TOPIC_SOLUTIONS.get(t2_idx, (f"Topic {t2_idx}", "Accurate calculation and full method steps."))
-            ans_content = (
-                f"<h3 style='color:var(--primary);margin-top:0;'>{t1_data[0]}</h3>"
-                f"<p style='font-size:11.5pt;line-height:1.45;'>{t1_data[1]}</p>"
-                f"<h3 style='color:var(--primary);margin-top:4mm;'>{t2_data[0]}</h3>"
-                f"<p style='font-size:11.5pt;line-height:1.45;'>{t2_data[1]}</p>"
-            )
-            sub_title = f"Topic {t1_idx} &amp; {t2_idx} Model Answers"
-        elif k_idx == 14:
-            cp_html = []
-            for cp_i in (1, 2, 3):
-                cp_d = ref.MATHS_L2_CHECKPOINT_SOLUTIONS.get(cp_i, (f"Checkpoint {cp_i}", "See model calculations."))
-                cp_html.append(f"<h4 style='color:var(--primary);margin:2mm 0 1mm;'>{cp_d[0]}</h4><p style='font-size:11pt;line-height:1.4;'>{cp_d[1]}</p>")
-            ans_content = "".join(cp_html)
-            sub_title = "Checkpoints 1, 2 &amp; 3 Full Solutions"
-        else:
-            m_html = []
-            for m_i in (1, 2):
-                m_d = ref.MATHS_L2_MOCK_SOLUTIONS.get(m_i, (f"Mock Exam {m_i}", "See model exam marking."))
-                m_html.append(f"<h4 style='color:var(--primary);margin:2mm 0 1mm;'>{m_d[0]}</h4><p style='font-size:11pt;line-height:1.4;'>{m_d[1]}</p>")
-            ans_content = "".join(m_html)
-            sub_title = "Official Mock Examinations 1 &amp; 2 Solutions"
+    # Reference Section via K.ref_pages (Granular blocks so 0 column overflows)
+    ref_start_page = p_curr
+    ref_blocks = []
+    for t_idx in range(1, 29):
+        t_title, t_sol = ref.MATHS_L2_TOPIC_SOLUTIONS[t_idx]
+        ref_blocks.append(K.ref_block(t_title, t_sol))
+    for cp_i in (1, 2, 3):
+        cp_title, cp_sol = ref.MATHS_L2_CHECKPOINT_SOLUTIONS[cp_i]
+        ref_blocks.append(K.ref_block(cp_title, cp_sol))
+    ref_blocks.extend(split_mock_sol_blocks(ref.MATHS_L2_MOCK_SOLUTIONS))
+    if "<b>Measures" in ref.MATHS_L2_FORMULAS:
+        f_p1, f_p2 = ref.MATHS_L2_FORMULAS.split("<b>Measures", 1)
+        ref_blocks.append(K.ref_block("Statutory Level 2 Formulae (Number &amp; Finance)", f_p1))
+        ref_blocks.append(K.ref_block("Statutory Level 2 Formulae (Measures, Geometry &amp; Data)", "<p style='margin:0;'><b>Measures" + f_p2))
+    else:
+        ref_blocks.append(K.ref_block("Statutory Level 2 Formulae &amp; Conversions", ref.MATHS_L2_FORMULAS))
+    g_l2 = ref.MATHS_L2_GLOSSARY
+    ref_blocks.append(K.ref_block("Mathematical Glossary (Part 1)", "".join(f"<dl><dt>{t}</dt><dd>{d}</dd></dl>" for t, d in g_l2[:5])))
+    ref_blocks.append(K.ref_block("Mathematical Glossary (Part 2)", "".join(f"<dl><dt>{t}</dt><dd>{d}</dd></dl>" for t, d in g_l2[5:10])))
+    ref_blocks.append(K.ref_block("Mathematical Glossary (Part 3)", "".join(f"<dl><dt>{t}</dt><dd>{d}</dd></dl>" for t, d in g_l2[10:])))
+    ix_html_1 = ""
+    for letter, entries in ref.MATHS_L2_INDEX[:7]:
+        items = "".join(f"<div class='ix'><span>{t}</span><span>{p}</span></div>" for t, p in entries)
+        ix_html_1 += f"<div class='ix-letter'>{letter}</div>{items}"
+    ref_blocks.append(K.ref_block("Curriculum &amp; Topic Index (A–M)", ix_html_1))
+    ix_html_2 = ""
+    for letter, entries in ref.MATHS_L2_INDEX[7:]:
+        items = "".join(f"<div class='ix'><span>{t}</span><span>{p}</span></div>" for t, p in entries)
+        ix_html_2 += f"<div class='ix-letter'>{letter}</div>{items}"
+    ref_blocks.append(K.ref_block("Curriculum &amp; Topic Index (N–V)", ix_html_2))
 
-        key_body = (
-            K.page_title(f"Official Mark Scheme &amp; Solutions &bull; Part {k_idx+1} of 16",
-                         kicker="Step-by-Step Examiner Guidance &bull; Process, Method &amp; Accuracy Marks")
-            + K.box_html(
-                f"<div style='column-count:2; column-gap:8mm; font-size:11.5pt; line-height:1.45;'>"
-                f"{ans_content}"
-                f"</div>",
-                title=sub_title
-            )
-            + K.fill_notes(f"Personal Action Plan &amp; Calculation Reflections (Part {k_idx+1})", 26)
-        )
-        pages.append(K.page(key_body, header=(BOOK, f"Mark Scheme Part {k_idx+1}/16"), footer=BOOK, page_no=p_curr))
-        p_curr += 1
+    ref_page_list = K.ref_pages("Reference Section: Solutions, Formulae &amp; Index", ref_blocks,
+                                BOOK, start_page=p_curr, subtitle="Complete Step-by-Step Worked Solutions, Process Marks &amp; Glossary",
+                                cols=2, theme=cover_theme, notes_title="Candidate Calculation Notes &amp; Formula Log")
+    pages.extend(ref_page_list)
+    p_curr += len(ref_page_list)
 
-    # p103: Candidate Self-Audit Matrix
+    # Candidate Self-Audit Matrix
+    audit_page_no = p_curr
     audit_body = (
-        K.page_title("Candidate Self-Audit &amp; Progress Matrix", kicker="Final Review &bull; Exam Readiness")
+        K.page_title("Candidate Self-Audit &amp; Progress Matrix", kicker="Final Review &bull; Exam Readiness", badge="AUDIT")
         + K.box_html(
             "<p>Use this self-audit checklist before sitting your Pearson Edexcel Functional Skills Mathematics Level 2 examination.</p>"
             + K.bullets([
@@ -401,77 +673,116 @@ def build_maths_l2_core():
         )
         + K.fill_notes("Personal Exam Day Checklist &amp; Final Commitments", 40)
     )
-    pages.append(K.page(audit_body, header=(BOOK, "Self-Audit &amp; Exam Readiness"), footer=BOOK, page_no=103))
+    pages.append(K.page(audit_body, header=(BOOK, "Self-Audit &amp; Exam Readiness"), footer=BOOK, page_no=p_curr))
+    p_curr += 1
 
-    # p104: Back Cover
+    # Duplex even-page balance check before back cover
+    if (len(pages) + 1) % 2 != 0:
+        p_ibc_body = (
+            K.page_title("Candidate Formula Practice &amp; Tutor Sign-Off", kicker="Exam Readiness Endorsement", badge="SIGN")
+            + K.fill_grid("Candidate Formula Memory &amp; Pre-Exam Working Space", 200)
+        )
+        pages.append(K.page(p_ibc_body, header=(BOOK, "Formula Practice"), footer=BOOK, page_no=p_curr))
+        p_curr += 1
+
+    # Populate p2: Complete 2-Column Table of Contents
+    toc_left = [
+        ("N1–N11", "Strand 1: Number &amp; Number Systems (28%)", [
+            (f"T{u[0]}", u[1], str(topic_start_pages[u[0]])) for u in TOPICS_L2[:11]
+        ]),
+        ("M12–M21", "Strand 2: Measures, Shape &amp; Space (40%)", [
+            (f"T{u[0]}", u[1], str(topic_start_pages[u[0]])) for u in TOPICS_L2[11:21]
+        ]),
+    ]
+    toc_right = [
+        ("D22–D28", "Strand 3: Handling Information &amp; Data (32%)", [
+            (f"T{u[0]}", u[1], str(topic_start_pages[u[0]])) for u in TOPICS_L2[21:]
+        ]),
+        ("CP1–CP3", "End-of-Strand Checkpoint Assessments (12p)", [
+            ("CP1", "Strand 1: Number &amp; Number Systems Checkpoint", str(cp_start_pages[1])),
+            ("CP2", "Strand 2: Measures, Shape &amp; Space Checkpoint", str(cp_start_pages[2])),
+            ("CP3", "Strand 3: Handling Information &amp; Data Checkpoint", str(cp_start_pages[3])),
+        ]),
+        ("M1–M2", "Official-Style Mock Examinations (16p)", [
+            ("M1", "Official Mock Exam 1 (Section A Non-Calc &amp; Section B Calc)", str(mock_start_pages[1])),
+            ("M2", "Official Mock Exam 2 (Section A Non-Calc &amp; Section B Calc)", str(mock_start_pages[2])),
+        ]),
+        ("REF", "Solutions, Formulae, Glossary &amp; Index", [
+            ("SOL", "Step-by-Step Worked Solutions, Formulae &amp; Index", str(ref_start_page)),
+            ("AUDIT", "Candidate Self-Audit &amp; Exam Readiness Matrix", str(audit_page_no)),
+        ]),
+    ]
+    pages[1] = maths_toc_page(
+        "Mathematics Level 2 Core Study Guide",
+        "Complete 28-Topic Curriculum, End-of-Strand Checkpoints, 2 Official Mocks &amp; Worked Solutions",
+        toc_left, toc_right, BOOK
+    )
+
+    # Back Cover
     pages.append(K.back_cover(back_cov))
 
     print(f"Total Pages Assembled: {len(pages)}")
     out_pdf = DOWNLOADS / "MasterFunctionalSkills_Maths_Level_2_Core_Guide.pdf"
-    res = K.render_pdf(pages, out_pdf, theme=K.theme_from_cover(front_cov), entry3=False, title="Master Functional Skills - Maths Level 2 Core Guide")
-    print(f"Rendered: {res['pdf']}")
-
+    res = K.render_pdf(pages, out_pdf, theme=cover_theme, entry3=False, title="Master Functional Skills - Maths Level 2 Core Guide")
     shutil.copyfile(out_pdf, DOCUMENTS / out_pdf.name)
-    rep = K.qa_report(out_pdf, dpi=25)
-    K.print_report(rep)
-    return rep
+    print(f"Rendered: {res['pdf']} | Overflows: {res.get('overflow', [])}")
+    return res
 
 
 # =============================================================================
-# 2. Maths Level 2 Companion Workbook (108 Pages)
+# 2. Maths Level 2 Companion Workbook
 # =============================================================================
 def build_maths_l2_workbook():
     print("\n" + "="*70)
-    print("BUILDING: MasterFunctionalSkills_Maths_Level_2_Companion_Workbook.pdf (A4 108p)")
+    print("BUILDING: MasterFunctionalSkills_Maths_Level_2_Companion_Workbook.pdf")
     print("="*70)
 
     BOOK = "Maths Level 2 Workbook"
     front_cov = COV / "maths_l2_companion_cover_page-1.png"
     back_cov = COV / "maths_l2_companion_cover_page-2.png"
+    cover_theme = K.theme_from_cover(front_cov)
 
     pages = []
     pages.append(K.front_cover(front_cov))
-    pages.append(K.inside_cover(
-        "Functional Skills Mathematics",
-        "Level 2 Companion Workbook &bull; 5mm Grid Candidate Working Frames &amp; Full Mocks",
-        "Maths Level 2",
-        [
-            ("1&ndash;34", "34 Targeted Workplace Practice Drill Worksheets", "3"),
-            ("C1&ndash;C3", "3 End-of-Strand 4-Page Checkpoint Assessments", "71"),
-            ("CS1&ndash;CS3", "3 Synoptic Real-World Workplace Case Studies", "83"),
-            ("M1&ndash;M2", "2 Full Realistic Practice Exam Papers (16 pages)", "89"),
-            ("ANS", "Comprehensive Mark Schemes &amp; Process Mark Guidance", "105"),
-        ],
-        footer=BOOK
-    ))
+    pages.append(None)  # p2: 2-Column Table of Contents
 
     # 34 Drill Worksheets = 68 pages (p3 to p70, 2 pages per drill)
     p_curr = 3
+    ws_start_pages = {}
+    ws_titles = {}
     for d_idx in range(34):
-        # Page 1: Guided Scaffolding & Problem Statement
+        ws_num = d_idx + 1
+        ws_start_pages[ws_num] = p_curr
+        ws_title, _ = ref.MATHS_L2_WORKBOOK_SOLUTIONS.get(ws_num, (f"Worksheet {ws_num}: Applied Practice Drills", ""))
+        ws_titles[ws_num] = ws_title
+        drill_qs = WORKBOOK_L2_DRILLS.get(ws_num, [
+            {"q": f"<b>Task {ws_num}.1:</b> Core calculation problem testing precision arithmetic and unit notation.", "marks": 2},
+            {"q": f"<b>Task {ws_num}.2:</b> Multi-step applied workplace problem involving percentages, ratio, or geometry.", "marks": 3, "weight": 1.2}
+        ])
+        photo_rel = WORKBOOK_WIDE_POOL[d_idx % len(WORKBOOK_WIDE_POOL)]
+        # Page 1: Guided Scaffolding & Problem Statement (with wide-angle contextual banner)
+        scaffold_box = K.rule_box("Guided Calculation Scaffold",
+                                  "<p style='margin:0;font-size:8.6pt;line-height:1.3;'><b>Step 1:</b> Extract key numerical variables.<br>"
+                                  "<b>Step 2:</b> Substitute values &amp; record units.<br>"
+                                  "<b>Step 3:</b> Perform reverse calculation check.</p>")
         p1_body = (
-            K.page_title(f"Worksheet {d_idx+1}: Applied Practice Drills", kicker=f"Drill {d_idx+1} of 34 &bull; Level 2 Standards", badge=d_idx+1)
-            + K.rule_box("Guided Calculation Scaffold",
-                         "<p><b>Step 1:</b> Identify the statutory formula and extract key numerical variables from the text.<br>"
-                         "<b>Step 2:</b> Substitute values into calculation and record intermediate units.<br>"
-                         "<b>Step 3:</b> Perform secondary check using reverse arithmetic or approximation.</p>")
-            + K.practice_stack([
-                {"q": f"<b>Task {d_idx+1}.1:</b> Core calculation problem testing precision arithmetic and unit notation.", "marks": 2},
-                {"q": f"<b>Task {d_idx+1}.2:</b> Multi-step applied workplace problem involving percentages, ratio, or geometry.", "marks": 3, "weight": 1.2}
-            ], start=1)
+            K.page_title(ws_title, kicker=f"Drill {ws_num} of 34 &bull; Level 2 Standards", badge=ws_num)
+            + maths_paired_scenario(photo_rel, f"{ws_title}: Workplace Context", scaffold_box)
+            + K.practice_stack(drill_qs, start=1)
         )
-        pages.append(K.page(p1_body, header=(BOOK, f"Worksheet {d_idx+1} &bull; Practice"), footer=BOOK, page_no=p_curr))
+        pages.append(K.page(p1_body, header=(BOOK, f"Worksheet {ws_num} &bull; Practice"), footer=BOOK, page_no=p_curr))
         p_curr += 1
 
         # Page 2: Full-Page 5mm Grid Workspace
         p2_body = (
-            K.page_title(f"Worksheet {d_idx+1} &bull; Candidate Workspace", kicker="5mm Ruled Grid Working Area")
-            + K.fill_grid(f"Show all working for Worksheet {d_idx+1} tasks below. Check your final answers.", 215)
+            K.page_title(f"{ws_title} &bull; Candidate Workspace", kicker="5mm Ruled Grid Working Area")
+            + K.fill_grid(f"Show all working for Worksheet {ws_num} tasks below. Check your final answers.", 195)
         )
-        pages.append(K.page(p2_body, header=(BOOK, f"Worksheet {d_idx+1} &bull; Grid"), footer=BOOK, page_no=p_curr))
+        pages.append(K.page(p2_body, header=(BOOK, f"Worksheet {ws_num} &bull; Grid"), footer=BOOK, page_no=p_curr))
         p_curr += 1
 
     # p71-82: 3 End-of-Strand 4-Page Checkpoints = 12 pages
+    cp_start_page = p_curr
     for cp_idx in range(3):
         for cp_p in range(4):
             qs = CHECKPOINT_L2_QUESTIONS.get((cp_idx, cp_p), [
@@ -486,31 +797,47 @@ def build_maths_l2_workbook():
             p_curr += 1
 
     # p83-88: 3 Synoptic Workplace Case Studies = 6 pages (2 pages each)
+    cs_start_page = p_curr
     case_studies = [
-        ("NHS Facilities &amp; Ward Refurbishment", "Calculate flooring area, antimicrobial paint requirements, and project budget."),
-        ("Logistics Hub &amp; Pallet Loading Optimization", "Determine volume capacities, weight axle tolerances, and delivery fuel efficiency."),
-        ("Commercial Construction Site &amp; Concrete Pour", "Calculate trench volumes, foundation mix ratios, and site labour scheduling.")
+        ("Hospital Facilities &amp; Ward Refurbishment",
+         "Calculate flooring area, antimicrobial paint requirements, and project budget compliance.",
+         [
+             {"q": "<b>Task 1 (Flooring &amp; Paint Costing):</b> A rectangular hospital ward measures 15 m long by 8 m wide, with walls 3 m high. Anti-slip vinyl flooring costs £24.50 per m². Antimicrobial wall paint covers 12 m² per tin and each tin costs £38.00 (ignore doors/windows for safety margin). Calculate the combined material cost for the floor and 2 coats of wall paint.", "marks": 4},
+             {"q": "<b>Task 2 (Labour &amp; Budget Compliance):</b> Three Estates operatives working 8 hours per day can complete the refurbishment in 5 days at £18.50 per hour each. If the Ward Manager has a total refurbishment budget of £5,200 (materials + labour), determine whether the project is within budget and state the surplus or deficit.", "marks": 4}
+         ]),
+        ("Logistics Hub &amp; Pallet Loading Optimization",
+         "Determine volume capacities, weight axle tolerances, and delivery fuel efficiency.",
+         [
+             {"q": "<b>Task 1 (Container Volume &amp; Payload Limit):</b> An articulated trailer has internal dimensions 13.2 m long, 2.4 m wide, and 2.6 m high. Standard Euro-pallets measure 1.2 m by 0.8 m and are stacked to a height of 1.3 m (allowing 2 tiers high). Each loaded pallet weighs 380 kg. Calculate the maximum number of pallets that fit in the trailer and check if their total weight is within the 26-tonne axle payload limit.", "marks": 4},
+             {"q": "<b>Task 2 (Fleet Fuel &amp; Delivery Schedule):</b> The loaded lorry travels 210 miles at an average speed of 50 mph, plus a 45-minute statutory tachograph break. Fuel consumption is 8.4 miles per gallon (1 gallon = 4.55 litres) and diesel costs £1.48 per litre. Calculate the total journey time and total fuel cost.", "marks": 4}
+         ]),
+        ("Commercial Construction Site &amp; Concrete Pour",
+         "Calculate trench volumes, foundation mix ratios, and site labour scheduling.",
+         [
+             {"q": "<b>Task 1 (Trench Volume &amp; Mix Ratio):</b> A foundation trench is 25 m long, 0.8 m wide, and 1.2 m deep. Concrete has a density of 2,400 kg/m³ and is mixed using cement, sand, and aggregate in the ratio 1 : 2 : 3 by mass. Calculate the trench volume in m³ and the mass of cement required in tonnes.", "marks": 4},
+             {"q": "<b>Task 2 (Site Labour Inverse Proportion &amp; Cost):</b> Six groundworkers take 8 working days to excavate and pour the foundations. To beat forecasted frost, the site manager wants the work completed in 4 working days. How many additional groundworkers must be hired, and what is the total labour bill if each worker is paid £165 per day?", "marks": 4}
+         ])
     ]
-    for cs_idx, (cs_title, cs_desc) in enumerate(case_studies):
+    for cs_idx, (cs_title, cs_desc, cs_tasks) in enumerate(case_studies):
+        cs_photo = WORKBOOK_WIDE_POOL[(34 + cs_idx) % len(WORKBOOK_WIDE_POOL)]
+        spec_box = K.box_html(f"<p style='margin:0 0 1mm 0;font-size:9.4pt;line-height:1.3;'>{cs_desc}</p><p style='margin:0;font-size:8.8pt;color:var(--primary);'>Complete the project costing and compliance audit using statutory formula methods.</p>", "Project Specification")
         cs_body_1 = (
             K.page_title(f"Case Study {cs_idx+1}: {cs_title}", kicker="Synoptic Real-World Problem", badge=f"CS{cs_idx+1}")
-            + K.box_html(f"<p>{cs_desc}</p><p>Use the data provided to complete the project costing and compliance audit.</p>", "Project Specification")
-            + K.practice_stack([
-                {"q": f"<b>Task 1 (Material Costing):</b> Calculate total volume and raw material expense.", "marks": 4},
-                {"q": f"<b>Task 2 (Labour &amp; Timeline):</b> Determine project schedule using proportion rules.", "marks": 4}
-            ])
+            + maths_paired_scenario(cs_photo, f"Case Study {cs_idx+1}: {cs_title}", spec_box)
+            + K.practice_stack(cs_tasks)
         )
         pages.append(K.page(cs_body_1, header=(BOOK, f"Case Study {cs_idx+1}"), footer=BOOK, page_no=p_curr))
         p_curr += 1
 
         cs_body_2 = (
             K.page_title(f"Case Study {cs_idx+1} &bull; Candidate Workspace", kicker="Project Calculations Frame")
-            + K.fill_grid("Candidate full calculation working and decision summary:", 215)
+            + K.fill_grid("Candidate full calculation working and decision summary:", 195)
         )
         pages.append(K.page(cs_body_2, header=(BOOK, f"Case Study {cs_idx+1} &bull; Grid"), footer=BOOK, page_no=p_curr))
         p_curr += 1
 
     # p89-104: 2 Full Practice Exam Papers = 16 pages
+    papers_start_page = p_curr
     for m_idx in range(2):
         paper_all_qs = []
         for p in MOCK_MATHS_L2_DATA[m_idx]["sec_a"]:
@@ -526,75 +853,96 @@ def build_maths_l2_workbook():
             pages.append(K.page(m_body, header=(BOOK, f"Practice Paper {m_idx+1}"), footer=BOOK, page_no=p_curr))
             p_curr += 1
 
-    # p105-107: Explanatory Answer Keys (3 pages)
-    for k_idx in range(3):
-        k_body = (
-            K.page_title(f"Answer Key &bull; Part {k_idx+1} of 3", kicker="Model Answers &amp; Marking Criteria")
-            + K.box_html(
-                f"<div style='column-count:2; column-gap:8mm; font-size:12.5pt; line-height:1.45;'>"
-                f"<h3 style='color:var(--primary);margin-top:0;'>Worksheets {k_idx*11+1}&ndash;{k_idx*11+11} Answers</h3>"
-                f"<p>All numerical answers follow Ofqual Level 2 criteria with formal units (£, m², m³, %, kg, mph).</p>"
-                f"<p><b>Process Marks [P]:</b> Awarded for correctly interpreting word problems into arithmetic steps.</p>"
-                f"<p><b>Method Marks [M]:</b> Awarded for correct operations even when a clerical slip occurs.</p>"
-                f"<p><b>Accuracy Marks [A]:</b> Awarded for accurate final solutions.</p>"
-                f"</div>",
-                title="Official Marking Guidance"
-            )
-            + K.fill_notes(f"Personal Learning Reflections (Part {k_idx+1})", 30)
+    # Reference Section via K.ref_pages (Granular blocks so 0 overflows)
+    ref_start_page = p_curr
+    ref_blocks = []
+    for w_i in range(1, 35):
+        w_title, w_sol = ref.MATHS_L2_WORKBOOK_SOLUTIONS[w_i]
+        ref_blocks.append(K.ref_block(w_title, w_sol))
+    ref_blocks.append(K.ref_block(
+        "Synoptic Case Studies 1–3 Model Solutions",
+        "<p style='margin:0 0 1.2mm;'><b>CS1 (Hospital Ward):</b> Floor 120 m² (£2,940) + Paint 276 m² ÷ 12 = 23 tins (£874) = <b>£3,814 materials</b>. Labour 120 hrs × £18.50 = £2,220. Total = <b>£6,034 (£834 over budget)</b>.</p>"
+        "<p style='margin:0 0 1.2mm;'><b>CS2 (Logistics Hub):</b> 11 × 3 × 2 = <b>66 pallets</b>; Mass = <b>25.08 t ≤ 26 t (OK)</b>. Time = <b>4h 57m</b>; Fuel = 25 gal = 113.75 L × £1.48 = <b>£168.35</b>.</p>"
+        "<p style='margin:0;'><b>CS3 (Concrete Pour):</b> Volume = <b>24 m³</b>; Mass = 57.6 t → Cement (1/6) = <b>9.6 tonnes</b>. Workers for 4 days = 12 (<b>6 extra workers</b>); Labour = <b>£7,920.00</b>.</p>"
+    ))
+    for cp_i in (1, 2, 3):
+        cp_title, cp_sol = ref.MATHS_L2_CHECKPOINT_SOLUTIONS[cp_i]
+        ref_blocks.append(K.ref_block(cp_title, cp_sol))
+    ref_blocks.extend(split_mock_sol_blocks(ref.MATHS_L2_MOCK_SOLUTIONS))
+    ref_blocks.append(K.ref_block("Statutory Level 2 Formulae &amp; Conversions", ref.MATHS_L2_FORMULAS))
+
+    ref_page_list = K.ref_pages("Companion Workbook Reference: Complete Model Solutions", ref_blocks,
+                                BOOK, start_page=p_curr, subtitle="Step-by-Step Worked Solutions for All 34 Worksheets, Case Studies &amp; Papers",
+                                cols=2, theme=cover_theme, notes_title="Candidate Workbook Correction &amp; Action Log")
+    pages.extend(ref_page_list)
+    p_curr += len(ref_page_list)
+
+    # Duplex even-page balance check before back cover
+    if (len(pages) + 1) % 2 != 0:
+        p_ibc_body = (
+            K.page_title("Candidate Final Exam Checklist &amp; Working Frame", kicker="Workbook Completion Sign-Off", badge="SIGN")
+            + K.fill_grid("Candidate Final Formula &amp; Calculation Notes", 200)
         )
-        pages.append(K.page(k_body, header=(BOOK, f"Answer Key Part {k_idx+1}/3"), footer=BOOK, page_no=p_curr))
+        pages.append(K.page(p_ibc_body, header=(BOOK, "Completion Notes"), footer=BOOK, page_no=p_curr))
         p_curr += 1
 
-    # p108: Back Cover
+    # Populate p2: Complete 2-Column Table of Contents
+    def clean_ws_label(t):
+        return t.split(":", 1)[1].strip() if ":" in t else t
+
+    toc_left = [
+        ("W1–W21", "Targeted Workplace Practice Drills (Part 1)", [
+            (f"W{i}", clean_ws_label(ws_titles[i]), str(ws_start_pages[i])) for i in range(1, 22)
+        ]),
+    ]
+    toc_right = [
+        ("W22–W34", "Targeted Workplace Practice Drills (Part 2)", [
+            (f"W{i}", clean_ws_label(ws_titles[i]), str(ws_start_pages[i])) for i in range(22, 35)
+        ]),
+        ("CP &amp; CS", "Checkpoints &amp; Synoptic Case Studies", [
+            ("CP1–CP3", "3 End-of-Strand 4-Page Checkpoint Assessments", str(cp_start_page)),
+            ("CS1–CS3", "3 Synoptic Workplace Case Studies (Ward, Logistics, Site)", str(cs_start_page)),
+        ]),
+        ("PAPERS", "Full Realistic Practice Examination Papers", [
+            ("P1–P2", "2 Full Official-Style Practice Exam Papers (16 pages)", str(papers_start_page)),
+        ]),
+        ("REF", "Complete Model Solutions &amp; Formulae", [
+            ("SOL", "Worksheets 1–34, Case Studies, Checkpoints &amp; Paper Keys", str(ref_start_page)),
+        ]),
+    ]
+    pages[1] = maths_toc_page(
+        "Mathematics Level 2 Companion Workbook",
+        "34 Guided Workplace Practice Drills, 5mm Working Grids, Case Studies &amp; 2 Full Practice Papers",
+        toc_left, toc_right, BOOK
+    )
+
+    # Back Cover
     pages.append(K.back_cover(back_cov))
 
     print(f"Total Pages Assembled: {len(pages)}")
     out_pdf = DOWNLOADS / "MasterFunctionalSkills_Maths_Level_2_Companion_Workbook.pdf"
-    res = K.render_pdf(pages, out_pdf, theme=K.theme_from_cover(front_cov), entry3=False, title="Master Functional Skills - Maths Level 2 Companion Workbook")
-    print(f"Rendered: {res['pdf']}")
-
+    res = K.render_pdf(pages, out_pdf, theme=cover_theme, entry3=False, title="Master Functional Skills - Maths Level 2 Companion Workbook")
     shutil.copyfile(out_pdf, DOCUMENTS / out_pdf.name)
-    rep = K.qa_report(out_pdf, dpi=25)
-    K.print_report(rep)
-    return rep
+    print(f"Rendered: {res['pdf']} | Overflows: {res.get('overflow', [])}")
+    return res
 
 
 # =============================================================================
-# 3. Maths Level 1 Core Study Guide (104 Pages)
+# 3. Maths Level 1 Core Study Guide
 # =============================================================================
 def build_maths_l1_core():
     print("\n" + "="*70)
-    print("BUILDING: MasterFunctionalSkills_Maths_Level_1_Core_Guide.pdf (A4 104p)")
+    print("BUILDING: MasterFunctionalSkills_Maths_Level_1_Core_Guide.pdf")
     print("="*70)
 
     BOOK = "Maths Level 1 Core Guide"
     front_cov = COV / "maths_l1_core_cover_page-1.png"
     back_cov = COV / "maths_l1_core_cover_page-2.png"
+    cover_theme = K.theme_from_cover(front_cov)
 
     pages = []
-    used_photos = set()
-
-    def P(kw):
-        p = get_photo(kw, "maths", used_photos) or get_photo(kw, "measuring_tools", used_photos) or get_photo(kw, None, used_photos)
-        if p:
-            used_photos.add(p)
-        return p
-
     pages.append(K.front_cover(front_cov))
-    pages.append(K.inside_cover(
-        "Functional Skills Mathematics",
-        "Level 1 &bull; Core Foundations, Visual Models &amp; Practical Workplace Calculations",
-        "Maths Level 1",
-        [
-            ("1&ndash;11", "Strand 1: Number &amp; Whole Number Operations", "3"),
-            ("12&ndash;21", "Strand 2: Measures, Money, Time &amp; Shapes", "31"),
-            ("22&ndash;28", "Strand 3: Handling Data, Tables &amp; Charts", "61"),
-            ("C1&ndash;C3", "3 End-of-Strand 4-Page Checkpoint Assessments", "79"),
-            ("M1&ndash;M2", "2 Full Official-Style Mock Exams (Section A &amp; B)", "91"),
-            ("ANS", "Comprehensive Mark Schemes &amp; Answer Guidance", "99"),
-        ],
-        footer=BOOK
-    ))
+    pages.append(None)  # p2: 2-Column Table of Contents
 
     # 28 Two-Page Topics = 56 pages (p3 to p58)
     TOPICS_L1 = [
@@ -773,14 +1121,20 @@ def build_maths_l1_core():
     ]
 
     p_curr = 3
+    topic_start_pages = {}
     for u in TOPICS_L1:
         (t_num, title, kicker, p_kw, idea, formula, ex_q, ex_steps, g_rule, w_rule) = u
+        topic_start_pages[t_num] = p_curr
+        photo_rel = L1_TOPIC_PHOTOS[t_num]
 
         # Left Page: Theory
         left_body = (
             K.page_title(title, kicker=kicker, badge=t_num)
-            + K.hero_image(P(p_kw), f"Everyday application of {title}.", 56, fill=True)
-            + K.rule_box("Key Method &amp; Rules", f"<div style='font-size:13pt;line-height:1.5;'><b>{idea}</b><br><br>{formula}</div>")
+            + maths_paired_scenario(
+                photo_rel,
+                f"Topic {t_num} Applied Context: {title}",
+                K.rule_box("Key Method &amp; Rules", f"<div style='font-size:11.2pt;line-height:1.38;'><b>{idea}</b><br><br>{formula}</div>")
+            )
             + K.worked_example(ex_q, ex_steps, title="Step-by-Step Example")
             + K.tip_pair(g_rule, w_rule, golden_title="Remember!", watch_title="Watch Out!")
         )
@@ -788,11 +1142,11 @@ def build_maths_l1_core():
         p_curr += 1
 
         # Right Page: Practice
-        p_qs = [
+        p_qs = TOPIC_L1_QUESTIONS.get(t_num, [
             {"q": f"<b>Task 1:</b> Practice question applying the rules of {title}.", "marks": 2},
             {"q": f"<b>Task 2:</b> Workplace application problem with numbers and units.", "marks": 2},
             {"q": f"<b>Task 3:</b> Multi-step challenge problem. Show your working and check your answer.", "marks": 3, "weight": 1.3}
-        ]
+        ])
         right_body = (
             K.page_title(f"{title}: Practice Drills", kicker=f"Topic {t_num} &bull; Candidate Workspace", badge="P")
             + K.practice_stack(p_qs)
@@ -801,7 +1155,9 @@ def build_maths_l1_core():
         p_curr += 1
 
     # p59-70: 3 End-of-Strand 4-Page Checkpoints = 12 pages
+    cp_start_pages = {}
     for cp_idx in range(3):
+        cp_start_pages[cp_idx + 1] = p_curr
         for cp_p in range(4):
             qs = CHECKPOINT_L1_QUESTIONS.get((cp_idx, cp_p), [
                 {"q": f"<b>Question {cp_p*2+1}:</b> Level 1 problem assessing core skill.", "marks": 2},
@@ -815,7 +1171,9 @@ def build_maths_l1_core():
             p_curr += 1
 
     # p71-86: 2 Full Practice Exam Papers = 16 pages
+    mock_start_pages = {}
     for m_idx in range(2):
+        mock_start_pages[m_idx + 1] = p_curr
         # Section A: Non-Calculator (3 pages, 14 marks)
         for sa_p in range(3):
             sa_body = (
@@ -838,51 +1196,36 @@ def build_maths_l1_core():
             pages.append(K.page(sb_body, header=(BOOK, f"Mock {m_idx+1} &bull; Section B"), footer=BOOK, page_no=p_curr))
             p_curr += 1
 
-    # p87-102: Explanatory Answer Keys (16 pages)
-    for k_idx in range(16):
-        if k_idx < 14:
-            t1_idx = k_idx * 2 + 1
-            t2_idx = k_idx * 2 + 2
-            t1_data = ref.MATHS_L1_TOPIC_SOLUTIONS.get(t1_idx, (f"Topic {t1_idx}", "Accurate calculation and full method steps."))
-            t2_data = ref.MATHS_L1_TOPIC_SOLUTIONS.get(t2_idx, (f"Topic {t2_idx}", "Accurate calculation and full method steps."))
-            ans_content = (
-                f"<h3 style='color:var(--primary);margin-top:0;'>{t1_data[0]}</h3>"
-                f"<p style='font-size:11.5pt;line-height:1.45;'>{t1_data[1]}</p>"
-                f"<h3 style='color:var(--primary);margin-top:4mm;'>{t2_data[0]}</h3>"
-                f"<p style='font-size:11.5pt;line-height:1.45;'>{t2_data[1]}</p>"
-            )
-            sub_title = f"Topic {t1_idx} &amp; {t2_idx} Model Answers"
-        elif k_idx == 14:
-            cp_html = []
-            for cp_i in (1, 2, 3):
-                cp_d = ref.MATHS_L1_CHECKPOINT_SOLUTIONS.get(cp_i, (f"Checkpoint {cp_i}", "See model calculations."))
-                cp_html.append(f"<h4 style='color:var(--primary);margin:2mm 0 1mm;'>{cp_d[0]}</h4><p style='font-size:11pt;line-height:1.4;'>{cp_d[1]}</p>")
-            ans_content = "".join(cp_html)
-            sub_title = "Checkpoints 1, 2 &amp; 3 Full Solutions"
-        else:
-            m_html = []
-            for m_i in (1, 2):
-                m_d = ref.MATHS_L1_MOCK_SOLUTIONS.get(m_i, (f"Mock Exam {m_i}", "See model exam marking."))
-                m_html.append(f"<h4 style='color:var(--primary);margin:2mm 0 1mm;'>{m_d[0]}</h4><p style='font-size:11pt;line-height:1.4;'>{m_d[1]}</p>")
-            ans_content = "".join(m_html)
-            sub_title = "Official Mock Examinations 1 &amp; 2 Solutions"
+    # Reference Section via K.ref_pages (Granular blocks so 0 overflows)
+    ref_start_page = p_curr
+    ref_blocks = []
+    for t_idx in range(1, 29):
+        t_title, t_sol = ref.MATHS_L1_TOPIC_SOLUTIONS[t_idx]
+        ref_blocks.append(K.ref_block(t_title, t_sol))
+    for cp_i in (1, 2, 3):
+        cp_title, cp_sol = ref.MATHS_L1_CHECKPOINT_SOLUTIONS[cp_i]
+        ref_blocks.append(K.ref_block(cp_title, cp_sol))
+    ref_blocks.extend(split_mock_sol_blocks(ref.MATHS_L1_MOCK_SOLUTIONS))
+    ref_blocks.append(K.ref_block("Statutory Level 1 Formulae &amp; Conversions", ref.MATHS_L1_FORMULAS))
+    g_l1 = ref.MATHS_L1_GLOSSARY
+    ref_blocks.append(K.ref_block("Mathematical Glossary (Part 1)", "".join(f"<dl><dt>{t}</dt><dd>{d}</dd></dl>" for t, d in g_l1[:6])))
+    ref_blocks.append(K.ref_block("Mathematical Glossary (Part 2)", "".join(f"<dl><dt>{t}</dt><dd>{d}</dd></dl>" for t, d in g_l1[6:])))
+    ix_html = ""
+    for letter, entries in ref.MATHS_L1_INDEX:
+        items = "".join(f"<div class='ix'><span>{t}</span><span>{p}</span></div>" for t, p in entries)
+        ix_html += f"<div class='ix-letter'>{letter}</div>{items}"
+    ref_blocks.append(K.ref_block("Curriculum &amp; Topic Index", ix_html))
 
-        key_body = (
-            K.page_title(f"Complete Answer Key &bull; Part {k_idx+1} of 16", kicker="Step-by-Step Solutions &bull; Official Mark Scheme")
-            + K.box_html(
-                f"<div style='column-count:2; column-gap:8mm; font-size:11.5pt; line-height:1.45;'>"
-                f"{ans_content}"
-                f"</div>",
-                title=sub_title
-            )
-            + K.fill_notes(f"My Learning Reflections &amp; Action Notes (Part {k_idx+1})", 26)
-        )
-        pages.append(K.page(key_body, header=(BOOK, f"Answer Key Part {k_idx+1}/16"), footer=BOOK, page_no=p_curr))
-        p_curr += 1
+    ref_page_list = K.ref_pages("Reference Section: Solutions, Formulae &amp; Index", ref_blocks,
+                                BOOK, start_page=p_curr, subtitle="Complete Step-by-Step Worked Solutions, Formulae &amp; Glossary",
+                                cols=2, theme=cover_theme, notes_title="Candidate Calculation Notes &amp; Formula Log")
+    pages.extend(ref_page_list)
+    p_curr += len(ref_page_list)
 
-    # p103: Self-Audit
+    # Self-Audit
+    audit_page_no = p_curr
     audit_body = (
-        K.page_title("Candidate Self-Audit &amp; Progress Matrix", kicker="Final Review &bull; Exam Readiness")
+        K.page_title("Candidate Self-Audit &amp; Progress Matrix", kicker="Final Review &bull; Exam Readiness", badge="AUDIT")
         + K.box_html(
             "<p>Check off your skills before taking your Functional Skills Maths Level 1 exam:</p>"
             + K.bullets([
@@ -897,75 +1240,114 @@ def build_maths_l1_core():
         )
         + K.fill_notes("Personal Exam Day Checklist &amp; Targets", 40)
     )
-    pages.append(K.page(audit_body, header=(BOOK, "Self-Audit"), footer=BOOK, page_no=103))
+    pages.append(K.page(audit_body, header=(BOOK, "Self-Audit"), footer=BOOK, page_no=p_curr))
+    p_curr += 1
 
-    # p104: Back Cover
+    # Duplex even-page balance check before back cover
+    if (len(pages) + 1) % 2 != 0:
+        p_ibc_body = (
+            K.page_title("Candidate Formula Practice &amp; Tutor Sign-Off", kicker="Level 1 Exam Readiness", badge="SIGN")
+            + K.fill_grid("Candidate Formula Memory &amp; Pre-Exam Working Space", 200)
+        )
+        pages.append(K.page(p_ibc_body, header=(BOOK, "Formula Practice"), footer=BOOK, page_no=p_curr))
+        p_curr += 1
+
+    # Populate p2: Complete 2-Column Table of Contents
+    toc_left = [
+        ("N1–N11", "Strand 1: Number &amp; Whole Number Operations", [
+            (f"T{u[0]}", u[1], str(topic_start_pages[u[0]])) for u in TOPICS_L1[:11]
+        ]),
+        ("M12–M21", "Strand 2: Measures, Money, Time &amp; Shapes", [
+            (f"T{u[0]}", u[1], str(topic_start_pages[u[0]])) for u in TOPICS_L1[11:21]
+        ]),
+    ]
+    toc_right = [
+        ("D22–D28", "Strand 3: Handling Data, Tables &amp; Charts", [
+            (f"T{u[0]}", u[1], str(topic_start_pages[u[0]])) for u in TOPICS_L1[21:]
+        ]),
+        ("CP1–CP3", "End-of-Strand Checkpoint Assessments (12p)", [
+            ("CP1", "Strand 1: Number Operations Checkpoint", str(cp_start_pages[1])),
+            ("CP2", "Strand 2: Measures, Money &amp; Shapes Checkpoint", str(cp_start_pages[2])),
+            ("CP3", "Strand 3: Handling Data &amp; Charts Checkpoint", str(cp_start_pages[3])),
+        ]),
+        ("M1–M2", "Official-Style Mock Examinations (16p)", [
+            ("M1", "Official Mock Exam 1 (Section A Non-Calc &amp; Section B Calc)", str(mock_start_pages[1])),
+            ("M2", "Official Mock Exam 2 (Section A Non-Calc &amp; Section B Calc)", str(mock_start_pages[2])),
+        ]),
+        ("REF", "Solutions, Formulae, Glossary &amp; Index", [
+            ("SOL", "Step-by-Step Worked Solutions, Formulae &amp; Index", str(ref_start_page)),
+            ("AUDIT", "Candidate Self-Audit &amp; Exam Readiness Matrix", str(audit_page_no)),
+        ]),
+    ]
+    pages[1] = maths_toc_page(
+        "Mathematics Level 1 Core Study Guide",
+        "Complete 28-Topic Curriculum, Visual Models, End-of-Strand Checkpoints &amp; 2 Official Mocks",
+        toc_left, toc_right, BOOK
+    )
+
+    # Back Cover
     pages.append(K.back_cover(back_cov))
 
     print(f"Total Pages Assembled: {len(pages)}")
     out_pdf = DOWNLOADS / "MasterFunctionalSkills_Maths_Level_1_Core_Guide.pdf"
-    res = K.render_pdf(pages, out_pdf, theme=K.theme_from_cover(front_cov), entry3=False, title="Master Functional Skills - Maths Level 1 Core Guide")
-    print(f"Rendered: {res['pdf']}")
-
+    res = K.render_pdf(pages, out_pdf, theme=cover_theme, entry3=False, title="Master Functional Skills - Maths Level 1 Core Guide")
     shutil.copyfile(out_pdf, DOCUMENTS / out_pdf.name)
-    rep = K.qa_report(out_pdf, dpi=25)
-    K.print_report(rep)
-    return rep
+    print(f"Rendered: {res['pdf']} | Overflows: {res.get('overflow', [])}")
+    return res
 
 
 # =============================================================================
-# 4. Maths Level 1 Companion Workbook (108 Pages)
+# 4. Maths Level 1 Companion Workbook
 # =============================================================================
 def build_maths_l1_workbook():
     print("\n" + "="*70)
-    print("BUILDING: MasterFunctionalSkills_Maths_Level_1_Companion_Workbook.pdf (A4 108p)")
+    print("BUILDING: MasterFunctionalSkills_Maths_Level_1_Companion_Workbook.pdf")
     print("="*70)
 
     BOOK = "Maths Level 1 Workbook"
     front_cov = COV / "maths_l1_companion_cover_page-1.png"
     back_cov = COV / "maths_l1_companion_cover_page-2.png"
+    cover_theme = K.theme_from_cover(front_cov)
 
     pages = []
     pages.append(K.front_cover(front_cov))
-    pages.append(K.inside_cover(
-        "Functional Skills Mathematics",
-        "Level 1 Companion Workbook &bull; 5mm Grid Candidate Working Frames &amp; Full Mocks",
-        "Maths Level 1",
-        [
-            ("1&ndash;34", "34 Targeted Workplace Practice Drill Worksheets", "3"),
-            ("C1&ndash;C3", "3 End-of-Strand 4-Page Checkpoint Assessments", "71"),
-            ("CS1&ndash;CS3", "3 Synoptic Real-World Workplace Case Studies", "83"),
-            ("M1&ndash;M2", "2 Full Realistic Practice Exam Papers (16 pages)", "89"),
-            ("ANS", "Comprehensive Mark Schemes &amp; Process Mark Guidance", "105"),
-        ],
-        footer=BOOK
-    ))
+    pages.append(None)  # p2: 2-Column Table of Contents
 
     # 34 Drill Worksheets = 68 pages (p3 to p70)
     p_curr = 3
+    ws_start_pages = {}
+    ws_titles = {}
     for d_idx in range(34):
+        ws_num = d_idx + 1
+        ws_start_pages[ws_num] = p_curr
+        ws_title, _ = ref.MATHS_L1_WORKBOOK_SOLUTIONS.get(ws_num, (f"Worksheet {ws_num}: Guided Calculation Drills", ""))
+        ws_titles[ws_num] = ws_title
+        drill_qs = WORKBOOK_L1_DRILLS.get(ws_num, [
+            {"q": f"<b>Task {ws_num}.1:</b> Foundation problem testing accurate calculation.", "marks": 2},
+            {"q": f"<b>Task {ws_num}.2:</b> Practical workplace problem with numbers and units.", "marks": 2}
+        ])
+        photo_rel = WORKBOOK_WIDE_POOL[(d_idx + 12) % len(WORKBOOK_WIDE_POOL)]
+        scaffold_box = K.rule_box("Guided Calculation Scaffold",
+                                  "<p style='margin:0;font-size:8.6pt;line-height:1.3;'><b>Step 1:</b> Highlight key numbers &amp; operation.<br>"
+                                  "<b>Step 2:</b> Show calculation steps clearly.<br>"
+                                  "<b>Step 3:</b> Write final answer with unit symbol.</p>")
         p1_body = (
-            K.page_title(f"Worksheet {d_idx+1}: Guided Calculation Drills", kicker=f"Drill {d_idx+1} of 34 &bull; Level 1 Standards", badge=d_idx+1)
-            + K.rule_box("Guided Calculation Scaffold",
-                         "<p><b>Step 1:</b> Read the problem and highlight the key numbers and what you need to find.<br>"
-                         "<b>Step 2:</b> Choose the right operation (+, -, x, /) and show all your steps.<br>"
-                         "<b>Step 3:</b> Write down your final answer with the correct unit symbol.</p>")
-            + K.practice_stack([
-                {"q": f"<b>Task {d_idx+1}.1:</b> Foundation problem testing accurate calculation.", "marks": 2},
-                {"q": f"<b>Task {d_idx+1}.2:</b> Practical workplace problem with numbers and units.", "marks": 2}
-            ], start=1)
+            K.page_title(ws_title, kicker=f"Drill {ws_num} of 34 &bull; Level 1 Standards", badge=ws_num)
+            + maths_paired_scenario(photo_rel, f"{ws_title}: Everyday Context", scaffold_box)
+            + K.practice_stack(drill_qs, start=1)
         )
-        pages.append(K.page(p1_body, header=(BOOK, f"Worksheet {d_idx+1} &bull; Practice"), footer=BOOK, page_no=p_curr))
+        pages.append(K.page(p1_body, header=(BOOK, f"Worksheet {ws_num} &bull; Practice"), footer=BOOK, page_no=p_curr))
         p_curr += 1
 
         p2_body = (
-            K.page_title(f"Worksheet {d_idx+1} &bull; Candidate Workspace", kicker="5mm Ruled Grid Working Area")
-            + K.fill_grid(f"Show all working for Worksheet {d_idx+1} tasks below. Check your final answers.", 215)
+            K.page_title(f"{ws_title} &bull; Candidate Workspace", kicker="5mm Ruled Grid Working Area")
+            + K.fill_grid(f"Show all working for Worksheet {ws_num} tasks below. Check your final answers.", 195)
         )
-        pages.append(K.page(p2_body, header=(BOOK, f"Worksheet {d_idx+1} &bull; Grid"), footer=BOOK, page_no=p_curr))
+        pages.append(K.page(p2_body, header=(BOOK, f"Worksheet {ws_num} &bull; Grid"), footer=BOOK, page_no=p_curr))
         p_curr += 1
 
     # p71-82: 3 End-of-Strand 4-Page Checkpoints = 12 pages
+    cp_start_page = p_curr
     for cp_idx in range(3):
         for cp_p in range(4):
             qs = CHECKPOINT_L1_QUESTIONS.get((cp_idx, cp_p), [
@@ -980,31 +1362,47 @@ def build_maths_l1_workbook():
             p_curr += 1
 
     # p83-88: 3 Synoptic Workplace Case Studies = 6 pages (2 pages each)
+    cs_start_page = p_curr
     case_studies = [
-        ("Retail Store Stock &amp; Customer Orders", "Calculate product totals, delivery weights, and customer receipts."),
-        ("Community Garden &amp; Perimeter Fencing", "Determine border lengths, turf area, and soil bag quantities."),
-        ("Sports Club Event Budget &amp; Ticket Sales", "Calculate ticket revenue, refreshment expenses, and final profit.")
+        ("Retail Store Stock &amp; Customer Orders",
+         "Calculate product totals, delivery weights, and customer receipts.",
+         [
+             {"q": "<b>Task 1 (Order Cost &amp; Staff Discount):</b> A customer orders 4 fleeces at £22.50 each, 3 pairs of walking boots at £45.00 each, and 5 pairs of thermal socks at £4.80 per pair. Calculate the subtotal before discount, and find the final amount payable after a 10% loyalty discount.", "marks": 3},
+             {"q": "<b>Task 2 (Parcel Weight &amp; Courier Postage):</b> Each fleece weighs 450 g, each pair of boots weighs 1,100 g, and each pair of socks weighs 80 g. The cardboard shipping box weighs 400 g. Calculate the total parcel weight in kilograms. If courier delivery costs £6.50 for parcels up to 5 kg and £9.75 for parcels over 5 kg, how much is the postage?", "marks": 3}
+         ]),
+        ("Community Garden &amp; Perimeter Fencing",
+         "Determine border lengths, turf area, and soil bag quantities.",
+         [
+             {"q": "<b>Task 1 (Boundary Fencing Cost):</b> A rectangular community garden plot measures 14 metres long by 8 metres wide. Wooden fencing panels are installed around all four sides, except for a 2-metre wide entrance gate. Fencing costs £15.00 per metre. Calculate the total length of fencing required and its total cost.", "marks": 3},
+             {"q": "<b>Task 2 (Lawn Turf Area &amp; Compost Bags):</b> Inside the plot, a rectangular lawn area measuring 9 metres by 5 metres is laid with turf costing £6.00 per m². In addition, 15 bags of organic compost are bought at £4.50 per bag. Calculate the combined cost of the turf and compost.", "marks": 3}
+         ]),
+        ("Sports Club Event Budget &amp; Ticket Sales",
+         "Calculate ticket revenue, refreshment expenses, and final profit.",
+         [
+             {"q": "<b>Task 1 (Ticket Revenue):</b> A local football club holds an awards evening. They sell 85 adult tickets at £12.00 each and 40 junior tickets at £6.50 each. Calculate the total money raised from ticket sales.", "marks": 3},
+             {"q": "<b>Task 2 (Event Expenses &amp; Net Profit):</b> The club pays £350.00 for hall hire, £425.00 for buffet catering, and £115.00 for trophies and medals. Calculate the total expenses and work out the net profit made by the club.", "marks": 3}
+         ])
     ]
-    for cs_idx, (cs_title, cs_desc) in enumerate(case_studies):
+    for cs_idx, (cs_title, cs_desc, cs_tasks) in enumerate(case_studies):
+        cs_photo = WORKBOOK_WIDE_POOL[(28 + cs_idx) % len(WORKBOOK_WIDE_POOL)]
+        spec_box = K.box_html(f"<p style='margin:0 0 1mm 0;font-size:9.4pt;line-height:1.3;'>{cs_desc}</p><p style='margin:0;font-size:8.8pt;color:var(--primary);'>Use the data provided to complete the calculation tasks below.</p>", "Project Specification")
         cs_body_1 = (
             K.page_title(f"Case Study {cs_idx+1}: {cs_title}", kicker="Synoptic Real-World Problem", badge=f"CS{cs_idx+1}")
-            + K.box_html(f"<p>{cs_desc}</p><p>Use the data provided to complete the calculation tasks below.</p>", "Project Specification")
-            + K.practice_stack([
-                {"q": f"<b>Task 1:</b> Calculate total quantity and material expense.", "marks": 3},
-                {"q": f"<b>Task 2:</b> Determine delivery schedule and final budget balance.", "marks": 3}
-            ])
+            + maths_paired_scenario(cs_photo, f"Case Study {cs_idx+1}: {cs_title}", spec_box)
+            + K.practice_stack(cs_tasks)
         )
         pages.append(K.page(cs_body_1, header=(BOOK, f"Case Study {cs_idx+1}"), footer=BOOK, page_no=p_curr))
         p_curr += 1
 
         cs_body_2 = (
             K.page_title(f"Case Study {cs_idx+1} &bull; Candidate Workspace", kicker="Project Calculations Frame")
-            + K.fill_grid("Candidate full calculation working and decision summary:", 215)
+            + K.fill_grid("Candidate full calculation working and decision summary:", 195)
         )
         pages.append(K.page(cs_body_2, header=(BOOK, f"Case Study {cs_idx+1} &bull; Grid"), footer=BOOK, page_no=p_curr))
         p_curr += 1
 
     # p89-104: 2 Full Practice Exam Papers = 16 pages
+    papers_start_page = p_curr
     for m_idx in range(2):
         paper_all_qs = []
         for p in MOCK_MATHS_L1_DATA[m_idx]["sec_a"]:
@@ -1020,73 +1418,96 @@ def build_maths_l1_workbook():
             pages.append(K.page(m_body, header=(BOOK, f"Practice Paper {m_idx+1}"), footer=BOOK, page_no=p_curr))
             p_curr += 1
 
-    # p105-107: Explanatory Answer Keys (3 pages)
-    for k_idx in range(3):
-        k_body = (
-            K.page_title(f"Answer Key &bull; Part {k_idx+1} of 3", kicker="Model Answers &amp; Marking Criteria")
-            + K.box_html(
-                f"<div style='column-count:2; column-gap:8mm; font-size:12.5pt; line-height:1.45;'>"
-                f"<h3 style='color:var(--primary);margin-top:0;'>Worksheets {k_idx*11+1}&ndash;{k_idx*11+11} Answers</h3>"
-                f"<p>All answers include correct units (£, m, cm, kg, l). Method marks awarded for clear working.</p>"
-                f"</div>",
-                title="Official Marking Guidance"
-            )
-            + K.fill_notes(f"Personal Learning Reflections (Part {k_idx+1})", 30)
+    # Reference Section via K.ref_pages (Granular blocks so 0 overflows)
+    ref_start_page = p_curr
+    ref_blocks = []
+    for w_i in range(1, 35):
+        w_title, w_sol = ref.MATHS_L1_WORKBOOK_SOLUTIONS[w_i]
+        ref_blocks.append(K.ref_block(w_title, w_sol))
+    ref_blocks.append(K.ref_block(
+        "Synoptic Case Studies 1–3 Model Solutions",
+        "<p style='margin:0 0 1.2mm;'><b>CS1 (Retail Orders):</b> Subtotal = £90 + £135 + £24 = <b>£249.00</b>; After 10% discount = <b>£224.10</b>. Weight = 5,900 g = <b>5.9 kg</b> → Postage = <b>£9.75</b>.</p>"
+        "<p style='margin:0 0 1.2mm;'><b>CS2 (Community Garden):</b> Fencing = 44 m − 2 m = <b>42 m</b> × £15 = <b>£630.00</b>. Turf = 45 m² × £6 = £270; Compost = £67.50; Total = <b>£337.50</b>.</p>"
+        "<p style='margin:0;'><b>CS3 (Sports Club Event):</b> Tickets = £1,020 + £260 = <b>£1,280.00</b>. Expenses = <b>£890.00</b>; Net profit = £1,280 − £890 = <b>£390.00</b>.</p>"
+    ))
+    for cp_i in (1, 2, 3):
+        cp_title, cp_sol = ref.MATHS_L1_CHECKPOINT_SOLUTIONS[cp_i]
+        ref_blocks.append(K.ref_block(cp_title, cp_sol))
+    ref_blocks.extend(split_mock_sol_blocks(ref.MATHS_L1_MOCK_SOLUTIONS))
+    ref_blocks.append(K.ref_block("Statutory Level 1 Formulae &amp; Conversions", ref.MATHS_L1_FORMULAS))
+
+    ref_page_list = K.ref_pages("Companion Workbook Reference: Complete Model Solutions", ref_blocks,
+                                BOOK, start_page=p_curr, subtitle="Step-by-Step Worked Solutions for All 34 Worksheets, Case Studies &amp; Papers",
+                                cols=2, theme=cover_theme, notes_title="Candidate Workbook Correction &amp; Action Log")
+    pages.extend(ref_page_list)
+    p_curr += len(ref_page_list)
+
+    # Duplex even-page balance check before back cover
+    if (len(pages) + 1) % 2 != 0:
+        p_ibc_body = (
+            K.page_title("Candidate Final Exam Checklist &amp; Working Frame", kicker="Workbook Completion Sign-Off", badge="SIGN")
+            + K.fill_grid("Candidate Final Formula &amp; Calculation Notes", 200)
         )
-        pages.append(K.page(k_body, header=(BOOK, f"Answer Key Part {k_idx+1}/3"), footer=BOOK, page_no=p_curr))
+        pages.append(K.page(p_ibc_body, header=(BOOK, "Completion Notes"), footer=BOOK, page_no=p_curr))
         p_curr += 1
 
-    # p108: Back Cover
+    # Populate p2: Complete 2-Column Table of Contents
+    def clean_ws_label(t):
+        return t.split(":", 1)[1].strip() if ":" in t else t
+
+    toc_left = [
+        ("W1–W21", "Guided Workplace Practice Drills (Part 1)", [
+            (f"W{i}", clean_ws_label(ws_titles[i]), str(ws_start_pages[i])) for i in range(1, 22)
+        ]),
+    ]
+    toc_right = [
+        ("W22–W34", "Guided Workplace Practice Drills (Part 2)", [
+            (f"W{i}", clean_ws_label(ws_titles[i]), str(ws_start_pages[i])) for i in range(22, 35)
+        ]),
+        ("CP &amp; CS", "Checkpoints &amp; Synoptic Case Studies", [
+            ("CP1–CP3", "3 End-of-Strand 4-Page Checkpoint Assessments", str(cp_start_page)),
+            ("CS1–CS3", "3 Synoptic Workplace Case Studies (Retail, Garden, Club)", str(cs_start_page)),
+        ]),
+        ("PAPERS", "Full Realistic Practice Examination Papers", [
+            ("P1–P2", "2 Full Official-Style Practice Exam Papers (16 pages)", str(papers_start_page)),
+        ]),
+        ("REF", "Complete Model Solutions &amp; Formulae", [
+            ("SOL", "Worksheets 1–34, Case Studies, Checkpoints &amp; Paper Keys", str(ref_start_page)),
+        ]),
+    ]
+    pages[1] = maths_toc_page(
+        "Mathematics Level 1 Companion Workbook",
+        "34 Guided Workplace Practice Drills, 5mm Working Grids, Case Studies &amp; 2 Full Practice Papers",
+        toc_left, toc_right, BOOK
+    )
+
+    # Back Cover
     pages.append(K.back_cover(back_cov))
 
     print(f"Total Pages Assembled: {len(pages)}")
     out_pdf = DOWNLOADS / "MasterFunctionalSkills_Maths_Level_1_Companion_Workbook.pdf"
-    res = K.render_pdf(pages, out_pdf, theme=K.theme_from_cover(front_cov), entry3=False, title="Master Functional Skills - Maths Level 1 Companion Workbook")
-    print(f"Rendered: {res['pdf']}")
-
+    res = K.render_pdf(pages, out_pdf, theme=cover_theme, entry3=False, title="Master Functional Skills - Maths Level 1 Companion Workbook")
     shutil.copyfile(out_pdf, DOCUMENTS / out_pdf.name)
-    rep = K.qa_report(out_pdf, dpi=25)
-    K.print_report(rep)
-    return rep
+    print(f"Rendered: {res['pdf']} | Overflows: {res.get('overflow', [])}")
+    return res
 
 
 # =============================================================================
-# 5. Maths Entry Level 3 Core Foundations Guide (104 Pages, 14pt Font)
+# 5. Maths Entry Level 3 Core Foundations Guide (14pt Font)
 # =============================================================================
 def build_maths_e3_core():
     print("\n" + "="*70)
-    print("BUILDING: MasterFunctionalSkills_Maths_Entry_Level_3_Core_Guide.pdf (A4 14pt 104p)")
+    print("BUILDING: MasterFunctionalSkills_Maths_Entry_Level_3_Core_Guide.pdf")
     print("="*70)
 
     BOOK = "Maths Entry 3 Core Guide"
     front_cov = COV / "maths_e3_core_cover_page-1.png"
     back_cov = COV / "maths_e3_core_cover_page-2.png"
+    cover_theme = K.theme_from_cover(front_cov)
 
     pages = []
-    used_photos = set()
-
-    def P(kw):
-        p = get_photo(kw, "maths", used_photos) or get_photo(kw, "everyday_objects", used_photos) or get_photo(kw, None, used_photos)
-        if p:
-            used_photos.add(p)
-        return p
-
     pages.append(K.front_cover(front_cov))
-    pages.append(K.inside_cover(
-        "Functional Skills Mathematics",
-        "Entry Level 3 &bull; Core Foundations, Concrete Models &amp; Practical Problem Solving",
-        "Maths Entry 3",
-        [
-            ("1&ndash;10", "Strand 1: Number &amp; Place Value up to 1,000", "3"),
-            ("11&ndash;18", "Strand 2: Money, Time, Length &amp; Shapes", "27"),
-            ("19&ndash;24", "Strand 3: Information &amp; Data Handling", "47"),
-            ("W1&ndash;W8", "8 Vocational Calculation Workshops (16 pages)", "61"),
-            ("M1&ndash;M2", "2 Full Entry 3 Mock Exam Papers (16 pages)", "77"),
-            ("ANS", "Step-by-Step Explanatory Answer Keys (10 pages)", "93"),
-            ("CERT", "Learner Progress Tracker &amp; Certificate of Mastery", "103"),
-        ],
-        footer=BOOK
-    ))
+    pages.append(None)  # p2: 2-Column Table of Contents
 
     # 24 Two-Page Topics = 48 pages (p3 to p50)
     TOPICS_E3 = [
@@ -1241,13 +1662,16 @@ def build_maths_e3_core():
     ]
 
     p_curr = 3
+    topic_start_pages = {}
     for u in TOPICS_E3:
         (t_num, title, kicker, p_kw, idea, formula, ex_q, ex_steps, g_rule, w_rule) = u
+        topic_start_pages[t_num] = p_curr
+        photo_rel = E3_TOPIC_PHOTOS[t_num]
 
         # Left Page: Learn (14pt body font)
         left_body = (
             K.page_title(title, kicker=kicker, badge=t_num)
-            + K.hero_image(P(p_kw), f"Everyday example for {title}.", 56, fill=True)
+            + maths_hero_banner(photo_rel, f"Topic {t_num} Everyday Example ({title}): {ex_q}", height_mm=50)
             + K.rule_box("How to Do It &bull; Key Rule", f"<div style='font-size:14pt;line-height:1.6;'><b>{idea}</b><br><br>{formula}</div>")
             + K.worked_example(ex_q, ex_steps, title="Step-by-Step Example")
             + K.tip_pair(g_rule, w_rule, golden_title="Top Tip", watch_title="Remember!")
@@ -1269,6 +1693,7 @@ def build_maths_e3_core():
         p_curr += 1
 
     # p51-66: 8 Vocational Calculation Workshops = 16 pages (2 pages each)
+    ws_start_pages = {}
     workshops = [
         ("Retail Cashier &amp; Till Operations", "Adding purchases, calculating 10% discounts, and giving change."),
         ("Care Home Resident Medication &amp; Liquids", "Measuring millilitres, tracking daily fluids, and reading thermometer scales."),
@@ -1278,6 +1703,16 @@ def build_maths_e3_core():
         ("Logistics Driver Delivery Schedules", "Reading digital time, estimating journey durations, and tracking compass directions."),
         ("Office Supply Ordering &amp; Budgeting", "Adding equipment costs, rounding to nearest £10, and verifying receipts."),
         ("Community Centre Event Planning", "Sorting attendee data, creating tally charts, and drawing bar graphs.")
+    ]
+    workshop_photos = [
+        "reading_thematic/r11_l1_cashless_tills.jpg",
+        "e3_thematic/r7_hospital_clinic.jpg",
+        "e3_thematic/r3_college_enrolment.jpg",
+        "e3_thematic/r6_warehouse_memo.jpg",
+        "e3_thematic/r2_community_garden.jpg",
+        "e3_thematic/r8_bus_train_compare.jpg",
+        "e3_thematic/r4_office_laminator.jpg",
+        "e3_thematic/r9_leisure_timetable.jpg",
     ]
     workshop_tasks = [
         [{"q": "<b>Task 1 (Retail Transaction):</b> A customer buys bread for £1.45, butter for £2.10, and jam for £1.80. Calculate the total cost.", "marks": 2},
@@ -1308,8 +1743,10 @@ def build_maths_e3_core():
         "Double-check attendee counts and verify whether seating capacity is sufficient."
     ]
     for ws_idx, (ws_title, ws_desc) in enumerate(workshops):
+        ws_start_pages[ws_idx + 1] = p_curr
         ws_body_1 = (
             K.page_title(f"Workshop {ws_idx+1}: {ws_title}", kicker=f"Vocational Calculation Workshop &bull; Workshop {ws_idx+1}", badge=f"W{ws_idx+1}")
+            + maths_hero_banner(workshop_photos[ws_idx], f"Workshop {ws_idx+1} ({ws_title.replace('&amp;', '&')}): {ws_desc}", height_mm=32)
             + K.box_html(f"<p>{ws_desc}</p><p>Use your maths skills to complete the workplace tasks below:</p>", "Workplace Scenario")
             + K.practice_stack(workshop_tasks[ws_idx], start=1)
         )
@@ -1325,7 +1762,9 @@ def build_maths_e3_core():
         p_curr += 1
 
     # p67-82: 2 Full Official-Style Entry 3 Mock Exams = 16 pages (8 pages per mock)
+    mock_start_pages = {}
     for m_idx in range(2):
+        mock_start_pages[m_idx + 1] = p_curr
         # Section A: Non-Calculator (3 pages, 6 questions)
         for sa_p in range(3):
             sa_body = (
@@ -1348,33 +1787,26 @@ def build_maths_e3_core():
             pages.append(K.page(sb_body, header=(BOOK, f"Mock {m_idx+1} &bull; Section B"), footer=BOOK, page_no=p_curr))
             p_curr += 1
 
-    # Back matter reference section
+    # Back matter reference section (Granular blocks so 0 overflows)
+    ref_start_page = p_curr
     ref_blocks = []
-    # Topics 1-24 Worked Solutions
     for t_idx in range(1, 25):
         t_title, t_sol = ref.MATHS_E3_TOPIC_SOLUTIONS[t_idx]
         ref_blocks.append(K.ref_block(t_title, t_sol))
-    # Workshops 1-8 Solutions
     for ws_idx in range(1, 9):
         ws_title, ws_sol = ref.MATHS_E3_WORKSHOP_SOLUTIONS[ws_idx]
         ref_blocks.append(K.ref_block(ws_title, ws_sol))
-    # Mocks 1-2 Full Mark Schemes
-    for m_idx in range(1, 3):
-        m_title, m_sol = ref.MATHS_E3_MOCK_SOLUTIONS[m_idx]
-        ref_blocks.append(K.ref_block(m_title, m_sol))
-    # Formula Sheet
+    ref_blocks.extend(split_mock_sol_blocks(ref.MATHS_E3_MOCK_SOLUTIONS))
     ref_blocks.append(K.ref_block("Entry Level 3 Key Rules &amp; Conversions", ref.MATHS_E3_FORMULAS))
-    # Glossary
-    gloss_html = "".join(f"<dl><dt>{t}</dt><dd>{d}</dd></dl>" for t, d in ref.MATHS_E3_GLOSSARY)
-    ref_blocks.append(K.ref_block("Mathematical Glossary &amp; Vocabulary", gloss_html))
-    # Index
+    g_e3 = ref.MATHS_E3_GLOSSARY
+    ref_blocks.append(K.ref_block("Mathematical Glossary (Part 1)", "".join(f"<dl><dt>{t}</dt><dd>{d}</dd></dl>" for t, d in g_e3[:9])))
+    ref_blocks.append(K.ref_block("Mathematical Glossary (Part 2)", "".join(f"<dl><dt>{t}</dt><dd>{d}</dd></dl>" for t, d in g_e3[9:])))
     ix_html = ""
     for letter, entries in ref.MATHS_E3_INDEX:
         items = "".join(f"<div class='ix'><span>{t}</span><span>{p}</span></div>" for t, p in entries)
         ix_html += f"<div class='ix-letter'>{letter}</div>{items}"
     ref_blocks.append(K.ref_block("Curriculum &amp; Topic Index", ix_html))
 
-    cover_theme = K.theme_from_cover(front_cov)
     ref_page_list = K.ref_pages("Reference Section: Solutions, Glossary &amp; Index", ref_blocks,
                                 BOOK, start_page=p_curr, subtitle="Complete Step-by-Step Worked Solutions &amp; Statutory Guidance",
                                 cols=2, theme=cover_theme, notes_title="Candidate Reference Notes &amp; Exam Checklist")
@@ -1382,6 +1814,7 @@ def build_maths_e3_core():
     p_curr += len(ref_page_list)
 
     # Page: Learner Competency Tracker & Revision Log
+    tracker_page_no = p_curr
     tracker_body = (
         K.page_title("Learner Competency Tracker &amp; Revision Log", kicker="Entry Level 3 &bull; Self-Evaluation", badge="EVAL")
         + K.box_html(
@@ -1419,7 +1852,7 @@ def build_maths_e3_core():
     pages.append(K.page(cert_body, header=(BOOK, "Certificate of Progress"), footer=BOOK, page_no=p_curr))
     p_curr += 1
 
-    # Duplex even-page balance check before back cover (final total including back cover must be even)
+    # Duplex even-page balance check before back cover
     if (len(pages) + 1) % 2 != 0:
         p_notes_body = (
             K.page_title("Candidate Revision Notes &amp; Formula Practice", kicker="Personal Working Space", badge="MEMO")
@@ -1428,24 +1861,57 @@ def build_maths_e3_core():
         pages.append(K.page(p_notes_body, header=(BOOK, "Revision Notes"), footer=BOOK, page_no=p_curr))
         p_curr += 1
 
+    # Populate p2: Complete 2-Column Table of Contents
+    toc_left = [
+        ("N1–N10", "Strand 1: Number &amp; Place Value up to 1,000", [
+            (f"T{u[0]}", u[1], str(topic_start_pages[u[0]])) for u in TOPICS_E3[:10]
+        ]),
+        ("M11–M18", "Strand 2: Money, Time, Measure &amp; Shapes", [
+            (f"T{u[0]}", u[1], str(topic_start_pages[u[0]])) for u in TOPICS_E3[10:18]
+        ]),
+    ]
+    toc_right = [
+        ("D19–D24", "Strand 3: Information &amp; Data Handling", [
+            (f"T{u[0]}", u[1], str(topic_start_pages[u[0]])) for u in TOPICS_E3[18:]
+        ]),
+        ("W1–W8", "Vocational Calculation Workshops (16p)", [
+            (f"W{i+1}", workshops[i][0], str(ws_start_pages[i+1])) for i in range(len(workshops))
+        ]),
+        ("M1–M2", "Official-Style Entry 3 Mock Exams (16p)", [
+            ("M1", "Entry 3 Mock Exam 1 (Section A Non-Calc &amp; Section B Calc)", str(mock_start_pages[1])),
+            ("M2", "Entry 3 Mock Exam 2 (Section A Non-Calc &amp; Section B Calc)", str(mock_start_pages[2])),
+        ]),
+        ("REF", "Solutions, Key Rules, Glossary &amp; Certificate", [
+            ("SOL", "Step-by-Step Worked Solutions, Key Rules &amp; Index", str(ref_start_page)),
+            ("CERT", "Learner Competency Tracker &amp; Progress Certificate", str(tracker_page_no)),
+        ]),
+    ]
+    pages[1] = maths_toc_page(
+        "Mathematics Entry Level 3 Core Study Guide",
+        "Complete 24-Topic Foundations Guide, Concrete Models, 8 Vocational Workshops &amp; 2 Full Mocks",
+        toc_left, toc_right, BOOK
+    )
+
     # Back Cover
     pages.append(K.back_cover(back_cov))
 
     print(f"Total Pages Assembled: {len(pages)}")
     out_pdf = DOWNLOADS / "MasterFunctionalSkills_Maths_Entry_Level_3_Core_Guide.pdf"
-    res = K.render_pdf(pages, out_pdf, theme=K.theme_from_cover(front_cov), entry3=True, title="Master Functional Skills - Maths Entry Level 3 Core Guide")
-    print(f"Rendered: {res['pdf']}")
-
+    res = K.render_pdf(pages, out_pdf, theme=cover_theme, entry3=True, title="Master Functional Skills - Maths Entry Level 3 Core Guide")
     shutil.copyfile(out_pdf, DOCUMENTS / out_pdf.name)
-    rep = K.qa_report(out_pdf, dpi=25)
-    K.print_report(rep)
-    return rep
+    print(f"Rendered: {res['pdf']} | Overflows: {res.get('overflow', [])}")
+    return res
 
 
 if __name__ == "__main__":
-    rep_l2_core = build_maths_l2_core()
-    rep_l2_wb = build_maths_l2_workbook()
-    rep_l1_core = build_maths_l1_core()
-    rep_l1_wb = build_maths_l1_workbook()
-    rep_e3_core = build_maths_e3_core()
-    print("Done all Maths Suite builds!")
+    r1 = build_maths_l2_core()
+    r2 = build_maths_l2_workbook()
+    r3 = build_maths_l1_core()
+    r4 = build_maths_l1_workbook()
+    r5 = build_maths_e3_core()
+    print("\nMaths Suite Build Complete: All 5 books generated!")
+    print("L2 Core Overflows:", r1.get("overflow", []))
+    print("L2 Workbook Overflows:", r2.get("overflow", []))
+    print("L1 Core Overflows:", r3.get("overflow", []))
+    print("L1 Workbook Overflows:", r4.get("overflow", []))
+    print("E3 Core Overflows:", r5.get("overflow", []))

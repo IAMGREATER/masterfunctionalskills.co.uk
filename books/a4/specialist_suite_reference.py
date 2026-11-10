@@ -250,7 +250,7 @@ ENGLISH_L2_MOCK_SOLUTIONS = {
         ("Mock 1 &bull; Writing Exemplar &bull; Task 1 (Formal Workplace Report)",
          "<b>Task 1 Benchmark Exemplar: Formal Recommendation Report</b><br>"
          "<b>To:</b> Board of Operations, GreenRoute Logistics<br>"
-         "<b>From:</b> Subi, Senior Logistics Analyst<br>"
+         "<b>From:</b> Abdul, Senior Logistics Analyst<br>"
          "<b>Date:</b> 14 October 2026<br>"
          "<b>Subject:</b> Fleet Electrification Feasibility Assessment &amp; Infrastructure Roadmap<br><br>"
          "<b>1. Executive Summary</b><br>"
@@ -286,7 +286,7 @@ ENGLISH_L2_MOCK_SOLUTIONS = {
         ("Mock 2 &bull; Writing Exemplar &bull; Task 1 (Formal Workplace Policy Report)",
          "<b>Task 1 Benchmark Exemplar: Formal Hybrid Working Policy Report</b><br>"
          "<b>To:</b> Executive Management Board, Apex Global Enterprises<br>"
-         "<b>From:</b> Subi, Lead HR Strategy Consultant<br>"
+         "<b>From:</b> Abdul, Lead HR Strategy Consultant<br>"
          "<b>Date:</b> 18 October 2026<br>"
          "<b>Subject:</b> Enterprise Hybrid Working Framework &amp; Core Productivity Standards<br><br>"
          "<b>1. Purpose &amp; Scope</b><br>"
@@ -325,7 +325,7 @@ ENGLISH_L2_MOCK_SOLUTIONS = {
         ("Mock 3 &bull; Writing Exemplar &bull; Task 1 (Formal Article for a National Careers Publication)",
          "<b>Task 1 Benchmark Exemplar: Careers Feature Article</b><br>"
          "<b>Title: Degree Apprenticeship or Traditional Campus? Navigating Modern Career Gateways</b><br>"
-         "<b>Byline:</b> Subi, Lead Vocational Education Specialist<br><br>"
+         "<b>Byline:</b> Abdul, Lead Vocational Education Specialist<br><br>"
          "For generations of school leavers, the path to professional success followed an unchanging script: finish Sixth Form, secure university admission, and graduate into the corporate world. Today, skyrocketing tuition fees and the rapid rise of Degree Apprenticeships have fundamentally disrupted that conventional narrative.<br><br>"
          "<b>The Apprenticeship Advantage: Earn While You Learn</b><br>"
          "Degree apprenticeships offer an undeniable financial proposition: zero tuition debt, a full employee salary from day one, and immediate immersion in corporate culture. In fields like software engineering, quantity surveying, and digital marketing, candidates accumulate four years of workplace experience while simultaneously earning a BSc or BEng.<br><br>"
@@ -348,7 +348,7 @@ ENGLISH_L2_MOCK_SOLUTIONS = {
          "3. Retain top young talent within our regional economy.<br><br>"
          "I would welcome the opportunity to present a 15-minute briefing paper at the upcoming Executive Committee meeting on 5 November. Thank you for your leadership on regional economic growth.<br><br>"
          "Yours sincerely,<br><br>"
-         "Subi<br>"
+         "Abdul<br>"
          "Lead Vocational Workforce Consultant")
     ],
     4: [
@@ -365,7 +365,7 @@ ENGLISH_L2_MOCK_SOLUTIONS = {
         ("Mock 4 &bull; Writing Exemplar &bull; Task 1 (Formal Contribution to a Government Consultation Review)",
          "<b>Task 1 Benchmark Exemplar: Government Consultation Submission</b><br>"
          "<b>To:</b> Parliamentary Select Committee on Science, Innovation and Technology<br>"
-         "<b>From:</b> Subi, Senior Digital Ethics &amp; Functional Skills Lead<br>"
+         "<b>From:</b> Abdul, Senior Digital Ethics &amp; Functional Skills Lead<br>"
          "<b>Date:</b> 25 October 2026<br>"
          "<b>Subject:</b> Written Evidence: AI Integration Standards in Vocational &amp; Enterprise Education<br><br>"
          "<b>1. Introduction &amp; Terms of Reference</b><br>"
@@ -412,7 +412,7 @@ ENGLISH_L2_MOCK_SOLUTIONS = {
          "<b>The Grant Assessment Committee</b><br>"
          "National Lottery Community Fund<br>"
          "100 Wharf Road, London, SE1 7NN<br><br>"
-         "<b>From:</b> Subi, Project Director, GreenCorridor Community Trust<br>"
+         "<b>From:</b> Abdul, Project Director, GreenCorridor Community Trust<br>"
          "<b>Date:</b> 28 October 2026<br>"
          "<b>Subject:</b> Grant Application: Riverside Wildlife &amp; Wellbeing Community Trail (&pound;48,500)<br><br>"
          "Dear Members of the Committee,<br><br>"
@@ -428,7 +428,7 @@ ENGLISH_L2_MOCK_SOLUTIONS = {
          "Over 65 local volunteers have pledged ongoing maintenance support, partnered with the local vocational college horticultural department. We enclose our detailed financial audit, risk assessments, and council planning letters for your review.<br><br>"
          "Thank you for considering our application to create a lasting green legacy.<br><br>"
          "Yours sincerely,<br><br>"
-         "Subi<br>"
+         "Abdul<br>"
          "Project Director, GreenCorridor Community Trust"),
         ("Mock 5 &bull; Writing Exemplar &bull; Task 2 (Inspiring Local Newspaper Article / Volunteer Appeal)",
          "<b>Task 2 Benchmark Exemplar: Local Gazette Feature Article</b><br>"
@@ -443,20 +443,20 @@ ENGLISH_L2_MOCK_SOLUTIONS = {
     ],
     6: [
         ("Mock 6 &bull; Reading Section Model Answers (Q1&ndash;Q9)",
-         "<b>Q1. Fact vs Opinion in Text A:</b> Fact: <i>'Specialist geriatric bed capacity decreased by 14% over the preceding decade.'</i> (Audited NHS statistical record). Opinion: <i>'Decentralized community care is an unmitigated disaster created purely to cut funding.'</i> (Subjective polemical claim).<br>"
+         "<b>Q1. Fact vs Opinion in Text A:</b> Fact: <i>'Specialist geriatric bed capacity decreased by 14% over the preceding decade.'</i> (Audited national health statistical record). Opinion: <i>'Decentralized community care is an unmitigated disaster created purely to cut funding.'</i> (Subjective polemical claim).<br>"
          "<b>Q2. Implicit Meaning in Text A:</b> The phrase <i>'bed-blocking through bureaucratic paralysis'</i> implies that vulnerable patients remain stranded in hospital wards not due to clinical illness, but because social care assessment paperwork is hopelessly delayed.<br>"
          "<b>Q3. Organisational Features in Text A:</b> Analytical bar charts comparing hospital stay durations, authoritative clinical footnotes, and clear institutional subheadings.<br>"
          "<b>Q4. Language Devices in Text B:</b> (1) Emotive anecdote: <i>'an 84-year-old widow clutching her teacup, thriving among her beloved garden memories'</i>. (2) High-modality vocabulary: <i>'dignity, autonomy, and familiar comfort'</i>.<br>"
          "<b>Q5. Vocabulary in Context:</b> In paragraph 3 of Text B, <i>'domiciliary'</i> refers to medical or supportive care delivered directly inside a patient's private home rather than a hospital.<br>"
          "<b>Q6. Author's Purpose in Text B:</b> To advocate for massive investment into professional home-care packages as the most humane, clinically effective, and cost-efficient care delivery model.<br>"
          "<b>Q7. Synthesizing Healthcare Reform Proposals:</b> Text A focuses on secondary care hospital bottlenecks, clinical bed management, and emergency ward pressures, while Text B provides the long-term solution: robust community-based social care that prevents hospital admissions altogether.<br>"
-         "<b>Q8. Comparison of Fiscal Metrics:</b> Both authors recognize the current model is fiscally unsustainable. Text A demonstrates that an acute NHS bed costs &pound;480 per night, whereas Text B proves that equivalent comprehensive home-care support costs less than &pound;95 per day.<br>"
+         "<b>Q8. Comparison of Fiscal Metrics:</b> Both authors recognize the current model is fiscally unsustainable. Text A demonstrates that an acute hospital bed costs &pound;480 per night, whereas Text B proves that equivalent comprehensive home-care support costs less than &pound;95 per day.<br>"
          "<b>Q9. Critical Evaluation of Source Validity:</b> Text A draws upon peer-reviewed clinical audit data from the British Medical Journal, ensuring highest empirical validity, whereas Text B offers inspiring qualitative case studies that capture patient dignity powerfully."),
         ("Mock 6 &bull; Writing Exemplar &bull; Task 1 (Formal Briefing Memo to Hospital Management Board)",
          "<b>Task 1 Benchmark Exemplar: Executive Healthcare Memo</b><br>"
          "<b>MEMORANDUM</b><br>"
-         "<b>To:</b> Chief Executive &amp; Management Board, St Jude's NHS Healthcare Trust<br>"
-         "<b>From:</b> Subi, Clinical Operations Integration Manager<br>"
+         "<b>To:</b> Chief Executive &amp; Management Board, St Jude's Community Healthcare Trust<br>"
+         "<b>From:</b> Abdul, Clinical Operations Integration Manager<br>"
          "<b>Date:</b> 30 October 2026<br>"
          "<b>Subject:</b> Urgent Operational Strategy: Mitigating Delayed Discharge Through Hospital-to-Home Pathways<br><br>"
          "<b>1. Purpose of Briefing</b><br>"
@@ -484,59 +484,109 @@ ENGLISH_L2_MOCK_SOLUTIONS = {
     ]
 }
 
+# =============================================================================
+# 3. DIGITAL SKILLS (EDSQ) REFERENCE DATA & WORKED SOLUTIONS
+# Refined Plain English Edition (Ages 16 to 50+) with Specialist Terminology
+# =============================================================================
+
 DIGITAL_SKILLS_SOLUTIONS = {
     "units": [
-        ("Unit 1 &bull; Device Setup &amp; Safety Drill",
-         "<b>Step 1 (Workstation Ergonomics):</b> Position screen 50-70 cm from eyes at eye level. Adjust chair height so elbows rest at 90 degrees.<br>"
-         "<b>Step 2 (Peripheral Cable Management):</b> Route cables through desk grommets; avoid trip hazards.<br>"
-         "<b>Knowledge Check:</b> Minimum strong password length recommended by UK NCSC is <b>12-16 characters</b> (three random words method)."),
-        ("Unit 2 &bull; File Management &amp; Hierarchy Drill",
-         "<b>Folder Architecture:</b> <code>Company_Drive / 2026_Operations / Logistics / Invoices / 2026-10-14_Invoice_Apex.pdf</code>.<br>"
-         "<b>Naming Convention Rule:</b> Use ISO date format <code>YYYY-MM-DD</code> followed by descriptive project name; never use spaces or special characters (#, %, &amp;)."),
-        ("Unit 3 &bull; Digital Information &amp; Search Drill",
-         "<b>Search Operators:</b> Use quotation marks for exact phrase (<code>&quot;fleet electrification case study&quot;</code>), minus sign to exclude (<code>-hybrid</code>), and <code>filetype:pdf</code> for technical reports.<br>"
-         "<b>Evaluating Reliability:</b> Check author credentials, publication date, domain authority (.gov.uk, .ac.uk), and cross-reference corroborating sources."),
-        ("Unit 4 &bull; Spreadsheet Formulas &amp; Functions Drill",
-         "<b>Formulas:</b><br>"
-         "&bull; Total Revenue: <code>=SUM(C2:C15)</code><br>"
-         "&bull; Average Order Value: <code>=AVERAGE(D2:D15)</code><br>"
-         "&bull; Bonus Threshold: <code>=IF(E2&gt;10000, E2*0.05, 0)</code><br>"
-         "&bull; VAT Calculation: <code>=F2*B1</code> (where B1 holds 0.20)."),
-        ("Unit 5 &bull; Professional Workplace Email Drill",
-         "<b>Email Layout:</b> Clear subject line (<code>Project Update: Q3 Audit Report Complete</code>), formal salutation (<code>Dear Ms Henderson,</code>), concise three-paragraph body, attachment confirmation, polite sign-off (<code>Kind regards, Subi</code>)."),
-        ("Unit 6 &bull; Cloud Collaboration &amp; Permissions Drill",
-         "<b>Sharing Tiers:</b> Assign <b>'Viewer'</b> for external clients, <b>'Commenter'</b> for review committees, and <b>'Editor'</b> strictly to assigned document authors. Enable link expiration after 14 days."),
-        ("Unit 7 &bull; Cybersecurity &amp; Phishing Drill",
-         "<b>Phishing Red Flags:</b> Mismatched sender domain (e.g. <code>@support-paypal-update.com</code> instead of official domain), artificial urgency (<i>'Account suspended within 2 hours!'</i>), generic greeting, and suspicious hyperlink target."),
-        ("Unit 8 &bull; Online Safety &amp; GDPR Compliance Drill",
-         "<b>GDPR Rules:</b> Obtain explicit consent before data capture, store personal identifiable information (PII) on encrypted servers, delete records once operational purpose expires, and report data breaches within 72 hours."),
-        ("Unit 9 &bull; Video Conferencing &amp; Virtual Meetings Drill",
-         "<b>Meeting Protocol:</b> Test microphone and webcam prior to joining, mute microphone when not speaking to eliminate background noise, use blurred or neutral background, and distribute meeting agenda 24 hours in advance."),
-        ("Unit 10 &bull; Hardware Diagnostics &amp; Troubleshooting Drill",
-         "<b>Diagnostic Workflow:</b> Check physical power cable &rarr; Inspect Wi-Fi router status LEDs &rarr; Renew IP address via command line (<code>ipconfig /renew</code>) &rarr; Restart device &rarr; Escalate to IT Helpdesk if hardware fault.")
+        ("Unit 1 &bull; File Organisation &amp; Cloud Storage Solution",
+         "<b>Folder Architecture:</b> <code>Documents / Clinic_Records / 01_Patient_Feedback / 2026-10-25_Feedback_Survey_v1.docx</code>.<br>"
+         "<b>Standard Naming Rule:</b> Use clear topics, ISO dates (<code>YYYY-MM-DD</code>), and version numbers (v1, v2). Never use vague names like 'doc1'.<br>"
+         "<b>Desktop Risk:</b> Saving files on the desktop clutters the computer, risks accidental deletion, and prevents colleagues from accessing files.<br>"
+         "<b>Cloud Benefit:</b> Saving to cloud drives (OneDrive, Google Drive) backs up files automatically and syncs work across all your devices.<br>"
+         "<b>Knowledge Check Answers:</b> 1: B (.pdf) &bull; 2: B (Version 2) &bull; 3: B (Backed up safely online and accessible anywhere)."),
+
+        ("Unit 2 &bull; Search Operators &amp; Information Verification Solution",
+         "<b>Search Operators:</b> Use quotation marks for exact phrases (<code>&quot;apprenticeship minimum wage rates&quot;</code>) and domain filters (<code>site:.gov.uk</code>).<br>"
+         "<b>Trustworthy Domain:</b> Official UK government websites strictly end in <code>.gov.uk</code>. Commercial websites (<code>.com</code>) often contain advertising.<br>"
+         "<b>Spotting Misinformation:</b> Check who wrote the article (Authority), check the date (Currency), look for evidence/citations, and verify with two independent sources.<br>"
+         "<b>Knowledge Check Answers:</b> 1: B (Exact phrase search) &bull; 2: B (.gov.uk) &bull; 3: B (Currency / up to date)."),
+
+        ("Unit 3 &bull; Word Processing, Styles &amp; Accessibility Solution",
+         "<b>Typography:</b> Use clean sans-serif fonts (Arial, Calibri, or Lexend at 11pt/12pt) with 1.15 line spacing and left alignment.<br>"
+         "<b>Styles Benefit:</b> Built-in Heading Styles (Heading 1, Heading 2) ensure consistent styling, allow screen readers to navigate, and create automatic Tables of Contents.<br>"
+         "<b>Alt-Text Example:</b> <i>'Green and white emergency fire exit sign with an arrow pointing right towards the main clinic exit door.'</i><br>"
+         "<b>Page Breaks:</b> Always use <code>Ctrl + Enter</code> to start a new page cleanly without pressing Enter repeatedly.<br>"
+         "<b>Knowledge Check Answers:</b> 1: B (Ctrl + Enter) &bull; 2: B (Even spacing for readability) &bull; 3: B (Screen reader image description)."),
+
+        ("Unit 4 &bull; Spreadsheet Formulas &amp; Cell Referencing Solution",
+         "<b>Row Calculation:</b> Subtotal formula in cell D2: <code>=B2*C2</code> (multiplies quantity by price).<br>"
+         "<b>Absolute Reference:</b> VAT formula: <code>=D2*$H$1</code> (the dollar signs lock cell H1 so the tax rate does not shift when dragged down).<br>"
+         "<b>Summary Functions:</b> Grand total: <code>=SUM(D2:D13)</code> &bull; Average price: <code>=AVERAGE(C2:C13)</code>.<br>"
+         "<b>Formatting:</b> Highlight cells and click <b>Currency (£)</b> on the ribbon to display two decimal places (e.g. £14.50). Never type £ inside a calculation cell.<br>"
+         "<b>Knowledge Check Answers:</b> 1: B (= sign) &bull; 2: B (=AVERAGE) &bull; 3: B (Locks cell coordinate as absolute reference)."),
+
+        ("Unit 5 &bull; Presentation Design &amp; Multimedia Solution",
+         "<b>Slide Layout (6x6 Rule):</b> Maximum 6 bullet points per slide, with roughly 6 words per bullet point so slides remain clean and easy to read.<br>"
+         "<b>Accessibility Choices:</b> High contrast (navy/black text on light background), 24pt+ font size, descriptive Alt-Text on images, and closed captions on videos.<br>"
+         "<b>Presenter View:</b> Use Presenter View so your speaker notes appear on your private screen while the audience sees only the slides on the projector.<br>"
+         "<b>Transitions:</b> Use simple 'Fade' transitions; avoid distracting spinning animations or loud sound effects.<br>"
+         "<b>Knowledge Check Answers:</b> 1: B (6 bullets with 6 words) &bull; 2: B (Low contrast / hard to read) &bull; 3: B (View notes privately while presenting)."),
+
+        ("Unit 6 &bull; Professional Email Etiquette &amp; BCC Solution",
+         "<b>Email Layout:</b> Clear subject line (<code>Course Confirmation: Adult Digital Skills Induction &ndash; 12 Nov</code>), polite greeting, concise bulleted body, and professional sign-off.<br>"
+         "<b>BCC Privacy Rule:</b> When emailing 35 students, their email addresses <b>must be placed in BCC (Blind Carbon Copy)</b> so they cannot see each other's details.<br>"
+         "<b>UK GDPR Compliance:</b> Revealing private customer or student email addresses without consent in 'To' or 'CC' is an unlawful personal data breach.<br>"
+         "<b>Attachment Hygiene:</b> Compress large attachments or send secure cloud links; keep attachments under 10 MB.<br>"
+         "<b>Knowledge Check Answers:</b> 1: C (BCC hides recipient addresses) &bull; 2: B (Interpreted as shouting / rude) &bull; 3: C (Concise summary of topic and deadline)."),
+
+        ("Unit 7 &bull; Video Conferencing &amp; Online Meetings Solution",
+         "<b>Pre-Meeting Setup:</b> Test microphone and headset audio, check camera framing and lighting, and turn on Background Blur to keep home life private.<br>"
+         "<b>Screen Sharing Privacy:</b> Choose <b>Share Window</b> (only your specific document) instead of Share Entire Screen to prevent accidental display of personal emails.<br>"
+         "<b>Meeting Etiquette:</b> Keep microphone muted when not speaking to eliminate background noise; use the digital 'Raise Hand' button to ask questions.<br>"
+         "<b>Chat Etiquette:</b> Use the in-meeting chat box to post helpful links or type comments without interrupting the speaker.<br>"
+         "<b>Knowledge Check Answers:</b> 1: B (Eliminate background noise) &bull; 2: B (Prevents private desktop notifications from being seen) &bull; 3: B (Background Blur)."),
+
+        ("Unit 8 &bull; E-Commerce Navigation &amp; Secure Payments Solution",
+         "<b>Security Checks:</b> (1) Web address begins with <code>https://</code>; (2) Locked padlock symbol in address bar; (3) Verified UK physical address and phone number; (4) Clear return policy and positive reviews.<br>"
+         "<b>Padlock Meaning:</b> The connection is encrypted with SSL/TLS security so bank card details cannot be intercepted by hackers.<br>"
+         "<b>Strong Customer Authentication (3D Secure):</b> Two-step bank verification (SMS code or banking app approval) before money leaves your account.<br>"
+         "<b>Order Confirmation:</b> Always save the order confirmation screen and download the PDF receipt with the reference code for accounting records.<br>"
+         "<b>Knowledge Check Answers:</b> 1: B (Secure encrypted connection) &bull; 2: B (Bank verifies transaction via app/SMS) &bull; 3: B (Does not reveal card numbers to seller)."),
+
+        ("Unit 9 &bull; Public Digital Services &amp; GOV.UK Portals Solution",
+         "<b>Official Domain:</b> Official UK government services strictly end in <code>.gov.uk</code>; official NHS services end in <code>.nhs.uk</code>.<br>"
+         "<b>Avoiding Copycat Scams:</b> Never use commercial third-party websites that charge £30–£80 'admin fees' for services that are free or standard price on GOV.UK.<br>"
+         "<b>Form Completion:</b> Fill in mandatory fields marked with a red asterisk (*); correct data formatting errors highlighted in red (e.g. postcode spacing).<br>"
+         "<b>Document Uploads:</b> Upload clear, readable photos or PDF scans of required proof-of-identity documents within allowed file size limits (under 5 MB).<br>"
+         "<b>Knowledge Check Answers:</b> 1: A (.gov.uk) &bull; 2: B (Mandatory field) &bull; 3: B (Avoid unnecessary third-party handling fees)."),
+
+        ("Unit 10 &bull; Cybersecurity, Passwords &amp; UK GDPR Solution",
+         "<b>Phishing Red Flags:</b> (1) Artificial urgency ('Account suspended tonight!'); (2) Mismatched sender email address; (3) Generic greeting ('Dear Customer'); (4) Suspicious links.<br>"
+         "<b>Passphrase Method:</b> Three random, memorable words (e.g. <code>Purple$Pebble72Blanket!</code>) creates a strong password that is easy to remember and hard to hack.<br>"
+         "<b>Multi-Factor Authentication (MFA):</b> Requires password PLUS a temporary code sent to your phone to log in, protecting accounts even if passwords leak.<br>"
+         "<b>UK GDPR Rules:</b> Lock computer screens (<code>Win + L</code>) when leaving desks; report serious personal data breaches to the ICO within 72 hours.<br>"
+         "<b>20-20-20 Rule:</b> Every 20 minutes, look at an object 20 feet away for 20 seconds to prevent eye fatigue.<br>"
+         "<b>Knowledge Check Answers:</b> 1: B (Three random words method) &bull; 2: B (Two verification steps to log in) &bull; 3: B (72 hours).")
     ],
     "mocks": [
-        ("Mock 1 &bull; Office Relocation Project Simulation",
-         "<b>Task 1 (Hierarchy):</b> Created folders <code>01_Floor_Plans</code>, <code>02_Vendor_Quotes</code>, <code>03_Staff_Allocations</code>.<br>"
-         "<b>Task 2 (Budget Spreadsheet):</b> Input formula <code>=SUM(D4:D18)</code> for subtotal; <code>=D19*0.2</code> for VAT; <code>=D19+D20</code> for gross expenditure.<br>"
-         "<b>Task 3 (Executive Briefing):</b> Drafted 250-word memo detailing moving dates, IT downtime schedule, and parking pass reallocation.<br>"
-         "<b>Task 4 (Cloud Access):</b> Set shared folder permissions to 'Restricted' with multi-factor authentication required."),
-        ("Mock 2 &bull; Customer Service Data Analytics Simulation",
-         "<b>Task 1 (Spreadsheet Analytics):</b> Filtered customer complaint log by category; calculated resolution percentage with <code>=COUNTIF(E2:E100, &quot;Resolved&quot;)/COUNTA(E2:E100)</code>.<br>"
-         "<b>Task 2 (Chart Generation):</b> Plotted 2D clustered column chart displaying average response times across four quarterly departments.<br>"
-         "<b>Task 3 (Professional Email):</b> Formulated sensitive apology email addressing customer shipping delay, offering voucher code and tracking link."),
-        ("Mock 3 &bull; Health &amp; Safety Compliance Portal Simulation",
-         "<b>Task 1 (Intranet Form):</b> Built online accident reporting form with required fields for employee ID, incident date, and severity level.<br>"
-         "<b>Task 2 (Data Validation):</b> Configured input restriction allowing only dates within past 7 days and dropdown list for injury classification.<br>"
-         "<b>Task 3 (GDPR Audit):</b> Removed employee national insurance numbers from public shared spreadsheet and archived onto encrypted local drive."),
-        ("Mock 4 &bull; Cybersecurity Incident Response Simulation",
-         "<b>Task 1 (Incident Triage):</b> Disconnected compromised workstation from local network immediately (pulled Ethernet cable / disabled Wi-Fi).<br>"
-         "<b>Task 2 (Breach Log):</b> Recorded incident timestamp, compromised account username, and suspicious email header details.<br>"
-         "<b>Task 3 (Password Reset):</b> Guided user through setting up a 16-character passphrase and re-registering authenticator token.<br>"
-         "<b>Task 4 (Action Report):</b> Submitted official security event notification to Data Protection Officer within 1 hour.")
+        ("Mock 1 &bull; Medical Practice Administrative Operations Solution",
+         "<b>Task 1 (Hierarchy &amp; Storage):</b> Created 3 subfolders: <code>01_General_Practice</code>, <code>02_Phlebotomy</code>, <code>03_Physiotherapy</code>. Named files using ISO format (e.g. <code>2026-10-25_Patient_Guide_v1.docx</code>). Storing on secure cloud servers protects confidential data and complies with healthcare governance.<br>"
+         "<b>Task 2 (Word Processing):</b> Applied Heading 1 to primary topics, Heading 2 to sub-sections, generated automatic Table of Contents, formatted 4-column appointment schedule table with bold header row, and added descriptive Alt-Text to clinic logo.<br>"
+         "<b>Task 3 (Research &amp; CRAAP):</b> Formulated query <code>&quot;flu vaccine eligibility&quot; site:.nhs.uk</code>; verified source currency and authority directly from NHS guidance.<br>"
+         "<b>Task 4 (Email &amp; BCC):</b> Drafted polite formal invitation; placed all 40 patient email addresses in <b>BCC</b> to prevent unlawful disclosure of patient medical contacts under UK GDPR; attached encrypted PDF clinic map."),
+
+        ("Mock 2 &bull; Community Food Bank Logistics &amp; Stock Tracking Solution",
+         "<b>Task 1 (Spreadsheet Modeling):</b> Line Total formula: <code>=B4*C4</code>; Total Weight function: <code>=SUM(D4:D18)</code>; Average Weight: <code>=AVERAGE(D4:D18)</code>.<br>"
+         "<b>Task 2 (Conditional Alerts):</b> Threshold formula in cell G4: <code>=IF(B4&lt;20, &quot;RESTOCK URGENT&quot;, &quot;ADEQUATE&quot;)</code>; formatted numbers with 1 decimal place and currency as £0.00.<br>"
+         "<b>Task 3 (Data Visualisation):</b> Generated Clustered Column Chart; added clear title <i>'Current Food Bank Stock Levels by Category'</i>; labelled X-axis (Food Category) and Y-axis (Units in Stock); added data labels above bars.<br>"
+         "<b>Task 4 (Communication &amp; Versioning):</b> Composed volunteer update using BCC for volunteer privacy; explained how to restore lost data using Cloud Version History (<code>File &rarr; Info &rarr; Version History</code>)."),
+
+        ("Mock 3 &bull; Apprentice Training Hub &amp; E-Learning Administration Solution",
+         "<b>Task 1 (Virtual Induction):</b> Scheduled MS Teams meeting; configured Presenter role for tutors and Attendee role for apprentices; wrote clear agenda with video call etiquette (mute when not speaking, background blur on).<br>"
+         "<b>Task 2 (Presentation Design):</b> Created 4-slide deck following 6x6 rule; Slide 2 bullet points on passphrases and 2FA; applied high contrast navy text on cream and added Alt-Text.<br>"
+         "<b>Task 3 (Phishing Triage):</b> Identified 4 red flags: mismatched sender domain, urgent threat of account cancellation, generic greeting, suspicious hyperlink. Disconnected network cable immediately and logged incident.<br>"
+         "<b>Task 4 (GDPR Subject Access Request):</b> Outlined 4 steps: verify apprentice identity, log statutory 1 calendar month deadline, redact third-party data, provide digital copy free of charge."),
+
+        ("Mock 4 &bull; Digital Library Archive &amp; Asset Loan Management Solution",
+         "<b>Task 1 (Equipment Loan Spreadsheet):</b> Used locked reference <code>=$H$1*E2</code> to calculate overdue penalty charges; applied Data Validation list (Available, On Loan, Under Repair) to prevent typing errors; formatted totals as Currency (£).<br>"
+         "<b>Task 2 (E-Commerce &amp; Payment Security):</b> Verified requirements for online payments: SSL/TLS padlock encryption (HTTPS), 3D Secure customer verification, and compliance with data security standards.<br>"
+         "<b>Task 3 (Copyright &amp; Licensing):</b> Explained that commercial reuse of historic photos requires copyright owner permission; Public Domain images can be freely used; Creative Commons (CC-BY) requires attribution of creator.<br>"
+         "<b>Task 4 (Ergonomics DSE Audit):</b> Verified monitor at eye level 50–70 cm away, chair lumbar support, wrists horizontal, and implemented the 20-20-20 visual rest rule.")
     ]
 }
-
 
 # =============================================================================
 
@@ -547,19 +597,19 @@ DIGITAL_SKILLS_SHORTCUTS = r"""<div style='font-size:10pt; line-height:1.4;'>
 &bull; Cut: <code>Ctrl + X</code> (Win) / <code>Cmd + X</code> (Mac)<br>
 &bull; Undo / Redo: <code>Ctrl + Z</code> / <code>Ctrl + Y</code><br>
 &bull; Select All: <code>Ctrl + A</code><br>
-&bull; Find in Page: <code>Ctrl + F</code><br>
+&bull; Find in Document or Page: <code>Ctrl + F</code><br>
 &bull; Save Document: <code>Ctrl + S</code><br>
 &bull; Print / Save as PDF: <code>Ctrl + P</code><br>
-&bull; Lock Workstation: <code>Win + L</code><br>
-&bull; File Explorer: <code>Win + E</code><br>
-&bull; Task Manager: <code>Ctrl + Shift + Esc</code></p>
+&bull; Lock Workstation Screen: <code>Win + L</code><br>
+&bull; Open File Explorer: <code>Win + E</code><br>
+&bull; Task Manager (Force Close Frozen App): <code>Ctrl + Shift + Esc</code></p>
 
 <p><b>Web Browser Shortcuts (Chrome / Edge / Firefox):</b><br>
 &bull; New Tab: <code>Ctrl + T</code> &emsp; Close Tab: <code>Ctrl + W</code><br>
 &bull; Reopen Closed Tab: <code>Ctrl + Shift + T</code><br>
-&bull; Incognito / InPrivate: <code>Ctrl + Shift + N</code><br>
+&bull; Private / Incognito Window: <code>Ctrl + Shift + N</code><br>
 &bull; Bookmark Current Page: <code>Ctrl + D</code><br>
-&bull; Hard Refresh (Clear Cache): <code>Ctrl + F5</code> or <code>Ctrl + Shift + R</code><br>
+&bull; Refresh Page: <code>F5</code> &emsp; Hard Refresh (Clear Cache): <code>Ctrl + F5</code><br>
 &bull; Zoom In / Out / Reset: <code>Ctrl + Plus</code> / <code>Ctrl + Minus</code> / <code>Ctrl + 0</code></p>
 
 <p><b>Spreadsheet Modeling Shortcuts (Excel / Google Sheets):</b><br>
@@ -568,43 +618,51 @@ DIGITAL_SKILLS_SHORTCUTS = r"""<div style='font-size:10pt; line-height:1.4;'>
 &bull; AutoSum Selected Range: <code>Alt + =</code><br>
 &bull; Insert Current Date: <code>Ctrl + ;</code><br>
 &bull; Fill Down / Fill Right: <code>Ctrl + D</code> / <code>Ctrl + R</code><br>
-&bull; Select Entire Column: <code>Ctrl + Space</code> &emsp; Entire Row: <code>Shift + Space</code><br>
-&bull; Format as Currency: <code>Ctrl + Shift + 4</code> (/ &pound;)<br>
-&bull; Format as Percentage: <code>Ctrl + Shift + 5</code> (%)</p>
+&bull; Format as Currency (£): <code>Ctrl + Shift + 4</code><br>
+&bull; Format as Percentage (%): <code>Ctrl + Shift + 5</code></p>
 </div>"""
 
 DIGITAL_SKILLS_GLOSSARY = [
-    ("Absolute Cell Reference ($A$1)", "A locked cell coordinate in a spreadsheet formula that does not change when autofilled into adjacent cells."),
-    ("Bandwidth", "The maximum rate of data transfer across a given network path, measured in Megabits per second (Mbps)."),
-    ("Cloud Synchronization", "The automated process of mirroring local files to a secure remote cloud server (e.g. OneDrive, Nextcloud)."),
-    ("Cybersecurity Hygiene", "Routine practices (e.g. unique passphrases, regular patching, MFA) that maintain security and protect data."),
-    ("Data Subject Access Request (DSAR)", "A formal request under GDPR allowing individuals to obtain a copy of personal data held by an organization."),
-    ("DSE Assessment", "Display Screen Equipment risk assessment mandated by Health and Safety regulations to prevent ergonomic strain."),
-    ("Encryption (End-to-End)", "A communication system where only the communicating users can read the messages, preventing eavesdropping."),
-    ("Multi-Factor Authentication (MFA)", "An authentication method requiring two or more verification factors (password + authenticator app code)."),
-    ("Netiquette", "The conventional rules of polite, professional, and respectful behavior in online and email communications."),
-    ("Phishing", "A fraudulent attempt to obtain sensitive information by disguising as a trustworthy entity in electronic communications."),
-    ("Ransomware", "Malicious software designed to block access to a computer system or encrypt files until a sum of money is paid."),
-    ("URL (Uniform Resource Locator)", "The unique address used to identify and locate a specific webpage or file on the World Wide Web."),
-    ("VPN (Virtual Private Network)", "An encrypted connection over the internet from a device to a network, shielding online activity.")
+    ("Absolute Cell Reference ($A$1)", "A locked cell coordinate in a spreadsheet formula using dollar signs ($). It stays fixed on that exact cell when autofilled down a column."),
+    ("Alt-Text (Alternative Text)", "A short written description added to an image or chart. A screen reader reads this aloud to visually impaired readers so they know what the picture displays."),
+    ("Cloud Storage & Syncing", "Saving your files on secure internet servers (like OneDrive, Google Drive, or iCloud). Files update (sync) automatically across all your devices and are safe from loss."),
+    ("Cybersecurity Hygiene", "Everyday security habits that protect your data, such as using strong passphrases, never sharing logins, locking your screen, and running software updates."),
+    ("Data Protection / UK GDPR", "UK law that protects individuals' personal data (names, medical notes, bank details). Organisations must keep data confidential and report breaches within 72 hours."),
+    ("DSE & Ergonomics", "Display Screen Equipment health rules for setting up your desk, chair, and monitor to avoid back, neck, and eye strain, including the 20-20-20 visual rest rule."),
+    ("E-Commerce", "Buying, selling, or paying for goods and services over the internet, such as online shopping, booking tickets, or paying bills through secure payment systems."),
+    ("File Hierarchy & Extensions", "Organising files into labelled folders and subfolders. File extensions (.docx, .xlsx, .pdf, .jpg) are codes after the dot that tell computers which software opens the file."),
+    ("Multi-Factor Authentication (MFA)", "A security system that requires two steps to log in: your password PLUS a temporary code sent to your phone or app. Keeps accounts safe even if passwords leak."),
+    ("Netiquette", "Polite and respectful rules of digital communication, such as using clear email subject lines, avoiding ALL CAPS (which feels like shouting), and muting on video calls."),
+    ("Phishing", "A fake email or text pretending to be from a trusted company (like your bank or Royal Mail) to trick you into clicking a link, downloading a virus, or giving away passwords."),
+    ("SSL / HTTPS & Padlock", "A locked padlock symbol and 'https://' in your browser showing that your connection is encrypted, scrambling your card numbers and passwords so thieves cannot steal them."),
+    ("Subject Access Request (SAR)", "A legal right under UK GDPR allowing any individual to request a free copy of all personal records and data an organisation holds about them within 1 month.")
 ]
 
 DIGITAL_SKILLS_INDEX = [
-    ("A", [("Absolute cell references ($A$1)", "4, 18"), ("Account security & credentials", "3, 12, 24"), ("Anti-virus & malware protection", "5, 20")]),
-    ("B", [("Backup strategies (3-2-1 rule)", "6, 22"), ("Browser safety & SSL padlocks", "5, 16"), ("Budgeting spreadsheets", "14, 28")]),
-    ("C", [("Cloud collaboration & sharing permissions", "7, 26"), ("Conditional formatting rules", "15, 29"), ("Cybersecurity essentials", "5, 12, 30")]),
-    ("D", [("Data Protection Act & GDPR", "8, 32"), ("Data validation dropdowns", "14, 28"), ("Digital footprint management", "8, 34")]),
-    ("E", [("Email attachments & file size limits", "9, 36"), ("Email etiquette & professional register", "9, 38"), ("Excel / Sheets formulas", "4, 14, 28")]),
-    ("F", [("File folder hierarchy & naming conventions", "10, 40"), ("Firewalls & network security", "5, 20")]),
-    ("I", [("IF statements & logical formulas", "4, 15, 29"), ("Incognito & private browsing", "5, 17")]),
-    ("M", [("Mocks 1-4 workplace scenarios", "44-59"), ("Multi-factor authentication (MFA)", "3, 12, 24")]),
-    ("P", [("Password complexity & managers", "3, 12"), ("Phishing & email fraud identification", "5, 21"), ("Privacy settings on social platforms", "8, 35")]),
-    ("S", [("Shortcuts matrix (Windows & Mac)", "60"), ("Solutions for Units 1-10 Drills", "61-75"), ("SUM and AVERAGE formulas", "4, 14, 28")]),
-    ("T", [("Troubleshooting device connectivity", "11, 42"), ("Two-factor authentication (2FA)", "3, 12, 24")]),
-    ("V", [("Version control in cloud documents", "7, 27"), ("Virtual Private Networks (VPN)", "5, 19")])
+    ("A", [("Absolute cell references ($A$1)", "20, 66, 77"), ("Access permissions (View, Comment, Edit)", "28, 64"), ("Accessibility tools (Zoom, Screen Reader)", "4, 16, 24"), ("Alt-Text for images and diagrams", "16, 24, 72")]),
+    ("B", [("Backup strategies (3-2-1 rule)", "4, 79"), ("BCC (Blind Carbon Copy) privacy rule", "28, 48, 52, 68"), ("Browser shortcuts & navigation", "82"), ("Budget spreadsheets & calculations", "20, 52, 66")]),
+    ("C", [("Cell references & coordinates (B4)", "20, 77"), ("Cloud storage & syncing (OneDrive, Drive)", "4, 8, 64"), ("CRAAP test for source evaluation", "12, 74"), ("Cybersecurity essentials & passphrases", "44, 70, 78")]),
+    ("D", [("Data Protection Act & UK GDPR", "44, 78"), ("Data validation dropdown lists", "66"), ("Digital footprint & online reputation", "44"), ("DSE workstation ergonomics (20-20-20 rule)", "44, 79")]),
+    ("E", [("E-Commerce & secure online shopping", "36"), ("Email etiquette & professional register", "28, 68"), ("Excel / Sheets formulas (=SUM, =AVERAGE)", "20, 52, 66, 77"), ("Extensions for files (.pdf, .docx, .xlsx)", "8, 76")]),
+    ("F", [("File folder hierarchy & nested folders", "8, 48, 64"), ("File naming standards & versions", "8, 48"), ("Fire exit alt-text & diagrams", "16, 72"), ("Formulas vs built-in functions", "20, 77")]),
+    ("G", [("GOV.UK official public services", "40"), ("Green checkmark cloud sync icon", "8, 64")]),
+    ("H", [("Hardware input & output peripherals", "4"), ("Heading styles (Heading 1, Heading 2)", "16, 72"), ("HTTPS & SSL padlock encryption", "36, 78")]),
+    ("I", [("IF statements & logical conditions", "20, 52, 66"), ("Information Commissioner's Office (ICO)", "44, 78"), ("Input devices vs Output devices", "4")]),
+    ("M", [("Margins & page setup (2.54 cm)", "16, 72"), ("Mocks 1-4 workplace scenarios", "48-63"), ("Multi-Factor Authentication (MFA / 2FA)", "44, 78, 79")]),
+    ("N", [("Netiquette & online communication", "28, 32, 68"), ("NHS App & public healthcare portals", "40, 48")]),
+    ("O", [("Operating Systems (Windows, macOS, ChromeOS)", "4, 8"), ("Order verification & digital receipts", "36")]),
+    ("P", [("Page Breaks (Ctrl + Enter)", "16, 72"), ("Passphrases (three random words method)", "44, 79"), ("Phishing detection & red flags", "44, 70"), ("Presenter View in slide presentations", "24")]),
+    ("Q", [("Quotation marks in search queries", "12, 74")]),
+    ("R", [("Relative vs absolute cell references", "20, 66"), ("Reply All warnings & etiquette", "28, 68"), ("Restoring older versions (Version History)", "64")]),
+    ("S", [('Search operators ("...", -, site:.gov.uk)', "12, 74"), ("Shortcuts matrix (OS, Browser, Sheets)", "82"), ("Six-by-six rule for clean slides", "24"), ("Solutions for Units 1-10 Drills", "80-81"), ("Solutions for Mocks 1-4", "81")]),
+    ("T", [("Tables formatting & header rows", "16, 20"), ("To vs CC vs BCC address fields", "28, 68"), ("Transitions & animations on slides", "24"), ("Troubleshooting spreadsheet errors (#VALUE!, #REF!)", "77")]),
+    ("U", [("Units 1-10 comprehensive study guides", "8-47")]),
+    ("V", [("Version control in cloud documents", "8, 64"), ("Video conferencing etiquette & muting", "32"), ("Virtual backgrounds & background blur", "32")]),
+    ("W", [("Window sharing vs entire desktop sharing", "32"), ("Word processing professional layout", "16, 72"), ("Workstation setup & posture", "44, 79")])
 ]
 
 
+# =============================================================================
 # 4. BKSB REMEDIATION WORKBOOK REFERENCE DATA
 # =============================================================================
 
@@ -876,7 +934,7 @@ BKSB_PAPERS_SOLUTIONS = {
     4: [
         ("Diagnostic Paper 4 Model Solutions (English Writing)",
          "<b>Task 1 Model (Formal Recommendation Report):</b><br>"
-         "Layout: To: Operations Director; From: Subi, Apprentice Coordinator; Date: 14 October 2026; Subject: Technical Trainee Mentorship Proposal.<br>"
+         "Layout: To: Operations Director; From: Abdul, Apprentice Coordinator; Date: 14 October 2026; Subject: Technical Trainee Mentorship Proposal.<br>"
          "Sections: 1. Purpose &amp; Executive Summary, 2. Productivity Benefits, 3. Workload Mitigation, 4. Strategic Recommendations.<br>"
          "Content highlights: Establishes a 2-hour protected Friday morning mentor slot, pairs trainees with senior mentors, and schedules quarterly progress reviews.<br><br>"
          "<b>Task 2 Model (Persuasive Careers Evening Speech):</b><br>"

@@ -283,7 +283,7 @@ MATHS_L2_MOCKS = [
                       "Each dispensary bottle takes <sup>3</sup>/<sub>8</sub> of a litre. "
                       "How many full dispensary bottles can be prepared?",
                  "marks": 4, "weight": 1.1},
-                {"q": "<b>Question 4:</b> A batch of medical monitoring units is purchased at &pound;720.00 following a 20% NHS procurement discount. "
+                {"q": "<b>Question 4:</b> A batch of medical monitoring units is purchased at &pound;720.00 following a 20% clinical procurement discount. "
                       "What was the original cost before the discount? Show an inverse check.",
                  "marks": 4, "weight": 1.1}
             ],
@@ -526,7 +526,7 @@ ENGLISH_L2_MOCKS = [
             "<i>By Dr Helen Vance, Senior Fellow in Public Health &bull; Published 14 May 2024</i></p>"
             "<p>Air pollution remains the largest environmental health risk in the United Kingdom today. "
             "According to the UK Health Security Agency, long-term exposure to toxic airborne emissions contributes to approximately "
-            "36,000 premature deaths annually, placing an overwhelming burden of &pound;20 billion upon NHS hospital wards and primary clinics. "
+            "36,000 premature deaths annually, placing an overwhelming burden of &pound;20 billion upon regional hospital wards and primary clinics. "
             "Urban centres, where diesel heavy-goods vehicles and idling commuter cars congregate daily, endure dangerous spikes in "
             "nitrogen dioxide (NO<sub>2</sub>) and microscopic fine particulate matter (PM<sub>2.5</sub>).</p>"
             "<p>The implementation of Clean Air Zones (CAZs) in cities such as Birmingham, Bristol, and London has produced undeniably positive results. "
@@ -883,309 +883,20 @@ print("ENGLISH_L2_MOCKS defined successfully: 5 complete mocks with authentic te
 # Digital Skills (EDSQ National Standards) Units & Mocks Data
 # =============================================================================
 
-DIGITAL_SKILLS_UNITS = [
-    # Domain 1: Using Devices & Handling Information
-    {
-        "unit": 1,
-        "title": "Operating Systems, File Hierarchy & Cloud Storage",
-        "domain": "Domain 1: Using Devices & Handling Information",
-        "badge": "D1.1",
-        "kw": "laptop computer keyboard modern workspace typing",
-        "theory": (
-            "<p><b>Operating Systems &amp; File Systems:</b> Modern workplace devices operate on Windows, macOS, ChromeOS, or mobile OS (iOS/Android). "
-            "A structured hierarchical file architecture organises data into logical nested folders (e.g. <code>/Documents/Clients/2025/Invoices/</code>). "
-            "Standard file naming conventions use ISO dates and clear descriptors (e.g. <code>2025-05-14_Invoice_SmithLtd_v2.pdf</code>) to avoid version confusion.</p>"
-            "<p><b>Cloud Storage &amp; Synchronisation:</b> Cloud platforms (OneDrive, Google Drive, Nextcloud) synchronize local files to secure remote servers. "
-            "This enables multi-device access, automated version history, and real-time multi-author collaboration with granular viewing/editing permissions.</p>"
-        ),
-        "steps": [
-            "Create a root project folder with the standardized format: <code>YYYY-MM_ProjectName</code>.",
-            "Establish logical subfolders: <code>01_Briefs</code>, <code>02_Working_Drafts</code>, <code>03_Assets</code>, <code>04_Final_Approved</code>.",
-            "Apply read-only permissions to final distribution PDFs and full edit access to designated team members.",
-            "Verify cloud synchronization status icons (green checkmark = synced locally, cloud icon = online only)."
-        ],
-        "drill": "Scenario: You are organizing the digital assets for a regional charity campaign. Outline a nested 3-tier folder structure, specify standard naming for 3 distinct files, and explain why saving directly to the Desktop causes governance risks.",
-        "trap": "Examiner Trap: Saving multiple files named 'Draft1.docx', 'Draft_final.docx', 'Draft_real_final.docx' loses marks. Always use ISO dates and version numbers (v1.0, v1.1)!"
-    },
-    {
-        "unit": 2,
-        "title": "Advanced Search Syntax & Information Verification",
-        "domain": "Domain 1: Using Devices & Handling Information",
-        "badge": "D1.2",
-        "kw": "search engine browser research internet",
-        "theory": (
-            "<p><b>Search Syntax &amp; Precision Filtering:</b> Professional workplace research requires targeted Boolean operators and search filters: "
-            "quotes <code>&quot;exact phrase&quot;</code> for verbatim matching, <code>site:.gov.uk</code> to restrict results to verified government domains, "
-            "<code>filetype:pdf</code> for official reports, and the minus operator <code>-keyword</code> to exclude irrelevant commercial results.</p>"
-            "<p><b>CRAAP Evaluation Framework:</b> Not all online data is reliable. Candidates must evaluate information using the CRAAP test: "
-            "<b>C</b>urrency (publication date), <b>R</b>elevance (matches research scope), <b>A</b>uthority (author credentials and domain reputation), "
-            "<b>A</b>ccuracy (backed by cited evidence), and <b>P</b>urpose (identifying commercial bias vs objective research).</p>"
-        ),
-        "steps": [
-            "Construct a targeted Boolean query: e.g. <code>&quot;apprenticeship minimum wage&quot; site:.gov.uk filetype:pdf</code>.",
-            "Inspect the top 3 results for author credentials, publication date, and cited research references.",
-            "Cross-reference key numerical claims against at least two independent primary statistical sources.",
-            "Record the full URL, retrieval date, and author name for transparent professional citation."
-        ],
-        "drill": "Scenario: Your manager asks you to verify whether a viral social media post claiming a new statutory UK minimum wage rate is accurate. Formulate two search queries, identify the primary authority domain to check, and explain how to spot misinformation.",
-        "trap": "Examiner Trap: Citing sponsored blog posts or commercial sales pages (.com) as official legislation evidence. Always cross-check against official (.gov.uk or .org.uk) repositories!"
-    },
-
-    # Domain 2: Creating & Editing
-    {
-        "unit": 3,
-        "title": "Professional Word Processing & Structured Documents",
-        "domain": "Domain 2: Creating & Editing",
-        "badge": "D2.1",
-        "kw": "typing document office word processing",
-        "theory": (
-            "<p><b>Document Hierarchy &amp; Styles:</b> Professional word processing (MS Word, Google Docs) relies on semantic paragraph styles "
-            "(<code>Heading 1</code>, <code>Heading 2</code>, <code>Body Text</code>) rather than manual font resizing. "
-            "Styles guarantee consistent typography, automatically generate clickable Tables of Contents, and maintain screen reader accessibility.</p>"
-            "<p><b>Tables, Headers &amp; Page Architecture:</b> Long documents require structured headers and footers with automated page numbering "
-            "(<code>Page X of Y</code>), balanced margins (minimum 20 mm), accessible data tables with dedicated header rows, and embedded high-resolution graphics with descriptive Alt-Text.</p>"
-        ),
-        "steps": [
-            "Apply Heading 1 to primary chapters and Heading 2 to sub-sections to establish a logical outline.",
-            "Insert an automated Table of Contents linked directly to heading styles.",
-            "Format data into an accessible table: specify a repeating header row and zebra-stripe alternating shading for readability.",
-            "Add descriptive alternative text (Alt-Text) to all photographic images to comply with WCAG accessibility standards."
-        ],
-        "drill": "Scenario: Format a 4-page health and safety executive briefing document. Specify font hierarchy (title, headings, body), explain the benefit of using Styles instead of manual bolding, and describe how to make a 5-column incident log table fully accessible.",
-        "trap": "Examiner Trap: Hitting 'Enter' repeatedly to force text onto a new page. Always use a proper Page Break (Ctrl+Enter) or Section Break!"
-    },
-    {
-        "unit": 4,
-        "title": "Spreadsheet Architecture, Formulas & Data Visualisation",
-        "domain": "Domain 2: Creating & Editing",
-        "badge": "D2.2",
-        "kw": "spreadsheet excel analytics chart data",
-        "theory": (
-            "<p><b>Spreadsheet Principles:</b> Spreadsheets (MS Excel, Google Sheets) manage numerical and tabular records across columns and rows. "
-            "Formulas always begin with an equals sign (<code>=</code>) and use relative cell referencing (<code>=B2*C2</code>) or absolute cell referencing (<code>=$B$1*C2</code>) "
-            "to automate calculations without manual data re-entry.</p>"
-            "<p><b>Essential Formulas &amp; Functions:</b> Statutory Level 1 &amp; Level 2 standards require mastery of: "
-            "<code>=SUM(range)</code> for totals, <code>=AVERAGE(range)</code> for arithmetic means, <code>=COUNT(range)</code> / <code>=COUNTA(range)</code>, "
-            "<code>=MIN(range)</code> and <code>=MAX(range)</code>, and logical conditional expressions <code>=IF(logical_test, value_if_true, value_if_false)</code>.</p>"
-        ),
-        "steps": [
-            "Enter clear column headers in Row 1: Item, Unit Cost, Quantity, Line Total, Reorder Status.",
-            "Apply formula <code>=B2*C2</code> to calculate line total, then double-click the fill handle to auto-populate the column.",
-            "Calculate summary metrics in the bottom row using <code>=SUM(D2:D50)</code> and <code>=AVERAGE(B2:B50)</code>.",
-            "Apply an IF function to column E: <code>=IF(C2&lt;10, 'REORDER', 'OK')</code>.",
-            "Select the data range and generate a clean Column or Bar Chart with labeled axes and a descriptive chart title."
-        ],
-        "drill": "Scenario: Create an inventory management sheet for 20 warehouse product lines. Show the exact formulas for Line Total, Overall Spend, Average Unit Cost, and an automated 'Low Stock' alert for any item with under 15 units remaining.",
-        "trap": "Examiner Trap: Typing hardcoded numbers into a formula (e.g. '=B2*12.50') instead of referencing cells. Always keep variable rates in separate parameter cells!"
-    },
-    {
-        "unit": 5,
-        "title": "Presentation Design, Multimedia & Digital Accessibility",
-        "domain": "Domain 2: Creating & Editing",
-        "badge": "D2.3",
-        "kw": "presentation slide deck meeting projector",
-        "theory": (
-            "<p><b>Visual Storytelling &amp; Cognitive Load:</b> Effective slide presentations (PowerPoint, Google Slides) communicate complex ideas succinctly. "
-            "Avoid wall-of-text slides; adhere to the 6x6 guideline (maximum 6 bullet points, maximum 6 words per bullet). "
-            "Use high-contrast color palettes (dark text on white/cream backgrounds) and legible sans-serif typography (Arial, Calibri, Montserrat) at 24pt+ for readability.</p>"
-            "<p><b>Multimedia Integration &amp; Accessibility:</b> Audio and video clips must be compressed and formatted with closed captions. "
-            "Ensure all visual graphics have Alt-Text descriptions. Never use colour as the sole visual indicator of status (e.g. combine green/red icons with text labels 'Pass' / 'Fail').</p>"
-        ),
-        "steps": [
-            "Select a clean, accessible presentation template with high contrast and consistent slide masters.",
-            "Summarise source data into 3 key bullet takeaways accompanied by a clear, high-resolution infographic.",
-            "Embed audio/video files and verify that automatic playback and subtitling are enabled.",
-            "Run the built-in Accessibility Checker to detect missing alternative text or low-contrast warnings."
-        ],
-        "drill": "Scenario: Design a 5-slide induction deck for new healthcare apprentices. Outline slide titles, bullet point content for Slide 2, and explain 3 design choices made to ensure the presentation is accessible to visually impaired learners.",
-        "trap": "Examiner Trap: Using distracting animations and transition effects that detract from readability. Keep transitions simple, subtle, and consistent!"
-    },
-
-    # Domain 3: Communicating
-    {
-        "unit": 6,
-        "title": "Professional Email Etiquette, Attachments & Scheduling",
-        "domain": "Domain 3: Communicating",
-        "badge": "D3.1",
-        "kw": "email laptop office communication sending message",
-        "theory": (
-            "<p><b>Workplace Email Protocols:</b> Business email requires precise communication conventions: a concise, informative subject line "
-            "(e.g. <code>Action Required: Q3 Budget Review Meeting – 14 June</code>), professional salutations (<code>Dear Mr Davies,</code> / <code>Good morning Sarah,</code>), "
-            "and appropriate closing sign-offs. Understand recipient fields: <b>To</b> for primary action owners, <b>Cc</b> (Carbon Copy) for informational awareness, "
-            "and <b>Bcc</b> (Blind Carbon Copy) for mass distributions to preserve recipient data privacy under UK GDPR.</p>"
-            "<p><b>Calendar Scheduling &amp; Secure Attachments:</b> Scheduling meetings via digital calendars (Outlook, Google Calendar) requires checking attendee availability "
-            "via scheduling assistants, including agenda points, and attaching meeting links. Before attaching files, compress large folders into .zip archives and verify that "
-            "sensitive documents are password-encrypted.</p>"
-        ),
-        "steps": [
-            "Compose a clear subject line indicating priority and topic.",
-            "Draft message using concise paragraphs, bullet points for action items, and professional register.",
-            "Use Bcc when sending newsletters or group announcements to protect individual email addresses from public exposure.",
-            "Verify file size of attachments (under 10MB) and ensure file names are professional and descriptive."
-        ],
-        "drill": "Scenario: You need to send a confidential staffing rota to 30 care home operatives. Draft the email, explain why Bcc must be used instead of To/Cc, and detail how you will securely password-protect the spreadsheet attachment.",
-        "trap": "Examiner Trap: Hitting 'Reply All' on company-wide announcements. Only reply to the sender unless everyone genuinely needs the update!"
-    },
-    {
-        "unit": 7,
-        "title": "Video Conferencing, Collaboration Tools & Netiquette",
-        "domain": "Domain 3: Communicating",
-        "badge": "D3.2",
-        "kw": "video conference call remote meeting screen headset",
-        "theory": (
-            "<p><b>Virtual Meeting Platforms:</b> Platforms like MS Teams, Zoom, and Google Meet are integral to remote teamwork. "
-            "Professional meeting management involves setting meeting roles (Presenter vs Attendee), testing microphone/camera peripherals prior to commencement, "
-            "and using background blur or neutral virtual backgrounds to preserve home privacy.</p>"
-            "<p><b>Collaboration Netiquette:</b> Maintain virtual etiquette by keeping microphones muted when not speaking to eliminate background ambient noise, "
-            "using the 'Raise Hand' feature to avoid interrupting speakers, and utilizing chat channels for resource links and constructive feedback. "
-            "Respect digital boundaries by recording sessions only with explicit participant consent.</p>"
-        ),
-        "steps": [
-            "Perform audio/video check 5 minutes before scheduled call start time.",
-            "Enable background blur to ensure a professional, distraction-free appearance.",
-            "Mute microphone upon entering and unmute only when addressing the meeting.",
-            "Share screen selectively (share individual application window rather than entire desktop to prevent accidental personal data display)."
-        ],
-        "drill": "Scenario: You are co-hosting a virtual workshop for 25 external clients. List the 4 key setup steps you must perform before admitting attendees from the lobby, and explain how to handle an unexpected participant disruption.",
-        "trap": "Examiner Trap: Sharing your entire desktop screen containing private browser tabs, emails, or personal photos. Always share only the specific presentation window!"
-    },
-
-    # Domain 4: Transacting
-    {
-        "unit": 8,
-        "title": "E-Commerce, Online Invoicing & Secure Payment Verification",
-        "domain": "Domain 4: Transacting",
-        "badge": "D4.1",
-        "kw": "credit card payment online shopping pos terminal",
-        "theory": (
-            "<p><b>Digital Commercial Transactions:</b> Purchasing products and services online requires robust security verification. "
-            "Ensure the website URL begins with <code>https://</code> (Hypertext Transfer Protocol Secure) and displays a locked padlock icon in the browser address bar, "
-            "confirming that data transmitted between browser and web server is encrypted using TLS/SSL protocols.</p>"
-            "<p><b>Payment Security &amp; Fraud Prevention:</b> When entering payment card details, verify that the transaction requires Strong Customer Authentication (SCA) "
-            "via 3D Secure (e.g. one-time passcode SMS or banking app biometric approval). Never store commercial card details on shared devices, and reconcile digital invoices "
-            "against merchant receipts before approving payments.</p>"
-        ),
-        "steps": [
-            "Verify website credentials: check for <code>https://</code>, valid SSL security certificate, and company registration details.",
-            "Review transaction basket: confirm quantities, VAT charges, and delivery fee calculations before proceeding.",
-            "Complete checkout using a secure payment gateway or protected digital wallet (Apple Pay, Google Pay, PayPal).",
-            "Save and archive the generated digital PDF receipt and order confirmation reference number."
-        ],
-        "drill": "Scenario: Your office manager asks you to purchase &pound;450 of office supplies from a new online supplier. Explain 4 distinct security checks you must perform before entering company credit card details.",
-        "trap": "Examiner Trap: Assuming a padlock icon proves a website is 100% legitimate. Padlocks prove the connection is encrypted, but you must still check the domain name carefully to spot spoofed fake websites!"
-    },
-    {
-        "unit": 9,
-        "title": "Digital Public Services & Official Online Accounts",
-        "domain": "Domain 4: Transacting",
-        "badge": "D4.2",
-        "kw": "government office passport document citizen services",
-        "theory": (
-            "<p><b>Accessing Public Services Online:</b> Government and public health services in the UK are centralised through Gov.uk and NHS App portals. "
-            "Accessing services (e.g. Universal Credit, DVLA vehicle tax, Council Tax billing, NHS prescriptions) requires verified digital identity accounts "
-            "utilising multi-factor authentication (MFA) and National Insurance number verification.</p>"
-            "<p><b>Online Form Completion &amp; Document Uploads:</b> Completing digital public service applications requires entering accurate biographical details, "
-            "uploading proof-of-address documents (.pdf or .jpg formats, typically under 5MB), and verifying that all input fields pass client-side data validation checks "
-            "(e.g. valid postcode format, correctly formatted telephone numbers).</p>"
-        ),
-        "steps": [
-            "Log in via official portal gateway: verify the domain ends strictly in <code>.gov.uk</code> or <code>.nhs.uk</code>.",
-            "Authenticate account using SMS one-time passcode or authenticator app token.",
-            "Complete form sections sequentially, checking progress indicators and error validation highlights.",
-            "Upload compressed, clear PDF copies of required utility bill or driving licence verification documents.",
-            "Submit application and record the unique statutory reference tracking code."
-        ],
-        "drill": "Scenario: An adult learner needs to renew their driving licence and apply for an NHS prescription online. Detail the steps required to access the genuine Gov.uk portal, verify identity, and avoid predatory copycat charging websites.",
-        "trap": "Examiner Trap: Using unofficial third-party websites that charge &pound;40–&pound;80 handling fees for free Gov.uk services. Always check that the URL domain ends in .gov.uk!"
-    },
-
-    # Domain 5: Being Safe & Responsible Online
-    {
-        "unit": 10,
-        "title": "Cybersecurity Hygiene, Phishing Detection & UK GDPR",
-        "domain": "Domain 5: Being Safe & Responsible Online",
-        "badge": "D5.1",
-        "kw": "cyber security lock digital privacy shield hacker",
-        "theory": (
-            "<p><b>Cyber Threats &amp; Social Engineering:</b> The vast majority of cyber breaches stem from human deception rather than technical flaws. "
-            "<b>Phishing:</b> Fraudulent emails imitating banks, delivery couriers, or HMRC attempting to harvest login credentials. "
-            "Key red flags include urgent threatening language (<i>'Your account will be suspended within 24 hours'</i>), generic greetings (<i>'Dear Customer'</i>), "
-            "and spoofed sender email addresses (e.g. <code>support@paypal-security-alert.co.uk</code> instead of <code>@paypal.com</code>).</p>"
-            "<p><b>Password Security &amp; 2FA:</b> Create strong, memorable passphrases using three random words combined with numbers and symbols (e.g. <code>Castle$Pebble97Breeze!</code>). "
-            "Enable Two-Factor Authentication (2FA) across all professional accounts. "
-            "<b>UK GDPR &amp; Data Protection:</b> Handle personal identifiable data (PID) strictly according to the 7 UK GDPR principles: lawfulness, purpose limitation, "
-            "data minimisation, accuracy, storage limitation, integrity/confidentiality, and accountability.</p>"
-        ),
-        "steps": [
-            "Hover mouse over hyperlinks in emails to reveal the actual destination URL before clicking.",
-            "Verify sender header email address carefully to detect domain spoofing.",
-            "Implement multi-factor authentication (MFA) across email, banking, and cloud storage systems.",
-            "Never share passwords via unencrypted messaging apps or write them on sticky notes.",
-            "Immediately report suspected security incidents or accidental data disclosures to the Data Protection Officer (DPO)."
-        ],
-        "drill": "Scenario: You receive an urgent email purporting to be from the IT Support team requesting you to verify your employee email password via an external link. Identify 3 warning signs of phishing and outline your exact response protocol.",
-        "trap": "Examiner Trap: Believing that anti-virus software alone provides complete protection. Human vigilance and skepticism are the ultimate line of defence against social engineering!"
-    }
-]
-
-DIGITAL_SKILLS_MOCKS = [
-    # Mock 1: Administrative Officer Cloud & File Management
-    {
-        "title": "Practical Mock 1: Administrative Operations & Document Processing",
-        "scenario": "You are working as an Administrative Officer for a regional vocational training academy. "
-                    "The centre manager has tasked you with auditing and restructuring the new apprentice onboarding digital toolkit.",
-        "tasks": [
-            "Task 1: Establish a standardized hierarchical folder structure for 30 new apprentices across 3 vocational sectors (Healthcare, Engineering, Digital).",
-            "Task 2: Format an Apprentice Induction Handbook in Word using styles (Title, Heading 1, Heading 2), inserting an automated Table of Contents and an accessible table of key dates.",
-            "Task 3: Conduct research to identify statutory minimum wage rates for apprentices, citing two verified .gov.uk sources using proper search operators.",
-            "Task 4: Draft a professional welcome email to apprentices using appropriate To, Cc, and Bcc fields to distribute the handbook while protecting private personal email addresses."
-        ]
-    },
-    # Mock 2: Retail Inventory Spreadsheet & Commercial Invoicing
-    {
-        "title": "Practical Mock 2: Retail Inventory Spreadsheet & Commercial Accounting",
-        "scenario": "You are the Operations Assistant for a growing eco-friendly home goods retailer. "
-                    "The business needs a dynamic, automated inventory tracking and customer billing spreadsheet.",
-        "tasks": [
-            "Task 1: Construct an inventory management spreadsheet with 15 stock lines, applying formulas for Line Total (=Unit Cost * Quantity), VAT at 20%, and Gross Retail Value.",
-            "Task 2: Use summary formulas =SUM, =AVERAGE, =MIN, and =MAX to extract key operational metrics across the stock inventory.",
-            "Task 3: Apply an automated =IF function to Column G to flag 'RESTOCK REQUIRED' for any item falling below 12 units.",
-            "Task 4: Generate a high-contrast Clustered Bar Chart illustrating stock value by product category, complete with labeled axes and data labels."
-        ]
-    },
-    # Mock 3: Customer Care Digital Helpdesk & Data Privacy
-    {
-        "title": "Practical Mock 3: Digital Customer Care & Secure Communications",
-        "scenario": "You are a Customer Experience Coordinator for a community health trust. "
-                    "You must handle digital communications, appointment scheduling, and patient data requests with strict adherence to privacy.",
-        "tasks": [
-            "Task 1: Schedule a series of virtual consultation meetings in MS Teams, configuring presenter permissions, lobby security, and calendar invites.",
-            "Task 2: Respond to a patient inquiry via email, maintaining empathetic professional register and attaching a guidance document encrypted with password protection.",
-            "Task 3: Identify a suspicious incoming email claiming to represent NHS procurement, documenting 4 clear phishing indicators in an incident log.",
-            "Task 4: Outline the procedure for handling a Subject Access Request (SAR) under UK GDPR, specifying the statutory response deadline (1 calendar month)."
-        ]
-    },
-    # Mock 4: Corporate Data Security Audit & Cloud Governance
-    {
-        "title": "Practical Mock 4: Corporate Data Security Audit & Technology Governance",
-        "scenario": "You are supporting the Information Governance lead in preparing an organization for Cyber Essentials certification and statutory data compliance.",
-        "tasks": [
-            "Task 1: Conduct a password hygiene and 2FA compliance audit across 40 user accounts, identifying 5 critical security vulnerabilities.",
-            "Task 2: Formulate an acceptable cloud storage policy restricting the storage of sensitive personal data on unencrypted personal mobile devices.",
-            "Task 3: Evaluate 3 online payment gateway solutions for the corporate website, verifying SSL/TLS certificates and PCI-DSS compliance.",
-            "Task 4: Create a 6-slide staff training presentation on social engineering awareness, applying WCAG 2.1 accessibility standards and Alt-Text graphics."
-        ]
-    }
-]
-
-print("DIGITAL_SKILLS_UNITS (10) and DIGITAL_SKILLS_MOCKS (4) defined successfully!")
+# =============================================================================
+# Digital Skills (EDSQ National Standards) Units & Mocks Data
+# Refined Plain English Edition (Ages 16 to 50+) with Specialist Terminology
+# =============================================================================
 
 # =============================================================================
 # Digital Skills (EDSQ National Standards) Units & Mocks Data
+# Refined Plain English Edition (Ages 16 to 50+) with Specialist Terminology
 # =============================================================================
 
 DIGITAL_SKILLS_UNITS = [
+    # -------------------------------------------------------------------------
     # Domain 1: Using Devices & Handling Information
+    # -------------------------------------------------------------------------
     {
         "unit": 1,
         "title": "Operating Systems, File Hierarchy & Cloud Storage",
@@ -1193,20 +904,36 @@ DIGITAL_SKILLS_UNITS = [
         "badge": "D1.1",
         "kw": "laptop computer keyboard modern workspace typing",
         "theory": (
-            "<p><b>Operating Systems &amp; File Systems:</b> Modern workplace devices operate on Windows, macOS, ChromeOS, or mobile OS (iOS/Android). "
-            "A structured hierarchical file architecture organises data into logical nested folders (e.g. <code>/Documents/Clients/2025/Invoices/</code>). "
-            "Standard file naming conventions use ISO dates and clear descriptors (e.g. <code>2025-05-14_Invoice_SmithLtd_v2.pdf</code>) to avoid version confusion.</p>"
-            "<p><b>Cloud Storage &amp; Synchronisation:</b> Cloud platforms (OneDrive, Google Drive, Nextcloud) synchronize local files to secure remote servers. "
-            "This enables multi-device access, automated version history, and real-time multi-author collaboration with granular viewing/editing permissions.</p>"
+            "<p><b>Operating System (OS):</b> The <b>operating system</b> is the main master program that makes your computer, tablet, or smartphone work. "
+            "Examples include <b>Windows</b> on PCs, <b>macOS</b> on Apple Macs, <b>ChromeOS</b> on Chromebooks, and <b>Android or iOS</b> on mobile phones. "
+            "<i>What it does:</i> The OS is like the manager of your device. It lets your screen, keyboard, and mouse communicate with your software (like Word or web browsers), "
+            "and lets you adjust essential settings such as screen brightness, volume, Wi-Fi connections, and accessibility tools (like screen zoom and high contrast).</p>"
+            "<p><b>File Hierarchy &amp; Folders:</b> A <b>file hierarchy</b> means organising your computer files into main folders and subfolders, "
+            "just like placing paper documents into labelled dividers inside a filing cabinet drawer. "
+            "<i>Example:</i> Instead of dumping all your files on the Desktop, create a main folder called <code>Documents</code>, a subfolder called <code>Customers</code>, "
+            "and inside that a folder called <code>Invoices</code>. This stops your computer getting cluttered and helps you find documents in seconds.</p>"
+            "<p><b>File Extensions &amp; Naming:</b> A <b>file extension</b> is the short code after the dot at the end of a file name that tells the computer what type of file it is. "
+            "Common extensions include: <code>.docx</code> for Word documents, <code>.xlsx</code> for Excel spreadsheets, <code>.pdf</code> for read-only documents that look identical on all screens, "
+            "and <code>.jpg</code> or <code>.png</code> for photos. Always use clear file names with dates and version numbers (e.g. <code>2026-10-25_Staff_Rota_v2.docx</code>).</p>"
+            "<p><b>Cloud Storage &amp; Syncing:</b> <b>Cloud storage</b> means saving your files on secure internet servers (such as <b>Microsoft OneDrive</b>, <b>Google Drive</b>, or <b>iCloud</b>) "
+            "rather than only on your physical computer hard drive. <b>Synchronization (syncing)</b> automatically updates your files across all your devices. "
+            "<i>Example:</i> If you start an assignment at college or work, it syncs to the cloud so you can open and edit the exact same document at home on your tablet or phone. "
+            "Cloud storage also protects your work if your laptop is lost, damaged, or stolen.</p>"
         ),
         "steps": [
-            "Create a root project folder with the standardized format: <code>YYYY-MM_ProjectName</code>.",
-            "Establish logical subfolders: <code>01_Briefs</code>, <code>02_Working_Drafts</code>, <code>03_Assets</code>, <code>04_Final_Approved</code>.",
-            "Apply read-only permissions to final distribution PDFs and full edit access to designated team members.",
-            "Verify cloud synchronization status icons (green checkmark = synced locally, cloud icon = online only)."
+            "Open your file manager (File Explorer on Windows or Finder on Mac) to view your drives.",
+            "Create a main folder with a clear, professional name (e.g. <code>2026_Customer_Service</code>).",
+            "Inside that folder, create labelled subfolders (e.g. <code>01_Forms</code>, <code>02_Drafts</code>, <code>03_Final_PDFs</code>).",
+            "Save your work into the correct subfolder with a descriptive file name, date, and version.",
+            "Check your cloud sync icon: a green tick means your file is backed up and synced to the cloud."
         ],
-        "drill": "Scenario: You are organizing the digital assets for a regional charity campaign. Outline a nested 3-tier folder structure, specify standard naming for 3 distinct files, and explain why saving directly to the Desktop causes governance risks.",
-        "trap": "Examiner Trap: Saving multiple files named 'Draft1.docx', 'Draft_final.docx', 'Draft_real_final.docx' loses marks. Always use ISO dates and version numbers (v1.0, v1.1)!"
+        "drill": "Scenario: You are working as an administrative assistant at a local health clinic. You need to store patient feedback forms, staff meeting minutes, and quarterly budget spreadsheets. Design a 3-tier folder structure, suggest clear names for 3 files, and explain why saving all your work on the Desktop creates serious security and organisation risks.",
+        "trap": "Examiner Trap: Saving multiple files named 'doc1.docx', 'homework.xlsx', or 'final_real_version.docx'. You lose marks for vague file names! Always use clear descriptions with dates and version numbers (e.g. 'Clinic_Budget_2026_v1.xlsx').",
+        "questions": [
+            ("Which file format ensures a document looks identical on all devices and cannot be easily altered?", "A) .docx", "B) .pdf", "C) .txt", "D) .csv", "B"),
+            ("What does the 'v2' in the file name 'Report_2026_v2.docx' stand for?", "A) Volume 2", "B) Version 2", "C) View 2", "D) Verified 2", "B"),
+            ("What is the primary benefit of Cloud Storage (such as OneDrive or Google Drive)?", "A) It speeds up your keyboard", "B) Files are backed up safely online and accessible from any device", "C) It deletes old files automatically", "D) It removes all computer viruses", "B")
+        ]
     },
     {
         "unit": 2,
@@ -1215,24 +942,43 @@ DIGITAL_SKILLS_UNITS = [
         "badge": "D1.2",
         "kw": "search engine browser research internet",
         "theory": (
-            "<p><b>Search Syntax &amp; Precision Filtering:</b> Professional workplace research requires targeted Boolean operators and search filters: "
-            "quotes <code>&quot;exact phrase&quot;</code> for verbatim matching, <code>site:.gov.uk</code> to restrict results to verified government domains, "
-            "<code>filetype:pdf</code> for official reports, and the minus operator <code>-keyword</code> to exclude irrelevant commercial results.</p>"
-            "<p><b>CRAAP Evaluation Framework:</b> Not all online data is reliable. Candidates must evaluate information using the CRAAP test: "
-            "<b>C</b>urrency (publication date), <b>R</b>elevance (matches research scope), <b>A</b>uthority (author credentials and domain reputation), "
-            "<b>A</b>ccuracy (backed by cited evidence), and <b>P</b>urpose (identifying commercial bias vs objective research).</p>"
+            "<p><b>Search Engines &amp; Search Operators:</b> When you search for information online (using Google, Bing, or DuckDuckGo), typing whole conversational sentences often brings up millions of irrelevant results or advertisements. "
+            "<b>Search operators</b> are special words and symbols you type into the search box to filter your results with precision:</p>"
+            "<ul style='margin:4px 0 6px 16px; padding:0;'>"
+            "<li><b>Quotation Marks (<code>&quot;...&quot;</code>):</b> Searches for the exact words together in that precise order. <i>Example:</i> <code>&quot;national minimum wage rates&quot;</code> finds only pages with that exact phrase.</li>"
+            "<li><b>Minus Sign (<code>-</code>):</b> Removes unwanted words from your search. <i>Example:</i> <code>jaguar speed -car</code> finds how fast the wild animal runs and filters out car adverts.</li>"
+            "<li><b>Site Search (<code>site:</code>):</b> Limits results to one specific website or domain type. <i>Example:</i> <code>apprenticeship funding site:.gov.uk</code> searches only official UK government web pages.</li>"
+            "<li><b>Filetype (<code>filetype:</code>):</b> Finds specific file formats. <i>Example:</i> <code>health and safety policy filetype:pdf</code> searches only downloadable PDF guides.</li>"
+            "</ul>"
+            "<p><b>The CRAAP Test (Evaluating Sources):</b> Not everything on the internet is accurate, truthful, or up to date. "
+            "In education and employment, you must check sources using the 5-step <b>CRAAP test</b>:</p>"
+            "<ul style='margin:4px 0 6px 16px; padding:0;'>"
+            "<li><b>C &bull; Currency:</b> When was the page published or updated? (Is the information still current, or has the law changed?)</li>"
+            "<li><b>R &bull; Relevance:</b> Does the information directly answer your workplace question?</li>"
+            "<li><b>A &bull; Authority:</b> Who wrote it? Is the author an expert, an official organisation (like GOV.UK or the NHS), or an unverified social media account?</li>"
+            "<li><b>A &bull; Accuracy:</b> Are the facts supported by evidence, official data, or links to primary sources?</li>"
+            "<li><b>P &bull; Purpose:</b> Why does this page exist? Is it to inform and educate you, or is it trying to sell you a product, collect your data, or push a biased opinion?</li>"
+            "</ul>"
         ),
         "steps": [
-            "Construct a targeted Boolean query: e.g. <code>&quot;apprenticeship minimum wage&quot; site:.gov.uk filetype:pdf</code>.",
-            "Inspect the top 3 results for author credentials, publication date, and cited research references.",
-            "Cross-reference key numerical claims against at least two independent primary statistical sources.",
-            "Record the full URL, retrieval date, and author name for transparent professional citation."
+            "Decide on the exact topic and key terms you need before you start typing.",
+            "Use quotation marks around key phrases (e.g. <code>&quot;statutory sick pay&quot;</code>) to eliminate irrelevant results.",
+            "Add domain filters like <code>site:.gov.uk</code> or <code>site:.nhs.uk</code> to find official, trustworthy information.",
+            "Skip the first few results marked 'Sponsored' or 'Ad'—these are paid commercial adverts, not official guidance.",
+            "Compare information across at least two independent, reliable websites before quoting facts in your work."
         ],
-        "drill": "Scenario: Your manager asks you to verify whether a viral social media post claiming a new statutory UK minimum wage rate is accurate. Formulate two search queries, identify the primary authority domain to check, and explain how to spot misinformation.",
-        "trap": "Examiner Trap: Citing sponsored blog posts or commercial sales pages (.com) as official legislation evidence. Always cross-check against official (.gov.uk or .org.uk) repositories!"
+        "drill": "Scenario: A colleague tells you that a viral social media video claims the UK legal minimum wage for apprentices is increasing to £15 per hour next month. Write an exact search query using operators to verify this, state which domain type (.com, .gov.uk, or .org) is most authoritative, and explain two reasons why social media claims should never be trusted without verification.",
+        "trap": "Examiner Trap: Quoting commercial sales websites (.com) or marketing blogs as official evidence in an exam. For legal, employment, or medical questions, always rely on verified public sector sources (.gov.uk or .nhs.uk)!",
+        "questions": [
+            ('What happens when you put quotation marks around search words (e.g. "maternity leave rights")?', "A) The words are translated into French", "B) The search engine searches only for that exact phrase in that order", "C) The search engine ignores those words", "D) It turns off your search history", "B"),
+            ("Which web address domain is the most trustworthy source for UK government legislation?", "A) .com", "B) .gov.uk", "C) .net", "D) .biz", "B"),
+            ("In the CRAAP evaluation test, what does the 'C' stand for?", "A) Computer", "B) Currency (how up to date the information is)", "C) Copyright", "D) Cookies", "B")
+        ]
     },
 
+    # -------------------------------------------------------------------------
     # Domain 2: Creating & Editing
+    # -------------------------------------------------------------------------
     {
         "unit": 3,
         "title": "Professional Word Processing & Structured Documents",
@@ -1240,140 +986,228 @@ DIGITAL_SKILLS_UNITS = [
         "badge": "D2.1",
         "kw": "typing document office word processing",
         "theory": (
-            "<p><b>Document Hierarchy &amp; Styles:</b> Professional word processing (MS Word, Google Docs) relies on semantic paragraph styles "
-            "(<code>Heading 1</code>, <code>Heading 2</code>, <code>Body Text</code>) rather than manual font resizing. "
-            "Styles guarantee consistent typography, automatically generate clickable Tables of Contents, and maintain screen reader accessibility.</p>"
-            "<p><b>Tables, Headers &amp; Page Architecture:</b> Long documents require structured headers and footers with automated page numbering "
-            "(<code>Page X of Y</code>), balanced margins (minimum 20 mm), accessible data tables with dedicated header rows, and embedded high-resolution graphics with descriptive Alt-Text.</p>"
+            "<p><b>Word Processing Basics:</b> Applications like <b>Microsoft Word</b> and <b>Google Docs</b> are used to create letters, reports, memos, and leaflets. "
+            "To look professional, your documents need a clear layout, consistent fonts, and tidy margins.</p>"
+            "<p><b>Paragraph Styles (Heading 1, Heading 2 &amp; Normal):</b> Rather than highlighting titles and manually making them bigger or bold, you should click the pre-set <b>Styles</b> on the toolbar ribbon. "
+            "<i>Definition:</i> Styles are pre-set text formatting rules that keep titles, subtitles, and paragraphs looking uniform throughout your whole document.<br>"
+            "<i>Three Major Benefits:</i><br>"
+            "1. <b>Consistency:</b> If you change font themes, every title in your 20-page document updates in one click.<br>"
+            "2. <b>Accessibility:</b> Screen-reading software used by visually impaired colleagues uses heading styles (H1, H2) to help them navigate between chapters.<br>"
+            "3. <b>Automatic Table of Contents:</b> Word uses your Heading 1 and Heading 2 styles to create an automated table of contents with correct page numbers instantly!</p>"
+            "<p><b>Page Layout, Spacing &amp; Page Breaks:</b><br>"
+            "&bull; <b>Page Breaks (<code>Ctrl + Enter</code>):</b> A command that neatly starts a new page. <i>Golden Rule:</i> Never press 'Enter' 20 times to reach the next page! If you add or delete words later, all your paragraphs will shift out of position.<br>"
+            "&bull; <b>Line Spacing &amp; Alignment:</b> Keep body text left-aligned with 1.15 or 1.5 line spacing. Avoid 'justified' alignment, which creates irregular white spaces between words that are difficult for people with dyslexia to read.<br>"
+            "&bull; <b>Alt-Text (Alternative Text):</b> A short written description added to a photo or chart (e.g. right-click image &rarr; Edit Alt-Text). A screen reader reads this aloud to visually impaired readers so they know what the image shows.</p>"
         ),
         "steps": [
-            "Apply Heading 1 to primary chapters and Heading 2 to sub-sections to establish a logical outline.",
-            "Insert an automated Table of Contents linked directly to heading styles.",
-            "Format data into an accessible table: specify a repeating header row and zebra-stripe alternating shading for readability.",
-            "Add descriptive alternative text (Alt-Text) to all photographic images to comply with WCAG accessibility standards."
+            "Set standard margins (Normal: 2.54 cm) and choose an accessible, clean font (e.g. Arial, Calibri, or Lexend at 11pt or 12pt).",
+            "Type your document title and click 'Title' style. Apply 'Heading 1' to main sections and 'Heading 2' to subsections.",
+            "Use <code>Ctrl + Enter</code> to insert a clean Page Break whenever beginning a major new topic.",
+            "Insert tables using <code>Insert &rarr; Table</code>, setting a clear bold header row and right-aligning numerical figures.",
+            "Right-click every image, select 'View Alt Text', and write a concise 1-sentence description.",
+            "Run the built-in Accessibility Checker (<code>Review &rarr; Check Accessibility</code>) before saving as a PDF."
         ],
-        "drill": "Scenario: Format a 4-page health and safety executive briefing document. Specify font hierarchy (title, headings, body), explain the benefit of using Styles instead of manual bolding, and describe how to make a 5-column incident log table fully accessible.",
-        "trap": "Examiner Trap: Hitting 'Enter' repeatedly to force text onto a new page. Always use a proper Page Break (Ctrl+Enter) or Section Break!"
+        "drill": "Scenario: You are formatting a 3-page Employee Health and Safety handbook for a community care home. Explain the font choices and heading styles you will use, state two reasons why using built-in Styles is better than manual formatting, and write suitable Alt-Text for an image showing a clearly marked emergency fire exit route.",
+        "trap": "Examiner Trap: Pressing the 'Enter' key repeatedly to push text onto a fresh page. In exams and the workplace, this causes messy page breaks if text is edited. Always insert a proper Page Break (`Ctrl + Enter`)!",
+        "questions": [
+            ("What is the keyboard shortcut to insert a clean Page Break in Microsoft Word?", "A) Shift + Tab", "B) Ctrl + Enter", "C) Alt + F4", "D) Ctrl + P", "B"),
+            ("Why is left-aligned text recommended over justified text for general readability?", "A) Justified text takes up more ink", "B) Left-aligned text has even spacing between words, making it easier for dyslexic readers", "C) Left-aligned text deletes empty lines", "D) Justified text cannot be printed", "B"),
+            ("What is the main purpose of adding 'Alt-Text' to an image in a report?", "A) It changes the image colours", "B) It allows screen readers to describe the image to visually impaired readers", "C) It compresses the image to save memory", "D) It turns the image into a video", "B")
+        ]
     },
     {
         "unit": 4,
-        "title": "Spreadsheet Architecture, Formulas & Data Visualisation",
+        "title": "Spreadsheet Modeling, Formulas & Functions",
         "domain": "Domain 2: Creating & Editing",
         "badge": "D2.2",
         "kw": "spreadsheet excel analytics chart data",
         "theory": (
-            "<p><b>Spreadsheet Principles:</b> Spreadsheets (MS Excel, Google Sheets) manage numerical and tabular records across columns and rows. "
-            "Formulas always begin with an equals sign (<code>=</code>) and use relative cell referencing (<code>=B2*C2</code>) or absolute cell referencing (<code>=$B$1*C2</code>) "
-            "to automate calculations without manual data re-entry.</p>"
-            "<p><b>Essential Formulas &amp; Functions:</b> Statutory Level 1 &amp; Level 2 standards require mastery of: "
-            "<code>=SUM(range)</code> for totals, <code>=AVERAGE(range)</code> for arithmetic means, <code>=COUNT(range)</code> / <code>=COUNTA(range)</code>, "
-            "<code>=MIN(range)</code> and <code>=MAX(range)</code>, and logical conditional expressions <code>=IF(logical_test, value_if_true, value_if_false)</code>.</p>"
+            "<p><b>Spreadsheets Explained:</b> A spreadsheet (such as <b>Microsoft Excel</b> or <b>Google Sheets</b>) is a software grid made of vertical <b>columns</b> (labelled with letters A, B, C...) and horizontal <b>rows</b> (labelled with numbers 1, 2, 3...). "
+            "Each box is called a <b>cell</b>. A cell is identified by its <b>cell reference</b> (its coordinates), such as <code>B4</code> (Column B, Row 4).</p>"
+            "<p><b>Formulas vs Functions:</b><br>"
+            "&bull; <b>Formulas:</b> Calculations you create yourself. Every formula MUST begin with an equals sign (<code>=</code>). Use arithmetic symbols: <code>+</code> (add), <code>-</code> (subtract), <code>*</code> (multiply), and <code>/</code> (divide). "
+            "<i>Example:</i> <code>=B2*C2</code> multiplies the quantity in cell B2 by the unit price in cell C2.<br>"
+            "&bull; <b>Functions:</b> Built-in mathematical shortcuts that perform calculations on a whole group (range) of cells:<br>"
+            "&nbsp;&nbsp;&bull; <code>=SUM(D2:D20)</code> &rarr; Adds together all numbers in the range D2 to D20.<br>"
+            "&nbsp;&nbsp;&bull; <code>=AVERAGE(D2:D20)</code> &rarr; Calculates the mean (average) value.<br>"
+            "&nbsp;&nbsp;&bull; <code>=MIN(D2:D20)</code> &rarr; Finds the lowest value in the range.<br>"
+            "&nbsp;&nbsp;&bull; <code>=MAX(D2:D20)</code> &rarr; Finds the highest value in the range.<br>"
+            "&nbsp;&nbsp;&bull; <code>=COUNT(D2:D20)</code> &rarr; Counts how many cells contain numbers.<br>"
+            "&nbsp;&nbsp;&bull; <code>=IF(C2&lt;10, &quot;Reorder&quot;, &quot;OK&quot;)</code> &rarr; Checks a condition: if stock in C2 is less than 10, it writes 'Reorder', otherwise 'OK'.</p>"
+            "<p><b>Relative vs Absolute Referencing:</b><br>"
+            "&bull; <b>Relative Reference (e.g. <code>B2</code>):</b> When you drag the formula down to the next row, it automatically changes to <code>B3</code>, <code>B4</code>, etc. This is perfect for row-by-row totals.<br>"
+            "&bull; <b>Absolute Reference (e.g. <code>$B$1</code>):</b> The dollar signs lock the cell coordinate in place. When you drag the formula down, it ALWAYS refers back to cell <code>B1</code>. "
+            "<i>Example:</i> Storing a 20% VAT rate or £0.45 mileage rate in cell <code>B1</code> and locking it as <code>$B$1</code> so every calculation uses that exact rate.</p>"
+            "<p><b>Formatting Cells:</b> Always format numbers using the toolbar (e.g. click <b>Currency (£)</b> to show two decimal places). "
+            "<i>Warning:</i> Never manually type a pound sign '£' into a calculation cell, or the spreadsheet will treat it as text and produce an error (like <code>#VALUE!</code>)!</p>"
         ),
         "steps": [
-            "Enter clear column headers in Row 1: Item, Unit Cost, Quantity, Line Total, Reorder Status.",
-            "Apply formula <code>=B2*C2</code> to calculate line total, then double-click the fill handle to auto-populate the column.",
-            "Calculate summary metrics in the bottom row using <code>=SUM(D2:D50)</code> and <code>=AVERAGE(B2:B50)</code>.",
-            "Apply an IF function to column E: <code>=IF(C2&lt;10, 'REORDER', 'OK')</code>.",
-            "Select the data range and generate a clean Column or Bar Chart with labeled axes and a descriptive chart title."
+            "Enter clear, bold column headings in Row 1: Item, Quantity, Unit Cost (£), Total (£).",
+            "In cell D2, type the formula <code>=B2*C2</code> to calculate the first row's total.",
+            "Hover over the bottom-right corner of cell D2 until a small black cross (the Autofill handle) appears, then drag down.",
+            "Below your data, calculate totals and averages using <code>=SUM()</code> and <code>=AVERAGE()</code>.",
+            "Highlight money figures and click the Currency (£) button on the ribbon so values show as £0.00.",
+            "Highlight your items and totals, then click <code>Insert &rarr; Chart</code> to create a clear Bar or Column chart."
         ],
-        "drill": "Scenario: Create an inventory management sheet for 20 warehouse product lines. Show the exact formulas for Line Total, Overall Spend, Average Unit Cost, and an automated 'Low Stock' alert for any item with under 15 units remaining.",
-        "trap": "Examiner Trap: Typing hardcoded numbers into a formula (e.g. '=B2*12.50') instead of referencing cells. Always keep variable rates in separate parameter cells!"
+        "drill": "Scenario: You are managing an office stationery budget spreadsheet with 12 item lines. You have quantities in column B, unit prices in column C, and a 20% VAT tax rate stored in cell H1. Write the exact formula for row 2 to calculate the line subtotal, the formula to calculate VAT referencing cell H1, the function to calculate the grand total across all items, and describe how to format the numbers as pounds and pence.",
+        "trap": "Examiner Trap: Typing raw numbers into calculations (like '=B2*14.50') instead of referencing cells. If the price changes later, a cell reference updates automatically, but a hardcoded number stays wrong!",
+        "questions": [
+            ("Every spreadsheet formula and function must begin with which character?", "A) +", "B) =", "C) @", "D) #", "B"),
+            ("Which function calculates the mean of values in cells C2 to C15?", "A) =MEAN(C2:C15)", "B) =AVERAGE(C2:C15)", "C) =AVG(C2-C15)", "D) =TOTAL(C2:C15)", "B"),
+            ("What do the dollar signs do in the cell reference $B$1?", "A) They convert the cell to US Dollars", "B) They lock the cell coordinate as an absolute reference so it does not change when dragged", "C) They multiply the cell by 100", "D) They hide the cell from view", "B")
+        ]
     },
     {
         "unit": 5,
-        "title": "Presentation Design, Multimedia & Digital Accessibility",
+        "title": "Presentation Design, Multimedia & Visual Slides",
         "domain": "Domain 2: Creating & Editing",
         "badge": "D2.3",
         "kw": "presentation slide deck meeting projector",
         "theory": (
-            "<p><b>Visual Storytelling &amp; Cognitive Load:</b> Effective slide presentations (PowerPoint, Google Slides) communicate complex ideas succinctly. "
-            "Avoid wall-of-text slides; adhere to the 6x6 guideline (maximum 6 bullet points, maximum 6 words per bullet). "
-            "Use high-contrast color palettes (dark text on white/cream backgrounds) and legible sans-serif typography (Arial, Calibri, Montserrat) at 24pt+ for readability.</p>"
-            "<p><b>Multimedia Integration &amp; Accessibility:</b> Audio and video clips must be compressed and formatted with closed captions. "
-            "Ensure all visual graphics have Alt-Text descriptions. Never use colour as the sole visual indicator of status (e.g. combine green/red icons with text labels 'Pass' / 'Fail').</p>"
+            "<p><b>Presentation Software:</b> Applications like <b>Microsoft PowerPoint</b> and <b>Google Slides</b> are used to present information, training courses, and project reviews to an audience. "
+            "Good slides support what you say; they should never replace you by displaying walls of text.</p>"
+            "<p><b>The 6&times;6 Rule for Clean Slides:</b> The most common mistake in presentations is putting too many words on a single slide. "
+            "<i>The Guideline:</i> Aim for a maximum of <b>6 bullet points per slide</b>, with roughly <b>6 words per bullet point</b>.<br>"
+            "<i>Why this matters:</i> If a slide is packed with text, your audience will spend their time reading the screen instead of listening to what you are explaining.</p>"
+            "<p><b>Visual Hierarchy &amp; Accessibility:</b><br>"
+            "&bull; <b>Font Size:</b> Slide titles should be 32pt to 40pt bold; bullet text should be 20pt to 24pt so people at the back of the room can read comfortably.<br>"
+            "&bull; <b>High Contrast:</b> Always use dark text on a clean, light background (such as navy or black text on white or warm cream). Avoid yellow text on white or dark text on dark backgrounds.<br>"
+            "&bull; <b>Colour Accessibility:</b> Never use colour alone to indicate meaning (for example, combine green/red colors with clear text words like 'Passed' or 'Action Needed').<br>"
+            "&bull; <b>Subtitles &amp; Captions:</b> When playing video clips in a presentation, always turn on closed captions (subtitles) so attendees with hearing difficulties can follow along.</p>"
+            "<p><b>Transitions &amp; Speaker Notes:</b> Keep slide transitions simple and subtle (such as a smooth 'Fade'). Avoid spinning text or loud sound effects, which look amateurish. "
+            "Use the <b>Speaker Notes</b> box below each slide to write your personal reminders—in <b>Presenter View</b>, only you can see your notes on your laptop, while the audience sees only the clean slides on the projector.</p>"
         ),
         "steps": [
-            "Select a clean, accessible presentation template with high contrast and consistent slide masters.",
-            "Summarise source data into 3 key bullet takeaways accompanied by a clear, high-resolution infographic.",
-            "Embed audio/video files and verify that automatic playback and subtitling are enabled.",
-            "Run the built-in Accessibility Checker to detect missing alternative text or low-contrast warnings."
+            "Select an accessible, clean slide theme with consistent fonts and high-contrast colours.",
+            "Create a Title Slide with the presentation title, your name, and the date.",
+            "Structure content slides so each slide covers only one main concept, following the 6x6 bullet rule.",
+            "Add high-resolution, relevant photos or charts, and add descriptive Alt-Text to each image.",
+            "Apply a subtle 'Fade' transition across all slides for smooth presentation flow.",
+            "Practise your talk using Presenter View so you can refer to your speaker notes without looking at the screen."
         ],
-        "drill": "Scenario: Design a 5-slide induction deck for new healthcare apprentices. Outline slide titles, bullet point content for Slide 2, and explain 3 design choices made to ensure the presentation is accessible to visually impaired learners.",
-        "trap": "Examiner Trap: Using distracting animations and transition effects that detract from readability. Keep transitions simple, subtle, and consistent!"
+        "drill": "Scenario: You are designing a 4-slide presentation to train new staff members on office recycling and waste reduction. Outline the title of each slide, draft the 4 bullet points for Slide 2 following the 6x6 rule, and explain two design choices you made to ensure your slides are accessible to people with visual impairments.",
+        "trap": "Examiner Trap: Filling slides with long paragraphs of tiny text and distracting animations. Slides should be clean, visual summaries with large readable text!",
+        "questions": [
+            ("What does the '6x6 rule' recommend for presentation slides?", "A) 6 slides presented in 6 minutes", "B) Maximum 6 bullet points per slide, with about 6 words per bullet point", "C) 6 pictures on every slide", "D) 6 different font colours per slide", "B"),
+            ("Why should you avoid using yellow text on a white slide background?", "A) Yellow ink is more expensive", "B) It has low contrast and is very difficult for the audience to read", "C) PowerPoint does not allow yellow text", "D) It deletes the text when saved", "B"),
+            ("What is the benefit of using 'Presenter View' during a live presentation?", "A) It plays background music", "B) It lets you see your speaker notes and upcoming slides on your screen while the audience sees only the slide", "C) It turns off the projector", "D) It automatically answers audience questions", "B")
+        ]
     },
 
+    # -------------------------------------------------------------------------
     # Domain 3: Communicating
+    # -------------------------------------------------------------------------
     {
         "unit": 6,
-        "title": "Professional Email Etiquette, Attachments & Scheduling",
+        "title": "Professional Email Etiquette, CC/BCC & Data Privacy",
         "domain": "Domain 3: Communicating",
         "badge": "D3.1",
         "kw": "email laptop office communication sending message",
         "theory": (
-            "<p><b>Workplace Email Protocols:</b> Business email requires precise communication conventions: a concise, informative subject line "
-            "(e.g. <code>Action Required: Q3 Budget Review Meeting – 14 June</code>), professional salutations (<code>Dear Mr Davies,</code> / <code>Good morning Sarah,</code>), "
-            "and appropriate closing sign-offs. Understand recipient fields: <b>To</b> for primary action owners, <b>Cc</b> (Carbon Copy) for informational awareness, "
-            "and <b>Bcc</b> (Blind Carbon Copy) for mass distributions to preserve recipient data privacy under UK GDPR.</p>"
-            "<p><b>Calendar Scheduling &amp; Secure Attachments:</b> Scheduling meetings via digital calendars (Outlook, Google Calendar) requires checking attendee availability "
-            "via scheduling assistants, including agenda points, and attaching meeting links. Before attaching files, compress large folders into .zip archives and verify that "
-            "sensitive documents are password-encrypted.</p>"
+            "<p><b>Workplace Email Protocols:</b> Email is the primary written communication tool in employment. "
+            "Unlike a quick text or messaging app, a workplace email is a permanent, formal record that can be used as evidence in business disputes. "
+            "Always maintain a polite, respectful tone, use proper spelling and grammar, and avoid slang or emojis.</p>"
+            "<p><b>Understanding Address Fields (To, CC, and BCC):</b><br>"
+            "&bull; <b>To:</b> The main person (or people) who the email is addressed to, and who is expected to reply or take action.<br>"
+            "&bull; <b>CC (Carbon Copy):</b> People who need to see the message for information, but who do not need to reply. "
+            "<i>Example:</i> Sending a completed report to a client and putting your manager in CC so they know it was delivered.<br>"
+            "&bull; <b>BCC (Blind Carbon Copy):</b> Sends a copy of the email while <b>completely hiding</b> the recipient's email address from everyone else on the list.<br>"
+            "<i>Crucial Data Protection Rule (UK GDPR):</i> Whenever you email a group of customers, clients, students, or patients, you <b>must put their addresses in BCC</b>. "
+            "If you put them in 'To' or 'CC', everyone can see each other's private email addresses. Exposing customer contact details without consent is a serious legal data breach that can result in heavy fines!</p>"
+            "<p><b>Email Structure &amp; Netiquette:</b><br>"
+            "&bull; <b>Subject Line:</b> Always write a clear, helpful subject line that summarizes the topic (e.g. <code>Urgent: Staff Meeting Rescheduled to Thursday 14:00</code> instead of just <code>Meeting</code> or leaving it empty).<br>"
+            "&bull; <b>Salutation &amp; Sign-off:</b> Open with a polite greeting (<code>Dear Mr Davis,</code> or <code>Good morning Sarah,</code>) and close with a professional sign-off (<code>Kind regards,</code> followed by your name and job title).<br>"
+            "&bull; <b>No ALL CAPS:</b> Never write emails in ALL CAPITAL LETTERS—in digital communication, this is seen as shouting and is considered aggressive.<br>"
+            "&bull; <b>Attachments:</b> Keep file attachments under 10 MB so they do not bounce back or fill up the recipient's mailbox. For larger files, send a secure cloud sharing link instead.</p>"
         ),
         "steps": [
-            "Compose a clear subject line indicating priority and topic.",
-            "Draft message using concise paragraphs, bullet points for action items, and professional register.",
-            "Use Bcc when sending newsletters or group announcements to protect individual email addresses from public exposure.",
-            "Verify file size of attachments (under 10MB) and ensure file names are professional and descriptive."
+            "Write a clear, descriptive subject line that includes the project name or action required.",
+            "Choose the correct address field: action owners in 'To', observers in 'CC', and group mailing lists in 'BCC'.",
+            "Write a polite greeting and structure your message into short paragraphs with bullet points for actions.",
+            "Attach any needed documents, ensuring file names are professional (e.g. <code>Invoice_1042.pdf</code>, not <code>scan1.pdf</code>).",
+            "Proofread your email carefully for spelling, tone, and correct recipient addresses before clicking 'Send'."
         ],
-        "drill": "Scenario: You need to send a confidential staffing rota to 30 care home operatives. Draft the email, explain why Bcc must be used instead of To/Cc, and detail how you will securely password-protect the spreadsheet attachment.",
-        "trap": "Examiner Trap: Hitting 'Reply All' on company-wide announcements. Only reply to the sender unless everyone genuinely needs the update!"
+        "drill": "Scenario: You work as an administrative officer at an adult education college. You need to email 35 prospective students to confirm their course start dates and enclose a PDF campus map. Draft the email including a suitable subject line and greeting, explain why placing all 35 email addresses in 'To' or 'CC' violates UK GDPR data protection rules, and specify which field must be used instead.",
+        "trap": "Examiner Trap: Clicking 'Reply All' when only the original sender needs your answer! 'Reply All' clutters everyone's inbox and can accidentally leak private comments to the entire organisation.",
+        "questions": [
+            ("Which email field should you use when emailing 50 customers to ensure they cannot see each other's email addresses?", "A) To", "B) CC", "C) BCC (Blind Carbon Copy)", "D) Subject", "C"),
+            ("Why is typing an email in ALL CAPITAL LETTERS considered bad netiquette?", "A) It uses more computer memory", "B) It is interpreted as shouting and feels rude or aggressive", "C) Capital letters cannot be sent over Wi-Fi", "D) It triggers anti-virus alerts", "B"),
+            ("What makes an effective email subject line?", "A) Leaving it completely blank", "B) Writing just the word 'Hey'", "C) A concise, descriptive summary of the message topic and any deadline", "D) Typing your whole message into the subject line", "C")
+        ]
     },
     {
         "unit": 7,
-        "title": "Video Conferencing, Collaboration Tools & Netiquette",
+        "title": "Video Conferencing, Screen Sharing & Online Collaboration",
         "domain": "Domain 3: Communicating",
         "badge": "D3.2",
         "kw": "video conference call remote meeting screen headset",
         "theory": (
-            "<p><b>Virtual Meeting Platforms:</b> Platforms like MS Teams, Zoom, and Google Meet are integral to remote teamwork. "
-            "Professional meeting management involves setting meeting roles (Presenter vs Attendee), testing microphone/camera peripherals prior to commencement, "
-            "and using background blur or neutral virtual backgrounds to preserve home privacy.</p>"
-            "<p><b>Collaboration Netiquette:</b> Maintain virtual etiquette by keeping microphones muted when not speaking to eliminate background ambient noise, "
-            "using the 'Raise Hand' feature to avoid interrupting speakers, and utilizing chat channels for resource links and constructive feedback. "
-            "Respect digital boundaries by recording sessions only with explicit participant consent.</p>"
+            "<p><b>Video Conferencing Tools:</b> Applications like <b>Microsoft Teams</b>, <b>Zoom</b>, and <b>Google Meet</b> allow people to talk, see each other, and collaborate on work from different locations over the internet. "
+            "They are now an everyday part of modern employment, training courses, and healthcare consultations.</p>"
+            "<p><b>Audio &amp; Video Etiquette (Netiquette):</b><br>"
+            "&bull; <b>Mute When Not Speaking:</b> Always keep your microphone muted unless you are actively speaking. This stops distracting background noises (such as keyboard typing, coughing, phone rings, traffic, or family members) from disturbing the meeting.<br>"
+            "&bull; <b>Camera &amp; Background Privacy:</b> When turning on your webcam, ensure you are in a quiet, well-lit room. Use the <b>Background Blur</b> feature or select a neutral virtual background to keep your personal home living space private.<br>"
+            "&bull; <b>Raise Hand:</b> Use the digital 'Raise Hand' button to let the host know you have a question or contribution without interrupting whoever is speaking.</p>"
+            "<p><b>Screen Sharing Safely:</b> Screen sharing allows other attendees to see your computer screen (for example, to show a presentation or spreadsheet).<br>"
+            "<i>The Golden Privacy Rule:</i> Always choose to <b>Share a Specific Window</b> (such as sharing only your PowerPoint application) rather than <b>Share Entire Screen (Desktop)</b>. "
+            "If you share your entire desktop, everyone on the call will see private email notifications, open bank accounts, or confidential customer files that pop up on your monitor!</p>"
+            "<p><b>Cloud Collaboration &amp; Co-Authoring:</b> In platforms like Microsoft 365 or Google Workspace, multiple colleagues can open and edit the same document at the exact same time. "
+            "Each person appears with a different coloured cursor so you can see what they are typing in real time without overwriting each other's work.</p>"
         ),
         "steps": [
-            "Perform audio/video check 5 minutes before scheduled call start time.",
-            "Enable background blur to ensure a professional, distraction-free appearance.",
-            "Mute microphone upon entering and unmute only when addressing the meeting.",
-            "Share screen selectively (share individual application window rather than entire desktop to prevent accidental personal data display)."
+            "Join the meeting 2 to 3 minutes early to test your audio (microphone and speakers/headset) and webcam.",
+            "Turn on Background Blur to ensure your personal home surroundings remain private.",
+            "Mute your microphone immediately upon entering the call.",
+            "When sharing work, select only the specific application window you need to show, never your whole desktop.",
+            "Use the in-meeting chat box to share links or type comments without interrupting the speaker.",
+            "Click the red 'Leave' or 'End Meeting' button firmly when finished to ensure your camera and microphone disconnect."
         ],
-        "drill": "Scenario: You are co-hosting a virtual workshop for 25 external clients. List the 4 key setup steps you must perform before admitting attendees from the lobby, and explain how to handle an unexpected participant disruption.",
-        "trap": "Examiner Trap: Sharing your entire desktop screen containing private browser tabs, emails, or personal photos. Always share only the specific presentation window!"
+        "drill": "Scenario: You are participating in a weekly team review meeting with 10 colleagues on Microsoft Teams. You have been asked to present a 5-minute update on your department's monthly targets. Outline 3 technical checks you should perform before joining, explain why sharing a single window is safer than sharing your entire desktop screen, and describe two meeting etiquette rules you should follow while others are speaking.",
+        "trap": "Examiner Trap: Sharing your entire desktop screen during a video call. If personal emails or sensitive customer records are visible, this is a serious data protection breach! Always share only the specific application window.",
+        "questions": [
+            ("Why should you mute your microphone during a video call when you are not speaking?", "A) To save internet bandwidth", "B) To prevent background noise from distracting the speaker and other participants", "C) To stop your screen from turning off", "D) Because microphones only work for 5 minutes", "B"),
+            ("When presenting work on a video call, why is sharing a single window safer than sharing your entire screen?", "A) It uses less computer battery", "B) It stops attendees from seeing private notifications, personal emails, or confidential data on your desktop", "C) Single windows load faster on phones", "D) It turns off attendee webcams", "B"),
+            ("What feature in video conferencing apps protects your home privacy when your camera is turned on?", "A) Screen Magnifier", "B) Background Blur or Virtual Background", "C) Autofill", "D) High Contrast Mode", "B")
+        ]
     },
 
+    # -------------------------------------------------------------------------
     # Domain 4: Transacting
+    # -------------------------------------------------------------------------
     {
         "unit": 8,
-        "title": "E-Commerce, Online Invoicing & Secure Payment Verification",
+        "title": "E-Commerce Navigation, Secure Payments & Online Shopping",
         "domain": "Domain 4: Transacting",
         "badge": "D4.1",
         "kw": "credit card payment online shopping pos terminal",
         "theory": (
-            "<p><b>Digital Commercial Transactions:</b> Purchasing products and services online requires robust security verification. "
-            "Ensure the website URL begins with <code>https://</code> (Hypertext Transfer Protocol Secure) and displays a locked padlock icon in the browser address bar, "
-            "confirming that data transmitted between browser and web server is encrypted using TLS/SSL protocols.</p>"
-            "<p><b>Payment Security &amp; Fraud Prevention:</b> When entering payment card details, verify that the transaction requires Strong Customer Authentication (SCA) "
-            "via 3D Secure (e.g. one-time passcode SMS or banking app biometric approval). Never store commercial card details on shared devices, and reconcile digital invoices "
-            "against merchant receipts before approving payments.</p>"
+            "<p><b>What is E-Commerce?</b> <b>E-commerce</b> (electronic commerce) means buying, selling, or paying for goods and services over the internet. "
+            "Examples include buying equipment from an online store, booking train tickets, ordering food deliveries, or paying an invoice online.</p>"
+            "<p><b>Checking for a Secure Connection (HTTPS &amp; The SSL Padlock):</b> Before you enter any personal details, passwords, or bank card numbers on a shopping website, always look at the browser address bar:<br>"
+            "&bull; <b>HTTPS:</b> The website address must begin with <code>https://</code> (the <b>S</b> stands for <b>Secure</b>).<br>"
+            "&bull; <b>The Padlock Icon:</b> A locked padlock symbol should appear next to the web address.<br>"
+            "<i>What this means:</i> The connection is protected by <b>SSL/TLS encryption</b>. This scrambles all data sent between your computer and the store's server so hackers cannot intercept your card numbers or passwords.<br>"
+            "<i>Crucial Warning:</i> The padlock proves your connection is encrypted, but it does NOT guarantee the company is honest! Criminals can set up fake websites with padlocks. Always verify the company's real reputation, reviews, and address before purchasing.</p>"
+            "<p><b>Secure Payment Gateways &amp; 3D Secure:</b><br>"
+            "&bull; <b>Protected Payment Services:</b> Using services like <b>PayPal</b>, <b>Apple Pay</b>, or <b>Google Pay</b> is safer than typing raw credit card numbers on every website, because they never reveal your card numbers to the seller.<br>"
+            "&bull; <b>Strong Customer Authentication (3D Secure):</b> When you buy something online, your bank will often ask you to approve the purchase by entering a one-time code sent to your phone or confirming it in your banking app. This stops criminals from using your card if it is stolen.<br>"
+            "&bull; <b>Order Verification:</b> Always review your digital shopping basket before paying (checking quantities, postage fees, and VAT). Save the confirmation page and download the PDF receipt with the order reference number in case you need a refund.</p>"
         ),
         "steps": [
-            "Verify website credentials: check for <code>https://</code>, valid SSL security certificate, and company registration details.",
-            "Review transaction basket: confirm quantities, VAT charges, and delivery fee calculations before proceeding.",
-            "Complete checkout using a secure payment gateway or protected digital wallet (Apple Pay, Google Pay, PayPal).",
-            "Save and archive the generated digital PDF receipt and order confirmation reference number."
+            "Check the browser address bar for <code>https://</code> and the locked padlock symbol before entering personal data.",
+            "Verify the seller's legitimacy: look for a genuine UK physical address, contact telephone number, and clear returns policy.",
+            "Review your shopping basket carefully to verify quantities, delivery charges, and total costs before clicking checkout.",
+            "Pay using a protected payment method (such as PayPal, Apple Pay, Google Pay, or a credit card with fraud protection).",
+            "Complete the two-step bank security check (3D Secure) on your phone when prompted.",
+            "Save or print the order confirmation screen and download the PDF invoice for your records."
         ],
-        "drill": "Scenario: Your office manager asks you to purchase &pound;450 of office supplies from a new online supplier. Explain 4 distinct security checks you must perform before entering company credit card details.",
-        "trap": "Examiner Trap: Assuming a padlock icon proves a website is 100% legitimate. Padlocks prove the connection is encrypted, but you must still check the domain name carefully to spot spoofed fake websites!"
+        "drill": "Scenario: Your office manager asks you to purchase £280 of computer accessories from a new online supplier that your company has never used before. Describe 4 safety and security checks you must carry out before entering company payment details, explain what the 'https://' and padlock symbol mean, and explain why saving the order confirmation receipt is essential.",
+        "trap": "Examiner Trap: Assuming that a website is 100% genuine just because it has a padlock icon. A padlock only proves the connection is encrypted—you must still check the domain name and customer reviews to avoid fake shopping websites!",
+        "questions": [
+            ("What does the 's' stand for in 'https://' at the start of a website address?", "A) Standard", "B) Secure (data is encrypted between your browser and the website)", "C) System", "D) Software", "B"),
+            ("What is the primary function of Strong Customer Authentication (3D Secure) during online checkout?", "A) It gives you a discount on postage", "B) It asks you to verify the transaction via your banking app or an SMS code to prevent fraud", "C) It cancels your order automatically", "D) It turns off your credit card", "B"),
+            ("Why is using a protected service like PayPal or Apple Pay safer than typing your card number on an unfamiliar website?", "A) It makes delivery twice as fast", "B) It does not share your actual bank card details directly with the seller", "C) It deletes your bank account", "D) It allows you to buy items without paying", "B")
+        ]
     },
     {
         "unit": 9,
@@ -1382,104 +1216,140 @@ DIGITAL_SKILLS_UNITS = [
         "badge": "D4.2",
         "kw": "government office passport document citizen services",
         "theory": (
-            "<p><b>Accessing Public Services Online:</b> Government and public health services in the UK are centralised through Gov.uk and NHS App portals. "
-            "Accessing services (e.g. Universal Credit, DVLA vehicle tax, Council Tax billing, NHS prescriptions) requires verified digital identity accounts "
-            "utilising multi-factor authentication (MFA) and National Insurance number verification.</p>"
-            "<p><b>Online Form Completion &amp; Document Uploads:</b> Completing digital public service applications requires entering accurate biographical details, "
-            "uploading proof-of-address documents (.pdf or .jpg formats, typically under 5MB), and verifying that all input fields pass client-side data validation checks "
-            "(e.g. valid postcode format, correctly formatted telephone numbers).</p>"
+            "<p><b>Accessing Public Services Online:</b> In the UK, public and government services are designed to be accessed online to make services faster and reduce paperwork. "
+            "Examples include <b>GOV.UK</b> (for renewing a passport, applying for Universal Credit, taxing a vehicle, or checking your state pension), "
+            "the <b>NHS App</b> (for ordering repeat prescriptions, booking appointments, and viewing medical records), and local <b>Council websites</b> (for paying Council Tax and parking permits).</p>"
+            "<p><b>Spotting Official Websites vs Copycat Scams:</b><br>"
+            "&bull; <b>Official UK Government websites strictly end in <code>.gov.uk</code></b>.<br>"
+            "&bull; <b>Official NHS websites strictly end in <code>.nhs.uk</code></b>.<br>"
+            "<i>Watch out for copycat websites:</i> If you search Google for services like 'renew driving licence' or 'apply for a UK passport', the top sponsored results are often private commercial companies. "
+            "These websites look very official, but they charge you £30 to £80 in extra 'administration fees' just to forward your form to the government! "
+            "<i>Golden Rule:</i> Always check that the web address ends in <code>.gov.uk</code> where government services are free or charged only at the legal statutory fee.</p>"
+            "<p><b>Completing Online Forms &amp; Uploading Documents:</b><br>"
+            "&bull; <b>Mandatory Fields (marked with a red asterisk <code>*</code>):</b> These boxes MUST be filled in before you can submit the form.<br>"
+            "&bull; <b>Data Validation:</b> Online forms check that your entries match expected rules. For example, if you enter an invalid postcode or leave out digits from your telephone number, the box will highlight in red with an error message explaining what to correct.<br>"
+            "&bull; <b>Document Uploads:</b> You will often need to upload proof of identity (like a photo of your passport, driving licence, or utility bill). Make sure files are clear, saved in a standard format (<code>.pdf</code> or <code>.jpg</code>), and within the maximum file size limit (usually under 5 MB).</p>"
         ),
         "steps": [
-            "Log in via official portal gateway: verify the domain ends strictly in <code>.gov.uk</code> or <code>.nhs.uk</code>.",
-            "Authenticate account using SMS one-time passcode or authenticator app token.",
-            "Complete form sections sequentially, checking progress indicators and error validation highlights.",
-            "Upload compressed, clear PDF copies of required utility bill or driving licence verification documents.",
-            "Submit application and record the unique statutory reference tracking code."
+            "Verify the website address ends in <code>.gov.uk</code> or <code>.nhs.uk</code> before beginning any application.",
+            "Log in using your verified government gateway credentials or register a secure account with a strong passphrase.",
+            "Fill in each section of the form methodically, reading all guidance notes carefully.",
+            "If an error message appears in red, read the feedback and correct the formatting (e.g. check postcode spacing).",
+            "Upload clear, legible photos or PDF scans of required proof-of-identity documents.",
+            "Review your summary answers, submit the form, and write down your unique application tracking reference code."
         ],
-        "drill": "Scenario: An adult learner needs to renew their driving licence and apply for an NHS prescription online. Detail the steps required to access the genuine Gov.uk portal, verify identity, and avoid predatory copycat charging websites.",
-        "trap": "Examiner Trap: Using unofficial third-party websites that charge &pound;40–&pound;80 handling fees for free Gov.uk services. Always check that the URL domain ends in .gov.uk!"
+        "drill": "Scenario: A 55-year-old family member needs to renew their UK driving licence online and order a repeat prescription from their GP. Explain how they can be certain they are using genuine official websites rather than paid copycat services, describe the steps to complete the form and upload a photograph, and explain how Multi-Factor Authentication (MFA) protects their government account.",
+        "trap": "Examiner Trap: Using commercial copycat websites that charge unnecessary fees for free public services. Genuine UK government services are always hosted strictly on domains ending in .gov.uk!",
+        "questions": [
+            ("Which domain ending guarantees that a web service is an official UK government portal?", "A) .gov.uk", "B) .government.com", "C) .uk-services.org", "D) .gov.co.uk", "A"),
+            ("What does a red asterisk (*) next to a box on an online form mean?", "A) The box is optional", "B) The box is mandatory and must be filled in before submitting", "C) The box contains an error", "D) The box will be deleted", "B"),
+            ("Why should you avoid using third-party intermediary websites when renewing a UK passport or driving licence?", "A) They only accept cash", "B) They charge unnecessary extra fees for services that are cheaper or free on GOV.UK", "C) They do not work on computers", "D) They make your passport expire early", "B")
+        ]
     },
 
+    # -------------------------------------------------------------------------
     # Domain 5: Being Safe & Responsible Online
+    # -------------------------------------------------------------------------
     {
         "unit": 10,
-        "title": "Cybersecurity Hygiene, Phishing Detection & UK GDPR",
+        "title": "Cybersecurity, Passwords, MFA & UK GDPR Compliance",
         "domain": "Domain 5: Being Safe & Responsible Online",
         "badge": "D5.1",
         "kw": "cyber security lock digital privacy shield hacker",
         "theory": (
-            "<p><b>Cyber Threats &amp; Social Engineering:</b> The vast majority of cyber breaches stem from human deception rather than technical flaws. "
-            "<b>Phishing:</b> Fraudulent emails imitating banks, delivery couriers, or HMRC attempting to harvest login credentials. "
-            "Key red flags include urgent threatening language (<i>'Your account will be suspended within 24 hours'</i>), generic greetings (<i>'Dear Customer'</i>), "
-            "and spoofed sender email addresses (e.g. <code>support@paypal-security-alert.co.uk</code> instead of <code>@paypal.com</code>).</p>"
-            "<p><b>Password Security &amp; 2FA:</b> Create strong, memorable passphrases using three random words combined with numbers and symbols (e.g. <code>Castle$Pebble97Breeze!</code>). "
-            "Enable Two-Factor Authentication (2FA) across all professional accounts. "
-            "<b>UK GDPR &amp; Data Protection:</b> Handle personal identifiable data (PID) strictly according to the 7 UK GDPR principles: lawfulness, purpose limitation, "
-            "data minimisation, accuracy, storage limitation, integrity/confidentiality, and accountability.</p>"
+            "<p><b>Staying Safe Online:</b> Most cybercrime succeeds by tricking people into making mistakes rather than hacking code. "
+            "Staying safe requires vigilant personal habits and knowing key security rules.</p>"
+            "<p><b>Phishing (Spotting Fraudulent Messages):</b><br>"
+            "<i>Definition:</i> <b>Phishing</b> is when criminals send fake emails or texts (smishing) impersonating trusted organisations (banks, Royal Mail, Netflix, HMRC) "
+            "to steal passwords, card details, or download malware.<br>"
+            "<i>Warning Signs:</i><br>"
+            "1. <b>Artificial Urgency:</b> Demanding immediate action under threat of account suspension or fines.<br>"
+            "2. <b>Suspicious Sender:</b> Display name looks real, but actual email address is unfamiliar.<br>"
+            "3. <b>Generic Greetings:</b> 'Dear Customer' instead of your name.<br>"
+            "4. <b>Requests for PINs:</b> Banks and HMRC never ask for passwords or PINs by email or text.<br>"
+            "5. <b>Suspicious Links:</b> Always hover over links to check the real URL before clicking.</p>"
+            "<p><b>Strong Passwords &amp; Multi-Factor Authentication (MFA):</b><br>"
+            "&bull; <b>Three Random Words:</b> The NCSC recommends passphrases of <b>three random, memorable words</b> with numbers/symbols (e.g. <code>Purple$Pebble72Blanket!</code>)—virtually impossible to crack, yet easy to remember.<br>"
+            "&bull; <b>Multi-Factor Authentication (MFA):</b> Requires your password plus a temporary code sent to your phone or app. Criminals cannot log in without your physical device.</p>"
+            "<p><b>UK GDPR &amp; Personal Data Rights:</b><br>"
+            "<i>Definition:</i> The <b>UK GDPR</b> protects living individuals' <b>personal data</b> (names, addresses, health notes, financial records).<br>"
+            "<i>Workplace Rules:</i> Keep personal data confidential, store files on encrypted drives, never share passwords, lock your screen (<code>Win + L</code>) when stepping away, "
+            "and report serious data breaches to the <b>ICO (Information Commissioner's Office)</b> within <b>72 hours</b>.</p>"
         ),
         "steps": [
-            "Hover mouse over hyperlinks in emails to reveal the actual destination URL before clicking.",
-            "Verify sender header email address carefully to detect domain spoofing.",
-            "Implement multi-factor authentication (MFA) across email, banking, and cloud storage systems.",
-            "Never share passwords via unencrypted messaging apps or write them on sticky notes.",
-            "Immediately report suspected security incidents or accidental data disclosures to the Data Protection Officer (DPO)."
+            "Create strong, unique passphrases for each important account using the three random words method.",
+            "Enable Multi-Factor Authentication (MFA) on your email, banking, and workplace logins.",
+            "Hover your mouse over links in emails to inspect the real URL before clicking anything.",
+            "Lock your computer workstation (`Win + L`) every single time you step away from your desk.",
+            "Never store passwords on sticky notes attached to your monitor or in unencrypted text files.",
+            "Immediately report any suspicious email or accidental data loss to your IT support team or manager."
         ],
-        "drill": "Scenario: You receive an urgent email purporting to be from the IT Support team requesting you to verify your employee email password via an external link. Identify 3 warning signs of phishing and outline your exact response protocol.",
-        "trap": "Examiner Trap: Believing that anti-virus software alone provides complete protection. Human vigilance and skepticism are the ultimate line of defence against social engineering!"
+        "drill": "Scenario: You receive an email appearing to come from your company IT Helpdesk saying: 'URGENT: Your work email account will be deactivated tonight due to a storage error. Click here immediately to confirm your password and prevent account deletion.' Identify 3 clear warning signs that indicate this email is a phishing attack, state what you must do, and explain how Multi-Factor Authentication (MFA) protects your account.",
+        "trap": "Examiner Trap: Believing that anti-virus software protects you against all cyber threats. Anti-virus blocks computer viruses, but it cannot stop you from being tricked into typing your password into a fake phishing website! Your own careful checking is your best defence.",
+        "questions": [
+            ("Which of the following is recommended by the UK National Cyber Security Centre for creating strong passwords?", "A) Using your pet's name followed by '123'", "B) Combining three random, memorable words with numbers and symbols (e.g. Purple$Pebble72Blanket!)", "C) Using the word 'Password2026'", "D) Using your date of birth", "B"),
+            ("What is Multi-Factor Authentication (MFA / 2FA)?", "A) Changing your password every 10 minutes", "B) A security system requiring two verification steps to log in (e.g. password + code sent to your phone)", "C) Having two different computer screens", "D) Using two different keyboards", "B"),
+            ("Under UK GDPR, within how many hours must an organisation report a serious personal data breach to the ICO?", "A) 12 hours", "B) 72 hours", "C) 14 days", "D) 30 days", "B")
+        ]
     }
 ]
 
 DIGITAL_SKILLS_MOCKS = [
-    # Mock 1: Administrative Officer Cloud & File Management
+    # -------------------------------------------------------------------------
+    # Practical Mock Examinations (4 Complete Scenarios)
+    # -------------------------------------------------------------------------
     {
-        "title": "Practical Mock 1: Administrative Operations & Document Processing",
-        "scenario": "You are working as an Administrative Officer for a regional vocational training academy. "
-                    "The centre manager has tasked you with auditing and restructuring the new apprentice onboarding digital toolkit.",
+        "title": "Practical Mock 1: Medical Practice Portal & Patient Records Administration",
+        "scenario": "You are working as an Administrative Assistant at St Jude Medical Practice. "
+                    "The Practice Manager has asked you to organise patient records, prepare a patient communications document, "
+                    "research official health guidelines, and handle confidential digital messages while strictly following UK GDPR data protection rules.",
         "tasks": [
-            "Task 1: Establish a standardized hierarchical folder structure for 30 new apprentices across 3 vocational sectors (Healthcare, Engineering, Digital).",
-            "Task 2: Format an Apprentice Induction Handbook in Word using styles (Title, Heading 1, Heading 2), inserting an automated Table of Contents and an accessible table of key dates.",
-            "Task 3: Conduct research to identify statutory minimum wage rates for apprentices, citing two verified .gov.uk sources using proper search operators.",
-            "Task 4: Draft a professional welcome email to apprentices using appropriate To, Cc, and Bcc fields to distribute the handbook while protecting private personal email addresses."
+            "Task 1 (File Hierarchy & Storage Architecture): Create a logical 3-tier folder structure for clinic documents across 3 medical departments (General Practice, Phlebotomy, Physiotherapy). Write standard file names using dates and version numbers, and explain why patient files must be stored on secure cloud drives rather than on the local Desktop.",
+            "Task 2 (Word Processing & Document Layout): Format a 2-page Patient Services Welcome Guide in Microsoft Word. Apply Heading 1 and Heading 2 styles, insert an automatic Table of Contents, format an accessible appointment clinic schedule table with a bold header row, and add descriptive Alt-Text to the practice logo.",
+            "Task 3 (Information Verification & Research): Research official NHS guidance on adult seasonal flu vaccination eligibility. Formulate two search queries using operators (including site:.nhs.uk), identify two trusted health domains, and apply the CRAAP test to evaluate source reliability.",
+            "Task 4 (Professional Email & Data Privacy): Draft a formal email to 40 eligible patients inviting them to book a vaccination appointment. Correctly allocate addresses across To, CC, and BCC fields to prevent unlawful data disclosure under UK GDPR, and attach an encrypted PDF clinic map."
         ]
     },
-    # Mock 2: Retail Inventory Spreadsheet & Commercial Invoicing
     {
-        "title": "Practical Mock 2: Retail Inventory Spreadsheet & Commercial Accounting",
-        "scenario": "You are the Operations Assistant for a growing eco-friendly home goods retailer. "
-                    "The business needs a dynamic, automated inventory tracking and customer billing spreadsheet.",
+        "title": "Practical Mock 2: Community Food Bank Logistics & Stock Tracking",
+        "scenario": "You are the Operations Assistant for a regional community food bank charity. "
+                    "The operations manager needs an automated inventory spreadsheet to track food donations, "
+                    "monitor stock reorder thresholds, analyse donation data with a chart, and send updates to volunteers.",
         "tasks": [
-            "Task 1: Construct an inventory management spreadsheet with 15 stock lines, applying formulas for Line Total (=Unit Cost * Quantity), VAT at 20%, and Gross Retail Value.",
-            "Task 2: Use summary formulas =SUM, =AVERAGE, =MIN, and =MAX to extract key operational metrics across the stock inventory.",
-            "Task 3: Apply an automated =IF function to Column G to flag 'RESTOCK REQUIRED' for any item falling below 12 units.",
-            "Task 4: Generate a high-contrast Clustered Bar Chart illustrating stock value by product category, complete with labeled axes and data labels."
+            "Task 1 (Spreadsheet Modeling & Calculations): Construct an inventory tracking spreadsheet for 15 essential food categories. Create formulas for Line Total (=Unit Weight * Quantity in Stock), Total Weight using =SUM(), and Average Items per Category using =AVERAGE().",
+            "Task 2 (Conditional Formulas & Threshold Alerts): Apply an automated =IF() function in Column G to display 'RESTOCK URGENT' if an item has fewer than 20 units remaining, or 'ADEQUATE' if stock is 20 or more. Format numbers with clear decimal places and apply Currency formatting where appropriate.",
+            "Task 3 (Data Visualisation & Charting): Generate a high-contrast Clustered Column Chart comparing stock quantities across food categories. Add a descriptive chart title, clearly label both the X-axis and Y-axis, and display data values above each bar.",
+            "Task 4 (Volunteer Communication & Privacy): Compose a professional email update to the charity's 25 weekend volunteers. Explain why volunteer email addresses must be placed in BCC rather than CC, attach the weekly distribution schedule, and explain how to recover a previous version of the spreadsheet if data is accidentally deleted."
         ]
     },
-    # Mock 3: Customer Care Digital Helpdesk & Data Privacy
     {
-        "title": "Practical Mock 3: Digital Customer Care & Secure Communications",
-        "scenario": "You are a Customer Experience Coordinator for a community health trust. "
-                    "You must handle digital communications, appointment scheduling, and patient data requests with strict adherence to privacy.",
+        "title": "Practical Mock 3: Apprentice Training Hub & E-Learning Administration",
+        "scenario": "You are an Apprentice Support Coordinator for a vocational skills academy. "
+                    "You must organise digital learning resources for 30 new apprentices, manage virtual induction sessions, "
+                    "and review cybersecurity incident reports.",
         "tasks": [
-            "Task 1: Schedule a series of virtual consultation meetings in MS Teams, configuring presenter permissions, lobby security, and calendar invites.",
-            "Task 2: Respond to a patient inquiry via email, maintaining empathetic professional register and attaching a guidance document encrypted with password protection.",
-            "Task 3: Identify a suspicious incoming email claiming to represent NHS procurement, documenting 4 clear phishing indicators in an incident log.",
-            "Task 4: Outline the procedure for handling a Subject Access Request (SAR) under UK GDPR, specifying the statutory response deadline (1 calendar month)."
+            "Task 1 (Virtual Meeting Setup & Etiquette): Schedule a virtual induction session on Microsoft Teams for 30 apprentices. Configure meeting options (Presenter vs Attendee roles, lobby bypass), compose the meeting invitation with a clear agenda, and write 3 video call etiquette rules for attendees.",
+            "Task 2 (Digital Presentation Design): Design a 4-slide Apprentice Digital Safety presentation following the 6x6 rule. Outline slide titles, bullet points for Slide 2 (Password Security & 2FA), and explain two design choices made to ensure visual accessibility.",
+            "Task 3 (Cybersecurity Incident Triage): Review an incident where an apprentice clicked a suspicious link in an email claiming to offer an 'Apprentice Travel Grant'. Identify 4 red flags of phishing, outline the immediate steps to isolate the computer, and complete an incident triage log.",
+            "Task 4 (Data Protection & Subject Access): Outline the procedure for handling a Subject Access Request (SAR) under UK GDPR from an apprentice requesting their training records, specifying the statutory response deadline (1 calendar month) and verification steps."
         ]
     },
-    # Mock 4: Corporate Data Security Audit & Cloud Governance
     {
-        "title": "Practical Mock 4: Corporate Data Security Audit & Technology Governance",
-        "scenario": "You are supporting the Information Governance lead in preparing an organization for Cyber Essentials certification and statutory data compliance.",
+        "title": "Practical Mock 4: Digital Library Archive & Asset Loan Management",
+        "scenario": "You are supporting the Digital Systems Officer at a municipal library and digital media archive. "
+                    "You need to audit hardware loan equipment, evaluate secure online payment options for library fines, "
+                    "and verify digital copyright compliance for archived materials.",
         "tasks": [
-            "Task 1: Conduct a password hygiene and 2FA compliance audit across 40 user accounts, identifying 5 critical security vulnerabilities.",
-            "Task 2: Formulate an acceptable cloud storage policy restricting the storage of sensitive personal data on unencrypted personal mobile devices.",
-            "Task 3: Evaluate 3 online payment gateway solutions for the corporate website, verifying SSL/TLS certificates and PCI-DSS compliance.",
-            "Task 4: Create a 6-slide staff training presentation on social engineering awareness, applying WCAG 2.1 accessibility standards and Alt-Text graphics."
+            "Task 1 (Equipment Loan Spreadsheet & Validation): Build a spreadsheet tracking 20 loaned laptops and Wi-Fi dongles. Use cell locking ($) to calculate daily late penalty charges, format cells as Currency (£), and configure Data Validation to restrict loan status entries to an approved dropdown list (Available, On Loan, Under Repair).",
+            "Task 2 (E-Commerce & Online Payments Audit): Evaluate 3 digital payment solutions for accepting online library fine payments. Identify the required security standards, including SSL/TLS padlock encryption, 3D Secure customer verification, and compliance with data security standards.",
+            "Task 3 (Copyright & Creative Commons Licensing): Explain the legal rules under the Copyright, Designs and Patents Act 1988 for publishing historic library photographs on the public website, distinguishing between copyright-protected material, Public Domain, and Creative Commons (CC-BY) licenses.",
+            "Task 4 (Workstation Ergonomics & DSE Audit): Complete a Display Screen Equipment (DSE) workstation health audit for library computer terminals, explaining screen height, chair lumbar support, wrist positioning, and the 20-20-20 visual rest rule."
         ]
     }
 ]
 
-print("DIGITAL_SKILLS_UNITS (10) and DIGITAL_SKILLS_MOCKS (4) defined successfully!")
+print("DIGITAL_SKILLS_UNITS (10) and DIGITAL_SKILLS_MOCKS (4) refined plain English defined successfully!")
+
 
 # =============================================================================
 # BKSB & OneAdvanced Diagnostic Remediation Modes (24 Modes)
@@ -2217,7 +2087,7 @@ ENGLISH_L2_MOCKS.append({
         "headline": "Transforming Patient Triage: The Clinical Revolution of Digital Consultations",
         "paragraphs": [
             "Across the United Kingdom, secondary healthcare networks are undergoing an unprecedented structural transition toward virtual outpatient triage. Telemedicine platforms, which initially expanded out of pandemic necessity, now manage over 3.2 million non-emergency consultations annually across England alone. Clinical evidence indicates that 44% of routine post-operative follow-ups can be conducted safely and effectively via high-definition encrypted video link, eliminating stressful travel journeys for vulnerable patients.",
-            "Dr Eleanor Vance, Clinical Lead for Outpatient Strategy at St Jude NHS Trust, argues that digital consultations democratize healthcare access: 'For patients managing mobility impairments or living in remote rural communities, attending a twenty-minute consultation historically required three hours of public transit and substantial expense. Video appointments restore personal dignity and reduce lost working hours.' Furthermore, clinic non-attendance rates have dropped from 11.8% to 4.2% across pilot health authorities.",
+            "Dr Eleanor Vance, Clinical Lead for Outpatient Strategy at St Jude Healthcare Trust, argues that digital consultations democratize healthcare access: 'For patients managing mobility impairments or living in remote rural communities, attending a twenty-minute consultation historically required three hours of public transit and substantial expense. Video appointments restore personal dignity and reduce lost working hours.' Furthermore, clinic non-attendance rates have dropped from 11.8% to 4.2% across pilot health authorities.",
             "Nevertheless, senior clinicians emphasize that virtual care cannot serve as an indiscriminate universal replacement for bedside medicine. Physical palpation, auscultation, and urgent diagnostic triage remain irreducibly tactile. Digital healthcare is not an algorithmic substitute for human nursing; rather, it is a complementary diagnostic instrument that frees specialist clinic capacity for acute clinical presentations."
         ]
     },
@@ -2245,7 +2115,7 @@ ENGLISH_L2_MOCKS.append({
     ],
     "writing_t1": {
         "type": "Formal Briefing Memo to Hospital Management Board",
-        "scenario": "Your NHS Foundation Trust is reviewing its outpatient clinic strategy to decide the future balance between virtual video appointments and face-to-face clinical sessions.",
+        "scenario": "Your Community Healthcare Trust is reviewing its outpatient clinic strategy to decide the future balance between virtual video appointments and face-to-face clinical sessions.",
         "task": "Write a formal briefing memo to the Hospital Management Board. In your memo, you must:<br>&bull; Evaluate the clinical and logistical benefits of expanding video appointments for routine follow-ups.<br>&bull; Detail the risks of excluding elderly, disabled, or low-income patients without digital access.<br>&bull; Recommend a balanced hybrid model, including digital support coordinators and preserved face-to-face appointments.<br>Use formal executive layout (To, From, Date, Subject, Numbered Sections), professional register, and balanced argumentation.",
         "marks": 19
     },

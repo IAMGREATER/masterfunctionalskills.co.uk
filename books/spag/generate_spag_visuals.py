@@ -76,7 +76,7 @@ def get_unit_diagram_html(unit_num, level):
       <strong style="color:{theme_color};">P</strong>: People &amp; Places
     </div>
     <div style="background:#ffffff; border:1px solid #cbd5e1; padding:3px; border-radius:3px;">
-      <strong style="color:{theme_color};">A</strong>: Acronyms (NHS)
+      <strong style="color:{theme_color};">A</strong>: Acronyms (HSE)
     </div>
     <div style="background:#ffffff; border:1px solid #cbd5e1; padding:3px; border-radius:3px;">
       <strong style="color:{theme_color};">T</strong>: Titles &amp; Headings

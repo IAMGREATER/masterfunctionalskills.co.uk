@@ -519,7 +519,7 @@ In UK professional English, when a collective body acts as a single unified enti
         ],
         "proofreading_title": "Forensic Workplace Proofreading: Clinical Waste Disposal SOP",
         "proofreading_scenario": "A health facility manager drafted this waste management protocol for nursing staff. Locate and correct 5 structural parallelism, colon, and punctuation errors.",
-        "proofreading_text": """<h4 style="margin:0 0 2px 0; color:#1e3a8a;">NHS Trust Facilities Management &bull; Standard Operating Procedure</h4>
+        "proofreading_text": """<h4 style="margin:0 0 2px 0; color:#1e3a8a;">Regional Healthcare Facilities Management &bull; Standard Operating Procedure</h4>
 <p style="margin:0 0 4px 0; font-size:7.5pt; color:#64748b;"><strong>Document:</strong> SOP-WST-09 &bull; <strong>Strand:</strong> Hazardous Sharps &amp; Infectious Waste</p>
 <p style="margin:0 0 5px 0;">All nursing personnel must follow statutory clinical waste disposal protocols:</p>
 <p style="margin:0 0 3px 0;">&bull; Discard used needles immediately into puncture-proof yellow sharps bins.</p>
@@ -603,7 +603,7 @@ In UK professional English, when a collective body acts as a single unified enti
         "title": "Easily Confused Words & Homophones (Affect/Effect, Practice/Practise)",
         "format": "Clinical Governance & Medical Quality Audit",
         "strand": "Spelling, Lexicon & Proofreading",
-        "anchor_title": "NHS Foundation Trust Clinical Governance Audit",
+        "anchor_title": "Regional Healthcare Clinical Governance Audit",
         "anchor_text": "In clinical governance and healthcare management, confusing homophones and near-homophones undermines clinical safety. Confusing 'affect' and 'effect', or 'practice' and 'practise', signals poor written accuracy and can obscure clinical protocols.",
         "rule_title": "Mastering High-Stakes Homophones & Spellings",
         "rule_text": """In UK English, word class determines the spelling of several vital pairs:
@@ -650,7 +650,7 @@ In UK professional English, when a collective body acts as a single unified enti
         ],
         "proofreading_title": "Forensic Workplace Proofreading: Clinical Governance Review",
         "proofreading_scenario": "A hospital governance officer prepared this quality review of ward procedures. Identify and correct 5 homophone and easily confused word errors.",
-        "proofreading_text": """<h4 style="margin:0 0 2px 0; color:#1e3a8a;">NHS Clinical Governance Directorate &bull; Patient Care Audit</h4>
+        "proofreading_text": """<h4 style="margin:0 0 2px 0; color:#1e3a8a;">Clinical Governance Directorate &bull; Patient Care Audit</h4>
 <p style="margin:0 0 4px 0; font-size:7.5pt; color:#64748b;"><strong>Audit Focus:</strong> Medication Safety &bull; <strong>Lead Auditor:</strong> Dr Fiona Campbell</p>
 <p style="margin:0 0 5px 0;">New intravenous infusion guidelines were introduced to minimise the adverse affects of rapid drug delivery. The audit team observed clinical staff in daily practise to evaluate compliance with the updated protocols.</p>
 <p style="margin:0 0 5px 0;">Pharmacy staff were available to advice ward nurses on dosage calculations. It was noted that specialized syringe drivers compliment the existing bedside monitoring equipment.</p>
@@ -842,9 +842,9 @@ In UK professional English, when a collective body acts as a single unified enti
             ("Correct the preposition error", "The new electronic roster is superior than the paper diary.", "The new electronic roster is superior to the paper diary.")
         ],
         "proofreading_title": "Forensic Workplace Proofreading: Healthcare Partnership Agreement",
-        "proofreading_scenario": "A commissioning manager drafted this multi-agency service agreement between an NHS Trust and a local authority. Identify and correct 5 prepositional collocation errors.",
+        "proofreading_scenario": "A commissioning manager drafted this multi-agency service agreement between an Regional Healthcare and a local authority. Identify and correct 5 prepositional collocation errors.",
         "proofreading_text": """<h4 style="margin:0 0 2px 0; color:#1e3a8a;">Integrated Care Partnership &bull; Multi-Agency Service Compact</h4>
-<p style="margin:0 0 4px 0; font-size:7.5pt; color:#64748b;"><strong>Partners:</strong> NHS Integrated Care Board &amp; Borough Social Services</p>
+<p style="margin:0 0 4px 0; font-size:7.5pt; color:#64748b;"><strong>Partners:</strong> Regional Care Board &amp; Borough Social Services</p>
 <p style="margin:0 0 5px 0;">All participating health agencies agree to comply to the joint safeguarding information-sharing protocol. Lead clinicians must adhere with statutory child protection guidance at all times.</p>
 <p style="margin:0 0 5px 0;">Social workers will collaborate to mental health professionals to ensure seamless community care packages. Service users who are capable to independent living will be transitioned into supported accommodation.</p>
 <p style="margin:0;">Prior of discharge, a comprehensive multi-disciplinary risk assessment must be signed by all parties.</p>""",

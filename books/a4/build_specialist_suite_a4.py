@@ -31,12 +31,230 @@ DOCUMENTS = Path("/home/subi/Documents")
 COV = K.COVER_DIR
 
 
+BOOK_PHOTOS_BASE = Path("/home/subi/Nextcloud/Projects/masterfunctionalskills.co.uk/assets/img/book_photos")
+
+def _build_wide_photo_pool():
+    pool = []
+    for sub in ["maths_thematic", "l2_writing_thematic", "l1_writing_thematic", "reading_thematic", "spag_thematic", "e3_thematic", "digital_thematic"]:
+        d = BOOK_PHOTOS_BASE / sub
+        if d.exists():
+            for f in sorted(d.glob("*.jpg")):
+                pool.append(f)
+    return pool
+
+WIDE_PHOTO_POOL = _build_wide_photo_pool()
+_WIDE_POOL_IDX = {"maths": 0, "english": 18, "digital": 42, "bksb": 66}
+
 def get_photo(keywords, theme=None, exclude=None):
     ex = exclude if exclude is not None else set()
+    t_key = theme if theme in _WIDE_POOL_IDX else "maths"
+    if WIDE_PHOTO_POOL:
+        n = len(WIDE_PHOTO_POOL)
+        start = _WIDE_POOL_IDX.get(t_key, 0)
+        for offset in range(n):
+            cand = WIDE_PHOTO_POOL[(start + offset) % n]
+            if cand not in ex:
+                _WIDE_POOL_IDX[t_key] = (start + offset + 1) % n
+                return cand
+        cand = WIDE_PHOTO_POOL[start % n]
+        _WIDE_POOL_IDX[t_key] = (start + 1) % n
+        return cand
     p = K.photo(keywords, theme, ex)
     if not p:
         p = K.photo(keywords, None, set()) or K.photo("office workspace computer", None, set())
     return p
+
+
+def specialist_hero_image(photo_path, caption="", height_mm=48, obj_pos="center 25%"):
+    if not photo_path:
+        return ""
+    uri = Path(photo_path).resolve().as_uri()
+    cap_html = ""
+    if caption:
+        cap_html = (
+            f"<div style='padding:0.85mm 1.5mm; font-size:7.6pt; font-weight:700; line-height:1.15; color:var(--primary); "
+            f"background:#eff6ff; border-top:1px solid #bfdbfe; text-align:center; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;'>"
+            f"{caption}</div>"
+        )
+    return (
+        f"<div class='hero' style='margin:1.2mm 0 1.8mm 0; border-radius:6px; overflow:hidden; border:1.5px solid var(--primary); background:#ffffff; box-shadow:0 1.5px 4px rgba(0,0,0,0.08);'>"
+        f"<div style='width:100%; aspect-ratio:16/9; max-height:{height_mm}mm; overflow:hidden; background:#0f172a;'>"
+        f"<img src='{uri}' alt='' style='width:100%; height:100%; object-fit:cover; object-position:{obj_pos}; display:block;'>"
+        f"</div>"
+        f"{cap_html}"
+        f"</div>"
+    )
+
+K.hero_image = specialist_hero_image
+
+
+def specialist_toc_page(title, subtitle, level_badge, col1_groups, col2_groups, footer):
+    def render_groups(groups):
+        out = ""
+        for g_title, rows in groups:
+            out += (
+                f"<div style='margin-bottom:1.6mm; border:0.35mm solid var(--border); border-radius:1.8mm; overflow:hidden; background:#ffffff; box-shadow:0 1px 3px rgba(0,0,0,0.04);'>"
+                f"<div style='background:linear-gradient(135deg, var(--primary-dark), var(--primary)); color:#fff; font-family:Outfit,sans-serif; font-size:9.4pt; font-weight:800; padding:1.1mm 2.4mm; letter-spacing:0.03em; text-transform:uppercase;'>{g_title}</div>"
+                f"<table style='width:100%; border-collapse:collapse; font-size:8.6pt; line-height:1.22;'>"
+            )
+            for idx_i, (code, name, pg) in enumerate(rows):
+                bg = "#f8fafc" if idx_i % 2 == 1 else "#ffffff"
+                out += (
+                    f"<tr style='background:{bg}; border-bottom:0.2mm solid #e2e8f0;'>"
+                    f"<td style='width:15mm; padding:0.85mm 1.5mm; font-family:Outfit,sans-serif; font-weight:800; color:var(--primary-dark); white-space:nowrap;'>"
+                    f"<span class='chip' style='padding:0.25mm 1.5mm; font-size:8.2pt; font-weight:800; display:inline-block; text-align:center; min-width:11.5mm; border-radius:1.2mm;'>{code}</span></td>"
+                    f"<td style='padding:0.85mm 1.5mm; color:var(--ink); font-weight:600;'>{name}</td>"
+                    f"<td style='width:11.5mm; padding:0.85mm 1.6mm; text-align:right; font-family:Outfit,sans-serif; font-weight:800; color:var(--primary); white-space:nowrap; font-size:9pt;'>p.{pg}</td>"
+                    f"</tr>"
+                )
+            out += "</table></div>"
+        return out
+
+    body = (
+        f"<div class='ptitle'>"
+        f"<div class='ptitle-text'>"
+        f"<div class='kicker'>Master Functional Skills &bull; Complete Table of Contents</div>"
+        f"<h1>{title}</h1>"
+        f"<div class='lead' style='font-size:9.0pt;'>{subtitle}</div>"
+        f"</div>"
+        f"<div class='pbadge'>{level_badge}</div>"
+        f"</div>"
+        f"<div style='display:grid; grid-template-columns:1fr 1fr; gap:3.2mm; flex:1 1 auto; align-content:start;'>"
+        f"<div>{render_groups(col1_groups)}</div>"
+        f"<div>{render_groups(col2_groups)}</div>"
+        f"</div>"
+        f"<div style='margin-top:auto; padding:1.5mm 3mm; background:var(--tint); border:0.3mm solid var(--border); border-radius:1.8mm; display:flex; justify-content:space-between; align-items:center; font-size:7.6pt; color:var(--muted);'>"
+        f"<span><b>Master Functional Skills</b> &bull; Complete Self-Contained Edition (Questions, Working Grids &amp; Full Solutions Included)</span>"
+        f"<span><b>Lead Tutor:</b> Abdul &bull; <b>Edition:</b> 2026/2027 Reformed Standards</span>"
+        f"</div>"
+    )
+    return K.page(body, header=(title, "Table of Contents"), footer=footer, page_no=2)
+
+
+def bksb_toc_p1(title, subtitle, level_badge, groups, footer):
+    def render_group(g_title, rows):
+        out = (
+            f"<div style='margin-bottom:1.8mm; border:0.35mm solid var(--border); border-radius:1.8mm; overflow:hidden; background:#ffffff; box-shadow:0 1px 3px rgba(0,0,0,0.04);'>"
+            f"<div style='background:linear-gradient(135deg, var(--primary-dark), var(--primary)); color:#fff; font-family:Outfit,sans-serif; font-size:10pt; font-weight:800; padding:1.2mm 2.5mm; letter-spacing:0.03em; text-transform:uppercase;'>{g_title}</div>"
+            f"<table style='width:100%; border-collapse:collapse; font-size:9.2pt; line-height:1.20;'>"
+        )
+        for idx_i, (code, name, pg) in enumerate(rows):
+            bg = "#f8fafc" if idx_i % 2 == 1 else "#ffffff"
+            out += (
+                f"<tr style='background:{bg}; border-bottom:0.2mm solid #e2e8f0;'>"
+                f"<td style='width:20mm; padding:0.95mm 1.8mm; font-family:Outfit,sans-serif; font-weight:800; color:var(--primary-dark); white-space:nowrap;'>"
+                f"<span class='chip' style='padding:0.3mm 1.8mm; font-size:8.8pt; font-weight:800; display:inline-block; text-align:center; min-width:15mm; border-radius:1.2mm;'>{code}</span></td>"
+                f"<td style='padding:0.95mm 1.8mm; color:var(--ink); font-weight:600;'>{name}</td>"
+                f"<td style='width:15mm; padding:0.95mm 2.0mm; text-align:right; font-family:Outfit,sans-serif; font-weight:800; color:var(--primary); white-space:nowrap; font-size:9.5pt;'>p.{pg}</td>"
+                f"</tr>"
+            )
+        out += "</table></div>"
+        return out
+
+    body = (
+        f"<div class='ptitle'>"
+        f"<div class='ptitle-text'>"
+        f"<div class='kicker'>Master Functional Skills &bull; Complete Table of Contents &bull; Part 1</div>"
+        f"<h1>{title}</h1>"
+        f"<div class='lead' style='font-size:9.2pt; color:var(--muted);'>{subtitle}</div>"
+        f"</div>"
+        f"<div class='pbadge'>{level_badge}</div>"
+        f"</div>"
+        f"<div style='margin-top:0.4mm; display:flex; flex-direction:column; gap:1.0mm;'>"
+        + "".join(render_group(g_title, rows) for g_title, rows in groups)
+        + f"</div>"
+        f"<div style='margin-top:auto; padding:1.6mm 3mm; background:var(--tint); border:0.3mm solid var(--border); border-radius:1.8mm; display:flex; justify-content:space-between; align-items:center; font-size:7.6pt; color:var(--muted);'>"
+        f"<span><b>Master Functional Skills &bull; BKSB &amp; OneAdvanced Diagnostic Remediation</b> &bull; Continued on Page 3</span>"
+        f"<span><b>Lead Tutor:</b> Abdul &bull; <b>Edition:</b> 2026/2027 Reformed Standards</span>"
+        f"</div>"
+    )
+    return K.page(body, header=("BKSB Diagnostic Remediation", "Table of Contents &bull; Part 1"), footer=footer, page_no=2)
+
+
+def bksb_toc_p2(title, subtitle, level_badge, groups, footer):
+    def render_group(g_title, rows):
+        out = (
+            f"<div style='margin-bottom:1.5mm; border:0.35mm solid var(--border); border-radius:1.8mm; overflow:hidden; background:#ffffff; box-shadow:0 1px 3px rgba(0,0,0,0.04);'>"
+            f"<div style='background:linear-gradient(135deg, var(--primary-dark), var(--primary)); color:#fff; font-family:Outfit,sans-serif; font-size:9.6pt; font-weight:800; padding:1.1mm 2.4mm; letter-spacing:0.03em; text-transform:uppercase;'>{g_title}</div>"
+            f"<table style='width:100%; border-collapse:collapse; font-size:8.8pt; line-height:1.18;'>"
+        )
+        for idx_i, (code, name, pg) in enumerate(rows):
+            bg = "#f8fafc" if idx_i % 2 == 1 else "#ffffff"
+            out += (
+                f"<tr style='background:{bg}; border-bottom:0.2mm solid #e2e8f0;'>"
+                f"<td style='width:20mm; padding:0.8mm 1.6mm; font-family:Outfit,sans-serif; font-weight:800; color:var(--primary-dark); white-space:nowrap;'>"
+                f"<span class='chip' style='padding:0.25mm 1.5mm; font-size:8.4pt; font-weight:800; display:inline-block; text-align:center; min-width:15mm; border-radius:1.2mm;'>{code}</span></td>"
+                f"<td style='padding:0.8mm 1.6mm; color:var(--ink); font-weight:600;'>{name}</td>"
+                f"<td style='width:15mm; padding:0.8mm 1.8mm; text-align:right; font-family:Outfit,sans-serif; font-weight:800; color:var(--primary); white-space:nowrap; font-size:9.2pt;'>p.{pg}</td>"
+                f"</tr>"
+            )
+        out += "</table></div>"
+        return out
+
+    body = (
+        f"<div class='ptitle'>"
+        f"<div class='ptitle-text'>"
+        f"<div class='kicker'>Master Functional Skills &bull; Complete Table of Contents &bull; Part 2</div>"
+        f"<h1>{title}</h1>"
+        f"<div class='lead' style='font-size:9.2pt; color:var(--muted);'>{subtitle}</div>"
+        f"</div>"
+        f"<div class='pbadge'>{level_badge}</div>"
+        f"</div>"
+        f"<div style='margin-top:0.4mm; display:flex; flex-direction:column; gap:0.8mm;'>"
+        + "".join(render_group(g_title, rows) for g_title, rows in groups)
+        + f"</div>"
+        f"<div style='margin-top:auto; padding:1.5mm 3mm; background:var(--tint); border:0.3mm solid var(--border); border-radius:1.8mm; display:flex; justify-content:space-between; align-items:center; font-size:7.6pt; color:var(--muted);'>"
+        f"<span><b>Master Functional Skills &bull; BKSB Remediation Workbook</b> &bull; Mocks, Sprints &amp; Worked Solutions</span>"
+        f"<span><b>Diagnostic Recovery Course Begins on Page 4</b> &bull; Lead Tutor: Abdul</span>"
+        f"</div>"
+    )
+    return K.page(body, header=("BKSB Diagnostic Remediation", "Table of Contents &bull; Part 2"), footer=footer, page_no=3)
+
+
+def split_tall_ref_block(title_str, html_str, max_chars=950):
+    if len(html_str) <= max_chars or "<br>" not in html_str:
+        return [K.ref_block(title_str, html_str)]
+    parts = html_str.split("<br>")
+    chunks = []
+    curr = []
+    curr_len = 0
+    for p in parts:
+        p_clean = p.strip()
+        if not p_clean:
+            continue
+        if curr and (curr_len + len(p_clean) > max_chars):
+            chunks.append("<br>".join(curr))
+            curr = [p_clean]
+            curr_len = len(p_clean)
+        else:
+            curr.append(p_clean)
+            curr_len += len(p_clean)
+    if curr:
+        chunks.append("<br>".join(curr))
+    if len(chunks) == 1:
+        return [K.ref_block(title_str, chunks[0])]
+    return [
+        K.ref_block(f"{title_str} (Part {idx})", chunk)
+        for idx, chunk in enumerate(chunks, start=1)
+    ]
+
+
+def append_split_glossary_and_index(ref_blocks, gloss_list, gloss_title, index_list, index_title):
+    sub_slices = [s for s in (gloss_list[:6], gloss_list[6:10], gloss_list[10:]) if s]
+    num_chunks = len(sub_slices)
+    for idx, sub in enumerate(sub_slices):
+        g_html = "".join(f"<dl><dt>{t}</dt><dd>{d}</dd></dl>" for t, d in sub)
+        lbl = f"{gloss_title} (Part {idx+1})" if num_chunks > 1 else gloss_title
+        ref_blocks.append(K.ref_block(lbl, g_html))
+    mid = max(1, len(index_list) // 2)
+    for p_num, sub_ix in enumerate([index_list[:mid], index_list[mid:]], start=1):
+        if not sub_ix:
+            continue
+        ix_html = ""
+        for letter, entries in sub_ix:
+            items = "".join(f"<div class='ix'><span>{t}</span><span>{p}</span></div>" for t, p in entries)
+            ix_html += f"<div class='ix-letter'>{letter}</div>{items}"
+        ref_blocks.append(K.ref_block(f"{index_title} (Part {p_num})", ix_html))
 
 
 def get_cartoon(keywords, exclude=None):
@@ -139,7 +357,7 @@ def build_mock_maths_l2():
             "</table>",
             title="Measures, Rates &amp; Statistics Matrix"
         )
-        + K.cartoon_tip(get_cartoon("abdul tutor explaining"), "Subi",
+        + K.cartoon_tip(get_cartoon("abdul tutor explaining"), "Abdul",
                         "Time Trap Alert! 2 hours 15 minutes is 2.25 hours, NOT 2.15 hours! Always convert minutes to decimal hours by dividing by 60 before using speed formulas.")
         + K.fill_notes("Key Conversion Facts (e.g. 1 m&sup3; = 1,000 litres, 1 gallon = 4.55 litres)", 28)
     )
@@ -238,7 +456,7 @@ def build_mock_maths_l2():
         # Page 4 of Paper: Section B (Calculator) Q6 & Q7
         p4_b = (
             K.page_title(f"Mock Paper {p_idx} &bull; Section B (Calculator Permitted)", kicker=f"Paper {p_idx}: {theme}", badge=f"P{p_idx}.B")
-            + K.hero_image(P(kw1), f"Workplace Scenario: {theme}", 48)
+            + K.hero_image(P(kw1), f"Workplace Scenario: {theme}", 40)
             + K.box_html(
                 "<p style='margin:0;'><b>Duration: 1 hour 20 minutes | Marks: 48 Marks | Calculators Permitted.</b><br>"
                 "Show formula substitutions clearly. Process marks are awarded for valid mathematical strategies.</p>",
@@ -343,6 +561,7 @@ def build_mock_maths_l2():
          "Candidate Working Grid &bull; Dual Probability Tree")
     ]
 
+    ws_start_page = p_curr
     for ws_title, badge, lead, photo_kw, theory_html, drill_title, grid_label in workshops:
         ws_body = (
             K.page_title(ws_title, kicker="Advanced Process Mark Masterclass", badge=badge.upper())
@@ -355,21 +574,18 @@ def build_mock_maths_l2():
         p_curr += 1
 
     # Back matter reference section (via K.ref_pages)
+    ref_start_page = p_curr
     ref_blocks = []
     for m_idx in range(1, 7):
         for title_str, sol_html in ssr.MATHS_L2_MOCK_SOLUTIONS[m_idx]:
-            ref_blocks.append(K.ref_block(title_str, sol_html))
+            ref_blocks.extend(split_tall_ref_block(title_str, sol_html, max_chars=950))
 
-    ref_blocks.append(K.ref_block("Official Pearson Level 2 Formulae Directory", ssr.MATHS_L2_FORMULAS))
-
-    gloss_html = "".join(f"<dl><dt>{t}</dt><dd>{d}</dd></dl>" for t, d in ssr.MATHS_L2_GLOSSARY)
-    ref_blocks.append(K.ref_block("Mathematical Glossary &amp; Examination Vocabulary", gloss_html))
-
-    ix_html = ""
-    for letter, entries in ssr.MATHS_L2_INDEX:
-        items = "".join(f"<div class='ix'><span>{t}</span><span>{p}</span></div>" for t, p in entries)
-        ix_html += f"<div class='ix-letter'>{letter}</div>{items}"
-    ref_blocks.append(K.ref_block("Curriculum &amp; Problem Solving Index", ix_html))
+    ref_blocks.extend(split_tall_ref_block("Official Pearson Level 2 Formulae Directory", ssr.MATHS_L2_FORMULAS, max_chars=950))
+    append_split_glossary_and_index(
+        ref_blocks,
+        ssr.MATHS_L2_GLOSSARY, "Mathematical Glossary &amp; Examination Vocabulary",
+        ssr.MATHS_L2_INDEX, "Curriculum &amp; Problem Solving Index"
+    )
 
     ref_page_list = K.ref_pages("Official Mark Schemes &amp; Reference Directory", ref_blocks,
                                 BOOK, start_page=p_curr, subtitle="Complete Step-by-Step Worked Solutions &amp; Process Mark Guidance",
@@ -378,6 +594,7 @@ def build_mock_maths_l2():
     p_curr += len(ref_page_list)
 
     # Grade Boundaries & Scaling (1 page)
+    gb_start_page = p_curr
     gb_body = (
         K.page_title("Official Grade Boundaries &amp; Scaling", kicker="Pearson Edexcel Standards", badge="GB")
         + K.box_html(
@@ -398,6 +615,7 @@ def build_mock_maths_l2():
     p_curr += 1
 
     # Candidate Formula Quick Reference (1 page)
+    mem_start_page = p_curr
     mem_body = (
         K.page_title("Candidate Formula &amp; Conversion Quick-Reference", kicker="Essential Non-Calculator &amp; Calculator Memory Aids", badge="MEM")
         + K.hero_image(P("engineering blueprint calculator drafting ruler desk"), "Precision formula recall and unit conversion factors under timed conditions.", 48)
@@ -422,6 +640,7 @@ def build_mock_maths_l2():
     p_curr += 1
 
     # Candidate Readiness Certificate (1 page)
+    cert_start_page = p_curr
     cert_body = (
         K.page_title("Examination Readiness Verification", kicker="Official Milestone Sign-Off", badge="CERT")
         + K.hero_image(P("adult student graduation diploma celebration success"), "Dedication and systematic practice unlock lifelong career progression.", 50)
@@ -429,9 +648,9 @@ def build_mock_maths_l2():
             "<div style='text-align:center; padding:10px; font-size:11.5pt; line-height:1.5;'>"
             "<p style='margin:0 0 4px 0;'>This certifies that</p>"
             "<p style='font-size:16pt; font-weight:bold; border-bottom:2px solid var(--accent); display:inline-block; min-width:300px; padding-bottom:3px; margin:4px 0;'>&nbsp;</p>"
-            "<p style='margin:4px 0;'>has completed all 6 Official-Style Mock Examinations and demonstrated competence across all Pearson Edexcel Functional Skills Mathematics Level 2 standards.</p>"
+            "<p style='margin:4px 0;'>has completed all Official-Style Mock Examinations and demonstrated competence across all Pearson Edexcel Functional Skills Mathematics Level 2 standards.</p>"
             "<table style='width:100%; margin-top:12px; font-size:10.5pt; border-collapse:collapse;'>"
-            "<tr><td style='text-align:left;'><b>Lead Tutor:</b> Subi</td><td style='text-align:right;'><b>Date Verified:</b> _______________</td></tr>"
+            "<tr><td style='text-align:left;'><b>Lead Tutor:</b> Abdul</td><td style='text-align:right;'><b>Date Verified:</b> _______________</td></tr>"
             "<tr><td style='text-align:left;'><b>Average Mock Score:</b> ______ / 64</td><td style='text-align:right;'><b>Exam Centre:</b> Master Functional Skills</td></tr>"
             "</table>"
             "</div>",
@@ -465,12 +684,47 @@ def build_mock_maths_l2():
         pages.append(K.page(p_ibc_body, header=(BOOK, "Exam Day Protocol"), footer=BOOK, page_no=p_curr))
         p_curr += 1
 
+    # Populate Page 2 with Complete 2-Column Table of Contents
+    mock_rows = [
+        (f"Mock {i+1}", f"Paper {i+1}: {m['theme']} (Sec A &amp; B)", str(7 + i*8))
+        for i, m in enumerate(ssc.MATHS_L2_MOCKS)
+    ]
+    ws_rows = [
+        (badge.upper(), ws_t, str(ws_start_page + i))
+        for i, (ws_t, badge, *_) in enumerate(workshops)
+    ]
+    pages[1] = specialist_toc_page(
+        "Functional Skills Mathematics &bull; Level 2",
+        "Official Mock Examination Pack &bull; Complete Papers, Workshops, Step-by-Step Mark Schemes &amp; Process Rubrics",
+        "Maths L2",
+        [
+            ("Front Matter &amp; Formulae Blueprint", [
+                ("FM.1", "Level 2 Essential Formulae: Geometry &amp; 3D Solids", "3"),
+                ("FM.2", "Level 2 Essential Formulae: Measures, Conversions &amp; Stats", "4"),
+                ("FM.3", "Pearson Edexcel Exam Technique &amp; Process Marks", "5"),
+                ("FM.4", "Diagnostic Mock Performance Tracker", "6"),
+            ]),
+            ("Complete Official-Style Mock Examinations (8 Pages Each)", mock_rows),
+        ],
+        [
+            ("Advanced Exam Problem-Solving Workshops", ws_rows),
+            ("Reference Directory: Mark Schemes, Glossary &amp; Index", [
+                ("REF.1", "Step-by-Step Mock Exam Worked Solutions &amp; Rubrics", str(ref_start_page)),
+                ("REF.2", "Statutory Level 2 Formulae, Glossary &amp; Topic Index", str(ref_start_page + max(1, len(ref_page_list) - 2))),
+                ("GB", "Official Grade Boundaries &amp; Pass Scaling", str(gb_start_page)),
+                ("MEM", "Candidate Formula &amp; Conversion Quick-Reference", str(mem_start_page)),
+                ("CERT", "Examination Readiness Verification Certificate", str(cert_start_page)),
+            ]),
+        ],
+        footer=BOOK
+    )
+
     # Inside Back Cover & Back Cover
     pages.append(K.back_cover(back_cov))
     pdf_path = DOWNLOADS / "MasterFunctionalSkills_Mock_Pack_Maths_L2.pdf"
     print(f"Total Pages Assembled: {len(pages)}")
     res = K.render_pdf(pages, pdf_path, theme=cover_theme, entry3=False, title="Master Functional Skills - Mock Pack Maths Level 2")
-    print(f"Rendered: {res['pdf']} ({len(pages)} pages)")
+    print(f"Rendered: {res['pdf']} ({len(pages)} pages) | Overflows: {res.get('overflow', [])}")
     return pdf_path
 
 # =============================================================================
@@ -564,7 +818,7 @@ def build_mock_english_l2():
             "</table>",
             title="Pearson Edexcel Format Blueprint Matrix"
         )
-        + K.cartoon_tip(get_cartoon("abdul tutor explaining"), "Subi",
+        + K.cartoon_tip(get_cartoon("abdul tutor explaining"), "Abdul",
                         "Salutation Trap! If you start with 'Dear Sir or Madam' or 'Dear Hiring Manager', you MUST sign off with 'Yours faithfully'. If you name the recipient ('Dear Mr Taylor'), you MUST sign off with 'Yours sincerely'!")
         + K.fill_notes("Target Writing Formats &amp; Vocabulary To Practice", 22)
     )
@@ -841,6 +1095,7 @@ def build_mock_english_l2():
          "<b>Model Press Header:</b> <i>'FOR IMMEDIATE RELEASE &bull; 14 October 2026 &bull; Regional Skills Hub Launches &pound;2m Green Apprenticeship Initiative. Media Contact: press@skillshub.org.uk'</i>")
     ]
 
+    wf_start_page = p_curr
     for wf_title, badge, lead, photo_kw, theory_html, box_title, box_html in writing_formats_data:
         wf_body = (
             K.page_title(wf_title, kicker="Pearson Edexcel Level 2 Writing Formats Masterclass", badge=badge)
@@ -912,6 +1167,7 @@ def build_mock_english_l2():
          "Mastery Drill: Connect three disjointed points into a fluent, cohesive 120-word paragraph using advanced discourse markers.")
     ]
 
+    mc_start_page = p_curr
     for ws_title, badge, lead, photo_kw, theory_html, drill_title in masterclasses:
         ws_body = (
             K.page_title(ws_title, kicker="Advanced English Level 2 Masterclass", badge=badge.upper())
@@ -924,19 +1180,17 @@ def build_mock_english_l2():
         p_curr += 1
 
     # Back matter reference section (via K.ref_pages)
+    ref_start_page = p_curr
     ref_blocks = []
     for m_idx in range(1, 7):
         for title_str, sol_html in ssr.ENGLISH_L2_MOCK_SOLUTIONS[m_idx]:
-            ref_blocks.append(K.ref_block(title_str, sol_html))
+            ref_blocks.extend(split_tall_ref_block(title_str, sol_html, max_chars=900))
 
-    gloss_html = "".join(f"<dl><dt>{t}</dt><dd>{d}</dd></dl>" for t, d in ssr.ENGLISH_L2_GLOSSARY)
-    ref_blocks.append(K.ref_block("Linguistic &amp; Literary Glossary of Terms", gloss_html))
-
-    ix_html = ""
-    for letter, entries in ssr.ENGLISH_L2_INDEX:
-        items = "".join(f"<div class='ix'><span>{t}</span><span>{p}</span></div>" for t, p in entries)
-        ix_html += f"<div class='ix-letter'>{letter}</div>{items}"
-    ref_blocks.append(K.ref_block("Curriculum &amp; Examination Index", ix_html))
+    append_split_glossary_and_index(
+        ref_blocks,
+        ssr.ENGLISH_L2_GLOSSARY, "Linguistic &amp; Literary Glossary of Terms",
+        ssr.ENGLISH_L2_INDEX, "Curriculum &amp; Examination Index"
+    )
 
     ref_page_list = K.ref_pages("Official Mark Schemes &amp; Exemplar Directory", ref_blocks,
                                 BOOK, start_page=p_curr, subtitle="Complete Reading Solutions &amp; Full Band 4 Writing Models",
@@ -945,6 +1199,7 @@ def build_mock_english_l2():
     p_curr += len(ref_page_list)
 
     # Grade Boundaries & Scaling (1 page)
+    gb_start_page = p_curr
     gb_body = (
         K.page_title("Official Grade Boundaries &amp; Scaling", kicker="Pearson Edexcel Standards", badge="GB")
         + K.box_html(
@@ -964,10 +1219,11 @@ def build_mock_english_l2():
     pages.append(K.page(gb_body, header=(BOOK, "Grade Boundaries"), footer=BOOK, page_no=p_curr))
     p_curr += 1
 
-# Candidate Timing & Mark Allocation Blueprint (1 page)
+    # Candidate Timing & Mark Allocation Blueprint (1 page)
+    timing_start_page = p_curr
     timing_body = (
         K.page_title("Level 2 Exam Timing &amp; Mark Allocation Strategy", kicker="Executive Examination Blueprint", badge="TIME")
-        + K.hero_image(P("clock wristwatch business meeting time management"), "Strategic time budgeting and mark-to-minute calibration.", 45)
+        + K.hero_image(P("clock wristwatch business meeting time management"), "Strategic time budgeting and mark-to-minute calibration.", 32)
         + K.box_html(
             "<table style='width:100%; border-collapse:collapse; font-size:10.5pt; line-height:1.5;'>"
             "<tr style='background:#f1f5f9;'><th style='padding:6px; text-align:left;'>Examination Section</th><th style='padding:6px; text-align:left;'>Marks Available</th><th style='padding:6px; text-align:left;'>Recommended Time</th><th style='padding:6px; text-align:left;'>Pacing &amp; Strategy Rule</th></tr>"
@@ -981,12 +1237,12 @@ def build_mock_english_l2():
         )
         + K.rule_box("Exam Hall Golden Pacing Principles",
                      "<p style='margin:0;'>1. Never leave early! Spend remaining minutes reviewing Task 1 and Task 2 for missing punctuation.<br>2. Aim for 250&ndash;300 words on Task 1 and 200&ndash;250 words on Task 2.<br>3. Always weave direct quotations smoothly into your comparative reading answers.</p>")
-        + K.fill_notes("Personal Exam Routine &amp; Warm-Up Checklist", 22)
     )
     pages.append(K.page(timing_body, header=(BOOK, "Timing Blueprint"), footer=BOOK, page_no=p_curr))
     p_curr += 1
 
     # Candidate Readiness Certificate (1 page)
+    cert_start_page = p_curr
     cert_body = (
         K.page_title("Examination Readiness Verification", kicker="Official Milestone Sign-Off", badge="CERT")
         + K.hero_image(P("adult student graduation diploma celebration success"), "Excellence in communication opens professional horizons across all careers.", 50)
@@ -994,9 +1250,9 @@ def build_mock_english_l2():
             "<div style='text-align:center; padding:10px; font-size:11.5pt; line-height:1.5;'>"
             "<p style='margin:0 0 4px 0;'>This certifies that</p>"
             "<p style='font-size:16pt; font-weight:bold; border-bottom:2px solid var(--accent); display:inline-block; min-width:300px; padding-bottom:3px; margin:4px 0;'>&nbsp;</p>"
-            "<p style='margin:4px 0;'>has completed all 5 Official-Style Mock Examinations and demonstrated mastery across all Pearson Edexcel Functional Skills English Level 2 standards.</p>"
+            "<p style='margin:4px 0;'>has completed all Official-Style Mock Examinations and demonstrated mastery across all Pearson Edexcel Functional Skills English Level 2 standards.</p>"
             "<table style='width:100%; margin-top:12px; font-size:10.5pt; border-collapse:collapse;'>"
-            "<tr><td style='text-align:left;'><b>Lead Tutor:</b> Subi</td><td style='text-align:right;'><b>Date Verified:</b> _______________</td></tr>"
+            "<tr><td style='text-align:left;'><b>Lead Tutor:</b> Abdul</td><td style='text-align:right;'><b>Date Verified:</b> _______________</td></tr>"
             "<tr><td style='text-align:left;'><b>Average Mock Score:</b> ______ / 60</td><td style='text-align:right;'><b>Exam Centre:</b> Master Functional Skills</td></tr>"
             "</table>"
             "</div>",
@@ -1007,12 +1263,53 @@ def build_mock_english_l2():
     pages.append(K.page(cert_body, header=(BOOK, "Readiness Certificate"), footer=BOOK, page_no=p_curr))
     p_curr += 1
 
+    # Populate Page 2 with Complete 2-Column Table of Contents
+    eng_mock_rows = [
+        (f"Mock {i+1}", f"Paper {i+1}: {m['title']} (Reading &amp; Writing)", str(7 + i*8))
+        for i, m in enumerate(ssc.ENGLISH_L2_MOCKS)
+    ]
+    wf_rows = [
+        (badge, wf_t.split("&bull;")[-1].strip(), str(wf_start_page + i))
+        for i, (wf_t, badge, *_) in enumerate(writing_formats_data)
+    ]
+    mc_rows = [
+        (badge.upper(), ws_t.strip(), str(mc_start_page + i))
+        for i, (ws_t, badge, *_) in enumerate(masterclasses)
+    ]
+    pages[1] = specialist_toc_page(
+        "Functional Skills English &bull; Level 2",
+        "Official Mock Examination Pack &bull; Authentic Reading Inserts, Writing Booklets, Format Archetypes &amp; Band 4 Exemplars",
+        "English L2",
+        [
+            ("Front Matter &amp; Examination Blueprint", [
+                ("FM.1", "Level 2 Reading Strategies &amp; Text Analysis", "3"),
+                ("FM.2", "Writing Architecture &amp; The 11 Core Formats", "4"),
+                ("FM.3", "Level 2 SPaG Toolkit: Punctuation &amp; Syntax", "5"),
+                ("FM.4", "Diagnostic Mock Performance Tracker", "6"),
+            ]),
+            ("Complete Official-Style Mock Examinations (8 Pages Each)", eng_mock_rows),
+            ("Writing Format Archetypes Masterclass", wf_rows[:4]),
+        ],
+        [
+            ("Writing Format Archetypes (Continued)", wf_rows[4:]),
+            ("Advanced Reading &amp; Writing Masterclasses", mc_rows),
+            ("Reference Directory: Mark Schemes &amp; Exemplars", [
+                ("REF.1", "Reading Mark Schemes &amp; Full Band 4 Writing Models", str(ref_start_page)),
+                ("REF.2", "Linguistic Glossary &amp; Examination Index", str(ref_start_page + max(1, len(ref_page_list) - 2))),
+                ("GB", "Official Grade Boundaries &amp; Scaling", str(gb_start_page)),
+                ("TIME", "Exam Timing &amp; Mark Allocation Strategy", str(timing_start_page)),
+                ("CERT", "Examination Readiness Verification Certificate", str(cert_start_page)),
+            ]),
+        ],
+        footer=BOOK
+    )
+
     # Inside Back Cover & Back Cover
     pages.append(K.back_cover(back_cov))
     pdf_path = DOWNLOADS / "MasterFunctionalSkills_Mock_Pack_English_L2.pdf"
     print(f"Total Pages Assembled: {len(pages)}")
     res = K.render_pdf(pages, pdf_path, theme=cover_theme, entry3=False, title="Master Functional Skills - Mock Pack English Level 2")
-    print(f"Rendered: {res['pdf']} ({len(pages)} pages)")
+    print(f"Rendered: {res['pdf']} ({len(pages)} pages) | Overflows: {res.get('overflow', [])}")
     return pdf_path
 
 # =============================================================================
@@ -1020,7 +1317,7 @@ def build_mock_english_l2():
 # =============================================================================
 def build_digital_skills_handbook():
     print("\n" + "="*70)
-    print("BUILDING: MasterFunctionalSkills_Digital_Skills_Handbook.pdf")
+    print("BUILDING: MasterFunctionalSkills_Digital_Skills_Handbook.pdf (88 Pages)")
     print("="*70)
 
     BOOK = "Digital Skills Core Handbook"
@@ -1031,106 +1328,242 @@ def build_digital_skills_handbook():
     pages = []
     used_photos = set()
 
-    def P(kw):
-        p = get_photo(kw, "digital", used_photos)
-        if p:
-            used_photos.add(p)
-        return p
+    DIGITAL_PHOTOS_MAP = {
+        "hardware_os": ("digital_thematic/d1_hardware_workspace.jpg", "Modern workplace computing: high-performance hardware, multi-screen workstations, and cloud sync.", 48, "center center"),
+        "blueprint": ("digital_thematic/d2_blueprint_edsq.jpg", "Digital Functional Skills qualifications prepare adult learners for accredited workplace competence.", 55, "center center"),
+        # Units 1 to 10 (tuned height 36mm for zero overflow with rich theory)
+        "u1": ("digital_thematic/d3_u1_file_hierarchy.jpg", "Domain 1: Structured folder hierarchies, file naming conventions, and cloud storage.", 36, "center center"),
+        "u2": ("digital_thematic/d4_u2_search_verification.jpg", "Domain 1: Advanced search operators (AND, OR, quotes), source evaluation, and fact-checking.", 36, "center center"),
+        "u3": ("digital_thematic/d5_u3_word_processing.jpg", "Domain 2: Typographic hierarchy, styles, table formatting, and professional document proofreading.", 36, "center center"),
+        "u4": ("digital_thematic/d6_u4_spreadsheet_modeling.jpg", "Domain 2: Dynamic formula modeling (=SUM, =AVERAGE), absolute cell references, and grid formatting.", 36, "center center"),
+        "u5": ("digital_thematic/d7_u5_presentation_multimedia.jpg", "Domain 2: High-contrast slide layouts, visual hierarchy, embedded multimedia, and accessibility.", 36, "center center"),
+        "u6": ("digital_thematic/d8_u6_email_etiquette.jpg", "Domain 3: Professional subject lines, secure attachments, and data privacy protocols (CC vs BCC).", 36, "center center"),
+        "u7": ("digital_thematic/d9_u7_video_conferencing.jpg", "Domain 3: Video meeting etiquette, screen sharing, active muting, and digital team collaboration.", 36, "center center"),
+        "u8": ("digital_thematic/d10_u8_ecommerce_checkout.jpg", "Domain 4: E-commerce verification, SSL encryption certificates, and fraud prevention.", 36, "center center"),
+        "u9": ("digital_thematic/d11_u9_public_services.jpg", "Domain 4: Navigating government portals (GOV.UK), digital identification, and online service forms.", 36, "center center"),
+        "u10": ("digital_thematic/d12_u10_cybersecurity_gdpr.jpg", "Domain 5: Multi-factor authentication (MFA), phishing red flags, and UK GDPR data compliance.", 36, "center center"),
+        # Mocks 1 to 4
+        "mock1": ("digital_thematic/d13_mock1_medical_portal.jpg", "Scenario 1: Healthcare digital administration, confidential patient data management, and booking portals.", 52, "center center"),
+        "mock2": ("digital_thematic/d14_mock2_foodbank_logistics.jpg", "Scenario 2: Food bank logistics tracking, stock distribution formulas, and volunteer communication.", 52, "center center"),
+        "mock3": ("digital_thematic/d15_mock3_apprentice_training.jpg", "Scenario 3: E-learning platform management, apprentice progress spreadsheets, and qualification records.", 52, "center center"),
+        "mock4": ("digital_thematic/d16_mock4_library_archive.jpg", "Scenario 4: Digital asset cataloging, lending audit calculations, and equipment loan tracking.", 52, "center center"),
+        # Labs 1 to 6
+        "lab1": ("digital_thematic/d17_lab1_cloud_permissions.jpg", "Software Lab 1: Configuring tiered cloud permissions (View, Comment, Edit) and corporate audit logs.", 40, "center center"),
+        "lab2": ("digital_thematic/d18_lab2_data_validation.jpg", "Software Lab 2: Input data validation dropdowns, error handling (=IFERROR), and conditional alerts.", 40, "center center"),
+        "lab3": ("digital_thematic/d19_lab3_business_letters.jpg", "Software Lab 3: Formal business dispute resolution, distribution governance, and calendar meeting invites.", 40, "center center"),
+        "lab4": ("digital_thematic/d20_lab4_phishing_triage.jpg", "Software Lab 4: Analyzing suspicious email headers, domain spoofing triage, and emergency containment.", 40, "center center"),
+        "lab5": ("digital_thematic/d21_lab5_doc_accessibility.jpg", "Software Lab 5: Applying WCAG 2.1 headings, alt-text descriptions, and accessible PDF tagging.", 40, "center center"),
+        "lab6": ("digital_thematic/d22_lab6_craap_research.jpg", "Software Lab 6: Applying the CRAAP test, cross-verifying citations, and Creative Commons licensing.", 40, "center center"),
+        # IT References 1 to 4
+        "it_ref1": ("digital_thematic/d23_ref1_file_formats.jpg", "Technical Reference 1: Corporate file extensions, compression formats, and executable security.", 46, "center center"),
+        "it_ref2": ("digital_thematic/d24_ref2_spreadsheet_debug.jpg", "Technical Reference 2: Diagnosing and correcting #VALUE!, #REF!, #DIV/0!, and formula syntax errors.", 46, "center center"),
+        "it_ref3": ("digital_thematic/d25_ref3_gdpr_flowchart.jpg", "Technical Reference 3: Statutory 72-hour ICO data breach reporting and forensic containment procedures.", 46, "center center"),
+        "it_ref4": ("digital_thematic/d26_ref4_ergonomics_dse.jpg", "Technical Reference 4: 20-20-20 visual rest rule, ergonomic workstation posture, and password security.", 46, "center center"),
+        # Certificate
+        "cert": ("digital_thematic/d27_cert_achievement.jpg", "Accredited milestone: Mastering national digital standards for lifelong career advancement.", 60, "center center"),
+    }
 
-    # p1: Front Cover
+    def digital_hero_image(photo_key, caption=None, height_mm=None, obj_pos=None):
+        if photo_key not in DIGITAL_PHOTOS_MAP:
+            return ""
+        rel_path, default_cap, default_h, default_pos = DIGITAL_PHOTOS_MAP[photo_key]
+        photo_file = BOOK_PHOTOS_BASE / rel_path
+        if not photo_file.exists():
+            photo_file = PROJECT_DIR / "assets" / "img" / "book_photos" / rel_path
+        if not photo_file.exists():
+            return ""
+        uri = photo_file.resolve().as_uri()
+        cap_text = caption if caption is not None else default_cap
+        h = height_mm if height_mm is not None else default_h
+        if h <= 40:
+            h = 36 if photo_key in ("u2", "u4") else 40
+        pos = obj_pos if obj_pos is not None else default_pos
+
+        cap_html = ""
+        if cap_text:
+            cap_html = (
+                f"<div style='flex:0 0 auto; padding:0.85mm 1.6mm; font-size:7.6pt; font-weight:700; line-height:1.15; "
+                f"color:var(--primary); background:#eff6ff; border-top:1.1px solid #bfdbfe; text-align:center; "
+                f"white-space:nowrap; overflow:hidden; text-overflow:ellipsis;'>"
+                f"{cap_text}</div>"
+            )
+        img_h = h - (6.0 if cap_text else 0)
+        return (
+            f"<div class='digital-hero-card' style='margin:0.4mm 0 1.0mm 0; border-radius:5px; overflow:hidden; "
+            f"border:1.3px solid var(--primary); background:#ffffff; box-shadow:0 1px 3px rgba(0,0,0,0.06); display:flex; flex-direction:column;'>"
+            f"<div style='width:100%; aspect-ratio:16/9; max-height:{img_h}mm; overflow:hidden; position:relative; background:#0f172a;'>"
+            f"<img src='{uri}' alt='' style='width:100%; height:100%; object-fit:cover; object-position:{pos}; display:block;'>"
+            f"</div>"
+            f"{cap_html}"
+            f"</div>"
+        )
+
+    # -------------------------------------------------------------------------
+    # 2-PAGE TABLE OF CONTENTS BUILDERS (Large Font, Chapter-Size Proportions)
+    # -------------------------------------------------------------------------
+    def digital_skills_toc_p1(title, subtitle, level_badge, groups, footer):
+        def render_group(g_title, rows):
+            out = (
+                f"<div style='margin-bottom:2.6mm; border:0.4mm solid var(--border); border-radius:2mm; overflow:hidden; background:#ffffff; box-shadow:0 1px 3px rgba(0,0,0,0.04);'>"
+                f"<div style='background:linear-gradient(135deg, var(--primary-dark), var(--primary)); color:#fff; font-family:Outfit,sans-serif; font-size:10.5pt; font-weight:800; padding:1.4mm 2.8mm; letter-spacing:0.03em; text-transform:uppercase;'>{g_title}</div>"
+                f"<table style='width:100%; border-collapse:collapse; font-size:9.8pt; line-height:1.26;'>"
+            )
+            for idx_i, (code, name, pg) in enumerate(rows):
+                bg = "#f8fafc" if idx_i % 2 == 1 else "#ffffff"
+                out += (
+                    f"<tr style='background:{bg}; border-bottom:0.2mm solid #e2e8f0;'>"
+                    f"<td style='width:22mm; padding:1.2mm 2.2mm; font-family:Outfit,sans-serif; font-weight:800; color:var(--primary-dark); white-space:nowrap;'>"
+                    f"<span class='chip' style='padding:0.4mm 2mm; font-size:9.2pt; font-weight:800; display:inline-block; text-align:center; min-width:17mm; border-radius:1.2mm;'>{code}</span></td>"
+                    f"<td style='padding:1.2mm 2.2mm; color:var(--ink); font-weight:600;'>{name}</td>"
+                    f"<td style='width:16mm; padding:1.2mm 2.4mm; text-align:right; font-family:Outfit,sans-serif; font-weight:800; color:var(--primary); white-space:nowrap; font-size:10pt;'>p.{pg}</td>"
+                    f"</tr>"
+                )
+            out += "</table></div>"
+            return out
+
+        body = (
+            f"<div class='ptitle'>"
+            f"<div class='ptitle-text'>"
+            f"<div class='kicker'>Master Functional Skills &bull; Complete Table of Contents &bull; Part 1</div>"
+            f"<h1>{title}</h1>"
+            f"<div class='lead' style='font-size:9.8pt; color:var(--muted);'>{subtitle}</div>"
+            f"</div>"
+            f"<div class='pbadge'>{level_badge}</div>"
+            f"</div>"
+            f"<div style='margin-top:0.6mm; display:flex; flex-direction:column; gap:1.4mm;'>"
+            + "".join(render_group(g_title, rows) for g_title, rows in groups)
+            + f"</div>"
+            f"<div style='margin-top:auto; padding:1.8mm 3.2mm; background:var(--tint); border:0.3mm solid var(--border); border-radius:1.8mm; display:flex; justify-content:space-between; align-items:center; font-size:7.8pt; color:var(--muted);'>"
+            f"<span><b>Master Functional Skills &bull; Essential Digital Skills (EDSQ)</b> &bull; Complete Course Guide &bull; Continued on Page 3</span>"
+            f"<span><b>Lead Tutor:</b> Abdul &bull; <b>Edition:</b> 2026/2027 Reformed Standards</span>"
+            f"</div>"
+        )
+        return K.page(body, header=("Essential Digital Skills", "Table of Contents &bull; Part 1"), footer=footer, page_no=2)
+
+    def digital_skills_toc_p2(title, subtitle, level_badge, groups, footer):
+        def render_group(g_title, rows):
+            out = (
+                f"<div style='margin-bottom:2.0mm; border:0.4mm solid var(--border); border-radius:2mm; overflow:hidden; background:#ffffff; box-shadow:0 1px 3px rgba(0,0,0,0.04);'>"
+                f"<div style='background:linear-gradient(135deg, var(--primary-dark), var(--primary)); color:#fff; font-family:Outfit,sans-serif; font-size:10pt; font-weight:800; padding:1.2mm 2.6mm; letter-spacing:0.03em; text-transform:uppercase;'>{g_title}</div>"
+                f"<table style='width:100%; border-collapse:collapse; font-size:9.4pt; line-height:1.22;'>"
+            )
+            for idx_i, (code, name, pg) in enumerate(rows):
+                bg = "#f8fafc" if idx_i % 2 == 1 else "#ffffff"
+                out += (
+                    f"<tr style='background:{bg}; border-bottom:0.2mm solid #e2e8f0;'>"
+                    f"<td style='width:22mm; padding:1.0mm 2.0mm; font-family:Outfit,sans-serif; font-weight:800; color:var(--primary-dark); white-space:nowrap;'>"
+                    f"<span class='chip' style='padding:0.3mm 1.6mm; font-size:8.6pt; font-weight:800; display:inline-block; text-align:center; min-width:16mm; border-radius:1.2mm;'>{code}</span></td>"
+                    f"<td style='padding:1.0mm 2.0mm; color:var(--ink); font-weight:600;'>{name}</td>"
+                    f"<td style='width:16mm; padding:1.0mm 2.2mm; text-align:right; font-family:Outfit,sans-serif; font-weight:800; color:var(--primary); white-space:nowrap; font-size:9.5pt;'>p.{pg}</td>"
+                    f"</tr>"
+                )
+            out += "</table></div>"
+            return out
+
+        body = (
+            f"<div class='ptitle'>"
+            f"<div class='ptitle-text'>"
+            f"<div class='kicker'>Master Functional Skills &bull; Complete Table of Contents &bull; Part 2</div>"
+            f"<h1>{title}</h1>"
+            f"<div class='lead' style='font-size:9.8pt; color:var(--muted);'>{subtitle}</div>"
+            f"</div>"
+            f"<div class='pbadge'>{level_badge}</div>"
+            f"</div>"
+            f"<div style='margin-top:0.6mm; display:flex; flex-direction:column; gap:1.0mm;'>"
+            + "".join(render_group(g_title, rows) for g_title, rows in groups)
+            + f"</div>"
+            f"<div style='margin-top:auto; padding:1.6mm 3mm; background:var(--tint); border:0.3mm solid var(--border); border-radius:1.8mm; display:flex; justify-content:space-between; align-items:center; font-size:7.8pt; color:var(--muted);'>"
+            f"<span><b>Master Functional Skills &bull; Essential Digital Skills (EDSQ)</b> &bull; Practical Mocks, Labs &amp; Solutions</span>"
+            f"<span><b>Foundation Course Begins on Page 4</b> &bull; Lead Tutor: Abdul</span>"
+            f"</div>"
+        )
+        return K.page(body, header=("Essential Digital Skills", "Table of Contents &bull; Part 2"), footer=footer, page_no=3)
+
+    # -------------------------------------------------------------------------
+    # PAGE 1: FRONT COVER
+    # -------------------------------------------------------------------------
     pages.append(K.front_cover(front_cov))
 
-    # p2: Inside Cover & Statutory Framework
-    pages.append(K.inside_cover(
-        "Essential Digital Skills &bull; EDSQ",
-        "Comprehensive National Standards Handbook &bull; The 5 Statutory Domains, Software Workflows &amp; Practical Mock Exams",
-        "Digital Skills",
-        [
-            ("1", "Digital Hardware, Cloud Storage &amp; Operating System Architecture", "3"),
-            ("2", "National Curriculum Diagnostic Skills Audit &amp; Baseline Assessment", "4"),
-            ("3", "The 5 Statutory Skill Areas Overview &amp; Examination Structure", "5"),
-            ("4", "Learner Progress Tracker &amp; Digital Portfolio Roadmap", "6"),
-            ("U1&ndash;U10", "10 Comprehensive Practical Units Across All 5 Domains (40 pages)", "7"),
-            ("M1&ndash;M4", "4 Complete Official-Style Workplace Scenario Mocks (16 pages)", "47"),
-            ("LAB1&ndash;LAB6", "6 Advanced Digital Software Labs &bull; Workplace Architecture (12 pages)", "63"),
-            ("REF", "Comprehensive Solutions, Shortcuts, Glossary &amp; Index (10 pages)", "75"),
-            ("CERT", "Digital Skills Competency Passport &amp; Official Certificate (4 pages)", "85"),
-        ],
-        footer=BOOK
-    ))
+    # Pages 2 and 3 will be populated with the 2-page TOC at the end of compilation
+    pages.append("")  # Page 2: TOC Part 1 placeholder
+    pages.append("")  # Page 3: TOC Part 2 placeholder
 
-    # p3: Digital Hardware & OS
-    p3_body = (
+    # -------------------------------------------------------------------------
+    # FRONT MATTER (Pages 4 to 7) &bull; Plain English Framework
+    # -------------------------------------------------------------------------
+    # Page 4: Hardware, OS & Cloud Architecture
+    p4_hardware_body = (
         K.page_title("Hardware, OS &amp; Cloud Architecture", kicker="EDSQ Foundation Knowledge", badge="HW")
-        + K.hero_image(P("laptop computer keyboard modern workspace typing"), "Modern workplace productivity relies on seamless cloud integration.", 52)
+        + digital_hero_image("hardware_os", height_mm=46)
         + K.box_html(
-            "<div style='display:grid; grid-template-columns:1fr 1fr; gap:12px; font-size:11.5pt;'>"
-            "<div><b>Operating Systems (Windows/macOS/ChromeOS):</b> File hierarchy, file extensions (.docx, .xlsx, .pdf, .zip), and accessibility tools.</div>"
-            "<div><b>Cloud Synchronization:</b> Storing files on OneDrive, Google Drive, or Nextcloud for automated backup and collaborative multi-user editing.</div>"
-            "<div><b>Input/Output Peripherals:</b> Bluetooth keyboards, webcams, multi-monitor displays, and network printers.</div>"
-            "<div><b>Network Protocols:</b> Wi-Fi security (WPA3), VPN encrypted tunnels, and mobile data hotspotting.</div>"
+            "<div style='display:grid; grid-template-columns:1fr 1fr; gap:8px; font-size:10pt; line-height:1.4;'>"
+            "<div><b>Operating System (OS):</b> The master software running your computer or phone (Windows, macOS, ChromeOS, Android). It manages your hardware, runs programs like Word or browsers, and provides accessibility settings (screen zoom, high contrast).</div>"
+            "<div><b>File Hierarchy &amp; Folders:</b> Organising work into nested folders and subfolders (like dividers in a filing cabinet). Standard file extensions (.docx, .xlsx, .pdf, .jpg) tell your device which program opens the file.</div>"
+            "<div><b>Cloud Storage &amp; Syncing:</b> Storing files on secure internet servers (OneDrive, Google Drive, iCloud) so files automatically update across all your devices and are safe from theft or hardware failure.</div>"
+            "<div><b>Input &amp; Output Hardware:</b> Input devices (keyboard, mouse, webcam, microphone) send information into the computer; output devices (monitors, printers, speakers) present information to you.</div>"
+            "<div><b>Network &amp; Wi-Fi Security:</b> Connecting to the internet safely using password-protected private Wi-Fi (WPA2/WPA3). Never do online banking or enter credentials on unencrypted public Wi-Fi.</div>"
+            "<div><b>Accessibility Tools:</b> Built-in features like screen magnifiers, text-to-speech readers, speech-to-text dictation, and dyslexia color filters that make computers usable for everyone.</div>"
             "</div>",
-            title="Essential Computing Infrastructure"
+            title="Essential Computing Infrastructure &bull; Plain English Core Guide"
         )
-        + K.tip_pair("Always check the file extension before opening attachments (.exe or .scr often signify malware).",
-                     "Remember to lock your workstation (Win + L) whenever stepping away from your desk.",
+        + K.tip_pair("Always check the file extension before opening email attachments (.exe, .bat, or .scr often signify dangerous malware).",
+                     "Remember to lock your workstation screen (Win + L) whenever you step away from your desk to protect confidential data.",
                      golden_title="Security Golden Rule", watch_title="Workplace Trap!")
-        + K.fill_notes("Personal Hardware &amp; System Configuration Notes", 24)
     )
-    pages.append(K.page(p3_body, header=(BOOK, "Hardware & OS"), footer=BOOK, page_no=3))
+    pages.append(K.page(p4_hardware_body, header=(BOOK, "Hardware & OS"), footer=BOOK, page_no=4))
 
-    # p4: Baseline Assessment & Audit
-    p4_body = (
+    # Page 5: Baseline Assessment & Audit
+    p5_audit_body = (
         K.page_title("National Curriculum Baseline Audit", kicker="Self-Assessment &amp; Skills Audit", badge="AU")
         + K.box_html(
-            "<table style='width:100%; border-collapse:collapse; font-size:11pt;'>"
-            "<tr style='background:#f1f5f9;'><th style='padding:5px; text-align:left;'>Skill Area</th><th style='padding:5px; text-align:left;'>Core National Standard Competency</th><th style='padding:5px;'>Rating</th></tr>"
-            "<tr><td style='padding:5px; border-bottom:1px solid #e2e8f0;'><b>1. Devices &amp; Handling Info</b></td><td style='padding:5px; border-bottom:1px solid #e2e8f0;'>Manage files, folders, cloud storage, and configure accessibility settings.</td><td style='text-align:center;'>[ &nbsp; ] / 5</td></tr>"
-            "<tr><td style='padding:5px; border-bottom:1px solid #e2e8f0;'><b>2. Creating &amp; Editing</b></td><td style='padding:5px; border-bottom:1px solid #e2e8f0;'>Draft formal documents, build spreadsheets with formulas, format charts.</td><td style='text-align:center;'>[ &nbsp; ] / 5</td></tr>"
-            "<tr><td style='padding:5px; border-bottom:1px solid #e2e8f0;'><b>3. Communicating</b></td><td style='padding:5px; border-bottom:1px solid #e2e8f0;'>Send professional emails with attachments, participate in video conferences.</td><td style='text-align:center;'>[ &nbsp; ] / 5</td></tr>"
-            "<tr><td style='padding:5px; border-bottom:1px solid #e2e8f0;'><b>4. Transacting</b></td><td style='padding:5px; border-bottom:1px solid #e2e8f0;'>Complete online forms, verify secure checkout (SSL padlocks), manage online billing.</td><td style='text-align:center;'>[ &nbsp; ] / 5</td></tr>"
-            "<tr><td style='padding:5px;'><b>5. Being Safe &amp; Responsible</b></td><td style='padding:5px;'>Identify phishing, manage passwords (2FA), protect digital footprint, understand GDPR.</td><td style='text-align:center;'>[ &nbsp; ] / 5</td></tr>"
+            "<table style='width:100%; border-collapse:collapse; font-size:10.2pt; line-height:1.42;'>"
+            "<tr style='background:#f1f5f9;'><th style='padding:5px; text-align:left;'>Skill Area</th><th style='padding:5px; text-align:left;'>Core Workplace Competency &bull; Plain English Description</th><th style='padding:5px;'>Rating</th></tr>"
+            "<tr><td style='padding:5px; border-bottom:1px solid #e2e8f0;'><b>1. Devices &amp; Handling Info</b></td><td style='padding:5px; border-bottom:1px solid #e2e8f0;'>Turn devices on, create folders, save work to cloud storage, search effectively, and adjust screen settings.</td><td style='text-align:center;'>[ &nbsp; ] / 5</td></tr>"
+            "<tr><td style='padding:5px; border-bottom:1px solid #e2e8f0;'><b>2. Creating &amp; Editing</b></td><td style='padding:5px; border-bottom:1px solid #e2e8f0;'>Write letters in Word using Styles, build spreadsheets with formulas (=SUM, =AVERAGE), and design slides.</td><td style='text-align:center;'>[ &nbsp; ] / 5</td></tr>"
+            "<tr><td style='padding:5px; border-bottom:1px solid #e2e8f0;'><b>3. Communicating</b></td><td style='padding:5px; border-bottom:1px solid #e2e8f0;'>Send polite workplace emails, use To, CC, and BCC correctly for privacy, and join video conference calls.</td><td style='text-align:center;'>[ &nbsp; ] / 5</td></tr>"
+            "<tr><td style='padding:5px; border-bottom:1px solid #e2e8f0;'><b>4. Transacting</b></td><td style='padding:5px; border-bottom:1px solid #e2e8f0;'>Shop online safely, verify HTTPS and SSL padlock security, complete online forms, and access GOV.UK services.</td><td style='text-align:center;'>[ &nbsp; ] / 5</td></tr>"
+            "<tr><td style='padding:5px;'><b>5. Being Safe &amp; Responsible</b></td><td style='padding:5px;'>Spot fake phishing emails, create strong passphrases (3 random words), use MFA, and protect personal data.</td><td style='text-align:center;'>[ &nbsp; ] / 5</td></tr>"
             "</table>",
             title="DfE Essential Digital Skills Diagnostic Matrix"
         )
         + K.cartoon_tip(get_cartoon("priya tutor writing notes"), "Priya",
-                        "Evaluate yourself honestly! Any skill rated below 3 will receive focused remediation in our software laboratory sections.")
-        + K.fill_notes("Priority Digital Skills to Upgrade in this Course", 26)
+                        "Score yourself honestly from 1 to 5 on each area! Any skill rated 3 or below will receive targeted practice in our units and labs.")
+        + K.fill_notes("Priority Digital Skills to Upgrade in this Course", 20)
     )
-    pages.append(K.page(p4_body, header=(BOOK, "Baseline Audit"), footer=BOOK, page_no=4))
+    pages.append(K.page(p5_audit_body, header=(BOOK, "Baseline Audit"), footer=BOOK, page_no=5))
 
-    # p5: National Standards & Examination Matrix
-    p5_body = (
+    # Page 6: National Standards & Examination Blueprint
+    p6_blueprint_body = (
         K.page_title("National Standards &amp; Examination Blueprint", kicker="Pearson Edexcel EDSQ Assessment Structure", badge="BP")
-        + K.hero_image(P("office team computer meeting collaborative training"), "Digital Functional Skills qualifications prepare learners for modern office roles.", 50)
+        + digital_hero_image("blueprint", height_mm=55)
         + K.box_html(
-            "<div style='display:grid; grid-template-columns:1fr 1fr; gap:12px; font-size:11pt;'>"
-            "<div><b>Component 1 &bull; Knowledge Test (20%):</b> Multiple-choice and drag-and-drop questions testing cybersecurity, online safety, GDPR, and device troubleshooting.</div>"
-            "<div><b>Component 2 &bull; Practical Tasks (80%):</b> Hands-on computer-based workplace scenarios involving spreadsheet calculations, email correspondence, and folder structure.</div>"
-            "<div><b>Pass Mark Benchmark:</b> Typically 65–70% across practical scenario tasks.</div>"
-            "<div><b>Software Suite:</b> Microsoft Office 365, Google Workspace, or standard web browsers.</div>"
+            "<div style='display:grid; grid-template-columns:1fr 1fr; gap:10px; font-size:10.2pt; line-height:1.42;'>"
+            "<div><b>Component 1 &bull; Knowledge Test (20%):</b> Online multiple-choice and scenario questions covering cybersecurity, phishing identification, online safety, UK GDPR rules, and basic device settings.</div>"
+            "<div><b>Component 2 &bull; Practical Tasks (80%):</b> Hands-on computer-based workplace tasks requiring you to organise folders, build a spreadsheet with formulas, draft an email, or format a document.</div>"
+            "<div><b>Pass Mark Benchmark:</b> Typically 65&ndash;70% across practical scenario tasks. Complete all tasks methodically to ensure maximum marks.</div>"
+            "<div><b>Supported Software:</b> Standard workplace office software (Microsoft Office 365, Google Docs/Sheets, or modern web browsers).</div>"
             "</div>",
-            title="EDSQ Assessment Specifications"
+            title="EDSQ Qualification Specifications &bull; Plain English Overview"
         )
         + K.rule_box("Crucial Exam Protocol: Saving Your Work",
-                     "<p>Examiners cannot grade work that is not saved! Always save your files to the designated candidate exam folder with the correct filename convention (e.g. <code>CandidateName_Task1_Budget.xlsx</code>) every 5 minutes.</p>")
-        + K.fill_notes("My Practical Exam Software &amp; Shortcut Strategy", 22)
+                     "<p>Examiners cannot grade work that is not saved! Always save your files to the designated exam folder with the correct filename requested (e.g. <code>CandidateName_Task1_Budget.xlsx</code>) every 5 minutes (Ctrl + S).</p>")
+        + K.fill_notes("My Practical Exam Software &amp; Shortcut Strategy", 16)
     )
-    pages.append(K.page(p5_body, header=(BOOK, "Exam Blueprint"), footer=BOOK, page_no=5))
+    pages.append(K.page(p6_blueprint_body, header=(BOOK, "Exam Blueprint"), footer=BOOK, page_no=6))
 
-    # p6: Progress Tracker
-    p6_body = (
+    # Page 7: Progress Tracker
+    p7_tracker_body = (
         K.page_title("Digital Skills Progress Tracker", kicker="Unit &amp; Mock Mastery Log", badge="TR")
         + K.box_html(
-            "<table style='width:100%; border-collapse:collapse; font-size:10.5pt; text-align:center;'>"
-            "<tr style='background:#f1f5f9;'><th style='padding:5px; text-align:left;'>Unit / Mock Paper</th><th>Domain</th><th>Practical Score</th><th>Knowledge Check</th><th>Date</th></tr>"
-            + "".join(f"<tr><td style='padding:4px; border-bottom:1px solid #e2e8f0; text-align:left;'><b>Unit {i}: {ssc.DIGITAL_SKILLS_UNITS[i-1]['title'][:28]}...</b></td>"
+            "<table style='width:100%; border-collapse:collapse; font-size:9.8pt; line-height:1.32; text-align:center;'>"
+            "<tr style='background:#f1f5f9;'><th style='padding:4.5px; text-align:left;'>Unit / Mock Paper</th><th>Domain</th><th>Practical Score</th><th>Knowledge Check</th><th>Date</th></tr>"
+            + "".join(f"<tr><td style='padding:3.2px; border-bottom:1px solid #e2e8f0; text-align:left;'><b>Unit {i}: {ssc.DIGITAL_SKILLS_UNITS[i-1]['title'][:30]}...</b></td>"
                       f"<td style='border-bottom:1px solid #e2e8f0;'>{ssc.DIGITAL_SKILLS_UNITS[i-1]['domain'][:12]}</td>"
                       f"<td style='border-bottom:1px solid #e2e8f0;'>&nbsp;&nbsp;&nbsp;&nbsp;/10</td>"
                       f"<td style='border-bottom:1px solid #e2e8f0;'>[ &nbsp; ] Pass</td>"
                       f"<td style='border-bottom:1px solid #e2e8f0;'>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td></tr>"
                       for i in range(1, 11))
-            + "".join(f"<tr><td style='padding:4px; border-bottom:1px solid #e2e8f0; text-align:left;'><b>Mock Exam {m}: Scenario Simulation</b></td>"
+            + "".join(f"<tr><td style='padding:3.2px; border-bottom:1px solid #e2e8f0; text-align:left;'><b>Mock Exam {m}: Scenario Simulation</b></td>"
                       f"<td style='border-bottom:1px solid #e2e8f0;'>Synoptic</td>"
                       f"<td style='border-bottom:1px solid #e2e8f0;'>&nbsp;&nbsp;&nbsp;&nbsp;/50</td>"
                       f"<td style='border-bottom:1px solid #e2e8f0;'>[ &nbsp; ] Pass</td>"
@@ -1139,30 +1572,31 @@ def build_digital_skills_handbook():
             + "</table>",
             title="Learner Competency Milestone Tracker"
         )
-        + K.fill_notes("Tutor Coaching Feedback &amp; IT Target Settings", 20)
+        + K.fill_notes("Tutor Coaching Feedback &amp; IT Target Settings", 15)
     )
-    pages.append(K.page(p6_body, header=(BOOK, "Progress Tracker"), footer=BOOK, page_no=6))
+    pages.append(K.page(p7_tracker_body, header=(BOOK, "Progress Tracker"), footer=BOOK, page_no=7))
 
-    # pp7–p46: 10 Comprehensive Practical Units (4 pages per unit = 40 pages)
-    p_curr = 7
+    # -------------------------------------------------------------------------
+    # 10 PRACTICAL CURRICULUM UNITS (Pages 8 to 47 &bull; 4 Pages per Unit)
+    # -------------------------------------------------------------------------
+    p_curr = 8
     for u_idx, unit in enumerate(ssc.DIGITAL_SKILLS_UNITS, start=1):
         u_title = unit["title"]
         u_domain = unit["domain"]
         badge = unit["badge"]
-        kw = unit["kw"]
         theory = unit["theory"]
         steps = unit["steps"]
         drill = unit["drill"]
         trap = unit["trap"]
+        questions = unit.get("questions", [])
 
-        # Page 1 of Unit: Core Theory & Workplace Context
+        # Page 1 of Unit: Core Theory & Plain English Concepts (zero overflow tuned)
         p1_b = (
             K.page_title(f"Unit {u_idx} &bull; {u_title}", kicker=f"EDSQ Domain: {u_domain}", badge=badge)
-            + K.hero_image(P(kw), f"Workplace Application: {u_title}", 50)
-            + K.box_html(f"<div style='font-size:11pt; line-height:1.5;'>{theory}</div>", title="Core Knowledge &amp; Statutory Standards")
-            + K.rule_box("Workplace Context &amp; Employer Expectations",
-                         f"<p style='margin:0;'>In modern enterprises, competence in <b>{u_title}</b> is essential for data security, administrative velocity, and regulatory compliance.</p>")
-            + K.fill_notes("Personal Concept Notes &amp; Statutory Vocabulary", 24)
+            + digital_hero_image(f"u{u_idx}", height_mm=36)
+            + K.box_html(f"<div style='font-size:9.6pt; line-height:1.33;'>{theory}</div>", title="Core Knowledge &amp; Specialist Terms Explained")
+            + K.rule_box("Everyday Workplace Context",
+                         f"<p style='margin:0; font-size:9.4pt;'>In modern jobs and community life, mastering <b>{u_title}</b> helps you work faster, keep data secure, and avoid costly mistakes.</p>")
         )
         pages.append(K.page(p1_b, header=(BOOK, f"Unit {u_idx} &bull; Theory"), footer=BOOK, page_no=p_curr))
         p_curr += 1
@@ -1171,77 +1605,84 @@ def build_digital_skills_handbook():
         p2_b = (
             K.page_title(f"Unit {u_idx} &bull; Step-by-Step Workflow", kicker=f"Procedural Mastery &bull; {u_title}", badge=badge)
             + K.box_html(
-                "<table style='width:100%; border-collapse:collapse; font-size:11pt;'>"
-                + "".join(f"<tr><td style='padding:8px; border-bottom:1px solid #e2e8f0; width:80px;'><b>Step {s_num}:</b></td>"
-                          f"<td style='padding:8px; border-bottom:1px solid #e2e8f0;'>{s_txt}</td></tr>"
+                "<table style='width:100%; border-collapse:collapse; font-size:10.2pt; line-height:1.38;'>"
+                + "".join(f"<tr><td style='padding:6px; border-bottom:1px solid #e2e8f0; width:75px;'><b>Step {s_num}:</b></td>"
+                          f"<td style='padding:6px; border-bottom:1px solid #e2e8f0;'>{s_txt}</td></tr>"
                           for s_num, s_txt in enumerate(steps, start=1))
                 + "</table>",
-                title="Standard Operating Procedure (SOP)"
+                title="Standard Operating Procedure (SOP) &bull; How to Do It Step-by-Step"
             )
-            + K.tip_pair("Create a desktop shortcut for folders used on a daily basis to eliminate navigation latency.",
+            + K.tip_pair("Create desktop shortcuts for folders you open every day to save navigation time.",
                          trap,
                          golden_title="Productivity Tip", watch_title="Examiner Pitfall!")
-            + K.fill_notes("Candidate Command Triggers &amp; Shortcut Reminders", 30)
+            + K.fill_notes("Candidate Command Triggers &amp; Shortcut Reminders", 22)
         )
         pages.append(K.page(p2_b, header=(BOOK, f"Unit {u_idx} &bull; Workflow"), footer=BOOK, page_no=p_curr))
         p_curr += 1
 
         # Page 3 of Unit: Workplace Hands-On Practice Drill
         p3_b = (
-            K.page_title(f"Unit {u_idx} &bull; Hands-On Practical Drill", kicker="Applied Scenario Practice &bull; Software Lab", badge=badge)
+            K.page_title(f"Unit {u_idx} &bull; Applied Workplace Drill", kicker="Real-World Workplace Scenario Task", badge=badge)
             + K.box_html(
-                f"<div style='font-size:11pt; line-height:1.5;'>{drill}</div>",
+                f"<div style='font-size:10.2pt; line-height:1.42;'>{drill}</div>",
                 title=f"Workplace Simulation Task &bull; Unit {u_idx}"
             )
-            + K.fill_grid("Candidate Action Log &amp; Software Command Steps", min_mm=60)
+            + K.fill_grid("Candidate Action Log &amp; Step-by-Step Solution Working Grid", min_mm=55)
             + K.box_html(
-                "<div style='display:flex; justify-content:space-between; font-weight:bold; font-size:11pt;'>"
+                "<div style='display:flex; justify-content:space-between; font-weight:bold; font-size:10pt;'>"
                 "<span>Drill Completed: [ &nbsp; ] Yes &emsp; [ &nbsp; ] In Progress</span>"
-                "<span>Tutor Verification: ____________________</span>"
+                "<span>Tutor Verification: Abdul &bull; ____________________</span>"
                 "</div>",
-                title="Practical Drill Verification"
+                title="Practical Drill Sign-Off"
             )
         )
         pages.append(K.page(p3_b, header=(BOOK, f"Unit {u_idx} &bull; Drill"), footer=BOOK, page_no=p_curr))
         p_curr += 1
 
-        # Page 4 of Unit: Common Pitfalls & Knowledge Check
+        # Page 4 of Unit: Pitfalls & Unit-Specific Knowledge Check
+        q_html = ""
+        for q_num, q_tuple in enumerate(questions, start=1):
+            q_text = q_tuple[0]
+            opts = q_tuple[1:5]
+            q_html += (
+                f"<p style='margin:3px 0 2px 0;'><b>{q_num}.</b> {q_text}<br>"
+                + " &emsp; ".join(f"[ &nbsp; ] {opt}" for opt in opts)
+                + "</p>"
+            )
+
         p4_b = (
             K.page_title(f"Unit {u_idx} &bull; Pitfall Audit &amp; Knowledge Check", kicker="Error Remediation &amp; Multiple-Choice Check", badge=badge)
-            + K.rule_box("Critical Security &amp; Workflow Traps to Avoid",
+            + K.rule_box("Critical Traps to Avoid &amp; How to Prevent Them",
                          f"<p><b>Trap:</b> {trap}<br>"
-                         f"<b>Prevention:</b> Always audit inputs, lock credentials with two-factor authentication, and verify recipient address fields before clicking send.</p>")
+                         f"<b>Prevention:</b> Double-check inputs, lock passwords with two-factor authentication, and verify recipient email addresses before sending.</p>")
             + K.box_html(
-                "<div style='font-size:11pt; line-height:1.6;'>"
-                "<p><b>Knowledge Check Questions:</b></p>"
-                "<p><b>1.</b> Which file format preserves document formatting identically across all operating systems?<br>"
-                "&emsp; [ &nbsp; ] A) .txt &emsp; [ &nbsp; ] B) .pdf &emsp; [ &nbsp; ] C) .csv &emsp; [ &nbsp; ] D) .rtf</p>"
-                "<p><b>2.</b> What is the correct formula to calculate the average of cells B2 to B20?<br>"
-                "&emsp; [ &nbsp; ] A) =MEAN(B2:B20) &emsp; [ &nbsp; ] B) =AVERAGE(B2:B20) &emsp; [ &nbsp; ] C) =AVG(B2-B20)</p>"
-                "<p><b>3.</b> Under GDPR, within how many hours must a serious personal data breach be reported?<br>"
-                "&emsp; [ &nbsp; ] A) 24 hours &emsp; [ &nbsp; ] B) 48 hours &emsp; [ &nbsp; ] C) 72 hours &emsp; [ &nbsp; ] D) 7 days</p>"
-                "</div>",
+                f"<div style='font-size:9.8pt; line-height:1.38;'>"
+                f"<p style='margin-top:0;'><b>Unit {u_idx} Knowledge Check Questions:</b></p>"
+                f"{q_html}"
+                f"</div>",
                 title="Statutory Knowledge Verification"
             )
-            + K.fill_notes("Candidate Working Notes &amp; Unit Summary", 36)
+            + K.fill_notes("Candidate Working Notes &amp; Unit Summary Reflection", 24)
         )
         pages.append(K.page(p4_b, header=(BOOK, f"Unit {u_idx} &bull; Check"), footer=BOOK, page_no=p_curr))
         p_curr += 1
 
-    # pp47–p62: 4 Full Workplace Scenario Mocks (4 pages per mock = 16 pages)
-    p_curr = 47
+    # -------------------------------------------------------------------------
+    # 4 FULL WORKPLACE SCENARIO MOCKS (Pages 48 to 63 &bull; 4 Pages per Mock)
+    # -------------------------------------------------------------------------
+    p_curr = 48
     for m_idx, mock in enumerate(ssc.DIGITAL_SKILLS_MOCKS, start=1):
         m_title = mock["title"]
         m_scen = mock["scenario"]
         m_tasks = mock["tasks"]
 
-        # Page 1 of Mock: Scenario Overview & Task 1 (File Hierarchy)
+        # Page 1 of Mock: Scenario Overview & Task 1
         p1_b = (
             K.page_title(f"Mock Exam {m_idx} &bull; Scenario Overview", kicker=f"Practical Exam {m_idx}: {m_title}", badge=f"ME{m_idx}.1")
-            + K.hero_image(P("office workspace computer dual screen productivity"), f"Examination Context: {m_title}", 48)
-            + K.box_html(f"<div style='font-size:11pt; line-height:1.5;'><p><b>Scenario Context:</b> {m_scen}</p></div>", title="Candidate Briefing &bull; 50 Marks &bull; 1 hr 45 mins")
+            + digital_hero_image(f"mock{m_idx}", height_mm=52)
+            + K.box_html(f"<div style='font-size:10.2pt; line-height:1.42;'><p style='margin:0;'><b>Scenario Context:</b> {m_scen}</p></div>", title="Candidate Briefing &bull; 50 Marks &bull; 1 hr 45 mins")
             + exam_box(f"Task 1 (File Hierarchy &amp; Storage Architecture): {m_tasks[0]}", marks=12)
-            + K.fill_grid("Candidate Working Grid &bull; Folder Architecture &amp; File Paths", min_mm=42)
+            + K.fill_grid("Candidate Working Grid &bull; Folder Architecture &amp; File Paths", min_mm=36)
         )
         pages.append(K.page(p1_b, header=(BOOK, f"Mock {m_idx} &bull; Task 1"), footer=BOOK, page_no=p_curr))
         p_curr += 1
@@ -1250,7 +1691,7 @@ def build_digital_skills_handbook():
         p2_b = (
             K.page_title(f"Mock Exam {m_idx} &bull; Task 2 (Spreadsheet Modeling)", kicker=f"Practical Exam {m_idx}: {m_title}", badge=f"ME{m_idx}.2")
             + exam_box(f"Task 2 (Spreadsheet Calculations &amp; Formatting): {m_tasks[1]}", marks=15)
-            + K.fill_grid("Candidate Working Grid &bull; Formula Syntax (=SUM, =AVERAGE, =IF)", min_mm=60)
+            + K.fill_grid("Candidate Working Grid &bull; Formula Syntax (=SUM, =AVERAGE, =IF)", min_mm=55)
             + K.rule_box("Formula Verification Checklist",
                          "<p>Verify: (1) Absolute cell references ($B$1) are locked where appropriate. (2) Currency formatting applied (&pound;0.00). (3) Gridlines visible for printing.</p>")
         )
@@ -1261,21 +1702,21 @@ def build_digital_skills_handbook():
         p3_b = (
             K.page_title(f"Mock Exam {m_idx} &bull; Task 3 (Email &amp; Communication)", kicker=f"Practical Exam {m_idx}: {m_title}", badge=f"ME{m_idx}.3")
             + exam_box(f"Task 3 (Professional Workplace Correspondence): {m_tasks[2]}", marks=12)
-            + K.fill_notes("Candidate Email Drafting Area (Subject, Salutation, Body, Sign-Off)", 140)
+            + K.fill_notes("Candidate Email Drafting Area (Subject, Salutation, Body, Sign-Off)", 135)
         )
         pages.append(K.page(p3_b, header=(BOOK, f"Mock {m_idx} &bull; Task 3"), footer=BOOK, page_no=p_curr))
         p_curr += 1
 
-        # Page 4 of Mock: Task 4 (Cybersecurity Incident Response & Audit)
+        # Page 4 of Mock: Task 4 (Security Incident & Sign-Off)
         p4_b = (
             K.page_title(f"Mock Exam {m_idx} &bull; Task 4 (Security Incident)", kicker=f"Practical Exam {m_idx}: {m_title}", badge=f"ME{m_idx}.4")
             + exam_box(f"Task 4 (Cybersecurity Incident Triage &amp; Reporting): {m_tasks[3]}", marks=11)
-            + K.fill_notes("Candidate Incident Triage &amp; Action Report", 80)
+            + K.fill_notes("Candidate Incident Triage &amp; Action Report", 75)
             + K.box_html(
-                f"<div style='display:flex; justify-content:space-between; font-weight:bold; font-size:11pt;'>"
+                f"<div style='display:flex; justify-content:space-between; font-weight:bold; font-size:10pt;'>"
                 f"<span>Mock {m_idx} Total Marks: ______ / 50</span>"
                 f"<span>Status: [ &nbsp; ] Pass &emsp; [ &nbsp; ] Refer</span>"
-                f"<span>Examiner: ____________________</span>"
+                f"<span>Examiner: Abdul &bull; ____________________</span>"
                 f"</div>",
                 title="Practical Exam Summary &amp; Sign-Off"
             )
@@ -1283,16 +1724,21 @@ def build_digital_skills_handbook():
         pages.append(K.page(p4_b, header=(BOOK, f"Mock {m_idx} &bull; Summary"), footer=BOOK, page_no=p_curr))
         p_curr += 1
 
-
-    # pp63–p74: 6 Advanced Digital Software Labs (2 pages per lab = 12 pages)
+    # -------------------------------------------------------------------------
+    # 6 ADVANCED DIGITAL SOFTWARE LABS (Pages 64 to 75 &bull; 2 Pages per Lab)
+    # -------------------------------------------------------------------------
     advanced_labs = [
         ("Lab 1: Cloud Storage Architecture & Access Permissions", "LAB1",
-         "Enterprise cloud directory structures, multi-tenant sharing, and permission hierarchies.",
+         "Enterprise cloud directory structures, multi-user sharing, and permission tiers.",
          "cloud server data storage network infrastructure",
-         "<b>Cloud Security Framework:</b> In enterprise environments (SharePoint, Google Drive, Nextcloud), granting blanket 'Edit' access to root folders introduces critical data loss risks. Standard practice mandates three distinct permission tiers: (1) <i>View/Read-Only</i> for general staff reference documents; (2) <i>Commenter</i> for cross-departmental reviewers; (3) <i>Owner/Editor</i> restricted to designated project managers.<br><br>"
-         "<b>Version History & Audit Trails:</b> When multiple team members collaborate asynchronously, file synchronization conflicts frequently overwrite crucial data. Cloud versioning allows administrators to inspect previous timestamps, compare differences, and restore stable revisions.",
+         "<b>Cloud Security Framework:</b> In shared cloud drives (such as SharePoint, Google Drive, or Nextcloud), giving everyone 'Edit' access to main folders is dangerous because anyone can accidentally delete important files.<br><br>"
+         "<b>The 3 Standard Permission Tiers:</b><br>"
+         "&bull; <b>Viewer (Read-Only):</b> People can view and read files, but cannot make any changes or delete anything. Ideal for company policies and reference guides.<br>"
+         "&bull; <b>Commenter:</b> People can read the document and leave feedback notes in the margins, but cannot change the text itself.<br>"
+         "&bull; <b>Editor:</b> Assigned project team members who have permission to write, edit, and update the document.<br><br>"
+         "<b>Version History &amp; Recovery:</b> If someone accidentally deletes text or corrupts a file, click <code>File &rarr; Info &rarr; Version History</code> to view previous saved versions and restore the document in one click.",
          "Standard Operating Checklist: Tiered Permissions",
-         [("1. Root Folder Provisioning", "Create a structured project folder with format: <code>[Dept]_[ProjectName]_[Year]</code>."),
+         [("1. Root Folder Setup", "Create a structured project folder with format: <code>[Dept]_[ProjectName]_[Year]</code>."),
           ("2. Subfolder Partitioning", "Establish segregated subfolders: <code>01_Reference</code> (Read-Only), <code>02_WIP</code> (Edit for Team), <code>03_Confidential</code> (Restricted)."),
           ("3. Link Security Configuration", "Disable 'Anyone with the link' public sharing. Enforce organizational email domain authentication with 30-day password expiry.")],
          "Applied Workplace Scenario & Lab Task",
@@ -1305,8 +1751,13 @@ def build_digital_skills_handbook():
         ("Lab 2: Advanced Spreadsheet Modeling & Data Validation", "LAB2",
          "Formulas, absolute referencing, conditional formatting, and error diagnostics.",
          "financial spreadsheet data analysis charts monitor",
-         "<b>Mathematical Rigor in Spreadsheets:</b> Workplace spreadsheets drive payroll, procurement, and financial forecasting. A single missing dollar sign in an absolute reference (e.g. <code>B$1</code> vs <code>B1</code>) can distort thousand-pound calculations across autofilled columns.<br><br>"
-         "<b>Data Validation Protocols:</b> Restricting user input to pre-configured dropdown lists (e.g. Approved Expense Categories) prevents typographical errors that break lookup formulas like <code>=VLOOKUP()</code> and <code>=XLOOKUP()</code>.",
+         "<b>Spreadsheet Accuracy:</b> Workplace spreadsheets handle payroll, stock budgets, and invoices. A single missing dollar sign in an absolute reference (like <code>B1</code> instead of <code>$B$1</code>) causes calculations to shift and produce massive errors when autofilled down a column.<br><br>"
+         "<b>Data Validation (Dropdown Menus):</b> Restricting user typing to pre-set dropdown lists (e.g. 'Approved Expense Categories') stops people making spelling mistakes that break lookup formulas like <code>=VLOOKUP()</code> and <code>=IF()</code>.<br><br>"
+         "<b>Handling Common Errors:</b><br>"
+         "&bull; <code>#DIV/0!</code>: You are trying to divide by zero or an empty cell.<br>"
+         "&bull; <code>#VALUE!</code>: A formula is trying to do math on a word or text string (e.g. typing £15 instead of formatting as currency).<br>"
+         "&bull; <code>#REF!</code>: A cell used in your formula was accidentally deleted.<br>"
+         "&bull; <code>#####</code>: The column is simply too narrow to display the number—double-click the column boundary line to widen it!",
          "Standard Operating Checklist: Formula Modeling",
          [("1. Absolute Cell Locking", "Lock tax rates or exchange rate parameters using <code>$</code> syntax (e.g. <code>=A2 * $E$1</code>) before dragging fill handles."),
           ("2. Dynamic Dropdown Lists", "Implement Data Validation &rarr; List &rarr; specify source range to enforce uniform category naming conventions."),
@@ -1321,8 +1772,9 @@ def build_digital_skills_handbook():
         ("Lab 3: Professional Business Correspondence & Netiquette", "LAB3",
          "Email architecture, confidentiality etiquette, thread management, and calendar invites.",
          "business executive typing email laptop clean desk",
-         "<b>Professional Email Architecture:</b> Business email is a permanent legal record. Messages must possess a concise, descriptive subject line (e.g. <code>[URGENT] Q3 Financial Audit Review - Action Required by 17:00</code>), professional salutation, structured body paragraphs, and a compliant corporate signature banner.<br><br>"
-         "<b>The Confidentiality Imperative (CC vs BCC):</b> The UK Information Commissioner's Office (ICO) penalizes organizations thousands of pounds for exposing customer email addresses by using the CC field instead of BCC during group mailings.",
+         "<b>Professional Email Architecture:</b> Business email is a permanent legal record. Messages must have a concise, descriptive subject line (e.g. <code>[URGENT] Q3 Financial Audit Review - Action Required by 17:00</code>), professional salutation, structured body paragraphs, and a compliant corporate signature banner.<br><br>"
+         "<b>The Confidentiality Imperative (CC vs BCC):</b> The UK Information Commissioner's Office (ICO) penalizes organizations thousands of pounds for exposing customer email addresses by using the CC field instead of BCC during group mailings.<br><br>"
+         "<b>Calendar Meeting Invites:</b> Scheduling meetings via digital calendars (Outlook, Teams, Google Calendar) requires checking availability, setting meeting locations or video links, and providing a clear agenda.",
          "Standard Operating Checklist: Email Governance",
          [("1. Subject Line Protocol", "Always include project prefix, topic summary, and response deadline."),
           ("2. BCC Privacy Rule", "Any distribution list to external clients or patients MUST utilize BCC to comply with UK Data Protection regulations."),
@@ -1337,8 +1789,9 @@ def build_digital_skills_handbook():
         ("Lab 4: Cybersecurity Vulnerability Triage & Phishing Defense", "LAB4",
          "Detecting social engineering, spoofed domains, ransomware vectors, and incident logging.",
          "cybersecurity lock shield data protection screen",
-         "<b>Anatomy of Social Engineering:</b> Modern cyber attacks rarely exploit raw software vulnerabilities; they exploit human psychology. Phishing attacks manufacture urgency (e.g. 'Your account will be suspended within 2 hours!'), impersonate trusted authority figures (CEOs, IT helpdesk), and conceal malicious URLs behind misleading anchor text.<br><br>"
-         "<b>Incident Escalation Protocols:</b> When a phishing link is clicked or credentials are inadvertently entered, immediate isolation of the device from the network is mandatory to prevent malware propagation.",
+         "<b>How Phishing Works:</b> Cybercriminals rarely hack complicated software; they trick people by pretending to be trusted colleagues, managers, or organisations. They create panic ('Act within 1 hour!') and disguise fake links behind official-looking buttons.<br><br>"
+         "<b>Inspecting Email Headers &amp; Links:</b> Always check the actual email address after the @ symbol (e.g. <code>@hmrc-tax-refund.co.uk</code> is fake; real government emails end strictly in <code>@hmrc.gov.uk</code>). Hover your mouse over links to see the real destination address.<br><br>"
+         "<b>Emergency Incident Steps:</b> If you click a bad link or enter a password by mistake, immediately disconnect your device from the Wi-Fi or unplug the internet cable. Do NOT turn off the computer (this preserves memory evidence for IT investigators), and report the incident immediately.",
          "Standard Operating Checklist: Threat Triage",
          [("1. Header & Domain Inspection", "Verify sender email domain exactly (e.g. <code>@hmrc-tax-refund.co.uk</code> vs legitimate <code>@hmrc.gov.uk</code>)."),
           ("2. Link Destination Hover", "Hover without clicking to inspect the true hyperlinked URL in the browser status bar."),
@@ -1353,8 +1806,9 @@ def build_digital_skills_handbook():
         ("Lab 5: Corporate Document Processing & Accessibility", "LAB5",
          "Semantic heading styles, automated TOC, alt-text for screen readers, and PDF conversion.",
          "professional printing document review proofreading desk",
-         "<b>Document Accessibility Standards (WCAG 2.1):</b> Corporate publications, patient guides, and training manuals must be accessible to individuals using assistive technologies (screen readers, braille displays). Merely enlarging font size and making text bold does not create a true heading.<br><br>"
-         "<b>Semantic Structure & Automation:</b> Applying true Heading Styles (Heading 1, Heading 2, Heading 3) allows screen readers to navigate document outlines and enables word processors to generate instant, perfectly formatted Tables of Contents.",
+         "<b>Document Accessibility (WCAG Standards):</b> Documents must be accessible to everyone, including people using screen-reading software or screen magnifiers. Merely making text bigger and bold does not make it a real heading.<br><br>"
+         "<b>Why Styles Matter:</b> Applying true Heading Styles (Heading 1, Heading 2, Heading 3) lets screen readers jump directly between chapters and lets Word build an automatic Table of Contents with correct page numbers in one click.<br><br>"
+         "<b>Descriptive Alt-Text:</b> Every image, logo, and chart must have a clear 1-sentence Alt-Text description so visually impaired readers understand what is displayed.",
          "Standard Operating Checklist: Document Accessibility",
          [("1. Semantic Hierarchy", "Apply Heading 1 for document titles, Heading 2 for major chapters, Heading 3 for subsections."),
           ("2. Visual Accessibility", "Ensure minimum text contrast ratio of 4.5:1. Never convey meaning through color alone."),
@@ -1369,8 +1823,9 @@ def build_digital_skills_handbook():
         ("Lab 6: Online Research, Source Reliability & Copyright Compliance", "LAB6",
          "The CRAAP evaluation model, copyright licensing, Creative Commons, and data synthesis.",
          "academic research digital library search internet books",
-         "<b>Information Literacy in the Digital Age:</b> The internet offers boundless information alongside rampant misinformation, biased editorializing, and outdated technical claims. Workplace professionals must systematically evaluate online sources using the CRAAP test: Currency, Relevance, Authority, Accuracy, and Purpose.<br><br>"
-         "<b>Intellectual Property & Licensing:</b> Commercial reuse of text, imagery, or software code without explicit licensing exposes organizations to severe legal copyright infringement claims under the Copyright, Designs and Patents Act 1988.",
+         "<b>Fact-Checking Online Information:</b> The internet contains enormous amounts of useful information alongside outdated guides, biased adverts, and outright misinformation. Always evaluate websites using the <b>CRAAP test</b> (Currency, Relevance, Authority, Accuracy, Purpose).<br><br>"
+         "<b>Understanding Copyright:</b> Under the Copyright, Designs and Patents Act 1988, text and photos found on Google Images belong to their creators. You cannot copy images into company brochures without permission or a commercial license.<br><br>"
+         "<b>Creative Commons (CC):</b> Free legal licenses that let creators share their work with the public. For example, <b>CC-BY</b> means you can use the image as long as you give credit (attribution) to the original creator.",
          "Standard Operating Checklist: Information Verification",
          [("1. Currency & Authority Audit", "Verify publication date and author credentials (peer-reviewed, government statistical agency, or recognized trade body)."),
           ("2. Cross-Verification Rule", "Never cite a critical statistic without confirming it across at least two independent primary sources."),
@@ -1383,21 +1838,21 @@ def build_digital_skills_handbook():
          "3. Compile an annotated corporate research brief comparing two verified telecom providers.")
     ]
 
-    for lab_title, badge, lead, photo_kw, theory_html, sop_title, sop_steps, task_title, task_html in advanced_labs:
-        # Page 1 of Lab: Advanced Concept, Visual Interface & SOP Checklist
+    lab_start_page = p_curr
+    for i, (lab_title, badge, lead, photo_kw, theory_html, sop_title, sop_steps, task_title, task_html) in enumerate(advanced_labs, 1):
+        # Page 1 of Lab: Advanced Concept, Interface & SOP Checklist
         p1_lab = (
             K.page_title(lab_title, kicker="Advanced Digital Software Lab &bull; Part 1: Theory &amp; SOP", badge=badge)
-            + K.hero_image(P(photo_kw), lead, 45)
-            + K.box_html(f"<div style='font-size:10.5pt; line-height:1.45;'>{theory_html}</div>", title="Workplace Technical Architecture &amp; Governance")
+            + digital_hero_image(f"lab{i}", height_mm=40)
+            + K.box_html(f"<div style='font-size:10pt; line-height:1.38;'>{theory_html}</div>", title="Workplace Technical Architecture &amp; Governance")
             + K.box_html(
-                "<table style='width:100%; border-collapse:collapse; font-size:10.5pt; line-height:1.45;'>"
-                + "".join(f"<tr><td style='padding:6px; border-bottom:1px solid #e2e8f0; width:190px;'><b>{step_name}:</b></td>"
-                          f"<td style='padding:6px; border-bottom:1px solid #e2e8f0;'>{step_desc}</td></tr>"
+                "<table style='width:100%; border-collapse:collapse; font-size:9.6pt; line-height:1.32;'>"
+                + "".join(f"<tr><td style='padding:4px; border-bottom:1px solid #e2e8f0; width:170px;'><b>{step_name}:</b></td>"
+                          f"<td style='padding:4px; border-bottom:1px solid #e2e8f0;'>{step_desc}</td></tr>"
                           for step_name, step_desc in sop_steps)
                 + "</table>",
                 title=sop_title
             )
-            + K.fill_notes("Personal Implementation Notes &amp; Software Shortcuts", 18)
         )
         pages.append(K.page(p1_lab, header=(BOOK, f"{badge} &bull; SOP"), footer=BOOK, page_no=p_curr))
         p_curr += 1
@@ -1405,12 +1860,12 @@ def build_digital_skills_handbook():
         # Page 2 of Lab: Hands-On Scenario & Software Lab Task
         p2_lab = (
             K.page_title(f"{badge} &bull; Applied Workplace Hands-On Task", kicker="Advanced Digital Software Lab &bull; Part 2: Hands-On Lab", badge=badge)
-            + K.box_html(f"<div style='font-size:10.5pt; line-height:1.45;'>{task_html}</div>", title=task_title)
+            + K.box_html(f"<div style='font-size:10.2pt; line-height:1.42;'>{task_html}</div>", title=task_title)
             + K.fill_grid("Candidate Command Steps &amp; Technical Implementation Log", min_mm=55)
             + K.box_html(
                 "<div style='display:flex; justify-content:space-between; font-weight:bold; font-size:10pt;'>"
                 "<span>Lab Task Completed: [ &nbsp; ] Yes &emsp; [ &nbsp; ] In Progress</span>"
-                "<span>Lead Tutor Verification: Subi &bull; ____________________</span>"
+                "<span>Lead Tutor Verification: Abdul &bull; ____________________</span>"
                 "</div>",
                 title="Software Lab Sign-Off &amp; Competency Endorsement"
             )
@@ -1418,56 +1873,58 @@ def build_digital_skills_handbook():
         pages.append(K.page(p2_lab, header=(BOOK, f"{badge} &bull; Lab Task"), footer=BOOK, page_no=p_curr))
         p_curr += 1
 
-
-    # pp75–p78: Advanced Workplace IT Frameworks & Diagnostic Reference (4 pages)
+    # -------------------------------------------------------------------------
+    # WORKPLACE IT FRAMEWORKS & DIAGNOSTICS (Pages 76 to 79 &bull; 4 Pages)
+    # -------------------------------------------------------------------------
     extra_it_pages = [
         ("Workplace File Format &amp; Extension Directory", "IT.REF1",
-         "Comprehensive classification of corporate file formats, compression algorithms, and application associations.",
+         "Classification of corporate file formats, compression archives, and software associations.",
          "computer server hard drive data technology storage",
-         "<table style='width:100%; border-collapse:collapse; font-size:10pt; line-height:1.45;'>"
-         "<tr style='background:#f1f5f9;'><th style='padding:6px; text-align:left;'>Extension</th><th style='padding:6px; text-align:left;'>Category</th><th style='padding:6px; text-align:left;'>Associated Software</th><th style='padding:6px; text-align:left;'>Security &amp; Compatibility Notes</th></tr>"
-         "<tr><td style='padding:5px; border-bottom:1px solid #e2e8f0;'><b>.pdf</b></td><td style='padding:5px; border-bottom:1px solid #e2e8f0;'>Document</td><td style='padding:5px; border-bottom:1px solid #e2e8f0;'>Adobe Acrobat / Edge</td><td style='padding:5px; border-bottom:1px solid #e2e8f0;'>Preserves formatting across platforms; read-only default.</td></tr>"
-         "<tr><td style='padding:5px; border-bottom:1px solid #e2e8f0;'><b>.docx / .odt</b></td><td style='padding:5px; border-bottom:1px solid #e2e8f0;'>Word Processing</td><td style='padding:5px; border-bottom:1px solid #e2e8f0;'>Word / LibreOffice</td><td style='padding:5px; border-bottom:1px solid #e2e8f0;'>Standard editable documents. May harbor malicious macros.</td></tr>"
-         "<tr><td style='padding:5px; border-bottom:1px solid #e2e8f0;'><b>.xlsx / .csv</b></td><td style='padding:5px; border-bottom:1px solid #e2e8f0;'>Spreadsheet</td><td style='padding:5px; border-bottom:1px solid #e2e8f0;'>Excel / Google Sheets</td><td style='padding:5px; border-bottom:1px solid #e2e8f0;'>.csv is plain text without formulas; .xlsx supports formulas and charts.</td></tr>"
-         "<tr><td style='padding:5px; border-bottom:1px solid #e2e8f0;'><b>.png / .jpg</b></td><td style='padding:5px; border-bottom:1px solid #e2e8f0;'>Raster Image</td><td style='padding:5px; border-bottom:1px solid #e2e8f0;'>Photos / Browser</td><td style='padding:5px; border-bottom:1px solid #e2e8f0;'>.png supports transparency; .jpg provides high photographic compression.</td></tr>"
-         "<tr><td style='padding:5px; border-bottom:1px solid #e2e8f0;'><b>.zip / .tar.gz</b></td><td style='padding:5px; border-bottom:1px solid #e2e8f0;'>Archive</td><td style='padding:5px; border-bottom:1px solid #e2e8f0;'>WinZip / 7-Zip</td><td style='padding:5px; border-bottom:1px solid #e2e8f0;'>Bundles and compresses multiple files; scan before extraction.</td></tr>"
-         "<tr><td style='padding:5px; border-bottom:1px solid #e2e8f0;'><b>.exe / .bat</b></td><td style='padding:5px; border-bottom:1px solid #e2e8f0;'>Executable</td><td style='padding:5px; border-bottom:1px solid #e2e8f0;'>Windows OS Core</td><td style='padding:5px; border-bottom:1px solid #e2e8f0;'>Executes code directly. <b>Extreme danger in email attachments!</b></td></tr>"
+         "<table style='width:100%; border-collapse:collapse; font-size:9.8pt; line-height:1.38;'>"
+         "<tr style='background:#f1f5f9;'><th style='padding:5px; text-align:left;'>Extension</th><th style='padding:5px; text-align:left;'>Category</th><th style='padding:5px; text-align:left;'>Associated Software</th><th style='padding:5px; text-align:left;'>Security &amp; Everyday Use Notes</th></tr>"
+         "<tr><td style='padding:4.5px; border-bottom:1px solid #e2e8f0;'><b>.pdf</b></td><td style='padding:4.5px; border-bottom:1px solid #e2e8f0;'>Document</td><td style='padding:4.5px; border-bottom:1px solid #e2e8f0;'>Adobe Acrobat / Edge</td><td style='padding:4.5px; border-bottom:1px solid #e2e8f0;'>Preserves formatting on all screens; read-only default for final reports.</td></tr>"
+         "<tr><td style='padding:4.5px; border-bottom:1px solid #e2e8f0;'><b>.docx / .odt</b></td><td style='padding:4.5px; border-bottom:1px solid #e2e8f0;'>Word Processing</td><td style='padding:4.5px; border-bottom:1px solid #e2e8f0;'>Word / Google Docs</td><td style='padding:4.5px; border-bottom:1px solid #e2e8f0;'>Standard editable documents. Never open untrusted files with macros.</td></tr>"
+         "<tr><td style='padding:4.5px; border-bottom:1px solid #e2e8f0;'><b>.xlsx / .csv</b></td><td style='padding:4.5px; border-bottom:1px solid #e2e8f0;'>Spreadsheet</td><td style='padding:4.5px; border-bottom:1px solid #e2e8f0;'>Excel / Google Sheets</td><td style='padding:4.5px; border-bottom:1px solid #e2e8f0;'>.csv is plain text numbers; .xlsx supports formulas, formatting, and charts.</td></tr>"
+         "<tr><td style='padding:4.5px; border-bottom:1px solid #e2e8f0;'><b>.png / .jpg</b></td><td style='padding:4.5px; border-bottom:1px solid #e2e8f0;'>Image / Photo</td><td style='padding:4.5px; border-bottom:1px solid #e2e8f0;'>Photos / Browser</td><td style='padding:4.5px; border-bottom:1px solid #e2e8f0;'>.png supports transparent backgrounds; .jpg is standard for photographs.</td></tr>"
+         "<tr><td style='padding:4.5px; border-bottom:1px solid #e2e8f0;'><b>.zip</b></td><td style='padding:4.5px; border-bottom:1px solid #e2e8f0;'>Compressed Folder</td><td style='padding:4.5px; border-bottom:1px solid #e2e8f0;'>File Explorer / WinZip</td><td style='padding:4.5px; border-bottom:1px solid #e2e8f0;'>Bundles multiple files together into a smaller file size for easy emailing.</td></tr>"
+         "<tr><td style='padding:4.5px; border-bottom:1px solid #e2e8f0;'><b>.exe / .bat</b></td><td style='padding:4.5px; border-bottom:1px solid #e2e8f0;'>Executable Code</td><td style='padding:4.5px; border-bottom:1px solid #e2e8f0;'>Windows Core</td><td style='padding:4.5px; border-bottom:1px solid #e2e8f0;'>Runs programs directly. <b>Extreme danger in email attachments!</b></td></tr>"
          "</table>",
          "Golden Rule: Never double-click an executable attachment (.exe, .scr, .vbs) received via email, even if the sender appears familiar!"),
 
         ("Spreadsheet Error Diagnostics &amp; Function Syntax", "IT.REF2",
-         "Troubleshooting calculation errors, reference issues, and syntax anomalies under pressure.",
+         "Troubleshooting calculation errors, reference issues, and formula syntax anomalies.",
          "calculator accounting finance numbers calculation",
-         "<table style='width:100%; border-collapse:collapse; font-size:10pt; line-height:1.45;'>"
-         "<tr style='background:#f1f5f9;'><th style='padding:6px; text-align:left;'>Error Code</th><th style='padding:6px; text-align:left;'>Root Cause</th><th style='padding:6px; text-align:left;'>Remediation Step</th></tr>"
-         "<tr><td style='padding:5px; border-bottom:1px solid #e2e8f0;'><b>#DIV/0!</b></td><td style='padding:5px; border-bottom:1px solid #e2e8f0;'>Dividing by zero or an empty cell.</td><td style='padding:5px; border-bottom:1px solid #e2e8f0;'>Wrap formula in <code>=IF(B2=0, 0, A2/B2)</code> to handle zero values safely.</td></tr>"
-         "<tr><td style='padding:5px; border-bottom:1px solid #e2e8f0;'><b>#VALUE!</b></td><td style='padding:5px; border-bottom:1px solid #e2e8f0;'>Mathematical operation performed on text string.</td><td style='padding:5px; border-bottom:1px solid #e2e8f0;'>Verify that referenced cells contain purely numerical digits, not symbols.</td></tr>"
-         "<tr><td style='padding:5px; border-bottom:1px solid #e2e8f0;'><b>#REF!</b></td><td style='padding:5px; border-bottom:1px solid #e2e8f0;'>Cell referenced in formula was deleted.</td><td style='padding:5px; border-bottom:1px solid #e2e8f0;'>Undo deletion (<code>Ctrl + Z</code>) or re-point the formula to the correct active coordinate.</td></tr>"
-         "<tr><td style='padding:5px; border-bottom:1px solid #e2e8f0;'><b>#NAME?</b></td><td style='padding:5px; border-bottom:1px solid #e2e8f0;'>Misspelled function name (e.g. <code>=AVRAGE</code>).</td><td style='padding:5px; border-bottom:1px solid #e2e8f0;'>Correct spelling to standard syntax: <code>=AVERAGE()</code>, <code>=SUM()</code>, <code>=COUNT()</code>.</td></tr>"
-         "<tr><td style='padding:5px; border-bottom:1px solid #e2e8f0;'><b>#####</b></td><td style='padding:5px; border-bottom:1px solid #e2e8f0;'>Column width is too narrow to display the number.</td><td style='padding:5px; border-bottom:1px solid #e2e8f0;'>Double-click column boundary header line to autofit column width.</td></tr>"
+         "<table style='width:100%; border-collapse:collapse; font-size:9.8pt; line-height:1.38;'>"
+         "<tr style='background:#f1f5f9;'><th style='padding:5px; text-align:left;'>Error Code</th><th style='padding:5px; text-align:left;'>Root Cause</th><th style='padding:5px; text-align:left;'>Plain English Fix</th></tr>"
+         "<tr><td style='padding:4.5px; border-bottom:1px solid #e2e8f0;'><b>#DIV/0!</b></td><td style='padding:4.5px; border-bottom:1px solid #e2e8f0;'>Dividing by zero or an empty cell.</td><td style='padding:4.5px; border-bottom:1px solid #e2e8f0;'>Wrap formula in <code>=IF(B2=0, 0, A2/B2)</code> or verify divisor cell has a number.</td></tr>"
+         "<tr><td style='padding:4.5px; border-bottom:1px solid #e2e8f0;'><b>#VALUE!</b></td><td style='padding:4.5px; border-bottom:1px solid #e2e8f0;'>Mathematical formula applied to text.</td><td style='padding:4.5px; border-bottom:1px solid #e2e8f0;'>Check that referenced cells contain only digits, not letters or typed symbols.</td></tr>"
+         "<tr><td style='padding:4.5px; border-bottom:1px solid #e2e8f0;'><b>#REF!</b></td><td style='padding:4.5px; border-bottom:1px solid #e2e8f0;'>A cell referenced in the formula was deleted.</td><td style='padding:4.5px; border-bottom:1px solid #e2e8f0;'>Undo deletion (<code>Ctrl + Z</code>) or retype the formula with the correct cell.</td></tr>"
+         "<tr><td style='padding:4.5px; border-bottom:1px solid #e2e8f0;'><b>#NAME?</b></td><td style='padding:4.5px; border-bottom:1px solid #e2e8f0;'>Misspelled function name (e.g. =AVRAGE).</td><td style='padding:4.5px; border-bottom:1px solid #e2e8f0;'>Check function spelling: <code>=AVERAGE()</code>, <code>=SUM()</code>, <code>=COUNT()</code>.</td></tr>"
+         "<tr><td style='padding:4.5px; border-bottom:1px solid #e2e8f0;'><b>#####</b></td><td style='padding:4.5px; border-bottom:1px solid #e2e8f0;'>Column width is too narrow for the number.</td><td style='padding:4.5px; border-bottom:1px solid #e2e8f0;'>Double-click the column boundary line at the top to widen the column.</td></tr>"
          "</table>",
          "Pro-Tip: Always use the Formula Auditing toolbar (Trace Precedents / Trace Dependents) to visualize how formulas link across large workbooks."),
 
         ("Cybersecurity Incident Escalation &amp; GDPR Action Flowchart", "IT.REF3",
          "Statutory protocols for reporting unauthorized data disclosures and suspected cyber intrusions.",
          "cybersecurity lock shield data protection screen",
-         "<div style='font-size:10.5pt; line-height:1.5;'>"
+         "<div style='font-size:10.2pt; line-height:1.45;'>"
          "<p><b>Phase 1 &bull; Immediate Containment (Minutes 0&ndash;15):</b><br>"
-         "&bull; Disconnect device from Wi-Fi/Ethernet immediately. Do NOT turn off the computer (preserves forensic volatile RAM memory).<br>"
-         "&bull; Alert immediate line manager and designated Information Security Officer.</p>"
+         "&bull; Disconnect device from Wi-Fi or unplug the network cable immediately.<br>"
+         "&bull; Do NOT turn off the computer (turning it off erases memory clues that IT investigators need).<br>"
+         "&bull; Alert your line manager and the designated IT Security / Data Protection Officer.</p>"
          "<p><b>Phase 2 &bull; Investigation &amp; Triage (Hours 1&ndash;24):</b><br>"
-         "&bull; Determine category of breached data: Does it contain Special Category PII (medical records, biometric data, financial details)?<br>"
-         "&bull; Audit access logs to establish extent of unauthorized extraction.</p>"
+         "&bull; Identify what data was exposed: Does it contain sensitive personal data (medical notes, bank details)?<br>"
+         "&bull; Check login logs to see how far the breach reached.</p>"
          "<p><b>Phase 3 &bull; Statutory Regulatory Disclosure (Within 72 Hours):</b><br>"
-         "&bull; Under Article 33 of UK GDPR, the Information Commissioner's Office (ICO) must be notified within 72 hours of becoming aware of a high-risk personal data breach.<br>"
-         "&bull; Notify affected data subjects without undue delay if risk to their rights and freedoms is significant.</p>"
+         "&bull; Under UK GDPR, high-risk personal data breaches must be reported to the <b>Information Commissioner's Office (ICO) within 72 hours</b>.<br>"
+         "&bull; Notify affected customers or patients without delay if their rights and privacy are at risk.</p>"
          "</div>",
          "Legal Mandate: Fines for non-reporting under UK GDPR can reach &pound;17.5 million or 4% of global annual turnover, whichever is greater."),
 
         ("Workplace Digital Hygiene &amp; Device Ergonomics Audit", "IT.REF4",
          "Personal compliance audit for password security, multi-factor tokens, and postural health.",
          "office team computer meeting collaborative training",
-         "<div style='font-size:10.5pt; line-height:1.5;'>"
+         "<div style='font-size:10.2pt; line-height:1.45;'>"
          "<p><b>Digital Security Hygiene Checklist:</b><br>"
          "[ &nbsp; ] Passphrases consist of three random, memorable words (minimum 14 characters).<br>"
          "[ &nbsp; ] Multi-factor authentication (MFA) enabled on email, cloud drives, and internal portals.<br>"
@@ -1478,41 +1935,41 @@ def build_digital_skills_handbook():
          "[ &nbsp; ] Top of computer monitor positioned at eye level; distance 50&ndash;70 cm from face.<br>"
          "[ &nbsp; ] Forearms rest horizontal to desk surface; wrists remain straight during typing.<br>"
          "[ &nbsp; ] Lumbar spine supported by adjustable ergonomic backrest; feet flat on floor or footrest.<br>"
-         "[ &nbsp; ] 20-20-20 rule implemented: Every 20 minutes, look at an object 20 feet away for 20 seconds.</p>"
+         "[ &nbsp; ] <b>20-20-20 rule implemented:</b> Every 20 minutes, look at an object 20 feet away for 20 seconds.</p>"
          "</div>",
          "Lead Instructor Endorsement: Maintaining daily digital hygiene and physical ergonomics ensures long-term career productivity and regulatory compliance.")
     ]
 
-    for it_title, badge, lead, photo_kw, content_html, box_rule in extra_it_pages:
+    it_ref_start_page = p_curr
+    for i, (it_title, badge, lead, photo_kw, content_html, box_rule) in enumerate(extra_it_pages, 1):
         it_body = (
             K.page_title(it_title, kicker="Statutory Standards &amp; Workplace IT Framework", badge=badge)
-            + K.hero_image(P(photo_kw), lead, 45)
+            + digital_hero_image(f"it_ref{i}", height_mm=46)
             + K.box_html(content_html, title="Workplace Technical Specification &amp; Architecture")
             + K.rule_box("Core Professional Compliance Mandate", f"<p style='margin:0;'>{box_rule}</p>")
-            + K.fill_notes("Personal Implementation Notes &amp; Enterprise Protocols", 22)
+            + K.fill_notes("Personal Implementation Notes &amp; Enterprise Protocols", 14)
         )
         pages.append(K.page(it_body, header=(BOOK, f"{badge} &bull; IT Framework"), footer=BOOK, page_no=p_curr))
         p_curr += 1
 
-    # pp63–p82: Back matter reference section (via K.ref_pages)
+    # -------------------------------------------------------------------------
+    # REFERENCE SECTION &bull; WORKED SOLUTIONS & DIRECTORY (Pages 80 to 85)
+    # -------------------------------------------------------------------------
+    ref_start_page = p_curr
     ref_blocks = []
     # Unit solutions
     for title_str, sol_html in ssr.DIGITAL_SKILLS_SOLUTIONS["units"]:
-        ref_blocks.append(K.ref_block(title_str, sol_html))
+        ref_blocks.extend(split_tall_ref_block(title_str, sol_html, max_chars=950))
     # Mock solutions
     for title_str, sol_html in ssr.DIGITAL_SKILLS_SOLUTIONS["mocks"]:
-        ref_blocks.append(K.ref_block(title_str, sol_html))
-    # Shortcuts
-    ref_blocks.append(K.ref_block("Universal Operating System &amp; Browser Shortcuts", ssr.DIGITAL_SKILLS_SHORTCUTS))
-    # Glossary
-    gloss_html = "".join(f"<dl><dt>{t}</dt><dd>{d}</dd></dl>" for t, d in ssr.DIGITAL_SKILLS_GLOSSARY)
-    ref_blocks.append(K.ref_block("Digital Skills &amp; Cybersecurity Glossary", gloss_html))
-    # Index
-    ix_html = ""
-    for letter, entries in ssr.DIGITAL_SKILLS_INDEX:
-        items = "".join(f"<div class='ix'><span>{t}</span><span>{p}</span></div>" for t, p in entries)
-        ix_html += f"<div class='ix-letter'>{letter}</div>{items}"
-    ref_blocks.append(K.ref_block("Digital Skills Curriculum Index", ix_html))
+        ref_blocks.extend(split_tall_ref_block(title_str, sol_html, max_chars=950))
+    # Shortcuts (split at 600 chars to avoid tall columns)
+    ref_blocks.extend(split_tall_ref_block("Universal Operating System &amp; Browser Shortcuts", ssr.DIGITAL_SKILLS_SHORTCUTS, max_chars=600))
+    append_split_glossary_and_index(
+        ref_blocks,
+        ssr.DIGITAL_SKILLS_GLOSSARY, "Digital Skills &amp; Cybersecurity Glossary",
+        ssr.DIGITAL_SKILLS_INDEX, "Digital Skills Curriculum Index"
+    )
 
     ref_page_list = K.ref_pages("Official Solutions, Shortcuts &amp; Reference Directory", ref_blocks,
                                 BOOK, start_page=p_curr, subtitle="Complete Practical Workflow Solutions &amp; Statutory Guidance",
@@ -1520,12 +1977,15 @@ def build_digital_skills_handbook():
     pages.extend(ref_page_list)
     p_curr += len(ref_page_list)
 
-    # Competency Passport & Certification (pp 83–86)
-    # Page 83: Competency Matrix
+    # -------------------------------------------------------------------------
+    # COMPETENCY PASSPORT & CERTIFICATION (Pages 86 and 87)
+    # -------------------------------------------------------------------------
+    # Page 86: Competency Passport
+    cm_start_page = p_curr
     cm_body = (
         K.page_title("Digital Skills Competency Passport", kicker="National Standards Mastery Audit", badge="CP")
         + K.box_html(
-            "<table style='width:100%; border-collapse:collapse; font-size:11pt;'>"
+            "<table style='width:100%; border-collapse:collapse; font-size:10.5pt; line-height:1.45;'>"
             "<tr style='background:#f1f5f9;'><th style='padding:6px; text-align:left;'>Domain</th><th>Level</th><th>Assessment Mode</th><th>Status</th><th>Date</th></tr>"
             "<tr><td style='padding:6px; border-bottom:1px solid #e2e8f0;'>1. Using Devices &amp; Handling Info</td><td style='text-align:center;'>Level 1/2</td><td style='text-align:center;'>Folder Structure Task</td><td style='text-align:center;'>[ &nbsp; ] Competent</td><td>&nbsp;</td></tr>"
             "<tr><td style='padding:6px; border-bottom:1px solid #e2e8f0;'>2. Creating &amp; Editing</td><td style='text-align:center;'>Level 1/2</td><td style='text-align:center;'>Spreadsheet &amp; Chart</td><td style='text-align:center;'>[ &nbsp; ] Competent</td><td>&nbsp;</td></tr>"
@@ -1537,39 +1997,112 @@ def build_digital_skills_handbook():
         )
         + K.cartoon_tip(get_cartoon("priya tutor writing notes"), "Priya",
                         "Retain this signed passport in your professional portfolio as evidence of digital literacy for employers and apprenticeship standards.")
-        + K.fill_notes("Personal Professional Development Targets", 36)
+        + K.fill_notes("Personal Professional Development Targets", 30)
     )
     pages.append(K.page(cm_body, header=(BOOK, "Competency Passport"), footer=BOOK, page_no=p_curr))
     p_curr += 1
 
-    # Page 84: Official Certificate
+    # Page 87: Official Certificate
+    cert_start_page = p_curr
     cert_body = (
         K.page_title("Certificate of Digital Competence", kicker="National Curriculum Milestone Sign-Off", badge="CERT")
-        + K.hero_image(P("adult student graduation diploma celebration success"), "Empowering learners with essential 21st-century digital capabilities.", 55)
+        + digital_hero_image("cert", height_mm=58)
         + K.box_html(
-            "<div style='text-align:center; padding:15px; font-size:12pt; line-height:1.7;'>"
+            "<div style='text-align:center; padding:10px; font-size:11pt; line-height:1.55;'>"
             "<p>This certifies that</p>"
             "<p style='font-size:18pt; font-weight:bold; border-bottom:2px solid var(--accent); display:inline-block; min-width:320px; padding-bottom:4px;'>&nbsp;</p>"
             "<p>has completed the Essential Digital Skills National Curriculum and successfully passed all 4 synoptic workplace scenario examinations.</p>"
-            "<table style='width:100%; margin-top:20px; font-size:11pt; border-collapse:collapse;'>"
-            "<tr><td style='text-align:left;'><b>Lead Instructor:</b> Subi</td><td style='text-align:right;'><b>Date Verified:</b> _______________</td></tr>"
+            "<table style='width:100%; margin-top:14px; font-size:10.2pt; border-collapse:collapse;'>"
+            "<tr><td style='text-align:left;'><b>Lead Instructor:</b> Abdul</td><td style='text-align:right;'><b>Date Verified:</b> _______________</td></tr>"
             "<tr><td style='text-align:left;'><b>Practical Exam Score:</b> ______ / 50</td><td style='text-align:right;'><b>Exam Centre:</b> Master Functional Skills</td></tr>"
             "</table>"
             "</div>",
             title="Master Functional Skills &bull; Certificate of Digital Competence"
         )
-        + K.fill_notes("Final Examination Tips &amp; Digital Safety Reminders", 30)
+        + K.fill_notes("Final Examination Tips &amp; Digital Safety Reminders", 20)
     )
     pages.append(K.page(cert_body, header=(BOOK, "Competency Certificate"), footer=BOOK, page_no=p_curr))
     p_curr += 1
 
-    # Inside Back Cover & Back Cover
+    # -------------------------------------------------------------------------
+    # POPULATE PAGES 2 & 3 WITH COMPLETE 2-PAGE TABLE OF CONTENTS
+    # -------------------------------------------------------------------------
+    toc_p1_groups = [
+        ("Foundation Knowledge &amp; Qualification Framework", [
+            ("FM.1", "Hardware, Operating Systems &amp; Cloud Storage Architecture", "4"),
+            ("FM.2", "National Curriculum Diagnostic Skills Audit &amp; Self-Assessment", "5"),
+            ("FM.3", "The 5 Statutory DfE Skill Areas &amp; Examination Blueprint", "6"),
+            ("FM.4", "Learner Competency Milestone Tracker &amp; Target Log", "7"),
+        ]),
+        ("10 Practical Curriculum Units &bull; All 5 DfE Statutory Domains (4 Pages Each)", [
+            ("Unit 1", "Operating Systems, File Hierarchy &amp; Cloud Storage (Domain 1)", "8"),
+            ("Unit 2", "Advanced Search Syntax &amp; Information Verification (Domain 1)", "12"),
+            ("Unit 3", "Professional Word Processing &amp; Structured Documents (Domain 2)", "16"),
+            ("Unit 4", "Spreadsheet Modeling, Formulas &amp; Functions (Domain 2)", "20"),
+            ("Unit 5", "Presentation Design, Multimedia &amp; Visual Slides (Domain 2)", "24"),
+            ("Unit 6", "Professional Email Etiquette, CC/BCC &amp; Data Privacy (Domain 3)", "28"),
+            ("Unit 7", "Video Conferencing, Screen Sharing &amp; Online Collaboration (Domain 3)", "32"),
+            ("Unit 8", "E-Commerce Navigation, Secure Payments &amp; Online Shopping (Domain 4)", "36"),
+            ("Unit 9", "Public Digital Services, GOV.UK Portals &amp; Online Forms (Domain 4)", "40"),
+            ("Unit 10", "Cybersecurity, Passwords, MFA &amp; UK GDPR Compliance (Domain 5)", "44"),
+        ])
+    ]
+
+    toc_p2_groups = [
+        ("4 Synoptic Workplace Scenario Mock Examinations (4 Pages Each)", [
+            ("Mock 1", "Medical Practice Portal &amp; Patient Records Administration", "48"),
+            ("Mock 2", "Community Food Bank Logistics &amp; Stock Tracking Spreadsheet", "52"),
+            ("Mock 3", "Apprentice Training Hub &amp; E-Learning Administration", "56"),
+            ("Mock 4", "Digital Library Archive &amp; Asset Loan Management", "60"),
+        ]),
+        ("6 Advanced Digital Software Workflow Laboratories (2 Pages Each)", [
+            ("Lab 1", "Cloud Storage Architecture &amp; Access Permissions (View, Edit, Manage)", "64"),
+            ("Lab 2", "Advanced Spreadsheet Modeling &amp; Data Validation Dropdowns", "66"),
+            ("Lab 3", "Professional Business Correspondence, Dispute Letters &amp; Invites", "68"),
+            ("Lab 4", "Cybersecurity Vulnerability Triage &amp; Phishing Incident Logging", "70"),
+            ("Lab 5", "Corporate Document Processing, Alt-Text &amp; Accessible PDF Tagging", "72"),
+            ("Lab 6", "Online Research, Source Reliability (CRAAP Test) &amp; Copyright", "74"),
+        ]),
+        ("Workplace IT Frameworks, Worked Solutions &amp; Official Certification", [
+            ("IT.REF1", "Workplace File Format, Compression &amp; Extension Directory", "76"),
+            ("IT.REF2", "Spreadsheet Error Diagnostics (#VALUE!, #REF!) &amp; Function Syntax", "77"),
+            ("IT.REF3", "Cybersecurity Incident Escalation &amp; 72-Hour GDPR Flowchart", "78"),
+            ("IT.REF4", "Workplace Digital Security Hygiene &amp; 20-20-20 Ergonomics Audit", "79"),
+            ("REF.1", "Comprehensive Worked Solutions: Units 1 to 10 Practical Drills", "80"),
+            ("REF.2", "Comprehensive Worked Solutions: Practical Mock Exams 1 to 4", "82"),
+            ("REF.3", "Universal Operating System Shortcuts, Glossary &amp; Curriculum Index", "83"),
+            ("CP", "Digital Skills Competency Passport (National Standards Sign-Off)", "86"),
+            ("CERT", "Master Functional Skills Official Certificate of Digital Competence", "87"),
+        ])
+    ]
+
+    pages[1] = digital_skills_toc_p1(
+        "Essential Digital Skills &bull; EDSQ",
+        "Comprehensive National Standards Handbook &bull; The 5 Statutory Domains &amp; Units 1 to 10",
+        "CONTENTS",
+        toc_p1_groups,
+        footer=BOOK
+    )
+
+    pages[2] = digital_skills_toc_p2(
+        "Essential Digital Skills &bull; EDSQ",
+        "Workplace Scenario Mock Exams, Advanced Software Labs &amp; Technical Reference Directory",
+        "CONTENTS",
+        toc_p2_groups,
+        footer=BOOK
+    )
+
+    # -------------------------------------------------------------------------
+    # PAGE 88: BACK COVER
+    # -------------------------------------------------------------------------
     pages.append(K.back_cover(back_cov))
+
     pdf_path = DOWNLOADS / "MasterFunctionalSkills_Digital_Skills_Handbook.pdf"
     print(f"Total Pages Assembled: {len(pages)}")
     res = K.render_pdf(pages, pdf_path, theme=cover_theme, entry3=False, title="Master Functional Skills - Digital Skills Handbook")
-    print(f"Rendered: {res['pdf']} ({len(pages)} pages)")
+    print(f"Rendered: {res['pdf']} ({len(pages)} pages) | Overflows: {res.get('overflow', [])}")
     return pdf_path
+
 
 # =============================================================================
 # 4. BKSB Remediation Workbook (A4 ~88 Pages)
@@ -1596,28 +2129,14 @@ def build_bksb_remediation_workbook():
     # p1: Front Cover
     pages.append(K.front_cover(front_cov))
 
-    # p2: Inside Cover & Diagnostic Matrix
-    pages.append(K.inside_cover(
-        "BKSB &bull; Diagnostic Remediation",
-        "Targeted Diagnostic Workbook &bull; 24 High-Frequency Failure Modes, Worked Models &amp; Candidate Retry Booklets",
-        "BKSB Remediation",
-        [
-            ("1", "The BKSB Diagnostic Remediation Methodology &amp; Protocol", "3"),
-            ("2", "Personal Diagnostic Score Tracker &amp; Remediation Schedule", "4"),
-            ("3", "Algorithmic Marking Traps &amp; Online Interface Navigation", "5"),
-            ("4", "Diagnostic Error Classification &amp; Remediation Pathways", "6"),
-            ("M1&ndash;M24", "24 High-Frequency Diagnostic Failure Modes (48 pages)", "7"),
-            ("WS1&ndash;WS8", "8 Specialist Interface &amp; Rapid Diagnostic Workshops (8 pages)", "55"),
-            ("MS", "Comprehensive Worked Solutions &amp; Step-by-Step Guidance (20 pages)", "63"),
-            ("CERT", "Diagnostic Re-assessment Log &amp; Level 2 Mastery Certificate", "83"),
-        ],
-        footer=BOOK
-    ))
+    # Pages 2 and 3 will be populated with the 2-page TOC at the end of compilation
+    pages.append("")  # Page 2: TOC Part 1 placeholder
+    pages.append("")  # Page 3: TOC Part 2 placeholder
 
-    # p3: Methodology
+    # p4: Methodology
     p3_body = (
         K.page_title("The BKSB Remediation Methodology", kicker="Tutor Diagnostic Framework", badge="MT")
-        + K.hero_image(P("tutor teaching adult student smiling classroom"), "Targeting the exact misconception turns repeated errors into permanent exam mastery.", 52)
+        + K.hero_image(P("tutor teaching adult student smiling classroom"), "Targeting the exact misconception turns repeated errors into permanent exam mastery.", 46)
         + K.box_html(
             "<div style='font-size:11.5pt; line-height:1.6;'>"
             "<p><b>Phase 1 &bull; Diagnostic Error Detection:</b> Identify the exact mathematical or grammatical trigger flagged by online assessment algorithms.</p>"
@@ -1633,9 +2152,9 @@ def build_bksb_remediation_workbook():
                      golden_title="Tutor Golden Rule", watch_title="Online Test Trap!")
         + K.fill_notes("My Personal Error Patterns &amp; Focus Areas", 22)
     )
-    pages.append(K.page(p3_body, header=(BOOK, "Methodology"), footer=BOOK, page_no=3))
+    pages.append(K.page(p3_body, header=(BOOK, "Methodology"), footer=BOOK, page_no=4))
 
-    # p4: Algorithmic Marking Traps
+    # p5: Algorithmic Marking Traps
     p4_body = (
         K.page_title("Algorithmic Marking Traps &amp; Insights", kicker="Online Platform Mechanics", badge="TR")
         + K.box_html(
@@ -1650,13 +2169,13 @@ def build_bksb_remediation_workbook():
             "</table></div>",
             title="Why Online Platforms Mark Correct Answers Wrong"
         )
-        + K.cartoon_tip(get_cartoon("abdul tutor explaining"), "Subi",
+        + K.cartoon_tip(get_cartoon("abdul tutor explaining"), "Abdul",
                         "Look closely at the answer box! If the &pound; sign is already printed outside the text input box, DO NOT type &pound; inside the box. Typing '&pound;25.00' into a box preceded by '&pound;' causes the system to read '&pound;&pound;25.00' and mark it wrong!")
         + K.fill_notes("Personal Checklist for Online Computer Tests", 22)
     )
-    pages.append(K.page(p4_body, header=(BOOK, "Algorithmic Traps"), footer=BOOK, page_no=4))
+    pages.append(K.page(p4_body, header=(BOOK, "Algorithmic Traps"), footer=BOOK, page_no=5))
 
-    # p5: Diagnostic Error Classification
+    # p6: Diagnostic Error Classification
     p5_body = (
         K.page_title("Diagnostic Error Classification", kicker="Root Cause Taxonomy", badge="CL")
         + K.hero_image(P("adult student thinking puzzled desk study"), "Categorizing your mistake is the first step toward permanent mastery.", 50)
@@ -1673,9 +2192,9 @@ def build_bksb_remediation_workbook():
                      "<p>For every red X on your screen, determine whether it was Type A, B, C, or D. If Type A, review the worked model fix. If Type B, write down the formatting rule. If Type C, highlight the prompt text.</p>")
         + K.fill_notes("My Most Frequent Error Category &amp; Corrective Habit", 22)
     )
-    pages.append(K.page(p5_body, header=(BOOK, "Error Taxonomy"), footer=BOOK, page_no=5))
+    pages.append(K.page(p5_body, header=(BOOK, "Error Taxonomy"), footer=BOOK, page_no=6))
 
-    # p6: Score Tracker
+    # p7: Score Tracker
     p6_body = (
         K.page_title("Personal Diagnostic Remediation Tracker", kicker="Scores &amp; Remediation Monitoring", badge="TR")
         + K.box_html(
@@ -1693,12 +2212,12 @@ def build_bksb_remediation_workbook():
             + "</table>",
             title="The 24 Diagnostic Remediation Milestones"
         )
-        + K.fill_notes("Target Remediation Schedule with Tutor Subi", 14)
+        + K.fill_notes("Target Remediation Schedule with Tutor Abdul", 14)
     )
-    pages.append(K.page(p6_body, header=(BOOK, "Score Tracker"), footer=BOOK, page_no=6))
+    pages.append(K.page(p6_body, header=(BOOK, "Score Tracker"), footer=BOOK, page_no=7))
 
-    # pp7–p54: 24 Failure Mode Masterclasses (2 pages per mode = 48 pages)
-    p_curr = 7
+    # pp8–p55: 24 Failure Mode Masterclasses (2 pages per mode = 48 pages)
+    p_curr = 8
     for m_idx, mode in enumerate(ssc.BKSB_MODES, start=1):
         m_title = mode["title"]
         m_strand = mode["strand"]
@@ -1809,6 +2328,7 @@ def build_bksb_remediation_workbook():
          "Candidate Working Grid &bull; Rapid Sprint 4")
     ]
 
+    bksb_ws_start_page = p_curr
     for ws_title, badge, lead, photo_kw, theory_html, drill_title in spec_workshops:
         ws_body = (
             K.page_title(ws_title, kicker="Specialist Interface &amp; Rapid Diagnostic Sprint", badge=badge.upper())
@@ -1820,6 +2340,7 @@ def build_bksb_remediation_workbook():
         pages.append(K.page(ws_body, header=(BOOK, "Diagnostic Sprint"), footer=BOOK, page_no=p_curr))
         p_curr += 1
     # pp63–p78: 4 Full Sectional Diagnostic Examination Papers (16 pages)
+    bksb_dp_start_page = p_curr
     for paper in ssc.BKSB_PAPERS:
         p_title = paper["title"]
         badge = paper["badge"]
@@ -1842,26 +2363,23 @@ def build_bksb_remediation_workbook():
 
 
     # pp63–p82: Back matter reference section (via K.ref_pages)
+    ref_start_page = p_curr
     ref_blocks = []
     # Solutions for all 24 Modes
     for m_idx in range(1, 25):
         for title_str, sol_html in ssr.BKSB_STAGE2_SOLUTIONS[m_idx]:
-            ref_blocks.append(K.ref_block(title_str, sol_html))
+            ref_blocks.extend(split_tall_ref_block(title_str, sol_html, max_chars=950))
     # Solutions for 4 Diagnostic Papers
     for p_num in range(1, 5):
         for title_str, sol_html in ssr.BKSB_PAPERS_SOLUTIONS.get(p_num, []):
-            ref_blocks.append(K.ref_block(title_str, sol_html))
+            ref_blocks.extend(split_tall_ref_block(title_str, sol_html, max_chars=950))
     # Golden rules
-    ref_blocks.append(K.ref_block("Master Diagnostic Golden Rules Directory", ssr.BKSB_GOLDEN_RULES))
-    # Glossary
-    gloss_html = "".join(f"<dl><dt>{t}</dt><dd>{d}</dd></dl>" for t, d in ssr.BKSB_GLOSSARY)
-    ref_blocks.append(K.ref_block("Diagnostic &amp; Algorithmic Glossary", gloss_html))
-    # Index
-    ix_html = ""
-    for letter, entries in ssr.BKSB_INDEX:
-        items = "".join(f"<div class='ix'><span>{t}</span><span>{p}</span></div>" for t, p in entries)
-        ix_html += f"<div class='ix-letter'>{letter}</div>{items}"
-    ref_blocks.append(K.ref_block("Remediation &amp; Misconception Index", ix_html))
+    ref_blocks.extend(split_tall_ref_block("Master Diagnostic Golden Rules Directory", ssr.BKSB_GOLDEN_RULES, max_chars=950))
+    append_split_glossary_and_index(
+        ref_blocks,
+        ssr.BKSB_GLOSSARY, "Diagnostic &amp; Algorithmic Glossary",
+        ssr.BKSB_INDEX, "Remediation &amp; Misconception Index"
+    )
 
     ref_page_list = K.ref_pages("Official Stage 2 Worked Solutions &amp; Directory", ref_blocks,
                                 BOOK, start_page=p_curr, subtitle="Complete Step-by-Step Worked Models for All 72 Retry Drills",
@@ -1871,15 +2389,16 @@ def build_bksb_remediation_workbook():
 
     # Re-assessment Log & Scaling (pp 83–86)
     # Page 83: Re-assessment Log
+    rl_start_page = p_curr
     rl_body = (
         K.page_title("Diagnostic Re-Assessment Log", kicker="Post-Remediation Progression Audit", badge="LG")
         + K.box_html(
             "<table style='width:100%; border-collapse:collapse; font-size:10.5pt; text-align:center; line-height:1.4;'>"
             "<tr style='background:#f1f5f9;'><th style='padding:5px; text-align:left;'>Assessment Milestone</th><th>Initial Working Level</th><th>Post-Workbook Level</th><th>Target Functional Level</th><th>Sign-Off</th></tr>"
-            "<tr><td style='padding:5px; border-bottom:1px solid #e2e8f0; text-align:left;'>BKSB Baseline Diagnostics</td><td>Level 1 (42%)</td><td>Level 2 (84%)</td><td>Level 2 Pass</td><td>Subi</td></tr>"
-            "<tr><td style='padding:5px; border-bottom:1px solid #e2e8f0; text-align:left;'>OneAdvanced Progress Check 1</td><td>Level 1 Borderline</td><td>Level 2 Secure</td><td>Level 2 Pass</td><td>Subi</td></tr>"
-            "<tr><td style='padding:5px; border-bottom:1px solid #e2e8f0; text-align:left;'>OneAdvanced Progress Check 2</td><td>Level 2 Emerging</td><td>Level 2 High Pass</td><td>Level 2 Pass</td><td>Subi</td></tr>"
-            "<tr><td style='padding:5px; text-align:left;'>Final Exam Readiness Audit</td><td>Level 2 Secure</td><td>Level 2 Distinction</td><td>Level 2 Pass</td><td>Subi</td></tr>"
+            "<tr><td style='padding:5px; border-bottom:1px solid #e2e8f0; text-align:left;'>BKSB Baseline Diagnostics</td><td>Level 1 (42%)</td><td>Level 2 (84%)</td><td>Level 2 Pass</td><td>Abdul</td></tr>"
+            "<tr><td style='padding:5px; border-bottom:1px solid #e2e8f0; text-align:left;'>OneAdvanced Progress Check 1</td><td>Level 1 Borderline</td><td>Level 2 Secure</td><td>Level 2 Pass</td><td>Abdul</td></tr>"
+            "<tr><td style='padding:5px; border-bottom:1px solid #e2e8f0; text-align:left;'>OneAdvanced Progress Check 2</td><td>Level 2 Emerging</td><td>Level 2 High Pass</td><td>Level 2 Pass</td><td>Abdul</td></tr>"
+            "<tr><td style='padding:5px; text-align:left;'>Final Exam Readiness Audit</td><td>Level 2 Secure</td><td>Level 2 Distinction</td><td>Level 2 Pass</td><td>Abdul</td></tr>"
             "</table>",
             title="Learner Diagnostic Growth Record"
         )
@@ -1891,6 +2410,7 @@ def build_bksb_remediation_workbook():
     p_curr += 1
 
     # Page 84: Official Certificate
+    cert_start_page = p_curr
     cert_body = (
         K.page_title("Certificate of Diagnostic Mastery", kicker="Diagnostic Remediation Sign-Off", badge="CERT")
         + K.hero_image(P("adult student graduation diploma celebration success"), "Remediating foundational misconceptions ensures permanent exam excellence.", 50)
@@ -1900,7 +2420,7 @@ def build_bksb_remediation_workbook():
             "<p style='font-size:16pt; font-weight:bold; border-bottom:2px solid var(--accent); display:inline-block; min-width:300px; padding-bottom:3px; margin:4px 0;'>&nbsp;</p>"
             "<p style='margin:4px 0;'>has completed all 24 High-Frequency Diagnostic Failure Mode Masterclasses and demonstrated Level 2 mastery on independent retry drills.</p>"
             "<table style='width:100%; margin-top:12px; font-size:10.5pt; border-collapse:collapse;'>"
-            "<tr><td style='text-align:left;'><b>Lead Tutor:</b> Subi</td><td style='text-align:right;'><b>Date Verified:</b> _______________</td></tr>"
+            "<tr><td style='text-align:left;'><b>Lead Tutor:</b> Abdul</td><td style='text-align:right;'><b>Date Verified:</b> _______________</td></tr>"
             "<tr><td style='text-align:left;'><b>Remediation Score:</b> 72 / 72 Drills</td><td style='text-align:right;'><b>Exam Centre:</b> Master Functional Skills</td></tr>"
             "</table>"
             "</div>",
@@ -1911,12 +2431,67 @@ def build_bksb_remediation_workbook():
     pages.append(K.page(cert_body, header=(BOOK, "Mastery Certificate"), footer=BOOK, page_no=p_curr))
     p_curr += 1
 
+    # Populate Pages 2 & 3 with Complete 2-Page Table of Contents (Chapter-Size Fonts)
+    bksb_math_modes = [
+        (m["badge"], m["title"], str(8 + i*2))
+        for i, m in enumerate(ssc.BKSB_MODES[:16])
+    ]
+    bksb_eng_modes = [
+        (m["badge"], m["title"], str(8 + (16 + i)*2))
+        for i, m in enumerate(ssc.BKSB_MODES[16:])
+    ]
+    bksb_ws_rows = [
+        (badge.upper(), ws_t.split("&bull;")[-1].strip(), str(bksb_ws_start_page + i))
+        for i, (ws_t, badge, *_) in enumerate(spec_workshops)
+    ]
+    bksb_dp_rows = [
+        (p["badge"], p["title"].split(": ")[-1], str(bksb_dp_start_page + i*4))
+        for i, p in enumerate(ssc.BKSB_PAPERS)
+    ]
+
+    toc_p1_groups = [
+        ("Front Matter &amp; Diagnostic Protocol", [
+            ("FM.1", "The BKSB Diagnostic Remediation Methodology &amp; Protocol", "4"),
+            ("FM.2", "Algorithmic Marking Traps &amp; Online Interface Navigation", "5"),
+            ("FM.3", "Diagnostic Error Classification &amp; Root Cause Taxonomy", "6"),
+            ("FM.4", "Personal Diagnostic Remediation Tracker &amp; Schedule", "7"),
+        ]),
+        ("Mathematics High-Frequency Failure Modes (M01–M16 &bull; 2 Pages Each)", bksb_math_modes),
+    ]
+
+    toc_p2_groups = [
+        ("English SPaG &amp; Reading Failure Modes (E17–E24 &bull; 2 Pages Each)", bksb_eng_modes),
+        ("Specialist Interface &amp; Rapid Diagnostic Sprints (1 Page Each)", bksb_ws_rows),
+        ("Sectional Diagnostic Mocks, Stage 2 Solutions &amp; Sign-Off", bksb_dp_rows + [
+            ("REF.1", "Stage 2 Step-by-Step Worked Models for All 72 Retry Drills", str(ref_start_page)),
+            ("REF.2", "Master Diagnostic Golden Rules, Glossary &amp; Misconception Index", str(ref_start_page + max(1, len(ref_page_list) - 2))),
+            ("LOG", "Diagnostic Re-Assessment Progression Log", str(rl_start_page)),
+            ("CERT", "Master Functional Skills Official Certificate of Diagnostic Mastery", str(cert_start_page)),
+        ]),
+    ]
+
+    pages[1] = bksb_toc_p1(
+        "BKSB &amp; OneAdvanced &bull; Diagnostic Remediation",
+        "Targeted Diagnostic Workbook &bull; Part 1: Diagnostic Methodology &amp; Mathematics Failure Modes",
+        "CONTENTS",
+        toc_p1_groups,
+        footer=BOOK
+    )
+
+    pages[2] = bksb_toc_p2(
+        "BKSB &amp; OneAdvanced &bull; Diagnostic Remediation",
+        "Part 2: English Literacy Failure Modes, Rapid Sprints, Diagnostic Mocks &amp; Worked Solutions",
+        "CONTENTS",
+        toc_p2_groups,
+        footer=BOOK
+    )
+
     # Inside Back Cover & Back Cover
     pages.append(K.back_cover(back_cov))
     pdf_path = DOWNLOADS / "MasterFunctionalSkills_BKSB_Remediation_Workbook.pdf"
     print(f"Total Pages Assembled: {len(pages)}")
     res = K.render_pdf(pages, pdf_path, theme=cover_theme, entry3=False, title="Master Functional Skills - BKSB Remediation Workbook")
-    print(f"Rendered: {res['pdf']} ({len(pages)} pages)")
+    print(f"Rendered: {res['pdf']} ({len(pages)} pages) | Overflows: {res.get('overflow', [])}")
     return pdf_path
 
 # =============================================================================
@@ -1954,7 +2529,9 @@ def main():
     for p in generated_pdfs:
         print(f"  - {p.name}")
         try:
-            shutil.copy2(p, ALT_DOWNLOADS / p.name)
+            dest_alt = ALT_DOWNLOADS / p.name
+            if p.resolve() != dest_alt.resolve():
+                shutil.copy2(p, dest_alt)
             shutil.copy2(p, DOCUMENTS / p.name)
             print(f"    -> Synced to Projects/ and Documents/")
         except Exception as e:

@@ -45,7 +45,7 @@ L1_DIAGNOSTIC_32 = [
     {
         "num": 6, "unit": 3, "topic": "Unit 3: Pronoun 'I' & Workplace Acronyms",
         "prompt": "Select the sentence where the pronoun 'I' and workplace acronyms are correct:",
-        "options": ["A) Yesterday i visited the NHS clinic to inspect PPE supplies.", "B) Yesterday I visited the NHS clinic to inspect PPE supplies.", "C) Yesterday I visited the nhs clinic to inspect ppe supplies."],
+        "options": ["A) Yesterday i visited the HSE clinic to inspect PPE supplies.", "B) Yesterday I visited the HSE clinic to inspect PPE supplies.", "C) Yesterday I visited the hse clinic to inspect ppe supplies."],
         "correct": "B"
     },
     # Q7 - Unit 4: Coordinating Conjunctions
@@ -833,7 +833,7 @@ ANSWER_KEYS_6P = {
             "3. A (Polite enquiry starting with auxiliary 'Could' requires a question mark '?')",
             "4. A (Urgent hazard warning requires single exclamation mark '!')",
             "5. B (Tuesday, October, City Hospital are all proper nouns requiring capitals)",
-            "6. B (Pronoun 'I' and initialisms NHS / PPE are always capitalised)",
+            "6. B (Pronoun 'I' and initialisms HSE / PPE are always capitalised)",
             "7. B (Shows contrast between arriving on time and being damaged)",
             "8. A ('so' demonstrates direct consequence / logical result)",
             "9. B (Middle 'because' links subordinate clause smoothly without comma)",

@@ -1323,7 +1323,7 @@ def render_page_84():
         <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15); border-radius:6px; padding:10px 12px;">
           <div style="font-family:'Montserrat',sans-serif; font-size:8.5pt; font-weight:800; color:#fbbf24;">AUTHENTIC WORKPLACE TASKS</div>
           <div style="font-size:7.5pt; color:rgba(255,255,255,0.8); margin-top:2px;">
-            Real-world scenarios from the NHS, engineering, logistics, local government, construction, and corporate business administration.
+            Real-world scenarios from the HSE, engineering, logistics, local government, construction, and corporate business administration.
           </div>
         </div>
         <div style="background:rgba(255,255,255,0.06); border:1px solid rgba(255,255,255,0.15); border-radius:6px; padding:10px 12px;">

@@ -141,7 +141,670 @@
       companionLabel: 'Prev: Division (Subi)'
     },
 
-    // Past Paper 10
+    
+    // --- 33 NEW LEVEL 2 MATHS TOPIC MASTERCLASSES ---
+    '3d-shapes-and-nets': {
+      ytId: 'wHgk6CI99us',
+      title: "3D Shapes, Nets and Plans \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Sonya",
+      localVideo: 'assets/video/sonya-3d-shapes-and-nets-walkthrough.mp4',
+      poster: 'assets/img/3d-shapes-and-nets-sonya-poster.png',
+      companionSlug: '3d-shapes-and-nets',
+      companionLabel: "3D Shapes and Nets"
+    },
+    "3d shapes and nets": {
+      ytId: '',
+      title: "3D Shapes, Nets and Plans \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Sonya",
+      localVideo: 'assets/video/sonya-3d-shapes-and-nets-walkthrough.mp4',
+      poster: 'assets/img/3d-shapes-and-nets-sonya-poster.png',
+      companionSlug: '3d-shapes-and-nets',
+      companionLabel: "3D Shapes and Nets"
+    },
+    'angles-bearings-pythagoras': {
+      ytId: '-RQYqrfs3nE',
+      title: "Angles, Bearings and Pythagoras \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Subi",
+      localVideo: 'assets/video/subi-angles-bearings-pythagoras-walkthrough.mp4',
+      poster: 'assets/img/angles-bearings-pythagoras-subi-poster.png',
+      companionSlug: 'angles-bearings-pythagoras',
+      companionLabel: "Angles, Bearings and Pythagoras"
+    },
+    "angles, bearings and pythagoras": {
+      ytId: '',
+      title: "Angles, Bearings and Pythagoras \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Subi",
+      localVideo: 'assets/video/subi-angles-bearings-pythagoras-walkthrough.mp4',
+      poster: 'assets/img/angles-bearings-pythagoras-subi-poster.png',
+      companionSlug: 'angles-bearings-pythagoras',
+      companionLabel: "Angles, Bearings and Pythagoras"
+    },
+    'area': {
+      ytId: '2iZJuu0MUgs',
+      title: "Area of 2D and Compound Shapes \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Subi",
+      localVideo: 'assets/video/subi-area-walkthrough.mp4',
+      poster: 'assets/img/area-subi-poster.png',
+      companionSlug: 'area',
+      companionLabel: "Area of 2D and Compound Shapes"
+    },
+    "area of 2d and compound shapes": {
+      ytId: '',
+      title: "Area of 2D and Compound Shapes \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Subi",
+      localVideo: 'assets/video/subi-area-walkthrough.mp4',
+      poster: 'assets/img/area-subi-poster.png',
+      companionSlug: 'area',
+      companionLabel: "Area of 2D and Compound Shapes"
+    },
+    'averages-and-spread': {
+      ytId: 'sgvRdO8EIgU',
+      title: "Averages and Spread \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Sonya",
+      localVideo: 'assets/video/sonya-averages-and-spread-walkthrough.mp4',
+      poster: 'assets/img/averages-and-spread-sonya-poster.png',
+      companionSlug: 'averages-and-spread',
+      companionLabel: "Averages and Spread (Mean, Median, Mode, Range)"
+    },
+    "averages and spread (mean, median, mode, range)": {
+      ytId: '',
+      title: "Averages and Spread \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Sonya",
+      localVideo: 'assets/video/sonya-averages-and-spread-walkthrough.mp4',
+      poster: 'assets/img/averages-and-spread-sonya-poster.png',
+      companionSlug: 'averages-and-spread',
+      companionLabel: "Averages and Spread (Mean, Median, Mode, Range)"
+    },
+    'bar-charts-and-pie-charts': {
+      ytId: 'pvfhMZllArg',
+      title: "Bar Charts and Pie Charts \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Emma",
+      localVideo: 'assets/video/emma-bar-charts-and-pie-charts-walkthrough.mp4',
+      poster: 'assets/img/bar-charts-and-pie-charts-emma-poster.png',
+      companionSlug: 'bar-charts-and-pie-charts',
+      companionLabel: "Bar Charts and Pie Charts"
+    },
+    "bar charts and pie charts": {
+      ytId: '',
+      title: "Bar Charts and Pie Charts \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Emma",
+      localVideo: 'assets/video/emma-bar-charts-and-pie-charts-walkthrough.mp4',
+      poster: 'assets/img/bar-charts-and-pie-charts-emma-poster.png',
+      companionSlug: 'bar-charts-and-pie-charts',
+      companionLabel: "Bar Charts and Pie Charts"
+    },
+    'bearings': {
+      ytId: 'C9KA5RzKLfE',
+      title: "Bearings and 3-Figure Directions \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Emma",
+      localVideo: 'assets/video/emma-bearings-walkthrough.mp4',
+      poster: 'assets/img/bearings-emma-poster.png',
+      companionSlug: 'bearings',
+      companionLabel: "Bearings and Navigation"
+    },
+    "bearings and navigation": {
+      ytId: '',
+      title: "Bearings and 3-Figure Directions \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Emma",
+      localVideo: 'assets/video/emma-bearings-walkthrough.mp4',
+      poster: 'assets/img/bearings-emma-poster.png',
+      companionSlug: 'bearings',
+      companionLabel: "Bearings and Navigation"
+    },
+    'coordinates-and-transformations': {
+      ytId: 'tQY6G1i8hPc',
+      title: "Coordinates and Transformations \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Sonya",
+      localVideo: 'assets/video/sonya-coordinates-and-transformations-walkthrough.mp4',
+      poster: 'assets/img/coordinates-and-transformations-sonya-poster.png',
+      companionSlug: 'coordinates-and-transformations',
+      companionLabel: "Coordinates and Transformations"
+    },
+    "coordinates and transformations": {
+      ytId: '',
+      title: "Coordinates and Transformations \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Sonya",
+      localVideo: 'assets/video/sonya-coordinates-and-transformations-walkthrough.mp4',
+      poster: 'assets/img/coordinates-and-transformations-sonya-poster.png',
+      companionSlug: 'coordinates-and-transformations',
+      companionLabel: "Coordinates and Transformations"
+    },
+    'currency-conversion': {
+      ytId: 'WxhVrm3VsAU',
+      title: "Currency Conversion & Exchange Rates \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Subi",
+      localVideo: 'assets/video/subi-currency-conversion-walkthrough.mp4',
+      poster: 'assets/img/currency-conversion-subi-poster.png',
+      companionSlug: 'currency-conversion',
+      companionLabel: "Currency Conversion & Exchange Rates"
+    },
+    "currency conversion and exchange rates": {
+      ytId: '',
+      title: "Currency Conversion & Exchange Rates \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Subi",
+      localVideo: 'assets/video/subi-currency-conversion-walkthrough.mp4',
+      poster: 'assets/img/currency-conversion-subi-poster.png',
+      companionSlug: 'currency-conversion',
+      companionLabel: "Currency Conversion & Exchange Rates"
+    },
+    'decimals': {
+      ytId: '1yKdgKOIDn0',
+      title: "Decimals Mastery \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Subi",
+      localVideo: 'assets/video/subi-decimals-walkthrough.mp4',
+      poster: 'assets/img/decimals-subi-poster.png',
+      companionSlug: 'decimals',
+      companionLabel: "Decimals (Arithmetic & Place Value)"
+    },
+    "decimals (arithmetic and place value)": {
+      ytId: '',
+      title: "Decimals Mastery \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Subi",
+      localVideo: 'assets/video/subi-decimals-walkthrough.mp4',
+      poster: 'assets/img/decimals-subi-poster.png',
+      companionSlug: 'decimals',
+      companionLabel: "Decimals (Arithmetic & Place Value)"
+    },
+    'density-mass-and-volume': {
+      ytId: 'Jn4BMqg5yx4',
+      title: "Density, Mass and Volume \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Sonya",
+      localVideo: 'assets/video/sonya-density-mass-and-volume-walkthrough.mp4',
+      poster: 'assets/img/density-mass-and-volume-sonya-poster.png',
+      companionSlug: 'density-mass-and-volume',
+      companionLabel: "Density, Mass and Volume"
+    },
+    "density, mass and volume": {
+      ytId: '',
+      title: "Density, Mass and Volume \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Sonya",
+      localVideo: 'assets/video/sonya-density-mass-and-volume-walkthrough.mp4',
+      poster: 'assets/img/density-mass-and-volume-sonya-poster.png',
+      companionSlug: 'density-mass-and-volume',
+      companionLabel: "Density, Mass and Volume"
+    },
+    'fdp-conversions': {
+      ytId: 'k9D5oMouzvU',
+      title: "FDP Conversions \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Subi",
+      localVideo: 'assets/video/subi-fdp-conversions-walkthrough.mp4',
+      poster: 'assets/img/fdp-conversions-subi-poster.png',
+      companionSlug: 'fdp-conversions',
+      companionLabel: "FDP Conversions (Fractions, Decimals, Percentages)"
+    },
+    "fdp conversions (fractions, decimals, percentages)": {
+      ytId: '',
+      title: "FDP Conversions \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Subi",
+      localVideo: 'assets/video/subi-fdp-conversions-walkthrough.mp4',
+      poster: 'assets/img/fdp-conversions-subi-poster.png',
+      companionSlug: 'fdp-conversions',
+      companionLabel: "FDP Conversions (Fractions, Decimals, Percentages)"
+    },
+    'formulas': {
+      ytId: '39piKKg90OE',
+      title: "Formulas and Substitution \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Subi",
+      localVideo: 'assets/video/subi-formulas-walkthrough.mp4',
+      poster: 'assets/img/formulas-subi-poster.png',
+      companionSlug: 'formulas',
+      companionLabel: "Formulas and Substitution"
+    },
+    "formulas and substitution": {
+      ytId: '',
+      title: "Formulas and Substitution \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Subi",
+      localVideo: 'assets/video/subi-formulas-walkthrough.mp4',
+      poster: 'assets/img/formulas-subi-poster.png',
+      companionSlug: 'formulas',
+      companionLabel: "Formulas and Substitution"
+    },
+    'fractions': {
+      ytId: '74kfw27oSOE',
+      title: "Fractions Arithmetic & Word Problems \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Sonya",
+      localVideo: 'assets/video/sonya-fractions-walkthrough.mp4',
+      poster: 'assets/img/fractions-sonya-poster.png',
+      companionSlug: 'fractions',
+      companionLabel: "Fractions (Arithmetic & Simplifying)"
+    },
+    "fractions (arithmetic and simplifying)": {
+      ytId: '',
+      title: "Fractions Arithmetic & Word Problems \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Sonya",
+      localVideo: 'assets/video/sonya-fractions-walkthrough.mp4',
+      poster: 'assets/img/fractions-sonya-poster.png',
+      companionSlug: 'fractions',
+      companionLabel: "Fractions (Arithmetic & Simplifying)"
+    },
+    'fractions-of-amounts': {
+      ytId: 'JggjX4FDkqg',
+      title: "Fractions of Amounts & Reverse Fractions \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Emma",
+      localVideo: 'assets/video/emma-fractions-of-amounts-walkthrough.mp4',
+      poster: 'assets/img/fractions-of-amounts-emma-poster.png',
+      companionSlug: 'fractions-of-amounts',
+      companionLabel: "Fractions of Amounts and Reverse Fractions"
+    },
+    "fractions of amounts and reverse fractions": {
+      ytId: '',
+      title: "Fractions of Amounts & Reverse Fractions \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Emma",
+      localVideo: 'assets/video/emma-fractions-of-amounts-walkthrough.mp4',
+      poster: 'assets/img/fractions-of-amounts-emma-poster.png',
+      companionSlug: 'fractions-of-amounts',
+      companionLabel: "Fractions of Amounts and Reverse Fractions"
+    },
+    'frequency-and-two-way-tables': {
+      ytId: 'PzEL_FVXa7g',
+      title: "Frequency & Two-Way Tables \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Subi",
+      localVideo: 'assets/video/subi-frequency-and-two-way-tables-walkthrough.mp4',
+      poster: 'assets/img/frequency-and-two-way-tables-subi-poster.png',
+      companionSlug: 'frequency-and-two-way-tables',
+      companionLabel: "Frequency & Two-Way Tables"
+    },
+    "frequency and two-way tables": {
+      ytId: '',
+      title: "Frequency & Two-Way Tables \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Subi",
+      localVideo: 'assets/video/subi-frequency-and-two-way-tables-walkthrough.mp4',
+      poster: 'assets/img/frequency-and-two-way-tables-subi-poster.png',
+      companionSlug: 'frequency-and-two-way-tables',
+      companionLabel: "Frequency & Two-Way Tables"
+    },
+    'percentages': {
+      ytId: 'QXr9L_RKM1s',
+      title: "Percentages of Amounts \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Sonya",
+      localVideo: 'assets/video/sonya-percentages-walkthrough.mp4',
+      poster: 'assets/img/percentages-sonya-poster.png',
+      companionSlug: 'percentages',
+      companionLabel: "Percentages of Amounts"
+    },
+    "percentages of amounts": {
+      ytId: '',
+      title: "Percentages of Amounts \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Sonya",
+      localVideo: 'assets/video/sonya-percentages-walkthrough.mp4',
+      poster: 'assets/img/percentages-sonya-poster.png',
+      companionSlug: 'percentages',
+      companionLabel: "Percentages of Amounts"
+    },
+    'percentages-and-percentage-change': {
+      ytId: 'BsuBjE9ogZI',
+      title: "Percentages & Percentage Change \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Sonya",
+      localVideo: 'assets/video/sonya-percentages-and-percentage-change-walkthrough.mp4',
+      poster: 'assets/img/percentages-and-percentage-change-sonya-poster.png',
+      companionSlug: 'percentages-and-percentage-change',
+      companionLabel: "Percentages & Percentage Change"
+    },
+    "percentages and percentage change": {
+      ytId: '',
+      title: "Percentages & Percentage Change \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Sonya",
+      localVideo: 'assets/video/sonya-percentages-and-percentage-change-walkthrough.mp4',
+      poster: 'assets/img/percentages-and-percentage-change-sonya-poster.png',
+      companionSlug: 'percentages-and-percentage-change',
+      companionLabel: "Percentages & Percentage Change"
+    },
+    'perimeter-area-and-composite-plans': {
+      ytId: 'iN965C_11O0',
+      title: "Perimeter, Area & Composite Plans \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Emma",
+      localVideo: 'assets/video/emma-perimeter-area-and-composite-plans-walkthrough.mp4',
+      poster: 'assets/img/perimeter-area-and-composite-plans-emma-poster.png',
+      companionSlug: 'perimeter-area-and-composite-plans',
+      companionLabel: "Perimeter, Area & Composite Plans"
+    },
+    "perimeter, area and composite plans": {
+      ytId: '',
+      title: "Perimeter, Area & Composite Plans \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Emma",
+      localVideo: 'assets/video/emma-perimeter-area-and-composite-plans-walkthrough.mp4',
+      poster: 'assets/img/perimeter-area-and-composite-plans-emma-poster.png',
+      companionSlug: 'perimeter-area-and-composite-plans',
+      companionLabel: "Perimeter, Area & Composite Plans"
+    },
+    'perimeter': {
+      ytId: '07stUoCaETU',
+      title: "Perimeter & Circumference \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Sonya",
+      localVideo: 'assets/video/sonya-perimeter-walkthrough.mp4',
+      poster: 'assets/img/perimeter-sonya-poster.png',
+      companionSlug: 'perimeter',
+      companionLabel: "Perimeter of 2D Shapes & Circumference"
+    },
+    "perimeter of 2d shapes and circumference": {
+      ytId: '',
+      title: "Perimeter & Circumference \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Sonya",
+      localVideo: 'assets/video/sonya-perimeter-walkthrough.mp4',
+      poster: 'assets/img/perimeter-sonya-poster.png',
+      companionSlug: 'perimeter',
+      companionLabel: "Perimeter of 2D Shapes & Circumference"
+    },
+    'probability-trees': {
+      ytId: '-GY2jRSa5JE',
+      title: "Probability Trees & Combined Events \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Emma",
+      localVideo: 'assets/video/emma-probability-trees-walkthrough.mp4',
+      poster: 'assets/img/probability-trees-emma-poster.png',
+      companionSlug: 'probability-trees',
+      companionLabel: "Probability Trees & Combined Events"
+    },
+    "probability trees and combined events": {
+      ytId: '',
+      title: "Probability Trees & Combined Events \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Emma",
+      localVideo: 'assets/video/emma-probability-trees-walkthrough.mp4',
+      poster: 'assets/img/probability-trees-emma-poster.png',
+      companionSlug: 'probability-trees',
+      companionLabel: "Probability Trees & Combined Events"
+    },
+    'probability-and-expected-frequency': {
+      ytId: 'PD1CS1SLxSM',
+      title: "Probability & Expected Frequency \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Subi",
+      localVideo: 'assets/video/subi-probability-and-expected-frequency-walkthrough.mp4',
+      poster: 'assets/img/probability-and-expected-frequency-subi-poster.png',
+      companionSlug: 'probability-and-expected-frequency',
+      companionLabel: "Probability & Expected Frequency"
+    },
+    "probability and expected frequency": {
+      ytId: '',
+      title: "Probability & Expected Frequency \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Subi",
+      localVideo: 'assets/video/subi-probability-and-expected-frequency-walkthrough.mp4',
+      poster: 'assets/img/probability-and-expected-frequency-subi-poster.png',
+      companionSlug: 'probability-and-expected-frequency',
+      companionLabel: "Probability & Expected Frequency"
+    },
+    'proportion': {
+      ytId: 'qj-8nTsnO3I',
+      title: "Direct & Inverse Proportion \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Sonya",
+      localVideo: 'assets/video/sonya-proportion-walkthrough.mp4',
+      poster: 'assets/img/proportion-sonya-poster.png',
+      companionSlug: 'proportion',
+      companionLabel: "Direct & Inverse Proportion"
+    },
+    "direct and inverse proportion": {
+      ytId: '',
+      title: "Direct & Inverse Proportion \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Sonya",
+      localVideo: 'assets/video/sonya-proportion-walkthrough.mp4',
+      poster: 'assets/img/proportion-sonya-poster.png',
+      companionSlug: 'proportion',
+      companionLabel: "Direct & Inverse Proportion"
+    },
+    'ratio': {
+      ytId: 'jWoKhGQzOJI',
+      title: "Ratio Mastery \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Emma",
+      localVideo: 'assets/video/emma-ratio-walkthrough.mp4',
+      poster: 'assets/img/ratio-emma-poster.png',
+      companionSlug: 'ratio',
+      companionLabel: "Ratio (Sharing & Simplifying)"
+    },
+    "ratio (sharing and simplifying)": {
+      ytId: '',
+      title: "Ratio Mastery \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Emma",
+      localVideo: 'assets/video/emma-ratio-walkthrough.mp4',
+      poster: 'assets/img/ratio-emma-poster.png',
+      companionSlug: 'ratio',
+      companionLabel: "Ratio (Sharing & Simplifying)"
+    },
+    'ratio-and-direct-proportion': {
+      ytId: 'G-U7kCFwm-I',
+      title: "Ratio & Direct Proportion \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Sonya",
+      localVideo: 'assets/video/sonya-ratio-and-direct-proportion-walkthrough.mp4',
+      poster: 'assets/img/ratio-and-direct-proportion-sonya-poster.png',
+      companionSlug: 'ratio-and-direct-proportion',
+      companionLabel: "Ratio and Direct Proportion Applications"
+    },
+    "ratio and direct proportion applications": {
+      ytId: '',
+      title: "Ratio & Direct Proportion \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Sonya",
+      localVideo: 'assets/video/sonya-ratio-and-direct-proportion-walkthrough.mp4',
+      poster: 'assets/img/ratio-and-direct-proportion-sonya-poster.png',
+      companionSlug: 'ratio-and-direct-proportion',
+      companionLabel: "Ratio and Direct Proportion Applications"
+    },
+    'rounding-and-estimating': {
+      ytId: 'KxY8vBzGWKE',
+      title: "Rounding and Estimating \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Emma",
+      localVideo: 'assets/video/emma-rounding-and-estimating-walkthrough.mp4',
+      poster: 'assets/img/rounding-and-estimating-emma-poster.png',
+      companionSlug: 'rounding-and-estimating',
+      companionLabel: "Rounding and Estimating"
+    },
+    "rounding and estimating": {
+      ytId: '',
+      title: "Rounding and Estimating \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Emma",
+      localVideo: 'assets/video/emma-rounding-and-estimating-walkthrough.mp4',
+      poster: 'assets/img/rounding-and-estimating-emma-poster.png',
+      companionSlug: 'rounding-and-estimating',
+      companionLabel: "Rounding and Estimating"
+    },
+    'scale-drawings': {
+      ytId: 'KZWBNnfCNGw',
+      title: "Maps and Scale Drawings \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Subi",
+      localVideo: 'assets/video/subi-scale-drawings-walkthrough.mp4',
+      poster: 'assets/img/scale-drawings-subi-poster.png',
+      companionSlug: 'scale-drawings',
+      companionLabel: "Maps and Scale Drawings"
+    },
+    "maps and scale drawings": {
+      ytId: '',
+      title: "Maps and Scale Drawings \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Subi",
+      localVideo: 'assets/video/subi-scale-drawings-walkthrough.mp4',
+      poster: 'assets/img/scale-drawings-subi-poster.png',
+      companionSlug: 'scale-drawings',
+      companionLabel: "Maps and Scale Drawings"
+    },
+    'scatter-graphs-and-correlation': {
+      ytId: 'zOmrtdOj5dc',
+      title: "Scatter Graphs and Correlation \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Sonya",
+      localVideo: 'assets/video/sonya-scatter-graphs-and-correlation-walkthrough.mp4',
+      poster: 'assets/img/scatter-graphs-and-correlation-sonya-poster.png',
+      companionSlug: 'scatter-graphs-and-correlation',
+      companionLabel: "Scatter Graphs and Correlation"
+    },
+    "scatter graphs and correlation": {
+      ytId: '',
+      title: "Scatter Graphs and Correlation \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Sonya",
+      localVideo: 'assets/video/sonya-scatter-graphs-and-correlation-walkthrough.mp4',
+      poster: 'assets/img/scatter-graphs-and-correlation-sonya-poster.png',
+      companionSlug: 'scatter-graphs-and-correlation',
+      companionLabel: "Scatter Graphs and Correlation"
+    },
+    'simple-and-compound-interest': {
+      ytId: 'gsSLwcadZH0',
+      title: "Simple and Compound Interest \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Subi",
+      localVideo: 'assets/video/subi-simple-and-compound-interest-walkthrough.mp4',
+      poster: 'assets/img/simple-and-compound-interest-subi-poster.png',
+      companionSlug: 'simple-and-compound-interest',
+      companionLabel: "Simple and Compound Interest"
+    },
+    "simple and compound interest": {
+      ytId: '',
+      title: "Simple and Compound Interest \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Subi",
+      localVideo: 'assets/video/subi-simple-and-compound-interest-walkthrough.mp4',
+      poster: 'assets/img/simple-and-compound-interest-subi-poster.png',
+      companionSlug: 'simple-and-compound-interest',
+      companionLabel: "Simple and Compound Interest"
+    },
+    'speed-distance-and-time': {
+      ytId: 'ZUbm9S7_ySA',
+      title: "Speed, Distance and Time \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Emma",
+      localVideo: 'assets/video/emma-speed-distance-and-time-walkthrough.mp4',
+      poster: 'assets/img/speed-distance-and-time-emma-poster.png',
+      companionSlug: 'speed-distance-and-time',
+      companionLabel: "Speed, Distance and Time"
+    },
+    "speed, distance and time": {
+      ytId: '',
+      title: "Speed, Distance and Time \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Emma",
+      localVideo: 'assets/video/emma-speed-distance-and-time-walkthrough.mp4',
+      poster: 'assets/img/speed-distance-and-time-emma-poster.png',
+      companionSlug: 'speed-distance-and-time',
+      companionLabel: "Speed, Distance and Time"
+    },
+    'symmetry-tessellation-and-2d-properties': {
+      ytId: '0UOwW2sS_4k',
+      title: "Symmetry, Tessellation & 2D Properties \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Emma",
+      localVideo: 'assets/video/emma-symmetry-tessellation-and-2d-properties-walkthrough.mp4',
+      poster: 'assets/img/symmetry-tessellation-and-2d-properties-emma-poster.png',
+      companionSlug: 'symmetry-tessellation-and-2d-properties',
+      companionLabel: "Symmetry, Tessellation & 2D Properties"
+    },
+    "symmetry, tessellation and 2d properties": {
+      ytId: '',
+      title: "Symmetry, Tessellation & 2D Properties \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Emma",
+      localVideo: 'assets/video/emma-symmetry-tessellation-and-2d-properties-walkthrough.mp4',
+      poster: 'assets/img/symmetry-tessellation-and-2d-properties-emma-poster.png',
+      companionSlug: 'symmetry-tessellation-and-2d-properties',
+      companionLabel: "Symmetry, Tessellation & 2D Properties"
+    },
+    'unit-conversions': {
+      ytId: '0ZwUUWB76Dc',
+      title: "Unit Conversions \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Emma",
+      localVideo: 'assets/video/emma-unit-conversions-walkthrough.mp4',
+      poster: 'assets/img/unit-conversions-emma-poster.png',
+      companionSlug: 'unit-conversions',
+      companionLabel: "Unit Conversions (Metric & Imperial)"
+    },
+    "unit conversions (metric and imperial)": {
+      ytId: '',
+      title: "Unit Conversions \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Emma",
+      localVideo: 'assets/video/emma-unit-conversions-walkthrough.mp4',
+      poster: 'assets/img/unit-conversions-emma-poster.png',
+      companionSlug: 'unit-conversions',
+      companionLabel: "Unit Conversions (Metric & Imperial)"
+    },
+    'volume': {
+      ytId: 'gWgx6h77U6M',
+      title: "Volume of Prisms and Cylinders \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Emma",
+      localVideo: 'assets/video/emma-volume-walkthrough.mp4',
+      poster: 'assets/img/volume-emma-poster.png',
+      companionSlug: 'volume',
+      companionLabel: "Volume of Prisms and Cylinders"
+    },
+    "volume of prisms and cylinders": {
+      ytId: '',
+      title: "Volume of Prisms and Cylinders \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Emma",
+      localVideo: 'assets/video/emma-volume-walkthrough.mp4',
+      poster: 'assets/img/volume-emma-poster.png',
+      companionSlug: 'volume',
+      companionLabel: "Volume of Prisms and Cylinders"
+    },
+    'volume-and-surface-area': {
+      ytId: 'rYFoR1KywDk',
+      title: "Surface Area & 3D Volumes \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Subi",
+      localVideo: 'assets/video/subi-volume-and-surface-area-walkthrough.mp4',
+      poster: 'assets/img/volume-and-surface-area-subi-poster.png',
+      companionSlug: 'volume-and-surface-area',
+      companionLabel: "Surface Area & Advanced 3D Volumes"
+    },
+    "surface area and advanced 3d volumes": {
+      ytId: '',
+      title: "Surface Area & 3D Volumes \u2022 Masterclass Walkthrough",
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: "Tutor Subi",
+      localVideo: 'assets/video/subi-volume-and-surface-area-walkthrough.mp4',
+      poster: 'assets/img/volume-and-surface-area-subi-poster.png',
+      companionSlug: 'volume-and-surface-area',
+      companionLabel: "Surface Area & Advanced 3D Volumes"
+    },
+
+// Past Paper 10
     'edexcel-maths-l2-past-paper-10-section-a': {
       ytId: 'muSRa0fEsSs',
       title: 'Past Paper 10 • Section A: Non-Calculator (Full Walkthrough)',

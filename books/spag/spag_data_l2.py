@@ -148,7 +148,7 @@ L2_UNITS = [
         "strand": "Punctuation & Syntax (Ofqual L2.19)",
         "outcome": "Punctuate sentences correctly using full stops, semicolons, or conjunctions to prevent comma splices and run-ons.",
         # Left Page
-        "anchor_title": "NHS Acute Ward Clinical Handover Note",
+        "anchor_title": "Hospital Acute Ward Clinical Handover Note",
         "anchor_context": "HEALTHCARE / WARD MANAGEMENT",
         "anchor_text": "During an emergency handover, Staff Nurse Tariq wrote: <em>'Patient in Bed 4 experienced acute tachycardia, saline was administered immediately.'</em> The junior doctor misread this as one combined instruction. Two distinct medical events were illegally joined with only a comma, creating clinical ambiguity.",
         "formula_title": "The Sentence Boundary Architecture",

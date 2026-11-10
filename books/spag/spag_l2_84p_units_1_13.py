@@ -77,9 +77,9 @@ UNITS_1_TO_13 = [
     {
         "unit": 2,
         "title": "The Comma Splice & How to Fix It (4 Statutory Methods)",
-        "format": "NHS Hospital Clinical Ward Handover",
+        "format": "Community Hospital Clinical Ward Handover",
         "strand": "Punctuation & Sentence Mechanics",
-        "anchor_title": "NHS Acute Ward Shift Handover Memo",
+        "anchor_title": "Hospital Acute Ward Shift Handover Memo",
         "anchor_text": "In clinical documentation, joining two independent thoughts with only a comma creates ambiguous clinical records that risk patient safety. Examiners treat comma splices as critical structural errors that prevent candidates from achieving Level 2 pass marks.",
         "rule_title": "The Comma Splice: Definition & Four Statutory Corrections",
         "rule_text": """A <strong>comma splice</strong> occurs when two independent clauses (complete grammatical sentences capable of standing alone) are linked using only a comma without an appropriate coordinating conjunction.

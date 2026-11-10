@@ -64,7 +64,7 @@ L1_MODELS = {
             ("Fix the incomplete bullet point fragment: <em>'• more recycling bins in canteen'</em>",
              "• Place additional recycling bins in the college canteen."),
             ("Correct the acronym and capitalisation: <em>'the nhs trust and the dfe published new safety advice.'</em>",
-             "The NHS Trust and the DfE published new safety advice.")
+             "The Regional Healthcare and the DfE published new safety advice.")
         ]
     },
     5: {

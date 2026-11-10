@@ -109,7 +109,7 @@ READING_TOPICS = [
             {
                 "title": "Hospital Ward Inspection Report Analysis (Level 2)",
                 "marks": "3 Marks (Pearson Edexcel Reading Level 2)",
-                "context": "NHS Healthcare Compliance",
+                "context": "Clinical Healthcare Compliance",
                 "question": "Read the extract from the hospital audit report:<br><em>'Ward 4 admitted 142 patients in October. The nursing staff provided exceptional, heartwarming care throughout the winter surge. Patient discharge waiting times exceeded 3 hours.'</em><br>(a) Identify <strong>one fact</strong>. [1 Mark]<br>(b) Identify <strong>one opinion</strong>. [1 Mark]<br>(c) Explain why the opinion cannot be verified as an objective fact. [1 Mark]",
                 "steps": [
                     ("Step 1", "Identify the verifiable factual statement", "Option A: 'Ward 4 admitted 142 patients in October' OR Option B: 'Patient discharge waiting times exceeded 3 hours.' Both can be verified from hospital admission logs.", "1 Mark [A1 Fact]"),
@@ -566,7 +566,7 @@ READING_TOPICS = [
             {
                 "title": "Identifying Presentational Features in a Clinic Appointment Card (Level 1)",
                 "marks": "2 Marks (Pearson Edexcel Reading Level 1)",
-                "context": "NHS Outpatient Appointment Letter",
+                "context": "Diagnostic Clinic Appointment Letter",
                 "question": "An outpatient letter includes the following formatted section:<br><strong>WHAT TO BRING TO YOUR SCAN:</strong><br>• Your appointment reference letter<br>• A list of your current prescribed tablets<br><em><strong>IMPORTANT: Do not eat any solid food for 6 hours before your scan.</strong></em><br>Identify <strong>two presentational features</strong> used in this extract and state what information each one highlights. [2 Marks]",
                 "steps": [
                     ("Step 1", "Identify Feature 1 and link to content", "Bullet points — used to list the two items the patient needs to bring to the scan clearly.", "1 Mark [A1 Feature 1]"),
@@ -604,7 +604,7 @@ READING_TOPICS = [
         "practice_questions": [
             {
                 "marks": "2 Marks",
-                "question": "An NHS appointment booking webpage features a prominent yellow shaded box at the top stating: <em>'<strong>URGENT:</strong> Please arrive 15 minutes before your scheduled MRI scan.'</em><br>Identify <strong>two presentational features</strong> used here and explain their purpose.",
+                "question": "A diagnostic clinic appointment booking webpage features a prominent yellow shaded box at the top stating: <em>'<strong>URGENT:</strong> Please arrive 15 minutes before your scheduled MRI scan.'</em><br>Identify <strong>two presentational features</strong> used here and explain their purpose.",
                 "solution_steps": "1. Features: Yellow shaded callout box AND bold capital letters on 'URGENT:' [1 Mark].<br>2. Purpose: Draws immediate visual attention to the time-sensitive arrival requirement (15 minutes early) so patients do not miss their MRI slot [1 Mark].",
                 "correct_answer": "Features: Shaded yellow box and bold capital letters ('URGENT'). | Purpose: Immediately alerts patients to the requirement to arrive 15 minutes early before they read the rest of the page.",
                 "tutor_tip": "Identify both the container (shaded box) and the typography (bold capitals), then link them to the 15-minute arrival rule."
@@ -967,7 +967,7 @@ READING_TOPICS = [
                     <tbody>
                       <tr>
                         <td style="padding:10px; border:1px solid #cbd5e1; font-weight:700;">Rhetorical Question</td>
-                        <td style="padding:10px; border:1px solid #cbd5e1;"><em>"Can our NHS afford another year of staffing shortfalls?"</em></td>
+                        <td style="padding:10px; border:1px solid #cbd5e1;"><em>"Can our health service afford another year of staffing shortfalls?"</em></td>
                         <td style="padding:10px; border:1px solid #cbd5e1;">Forces the reader to mentally agree with the author's implied answer ('No') and highlights urgency.</td>
                       </tr>
                       <tr>
@@ -1033,7 +1033,7 @@ READING_TOPICS = [
             {
                 "title": "Healthcare Recruitment Drive Article Analysis (Level 2)",
                 "marks": "3 Marks (Pearson Edexcel Reading Level 2)",
-                "context": "NHS Clinical Recruitment",
+                "context": "Clinical Nursing Recruitment",
                 "question": "Read the extract:<br><em>'Are you ready to make an indelible mark on patients' lives? Nursing offers a career of purpose, passion, and pride. Do not let this once-in-a-lifetime calling slip through your fingers.'</em><br>(a) Identify and quote one <strong>rhetorical question</strong>. [1 Mark]<br>(b) Identify and quote one example of the <strong>rule of three</strong> (or alliteration). [1 Mark]<br>(c) Explain the persuasive effect of the metaphor <em>'slip through your fingers'</em>. [1 Mark]",
                 "steps": [
                     ("Step 1", "Quote the rhetorical question exactly", "'Are you ready to make an indelible mark on patients' lives?'", "1 Mark [A1 Quote]"),
@@ -1327,7 +1327,7 @@ READING_TOPICS = [
             {
                 "title": "Identifying Tone and Style in a Patient Leaflet (Level 1)",
                 "marks": "2 Marks (Pearson Edexcel Reading Level 1)",
-                "context": "NHS First Blood Donation Guide",
+                "context": "First-Time Blood Donation Guide",
                 "question": "Read this extract from a leaflet for first-time blood donors:<br><em>'Feeling a little nervous about your first donation? That is completely normal! Our warm, friendly nurses will chat with you every step of the way, and the needle pinch lasts less than a second.'</em><br>(a) Describe the <strong>tone</strong> of this extract. [1 Mark]<br>(b) Quote <strong>one phrase</strong> that helps create this tone. [1 Mark]",
                 "steps": [
                     ("Step 1", "Identify the writer's attitude toward nervous donors", "The tone is reassuring, comforting, friendly, and supportive.", "1 Mark [A1 Tone Label]"),
@@ -1531,9 +1531,9 @@ READING_TOPICS = [
             },
             {
                 "marks": "2 Marks",
-                "question": "Read the header of this workplace document:<br><strong>MEMORANDUM | To: All Outpatient Receptionists | From: Practice Manager | Date: 12 October | Subject: Updated NHS Prescription Exemption Checks</strong><br>Identify the <strong>target audience</strong> and the <strong>main purpose</strong> of this document.",
-                "solution_steps": "1. Target audience: Outpatient receptionists at the medical practice [1 Mark].<br>2. Main purpose: To inform and instruct reception staff on the updated procedures for checking patient NHS prescription exemptions [1 Mark].",
-                "correct_answer": "Target Audience: Outpatient receptionists. | Main Purpose: To inform/instruct staff on the updated procedure for checking NHS prescription exemptions.",
+                "question": "Read the header of this workplace document:<br><strong>MEMORANDUM | To: All Outpatient Receptionists | From: Practice Manager | Date: 12 October | Subject: Updated Prescription Exemption Checks</strong><br>Identify the <strong>target audience</strong> and the <strong>main purpose</strong> of this document.",
+                "solution_steps": "1. Target audience: Outpatient receptionists at the medical practice [1 Mark].<br>2. Main purpose: To inform and instruct reception staff on the updated procedures for checking patient prescription exemptions [1 Mark].",
+                "correct_answer": "Target Audience: Outpatient receptionists. | Main Purpose: To inform/instruct staff on the updated procedure for checking prescription exemptions.",
                 "tutor_tip": "In memos and emails, the 'To:' line gives you the exact target audience and the 'Subject:' line gives you the exact topic!"
             },
             {
@@ -1785,12 +1785,12 @@ READING_TOPICS = [
                 "tutor_tip": "Notice how the answer states 'To advise new carpentry apprentices on how to succeed in their first week' — including the topic secures the mark!"
             },
             {
-                "title": "NHS Blood Donation Appeal Purpose & Sub-Purpose Analysis (Level 2)",
+                "title": "Blood Donation Appeal Purpose & Sub-Purpose Analysis (Level 2)",
                 "marks": "3 Marks (Pearson Edexcel Reading Level 2)",
                 "context": "Transfusion Service Public Campaign",
-                "question": "An NHS campaign text opens with a moving story of a six-year-old child surviving leukaemia thanks to platelet donors, followed by a box stating <em>'Donating takes just 45 minutes and requires no medical check-up beforehand'</em>, and ends with: <em>'Register as a donor today — 45 minutes of your time is someone's lifetime.'</em><br>(a) State the <strong>overall main purpose</strong> of this text. [1 Mark]<br>(b) Explain why the writer included the child's recovery story. [1 Mark]<br>(c) Explain why the writer included the factual box about the 45-minute appointment time. [1 Mark]",
+                "question": "A national blood service campaign text opens with a moving story of a six-year-old child surviving leukaemia thanks to platelet donors, followed by a box stating <em>'Donating takes just 45 minutes and requires no medical check-up beforehand'</em>, and ends with: <em>'Register as a donor today — 45 minutes of your time is someone's lifetime.'</em><br>(a) State the <strong>overall main purpose</strong> of this text. [1 Mark]<br>(b) Explain why the writer included the child's recovery story. [1 Mark]<br>(c) Explain why the writer included the factual box about the 45-minute appointment time. [1 Mark]",
                 "steps": [
-                    ("Step 1", "State the overarching purpose with topic context", "To persuade members of the public to register and donate blood/platelets for the NHS.", "1 Mark [A1 Main Purpose]"),
+                    ("Step 1", "State the overarching purpose with topic context", "To persuade members of the public to register and donate blood/platelets.", "1 Mark [A1 Main Purpose]"),
                     ("Step 2", "Explain the persuasive purpose of the case study", "The child's recovery story creates an emotional connection (empathy and warmth) and proves that donations save real children's lives.", "1 Mark [A1 Story Purpose]"),
                     ("Step 3", "Explain the purpose of the factual reassurance box", "Informing readers that donating takes only 45 minutes with no prior check-up removes practical excuses or fears about the process being too slow or complicated.", "1 Mark [A1 Sub-Purpose]")
                 ],
@@ -1813,9 +1813,9 @@ READING_TOPICS = [
         "practice_questions": [
             {
                 "marks": "2 Marks",
-                "question": "A hospice director publishes a newspaper article titled: <em>'Dignity at the End: Why Community Palliative Care Deserves Equal NHS Funding.'</em><br>State the writer's <strong>main purpose</strong> and <strong>target audience</strong>.",
-                "solution_steps": "1. Main purpose: To persuade/campaign for equal NHS funding for community palliative care services by highlighting patient dignity [1 Mark].<br>2. Target audience: Newspaper readers, voters, and healthcare policymakers/commissioners [1 Mark].",
-                "correct_answer": "Main Purpose: To persuade the public and policymakers that community palliative care deserves equal NHS funding. | Target Audience: Adult newspaper readers and healthcare decision-makers.",
+                "question": "A hospice director publishes a newspaper article titled: <em>'Dignity at the End: Why Community Palliative Care Deserves Equal Public Health Funding.'</em><br>State the writer's <strong>main purpose</strong> and <strong>target audience</strong>.",
+                "solution_steps": "1. Main purpose: To persuade/campaign for equal public health funding for community palliative care services by highlighting patient dignity [1 Mark].<br>2. Target audience: Newspaper readers, voters, and healthcare policymakers/commissioners [1 Mark].",
+                "correct_answer": "Main Purpose: To persuade the public and policymakers that community palliative care deserves equal public health funding. | Target Audience: Adult newspaper readers and healthcare decision-makers.",
                 "tutor_tip": "Look at the word 'Why... Deserves' in the headline — that confirms the writer is arguing/persuading for a cause."
             },
             {

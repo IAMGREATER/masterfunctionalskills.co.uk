@@ -155,7 +155,7 @@ L1_UNITS = [
 <ul style="margin:2px 0 0 16px; padding:0;">
   <li><strong>Full Sentences:</strong> Every bullet point in your report must be a complete grammatical sentence. It must start with a capital letter and end with a full stop.</li>
   <li><strong>Avoid Fragment Bullets:</strong> Do not write single words or broken phrases like <em>'broken printer'</em>. Instead write: <em>'The shared printer is broken and causes frequent paper jams.'</em></li>
-  <li><strong>Acronyms:</strong> Capitalise standard organisational acronyms fully without full stops (e.g. <em>IT, NHS, Wi-Fi, HR, CCTV, GCSE</em>).</li>
+  <li><strong>Acronyms:</strong> Capitalise standard organisational acronyms fully without full stops (e.g. <em>IT, HSE, Wi-Fi, HR, CCTV, GCSE</em>).</li>
 </ul>""",
         "format_link": "Pearson examiners specifically penalise fragmented bullet lists in reports. Writing each bullet as a full grammatical sentence is essential for Level 1 and Level 2 success.",
         "worked_bad": "2. Problems: - slow wi-fi - broken chairs - noisy air con",
@@ -166,7 +166,7 @@ L1_UNITS = [
              ["A) - Replacement of old keyboards.", "B) The IT department should replace all obsolete keyboards before term starts.", "C) - new keyboards needed urgently."],
              "B"),
             ("Identify the correct acronym format:",
-             ["A) N.H.S.", "B) nhs", "C) NHS"],
+             ["A) H.S.E.", "B) hse", "C) HSE"],
              "C"),
             ("Choose the correctly punctuated bulleted list:",
              ["A) • Upgrade the computers. • Install high-speed Wi-Fi.", "B) • upgrade the computers • install high-speed Wi-Fi", "C) • Upgrading computers, • and installing Wi-Fi,"],

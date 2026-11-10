@@ -611,7 +611,7 @@ VOCABULARY_MODULES = [
             ("Fore-", "Before / In advance", "Forecast / Foresight", "Preparing financial forecasts for capital expenditure reviews."),
             ("Mal-", "Bad / Faulty / Wrong", "Malfunction / Malpractice", "Investigating clinical malpractice allegations under safeguarding rules."),
             ("Mis-", "Incorrect / Wrongly", "Miscalculated / Misconduct", "Issuing formal disciplinary warnings for gross misconduct."),
-            ("Multi-", "Many / Multiple", "Multidisciplinary / Multifaceted", "Assembling a multidisciplinary team of NHS healthcare specialists.")
+            ("Multi-", "Many / Multiple", "Multidisciplinary / Multifaceted", "Assembling a multidisciplinary team of clinical healthcare specialists.")
         ],
         "exercises": [
             ("Form the antonym using an assimilating prefix (im-, il-, ir-, in-): 'rational' &rarr; ________", "irrational"),
@@ -839,8 +839,8 @@ MIXED_WORKOUTS = [
              "Operators must equip three mandatory items: ear defenders, safety goggles, and steel boots."),
             ("Insert single dash for emphatic twist: 'The real cause of the structural failure was not metal fatigue it was contractor negligence.'",
              "The real cause of the structural failure was not metal fatigue &mdash; it was contractor negligence."),
-            ("Insert brackets for technical acronym: 'The National Health Service NHS introduced digital patient portals in 2024.'",
-             "The National Health Service (NHS) introduced digital patient portals in 2024."),
+            ("Insert brackets for technical acronym: 'The Health and Safety Executive HSE introduced digital patient portals in 2024.'",
+             "The Health and Safety Executive (HSE) introduced digital patient portals in 2024."),
             ("Insert hyphens where required: 'We require twenty four hour on call technical support.'",
              "We require 24-hour on-call technical support.")
         ],

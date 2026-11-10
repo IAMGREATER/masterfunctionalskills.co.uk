@@ -57,8 +57,8 @@
       tutor: 'Tutor Emma',
       localVideo: 'assets/video/emma-addition-subtraction-walkthrough.mp4',
       poster: 'assets/img/addition-subtraction-emma-poster.png',
-      companionSlug: 'numbers-and-place-value',
-      companionLabel: 'Prev: Numbers & Place Value (Sonya)'
+      companionSlug: 'multiplication',
+      companionLabel: 'Next: Multiplication (Sonya)'
     },
     'addition and subtraction': {
       ytId: 'lZno-Cxkp80',
@@ -67,8 +67,28 @@
       tutor: 'Tutor Emma',
       localVideo: 'assets/video/emma-addition-subtraction-walkthrough.mp4',
       poster: 'assets/img/addition-subtraction-emma-poster.png',
-      companionSlug: 'numbers-and-place-value',
-      companionLabel: 'Prev: Numbers & Place Value (Sonya)'
+      companionSlug: 'multiplication',
+      companionLabel: 'Next: Multiplication (Sonya)'
+    },
+    'multiplication': {
+      ytId: 'SFGMKJqkn6c',
+      title: 'Multiplication (Whole Numbers & Decimals) • Masterclass Walkthrough',
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: 'Tutor Sonya',
+      localVideo: 'assets/video/sonya-multiplication-walkthrough.mp4',
+      poster: 'assets/img/multiplication-sonya-poster.png',
+      companionSlug: 'addition-and-subtraction',
+      companionLabel: 'Prev: Addition & Subtraction (Emma)'
+    },
+    'functional-skills-multiplication': {
+      ytId: 'SFGMKJqkn6c',
+      title: 'Multiplication (Whole Numbers & Decimals) • Masterclass Walkthrough',
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: 'Tutor Sonya',
+      localVideo: 'assets/video/sonya-multiplication-walkthrough.mp4',
+      poster: 'assets/img/multiplication-sonya-poster.png',
+      companionSlug: 'addition-and-subtraction',
+      companionLabel: 'Prev: Addition & Subtraction (Emma)'
     },
 
     // Past Paper 10

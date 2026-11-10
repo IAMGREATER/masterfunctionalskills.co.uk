@@ -353,6 +353,14 @@
       applyDyslexiaMode(true, false);
     }
     initTouchDropdowns();
+
+    // Load Private Pre-Release Access Gate (Stealth Mode)
+    if (!document.getElementById('mfsPrivateGateScript')) {
+      var gateScript = document.createElement('script');
+      gateScript.id = 'mfsPrivateGateScript';
+      gateScript.src = 'assets/js/mfs-private-gate.js';
+      document.body.appendChild(gateScript);
+    }
   }
 
   if (document.readyState === 'loading') {

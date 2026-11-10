@@ -366,15 +366,15 @@
       <!-- RIGHT COLUMN: MAIN LEARNING CONTENT -->
       <div class="revision-content">
         
-        <!-- AI TUTOR SONYA VIDEO MASTERCLASS STATION -->
+                <!-- AI TUTOR SONYA VIDEO MASTERCLASS STATION -->
         <section id="video-station" class="revision-section" style="margin-bottom: 32px;">
-          <div id="videoMasterclassStation" style="position:relative; border-radius:14px; overflow:hidden; background:#070d1e;">
+          <div id="videoMasterclassStation" style="position:relative; border-radius:14px; overflow:hidden; background:#070d1e; box-shadow:0 10px 30px rgba(0,0,0,0.35);">
             <div class="video-exemplar-head" style="background:#070d1e; border: 2px solid #0284c7; border-radius:14px 14px 0 0; padding:18px 22px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
               <div style="display:flex; align-items:center; gap:14px;">
                 <img src="assets/img/avatars/sonya-with-specs.png" alt="Sonya AI Specialist Tutor" style="width:52px; height:52px; border-radius:50%; border:2px solid #38bdf8; object-fit:cover;">
                 <div>
                   <div style="color:#ffffff; font-size:1.18rem; font-weight:800; display:flex; align-items:center; gap:8px;">
-                    <i class="fa-solid fa-circle-play" style="color:#38bdf8;"></i> Multiplication &amp; Scaling Video Masterclass
+                    <i class="fa-solid fa-circle-play" style="color:#38bdf8;"></i> Multiplication & Scaling Video Masterclass
                   </div>
                   <div style="color:#94a3b8; font-size:0.88rem; font-weight:600; margin-top:3px;">
                     Presented by <strong style="color:#38bdf8;">Sonya</strong> (MFS Lead Mathematics Specialist) &bull; 1080p Studio Walkthrough
@@ -388,365 +388,65 @@
               </div>
             </div>
 
-            <div class="video-screen-wrap" style="position:relative; border-radius:0; margin-bottom:0; border-left:2px solid #0284c7; border-right:2px solid #0284c7; background:#000; overflow:hidden;">
-              <video id="topicMultiplicationVideoPlayer" controls playsinline poster="assets/img/multiplication-sonya-poster.png" style="width:100%; height:100%; object-fit:contain; background:#000; display:block;">
-                <source src="assets/video/sonya-multiplication-walkthrough.mp4" type="video/mp4">
-                <track default kind="chapters" label="Lesson Chapters" srclang="en" src="assets/video/sonya-multiplication-walkthrough.vtt">
-                Your browser does not support the video tag.
-              </video>
-
-              <!-- YouTube Gesture Area (Top 85% above native controls bar) -->
-              <div id="ytMultiplicationGestureOverlay" style="position:absolute; top:0; left:0; right:0; bottom:56px; z-index:4; cursor:pointer;" title="Click: Play/Pause • Double-Click Left/Right: ±10s • Hold: 2x Speed"></div>
-
-              <!-- YouTube 2X Speed Floating Pill -->
-              <div id="ytMultiplicationSpeedPill" style="display:none; position:absolute; top:60px; left:50%; transform:translateX(-50%); background:rgba(15, 23, 42, 0.92); color:#38bdf8; border:2px solid #38bdf8; padding:6px 18px; border-radius:24px; font-size:0.95rem; font-weight:800; z-index:10; pointer-events:none; box-shadow:0 6px 20px rgba(0,0,0,0.6); align-items:center; gap:8px;">
-                <i class="fa-solid fa-forward-fast" style="color:#38bdf8;"></i> 2X SPEED
-              </div>
-
-              <!-- YouTube Center HUD Overlay -->
-              <div id="ytMultiplicationCenterHud" style="display:none; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); background:rgba(0,0,0,0.78); color:#ffffff; border-radius:50%; width:82px; height:82px; flex-direction:column; align-items:center; justify-content:center; z-index:10; pointer-events:none; border:2px solid rgba(56, 189, 248, 0.4); box-shadow:0 8px 24px rgba(0,0,0,0.7); transition:opacity 0.2s ease, transform 0.2s ease;">
-                <span id="ytMultiplicationCenterHudIcon" style="font-size:2rem; color:#38bdf8;"></span>
-                <span id="ytMultiplicationCenterHudText" style="font-size:0.75rem; font-weight:800; margin-top:2px; color:#ffffff;"></span>
-              </div>
-
-              <!-- YouTube Double-Tap Seek Ripples -->
-              <div id="ytMultiplicationRippleLeft" style="display:none; position:absolute; top:0; bottom:56px; left:0; width:35%; background:radial-gradient(circle at left, rgba(56, 189, 248, 0.25), transparent); border-radius:0 120px 120px 0; z-index:8; pointer-events:none; align-items:center; justify-content:center; color:#ffffff; font-size:1.3rem; font-weight:800; text-shadow:0 2px 8px #000;">
-                <div style="background:rgba(15,23,42,0.85); border:1px solid #38bdf8; padding:8px 16px; border-radius:20px; display:flex; align-items:center; gap:6px;">
-                  <i class="fa-solid fa-backward"></i> 10s
-                </div>
-              </div>
-              <div id="ytMultiplicationRippleRight" style="display:none; position:absolute; top:0; bottom:56px; right:0; width:35%; background:radial-gradient(circle at right, rgba(56, 189, 248, 0.25), transparent); border-radius:120px 0 0 120px; z-index:8; pointer-events:none; align-items:center; justify-content:center; color:#ffffff; font-size:1.3rem; font-weight:800; text-shadow:0 2px 8px #000;">
-                <div style="background:rgba(15,23,42,0.85); border:1px solid #38bdf8; padding:8px 16px; border-radius:20px; display:flex; align-items:center; gap:6px;">
-                  10s <i class="fa-solid fa-forward"></i>
-                </div>
-              </div>
+            <div class="video-screen-wrap" style="position:relative; width:100%; aspect-ratio:16/9; background:#000; overflow:hidden; border-left:2px solid #0284c7; border-right:2px solid #0284c7; border-radius:0; margin-bottom:0;">
+              <iframe id="topicMasterclassIframe" style="position:absolute; top:0; left:0; width:100%; height:100%; border:0; display:block;" src="https://www.youtube-nocookie.com/embed/JFnv0TXY8NE?rel=0&enablejsapi=1" title="Multiplication & Scaling Video Masterclass" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
             </div>
 
             <!-- JUMP BENCHMARKS BAR -->
             <div class="video-jump-bar" style="background:#0f172a; border:2px solid #0284c7; border-top:1px solid #1e3a8a; border-radius:0; padding:12px 18px; margin-bottom:0;">
               <span class="jump-label" style="color:#94a3b8;"><i class="fa-solid fa-forward-step" style="color:#38bdf8;"></i> Lesson Benchmarks:</span>
-              <button type="button" class="jump-btn" onclick="jumpMultiplicationVideo(0, this)">0:00 Briefing &amp; Roadmap</button>
-              <button type="button" class="jump-btn" onclick="jumpMultiplicationVideo(47, this)">0:47 Skill 1: Long Method &amp; Zero</button>
-              <button type="button" class="jump-btn" onclick="jumpMultiplicationVideo(161, this)">2:41 Skill 2: Decimal Multiplication</button>
-              <button type="button" class="jump-btn" onclick="jumpMultiplicationVideo(247, this)">4:07 Exam Model: Catering Invoice</button>
-              <button type="button" class="jump-btn" onclick="jumpMultiplicationVideo(401, this)">6:41 Examiner Traps Checklist</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(0, this)">0:00 Briefing & Roadmap</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(47, this)">0:47 Skill 1: Long Method & Zero</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(161, this)">2:41 Skill 2: Decimal Multiplication</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(247, this)">4:07 Exam Model: Catering Invoice</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(401, this)">6:41 Examiner Traps Checklist</button>
             </div>
 
-            <!-- PLAYER SHORTCUTS HELPER BAR (COMPACT) -->
-            <div class="video-shortcuts-guide" style="background:#070d1e; border:2px solid #0284c7; border-top:1px solid #1e3a8a; border-radius:0 0 14px 14px; padding:6px 14px; display:flex; align-items:center; flex-wrap:wrap; gap:8px 14px; font-size:0.74rem; color:#94a3b8;">
-              <span><kbd style="background:#1e293b; color:#38bdf8; padding:1px 5px; border-radius:4px; border:1px solid #334155; font-family:monospace; font-size:0.72rem;">Space</kbd>/<kbd style="background:#1e293b; color:#38bdf8; padding:1px 5px; border-radius:4px; border:1px solid #334155; font-family:monospace; font-size:0.72rem;">K</kbd> Play/Pause</span>
-              <span><kbd style="background:#1e293b; color:#38bdf8; padding:1px 5px; border-radius:4px; border:1px solid #334155; font-family:monospace; font-size:0.72rem;">◄</kbd>/<kbd style="background:#1e293b; color:#38bdf8; padding:1px 5px; border-radius:4px; border:1px solid #334155; font-family:monospace; font-size:0.72rem;">►</kbd> ±5s</span>
-              <span><kbd style="background:#1e293b; color:#38bdf8; padding:1px 5px; border-radius:4px; border:1px solid #334155; font-family:monospace; font-size:0.72rem;">J</kbd>/<kbd style="background:#1e293b; color:#38bdf8; padding:1px 5px; border-radius:4px; border:1px solid #334155; font-family:monospace; font-size:0.72rem;">L</kbd> ±10s</span>
-              <span><kbd style="background:#1e293b; color:#38bdf8; padding:1px 5px; border-radius:4px; border:1px solid #334155; font-family:monospace; font-size:0.72rem;">▲</kbd>/<kbd style="background:#1e293b; color:#38bdf8; padding:1px 5px; border-radius:4px; border:1px solid #334155; font-family:monospace; font-size:0.72rem;">▼</kbd> Vol</span>
-              <span><kbd style="background:#1e293b; color:#38bdf8; padding:1px 5px; border-radius:4px; border:1px solid #334155; font-family:monospace; font-size:0.72rem;">Hold Click/Touch</kbd> 2x Speed</span>
-              <span><kbd style="background:#1e293b; color:#38bdf8; padding:1px 5px; border-radius:4px; border:1px solid #334155; font-family:monospace; font-size:0.72rem;">Double-Tap Sides</kbd> ±10s</span>
-              <span><kbd style="background:#1e293b; color:#38bdf8; padding:1px 5px; border-radius:4px; border:1px solid #334155; font-family:monospace; font-size:0.72rem;">F</kbd> Fullscreen</span>
-              <span><kbd style="background:#1e293b; color:#38bdf8; padding:1px 5px; border-radius:4px; border:1px solid #334155; font-family:monospace; font-size:0.72rem;">M</kbd> Mute</span>
-              <span><kbd style="background:#1e293b; color:#38bdf8; padding:1px 5px; border-radius:4px; border:1px solid #334155; font-family:monospace; font-size:0.72rem;">0-9</kbd> Seek 0%-90%</span>
+            <!-- PLAYER FOOTER & EXTERNAL LINKS -->
+            <div style="background:#070d1e; border:2px solid #0284c7; border-top:1px solid #1e3a8a; border-radius:0 0 14px 14px; padding:10px 18px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;">
+              <span style="font-size:0.82rem; color:#94a3b8;"><i class="fa-solid fa-shield-halved" style="color:#38bdf8;"></i> Pearson Edexcel &amp; City &amp; Guilds Syllabus Aligned</span>
+              <div style="display:flex; gap:12px; align-items:center;">
+                <a href="video-solution.html?topic=multiplication" target="_blank" rel="noopener" style="font-size:0.82rem; color:#38bdf8; text-decoration:none; font-weight:700;"><i class="fa-solid fa-up-right-from-square"></i> Open in Video Station</a>
+                <a href="https://youtu.be/JFnv0TXY8NE" target="_blank" rel="noopener" style="font-size:0.82rem; color:#ef4444; text-decoration:none; font-weight:700;"><i class="fa-brands fa-youtube"></i> Watch on YouTube</a>
+              </div>
             </div>
           </div>
 
           <script>
-            var MULTIPLICATION_CHAPTERS = [
-              { time: 0, text: "0:00 Briefing & Roadmap", short: "0:00 Briefing" },
-              { time: 47, text: "0:47 Skill 1: Long Method & Placeholder Zero", short: "0:47 Long Method" },
-              { time: 161, text: "2:41 Skill 2: Decimal Multiplication & Total Places Rule", short: "2:41 Decimals" },
-              { time: 247, text: "4:07 Exam Model: Catering Invoice (£531.00)", short: "4:07 Exam Model" },
-              { time: 401, text: "6:41 Examiner Traps Checklist", short: "6:41 Checklist" }
-            ];
-
-            function jumpMultiplicationVideo(seconds, btn) {
+            function jumpMasterclassVideo(seconds, btn) {
               if (btn && btn.blur) btn.blur();
-              if (document.activeElement && document.activeElement.blur) document.activeElement.blur();
-              var p = document.getElementById('topicMultiplicationVideoPlayer');
-              if (p) {
-                p.currentTime = seconds;
-                p.play().catch(function(e){ console.log('Autoplay:', e); });
+              var video = document.getElementById('topicMasterclassPlayer');
+              if (video) {
+                video.currentTime = seconds;
+                video.play().catch(function(e){ console.log('Autoplay:', e); });
+              } else {
+                var iframe = document.getElementById('topicMasterclassIframe');
+                if (iframe) {
+                  iframe.src = "https://www.youtube-nocookie.com/embed/JFnv0TXY8NE?rel=0&autoplay=1&enablejsapi=1&start=" + seconds;
+                }
               }
+              var btns = document.querySelectorAll('#videoMasterclassStation .video-jump-bar .jump-btn');
+              btns.forEach(function(b) {
+                if (b === btn) {
+                  b.style.borderColor = '#38bdf8';
+                  b.style.background = '#0284c7';
+                  b.style.color = '#ffffff';
+                  b.style.fontWeight = '800';
+                } else {
+                  b.style.borderColor = '';
+                  b.style.background = '';
+                  b.style.color = '';
+                  b.style.fontWeight = '';
+                }
+              });
             }
 
-            (function() {
-              var video = document.getElementById('topicMultiplicationVideoPlayer');
-              var wrap = video ? video.closest('.video-screen-wrap') : null;
-              var station = document.getElementById('videoMasterclassStation') || wrap;
-              if (!video || !wrap) return;
-
-              var speedPill = document.getElementById('ytMultiplicationSpeedPill');
-              var centerHud = document.getElementById('ytMultiplicationCenterHud');
-              var centerHudIcon = document.getElementById('ytMultiplicationCenterHudIcon');
-              var centerHudText = document.getElementById('ytMultiplicationCenterHudText');
-              var rippleLeft = document.getElementById('ytMultiplicationRippleLeft');
-              var rippleRight = document.getElementById('ytMultiplicationRippleRight');
-              var gestureOverlay = document.getElementById('ytMultiplicationGestureOverlay');
-
-              var hudTimer = null;
-              function showCenterHud(iconHtml, text) {
-                if (!centerHud) return;
-                centerHudIcon.innerHTML = iconHtml;
-                centerHudText.textContent = text || '';
-                centerHud.style.display = 'flex';
-                centerHud.style.opacity = '1';
-                centerHud.style.transform = 'translate(-50%, -50%) scale(1)';
-                clearTimeout(hudTimer);
-                hudTimer = setTimeout(function() {
-                  centerHud.style.opacity = '0';
-                  centerHud.style.transform = 'translate(-50%, -50%) scale(1.15)';
-                  setTimeout(function() { centerHud.style.display = 'none'; }, 220);
-                }, 550);
+            if (window.location.protocol === 'file:') {
+              var wrap = document.querySelector('#videoMasterclassStation .video-screen-wrap');
+              if (wrap) {
+                wrap.innerHTML = '<video id="topicMasterclassPlayer" controls playsinline poster="assets/img/multiplication-sonya-poster.png" style="width:100%; height:100%; object-fit:contain; background:#000; display:block;"><source src="assets/video/sonya-multiplication-walkthrough.mp4" type="video/mp4"><track default kind="chapters" label="Lesson Chapters" srclang="en" src="assets/video/sonya-multiplication-walkthrough.vtt">Your browser does not support the video tag.</video>';
               }
-
-              function showRipple(side) {
-                var el = (side === 'left') ? rippleLeft : rippleRight;
-                if (!el) return;
-                el.style.display = 'flex';
-                clearTimeout(el._timer);
-                el._timer = setTimeout(function() {
-                  el.style.display = 'none';
-                }, 450);
-              }
-
-              // 1. Chapter Synchronization on timeupdate
-              video.addEventListener('timeupdate', function() {
-                var cur = video.currentTime;
-                var curCh = MULTIPLICATION_CHAPTERS[0];
-                var curIdx = 0;
-                for (var i = 0; i < MULTIPLICATION_CHAPTERS.length; i++) {
-                  if (cur >= MULTIPLICATION_CHAPTERS[i].time - 0.2) {
-                    curCh = MULTIPLICATION_CHAPTERS[i];
-                    curIdx = i;
-                  }
-                }
-
-                // Sync Buttons
-                var mainBtns = document.querySelectorAll('.video-jump-bar .jump-btn');
-                mainBtns.forEach(function(b, idx) {
-                  if (idx === curIdx) {
-                    b.style.borderColor = '#38bdf8';
-                    b.style.background = '#0284c7';
-                    b.style.color = '#ffffff';
-                    b.style.fontWeight = '800';
-                  } else {
-                    b.style.borderColor = '';
-                    b.style.background = '';
-                    b.style.color = '';
-                    b.style.fontWeight = '';
-                  }
-                });
-              });
-
-              // 2. Press and Hold for 2X Speed
-              var holdTimer = null;
-              var isHolding2x = false;
-              var previousRate = 1.0;
-
-              function startHold(e) {
-                if (e.button && e.button !== 0) return;
-                clearTimeout(holdTimer);
-                holdTimer = setTimeout(function() {
-                  isHolding2x = true;
-                  previousRate = video.playbackRate || 1.0;
-                  video.playbackRate = 2.0;
-                  if (speedPill) speedPill.style.display = 'flex';
-                  showCenterHud('<i class="fa-solid fa-forward-fast"></i>', '2x Speed');
-                }, 260);
-              }
-
-              function endHold() {
-                clearTimeout(holdTimer);
-                if (isHolding2x) {
-                  isHolding2x = false;
-                  video.playbackRate = previousRate;
-                  if (speedPill) speedPill.style.display = 'none';
-                  showCenterHud('<i class="fa-solid fa-play"></i>', previousRate + 'x');
-                }
-              }
-
-              // 3. Click vs Double Click detection
-              var clickTimer = null;
-              var clickCount = 0;
-
-              function handleOverlayClick(e) {
-                if (isHolding2x) return;
-                var rect = gestureOverlay.getBoundingClientRect();
-                var clientX = (e.clientX !== undefined) ? e.clientX : (e.pageX || 0);
-                var xRatio = (clientX - rect.left) / rect.width;
-
-                clickCount++;
-                if (clickCount === 1) {
-                  clickTimer = setTimeout(function() {
-                    clickCount = 0;
-                    if (video.paused) {
-                      video.play().catch(function(err){});
-                      showCenterHud('<i class="fa-solid fa-play"></i>', 'Play');
-                    } else {
-                      video.pause();
-                      showCenterHud('<i class="fa-solid fa-pause"></i>', 'Pause');
-                    }
-                  }, 250);
-                } else if (clickCount >= 2) {
-                  clearTimeout(clickTimer);
-                  clickCount = 0;
-                  if (xRatio < 0.35) {
-                    video.currentTime = Math.max(0, video.currentTime - 10);
-                    showRipple('left');
-                    showCenterHud('<i class="fa-solid fa-rotate-left"></i>', '-10s');
-                  } else if (xRatio > 0.65) {
-                    video.currentTime = Math.min(video.duration || 9999, video.currentTime + 10);
-                    showRipple('right');
-                    showCenterHud('<i class="fa-solid fa-rotate-right"></i>', '+10s');
-                  } else {
-                    toggleFullscreen();
-                  }
-                }
-              }
-
-              function toggleFullscreen() {
-                var el = station || video;
-                if (!document.fullscreenElement && !document.webkitFullscreenElement) {
-                  if (el.requestFullscreen) {
-                    el.requestFullscreen();
-                  } else if (el.webkitRequestFullscreen) {
-                    el.webkitRequestFullscreen();
-                  } else if (video.webkitEnterFullscreen) {
-                    video.webkitEnterFullscreen();
-                  }
-                  showCenterHud('<i class="fa-solid fa-expand"></i>', 'Fullscreen');
-                } else {
-                  if (document.exitFullscreen) {
-                    document.exitFullscreen();
-                  } else if (document.webkitExitFullscreen) {
-                    document.webkitExitFullscreen();
-                  }
-                  showCenterHud('<i class="fa-solid fa-compress"></i>', 'Exit Fullscreen');
-                }
-              }
-
-              if (gestureOverlay) {
-                gestureOverlay.addEventListener('mousedown', startHold);
-                gestureOverlay.addEventListener('mouseup', endHold);
-                gestureOverlay.addEventListener('mouseleave', endHold);
-                gestureOverlay.addEventListener('click', handleOverlayClick);
-
-                gestureOverlay.addEventListener('touchstart', function(e) {
-                  startHold(e.touches[0]);
-                }, { passive: true });
-                gestureOverlay.addEventListener('touchend', endHold);
-                gestureOverlay.addEventListener('touchcancel', endHold);
-              }
-
-              // 4. Global YouTube Keyboard Hotkeys
-              document.addEventListener('keydown', function(e) {
-                var tag = (e.target && e.target.tagName) ? e.target.tagName.toLowerCase() : '';
-                if (tag === 'input' || tag === 'textarea' || tag === 'select' || (e.target && e.target.isContentEditable)) return;
-
-                var k = e.key;
-                var code = e.code;
-
-                if (k === ' ' || code === 'Space') {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  if (document.activeElement && document.activeElement.blur) document.activeElement.blur();
-                  if (video.paused) {
-                    video.play();
-                    showCenterHud('<i class="fa-solid fa-play"></i>', 'Play');
-                  } else {
-                    video.pause();
-                    showCenterHud('<i class="fa-solid fa-pause"></i>', 'Pause');
-                  }
-                  return false;
-                }
-
-                if (k === 'k' || k === 'K') {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  if (video.paused) {
-                    video.play();
-                    showCenterHud('<i class="fa-solid fa-play"></i>', 'Play');
-                  } else {
-                    video.pause();
-                    showCenterHud('<i class="fa-solid fa-pause"></i>', 'Pause');
-                  }
-                  return false;
-                }
-
-                if (code === 'ArrowLeft') {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  video.currentTime = Math.max(0, video.currentTime - 5);
-                  showCenterHud('<i class="fa-solid fa-backward"></i>', '-5s');
-                  return false;
-                }
-
-                if (code === 'ArrowRight') {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  video.currentTime = Math.min(video.duration || 9999, video.currentTime + 5);
-                  showCenterHud('<i class="fa-solid fa-forward"></i>', '+5s');
-                  return false;
-                }
-
-                if (k === 'j' || k === 'J') {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  video.currentTime = Math.max(0, video.currentTime - 10);
-                  showRipple('left');
-                  showCenterHud('<i class="fa-solid fa-rotate-left"></i>', '-10s');
-                  return false;
-                }
-
-                if (k === 'l' || k === 'L') {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  video.currentTime = Math.min(video.duration || 9999, video.currentTime + 10);
-                  showRipple('right');
-                  showCenterHud('<i class="fa-solid fa-rotate-right"></i>', '+10s');
-                  return false;
-                }
-
-                if (code === 'ArrowUp') {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  video.volume = Math.min(1.0, Math.round((video.volume + 0.1) * 10) / 10);
-                  video.muted = false;
-                  showCenterHud('<i class="fa-solid fa-volume-high"></i>', Math.round(video.volume * 100) + '%');
-                  return false;
-                }
-
-                if (code === 'ArrowDown') {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  video.volume = Math.max(0.0, Math.round((video.volume - 0.1) * 10) / 10);
-                  showCenterHud('<i class="fa-solid fa-volume-low"></i>', Math.round(video.volume * 100) + '%');
-                  return false;
-                }
-
-                if (k === 'm' || k === 'M') {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  video.muted = !video.muted;
-                  showCenterHud(video.muted ? '<i class="fa-solid fa-volume-xmark"></i>' : '<i class="fa-solid fa-volume-high"></i>', video.muted ? 'Muted' : 'Unmuted');
-                  return false;
-                }
-
-                if (k === 'f' || k === 'F') {
-                  e.preventDefault();
-                  e.stopPropagation();
-                  toggleFullscreen();
-                  return false;
-                }
-
-                if (code.indexOf('Digit') === 0 && !e.shiftKey && !e.ctrlKey && !e.altKey) {
-                  var digit = parseInt(code.replace('Digit', ''), 10);
-                  if (!isNaN(digit) && video.duration) {
-                    e.preventDefault();
-                    e.stopPropagation();
-                    video.currentTime = (digit / 10.0) * video.duration;
-                    showCenterHud('<i class="fa-solid fa-location-dot"></i>', (digit * 10) + '%');
-                    return false;
-                  }
-                }
-              }, true);
-            })();
+            }
           </script>
         </section>
         

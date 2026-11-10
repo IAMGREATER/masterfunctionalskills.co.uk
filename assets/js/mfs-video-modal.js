@@ -77,8 +77,8 @@
       tutor: 'Tutor Sonya',
       localVideo: 'assets/video/sonya-multiplication-walkthrough.mp4',
       poster: 'assets/img/multiplication-sonya-poster.png',
-      companionSlug: 'addition-and-subtraction',
-      companionLabel: 'Prev: Addition & Subtraction (Emma)'
+      companionSlug: 'division',
+      companionLabel: 'Next: Division (Subi)'
     },
     'functional-skills-multiplication': {
       ytId: 'JFnv0TXY8NE',
@@ -87,8 +87,56 @@
       tutor: 'Tutor Sonya',
       localVideo: 'assets/video/sonya-multiplication-walkthrough.mp4',
       poster: 'assets/img/multiplication-sonya-poster.png',
-      companionSlug: 'addition-and-subtraction',
-      companionLabel: 'Prev: Addition & Subtraction (Emma)'
+      companionSlug: 'division',
+      companionLabel: 'Next: Division (Subi)'
+    },
+    'division': {
+      title: 'Division & Remainders • Masterclass Walkthrough',
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: 'Tutor Subi',
+      localVideo: 'assets/video/subi-division-and-remainders-walkthrough.mp4',
+      poster: 'assets/img/division-subi-poster.png',
+      companionSlug: 'bidmas',
+      companionLabel: 'Next: BIDMAS (Emma)'
+    },
+    'functional-skills-division': {
+      title: 'Division & Remainders • Masterclass Walkthrough',
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: 'Tutor Subi',
+      localVideo: 'assets/video/subi-division-and-remainders-walkthrough.mp4',
+      poster: 'assets/img/division-subi-poster.png',
+      companionSlug: 'bidmas',
+      companionLabel: 'Next: BIDMAS (Emma)'
+    },
+    'bidmas': {
+      ytId: '31-cHwQryVc',
+      title: 'Order of Operations (BIDMAS) • Masterclass Walkthrough',
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: 'Tutor Emma',
+      localVideo: 'assets/video/emma-bidmas-walkthrough.mp4',
+      poster: 'assets/img/bidmas-emma-poster.png',
+      companionSlug: 'division',
+      companionLabel: 'Prev: Division (Subi)'
+    },
+    'functional-skills-bidmas': {
+      ytId: '31-cHwQryVc',
+      title: 'Order of Operations (BIDMAS) • Masterclass Walkthrough',
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: 'Tutor Emma',
+      localVideo: 'assets/video/emma-bidmas-walkthrough.mp4',
+      poster: 'assets/img/bidmas-emma-poster.png',
+      companionSlug: 'division',
+      companionLabel: 'Prev: Division (Subi)'
+    },
+    'order of operations': {
+      ytId: '31-cHwQryVc',
+      title: 'Order of Operations (BIDMAS) • Masterclass Walkthrough',
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      tutor: 'Tutor Emma',
+      localVideo: 'assets/video/emma-bidmas-walkthrough.mp4',
+      poster: 'assets/img/bidmas-emma-poster.png',
+      companionSlug: 'division',
+      companionLabel: 'Prev: Division (Subi)'
     },
 
     // Past Paper 10

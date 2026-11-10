@@ -31,7 +31,7 @@
       companionLabel: 'Next: Ordering Numbers (Subi)'
     },
     'ordering-numbers': {
-      ytId: 'STO1b_bOvbw',
+      ytId: '-6NY17_LDYg',
       title: 'Ordering Numbers • Masterclass Walkthrough',
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: 'Tutor Subi',
@@ -41,7 +41,7 @@
       companionLabel: 'Next: Addition & Subtraction (Emma)'
     },
     'ordering numbers': {
-      ytId: 'STO1b_bOvbw',
+      ytId: '-6NY17_LDYg',
       title: 'Ordering Numbers • Masterclass Walkthrough',
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: 'Tutor Subi',
@@ -91,6 +91,7 @@
       companionLabel: 'Next: Division (Subi)'
     },
     'division': {
+      ytId: '8ZgpuneKalQ',
       title: 'Division & Remainders • Masterclass Walkthrough',
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: 'Tutor Subi',
@@ -100,6 +101,7 @@
       companionLabel: 'Next: BIDMAS (Emma)'
     },
     'functional-skills-division': {
+      ytId: '8ZgpuneKalQ',
       title: 'Division & Remainders • Masterclass Walkthrough',
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: 'Tutor Subi',

@@ -164,7 +164,7 @@
       companionLabel: "3D Shapes and Nets"
     },
     'angles-bearings-pythagoras': {
-      ytId: '-RQYqrfs3nE',
+      ytId: '8FmNEXQDedw',
       title: "Angles, Bearings and Pythagoras \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Subi",
@@ -784,7 +784,7 @@
       companionLabel: "Volume of Prisms and Cylinders"
     },
     'volume-and-surface-area': {
-      ytId: 'rYFoR1KywDk',
+      ytId: '58Dc-pJOwRM',
       title: "Surface Area & 3D Volumes \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Subi",

@@ -9,6 +9,90 @@
   // Available videos dictionary (slug/topic -> video details)
   // Available videos dictionary (slug/topic -> video details)
   const KNOWN_VIDEOS = {
+    'english-workplace-emails': {
+      ytId: 'lH37b3G_60Y',
+      title: "Workplace Emails, Clarity & Professional Tone \u2022 Masterclass Walkthrough",
+      series: 'Functional Skills English Level 2',
+      tutor: 'Tutor Emma',
+      poster: 'assets/img/posters/writing-communicating-poster.jpg'
+    },
+    'english-formal-letters': {
+      ytId: '29IHuQnA1nQ',
+      title: "Formal Letters: Layout & Sign-Offs \u2022 Masterclass Walkthrough",
+      series: 'Functional Skills English Level 2',
+      tutor: 'Tutor Sonya',
+      poster: 'assets/img/posters/formal-letters-poster.jpg'
+    },
+    'english-planning-paf-audience': {
+      ytId: 'jMcU-HTuScU',
+      title: "Planning Your Answer: Audience, Purpose & Context \u2022 Masterclass Walkthrough",
+      series: 'Functional Skills English Level 2',
+      tutor: 'Tutor Subi',
+      poster: 'assets/img/posters/writing-planning-your-answer-poster.jpg'
+    },
+    'english-reading-exam-strategy': {
+      ytId: 'R095wFbfCh4',
+      title: "Level 2 Reading Exam Strategy & Timing \u2022 Masterclass Walkthrough",
+      series: 'Functional Skills English Level 2',
+      tutor: 'Tutor Emma',
+      poster: 'assets/img/posters/reading-the-exam-poster.jpg'
+    },
+    'english-point-of-view-argument': {
+      ytId: 't36ZXYZAYxE',
+      title: "Point of View & Line of Argument \u2022 Masterclass Walkthrough",
+      series: 'Functional Skills English Level 2',
+      tutor: 'Tutor Subi',
+      poster: 'assets/img/posters/reading-point-of-view-and-line-of-argument-poster.jpg'
+    },
+    'english-styles-tone-voice': {
+      ytId: 'FpXxApOdFqA',
+      title: "Styles of Writing, Tone & Voice \u2022 Masterclass Walkthrough",
+      series: 'Functional Skills English Level 2',
+      tutor: 'Tutor Sonya',
+      poster: 'assets/img/posters/reading-styles-of-writing-and-voice-poster.jpg'
+    },
+    'english-fact-opinion-bias': {
+      ytId: 'UyRmjiROkK4',
+      title: "Fact, Opinion & Detecting Bias \u2022 Masterclass Walkthrough",
+      series: 'Functional Skills English Level 2',
+      tutor: 'Tutor Subi',
+      poster: 'assets/img/posters/reading-fact-or-opinion-poster.jpg'
+    },
+    'english-language-rhetorical': {
+      ytId: '4Gj0L4fm29o',
+      title: "Language Features & Rhetorical Devices \u2022 Masterclass Walkthrough",
+      series: 'Functional Skills English Level 2',
+      tutor: 'Tutor Emma',
+      poster: 'assets/img/posters/reading-language-features-poster.jpg'
+    },
+    'english-presentational-layout': {
+      ytId: 'IsSN7y4u70s',
+      title: "Presentational Features, Layout & Images \u2022 Masterclass Walkthrough",
+      series: 'Functional Skills English Level 2',
+      tutor: 'Tutor Sonya',
+      poster: 'assets/img/posters/reading-presentational-features-poster.jpg'
+    },
+    'english-implied-meaning-vocab': {
+      ytId: 'Ef0p2AkL2mk',
+      title: "Implied Meaning & Specialist Vocabulary \u2022 Masterclass Walkthrough",
+      series: 'Functional Skills English Level 2',
+      tutor: 'Tutor Subi',
+      poster: 'assets/img/posters/reading-meaning-poster.jpg'
+    },
+    'english-writers-purpose-text-types': {
+      ytId: 'mOhRbMKOhZA',
+      title: "Main Purpose & Text Types \u2022 Masterclass Walkthrough",
+      series: 'Functional Skills English Level 2',
+      tutor: 'Tutor Emma',
+      poster: 'assets/img/posters/reading-why-do-writers-write-poster.jpg'
+    },
+    'english-navigating-sources': {
+      ytId: 'pbXVaLg--Lw',
+      title: "Skimming, Scanning & Navigating Sources \u2022 Masterclass Walkthrough",
+      series: 'Functional Skills English Level 2',
+      tutor: 'Tutor Sonya',
+      poster: 'assets/img/posters/types-of-and-navigating-sources-poster.jpg'
+    },
     'english-punctuation-semicolons': {
       ytId: 'j1_sSwvWslU',
       title: "Punctuation, Semicolons & Apostrophes \u2022 Masterclass Walkthrough",

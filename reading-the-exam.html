@@ -307,6 +307,11 @@
         </div>
 
         <ul class="sidebar-toc-list" id="tocList">
+          <li>
+            <a href="#video-station" class="sidebar-toc-link">
+              <i class="fa-solid fa-circle-play" style="color:#ef4444;"></i> Video Masterclass
+            </a>
+          </li>
           
           <li>
             <a href="#specification" class="sidebar-toc-link active">
@@ -359,25 +364,125 @@
       <!-- RIGHT COLUMN: MAIN LEARNING CONTENT -->
       <div class="revision-content">
 
-        <section id="videoMasterclassStation" class="revision-section" aria-label="Studio Masterclass Briefing">
-          <div style="background:linear-gradient(135deg, #0a0f1d 0%, #0f172a 100%); border:2px solid #0284c7; border-left:6px solid #38bdf8; border-radius:16px; padding:20px 22px; color:#ffffff; box-shadow:0 12px 28px rgba(10,15,29,0.22); margin-bottom:24px;">
-            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:14px;">
+        <!-- TOPIC VIDEO WALKTHROUGH STATION -->
+        <section id="video-station" class="revision-section" style="margin-bottom: 32px;">
+          <div id="videoMasterclassStation" style="position:relative; border-radius:14px; overflow:hidden; background:#070d1e; box-shadow:0 10px 30px rgba(0,0,0,0.35);">
+            
+            <div class="video-exemplar-head" style="background:#070d1e; border: 2px solid #0284c7;  border-radius:14px 14px 0 0; padding:18px 22px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
               <div style="display:flex; align-items:center; gap:14px;">
-                <img src="assets/img/avatars/sonya-with-specs.png" alt="Sonya MFS Tutor" style="width:54px; height:54px; border-radius:50%; object-fit:cover; border:2px solid #38bdf8; flex-shrink:0;">
+                <img id="mcTutorAvatar" src="assets/img/avatars/tutor-emma.jpg" alt="Emma MFS Specialist Tutor" style="width:52px; height:52px; border-radius:50%; border:2px solid #38bdf8; object-fit:cover;">
                 <div>
-                  <div style="display:inline-flex; align-items:center; gap:6px; background:rgba(56,189,248,0.16); color:#38bdf8; font-size:0.74rem; font-weight:800; padding:3px 10px; border-radius:999px; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:4px;">
-                    <i class="fa-solid fa-clapperboard"></i> MFS Studio Briefing &bull; Sonya
+                  <div id="mcVideoTitle" style="color:#ffffff; font-size:1.18rem; font-weight:800; display:flex; align-items:center; gap:8px;">
+                    <i class="fa-brands fa-youtube" style="color:#ef4444;"></i> Level 2 Reading Exam Strategy &amp; Timing Masterclass
                   </div>
-                  <h2 style="margin:0; font-size:1.12rem; font-weight:800; color:#ffffff;">Reading Exam Strategy, Command Words & Timing — Level 2 Exam Walkthrough Blueprint</h2>
-                  <div style="font-size:0.84rem; color:#94a3b8; margin-top:2px;">Assigned Specialist: <strong style="color:#38bdf8;">Sonya</strong> (MFS Reading Comprehension Specialist)</div>
+                  <div id="mcTutorMeta" style="color:#94a3b8; font-size:0.88rem; font-weight:600; margin-top:3px;">
+                    Presented by <strong style="color:#38bdf8;">Emma</strong> (MFS Functional Writing & Format Specialist) &bull; 1080p Studio Walkthrough (5m 37s)
+                  </div>
                 </div>
               </div>
-              <div style="display:flex; gap:10px; flex-wrap:wrap;">
-                <a href="#golden-rules" style="background:#0284c7; color:#ffffff; text-decoration:none; font-size:0.84rem; font-weight:800; padding:9px 15px; border-radius:8px; display:inline-flex; align-items:center; gap:6px;"><i class="fa-solid fa-bolt"></i> Key Rules</a>
-                <a href="#downloads" style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.24); color:#f8fafc; text-decoration:none; font-size:0.84rem; font-weight:700; padding:9px 15px; border-radius:8px; display:inline-flex; align-items:center; gap:6px;"><i class="fa-regular fa-file-lines"></i> Exam Worksheet</a>
+              <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
+                <span class="mfs-pill-l1">Level 2 English</span>
+                <span class="mfs-pill-board">Open Awards &bull; Edexcel &bull; C&amp;G</span>
+                <span class="mfs-pill-board" style="background:#059669; color:#fff;">HD 1080p</span>
+              </div>
+            </div>
+
+            <div class="video-screen-wrap" style="position:relative; width:100%; aspect-ratio:16/9; background:#000; overflow:hidden; border-left:2px solid #0284c7; border-right:2px solid #0284c7; border-radius:0; margin-bottom:0;">
+              <iframe id="topicMasterclassIframe" data-ytid="R095wFbfCh4" style="position:absolute; top:0; left:0; width:100%; height:100%; border:0; display:block;" src="https://www.youtube-nocookie.com/embed/R095wFbfCh4?rel=0&amp;enablejsapi=1" title="Level 2 Reading Exam Strategy &amp; Timing Masterclass" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </div>
+
+            <!-- JUMP BENCHMARKS BAR -->
+            <div class="video-jump-bar" id="mcJumpBar" style="background:#0f172a; border:2px solid #0284c7; border-top:1px solid #1e3a8a; border-radius:0; padding:12px 18px; margin-bottom:0;">
+              <span class="jump-label" style="color:#94a3b8;"><i class="fa-solid fa-forward-step" style="color:#38bdf8;"></i> Lesson Benchmarks:</span>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(0, this)">00:00 Level 2 Reading Exam Strategy</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(31, this)">00:31 Questions Before Sources</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(73, this)">01:13 Match Depth to Demand</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(109, this)">01:49 Exact Quote vs Own Words</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(142, this)">02:22 60-Minute Pacing Plan</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(300, this)">05:00 Summary</button>
+            </div>
+
+            <!-- PLAYER FOOTER & EXTERNAL LINKS -->
+            <div style="background:#070d1e; border:2px solid #0284c7; border-top:1px solid #1e3a8a; border-radius:0 0 14px 14px; padding:10px 18px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;">
+              <span style="font-size:0.82rem; color:#94a3b8;"><i class="fa-solid fa-shield-halved" style="color:#38bdf8;"></i> Open Awards, Pearson Edexcel &amp; City &amp; Guilds Level 2 Aligned</span>
+              <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+                <a id="mcStationLink" href="video-solution.html?topic=english-reading-exam-strategy" target="_blank" rel="noopener" style="font-size:0.82rem; color:#38bdf8; text-decoration:none; font-weight:700;"><i class="fa-solid fa-up-right-from-square"></i> Open in Video Station</a>
+                <a id="mcYoutubeLink" href="https://youtu.be/R095wFbfCh4" target="_blank" rel="noopener" style="font-size:0.82rem; color:#ef4444; text-decoration:none; font-weight:700;"><i class="fa-brands fa-youtube"></i> Watch on YouTube</a>
               </div>
             </div>
           </div>
+
+          <script>
+            window.__mfsMasterclassParts = [{"num": 12, "slug": "english-reading-exam-strategy", "title": "Level 2 Reading Exam Strategy & Timing Masterclass", "tutor": "Emma", "role": "MFS Functional Writing & Format Specialist", "avatar": "assets/img/avatars/tutor-emma.jpg", "ytid": "R095wFbfCh4", "runtime": "5m 37s", "default_start": 0, "benchmarks": [{"sec": 0, "text": "00:00 Level 2 Reading Exam Strategy"}, {"sec": 31, "text": "00:31 Questions Before Sources"}, {"sec": 73, "text": "01:13 Match Depth to Demand"}, {"sec": 109, "text": "01:49 Exact Quote vs Own Words"}, {"sec": 142, "text": "02:22 60-Minute Pacing Plan"}, {"sec": 300, "text": "05:00 Summary"}]}];
+            function jumpMasterclassVideo(seconds, btn) {
+              if (btn && btn.blur) btn.blur();
+              var iframe = document.getElementById('topicMasterclassIframe');
+              if (iframe) {
+                var ytid = iframe.getAttribute('data-ytid');
+                if (!ytid) {
+                  var m = (iframe.src || '').match(/embed[/]([a-zA-Z0-9_-]+)/);
+                  ytid = m ? m[1] : '';
+                }
+                if (ytid) {
+                  iframe.src = 'https://www.youtube-nocookie.com/embed/' + ytid + '?rel=0&autoplay=1&enablejsapi=1&start=' + seconds;
+                }
+              }
+              var btns = document.querySelectorAll('#videoMasterclassStation .video-jump-bar .jump-btn');
+              btns.forEach(function(b) {
+                if (b === btn) {
+                  b.style.borderColor = '#38bdf8';
+                  b.style.background = '#0284c7';
+                  b.style.color = '#ffffff';
+                  b.style.fontWeight = '800';
+                } else {
+                  b.style.borderColor = '';
+                  b.style.background = '';
+                  b.style.color = '';
+                  b.style.fontWeight = '';
+                }
+              });
+            }
+            function switchMasterclassPart(idx, tabBtn) {
+              var parts = window.__mfsMasterclassParts || [];
+              var p = parts[idx];
+              if (!p) return;
+              var iframe = document.getElementById('topicMasterclassIframe');
+              if (iframe) {
+                iframe.setAttribute('data-ytid', p.ytid);
+                iframe.src = 'https://www.youtube-nocookie.com/embed/' + p.ytid + '?rel=0&autoplay=1&enablejsapi=1';
+                iframe.title = p.title;
+              }
+              var av = document.getElementById('mcTutorAvatar');
+              if (av) { av.src = p.avatar; av.alt = p.tutor + ' MFS Specialist Tutor'; }
+              var ti = document.getElementById('mcVideoTitle');
+              if (ti) { ti.innerHTML = '<i class="fa-brands fa-youtube" style="color:#ef4444;"></i> ' + p.title; }
+              var me = document.getElementById('mcTutorMeta');
+              if (me) { me.innerHTML = 'Presented by <strong style="color:#38bdf8;">' + p.tutor + '</strong> (' + p.role + ') &bull; 1080p Studio Walkthrough (' + p.runtime + ')'; }
+              var sl = document.getElementById('mcStationLink');
+              if (sl) sl.href = 'video-solution.html?topic=' + p.slug;
+              var yl = document.getElementById('mcYoutubeLink');
+              if (yl) yl.href = 'https://youtu.be/' + p.ytid;
+              var jb = document.getElementById('mcJumpBar');
+              if (jb) {
+                var h = '<span class="jump-label" style="color:#94a3b8;"><i class="fa-solid fa-forward-step" style="color:#38bdf8;"></i> Lesson Benchmarks:</span> ';
+                (p.benchmarks || []).forEach(function(b) {
+                  h += '<button type="button" class="jump-btn" onclick="jumpMasterclassVideo(' + b.sec + ', this)">' + b.text + '</button> ';
+                });
+                jb.innerHTML = h;
+              }
+              document.querySelectorAll('#videoMasterclassStation .mc-part-tab').forEach(function(tb, i) {
+                if (i === idx) {
+                  tb.style.background = '#0284c7';
+                  tb.style.color = '#ffffff';
+                  tb.style.borderColor = '#38bdf8';
+                } else {
+                  tb.style.background = '#0f172a';
+                  tb.style.color = '#cbd5e1';
+                  tb.style.borderColor = '#334155';
+                }
+              });
+            }
+          </script>
         </section>
 
         

@@ -2011,29 +2011,22 @@ a {
     overflow: hidden !important;
     text-overflow: ellipsis !important;
   }
+  /* Revision Directory Action Buttons — Mobile Icon-Only Circular Row */
   .topic-actions-group {
-    display: grid !important;
-    grid-template-columns: repeat(24, 1fr) !important;
-    gap: 5px 4px !important;
-    width: 100% !important;
+    display: flex !important;
+    flex-direction: row !important;
     align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 8px !important;
+    width: 100% !important;
+    flex-wrap: wrap !important;
+    margin-top: 3px !important;
   }
-  /* Line 2: Revise, Fluency Drills, Practice Questions */
-  .topic-actions-group > :nth-child(1) {
-    grid-column: span 5 !important;
-  }
-  .topic-actions-group > :nth-child(2) {
-    grid-column: span 9 !important;
-  }
-  .topic-actions-group > :nth-child(3) {
-    grid-column: span 10 !important;
-  }
-  /* Line 3: Video Solution, Topic Test */
-  .topic-actions-group > :nth-child(4) {
-    grid-column: span 12 !important;
-  }
-  .topic-actions-group > :nth-child(5) {
-    grid-column: span 12 !important;
+  .topic-actions-group > :nth-child(n) {
+    grid-column: auto !important;
+    width: 38px !important;
+    min-width: 38px !important;
+    max-width: 38px !important;
   }
   .topic-actions-group > a {
     display: inline-flex !important;
@@ -2041,17 +2034,88 @@ a {
     justify-content: center !important;
     text-align: center !important;
     box-sizing: border-box !important;
-    width: 100% !important;
-    min-width: 0 !important;
-    padding: 5px 3px !important;
-    font-size: clamp(0.64rem, 1.8vw + 0.25rem, 0.70rem) !important;
-    white-space: nowrap !important;
-    gap: 4px !important;
-    border-radius: 9999px !important;
+    width: 38px !important;
+    height: 38px !important;
+    min-width: 38px !important;
+    max-width: 38px !important;
+    padding: 0 !important;
+    font-size: 0 !important; /* Hides text labels on mobile */
+    line-height: 0 !important;
+    gap: 0 !important;
+    border-radius: 50% !important;
+    flex-shrink: 0 !important;
+    transition: transform 0.15s ease, box-shadow 0.15s ease !important;
+    -webkit-tap-highlight-color: transparent !important;
+  }
+  .topic-actions-group > a:active {
+    transform: scale(0.92) !important;
   }
   .topic-actions-group > a i {
-    font-size: 0.68rem !important;
+    font-size: 1.05rem !important;
+    line-height: 1 !important;
+    margin: 0 !important;
+    display: inline-block !important;
     flex-shrink: 0 !important;
+  }
+
+  /* Specific mobile button icon palettes */
+  /* 1. Revise: Blue button with white book */
+  .topic-actions-group > a.btn-mfs-revise {
+    background: #0284c7 !important;
+    border: 1.5px solid #0284c7 !important;
+    box-shadow: 0 2px 6px rgba(2, 132, 199, 0.28) !important;
+  }
+  .topic-actions-group > a.btn-mfs-revise i {
+    color: #ffffff !important;
+    font-size: 0.95rem !important;
+  }
+
+  /* 2. Masterclass: Red play button */
+  .topic-actions-group > a.btn-mfs-video {
+    background: #ffffff !important;
+    border: 1.5px solid #fca5a5 !important;
+    box-shadow: 0 2px 6px rgba(239, 68, 68, 0.16) !important;
+  }
+  .topic-actions-group > a.btn-mfs-video i {
+    color: #ef4444 !important;
+    font-size: 1.15rem !important;
+  }
+
+  /* 3. Fluency Drills: Ruler & pen */
+  .topic-actions-group > a.btn-mfs-workout,
+  .topic-actions-group > a.btn-mfs-sheet.btn-mfs-workout {
+    background: #ffffff !important;
+    border: 1.5px solid #93c5fd !important;
+    box-shadow: 0 2px 6px rgba(37, 99, 235, 0.14) !important;
+  }
+  .topic-actions-group > a.btn-mfs-workout i,
+  .topic-actions-group > a.btn-mfs-sheet.btn-mfs-workout i {
+    color: #2563eb !important;
+    font-size: 0.95rem !important;
+  }
+
+  /* 4. Practice Questions: PDF icon */
+  .topic-actions-group > a.btn-mfs-sheet:not(.btn-mfs-workout),
+  .topic-actions-group > a.btn-mfs-practice {
+    background: #ffffff !important;
+    border: 1.5px solid #cbd5e1 !important;
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.08) !important;
+  }
+  .topic-actions-group > a.btn-mfs-sheet:not(.btn-mfs-workout) i,
+  .topic-actions-group > a.btn-mfs-practice i {
+    color: #e11d48 !important;
+    font-size: 1.05rem !important;
+  }
+
+  /* 5. Topic Check: List check */
+  .topic-actions-group > a.btn-mfs-test {
+    background: #f8fafc !important;
+    border: 1.5px solid #94a3b8 !important;
+    box-shadow: 0 2px 6px rgba(15, 23, 42, 0.08) !important;
+  }
+  .topic-actions-group > a.btn-mfs-test i {
+    color: #0f172a !important;
+    font-size: 0.95rem !important;
   }
 }
 

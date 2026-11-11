@@ -1,6 +1,6 @@
 /* ==========================================================================
    MASTER FUNCTIONAL SKILLS - UNIFIED REVISION PAGE STYLES
-   Dyslexia-friendly, PassFunctionalSkills-inspired spacing, high readability
+   Dyslexia-friendly spacious layout, high readability & visual clarity
    ========================================================================== */
 
 /* Wide & Spacious Screen Layout: Pushes contents far left and gives learning materials expansive space */
@@ -1582,7 +1582,7 @@ p {
 }
 
 /* ==========================================================================
-   PASS FUNCTIONAL SKILLS STYLE CARD SYSTEM & BIG NUMBERS
+   MFS VISUAL CARD SYSTEM & BIG NUMBERS
    ========================================================================== */
 .pfs-card {
   background: #ffffff;
@@ -1916,7 +1916,7 @@ p {
 }
 
 /* ==========================================================================
-   HIGH-CLARITY EXAMPLE & MATH TYPOGRAPHY (PASS FUNCTIONAL SKILLS STYLE)
+   HIGH-CLARITY EXAMPLE & MATH TYPOGRAPHY (MFS STUDIO STANDARD)
    ========================================================================== */
 .math-bold,
 .pfs-math-text {

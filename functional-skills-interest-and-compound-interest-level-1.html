@@ -307,6 +307,11 @@
         </div>
 
         <ul class="sidebar-toc-list" id="tocList">
+          <li>
+            <a href="#video-station" class="sidebar-toc-link">
+              <i class="fa-solid fa-circle-play" style="color:#ef4444;"></i> Video Masterclass
+            </a>
+          </li>
           
           <li>
             <a href="#specification" class="sidebar-toc-link active">
@@ -374,7 +379,129 @@
         </div>
 
     <!-- SPECIFICATION -->
-    <section id="specification" class="revision-section">
+            <!-- TOPIC VIDEO WALKTHROUGH STATION -->
+        <section id="video-station" class="revision-section" style="margin-bottom: 32px;">
+          <div id="videoMasterclassStation" style="position:relative; border-radius:14px; overflow:hidden; background:#070d1e; box-shadow:0 10px 30px rgba(0,0,0,0.35);">
+            
+            <div class="video-exemplar-head" style="background:#070d1e; border: 2px solid #0284c7;  border-radius:14px 14px 0 0; padding:18px 22px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+              <div style="display:flex; align-items:center; gap:14px;">
+                <img id="mcTutorAvatar" src="assets/img/avatars/subi-tutor-portrait.png" alt="Subi MFS Specialist Tutor" style="width:52px; height:52px; border-radius:50%; border:2px solid #38bdf8; object-fit:cover;">
+                <div>
+                  <div id="mcVideoTitle" style="color:#ffffff; font-size:1.18rem; font-weight:800; display:flex; align-items:center; gap:8px;">
+                    <i class="fa-brands fa-youtube" style="color:#ef4444;"></i> Simple &amp; Compound Interest Masterclass
+                  </div>
+                  <div id="mcTutorMeta" style="color:#94a3b8; font-size:0.88rem; font-weight:600; margin-top:3px;">
+                    Presented by <strong style="color:#38bdf8;">Subi</strong> (MFS Lead Examiner & Curriculum Specialist) &bull; 1080p Studio Walkthrough (6m 26s)
+                  </div>
+                </div>
+              </div>
+              <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
+                <span class="mfs-pill-l1">Level 1 &amp; 2</span>
+                <span class="mfs-pill-board">Open Awards &bull; Edexcel &bull; C&amp;G</span>
+                <span class="mfs-pill-board" style="background:#059669; color:#fff;">HD 1080p</span>
+              </div>
+            </div>
+
+            <div class="video-screen-wrap" style="position:relative; width:100%; aspect-ratio:16/9; background:#000; overflow:hidden; border-left:2px solid #0284c7; border-right:2px solid #0284c7; border-radius:0; margin-bottom:0;">
+              <iframe id="topicMasterclassIframe" data-ytid="c7QyZ05q42A" style="position:absolute; top:0; left:0; width:100%; height:100%; border:0; display:block;" src="https://www.youtube-nocookie.com/embed/c7QyZ05q42A?rel=0&amp;enablejsapi=1" title="Simple &amp; Compound Interest Masterclass" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </div>
+
+            <!-- JUMP BENCHMARKS BAR -->
+            <div class="video-jump-bar" id="mcJumpBar" style="background:#0f172a; border:2px solid #0284c7; border-top:1px solid #1e3a8a; border-radius:0; padding:12px 18px; margin-bottom:0;">
+              <span class="jump-label" style="color:#94a3b8;"><i class="fa-solid fa-forward-step" style="color:#38bdf8;"></i> Lesson Benchmarks:</span>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(0, this)">0:00 Briefing &amp; Objectives</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(53, this)">0:53 Simple Interest</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(95, this)">1:35 Compound Interest Formula</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(167, this)">2:47 Worked Exam Question</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(269, this)">4:29 Your Turn! Practice Challenge</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(315, this)">5:15 Watch Out! Examiner Traps</button>
+            </div>
+
+            <!-- PLAYER FOOTER & EXTERNAL LINKS -->
+            <div style="background:#070d1e; border:2px solid #0284c7; border-top:1px solid #1e3a8a; border-radius:0 0 14px 14px; padding:10px 18px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;">
+              <span style="font-size:0.82rem; color:#94a3b8;"><i class="fa-solid fa-shield-halved" style="color:#38bdf8;"></i> Open Awards, Pearson Edexcel &amp; City &amp; Guilds Level 1 &amp; 2 Aligned</span>
+              <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+                <a id="mcStationLink" href="video-solution.html?topic=simple-and-compound-interest" target="_blank" rel="noopener" style="font-size:0.82rem; color:#38bdf8; text-decoration:none; font-weight:700;"><i class="fa-solid fa-up-right-from-square"></i> Open in Video Station</a>
+                <a id="mcYoutubeLink" href="https://youtu.be/c7QyZ05q42A" target="_blank" rel="noopener" style="font-size:0.82rem; color:#ef4444; text-decoration:none; font-weight:700;"><i class="fa-brands fa-youtube"></i> Watch on YouTube</a>
+              </div>
+            </div>
+          </div>
+
+          <script>
+            window.__mfsMasterclassParts = [{"num": 15, "slug": "simple-and-compound-interest", "title": "Simple & Compound Interest Masterclass", "tutor": "Subi", "role": "MFS Lead Examiner & Curriculum Specialist", "avatar": "assets/img/avatars/subi-tutor-portrait.png", "ytid": "c7QyZ05q42A", "runtime": "6m 26s", "default_start": 0, "benchmarks": [{"sec": 0, "text": "0:00 Briefing & Objectives"}, {"sec": 53, "text": "0:53 Simple Interest"}, {"sec": 95, "text": "1:35 Compound Interest Formula"}, {"sec": 167, "text": "2:47 Worked Exam Question"}, {"sec": 269, "text": "4:29 Your Turn! Practice Challenge"}, {"sec": 315, "text": "5:15 Watch Out! Examiner Traps"}]}];
+            function jumpMasterclassVideo(seconds, btn) {
+              if (btn && btn.blur) btn.blur();
+              var iframe = document.getElementById('topicMasterclassIframe');
+              if (iframe) {
+                var ytid = iframe.getAttribute('data-ytid');
+                if (!ytid) {
+                  var m = (iframe.src || '').match(/embed[/]([a-zA-Z0-9_-]+)/);
+                  ytid = m ? m[1] : '';
+                }
+                if (ytid) {
+                  iframe.src = 'https://www.youtube-nocookie.com/embed/' + ytid + '?rel=0&autoplay=1&enablejsapi=1&start=' + seconds;
+                }
+              }
+              var btns = document.querySelectorAll('#videoMasterclassStation .video-jump-bar .jump-btn');
+              btns.forEach(function(b) {
+                if (b === btn) {
+                  b.style.borderColor = '#38bdf8';
+                  b.style.background = '#0284c7';
+                  b.style.color = '#ffffff';
+                  b.style.fontWeight = '800';
+                } else {
+                  b.style.borderColor = '';
+                  b.style.background = '';
+                  b.style.color = '';
+                  b.style.fontWeight = '';
+                }
+              });
+            }
+            function switchMasterclassPart(idx, tabBtn) {
+              var parts = window.__mfsMasterclassParts || [];
+              var p = parts[idx];
+              if (!p) return;
+              var iframe = document.getElementById('topicMasterclassIframe');
+              if (iframe) {
+                iframe.setAttribute('data-ytid', p.ytid);
+                var st = p.default_start > 0 ? '&start=' + p.default_start : '';
+                iframe.src = 'https://www.youtube-nocookie.com/embed/' + p.ytid + '?rel=0&autoplay=1&enablejsapi=1' + st;
+                iframe.title = p.title;
+              }
+              var av = document.getElementById('mcTutorAvatar');
+              if (av) { av.src = p.avatar; av.alt = p.tutor + ' MFS Specialist Tutor'; }
+              var ti = document.getElementById('mcVideoTitle');
+              if (ti) { ti.innerHTML = '<i class="fa-brands fa-youtube" style="color:#ef4444;"></i> ' + p.title; }
+              var me = document.getElementById('mcTutorMeta');
+              if (me) { me.innerHTML = 'Presented by <strong style="color:#38bdf8;">' + p.tutor + '</strong> (' + p.role + ') &bull; 1080p Studio Walkthrough (' + p.runtime + ')'; }
+              var sl = document.getElementById('mcStationLink');
+              if (sl) sl.href = 'video-solution.html?topic=' + p.slug;
+              var yl = document.getElementById('mcYoutubeLink');
+              if (yl) yl.href = 'https://youtu.be/' + p.ytid;
+              var jb = document.getElementById('mcJumpBar');
+              if (jb) {
+                var h = '<span class="jump-label" style="color:#94a3b8;"><i class="fa-solid fa-forward-step" style="color:#38bdf8;"></i> Lesson Benchmarks:</span> ';
+                (p.benchmarks || []).forEach(function(b) {
+                  h += '<button type="button" class="jump-btn" onclick="jumpMasterclassVideo(' + b.sec + ', this)">' + b.text + '</button> ';
+                });
+                jb.innerHTML = h;
+              }
+              document.querySelectorAll('#videoMasterclassStation .mc-part-tab').forEach(function(tb, i) {
+                if (i === idx) {
+                  tb.style.background = '#0284c7';
+                  tb.style.color = '#ffffff';
+                  tb.style.borderColor = '#38bdf8';
+                } else {
+                  tb.style.background = '#0f172a';
+                  tb.style.color = '#cbd5e1';
+                  tb.style.borderColor = '#334155';
+                }
+              });
+            }
+          </script>
+        </section>
+
+        <section id="specification" class="revision-section">
       <div class="section-header-row">
         <h2 class="section-title"><i class="fa-solid fa-clipboard-check"></i> Specification &amp; Learning Outcomes</h2>
       </div>

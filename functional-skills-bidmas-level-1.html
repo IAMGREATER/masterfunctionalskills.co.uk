@@ -364,236 +364,126 @@
       <!-- RIGHT COLUMN: MAIN LEARNING CONTENT -->
       <div class="revision-content">
         
-        <!-- AI TUTOR EMMA VIDEO MASTERCLASS STATION -->
+        <!-- TOPIC VIDEO WALKTHROUGH STATION -->
         <section id="video-station" class="revision-section" style="margin-bottom: 32px;">
-          <div id="videoMasterclassStation" style="position:relative; border-radius:14px; overflow:hidden; background:#070d1e;">
-            <div class="video-exemplar-head" style="background:#070d1e; border: 2px solid #0284c7; border-radius:14px 14px 0 0; padding:18px 22px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+          <div id="videoMasterclassStation" style="position:relative; border-radius:14px; overflow:hidden; background:#070d1e; box-shadow:0 10px 30px rgba(0,0,0,0.35);">
+            
+            <div class="video-exemplar-head" style="background:#070d1e; border: 2px solid #0284c7;  border-radius:14px 14px 0 0; padding:18px 22px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
               <div style="display:flex; align-items:center; gap:14px;">
-                <img src="assets/img/avatars/tutor-emma.jpg" alt="Emma Lead Specialist Tutor" style="width:52px; height:52px; border-radius:50%; border:2px solid #38bdf8; object-fit:cover;">
+                <img id="mcTutorAvatar" src="assets/img/avatars/tutor-emma.jpg" alt="Emma MFS Specialist Tutor" style="width:52px; height:52px; border-radius:50%; border:2px solid #38bdf8; object-fit:cover;">
                 <div>
-                  <div style="color:#ffffff; font-size:1.18rem; font-weight:800; display:flex; align-items:center; gap:8px;">
-                    <i class="fa-solid fa-circle-play" style="color:#38bdf8;"></i> Order of Operations (BIDMAS) Video Masterclass
+                  <div id="mcVideoTitle" style="color:#ffffff; font-size:1.18rem; font-weight:800; display:flex; align-items:center; gap:8px;">
+                    <i class="fa-brands fa-youtube" style="color:#ef4444;"></i> Order of Operations (BIDMAS) Masterclass
                   </div>
-                  <div style="color:#94a3b8; font-size:0.88rem; font-weight:600; margin-top:3px;">
-                    Presented by <strong style="color:#38bdf8;">Emma</strong> (MFS Lead Numeracy Specialist) &bull; 1080p Studio Walkthrough
+                  <div id="mcTutorMeta" style="color:#94a3b8; font-size:0.88rem; font-weight:600; margin-top:3px;">
+                    Presented by <strong style="color:#38bdf8;">Emma</strong> (MFS Senior Functional Skills Tutor) &bull; 1080p Studio Walkthrough (6m 10s)
                   </div>
                 </div>
               </div>
               <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
                 <span class="mfs-pill-l1">Level 1 &amp; 2</span>
-                <span class="mfs-pill-board">Pearson Edexcel</span>
-                <span class="mfs-pill-board" style="background:#059669; color:#fff;">RP Neural Voice</span>
+                <span class="mfs-pill-board">Open Awards &bull; Edexcel &bull; C&amp;G</span>
+                <span class="mfs-pill-board" style="background:#059669; color:#fff;">HD 1080p</span>
               </div>
             </div>
 
-            <div class="video-screen-wrap" style="position:relative; border-radius:0; margin-bottom:0; border-left:2px solid #0284c7; border-right:2px solid #0284c7; background:#000; overflow:hidden;">
-              <video id="topicBidmasVideoPlayer" controls playsinline poster="assets/img/bidmas-emma-poster.png" style="width:100%; height:100%; object-fit:contain; background:#000; display:block;">
-                <source src="assets/video/emma-bidmas-walkthrough.mp4" type="video/mp4">
-                <track default kind="chapters" label="Lesson Chapters" srclang="en" src="assets/video/emma-bidmas-chapters.vtt">
-                Your browser does not support the video tag.
-              </video>
-
-              <!-- YouTube Gesture Area (Top 85% above native controls bar) -->
-              <div id="ytBidmasGestureOverlay" style="position:absolute; top:0; left:0; right:0; bottom:56px; z-index:4; cursor:pointer;" title="Click: Play/Pause • Double-Click Left/Right: ±10s • Hold: 2x Speed"></div>
-
-              <!-- YouTube 2X Speed Floating Pill -->
-              <div id="ytBidmasSpeedPill" style="display:none; position:absolute; top:60px; left:50%; transform:translateX(-50%); background:rgba(15, 23, 42, 0.92); color:#38bdf8; border:2px solid #38bdf8; padding:6px 18px; border-radius:24px; font-size:0.95rem; font-weight:800; z-index:10; pointer-events:none; box-shadow:0 6px 20px rgba(0,0,0,0.6); align-items:center; gap:8px;">
-                <i class="fa-solid fa-forward-fast" style="color:#38bdf8;"></i> 2X SPEED
-              </div>
-
-              <!-- YouTube Center HUD Overlay -->
-              <div id="ytBidmasCenterHud" style="display:none; position:absolute; top:50%; left:50%; transform:translate(-50%, -50%); background:rgba(0,0,0,0.78); color:#ffffff; border-radius:50%; width:82px; height:82px; flex-direction:column; align-items:center; justify-content:center; z-index:10; pointer-events:none; border:2px solid rgba(56, 189, 248, 0.4); box-shadow:0 8px 24px rgba(0,0,0,0.7); transition:opacity 0.2s ease, transform 0.2s ease;">
-                <span id="ytBidmasCenterHudIcon" style="font-size:2rem; color:#38bdf8;"></span>
-                <span id="ytBidmasCenterHudText" style="font-size:0.75rem; font-weight:800; margin-top:2px; color:#ffffff;"></span>
-              </div>
-
-              <!-- YouTube Double-Tap Seek Ripples -->
-              <div id="ytBidmasRippleLeft" style="display:none; position:absolute; top:0; bottom:56px; left:0; width:35%; background:radial-gradient(circle at left, rgba(56, 189, 248, 0.25), transparent); border-radius:0 120px 120px 0; z-index:8; pointer-events:none; align-items:center; justify-content:center; color:#ffffff; font-size:1.3rem; font-weight:800; text-shadow:0 2px 8px #000;">
-                <div style="background:rgba(15,23,42,0.85); border:1px solid #38bdf8; padding:8px 16px; border-radius:20px; display:flex; align-items:center; gap:6px;">
-                  <i class="fa-solid fa-backward"></i> 10s
-                </div>
-              </div>
-              <div id="ytBidmasRippleRight" style="display:none; position:absolute; top:0; bottom:56px; right:0; width:35%; background:radial-gradient(circle at right, rgba(56, 189, 248, 0.25), transparent); border-radius:120px 0 0 120px; z-index:8; pointer-events:none; align-items:center; justify-content:center; color:#ffffff; font-size:1.3rem; font-weight:800; text-shadow:0 2px 8px #000;">
-                <div style="background:rgba(15,23,42,0.85); border:1px solid #38bdf8; padding:8px 16px; border-radius:20px; display:flex; align-items:center; gap:6px;">
-                  10s <i class="fa-solid fa-forward"></i>
-                </div>
-              </div>
+            <div class="video-screen-wrap" style="position:relative; width:100%; aspect-ratio:16/9; background:#000; overflow:hidden; border-left:2px solid #0284c7; border-right:2px solid #0284c7; border-radius:0; margin-bottom:0;">
+              <iframe id="topicMasterclassIframe" data-ytid="9gsyBj3dLYE" style="position:absolute; top:0; left:0; width:100%; height:100%; border:0; display:block;" src="https://www.youtube-nocookie.com/embed/9gsyBj3dLYE?rel=0&amp;enablejsapi=1" title="Order of Operations (BIDMAS) Masterclass" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
             </div>
 
             <!-- JUMP BENCHMARKS BAR -->
-            <div class="video-jump-bar" style="background:#0f172a; border:2px solid #0284c7; border-top:1px solid #1e3a8a; border-radius:0; padding:12px 18px; margin-bottom:0;">
+            <div class="video-jump-bar" id="mcJumpBar" style="background:#0f172a; border:2px solid #0284c7; border-top:1px solid #1e3a8a; border-radius:0; padding:12px 18px; margin-bottom:0;">
               <span class="jump-label" style="color:#94a3b8;"><i class="fa-solid fa-forward-step" style="color:#38bdf8;"></i> Lesson Benchmarks:</span>
-              <button type="button" class="jump-btn" onclick="jumpBidmasVideo(0, this)">0:00 Briefing &amp; Roadmap</button>
-              <button type="button" class="jump-btn" onclick="jumpBidmasVideo(56.5, this)">0:56 Equal Priority Rule</button>
-              <button type="button" class="jump-btn" onclick="jumpBidmasVideo(122.5, this)">2:02 Brackets &amp; Indices</button>
-              <button type="button" class="jump-btn" onclick="jumpBidmasVideo(199.4, this)">3:19 Worked Exam Model</button>
-              <button type="button" class="jump-btn" onclick="jumpBidmasVideo(286.7, this)">4:46 Examiner Traps</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(0, this)">0:00 Briefing &amp; Objectives</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(43, this)">0:43 BIDMAS Priority Ladder</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(90, this)">1:30 Step-Down Evaluation</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(140, this)">2:20 Spot the Mistake</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(176, this)">2:56 Worked Exam Question</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(251, this)">4:11 Your Turn! Practice Challenge</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(300, this)">5:00 Watch Out! Examiner Traps</button>
             </div>
 
             <!-- PLAYER FOOTER & EXTERNAL LINKS -->
             <div style="background:#070d1e; border:2px solid #0284c7; border-top:1px solid #1e3a8a; border-radius:0 0 14px 14px; padding:10px 18px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;">
-              <span style="font-size:0.82rem; color:#94a3b8;"><i class="fa-solid fa-shield-halved" style="color:#38bdf8;"></i> Pearson Edexcel &amp; City &amp; Guilds Syllabus Aligned</span>
-              <div style="display:flex; gap:12px; align-items:center;">
-                <a href="video-solution.html?topic=bidmas" target="_blank" rel="noopener" style="font-size:0.82rem; color:#38bdf8; text-decoration:none; font-weight:700;"><i class="fa-solid fa-up-right-from-square"></i> Open in Video Station</a>
-                <a href="https://youtu.be/9gsyBj3dLYE" target="_blank" rel="noopener" style="font-size:0.82rem; color:#ef4444; text-decoration:none; font-weight:700;"><i class="fa-brands fa-youtube"></i> Watch on YouTube</a>
+              <span style="font-size:0.82rem; color:#94a3b8;"><i class="fa-solid fa-shield-halved" style="color:#38bdf8;"></i> Open Awards, Pearson Edexcel &amp; City &amp; Guilds Level 1 &amp; 2 Aligned</span>
+              <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+                <a id="mcStationLink" href="video-solution.html?topic=bidmas" target="_blank" rel="noopener" style="font-size:0.82rem; color:#38bdf8; text-decoration:none; font-weight:700;"><i class="fa-solid fa-up-right-from-square"></i> Open in Video Station</a>
+                <a id="mcYoutubeLink" href="https://youtu.be/9gsyBj3dLYE" target="_blank" rel="noopener" style="font-size:0.82rem; color:#ef4444; text-decoration:none; font-weight:700;"><i class="fa-brands fa-youtube"></i> Watch on YouTube</a>
               </div>
             </div>
           </div>
 
-          <!-- YOUTUBE SHORTCUTS & INTERACTION SCRIPT -->
           <script>
-            function jumpBidmasVideo(seconds, btn) {
-              var vid = document.getElementById('topicBidmasVideoPlayer');
-              if (vid) {
-                vid.currentTime = seconds;
-                vid.play();
-                if (btn && btn.blur) btn.blur();
-              }
-            }
-
-            (function() {
-              var video = document.getElementById('topicBidmasVideoPlayer');
-              var wrap = document.querySelector('#videoMasterclassStation .video-screen-wrap');
-              if (!video || !wrap) return;
-
-              var speedPill = document.getElementById('ytBidmasSpeedPill');
-              var centerHud = document.getElementById('ytBidmasCenterHud');
-              var centerHudIcon = document.getElementById('ytBidmasCenterHudIcon');
-              var centerHudText = document.getElementById('ytBidmasCenterHudText');
-              var rippleLeft = document.getElementById('ytBidmasRippleLeft');
-              var rippleRight = document.getElementById('ytBidmasRippleRight');
-              var gestureOverlay = document.getElementById('ytBidmasGestureOverlay');
-
-              var hudTimer = null;
-              function showCenterHud(iconHtml, text) {
-                if (!centerHud) return;
-                centerHudIcon.innerHTML = iconHtml;
-                centerHudText.textContent = text || '';
-                centerHud.style.display = 'flex';
-                centerHud.style.opacity = '1';
-                centerHud.style.transform = 'translate(-50%, -50%) scale(1)';
-                clearTimeout(hudTimer);
-                hudTimer = setTimeout(function() {
-                  centerHud.style.opacity = '0';
-                  centerHud.style.transform = 'translate(-50%, -50%) scale(1.15)';
-                  setTimeout(function() { centerHud.style.display = 'none'; }, 220);
-                }, 550);
-              }
-
-              function showRipple(side) {
-                var el = (side === 'left') ? rippleLeft : rippleRight;
-                if (!el) return;
-                el.style.display = 'flex';
-                clearTimeout(el._timer);
-                el._timer = setTimeout(function() {
-                  el.style.display = 'none';
-                }, 450);
-              }
-
-              // Benchmark Button Sync
-              var BIDMAS_CHAPTERS = [
-                { time: 0, text: "0:00 Briefing & Roadmap" },
-                { time: 56.5, text: "0:56 Equal Priority Rule" },
-                { time: 122.5, text: "2:02 Brackets & Indices" },
-                { time: 199.4, text: "3:19 Worked Exam Model" },
-                { time: 286.7, text: "4:46 Examiner Traps" }
-              ];
-
-              video.addEventListener('timeupdate', function() {
-                var cur = video.currentTime;
-                var curIdx = 0;
-                for (var i = 0; i < BIDMAS_CHAPTERS.length; i++) {
-                  if (cur >= BIDMAS_CHAPTERS[i].time - 0.2) curIdx = i;
+            window.__mfsMasterclassParts = [{"num": 6, "slug": "bidmas", "title": "Order of Operations (BIDMAS) Masterclass", "tutor": "Emma", "role": "MFS Senior Functional Skills Tutor", "avatar": "assets/img/avatars/tutor-emma.jpg", "ytid": "9gsyBj3dLYE", "runtime": "6m 10s", "default_start": 0, "benchmarks": [{"sec": 0, "text": "0:00 Briefing & Objectives"}, {"sec": 43, "text": "0:43 BIDMAS Priority Ladder"}, {"sec": 90, "text": "1:30 Step-Down Evaluation"}, {"sec": 140, "text": "2:20 Spot the Mistake"}, {"sec": 176, "text": "2:56 Worked Exam Question"}, {"sec": 251, "text": "4:11 Your Turn! Practice Challenge"}, {"sec": 300, "text": "5:00 Watch Out! Examiner Traps"}]}];
+            function jumpMasterclassVideo(seconds, btn) {
+              if (btn && btn.blur) btn.blur();
+              var iframe = document.getElementById('topicMasterclassIframe');
+              if (iframe) {
+                var ytid = iframe.getAttribute('data-ytid');
+                if (!ytid) {
+                  var m = (iframe.src || '').match(/embed[/]([a-zA-Z0-9_-]+)/);
+                  ytid = m ? m[1] : '';
                 }
-                var mainBtns = document.querySelectorAll('#videoMasterclassStation .video-jump-bar .jump-btn');
-                mainBtns.forEach(function(b, idx) {
-                  if (idx === curIdx) {
-                    b.style.borderColor = '#38bdf8';
-                    b.style.background = '#0284c7';
-                    b.style.color = '#ffffff';
-                    b.style.fontWeight = '800';
-                  } else {
-                    b.style.borderColor = '';
-                    b.style.background = '';
-                    b.style.color = '';
-                    b.style.fontWeight = '';
-                  }
-                });
+                if (ytid) {
+                  iframe.src = 'https://www.youtube-nocookie.com/embed/' + ytid + '?rel=0&autoplay=1&enablejsapi=1&start=' + seconds;
+                }
+              }
+              var btns = document.querySelectorAll('#videoMasterclassStation .video-jump-bar .jump-btn');
+              btns.forEach(function(b) {
+                if (b === btn) {
+                  b.style.borderColor = '#38bdf8';
+                  b.style.background = '#0284c7';
+                  b.style.color = '#ffffff';
+                  b.style.fontWeight = '800';
+                } else {
+                  b.style.borderColor = '';
+                  b.style.background = '';
+                  b.style.color = '';
+                  b.style.fontWeight = '';
+                }
               });
-
-              // Press and Hold 2X Speed
-              var holdTimer = null;
-              var isHolding2x = false;
-              var previousRate = 1.0;
-
-              function startHold(e) {
-                if (e.button && e.button !== 0) return;
-                clearTimeout(holdTimer);
-                holdTimer = setTimeout(function() {
-                  isHolding2x = true;
-                  previousRate = video.playbackRate || 1.0;
-                  video.playbackRate = 2.0;
-                  if (speedPill) speedPill.style.display = 'flex';
-                  showCenterHud('<i class="fa-solid fa-forward-fast"></i>', '2x Speed');
-                }, 400);
+            }
+            function switchMasterclassPart(idx, tabBtn) {
+              var parts = window.__mfsMasterclassParts || [];
+              var p = parts[idx];
+              if (!p) return;
+              var iframe = document.getElementById('topicMasterclassIframe');
+              if (iframe) {
+                iframe.setAttribute('data-ytid', p.ytid);
+                var st = p.default_start > 0 ? '&start=' + p.default_start : '';
+                iframe.src = 'https://www.youtube-nocookie.com/embed/' + p.ytid + '?rel=0&autoplay=1&enablejsapi=1' + st;
+                iframe.title = p.title;
               }
-
-              function endHold() {
-                clearTimeout(holdTimer);
-                if (isHolding2x) {
-                  isHolding2x = false;
-                  video.playbackRate = previousRate;
-                  if (speedPill) speedPill.style.display = 'none';
-                  showCenterHud('<i class="fa-solid fa-play"></i>', previousRate + 'x');
+              var av = document.getElementById('mcTutorAvatar');
+              if (av) { av.src = p.avatar; av.alt = p.tutor + ' MFS Specialist Tutor'; }
+              var ti = document.getElementById('mcVideoTitle');
+              if (ti) { ti.innerHTML = '<i class="fa-brands fa-youtube" style="color:#ef4444;"></i> ' + p.title; }
+              var me = document.getElementById('mcTutorMeta');
+              if (me) { me.innerHTML = 'Presented by <strong style="color:#38bdf8;">' + p.tutor + '</strong> (' + p.role + ') &bull; 1080p Studio Walkthrough (' + p.runtime + ')'; }
+              var sl = document.getElementById('mcStationLink');
+              if (sl) sl.href = 'video-solution.html?topic=' + p.slug;
+              var yl = document.getElementById('mcYoutubeLink');
+              if (yl) yl.href = 'https://youtu.be/' + p.ytid;
+              var jb = document.getElementById('mcJumpBar');
+              if (jb) {
+                var h = '<span class="jump-label" style="color:#94a3b8;"><i class="fa-solid fa-forward-step" style="color:#38bdf8;"></i> Lesson Benchmarks:</span> ';
+                (p.benchmarks || []).forEach(function(b) {
+                  h += '<button type="button" class="jump-btn" onclick="jumpMasterclassVideo(' + b.sec + ', this)">' + b.text + '</button> ';
+                });
+                jb.innerHTML = h;
+              }
+              document.querySelectorAll('#videoMasterclassStation .mc-part-tab').forEach(function(tb, i) {
+                if (i === idx) {
+                  tb.style.background = '#0284c7';
+                  tb.style.color = '#ffffff';
+                  tb.style.borderColor = '#38bdf8';
+                } else {
+                  tb.style.background = '#0f172a';
+                  tb.style.color = '#cbd5e1';
+                  tb.style.borderColor = '#334155';
                 }
-              }
-
-              // Overlay Click and Double-Tap
-              var clickTimer = null;
-              var clickCount = 0;
-              function handleOverlayClick(e) {
-                clickCount++;
-                if (clickCount === 1) {
-                  clickTimer = setTimeout(function() {
-                    clickCount = 0;
-                    if (video.paused) {
-                      video.play();
-                      showCenterHud('<i class="fa-solid fa-play"></i>', 'Play');
-                    } else {
-                      video.pause();
-                      showCenterHud('<i class="fa-solid fa-pause"></i>', 'Pause');
-                    }
-                  }, 240);
-                } else if (clickCount === 2) {
-                  clearTimeout(clickTimer);
-                  clickCount = 0;
-                  var rect = wrap.getBoundingClientRect();
-                  var clickX = (e.clientX || (e.touches && e.touches[0].clientX)) - rect.left;
-                  var halfW = rect.width / 2;
-                  if (clickX < halfW * 0.75) {
-                    video.currentTime = Math.max(0, video.currentTime - 10);
-                    showRipple('left');
-                    showCenterHud('<i class="fa-solid fa-rotate-left"></i>', '-10s');
-                  } else if (clickX > halfW * 1.25) {
-                    video.currentTime = Math.min(video.duration || 9999, video.currentTime + 10);
-                    showRipple('right');
-                    showCenterHud('<i class="fa-solid fa-rotate-right"></i>', '+10s');
-                  } else {
-                    if (video.paused) { video.play(); showCenterHud('<i class="fa-solid fa-play"></i>', 'Play'); }
-                    else { video.pause(); showCenterHud('<i class="fa-solid fa-pause"></i>', 'Pause'); }
-                  }
-                }
-              }
-
-              if (gestureOverlay) {
-                gestureOverlay.addEventListener('mousedown', startHold);
-                gestureOverlay.addEventListener('mouseup', endHold);
-                gestureOverlay.addEventListener('mouseleave', endHold);
-                gestureOverlay.addEventListener('touchstart', function(e) { startHold(e); }, { passive: true });
-                gestureOverlay.addEventListener('touchend', endHold);
-                gestureOverlay.addEventListener('click', handleOverlayClick);
-              }
-            })();
+              });
+            }
           </script>
         </section>
 

@@ -897,6 +897,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/formality-and-bias-workout.html">
 </head>
 <body>
 
@@ -969,7 +986,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 1</span>
-        <span class="block-q-desc">Question 1: Formal vs Informal Language Pairs</span>
+        <span class="block-q-desc">Formal vs Informal Language Pairs</span>
       </div>
       <div class="workout-instruction">Classify each sentence as Formal or Informal:</div>
       <div class="drill-grid">
@@ -1011,7 +1028,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 2</span>
-        <span class="block-q-desc">Question 2: Objective vs Subjective Statements</span>
+        <span class="block-q-desc">Objective vs Subjective Statements</span>
       </div>
       <div class="workout-instruction">State whether the statement is Objective (fact-based) or Subjective (opinion-based):</div>
       <div class="drill-grid">
@@ -1053,7 +1070,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 3</span>
-        <span class="block-q-desc">Question 3: Identifying Markers of Bias and Slanted Reporting</span>
+        <span class="block-q-desc">Identifying Markers of Bias and Slanted Reporting</span>
       </div>
       <div class="workout-instruction">Identify how bias is introduced in the sentence (Loaded adjectives, One-sided quotes, Omission, Generalisation):</div>
       <div class="drill-grid">
@@ -1127,7 +1144,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 4</span>
-        <span class="block-q-desc">Question 4: Rewriting Biased Statements into Objective Workplace Neutrality</span>
+        <span class="block-q-desc">Rewriting Biased Statements into Objective Workplace Neutrality</span>
       </div>
       <div class="workout-instruction">Replace the biased phrasing with professional, objective, balanced language:</div>
       <div class="drill-grid">
@@ -1201,7 +1218,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 5</span>
-        <span class="block-q-desc">Question 5: Identifying Register Clashes & Appropriateness</span>
+        <span class="block-q-desc">Identifying Register Clashes & Appropriateness</span>
       </div>
       <div class="workout-instruction">Determine whether the register is Appropriate or Inappropriate for the specified context:</div>
       <div class="drill-grid">

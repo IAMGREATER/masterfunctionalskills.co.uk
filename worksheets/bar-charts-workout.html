@@ -897,6 +897,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/bar-charts-workout.html">
 </head>
 <body>
 
@@ -969,7 +986,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 1</span>
-        <span class="block-q-desc">Question 1: Reading Bar Chart Scales</span>
+        <span class="block-q-desc">Reading Bar Chart Scales</span>
       </div>
       <div class="workout-instruction">Work out the value represented by each bar height:</div>
       <div class="drill-grid">
@@ -1027,7 +1044,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 2</span>
-        <span class="block-q-desc">Question 2: Reading Scale Intervals & Frequencies</span>
+        <span class="block-q-desc">Reading Scale Intervals & Frequencies</span>
       </div>
       <div class="workout-instruction">Determine the value on the vertical frequency axis:</div>
       <div class="drill-grid">
@@ -1117,7 +1134,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 3</span>
-        <span class="block-q-desc">Question 3: Dual Bars, Comparisons & Workplace Data Extraction</span>
+        <span class="block-q-desc">Dual Bars, Comparisons & Workplace Data Extraction</span>
       </div>
       <div class="workout-instruction">Extract values and perform comparative calculations:</div>
       <div class="drill-grid">
@@ -1207,7 +1224,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 4</span>
-        <span class="block-q-desc">Question 4: Reading Dual & Grouped Bar Charts</span>
+        <span class="block-q-desc">Reading Dual & Grouped Bar Charts</span>
       </div>
       <div class="workout-instruction">Extract values and compare bars across categories:</div>
       <div class="drill-grid">

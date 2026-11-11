@@ -897,6 +897,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/assessing-the-basics-level-1-workout.html">
 </head>
 <body>
 
@@ -968,7 +985,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 1</span>
-        <span class="block-q-desc">Question 1: Keyword Scanning Drills</span>
+        <span class="block-q-desc">Keyword Scanning Drills</span>
       </div>
       <div class="workout-instruction">Identify the best keyword to scan for in the text:</div>
       <div class="drill-grid">
@@ -1010,7 +1027,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 2</span>
-        <span class="block-q-desc">Question 2: True or False Retrieval</span>
+        <span class="block-q-desc">True or False Retrieval</span>
       </div>
       <div class="workout-instruction">State whether the statement is True or False based on: 'Visiting hours are strictly 14:00 to 19:00 daily, with a maximum of two visitors per bed.'</div>
       <div class="drill-grid">
@@ -1044,7 +1061,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 3</span>
-        <span class="block-q-desc">Question 3: Alphabetical Ordering & Filing Systems</span>
+        <span class="block-q-desc">Alphabetical Ordering & Filing Systems</span>
       </div>
       <div class="workout-instruction">Place the four patient or client names in correct alphabetical order (by surname):</div>
       <div class="drill-grid">
@@ -1118,7 +1135,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 4</span>
-        <span class="block-q-desc">Question 4: Understanding Common Workplace Abbreviations & Signs</span>
+        <span class="block-q-desc">Understanding Common Workplace Abbreviations & Signs</span>
       </div>
       <div class="workout-instruction">State the meaning of the common workplace sign, symbol, or abbreviation:</div>
       <div class="drill-grid">
@@ -1192,7 +1209,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 5</span>
-        <span class="block-q-desc">Question 5: Chronological Ordering & Schedule Interpretation</span>
+        <span class="block-q-desc">Chronological Ordering & Schedule Interpretation</span>
       </div>
       <div class="workout-instruction">Order the following daily care home events in chronological time sequence:</div>
       <div class="drill-grid">

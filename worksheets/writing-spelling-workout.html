@@ -897,6 +897,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/writing-spelling-workout.html">
 </head>
 <body>
 
@@ -969,7 +986,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 1</span>
-        <span class="block-q-desc">Question 1: Homophone Precision Drills</span>
+        <span class="block-q-desc">Homophone Precision Drills</span>
       </div>
       <div class="workout-instruction">Choose the correct homophone:</div>
       <div class="drill-grid">
@@ -1027,7 +1044,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 2</span>
-        <span class="block-q-desc">Question 2: High-Frequency Misspelled Exam Words</span>
+        <span class="block-q-desc">High-Frequency Misspelled Exam Words</span>
       </div>
       <div class="workout-instruction">Identify the correctly spelled word in each pair:</div>
       <div class="drill-grid">
@@ -1085,7 +1102,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 3</span>
-        <span class="block-q-desc">Question 3: Mastering Confusing Homophones in Professional Contexts</span>
+        <span class="block-q-desc">Mastering Confusing Homophones in Professional Contexts</span>
       </div>
       <div class="workout-instruction">Select the correct homophone for the workplace sentence:</div>
       <div class="drill-grid">
@@ -1159,7 +1176,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 4</span>
-        <span class="block-q-desc">Question 4: High-Yield Functional Skills Spelling Rules</span>
+        <span class="block-q-desc">High-Yield Functional Skills Spelling Rules</span>
       </div>
       <div class="workout-instruction">Spell the word correctly applying standard British spelling rules (e.g. 'i before e', doubling consonants, dropping silent 'e'):</div>
       <div class="drill-grid">
@@ -1233,7 +1250,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 5</span>
-        <span class="block-q-desc">Question 5: Plural Spelling Rules for Technical & Irregular Nouns</span>
+        <span class="block-q-desc">Plural Spelling Rules for Technical & Irregular Nouns</span>
       </div>
       <div class="workout-instruction">Write the correct plural form of each workplace noun:</div>
       <div class="drill-grid">

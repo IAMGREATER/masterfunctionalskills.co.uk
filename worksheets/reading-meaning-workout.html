@@ -897,6 +897,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/reading-meaning-workout.html">
 </head>
 <body>
 
@@ -968,7 +985,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 1</span>
-        <span class="block-q-desc">Question 1: Explicit vs Implicit Meaning</span>
+        <span class="block-q-desc">Explicit vs Implicit Meaning</span>
       </div>
       <div class="workout-instruction">State whether the statement is Explicit (directly stated) or Implicit (inferred):</div>
       <div class="drill-grid">
@@ -1010,7 +1027,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 2</span>
-        <span class="block-q-desc">Question 2: Drawing Accurate Inferences</span>
+        <span class="block-q-desc">Drawing Accurate Inferences</span>
       </div>
       <div class="workout-instruction">State what can be reasonably inferred from the sentence:</div>
       <div class="drill-grid">
@@ -1044,7 +1061,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 3</span>
-        <span class="block-q-desc">Question 3: Deciphering Contextual & Polysemic Words</span>
+        <span class="block-q-desc">Deciphering Contextual & Polysemic Words</span>
       </div>
       <div class="workout-instruction">State the exact meaning of the word as used in the given sentence:</div>
       <div class="drill-grid">
@@ -1118,7 +1135,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 4</span>
-        <span class="block-q-desc">Question 4: Connotation, Denotation & Nuanced Synonyms</span>
+        <span class="block-q-desc">Connotation, Denotation & Nuanced Synonyms</span>
       </div>
       <div class="workout-instruction">Explain the difference in connotation between the two underlined words in context:</div>
       <div class="drill-grid">
@@ -1192,7 +1209,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 5</span>
-        <span class="block-q-desc">Question 5: Interpreting Subtext & Implied Meaning</span>
+        <span class="block-q-desc">Interpreting Subtext & Implied Meaning</span>
       </div>
       <div class="workout-instruction">Explain what the speaker or writer is actually implying without saying it outright:</div>
       <div class="drill-grid">

@@ -897,6 +897,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/reading-styles-of-writing-and-voice-workout.html">
 </head>
 <body>
 
@@ -969,7 +986,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 1</span>
-        <span class="block-q-desc">Question 1: Identifying Tone from Excerpts</span>
+        <span class="block-q-desc">Identifying Tone from Excerpts</span>
       </div>
       <div class="workout-instruction">Select the adjective that best describes the tone (Authoritative, Sarcastic, Empathetic, or Cautionary):</div>
       <div class="drill-grid">
@@ -1011,7 +1028,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 2</span>
-        <span class="block-q-desc">Question 2: Voice and Perspective</span>
+        <span class="block-q-desc">Voice and Perspective</span>
       </div>
       <div class="workout-instruction">State whether the excerpt uses First, Second, or Third Person voice:</div>
       <div class="drill-grid">
@@ -1045,7 +1062,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 3</span>
-        <span class="block-q-desc">Question 3: Identifying Tone and Register</span>
+        <span class="block-q-desc">Identifying Tone and Register</span>
       </div>
       <div class="workout-instruction">Classify the register and tone of each communication (e.g. Formal, Informal, Urgent, Sarcastic, Empathetic):</div>
       <div class="drill-grid">
@@ -1119,7 +1136,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 4</span>
-        <span class="block-q-desc">Question 4: Active vs Passive Voice & Professional Distance</span>
+        <span class="block-q-desc">Active vs Passive Voice & Professional Distance</span>
       </div>
       <div class="workout-instruction">Identify whether the sentence is written in the Active or Passive voice:</div>
       <div class="drill-grid">
@@ -1193,7 +1210,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 5</span>
-        <span class="block-q-desc">Question 5: Analyzing Writer's Voice & Personality</span>
+        <span class="block-q-desc">Analyzing Writer's Voice & Personality</span>
       </div>
       <div class="workout-instruction">Describe the persona or voice projected by the writer in each extract:</div>
       <div class="drill-grid">

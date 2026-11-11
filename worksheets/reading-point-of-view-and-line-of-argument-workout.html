@@ -897,6 +897,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/reading-point-of-view-and-line-of-argument-workout.html">
 </head>
 <body>
 
@@ -969,7 +986,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 1</span>
-        <span class="block-q-desc">Question 1: Identifying Point of View</span>
+        <span class="block-q-desc">Identifying Point of View</span>
       </div>
       <div class="workout-instruction">State whether the writer's stance is In Favor, Opposed, or Balanced/Neutral:</div>
       <div class="drill-grid">
@@ -1003,7 +1020,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 2</span>
-        <span class="block-q-desc">Question 2: Detecting Bias Indicators</span>
+        <span class="block-q-desc">Detecting Bias Indicators</span>
       </div>
       <div class="workout-instruction">Identify the word or phrase that reveals writer bias:</div>
       <div class="drill-grid">
@@ -1037,7 +1054,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 3</span>
-        <span class="block-q-desc">Question 3: Identifying the Writer's Perspective & Stance</span>
+        <span class="block-q-desc">Identifying the Writer's Perspective & Stance</span>
       </div>
       <div class="workout-instruction">State whether the writer is For, Against, or Neutral towards the topic in each extract:</div>
       <div class="drill-grid">
@@ -1111,7 +1128,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 4</span>
-        <span class="block-q-desc">Question 4: Deconstructing Arguments & Tracing Logic</span>
+        <span class="block-q-desc">Deconstructing Arguments & Tracing Logic</span>
       </div>
       <div class="workout-instruction">Identify the Premise (evidence) and the Conclusion (claim) in each argument:</div>
       <div class="drill-grid">
@@ -1185,7 +1202,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 5</span>
-        <span class="block-q-desc">Question 5: Evaluating Counterarguments & Concessions</span>
+        <span class="block-q-desc">Evaluating Counterarguments & Concessions</span>
       </div>
       <div class="workout-instruction">Identify the Concession (point acknowledged) and the Rebuttal (counter-punch):</div>
       <div class="drill-grid">

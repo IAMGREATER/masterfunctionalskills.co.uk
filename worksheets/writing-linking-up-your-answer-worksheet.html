@@ -830,6 +830,93 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+<style id="mfs-english-ws-upgrade">
+  .eng-extract-callout {
+    display: block;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #0284c7;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin: 8px 0;
+    font-style: normal;
+    color: #0f172a;
+    line-height: 1.65;
+  }
+  .q-working-area .working-line {
+    height: 30px !important;
+    border-bottom: 1.5px dashed #94a3b8 !important;
+  }
+  .eng-structured-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    margin-top: 4px;
+  }
+  .eng-structured-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1e293b;
+  }
+  .eng-structured-box {
+    flex: 1;
+    min-width: 180px;
+    min-height: 36px;
+    border: 1.5px solid #64748b;
+    border-radius: 6px;
+    background: #ffffff;
+  }
+  .mfs-paf-spag-audit {
+    margin: 18px 0 8px;
+    border: 2px solid #0f172a;
+    border-radius: 10px;
+    padding: 14px 16px;
+    background: #f8fafc;
+    page-break-inside: avoid;
+  }
+  .mfs-paf-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 8px 0 12px;
+  }
+  .mfs-paf-cell {
+    background: #ffffff;
+    border: 1px solid #94a3b8;
+    border-radius: 6px;
+    padding: 8px 10px;
+    min-height: 46px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #334155;
+  }
+  @media (max-width: 600px) {
+    .mfs-paf-grid { grid-template-columns: 1fr; }
+    .eng-structured-line { flex-direction: column; align-items: stretch; gap: 4px; }
+  }
+</style>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/writing-linking-up-your-answer-worksheet.html">
 </head>
 <body>
 
@@ -854,7 +941,7 @@
       </div>
       <div class="sheet-meta-badge">
         <span class="topic-name">Paragraphing, Transitions & Cohesion</span>
-        <span class="spec-tag">Pearson Edexcel: Pearson Edexcel Functional Skills English (WRITING)</span>
+        <span class="spec-tag">Pearson Edexcel Functional Skills English (WRITING)</span>
       </div>
     </div>
 
@@ -884,11 +971,13 @@
         <span class="q-marks">[2 Marks]</span>
       </div>
       <div class="q-stem">
-        Combine these two short, disconnected sentences into one sophisticated complex sentence using a contrasting connective (e.g. <em>Although</em>, <em>Whereas</em>, or <em>Despite</em>):<br><em>'The new electric ambulances cost 15% more to purchase. They reduce annual fuel bills by £4,200 per vehicle.'</em>
+        Combine these two short, disconnected sentences into one sophisticated complex sentence using a contrasting connective (e.g. <em>Although</em>, <em>Whereas</em>, or <em>Despite</em>):<span class="eng-extract-callout">'The new electric ambulances cost 15% more to purchase. They reduce annual fuel bills by £4,200 per vehicle.'</span>
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#7c3aed;"><i class="fa-solid fa-pen-nib"></i> Draft &amp; Polished Written Response (use full sentences, clear paragraphs &amp; accurate SPaG):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -905,11 +994,13 @@
         <span class="q-marks">[2 Marks]</span>
       </div>
       <div class="q-stem">
-        Combine these two choppy sentences into one cohesive Level 2 sentence using a semicolon and an appropriate contrasting discourse marker (e.g. <em>nevertheless, however</em>):<br><em>'The night-shift care team experienced two unexpected staff sickness absences. They completed all resident medication rounds safely and on schedule.'</em>
+        Combine these two choppy sentences into one cohesive Level 2 sentence using a semicolon and an appropriate contrasting discourse marker (e.g. <em>nevertheless, however</em>):<span class="eng-extract-callout">'The night-shift care team experienced two unexpected staff sickness absences. They completed all resident medication rounds safely and on schedule.'</span>
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#7c3aed;"><i class="fa-solid fa-pen-nib"></i> Draft &amp; Polished Written Response (use full sentences, clear paragraphs &amp; accurate SPaG):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -932,11 +1023,13 @@
         <span class="q-marks">[3 Marks]</span>
       </div>
       <div class="q-stem">
-        This draft extract is written as one unbroken block of short sentences. Divide it into <strong>two logical paragraphs</strong> and insert appropriate linking words (<em>However, Furthermore, Therefore</em>):<br><em>'I visited your leisure centre on Tuesday evening for the beginner swimming class. The receptionist was very welcoming and showed me to the changing rooms. The changing room floors were covered in muddy footprints. Two of the three hairdryers were broken and had exposed wires. You need to inspect the changing rooms daily.'</em>
+        This draft extract is written as one unbroken block of short sentences. Divide it into <strong>two logical paragraphs</strong> and insert appropriate linking words (<em>However, Furthermore, Therefore</em>):<span class="eng-extract-callout">'I visited your leisure centre on Tuesday evening for the beginner swimming class. The receptionist was very welcoming and showed me to the changing rooms. The changing room floors were covered in muddy footprints. Two of the three hairdryers were broken and had exposed wires. You need to inspect the changing rooms daily.'</span>
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#7c3aed;"><i class="fa-solid fa-pen-nib"></i> Draft &amp; Polished Written Response (use full sentences, clear paragraphs &amp; accurate SPaG):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -957,8 +1050,10 @@
         Choose the most logical discourse marker from the list (<strong>Consequently / Conversely / Furthermore</strong>) to fill each gap below:<br>1. Replacing halogen bulbs with LED panels will cut electricity usage by 45%. __________, the new panels have a ten-year lifespan that reduces maintenance callouts.<br>2. The north car park lighting timer failed at 17:00 yesterday. __________, staff leaving the evening shift had to walk to their vehicles in complete darkness.<br>3. Online training modules allow staff to study flexibly at home. __________, practical manual-handling skills can only be assessed safely in person.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#7c3aed;"><i class="fa-solid fa-pen-nib"></i> Draft &amp; Polished Written Response (use full sentences, clear paragraphs &amp; accurate SPaG):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -985,8 +1080,10 @@
         Write one fully cohesive body paragraph arguing why extending GP clinic opening hours until 20:00 will alleviate evening A&E overcrowding, using the PEEL method and at least two Level 2 discourse markers.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#7c3aed;"><i class="fa-solid fa-pen-nib"></i> Draft &amp; Polished Written Response (use full sentences, clear paragraphs &amp; accurate SPaG):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -1008,8 +1105,10 @@
         Write a complete 4-sentence PEEL body paragraph for a formal letter to your College Principal arguing why the college library should remain open until 20:00 on Tuesdays and Thursdays for adult evening-class learners.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#7c3aed;"><i class="fa-solid fa-pen-nib"></i> Draft &amp; Polished Written Response (use full sentences, clear paragraphs &amp; accurate SPaG):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>

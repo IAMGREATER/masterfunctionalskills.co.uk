@@ -897,6 +897,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/percentages-level-1-workout.html">
 </head>
 <body>
 
@@ -970,7 +987,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 1</span>
-        <span class="block-q-desc">Question 1: Non-Calculator Percentage of Amounts (Mental Benchmarks)</span>
+        <span class="block-q-desc">Non-Calculator Percentage of Amounts (Mental Benchmarks)</span>
       </div>
       <div class="workout-instruction">Work out each percentage mentally using benchmark values (10%, 5%, 1%):</div>
       <div class="drill-grid">
@@ -1044,7 +1061,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 2</span>
-        <span class="block-q-desc">Question 2: Percentage Increases (Money & Metric Units)</span>
+        <span class="block-q-desc">Percentage Increases (Money & Metric Units)</span>
       </div>
       <div class="workout-instruction">Increase each amount by the percentage indicated:</div>
       <div class="drill-grid">
@@ -1118,7 +1135,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 3</span>
-        <span class="block-q-desc">Question 3: Percentage Decreases (Discounts & Deductions)</span>
+        <span class="block-q-desc">Percentage Decreases (Discounts & Deductions)</span>
       </div>
       <div class="workout-instruction">Decrease each amount by the percentage indicated:</div>
       <div class="drill-grid">
@@ -1192,7 +1209,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 4</span>
-        <span class="block-q-desc">Question 4: Reverse Percentages & Calculator Multipliers (Level 1)</span>
+        <span class="block-q-desc">Reverse Percentages & Calculator Multipliers (Level 1)</span>
       </div>
       <div class="workout-instruction">Find the original value before the percentage change occurred:</div>
       <div class="drill-grid">

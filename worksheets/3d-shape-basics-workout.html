@@ -897,6 +897,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/3d-shape-basics-workout.html">
 </head>
 <body>
 
@@ -969,7 +986,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 1</span>
-        <span class="block-q-desc">Question 1: Naming 3D Solids from Real-World Objects</span>
+        <span class="block-q-desc">Naming 3D Solids from Real-World Objects</span>
       </div>
       <div class="workout-instruction">Name the 3D solid that best describes each object:</div>
       <div class="drill-grid">
@@ -1027,7 +1044,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 2</span>
-        <span class="block-q-desc">Question 2: Properties of 3D Solids</span>
+        <span class="block-q-desc">Properties of 3D Solids</span>
       </div>
       <div class="workout-instruction">State the number of faces, edges, and vertices:</div>
       <div class="drill-grid">
@@ -1085,7 +1102,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 3</span>
-        <span class="block-q-desc">Question 3: Faces, Edges and Vertices Calculations</span>
+        <span class="block-q-desc">Faces, Edges and Vertices Calculations</span>
       </div>
       <div class="workout-instruction">State the number of faces (F), edges (E), and vertices (V):</div>
       <div class="drill-grid">
@@ -1175,7 +1192,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 4</span>
-        <span class="block-q-desc">Question 4: Real-Life Packaging Solids & Flat Nets</span>
+        <span class="block-q-desc">Real-Life Packaging Solids & Flat Nets</span>
       </div>
       <div class="workout-instruction">Match the packaging object to its 3D solid name or net:</div>
       <div class="drill-grid">

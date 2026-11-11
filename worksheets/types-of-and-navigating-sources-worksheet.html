@@ -830,6 +830,93 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+<style id="mfs-english-ws-upgrade">
+  .eng-extract-callout {
+    display: block;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #0284c7;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin: 8px 0;
+    font-style: normal;
+    color: #0f172a;
+    line-height: 1.65;
+  }
+  .q-working-area .working-line {
+    height: 30px !important;
+    border-bottom: 1.5px dashed #94a3b8 !important;
+  }
+  .eng-structured-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    margin-top: 4px;
+  }
+  .eng-structured-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1e293b;
+  }
+  .eng-structured-box {
+    flex: 1;
+    min-width: 180px;
+    min-height: 36px;
+    border: 1.5px solid #64748b;
+    border-radius: 6px;
+    background: #ffffff;
+  }
+  .mfs-paf-spag-audit {
+    margin: 18px 0 8px;
+    border: 2px solid #0f172a;
+    border-radius: 10px;
+    padding: 14px 16px;
+    background: #f8fafc;
+    page-break-inside: avoid;
+  }
+  .mfs-paf-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 8px 0 12px;
+  }
+  .mfs-paf-cell {
+    background: #ffffff;
+    border: 1px solid #94a3b8;
+    border-radius: 6px;
+    padding: 8px 10px;
+    min-height: 46px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #334155;
+  }
+  @media (max-width: 600px) {
+    .mfs-paf-grid { grid-template-columns: 1fr; }
+    .eng-structured-line { flex-direction: column; align-items: stretch; gap: 4px; }
+  }
+</style>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/types-of-and-navigating-sources-worksheet.html">
 </head>
 <body>
 
@@ -854,7 +941,7 @@
       </div>
       <div class="sheet-meta-badge">
         <span class="topic-name">Types of Sources, Layout & Organizational Devices</span>
-        <span class="spec-tag">Pearson Edexcel: Pearson Edexcel Functional Skills English (READING)</span>
+        <span class="spec-tag">Pearson Edexcel Functional Skills English (READING)</span>
       </div>
     </div>
 
@@ -887,16 +974,18 @@
         A 12-page Staff Handbook contains the following structural sections:<br>• <strong>1.0</strong> Annual Leave Entitlements | <strong>2.0</strong> Sickness Absence Reporting | <strong>3.0</strong> Uniform & Dress Code | <strong>Appendix A:</strong> Glossary of Clinical Abbreviations<br><br>Which section should a new healthcare assistant consult to find out <strong>who to telephone at 06:30 if they are unwell</strong>, and which section explains the meaning of <strong>'PRN'</strong>?
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Two Sections =</span>
-        Unwell call: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Meaning of PRN: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Unwell call:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Meaning of PRN: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -909,8 +998,10 @@
         A logistics driver handbook contains a bordered grid showing maximum vehicle weights (3.5t, 7.5t, 18t) alongside low-bridge height clearances. Explain <strong>two reasons</strong> why a table is more effective than continuous prose for this information.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -936,8 +1027,10 @@
         A leisure centre leaflet includes the following subheadings: <strong>1. Swimming Pool Timetable | 2. Concessionary Pricing &amp; Discounts | 3. Gym Induction Rules</strong>.<br>Under Section 2, prices are presented in a three-column table (Peak, Off-Peak, Student/Senior).<br>(a) Which section should a retired resident read to find out if they qualify for a cheaper pass? [1 Mark]<br>(b) Explain why a table is used in Section 2 instead of a paragraph. [1 Mark]
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -951,15 +1044,17 @@
 
     <div class="q-card">
       <div class="q-card-head">
-        <span class="q-title">Question 4 (Exam-Style Task — 2 Marks)</span>
+        <span class="q-title">Question 4 (Exam-Style Task — 3 Marks)</span>
         <span class="q-marks">[3 Marks]</span>
       </div>
       <div class="q-stem">
         An appliance repair guide includes a footnote mark (*) next to the word <em>'Capacitor*'</em> and prints at the bottom of the page: <em>'*Capacitor: an electronic component that stores high-voltage charge even after the plug is removed.'</em><br>Identify this organisational feature and explain why the writer included it.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -986,8 +1081,10 @@
         A hospital blood transfusion protocol uses:<br>• <strong>Bold numbered steps (1 to 8)</strong> for bedside patient ID checks<br>• An <strong>amber shaded warning box</strong> at the top reading: <em>'STOP: Never transfuse blood without two registered nurses verifying the wristband barcode.'</em><br>• An <strong>alphabetical glossary</strong> at the bottom defining terms like <em>'Haemolytic Reaction'</em>.<br>Explain how each of these three structural devices assists clinical staff during an emergency. [3 Marks]
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -1002,15 +1099,17 @@
 
     <div class="q-card">
       <div class="q-card-head">
-        <span class="q-title">Question 6 (Level 2 Mastery Challenge — 3 Marks)</span>
+        <span class="q-title">Question 6 (Level 2 Mastery Challenge — 4 Marks)</span>
         <span class="q-marks">[4 Marks]</span>
       </div>
       <div class="q-stem">
         You are researching workplace stress and find two sources:<br><strong>Source A:</strong> An official Health and Safety Executive (HSE) annual statistical report based on 45,000 UK employees.<br><strong>Source B:</strong> An anonymous comment posted on an internet chat forum reading: <em>'Nobody in my office ever takes sick leave for stress — it's all made up by lazy workers!'</em><br>Identify which source is more reliable and give <strong>two reasons</strong> why. [3 Marks]
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>

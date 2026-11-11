@@ -830,6 +830,93 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+<style id="mfs-english-ws-upgrade">
+  .eng-extract-callout {
+    display: block;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #0284c7;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin: 8px 0;
+    font-style: normal;
+    color: #0f172a;
+    line-height: 1.65;
+  }
+  .q-working-area .working-line {
+    height: 30px !important;
+    border-bottom: 1.5px dashed #94a3b8 !important;
+  }
+  .eng-structured-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    margin-top: 4px;
+  }
+  .eng-structured-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1e293b;
+  }
+  .eng-structured-box {
+    flex: 1;
+    min-width: 180px;
+    min-height: 36px;
+    border: 1.5px solid #64748b;
+    border-radius: 6px;
+    background: #ffffff;
+  }
+  .mfs-paf-spag-audit {
+    margin: 18px 0 8px;
+    border: 2px solid #0f172a;
+    border-radius: 10px;
+    padding: 14px 16px;
+    background: #f8fafc;
+    page-break-inside: avoid;
+  }
+  .mfs-paf-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 8px 0 12px;
+  }
+  .mfs-paf-cell {
+    background: #ffffff;
+    border: 1px solid #94a3b8;
+    border-radius: 6px;
+    padding: 8px 10px;
+    min-height: 46px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #334155;
+  }
+  @media (max-width: 600px) {
+    .mfs-paf-grid { grid-template-columns: 1fr; }
+    .eng-structured-line { flex-direction: column; align-items: stretch; gap: 4px; }
+  }
+</style>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/slc-language-in-context-worksheet.html">
 </head>
 <body>
 
@@ -854,7 +941,7 @@
       </div>
       <div class="sheet-meta-badge">
         <span class="topic-name">Language in Professional Contexts</span>
-        <span class="spec-tag">Pearson Edexcel: Pearson Edexcel Functional Skills English (SLC)</span>
+        <span class="spec-tag">Pearson Edexcel Functional Skills English (SLC)</span>
       </div>
     </div>
 
@@ -887,8 +974,10 @@
         A patient at reception says angrily: <em>'I have been waiting forty minutes past my appointment time and nobody has told me what is going on!'</em><br>Write a calm, empathetic two-sentence spoken response that <strong>validates their frustration</strong> and <strong>provides an immediate practical action</strong>.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0f766e;"><i class="fa-solid fa-comments"></i> Speaking &amp; Listening Structured Notes &amp; Spoken Response:</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -905,11 +994,13 @@
         <span class="q-marks">[2 Marks]</span>
       </div>
       <div class="q-stem">
-        Rewrite this informal spoken handover sentence into dignified, professional Standard English suitable for a clinical ward meeting:<br><em>'The old guy in bed 3 went mad this morning cos his tea was cold and he chucked his newspaper on the floor.'</em>
+        Rewrite this informal spoken handover sentence into dignified, professional Standard English suitable for a clinical ward meeting:<span class="eng-extract-callout">'The old guy in bed 3 went mad this morning cos his tea was cold and he chucked his newspaper on the floor.'</span>
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0f766e;"><i class="fa-solid fa-comments"></i> Speaking &amp; Listening Structured Notes &amp; Spoken Response:</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -935,8 +1026,10 @@
         A busy colleague says to you: <em>'Don't bother fetching the tall stepladder from the van—just stand on that plastic swivel chair to change the ceiling bulb.'</em><br>Deliver a calm, assertive 2-sentence spoken refusal that explains the safety risk and states the correct action.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0f766e;"><i class="fa-solid fa-comments"></i> Speaking &amp; Listening Structured Notes &amp; Spoken Response:</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -954,11 +1047,13 @@
         <span class="q-marks">[3 Marks]</span>
       </div>
       <div class="q-stem">
-        Convert this aggressive spoken complaint from a supervisor into a calm, <strong>assertive</strong> professional request:<br><em>'You are always turning up ten minutes late for the morning shift and leaving the rest of us to do your work! Sort your alarm out or don't bother coming in!'</em>
+        Convert this aggressive spoken complaint from a supervisor into a calm, <strong>assertive</strong> professional request:<span class="eng-extract-callout">'You are always turning up ten minutes late for the morning shift and leaving the rest of us to do your work! Sort your alarm out or don't bother coming in!'</span>
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0f766e;"><i class="fa-solid fa-comments"></i> Speaking &amp; Listening Structured Notes &amp; Spoken Response:</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -985,8 +1080,10 @@
         A patient (Mr Henderson) in the surgical waiting room has been waiting 60 minutes past his appointment time and says angrily: <em>'Have you lot forgotten about me or is the doctor just having a long lunch?'</em><br>Deliver a composed, empathetic spoken response.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0f766e;"><i class="fa-solid fa-comments"></i> Speaking &amp; Listening Structured Notes &amp; Spoken Response:</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -1001,15 +1098,17 @@
 
     <div class="q-card">
       <div class="q-card-head">
-        <span class="q-title">Question 6 (Level 2 Mastery Challenge — 3 Marks)</span>
+        <span class="q-title">Question 6 (Level 2 Mastery Challenge — 4 Marks)</span>
         <span class="q-marks">[4 Marks]</span>
       </div>
       <div class="q-stem">
         A customer at a pharmacy counter asks loudly: <em>'Why is Mrs Jenkins from next door taking so long in the consultation room? What is wrong with her?'</em><br>Write a polite, firm 2-sentence spoken response that upholds <strong>patient confidentiality</strong> while assisting the waiting customer.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0f766e;"><i class="fa-solid fa-comments"></i> Speaking &amp; Listening Structured Notes &amp; Spoken Response:</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>

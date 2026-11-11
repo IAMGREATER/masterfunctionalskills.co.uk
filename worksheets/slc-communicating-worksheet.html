@@ -830,6 +830,93 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+<style id="mfs-english-ws-upgrade">
+  .eng-extract-callout {
+    display: block;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #0284c7;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin: 8px 0;
+    font-style: normal;
+    color: #0f172a;
+    line-height: 1.65;
+  }
+  .q-working-area .working-line {
+    height: 30px !important;
+    border-bottom: 1.5px dashed #94a3b8 !important;
+  }
+  .eng-structured-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    margin-top: 4px;
+  }
+  .eng-structured-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1e293b;
+  }
+  .eng-structured-box {
+    flex: 1;
+    min-width: 180px;
+    min-height: 36px;
+    border: 1.5px solid #64748b;
+    border-radius: 6px;
+    background: #ffffff;
+  }
+  .mfs-paf-spag-audit {
+    margin: 18px 0 8px;
+    border: 2px solid #0f172a;
+    border-radius: 10px;
+    padding: 14px 16px;
+    background: #f8fafc;
+    page-break-inside: avoid;
+  }
+  .mfs-paf-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 8px 0 12px;
+  }
+  .mfs-paf-cell {
+    background: #ffffff;
+    border: 1px solid #94a3b8;
+    border-radius: 6px;
+    padding: 8px 10px;
+    min-height: 46px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #334155;
+  }
+  @media (max-width: 600px) {
+    .mfs-paf-grid { grid-template-columns: 1fr; }
+    .eng-structured-line { flex-direction: column; align-items: stretch; gap: 4px; }
+  }
+</style>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/slc-communicating-worksheet.html">
 </head>
 <body>
 
@@ -854,7 +941,7 @@
       </div>
       <div class="sheet-meta-badge">
         <span class="topic-name">Communicating Clearly, Coherently & Purposefully</span>
-        <span class="spec-tag">Pearson Edexcel: Pearson Edexcel Functional Skills English (SLC)</span>
+        <span class="spec-tag">Pearson Edexcel Functional Skills English (SLC)</span>
       </div>
     </div>
 
@@ -884,11 +971,13 @@
         <span class="q-marks">[2 Marks]</span>
       </div>
       <div class="q-stem">
-        Rewrite this hesitant, filler-heavy spoken announcement into a crisp, authoritative two-sentence briefing:<br><em>'Um, hi guys, basically the fire alarm test is like happening at ten o'clock today, so yeah, don't panic or leave the building unless it rings for more than thirty seconds.'</em>
+        Rewrite this hesitant, filler-heavy spoken announcement into a crisp, authoritative two-sentence briefing:<span class="eng-extract-callout">'Um, hi guys, basically the fire alarm test is like happening at ten o'clock today, so yeah, don't panic or leave the building unless it rings for more than thirty seconds.'</span>
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0f766e;"><i class="fa-solid fa-comments"></i> Speaking &amp; Listening Structured Notes &amp; Spoken Response:</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -905,11 +994,13 @@
         <span class="q-marks">[2 Marks]</span>
       </div>
       <div class="q-stem">
-        Rewrite this rambling, filler-heavy spoken announcement so it is clear, concise, and professional for a GP surgery waiting room:<br><em>'Um, excuse me everyone, basically Dr Evans is running like half an hour late this morning because there was an emergency callout, so yeah, sorry about that, if you can't wait just tell the desk.'</em>
+        Rewrite this rambling, filler-heavy spoken announcement so it is clear, concise, and professional for a GP surgery waiting room:<span class="eng-extract-callout">'Um, excuse me everyone, basically Dr Evans is running like half an hour late this morning because there was an emergency callout, so yeah, sorry about that, if you can't wait just tell the desk.'</span>
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0f766e;"><i class="fa-solid fa-comments"></i> Speaking &amp; Listening Structured Notes &amp; Spoken Response:</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -935,8 +1026,10 @@
         Deliver a clear 45-second spoken handover informing the incoming afternoon care assistant that Resident Mrs Patel (Room 14) had a minor uninjured fall yesterday, requires a two-person walking transfer until 15:00, and has an updated chart on the tablet.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0f766e;"><i class="fa-solid fa-comments"></i> Speaking &amp; Listening Structured Notes &amp; Spoken Response:</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -957,8 +1050,10 @@
         Use the <strong>4-step SBAR framework</strong> (Situation, Background, Assessment, Recommendation) to write a 50-word spoken telephone report to your IT Helpdesk explaining that the main reception card-payment terminal has frozen.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0f766e;"><i class="fa-solid fa-comments"></i> Speaking &amp; Listening Structured Notes &amp; Spoken Response:</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -985,8 +1080,10 @@
         Deliver a 60-second verbal briefing to forklift operators regarding newly designated pedestrian safety walkways in Bay 3, indicating where vocal emphasis and pauses should be used.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0f766e;"><i class="fa-solid fa-comments"></i> Speaking &amp; Listening Structured Notes &amp; Spoken Response:</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -1001,15 +1098,17 @@
 
     <div class="q-card">
       <div class="q-card-head">
-        <span class="q-title">Question 6 (Level 2 Mastery Challenge — 3 Marks)</span>
+        <span class="q-title">Question 6 (Level 2 Mastery Challenge — 4 Marks)</span>
         <span class="q-marks">[4 Marks]</span>
       </div>
       <div class="q-stem">
-        Look at this sentence from a formal presentation:<br><em>'Last year, avoidable packaging waste cost our distribution centre forty-two thousand pounds—enough to fund two full-time apprenticeships.'</em><br>Explain <strong>two specific vocal techniques</strong> (pace, pause, volume, or emphasis) you would use when speaking this sentence aloud to maximise its impact on the audience.
+        Look at this sentence from a formal presentation:<span class="eng-extract-callout">'Last year, avoidable packaging waste cost our distribution centre forty-two thousand pounds—enough to fund two full-time apprenticeships.'</span><br>Explain <strong>two specific vocal techniques</strong> (pace, pause, volume, or emphasis) you would use when speaking this sentence aloud to maximise its impact on the audience.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0f766e;"><i class="fa-solid fa-comments"></i> Speaking &amp; Listening Structured Notes &amp; Spoken Response:</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>

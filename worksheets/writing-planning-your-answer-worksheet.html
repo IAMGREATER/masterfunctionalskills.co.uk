@@ -830,6 +830,93 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+<style id="mfs-english-ws-upgrade">
+  .eng-extract-callout {
+    display: block;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #0284c7;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin: 8px 0;
+    font-style: normal;
+    color: #0f172a;
+    line-height: 1.65;
+  }
+  .q-working-area .working-line {
+    height: 30px !important;
+    border-bottom: 1.5px dashed #94a3b8 !important;
+  }
+  .eng-structured-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    margin-top: 4px;
+  }
+  .eng-structured-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1e293b;
+  }
+  .eng-structured-box {
+    flex: 1;
+    min-width: 180px;
+    min-height: 36px;
+    border: 1.5px solid #64748b;
+    border-radius: 6px;
+    background: #ffffff;
+  }
+  .mfs-paf-spag-audit {
+    margin: 18px 0 8px;
+    border: 2px solid #0f172a;
+    border-radius: 10px;
+    padding: 14px 16px;
+    background: #f8fafc;
+    page-break-inside: avoid;
+  }
+  .mfs-paf-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 8px 0 12px;
+  }
+  .mfs-paf-cell {
+    background: #ffffff;
+    border: 1px solid #94a3b8;
+    border-radius: 6px;
+    padding: 8px 10px;
+    min-height: 46px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #334155;
+  }
+  @media (max-width: 600px) {
+    .mfs-paf-grid { grid-template-columns: 1fr; }
+    .eng-structured-line { flex-direction: column; align-items: stretch; gap: 4px; }
+  }
+</style>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/writing-planning-your-answer-worksheet.html">
 </head>
 <body>
 
@@ -854,7 +941,7 @@
       </div>
       <div class="sheet-meta-badge">
         <span class="topic-name">Planning Written Responses</span>
-        <span class="spec-tag">Pearson Edexcel: Pearson Edexcel Functional Skills English (WRITING)</span>
+        <span class="spec-tag">Pearson Edexcel Functional Skills English (WRITING)</span>
       </div>
     </div>
 
@@ -887,30 +974,34 @@
         An exam task asks you to write an email to staff explaining:<br>• Why the staff canteen is closing for 5 days<br>• Where temporary hot food vans will be parked<br>• How staff can claim a £5 daily meal voucher.<br>Outline a <strong>4-step paragraph plan</strong> (including opening and sign-off) that guarantees full coverage.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#7c3aed;"><i class="fa-solid fa-pen-nib"></i> Draft &amp; Polished Written Response (use full sentences, clear paragraphs &amp; accurate SPaG):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">4-Step Plan =</span>
-        Para 1: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Para 2: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Para 3: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Close: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Para 1:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Para 2:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Para 3:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Close: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
     <div class="q-card">
       <div class="q-card-head">
-        <span class="q-title">Question 2 (Core Skill Application — 3 Marks)</span>
+        <span class="q-title">Question 2 (Core Skill Application — 2 Marks)</span>
         <span class="q-marks">[2 Marks]</span>
       </div>
       <div class="q-stem">
         Read this exam prompt: <em>'Write a formal letter to your local council complaining about dangerous potholes on Highfield Road, explaining the risks to cyclists and suggesting repairs.'</em><br>Create a structured 4-paragraph plan showing the exact focus of each paragraph and the correct letter sign-off.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#7c3aed;"><i class="fa-solid fa-pen-nib"></i> Draft &amp; Polished Written Response (use full sentences, clear paragraphs &amp; accurate SPaG):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -936,8 +1027,10 @@
         You are organising a charity first-aid workshop and want to hire a room at Oakwood Community Centre on Saturday 14 November.<br>Write an email to the manager, Mr Samuels, to:<br>• Explain what the event is and how many people will attend<br>• Ask about room availability and projector equipment<br>• Enquire about weekend hire costs and parking.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#7c3aed;"><i class="fa-solid fa-pen-nib"></i> Draft &amp; Polished Written Response (use full sentences, clear paragraphs &amp; accurate SPaG):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -955,11 +1048,13 @@
         <span class="q-marks">[3 Marks]</span>
       </div>
       <div class="q-stem">
-        A candidate wrote this disorganised draft paragraph containing three mixed-up topics:<br><em>'Our warehouse needs electric charging points in the car park. Also the canteen vending machine is broken and staff want more salad options. Seven delivery drivers have bought electric cars this year and have nowhere to charge them during shifts.'</em><br>Edit and restructure this draft so it maintains a single coherent paragraph topic suitable for an estates proposal.
+        A candidate wrote this disorganised draft paragraph containing three mixed-up topics:<span class="eng-extract-callout">'Our warehouse needs electric charging points in the car park. Also the canteen vending machine is broken and staff want more salad options. Seven delivery drivers have bought electric cars this year and have nowhere to charge them during shifts.'</span><br>Edit and restructure this draft so it maintains a single coherent paragraph topic suitable for an estates proposal.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#7c3aed;"><i class="fa-solid fa-pen-nib"></i> Draft &amp; Polished Written Response (use full sentences, clear paragraphs &amp; accurate SPaG):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -986,8 +1081,10 @@
         You are asked to write a 250-word proposal to your Clinical Lead recommending an electronic handover app.<br>Create a structured paragraph plan and draft the executive summary and recommendations addressing:<br>• Flaws in current paper notes<br>• Benefits of digital handover<br>• Proposed staff training timeline.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#7c3aed;"><i class="fa-solid fa-pen-nib"></i> Draft &amp; Polished Written Response (use full sentences, clear paragraphs &amp; accurate SPaG):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -1009,8 +1106,10 @@
         You have 30 minutes to complete a Level 2 report (250–300 words) for your Care Home Manager on improving visitor check-in security.<br>1. Break down how you should allocate your 30 minutes across planning, writing, and proofreading.<br>2. Write the exact Title and three numbered subheadings you would put in your plan.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#7c3aed;"><i class="fa-solid fa-pen-nib"></i> Draft &amp; Polished Written Response (use full sentences, clear paragraphs &amp; accurate SPaG):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>

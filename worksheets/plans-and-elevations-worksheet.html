@@ -830,6 +830,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/plans-and-elevations-worksheet.html">
 </head>
 <body>
 
@@ -854,7 +871,7 @@
       </div>
       <div class="sheet-meta-badge">
         <span class="topic-name">Plans, Elevations & Front/Side Views</span>
-        <span class="spec-tag">Pearson Edexcel: Pearson Edexcel L1 & L2 Mathematics</span>
+        <span class="spec-tag">Pearson Edexcel L1 & L2 Mathematics</span>
       </div>
     </div>
 
@@ -886,6 +903,7 @@
       <div class="q-stem">
         A modular storage unit has a <strong>rectangular plan view (bird's-eye view)</strong> measuring <strong>3 m by 1.5 m</strong>, and a <strong>rectangular front elevation</strong> measuring <strong>3 m wide by 2 m high</strong>.<br>Name the 3D shape of the storage unit and calculate its volume in m³.
       </div>
+      <div style="margin:12px 0; text-align:center;"><svg viewBox="0 0 360 120" style="max-width:360px;width:100%;height:auto;"><polygon points="35,95 105,95 105,65 70,65 70,35 35,35" fill="#e0f2fe" stroke="#0f172a" stroke-width="2"/><polygon points="35,35 52,22 87,22 70,35" fill="#7dd3fc" stroke="#0f172a" stroke-width="1.8"/><polygon points="70,65 87,52 122,52 105,65" fill="#7dd3fc" stroke="#0f172a" stroke-width="1.8"/><text x="145" y="48" font-family="Lexend,sans-serif" font-size="11.5" font-weight="800" fill="#0f172a">Reference 3D Step Block</text><text x="145" y="70" font-family="Lexend,sans-serif" font-size="11" fill="#0284c7">Plan = Bird's-eye (L × W)</text><text x="145" y="90" font-family="Lexend,sans-serif" font-size="11" fill="#0f766e">Front = W × H | Side = D × H</text></svg></div>
       <div class="q-working-area">
         <div class="working-label">Show your full working out here:</div>
         <div class="working-lines-box">
@@ -916,10 +934,7 @@
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Answer =</span>
-        <div class="q-answer-input-box md"></div>
-      </div>
+      <div class="q-answer-row" style="gap:14px; flex-wrap:wrap;"><span class="q-answer-label">(a) =</span><div class="q-answer-input-box md"></div><span class="q-answer-label">(b) =</span><div class="q-answer-input-box md"></div></div>
     </div>
 
     <!-- Section B: Everyday & Workplace Maths -->
@@ -945,10 +960,7 @@
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Final Value =</span>
-        <div class="q-answer-input-box md"></div>
-      </div>
+      <div class="q-answer-row" style="gap:14px; flex-wrap:wrap;"><span class="q-answer-label">(a) =</span><div class="q-answer-input-box md"></div><span class="q-answer-label">(b) =</span><div class="q-answer-input-box md"></div></div>
     </div>
 
     <div class="q-card">
@@ -999,14 +1011,14 @@
         </div>
       </div>
       <div class="q-answer-row">
-        <span class="q-answer-label">Model Solution =</span>
+        <span class="q-answer-label">Final Answer =</span>
         <div class="q-answer-input-box md"></div>
       </div>
     </div>
 
     <div class="q-card">
       <div class="q-card-head">
-        <span class="q-title">Question 6 (Level 2 Multi-Step Problem Solving — 3 Marks)</span>
+        <span class="q-title">Question 6 (Level 2 Multi-Step Problem Solving — 4 Marks)</span>
         <span class="q-marks">[4 Marks]</span>
       </div>
       <div class="q-stem">

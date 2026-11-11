@@ -897,6 +897,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/digital-functional-skills-level-1-workout.html">
 </head>
 <body>
 
@@ -969,7 +986,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 1</span>
-        <span class="block-q-desc">Question 1: Formula Mechanics & Cell Referencing</span>
+        <span class="block-q-desc">Formula Mechanics & Cell Referencing</span>
       </div>
       <div class="workout-instruction">Write the exact formula starting with '=':</div>
       <div class="drill-grid">
@@ -1043,7 +1060,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 2</span>
-        <span class="block-q-desc">Question 2: Spreadsheet Formatting & Tools</span>
+        <span class="block-q-desc">Spreadsheet Formatting & Tools</span>
       </div>
       <div class="workout-instruction">Name the specific feature or formatting tool in Microsoft Excel:</div>
       <div class="drill-grid">
@@ -1101,7 +1118,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 3</span>
-        <span class="block-q-desc">Question 3: Word Processing & Professional Document Formatting</span>
+        <span class="block-q-desc">Word Processing & Professional Document Formatting</span>
       </div>
       <div class="workout-instruction">Identify the word processing tool or formatting command for each task:</div>
       <div class="drill-grid">
@@ -1175,7 +1192,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 4</span>
-        <span class="block-q-desc">Question 4: Spreadsheet Formulas & Basic Data Calculation</span>
+        <span class="block-q-desc">Spreadsheet Formulas & Basic Data Calculation</span>
       </div>
       <div class="workout-instruction">Write the exact spreadsheet formula required for each calculation (assuming cell coordinates given):</div>
       <div class="drill-grid">
@@ -1249,7 +1266,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 5</span>
-        <span class="block-q-desc">Question 5: Digital Communication Channels & Netiquette</span>
+        <span class="block-q-desc">Digital Communication Channels & Netiquette</span>
       </div>
       <div class="workout-instruction">Select the appropriate communication channel and etiquette rule for each scenario:</div>
       <div class="drill-grid">

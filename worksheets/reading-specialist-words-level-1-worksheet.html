@@ -830,6 +830,93 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+<style id="mfs-english-ws-upgrade">
+  .eng-extract-callout {
+    display: block;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #0284c7;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin: 8px 0;
+    font-style: normal;
+    color: #0f172a;
+    line-height: 1.65;
+  }
+  .q-working-area .working-line {
+    height: 30px !important;
+    border-bottom: 1.5px dashed #94a3b8 !important;
+  }
+  .eng-structured-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    margin-top: 4px;
+  }
+  .eng-structured-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1e293b;
+  }
+  .eng-structured-box {
+    flex: 1;
+    min-width: 180px;
+    min-height: 36px;
+    border: 1.5px solid #64748b;
+    border-radius: 6px;
+    background: #ffffff;
+  }
+  .mfs-paf-spag-audit {
+    margin: 18px 0 8px;
+    border: 2px solid #0f172a;
+    border-radius: 10px;
+    padding: 14px 16px;
+    background: #f8fafc;
+    page-break-inside: avoid;
+  }
+  .mfs-paf-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 8px 0 12px;
+  }
+  .mfs-paf-cell {
+    background: #ffffff;
+    border: 1px solid #94a3b8;
+    border-radius: 6px;
+    padding: 8px 10px;
+    min-height: 46px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #334155;
+  }
+  @media (max-width: 600px) {
+    .mfs-paf-grid { grid-template-columns: 1fr; }
+    .eng-structured-line { flex-direction: column; align-items: stretch; gap: 4px; }
+  }
+</style>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/reading-specialist-words-level-1-worksheet.html">
 </head>
 <body>
 
@@ -887,16 +974,18 @@
         Read this extract from a construction site induction sheet:<br><em>'All electrical subcontractors must hold a valid <strong>CSCS</strong> (Construction Skills Certification Scheme) smartcard and use <strong>PAT-tested</strong> — Portable Appliance Tested — power tools on site.'</em><br><br>Using the punctuation clues in the extract, state what the acronyms (a) <strong>CSCS</strong> and (b) <strong>PAT</strong> stand for.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Expanded Acronyms =</span>
-        (a) CSCS: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> (b) PAT: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>(a) CSCS:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>(b) PAT: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -909,16 +998,18 @@
         Read this extract from a community nursing handover note:<br><em>'Mr Evans has been discharged following <strong>acute</strong> bronchitis; however, his wife requires ongoing support to manage her <strong>chronic</strong> arthritis.'</em><br><br>In medical and care contexts, explain the difference between an <strong>'acute'</strong> condition and a <strong>'chronic'</strong> condition.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Medical Definitions =</span>
-        Acute condition: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Chronic condition: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Acute condition:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Chronic condition: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -937,17 +1028,19 @@
         Read this extract from an outdoor adventure centre safety manual:<br><em>'Kayaking instructors must carry thermal foil blankets to treat <strong>hypothermia</strong>, check lifejackets for strap <strong>malfunctions</strong>, and ensure all sunscreen provided is <strong>hypoallergenic</strong>.'</em><br><br>Break down and explain the meaning of the three bold specialist terms in this context.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Three Technical Definitions =</span>
-        1. hypothermia: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> 2. malfunctions: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> 3. hypoallergenic: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>1. hypothermia:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>2. malfunctions:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>3. hypoallergenic: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -960,17 +1053,19 @@
         Read this extract from a charity treasurer's annual report:<br><em>'Due to a £14,000 budget <strong>deficit</strong> in Quarter 3, the trustees have placed a temporary <strong>moratorium</strong> on hiring new staff and tightened <strong>procurement</strong> rules for office equipment.'</em><br><br>Explain the meaning of (a) <strong>'deficit'</strong>, (b) <strong>'moratorium'</strong>, and (c) <strong>'procurement'</strong> in plain English.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Plain-English Definitions =</span>
-        (a) deficit: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> (b) moratorium: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> (c) procurement: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>(a) deficit:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>(b) moratorium:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>(c) procurement: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 

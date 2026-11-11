@@ -830,6 +830,93 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+<style id="mfs-english-ws-upgrade">
+  .eng-extract-callout {
+    display: block;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #0284c7;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin: 8px 0;
+    font-style: normal;
+    color: #0f172a;
+    line-height: 1.65;
+  }
+  .q-working-area .working-line {
+    height: 30px !important;
+    border-bottom: 1.5px dashed #94a3b8 !important;
+  }
+  .eng-structured-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    margin-top: 4px;
+  }
+  .eng-structured-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1e293b;
+  }
+  .eng-structured-box {
+    flex: 1;
+    min-width: 180px;
+    min-height: 36px;
+    border: 1.5px solid #64748b;
+    border-radius: 6px;
+    background: #ffffff;
+  }
+  .mfs-paf-spag-audit {
+    margin: 18px 0 8px;
+    border: 2px solid #0f172a;
+    border-radius: 10px;
+    padding: 14px 16px;
+    background: #f8fafc;
+    page-break-inside: avoid;
+  }
+  .mfs-paf-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 8px 0 12px;
+  }
+  .mfs-paf-cell {
+    background: #ffffff;
+    border: 1px solid #94a3b8;
+    border-radius: 6px;
+    padding: 8px 10px;
+    min-height: 46px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #334155;
+  }
+  @media (max-width: 600px) {
+    .mfs-paf-grid { grid-template-columns: 1fr; }
+    .eng-structured-line { flex-direction: column; align-items: stretch; gap: 4px; }
+  }
+</style>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/slc-key-slc-skills-worksheet.html">
 </head>
 <body>
 
@@ -854,7 +941,7 @@
       </div>
       <div class="sheet-meta-badge">
         <span class="topic-name">Key SLC Skills & Discussion Strategies</span>
-        <span class="spec-tag">Pearson Edexcel: Pearson Edexcel: SLC Level 1 & Level 2</span>
+        <span class="spec-tag">Pearson Edexcel: SLC Level 1 & Level 2</span>
       </div>
     </div>
 
@@ -887,16 +974,18 @@
         In a clinical feedback meeting, a supervisor wants to understand why staff feel rushed during morning handovers.<br>1. Convert this closed question into an open question: <em>'Do you find the morning handover too short?'</em><br>2. Explain why open questions are more effective in workplace discussions.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0f766e;"><i class="fa-solid fa-comments"></i> Speaking &amp; Listening Structured Notes &amp; Spoken Response:</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Open Question & Explanation =</span>
-        Open question: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Explanation: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Open question:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Explanation: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -909,16 +998,18 @@
         During a formal committee discussion, describe <strong>two positive non-verbal cues</strong> that demonstrate active listening without interrupting the speaker.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0f766e;"><i class="fa-solid fa-comments"></i> Speaking &amp; Listening Structured Notes &amp; Spoken Response:</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Two Non-Verbal Cues =</span>
-        Cue 1: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Cue 2: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Cue 1:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Cue 2: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -937,8 +1028,10 @@
         A colleague proposes: <em>'We should cancel all staff training days this quarter to cover sick leave.'</em><br>You strongly disagree with this proposal.<br><br>Write down a professional, diplomatic response that expresses disagreement respectfully while suggesting an alternative solution.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0f766e;"><i class="fa-solid fa-comments"></i> Speaking &amp; Listening Structured Notes &amp; Spoken Response:</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -959,17 +1052,19 @@
         An apprentice healthcare assistant explains infection control procedures to two different audiences:<br>• Audience A: A team of consultant surgeons and clinical leads.<br>• Audience B: An anxious elderly patient and their family.<br><br>Describe how your vocabulary, sentence structure, and tone must adapt between Audience A and Audience B.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0f766e;"><i class="fa-solid fa-comments"></i> Speaking &amp; Listening Structured Notes &amp; Spoken Response:</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Adaptation Analysis =</span>
-        Audience A: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Audience B: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Audience A:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Audience B: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -988,8 +1083,10 @@
         In a 15-minute group discussion, four team members debate whether to introduce 12-hour shifts or keep 8-hour shifts:<br>• Member A argues 12-hour shifts give more consecutive days off.<br>• Member B argues 12-hour shifts cause extreme tiredness in the final 3 hours.<br>• Member C worries about childcare pickup times.<br><br>As the discussion leader, write a short summary statement that brings together all three viewpoints and suggests a fair compromise.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0f766e;"><i class="fa-solid fa-comments"></i> Speaking &amp; Listening Structured Notes &amp; Spoken Response:</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -1011,8 +1108,10 @@
         An apprentice prepares for their Pearson Edexcel Level 2 SLC formal presentation on <em>'Improving Environmental Sustainability in Health Clinics'</em>.<br>Review the four Pearson Edexcel SLC grading criteria below:<br>1. Structure & Logical Sequencing<br>2. Language Register & Vocabulary<br>3. Effective Use of Presentation Aids<br>4. Handling Audience Questions<br><br>Describe one specific action the apprentice must take during their preparation or delivery to achieve top marks in each of the four criteria.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0f766e;"><i class="fa-solid fa-comments"></i> Speaking &amp; Listening Structured Notes &amp; Spoken Response:</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -1020,9 +1119,9 @@
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Four Actions for Top Marks =</span>
-        1: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> 2: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> 3: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> 4: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>1:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>2:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>3:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>4: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 

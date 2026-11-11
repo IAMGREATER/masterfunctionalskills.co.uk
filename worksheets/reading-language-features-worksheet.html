@@ -830,6 +830,93 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+<style id="mfs-english-ws-upgrade">
+  .eng-extract-callout {
+    display: block;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #0284c7;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin: 8px 0;
+    font-style: normal;
+    color: #0f172a;
+    line-height: 1.65;
+  }
+  .q-working-area .working-line {
+    height: 30px !important;
+    border-bottom: 1.5px dashed #94a3b8 !important;
+  }
+  .eng-structured-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    margin-top: 4px;
+  }
+  .eng-structured-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1e293b;
+  }
+  .eng-structured-box {
+    flex: 1;
+    min-width: 180px;
+    min-height: 36px;
+    border: 1.5px solid #64748b;
+    border-radius: 6px;
+    background: #ffffff;
+  }
+  .mfs-paf-spag-audit {
+    margin: 18px 0 8px;
+    border: 2px solid #0f172a;
+    border-radius: 10px;
+    padding: 14px 16px;
+    background: #f8fafc;
+    page-break-inside: avoid;
+  }
+  .mfs-paf-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 8px 0 12px;
+  }
+  .mfs-paf-cell {
+    background: #ffffff;
+    border: 1px solid #94a3b8;
+    border-radius: 6px;
+    padding: 8px 10px;
+    min-height: 46px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #334155;
+  }
+  @media (max-width: 600px) {
+    .mfs-paf-grid { grid-template-columns: 1fr; }
+    .eng-structured-line { flex-direction: column; align-items: stretch; gap: 4px; }
+  }
+</style>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/reading-language-features-worksheet.html">
 </head>
 <body>
 
@@ -887,16 +974,18 @@
         Match the excerpt with the correct language technique:<br>A. <em>'Over 85% of healthcare workers surveyed support flexible shift scheduling.'</em><br>B. <em>'Can you afford to ignore the warning signs of burnout?'</em><br><br>Techniques: <strong>Statistic / Fact &nbsp;|&nbsp; Rhetorical Question &nbsp;|&nbsp; Emotive Language</strong>
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Matched Techniques =</span>
-        A: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> B: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>A:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>B: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -909,16 +998,18 @@
         Read this campaign slogan: <em>'Together we can build a safer, cleaner, and healthier clinic for every patient.'</em><br><br>Identify the language technique used and explain its effect on the reader.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Technique & Effect =</span>
-        Technique: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Effect: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Technique:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Effect: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -934,20 +1025,21 @@
         <span class="q-marks">[3 Marks]</span>
       </div>
       <div class="q-stem">
-        An infection prevention poster states:<br><em>'Clean hands save lives. Every time you wash your hands, you protect a vulnerable patient. Join our ward safety champion team today!'</em><br><br>Identify <strong>two language features</strong> used in this text and quote an example of each.
+        An infection prevention poster states:<span class="eng-extract-callout">'Clean hands save lives. Every time you wash your hands, you protect a vulnerable patient. Join our ward safety champion team today!'</span><br><br>Identify <strong>two language features</strong> used in this text and quote an example of each.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Techniques & Quotes =</span>
-        Feature 1: <div class="q-answer-input-box sm"></div> (Quote: <div class="q-answer-input-box sm"></div>) <span class="q-item-sep">|</span> Feature 2: <div class="q-answer-input-box sm"></div> (Quote: <div class="q-answer-input-box sm"></div>)
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Feature 1:  (Quote: ):</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Feature 2:  (Quote: ):</span><div class="eng-structured-box"></div></div></div>
       </div>
     </div>
 
@@ -957,20 +1049,22 @@
         <span class="q-marks">[3 Marks]</span>
       </div>
       <div class="q-stem">
-        A patient charity leaflet writes:<br><em>'Waiting four agonizing hours in a freezing corridor is an absolute nightmare that tears families apart.'</em><br><br>Identify <strong>two emotive words</strong> and <strong>one example of exaggeration (hyperbole)</strong> in the sentence.
+        A patient charity leaflet writes:<span class="eng-extract-callout">'Waiting four agonizing hours in a freezing corridor is an absolute nightmare that tears families apart.'</span><br><br>Identify <strong>two emotive words</strong> and <strong>one example of exaggeration (hyperbole)</strong> in the sentence.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Identified Language =</span>
-        Emotive words: (1) <div class="q-answer-input-box sm"></div> (2) <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Hyperbole: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Emotive words: (1)  (2):</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Hyperbole: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -986,11 +1080,13 @@
         <span class="q-marks">[4 Marks]</span>
       </div>
       <div class="q-stem">
-        <strong>Text A (Formal Trust Notice):</strong><br><em>'Flu vaccination clinics operate weekdays in Seminar Room 2. Evidence demonstrates vaccination reduces seasonal staff absenteeism by 32%.'</em><br><br><strong>Text B (Staff Union Poster):</strong><br><em>'Don't bring the flu home to your loved ones! Protect your family, shield your patients, and safeguard your colleagues. Get jabbed this week!'</em><br><br>Compare the different language techniques used in Text A and Text B to encourage staff vaccination.<br>Give at least two specific language features from each text.
+        <strong>Text A (Formal Trust Notice):</strong><span class="eng-extract-callout">'Flu vaccination clinics operate weekdays in Seminar Room 2. Evidence demonstrates vaccination reduces seasonal staff absenteeism by 32%.'</span><br><br><strong>Text B (Staff Union Poster):</strong><span class="eng-extract-callout">'Don't bring the flu home to your loved ones! Protect your family, shield your patients, and safeguard your colleagues. Get jabbed this week!'</span><br><br>Compare the different language techniques used in Text A and Text B to encourage staff vaccination.<br>Give at least two specific language features from each text.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -998,9 +1094,9 @@
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Comparative Language Features =</span>
-        Text A Devices: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Text B Devices: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Text A Devices:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Text B Devices: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -1010,11 +1106,13 @@
         <span class="q-marks">[4 Marks]</span>
       </div>
       <div class="q-stem">
-        An apprentice blogger writes:<br><em>'Is it fair that apprentice nurses shoulder enormous clinical responsibilities while surviving on poverty wages? We are the beating heart of our hospitals, yet we are cast aside like disposable instruments.'</em><br><br>Analyse how the writer uses language to position the reader to support higher apprentice wages.<br>Identify two distinct techniques, quote evidence, and explain their persuasive effect.
+        An apprentice blogger writes:<span class="eng-extract-callout">'Is it fair that apprentice nurses shoulder enormous clinical responsibilities while surviving on poverty wages? We are the beating heart of our hospitals, yet we are cast aside like disposable instruments.'</span><br><br>Analyse how the writer uses language to position the reader to support higher apprentice wages.<br>Identify two distinct techniques, quote evidence, and explain their persuasive effect.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -1022,9 +1120,9 @@
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Techniques, Evidence & Effect =</span>
-        Technique 1 & Effect: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Technique 2 & Effect: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Technique 1 & Effect:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Technique 2 & Effect: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 

@@ -23,6 +23,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="assets/css/mfs-revision.css?v=20261024c">
   <link rel="stylesheet" href="assets/css/mfs-mobile.css?v=20261024c">
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/functional-skills-numbers-and-place-value.html">
 </head>
 <body>
 
@@ -376,63 +377,68 @@
           </div>
         </div>
 
-                <!-- AI TUTOR SONYA VIDEO MASTERCLASS STATION -->
+                <!-- TOPIC VIDEO WALKTHROUGH STATION -->
         <section id="video-station" class="revision-section" style="margin-bottom: 32px;">
           <div id="videoMasterclassStation" style="position:relative; border-radius:14px; overflow:hidden; background:#070d1e; box-shadow:0 10px 30px rgba(0,0,0,0.35);">
-            <div class="video-exemplar-head" style="background:#070d1e; border: 2px solid #0284c7; border-radius:14px 14px 0 0; padding:18px 22px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+            
+            <div class="video-exemplar-head" style="background:#070d1e; border: 2px solid #0284c7;  border-radius:14px 14px 0 0; padding:18px 22px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
               <div style="display:flex; align-items:center; gap:14px;">
-                <img src="assets/img/avatars/sonya-with-specs.png" alt="Sonya AI Specialist Tutor" style="width:52px; height:52px; border-radius:50%; border:2px solid #38bdf8; object-fit:cover;">
+                <img id="mcTutorAvatar" src="assets/img/avatars/sonya-with-specs.png" alt="Sonya MFS Specialist Tutor" style="width:52px; height:52px; border-radius:50%; border:2px solid #38bdf8; object-fit:cover;">
                 <div>
-                  <div style="color:#ffffff; font-size:1.18rem; font-weight:800; display:flex; align-items:center; gap:8px;">
-                    <i class="fa-solid fa-circle-play" style="color:#38bdf8;"></i> Numbers & Place Value Video Masterclass
+                  <div id="mcVideoTitle" style="color:#ffffff; font-size:1.18rem; font-weight:800; display:flex; align-items:center; gap:8px;">
+                    <i class="fa-brands fa-youtube" style="color:#ef4444;"></i> Numbers &amp; Place Value Masterclass
                   </div>
-                  <div style="color:#94a3b8; font-size:0.88rem; font-weight:600; margin-top:3px;">
-                    Presented by <strong style="color:#38bdf8;">Sonya</strong> (MFS Lead Mathematics Specialist) &bull; 1080p Studio Walkthrough
+                  <div id="mcTutorMeta" style="color:#94a3b8; font-size:0.88rem; font-weight:600; margin-top:3px;">
+                    Presented by <strong style="color:#38bdf8;">Sonya</strong> (MFS Lead Mathematics Specialist) &bull; 1080p Studio Walkthrough (5m 17s)
                   </div>
                 </div>
               </div>
               <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
-                <span class="mfs-pill-l1">Level 1 &amp; 2</span>
+                <span class="mfs-pill-l1">Level 2</span>
                 <span class="mfs-pill-board">Pearson Edexcel</span>
-                <span class="mfs-pill-board" style="background:#059669; color:#fff;">RP Neural Voice</span>
+                <span class="mfs-pill-board" style="background:#059669; color:#fff;">HD 1080p</span>
               </div>
             </div>
 
             <div class="video-screen-wrap" style="position:relative; width:100%; aspect-ratio:16/9; background:#000; overflow:hidden; border-left:2px solid #0284c7; border-right:2px solid #0284c7; border-radius:0; margin-bottom:0;">
-              <iframe id="topicMasterclassIframe" style="position:absolute; top:0; left:0; width:100%; height:100%; border:0; display:block;" src="https://www.youtube-nocookie.com/embed/kfK1AuSz2Cg?rel=0&enablejsapi=1" title="Numbers & Place Value Video Masterclass" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+              <iframe id="topicMasterclassIframe" data-ytid="kfK1AuSz2Cg" style="position:absolute; top:0; left:0; width:100%; height:100%; border:0; display:block;" src="https://www.youtube-nocookie.com/embed/kfK1AuSz2Cg?rel=0&amp;enablejsapi=1" title="Numbers &amp; Place Value Masterclass" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
             </div>
 
             <!-- JUMP BENCHMARKS BAR -->
-            <div class="video-jump-bar" style="background:#0f172a; border:2px solid #0284c7; border-top:1px solid #1e3a8a; border-radius:0; padding:12px 18px; margin-bottom:0;">
+            <div class="video-jump-bar" id="mcJumpBar" style="background:#0f172a; border:2px solid #0284c7; border-top:1px solid #1e3a8a; border-radius:0; padding:12px 18px; margin-bottom:0;">
               <span class="jump-label" style="color:#94a3b8;"><i class="fa-solid fa-forward-step" style="color:#38bdf8;"></i> Lesson Benchmarks:</span>
-              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(0, this)">0:00 Briefing & Roadmap</button>
-              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(31, this)">0:31 Place Value Grid</button>
-              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(86, this)">1:26 Problem 1: Digit Values</button>
-              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(149, this)">2:29 Problem 2: Comma-Separated 3-Digit Blocks</button>
-              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(223, this)">3:43 Examiner Checklist</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(0, this)">0:00 Briefing &amp; Objectives</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(46, this)">0:46 Visual Grid Method</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(81, this)">1:21 Multiplying &amp; Dividing by 10/100</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(123, this)">2:03 Writing Large Numbers</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(152, this)">2:32 Worked Exam Question</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(223, this)">3:43 Your Turn! Practice Challenge</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(254, this)">4:14 Watch Out! Examiner Traps</button>
             </div>
 
             <!-- PLAYER FOOTER & EXTERNAL LINKS -->
             <div style="background:#070d1e; border:2px solid #0284c7; border-top:1px solid #1e3a8a; border-radius:0 0 14px 14px; padding:10px 18px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;">
-              <span style="font-size:0.82rem; color:#94a3b8;"><i class="fa-solid fa-shield-halved" style="color:#38bdf8;"></i> Pearson Edexcel &amp; City &amp; Guilds Syllabus Aligned</span>
-              <div style="display:flex; gap:12px; align-items:center;">
-                <a href="video-solution.html?topic=numbers-and-place-value" target="_blank" rel="noopener" style="font-size:0.82rem; color:#38bdf8; text-decoration:none; font-weight:700;"><i class="fa-solid fa-up-right-from-square"></i> Open in Video Station</a>
-                <a href="https://youtu.be/kfK1AuSz2Cg" target="_blank" rel="noopener" style="font-size:0.82rem; color:#ef4444; text-decoration:none; font-weight:700;"><i class="fa-brands fa-youtube"></i> Watch on YouTube</a>
+              <span style="font-size:0.82rem; color:#94a3b8;"><i class="fa-solid fa-shield-halved" style="color:#38bdf8;"></i> Pearson Edexcel &amp; City &amp; Guilds Level 2 Aligned</span>
+              <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+                <a id="mcStationLink" href="video-solution.html?topic=numbers-and-place-value" target="_blank" rel="noopener" style="font-size:0.82rem; color:#38bdf8; text-decoration:none; font-weight:700;"><i class="fa-solid fa-up-right-from-square"></i> Open in Video Station</a>
+                <a id="mcYoutubeLink" href="https://youtu.be/kfK1AuSz2Cg" target="_blank" rel="noopener" style="font-size:0.82rem; color:#ef4444; text-decoration:none; font-weight:700;"><i class="fa-brands fa-youtube"></i> Watch on YouTube</a>
               </div>
             </div>
           </div>
 
           <script>
+            window.__mfsMasterclassParts = [{"num": 1, "slug": "numbers-and-place-value", "title": "Numbers & Place Value Masterclass", "tutor": "Sonya", "role": "MFS Lead Mathematics Specialist", "avatar": "assets/img/avatars/sonya-with-specs.png", "ytid": "kfK1AuSz2Cg", "runtime": "5m 17s", "default_start": 0, "benchmarks": [{"sec": 0, "text": "0:00 Briefing & Objectives"}, {"sec": 46, "text": "0:46 Visual Grid Method"}, {"sec": 81, "text": "1:21 Multiplying & Dividing by 10/100"}, {"sec": 123, "text": "2:03 Writing Large Numbers"}, {"sec": 152, "text": "2:32 Worked Exam Question"}, {"sec": 223, "text": "3:43 Your Turn! Practice Challenge"}, {"sec": 254, "text": "4:14 Watch Out! Examiner Traps"}]}];
             function jumpMasterclassVideo(seconds, btn) {
               if (btn && btn.blur) btn.blur();
-              var video = document.getElementById('topicMasterclassPlayer');
-              if (video) {
-                video.currentTime = seconds;
-                video.play().catch(function(e){ console.log('Autoplay:', e); });
-              } else {
-                var iframe = document.getElementById('topicMasterclassIframe');
-                if (iframe) {
-                  iframe.src = "https://www.youtube-nocookie.com/embed/kfK1AuSz2Cg?rel=0&autoplay=1&enablejsapi=1&start=" + seconds;
+              var iframe = document.getElementById('topicMasterclassIframe');
+              if (iframe) {
+                var ytid = iframe.getAttribute('data-ytid');
+                if (!ytid) {
+                  var m = (iframe.src || '').match(/embed[/]([a-zA-Z0-9_-]+)/);
+                  ytid = m ? m[1] : '';
+                }
+                if (ytid) {
+                  iframe.src = 'https://www.youtube-nocookie.com/embed/' + ytid + '?rel=0&autoplay=1&enablejsapi=1&start=' + seconds;
                 }
               }
               var btns = document.querySelectorAll('#videoMasterclassStation .video-jump-bar .jump-btn');
@@ -450,12 +456,46 @@
                 }
               });
             }
-
-            if (window.location.protocol === 'file:') {
-              var wrap = document.querySelector('#videoMasterclassStation .video-screen-wrap');
-              if (wrap) {
-                wrap.innerHTML = '<video id="topicMasterclassPlayer" controls playsinline poster="assets/img/numbers-place-value-sonya-poster.png" style="width:100%; height:100%; object-fit:contain; background:#000; display:block;"><source src="assets/video/sonya-numbers-and-place-value-walkthrough.mp4" type="video/mp4"><track default kind="chapters" label="Lesson Chapters" srclang="en" src="assets/video/sonya-numbers-place-value-chapters.vtt">Your browser does not support the video tag.</video>';
+            function switchMasterclassPart(idx, tabBtn) {
+              var parts = window.__mfsMasterclassParts || [];
+              var p = parts[idx];
+              if (!p) return;
+              var iframe = document.getElementById('topicMasterclassIframe');
+              if (iframe) {
+                iframe.setAttribute('data-ytid', p.ytid);
+                var st = p.default_start > 0 ? '&start=' + p.default_start : '';
+                iframe.src = 'https://www.youtube-nocookie.com/embed/' + p.ytid + '?rel=0&autoplay=1&enablejsapi=1' + st;
+                iframe.title = p.title;
               }
+              var av = document.getElementById('mcTutorAvatar');
+              if (av) { av.src = p.avatar; av.alt = p.tutor + ' MFS Specialist Tutor'; }
+              var ti = document.getElementById('mcVideoTitle');
+              if (ti) { ti.innerHTML = '<i class="fa-brands fa-youtube" style="color:#ef4444;"></i> ' + p.title; }
+              var me = document.getElementById('mcTutorMeta');
+              if (me) { me.innerHTML = 'Presented by <strong style="color:#38bdf8;">' + p.tutor + '</strong> (' + p.role + ') &bull; 1080p Studio Walkthrough (' + p.runtime + ')'; }
+              var sl = document.getElementById('mcStationLink');
+              if (sl) sl.href = 'video-solution.html?topic=' + p.slug;
+              var yl = document.getElementById('mcYoutubeLink');
+              if (yl) yl.href = 'https://youtu.be/' + p.ytid;
+              var jb = document.getElementById('mcJumpBar');
+              if (jb) {
+                var h = '<span class="jump-label" style="color:#94a3b8;"><i class="fa-solid fa-forward-step" style="color:#38bdf8;"></i> Lesson Benchmarks:</span> ';
+                (p.benchmarks || []).forEach(function(b) {
+                  h += '<button type="button" class="jump-btn" onclick="jumpMasterclassVideo(' + b.sec + ', this)">' + b.text + '</button> ';
+                });
+                jb.innerHTML = h;
+              }
+              document.querySelectorAll('#videoMasterclassStation .mc-part-tab').forEach(function(tb, i) {
+                if (i === idx) {
+                  tb.style.background = '#0284c7';
+                  tb.style.color = '#ffffff';
+                  tb.style.borderColor = '#38bdf8';
+                } else {
+                  tb.style.background = '#0f172a';
+                  tb.style.color = '#cbd5e1';
+                  tb.style.borderColor = '#334155';
+                }
+              });
             }
           </script>
         </section>
@@ -525,10 +565,10 @@
                 </div>
 
                 <!-- 7-COLUMN FULL WIDTH RESPONSIVE GRID -->
-                <div style="display:grid; grid-template-columns: repeat(7, 1fr); gap:8px; margin-bottom:18px; text-align:center;">
+                <div class="mfs-scroll-x-mobile"><div style="display:grid; grid-template-columns: repeat(7, 1fr); gap:8px; margin-bottom:18px; text-align:center;; min-width:520px;">
                   <!-- Millions -->
                   <div style="background:#f0f9ff; border:2px solid #0284c7; border-radius:12px; padding:14px 8px;">
-                    <div style="font-size:0.95rem; font-weight:900; color:#0284c7; text-transform:uppercase; letter-spacing:0.5px;">Millions</div>
+                    <div style="font-size:0.95rem; font-weight:900; color:#0284c7; text-transform:uppercase; letter-spacing:0.5px;">Millions</div></div>
                     <div style="font-size:1.02rem; color:#64748b; font-weight:800; margin-bottom:6px;">(1,000,000)</div>
                     <div style="font-size:2.8rem; font-weight:900; color:#0f172a; font-variant-numeric:tabular-nums; line-height:1.1;">3</div>
                     <div style="font-size:0.95rem; font-weight:800; color:#0284c7; margin-top:6px; background:#e0f2fe; border-radius:8px; padding:4px 6px;">3,000,000</div>

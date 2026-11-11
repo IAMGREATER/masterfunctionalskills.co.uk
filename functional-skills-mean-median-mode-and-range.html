@@ -23,6 +23,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="assets/css/mfs-revision.css?v=20261024c">
   <link rel="stylesheet" href="assets/css/mfs-mobile.css?v=20261024c">
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/functional-skills-mean-median-mode-and-range.html">
 </head>
 <body>
 
@@ -364,65 +365,67 @@
       <div class="revision-content">
 
         <!-- TOPIC VIDEO WALKTHROUGH STATION -->
-        <!-- AI TUTOR SONYA VIDEO MASTERCLASS STATION -->
         <section id="video-station" class="revision-section" style="margin-bottom: 32px;">
           <div id="videoMasterclassStation" style="position:relative; border-radius:14px; overflow:hidden; background:#070d1e; box-shadow:0 10px 30px rgba(0,0,0,0.35);">
-            <div class="video-exemplar-head" style="background:#070d1e; border: 2px solid #0284c7; border-radius:14px 14px 0 0; padding:18px 22px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+            
+            <div class="video-exemplar-head" style="background:#070d1e; border: 2px solid #0284c7;  border-radius:14px 14px 0 0; padding:18px 22px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
               <div style="display:flex; align-items:center; gap:14px;">
-                <img src="assets/img/avatars/sonya-with-specs.png" alt="Sonya AI Specialist Tutor" style="width:52px; height:52px; border-radius:50%; border:2px solid #38bdf8; object-fit:cover;">
+                <img id="mcTutorAvatar" src="assets/img/avatars/sonya-with-specs.png" alt="Sonya MFS Specialist Tutor" style="width:52px; height:52px; border-radius:50%; border:2px solid #38bdf8; object-fit:cover;">
                 <div>
-                  <div style="color:#ffffff; font-size:1.18rem; font-weight:800; display:flex; align-items:center; gap:8px;">
-                    <i class="fa-brands fa-youtube" style="color:#ef4444;"></i> Averages and Spread (Mean, Median, Mode, Range) Masterclass
+                  <div id="mcVideoTitle" style="color:#ffffff; font-size:1.18rem; font-weight:800; display:flex; align-items:center; gap:8px;">
+                    <i class="fa-brands fa-youtube" style="color:#ef4444;"></i> Mean, Median, Mode, Range &amp; Grouped Mean Masterclass
                   </div>
-                  <div style="color:#94a3b8; font-size:0.88rem; font-weight:600; margin-top:3px;">
-                    Presented by <strong style="color:#38bdf8;">Sonya</strong> (MFS Lead Specialist) &bull; 1080p Studio Walkthrough (5m 33s)
+                  <div id="mcTutorMeta" style="color:#94a3b8; font-size:0.88rem; font-weight:600; margin-top:3px;">
+                    Presented by <strong style="color:#38bdf8;">Sonya</strong> (MFS Lead Mathematics Specialist) &bull; 1080p Studio Walkthrough (5m 50s)
                   </div>
                 </div>
               </div>
               <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
-                <span class="mfs-pill-l1">Level 1 &amp; 2</span>
+                <span class="mfs-pill-l1">Level 2</span>
                 <span class="mfs-pill-board">Pearson Edexcel</span>
                 <span class="mfs-pill-board" style="background:#059669; color:#fff;">HD 1080p</span>
               </div>
             </div>
 
             <div class="video-screen-wrap" style="position:relative; width:100%; aspect-ratio:16/9; background:#000; overflow:hidden; border-left:2px solid #0284c7; border-right:2px solid #0284c7; border-radius:0; margin-bottom:0;">
-              <iframe id="topicMasterclassIframe" style="position:absolute; top:0; left:0; width:100%; height:100%; border:0; display:block;" src="https://www.youtube-nocookie.com/embed/Be89esFk97M?rel=0&enablejsapi=1" title="Masterclass Station" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+              <iframe id="topicMasterclassIframe" data-ytid="Be89esFk97M" style="position:absolute; top:0; left:0; width:100%; height:100%; border:0; display:block;" src="https://www.youtube-nocookie.com/embed/Be89esFk97M?rel=0&amp;enablejsapi=1" title="Mean, Median, Mode, Range &amp; Grouped Mean Masterclass" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
             </div>
 
             <!-- JUMP BENCHMARKS BAR -->
-            <div class="video-jump-bar" style="background:#0f172a; border:2px solid #0284c7; border-top:1px solid #1e3a8a; border-radius:0; padding:12px 18px; margin-bottom:0;">
+            <div class="video-jump-bar" id="mcJumpBar" style="background:#0f172a; border:2px solid #0284c7; border-top:1px solid #1e3a8a; border-radius:0; padding:12px 18px; margin-bottom:0;">
               <span class="jump-label" style="color:#94a3b8;"><i class="fa-solid fa-forward-step" style="color:#38bdf8;"></i> Lesson Benchmarks:</span>
-              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(0, this)">0:00 Masterclass Briefing & Specifica...</button>
-              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(56, this)">0:56 Core Skill 1: Mean, Median, Mode...</button>
-              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(132, this)">2:12 Core Skill 2: Comparing Two Data...</button>
-              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(190, this)">3:10 Worked Exam Model: Estimated Mea...</button>
-              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(277, this)">4:37 Examiner Traps & Revision Checklist</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(0, this)">0:00 Briefing &amp; Objectives</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(51, this)">0:51 Mean, Mode &amp; Range</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(92, this)">1:32 Median (Odd vs Even)</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(126, this)">2:06 Estimating Mean from Grouped Table</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(171, this)">2:51 Worked Exam Question</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(247, this)">4:07 Your Turn! Practice Challenge</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(280, this)">4:40 Watch Out! Examiner Traps</button>
             </div>
 
             <!-- PLAYER FOOTER & EXTERNAL LINKS -->
             <div style="background:#070d1e; border:2px solid #0284c7; border-top:1px solid #1e3a8a; border-radius:0 0 14px 14px; padding:10px 18px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;">
-              <span style="font-size:0.82rem; color:#94a3b8;"><i class="fa-solid fa-shield-halved" style="color:#38bdf8;"></i> Pearson Edexcel &amp; City &amp; Guilds Syllabus Aligned</span>
-              <div style="display:flex; gap:12px; align-items:center;">
-                <a href="video-solution.html?topic=averages-and-spread" target="_blank" rel="noopener" style="font-size:0.82rem; color:#38bdf8; text-decoration:none; font-weight:700;"><i class="fa-solid fa-up-right-from-square"></i> Open in Video Station</a>
-                <a href="https://youtu.be/Be89esFk97M" target="_blank" rel="noopener" style="font-size:0.82rem; color:#ef4444; text-decoration:none; font-weight:700;"><i class="fa-brands fa-youtube"></i> Watch on YouTube</a>
-                <a href="worksheets/mean-median-mode-and-range-worksheet.html" target="_blank" rel="noopener" style="font-size:0.82rem; color:#10b981; text-decoration:none; font-weight:700;"><i class="fa-regular fa-file-pdf"></i> Practice Questions</a>
-                <a href="worksheets/mean-median-mode-and-range-answers.html" target="_blank" rel="noopener" style="font-size:0.82rem; color:#fbbf24; text-decoration:none; font-weight:700;"><i class="fa-solid fa-check"></i> Model Answers</a>
+              <span style="font-size:0.82rem; color:#94a3b8;"><i class="fa-solid fa-shield-halved" style="color:#38bdf8;"></i> Pearson Edexcel &amp; City &amp; Guilds Level 2 Aligned</span>
+              <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+                <a id="mcStationLink" href="video-solution.html?topic=averages-and-spread" target="_blank" rel="noopener" style="font-size:0.82rem; color:#38bdf8; text-decoration:none; font-weight:700;"><i class="fa-solid fa-up-right-from-square"></i> Open in Video Station</a>
+                <a id="mcYoutubeLink" href="https://youtu.be/Be89esFk97M" target="_blank" rel="noopener" style="font-size:0.82rem; color:#ef4444; text-decoration:none; font-weight:700;"><i class="fa-brands fa-youtube"></i> Watch on YouTube</a>
               </div>
             </div>
           </div>
 
           <script>
+            window.__mfsMasterclassParts = [{"num": 34, "slug": "averages-and-spread", "title": "Mean, Median, Mode, Range & Grouped Mean Masterclass", "tutor": "Sonya", "role": "MFS Lead Mathematics Specialist", "avatar": "assets/img/avatars/sonya-with-specs.png", "ytid": "Be89esFk97M", "runtime": "5m 50s", "default_start": 0, "benchmarks": [{"sec": 0, "text": "0:00 Briefing & Objectives"}, {"sec": 51, "text": "0:51 Mean, Mode & Range"}, {"sec": 92, "text": "1:32 Median (Odd vs Even)"}, {"sec": 126, "text": "2:06 Estimating Mean from Grouped Table"}, {"sec": 171, "text": "2:51 Worked Exam Question"}, {"sec": 247, "text": "4:07 Your Turn! Practice Challenge"}, {"sec": 280, "text": "4:40 Watch Out! Examiner Traps"}]}];
             function jumpMasterclassVideo(seconds, btn) {
               if (btn && btn.blur) btn.blur();
-              var video = document.getElementById('topicMasterclassPlayer');
-              if (video) {
-                video.currentTime = seconds;
-                video.play().catch(function(e){ console.log('Autoplay:', e); });
-              } else {
-                var iframe = document.getElementById('topicMasterclassIframe');
-                if (iframe) {
-                  iframe.src = "https://www.youtube-nocookie.com/embed/sgvRdO8EIgU?rel=0&autoplay=1&enablejsapi=1&start=" + seconds;
+              var iframe = document.getElementById('topicMasterclassIframe');
+              if (iframe) {
+                var ytid = iframe.getAttribute('data-ytid');
+                if (!ytid) {
+                  var m = (iframe.src || '').match(/embed[/]([a-zA-Z0-9_-]+)/);
+                  ytid = m ? m[1] : '';
+                }
+                if (ytid) {
+                  iframe.src = 'https://www.youtube-nocookie.com/embed/' + ytid + '?rel=0&autoplay=1&enablejsapi=1&start=' + seconds;
                 }
               }
               var btns = document.querySelectorAll('#videoMasterclassStation .video-jump-bar .jump-btn');
@@ -440,12 +443,46 @@
                 }
               });
             }
-          
-            if (window.location.protocol === 'file:') {
-              var wrap = document.querySelector('#videoMasterclassStation .video-screen-wrap');
-              if (wrap) {
-                wrap.innerHTML = '<video id="topicMasterclassPlayer" controls playsinline poster="assets/img/averages-and-spread-sonya-poster.png" style="width:100%; height:100%; object-fit:contain; background:#000; display:block;"><source src="assets/video/sonya-averages-and-spread-walkthrough.mp4" type="video/mp4">' + ("<track default kind="chapters" label="Lesson Chapters" srclang="en" src="assets/video/sonya-averages-and-spread-chapters.vtt">") + 'Your browser does not support the video tag.</video>';
+            function switchMasterclassPart(idx, tabBtn) {
+              var parts = window.__mfsMasterclassParts || [];
+              var p = parts[idx];
+              if (!p) return;
+              var iframe = document.getElementById('topicMasterclassIframe');
+              if (iframe) {
+                iframe.setAttribute('data-ytid', p.ytid);
+                var st = p.default_start > 0 ? '&start=' + p.default_start : '';
+                iframe.src = 'https://www.youtube-nocookie.com/embed/' + p.ytid + '?rel=0&autoplay=1&enablejsapi=1' + st;
+                iframe.title = p.title;
               }
+              var av = document.getElementById('mcTutorAvatar');
+              if (av) { av.src = p.avatar; av.alt = p.tutor + ' MFS Specialist Tutor'; }
+              var ti = document.getElementById('mcVideoTitle');
+              if (ti) { ti.innerHTML = '<i class="fa-brands fa-youtube" style="color:#ef4444;"></i> ' + p.title; }
+              var me = document.getElementById('mcTutorMeta');
+              if (me) { me.innerHTML = 'Presented by <strong style="color:#38bdf8;">' + p.tutor + '</strong> (' + p.role + ') &bull; 1080p Studio Walkthrough (' + p.runtime + ')'; }
+              var sl = document.getElementById('mcStationLink');
+              if (sl) sl.href = 'video-solution.html?topic=' + p.slug;
+              var yl = document.getElementById('mcYoutubeLink');
+              if (yl) yl.href = 'https://youtu.be/' + p.ytid;
+              var jb = document.getElementById('mcJumpBar');
+              if (jb) {
+                var h = '<span class="jump-label" style="color:#94a3b8;"><i class="fa-solid fa-forward-step" style="color:#38bdf8;"></i> Lesson Benchmarks:</span> ';
+                (p.benchmarks || []).forEach(function(b) {
+                  h += '<button type="button" class="jump-btn" onclick="jumpMasterclassVideo(' + b.sec + ', this)">' + b.text + '</button> ';
+                });
+                jb.innerHTML = h;
+              }
+              document.querySelectorAll('#videoMasterclassStation .mc-part-tab').forEach(function(tb, i) {
+                if (i === idx) {
+                  tb.style.background = '#0284c7';
+                  tb.style.color = '#ffffff';
+                  tb.style.borderColor = '#38bdf8';
+                } else {
+                  tb.style.background = '#0f172a';
+                  tb.style.color = '#cbd5e1';
+                  tb.style.borderColor = '#334155';
+                }
+              });
             }
           </script>
         </section>

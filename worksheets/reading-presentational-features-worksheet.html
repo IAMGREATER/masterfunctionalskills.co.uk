@@ -830,6 +830,93 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+<style id="mfs-english-ws-upgrade">
+  .eng-extract-callout {
+    display: block;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #0284c7;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin: 8px 0;
+    font-style: normal;
+    color: #0f172a;
+    line-height: 1.65;
+  }
+  .q-working-area .working-line {
+    height: 30px !important;
+    border-bottom: 1.5px dashed #94a3b8 !important;
+  }
+  .eng-structured-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    margin-top: 4px;
+  }
+  .eng-structured-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1e293b;
+  }
+  .eng-structured-box {
+    flex: 1;
+    min-width: 180px;
+    min-height: 36px;
+    border: 1.5px solid #64748b;
+    border-radius: 6px;
+    background: #ffffff;
+  }
+  .mfs-paf-spag-audit {
+    margin: 18px 0 8px;
+    border: 2px solid #0f172a;
+    border-radius: 10px;
+    padding: 14px 16px;
+    background: #f8fafc;
+    page-break-inside: avoid;
+  }
+  .mfs-paf-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 8px 0 12px;
+  }
+  .mfs-paf-cell {
+    background: #ffffff;
+    border: 1px solid #94a3b8;
+    border-radius: 6px;
+    padding: 8px 10px;
+    min-height: 46px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #334155;
+  }
+  @media (max-width: 600px) {
+    .mfs-paf-grid { grid-template-columns: 1fr; }
+    .eng-structured-line { flex-direction: column; align-items: stretch; gap: 4px; }
+  }
+</style>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/reading-presentational-features-worksheet.html">
 </head>
 <body>
 
@@ -887,16 +974,18 @@
         Look at this formatted extract from a workshop sign:<br><strong><u>EYE PROTECTION ZONE</u></strong><br>• Safety goggles must be worn past this line.<br>• Report scratched visors to the storeman.<br><em><strong>WARNING: Flying metal swarf can cause permanent blindness.</strong></em><br><br>Identify <strong>two presentational features</strong> used in this sign and state which words or details they highlight.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Two Features & Content =</span>
-        Feature 1: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Feature 2: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Feature 1:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Feature 2: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -909,16 +998,18 @@
         A council council-tax leaflet prints a grey shaded rectangular box at the bottom of the page reading:<br><strong>STRUGGLING TO PAY? Call our confidential Hardship Team free on 0800 111 2222 (Mon–Fri, 9am–5pm).</strong><br><br>Explain why the designer placed this information inside a <strong>shaded box</strong> with <strong>bold capital letters</strong>.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Effect on Reader =</span>
-        Shaded box effect: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Bold capitals effect: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Shaded box effect:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Bold capitals effect: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -937,17 +1028,19 @@
         A veterinary clinic webpage includes:<br>1. A top horizontal bar reading: <strong>[ Home ] &nbsp; [ Book a Vet ] &nbsp; [ Repeat Prescriptions ] &nbsp; [ 24hr Emergency ]</strong><br>2. Underlined blue text in the main paragraph: <em>'View our <u>2026 Vaccination Price List</u>.'</em><br>3. Customer review ratings showing: <strong>&#9733;&#9733;&#9733;&#9733;&#9733; (4.9 / 5 from 320 pet owners)</strong>.<br><br>Name each of these <strong>three webpage features</strong> and explain how each one helps a pet owner using the site.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Three Webpage Features & Functions =</span>
-        1: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> 2: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> 3: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>1:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>2:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>3: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -960,17 +1053,19 @@
         A trade magazine article is formatted with:<br>• <strong>Main Headline:</strong> <em>SOLAR ROOFS: THE BRIGHT SOLUTION FOR WAREHOUSES</em><br>• <strong>Strapline (Sub-headline underneath):</strong> <em>How three Midlands logistics depots cut their summer electricity bills by 60%.</em><br>• <strong>Boxed Pull Quote in large italics mid-page:</strong> <em>'"Our solar panels paid for themselves in under four years!" — Depot Director'</em>.<br><br>Explain how the <strong>strapline</strong> and the <strong>pull quote</strong> work together with the main headline to engage business readers.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Strapline & Pull Quote Analysis =</span>
-        Strapline role: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Pull Quote role: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Combined effect: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Strapline role:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Pull Quote role:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Combined effect: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -989,8 +1084,10 @@
         Read this extract from a health campaign poster:<br><strong>STOP SMOKING TODAY — PROTECT YOUR LUNGS, YOUR HEART, AND YOUR WALLET!</strong><br>• <em>Free nicotine patches delivered to your door</em><br>• <em>1-to-1 support from local NHS advisors</em><br><br>An exam candidate is asked for <strong>two presentational features</strong> and writes: <em>'1. Rule of three (lungs, heart, wallet). 2. Direct address (your).'</em><br>(a) Explain why the candidate scored <strong>0 marks</strong>. [2 Marks]<br>(b) Identify <strong>two genuine presentational features</strong> from the extract and explain their effect. [2 Marks]
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -998,9 +1095,9 @@
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Diagnostic & Correct Features =</span>
-        (a) Why 0 marks: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> (b) Correct Features & Effects: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>(a) Why 0 marks:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>(b) Correct Features & Effects: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -1013,8 +1110,10 @@
         A food allergy product recall notice in a supermarket uses:<br>1. A <strong>thick red-and-white striped hazard border</strong> around the edge of the poster<br>2. A <strong>colour photograph</strong> of the exact <em>'Crunchy Oat Granola 500g'</em> packet<br>3. <strong>Bold underlined text</strong> on the batch code: <strong><u>Batch Code: L4492 — Best Before: Oct 2026</u></strong><br>4. A <strong>shaded green footer box</strong> stating: <em>'Return to any customer service desk for a full £3.20 cash refund (no receipt needed).'</em><br><br>Evaluate how these four presentational features work together to achieve the notice's purpose.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -1022,9 +1121,9 @@
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Comprehensive Evaluation =</span>
-        1. Border: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> 2. Photo: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> 3. Bold/Underline: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> 4. Green Box: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>1. Border:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>2. Photo:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>3. Bold/Underline:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>4. Green Box: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 

@@ -830,6 +830,93 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+<style id="mfs-english-ws-upgrade">
+  .eng-extract-callout {
+    display: block;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #0284c7;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin: 8px 0;
+    font-style: normal;
+    color: #0f172a;
+    line-height: 1.65;
+  }
+  .q-working-area .working-line {
+    height: 30px !important;
+    border-bottom: 1.5px dashed #94a3b8 !important;
+  }
+  .eng-structured-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    margin-top: 4px;
+  }
+  .eng-structured-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1e293b;
+  }
+  .eng-structured-box {
+    flex: 1;
+    min-width: 180px;
+    min-height: 36px;
+    border: 1.5px solid #64748b;
+    border-radius: 6px;
+    background: #ffffff;
+  }
+  .mfs-paf-spag-audit {
+    margin: 18px 0 8px;
+    border: 2px solid #0f172a;
+    border-radius: 10px;
+    padding: 14px 16px;
+    background: #f8fafc;
+    page-break-inside: avoid;
+  }
+  .mfs-paf-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 8px 0 12px;
+  }
+  .mfs-paf-cell {
+    background: #ffffff;
+    border: 1px solid #94a3b8;
+    border-radius: 6px;
+    padding: 8px 10px;
+    min-height: 46px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #334155;
+  }
+  @media (max-width: 600px) {
+    .mfs-paf-grid { grid-template-columns: 1fr; }
+    .eng-structured-line { flex-direction: column; align-items: stretch; gap: 4px; }
+  }
+</style>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/reading-comparing-texts-worksheet.html">
 </head>
 <body>
 
@@ -887,16 +974,18 @@
         Read the two extracts about a hospital car park:<br><strong>Text A (Estates Notice):</strong> <em>'Due to severe morning congestion, the South Car Park will become staff-only from 1st November, with 80 new spaces added.'</em><br><strong>Text B (Patient Forum):</strong> <em>'Everyone knows morning congestion at the hospital is awful, but banning patients from the South Car Park will make us late for appointments!'</em><br><br>Identify <strong>one point of agreement</strong> between Text A and Text B, and quote a phrase from each text to prove it.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Shared Agreement & Quotes =</span>
-        Agreement: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Text A Quote: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Text B Quote: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Agreement:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Text A Quote:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Text B Quote: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -909,16 +998,18 @@
         Read the two extracts on cashless supermarket checkouts:<br><strong>Text A (Store Manager):</strong> <em>'Card-only self-checkouts halve queue waiting times and eliminate till cash-counting mistakes at closing time.'</em><br><strong>Text B (Senior Citizens' Group):</strong> <em>'Card-only rules exclude pensioners who rely on physical cash notes to budget their weekly pension.'</em><br><br>Using a comparative connective (e.g. <em>whereas</em>), explain how Text A and Text B disagree about card-only checkouts.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Comparative Statement =</span>
-        Text A views them as <div class="q-answer-input-box sm"></div>, whereas Text B argues <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Text A views them as , whereas Text B argues <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -937,17 +1028,19 @@
         Read the two extracts on open-plan offices:<br><strong>Text A (Facilities Architect):</strong> <em>'Removing partition walls cuts office heating bills by 25% and encourages spontaneous teamwork between departments.'</em><br><strong>Text B (Staff Survey Summary):</strong> <em>'While staff agree that cross-department teamwork has improved, 68% complain that constant phone noise ruins their concentration.'</em><br><br>Identify <strong>one similarity</strong> and <strong>two differences</strong> in the information given by Text A and Text B.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Similarity & Two Differences =</span>
-        Similarity: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Diff 1: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Diff 2: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Similarity:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Diff 1:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Diff 2: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -960,17 +1053,19 @@
         Read the two extracts on a proposed four-day working week:<br><strong>Text A (HR Pilot Report):</strong> <em>'The six-month trial demonstrated a 40% reduction in staff sick leave while maintaining 100% customer service output.'</em><br><strong>Text B (Small Business Owner):</strong> <em>'This reckless fad will bankrupt high-street shops that cannot afford to pay full-time wages for part-time hours!'</em><br><br>Compare the <strong>tone</strong> of Text A and Text B, supporting your answer with <strong>one quotation from each text</strong>.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Tone Comparison & Quotes =</span>
-        Text A Tone & Quote: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Text B Tone & Quote: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Text A Tone & Quote:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Text B Tone & Quote: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -986,11 +1081,13 @@
         <span class="q-marks">[4 Marks]</span>
       </div>
       <div class="q-stem">
-        <strong>Text A (Electric Fleet Press Release):</strong><br><em>'Switching to zero-emission vans has cut our depot carbon footprint by 120 tonnes and lowered maintenance costs by 30%.'</em><br><br><strong>Text B (Delivery Driver Blog):</strong><br><em>'Being stranded on a freezing motorway with a dead battery is every driver's worst nightmare! How can we deliver on time when chargers are always broken?'</em><br><br>Compare how the writers of Text A and Text B use <strong>language techniques</strong> to convey their views on electric vans.
+        <strong>Text A (Electric Fleet Press Release):</strong><span class="eng-extract-callout">'Switching to zero-emission vans has cut our depot carbon footprint by 120 tonnes and lowered maintenance costs by 30%.'</span><br><br><strong>Text B (Delivery Driver Blog):</strong><span class="eng-extract-callout">'Being stranded on a freezing motorway with a dead battery is every driver's worst nightmare! How can we deliver on time when chargers are always broken?'</span><br><br>Compare how the writers of Text A and Text B use <strong>language techniques</strong> to convey their views on electric vans.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -998,9 +1095,9 @@
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Comparative Language Analysis =</span>
-        Text A Techniques & Quotes: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Text B Techniques & Quotes: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Text A Techniques & Quotes:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Text B Techniques & Quotes: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -1013,8 +1110,10 @@
         Read all three extracts on night-shift working:<br><strong>Text A (Medical Journal):</strong> <em>'Rotating night shifts disrupt natural circadian rhythms and increase long-term cardiovascular risk by 19%.'</em><br><strong>Text B (Warehouse Worker):</strong> <em>'The 25% night-shift pay premium adds £350 a month to my wages, and the roads are completely traffic-free at 5 a.m.'</em><br><strong>Text C (Union Advisor):</strong> <em>'Night workers suffer higher fatigue rates, though free hot meals on night shifts significantly boost morale.'</em><br><br>Using evidence from <strong>all three texts</strong>, explain the <strong>advantages</strong> and <strong>disadvantages</strong> of night-shift work.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -1022,9 +1121,9 @@
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Summary of 3 Texts =</span>
-        Disadvantages (Texts A & C): <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Advantages (Texts B & C): <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Disadvantages (Texts A & C):</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Advantages (Texts B & C): <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 

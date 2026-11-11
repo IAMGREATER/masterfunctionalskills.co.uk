@@ -830,6 +830,93 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+<style id="mfs-english-ws-upgrade">
+  .eng-extract-callout {
+    display: block;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #0284c7;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin: 8px 0;
+    font-style: normal;
+    color: #0f172a;
+    line-height: 1.65;
+  }
+  .q-working-area .working-line {
+    height: 30px !important;
+    border-bottom: 1.5px dashed #94a3b8 !important;
+  }
+  .eng-structured-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    margin-top: 4px;
+  }
+  .eng-structured-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1e293b;
+  }
+  .eng-structured-box {
+    flex: 1;
+    min-width: 180px;
+    min-height: 36px;
+    border: 1.5px solid #64748b;
+    border-radius: 6px;
+    background: #ffffff;
+  }
+  .mfs-paf-spag-audit {
+    margin: 18px 0 8px;
+    border: 2px solid #0f172a;
+    border-radius: 10px;
+    padding: 14px 16px;
+    background: #f8fafc;
+    page-break-inside: avoid;
+  }
+  .mfs-paf-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 8px 0 12px;
+  }
+  .mfs-paf-cell {
+    background: #ffffff;
+    border: 1px solid #94a3b8;
+    border-radius: 6px;
+    padding: 8px 10px;
+    min-height: 46px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #334155;
+  }
+  @media (max-width: 600px) {
+    .mfs-paf-grid { grid-template-columns: 1fr; }
+    .eng-structured-line { flex-direction: column; align-items: stretch; gap: 4px; }
+  }
+</style>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/writing-grammar-worksheet.html">
 </head>
 <body>
 
@@ -887,16 +974,18 @@
         Join the two simple sentences below into a single compound sentence using a suitable coordinating conjunction (e.g. <em>and, but, so, yet</em>):<br>Sentence 1: <em>The clinic refurbishment was delayed by six weeks.</em><br>Sentence 2: <em>All scheduled patient consultations went ahead on time.</em>
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#7c3aed;"><i class="fa-solid fa-pen-nib"></i> Draft &amp; Polished Written Response (use full sentences, clear paragraphs &amp; accurate SPaG):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Compound Sentence =</span>
-        <div class="q-answer-input-box lg"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span><div class="q-answer-input-box lg">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -909,8 +998,10 @@
         Join the two ideas below into one sentence starting with the word <strong>'Although'</strong>:<br>Idea 1: <em>The ward team worked under intense winter pressures.</em><br>Idea 2: <em>They maintained a 98% patient satisfaction rating throughout January.</em>
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#7c3aed;"><i class="fa-solid fa-pen-nib"></i> Draft &amp; Polished Written Response (use full sentences, clear paragraphs &amp; accurate SPaG):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -934,20 +1025,22 @@
         <span class="q-marks">[3 Marks]</span>
       </div>
       <div class="q-stem">
-        Identify and correct the <strong>three subject-verb agreement errors</strong> in the clinical handover note below:<br><em>'The team of nurses are meeting at 07:00. Either Sister Evans or Charge Nurse Davis were leading the handover. The supply of surgical gloves have been replenished.'</em>
+        Identify and correct the <strong>three subject-verb agreement errors</strong> in the clinical handover note below:<span class="eng-extract-callout">'The team of nurses are meeting at 07:00. Either Sister Evans or Charge Nurse Davis were leading the handover. The supply of surgical gloves have been replenished.'</span>
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#7c3aed;"><i class="fa-solid fa-pen-nib"></i> Draft &amp; Polished Written Response (use full sentences, clear paragraphs &amp; accurate SPaG):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Corrected verbs =</span>
-        1: are → <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> 2: were → <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> 3: have → <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>1: are →:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>2: were →:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>3: have → <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -957,20 +1050,22 @@
         <span class="q-marks">[3 Marks]</span>
       </div>
       <div class="q-stem">
-        The sentence below contains a <strong>comma splice</strong> (two complete sentences incorrectly joined only with a comma):<br><em>'The patient showed signs of allergic reaction, the nurse administered antihistamine immediately.'</em><br><br>Show <strong>two different ways</strong> to correct this comma splice grammatically (e.g. using a semicolon, a conjunction, or two separate sentences).
+        The sentence below contains a <strong>comma splice</strong> (two complete sentences incorrectly joined only with a comma):<span class="eng-extract-callout">'The patient showed signs of allergic reaction, the nurse administered antihistamine immediately.'</span><br><br>Show <strong>two different ways</strong> to correct this comma splice grammatically (e.g. using a semicolon, a conjunction, or two separate sentences).
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#7c3aed;"><i class="fa-solid fa-pen-nib"></i> Draft &amp; Polished Written Response (use full sentences, clear paragraphs &amp; accurate SPaG):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Two Corrections =</span>
-        Method 1: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Method 2: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Method 1:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Method 2: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -989,8 +1084,10 @@
         A facilities apprentice reports a minor spill in a public hospital corridor.<br>Draft a concise, 4-sentence factual incident log for the health & safety register.<br>You must include:<br>• 1 simple sentence (stating exact time & location)<br>• 1 compound sentence (describing what spilled and who noticed it)<br>• 1 complex sentence starting with a subordinate conjunction (describing the hazard and immediate safety action taken)<br>• 1 sentence describing final resolution.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#7c3aed;"><i class="fa-solid fa-pen-nib"></i> Draft &amp; Polished Written Response (use full sentences, clear paragraphs &amp; accurate SPaG):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -1009,11 +1106,13 @@
         <span class="q-marks">[4 Marks]</span>
       </div>
       <div class="q-stem">
-        An apprentice writes this email to the Clinical Director:<br><em>'Hey Dr Patel, just letting u know the printer in ward 2 is totally busted again lol. We need a new one asap coz it’s a proper joke. Cheers, Dave.'</em><br><br>Critique this email for a professional workplace environment.<br>Identify three specific register errors, explain why they are inappropriate, and rewrite the email in a polished, formal professional register.
+        An apprentice writes this email to the Clinical Director:<span class="eng-extract-callout">'Hey Dr Patel, just letting u know the printer in ward 2 is totally busted again lol. We need a new one asap coz it’s a proper joke. Cheers, Dave.'</span><br><br>Critique this email for a professional workplace environment.<br>Identify three specific register errors, explain why they are inappropriate, and rewrite the email in a polished, formal professional register.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#7c3aed;"><i class="fa-solid fa-pen-nib"></i> Draft &amp; Polished Written Response (use full sentences, clear paragraphs &amp; accurate SPaG):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -1021,9 +1120,9 @@
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Critique & Polished Rewrite =</span>
-        Errors: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Professional Rewrite: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Errors:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Professional Rewrite: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 

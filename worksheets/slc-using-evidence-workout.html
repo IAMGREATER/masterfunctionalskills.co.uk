@@ -897,6 +897,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/slc-using-evidence-workout.html">
 </head>
 <body>
 
@@ -969,7 +986,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 1</span>
-        <span class="block-q-desc">Question 1: Weak Assertions vs Evidence-Based Statements</span>
+        <span class="block-q-desc">Weak Assertions vs Evidence-Based Statements</span>
       </div>
       <div class="workout-instruction">State whether each statement is an Unsupported Assertion or an Evidence-Based Argument:</div>
       <div class="drill-grid">
@@ -1011,7 +1028,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 2</span>
-        <span class="block-q-desc">Question 2: Verbalizing Statistics Smoothly</span>
+        <span class="block-q-desc">Verbalizing Statistics Smoothly</span>
       </div>
       <div class="workout-instruction">Convert the raw statistic into a conversational spoken phrase:</div>
       <div class="drill-grid">
@@ -1045,7 +1062,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 3</span>
-        <span class="block-q-desc">Question 3: Types of Spoken Evidence & Their Credibility</span>
+        <span class="block-q-desc">Types of Spoken Evidence & Their Credibility</span>
       </div>
       <div class="workout-instruction">Classify the type of evidence used (Statistical data, Expert testimonial, First-hand anecdote, Statutory regulation):</div>
       <div class="drill-grid">
@@ -1119,7 +1136,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 4</span>
-        <span class="block-q-desc">Question 4: Integrating Evidence Seamlessly into Spoken Delivery</span>
+        <span class="block-q-desc">Integrating Evidence Seamlessly into Spoken Delivery</span>
       </div>
       <div class="workout-instruction">Select the most persuasive verbal sentence frame to introduce the supporting evidence:</div>
       <div class="drill-grid">
@@ -1193,7 +1210,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 5</span>
-        <span class="block-q-desc">Question 5: Challenging Unsubstantiated Claims Tactfully</span>
+        <span class="block-q-desc">Challenging Unsubstantiated Claims Tactfully</span>
       </div>
       <div class="workout-instruction">Formulate a polite, evidence-based spoken challenge to the unsubstantiated claim:</div>
       <div class="drill-grid">

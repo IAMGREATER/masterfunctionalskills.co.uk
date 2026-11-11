@@ -897,6 +897,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/reading-presentational-features-workout.html">
 </head>
 <body>
 
@@ -969,7 +986,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 1</span>
-        <span class="block-q-desc">Question 1: Linking Features to Functions</span>
+        <span class="block-q-desc">Linking Features to Functions</span>
       </div>
       <div class="workout-instruction">State the presentational feature best suited for each purpose:</div>
       <div class="drill-grid">
@@ -1019,7 +1036,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 2</span>
-        <span class="block-q-desc">Question 2: Analyzing Layout Effectiveness</span>
+        <span class="block-q-desc">Analyzing Layout Effectiveness</span>
       </div>
       <div class="workout-instruction">Explain why this feature was used rather than a solid block of text:</div>
       <div class="drill-grid">
@@ -1045,7 +1062,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 3</span>
-        <span class="block-q-desc">Question 3: Identifying Header and Text Presentational Features</span>
+        <span class="block-q-desc">Identifying Header and Text Presentational Features</span>
       </div>
       <div class="workout-instruction">Name the presentational feature and explain how it influences the reader:</div>
       <div class="drill-grid">
@@ -1119,7 +1136,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 4</span>
-        <span class="block-q-desc">Question 4: Presentational Design for Accessibility & Inclusion</span>
+        <span class="block-q-desc">Presentational Design for Accessibility & Inclusion</span>
       </div>
       <div class="workout-instruction">Explain how the design choice improves accessibility for all readers, including dyslexia:</div>
       <div class="drill-grid">
@@ -1193,7 +1210,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 5</span>
-        <span class="block-q-desc">Question 5: Exam-Style Evaluation of Presentational Choices</span>
+        <span class="block-q-desc">Exam-Style Evaluation of Presentational Choices</span>
       </div>
       <div class="workout-instruction">Evaluate why the author selected this specific presentation for the target audience:</div>
       <div class="drill-grid">

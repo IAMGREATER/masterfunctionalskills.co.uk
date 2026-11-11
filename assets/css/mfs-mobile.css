@@ -8,10 +8,17 @@
 /* --------------------------------------------------------------------------
    1. TABLET & MOBILE BREAKPOINT (< 1025px OR Mobile Landscape / Touch Devices)
    -------------------------------------------------------------------------- */
-@media (max-width: 1024px), 
-       (orientation: landscape) and (max-height: 850px), 
-       (max-height: 650px), 
-       (hover: none) and (pointer: coarse) {
+/* Base Guarantee: Mobile controls stay hidden until mobile header breakpoint activates */
+.mfs-mobile-controls,
+.mfs-mobile-toggle,
+.mfs-drawer-backdrop,
+.mfs-mobile-drawer,
+.mobile-card-gesture-hint {
+  display: none;
+}
+
+@media (max-width: 980px),
+       (max-width: 1024px) and (max-height: 520px) {
   /* Eliminate bulky top trust bar and empty promo banners */
   .mfs-top-bar,
   .mfs-promo-banner,
@@ -94,7 +101,7 @@
 
   .mfs-brand-title::after {
     content: " FS" !important;
-    color: var(--accent, #38bdf8) !important;
+    color: #38bdf8 !important;
     font-weight: 800 !important;
   }
 
@@ -4967,13 +4974,251 @@
 /* --------------------------------------------------------------------------
    4. DESKTOP SAFETY GUARANTEE (Laptops & Desktops with fine cursor > 1024px)
    -------------------------------------------------------------------------- */
-@media (min-width: 1025px) and (min-height: 651px) and (hover: hover) and (pointer: fine) {
+/* --------------------------------------------------------------------------
+   4. DESKTOP, TABLET LANDSCAPE & UNIVERSAL RESPONSIVE POLISH (v2026-11-11)
+   -------------------------------------------------------------------------- */
+@media (min-width: 981px) and (min-height: 521px) {
   .mfs-mobile-controls,
   .mfs-mobile-toggle,
   .mfs-drawer-backdrop,
   .mfs-mobile-drawer,
-  .mfs-scroll-top-btn,
   .mobile-card-gesture-hint {
     display: none !important;
   }
 }
+
+/* Compact Desktop Navbar for Tablet Landscape (981px - 1180px) so 0 items clip */
+@media (min-width: 981px) and (max-width: 1180px) {
+  .mfs-navbar-inner {
+    padding: 0 14px !important;
+    gap: 8px !important;
+  }
+  .mfs-nav-list {
+    gap: 2px !important;
+  }
+  .mfs-nav-link {
+    padding: 7px 8px !important;
+    font-size: 0.80rem !important;
+  }
+  .btn-nav-exam {
+    padding: 8px 12px !important;
+    font-size: 0.80rem !important;
+    white-space: nowrap !important;
+  }
+  .mfs-brand-subtitle {
+    display: none !important;
+  }
+}
+
+/* Universal Hub Search Input Fix (prevents magnifying glass overlapping placeholder) */
+.directory-search-wrapper {
+  position: relative !important;
+  min-width: 270px;
+  max-width: 100%;
+}
+.directory-search-wrapper i.fa-magnifying-glass {
+  position: absolute !important;
+  left: 14px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  pointer-events: none !important;
+  z-index: 2 !important;
+}
+.directory-search-input,
+input#topicSearchInput {
+  padding-left: 42px !important;
+  padding-right: 14px !important;
+  width: 100% !important;
+  box-sizing: border-box !important;
+}
+
+/* Sticky Sidebar TOC: allow clean 2-line wrap instead of mid-letter truncation */
+#sidebarNav a,
+.revision-sidebar a,
+.toc-list a,
+.sidebar-toc a {
+  white-space: normal !important;
+  overflow: visible !important;
+  text-overflow: clip !important;
+  line-height: 1.32 !important;
+  padding-top: 7px !important;
+  padding-bottom: 7px !important;
+  word-break: break-word !important;
+}
+
+/* 3D Concept Hero Images: never slice top labels (1,000 / 100 / 10) */
+.concept-banner img,
+.hero-concept-img,
+.revision-hero-visual img,
+img[src*="banner"],
+img[src*="-hero"] {
+  object-fit: contain !important;
+  background-color: #060b16;
+}
+
+/* Tablet Curriculum Rows (768px - 1120px): clean 2-row stack so pills never wrap raggedly */
+@media (min-width: 768px) and (max-width: 1120px) {
+  .topic-row {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 12px !important;
+    padding: 16px 20px !important;
+  }
+  .topic-actions-group {
+    width: 100% !important;
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 8px !important;
+    justify-content: flex-start !important;
+  }
+}
+
+/* Mobile Curriculum & Multi-Column Maths Board Fixes (<= 767px) */
+@media (max-width: 767px) {
+  .topic-table-bar {
+    display: none !important;
+  }
+  .directory-search-wrapper {
+    min-width: 0 !important;
+    width: 100% !important;
+  }
+  /* Horizontal scroll wrapper for wide 5-7 column place value / ratio boards */
+  .mfs-scroll-x-board {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    padding-bottom: 8px !important;
+    max-width: 100% !important;
+  }
+  /* Prevent tiny sub-12px badges on mobile */
+  .math-bar-cell,
+  .math-pv-header,
+  .mfs-pill-l1,
+  .mfs-pill-board,
+  .badge-pill-gold,
+  .topic-category-tag {
+    font-size: max(0.76rem, 12.2px) !important;
+  }
+  /* Prevent overflow on legacy .pfs-card / wide SVG / pre blocks */
+  .pfs-card,
+  .revision-section,
+  .mfs-container {
+    max-width: 100% !important;
+    box-sizing: border-box !important;
+  }
+  .pfs-card table,
+  .revision-section svg {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+}
+
+/* Hub Filter Pills & Learner Mastery Bar */
+.mfs-hub-filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin: 0 0 16px;
+  padding: 12px 16px;
+  background: var(--bg-card, #ffffff);
+  border: 1.5px solid var(--border, #e2e8f0);
+  border-radius: 14px;
+}
+.mfs-filter-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+.mfs-filter-pill {
+  padding: 7px 14px;
+  border-radius: 999px;
+  border: 1.5px solid #cbd5e1;
+  background: #f8fafc;
+  color: #1e293b;
+  font-size: 0.83rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.16s ease;
+}
+.mfs-filter-pill.active,
+.mfs-filter-pill:hover {
+  background: #0f172a;
+  color: #ffffff;
+  border-color: #0284c7;
+}
+.mfs-mastery-widget {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #334155;
+}
+.mfs-mastery-track {
+  width: 120px;
+  height: 9px;
+  background: #e2e8f0;
+  border-radius: 999px;
+  overflow: hidden;
+}
+.mfs-mastery-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #0284c7, #16a34a);
+  width: 0%;
+  transition: width 0.25s ease;
+}
+.mfs-topic-done-chk {
+  width: 18px;
+  height: 18px;
+  accent-color: #16a34a;
+  cursor: pointer;
+  flex-shrink: 0;
+  margin-right: 6px;
+}
+
+
+
+/* STAGE 3 UNIVERSAL DFS & INLINE GRID MOBILE RULES */
+html, body {
+  max-width: 100%;
+  overflow-x: clip;
+}
+
+@media (max-width: 980px), (max-width: 1024px) and (max-height: 520px) {
+  .mfs-nav-wrapper,
+  .mfs-nav-menu {
+    display: none !important;
+  }
+  .dfs-subnav-inner {
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+  }
+  .dfs-breadcrumbs {
+    flex-wrap: wrap !important;
+    row-gap: 4px !important;
+  }
+}
+
+@media (max-width: 640px) {
+  .cube-nets-grid {
+    grid-template-columns: 1fr !important;
+  }
+  .netfold-station-header,
+  .netfold-station-footer {
+    padding: 14px 16px !important;
+  }
+  .netfold-station-body {
+    height: 440px !important;
+  }
+  .mfs-scroll-x-mobile {
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    max-width: 100% !important;
+    padding-bottom: 6px !important;
+  }
+}
+
+a[href^="mailto:"] { overflow-wrap: anywhere !important; word-break: break-word !important; }

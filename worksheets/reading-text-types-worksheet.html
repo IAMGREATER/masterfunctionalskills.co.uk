@@ -830,6 +830,93 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+<style id="mfs-english-ws-upgrade">
+  .eng-extract-callout {
+    display: block;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #0284c7;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin: 8px 0;
+    font-style: normal;
+    color: #0f172a;
+    line-height: 1.65;
+  }
+  .q-working-area .working-line {
+    height: 30px !important;
+    border-bottom: 1.5px dashed #94a3b8 !important;
+  }
+  .eng-structured-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    margin-top: 4px;
+  }
+  .eng-structured-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1e293b;
+  }
+  .eng-structured-box {
+    flex: 1;
+    min-width: 180px;
+    min-height: 36px;
+    border: 1.5px solid #64748b;
+    border-radius: 6px;
+    background: #ffffff;
+  }
+  .mfs-paf-spag-audit {
+    margin: 18px 0 8px;
+    border: 2px solid #0f172a;
+    border-radius: 10px;
+    padding: 14px 16px;
+    background: #f8fafc;
+    page-break-inside: avoid;
+  }
+  .mfs-paf-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 8px 0 12px;
+  }
+  .mfs-paf-cell {
+    background: #ffffff;
+    border: 1px solid #94a3b8;
+    border-radius: 6px;
+    padding: 8px 10px;
+    min-height: 46px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #334155;
+  }
+  @media (max-width: 600px) {
+    .mfs-paf-grid { grid-template-columns: 1fr; }
+    .eng-structured-line { flex-direction: column; align-items: stretch; gap: 4px; }
+  }
+</style>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/reading-text-types-worksheet.html">
 </head>
 <body>
 
@@ -887,16 +974,18 @@
         Identify the exact <strong>text type (genre)</strong> of each extract below from its formatting clues:<br><strong>Extract A:</strong> <em>'Thread: Best cordless combi drill under £120? | Posted by @ChippyPete (Yesterday at 19:14) [Reply] [Like (12)]'</em><br><strong>Extract B:</strong> <em>'14 Oak Lane, Bristol | 12 October 2026 | Dear Mr Henderson, Re: Boundary Wall Repair Quote... Yours sincerely, A. Kowalski'</em>
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Identified Genres =</span>
-        Extract A Genre: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Extract B Genre: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Extract A Genre:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Extract B Genre: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -906,19 +995,21 @@
         <span class="q-marks">[2 Marks]</span>
       </div>
       <div class="q-stem">
-        Read this extract from a community leaflet:<br><em>'Are you aged 60 or over and finding your garden lawn too heavy to mow? Our vetted volunteer gardeners offer free fortnightly grass cutting for retired householders across the borough.'</em><br><br>Identify the <strong>specific target audience</strong> for this leaflet and give <strong>two clues</strong> from the text that prove it.
+        Read this extract from a community leaflet:<span class="eng-extract-callout">'Are you aged 60 or over and finding your garden lawn too heavy to mow? Our vetted volunteer gardeners offer free fortnightly grass cutting for retired householders across the borough.'</span><br><br>Identify the <strong>specific target audience</strong> for this leaflet and give <strong>two clues</strong> from the text that prove it.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Target Audience & Clues =</span>
-        Target Audience: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Clue 1: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Clue 2: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Target Audience:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Clue 1:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Clue 2: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -937,17 +1028,19 @@
         Look at the structural features of two workplace documents:<br><strong>Document 1:</strong> Titled <em>'Q3 Warehouse Forklift Incident Investigation'</em>, divided into <strong>1.0 Executive Summary, 2.0 Audit Findings, 3.0 Cost Breakdown Table, 4.0 Mandatory Recommendations</strong>.<br><strong>Document 2:</strong> Headlined <em>'Forklift Futures: Why AI Sensors Are Taking Over the Aisle!'</em> by Sarah Jenkins, featuring a catchy strapline, two-column prose, and a boxed pull quote.<br><br>Identify the genre of Document 1 and Document 2, and explain how their purposes differ.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Genres & Contrasting Purposes =</span>
-        Doc 1 Genre: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Doc 2 Genre: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Purpose Difference: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Doc 1 Genre:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Doc 2 Genre:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Purpose Difference: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -960,17 +1053,19 @@
         Read this extract from a dental surgery wall card:<br><strong>AUTOCLAVE STERILISATION PROTOCOL (SOP-12)</strong><br><em><strong>Warning:</strong> Wear heat-resistant gauntlets.<br>1. Load unwrapped steel instruments onto perforated trays.<br>2. Select Cycle B (134°C at 2.1 bar pressure for 3 minutes).<br>3. Sign and staple the printout strip to the daily clinical logbook.</em><br><br>Identify the <strong>text type</strong>, state its <strong>exact purpose</strong>, and explain why it is unsuitable for a general patient waiting room.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Genre, Purpose & Audience Suitability =</span>
-        Text Type: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Purpose: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Why unsuitable for patients: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Text Type:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Purpose:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Why unsuitable for patients: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -986,11 +1081,13 @@
         <span class="q-marks">[4 Marks]</span>
       </div>
       <div class="q-stem">
-        Read this extract from a leaflet sent to householders by 'GreenHome Insulation Ltd':<br><em>'Did you know that 35% of your home's heat escapes straight through an uninsulated loft? Under the 2026 Great British Insulation Scheme, homes in Council Tax Bands A–D qualify for up to £1,500 towards mineral wool loft lagging. Do not shiver through another expensive winter — book your free 20-minute roof survey at greenhome.co.uk before 30th November!'</em><br><br>Analyse how this text operates as a <strong>dual-purpose text</strong>, quoting evidence for <strong>both</strong> purposes.
+        Read this extract from a leaflet sent to householders by 'GreenHome Insulation Ltd':<span class="eng-extract-callout">'Did you know that 35% of your home's heat escapes straight through an uninsulated loft? Under the 2026 Great British Insulation Scheme, homes in Council Tax Bands A–D qualify for up to £1,500 towards mineral wool loft lagging. Do not shiver through another expensive winter — book your free 20-minute roof survey at greenhome.co.uk before 30th November!'</span><br><br>Analyse how this text operates as a <strong>dual-purpose text</strong>, quoting evidence for <strong>both</strong> purposes.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -998,9 +1095,9 @@
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Dual-Purpose Analysis =</span>
-        Purpose 1 (Inform) & Quote: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Purpose 2 (Persuade/Promote) & Quote: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Purpose 1 (Inform) & Quote:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Purpose 2 (Persuade/Promote) & Quote: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -1013,8 +1110,10 @@
         Read three short texts about a train strike:<br><strong>Text A (Rail Operator SMS Alert):</strong> <em>'ALERT: Strike action Weds 18 Nov. Zero trains on North Line. Claim full refund at rail.co.uk/refunds.'</em><br><strong>Text B (Union Press Release):</strong> <em>'Signallers have been forced into industrial action after management refused to address dangerous lone-working rosters.'</em><br><strong>Text C (Travel Advice Guide):</strong> <em>'If you must travel on Wednesday, consider booking an intercity coach early or car-sharing with colleagues.'</em><br><br>Identify the <strong>text type and primary purpose</strong> of Text A, Text B, and Text C, and explain why Text A uses fragmented sentences.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -1022,9 +1121,9 @@
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Three-Text Genre & Purpose Breakdown =</span>
-        Text A: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Text B: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Text C: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Why Text A is short: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Text A:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Text B:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Text C:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Why Text A is short: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 

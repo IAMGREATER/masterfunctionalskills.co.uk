@@ -830,6 +830,93 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+<style id="mfs-english-ws-upgrade">
+  .eng-extract-callout {
+    display: block;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #0284c7;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin: 8px 0;
+    font-style: normal;
+    color: #0f172a;
+    line-height: 1.65;
+  }
+  .q-working-area .working-line {
+    height: 30px !important;
+    border-bottom: 1.5px dashed #94a3b8 !important;
+  }
+  .eng-structured-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    margin-top: 4px;
+  }
+  .eng-structured-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1e293b;
+  }
+  .eng-structured-box {
+    flex: 1;
+    min-width: 180px;
+    min-height: 36px;
+    border: 1.5px solid #64748b;
+    border-radius: 6px;
+    background: #ffffff;
+  }
+  .mfs-paf-spag-audit {
+    margin: 18px 0 8px;
+    border: 2px solid #0f172a;
+    border-radius: 10px;
+    padding: 14px 16px;
+    background: #f8fafc;
+    page-break-inside: avoid;
+  }
+  .mfs-paf-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 8px 0 12px;
+  }
+  .mfs-paf-cell {
+    background: #ffffff;
+    border: 1px solid #94a3b8;
+    border-radius: 6px;
+    padding: 8px 10px;
+    min-height: 46px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #334155;
+  }
+  @media (max-width: 600px) {
+    .mfs-paf-grid { grid-template-columns: 1fr; }
+    .eng-structured-line { flex-direction: column; align-items: stretch; gap: 4px; }
+  }
+</style>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/writing-perfecting-your-punctuation-level-1-worksheet.html">
 </head>
 <body>
 
@@ -887,16 +974,18 @@
         Insert the apostrophe in the correct position in each sentence:<br>1. <em>The doctors stethoscope was left in consultation room 4.</em> (One doctor)<br>2. <em>Its essential that all staff wear photo identification badges.</em>
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#7c3aed;"><i class="fa-solid fa-pen-nib"></i> Draft &amp; Polished Written Response (use full sentences, clear paragraphs &amp; accurate SPaG):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Punctuation correction =</span>
-        1: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> 2: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>1:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>2: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -906,19 +995,21 @@
         <span class="q-marks">[2 Marks]</span>
       </div>
       <div class="q-stem">
-        Add <strong>one colon</strong> and <strong>one semicolon</strong> in the correct places in this sentence:<br><em>'The inspection team checked three busy wards Ward 2, Ward 5, and Ward 9 all three passed with high scores.'</em>
+        Add <strong>one colon</strong> and <strong>one semicolon</strong> in the correct places in this sentence:<span class="eng-extract-callout">'The inspection team checked three busy wards Ward 2, Ward 5, and Ward 9 all three passed with high scores.'</span>
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#7c3aed;"><i class="fa-solid fa-pen-nib"></i> Draft &amp; Polished Written Response (use full sentences, clear paragraphs &amp; accurate SPaG):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Punctuated sentence =</span>
-        <div class="q-answer-input-box lg"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span><div class="q-answer-input-box lg">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -934,20 +1025,22 @@
         <span class="q-marks">[3 Marks]</span>
       </div>
       <div class="q-stem">
-        Add all missing punctuation (commas and a full stop) to this sentence:<br><em>'Before giving any medication the staff nurse checked the patient name date of birth allergy status and hospital number'</em>
+        Add all missing punctuation (commas and a full stop) to this sentence:<span class="eng-extract-callout">'Before giving any medication the staff nurse checked the patient name date of birth allergy status and hospital number'</span>
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#7c3aed;"><i class="fa-solid fa-pen-nib"></i> Draft &amp; Polished Written Response (use full sentences, clear paragraphs &amp; accurate SPaG):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Punctuated sentence =</span>
-        <div class="q-answer-input-box lg"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span><div class="q-answer-input-box lg">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -960,17 +1053,19 @@
         Punctuate the direct speech sentence accurately:<br><em>the ward sister announced all visitors must sanitize their hands before entering</em>
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#7c3aed;"><i class="fa-solid fa-pen-nib"></i> Draft &amp; Polished Written Response (use full sentences, clear paragraphs &amp; accurate SPaG):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Punctuated direct speech =</span>
-        <div class="q-answer-input-box lg"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span><div class="q-answer-input-box lg">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 

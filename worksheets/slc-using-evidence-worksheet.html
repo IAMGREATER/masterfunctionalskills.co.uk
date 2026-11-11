@@ -830,6 +830,93 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+<style id="mfs-english-ws-upgrade">
+  .eng-extract-callout {
+    display: block;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #0284c7;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin: 8px 0;
+    font-style: normal;
+    color: #0f172a;
+    line-height: 1.65;
+  }
+  .q-working-area .working-line {
+    height: 30px !important;
+    border-bottom: 1.5px dashed #94a3b8 !important;
+  }
+  .eng-structured-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    margin-top: 4px;
+  }
+  .eng-structured-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1e293b;
+  }
+  .eng-structured-box {
+    flex: 1;
+    min-width: 180px;
+    min-height: 36px;
+    border: 1.5px solid #64748b;
+    border-radius: 6px;
+    background: #ffffff;
+  }
+  .mfs-paf-spag-audit {
+    margin: 18px 0 8px;
+    border: 2px solid #0f172a;
+    border-radius: 10px;
+    padding: 14px 16px;
+    background: #f8fafc;
+    page-break-inside: avoid;
+  }
+  .mfs-paf-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 8px 0 12px;
+  }
+  .mfs-paf-cell {
+    background: #ffffff;
+    border: 1px solid #94a3b8;
+    border-radius: 6px;
+    padding: 8px 10px;
+    min-height: 46px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #334155;
+  }
+  @media (max-width: 600px) {
+    .mfs-paf-grid { grid-template-columns: 1fr; }
+    .eng-structured-line { flex-direction: column; align-items: stretch; gap: 4px; }
+  }
+</style>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/slc-using-evidence-worksheet.html">
 </head>
 <body>
 
@@ -854,7 +941,7 @@
       </div>
       <div class="sheet-meta-badge">
         <span class="topic-name">Using Evidence & Persuasive Data in Speech</span>
-        <span class="spec-tag">Pearson Edexcel: Pearson Edexcel Functional Skills English (SLC)</span>
+        <span class="spec-tag">Pearson Edexcel Functional Skills English (SLC)</span>
       </div>
     </div>
 
@@ -884,11 +971,13 @@
         <span class="q-marks">[2 Marks]</span>
       </div>
       <div class="q-stem">
-        Upgrade this weak, unsupported spoken opinion by incorporating the data provided in brackets:<br><em>'Lots of appointments get wasted when people forget to turn up, so text reminders are really good.'</em><br>(Data: <strong>140 missed appointments per month; SMS reminders reduced Did-Not-Attend rates by 38% in the pilot clinic</strong>).
+        Upgrade this weak, unsupported spoken opinion by incorporating the data provided in brackets:<span class="eng-extract-callout">'Lots of appointments get wasted when people forget to turn up, so text reminders are really good.'</span><br>(Data: <strong>140 missed appointments per month; SMS reminders reduced Did-Not-Attend rates by 38% in the pilot clinic</strong>).
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0f766e;"><i class="fa-solid fa-comments"></i> Speaking &amp; Listening Structured Notes &amp; Spoken Response:</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -908,8 +997,10 @@
         You are presenting an argument for installing chilled water dispensers on hospital wards for nursing staff. Combine one physiological fact and one operational benefit into a 40-word spoken statement.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0f766e;"><i class="fa-solid fa-comments"></i> Speaking &amp; Listening Structured Notes &amp; Spoken Response:</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -935,8 +1026,10 @@
         In a group discussion about boosting Saturday trade for local High Street shops, support the idea of offering '2 Hours Free Parking' in council car parks using a clear reason and a real-world example.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0f766e;"><i class="fa-solid fa-comments"></i> Speaking &amp; Listening Structured Notes &amp; Spoken Response:</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -954,11 +1047,13 @@
         <span class="q-marks">[3 Marks]</span>
       </div>
       <div class="q-stem">
-        Upgrade this weak, unsubstantiated spoken opinion into a persuasive Level 2 evidenced contribution for a college meeting:<br><em>'We should make all textbooks available online as PDFs because heavy books are annoying to carry and cost too much money.'</em>
+        Upgrade this weak, unsubstantiated spoken opinion into a persuasive Level 2 evidenced contribution for a college meeting:<span class="eng-extract-callout">'We should make all textbooks available online as PDFs because heavy books are annoying to carry and cost too much money.'</span>
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0f766e;"><i class="fa-solid fa-comments"></i> Speaking &amp; Listening Structured Notes &amp; Spoken Response:</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -985,8 +1080,10 @@
         A finance director questions why the depot needs £18,000 for three electric pallet trucks when manual pump trucks cost only £300 each. Deliver an evidenced spoken business case.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0f766e;"><i class="fa-solid fa-comments"></i> Speaking &amp; Listening Structured Notes &amp; Spoken Response:</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -1001,15 +1098,17 @@
 
     <div class="q-card">
       <div class="q-card-head">
-        <span class="q-title">Question 6 (Level 2 Mastery Challenge — 3 Marks)</span>
+        <span class="q-title">Question 6 (Level 2 Mastery Challenge — 4 Marks)</span>
         <span class="q-marks">[4 Marks]</span>
       </div>
       <div class="q-stem">
         During a discussion on workplace security, a colleague says: <em>'Replacing our lost visitor paper book with an electronic tablet sign-in costs £600—that's a waste of money.'</em><br>Deliver a 3-sentence counter-argument using <strong>legal/regulatory evidence (GDPR & fire safety)</strong> to prove why the £600 tablet is necessary.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0f766e;"><i class="fa-solid fa-comments"></i> Speaking &amp; Listening Structured Notes &amp; Spoken Response:</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>

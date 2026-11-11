@@ -897,6 +897,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/money-invoicing-payroll-workout.html">
 </head>
 <body>
 
@@ -969,7 +986,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 1</span>
-        <span class="block-q-desc">Question 1: Time to Decimal Hours Conversion</span>
+        <span class="block-q-desc">Time to Decimal Hours Conversion</span>
       </div>
       <div class="workout-instruction">Convert the working hours and minutes to decimal hours:</div>
       <div class="drill-grid">
@@ -1027,7 +1044,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 2</span>
-        <span class="block-q-desc">Question 2: Gross Wages & Overtime Multipliers</span>
+        <span class="block-q-desc">Gross Wages & Overtime Multipliers</span>
       </div>
       <div class="workout-instruction">Calculate the gross pay for each employee:</div>
       <div class="drill-grid">
@@ -1085,7 +1102,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 3</span>
-        <span class="block-q-desc">Question 3: Gross Pay, Overtime & Wage Slips</span>
+        <span class="block-q-desc">Gross Pay, Overtime & Wage Slips</span>
       </div>
       <div class="workout-instruction">Work out gross wages and overtime pay:</div>
       <div class="drill-grid">
@@ -1175,7 +1192,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 4</span>
-        <span class="block-q-desc">Question 4: Net Pay Deductions (Tax, National Insurance, Pension)</span>
+        <span class="block-q-desc">Net Pay Deductions (Tax, National Insurance, Pension)</span>
       </div>
       <div class="workout-instruction">Calculate deductions and net take-home pay:</div>
       <div class="drill-grid">
@@ -1300,7 +1317,7 @@
       <div>&copy; Master Functional Skills &bull; masterfunctionalskills.co.uk &bull; Pearson Edexcel Reformed Specification</div>
       <div class="footer-links">
         <a href="money-invoicing-payroll-workout-answers.html">Answers Key</a>
-        <a href="money-invoicing-payroll-worksheet.html">Exam Practice Booklet</a>
+        <a href="problems-involving-money-worksheet.html">Exam Practice Booklet</a>
       </div>
     </div>
   </div>

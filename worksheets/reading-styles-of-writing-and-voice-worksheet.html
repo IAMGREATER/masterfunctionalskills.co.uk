@@ -830,6 +830,93 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+<style id="mfs-english-ws-upgrade">
+  .eng-extract-callout {
+    display: block;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #0284c7;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin: 8px 0;
+    font-style: normal;
+    color: #0f172a;
+    line-height: 1.65;
+  }
+  .q-working-area .working-line {
+    height: 30px !important;
+    border-bottom: 1.5px dashed #94a3b8 !important;
+  }
+  .eng-structured-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    margin-top: 4px;
+  }
+  .eng-structured-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1e293b;
+  }
+  .eng-structured-box {
+    flex: 1;
+    min-width: 180px;
+    min-height: 36px;
+    border: 1.5px solid #64748b;
+    border-radius: 6px;
+    background: #ffffff;
+  }
+  .mfs-paf-spag-audit {
+    margin: 18px 0 8px;
+    border: 2px solid #0f172a;
+    border-radius: 10px;
+    padding: 14px 16px;
+    background: #f8fafc;
+    page-break-inside: avoid;
+  }
+  .mfs-paf-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 8px 0 12px;
+  }
+  .mfs-paf-cell {
+    background: #ffffff;
+    border: 1px solid #94a3b8;
+    border-radius: 6px;
+    padding: 8px 10px;
+    min-height: 46px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #334155;
+  }
+  @media (max-width: 600px) {
+    .mfs-paf-grid { grid-template-columns: 1fr; }
+    .eng-structured-line { flex-direction: column; align-items: stretch; gap: 4px; }
+  }
+</style>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/reading-styles-of-writing-and-voice-worksheet.html">
 </head>
 <body>
 
@@ -887,16 +974,17 @@
         Match the two extracts to their exact tone:<br><strong>Extract A (Maternity Ward Guide):</strong> <em>'Please do not worry if your newborn cries frequently during the first night; our experienced midwives are right next door at the touch of a button to help you settle your baby.'</em><br><strong>Extract B (Site Manager Memo):</strong> <em>'Any operative caught tampering with scaffolding safety tags will face immediate disciplinary dismissal and permanent removal from site.'</em><br><br>Choose from: <strong>Humorous &nbsp;|&nbsp; Reassuring &amp; Supportive &nbsp;|&nbsp; Stern &amp; Authoritative &nbsp;|&nbsp; Apologetic</strong>, and quote two words from each extract that prove your choice.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Matched Tones & Quotes =</span>
-        Extract A: <div class="q-answer-input-box sm"></div> (Quote: <div class="q-answer-input-box sm"></div>) <span class="q-item-sep">|</span> Extract B: <div class="q-answer-input-box sm"></div> (Quote: <div class="q-answer-input-box sm"></div>)
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Extract A:  (Quote: ):</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Extract B:  (Quote: ):</span><div class="eng-structured-box"></div></div></div>
       </div>
     </div>
 
@@ -906,19 +994,21 @@
         <span class="q-marks">[2 Marks]</span>
       </div>
       <div class="q-stem">
-        Read this extract from a staff health newsletter:<br><em>'Fed up with paying £5 for a soggy supermarket sandwich? Why not batch-cook a delicious pot of chilli on Sunday night — your tastebuds (and your bank balance!) will love you for it.'</em><br><br>Identify the <strong>style/register</strong> of this extract and give <strong>two features</strong> from the text that create this style.
+        Read this extract from a staff health newsletter:<span class="eng-extract-callout">'Fed up with paying £5 for a soggy supermarket sandwich? Why not batch-cook a delicious pot of chilli on Sunday night — your tastebuds (and your bank balance!) will love you for it.'</span><br><br>Identify the <strong>style/register</strong> of this extract and give <strong>two features</strong> from the text that create this style.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Style & Two Features =</span>
-        Style: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Feature 1: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Feature 2: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Style:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Feature 1:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Feature 2: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -934,20 +1024,22 @@
         <span class="q-marks">[3 Marks]</span>
       </div>
       <div class="q-stem">
-        Read this letter from a broadband director to customers:<br><em>'We sincerely apologise for the unacceptable four-hour network outage across North Oxfordshire yesterday afternoon. We fully understand how disruptive this was for homeworkers, and we have automatically credited £15 to your next bill as a gesture of goodwill.'</em><br><br>Describe the <strong>tone</strong> of this extract [1 Mark], quote <strong>two phrases</strong> that create it [1 Mark], and explain why the writer chose this tone [1 Mark].
+        Read this letter from a broadband director to customers:<span class="eng-extract-callout">'We sincerely apologise for the unacceptable four-hour network outage across North Oxfordshire yesterday afternoon. We fully understand how disruptive this was for homeworkers, and we have automatically credited £15 to your next bill as a gesture of goodwill.'</span><br><br>Describe the <strong>tone</strong> of this extract [1 Mark], quote <strong>two phrases</strong> that create it [1 Mark], and explain why the writer chose this tone [1 Mark].
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Tone, Quotes & Purpose =</span>
-        Tone: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Quotes: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Why chosen: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Tone:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Quotes:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Why chosen: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -960,17 +1052,19 @@
         Compare the style of these two workplace sentences:<br><strong>Sentence 1 (Accident Investigation Report):</strong> <em>'The warehouse fire alarm was triggered at 14:22, and the building was evacuated within three minutes.'</em><br><strong>Sentence 2 (Fire Warden Training Poster):</strong> <em>'Smash the glass! Sound the siren! Get everyone out now!'</em><br><br>Explain how the grammar and sentence length differ between Sentence 1 and Sentence 2, and how this affects the voice of each text.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Grammar & Pace Analysis =</span>
-        Sentence 1 Style & Effect: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Sentence 2 Style & Effect: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Sentence 1 Style & Effect:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Sentence 2 Style & Effect: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -986,11 +1080,13 @@
         <span class="q-marks">[4 Marks]</span>
       </div>
       <div class="q-stem">
-        Read this extract from a resident's column in a town newsletter:<br><em>'Congratulations to our brilliant council planners! Spending £800,000 on a "smart" traffic-light junction that has doubled morning tailbacks to three miles is truly a masterclass in modern engineering. Clearly, none of the committee ever drive to work at 8 a.m.'</em><br><br>Analyse the writer's <strong>tone and voice</strong> in this extract. Explain how the writer uses words and punctuation to convey their true attitude.
+        Read this extract from a resident's column in a town newsletter:<span class="eng-extract-callout">'Congratulations to our brilliant council planners! Spending £800,000 on a "smart" traffic-light junction that has doubled morning tailbacks to three miles is truly a masterclass in modern engineering. Clearly, none of the committee ever drive to work at 8 a.m.'</span><br><br>Analyse the writer's <strong>tone and voice</strong> in this extract. Explain how the writer uses words and punctuation to convey their true attitude.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -998,9 +1094,9 @@
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Sarcasm & Tone Analysis =</span>
-        True Tone: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Verbal Irony Quotes: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Punctuation Clues: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>True Tone:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Verbal Irony Quotes:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Punctuation Clues: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -1010,11 +1106,13 @@
         <span class="q-marks">[4 Marks]</span>
       </div>
       <div class="q-stem">
-        <strong>Text A (Statutory Redundancy Notice):</strong><br><em>'Pursuant to Section 188 of the Trade Union and Labour Relations Act, formal consultation regarding the proposed closure of the Swindon packaging plant will commence on 1st November.'</em><br><br><strong>Text B (Plant Worker's Open Letter):</strong><br><em>'After twenty years of loyal service, we found out our factory is shutting down from a cold, heartless piece of paper pinned to the canteen wall. What happens to our families now?'</em><br><br>Compare the <strong>style, tone, and voice</strong> of Text A and Text B, supporting your analysis with quotations.
+        <strong>Text A (Statutory Redundancy Notice):</strong><span class="eng-extract-callout">'Pursuant to Section 188 of the Trade Union and Labour Relations Act, formal consultation regarding the proposed closure of the Swindon packaging plant will commence on 1st November.'</span><br><br><strong>Text B (Plant Worker's Open Letter):</strong><span class="eng-extract-callout">'After twenty years of loyal service, we found out our factory is shutting down from a cold, heartless piece of paper pinned to the canteen wall. What happens to our families now?'</span><br><br>Compare the <strong>style, tone, and voice</strong> of Text A and Text B, supporting your analysis with quotations.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -1022,9 +1120,9 @@
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Comparative Voice Analysis =</span>
-        Text A Style/Voice: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Text B Style/Voice: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Text A Style/Voice:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Text B Style/Voice: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 

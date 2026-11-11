@@ -897,6 +897,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/rounding-and-estimating-level-1-workout.html">
 </head>
 <body>
 
@@ -970,7 +987,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 1</span>
-        <span class="block-q-desc">Question 1: Rounding to Nearest 10, 100 & 1,000</span>
+        <span class="block-q-desc">Rounding to Nearest 10, 100 & 1,000</span>
       </div>
       <div class="workout-instruction">Round each number as specified:</div>
       <div class="drill-grid">
@@ -1044,7 +1061,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 2</span>
-        <span class="block-q-desc">Question 2: Rounding to Decimal Places (d.p.) and Significant Figures (s.f.)</span>
+        <span class="block-q-desc">Rounding to Decimal Places (d.p.) and Significant Figures (s.f.)</span>
       </div>
       <div class="workout-instruction">Round each number to the indicated precision:</div>
       <div class="drill-grid">
@@ -1118,7 +1135,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 3</span>
-        <span class="block-q-desc">Question 3: Exam Estimation Drills (1 Significant Figure)</span>
+        <span class="block-q-desc">Exam Estimation Drills (1 Significant Figure)</span>
       </div>
       <div class="workout-instruction">Estimate each answer by rounding every number to 1 significant figure:</div>
       <div class="drill-grid">
@@ -1176,7 +1193,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 4</span>
-        <span class="block-q-desc">Question 4: Significant Figures & Practical Estimation Checks</span>
+        <span class="block-q-desc">Significant Figures & Practical Estimation Checks</span>
       </div>
       <div class="workout-instruction">Round to requested accuracy or calculate sensible estimate:</div>
       <div class="drill-grid">

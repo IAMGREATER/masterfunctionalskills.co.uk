@@ -897,6 +897,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/lists-workout.html">
 </head>
 <body>
 
@@ -968,7 +985,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 1</span>
-        <span class="block-q-desc">Question 1: Systematic Combinations</span>
+        <span class="block-q-desc">Systematic Combinations</span>
       </div>
       <div class="workout-instruction">Work out the total number of possible combinations:</div>
       <div class="drill-grid">
@@ -1010,7 +1027,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 2</span>
-        <span class="block-q-desc">Question 2: Data Filtering and Criteria Matching</span>
+        <span class="block-q-desc">Data Filtering and Criteria Matching</span>
       </div>
       <div class="workout-instruction">Filter data against stated conditions:</div>
       <div class="drill-grid">
@@ -1044,7 +1061,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 3</span>
-        <span class="block-q-desc">Question 3: Question 2: Systematic Listing & Combinations (Outcomes)</span>
+        <span class="block-q-desc">Systematic Listing & Combinations (Outcomes)</span>
       </div>
       <div class="workout-instruction">List all possible combinations or outcomes systematically:</div>
       <div class="drill-grid">
@@ -1134,7 +1151,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 4</span>
-        <span class="block-q-desc">Question 4: Question 3: Sorting, Filtering & Priority Lists</span>
+        <span class="block-q-desc">Sorting, Filtering & Priority Lists</span>
       </div>
       <div class="workout-instruction">Filter and rank the items based on given criteria:</div>
       <div class="drill-grid">
@@ -1192,7 +1209,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 5</span>
-        <span class="block-q-desc">Question 5: Systematic Listing & Combinations Counting</span>
+        <span class="block-q-desc">Systematic Listing & Combinations Counting</span>
       </div>
       <div class="workout-instruction">List all possible outcomes systematically or calculate combinations:</div>
       <div class="drill-grid">

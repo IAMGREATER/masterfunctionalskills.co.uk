@@ -897,6 +897,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/plans-and-elevations-level-1-workout.html">
 </head>
 <body>
 
@@ -968,7 +985,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 1</span>
-        <span class="block-q-desc">Question 1: Identifying Views of 3D Objects</span>
+        <span class="block-q-desc">Identifying Views of 3D Objects</span>
       </div>
       <div class="workout-instruction">State which 2D view (Plan, Front Elevation, or Side Elevation) is described:</div>
       <div class="drill-grid">
@@ -1018,7 +1035,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 2</span>
-        <span class="block-q-desc">Question 2: Dimensions from Elevations</span>
+        <span class="block-q-desc">Dimensions from Elevations</span>
       </div>
       <div class="workout-instruction">State the dimensions shown on each view of a box (Length 8m, Width 5m, Height 3m):</div>
       <div class="drill-grid">
@@ -1060,7 +1077,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 3</span>
-        <span class="block-q-desc">Question 3: Identifying Plan, Front & Side Elevations</span>
+        <span class="block-q-desc">Identifying Plan, Front & Side Elevations</span>
       </div>
       <div class="workout-instruction">Identify the view direction (Plan / Front / Side):</div>
       <div class="drill-grid">
@@ -1150,7 +1167,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 4</span>
-        <span class="block-q-desc">Question 4: Calculating Object Dimensions from 2D Elevations</span>
+        <span class="block-q-desc">Calculating Object Dimensions from 2D Elevations</span>
       </div>
       <div class="workout-instruction">Extract the 3D dimensions (Length, Width, Height):</div>
       <div class="drill-grid">
@@ -1240,7 +1257,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 5</span>
-        <span class="block-q-desc">Question 5: 2D Views of 3D Objects: Plan, Front & Side</span>
+        <span class="block-q-desc">2D Views of 3D Objects: Plan, Front & Side</span>
       </div>
       <div class="workout-instruction">Identify the 2D projection view (Plan view from above, Front elevation, Side elevation):</div>
       <div class="drill-grid">

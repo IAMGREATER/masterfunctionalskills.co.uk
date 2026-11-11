@@ -10,7 +10,10 @@
   // Compute Root Path dynamically so drawer links resolve cleanly from subdirectories
   var ROOT_PATH = (function() {
     var p = window.location.pathname;
-    if (p.includes('/worksheets/') || p.includes('/topics/')) {
+    if (p.includes('/digital-skills/entry-3/') || p.includes('/digital-skills/level-1/')) {
+      return '../../';
+    }
+    if (p.includes('/worksheets/') || p.includes('/topics/') || p.includes('/digital-skills/')) {
       return '../';
     }
     return '';
@@ -495,9 +498,27 @@
     for (var t = 0; t < tables.length; t++) {
       var table = tables[t];
 
-      // Check if explicitly marked as a matrix grid
-      var isMatrix = table.classList.contains('math-matrix-table') || 
-                     table.classList.contains('keep-table-grid');
+      // Preserve mathematical data tables, frequency/two-way tables & comparison matrices as true grids
+      var allCells = table.querySelectorAll('td');
+      var numCells = 0;
+      for (var cIdx = 0; cIdx < allCells.length; cIdx++) {
+        var txt = (allCells[cIdx].textContent || '').trim();
+        if (/^[£$€+\-]?\d[\d,.:/%\s×÷+\-]*$/.test(txt) || txt.length <= 14) numCells++;
+      }
+      var looksLikeDataGrid = (allCells.length > 0 && (numCells / allCells.length) >= 0.45) ||
+                              !!table.closest('.math-visual-card, .worked-model-card, .pfs-card, .revision-section');
+      var isMatrix = table.classList.contains('math-matrix-table') ||
+                     table.classList.contains('keep-table-grid') ||
+                     looksLikeDataGrid;
+      if (isMatrix) {
+        table.classList.add('keep-table-grid');
+        var pWrap = table.parentElement;
+        if (pWrap && !pWrap.classList.contains('mfs-table-scroll-wrap')) {
+          pWrap.style.overflowX = 'auto';
+          pWrap.style.webkitOverflowScrolling = 'touch';
+          pWrap.style.maxWidth = '100%';
+        }
+      }
 
       // Extract column headers
       var headers = [];
@@ -533,13 +554,12 @@
         table.classList.add('table-stack-mobile');
       }
 
-      // Defeat any parent horizontal scroll clipping
+      // Only unwrap horizontal scroll when table is intentionally stacked into cards
       var parent = table.parentElement;
-      if (parent) {
+      if (parent && !isMatrix) {
         if (parent.classList.contains('table-responsive') || 
             parent.classList.contains('boundaries-table-wrap') ||
-            parent.classList.contains('comparison-table-container') ||
-            (parent.style && (parent.style.overflowX === 'auto' || parent.style.overflowX === 'scroll'))) {
+            parent.classList.contains('comparison-table-container')) {
           parent.style.overflowX = 'visible';
         }
       }

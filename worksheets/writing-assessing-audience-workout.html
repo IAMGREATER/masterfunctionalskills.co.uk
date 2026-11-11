@@ -897,6 +897,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/writing-assessing-audience-workout.html">
 </head>
 <body>
 
@@ -969,7 +986,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 1</span>
-        <span class="block-q-desc">Question 1: Identifying Appropriate Register</span>
+        <span class="block-q-desc">Identifying Appropriate Register</span>
       </div>
       <div class="workout-instruction">State whether each audience requires Formal, Semi-Formal, or Informal register:</div>
       <div class="drill-grid">
@@ -1027,7 +1044,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 2</span>
-        <span class="block-q-desc">Question 2: Vocabulary Upgrades for Formal Audiences</span>
+        <span class="block-q-desc">Vocabulary Upgrades for Formal Audiences</span>
       </div>
       <div class="workout-instruction">Replace the informal phrase with a professional formal equivalent:</div>
       <div class="drill-grid">
@@ -1069,7 +1086,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 3</span>
-        <span class="block-q-desc">Question 3: Selecting Register for Different Stakeholders</span>
+        <span class="block-q-desc">Selecting Register for Different Stakeholders</span>
       </div>
       <div class="workout-instruction">Select the appropriate register (Formal, Semi-formal, Informal) for communicating with each recipient:</div>
       <div class="drill-grid">
@@ -1143,7 +1160,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 4</span>
-        <span class="block-q-desc">Question 4: Adjusting Tone for Sensitivity, Authority, and Empathy</span>
+        <span class="block-q-desc">Adjusting Tone for Sensitivity, Authority, and Empathy</span>
       </div>
       <div class="workout-instruction">Rewrite the blunt message to match the appropriate sensitive and professional audience tone:</div>
       <div class="drill-grid">
@@ -1217,7 +1234,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 5</span>
-        <span class="block-q-desc">Question 5: Audience Engagement Strategies in Promotional Writing</span>
+        <span class="block-q-desc">Audience Engagement Strategies in Promotional Writing</span>
       </div>
       <div class="workout-instruction">Identify the technique used to engage the target audience (Direct address, Shared identity, Solution-focused, Call to action):</div>
       <div class="drill-grid">

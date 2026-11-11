@@ -897,6 +897,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/numbers-and-place-value-workout.html">
 </head>
 <body>
 
@@ -969,7 +986,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 1</span>
-        <span class="block-q-desc">Question 1: Identifying Digit Values</span>
+        <span class="block-q-desc">Identifying Digit Values</span>
       </div>
       <div class="workout-instruction">State the value of the underlined digit in words or numbers:</div>
       <div class="drill-grid">
@@ -1027,7 +1044,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 2</span>
-        <span class="block-q-desc">Question 2: Writing Numbers in Figures and Words</span>
+        <span class="block-q-desc">Writing Numbers in Figures and Words</span>
       </div>
       <div class="workout-instruction">Convert between word form and figures:</div>
       <div class="drill-grid">
@@ -1085,7 +1102,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 3</span>
-        <span class="block-q-desc">Question 3: Multiplying and Dividing by 10, 100 and 1,000</span>
+        <span class="block-q-desc">Multiplying and Dividing by 10, 100 and 1,000</span>
       </div>
       <div class="workout-instruction">Shift digits left or right using place value rules:</div>
       <div class="drill-grid">
@@ -1143,7 +1160,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 4</span>
-        <span class="block-q-desc">Question 4: Writing Numbers in Words & Standard Expansion</span>
+        <span class="block-q-desc">Writing Numbers in Words & Standard Expansion</span>
       </div>
       <div class="workout-instruction">Write the value in words or expanded standard form:</div>
       <div class="drill-grid">

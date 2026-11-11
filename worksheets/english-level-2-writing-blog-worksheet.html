@@ -830,6 +830,93 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+<style id="mfs-english-ws-upgrade">
+  .eng-extract-callout {
+    display: block;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #0284c7;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin: 8px 0;
+    font-style: normal;
+    color: #0f172a;
+    line-height: 1.65;
+  }
+  .q-working-area .working-line {
+    height: 30px !important;
+    border-bottom: 1.5px dashed #94a3b8 !important;
+  }
+  .eng-structured-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    margin-top: 4px;
+  }
+  .eng-structured-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1e293b;
+  }
+  .eng-structured-box {
+    flex: 1;
+    min-width: 180px;
+    min-height: 36px;
+    border: 1.5px solid #64748b;
+    border-radius: 6px;
+    background: #ffffff;
+  }
+  .mfs-paf-spag-audit {
+    margin: 18px 0 8px;
+    border: 2px solid #0f172a;
+    border-radius: 10px;
+    padding: 14px 16px;
+    background: #f8fafc;
+    page-break-inside: avoid;
+  }
+  .mfs-paf-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 8px 0 12px;
+  }
+  .mfs-paf-cell {
+    background: #ffffff;
+    border: 1px solid #94a3b8;
+    border-radius: 6px;
+    padding: 8px 10px;
+    min-height: 46px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #334155;
+  }
+  @media (max-width: 600px) {
+    .mfs-paf-grid { grid-template-columns: 1fr; }
+    .eng-structured-line { flex-direction: column; align-items: stretch; gap: 4px; }
+  }
+</style>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/english-level-2-writing-blog-worksheet.html">
 </head>
 <body>
 
@@ -854,7 +941,7 @@
       </div>
       <div class="sheet-meta-badge">
         <span class="topic-name">English Level 2 Writing Examples & Model Responses</span>
-        <span class="spec-tag">Pearson Edexcel: Pearson Edexcel Functional Skills English (WRITING)</span>
+        <span class="spec-tag">Pearson Edexcel Functional Skills English (WRITING)</span>
       </div>
     </div>
 
@@ -887,30 +974,34 @@
         You are writing a Level 2 online blog post for apprentice nurses titled <strong>How to Survive Your First Night Shift</strong>.<br>Write an engaging <strong>headline</strong> (using alliteration or a rhetorical question) and a one-sentence <strong>opening hook</strong> addressing the reader directly.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#7c3aed;"><i class="fa-solid fa-pen-nib"></i> Draft &amp; Polished Written Response (use full sentences, clear paragraphs &amp; accurate SPaG):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Headline & Opening Hook =</span>
-        Headline: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Hook: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Headline:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Hook: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
     <div class="q-card">
       <div class="q-card-head">
-        <span class="q-title">Question 2 (Core Skill Application — 3 Marks)</span>
+        <span class="q-title">Question 2 (Core Skill Application — 2 Marks)</span>
         <span class="q-marks">[2 Marks]</span>
       </div>
       <div class="q-stem">
         You are asked to write a formal letter to the Director of Estates, Mrs Helen Vance, proposing improvements to the staff canteen. Write: (a) the correct salutation, (b) an appropriate formal opening sentence, and (c) the correct complimentary close.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#7c3aed;"><i class="fa-solid fa-pen-nib"></i> Draft &amp; Polished Written Response (use full sentences, clear paragraphs &amp; accurate SPaG):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -936,8 +1027,10 @@
         Your hospital trust is launching a new Cycle-to-Work and secure bike storage scheme. Write a blog post (250–300 words) for the staff intranet persuading employees to join the scheme, explaining the health and financial benefits, and addressing safety concerns.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#7c3aed;"><i class="fa-solid fa-pen-nib"></i> Draft &amp; Polished Written Response (use full sentences, clear paragraphs &amp; accurate SPaG):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -958,8 +1051,10 @@
         Write an engaging <strong>Headline</strong>, <strong>Byline</strong>, and <strong>2-sentence opening hook</strong> (including a rhetorical question) for a community blog post encouraging local residents to volunteer at a weekend riverbank clean-up.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#7c3aed;"><i class="fa-solid fa-pen-nib"></i> Draft &amp; Polished Written Response (use full sentences, clear paragraphs &amp; accurate SPaG):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -986,8 +1081,10 @@
         Write a formal letter (250–300 words) to Mr David Vance, Head of Highways at Westshire Council, complaining about dangerous speeding outside Oakfield Primary School and proposing specific traffic-calming measures.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#7c3aed;"><i class="fa-solid fa-pen-nib"></i> Draft &amp; Polished Written Response (use full sentences, clear paragraphs &amp; accurate SPaG):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -1006,11 +1103,13 @@
         <span class="q-marks">[4 Marks]</span>
       </div>
       <div class="q-stem">
-        Upgrade this weak Band 1 report conclusion into a formal, high-scoring Band 3 Level 2 report <strong>Recommendations</strong> section:<br><em>'So basically I think the office should buy recycling bins for paper and plastic and tell staff to turn off their computers at night so we save money.'</em>
+        Upgrade this weak Band 1 report conclusion into a formal, high-scoring Band 3 Level 2 report <strong>Recommendations</strong> section:<span class="eng-extract-callout">'So basically I think the office should buy recycling bins for paper and plastic and tell staff to turn off their computers at night so we save money.'</span>
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#7c3aed;"><i class="fa-solid fa-pen-nib"></i> Draft &amp; Polished Written Response (use full sentences, clear paragraphs &amp; accurate SPaG):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>

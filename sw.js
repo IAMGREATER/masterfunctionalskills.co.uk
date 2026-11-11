@@ -1,4 +1,4 @@
-const CACHE_NAME = 'mfs-cache-v20261111b';
+const CACHE_NAME = 'mfs-cache-v20261111-masterplan';
 
 const RELATIVE_ASSETS = [
   '',
@@ -14,6 +14,7 @@ const RELATIVE_ASSETS = [
   'assets/css/mfs-revision.css',
   'assets/css/mfs-video-modal.css',
   'assets/js/mfs-mobile.js',
+  'assets/js/mfs-topic-quiz.js',
   'assets/js/mfs-tint.js',
   'assets/js/mfs-pwa.js',
   'assets/img/favicon-192x192.png',

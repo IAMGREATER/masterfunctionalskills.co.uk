@@ -897,6 +897,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/tally-charts-workout.html">
 </head>
 <body>
 
@@ -968,7 +985,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 1</span>
-        <span class="block-q-desc">Question 1: Reading and Converting Tally Marks</span>
+        <span class="block-q-desc">Reading and Converting Tally Marks</span>
       </div>
       <div class="workout-instruction">State the frequency represented by each tally group:</div>
       <div class="drill-grid">
@@ -1018,7 +1035,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 2</span>
-        <span class="block-q-desc">Question 2: Completing Frequency Tables</span>
+        <span class="block-q-desc">Completing Frequency Tables</span>
       </div>
       <div class="workout-instruction">Work out the missing frequency or total:</div>
       <div class="drill-grid">
@@ -1060,7 +1077,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 3</span>
-        <span class="block-q-desc">Question 3: Tally Grouping & Frequency Verification</span>
+        <span class="block-q-desc">Tally Grouping & Frequency Verification</span>
       </div>
       <div class="workout-instruction">Convert tally marks into numbers and verify frequencies:</div>
       <div class="drill-grid">
@@ -1150,7 +1167,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 4</span>
-        <span class="block-q-desc">Question 4: Creating Frequency Distributions from Raw Data</span>
+        <span class="block-q-desc">Creating Frequency Distributions from Raw Data</span>
       </div>
       <div class="workout-instruction">Tally and count the frequencies from raw survey data:</div>
       <div class="drill-grid">
@@ -1224,7 +1241,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 5</span>
-        <span class="block-q-desc">Question 5: Interpreting Tally Marks & Total Frequencies</span>
+        <span class="block-q-desc">Interpreting Tally Marks & Total Frequencies</span>
       </div>
       <div class="workout-instruction">Count tally marks (groups of 5: four vertical and one diagonal) and calculate frequencies:</div>
       <div class="drill-grid">

@@ -760,6 +760,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/3d-shape-basics-answers.html">
 </head>
 <body>
 
@@ -784,7 +801,7 @@
       </div>
       <div class="sheet-meta-badge">
         <span class="topic-name">3D Shape Basics: Cubes, Spheres & Cones</span>
-        <span class="spec-tag">Pearson Edexcel: Pearson Edexcel L1 & L2 Mathematics</span>
+        <span class="spec-tag">Pearson Edexcel L1 & L2 Mathematics</span>
       </div>
     </div>
 
@@ -909,7 +926,7 @@
 
     <div class="ans-card">
       <div class="ans-card-head">
-        <span class="ans-q-num">Question 4 (Workplace Application — 2 Marks) Model Solution</span>
+        <span class="ans-q-num">Question 4 (Workplace Application — 3 Marks) Model Solution</span>
         <span class="ans-marks-badge">[3 Marks Total]</span>
       </div>
       <div class="ans-stem-quote">
@@ -980,7 +997,7 @@
 
     <div class="ans-card">
       <div class="ans-card-head">
-        <span class="ans-q-num">Question 6 (Level 2 Multi-Step Problem Solving — 3 Marks) Model Solution</span>
+        <span class="ans-q-num">Question 6 (Level 2 Multi-Step Problem Solving — 4 Marks) Model Solution</span>
         <span class="ans-marks-badge">[4 Marks Total]</span>
       </div>
       <div class="ans-stem-quote">

@@ -830,6 +830,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/coordinates-worksheet.html">
 </head>
 <body>
 
@@ -854,7 +871,7 @@
       </div>
       <div class="sheet-meta-badge">
         <span class="topic-name">Coordinates: Positive & Four Quadrants</span>
-        <span class="spec-tag">Pearson Edexcel: Pearson Edexcel L1 & L2 Mathematics</span>
+        <span class="spec-tag">Pearson Edexcel L1 & L2 Mathematics</span>
       </div>
     </div>
 
@@ -886,6 +903,7 @@
       <div class="q-stem">
         On a site grid plan, Emergency Generator A is located at coordinates <strong>(-4, 6)</strong> and Transformer B is located at <strong>(8, -2)</strong>.<br>Calculate the coordinates of the exact <strong>midpoint</strong> between Generator A and Transformer B.
       </div>
+      <div style="margin:12px 0; text-align:center;"><svg viewBox="0 0 260 160" style="max-width:260px;width:100%;height:auto;border:1px solid #cbd5e1;border-radius:8px;background:#fff;"><g stroke="#e2e8f0" stroke-width="1"><line x1="30" y1="20" x2="30" y2="140"/><line x1="60" y1="20" x2="60" y2="140"/><line x1="90" y1="20" x2="90" y2="140"/><line x1="150" y1="20" x2="150" y2="140"/><line x1="180" y1="20" x2="180" y2="140"/><line x1="210" y1="20" x2="210" y2="140"/><line x1="20" y1="40" x2="230" y2="40"/><line x1="20" y1="60" x2="230" y2="60"/><line x1="20" y1="100" x2="230" y2="100"/><line x1="20" y1="120" x2="230" y2="120"/></g><line x1="20" y1="80" x2="235" y2="80" stroke="#0f172a" stroke-width="2"/><line x1="120" y1="15" x2="120" y2="145" stroke="#0f172a" stroke-width="2"/><circle cx="60" cy="40" r="4" fill="#dc2626"/><text x="45" y="34" font-size="10" font-weight="800" fill="#dc2626">P(−4, 4)</text><circle cx="180" cy="120" r="4" fill="#0284c7"/><text x="165" y="136" font-size="10" font-weight="800" fill="#0284c7">R(4, −4)</text></svg></div>
       <div class="q-working-area">
         <div class="working-label">Show your full working out here:</div>
         <div class="working-lines-box">
@@ -906,7 +924,7 @@
         <span class="q-marks">[2 Marks]</span>
       </div>
       <div class="q-stem">
-        Calculate the coordinates of the midpoint between point P<strong>(−4, 6)</strong> and point Q<strong>(8, −2)</strong>.
+        On a 4-quadrant site plan, Sensor P is plotted at <strong>(−5, 3)</strong>. Engineer Maya moves <strong>7 units right</strong> and <strong>6 units down</strong> to place Sensor Q.<br>State the coordinates of <strong>Sensor Q</strong> and state which quadrant it lies in.
       </div>
       <div class="q-working-area">
         <div class="working-label">Show your full working out here:</div>
@@ -945,10 +963,7 @@
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Final Value =</span>
-        <div class="q-answer-input-box md"></div>
-      </div>
+      <div class="q-answer-row" style="gap:14px; flex-wrap:wrap;"><span class="q-answer-label">(a) =</span><div class="q-answer-input-box md"></div><span class="q-answer-label">(b) =</span><div class="q-answer-input-box md"></div></div>
     </div>
 
     <div class="q-card">
@@ -968,10 +983,7 @@
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Calculated Result =</span>
-        <div class="q-answer-input-box md"></div>
-      </div>
+      <div class="q-answer-row" style="gap:14px; flex-wrap:wrap;"><span class="q-answer-label">(a) =</span><div class="q-answer-input-box md"></div><span class="q-answer-label">(b) =</span><div class="q-answer-input-box md"></div></div>
     </div>
 
     <!-- Section C: Exam-Style Problem Solving -->
@@ -998,15 +1010,12 @@
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Model Solution =</span>
-        <div class="q-answer-input-box md"></div>
-      </div>
+      <div class="q-answer-row" style="gap:14px; flex-wrap:wrap;"><span class="q-answer-label">(a) =</span><div class="q-answer-input-box md"></div><span class="q-answer-label">(b) =</span><div class="q-answer-input-box md"></div></div>
     </div>
 
     <div class="q-card">
       <div class="q-card-head">
-        <span class="q-title">Question 6 (Level 2 Multi-Step Problem Solving — 2 Marks)</span>
+        <span class="q-title">Question 6 (Level 2 Multi-Step Problem Solving — 4 Marks)</span>
         <span class="q-marks">[4 Marks]</span>
       </div>
       <div class="q-stem">

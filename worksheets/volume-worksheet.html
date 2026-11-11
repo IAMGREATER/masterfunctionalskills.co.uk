@@ -830,6 +830,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/volume-worksheet.html">
 </head>
 <body>
 
@@ -886,6 +903,7 @@
       <div class="q-stem">
         Calculate the volume of a rectangular medical storage container measuring <strong>2.5 m long</strong>, <strong>1.4 m wide</strong>, and <strong>0.8 m high</strong>.
       </div>
+      <div style="margin:12px 0; text-align:center;"><svg viewBox="0 0 360 105" style="max-width:360px;width:100%;height:auto;"><rect x="20" y="32" width="85" height="50" fill="#e0f2fe" stroke="#0284c7" stroke-width="2"/><polygon points="20,32 42,16 127,16 105,32" fill="#bae6fd" stroke="#0284c7" stroke-width="2"/><text x="150" y="45" font-family="Lexend,sans-serif" font-size="12" font-weight="800" fill="#0f172a">Prism Volume Formula:</text><text x="150" y="68" font-family="Lexend,sans-serif" font-size="11.5" font-weight="700" fill="#0f766e">V = Area of Cross-Section × Length</text></svg></div>
       <div class="q-working-area">
         <div class="working-label">Show your full working out here:</div>
         <div class="working-lines-box">

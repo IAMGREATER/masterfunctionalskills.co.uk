@@ -897,6 +897,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/circles-level-1-workout.html">
 </head>
 <body>
 
@@ -969,7 +986,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 1</span>
-        <span class="block-q-desc">Question 1: Radius and Diameter Relationships</span>
+        <span class="block-q-desc">Radius and Diameter Relationships</span>
       </div>
       <div class="workout-instruction">Find the missing radius or diameter:</div>
       <div class="drill-grid">
@@ -1027,7 +1044,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 2</span>
-        <span class="block-q-desc">Question 2: Circumference & Area Calculations (use π = 3.14)</span>
+        <span class="block-q-desc">Circumference & Area Calculations (use π = 3.14)</span>
       </div>
       <div class="workout-instruction">Calculate the circumference or area:</div>
       <div class="drill-grid">
@@ -1085,7 +1102,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 3</span>
-        <span class="block-q-desc">Question 3: Circumference of Circles (C = πd or 2πr)</span>
+        <span class="block-q-desc">Circumference of Circles (C = πd or 2πr)</span>
       </div>
       <div class="workout-instruction">Calculate circumference (use π = 3.14):</div>
       <div class="drill-grid">
@@ -1159,7 +1176,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 4</span>
-        <span class="block-q-desc">Question 4: Area of Circles & Semi-Circles (A = πr²)</span>
+        <span class="block-q-desc">Area of Circles & Semi-Circles (A = πr²)</span>
       </div>
       <div class="workout-instruction">Calculate circle area (use π = 3.14):</div>
       <div class="drill-grid">
@@ -1233,7 +1250,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 5</span>
-        <span class="block-q-desc">Question 5: Radius, Diameter, Circumference & Area Drills</span>
+        <span class="block-q-desc">Radius, Diameter, Circumference & Area Drills</span>
       </div>
       <div class="workout-instruction">Use π ≈ 3.142 to calculate circle measurements:</div>
       <div class="drill-grid">

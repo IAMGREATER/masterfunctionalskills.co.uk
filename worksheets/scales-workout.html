@@ -897,6 +897,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/scales-workout.html">
 </head>
 <body>
 
@@ -969,7 +986,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 1</span>
-        <span class="block-q-desc">Question 1: Reading Value of One Division</span>
+        <span class="block-q-desc">Reading Value of One Division</span>
       </div>
       <div class="workout-instruction">Work out the value of 1 small division on each scale:</div>
       <div class="drill-grid">
@@ -1027,7 +1044,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 2</span>
-        <span class="block-q-desc">Question 2: Scale Plan Drawings (Ratio Scales)</span>
+        <span class="block-q-desc">Scale Plan Drawings (Ratio Scales)</span>
       </div>
       <div class="workout-instruction">Calculate the real-world distance:</div>
       <div class="drill-grid">
@@ -1085,7 +1102,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 3</span>
-        <span class="block-q-desc">Question 3: Reading Analogue Measuring Scales & Gauges</span>
+        <span class="block-q-desc">Reading Analogue Measuring Scales & Gauges</span>
       </div>
       <div class="workout-instruction">Determine the value indicated on the measuring scale:</div>
       <div class="drill-grid">
@@ -1175,7 +1192,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 4</span>
-        <span class="block-q-desc">Question 4: Ratio Scales & Enlargement Factors</span>
+        <span class="block-q-desc">Ratio Scales & Enlargement Factors</span>
       </div>
       <div class="workout-instruction">Work out actual or enlarged dimensions:</div>
       <div class="drill-grid">

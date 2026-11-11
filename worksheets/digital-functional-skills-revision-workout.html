@@ -897,6 +897,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/digital-functional-skills-revision-workout.html">
 </head>
 <body>
 
@@ -969,7 +986,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 1</span>
-        <span class="block-q-desc">Question 1: Storage Capacity & Unit Conversions</span>
+        <span class="block-q-desc">Storage Capacity & Unit Conversions</span>
       </div>
       <div class="workout-instruction">Convert the storage units or answer the capacity questions:</div>
       <div class="drill-grid">
@@ -1043,7 +1060,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 2</span>
-        <span class="block-q-desc">Question 2: Hardware, OS & Software Classification</span>
+        <span class="block-q-desc">Hardware, OS & Software Classification</span>
       </div>
       <div class="workout-instruction">Classify each item as Input Device, Output Device, Storage Device, or Operating System:</div>
       <div class="drill-grid">
@@ -1117,7 +1134,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 3</span>
-        <span class="block-q-desc">Question 3: Data Protection & Cloud Security Fluency</span>
+        <span class="block-q-desc">Data Protection & Cloud Security Fluency</span>
       </div>
       <div class="workout-instruction">State the correct technical term for each description:</div>
       <div class="drill-grid">
@@ -1175,7 +1192,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 4</span>
-        <span class="block-q-desc">Question 4: Data Security Legislation & GDPR Compliance</span>
+        <span class="block-q-desc">Data Security Legislation & GDPR Compliance</span>
       </div>
       <div class="workout-instruction">State the legal or professional data handling requirement under UK GDPR and Data Protection Act 2018:</div>
       <div class="drill-grid">
@@ -1249,7 +1266,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 5</span>
-        <span class="block-q-desc">Question 5: Digital Wellbeing, Ergonomics & Accessibility</span>
+        <span class="block-q-desc">Digital Wellbeing, Ergonomics & Accessibility</span>
       </div>
       <div class="workout-instruction">Identify the ergonomic or accessibility solution for the workplace computing health risk:</div>
       <div class="drill-grid">

@@ -897,6 +897,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/digital-functional-skills-workout.html">
 </head>
 <body>
 
@@ -969,7 +986,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 1</span>
-        <span class="block-q-desc">Question 1: File Types & System Recognitions</span>
+        <span class="block-q-desc">File Types & System Recognitions</span>
       </div>
       <div class="workout-instruction">Identify the primary file type and application for each extension:</div>
       <div class="drill-grid">
@@ -1043,7 +1060,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 2</span>
-        <span class="block-q-desc">Question 2: Essential Spreadsheet Formula Drills</span>
+        <span class="block-q-desc">Essential Spreadsheet Formula Drills</span>
       </div>
       <div class="workout-instruction">Write the exact spreadsheet formula for each instruction:</div>
       <div class="drill-grid">
@@ -1117,7 +1134,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 3</span>
-        <span class="block-q-desc">Question 3: Cyber Hygiene & Online Safety Drills</span>
+        <span class="block-q-desc">Cyber Hygiene & Online Safety Drills</span>
       </div>
       <div class="workout-instruction">State whether each statement is Safe, Unsafe, or Required under UK GDPR:</div>
       <div class="drill-grid">
@@ -1175,7 +1192,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 4</span>
-        <span class="block-q-desc">Question 4: Cloud Storage, Backups & Digital File Management</span>
+        <span class="block-q-desc">Cloud Storage, Backups & Digital File Management</span>
       </div>
       <div class="workout-instruction">Identify the correct digital practice or tool for handling workplace information:</div>
       <div class="drill-grid">
@@ -1249,7 +1266,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 5</span>
-        <span class="block-q-desc">Question 5: Cybersecurity, Phishing & Multi-Factor Authentication</span>
+        <span class="block-q-desc">Cybersecurity, Phishing & Multi-Factor Authentication</span>
       </div>
       <div class="workout-instruction">Assess the online security scenario and determine the appropriate action:</div>
       <div class="drill-grid">

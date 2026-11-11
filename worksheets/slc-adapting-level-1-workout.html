@@ -897,6 +897,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/slc-adapting-level-1-workout.html">
 </head>
 <body>
 
@@ -969,7 +986,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 1</span>
-        <span class="block-q-desc">Question 1: Selecting the Appropriate Spoken Register</span>
+        <span class="block-q-desc">Selecting the Appropriate Spoken Register</span>
       </div>
       <div class="workout-instruction">Choose the most appropriate phrasing for the given audience:</div>
       <div class="drill-grid">
@@ -1003,7 +1020,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 2</span>
-        <span class="block-q-desc">Question 2: Jargon Busting for Patients</span>
+        <span class="block-q-desc">Jargon Busting for Patients</span>
       </div>
       <div class="workout-instruction">Translate the clinical jargon into clear, accessible plain English:</div>
       <div class="drill-grid">
@@ -1045,7 +1062,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 3</span>
-        <span class="block-q-desc">Question 3: Adapting Language for Different Audiences & Registers</span>
+        <span class="block-q-desc">Adapting Language for Different Audiences & Registers</span>
       </div>
       <div class="workout-instruction">Identify whether the spoken phrase is appropriate for Formal Presentation (F), Peer Team Discussion (P), or Customer Service (C):</div>
       <div class="drill-grid">
@@ -1119,7 +1136,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 4</span>
-        <span class="block-q-desc">Question 4: Adjusting Pace, Volume, and Non-Verbal Cues</span>
+        <span class="block-q-desc">Adjusting Pace, Volume, and Non-Verbal Cues</span>
       </div>
       <div class="workout-instruction">State the correct vocal or physical adjustment needed in the given communication situation:</div>
       <div class="drill-grid">
@@ -1193,7 +1210,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 5</span>
-        <span class="block-q-desc">Question 5: Adapting Tone to Resolve Workplace Misunderstandings</span>
+        <span class="block-q-desc">Adapting Tone to Resolve Workplace Misunderstandings</span>
       </div>
       <div class="workout-instruction">Choose the most constructive and adaptable verbal response to clear up confusion:</div>
       <div class="drill-grid">

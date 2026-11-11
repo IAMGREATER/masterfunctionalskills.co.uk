@@ -897,6 +897,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/writing-communicating-workout.html">
 </head>
 <body>
 
@@ -969,7 +986,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 1</span>
-        <span class="block-q-desc">Question 1: Cutting Wordy Filler Phrases</span>
+        <span class="block-q-desc">Cutting Wordy Filler Phrases</span>
       </div>
       <div class="workout-instruction">Replace each wordy phrase with a single concise word:</div>
       <div class="drill-grid">
@@ -1027,7 +1044,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 2</span>
-        <span class="block-q-desc">Question 2: Active vs Passive Voice</span>
+        <span class="block-q-desc">Active vs Passive Voice</span>
       </div>
       <div class="workout-instruction">Identify whether each sentence is Active or Passive voice:</div>
       <div class="drill-grid">
@@ -1077,7 +1094,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 3</span>
-        <span class="block-q-desc">Question 3: Clarity, Conciseness, and Eliminating Redundancy</span>
+        <span class="block-q-desc">Clarity, Conciseness, and Eliminating Redundancy</span>
       </div>
       <div class="workout-instruction">Remove unnecessary filler words and redundant phrases to make the sentence crisp and professional:</div>
       <div class="drill-grid">
@@ -1151,7 +1168,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 4</span>
-        <span class="block-q-desc">Question 4: Structuring Workplace Emails for Maximum Actionability</span>
+        <span class="block-q-desc">Structuring Workplace Emails for Maximum Actionability</span>
       </div>
       <div class="workout-instruction">State which component of an actionable workplace email is described (Subject line, Context, Action item, Deadline, Sign-off):</div>
       <div class="drill-grid">
@@ -1225,7 +1242,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 5</span>
-        <span class="block-q-desc">Question 5: Effective Written De-escalation in Customer Service</span>
+        <span class="block-q-desc">Effective Written De-escalation in Customer Service</span>
       </div>
       <div class="workout-instruction">Identify the positive de-escalation technique used in each response (Validation, Accountability, Solution, Reassurance):</div>
       <div class="drill-grid">

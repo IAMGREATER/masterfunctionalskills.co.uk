@@ -830,6 +830,93 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+<style id="mfs-english-ws-upgrade">
+  .eng-extract-callout {
+    display: block;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #0284c7;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin: 8px 0;
+    font-style: normal;
+    color: #0f172a;
+    line-height: 1.65;
+  }
+  .q-working-area .working-line {
+    height: 30px !important;
+    border-bottom: 1.5px dashed #94a3b8 !important;
+  }
+  .eng-structured-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    margin-top: 4px;
+  }
+  .eng-structured-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1e293b;
+  }
+  .eng-structured-box {
+    flex: 1;
+    min-width: 180px;
+    min-height: 36px;
+    border: 1.5px solid #64748b;
+    border-radius: 6px;
+    background: #ffffff;
+  }
+  .mfs-paf-spag-audit {
+    margin: 18px 0 8px;
+    border: 2px solid #0f172a;
+    border-radius: 10px;
+    padding: 14px 16px;
+    background: #f8fafc;
+    page-break-inside: avoid;
+  }
+  .mfs-paf-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 8px 0 12px;
+  }
+  .mfs-paf-cell {
+    background: #ffffff;
+    border: 1px solid #94a3b8;
+    border-radius: 6px;
+    padding: 8px 10px;
+    min-height: 46px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #334155;
+  }
+  @media (max-width: 600px) {
+    .mfs-paf-grid { grid-template-columns: 1fr; }
+    .eng-structured-line { flex-direction: column; align-items: stretch; gap: 4px; }
+  }
+</style>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/reading-why-do-writers-write-worksheet.html">
 </head>
 <body>
 
@@ -884,19 +971,21 @@
         <span class="q-marks">[2 Marks]</span>
       </div>
       <div class="q-stem">
-        Read this extract from a town council notice:<br><em>'From Monday 4th November, household green garden-waste bins will move from weekly to fortnightly winter collections. Normal weekly collections will resume on 3rd March.'</em><br><br>An exam candidate writes the main purpose as: <em>'To inform.'</em><br>(a) Explain why <em>'To inform'</em> scores <strong>0 marks</strong> on its own.<br>(b) Write a complete <strong>full-mark purpose statement</strong> for this notice.
+        Read this extract from a town council notice:<span class="eng-extract-callout">'From Monday 4th November, household green garden-waste bins will move from weekly to fortnightly winter collections. Normal weekly collections will resume on 3rd March.'</span><br><br>An exam candidate writes the main purpose as: <em>'To inform.'</em><br>(a) Explain why <em>'To inform'</em> scores <strong>0 marks</strong> on its own.<br>(b) Write a complete <strong>full-mark purpose statement</strong> for this notice.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Diagnostic & Full Purpose Statement =</span>
-        (a) Why 0 marks: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> (b) Full statement: To inform residents about <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>(a) Why 0 marks:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>(b) Full statement: To inform residents about <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -909,16 +998,17 @@
         Compare these two extracts about winter driving:<br><strong>Extract A (Highway Code Rule 229):</strong> <em>'Before driving in snow, you MUST clear all snow and ice from every window, mirror, and number plate.'</em><br><strong>Extract B (Motoring Magazine Tip):</strong> <em>'To stop your windscreen wipers freezing to the glass overnight, you could try slipping an old pair of long socks over the wiper blades.'</em><br><br>State which extract is written <strong>to instruct</strong> and which is written <strong>to advise</strong>, and quote the modal verbs that prove your answer.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Purposes & Modal Clues =</span>
-        Extract A: <div class="q-answer-input-box sm"></div> (Verb: <div class="q-answer-input-box sm"></div>) <span class="q-item-sep">|</span> Extract B: <div class="q-answer-input-box sm"></div> (Verb: <div class="q-answer-input-box sm"></div>)
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Extract A:  (Verb: ):</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Extract B:  (Verb: ):</span><div class="eng-structured-box"></div></div></div>
       </div>
     </div>
 
@@ -934,20 +1024,22 @@
         <span class="q-marks">[3 Marks]</span>
       </div>
       <div class="q-stem">
-        Read this extract from a leaflet delivered through letterboxes:<br><em>'Last year, burglary rates in Oakwood rose by 18%, with 7 out of 10 break-ins occurring through unbolted back doors. Protect your family and belongings today — order the GuardPro Smart Doorbell Camera before Friday and claim 30% off installation!'</em><br><br>Explain why the <strong>main purpose</strong> of this leaflet is <strong>to persuade/sell</strong> rather than simply to inform, and explain why the writer included the burglary statistics in the first sentence.
+        Read this extract from a leaflet delivered through letterboxes:<span class="eng-extract-callout">'Last year, burglary rates in Oakwood rose by 18%, with 7 out of 10 break-ins occurring through unbolted back doors. Protect your family and belongings today — order the GuardPro Smart Doorbell Camera before Friday and claim 30% off installation!'</span><br><br>Explain why the <strong>main purpose</strong> of this leaflet is <strong>to persuade/sell</strong> rather than simply to inform, and explain why the writer included the burglary statistics in the first sentence.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Main Purpose & Role of Statistics =</span>
-        Main Purpose: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Role of Statistics: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Call to Action: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Main Purpose:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Role of Statistics:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Call to Action: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -960,17 +1052,19 @@
         A workplace guide titled <em>'Switching to Our New Cloud Payroll Portal'</em> contains three paragraphs:<br>• <strong>Paragraph 1:</strong> Explains why the old paper payslips were slow and environmentally wasteful.<br>• <strong>Paragraph 2:</strong> Gives a numbered 4-step guide on how to log in and set your 8-digit PIN.<br>• <strong>Paragraph 3:</strong> Reassures staff that HR advisors will run drop-in help desks all week for anyone struggling.<br><br>Identify the <strong>specific sub-purpose</strong> of Paragraph 1, Paragraph 2, and Paragraph 3.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Three Sub-Purposes =</span>
-        Para 1 Purpose: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Para 2 Purpose: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Para 3 Purpose: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Para 1 Purpose:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Para 2 Purpose:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Para 3 Purpose: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -986,11 +1080,13 @@
         <span class="q-marks">[4 Marks]</span>
       </div>
       <div class="q-stem">
-        Read this extract from a financial guide aimed at <strong>18-year-old school leavers starting their first job</strong>:<br><em>'Just landed your first proper paycheque? Amazing! Before you blow it all on festival tickets and takeaway pizzas, let's decode the mystery letters on your payslip: "PAYE" is simply the income tax taken automatically by the government, and "NI" (National Insurance) builds your state pension and NHS cover.'</em><br><br>Analyse <strong>four ways</strong> the writer has adapted the <strong>language, examples, and explanations</strong> to suit 18-year-old school leavers.
+        Read this extract from a financial guide aimed at <strong>18-year-old school leavers starting their first job</strong>:<span class="eng-extract-callout">'Just landed your first proper paycheque? Amazing! Before you blow it all on festival tickets and takeaway pizzas, let's decode the mystery letters on your payslip: "PAYE" is simply the income tax taken automatically by the government, and "NI" (National Insurance) builds your state pension and NHS cover.'</span><br><br>Analyse <strong>four ways</strong> the writer has adapted the <strong>language, examples, and explanations</strong> to suit 18-year-old school leavers.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -998,9 +1094,9 @@
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Audience Adaptation Analysis =</span>
-        1. Tone/Hook: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> 2. Examples: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> 3. Slang: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> 4. Jargon Explanations: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>1. Tone/Hook:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>2. Examples:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>3. Slang:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>4. Jargon Explanations: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -1010,11 +1106,13 @@
         <span class="q-marks">[4 Marks]</span>
       </div>
       <div class="q-stem">
-        <strong>Text A (Product Review in 'Practical Plumber Monthly'):</strong><br><em>'We tested the Vortex 30kW Combi Boiler across six winter installations. While the brass manifold is exceptionally durable and quick to solder, the cramped PCB wiring box makes servicing awkward. Verdict: 4/5 stars for trade installers.'</em><br><br><strong>Text B (Manufacturer's Customer Brochure):</strong><br><em>'Transform your home into a cosy sanctuary this winter with the whisper-quiet Vortex Combi Boiler — slashing your gas bills by up to £240 a year! Ask your local installer for Vortex today.'</em><br><br>Compare the <strong>purpose</strong> and <strong>target audience</strong> of Text A and Text B, supporting your answer with evidence from both texts.
+        <strong>Text A (Product Review in 'Practical Plumber Monthly'):</strong><span class="eng-extract-callout">'We tested the Vortex 30kW Combi Boiler across six winter installations. While the brass manifold is exceptionally durable and quick to solder, the cramped PCB wiring box makes servicing awkward. Verdict: 4/5 stars for trade installers.'</span><br><br><strong>Text B (Manufacturer's Customer Brochure):</strong><span class="eng-extract-callout">'Transform your home into a cosy sanctuary this winter with the whisper-quiet Vortex Combi Boiler — slashing your gas bills by up to £240 a year! Ask your local installer for Vortex today.'</span><br><br>Compare the <strong>purpose</strong> and <strong>target audience</strong> of Text A and Text B, supporting your answer with evidence from both texts.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -1022,9 +1120,9 @@
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Comparative Purpose & Audience =</span>
-        Text A Purpose & Audience: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Text B Purpose & Audience: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Text A Purpose & Audience:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Text B Purpose & Audience: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 

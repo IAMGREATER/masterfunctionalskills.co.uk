@@ -897,6 +897,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/probability-tables-workout.html">
 </head>
 <body>
 
@@ -968,7 +985,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 1</span>
-        <span class="block-q-desc">Question 1: Sample Space Outcomes for Two Dice</span>
+        <span class="block-q-desc">Sample Space Outcomes for Two Dice</span>
       </div>
       <div class="workout-instruction">For two standard 6-sided dice (total 36 outcomes), find the probability of each sum:</div>
       <div class="drill-grid">
@@ -1026,7 +1043,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 2</span>
-        <span class="block-q-desc">Question 2: Independent Combined Events: P(A and B)</span>
+        <span class="block-q-desc">Independent Combined Events: P(A and B)</span>
       </div>
       <div class="workout-instruction">Multiply probabilities for two independent events:</div>
       <div class="drill-grid">
@@ -1068,7 +1085,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 3</span>
-        <span class="block-q-desc">Question 3: Missing Probability Calculations (Total = 1.0)</span>
+        <span class="block-q-desc">Missing Probability Calculations (Total = 1.0)</span>
       </div>
       <div class="workout-instruction">Find the missing probability so that all probabilities sum to 1.0:</div>
       <div class="drill-grid">
@@ -1158,7 +1175,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 4</span>
-        <span class="block-q-desc">Question 4: Two-Way Probability & Relative Frequency</span>
+        <span class="block-q-desc">Two-Way Probability & Relative Frequency</span>
       </div>
       <div class="workout-instruction">Calculate probability from frequency tables:</div>
       <div class="drill-grid">
@@ -1232,7 +1249,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 5</span>
-        <span class="block-q-desc">Question 5: Two-Way Frequency & Combined Probability Tables</span>
+        <span class="block-q-desc">Two-Way Frequency & Combined Probability Tables</span>
       </div>
       <div class="workout-instruction">Work out probabilities from two-way tables (Probability = Favourable / Total):</div>
       <div class="drill-grid">

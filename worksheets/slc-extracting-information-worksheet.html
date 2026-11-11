@@ -830,6 +830,93 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+<style id="mfs-english-ws-upgrade">
+  .eng-extract-callout {
+    display: block;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #0284c7;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin: 8px 0;
+    font-style: normal;
+    color: #0f172a;
+    line-height: 1.65;
+  }
+  .q-working-area .working-line {
+    height: 30px !important;
+    border-bottom: 1.5px dashed #94a3b8 !important;
+  }
+  .eng-structured-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    margin-top: 4px;
+  }
+  .eng-structured-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1e293b;
+  }
+  .eng-structured-box {
+    flex: 1;
+    min-width: 180px;
+    min-height: 36px;
+    border: 1.5px solid #64748b;
+    border-radius: 6px;
+    background: #ffffff;
+  }
+  .mfs-paf-spag-audit {
+    margin: 18px 0 8px;
+    border: 2px solid #0f172a;
+    border-radius: 10px;
+    padding: 14px 16px;
+    background: #f8fafc;
+    page-break-inside: avoid;
+  }
+  .mfs-paf-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 8px 0 12px;
+  }
+  .mfs-paf-cell {
+    background: #ffffff;
+    border: 1px solid #94a3b8;
+    border-radius: 6px;
+    padding: 8px 10px;
+    min-height: 46px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #334155;
+  }
+  @media (max-width: 600px) {
+    .mfs-paf-grid { grid-template-columns: 1fr; }
+    .eng-structured-line { flex-direction: column; align-items: stretch; gap: 4px; }
+  }
+</style>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/slc-extracting-information-worksheet.html">
 </head>
 <body>
 
@@ -854,7 +941,7 @@
       </div>
       <div class="sheet-meta-badge">
         <span class="topic-name">Listening & Extracting Key Information</span>
-        <span class="spec-tag">Pearson Edexcel: Pearson Edexcel Functional Skills English (SLC)</span>
+        <span class="spec-tag">Pearson Edexcel Functional Skills English (SLC)</span>
       </div>
     </div>
 
@@ -884,19 +971,21 @@
         <span class="q-marks">[2 Marks]</span>
       </div>
       <div class="q-stem">
-        Listen to (read) this spoken shift handover transcript:<br><em>'Before I finish, please remember that Bed 4 needs a repeat blood glucose check at 14:30, the pharmacy courier is collecting the controlled drugs box at 15:15, and Mrs Khan in Bed 9 has already had her discharge letter signed.'</em><br>Extract the <strong>two timed tasks</strong> that the incoming nurse must complete.
+        Listen to (read) this spoken shift handover transcript:<span class="eng-extract-callout">'Before I finish, please remember that Bed 4 needs a repeat blood glucose check at 14:30, the pharmacy courier is collecting the controlled drugs box at 15:15, and Mrs Khan in Bed 9 has already had her discharge letter signed.'</span><br>Extract the <strong>two timed tasks</strong> that the incoming nurse must complete.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0f766e;"><i class="fa-solid fa-comments"></i> Speaking &amp; Listening Structured Notes &amp; Spoken Response:</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Two Timed Tasks =</span>
-        14:30 Task: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> 15:15 Task: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>14:30 Task:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>15:15 Task: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -906,11 +995,13 @@
         <span class="q-marks">[2 Marks]</span>
       </div>
       <div class="q-stem">
-        A warehouse supervisor announces:<br><em>'We've had two near-misses in Loading Bay 4 this morning due to hydraulic oil spills. All operatives must wear steel-toecap boots and high-visibility vests at all times, and Loading Bay 4 is closed for steam cleaning until 14:30.'</em><br>Extract (a) the mandatory PPE rule and (b) the operational restriction.
+        A warehouse supervisor announces:<span class="eng-extract-callout">'We've had two near-misses in Loading Bay 4 this morning due to hydraulic oil spills. All operatives must wear steel-toecap boots and high-visibility vests at all times, and Loading Bay 4 is closed for steam cleaning until 14:30.'</span><br>Extract (a) the mandatory PPE rule and (b) the operational restriction.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0f766e;"><i class="fa-solid fa-comments"></i> Speaking &amp; Listening Structured Notes &amp; Spoken Response:</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -933,11 +1024,13 @@
         <span class="q-marks">[3 Marks]</span>
       </div>
       <div class="q-stem">
-        Listen to / read this voicemail transcript left on the garage answerphone:<br><em>'Hi there, it's Mrs Anita Shah calling about my silver Ford Fiesta, registration BD68 KLP. Sorry I missed your call earlier—I was stuck in the dentist's chair! Anyway, please go ahead and fit the two new front tyres you quoted £140 for, and I will come in to collect the car at 4:30 pm today. My mobile is 07700 900412 if there's any problem.'</em><br>Extract the four essential workshop action details and ignore the filler.
+        Listen to / read this voicemail transcript left on the garage answerphone:<span class="eng-extract-callout">'Hi there, it's Mrs Anita Shah calling about my silver Ford Fiesta, registration BD68 KLP. Sorry I missed your call earlier—I was stuck in the dentist's chair! Anyway, please go ahead and fit the two new front tyres you quoted £140 for, and I will come in to collect the car at 4:30 pm today. My mobile is 07700 900412 if there's any problem.'</span><br>Extract the four essential workshop action details and ignore the filler.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0f766e;"><i class="fa-solid fa-comments"></i> Speaking &amp; Listening Structured Notes &amp; Spoken Response:</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -955,11 +1048,13 @@
         <span class="q-marks">[3 Marks]</span>
       </div>
       <div class="q-stem">
-        Read this spoken pitch from a colleague in a meeting:<br><em>'Switching all customer support entirely to an AI chatbot will save our company £30,000 a year in call-centre wages and give instant 24/7 replies.'</em><br>1. Identify the speaker's core line of argument.<br>2. Identify one critical customer-service risk the speaker has ignored.<br>3. Write an open question exposing that risk.
+        Read this spoken pitch from a colleague in a meeting:<span class="eng-extract-callout">'Switching all customer support entirely to an AI chatbot will save our company £30,000 a year in call-centre wages and give instant 24/7 replies.'</span><br>1. Identify the speaker's core line of argument.<br>2. Identify one critical customer-service risk the speaker has ignored.<br>3. Write an open question exposing that risk.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0f766e;"><i class="fa-solid fa-comments"></i> Speaking &amp; Listening Structured Notes &amp; Spoken Response:</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -983,11 +1078,13 @@
         <span class="q-marks">[4 Marks]</span>
       </div>
       <div class="q-stem">
-        Read the transcript of the Ward Manager's briefing:<br><em>'Good morning team. First, thank you for covering the busy weekend shifts. A crucial reminder that our CQC inspection window opens next Monday, 17 November. All environmental cleaning audits must be uploaded to the digital portal by 16:00 daily without exception. Second, pharmacy reported that three controlled-drug entries lacked a second signature last Thursday; therefore, anyone administering Schedule 2 medications must log two practitioner signatures at the bedside immediately. Finally, the staff summer barbecue has been moved to 18 July.'</em><br>1. Extract the two mandatory clinical compliance directives.<br>2. Formulate one relevant follow-up question to clarify implementation.
+        Read the transcript of the Ward Manager's briefing:<span class="eng-extract-callout">'Good morning team. First, thank you for covering the busy weekend shifts. A crucial reminder that our CQC inspection window opens next Monday, 17 November. All environmental cleaning audits must be uploaded to the digital portal by 16:00 daily without exception. Second, pharmacy reported that three controlled-drug entries lacked a second signature last Thursday; therefore, anyone administering Schedule 2 medications must log two practitioner signatures at the bedside immediately. Finally, the staff summer barbecue has been moved to 18 July.'</span><br>1. Extract the two mandatory clinical compliance directives.<br>2. Formulate one relevant follow-up question to clarify implementation.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0f766e;"><i class="fa-solid fa-comments"></i> Speaking &amp; Listening Structured Notes &amp; Spoken Response:</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -1002,15 +1099,17 @@
 
     <div class="q-card">
       <div class="q-card-head">
-        <span class="q-title">Question 6 (Level 2 Mastery Challenge — 3 Marks)</span>
+        <span class="q-title">Question 6 (Level 2 Mastery Challenge — 4 Marks)</span>
         <span class="q-marks">[4 Marks]</span>
       </div>
       <div class="q-stem">
-        Convert this 55-word spoken briefing extract into <strong>3 concise shorthand notepad lines</strong> (using arrows/symbols) that take less than 10 seconds to jot down:<br><em>'Starting next Monday 9 November, our main staff car park will close for five days so contractors can install six electric vehicle chargers. During next week, all staff must park at the Leisure Centre overflow car park on Mill Road and show their staff ID badge to the barrier attendant.'</em>
+        Convert this 55-word spoken briefing extract into <strong>3 concise shorthand notepad lines</strong> (using arrows/symbols) that take less than 10 seconds to jot down:<span class="eng-extract-callout">'Starting next Monday 9 November, our main staff car park will close for five days so contractors can install six electric vehicle chargers. During next week, all staff must park at the Leisure Centre overflow car park on Mill Road and show their staff ID badge to the barrier attendant.'</span>
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0f766e;"><i class="fa-solid fa-comments"></i> Speaking &amp; Listening Structured Notes &amp; Spoken Response:</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>

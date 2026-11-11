@@ -23,6 +23,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="assets/css/mfs-revision.css?v=20261024c">
   <link rel="stylesheet" href="assets/css/mfs-mobile.css?v=20261024c">
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/functional-skills-speed.html">
 </head>
 <body>
 
@@ -364,65 +365,66 @@
       <div class="revision-content">
 
         <!-- TOPIC VIDEO WALKTHROUGH STATION -->
-        <!-- AI TUTOR EMMA VIDEO MASTERCLASS STATION -->
         <section id="video-station" class="revision-section" style="margin-bottom: 32px;">
           <div id="videoMasterclassStation" style="position:relative; border-radius:14px; overflow:hidden; background:#070d1e; box-shadow:0 10px 30px rgba(0,0,0,0.35);">
-            <div class="video-exemplar-head" style="background:#070d1e; border: 2px solid #0284c7; border-radius:14px 14px 0 0; padding:18px 22px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+            
+            <div class="video-exemplar-head" style="background:#070d1e; border: 2px solid #0284c7;  border-radius:14px 14px 0 0; padding:18px 22px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
               <div style="display:flex; align-items:center; gap:14px;">
-                <img src="assets/img/avatars/tutor_emma_avatar.jpg" alt="Emma AI Specialist Tutor" style="width:52px; height:52px; border-radius:50%; border:2px solid #38bdf8; object-fit:cover;">
+                <img id="mcTutorAvatar" src="assets/img/avatars/tutor-emma.jpg" alt="Emma MFS Specialist Tutor" style="width:52px; height:52px; border-radius:50%; border:2px solid #38bdf8; object-fit:cover;">
                 <div>
-                  <div style="color:#ffffff; font-size:1.18rem; font-weight:800; display:flex; align-items:center; gap:8px;">
-                    <i class="fa-brands fa-youtube" style="color:#ef4444;"></i> Speed, Distance and Time Masterclass
+                  <div id="mcVideoTitle" style="color:#ffffff; font-size:1.18rem; font-weight:800; display:flex; align-items:center; gap:8px;">
+                    <i class="fa-brands fa-youtube" style="color:#ef4444;"></i> Speed, Distance &amp; Time Masterclass
                   </div>
-                  <div style="color:#94a3b8; font-size:0.88rem; font-weight:600; margin-top:3px;">
-                    Presented by <strong style="color:#38bdf8;">Emma</strong> (MFS Lead Specialist) &bull; 1080p Studio Walkthrough (5m 41s)
+                  <div id="mcTutorMeta" style="color:#94a3b8; font-size:0.88rem; font-weight:600; margin-top:3px;">
+                    Presented by <strong style="color:#38bdf8;">Emma</strong> (MFS Senior Functional Skills Tutor) &bull; 1080p Studio Walkthrough (5m 31s)
                   </div>
                 </div>
               </div>
               <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
-                <span class="mfs-pill-l1">Level 1 &amp; 2</span>
+                <span class="mfs-pill-l1">Level 2</span>
                 <span class="mfs-pill-board">Pearson Edexcel</span>
                 <span class="mfs-pill-board" style="background:#059669; color:#fff;">HD 1080p</span>
               </div>
             </div>
 
             <div class="video-screen-wrap" style="position:relative; width:100%; aspect-ratio:16/9; background:#000; overflow:hidden; border-left:2px solid #0284c7; border-right:2px solid #0284c7; border-radius:0; margin-bottom:0;">
-              <iframe id="topicMasterclassIframe" style="position:absolute; top:0; left:0; width:100%; height:100%; border:0; display:block;" src="https://www.youtube-nocookie.com/embed/5C6ZjCAK5nI?rel=0&enablejsapi=1" title="Masterclass Station" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+              <iframe id="topicMasterclassIframe" data-ytid="5C6ZjCAK5nI" style="position:absolute; top:0; left:0; width:100%; height:100%; border:0; display:block;" src="https://www.youtube-nocookie.com/embed/5C6ZjCAK5nI?rel=0&amp;enablejsapi=1" title="Speed, Distance &amp; Time Masterclass" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
             </div>
 
             <!-- JUMP BENCHMARKS BAR -->
-            <div class="video-jump-bar" style="background:#0f172a; border:2px solid #0284c7; border-top:1px solid #1e3a8a; border-radius:0; padding:12px 18px; margin-bottom:0;">
+            <div class="video-jump-bar" id="mcJumpBar" style="background:#0f172a; border:2px solid #0284c7; border-top:1px solid #1e3a8a; border-radius:0; padding:12px 18px; margin-bottom:0;">
               <span class="jump-label" style="color:#94a3b8;"><i class="fa-solid fa-forward-step" style="color:#38bdf8;"></i> Lesson Benchmarks:</span>
-              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(0, this)">0:00 Masterclass Briefing & Specifica...</button>
-              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(55, this)">0:55 Core Skill 1: Calculating Averag...</button>
-              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(124, this)">2:04 Core Skill 2: Journey Time & Dec...</button>
-              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(186, this)">3:06 Worked Exam Model: Community Dis...</button>
-              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(285, this)">4:45 Examiner Traps & Revision Checklist</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(0, this)">0:00 Briefing &amp; Objectives</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(49, this)">0:49 Formula Triangle</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(87, this)">1:27 Decimal Hours vs Minutes Trap</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(139, this)">2:19 Worked Exam Question</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(215, this)">3:35 Your Turn! Practice Challenge</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(259, this)">4:19 Watch Out! Examiner Traps</button>
             </div>
 
             <!-- PLAYER FOOTER & EXTERNAL LINKS -->
             <div style="background:#070d1e; border:2px solid #0284c7; border-top:1px solid #1e3a8a; border-radius:0 0 14px 14px; padding:10px 18px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;">
-              <span style="font-size:0.82rem; color:#94a3b8;"><i class="fa-solid fa-shield-halved" style="color:#38bdf8;"></i> Pearson Edexcel &amp; City &amp; Guilds Syllabus Aligned</span>
-              <div style="display:flex; gap:12px; align-items:center;">
-                <a href="video-solution.html?topic=speed-distance-and-time" target="_blank" rel="noopener" style="font-size:0.82rem; color:#38bdf8; text-decoration:none; font-weight:700;"><i class="fa-solid fa-up-right-from-square"></i> Open in Video Station</a>
-                <a href="https://youtu.be/5C6ZjCAK5nI" target="_blank" rel="noopener" style="font-size:0.82rem; color:#ef4444; text-decoration:none; font-weight:700;"><i class="fa-brands fa-youtube"></i> Watch on YouTube</a>
-                <a href="worksheets/speed-worksheet.html" target="_blank" rel="noopener" style="font-size:0.82rem; color:#10b981; text-decoration:none; font-weight:700;"><i class="fa-regular fa-file-pdf"></i> Practice Questions</a>
-                <a href="worksheets/speed-answers.html" target="_blank" rel="noopener" style="font-size:0.82rem; color:#fbbf24; text-decoration:none; font-weight:700;"><i class="fa-solid fa-check"></i> Model Answers</a>
+              <span style="font-size:0.82rem; color:#94a3b8;"><i class="fa-solid fa-shield-halved" style="color:#38bdf8;"></i> Pearson Edexcel &amp; City &amp; Guilds Level 2 Aligned</span>
+              <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+                <a id="mcStationLink" href="video-solution.html?topic=speed-distance-and-time" target="_blank" rel="noopener" style="font-size:0.82rem; color:#38bdf8; text-decoration:none; font-weight:700;"><i class="fa-solid fa-up-right-from-square"></i> Open in Video Station</a>
+                <a id="mcYoutubeLink" href="https://youtu.be/5C6ZjCAK5nI" target="_blank" rel="noopener" style="font-size:0.82rem; color:#ef4444; text-decoration:none; font-weight:700;"><i class="fa-brands fa-youtube"></i> Watch on YouTube</a>
               </div>
             </div>
           </div>
 
           <script>
+            window.__mfsMasterclassParts = [{"num": 21, "slug": "speed-distance-and-time", "title": "Speed, Distance & Time Masterclass", "tutor": "Emma", "role": "MFS Senior Functional Skills Tutor", "avatar": "assets/img/avatars/tutor-emma.jpg", "ytid": "5C6ZjCAK5nI", "runtime": "5m 31s", "default_start": 0, "benchmarks": [{"sec": 0, "text": "0:00 Briefing & Objectives"}, {"sec": 49, "text": "0:49 Formula Triangle"}, {"sec": 87, "text": "1:27 Decimal Hours vs Minutes Trap"}, {"sec": 139, "text": "2:19 Worked Exam Question"}, {"sec": 215, "text": "3:35 Your Turn! Practice Challenge"}, {"sec": 259, "text": "4:19 Watch Out! Examiner Traps"}]}];
             function jumpMasterclassVideo(seconds, btn) {
               if (btn && btn.blur) btn.blur();
-              var video = document.getElementById('topicMasterclassPlayer');
-              if (video) {
-                video.currentTime = seconds;
-                video.play().catch(function(e){ console.log('Autoplay:', e); });
-              } else {
-                var iframe = document.getElementById('topicMasterclassIframe');
-                if (iframe) {
-                  iframe.src = "https://www.youtube-nocookie.com/embed/5C6ZjCAK5nI?rel=0&autoplay=1&enablejsapi=1&start=" + seconds;
+              var iframe = document.getElementById('topicMasterclassIframe');
+              if (iframe) {
+                var ytid = iframe.getAttribute('data-ytid');
+                if (!ytid) {
+                  var m = (iframe.src || '').match(/embed[/]([a-zA-Z0-9_-]+)/);
+                  ytid = m ? m[1] : '';
+                }
+                if (ytid) {
+                  iframe.src = 'https://www.youtube-nocookie.com/embed/' + ytid + '?rel=0&autoplay=1&enablejsapi=1&start=' + seconds;
                 }
               }
               var btns = document.querySelectorAll('#videoMasterclassStation .video-jump-bar .jump-btn');
@@ -440,12 +442,46 @@
                 }
               });
             }
-          
-            if (window.location.protocol === 'file:') {
-              var wrap = document.querySelector('#videoMasterclassStation .video-screen-wrap');
-              if (wrap) {
-                wrap.innerHTML = '<video id="topicMasterclassPlayer" controls playsinline poster="assets/img/speed-distance-and-time-emma-poster.png" style="width:100%; height:100%; object-fit:contain; background:#000; display:block;"><source src="assets/video/emma-speed-distance-and-time-walkthrough.mp4" type="video/mp4">' + ("<track default kind="chapters" label="Lesson Chapters" srclang="en" src="assets/video/emma-speed-distance-and-time-chapters.vtt">") + 'Your browser does not support the video tag.</video>';
+            function switchMasterclassPart(idx, tabBtn) {
+              var parts = window.__mfsMasterclassParts || [];
+              var p = parts[idx];
+              if (!p) return;
+              var iframe = document.getElementById('topicMasterclassIframe');
+              if (iframe) {
+                iframe.setAttribute('data-ytid', p.ytid);
+                var st = p.default_start > 0 ? '&start=' + p.default_start : '';
+                iframe.src = 'https://www.youtube-nocookie.com/embed/' + p.ytid + '?rel=0&autoplay=1&enablejsapi=1' + st;
+                iframe.title = p.title;
               }
+              var av = document.getElementById('mcTutorAvatar');
+              if (av) { av.src = p.avatar; av.alt = p.tutor + ' MFS Specialist Tutor'; }
+              var ti = document.getElementById('mcVideoTitle');
+              if (ti) { ti.innerHTML = '<i class="fa-brands fa-youtube" style="color:#ef4444;"></i> ' + p.title; }
+              var me = document.getElementById('mcTutorMeta');
+              if (me) { me.innerHTML = 'Presented by <strong style="color:#38bdf8;">' + p.tutor + '</strong> (' + p.role + ') &bull; 1080p Studio Walkthrough (' + p.runtime + ')'; }
+              var sl = document.getElementById('mcStationLink');
+              if (sl) sl.href = 'video-solution.html?topic=' + p.slug;
+              var yl = document.getElementById('mcYoutubeLink');
+              if (yl) yl.href = 'https://youtu.be/' + p.ytid;
+              var jb = document.getElementById('mcJumpBar');
+              if (jb) {
+                var h = '<span class="jump-label" style="color:#94a3b8;"><i class="fa-solid fa-forward-step" style="color:#38bdf8;"></i> Lesson Benchmarks:</span> ';
+                (p.benchmarks || []).forEach(function(b) {
+                  h += '<button type="button" class="jump-btn" onclick="jumpMasterclassVideo(' + b.sec + ', this)">' + b.text + '</button> ';
+                });
+                jb.innerHTML = h;
+              }
+              document.querySelectorAll('#videoMasterclassStation .mc-part-tab').forEach(function(tb, i) {
+                if (i === idx) {
+                  tb.style.background = '#0284c7';
+                  tb.style.color = '#ffffff';
+                  tb.style.borderColor = '#38bdf8';
+                } else {
+                  tb.style.background = '#0f172a';
+                  tb.style.color = '#cbd5e1';
+                  tb.style.borderColor = '#334155';
+                }
+              });
             }
           </script>
         </section>
@@ -477,6 +513,31 @@
     </div>
 
     <!-- GOLDEN RULES -->
+    
+        <section class="revision-section mfs-visual-svg-board" aria-label="Distance – Speed – Time Triangle & Decimal Time Trap">
+          <div class="skill-card-container" style="background:#ffffff; border:2px solid #bae6fd; border-radius:16px; padding:22px 20px; box-shadow:0 6px 20px rgba(2,132,199,0.06);">
+            <div style="display:flex; align-items:center; gap:10px; margin-bottom:14px; padding-bottom:10px; border-bottom:1px solid #e2e8f0;">
+              <span style="background:#0284c7; color:#fff; font-size:0.76rem; font-weight:800; padding:4px 10px; border-radius:999px; text-transform:uppercase;">Visual Blueprint</span>
+              <h3 style="margin:0; font-size:1.08rem; font-weight:800; color:#0f172a;">Distance – Speed – Time Triangle & Decimal Time Trap</h3>
+            </div>
+            <div style="overflow-x:auto; -webkit-overflow-scrolling:touch;">
+              <svg viewBox="0 0 680 185" style="width:100%; max-width:680px; height:auto; display:block; margin:0 auto;" role="img" aria-label="Distance Speed Time formula triangle">
+          <polygon points="135,20 45,165 225,165" fill="#fef3c7" stroke="#d97706" stroke-width="3"/>
+          <line x1="90" y1="93" x2="180" y2="93" stroke="#0f172a" stroke-width="2.5"/>
+          <line x1="135" y1="93" x2="135" y2="165" stroke="#0f172a" stroke-width="2.5"/>
+          <text x="135" y="76" text-anchor="middle" font-family="Lexend,sans-serif" font-size="18" font-weight="900" fill="#dc2626">D</text>
+          <text x="102" y="142" text-anchor="middle" font-family="Lexend,sans-serif" font-size="18" font-weight="900" fill="#0284c7">S</text>
+          <text x="168" y="142" text-anchor="middle" font-family="Lexend,sans-serif" font-size="18" font-weight="900" fill="#0f766e">T</text>
+          <text x="265" y="48" font-family="Lexend,sans-serif" font-size="13" font-weight="800" fill="#0284c7">• Speed = Distance ÷ Time  |  Distance = Speed × Time</text>
+          <text x="265" y="84" font-family="Lexend,sans-serif" font-size="13" font-weight="800" fill="#0f766e">• Time = Distance ÷ Speed</text>
+          <rect x="265" y="106" width="395" height="58" rx="8" fill="#fef2f2" stroke="#dc2626" stroke-width="1.5"/>
+          <text x="278" y="128" font-family="Lexend,sans-serif" font-size="12" font-weight="800" fill="#dc2626">DECIMAL TIME TRAP: 1 hr 15 mins ≠ 1.15 hours!</text>
+          <text x="278" y="150" font-family="Lexend,sans-serif" font-size="11.5" font-weight="700" fill="#0f172a">Divide minutes by 60: 15 ÷ 60 = 0.25 → 1.25 hours.</text>
+        </svg>
+            </div>
+          </div>
+        </section>
+
     <section id="golden-rules" class="revision-section">
       <div class="section-header-row">
         <h2 class="section-title"><i class="fa-solid fa-lightbulb"></i> Golden Rules for Speed, Distance & Time</h2>
@@ -511,7 +572,7 @@
         <section id="skill-1" class="revision-section">
           <div class="mfs-topic-card">
             <div class="mfs-topic-head">
-              <h3 class="mfs-topic-title"><span class="mfs-topic-prefix">Core Skill 1:</span> Skill 1: The Speed, Distance & Time Formula Triangle (S-D-T)</h3>
+              <h3 class="mfs-topic-title"><span class="mfs-topic-prefix">Core Skill 1:</span> The Speed, Distance & Time Formula Triangle (S-D-T)</h3>
               <p class="mfs-topic-stem">Use the big triangle to find Speed, Distance, or Time with complete confidence.</p>
             </div>
             <div class="mfs-topic-body" style="padding:20px 24px;">
@@ -642,7 +703,7 @@
         <section id="skill-2" class="revision-section">
           <div class="mfs-topic-card">
             <div class="mfs-topic-head">
-              <h3 class="mfs-topic-title"><span class="mfs-topic-prefix">Core Skill 2:</span> Skill 2: Converting Minutes & Decimal Hours in Speed Calculations</h3>
+              <h3 class="mfs-topic-title"><span class="mfs-topic-prefix">Core Skill 2:</span> Converting Minutes & Decimal Hours in Speed Calculations</h3>
               <p class="mfs-topic-stem">Preventing the classic decimal time trap when given minutes.</p>
             </div>
             <div class="mfs-topic-body" style="padding:20px 24px;">
@@ -681,7 +742,7 @@
         <section id="skill-3" class="revision-section">
           <div class="mfs-topic-card">
             <div class="mfs-topic-head">
-              <h3 class="mfs-topic-title"><span class="mfs-topic-prefix">Core Skill 3:</span> Skill 3: Two-Stage Journeys & Overall Average Speed</h3>
+              <h3 class="mfs-topic-title"><span class="mfs-topic-prefix">Core Skill 3:</span> Two-Stage Journeys & Overall Average Speed</h3>
               <p class="mfs-topic-stem">Why overall average speed is Total Distance ÷ Total Time (NEVER the average of two speeds).</p>
             </div>
             <div class="mfs-topic-body" style="padding:20px 24px;">

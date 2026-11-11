@@ -897,6 +897,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/slc-extracting-information-workout.html">
 </head>
 <body>
 
@@ -968,7 +985,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 1</span>
-        <span class="block-q-desc">Question 1: Spotting Signpost Words in Speech</span>
+        <span class="block-q-desc">Spotting Signpost Words in Speech</span>
       </div>
       <div class="workout-instruction">State what the spoken signpost indicates (Key priority, Contrast, or Conclusion):</div>
       <div class="drill-grid">
@@ -1010,7 +1027,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 2</span>
-        <span class="block-q-desc">Question 2: Extracting Action Items from Spoken Dialogue</span>
+        <span class="block-q-desc">Extracting Action Items from Spoken Dialogue</span>
       </div>
       <div class="workout-instruction">Extract the specific action, person responsible, and deadline from: 'Marcus, could you ensure the medicine cabinets are audited and re-stocked before the Friday 17:00 handover?'</div>
       <div class="drill-grid">
@@ -1044,7 +1061,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 3</span>
-        <span class="block-q-desc">Question 3: Note-Taking Strategies from Spoken Briefings</span>
+        <span class="block-q-desc">Note-Taking Strategies from Spoken Briefings</span>
       </div>
       <div class="workout-instruction">Identify the best practice for capturing accurate notes during a verbal handover or meeting:</div>
       <div class="drill-grid">
@@ -1118,7 +1135,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 4</span>
-        <span class="block-q-desc">Question 4: Distinguishing Crucial Instructions from Conversational Asides</span>
+        <span class="block-q-desc">Distinguishing Crucial Instructions from Conversational Asides</span>
       </div>
       <div class="workout-instruction">Classify the verbal statement from a supervisor briefing as Core Action (C) or Conversational Aside (A):</div>
       <div class="drill-grid">
@@ -1192,7 +1209,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 5</span>
-        <span class="block-q-desc">Question 5: Verifying and Paraphrasing Complex Verbal Instructions</span>
+        <span class="block-q-desc">Verifying and Paraphrasing Complex Verbal Instructions</span>
       </div>
       <div class="workout-instruction">Formulate a paraphrase to verify understanding of the complex spoken directive:</div>
       <div class="drill-grid">

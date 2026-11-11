@@ -830,6 +830,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/decimal-basics-worksheet.html">
 </head>
 <body>
 
@@ -854,7 +871,7 @@
       </div>
       <div class="sheet-meta-badge">
         <span class="topic-name">Decimal Basics: Tenths, Hundredths & Money</span>
-        <span class="spec-tag">Pearson Edexcel: Pearson Edexcel L1 & L2 Mathematics</span>
+        <span class="spec-tag">Pearson Edexcel L1 & L2 Mathematics</span>
       </div>
     </div>
 
@@ -945,15 +962,12 @@
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Final Value =</span>
-        <div class="q-answer-input-box md"></div>
-      </div>
+      <div class="q-answer-row" style="gap:14px; flex-wrap:wrap;"><span class="q-answer-label">(a) =</span><div class="q-answer-input-box md"></div><span class="q-answer-label">(b) =</span><div class="q-answer-input-box md"></div></div>
     </div>
 
     <div class="q-card">
       <div class="q-card-head">
-        <span class="q-title">Question 4 (Workplace Application — 2 Marks)</span>
+        <span class="q-title">Question 4 (Workplace Application — 3 Marks)</span>
         <span class="q-marks">[3 Marks]</span>
       </div>
       <div class="q-stem">
@@ -968,10 +982,7 @@
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Calculated Result =</span>
-        <div class="q-answer-input-box md"></div>
-      </div>
+      <div class="q-answer-row" style="gap:14px; flex-wrap:wrap;"><span class="q-answer-label">(a) =</span><div class="q-answer-input-box md"></div><span class="q-answer-label">(b) =</span><div class="q-answer-input-box md"></div></div>
     </div>
 
     <!-- Section C: Exam-Style Problem Solving -->
@@ -999,14 +1010,14 @@
         </div>
       </div>
       <div class="q-answer-row">
-        <span class="q-answer-label">Model Solution =</span>
+        <span class="q-answer-label">Final Answer =</span>
         <div class="q-answer-input-box md"></div>
       </div>
     </div>
 
     <div class="q-card">
       <div class="q-card-head">
-        <span class="q-title">Question 6 (Level 2 Multi-Step Problem Solving — 3 Marks)</span>
+        <span class="q-title">Question 6 (Level 2 Multi-Step Problem Solving — 4 Marks)</span>
         <span class="q-marks">[4 Marks]</span>
       </div>
       <div class="q-stem">

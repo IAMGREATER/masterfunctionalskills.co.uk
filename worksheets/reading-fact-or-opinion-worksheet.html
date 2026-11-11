@@ -830,6 +830,93 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+<style id="mfs-english-ws-upgrade">
+  .eng-extract-callout {
+    display: block;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #0284c7;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin: 8px 0;
+    font-style: normal;
+    color: #0f172a;
+    line-height: 1.65;
+  }
+  .q-working-area .working-line {
+    height: 30px !important;
+    border-bottom: 1.5px dashed #94a3b8 !important;
+  }
+  .eng-structured-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    margin-top: 4px;
+  }
+  .eng-structured-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1e293b;
+  }
+  .eng-structured-box {
+    flex: 1;
+    min-width: 180px;
+    min-height: 36px;
+    border: 1.5px solid #64748b;
+    border-radius: 6px;
+    background: #ffffff;
+  }
+  .mfs-paf-spag-audit {
+    margin: 18px 0 8px;
+    border: 2px solid #0f172a;
+    border-radius: 10px;
+    padding: 14px 16px;
+    background: #f8fafc;
+    page-break-inside: avoid;
+  }
+  .mfs-paf-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 8px 0 12px;
+  }
+  .mfs-paf-cell {
+    background: #ffffff;
+    border: 1px solid #94a3b8;
+    border-radius: 6px;
+    padding: 8px 10px;
+    min-height: 46px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #334155;
+  }
+  @media (max-width: 600px) {
+    .mfs-paf-grid { grid-template-columns: 1fr; }
+    .eng-structured-line { flex-direction: column; align-items: stretch; gap: 4px; }
+  }
+</style>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/reading-fact-or-opinion-worksheet.html">
 </head>
 <body>
 
@@ -887,16 +974,18 @@
         Read the following statements from a hospital newsletter:<br>1. <em>'The new outpatient wing opened on 14th September with 24 consultation rooms.'</em><br>2. <em>'The interior design of the waiting lounge is the most soothing in the entire county.'</em><br><br>Identify which statement is a <strong>fact</strong> and which is an <strong>opinion</strong>. Give one reason for each.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Classification & Reason =</span>
-        Statement 1: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Statement 2: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Statement 1:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Statement 2: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -906,19 +995,21 @@
         <span class="q-marks">[2 Marks]</span>
       </div>
       <div class="q-stem">
-        An estates officer emails staff:<br><em>'Our energy consumption dropped by 18% following the installation of smart sensors. Everyone agrees that the new system is far superior to our previous heating setup.'</em><br><br>Extract <strong>one fact</strong> and <strong>one opinion</strong> from the email excerpt.
+        An estates officer emails staff:<span class="eng-extract-callout">'Our energy consumption dropped by 18% following the installation of smart sensors. Everyone agrees that the new system is far superior to our previous heating setup.'</span><br><br>Extract <strong>one fact</strong> and <strong>one opinion</strong> from the email excerpt.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Extracted statements =</span>
-        Fact: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Opinion: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Fact:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Opinion: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -934,20 +1025,22 @@
         <span class="q-marks">[3 Marks]</span>
       </div>
       <div class="q-stem">
-        Read this paragraph from a staff wellness campaign:<br><em>'Over 450 nurses attended our mindfulness workshop last month. Mental fatigue is an intolerable burden that destroys workplace productivity. The workshop ran for 45 minutes and offered practical breathing techniques.'</em><br><br>Identify <strong>two facts</strong> and <strong>one opinion</strong> from the text.
+        Read this paragraph from a staff wellness campaign:<span class="eng-extract-callout">'Over 450 nurses attended our mindfulness workshop last month. Mental fatigue is an intolerable burden that destroys workplace productivity. The workshop ran for 45 minutes and offered practical breathing techniques.'</span><br><br>Identify <strong>two facts</strong> and <strong>one opinion</strong> from the text.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Classified sentences =</span>
-        Facts: (1) <div class="q-answer-input-box sm"></div> (2) <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Opinion: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Facts: (1)  (2):</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Opinion: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -957,20 +1050,22 @@
         <span class="q-marks">[3 Marks]</span>
       </div>
       <div class="q-stem">
-        A union newsletter writes:<br><em>'It is an undeniable truth that management's parking charge increase is an unfair penalty on dedicated staff who arrive at 6:30 am.'</em><br><br>Explain why the phrase <em>'It is an undeniable truth that...'</em> does <strong>not</strong> make the statement a factual claim.<br>Identify the subjective language that confirms it is an opinion.
+        A union newsletter writes:<span class="eng-extract-callout">'It is an undeniable truth that management's parking charge increase is an unfair penalty on dedicated staff who arrive at 6:30 am.'</span><br><br>Explain why the phrase <em>'It is an undeniable truth that...'</em> does <strong>not</strong> make the statement a factual claim.<br>Identify the subjective language that confirms it is an opinion.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Explanation & Subjective words =</span>
-        Explanation: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Words: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Explanation:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Words: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -986,11 +1081,13 @@
         <span class="q-marks">[4 Marks]</span>
       </div>
       <div class="q-stem">
-        <strong>Text A (Trust Official Policy):</strong><br><em>'The hospital shuttle bus operates every 15 minutes between 06:00 and 22:00, carrying an average of 1,200 passengers daily at a standard return fare of £1.50.'</em><br><br><strong>Text B (User Feedback Forum):</strong><br><em>'The shuttle service is utterly unreliable and always dangerously packed during morning handovers. The £1.50 ticket price is extortionate for junior apprentices.'</em><br><br>Compare Text A and Text B. Identify two facts in Text A and two opinions in Text B.
+        <strong>Text A (Trust Official Policy):</strong><span class="eng-extract-callout">'The hospital shuttle bus operates every 15 minutes between 06:00 and 22:00, carrying an average of 1,200 passengers daily at a standard return fare of £1.50.'</span><br><br><strong>Text B (User Feedback Forum):</strong><span class="eng-extract-callout">'The shuttle service is utterly unreliable and always dangerously packed during morning handovers. The £1.50 ticket price is extortionate for junior apprentices.'</span><br><br>Compare Text A and Text B. Identify two facts in Text A and two opinions in Text B.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -998,9 +1095,9 @@
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Comparative Analysis =</span>
-        Text A Facts: (1) <div class="q-answer-input-box sm"></div> (2) <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Text B Opinions: (1) <div class="q-answer-input-box sm"></div> (2) <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Text A Facts: (1)  (2):</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Text B Opinions: (1)  (2) <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -1013,8 +1110,10 @@
         A journalist writes: <em>'The council's disgraceful waste disposal policy has completely ruined local tourism, proving that councillors care nothing for residents.'</em><br><br>A reader complains: <em>'This article is biased and presents personal opinions as proven facts.'</em><br><br>Is the reader's complaint justified?<br>Analyse the language used by the journalist, cite at least two pieces of evidence from the text, and give a clear conclusion.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -1022,10 +1121,10 @@
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Conclusion & Text Evidence =</span>
-        <div class="q-choice-pills"><span class="pills-title">Decision:</span> <span class="pill-opt">Justified</span> / <span class="pill-opt">Not Justified</span></div>
-        Evidence 1: <div class="q-answer-input-box sm"></div> | Evidence 2: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span><div class="q-choice-pills"><span class="pills-title">Decision:</span> <span class="pill-opt">Justified</span> / <span class="pill-opt">Not Justified</span></div>
+        Evidence 1:  | Evidence 2: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 

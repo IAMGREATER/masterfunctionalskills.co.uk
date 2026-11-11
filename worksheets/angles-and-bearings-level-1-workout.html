@@ -897,6 +897,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/angles-and-bearings-level-1-workout.html">
 </head>
 <body>
 
@@ -968,7 +985,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 1</span>
-        <span class="block-q-desc">Question 1: Writing 3-Figure Bearings</span>
+        <span class="block-q-desc">Writing 3-Figure Bearings</span>
       </div>
       <div class="workout-instruction">Express each direction as a standard 3-figure bearing:</div>
       <div class="drill-grid">
@@ -1042,7 +1059,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 2</span>
-        <span class="block-q-desc">Question 2: Calculating Back Bearings</span>
+        <span class="block-q-desc">Calculating Back Bearings</span>
       </div>
       <div class="workout-instruction">Calculate the return (back) bearing by adding or subtracting 180°:</div>
       <div class="drill-grid">
@@ -1100,7 +1117,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 3</span>
-        <span class="block-q-desc">Question 3: 3-Figure Compass Directions & Bearings</span>
+        <span class="block-q-desc">3-Figure Compass Directions & Bearings</span>
       </div>
       <div class="workout-instruction">Write each compass direction as a 3-figure bearing (000° to 360°):</div>
       <div class="drill-grid">
@@ -1190,7 +1207,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 4</span>
-        <span class="block-q-desc">Question 4: Reverse / Back Bearings Calculations (± 180°)</span>
+        <span class="block-q-desc">Reverse / Back Bearings Calculations (± 180°)</span>
       </div>
       <div class="workout-instruction">Add 180° if under 180°, or subtract 180° if over 180°:</div>
       <div class="drill-grid">

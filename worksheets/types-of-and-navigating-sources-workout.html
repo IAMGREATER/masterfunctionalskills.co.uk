@@ -897,6 +897,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/types-of-and-navigating-sources-workout.html">
 </head>
 <body>
 
@@ -969,7 +986,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 1</span>
-        <span class="block-q-desc">Question 1: Assessing Source Reliability</span>
+        <span class="block-q-desc">Assessing Source Reliability</span>
       </div>
       <div class="workout-instruction">State whether the source has High, Medium, or Low reliability for medical research:</div>
       <div class="drill-grid">
@@ -1011,7 +1028,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 2</span>
-        <span class="block-q-desc">Question 2: Web Navigation Features</span>
+        <span class="block-q-desc">Web Navigation Features</span>
       </div>
       <div class="workout-instruction">State which web navigation feature allows the user to perform the task:</div>
       <div class="drill-grid">
@@ -1053,7 +1070,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 3</span>
-        <span class="block-q-desc">Question 3: Primary vs Secondary Sources of Information</span>
+        <span class="block-q-desc">Primary vs Secondary Sources of Information</span>
       </div>
       <div class="workout-instruction">Classify each item as a Primary Source (first-hand testimony/raw data) or a Secondary Source (analysis/summary):</div>
       <div class="drill-grid">
@@ -1127,7 +1144,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 4</span>
-        <span class="block-q-desc">Question 4: Digital Navigation Tools & Website Architecture</span>
+        <span class="block-q-desc">Digital Navigation Tools & Website Architecture</span>
       </div>
       <div class="workout-instruction">State which navigation tool should be used for the given search task (Search bar, Site map, FAQ, Breadcrumbs, Dropdown menu):</div>
       <div class="drill-grid">
@@ -1201,7 +1218,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 5</span>
-        <span class="block-q-desc">Question 5: Evaluating Credibility & Source Reliability</span>
+        <span class="block-q-desc">Evaluating Credibility & Source Reliability</span>
       </div>
       <div class="workout-instruction">Assess the credibility of the information source (High, Moderate, or Low) and give the reason:</div>
       <div class="drill-grid">

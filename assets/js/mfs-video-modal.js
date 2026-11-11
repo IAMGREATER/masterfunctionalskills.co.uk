@@ -1379,7 +1379,7 @@
         let topic = this.getAttribute('data-topic');
         let sheetUrl = this.getAttribute('data-sheet');
         let answersUrl = this.getAttribute('data-answers');
-        let ytId = this.getAttribute('data-yt-id') || '';
+        let ytId = this.getAttribute('data-yt-id') || this.getAttribute('data-ytid') || '';
         let series = this.getAttribute('data-series') || 'Pearson Edexcel Functional Skills';
 
         if (!ytId && href) {

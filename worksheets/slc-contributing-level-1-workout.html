@@ -897,6 +897,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/slc-contributing-level-1-workout.html">
 </head>
 <body>
 
@@ -969,7 +986,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 1</span>
-        <span class="block-q-desc">Question 1: Phrasing Verbal Bridges & Transitions</span>
+        <span class="block-q-desc">Phrasing Verbal Bridges & Transitions</span>
       </div>
       <div class="workout-instruction">State the communicative function of each spoken phrase:</div>
       <div class="drill-grid">
@@ -1019,7 +1036,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 2</span>
-        <span class="block-q-desc">Question 2: Roles in Group Discussions & Meetings</span>
+        <span class="block-q-desc">Roles in Group Discussions & Meetings</span>
       </div>
       <div class="workout-instruction">Identify the functional role demonstrated in the meeting contribution (Chair/Leader, Timekeeper, Scribe, Challenger, Harmonizer):</div>
       <div class="drill-grid">
@@ -1093,7 +1110,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 3</span>
-        <span class="block-q-desc">Question 3: Contributing Relevant Points with Supporting Reasons</span>
+        <span class="block-q-desc">Contributing Relevant Points with Supporting Reasons</span>
       </div>
       <div class="workout-instruction">Identify which contribution offers strong evidence/reasoning rather than mere personal preference:</div>
       <div class="drill-grid">
@@ -1167,7 +1184,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 4</span>
-        <span class="block-q-desc">Question 4: Encouraging Contributions from Quieter Group Members</span>
+        <span class="block-q-desc">Encouraging Contributions from Quieter Group Members</span>
       </div>
       <div class="workout-instruction">Select the most effective spoken phrasing to invite participation from a reticent colleague:</div>
       <div class="drill-grid">
@@ -1241,7 +1258,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 5</span>
-        <span class="block-q-desc">Question 5: Meeting Facilitation & Moving Ideas Forward</span>
+        <span class="block-q-desc">Meeting Facilitation & Moving Ideas Forward</span>
       </div>
       <div class="workout-instruction">Select the phrase that moves a stalled meeting forward constructively:</div>
       <div class="drill-grid">

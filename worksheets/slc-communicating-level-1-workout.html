@@ -897,6 +897,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/slc-communicating-level-1-workout.html">
 </head>
 <body>
 
@@ -969,7 +986,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 1</span>
-        <span class="block-q-desc">Question 1: Vocal Mechanics Diagnostics</span>
+        <span class="block-q-desc">Vocal Mechanics Diagnostics</span>
       </div>
       <div class="workout-instruction">State the delivery technique needed to resolve the communication issue:</div>
       <div class="drill-grid">
@@ -1011,7 +1028,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 2</span>
-        <span class="block-q-desc">Question 2: Emphasizing Key Words (Intonation Shifts)</span>
+        <span class="block-q-desc">Emphasizing Key Words (Intonation Shifts)</span>
       </div>
       <div class="workout-instruction">Explain how shifting stress changes the meaning of: 'I didn't say she stole the medicine':</div>
       <div class="drill-grid">
@@ -1045,7 +1062,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 3</span>
-        <span class="block-q-desc">Question 3: Verbal vs Non-Verbal Signals in Professional Practice</span>
+        <span class="block-q-desc">Verbal vs Non-Verbal Signals in Professional Practice</span>
       </div>
       <div class="workout-instruction">Identify what the non-verbal body language communicates to colleagues or patients:</div>
       <div class="drill-grid">
@@ -1119,7 +1136,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 4</span>
-        <span class="block-q-desc">Question 4: Barriers to Effective Spoken Communication & Solutions</span>
+        <span class="block-q-desc">Barriers to Effective Spoken Communication & Solutions</span>
       </div>
       <div class="workout-instruction">Identify the communication barrier (Physical, Emotional, Linguistic, Technical) and suggest a solution:</div>
       <div class="drill-grid">
@@ -1193,7 +1210,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 5</span>
-        <span class="block-q-desc">Question 5: Constructive Feedback & Collaborative Tone</span>
+        <span class="block-q-desc">Constructive Feedback & Collaborative Tone</span>
       </div>
       <div class="workout-instruction">Select the feedback statement that demonstrates constructive workplace communication (SBI Model: Situation-Behavior-Impact):</div>
       <div class="drill-grid">

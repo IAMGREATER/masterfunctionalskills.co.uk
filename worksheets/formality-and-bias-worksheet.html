@@ -830,6 +830,93 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+<style id="mfs-english-ws-upgrade">
+  .eng-extract-callout {
+    display: block;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #0284c7;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin: 8px 0;
+    font-style: normal;
+    color: #0f172a;
+    line-height: 1.65;
+  }
+  .q-working-area .working-line {
+    height: 30px !important;
+    border-bottom: 1.5px dashed #94a3b8 !important;
+  }
+  .eng-structured-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    margin-top: 4px;
+  }
+  .eng-structured-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1e293b;
+  }
+  .eng-structured-box {
+    flex: 1;
+    min-width: 180px;
+    min-height: 36px;
+    border: 1.5px solid #64748b;
+    border-radius: 6px;
+    background: #ffffff;
+  }
+  .mfs-paf-spag-audit {
+    margin: 18px 0 8px;
+    border: 2px solid #0f172a;
+    border-radius: 10px;
+    padding: 14px 16px;
+    background: #f8fafc;
+    page-break-inside: avoid;
+  }
+  .mfs-paf-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 8px 0 12px;
+  }
+  .mfs-paf-cell {
+    background: #ffffff;
+    border: 1px solid #94a3b8;
+    border-radius: 6px;
+    padding: 8px 10px;
+    min-height: 46px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #334155;
+  }
+  @media (max-width: 600px) {
+    .mfs-paf-grid { grid-template-columns: 1fr; }
+    .eng-structured-line { flex-direction: column; align-items: stretch; gap: 4px; }
+  }
+</style>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/formality-and-bias-worksheet.html">
 </head>
 <body>
 
@@ -854,7 +941,7 @@
       </div>
       <div class="sheet-meta-badge">
         <span class="topic-name">Formality, Register & Detecting Bias</span>
-        <span class="spec-tag">Pearson Edexcel: Pearson Edexcel Functional Skills English (READING)</span>
+        <span class="spec-tag">Pearson Edexcel Functional Skills English (READING)</span>
       </div>
     </div>
 
@@ -884,19 +971,20 @@
         <span class="q-marks">[2 Marks]</span>
       </div>
       <div class="q-stem">
-        Read this extract from a local newsletter:<br><em>'Greedy council bosses are forcing through an outrageous £2.50 parking charge that will destroy our beloved park forever.'</em><br>Explain why this sentence is <strong>biased</strong> and quote <strong>two loaded words</strong> that reveal the writer's prejudice.
+        Read this extract from a local newsletter:<span class="eng-extract-callout">'Greedy council bosses are forcing through an outrageous £2.50 parking charge that will destroy our beloved park forever.'</span><br>Explain why this sentence is <strong>biased</strong> and quote <strong>two loaded words</strong> that reveal the writer's prejudice.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Bias Explanation & Two Quotes =</span>
-        Why biased: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Quotes: '<div class="q-answer-input-box sm"></div>' and '<div class="q-answer-input-box sm"></div>'
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Why biased:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Quotes: '' and '':</span><div class="eng-structured-box"></div></div></div>
       </div>
     </div>
 
@@ -909,8 +997,10 @@
         A trade union newsletter states: <em>'Greedy depot bosses are deliberately slashing shift allowances to line their own pockets.'</em><br>Explain how the writer's language indicates <strong>bias</strong> in this sentence, quoting specific words.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -933,11 +1023,13 @@
         <span class="q-marks">[3 Marks]</span>
       </div>
       <div class="q-stem">
-        Read this draft sentence from a trainee manager's letter to a client:<br><em>'Sorry our driver messed up your Tuesday delivery — we'll sort out a replacement parcel ASAP.'</em><br>(a) Identify two features that make this sentence <strong>too informal</strong> for a client letter. [1 Mark]<br>(b) Rewrite the sentence in an appropriate <strong>formal register</strong>. [1 Mark]
+        Read this draft sentence from a trainee manager's letter to a client:<span class="eng-extract-callout">'Sorry our driver messed up your Tuesday delivery — we'll sort out a replacement parcel ASAP.'</span><br>(a) Identify two features that make this sentence <strong>too informal</strong> for a client letter. [1 Mark]<br>(b) Rewrite the sentence in an appropriate <strong>formal register</strong>. [1 Mark]
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -951,15 +1043,17 @@
 
     <div class="q-card">
       <div class="q-card-head">
-        <span class="q-title">Question 4 (Exam-Style Task — 2 Marks)</span>
+        <span class="q-title">Question 4 (Exam-Style Task — 3 Marks)</span>
         <span class="q-marks">[3 Marks]</span>
       </div>
       <div class="q-stem">
-        Read this extract from a staff health guide:<br><em>'Ditch the lift and take the stairs! You'll burn calories, boost your mood, and dodge that mid-afternoon slump.'</em><br>Describe the <strong>register and tone</strong> of this extract and give <strong>one language feature</strong> that creates it.
+        Read this extract from a staff health guide:<span class="eng-extract-callout">'Ditch the lift and take the stairs! You'll burn calories, boost your mood, and dodge that mid-afternoon slump.'</span><br>Describe the <strong>register and tone</strong> of this extract and give <strong>one language feature</strong> that creates it.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -983,11 +1077,13 @@
         <span class="q-marks">[4 Marks]</span>
       </div>
       <div class="q-stem">
-        Read the promotional extract written by the Sales Director of MedTech Solutions:<br><em>'Our revolutionary CareFlow tablet system is unquestionably the most advanced clinical app ever built. Outdated paper charts are a catastrophic waste of taxpayer funds, and any care home that fails to install CareFlow immediately is putting residents in grave danger.'</em><br>Explain why this extract is <strong>biased</strong>, supporting your answer with <strong>two quotations</strong> and commenting on the writer's position. [3 Marks]
+        Read the promotional extract written by the Sales Director of MedTech Solutions:<span class="eng-extract-callout">'Our revolutionary CareFlow tablet system is unquestionably the most advanced clinical app ever built. Outdated paper charts are a catastrophic waste of taxpayer funds, and any care home that fails to install CareFlow immediately is putting residents in grave danger.'</span><br>Explain why this extract is <strong>biased</strong>, supporting your answer with <strong>two quotations</strong> and commenting on the writer's position. [3 Marks]
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -1002,15 +1098,17 @@
 
     <div class="q-card">
       <div class="q-card-head">
-        <span class="q-title">Question 6 (Level 2 Mastery Challenge — 3 Marks)</span>
+        <span class="q-title">Question 6 (Level 2 Mastery Challenge — 4 Marks)</span>
         <span class="q-marks">[4 Marks]</span>
       </div>
       <div class="q-stem">
-        Read this extract from a consumer technology review:<br><em>'While the Apex Laptop boasts a crisp 4K display and a 14-hour battery life, its £1,600 price tag and lack of USB-A ports make it difficult to recommend for budget-conscious students.'</em><br>Is this extract <strong>balanced or biased</strong>? Explain your answer with evidence from the text. [3 Marks]
+        Read this extract from a consumer technology review:<span class="eng-extract-callout">'While the Apex Laptop boasts a crisp 4K display and a 14-hour battery life, its £1,600 price tag and lack of USB-A ports make it difficult to recommend for budget-conscious students.'</span><br>Is this extract <strong>balanced or biased</strong>? Explain your answer with evidence from the text. [3 Marks]
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>

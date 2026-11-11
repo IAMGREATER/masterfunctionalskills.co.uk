@@ -897,6 +897,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/mean-median-mode-and-range-workout.html">
 </head>
 <body>
 
@@ -969,7 +986,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 1</span>
-        <span class="block-q-desc">Question 1: Calculating the Mean</span>
+        <span class="block-q-desc">Calculating the Mean</span>
       </div>
       <div class="workout-instruction">Find the sum of each data set, then divide by the number of values:</div>
       <div class="drill-grid">
@@ -1043,7 +1060,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 2</span>
-        <span class="block-q-desc">Question 2: Finding the Median and Mode</span>
+        <span class="block-q-desc">Finding the Median and Mode</span>
       </div>
       <div class="workout-instruction">Order the numbers first to find the middle value (median) and most frequent (mode):</div>
       <div class="drill-grid">
@@ -1117,7 +1134,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 3</span>
-        <span class="block-q-desc">Question 3: Calculating the Range (Measure of Consistency)</span>
+        <span class="block-q-desc">Calculating the Range (Measure of Consistency)</span>
       </div>
       <div class="workout-instruction">Range = Highest value - Lowest value:</div>
       <div class="drill-grid">
@@ -1175,7 +1192,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 4</span>
-        <span class="block-q-desc">Question 4: Reverse Mean & Frequency Table Averages (Level 2)</span>
+        <span class="block-q-desc">Reverse Mean & Frequency Table Averages (Level 2)</span>
       </div>
       <div class="workout-instruction">Work out total sums from given averages:</div>
       <div class="drill-grid">
@@ -1233,7 +1250,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 5</span>
-        <span class="block-q-desc">Question 5: Averages Selection & Reverse Mean Drills</span>
+        <span class="block-q-desc">Averages Selection & Reverse Mean Drills</span>
       </div>
       <div class="workout-instruction">Solve reverse average problems and select appropriate average:</div>
       <div class="drill-grid">

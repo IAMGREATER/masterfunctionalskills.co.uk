@@ -897,6 +897,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/addition-and-subtraction-level-1-workout.html">
 </head>
 <body>
 
@@ -968,7 +985,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 1</span>
-        <span class="block-q-desc">Question 1: Rapid Column Addition (Integers & Money)</span>
+        <span class="block-q-desc">Rapid Column Addition (Integers & Money)</span>
       </div>
       <div class="workout-instruction">Work out the sum of each calculation without a calculator:</div>
       <div class="drill-grid">
@@ -1042,7 +1059,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 2</span>
-        <span class="block-q-desc">Question 2: Multi-Digit Subtraction with Regrouping</span>
+        <span class="block-q-desc">Multi-Digit Subtraction with Regrouping</span>
       </div>
       <div class="workout-instruction">Subtract each value, showing clear decomposition/borrowing:</div>
       <div class="drill-grid">
@@ -1116,7 +1133,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 3</span>
-        <span class="block-q-desc">Question 3: Mental Arithmetic & Cash Change Drills</span>
+        <span class="block-q-desc">Mental Arithmetic & Cash Change Drills</span>
       </div>
       <div class="workout-instruction">Work out the change from £20, £50, or £100:</div>
       <div class="drill-grid">
@@ -1174,7 +1191,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 4</span>
-        <span class="block-q-desc">Question 4: Workplace Totaling & Change Calculations</span>
+        <span class="block-q-desc">Workplace Totaling & Change Calculations</span>
       </div>
       <div class="workout-instruction">Calculate the total cost or change required:</div>
       <div class="drill-grid">

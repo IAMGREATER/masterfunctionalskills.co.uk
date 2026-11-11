@@ -760,6 +760,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/coordinates-answers.html">
 </head>
 <body>
 
@@ -784,7 +801,7 @@
       </div>
       <div class="sheet-meta-badge">
         <span class="topic-name">Coordinates: Positive & Four Quadrants</span>
-        <span class="spec-tag">Pearson Edexcel: Pearson Edexcel L1 & L2 Mathematics</span>
+        <span class="spec-tag">Pearson Edexcel L1 & L2 Mathematics</span>
       </div>
     </div>
 
@@ -838,27 +855,23 @@
         <span class="ans-marks-badge">[2 Marks Total]</span>
       </div>
       <div class="ans-stem-quote">
-        Calculate the coordinates of the midpoint between point P<strong>(−4, 6)</strong> and point Q<strong>(8, −2)</strong>.
+        On a 4-quadrant site plan, Sensor P is plotted at <strong>(−5, 3)</strong>. Engineer Maya moves <strong>7 units right</strong> and <strong>6 units down</strong> to place Sensor Q.<br>State the coordinates of <strong>Sensor Q</strong> and state which quadrant it lies in.
       </div>
       <div class="mark-steps-box">
         <div class="step-title">Step-by-Step Marking Criteria:</div>
 
         <div class="step-row">
-          <span>1. Midpoint x = (−4 + 8) ÷ 2 = 4 ÷ 2 = 2.</span>
+          <span>1. Horizontal x-shift (7 right): −5 + 7 = 2; Vertical y-shift (6 down): 3 − 6 = −3.</span>
           <span class="mark-code">[M1]</span>
         </div>
         <div class="step-row">
-          <span>2. Midpoint y = (6 + −2) ÷ 2 = 4 ÷ 2 = 2.</span>
-          <span class="mark-code">[M1]</span>
-        </div>
-        <div class="step-row">
-          <span>3. Midpoint = (2, 2).</span>
+          <span>2. State coordinates Q = (2, −3) in Quadrant 4 (bottom-right).</span>
           <span class="mark-code">[A1]</span>
         </div>
       </div>
       <div class="final-award-box">
         <span class="award-label">Award Final Answer Mark:</span>
-        <span class="award-val">(2, 2)</span>
+        <span class="award-val">Q = (2, −3), Quadrant 4</span>
       </div>
       <div class="pitfall-box">
         <strong>⚠️ Common Mistake to Avoid:</strong>
@@ -988,7 +1001,7 @@
 
     <div class="ans-card">
       <div class="ans-card-head">
-        <span class="ans-q-num">Question 6 (Level 2 Multi-Step Problem Solving — 2 Marks) Model Solution</span>
+        <span class="ans-q-num">Question 6 (Level 2 Multi-Step Problem Solving — 4 Marks) Model Solution</span>
         <span class="ans-marks-badge">[4 Marks Total]</span>
       </div>
       <div class="ans-stem-quote">

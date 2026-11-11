@@ -830,6 +830,93 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+<style id="mfs-english-ws-upgrade">
+  .eng-extract-callout {
+    display: block;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #0284c7;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin: 8px 0;
+    font-style: normal;
+    color: #0f172a;
+    line-height: 1.65;
+  }
+  .q-working-area .working-line {
+    height: 30px !important;
+    border-bottom: 1.5px dashed #94a3b8 !important;
+  }
+  .eng-structured-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    margin-top: 4px;
+  }
+  .eng-structured-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1e293b;
+  }
+  .eng-structured-box {
+    flex: 1;
+    min-width: 180px;
+    min-height: 36px;
+    border: 1.5px solid #64748b;
+    border-radius: 6px;
+    background: #ffffff;
+  }
+  .mfs-paf-spag-audit {
+    margin: 18px 0 8px;
+    border: 2px solid #0f172a;
+    border-radius: 10px;
+    padding: 14px 16px;
+    background: #f8fafc;
+    page-break-inside: avoid;
+  }
+  .mfs-paf-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 8px 0 12px;
+  }
+  .mfs-paf-cell {
+    background: #ffffff;
+    border: 1px solid #94a3b8;
+    border-radius: 6px;
+    padding: 8px 10px;
+    min-height: 46px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #334155;
+  }
+  @media (max-width: 600px) {
+    .mfs-paf-grid { grid-template-columns: 1fr; }
+    .eng-structured-line { flex-direction: column; align-items: stretch; gap: 4px; }
+  }
+</style>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/common-mistakes-worksheet.html">
 </head>
 <body>
 
@@ -854,7 +941,7 @@
       </div>
       <div class="sheet-meta-badge">
         <span class="topic-name">Top 10 High-Frequency English Exam Mistakes & Fixes</span>
-        <span class="spec-tag">Pearson Edexcel: Pearson Edexcel Functional Skills English (READING)</span>
+        <span class="spec-tag">Pearson Edexcel Functional Skills English (READING)</span>
       </div>
     </div>
 
@@ -884,11 +971,13 @@
         <span class="q-marks">[2 Marks]</span>
       </div>
       <div class="q-stem">
-        Fix the comma splice and informal slang in this draft complaint sentence:<br><em>'The delivery van turned up mega late on Tuesday, it totally messed up our ward stock count.'</em>
+        Fix the comma splice and informal slang in this draft complaint sentence:<span class="eng-extract-callout">'The delivery van turned up mega late on Tuesday, it totally messed up our ward stock count.'</span>
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#7c3aed;"><i class="fa-solid fa-pen-nib"></i> Draft &amp; Polished Written Response (use full sentences, clear paragraphs &amp; accurate SPaG):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -901,15 +990,17 @@
 
     <div class="q-card">
       <div class="q-card-head">
-        <span class="q-title">Question 2 (Core Skill Application — 3 Marks)</span>
+        <span class="q-title">Question 2 (Core Skill Application — 2 Marks)</span>
         <span class="q-marks">[2 Marks]</span>
       </div>
       <div class="q-stem">
-        Correct the <strong>three SPaG errors</strong> in this sentence:<br><em>'The doctors surgery was closed on wednesday, all emergency patients was directed to A&amp;E.'</em>
+        Correct the <strong>three SPaG errors</strong> in this sentence:<span class="eng-extract-callout">'The doctors surgery was closed on wednesday, all emergency patients was directed to A&amp;E.'</span>
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#7c3aed;"><i class="fa-solid fa-pen-nib"></i> Draft &amp; Polished Written Response (use full sentences, clear paragraphs &amp; accurate SPaG):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -935,8 +1026,10 @@
         An exam source text states: <em>'Over 92% of dental nurses reported back strain before ergonomic stools were introduced. Are you still risking your spine on outdated seating?'</em><br>The exam question asks: <strong>'Give one language feature used in this extract and explain its effect. [2 Marks]'</strong><br>A candidate writes: <em>'Bold font — it catches the reader's eye and makes them read on.'</em><br>Explain <strong>two reasons</strong> why this candidate scored 0 marks, and write a full-mark model answer.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#7c3aed;"><i class="fa-solid fa-pen-nib"></i> Draft &amp; Polished Written Response (use full sentences, clear paragraphs &amp; accurate SPaG):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -954,11 +1047,13 @@
         <span class="q-marks">[3 Marks]</span>
       </div>
       <div class="q-stem">
-        Identify and correct <strong>three errors</strong> in this workplace email sentence:<br><em>'Their is no excuse for arriving late, staff could of checked the train timetable on they're phones.'</em>
+        Identify and correct <strong>three errors</strong> in this workplace email sentence:<span class="eng-extract-callout">'Their is no excuse for arriving late, staff could of checked the train timetable on they're phones.'</span>
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#7c3aed;"><i class="fa-solid fa-pen-nib"></i> Draft &amp; Polished Written Response (use full sentences, clear paragraphs &amp; accurate SPaG):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -982,11 +1077,13 @@
         <span class="q-marks">[4 Marks]</span>
       </div>
       <div class="q-stem">
-        Read this closing extract from a candidate's formal letter to an unnamed Council Environmental Health Officer (opened with <em>'Dear Sir/Madam'</em>):<br><em>'The fire exits in warehouse B was blocked by wooden pallets, this is a serious hazard, the manager should of cleared there walkways immediately. Yours sincerely, J. Patel.'</em><br>Identify and correct <strong>four distinct errors</strong> in grammar, punctuation, spelling, or letter convention. [4 Marks]
+        Read this closing extract from a candidate's formal letter to an unnamed Council Environmental Health Officer (opened with <em>'Dear Sir/Madam'</em>):<span class="eng-extract-callout">'The fire exits in warehouse B was blocked by wooden pallets, this is a serious hazard, the manager should of cleared there walkways immediately. Yours sincerely, J. Patel.'</span><br>Identify and correct <strong>four distinct errors</strong> in grammar, punctuation, spelling, or letter convention. [4 Marks]
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#7c3aed;"><i class="fa-solid fa-pen-nib"></i> Draft &amp; Polished Written Response (use full sentences, clear paragraphs &amp; accurate SPaG):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -1001,15 +1098,17 @@
 
     <div class="q-card">
       <div class="q-card-head">
-        <span class="q-title">Question 6 (Level 2 Mastery Challenge — 2 Marks)</span>
+        <span class="q-title">Question 6 (Level 2 Mastery Challenge — 4 Marks)</span>
         <span class="q-marks">[4 Marks]</span>
       </div>
       <div class="q-stem">
-        Read this short text:<br><em>'Warning: Forklift trucks operate in Aisle 6. Wear high-visibility jackets at all times.'</em><br>A student is asked to identify one <strong>language feature</strong> and writes: <em>'The word Warning is in bold.'</em> Explain why this is wrong and name one correct language feature from the extract.
+        Read this short text:<span class="eng-extract-callout">'Warning: Forklift trucks operate in Aisle 6. Wear high-visibility jackets at all times.'</span><br>A student is asked to identify one <strong>language feature</strong> and writes: <em>'The word Warning is in bold.'</em> Explain why this is wrong and name one correct language feature from the extract.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#7c3aed;"><i class="fa-solid fa-pen-nib"></i> Draft &amp; Polished Written Response (use full sentences, clear paragraphs &amp; accurate SPaG):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>

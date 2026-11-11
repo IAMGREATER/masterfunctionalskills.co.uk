@@ -830,6 +830,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/nets-worksheet.html">
 </head>
 <body>
 
@@ -886,6 +903,7 @@
       <div class="q-stem">
         A flat cardboard net consists of <strong>1 square central base</strong> surrounded by <strong>4 identical isosceles triangles</strong> attached to its four sides.<br>Name the 3D solid formed when this net is folded, and write down the number of <strong>vertices</strong> on the finished 3D solid.
       </div>
+      <div style="margin:12px 0; text-align:center;"><svg viewBox="0 0 340 105" style="max-width:340px;width:100%;height:auto;"><g fill="#e0f2fe" stroke="#0f172a" stroke-width="1.8"><rect x="25" y="38" width="26" height="26"/><rect x="51" y="38" width="26" height="26"/><rect x="77" y="38" width="26" height="26"/><rect x="103" y="38" width="26" height="26"/><rect x="51" y="12" width="26" height="26"/><rect x="77" y="64" width="26" height="26"/></g><text x="150" y="48" font-family="Lexend,sans-serif" font-size="11.5" font-weight="800" fill="#0f172a">1-4-1 Valid Cube Net Check:</text><text x="150" y="68" font-family="Lexend,sans-serif" font-size="11" fill="#0f766e">6 faces • Opposite faces separated by 1</text></svg></div>
       <div class="q-working-area">
         <div class="working-label">Show your full working out here:</div>
         <div class="working-lines-box">

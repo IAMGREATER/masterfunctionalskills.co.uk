@@ -760,6 +760,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/writing-tenses-answers.html">
 </head>
 <body>
 
@@ -784,7 +801,7 @@
       </div>
       <div class="sheet-meta-badge">
         <span class="topic-name">Consistency of Tense</span>
-        <span class="spec-tag">Pearson Edexcel: Pearson Edexcel Functional Skills English (WRITING)</span>
+        <span class="spec-tag">Pearson Edexcel Functional Skills English (WRITING)</span>
       </div>
     </div>
 
@@ -988,7 +1005,7 @@
 
     <div class="ans-card">
       <div class="ans-card-head">
-        <span class="ans-q-num">Question 6 (Level 2 Mastery Challenge — 3 Marks) Model Solution</span>
+        <span class="ans-q-num">Question 6 (Level 2 Mastery Challenge — 4 Marks) Model Solution</span>
         <span class="ans-marks-badge">[4 Marks Total]</span>
       </div>
       <div class="ans-stem-quote">

@@ -830,6 +830,93 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+<style id="mfs-english-ws-upgrade">
+  .eng-extract-callout {
+    display: block;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #0284c7;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin: 8px 0;
+    font-style: normal;
+    color: #0f172a;
+    line-height: 1.65;
+  }
+  .q-working-area .working-line {
+    height: 30px !important;
+    border-bottom: 1.5px dashed #94a3b8 !important;
+  }
+  .eng-structured-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    margin-top: 4px;
+  }
+  .eng-structured-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1e293b;
+  }
+  .eng-structured-box {
+    flex: 1;
+    min-width: 180px;
+    min-height: 36px;
+    border: 1.5px solid #64748b;
+    border-radius: 6px;
+    background: #ffffff;
+  }
+  .mfs-paf-spag-audit {
+    margin: 18px 0 8px;
+    border: 2px solid #0f172a;
+    border-radius: 10px;
+    padding: 14px 16px;
+    background: #f8fafc;
+    page-break-inside: avoid;
+  }
+  .mfs-paf-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 8px 0 12px;
+  }
+  .mfs-paf-cell {
+    background: #ffffff;
+    border: 1px solid #94a3b8;
+    border-radius: 6px;
+    padding: 8px 10px;
+    min-height: 46px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #334155;
+  }
+  @media (max-width: 600px) {
+    .mfs-paf-grid { grid-template-columns: 1fr; }
+    .eng-structured-line { flex-direction: column; align-items: stretch; gap: 4px; }
+  }
+</style>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/writing-the-exam-worksheet.html">
 </head>
 <body>
 
@@ -854,7 +941,7 @@
       </div>
       <div class="sheet-meta-badge">
         <span class="topic-name">Writing Exam Strategy, Allocation & Word Counts</span>
-        <span class="spec-tag">Pearson Edexcel: Pearson Edexcel Functional Skills English (WRITING)</span>
+        <span class="spec-tag">Pearson Edexcel Functional Skills English (WRITING)</span>
       </div>
     </div>
 
@@ -887,16 +974,17 @@
         In the 60-minute Pearson Edexcel Writing exam (36 marks total), <strong>Task 1 is a shorter functional task (15 marks)</strong> and <strong>Task 2 is an extended task (21 marks)</strong>.<br>State what percentage of total Writing marks is awarded solely for <strong>Spelling, Punctuation, and Grammar (SPaG)</strong>, and how many minutes you should allocate to Task 1 vs Task 2.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#7c3aed;"><i class="fa-solid fa-pen-nib"></i> Draft &amp; Polished Written Response (use full sentences, clear paragraphs &amp; accurate SPaG):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">SPaG % & Time Split =</span>
-        SPaG: <div class="q-answer-input-box sm"></div>% <span class="q-item-sep">|</span> Task 1: <div class="q-answer-input-box sm"></div> mins <span class="q-item-sep">|</span> Task 2: <div class="q-answer-input-box sm"></div> mins
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>SPaG: %:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Task 1:  mins:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Task 2:  mins:</span><div class="eng-structured-box"></div></div></div>
       </div>
     </div>
 
@@ -909,8 +997,10 @@
         In a 60-minute Writing exam where Task 1 is worth 21 marks (250–300 words) and Task 2 is worth 15 marks (200–250 words), how should you divide your 60 minutes, and why?
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#7c3aed;"><i class="fa-solid fa-pen-nib"></i> Draft &amp; Polished Written Response (use full sentences, clear paragraphs &amp; accurate SPaG):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -933,11 +1023,13 @@
         <span class="q-marks">[3 Marks]</span>
       </div>
       <div class="q-stem">
-        Read this Level 1 exam prompt:<br><em>'Your local park has become littered and the children's swings are damaged. Write an email (150–200 words) to Councillor Green explaining the problems, how they affect local families, and what the council should do.'</em><br>Show the exact 5-step exam execution plan.
+        Read this Level 1 exam prompt:<span class="eng-extract-callout">'Your local park has become littered and the children's swings are damaged. Write an email (150–200 words) to Councillor Green explaining the problems, how they affect local families, and what the council should do.'</span><br>Show the exact 5-step exam execution plan.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#7c3aed;"><i class="fa-solid fa-pen-nib"></i> Draft &amp; Polished Written Response (use full sentences, clear paragraphs &amp; accurate SPaG):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -955,11 +1047,13 @@
         <span class="q-marks">[3 Marks]</span>
       </div>
       <div class="q-stem">
-        A student wrote a 260-word formal letter that covered all the prompt bullets well, but lost 6 out of 9 SPaG marks because they joined almost every pair of sentences with a comma (comma splices).<br>Repair the three comma splices in their paragraph below:<br><em>'The community library is a vital hub for elderly residents, it provides free internet access and warm reading rooms, however the council plans to cut its funding by half, this will force the library to close on Saturdays.'</em>
+        A student wrote a 260-word formal letter that covered all the prompt bullets well, but lost 6 out of 9 SPaG marks because they joined almost every pair of sentences with a comma (comma splices).<br>Repair the three comma splices in their paragraph below:<span class="eng-extract-callout">'The community library is a vital hub for elderly residents, it provides free internet access and warm reading rooms, however the council plans to cut its funding by half, this will force the library to close on Saturdays.'</span>
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#7c3aed;"><i class="fa-solid fa-pen-nib"></i> Draft &amp; Polished Written Response (use full sentences, clear paragraphs &amp; accurate SPaG):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -986,8 +1080,10 @@
         Compare why Draft A scores only 8/21 (Fail) while Draft B scores 19/21 (Distinction-level Pass) on the same Level 2 report task about staff car park congestion.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#7c3aed;"><i class="fa-solid fa-pen-nib"></i> Draft &amp; Polished Written Response (use full sentences, clear paragraphs &amp; accurate SPaG):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -1009,8 +1105,10 @@
         Read this exam prompt: <em>'Write a report (250–300 words) for your Retail Store Manager on ways to reduce single-use plastic packaging in the store.'</em><br>Write out the <strong>5-item Examiner Tick-List</strong> showing the exact Format headers, Discourse markers, Complex sentence starter, Colon, and Semicolon you will include in this report.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#7c3aed;"><i class="fa-solid fa-pen-nib"></i> Draft &amp; Polished Written Response (use full sentences, clear paragraphs &amp; accurate SPaG):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>

@@ -897,6 +897,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/slc-responding-level-1-workout.html">
 </head>
 <body>
 
@@ -969,7 +986,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 1</span>
-        <span class="block-q-desc">Question 1: Professional Q&A Opening Phrases</span>
+        <span class="block-q-desc">Professional Q&A Opening Phrases</span>
       </div>
       <div class="workout-instruction">Select the most professional response opening:</div>
       <div class="drill-grid">
@@ -1003,7 +1020,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 2</span>
-        <span class="block-q-desc">Question 2: Constructive Responses to Skepticism</span>
+        <span class="block-q-desc">Constructive Responses to Skepticism</span>
       </div>
       <div class="workout-instruction">State how to respond constructively to: 'Your proposed rota will never work because nobody wants to work weekends.'</div>
       <div class="drill-grid">
@@ -1029,7 +1046,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 3</span>
-        <span class="block-q-desc">Question 3: Question 2: Active Listening & Verbal Affirmations</span>
+        <span class="block-q-desc">Active Listening & Verbal Affirmations</span>
       </div>
       <div class="workout-instruction">Identify the verbal affirmation or active listening response (Paraphrase, Summarise, Clarify, Validate):</div>
       <div class="drill-grid">
@@ -1103,7 +1120,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 4</span>
-        <span class="block-q-desc">Question 4: Question 3: Responding to Feedback with Professional Grace</span>
+        <span class="block-q-desc">Responding to Feedback with Professional Grace</span>
       </div>
       <div class="workout-instruction">Select the response that demonstrates growth mindset and emotional intelligence:</div>
       <div class="drill-grid">
@@ -1177,7 +1194,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 5</span>
-        <span class="block-q-desc">Question 5: Question 4: De-escalating Heated Workplace Discussions</span>
+        <span class="block-q-desc">De-escalating Heated Workplace Discussions</span>
       </div>
       <div class="workout-instruction">Identify the de-escalation technique used (Lowering vocal volume, Tactical pause, Reframing, Finding common ground):</div>
       <div class="drill-grid">
@@ -1251,7 +1268,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 6</span>
-        <span class="block-q-desc">Question 6: Tactful Disagreement & Constructive Counterproposals</span>
+        <span class="block-q-desc">Tactful Disagreement & Constructive Counterproposals</span>
       </div>
       <div class="workout-instruction">Formulate a tactful professional disagreement:</div>
       <div class="drill-grid">

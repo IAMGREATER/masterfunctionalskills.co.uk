@@ -897,6 +897,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/weight-level-1-workout.html">
 </head>
 <body>
 
@@ -969,7 +986,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 1</span>
-        <span class="block-q-desc">Question 1: Metric Mass Conversions</span>
+        <span class="block-q-desc">Metric Mass Conversions</span>
       </div>
       <div class="workout-instruction">Convert each mass into the specified unit:</div>
       <div class="drill-grid">
@@ -1043,7 +1060,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 2</span>
-        <span class="block-q-desc">Question 2: Practical Scaling and Batch Portions</span>
+        <span class="block-q-desc">Practical Scaling and Batch Portions</span>
       </div>
       <div class="workout-instruction">Work out the total mass or number of portions:</div>
       <div class="drill-grid">
@@ -1085,7 +1102,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 3</span>
-        <span class="block-q-desc">Question 3: Grams, Kilograms & Tonnes Conversions</span>
+        <span class="block-q-desc">Grams, Kilograms & Tonnes Conversions</span>
       </div>
       <div class="workout-instruction">Convert between metric weight units (1 tonne = 1,000 kg; 1 kg = 1,000 g):</div>
       <div class="drill-grid">
@@ -1175,7 +1192,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 4</span>
-        <span class="block-q-desc">Question 4: Workplace Load Limits & Baggage Allowances</span>
+        <span class="block-q-desc">Workplace Load Limits & Baggage Allowances</span>
       </div>
       <div class="workout-instruction">Calculate total weights and check against threshold limits:</div>
       <div class="drill-grid">

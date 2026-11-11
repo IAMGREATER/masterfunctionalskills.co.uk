@@ -194,8 +194,30 @@
     .btn-quick-call:hover {
       background: var(--navy);
     }
+    .contact-form-row-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    @media (max-width: 560px) {
+      .contact-form-row-2 {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+      .contact-card {
+        padding: 22px 16px;
+      }
+      .btn-quick-chat {
+        min-width: 0;
+        flex: 1 1 100%;
+      }
+      .contact-hero h1 {
+        font-size: 1.9rem;
+      }
+    }
   </style>
   <link rel="stylesheet" href="assets/css/mfs-mobile.css?v=20261024c">
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/contact-us.html">
 </head>
 <body>
 
@@ -462,13 +484,13 @@
         <h2 style="font-size:1.35rem; color:var(--navy-dark); margin-bottom:8px;">Send Us a Message</h2>
         <p style="font-size:0.88rem; color:var(--text-secondary); margin-bottom:24px;">Fill out the form below and an advisor will respond within 24 hours.</p>
 
-        <form action="#" method="post" onsubmit="event.preventDefault(); alert('Thank you for reaching out! A specialist advisor will be in touch shortly.');">
+        <form id="mfsContactForm" action="mailto:support@masterfunctionalskills.co.uk" method="get" onsubmit="return submitMfsEnquiry(event);">
           <div class="form-group">
             <label class="form-label" for="fullName">Full Name *</label>
             <input type="text" id="fullName" class="form-input" placeholder="e.g. Sarah Jenkins" required>
           </div>
 
-          <div style="display:grid; grid-template-columns:1fr 1fr; gap:16px;">
+          <div class="contact-form-row-2">
             <div class="form-group">
               <label class="form-label" for="email">Email Address *</label>
               <input type="email" id="email" class="form-input" placeholder="you@example.com" required>
@@ -500,7 +522,47 @@
           <button type="submit" class="btn-submit">
             <i class="fa-solid fa-paper-plane"></i> Send Enquiry
           </button>
+          <div id="mfsContactConfirm" style="display:none; margin-top:16px; padding:18px; border-radius:12px; background:#ecfdf5; border:1.5px solid #10b981; color:#065f46;">
+            <div style="font-weight:800; font-size:0.98rem; margin-bottom:6px;"><i class="fa-solid fa-circle-check" style="color:#059669;"></i> Ready to Send Directly to Our Specialist Team</div>
+            <p style="font-size:0.86rem; margin:0 0 12px; line-height:1.5; color:#064e3b;">Choose WhatsApp for our fastest response (usually under 30 minutes during opening hours) or send via your email app:</p>
+            <div style="display:flex; gap:10px; flex-wrap:wrap;">
+              <a id="mfsConfirmWaBtn" href="https://wa.me/447564525425" target="_blank" rel="noopener" style="flex:1 1 200px; padding:11px 14px; border-radius:9px; background:#16a34a; color:#fff; text-decoration:none; font-weight:800; font-size:0.88rem; text-align:center;"><i class="fa-brands fa-whatsapp"></i> Send via WhatsApp Now</a>
+              <a id="mfsConfirmMailBtn" href="mailto:support@masterfunctionalskills.co.uk" style="flex:1 1 200px; padding:11px 14px; border-radius:9px; background:#0f172a; color:#fff; text-decoration:none; font-weight:800; font-size:0.88rem; text-align:center;"><i class="fa-solid fa-envelope"></i> Open in Email App</a>
+            </div>
+          </div>
         </form>
+        <script>
+          function submitMfsEnquiry(e) {
+            e.preventDefault();
+            var name = (document.getElementById('fullName').value || '').trim();
+            var email = (document.getElementById('email').value || '').trim();
+            var phone = (document.getElementById('phone').value || '').trim() || 'Not provided';
+            var subjSel = document.getElementById('subject');
+            var topic = subjSel && subjSel.options[subjSel.selectedIndex] ? subjSel.options[subjSel.selectedIndex].text : 'General Enquiry';
+            var msg = (document.getElementById('message').value || '').trim();
+            // Clean plain-text lines (strictly zero stars or hashtags)
+            var cleanTopic = topic.replace(/[*#]/g, '');
+            var cleanBody = [
+              'Master Functional Skills Enquiry',
+              'Name: ' + name.replace(/[*#]/g, ''),
+              'Email: ' + email.replace(/[*#]/g, ''),
+              'Phone: ' + phone.replace(/[*#]/g, ''),
+              'Topic: ' + cleanTopic,
+              '',
+              'Message:',
+              msg.replace(/[*#]/g, '')
+            ].join('\n');
+            var waUrl = 'https://wa.me/447564525425?text=' + encodeURIComponent(cleanBody);
+            var mailSubject = 'MFS Enquiry - ' + cleanTopic + ' (' + name.replace(/[*#]/g, '') + ')';
+            var mailUrl = 'mailto:support@masterfunctionalskills.co.uk?subject=' + encodeURIComponent(mailSubject) + '&body=' + encodeURIComponent(cleanBody);
+            document.getElementById('mfsConfirmWaBtn').href = waUrl;
+            document.getElementById('mfsConfirmMailBtn').href = mailUrl;
+            var box = document.getElementById('mfsContactConfirm');
+            box.style.display = 'block';
+            window.open(waUrl, '_blank', 'noopener');
+            return false;
+          }
+        </script>
       </div>
 
     </div>

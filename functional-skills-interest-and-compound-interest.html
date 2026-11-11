@@ -23,6 +23,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="assets/css/mfs-revision.css?v=20261024c">
   <link rel="stylesheet" href="assets/css/mfs-mobile.css?v=20261024c">
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/functional-skills-interest-and-compound-interest.html">
 </head>
 <body>
 
@@ -378,65 +379,66 @@
         </div>
 
         <!-- TOPIC VIDEO WALKTHROUGH STATION -->
-        <!-- AI TUTOR SUBI VIDEO MASTERCLASS STATION -->
         <section id="video-station" class="revision-section" style="margin-bottom: 32px;">
           <div id="videoMasterclassStation" style="position:relative; border-radius:14px; overflow:hidden; background:#070d1e; box-shadow:0 10px 30px rgba(0,0,0,0.35);">
-            <div class="video-exemplar-head" style="background:#070d1e; border: 2px solid #0284c7; border-radius:14px 14px 0 0; padding:18px 22px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+            
+            <div class="video-exemplar-head" style="background:#070d1e; border: 2px solid #0284c7;  border-radius:14px 14px 0 0; padding:18px 22px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
               <div style="display:flex; align-items:center; gap:14px;">
-                <img src="assets/img/avatars/tutor-subi.jpg" alt="Subi AI Specialist Tutor" style="width:52px; height:52px; border-radius:50%; border:2px solid #38bdf8; object-fit:cover;">
+                <img id="mcTutorAvatar" src="assets/img/avatars/subi-tutor-portrait.png" alt="Subi MFS Specialist Tutor" style="width:52px; height:52px; border-radius:50%; border:2px solid #38bdf8; object-fit:cover;">
                 <div>
-                  <div style="color:#ffffff; font-size:1.18rem; font-weight:800; display:flex; align-items:center; gap:8px;">
-                    <i class="fa-brands fa-youtube" style="color:#ef4444;"></i> Simple and Compound Interest Masterclass
+                  <div id="mcVideoTitle" style="color:#ffffff; font-size:1.18rem; font-weight:800; display:flex; align-items:center; gap:8px;">
+                    <i class="fa-brands fa-youtube" style="color:#ef4444;"></i> Simple &amp; Compound Interest Masterclass
                   </div>
-                  <div style="color:#94a3b8; font-size:0.88rem; font-weight:600; margin-top:3px;">
-                    Presented by <strong style="color:#38bdf8;">Subi</strong> (MFS Lead Specialist) &bull; 1080p Studio Walkthrough (5m 39s)
+                  <div id="mcTutorMeta" style="color:#94a3b8; font-size:0.88rem; font-weight:600; margin-top:3px;">
+                    Presented by <strong style="color:#38bdf8;">Subi</strong> (MFS Lead Examiner & Curriculum Specialist) &bull; 1080p Studio Walkthrough (5m 43s)
                   </div>
                 </div>
               </div>
               <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
-                <span class="mfs-pill-l1">Level 1 &amp; 2</span>
+                <span class="mfs-pill-l1">Level 2</span>
                 <span class="mfs-pill-board">Pearson Edexcel</span>
                 <span class="mfs-pill-board" style="background:#059669; color:#fff;">HD 1080p</span>
               </div>
             </div>
 
             <div class="video-screen-wrap" style="position:relative; width:100%; aspect-ratio:16/9; background:#000; overflow:hidden; border-left:2px solid #0284c7; border-right:2px solid #0284c7; border-radius:0; margin-bottom:0;">
-              <iframe id="topicMasterclassIframe" style="position:absolute; top:0; left:0; width:100%; height:100%; border:0; display:block;" src="https://www.youtube-nocookie.com/embed/c7QyZ05q42A?rel=0&enablejsapi=1" title="Masterclass Station" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+              <iframe id="topicMasterclassIframe" data-ytid="c7QyZ05q42A" style="position:absolute; top:0; left:0; width:100%; height:100%; border:0; display:block;" src="https://www.youtube-nocookie.com/embed/c7QyZ05q42A?rel=0&amp;enablejsapi=1" title="Simple &amp; Compound Interest Masterclass" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
             </div>
 
             <!-- JUMP BENCHMARKS BAR -->
-            <div class="video-jump-bar" style="background:#0f172a; border:2px solid #0284c7; border-top:1px solid #1e3a8a; border-radius:0; padding:12px 18px; margin-bottom:0;">
+            <div class="video-jump-bar" id="mcJumpBar" style="background:#0f172a; border:2px solid #0284c7; border-top:1px solid #1e3a8a; border-radius:0; padding:12px 18px; margin-bottom:0;">
               <span class="jump-label" style="color:#94a3b8;"><i class="fa-solid fa-forward-step" style="color:#38bdf8;"></i> Lesson Benchmarks:</span>
-              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(0, this)">0:00 Masterclass Briefing & Specifica...</button>
-              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(46, this)">0:46 Core Skill 1: Simple Interest vs...</button>
-              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(136, this)">2:16 Core Skill 2: Annual Depreciatio...</button>
-              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(205, this)">3:25 Worked Exam Model: Ambulance Fle...</button>
-              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(284, this)">4:44 Examiner Traps & Revision Checklist</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(0, this)">0:00 Briefing &amp; Objectives</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(47, this)">0:47 Simple Interest</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(84, this)">1:24 Compound Interest Formula</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(149, this)">2:29 Worked Exam Question</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(240, this)">4:00 Your Turn! Practice Challenge</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(282, this)">4:42 Watch Out! Examiner Traps</button>
             </div>
 
             <!-- PLAYER FOOTER & EXTERNAL LINKS -->
             <div style="background:#070d1e; border:2px solid #0284c7; border-top:1px solid #1e3a8a; border-radius:0 0 14px 14px; padding:10px 18px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;">
-              <span style="font-size:0.82rem; color:#94a3b8;"><i class="fa-solid fa-shield-halved" style="color:#38bdf8;"></i> Pearson Edexcel &amp; City &amp; Guilds Syllabus Aligned</span>
-              <div style="display:flex; gap:12px; align-items:center;">
-                <a href="video-solution.html?topic=simple-and-compound-interest" target="_blank" rel="noopener" style="font-size:0.82rem; color:#38bdf8; text-decoration:none; font-weight:700;"><i class="fa-solid fa-up-right-from-square"></i> Open in Video Station</a>
-                <a href="https://youtu.be/c7QyZ05q42A" target="_blank" rel="noopener" style="font-size:0.82rem; color:#ef4444; text-decoration:none; font-weight:700;"><i class="fa-brands fa-youtube"></i> Watch on YouTube</a>
-                <a href="worksheets/interest-and-compound-interest-worksheet.html" target="_blank" rel="noopener" style="font-size:0.82rem; color:#10b981; text-decoration:none; font-weight:700;"><i class="fa-regular fa-file-pdf"></i> Practice Questions</a>
-                <a href="worksheets/interest-and-compound-interest-answers.html" target="_blank" rel="noopener" style="font-size:0.82rem; color:#fbbf24; text-decoration:none; font-weight:700;"><i class="fa-solid fa-check"></i> Model Answers</a>
+              <span style="font-size:0.82rem; color:#94a3b8;"><i class="fa-solid fa-shield-halved" style="color:#38bdf8;"></i> Pearson Edexcel &amp; City &amp; Guilds Level 2 Aligned</span>
+              <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+                <a id="mcStationLink" href="video-solution.html?topic=simple-and-compound-interest" target="_blank" rel="noopener" style="font-size:0.82rem; color:#38bdf8; text-decoration:none; font-weight:700;"><i class="fa-solid fa-up-right-from-square"></i> Open in Video Station</a>
+                <a id="mcYoutubeLink" href="https://youtu.be/c7QyZ05q42A" target="_blank" rel="noopener" style="font-size:0.82rem; color:#ef4444; text-decoration:none; font-weight:700;"><i class="fa-brands fa-youtube"></i> Watch on YouTube</a>
               </div>
             </div>
           </div>
 
           <script>
+            window.__mfsMasterclassParts = [{"num": 15, "slug": "simple-and-compound-interest", "title": "Simple & Compound Interest Masterclass", "tutor": "Subi", "role": "MFS Lead Examiner & Curriculum Specialist", "avatar": "assets/img/avatars/subi-tutor-portrait.png", "ytid": "c7QyZ05q42A", "runtime": "5m 43s", "default_start": 0, "benchmarks": [{"sec": 0, "text": "0:00 Briefing & Objectives"}, {"sec": 47, "text": "0:47 Simple Interest"}, {"sec": 84, "text": "1:24 Compound Interest Formula"}, {"sec": 149, "text": "2:29 Worked Exam Question"}, {"sec": 240, "text": "4:00 Your Turn! Practice Challenge"}, {"sec": 282, "text": "4:42 Watch Out! Examiner Traps"}]}];
             function jumpMasterclassVideo(seconds, btn) {
               if (btn && btn.blur) btn.blur();
-              var video = document.getElementById('topicMasterclassPlayer');
-              if (video) {
-                video.currentTime = seconds;
-                video.play().catch(function(e){ console.log('Autoplay:', e); });
-              } else {
-                var iframe = document.getElementById('topicMasterclassIframe');
-                if (iframe) {
-                  iframe.src = "https://www.youtube-nocookie.com/embed/c7QyZ05q42A?rel=0&autoplay=1&enablejsapi=1&start=" + seconds;
+              var iframe = document.getElementById('topicMasterclassIframe');
+              if (iframe) {
+                var ytid = iframe.getAttribute('data-ytid');
+                if (!ytid) {
+                  var m = (iframe.src || '').match(/embed[/]([a-zA-Z0-9_-]+)/);
+                  ytid = m ? m[1] : '';
+                }
+                if (ytid) {
+                  iframe.src = 'https://www.youtube-nocookie.com/embed/' + ytid + '?rel=0&autoplay=1&enablejsapi=1&start=' + seconds;
                 }
               }
               var btns = document.querySelectorAll('#videoMasterclassStation .video-jump-bar .jump-btn');
@@ -454,12 +456,46 @@
                 }
               });
             }
-          
-            if (window.location.protocol === 'file:') {
-              var wrap = document.querySelector('#videoMasterclassStation .video-screen-wrap');
-              if (wrap) {
-                wrap.innerHTML = '<video id="topicMasterclassPlayer" controls playsinline poster="assets/img/simple-and-compound-interest-subi-poster.png" style="width:100%; height:100%; object-fit:contain; background:#000; display:block;"><source src="assets/video/subi-simple-and-compound-interest-walkthrough.mp4" type="video/mp4">' + ("<track default kind="chapters" label="Lesson Chapters" srclang="en" src="assets/video/subi-simple-and-compound-interest-chapters.vtt">") + 'Your browser does not support the video tag.</video>';
+            function switchMasterclassPart(idx, tabBtn) {
+              var parts = window.__mfsMasterclassParts || [];
+              var p = parts[idx];
+              if (!p) return;
+              var iframe = document.getElementById('topicMasterclassIframe');
+              if (iframe) {
+                iframe.setAttribute('data-ytid', p.ytid);
+                var st = p.default_start > 0 ? '&start=' + p.default_start : '';
+                iframe.src = 'https://www.youtube-nocookie.com/embed/' + p.ytid + '?rel=0&autoplay=1&enablejsapi=1' + st;
+                iframe.title = p.title;
               }
+              var av = document.getElementById('mcTutorAvatar');
+              if (av) { av.src = p.avatar; av.alt = p.tutor + ' MFS Specialist Tutor'; }
+              var ti = document.getElementById('mcVideoTitle');
+              if (ti) { ti.innerHTML = '<i class="fa-brands fa-youtube" style="color:#ef4444;"></i> ' + p.title; }
+              var me = document.getElementById('mcTutorMeta');
+              if (me) { me.innerHTML = 'Presented by <strong style="color:#38bdf8;">' + p.tutor + '</strong> (' + p.role + ') &bull; 1080p Studio Walkthrough (' + p.runtime + ')'; }
+              var sl = document.getElementById('mcStationLink');
+              if (sl) sl.href = 'video-solution.html?topic=' + p.slug;
+              var yl = document.getElementById('mcYoutubeLink');
+              if (yl) yl.href = 'https://youtu.be/' + p.ytid;
+              var jb = document.getElementById('mcJumpBar');
+              if (jb) {
+                var h = '<span class="jump-label" style="color:#94a3b8;"><i class="fa-solid fa-forward-step" style="color:#38bdf8;"></i> Lesson Benchmarks:</span> ';
+                (p.benchmarks || []).forEach(function(b) {
+                  h += '<button type="button" class="jump-btn" onclick="jumpMasterclassVideo(' + b.sec + ', this)">' + b.text + '</button> ';
+                });
+                jb.innerHTML = h;
+              }
+              document.querySelectorAll('#videoMasterclassStation .mc-part-tab').forEach(function(tb, i) {
+                if (i === idx) {
+                  tb.style.background = '#0284c7';
+                  tb.style.color = '#ffffff';
+                  tb.style.borderColor = '#38bdf8';
+                } else {
+                  tb.style.background = '#0f172a';
+                  tb.style.color = '#cbd5e1';
+                  tb.style.borderColor = '#334155';
+                }
+              });
             }
           </script>
         </section>
@@ -514,7 +550,7 @@
         <section id="skill-1" class="revision-section">
           <div class="mfs-topic-card">
             <div class="mfs-topic-head">
-              <h3 class="mfs-topic-title"><span class="mfs-topic-prefix">Core Skill 1:</span> Skill 1: Year-by-Year vs Multiplier Method for Compound Interest</h3>
+              <h3 class="mfs-topic-title"><span class="mfs-topic-prefix">Core Skill 1:</span> Year-by-Year vs Multiplier Method for Compound Interest</h3>
               <p class="mfs-topic-stem">Two reliable methods for non-calculator and calculator papers.</p>
             </div>
             <div class="mfs-topic-body" style="padding:20px 24px;">
@@ -600,7 +636,7 @@
         <section id="skill-2" class="revision-section">
           <div class="mfs-topic-card">
             <div class="mfs-topic-head">
-              <h3 class="mfs-topic-title"><span class="mfs-topic-prefix">Core Skill 2:</span> Skill 2: Simple Interest vs Compound Interest Direct Comparison</h3>
+              <h3 class="mfs-topic-title"><span class="mfs-topic-prefix">Core Skill 2:</span> Simple Interest vs Compound Interest Direct Comparison</h3>
               <p class="mfs-topic-stem">Why compound interest grows faster over multi-year terms.</p>
             </div>
             <div class="mfs-topic-body" style="padding:20px 24px;">
@@ -638,7 +674,7 @@
         <section id="skill-3" class="revision-section">
           <div class="mfs-topic-card">
             <div class="mfs-topic-head">
-              <h3 class="mfs-topic-title"><span class="mfs-topic-prefix">Core Skill 3:</span> Skill 3: Compound Depreciation (Decreasing Value Over Time)</h3>
+              <h3 class="mfs-topic-title"><span class="mfs-topic-prefix">Core Skill 3:</span> Compound Depreciation (Decreasing Value Over Time)</h3>
               <p class="mfs-topic-stem">Using a subtraction multiplier (1 - r)ⁿ for vehicle and equipment depreciation.</p>
             </div>
             <div class="mfs-topic-body" style="padding:20px 24px;">

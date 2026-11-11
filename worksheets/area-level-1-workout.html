@@ -897,6 +897,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/area-level-1-workout.html">
 </head>
 <body>
 
@@ -970,7 +987,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 1</span>
-        <span class="block-q-desc">Question 1: Area of Rectangles and Squares</span>
+        <span class="block-q-desc">Area of Rectangles and Squares</span>
       </div>
       <div class="workout-instruction">Work out the area of each shape (Length × Width):</div>
       <div class="drill-grid">
@@ -1044,7 +1061,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 2</span>
-        <span class="block-q-desc">Question 2: Area of Triangles & Parallelograms</span>
+        <span class="block-q-desc">Area of Triangles & Parallelograms</span>
       </div>
       <div class="workout-instruction">Calculate the area ((Base × Height) ÷ 2 for triangles):</div>
       <div class="drill-grid">
@@ -1118,7 +1135,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 3</span>
-        <span class="block-q-desc">Question 3: Area of Compound L-Shapes & Circles</span>
+        <span class="block-q-desc">Area of Compound L-Shapes & Circles</span>
       </div>
       <div class="workout-instruction">Split compound shapes into rectangles or use Area = πr² (π ≈ 3.142):</div>
       <div class="drill-grid">
@@ -1192,7 +1209,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 4</span>
-        <span class="block-q-desc">Question 4: Reverse Area & Practical Costing Drills</span>
+        <span class="block-q-desc">Reverse Area & Practical Costing Drills</span>
       </div>
       <div class="workout-instruction">Find the missing dimension or calculate material packs required:</div>
       <div class="drill-grid">

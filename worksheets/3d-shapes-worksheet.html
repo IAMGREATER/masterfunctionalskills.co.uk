@@ -830,6 +830,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/3d-shapes-worksheet.html">
 </head>
 <body>
 
@@ -854,7 +871,7 @@
       </div>
       <div class="sheet-meta-badge">
         <span class="topic-name">3D Solids: Faces, Edges & Vertices</span>
-        <span class="spec-tag">Pearson Edexcel: Pearson Edexcel L1 & L2 Mathematics</span>
+        <span class="spec-tag">Pearson Edexcel L1 & L2 Mathematics</span>
       </div>
     </div>
 
@@ -886,6 +903,7 @@
       <div class="q-stem">
         An architectural glass roof lantern is shaped as a <strong>square-based pyramid</strong>.<br>Calculate the sum of its <strong>faces, edges, and vertices</strong>.
       </div>
+      <div style="margin:12px 0; text-align:center;"><svg viewBox="0 0 360 110" style="max-width:360px;width:100%;height:auto;"><rect x="25" y="38" width="65" height="45" fill="#e0f2fe" stroke="#0f172a" stroke-width="1.8"/><polygon points="25,38 42,24 107,24 90,38" fill="#bae6fd" stroke="#0f172a" stroke-width="1.8"/><polygon points="145,83 195,83 170,34" fill="#ccfbf1" stroke="#0f172a" stroke-width="1.8"/><ellipse cx="275" cy="36" rx="30" ry="9" fill="#fef3c7" stroke="#0f172a" stroke-width="1.8"/><rect x="245" y="36" width="60" height="44" fill="#fef3c7" stroke="#0f172a" stroke-width="1.8"/><ellipse cx="275" cy="80" rx="30" ry="9" fill="#fde68a" stroke="#0f172a" stroke-width="1.8"/></svg></div>
       <div class="q-working-area">
         <div class="working-label">Show your full working out here:</div>
         <div class="working-lines-box">
@@ -916,10 +934,7 @@
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Answer =</span>
-        <div class="q-answer-input-box md"></div>
-      </div>
+      <div class="q-answer-row" style="gap:14px; flex-wrap:wrap;"><span class="q-answer-label">(a) =</span><div class="q-answer-input-box md"></div><span class="q-answer-label">(b) =</span><div class="q-answer-input-box md"></div></div>
     </div>
 
     <!-- Section B: Everyday & Workplace Maths -->
@@ -945,10 +960,7 @@
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Final Value =</span>
-        <div class="q-answer-input-box md"></div>
-      </div>
+      <div class="q-answer-row" style="gap:14px; flex-wrap:wrap;"><span class="q-answer-label">(a) =</span><div class="q-answer-input-box md"></div><span class="q-answer-label">(b) =</span><div class="q-answer-input-box md"></div></div>
     </div>
 
     <div class="q-card">
@@ -968,10 +980,7 @@
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Calculated Result =</span>
-        <div class="q-answer-input-box md"></div>
-      </div>
+      <div class="q-answer-row" style="gap:14px; flex-wrap:wrap;"><span class="q-answer-label">(a) =</span><div class="q-answer-input-box md"></div><span class="q-answer-label">(b) =</span><div class="q-answer-input-box md"></div></div>
     </div>
 
     <!-- Section C: Exam-Style Problem Solving -->
@@ -999,14 +1008,14 @@
         </div>
       </div>
       <div class="q-answer-row">
-        <span class="q-answer-label">Model Solution =</span>
+        <span class="q-answer-label">Final Answer =</span>
         <div class="q-answer-input-box md"></div>
       </div>
     </div>
 
     <div class="q-card">
       <div class="q-card-head">
-        <span class="q-title">Question 6 (Level 2 Multi-Step Problem Solving — 3 Marks)</span>
+        <span class="q-title">Question 6 (Level 2 Multi-Step Problem Solving — 4 Marks)</span>
         <span class="q-marks">[4 Marks]</span>
       </div>
       <div class="q-stem">

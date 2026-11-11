@@ -23,6 +23,7 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <link rel="stylesheet" href="assets/css/mfs-revision.css?v=20261024c">
   <link rel="stylesheet" href="assets/css/mfs-mobile.css?v=20261024c">
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/functional-skills-formulas.html">
 </head>
 <body>
 
@@ -378,65 +379,66 @@
         </div>
 
         <!-- TOPIC VIDEO WALKTHROUGH STATION -->
-        <!-- AI TUTOR SUBI VIDEO MASTERCLASS STATION -->
         <section id="video-station" class="revision-section" style="margin-bottom: 32px;">
           <div id="videoMasterclassStation" style="position:relative; border-radius:14px; overflow:hidden; background:#070d1e; box-shadow:0 10px 30px rgba(0,0,0,0.35);">
-            <div class="video-exemplar-head" style="background:#070d1e; border: 2px solid #0284c7; border-radius:14px 14px 0 0; padding:18px 22px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+            
+            <div class="video-exemplar-head" style="background:#070d1e; border: 2px solid #0284c7;  border-radius:14px 14px 0 0; padding:18px 22px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
               <div style="display:flex; align-items:center; gap:14px;">
-                <img src="assets/img/avatars/tutor-subi.jpg" alt="Subi AI Specialist Tutor" style="width:52px; height:52px; border-radius:50%; border:2px solid #38bdf8; object-fit:cover;">
+                <img id="mcTutorAvatar" src="assets/img/avatars/subi-tutor-portrait.png" alt="Subi MFS Specialist Tutor" style="width:52px; height:52px; border-radius:50%; border:2px solid #38bdf8; object-fit:cover;">
                 <div>
-                  <div style="color:#ffffff; font-size:1.18rem; font-weight:800; display:flex; align-items:center; gap:8px;">
-                    <i class="fa-brands fa-youtube" style="color:#ef4444;"></i> Formulas and Substitution Masterclass
+                  <div id="mcVideoTitle" style="color:#ffffff; font-size:1.18rem; font-weight:800; display:flex; align-items:center; gap:8px;">
+                    <i class="fa-brands fa-youtube" style="color:#ef4444;"></i> Formulas &amp; Algebraic Substitution Masterclass
                   </div>
-                  <div style="color:#94a3b8; font-size:0.88rem; font-weight:600; margin-top:3px;">
-                    Presented by <strong style="color:#38bdf8;">Subi</strong> (MFS Lead Specialist) &bull; 1080p Studio Walkthrough (5m 08s)
+                  <div id="mcTutorMeta" style="color:#94a3b8; font-size:0.88rem; font-weight:600; margin-top:3px;">
+                    Presented by <strong style="color:#38bdf8;">Subi</strong> (MFS Lead Examiner & Curriculum Specialist) &bull; 1080p Studio Walkthrough (5m 50s)
                   </div>
                 </div>
               </div>
               <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
-                <span class="mfs-pill-l1">Level 1 &amp; 2</span>
+                <span class="mfs-pill-l1">Level 2</span>
                 <span class="mfs-pill-board">Pearson Edexcel</span>
                 <span class="mfs-pill-board" style="background:#059669; color:#fff;">HD 1080p</span>
               </div>
             </div>
 
             <div class="video-screen-wrap" style="position:relative; width:100%; aspect-ratio:16/9; background:#000; overflow:hidden; border-left:2px solid #0284c7; border-right:2px solid #0284c7; border-radius:0; margin-bottom:0;">
-              <iframe id="topicMasterclassIframe" style="position:absolute; top:0; left:0; width:100%; height:100%; border:0; display:block;" src="https://www.youtube-nocookie.com/embed/YcYYVjJtvHM?rel=0&enablejsapi=1" title="Masterclass Station" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+              <iframe id="topicMasterclassIframe" data-ytid="YcYYVjJtvHM" style="position:absolute; top:0; left:0; width:100%; height:100%; border:0; display:block;" src="https://www.youtube-nocookie.com/embed/YcYYVjJtvHM?rel=0&amp;enablejsapi=1" title="Formulas &amp; Algebraic Substitution Masterclass" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
             </div>
 
             <!-- JUMP BENCHMARKS BAR -->
-            <div class="video-jump-bar" style="background:#0f172a; border:2px solid #0284c7; border-top:1px solid #1e3a8a; border-radius:0; padding:12px 18px; margin-bottom:0;">
+            <div class="video-jump-bar" id="mcJumpBar" style="background:#0f172a; border:2px solid #0284c7; border-top:1px solid #1e3a8a; border-radius:0; padding:12px 18px; margin-bottom:0;">
               <span class="jump-label" style="color:#94a3b8;"><i class="fa-solid fa-forward-step" style="color:#38bdf8;"></i> Lesson Benchmarks:</span>
-              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(0, this)">0:00 Masterclass Briefing & Specifica...</button>
-              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(53, this)">0:53 Core Skill 1: Two-Step Substitut...</button>
-              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(124, this)">2:04 Core Skill 2: Formula Triangles ...</button>
-              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(177, this)">2:57 Worked Exam Model: Paediatric Do...</button>
-              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(253, this)">4:13 Examiner Traps & Revision Checklist</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(0, this)">0:00 Briefing &amp; Objectives</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(44, this)">0:44 Step-by-Step Substitution</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(115, this)">1:55 Reverse Fractions</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(161, this)">2:41 Worked Exam Question</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(250, this)">4:10 Your Turn! Practice Challenge</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(288, this)">4:48 Watch Out! Examiner Traps</button>
             </div>
 
             <!-- PLAYER FOOTER & EXTERNAL LINKS -->
             <div style="background:#070d1e; border:2px solid #0284c7; border-top:1px solid #1e3a8a; border-radius:0 0 14px 14px; padding:10px 18px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;">
-              <span style="font-size:0.82rem; color:#94a3b8;"><i class="fa-solid fa-shield-halved" style="color:#38bdf8;"></i> Pearson Edexcel &amp; City &amp; Guilds Syllabus Aligned</span>
-              <div style="display:flex; gap:12px; align-items:center;">
-                <a href="video-solution.html?topic=formulas" target="_blank" rel="noopener" style="font-size:0.82rem; color:#38bdf8; text-decoration:none; font-weight:700;"><i class="fa-solid fa-up-right-from-square"></i> Open in Video Station</a>
-                <a href="https://youtu.be/YcYYVjJtvHM" target="_blank" rel="noopener" style="font-size:0.82rem; color:#ef4444; text-decoration:none; font-weight:700;"><i class="fa-brands fa-youtube"></i> Watch on YouTube</a>
-                <a href="worksheets/formulas-worksheet.html" target="_blank" rel="noopener" style="font-size:0.82rem; color:#10b981; text-decoration:none; font-weight:700;"><i class="fa-regular fa-file-pdf"></i> Practice Questions</a>
-                <a href="worksheets/formulas-answers.html" target="_blank" rel="noopener" style="font-size:0.82rem; color:#fbbf24; text-decoration:none; font-weight:700;"><i class="fa-solid fa-check"></i> Model Answers</a>
+              <span style="font-size:0.82rem; color:#94a3b8;"><i class="fa-solid fa-shield-halved" style="color:#38bdf8;"></i> Pearson Edexcel &amp; City &amp; Guilds Level 2 Aligned</span>
+              <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+                <a id="mcStationLink" href="video-solution.html?topic=formulas" target="_blank" rel="noopener" style="font-size:0.82rem; color:#38bdf8; text-decoration:none; font-weight:700;"><i class="fa-solid fa-up-right-from-square"></i> Open in Video Station</a>
+                <a id="mcYoutubeLink" href="https://youtu.be/YcYYVjJtvHM" target="_blank" rel="noopener" style="font-size:0.82rem; color:#ef4444; text-decoration:none; font-weight:700;"><i class="fa-brands fa-youtube"></i> Watch on YouTube</a>
               </div>
             </div>
           </div>
 
           <script>
+            window.__mfsMasterclassParts = [{"num": 16, "slug": "formulas", "title": "Formulas & Algebraic Substitution Masterclass", "tutor": "Subi", "role": "MFS Lead Examiner & Curriculum Specialist", "avatar": "assets/img/avatars/subi-tutor-portrait.png", "ytid": "YcYYVjJtvHM", "runtime": "5m 50s", "default_start": 0, "benchmarks": [{"sec": 0, "text": "0:00 Briefing & Objectives"}, {"sec": 44, "text": "0:44 Step-by-Step Substitution"}, {"sec": 115, "text": "1:55 Reverse Fractions"}, {"sec": 161, "text": "2:41 Worked Exam Question"}, {"sec": 250, "text": "4:10 Your Turn! Practice Challenge"}, {"sec": 288, "text": "4:48 Watch Out! Examiner Traps"}]}];
             function jumpMasterclassVideo(seconds, btn) {
               if (btn && btn.blur) btn.blur();
-              var video = document.getElementById('topicMasterclassPlayer');
-              if (video) {
-                video.currentTime = seconds;
-                video.play().catch(function(e){ console.log('Autoplay:', e); });
-              } else {
-                var iframe = document.getElementById('topicMasterclassIframe');
-                if (iframe) {
-                  iframe.src = "https://www.youtube-nocookie.com/embed/YcYYVjJtvHM?rel=0&autoplay=1&enablejsapi=1&start=" + seconds;
+              var iframe = document.getElementById('topicMasterclassIframe');
+              if (iframe) {
+                var ytid = iframe.getAttribute('data-ytid');
+                if (!ytid) {
+                  var m = (iframe.src || '').match(/embed[/]([a-zA-Z0-9_-]+)/);
+                  ytid = m ? m[1] : '';
+                }
+                if (ytid) {
+                  iframe.src = 'https://www.youtube-nocookie.com/embed/' + ytid + '?rel=0&autoplay=1&enablejsapi=1&start=' + seconds;
                 }
               }
               var btns = document.querySelectorAll('#videoMasterclassStation .video-jump-bar .jump-btn');
@@ -454,12 +456,46 @@
                 }
               });
             }
-          
-            if (window.location.protocol === 'file:') {
-              var wrap = document.querySelector('#videoMasterclassStation .video-screen-wrap');
-              if (wrap) {
-                wrap.innerHTML = '<video id="topicMasterclassPlayer" controls playsinline poster="assets/img/formulas-subi-poster.png" style="width:100%; height:100%; object-fit:contain; background:#000; display:block;"><source src="assets/video/subi-formulas-walkthrough.mp4" type="video/mp4">' + ("<track default kind="chapters" label="Lesson Chapters" srclang="en" src="assets/video/subi-formulas-chapters.vtt">") + 'Your browser does not support the video tag.</video>';
+            function switchMasterclassPart(idx, tabBtn) {
+              var parts = window.__mfsMasterclassParts || [];
+              var p = parts[idx];
+              if (!p) return;
+              var iframe = document.getElementById('topicMasterclassIframe');
+              if (iframe) {
+                iframe.setAttribute('data-ytid', p.ytid);
+                var st = p.default_start > 0 ? '&start=' + p.default_start : '';
+                iframe.src = 'https://www.youtube-nocookie.com/embed/' + p.ytid + '?rel=0&autoplay=1&enablejsapi=1' + st;
+                iframe.title = p.title;
               }
+              var av = document.getElementById('mcTutorAvatar');
+              if (av) { av.src = p.avatar; av.alt = p.tutor + ' MFS Specialist Tutor'; }
+              var ti = document.getElementById('mcVideoTitle');
+              if (ti) { ti.innerHTML = '<i class="fa-brands fa-youtube" style="color:#ef4444;"></i> ' + p.title; }
+              var me = document.getElementById('mcTutorMeta');
+              if (me) { me.innerHTML = 'Presented by <strong style="color:#38bdf8;">' + p.tutor + '</strong> (' + p.role + ') &bull; 1080p Studio Walkthrough (' + p.runtime + ')'; }
+              var sl = document.getElementById('mcStationLink');
+              if (sl) sl.href = 'video-solution.html?topic=' + p.slug;
+              var yl = document.getElementById('mcYoutubeLink');
+              if (yl) yl.href = 'https://youtu.be/' + p.ytid;
+              var jb = document.getElementById('mcJumpBar');
+              if (jb) {
+                var h = '<span class="jump-label" style="color:#94a3b8;"><i class="fa-solid fa-forward-step" style="color:#38bdf8;"></i> Lesson Benchmarks:</span> ';
+                (p.benchmarks || []).forEach(function(b) {
+                  h += '<button type="button" class="jump-btn" onclick="jumpMasterclassVideo(' + b.sec + ', this)">' + b.text + '</button> ';
+                });
+                jb.innerHTML = h;
+              }
+              document.querySelectorAll('#videoMasterclassStation .mc-part-tab').forEach(function(tb, i) {
+                if (i === idx) {
+                  tb.style.background = '#0284c7';
+                  tb.style.color = '#ffffff';
+                  tb.style.borderColor = '#38bdf8';
+                } else {
+                  tb.style.background = '#0f172a';
+                  tb.style.color = '#cbd5e1';
+                  tb.style.borderColor = '#334155';
+                }
+              });
             }
           </script>
         </section>
@@ -514,120 +550,47 @@
         <section id="skill-1" class="revision-section">
           <div class="mfs-topic-card">
             <div class="mfs-topic-head">
-              <h3 class="mfs-topic-title"><span class="mfs-topic-prefix">Core Skill 1:</span> Skill 1: Step-by-Step Substitution Method</h3>
+              <h3 class="mfs-topic-title"><span class="mfs-topic-prefix">Core Skill 1:</span> Step-by-Step Substitution Method</h3>
               <p class="mfs-topic-stem">Converting algebraic and word formulas into solvable numerical equations.</p>
             </div>
             <div class="mfs-topic-body" style="padding:20px 24px;">
-              <div class="mfs-bidmas-master-board" style="background:#ffffff; border:2px solid #bae6fd; border-radius:18px; padding:28px 24px; margin:24px 0; box-shadow:0 4px 20px rgba(15, 23, 42, 0.06); width:100%;">
-  
-  <!-- Header Bar -->
-  <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:12px; margin-bottom:24px; padding-bottom:16px; border-bottom:1px solid #e2e8f0; width:100%;">
-    <div style="display:inline-flex; align-items:center; gap:8px; background:#e0f2fe; color:#0369a1; font-size:1.0rem; font-weight:800; padding:6px 18px; border-radius:999px; text-transform:uppercase; letter-spacing:0.04em;">
-      <i class="fa-solid fa-list-ol"></i> Worked Method: BIDMAS Hierarchy
+              <div class="mfs-formula-master-board" style="background:#ffffff; border:2px solid #bae6fd; border-radius:18px; padding:26px 22px; margin:24px 0; box-shadow:0 4px 20px rgba(15, 23, 42, 0.06); width:100%;">
+  <div style="display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:12px; margin-bottom:22px; padding-bottom:14px; border-bottom:1px solid #e2e8f0;">
+    <div style="display:inline-flex; align-items:center; gap:8px; background:#e0f2fe; color:#0369a1; font-size:0.95rem; font-weight:800; padding:6px 16px; border-radius:999px; text-transform:uppercase; letter-spacing:0.04em;">
+      <i class="fa-solid fa-flask"></i> Worked Method: 4-Step Formula Substitution
     </div>
-    <div style="color:#0f172a; font-size:1.15rem; font-weight:800;">
-      Evaluate: <span style="color:#2563eb; background:#eff6ff; padding:4px 12px; border-radius:8px; border:1px solid #bfdbfe;">5 + 3 &times; (10 &minus; 4)&sup2; &divide; 9</span>
+    <div style="color:#0f172a; font-size:1.05rem; font-weight:800;">
+      Formula: <span style="color:#0369a1; background:#eff6ff; padding:4px 12px; border-radius:8px; border:1px solid #bfdbfe;">C = 45 + 18h + 2d&sup2;</span> &nbsp;(where <strong>h = 4</strong>, <strong>d = &minus;3</strong>)
     </div>
   </div>
-
-  <!-- 4 Step Cards Across the Page (Full Width Grid) -->
-  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(210px, 1fr)); gap:20px; width:100%; margin-bottom:24px;">
-    
-    <!-- Step 1: Brackets -->
-    <div style="background:#eff6ff; border:2px solid #3b82f6; border-radius:14px; padding:20px; display:flex; flex-direction:column; text-align:center; box-shadow:0 2px 8px rgba(37, 99, 235, 0.08);">
-      <div style="display:flex; align-items:center; justify-content:center; gap:8px; margin-bottom:12px;">
-        <span style="background:#2563eb; color:#ffffff; font-size:1.0rem; font-weight:900; padding:4px 10px; border-radius:6px;">1. B</span>
-        <span style="color:#1e3a8a; font-size:1.1rem; font-weight:900;">Brackets</span>
-      </div>
-      <div style="height:1px; background:#bfdbfe; margin-bottom:12px;"></div>
-      <div style="color:#334155; font-size:1.05rem; font-weight:700; margin-bottom:8px;">(10 &minus; 4)</div>
-      <div style="margin-top:auto; background:#1e40af; color:#ffffff; font-size:1.4rem; font-weight:900; padding:10px; border-radius:10px; font-variant-numeric:tabular-nums;">
-        = 6 &#x2713;
-      </div>
+  <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(210px, 1fr)); gap:18px; margin-bottom:20px;">
+    <div style="background:#eff6ff; border:2px solid #3b82f6; border-radius:14px; padding:18px; text-align:center;">
+      <div style="margin-bottom:8px;"><span style="background:#2563eb; color:#fff; font-weight:900; padding:3px 10px; border-radius:6px;">Step 1</span></div>
+      <div style="color:#1e3a8a; font-weight:800; margin-bottom:6px;">Restore Hidden &times; Signs</div>
+      <div style="font-size:1.1rem; font-weight:800; color:#0f172a; background:#fff; padding:8px; border-radius:8px; border:1px solid #bfdbfe;">C = 45 + (18 &times; h) + (2 &times; d&sup2;)</div>
+      <p style="font-size:0.84rem; color:#475569; margin-top:8px;">In algebra, <strong>18h</strong> means <strong>18 &times; h</strong> and <strong>2d&sup2;</strong> means <strong>2 &times; d&sup2;</strong>.</p>
     </div>
-
-    <!-- Step 2: Indices -->
-    <div style="background:#faf5ff; border:2px solid #a855f7; border-radius:14px; padding:20px; display:flex; flex-direction:column; text-align:center; box-shadow:0 2px 8px rgba(147, 51, 234, 0.08);">
-      <div style="display:flex; align-items:center; justify-content:center; gap:8px; margin-bottom:12px;">
-        <span style="background:#9333ea; color:#ffffff; font-size:1.0rem; font-weight:900; padding:4px 10px; border-radius:6px;">2. I</span>
-        <span style="color:#581c87; font-size:1.1rem; font-weight:900;">Indices</span>
-      </div>
-      <div style="height:1px; background:#e9d5ff; margin-bottom:12px;"></div>
-      <div style="color:#334155; font-size:1.05rem; font-weight:700; margin-bottom:8px;">6&sup2; = 6 &times; 6</div>
-      <div style="margin-top:auto; background:#7e22ce; color:#ffffff; font-size:1.4rem; font-weight:900; padding:10px; border-radius:10px; font-variant-numeric:tabular-nums;">
-        = 36 &#x2713;
-      </div>
+    <div style="background:#fefce8; border:2px solid #eab308; border-radius:14px; padding:18px; text-align:center;">
+      <div style="margin-bottom:8px;"><span style="background:#ca8a04; color:#fff; font-weight:900; padding:3px 10px; border-radius:6px;">Step 2</span></div>
+      <div style="color:#854d0e; font-weight:800; margin-bottom:6px;">Substitute Inside Brackets</div>
+      <div style="font-size:1.1rem; font-weight:800; color:#0f172a; background:#fff; padding:8px; border-radius:8px; border:1px solid #fde047;">C = 45 + 18(4) + 2(&minus;3)&sup2;</div>
+      <p style="font-size:0.84rem; color:#475569; margin-top:8px;">Wrap every substituted value (especially negatives) in protective brackets.</p>
     </div>
-
-    <!-- Step 3: Mult & Div -->
-    <div style="background:#f0fdf4; border:2px solid #22c55e; border-radius:14px; padding:20px; display:flex; flex-direction:column; text-align:center; box-shadow:0 2px 8px rgba(22, 163, 74, 0.08);">
-      <div style="display:flex; align-items:center; justify-content:center; gap:8px; margin-bottom:12px;">
-        <span style="background:#16a34a; color:#ffffff; font-size:1.0rem; font-weight:900; padding:4px 10px; border-radius:6px;">3. DM</span>
-        <span style="color:#14532d; font-size:1.1rem; font-weight:900;">Mult &amp; Div</span>
-      </div>
-      <div style="height:1px; background:#bbf7d0; margin-bottom:12px;"></div>
-      <div style="color:#334155; font-size:0.95rem; font-weight:700; margin-bottom:4px;">3 &times; 36 = 108</div>
-      <div style="color:#15803d; font-size:1.05rem; font-weight:800; margin-bottom:8px;">108 &divide; 9</div>
-      <div style="margin-top:auto; background:#15803d; color:#ffffff; font-size:1.4rem; font-weight:900; padding:10px; border-radius:10px; font-variant-numeric:tabular-nums;">
-        = 12 &#x2713;
-      </div>
+    <div style="background:#fdf2f8; border:2px solid #db2777; border-radius:14px; padding:18px; text-align:center;">
+      <div style="margin-bottom:8px;"><span style="background:#be185d; color:#fff; font-weight:900; padding:3px 10px; border-radius:6px;">Step 3</span></div>
+      <div style="color:#831843; font-weight:800; margin-bottom:6px;">Powers Before Multiply</div>
+      <div style="font-size:1.1rem; font-weight:800; color:#0f172a; background:#fff; padding:8px; border-radius:8px; border:1px solid #fbcfe8;">(&minus;3)&sup2; = +9 &rarr; 2 &times; 9 = 18</div>
+      <p style="font-size:0.84rem; color:#475569; margin-top:8px;">Square <strong>d</strong> first: (&minus;3)&times;(&minus;3) = +9, then multiply by 2.</p>
     </div>
-
-    <!-- Step 4: Addition -->
-    <div style="background:#fff7ed; border:2px solid #f97316; border-radius:14px; padding:20px; display:flex; flex-direction:column; text-align:center; box-shadow:0 2px 8px rgba(234, 88, 12, 0.08);">
-      <div style="display:flex; align-items:center; justify-content:center; gap:8px; margin-bottom:12px;">
-        <span style="background:#ea580c; color:#ffffff; font-size:1.0rem; font-weight:900; padding:4px 10px; border-radius:6px;">4. AS</span>
-        <span style="color:#7c2d12; font-size:1.1rem; font-weight:900;">Addition</span>
-      </div>
-      <div style="height:1px; background:#fed7aa; margin-bottom:12px;"></div>
-      <div style="color:#334155; font-size:1.05rem; font-weight:700; margin-bottom:8px;">5 + 12</div>
-      <div style="margin-top:auto; background:#c2410c; color:#ffffff; font-size:1.4rem; font-weight:900; padding:10px; border-radius:10px; font-variant-numeric:tabular-nums;">
-        = 17 &#x2713;
-      </div>
-    </div>
-
-  </div>
-
-  <!-- Full Substitution Calculation Flow Banner (Full Width) -->
-  <div style="background:#f8fafc; border:1px solid #cbd5e1; border-radius:12px; padding:18px 22px; width:100%; margin-bottom:16px;">
-    <div style="color:#475569; font-size:1.0rem; font-weight:800; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:8px;">Full Substitution Calculation Flow:</div>
-    <div style="color:#0f172a; font-size:1.25rem; font-weight:800; line-height:1.6; word-break:break-word;">
-      5 + 3 &times; <span style="color:#2563eb; background:#eff6ff; padding:2px 8px; border-radius:6px; border:1px solid #bfdbfe;">(10 &minus; 4)&sup2;</span> &divide; 9
-      &rarr; 5 + 3 &times; <span style="color:#9333ea; background:#faf5ff; padding:2px 8px; border-radius:6px; border:1px solid #e9d5ff;">6&sup2;</span> &divide; 9
-      &rarr; 5 + <span style="color:#16a34a; background:#f0fdf4; padding:2px 8px; border-radius:6px; border:1px solid #bbf7d0;">108 &divide; 9</span>
-      &rarr; 5 + <span style="color:#16a34a;">12</span>
-      &rarr; <span style="color:#ea580c; font-size:1.4rem; font-weight:900;">17</span>
-    </div>
-    <div style="color:#64748b; font-size:0.92rem; font-weight:600; margin-top:8px;">
-      <i class="fa-solid fa-circle-info" style="color:#0284c7; margin-right:4px;"></i> <strong>Equal Priority Rule:</strong> Division and Multiplication have equal standing (work left to right). Addition and Subtraction also have equal standing.
+    <div style="background:#ecfdf5; border:2px solid #10b981; border-radius:14px; padding:18px; text-align:center;">
+      <div style="margin-bottom:8px;"><span style="background:#059669; color:#fff; font-weight:900; padding:3px 10px; border-radius:6px;">Step 4</span></div>
+      <div style="color:#065f46; font-weight:800; margin-bottom:6px;">Combine Final Terms</div>
+      <div style="font-size:1.1rem; font-weight:800; color:#065f46; background:#fff; padding:8px; border-radius:8px; border:1px solid #a7f3d0;">C = 45 + 72 + 18 = £135</div>
+      <p style="font-size:0.84rem; color:#475569; margin-top:8px;">Calculate 18 &times; 4 = 72, then add all terms and attach units.</p>
     </div>
   </div>
-
-  <!-- Bottom Result Banner (Full Width) -->
-  <div style="background:#dcfce7; border:2px solid #86efac; border-radius:10px; padding:14px 20px; width:100%; text-align:center;">
-    <span style="color:#15803d; font-size:1.25rem; font-weight:900; letter-spacing:0.04em;">
-      ACCREDITED FINAL EVALUATION = 17 &#x2713;
-    </span>
-  </div>
-
 </div>
-              
-                <div style="background:#f8fafc; border:1px solid #e2e8f0; border-radius:8px; padding:18px; margin:16px 0;">
-                  <ol style="padding-left:22px; line-height:1.8; color:#334155;">
-                    <li><strong>Write out the formula with multiplication signs visible:</strong> e.g. <code>P = 2L + 2W</code> &rarr; <code>P = (2 × L) + (2 × W)</code>.</li>
-                    <li><strong>Replace each letter with its given number in brackets:</strong> Make sure units match the formula specification (e.g. convert minutes to hours if the formula requires hours).</li>
-                    <li><strong>Apply BIDMAS strictly:</strong> Resolve brackets and powers first, then multiplications/divisions, then additions/subtractions.</li>
-                  </ol>
-                </div>
-                
-            </div>
-            <div class="mfs-topic-footer" style="display:flex; gap:8px; flex-wrap:wrap; padding-top:14px; border-top:1px solid #e2e8f0; margin-top:16px;">
-              <span class="mfs-pill-l1">Level 1</span>
-              <span class="mfs-pill-l2">Level 2</span>
-              <span class="mfs-pill-board">Pearson Edexcel</span>
-              <span class="mfs-pill-board">City &amp; Guilds</span>
-              <span class="mfs-pill-board">NCFE</span>
-            </div>
+</div>
           </div>
         </section>
         
@@ -635,7 +598,7 @@
         <section id="skill-2" class="revision-section">
           <div class="mfs-topic-card">
             <div class="mfs-topic-head">
-              <h3 class="mfs-topic-title"><span class="mfs-topic-prefix">Core Skill 2:</span> Skill 2: Formula Triangles: Speed (SDT) & Density (MDV)</h3>
+              <h3 class="mfs-topic-title"><span class="mfs-topic-prefix">Core Skill 2:</span> Formula Triangles: Speed (SDT) & Density (MDV)</h3>
               <p class="mfs-topic-stem">Two essential formula triangles frequently assessed in Level 1 & Level 2 Functional Skills.</p>
             </div>
             <div class="mfs-topic-body" style="padding:20px 24px;">
@@ -768,7 +731,7 @@
         <section id="skill-3" class="revision-section">
           <div class="mfs-topic-card">
             <div class="mfs-topic-head">
-              <h3 class="mfs-topic-title"><span class="mfs-topic-prefix">Core Skill 3:</span> Skill 3: Rearranging Two-Step Formulas (Working Backwards)</h3>
+              <h3 class="mfs-topic-title"><span class="mfs-topic-prefix">Core Skill 3:</span> Rearranging Two-Step Formulas (Working Backwards)</h3>
               <p class="mfs-topic-stem">Finding an unknown input when you are given the final output.</p>
             </div>
             <div class="mfs-topic-body" style="padding:20px 24px;">

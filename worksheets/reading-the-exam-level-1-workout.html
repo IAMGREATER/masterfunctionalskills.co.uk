@@ -897,6 +897,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/reading-the-exam-level-1-workout.html">
 </head>
 <body>
 
@@ -969,7 +986,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 1</span>
-        <span class="block-q-desc">Question 1: Exam Traps & How to Avoid Them</span>
+        <span class="block-q-desc">Exam Traps & How to Avoid Them</span>
       </div>
       <div class="workout-instruction">Identify the common error described and how to avoid it:</div>
       <div class="drill-grid">
@@ -1003,7 +1020,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 2</span>
-        <span class="block-q-desc">Question 2: Timing Management for 1-Hour Reading Paper</span>
+        <span class="block-q-desc">Timing Management for 1-Hour Reading Paper</span>
       </div>
       <div class="workout-instruction">Work out the ideal time budget for a 60-minute reading exam:</div>
       <div class="drill-grid">
@@ -1045,7 +1062,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 3</span>
-        <span class="block-q-desc">Question 3: Navigating Functional Skills Reading Exam Papers</span>
+        <span class="block-q-desc">Navigating Functional Skills Reading Exam Papers</span>
       </div>
       <div class="workout-instruction">Identify the correct exam technique or rule for Pearson Edexcel Functional Skills Reading:</div>
       <div class="drill-grid">
@@ -1119,7 +1136,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 4</span>
-        <span class="block-q-desc">Question 4: Deconstructing Exam Question Command Words</span>
+        <span class="block-q-desc">Deconstructing Exam Question Command Words</span>
       </div>
       <div class="workout-instruction">Explain what the exam command word requires the student to do:</div>
       <div class="drill-grid">
@@ -1193,7 +1210,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 5</span>
-        <span class="block-q-desc">Question 5: Avoiding Common Exam Pitfalls</span>
+        <span class="block-q-desc">Avoiding Common Exam Pitfalls</span>
       </div>
       <div class="workout-instruction">Identify the exam mistake being made and state the correct approach:</div>
       <div class="drill-grid">

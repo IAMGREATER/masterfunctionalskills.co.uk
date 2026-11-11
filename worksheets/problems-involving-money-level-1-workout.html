@@ -897,6 +897,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/problems-involving-money-level-1-workout.html">
 </head>
 <body>
 
@@ -968,7 +985,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 1</span>
-        <span class="block-q-desc">Question 1: VAT and Percentage Surcharges</span>
+        <span class="block-q-desc">VAT and Percentage Surcharges</span>
       </div>
       <div class="workout-instruction">Work out the 20% VAT and total gross price:</div>
       <div class="drill-grid">
@@ -1018,7 +1035,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 2</span>
-        <span class="block-q-desc">Question 2: Deposits and Monthly Repayments</span>
+        <span class="block-q-desc">Deposits and Monthly Repayments</span>
       </div>
       <div class="workout-instruction">Work out the total cost including deposit and installments:</div>
       <div class="drill-grid">
@@ -1060,7 +1077,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 3</span>
-        <span class="block-q-desc">Question 3: Multi-Item Budgeting & Petty Cash Reconciliations</span>
+        <span class="block-q-desc">Multi-Item Budgeting & Petty Cash Reconciliations</span>
       </div>
       <div class="workout-instruction">Calculate remaining balance or total expenditure:</div>
       <div class="drill-grid">
@@ -1150,7 +1167,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 4</span>
-        <span class="block-q-desc">Question 4: Hire Purchase, Installments & Loan Cost Comparisons</span>
+        <span class="block-q-desc">Hire Purchase, Installments & Loan Cost Comparisons</span>
       </div>
       <div class="workout-instruction">Compare total payment plans against cash price:</div>
       <div class="drill-grid">
@@ -1240,7 +1257,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 5</span>
-        <span class="block-q-desc">Question 5: Practical Invoicing, Unit Rates & Best Buys</span>
+        <span class="block-q-desc">Practical Invoicing, Unit Rates & Best Buys</span>
       </div>
       <div class="workout-instruction">Calculate costs and unit rates:</div>
       <div class="drill-grid">

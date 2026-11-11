@@ -830,6 +830,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/circles-worksheet.html">
 </head>
 <body>
 
@@ -886,6 +903,7 @@
       <div class="q-stem">
         Calculate the circumference of a circular roundabout with diameter <strong>18.0 metres</strong>.<br>Use π = 3.14.
       </div>
+      <div style="margin:12px 0; text-align:center;"><svg viewBox="0 0 340 110" style="max-width:340px;width:100%;height:auto;"><circle cx="75" cy="55" r="42" fill="#f0f9ff" stroke="#0284c7" stroke-width="2.5"/><line x1="33" y1="55" x2="117" y2="55" stroke="#dc2626" stroke-width="2" stroke-dasharray="4,3"/><line x1="75" y1="55" x2="105" y2="25" stroke="#0f766e" stroke-width="2.5"/><text x="140" y="45" font-family="Lexend,sans-serif" font-size="12" font-weight="700" fill="#0f172a">Use π = 3.142 (or π button)</text><text x="140" y="70" font-family="Lexend,sans-serif" font-size="11.5" fill="#0f766e">Area = πr²  |  Circumference = πd</text></svg></div>
       <div class="q-working-area">
         <div class="working-label">Show your full working out here:</div>
         <div class="working-lines-box">

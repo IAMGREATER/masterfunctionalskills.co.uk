@@ -830,6 +830,93 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+<style id="mfs-english-ws-upgrade">
+  .eng-extract-callout {
+    display: block;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #0284c7;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin: 8px 0;
+    font-style: normal;
+    color: #0f172a;
+    line-height: 1.65;
+  }
+  .q-working-area .working-line {
+    height: 30px !important;
+    border-bottom: 1.5px dashed #94a3b8 !important;
+  }
+  .eng-structured-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    margin-top: 4px;
+  }
+  .eng-structured-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1e293b;
+  }
+  .eng-structured-box {
+    flex: 1;
+    min-width: 180px;
+    min-height: 36px;
+    border: 1.5px solid #64748b;
+    border-radius: 6px;
+    background: #ffffff;
+  }
+  .mfs-paf-spag-audit {
+    margin: 18px 0 8px;
+    border: 2px solid #0f172a;
+    border-radius: 10px;
+    padding: 14px 16px;
+    background: #f8fafc;
+    page-break-inside: avoid;
+  }
+  .mfs-paf-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 8px 0 12px;
+  }
+  .mfs-paf-cell {
+    background: #ffffff;
+    border: 1px solid #94a3b8;
+    border-radius: 6px;
+    padding: 8px 10px;
+    min-height: 46px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #334155;
+  }
+  @media (max-width: 600px) {
+    .mfs-paf-grid { grid-template-columns: 1fr; }
+    .eng-structured-line { flex-direction: column; align-items: stretch; gap: 4px; }
+  }
+</style>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/reading-the-exam-worksheet.html">
 </head>
 <body>
 
@@ -884,19 +971,21 @@
         <span class="q-marks">[2 Marks]</span>
       </div>
       <div class="q-stem">
-        Read this extract from Text A (Allotment Rules):<br><em>'Plot holders are strictly prohibited from lighting bonfires before 6:00 p.m., keeping cockerels on site, erecting fences higher than 1.2 metres, or using hosepipes during July and August.'</em><br><br>Exam Question: <strong>Apart from keeping cockerels on site, identify two things plot holders are prohibited from doing. [2 Marks]</strong><br>Write a full 2-mark answer, and explain why writing <em>'Keeping cockerels'</em> scores 0.
+        Read this extract from Text A (Allotment Rules):<span class="eng-extract-callout">'Plot holders are strictly prohibited from lighting bonfires before 6:00 p.m., keeping cockerels on site, erecting fences higher than 1.2 metres, or using hosepipes during July and August.'</span><br><br>Exam Question: <strong>Apart from keeping cockerels on site, identify two things plot holders are prohibited from doing. [2 Marks]</strong><br>Write a full 2-mark answer, and explain why writing <em>'Keeping cockerels'</em> scores 0.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Two Prohibited Actions & Rule =</span>
-        1: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> 2: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Why 'cockerels' scores 0: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>1:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>2:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Why 'cockerels' scores 0: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -906,19 +995,21 @@
         <span class="q-marks">[2 Marks]</span>
       </div>
       <div class="q-stem">
-        Read this extract from a clinic notice:<br><em>'Walk-in blood tests run Monday to Thursday from 08:00 to 11:30. Patients aged under 16 must book a scheduled paediatric slot on Fridays. Fasting patients should drink plain water only.'</em><br><br>Which <strong>ONE</strong> of the following statements is <strong>FALSE</strong> according to the extract, and explain why:<br><strong>A.</strong> Walk-in blood tests finish at 11:30 on Wednesdays.<br><strong>B.</strong> Fasting patients are allowed to drink plain water.<br><strong>C.</strong> A 14-year-old can attend the Tuesday morning walk-in clinic.<br><strong>D.</strong> There is no walk-in blood test clinic on Fridays.
+        Read this extract from a clinic notice:<span class="eng-extract-callout">'Walk-in blood tests run Monday to Thursday from 08:00 to 11:30. Patients aged under 16 must book a scheduled paediatric slot on Fridays. Fasting patients should drink plain water only.'</span><br><br>Which <strong>ONE</strong> of the following statements is <strong>FALSE</strong> according to the extract, and explain why:<br><strong>A.</strong> Walk-in blood tests finish at 11:30 on Wednesdays.<br><strong>B.</strong> Fasting patients are allowed to drink plain water.<br><strong>C.</strong> A 14-year-old can attend the Tuesday morning walk-in clinic.<br><strong>D.</strong> There is no walk-in blood test clinic on Fridays.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">False Option & Text Proof =</span>
-        False Statement (A / B / C / D): <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Proof from text: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>False Statement (A / B / C / D):</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Proof from text: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -934,20 +1025,22 @@
         <span class="q-marks">[3 Marks]</span>
       </div>
       <div class="q-stem">
-        Read this extract from a council report:<br><em>'Following the installation of 14 speed cameras along ring-road junctions in March, serious collisions fell by 48% and average vehicle speeds dropped to 29 mph.'</em><br><br>Exam Question: <strong>Give one quotation from the text that shows the speed cameras reduced accidents. [1 Mark]</strong><br>Evaluate why Candidate A (who wrote <em>'48%'</em>) and Candidate B (who copied the entire 25-word sentence) both risk losing the mark, and write the ideal exact quotation.
+        Read this extract from a council report:<span class="eng-extract-callout">'Following the installation of 14 speed cameras along ring-road junctions in March, serious collisions fell by 48% and average vehicle speeds dropped to 29 mph.'</span><br><br>Exam Question: <strong>Give one quotation from the text that shows the speed cameras reduced accidents. [1 Mark]</strong><br>Evaluate why Candidate A (who wrote <em>'48%'</em>) and Candidate B (who copied the entire 25-word sentence) both risk losing the mark, and write the ideal exact quotation.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Evaluation & Ideal Quote =</span>
-        Why A fails: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Why B fails: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Ideal Quote: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Why A fails:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Why B fails:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Ideal Quote: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -957,20 +1050,22 @@
         <span class="q-marks">[3 Marks]</span>
       </div>
       <div class="q-stem">
-        Read this extract from Text B (Catering Kitchen Hygiene):<br><em>'To prevent cross-contamination, chefs must use red chopping boards for raw meat and blue chopping boards for raw fish. All boards must be sanitised in the commercial dishwasher at 82°C.'</em><br><br>Exam Question: <strong>According to Text B, give two ways chefs prevent cross-contamination in the kitchen. [2 Marks]</strong><br>A catering student writes: <em>'1. Wash hands with antibacterial soap for 20 seconds. 2. Tie long hair back under a hairnet.'</em><br>Explain why this student scored <strong>0 marks</strong>, and write the correct 2-mark answer.
+        Read this extract from Text B (Catering Kitchen Hygiene):<span class="eng-extract-callout">'To prevent cross-contamination, chefs must use red chopping boards for raw meat and blue chopping boards for raw fish. All boards must be sanitised in the commercial dishwasher at 82°C.'</span><br><br>Exam Question: <strong>According to Text B, give two ways chefs prevent cross-contamination in the kitchen. [2 Marks]</strong><br>A catering student writes: <em>'1. Wash hands with antibacterial soap for 20 seconds. 2. Tie long hair back under a hairnet.'</em><br>Explain why this student scored <strong>0 marks</strong>, and write the correct 2-mark answer.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Reason for 0 Marks & Correct Answer =</span>
-        Why 0 marks: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Correct 1: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Correct 2: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Why 0 marks:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Correct 1:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Correct 2: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -986,11 +1081,13 @@
         <span class="q-marks">[4 Marks]</span>
       </div>
       <div class="q-stem">
-        Read this extract from Text C (Apprentice Travel Grant Scheme):<br><em>'To qualify for the £500 Annual Bus Pass Grant, applicants must: (1) be aged between 16 and 24 on 1st September, (2) live more than 3 miles from their training college, (3) earn under £16,000 per year before tax, and (4) submit a signed employer attendance letter by 15th October.'</em><br><br>Your friend Chloe says: <em>'I turned 24 in August, I live 4.5 miles from college, and my apprenticeship wage is £14,200 a year — so I can send in my form on 20th October and get the £500 grant!'</em><br>Using Text C, evaluate whether Chloe will receive the grant. Check <strong>all four conditions</strong> in your answer.
+        Read this extract from Text C (Apprentice Travel Grant Scheme):<span class="eng-extract-callout">'To qualify for the £500 Annual Bus Pass Grant, applicants must: (1) be aged between 16 and 24 on 1st September, (2) live more than 3 miles from their training college, (3) earn under £16,000 per year before tax, and (4) submit a signed employer attendance letter by 15th October.'</span><br><br>Your friend Chloe says: <em>'I turned 24 in August, I live 4.5 miles from college, and my apprenticeship wage is £14,200 a year — so I can send in my form on 20th October and get the £500 grant!'</em><br>Using Text C, evaluate whether Chloe will receive the grant. Check <strong>all four conditions</strong> in your answer.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -998,9 +1095,9 @@
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Four-Point Eligibility Audit =</span>
-        Verdict (Yes/No): <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Met Conditions: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Failed Condition: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Verdict (Yes/No):</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Met Conditions:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Failed Condition: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -1010,11 +1107,13 @@
         <span class="q-marks">[4 Marks]</span>
       </div>
       <div class="q-stem">
-        Read this extract from a campaign leaflet:<br><em>'Every year, 250,000 tonnes of edible supermarket food are dumped into landfill while families go hungry. Sign our Zero-Waste Petition today!'</em><br><br>Compare how you must answer these two different exam questions on the extract:<br>• <strong>Question A [1 Mark]:</strong> <em>How many tonnes of edible supermarket food are dumped into landfill each year?</em><br>• <strong>Question B [3 Marks]:</strong> <em>Explain how the writer uses language to persuade the reader to sign the petition.</em><br><br>Write the full model answer for <strong>both</strong> Question A and Question B, and explain why Question B requires three distinct components.
+        Read this extract from a campaign leaflet:<span class="eng-extract-callout">'Every year, 250,000 tonnes of edible supermarket food are dumped into landfill while families go hungry. Sign our Zero-Waste Petition today!'</span><br><br>Compare how you must answer these two different exam questions on the extract:<br>• <strong>Question A [1 Mark]:</strong> <em>How many tonnes of edible supermarket food are dumped into landfill each year?</em><br>• <strong>Question B [3 Marks]:</strong> <em>Explain how the writer uses language to persuade the reader to sign the petition.</em><br><br>Write the full model answer for <strong>both</strong> Question A and Question B, and explain why Question B requires three distinct components.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -1022,9 +1121,9 @@
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Model Answers for Q.A and Q.B =</span>
-        Q.A Answer [1m]: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Q.B Answer [3m] (Technique + Quote + Effect): <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Q.A Answer [1m]:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Q.B Answer [3m] (Technique + Quote + Effect): <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 

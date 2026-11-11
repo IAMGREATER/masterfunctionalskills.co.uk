@@ -897,6 +897,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/tables-workout.html">
 </head>
 <body>
 
@@ -968,7 +985,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 1</span>
-        <span class="block-q-desc">Question 1: Completing Two-Way Table Cells</span>
+        <span class="block-q-desc">Completing Two-Way Table Cells</span>
       </div>
       <div class="workout-instruction">Find the missing values using row and column totals:</div>
       <div class="drill-grid">
@@ -1018,7 +1035,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 2</span>
-        <span class="block-q-desc">Question 2: Reading Timetables and Elapsed Time</span>
+        <span class="block-q-desc">Reading Timetables and Elapsed Time</span>
       </div>
       <div class="workout-instruction">Work out the departure time or journey duration:</div>
       <div class="drill-grid">
@@ -1060,7 +1077,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 3</span>
-        <span class="block-q-desc">Question 3: Multi-Column Workplace Spreadsheets & Invoices</span>
+        <span class="block-q-desc">Multi-Column Workplace Spreadsheets & Invoices</span>
       </div>
       <div class="workout-instruction">Calculate missing row and column totals in structured tables:</div>
       <div class="drill-grid">
@@ -1150,7 +1167,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 4</span>
-        <span class="block-q-desc">Question 4: Timetables & Scheduled Handover Windows</span>
+        <span class="block-q-desc">Timetables & Scheduled Handover Windows</span>
       </div>
       <div class="workout-instruction">Extract time slots and verify durations from tabular schedules:</div>
       <div class="drill-grid">
@@ -1224,7 +1241,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 5</span>
-        <span class="block-q-desc">Question 5: Timetable Interpretation & Train Schedules</span>
+        <span class="block-q-desc">Timetable Interpretation & Train Schedules</span>
       </div>
       <div class="workout-instruction">Read departure and arrival times from public transit timetables:</div>
       <div class="drill-grid">

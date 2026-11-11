@@ -897,6 +897,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/maps-and-scale-drawings-workout.html">
 </head>
 <body>
 
@@ -969,7 +986,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 1</span>
-        <span class="block-q-desc">Question 1: Converting Drawing Lengths to Real Distances</span>
+        <span class="block-q-desc">Converting Drawing Lengths to Real Distances</span>
       </div>
       <div class="workout-instruction">Calculate the actual real-life distance in metres:</div>
       <div class="drill-grid">
@@ -1019,7 +1036,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 2</span>
-        <span class="block-q-desc">Question 2: Converting Real Dimensions to Drawing Scale</span>
+        <span class="block-q-desc">Converting Real Dimensions to Drawing Scale</span>
       </div>
       <div class="workout-instruction">Calculate the length to draw on the plan in centimetres:</div>
       <div class="drill-grid">
@@ -1061,7 +1078,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 3</span>
-        <span class="block-q-desc">Question 3: Scale Drawing Calculations (1 cm : n metres)</span>
+        <span class="block-q-desc">Scale Drawing Calculations (1 cm : n metres)</span>
       </div>
       <div class="workout-instruction">Calculate actual distance from map measurement:</div>
       <div class="drill-grid">
@@ -1151,7 +1168,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 4</span>
-        <span class="block-q-desc">Question 4: Ratio Scales & Grid Plan Dimensions</span>
+        <span class="block-q-desc">Ratio Scales & Grid Plan Dimensions</span>
       </div>
       <div class="workout-instruction">Solve plan dimensions using ratio scales:</div>
       <div class="drill-grid">
@@ -1241,7 +1258,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 5</span>
-        <span class="block-q-desc">Question 5: Scale Ratios & Real-Life Distance Conversions</span>
+        <span class="block-q-desc">Scale Ratios & Real-Life Distance Conversions</span>
       </div>
       <div class="workout-instruction">Use scale ratios to convert map distances to real-life measurements:</div>
       <div class="drill-grid">

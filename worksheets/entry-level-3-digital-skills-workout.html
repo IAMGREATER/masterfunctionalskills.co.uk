@@ -897,6 +897,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/entry-level-3-digital-skills-workout.html">
 </head>
 <body>
 
@@ -969,7 +986,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 1</span>
-        <span class="block-q-desc">Question 1: Hardware and Desktop Basics</span>
+        <span class="block-q-desc">Hardware and Desktop Basics</span>
       </div>
       <div class="workout-instruction">State the hardware part or keyboard key used for the task:</div>
       <div class="drill-grid">
@@ -1019,7 +1036,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 2</span>
-        <span class="block-q-desc">Question 2: Digital Safety and Passwords</span>
+        <span class="block-q-desc">Digital Safety and Passwords</span>
       </div>
       <div class="workout-instruction">State whether each practice is Safe or Unsafe:</div>
       <div class="drill-grid">
@@ -1061,7 +1078,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 3</span>
-        <span class="block-q-desc">Question 3: Question 2: Basic Computer Hardware & Input Devices</span>
+        <span class="block-q-desc">Basic Computer Hardware & Input Devices</span>
       </div>
       <div class="workout-instruction">Name the computer device or action described:</div>
       <div class="drill-grid">
@@ -1135,7 +1152,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 4</span>
-        <span class="block-q-desc">Question 4: Question 3: Using the Internet & Basic Web Navigation</span>
+        <span class="block-q-desc">Using the Internet & Basic Web Navigation</span>
       </div>
       <div class="workout-instruction">Identify the internet tool or action for each simple task:</div>
       <div class="drill-grid">
@@ -1209,7 +1226,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 5</span>
-        <span class="block-q-desc">Question 5: Question 4: Keeping Safe Online - Basic Rules</span>
+        <span class="block-q-desc">Keeping Safe Online - Basic Rules</span>
       </div>
       <div class="workout-instruction">Choose the safe and sensible choice for each everyday online situation:</div>
       <div class="drill-grid">

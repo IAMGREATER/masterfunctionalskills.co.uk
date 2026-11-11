@@ -145,6 +145,7 @@
     }
   </style>
   <link rel="stylesheet" href="assets/css/mfs-mobile.css?v=20261024c">
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/functional-skills-maths-level-1.html">
 </head>
 <body>
 
@@ -445,6 +446,19 @@
         </div>
       </div>
 
+            <div class="mfs-hub-filter-bar" id="mfsHubFilterBar">
+        <div class="mfs-filter-pills">
+          <button type="button" class="mfs-filter-pill active" data-filter="all" onclick="filterMfsHubTopics('all', this)">All Topics</button>
+          <button type="button" class="mfs-filter-pill" data-filter="numbers" onclick="filterMfsHubTopics('numbers', this)">Using Numbers</button>
+          <button type="button" class="mfs-filter-pill" data-filter="measures" onclick="filterMfsHubTopics('measures', this)">Measures, Shape & Space</button>
+          <button type="button" class="mfs-filter-pill" data-filter="data" onclick="filterMfsHubTopics('data', this)">Handling Data</button>
+        </div>
+        <div class="mfs-mastery-widget" title="Tick topics as you complete them — saved automatically on this device">
+          <span id="mfsMasteryLabel">0 / 0 Completed</span>
+          <div class="mfs-mastery-track"><div class="mfs-mastery-fill" id="mfsMasteryFill"></div></div>
+        </div>
+      </div>
+
       <div class="topic-table-bar">
         <span>Topic Name & Curriculum Cluster</span>
         <span>Revision & Study Resources</span>
@@ -462,7 +476,7 @@
           <a href="worksheets/numbers-and-place-value-level-1-workout.html" target="_blank" rel="noopener" class="btn-mfs-sheet btn-mfs-workout" title="Fluency Drills (High-Repetition Practice)"><i class="fa-solid fa-pen-ruler"></i> Fluency Drills</a>
           <a href="worksheets/numbers-and-place-value-level-1-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet" title="Practice Questions (Exam-Style Questions)"><i class="fa-regular fa-file-pdf"></i> Practice Questions</a>
           <a href="https://youtu.be/L8w57fCagoU" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
-          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+          <a href="#topic-quiz" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
         </div>
       </div>
       <div class="topic-row">
@@ -475,7 +489,7 @@
           <a href="worksheets/ordering-numbers-level-1-workout.html" target="_blank" rel="noopener" class="btn-mfs-sheet btn-mfs-workout" title="Fluency Drills (High-Repetition Practice)"><i class="fa-solid fa-pen-ruler"></i> Fluency Drills</a>
           <a href="worksheets/ordering-numbers-level-1-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet" title="Practice Questions (Exam-Style Questions)"><i class="fa-regular fa-file-pdf"></i> Practice Questions</a>
           <a href="https://youtu.be/G9cQ3hSmQZA" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
-          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+          <a href="#topic-quiz" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
         </div>
       </div>
       <div class="topic-row">
@@ -488,7 +502,7 @@
           <a href="worksheets/addition-and-subtraction-level-1-workout.html" target="_blank" rel="noopener" class="btn-mfs-sheet btn-mfs-workout" title="Fluency Drills (High-Repetition Practice)"><i class="fa-solid fa-pen-ruler"></i> Fluency Drills</a>
           <a href="worksheets/addition-and-subtraction-level-1-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet" title="Practice Questions (Exam-Style Questions)"><i class="fa-regular fa-file-pdf"></i> Practice Questions</a>
           <a href="https://youtu.be/p_XYX-c85KA" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
-          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+          <a href="#topic-quiz" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
         </div>
       </div>
       <div class="topic-row">
@@ -501,7 +515,7 @@
           <a href="worksheets/multiplication-level-1-workout.html" target="_blank" rel="noopener" class="btn-mfs-sheet btn-mfs-workout" title="Fluency Drills (High-Repetition Practice)"><i class="fa-solid fa-pen-ruler"></i> Fluency Drills</a>
           <a href="worksheets/multiplication-level-1-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet" title="Practice Questions (Exam-Style Questions)"><i class="fa-regular fa-file-pdf"></i> Practice Questions</a>
           <a href="https://youtu.be/cUT-tq1SpAc" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
-          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+          <a href="#topic-quiz" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
         </div>
       </div>
       <div class="topic-row">
@@ -514,7 +528,7 @@
           <a href="worksheets/division-level-1-workout.html" target="_blank" rel="noopener" class="btn-mfs-sheet btn-mfs-workout" title="Fluency Drills (High-Repetition Practice)"><i class="fa-solid fa-pen-ruler"></i> Fluency Drills</a>
           <a href="worksheets/division-level-1-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet" title="Practice Questions (Exam-Style Questions)"><i class="fa-regular fa-file-pdf"></i> Practice Questions</a>
           <a href="https://youtu.be/ep4N1RwT2Sk" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
-          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+          <a href="#topic-quiz" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
         </div>
       </div>
       <div class="topic-row">
@@ -527,7 +541,7 @@
           <a href="worksheets/bidmas-level-1-workout.html" target="_blank" rel="noopener" class="btn-mfs-sheet btn-mfs-workout" title="Fluency Drills (High-Repetition Practice)"><i class="fa-solid fa-pen-ruler"></i> Fluency Drills</a>
           <a href="worksheets/bidmas-level-1-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet" title="Practice Questions (Exam-Style Questions)"><i class="fa-regular fa-file-pdf"></i> Practice Questions</a>
           <a href="https://youtu.be/9gsyBj3dLYE" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
-          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+          <a href="#topic-quiz" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
         </div>
       </div>
       <div class="topic-row">
@@ -540,7 +554,7 @@
           <a href="worksheets/fractions-level-1-workout.html" target="_blank" rel="noopener" class="btn-mfs-sheet btn-mfs-workout" title="Fluency Drills (High-Repetition Practice)"><i class="fa-solid fa-pen-ruler"></i> Fluency Drills</a>
           <a href="worksheets/fractions-level-1-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet" title="Practice Questions (Exam-Style Questions)"><i class="fa-regular fa-file-pdf"></i> Practice Questions</a>
           <a href="https://youtu.be/lrEzRTNKzp4" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
-          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+          <a href="#topic-quiz" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
         </div>
       </div>
       <div class="topic-row">
@@ -553,7 +567,7 @@
           <a href="worksheets/decimals-level-1-workout.html" target="_blank" rel="noopener" class="btn-mfs-sheet btn-mfs-workout" title="Fluency Drills (High-Repetition Practice)"><i class="fa-solid fa-pen-ruler"></i> Fluency Drills</a>
           <a href="worksheets/decimals-level-1-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet" title="Practice Questions (Exam-Style Questions)"><i class="fa-regular fa-file-pdf"></i> Practice Questions</a>
           <a href="https://youtu.be/P063A1ny_s4" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
-          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+          <a href="#topic-quiz" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
         </div>
       </div>
       <div class="topic-row">
@@ -566,7 +580,7 @@
           <a href="worksheets/rounding-and-estimating-level-1-workout.html" target="_blank" rel="noopener" class="btn-mfs-sheet btn-mfs-workout" title="Fluency Drills (High-Repetition Practice)"><i class="fa-solid fa-pen-ruler"></i> Fluency Drills</a>
           <a href="worksheets/rounding-and-estimating-level-1-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet" title="Practice Questions (Exam-Style Questions)"><i class="fa-regular fa-file-pdf"></i> Practice Questions</a>
           <a href="https://youtu.be/mJGUW0YldWE" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
-          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+          <a href="#topic-quiz" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
         </div>
       </div>
       <div class="topic-row">
@@ -579,7 +593,7 @@
           <a href="worksheets/percentages-level-1-workout.html" target="_blank" rel="noopener" class="btn-mfs-sheet btn-mfs-workout" title="Fluency Drills (High-Repetition Practice)"><i class="fa-solid fa-pen-ruler"></i> Fluency Drills</a>
           <a href="worksheets/percentages-level-1-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet" title="Practice Questions (Exam-Style Questions)"><i class="fa-regular fa-file-pdf"></i> Practice Questions</a>
           <a href="https://youtu.be/VMhE15fjQ8o" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
-          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+          <a href="#topic-quiz" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
         </div>
       </div>
       <div class="topic-row">
@@ -592,7 +606,7 @@
           <a href="worksheets/fdp-conversions-level-1-workout.html" target="_blank" rel="noopener" class="btn-mfs-sheet btn-mfs-workout" title="Fluency Drills (High-Repetition Practice)"><i class="fa-solid fa-pen-ruler"></i> Fluency Drills</a>
           <a href="worksheets/fdp-conversions-level-1-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet" title="Practice Questions (Exam-Style Questions)"><i class="fa-regular fa-file-pdf"></i> Practice Questions</a>
           <a href="https://youtu.be/bfCBLt2yLyw" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
-          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+          <a href="#topic-quiz" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
         </div>
       </div>
       <div class="topic-row">
@@ -605,7 +619,7 @@
           <a href="worksheets/ratio-level-1-workout.html" target="_blank" rel="noopener" class="btn-mfs-sheet btn-mfs-workout" title="Fluency Drills (High-Repetition Practice)"><i class="fa-solid fa-pen-ruler"></i> Fluency Drills</a>
           <a href="worksheets/ratio-level-1-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet" title="Practice Questions (Exam-Style Questions)"><i class="fa-regular fa-file-pdf"></i> Practice Questions</a>
           <a href="https://youtu.be/CUzPpFHtizs" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
-          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+          <a href="#topic-quiz" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
         </div>
       </div>
       <div class="topic-row">
@@ -618,7 +632,7 @@
           <a href="worksheets/proportion-level-1-workout.html" target="_blank" rel="noopener" class="btn-mfs-sheet btn-mfs-workout" title="Fluency Drills (High-Repetition Practice)"><i class="fa-solid fa-pen-ruler"></i> Fluency Drills</a>
           <a href="worksheets/proportion-level-1-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet" title="Practice Questions (Exam-Style Questions)"><i class="fa-regular fa-file-pdf"></i> Practice Questions</a>
           <a href="https://youtu.be/ZRPKmoQjZlE" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
-          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+          <a href="#topic-quiz" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
         </div>
       </div>
       <div class="topic-row">
@@ -631,7 +645,7 @@
           <a href="worksheets/formulas-level-1-workout.html" target="_blank" rel="noopener" class="btn-mfs-sheet btn-mfs-workout" title="Fluency Drills (High-Repetition Practice)"><i class="fa-solid fa-pen-ruler"></i> Fluency Drills</a>
           <a href="worksheets/formulas-level-1-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet" title="Practice Questions (Exam-Style Questions)"><i class="fa-regular fa-file-pdf"></i> Practice Questions</a>
           <a href="https://youtu.be/uqc7QbwLUpU" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
-          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+          <a href="#topic-quiz" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
         </div>
       </div>
       <div class="topic-row">
@@ -644,7 +658,7 @@
           <a href="worksheets/length-level-1-workout.html" target="_blank" rel="noopener" class="btn-mfs-sheet btn-mfs-workout" title="Fluency Drills (High-Repetition Practice)"><i class="fa-solid fa-pen-ruler"></i> Fluency Drills</a>
           <a href="worksheets/length-level-1-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet" title="Practice Questions (Exam-Style Questions)"><i class="fa-regular fa-file-pdf"></i> Practice Questions</a>
           <a href="https://youtu.be/FUoof8Ow4MM" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
-          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+          <a href="#topic-quiz" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
         </div>
       </div>
       <div class="topic-row">
@@ -657,7 +671,7 @@
           <a href="worksheets/capacity-level-1-workout.html" target="_blank" rel="noopener" class="btn-mfs-sheet btn-mfs-workout" title="Fluency Drills (High-Repetition Practice)"><i class="fa-solid fa-pen-ruler"></i> Fluency Drills</a>
           <a href="worksheets/capacity-level-1-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet" title="Practice Questions (Exam-Style Questions)"><i class="fa-regular fa-file-pdf"></i> Practice Questions</a>
           <a href="https://youtu.be/YeN1I0uNT4Q" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
-          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+          <a href="#topic-quiz" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
         </div>
       </div>
       <div class="topic-row">
@@ -670,7 +684,7 @@
           <a href="worksheets/weight-level-1-workout.html" target="_blank" rel="noopener" class="btn-mfs-sheet btn-mfs-workout" title="Fluency Drills (High-Repetition Practice)"><i class="fa-solid fa-pen-ruler"></i> Fluency Drills</a>
           <a href="worksheets/weight-level-1-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet" title="Practice Questions (Exam-Style Questions)"><i class="fa-regular fa-file-pdf"></i> Practice Questions</a>
           <a href="https://youtu.be/EoOsWk71upc" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
-          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+          <a href="#topic-quiz" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
         </div>
       </div>
       <div class="topic-row">
@@ -683,7 +697,7 @@
           <a href="worksheets/time-level-1-workout.html" target="_blank" rel="noopener" class="btn-mfs-sheet btn-mfs-workout" title="Fluency Drills (High-Repetition Practice)"><i class="fa-solid fa-pen-ruler"></i> Fluency Drills</a>
           <a href="worksheets/time-level-1-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet" title="Practice Questions (Exam-Style Questions)"><i class="fa-regular fa-file-pdf"></i> Practice Questions</a>
           <a href="https://youtu.be/u4wlfulRarM" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
-          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+          <a href="#topic-quiz" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
         </div>
       </div>
       <div class="topic-row">
@@ -696,7 +710,7 @@
           <a href="worksheets/problems-involving-money-level-1-workout.html" target="_blank" rel="noopener" class="btn-mfs-sheet btn-mfs-workout" title="Fluency Drills (High-Repetition Practice)"><i class="fa-solid fa-pen-ruler"></i> Fluency Drills</a>
           <a href="worksheets/problems-involving-money-level-1-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet" title="Practice Questions (Exam-Style Questions)"><i class="fa-regular fa-file-pdf"></i> Practice Questions</a>
           <a href="https://youtu.be/i7mVoL-2MJk" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
-          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+          <a href="#topic-quiz" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
         </div>
       </div>
       <div class="topic-row">
@@ -709,7 +723,7 @@
           <a href="worksheets/interest-and-compound-interest-level-1-workout.html" target="_blank" rel="noopener" class="btn-mfs-sheet btn-mfs-workout" title="Fluency Drills (High-Repetition Practice)"><i class="fa-solid fa-pen-ruler"></i> Fluency Drills</a>
           <a href="worksheets/interest-and-compound-interest-level-1-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet" title="Practice Questions (Exam-Style Questions)"><i class="fa-regular fa-file-pdf"></i> Practice Questions</a>
           <a href="https://youtu.be/hhy81Nrztac" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
-          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+          <a href="#topic-quiz" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
         </div>
       </div>
       <div class="topic-row">
@@ -722,7 +736,7 @@
           <a href="worksheets/perimeter-level-1-workout.html" target="_blank" rel="noopener" class="btn-mfs-sheet btn-mfs-workout" title="Fluency Drills (High-Repetition Practice)"><i class="fa-solid fa-pen-ruler"></i> Fluency Drills</a>
           <a href="worksheets/perimeter-level-1-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet" title="Practice Questions (Exam-Style Questions)"><i class="fa-regular fa-file-pdf"></i> Practice Questions</a>
           <a href="https://youtu.be/V0txjsizApw" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
-          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+          <a href="#topic-quiz" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
         </div>
       </div>
       <div class="topic-row">
@@ -735,7 +749,7 @@
           <a href="worksheets/area-level-1-workout.html" target="_blank" rel="noopener" class="btn-mfs-sheet btn-mfs-workout" title="Fluency Drills (High-Repetition Practice)"><i class="fa-solid fa-pen-ruler"></i> Fluency Drills</a>
           <a href="worksheets/area-level-1-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet" title="Practice Questions (Exam-Style Questions)"><i class="fa-regular fa-file-pdf"></i> Practice Questions</a>
           <a href="https://youtu.be/26oPftqpfFE" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
-          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+          <a href="#topic-quiz" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
         </div>
       </div>
       <div class="topic-row">
@@ -747,8 +761,8 @@
           <a href="functional-skills-circles-level-1.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
           <a href="worksheets/circles-level-1-workout.html" target="_blank" rel="noopener" class="btn-mfs-sheet btn-mfs-workout" title="Fluency Drills (High-Repetition Practice)"><i class="fa-solid fa-pen-ruler"></i> Fluency Drills</a>
           <a href="worksheets/circles-level-1-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet" title="Practice Questions (Exam-Style Questions)"><i class="fa-regular fa-file-pdf"></i> Practice Questions</a>
-          <a href="https://www.youtube.com/results?search_query=Functional+Skills+Maths+Level+1+Circles" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
-          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+          <a href="https://www.youtube.com/@MasterFunctionalSkills" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
+          <a href="#topic-quiz" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
         </div>
       </div>
       <div class="topic-row">
@@ -761,7 +775,7 @@
           <a href="worksheets/3d-shapes-level-1-workout.html" target="_blank" rel="noopener" class="btn-mfs-sheet btn-mfs-workout" title="Fluency Drills (High-Repetition Practice)"><i class="fa-solid fa-pen-ruler"></i> Fluency Drills</a>
           <a href="worksheets/3d-shapes-level-1-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet" title="Practice Questions (Exam-Style Questions)"><i class="fa-regular fa-file-pdf"></i> Practice Questions</a>
           <a href="https://youtu.be/N7R6mykQzpM" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
-          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+          <a href="#topic-quiz" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
         </div>
       </div>
       <div class="topic-row">
@@ -774,7 +788,7 @@
           <a href="worksheets/volume-level-1-workout.html" target="_blank" rel="noopener" class="btn-mfs-sheet btn-mfs-workout" title="Fluency Drills (High-Repetition Practice)"><i class="fa-solid fa-pen-ruler"></i> Fluency Drills</a>
           <a href="worksheets/volume-level-1-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet" title="Practice Questions (Exam-Style Questions)"><i class="fa-regular fa-file-pdf"></i> Practice Questions</a>
           <a href="https://youtu.be/OQzi0TTA2Fc" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
-          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+          <a href="#topic-quiz" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
         </div>
       </div>
       <div class="topic-row">
@@ -787,7 +801,7 @@
           <a href="worksheets/using-length-area-and-volume-in-calculations-level-1-workout.html" target="_blank" rel="noopener" class="btn-mfs-sheet btn-mfs-workout" title="Fluency Drills (High-Repetition Practice)"><i class="fa-solid fa-pen-ruler"></i> Fluency Drills</a>
           <a href="worksheets/using-length-area-and-volume-in-calculations-level-1-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet" title="Practice Questions (Exam-Style Questions)"><i class="fa-regular fa-file-pdf"></i> Practice Questions</a>
           <a href="https://youtu.be/OcsSm5np9Yk" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
-          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+          <a href="#topic-quiz" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
         </div>
       </div>
       <div class="topic-row">
@@ -800,7 +814,7 @@
           <a href="worksheets/nets-level-1-workout.html" target="_blank" rel="noopener" class="btn-mfs-sheet btn-mfs-workout" title="Fluency Drills (High-Repetition Practice)"><i class="fa-solid fa-pen-ruler"></i> Fluency Drills</a>
           <a href="worksheets/nets-level-1-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet" title="Practice Questions (Exam-Style Questions)"><i class="fa-regular fa-file-pdf"></i> Practice Questions</a>
           <a href="https://youtu.be/KpKBIWEhtSM" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
-          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+          <a href="#topic-quiz" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
         </div>
       </div>
       <div class="topic-row">
@@ -813,7 +827,7 @@
           <a href="worksheets/plans-and-elevations-level-1-workout.html" target="_blank" rel="noopener" class="btn-mfs-sheet btn-mfs-workout" title="Fluency Drills (High-Repetition Practice)"><i class="fa-solid fa-pen-ruler"></i> Fluency Drills</a>
           <a href="worksheets/plans-and-elevations-level-1-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet" title="Practice Questions (Exam-Style Questions)"><i class="fa-regular fa-file-pdf"></i> Practice Questions</a>
           <a href="https://youtu.be/q0RYqfvNbok" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
-          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+          <a href="#topic-quiz" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
         </div>
       </div>
       <div class="topic-row">
@@ -826,7 +840,7 @@
           <a href="worksheets/2d-shapes-level-1-workout.html" target="_blank" rel="noopener" class="btn-mfs-sheet btn-mfs-workout" title="Fluency Drills (High-Repetition Practice)"><i class="fa-solid fa-pen-ruler"></i> Fluency Drills</a>
           <a href="worksheets/2d-shapes-level-1-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet" title="Practice Questions (Exam-Style Questions)"><i class="fa-regular fa-file-pdf"></i> Practice Questions</a>
           <a href="https://youtu.be/dqJ_KNzRd5k" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
-          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+          <a href="#topic-quiz" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
         </div>
       </div>
       <div class="topic-row">
@@ -839,7 +853,7 @@
           <a href="worksheets/maps-and-scale-drawings-level-1-workout.html" target="_blank" rel="noopener" class="btn-mfs-sheet btn-mfs-workout" title="Fluency Drills (High-Repetition Practice)"><i class="fa-solid fa-pen-ruler"></i> Fluency Drills</a>
           <a href="worksheets/maps-and-scale-drawings-level-1-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet" title="Practice Questions (Exam-Style Questions)"><i class="fa-regular fa-file-pdf"></i> Practice Questions</a>
           <a href="https://youtu.be/9adLMfxuLuU" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
-          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+          <a href="#topic-quiz" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
         </div>
       </div>
       <div class="topic-row">
@@ -852,7 +866,7 @@
           <a href="worksheets/angles-and-bearings-level-1-workout.html" target="_blank" rel="noopener" class="btn-mfs-sheet btn-mfs-workout" title="Fluency Drills (High-Repetition Practice)"><i class="fa-solid fa-pen-ruler"></i> Fluency Drills</a>
           <a href="worksheets/angles-and-bearings-level-1-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet" title="Practice Questions (Exam-Style Questions)"><i class="fa-regular fa-file-pdf"></i> Practice Questions</a>
           <a href="https://youtu.be/bksNrs6eYpU" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
-          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+          <a href="#topic-quiz" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
         </div>
       </div>
       <div class="topic-row">
@@ -865,7 +879,7 @@
           <a href="worksheets/data-tables-level-1-workout.html" target="_blank" rel="noopener" class="btn-mfs-sheet btn-mfs-workout" title="Fluency Drills (High-Repetition Practice)"><i class="fa-solid fa-pen-ruler"></i> Fluency Drills</a>
           <a href="worksheets/data-tables-level-1-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet" title="Practice Questions (Exam-Style Questions)"><i class="fa-regular fa-file-pdf"></i> Practice Questions</a>
           <a href="https://youtu.be/YOwIb1Hi1yk" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
-          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+          <a href="#topic-quiz" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
         </div>
       </div>
       <div class="topic-row">
@@ -878,7 +892,7 @@
           <a href="worksheets/bar-charts-level-1-workout.html" target="_blank" rel="noopener" class="btn-mfs-sheet btn-mfs-workout" title="Fluency Drills (High-Repetition Practice)"><i class="fa-solid fa-pen-ruler"></i> Fluency Drills</a>
           <a href="worksheets/bar-charts-level-1-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet" title="Practice Questions (Exam-Style Questions)"><i class="fa-regular fa-file-pdf"></i> Practice Questions</a>
           <a href="https://youtu.be/nTLnLtkAhFo" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
-          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+          <a href="#topic-quiz" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
         </div>
       </div>
       <div class="topic-row">
@@ -891,7 +905,7 @@
           <a href="worksheets/line-graphs-level-1-workout.html" target="_blank" rel="noopener" class="btn-mfs-sheet btn-mfs-workout" title="Fluency Drills (High-Repetition Practice)"><i class="fa-solid fa-pen-ruler"></i> Fluency Drills</a>
           <a href="worksheets/line-graphs-level-1-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet" title="Practice Questions (Exam-Style Questions)"><i class="fa-regular fa-file-pdf"></i> Practice Questions</a>
           <a href="https://youtu.be/ne3D39UWFWs" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
-          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+          <a href="#topic-quiz" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
         </div>
       </div>
       <div class="topic-row">
@@ -904,7 +918,7 @@
           <a href="worksheets/pie-charts-level-1-workout.html" target="_blank" rel="noopener" class="btn-mfs-sheet btn-mfs-workout" title="Fluency Drills (High-Repetition Practice)"><i class="fa-solid fa-pen-ruler"></i> Fluency Drills</a>
           <a href="worksheets/pie-charts-level-1-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet" title="Practice Questions (Exam-Style Questions)"><i class="fa-regular fa-file-pdf"></i> Practice Questions</a>
           <a href="https://youtu.be/CFUYMWtisuo" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
-          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+          <a href="#topic-quiz" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
         </div>
       </div>
       <div class="topic-row">
@@ -917,7 +931,7 @@
           <a href="worksheets/grouped-data-level-1-workout.html" target="_blank" rel="noopener" class="btn-mfs-sheet btn-mfs-workout" title="Fluency Drills (High-Repetition Practice)"><i class="fa-solid fa-pen-ruler"></i> Fluency Drills</a>
           <a href="worksheets/grouped-data-level-1-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet" title="Practice Questions (Exam-Style Questions)"><i class="fa-regular fa-file-pdf"></i> Practice Questions</a>
           <a href="https://www.youtube.com/watch?v=p_RY2fNsmfE" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
-          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+          <a href="#topic-quiz" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
         </div>
       </div>
       <div class="topic-row">
@@ -930,7 +944,7 @@
           <a href="worksheets/mean-median-mode-and-range-level-1-workout.html" target="_blank" rel="noopener" class="btn-mfs-sheet btn-mfs-workout" title="Fluency Drills (High-Repetition Practice)"><i class="fa-solid fa-pen-ruler"></i> Fluency Drills</a>
           <a href="worksheets/mean-median-mode-and-range-level-1-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet" title="Practice Questions (Exam-Style Questions)"><i class="fa-regular fa-file-pdf"></i> Practice Questions</a>
           <a href="https://youtu.be/PLVvDTRjhjg" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
-          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+          <a href="#topic-quiz" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
         </div>
       </div>
       <div class="topic-row">
@@ -943,7 +957,7 @@
           <a href="worksheets/probability-level-1-workout.html" target="_blank" rel="noopener" class="btn-mfs-sheet btn-mfs-workout" title="Fluency Drills (High-Repetition Practice)"><i class="fa-solid fa-pen-ruler"></i> Fluency Drills</a>
           <a href="worksheets/probability-level-1-worksheet.html" target="_blank" rel="noopener" class="btn-mfs-sheet" title="Practice Questions (Exam-Style Questions)"><i class="fa-regular fa-file-pdf"></i> Practice Questions</a>
           <a href="https://youtu.be/b56f0pTZgtM" target="_blank" rel="noopener" class="btn-mfs-video"><i class="fa-brands fa-youtube"></i> Video Solution</a>
-          <a href="functional-skills-courses.html" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
+          <a href="#topic-quiz" class="btn-mfs-test"><i class="fa-solid fa-list-check"></i> Topic Test</a>
         </div>
       </div>
       </div>
@@ -1091,5 +1105,76 @@
   <!-- DYSLEXIA TINT ENGINE -->
   <script src="assets/js/mfs-tint.js"></script>
 
+  <script>
+    (function() {
+      var STORAGE_KEY = 'mfs_prog_maths_l1';
+      var saved = {};
+      try { saved = JSON.parse(localStorage.getItem(STORAGE_KEY) || '{}'); } catch (e) {}
+
+      function updateMasteryBar() {
+        var rows = document.querySelectorAll('.topic-row');
+        var done = 0;
+        rows.forEach(function(r, idx) {
+          var chk = r.querySelector('.mfs-topic-done-chk');
+          if (chk && chk.checked) done++;
+        });
+        var lbl = document.getElementById('mfsMasteryLabel');
+        var fill = document.getElementById('mfsMasteryFill');
+        if (lbl) lbl.textContent = done + ' / ' + rows.length + ' Mastered';
+        if (fill && rows.length > 0) fill.style.width = Math.round((done / rows.length) * 100) + '%';
+      }
+
+      function initCheckboxes() {
+        var rows = document.querySelectorAll('.topic-row');
+        rows.forEach(function(r, idx) {
+          var titleEl = r.querySelector('.topic-title');
+          if (!titleEl || titleEl.querySelector('.mfs-topic-done-chk')) return;
+          var key = (titleEl.textContent || ('row_' + idx)).trim().toLowerCase().replace(/\s+/g, '_');
+          var chk = document.createElement('input');
+          chk.type = 'checkbox';
+          chk.className = 'mfs-topic-done-chk';
+          chk.title = 'Mark topic as revised';
+          chk.checked = !!saved[key];
+          chk.addEventListener('change', function() {
+            saved[key] = chk.checked;
+            try { localStorage.setItem(STORAGE_KEY, JSON.stringify(saved)); } catch (e) {}
+            updateMasteryBar();
+          });
+          titleEl.style.display = 'flex';
+          titleEl.style.alignItems = 'center';
+          titleEl.insertBefore(chk, titleEl.firstChild);
+        });
+        updateMasteryBar();
+      }
+
+      window.filterMfsHubTopics = function(cat, btn) {
+        document.querySelectorAll('#mfsHubFilterBar .mfs-filter-pill').forEach(function(b) {
+          b.classList.toggle('active', b === btn);
+        });
+        var qInput = document.getElementById('topicSearchInput');
+        var q = qInput ? (qInput.value || '').toLowerCase().trim() : '';
+        document.querySelectorAll('.topic-row').forEach(function(r) {
+          var tag = r.querySelector('[data-cat]');
+          var rowCat = tag ? (tag.getAttribute('data-cat') || '').toLowerCase() : '';
+          if (!rowCat) {
+            var cls = tag ? tag.className.toLowerCase() : r.textContent.toLowerCase();
+            if (cls.indexOf('read') !== -1) rowCat = 'reading';
+            else if (cls.indexOf('writ') !== -1) rowCat = 'writing';
+            else if (cls.indexOf('slc') !== -1 || cls.indexOf('speak') !== -1) rowCat = 'slc';
+          }
+          var matchesCat = (cat === 'all') || (rowCat.indexOf(cat) !== -1);
+          var matchesQ = !q || r.textContent.toLowerCase().indexOf(q) !== -1;
+          r.style.display = (matchesCat && matchesQ) ? '' : 'none';
+        });
+      };
+
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initCheckboxes);
+      } else {
+        initCheckboxes();
+      }
+    })();
+  </script>
+  <script src="assets/js/mfs-topic-quiz.js?v=20261111" defer></script>
 </body>
 </html>

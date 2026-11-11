@@ -897,6 +897,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/fractions-decimals-and-percentages-workout.html">
 </head>
 <body>
 
@@ -969,7 +986,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 1</span>
-        <span class="block-q-desc">Question 1: Fraction to Decimal and Percentage Conversions</span>
+        <span class="block-q-desc">Fraction to Decimal and Percentage Conversions</span>
       </div>
       <div class="workout-instruction">Convert each fraction to an equivalent decimal and percentage:</div>
       <div class="drill-grid">
@@ -1043,7 +1060,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 2</span>
-        <span class="block-q-desc">Question 2: Percentage to Simplified Fraction</span>
+        <span class="block-q-desc">Percentage to Simplified Fraction</span>
       </div>
       <div class="workout-instruction">Write each percentage as a fraction in its simplest form:</div>
       <div class="drill-grid">
@@ -1117,7 +1134,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 3</span>
-        <span class="block-q-desc">Question 3: Comparing Mixed Formats</span>
+        <span class="block-q-desc">Comparing Mixed Formats</span>
       </div>
       <div class="workout-instruction">Compare and state the largest value:</div>
       <div class="drill-grid">
@@ -1175,7 +1192,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 4</span>
-        <span class="block-q-desc">Question 4: Applied FDP Comparisons & Ordering Drills</span>
+        <span class="block-q-desc">Applied FDP Comparisons & Ordering Drills</span>
       </div>
       <div class="workout-instruction">Convert all items to percentages or decimals to compare:</div>
       <div class="drill-grid">

@@ -830,6 +830,93 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+<style id="mfs-english-ws-upgrade">
+  .eng-extract-callout {
+    display: block;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #0284c7;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin: 8px 0;
+    font-style: normal;
+    color: #0f172a;
+    line-height: 1.65;
+  }
+  .q-working-area .working-line {
+    height: 30px !important;
+    border-bottom: 1.5px dashed #94a3b8 !important;
+  }
+  .eng-structured-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    margin-top: 4px;
+  }
+  .eng-structured-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1e293b;
+  }
+  .eng-structured-box {
+    flex: 1;
+    min-width: 180px;
+    min-height: 36px;
+    border: 1.5px solid #64748b;
+    border-radius: 6px;
+    background: #ffffff;
+  }
+  .mfs-paf-spag-audit {
+    margin: 18px 0 8px;
+    border: 2px solid #0f172a;
+    border-radius: 10px;
+    padding: 14px 16px;
+    background: #f8fafc;
+    page-break-inside: avoid;
+  }
+  .mfs-paf-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 8px 0 12px;
+  }
+  .mfs-paf-cell {
+    background: #ffffff;
+    border: 1px solid #94a3b8;
+    border-radius: 6px;
+    padding: 8px 10px;
+    min-height: 46px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #334155;
+  }
+  @media (max-width: 600px) {
+    .mfs-paf-grid { grid-template-columns: 1fr; }
+    .eng-structured-line { flex-direction: column; align-items: stretch; gap: 4px; }
+  }
+</style>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/piecing-it-together-comparing-texts-worksheet.html">
 </head>
 <body>
 
@@ -854,7 +941,7 @@
       </div>
       <div class="sheet-meta-badge">
         <span class="topic-name">Comparing Texts & Cross-Text Synthesis</span>
-        <span class="spec-tag">Pearson Edexcel: Pearson Edexcel Functional Skills English (READING)</span>
+        <span class="spec-tag">Pearson Edexcel Functional Skills English (READING)</span>
       </div>
     </div>
 
@@ -887,30 +974,34 @@
         Read these two views on paperless hospital records:<br><strong>Text A (IT Director):</strong> <em>'Digital tablets eliminate lost paper charts and allow doctors to view blood results instantly.'</em><br><strong>Text B (Ward Sister):</strong> <em>'Instant blood results are helpful, but Wi-Fi blackspots on the ground floor often freeze the tablets mid-round.'</em><br>State <strong>one point of agreement</strong> and <strong>one difference</strong> between Text A and Text B.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Agreement & Difference =</span>
-        Agreement: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Difference: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Agreement:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Difference: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
     <div class="q-card">
       <div class="q-card-head">
-        <span class="q-title">Question 2 (Core Skill Application — 3 Marks)</span>
+        <span class="q-title">Question 2 (Core Skill Application — 2 Marks)</span>
         <span class="q-marks">[2 Marks]</span>
       </div>
       <div class="q-stem">
         Read the two extracts on town centre parking:<br><strong>Text 1 (Council Press Release):</strong> <em>'Increasing high-street parking tariffs by £1.20 per hour will relieve severe daytime congestion and cut town centre exhaust emissions by 20%.'</em><br><strong>Text 2 (Shopkeepers' Petition):</strong> <em>'Although town centre traffic is undeniably congested, this greedy £1.20 parking hike will drive loyal shoppers straight to out-of-town retail parks!'</em><br>Identify <strong>one similarity</strong> and <strong>two differences</strong> in how the texts present the parking issue.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -936,8 +1027,10 @@
         Read the two extracts:<br><strong>Text A (Facilities Manager):</strong> <em>'Replacing our staffed hot canteen with smart vending machines will save £22,000 a year and provide 24-hour food access for night-shift workers.'</em><br><strong>Text B (Warehouse Supervisor):</strong> <em>'While 24-hour access for night staff is welcome, vending machines only sell processed snacks rather than the hot, nutritious meals our manual workers need.'</em><br>(a) Identify <strong>one point of agreement</strong> between Text A and Text B. [1 Mark]<br>(b) Identify <strong>one point of disagreement</strong> about the food provided. [1 Mark]
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -958,8 +1051,10 @@
         Read the two extracts about open-plan offices:<br><strong>Text A (Office Architect):</strong> <em>'Open-plan workspaces foster instant team collaboration, spark creative ideas, and reduce partitioning costs by 35%.'</em><br><strong>Text B (Software Developer):</strong> <em>'Working in a noisy fishbowl of constant chatter destroys deep concentration and leaves neurodivergent staff exhausted by 3 p.m.'</em><br>Compare how the two writers view open-plan offices and identify one language technique used in Text B.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -986,8 +1081,10 @@
         Read the two extracts:<br><strong>Text A (Hospital Trust Circular):</strong> <em>'Transitioning to 12-hour nursing rosters has reduced clinical handover errors by 15% and guarantees seamless operational continuity for acute patients.'</em><br><strong>Text B (Nursing Union Blog):</strong> <em>'Exhausted nurses are being pushed to breaking point! Working gruelling 12-hour marathons doubles medication errors after the tenth hour — how can exhausted staff keep patients safe?'</em><br>Compare the writers' views on 12-hour shifts and how they use language to convey their perspectives. [4 Marks]
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -1009,8 +1106,10 @@
         Read these two extracts on AI customer service chatbots:<br><strong>Text A (Tech Vendor):</strong> <em>'Our AI Assistant resolves 82% of routine billing queries in under 10 seconds, freeing human agents to handle complex cases.'</em><br><strong>Text B (Consumer Watchdog):</strong> <em>'Frustrated customers are trapped in endless automated loops when trying to report urgent banking fraud. Why replace empathetic human advisors with robotic scripts?'</em><br>Compare how Text A and Text B present AI chatbots, referring to both content and language. [4 Marks]
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>

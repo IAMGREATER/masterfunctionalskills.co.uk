@@ -897,6 +897,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/piecing-it-together-comparing-texts-level-1-workout.html">
 </head>
 <body>
 
@@ -968,7 +985,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 1</span>
-        <span class="block-q-desc">Question 1: Comparative Connectives Practice</span>
+        <span class="block-q-desc">Comparative Connectives Practice</span>
       </div>
       <div class="workout-instruction">Fill in the connective that best highlights the comparison (Both, Conversely, In contrast, Similarly):</div>
       <div class="drill-grid">
@@ -1010,7 +1027,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 2</span>
-        <span class="block-q-desc">Question 2: Matching Contrasting Arguments</span>
+        <span class="block-q-desc">Matching Contrasting Arguments</span>
       </div>
       <div class="workout-instruction">Pair the argument in Text 1 with its direct counter-argument in Text 2:</div>
       <div class="drill-grid">
@@ -1036,7 +1053,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 3</span>
-        <span class="block-q-desc">Question 3: Cross-Referencing Practical Information Across Multiple Sources</span>
+        <span class="block-q-desc">Cross-Referencing Practical Information Across Multiple Sources</span>
       </div>
       <div class="workout-instruction">Extract and combine information from Source A and Source B to answer the query:</div>
       <div class="drill-grid">
@@ -1110,7 +1127,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 4</span>
-        <span class="block-q-desc">Question 4: Resolving Conflicting Advice Across Healthcare Guidelines</span>
+        <span class="block-q-desc">Resolving Conflicting Advice Across Healthcare Guidelines</span>
       </div>
       <div class="workout-instruction">Identify the discrepancy and state which protocol takes precedence according to seniority or date:</div>
       <div class="drill-grid">
@@ -1184,7 +1201,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 5</span>
-        <span class="block-q-desc">Question 5: Exam Synthesis Skills - Formulating Comparative Summaries</span>
+        <span class="block-q-desc">Exam Synthesis Skills - Formulating Comparative Summaries</span>
       </div>
       <div class="workout-instruction">Draft a one-sentence comparative synthesis identifying the shared theme and differing solutions:</div>
       <div class="drill-grid">

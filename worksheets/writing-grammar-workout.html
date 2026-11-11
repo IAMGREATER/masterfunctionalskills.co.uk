@@ -897,6 +897,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/writing-grammar-workout.html">
 </head>
 <body>
 
@@ -969,7 +986,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 1</span>
-        <span class="block-q-desc">Question 1: Subject-Verb Agreement Drills</span>
+        <span class="block-q-desc">Subject-Verb Agreement Drills</span>
       </div>
       <div class="workout-instruction">Choose the correct verb in brackets:</div>
       <div class="drill-grid">
@@ -1027,7 +1044,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 2</span>
-        <span class="block-q-desc">Question 2: Fixing Comma Splices & Fragments</span>
+        <span class="block-q-desc">Fixing Comma Splices & Fragments</span>
       </div>
       <div class="workout-instruction">Identify whether each sentence is Correct, a Comma Splice, or a Fragment:</div>
       <div class="drill-grid">
@@ -1085,7 +1102,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 3</span>
-        <span class="block-q-desc">Question 3: Subject-Verb Agreement Fluency</span>
+        <span class="block-q-desc">Subject-Verb Agreement Fluency</span>
       </div>
       <div class="workout-instruction">Select the grammatically correct verb in parentheses to complete each sentence:</div>
       <div class="drill-grid">
@@ -1159,7 +1176,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 4</span>
-        <span class="block-q-desc">Question 4: Correcting Sentence Fragments and Run-On Sentences</span>
+        <span class="block-q-desc">Correcting Sentence Fragments and Run-On Sentences</span>
       </div>
       <div class="workout-instruction">Identify whether each sentence is a Fragment, a Run-On (comma splice), or Correct:</div>
       <div class="drill-grid">
@@ -1233,7 +1250,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 5</span>
-        <span class="block-q-desc">Question 5: Pronoun Consistency & Preposition Precision</span>
+        <span class="block-q-desc">Pronoun Consistency & Preposition Precision</span>
       </div>
       <div class="workout-instruction">Choose the correct pronoun or preposition to ensure professional grammar:</div>
       <div class="drill-grid">

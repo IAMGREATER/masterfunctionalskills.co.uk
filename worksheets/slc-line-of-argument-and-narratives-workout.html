@@ -897,6 +897,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/slc-line-of-argument-and-narratives-workout.html">
 </head>
 <body>
 
@@ -968,7 +985,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 1</span>
-        <span class="block-q-desc">Question 1: Signposting Transitions in Presentations</span>
+        <span class="block-q-desc">Signposting Transitions in Presentations</span>
       </div>
       <div class="workout-instruction">Match the signpost phrase to its presentation stage (Opening, Transition, Evidence, or Conclusion):</div>
       <div class="drill-grid">
@@ -1018,7 +1035,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 2</span>
-        <span class="block-q-desc">Question 2: Structuring Argument Flow</span>
+        <span class="block-q-desc">Structuring Argument Flow</span>
       </div>
       <div class="workout-instruction">Order the steps of a persuasive spoken presentation into logical sequence (1 to 4):</div>
       <div class="drill-grid">
@@ -1060,7 +1077,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 3</span>
-        <span class="block-q-desc">Question 3: Structuring a Persuasive Spoken Argument (PREP Method)</span>
+        <span class="block-q-desc">Structuring a Persuasive Spoken Argument (PREP Method)</span>
       </div>
       <div class="workout-instruction">Identify which component of the PREP framework (Point, Reason, Example, Point) is shown:</div>
       <div class="drill-grid">
@@ -1134,7 +1151,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 4</span>
-        <span class="block-q-desc">Question 4: Counteracting Logical Fallacies in Group Debates</span>
+        <span class="block-q-desc">Counteracting Logical Fallacies in Group Debates</span>
       </div>
       <div class="workout-instruction">Identify the logical flaw in the speaker's argument (Ad Hominem, False Dilemma, Slippery Slope, Bandwagon):</div>
       <div class="drill-grid">
@@ -1208,7 +1225,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 5</span>
-        <span class="block-q-desc">Question 5: Crafting Narrative Arcs in Vocational Presentations</span>
+        <span class="block-q-desc">Crafting Narrative Arcs in Vocational Presentations</span>
       </div>
       <div class="workout-instruction">Order the stages of a compelling workplace storytelling presentation:</div>
       <div class="drill-grid">

@@ -897,6 +897,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/line-graphs-workout.html">
 </head>
 <body>
 
@@ -969,7 +986,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 1</span>
-        <span class="block-q-desc">Question 1: Determining Axis Scales and Intervals</span>
+        <span class="block-q-desc">Determining Axis Scales and Intervals</span>
       </div>
       <div class="workout-instruction">Work out the value represented by one small grid square:</div>
       <div class="drill-grid">
@@ -1011,7 +1028,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 2</span>
-        <span class="block-q-desc">Question 2: Describing Trends and Rate of Change</span>
+        <span class="block-q-desc">Describing Trends and Rate of Change</span>
       </div>
       <div class="workout-instruction">State whether the trend is increasing, decreasing, or constant:</div>
       <div class="drill-grid">
@@ -1053,7 +1070,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 3</span>
-        <span class="block-q-desc">Question 3: Question 2: Reading Time-Series Trends on Line Graphs</span>
+        <span class="block-q-desc">Reading Time-Series Trends on Line Graphs</span>
       </div>
       <div class="workout-instruction">Read data points over time and describe trends:</div>
       <div class="drill-grid">
@@ -1143,7 +1160,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 4</span>
-        <span class="block-q-desc">Question 4: Question 3: Dual-Line Graph Comparisons</span>
+        <span class="block-q-desc">Dual-Line Graph Comparisons</span>
       </div>
       <div class="workout-instruction">Compare two lines (e.g. Product A vs Product B):</div>
       <div class="drill-grid">
@@ -1201,7 +1218,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 5</span>
-        <span class="block-q-desc">Question 5: Interpreting Trends & Rates of Change on Line Graphs</span>
+        <span class="block-q-desc">Interpreting Trends & Rates of Change on Line Graphs</span>
       </div>
       <div class="workout-instruction">Read trends and calculate rates of change between points:</div>
       <div class="drill-grid">

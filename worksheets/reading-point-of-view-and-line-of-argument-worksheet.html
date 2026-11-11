@@ -830,6 +830,93 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+<style id="mfs-english-ws-upgrade">
+  .eng-extract-callout {
+    display: block;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #0284c7;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin: 8px 0;
+    font-style: normal;
+    color: #0f172a;
+    line-height: 1.65;
+  }
+  .q-working-area .working-line {
+    height: 30px !important;
+    border-bottom: 1.5px dashed #94a3b8 !important;
+  }
+  .eng-structured-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    margin-top: 4px;
+  }
+  .eng-structured-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1e293b;
+  }
+  .eng-structured-box {
+    flex: 1;
+    min-width: 180px;
+    min-height: 36px;
+    border: 1.5px solid #64748b;
+    border-radius: 6px;
+    background: #ffffff;
+  }
+  .mfs-paf-spag-audit {
+    margin: 18px 0 8px;
+    border: 2px solid #0f172a;
+    border-radius: 10px;
+    padding: 14px 16px;
+    background: #f8fafc;
+    page-break-inside: avoid;
+  }
+  .mfs-paf-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 8px 0 12px;
+  }
+  .mfs-paf-cell {
+    background: #ffffff;
+    border: 1px solid #94a3b8;
+    border-radius: 6px;
+    padding: 8px 10px;
+    min-height: 46px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #334155;
+  }
+  @media (max-width: 600px) {
+    .mfs-paf-grid { grid-template-columns: 1fr; }
+    .eng-structured-line { flex-direction: column; align-items: stretch; gap: 4px; }
+  }
+</style>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/reading-point-of-view-and-line-of-argument-worksheet.html">
 </head>
 <body>
 
@@ -884,19 +971,21 @@
         <span class="q-marks">[2 Marks]</span>
       </div>
       <div class="q-stem">
-        Read this letter to a local newspaper:<br><em>'Replacing our town's weekly market with a luxury flat development is a short-sighted mistake. The market provides affordable fresh fruit for low-income families and supports 45 independent local traders.'</em><br><br>State the writer's <strong>point of view</strong> on the flat development and give the <strong>two reasons</strong> they use to support their view.
+        Read this letter to a local newspaper:<span class="eng-extract-callout">'Replacing our town's weekly market with a luxury flat development is a short-sighted mistake. The market provides affordable fresh fruit for low-income families and supports 45 independent local traders.'</span><br><br>State the writer's <strong>point of view</strong> on the flat development and give the <strong>two reasons</strong> they use to support their view.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Stance & Supporting Reasons =</span>
-        Stance: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Reason 1: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Reason 2: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Stance:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Reason 1:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Reason 2: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -906,19 +995,21 @@
         <span class="q-marks">[2 Marks]</span>
       </div>
       <div class="q-stem">
-        Read this extract from a school governor's blog:<br><em>'Some parents argue that banning smartphones during the school day prevents them from contacting their children in an emergency. However, classroom trials prove that phone bans eliminate cyberbullying at breaktimes and boost maths test scores by 14%.'</em><br><br>Does the writer <strong>support or oppose</strong> banning smartphones in schools? Explain how the word <strong>'However'</strong> helps you know.
+        Read this extract from a school governor's blog:<span class="eng-extract-callout">'Some parents argue that banning smartphones during the school day prevents them from contacting their children in an emergency. However, classroom trials prove that phone bans eliminate cyberbullying at breaktimes and boost maths test scores by 14%.'</span><br><br>Does the writer <strong>support or oppose</strong> banning smartphones in schools? Explain how the word <strong>'However'</strong> helps you know.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Writer's Stance & Pivot Explanation =</span>
-        Stance (Supports / Opposes): <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Role of 'However': <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Stance (Supports / Opposes):</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Role of 'However': <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -934,20 +1025,22 @@
         <span class="q-marks">[3 Marks]</span>
       </div>
       <div class="q-stem">
-        Read this extract from a logistics director's proposal:<br><em>'1. Diesel prices have risen by 22% over the past year, eroding our delivery profit margins. 2. Fitting aerodynamic roof fairings to our 30 HGV lorries costs just £400 per vehicle and cuts fuel drag by 11%. 3. Consequently, the board should approve £12,000 for fleet roof fairings this quarter.'</em><br><br>Trace how the director builds their <strong>line of argument</strong> across the three numbered sentences.
+        Read this extract from a logistics director's proposal:<span class="eng-extract-callout">'1. Diesel prices have risen by 22% over the past year, eroding our delivery profit margins. 2. Fitting aerodynamic roof fairings to our 30 HGV lorries costs just £400 per vehicle and cuts fuel drag by 11%. 3. Consequently, the board should approve £12,000 for fleet roof fairings this quarter.'</span><br><br>Trace how the director builds their <strong>line of argument</strong> across the three numbered sentences.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Three-Stage Line of Argument =</span>
-        Stage 1 (Problem): <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Stage 2 (Solution/Data): <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Stage 3 (Conclusion): <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Stage 1 (Problem):</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Stage 2 (Solution/Data):</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Stage 3 (Conclusion): <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -957,20 +1050,22 @@
         <span class="q-marks">[3 Marks]</span>
       </div>
       <div class="q-stem">
-        Read this extract from a campaign flyer opposing a wind farm:<br><em>'Greedy energy corporations want to blight our breathtaking valley with monstrous 150-metre steel turbines that will wreck local house prices forever.'</em><br><br>Explain why this extract is <strong>biased</strong>, quoting <strong>two examples of loaded language</strong> and identifying what perspective has been left out.
+        Read this extract from a campaign flyer opposing a wind farm:<span class="eng-extract-callout">'Greedy energy corporations want to blight our breathtaking valley with monstrous 150-metre steel turbines that will wreck local house prices forever.'</span><br><br>Explain why this extract is <strong>biased</strong>, quoting <strong>two examples of loaded language</strong> and identifying what perspective has been left out.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Bias Explanation & Quotes =</span>
-        Loaded Quote 1: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Loaded Quote 2: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Omitted View: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Loaded Quote 1:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Loaded Quote 2:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Omitted View: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -986,11 +1081,13 @@
         <span class="q-marks">[4 Marks]</span>
       </div>
       <div class="q-stem">
-        Read this article extract written by <strong>Marcus Vance, Managing Director of 'PureSpring Bottled Water Ltd'</strong>:<br><em>'Municipal tap water flows through century-old lead and iron pipes that taint its flavour. Drinking PureSpring mineral water is the only safe, refreshing choice for health-conscious families.'</em><br><br>Evaluate the credibility and objectivity of this argument. Refer to the <strong>author's identity</strong>, their <strong>use of language</strong>, and the <strong>evidence provided</strong>.
+        Read this article extract written by <strong>Marcus Vance, Managing Director of 'PureSpring Bottled Water Ltd'</strong>:<span class="eng-extract-callout">'Municipal tap water flows through century-old lead and iron pipes that taint its flavour. Drinking PureSpring mineral water is the only safe, refreshing choice for health-conscious families.'</span><br><br>Evaluate the credibility and objectivity of this argument. Refer to the <strong>author's identity</strong>, their <strong>use of language</strong>, and the <strong>evidence provided</strong>.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -998,9 +1095,9 @@
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Credibility & Bias Evaluation =</span>
-        Vested Interest: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Language Analysis: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Evidence Gap: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Vested Interest:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Language Analysis:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Evidence Gap: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -1010,11 +1107,13 @@
         <span class="q-marks">[4 Marks]</span>
       </div>
       <div class="q-stem">
-        <strong>Text A (Consumer Finance Guide):</strong><br><em>'Buy-Now-Pay-Later (BNPL) schemes allow shoppers to spread the cost of a new washing machine over three interest-free instalments. However, missed payments trigger £12 late fees and can damage your credit score.'</em><br><br><strong>Text B (PayLater App Advert):</strong><br><em>'Why wait for payday? Instant PayLater is the smartest, most stress-free way to upgrade your wardrobe today with zero catch!'</em><br><br>Analyse which text presents a <strong>balanced argument</strong> and which text is <strong>biased</strong>, using evidence from both texts.
+        <strong>Text A (Consumer Finance Guide):</strong><span class="eng-extract-callout">'Buy-Now-Pay-Later (BNPL) schemes allow shoppers to spread the cost of a new washing machine over three interest-free instalments. However, missed payments trigger £12 late fees and can damage your credit score.'</span><br><br><strong>Text B (PayLater App Advert):</strong><span class="eng-extract-callout">'Why wait for payday? Instant PayLater is the smartest, most stress-free way to upgrade your wardrobe today with zero catch!'</span><br><br>Analyse which text presents a <strong>balanced argument</strong> and which text is <strong>biased</strong>, using evidence from both texts.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
@@ -1022,9 +1121,9 @@
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Balanced vs Biased Analysis =</span>
-        Text A (Balanced): <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Text B (Biased): <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Text A (Balanced):</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Text B (Biased): <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 

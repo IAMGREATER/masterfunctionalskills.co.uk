@@ -897,6 +897,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/slc-asking-workout.html">
 </head>
 <body>
 
@@ -968,7 +985,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 1</span>
-        <span class="block-q-desc">Question 1: Converting Closed Questions to Open Probes</span>
+        <span class="block-q-desc">Converting Closed Questions to Open Probes</span>
       </div>
       <div class="workout-instruction">Convert the closed question into an open probing question:</div>
       <div class="drill-grid">
@@ -1018,7 +1035,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 2</span>
-        <span class="block-q-desc">Question 2: Open vs Closed Questioning Strategies</span>
+        <span class="block-q-desc">Open vs Closed Questioning Strategies</span>
       </div>
       <div class="workout-instruction">Classify each question as Open (encourages elaboration) or Closed (yields single-word / yes-no answer):</div>
       <div class="drill-grid">
@@ -1092,7 +1109,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 3</span>
-        <span class="block-q-desc">Question 3: Probing, Clarifying, and Reflective Questioning</span>
+        <span class="block-q-desc">Probing, Clarifying, and Reflective Questioning</span>
       </div>
       <div class="workout-instruction">Identify the type of question used (Clarifying, Probing, Reflective, or Hypothetical):</div>
       <div class="drill-grid">
@@ -1166,7 +1183,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 4</span>
-        <span class="block-q-desc">Question 4: Tactful and Professional Inquiry in Workplace Settings</span>
+        <span class="block-q-desc">Tactful and Professional Inquiry in Workplace Settings</span>
       </div>
       <div class="workout-instruction">Rewrite the blunt inquiry into a polite, diplomatic professional workplace question:</div>
       <div class="drill-grid">
@@ -1240,7 +1257,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 5</span>
-        <span class="block-q-desc">Question 5: Strategic Probing & Clarification Scenarios</span>
+        <span class="block-q-desc">Strategic Probing & Clarification Scenarios</span>
       </div>
       <div class="workout-instruction">Formulate a constructive question for each situation:</div>
       <div class="drill-grid">

@@ -830,6 +830,93 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+<style id="mfs-english-ws-upgrade">
+  .eng-extract-callout {
+    display: block;
+    background: #f8fafc;
+    border: 1px solid #cbd5e1;
+    border-left: 4px solid #0284c7;
+    border-radius: 6px;
+    padding: 10px 14px;
+    margin: 8px 0;
+    font-style: normal;
+    color: #0f172a;
+    line-height: 1.65;
+  }
+  .q-working-area .working-line {
+    height: 30px !important;
+    border-bottom: 1.5px dashed #94a3b8 !important;
+  }
+  .eng-structured-inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    width: 100%;
+    margin-top: 4px;
+  }
+  .eng-structured-line {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    font-size: 0.9rem;
+    font-weight: 700;
+    color: #1e293b;
+  }
+  .eng-structured-box {
+    flex: 1;
+    min-width: 180px;
+    min-height: 36px;
+    border: 1.5px solid #64748b;
+    border-radius: 6px;
+    background: #ffffff;
+  }
+  .mfs-paf-spag-audit {
+    margin: 18px 0 8px;
+    border: 2px solid #0f172a;
+    border-radius: 10px;
+    padding: 14px 16px;
+    background: #f8fafc;
+    page-break-inside: avoid;
+  }
+  .mfs-paf-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+    margin: 8px 0 12px;
+  }
+  .mfs-paf-cell {
+    background: #ffffff;
+    border: 1px solid #94a3b8;
+    border-radius: 6px;
+    padding: 8px 10px;
+    min-height: 46px;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: #334155;
+  }
+  @media (max-width: 600px) {
+    .mfs-paf-grid { grid-template-columns: 1fr; }
+    .eng-structured-line { flex-direction: column; align-items: stretch; gap: 4px; }
+  }
+</style>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/reading-investigating-image-level-1-worksheet.html">
 </head>
 <body>
 
@@ -884,19 +971,21 @@
         <span class="q-marks">[2 Marks]</span>
       </div>
       <div class="q-stem">
-        A workplace fire safety leaflet includes a photograph of a silver CO2 fire extinguisher with a black horn nozzle. Beneath the photo, the caption reads:<br><em>'Figure 2: Carbon Dioxide (CO2) extinguishers (black label) are safe for live electrical server fires but must NEVER be used on chip-pan grease fires.'</em><br><br>Using the caption, state: (a) what colour label a CO2 extinguisher has, and (b) which type of fire it must <strong>never</strong> be used on.
+        A workplace fire safety leaflet includes a photograph of a silver CO2 fire extinguisher with a black horn nozzle. Beneath the photo, the caption reads:<span class="eng-extract-callout">'Figure 2: Carbon Dioxide (CO2) extinguishers (black label) are safe for live electrical server fires but must NEVER be used on chip-pan grease fires.'</span><br><br>Using the caption, state: (a) what colour label a CO2 extinguisher has, and (b) which type of fire it must <strong>never</strong> be used on.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Caption Facts =</span>
-        (a) Label colour: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> (b) Never use on: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>(a) Label colour:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>(b) Never use on: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -909,16 +998,18 @@
         A flat-pack office desk manual includes a step-by-step line diagram showing how Cam Lock A twists 90 degrees clockwise using a crosshead screwdriver to lock Pin B into the wooden side panel.<br><br>Give <strong>two reasons</strong> why the writer included this diagram alongside the written instructions.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Two Reasons =</span>
-        Reason 1: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Reason 2: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Reason 1:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Reason 2: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -937,17 +1028,19 @@
         A winter homelessness appeal leaflet features the headline <em>'No One Should Freeze on Our Streets Tonight'</em> alongside a black-and-white photograph of an elderly man huddled in a doorway under a thin wet blanket in the snow.<br><br>Explain how this photograph supports the headline and helps achieve the leaflet's purpose. (3 marks)
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Visual & Emotional Analysis =</span>
-        Visual detail: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Emotion triggered: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Link to purpose: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Visual detail:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Emotion triggered:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Link to purpose: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 
@@ -960,17 +1053,19 @@
         A council waste report includes a bar chart titled <strong>'Household Recycling Rates by Ward (%)'</strong>:<br>• <strong>Oakfield Ward:</strong> 64% (Green bar)<br>• <strong>Central Ward:</strong> 28% (Red bar)<br>• <strong>Riverside Ward:</strong> 51% (Amber bar)<br><em>Caption: 'Target statutory minimum across all wards: 50%.'</em><br><br>Using the chart and caption, identify which ward is failing the statutory target, by how many percentage points it falls short, and explain why the designer colour-coded the bars.
       </div>
       <div class="q-working-area">
-        <div class="working-label">Show your full working out here:</div>
+        <div class="working-label" style="color:#0369a1;"><i class="fa-solid fa-quote-left"></i> Written Comprehension Response (support points with textual evidence):</div>
         <div class="working-lines-box">
+          <div class="working-line"></div>
+          <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
           <div class="working-line"></div>
         </div>
       </div>
-      <div class="q-answer-row">
-        <span class="q-answer-label">Ward, Shortfall & Colour Purpose =</span>
-        Failing Ward: <div class="q-answer-input-box sm"></div> <span class="q-item-sep">|</span> Shortfall: <div class="q-answer-input-box sm"></div>% <span class="q-item-sep">|</span> Colour Purpose: <div class="q-answer-input-box sm"></div>
+      <div class="q-answer-row" style="flex-direction:column; align-items:stretch; gap:8px;">
+        <div class="eng-structured-inputs"><div class="eng-structured-line"><span>Failing Ward:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Shortfall: %:</span><div class="eng-structured-box"></div></div><div class="eng-structured-line"><span>Colour Purpose: <div class="q-answer-input-box sm">:</span><div class="eng-structured-box"></div></div></div>
+      </div>
       </div>
     </div>
 

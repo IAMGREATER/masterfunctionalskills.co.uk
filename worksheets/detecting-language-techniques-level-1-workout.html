@@ -897,6 +897,23 @@
       }
     }
   </style>
+<script>
+(function(){
+  try {
+    var t = localStorage.getItem('mfs-tint') || localStorage.getItem('mfs_dyslexia_tint');
+    if (t && t !== 'none') {
+      document.documentElement.setAttribute('data-tint', t);
+      var map = {cream:'#fdfbf7', peach:'#fff7ed', cool:'#f0f9ff', sage:'#f0fdf4'};
+      if (map[t] && window.matchMedia && !window.matchMedia('print').matches) {
+        var st = document.createElement('style');
+        st.textContent = '@media screen { body { background-color: ' + map[t] + ' !important; } }';
+        document.head.appendChild(st);
+      }
+    }
+  } catch(e){}
+})();
+</script>
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/worksheets/detecting-language-techniques-level-1-workout.html">
 </head>
 <body>
 
@@ -969,7 +986,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 1</span>
-        <span class="block-q-desc">Question 1: Identifying Rhetorical Devices</span>
+        <span class="block-q-desc">Identifying Rhetorical Devices</span>
       </div>
       <div class="workout-instruction">Name the language technique used in each sentence:</div>
       <div class="drill-grid">
@@ -1019,7 +1036,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 2</span>
-        <span class="block-q-desc">Question 2: Explaining the Effect on the Reader</span>
+        <span class="block-q-desc">Explaining the Effect on the Reader</span>
       </div>
       <div class="workout-instruction">Explain what feeling or thought the phrase creates in the reader:</div>
       <div class="drill-grid">
@@ -1045,7 +1062,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 3</span>
-        <span class="block-q-desc">Question 3: Identifying Rhetorical Devices in Persuasive Texts</span>
+        <span class="block-q-desc">Identifying Rhetorical Devices in Persuasive Texts</span>
       </div>
       <div class="workout-instruction">Name the specific persuasive device used in each excerpt (e.g. Rule of Three, Hyperbole, Rhetorical Question, Anecdote, Statistics):</div>
       <div class="drill-grid">
@@ -1119,7 +1136,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 4</span>
-        <span class="block-q-desc">Question 4: Analyzing the Functional Effect of Language Choices</span>
+        <span class="block-q-desc">Analyzing the Functional Effect of Language Choices</span>
       </div>
       <div class="workout-instruction">Explain how the underlined phrase influences the thoughts or feelings of the reader:</div>
       <div class="drill-grid">
@@ -1193,7 +1210,7 @@
     <div class="workout-block">
       <div class="workout-block-header">
         <span class="block-q-num">Question 5</span>
-        <span class="block-q-desc">Question 5: Distinguishing Subtle Literary Devices in Non-Fiction</span>
+        <span class="block-q-desc">Distinguishing Subtle Literary Devices in Non-Fiction</span>
       </div>
       <div class="workout-instruction">Identify the literary technique used (Oxymoron, Irony, Pun, Sibilance, Onomatopoeia):</div>
       <div class="drill-grid">

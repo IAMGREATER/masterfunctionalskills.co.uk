@@ -1,0 +1,1443 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-theme="maths" data-tint="cream">
+<head>
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="alternate icon" href="favicon.ico">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Register Interest: Online Functional Skills Exams | Master Functional Skills</title>
+  <meta name="description" content="Register your interest in sitting an Ofqual-regulated Functional Skills Maths, English or Digital Skills exam online from home with Master Functional Skills. Nothing to pay today.">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0b172d">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="MFS Skills">
+  <link rel="apple-touch-icon" href="assets/img/favicon-192x192.png">
+  <script src="assets/js/mfs-pwa.js" defer></script>
+  <link rel="stylesheet" href="assets/css/mfs-theme.css?v=20261024c">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="assets/css/mfs-mobile.css?v=20261024c">
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/book-exam.html">
+
+  <style>
+    .booking-hero {
+      background: linear-gradient(135deg, #070d1e 0%, #0f172a 100%);
+      color: #ffffff;
+      padding: 48px 0 42px;
+      border-bottom: 3px solid #0284c7;
+      text-align: center;
+    }
+    .booking-hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: rgba(56, 189, 248, 0.15);
+      border: 1px solid rgba(56, 189, 248, 0.42);
+      color: #38bdf8;
+      font-size: 0.8rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding: 6px 15px;
+      border-radius: 999px;
+      margin-bottom: 14px;
+    }
+    .booking-hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(1.85rem, 3.6vw, 2.65rem);
+      font-weight: 900;
+      color: #ffffff;
+      margin: 0 0 12px;
+      line-height: 1.2;
+    }
+    .booking-hero h1 span {
+      color: #38bdf8;
+    }
+    .booking-hero p {
+      color: #cbd5e1;
+      font-size: 1.04rem;
+      max-width: 720px;
+      margin: 0 auto;
+      line-height: 1.6;
+    }
+
+    .booking-wrapper {
+      max-width: 1060px;
+      margin: 34px auto 72px;
+      padding: 0 16px;
+    }
+
+    /* PROGRESS STEPS BAR */
+    .booking-steps-bar {
+      display: flex;
+      justify-content: space-between;
+      position: relative;
+      margin: 0 auto 36px;
+      max-width: 820px;
+    }
+    .booking-steps-bar::before {
+      content: '';
+      position: absolute;
+      top: 21px;
+      left: 44px;
+      right: 44px;
+      height: 3px;
+      background: var(--border, #e2e8f0);
+      z-index: 1;
+    }
+    .step-node {
+      position: relative;
+      z-index: 2;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 7px;
+      background: var(--bg-page, #faf8f2);
+      padding: 0 10px;
+    }
+    .step-circle {
+      width: 42px;
+      height: 42px;
+      border-radius: 50%;
+      background: var(--bg-card, #ffffff);
+      border: 2px solid #cbd5e1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 0.96rem;
+      color: #64748b;
+      transition: all 0.25s ease;
+    }
+    .step-node.active .step-circle {
+      background: #0284c7;
+      border-color: #0284c7;
+      color: #ffffff;
+      box-shadow: 0 0 0 4px rgba(2, 132, 199, 0.2);
+    }
+    .step-node.completed .step-circle {
+      background: #16a34a;
+      border-color: #16a34a;
+      color: #ffffff;
+    }
+    .step-label {
+      font-size: 0.76rem;
+      font-weight: 800;
+      color: #64748b;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      text-align: center;
+    }
+    .step-node.active .step-label { color: #0284c7; }
+    .step-node.completed .step-label { color: #15803d; }
+
+    /* CARD CONTAINERS */
+    .booking-card {
+      background: var(--bg-card, #ffffff);
+      border-radius: 20px;
+      border: 1.5px solid var(--border, #e2e8f0);
+      box-shadow: 0 8px 28px rgba(11, 23, 45, 0.05);
+      padding: 34px 30px;
+      margin-bottom: 26px;
+    }
+    .booking-card h2 {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      font-weight: 800;
+      color: var(--text-primary, #0f172a);
+      margin-top: 0;
+      margin-bottom: 8px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+    .booking-card h2 i {
+      color: #0284c7;
+    }
+    .booking-card p.card-desc {
+      color: var(--text-secondary, #475569);
+      font-size: 0.95rem;
+      margin-bottom: 24px;
+      line-height: 1.58;
+    }
+
+    /* SUBJECT SELECTOR GRID */
+    .subject-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+      gap: 18px;
+    }
+    .subject-option {
+      border: 2px solid var(--border, #e2e8f0);
+      border-radius: 16px;
+      padding: 20px;
+      cursor: pointer;
+      position: relative;
+      background: var(--bg-card, #ffffff);
+      transition: all 0.2s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+    .subject-option:hover {
+      border-color: #0284c7;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 22px rgba(2, 132, 199, 0.1);
+    }
+    .subject-option.selected {
+      border-color: #0284c7;
+      background: rgba(2, 132, 199, 0.06);
+      box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.16);
+    }
+    .subject-radio {
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      transform: scale(1.2);
+      accent-color: #0284c7;
+    }
+    .subject-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      font-size: 0.72rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      padding: 4px 9px;
+      border-radius: 6px;
+      background: #e2e8f0;
+      color: #334155;
+      margin-bottom: 10px;
+      width: fit-content;
+    }
+    .subject-badge.featured {
+      background: #fef08a;
+      color: #854d0e;
+    }
+    .subject-badge.saver {
+      background: #dcfce7;
+      color: #166534;
+    }
+    .subject-name {
+      font-size: 1.14rem;
+      font-weight: 800;
+      color: var(--text-primary, #0f172a);
+      margin-bottom: 6px;
+      padding-right: 24px;
+    }
+    .subject-meta {
+      font-size: 0.84rem;
+      color: var(--text-secondary, #475569);
+      line-height: 1.48;
+    }
+    .subject-price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin-top: 16px;
+      padding-top: 12px;
+      border-top: 1px solid var(--border-light, #f1f5f9);
+    }
+    .subject-price {
+      font-size: 1.65rem;
+      font-weight: 900;
+      color: var(--text-primary, #0f172a);
+      font-variant-numeric: tabular-nums;
+    }
+    .subject-was {
+      font-size: 0.88rem;
+      color: #94a3b8;
+      text-decoration: line-through;
+    }
+    .subject-inc {
+      font-size: 0.8rem;
+      font-weight: 700;
+      color: #0284c7;
+      margin-left: auto;
+    }
+
+    /* FORM STYLING */
+    .form-row {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 18px;
+      margin-bottom: 18px;
+    }
+    .form-row:last-child { margin-bottom: 0; }
+    .form-group {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .form-group label {
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--text-primary, #1e293b);
+    }
+    .form-control {
+      padding: 12px 14px;
+      border: 1.5px solid #cbd5e1;
+      border-radius: 10px;
+      font-size: 0.96rem;
+      color: #0f172a;
+      background: #ffffff;
+      outline: none;
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+      font-family: inherit;
+    }
+    .form-control:focus {
+      border-color: #0284c7;
+      box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.14);
+    }
+    .form-control.input-error {
+      border-color: #dc2626;
+      box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.12);
+    }
+    .help-hint {
+      font-size: 0.79rem;
+      color: var(--text-muted, #64748b);
+      line-height: 1.4;
+    }
+
+    /* NEURODIVERSITY CALLOUT BOX — UNIFIED DARK BLUE SCHEME */
+    .neuro-banner {
+      background: linear-gradient(135deg, #0a0f1d 0%, #0f172a 100%);
+      border: 2px solid #0284c7;
+      border-left: 6px solid #0284c7;
+      border-radius: 16px;
+      padding: 26px;
+      color: #ffffff;
+    }
+    .neuro-banner h3 {
+      margin: 0 0 8px;
+      font-size: 1.22rem;
+      font-weight: 800;
+      color: #38bdf8;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .neuro-banner p {
+      font-size: 0.93rem;
+      color: #cbd5e1;
+      line-height: 1.6;
+      margin: 0 0 18px;
+    }
+    .adjustment-box {
+      background: rgba(255, 255, 255, 0.06);
+      border: 1px solid rgba(255, 255, 255, 0.18);
+      border-radius: 12px;
+      padding: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .adjustment-option {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      cursor: pointer;
+    }
+    .adjustment-option input {
+      margin-top: 4px;
+      transform: scale(1.18);
+      accent-color: #38bdf8;
+      flex-shrink: 0;
+    }
+    .adjustment-text strong {
+      display: block;
+      font-size: 0.94rem;
+      color: #ffffff;
+      margin-bottom: 2px;
+    }
+    .adjustment-text span {
+      font-size: 0.83rem;
+      color: #cbd5e1;
+      line-height: 1.45;
+      display: block;
+    }
+
+    /* ADD-ON OPTIONS */
+    .addon-card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      border: 2px solid var(--border, #e2e8f0);
+      border-radius: 14px;
+      padding: 18px 20px;
+      margin-bottom: 14px;
+      cursor: pointer;
+      background: var(--bg-card, #ffffff);
+      transition: all 0.2s ease;
+    }
+    .addon-card:last-child { margin-bottom: 0; }
+    .addon-card:hover {
+      border-color: #0284c7;
+    }
+    .addon-card.selected {
+      border-color: #0284c7;
+      background: rgba(2, 132, 199, 0.06);
+    }
+    .addon-info {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+    .addon-icon {
+      width: 44px;
+      height: 44px;
+      border-radius: 11px;
+      background: #e0f2fe;
+      color: #0284c7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.18rem;
+      flex-shrink: 0;
+    }
+    .addon-details h4 {
+      margin: 0 0 4px;
+      font-size: 1rem;
+      font-weight: 800;
+      color: var(--text-primary, #0f172a);
+    }
+    .addon-details p {
+      margin: 0;
+      font-size: 0.85rem;
+      color: var(--text-secondary, #475569);
+      line-height: 1.48;
+    }
+    .addon-price {
+      font-weight: 900;
+      font-size: 1.18rem;
+      color: var(--text-primary, #0f172a);
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* SUMMARY & CHECKOUT */
+    .summary-card {
+      background: var(--bg-card-alt, #f8fafc);
+      border: 1.5px solid var(--border, #e2e8f0);
+      border-radius: 16px;
+      padding: 22px 24px;
+      margin-top: 18px;
+    }
+    .summary-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border, #e2e8f0);
+      font-size: 0.95rem;
+      color: var(--text-primary, #1e293b);
+      font-variant-numeric: tabular-nums;
+    }
+    .summary-row.total {
+      border-bottom: none;
+      padding-top: 16px;
+      font-size: 1.35rem;
+      font-weight: 900;
+      color: var(--text-primary, #0f172a);
+    }
+    .summary-row.total .total-amount {
+      color: #0284c7;
+      font-size: 1.55rem;
+    }
+
+    .validation-banner {
+      display: none;
+      background: #fef2f2;
+      border: 1.5px solid #f87171;
+      color: #991b1b;
+      padding: 12px 16px;
+      border-radius: 10px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      margin-top: 16px;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .btn-checkout-primary {
+      width: 100%;
+      background: #16a34a;
+      color: #ffffff;
+      border: none;
+      padding: 18px 24px;
+      border-radius: 12px;
+      font-family: var(--font-heading);
+      font-size: 1.12rem;
+      font-weight: 800;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 20px;
+      box-shadow: 0 8px 22px rgba(22, 163, 74, 0.28);
+      transition: all 0.2s ease;
+    }
+    .btn-checkout-primary:hover {
+      background: #15803d;
+      transform: translateY(-2px);
+    }
+    .btn-checkout-wa {
+      width: 100%;
+      background: #0f172a;
+      color: #ffffff;
+      border: 1px solid #334155;
+      padding: 14px 20px;
+      border-radius: 12px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      margin-top: 12px;
+      text-decoration: none;
+      box-sizing: border-box;
+      transition: all 0.2s ease;
+    }
+    .btn-checkout-wa:hover {
+      background: #1e293b;
+      color: #ffffff;
+    }
+    .trust-strip {
+      display: flex;
+      justify-content: center;
+      gap: 22px;
+      margin-top: 18px;
+      font-size: 0.82rem;
+      color: var(--text-muted, #64748b);
+      flex-wrap: wrap;
+    }
+    .trust-strip span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-weight: 600;
+    }
+
+    @media (max-width: 640px) {
+      .booking-card { padding: 24px 18px; }
+      .booking-steps-bar { gap: 4px; }
+      .step-label { font-size: 0.66rem; }
+      .step-circle { width: 34px; height: 34px; font-size: 0.85rem; }
+      .booking-steps-bar::before { top: 17px; left: 24px; right: 24px; }
+      .addon-card { flex-direction: column; align-items: flex-start; }
+      .addon-price { align-self: flex-end; }
+    }
+  </style>
+</head>
+<body>
+  <!-- TOP TRUST BAR WITH DYSLEXIA ACCESSIBILITY & TINT PICKER -->
+  <div class="mfs-top-bar">
+    <div class="mfs-container mfs-top-bar-inner">
+      <div class="top-trust-items">
+        <span class="top-trust-item"><i class="fa-solid fa-building-columns"></i> Open Awards, Pearson Edexcel &amp; City &amp; Guilds Aligned</span>
+      </div>
+      <div class="top-contacts">
+        <div class="mfs-access-bar">
+          <div class="mfs-tint-dropdown-wrap">
+            <button type="button" id="tintToggle" class="btn-tint-toggle" onclick="toggleTintMenu(event)" title="Change dyslexia background tint">
+              <span class="tint-swatch-indicator" id="tintCurrentSwatch"></span>
+              <span id="tintLabel">Cream Tint</span>
+              <i class="fa-solid fa-chevron-down" style="font-size:0.62rem; opacity:0.75; margin-left:2px;"></i>
+            </button>
+            <div id="tintMenu" class="tint-picker-menu">
+              <div class="tint-picker-title"><i class="fa-solid fa-glasses"></i> Dyslexia Reading Tint</div>
+              <button type="button" class="tint-option-btn active" data-tint="cream" onclick="setSiteTint('cream', event)">
+                <span class="swatch swatch-cream"></span>
+                <span class="tint-name">Cream <small class="tint-badge-def">Default</small></span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="peach" onclick="setSiteTint('peach', event)">
+                <span class="swatch swatch-peach"></span>
+                <span class="tint-name">Soft Peach</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="cool" onclick="setSiteTint('cool', event)">
+                <span class="swatch swatch-cool"></span>
+                <span class="tint-name">Cool Mist</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="sage" onclick="setSiteTint('sage', event)">
+                <span class="swatch swatch-sage"></span>
+                <span class="tint-name">Soft Sage</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <div class="tint-divider"></div>
+              <button type="button" class="tint-option-btn" data-tint="none" onclick="setSiteTint('none', event)">
+                <span class="swatch swatch-none"></span>
+                <span class="tint-name">No Tint (White)</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+            </div>
+          </div>
+          <button id="dyslexiaToggle" class="btn-dyslexia-toggle" onclick="toggleDyslexiaMode()" title="Toggle Dyslexia High-Readability Mode">
+            <i class="fa-solid fa-universal-access"></i> Dyslexia
+          </button>
+          <button id="themeToggle" class="mfs-theme-pill" onclick="toggleTheme()" title="Switch Palette: Sapphire vs Emerald">
+            <i class="fa-solid fa-palette"></i> <span id="themeLabel">Sapphire</span>
+          </button>
+        </div>
+        <a href="contact-us.html" class="top-contact-link"><i class="fa-solid fa-envelope"></i> <strong>Contact Us</strong></a>
+      </div>
+    </div>
+  </div>
+
+  <!-- MAIN NAVIGATION -->
+  <header class="mfs-navbar">
+    <div class="revision-page-wrapper mfs-navbar-inner">
+      <a href="index.html" class="mfs-brand">
+        <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div class="mfs-brand-text">
+          <div class="mfs-brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
+          <div class="mfs-brand-subtitle">Delivering Skills • Achieving Goals</div>
+        </div>
+      </a>
+
+      <nav class="mfs-nav-wrapper">
+        <ul class="mfs-nav-menu">
+          <li class="mfs-nav-item">
+            <a href="revise.html" class="mfs-nav-link">
+              <i class="fa-solid fa-book-open-reader" style="color:#0284c7; margin-right:5px;"></i> Subjects <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-revision-hub">
+              <div class="mfs-revision-grid">
+                <div class="mfs-revision-col mfs-revision-col-maths">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-calculator"></i> Maths Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="functional-skills-maths-level-2.html" class="mfs-dropdown-item">Maths Level 2</a>
+                    <a href="functional-skills-maths-level-1.html" class="mfs-dropdown-item">Maths Level 1</a>
+                    <a href="entry-level-3-maths.html" class="mfs-dropdown-item">Entry Level 3 Maths</a>
+                  </div>
+                </div>
+                <div class="mfs-revision-col mfs-revision-col-english">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-pen-nib"></i> English Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="functional-skills-english-level-2.html" class="mfs-dropdown-item">English Level 2</a>
+                    <a href="functional-skills-english-level-1.html" class="mfs-dropdown-item">English Level 1</a>
+                    <a href="entry-level-3-english.html" class="mfs-dropdown-item">Entry Level 3 English</a>
+                  </div>
+                </div>
+                <div class="mfs-revision-col mfs-revision-col-digital">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-laptop-code"></i> Digital Skills</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="digital-functional-skills-level-1.html" class="mfs-dropdown-item"><i class="fa-solid fa-award" style="font-size:0.75rem; margin-right:5px; color:#0284c7;"></i> Digital Skills Level 1</a>
+                    <a href="digital-functional-skills-entry-3.html" class="mfs-dropdown-item"><i class="fa-solid fa-seedling" style="font-size:0.75rem; margin-right:5px; color:#059669;"></i> Digital Skills Entry 3</a>
+                    <a href="digital-functional-skills-past-papers.html" class="mfs-dropdown-item"><i class="fa-solid fa-file-zipper" style="font-size:0.75rem; margin-right:5px; color:#d97706;"></i> Past Papers &amp; Data Files</a>
+                    <a href="digital-functional-skills-mock-exam.html" class="mfs-dropdown-item"><i class="fa-solid fa-desktop" style="font-size:0.75rem; margin-right:5px; color:#7c3aed;"></i> Online Mock Simulator</a>
+                    <a href="digital-functional-skills.html" class="mfs-dropdown-item"><i class="fa-solid fa-layer-group" style="font-size:0.75rem; margin-right:5px; color:#475569;"></i> Digital Skills Hub (E3 &amp; L1)</a>
+                  </div>
+                </div>
+              </div>
+              <div class="mfs-revision-dropdown-footer" style="margin-top:12px; padding-top:10px; border-top:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center; font-size:0.82rem;">
+                <a href="revise.html" style="font-weight:700; color:var(--accent); text-decoration:none;"><i class="fa-solid fa-layer-group" style="margin-right:4px;"></i> View All Subjects &amp; Levels &rarr;</a>
+                <a href="courses.html" style="font-weight:700; color:#059669; text-decoration:none;"><i class="fa-solid fa-graduation-cap" style="margin-right:4px;"></i> Accredited Online Courses &rarr;</a>
+              </div>
+            </div>
+          </li>
+          <li class="mfs-nav-item">
+            <a href="courses.html" class="mfs-nav-link">
+              <i class="fa-solid fa-graduation-cap" style="color:#0284c7; margin-right:5px;"></i> Online Courses
+            </a>
+          </li>
+          <li class="mfs-nav-item">
+            <a href="functional-skills-past-papers.html" class="mfs-nav-link">
+              <i class="fa-regular fa-file-lines" style="color:#0284c7; margin-right:5px;"></i> Past Papers
+            </a>
+          </li>
+          <li class="mfs-nav-item">
+            <a href="worksheets.html" class="mfs-nav-link">
+              <i class="fa-solid fa-layer-group" style="color:#0284c7; margin-right:5px;"></i> Worksheets
+            </a>
+          </li>
+          <li class="mfs-nav-item">
+            <a href="tools.html" class="mfs-nav-link">
+              <i class="fa-solid fa-screwdriver-wrench" style="color:#0284c7; margin-right:5px;"></i> Free Tools <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-compact">
+              <a href="tools.html" class="mfs-dropdown-item" style="font-weight:700; color:var(--accent);"><i class="fa-solid fa-layer-group" style="font-size:0.85rem; margin-right:6px;"></i> All Free Tools &amp; Simulators &rarr;</a>
+              <div class="mfs-dropdown-divider" style="margin:4px 0; border-top:1px solid #e2e8f0;"></div>
+              <a href="pass-mark-calculator.html" class="mfs-dropdown-item"><i class="fa-solid fa-calculator" style="color:var(--accent); font-size:0.85rem; margin-right:6px;"></i> Pass Mark Calculator</a>
+              <a href="diagnostic-test.html" class="mfs-dropdown-item"><i class="fa-solid fa-chart-pie" style="color:#059669; font-size:0.85rem; margin-right:6px;"></i> Diagnostic Skill Checker</a>
+              <a href="functional-skills-nets.html" class="mfs-dropdown-item"><i class="fa-solid fa-cube" style="color:#0284c7; font-size:0.85rem; margin-right:6px;"></i> 3D Net Folding Tool</a>
+              <a href="video-solution.html" class="mfs-dropdown-item"><i class="fa-brands fa-youtube" style="color:#ef4444; font-size:0.85rem; margin-right:6px;"></i> Masterclass Station</a>
+            </div>
+          </li>
+          <li class="mfs-nav-item">
+            <a href="revision-cards.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-layer-group" style="color:#d97706; margin-right:5px;"></i> Revision Cards
+            </a>
+          </li>
+          <li class="mfs-nav-item">
+            <a href="shop.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-basket-shopping" style="color:#d97706; margin-right:5px;"></i> Shop
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <div class="mfs-nav-actions">
+        <a href="exams.html" class="btn-nav-exam">
+          <i class="fa-solid fa-calendar-check"></i> Compare Exams
+        </a>
+      </div>
+
+      <div class="mfs-mobile-controls" id="mfsMobileControls">
+        <button type="button" class="btn-mobile-tint-toggle" id="mfsMobileTintBtn" title="Change Reading Tint" aria-label="Reading Tint">
+          <i class="fa-solid fa-glasses"></i>
+          <span class="mobile-tint-swatch" id="mfsMobileTintSwatch"></span>
+        </button>
+        <button type="button" class="mfs-menu-pill" id="mfsMobileToggleBtn" title="Open Navigation Menu" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+          <span>Menu</span>
+        </button>
+      </div>
+    </div>
+    <script src="assets/js/mfs-mobile.js?v=20261024c" defer></script>
+  </header>
+
+  <!-- DARK BLUE HERO -->
+  <section class="booking-hero">
+    <div class="mfs-container">
+      <div class="booking-hero-badge">
+        <i class="fa-solid fa-hourglass-half"></i> Centre Approval in Progress &bull; Register Your Interest
+      </div>
+      <h1>Register Your Interest in an <span>Online Functional Skills Exam</span></h1>
+      <p>
+        Master Functional Skills is applying to become an approved Open Awards exam centre. Leave your details now and we will contact you first when online exam bookings open. Nothing to pay today.
+      </p>
+    </div>
+  </section>
+
+  <!-- MAIN BOOKING FORM -->
+  <main class="booking-wrapper">
+
+    <!-- PRE-LAUNCH NOTICE -->
+    <div style="background:#fffbeb; border:2px solid #f59e0b; border-left:6px solid #d97706; border-radius:14px; padding:18px 22px; margin-bottom:30px; color:#78350f; display:flex; gap:14px; align-items:flex-start;">
+      <i class="fa-solid fa-circle-info" style="font-size:1.3rem; color:#d97706; margin-top:2px;"></i>
+      <div style="font-size:0.95rem; line-height:1.6;">
+        <strong style="display:block; font-size:1.02rem; margin-bottom:2px;">Exam bookings are not open yet</strong>
+        We are applying to Open Awards for exam centre approval. This form registers your interest only. No payment is taken and no exam is booked. We will contact you as soon as bookings open.
+      </div>
+    </div>
+
+    <!-- DYNAMIC PROGRESS STEPS -->
+    <div class="booking-steps-bar" aria-label="Booking Steps">
+      <div class="step-node completed" id="stepNode1">
+        <div class="step-circle"><i class="fa-solid fa-check"></i></div>
+        <div class="step-label">1. Exam</div>
+      </div>
+      <div class="step-node active" id="stepNode2">
+        <div class="step-circle">2</div>
+        <div class="step-label">2. Details</div>
+      </div>
+      <div class="step-node" id="stepNode3">
+        <div class="step-circle">3</div>
+        <div class="step-label">3. Slot</div>
+      </div>
+      <div class="step-node" id="stepNode4">
+        <div class="step-circle">4</div>
+        <div class="step-label">4. Access</div>
+      </div>
+      <div class="step-node" id="stepNode5">
+        <div class="step-circle">5</div>
+        <div class="step-label">5. Confirm</div>
+      </div>
+    </div>
+
+    <!-- STEP 1: EXAM SELECTION -->
+    <div class="booking-card" id="sectionStep1">
+      <h2><i class="fa-solid fa-layer-group"></i> 1. Choose the Exam You Are Interested In</h2>
+      <p class="card-desc">Select the qualification you need. Prices shown are our planned all-inclusive launch prices (exam entry, live remote invigilation and certificate) and will be confirmed when bookings open. Nothing is charged today.</p>
+
+      <div class="subject-grid">
+        <!-- Maths L2 -->
+        <label class="subject-option selected" onclick="selectSubject('maths-l2', 149, 'Maths Level 2 Online Exam')">
+          <input type="radio" name="subject" value="maths-l2" class="subject-radio" checked>
+          <div>
+            <span class="subject-badge featured"><i class="fa-solid fa-fire"></i> Most Popular</span>
+            <div class="subject-name">Maths Level 2 Online Exam</div>
+            <div class="subject-meta">Section A Non-Calc (30m) &amp; Section B Calc (1h 30m) &bull; GCSE Grade 4 (C) Equivalent &bull; University &amp; Healthcare Gateway</div>
+          </div>
+          <div class="subject-price-row">
+            <span class="subject-price">&pound;149</span>
+            <span class="subject-was">&pound;229</span>
+            <span class="subject-inc">All-inclusive</span>
+          </div>
+        </label>
+
+        <!-- English L2 -->
+        <label class="subject-option" onclick="selectSubject('english-l2', 199, 'English Level 2 Online Exam')">
+          <input type="radio" name="subject" value="english-l2" class="subject-radio">
+          <div>
+            <span class="subject-badge">Healthcare &amp; Uni</span>
+            <div class="subject-name">English Level 2 Online Exam</div>
+            <div class="subject-meta">All 3 Components: Reading (60m), Writing (60m) &amp; Online SLC &bull; GCSE Grade 4 (C) Equivalent</div>
+          </div>
+          <div class="subject-price-row">
+            <span class="subject-price">&pound;199</span>
+            <span class="subject-was">&pound;249</span>
+            <span class="subject-inc">All 3 parts</span>
+          </div>
+        </label>
+
+        <!-- Dual Maths & English L2 -->
+        <label class="subject-option" onclick="selectSubject('dual-l2', 319, 'Maths & English Level 2 Dual Exam Bundle')">
+          <input type="radio" name="subject" value="dual-l2" class="subject-radio">
+          <div>
+            <span class="subject-badge saver"><i class="fa-solid fa-bolt"></i> Save &pound;29 Bundle</span>
+            <div class="subject-name">Maths &amp; English L2 Dual Bundle</div>
+            <div class="subject-meta">Complete GCSE Grade 4 (C) equivalency package for university, nursing, midwifery, teaching &amp; apprenticeships.</div>
+          </div>
+          <div class="subject-price-row">
+            <span class="subject-price">&pound;319</span>
+            <span class="subject-was">&pound;348</span>
+            <span class="subject-inc">2 Full Exams</span>
+          </div>
+        </label>
+
+        <!-- Maths L1 -->
+        <label class="subject-option" onclick="selectSubject('maths-l1', 149, 'Maths Level 1 Online Exam')">
+          <input type="radio" name="subject" value="maths-l1" class="subject-radio">
+          <div>
+            <span class="subject-badge">Apprenticeships</span>
+            <div class="subject-name">Maths Level 1 Online Exam</div>
+            <div class="subject-meta">Section A Non-Calc (30m) &amp; Section B Calc (1h 30m) &bull; GCSE Grades 1&ndash;3 Equivalent stepping-stone qualification</div>
+          </div>
+          <div class="subject-price-row">
+            <span class="subject-price">&pound;149</span>
+            <span class="subject-was">&pound;229</span>
+            <span class="subject-inc">All-inclusive</span>
+          </div>
+        </label>
+
+        <!-- English L1 -->
+        <label class="subject-option" onclick="selectSubject('english-l1', 199, 'English Level 1 Online Exam')">
+          <input type="radio" name="subject" value="english-l1" class="subject-radio">
+          <div>
+            <span class="subject-badge">Apprenticeships</span>
+            <div class="subject-name">English Level 1 Online Exam</div>
+            <div class="subject-meta">Reading (60m), Writing (60m) &amp; Online SLC &bull; GCSE Grades 1&ndash;3 Equivalent workplace &amp; vocational qualification</div>
+          </div>
+          <div class="subject-price-row">
+            <span class="subject-price">&pound;199</span>
+            <span class="subject-was">&pound;249</span>
+            <span class="subject-inc">All 3 parts</span>
+          </div>
+        </label>
+
+        <!-- Digital Skills E3 / L1 -->
+        <label class="subject-option" onclick="selectSubject('digital-l1', 149, 'Digital Functional Skills (DFSQ) Online Exam')">
+          <input type="radio" name="subject" value="digital-l1" class="subject-radio">
+          <div>
+            <span class="subject-badge">Workplace Digital</span>
+            <div class="subject-name">Digital Functional Skills (L1 / E3)</div>
+            <div class="subject-meta">1 hr 45 mins onscreen practical &amp; knowledge exam &bull; Devices, spreadsheets, documents &amp; online safety</div>
+          </div>
+          <div class="subject-price-row">
+            <span class="subject-price">&pound;149</span>
+            <span class="subject-was">&pound;199</span>
+            <span class="subject-inc">All-inclusive</span>
+          </div>
+        </label>
+      </div>
+    </div>
+
+    <!-- STEP 2: CANDIDATE LEGAL DETAILS -->
+    <div class="booking-card" id="sectionStep2">
+      <h2><i class="fa-solid fa-id-card"></i> 2. Your Details</h2>
+      <p class="card-desc">Please use your legal name as it appears on your photo ID (passport, UK driving licence or national ID card). We will need this when you book.</p>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="candidateFirst">First &amp; Middle Names *</label>
+          <input type="text" id="candidateFirst" class="form-control" placeholder="e.g. Sarah Jane" autocomplete="given-name" oninput="refreshProgress()" required>
+        </div>
+        <div class="form-group">
+          <label for="candidateLast">Surname (Last Name) *</label>
+          <input type="text" id="candidateLast" class="form-control" placeholder="e.g. Jenkins" autocomplete="family-name" oninput="refreshProgress()" required>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="candidateDob">Date of Birth *</label>
+          <input type="date" id="candidateDob" class="form-control" autocomplete="bday" onchange="refreshProgress()" required>
+          <span class="help-hint">Needed for exam entry when bookings open.</span>
+        </div>
+        <div class="form-group">
+          <label for="candidateEmail">Candidate Email Address *</label>
+          <input type="email" id="candidateEmail" class="form-control" placeholder="sarah.jenkins@example.com" autocomplete="email" oninput="refreshProgress()" required>
+          <span class="help-hint">We will email you here when bookings open.</span>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="candidatePhone">Mobile / WhatsApp Number *</label>
+          <input type="tel" id="candidatePhone" class="form-control" placeholder="+44 7123 456789" autocomplete="tel" oninput="refreshProgress()" required>
+          <span class="help-hint">We may WhatsApp you when bookings open.</span>
+        </div>
+        <div class="form-group">
+          <label for="candidatePostcode">UK Postcode &amp; House Number *</label>
+          <input type="text" id="candidatePostcode" class="form-control" placeholder="e.g. 14 High Street, OX3 7LF" autocomplete="postal-code" oninput="refreshProgress()" required>
+          <span class="help-hint">Helps us plan exam entry and certificate delivery.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 3: EXAM SCHEDULING & TIME PREFERENCE -->
+    <div class="booking-card" id="sectionStep3">
+      <h2><i class="fa-solid fa-calendar-days"></i> 3. When Would You Like to Sit Your Exam?</h2>
+      <p class="card-desc">Tell us roughly when you would like to sit your exam. This helps us plan and is not a booking.</p>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="examDatePreference">Scheduling Preference *</label>
+          <select id="examDatePreference" class="form-control" onchange="handleDatePrefChange()">
+            <option value="specific">I have a target date in mind</option>
+            <option value="fasttrack">As soon as bookings open</option>
+            <option value="flexible">Not sure yet, still revising</option>
+          </select>
+        </div>
+        <div class="form-group" id="targetDateGroup">
+          <label for="targetDate">Preferred Exam Date</label>
+          <input type="date" id="targetDate" class="form-control">
+          <span class="help-hint">An approximate date is fine.</span>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <div class="form-group">
+          <label for="timeSlot">Preferred Sitting Window *</label>
+          <select id="timeSlot" class="form-control">
+            <option value="Morning (09:00 – 12:00)">Morning Window (09:00 &ndash; 12:00)</option>
+            <option value="Afternoon (13:00 – 16:00)">Afternoon Window (13:00 &ndash; 16:00)</option>
+            <option value="Evening (17:00 – 20:00)">Evening Window (17:00 &ndash; 20:00)</option>
+            <option value="Saturday (09:30 – 13:30)">Saturday Window (09:30 &ndash; 13:30)</option>
+          </select>
+          <span class="help-hint">Just your preference for now.</span>
+        </div>
+        <div class="form-group">
+          <label for="deviceType">Laptop / Desktop Device *</label>
+          <select id="deviceType" class="form-control">
+            <option value="Windows PC / Laptop">Windows Laptop or Desktop PC (Recommended)</option>
+            <option value="Apple Mac (MacBook / iMac)">Apple Mac (MacBook / iMac)</option>
+            <option value="Chromebook">Chromebook</option>
+          </select>
+          <span class="help-hint">Requires working webcam, microphone, and stable internet. Phones/iPads cannot sit live exams.</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 4: NEURODIVERSITY & REASONABLE ADJUSTMENTS -->
+    <div class="booking-card" id="sectionStep4">
+      <h2><i class="fa-solid fa-brain"></i> 4. Neurodiversity &amp; Reasonable Adjustments</h2>
+      <p class="card-desc">Master Functional Skills specialises in supporting dyslexic, ADHD, dyscalculic, autistic, and anxious learners. When bookings open, we will apply for your access arrangements with Open Awards at <strong>no extra charge</strong>.</p>
+
+      <div class="neuro-banner">
+        <h3><i class="fa-solid fa-universal-access"></i> Neurodivergent Access &amp; Extra Time Support</h3>
+        <p>With an existing diagnostic report, EHCP, school/college JCQ Form 8, or normal-way-of-working tutor assessment, we can apply for <strong>25% extra time</strong>, <strong>supervised rest breaks</strong>, and <strong>onscreen colour tint overlays</strong> inside the XAMS exam player.</p>
+
+        <div class="adjustment-box">
+          <label class="adjustment-option">
+            <input type="radio" name="adjustmentReq" value="Standard Conditions (No adjustments needed)" checked onchange="toggleAdjustmentEvidence(false)">
+            <div class="adjustment-text">
+              <strong>Standard Exam Timing</strong>
+              <span>No extra time or access adjustments needed (120 mins Maths / 60 mins Reading &amp; Writing).</span>
+            </div>
+          </label>
+          <label class="adjustment-option">
+            <input type="radio" name="adjustmentReq" value="25% Extra Time Requested (Evidence Held)" onchange="toggleAdjustmentEvidence(true)">
+            <div class="adjustment-text">
+              <strong>25% Extra Time (Dyslexia / ADHD / Processing Speed / Dyscalculia)</strong>
+              <span>Extends Open Awards Maths to 150 minutes (37.5m Non-Calc + 112.5m Calc) and English Reading &amp; Writing to 75 minutes each.</span>
+            </div>
+          </label>
+          <label class="adjustment-option">
+            <input type="radio" name="adjustmentReq" value="Supervised Rest Breaks + 25% Extra Time" onchange="toggleAdjustmentEvidence(true)">
+            <div class="adjustment-text">
+              <strong>Supervised Rest Breaks + Extra Time</strong>
+              <span>Stop-the-clock movement or sensory breaks for ADHD, autism, severe exam anxiety, or medical conditions.</span>
+            </div>
+          </label>
+          <label class="adjustment-option">
+            <input type="radio" name="adjustmentReq" value="Free MFS Neurodiversity Tutor Screening Requested" onchange="toggleAdjustmentEvidence(true)">
+            <div class="adjustment-text">
+              <strong>No Formal Paperwork Yet &mdash; Request Free MFS Tutor Screening</strong>
+              <span>Our specialist tutor team will review your learning profile and normal way of working prior to exam entry.</span>
+            </div>
+          </label>
+        </div>
+      </div>
+
+      <div id="evidenceUploadSection" style="display:none; margin-top:20px;">
+        <div class="form-row">
+          <div class="form-group">
+            <label for="screenTintPref">Preferred Onscreen Exam Background Tint</label>
+            <select id="screenTintPref" class="form-control">
+              <option value="Cream / Warm Ivory">Cream / Warm Ivory (Glare Reduction)</option>
+              <option value="Soft Peach">Soft Peach</option>
+              <option value="Cool Blue Mist">Cool Blue Mist</option>
+              <option value="Soft Sage Green">Soft Sage Green</option>
+              <option value="Standard White">Standard White</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label for="adjustmentNotes">Brief Note on Your Learning Support Needs (Optional)</label>
+            <input type="text" id="adjustmentNotes" class="form-control" placeholder="e.g. Dyslexia report from college, extra time + cream screen">
+            <span class="help-hint">After booking, you can reply to your confirmation email or WhatsApp to attach any diagnostic PDF/photo.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- STEP 5: OPTIONAL PREPARATION & PROTECTION ADD-ONS -->
+    <div class="booking-card">
+      <h2><i class="fa-solid fa-shield-halved"></i> 5. Optional Pass Protection &amp; Tuition Upgrades</h2>
+      <p class="card-desc">Let us know if you are interested in these optional extras.</p>
+
+      <!-- Addon 1: Pass Protection (+£125 matching exams.html) -->
+      <div class="addon-card" id="addonResitCard" onclick="toggleAddon('resit')">
+        <div class="addon-info">
+          <input type="checkbox" id="addonResit" style="transform:scale(1.25); accent-color:#0284c7; margin-top:4px;" onclick="event.stopPropagation(); toggleAddon('resit', true);">
+          <div class="addon-icon"><i class="fa-solid fa-rotate-right"></i></div>
+          <div class="addon-details">
+            <h4>Premium Pass Protection Bundle (1 Free Resit + Printed Study Pack + 1-to-1 Session)</h4>
+            <p>Includes 1 full free exam resit if needed, spiral-bound revision workbook &amp; printed mocks posted to your door, plus a 1-to-1 diagnostic tutor session.</p>
+          </div>
+        </div>
+        <div class="addon-price">+&pound;125</div>
+      </div>
+
+      <!-- Addon 2: Complete Online Course (+£230 matching exams.html) -->
+      <div class="addon-card" id="addonCourseCard" onclick="toggleAddon('course')">
+        <div class="addon-info">
+          <input type="checkbox" id="addonCourse" style="transform:scale(1.25); accent-color:#0284c7; margin-top:4px;" onclick="event.stopPropagation(); toggleAddon('course', true);">
+          <div class="addon-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+          <div class="addon-details">
+            <h4>Complete Accredited Online Course Upgrade (Save &pound;125)</h4>
+            <p>Full structured dyslexia-friendly video curriculum, interactive topic workouts, BKSB-style diagnostics, and marked mock feedback before your exam.</p>
+          </div>
+        </div>
+        <div class="addon-price">+&pound;230</div>
+      </div>
+    </div>
+
+    <!-- STEP 6: ORDER SUMMARY & CHECKOUT -->
+    <div class="booking-card" id="sectionStep5" style="border:2.5px solid #0284c7;">
+      <h2><i class="fa-solid fa-lock"></i> 6. Summary &amp; Register Interest</h2>
+      <p class="card-desc">Check your choices below. When you register, you get an MFS reference and we save your details. We will contact you as soon as bookings open. No payment is taken today.</p>
+
+      <div class="summary-card">
+        <div class="summary-row">
+          <span id="summaryExamName" style="font-weight:700;">Maths Level 2 Online Exam</span>
+          <span id="summaryExamPrice" style="font-weight:800;">&pound;149.00</span>
+        </div>
+        <div class="summary-row" id="summaryAddonResitRow" style="display:none;">
+          <span>Premium Pass Protection Bundle (1 Free Resit + Study Pack)</span>
+          <span style="font-weight:800;">+&pound;125.00</span>
+        </div>
+        <div class="summary-row" id="summaryAddonCourseRow" style="display:none;">
+          <span>Complete Accredited Online Course Upgrade</span>
+          <span style="font-weight:800;">+&pound;230.00</span>
+        </div>
+        <div class="summary-row">
+          <span>Open Awards Managed Live Remote Invigilation</span>
+          <span style="font-weight:700; color:#15803d;">Included (&pound;0.00)</span>
+        </div>
+        <div class="summary-row">
+          <span>Reasonable Adjustments &amp; Ofqual Certificate</span>
+          <span style="font-weight:700; color:#15803d;">Included (&pound;0.00)</span>
+        </div>
+        <div class="summary-row total">
+          <span>Planned Launch Price:</span>
+          <span class="total-amount" id="summaryTotalPrice">&pound;149.00</span>
+        </div>
+      </div>
+
+      <div class="validation-banner" id="validationBanner" role="alert">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <span id="validationMessage">Please complete all required candidate details in Section 2 before continuing.</span>
+      </div>
+
+      <button type="button" class="btn-checkout-primary" id="btnProceedCheckout" onclick="processExamBooking()">
+        <i class="fa-solid fa-bell"></i> Register My Interest &mdash; No Payment Today<span id="btnPayAmount" hidden>&pound;149</span>
+      </button>
+
+      <a href="#" class="btn-checkout-wa" id="btnBookViaWhatsApp" onclick="bookViaWhatsApp(event)">
+        <i class="fa-brands fa-whatsapp" style="color:#22c55e; font-size:1.18rem;"></i> Or Register Interest via WhatsApp
+      </a>
+
+      <div class="trust-strip">
+        <span><i class="fa-solid fa-circle-check" style="color:#16a34a;"></i> No payment taken today</span>
+        <span><i class="fa-solid fa-bell" style="color:#0284c7;"></i> First to hear when bookings open</span>
+        <span><i class="fa-solid fa-circle-check" style="color:#16a34a;"></i> Accepted by Universities, Healthcare &amp; Employers</span>
+      </div>
+    </div>
+
+  </main>
+
+  <!-- OPEN AWARDS & OFQUAL RECOGNITION SHOWCASE -->
+  <section class="mfs-container" id="open-awards-recognition" style="margin: 0 auto 42px; padding: 0 16px;">
+    <div style="background:linear-gradient(135deg, #070d1e 0%, #0f172a 100%); border:2px solid #0284c7; border-radius:18px; padding:26px 28px; color:#ffffff; box-shadow:0 12px 30px rgba(10,15,29,0.18); display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:22px;">
+      <div style="display:flex; align-items:center; gap:18px; flex-wrap:wrap; max-width:740px;">
+        <div style="background:#ffffff; padding:10px 16px; border-radius:12px; flex-shrink:0;">
+          <img src="assets/img/boards/open-awards.png" alt="Open Awards Ofqual Regulated" style="height:40px; width:auto; object-fit:contain; display:block;">
+        </div>
+        <div>
+          <div style="font-size:0.76rem; font-weight:800; color:#38bdf8; text-transform:uppercase; letter-spacing:0.05em; margin-bottom:4px;">
+            <i class="fa-solid fa-circle-check"></i> Ofqual Regulated Level 2 = GCSE Grade 4 (C) Equivalent
+          </div>
+          <h3 style="margin:0 0 6px; font-size:1.22rem; font-weight:800; color:#ffffff;">Accepted by All UK Universities, Healthcare Employers, Apprenticeships &amp; Employers</h3>
+          <p style="margin:0; font-size:0.9rem; color:#cbd5e1; line-height:1.55;">All Ofqual-regulated Functional Skills boards (<strong>Open Awards</strong>, <strong>Pearson Edexcel</strong>, and <strong>City &amp; Guilds</strong>) carry identical legal RQF recognition.</p>
+        </div>
+      </div>
+      <div style="display:flex; gap:10px; flex-wrap:wrap;">
+        <a href="open-awards-functional-skills.html" style="background:#0284c7; color:#ffffff; padding:11px 18px; border-radius:10px; font-weight:800; font-size:0.88rem; text-decoration:none; display:inline-flex; align-items:center; gap:7px;"><i class="fa-solid fa-award"></i> Open Awards Guide</a>
+        <a href="centre-policies.html" style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.28); color:#f8fafc; padding:11px 18px; border-radius:10px; font-weight:700; font-size:0.88rem; text-decoration:none; display:inline-flex; align-items:center; gap:7px;"><i class="fa-solid fa-scale-balanced"></i> Access &amp; Policies</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- UNIFIED FOOTER -->
+  <footer class="mfs-footer" id="site-footer">
+    <div class="mfs-container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="mfs-brand" style="margin-bottom:16px;">
+            <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="mfs-brand-text">
+              <div class="mfs-brand-title" style="color:#ffffff;">MASTER<span>FUNCTIONALSKILLS</span></div>
+              <div class="mfs-brand-subtitle" style="color:#94a3b8;">Delivering Skills • Achieving Goals</div>
+            </div>
+          </div>
+          <p style="font-size:0.88rem; line-height:1.6; margin-bottom:16px;">
+            The UK's dedicated Functional Skills revision specialist. Providing realistic mock exams, step-by-step revision flashcards, diagnostic assessments, and 1-to-1 specialist tuition for Open Awards, Pearson Edexcel, City &amp; Guilds, and all major exam boards.
+          </p>
+          <div style="font-size:0.85rem; color:#cbd5e1;">
+            <p><a href="https://wa.me/447564525425" target="_blank" rel="noopener" style="color:#cbd5e1; text-decoration:none;"><i class="fa-brands fa-whatsapp" style="color:var(--accent); margin-right:8px;"></i> WhatsApp: +44 (0)7564 525425</a></p>
+            <p style="margin-top:6px;"><a href="contact-us.html" style="color:#cbd5e1; text-decoration:none;"><i class="fa-solid fa-envelope" style="color:var(--accent); margin-right:8px;"></i> Contact Tutor Team</a></p>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Maths Revision</h4>
+          <ul class="footer-links">
+            <li><a href="functional-skills-maths-level-2.html">Maths Level 2 Revision</a></li>
+            <li><a href="functional-skills-maths-level-1.html">Maths Level 1 Revision</a></li>
+            <li><a href="entry-level-3-maths.html">Entry Level 3 Maths</a></li>
+            <li><a href="pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="functional-skills-past-papers.html">Free Maths Past Papers</a></li>
+            <li><a href="exam-maths-l2.html">Book Level 2 Maths Exam</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>English &amp; Digital</h4>
+          <ul class="footer-links">
+            <li><a href="functional-skills-english-level-2.html">English Level 2 Revision</a></li>
+            <li><a href="functional-skills-english-level-1.html">English Level 1 Revision</a></li>
+            <li><a href="entry-level-3-english.html">Entry Level 3 English</a></li>
+            <li><a href="digital-functional-skills-level-1.html">Digital Skills Level 1</a></li>
+            <li><a href="digital-functional-skills-entry-3.html">Digital Skills Entry 3</a></li>
+            <li><a href="digital-functional-skills-past-papers.html">DFS Past Papers &amp; Data Files</a></li>
+            <li><a href="digital-functional-skills-mock-exam.html">DFS Online Mock Simulator</a></li>
+            <li><a href="digital-functional-skills.html">Digital Skills Hub (E3 &amp; L1)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Student Support &amp; Tools</h4>
+          <ul class="footer-links">
+            <li><a href="tools.html" style="color:var(--accent); font-weight:700;"><i class="fa-solid fa-screwdriver-wrench" style="margin-right:6px;"></i>All Interactive Tools Hub</a></li>
+            <li><a href="pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="diagnostic-test.html">Diagnostic Skill Checker</a></li>
+            <li><a href="functional-skills-nets.html">3D Net Folding Tool</a></li>
+            <li><a href="digital-functional-skills-mock-exam.html">Pearson DFS Simulator</a></li>
+            <li><a href="revision-cards.html">Revision Cards &amp; Flashcards</a></li>
+            <li><a href="shop.html">Revision Books &amp; Study Packs</a></li>
+            <li><a href="tutors.html">1-to-1 Specialist Tuition</a></li>
+            <li><a href="exams.html">Book Official Online Exam</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Master Functional Skills. All rights reserved. Registered in England &amp; Wales. Ofqual Regulated Qualification Standards.</div>
+        <div style="display:flex; gap:16px; flex-wrap:wrap;">
+          <a href="index.html">Home</a>
+          <a href="centre-policies.html">Policies</a>
+          <a href="functional-skills-past-papers.html">Past Papers</a>
+          <a href="revision-cards.html">Revision Cards</a>
+          <a href="shop.html">Study Shop</a>
+          <a href="tutors.html">Tutors</a>
+          <a href="contact-us.html">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/mfs-tint.js"></script>
+  <script>
+    // Optional Stripe Payment Links map — populate your live Stripe Payment Link URLs here once your Stripe products are created:
+    // Set to true once Open Awards centre approval is granted and Stripe links are added.
+    const BOOKINGS_OPEN = false;
+    const STRIPE_PAYMENT_LINKS = {
+      'maths-l2': '',
+      'english-l2': '',
+      'dual-l2': '',
+      'maths-l1': '',
+      'english-l1': '',
+      'digital-l1': ''
+    };
+
+    const SUBJECT_CATALOG = {
+      'maths-l2': [149, 'Maths Level 2 Online Exam'],
+      'english-l2': [199, 'English Level 2 Online Exam'],
+      'dual-l2': [319, 'Maths & English Level 2 Dual Exam Bundle'],
+      'maths-l1': [149, 'Maths Level 1 Online Exam'],
+      'english-l1': [199, 'English Level 1 Online Exam'],
+      'digital-l1': [149, 'Digital Functional Skills (DFSQ) Online Exam']
+    };
+
+    let currentSubject = 'maths-l2';
+    let basePrice = 149;
+    let subjectTitle = 'Maths Level 2 Online Exam';
+    let hasResit = false;
+    let hasCourse = false;
+
+    document.addEventListener('DOMContentLoaded', () => {
+      // Set minimum target exam date to 5 days from today
+      const minDate = new Date();
+      minDate.setDate(minDate.getDate() + 5);
+      const targetInput = document.getElementById('targetDate');
+      if (targetInput) {
+        targetInput.min = minDate.toISOString().split('T')[0];
+      }
+
+      const urlParams = new URLSearchParams(window.location.search);
+      const subParam = urlParams.get('subject');
+      if (subParam && SUBJECT_CATALOG[subParam]) {
+        selectSubject(subParam, SUBJECT_CATALOG[subParam][0], SUBJECT_CATALOG[subParam][1]);
+      }
+      if (urlParams.get('addon') === 'resit') {
+        toggleAddon('resit');
+      }
+    });
+
+    function selectSubject(slug, price, title) {
+      currentSubject = slug;
+      basePrice = price;
+      subjectTitle = title;
+
+      document.querySelectorAll('.subject-option').forEach(el => el.classList.remove('selected'));
+      const activeOption = document.querySelector(`input[name="subject"][value="${slug}"]`)?.closest('.subject-option');
+      if (activeOption) {
+        activeOption.classList.add('selected');
+        activeOption.querySelector('input').checked = true;
+      }
+
+      document.getElementById('summaryExamName').textContent = title;
+      document.getElementById('summaryExamPrice').textContent = '\u00A3' + price.toFixed(2);
+      updateTotal();
+    }
+
+    function toggleAddon(type, fromCheckbox) {
+      if (type === 'resit') {
+        const chk = document.getElementById('addonResit');
+        if (!fromCheckbox) chk.checked = !chk.checked;
+        hasResit = chk.checked;
+        document.getElementById('addonResitCard').classList.toggle('selected', hasResit);
+        document.getElementById('summaryAddonResitRow').style.display = hasResit ? 'flex' : 'none';
+      } else if (type === 'course') {
+        const chk = document.getElementById('addonCourse');
+        if (!fromCheckbox) chk.checked = !chk.checked;
+        hasCourse = chk.checked;
+        document.getElementById('addonCourseCard').classList.toggle('selected', hasCourse);
+        document.getElementById('summaryAddonCourseRow').style.display = hasCourse ? 'flex' : 'none';
+      }
+      updateTotal();
+    }
+
+    function handleDatePrefChange() {
+      const pref = document.getElementById('examDatePreference').value;
+      const group = document.getElementById('targetDateGroup');
+      if (group) {
+        group.style.opacity = pref === 'specific' ? '1' : '0.55';
+      }
+      setStepCompleted('stepNode3', true);
+    }
+
+    function toggleAdjustmentEvidence(show) {
+      const section = document.getElementById('evidenceUploadSection');
+      if (section) section.style.display = show ? 'block' : 'none';
+      setStepCompleted('stepNode4', true);
+    }
+
+    function setStepCompleted(nodeId, done) {
+      const node = document.getElementById(nodeId);
+      if (!node) return;
+      if (done) {
+        node.classList.remove('active');
+        node.classList.add('completed');
+        node.querySelector('.step-circle').innerHTML = '<i class="fa-solid fa-check"></i>';
+      }
+    }
+
+    function refreshProgress() {
+      const fields = ['candidateFirst', 'candidateLast', 'candidateDob', 'candidateEmail', 'candidatePhone', 'candidatePostcode'];
+      let allFilled = true;
+      fields.forEach(id => {
+        const el = document.getElementById(id);
+        if (el) {
+          el.classList.remove('input-error');
+          if (!el.value.trim()) allFilled = false;
+        }
+      });
+      if (allFilled) {
+        document.getElementById('validationBanner').style.display = 'none';
+        setStepCompleted('stepNode2', true);
+        document.getElementById('stepNode3').classList.add('active');
+      }
+    }
+
+    function updateTotal() {
+      let total = basePrice;
+      if (hasResit) total += 125;
+      if (hasCourse) total += 230;
+
+      document.getElementById('summaryTotalPrice').textContent = '\u00A3' + total.toFixed(2);
+      document.getElementById('btnPayAmount').textContent = '\u00A3' + total;
+    }
+
+    function collectBookingPayload() {
+      const firstName = document.getElementById('candidateFirst').value.trim();
+      const lastName = document.getElementById('candidateLast').value.trim();
+      const dob = document.getElementById('candidateDob').value;
+      const email = document.getElementById('candidateEmail').value.trim();
+      const phone = document.getElementById('candidatePhone').value.trim();
+      const postcode = document.getElementById('candidatePostcode').value.trim();
+      const datePref = document.getElementById('examDatePreference').value;
+      const targetDate = document.getElementById('targetDate').value;
+      const timeSlot = document.getElementById('timeSlot').value;
+      const deviceType = document.getElementById('deviceType').value;
+      const adjustment = document.querySelector('input[name="adjustmentReq"]:checked')?.value || 'Standard Conditions';
+      const tintPref = document.getElementById('screenTintPref')?.value || 'Standard';
+      const adjustmentNotes = document.getElementById('adjustmentNotes')?.value.trim() || '';
+
+      let scheduleSummary = targetDate ? targetDate : (datePref === 'fasttrack' ? 'As soon as bookings open' : 'Not sure yet');
+      const addons = [];
+      if (hasResit) addons.push('Pass Protection Bundle (+£125)');
+      if (hasCourse) addons.push('Complete Online Course (+£230)');
+
+      return {
+        ref: 'MFS-' + Math.floor(100000 + Math.random() * 900000),
+        subjectSlug: currentSubject,
+        subject: subjectTitle,
+        firstName,
+        lastName,
+        candidateName: (firstName + ' ' + lastName).trim(),
+        dob,
+        email,
+        phone,
+        postcode,
+        scheduleSummary,
+        timeSlot,
+        deviceType,
+        adjustment,
+        tintPref,
+        adjustmentNotes,
+        addons: addons.length ? addons.join(', ') : 'None',
+        total: document.getElementById('summaryTotalPrice').textContent
+      };
+    }
+
+    function validateRequiredFields() {
+      const requiredIds = [
+        ['candidateFirst', 'First Name'],
+        ['candidateLast', 'Surname'],
+        ['candidateDob', 'Date of Birth'],
+        ['candidateEmail', 'Email Address'],
+        ['candidatePhone', 'Mobile / WhatsApp Number'],
+        ['candidatePostcode', 'UK Postcode & Address']
+      ];
+      for (const [id, label] of requiredIds) {
+        const el = document.getElementById(id);
+        if (!el.value.trim()) {
+          el.classList.add('input-error');
+          const banner = document.getElementById('validationBanner');
+          document.getElementById('validationMessage').textContent = `Please enter the candidate's ${label} in Section 2 to continue.`;
+          banner.style.display = 'flex';
+          el.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          el.focus();
+          return false;
+        }
+      }
+      const emailEl = document.getElementById('candidateEmail');
+      if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(emailEl.value.trim())) {
+        emailEl.classList.add('input-error');
+        const banner = document.getElementById('validationBanner');
+        document.getElementById('validationMessage').textContent = 'Please enter a valid email address so we can contact you when bookings open.';
+        banner.style.display = 'flex';
+        emailEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        emailEl.focus();
+        return false;
+      }
+      return true;
+    }
+
+    function processExamBooking() {
+      if (!validateRequiredFields()) return;
+
+      const payload = collectBookingPayload();
+      try {
+        sessionStorage.setItem('mfs_latest_booking', JSON.stringify(payload));
+      } catch (e) {
+        console.warn('Session storage unavailable:', e);
+      }
+
+      // If a live Stripe Payment Link is configured (with no extra custom add-ons), redirect straight to Stripe Checkout:
+      const stripeLink = STRIPE_PAYMENT_LINKS[currentSubject];
+      if (BOOKINGS_OPEN && stripeLink && !hasResit && !hasCourse) {
+        const sep = stripeLink.includes('?') ? '&' : '?';
+        window.location.href = `${stripeLink}${sep}prefilled_email=${encodeURIComponent(payload.email)}&client_reference_id=${encodeURIComponent(payload.ref)}`;
+        return;
+      }
+
+      // Route to Candidate Confirmation & Payment Instructions Dossier:
+      const confirmUrl = `booking-confirmation.html?ref=${encodeURIComponent(payload.ref)}&subject=${encodeURIComponent(payload.subject)}&name=${encodeURIComponent(payload.candidateName)}&email=${encodeURIComponent(payload.email)}&total=${encodeURIComponent(payload.total)}`;
+      window.location.href = confirmUrl;
+    }
+
+    function bookViaWhatsApp(e) {
+      e.preventDefault();
+      const payload = collectBookingPayload();
+      const lines = [
+        `Hello Master Functional Skills, I would like to register my interest in an online exam:`,
+        `- Ref: ${payload.ref}`,
+        `- Exam: ${payload.subject}`,
+        `- Add-ons: ${payload.addons}`,
+        `- Total: ${payload.total}`,
+        payload.candidateName ? `- Candidate: ${payload.candidateName}` : null,
+        payload.dob ? `- DOB: ${payload.dob}` : null,
+        payload.email ? `- Email: ${payload.email}` : null,
+        `- Preferred Date: ${payload.scheduleSummary} (${payload.timeSlot})`,
+        `- Access Arrangements: ${payload.adjustment}`
+      ].filter(Boolean).join('\n');
+
+      window.open(`https://wa.me/447564525425?text=${encodeURIComponent(lines)}`, '_blank', 'noopener');
+    }
+  </script>
+</body>
+</html>

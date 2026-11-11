@@ -1172,7 +1172,107 @@
       activeSection: 'Task 2',
       companionSlug: 'slc-task1-presentation-model',
       companionLabel: 'Task 1: Presentation Model (4m)'
+    },
+    // === E3_MODAL_START ===
+    'e3-numbers-to-1000-and-patterns': {
+      ytId: '',
+      localVideo: 'assets/video/sonya-e3-numbers-to-1000-and-patterns-walkthrough.mp4',
+      poster: 'assets/img/posters/e3-numbers-to-1000-and-patterns-poster.jpg',
+      title: 'E3 Maths: Numbers up to 1,000 & Patterns (Foundation Lesson)',
+      series: 'Entry Level 3 Maths Foundation'
+    },
+    'e3-addition-and-subtraction': {
+      ytId: '',
+      localVideo: 'assets/video/emma-e3-addition-and-subtraction-walkthrough.mp4',
+      poster: 'assets/img/posters/e3-addition-and-subtraction-poster.jpg',
+      title: 'E3 Maths: 3-Digit Addition & Subtraction (Foundation Lesson)',
+      series: 'Entry Level 3 Maths Foundation'
+    },
+    'e3-multiplication-and-division': {
+      ytId: '',
+      localVideo: 'assets/video/subi-e3-multiplication-and-division-walkthrough.mp4',
+      poster: 'assets/img/posters/e3-multiplication-and-division-poster.jpg',
+      title: 'E3 Maths: Multiplication & Division with Remainders (Foundation Lesson)',
+      series: 'Entry Level 3 Maths Foundation'
+    },
+    'e3-rounding-and-estimating': {
+      ytId: '',
+      localVideo: 'assets/video/sonya-e3-rounding-and-estimating-walkthrough.mp4',
+      poster: 'assets/img/posters/e3-rounding-and-estimating-poster.jpg',
+      title: 'E3 Maths: Rounding to Nearest 10 & 100 (Foundation Lesson)',
+      series: 'Entry Level 3 Maths Foundation'
+    },
+    'e3-everyday-fractions': {
+      ytId: '',
+      localVideo: 'assets/video/emma-e3-everyday-fractions-walkthrough.mp4',
+      poster: 'assets/img/posters/e3-everyday-fractions-poster.jpg',
+      title: 'E3 Maths: Everyday Fractions (1/2, 1/4, 3/4, 1/10) (Foundation Lesson)',
+      series: 'Entry Level 3 Maths Foundation'
+    },
+    'e3-money-and-decimals': {
+      ytId: '',
+      localVideo: 'assets/video/subi-e3-money-and-decimals-walkthrough.mp4',
+      poster: 'assets/img/posters/e3-money-and-decimals-poster.jpg',
+      title: 'E3 Maths: Money, Change & Decimal Basics (Foundation Lesson)',
+      series: 'Entry Level 3 Maths Foundation'
+    },
+    'e3-time-clocks-and-calendars': {
+      ytId: '',
+      localVideo: 'assets/video/sonya-e3-time-clocks-and-calendars-walkthrough.mp4',
+      poster: 'assets/img/posters/e3-time-clocks-and-calendars-poster.jpg',
+      title: 'E3 Maths: Telling the Time, Clocks & Calendars (Foundation Lesson)',
+      series: 'Entry Level 3 Maths Foundation'
+    },
+    'e3-everyday-measures-and-scales': {
+      ytId: '',
+      localVideo: 'assets/video/emma-e3-everyday-measures-and-scales-walkthrough.mp4',
+      poster: 'assets/img/posters/e3-everyday-measures-and-scales-poster.jpg',
+      title: 'E3 Maths: Length, Weight, Capacity & Reading Scales (Foundation Lesson)',
+      series: 'Entry Level 3 Maths Foundation'
+    },
+    'e3-shapes-angles-and-directions': {
+      ytId: '',
+      localVideo: 'assets/video/subi-e3-shapes-angles-and-directions-walkthrough.mp4',
+      poster: 'assets/img/posters/e3-shapes-angles-and-directions-poster.jpg',
+      title: 'E3 Maths: Shapes, Right Angles & Directions (Foundation Lesson)',
+      series: 'Entry Level 3 Maths Foundation'
+    },
+    'e3-lists-tallies-tables-and-charts': {
+      ytId: '',
+      localVideo: 'assets/video/sonya-e3-lists-tallies-tables-and-charts-walkthrough.mp4',
+      poster: 'assets/img/posters/e3-lists-tallies-tables-and-charts-poster.jpg',
+      title: 'E3 Maths: Lists, Tally Charts, Tables & Bar Charts (Foundation Lesson)',
+      series: 'Entry Level 3 Maths Foundation'
+    },
+    'e3-english-reading-everyday-texts': {
+      ytId: '',
+      localVideo: 'assets/video/sonya-e3-english-reading-everyday-texts-walkthrough.mp4',
+      poster: 'assets/img/posters/e3-english-reading-everyday-texts-poster.jpg',
+      title: 'E3 English: Reading Signs, Emails & Instructions (Foundation Lesson)',
+      series: 'Entry Level 3 English Foundation'
+    },
+    'e3-english-sentence-basics': {
+      ytId: '',
+      localVideo: 'assets/video/emma-e3-english-sentence-basics-walkthrough.mp4',
+      poster: 'assets/img/posters/e3-english-sentence-basics-poster.jpg',
+      title: 'E3 English: Capitals, Full Stops & Joining Words (Foundation Lesson)',
+      series: 'Entry Level 3 English Foundation'
+    },
+    'e3-english-everyday-spellings': {
+      ytId: '',
+      localVideo: 'assets/video/subi-e3-english-everyday-spellings-walkthrough.mp4',
+      poster: 'assets/img/posters/e3-english-everyday-spellings-poster.jpg',
+      title: 'E3 English: Everyday Spellings, Plurals & Homophones (Foundation Lesson)',
+      series: 'Entry Level 3 English Foundation'
+    },
+    'e3-english-writing-emails-and-forms': {
+      ytId: '',
+      localVideo: 'assets/video/emma-e3-english-writing-emails-and-forms-walkthrough.mp4',
+      poster: 'assets/img/posters/e3-english-writing-emails-and-forms-poster.jpg',
+      title: 'E3 English: Writing Short Emails, Notes & Forms (Foundation Lesson)',
+      series: 'Entry Level 3 English Foundation'
     }
+    // === E3_MODAL_END ===
   };
 
   let modalOverlay = null;
@@ -1390,10 +1490,18 @@
     const playerBox = document.getElementById('mfsPlayerBox');
     playerBox.innerHTML = '';
 
+    const localVideoUrl = options.localVideo || '';
+    const posterUrl = options.poster || '';
     if (ytId) {
       // Clean YouTube Embed (Never crashes mobile browsers with MIME type error)
       playerBox.innerHTML = `
         <iframe style="width:100%; height:100%; border:0; display:block;" src="https://www.youtube-nocookie.com/embed/${ytId}?autoplay=1&rel=0&playsinline=1" title="${escapeHtml(topic)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+      `;
+    } else if (localVideoUrl) {
+      playerBox.innerHTML = `
+        <video controls autoplay playsinline poster="${escapeHtml(posterUrl)}" style="width:100%; height:100%; object-fit:contain; background:#000; display:block;">
+          <source src="${escapeHtml(localVideoUrl)}" type="video/mp4">
+        </video>
       `;
     } else {
       // In Production State / Channel Fallback
@@ -1485,6 +1593,8 @@
         let sheetUrl = this.getAttribute('data-sheet');
         let answersUrl = this.getAttribute('data-answers');
         let ytId = this.getAttribute('data-yt-id') || this.getAttribute('data-ytid') || '';
+        let localVideo = this.getAttribute('data-local-video') || '';
+        let poster = this.getAttribute('data-poster') || '';
         let series = this.getAttribute('data-series') || 'Pearson Edexcel Functional Skills';
 
         if (!ytId && href) {
@@ -1516,6 +1626,8 @@
           sheetUrl: sheetUrl,
           answersUrl: answersUrl,
           ytId: ytId,
+          localVideo: localVideo,
+          poster: poster,
           series: series,
           tutor: 'Subi'
         });

@@ -20,6 +20,9 @@
   <link rel="stylesheet" href="assets/css/mfs-mobile.css?v=20261111">
   <style>html, body { overflow-x: hidden; max-width: 100%; }</style>
   <link rel="canonical" href="https://masterfunctionalskills.co.uk/digital-functional-skills-entry-3.html">
+  <link rel="stylesheet" href="assets/css/mfs-theme.css?v=20261024c">
+  <script src="assets/js/mfs-pwa.js" defer></script>
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
 </head>
 <body data-tint="cream">
 
@@ -27,11 +30,11 @@
   <div class="mfs-top-bar">
     <div class="mfs-container mfs-top-bar-inner">
       <div class="top-trust-items">
-        <span class="top-trust-item"><i class="fa-solid fa-building-columns"></i> Open Awards, Pearson Edexcel &amp; City &amp; Guilds Aligned</span>
-        <span class="top-trust-item"><i class="fa-solid fa-award"></i> Accredited DFSQ Course Material</span>
+        <span class="top-trust-item"><i class="fa-solid fa-building-columns"></i> Open Awards, Open Awards, Pearson Edexcel &amp; City &amp; Guilds Aligned</span>
       </div>
       <div class="top-contacts">
         <div class="mfs-access-bar">
+          <!-- DYSLEXIA BACKGROUND TINT PICKER -->
           <div class="mfs-tint-dropdown-wrap">
             <button type="button" id="tintToggle" class="btn-tint-toggle" onclick="toggleTintMenu(event)" title="Change dyslexia background tint">
               <span class="tint-swatch-indicator" id="tintCurrentSwatch"></span>
@@ -42,7 +45,7 @@
               <div class="tint-picker-title"><i class="fa-solid fa-glasses"></i> Dyslexia Reading Tint</div>
               <button type="button" class="tint-option-btn active" data-tint="cream" onclick="setSiteTint('cream', event)">
                 <span class="swatch swatch-cream"></span>
-                <span class="tint-name">Cream (Recommended)</span>
+                <span class="tint-name">Cream <small class="tint-badge-def">Default</small></span>
                 <i class="fa-solid fa-check check-icon"></i>
               </button>
               <button type="button" class="tint-option-btn" data-tint="peach" onclick="setSiteTint('peach', event)">
@@ -60,7 +63,7 @@
                 <span class="tint-name">Soft Sage</span>
                 <i class="fa-solid fa-check check-icon"></i>
               </button>
-              <div class="tint-divider" style="height:1px; background:#e2e8f0; margin:6px 0;"></div>
+              <div class="tint-divider"></div>
               <button type="button" class="tint-option-btn" data-tint="none" onclick="setSiteTint('none', event)">
                 <span class="swatch swatch-none"></span>
                 <span class="tint-name">No Tint (White)</span>
@@ -71,17 +74,18 @@
           <button id="dyslexiaToggle" class="btn-dyslexia-toggle" onclick="toggleDyslexiaMode()" title="Toggle Dyslexia High-Readability Mode">
             <i class="fa-solid fa-universal-access"></i> Dyslexia
           </button>
+          <button id="themeToggle" class="mfs-theme-pill" onclick="toggleTheme()" title="Switch Palette: Sapphire vs Emerald">
+            <i class="fa-solid fa-palette"></i> <span id="themeLabel">Sapphire</span>
+          </button>
         </div>
-        <a href="contact-us.html" class="btn-tint-toggle" style="text-decoration:none;"><i class="fa-solid fa-envelope"></i> Contact</a>
+        <a href="contact-us.html" class="top-contact-link"><i class="fa-solid fa-envelope"></i> <strong>Contact Us</strong></a>
       </div>
     </div>
-  </div>
-
-  <!-- MAIN NAVIGATION -->
+  </div>  <!-- MAIN NAVIGATION -->
   <header class="mfs-navbar">
-    <div class="mfs-container mfs-navbar-inner">
+    <div class="revision-page-wrapper mfs-navbar-inner">
       <a href="index.html" class="mfs-brand">
-        <div class="mfs-brand-icon"><i class="fa-solid fa-laptop-code"></i></div>
+        <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
         <div class="mfs-brand-text">
           <div class="mfs-brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
           <div class="mfs-brand-subtitle">Delivering Skills • Achieving Goals</div>
@@ -90,15 +94,135 @@
 
       <nav class="mfs-nav-wrapper">
         <ul class="mfs-nav-menu">
-          <li><a href="revise.html" class="mfs-nav-link"><i class="fa-solid fa-book-open-reader"></i> Revision Hub</a></li>
-          <li><a href="digital-functional-skills-entry-3.html" class="mfs-nav-link active"><i class="fa-solid fa-list-check"></i> Entry 3 Directory</a></li>
-          <li><a href="digital-functional-skills-level-1.html" class="mfs-nav-link"><i class="fa-solid fa-arrow-right-arrow-left"></i> Switch to Level 1</a></li>
-          <li><a href="digital-functional-skills-past-papers.html" class="mfs-nav-link"><i class="fa-solid fa-file-lines"></i> Past Papers</a></li>
-          <li><a href="digital-functional-skills-mock-exam.html" class="mfs-nav-link btn-nav-exam"><i class="fa-solid fa-desktop"></i> Mock Simulator</a></li>
+          <!-- 1. SUBJECTS (VISUAL MEGA-MENU) -->
+          <li class="mfs-nav-item">
+            <a href="revise.html" class="mfs-nav-link">
+              <i class="fa-solid fa-book-open-reader" style="color:#0284c7; margin-right:5px;"></i> Subjects <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-revision-hub">
+              <div class="mfs-revision-grid">
+                <!-- Maths Column -->
+                <div class="mfs-revision-col mfs-revision-col-maths">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-calculator"></i> Maths Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="functional-skills-maths-level-2.html" class="mfs-dropdown-item">Maths Level 2</a>
+                    <a href="functional-skills-maths-level-1.html" class="mfs-dropdown-item">Maths Level 1</a>
+                    <a href="entry-level-3-maths.html" class="mfs-dropdown-item">Entry Level 3 Maths</a>
+                  </div>
+                </div>
+                <!-- English Column -->
+                <div class="mfs-revision-col mfs-revision-col-english">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-pen-nib"></i> English Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="functional-skills-english-level-2.html" class="mfs-dropdown-item">English Level 2</a>
+                    <a href="functional-skills-english-level-1.html" class="mfs-dropdown-item">English Level 1</a>
+                    <a href="entry-level-3-english.html" class="mfs-dropdown-item">Entry Level 3 English</a>
+                  </div>
+                </div>
+                <!-- Digital Skills Column -->
+                <div class="mfs-revision-col mfs-revision-col-digital">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-laptop-code"></i> Digital Skills</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="digital-functional-skills-level-1.html" class="mfs-dropdown-item"><i class="fa-solid fa-award" style="font-size:0.75rem; margin-right:5px; color:#0284c7;"></i> Digital Skills Level 1</a>
+                    <a href="digital-functional-skills-entry-3.html" class="mfs-dropdown-item"><i class="fa-solid fa-seedling" style="font-size:0.75rem; margin-right:5px; color:#059669;"></i> Digital Skills Entry 3</a>
+                    <a href="digital-functional-skills-past-papers.html" class="mfs-dropdown-item"><i class="fa-solid fa-file-zipper" style="font-size:0.75rem; margin-right:5px; color:#d97706;"></i> Past Papers &amp; Data Files</a>
+                    <a href="digital-functional-skills-mock-exam.html" class="mfs-dropdown-item"><i class="fa-solid fa-desktop" style="font-size:0.75rem; margin-right:5px; color:#7c3aed;"></i> Online Mock Simulator</a>
+                    <a href="digital-functional-skills.html" class="mfs-dropdown-item"><i class="fa-solid fa-layer-group" style="font-size:0.75rem; margin-right:5px; color:#475569;"></i> Digital Skills Hub (E3 &amp; L1)</a>
+                  </div>
+                </div>
+              </div>
+              <!-- Course & Subject Selector Cross-link Footer inside dropdown -->
+              <div class="mfs-revision-dropdown-footer" style="margin-top:12px; padding-top:10px; border-top:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center; font-size:0.82rem;">
+                <a href="revise.html" style="font-weight:700; color:var(--accent); text-decoration:none;"><i class="fa-solid fa-layer-group" style="margin-right:4px;"></i> View All Subjects &amp; Levels &rarr;</a>
+                <a href="courses.html" style="font-weight:700; color:#059669; text-decoration:none;"><i class="fa-solid fa-graduation-cap" style="margin-right:4px;"></i> Accredited Online Courses &rarr;</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- 2. ONLINE COURSES -->
+          <li class="mfs-nav-item">
+            <a href="courses.html" class="mfs-nav-link">
+              <i class="fa-solid fa-graduation-cap" style="color:#0284c7; margin-right:5px;"></i> Online Courses
+            </a>
+          </li>
+
+          <!-- 3. PAST PAPERS (DIRECT ACCESS) -->
+          <li class="mfs-nav-item">
+            <a href="functional-skills-past-papers.html" class="mfs-nav-link">
+              <i class="fa-regular fa-file-lines" style="color:#0284c7; margin-right:5px;"></i> Past Papers
+            </a>
+          </li>
+
+          <!-- 4. WORKSHEETS DIRECTORY (CORBETT STYLE DUAL ENGINE) -->
+          <li class="mfs-nav-item">
+            <a href="worksheets.html" class="mfs-nav-link">
+              <i class="fa-solid fa-layer-group" style="color:#0284c7; margin-right:5px;"></i> Worksheets
+            </a>
+          </li>
+
+          <!-- 5. FREE TOOLS (COMPACT DROPDOWN) -->
+          <li class="mfs-nav-item">
+            <a href="tools.html" class="mfs-nav-link">
+              <i class="fa-solid fa-screwdriver-wrench" style="color:#0284c7; margin-right:5px;"></i> Free Tools <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-compact">
+              <a href="tools.html" class="mfs-dropdown-item" style="font-weight:700; color:var(--accent);"><i class="fa-solid fa-layer-group" style="font-size:0.85rem; margin-right:6px;"></i> All Free Tools &amp; Simulators &rarr;</a>
+              <div class="mfs-dropdown-divider" style="margin:4px 0; border-top:1px solid #e2e8f0;"></div>
+              <a href="pass-mark-calculator.html" class="mfs-dropdown-item"><i class="fa-solid fa-calculator" style="color:var(--accent); font-size:0.85rem; margin-right:6px;"></i> Pass Mark Calculator</a>
+              <a href="diagnostic-test.html" class="mfs-dropdown-item"><i class="fa-solid fa-chart-pie" style="color:#059669; font-size:0.85rem; margin-right:6px;"></i> Diagnostic Skill Checker</a>
+              <a href="functional-skills-nets.html" class="mfs-dropdown-item"><i class="fa-solid fa-cube" style="color:#0284c7; font-size:0.85rem; margin-right:6px;"></i> 3D Net Folding Tool</a>
+              <a href="video-solution.html" class="mfs-dropdown-item"><i class="fa-brands fa-youtube" style="color:#ef4444; font-size:0.85rem; margin-right:6px;"></i> Masterclass Station</a>
+            </div>
+          </li>
+
+          <!-- 6. REVISION CARDS -->
+          <li class="mfs-nav-item">
+            <a href="revision-cards.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-layer-group" style="color:#d97706; margin-right:5px;"></i> Revision Cards
+            </a>
+          </li>
+
+          <!-- 7. SHOP -->
+          <li class="mfs-nav-item">
+            <a href="shop.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-basket-shopping" style="color:#d97706; margin-right:5px;"></i> Shop
+            </a>
+          </li>
         </ul>
       </nav>
+
+      <!-- 8. BOOK EXAM ACTION BUTTON -->
+      <div class="mfs-nav-actions">
+        <a href="exams.html" class="btn-nav-exam">
+          <i class="fa-solid fa-calendar-check"></i> Book Exam
+        </a>
+      </div>
+
+      <!-- MOBILE CONTROLS (TINT + MENU PILL) -->
+      <div class="mfs-mobile-controls" id="mfsMobileControls">
+        <button type="button" class="btn-mobile-tint-toggle" id="mfsMobileTintBtn" title="Change Reading Tint" aria-label="Reading Tint">
+          <i class="fa-solid fa-glasses"></i>
+          <span class="mobile-tint-swatch" id="mfsMobileTintSwatch"></span>
+        </button>
+        <button type="button" class="mfs-menu-pill" id="mfsMobileToggleBtn" title="Open Navigation Menu" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+          <span>Menu</span>
+        </button>
+      </div>
     </div>
+    <!-- MOBILE NAVIGATION ENGINE -->
+    <script src="assets/js/mfs-mobile.js?v=20261024c" defer></script>
   </header>
+
+    <div class="mfs-ofqual-dfs-banner" style="max-width:1140px; margin:18px auto 0; padding:0 20px;">
+      <div style="background:linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border:1px solid #bae6fd; border-left:5px solid #0284c7; border-radius:12px; padding:14px 18px; display:flex; align-items:flex-start; gap:12px; color:#0f172a; font-size:0.92rem; line-height:1.55;">
+        <i class="fa-solid fa-circle-info" style="color:#0284c7; font-size:1.15rem; margin-top:3px;"></i>
+        <div>
+          <strong>Statutory Ofqual Qualification Levels (Entry 3 &amp; Level 1):</strong> Nationally in England, regulated <strong>Digital Functional Skills Qualifications (DFSQ)</strong> are awarded at <strong>Entry Level 3</strong> and <strong>Level 1</strong> (the highest statutory DFSQ level, aligned across Open Awards, Pearson Edexcel &amp; City &amp; Guilds).
+        </div>
+      </div>
+    </div>
+
 
   <!-- SUBNAV & BREADCRUMBS -->
   <div class="dfs-subnav-bar">
@@ -108,7 +232,7 @@
         <i class="fa-solid fa-chevron-right"></i>
         <a href="revise.html">Revision</a>
         <i class="fa-solid fa-chevron-right"></i>
-        <a href="digital-skills/index.html">Digital Skills Hub</a>
+        <a href="digital-functional-skills.html">Digital Skills Hub</a>
         <i class="fa-solid fa-chevron-right"></i>
         <span style="color:#ffffff; font-weight:600;">Entry 3 Digital Skills</span>
       </div>
@@ -277,7 +401,7 @@
             <a href="digital-skills/entry-3/e3-hardware-software-devices.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
             <a href="worksheets/e3-hardware-software-devices-workout.html" target="_blank" class="btn-mfs-sheet btn-mfs-workout" title="Printable Fluency Drills Worksheet"><i class="fa-solid fa-bolt"></i> Fluency Drill</a>
             <a href="worksheets/e3-hardware-software-devices-worksheet.html" target="_blank" class="btn-mfs-sheet btn-mfs-practice" title="Printable Practice Exam Worksheet"><i class="fa-solid fa-file-pen"></i> Practice Exam</a>
-            <a href="digital-skills/entry-3/e3-hardware-software-devices.html#video" class="btn-mfs-video" title="Video Lesson"><i class="fa-brands fa-youtube"></i> Video Lesson</a>
+            <a href="digital-skills/entry-3/e3-hardware-software-devices.html#drills" class="btn-mfs-sheet" style="background:#f0f9ff; color:#0369a1; border-color:#bae6fd;" title="Interactive Topic Quiz"><i class="fa-solid fa-circle-check"></i> Interactive Quiz</a>
           </div>
         </div>
         
@@ -292,7 +416,7 @@
             <a href="digital-skills/entry-3/e3-device-controls-navigation.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
             <a href="worksheets/e3-device-controls-navigation-workout.html" target="_blank" class="btn-mfs-sheet btn-mfs-workout" title="Printable Fluency Drills Worksheet"><i class="fa-solid fa-bolt"></i> Fluency Drill</a>
             <a href="worksheets/e3-device-controls-navigation-worksheet.html" target="_blank" class="btn-mfs-sheet btn-mfs-practice" title="Printable Practice Exam Worksheet"><i class="fa-solid fa-file-pen"></i> Practice Exam</a>
-            <a href="digital-skills/entry-3/e3-device-controls-navigation.html#video" class="btn-mfs-video" title="Video Lesson"><i class="fa-brands fa-youtube"></i> Video Lesson</a>
+            <a href="digital-skills/entry-3/e3-device-controls-navigation.html#drills" class="btn-mfs-sheet" style="background:#f0f9ff; color:#0369a1; border-color:#bae6fd;" title="Interactive Topic Quiz"><i class="fa-solid fa-circle-check"></i> Interactive Quiz</a>
           </div>
         </div>
         
@@ -307,7 +431,7 @@
             <a href="digital-skills/entry-3/e3-connecting-wifi-bluetooth.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
             <a href="worksheets/e3-connecting-wifi-bluetooth-workout.html" target="_blank" class="btn-mfs-sheet btn-mfs-workout" title="Printable Fluency Drills Worksheet"><i class="fa-solid fa-bolt"></i> Fluency Drill</a>
             <a href="worksheets/e3-connecting-wifi-bluetooth-worksheet.html" target="_blank" class="btn-mfs-sheet btn-mfs-practice" title="Printable Practice Exam Worksheet"><i class="fa-solid fa-file-pen"></i> Practice Exam</a>
-            <a href="digital-skills/entry-3/e3-connecting-wifi-bluetooth.html#video" class="btn-mfs-video" title="Video Lesson"><i class="fa-brands fa-youtube"></i> Video Lesson</a>
+            <a href="digital-skills/entry-3/e3-connecting-wifi-bluetooth.html#drills" class="btn-mfs-sheet" style="background:#f0f9ff; color:#0369a1; border-color:#bae6fd;" title="Interactive Topic Quiz"><i class="fa-solid fa-circle-check"></i> Interactive Quiz</a>
           </div>
         </div>
         
@@ -322,7 +446,7 @@
             <a href="digital-skills/entry-3/e3-accessibility-display-settings.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
             <a href="worksheets/e3-accessibility-display-settings-workout.html" target="_blank" class="btn-mfs-sheet btn-mfs-workout" title="Printable Fluency Drills Worksheet"><i class="fa-solid fa-bolt"></i> Fluency Drill</a>
             <a href="worksheets/e3-accessibility-display-settings-worksheet.html" target="_blank" class="btn-mfs-sheet btn-mfs-practice" title="Printable Practice Exam Worksheet"><i class="fa-solid fa-file-pen"></i> Practice Exam</a>
-            <a href="digital-skills/entry-3/e3-accessibility-display-settings.html#video" class="btn-mfs-video" title="Video Lesson"><i class="fa-brands fa-youtube"></i> Video Lesson</a>
+            <a href="digital-skills/entry-3/e3-accessibility-display-settings.html#drills" class="btn-mfs-sheet" style="background:#f0f9ff; color:#0369a1; border-color:#bae6fd;" title="Interactive Topic Quiz"><i class="fa-solid fa-circle-check"></i> Interactive Quiz</a>
           </div>
         </div>
         
@@ -337,7 +461,7 @@
             <a href="digital-skills/entry-3/e3-organising-files-folders.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
             <a href="worksheets/e3-organising-files-folders-workout.html" target="_blank" class="btn-mfs-sheet btn-mfs-workout" title="Printable Fluency Drills Worksheet"><i class="fa-solid fa-bolt"></i> Fluency Drill</a>
             <a href="worksheets/e3-organising-files-folders-worksheet.html" target="_blank" class="btn-mfs-sheet btn-mfs-practice" title="Printable Practice Exam Worksheet"><i class="fa-solid fa-file-pen"></i> Practice Exam</a>
-            <a href="digital-skills/entry-3/e3-organising-files-folders.html#video" class="btn-mfs-video" title="Video Lesson"><i class="fa-brands fa-youtube"></i> Video Lesson</a>
+            <a href="digital-skills/entry-3/e3-organising-files-folders.html#drills" class="btn-mfs-sheet" style="background:#f0f9ff; color:#0369a1; border-color:#bae6fd;" title="Interactive Topic Quiz"><i class="fa-solid fa-circle-check"></i> Interactive Quiz</a>
           </div>
         </div>
         
@@ -352,7 +476,7 @@
             <a href="digital-skills/entry-3/e3-searching-files-local-cloud.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
             <a href="worksheets/e3-searching-files-local-cloud-workout.html" target="_blank" class="btn-mfs-sheet btn-mfs-workout" title="Printable Fluency Drills Worksheet"><i class="fa-solid fa-bolt"></i> Fluency Drill</a>
             <a href="worksheets/e3-searching-files-local-cloud-worksheet.html" target="_blank" class="btn-mfs-sheet btn-mfs-practice" title="Printable Practice Exam Worksheet"><i class="fa-solid fa-file-pen"></i> Practice Exam</a>
-            <a href="digital-skills/entry-3/e3-searching-files-local-cloud.html#video" class="btn-mfs-video" title="Video Lesson"><i class="fa-brands fa-youtube"></i> Video Lesson</a>
+            <a href="digital-skills/entry-3/e3-searching-files-local-cloud.html#drills" class="btn-mfs-sheet" style="background:#f0f9ff; color:#0369a1; border-color:#bae6fd;" title="Interactive Topic Quiz"><i class="fa-solid fa-circle-check"></i> Interactive Quiz</a>
           </div>
         </div>
         
@@ -367,7 +491,7 @@
             <a href="digital-skills/entry-3/e3-word-processing-basics.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
             <a href="worksheets/e3-word-processing-basics-workout.html" target="_blank" class="btn-mfs-sheet btn-mfs-workout" title="Printable Fluency Drills Worksheet"><i class="fa-solid fa-bolt"></i> Fluency Drill</a>
             <a href="worksheets/e3-word-processing-basics-worksheet.html" target="_blank" class="btn-mfs-sheet btn-mfs-practice" title="Printable Practice Exam Worksheet"><i class="fa-solid fa-file-pen"></i> Practice Exam</a>
-            <a href="digital-skills/entry-3/e3-word-processing-basics.html#video" class="btn-mfs-video" title="Video Lesson"><i class="fa-brands fa-youtube"></i> Video Lesson</a>
+            <a href="digital-skills/entry-3/e3-word-processing-basics.html#drills" class="btn-mfs-sheet" style="background:#f0f9ff; color:#0369a1; border-color:#bae6fd;" title="Interactive Topic Quiz"><i class="fa-solid fa-circle-check"></i> Interactive Quiz</a>
           </div>
         </div>
         
@@ -382,7 +506,7 @@
             <a href="digital-skills/entry-3/e3-formatting-aligning-bullets.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
             <a href="worksheets/e3-formatting-aligning-bullets-workout.html" target="_blank" class="btn-mfs-sheet btn-mfs-workout" title="Printable Fluency Drills Worksheet"><i class="fa-solid fa-bolt"></i> Fluency Drill</a>
             <a href="worksheets/e3-formatting-aligning-bullets-worksheet.html" target="_blank" class="btn-mfs-sheet btn-mfs-practice" title="Printable Practice Exam Worksheet"><i class="fa-solid fa-file-pen"></i> Practice Exam</a>
-            <a href="digital-skills/entry-3/e3-formatting-aligning-bullets.html#video" class="btn-mfs-video" title="Video Lesson"><i class="fa-brands fa-youtube"></i> Video Lesson</a>
+            <a href="digital-skills/entry-3/e3-formatting-aligning-bullets.html#drills" class="btn-mfs-sheet" style="background:#f0f9ff; color:#0369a1; border-color:#bae6fd;" title="Interactive Topic Quiz"><i class="fa-solid fa-circle-check"></i> Interactive Quiz</a>
           </div>
         </div>
         
@@ -397,7 +521,7 @@
             <a href="digital-skills/entry-3/e3-combining-images-text.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
             <a href="worksheets/e3-combining-images-text-workout.html" target="_blank" class="btn-mfs-sheet btn-mfs-workout" title="Printable Fluency Drills Worksheet"><i class="fa-solid fa-bolt"></i> Fluency Drill</a>
             <a href="worksheets/e3-combining-images-text-worksheet.html" target="_blank" class="btn-mfs-sheet btn-mfs-practice" title="Printable Practice Exam Worksheet"><i class="fa-solid fa-file-pen"></i> Practice Exam</a>
-            <a href="digital-skills/entry-3/e3-combining-images-text.html#video" class="btn-mfs-video" title="Video Lesson"><i class="fa-brands fa-youtube"></i> Video Lesson</a>
+            <a href="digital-skills/entry-3/e3-combining-images-text.html#drills" class="btn-mfs-sheet" style="background:#f0f9ff; color:#0369a1; border-color:#bae6fd;" title="Interactive Topic Quiz"><i class="fa-solid fa-circle-check"></i> Interactive Quiz</a>
           </div>
         </div>
         
@@ -412,7 +536,7 @@
             <a href="digital-skills/entry-3/e3-spellcheck-proofing-saving.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
             <a href="worksheets/e3-spellcheck-proofing-saving-workout.html" target="_blank" class="btn-mfs-sheet btn-mfs-workout" title="Printable Fluency Drills Worksheet"><i class="fa-solid fa-bolt"></i> Fluency Drill</a>
             <a href="worksheets/e3-spellcheck-proofing-saving-worksheet.html" target="_blank" class="btn-mfs-sheet btn-mfs-practice" title="Printable Practice Exam Worksheet"><i class="fa-solid fa-file-pen"></i> Practice Exam</a>
-            <a href="digital-skills/entry-3/e3-spellcheck-proofing-saving.html#video" class="btn-mfs-video" title="Video Lesson"><i class="fa-brands fa-youtube"></i> Video Lesson</a>
+            <a href="digital-skills/entry-3/e3-spellcheck-proofing-saving.html#drills" class="btn-mfs-sheet" style="background:#f0f9ff; color:#0369a1; border-color:#bae6fd;" title="Interactive Topic Quiz"><i class="fa-solid fa-circle-check"></i> Interactive Quiz</a>
           </div>
         </div>
         
@@ -427,7 +551,7 @@
             <a href="digital-skills/entry-3/e3-spreadsheets-simple-data.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
             <a href="worksheets/e3-spreadsheets-simple-data-workout.html" target="_blank" class="btn-mfs-sheet btn-mfs-workout" title="Printable Fluency Drills Worksheet"><i class="fa-solid fa-bolt"></i> Fluency Drill</a>
             <a href="worksheets/e3-spreadsheets-simple-data-worksheet.html" target="_blank" class="btn-mfs-sheet btn-mfs-practice" title="Printable Practice Exam Worksheet"><i class="fa-solid fa-file-pen"></i> Practice Exam</a>
-            <a href="digital-skills/entry-3/e3-spreadsheets-simple-data.html#video" class="btn-mfs-video" title="Video Lesson"><i class="fa-brands fa-youtube"></i> Video Lesson</a>
+            <a href="digital-skills/entry-3/e3-spreadsheets-simple-data.html#drills" class="btn-mfs-sheet" style="background:#f0f9ff; color:#0369a1; border-color:#bae6fd;" title="Interactive Topic Quiz"><i class="fa-solid fa-circle-check"></i> Interactive Quiz</a>
           </div>
         </div>
         
@@ -442,7 +566,7 @@
             <a href="digital-skills/entry-3/e3-email-compose-reply-forward.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
             <a href="worksheets/e3-email-compose-reply-forward-workout.html" target="_blank" class="btn-mfs-sheet btn-mfs-workout" title="Printable Fluency Drills Worksheet"><i class="fa-solid fa-bolt"></i> Fluency Drill</a>
             <a href="worksheets/e3-email-compose-reply-forward-worksheet.html" target="_blank" class="btn-mfs-sheet btn-mfs-practice" title="Printable Practice Exam Worksheet"><i class="fa-solid fa-file-pen"></i> Practice Exam</a>
-            <a href="digital-skills/entry-3/e3-email-compose-reply-forward.html#video" class="btn-mfs-video" title="Video Lesson"><i class="fa-brands fa-youtube"></i> Video Lesson</a>
+            <a href="digital-skills/entry-3/e3-email-compose-reply-forward.html#drills" class="btn-mfs-sheet" style="background:#f0f9ff; color:#0369a1; border-color:#bae6fd;" title="Interactive Topic Quiz"><i class="fa-solid fa-circle-check"></i> Interactive Quiz</a>
           </div>
         </div>
         
@@ -457,7 +581,7 @@
             <a href="digital-skills/entry-3/e3-email-attachments-contacts.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
             <a href="worksheets/e3-email-attachments-contacts-workout.html" target="_blank" class="btn-mfs-sheet btn-mfs-workout" title="Printable Fluency Drills Worksheet"><i class="fa-solid fa-bolt"></i> Fluency Drill</a>
             <a href="worksheets/e3-email-attachments-contacts-worksheet.html" target="_blank" class="btn-mfs-sheet btn-mfs-practice" title="Printable Practice Exam Worksheet"><i class="fa-solid fa-file-pen"></i> Practice Exam</a>
-            <a href="digital-skills/entry-3/e3-email-attachments-contacts.html#video" class="btn-mfs-video" title="Video Lesson"><i class="fa-brands fa-youtube"></i> Video Lesson</a>
+            <a href="digital-skills/entry-3/e3-email-attachments-contacts.html#drills" class="btn-mfs-sheet" style="background:#f0f9ff; color:#0369a1; border-color:#bae6fd;" title="Interactive Topic Quiz"><i class="fa-solid fa-circle-check"></i> Interactive Quiz</a>
           </div>
         </div>
         
@@ -472,7 +596,7 @@
             <a href="digital-skills/entry-3/e3-messaging-video-calls.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
             <a href="worksheets/e3-messaging-video-calls-workout.html" target="_blank" class="btn-mfs-sheet btn-mfs-workout" title="Printable Fluency Drills Worksheet"><i class="fa-solid fa-bolt"></i> Fluency Drill</a>
             <a href="worksheets/e3-messaging-video-calls-worksheet.html" target="_blank" class="btn-mfs-sheet btn-mfs-practice" title="Printable Practice Exam Worksheet"><i class="fa-solid fa-file-pen"></i> Practice Exam</a>
-            <a href="digital-skills/entry-3/e3-messaging-video-calls.html#video" class="btn-mfs-video" title="Video Lesson"><i class="fa-brands fa-youtube"></i> Video Lesson</a>
+            <a href="digital-skills/entry-3/e3-messaging-video-calls.html#drills" class="btn-mfs-sheet" style="background:#f0f9ff; color:#0369a1; border-color:#bae6fd;" title="Interactive Topic Quiz"><i class="fa-solid fa-circle-check"></i> Interactive Quiz</a>
           </div>
         </div>
         
@@ -487,7 +611,7 @@
             <a href="digital-skills/entry-3/e3-online-forms-account-setup.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
             <a href="worksheets/e3-online-forms-account-setup-workout.html" target="_blank" class="btn-mfs-sheet btn-mfs-workout" title="Printable Fluency Drills Worksheet"><i class="fa-solid fa-bolt"></i> Fluency Drill</a>
             <a href="worksheets/e3-online-forms-account-setup-worksheet.html" target="_blank" class="btn-mfs-sheet btn-mfs-practice" title="Printable Practice Exam Worksheet"><i class="fa-solid fa-file-pen"></i> Practice Exam</a>
-            <a href="digital-skills/entry-3/e3-online-forms-account-setup.html#video" class="btn-mfs-video" title="Video Lesson"><i class="fa-brands fa-youtube"></i> Video Lesson</a>
+            <a href="digital-skills/entry-3/e3-online-forms-account-setup.html#drills" class="btn-mfs-sheet" style="background:#f0f9ff; color:#0369a1; border-color:#bae6fd;" title="Interactive Topic Quiz"><i class="fa-solid fa-circle-check"></i> Interactive Quiz</a>
           </div>
         </div>
         
@@ -502,7 +626,7 @@
             <a href="digital-skills/entry-3/e3-online-shopping-booking.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
             <a href="worksheets/e3-online-shopping-booking-workout.html" target="_blank" class="btn-mfs-sheet btn-mfs-workout" title="Printable Fluency Drills Worksheet"><i class="fa-solid fa-bolt"></i> Fluency Drill</a>
             <a href="worksheets/e3-online-shopping-booking-worksheet.html" target="_blank" class="btn-mfs-sheet btn-mfs-practice" title="Printable Practice Exam Worksheet"><i class="fa-solid fa-file-pen"></i> Practice Exam</a>
-            <a href="digital-skills/entry-3/e3-online-shopping-booking.html#video" class="btn-mfs-video" title="Video Lesson"><i class="fa-brands fa-youtube"></i> Video Lesson</a>
+            <a href="digital-skills/entry-3/e3-online-shopping-booking.html#drills" class="btn-mfs-sheet" style="background:#f0f9ff; color:#0369a1; border-color:#bae6fd;" title="Interactive Topic Quiz"><i class="fa-solid fa-circle-check"></i> Interactive Quiz</a>
           </div>
         </div>
         
@@ -517,7 +641,7 @@
             <a href="digital-skills/entry-3/e3-passwords-privacy-scams.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
             <a href="worksheets/e3-passwords-privacy-scams-workout.html" target="_blank" class="btn-mfs-sheet btn-mfs-workout" title="Printable Fluency Drills Worksheet"><i class="fa-solid fa-bolt"></i> Fluency Drill</a>
             <a href="worksheets/e3-passwords-privacy-scams-worksheet.html" target="_blank" class="btn-mfs-sheet btn-mfs-practice" title="Printable Practice Exam Worksheet"><i class="fa-solid fa-file-pen"></i> Practice Exam</a>
-            <a href="digital-skills/entry-3/e3-passwords-privacy-scams.html#video" class="btn-mfs-video" title="Video Lesson"><i class="fa-brands fa-youtube"></i> Video Lesson</a>
+            <a href="digital-skills/entry-3/e3-passwords-privacy-scams.html#drills" class="btn-mfs-sheet" style="background:#f0f9ff; color:#0369a1; border-color:#bae6fd;" title="Interactive Topic Quiz"><i class="fa-solid fa-circle-check"></i> Interactive Quiz</a>
           </div>
         </div>
         
@@ -532,7 +656,7 @@
             <a href="digital-skills/entry-3/e3-digital-wellbeing-posture.html" class="btn-mfs-revise"><i class="fa-solid fa-book-open"></i> Revise</a>
             <a href="worksheets/e3-digital-wellbeing-posture-workout.html" target="_blank" class="btn-mfs-sheet btn-mfs-workout" title="Printable Fluency Drills Worksheet"><i class="fa-solid fa-bolt"></i> Fluency Drill</a>
             <a href="worksheets/e3-digital-wellbeing-posture-worksheet.html" target="_blank" class="btn-mfs-sheet btn-mfs-practice" title="Printable Practice Exam Worksheet"><i class="fa-solid fa-file-pen"></i> Practice Exam</a>
-            <a href="digital-skills/entry-3/e3-digital-wellbeing-posture.html#video" class="btn-mfs-video" title="Video Lesson"><i class="fa-brands fa-youtube"></i> Video Lesson</a>
+            <a href="digital-skills/entry-3/e3-digital-wellbeing-posture.html#drills" class="btn-mfs-sheet" style="background:#f0f9ff; color:#0369a1; border-color:#bae6fd;" title="Interactive Topic Quiz"><i class="fa-solid fa-circle-check"></i> Interactive Quiz</a>
           </div>
         </div>
         
@@ -832,26 +956,81 @@
   </main>
 
   <!-- FOOTER -->
-  <footer style="background:#0f172a; color:#94a3b8; padding:40px 0 24px; border-top:1px solid #1e293b; font-size:0.88rem;">
+  <footer class="mfs-footer" id="site-footer">
     <div class="mfs-container">
-      <div style="display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:20px; margin-bottom:24px; padding-bottom:20px; border-bottom:1px solid #1e293b;">
-        <div class="mfs-brand">
-          <div class="mfs-brand-icon"><i class="fa-solid fa-laptop-code"></i></div>
-          <div class="mfs-brand-text">
-            <div class="mfs-brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
-            <div class="mfs-brand-subtitle">Delivering Skills • Achieving Goals</div>
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="mfs-brand" style="margin-bottom:16px;">
+            <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="mfs-brand-text">
+              <div class="mfs-brand-title" style="color:#ffffff;">MASTER<span>FUNCTIONALSKILLS</span></div>
+              <div class="mfs-brand-subtitle" style="color:#94a3b8;">Delivering Skills • Achieving Goals</div>
+            </div>
+          </div>
+          <p style="font-size:0.88rem; line-height:1.6; margin-bottom:16px;">
+            The UK's dedicated Functional Skills revision specialist. Providing realistic mock exams, step-by-step revision flashcards, diagnostic assessments, and 1-to-1 specialist tuition for Pearson Edexcel, City &amp; Guilds, and all major exam boards.
+          </p>
+          <div style="font-size:0.85rem; color:#cbd5e1;">
+            <p><a href="https://wa.me/447564525425" target="_blank" rel="noopener" style="color:#cbd5e1; text-decoration:none;"><i class="fa-brands fa-whatsapp" style="color:var(--accent); margin-right:8px;"></i> WhatsApp: +44 (0)7564 525425</a></p>
+            <p style="margin-top:6px;"><a href="contact-us.html" style="color:#cbd5e1; text-decoration:none;"><i class="fa-solid fa-envelope" style="color:var(--accent); margin-right:8px;"></i> Contact Tutor Team</a></p>
           </div>
         </div>
-        <div style="display:flex; gap:16px; flex-wrap:wrap;">
-          <a href="revise.html" style="color:#cbd5e1; text-decoration:none;">Revision Hub</a>
-          <a href="digital-functional-skills-level-1.html" style="color:#cbd5e1; text-decoration:none;">Level 1 Digital Skills</a>
-          <a href="digital-functional-skills-past-papers.html" style="color:#cbd5e1; text-decoration:none;">Past Papers &amp; Data Files</a>
-          <a href="digital-functional-skills-mock-exam.html" style="color:#cbd5e1; text-decoration:none;">Online Mock Simulator</a>
-          <a href="contact-us.html" style="color:#cbd5e1; text-decoration:none;">Contact Tutor</a>
+
+        <div class="footer-col">
+          <h4>Maths Revision</h4>
+          <ul class="footer-links">
+            <li><a href="functional-skills-maths-level-2.html">Maths Level 2 Revision</a></li>
+            <li><a href="functional-skills-maths-level-1.html">Maths Level 1 Revision</a></li>
+            <li><a href="entry-level-3-maths.html">Entry Level 3 Maths</a></li>
+            <li><a href="pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="functional-skills-past-papers.html">Free Maths Past Papers</a></li>
+            <li><a href="exam-maths-l2.html">Book Level 2 Maths Exam</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>English &amp; Digital</h4>
+          <ul class="footer-links">
+            <li><a href="functional-skills-english-level-2.html">English Level 2 Revision</a></li>
+            <li><a href="functional-skills-english-level-1.html">English Level 1 Revision</a></li>
+            <li><a href="entry-level-3-english.html">Entry Level 3 English</a></li>
+            <li><a href="digital-functional-skills-level-1.html">Digital Skills Level 1</a></li>
+            <li><a href="digital-functional-skills-entry-3.html">Digital Skills Entry 3</a></li>
+            <li><a href="digital-functional-skills-past-papers.html">DFS Past Papers &amp; Data Files</a></li>
+            <li><a href="digital-functional-skills-mock-exam.html">DFS Online Mock Simulator</a></li>
+            <li><a href="digital-functional-skills.html">Digital Skills Hub (E3 &amp; L1)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Student Support &amp; Tools</h4>
+          <ul class="footer-links">
+            <li><a href="tools.html" style="color:var(--accent); font-weight:700;"><i class="fa-solid fa-screwdriver-wrench" style="margin-right:6px;"></i>All Interactive Tools Hub</a></li>
+            <li><a href="pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="diagnostic-test.html">Diagnostic Skill Checker</a></li>
+            <li><a href="functional-skills-nets.html">3D Net Folding Tool</a></li>
+            <li><a href="digital-functional-skills-mock-exam.html">Pearson DFS Simulator</a></li>
+            <li><a href="revision-cards.html">Revision Cards &amp; Flashcards</a></li>
+            <li><a href="shop.html">Revision Books &amp; Study Packs</a></li>
+            <li><a href="tutors.html">1-to-1 Specialist Tuition</a></li>
+            <li><a href="exams.html">Book Official Online Exam</a></li>
+          </ul>
         </div>
       </div>
-      <div style="text-align:center; font-size:0.78rem; color:#64748b;">
-        &copy; 2026 Master Functional Skills. All rights reserved.
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Master Functional Skills. All rights reserved. Registered in England &amp; Wales. Ofqual Regulated Qualification Standards.</div>
+        <div style="display:flex; gap:16px; flex-wrap:wrap;">
+          <a href="index.html">Home</a>
+          <a href="tools.html" style="color:var(--accent); font-weight:700;">Tools</a>
+          <a href="functional-skills-past-papers.html">Past Papers</a>
+          <a href="revision-cards.html">Revision Cards</a>
+          <a href="shop.html">Study Shop</a>
+          <a href="tutors.html">Tutors</a>
+          <a href="open-awards-functional-skills.html">Open Awards Guide</a>
+          <a href="centre-policies.html">Policies &amp; Access</a>
+          <a href="contact-us.html">Contact Us</a>
+        </div>
       </div>
     </div>
   </footer>
@@ -926,5 +1105,33 @@
     });
   </script>
   <script src="assets/js/mfs-mobile.js?v=20261111" defer></script>
+  <script src="assets/js/mfs-tint.js"></script>
+  <script>
+    function toggleDyslexiaMode() {
+      const isDys = document.body.classList.toggle('dyslexia-mode');
+      localStorage.setItem('mfs_dyslexia', isDys ? '1' : '0');
+      const btn = document.getElementById('dyslexiaToggle');
+      if (btn) btn.classList.toggle('active', isDys);
+    }
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme') || 'sapphire';
+      const next = current === 'emerald' ? 'sapphire' : 'emerald';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('mfs_theme', next);
+      const lbl = document.getElementById('themeLabel');
+      if (lbl) lbl.textContent = next === 'emerald' ? 'Emerald' : 'Sapphire';
+    }
+    (function() {
+      if (localStorage.getItem('mfs_dyslexia') === '1') {
+        document.body.classList.add('dyslexia-mode');
+        const btn = document.getElementById('dyslexiaToggle');
+        if (btn) btn.classList.add('active');
+      }
+      const th = localStorage.getItem('mfs_theme') || 'sapphire';
+      document.documentElement.setAttribute('data-theme', th);
+      const lbl = document.getElementById('themeLabel');
+      if (lbl) lbl.textContent = th === 'emerald' ? 'Emerald' : 'Sapphire';
+    })();
+  </script>
 </body>
 </html>

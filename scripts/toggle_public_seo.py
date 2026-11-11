@@ -20,10 +20,14 @@ TODAY = datetime.date.today().isoformat()
 EXCLUDED_DIRS = {".git", "build", "archive", "scratch", "assets", "decks", "scripts", "node_modules", "__pycache__"}
 NON_INDEX_BASENAMES = {
     "404.html",
-    "dfs-prototype-explorer.html",
     "digital-functional-skills-level-1-original.html",
     "test_dyslexia_bar.html",
     "test_dyslexia_visual.html",
+}
+NON_INDEX_RELPATHS = {
+    "digital-skills/index.html",
+    "digital-skills/level-1/index.html",
+    "digital-skills/entry-3/index.html",
 }
 
 
@@ -39,6 +43,8 @@ def iter_public_html_files():
                 continue
             abs_p = os.path.join(dirpath, fn)
             rel_p = os.path.relpath(abs_p, ROOT).replace(os.sep, "/")
+            if rel_p in NON_INDEX_RELPATHS:
+                continue
             results.append((rel_p, abs_p))
     return sorted(results)
 
@@ -58,7 +64,11 @@ def refresh_sitemap() -> int:
             "functional-skills-english-level-2.html",
             "functional-skills-maths-level-1.html",
             "functional-skills-english-level-1.html",
+            "entry-level-3-english.html",
+            "entry-level-3-maths.html",
+            "digital-functional-skills.html",
             "digital-functional-skills-level-1.html",
+            "digital-functional-skills-entry-3.html",
             "open-awards-functional-skills.html",
             "past-papers.html",
             "exams.html",
@@ -111,10 +121,14 @@ def set_indexing_mode(enable_public: bool):
             c = f.read()
         if meta_pat.search(c):
             nc = meta_pat.sub(f'<meta name="robots" content="{meta_val}">', c)
-            if nc != c:
-                with open(abs_p, "w", encoding="utf-8") as f:
-                    f.write(nc)
-                updated += 1
+        elif "</head>" in c:
+            nc = c.replace("</head>", f'  <meta name="robots" content="{meta_val}">\n</head>', 1)
+        else:
+            nc = c
+        if nc != c:
+            with open(abs_p, "w", encoding="utf-8") as f:
+                f.write(nc)
+            updated += 1
 
     mode_str = "PUBLIC INDEXING (index, follow)" if enable_public else "PRIVATE PREVIEW (noindex, Disallow: /)"
     print(f"[SEO Toggle] Mode -> {mode_str}; updated robots.txt and {updated} HTML pages.")

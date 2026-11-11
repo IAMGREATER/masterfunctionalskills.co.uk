@@ -92,6 +92,7 @@
             <a href="${root}entry-level-3-maths.html" class="mfs-drawer-sublink"><i class="fa-solid fa-calculator" style="margin-right:6px; color:#0284c7;"></i> Entry Level 3 Maths</a>
             <a href="${root}functional-skills-english-level-2.html" class="mfs-drawer-sublink"><i class="fa-solid fa-pen-nib" style="margin-right:6px; color:#7c3aed;"></i> English Level 2</a>
             <a href="${root}functional-skills-english-level-1.html" class="mfs-drawer-sublink"><i class="fa-solid fa-pen-nib" style="margin-right:6px; color:#7c3aed;"></i> English Level 1</a>
+            <a href="${root}entry-level-3-english.html" class="mfs-drawer-sublink"><i class="fa-solid fa-pen-nib" style="margin-right:6px; color:#7c3aed;"></i> Entry Level 3 English</a>
             <a href="${root}digital-functional-skills-level-1.html" class="mfs-drawer-sublink"><i class="fa-solid fa-laptop-code" style="margin-right:6px; color:#0891b2;"></i> Digital Skills Level 1</a>
             <a href="${root}entry-level-3-digital-skills.html" class="mfs-drawer-sublink"><i class="fa-solid fa-laptop-code" style="margin-right:6px; color:#0891b2;"></i> Digital Skills Entry 3</a>
             <a href="${root}digital-functional-skills.html" class="mfs-drawer-sublink"><i class="fa-solid fa-laptop-code" style="margin-right:6px; color:#0891b2;"></i> Digital Skills Hub</a>

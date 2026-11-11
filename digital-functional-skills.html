@@ -28,7 +28,7 @@
   <div class="mfs-top-bar">
     <div class="mfs-container mfs-top-bar-inner">
       <div class="top-trust-items">
-        <span class="top-trust-item"><i class="fa-solid fa-building-columns"></i> Open Awards, Pearson Edexcel &amp; City &amp; Guilds Aligned</span>
+        <span class="top-trust-item"><i class="fa-solid fa-building-columns"></i> Open Awards, Open Awards, Pearson Edexcel &amp; City &amp; Guilds Aligned</span>
       </div>
       <div class="top-contacts">
         <div class="mfs-access-bar">
@@ -114,6 +114,7 @@
                   <div class="mfs-revision-col-links">
                     <a href="functional-skills-english-level-2.html" class="mfs-dropdown-item">English Level 2</a>
                     <a href="functional-skills-english-level-1.html" class="mfs-dropdown-item">English Level 1</a>
+                    <a href="entry-level-3-english.html" class="mfs-dropdown-item">Entry Level 3 English</a>
                   </div>
                 </div>
                 <!-- Digital Skills Column -->
@@ -124,7 +125,7 @@
                     <a href="digital-functional-skills-entry-3.html" class="mfs-dropdown-item"><i class="fa-solid fa-seedling" style="font-size:0.75rem; margin-right:5px; color:#059669;"></i> Digital Skills Entry 3</a>
                     <a href="digital-functional-skills-past-papers.html" class="mfs-dropdown-item"><i class="fa-solid fa-file-zipper" style="font-size:0.75rem; margin-right:5px; color:#d97706;"></i> Past Papers &amp; Data Files</a>
                     <a href="digital-functional-skills-mock-exam.html" class="mfs-dropdown-item"><i class="fa-solid fa-desktop" style="font-size:0.75rem; margin-right:5px; color:#7c3aed;"></i> Online Mock Simulator</a>
-                    <a href="digital-skills/index.html" class="mfs-dropdown-item"><i class="fa-solid fa-layer-group" style="font-size:0.75rem; margin-right:5px; color:#475569;"></i> Digital Gateway Hub</a>
+                    <a href="digital-functional-skills.html" class="mfs-dropdown-item"><i class="fa-solid fa-layer-group" style="font-size:0.75rem; margin-right:5px; color:#475569;"></i> Digital Skills Hub (E3 &amp; L1)</a>
                   </div>
                 </div>
               </div>
@@ -210,6 +211,16 @@
     <!-- MOBILE NAVIGATION ENGINE -->
     <script src="assets/js/mfs-mobile.js?v=20261024c" defer></script>
   </header>
+
+    <div class="mfs-ofqual-dfs-banner" style="max-width:1140px; margin:18px auto 0; padding:0 20px;">
+      <div style="background:linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%); border:1px solid #bae6fd; border-left:5px solid #0284c7; border-radius:12px; padding:14px 18px; display:flex; align-items:flex-start; gap:12px; color:#0f172a; font-size:0.92rem; line-height:1.55;">
+        <i class="fa-solid fa-circle-info" style="color:#0284c7; font-size:1.15rem; margin-top:3px;"></i>
+        <div>
+          <strong>Statutory Ofqual Qualification Levels (Entry 3 &amp; Level 1):</strong> Nationally in England, regulated <strong>Digital Functional Skills Qualifications (DFSQ)</strong> are awarded at <strong>Entry Level 3</strong> and <strong>Level 1</strong> (the highest statutory DFSQ level, aligned across Open Awards, Pearson Edexcel &amp; City &amp; Guilds).
+        </div>
+      </div>
+    </div>
+
 
   <!-- PROMOTIONAL SALE ACCENT BANNER -->
   <div class="mfs-promo-banner"><div class="mfs-container mfs-promo-inner"></div></div>
@@ -683,12 +694,12 @@
           <ul class="footer-links">
             <li><a href="functional-skills-english-level-2.html">English Level 2 Revision</a></li>
             <li><a href="functional-skills-english-level-1.html">English Level 1 Revision</a></li>
+            <li><a href="entry-level-3-english.html">Entry Level 3 English</a></li>
             <li><a href="digital-functional-skills-level-1.html">Digital Skills Level 1</a></li>
             <li><a href="digital-functional-skills-entry-3.html">Digital Skills Entry 3</a></li>
-            <li><a href="digital-functional-skills.html">Digital Skills Hub (L1 &amp; E3)</a></li>
             <li><a href="digital-functional-skills-past-papers.html">DFS Past Papers &amp; Data Files</a></li>
-            <li><a href="functional-skills-past-papers.html?format=online#mock-finder">Online Exam Simulator</a></li>
-            <li><a href="exam-english-l2.html">Book Level 2 English Exam</a></li>
+            <li><a href="digital-functional-skills-mock-exam.html">DFS Online Mock Simulator</a></li>
+            <li><a href="digital-functional-skills.html">Digital Skills Hub (E3 &amp; L1)</a></li>
           </ul>
         </div>
 
@@ -727,5 +738,32 @@
 
   <!-- DYSLEXIA TINT & ACCESSIBILITY ENGINE -->
   <script src="assets/js/mfs-tint.js"></script>
+  <script>
+    function toggleDyslexiaMode() {
+      const isDys = document.body.classList.toggle('dyslexia-mode');
+      localStorage.setItem('mfs_dyslexia', isDys ? '1' : '0');
+      const btn = document.getElementById('dyslexiaToggle');
+      if (btn) btn.classList.toggle('active', isDys);
+    }
+    function toggleTheme() {
+      const current = document.documentElement.getAttribute('data-theme') || 'sapphire';
+      const next = current === 'emerald' ? 'sapphire' : 'emerald';
+      document.documentElement.setAttribute('data-theme', next);
+      localStorage.setItem('mfs_theme', next);
+      const lbl = document.getElementById('themeLabel');
+      if (lbl) lbl.textContent = next === 'emerald' ? 'Emerald' : 'Sapphire';
+    }
+    (function() {
+      if (localStorage.getItem('mfs_dyslexia') === '1') {
+        document.body.classList.add('dyslexia-mode');
+        const btn = document.getElementById('dyslexiaToggle');
+        if (btn) btn.classList.add('active');
+      }
+      const th = localStorage.getItem('mfs_theme') || 'sapphire';
+      document.documentElement.setAttribute('data-theme', th);
+      const lbl = document.getElementById('themeLabel');
+      if (lbl) lbl.textContent = th === 'emerald' ? 'Emerald' : 'Sapphire';
+    })();
+  </script>
 </body>
 </html>

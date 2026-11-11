@@ -25,7 +25,8 @@ videos/scene_*
 videos/test_*
 videos/concat_list.txt
 videos/Original_George_Voice_Videos_Backup/
-assets/video/
+assets/video/*
+!assets/video/*.vtt
 assets/slc-exemplar/
 
 # Python byte-code and caches

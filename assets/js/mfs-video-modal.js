@@ -144,7 +144,7 @@
     
     // --- 33 NEW LEVEL 2 MATHS TOPIC MASTERCLASSES ---
     '3d-shapes-and-nets': {
-      ytId: 'wHgk6CI99us',
+      ytId: 'OVAXhNT24rY',
       title: "3D Shapes, Nets and Plans \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Sonya",
@@ -164,7 +164,7 @@
       companionLabel: "3D Shapes and Nets"
     },
     'angles-bearings-pythagoras': {
-      ytId: '8FmNEXQDedw',
+      ytId: 'uoI78UQK-F4',
       title: "Angles, Bearings and Pythagoras \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Subi",
@@ -204,7 +204,7 @@
       companionLabel: "Area of 2D and Compound Shapes"
     },
     'averages-and-spread': {
-      ytId: 'sgvRdO8EIgU',
+      ytId: 'Be89esFk97M',
       title: "Averages and Spread \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Sonya",
@@ -224,7 +224,7 @@
       companionLabel: "Averages and Spread (Mean, Median, Mode, Range)"
     },
     'bar-charts-and-pie-charts': {
-      ytId: 'pvfhMZllArg',
+      ytId: 'fhoCg0MC26I',
       title: "Bar Charts and Pie Charts \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Emma",
@@ -244,7 +244,7 @@
       companionLabel: "Bar Charts and Pie Charts"
     },
     'bearings': {
-      ytId: 'C9KA5RzKLfE',
+      ytId: 'lWaeAz7bLwc',
       title: "Bearings and 3-Figure Directions \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Emma",
@@ -264,7 +264,7 @@
       companionLabel: "Bearings and Navigation"
     },
     'coordinates-and-transformations': {
-      ytId: 'tQY6G1i8hPc',
+      ytId: 'sRB-NjFydek',
       title: "Coordinates and Transformations \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Sonya",
@@ -324,7 +324,7 @@
       companionLabel: "Decimals (Arithmetic & Place Value)"
     },
     'density-mass-and-volume': {
-      ytId: 'Jn4BMqg5yx4',
+      ytId: 'pcqsmgG-zBM',
       title: "Density, Mass and Volume \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Sonya",
@@ -424,7 +424,7 @@
       companionLabel: "Fractions of Amounts and Reverse Fractions"
     },
     'frequency-and-two-way-tables': {
-      ytId: 'PzEL_FVXa7g',
+      ytId: 'B8INACQygns',
       title: "Frequency & Two-Way Tables \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Subi",
@@ -524,7 +524,7 @@
       companionLabel: "Perimeter of 2D Shapes & Circumference"
     },
     'probability-trees': {
-      ytId: '-GY2jRSa5JE',
+      ytId: 'Digt1ueGR0o',
       title: "Probability Trees & Combined Events \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Emma",
@@ -544,7 +544,7 @@
       companionLabel: "Probability Trees & Combined Events"
     },
     'probability-and-expected-frequency': {
-      ytId: 'PD1CS1SLxSM',
+      ytId: 'iSKjl9fez2w',
       title: "Probability & Expected Frequency \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Subi",
@@ -644,7 +644,7 @@
       companionLabel: "Rounding and Estimating"
     },
     'scale-drawings': {
-      ytId: 'KZWBNnfCNGw',
+      ytId: 'iOuUblNwkZo',
       title: "Maps and Scale Drawings \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Subi",
@@ -664,7 +664,7 @@
       companionLabel: "Maps and Scale Drawings"
     },
     'scatter-graphs-and-correlation': {
-      ytId: 'zOmrtdOj5dc',
+      ytId: 'PV8L53Ei0q0',
       title: "Scatter Graphs and Correlation \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Sonya",
@@ -724,7 +724,7 @@
       companionLabel: "Speed, Distance and Time"
     },
     'symmetry-tessellation-and-2d-properties': {
-      ytId: '0UOwW2sS_4k',
+      ytId: '-1QBlinkwn8',
       title: "Symmetry, Tessellation & 2D Properties \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Emma",

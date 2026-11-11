@@ -31,7 +31,7 @@
   <div class="mfs-top-bar">
     <div class="mfs-container mfs-top-bar-inner">
       <div class="top-trust-items">
-        <span class="top-trust-item"><i class="fa-solid fa-building-columns"></i> Pearson Edexcel &amp; City &amp; Guilds Aligned</span>
+        <span class="top-trust-item"><i class="fa-solid fa-building-columns"></i> Open Awards, Pearson Edexcel &amp; City &amp; Guilds Aligned</span>
       </div>
       <div class="top-contacts">
         <div class="mfs-access-bar">
@@ -255,7 +255,7 @@
               <i class="fa-solid fa-clock"></i> <strong>Est. Study Time:</strong> 25-35 Mins
             </div>
             <div class="hero-meta-item">
-              <i class="fa-solid fa-book-open"></i> <strong>Curriculum Standards:</strong> Pearson Edexcel &amp; City &amp; Guilds
+              <i class="fa-solid fa-book-open"></i> <strong>Curriculum Standards:</strong> Open Awards, Pearson Edexcel &amp; City &amp; Guilds
             </div>
             <div class="hero-meta-item">
               <i class="fa-solid fa-circle-check"></i> <strong>Interactive Practice Tasks Included</strong>
@@ -307,6 +307,11 @@
         </div>
 
         <ul class="sidebar-toc-list" id="tocList">
+          <li>
+            <a href="#video-station" class="sidebar-toc-link">
+              <i class="fa-solid fa-circle-play" style="color:#ef4444;"></i> Video Masterclass
+            </a>
+          </li>
           
           <li>
             <a href="#specification" class="sidebar-toc-link active">
@@ -359,25 +364,125 @@
       <!-- RIGHT COLUMN: MAIN LEARNING CONTENT -->
       <div class="revision-content">
 
-        <section id="videoMasterclassStation" class="revision-section" aria-label="Studio Masterclass Briefing">
-          <div style="background:linear-gradient(135deg, #0a0f1d 0%, #0f172a 100%); border:2px solid #0284c7; border-left:6px solid #38bdf8; border-radius:16px; padding:20px 22px; color:#ffffff; box-shadow:0 12px 28px rgba(10,15,29,0.22); margin-bottom:24px;">
-            <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:14px;">
+        <!-- TOPIC VIDEO WALKTHROUGH STATION -->
+        <section id="video-station" class="revision-section" style="margin-bottom: 32px;">
+          <div id="videoMasterclassStation" style="position:relative; border-radius:14px; overflow:hidden; background:#070d1e; box-shadow:0 10px 30px rgba(0,0,0,0.35);">
+            
+            <div class="video-exemplar-head" style="background:#070d1e; border: 2px solid #0284c7;  border-radius:14px 14px 0 0; padding:18px 22px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
               <div style="display:flex; align-items:center; gap:14px;">
-                <img src="assets/img/avatars/tutor-emma.jpg" alt="Emma MFS Tutor" style="width:54px; height:54px; border-radius:50%; object-fit:cover; border:2px solid #38bdf8; flex-shrink:0;">
+                <img id="mcTutorAvatar" src="assets/img/avatars/tutor-emma.jpg" alt="Emma MFS Specialist Tutor" style="width:52px; height:52px; border-radius:50%; border:2px solid #38bdf8; object-fit:cover;">
                 <div>
-                  <div style="display:inline-flex; align-items:center; gap:6px; background:rgba(56,189,248,0.16); color:#38bdf8; font-size:0.74rem; font-weight:800; padding:3px 10px; border-radius:999px; text-transform:uppercase; letter-spacing:0.04em; margin-bottom:4px;">
-                    <i class="fa-solid fa-clapperboard"></i> MFS Studio Briefing &bull; Emma
+                  <div id="mcVideoTitle" style="color:#ffffff; font-size:1.18rem; font-weight:800; display:flex; align-items:center; gap:8px;">
+                    <i class="fa-brands fa-youtube" style="color:#ef4444;"></i> All 11 Writing Formats &amp; PAF Method Masterclass
                   </div>
-                  <h2 style="margin:0; font-size:1.12rem; font-weight:800; color:#ffffff;">Format & Conventions — Level 2 Exam Walkthrough Blueprint</h2>
-                  <div style="font-size:0.84rem; color:#94a3b8; margin-top:2px;">Assigned Specialist: <strong style="color:#38bdf8;">Emma</strong> (MFS Writing Formats & Exam Coach)</div>
+                  <div id="mcTutorMeta" style="color:#94a3b8; font-size:0.88rem; font-weight:600; margin-top:3px;">
+                    Presented by <strong style="color:#38bdf8;">Emma</strong> (MFS Functional Writing & Format Specialist) &bull; 1080p Studio Walkthrough (6m 57s)
+                  </div>
                 </div>
               </div>
-              <div style="display:flex; gap:10px; flex-wrap:wrap;">
-                <a href="#golden-rules" style="background:#0284c7; color:#ffffff; text-decoration:none; font-size:0.84rem; font-weight:800; padding:9px 15px; border-radius:8px; display:inline-flex; align-items:center; gap:6px;"><i class="fa-solid fa-bolt"></i> Key Rules</a>
-                <a href="#downloads" style="background:rgba(255,255,255,0.1); border:1px solid rgba(255,255,255,0.24); color:#f8fafc; text-decoration:none; font-size:0.84rem; font-weight:700; padding:9px 15px; border-radius:8px; display:inline-flex; align-items:center; gap:6px;"><i class="fa-regular fa-file-lines"></i> Exam Worksheet</a>
+              <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
+                <span class="mfs-pill-l1">Level 2 English</span>
+                <span class="mfs-pill-board">Open Awards &bull; Edexcel &bull; C&amp;G</span>
+                <span class="mfs-pill-board" style="background:#059669; color:#fff;">HD 1080p</span>
+              </div>
+            </div>
+
+            <div class="video-screen-wrap" style="position:relative; width:100%; aspect-ratio:16/9; background:#000; overflow:hidden; border-left:2px solid #0284c7; border-right:2px solid #0284c7; border-radius:0; margin-bottom:0;">
+              <iframe id="topicMasterclassIframe" data-ytid="L2cV1Jg7Sgk" style="position:absolute; top:0; left:0; width:100%; height:100%; border:0; display:block;" src="https://www.youtube-nocookie.com/embed/L2cV1Jg7Sgk?rel=0&amp;enablejsapi=1" title="All 11 Writing Formats &amp; PAF Method Masterclass" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </div>
+
+            <!-- JUMP BENCHMARKS BAR -->
+            <div class="video-jump-bar" id="mcJumpBar" style="background:#0f172a; border:2px solid #0284c7; border-top:1px solid #1e3a8a; border-radius:0; padding:12px 18px; margin-bottom:0;">
+              <span class="jump-label" style="color:#94a3b8;"><i class="fa-solid fa-forward-step" style="color:#38bdf8;"></i> Lesson Benchmarks:</span>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(0, this)">00:00 All 11 Writing Formats</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(25, this)">00:25 The PAF Check</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(73, this)">01:13 1. Formal Letters</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(123, this)">02:03 2 &amp; 3. Emails &amp; Memos</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(155, this)">02:35 4 &amp; 5. Reports &amp; Proposals</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(370, this)">06:10 Summary</button>
+            </div>
+
+            <!-- PLAYER FOOTER & EXTERNAL LINKS -->
+            <div style="background:#070d1e; border:2px solid #0284c7; border-top:1px solid #1e3a8a; border-radius:0 0 14px 14px; padding:10px 18px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;">
+              <span style="font-size:0.82rem; color:#94a3b8;"><i class="fa-solid fa-shield-halved" style="color:#38bdf8;"></i> Open Awards, Pearson Edexcel &amp; City &amp; Guilds Level 2 Aligned</span>
+              <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+                <a id="mcStationLink" href="video-solution.html?topic=english-writing-formats" target="_blank" rel="noopener" style="font-size:0.82rem; color:#38bdf8; text-decoration:none; font-weight:700;"><i class="fa-solid fa-up-right-from-square"></i> Open in Video Station</a>
+                <a id="mcYoutubeLink" href="https://youtu.be/L2cV1Jg7Sgk" target="_blank" rel="noopener" style="font-size:0.82rem; color:#ef4444; text-decoration:none; font-weight:700;"><i class="fa-brands fa-youtube"></i> Watch on YouTube</a>
               </div>
             </div>
           </div>
+
+          <script>
+            window.__mfsMasterclassParts = [{"num": 2, "slug": "english-writing-formats", "title": "All 11 Writing Formats & PAF Method Masterclass", "tutor": "Emma", "role": "MFS Functional Writing & Format Specialist", "avatar": "assets/img/avatars/tutor-emma.jpg", "ytid": "L2cV1Jg7Sgk", "runtime": "6m 57s", "default_start": 0, "benchmarks": [{"sec": 0, "text": "00:00 All 11 Writing Formats"}, {"sec": 25, "text": "00:25 The PAF Check"}, {"sec": 73, "text": "01:13 1. Formal Letters"}, {"sec": 123, "text": "02:03 2 & 3. Emails & Memos"}, {"sec": 155, "text": "02:35 4 & 5. Reports & Proposals"}, {"sec": 370, "text": "06:10 Summary"}]}];
+            function jumpMasterclassVideo(seconds, btn) {
+              if (btn && btn.blur) btn.blur();
+              var iframe = document.getElementById('topicMasterclassIframe');
+              if (iframe) {
+                var ytid = iframe.getAttribute('data-ytid');
+                if (!ytid) {
+                  var m = (iframe.src || '').match(/embed[/]([a-zA-Z0-9_-]+)/);
+                  ytid = m ? m[1] : '';
+                }
+                if (ytid) {
+                  iframe.src = 'https://www.youtube-nocookie.com/embed/' + ytid + '?rel=0&autoplay=1&enablejsapi=1&start=' + seconds;
+                }
+              }
+              var btns = document.querySelectorAll('#videoMasterclassStation .video-jump-bar .jump-btn');
+              btns.forEach(function(b) {
+                if (b === btn) {
+                  b.style.borderColor = '#38bdf8';
+                  b.style.background = '#0284c7';
+                  b.style.color = '#ffffff';
+                  b.style.fontWeight = '800';
+                } else {
+                  b.style.borderColor = '';
+                  b.style.background = '';
+                  b.style.color = '';
+                  b.style.fontWeight = '';
+                }
+              });
+            }
+            function switchMasterclassPart(idx, tabBtn) {
+              var parts = window.__mfsMasterclassParts || [];
+              var p = parts[idx];
+              if (!p) return;
+              var iframe = document.getElementById('topicMasterclassIframe');
+              if (iframe) {
+                iframe.setAttribute('data-ytid', p.ytid);
+                iframe.src = 'https://www.youtube-nocookie.com/embed/' + p.ytid + '?rel=0&autoplay=1&enablejsapi=1';
+                iframe.title = p.title;
+              }
+              var av = document.getElementById('mcTutorAvatar');
+              if (av) { av.src = p.avatar; av.alt = p.tutor + ' MFS Specialist Tutor'; }
+              var ti = document.getElementById('mcVideoTitle');
+              if (ti) { ti.innerHTML = '<i class="fa-brands fa-youtube" style="color:#ef4444;"></i> ' + p.title; }
+              var me = document.getElementById('mcTutorMeta');
+              if (me) { me.innerHTML = 'Presented by <strong style="color:#38bdf8;">' + p.tutor + '</strong> (' + p.role + ') &bull; 1080p Studio Walkthrough (' + p.runtime + ')'; }
+              var sl = document.getElementById('mcStationLink');
+              if (sl) sl.href = 'video-solution.html?topic=' + p.slug;
+              var yl = document.getElementById('mcYoutubeLink');
+              if (yl) yl.href = 'https://youtu.be/' + p.ytid;
+              var jb = document.getElementById('mcJumpBar');
+              if (jb) {
+                var h = '<span class="jump-label" style="color:#94a3b8;"><i class="fa-solid fa-forward-step" style="color:#38bdf8;"></i> Lesson Benchmarks:</span> ';
+                (p.benchmarks || []).forEach(function(b) {
+                  h += '<button type="button" class="jump-btn" onclick="jumpMasterclassVideo(' + b.sec + ', this)">' + b.text + '</button> ';
+                });
+                jb.innerHTML = h;
+              }
+              document.querySelectorAll('#videoMasterclassStation .mc-part-tab').forEach(function(tb, i) {
+                if (i === idx) {
+                  tb.style.background = '#0284c7';
+                  tb.style.color = '#ffffff';
+                  tb.style.borderColor = '#38bdf8';
+                } else {
+                  tb.style.background = '#0f172a';
+                  tb.style.color = '#cbd5e1';
+                  tb.style.borderColor = '#334155';
+                }
+              });
+            }
+          </script>
         </section>
 
         
@@ -397,35 +502,59 @@
 
     <!-- GOLDEN RULES -->
     
-        <section class="revision-section mfs-english-visual-board" aria-label="5 Official Level 2 Exam Format Wireframes">
+        <section class="revision-section mfs-english-visual-board" aria-label="11 Official Level 2 Exam Format Wireframes">
           <div class="skill-card-container" style="background:#ffffff; border:2px solid #ddd6fe; border-radius:16px; padding:22px 24px; box-shadow:0 6px 20px rgba(124,58,237,0.06);">
             <div style="display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px; margin-bottom:14px; padding-bottom:10px; border-bottom:1px solid #e2e8f0;">
               <div style="display:flex; align-items:center; gap:10px;">
-                <span style="background:#7c3aed; color:#fff; font-size:0.75rem; font-weight:800; padding:4px 10px; border-radius:999px; text-transform:uppercase;">5 Exam Formats</span>
-                <h3 style="margin:0; font-size:1.06rem; font-weight:800; color:#0f172a;">Pearson Edexcel Level 2 Layout Checklist (Never Lose Format Marks!)</h3>
+                <span style="background:#7c3aed; color:#fff; font-size:0.75rem; font-weight:800; padding:4px 10px; border-radius:999px; text-transform:uppercase;">All 11 Exam Formats</span>
+                <h3 style="margin:0; font-size:1.06rem; font-weight:800; color:#0f172a;">Level 2 Writing Format Checklist (Open Awards, Pearson Edexcel &amp; City &amp; Guilds)</h3>
               </div>
               <span style="font-size:0.82rem; font-weight:700; color:#dc2626;">SPaG = 42% of Writing Marks</span>
             </div>
-            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(195px, 1fr)); gap:12px;">
+            <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(215px, 1fr)); gap:12px;">
               <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-top:4px solid #0284c7; border-radius:10px; padding:12px;">
                 <div style="font-weight:800; color:#0f172a; font-size:0.92rem; margin-bottom:6px;"><i class="fa-solid fa-envelope-open-text" style="color:#0284c7;"></i> 1. Formal Letter</div>
                 <div style="font-size:0.82rem; color:#334155; line-height:1.55;">• Sender address (top-right) + Date<br>• Recipient address (top-left)<br>• <strong>Dear Sir/Madam &rarr; Yours faithfully</strong><br>• <strong>Dear Mr Khan &rarr; Yours sincerely</strong></div>
               </div>
               <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-top:4px solid #7c3aed; border-radius:10px; padding:12px;">
-                <div style="font-weight:800; color:#0f172a; font-size:0.92rem; margin-bottom:6px;"><i class="fa-solid fa-at" style="color:#7c3aed;"></i> 2. Formal Email</div>
-                <div style="font-size:0.82rem; color:#334155; line-height:1.55;">• <strong>To:</strong> &amp; clear <strong>Subject:</strong> line<br>• Formal greeting (Dear Ms...)<br>• Focused paragraphs + action request<br>• Kind regards + Full Name/Role</div>
+                <div style="font-weight:800; color:#0f172a; font-size:0.92rem; margin-bottom:6px;"><i class="fa-solid fa-at" style="color:#7c3aed;"></i> 2. Workplace Email</div>
+                <div style="font-size:0.82rem; color:#334155; line-height:1.55;">• <strong>To:</strong> &amp; clear <strong>Subject:</strong> line<br>• Zero postal addresses!<br>• Polite greeting (Dear Ms...)<br>• Kind regards + Full Name/Role</div>
               </div>
-              <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-top:4px solid #0f766e; border-radius:10px; padding:12px;">
-                <div style="font-weight:800; color:#0f172a; font-size:0.92rem; margin-bottom:6px;"><i class="fa-solid fa-newspaper" style="color:#0f766e;"></i> 3. Article / Blog</div>
-                <div style="font-size:0.82rem; color:#334155; line-height:1.55;">• Engaging <strong>Headline</strong> + Byline<br>• Hook opening addressing readers<br>• 2–3 clear <strong>Subheadings</strong><br>• Call-to-action conclusion</div>
+              <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-top:4px solid #6366f1; border-radius:10px; padding:12px;">
+                <div style="font-weight:800; color:#0f172a; font-size:0.92rem; margin-bottom:6px;"><i class="fa-solid fa-thumbtack" style="color:#6366f1;"></i> 3. Internal Memo / Notice</div>
+                <div style="font-size:0.82rem; color:#334155; line-height:1.55;">• 4-line block: <strong>TO / FROM / DATE / SUBJECT</strong><br>• Direct factual briefing<br>• Bulleted staff actions<br>• No Dear Sir/Yours sincerely needed</div>
               </div>
               <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-top:4px solid #d97706; border-radius:10px; padding:12px;">
                 <div style="font-weight:800; color:#0f172a; font-size:0.92rem; margin-bottom:6px;"><i class="fa-solid fa-clipboard-list" style="color:#d97706;"></i> 4. Formal Report</div>
-                <div style="font-size:0.82rem; color:#334155; line-height:1.55;">• <strong>Report Title</strong> + Author/Date<br>• <strong>1. Introduction</strong><br>• <strong>2. Key Findings</strong> (objective)<br>• <strong>3. Recommendations</strong> (bulleted)</div>
+                <div style="font-size:0.82rem; color:#334155; line-height:1.55;">• <strong>Report Title</strong> + Author/Date<br>• <strong>1. Introduction</strong> (aim)<br>• <strong>2. Key Findings</strong> (objective)<br>• <strong>3. Recommendations</strong> (bulleted)</div>
+              </div>
+              <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-top:4px solid #059669; border-radius:10px; padding:12px;">
+                <div style="font-weight:800; color:#0f172a; font-size:0.92rem; margin-bottom:6px;"><i class="fa-solid fa-hand-holding-dollar" style="color:#059669;"></i> 5. Business Proposal / Bid</div>
+                <div style="font-size:0.82rem; color:#334155; line-height:1.55;">• <strong>Project Title</strong> + Proposer<br>• Demonstrated local need<br>• Delivery plan &amp; milestones<br>• Itemised budget &amp; benefits</div>
+              </div>
+              <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-top:4px solid #0f766e; border-radius:10px; padding:12px;">
+                <div style="font-weight:800; color:#0f172a; font-size:0.92rem; margin-bottom:6px;"><i class="fa-solid fa-newspaper" style="color:#0f766e;"></i> 6. Newspaper / Magazine Article</div>
+                <div style="font-size:0.82rem; color:#334155; line-height:1.55;">• Bold <strong>Headline</strong> + Byline<br>• Engaging hook question<br>• 2–3 thematic <strong>Subheadings</strong><br>• Motivating call to action</div>
+              </div>
+              <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-top:4px solid #0ea5e9; border-radius:10px; padding:12px;">
+                <div style="font-weight:800; color:#0f172a; font-size:0.92rem; margin-bottom:6px;"><i class="fa-solid fa-comments" style="color:#0ea5e9;"></i> 7. Web Blog / Forum Post</div>
+                <div style="font-size:0.82rem; color:#334155; line-height:1.55;">• <strong>Post / Thread Title</strong><br>• Author handle &amp; date<br>• Lively, conversational voice<br>• Closing reader reply prompt</div>
+              </div>
+              <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-top:4px solid #9333ea; border-radius:10px; padding:12px;">
+                <div style="font-weight:800; color:#0f172a; font-size:0.92rem; margin-bottom:6px;"><i class="fa-solid fa-bullhorn" style="color:#9333ea;"></i> 8. Press Release / Newsletter</div>
+                <div style="font-size:0.82rem; color:#334155; line-height:1.55;">• <strong>FOR IMMEDIATE RELEASE</strong> + Date<br>• Punchy announcement headline<br>• Who / What / Where / When facts<br>• Media contact box at foot</div>
+              </div>
+              <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-top:4px solid #2563eb; border-radius:10px; padding:12px;">
+                <div style="font-weight:800; color:#0f172a; font-size:0.92rem; margin-bottom:6px;"><i class="fa-solid fa-book-open" style="color:#2563eb;"></i> 9. Information Leaflet / Guide</div>
+                <div style="font-size:0.82rem; color:#334155; line-height:1.55;">• Clear <strong>Banner Title</strong><br>• Scannable section headings<br>• Imperative bulleted steps<br>• Help / Contact box at bottom</div>
               </div>
               <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-top:4px solid #dc2626; border-radius:10px; padding:12px;">
-                <div style="font-weight:800; color:#0f172a; font-size:0.92rem; margin-bottom:6px;"><i class="fa-solid fa-star-half-stroke" style="color:#dc2626;"></i> 5. Review</div>
-                <div style="font-size:0.82rem; color:#334155; line-height:1.55;">• Catchy <strong>Review Title</strong><br>• Context (what/where/when)<br>• Specific strengths &amp; drawbacks<br>• Clear <strong>Final Verdict</strong> for readers</div>
+                <div style="font-weight:800; color:#0f172a; font-size:0.92rem; margin-bottom:6px;"><i class="fa-solid fa-star-half-stroke" style="color:#dc2626;"></i> 10. Critical Review</div>
+                <div style="font-size:0.82rem; color:#334155; line-height:1.55;">• Catchy <strong>Title &amp; Rating</strong><br>• Brief context (what/where)<br>• Balanced strengths &amp; drawbacks<br>• Clear <strong>Final Verdict</strong></div>
+              </div>
+              <div style="background:#f8fafc; border:1.5px solid #cbd5e1; border-top:4px solid #16a34a; border-radius:10px; padding:12px;">
+                <div style="font-weight:800; color:#0f172a; font-size:0.92rem; margin-bottom:6px;"><i class="fa-solid fa-microphone-lines" style="color:#16a34a;"></i> 11. Persuasive Speech / Talk</div>
+                <div style="font-size:0.82rem; color:#334155; line-height:1.55;">• Direct greeting (<em>Good evening everyone,</em>)<br>• Inclusive <em>we / our</em> + triplets<br>• Rhetorical questions<br>• Rousing closing thank-you</div>
               </div>
             </div>
           </div>
@@ -461,12 +590,12 @@
     </section>
     
 
-        <!-- SKILL 1: Master Layout Blueprint: All 5 Functional Skills Exam Formats -->
+        <!-- SKILL 1: Master Layout Blueprint: All 11 Functional Skills Exam Formats -->
         <section id="skill-1" class="revision-section">
           <div class="mfs-topic-card">
             <div class="mfs-topic-head">
-              <h3 class="mfs-topic-title"><span class="mfs-topic-prefix">Core Skill 1:</span> Master Layout Blueprint: All 5 Functional Skills Exam Formats</h3>
-              <p class="mfs-topic-stem">Memorise the exact structural checklist for every document type that can appear in Task 1 or Task 2.</p>
+              <h3 class="mfs-topic-title"><span class="mfs-topic-prefix">Core Skill 1:</span> Master Layout Blueprint: All 11 Functional Skills Exam Formats</h3>
+              <p class="mfs-topic-stem">Memorise the exact structural checklist for every document type that can appear in Task 1 or Task 2 across Open Awards, Pearson Edexcel, and City &amp; Guilds.</p>
             </div>
             <div class="mfs-topic-body" style="padding:20px 24px;">
               
@@ -482,28 +611,58 @@
                     <tbody>
                       <tr>
                         <td data-label="Document Format" style="padding:10px; border:1px solid #cbd5e1; font-weight:700;">1. Formal Letter</td>
-                        <td data-label="Top Header Requirements" style="padding:10px; border:1px solid #cbd5e1;">1. Your address (top right)<br>2. Date beneath your address<br>3. Recipient name/title &amp; address (left)<br>4. Salutation (<em>Dear Mr... / Dear Sir or Madam,</em>)</td>
-                        <td data-label="Body &amp; Sign-Off Conventions" style="padding:10px; border:1px solid #cbd5e1;">3–4 formal paragraphs.<br>Close: <em>Yours sincerely,</em> (named) or <em>Yours faithfully,</em> (unnamed) + Your Full Name.</td>
+                        <td data-label="Top Header Requirements" style="padding:10px; border:1px solid #cbd5e1;">1. Your address (top right) + Date beneath<br>2. Recipient name/title &amp; address (left)<br>3. Salutation (<em>Dear Mr... / Dear Sir or Madam,</em>)</td>
+                        <td data-label="Body &amp; Sign-Off Conventions" style="padding:10px; border:1px solid #cbd5e1;">3–4 formal paragraphs.<br>Close: <em>Yours sincerely,</em> (named) or <em>Yours faithfully,</em> (unnamed) + Full Name.</td>
                       </tr>
                       <tr>
                         <td data-label="Document Format" style="padding:10px; border:1px solid #cbd5e1; font-weight:700;">2. Workplace Email</td>
                         <td data-label="Top Header Requirements" style="padding:10px; border:1px solid #cbd5e1;"><strong>To:</strong> recipient@organisation.co.uk<br><strong>Subject:</strong> Clear, specific summary of email topic<br>Salutation (<em>Dear Sarah, / Dear Mr Davies,</em>)</td>
-                        <td data-label="Body &amp; Sign-Off Conventions" style="padding:10px; border:1px solid #cbd5e1;">Focused paragraphs (plus bullet points if listing items).<br>Close: <em>Kind regards,</em> or <em>Best wishes,</em> + Name &amp; Job Title.</td>
+                        <td data-label="Body &amp; Sign-Off Conventions" style="padding:10px; border:1px solid #cbd5e1;">Focused paragraphs (no postal addresses!).<br>Close: <em>Kind regards,</em> + Full Name &amp; Role.</td>
                       </tr>
                       <tr>
-                        <td data-label="Document Format" style="padding:10px; border:1px solid #cbd5e1; font-weight:700;">3. Formal Report</td>
-                        <td data-label="Top Header Requirements" style="padding:10px; border:1px solid #cbd5e1;"><strong>Title:</strong> REPORT ON [TOPIC]<br><strong>To:</strong> | <strong>From:</strong> | <strong>Date:</strong></td>
-                        <td data-label="Body &amp; Sign-Off Conventions" style="padding:10px; border:1px solid #cbd5e1;">Numbered subheadings: <em>1.0 Introduction, 2.0 Key Findings, 3.0 Recommendations</em> (with bulleted action points).</td>
+                        <td data-label="Document Format" style="padding:10px; border:1px solid #cbd5e1; font-weight:700;">3. Internal Memo / Notice</td>
+                        <td data-label="Top Header Requirements" style="padding:10px; border:1px solid #cbd5e1;"><strong>MEMORANDUM</strong><br><strong>TO:</strong> | <strong>FROM:</strong> | <strong>DATE:</strong> | <strong>SUBJECT:</strong></td>
+                        <td data-label="Body &amp; Sign-Off Conventions" style="padding:10px; border:1px solid #cbd5e1;">Direct factual briefing + bulleted operational actions. No <em>Dear Sir</em> or letter sign-off required.</td>
                       </tr>
                       <tr>
-                        <td data-label="Document Format" style="padding:10px; border:1px solid #cbd5e1; font-weight:700;">4. Magazine / Website Article</td>
-                        <td data-label="Top Header Requirements" style="padding:10px; border:1px solid #cbd5e1;"><strong>Catchy Headline</strong> (bold/underlined)<br>Optional Byline: <em>By [Your Name]</em></td>
-                        <td data-label="Body &amp; Sign-Off Conventions" style="padding:10px; border:1px solid #cbd5e1;">Engaging hook opening, 2–3 thematic subheadings, rhetorical questions, motivating final call to action.</td>
+                        <td data-label="Document Format" style="padding:10px; border:1px solid #cbd5e1; font-weight:700;">4. Formal Report</td>
+                        <td data-label="Top Header Requirements" style="padding:10px; border:1px solid #cbd5e1;"><strong>Title:</strong> REPORT ON [TOPIC]<br><strong>Prepared by:</strong> [Name] | <strong>Date:</strong> [Date]</td>
+                        <td data-label="Body &amp; Sign-Off Conventions" style="padding:10px; border:1px solid #cbd5e1;">Objective third-person tone with numbered subheadings: <em>1. Introduction, 2. Key Findings, 3. Recommendations</em> (bulleted).</td>
                       </tr>
                       <tr>
-                        <td data-label="Document Format" style="padding:10px; border:1px solid #cbd5e1; font-weight:700;">5. Witness Statement / Account</td>
-                        <td data-label="Top Header Requirements" style="padding:10px; border:1px solid #cbd5e1;"><strong>Title:</strong> Formal Incident / Witness Statement<br><strong>Name:</strong> | <strong>Role:</strong> | <strong>Date of Incident:</strong></td>
-                        <td data-label="Body &amp; Sign-Off Conventions" style="padding:10px; border:1px solid #cbd5e1;">Chronological past-tense paragraphs detailing exact times and observations.<br>Close: <em>Signed: [Name] | Date: [Date]</em>.</td>
+                        <td data-label="Document Format" style="padding:10px; border:1px solid #cbd5e1; font-weight:700;">5. Business Proposal / Bid</td>
+                        <td data-label="Top Header Requirements" style="padding:10px; border:1px solid #cbd5e1;"><strong>Title:</strong> PROPOSAL FOR [PROJECT]<br><strong>Submitted to:</strong> | <strong>Prepared by:</strong> | <strong>Date:</strong></td>
+                        <td data-label="Body &amp; Sign-Off Conventions" style="padding:10px; border:1px solid #cbd5e1;">Subheaded persuasive bid: <em>Local Need, Delivery Milestones, Itemised Budget Breakdown, Community Benefits</em>.</td>
+                      </tr>
+                      <tr>
+                        <td data-label="Document Format" style="padding:10px; border:1px solid #cbd5e1; font-weight:700;">6. Newspaper / Magazine Article</td>
+                        <td data-label="Top Header Requirements" style="padding:10px; border:1px solid #cbd5e1;"><strong>Catchy Headline</strong> (bold)<br><strong>Byline:</strong> <em>By [Your Name]</em></td>
+                        <td data-label="Body &amp; Sign-Off Conventions" style="padding:10px; border:1px solid #cbd5e1;">Engaging rhetorical hook, 2–3 thematic subheadings, vivid examples, motivating final call to action.</td>
+                      </tr>
+                      <tr>
+                        <td data-label="Document Format" style="padding:10px; border:1px solid #cbd5e1; font-weight:700;">7. Web Blog / Forum Post</td>
+                        <td data-label="Top Header Requirements" style="padding:10px; border:1px solid #cbd5e1;"><strong>Blog / Thread Title</strong><br><strong>Posted by:</strong> [Name / Handle] | <strong>Date:</strong></td>
+                        <td data-label="Body &amp; Sign-Off Conventions" style="padding:10px; border:1px solid #cbd5e1;">Lively, direct first-person voice addressing community readers; close with a question inviting comments below.</td>
+                      </tr>
+                      <tr>
+                        <td data-label="Document Format" style="padding:10px; border:1px solid #cbd5e1; font-weight:700;">8. Press Release / Newsletter</td>
+                        <td data-label="Top Header Requirements" style="padding:10px; border:1px solid #cbd5e1;"><strong>FOR IMMEDIATE RELEASE</strong> + Date<br><strong>Bold Announcement Headline</strong></td>
+                        <td data-label="Body &amp; Sign-Off Conventions" style="padding:10px; border:1px solid #cbd5e1;">Crisp third-person summary (Who, What, Where, When), spokesperson quote, and <strong>Media Contact:</strong> line at foot.</td>
+                      </tr>
+                      <tr>
+                        <td data-label="Document Format" style="padding:10px; border:1px solid #cbd5e1; font-weight:700;">9. Information Leaflet / Guide</td>
+                        <td data-label="Top Header Requirements" style="padding:10px; border:1px solid #cbd5e1;"><strong>Bold Banner Title</strong> + Clear Purpose Subtitle</td>
+                        <td data-label="Body &amp; Sign-Off Conventions" style="padding:10px; border:1px solid #cbd5e1;">Scannable subheadings, imperative bulleted advice steps (<em>Register online, Bring ID</em>), and a <strong>Further Help / Contact</strong> box.</td>
+                      </tr>
+                      <tr>
+                        <td data-label="Document Format" style="padding:10px; border:1px solid #cbd5e1; font-weight:700;">10. Critical Review / Evaluation</td>
+                        <td data-label="Top Header Requirements" style="padding:10px; border:1px solid #cbd5e1;"><strong>Engaging Review Title</strong> + Star Rating / Verdict Subtitle</td>
+                        <td data-label="Body &amp; Sign-Off Conventions" style="padding:10px; border:1px solid #cbd5e1;">Brief context, specific strengths, balanced drawbacks, and a decisive final recommendation for readers.</td>
+                      </tr>
+                      <tr>
+                        <td data-label="Document Format" style="padding:10px; border:1px solid #cbd5e1; font-weight:700;">11. Persuasive Speech / Talk</td>
+                        <td data-label="Top Header Requirements" style="padding:10px; border:1px solid #cbd5e1;">Direct spoken greeting: <em>Good evening everyone, / Fellow colleagues,</em></td>
+                        <td data-label="Body &amp; Sign-Off Conventions" style="padding:10px; border:1px solid #cbd5e1;">Inclusive pronouns (<em>we, our</em>), rhetorical questions, rule of three, and a memorable closing appeal (<em>Thank you for listening</em>).</td>
                       </tr>
                     </tbody>
                   </table>
@@ -540,7 +699,7 @@
                   <div style="text-align:left; margin-bottom:14px;">
                     Ms Samantha Davies<br>
                     Director of Estates<br>
-                    Master Healthcare Trust<br>
+                    Master Community Healthcare Clinic<br>
                     Headley Way, Oxford<br>
                     OX3 9DU
                   </div>
@@ -682,8 +841,8 @@
             <span class="model-marks-pill">Level 2 Article Format & Conventions Benchmark (5 Marks)</span>
           </div>
           <div class="model-scenario" style="padding:16px 20px; background:#fff; border-bottom:1px solid #e2e8f0;">
-            <p style="font-weight:600; color:#0f172a; margin-bottom:8px;">Vocational Context: <span style="color:#0369a1;">Internal NHS Trust Magazine</span></p>
-            <div class="model-q-stem" style="font-size:1.05rem; line-height:1.7; color:#334155;">Draft the headline, sub-deck, opening paragraph, and first subheaded section of an article for an NHS staff newsletter promoting trained Mental Health First Aiders across clinical wards.</div>
+            <p style="font-weight:600; color:#0f172a; margin-bottom:8px;">Vocational Context: <span style="color:#0369a1;">Regional Community Healthcare Clinic Magazine</span></p>
+            <div class="model-q-stem" style="font-size:1.05rem; line-height:1.7; color:#334155;">Draft the headline, sub-deck, opening paragraph, and first subheaded section of an article for a community healthcare clinic staff newsletter promoting trained Mental Health First Aiders across clinical departments.</div>
           </div>
           <div class="model-steps-container" style="padding:18px 20px; background:#ffffff;">
             <!-- 3-Column Header: Step, Description, Criteria -->
@@ -733,7 +892,7 @@
             </div>
             
             <div class="model-final-answer" style="margin-top:16px; padding:12px 18px; background:#f0fdf4; border:1px solid #86efac; border-radius:6px; font-weight:700; color:#166534; font-size:1.05rem;">
-              <i class="fa-solid fa-check-circle"></i> Final Accredited Response: <strong>Caring for the Carers: Why Mental Health First Aiders Matter on Every Ward</strong><br><em>How trained peer champions are transforming frontline clinical support — By Nadia Hassan</em><br><br>Every day across our acute wards, dedicated nurses and healthcare assistants deliver extraordinary compassion under intense pressure. Yet who listens when the caregivers themselves feel overwhelmed after a traumatic shift? This month, our Trust is proud to launch a network of forty accredited Mental Health First Aiders.<br><br><strong>Confidential Support Right on Your Ward</strong><br>Unlike external counselling services that require formal referrals, our peer champions wear a distinctive green lanyard and are available for a confidential ten-minute conversation during your shift; in addition, they can signpost you directly to occupational wellbeing resources.
+              <i class="fa-solid fa-check-circle"></i> Final Accredited Response: <strong>Caring for the Carers: Why Mental Health First Aiders Matter in Every Clinic</strong><br><em>How trained peer champions are transforming frontline clinical support — By Nadia Hassan</em><br><br>Every day across our community clinics, dedicated nurses and healthcare assistants deliver extraordinary compassion under intense pressure. Yet who listens when the caregivers themselves feel overwhelmed after a demanding shift? This month, our clinic network is proud to launch forty accredited Mental Health First Aiders.<br><br><strong>Confidential Support Right in Your Department</strong><br>Unlike external counselling services that require formal referrals, our peer champions wear a distinctive green lanyard and are available for a confidential ten-minute conversation during your shift; in addition, they can signpost you directly to occupational wellbeing resources.
             </div>
             <div class="examiner-guidance-box">
               <div class="examiner-guidance-header">
@@ -1010,6 +1169,8 @@
           <a href="revision-cards.html">Revision Cards</a>
           <a href="shop.html">Study Shop</a>
           <a href="tutors.html">Tutors</a>
+          <a href="open-awards-functional-skills.html">Open Awards Guide</a>
+          <a href="centre-policies.html">Policies &amp; Access</a>
           <a href="contact-us.html">Contact Us</a>
         </div>
       </div>

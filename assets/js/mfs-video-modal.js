@@ -9,6 +9,27 @@
   // Available videos dictionary (slug/topic -> video details)
   // Available videos dictionary (slug/topic -> video details)
   const KNOWN_VIDEOS = {
+    'english-punctuation-semicolons': {
+      ytId: 'j1_sSwvWslU',
+      title: "Punctuation, Semicolons & Apostrophes \u2022 Masterclass Walkthrough",
+      series: 'Functional Skills English Level 2',
+      tutor: 'Tutor Subi',
+      poster: 'assets/img/posters/writing-perfecting-your-punctuation-poster.jpg'
+    },
+    'english-writing-formats': {
+      ytId: 'L2cV1Jg7Sgk',
+      title: "Writing Formats & PAF Method \u2022 Masterclass Walkthrough",
+      series: 'Functional Skills English Level 2',
+      tutor: 'Tutor Emma',
+      poster: 'assets/img/posters/writing-formats-poster.jpg'
+    },
+    'english-comparing-texts': {
+      ytId: '5BPKR3eNEzU',
+      title: "Comparing Texts & Perspectives \u2022 Masterclass Walkthrough",
+      series: 'Functional Skills English Level 2',
+      tutor: 'Tutor Sonya',
+      poster: 'assets/img/posters/comparing-texts-poster.jpg'
+    },
     // Topic Masterclasses (Level 2 Maths)
     'numbers-and-place-value': {
       ytId: 'kfK1AuSz2Cg',

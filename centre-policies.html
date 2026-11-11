@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-theme="maths" data-tint="cream">
+<head>
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
+  <link rel="alternate icon" href="favicon.ico">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Assessment Governance, Reasonable Adjustments &amp; Learner Policies | Master Functional Skills</title>
+  <meta name="description" content="Quality assurance, reasonable adjustments, appeals, malpractice, safeguarding, remote invigilation identity checks, and UK GDPR policies at Master Functional Skills.">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0b172d">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <link rel="apple-touch-icon" href="assets/img/favicon-192x192.png">
+  <script src="assets/js/mfs-pwa.js" defer></script>
+  <link rel="stylesheet" href="assets/css/mfs-theme.css?v=20261024c">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="assets/css/mfs-mobile.css?v=20261024c">
+  <link rel="canonical" href="https://masterfunctionalskills.co.uk/centre-policies.html">
+</head>
+<body>
+  <!-- TOP TRUST BAR WITH ACCESSIBILITY & CONTACT -->
+  <div class="mfs-top-bar">
+    <div class="mfs-container mfs-top-bar-inner">
+      <div class="top-trust-items">
+        <span class="top-trust-item"><i class="fa-solid fa-building-columns"></i> Open Awards, Pearson Edexcel &amp; City &amp; Guilds Aligned</span>
+      </div>
+      <div class="top-contacts">
+        <div class="mfs-access-bar">
+          <!-- DYSLEXIA BACKGROUND TINT PICKER -->
+          <div class="mfs-tint-dropdown-wrap">
+            <button type="button" id="tintToggle" class="btn-tint-toggle" onclick="toggleTintMenu(event)" title="Change dyslexia background tint">
+              <span class="tint-swatch-indicator" id="tintCurrentSwatch"></span>
+              <span id="tintLabel">Cream Tint</span>
+              <i class="fa-solid fa-chevron-down" style="font-size:0.62rem; opacity:0.75; margin-left:2px;"></i>
+            </button>
+            <div id="tintMenu" class="tint-picker-menu">
+              <div class="tint-picker-title"><i class="fa-solid fa-glasses"></i> Dyslexia Reading Tint</div>
+              <button type="button" class="tint-option-btn active" data-tint="cream" onclick="setSiteTint('cream', event)">
+                <span class="swatch swatch-cream"></span>
+                <span class="tint-name">Cream <small class="tint-badge-def">Default</small></span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="peach" onclick="setSiteTint('peach', event)">
+                <span class="swatch swatch-peach"></span>
+                <span class="tint-name">Soft Peach</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="cool" onclick="setSiteTint('cool', event)">
+                <span class="swatch swatch-cool"></span>
+                <span class="tint-name">Cool Mist</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="sage" onclick="setSiteTint('sage', event)">
+                <span class="swatch swatch-sage"></span>
+                <span class="tint-name">Soft Sage</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <div class="tint-divider"></div>
+              <button type="button" class="tint-option-btn" data-tint="none" onclick="setSiteTint('none', event)">
+                <span class="swatch swatch-none"></span>
+                <span class="tint-name">No Tint (White)</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+            </div>
+          </div>
+          <button id="dyslexiaToggle" class="btn-dyslexia-toggle" onclick="toggleDyslexiaMode()" title="Toggle Dyslexia High-Readability Mode">
+            <i class="fa-solid fa-universal-access"></i> Dyslexia
+          </button>
+          <button id="themeToggle" class="mfs-theme-pill" onclick="toggleTheme()" title="Switch Palette: Sapphire vs Emerald">
+            <i class="fa-solid fa-palette"></i> <span id="themeLabel">Sapphire</span>
+          </button>
+        </div>
+        <a href="contact-us.html" class="top-contact-link"><i class="fa-solid fa-envelope"></i> <strong>Contact Us</strong></a>
+      </div>
+    </div>
+  </div>  <!-- MAIN NAVIGATION -->
+  <header class="mfs-navbar">
+    <div class="revision-page-wrapper mfs-navbar-inner">
+      <a href="index.html" class="mfs-brand">
+        <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div class="mfs-brand-text">
+          <div class="mfs-brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
+          <div class="mfs-brand-subtitle">Delivering Skills • Achieving Goals</div>
+        </div>
+      </a>
+
+      <nav class="mfs-nav-wrapper">
+        <ul class="mfs-nav-menu">
+          <!-- 1. SUBJECTS (VISUAL MEGA-MENU) -->
+          <li class="mfs-nav-item">
+            <a href="revise.html" class="mfs-nav-link">
+              <i class="fa-solid fa-book-open-reader" style="color:#0284c7; margin-right:5px;"></i> Subjects <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-revision-hub">
+              <div class="mfs-revision-grid">
+                <!-- Maths Column -->
+                <div class="mfs-revision-col mfs-revision-col-maths">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-calculator"></i> Maths Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="functional-skills-maths-level-2.html" class="mfs-dropdown-item">Maths Level 2</a>
+                    <a href="functional-skills-maths-level-1.html" class="mfs-dropdown-item">Maths Level 1</a>
+                    <a href="entry-level-3-maths.html" class="mfs-dropdown-item">Entry Level 3 Maths</a>
+                  </div>
+                </div>
+                <!-- English Column -->
+                <div class="mfs-revision-col mfs-revision-col-english">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-pen-nib"></i> English Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="functional-skills-english-level-2.html" class="mfs-dropdown-item">English Level 2</a>
+                    <a href="functional-skills-english-level-1.html" class="mfs-dropdown-item">English Level 1</a>
+                  </div>
+                </div>
+                <!-- Digital Skills Column -->
+                <div class="mfs-revision-col mfs-revision-col-digital">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-laptop-code"></i> Digital Skills</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="digital-functional-skills-level-1.html" class="mfs-dropdown-item"><i class="fa-solid fa-award" style="font-size:0.75rem; margin-right:5px; color:#0284c7;"></i> Digital Skills Level 1</a>
+                    <a href="digital-functional-skills-entry-3.html" class="mfs-dropdown-item"><i class="fa-solid fa-seedling" style="font-size:0.75rem; margin-right:5px; color:#059669;"></i> Digital Skills Entry 3</a>
+                    <a href="digital-functional-skills-past-papers.html" class="mfs-dropdown-item"><i class="fa-solid fa-file-zipper" style="font-size:0.75rem; margin-right:5px; color:#d97706;"></i> Past Papers &amp; Data Files</a>
+                    <a href="digital-functional-skills-mock-exam.html" class="mfs-dropdown-item"><i class="fa-solid fa-desktop" style="font-size:0.75rem; margin-right:5px; color:#7c3aed;"></i> Online Mock Simulator</a>
+                    <a href="digital-skills/index.html" class="mfs-dropdown-item"><i class="fa-solid fa-layer-group" style="font-size:0.75rem; margin-right:5px; color:#475569;"></i> Digital Gateway Hub</a>
+                  </div>
+                </div>
+              </div>
+              <!-- Course & Subject Selector Cross-link Footer inside dropdown -->
+              <div class="mfs-revision-dropdown-footer" style="margin-top:12px; padding-top:10px; border-top:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center; font-size:0.82rem;">
+                <a href="revise.html" style="font-weight:700; color:var(--accent); text-decoration:none;"><i class="fa-solid fa-layer-group" style="margin-right:4px;"></i> View All Subjects &amp; Levels &rarr;</a>
+                <a href="courses.html" style="font-weight:700; color:#059669; text-decoration:none;"><i class="fa-solid fa-graduation-cap" style="margin-right:4px;"></i> Accredited Online Courses &rarr;</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- 2. ONLINE COURSES -->
+          <li class="mfs-nav-item">
+            <a href="courses.html" class="mfs-nav-link">
+              <i class="fa-solid fa-graduation-cap" style="color:#0284c7; margin-right:5px;"></i> Online Courses
+            </a>
+          </li>
+
+          <!-- 3. PAST PAPERS (DIRECT ACCESS) -->
+          <li class="mfs-nav-item">
+            <a href="functional-skills-past-papers.html" class="mfs-nav-link">
+              <i class="fa-regular fa-file-lines" style="color:#0284c7; margin-right:5px;"></i> Past Papers
+            </a>
+          </li>
+
+          <!-- 4. WORKSHEETS DIRECTORY (CORBETT STYLE DUAL ENGINE) -->
+          <li class="mfs-nav-item">
+            <a href="worksheets.html" class="mfs-nav-link">
+              <i class="fa-solid fa-layer-group" style="color:#0284c7; margin-right:5px;"></i> Worksheets
+            </a>
+          </li>
+
+          <!-- 5. FREE TOOLS (COMPACT DROPDOWN) -->
+          <li class="mfs-nav-item">
+            <a href="tools.html" class="mfs-nav-link">
+              <i class="fa-solid fa-screwdriver-wrench" style="color:#0284c7; margin-right:5px;"></i> Free Tools <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-compact">
+              <a href="tools.html" class="mfs-dropdown-item" style="font-weight:700; color:var(--accent);"><i class="fa-solid fa-layer-group" style="font-size:0.85rem; margin-right:6px;"></i> All Free Tools &amp; Simulators &rarr;</a>
+              <div class="mfs-dropdown-divider" style="margin:4px 0; border-top:1px solid #e2e8f0;"></div>
+              <a href="pass-mark-calculator.html" class="mfs-dropdown-item"><i class="fa-solid fa-calculator" style="color:var(--accent); font-size:0.85rem; margin-right:6px;"></i> Pass Mark Calculator</a>
+              <a href="diagnostic-test.html" class="mfs-dropdown-item"><i class="fa-solid fa-chart-pie" style="color:#059669; font-size:0.85rem; margin-right:6px;"></i> Diagnostic Skill Checker</a>
+              <a href="functional-skills-nets.html" class="mfs-dropdown-item"><i class="fa-solid fa-cube" style="color:#0284c7; font-size:0.85rem; margin-right:6px;"></i> 3D Net Folding Tool</a>
+              <a href="video-solution.html" class="mfs-dropdown-item"><i class="fa-brands fa-youtube" style="color:#ef4444; font-size:0.85rem; margin-right:6px;"></i> Masterclass Station</a>
+            </div>
+          </li>
+
+          <!-- 6. REVISION CARDS -->
+          <li class="mfs-nav-item">
+            <a href="revision-cards.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-layer-group" style="color:#d97706; margin-right:5px;"></i> Revision Cards
+            </a>
+          </li>
+
+          <!-- 7. SHOP -->
+          <li class="mfs-nav-item">
+            <a href="shop.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-basket-shopping" style="color:#d97706; margin-right:5px;"></i> Shop
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- 8. BOOK EXAM ACTION BUTTON -->
+      <div class="mfs-nav-actions">
+        <a href="exams.html" class="btn-nav-exam">
+          <i class="fa-solid fa-calendar-check"></i> Book Exam
+        </a>
+      </div>
+
+      <!-- MOBILE CONTROLS (TINT + MENU PILL) -->
+      <div class="mfs-mobile-controls" id="mfsMobileControls">
+        <button type="button" class="btn-mobile-tint-toggle" id="mfsMobileTintBtn" title="Change Reading Tint" aria-label="Reading Tint">
+          <i class="fa-solid fa-glasses"></i>
+          <span class="mobile-tint-swatch" id="mfsMobileTintSwatch"></span>
+        </button>
+        <button type="button" class="mfs-menu-pill" id="mfsMobileToggleBtn" title="Open Navigation Menu" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+          <span>Menu</span>
+        </button>
+      </div>
+    </div>
+    <!-- MOBILE NAVIGATION ENGINE -->
+    <script src="assets/js/mfs-mobile.js?v=20261024c" defer></script>
+  </header>
+
+  <section style="background:linear-gradient(135deg, #070d1e 0%, #0f172a 100%); color:#ffffff; padding:52px 0 44px; border-bottom:3px solid #0284c7;">
+    <div class="mfs-container">
+      <span style="display:inline-flex; align-items:center; gap:8px; background:rgba(56,189,248,0.16); border:1px solid rgba(56,189,248,0.45); color:#38bdf8; font-size:0.8rem; font-weight:800; padding:6px 14px; border-radius:999px; text-transform:uppercase; margin-bottom:14px;">
+        <i class="fa-solid fa-file-shield"></i> Quality Assurance &amp; Regulatory Governance
+      </span>
+      <h1 style="font-size:clamp(1.85rem, 3.4vw, 2.6rem); font-weight:800; color:#ffffff; margin:0 0 12px;">Assessment Governance &amp; <span style="color:#38bdf8;">Learner Policies</span></h1>
+      <p style="color:#cbd5e1; font-size:1.04rem; max-width:780px; line-height:1.65; margin:0;">Transparent, learner-centred policies aligned with Ofqual General Conditions of Recognition to ensure fair access, robust exam security, neurodiverse accessibility, and clear learner rights.</p>
+    </div>
+  </section>
+
+  <main class="mfs-container" style="padding:42px 16px 64px;">
+    <div style="display:flex; flex-direction:column; gap:18px;">
+      <div style="background:var(--bg-card, #ffffff); border:1.5px solid var(--border, #e2e8f0); border-left:5px solid #0284c7; border-radius:14px; padding:22px 24px; box-shadow:0 4px 16px rgba(15,23,42,0.04);">
+        <h3 style="margin:0 0 8px; color:var(--navy-dark, #0f172a); font-size:1.12rem; font-weight:800; display:flex; align-items:center; gap:10px;">
+          <i class="fa-solid fa-universal-access" style="color:#0284c7;"></i> 1. Reasonable Adjustments &amp; Special Consideration Policy
+        </h3>
+        <p style="margin:0; color:#475569; font-size:0.94rem; line-height:1.65;">Master Functional Skills is built from the ground up for neurodiverse and dyslexic learners. Candidates with documented learning differences, medical conditions, or disabilities may apply for reasonable adjustments (including up to 25% extra time, supervised rest breaks, onscreen tinted overlays, reader/scribe support where permitted by the specification, and assistive technology) at least 15 working days prior to an assessment sitting.</p>
+      </div>
+      <div style="background:var(--bg-card, #ffffff); border:1.5px solid var(--border, #e2e8f0); border-left:5px solid #7c3aed; border-radius:14px; padding:22px 24px; box-shadow:0 4px 16px rgba(15,23,42,0.04);">
+        <h3 style="margin:0 0 8px; color:var(--navy-dark, #0f172a); font-size:1.12rem; font-weight:800; display:flex; align-items:center; gap:10px;">
+          <i class="fa-solid fa-scale-balanced" style="color:#7c3aed;"></i> 2. Appeals &amp; Enquiries About Results Policy
+        </h3>
+        <p style="margin:0; color:#475569; font-size:0.94rem; line-height:1.65;">Every learner has the right to a transparent, fair assessment decision. If a candidate believes an assessment outcome or mark administration does not reflect their performance, they may request a Stage 1 Internal Review within 10 working days of results notification, followed where applicable by a formal Awarding Organisation Enquiry About Results or Appeal in accordance with Ofqual General Conditions of Recognition.</p>
+      </div>
+      <div style="background:var(--bg-card, #ffffff); border:1.5px solid var(--border, #e2e8f0); border-left:5px solid #dc2626; border-radius:14px; padding:22px 24px; box-shadow:0 4px 16px rgba(15,23,42,0.04);">
+        <h3 style="margin:0 0 8px; color:var(--navy-dark, #0f172a); font-size:1.12rem; font-weight:800; display:flex; align-items:center; gap:10px;">
+          <i class="fa-solid fa-shield-halved" style="color:#dc2626;"></i> 3. Malpractice, Maladministration &amp; AI Integrity Policy
+        </h3>
+        <p style="margin:0; color:#475569; font-size:0.94rem; line-height:1.65;">To protect the integrity and national recognition of Functional Skills certificates, all assessments are conducted under strict identity and invigilation controls. Prohibited conduct — including unauthorised mobile devices, screen-sharing, third-party assistance, impersonation, or use of generative AI tools during controlled assessments — is investigated promptly and reported to the relevant Awarding Organisation in line with JCQ and Ofqual regulations.</p>
+      </div>
+      <div style="background:var(--bg-card, #ffffff); border:1.5px solid var(--border, #e2e8f0); border-left:5px solid #059669; border-radius:14px; padding:22px 24px; box-shadow:0 4px 16px rgba(15,23,42,0.04);">
+        <h3 style="margin:0 0 8px; color:var(--navy-dark, #0f172a); font-size:1.12rem; font-weight:800; display:flex; align-items:center; gap:10px;">
+          <i class="fa-solid fa-id-card" style="color:#059669;"></i> 4. Candidate Identity Verification &amp; Remote Invigilation Protocol
+        </h3>
+        <p style="margin:0; color:#475569; font-size:0.94rem; line-height:1.65;">Prior to any online remote-invigilated assessment, candidates must present valid government-issued photographic identification (Passport, UK Driving Licence, or Biometric Residence Permit), complete a 360-degree room and desk environment check via webcam/smartphone, and ensure a quiet, private room with stable broadband connectivity.</p>
+      </div>
+      <div style="background:var(--bg-card, #ffffff); border:1.5px solid var(--border, #e2e8f0); border-left:5px solid #d97706; border-radius:14px; padding:22px 24px; box-shadow:0 4px 16px rgba(15,23,42,0.04);">
+        <h3 style="margin:0 0 8px; color:var(--navy-dark, #0f172a); font-size:1.12rem; font-weight:800; display:flex; align-items:center; gap:10px;">
+          <i class="fa-solid fa-hands-holding-child" style="color:#d97706;"></i> 5. Safeguarding, Prevent &amp; Learner Welfare Policy
+        </h3>
+        <p style="margin:0; color:#475569; font-size:0.94rem; line-height:1.65;">We are committed to providing a safe, respectful, and supportive online learning environment for adult learners, apprentices, and young people aged 16+. All tutors and assessment staff hold enhanced DBS clearance, complete annual Safeguarding and Prevent Duty training, and maintain clear escalation channels for learner wellbeing concerns.</p>
+      </div>
+      <div style="background:var(--bg-card, #ffffff); border:1.5px solid var(--border, #e2e8f0); border-left:5px solid #0369a1; border-radius:14px; padding:22px 24px; box-shadow:0 4px 16px rgba(15,23,42,0.04);">
+        <h3 style="margin:0 0 8px; color:var(--navy-dark, #0f172a); font-size:1.12rem; font-weight:800; display:flex; align-items:center; gap:10px;">
+          <i class="fa-solid fa-people-group" style="color:#0369a1;"></i> 6. Equality, Diversity &amp; Inclusion (EDI) Policy
+        </h3>
+        <p style="margin:0; color:#475569; font-size:0.94rem; line-height:1.65;">Master Functional Skills promotes equal access to education and assessment regardless of age, disability, gender reassignment, marriage and civil partnership, pregnancy and maternity, race, religion or belief, sex, or sexual orientation. All learning resources use plain, accessible British English and built-in dyslexia readability controls.</p>
+      </div>
+      <div style="background:var(--bg-card, #ffffff); border:1.5px solid var(--border, #e2e8f0); border-left:5px solid #0f766e; border-radius:14px; padding:22px 24px; box-shadow:0 4px 16px rgba(15,23,42,0.04);">
+        <h3 style="margin:0 0 8px; color:var(--navy-dark, #0f172a); font-size:1.12rem; font-weight:800; display:flex; align-items:center; gap:10px;">
+          <i class="fa-solid fa-comments" style="color:#0f766e;"></i> 7. Learner Complaints &amp; Service Standards Procedure
+        </h3>
+        <p style="margin:0; color:#475569; font-size:0.94rem; line-height:1.65;">We aim to resolve any query regarding tuition, digital resources, or exam administration informally within 2 working days. Formal written complaints submitted via our Contact page are acknowledged within 3 working days and investigated by a senior quality lead with a full written outcome provided within 15 working days.</p>
+      </div>
+      <div style="background:var(--bg-card, #ffffff); border:1.5px solid var(--border, #e2e8f0); border-left:5px solid #334155; border-radius:14px; padding:22px 24px; box-shadow:0 4px 16px rgba(15,23,42,0.04);">
+        <h3 style="margin:0 0 8px; color:var(--navy-dark, #0f172a); font-size:1.12rem; font-weight:800; display:flex; align-items:center; gap:10px;">
+          <i class="fa-solid fa-lock" style="color:#334155;"></i> 8. UK GDPR, Data Protection &amp; Assessment Record Retention
+        </h3>
+        <p style="margin:0; color:#475569; font-size:0.94rem; line-height:1.65;">Learner personal data, diagnostic outcomes, and assessment recordings are processed strictly in accordance with the UK General Data Protection Regulation (UK GDPR) and Data Protection Act 2018. Assessment registration records and invigilation evidence are encrypted and retained only for the statutory regulatory audit period required by Ofqual and the Awarding Organisation.</p>
+      </div>
+    </div>
+
+    <div style="margin-top:34px; background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:14px; padding:22px 24px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:16px;">
+      <div>
+        <strong style="color:#0f172a; font-size:1.05rem;">Need a full PDF copy of any policy or want to discuss Reasonable Adjustments?</strong>
+        <p style="margin:4px 0 0; color:#475569; font-size:0.9rem;">Contact our Quality &amp; Learner Support Lead directly before registering for your assessment.</p>
+      </div>
+      <a href="contact-us.html" style="background:#0284c7; color:#ffffff; padding:12px 20px; border-radius:10px; font-weight:800; text-decoration:none;"><i class="fa-solid fa-envelope"></i> Contact Quality Lead</a>
+    </div>
+  </main>
+
+  <footer class="mfs-footer" id="site-footer">
+    <div class="mfs-container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="mfs-brand" style="margin-bottom:16px;">
+            <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="mfs-brand-text">
+              <div class="mfs-brand-title" style="color:#ffffff;">MASTER<span>FUNCTIONALSKILLS</span></div>
+              <div class="mfs-brand-subtitle" style="color:#94a3b8;">Delivering Skills • Achieving Goals</div>
+            </div>
+          </div>
+          <p style="font-size:0.88rem; line-height:1.6; margin-bottom:16px;">
+            The UK's dedicated Functional Skills revision specialist. Providing realistic mock exams, step-by-step revision flashcards, diagnostic assessments, and 1-to-1 specialist tuition for Pearson Edexcel, City &amp; Guilds, and all major exam boards.
+          </p>
+          <div style="font-size:0.85rem; color:#cbd5e1;">
+            <p><a href="https://wa.me/447564525425" target="_blank" rel="noopener" style="color:#cbd5e1; text-decoration:none;"><i class="fa-brands fa-whatsapp" style="color:var(--accent); margin-right:8px;"></i> WhatsApp: +44 (0)7564 525425</a></p>
+            <p style="margin-top:6px;"><a href="contact-us.html" style="color:#cbd5e1; text-decoration:none;"><i class="fa-solid fa-envelope" style="color:var(--accent); margin-right:8px;"></i> Contact Tutor Team</a></p>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Maths Revision</h4>
+          <ul class="footer-links">
+            <li><a href="functional-skills-maths-level-2.html">Maths Level 2 Revision</a></li>
+            <li><a href="functional-skills-maths-level-1.html">Maths Level 1 Revision</a></li>
+            <li><a href="entry-level-3-maths.html">Entry Level 3 Maths</a></li>
+            <li><a href="pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="functional-skills-past-papers.html">Free Maths Past Papers</a></li>
+            <li><a href="exam-maths-l2.html">Book Level 2 Maths Exam</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>English &amp; Digital</h4>
+          <ul class="footer-links">
+            <li><a href="functional-skills-english-level-2.html">English Level 2 Revision</a></li>
+            <li><a href="functional-skills-english-level-1.html">English Level 1 Revision</a></li>
+            <li><a href="digital-functional-skills-level-1.html">Digital Skills Level 1</a></li>
+            <li><a href="digital-functional-skills-entry-3.html">Digital Skills Entry 3</a></li>
+            <li><a href="digital-functional-skills-past-papers.html">DFS Past Papers &amp; Data Files</a></li>
+            <li><a href="digital-functional-skills-mock-exam.html">DFS Online Mock Simulator</a></li>
+            <li><a href="digital-skills/index.html">Digital Gateway Hub</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Student Support &amp; Tools</h4>
+          <ul class="footer-links">
+            <li><a href="tools.html" style="color:var(--accent); font-weight:700;"><i class="fa-solid fa-screwdriver-wrench" style="margin-right:6px;"></i>All Interactive Tools Hub</a></li>
+            <li><a href="pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="diagnostic-test.html">Diagnostic Skill Checker</a></li>
+            <li><a href="functional-skills-nets.html">3D Net Folding Tool</a></li>
+            <li><a href="digital-functional-skills-mock-exam.html">Pearson DFS Simulator</a></li>
+            <li><a href="revision-cards.html">Revision Cards &amp; Flashcards</a></li>
+            <li><a href="shop.html">Revision Books &amp; Study Packs</a></li>
+            <li><a href="tutors.html">1-to-1 Specialist Tuition</a></li>
+            <li><a href="exams.html">Book Official Online Exam</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Master Functional Skills. All rights reserved. Registered in England &amp; Wales. Ofqual Regulated Qualification Standards.</div>
+        <div style="display:flex; gap:16px; flex-wrap:wrap;">
+          <a href="index.html">Home</a>
+          <a href="tools.html" style="color:var(--accent); font-weight:700;">Tools</a>
+          <a href="functional-skills-past-papers.html">Past Papers</a>
+          <a href="revision-cards.html">Revision Cards</a>
+          <a href="shop.html">Study Shop</a>
+          <a href="tutors.html">Tutors</a>
+          <a href="contact-us.html">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/mfs-tint.js"></script>
+</body>
+</html>
+

@@ -83,12 +83,12 @@ MATHS_L2_MOCK_SOLUTIONS = {
         ("Mock 1 &bull; Section B (Calculator Permitted &bull; Part 1)",
          "<b>Q6. Staffing Payroll:</b> 9 operatives work 8.0 hrs at £11.44 = 9 × 8 × 11.44 = £823.68. 2 supervisors work 9 hrs at £16.50 = 2 × 9 × 16.50 = £297.00. Total wages = £823.68 + £297.00 = <b>£1,120.68</b> [P1 for operative subtotal, P1 for supervisor subtotal, A1 for £1,120.68].<br>"
          "<b>Q7. Flooring Area &amp; Cost:</b> Composite room dimensions 8.5 m × 6.2 m = 52.7 m², minus recess 2.0 m × 1.5 m = 3.0 m². Net area = 49.7 m². Flooring pack covers 2.2 m². Packs needed = 49.7 ÷ 2.2 = 22.59 → 23 packs. Cost = 23 × £28.50 = <b>£655.50</b> [P1 for net area, P1 for rounding up packs, A1 for £655.50].<br>"
-         "<b>Q8. Grouped Mean Delivery Time:</b> Midpoints: 5-9 min (7 × 12 = 84), 10-14 min (12 × 25 = 300), 15-19 min (17 × 18 = 306), 20-24 min (22 × 5 = 110). Total Total  fx = 800. Total frequency N = 60. Estimated mean = 800 ÷ 60 = <b>13.33 minutes (or 13 min  20 s) [M1 for midpoints, M1 for Total  fx, A1 for 13.3 min].<br>"
+         "<b>Q8. Grouped Mean Delivery Time:</b> Midpoints: 5-9 min (7 × 12 = 84), 10-14 min (12 × 25 = 300), 15-19 min (17 × 18 = 306), 20-24 min (22 × 5 = 110). Total fx = 800. Total frequency N = 60. Estimated mean = 800 ÷ 60 = <b>13.33 minutes (or 13 min 20 s)</b> [M1 for midpoints, M1 for Total fx, A1 for 13.3 min].<br>"
          "<b>Q9. Fuel Economy &amp; Journey Cost:</b> Distance = 184 miles. Consumption = 42 mpg. Gallons = 184 ÷ 42 = 4.381 gallons. Litres = 4.381 × 4.55 = 19.93 litres. Fuel cost at £1.48/litre = 19.93 × 1.48 = <b>£29.50</b> [P1 for gallon conversion, P1 for litre conversion, A1 for £29.50].<br>"
          "<b>Q10. Storage Tank Volume:</b> Cylinder radius r = 1.2 m, height h = 2.8 m. Volume V = 3.142 r² h = 3.142 × (1.2)² × 2.8 = 3.142 × 1.44 × 2.8 = 12.67 m³. Capacity in litres = 12.67 × 1,000 = <b>12,670 litres</b> [M1 for formula, P1 for m³ to litres, A1 for 12,670 litres]."),
         ("Mock 1 &bull; Section B (Calculator Permitted &bull; Part 2)",
          "<b>Q11. Operating Margin:</b> Revenue = £19,200. Costs = £13,300. Profit = 19,200 - 13,300 = £5,900. Percentage profit of revenue = (5,900 ÷ 19,200) × 100 = <b>30.7%</b> [M1 for profit calculation, P1 for dividing by revenue, A1 for 30.7% rounded to 1 d.p.].<br>"
-         "<b>Q12. Independent Quality Probability:</b> Component A defect rate = 1/25 (pass = 24/25). Component B defect rate = 1/40 (pass = 39/40). Neither defective = 24/25 × 39/40 = 936/1000 = <b>0.936 (or 93.6%) [P1 for pass probabilities, M1 for multiplying independent fractions, A1 for 0.936].<br>"
+         "<b>Q12. Independent Quality Probability:</b> Component A defect rate = 1/25 (pass = 24/25). Component B defect rate = 1/40 (pass = 39/40). Neither defective = 24/25 × 39/40 = 936/1000 = <b>0.936 (or 93.6%)</b> [P1 for pass probabilities, M1 for multiplying independent fractions, A1 for 0.936].<br>"
          "<b>Q13. Travel Duration &amp; Arrival:</b> Distance = 125 miles. Speed = 44 mph. Time = 125 ÷ 44 = 2.841 hours. 0.841 × 60 = 50.46 ≈ 50 mins. Travel time = 2 hrs 50 mins. Departure = 13:45. Arrival = 13:45 + 2h  50m = <b>16:35</b> [P1 for decimal hours, P1 for converting to minutes, A1 for 16:35].<br>"
          "<b>Q14. Loading Ramp Hypotenuse:</b> Vertical height a = 1.3 m, horizontal run b = 5.0 m. c² = a² + b² = 1.3² + 5.0² = 1.69 + 25.00 = 26.69. Sloping length c = √(26.69) = <b>5.17 m</b> [M1 for Pythagoras substitution, A1 for 5.17 m].<br>"
          "<b>Q15. Commercial Supplier Comparison:</b> Supplier A: Material £470 with 12% discount = 470 × 0.88 = £413.60. Free delivery. Total A = £413.60. Supplier B: Material £500 with 25% discount = 500 × 0.75 = £375.00 plus £15 delivery = £390.00. Comparison: <b>Supplier B is cheaper by £23.60</b> (413.60 - 390.00 = £23.60) [P1 for Supplier A net, P1 for Supplier B net with delivery, A1 for Supplier B selection and £23.60 saving].")
@@ -103,9 +103,9 @@ MATHS_L2_MOCK_SOLUTIONS = {
         ("Mock 2 &bull; Section B (Calculator Permitted &bull; Part 1)",
          "<b>Q6. Fleet Driver Wages:</b> 10 drivers work 7.5 hrs at £11.44 = 10 × 7.5 × 11.44 = £858.00. 2 controllers work 8 hrs at £16.50 = 2 × 8 × 16.50 = £264.00. Total staffing = £858.00 + £264.00 = <b>£1,122.00</b> [P1 for subtotal, A1 for £1,122.00].<br>"
          "<b>Q7. Tarmac Resurfacing Area:</b> Base 12.4 m × 8.6 m = 106.64 m². Minus drainage island 3.0 m × 2.0 m = 6.0 m². Net tarmac = 100.64 m². Bag covers 1.8 m². Bags = 100.64 ÷ 1.8 = 55.91 → 56 bags. Total cost = 56 × £19.50 = <b>£1,092.00</b> [P1 for net area, P1 for rounding up, A1 for £1,092.00].<br>"
-         "<b>Q8. Grouped Maintenance Times:</b> Midpoints: 10-19 min (14.5 × 8 = 116), 20-29 min (24.5 × 16 = 392), 30-39 min (34.5 × 22 = 759), 40-49 min (44.5 × 4 = 178). Total Total  fx = 1,445. N = 50. Estimated mean = 1,445 ÷ 50 = <b>28.9 minutes [M1 for midpoints, A1 for 28.9 mins].<br>"
+         "<b>Q8. Grouped Maintenance Times:</b> Midpoints: 10-19 min (14.5 × 8 = 116), 20-29 min (24.5 × 16 = 392), 30-39 min (34.5 × 22 = 759), 40-49 min (44.5 × 4 = 178). Total fx = 1,445. N = 50. Estimated mean = 1,445 ÷ 50 = <b>28.9 minutes</b> [M1 for midpoints, A1 for 28.9 mins].<br>"
          "<b>Q9. Van Route Fuel:</b> 210 miles at 38 mpg = 210 ÷ 38 = 5.526 gallons. Litres = 5.526 × 4.55 = 25.14 litres. At £1.52/litre = 25.14 × 1.52 = <b>£38.21</b> [P1 for gallon conversion, A1 for £38.21].<br>"
-         "<b>Q10. Oil Drum Capacity:</b> r = 0.45 m, h = 0.95 m. V = 3.142 r² h = 3.142 × (0.45)² × 0.95 = 3.142 × 0.2025 × 0.95 = 0.6044 m³. Litres = 0.6044 × 1,000 = <b>604.4 litres [M1 for cylinder formula, A1 for 604.4 litres]."),
+         "<b>Q10. Oil Drum Capacity:</b> r = 0.45 m, h = 0.95 m. V = 3.142 r² h = 3.142 × (0.45)² × 0.95 = 3.142 × 0.2025 × 0.95 = 0.6044 m³. Litres = 0.6044 × 1,000 = <b>604.4 litres</b> [M1 for cylinder formula, A1 for 604.4 litres]."),
         ("Mock 2 &bull; Section B (Calculator Permitted &bull; Part 2)",
          "<b>Q11. Operating Margin:</b> Revenue = £20,400. Operating costs = £14,100. Operating profit = 20,400 - 14,100 = £6,300. Profit margin % = (6,300 ÷ 20,400) × 100 = <b>30.9%</b> [M1 for profit, P1 for division, A1 for 30.9%].<br>"
          "<b>Q12. Delivery Tracking Reliability:</b> GPS Sensor 1 reliability = 98% (0.98), Sensor 2 reliability = 95% (0.95). Both functional = 0.98 × 0.95 = <b>0.931</b> (or 93.1%) [P1 for independent product, A1 for 0.931].<br>"
@@ -126,7 +126,7 @@ MATHS_L2_MOCK_SOLUTIONS = {
          "&bull; Q7: Commercial floor tiles = 145 tiles required at £4.20 = <b>£609.00</b>.<br>"
          "&bull; Q8: Estimated Mean from grouped data = <b>34.2 units</b>.<br>"
          "&bull; Q9: Fuel cost for 240 miles at 45 mpg and £1.45/litre = <b>£35.15</b>.<br>"
-         "&bull; Q10: Cylindrical storage hopper volume = <b>18.85 m³ (18,850 litres).<br>"
+         "&bull; Q10: Cylindrical storage hopper volume = <b>18.85 m³ (18,850 litres)</b>.<br>"
          "&bull; Q11: Profit margin % on £21,600 revenue = <b>31.0%</b>.<br>"
          "&bull; Q12: Independent dual probability = <b>0.941</b>.<br>"
          "&bull; Q13: Delivery route arrival time = <b>14:22</b>.<br>"
@@ -166,9 +166,9 @@ MATHS_L2_MOCK_SOLUTIONS = {
          "&bull; Q7: Antimicrobial flooring installation: Net 68.4 m², cost = <b>£1,231.20</b>.<br>"
          "&bull; Q8: Patient triage wait time estimated mean = <b>24.6 minutes</b>.<br>"
          "&bull; Q9: Medical courier transit fuel: 165 miles at 52 mpg = <b>£21.90</b>.<br>"
-         "&bull; Q10: Oxygen cylinder capacity at pressure: V = <b>3.45 m³ (3,450 litres).<br>"
+         "&bull; Q10: Oxygen cylinder capacity at pressure: V = <b>3.45 m³ (3,450 litres)</b>.<br>"
          "&bull; Q11: Clinical procurement operating margin = <b>32.1%</b>.<br>"
-         "&bull; Q12: Dual diagnostic test accuracy: 0.99 × 0.97 = <b>0.9603 (96.03%).<br>"
+         "&bull; Q12: Dual diagnostic test accuracy: 0.99 × 0.97 = <b>0.9603 (96.03%)</b>.<br>"
          "&bull; Q13: Blood courier arrival time: 85 miles at 50 mph = 1 hr 42 mins. Arrival = <b>11:12</b>.<br>"
          "&bull; Q14: Access ramp incline length: √(0.8² + 9.6²) = <b>9.63 m</b>.<br>"
          "&bull; Q15: PPE Bulk Contract: <b>Supplier B provides net cost saving of £82.50</b>.")
@@ -186,7 +186,7 @@ MATHS_L2_MOCK_SOLUTIONS = {
          "&bull; Q7: Non-slip kitchen floor tiling: 54.2 m², cost = <b>£975.60</b>.<br>"
          "&bull; Q8: Estimated mean food preparation service time = <b>16.8 minutes</b>.<br>"
          "&bull; Q9: Refrigerated food delivery fuel: 195 miles at 34 mpg = <b>£38.92</b>.<br>"
-         "&bull; Q10: Commercial water boiler tank volume: V = <b>0.85 m³ (850 litres).<br>"
+         "&bull; Q10: Commercial water boiler tank volume: V = <b>0.85 m³ (850 litres)</b>.<br>"
          "&bull; Q11: Food &amp; Beverage gross profit margin = <b>68.4%</b>.<br>"
          "&bull; Q12: Temperature control compliance probability = <b>0.975</b>.<br>"
          "&bull; Q13: Event catering transport arrival time: 105 miles at 45 mph = 2 hrs 20 mins. Arrival = <b>16:05</b>.<br>"
@@ -717,14 +717,14 @@ BKSB_STAGE2_SOLUTIONS = {
     ],
     2: [
         ("Mode 2 Solutions: Time Conversion &amp; Speed Calculations",
-         "<b>Drill 2.1:</b> Decimal hours: 2 hrs 45 mins = 2 + 45/60 = <b>2.75 hours (never 2.45).<br>"
+         "<b>Drill 2.1:</b> Decimal hours: 2 hrs 45 mins = 2 + 45/60 = <b>2.75 hours (never 2.45)</b>.<br>"
          "<b>Drill 2.2:</b> Distance: 48 mph for 3 hrs 20 mins. 20 mins = 20/60 = 0.333 hrs. Time = 3.333 hrs. Distance = 48 × 3.333 = <b>160 miles</b>.<br>"
          "<b>Drill 2.3:</b> Average speed: 126 miles in 2 hrs 15 mins. Time = 2.25 hrs. Speed = 126 ÷ 2.25 = <b>56 mph</b>.")
     ],
     3: [
         ("Mode 3 Solutions: Circle Calculations &amp; Precision",
          "<b>Drill 3.1:</b> Area of circular rug: Diameter d = 2.4 m → Radius r = 1.2 m. Area = 3.142 × (1.2)² = 3.142 × 1.44 = <b>4.52 m²</b>.<br>"
-         "<b>Drill 3.2:</b> Circumference of wheel: r = 35 cm → d = 70 cm. C = 3.142 × 70 = <b>219.9 cm (or 2.20 m).<br>"
+         "<b>Drill 3.2:</b> Circumference of wheel: r = 35 cm → d = 70 cm. C = 3.142 × 70 = <b>219.9 cm (or 2.20 m)</b>.<br>"
          "<b>Drill 3.3:</b> Semi-circular perimeter: Diameter 14 m → Curved edge = (3.142 × 14) / 2 = 21.99 m. Total perimeter = 21.99 + 14 = <b>35.99 m</b>.")
     ],
     4: [
@@ -743,7 +743,7 @@ BKSB_STAGE2_SOLUTIONS = {
         ("Mode 6 Solutions: Density, Mass &amp; Volume",
          "<b>Drill 6.1:</b> Mass: Concrete volume 0.8 m³, density 2,400 kg/m³. Mass = 0.8 × 2,400 = <b>1,920 kg</b>.<br>"
          "<b>Drill 6.2:</b> Density: Metal block mass 540 g, dimensions 4 cm × 5 cm × 6 cm = 120 cm³. Density = 540 ÷ 120 = <b>4.5 g/cm³</b>.<br>"
-         "<b>Drill 6.3:</b> Volume: Liquid mass 850 g, density 0.85 g/cm³. Volume = 850 ÷ 0.85 = <b>1,000 cm³ (or 1 litre).")
+         "<b>Drill 6.3:</b> Volume: Liquid mass 850 g, density 0.85 g/cm³. Volume = 850 ÷ 0.85 = <b>1,000 cm³ (or 1 litre)</b>.")
     ],
     7: [
         ("Mode 7 Solutions: Ratio Sharing &amp; Unit Conversion",
@@ -765,14 +765,14 @@ BKSB_STAGE2_SOLUTIONS = {
     ],
     10: [
         ("Mode 10 Solutions: Probability &amp; Tree Diagrams",
-         "<b>Drill 10.1:</b> P(Head on coin AND 6 on dice) = 1/2 × 1/6 = <b>1/12 (or 0.0833).<br>"
+         "<b>Drill 10.1:</b> P(Head on coin AND 6 on dice) = 1/2 × 1/6 = <b>1/12 (or 0.0833)</b>.<br>"
          "<b>Drill 10.2:</b> Two components tested independently. Fault rates 0.05 and 0.02. Probability both functional = (1 - 0.05) × (1 - 0.02) = 0.95 × 0.98 = <b>0.931</b> (93.1%).<br>"
-         "<b>Drill 10.3:</b> Bag contains 4 red, 6 blue. Drawing 1 red then without replacement 1 blue = 4/10 × 6/9 = 24/90 = <b>4/15 (or 0.267).")
+         "<b>Drill 10.3:</b> Bag contains 4 red, 6 blue. Drawing 1 red then without replacement 1 blue = 4/10 × 6/9 = 24/90 = <b>4/15 (or 0.267)</b>.")
     ],
     11: [
         ("Mode 11 Solutions: Surface Area &amp; Prism Volume",
-         "<b>Drill 11.1:</b> Cylinder radius 0.5 m, height 2 m. Volume = 3.142 r² h = 3.142 × 0.25 × 2 = <b>1.57 m³ (1,570 litres).<br>"
-         "<b>Drill 11.2:</b> Curved surface area of cylinder: 23.142 r h = 2 × 3.142 × 0.5 × 2 = <b>6.28 m²</b>.<br>"
+         "<b>Drill 11.1:</b> Cylinder radius 0.5 m, height 2 m. Volume = 3.142 r² h = 3.142 × 0.25 × 2 = <b>1.57 m³ (1,570 litres)</b>.<br>"
+         "<b>Drill 11.2:</b> Curved surface area of cylinder: 2 × 3.142 r h = 2 × 3.142 × 0.5 × 2 = <b>6.28 m²</b>.<br>"
          "<b>Drill 11.3:</b> Triangular prism: Triangle base 4 cm, height 3 cm, prism length 10 cm. Volume = (1/2 × 4 × 3) × 10 = 6 × 10 = <b>60 cm³</b>.")
     ],
     12: [

@@ -1,11 +1,10 @@
-const CACHE_NAME = 'mfs-cache-v20261120-v6';
+const CACHE_NAME = 'mfs-cache-v20261120-v7';
 
 const RELATIVE_ASSETS = [
   '',
   'index.html',
   'courses.html',
   'worksheets.html',
-  'past-papers.html',
   'functional-skills-past-papers.html',
   'revision-cards.html',
   'shop.html',

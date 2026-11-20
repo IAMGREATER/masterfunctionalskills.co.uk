@@ -1183,16 +1183,18 @@ def render_cover_card_back_html(deck_meta, cards, is_quadrant=False):
         col1 = cards[:mid]
         col2 = cards[mid:]
         
-        row_font_size = "4.4pt" if len(cards) > 48 else ("4.7pt" if len(cards) > 40 else ("5.2pt" if len(cards) > 28 else "5.8pt"))
-        row_padding = "0.35px 1px" if len(cards) > 48 else ("0.5px 1px" if len(cards) > 40 else ("0.8px 2px" if len(cards) > 28 else "1.2px 2px"))
-        box_dim = "6.5px" if len(cards) > 40 else "7.5px"
+        row_font_size = "6.0pt" if len(cards) > 48 else ("6.2pt" if len(cards) > 40 else ("6.5pt" if len(cards) > 28 else "7.0pt"))
+        row_padding = "0.9px 2px" if len(cards) > 48 else ("1.0px 2px" if len(cards) > 40 else ("1.2px 2px" if len(cards) > 28 else "1.5px 3px"))
+        box_dim = "7.5px" if len(cards) > 48 else "8.5px"
+        show_code = len(cards) <= 36
 
         def render_col(col_cards):
             c_html = ""
             for c in col_cards:
+                code_span = f" <span style=\"color:#64748b;\">({c['dfe_code']})</span>" if show_code else ""
                 c_html += f"""
-            <div style="display:flex; justify-content:space-between; align-items:center; padding:{row_padding}; border-bottom:1px solid #f1f5f9; font-size:{row_font_size};">
-              <span style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:86%;"><strong>{c['number']}.</strong> {c['title']} <span style="color:#64748b;">({c['dfe_code']})</span></span>
+            <div style="display:flex; justify-content:space-between; align-items:center; padding:{row_padding}; border-bottom:1px solid #f1f5f9; font-size:{row_font_size}; line-height:1.18;">
+              <span style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:84%;"><strong>{c['number']}.</strong> {c['title']}{code_span}</span>
               <span style="display:flex; gap:2.5px; flex-shrink:0;">
                 <span style="display:inline-block; width:{box_dim}; height:{box_dim}; border:1px solid #94a3b8; border-radius:1.5px;"></span>
                 <span style="display:inline-block; width:{box_dim}; height:{box_dim}; border:1px solid #94a3b8; border-radius:1.5px;"></span>
@@ -1211,7 +1213,7 @@ def render_cover_card_back_html(deck_meta, cards, is_quadrant=False):
 
     inner_content = f"""
     <!-- HEADER -->
-    <div style="background:#0f172a; color:#ffffff; padding:1.8mm 4mm; display:flex; justify-content:space-between; align-items:center;">
+    <div style="background:#0f172a; color:#ffffff; padding:1.6mm 4mm; display:flex; justify-content:space-between; align-items:center;">
       <div style="font-size:7.8pt; font-weight:900; letter-spacing:0.3px;">
         📋 DECK CONTENTS &amp; REVISION CHECKLIST
       </div>
@@ -1221,23 +1223,18 @@ def render_cover_card_back_html(deck_meta, cards, is_quadrant=False):
     </div>
 
     <!-- INSTRUCTIONS -->
-    <div style="background:#f1f5f9; border-bottom:1px solid #cbd5e1; padding:1.0mm 4mm; font-size:6.2pt; color:#334155; font-weight:700; display:flex; justify-content:space-between;">
-      <span>Tick <strong>[✓] Read</strong> when you understand the rule, and <strong>[★] Solved</strong> when you answer the challenge!</span>
+    <div style="background:#f1f5f9; border-bottom:1px solid #cbd5e1; padding:0.9mm 4mm; font-size:6.0pt; color:#334155; font-weight:700; display:flex; justify-content:space-between;">
+      <span>Tick <strong>[✓] Read</strong> &amp; <strong>[★] Solved</strong> &bull; Attempt challenge before checking</span>
       <span style="color:#2563eb;">Pearson &amp; C&amp;G Aligned</span>
     </div>
 
     <!-- CONTENTS WRAP -->
-    <div style="flex:1; padding:1.2mm 3.5mm; overflow:hidden;">
+    <div style="flex:1; padding:1.0mm 3.5mm; overflow:hidden;">
       {contents_inner}
     </div>
 
-    <!-- TUTOR TIP -->
-    <div style="background:#eff6ff; border-top:1px solid #bfdbfe; padding:1.2mm 4mm; font-size:6.0pt; color:#1e40af; line-height:1.2;">
-      💡 <strong>Tutor Golden Tip (Subi):</strong> Do not flip the card immediately! Attempt the Quick Challenge on the back using a dry-wipe pen or scratchpad first. Verify with the step-by-step model steps only after completing your working.
-    </div>
-
     <!-- FOOTER -->
-    <div class="card-footer" style="height:5.2mm; background:#f8fafc; border-top:1px solid #e2e8f0; padding:1px 4mm; display:flex; justify-content:space-between; align-items:center; font-size:6.5pt; color:#64748b; font-weight:700;">
+    <div class="card-footer" style="height:5.0mm; background:#f8fafc; border-top:1px solid #e2e8f0; padding:1px 4mm; display:flex; justify-content:space-between; align-items:center; font-size:6.5pt; color:#64748b; font-weight:700;">
       <span>masterfunctionalskills.co.uk • Free Interactive Web Deck</span>
       {FOOTER_LOGO_MICRO}
     </div>
@@ -1522,8 +1519,8 @@ def render_a6_individual_html(cards, deck_title="Functional Skills A6 Pocket Car
         <div class="challenge-q">{card['challenge_prompt']}</div>
       </div>
       <div class="working-area">
-        <span>✏️ Learner Scratchpad &amp; Calculations</span>
-        <span style="font-size:7.5pt; color:#94a3b8;">Formula Working Area</span>
+        <span>{('✏️ Learner Scratchpad &amp; Calculations' if card.get('subject') == 'maths' else ('✏️ Learner Drafting &amp; Notes' if card.get('subject') == 'english' else '✏️ Learner Steps &amp; Notes'))}</span>
+        <span style="font-size:7.5pt; color:#94a3b8;">{('Formula Working Area' if card.get('subject') == 'maths' else ('Reading &amp; Writing Practice Area' if card.get('subject') == 'english' else 'Digital Task Planning Area'))}</span>
       </div>
       <div class="answer-box">
         <div class="answer-title">
@@ -1889,8 +1886,8 @@ def render_a4_4up_imposition_html(cards, deck_title="Functional Skills A4 Printa
           <div class="challenge-q">{item['challenge_prompt']}</div>
         </div>
         <div class="working-area">
-          <span>✏️ Learner Scratchpad &amp; Calculations</span>
-          <span style="font-size:7pt; color:#94a3b8;">Formula Working Area</span>
+          <span>{('✏️ Learner Scratchpad &amp; Calculations' if item.get('subject') == 'maths' else ('✏️ Learner Drafting &amp; Notes' if item.get('subject') == 'english' else '✏️ Learner Steps &amp; Notes'))}</span>
+          <span style="font-size:7pt; color:#94a3b8;">{('Formula Working Area' if item.get('subject') == 'maths' else ('Reading &amp; Writing Practice Area' if item.get('subject') == 'english' else 'Digital Task Planning Area'))}</span>
         </div>
         <div class="answer-box">
           <div class="answer-title">

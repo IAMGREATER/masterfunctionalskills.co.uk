@@ -286,7 +286,7 @@ def build_mock_maths_l2():
     print("BUILDING: MasterFunctionalSkills_Mock_Pack_Maths_L2.pdf")
     print("="*70)
 
-    BOOK = "Maths L2 Official 6-Mock Exam Pack"
+    BOOK = "Maths L2 6-Mock Exam Pack"
     front_cov = COV / "mock_pack_maths_l2_cover_page-1.png"
     back_cov = COV / "mock_pack_maths_l2_cover_page-2.png"
     cover_theme = K.theme_from_cover(front_cov)
@@ -587,7 +587,7 @@ def build_mock_maths_l2():
         ssr.MATHS_L2_INDEX, "Curriculum &amp; Problem Solving Index"
     )
 
-    ref_page_list = K.ref_pages("Official Mark Schemes &amp; Reference Directory", ref_blocks,
+    ref_page_list = K.ref_pages("Mark Schemes &amp; Reference", ref_blocks,
                                 BOOK, start_page=p_curr, subtitle="Complete Step-by-Step Worked Solutions &amp; Process Mark Guidance",
                                 cols=2, theme=cover_theme, notes_title="Candidate Error Analysis &amp; Exam Checklist")
     pages.extend(ref_page_list)
@@ -735,7 +735,7 @@ def build_mock_english_l2():
     print("BUILDING: MasterFunctionalSkills_Mock_Pack_English_L2.pdf")
     print("="*70)
 
-    BOOK = "English L2 Official 5-Mock Exam Pack"
+    BOOK = "English L2 5-Mock Exam Pack"
     front_cov = COV / "mock_pack_english_l2_cover_page-1.png"
     back_cov = COV / "mock_pack_english_l2_cover_page-2.png"
     cover_theme = K.theme_from_cover(front_cov)
@@ -1192,7 +1192,7 @@ def build_mock_english_l2():
         ssr.ENGLISH_L2_INDEX, "Curriculum &amp; Examination Index"
     )
 
-    ref_page_list = K.ref_pages("Official Mark Schemes &amp; Exemplar Directory", ref_blocks,
+    ref_page_list = K.ref_pages("Mark Schemes &amp; Exemplars", ref_blocks,
                                 BOOK, start_page=p_curr, subtitle="Complete Reading Solutions &amp; Full Band 4 Writing Models",
                                 cols=2, theme=cover_theme, notes_title="Candidate Error Analysis &amp; SPaG Checklist")
     pages.extend(ref_page_list)
@@ -1627,11 +1627,11 @@ def build_digital_skills_handbook():
                 f"<div style='font-size:10.2pt; line-height:1.42;'>{drill}</div>",
                 title=f"Workplace Simulation Task &bull; Unit {u_idx}"
             )
-            + K.fill_grid("Candidate Action Log &amp; Step-by-Step Solution Working Grid", min_mm=55)
+            + K.fill_notes("Candidate Action Log &amp; Step-by-Step Solution Notes", min_mm=55)
             + K.box_html(
                 "<div style='display:flex; justify-content:space-between; font-weight:bold; font-size:10pt;'>"
                 "<span>Drill Completed: [ &nbsp; ] Yes &emsp; [ &nbsp; ] In Progress</span>"
-                "<span>Tutor Verification: Abdul &bull; ____________________</span>"
+                "<span>Tutor Verification: ____________________</span>"
                 "</div>",
                 title="Practical Drill Sign-Off"
             )
@@ -1682,7 +1682,7 @@ def build_digital_skills_handbook():
             + digital_hero_image(f"mock{m_idx}", height_mm=52)
             + K.box_html(f"<div style='font-size:10.2pt; line-height:1.42;'><p style='margin:0;'><b>Scenario Context:</b> {m_scen}</p></div>", title="Candidate Briefing &bull; 50 Marks &bull; 1 hr 45 mins")
             + exam_box(f"Task 1 (File Hierarchy &amp; Storage Architecture): {m_tasks[0]}", marks=12)
-            + K.fill_grid("Candidate Working Grid &bull; Folder Architecture &amp; File Paths", min_mm=36)
+            + K.fill_notes("Candidate Folder Architecture &amp; File Paths", min_mm=36)
         )
         pages.append(K.page(p1_b, header=(BOOK, f"Mock {m_idx} &bull; Task 1"), footer=BOOK, page_no=p_curr))
         p_curr += 1
@@ -1691,7 +1691,7 @@ def build_digital_skills_handbook():
         p2_b = (
             K.page_title(f"Mock Exam {m_idx} &bull; Task 2 (Spreadsheet Modeling)", kicker=f"Practical Exam {m_idx}: {m_title}", badge=f"ME{m_idx}.2")
             + exam_box(f"Task 2 (Spreadsheet Calculations &amp; Formatting): {m_tasks[1]}", marks=15)
-            + K.fill_grid("Candidate Working Grid &bull; Formula Syntax (=SUM, =AVERAGE, =IF)", min_mm=55)
+            + K.fill_notes("Candidate Formula Syntax (=SUM, =AVERAGE, =IF)", min_mm=55)
             + K.rule_box("Formula Verification Checklist",
                          "<p>Verify: (1) Absolute cell references ($B$1) are locked where appropriate. (2) Currency formatting applied (&pound;0.00). (3) Gridlines visible for printing.</p>")
         )
@@ -1716,7 +1716,7 @@ def build_digital_skills_handbook():
                 f"<div style='display:flex; justify-content:space-between; font-weight:bold; font-size:10pt;'>"
                 f"<span>Mock {m_idx} Total Marks: ______ / 50</span>"
                 f"<span>Status: [ &nbsp; ] Pass &emsp; [ &nbsp; ] Refer</span>"
-                f"<span>Examiner: Abdul &bull; ____________________</span>"
+                f"<span>Assessor Sign-Off: ____________________</span>"
                 f"</div>",
                 title="Practical Exam Summary &amp; Sign-Off"
             )
@@ -1861,11 +1861,11 @@ def build_digital_skills_handbook():
         p2_lab = (
             K.page_title(f"{badge} &bull; Applied Workplace Hands-On Task", kicker="Advanced Digital Software Lab &bull; Part 2: Hands-On Lab", badge=badge)
             + K.box_html(f"<div style='font-size:10.2pt; line-height:1.42;'>{task_html}</div>", title=task_title)
-            + K.fill_grid("Candidate Command Steps &amp; Technical Implementation Log", min_mm=55)
+            + K.fill_notes("Candidate Command Steps &amp; Technical Implementation Log", min_mm=55)
             + K.box_html(
                 "<div style='display:flex; justify-content:space-between; font-weight:bold; font-size:10pt;'>"
                 "<span>Lab Task Completed: [ &nbsp; ] Yes &emsp; [ &nbsp; ] In Progress</span>"
-                "<span>Lead Tutor Verification: Abdul &bull; ____________________</span>"
+                "<span>Lead Tutor Verification: ____________________</span>"
                 "</div>",
                 title="Software Lab Sign-Off &amp; Competency Endorsement"
             )
@@ -1971,7 +1971,7 @@ def build_digital_skills_handbook():
         ssr.DIGITAL_SKILLS_INDEX, "Digital Skills Curriculum Index"
     )
 
-    ref_page_list = K.ref_pages("Official Solutions, Shortcuts &amp; Reference Directory", ref_blocks,
+    ref_page_list = K.ref_pages("Solutions &amp; Shortcuts", ref_blocks,
                                 BOOK, start_page=p_curr, subtitle="Complete Practical Workflow Solutions &amp; Statutory Guidance",
                                 cols=2, theme=cover_theme, notes_title="Candidate Error Analysis &amp; Security Checklist")
     pages.extend(ref_page_list)
@@ -2112,7 +2112,7 @@ def build_bksb_remediation_workbook():
     print("BUILDING: MasterFunctionalSkills_BKSB_Remediation_Workbook.pdf")
     print("="*70)
 
-    BOOK = "BKSB Diagnostic Remediation Workbook"
+    BOOK = "BKSB Remediation Workbook"
     front_cov = COV / "bksb_remediation_cover_page-1.png"
     back_cov = COV / "bksb_remediation_cover_page-2.png"
     cover_theme = K.theme_from_cover(front_cov)
@@ -2358,7 +2358,7 @@ def build_bksb_remediation_workbook():
                 + q_html
                 + K.fill_notes("Candidate Working Lines &amp; Final Solution", 18)
             )
-            pages.append(K.page(p_body, header=(BOOK, p_title), footer=BOOK, page_no=p_curr))
+            pages.append(K.page(p_body, header=(BOOK, f"{badge} &bull; Timed Diagnostic"), footer=BOOK, page_no=p_curr))
             p_curr += 1
 
 
@@ -2381,7 +2381,7 @@ def build_bksb_remediation_workbook():
         ssr.BKSB_INDEX, "Remediation &amp; Misconception Index"
     )
 
-    ref_page_list = K.ref_pages("Official Stage 2 Worked Solutions &amp; Directory", ref_blocks,
+    ref_page_list = K.ref_pages("Worked Solutions &amp; Directory", ref_blocks,
                                 BOOK, start_page=p_curr, subtitle="Complete Step-by-Step Worked Models for All 72 Retry Drills",
                                 cols=2, theme=cover_theme, notes_title="Candidate Error Analysis &amp; Golden Rule Checklist")
     pages.extend(ref_page_list)

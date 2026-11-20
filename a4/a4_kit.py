@@ -225,11 +225,12 @@ strong {{ font-weight:700; }}
          page-break-after:always; break-after:page; padding:12mm 14mm 12mm 14mm;
          display:flex; flex-direction:column; }}
 .page:last-child {{ page-break-after:auto; break-after:auto; }}
-.run-head {{ flex:0 0 auto; display:flex; justify-content:space-between; align-items:center;
-             font-family:'Montserrat',sans-serif; font-size:10pt; /* hf-ok */ font-weight:700;
-             color:var(--primary); letter-spacing:.4px; border-bottom:2px solid var(--primary);
+.run-head {{ flex:0 0 auto; display:flex; justify-content:space-between; align-items:center; gap:5mm;
+             font-family:'Montserrat',sans-serif; font-size:8.8pt; /* hf-ok */ font-weight:700;
+             color:var(--primary); letter-spacing:.3px; border-bottom:2px solid var(--primary);
              padding-bottom:2mm; margin-bottom:4mm; text-transform:uppercase; }}
-.run-head .rh-right {{ background:var(--primary); color:#fff; border-radius:20px; padding:.6mm 3.5mm; }}
+.run-head > span:first-child {{ min-width:0; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }}
+.run-head .rh-right {{ background:var(--primary); color:#fff; border-radius:20px; padding:.6mm 3.5mm; font-size:8.6pt; /* hf-ok */ white-space:nowrap; flex-shrink:0; }}
 .run-foot {{ flex:0 0 auto; display:flex; justify-content:space-between; align-items:center;
              font-size:10pt; /* hf-ok */ color:var(--muted); border-top:1.5px solid var(--soft);
              padding-top:2mm; margin-top:3.5mm; }}
@@ -433,8 +434,8 @@ table.t tr:nth-child(even) td {{ background:var(--light); }}
 
 /* ---------- reference back matter (answers / mark schemes / glossary / index) ---------- */
 .page.ref {{ background:#fff; }}
-.page.ref .run-head {{ font-family:'RefNarrow',sans-serif; color:#000; border-bottom:1px solid #000; letter-spacing:.2px; }}
-.page.ref .run-head .rh-right {{ background:none; color:#000; padding:0; border-radius:0; }}
+.page.ref .run-head {{ font-family:'RefNarrow',sans-serif; font-size:8.4pt; /* hf-ok */ gap:5mm; color:#000; border-bottom:1px solid #000; letter-spacing:.2px; }}
+.page.ref .run-head .rh-right {{ background:none; color:#000; padding:0; border-radius:0; font-size:8.4pt; /* hf-ok */ white-space:nowrap; flex-shrink:0; }}
 .page.ref .run-foot {{ font-family:'RefNarrow',sans-serif; color:#000; border-top:.75px solid #000; }}
 .page.ref .run-foot .pg {{ background:none; color:#000; font-family:'RefNarrow',sans-serif; font-weight:700; }}
 .page.ref .body {{ gap:2mm; }}

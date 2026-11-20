@@ -1289,8 +1289,80 @@
       }
     }
 
+    /* Sprint 3: Revision Cards Collapsible Controls Drawer for Mobile */
+    .rc-mobile-drawer {
+      display: block;
+    }
+    .rc-mobile-drawer > summary.rc-mobile-drawer-summary {
+      display: none;
+      list-style: none;
+    }
+    .rc-mobile-drawer > summary.rc-mobile-drawer-summary::-webkit-details-marker {
+      display: none;
+    }
+    @media (max-width: 767px) {
+      .mfs-hero-section {
+        padding: 6px 0 4px !important;
+      }
+      .mfs-hero-section .moat-badge,
+      .mfs-hero-section p {
+        display: none !important;
+      }
+      .mfs-hero-section h1 {
+        font-size: 1.12rem !important;
+        line-height: 1.18 !important;
+        margin-bottom: 2px !important;
+      }
+      .rc-mobile-drawer > summary.rc-mobile-drawer-summary {
+        display: flex !important;
+        align-items: center;
+        justify-content: space-between;
+        gap: 10px;
+        min-height: 38px;
+        padding: 6px 12px;
+        margin-bottom: 8px;
+        background: #0f172a;
+        color: #ffffff;
+        border: 1.5px solid #1e293b;
+        border-radius: 12px;
+        font-size: 0.84rem;
+        font-weight: 800;
+        cursor: pointer;
+        box-shadow: 0 4px 12px rgba(15, 23, 42, 0.14);
+      }
+      .rc-drawer-left {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+      }
+      .rc-drawer-left i {
+        color: #38bdf8;
+      }
+      .rc-drawer-right {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.76rem;
+        font-weight: 700;
+        color: #34d399;
+      }
+      .rc-drawer-chev {
+        color: #94a3b8;
+        transition: transform 0.2s ease;
+      }
+      .rc-mobile-drawer[open] .rc-drawer-chev {
+        transform: rotate(180deg);
+      }
+      .rc-mobile-drawer[open] > summary.rc-mobile-drawer-summary {
+        margin-bottom: 10px;
+      }
+      .deck-mastery-wrap {
+        margin-bottom: 8px !important;
+      }
+    }
+
   </style>
-  <link rel="stylesheet" href="assets/css/mfs-mobile.css?v=20261112v5">
+  <link rel="stylesheet" href="assets/css/mfs-mobile.css?v=20261120v7">
   <link rel="canonical" href="https://masterfunctionalskills.co.uk/revision-cards.html">
 </head>
 <body>
@@ -1495,6 +1567,18 @@
       <p style="font-size: 1.05rem; color: var(--text-muted); line-height: 1.6; margin-bottom: 20px;">
         Standard A6 landscape postcards (148 mm × 105 mm) condensing the entire government curriculum into rapid-fire visual revision cards. One focused learning point per card with custom SVG diagrams, golden formulas, exam traps, and worked challenges.
       </p>
+    </div>
+  </section>
+
+  <!-- MAIN APP CONTAINER -->
+  <main class="mfs-container" style="padding-bottom: 70px;">
+
+    <!-- MOBILE-COLLAPSIBLE DECK TOOLS DRAWER (Open by default on desktop >= 768px) -->
+    <details class="rc-mobile-drawer" id="rcToolsDrawer" open>
+      <summary class="rc-mobile-drawer-summary">
+        <span class="rc-drawer-left"><i class="fa-solid fa-sliders"></i> Filter Decks, Search, Mastery &amp; PDFs</span>
+        <span class="rc-drawer-right"><span id="rcMobileMasteryMini">0 / 266</span> <i class="fa-solid fa-chevron-down rc-drawer-chev"></i></span>
+      </summary>
 
       <!-- Quick Deck Breakdown Badges -->
       <div class="deck-stat-badges-row" id="heroSubjectPillsRow" style="display:flex; justify-content:center; align-items:center; gap:10px; flex-wrap:wrap; margin-bottom:16px;">
@@ -1511,11 +1595,6 @@
           <i class="fa-solid fa-laptop-code"></i> Digital Skills: <strong>56 Cards</strong> <span style="font-size:0.75rem; font-weight:600;">(50 L1/L2 + 6 E3)</span>
         </button>
       </div>
-    </div>
-  </section>
-
-  <!-- MAIN APP CONTAINER -->
-  <main class="mfs-container" style="padding-bottom: 70px;">
 
     <!-- SEARCH & FILTER TOOLBAR -->
     <div class="filter-section">
@@ -1580,21 +1659,22 @@
       </div>
     </div>
 
+      <!-- Mastery Live Stat Badge -->
+      <div class="deck-mastery-wrap" style="display:flex; justify-content:center; align-items:center; margin-bottom:12px;">
+        <div class="mastery-tracker-pill" style="display:inline-flex; align-items:center; gap:14px; background:#ffffff; border:1.5px solid var(--border); border-radius:100px; padding:6px 18px; box-shadow:0 4px 12px rgba(0,0,0,0.04); font-size:0.88rem;">
+          <span><i class="fa-solid fa-chart-line" style="color:var(--accent);"></i> <strong>Mastery Tracker:</strong></span>
+          <span id="masteryScore" style="font-weight:800; color:#10b981;">0 / 266 Mastered (0%)</span>
+          <span style="color:#cbd5e1;">|</span>
+          <button onclick="resetMastery()" style="background:none; border:none; color:var(--text-muted); font-size:0.78rem; text-decoration:underline; cursor:pointer;">Reset Progress</button>
+        </div>
+      </div>
+    </details>
+
     <!-- REVISION CARDS CENTERED STAGE -->
     <div class="revision-cards-stage" id="revisionCardsStage">
 
       <!-- VIEW 1: INTERACTIVE 3D FLIP CARD DECK -->
       <div id="deckViewContainer">
-
-        <!-- Mastery Live Stat Badge - Centered directly above the revision card -->
-        <div class="deck-mastery-wrap" style="display:flex; justify-content:center; align-items:center; margin-bottom:12px;">
-          <div class="mastery-tracker-pill" style="display:inline-flex; align-items:center; gap:14px; background:#ffffff; border:1.5px solid var(--border); border-radius:100px; padding:6px 18px; box-shadow:0 4px 12px rgba(0,0,0,0.04); font-size:0.88rem;">
-            <span><i class="fa-solid fa-chart-line" style="color:var(--accent);"></i> <strong>Mastery Tracker:</strong></span>
-            <span id="masteryScore" style="font-weight:800; color:#10b981;">0 / 266 Mastered (0%)</span>
-            <span style="color:#cbd5e1;">|</span>
-            <button onclick="resetMastery()" style="background:none; border:none; color:var(--text-muted); font-size:0.78rem; text-decoration:underline; cursor:pointer;">Reset Progress</button>
-          </div>
-        </div>
 
         <div class="deck-viewport">
           <div class="flip-card" id="activeFlipCard" onclick="toggleCardFlip(event)">
@@ -1865,6 +1945,10 @@
       const badge = document.getElementById('masteryScore');
       if (badge) {
         badge.textContent = `${masteredCount} / ${total} Mastered (${pct}%)`;
+      }
+      const mini = document.getElementById('rcMobileMasteryMini');
+      if (mini) {
+        mini.textContent = `${masteredCount} / ${total}`;
       }
     }
 
@@ -2322,6 +2406,10 @@
     }
 
     document.addEventListener('DOMContentLoaded', () => {
+      const toolsDrawer = document.getElementById('rcToolsDrawer');
+      if (toolsDrawer && window.innerWidth <= 767) {
+        toolsDrawer.removeAttribute('open');
+      }
       if (localStorage.getItem('mfs_dyslexia') === '1') {
         document.body.classList.add('dyslexia-mode');
         const btn = document.getElementById('dyslexiaToggle');

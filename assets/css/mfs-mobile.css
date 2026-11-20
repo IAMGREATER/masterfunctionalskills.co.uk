@@ -5725,4 +5725,107 @@ a[href^="mailto:"] { overflow-wrap: anywhere !important; word-break: break-word 
     width: 100% !important;
     justify-content: center !important;
   }
+
+  /* 5J. Sprint 3 Mobile Hero Declutter (Sonya unobstructed + no dead Coming Soon stack) */
+  .hero-buttons-home,
+  .mfs-mobile-quickstart + .hero-buttons {
+    display: none !important;
+  }
+  .hero-square-showcase {
+    aspect-ratio: 4 / 3 !important;
+    max-height: 240px !important;
+    height: auto !important;
+    min-height: unset !important;
+    border-radius: 14px !important;
+    margin: 8px 0 0 0 !important;
+    overflow: hidden !important;
+    background: #0f172a !important;
+  }
+  .hero-square-showcase .hero-showcase-img {
+    width: 100% !important;
+    height: 100% !important;
+    object-fit: cover !important;
+    object-position: center 15% !important;
+    display: block !important;
+  }
+  .hero-square-showcase .hero-showcase-scrim,
+  .hero-square-showcase .hero-showcase-overlay {
+    display: none !important;
+  }
+
+  /* 5K. Sprint 3 Past Papers Dual Red YouTube A / B Corner Badges */
+  .past-paper-actions {
+    overflow: visible !important;
+  }
+  .past-paper-actions > a.btn-paper[href*="video-solution"],
+  .past-paper-actions > a.btn-paper-video {
+    position: relative !important;
+    overflow: visible !important;
+  }
+  .past-paper-actions > a.btn-paper-video[href*="section-a"]::after,
+  .past-paper-actions > a.btn-paper-video[data-topic*="Section A"]::after {
+    content: "A";
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background: #0f172a;
+    color: #ffffff;
+    border: 1.5px solid #ffffff;
+    font-size: 0.62rem;
+    font-weight: 900;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(15, 23, 42, 0.35);
+    pointer-events: none;
+  }
+  .past-paper-actions > a.btn-paper-video[href*="section-b"]::after,
+  .past-paper-actions > a.btn-paper-video[data-topic*="Section B"]::after {
+    content: "B";
+    position: absolute;
+    top: -4px;
+    right: -4px;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    background: #0284c7;
+    color: #ffffff;
+    border: 1.5px solid #ffffff;
+    font-size: 0.62rem;
+    font-weight: 900;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 2px 4px rgba(2, 132, 199, 0.35);
+    pointer-events: none;
+  }
+
+  /* 5L. Sprint 3 Wrap .video-jump-bar Pills Cleanly (>= 36px touch targets) */
+  #mcJumpBar,
+  .video-jump-bar {
+    flex-wrap: wrap !important;
+    overflow-x: visible !important;
+    gap: 6px !important;
+    padding: 8px 10px !important;
+  }
+  #mcJumpBar .jump-btn,
+  .video-jump-bar .jump-btn {
+    min-height: 36px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    padding: 6px 11px !important;
+    font-size: 0.78rem !important;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .moat-strip,
+  .hero-reviews-bar {
+    display: none !important;
+  }
 }

@@ -1080,6 +1080,14 @@ def build_reading_l2_core():
         final_ans = l2_model.get("final_answer", "Full benchmark response.")
         tutor_tip = l2_model.get("tutor_tip", "Quote evidence and explain the writer's impact.")
         trap_second = traps[1]["desc"] if len(traps) > 1 else "Band 4 responses at Level 2 provide precise textual quotes paired with insightful explanations of the writer's deliberate effect on the reader."
+        marks_str = l2_model.get("marks", "3 Marks")
+        b4_commentary_html = (
+            "<ul style='margin:0;padding-left:5mm;font-size:10.1pt;line-height:1.42;'>"
+            f"<li><b>1. Pinpoint Evidence ({marks_str}):</b> Selects concise, verbatim evidence directly tied to <i>{clean_title}</i> rather than copying whole sentences unselectively.</li>"
+            f"<li><b>2. Reader &amp; Purpose Impact:</b> Explains <i>how</i> and <i>why</i> the writer shaped these details to persuade, inform, or influence the target audience.</li>"
+            "<li><b>3. Band 4 Control:</b> Satisfies every requirement of the command verb with clear evaluative vocabulary and zero unsubstantiated assertions.</li>"
+            "</ul>"
+        )
         p3_body = (
             K.page_title(f"{clean_title} &bull; Band 4 Benchmark Exemplar", kicker="Examiner Full Marks Benchmark", badge="MODEL")
             + K.box_html(
@@ -1087,14 +1095,14 @@ def build_reading_l2_core():
                 f"<strong style='color:var(--primary);'>Band 4 Model Answer:</strong><br><br>"
                 f"{final_ans}"
                 f"</div>",
-                title=f"Official Benchmark Exemplar &bull; {l2_model.get('marks', '3 Marks')}"
+                title=f"Official Benchmark Exemplar &bull; {marks_str}"
             )
             + K.tip_pair(
                 tutor_tip,
                 trap_second,
                 golden_title="Band 4 Criteria", watch_title="Examiner Insight"
             )
-            + K.fill_notes("Why This Answer Achieves Band 4 Distinction", min_mm=30)
+            + K.box_html(b4_commentary_html, title="Why This Answer Achieves Band 4 Distinction")
         )
         pages.append(K.page(p3_body, header=(BOOK, f"Topic {t_idx} &bull; Model"), footer=BOOK, page_no=p_curr))
         p_curr += 1

@@ -73,7 +73,7 @@ CARDS_A = [
             <line x1="78" y1="67" x2="94" y2="51" stroke="#dc2626" stroke-width="2" stroke-linecap="round"/>
             <text x="116" y="62" font-size="15" font-weight="800" fill="#94a3b8" text-anchor="middle">4</text>
             <line x1="108" y1="67" x2="124" y2="51" stroke="#dc2626" stroke-width="2" stroke-linecap="round"/>
-            <text x="26" y="84" font-size="18" font-weight="900" fill="#0284c7" text-anchor="middle">&minus;</text>
+            <text x="26" y="84" font-size="18" font-weight="900" fill="#0284c7" text-anchor="middle">&#8722;</text>
             <text x="56" y="84" font-size="15" font-weight="800" fill="#0f172a" text-anchor="middle">1</text>
             <text x="86" y="84" font-size="15" font-weight="800" fill="#0f172a" text-anchor="middle">6</text>
             <text x="116" y="84" font-size="15" font-weight="800" fill="#0f172a" text-anchor="middle">8</text>
@@ -91,12 +91,12 @@ CARDS_A = [
             <path d="M 46 95 L 46 58 L 136 58" fill="none" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
             <text x="30" y="85" font-size="16" font-weight="900" fill="#0369a1" text-anchor="middle">6</text>
             <text x="64" y="85" font-size="15" font-weight="800" fill="#0f172a" text-anchor="middle">8</text>
-            <text x="80" y="73" font-size="10" font-weight="900" fill="#dc2626" text-anchor="middle">&sup2;</text>
+            <text x="80" y="73" font-size="10" font-weight="900" fill="#dc2626" text-anchor="middle">&#178;</text>
             <text x="92" y="85" font-size="15" font-weight="800" fill="#0f172a" text-anchor="middle">5</text>
-            <text x="108" y="73" font-size="10" font-weight="900" fill="#dc2626" text-anchor="middle">&sup1;</text>
+            <text x="108" y="73" font-size="10" font-weight="900" fill="#dc2626" text-anchor="middle">&#185;</text>
             <text x="120" y="85" font-size="15" font-weight="800" fill="#0f172a" text-anchor="middle">2</text>
             <rect x="20" y="104" width="120" height="22" rx="4" fill="#dcfce7" stroke="#86efac"/>
-            <text x="80" y="119" font-size="10.5" font-weight="800" fill="#15803d" text-anchor="middle">852 &divide; 6 = 142 &check;</text>
+            <text x="80" y="119" font-size="10.5" font-weight="800" fill="#15803d" text-anchor="middle">852 ÷ 6 = 142 ✓</text>
           </g>"""),
         "golden_rule": "Always check subtraction by adding your answer to the smaller number!",
         "watch_out": "Don't subtract smaller from larger in the same column! If top digit is smaller, borrow 1 from left.",

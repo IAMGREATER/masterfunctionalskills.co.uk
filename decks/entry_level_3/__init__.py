@@ -82,7 +82,7 @@ CARDS = [
             <text x="97" y="22" font-size="11.5" font-weight="900" fill="#1e40af" text-anchor="middle">SUBTRACTION (BORROW)</text>
             <text x="105" y="38" font-size="10.5" font-weight="900" fill="#dc2626" text-anchor="middle">3</text>
             <text x="135" y="38" font-size="10.5" font-weight="900" fill="#dc2626" text-anchor="middle">12</text>
-            <text x="36" y="74" font-size="18" font-weight="900" fill="#0284c7" text-anchor="middle">&minus;</text>
+            <text x="36" y="74" font-size="18" font-weight="900" fill="#0284c7" text-anchor="middle">&#8722;</text>
             <text x="75" y="52" font-size="15" font-weight="800" fill="#0f172a" text-anchor="middle">5</text>
             <text x="105" y="52" font-size="15" font-weight="800" fill="#94a3b8" text-anchor="middle">4</text>
             <line x1="97" y1="57" x2="113" y2="43" stroke="#dc2626" stroke-width="2" stroke-linecap="round"/>
@@ -95,7 +95,7 @@ CARDS = [
             <text x="75" y="106" font-size="16" font-weight="900" fill="#2563eb" text-anchor="middle">3</text>
             <text x="105" y="106" font-size="16" font-weight="900" fill="#2563eb" text-anchor="middle">2</text>
             <text x="135" y="106" font-size="16" font-weight="900" fill="#2563eb" text-anchor="middle">5</text>
-            <text x="97" y="123" font-size="9.5" font-weight="700" fill="#475569" text-anchor="middle">4 tens &rarr; 3 tens, 12 - 7 = 5</text>
+            <text x="97" y="123" font-size="9.5" font-weight="700" fill="#475569" text-anchor="middle">4 tens → 3 tens, 12 - 7 = 5</text>
           </g>
         </svg>"""
     },
@@ -621,7 +621,7 @@ CARDS = [
         "svg_html": """<svg viewBox="0 0 460 170" width="100%" height="170" xmlns="http://www.w3.org/2000/svg">
           <g transform="translate(30, 15)">
             <rect x="0" y="0" width="400" height="138" rx="8" fill="#ffffff" stroke="#0891b2" stroke-width="2"/>
-            <rect x="0" y="0" width="400" height="26" rx="8 8 0 0" fill="#cffafe"/>
+            <rect x="0" y="0" width="400" height="26" rx="8" fill="#cffafe"/>
             <text x="15" y="17" font-size="10.5" font-weight="900" fill="#155e75">✉️ EMAIL CHECKLIST (ENTRY LEVEL 3)</text>
             <text x="15" y="45" font-size="10.5" font-weight="800" fill="#0f172a">Subject: <tspan fill="#0891b2">Shift Swap Request – Tuesday 14 May</tspan></text>
             <line x1="15" y1="53" x2="385" y2="53" stroke="#e2e8f0"/>
@@ -900,7 +900,7 @@ CARDS = [
         "svg_html": """<svg viewBox="0 0 460 170" width="100%" height="170" xmlns="http://www.w3.org/2000/svg">
           <g transform="translate(30, 18)">
             <rect x="0" y="0" width="400" height="132" rx="8" fill="#ffffff" stroke="#cbd5e1" stroke-width="1.8"/>
-            <rect x="0" y="0" width="400" height="30" rx="8 8 0 0" fill="#f1f5f9"/>
+            <rect x="0" y="0" width="400" height="30" rx="8" fill="#f1f5f9"/>
             <text x="200" y="20" font-size="11" font-weight="900" fill="#0f172a" text-anchor="middle">[B] Bold   |   [I] Italic   |   [U] Underline   |   [•] Bullets</text>
             <text x="200" y="54" font-size="13" font-weight="900" fill="#1e40af" text-anchor="middle">STAFF FIRE SAFETY NOTICE (Bold, 18pt, Centred)</text>
             <text x="25" y="80" font-size="10.5" font-weight="700" fill="#0f172a">• Leave the building calmly via the nearest green exit sign.</text>

@@ -1567,6 +1567,96 @@
       poster: 'assets/img/posters/open-awards-dfs-l1-mock-1-poster.jpg'
     },
 
+    // AQA Functional Skills Reform Mock Walkthroughs
+    'aqa-maths-l1-march-2023-paper-1': {
+      ytId: 'aKDkTWgx0dg',
+      title: 'AQA Maths L1 March 2023 • Paper 1 Walkthrough',
+      series: 'AQA Functional Skills Maths Level 1',
+      tutor: 'Tutor Sonya',
+      paperGroup: 'aqa-maths-l1-march-2023',
+      activeSection: 'Paper 1',
+      companionSlug: 'aqa-maths-l1-march-2023-paper-2',
+      companionLabel: 'Paper 2 Walkthrough (Emma • 4m 41s)',
+      poster: 'assets/img/posters/aqa-maths-l1-march-2023-paper-1-poster.jpg'
+    },
+    'aqa-maths-l1-march-2023-paper-2': {
+      ytId: 'SF7frtMjdZ0',
+      title: 'AQA Maths L1 March 2023 • Paper 2 Walkthrough',
+      series: 'AQA Functional Skills Maths Level 1',
+      tutor: 'Tutor Emma',
+      paperGroup: 'aqa-maths-l1-march-2023',
+      activeSection: 'Paper 2',
+      companionSlug: 'aqa-maths-l1-march-2023-paper-1',
+      companionLabel: 'Paper 1 Walkthrough (Sonya • 3m 04s)',
+      poster: 'assets/img/posters/aqa-maths-l1-march-2023-paper-2-poster.jpg'
+    },
+    'aqa-maths-l2-march-2023-paper-1': {
+      ytId: '16VNDpslrKg',
+      title: 'AQA Maths L2 March 2023 • Paper 1 Walkthrough',
+      series: 'AQA Functional Skills Maths Level 2',
+      tutor: 'Tutor Subi',
+      paperGroup: 'aqa-maths-l2-march-2023',
+      activeSection: 'Paper 1',
+      companionSlug: 'aqa-maths-l2-march-2023-paper-2',
+      companionLabel: 'Paper 2 Walkthrough (Sonya • 4m 05s)',
+      poster: 'assets/img/posters/aqa-maths-l2-march-2023-paper-1-poster.jpg'
+    },
+    'aqa-maths-l2-march-2023-paper-2': {
+      ytId: 'NadNgjOeo7Q',
+      title: 'AQA Maths L2 March 2023 • Paper 2 Walkthrough',
+      series: 'AQA Functional Skills Maths Level 2',
+      tutor: 'Tutor Sonya',
+      paperGroup: 'aqa-maths-l2-march-2023',
+      activeSection: 'Paper 2',
+      companionSlug: 'aqa-maths-l2-march-2023-paper-1',
+      companionLabel: 'Paper 1 Walkthrough (Subi • 2m 56s)',
+      poster: 'assets/img/posters/aqa-maths-l2-march-2023-paper-2-poster.jpg'
+    },
+    'aqa-english-l2-march-2024-reading': {
+      ytId: 'wuuzY_SkLHc',
+      title: 'AQA English L2 March 2024 • Reading Walkthrough',
+      series: 'AQA Functional Skills English Level 2',
+      tutor: 'Tutor Subi',
+      paperGroup: 'aqa-english-l2-march-2024',
+      activeSection: 'Reading',
+      companionSlug: 'aqa-english-l2-march-2024-writing',
+      companionLabel: 'Writing Walkthrough (Emma • 2m 27s)',
+      poster: 'assets/img/posters/aqa-english-l2-march-2024-reading-poster.jpg'
+    },
+    'aqa-english-l2-march-2024-writing': {
+      ytId: 'ThyQTuHD5Ug',
+      title: 'AQA English L2 March 2024 • Writing Walkthrough',
+      series: 'AQA Functional Skills English Level 2',
+      tutor: 'Tutor Emma',
+      paperGroup: 'aqa-english-l2-march-2024',
+      activeSection: 'Writing',
+      companionSlug: 'aqa-english-l2-march-2024-reading',
+      companionLabel: 'Reading Walkthrough (Subi • 2m 42s)',
+      poster: 'assets/img/posters/aqa-english-l2-march-2024-writing-poster.jpg'
+    },
+    'aqa-english-l1-june-2023-reading': {
+      ytId: 'jYOHLF55yow',
+      title: 'AQA English L1 June 2023 • Reading Walkthrough',
+      series: 'AQA Functional Skills English Level 1',
+      tutor: 'Tutor Sonya',
+      paperGroup: 'aqa-english-l1-june-2023',
+      activeSection: 'Reading',
+      companionSlug: 'aqa-english-l1-june-2023-writing',
+      companionLabel: 'Writing Walkthrough (Emma • 1m 56s)',
+      poster: 'assets/img/posters/aqa-english-l1-june-2023-reading-poster.jpg'
+    },
+    'aqa-english-l1-june-2023-writing': {
+      ytId: 'M1TYK4OmtP4',
+      title: 'AQA English L1 June 2023 • Writing Walkthrough',
+      series: 'AQA Functional Skills English Level 1',
+      tutor: 'Tutor Emma',
+      paperGroup: 'aqa-english-l1-june-2023',
+      activeSection: 'Writing',
+      companionSlug: 'aqa-english-l1-june-2023-reading',
+      companionLabel: 'Reading Walkthrough (Sonya • 2m 19s)',
+      poster: 'assets/img/posters/aqa-english-l1-june-2023-writing-poster.jpg'
+    },
+
     // SLC Task 1 & Task 2 Exemplar Walkthroughs
     'slc-task1-presentation-model': {
       ytId: 'l7VRzidsFno',

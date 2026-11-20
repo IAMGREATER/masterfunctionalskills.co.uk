@@ -232,19 +232,40 @@ function toggleMobileToc() {
 }
 window.toggleMobileToc = toggleMobileToc;
 
-// Global Search Stub
+// Global Search Launcher (loads full index overlay without window.prompt fallback)
 function openGlobalSearch(ev) {
   if (ev && ev.stopPropagation) ev.stopPropagation();
   if (window.MfsSearch && typeof window.MfsSearch.open === 'function') {
     window.MfsSearch.open();
-  } else {
-    const q = prompt('Search functional skills revision topics:');
-    if (q && q.trim()) {
-      window.location.href = MFS_REV_ROOT + 'revise.html?q=' + encodeURIComponent(q.trim());
-    }
+    return;
   }
+  var existing = document.getElementById('mfsSearchScript');
+  if (existing) {
+    existing.addEventListener('load', function() {
+      if (window.MfsSearch && typeof window.MfsSearch.open === 'function') {
+        window.MfsSearch.open();
+      }
+    }, { once: true });
+    return;
+  }
+  var s = document.createElement('script');
+  s.id = 'mfsSearchScript';
+  s.src = MFS_REV_ROOT + 'assets/js/mfs-search.js?v=20261120v11';
+  s.onload = function() {
+    if (window.MfsSearch && typeof window.MfsSearch.open === 'function') {
+      window.MfsSearch.open();
+    }
+  };
+  document.head.appendChild(s);
 }
 window.openGlobalSearch = openGlobalSearch;
+
+if (!document.getElementById('mfsSearchScript') && !window.MfsSearch) {
+  var autoSearchScript = document.createElement('script');
+  autoSearchScript.id = 'mfsSearchScript';
+  autoSearchScript.src = MFS_REV_ROOT + 'assets/js/mfs-search.js?v=20261120v11';
+  document.head.appendChild(autoSearchScript);
+}
 
 // Scratchpad Autosave (unified across Maths, English & Digital Functional Skills)
 function initScratchpads() {

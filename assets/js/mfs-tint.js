@@ -237,12 +237,26 @@
     if (ev && ev.stopPropagation) ev.stopPropagation();
     if (window.MfsSearch && typeof window.MfsSearch.open === 'function') {
       window.MfsSearch.open();
-    } else {
-      var q = prompt('Search Functional Skills revision topics & resources:');
-      if (q && q.trim()) {
-        window.location.href = ROOT_PREFIX + 'revise.html?q=' + encodeURIComponent(q.trim());
-      }
+      return;
     }
+    var existing = document.getElementById('mfsSearchScript');
+    if (existing) {
+      existing.addEventListener('load', function() {
+        if (window.MfsSearch && typeof window.MfsSearch.open === 'function') {
+          window.MfsSearch.open();
+        }
+      }, { once: true });
+      return;
+    }
+    var sc = document.createElement('script');
+    sc.id = 'mfsSearchScript';
+    sc.src = ROOT_PREFIX + 'assets/js/mfs-search.js?v=20261120v11';
+    sc.onload = function() {
+      if (window.MfsSearch && typeof window.MfsSearch.open === 'function') {
+        window.MfsSearch.open();
+      }
+    };
+    document.head.appendChild(sc);
   };
 
   // Early execution to eliminate any flash of unstyled tint or theme
@@ -265,7 +279,7 @@
   if (!document.getElementById('mfsSearchScript')) {
     var searchScript = document.createElement('script');
     searchScript.id = 'mfsSearchScript';
-    searchScript.src = ROOT_PREFIX + 'assets/js/mfs-search.js';
+    searchScript.src = ROOT_PREFIX + 'assets/js/mfs-search.js?v=20261120v11';
     document.head.appendChild(searchScript);
   }
 

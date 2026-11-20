@@ -1951,6 +1951,74 @@
       poster: 'assets/img/posters/tquk-english-l2-writing-sample-paper-1-poster.jpg'
     },
 
+    // Wave 4D: NOCN Maths & English L1-L2 Walkthroughs
+    'nocn-maths-l1-sample-paper-1': {
+      ytId: 'c4UrLDAgK5Q',
+      title: 'NOCN Maths L1 • Sample Paper 1 Walkthrough',
+      series: 'NOCN Functional Skills Maths Level 1',
+      tutor: 'Tutor Subi',
+      paperGroup: 'nocn-maths-sample-paper-1',
+      activeSection: 'Level 1',
+      companionSlug: 'nocn-maths-l2-sample-paper-1',
+      companionLabel: 'Level 2 Sample 1 (Emma • 3m 51s)',
+      poster: 'assets/img/posters/nocn-maths-l1-sample-paper-1-poster.jpg'
+    },
+    'nocn-maths-l2-sample-paper-1': {
+      ytId: 'L-HsRcwwGik',
+      title: 'NOCN Maths L2 • Sample Paper 1 Walkthrough',
+      series: 'NOCN Functional Skills Maths Level 2',
+      tutor: 'Tutor Emma',
+      paperGroup: 'nocn-maths-sample-paper-1',
+      activeSection: 'Level 2',
+      companionSlug: 'nocn-maths-l1-sample-paper-1',
+      companionLabel: 'Level 1 Sample 1 (Subi • 2m 48s)',
+      poster: 'assets/img/posters/nocn-maths-l2-sample-paper-1-poster.jpg'
+    },
+    'nocn-english-l1-reading-sample-paper-1': {
+      ytId: 'XZmTzlmB7PQ',
+      title: 'NOCN English L1 • Reading Sample 1 Walkthrough',
+      series: 'NOCN Functional Skills English Level 1',
+      tutor: 'Tutor Sonya',
+      paperGroup: 'nocn-english-l1-sample-paper-1',
+      activeSection: 'Reading',
+      companionSlug: 'nocn-english-l1-writing-sample-paper-1',
+      companionLabel: 'Writing Sample 1 (Subi • 1m 29s)',
+      poster: 'assets/img/posters/nocn-english-l1-reading-sample-paper-1-poster.jpg'
+    },
+    'nocn-english-l1-writing-sample-paper-1': {
+      ytId: 'DEeJB7abmpM',
+      title: 'NOCN English L1 • Writing Sample 1 Walkthrough',
+      series: 'NOCN Functional Skills English Level 1',
+      tutor: 'Tutor Subi',
+      paperGroup: 'nocn-english-l1-sample-paper-1',
+      activeSection: 'Writing',
+      companionSlug: 'nocn-english-l1-reading-sample-paper-1',
+      companionLabel: 'Reading Sample 1 (Sonya • 1m 43s)',
+      poster: 'assets/img/posters/nocn-english-l1-writing-sample-paper-1-poster.jpg'
+    },
+    'nocn-english-l2-reading-sample-paper-1': {
+      ytId: 'sqkXRo2Yd2A',
+      title: 'NOCN English L2 • Reading Sample 1 Walkthrough',
+      series: 'NOCN Functional Skills English Level 2',
+      tutor: 'Tutor Emma',
+      paperGroup: 'nocn-english-l2-sample-paper-1',
+      activeSection: 'Reading',
+      companionSlug: 'nocn-english-l2-writing-sample-paper-1',
+      companionLabel: 'Writing Sample 1 (Subi • 1m 35s)',
+      poster: 'assets/img/posters/nocn-english-l2-reading-sample-paper-1-poster.jpg'
+    },
+    'nocn-english-l2-writing-sample-paper-1': {
+      ytId: 'Jq8DlIlBQzY',
+      title: 'NOCN English L2 • Writing Sample 1 Walkthrough',
+      series: 'NOCN Functional Skills English Level 2',
+      tutor: 'Tutor Subi',
+      paperGroup: 'nocn-english-l2-sample-paper-1',
+      activeSection: 'Writing',
+      companionSlug: 'nocn-english-l2-reading-sample-paper-1',
+      companionLabel: 'Reading Sample 1 (Emma • 1m 50s)',
+      poster: 'assets/img/posters/nocn-english-l2-writing-sample-paper-1-poster.jpg'
+    },
+
     // SLC Task 1 & Task 2 Exemplar Walkthroughs
     'slc-task1-presentation-model': {
       ytId: 'l7VRzidsFno',

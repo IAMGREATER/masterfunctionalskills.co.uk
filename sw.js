@@ -1,4 +1,4 @@
-const CACHE_NAME = 'mfs-cache-v20261111-v4';
+const CACHE_NAME = 'mfs-cache-v20261120-v6';
 
 const RELATIVE_ASSETS = [
   '',
@@ -75,6 +75,9 @@ self.addEventListener('fetch', (event) => {
     }
     return;
   }
+
+  // Never intercept PDF documents in Service Worker so browser PDFium / Range streaming works cleanly
+  if (url.pathname.toLowerCase().endsWith('.pdf')) return;
 
   // HTML navigation requests: Network-First with Cache Fallback
   if (request.mode === 'navigate' || request.headers.get('accept')?.includes('text/html')) {

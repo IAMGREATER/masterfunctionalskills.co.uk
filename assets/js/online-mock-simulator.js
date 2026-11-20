@@ -2239,7 +2239,7 @@ const MFS_MOCK_DATA = {
   "paperNumber": 7,
   "durationMinutes": 60,
   "pdfUrl": "assets/downloads/past-papers/edexcel/english-level-1/FS_English_Reading_Level_1_Past_Paper_7_QP.pdf",
-  "modelSolutionPdf": "assets/downloads/past-papers/edexcel/english-level-1/FS_English_Reading_Level_1_PAPER-7_Model_Solution_MFS.pdf",
+  "modelSolutionPdf": "assets/downloads/past-papers/edexcel/english-level-1/FS_English_Reading_Level_1_Past_Paper_7_Model_Solution_MFS.pdf",
   "videoSolutionSlug": "",
   "sourceTexts": [
     {
@@ -2494,7 +2494,7 @@ const MFS_MOCK_DATA = {
   "paperNumber": 6,
   "durationMinutes": 60,
   "pdfUrl": "assets/downloads/past-papers/edexcel/english-level-1/FS_English_Reading_Level_1_Past_Paper_6_QP.pdf",
-  "modelSolutionPdf": "assets/downloads/past-papers/edexcel/english-level-1/FS_English_Reading_Level_1_PAPER-6_Model_Solution_MFS.pdf",
+  "modelSolutionPdf": "assets/downloads/past-papers/edexcel/english-level-1/FS_English_Reading_Level_1_Past_Paper_6_Model_Solution_MFS.pdf",
   "videoSolutionSlug": "",
   "sourceTexts": [
     {
@@ -2749,7 +2749,7 @@ const MFS_MOCK_DATA = {
   "paperNumber": 4,
   "durationMinutes": 60,
   "pdfUrl": "assets/downloads/past-papers/edexcel/english-level-1/FS_English_Reading_Level_1_Past_Paper_4_QP.pdf",
-  "modelSolutionPdf": "assets/downloads/past-papers/edexcel/english-level-1/FS_English_Reading_Level_1_PAPER-4_Model_Solution_MFS.pdf",
+  "modelSolutionPdf": "assets/downloads/past-papers/edexcel/english-level-1/FS_English_Reading_Level_1_Past_Paper_4_Model_Solution_MFS.pdf",
   "videoSolutionSlug": "",
   "sourceTexts": [
     {
@@ -3004,7 +3004,7 @@ const MFS_MOCK_DATA = {
   "paperNumber": 1,
   "durationMinutes": 60,
   "pdfUrl": "assets/downloads/past-papers/edexcel/english-level-1/FS_English_Reading_Level_1_Practice_Paper_1_QP.pdf",
-  "modelSolutionPdf": "assets/downloads/past-papers/edexcel/english-level-1/FS_English_Reading_Level_1_PRACTICE-1_Model_Solution_MFS.pdf",
+  "modelSolutionPdf": "assets/downloads/past-papers/edexcel/english-level-1/FS_English_Reading_Level_1_Practice_Paper_1_Model_Solution_MFS.pdf",
   "videoSolutionSlug": "",
   "sourceTexts": [
     {
@@ -3259,7 +3259,7 @@ const MFS_MOCK_DATA = {
   "paperNumber": 2,
   "durationMinutes": 60,
   "pdfUrl": "assets/downloads/past-papers/edexcel/english-level-1/FS_English_Reading_Level_1_Practice_Paper_2_QP.pdf",
-  "modelSolutionPdf": "assets/downloads/past-papers/edexcel/english-level-1/FS_English_Reading_Level_1_PRACTICE-2_Model_Solution_MFS.pdf",
+  "modelSolutionPdf": "assets/downloads/past-papers/edexcel/english-level-1/FS_English_Reading_Level_1_Practice_Paper_2_Model_Solution_MFS.pdf",
   "videoSolutionSlug": "",
   "sourceTexts": [
     {
@@ -3514,7 +3514,7 @@ const MFS_MOCK_DATA = {
   "paperNumber": 3,
   "durationMinutes": 60,
   "pdfUrl": "assets/downloads/past-papers/edexcel/english-level-1/FS_English_Reading_Level_1_Practice_Paper_3_QP.pdf",
-  "modelSolutionPdf": "assets/downloads/past-papers/edexcel/english-level-1/FS_English_Reading_Level_1_PRACTICE-3_Model_Solution_MFS.pdf",
+  "modelSolutionPdf": "assets/downloads/past-papers/edexcel/english-level-1/FS_English_Reading_Level_1_Practice_Paper_3_Model_Solution_MFS.pdf",
   "videoSolutionSlug": "",
   "sourceTexts": [
     {
@@ -4030,7 +4030,7 @@ const MFS_MOCK_DATA = {
   "paperNumber": 2,
   "durationMinutes": 75,
   "pdfUrl": "assets/downloads/past-papers/edexcel/english-level-2/FS_English_Reading_Level_2_Practice_Paper_2_QP.pdf",
-  "modelSolutionPdf": "assets/downloads/past-papers/edexcel/english-level-2/FS_English_Reading_Level_2_PRACTICE-2_Model_Solution_MFS.pdf",
+  "modelSolutionPdf": "assets/downloads/past-papers/edexcel/english-level-2/FS_English_Reading_Level_2_Practice_Paper_2_Model_Solution_MFS.pdf",
   "videoSolutionSlug": "",
   "sourceTexts": [
     {
@@ -4291,7 +4291,7 @@ const MFS_MOCK_DATA = {
   "paperNumber": 3,
   "durationMinutes": 75,
   "pdfUrl": "assets/downloads/past-papers/edexcel/english-level-2/FS_English_Reading_Level_2_Practice_Paper_3_QP.pdf",
-  "modelSolutionPdf": "assets/downloads/past-papers/edexcel/english-level-2/FS_English_Reading_Level_2_PRACTICE-3_Model_Solution_MFS.pdf",
+  "modelSolutionPdf": "assets/downloads/past-papers/edexcel/english-level-2/FS_English_Reading_Level_2_Practice_Paper_3_Model_Solution_MFS.pdf",
   "videoSolutionSlug": "",
   "sourceTexts": [
     {
@@ -4552,7 +4552,7 @@ const MFS_MOCK_DATA = {
   "paperNumber": 10,
   "durationMinutes": 75,
   "pdfUrl": "assets/downloads/past-papers/edexcel/english-level-2/FS_English_Reading_Level_2_Past_Paper_10_QP.pdf",
-  "modelSolutionPdf": "assets/downloads/past-papers/edexcel/english-level-2/FS_English_Reading_Level_2_PAPER-10_Model_Solution_MFS.pdf",
+  "modelSolutionPdf": "assets/downloads/past-papers/edexcel/english-level-2/FS_English_Reading_Level_2_Past_Paper_10_Model_Solution_MFS.pdf",
   "videoSolutionSlug": "",
   "sourceTexts": [
     {

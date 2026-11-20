@@ -1883,6 +1883,74 @@
       poster: 'assets/img/posters/open-awards-english-l2-writing-exam-1-poster.jpg'
     },
 
+    // Wave 4C: TQUK Maths & English L1-L2 Walkthroughs
+    'tquk-maths-l1-sample-paper-1': {
+      ytId: '7Lp81EfeW9U',
+      title: 'TQUK Maths L1 • Sample Paper 1 Walkthrough',
+      series: 'TQUK Functional Skills Maths Level 1',
+      tutor: 'Tutor Emma',
+      paperGroup: 'tquk-maths-sample-paper-1',
+      activeSection: 'Level 1',
+      companionSlug: 'tquk-maths-l2-sample-paper-1',
+      companionLabel: 'Level 2 Sample 1 (Subi • 3m 11s)',
+      poster: 'assets/img/posters/tquk-maths-l1-sample-paper-1-poster.jpg'
+    },
+    'tquk-maths-l2-sample-paper-1': {
+      ytId: 'hzSq82UdbZ0',
+      title: 'TQUK Maths L2 • Sample Paper 1 Walkthrough',
+      series: 'TQUK Functional Skills Maths Level 2',
+      tutor: 'Tutor Subi',
+      paperGroup: 'tquk-maths-sample-paper-1',
+      activeSection: 'Level 2',
+      companionSlug: 'tquk-maths-l1-sample-paper-1',
+      companionLabel: 'Level 1 Sample 1 (Emma • 3m 41s)',
+      poster: 'assets/img/posters/tquk-maths-l2-sample-paper-1-poster.jpg'
+    },
+    'tquk-english-l1-reading-sample-paper-1': {
+      ytId: 'ri7LETkv2bA',
+      title: 'TQUK English L1 • Reading Sample 1 Walkthrough',
+      series: 'TQUK Functional Skills English Level 1',
+      tutor: 'Tutor Sonya',
+      paperGroup: 'tquk-english-l1-sample-paper-1',
+      activeSection: 'Reading',
+      companionSlug: 'tquk-english-l1-writing-sample-paper-1',
+      companionLabel: 'Writing Sample 1 (Subi • 1m 31s)',
+      poster: 'assets/img/posters/tquk-english-l1-reading-sample-paper-1-poster.jpg'
+    },
+    'tquk-english-l1-writing-sample-paper-1': {
+      ytId: 'gnrNxZxDtbg',
+      title: 'TQUK English L1 • Writing Sample 1 Walkthrough',
+      series: 'TQUK Functional Skills English Level 1',
+      tutor: 'Tutor Subi',
+      paperGroup: 'tquk-english-l1-sample-paper-1',
+      activeSection: 'Writing',
+      companionSlug: 'tquk-english-l1-reading-sample-paper-1',
+      companionLabel: 'Reading Sample 1 (Sonya • 1m 41s)',
+      poster: 'assets/img/posters/tquk-english-l1-writing-sample-paper-1-poster.jpg'
+    },
+    'tquk-english-l2-reading-sample-paper-1': {
+      ytId: 'TZu6iE1ymYo',
+      title: 'TQUK English L2 • Reading Sample 1 Walkthrough',
+      series: 'TQUK Functional Skills English Level 2',
+      tutor: 'Tutor Sonya',
+      paperGroup: 'tquk-english-l2-sample-paper-1',
+      activeSection: 'Reading',
+      companionSlug: 'tquk-english-l2-writing-sample-paper-1',
+      companionLabel: 'Writing Sample 1 (Emma • 1m 44s)',
+      poster: 'assets/img/posters/tquk-english-l2-reading-sample-paper-1-poster.jpg'
+    },
+    'tquk-english-l2-writing-sample-paper-1': {
+      ytId: 'q8fNDtl3G_U',
+      title: 'TQUK English L2 • Writing Sample 1 Walkthrough',
+      series: 'TQUK Functional Skills English Level 2',
+      tutor: 'Tutor Emma',
+      paperGroup: 'tquk-english-l2-sample-paper-1',
+      activeSection: 'Writing',
+      companionSlug: 'tquk-english-l2-reading-sample-paper-1',
+      companionLabel: 'Reading Sample 1 (Sonya • 1m 32s)',
+      poster: 'assets/img/posters/tquk-english-l2-writing-sample-paper-1-poster.jpg'
+    },
+
     // SLC Task 1 & Task 2 Exemplar Walkthroughs
     'slc-task1-presentation-model': {
       ytId: 'l7VRzidsFno',

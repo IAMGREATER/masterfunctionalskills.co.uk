@@ -5,6 +5,10 @@ drafts/
 archive/
 docs/
 mfs_model_engine/
+assets/img/pfs/
+pilots/
+assets/downloads/pilots/
+inspect_samples/
 
 # Temporary test and audit scripts/artifacts in root
 scratch_*

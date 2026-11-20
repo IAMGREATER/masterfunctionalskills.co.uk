@@ -1747,6 +1747,74 @@
       poster: 'assets/img/posters/ncfe-english-l2-2023-writing-poster.jpg'
     },
 
+    // Wave 4A: City & Guilds Maths & English L1-L2 Walkthroughs
+    'city-and-guilds-maths-l1-sample-4': {
+      ytId: 'nawKV3JIUgE',
+      title: 'City & Guilds Maths L1 • Sample 4 Walkthrough',
+      series: 'City & Guilds Functional Skills Maths Level 1',
+      tutor: 'Tutor Sonya',
+      paperGroup: 'city-and-guilds-maths-sample-4',
+      activeSection: 'Level 1',
+      companionSlug: 'city-and-guilds-maths-l2-sample-4',
+      companionLabel: 'Level 2 Sample 4 (Emma • 4m 23s)',
+      poster: 'assets/img/posters/city-and-guilds-maths-l1-sample-4-poster.jpg'
+    },
+    'city-and-guilds-maths-l2-sample-4': {
+      ytId: 'pqjpkwgrk-s',
+      title: 'City & Guilds Maths L2 • Sample 4 Walkthrough',
+      series: 'City & Guilds Functional Skills Maths Level 2',
+      tutor: 'Tutor Emma',
+      paperGroup: 'city-and-guilds-maths-sample-4',
+      activeSection: 'Level 2',
+      companionSlug: 'city-and-guilds-maths-l1-sample-4',
+      companionLabel: 'Level 1 Sample 4 (Sonya • 3m 51s)',
+      poster: 'assets/img/posters/city-and-guilds-maths-l2-sample-4-poster.jpg'
+    },
+    'city-and-guilds-english-l1-reading-sample-2': {
+      ytId: 'rQMqg3RtkcA',
+      title: 'City & Guilds English L1 • Reading Sample 2 Walkthrough',
+      series: 'City & Guilds Functional Skills English Level 1',
+      tutor: 'Tutor Subi',
+      paperGroup: 'city-and-guilds-english-l1-sample',
+      activeSection: 'Reading Sample 2',
+      companionSlug: 'city-and-guilds-english-l1-writing-sample-1',
+      companionLabel: 'Writing Sample 1 (Emma • 2m 02s)',
+      poster: 'assets/img/posters/city-and-guilds-english-l1-reading-sample-2-poster.jpg'
+    },
+    'city-and-guilds-english-l1-writing-sample-1': {
+      ytId: 'CD1nil3xofE',
+      title: 'City & Guilds English L1 • Writing Sample 1 Walkthrough',
+      series: 'City & Guilds Functional Skills English Level 1',
+      tutor: 'Tutor Emma',
+      paperGroup: 'city-and-guilds-english-l1-sample',
+      activeSection: 'Writing Sample 1',
+      companionSlug: 'city-and-guilds-english-l1-reading-sample-2',
+      companionLabel: 'Reading Sample 2 (Subi • 2m 23s)',
+      poster: 'assets/img/posters/city-and-guilds-english-l1-writing-sample-1-poster.jpg'
+    },
+    'city-and-guilds-english-l2-reading-2022-practice': {
+      ytId: '6JnsLSg4C7k',
+      title: 'City & Guilds English L2 • 2022 Practice Reading Walkthrough',
+      series: 'City & Guilds Functional Skills English Level 2',
+      tutor: 'Tutor Sonya',
+      paperGroup: 'city-and-guilds-english-l2-2022-practice',
+      activeSection: 'Reading',
+      companionSlug: 'city-and-guilds-english-l2-writing-2022-practice',
+      companionLabel: 'Writing Walkthrough (Subi • 1m 34s)',
+      poster: 'assets/img/posters/city-and-guilds-english-l2-reading-2022-practice-poster.jpg'
+    },
+    'city-and-guilds-english-l2-writing-2022-practice': {
+      ytId: 'DajfONkP7vs',
+      title: 'City & Guilds English L2 • 2022 Practice Writing Walkthrough',
+      series: 'City & Guilds Functional Skills English Level 2',
+      tutor: 'Tutor Subi',
+      paperGroup: 'city-and-guilds-english-l2-2022-practice',
+      activeSection: 'Writing',
+      companionSlug: 'city-and-guilds-english-l2-reading-2022-practice',
+      companionLabel: 'Reading Walkthrough (Sonya • 2m 10s)',
+      poster: 'assets/img/posters/city-and-guilds-english-l2-writing-2022-practice-poster.jpg'
+    },
+
     // SLC Task 1 & Task 2 Exemplar Walkthroughs
     'slc-task1-presentation-model': {
       ytId: 'l7VRzidsFno',

@@ -1552,6 +1552,20 @@
       tutor: 'Tutor Emma',
       poster: 'assets/img/posters/dfs-l1-mock-1-poster.jpg'
     },
+    'dfs-e3-sam': {
+      ytId: 'BukABdDn39Y',
+      title: 'DFS Entry Level 3 SAM • Section A & Tasks A–C Walkthrough',
+      series: 'Digital Functional Skills Entry 3 Mocks',
+      tutor: 'Tutor Sonya',
+      poster: 'assets/img/posters/dfs-e3-sam-poster.jpg'
+    },
+    'open-awards-dfs-l1-mock-1': {
+      ytId: 'ddS0v-Ko-Ho',
+      title: 'Open Awards DFS Level 1 Mock 1 • Full Walkthrough',
+      series: 'Open Awards Digital Functional Skills Level 1 Mocks',
+      tutor: 'Tutor Subi',
+      poster: 'assets/img/posters/open-awards-dfs-l1-mock-1-poster.jpg'
+    },
 
     // SLC Task 1 & Task 2 Exemplar Walkthroughs
     'slc-task1-presentation-model': {

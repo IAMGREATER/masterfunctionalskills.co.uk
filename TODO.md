@@ -1,5 +1,28 @@
 # Master Functional Skills (MFS) — Backlog & Improvement Tasks
 
+## 🧠 Planned Feature (To Come Back To — Nov 2026): Interactive Video Comprehension & Concept-Checking Quizzes
+
+### Core Architecture & UX Rules
+- **Clean MP4s (Zero Re-Rendering):** Never burn quizzes into video files. Drive all questions from lightweight JSON paired with existing `.vtt` chapter timestamps.
+- **No Hard-Locked Gates:** Never force mid-video pop-ups without a skip/toggle or lock webpage text below a video (respects mobile native fullscreen players, YouTube embeds, learners revising without audio, and learners jumping straight to one mock question).
+- **MFS Dark Blue Styling:** Cards must follow the unified `#0a0f1d` / `#0f172a` gradient theme (`#0284c7` accent bar, `#38bdf8` tags) and maintain full Dyslexia Tint compatibility.
+
+### 1. Revision Topic Videos (Short, 3–6 mins)
+- **3-Question "60-Second Concept Check" Card** placed directly beneath the video player.
+- Focus on process & traps (no heavy calculation): **Q1 Setup** (e.g. padded zeros `15.00`), **Q2 Process/Order** (e.g. BIDMAS priority), **Q3 Sense-Check / Unit**.
+- **"Rewatch This Step" Timestamp Jump:** Wrong answers explain *why* and provide a one-click **`▶ Watch [Sonya/Emma/Subi] explain this step (MM:SS)`** button using `.vtt` cue timestamps.
+
+### 2. Mock Paper Model Solution Walkthroughs (20–40 mins)
+- **Per-Question Examiner Trap Checks (`CCQs`)** synced to `.vtt` Question Chapters (`Q1`, `Q2`, `Q3`...) directly beneath the player.
+- **Optional Interactive Toggle:** `Pause after each question for a quick check [ON / OFF]` — gently pauses at chapter end (never mid-sentence) and highlights the question's Concept Check with a `Continue to next question →` button.
+- **4 Core CCQ Archetypes:**
+  1. **Unit & Capacity vs. Volume/Area Traps** (e.g. why `m³` vs `litres` vs `m²` matters on the answer line).
+  2. **Forgotten Yes/No Decision Sentences** (explicitly stating *Yes/No* AND comparing the two calculated figures).
+  3. **Real-World Rounding Direction** (why `4.2` minibuses/tins rounds UP to `5` instead of down to `4`).
+  4. **Reverse Calculation Checks** (identifying valid inverse checks).
+
+---
+
 ## 📌 High Priority: Level 1 vs Level 2 Curriculum & Resource Separation
 
 ### Background

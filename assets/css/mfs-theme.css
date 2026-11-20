@@ -528,10 +528,10 @@ a {
   box-shadow: var(--shadow-sm);
 }
 
-/* Ensure mobile header is strictly non-persisting across all mobile viewports in both orientations */
-@media (max-width: 1024px), 
-       (orientation: landscape) and (max-height: 850px), 
-       (max-height: 650px), 
+/* Ensure mobile & tablet header is strictly non-persisting across all mobile & tablet viewports in both orientations */
+@media (max-width: 1279px),
+       (orientation: landscape) and (max-height: 850px),
+       (max-height: 650px),
        (hover: none) and (pointer: coarse) {
   .mfs-navbar {
     position: relative !important;
@@ -1471,7 +1471,8 @@ a {
   gap: 20px;
 }
 
-.directory-head-card h2 {
+.directory-head-card h2,
+.directory-head-card .directory-head-title-wrap h2 {
   color: #ffffff;
   font-size: 1.45rem;
   margin: 0;

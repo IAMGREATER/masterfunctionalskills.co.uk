@@ -3,6 +3,8 @@ scratch/
 scratch_images/
 drafts/
 archive/
+docs/
+mfs_model_engine/
 
 # Temporary test and audit scripts/artifacts in root
 scratch_*

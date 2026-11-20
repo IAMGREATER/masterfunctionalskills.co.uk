@@ -9,6 +9,125 @@
   // Available videos dictionary (slug/topic -> video details)
   // Available videos dictionary (slug/topic -> video details)
   const KNOWN_VIDEOS = {
+    'lists-tally-charts-and-line-graphs': {
+      ytId: 'xN0ngd3-A6s',
+      title: "Lists, Tally Charts & Line Graphs \u2022 Masterclass Walkthrough",
+      series: 'Open Awards, Edexcel & City & Guilds Maths Level 2',
+      tutor: 'Tutor Subi',
+      poster: 'assets/img/posters/lists-tally-charts-and-line-graphs-poster.jpg'
+    },
+    'everyday-scales-thermometers-and-timetables': {
+      ytId: '8hIgzw9Q2xQ',
+      title: "Scales, Thermometers & Timetables \u2022 Masterclass Walkthrough",
+      series: 'Open Awards, Edexcel & City & Guilds Maths Level 2',
+      tutor: 'Tutor Emma',
+      poster: 'assets/img/posters/everyday-scales-thermometers-and-timetables-poster.jpg'
+    },
+    'number-patterns-and-sequences': {
+      ytId: 'IvQtp2pQcqo',
+      title: "Number Patterns & Sequences \u2022 Masterclass Walkthrough",
+      series: 'Open Awards, Edexcel & City & Guilds Maths Level 2',
+      tutor: 'Tutor Sonya',
+      poster: 'assets/img/posters/number-patterns-and-sequences-poster.jpg'
+    },
+    'dfs-onscreen-exam-strategy': {
+      ytId: 'v_EoBPGRnKA',
+      title: "DFS Onscreen Exam Strategy: Part A & Part B \u2022 Masterclass Walkthrough",
+      series: 'Digital Functional Skills (Entry 3 & Level 1)',
+      tutor: 'Tutor Sonya',
+      poster: 'assets/img/posters/dfs-onscreen-exam-strategy-poster.jpg'
+    },
+    'dfs-files-folders-cloud-security': {
+      ytId: 'XytycIGeOdg',
+      title: "Files, Folders, Cloud Storage & Cybersecurity \u2022 Masterclass Walkthrough",
+      series: 'Digital Functional Skills (Entry 3 & Level 1)',
+      tutor: 'Tutor Subi',
+      poster: 'assets/img/posters/dfs-files-folders-cloud-security-poster.jpg'
+    },
+    'dfs-word-processing-layout-formatting': {
+      ytId: 'z_GFG2NbtSE',
+      title: "Word Processing, Document Layout & Formatting \u2022 Masterclass Walkthrough",
+      series: 'Digital Functional Skills (Entry 3 & Level 1)',
+      tutor: 'Tutor Emma',
+      poster: 'assets/img/posters/dfs-word-processing-layout-formatting-poster.jpg'
+    },
+    'dfs-spreadsheets-formulas-charts': {
+      ytId: '6hTVV6GgayQ',
+      title: "Spreadsheets, Formulas (=SUM, =AVERAGE) & Charts \u2022 Masterclass Walkthrough",
+      series: 'Digital Functional Skills (Entry 3 & Level 1)',
+      tutor: 'Tutor Sonya',
+      poster: 'assets/img/posters/dfs-spreadsheets-formulas-charts-poster.jpg'
+    },
+    'english-slc-exam-checklist': {
+      ytId: 'Zw-0pR_aTR8',
+      title: "SLC Assessment Overview & Distinction Strategy \u2022 Masterclass Walkthrough",
+      series: 'Functional Skills English Level 2',
+      tutor: 'Tutor Subi',
+      poster: 'assets/img/posters/slc-the-exam-poster.jpg'
+    },
+    'english-slc-discussion': {
+      ytId: 'rHXKI7uGb6M',
+      title: "SLC Task 2: Formal Group Discussion & Turn-Taking \u2022 Masterclass Walkthrough",
+      series: 'Functional Skills English Level 2',
+      tutor: 'Tutor Sonya',
+      poster: 'assets/img/posters/slc-discussion-poster.jpg'
+    },
+    'english-slc-presentation': {
+      ytId: '7HIEJWngLVg',
+      title: "SLC Task 1: Delivering a Level 2 Presentation & Q&A \u2022 Masterclass Walkthrough",
+      series: 'Functional Skills English Level 2',
+      tutor: 'Tutor Emma',
+      poster: 'assets/img/posters/slc-presentation-poster.jpg'
+    },
+    'english-proofreading-exam': {
+      ytId: '2prD1I9I32U',
+      title: "Proofreading, Finalising & Writing Exam Strategy \u2022 Masterclass Walkthrough",
+      series: 'Functional Skills English Level 2',
+      tutor: 'Tutor Subi',
+      poster: 'assets/img/posters/writing-fantastic-finalising-poster.jpg'
+    },
+    'english-spelling-homophones': {
+      ytId: '0vWBiLcl8VY',
+      title: "Tricky Spelling Rules & Homophone Traps \u2022 Masterclass Walkthrough",
+      series: 'Functional Skills English Level 2',
+      tutor: 'Tutor Emma',
+      poster: 'assets/img/posters/writing-spelling-poster.jpg'
+    },
+    'english-tenses-voice': {
+      ytId: 'mNxrOOFoM8Y',
+      title: "Tense Consistency & Active vs Passive Voice \u2022 Masterclass Walkthrough",
+      series: 'Functional Skills English Level 2',
+      tutor: 'Tutor Sonya',
+      poster: 'assets/img/posters/writing-tenses-poster.jpg'
+    },
+    'english-grammar-sentences': {
+      ytId: 'kAsBOzSxLCM',
+      title: "Grammar, Complex Sentences & Agreement \u2022 Masterclass Walkthrough",
+      series: 'Functional Skills English Level 2',
+      tutor: 'Tutor Subi',
+      poster: 'assets/img/posters/writing-grammar-poster.jpg'
+    },
+    'english-paragraphing-cohesion': {
+      ytId: 'NBVRDZXLLN0',
+      title: "Paragraphing, Cohesion & Discourse Markers \u2022 Masterclass Walkthrough",
+      series: 'Functional Skills English Level 2',
+      tutor: 'Tutor Emma',
+      poster: 'assets/img/posters/writing-organisational-markers-poster.jpg'
+    },
+    'english-formal-reports-reviews': {
+      ytId: 'eOAiwz11h1U',
+      title: "Formal Reports & Balanced Reviews \u2022 Masterclass Walkthrough",
+      series: 'Functional Skills English Level 2',
+      tutor: 'Tutor Sonya',
+      poster: 'assets/img/posters/reports-and-reviews-poster.jpg'
+    },
+    'english-articles-blogs': {
+      ytId: 'j5v-cS-pmWo',
+      title: "Articles & Blogs: Headlines, Hooks & Persuasion \u2022 Masterclass Walkthrough",
+      series: 'Functional Skills English Level 2',
+      tutor: 'Tutor Subi',
+      poster: 'assets/img/posters/articles-and-blogs-poster.jpg'
+    },
     'english-workplace-emails': {
       ytId: 'lH37b3G_60Y',
       title: "Workplace Emails, Clarity & Professional Tone \u2022 Masterclass Walkthrough",
@@ -1136,6 +1255,158 @@
       companionLabel: 'Section A: Non-Calculator (10m)'
     },
 
+    // Past Paper 4
+    'edexcel-maths-l2-past-paper-4-section-a': {
+      ytId: 'ixCjmEKRQn8',
+      title: 'Past Paper 4 • Section A: Non-Calculator (Full Walkthrough)',
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      paperGroup: 'edexcel-maths-l2-pp4',
+      activeSection: 'A',
+      companionSlug: 'edexcel-maths-l2-past-paper-4-section-b',
+      companionLabel: 'Section B: Calculator (20m)'
+    },
+    'past paper 4 • section a: non-calculator': {
+      ytId: 'ixCjmEKRQn8',
+      title: 'Past Paper 4 • Section A: Non-Calculator (Full Walkthrough)',
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      paperGroup: 'edexcel-maths-l2-pp4',
+      activeSection: 'A',
+      companionSlug: 'edexcel-maths-l2-past-paper-4-section-b',
+      companionLabel: 'Section B: Calculator (20m)'
+    },
+    'edexcel-maths-l2-past-paper-4-section-b': {
+      ytId: '13x1Lj32Tlc',
+      title: 'Past Paper 4 • Section B: Calculator (Full Walkthrough)',
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      paperGroup: 'edexcel-maths-l2-pp4',
+      activeSection: 'B',
+      companionSlug: 'edexcel-maths-l2-past-paper-4-section-a',
+      companionLabel: 'Section A: Non-Calculator (9m)'
+    },
+    'past paper 4 • section b: calculator': {
+      ytId: '13x1Lj32Tlc',
+      title: 'Past Paper 4 • Section B: Calculator (Full Walkthrough)',
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      paperGroup: 'edexcel-maths-l2-pp4',
+      activeSection: 'B',
+      companionSlug: 'edexcel-maths-l2-past-paper-4-section-a',
+      companionLabel: 'Section A: Non-Calculator (9m)'
+    },
+
+    // Past Paper 3
+    'edexcel-maths-l2-past-paper-3-section-a': {
+      ytId: 'bEyhd5trbb8',
+      title: 'Past Paper 3 • Section A: Non-Calculator (Full Walkthrough)',
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      paperGroup: 'edexcel-maths-l2-pp3',
+      activeSection: 'A',
+      companionSlug: 'edexcel-maths-l2-past-paper-3-section-b',
+      companionLabel: 'Section B: Calculator (20m)'
+    },
+    'past paper 3 • section a: non-calculator': {
+      ytId: 'bEyhd5trbb8',
+      title: 'Past Paper 3 • Section A: Non-Calculator (Full Walkthrough)',
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      paperGroup: 'edexcel-maths-l2-pp3',
+      activeSection: 'A',
+      companionSlug: 'edexcel-maths-l2-past-paper-3-section-b',
+      companionLabel: 'Section B: Calculator (20m)'
+    },
+    'edexcel-maths-l2-past-paper-3-section-b': {
+      ytId: 'wPXjWtO0OL0',
+      title: 'Past Paper 3 • Section B: Calculator (Full Walkthrough)',
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      paperGroup: 'edexcel-maths-l2-pp3',
+      activeSection: 'B',
+      companionSlug: 'edexcel-maths-l2-past-paper-3-section-a',
+      companionLabel: 'Section A: Non-Calculator (10m)'
+    },
+    'past paper 3 • section b: calculator': {
+      ytId: 'wPXjWtO0OL0',
+      title: 'Past Paper 3 • Section B: Calculator (Full Walkthrough)',
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      paperGroup: 'edexcel-maths-l2-pp3',
+      activeSection: 'B',
+      companionSlug: 'edexcel-maths-l2-past-paper-3-section-a',
+      companionLabel: 'Section A: Non-Calculator (10m)'
+    },
+
+    // Past Paper 2
+    'edexcel-maths-l2-past-paper-2-section-a': {
+      ytId: '4uMstnMVIG0',
+      title: 'Past Paper 2 • Section A: Non-Calculator (Full Walkthrough)',
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      paperGroup: 'edexcel-maths-l2-pp2',
+      activeSection: 'A',
+      companionSlug: 'edexcel-maths-l2-past-paper-2-section-b',
+      companionLabel: 'Section B: Calculator (20m)'
+    },
+    'past paper 2 • section a: non-calculator': {
+      ytId: '4uMstnMVIG0',
+      title: 'Past Paper 2 • Section A: Non-Calculator (Full Walkthrough)',
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      paperGroup: 'edexcel-maths-l2-pp2',
+      activeSection: 'A',
+      companionSlug: 'edexcel-maths-l2-past-paper-2-section-b',
+      companionLabel: 'Section B: Calculator (20m)'
+    },
+    'edexcel-maths-l2-past-paper-2-section-b': {
+      ytId: 'EJ75RYeZPd4',
+      title: 'Past Paper 2 • Section B: Calculator (Full Walkthrough)',
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      paperGroup: 'edexcel-maths-l2-pp2',
+      activeSection: 'B',
+      companionSlug: 'edexcel-maths-l2-past-paper-2-section-a',
+      companionLabel: 'Section A: Non-Calculator (9m)'
+    },
+    'past paper 2 • section b: calculator': {
+      ytId: 'EJ75RYeZPd4',
+      title: 'Past Paper 2 • Section B: Calculator (Full Walkthrough)',
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      paperGroup: 'edexcel-maths-l2-pp2',
+      activeSection: 'B',
+      companionSlug: 'edexcel-maths-l2-past-paper-2-section-a',
+      companionLabel: 'Section A: Non-Calculator (9m)'
+    },
+
+    // Past Paper 1
+    'edexcel-maths-l2-past-paper-1-section-a': {
+      ytId: 'zqaut1_Ad5E',
+      title: 'Past Paper 1 • Section A: Non-Calculator (Full Walkthrough)',
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      paperGroup: 'edexcel-maths-l2-pp1',
+      activeSection: 'A',
+      companionSlug: 'edexcel-maths-l2-past-paper-1-section-b',
+      companionLabel: 'Section B: Calculator (20m)'
+    },
+    'past paper 1 • section a: non-calculator': {
+      ytId: 'zqaut1_Ad5E',
+      title: 'Past Paper 1 • Section A: Non-Calculator (Full Walkthrough)',
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      paperGroup: 'edexcel-maths-l2-pp1',
+      activeSection: 'A',
+      companionSlug: 'edexcel-maths-l2-past-paper-1-section-b',
+      companionLabel: 'Section B: Calculator (20m)'
+    },
+    'edexcel-maths-l2-past-paper-1-section-b': {
+      ytId: 'lS9M4R1ujEE',
+      title: 'Past Paper 1 • Section B: Calculator (Full Walkthrough)',
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      paperGroup: 'edexcel-maths-l2-pp1',
+      activeSection: 'B',
+      companionSlug: 'edexcel-maths-l2-past-paper-1-section-a',
+      companionLabel: 'Section A: Non-Calculator (9m)'
+    },
+    'past paper 1 • section b: calculator': {
+      ytId: 'lS9M4R1ujEE',
+      title: 'Past Paper 1 • Section B: Calculator (Full Walkthrough)',
+      series: 'Pearson Edexcel Functional Skills Maths Level 2',
+      paperGroup: 'edexcel-maths-l2-pp1',
+      activeSection: 'B',
+      companionSlug: 'edexcel-maths-l2-past-paper-1-section-a',
+      companionLabel: 'Section A: Non-Calculator (9m)'
+    },
+
     // SLC Task 1 & Task 2 Exemplar Walkthroughs
     'slc-task1-presentation-model': {
       ytId: 'l7VRzidsFno',
@@ -1175,98 +1446,98 @@
     },
     // === E3_MODAL_START ===
     'e3-numbers-to-1000-and-patterns': {
-      ytId: '',
+      ytId: '_I-yA5f93Kg',
       localVideo: 'assets/video/sonya-e3-numbers-to-1000-and-patterns-walkthrough.mp4',
       poster: 'assets/img/posters/e3-numbers-to-1000-and-patterns-poster.jpg',
       title: 'E3 Maths: Numbers up to 1,000 & Patterns (Foundation Lesson)',
       series: 'Entry Level 3 Maths Foundation'
     },
     'e3-addition-and-subtraction': {
-      ytId: '',
+      ytId: 'gTdqIWhHBQs',
       localVideo: 'assets/video/emma-e3-addition-and-subtraction-walkthrough.mp4',
       poster: 'assets/img/posters/e3-addition-and-subtraction-poster.jpg',
       title: 'E3 Maths: 3-Digit Addition & Subtraction (Foundation Lesson)',
       series: 'Entry Level 3 Maths Foundation'
     },
     'e3-multiplication-and-division': {
-      ytId: '',
+      ytId: '7GCWKG_pSzw',
       localVideo: 'assets/video/subi-e3-multiplication-and-division-walkthrough.mp4',
       poster: 'assets/img/posters/e3-multiplication-and-division-poster.jpg',
       title: 'E3 Maths: Multiplication & Division with Remainders (Foundation Lesson)',
       series: 'Entry Level 3 Maths Foundation'
     },
     'e3-rounding-and-estimating': {
-      ytId: '',
+      ytId: 'kRvgYUIZixY',
       localVideo: 'assets/video/sonya-e3-rounding-and-estimating-walkthrough.mp4',
       poster: 'assets/img/posters/e3-rounding-and-estimating-poster.jpg',
       title: 'E3 Maths: Rounding to Nearest 10 & 100 (Foundation Lesson)',
       series: 'Entry Level 3 Maths Foundation'
     },
     'e3-everyday-fractions': {
-      ytId: '',
+      ytId: '-FCvw_Tv5FM',
       localVideo: 'assets/video/emma-e3-everyday-fractions-walkthrough.mp4',
       poster: 'assets/img/posters/e3-everyday-fractions-poster.jpg',
       title: 'E3 Maths: Everyday Fractions (1/2, 1/4, 3/4, 1/10) (Foundation Lesson)',
       series: 'Entry Level 3 Maths Foundation'
     },
     'e3-money-and-decimals': {
-      ytId: '',
+      ytId: 'TxGrwFLVVE8',
       localVideo: 'assets/video/subi-e3-money-and-decimals-walkthrough.mp4',
       poster: 'assets/img/posters/e3-money-and-decimals-poster.jpg',
       title: 'E3 Maths: Money, Change & Decimal Basics (Foundation Lesson)',
       series: 'Entry Level 3 Maths Foundation'
     },
     'e3-time-clocks-and-calendars': {
-      ytId: '',
+      ytId: 'LbOD8LDZUyo',
       localVideo: 'assets/video/sonya-e3-time-clocks-and-calendars-walkthrough.mp4',
       poster: 'assets/img/posters/e3-time-clocks-and-calendars-poster.jpg',
       title: 'E3 Maths: Telling the Time, Clocks & Calendars (Foundation Lesson)',
       series: 'Entry Level 3 Maths Foundation'
     },
     'e3-everyday-measures-and-scales': {
-      ytId: '',
+      ytId: 'nLt3nEc3URs',
       localVideo: 'assets/video/emma-e3-everyday-measures-and-scales-walkthrough.mp4',
       poster: 'assets/img/posters/e3-everyday-measures-and-scales-poster.jpg',
       title: 'E3 Maths: Length, Weight, Capacity & Reading Scales (Foundation Lesson)',
       series: 'Entry Level 3 Maths Foundation'
     },
     'e3-shapes-angles-and-directions': {
-      ytId: '',
+      ytId: '2DFypm6MqWI',
       localVideo: 'assets/video/subi-e3-shapes-angles-and-directions-walkthrough.mp4',
       poster: 'assets/img/posters/e3-shapes-angles-and-directions-poster.jpg',
       title: 'E3 Maths: Shapes, Right Angles & Directions (Foundation Lesson)',
       series: 'Entry Level 3 Maths Foundation'
     },
     'e3-lists-tallies-tables-and-charts': {
-      ytId: '',
+      ytId: 'OgrJzBZVR24',
       localVideo: 'assets/video/sonya-e3-lists-tallies-tables-and-charts-walkthrough.mp4',
       poster: 'assets/img/posters/e3-lists-tallies-tables-and-charts-poster.jpg',
       title: 'E3 Maths: Lists, Tally Charts, Tables & Bar Charts (Foundation Lesson)',
       series: 'Entry Level 3 Maths Foundation'
     },
     'e3-english-reading-everyday-texts': {
-      ytId: '',
+      ytId: '7abZ7FcL6n8',
       localVideo: 'assets/video/sonya-e3-english-reading-everyday-texts-walkthrough.mp4',
       poster: 'assets/img/posters/e3-english-reading-everyday-texts-poster.jpg',
       title: 'E3 English: Reading Signs, Emails & Instructions (Foundation Lesson)',
       series: 'Entry Level 3 English Foundation'
     },
     'e3-english-sentence-basics': {
-      ytId: '',
+      ytId: 'fobT_DEnKvI',
       localVideo: 'assets/video/emma-e3-english-sentence-basics-walkthrough.mp4',
       poster: 'assets/img/posters/e3-english-sentence-basics-poster.jpg',
       title: 'E3 English: Capitals, Full Stops & Joining Words (Foundation Lesson)',
       series: 'Entry Level 3 English Foundation'
     },
     'e3-english-everyday-spellings': {
-      ytId: '',
+      ytId: 'rC3eBmHbbyc',
       localVideo: 'assets/video/subi-e3-english-everyday-spellings-walkthrough.mp4',
       poster: 'assets/img/posters/e3-english-everyday-spellings-poster.jpg',
       title: 'E3 English: Everyday Spellings, Plurals & Homophones (Foundation Lesson)',
       series: 'Entry Level 3 English Foundation'
     },
     'e3-english-writing-emails-and-forms': {
-      ytId: '',
+      ytId: 'h60SvDd-fuA',
       localVideo: 'assets/video/emma-e3-english-writing-emails-and-forms-walkthrough.mp4',
       poster: 'assets/img/posters/e3-english-writing-emails-and-forms-poster.jpg',
       title: 'E3 English: Writing Short Emails, Notes & Forms (Foundation Lesson)',

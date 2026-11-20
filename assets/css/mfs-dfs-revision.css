@@ -1755,9 +1755,41 @@ body {
   border-color: #7dd3fc;
   color: #0369a1;
 }
-@media (max-width: 768px) {
+@media (max-width: 1279px), (hover: none) and (pointer: coarse) {
   .dfs-sticky-toc {
-    position: static;
-    padding: 12px 14px;
+    position: static !important;
+    top: auto !important;
+    padding: 10px 14px;
+    z-index: 1;
+  }
+}
+@media (max-width: 767px) {
+  .dfs-sticky-toc {
+    position: static !important;
+    padding: 8px 10px;
+    gap: 6px 10px;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .dfs-sticky-toc-label {
+    font-size: 0.74rem;
+  }
+  .dfs-sticky-toc-links {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    width: 100%;
+    padding-bottom: 2px;
+    scrollbar-width: none;
+    gap: 6px;
+  }
+  .dfs-sticky-toc-links::-webkit-scrollbar {
+    display: none;
+  }
+  .dfs-sticky-toc-links a {
+    flex-shrink: 0;
+    white-space: nowrap;
+    padding: 5px 10px;
+    font-size: 0.78rem;
   }
 }

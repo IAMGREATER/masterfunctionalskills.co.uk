@@ -629,3 +629,49 @@ p, span, div, li, td, th, label, h1, h2, h3, h4, .q-stem, .apply-stem, .drill-q,
     -webkit-overflow-scrolling: touch !important;
   }
 }
+
+/* ==========================================================================
+   2026 MOBILE & TABLET WORKSHEET DECLUTTER ENGINE
+   - Non-sticky .print-bar on phones & tablets (never blocks scrolling)
+   - Hides paper-only dotted Name/Date bars & blank ruled lines on screen
+   - Clean 1-column horizontal drill rows on phones (<= 520px)
+   - 100% untouched in @media print (A4 printouts keep every line & box!)
+   ========================================================================== */
+@media screen and (max-width: 1279px),
+       screen and (hover: none) and (pointer: coarse) {
+  .print-bar {
+    position: static !important;
+    top: auto !important;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  /* Hide print-only Name/Date/Score boxes and empty ruled paper lines on touch screens */
+  .learner-bar,
+  .ws-candidate-grid,
+  .working-lines-box,
+  .q-working-area,
+  .apply-working-area,
+  .apply-working-lines {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 520px) {
+  .drill-grid {
+    grid-template-columns: 1fr !important;
+    gap: 6px !important;
+  }
+  .drill-card {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+    padding: 8px 10px !important;
+  }
+  .drill-ans-box {
+    margin-top: 0 !important;
+    flex-shrink: 0 !important;
+  }
+}

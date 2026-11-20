@@ -2564,4 +2564,424 @@ body {
   gap: 5px;
 }
 
+/* =========================================================================
+   MOBILE & PORTRAIT TABLET SIMULATOR ENGINE (<= 900px)
+   - Segmented Question / Working tabs (zero vertical ping-pong scrolling)
+   - Fixes English Reading 52%/48% narrow-column squeeze on mobile
+   - Collapsible Question Prompt reminder bar inside Working tab
+   - Floating popup Calculator overlay (never steals half the typing space)
+   - Compact 1-row Bottom Bar + Tap-to-Open Question Grid bottom sheet
+   - Desktop (> 900px) and @media print remain 100% untouched
+   ========================================================================= */
+.sim-mobile-pane-tabs,
+.sim-mobile-goto-work-btn,
+.sim-mobile-prompt-strip,
+.sim-mobile-qgrid-btn,
+.sim-mobile-calc-btn {
+  display: none;
+}
+
+@media print {
+  .sim-mobile-pane-tabs,
+  .sim-mobile-goto-work-btn,
+  .sim-mobile-prompt-strip,
+  .sim-mobile-qgrid-btn,
+  .sim-mobile-calc-btn {
+    display: none !important;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  html {
+    scrollbar-gutter: auto !important;
+    overflow-y: auto !important;
+  }
+  /* 1. Hide outer marketing banner & remove container margin so Simulator starts at top */
+  #simHeroContextSection {
+    display: none !important;
+  }
+  #simMainWrap {
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+  .sim-app-shell {
+    height: auto !important;
+    min-height: calc(100dvh - 54px) !important;
+    max-height: none !important;
+    overflow: visible !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+    border-left: none !important;
+    border-right: none !important;
+    box-shadow: none !important;
+  }
+
+  /* 2. Slim Mobile Control Bar */
+  .sim-control-bar {
+    padding: 8px 10px !important;
+    gap: 8px !important;
+  }
+  .sim-brand-block {
+    width: 100% !important;
+    gap: 6px !important;
+  }
+  .sim-brand-badge,
+  .sim-select-label,
+  .sim-save-status,
+  .sim-font-control-label,
+  .sim-font-size-badge,
+  .sim-reset-lbl,
+  .sim-btn-fullscreen-top {
+    display: none !important;
+  }
+  .sim-paper-select-wrap {
+    width: 100% !important;
+  }
+  .sim-paper-dropdown {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 7px 10px !important;
+    font-size: 0.84rem !important;
+  }
+  .sim-controls-right {
+    width: 100% !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 6px !important;
+  }
+  .sim-timer-box {
+    padding: 5px 9px !important;
+    font-size: 0.86rem !important;
+    flex-shrink: 0 !important;
+  }
+  .sim-font-control-group {
+    padding: 3px 5px !important;
+    gap: 3px !important;
+  }
+  .sim-mobile-calc-btn.is-available {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 5px !important;
+    background: #0284c7 !important;
+    border: 1px solid #38bdf8 !important;
+    color: #ffffff !important;
+    padding: 6px 10px !important;
+    font-size: 0.78rem !important;
+    font-weight: 800 !important;
+    border-radius: 6px !important;
+    white-space: nowrap !important;
+  }
+  .sim-btn-reset-top {
+    padding: 6px 9px !important;
+    min-width: 34px !important;
+    justify-content: center !important;
+  }
+
+  /* Section Switcher Tabs (Section A / Section B) */
+  .sim-section-tabs-bar {
+    padding: 6px 10px !important;
+    gap: 6px !important;
+    overflow-x: auto !important;
+    flex-wrap: nowrap !important;
+  }
+  .sim-section-tab-btn {
+    padding: 6px 10px !important;
+    font-size: 0.78rem !important;
+    white-space: nowrap !important;
+  }
+
+  /* 3. Segmented Mobile Question / Working Tab Switcher */
+  .sim-mobile-pane-tabs.is-active {
+    display: grid !important;
+    grid-template-columns: 1fr 1fr !important;
+    gap: 6px !important;
+    padding: 7px 10px !important;
+    background: #f1f5f9 !important;
+    border-bottom: 1.5px solid #cbd5e1 !important;
+  }
+  .sim-mobile-pane-tab {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 6px !important;
+    padding: 9px 10px !important;
+    border-radius: 8px !important;
+    border: 1.5px solid #cbd5e1 !important;
+    background: #ffffff !important;
+    color: #334155 !important;
+    font-size: 0.84rem !important;
+    font-weight: 800 !important;
+    cursor: pointer !important;
+    transition: all 0.15s ease !important;
+  }
+  .sim-mobile-pane-tab.active {
+    background: #0f172a !important;
+    color: #ffffff !important;
+    border-color: #0284c7 !important;
+    box-shadow: 0 2px 8px rgba(2, 132, 199, 0.22) !important;
+  }
+  .sim-mobile-pane-tab.active i {
+    color: #38bdf8 !important;
+  }
+
+  /* 4. Full-Width Single Active Pane (Overrides Reading 52%/48% & Desktop Split) */
+  .sim-canvas,
+  #simQuestionPanes {
+    display: flex !important;
+    flex-direction: column !important;
+    height: auto !important;
+    min-height: 0 !important;
+    overflow: visible !important;
+    flex: 1 1 auto !important;
+  }
+  .sim-pane-question,
+  .sim-pane-working,
+  .sim-mode-reading .sim-pane-question,
+  .sim-mode-reading .sim-pane-working,
+  .sim-mode-writing .sim-pane-question,
+  .sim-mode-writing .sim-pane-working {
+    width: 100% !important;
+    min-width: 100% !important;
+    max-width: 100% !important;
+    flex: 1 1 auto !important;
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+    padding: 12px !important;
+    border-right: none !important;
+    box-sizing: border-box !important;
+  }
+  #simQuestionPanes[data-mobile-pane="question"] .sim-pane-working {
+    display: none !important;
+  }
+  #simQuestionPanes[data-mobile-pane="working"] .sim-pane-question {
+    display: none !important;
+  }
+
+  .sim-source-content-card {
+    min-height: 260px !important;
+    padding: 14px !important;
+  }
+
+  /* Quick CTA button at bottom of Question tab to switch to Working & Answer */
+  .sim-mobile-goto-work-btn {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 8px !important;
+    width: 100% !important;
+    padding: 12px 16px !important;
+    margin-top: 8px !important;
+    background: #0284c7 !important;
+    color: #ffffff !important;
+    border: none !important;
+    border-radius: 10px !important;
+    font-size: 0.90rem !important;
+    font-weight: 800 !important;
+    cursor: pointer !important;
+    box-shadow: 0 4px 12px rgba(2, 132, 199, 0.25) !important;
+  }
+  #simLeftFooterAdvice {
+    display: none !important;
+  }
+
+  /* 5. Collapsible Question Prompt Strip inside Working Tab */
+  .sim-mobile-prompt-strip {
+    display: block !important;
+    background: #f0f9ff !important;
+    border: 1.5px solid #bae6fd !important;
+    border-radius: 9px !important;
+    overflow: hidden !important;
+    margin-bottom: 4px !important;
+  }
+  .sim-mobile-prompt-toggle {
+    width: 100% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 8px !important;
+    padding: 8px 12px !important;
+    background: transparent !important;
+    border: none !important;
+    color: #0369a1 !important;
+    font-size: 0.81rem !important;
+    font-weight: 800 !important;
+    cursor: pointer !important;
+    text-align: left !important;
+  }
+  .sim-mobile-prompt-hint {
+    font-size: 0.74rem !important;
+    font-weight: 700 !important;
+    color: #0284c7 !important;
+    white-space: nowrap !important;
+  }
+  .sim-mobile-prompt-body {
+    padding: 8px 12px 10px !important;
+    border-top: 1px solid #bae6fd !important;
+    background: #ffffff !important;
+    font-size: 0.84rem !important;
+    line-height: 1.45 !important;
+    color: #0f172a !important;
+    white-space: pre-wrap !important;
+  }
+
+  /* Compact Horizontal Swipeable Math Symbol Bar on Mobile */
+  .sim-math-toolbar {
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    gap: 5px !important;
+    padding: 6px 8px !important;
+  }
+  .sim-math-toolbar::-webkit-scrollbar {
+    display: none !important;
+  }
+  .sim-toolbar-label {
+    display: none !important;
+  }
+  .sim-sym-btn,
+  .sim-template-btn {
+    flex: 0 0 auto !important;
+  }
+  .sim-working-textarea {
+    min-height: 170px !important;
+  }
+
+  /* 6. Floating Popup Calculator Overlay on Mobile (Never Squeezes Typing Area) */
+  .sim-working-workspace {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+  }
+  #simCalcDrawerWrap {
+    width: auto !important;
+    min-width: 0 !important;
+    max-width: none !important;
+    flex: 0 0 auto !important;
+  }
+  #simCalcShrunkIconBtn {
+    display: none !important;
+  }
+  #simCalcDrawer {
+    display: none !important;
+  }
+  #simCalcDrawerWrap.floating-open #simCalcDrawer {
+    display: flex !important;
+    position: fixed !important;
+    right: 12px !important;
+    bottom: 68px !important;
+    width: min(310px, calc(100vw - 24px)) !important;
+    z-index: 1200 !important;
+    box-shadow: 0 18px 42px rgba(15, 23, 42, 0.42) !important;
+    border: 2px solid #0284c7 !important;
+    border-radius: 14px !important;
+  }
+  #simCalcCloseFloatingBtn {
+    display: inline-flex !important;
+  }
+
+  /* Cover Sheet Mobile Ergonomics */
+  .sim-cover-container {
+    padding: 10px !important;
+    flex: 1 1 auto !important;
+    height: auto !important;
+    min-height: auto !important;
+    overflow: visible !important;
+  }
+  .sim-cover-sheet {
+    padding: 14px !important;
+  }
+  .sim-cover-paper-title {
+    font-size: 1.15rem !important;
+  }
+  .sim-cover-body {
+    grid-template-columns: 1fr !important;
+    gap: 12px !important;
+  }
+
+  /* 7. Sleek Sticky 1-Row Mobile Bottom Bar + Popup Question Grid Sheet */
+  .sim-bottom-bar {
+    position: sticky !important;
+    bottom: 0 !important;
+    z-index: 900 !important;
+    padding: 8px 10px calc(8px + env(safe-area-inset-bottom, 0px)) !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 6px !important;
+    background: #ffffff !important;
+    border-top: 1.5px solid #cbd5e1 !important;
+    box-shadow: 0 -4px 14px rgba(15, 23, 42, 0.08) !important;
+  }
+  #simPrevBtn,
+  #simNextBtn {
+    min-width: 0 !important;
+    padding: 8px 11px !important;
+    font-size: 0.80rem !important;
+    flex: 0 0 auto !important;
+  }
+  .sim-mobile-qgrid-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 5px !important;
+    padding: 8px 11px !important;
+    background: #f1f5f9 !important;
+    border: 1.5px solid #cbd5e1 !important;
+    border-radius: 8px !important;
+    color: #0f172a !important;
+    font-size: 0.80rem !important;
+    font-weight: 800 !important;
+    cursor: pointer !important;
+    white-space: nowrap !important;
+    flex: 1 1 auto !important;
+    max-width: 140px !important;
+  }
+  .sim-bottom-actions {
+    width: auto !important;
+    margin-left: 0 !important;
+    gap: 6px !important;
+    flex: 0 0 auto !important;
+  }
+  #simDownloadAnswersBtn {
+    display: none !important;
+  }
+  #simCheckAnswersBtn {
+    padding: 8px 10px !important;
+    font-size: 0.78rem !important;
+  }
+  #simCheckAnswersBtn .sim-check-lbl {
+    display: none !important;
+  }
+
+  /* Popup Question Pills Grid Sheet (Hidden until #simMobileQGridBtn tapped) */
+  #simPillsContainer {
+    display: none !important;
+  }
+  .sim-bottom-bar.mobile-grid-open #simPillsContainer {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    justify-content: flex-start !important;
+    gap: 8px !important;
+    position: fixed !important;
+    left: 10px !important;
+    right: 10px !important;
+    bottom: 64px !important;
+    padding: 14px !important;
+    background: #ffffff !important;
+    border: 2px solid #0f172a !important;
+    border-radius: 14px !important;
+    box-shadow: 0 -10px 30px rgba(15, 23, 42, 0.25) !important;
+    z-index: 950 !important;
+    max-height: 55vh !important;
+    overflow-y: auto !important;
+  }
+}
+
+
 

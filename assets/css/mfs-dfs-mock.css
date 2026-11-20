@@ -27,6 +27,13 @@
   box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
+@media (max-width: 1279px), (hover: none) and (pointer: coarse) {
+  .mock-exam-header-bar {
+    position: static !important;
+    top: auto !important;
+  }
+}
+
 .mock-exam-header-inner {
   display: flex;
   align-items: center;

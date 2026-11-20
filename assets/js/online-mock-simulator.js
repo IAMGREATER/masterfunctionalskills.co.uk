@@ -6613,6 +6613,16 @@ function renderSectionCover() {
   coverContainer.classList.remove('sim-hidden');
   coverContainer.style.setProperty('display', 'block', 'important');
 
+  // Hide mobile question/working tabs & mobile calc button on Cover sheet
+  const mobileTabs = document.getElementById('simMobilePaneTabs');
+  if (mobileTabs) mobileTabs.classList.remove('is-active');
+  const mobileCalcBtn = document.getElementById('simMobileCalcBtn');
+  if (mobileCalcBtn) mobileCalcBtn.classList.remove('is-available');
+  const qGridLbl = document.getElementById('simMobileQGridLabel');
+  if (qGridLbl) qGridLbl.textContent = 'Cover';
+  const bottomBar = document.getElementById('simBottomBar');
+  if (bottomBar) bottomBar.classList.remove('mobile-grid-open');
+
   const paper = getOrCreatePaper(simCurrentPaperKey);
   const sections = getPaperSections(paper);
   const sec = sections[simCurrentSectionIndex] || sections[0];
@@ -7144,6 +7154,11 @@ function renderCurrentQuestion() {
         nextBtn.classList.add('finish');
       }
     }
+  }
+
+  // Sync Mobile & Portrait-Tablet Simulator UI (Segmented Tabs, Prompt Peek, Calc & Grid)
+  if (typeof syncMobileSimulatorUi === 'function') {
+    syncMobileSimulatorUi(paper, q, sec);
   }
 }
 
@@ -8015,14 +8030,205 @@ window.closeSimFloatingCalc = closeSimFloatingCalc;
 
 // Global click/pointer handler: If floating calculator is open and user clicks back on the page, minimise it back to the icon
 document.addEventListener('pointerdown', (e) => {
+  const bottomBar = document.getElementById('simBottomBar');
+  if (bottomBar && bottomBar.classList.contains('mobile-grid-open')) {
+    if (!e.target.closest('#simPillsContainer, #simMobileQGridBtn')) {
+      bottomBar.classList.remove('mobile-grid-open');
+    }
+  }
+
   const wrap = document.getElementById('simCalcDrawerWrap');
   if (!wrap || !wrap.classList.contains('floating-open')) return;
   const drawer = document.getElementById('simCalcDrawer');
   const iconBtn = document.getElementById('simCalcShrunkIconBtn');
-  if (drawer && !drawer.contains(e.target) && iconBtn && !iconBtn.contains(e.target)) {
+  if (e.target.closest('#simMobileCalcBtn')) return;
+  if (drawer && !drawer.contains(e.target) && (!iconBtn || !iconBtn.contains(e.target))) {
     wrap.classList.remove('floating-open');
   }
 }, true);
+
+// =========================================================================
+// MOBILE & PORTRAIT TABLET SIMULATOR CONTROLLER (<= 900px)
+// =========================================================================
+function setSimMobilePane(pane) {
+  const panes = document.getElementById('simQuestionPanes');
+  const leftBtn = document.getElementById('simMobileTabLeft');
+  const rightBtn = document.getElementById('simMobileTabRight');
+  if (!panes) return;
+  const target = pane === 'working' ? 'working' : 'question';
+  panes.setAttribute('data-mobile-pane', target);
+  if (leftBtn) leftBtn.classList.toggle('active', target === 'question');
+  if (rightBtn) rightBtn.classList.toggle('active', target === 'working');
+
+  // Re-measure drawing canvas if user switches to Working tab on a grid question
+  if (target === 'working') {
+    const svgBox = document.getElementById('simWorkspaceDiagramSvg');
+    const canvas = document.getElementById('simDrawingCanvas');
+    const wrap = document.getElementById('simWorkspaceDiagramWrap');
+    if (wrap && wrap.style.display !== 'none' && svgBox && canvas && canvas.width <= 305) {
+      setTimeout(() => {
+        const rect = svgBox.getBoundingClientRect();
+        if (rect.width > 100 && rect.height > 80 && Math.abs(canvas.width - Math.floor(rect.width)) > 10) {
+          const paper = getOrCreatePaper(simCurrentPaperKey);
+          const sections = getPaperSections(paper);
+          const sec = sections[simCurrentSectionIndex] || sections[0];
+          const q = sec && sec.questions[simCurrentQuestionIndex - 1];
+          if (q) initSimWorkspaceDiagram(paper, q, sec);
+        }
+      }, 40);
+    }
+  }
+}
+window.setSimMobilePane = setSimMobilePane;
+
+function toggleSimMobilePrompt() {
+  const body = document.getElementById('simMobilePromptBody');
+  const chev = document.getElementById('simMobilePromptChevron');
+  const hint = document.getElementById('simMobilePromptHintText');
+  if (!body) return;
+  const isOpen = body.style.display !== 'none';
+  body.style.display = isOpen ? 'none' : 'block';
+  if (chev) chev.className = isOpen ? 'fa-solid fa-chevron-down' : 'fa-solid fa-chevron-up';
+  if (hint) hint.textContent = isOpen ? 'Tap to peek' : 'Hide';
+}
+window.toggleSimMobilePrompt = toggleSimMobilePrompt;
+
+function toggleSimMobileQGrid(e) {
+  if (e) {
+    e.preventDefault();
+    e.stopPropagation();
+  }
+  const bottomBar = document.getElementById('simBottomBar');
+  if (bottomBar) {
+    bottomBar.classList.toggle('mobile-grid-open');
+  }
+}
+window.toggleSimMobileQGrid = toggleSimMobileQGrid;
+
+function syncMobileFinalAnsPlacement() {
+  const finalCard = document.getElementById('simFinalAnsCard');
+  const leftContent = document.getElementById('simLeftQuestionContent');
+  const planningBox = document.getElementById('simPlanningBox');
+  const rightPane = document.getElementById('simStandardRightPane');
+  const calcWrap = document.getElementById('simCalcDrawerWrap');
+  const workingWorkspace = document.getElementById('simWorkingWorkspace');
+  const appShell = document.getElementById('simAppShell');
+
+  const isNarrow = window.innerWidth <= 900;
+
+  // Allow floating calculator popup to appear over BOTH Question and Working tabs on mobile
+  if (calcWrap && workingWorkspace && appShell) {
+    if (isNarrow) {
+      if (calcWrap.parentElement !== appShell) {
+        appShell.appendChild(calcWrap);
+      }
+    } else {
+      if (calcWrap.parentElement !== workingWorkspace) {
+        workingWorkspace.appendChild(calcWrap);
+      }
+    }
+  }
+
+  if (!finalCard || !leftContent || !rightPane) return;
+
+  const paper = getOrCreatePaper(simCurrentPaperKey);
+  const subject = (paper && paper.subject) || 'maths';
+
+  if (isNarrow && subject === 'maths') {
+    if (finalCard.parentElement !== rightPane) {
+      rightPane.appendChild(finalCard);
+    }
+  } else {
+    if (finalCard.parentElement !== leftContent) {
+      if (planningBox && planningBox.parentElement === leftContent) {
+        leftContent.insertBefore(finalCard, planningBox);
+      } else {
+        leftContent.appendChild(finalCard);
+      }
+    }
+  }
+}
+
+window.addEventListener('resize', () => {
+  syncMobileFinalAnsPlacement();
+});
+
+function syncMobileSimulatorUi(paper, q, sec) {
+  const subject = (paper && paper.subject) || 'maths';
+  const isCalcAllowed = Boolean(sec ? sec.isCalcAllowed : (q && q.isCalcAllowed));
+
+  // 1. Activate & label segmented tabs
+  const tabsWrap = document.getElementById('simMobilePaneTabs');
+  const leftLbl = document.getElementById('simMobileTabLeftLabel');
+  const rightLbl = document.getElementById('simMobileTabRightLabel');
+  const gotoBtn = document.getElementById('simMobileGotoWorkBtn');
+  if (tabsWrap) tabsWrap.classList.add('is-active');
+
+  if (subject === 'reading') {
+    if (leftLbl) leftLbl.textContent = 'Source Texts';
+    if (rightLbl) rightLbl.textContent = 'Question & Answer';
+    if (gotoBtn) gotoBtn.style.display = 'none';
+    setSimMobilePane(simCurrentQuestionIndex === 1 ? 'question' : 'working');
+  } else if (subject === 'writing') {
+    if (leftLbl) leftLbl.textContent = 'Task Prompt';
+    if (rightLbl) rightLbl.textContent = 'Write Response';
+    if (gotoBtn) {
+      gotoBtn.style.display = '';
+      gotoBtn.innerHTML = '<i class="fa-solid fa-pen-nib"></i> Go to Writing Space &rarr;';
+    }
+    setSimMobilePane('question');
+  } else {
+    if (leftLbl) leftLbl.textContent = 'Question';
+    if (rightLbl) rightLbl.textContent = 'Working & Answer';
+    if (gotoBtn) {
+      gotoBtn.style.display = '';
+      gotoBtn.innerHTML = '<i class="fa-solid fa-pen-to-square"></i> Go to Working &amp; Answer &rarr;';
+    }
+    setSimMobilePane('question');
+  }
+
+  // 2. Populate Collapsible Question Prompt Reminder Strip inside Working Tab
+  const promptStrip = document.getElementById('simMobilePromptStrip');
+  const promptBadge = document.getElementById('simMobilePromptBadge');
+  const promptBody = document.getElementById('simMobilePromptBody');
+  const promptChev = document.getElementById('simMobilePromptChevron');
+  const promptHint = document.getElementById('simMobilePromptHintText');
+  if (promptStrip && q) {
+    if (subject === 'reading') {
+      promptStrip.style.display = 'none';
+    } else {
+      promptStrip.style.display = '';
+      const prefix = subject === 'writing' ? `Task ${q.num}` : `Q${q.num}`;
+      if (promptBadge) {
+        promptBadge.innerHTML = `<i class="fa-solid fa-circle-question"></i> ${prefix} (${q.marks || 0} Marks) — Question Prompt`;
+      }
+      if (promptBody) {
+        promptBody.textContent = (q.scenarioText ? q.scenarioText + '\n\n' : '') + (q.promptText || '');
+        promptBody.style.display = 'none';
+      }
+      if (promptChev) promptChev.className = 'fa-solid fa-chevron-down';
+      if (promptHint) promptHint.textContent = 'Tap to peek';
+    }
+  }
+
+  // 3. Mobile Calculator Quick Button
+  const mobileCalcBtn = document.getElementById('simMobileCalcBtn');
+  if (mobileCalcBtn) {
+    mobileCalcBtn.classList.toggle('is-available', subject === 'maths' && isCalcAllowed);
+  }
+
+  // 4. Place Final Answer Card inside Working tab on <= 900px
+  syncMobileFinalAnsPlacement();
+
+  // 5. Update Bottom Bar Question Grid Pill & Close Open Grid Sheet
+  const qGridLbl = document.getElementById('simMobileQGridLabel');
+  if (qGridLbl && sec && q) {
+    const pfx = subject === 'writing' ? 'Task' : 'Q';
+    qGridLbl.textContent = `${pfx} ${q.num} / ${sec.questions.length}`;
+  }
+  const bottomBar = document.getElementById('simBottomBar');
+  if (bottomBar) bottomBar.classList.remove('mobile-grid-open');
+}
 
 
 // Keyboard Arrow Keys Navigation (Left: Previous, Right: Next)

@@ -7,6 +7,12 @@
 
   var AUTH_KEY = 'mfs_stealth_auth';
   var VALID_CODES = ['2026', 'mfs2026', 'subi', 'darknight'];
+  var ROOT_PREFIX = (function () {
+    var sc = document.currentScript || document.querySelector('script[src*="mfs-private-gate.js"]');
+    var src = sc ? (sc.getAttribute('src') || '') : '';
+    var idx = src.indexOf('assets/js/mfs-private-gate.js');
+    return idx > 0 ? src.slice(0, idx) : '';
+  })();
 
   function isAuthorized() {
     try {
@@ -38,7 +44,7 @@
       var link = document.createElement('link');
       link.id = 'mfsGateCss';
       link.rel = 'stylesheet';
-      link.href = 'assets/css/mfs-private-gate.css';
+      link.href = ROOT_PREFIX + 'assets/css/mfs-private-gate.css';
       document.head.appendChild(link);
     }
 

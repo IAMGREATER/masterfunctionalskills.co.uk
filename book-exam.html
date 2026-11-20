@@ -16,9 +16,9 @@
   <meta name="apple-mobile-web-app-title" content="MFS Skills">
   <link rel="apple-touch-icon" href="assets/img/favicon-192x192.png">
   <script src="assets/js/mfs-pwa.js" defer></script>
-  <link rel="stylesheet" href="assets/css/mfs-theme.css?v=20261024c">
+  <link rel="stylesheet" href="assets/css/mfs-theme.css?v=20261112v5">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="assets/css/mfs-mobile.css?v=20261024c">
+  <link rel="stylesheet" href="assets/css/mfs-mobile.css?v=20261112v5">
   <link rel="canonical" href="https://masterfunctionalskills.co.uk/book-exam.html">
 
   <style>
@@ -703,7 +703,7 @@
         </button>
       </div>
     </div>
-    <script src="assets/js/mfs-mobile.js?v=20261024c" defer></script>
+    <script src="assets/js/mfs-mobile.js?v=20261112v5" defer></script>
   </header>
 
   <!-- DARK BLUE HERO -->
@@ -1020,17 +1020,17 @@
         <div class="addon-price">+&pound;125</div>
       </div>
 
-      <!-- Addon 2: Complete Online Course (+£230 matching exams.html) -->
+      <!-- Addon 2: Complete Online Course (+£149 matching exams.html) -->
       <div class="addon-card" id="addonCourseCard" onclick="toggleAddon('course')">
         <div class="addon-info">
           <input type="checkbox" id="addonCourse" style="transform:scale(1.25); accent-color:#0284c7; margin-top:4px;" onclick="event.stopPropagation(); toggleAddon('course', true);">
           <div class="addon-icon"><i class="fa-solid fa-graduation-cap"></i></div>
           <div class="addon-details">
-            <h4>Complete Accredited Online Course Upgrade (Save &pound;125)</h4>
+            <h4>Complete Accredited Online Course Upgrade (Save &pound;50)</h4>
             <p>Full structured dyslexia-friendly video curriculum, interactive topic workouts, BKSB-style diagnostics, and marked mock feedback before your exam.</p>
           </div>
         </div>
-        <div class="addon-price">+&pound;230</div>
+        <div class="addon-price">+&pound;149</div>
       </div>
     </div>
 
@@ -1050,7 +1050,7 @@
         </div>
         <div class="summary-row" id="summaryAddonCourseRow" style="display:none;">
           <span>Complete Accredited Online Course Upgrade</span>
-          <span style="font-weight:800;">+&pound;230.00</span>
+          <span style="font-weight:800;">+&pound;149.00</span>
         </div>
         <div class="summary-row">
           <span>Open Awards Managed Live Remote Invigilation</span>
@@ -1315,7 +1315,7 @@
     function updateTotal() {
       let total = basePrice;
       if (hasResit) total += 125;
-      if (hasCourse) total += 230;
+      if (hasCourse) total += 149;
 
       document.getElementById('summaryTotalPrice').textContent = '\u00A3' + total.toFixed(2);
       document.getElementById('btnPayAmount').textContent = '\u00A3' + total;
@@ -1339,7 +1339,7 @@
       let scheduleSummary = targetDate ? targetDate : (datePref === 'fasttrack' ? 'As soon as bookings open' : 'Not sure yet');
       const addons = [];
       if (hasResit) addons.push('Pass Protection Bundle (+£125)');
-      if (hasCourse) addons.push('Complete Online Course (+£230)');
+      if (hasCourse) addons.push('Complete Online Course (+£149)');
 
       return {
         ref: 'MFS-' + Math.floor(100000 + Math.random() * 900000),

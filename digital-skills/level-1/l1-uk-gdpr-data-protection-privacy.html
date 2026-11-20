@@ -16,9 +16,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   
   <!-- Dedicated Digital Skills Revision Styles -->
-  <link rel="stylesheet" href="../../assets/css/mfs-theme.css?v=20261024c">
-  <link rel="stylesheet" href="../../assets/css/mfs-dfs-revision.css?v=20261106_v2">
-  <link rel="stylesheet" href="../../assets/css/mfs-mobile.css?v=20261111_v3">
+  <link rel="stylesheet" href="../../assets/css/mfs-theme.css?v=20261112v5">
+  <link rel="stylesheet" href="../../assets/css/mfs-dfs-revision.css?v=20261112v5">
+  <link rel="stylesheet" href="../../assets/css/mfs-mobile.css?v=20261112v5">
   <link rel="canonical" href="https://masterfunctionalskills.co.uk/digital-skills/level-1/l1-uk-gdpr-data-protection-privacy.html">
   <script src="../../assets/js/mfs-pwa.js" defer></script>
   <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
@@ -210,7 +210,7 @@
       </div>
     </div>
     <!-- MOBILE NAVIGATION ENGINE -->
-    <script src="../../assets/js/mfs-mobile.js?v=20261024c" defer></script>
+    <script src="../../assets/js/mfs-mobile.js?v=20261112v5" defer></script>
   </header>
 
   <!-- SUBNAV & BREADCRUMBS -->
@@ -256,12 +256,92 @@
         <nav class="dfs-sticky-toc" aria-label="Topic Sections">
           <span class="dfs-sticky-toc-label"><i class="fa-solid fa-compass" style="color:#0284c7;"></i> On This Page:</span>
           <div class="dfs-sticky-toc-links">
+            <a href="#video-station"><i class="fa-solid fa-circle-play" style="color:#ef4444;"></i> Video Masterclass</a>
             <a href="#teaching"><i class="fa-solid fa-book-open"></i> 1. Key Concepts</a>
             <a href="#model"><i class="fa-solid fa-award"></i> 2. Worked Exam Model</a>
             <a href="#drills"><i class="fa-solid fa-bolt"></i> 3. Interactive Quiz</a>
             <a href="#practice"><i class="fa-solid fa-laptop-file"></i> 4. Practice Exam Task</a>
           </div>
         </nav>
+
+                <!-- TOPIC VIDEO WALKTHROUGH STATION -->
+        <section id="video-station" class="dfs-section" style="margin-bottom: 32px;">
+          <div id="videoMasterclassStation" style="position:relative; border-radius:14px; overflow:hidden; background:#070d1e; box-shadow:0 10px 30px rgba(0,0,0,0.35);">
+            
+            <div class="video-exemplar-head" style="background:#070d1e; border: 2px solid #0284c7;  border-radius:14px 14px 0 0; padding:18px 22px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+              <div style="display:flex; align-items:center; gap:14px;">
+                <img id="mcTutorAvatar" src="../../assets/img/avatars/subi-tutor-portrait.png" alt="Subi MFS Specialist Tutor" style="width:52px; height:52px; border-radius:50%; border:2px solid #38bdf8; object-fit:cover;">
+                <div>
+                  <div id="mcVideoTitle" style="color:#ffffff; font-size:1.18rem; font-weight:800; display:flex; align-items:center; gap:8px;">
+                    <i class="fa-brands fa-youtube" style="color:#ef4444;"></i> Files, Folders, Cloud Storage &amp; Cybersecurity Masterclass
+                  </div>
+                  <div id="mcTutorMeta" style="color:#94a3b8; font-size:0.88rem; font-weight:600; margin-top:3px;">
+                    Presented by <strong style="color:#38bdf8;">Subi</strong> (MFS Lead Examiner & Cybersecurity Specialist) &bull; 1080p Studio Walkthrough (4m 48s)
+                  </div>
+                </div>
+              </div>
+              <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
+                <span style="background:#0284c7; color:#fff; font-size:0.75rem; font-weight:800; padding:4px 10px; border-radius:999px;">DFSQ Entry 3 &amp; Level 1</span>
+                <span style="background:#1e293b; color:#cbd5e1; border:1px solid #334155; font-size:0.75rem; font-weight:700; padding:4px 10px; border-radius:999px;">Open Awards &bull; Edexcel &bull; C&amp;G</span>
+              </div>
+            </div>
+
+            <div class="video-screen-wrap" style="position:relative; width:100%; aspect-ratio:16/9; background:#000; overflow:hidden; border-left:2px solid #0284c7; border-right:2px solid #0284c7;">
+              <iframe id="topicMasterclassIframe" data-ytid="XytycIGeOdg" style="position:absolute; top:0; left:0; width:100%; height:100%; border:0; display:block;" src="https://www.youtube-nocookie.com/embed/XytycIGeOdg?rel=0&amp;enablejsapi=1" title="Files, Folders, Cloud Storage &amp; Cybersecurity Masterclass" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </div>
+
+            <div class="video-jump-bar" id="mcJumpBar" style="background:#0f172a; border:2px solid #0284c7; border-top:1px solid #1e3a8a; padding:12px 18px;">
+              <span class="jump-label" style="color:#94a3b8; font-size:0.82rem; font-weight:700; margin-right:6px;"><i class="fa-solid fa-forward-step" style="color:#38bdf8;"></i> Lesson Benchmarks:</span>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(0, this)" style="background:#1e293b; color:#e2e8f0; border:1px solid #334155; border-radius:6px; padding:5px 10px; font-size:0.78rem; font-weight:700; cursor:pointer; margin:3px;">00:00 Files, Folders &amp; Security</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(28, this)" style="background:#1e293b; color:#e2e8f0; border:1px solid #334155; border-radius:6px; padding:5px 10px; font-size:0.78rem; font-weight:700; cursor:pointer; margin:3px;">00:28 Folders &amp; Clean Filenames</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(55, this)" style="background:#1e293b; color:#e2e8f0; border:1px solid #334155; border-radius:6px; padding:5px 10px; font-size:0.78rem; font-weight:700; cursor:pointer; margin:3px;">00:55 Extensions &amp; .zip Files</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(83, this)" style="background:#1e293b; color:#e2e8f0; border:1px solid #334155; border-radius:6px; padding:5px 10px; font-size:0.78rem; font-weight:700; cursor:pointer; margin:3px;">01:23 Cloud Sharing Permissions</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(116, this)" style="background:#1e293b; color:#e2e8f0; border:1px solid #334155; border-radius:6px; padding:5px 10px; font-size:0.78rem; font-weight:700; cursor:pointer; margin:3px;">01:56 Passphrases &amp; 2FA</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(249, this)" style="background:#1e293b; color:#e2e8f0; border:1px solid #334155; border-radius:6px; padding:5px 10px; font-size:0.78rem; font-weight:700; cursor:pointer; margin:3px;">04:09 Summary</button>
+            </div>
+
+            <div style="background:#070d1e; border:2px solid #0284c7; border-top:1px solid #1e3a8a; border-radius:0 0 14px 14px; padding:10px 18px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;">
+              <span style="font-size:0.82rem; color:#94a3b8;"><i class="fa-solid fa-shield-halved" style="color:#38bdf8;"></i> Open Awards, Pearson Edexcel &amp; City &amp; Guilds DFSQ Aligned</span>
+              <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+                <a id="mcStationLink" href="../../video-solution.html?topic=dfs-files-folders-cloud-security" target="_blank" rel="noopener" style="font-size:0.82rem; color:#38bdf8; text-decoration:none; font-weight:700;"><i class="fa-solid fa-up-right-from-square"></i> Open in Video Station</a>
+                <a id="mcYoutubeLink" href="https://youtu.be/XytycIGeOdg" target="_blank" rel="noopener" style="font-size:0.82rem; color:#ef4444; text-decoration:none; font-weight:700;"><i class="fa-brands fa-youtube"></i> Watch on YouTube</a>
+              </div>
+            </div>
+          </div>
+
+          <script>
+            window.__mfsMasterclassParts = [{"num": 3, "slug": "dfs-files-folders-cloud-security", "title": "Files, Folders, Cloud Storage & Cybersecurity Masterclass", "tutor": "Subi", "role": "MFS Lead Examiner & Cybersecurity Specialist", "avatar": "../../assets/img/avatars/subi-tutor-portrait.png", "station_href": "../../video-solution.html?topic=dfs-files-folders-cloud-security", "ytid": "XytycIGeOdg", "runtime": "4m 48s", "benchmarks": [{"sec": 0, "text": "00:00 Files, Folders & Security"}, {"sec": 28, "text": "00:28 Folders & Clean Filenames"}, {"sec": 55, "text": "00:55 Extensions & .zip Files"}, {"sec": 83, "text": "01:23 Cloud Sharing Permissions"}, {"sec": 116, "text": "01:56 Passphrases & 2FA"}, {"sec": 249, "text": "04:09 Summary"}]}];
+            function jumpMasterclassVideo(seconds, btn) {
+              if (btn && btn.blur) btn.blur();
+              var iframe = document.getElementById('topicMasterclassIframe');
+              if (iframe) {
+                var ytid = iframe.getAttribute('data-ytid');
+                if (ytid) iframe.src = 'https://www.youtube-nocookie.com/embed/' + ytid + '?rel=0&autoplay=1&enablejsapi=1&start=' + seconds;
+              }
+            }
+            function switchMasterclassPart(idx, tabBtn) {
+              var parts = window.__mfsMasterclassParts || [];
+              var p = parts[idx];
+              if (!p) return;
+              var iframe = document.getElementById('topicMasterclassIframe');
+              if (iframe) {
+                iframe.setAttribute('data-ytid', p.ytid);
+                iframe.src = 'https://www.youtube-nocookie.com/embed/' + p.ytid + '?rel=0&autoplay=1&enablejsapi=1';
+                iframe.title = p.title;
+              }
+              var av = document.getElementById('mcTutorAvatar');
+              if (av) av.src = p.avatar;
+              var ti = document.getElementById('mcVideoTitle');
+              if (ti) ti.innerHTML = '<i class="fa-brands fa-youtube" style="color:#ef4444;"></i> ' + p.title;
+              var me = document.getElementById('mcTutorMeta');
+              if (me) me.innerHTML = 'Presented by <strong style="color:#38bdf8;">' + p.tutor + '</strong> (' + p.role + ') &bull; 1080p Studio Walkthrough (' + p.runtime + ')';
+              var sl = document.getElementById('mcStationLink');
+              if (sl) sl.href = p.station_href;
+              var yl = document.getElementById('mcYoutubeLink');
+              if (yl) yl.href = 'https://youtu.be/' + p.ytid;
+            }
+          </script>
+        </section>
 
         <!-- 2. STEP-BY-STEP TEACHING & VISUAL UI MOCKUPS -->
         <section id="teaching" class="dfs-section">
@@ -279,10 +359,7 @@
           </div>
           <div class="dfs-step-body">
             <p>In the UK, the <strong>Data Protection Act 2018</strong> (incorporating <strong>UK GDPR</strong>) governs how businesses and public bodies handle personal data. Organisations must obey six core principles:</p><ol><li><strong>Lawful, Fair &amp; Transparent:</strong> Data must be collected honestly with clear notice to individuals.</li><li><strong>Purpose Limitation:</strong> Data collected for one reason (e.g. appointment booking) cannot be secretly used for another (e.g. marketing).</li><li><strong>Data Minimisation:</strong> Only collect what is strictly necessary — do not ask for irrelevant personal history.</li><li><strong>Accuracy:</strong> Keep records up to date and correct mistakes promptly.</li><li><strong>Storage Limitation:</strong> Do not keep personal data longer than needed. Delete securely when no longer required.</li><li><strong>Integrity &amp; Confidentiality:</strong> Keep data secure from theft or loss using strong passwords and encryption.</li></ol>
-            
-            
-            
-          </div>
+</div>
         </div>
         
         <div class="dfs-step-card">
@@ -292,6 +369,7 @@
           </div>
           <div class="dfs-step-body">
             <p>Every person (data subject) has statutory legal rights:</p><ul><li><strong>Right to be Informed:</strong> Plain-English privacy policies explaining how data is used.</li><li><strong>Right of Access (Subject Access Request - SAR):</strong> You can request a free copy of all personal records an organisation holds about you.</li><li><strong>Right to Erasure ('Right to be Forgotten'):</strong> Request deletion of your data when there is no longer a legal reason to hold it.</li></ul>
+
             
             
             
@@ -321,10 +399,7 @@
                 <div style='background:#f1f5f9; border:1px solid #cbd5e1; padding:12px; border-radius:6px; font-size:0.85rem;'><div style='font-weight:700; color:#0f172a; margin-bottom:4px;'><i class='fa-solid fa-cookie-bite' style='color:#d97706;'></i> We value your privacy</div><p style='color:#475569; font-size:0.78rem; margin-bottom:8px;'>We use essential cookies to make our site work, and optional analytics cookies to improve our services.</p><div style='display:flex; gap:8px;'><button style='background:#0f172a; color:#ffffff; border:none; padding:4px 12px; border-radius:4px; font-weight:700;'>Accept Essential Only</button><button style='background:#0284c7; color:#ffffff; border:none; padding:4px 12px; border-radius:4px; font-weight:700;'>Accept All</button></div></div>
               </div>
             </div>
-            
-            
-            
-          </div>
+</div>
         </div>
         
           </div>
@@ -637,7 +712,7 @@ Principle 2: Storage Limitation and Security: Data must be kept securely using e
 
   <!-- Scripts -->
   <script src="../../assets/js/dfs-revision-engine.js?v=20261106_v1"></script>
-  <script src="../../assets/js/mfs-mobile.js?v=20261111_v3" defer></script>
+  <script src="../../assets/js/mfs-mobile.js?v=20261112v5" defer></script>
   <script src="../../assets/js/mfs-tint.js"></script>
   <script>
     function toggleDyslexiaMode() {

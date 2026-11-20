@@ -94,7 +94,7 @@
             <a href="${root}functional-skills-english-level-1.html" class="mfs-drawer-sublink"><i class="fa-solid fa-pen-nib" style="margin-right:6px; color:#7c3aed;"></i> English Level 1</a>
             <a href="${root}entry-level-3-english.html" class="mfs-drawer-sublink"><i class="fa-solid fa-pen-nib" style="margin-right:6px; color:#7c3aed;"></i> Entry Level 3 English</a>
             <a href="${root}digital-functional-skills-level-1.html" class="mfs-drawer-sublink"><i class="fa-solid fa-laptop-code" style="margin-right:6px; color:#0891b2;"></i> Digital Skills Level 1</a>
-            <a href="${root}entry-level-3-digital-skills.html" class="mfs-drawer-sublink"><i class="fa-solid fa-laptop-code" style="margin-right:6px; color:#0891b2;"></i> Digital Skills Entry 3</a>
+            <a href="${root}digital-functional-skills-entry-3.html" class="mfs-drawer-sublink"><i class="fa-solid fa-laptop-code" style="margin-right:6px; color:#0891b2;"></i> Digital Skills Entry 3</a>
             <a href="${root}digital-functional-skills.html" class="mfs-drawer-sublink"><i class="fa-solid fa-laptop-code" style="margin-right:6px; color:#0891b2;"></i> Digital Skills Hub</a>
             <a href="${root}revise.html" class="mfs-drawer-sublink" style="font-weight:700; color:#0284c7;">View All Subjects &rarr;</a>
           </div>
@@ -143,6 +143,8 @@
             <i class="fa-solid fa-chevron-down mfs-drawer-chevron"></i>
           </div>
           <div class="mfs-drawer-sublist">
+            <a href="${root}online-mock-simulator.html" class="mfs-drawer-sublink" style="font-weight:700; color:#0284c7;"><i class="fa-solid fa-laptop-code" style="margin-right:6px;"></i> Online Mock Exam Simulator</a>
+            <a href="${root}digital-functional-skills-mock-exam.html" class="mfs-drawer-sublink"><i class="fa-solid fa-desktop" style="margin-right:6px; color:#0891b2;"></i> Digital Skills Mock Player</a>
             <a href="${root}pass-mark-calculator.html" class="mfs-drawer-sublink">Pass Mark Calculator</a>
             <a href="${root}diagnostic-test.html" class="mfs-drawer-sublink">Diagnostic Skill Checker</a>
             <a href="${root}functional-skills-nets.html" class="mfs-drawer-sublink">3D Net Folding Tool</a>
@@ -188,7 +190,7 @@
       <!-- Drawer Footer CTA with Safe-Area Padding -->
       <div class="mfs-drawer-footer">
         <a href="${root}exams.html" class="btn-drawer-exam">
-          <i class="fa-solid fa-calendar-check"></i> Book Official Exam (£149)
+          <i class="fa-solid fa-calendar-check"></i> Book Official Exam (From £149)
         </a>
       </div>
     </aside>
@@ -417,6 +419,106 @@
 
     // Initialize PFS-Style Mobile Collapses, Dropdowns & Sub-Menus
     initPfsMobileComponents();
+
+    // Initialize Mobile Circular Icon Keys & Compact Paper Titles
+    initMobileIconRowsAndKeys();
+  }
+
+  /**
+   * Injects 1-line Mobile Icon Key legends above Past Papers, Worksheets & Curriculum Hubs,
+   * and creates clean mobile-shortened Past Paper titles without affecting desktop or search.
+   */
+  function initMobileIconRowsAndKeys() {
+    // 1. Past Papers Directory (#papersDirectory)
+    var papersDir = document.getElementById('papersDirectory');
+    if (papersDir && !document.getElementById('mfsPapersIconKey')) {
+      var path = window.location.pathname || '';
+      if (/\/(functional-skills-past-papers|past-papers|test_dyslexia_)/i.test(path)) {
+        document.body.classList.add('mfs-multi-board-hub');
+      }
+
+      var hasOnlineMock = !!papersDir.querySelector('a[href*="simulator"], a[href*="mock-exam"]');
+      var hasModel = !!papersDir.querySelector('a.btn-paper-model');
+      var hasVideo = !!papersDir.querySelector('a[href*="video-solution"], a.btn-paper-video');
+
+      var keyBar = document.createElement('div');
+      keyBar.id = 'mfsPapersIconKey';
+      keyBar.className = 'mfs-mobile-icon-key';
+      keyBar.setAttribute('aria-label', 'Mobile button icon legend');
+      keyBar.innerHTML =
+        '<span class="mfs-key-label">Icons</span>' +
+        '<span class="mfs-key-chip"><span class="mfs-key-dot" style="background:#eff6ff; border:1px solid #93c5fd; color:#0284c7;"><i class="fa-solid fa-file-pdf"></i></span>Paper</span>' +
+        '<span class="mfs-key-chip"><span class="mfs-key-dot" style="background:#f0fdf4; border:1px solid #86efac; color:#16a34a;"><i class="fa-solid fa-clipboard-check"></i></span>Marks</span>' +
+        (hasModel ? '<span class="mfs-key-chip"><span class="mfs-key-dot" style="background:#fffbeb; border:1px solid #fcd34d; color:#d97706;"><i class="fa-solid fa-lightbulb"></i></span>Model</span>' : '') +
+        (hasOnlineMock ? '<span class="mfs-key-chip"><span class="mfs-key-dot" style="background:#0284c7; color:#ffffff;"><i class="fa-solid fa-laptop-code"></i></span>Sit Online</span>' : '') +
+        (hasVideo ? '<span class="mfs-key-chip"><span class="mfs-key-dot" style="background:#fff1f2; border:1px solid #fda4af; color:#e11d48;"><i class="fa-solid fa-circle-play"></i></span>Video</span>' : '');
+      papersDir.parentNode.insertBefore(keyBar, papersDir);
+
+      // Shorten repetitive verbose paper prefixes on mobile (keep full title on >=768px)
+      var titles = papersDir.querySelectorAll('.past-paper-title');
+      titles.forEach(function(h4) {
+        if (h4.classList.contains('has-short-title')) return;
+        var full = (h4.textContent || '').replace(/\s+/g, ' ').trim();
+        var shortTxt = full
+          .replace(/^(Pearson\s+)?(Edexcel|City\s*&\s*Guilds|NCFE|AQA|Open\s*Awards|Highfield|NOCN)\s+(Functional\s+Skills\s+)?(Maths|Mathematics|English|ICT|Digital\s+Skills)\s+(Entry\s+Level\s+[123]|Entry\s+[123]|Level\s+[12])\s*[—–\-:]?\s*/i, '')
+          .trim();
+        if (shortTxt && shortTxt.length >= 4 && shortTxt.length < full.length) {
+          h4.classList.add('has-short-title');
+          h4.innerHTML = '';
+          var sFull = document.createElement('span');
+          sFull.className = 'mfs-full-paper-title';
+          sFull.textContent = full;
+          var sShort = document.createElement('span');
+          sShort.className = 'mfs-short-paper-title';
+          sShort.textContent = shortTxt;
+          h4.appendChild(sFull);
+          h4.appendChild(sShort);
+        }
+      });
+
+      // Ensure accessible labels on circular icon buttons
+      papersDir.querySelectorAll('.past-paper-actions > a.btn-paper').forEach(function(a) {
+        var lbl = (a.textContent || '').replace(/\s+/g, ' ').trim();
+        if (lbl && !a.getAttribute('title')) a.setAttribute('title', lbl);
+        if (lbl && !a.getAttribute('aria-label')) a.setAttribute('aria-label', lbl);
+      });
+    }
+
+    // 2. Worksheets Hub (#directoryContent on worksheets.html)
+    var wsDir = document.getElementById('directoryContent');
+    if (wsDir && wsDir.querySelector('.hub-topic-card') && !document.getElementById('mfsWorksheetsIconKey')) {
+      var wsKey = document.createElement('div');
+      wsKey.id = 'mfsWorksheetsIconKey';
+      wsKey.className = 'mfs-mobile-icon-key';
+      wsKey.setAttribute('aria-label', 'Mobile worksheet icon legend');
+      wsKey.innerHTML =
+        '<span class="mfs-key-label">Icons</span>' +
+        '<span class="mfs-key-chip"><span class="mfs-key-dot" style="background:#0284c7; color:#ffffff;"><i class="fa-solid fa-book-bookmark"></i></span>Guide</span>' +
+        '<span class="mfs-key-chip"><span class="mfs-key-dot" style="background:#eff6ff; border:1px solid #93c5fd; color:#2563eb;"><i class="fa-solid fa-pen-ruler"></i></span>Drills</span>' +
+        '<span class="mfs-key-chip"><span class="mfs-key-dot" style="background:#f0fdf4; border:1px solid #86efac; color:#16a34a;"><i class="fa-solid fa-check"></i></span>Drill Key</span>' +
+        '<span class="mfs-key-chip"><span class="mfs-key-dot" style="background:#fff1f2; border:1px solid #fda4af; color:#e11d48;"><i class="fa-solid fa-file-pdf"></i></span>Exam Qs</span>' +
+        '<span class="mfs-key-chip"><span class="mfs-key-dot" style="background:#fffbeb; border:1px solid #fcd34d; color:#d97706;"><i class="fa-solid fa-clipboard-check"></i></span>Marks</span>';
+      wsDir.parentNode.insertBefore(wsKey, wsDir);
+    }
+
+    // 3. Revision & Digital Skills Curriculum Hubs (.topic-actions-group)
+    var tableWrap = document.getElementById('tableViewContainer') || document.getElementById('topicsContainer');
+    if (tableWrap && tableWrap.querySelector('.topic-actions-group') && !document.getElementById('mfsTopicsIconKey')) {
+      var hasVid = !!tableWrap.querySelector('.btn-mfs-video');
+      var hasWorkout = !!tableWrap.querySelector('.btn-mfs-workout');
+      var hubKey = document.createElement('div');
+      hubKey.id = 'mfsTopicsIconKey';
+      hubKey.className = 'mfs-mobile-icon-key';
+      hubKey.setAttribute('aria-label', 'Mobile curriculum icon legend');
+      hubKey.innerHTML =
+        '<span class="mfs-key-label">Icons</span>' +
+        '<span class="mfs-key-chip"><span class="mfs-key-dot" style="background:#0284c7; color:#ffffff;"><i class="fa-solid fa-book-open"></i></span>Revise</span>' +
+        (hasVid ? '<span class="mfs-key-chip"><span class="mfs-key-dot" style="background:#ffffff; border:1px solid #fca5a5; color:#ef4444;"><i class="fa-solid fa-circle-play"></i></span>Video</span>' : '') +
+        (hasWorkout ? '<span class="mfs-key-chip"><span class="mfs-key-dot" style="background:#ffffff; border:1px solid #93c5fd; color:#2563eb;"><i class="fa-solid fa-pen-ruler"></i></span>Drills</span>' : '') +
+        '<span class="mfs-key-chip"><span class="mfs-key-dot" style="background:#ffffff; border:1px solid #cbd5e1; color:#e11d48;"><i class="fa-solid fa-file-lines"></i></span>Practice</span>' +
+        '<span class="mfs-key-chip"><span class="mfs-key-dot" style="background:#f0fdf4; border:1px solid #86efac; color:#15803d;"><i class="fa-solid fa-list-check"></i></span>Check</span>';
+      tableWrap.parentNode.insertBefore(hubKey, tableWrap);
+    }
   }
 
   /**

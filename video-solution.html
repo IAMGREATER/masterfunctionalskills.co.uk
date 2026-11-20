@@ -17,8 +17,8 @@
   <meta name="apple-mobile-web-app-title" content="MFS Skills">
   <link rel="apple-touch-icon" href="assets/img/favicon-192x192.png">
   <script src="assets/js/mfs-pwa.js" defer></script>
-  <link rel="stylesheet" href="assets/css/mfs-theme.css?v=20261024c">
-<link rel="stylesheet" href="assets/css/mfs-video-modal.css">
+  <link rel="stylesheet" href="assets/css/mfs-theme.css?v=20261112v5">
+<link rel="stylesheet" href="assets/css/mfs-video-modal.css?v=20261112v5">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     body {
@@ -707,18 +707,23 @@
         text-overflow: ellipsis;
       }
 
-      /* 4. Quick PDF Download Chips FOURTH */
+      /* 4. Quick PDF Download Chips FOURTH — Compact 3-Column Pill Bar */
       .hero-quick-materials {
         order: 4;
         display: grid !important;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(3, 1fr);
         gap: 6px;
         width: 100%;
         margin-bottom: 8px;
       }
       .hero-quick-btn {
         padding: 7px 6px;
-        font-size: 0.76rem;
+        font-size: 0.72rem;
+        justify-content: center;
+        text-align: center;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
       }
 
       /* 5. Compact Transport Bar FIFTH */
@@ -732,25 +737,34 @@
         min-width: 0 !important;
       }
 
-      /* DETAILS GRID ON MOBILE: Sidebar/Playlist First, Content Second */
+      /* DETAILS GRID ON MOBILE: Concise Examiner Tips First, Compact Playlist Second */
       .video-main-content {
-        padding: 10px 0 40px 0 !important;
+        padding: 10px 0 32px 0 !important;
         width: 100% !important;
         max-width: 100% !important;
       }
       .video-details-grid {
         display: flex;
         flex-direction: column;
-        gap: 14px;
-        margin-top: 10px;
+        gap: 12px;
+        margin-top: 8px;
         width: 100% !important;
         max-width: 100% !important;
       }
+      .video-content-panel {
+        order: 1 !important;
+      }
       .video-sidebar-panel {
-        order: 1;
+        order: 2 !important;
         gap: 12px;
         width: 100% !important;
         max-width: 100% !important;
+      }
+      .playlist-items-scroll {
+        max-height: 240px !important;
+      }
+      .hero-quick-btn .quick-lbl-long {
+        display: none !important;
       }
       .sidebar-card {
         padding: 12px 10px;
@@ -844,51 +858,47 @@
       }
     }
 
-    /* Mobile Portrait View Only: Previous Video & Next Video buttons on the same line */
+    /* Mobile Portrait View Only: Sleek 1-Row [Prev Icon] [Topic Picker ▼] [Next Icon] Bar */
     @media (max-width: 860px) and (orientation: portrait) {
       .video-transport-bar {
         order: 5;
-        display: grid !important;
-        grid-template-columns: 1fr 1fr !important;
-        grid-template-areas:
-          "dropdown dropdown"
-          "prev next" !important;
-        gap: 8px !important;
-        padding: 8px 10px !important;
+        display: flex !important;
+        flex-direction: row !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 6px !important;
+        padding: 6px 8px !important;
         margin-top: 2px !important;
         border-radius: 10px !important;
       }
       .transport-center-controls {
-        grid-area: dropdown !important;
-        width: 100% !important;
+        flex: 1 1 auto !important;
+        min-width: 0 !important;
         max-width: none !important;
       }
       .station-video-dropdown {
-        padding: 8px 30px 8px 32px !important;
-        font-size: 0.82rem !important;
+        padding: 8px 28px 8px 30px !important;
+        font-size: 0.81rem !important;
+        width: 100% !important;
       }
       .transport-picker-icon {
-        font-size: 0.85rem !important;
+        font-size: 0.84rem !important;
         left: 10px !important;
       }
-      .btn-transport-prev {
-        grid-area: prev !important;
-        width: 100% !important;
-        min-width: 0 !important;
-        max-width: none !important;
-        padding: 6px 10px !important;
-        border-radius: 8px !important;
-        gap: 6px !important;
+      .video-transport-bar .transport-label-group {
+        display: none !important;
       }
+      .btn-transport-prev,
       .btn-transport-next {
-        grid-area: next !important;
-        width: 100% !important;
-        min-width: 0 !important;
-        max-width: none !important;
-        padding: 6px 10px !important;
+        flex: 0 0 40px !important;
+        width: 40px !important;
+        height: 38px !important;
+        min-width: 40px !important;
+        max-width: 40px !important;
+        padding: 0 !important;
         border-radius: 8px !important;
-        gap: 6px !important;
-        justify-content: flex-end !important;
+        justify-content: center !important;
+        align-items: center !important;
       }
     }
 
@@ -933,7 +943,7 @@
       }
     }
   </style>
-  <link rel="stylesheet" href="assets/css/mfs-mobile.css?v=20261024c">
+  <link rel="stylesheet" href="assets/css/mfs-mobile.css?v=20261112v5">
   <link rel="canonical" href="https://masterfunctionalskills.co.uk/video-solution.html">
 </head>
 <body style="background:#070e1e; color:#cbd5e1;">
@@ -1123,7 +1133,7 @@
       </div>
     </div>
     <!-- MOBILE NAVIGATION ENGINE -->
-    <script src="assets/js/mfs-mobile.js?v=20261024c" defer></script>
+    <script src="assets/js/mfs-mobile.js?v=20261112v5" defer></script>
   </header>
 
   <!-- VIDEO PLAYER HERO SECTION -->
@@ -1160,13 +1170,13 @@
       <!-- Quick Action Study Materials (Question Paper & Worked Answers & YouTube App) -->
       <div class="hero-quick-materials" id="heroQuickMaterials" style="display:none;">
         <a href="https://youtu.be/muSRa0fEsSs" target="_blank" rel="noopener" class="hero-quick-btn hero-quick-youtube" id="heroQuickYouTube" style="background:#dc2626; color:#fff; border:1.5px solid #ef4444;">
-          <i class="fa-brands fa-youtube"></i> Watch on YouTube App
+          <i class="fa-brands fa-youtube"></i> <span>YouTube<span class="quick-lbl-long"> App</span></span>
         </a>
         <a href="#" target="_blank" rel="noopener" class="hero-quick-btn hero-quick-worksheet" id="heroQuickWorksheet">
-          <i class="fa-regular fa-file-pdf"></i> Question Sheet (PDF)
+          <i class="fa-regular fa-file-pdf"></i> <span>Worksheet<span class="quick-lbl-long"> (PDF)</span></span>
         </a>
         <a href="#" target="_blank" rel="noopener" class="hero-quick-btn hero-quick-answers" id="heroQuickAnswers">
-          <i class="fa-solid fa-circle-check"></i> Worked Answers [M1/A1]
+          <i class="fa-solid fa-circle-check"></i> <span>Answers<span class="quick-lbl-long"> [M1/A1]</span></span>
         </a>
       </div>
 
@@ -1270,11 +1280,11 @@
           <!-- TAB 1: Video Playlist Drawer -->
           <div id="sidebarPlaylistTab" class="sidebar-tab-pane">
             <div class="playlist-filter-bar">
-              <button type="button" class="filter-chip active" data-filter="all" onclick="window.MFS_STATION.filterPlaylist('all', this)">All (61)</button>
-              <button type="button" class="filter-chip" data-filter="topics" onclick="window.MFS_STATION.filterPlaylist('topics', this)"><i class="fa-brands fa-youtube" style="color:#ef4444;"></i> Masterclasses (39)</button>
+              <button type="button" class="filter-chip active" data-filter="all" onclick="window.MFS_STATION.filterPlaylist('all', this)">All (107)</button>
+              <button type="button" class="filter-chip" data-filter="topics" onclick="window.MFS_STATION.filterPlaylist('topics', this)"><i class="fa-brands fa-youtube" style="color:#ef4444;"></i> Masterclasses (71)</button>
               <button type="button" class="filter-chip" data-filter="past-papers" onclick="window.MFS_STATION.filterPlaylist('past-papers', this)">Past Papers (20)</button>
-              <button type="button" class="filter-chip" data-filter="slc" onclick="window.MFS_STATION.filterPlaylist('slc', this)">Speaking & Listening</button>
-              <button type="button" class="filter-chip" onclick="window.MFS_STATION.filterPlaylist('e3-foundation', this)">Entry 3</button>
+              <button type="button" class="filter-chip" data-filter="slc" onclick="window.MFS_STATION.filterPlaylist('slc', this)">Speaking & Listening (2)</button>
+              <button type="button" class="filter-chip" data-filter="e3-foundation" onclick="window.MFS_STATION.filterPlaylist('e3-foundation', this)">Entry 3 (14)</button>
             </div>
             <div id="playlistContainer" class="playlist-items-scroll">
               <!-- Dynamically populated list -->
@@ -1401,6 +1411,314 @@
 
       const MFS_WALKTHROUGHS = [
         {
+          id: 'dfs-onscreen-exam-strategy',
+          category: 'topics',
+          series: 'Digital Functional Skills Topics',
+          paper: 'DFS Masterclass',
+          section: "DFS Onscreen Exam Strategy: Part A & Part B (Tutor Sonya)",
+          title: "DFS Onscreen Exam Strategy: Part A & Part B",
+          fullTitle: "DFS Onscreen Exam Strategy: Part A & Part B \u2022 Masterclass Walkthrough",
+          duration: '5m 25s',
+          badge: 'Tutor Sonya • 5m 25s',
+          type: 'youtube',
+          ytId: 'v_EoBPGRnKA',
+          localVideo: '',
+          poster: 'assets/img/posters/dfs-onscreen-exam-strategy-poster.jpg',
+          vtt: 'assets/video/sonya-dfs-onscreen-exam-strategy-chapters.vtt',
+          worksheet: 'digital-functional-skills-mock-exam.html',
+          answers: 'digital-functional-skills-past-papers.html',
+          markScheme: 'digital-functional-skills-mock-exam.html',
+          companionSlug: 'dfs-spreadsheets-formulas-charts',
+          companionLabel: "Next: Spreadsheets, Formulas (=SUM, =AVERAGE) & Charts (Sonya \u2022 5m 23s)",
+          chapters: [[0, "Pass the Onscreen DFS Exam"], [28, "90-Minute Timing Plan"], [65, "Split-Screen & Starter Files"], [89, "Exact Folder & Save Names"], [116, "Checking Every Brief Bullet"], [162, "Final 5-Minute Upload Check"], [201, "Your Turn"], [236, "Watch Out!"], [284, "Summary"]]
+        },
+        {
+          id: 'dfs-files-folders-cloud-security',
+          category: 'topics',
+          series: 'Digital Functional Skills Topics',
+          paper: 'DFS Masterclass',
+          section: "Files, Folders, Cloud Storage & Cybersecurity (Tutor Subi)",
+          title: "Files, Folders, Cloud Storage & Cybersecurity",
+          fullTitle: "Files, Folders, Cloud Storage & Cybersecurity \u2022 Masterclass Walkthrough",
+          duration: '4m 48s',
+          badge: 'Tutor Subi • 4m 48s',
+          type: 'youtube',
+          ytId: 'XytycIGeOdg',
+          localVideo: '',
+          poster: 'assets/img/posters/dfs-files-folders-cloud-security-poster.jpg',
+          vtt: 'assets/video/subi-dfs-files-folders-cloud-security-chapters.vtt',
+          worksheet: 'digital-skills/level-1/l1-file-management-hierarchies.html',
+          answers: 'digital-functional-skills-past-papers.html',
+          markScheme: 'digital-skills/level-1/l1-file-management-hierarchies.html',
+          companionSlug: 'dfs-onscreen-exam-strategy',
+          companionLabel: "Next: DFS Onscreen Exam Strategy: Part A & Part B (Sonya \u2022 5m 25s)",
+          chapters: [[0, "Files, Folders & Security"], [28, "Folders & Clean Filenames"], [55, "Extensions & .zip Files"], [83, "Cloud Sharing Permissions"], [116, "Passphrases & 2FA"], [142, "Spotting Phishing Emails"], [168, "Your Turn"], [203, "Watch Out!"], [249, "Summary"]]
+        },
+        {
+          id: 'dfs-word-processing-layout-formatting',
+          category: 'topics',
+          series: 'Digital Functional Skills Topics',
+          paper: 'DFS Masterclass',
+          section: "Word Processing, Document Layout & Formatting (Tutor Emma)",
+          title: "Word Processing, Document Layout & Formatting",
+          fullTitle: "Word Processing, Document Layout & Formatting \u2022 Masterclass Walkthrough",
+          duration: '5m 20s',
+          badge: 'Tutor Emma • 5m 20s',
+          type: 'youtube',
+          ytId: 'z_GFG2NbtSE',
+          localVideo: '',
+          poster: 'assets/img/posters/dfs-word-processing-layout-formatting-poster.jpg',
+          vtt: 'assets/video/emma-dfs-word-processing-layout-formatting-chapters.vtt',
+          worksheet: 'digital-skills/level-1/l1-word-processing-professional.html',
+          answers: 'digital-functional-skills-past-papers.html',
+          markScheme: 'digital-skills/level-1/l1-word-processing-professional.html',
+          companionSlug: 'dfs-files-folders-cloud-security',
+          companionLabel: "Next: Files, Folders, Cloud Storage & Cybersecurity (Subi \u2022 4m 48s)",
+          chapters: [[0, "Word Processing & Layout"], [29, "Layout by Purpose"], [58, "Hierarchy & Fonts"], [102, "Images & Text Wrap"], [133, "Tables, Headers & Footers"], [162, "Proofreading & 1-Page PDF"], [197, "Your Turn"], [232, "Watch Out!"], [279, "Summary"]]
+        },
+        {
+          id: 'dfs-spreadsheets-formulas-charts',
+          category: 'topics',
+          series: 'Digital Functional Skills Topics',
+          paper: 'DFS Masterclass',
+          section: "Spreadsheets, Formulas (=SUM, =AVERAGE) & Charts (Tutor Sonya)",
+          title: "Spreadsheets, Formulas (=SUM, =AVERAGE) & Charts",
+          fullTitle: "Spreadsheets, Formulas (=SUM, =AVERAGE) & Charts \u2022 Masterclass Walkthrough",
+          duration: '5m 23s',
+          badge: 'Tutor Sonya • 5m 23s',
+          type: 'youtube',
+          ytId: '6hTVV6GgayQ',
+          localVideo: '',
+          poster: 'assets/img/posters/dfs-spreadsheets-formulas-charts-poster.jpg',
+          vtt: 'assets/video/sonya-dfs-spreadsheets-formulas-charts-chapters.vtt',
+          worksheet: 'digital-skills/level-1/l1-spreadsheet-formulas-functions.html',
+          answers: 'digital-functional-skills-past-papers.html',
+          markScheme: 'digital-skills/level-1/l1-spreadsheet-formulas-functions.html',
+          companionSlug: 'dfs-word-processing-layout-formatting',
+          companionLabel: "Next: Word Processing, Document Layout & Formatting (Emma \u2022 5m 20s)",
+          chapters: [[0, "Spreadsheets & Charts"], [28, "Rule #1: Equals & SUM"], [66, "AVERAGE, MIN & MAX"], [101, "Level 1 =IF Decisions"], [142, "Currency, Sort & Filter"], [181, "Creating Clear Charts"], [209, "Your Turn"], [242, "Watch Out!"], [286, "Summary"]]
+        },
+        {
+          id: 'english-slc-exam-checklist',
+          category: 'topics',
+          series: 'Functional Skills English Level 2 Topics',
+          paper: 'English Masterclass',
+          section: "SLC Assessment Overview & Distinction Strategy (Tutor Subi)",
+          title: "SLC Assessment Overview & Distinction Strategy",
+          fullTitle: "SLC Assessment Overview & Distinction Strategy \u2022 Masterclass Walkthrough",
+          duration: '5m 24s',
+          badge: 'Tutor Subi • 5m 24s',
+          type: 'youtube',
+          ytId: 'Zw-0pR_aTR8',
+          localVideo: '',
+          poster: 'assets/img/posters/slc-the-exam-poster.jpg',
+          vtt: 'assets/video/subi-slc-the-exam-chapters.vtt',
+          worksheet: 'worksheets/slc-the-exam-worksheet.html',
+          answers: 'worksheets/slc-the-exam-answers.html',
+          markScheme: 'slc-the-exam.html',
+          companionSlug: 'english-comparing-texts',
+          companionLabel: "Next: Comparing Texts & Perspectives (Sonya \u2022 4m 54s)",
+          chapters: [[0, "SLC Assessment Checklist"], [24, "How Task 1 & Task 2 Fit"], [66, "1-Page Prompt Sheet"], [98, "Remote Online Setup"], [146, "Nerves & Recovery Phrases"], [178, "Mind-Blank Recovery"], [206, "Your Turn"], [241, "Watch Out!"], [284, "Summary"]]
+        },
+        {
+          id: 'english-slc-discussion',
+          category: 'topics',
+          series: 'Functional Skills English Level 2 Topics',
+          paper: 'English Masterclass',
+          section: "SLC Task 2: Formal Group Discussion & Turn-Taking (Tutor Sonya)",
+          title: "SLC Task 2: Formal Group Discussion & Turn-Taking",
+          fullTitle: "SLC Task 2: Formal Group Discussion & Turn-Taking \u2022 Masterclass Walkthrough",
+          duration: '5m 01s',
+          badge: 'Tutor Sonya • 5m 01s',
+          type: 'youtube',
+          ytId: 'rHXKI7uGb6M',
+          localVideo: '',
+          poster: 'assets/img/posters/slc-discussion-poster.jpg',
+          vtt: 'assets/video/sonya-slc-discussion-chapters.vtt',
+          worksheet: 'worksheets/slc-communicating-worksheet.html',
+          answers: 'worksheets/slc-communicating-answers.html',
+          markScheme: 'slc-communicating.html',
+          companionSlug: 'english-slc-exam-checklist',
+          companionLabel: "Next: SLC Assessment Overview & Distinction Strategy (Subi \u2022 5m 24s)",
+          chapters: [[0, "Formal Group Discussion"], [24, "Balanced Collaboration"], [61, "Building & Probing"], [93, "Polite Disagreement & Agenda"], [138, "Live Workplace Scenario"], [169, "Discussion Turn Upgrade"], [196, "Your Turn"], [229, "Watch Out!"], [269, "Summary"]]
+        },
+        {
+          id: 'english-slc-presentation',
+          category: 'topics',
+          series: 'Functional Skills English Level 2 Topics',
+          paper: 'English Masterclass',
+          section: "SLC Task 1: Delivering a Level 2 Presentation & Q&A (Tutor Emma)",
+          title: "SLC Task 1: Delivering a Level 2 Presentation & Q&A",
+          fullTitle: "SLC Task 1: Delivering a Level 2 Presentation & Q&A \u2022 Masterclass Walkthrough",
+          duration: '6m 02s',
+          badge: 'Tutor Emma • 6m 02s',
+          type: 'youtube',
+          ytId: '7HIEJWngLVg',
+          localVideo: '',
+          poster: 'assets/img/posters/slc-presentation-poster.jpg',
+          vtt: 'assets/video/emma-slc-presentation-chapters.vtt',
+          worksheet: 'worksheets/slc-key-slc-skills-worksheet.html',
+          answers: 'worksheets/slc-key-slc-skills-answers.html',
+          markScheme: 'slc-your-turn.html',
+          companionSlug: 'english-slc-discussion',
+          companionLabel: "Next: SLC Task 2: Formal Group Discussion & Turn-Taking (Sonya \u2022 5m 01s)",
+          chapters: [[0, "Delivering a Level 2 Presentation"], [25, "Choosing a Strong Topic"], [70, "5-to-8 Minute Structure"], [129, "Cue Cards & Body Language"], [166, "Handling Tough Q&A"], [211, "Q&A Response Upgrade"], [246, "Your Turn"], [280, "Watch Out!"], [325, "Summary"]]
+        },
+        {
+          id: 'english-proofreading-exam',
+          category: 'topics',
+          series: 'Functional Skills English Level 2 Topics',
+          paper: 'English Masterclass',
+          section: "Proofreading, Finalising & Writing Exam Strategy (Tutor Subi)",
+          title: "Proofreading, Finalising & Writing Exam Strategy",
+          fullTitle: "Proofreading, Finalising & Writing Exam Strategy \u2022 Masterclass Walkthrough",
+          duration: '4m 53s',
+          badge: 'Tutor Subi • 4m 53s',
+          type: 'youtube',
+          ytId: '2prD1I9I32U',
+          localVideo: '',
+          poster: 'assets/img/posters/writing-fantastic-finalising-poster.jpg',
+          vtt: 'assets/video/subi-writing-fantastic-finalising-chapters.vtt',
+          worksheet: 'worksheets/writing-fantastic-finalising-worksheet.html',
+          answers: 'worksheets/writing-fantastic-finalising-answers.html',
+          markScheme: 'writing-fantastic-finalising.html',
+          companionSlug: 'english-slc-presentation',
+          companionLabel: "Next: SLC Task 1: Delivering a Level 2 Presentation & Q&A (Emma \u2022 6m 02s)",
+          chapters: [[0, "Proofreading & Exam Strategy"], [26, "2-Task Clock Strategy"], [59, "The 3-Sweep Routine"], [103, "Spot 4 Exam Slips"], [124, "Proofreading Rescue"], [145, "60-Second Final Check"], [176, "Your Turn"], [209, "Watch Out!"], [254, "Summary"]]
+        },
+        {
+          id: 'english-spelling-homophones',
+          category: 'topics',
+          series: 'Functional Skills English Level 2 Topics',
+          paper: 'English Masterclass',
+          section: "Tricky Spelling Rules & Homophone Traps (Tutor Emma)",
+          title: "Tricky Spelling Rules & Homophone Traps",
+          fullTitle: "Tricky Spelling Rules & Homophone Traps \u2022 Masterclass Walkthrough",
+          duration: '5m 01s',
+          badge: 'Tutor Emma • 5m 01s',
+          type: 'youtube',
+          ytId: '0vWBiLcl8VY',
+          localVideo: '',
+          poster: 'assets/img/posters/writing-spelling-poster.jpg',
+          vtt: 'assets/video/emma-writing-spelling-chapters.vtt',
+          worksheet: 'worksheets/writing-spelling-worksheet.html',
+          answers: 'worksheets/writing-spelling-answers.html',
+          markScheme: 'writing-spelling.html',
+          companionSlug: 'english-proofreading-exam',
+          companionLabel: "Next: Proofreading, Finalising & Writing Exam Strategy (Subi \u2022 4m 53s)",
+          chapters: [[0, "Spelling & Homophones"], [29, "There, Their & They're"], [62, "Affect/Effect & Practise"], [97, "Accept & Stationery"], [122, "Top 6 Workplace Words"], [165, "Sentence Surgery"], [191, "Your Turn"], [226, "Watch Out!"], [266, "Summary"]]
+        },
+        {
+          id: 'english-tenses-voice',
+          category: 'topics',
+          series: 'Functional Skills English Level 2 Topics',
+          paper: 'English Masterclass',
+          section: "Tense Consistency & Active vs Passive Voice (Tutor Sonya)",
+          title: "Tense Consistency & Active vs Passive Voice",
+          fullTitle: "Tense Consistency & Active vs Passive Voice \u2022 Masterclass Walkthrough",
+          duration: '5m 04s',
+          badge: 'Tutor Sonya • 5m 04s',
+          type: 'youtube',
+          ytId: 'mNxrOOFoM8Y',
+          localVideo: '',
+          poster: 'assets/img/posters/writing-tenses-poster.jpg',
+          vtt: 'assets/video/sonya-writing-tenses-chapters.vtt',
+          worksheet: 'worksheets/writing-tenses-worksheet.html',
+          answers: 'worksheets/writing-tenses-answers.html',
+          markScheme: 'writing-tenses.html',
+          companionSlug: 'english-spelling-homophones',
+          companionLabel: "Next: Tricky Spelling Rules & Homophone Traps (Emma \u2022 5m 01s)",
+          chapters: [[0, "Tense & Active Voice"], [28, "Fixing Tense Drift"], [64, "Deliberate Time Shifts"], [105, "Active vs Passive Voice"], [141, "Tense Surgery"], [164, "Active Voice Upgrade"], [190, "Your Turn"], [223, "Watch Out!"], [268, "Summary"]]
+        },
+        {
+          id: 'english-grammar-sentences',
+          category: 'topics',
+          series: 'Functional Skills English Level 2 Topics',
+          paper: 'English Masterclass',
+          section: "Grammar, Complex Sentences & Agreement (Tutor Subi)",
+          title: "Grammar, Complex Sentences & Agreement",
+          fullTitle: "Grammar, Complex Sentences & Agreement \u2022 Masterclass Walkthrough",
+          duration: '4m 53s',
+          badge: 'Tutor Subi • 4m 53s',
+          type: 'youtube',
+          ytId: 'kAsBOzSxLCM',
+          localVideo: '',
+          poster: 'assets/img/posters/writing-grammar-poster.jpg',
+          vtt: 'assets/video/subi-writing-grammar-chapters.vtt',
+          worksheet: 'worksheets/writing-grammar-worksheet.html',
+          answers: 'worksheets/writing-grammar-answers.html',
+          markScheme: 'writing-grammar.html',
+          companionSlug: 'english-tenses-voice',
+          companionLabel: "Next: Tense Consistency & Active vs Passive Voice (Sonya \u2022 5m 04s)",
+          chapters: [[0, "Grammar, Clauses & Agreement"], [27, "3 Sentence Types"], [68, "Fronted Clauses"], [100, "Subject-Verb Agreement"], [141, "Should Have vs Should Of"], [162, "Sentence Surgery"], [186, "Your Turn"], [217, "Watch Out!"], [257, "Summary"]]
+        },
+        {
+          id: 'english-paragraphing-cohesion',
+          category: 'topics',
+          series: 'Functional Skills English Level 2 Topics',
+          paper: 'English Masterclass',
+          section: "Paragraphing, Cohesion & Discourse Markers (Tutor Emma)",
+          title: "Paragraphing, Cohesion & Discourse Markers",
+          fullTitle: "Paragraphing, Cohesion & Discourse Markers \u2022 Masterclass Walkthrough",
+          duration: '5m 51s',
+          badge: 'Tutor Emma • 5m 51s',
+          type: 'youtube',
+          ytId: 'NBVRDZXLLN0',
+          localVideo: '',
+          poster: 'assets/img/posters/writing-organisational-markers-poster.jpg',
+          vtt: 'assets/video/emma-writing-organisational-markers-chapters.vtt',
+          worksheet: 'worksheets/writing-organisational-markers-worksheet.html',
+          answers: 'worksheets/writing-organisational-markers-answers.html',
+          markScheme: 'writing-organisational-markers.html',
+          companionSlug: 'english-grammar-sentences',
+          companionLabel: "Next: Grammar, Complex Sentences & Agreement (Subi \u2022 4m 53s)",
+          chapters: [[0, "Paragraphing & Cohesion"], [30, "TiPToP Paragraphing"], [73, "PEEL Paragraph Anatomy"], [118, "Discourse Markers"], [162, "Sentence Surgery"], [192, "Model Paragraph"], [221, "Your Turn"], [262, "Watch Out!"], [312, "Summary"]]
+        },
+        {
+          id: 'english-formal-reports-reviews',
+          category: 'topics',
+          series: 'Functional Skills English Level 2 Topics',
+          paper: 'English Masterclass',
+          section: "Formal Reports & Balanced Reviews (Tutor Sonya)",
+          title: "Formal Reports & Balanced Reviews",
+          fullTitle: "Formal Reports & Balanced Reviews \u2022 Masterclass Walkthrough",
+          duration: '5m 08s',
+          badge: 'Tutor Sonya • 5m 08s',
+          type: 'youtube',
+          ytId: 'eOAiwz11h1U',
+          localVideo: '',
+          poster: 'assets/img/posters/reports-and-reviews-poster.jpg',
+          vtt: 'assets/video/sonya-reports-and-reviews-chapters.vtt',
+          worksheet: 'worksheets/writing-context-worksheet.html',
+          answers: 'worksheets/writing-context-answers.html',
+          markScheme: 'writing-context.html',
+          companionSlug: 'english-paragraphing-cohesion',
+          companionLabel: "Next: Paragraphing, Cohesion & Discourse Markers (Emma \u2022 5m 51s)",
+          chapters: [[0, "Formal Reports & Reviews"], [27, "Formal Report Blueprint"], [70, "Balanced Review Blueprint"], [117, "Report vs Review"], [142, "Report Sentence Surgery"], [168, "Review Sentence Surgery"], [191, "Your Turn"], [228, "Watch Out!"], [271, "Summary"]]
+        },
+        {
+          id: 'english-articles-blogs',
+          category: 'topics',
+          series: 'Functional Skills English Level 2 Topics',
+          paper: 'English Masterclass',
+          section: "Articles & Blogs: Headlines, Hooks & Persuasion (Tutor Subi)",
+          title: "Articles & Blogs: Headlines, Hooks & Persuasion",
+          fullTitle: "Articles & Blogs: Headlines, Hooks & Persuasion \u2022 Masterclass Walkthrough",
+          duration: '4m 50s',
+          badge: 'Tutor Subi • 4m 50s',
+          type: 'youtube',
+          ytId: 'j5v-cS-pmWo',
+          localVideo: '',
+          poster: 'assets/img/posters/articles-and-blogs-poster.jpg',
+          vtt: 'assets/video/subi-articles-and-blogs-chapters.vtt',
+          worksheet: 'worksheets/writing-form-presentational-and-language-features-worksheet.html',
+          answers: 'worksheets/writing-form-presentational-and-language-features-answers.html',
+          markScheme: 'functional-skills-english-level-2-writing-blog.html',
+          companionSlug: 'english-formal-reports-reviews',
+          companionLabel: "Next: Formal Reports & Balanced Reviews (Sonya \u2022 5m 08s)",
+          chapters: [[0, "Articles & Blogs Masterclass"], [27, "Headline, Byline & Hook"], [62, "Thematic Subheadings"], [83, "Lively Persuasive Voice"], [121, "Sentence Surgery"], [147, "5-Part Blueprint"], [177, "Your Turn"], [213, "Watch Out!"], [255, "Summary"]]
+        },
+        {
           id: 'english-workplace-emails',
           category: 'topics',
           series: 'Functional Skills English Level 2 Topics',
@@ -1418,8 +1736,8 @@
           worksheet: 'worksheets/writing-communicating-worksheet.html',
           answers: 'worksheets/writing-communicating-answers.html',
           markScheme: 'writing-communicating.html',
-          companionSlug: 'english-comparing-texts',
-          companionLabel: "Next: Comparing Texts & Perspectives (Sonya \u2022 4m 54s)",
+          companionSlug: 'english-articles-blogs',
+          companionLabel: "Next: Articles & Blogs: Headlines, Hooks & Persuasion (Subi \u2022 4m 50s)",
           chapters: [[0, "Workplace Emails & Tone"], [28, "Email Header Setup"], [68, "Model Email Anatomy"], [100, "Sentence Surgery"], [134, "3 Tone Upgrades"], [168, "Email Sign-Offs"], [195, "Your Turn"], [232, "Watch Out!"], [277, "Summary"]]
         },
         {
@@ -3022,6 +3340,69 @@
           companionSlug: 'slc-task1-presentation-model',
           companionLabel: 'Task 1: Presentation Model (4m)'
         },
+        {
+          id: 'number-patterns-and-sequences',
+          category: 'topics',
+          series: 'Functional Skills Maths Level 1 & Entry 3 Topics',
+          paper: 'Topic Masterclass',
+          section: 'Number Patterns & Sequences (Tutor Sonya)',
+          title: 'Number Patterns & Sequences',
+          fullTitle: 'Number Patterns & Sequences • Masterclass Walkthrough',
+          duration: '3m 03s',
+          badge: 'Tutor Sonya • 3m 03s',
+          type: 'youtube',
+          ytId: 'IvQtp2pQcqo',
+          poster: 'assets/img/posters/number-patterns-and-sequences-poster.jpg',
+          vtt: 'assets/video/sonya-number-patterns-and-sequences-chapters.vtt',
+          worksheet: 'worksheets/number-patterns-worksheet.html',
+          answers: 'worksheets/number-patterns-answers.html',
+          markScheme: 'functional-skills-number-patterns.html',
+          companionSlug: 'everyday-scales-thermometers-and-timetables',
+          companionLabel: 'Next: Scales, Thermometers & Timetables (Emma • 3m 31s)',
+          chapters: [[0, 'Briefing & Objectives'], [21, 'Step Rule'], [48, 'Missing Middle Terms'], [85, 'Your Turn! Practice Challenge'], [125, 'Watch Out! Examiner Traps']]
+        },
+        {
+          id: 'everyday-scales-thermometers-and-timetables',
+          category: 'topics',
+          series: 'Functional Skills Maths Level 1 & Entry 3 Topics',
+          paper: 'Topic Masterclass',
+          section: 'Scales, Thermometers & Timetables (Tutor Emma)',
+          title: 'Scales, Thermometers & Timetables',
+          fullTitle: 'Scales, Thermometers & Timetables • Masterclass Walkthrough',
+          duration: '3m 31s',
+          badge: 'Tutor Emma • 3m 31s',
+          type: 'youtube',
+          ytId: '8hIgzw9Q2xQ',
+          poster: 'assets/img/posters/everyday-scales-thermometers-and-timetables-poster.jpg',
+          vtt: 'assets/video/emma-everyday-scales-thermometers-and-timetables-chapters.vtt',
+          worksheet: 'worksheets/scales-worksheet.html',
+          answers: 'worksheets/scales-answers.html',
+          markScheme: 'functional-skills-scales.html',
+          companionSlug: 'lists-tally-charts-and-line-graphs',
+          companionLabel: 'Next: Lists, Tally Charts & Line Graphs (Subi • 2m 36s)',
+          chapters: [[0, 'Briefing & Objectives'], [21, 'Scales'], [49, 'Thermometers'], [75, 'Timetables'], [117, 'Your Turn! Practice Challenge'], [152, 'Watch Out! Examiner Traps']]
+        },
+        {
+          id: 'lists-tally-charts-and-line-graphs',
+          category: 'topics',
+          series: 'Functional Skills Maths Level 1 & Entry 3 Topics',
+          paper: 'Topic Masterclass',
+          section: 'Lists, Tally Charts & Line Graphs (Tutor Subi)',
+          title: 'Lists, Tally Charts & Line Graphs',
+          fullTitle: 'Lists, Tally Charts & Line Graphs • Masterclass Walkthrough',
+          duration: '2m 36s',
+          badge: 'Tutor Subi • 2m 36s',
+          type: 'youtube',
+          ytId: 'xN0ngd3-A6s',
+          poster: 'assets/img/posters/lists-tally-charts-and-line-graphs-poster.jpg',
+          vtt: 'assets/video/subi-lists-tally-charts-and-line-graphs-chapters.vtt',
+          worksheet: 'worksheets/tally-charts-worksheet.html',
+          answers: 'worksheets/tally-charts-answers.html',
+          markScheme: 'functional-skills-tally-charts.html',
+          companionSlug: 'bar-charts-and-pie-charts',
+          companionLabel: 'Next: Bar Charts & Pie Charts (Emma • 5m 36s)',
+          chapters: [[0, 'Briefing & Objectives'], [18, 'Tally Charts'], [42, 'Line Graphs'], [71, 'Your Turn! Practice Challenge'], [96, 'Watch Out! Examiner Traps']]
+        },
         // === E3_FOUNDATION_START ===
         {
           id: 'e3-numbers-to-1000-and-patterns',
@@ -3034,7 +3415,7 @@
           duration: '3m 32s',
           badge: 'Tutor Sonya • 3m 32s',
           type: 'youtube',
-          ytId: '',
+          ytId: '_I-yA5f93Kg',
           localVideo: 'assets/video/sonya-e3-numbers-to-1000-and-patterns-walkthrough.mp4',
           poster: 'assets/img/posters/e3-numbers-to-1000-and-patterns-poster.jpg',
           vtt: 'assets/video/sonya-e3-numbers-to-1000-and-patterns-chapters.vtt',
@@ -3054,7 +3435,7 @@
           duration: '3m 37s',
           badge: 'Tutor Emma • 3m 37s',
           type: 'youtube',
-          ytId: '',
+          ytId: 'gTdqIWhHBQs',
           localVideo: 'assets/video/emma-e3-addition-and-subtraction-walkthrough.mp4',
           poster: 'assets/img/posters/e3-addition-and-subtraction-poster.jpg',
           vtt: 'assets/video/emma-e3-addition-and-subtraction-chapters.vtt',
@@ -3074,7 +3455,7 @@
           duration: '3m 28s',
           badge: 'Tutor Subi • 3m 28s',
           type: 'youtube',
-          ytId: '',
+          ytId: '7GCWKG_pSzw',
           localVideo: 'assets/video/subi-e3-multiplication-and-division-walkthrough.mp4',
           poster: 'assets/img/posters/e3-multiplication-and-division-poster.jpg',
           vtt: 'assets/video/subi-e3-multiplication-and-division-chapters.vtt',
@@ -3094,7 +3475,7 @@
           duration: '3m 28s',
           badge: 'Tutor Sonya • 3m 28s',
           type: 'youtube',
-          ytId: '',
+          ytId: 'kRvgYUIZixY',
           localVideo: 'assets/video/sonya-e3-rounding-and-estimating-walkthrough.mp4',
           poster: 'assets/img/posters/e3-rounding-and-estimating-poster.jpg',
           vtt: 'assets/video/sonya-e3-rounding-and-estimating-chapters.vtt',
@@ -3114,7 +3495,7 @@
           duration: '3m 12s',
           badge: 'Tutor Emma • 3m 12s',
           type: 'youtube',
-          ytId: '',
+          ytId: '-FCvw_Tv5FM',
           localVideo: 'assets/video/emma-e3-everyday-fractions-walkthrough.mp4',
           poster: 'assets/img/posters/e3-everyday-fractions-poster.jpg',
           vtt: 'assets/video/emma-e3-everyday-fractions-chapters.vtt',
@@ -3134,7 +3515,7 @@
           duration: '3m 24s',
           badge: 'Tutor Subi • 3m 24s',
           type: 'youtube',
-          ytId: '',
+          ytId: 'TxGrwFLVVE8',
           localVideo: 'assets/video/subi-e3-money-and-decimals-walkthrough.mp4',
           poster: 'assets/img/posters/e3-money-and-decimals-poster.jpg',
           vtt: 'assets/video/subi-e3-money-and-decimals-chapters.vtt',
@@ -3154,7 +3535,7 @@
           duration: '3m 20s',
           badge: 'Tutor Sonya • 3m 20s',
           type: 'youtube',
-          ytId: '',
+          ytId: 'LbOD8LDZUyo',
           localVideo: 'assets/video/sonya-e3-time-clocks-and-calendars-walkthrough.mp4',
           poster: 'assets/img/posters/e3-time-clocks-and-calendars-poster.jpg',
           vtt: 'assets/video/sonya-e3-time-clocks-and-calendars-chapters.vtt',
@@ -3174,7 +3555,7 @@
           duration: '3m 45s',
           badge: 'Tutor Emma • 3m 45s',
           type: 'youtube',
-          ytId: '',
+          ytId: 'nLt3nEc3URs',
           localVideo: 'assets/video/emma-e3-everyday-measures-and-scales-walkthrough.mp4',
           poster: 'assets/img/posters/e3-everyday-measures-and-scales-poster.jpg',
           vtt: 'assets/video/emma-e3-everyday-measures-and-scales-chapters.vtt',
@@ -3194,7 +3575,7 @@
           duration: '3m 16s',
           badge: 'Tutor Subi • 3m 16s',
           type: 'youtube',
-          ytId: '',
+          ytId: '2DFypm6MqWI',
           localVideo: 'assets/video/subi-e3-shapes-angles-and-directions-walkthrough.mp4',
           poster: 'assets/img/posters/e3-shapes-angles-and-directions-poster.jpg',
           vtt: 'assets/video/subi-e3-shapes-angles-and-directions-chapters.vtt',
@@ -3214,7 +3595,7 @@
           duration: '3m 08s',
           badge: 'Tutor Sonya • 3m 08s',
           type: 'youtube',
-          ytId: '',
+          ytId: 'OgrJzBZVR24',
           localVideo: 'assets/video/sonya-e3-lists-tallies-tables-and-charts-walkthrough.mp4',
           poster: 'assets/img/posters/e3-lists-tallies-tables-and-charts-poster.jpg',
           vtt: 'assets/video/sonya-e3-lists-tallies-tables-and-charts-chapters.vtt',
@@ -3234,7 +3615,7 @@
           duration: '3m 22s',
           badge: 'Tutor Sonya • 3m 22s',
           type: 'youtube',
-          ytId: '',
+          ytId: '7abZ7FcL6n8',
           localVideo: 'assets/video/sonya-e3-english-reading-everyday-texts-walkthrough.mp4',
           poster: 'assets/img/posters/e3-english-reading-everyday-texts-poster.jpg',
           vtt: 'assets/video/sonya-e3-english-reading-everyday-texts-chapters.vtt',
@@ -3254,7 +3635,7 @@
           duration: '3m 40s',
           badge: 'Tutor Emma • 3m 40s',
           type: 'youtube',
-          ytId: '',
+          ytId: 'fobT_DEnKvI',
           localVideo: 'assets/video/emma-e3-english-sentence-basics-walkthrough.mp4',
           poster: 'assets/img/posters/e3-english-sentence-basics-poster.jpg',
           vtt: 'assets/video/emma-e3-english-sentence-basics-chapters.vtt',
@@ -3274,7 +3655,7 @@
           duration: '3m 39s',
           badge: 'Tutor Subi • 3m 39s',
           type: 'youtube',
-          ytId: '',
+          ytId: 'rC3eBmHbbyc',
           localVideo: 'assets/video/subi-e3-english-everyday-spellings-walkthrough.mp4',
           poster: 'assets/img/posters/e3-english-everyday-spellings-poster.jpg',
           vtt: 'assets/video/subi-e3-english-everyday-spellings-chapters.vtt',
@@ -3294,7 +3675,7 @@
           duration: '3m 38s',
           badge: 'Tutor Emma • 3m 38s',
           type: 'youtube',
-          ytId: '',
+          ytId: 'h60SvDd-fuA',
           localVideo: 'assets/video/emma-e3-english-writing-emails-and-forms-walkthrough.mp4',
           poster: 'assets/img/posters/e3-english-writing-emails-and-forms-poster.jpg',
           vtt: 'assets/video/emma-e3-english-writing-emails-and-forms-chapters.vtt',
@@ -3330,9 +3711,21 @@
         'edexcel-maths-l2-past-paper-7': 'edexcel-maths-l2-past-paper-7-section-a',
         'edexcel-maths-l2-past-paper-6': 'edexcel-maths-l2-past-paper-6-section-a',
         'edexcel-maths-l2-past-paper-5': 'edexcel-maths-l2-past-paper-5-section-a',
+        'edexcel-maths-l2-past-paper-4': 'edexcel-maths-l2-past-paper-4-section-a',
+        'edexcel-maths-l2-past-paper-3': 'edexcel-maths-l2-past-paper-3-section-a',
+        'edexcel-maths-l2-past-paper-2': 'edexcel-maths-l2-past-paper-2-section-a',
+        'edexcel-maths-l2-past-paper-1': 'edexcel-maths-l2-past-paper-1-section-a',
         'edexcel-maths-l2-mock-5': 'edexcel-maths-l2-past-paper-5-section-a',
         'past-paper-5': 'edexcel-maths-l2-past-paper-5-section-a',
+        'past-paper-4': 'edexcel-maths-l2-past-paper-4-section-a',
+        'past-paper-3': 'edexcel-maths-l2-past-paper-3-section-a',
+        'past-paper-2': 'edexcel-maths-l2-past-paper-2-section-a',
+        'past-paper-1': 'edexcel-maths-l2-past-paper-1-section-a',
         'paper-5': 'edexcel-maths-l2-past-paper-5-section-a',
+        'paper-4': 'edexcel-maths-l2-past-paper-4-section-a',
+        'paper-3': 'edexcel-maths-l2-past-paper-3-section-a',
+        'paper-2': 'edexcel-maths-l2-past-paper-2-section-a',
+        'paper-1': 'edexcel-maths-l2-past-paper-1-section-a',
         'mock-5': 'edexcel-maths-l2-past-paper-5-section-a',
         'slc': 'slc-task1-presentation-model',
         'slc-task1': 'slc-task1-presentation-model',
@@ -3420,14 +3813,17 @@
 
           let html = '';
           const groups = [
-            { key: 'past-papers', label: '📑 Edexcel Maths Level 2 Past Papers' },
-            { key: 'topics', label: '📐 Maths Topic Masterclasses' },
-            { key: 'slc', label: '🗣️ English Speaking & Listening Models' },
-            { key: 'e3-foundation', label: '🌱 Entry Level 3 Foundation Lessons (Maths & English)' }
+            { label: '📑 Edexcel Maths Level 2 Past Papers', match: w => w.category === 'past-papers' },
+            { label: '📐 Maths Level 2 Topic Masterclasses', match: w => w.category === 'topics' && /Maths Level 2/i.test(w.series) },
+            { label: '📐 Maths Level 1 & Entry 3 Bridging', match: w => w.category === 'topics' && /Maths Level 1/i.test(w.series) },
+            { label: '✍️ English Level 2 Topic Masterclasses', match: w => w.category === 'topics' && /English/i.test(w.series) },
+            { label: '💻 Digital Functional Skills Masterclasses', match: w => w.category === 'topics' && /Digital/i.test(w.series) },
+            { label: '🗣️ English Speaking & Listening Models', match: w => w.category === 'slc' },
+            { label: '🌱 Entry Level 3 Foundation Lessons (Maths & English)', match: w => w.category === 'e3-foundation' }
           ];
 
           groups.forEach(g => {
-            const items = MFS_WALKTHROUGHS.filter(w => w.category === g.key);
+            const items = MFS_WALKTHROUGHS.filter(g.match);
             if (items.length > 0) {
               html += `<optgroup label="${g.label}">`;
               items.forEach(w => {
@@ -3436,13 +3832,6 @@
               html += `</optgroup>`;
             }
           });
-
-          // Add in-production topics
-          html += `<optgroup label="⏳ Upcoming Topic Walkthroughs (In Production)">`;
-          Object.keys(TOPIC_FALLBACKS).forEach(key => {
-            html += `<option value="${key}">${TOPIC_FALLBACKS[key]}</option>`;
-          });
-          html += `</optgroup>`;
 
           picker.innerHTML = html;
         },

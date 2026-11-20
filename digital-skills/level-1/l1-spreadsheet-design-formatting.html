@@ -16,9 +16,9 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   
   <!-- Dedicated Digital Skills Revision Styles -->
-  <link rel="stylesheet" href="../../assets/css/mfs-theme.css?v=20261024c">
-  <link rel="stylesheet" href="../../assets/css/mfs-dfs-revision.css?v=20261106_v2">
-  <link rel="stylesheet" href="../../assets/css/mfs-mobile.css?v=20261111_v3">
+  <link rel="stylesheet" href="../../assets/css/mfs-theme.css?v=20261112v5">
+  <link rel="stylesheet" href="../../assets/css/mfs-dfs-revision.css?v=20261112v5">
+  <link rel="stylesheet" href="../../assets/css/mfs-mobile.css?v=20261112v5">
   <link rel="canonical" href="https://masterfunctionalskills.co.uk/digital-skills/level-1/l1-spreadsheet-design-formatting.html">
   <script src="../../assets/js/mfs-pwa.js" defer></script>
   <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
@@ -210,7 +210,7 @@
       </div>
     </div>
     <!-- MOBILE NAVIGATION ENGINE -->
-    <script src="../../assets/js/mfs-mobile.js?v=20261024c" defer></script>
+    <script src="../../assets/js/mfs-mobile.js?v=20261112v5" defer></script>
   </header>
 
   <!-- SUBNAV & BREADCRUMBS -->
@@ -256,12 +256,92 @@
         <nav class="dfs-sticky-toc" aria-label="Topic Sections">
           <span class="dfs-sticky-toc-label"><i class="fa-solid fa-compass" style="color:#0284c7;"></i> On This Page:</span>
           <div class="dfs-sticky-toc-links">
+            <a href="#video-station"><i class="fa-solid fa-circle-play" style="color:#ef4444;"></i> Video Masterclass</a>
             <a href="#teaching"><i class="fa-solid fa-book-open"></i> 1. Key Concepts</a>
             <a href="#model"><i class="fa-solid fa-award"></i> 2. Worked Exam Model</a>
             <a href="#drills"><i class="fa-solid fa-bolt"></i> 3. Interactive Quiz</a>
             <a href="#practice"><i class="fa-solid fa-laptop-file"></i> 4. Practice Exam Task</a>
           </div>
         </nav>
+
+                <!-- TOPIC VIDEO WALKTHROUGH STATION -->
+        <section id="video-station" class="dfs-section" style="margin-bottom: 32px;">
+          <div id="videoMasterclassStation" style="position:relative; border-radius:14px; overflow:hidden; background:#070d1e; box-shadow:0 10px 30px rgba(0,0,0,0.35);">
+            
+            <div class="video-exemplar-head" style="background:#070d1e; border: 2px solid #0284c7;  border-radius:14px 14px 0 0; padding:18px 22px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:12px;">
+              <div style="display:flex; align-items:center; gap:14px;">
+                <img id="mcTutorAvatar" src="../../assets/img/avatars/sonya-with-specs.png" alt="Sonya MFS Specialist Tutor" style="width:52px; height:52px; border-radius:50%; border:2px solid #38bdf8; object-fit:cover;">
+                <div>
+                  <div id="mcVideoTitle" style="color:#ffffff; font-size:1.18rem; font-weight:800; display:flex; align-items:center; gap:8px;">
+                    <i class="fa-brands fa-youtube" style="color:#ef4444;"></i> Spreadsheets, Formulas (=SUM, =AVERAGE) &amp; Charts Masterclass
+                  </div>
+                  <div id="mcTutorMeta" style="color:#94a3b8; font-size:0.88rem; font-weight:600; margin-top:3px;">
+                    Presented by <strong style="color:#38bdf8;">Sonya</strong> (MFS Spreadsheets & Onscreen Assessment Specialist) &bull; 1080p Studio Walkthrough (5m 23s)
+                  </div>
+                </div>
+              </div>
+              <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
+                <span style="background:#0284c7; color:#fff; font-size:0.75rem; font-weight:800; padding:4px 10px; border-radius:999px;">DFSQ Entry 3 &amp; Level 1</span>
+                <span style="background:#1e293b; color:#cbd5e1; border:1px solid #334155; font-size:0.75rem; font-weight:700; padding:4px 10px; border-radius:999px;">Open Awards &bull; Edexcel &bull; C&amp;G</span>
+              </div>
+            </div>
+
+            <div class="video-screen-wrap" style="position:relative; width:100%; aspect-ratio:16/9; background:#000; overflow:hidden; border-left:2px solid #0284c7; border-right:2px solid #0284c7;">
+              <iframe id="topicMasterclassIframe" data-ytid="6hTVV6GgayQ" style="position:absolute; top:0; left:0; width:100%; height:100%; border:0; display:block;" src="https://www.youtube-nocookie.com/embed/6hTVV6GgayQ?rel=0&amp;enablejsapi=1" title="Spreadsheets, Formulas (=SUM, =AVERAGE) &amp; Charts Masterclass" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+            </div>
+
+            <div class="video-jump-bar" id="mcJumpBar" style="background:#0f172a; border:2px solid #0284c7; border-top:1px solid #1e3a8a; padding:12px 18px;">
+              <span class="jump-label" style="color:#94a3b8; font-size:0.82rem; font-weight:700; margin-right:6px;"><i class="fa-solid fa-forward-step" style="color:#38bdf8;"></i> Lesson Benchmarks:</span>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(0, this)" style="background:#1e293b; color:#e2e8f0; border:1px solid #334155; border-radius:6px; padding:5px 10px; font-size:0.78rem; font-weight:700; cursor:pointer; margin:3px;">00:00 Spreadsheets &amp; Charts</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(28, this)" style="background:#1e293b; color:#e2e8f0; border:1px solid #334155; border-radius:6px; padding:5px 10px; font-size:0.78rem; font-weight:700; cursor:pointer; margin:3px;">00:28 Rule #1: Equals &amp; SUM</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(66, this)" style="background:#1e293b; color:#e2e8f0; border:1px solid #334155; border-radius:6px; padding:5px 10px; font-size:0.78rem; font-weight:700; cursor:pointer; margin:3px;">01:06 AVERAGE, MIN &amp; MAX</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(101, this)" style="background:#1e293b; color:#e2e8f0; border:1px solid #334155; border-radius:6px; padding:5px 10px; font-size:0.78rem; font-weight:700; cursor:pointer; margin:3px;">01:41 Level 1 =IF Decisions</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(142, this)" style="background:#1e293b; color:#e2e8f0; border:1px solid #334155; border-radius:6px; padding:5px 10px; font-size:0.78rem; font-weight:700; cursor:pointer; margin:3px;">02:22 Currency, Sort &amp; Filter</button>
+              <button type="button" class="jump-btn" onclick="jumpMasterclassVideo(286, this)" style="background:#1e293b; color:#e2e8f0; border:1px solid #334155; border-radius:6px; padding:5px 10px; font-size:0.78rem; font-weight:700; cursor:pointer; margin:3px;">04:46 Summary</button>
+            </div>
+
+            <div style="background:#070d1e; border:2px solid #0284c7; border-top:1px solid #1e3a8a; border-radius:0 0 14px 14px; padding:10px 18px; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;">
+              <span style="font-size:0.82rem; color:#94a3b8;"><i class="fa-solid fa-shield-halved" style="color:#38bdf8;"></i> Open Awards, Pearson Edexcel &amp; City &amp; Guilds DFSQ Aligned</span>
+              <div style="display:flex; gap:12px; align-items:center; flex-wrap:wrap;">
+                <a id="mcStationLink" href="../../video-solution.html?topic=dfs-spreadsheets-formulas-charts" target="_blank" rel="noopener" style="font-size:0.82rem; color:#38bdf8; text-decoration:none; font-weight:700;"><i class="fa-solid fa-up-right-from-square"></i> Open in Video Station</a>
+                <a id="mcYoutubeLink" href="https://youtu.be/6hTVV6GgayQ" target="_blank" rel="noopener" style="font-size:0.82rem; color:#ef4444; text-decoration:none; font-weight:700;"><i class="fa-brands fa-youtube"></i> Watch on YouTube</a>
+              </div>
+            </div>
+          </div>
+
+          <script>
+            window.__mfsMasterclassParts = [{"num": 1, "slug": "dfs-spreadsheets-formulas-charts", "title": "Spreadsheets, Formulas (=SUM, =AVERAGE) & Charts Masterclass", "tutor": "Sonya", "role": "MFS Spreadsheets & Onscreen Assessment Specialist", "avatar": "../../assets/img/avatars/sonya-with-specs.png", "station_href": "../../video-solution.html?topic=dfs-spreadsheets-formulas-charts", "ytid": "6hTVV6GgayQ", "runtime": "5m 23s", "benchmarks": [{"sec": 0, "text": "00:00 Spreadsheets & Charts"}, {"sec": 28, "text": "00:28 Rule #1: Equals & SUM"}, {"sec": 66, "text": "01:06 AVERAGE, MIN & MAX"}, {"sec": 101, "text": "01:41 Level 1 =IF Decisions"}, {"sec": 142, "text": "02:22 Currency, Sort & Filter"}, {"sec": 286, "text": "04:46 Summary"}]}];
+            function jumpMasterclassVideo(seconds, btn) {
+              if (btn && btn.blur) btn.blur();
+              var iframe = document.getElementById('topicMasterclassIframe');
+              if (iframe) {
+                var ytid = iframe.getAttribute('data-ytid');
+                if (ytid) iframe.src = 'https://www.youtube-nocookie.com/embed/' + ytid + '?rel=0&autoplay=1&enablejsapi=1&start=' + seconds;
+              }
+            }
+            function switchMasterclassPart(idx, tabBtn) {
+              var parts = window.__mfsMasterclassParts || [];
+              var p = parts[idx];
+              if (!p) return;
+              var iframe = document.getElementById('topicMasterclassIframe');
+              if (iframe) {
+                iframe.setAttribute('data-ytid', p.ytid);
+                iframe.src = 'https://www.youtube-nocookie.com/embed/' + p.ytid + '?rel=0&autoplay=1&enablejsapi=1';
+                iframe.title = p.title;
+              }
+              var av = document.getElementById('mcTutorAvatar');
+              if (av) av.src = p.avatar;
+              var ti = document.getElementById('mcVideoTitle');
+              if (ti) ti.innerHTML = '<i class="fa-brands fa-youtube" style="color:#ef4444;"></i> ' + p.title;
+              var me = document.getElementById('mcTutorMeta');
+              if (me) me.innerHTML = 'Presented by <strong style="color:#38bdf8;">' + p.tutor + '</strong> (' + p.role + ') &bull; 1080p Studio Walkthrough (' + p.runtime + ')';
+              var sl = document.getElementById('mcStationLink');
+              if (sl) sl.href = p.station_href;
+              var yl = document.getElementById('mcYoutubeLink');
+              if (yl) yl.href = 'https://youtu.be/' + p.ytid;
+            }
+          </script>
+        </section>
 
         <!-- 2. STEP-BY-STEP TEACHING & VISUAL UI MOCKUPS -->
         <section id="teaching" class="dfs-section">
@@ -281,8 +361,7 @@
             <p>When a number or date is too wide to fit inside its column, Excel does not cut off the digits — it displays <strong>###</strong> across the cell to warn you that data is hidden.</p><p>To fix this: Double-click the <strong>divider line between the column letters</strong> at the top (e.g. between column B and C). The column will automatically expand to fit the widest entry (AutoFit)!</p>
             
             <div style="margin-top:10px; font-size:0.88rem; color:#475569;"><i class="fa-regular fa-keyboard" style="color:#0284c7; margin-right:4px;"></i> <strong>Select Entire Column:</strong> <kbd class="dfs-kbd">Ctrl + Space</kbd> &bull; <strong>Select Entire Row:</strong> <kbd class="dfs-kbd">Shift + Space</kbd></div>
-            
-          </div>
+</div>
         </div>
         
         <div class="dfs-step-card">
@@ -292,10 +371,7 @@
           </div>
           <div class="dfs-step-body">
             <p>Raw numbers look unprofessional. Format them on the <strong>Number group</strong> of the ribbon:</p><ul><li><strong>Currency (£):</strong> Formats figures with a pound sign and 2 decimal places (e.g. <code>£45.50</code>).</li><li><strong>Increase / Decrease Decimals:</strong> Controls decimal precision (e.g. rounding <code>14.2857</code> to <code>14.3</code>).</li><li><strong>Percentage (%):</strong> Multiplies by 100 and displays the percent sign (e.g. <code>0.15</code> becomes <code>15%</code>).</li><li><strong>Merge &amp; Centre:</strong> Combines multiple cells across the top of a table into one wide header banner.</li></ul>
-            
-            
-            
-          </div>
+</div>
         </div>
         
         <div class="dfs-step-card">
@@ -316,10 +392,7 @@
                 <div style='display:flex; gap:12px; align-items:center; background:#f8fafc; padding:8px 14px; border-radius:4px; border:1px solid #cbd5e1;'><button style='background:#ffffff; border:1px solid #94a3b8; padding:4px 10px; border-radius:4px; font-weight:700;'><i class='fa-solid fa-arrow-down-a-z' style='color:#0284c7;'></i> Sort A to Z</button><button style='background:#ffffff; border:1px solid #94a3b8; padding:4px 10px; border-radius:4px; font-weight:700;'><i class='fa-solid fa-arrow-down-z-a' style='color:#0284c7;'></i> Sort Z to A</button><button style='background:#ffffff; border:1px solid #94a3b8; padding:4px 10px; border-radius:4px;'><i class='fa-solid fa-filter' style='color:#f59e0b;'></i> Filter</button></div>
               </div>
             </div>
-            
-            
-            
-          </div>
+</div>
         </div>
         
           </div>
@@ -644,7 +717,7 @@ Sorting surnames: Select the entire table data, click Sort & Filter > Custom Sor
 
   <!-- Scripts -->
   <script src="../../assets/js/dfs-revision-engine.js?v=20261106_v1"></script>
-  <script src="../../assets/js/mfs-mobile.js?v=20261111_v3" defer></script>
+  <script src="../../assets/js/mfs-mobile.js?v=20261112v5" defer></script>
   <script src="../../assets/js/mfs-tint.js"></script>
   <script>
     function toggleDyslexiaMode() {

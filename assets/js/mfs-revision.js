@@ -358,12 +358,38 @@ window.addEventListener('DOMContentLoaded', () => {
   window.addEventListener('resize', () => {
     const s = document.getElementById('sidebarNav');
     const btn = document.querySelector('.btn-mobile-toc');
-    if (window.innerWidth > 1200 && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
+    if (window.innerWidth >= 1280 && window.matchMedia('(hover: hover) and (pointer: fine)').matches) {
       if (s) {
         s.style.display = '';
         s.classList.remove('open-mobile', 'active');
       }
       if (btn) btn.classList.remove('active');
+    }
+  });
+
+  // Progressive Disclosure on Mobile: Keep Worked Model 1 open, make Worked Models 2+ tap-to-expand on phones
+  document.querySelectorAll('#worked-exam-models, section.revision-section').forEach(sec => {
+    const models = sec.querySelectorAll(':scope > .model-example-card');
+    if (models.length > 1) {
+      models.forEach((card, idx) => {
+        if (idx === 0 || card.querySelector('.mfs-model-expand-btn')) return;
+        const steps = card.querySelector('.model-steps-container');
+        if (!steps) return;
+        card.classList.add('mfs-mobile-extra-model', 'mfs-model-collapsed');
+        const toggleBtn = document.createElement('button');
+        toggleBtn.type = 'button';
+        toggleBtn.className = 'mfs-model-expand-btn';
+        toggleBtn.setAttribute('aria-expanded', 'false');
+        toggleBtn.innerHTML = '<i class="fa-solid fa-eye"></i> <span>Show Step-by-Step Worked Solution</span> <i class="fa-solid fa-chevron-down mfs-chevron"></i>';
+        toggleBtn.addEventListener('click', () => {
+          const isCollapsed = card.classList.toggle('mfs-model-collapsed');
+          toggleBtn.setAttribute('aria-expanded', isCollapsed ? 'false' : 'true');
+          toggleBtn.innerHTML = isCollapsed
+            ? '<i class="fa-solid fa-eye"></i> <span>Show Step-by-Step Worked Solution</span> <i class="fa-solid fa-chevron-down mfs-chevron"></i>'
+            : '<i class="fa-solid fa-eye-slash"></i> <span>Hide Worked Solution</span> <i class="fa-solid fa-chevron-up mfs-chevron"></i>';
+        });
+        steps.parentNode.insertBefore(toggleBtn, steps);
+      });
     }
   });
 });

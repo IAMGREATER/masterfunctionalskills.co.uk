@@ -6,6 +6,12 @@
 (function() {
   'use strict';
 
+  // Resolve relative root prefix dynamically so root & nested (/digital-skills/level-1/) pages load assets reliably
+  var _tintScript = document.currentScript || document.querySelector('script[src*="mfs-tint.js"]');
+  var ROOT_PREFIX = (_tintScript && _tintScript.getAttribute('src'))
+    ? _tintScript.getAttribute('src').replace(/assets\/js\/mfs-tint\.js.*$/, '')
+    : '';
+
   // Expose global tint variables so onclick calls like setSiteTint(peach, event) or setSiteTint('peach', event) both work
   window.cream = 'cream';
   window.peach = 'peach';
@@ -234,7 +240,7 @@
     } else {
       var q = prompt('Search Functional Skills revision topics & resources:');
       if (q && q.trim()) {
-        window.location.href = 'revise.html?q=' + encodeURIComponent(q.trim());
+        window.location.href = ROOT_PREFIX + 'revise.html?q=' + encodeURIComponent(q.trim());
       }
     }
   };
@@ -259,7 +265,7 @@
   if (!document.getElementById('mfsSearchScript')) {
     var searchScript = document.createElement('script');
     searchScript.id = 'mfsSearchScript';
-    searchScript.src = 'assets/js/mfs-search.js';
+    searchScript.src = ROOT_PREFIX + 'assets/js/mfs-search.js';
     document.head.appendChild(searchScript);
   }
 
@@ -358,7 +364,7 @@
     if (!document.getElementById('mfsPrivateGateScript')) {
       var gateScript = document.createElement('script');
       gateScript.id = 'mfsPrivateGateScript';
-      gateScript.src = 'assets/js/mfs-private-gate.js';
+      gateScript.src = ROOT_PREFIX + 'assets/js/mfs-private-gate.js';
       document.body.appendChild(gateScript);
     }
   }

@@ -21,7 +21,7 @@
   <script src="assets/js/mfs-pwa.js" defer></script>
   <link rel="stylesheet" href="assets/css/mfs-theme.css?v=20261112v5">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-  <link rel="stylesheet" href="assets/css/mfs-revision.css?v=20261112v5">
+  <link rel="stylesheet" href="assets/css/mfs-revision.css?v=20261120v8">
   <link rel="stylesheet" href="assets/css/mfs-mobile.css?v=20261112v5">
   <link rel="canonical" href="https://masterfunctionalskills.co.uk/writing-grammar-level-1.html">
 </head>
@@ -353,7 +353,7 @@
             </div>
 
             <div class="video-screen-wrap" style="position:relative; width:100%; aspect-ratio:16/9; background:#000; overflow:hidden; border-left:2px solid #0284c7; border-right:2px solid #0284c7; border-radius:0; margin-bottom:0;">
-              <iframe id="topicMasterclassIframe" data-ytid="kAsBOzSxLCM" style="position:absolute; top:0; left:0; width:100%; height:100%; border:0; display:block;" src="https://www.youtube-nocookie.com/embed/kAsBOzSxLCM?rel=0&amp;enablejsapi=1" title="Grammar, Complex Sentences &amp; Agreement Masterclass" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+              <div id="topicMasterclassIframe" class="mfs-yt-facade" role="button" tabindex="0" data-ytid="kAsBOzSxLCM" data-title="Grammar, Complex Sentences &amp; Agreement Masterclass" data-poster="assets/img/posters/writing-grammar-poster.jpg" data-start="0" aria-label="Play YouTube video walkthrough: Grammar, Complex Sentences &amp; Agreement Masterclass"><img class="mfs-yt-poster" src="assets/img/posters/writing-grammar-poster.jpg" alt="Grammar, Complex Sentences &amp; Agreement Masterclass video thumbnail" loading="lazy"><div class="mfs-yt-facade-scrim"></div><button type="button" class="mfs-yt-play-btn" aria-label="Play video masterclass"><i class="fa-solid fa-play"></i><span>Play Masterclass</span></button><div class="mfs-yt-badge-bottom"><span class="mfs-yt-badge-pill"><i class="fa-brands fa-youtube"></i> YouTube Walkthrough</span><span class="mfs-yt-badge-pill">Click to Load Player</span></div></div>
             </div>
 
             <!-- JUMP BENCHMARKS BAR -->
@@ -378,18 +378,22 @@
           </div>
 
           <script>
-            window.__mfsMasterclassParts = [{"num": 19, "slug": "english-grammar-sentences", "title": "Grammar, Complex Sentences & Agreement Masterclass", "tutor": "Subi", "role": "MFS Lead Examiner & SPaG Specialist", "avatar": "assets/img/avatars/subi-tutor-portrait.png", "ytid": "kAsBOzSxLCM", "runtime": "4m 53s", "default_start": 0, "benchmarks": [{"sec": 0, "text": "00:00 Grammar, Clauses & Agreement"}, {"sec": 27, "text": "00:27 3 Sentence Types"}, {"sec": 68, "text": "01:08 Fronted Clauses"}, {"sec": 100, "text": "01:40 Subject-Verb Agreement"}, {"sec": 141, "text": "02:21 Should Have vs Should Of"}, {"sec": 257, "text": "04:17 Summary"}]}, {"num": 3, "slug": "english-punctuation-semicolons", "title": "Punctuation, Semicolons & Apostrophes Masterclass", "tutor": "Subi", "role": "MFS Lead Examiner & SPaG Specialist", "avatar": "assets/img/avatars/subi-tutor-portrait.png", "ytid": "j1_sSwvWslU", "runtime": "4m 29s", "default_start": 0, "benchmarks": [{"sec": 0, "text": "00:00 Punctuation & Semicolons"}, {"sec": 25, "text": "00:25 Fixing Comma Splices"}, {"sec": 61, "text": "01:01 Semicolon Power Move"}, {"sec": 94, "text": "01:34 Colons & Apostrophes"}, {"sec": 121, "text": "02:01 Spot the 3 Errors"}, {"sec": 234, "text": "03:54 Summary"}]}];
+            window.__mfsMasterclassParts = [{"num": 19, "slug": "english-grammar-sentences", "title": "Grammar, Complex Sentences & Agreement Masterclass", "tutor": "Subi", "role": "MFS Lead Examiner & SPaG Specialist", "avatar": "assets/img/avatars/subi-tutor-portrait.png", "ytid": "kAsBOzSxLCM", "runtime": "4m 53s", "default_start": 0, "benchmarks": [{"sec": 0, "text": "00:00 Grammar, Clauses & Agreement"}, {"sec": 27, "text": "00:27 3 Sentence Types"}, {"sec": 68, "text": "01:08 Fronted Clauses"}, {"sec": 100, "text": "01:40 Subject-Verb Agreement"}, {"sec": 141, "text": "02:21 Should Have vs Should Of"}, {"sec": 257, "text": "04:17 Summary"}], "poster": "assets/img/posters/writing-grammar-poster.jpg"}, {"num": 3, "slug": "english-punctuation-semicolons", "title": "Punctuation, Semicolons & Apostrophes Masterclass", "tutor": "Subi", "role": "MFS Lead Examiner & SPaG Specialist", "avatar": "assets/img/avatars/subi-tutor-portrait.png", "ytid": "j1_sSwvWslU", "runtime": "4m 29s", "default_start": 0, "benchmarks": [{"sec": 0, "text": "00:00 Punctuation & Semicolons"}, {"sec": 25, "text": "00:25 Fixing Comma Splices"}, {"sec": 61, "text": "01:01 Semicolon Power Move"}, {"sec": 94, "text": "01:34 Colons & Apostrophes"}, {"sec": 121, "text": "02:01 Spot the 3 Errors"}, {"sec": 234, "text": "03:54 Summary"}], "poster": "assets/img/posters/writing-perfecting-your-punctuation-poster.jpg"}];
             function jumpMasterclassVideo(seconds, btn) {
               if (btn && btn.blur) btn.blur();
               var iframe = document.getElementById('topicMasterclassIframe');
               if (iframe) {
-                var ytid = iframe.getAttribute('data-ytid');
-                if (!ytid) {
-                  var m = (iframe.src || '').match(/embed[/]([a-zA-Z0-9_-]+)/);
-                  ytid = m ? m[1] : '';
-                }
-                if (ytid) {
-                  iframe.src = 'https://www.youtube-nocookie.com/embed/' + ytid + '?rel=0&autoplay=1&enablejsapi=1&start=' + seconds;
+                if (window.mfsActivateTopicVideo) {
+                  window.mfsActivateTopicVideo(iframe, seconds);
+                } else {
+                  var ytid = iframe.getAttribute('data-ytid');
+                  if (!ytid) {
+                    var m = (iframe.src || '').match(/embed[/]([a-zA-Z0-9_-]+)/);
+                    ytid = m ? m[1] : '';
+                  }
+                  if (ytid && iframe.tagName && iframe.tagName.toLowerCase() === 'iframe') {
+                    iframe.src = 'https://www.youtube-nocookie.com/embed/' + ytid + '?rel=0&autoplay=1&enablejsapi=1&start=' + seconds;
+                  }
                 }
               }
               var btns = document.querySelectorAll('#videoMasterclassStation .video-jump-bar .jump-btn');
@@ -413,9 +417,16 @@
               if (!p) return;
               var iframe = document.getElementById('topicMasterclassIframe');
               if (iframe) {
-                iframe.setAttribute('data-ytid', p.ytid);
-                iframe.src = 'https://www.youtube-nocookie.com/embed/' + p.ytid + '?rel=0&autoplay=1&enablejsapi=1';
-                iframe.title = p.title;
+                if (window.mfsUpdateTopicFacade) {
+                  window.mfsUpdateTopicFacade(p.ytid, p.title, p.poster || '', p.default_start || 0);
+                } else {
+                  iframe.setAttribute('data-ytid', p.ytid);
+                  var st = p.default_start > 0 ? '&start=' + p.default_start : '';
+                  if (iframe.tagName && iframe.tagName.toLowerCase() === 'iframe') {
+                    iframe.src = 'https://www.youtube-nocookie.com/embed/' + p.ytid + '?rel=0&autoplay=1&enablejsapi=1' + st;
+                    iframe.title = p.title;
+                  }
+                }
               }
               var av = document.getElementById('mcTutorAvatar');
               if (av) { av.src = p.avatar; av.alt = p.tutor + ' MFS Specialist Tutor'; }
@@ -912,6 +923,6 @@
     </div>
   </footer>
 
-  <script src="assets/js/mfs-revision.js?v=20261112v5"></script>
+  <script src="assets/js/mfs-revision.js?v=20261120v8"></script>
 </body>
 </html>

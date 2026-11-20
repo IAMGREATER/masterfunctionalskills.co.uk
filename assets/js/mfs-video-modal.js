@@ -1036,7 +1036,8 @@
       paperGroup: 'edexcel-maths-l2-pp10',
       activeSection: 'A',
       companionSlug: 'edexcel-maths-l2-past-paper-10-section-b',
-      companionLabel: 'Section B: Calculator (22m)'
+      companionLabel: 'Section B: Calculator (22m)',
+      poster: 'assets/img/posters/edexcel-maths-l2-paper-10-sec-a-poster.jpg'
     },
     'past paper 10 • section a: non-calculator': {
       ytId: 'muSRa0fEsSs',
@@ -1045,7 +1046,8 @@
       paperGroup: 'edexcel-maths-l2-pp10',
       activeSection: 'A',
       companionSlug: 'edexcel-maths-l2-past-paper-10-section-b',
-      companionLabel: 'Section B: Calculator (22m)'
+      companionLabel: 'Section B: Calculator (22m)',
+      poster: 'assets/img/posters/edexcel-maths-l2-paper-10-sec-a-poster.jpg'
     },
     'edexcel-maths-l2-past-paper-10-section-b': {
       ytId: 'b6Ma4VzxG8I',
@@ -1054,7 +1056,8 @@
       paperGroup: 'edexcel-maths-l2-pp10',
       activeSection: 'B',
       companionSlug: 'edexcel-maths-l2-past-paper-10-section-a',
-      companionLabel: 'Section A: Non-Calculator (13m)'
+      companionLabel: 'Section A: Non-Calculator (13m)',
+      poster: 'assets/img/posters/edexcel-maths-l2-paper-10-sec-b-poster.jpg'
     },
     'past paper 10 • section b: calculator': {
       ytId: 'b6Ma4VzxG8I',
@@ -1063,7 +1066,8 @@
       paperGroup: 'edexcel-maths-l2-pp10',
       activeSection: 'B',
       companionSlug: 'edexcel-maths-l2-past-paper-10-section-a',
-      companionLabel: 'Section A: Non-Calculator (13m)'
+      companionLabel: 'Section A: Non-Calculator (13m)',
+      poster: 'assets/img/posters/edexcel-maths-l2-paper-10-sec-b-poster.jpg'
     },
 
     // Past Paper 9
@@ -1074,7 +1078,8 @@
       paperGroup: 'edexcel-maths-l2-pp9',
       activeSection: 'A',
       companionSlug: 'edexcel-maths-l2-past-paper-9-section-b',
-      companionLabel: 'Section B: Calculator (20m)'
+      companionLabel: 'Section B: Calculator (20m)',
+      poster: 'assets/img/posters/edexcel-maths-l2-paper-9-sec-a-poster.jpg'
     },
     'past paper 9 • section a: non-calculator': {
       ytId: '61c6xSMBz0I',
@@ -1083,7 +1088,8 @@
       paperGroup: 'edexcel-maths-l2-pp9',
       activeSection: 'A',
       companionSlug: 'edexcel-maths-l2-past-paper-9-section-b',
-      companionLabel: 'Section B: Calculator (20m)'
+      companionLabel: 'Section B: Calculator (20m)',
+      poster: 'assets/img/posters/edexcel-maths-l2-paper-9-sec-a-poster.jpg'
     },
     'edexcel-maths-l2-past-paper-9-section-b': {
       ytId: 'how7uhzmyIQ',
@@ -1092,7 +1098,8 @@
       paperGroup: 'edexcel-maths-l2-pp9',
       activeSection: 'B',
       companionSlug: 'edexcel-maths-l2-past-paper-9-section-a',
-      companionLabel: 'Section A: Non-Calculator (10m)'
+      companionLabel: 'Section A: Non-Calculator (10m)',
+      poster: 'assets/img/posters/edexcel-maths-l2-paper-9-sec-b-poster.jpg'
     },
     'past paper 9 • section b: calculator': {
       ytId: 'how7uhzmyIQ',
@@ -1101,7 +1108,8 @@
       paperGroup: 'edexcel-maths-l2-pp9',
       activeSection: 'B',
       companionSlug: 'edexcel-maths-l2-past-paper-9-section-a',
-      companionLabel: 'Section A: Non-Calculator (10m)'
+      companionLabel: 'Section A: Non-Calculator (10m)',
+      poster: 'assets/img/posters/edexcel-maths-l2-paper-9-sec-b-poster.jpg'
     },
 
     // Past Paper 8
@@ -1112,7 +1120,8 @@
       paperGroup: 'edexcel-maths-l2-pp8',
       activeSection: 'A',
       companionSlug: 'edexcel-maths-l2-past-paper-8-section-b',
-      companionLabel: 'Section B: Calculator (22m)'
+      companionLabel: 'Section B: Calculator (22m)',
+      poster: 'assets/img/posters/edexcel-maths-l2-paper-8-sec-a-poster.jpg'
     },
     'past paper 8 • section a: non-calculator': {
       ytId: 'nr8dqv5KIkI',
@@ -1121,7 +1130,8 @@
       paperGroup: 'edexcel-maths-l2-pp8',
       activeSection: 'A',
       companionSlug: 'edexcel-maths-l2-past-paper-8-section-b',
-      companionLabel: 'Section B: Calculator (22m)'
+      companionLabel: 'Section B: Calculator (22m)',
+      poster: 'assets/img/posters/edexcel-maths-l2-paper-8-sec-a-poster.jpg'
     },
     'edexcel-maths-l2-past-paper-8-section-b': {
       ytId: 'KbPz2OxJRxc',
@@ -1130,7 +1140,8 @@
       paperGroup: 'edexcel-maths-l2-pp8',
       activeSection: 'B',
       companionSlug: 'edexcel-maths-l2-past-paper-8-section-a',
-      companionLabel: 'Section A: Non-Calculator (10m)'
+      companionLabel: 'Section A: Non-Calculator (10m)',
+      poster: 'assets/img/posters/edexcel-maths-l2-paper-8-sec-b-poster.jpg'
     },
     'past paper 8 • section b: calculator': {
       ytId: 'KbPz2OxJRxc',
@@ -1139,7 +1150,8 @@
       paperGroup: 'edexcel-maths-l2-pp8',
       activeSection: 'B',
       companionSlug: 'edexcel-maths-l2-past-paper-8-section-a',
-      companionLabel: 'Section A: Non-Calculator (10m)'
+      companionLabel: 'Section A: Non-Calculator (10m)',
+      poster: 'assets/img/posters/edexcel-maths-l2-paper-8-sec-b-poster.jpg'
     },
 
     // Past Paper 7
@@ -1150,7 +1162,8 @@
       paperGroup: 'edexcel-maths-l2-pp7',
       activeSection: 'A',
       companionSlug: 'edexcel-maths-l2-past-paper-7-section-b',
-      companionLabel: 'Section B: Calculator (25m)'
+      companionLabel: 'Section B: Calculator (25m)',
+      poster: 'assets/img/posters/edexcel-maths-l2-paper-7-sec-a-poster.jpg'
     },
     'past paper 7 • section a: non-calculator': {
       ytId: 'bnxoprdRACk',
@@ -1159,7 +1172,8 @@
       paperGroup: 'edexcel-maths-l2-pp7',
       activeSection: 'A',
       companionSlug: 'edexcel-maths-l2-past-paper-7-section-b',
-      companionLabel: 'Section B: Calculator (25m)'
+      companionLabel: 'Section B: Calculator (25m)',
+      poster: 'assets/img/posters/edexcel-maths-l2-paper-7-sec-a-poster.jpg'
     },
     'edexcel-maths-l2-past-paper-7-section-b': {
       ytId: 'IY2EjScrw4Y',
@@ -1168,7 +1182,8 @@
       paperGroup: 'edexcel-maths-l2-pp7',
       activeSection: 'B',
       companionSlug: 'edexcel-maths-l2-past-paper-7-section-a',
-      companionLabel: 'Section A: Non-Calculator (12m)'
+      companionLabel: 'Section A: Non-Calculator (12m)',
+      poster: 'assets/img/posters/edexcel-maths-l2-paper-7-sec-b-poster.jpg'
     },
     'past paper 7 • section b: calculator': {
       ytId: 'IY2EjScrw4Y',
@@ -1177,7 +1192,8 @@
       paperGroup: 'edexcel-maths-l2-pp7',
       activeSection: 'B',
       companionSlug: 'edexcel-maths-l2-past-paper-7-section-a',
-      companionLabel: 'Section A: Non-Calculator (12m)'
+      companionLabel: 'Section A: Non-Calculator (12m)',
+      poster: 'assets/img/posters/edexcel-maths-l2-paper-7-sec-b-poster.jpg'
     },
     // Past Paper 6
     'edexcel-maths-l2-past-paper-6-section-a': {
@@ -1187,7 +1203,8 @@
       paperGroup: 'edexcel-maths-l2-pp6',
       activeSection: 'A',
       companionSlug: 'edexcel-maths-l2-past-paper-6-section-b',
-      companionLabel: 'Section B: Calculator (22m)'
+      companionLabel: 'Section B: Calculator (22m)',
+      poster: 'assets/img/posters/edexcel-maths-l2-paper-6-sec-a-poster.jpg'
     },
     'past paper 6 • section a: non-calculator': {
       ytId: 'TCwy_FiZ1eA',
@@ -1196,7 +1213,8 @@
       paperGroup: 'edexcel-maths-l2-pp6',
       activeSection: 'A',
       companionSlug: 'edexcel-maths-l2-past-paper-6-section-b',
-      companionLabel: 'Section B: Calculator (22m)'
+      companionLabel: 'Section B: Calculator (22m)',
+      poster: 'assets/img/posters/edexcel-maths-l2-paper-6-sec-a-poster.jpg'
     },
     'edexcel-maths-l2-past-paper-6-section-b': {
       ytId: 'r4bU8USCWvs',
@@ -1205,7 +1223,8 @@
       paperGroup: 'edexcel-maths-l2-pp6',
       activeSection: 'B',
       companionSlug: 'edexcel-maths-l2-past-paper-6-section-a',
-      companionLabel: 'Section A: Non-Calculator (10m)'
+      companionLabel: 'Section A: Non-Calculator (10m)',
+      poster: 'assets/img/posters/edexcel-maths-l2-paper-6-sec-b-poster.jpg'
     },
     'past paper 6 • section b: calculator': {
       ytId: 'r4bU8USCWvs',
@@ -1214,7 +1233,8 @@
       paperGroup: 'edexcel-maths-l2-pp6',
       activeSection: 'B',
       companionSlug: 'edexcel-maths-l2-past-paper-6-section-a',
-      companionLabel: 'Section A: Non-Calculator (10m)'
+      companionLabel: 'Section A: Non-Calculator (10m)',
+      poster: 'assets/img/posters/edexcel-maths-l2-paper-6-sec-b-poster.jpg'
     },
 
     // Past Paper 5
@@ -1225,7 +1245,8 @@
       paperGroup: 'edexcel-maths-l2-pp5',
       activeSection: 'A',
       companionSlug: 'edexcel-maths-l2-past-paper-5-section-b',
-      companionLabel: 'Section B: Calculator (18m)'
+      companionLabel: 'Section B: Calculator (18m)',
+      poster: 'assets/img/posters/edexcel-maths-l2-paper-5-sec-a-poster.jpg'
     },
     'past paper 5 • section a: non-calculator': {
       ytId: 'MtTl_qjpdIg',
@@ -1234,7 +1255,8 @@
       paperGroup: 'edexcel-maths-l2-pp5',
       activeSection: 'A',
       companionSlug: 'edexcel-maths-l2-past-paper-5-section-b',
-      companionLabel: 'Section B: Calculator (18m)'
+      companionLabel: 'Section B: Calculator (18m)',
+      poster: 'assets/img/posters/edexcel-maths-l2-paper-5-sec-a-poster.jpg'
     },
     'edexcel-maths-l2-past-paper-5-section-b': {
       ytId: '5CqunL_1Pcw',
@@ -1243,7 +1265,8 @@
       paperGroup: 'edexcel-maths-l2-pp5',
       activeSection: 'B',
       companionSlug: 'edexcel-maths-l2-past-paper-5-section-a',
-      companionLabel: 'Section A: Non-Calculator (10m)'
+      companionLabel: 'Section A: Non-Calculator (10m)',
+      poster: 'assets/img/posters/edexcel-maths-l2-paper-5-sec-b-poster.jpg'
     },
     'past paper 5 • section b: calculator': {
       ytId: '5CqunL_1Pcw',
@@ -1252,7 +1275,8 @@
       paperGroup: 'edexcel-maths-l2-pp5',
       activeSection: 'B',
       companionSlug: 'edexcel-maths-l2-past-paper-5-section-a',
-      companionLabel: 'Section A: Non-Calculator (10m)'
+      companionLabel: 'Section A: Non-Calculator (10m)',
+      poster: 'assets/img/posters/edexcel-maths-l2-paper-5-sec-b-poster.jpg'
     },
 
     // Past Paper 4
@@ -1263,7 +1287,8 @@
       paperGroup: 'edexcel-maths-l2-pp4',
       activeSection: 'A',
       companionSlug: 'edexcel-maths-l2-past-paper-4-section-b',
-      companionLabel: 'Section B: Calculator (20m)'
+      companionLabel: 'Section B: Calculator (20m)',
+      poster: 'assets/img/posters/edexcel-maths-l2-paper-4-sec-a-poster.jpg'
     },
     'past paper 4 • section a: non-calculator': {
       ytId: 'ixCjmEKRQn8',
@@ -1272,7 +1297,8 @@
       paperGroup: 'edexcel-maths-l2-pp4',
       activeSection: 'A',
       companionSlug: 'edexcel-maths-l2-past-paper-4-section-b',
-      companionLabel: 'Section B: Calculator (20m)'
+      companionLabel: 'Section B: Calculator (20m)',
+      poster: 'assets/img/posters/edexcel-maths-l2-paper-4-sec-a-poster.jpg'
     },
     'edexcel-maths-l2-past-paper-4-section-b': {
       ytId: '13x1Lj32Tlc',
@@ -1281,7 +1307,8 @@
       paperGroup: 'edexcel-maths-l2-pp4',
       activeSection: 'B',
       companionSlug: 'edexcel-maths-l2-past-paper-4-section-a',
-      companionLabel: 'Section A: Non-Calculator (9m)'
+      companionLabel: 'Section A: Non-Calculator (9m)',
+      poster: 'assets/img/posters/edexcel-maths-l2-paper-4-sec-b-poster.jpg'
     },
     'past paper 4 • section b: calculator': {
       ytId: '13x1Lj32Tlc',
@@ -1290,7 +1317,8 @@
       paperGroup: 'edexcel-maths-l2-pp4',
       activeSection: 'B',
       companionSlug: 'edexcel-maths-l2-past-paper-4-section-a',
-      companionLabel: 'Section A: Non-Calculator (9m)'
+      companionLabel: 'Section A: Non-Calculator (9m)',
+      poster: 'assets/img/posters/edexcel-maths-l2-paper-4-sec-b-poster.jpg'
     },
 
     // Past Paper 3
@@ -1301,7 +1329,8 @@
       paperGroup: 'edexcel-maths-l2-pp3',
       activeSection: 'A',
       companionSlug: 'edexcel-maths-l2-past-paper-3-section-b',
-      companionLabel: 'Section B: Calculator (20m)'
+      companionLabel: 'Section B: Calculator (20m)',
+      poster: 'assets/img/posters/edexcel-maths-l2-paper-3-sec-a-poster.jpg'
     },
     'past paper 3 • section a: non-calculator': {
       ytId: 'bEyhd5trbb8',
@@ -1310,7 +1339,8 @@
       paperGroup: 'edexcel-maths-l2-pp3',
       activeSection: 'A',
       companionSlug: 'edexcel-maths-l2-past-paper-3-section-b',
-      companionLabel: 'Section B: Calculator (20m)'
+      companionLabel: 'Section B: Calculator (20m)',
+      poster: 'assets/img/posters/edexcel-maths-l2-paper-3-sec-a-poster.jpg'
     },
     'edexcel-maths-l2-past-paper-3-section-b': {
       ytId: 'wPXjWtO0OL0',
@@ -1319,7 +1349,8 @@
       paperGroup: 'edexcel-maths-l2-pp3',
       activeSection: 'B',
       companionSlug: 'edexcel-maths-l2-past-paper-3-section-a',
-      companionLabel: 'Section A: Non-Calculator (10m)'
+      companionLabel: 'Section A: Non-Calculator (10m)',
+      poster: 'assets/img/posters/edexcel-maths-l2-paper-3-sec-b-poster.jpg'
     },
     'past paper 3 • section b: calculator': {
       ytId: 'wPXjWtO0OL0',
@@ -1328,7 +1359,8 @@
       paperGroup: 'edexcel-maths-l2-pp3',
       activeSection: 'B',
       companionSlug: 'edexcel-maths-l2-past-paper-3-section-a',
-      companionLabel: 'Section A: Non-Calculator (10m)'
+      companionLabel: 'Section A: Non-Calculator (10m)',
+      poster: 'assets/img/posters/edexcel-maths-l2-paper-3-sec-b-poster.jpg'
     },
 
     // Past Paper 2
@@ -1339,7 +1371,8 @@
       paperGroup: 'edexcel-maths-l2-pp2',
       activeSection: 'A',
       companionSlug: 'edexcel-maths-l2-past-paper-2-section-b',
-      companionLabel: 'Section B: Calculator (20m)'
+      companionLabel: 'Section B: Calculator (20m)',
+      poster: 'assets/img/posters/edexcel-maths-l2-paper-2-sec-a-poster.jpg'
     },
     'past paper 2 • section a: non-calculator': {
       ytId: '4uMstnMVIG0',
@@ -1348,7 +1381,8 @@
       paperGroup: 'edexcel-maths-l2-pp2',
       activeSection: 'A',
       companionSlug: 'edexcel-maths-l2-past-paper-2-section-b',
-      companionLabel: 'Section B: Calculator (20m)'
+      companionLabel: 'Section B: Calculator (20m)',
+      poster: 'assets/img/posters/edexcel-maths-l2-paper-2-sec-a-poster.jpg'
     },
     'edexcel-maths-l2-past-paper-2-section-b': {
       ytId: 'EJ75RYeZPd4',
@@ -1357,7 +1391,8 @@
       paperGroup: 'edexcel-maths-l2-pp2',
       activeSection: 'B',
       companionSlug: 'edexcel-maths-l2-past-paper-2-section-a',
-      companionLabel: 'Section A: Non-Calculator (9m)'
+      companionLabel: 'Section A: Non-Calculator (9m)',
+      poster: 'assets/img/posters/edexcel-maths-l2-paper-2-sec-b-poster.jpg'
     },
     'past paper 2 • section b: calculator': {
       ytId: 'EJ75RYeZPd4',
@@ -1366,7 +1401,8 @@
       paperGroup: 'edexcel-maths-l2-pp2',
       activeSection: 'B',
       companionSlug: 'edexcel-maths-l2-past-paper-2-section-a',
-      companionLabel: 'Section A: Non-Calculator (9m)'
+      companionLabel: 'Section A: Non-Calculator (9m)',
+      poster: 'assets/img/posters/edexcel-maths-l2-paper-2-sec-b-poster.jpg'
     },
 
     // Past Paper 1
@@ -1377,7 +1413,8 @@
       paperGroup: 'edexcel-maths-l2-pp1',
       activeSection: 'A',
       companionSlug: 'edexcel-maths-l2-past-paper-1-section-b',
-      companionLabel: 'Section B: Calculator (20m)'
+      companionLabel: 'Section B: Calculator (20m)',
+      poster: 'assets/img/posters/edexcel-maths-l2-paper-1-sec-a-poster.jpg'
     },
     'past paper 1 • section a: non-calculator': {
       ytId: 'zqaut1_Ad5E',
@@ -1386,7 +1423,8 @@
       paperGroup: 'edexcel-maths-l2-pp1',
       activeSection: 'A',
       companionSlug: 'edexcel-maths-l2-past-paper-1-section-b',
-      companionLabel: 'Section B: Calculator (20m)'
+      companionLabel: 'Section B: Calculator (20m)',
+      poster: 'assets/img/posters/edexcel-maths-l2-paper-1-sec-a-poster.jpg'
     },
     'edexcel-maths-l2-past-paper-1-section-b': {
       ytId: 'lS9M4R1ujEE',
@@ -1395,7 +1433,8 @@
       paperGroup: 'edexcel-maths-l2-pp1',
       activeSection: 'B',
       companionSlug: 'edexcel-maths-l2-past-paper-1-section-a',
-      companionLabel: 'Section A: Non-Calculator (9m)'
+      companionLabel: 'Section A: Non-Calculator (9m)',
+      poster: 'assets/img/posters/edexcel-maths-l2-paper-1-sec-b-poster.jpg'
     },
     'past paper 1 • section b: calculator': {
       ytId: 'lS9M4R1ujEE',
@@ -1404,7 +1443,8 @@
       paperGroup: 'edexcel-maths-l2-pp1',
       activeSection: 'B',
       companionSlug: 'edexcel-maths-l2-past-paper-1-section-a',
-      companionLabel: 'Section A: Non-Calculator (9m)'
+      companionLabel: 'Section A: Non-Calculator (9m)',
+      poster: 'assets/img/posters/edexcel-maths-l2-paper-1-sec-b-poster.jpg'
     },
 
     // SLC Task 1 & Task 2 Exemplar Walkthroughs
@@ -1415,7 +1455,8 @@
       paperGroup: 'edexcel-english-l2-slc',
       activeSection: 'Task 1',
       companionSlug: 'slc-task2-discussion-model',
-      companionLabel: 'Task 2: Discussion Model (4m)'
+      companionLabel: 'Task 2: Discussion Model (4m)',
+      poster: 'assets/img/posters/slc-task1-model-poster.jpg'
     },
     'slc task 1 • presentation model': {
       ytId: 'l7VRzidsFno',
@@ -1424,7 +1465,8 @@
       paperGroup: 'edexcel-english-l2-slc',
       activeSection: 'Task 1',
       companionSlug: 'slc-task2-discussion-model',
-      companionLabel: 'Task 2: Discussion Model (4m)'
+      companionLabel: 'Task 2: Discussion Model (4m)',
+      poster: 'assets/img/posters/slc-task1-model-poster.jpg'
     },
     'slc-task2-discussion-model': {
       ytId: 'labg8nxHII0',
@@ -1433,7 +1475,8 @@
       paperGroup: 'edexcel-english-l2-slc',
       activeSection: 'Task 2',
       companionSlug: 'slc-task1-presentation-model',
-      companionLabel: 'Task 1: Presentation Model (4m)'
+      companionLabel: 'Task 1: Presentation Model (4m)',
+      poster: 'assets/img/posters/slc-task2-model-poster.jpg'
     },
     'slc task 2 • discussion model': {
       ytId: 'labg8nxHII0',
@@ -1442,7 +1485,8 @@
       paperGroup: 'edexcel-english-l2-slc',
       activeSection: 'Task 2',
       companionSlug: 'slc-task1-presentation-model',
-      companionLabel: 'Task 1: Presentation Model (4m)'
+      companionLabel: 'Task 1: Presentation Model (4m)',
+      poster: 'assets/img/posters/slc-task2-model-poster.jpg'
     },
     // === E3_MODAL_START ===
     'e3-numbers-to-1000-and-patterns': {

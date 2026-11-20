@@ -659,3 +659,96 @@ document.addEventListener('DOMContentLoaded', function() {
   }
 })();
 
+/* ==========================================================================
+   TOPIC MASTERCLASS CLICK-TO-PLAY YOUTUBE POSTER FACADE ENGINE
+   Replaces eager youtube-nocookie iframes with instant local poster cards.
+   ========================================================================== */
+(function() {
+  function mfsActivateTopicVideo(el, startSec) {
+    var target = el || document.getElementById('topicMasterclassIframe');
+    if (!target) return null;
+
+    var start = (typeof startSec === 'number' && !isNaN(startSec) && startSec > 0) ? Math.floor(startSec) : 0;
+
+    if (target.tagName && target.tagName.toLowerCase() === 'iframe') {
+      var curYt = target.getAttribute('data-ytid');
+      if (!curYt) {
+        var m = (target.src || '').match(/embed\/([a-zA-Z0-9_-]+)/);
+        curYt = m ? m[1] : '';
+      }
+      if (curYt) {
+        target.src = 'https://www.youtube-nocookie.com/embed/' + curYt + '?rel=0&autoplay=1&enablejsapi=1' + (start > 0 ? '&start=' + start : '');
+      }
+      return target;
+    }
+
+    var ytid = target.getAttribute('data-ytid') || '';
+    if (!ytid) return null;
+    var title = target.getAttribute('data-title') || 'Master Functional Skills Video Walkthrough';
+    var poster = target.getAttribute('data-poster') || '';
+
+    var iframe = document.createElement('iframe');
+    iframe.id = target.id || 'topicMasterclassIframe';
+    iframe.setAttribute('data-ytid', ytid);
+    if (poster) iframe.setAttribute('data-poster', poster);
+    iframe.style.cssText = 'position:absolute; top:0; left:0; width:100%; height:100%; border:0; display:block;';
+    iframe.src = 'https://www.youtube-nocookie.com/embed/' + ytid + '?rel=0&autoplay=1&enablejsapi=1' + (start > 0 ? '&start=' + start : '');
+    iframe.title = title;
+    iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+    iframe.setAttribute('allowfullscreen', '');
+    iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+
+    if (target.parentNode) {
+      target.parentNode.replaceChild(iframe, target);
+    }
+    return iframe;
+  }
+
+  function mfsUpdateTopicFacade(ytid, title, posterUrl, startSec) {
+    var el = document.getElementById('topicMasterclassIframe');
+    if (!el || !ytid) return null;
+    if (el.tagName && el.tagName.toLowerCase() === 'iframe') {
+      el.setAttribute('data-ytid', ytid);
+      if (posterUrl) el.setAttribute('data-poster', posterUrl);
+      if (title) el.title = title;
+      var s = (typeof startSec === 'number' && !isNaN(startSec) && startSec > 0) ? Math.floor(startSec) : 0;
+      el.src = 'https://www.youtube-nocookie.com/embed/' + ytid + '?rel=0&autoplay=1&enablejsapi=1' + (s > 0 ? '&start=' + s : '');
+      return el;
+    }
+    el.setAttribute('data-ytid', ytid);
+    if (title) {
+      el.setAttribute('data-title', title);
+      el.setAttribute('aria-label', 'Play video: ' + title);
+    }
+    if (posterUrl) {
+      el.setAttribute('data-poster', posterUrl);
+      var img = el.querySelector('img.mfs-yt-poster');
+      if (img) {
+        img.src = posterUrl;
+        if (title) img.alt = title + ' poster thumbnail';
+      }
+    }
+    return el;
+  }
+
+  window.mfsActivateTopicVideo = mfsActivateTopicVideo;
+  window.mfsUpdateTopicFacade = mfsUpdateTopicFacade;
+
+  document.addEventListener('click', function(ev) {
+    var facade = ev.target && ev.target.closest ? ev.target.closest('.mfs-yt-facade') : null;
+    if (!facade) return;
+    ev.preventDefault();
+    var defaultStart = parseInt(facade.getAttribute('data-start') || '0', 10) || 0;
+    mfsActivateTopicVideo(facade, defaultStart);
+  });
+
+  document.addEventListener('keydown', function(ev) {
+    if (ev.key !== 'Enter' && ev.key !== ' ') return;
+    var facade = ev.target && ev.target.closest ? ev.target.closest('.mfs-yt-facade') : null;
+    if (!facade) return;
+    ev.preventDefault();
+    var defaultStart = parseInt(facade.getAttribute('data-start') || '0', 10) || 0;
+    mfsActivateTopicVideo(facade, defaultStart);
+  });
+})();
+

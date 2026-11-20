@@ -9,6 +9,41 @@
   // Available videos dictionary (slug/topic -> video details)
   // Available videos dictionary (slug/topic -> video details)
   const KNOWN_VIDEOS = {
+    'dfs-spreadsheet-formatting-charts-if-logic': {
+      ytId: 'glg4XJU6dVg',
+      title: "Conditional Formatting, Charts & =IF Logic \u2022 Masterclass Walkthrough",
+      series: 'Digital Functional Skills (Entry 3 & Level 1)',
+      tutor: 'Tutor Sonya',
+      poster: 'assets/img/posters/dfs-spreadsheet-formatting-charts-if-logic-poster.jpg'
+    },
+    'dfs-file-hierarchies-search-cloud-backups': {
+      ytId: 'C60EI5sFyqU',
+      title: "File Hierarchies, Wildcard Search & Cloud Backups \u2022 Masterclass Walkthrough",
+      series: 'Digital Functional Skills (Entry 3 & Level 1)',
+      tutor: 'Tutor Subi',
+      poster: 'assets/img/posters/dfs-file-hierarchies-search-cloud-backups-poster.jpg'
+    },
+    'dfs-accessibility-troubleshooting-software': {
+      ytId: 'Re2-34Nk_JQ',
+      title: "Accessibility, Troubleshooting & Software \u2022 Masterclass Walkthrough",
+      series: 'Digital Functional Skills (Entry 3 & Level 1)',
+      tutor: 'Tutor Sonya',
+      poster: 'assets/img/posters/dfs-accessibility-troubleshooting-software-poster.jpg'
+    },
+    'dfs-phishing-mfa-passwords-gdpr': {
+      ytId: 'VAm6Mz8n5AE',
+      title: "Phishing, MFA, Passwords & UK GDPR \u2022 Masterclass Walkthrough",
+      series: 'Digital Functional Skills (Entry 3 & Level 1)',
+      tutor: 'Tutor Subi',
+      poster: 'assets/img/posters/dfs-phishing-mfa-passwords-gdpr-poster.jpg'
+    },
+    'dfs-email-etiquette-cc-bcc-attachments': {
+      ytId: 'SYNaaP0fAOY',
+      title: "Email Etiquette, CC, BCC & Attachments \u2022 Masterclass Walkthrough",
+      series: 'Digital Functional Skills (Entry 3 & Level 1)',
+      tutor: 'Tutor Emma',
+      poster: 'assets/img/posters/dfs-email-etiquette-cc-bcc-attachments-poster.jpg'
+    },
     'lists-tally-charts-and-line-graphs': {
       ytId: 'xN0ngd3-A6s',
       title: "Lists, Tally Charts & Line Graphs \u2022 Masterclass Walkthrough",
@@ -220,7 +255,7 @@
       poster: 'assets/img/posters/writing-perfecting-your-punctuation-poster.jpg'
     },
     'english-writing-formats': {
-      ytId: 'L2cV1Jg7Sgk',
+      ytId: 'JcOhdydyQ5U',
       title: "Writing Formats & PAF Method \u2022 Masterclass Walkthrough",
       series: 'Functional Skills English Level 2',
       tutor: 'Tutor Emma',
@@ -1036,7 +1071,7 @@
       paperGroup: 'edexcel-maths-l2-pp10',
       activeSection: 'A',
       companionSlug: 'edexcel-maths-l2-past-paper-10-section-b',
-      companionLabel: 'Section B: Calculator (22m)',
+      companionLabel: 'Section B: Calculator (18m 59s)',
       poster: 'assets/img/posters/edexcel-maths-l2-paper-10-sec-a-poster.jpg'
     },
     'past paper 10 • section a: non-calculator': {
@@ -1046,11 +1081,11 @@
       paperGroup: 'edexcel-maths-l2-pp10',
       activeSection: 'A',
       companionSlug: 'edexcel-maths-l2-past-paper-10-section-b',
-      companionLabel: 'Section B: Calculator (22m)',
+      companionLabel: 'Section B: Calculator (18m 59s)',
       poster: 'assets/img/posters/edexcel-maths-l2-paper-10-sec-a-poster.jpg'
     },
     'edexcel-maths-l2-past-paper-10-section-b': {
-      ytId: 'b6Ma4VzxG8I',
+      ytId: 'QC1eJkY2GL4',
       title: 'Past Paper 10 • Section B: Calculator (Full Walkthrough)',
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       paperGroup: 'edexcel-maths-l2-pp10',
@@ -1060,7 +1095,7 @@
       poster: 'assets/img/posters/edexcel-maths-l2-paper-10-sec-b-poster.jpg'
     },
     'past paper 10 • section b: calculator': {
-      ytId: 'b6Ma4VzxG8I',
+      ytId: 'QC1eJkY2GL4',
       title: 'Past Paper 10 • Section B: Calculator (Full Walkthrough)',
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       paperGroup: 'edexcel-maths-l2-pp10',
@@ -1120,7 +1155,7 @@
       paperGroup: 'edexcel-maths-l2-pp8',
       activeSection: 'A',
       companionSlug: 'edexcel-maths-l2-past-paper-8-section-b',
-      companionLabel: 'Section B: Calculator (22m)',
+      companionLabel: 'Section B: Calculator (18m 42s)',
       poster: 'assets/img/posters/edexcel-maths-l2-paper-8-sec-a-poster.jpg'
     },
     'past paper 8 • section a: non-calculator': {
@@ -1130,11 +1165,11 @@
       paperGroup: 'edexcel-maths-l2-pp8',
       activeSection: 'A',
       companionSlug: 'edexcel-maths-l2-past-paper-8-section-b',
-      companionLabel: 'Section B: Calculator (22m)',
+      companionLabel: 'Section B: Calculator (18m 42s)',
       poster: 'assets/img/posters/edexcel-maths-l2-paper-8-sec-a-poster.jpg'
     },
     'edexcel-maths-l2-past-paper-8-section-b': {
-      ytId: 'KbPz2OxJRxc',
+      ytId: '_5xyl3BlR3g',
       title: 'Past Paper 8 • Section B: Calculator (Full Walkthrough)',
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       paperGroup: 'edexcel-maths-l2-pp8',
@@ -1144,7 +1179,7 @@
       poster: 'assets/img/posters/edexcel-maths-l2-paper-8-sec-b-poster.jpg'
     },
     'past paper 8 • section b: calculator': {
-      ytId: 'KbPz2OxJRxc',
+      ytId: '_5xyl3BlR3g',
       title: 'Past Paper 8 • Section B: Calculator (Full Walkthrough)',
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       paperGroup: 'edexcel-maths-l2-pp8',
@@ -1445,6 +1480,77 @@
       companionSlug: 'edexcel-maths-l2-past-paper-1-section-a',
       companionLabel: 'Section A: Non-Calculator (9m)',
       poster: 'assets/img/posters/edexcel-maths-l2-paper-1-sec-b-poster.jpg'
+    },
+
+    // Edexcel Maths Level 1 Past Paper 10
+    'edexcel-maths-l1-past-paper-10-section-a': {
+      ytId: 'Ox1oPub9MKI',
+      title: 'Maths L1 Past Paper 10 • Section A: Non-Calculator (Walkthrough)',
+      series: 'Pearson Edexcel Functional Skills Maths Level 1',
+      tutor: 'Tutor Emma',
+      paperGroup: 'edexcel-maths-l1-pp10',
+      activeSection: 'A',
+      companionSlug: 'edexcel-maths-l1-past-paper-10-section-b',
+      companionLabel: 'Section B: Calculator (10m 16s)',
+      poster: 'assets/img/posters/edexcel-maths-l1-paper-10-sec-a-poster.jpg'
+    },
+    'edexcel-maths-l1-past-paper-10-section-b': {
+      ytId: 'zC4311nxKY0',
+      title: 'Maths L1 Past Paper 10 • Section B: Calculator (Walkthrough)',
+      series: 'Pearson Edexcel Functional Skills Maths Level 1',
+      tutor: 'Tutor Emma',
+      paperGroup: 'edexcel-maths-l1-pp10',
+      activeSection: 'B',
+      companionSlug: 'edexcel-maths-l1-past-paper-10-section-a',
+      companionLabel: 'Section A: Non-Calculator (4m 38s)',
+      poster: 'assets/img/posters/edexcel-maths-l1-paper-10-sec-b-poster.jpg'
+    },
+
+    // Edexcel English Level 1 & 2 Past Paper 10
+    'edexcel-english-l2-past-paper-10-reading': {
+      ytId: 'rO4xai5GCLM',
+      title: 'English L2 Past Paper 10 • Reading Walkthrough',
+      series: 'Pearson Edexcel Functional Skills English Level 2',
+      tutor: 'Tutor Subi',
+      companionSlug: 'edexcel-english-l2-past-paper-10-writing',
+      companionLabel: 'Writing Past Paper 10 (3m 07s)',
+      poster: 'assets/img/posters/eng-l2-p10-reading-poster.jpg'
+    },
+    'edexcel-english-l2-past-paper-10-writing': {
+      ytId: 'RPRjHwd1KPE',
+      title: 'English L2 Past Paper 10 • Writing Walkthrough',
+      series: 'Pearson Edexcel Functional Skills English Level 2',
+      tutor: 'Tutor Emma',
+      companionSlug: 'edexcel-english-l2-past-paper-10-reading',
+      companionLabel: 'Reading Past Paper 10 (5m 54s)',
+      poster: 'assets/img/posters/eng-l2-p10-writing-poster.jpg'
+    },
+    'edexcel-english-l1-past-paper-10-reading': {
+      ytId: 'ZmmRPQ0Fxcs',
+      title: 'English L1 Past Paper 10 • Reading Walkthrough',
+      series: 'Pearson Edexcel Functional Skills English Level 1',
+      tutor: 'Tutor Sonya',
+      companionSlug: 'edexcel-english-l1-past-paper-10-writing',
+      companionLabel: 'Writing Past Paper 10 (2m 24s)',
+      poster: 'assets/img/posters/eng-l1-p10-reading-poster.jpg'
+    },
+    'edexcel-english-l1-past-paper-10-writing': {
+      ytId: 'NT14nZ6msPI',
+      title: 'English L1 Past Paper 10 • Writing Walkthrough',
+      series: 'Pearson Edexcel Functional Skills English Level 1',
+      tutor: 'Tutor Subi',
+      companionSlug: 'edexcel-english-l1-past-paper-10-reading',
+      companionLabel: 'Reading Past Paper 10 (3m 23s)',
+      poster: 'assets/img/posters/eng-l1-p10-writing-poster.jpg'
+    },
+
+    // Digital Functional Skills Mock 1
+    'dfs-l1-mock-1': {
+      ytId: '1VL9ESTMA5Y',
+      title: 'DFS Level 1 Mock 1 • Section A & Tasks A–E Walkthrough',
+      series: 'Digital Functional Skills Level 1 Mocks',
+      tutor: 'Tutor Emma',
+      poster: 'assets/img/posters/dfs-l1-mock-1-poster.jpg'
     },
 
     // SLC Task 1 & Task 2 Exemplar Walkthroughs

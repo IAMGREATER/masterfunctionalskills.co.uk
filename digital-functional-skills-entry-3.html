@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en-GB" data-theme="maths" data-tint="cream">
+<html lang="en-GB" data-theme="digital" data-tint="cream">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
@@ -1036,7 +1036,6 @@
   </footer>
 
   <!-- Scripts -->
-  <script src="assets/js/dfs-revision-engine.js?v=20261106_v1"></script>
   <script>
     // Dual View Switcher Logic
     function switchView(mode) {
@@ -1104,34 +1103,7 @@
       }
     });
   </script>
-  <script src="assets/js/mfs-mobile.js?v=20261112v5" defer></script>
-  <script src="assets/js/mfs-tint.js"></script>
-  <script>
-    function toggleDyslexiaMode() {
-      const isDys = document.body.classList.toggle('dyslexia-mode');
-      localStorage.setItem('mfs_dyslexia', isDys ? '1' : '0');
-      const btn = document.getElementById('dyslexiaToggle');
-      if (btn) btn.classList.toggle('active', isDys);
-    }
-    function toggleTheme() {
-      const current = document.documentElement.getAttribute('data-theme') || 'sapphire';
-      const next = current === 'emerald' ? 'sapphire' : 'emerald';
-      document.documentElement.setAttribute('data-theme', next);
-      localStorage.setItem('mfs_theme', next);
-      const lbl = document.getElementById('themeLabel');
-      if (lbl) lbl.textContent = next === 'emerald' ? 'Emerald' : 'Sapphire';
-    }
-    (function() {
-      if (localStorage.getItem('mfs_dyslexia') === '1') {
-        document.body.classList.add('dyslexia-mode');
-        const btn = document.getElementById('dyslexiaToggle');
-        if (btn) btn.classList.add('active');
-      }
-      const th = localStorage.getItem('mfs_theme') || 'sapphire';
-      document.documentElement.setAttribute('data-theme', th);
-      const lbl = document.getElementById('themeLabel');
-      if (lbl) lbl.textContent = th === 'emerald' ? 'Emerald' : 'Sapphire';
-    })();
-  </script>
+  <script src="assets/js/mfs-revision.js?v=20261120s2"></script>
+  <script src="assets/js/mfs-tint.js?v=20261120s2"></script>
 </body>
 </html>

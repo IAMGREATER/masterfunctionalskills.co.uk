@@ -4,6 +4,12 @@
  * Solution Drawer Toggles, and Scratchpad Persistence.
  */
 
+// Resolve relative root prefix dynamically so root & nested (/digital-skills/*/) pages load links cleanly
+const _mfsRevScript = document.currentScript || document.querySelector('script[src*="mfs-revision.js"]');
+const MFS_REV_ROOT = (_mfsRevScript && _mfsRevScript.getAttribute('src'))
+  ? _mfsRevScript.getAttribute('src').replace(/assets\/js\/mfs-revision\.js.*$/, '')
+  : '';
+
 // Expose global tint variables so onclick calls like setSiteTint(peach, event) or setSiteTint('peach', event) both work
 window.cream = 'cream';
 window.peach = 'peach';
@@ -24,8 +30,8 @@ function toggleSolution(drawerId, btnElement) {
   const drawer = document.getElementById(drawerId);
   if (!drawer) return;
 
-  // Find the button that triggered this
-  let btn = btnElement;
+  // Find the button that triggered this (supports DOM node or string element ID)
+  let btn = (typeof btnElement === 'string') ? document.getElementById(btnElement) : btnElement;
   if (!btn && typeof event !== 'undefined' && event && event.target) {
     btn = event.target.closest('button');
   }
@@ -33,20 +39,25 @@ function toggleSolution(drawerId, btnElement) {
     btn = document.querySelector(`button[onclick*="${drawerId}"]`);
   }
 
-  const isHidden = drawer.style.display === 'none' || getComputedStyle(drawer).display === 'none';
+  const isHidden = !drawer.classList.contains('open') && (drawer.style.display === 'none' || getComputedStyle(drawer).display === 'none');
+  const isDfsBtn = Boolean(btn && btn.classList.contains('dfs-solution-toggle-btn'));
 
   if (isHidden) {
     drawer.style.display = 'block';
     drawer.classList.add('open');
     if (btn) {
-      btn.innerHTML = '<i class="fa-solid fa-eye-slash"></i> Hide Solution';
+      btn.innerHTML = isDfsBtn
+        ? '<i class="fa-solid fa-chevron-up"></i> Hide Model Solution &amp; Marking Criteria'
+        : '<i class="fa-solid fa-eye-slash"></i> Hide Solution';
       btn.setAttribute('aria-expanded', 'true');
     }
   } else {
     drawer.style.display = 'none';
     drawer.classList.remove('open');
     if (btn) {
-      btn.innerHTML = '<i class="fa-solid fa-eye"></i> Show Solution';
+      btn.innerHTML = isDfsBtn
+        ? '<i class="fa-solid fa-chevron-down"></i> View Accredited Model Solution &amp; Mark Scheme'
+        : '<i class="fa-solid fa-eye"></i> Show Solution';
       btn.setAttribute('aria-expanded', 'false');
     }
   }
@@ -55,6 +66,40 @@ function toggleSolution(drawerId, btnElement) {
 // Aliases for compatibility
 window.toggleSolution = toggleSolution;
 window.toggleSolutionDrawer = toggleSolution;
+
+// Interactive DFS Fluency Drill Evaluator
+window.checkDrill = function (btn, isCorrect, feedbackId) {
+  const parentContainer = btn && btn.closest ? btn.closest('.dfs-drill-options') : null;
+  if (!parentContainer) return;
+
+  const allButtons = parentContainer.querySelectorAll('.dfs-drill-opt-btn');
+  allButtons.forEach(b => {
+    b.disabled = true;
+    b.style.cursor = 'default';
+  });
+
+  const feedbackBox = document.getElementById(feedbackId);
+  const explanation = feedbackBox ? (feedbackBox.getAttribute('data-explanation') || '') : '';
+
+  if (isCorrect) {
+    btn.classList.add('correct');
+    if (feedbackBox) {
+      feedbackBox.className = 'dfs-drill-feedback show correct';
+      feedbackBox.innerHTML = '<strong><i class="fa-solid fa-circle-check"></i> Correct!</strong> ' + explanation;
+    }
+  } else {
+    btn.classList.add('incorrect');
+    allButtons.forEach(b => {
+      if (b.getAttribute('data-correct') === 'true') {
+        b.classList.add('correct');
+      }
+    });
+    if (feedbackBox) {
+      feedbackBox.className = 'dfs-drill-feedback show incorrect';
+      feedbackBox.innerHTML = '<strong><i class="fa-solid fa-circle-xmark"></i> Not quite.</strong> ' + explanation;
+    }
+  }
+};
 
 // Toggle Tint Menu
 function toggleTintMenu(e) {
@@ -195,21 +240,35 @@ function openGlobalSearch(ev) {
   } else {
     const q = prompt('Search functional skills revision topics:');
     if (q && q.trim()) {
-      window.location.href = 'revise.html?q=' + encodeURIComponent(q.trim());
+      window.location.href = MFS_REV_ROOT + 'revise.html?q=' + encodeURIComponent(q.trim());
     }
   }
 }
 window.openGlobalSearch = openGlobalSearch;
 
-// Scratchpad Autosave
+// Scratchpad Autosave (unified across Maths, English & Digital Functional Skills)
 function initScratchpads() {
   const pageKey = window.location.pathname.split('/').pop() || 'revision';
-  document.querySelectorAll('.working-scratchpad-input, .practice-scratchpad').forEach((area, idx) => {
-    const key = `mfs_scratch_${pageKey}_${idx}`;
-    const saved = localStorage.getItem(key);
-    if (saved) area.value = saved;
+  document.querySelectorAll('.working-scratchpad-input, .practice-scratchpad, .dfs-scratchpad-area').forEach((area, idx) => {
+    const key = area.getAttribute('data-storage-key') || `mfs_scratch_${pageKey}_${idx}`;
+    const wrap = area.closest('.dfs-scratchpad-wrap');
+    const statusIndicator = wrap ? wrap.querySelector('.dfs-autosave-status') : null;
+    try {
+      const saved = localStorage.getItem(key);
+      if (saved) area.value = saved;
+    } catch (e) {}
+    let timer;
     area.addEventListener('input', () => {
-      localStorage.setItem(key, area.value);
+      if (statusIndicator) {
+        statusIndicator.innerHTML = '<i class="fa-solid fa-spinner fa-spin" style="color:#d97706;"></i> Saving...';
+      }
+      clearTimeout(timer);
+      timer = setTimeout(() => {
+        try { localStorage.setItem(key, area.value); } catch (e) {}
+        if (statusIndicator) {
+          statusIndicator.innerHTML = '<i class="fa-solid fa-circle-check" style="color:#10b981;"></i> Saved in browser';
+        }
+      }, 400);
     });
   });
 }

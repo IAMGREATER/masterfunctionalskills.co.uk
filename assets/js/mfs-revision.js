@@ -664,6 +664,14 @@ document.addEventListener('DOMContentLoaded', function() {
    Replaces eager youtube-nocookie iframes with instant local poster cards.
    ========================================================================== */
 (function() {
+  function mfsBuildYtEmbedSrc(ytid, startSec) {
+    var s = (typeof startSec === 'number' && !isNaN(startSec) && startSec > 0) ? Math.floor(startSec) : 0;
+    var origin = (window.location.protocol === 'http:' || window.location.protocol === 'https:')
+      ? '&origin=' + encodeURIComponent(window.location.origin)
+      : '';
+    return 'https://www.youtube-nocookie.com/embed/' + ytid + '?rel=0&autoplay=1&playsinline=1&enablejsapi=1' + origin + (s > 0 ? '&start=' + s : '');
+  }
+
   function mfsActivateTopicVideo(el, startSec) {
     var target = el || document.getElementById('topicMasterclassIframe');
     if (!target) return null;
@@ -671,13 +679,19 @@ document.addEventListener('DOMContentLoaded', function() {
     var start = (typeof startSec === 'number' && !isNaN(startSec) && startSec > 0) ? Math.floor(startSec) : 0;
 
     if (target.tagName && target.tagName.toLowerCase() === 'iframe') {
+      if (window.MfsVideoChecks && typeof window.MfsVideoChecks.seekTopicPlayer === 'function' && window.MfsVideoChecks.seekTopicPlayer(start)) {
+        return target;
+      }
       var curYt = target.getAttribute('data-ytid');
       if (!curYt) {
         var m = (target.src || '').match(/embed\/([a-zA-Z0-9_-]+)/);
         curYt = m ? m[1] : '';
       }
       if (curYt) {
-        target.src = 'https://www.youtube-nocookie.com/embed/' + curYt + '?rel=0&autoplay=1&enablejsapi=1' + (start > 0 ? '&start=' + start : '');
+        target.src = mfsBuildYtEmbedSrc(curYt, start);
+        if (window.MfsVideoChecks && typeof window.MfsVideoChecks.onTopicIframeActivated === 'function') {
+          window.MfsVideoChecks.onTopicIframeActivated(target);
+        }
       }
       return target;
     }
@@ -692,7 +706,7 @@ document.addEventListener('DOMContentLoaded', function() {
     iframe.setAttribute('data-ytid', ytid);
     if (poster) iframe.setAttribute('data-poster', poster);
     iframe.style.cssText = 'position:absolute; top:0; left:0; width:100%; height:100%; border:0; display:block;';
-    iframe.src = 'https://www.youtube-nocookie.com/embed/' + ytid + '?rel=0&autoplay=1&enablejsapi=1' + (start > 0 ? '&start=' + start : '');
+    iframe.src = mfsBuildYtEmbedSrc(ytid, start);
     iframe.title = title;
     iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
     iframe.setAttribute('allowfullscreen', '');
@@ -700,6 +714,9 @@ document.addEventListener('DOMContentLoaded', function() {
 
     if (target.parentNode) {
       target.parentNode.replaceChild(iframe, target);
+    }
+    if (window.MfsVideoChecks && typeof window.MfsVideoChecks.onTopicIframeActivated === 'function') {
+      window.MfsVideoChecks.onTopicIframeActivated(iframe);
     }
     return iframe;
   }
@@ -711,8 +728,10 @@ document.addEventListener('DOMContentLoaded', function() {
       el.setAttribute('data-ytid', ytid);
       if (posterUrl) el.setAttribute('data-poster', posterUrl);
       if (title) el.title = title;
-      var s = (typeof startSec === 'number' && !isNaN(startSec) && startSec > 0) ? Math.floor(startSec) : 0;
-      el.src = 'https://www.youtube-nocookie.com/embed/' + ytid + '?rel=0&autoplay=1&enablejsapi=1' + (s > 0 ? '&start=' + s : '');
+      el.src = mfsBuildYtEmbedSrc(ytid, startSec);
+      if (window.MfsVideoChecks && typeof window.MfsVideoChecks.refreshTopicByYtId === 'function') {
+        window.MfsVideoChecks.refreshTopicByYtId(ytid);
+      }
       return el;
     }
     el.setAttribute('data-ytid', ytid);
@@ -728,7 +747,32 @@ document.addEventListener('DOMContentLoaded', function() {
         if (title) img.alt = title + ' poster thumbnail';
       }
     }
+    if (window.MfsVideoChecks && typeof window.MfsVideoChecks.refreshTopicByYtId === 'function') {
+      window.MfsVideoChecks.refreshTopicByYtId(ytid);
+    }
     return el;
+  }
+
+  function mfsLoadVideoChecksAssets() {
+    if (!document.getElementById('topicMasterclassIframe')) return;
+    if (!document.querySelector('link[href*="mfs-video-checks.css"]')) {
+      var lk = document.createElement('link');
+      lk.rel = 'stylesheet';
+      lk.href = MFS_REV_ROOT + 'assets/css/mfs-video-checks.css?v=20261120v1';
+      document.head.appendChild(lk);
+    }
+    if (!window.MfsVideoChecks && !document.querySelector('script[src*="mfs-video-checks.js"]')) {
+      var sc = document.createElement('script');
+      sc.src = MFS_REV_ROOT + 'assets/js/mfs-video-checks.js?v=20261120v1';
+      sc.defer = true;
+      document.body.appendChild(sc);
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', mfsLoadVideoChecksAssets);
+  } else {
+    mfsLoadVideoChecksAssets();
   }
 
   window.mfsActivateTopicVideo = mfsActivateTopicVideo;

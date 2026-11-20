@@ -19,6 +19,7 @@
   <script src="assets/js/mfs-pwa.js" defer></script>
   <link rel="stylesheet" href="assets/css/mfs-theme.css?v=20261112v5">
 <link rel="stylesheet" href="assets/css/mfs-video-modal.css?v=20261112v5">
+  <link rel="stylesheet" href="assets/css/mfs-video-checks.css?v=20261120v1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     body {
@@ -1212,6 +1213,9 @@
           <i class="fa-solid fa-forward-step"></i>
         </button>
       </div>
+
+      <!-- Interactive Video Concept Check & Examiner Trap CCQ Mount -->
+      <div id="mfsStationConceptCheck" class="mfs-station-checks-mount"></div>
     </div>
   </section>
 
@@ -1405,6 +1409,7 @@
   </footer>
 
   <script src="assets/js/mfs-tint.js"></script>
+  <script src="assets/js/mfs-video-checks.js?v=20261120v1" defer></script>
   <script>
     (function () {
       'use strict';
@@ -5128,6 +5133,13 @@
             document.getElementById('breadcrumbTopic').textContent = item.title;
             document.getElementById('heroTitle').textContent = displayTitle;
             document.getElementById('panelTitle').textContent = `What You Learn in ${item.title}`;
+            const tutorNameEl = document.querySelector('.hero-tutor-name');
+            if (tutorNameEl) {
+              const tutorHay = `${item.badge || ''} ${item.section || ''} ${item.id || ''}`.toLowerCase();
+              if (tutorHay.includes('sonya') || tutorHay.includes('sonia')) tutorNameEl.textContent = 'Sonya';
+              else if (tutorHay.includes('emma')) tutorNameEl.textContent = 'Emma';
+              else tutorNameEl.textContent = 'Subi';
+            }
 
             // Render Player
             const isFileProto = window.location.protocol === 'file:';
@@ -5148,6 +5160,9 @@
               `;
             } else if (item.ytId) {
               const autoplayParam = shouldAutoplay ? '1' : '0';
+              const originParam = (window.location.protocol === 'http:' || window.location.protocol === 'https:')
+                ? `&origin=${encodeURIComponent(window.location.origin)}`
+                : '';
               const fileNotice = isFileProto ? `
                 <div style="margin-top:12px; padding:12px 16px; background:rgba(239,68,68,0.12); border:1px solid rgba(239,68,68,0.3); border-radius:10px; font-size:0.85rem; color:#fca5a5; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:10px;">
                   <div style="display:flex; align-items:center; gap:8px;">
@@ -5158,7 +5173,7 @@
                 </div>
               ` : '';
               playerContainer.innerHTML = `
-                <iframe style="position:absolute; top:0; left:0; width:100%; height:100%; border:0; display:block;" src="https://www.youtube-nocookie.com/embed/${item.ytId}?rel=0&autoplay=${autoplayParam}&playsinline=1" title="${displayTitle}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+                <iframe id="stationYtPlayer" style="position:absolute; top:0; left:0; width:100%; height:100%; border:0; display:block;" src="https://www.youtube-nocookie.com/embed/${item.ytId}?rel=0&autoplay=${autoplayParam}&playsinline=1&enablejsapi=1${originParam}" title="${displayTitle}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
                 ${fileNotice}
               `;
             } else {
@@ -5377,6 +5392,12 @@
               const cardOffset = activeCard.offsetTop - playlistScroll.offsetTop;
               playlistScroll.scrollTo({ top: Math.max(0, cardOffset - 10), behavior: 'smooth' });
             }
+          }
+
+          // Mount Interactive Concept Check & Examiner Trap CCQ Card
+          window.MFS_STATION_CURRENT_ITEM = item || cleanSlug;
+          if (window.MfsVideoChecks && typeof window.MfsVideoChecks.mountStation === 'function') {
+            window.MfsVideoChecks.mountStation(item || cleanSlug);
           }
 
           // If triggered by user action, ensure player is comfortably in view

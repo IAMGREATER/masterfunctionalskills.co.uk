@@ -1,6 +1,8 @@
 # Master Functional Skills (MFS) — Backlog & Improvement Tasks
 
-## 🧠 Planned Feature (To Come Back To — Nov 2026): Interactive Video Comprehension & Concept-Checking Quizzes
+## ✅ Completed & Live (20 Nov 2026): Interactive Video Comprehension & Concept-Checking Quizzes
+
+> **Status:** **Done & Live** (`assets/data/mfs-video-checks.json`, `assets/js/mfs-video-checks.js`, `assets/css/mfs-video-checks.css`) — deployed across all `161` walkthroughs (`92` Topic/E3/SLC + `69` Mock/Past Papers; `550` total checks), all `245` topic pages, `video-solution.html`, and `mfs-video-modal.js` (`sw.js` `v18`). Zero MP4/VTT edits, `Pause after each question` defaults `OFF`, full Dyslexia Mode & Tint support, `0` Playwright QA failures (`1440×900` & `375×812`).
 
 ### Core Architecture & UX Rules
 - **Clean MP4s (Zero Re-Rendering):** Never burn quizzes into video files. Drive all questions from lightweight JSON paired with existing `.vtt` chapter timestamps.

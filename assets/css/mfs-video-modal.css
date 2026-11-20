@@ -136,6 +136,7 @@
   position: relative;
   width: 100%;
   aspect-ratio: 16 / 9;
+  flex-shrink: 0;
   background: #020617;
   border-radius: 12px;
   overflow: hidden;

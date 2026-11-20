@@ -1,4 +1,4 @@
-const CACHE_NAME = 'mfs-cache-v20261120-v17';
+const CACHE_NAME = 'mfs-cache-v20261120-v18';
 
 const RELATIVE_ASSETS = [
   '',
@@ -12,10 +12,13 @@ const RELATIVE_ASSETS = [
   'assets/css/mfs-mobile.css',
   'assets/css/mfs-revision.css',
   'assets/css/mfs-video-modal.css',
+  'assets/css/mfs-video-checks.css',
   'assets/js/mfs-mobile.js',
   'assets/js/mfs-topic-quiz.js',
   'assets/js/mfs-tint.js',
   'assets/js/mfs-pwa.js',
+  'assets/js/mfs-video-checks.js',
+  'assets/data/mfs-video-checks.json',
   'assets/img/favicon-192x192.png',
   'assets/img/favicon-512x512.png',
   'assets/img/favicon.svg',

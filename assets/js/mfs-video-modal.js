@@ -6,6 +6,26 @@
 (function () {
   'use strict';
 
+  var _modalScript = document.currentScript || document.querySelector('script[src*="mfs-video-modal.js"]');
+  var MODAL_ROOT = (_modalScript && _modalScript.getAttribute('src'))
+    ? _modalScript.getAttribute('src').replace(/assets\/js\/mfs-video-modal\.js.*$/, '')
+    : '';
+
+  function ensureModalChecksAssets() {
+    if (!document.querySelector('link[href*="mfs-video-checks.css"]')) {
+      var lk = document.createElement('link');
+      lk.rel = 'stylesheet';
+      lk.href = MODAL_ROOT + 'assets/css/mfs-video-checks.css?v=20261120v1';
+      document.head.appendChild(lk);
+    }
+    if (!window.MfsVideoChecks && !document.querySelector('script[src*="mfs-video-checks.js"]')) {
+      var sc = document.createElement('script');
+      sc.src = MODAL_ROOT + 'assets/js/mfs-video-checks.js?v=20261120v1';
+      sc.defer = true;
+      document.body.appendChild(sc);
+    }
+  }
+
   // Available videos dictionary (slug/topic -> video details)
   // Available videos dictionary (slug/topic -> video details)
   const KNOWN_VIDEOS = {
@@ -2226,6 +2246,8 @@
             </div>
           </div>
 
+          <div id="mfsModalConceptCheck"></div>
+
           <!-- Features Cards -->
           <div class="mfs-modal-features-row">
             <div class="mfs-modal-feat-card">
@@ -2274,10 +2296,10 @@
 
   function openModal(options) {
     initModalDom();
+    ensureModalChecksAssets();
 
     const topic = options.topic || 'Video Solution Walkthrough';
     const series = options.series || 'Pearson Edexcel Functional Skills';
-    const tutor = options.tutor || 'Subi';
     const sheetUrl = options.sheetUrl || '#';
     const answersUrl = options.answersUrl || '#';
     
@@ -2293,6 +2315,7 @@
     if (!ytId && knownItem && knownItem.ytId) {
       ytId = knownItem.ytId;
     }
+    const tutor = options.tutor || (knownItem && knownItem.tutor) || 'Subi';
 
     // Set Header
     document.getElementById('mfsModalTitle').textContent = topic;
@@ -2381,8 +2404,11 @@
     const posterUrl = options.poster || '';
     if (ytId) {
       // Clean YouTube Embed (Never crashes mobile browsers with MIME type error)
+      const originParam = (window.location.protocol === 'http:' || window.location.protocol === 'https:')
+        ? `&origin=${encodeURIComponent(window.location.origin)}`
+        : '';
       playerBox.innerHTML = `
-        <iframe style="width:100%; height:100%; border:0; display:block;" src="https://www.youtube-nocookie.com/embed/${ytId}?autoplay=1&rel=0&playsinline=1" title="${escapeHtml(topic)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
+        <iframe id="mfsModalYtPlayer" style="width:100%; height:100%; border:0; display:block;" src="https://www.youtube-nocookie.com/embed/${ytId}?autoplay=1&rel=0&playsinline=1&enablejsapi=1${originParam}" title="${escapeHtml(topic)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
       `;
     } else if (localVideoUrl) {
       playerBox.innerHTML = `
@@ -2415,6 +2441,22 @@
       `;
     }
 
+    // Mount Concept Check / Examiner Trap Drawer inside modal
+    const modalCheckEl = document.getElementById('mfsModalConceptCheck');
+    const modalCheckSlug = options.slug || normTopic;
+    const tryMountModalChecks = function (attempt) {
+      if (!modalOverlay || !modalOverlay.classList.contains('active')) return;
+      if (window.MfsVideoChecks && typeof window.MfsVideoChecks.mountModal === 'function') {
+        window.MfsVideoChecks.mountModal(modalCheckEl, { slug: modalCheckSlug, ytId: ytId });
+      } else if (attempt < 20) {
+        setTimeout(function () { tryMountModalChecks(attempt + 1); }, 100);
+      }
+    };
+    if (modalCheckEl) {
+      modalCheckEl.innerHTML = '';
+      setTimeout(function () { tryMountModalChecks(0); }, 0);
+    }
+
     // Show Overlay
     modalOverlay.classList.add('active');
     document.body.style.overflow = 'hidden';
@@ -2422,6 +2464,10 @@
 
   function closeModal() {
     if (!modalOverlay) return;
+
+    if (window.MfsVideoChecks && typeof window.MfsVideoChecks.unmountModal === 'function') {
+      window.MfsVideoChecks.unmountModal();
+    }
 
     // Immediately stop iframe video/audio
     const playerBox = document.getElementById('mfsPlayerBox');
@@ -2516,7 +2562,7 @@
           localVideo: localVideo,
           poster: poster,
           series: series,
-          tutor: 'Subi'
+          tutor: this.getAttribute('data-tutor') || ''
         });
       });
     });

@@ -3719,6 +3719,71 @@ body.dyslexia-mode .moat-badge {
 }
 
 /* ==========================================================================
+   SPRINT 6 — LEVEL 1 VS LEVEL 2 HUB TIER DIFFERENTIATION BADGES
+   ========================================================================== */
+.hero-level-badge.hero-level-badge-l1,
+.hero-level-badge-l1 {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: #dcfce7 !important;
+  color: #15803d !important;
+  border: 1.5px solid #4ade80 !important;
+  padding: 6px 15px;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.hero-level-badge.hero-level-badge-l2,
+.hero-level-badge-l2 {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  background: #fef3c7 !important;
+  color: #92400e !important;
+  border: 1.5px solid #f59e0b !important;
+  padding: 6px 15px;
+  border-radius: 9999px;
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  margin-bottom: 14px;
+}
+.topic-meta-tags {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  flex-wrap: wrap;
+  margin-top: 3px;
+}
+.topic-tier-pill {
+  font-size: 0.72rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 4px 9px;
+  border-radius: 6px;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  line-height: 1.2;
+}
+.topic-tier-pill.tier-l1 {
+  background: #dcfce7;
+  color: #15803d;
+  border: 1px solid #86efac;
+}
+.topic-tier-pill.tier-l2 {
+  background: #fef3c7;
+  color: #92400e;
+  border: 1px solid #fcd34d;
+}
+
+/* ==========================================================================
    MOBILE & TABLET SYSTEM IMPORT (PRIORITY CASCADE)
    ========================================================================== */
 @import url('mfs-mobile.css');

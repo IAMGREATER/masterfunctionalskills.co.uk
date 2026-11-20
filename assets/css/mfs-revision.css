@@ -3,6 +3,28 @@
    Dyslexia-friendly spacious layout, high readability & visual clarity
    ========================================================================== */
 
+:root {
+  /* Standardized Font Scales (Sprint 6 Uniform Design Language System) */
+  --mfs-fs-calc: 1.28rem;
+  --mfs-fs-heading: 1.25rem;
+  --mfs-fs-body: 1.04rem;
+  --mfs-fs-pill: 0.92rem;
+
+  /* Role-Based Color Palette */
+  --mfs-navy: #0f172a;
+  --mfs-blue: #0284c7;
+  --mfs-blue-deep: #0369a1;
+  --mfs-emerald: #16a34a;
+  --mfs-emerald-deep: #15803d;
+  --mfs-emerald-soft: #dcfce7;
+  --mfs-amber: #f59e0b;
+  --mfs-amber-deep: #d97706;
+  --mfs-amber-soft: #fef3c7;
+  --mfs-teal: #0f766e;
+  --mfs-teal-mid: #0d9488;
+  --mfs-teal-soft: #f0fdfa;
+}
+
 /* Wide & Spacious Screen Layout: Pushes contents far left and gives learning materials expansive space */
 .revision-page-wrapper {
   width: 98%;
@@ -884,12 +906,17 @@ p {
   margin: 4px 0 6px;
 }
 .mark-scheme-tag {
-  font-size: 0.95rem;
-  font-weight: 700;
-  color: #0284c7;
-  display: flex;
+  font-size: var(--mfs-fs-pill, 0.92rem);
+  font-weight: 800;
+  color: var(--mfs-teal, #0f766e);
+  background: var(--mfs-teal-soft, #f0fdfa);
+  border: 1px solid #99f6e4;
+  padding: 5px 10px;
+  border-radius: 6px;
+  display: inline-flex;
   align-items: center;
   gap: 6px;
+  line-height: 1.35;
 }
 /* 3-Column Worked Model Steps Grid (Step, Description, Criteria) */
 .model-steps-header-row {
@@ -1838,9 +1865,9 @@ p {
 .pfs-pill-l2,
 .badge-level-fs-level-2,
 .filter-item-fs-level-2 {
-  background: #ea580c !important;
+  background: var(--mfs-amber-deep, #d97706) !important;
   color: #ffffff !important;
-  font-size: 0.92rem !important;
+  font-size: var(--mfs-fs-pill, 0.92rem) !important;
   font-weight: 800 !important;
   padding: 5px 12px !important;
   border-radius: 5px !important;
@@ -5834,4 +5861,234 @@ p {
     font-size: 0.74rem;
   }
 }
+
+/* ==========================================================================
+   SPRINT 6 — TIER DIFFERENTIATION & VISUAL MATHS MASTER BOARD SYSTEM
+   ========================================================================== */
+.badge-pill-l1 {
+  background: var(--mfs-emerald, #16a34a);
+  color: #ffffff;
+  border: 1px solid #4ade80;
+  font-size: var(--mfs-fs-pill, 0.92rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 5px 14px;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.badge-pill-l2 {
+  background: var(--mfs-amber, #f59e0b);
+  color: #070d1e;
+  border: 1px solid #fcd34d;
+  font-size: var(--mfs-fs-pill, 0.92rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 5px 14px;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.badge-pill-e3 {
+  background: var(--mfs-teal-mid, #0d9488);
+  color: #ffffff;
+  border: 1px solid #5eead4;
+  font-size: var(--mfs-fs-pill, 0.92rem);
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 5px 14px;
+  border-radius: 9999px;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+html[data-level="level-1"] .revision-hero-card {
+  border-bottom: 4px solid var(--mfs-emerald, #16a34a);
+}
+html[data-level="level-2"] .revision-hero-card {
+  border-bottom: 4px solid var(--mfs-amber, #f59e0b);
+}
+html[data-level="entry-3"] .revision-hero-card {
+  border-bottom: 4px solid var(--mfs-teal-mid, #0d9488);
+}
+
+/* Dyslexia-Friendly High-Contrast Step & Visual Master Boards */
+.mfs-step-calc-board {
+  background: #f0f9ff;
+  border: 1.5px solid #7dd3fc;
+  border-left: 5px solid var(--mfs-blue, #0284c7);
+  border-radius: 10px;
+  padding: 14px 18px;
+  width: 100%;
+  box-sizing: border-box;
+}
+html[data-level="level-1"] .mfs-step-calc-board {
+  background: #f0fdf4;
+  border-color: #86efac;
+  border-left-color: var(--mfs-emerald, #16a34a);
+}
+.mfs-step-calc-line {
+  font-size: 1.24rem;
+  font-weight: 800;
+  color: var(--mfs-navy, #0f172a);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.55;
+  word-break: break-word;
+}
+.mfs-step-result-chip {
+  display: inline-block;
+  margin-top: 8px;
+  background: var(--mfs-emerald-soft, #dcfce7);
+  color: var(--mfs-emerald-deep, #15803d);
+  border: 1px solid #86efac;
+  font-size: 1.05rem;
+  font-weight: 800;
+  padding: 4px 12px;
+  border-radius: 8px;
+  font-variant-numeric: tabular-nums;
+}
+
+.mfs-pastel-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  margin: 16px 0;
+}
+.mfs-pastel-card {
+  border-radius: 12px;
+  padding: 16px 18px;
+  border: 1.5px solid #cbd5e1;
+  box-sizing: border-box;
+  background: #ffffff;
+}
+.mfs-pastel-sky {
+  background: #f0f9ff;
+  border-color: #7dd3fc;
+  border-left: 5px solid #0284c7;
+}
+.mfs-pastel-mint {
+  background: #f0fdf4;
+  border-color: #86efac;
+  border-left: 5px solid #16a34a;
+}
+.mfs-pastel-amber {
+  background: #fefce8;
+  border-color: #fde047;
+  border-left: 5px solid #d97706;
+}
+.mfs-pastel-teal {
+  background: #f0fdfa;
+  border-color: #99f6e4;
+  border-left: 5px solid #0f766e;
+}
+.mfs-pastel-label {
+  font-size: 0.88rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: #0369a1;
+  margin-bottom: 6px;
+}
+.mfs-pastel-mint .mfs-pastel-label { color: #15803d; }
+.mfs-pastel-amber .mfs-pastel-label { color: #b45309; }
+.mfs-pastel-teal .mfs-pastel-label { color: #0f766e; }
+
+.mfs-pastel-math {
+  font-size: var(--mfs-fs-calc, 1.28rem);
+  font-weight: 900;
+  color: var(--mfs-navy, #0f172a);
+  font-variant-numeric: tabular-nums;
+  line-height: 1.45;
+  margin-bottom: 6px;
+}
+.mfs-pastel-note {
+  font-size: 0.96rem;
+  color: #334155;
+  line-height: 1.6;
+}
+
+.mfs-l1-tutor-tip {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: var(--mfs-teal-soft, #f0fdfa);
+  border: 1.5px solid #99f6e4;
+  border-left: 4px solid var(--mfs-teal, #0f766e);
+  border-radius: 10px;
+  padding: 14px 16px;
+  margin-top: 10px;
+  color: #134e4a;
+  font-size: 0.96rem;
+  line-height: 1.65;
+}
+.mfs-l1-tutor-tip img {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  border: 2px solid #0d9488;
+  object-fit: cover;
+  flex-shrink: 0;
+}
+
+.math-master-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: 12px;
+}
+.math-master-table-wrap .math-master-table {
+  margin: 0;
+}
+
+.math-visual-badge-l1 {
+  background: var(--mfs-emerald, #16a34a);
+  color: #ffffff;
+}
+.math-visual-badge-l2 {
+  background: var(--mfs-amber, #f59e0b);
+  color: #070d1e;
+}
+
+@media (max-width: 640px) {
+  .mfs-step-calc-board {
+    padding: 12px 14px;
+  }
+  .mfs-step-calc-line {
+    font-size: 1.12rem;
+  }
+  .mfs-pastel-math {
+    font-size: 1.15rem;
+  }
+  .mfs-pastel-grid {
+    grid-template-columns: 1fr;
+  }
+  .math-master-table th,
+  .math-master-table td {
+    padding: 11px 12px;
+    font-size: 0.94rem;
+  }
+  .mfs-l1-tutor-tip {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+
+html[data-dyslexia="true"] .mfs-step-calc-board,
+html[data-dyslexia="true"] .mfs-pastel-card,
+html[data-dyslexia="true"] .math-visual-card {
+  line-height: 1.85 !important;
+  letter-spacing: 0.02em;
+  border-width: 2px;
+}
+html[data-dyslexia="true"] .mfs-pastel-note,
+html[data-dyslexia="true"] .mfs-l1-tutor-tip {
+  line-height: 1.85 !important;
+}
+
 

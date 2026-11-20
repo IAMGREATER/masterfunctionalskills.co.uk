@@ -25,41 +25,29 @@
 
 ---
 
-## 📌 High Priority: Level 1 vs Level 2 Curriculum & Resource Separation
+## ✅ Completed & Live (20 Nov 2026): Level 1 vs Level 2 Curriculum & Resource Separation (Sprint 6)
 
-### Background
-Currently, the Level 1 and Level 2 Maths revision landing pages share 25 foundational topics and point to the exact same dual-tier worksheets (`worksheets/<topic>-worksheet.html` and `worksheets/<topic>-workout.html`). Learners see identical initial listings and identical shared sheets.
+> **Status:** **Done & Live** — Zero shared worksheets (`0` L1 hub/topic links pointing to non-L1 worksheets), Emerald Green (`#16a34a`) Level 1 vs Amber Gold (`#f59e0b` / `#d97706`) Level 2 differentiation across `252` revision topic pages (`92` L1, `111` L2, `49` E3) and all 4 L1/L2 subject hubs, `mfs-video-modal.{css,js}` wired across all 6 hubs, and all `38` Maths L1 Python tuple leaks + `93` wrong Level 2 `.mfs-pill-l1` tags + `64` stale `LEVEL 1 & LEVEL 2` hero pills resolved cleanly.
 
-### Target Objectives
+### Verified Objectives Achieved
 1. **Dedicated Worksheets & Fluency Drills**:
-   - Split combined worksheets into distinct **Level 1** (core mechanics, single-step operations, foundational scaffolding) and **Level 2** (multi-step problem solving, reverse calculations, contextual exam problems) worksheets.
-   - Update topic action bar links on both landing pages so L1 points strictly to L1 worksheets, and L2 points strictly to L2 worksheets.
+   - L1 and L2 topic guides and hubs point strictly to their tier-calibrated worksheets (`worksheets/*-level-1-*.html` vs Level 2 sheets; `0` cross-tier leaks).
 2. **Visual Level Differentiation**:
-   - Introduce distinct color accents / badging for Level 1 vs Level 2 so learners instantly know which tier they are studying.
-   - Clarify difficulty indicators on topic rows and practice tests.
-3. **Tailored Revision Cards & Video Walkthroughs**:
-   - Align explanatory cards and video solutions to the specific Pearson Edexcel mark scheme requirements for each tier (e.g. Level 1 basic units vs Level 2 compound units & comparative data).
+   - Applied Emerald Green `.badge-pill-l1` / `.hero-level-badge-l1` / `.topic-tier-pill.tier-l1` (`#16a34a` / `#dcfce7`) for Level 1 vs Amber Gold `.badge-pill-l2` / `.hero-level-badge-l2` / `.topic-tier-pill.tier-l2` (`#f59e0b` / `#fef3c7`) for Level 2 and Teal `.badge-pill-e3` (`#0d9488`) for Entry Level 3, plus `data-level` hero accent borders.
+   - Added row-level Tier pills (`38/38` Maths L1, `44/44` Maths L2, `33/33` English L1, `46/46` English L2) and updated hub curriculum counts (`38` Maths L1, `44` Maths L2, `46` English L2).
+3. **100% Maths Visual Board Coverage & Tier-Calibrated Worked Models**:
+   - Removed stale `Level 1` footer pills from `26` true Level 2-only Maths pages and fixed all `38` Maths L1 tutor tip tuple leaks (`.mfs-l1-tutor-tip` with verified avatars).
 
 ---
 
-## 🎨 Scheduled Task: Master Site Uniform Design Language System
+## ✅ Completed & Live (20 Nov 2026): Master Site Uniform Design Language System (Sprint 6)
 
-### Target Objectives
-1. **3–4 Standardized Font Scales**:
-   - **Display & Calculations**: `1.25rem` to `1.45rem` (bold 800/900, tabular figures).
-   - **Headings & Step Titles**: `1.15rem` to `1.35rem` (bold 800).
-   - **Reading / Body / Stems / Explanations**: `1.02rem` to `1.05rem` (line-height 1.6–1.75).
-   - **Pills, Badges, Mark Tags & Criteria**: `0.92rem` to `0.95rem` (bold 800, uppercase tracking).
-2. **Dedicated Role-Based Color Palette**:
-   - **Brand Navy & Blue** (`#0f172a`, `#0284c7`, `#0369a1`): Main structure, primary actions, core working.
-   - **Emerald Green** (`#16a34a`, `#15803d`, `#dcfce7`): Final answers, checkmark steps, Level 1 pills.
-   - **Amber Gold** (`#f59e0b`, `#d97706`, `#fef3c7`): Golden rules, cautions, Level 2 pills.
-   - **Teal / Mark Scheme** (`#0f766e`, `#0d9488`, `#f0fdfa`): Official Pearson Edexcel criteria badges & allocations.
-3. **Component Layout Archetypes**:
-   - **3-Column Worked Step Grid**: `[Step Pill + Title] | [High-Contrast Calculation Board] | [Teal Criteria Tag]`.
-   - **Responsive Master Boards**: 100% full-width grid layouts collapsing gracefully to 1 column on mobile/tablet.
-   - **Interactive Practice Drawers**: Uniform layout with scratchpad and collapsible accredited model solutions.
-4. **Dyslexia-Friendly & Eye-Catching Visual Standard (Roll-out to all Maths Pages)**:
-   - Expand generous visual spacing (`line-height: 1.75`, `padding: 20px–24px`, soft border radii) across all pages.
-   - Use high-contrast, dyslexia-friendly pastel containers (soft mint `#f0fdf4`, sky tint `#f0f9ff`, warm amber `#fefce8`) for active calculation blocks.
-   - Deploy prominent, intuitive master boards (like Grouped Data and Addition/Subtraction) so complex mathematical operations are instantly clear at a glance.
+> **Status:** **Done & Live** (`assets/css/mfs-revision.css?v=20261120v10`, `assets/css/mfs-theme.css?v=20261120v10`, `sw.js` `v19`) — Standardized typography tokens, role-based Emerald/Amber/Navy/Teal palette, `100%` visual Maths master board coverage (`41/41` Maths L2, `38/38` Maths L1, `24/24` Maths E3), `107` Maths L1 worked-model step boards (`.mfs-step-calc-board`), and `50` pastel Core Skill cards with full Dyslexia Mode/Tint compatibility and `0` Playwright QA failures (`1440×900` & `375×812`).
+
+### Verified Objectives Achieved
+1. **Standardized Font Scales & Role-Based Tokens**:
+   - Defined `:root` tokens (`--mfs-fs-calc: 1.28rem`, `--mfs-fs-heading: 1.25rem`, `--mfs-fs-body: 1.04rem`, `--mfs-fs-pill: 0.92rem`), Teal `.mark-scheme-tag` badges (`#0f766e` on `#f0fdfa`), Emerald Level 1 / final-answer chips, and Amber Gold Level 2 / caution accents.
+2. **Component Layout & Responsive Master Boards**:
+   - Built `42` bespoke high-contrast `.math-visual-card` / `.math-master-table` / `.mfs-pastel-grid` boards (`16` Maths L2 + `26` Maths L1 via `scripts/build_maths_visual_boards.py`), wrapped inside `.math-master-table-wrap` for clean mobile scrolling (`0px` horizontal overflow).
+3. **Dyslexia-Friendly & Eye-Catching Visual Standard (100% Maths Rollout)**:
+   - Upgraded `107` Maths L1 `.model-step-col-desc` calculation boxes and `50` Core Skill boxes into spacious pastel containers (`#f0fdf4`, `#f0f9ff`, `#fefce8`, `#f0fdfa`) with `tabular-nums`, generous `line-height: 1.85` under `data-dyslexia="true"`, and zero broken internal anchors.

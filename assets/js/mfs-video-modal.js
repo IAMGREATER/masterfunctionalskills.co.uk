@@ -1815,6 +1815,74 @@
       poster: 'assets/img/posters/city-and-guilds-english-l2-writing-2022-practice-poster.jpg'
     },
 
+    // Wave 4B: Open Awards Maths & English L1-L2 Walkthroughs
+    'open-awards-maths-l1-mock-3': {
+      ytId: 'f4B2ZKUK-_c',
+      title: 'Open Awards Maths L1 • Mock 3 Walkthrough',
+      series: 'Open Awards Functional Skills Maths Level 1',
+      tutor: 'Tutor Subi',
+      paperGroup: 'open-awards-maths-mock-3',
+      activeSection: 'Level 1',
+      companionSlug: 'open-awards-maths-l2-mock-3',
+      companionLabel: 'Level 2 Mock 3 (Sonya • 3m 57s)',
+      poster: 'assets/img/posters/open-awards-maths-l1-mock-3-poster.jpg'
+    },
+    'open-awards-maths-l2-mock-3': {
+      ytId: 'T5GxpRzw58E',
+      title: 'Open Awards Maths L2 • Mock 3 Walkthrough',
+      series: 'Open Awards Functional Skills Maths Level 2',
+      tutor: 'Tutor Sonya',
+      paperGroup: 'open-awards-maths-mock-3',
+      activeSection: 'Level 2',
+      companionSlug: 'open-awards-maths-l1-mock-3',
+      companionLabel: 'Level 1 Mock 3 (Subi • 3m 38s)',
+      poster: 'assets/img/posters/open-awards-maths-l2-mock-3-poster.jpg'
+    },
+    'open-awards-english-l1-reading-mock-2': {
+      ytId: 'wRPrYgbLUs8',
+      title: 'Open Awards English L1 • Reading Mock 2 Walkthrough',
+      series: 'Open Awards Functional Skills English Level 1',
+      tutor: 'Tutor Emma',
+      paperGroup: 'open-awards-english-l1-mock-2',
+      activeSection: 'Reading',
+      companionSlug: 'open-awards-english-l1-writing-mock-2',
+      companionLabel: 'Writing Mock 2 (Subi • 1m 31s)',
+      poster: 'assets/img/posters/open-awards-english-l1-reading-mock-2-poster.jpg'
+    },
+    'open-awards-english-l1-writing-mock-2': {
+      ytId: 'TpIZgJ0O26I',
+      title: 'Open Awards English L1 • Writing Mock 2 Walkthrough',
+      series: 'Open Awards Functional Skills English Level 1',
+      tutor: 'Tutor Subi',
+      paperGroup: 'open-awards-english-l1-mock-2',
+      activeSection: 'Writing',
+      companionSlug: 'open-awards-english-l1-reading-mock-2',
+      companionLabel: 'Reading Mock 2 (Emma • 2m 09s)',
+      poster: 'assets/img/posters/open-awards-english-l1-writing-mock-2-poster.jpg'
+    },
+    'open-awards-english-l2-reading-exam-3': {
+      ytId: 'Jd2T9KlV2no',
+      title: 'Open Awards English L2 • Reading Exam 3 Walkthrough',
+      series: 'Open Awards Functional Skills English Level 2',
+      tutor: 'Tutor Emma',
+      paperGroup: 'open-awards-english-l2-exam',
+      activeSection: 'Reading Exam 3',
+      companionSlug: 'open-awards-english-l2-writing-exam-1',
+      companionLabel: 'Writing Exam 1 (Sonya • 1m 32s)',
+      poster: 'assets/img/posters/open-awards-english-l2-reading-exam-3-poster.jpg'
+    },
+    'open-awards-english-l2-writing-exam-1': {
+      ytId: 'uinevthtV_g',
+      title: 'Open Awards English L2 • Writing Exam 1 Walkthrough',
+      series: 'Open Awards Functional Skills English Level 2',
+      tutor: 'Tutor Sonya',
+      paperGroup: 'open-awards-english-l2-exam',
+      activeSection: 'Writing Exam 1',
+      companionSlug: 'open-awards-english-l2-reading-exam-3',
+      companionLabel: 'Reading Exam 3 (Emma • 1m 55s)',
+      poster: 'assets/img/posters/open-awards-english-l2-writing-exam-1-poster.jpg'
+    },
+
     // SLC Task 1 & Task 2 Exemplar Walkthroughs
     'slc-task1-presentation-model': {
       ytId: 'l7VRzidsFno',

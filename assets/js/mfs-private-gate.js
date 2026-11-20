@@ -44,7 +44,7 @@
       var link = document.createElement('link');
       link.id = 'mfsGateCss';
       link.rel = 'stylesheet';
-      link.href = ROOT_PREFIX + 'assets/css/mfs-private-gate.css';
+      link.href = ROOT_PREFIX + 'assets/css/mfs-private-gate.css?v=20261120v12';
       document.head.appendChild(link);
     }
 
@@ -61,7 +61,7 @@
       '  </div>',
       '  <h1 class="mfs-gate-logo">Master Functional <span>Skills</span></h1>',
       '  <p class="mfs-gate-subtitle">',
-      '    This platform is currently undergoing Pearson Edexcel syllabus calibration. Access is restricted to authorised educators, QA reviewers, and registered students.',
+      '    This platform is currently undergoing final multi-board syllabus calibration. Access is restricted to authorised educators, QA reviewers, and registered students.',
       '  </p>',
       '  <form class="mfs-gate-form" id="mfsGateForm">',
       '    <div class="mfs-gate-input-wrapper">',

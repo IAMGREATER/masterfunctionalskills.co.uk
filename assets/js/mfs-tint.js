@@ -11,6 +11,7 @@
   var ROOT_PREFIX = (_tintScript && _tintScript.getAttribute('src'))
     ? _tintScript.getAttribute('src').replace(/assets\/js\/mfs-tint\.js.*$/, '')
     : '';
+  var MFS_STEALTH_PREVIEW = true; // Toggled by scripts/toggle_public_seo.py
 
   // Expose global tint variables so onclick calls like setSiteTint(peach, event) or setSiteTint('peach', event) both work
   window.cream = 'cream';
@@ -250,7 +251,7 @@
     }
     var sc = document.createElement('script');
     sc.id = 'mfsSearchScript';
-    sc.src = ROOT_PREFIX + 'assets/js/mfs-search.js?v=20261120v11';
+    sc.src = ROOT_PREFIX + 'assets/js/mfs-search.js?v=20261120v12';
     sc.onload = function() {
       if (window.MfsSearch && typeof window.MfsSearch.open === 'function') {
         window.MfsSearch.open();
@@ -279,7 +280,7 @@
   if (!document.getElementById('mfsSearchScript')) {
     var searchScript = document.createElement('script');
     searchScript.id = 'mfsSearchScript';
-    searchScript.src = ROOT_PREFIX + 'assets/js/mfs-search.js?v=20261120v11';
+    searchScript.src = ROOT_PREFIX + 'assets/js/mfs-search.js?v=20261120v12';
     document.head.appendChild(searchScript);
   }
 
@@ -375,10 +376,10 @@
     initTouchDropdowns();
 
     // Load Private Pre-Release Access Gate (Stealth Mode)
-    if (!document.getElementById('mfsPrivateGateScript')) {
+    if (MFS_STEALTH_PREVIEW && !document.getElementById('mfsPrivateGateScript')) {
       var gateScript = document.createElement('script');
       gateScript.id = 'mfsPrivateGateScript';
-      gateScript.src = ROOT_PREFIX + 'assets/js/mfs-private-gate.js';
+      gateScript.src = ROOT_PREFIX + 'assets/js/mfs-private-gate.js?v=20261120v12';
       document.body.appendChild(gateScript);
     }
   }

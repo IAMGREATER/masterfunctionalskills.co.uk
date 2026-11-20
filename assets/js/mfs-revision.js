@@ -9,6 +9,7 @@ const _mfsRevScript = document.currentScript || document.querySelector('script[s
 const MFS_REV_ROOT = (_mfsRevScript && _mfsRevScript.getAttribute('src'))
   ? _mfsRevScript.getAttribute('src').replace(/assets\/js\/mfs-revision\.js.*$/, '')
   : '';
+var MFS_STEALTH_PREVIEW = true; // Toggled by scripts/toggle_public_seo.py
 
 // Expose global tint variables so onclick calls like setSiteTint(peach, event) or setSiteTint('peach', event) both work
 window.cream = 'cream';
@@ -250,7 +251,7 @@ function openGlobalSearch(ev) {
   }
   var s = document.createElement('script');
   s.id = 'mfsSearchScript';
-  s.src = MFS_REV_ROOT + 'assets/js/mfs-search.js?v=20261120v11';
+  s.src = MFS_REV_ROOT + 'assets/js/mfs-search.js?v=20261120v12';
   s.onload = function() {
     if (window.MfsSearch && typeof window.MfsSearch.open === 'function') {
       window.MfsSearch.open();
@@ -263,8 +264,21 @@ window.openGlobalSearch = openGlobalSearch;
 if (!document.getElementById('mfsSearchScript') && !window.MfsSearch) {
   var autoSearchScript = document.createElement('script');
   autoSearchScript.id = 'mfsSearchScript';
-  autoSearchScript.src = MFS_REV_ROOT + 'assets/js/mfs-search.js?v=20261120v11';
+  autoSearchScript.src = MFS_REV_ROOT + 'assets/js/mfs-search.js?v=20261120v12';
   document.head.appendChild(autoSearchScript);
+}
+
+function mfsInitStealthGate() {
+  if (!MFS_STEALTH_PREVIEW || document.getElementById('mfsPrivateGateScript')) return;
+  var gateScript = document.createElement('script');
+  gateScript.id = 'mfsPrivateGateScript';
+  gateScript.src = MFS_REV_ROOT + 'assets/js/mfs-private-gate.js?v=20261120v12';
+  (document.body || document.head).appendChild(gateScript);
+}
+if (document.readyState === 'loading') {
+  document.addEventListener('DOMContentLoaded', mfsInitStealthGate);
+} else {
+  mfsInitStealthGate();
 }
 
 // Scratchpad Autosave (unified across Maths, English & Digital Functional Skills)
@@ -779,12 +793,12 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!document.querySelector('link[href*="mfs-video-checks.css"]')) {
       var lk = document.createElement('link');
       lk.rel = 'stylesheet';
-      lk.href = MFS_REV_ROOT + 'assets/css/mfs-video-checks.css?v=20261120v1';
+      lk.href = MFS_REV_ROOT + 'assets/css/mfs-video-checks.css?v=20261120v12';
       document.head.appendChild(lk);
     }
     if (!window.MfsVideoChecks && !document.querySelector('script[src*="mfs-video-checks.js"]')) {
       var sc = document.createElement('script');
-      sc.src = MFS_REV_ROOT + 'assets/js/mfs-video-checks.js?v=20261120v1';
+      sc.src = MFS_REV_ROOT + 'assets/js/mfs-video-checks.js?v=20261120v12';
       sc.defer = true;
       document.body.appendChild(sc);
     }

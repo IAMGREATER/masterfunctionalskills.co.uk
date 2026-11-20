@@ -5,10 +5,21 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <title>Page Not Found (404) | Master Functional Skills</title>
+  <meta name="description" content="Page not found on Master Functional Skills. Search all 332 Functional Skills Maths, English and Digital Skills guides, past papers and tools.">
   <link rel="icon" type="image/svg+xml" href="assets/img/favicon.svg">
-  <link rel="stylesheet" href="assets/css/mfs-theme.css?v=20261112v5">
-  <link rel="stylesheet" href="assets/css/mfs-mobile.css?v=20261112v5">
+  <link rel="alternate icon" href="favicon.ico">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0b172d">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="apple-mobile-web-app-title" content="MFS Skills">
+  <link rel="apple-touch-icon" href="assets/img/favicon-192x192.png">
+  <link rel="stylesheet" href="assets/css/mfs-theme.css?v=20261120v12">
+  <link rel="stylesheet" href="assets/css/mfs-mobile.css?v=20261120v12">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" />
+  <script src="assets/js/mfs-pwa.js" defer></script>
+  <script src="assets/js/mfs-tint.js?v=20261120v12"></script>
 </head>
 <body>
   <header class="mfs-navbar">
@@ -39,6 +50,7 @@
         We couldn't find that URL, or it may have moved during our latest curriculum upgrade. Jump straight to what you need below:
       </p>
       <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:12px;">
+        <button type="button" onclick="openGlobalSearch(event)" style="background:#0a0f1d; color:#38bdf8; border:2px solid #0284c7; padding:12px 20px; border-radius:10px; font-weight:800; cursor:pointer; font-family:inherit; font-size:0.98rem;"><i class="fa-solid fa-magnifying-glass"></i> Search All 332 Pages (Ctrl+K)</button>
         <a href="functional-skills-maths-level-2.html" style="background:#0284c7; color:#fff; padding:12px 20px; border-radius:10px; text-decoration:none; font-weight:800;"><i class="fa-solid fa-calculator"></i> Maths Level 2 Hub</a>
         <a href="functional-skills-english-level-2.html" style="background:#7c3aed; color:#fff; padding:12px 20px; border-radius:10px; text-decoration:none; font-weight:800;"><i class="fa-solid fa-pen-nib"></i> English Level 2 Hub</a>
         <a href="digital-functional-skills.html" style="background:#0f766e; color:#fff; padding:12px 20px; border-radius:10px; text-decoration:none; font-weight:800;"><i class="fa-solid fa-laptop-code"></i> Digital Skills Hub</a>
@@ -46,6 +58,6 @@
       </div>
     </div>
   </main>
-  <script src="assets/js/mfs-mobile.js?v=20261112v5" defer></script>
+  <script src="assets/js/mfs-mobile.js?v=20261120v12" defer></script>
 </body>
 </html>

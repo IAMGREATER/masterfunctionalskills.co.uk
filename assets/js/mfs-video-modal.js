@@ -15,12 +15,12 @@
     if (!document.querySelector('link[href*="mfs-video-checks.css"]')) {
       var lk = document.createElement('link');
       lk.rel = 'stylesheet';
-      lk.href = MODAL_ROOT + 'assets/css/mfs-video-checks.css?v=20261120v1';
+      lk.href = MODAL_ROOT + 'assets/css/mfs-video-checks.css?v=20261120v12';
       document.head.appendChild(lk);
     }
     if (!window.MfsVideoChecks && !document.querySelector('script[src*="mfs-video-checks.js"]')) {
       var sc = document.createElement('script');
-      sc.src = MODAL_ROOT + 'assets/js/mfs-video-checks.js?v=20261120v1';
+      sc.src = MODAL_ROOT + 'assets/js/mfs-video-checks.js?v=20261120v12';
       sc.defer = true;
       document.body.appendChild(sc);
     }

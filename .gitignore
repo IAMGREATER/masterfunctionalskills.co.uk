@@ -10,6 +10,17 @@ pilots/
 assets/downloads/pilots/
 inspect_samples/
 
+# Remaining internal build / QA / legacy competitor artifacts (kept locally, excluded from GitHub Pages)
+assets/youtube/pfs_watermark_*
+assets/youtube/generate_pfs_watermarks.py
+assets/downloads/inspect_samples/
+assets/downloads/build/
+/build/
+/printable-*.html
+/pass-functional-skills-reviews.html
+/build_pfs_style_flashcard_stacks.py
+/clean_site_pfs.py
+
 # Temporary test and audit scripts/artifacts in root
 scratch_*
 spilling_cards_list.json

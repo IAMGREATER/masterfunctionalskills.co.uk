@@ -1657,6 +1657,96 @@
       poster: 'assets/img/posters/aqa-english-l1-june-2023-writing-poster.jpg'
     },
 
+    // Wave 3B Part B: NCFE 2023 Maths & English L1-L2 Walkthroughs
+    'ncfe-maths-l1-2023-section-a': {
+      ytId: 'g7N0BVbBaxk',
+      title: 'NCFE Maths L1 2023 • Section A Walkthrough',
+      series: 'NCFE Functional Skills Maths Level 1',
+      tutor: 'Tutor Subi',
+      paperGroup: 'ncfe-maths-l1-2023',
+      activeSection: 'Section A',
+      companionSlug: 'ncfe-maths-l1-2023-section-b',
+      companionLabel: 'Section B: Calculator (Sonya • 4m 20s)',
+      poster: 'assets/img/posters/ncfe-maths-l1-2023-section-a-poster.jpg'
+    },
+    'ncfe-maths-l1-2023-section-b': {
+      ytId: 'lTYNaaA56Uo',
+      title: 'NCFE Maths L1 2023 • Section B Walkthrough',
+      series: 'NCFE Functional Skills Maths Level 1',
+      tutor: 'Tutor Sonya',
+      paperGroup: 'ncfe-maths-l1-2023',
+      activeSection: 'Section B',
+      companionSlug: 'ncfe-maths-l1-2023-section-a',
+      companionLabel: 'Section A: Non-Calculator (Subi • 2m 56s)',
+      poster: 'assets/img/posters/ncfe-maths-l1-2023-section-b-poster.jpg'
+    },
+    'ncfe-maths-l2-2023-section-a': {
+      ytId: 'TnSCu_YkgDE',
+      title: 'NCFE Maths L2 2023 • Section A Walkthrough',
+      series: 'NCFE Functional Skills Maths Level 2',
+      tutor: 'Tutor Emma',
+      paperGroup: 'ncfe-maths-l2-2023',
+      activeSection: 'Section A',
+      companionSlug: 'ncfe-maths-l2-2023-section-b',
+      companionLabel: 'Section B: Calculator (Subi • 4m 31s)',
+      poster: 'assets/img/posters/ncfe-maths-l2-2023-section-a-poster.jpg'
+    },
+    'ncfe-maths-l2-2023-section-b': {
+      ytId: 'Iw88HfOiweI',
+      title: 'NCFE Maths L2 2023 • Section B Walkthrough',
+      series: 'NCFE Functional Skills Maths Level 2',
+      tutor: 'Tutor Subi',
+      paperGroup: 'ncfe-maths-l2-2023',
+      activeSection: 'Section B',
+      companionSlug: 'ncfe-maths-l2-2023-section-a',
+      companionLabel: 'Section A: Non-Calculator (Emma • 2m 43s)',
+      poster: 'assets/img/posters/ncfe-maths-l2-2023-section-b-poster.jpg'
+    },
+    'ncfe-english-l1-2023-reading': {
+      ytId: 'XBvJGi4vXvc',
+      title: 'NCFE English L1 2023 • Reading Walkthrough',
+      series: 'NCFE Functional Skills English Level 1',
+      tutor: 'Tutor Sonya',
+      paperGroup: 'ncfe-english-l1-2023',
+      activeSection: 'Reading',
+      companionSlug: 'ncfe-english-l1-2023-writing',
+      companionLabel: 'Writing Walkthrough (Emma • 1m 55s)',
+      poster: 'assets/img/posters/ncfe-english-l1-2023-reading-poster.jpg'
+    },
+    'ncfe-english-l1-2023-writing': {
+      ytId: 'Jo2eYcIPCf0',
+      title: 'NCFE English L1 2023 • Writing Walkthrough',
+      series: 'NCFE Functional Skills English Level 1',
+      tutor: 'Tutor Emma',
+      paperGroup: 'ncfe-english-l1-2023',
+      activeSection: 'Writing',
+      companionSlug: 'ncfe-english-l1-2023-reading',
+      companionLabel: 'Reading Walkthrough (Sonya • 2m 20s)',
+      poster: 'assets/img/posters/ncfe-english-l1-2023-writing-poster.jpg'
+    },
+    'ncfe-english-l2-2023-reading': {
+      ytId: 'L9D4FLSD1G4',
+      title: 'NCFE English L2 Practice Paper • Reading Walkthrough',
+      series: 'NCFE Functional Skills English Level 2',
+      tutor: 'Tutor Subi',
+      paperGroup: 'ncfe-english-l2-2023',
+      activeSection: 'Reading',
+      companionSlug: 'ncfe-english-l2-2023-writing',
+      companionLabel: 'Writing Walkthrough (Sonya • 1m 55s)',
+      poster: 'assets/img/posters/ncfe-english-l2-2023-reading-poster.jpg'
+    },
+    'ncfe-english-l2-2023-writing': {
+      ytId: 'J_Ck8gxtlMQ',
+      title: 'NCFE English L2 Practice Paper • Writing Walkthrough',
+      series: 'NCFE Functional Skills English Level 2',
+      tutor: 'Tutor Sonya',
+      paperGroup: 'ncfe-english-l2-2023',
+      activeSection: 'Writing',
+      companionSlug: 'ncfe-english-l2-2023-reading',
+      companionLabel: 'Reading Walkthrough (Subi • 2m 26s)',
+      poster: 'assets/img/posters/ncfe-english-l2-2023-writing-poster.jpg'
+    },
+
     // SLC Task 1 & Task 2 Exemplar Walkthroughs
     'slc-task1-presentation-model': {
       ytId: 'l7VRzidsFno',

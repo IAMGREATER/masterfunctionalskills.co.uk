@@ -149,8 +149,8 @@ CARDS_1 = [
           </g>"""),
         "golden_rule": "Use quotation marks to search for exact multi-word terms!",
         "watch_out": "Don't put a space after the minus sign (type '-car', NOT '- car').",
-        "challenge_prompt": "What search query would you type to find exact information on NHS dental fees while excluding private dentists?",
-        "answer_text": "\"NHS dental fees\" -private (or site:nhs.uk \"dental fees\")."
+        "challenge_prompt": "What search query would you type to find exact information on council tax bands while excluding private agencies?",
+        "answer_text": "\"council tax bands\" -private (or site:gov.uk \"council tax bands\")."
     },
 
     # 6. Evaluating Search Results
@@ -171,7 +171,7 @@ CARDS_1 = [
           <g transform="translate(60, 20)">
             <rect x="0" y="0" width="340" height="130" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.8"/>
             <text x="170" y="26" font-size="12" font-weight="900" fill="#1e40af" text-anchor="middle">CHECKING WEBSITE RELIABILITY</text>
-            <text x="30" y="55" font-size="11" font-weight="800" fill="#16a34a">.gov.uk &amp; .nhs.uk: Highly authoritative</text>
+            <text x="30" y="55" font-size="11" font-weight="800" fill="#16a34a">.gov.uk: Official UK government</text>
             <text x="30" y="80" font-size="11" font-weight="700" fill="#0f172a">.ac.uk: Academic university research</text>
             <text x="30" y="105" font-size="11" font-weight="800" fill="#dc2626">Sponsored / Ad tags: Commercial promotion</text>
           </g>"""),
@@ -285,7 +285,7 @@ CARDS_1 = [
         "strand_theme": "orange",
         "dfe_code": "DFS 1.10",
         "rule_heading": "Handling Personal Data Lawfully",
-        "rule_body": "Personal data relates to an identifiable living person (names, NHS numbers, addresses). Under UK GDPR: 1. Process lawfully, fairly, and transparently. 2. Keep accurate and secure. 3. Delete when no longer required.",
+        "rule_body": "Personal data relates to an identifiable living person (names, patient IDs, addresses). Under UK GDPR: 1. Process lawfully, fairly, and transparently. 2. Keep accurate and secure. 3. Delete when no longer required.",
         "svg_html": wrap_svg("""
           <g transform="translate(60, 20)">
             <rect x="0" y="0" width="340" height="130" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>

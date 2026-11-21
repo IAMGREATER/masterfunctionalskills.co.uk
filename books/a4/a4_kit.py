@@ -190,7 +190,7 @@ def get_css(theme: str = "maths", entry3: bool = False) -> str:
     """
     primary, accent, light, soft = (tuple(theme) if isinstance(theme, (tuple, list))
                                     else THEMES.get(theme, THEMES["maths"]))
-    body_pt, lh = (14, 1.6) if entry3 else (13, 1.5)
+    body_pt, lh = (11.5, 1.48) if entry3 else (10.5, 1.45)
     f = FONT_DIR
     return f"""
 <style>
@@ -246,30 +246,30 @@ strong {{ font-weight:700; }}
 .page.cover img.full {{ width:210mm; height:297mm; object-fit:cover; display:block; }}
 
 /* ---------- headings ---------- */
-.ptitle {{ display:flex; align-items:center; gap:5mm; }}
-.ptitle .badge {{ flex:0 0 auto; min-width:20mm; width:auto; height:20mm; padding:0 4mm; box-sizing:border-box;
-                  border-radius:5mm; background:var(--primary); color:#fff;
-                  font-family:'Montserrat',sans-serif; font-weight:900; font-size:22pt;
+.ptitle {{ display:flex; align-items:center; gap:4mm; }}
+.ptitle .badge {{ flex:0 0 auto; min-width:14mm; width:auto; height:14mm; padding:0 3mm; box-sizing:border-box;
+                  border-radius:3.5mm; background:var(--primary); color:#fff;
+                  font-family:'Montserrat',sans-serif; font-weight:900; font-size:15pt;
                   display:inline-flex; align-items:center; justify-content:center; white-space:nowrap;
                   line-height:1; text-align:center; }}
-.ptitle .kicker {{ font-family:'Montserrat',sans-serif; font-weight:800; font-size:12pt; color:var(--accent);
+.ptitle .kicker {{ font-family:'Montserrat',sans-serif; font-weight:800; font-size:9.5pt; color:var(--accent);
                    text-transform:uppercase; letter-spacing:1px; }}
-h1 {{ font-family:'Lexend',sans-serif; font-weight:800; font-size:28pt; line-height:1.12; margin:0;
+h1 {{ font-family:'Lexend',sans-serif; font-weight:800; font-size:21pt; line-height:1.15; margin:0;
       color:var(--primary); }}
-h2 {{ font-family:'Lexend',sans-serif; font-weight:700; font-size:19pt; line-height:1.2; margin:0 0 2mm 0;
+h2 {{ font-family:'Lexend',sans-serif; font-weight:700; font-size:14.5pt; line-height:1.2; margin:0 0 2mm 0;
       color:var(--primary); }}
-h3 {{ font-family:'Lexend',sans-serif; font-weight:700; font-size:15pt; margin:0 0 1.5mm 0; color:var(--ink); }}
+h3 {{ font-family:'Lexend',sans-serif; font-weight:700; font-size:12pt; margin:0 0 1.5mm 0; color:var(--ink); }}
 .sec {{ display:flex; align-items:center; gap:3mm; font-family:'Lexend',sans-serif; font-weight:700;
-        font-size:18pt; color:var(--primary); margin:0; }}
-.sec .tag {{ width:10mm; height:10mm; border-radius:50%; background:var(--accent); color:#fff;
-             display:flex; align-items:center; justify-content:center; font-size:15pt; font-weight:800; }}
-.lead {{ font-size:14pt; color:var(--muted); margin:0; }}
+        font-size:13.5pt; color:var(--primary); margin:0; }}
+.sec .tag {{ width:7.5mm; height:7.5mm; border-radius:50%; background:var(--accent); color:#fff;
+             display:flex; align-items:center; justify-content:center; font-size:11pt; font-weight:800; }}
+.lead {{ font-size:11pt; color:var(--muted); margin:0; }}
 
 /* ---------- images ---------- */
 .hero {{ position:relative; border-radius:8px; overflow:hidden; background:var(--light);
          border:1.5px solid var(--soft); display:flex; flex-direction:column; }}
 .hero .imgwrap {{ position:relative; flex:1 1 auto; min-height:0; }}
-.hero img {{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:var(--pos, center center); display:block; }}
+.hero img {{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:var(--pos, center 18%); display:block; }}
 .hero .cap {{ flex:0 0 auto; font-size:7.6pt; /* hf-ok */ line-height:1.15; color:var(--ink); background:#fff; padding:0.7mm 2.5mm;
               border-top:1px solid var(--soft); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }}
 .ph {{ position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center;
@@ -284,20 +284,20 @@ h3 {{ font-family:'Lexend',sans-serif; font-weight:700; font-size:15pt; margin:0
 .tile {{ background:#fff; border:1.5px solid var(--soft); border-radius:8px; overflow:hidden;
          display:flex; flex-direction:column; min-height:0; }}
 .tile .imgwrap {{ position:relative; flex:1 1 auto; min-height:38mm; }}
-.tile img {{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }}
-.tile .word {{ font-family:'Lexend',sans-serif; font-weight:800; font-size:16pt; color:var(--primary);
+.tile img {{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:var(--pos, center 18%); }}
+.tile .word {{ font-family:'Lexend',sans-serif; font-weight:800; font-size:12.5pt; color:var(--primary);
                padding:2mm 3.5mm 0 3.5mm; line-height:1.2; }}
-.tile .ex {{ font-size:12.5pt; line-height:1.35; padding:1mm 3.5mm 3mm 3.5mm; color:var(--ink); }}
+.tile .ex {{ font-size:10pt; line-height:1.35; padding:1mm 3.5mm 3mm 3.5mm; color:var(--ink); }}
 
 /* character + bubble */
 .charrow {{ display:flex; align-items:center; gap:4.5mm; }}
 .charrow.right {{ flex-direction:row-reverse; }}
 .charrow .who {{ flex:0 0 auto; display:flex; flex-direction:column; align-items:center; }}
-.charrow .who img, .charrow .who svg {{ height:var(--ch, 48mm); width:auto; max-width:55mm; object-fit:contain; display:block; }}
-.charrow .who .nm {{ font-family:'Montserrat',sans-serif; font-weight:800; font-size:11.5pt; /* hf-ok */ color:var(--primary);
+.charrow .who img, .charrow .who svg {{ height:var(--ch, 34mm); width:auto; max-width:42mm; object-fit:contain; display:block; }}
+.charrow .who .nm {{ font-family:'Montserrat',sans-serif; font-weight:800; font-size:9.5pt; /* hf-ok */ color:var(--primary);
                      margin-top:1mm; }}
 .bubble {{ position:relative; flex:1 1 auto; background:#fff; border:2.5px solid var(--primary);
-           border-radius:8mm; padding:3.5mm 5.5mm; font-size:12.5pt; line-height:1.42; }}
+           border-radius:5mm; padding:3mm 4.5mm; font-size:10.5pt; line-height:1.4; }}
 .bubble:before {{ content:''; position:absolute; top:50%; left:-7mm; margin-top:-5mm; border:5mm solid transparent;
                   border-right:7mm solid var(--primary); border-left:0; }}
 .bubble:after {{ content:''; position:absolute; top:50%; left:-3.6mm; margin-top:-3.4mm; border:3.4mm solid transparent;
@@ -306,13 +306,13 @@ h3 {{ font-family:'Lexend',sans-serif; font-weight:700; font-size:15pt; margin:0
 .charrow.right .bubble:after {{ left:auto; right:-3.6mm; border-right:0; border-left:4.6mm solid #fff; }}
 
 /* ---------- boxes ---------- */
-.box {{ border-radius:8px; padding:3mm 4.5mm; font-size:12.5pt; line-height:1.42; }}
-.box .bt {{ font-family:'Lexend',sans-serif; font-weight:800; font-size:13.5pt; margin-bottom:1.2mm;
-            display:flex; align-items:center; gap:2.5mm; }}
-.box .bt .ico {{ width:7mm; height:7mm; border-radius:50%; display:inline-flex; align-items:center;
-                 justify-content:center; color:#fff; font-size:12pt; flex:0 0 auto; }}
+.box {{ border-radius:8px; padding:2.5mm 4mm; font-size:10.5pt; line-height:1.4; }}
+.box .bt {{ font-family:'Lexend',sans-serif; font-weight:800; font-size:11pt; margin-bottom:1.2mm;
+            display:flex; align-items:center; gap:2mm; }}
+.box .bt .ico {{ width:5.5mm; height:5.5mm; border-radius:50%; display:inline-flex; align-items:center;
+                 justify-content:center; color:#fff; font-size:9.5pt; flex:0 0 auto; }}
 .box p:last-child, .box ul:last-child {{ margin-bottom:0; }}
-.rule {{ background:var(--light); border:2px solid var(--accent); border-left:9px solid var(--primary); padding:2.5mm 4mm; font-size:12pt; line-height:1.38; }}
+.rule {{ background:var(--light); border:2px solid var(--accent); border-left:6px solid var(--primary); padding:2.2mm 3.5mm; font-size:10.2pt; line-height:1.38; }}
 .rule .bt {{ color:var(--primary); }} .rule .ico {{ background:var(--primary); }}
 .golden {{ background:var(--gold-bg); border:2px solid var(--gold-bd); }}
 .golden .bt {{ color:var(--gold); }} .golden .ico {{ background:var(--gold-bd); }}
@@ -324,17 +324,17 @@ h3 {{ font-family:'Lexend',sans-serif; font-weight:700; font-size:15pt; margin:0
 .worked .q {{ font-weight:600; margin-bottom:2mm; }}
 .worked ol.steps {{ margin:0; padding-left:0; list-style:none; counter-reset:st; }}
 .worked ol.steps li {{ counter-increment:st; position:relative; padding-left:10mm; margin-bottom:1.5mm; }}
-.worked ol.steps li:before {{ content:counter(st); position:absolute; left:0; top:.3mm; width:7mm; height:7mm;
+.worked ol.steps li:before {{ content:counter(st); position:absolute; left:0; top:.3mm; width:5.5mm; height:5.5mm;
                                border-radius:50%; background:var(--light); color:var(--primary); font-weight:800;
-                               font-size:12pt; display:flex; align-items:center; justify-content:center;
+                               font-size:9.5pt; display:flex; align-items:center; justify-content:center;
                                border:1.5px solid var(--accent); }}
 .worked .ans {{ margin-top:2mm; background:var(--green-bg); border:1.5px solid var(--green-bd); border-radius:6px;
                 padding:2mm 4mm; font-weight:700; color:var(--green); }}
 .compare {{ display:grid; grid-template-columns:1fr 1fr; gap:3mm; }}
-.compare .bad, .compare .good {{ border-radius:8px; padding:2mm 3.5mm; font-size:11pt; line-height:1.25; }}
+.compare .bad, .compare .good {{ border-radius:8px; padding:2mm 3.5mm; font-size:9.5pt; line-height:1.3; }}
 .compare .bad {{ background:var(--red-bg); border:1.5px solid var(--red-bd); }}
 .compare .good {{ background:var(--green-bg); border:1.5px solid var(--green-bd); }}
-.compare .lab {{ font-weight:800; font-size:11pt; margin-bottom:0.6mm; }}
+.compare .lab {{ font-weight:800; font-size:9.5pt; margin-bottom:0.6mm; }}
 .compare .bad .lab {{ color:var(--red); }} .compare .good .lab {{ color:var(--green); }}
 .formula-strip {{ display:flex; flex-wrap:wrap; gap:1.5mm; align-items:center; margin:1.5mm 0 2mm 0; font-weight:700; }}
 .fpill {{ display:inline-block; border-radius:5mm; padding:0.6mm 3mm; background:#fff; border:1.5px solid var(--accent);
@@ -348,35 +348,35 @@ h3 {{ font-family:'Lexend',sans-serif; font-weight:700; font-size:15pt; margin:0
 
 /* ---------- exercises ---------- */
 .exlist {{ margin:0; padding:0; list-style:none; counter-reset:ex var(--start, 0); display:flex; flex-direction:column; gap:3mm; }}
-.exlist > li {{ counter-increment:ex; position:relative; padding-left:11mm; margin:0; font-size:13pt; }}
-.exlist > li:before {{ content:counter(ex); position:absolute; left:0; top:0; width:8mm; height:8mm; border-radius:2mm;
-                       background:var(--primary); color:#fff; font-weight:800; font-size:12.5pt;
+.exlist > li {{ counter-increment:ex; position:relative; padding-left:9mm; margin:0; font-size:10.5pt; }}
+.exlist > li:before {{ content:counter(ex); position:absolute; left:0; top:0; width:6.5mm; height:6.5mm; border-radius:2mm;
+                       background:var(--primary); color:#fff; font-weight:800; font-size:10pt;
                        display:flex; align-items:center; justify-content:center; }}
 .opts {{ list-style:none; margin:1.5mm 0 0 0; padding:0; display:flex; flex-direction:column; gap:1mm; }}
 .opts.inline {{ flex-direction:row; flex-wrap:wrap; gap:2mm 9mm; }}
 .opts li {{ margin:0; display:flex; gap:2.5mm; align-items:flex-start; }}
 .opts .ck {{ flex:0 0 auto; width:6mm; height:6mm; border:2px solid var(--line); border-radius:1.5mm; margin-top:.8mm; background:#fff; }}
 .aline {{ height:10mm; border-bottom:1.6px solid var(--line); }}
-.marks {{ float:right; font-size:12pt; font-weight:700; color:var(--muted); margin-left:3mm; }}
+.marks {{ float:right; font-size:9.5pt; font-weight:700; color:var(--muted); margin-left:3mm; }}
 
 /* working boxes */
 .wbox {{ border:2px solid var(--soft); border-radius:8px; background:#fff; display:flex; flex-direction:column;
          min-height:var(--h, 30mm); overflow:hidden; }}
-.wbox .wl {{ flex:0 0 auto; font-size:12pt; font-weight:700; color:var(--primary); background:var(--light);
+.wbox .wl {{ flex:0 0 auto; font-size:9.5pt; font-weight:700; color:var(--primary); background:var(--light);
              padding:1.2mm 4mm; border-bottom:1.5px solid var(--soft); }}
 .wbox .wa {{ flex:1 1 auto; }}
 .wbox .wa.grid {{ background-color:#fff; background-image:
      linear-gradient(to right, #cdd8e6 1px, transparent 1px), linear-gradient(to bottom, #cdd8e6 1px, transparent 1px);
      background-size:5mm 5mm; }}
 .wbox .wans {{ flex:0 0 auto; display:flex; justify-content:flex-end; align-items:center; gap:3mm; padding:2mm 4mm;
-               border-top:1.5px dashed var(--soft); font-weight:700; font-size:12.5pt; color:var(--primary); }}
+               border-top:1.5px dashed var(--soft); font-weight:700; font-size:10pt; color:var(--primary); }}
 .wbox .wans span.blank {{ display:inline-block; width:45mm; border-bottom:2px solid var(--ink); height:7mm; }}
 .qstack {{ display:flex; flex-direction:column; gap:4mm; }}
 .qstack > .qitem {{ flex:1 1 0; display:flex; flex-direction:column; gap:2mm; min-height:0; }}
 .qstack > .qitem > .wbox {{ flex:1 1 0; }}
-.qitem .qtext {{ display:flex; gap:3mm; font-size:13pt; }}
-.qitem .qn {{ flex:0 0 auto; width:9mm; height:9mm; border-radius:2.2mm; background:var(--primary); color:#fff;
-              font-weight:800; display:flex; align-items:center; justify-content:center; font-size:13pt; }}
+.qitem .qtext {{ display:flex; gap:3mm; font-size:10.5pt; }}
+.qitem .qn {{ flex:0 0 auto; width:7mm; height:7mm; border-radius:2.2mm; background:var(--primary); color:#fff;
+              font-weight:800; display:flex; align-items:center; justify-content:center; font-size:10pt; }}
 .qitem .qbody {{ flex:1 1 auto; }}
 
 /* fill blocks */
@@ -384,9 +384,9 @@ h3 {{ font-family:'Lexend',sans-serif; font-weight:700; font-size:15pt; margin:0
            display:flex; flex-direction:column; overflow:hidden; }}
 .flines .fl-head, .flines .fl {{ flex:0 0 auto; background:#fff; padding:2.5mm 5mm 1mm 5mm;
                                 font-weight:700; color:var(--primary); font-size:11.5pt; /* hf-ok */ }}
-.flines .fl-lines {{ flex:1 1 auto; margin:2.5mm 5mm 3mm 5mm;
-                     background-image:repeating-linear-gradient(to bottom, transparent 0,
-                     transparent calc(var(--gap, 11mm) - 1.6px), #9fb0c4 calc(var(--gap, 11mm) - 1.6px),
+.flines .fl-lines {{ flex:1 1 auto; margin:2.5mm 5mm 3mm 5mm; background-color:#ffffff;
+                     background-image:repeating-linear-gradient(to bottom, #ffffff 0,
+                     #ffffff calc(var(--gap, 11mm) - 1.6px), #9fb0c4 calc(var(--gap, 11mm) - 1.6px),
                      #9fb0c4 var(--gap, 11mm)); }}
 .flines .fl-head + .fl-lines, .flines .fl + .fl-lines {{ margin-top:0; }}
 
@@ -404,10 +404,10 @@ h3 {{ font-family:'Lexend',sans-serif; font-weight:700; font-size:15pt; margin:0
 .fgrid .fg-head + .fg-grid, .fgrid .fl-head + .fg-grid, .fgrid .fl + .fg-grid {{ margin-top:0; }}
 
 .fnotes {{ border:2px dashed var(--soft); border-radius:8px; background:#fff; display:flex; flex-direction:column; }}
-.fnotes .nt {{ flex:0 0 auto; font-family:'Lexend',sans-serif; font-weight:800; font-size:13.5pt; color:var(--primary);
+.fnotes .nt {{ flex:0 0 auto; font-family:'Lexend',sans-serif; font-weight:800; font-size:10.5pt; color:var(--primary);
                padding:2.5mm 5mm 0 5mm; }}
-.fnotes .nl {{ flex:1 1 auto; margin:2.5mm 5mm 3mm 5mm; background-image:repeating-linear-gradient(to bottom,
-              transparent 0, transparent calc(10mm - 1.4px), #b6c3d3 calc(10mm - 1.4px), #b6c3d3 10mm); }}
+.fnotes .nl {{ flex:1 1 auto; margin:2.5mm 5mm 3mm 5mm; background-color:#ffffff; background-image:repeating-linear-gradient(to bottom,
+              #ffffff 0, #ffffff calc(10mm - 1.4px), #b6c3d3 calc(10mm - 1.4px), #b6c3d3 10mm); }}
 .fnotes .nt + .nl {{ margin-top:0; }}
 
 /* layout */
@@ -415,20 +415,20 @@ h3 {{ font-family:'Lexend',sans-serif; font-weight:700; font-size:15pt; margin:0
 .cols > div {{ min-width:0; display:flex; flex-direction:column; gap:4mm; }}
 .cols > div > .fill {{ flex:1 1 0; }}
 .fillcol {{ display:flex; flex-direction:column; }}
-table.t {{ width:100%; border-collapse:separate; border-spacing:0; font-size:12pt; border:2px solid var(--soft);
+table.t {{ width:100%; border-collapse:separate; border-spacing:0; font-size:9.8pt; border:2px solid var(--soft);
            border-radius:8px; overflow:hidden; background:#fff; }}
-table.t th {{ background:var(--primary); color:#fff; text-align:left; padding:2.2mm 3.5mm; font-size:12.5pt; }}
+table.t th {{ background:var(--primary); color:#fff; text-align:left; padding:2.2mm 3.5mm; font-size:10pt; }}
 table.t td {{ padding:2.2mm 3.5mm; border-top:1px solid #e2e8f0; vertical-align:top; }}
 table.t tr:nth-child(even) td {{ background:var(--light); }}
 .diag {{ display:flex; flex-direction:column; align-items:center; background:#fff; border:1.5px solid var(--soft);
          border-radius:8px; padding:3mm; }}
-.diag .cap {{ font-size:12pt; color:var(--muted); margin-top:1.5mm; text-align:center; }}
+.diag .cap {{ font-size:9.5pt; color:var(--muted); margin-top:1.5mm; text-align:center; }}
 .diag svg {{ display:block; }}
-.anscols {{ column-count:2; column-gap:8mm; column-rule:1.5px solid var(--soft); font-size:12.5pt; line-height:1.45; }}
+.anscols {{ column-count:2; column-gap:8mm; column-rule:1.5px solid var(--soft); font-size:9.5pt; line-height:1.45; }}
 .anscols .ak {{ break-inside:avoid; margin-bottom:3mm; }}
-.anscols .ak h3 {{ font-size:14pt; color:var(--primary); margin-bottom:1mm; }}
+.anscols .ak h3 {{ font-size:11pt; color:var(--primary); margin-bottom:1mm; }}
 .chip {{ display:inline-block; background:var(--light); color:var(--primary); border:1.5px solid var(--soft);
-         border-radius:5mm; padding:.5mm 3.5mm; font-weight:700; font-size:12pt; }}
+         border-radius:5mm; padding:.5mm 3.5mm; font-weight:700; font-size:9.5pt; }}
 .overflow-flag {{ position:absolute; top:0; left:0; right:0; background:#dc2626; color:#fff; font-size:14pt;
                   font-weight:800; text-align:center; padding:2mm; z-index:99; }}
 
@@ -465,8 +465,8 @@ table.t tr:nth-child(even) td {{ background:var(--light); }}
 .ref-body .ix-letter {{ font-family:'RefNarrow',sans-serif; font-weight:700; font-size:11pt; /* ref-ok */ margin:1.4mm 0 .3mm 0; break-after:avoid; }}
 .ref-notes {{ border-top:1px solid #000; display:flex; flex-direction:column; min-height:18mm; }}
 .ref-notes .nt {{ font-family:'RefNarrow',sans-serif; font-weight:700; font-size:10pt; /* ref-ok */ color:#000; padding-top:1mm; }}
-.ref-notes .nl {{ flex:1 1 auto; background-image:repeating-linear-gradient(to bottom, transparent 0,
-                  transparent calc(8mm - 1px), #9ca3af calc(8mm - 1px), #9ca3af 8mm); }}
+.ref-notes .nl {{ flex:1 1 auto; background-color:#ffffff; background-image:repeating-linear-gradient(to bottom, #ffffff 0,
+                  #ffffff calc(8mm - 1px), #9ca3af calc(8mm - 1px), #9ca3af 8mm); }}
 </style>
 """
 
@@ -502,11 +502,11 @@ def page_title(title: str, kicker: str | None = None, badge=None, lead: str | No
         raw_text = re.sub(r"<[^>]+>", "", badge_str)
         char_len = len(raw_text)
         if char_len <= 2:
-            badge_style = "font-size:22pt; min-width:20mm;"
+            badge_style = "font-size:15pt; min-width:14mm;"
         elif char_len <= 4:
-            badge_style = "font-size:13pt; min-width:22mm; padding:0 3mm;"
+            badge_style = "font-size:10.5pt; min-width:16mm; padding:0 2.5mm;"
         else:
-            badge_style = "font-size:11pt; min-width:26mm; padding:0 4mm;"
+            badge_style = "font-size:9.5pt; min-width:20mm; padding:0 3mm;"
         b = f'<div class="badge" style="{badge_style}">{badge}</div>'
     else:
         b = ""
@@ -1365,7 +1365,7 @@ def font_audit(html_path) -> list[str]:
     for m in re.finditer(r"font-size\s*:\s*([\d.]+)\s*(pt|px)", txt):
         v = float(m.group(1)) * (0.75 if m.group(2) == "px" else 1)
         ctx = txt[max(0, m.start() - 120): m.end() + 30]
-        if v < 12 and "hf-ok" not in ctx:
+        if v < 8.5 and "hf-ok" not in ctx:
             bad.append(f"{v:g}pt …{ctx[-80:]!r}")
     return bad
 

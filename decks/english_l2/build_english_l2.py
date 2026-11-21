@@ -74,7 +74,7 @@ CARDS_A = [
             <text x="15" y="101" font-size="10.5" font-weight="700" fill="#0f172a">• Conversational phrases</text>
           </g>"""),
         "golden_rule": "Identify the target audience by examining vocabulary level and formatting cues!",
-        "watch_out": "Don't just say 'the general public' if the text specifically addresses car owners, NHS staff, or homeowners.",
+        "watch_out": "Don't just say 'the general public' if the text specifically addresses car owners, healthcare workers, or homeowners.",
         "challenge_prompt": "A leaflet contains the sentence: 'All clinical practitioners must submit quarterly appraisal forms via the intranet.' Who is the intended audience?",
         "answer_text": "The intended audience is clinical medical staff / healthcare employees."
     },

@@ -1551,11 +1551,11 @@
       series: 'Pearson Edexcel Functional Skills English Level 1',
       tutor: 'Tutor Sonya',
       companionSlug: 'edexcel-english-l1-past-paper-10-writing',
-      companionLabel: 'Writing Past Paper 10 (2m 24s)',
+      companionLabel: 'Writing Past Paper 10 (9m 02s)',
       poster: 'assets/img/posters/eng-l1-p10-reading-poster.jpg'
     },
     'edexcel-english-l1-past-paper-10-writing': {
-      ytId: 'NT14nZ6msPI',
+      ytId: 'lCmXSlwsCCw',
       title: 'English L1 Past Paper 10 • Writing Walkthrough',
       series: 'Pearson Edexcel Functional Skills English Level 1',
       tutor: 'Tutor Subi',
@@ -1570,14 +1570,36 @@
       title: 'Open Awards English L2 • Reading SAM Walkthrough',
       series: 'Open Awards Functional Skills English Level 2',
       tutor: 'Tutor Emma',
+      companionSlug: 'open-awards-english-l2-writing-sam',
+      companionLabel: 'Writing SAM (9m 52s)',
       poster: 'assets/img/posters/oa-eng-l2-reading-sam-poster.jpg'
+    },
+    'open-awards-english-l2-writing-sam': {
+      ytId: '8CZk4y8KY14',
+      title: 'Open Awards English L2 • Writing SAM Walkthrough',
+      series: 'Open Awards Functional Skills English Level 2',
+      tutor: 'Tutor Sonya',
+      companionSlug: 'open-awards-english-l2-reading-sam',
+      companionLabel: 'Reading SAM (11m 58s)',
+      poster: 'assets/img/posters/oa-eng-l2-writing-sam-poster.jpg'
     },
     'open-awards-english-l1-reading-sam': {
       ytId: 'ge0u2x69O5M',
       title: 'Open Awards English L1 • Reading SAM Walkthrough',
       series: 'Open Awards Functional Skills English Level 1',
       tutor: 'Tutor Subi',
+      companionSlug: 'open-awards-english-l1-writing-sam',
+      companionLabel: 'Writing SAM (9m 23s)',
       poster: 'assets/img/posters/oa-eng-l1-reading-sam-poster.jpg'
+    },
+    'open-awards-english-l1-writing-sam': {
+      ytId: 'ly0tZXBz9ug',
+      title: 'Open Awards English L1 • Writing SAM Walkthrough',
+      series: 'Open Awards Functional Skills English Level 1',
+      tutor: 'Tutor Emma',
+      companionSlug: 'open-awards-english-l1-reading-sam',
+      companionLabel: 'Reading SAM (11m 40s)',
+      poster: 'assets/img/posters/oa-eng-l1-writing-sam-poster.jpg'
     },
     'open-awards-maths-l1-mock-3-section-a': {
       ytId: 'hPYY2Wt3Ey4',

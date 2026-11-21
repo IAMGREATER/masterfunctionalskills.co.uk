@@ -1384,7 +1384,11 @@ def build_maths_l1_workbook():
          ])
     ]
     for cs_idx, (cs_title, cs_desc, cs_tasks) in enumerate(case_studies):
-        cs_photo = WORKBOOK_WIDE_POOL[(28 + cs_idx) % len(WORKBOOK_WIDE_POOL)]
+        cs_photo = [
+            "generated_phase3/maths_l1_comp/bar_chart_retail.jpg",
+            "generated_phase3/maths_l1_comp/line_graph_energy.jpg",
+            "generated_phase3/maths_l1_comp/pie_chart_budget.jpg",
+        ][cs_idx % 3]
         spec_box = K.box_html(f"<p style='margin:0 0 1mm 0;font-size:9.4pt;line-height:1.3;'>{cs_desc}</p><p style='margin:0;font-size:8.8pt;color:var(--primary);'>Use the data provided to complete the calculation tasks below.</p>", "Project Specification")
         cs_body_1 = (
             K.page_title(f"Case Study {cs_idx+1}: {cs_title}", kicker="Synoptic Real-World Problem", badge=f"CS{cs_idx+1}")

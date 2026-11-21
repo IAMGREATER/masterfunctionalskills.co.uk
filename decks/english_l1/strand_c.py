@@ -26,7 +26,7 @@ CARDS = [ { 'answer_text': "'Last Monday, I went to Birmingham with my sister An
                 '            <text x="30" y="72" font-size="10.5" font-weight="800" fill="#0f172a">I - The pronoun: '
                 "'I' (NEVER lower case 'i')</text>\n"
                 '            <text x="30" y="92" font-size="10.5" font-weight="800" fill="#0f172a">N - Names: David, '
-                'Manchester, NHS</text>\n'
+                'Manchester, BBC</text>\n'
                 '            <text x="30" y="112" font-size="10.5" font-weight="800" fill="#059669">S - Start of every '
                 'new sentence</text>\n'
                 '          </g>\n'

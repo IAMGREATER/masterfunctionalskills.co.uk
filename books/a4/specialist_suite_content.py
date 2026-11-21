@@ -955,7 +955,7 @@ DIGITAL_SKILLS_UNITS = [
             "<ul style='margin:4px 0 6px 16px; padding:0;'>"
             "<li><b>C &bull; Currency:</b> When was the page published or updated? (Is the information still current, or has the law changed?)</li>"
             "<li><b>R &bull; Relevance:</b> Does the information directly answer your workplace question?</li>"
-            "<li><b>A &bull; Authority:</b> Who wrote it? Is the author an expert, an official organisation (like GOV.UK or the NHS), or an unverified social media account?</li>"
+            "<li><b>A &bull; Authority:</b> Who wrote it? Is the author an expert, an official organisation (like GOV.UK or verified health agencies), or an unverified social media account?</li>"
             "<li><b>A &bull; Accuracy:</b> Are the facts supported by evidence, official data, or links to primary sources?</li>"
             "<li><b>P &bull; Purpose:</b> Why does this page exist? Is it to inform and educate you, or is it trying to sell you a product, collect your data, or push a biased opinion?</li>"
             "</ul>"
@@ -963,12 +963,12 @@ DIGITAL_SKILLS_UNITS = [
         "steps": [
             "Decide on the exact topic and key terms you need before you start typing.",
             "Use quotation marks around key phrases (e.g. <code>&quot;statutory sick pay&quot;</code>) to eliminate irrelevant results.",
-            "Add domain filters like <code>site:.gov.uk</code> or <code>site:.nhs.uk</code> to find official, trustworthy information.",
+            "Add domain filters like <code>site:.gov.uk</code> or verified clinical domains to find official, trustworthy information.",
             "Skip the first few results marked 'Sponsored' or 'Ad'—these are paid commercial adverts, not official guidance.",
             "Compare information across at least two independent, reliable websites before quoting facts in your work."
         ],
         "drill": "Scenario: A colleague tells you that a viral social media video claims the UK legal minimum wage for apprentices is increasing to £15 per hour next month. Write an exact search query using operators to verify this, state which domain type (.com, .gov.uk, or .org) is most authoritative, and explain two reasons why social media claims should never be trusted without verification.",
-        "trap": "Examiner Trap: Quoting commercial sales websites (.com) or marketing blogs as official evidence in an exam. For legal, employment, or medical questions, always rely on verified public sector sources (.gov.uk or .nhs.uk)!",
+        "trap": "Examiner Trap: Quoting commercial sales websites (.com) or marketing blogs as official evidence in an exam. For legal, employment, or public health questions, always rely on verified public sector sources (such as .gov.uk or .ac.uk)!",
         "questions": [
             ('What happens when you put quotation marks around search words (e.g. "maternity leave rights")?', "A) The words are translated into French", "B) The search engine searches only for that exact phrase in that order", "C) The search engine ignores those words", "D) It turns off your search history", "B"),
             ("Which web address domain is the most trustworthy source for UK government legislation?", "A) .com", "B) .gov.uk", "C) .net", "D) .biz", "B"),
@@ -1218,10 +1218,10 @@ DIGITAL_SKILLS_UNITS = [
         "theory": (
             "<p><b>Accessing Public Services Online:</b> In the UK, public and government services are designed to be accessed online to make services faster and reduce paperwork. "
             "Examples include <b>GOV.UK</b> (for renewing a passport, applying for Universal Credit, taxing a vehicle, or checking your state pension), "
-            "the <b>NHS App</b> (for ordering repeat prescriptions, booking appointments, and viewing medical records), and local <b>Council websites</b> (for paying Council Tax and parking permits).</p>"
+            "the <b>Community Health Portal</b> (for ordering repeat prescriptions, booking appointments, and viewing medical records), and local <b>Council websites</b> (for paying Council Tax and parking permits).</p>"
             "<p><b>Spotting Official Websites vs Copycat Scams:</b><br>"
             "&bull; <b>Official UK Government websites strictly end in <code>.gov.uk</code></b>.<br>"
-            "&bull; <b>Official NHS websites strictly end in <code>.nhs.uk</code></b>.<br>"
+            "&bull; <b>Official education and council portals use verified <code>.ac.uk</code> or <code>.gov.uk</code> domains</b>.<br>"
             "<i>Watch out for copycat websites:</i> If you search Google for services like 'renew driving licence' or 'apply for a UK passport', the top sponsored results are often private commercial companies. "
             "These websites look very official, but they charge you £30 to £80 in extra 'administration fees' just to forward your form to the government! "
             "<i>Golden Rule:</i> Always check that the web address ends in <code>.gov.uk</code> where government services are free or charged only at the legal statutory fee.</p>"
@@ -1231,7 +1231,7 @@ DIGITAL_SKILLS_UNITS = [
             "&bull; <b>Document Uploads:</b> You will often need to upload proof of identity (like a photo of your passport, driving licence, or utility bill). Make sure files are clear, saved in a standard format (<code>.pdf</code> or <code>.jpg</code>), and within the maximum file size limit (usually under 5 MB).</p>"
         ),
         "steps": [
-            "Verify the website address ends in <code>.gov.uk</code> or <code>.nhs.uk</code> before beginning any application.",
+            "Verify the website address ends in <code>.gov.uk</code> or an accredited public portal domain before beginning any application.",
             "Log in using your verified government gateway credentials or register a secure account with a strong passphrase.",
             "Fill in each section of the form methodically, reading all guidance notes carefully.",
             "If an error message appears in red, read the feedback and correct the formatting (e.g. check postcode spacing).",
@@ -1306,7 +1306,7 @@ DIGITAL_SKILLS_MOCKS = [
         "tasks": [
             "Task 1 (File Hierarchy & Storage Architecture): Create a logical 3-tier folder structure for clinic documents across 3 medical departments (General Practice, Phlebotomy, Physiotherapy). Write standard file names using dates and version numbers, and explain why patient files must be stored on secure cloud drives rather than on the local Desktop.",
             "Task 2 (Word Processing & Document Layout): Format a 2-page Patient Services Welcome Guide in Microsoft Word. Apply Heading 1 and Heading 2 styles, insert an automatic Table of Contents, format an accessible appointment clinic schedule table with a bold header row, and add descriptive Alt-Text to the practice logo.",
-            "Task 3 (Information Verification & Research): Research official NHS guidance on adult seasonal flu vaccination eligibility. Formulate two search queries using operators (including site:.nhs.uk), identify two trusted health domains, and apply the CRAAP test to evaluate source reliability.",
+            "Task 3 (Information Verification & Research): Research official UK public health guidance on adult seasonal flu vaccination eligibility. Formulate two search queries using operators (including site:.gov.uk), identify two trusted health domains, and apply the CRAAP test to evaluate source reliability.",
             "Task 4 (Professional Email & Data Privacy): Draft a formal email to 40 eligible patients inviting them to book a vaccination appointment. Correctly allocate addresses across To, CC, and BCC fields to prevent unlawful data disclosure under UK GDPR, and attach an encrypted PDF clinic map."
         ]
     },

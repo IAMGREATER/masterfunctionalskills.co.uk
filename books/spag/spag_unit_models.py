@@ -63,8 +63,8 @@ L1_MODELS = {
         "reinforce": [
             ("Fix the incomplete bullet point fragment: <em>'• more recycling bins in canteen'</em>",
              "• Place additional recycling bins in the college canteen."),
-            ("Correct the acronym and capitalisation: <em>'the nhs trust and the dfe published new safety advice.'</em>",
-             "The Regional Healthcare and the DfE published new safety advice.")
+            ("Correct the acronym and capitalisation: <em>'the bbc news and the dfe published new safety advice.'</em>",
+             "The BBC News and the DfE published new safety advice.")
         ]
     },
     5: {

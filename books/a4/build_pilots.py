@@ -142,7 +142,7 @@ def spag_pilot():
         "Fore-": ("forecast", "The sales <b>forecast</b> for May looks good.", "forecast chart graph"),
         "Mal-": ("malfunction", "The printer had a <b>malfunction</b> again.", "broken printer repair"),
         "Mis-": ("miscalculate", "Don't <b>miscalculate</b> the delivery cost.", "calculator receipt"),
-        "Multi-": ("multidisciplinary", "A <b>multidisciplinary</b> NHS team met today.", "hospital nurse doctor team"),
+        "Multi-": ("multidisciplinary", "A <b>multidisciplinary</b> hospital team met today.", "hospital nurse doctor team"),
     }
     tiles = []
     for pre, meaning, _ex, _ctx in vm["table_rows"]:

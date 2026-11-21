@@ -290,7 +290,7 @@ MATHS_L2_MOCKS = [
                       "Each dispensary bottle takes <sup>3</sup>/<sub>8</sub> of a litre. "
                       "How many full dispensary bottles can be prepared?",
                  "marks": 4, "weight": 1.1},
-                {"q": "<b>Question 4:</b> A batch of medical monitoring units is purchased at &pound;720.00 following a 20% NHS procurement discount. "
+                {"q": "<b>Question 4:</b> A batch of medical monitoring units is purchased at &pound;720.00 following a 20% clinic procurement discount. "
                       "What was the original cost before the discount? Show an inverse check.",
                  "marks": 4, "weight": 1.1}
             ],

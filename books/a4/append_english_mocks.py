@@ -23,7 +23,7 @@ ENGLISH_L2_MOCKS = [
             "<i>By Dr Helen Vance, Senior Fellow in Public Health &bull; Published 14 May 2024</i></p>"
             "<p>Air pollution remains the largest environmental health risk in the United Kingdom today. "
             "According to the UK Health Security Agency, long-term exposure to toxic airborne emissions contributes to approximately "
-            "36,000 premature deaths annually, placing an overwhelming burden of &pound;20 billion upon NHS hospital wards and primary clinics. "
+            "36,000 premature deaths annually, placing an overwhelming burden of &pound;20 billion upon public hospital wards and primary clinics. "
             "Urban centres, where diesel heavy-goods vehicles and idling commuter cars congregate daily, endure dangerous spikes in "
             "nitrogen dioxide (NO<sub>2</sub>) and microscopic fine particulate matter (PM<sub>2.5</sub>).</p>"
             "<p>The implementation of Clean Air Zones (CAZs) in cities such as Birmingham, Bristol, and London has produced undeniably positive results. "

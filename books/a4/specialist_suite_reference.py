@@ -547,7 +547,7 @@ DIGITAL_SKILLS_SOLUTIONS = {
          "<b>Knowledge Check Answers:</b> 1: B (Secure encrypted connection) &bull; 2: B (Bank verifies transaction via app/SMS) &bull; 3: B (Does not reveal card numbers to seller)."),
 
         ("Unit 9 &bull; Public Digital Services &amp; GOV.UK Portals Solution",
-         "<b>Official Domain:</b> Official UK government services strictly end in <code>.gov.uk</code>; official NHS services end in <code>.nhs.uk</code>.<br>"
+         "<b>Official Domain:</b> Official UK government and council services strictly end in <code>.gov.uk</code>.<br>"
          "<b>Avoiding Copycat Scams:</b> Never use commercial third-party websites that charge £30–£80 'admin fees' for services that are free or standard price on GOV.UK.<br>"
          "<b>Form Completion:</b> Fill in mandatory fields marked with a red asterisk (*); correct data formatting errors highlighted in red (e.g. postcode spacing).<br>"
          "<b>Document Uploads:</b> Upload clear, readable photos or PDF scans of required proof-of-identity documents within allowed file size limits (under 5 MB).<br>"
@@ -565,7 +565,7 @@ DIGITAL_SKILLS_SOLUTIONS = {
         ("Mock 1 &bull; Medical Practice Administrative Operations Solution",
          "<b>Task 1 (Hierarchy &amp; Storage):</b> Created 3 subfolders: <code>01_General_Practice</code>, <code>02_Phlebotomy</code>, <code>03_Physiotherapy</code>. Named files using ISO format (e.g. <code>2026-10-25_Patient_Guide_v1.docx</code>). Storing on secure cloud servers protects confidential data and complies with healthcare governance.<br>"
          "<b>Task 2 (Word Processing):</b> Applied Heading 1 to primary topics, Heading 2 to sub-sections, generated automatic Table of Contents, formatted 4-column appointment schedule table with bold header row, and added descriptive Alt-Text to clinic logo.<br>"
-         "<b>Task 3 (Research &amp; CRAAP):</b> Formulated query <code>&quot;flu vaccine eligibility&quot; site:.nhs.uk</code>; verified source currency and authority directly from NHS guidance.<br>"
+         "<b>Task 3 (Research &amp; CRAAP):</b> Formulated query <code>&quot;flu vaccine eligibility&quot; site:.gov.uk</code>; verified source currency and authority directly from official public guidance.<br>"
          "<b>Task 4 (Email &amp; BCC):</b> Drafted polite formal invitation; placed all 40 patient email addresses in <b>BCC</b> to prevent unlawful disclosure of patient medical contacts under UK GDPR; attached encrypted PDF clinic map."),
 
         ("Mock 2 &bull; Community Food Bank Logistics &amp; Stock Tracking Solution",
@@ -649,7 +649,7 @@ DIGITAL_SKILLS_INDEX = [
     ("H", [("Hardware input & output peripherals", "4"), ("Heading styles (Heading 1, Heading 2)", "16, 72"), ("HTTPS & SSL padlock encryption", "36, 78")]),
     ("I", [("IF statements & logical conditions", "20, 52, 66"), ("Information Commissioner's Office (ICO)", "44, 78"), ("Input devices vs Output devices", "4")]),
     ("M", [("Margins & page setup (2.54 cm)", "16, 72"), ("Mocks 1-4 workplace scenarios", "48-63"), ("Multi-Factor Authentication (MFA / 2FA)", "44, 78, 79")]),
-    ("N", [("Netiquette & online communication", "28, 32, 68"), ("NHS App & public healthcare portals", "40, 48")]),
+    ("N", [("Netiquette & online communication", "28, 32, 68"), ("Online healthcare & public portals", "40, 48")]),
     ("O", [("Operating Systems (Windows, macOS, ChromeOS)", "4, 8"), ("Order verification & digital receipts", "36")]),
     ("P", [("Page Breaks (Ctrl + Enter)", "16, 72"), ("Passphrases (three random words method)", "44, 79"), ("Phishing detection & red flags", "44, 70"), ("Presenter View in slide presentations", "24")]),
     ("Q", [("Quotation marks in search queries", "12, 74")]),

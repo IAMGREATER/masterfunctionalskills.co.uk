@@ -66,16 +66,16 @@ WIDE_THEMATIC_POOL = [
     "writing_thematic/spag7_cohesion.jpg",
     "writing_thematic/spag8_spelling.jpg",
     "writing_thematic/l2_f1_article.jpg",
-    "writing_thematic/l2_f2_letter.jpg",
-    "writing_thematic/l2_f3_email.jpg",
-    "writing_thematic/l2_f4_memo.jpg",
-    "writing_thematic/l2_f5_report.jpg",
-    "writing_thematic/l2_f6_report.jpg",
-    "writing_thematic/l2_f7_leaflet.jpg",
-    "writing_thematic/l2_f8_review.jpg",
-    "writing_thematic/l2_f9_blog.jpg",
-    "writing_thematic/l2_f10_proposal.jpg",
-    "writing_thematic/l2_f11_statement.jpg",
+    "writing_thematic/l2_f2_email.jpg",
+    "writing_thematic/l2_f3_letter.jpg",
+    "writing_thematic/l2_f4_report.jpg",
+    "writing_thematic/l2_f5_incident.jpg",
+    "writing_thematic/l2_f6_leaflet.jpg",
+    "writing_thematic/l2_f7_review.jpg",
+    "writing_thematic/l2_f8_feedback.jpg",
+    "writing_thematic/l2_f9_forum.jpg",
+    "writing_thematic/l2_f10_newsletter.jpg",
+    "writing_thematic/l2_f11_diary.jpg",
     "writing_thematic/l2_f12_speech.jpg",
     "writing_thematic/l2_f1_task2.jpg",
     "writing_thematic/l2_f2_task2.jpg",
@@ -90,16 +90,16 @@ WIDE_THEMATIC_POOL = [
     "writing_thematic/l2_f11_task2.jpg",
     "writing_thematic/l2_f12_task2.jpg",
     "writing_thematic/l1_f1_article.jpg",
-    "writing_thematic/l1_f2_letter.jpg",
-    "writing_thematic/l1_f3_email.jpg",
-    "writing_thematic/l1_f4_memo.jpg",
-    "writing_thematic/l1_f5_report.jpg",
-    "writing_thematic/l1_f6_report.jpg",
-    "writing_thematic/l1_f7_leaflet.jpg",
-    "writing_thematic/l1_f8_review.jpg",
-    "writing_thematic/l1_f9_blog.jpg",
-    "writing_thematic/l1_f10_proposal.jpg",
-    "writing_thematic/l1_f11_statement.jpg",
+    "writing_thematic/l1_f2_email.jpg",
+    "writing_thematic/l1_f3_letter.jpg",
+    "writing_thematic/l1_f4_report.jpg",
+    "writing_thematic/l1_f5_incident.jpg",
+    "writing_thematic/l1_f6_leaflet.jpg",
+    "writing_thematic/l1_f7_review.jpg",
+    "writing_thematic/l1_f8_feedback.jpg",
+    "writing_thematic/l1_f9_forum.jpg",
+    "writing_thematic/l1_f10_newsletter.jpg",
+    "writing_thematic/l1_f11_diary.jpg",
     "writing_thematic/l1_f12_speech.jpg",
     "writing_thematic/l1_f1_task2.jpg",
     "writing_thematic/l1_f2_task2.jpg",
@@ -157,6 +157,28 @@ WIDE_THEMATIC_POOL = [
     "reading_thematic/r11_l1_cashless_tills.jpg",
     "reading_thematic/r12_l1_apprentice_induction.jpg",
     "reading_thematic/mc1_exam_clock.jpg",
+    # generated_phase3 unique editorial photos (20+ extra for zero cross-level overlaps)
+    "generated_phase3/reading_l2/l2_r1_fact_opinion.jpg",
+    "generated_phase3/reading_l2/l2_r2_implicit_subtext.jpg",
+    "generated_phase3/reading_l2/l2_r3_technical_register.jpg",
+    "generated_phase3/reading_l2/l2_r4_layout_hierarchy.jpg",
+    "generated_phase3/reading_l2/l2_r5_structural_signpost.jpg",
+    "generated_phase3/reading_l2/l2_r6_data_visuals.jpg",
+    "generated_phase3/reading_l2/l2_r7_rhetorical_devices.jpg",
+    "generated_phase3/reading_l2/l2_r8_editorial_bias.jpg",
+    "generated_phase3/reading_l2/l2_r9_tone_irony.jpg",
+    "generated_phase3/reading_l2/l2_r10_regulatory_genre.jpg",
+    "generated_phase3/reading_l2/l2_r11_comparing_texts.jpg",
+    "generated_phase3/reading_l2/l2_r12_dual_purpose.jpg",
+    "generated_phase3/reading_l2/l2_mc_synthesis.jpg",
+    "generated_phase3/e3_prac/r5_library_index.jpg",
+    "generated_phase3/e3_prac/w1_street_signage.jpg",
+    "generated_phase3/e3_prac/sp1_prefix_tiles.jpg",
+    "generated_phase3/e3_prac/sp4_address_envelope.jpg",
+    "generated_phase3/e3_prac/sp5_station_helpdesk.jpg",
+    "generated_phase3/e3_prac/sp6_library_study_bay.jpg",
+    "generated_phase3/e3_prac/mock1_w2_book_club.jpg",
+    "generated_phase3/e3_prac/mock2_w1_digital_enquiry.jpg",
 ]
 
 TOP_ALIGNED_PHOTOS = {
@@ -765,7 +787,7 @@ def build_spag_l1():
 
     all_units = u_l1.L1_UNITS_26
     pages = []
-    photo_cursor = [18]  # Offset into WIDE_THEMATIC_POOL for variety
+    photo_cursor = [40]  # Offset into WIDE_THEMATIC_POOL for variety
 
     def next_wide_photo():
         rel = WIDE_THEMATIC_POOL[photo_cursor[0] % len(WIDE_THEMATIC_POOL)]
@@ -1226,7 +1248,7 @@ def build_spag_e3():
 
     all_units = u_e3.units_data
     pages = []
-    photo_cursor = [56]  # Offset into WIDE_THEMATIC_POOL starting at e3_thematic!
+    photo_cursor = [68]  # Offset into WIDE_THEMATIC_POOL starting at e3_thematic!
 
     def next_wide_photo():
         rel = WIDE_THEMATIC_POOL[photo_cursor[0] % len(WIDE_THEMATIC_POOL)]

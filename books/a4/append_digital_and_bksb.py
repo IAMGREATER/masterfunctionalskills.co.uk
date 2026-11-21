@@ -207,21 +207,21 @@ DIGITAL_SKILLS_UNITS = [
         "badge": "D4.2",
         "kw": "government office passport document citizen services",
         "theory": (
-            "<p><b>Accessing Public Services Online:</b> Government and public health services in the UK are centralised through Gov.uk and NHS App portals. "
-            "Accessing services (e.g. Universal Credit, DVLA vehicle tax, Council Tax billing, NHS prescriptions) requires verified digital identity accounts "
+            "<p><b>Accessing Public Services Online:</b> Government and public health services in the UK are centralised through GOV.UK and community health portals. "
+            "Accessing services (e.g. Universal Credit, DVLA vehicle tax, Council Tax billing, repeat prescriptions) requires verified digital identity accounts "
             "utilising multi-factor authentication (MFA) and National Insurance number verification.</p>"
             "<p><b>Online Form Completion &amp; Document Uploads:</b> Completing digital public service applications requires entering accurate biographical details, "
             "uploading proof-of-address documents (.pdf or .jpg formats, typically under 5MB), and verifying that all input fields pass client-side data validation checks "
             "(e.g. valid postcode format, correctly formatted telephone numbers).</p>"
         ),
         "steps": [
-            "Log in via official portal gateway: verify the domain ends strictly in <code>.gov.uk</code> or <code>.nhs.uk</code>.",
+            "Log in via official portal gateway: verify the domain ends strictly in <code>.gov.uk</code> or an accredited public portal.",
             "Authenticate account using SMS one-time passcode or authenticator app token.",
             "Complete form sections sequentially, checking progress indicators and error validation highlights.",
             "Upload compressed, clear PDF copies of required utility bill or driving licence verification documents.",
             "Submit application and record the unique statutory reference tracking code."
         ],
-        "drill": "Scenario: An adult learner needs to renew their driving licence and apply for an NHS prescription online. Detail the steps required to access the genuine Gov.uk portal, verify identity, and avoid predatory copycat charging websites.",
+        "drill": "Scenario: An adult learner needs to renew their driving licence and book a health clinic appointment online. Detail the steps required to access the genuine GOV.UK portal, verify identity, and avoid predatory copycat charging websites.",
         "trap": "Examiner Trap: Using unofficial third-party websites that charge &pound;40–&pound;80 handling fees for free Gov.uk services. Always check that the URL domain ends in .gov.uk!"
     },
 
@@ -287,7 +287,7 @@ DIGITAL_SKILLS_MOCKS = [
         "tasks": [
             "Task 1: Schedule a series of virtual consultation meetings in MS Teams, configuring presenter permissions, lobby security, and calendar invites.",
             "Task 2: Respond to a patient inquiry via email, maintaining empathetic professional register and attaching a guidance document encrypted with password protection.",
-            "Task 3: Identify a suspicious incoming email claiming to represent NHS procurement, documenting 4 clear phishing indicators in an incident log.",
+            "Task 3: Identify a suspicious incoming email claiming to represent hospital procurement, documenting 4 clear phishing indicators in an incident log.",
             "Task 4: Outline the procedure for handling a Subject Access Request (SAR) under UK GDPR, specifying the statutory response deadline (1 calendar month)."
         ]
     },

@@ -3538,6 +3538,7 @@ body.dyslexia-mode .moat-badge {
   min-height: 260px;
   max-height: 380px;
   object-fit: cover;
+  object-position: center 22%;
   display: block;
 }
 

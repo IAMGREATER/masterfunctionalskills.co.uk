@@ -340,7 +340,7 @@ Following our quarterly inventory reconciliation, internal shrink across regiona
                 "marks": 15,
                 "time": "40 Minutes",
                 "words": "200&ndash;250 words",
-                "scenario": "You are a Health and Safety Representative at St Jude's NHS Trust. Following an internal survey revealing high levels of physical exhaustion and insomnia among rotational shift workers, management has asked you to produce an authoritative guidance leaflet to be distributed in staff rest areas titled: 'Protecting Your Health & Energy: The Shift Worker's Guide'.",
+                "scenario": "You are a Health and Safety Representative at St Jude Community Clinic. Following an internal survey revealing high levels of physical exhaustion and insomnia among rotational shift workers, management has asked you to produce an authoritative guidance leaflet to be distributed in staff rest areas titled: 'Protecting Your Health & Energy: The Shift Worker's Guide'.",
                 "bullets": [
                     "Explain practical strategies for optimizing daytime sleep and creating an effective sleep environment.",
                     "Offer actionable advice on meal timing, hydration, and avoiding energy-crashing foods on shift.",
@@ -382,7 +382,7 @@ Following our quarterly inventory reconciliation, internal shrink across regiona
     workbook_l2_prompts = [
         # 22 Worksheets across authentic vocational sectors
         {
-            "id": 1, "sector": "Healthcare & NHS", "format": "Formal Letter",
+            "id": 1, "sector": "Healthcare & Clinical", "format": "Formal Letter",
             "scenario": "You are a Patient Experience Coordinator at St Luke's Hospital. A patient, Mrs Brenda Cooper, wrote a letter complaining about a three-hour delay in the outpatient orthopedic clinic and unhelpful reception staff.",
             "bullets": ["Acknowledge Mrs Cooper's frustration and validate her concerns politely.", "Explain the mitigating circumstances (emergency trauma admissions) that caused clinic backlogs.", "Detail two remedial actions taken to improve communication and offer a follow-up appointment."]
         },
@@ -428,7 +428,7 @@ Following our quarterly inventory reconciliation, internal shrink across regiona
         },
         {
             "id": 10, "sector": "Sports & Leisure", "format": "Press Article",
-            "scenario": "You are a Marketing Officer at a municipal leisure centre. The centre is launching a discounted corporate fitness membership scheme for local NHS, police, and council workers.",
+            "scenario": "You are a Marketing Officer at a municipal leisure centre. The centre is launching a discounted corporate fitness membership scheme for local healthcare, police, and council workers.",
             "bullets": ["Promote the health and mental wellbeing benefits of regular cardiovascular exercise for shift workers.", "Detail the facilities included: 25m swimming pool, functional training gym, and classes.", "Explain the simple sign-up process and provide open-day weekend dates with free taster sessions."]
         },
         {
@@ -459,7 +459,7 @@ Following our quarterly inventory reconciliation, internal shrink across regiona
         {
             "id": 16, "sector": "Dental & Primary Healthcare", "format": "Patient Information Leaflet",
             "scenario": "You are a Practice Manager at High Street Dental Surgery. Many patients are unclear on what constitutes a dental emergency versus routine care, leading to overwhelmed triage lines.",
-            "bullets": ["Define acute dental emergencies: uncontrolled bleeding, severe facial trauma, and swelling affecting breathing.", "Explain procedure for urgent same-day appointments and the out-of-hours NHS 111 service.", "Offer practical guidance on temporary toothache relief and remind patients of preventive check-ups."]
+            "bullets": ["Define acute dental emergencies: uncontrolled bleeding, severe facial trauma, and swelling affecting breathing.", "Explain procedure for urgent same-day appointments and the out-of-hours 111 urgent health helpline.", "Offer practical guidance on temporary toothache relief and remind patients of preventive check-ups."]
         },
         {
             "id": 17, "sector": "Automotive Engineering", "format": "Incident Investigation Report",

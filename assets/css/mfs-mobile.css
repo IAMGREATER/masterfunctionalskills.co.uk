@@ -535,7 +535,7 @@
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
-    object-position: center center !important;
+    object-position: center 22% !important;
   }
 
   .hero-showcase-top-pills {
@@ -2724,7 +2724,8 @@
     .revision-hero-img-wrap {
       width: 100% !important;
       max-width: 100% !important;
-      aspect-ratio: 16 / 9 !important;
+      aspect-ratio: 3 / 2 !important;
+      max-height: none !important;
       height: auto !important;
       border-radius: 8px !important;
       box-sizing: border-box !important;
@@ -2735,6 +2736,7 @@
       max-width: 100% !important;
       height: 100% !important;
       object-fit: cover !important;
+      object-position: center 22% !important;
       display: block !important;
     }
 
@@ -4415,8 +4417,8 @@
   .revision-hero-img-wrap {
     width: 100% !important;
     max-width: 100% !important;
-    aspect-ratio: 16 / 9 !important;
-    max-height: 180px !important;
+    aspect-ratio: 3 / 2 !important;
+    max-height: none !important;
     border-radius: 8px !important;
     overflow: hidden !important;
     position: relative !important;
@@ -4426,6 +4428,7 @@
     width: 100% !important;
     height: 100% !important;
     object-fit: cover !important;
+    object-position: center 22% !important;
     display: block !important;
   }
 

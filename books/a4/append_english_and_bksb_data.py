@@ -23,7 +23,7 @@ ENGLISH_L2_MOCKS.append({
         "headline": "Transforming Patient Triage: The Clinical Revolution of Digital Consultations",
         "paragraphs": [
             "Across the United Kingdom, secondary healthcare networks are undergoing an unprecedented structural transition toward virtual outpatient triage. Telemedicine platforms, which initially expanded out of pandemic necessity, now manage over 3.2 million non-emergency consultations annually across England alone. Clinical evidence indicates that 44% of routine post-operative follow-ups can be conducted safely and effectively via high-definition encrypted video link, eliminating stressful travel journeys for vulnerable patients.",
-            "Dr Eleanor Vance, Clinical Lead for Outpatient Strategy at St Jude NHS Trust, argues that digital consultations democratize healthcare access: 'For patients managing mobility impairments or living in remote rural communities, attending a twenty-minute consultation historically required three hours of public transit and substantial expense. Video appointments restore personal dignity and reduce lost working hours.' Furthermore, clinic non-attendance rates have dropped from 11.8% to 4.2% across pilot health authorities.",
+            "Dr Eleanor Vance, Clinical Lead for Outpatient Strategy at St Jude Regional Health Group, argues that digital consultations democratize healthcare access: 'For patients managing mobility impairments or living in remote rural communities, attending a twenty-minute consultation historically required three hours of public transit and substantial expense. Video appointments restore personal dignity and reduce lost working hours.' Furthermore, clinic non-attendance rates have dropped from 11.8% to 4.2% across pilot health authorities.",
             "Nevertheless, senior clinicians emphasize that virtual care cannot serve as an indiscriminate universal replacement for bedside medicine. Physical palpation, auscultation, and urgent diagnostic triage remain irreducibly tactile. Digital healthcare is not an algorithmic substitute for human nursing; rather, it is a complementary diagnostic instrument that frees specialist clinic capacity for acute clinical presentations."
         ]
     },
@@ -51,7 +51,7 @@ ENGLISH_L2_MOCKS.append({
     ],
     "writing_t1": {
         "type": "Formal Briefing Memo to Hospital Management Board",
-        "scenario": "Your NHS Foundation Trust is reviewing its outpatient clinic strategy to decide the future balance between virtual video appointments and face-to-face clinical sessions.",
+        "scenario": "Your Regional Healthcare Group is reviewing its outpatient clinic strategy to decide the future balance between virtual video appointments and face-to-face clinical sessions.",
         "task": "Write a formal briefing memo to the Hospital Management Board. In your memo, you must:<br>&bull; Evaluate the clinical and logistical benefits of expanding video appointments for routine follow-ups.<br>&bull; Detail the risks of excluding elderly, disabled, or low-income patients without digital access.<br>&bull; Recommend a balanced hybrid model, including digital support coordinators and preserved face-to-face appointments.<br>Use formal executive layout (To, From, Date, Subject, Numbered Sections), professional register, and balanced argumentation.",
         "marks": 19
     },

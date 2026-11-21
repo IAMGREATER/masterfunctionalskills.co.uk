@@ -170,10 +170,10 @@ CARDS = [ { 'answer_text': 'A screen reader (or text-to-speech / Narrator).',
     'title': 'Cloud Storage &amp; Syncing',
     'watch_out': "If you don't enable 'Keep on this device' (offline mode), "
                  'you cannot open cloud files without Wi-Fi.'},
-  { 'answer_text': '"NHS dental fees" -private (or site:nhs.uk "dental fees").',
+  { 'answer_text': '"council tax bands" -private (or site:gov.uk "council tax bands").',
     'challenge_prompt': 'What search query would you type to find exact '
-                        'information on NHS dental fees while excluding '
-                        'private dentists?',
+                        'information on council tax bands while excluding '
+                        'private agencies?',
     'dfe_code': 'DFS 1.5',
     'golden_rule': 'Use quotation marks to search for exact multi-word terms!',
     'id': 'dfs-05',
@@ -243,8 +243,8 @@ CARDS = [ { 'answer_text': 'A screen reader (or text-to-speech / Narrator).',
                 'font-weight="900" fill="#1e40af" '
                 'text-anchor="middle">CHECKING WEBSITE RELIABILITY</text>\n'
                 '            <text x="30" y="55" font-size="11" '
-                'font-weight="800" fill="#16a34a">.gov.uk &amp; .nhs.uk: '
-                'Highly authoritative</text>\n'
+                'font-weight="800" fill="#16a34a">.gov.uk: '
+                'Official UK government</text>\n'
                 '            <text x="30" y="80" font-size="11" '
                 'font-weight="700" fill="#0f172a">.ac.uk: Academic university '
                 'research</text>\n'
@@ -405,7 +405,7 @@ CARDS = [ { 'answer_text': 'A screen reader (or text-to-speech / Narrator).',
     'level_label': 'Level 1 / 2',
     'number': 10,
     'rule_body': 'Personal data relates to an identifiable living person '
-                 '(names, NHS numbers, addresses). Under UK GDPR: 1. Process '
+                 '(names, patient IDs, addresses). Under UK GDPR: 1. Process '
                  'lawfully, fairly, and transparently. 2. Keep accurate and '
                  'secure. 3. Delete when no longer required.',
     'rule_heading': 'Handling Personal Data Lawfully',

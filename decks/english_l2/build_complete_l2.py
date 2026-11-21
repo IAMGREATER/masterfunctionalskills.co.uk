@@ -149,7 +149,7 @@ CARDS_B = [
         "svg_html": wrap_svg("""
           <g transform="translate(60, 20)">
             <rect x="0" y="0" width="340" height="130" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.8"/>
-            <text x="25" y="24" font-size="10" font-weight="800" fill="#0f172a">To: sarah.jenkins@healthtrust.nhs.uk</text>
+            <text x="25" y="24" font-size="10" font-weight="800" fill="#0f172a">To: sarah.jenkins@healthclinic.co.uk</text>
             <text x="25" y="42" font-size="10" font-weight="800" fill="#2563eb">Subject: Urgent: Quarterly Clinical Audit Review - 14 Oct</text>
             <line x1="15" y1="52" x2="325" y2="52" stroke="#cbd5e1"/>
             <text x="25" y="70" font-size="10.5" font-weight="700" fill="#0f172a">Dear Ms Jenkins,</text>
@@ -211,7 +211,7 @@ CARDS_B = [
             <text x="25" y="52" font-size="10.5" font-weight="800" fill="#0f172a">Title: Healthy Eating on a Budget</text>
             <text x="25" y="74" font-size="10.5" font-weight="700" fill="#475569">Subheading: Top Tips for Smarter Shopping</text>
             <text x="25" y="94" font-size="10.5" font-weight="700" fill="#475569">• Plan meals weekly  • Buy frozen produce</text>
-            <text x="25" y="115" font-size="10.5" font-weight="800" fill="#059669">Contact: Visit www.nhs.uk/budget-meals</text>
+            <text x="25" y="115" font-size="10.5" font-weight="800" fill="#059669">Contact: Visit www.healthyliving-uk.org</text>
           </g>"""),
         "golden_rule": "Always include contact details, website links, or hotline numbers at the end of a leaflet!",
         "watch_out": "Keep sentences concise — leaflets are designed for quick scanning, not essay reading.",

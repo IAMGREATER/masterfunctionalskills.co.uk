@@ -580,7 +580,7 @@ CARDS = [ { 'answer_text': "'The report is complete; it will be emailed tomorrow
     'title': 'SLC L2: Structuring a Formal Presentation',
     'watch_out': 'Pause after key ideas — rushing through costs presentation marks.'},
   { 'answer_text': '1. Acknowledge the question. 2. Provide a specific reason/evidence. 3. Connect back to your core '
-                   'argument (e.g., "That is an important point; recent NHS data shows...").',
+                   'argument (e.g., "That is an important point; recent clinic audit data shows...").',
     'challenge_prompt': 'During your Level 2 Q&A, an audience member challenges the cost of your proposal. How do you '
                         'respond using the A-E-C method?',
     'dfe_code': 'DfE L2.SLC2',

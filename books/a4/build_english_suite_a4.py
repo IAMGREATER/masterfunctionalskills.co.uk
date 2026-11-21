@@ -74,7 +74,7 @@ UNIT_PHOTOS_L2 = {
     8: ("writing_thematic/l2_f8_feedback.jpg", "Online Customer Feedback Form"),
     9: ("writing_thematic/l2_f9_forum.jpg", "Careers Discussion Forum"),
     10: ("writing_thematic/l2_f10_newsletter.jpg", "Community Harvest Newsletter"),
-    11: ("writing_thematic/l2_f11_diary.jpg", "NHS Placement Reflective Log"),
+    11: ("writing_thematic/l2_f11_diary.jpg", "Health Placement Reflective Log"),
     12: ("writing_thematic/l2_f12_speech.jpg", "Green Workplace Speech"),
 }
 
@@ -3567,18 +3567,18 @@ def build_english_e3_core():
 
     # Writing Format & Task Card Photos (matching Writing Level 1 & Level 2 books)
     E3_WRITING_TYPE_CARDS = {
-        1: ("e3_thematic/w1_capital_letters.jpg", "Proper Nouns &amp; Places"),
-        2: ("e3_thematic/w2_sentence_punctuation.jpg", "End Marks (. ? !)"),
-        3: ("e3_thematic/w3_commas_apostrophes.jpg", "List Commas &amp; Apostrophes"),
-        4: ("e3_thematic/w4_compound_sentences.jpg", "Joining with And / But / Or"),
-        5: ("e3_thematic/w5_giving_reasons.jpg", "Linking with Because &amp; So"),
-        6: ("e3_thematic/w6_past_tense.jpg", "Past Tense Action Log"),
-        7: ("e3_thematic/w7_agreement_plurals.jpg", "Agreement &amp; Plurals"),
-        8: ("e3_thematic/w8_paragraphs_order.jpg", "Paragraphs &amp; A–Z Order"),
+        1: ("generated_phase3/e3_prac/w1_street_signage.jpg", "Proper Nouns &amp; Places"),
+        2: ("generated_phase3/e3_prac/w2_loading_bay_check.jpg", "End Marks (. ? !)"),
+        3: ("generated_phase3/e3_prac/w3_stationery_cupboard.jpg", "List Commas &amp; Apostrophes"),
+        4: ("generated_phase3/e3_prac/w4_forklift_briefing.jpg", "Joining with And / But / Or"),
+        5: ("generated_phase3/e3_prac/w5_wet_floor_cone.jpg", "Linking with Because &amp; So"),
+        6: ("generated_phase3/e3_prac/w6_parcel_logbook.jpg", "Past Tense Action Log"),
+        7: ("generated_phase3/e3_prac/w7_stock_shelves.jpg", "Agreement &amp; Plurals"),
+        8: ("generated_phase3/e3_prac/w8_canteen_buffet.jpg", "Paragraphs &amp; A–Z Order"),
         9: ("email_online_safety/email_inbox_laptop.jpg", "Format 1: Workplace Email"),
-        10: ("workplace_office/printed_formal_letter.jpg", "Format 2: Letter &amp; Note"),
-        11: ("english_language/fancy_presentational_features.jpg", "Format 3: Notice &amp; Leaflet"),
-        12: ("workplace_office/online_feedback_laptop.jpg", "Format 4: Feedback Form"),
+        10: ("generated_phase3/e3_prac/w10_phone_message_pad.jpg", "Format 2: Letter &amp; Note"),
+        11: ("generated_phase3/e3_prac/w11_breakroom_poster.jpg", "Format 3: Notice &amp; Leaflet"),
+        12: ("generated_phase3/e3_prac/w12_bus_feedback_card.jpg", "Format 4: Feedback Form"),
     }
 
     E3_SPELLING_PHOTOS = {
@@ -3767,7 +3767,7 @@ def build_english_e3_core():
           ("confirmation", "written proof that an appointment is booked")],
          "Underline the clinic number, date, time, and the word 'bring' so you do not miss two-part questions.",
          "When a question asks for TWO items to bring, make sure you write down two separate items.",
-         "NHS Hospital Appointment Confirmation Letter",
+         "Community Health Appointment Confirmation Letter",
          "Dear Mr Taylor, Please attend Outpatient Clinic 3 at the Churchill Hospital on Thursday 27 November at 11:15am for your scheduled physiotherapy review. Please arrive 15 minutes before your appointment time. You should bring your appointment letter, a list of your current prescribed medications, and wear loose comfortable clothing.",
          [("1.", "Which hospital clinic must Mr Taylor attend? [1 mark]"),
           ("2.", "What time is the physiotherapy appointment? [1 mark]"),
@@ -3889,8 +3889,21 @@ def build_english_e3_core():
         p_curr += 1
 
         # Page 2: Practice Text & Questions
+        E3_READING_PRAC_PHOTOS = {
+            1: "generated_phase3/e3_prac/r1_exit_drill.jpg",
+            2: "generated_phase3/e3_prac/r2_park_cleanup.jpg",
+            3: "generated_phase3/e3_prac/r3_shift_roster.jpg",
+            4: "generated_phase3/e3_prac/r4_coffee_machine.jpg",
+            5: "generated_phase3/e3_prac/r5_library_index.jpg",
+            6: "generated_phase3/e3_prac/r6_staff_noticeboard.jpg",
+            7: "generated_phase3/e3_prac/r7_dental_letter.jpg",
+            8: "generated_phase3/e3_prac/r8_coach_train_board.jpg",
+            10: "generated_phase3/e3_prac/r10_recycling_leaflet.jpg",
+            11: "generated_phase3/e3_prac/r11_booking_portal.jpg",
+            12: "generated_phase3/e3_prac/r12_medicine_label.jpg",
+        }
         qs_html = "".join(f"<p style='margin:1.5mm 0;'><b>{q_num}</b> {escape_html(q_txt)}</p>" for q_num, q_txt in p2_qs)
-        p2_r_card = e3_task_photo_card(photo_rel, f"Unit {r_idx}: {r_title[:26]}") if r_idx != 9 else ""
+        p2_r_card = e3_task_photo_card(E3_READING_PRAC_PHOTOS[r_idx], f"Unit {r_idx}: {r_title[:26]}") if r_idx != 9 else ""
         p2_r = (
             K.page_title(f"Reading Unit {r_idx} &bull; Practice Text", kicker="Comprehension Questions &bull; 4 Marks", badge="PRACTICE")
             + K.box_html(
@@ -4216,9 +4229,17 @@ def build_english_e3_core():
         p_curr += 1
 
         # Page 2: Practice Drill
+        E3_SPELLING_PRAC_PHOTOS = {
+            1: "generated_phase3/e3_prac/sp1_prefix_tiles.jpg",
+            2: "generated_phase3/e3_prac/sp2_reception_lockers.jpg",
+            3: "generated_phase3/e3_prac/sp3_chef_knife_prep.jpg",
+            4: "generated_phase3/e3_prac/sp4_address_envelope.jpg",
+            5: "generated_phase3/e3_prac/sp5_station_helpdesk.jpg",
+            6: "generated_phase3/e3_prac/sp6_library_study_bay.jpg",
+        }
         sent_html = "".join(f"<p style='margin:1.2mm 0;font-size:10.3pt;'><b>{i+1}.</b> {escape_html(s_txt)}</p>" for i, (_, s_txt) in enumerate(s_sentences))
         word_bank = ", ".join(w for w, _ in s_sentences)
-        sp_card = e3_task_photo_card(photo_rel, f"Drill {s_idx}: {s_title[:22]}")
+        sp_card = e3_task_photo_card(E3_SPELLING_PRAC_PHOTOS[s_idx], f"Drill {s_idx}: {s_title[:22]}")
         p2_s = (
             K.page_title(f"Spelling Drill {s_idx} &bull; Practice Sentences", kicker="Annexe D Sentence Completion &bull; 6 Marks", badge="DRILL")
             + K.box_html(
@@ -4266,7 +4287,7 @@ def build_english_e3_core():
         K.page_title("Mock 1 &bull; Reading Text 1", kicker="Text 1: Job Vacancy Notice &bull; Questions 1–4 (8 Marks)")
         + K.box_html(
             "<div style='font-size:11.2pt;line-height:1.48;background:#f8fafc;padding:3mm;border:1.5px solid var(--soft);border-radius:6px;margin-bottom:2mm;overflow:hidden;'>"
-            + e3_task_photo_card("e3_thematic/r6_warehouse_memo.jpg", "Warehouse Operative Role")
+            + e3_task_photo_card("generated_phase3/e3_prac/mock1_t1_warehouse_shift.jpg", "Warehouse Operative Role")
             + "<b style='color:var(--primary);'>Oxford Logistics Centre: Warehouse Operative Vacancies</b><br>"
             "We are recruiting 6 full-time warehouse operatives for our modern distribution centre in Cowley. "
             "Working hours: Monday to Friday, 08:00 to 16:30. Starting pay: £11.85 per hour plus overtime. "
@@ -4292,8 +4313,8 @@ def build_english_e3_core():
         K.page_title("Mock 1 &bull; Reading Text 2 &bull; Health Advice", kicker="Text 2: Staying Well in Winter &bull; Questions 5–8 (8 Marks)")
         + K.box_html(
             "<div style='font-size:11.2pt;line-height:1.48;background:#f8fafc;padding:3mm;border:1.5px solid var(--soft);border-radius:6px;margin-bottom:2mm;overflow:hidden;'>"
-            + e3_task_photo_card("e3_thematic/r7_hospital_clinic.jpg", "NHS Winter Health Guidance")
-            + "<b style='color:var(--primary);'>NHS Advice: 4 Easy Ways to Stay Healthy This Winter</b><br>"
+            + e3_task_photo_card("generated_phase3/e3_prac/mock1_t2_winter_warmth.jpg", "Winter Health Guidance")
+            + "<b style='color:var(--primary);'>Health Advice: 4 Easy Ways to Stay Healthy This Winter</b><br>"
             "1. <b>Get your flu vaccination:</b> Free for adults with underlying health conditions, carers, and people aged 65 and over.<br>"
             "2. <b>Keep your home warm:</b> Heat your main living room to at least 18&deg;C and keep bedroom windows closed at night.<br>"
             "3. <b>Eat nourishing hot meals:</b> Soups, stews, and porridge provide long-lasting energy during cold weather.<br>"
@@ -4317,7 +4338,7 @@ def build_english_e3_core():
         K.page_title("Mock 1 &bull; Reading Text 3 &bull; Public Notice", kicker="Text 3: Library Renovations &bull; Questions 9–12 (8 Marks)")
         + K.box_html(
             "<div style='font-size:11.2pt;line-height:1.48;background:#f8fafc;padding:3mm;border:1.5px solid var(--soft);border-radius:6px;margin-bottom:2mm;overflow:hidden;'>"
-            + e3_task_photo_card("e3_thematic/r5_high_street_directory.jpg", "Westgate Community Library")
+            + e3_task_photo_card("generated_phase3/e3_prac/mock1_t3_mobile_library.jpg", "Westgate Community Library")
             + "<b style='color:var(--primary);'>Westgate Community Library Renovation Notice</b><br>"
             "The library will close for internal decoration and the installation of 12 new computer terminals from Monday 1 December to Monday 8 December. "
             "During this week, 24-hour book return boxes will remain open outside the main entrance. "
@@ -4360,7 +4381,7 @@ def build_english_e3_core():
         K.page_title("Mock 1 &bull; Writing Task 1: Email", kicker="Functional Writing Task &bull; 13 Marks &bull; 50–70 Words", badge="TASK 1")
         + K.box_html(
             "<div style='overflow:hidden;'>"
-            + e3_task_photo_card("e3_thematic/w9_format_email.jpg", "Format 1: Formal Job Email")
+            + e3_task_photo_card("email_online_safety/workplace_email_laptop.jpg", "Format 1: Formal Job Email")
             + "<p style='font-size:10pt;line-height:1.4;margin:0 0 1mm 0;'>You are applying for the <b>Warehouse Operative</b> role advertised in Text 1. Write a formal email to the HR Manager (<b>careers@oxfordlogistics.co.uk</b>). In your email you must:</p>"
             "<ul style='font-size:9.5pt;line-height:1.35;margin:0 0 1.2mm 4mm;'>"
             "<li>Include a clear <b>Subject line</b>, state which job you are applying for, and say where you saw the advert.</li>"
@@ -4381,7 +4402,7 @@ def build_english_e3_core():
         K.page_title("Mock 1 &bull; Writing Task 2: Notice", kicker="Functional Writing Task &bull; 13 Marks &bull; 50–70 Words", badge="TASK 2")
         + K.box_html(
             "<div style='overflow:hidden;'>"
-            + e3_task_photo_card("e3_thematic/w11_format_notice_leaflet.jpg", "Format 3: Community Notice")
+            + e3_task_photo_card("generated_phase3/e3_prac/mock1_w2_book_club.jpg", "Format 3: Community Notice")
             + "<p style='font-size:10pt;line-height:1.4;margin:0 0 1mm 0;'>Write a clear notice for your local community centre noticeboard about a new <b>Adult Reading &amp; Book Club</b>. In your notice you must:</p>"
             "<ul style='font-size:9.5pt;line-height:1.35;margin:0 0 1.2mm 4mm;'>"
             "<li>Include a bold <b>heading</b>, the start date, room number, and weekly meeting time.</li>"
@@ -4448,7 +4469,7 @@ def build_english_e3_core():
         K.page_title("Mock 2 &bull; Reading Text 1", kicker="Text 1: College Open Evening &bull; Questions 1–4 (8 Marks)")
         + K.box_html(
             "<div style='font-size:11.2pt;line-height:1.48;background:#f8fafc;padding:3mm;border:1.5px solid var(--soft);border-radius:6px;margin-bottom:2mm;overflow:hidden;'>"
-            + e3_task_photo_card("e3_thematic/r3_college_enrolment.jpg", "Adult Learning Open Evening")
+            + e3_task_photo_card("generated_phase3/e3_prac/mock2_t1_open_evening.jpg", "Adult Learning Open Evening")
             + "<b style='color:var(--primary);'>Oxford Adult Learning Centre: January Open Evening</b><br>"
             "Come along to our annual Open Evening on Thursday 15 January from 17:00 to 19:30. "
             "Meet our friendly tutors and discover free courses in Functional Skills English, Maths, Digital Skills, and Workplace First Aid. "
@@ -4473,7 +4494,7 @@ def build_english_e3_core():
         K.page_title("Mock 2 &bull; Reading Text 2 &bull; Public Transport", kicker="Text 2: City Smartcard Travel &bull; Questions 5–8 (8 Marks)")
         + K.box_html(
             "<div style='font-size:11.2pt;line-height:1.48;background:#f8fafc;padding:3mm;border:1.5px solid var(--soft);border-radius:6px;margin-bottom:2mm;overflow:hidden;'>"
-            + e3_task_photo_card("e3_thematic/r8_bus_train_compare.jpg", "City Smartcard Bus Travel")
+            + e3_task_photo_card("generated_phase3/e3_prac/mock2_t2_smartcard_bus.jpg", "City Smartcard Bus Travel")
             + "<b style='color:var(--primary);'>Oxford City Smartcard: Save Money on Every Journey</b><br>"
             "Top up your travel card online at www.oxfordbus.co.uk or at any train station ticket machine. "
             "Simply tap your card on the yellow card reader when boarding the bus. "
@@ -4498,15 +4519,15 @@ def build_english_e3_core():
         K.page_title("Mock 2 &bull; Reading Text 3 &bull; Health Centre", kicker="Text 3: Booking Online Appointments &bull; Questions 9–12 (8 Marks)")
         + K.box_html(
             "<div style='font-size:11.2pt;line-height:1.48;background:#f8fafc;padding:3mm;border:1.5px solid var(--soft);border-radius:6px;margin-bottom:2mm;overflow:hidden;'>"
-            + e3_task_photo_card("e3_thematic/r12_pharmacy_cream.jpg", "NHS Online Repeat Prescriptions")
+            + e3_task_photo_card("generated_phase3/e3_prac/mock2_t3_health_app.jpg", "Online Repeat Prescriptions")
             + "<b style='color:var(--primary);'>Headington Medical Practice: Online Services</b><br>"
-            "You can now order repeat prescriptions, view blood test results, and book routine GP appointments using the free NHS App. "
-            "Download the app from your smartphone app store and register using your 10-digit NHS number and photographic ID (passport or driving licence). "
+            "You can now order repeat prescriptions, view blood test results, and book routine GP appointments using the free Community Health App. "
+            "Download the app from your smartphone app store and register using your 10-digit patient ID number and photographic ID (passport or driving licence). "
             "Please allow 48 hours for repeat prescriptions to be sent to your nominated pharmacy. "
             "If you need assistance setting up the app, our digital volunteer runs drop-in clinics every Tuesday from 2:00pm to 4:00pm."
             "</div>"
             "<div style='font-size:10.6pt;line-height:1.42;'>"
-            "<p style='margin:1mm 0;'><b>9.</b> Name <b>two</b> tasks patients can complete using the NHS App. <b>[2 marks]</b></p>"
+            "<p style='margin:1mm 0;'><b>9.</b> Name <b>two</b> tasks patients can complete using the Community Health App. <b>[2 marks]</b></p>"
             "<p style='margin:1mm 0;'><b>10.</b> What <b>two</b> items of information do you need to register on the app? <b>[2 marks]</b></p>"
             "<p style='margin:1mm 0;'><b>11.</b> How long should you allow for repeat prescriptions to reach your pharmacy? <b>[2 marks]</b></p>"
             "<p style='margin:1mm 0;'><b>12.</b> When does the digital volunteer run drop-in help clinics? <b>[2 marks]</b></p>"
@@ -4541,7 +4562,7 @@ def build_english_e3_core():
         K.page_title("Mock 2 &bull; Writing Task 1: Email", kicker="Functional Writing Task &bull; 13 Marks &bull; 50–70 Words", badge="TASK 1")
         + K.box_html(
             "<div style='overflow:hidden;'>"
-            + e3_task_photo_card("email_online_safety/email_inbox_laptop.jpg", "Format 1: Course Enquiry Email")
+            + e3_task_photo_card("generated_phase3/e3_prac/mock2_w1_digital_enquiry.jpg", "Format 1: Course Enquiry Email")
             + "<p style='font-size:10pt;line-height:1.4;margin:0 0 1mm 0;'>Write a polite email to <b>Oxford Adult Learning Centre</b> (<b>courses@oxfordlearning.co.uk</b>) enquiring about the <b>Digital Skills</b> course mentioned in Text 1. In your email you must:</p>"
             "<ul style='font-size:9.5pt;line-height:1.35;margin:0 0 1.2mm 4mm;'>"
             "<li>Include a clear <b>Subject line</b> and state which course you want to join and why.</li>"
@@ -4562,7 +4583,7 @@ def build_english_e3_core():
         K.page_title("Mock 2 &bull; Writing Task 2: Feedback Report", kicker="Functional Writing Task &bull; 13 Marks &bull; 50–70 Words", badge="TASK 2")
         + K.box_html(
             "<div style='overflow:hidden;'>"
-            + e3_task_photo_card("e3_thematic/w12_format_form_feedback.jpg", "Format 4: Feedback Report")
+            + e3_task_photo_card("workplace_office/online_feedback_laptop.jpg", "Format 4: Feedback Report")
             + "<p style='font-size:10pt;line-height:1.4;margin:0 0 1mm 0;'>Write a short customer feedback report (<b>50&ndash;70 words</b>) to your local sports centre manager about a recent swimming session. In your report you must:</p>"
             "<ul style='font-size:9.5pt;line-height:1.35;margin:0 0 1.2mm 4mm;'>"
             "<li>Include a clear <b>heading</b> and state which day and time you visited the swimming pool.</li>"
@@ -4585,7 +4606,7 @@ def build_english_e3_core():
             "<div style='font-size:10.5pt;line-height:1.48;'>"
             "<p style='margin:0 0 1.5mm 0;'><b>Check your Mock Examination 2 script against the Pearson Edexcel Entry Level 3 standards:</b></p>"
             "<ul>"
-            "<li><b>Reading (24 marks &mdash; Pass guide: 16/24):</b> Extracted accurate answers for all 12 questions across the Open Evening, Smartcard, and NHS App texts.</li>"
+            "<li><b>Reading (24 marks &mdash; Pass guide: 16/24):</b> Extracted accurate answers for all 12 questions across the Open Evening, Smartcard, and Community Health App texts.</li>"
             "<li><b>Writing Section A (10 marks):</b> Corrected all 4 Annexe D spellings (<i>helpful, reception, appointment, different</i>), punctuated the equipment list, used irregular past verbs (<i>went, spoke</i>), and alphabetised by 2nd/3rd letters (<i>canteen, certificate, college, course</i>).</li>"
             "<li><b>Writing Tasks 1 &amp; 2 (26 marks):</b> Used clear email conventions in Task 1 and a 2-paragraph balanced feedback report in Task 2.</li>"
             "</ul>"
@@ -4666,7 +4687,7 @@ def build_english_e3_core():
                                   K.ref_qa("M2-R",
                                            "<b>Text 1:</b> (1) Thursday 15 January, 17:00–19:30. (2) Any two: English, Maths, Digital Skills, First Aid. (3) Room 10. (4) Main atrium; email courses@oxfordlearning.co.uk.<br>"
                                            "<b>Text 2:</b> (5) Online (www.oxfordbus.co.uk) or train station ticket machines. (6) Tap card on the yellow reader. (7) £4.50 per day. (8) Children under 5 travel free; £3.00 replacement.<br>"
-                                           "<b>Text 3:</b> (9) Any two: repeat prescriptions, test results, GP appointments. (10) 10-digit NHS number &amp; photo ID. (11) 48 hours. (12) Every Tuesday, 2:00pm–4:00pm.",
+                                           "<b>Text 3:</b> (9) Any two: repeat prescriptions, test results, GP appointments. (10) 10-digit patient ID number &amp; photo ID. (11) 48 hours. (12) Every Tuesday, 2:00pm–4:00pm.",
                                            marks="24/24")
                                   + K.ref_qa("M2-W",
                                              "<b>Section A (10m):</b> Q1: helpful, reception, appointment, different. Q2: pen, notebook, folder, ruler and calculator... can't. Q3: (a) went, spoke. (b) canteen, certificate, college, course.<br>"

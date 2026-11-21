@@ -35,7 +35,20 @@ BOOK_PHOTOS_BASE = Path("/home/subi/Nextcloud/Projects/masterfunctionalskills.co
 
 def _build_wide_photo_pool():
     pool = []
-    for sub in ["maths_thematic", "l2_writing_thematic", "l1_writing_thematic", "reading_thematic", "spag_thematic", "e3_thematic", "digital_thematic"]:
+    for sub in [
+        "maths_thematic",
+        "writing_thematic",
+        "reading_thematic",
+        "e3_thematic",
+        "digital_thematic",
+        "workplace_office",
+        "email_online_safety",
+        "charts_data_screens",
+        "english_language",
+        "generated_phase3/e3_prac",
+        "generated_phase3/reading_l2",
+        "generated_phase3/maths_l1_comp",
+    ]:
         d = BOOK_PHOTOS_BASE / sub
         if d.exists():
             for f in sorted(d.glob("*.jpg")):
@@ -65,7 +78,7 @@ def get_photo(keywords, theme=None, exclude=None):
     return p
 
 
-def specialist_hero_image(photo_path, caption="", height_mm=48, obj_pos="center 25%"):
+def specialist_hero_image(photo_path, caption="", height_mm=48, obj_pos="center 15%"):
     if not photo_path:
         return ""
     uri = Path(photo_path).resolve().as_uri()

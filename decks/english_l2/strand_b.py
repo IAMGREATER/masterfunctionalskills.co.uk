@@ -163,7 +163,7 @@ CARDS = [ { 'answer_text': "Open with: 'Dear Sir or Madam,' and close with: 'You
                 '            <rect x="0" y="0" width="340" height="130" rx="8" fill="#f8fafc" stroke="#cbd5e1" '
                 'stroke-width="1.8"/>\n'
                 '            <text x="25" y="24" font-size="10" font-weight="800" fill="#0f172a">To: '
-                'sarah.jenkins@healthtrust.nhs.uk</text>\n'
+                'sarah.jenkins@healthclinic.co.uk</text>\n'
                 '            <text x="25" y="42" font-size="10" font-weight="800" fill="#2563eb">Subject: Urgent: '
                 'Quarterly Clinical Audit Review - 14 Oct</text>\n'
                 '            <line x1="15" y1="52" x2="325" y2="52" stroke="#cbd5e1"/>\n'
@@ -242,7 +242,7 @@ CARDS = [ { 'answer_text': "Open with: 'Dear Sir or Madam,' and close with: 'You
                 '            <text x="25" y="94" font-size="10.5" font-weight="700" fill="#475569">• Plan meals '
                 'weekly  • Buy frozen produce</text>\n'
                 '            <text x="25" y="115" font-size="10.5" font-weight="800" fill="#059669">Contact: Visit '
-                'www.nhs.uk/budget-meals</text>\n'
+                'www.healthyliving-uk.org</text>\n'
                 '          </g>\n'
                 '</svg>',
     'title': 'Informative Leaflet / Guide',

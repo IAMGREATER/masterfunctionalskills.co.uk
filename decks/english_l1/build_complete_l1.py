@@ -856,7 +856,7 @@ CARDS_C = [
             <text x="170" y="26" font-size="12" font-weight="900" fill="#1e40af" text-anchor="middle">M.I.N.T.S FOR CAPITAL LETTERS</text>
             <text x="30" y="52" font-size="10.5" font-weight="800" fill="#0f172a">M - Months &amp; Days: Friday, October</text>
             <text x="30" y="72" font-size="10.5" font-weight="800" fill="#0f172a">I - The pronoun: 'I' (NEVER lower case 'i')</text>
-            <text x="30" y="92" font-size="10.5" font-weight="800" fill="#0f172a">N - Names: David, Manchester, NHS</text>
+            <text x="30" y="92" font-size="10.5" font-weight="800" fill="#0f172a">N - Names: David, Manchester, BBC</text>
             <text x="30" y="112" font-size="10.5" font-weight="800" fill="#059669">S - Start of every new sentence</text>
           </g>"""),
         "golden_rule": "The word 'I' is ALWAYS a capital letter, no matter where it is in a sentence!",

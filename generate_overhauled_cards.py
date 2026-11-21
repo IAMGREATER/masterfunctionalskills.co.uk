@@ -603,7 +603,7 @@ def svg_comparing_texts():
       <g transform="translate(30, 20)">
         <rect x="0" y="0" width="110" height="75" rx="6" fill="#f8fafc" stroke="#475569" stroke-width="1.8"/>
         <text x="55" y="22" font-family="system-ui, sans-serif" font-size="11" font-weight="800" fill="#0f172a" text-anchor="middle">TEXT A</text>
-        <text x="55" y="42" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#64748b" text-anchor="middle">NHS Leaflet</text>
+        <text x="55" y="42" font-family="system-ui, sans-serif" font-size="9" font-weight="700" fill="#64748b" text-anchor="middle">Health Leaflet</text>
         <text x="55" y="60" font-family="system-ui, sans-serif" font-size="8.5" font-weight="700" fill="#0284c7" text-anchor="middle">Informative / Formal</text>
       </g>
       <g transform="translate(155, 30)">

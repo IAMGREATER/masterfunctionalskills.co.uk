@@ -217,19 +217,19 @@ ENGLISH_L2_MOCK_SOLUTIONS = {
     ],
     6: [
         ("Mock 6 &bull; Reading Section Model Answers (Q1&ndash;Q9)",
-         "<b>Q1. Fact vs Opinion in Text A:</b> Fact: <i>'Specialist geriatric bed capacity decreased by 14% over the preceding decade.'</i> (Audited NHS statistical record). Opinion: <i>'Decentralized community care is an unmitigated disaster created purely to cut funding.'</i> (Subjective polemical claim).<br>"
+         "<b>Q1. Fact vs Opinion in Text A:</b> Fact: <i>'Specialist geriatric bed capacity decreased by 14% over the preceding decade.'</i> (Audited clinical statistical record). Opinion: <i>'Decentralized community care is an unmitigated disaster created purely to cut funding.'</i> (Subjective polemical claim).<br>"
          "<b>Q2. Implicit Meaning in Text A:</b> The phrase <i>'bed-blocking through bureaucratic paralysis'</i> implies that vulnerable patients remain stranded in hospital wards not due to clinical illness, but because social care assessment paperwork is hopelessly delayed.<br>"
          "<b>Q3. Organisational Features in Text A:</b> Analytical bar charts comparing hospital stay durations, authoritative clinical footnotes, and clear institutional subheadings.<br>"
          "<b>Q4. Language Devices in Text B:</b> (1) Emotive anecdote: <i>'an 84-year-old widow clutching her teacup, thriving among her beloved garden memories'</i>. (2) High-modality vocabulary: <i>'dignity, autonomy, and familiar comfort'</i>.<br>"
          "<b>Q5. Vocabulary in Context:</b> In paragraph 3 of Text B, <i>'domiciliary'</i> refers to medical or supportive care delivered directly inside a patient's private home rather than a hospital.<br>"
          "<b>Q6. Author's Purpose in Text B:</b> To advocate for massive investment into professional home-care packages as the most humane, clinically effective, and cost-efficient care delivery model.<br>"
          "<b>Q7. Synthesizing Healthcare Reform Proposals:</b> Text A focuses on secondary care hospital bottlenecks, clinical bed management, and emergency ward pressures, while Text B provides the long-term solution: robust community-based social care that prevents hospital admissions altogether.<br>"
-         "<b>Q8. Comparison of Fiscal Metrics:</b> Both authors recognize the current model is fiscally unsustainable. Text A demonstrates that an acute NHS bed costs &pound;480 per night, whereas Text B proves that equivalent comprehensive home-care support costs less than &pound;95 per day.<br>"
+         "<b>Q8. Comparison of Fiscal Metrics:</b> Both authors recognize the current model is fiscally unsustainable. Text A demonstrates that an acute hospital bed costs &pound;480 per night, whereas Text B proves that equivalent comprehensive home-care support costs less than &pound;95 per day.<br>"
          "<b>Q9. Critical Evaluation of Source Validity:</b> Text A draws upon peer-reviewed clinical audit data from the British Medical Journal, ensuring highest empirical validity, whereas Text B offers inspiring qualitative case studies that capture patient dignity powerfully."),
         ("Mock 6 &bull; Writing Exemplar &bull; Task 1 (Formal Briefing Memo to Hospital Management Board)",
          "<b>Task 1 Benchmark Exemplar: Executive Healthcare Memo</b><br>"
          "<b>MEMORANDUM</b><br>"
-         "<b>To:</b> Chief Executive &amp; Management Board, St Jude's NHS Healthcare Trust<br>"
+         "<b>To:</b> Chief Executive &amp; Management Board, St Jude's Regional Healthcare Group<br>"
          "<b>From:</b> Subi, Clinical Operations Integration Manager<br>"
          "<b>Date:</b> 30 October 2026<br>"
          "<b>Subject:</b> Urgent Operational Strategy: Mitigating Delayed Discharge Through Hospital-to-Home Pathways<br><br>"

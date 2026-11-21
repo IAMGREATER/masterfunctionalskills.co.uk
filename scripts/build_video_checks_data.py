@@ -647,7 +647,7 @@ def main():
             by_ytid[yt_id] = slug
 
     # Validation pass
-    assert len(videos) == 161, f"Expected 161 videos, got {len(videos)}"
+    assert len(videos) == 118, f"Expected 118 videos, got {len(videos)}"
 
     # Check every ytId across all 245 topic pages + __mfsMasterclassParts resolves cleanly
     html_files = sorted(

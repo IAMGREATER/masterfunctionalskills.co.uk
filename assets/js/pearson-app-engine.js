@@ -563,7 +563,41 @@ function updatePopTimerDisplay() {
   const str = `${String(mins).padStart(2, "0")}:${String(secs).padStart(2, "0")}`;
   const el = document.getElementById("popTimerDisplay");
   if (el) el.textContent = str;
+  const mobileEl = document.getElementById("popMobileTimerText");
+  if (mobileEl) mobileEl.textContent = str;
 }
+
+function togglePopMobileTools(e) {
+  if (e) {
+    e.preventDefault();
+    e.stopPropagation();
+  }
+  const drawer = document.getElementById("popMobileToolsDrawer");
+  const btn = document.getElementById("popMobileToolsBtn");
+  if (!drawer) return;
+  const open = drawer.classList.toggle("is-open");
+  drawer.setAttribute("aria-hidden", open ? "false" : "true");
+  if (btn) btn.setAttribute("aria-expanded", open ? "true" : "false");
+}
+
+function closePopMobileTools() {
+  const drawer = document.getElementById("popMobileToolsDrawer");
+  const btn = document.getElementById("popMobileToolsBtn");
+  if (drawer) {
+    drawer.classList.remove("is-open");
+    drawer.setAttribute("aria-hidden", "true");
+  }
+  if (btn) btn.setAttribute("aria-expanded", "false");
+}
+
+document.addEventListener("click", (e) => {
+  const drawer = document.getElementById("popMobileToolsDrawer");
+  const btn = document.getElementById("popMobileToolsBtn");
+  if (!drawer || !drawer.classList.contains("is-open")) return;
+  if (!drawer.contains(e.target) && (!btn || !btn.contains(e.target))) {
+    closePopMobileTools();
+  }
+});
 
 // Fullscreen & Fill Screen Toggle
 function togglePopFullscreen() {

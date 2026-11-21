@@ -166,7 +166,11 @@ def is_intro_or_outro(label: str) -> bool:
             "mock structure",
             "exam strategy",
             "writing strategy",
+            "strategy",
             "summary",
+            "paper completed",
+            "assessment completed",
+            "writing recap",
             "next steps",
             "checklist",
         )
@@ -647,7 +651,7 @@ def main():
             by_ytid[yt_id] = slug
 
     # Validation pass
-    assert len(videos) == 118, f"Expected 118 videos, got {len(videos)}"
+    assert len(videos) == 126, f"Expected 126 videos, got {len(videos)}"
 
     # Check every ytId across all 245 topic pages + __mfsMasterclassParts resolves cleanly
     html_files = sorted(

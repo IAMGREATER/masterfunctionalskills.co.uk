@@ -1338,10 +1338,21 @@
   }
 }
 
+/* Mobile-only titlebar controls hidden on desktop (> 900px) */
+.pop-mobile-exit-btn,
+.pop-mobile-top-timer,
+.pop-mobile-tools-btn,
+.pop-mobile-tools-drawer {
+  display: none;
+}
+
 /* ==========================================================================
    MOBILE & PORTRAIT TABLET PEARSON TEST PLAYER OVERHAUL (<= 900px)
+   Clean 48px single-row topbar + 48px single-row bottombar
    ========================================================================== */
 @media screen and (max-width: 900px) {
+  .mfs-top-bar,
+  .mfs-navbar,
   #dfsHeroContextSection {
     display: none !important;
   }
@@ -1351,24 +1362,29 @@
   }
   .pearson-app-shell {
     height: auto !important;
-    min-height: calc(100dvh - 54px) !important;
+    min-height: 100dvh !important;
     max-height: none !important;
     margin: 0 !important;
     border-radius: 0 !important;
-    border-left: none !important;
-    border-right: none !important;
+    border: none !important;
     overflow: visible !important;
     box-shadow: none !important;
   }
   .pearson-titlebar {
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 950 !important;
+    min-height: 48px !important;
     height: auto !important;
-    padding: 8px 10px !important;
-    flex-wrap: wrap !important;
+    padding: 6px 8px !important;
+    background: #0f172a !important;
+    border-bottom: 1.5px solid #0284c7 !important;
+    flex-wrap: nowrap !important;
     gap: 6px !important;
   }
   .pearson-title-left,
   .pearson-btn-fill-screen,
-  .pearson-win-btn:not(.close-btn) {
+  .pearson-win-btn {
     display: none !important;
   }
   .pearson-title-controls {
@@ -1376,7 +1392,24 @@
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
-    gap: 8px !important;
+    gap: 6px !important;
+    position: relative !important;
+  }
+  .pop-mobile-exit-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+    padding: 6px 9px !important;
+    min-height: 36px !important;
+    border-radius: 7px !important;
+    background: #1e293b !important;
+    border: 1px solid #334155 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 0.80rem !important;
+    font-weight: 700 !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
   }
   .pearson-title-controls label {
     flex: 1 1 auto !important;
@@ -1388,9 +1421,76 @@
   .pearson-set-dropdown {
     width: 100% !important;
     max-width: 100% !important;
-    padding: 7px 10px !important;
+    padding: 6px 8px !important;
+    min-height: 36px !important;
+    font-size: 0.82rem !important;
+    border-radius: 7px !important;
+    background: #1e293b !important;
+    color: #ffffff !important;
+    border: 1px solid #475569 !important;
+  }
+  .pop-mobile-top-timer {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+    padding: 5px 8px !important;
+    min-height: 36px !important;
+    border-radius: 7px !important;
+    background: #1e293b !important;
+    border: 1px solid #f37021 !important;
+    color: #ffffff !important;
+    font-size: 0.80rem !important;
+    font-weight: 800 !important;
+    font-variant-numeric: tabular-nums !important;
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+  }
+  .pop-mobile-top-timer i {
+    color: #f37021 !important;
+  }
+  .pop-mobile-tools-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    width: 36px !important;
+    height: 36px !important;
+    border-radius: 7px !important;
+    background: #1e293b !important;
+    border: 1px solid #334155 !important;
+    color: #ffffff !important;
+    font-size: 0.95rem !important;
+    cursor: pointer !important;
+    flex-shrink: 0 !important;
+  }
+  .pop-mobile-tools-drawer.is-open {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 4px !important;
+    position: absolute !important;
+    top: calc(100% + 8px) !important;
+    right: 0 !important;
+    min-width: 205px !important;
+    padding: 8px !important;
+    background: #0f172a !important;
+    border: 1.5px solid #0284c7 !important;
+    border-radius: 10px !important;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.38) !important;
+    z-index: 1200 !important;
+  }
+  .pop-drawer-item {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    width: 100% !important;
+    padding: 9px 10px !important;
+    background: #1e293b !important;
+    color: #ffffff !important;
+    border: 1px solid #334155 !important;
+    border-radius: 7px !important;
     font-size: 0.84rem !important;
-    border-radius: 6px !important;
+    font-weight: 700 !important;
+    text-align: left !important;
+    cursor: pointer !important;
   }
   .pearson-canvas {
     flex: 1 1 auto !important;
@@ -1403,67 +1503,38 @@
     position: sticky !important;
     bottom: 0 !important;
     z-index: 900 !important;
-    padding: 6px 6px calc(6px + env(safe-area-inset-bottom, 0px)) !important;
+    min-height: 48px !important;
+    padding: 6px 8px calc(6px + env(safe-area-inset-bottom, 0px)) !important;
     display: flex !important;
     flex-wrap: nowrap !important;
     align-items: center !important;
     justify-content: space-between !important;
-    gap: 4px !important;
+    gap: 6px !important;
   }
-  .pop-tools-left {
-    gap: 3px !important;
-    flex: 0 0 auto !important;
+  .pop-tools-left,
+  .pearson-bottom-bar .pop-timer-box,
+  .pop-actions-right > button:last-child {
+    display: none !important;
   }
   .pop-nav-center {
-    gap: 4px !important;
+    gap: 6px !important;
     flex: 1 1 auto !important;
-    justify-content: center !important;
+    justify-content: space-between !important;
     min-width: 0 !important;
   }
   .pop-actions-right {
-    gap: 4px !important;
+    gap: 6px !important;
     flex: 0 0 auto !important;
   }
-  .pop-tool-btn {
-    padding: 5px 7px !important;
-    font-size: 0.80rem !important;
-  }
-  #popBottomFsBtn {
-    display: none !important;
-  }
   .btn-pop-nav,
   .btn-pop-action,
   .pop-counter-pill {
-    padding: 6px 8px !important;
-    font-size: 0.78rem !important;
+    padding: 7px 10px !important;
+    min-height: 36px !important;
+    font-size: 0.82rem !important;
     white-space: nowrap !important;
-  }
-  .pop-timer-box {
-    margin: 0 4px 0 0 !important;
-    padding: 4px 6px !important;
-    font-size: 0.78rem !important;
-    white-space: nowrap !important;
-  }
-}
-
-@media screen and (max-width: 480px) {
-  .pop-tools-left > button:nth-child(1),
-  .pop-tools-left > button:nth-child(2) {
-    display: none !important;
-  }
-  .pearson-bottom-bar {
-    padding: 6px 4px calc(6px + env(safe-area-inset-bottom, 0px)) !important;
-    gap: 3px !important;
-  }
-  .btn-pop-nav,
-  .btn-pop-action,
-  .pop-counter-pill {
-    padding: 5px 6px !important;
-    font-size: 0.73rem !important;
-  }
-  .pop-timer-box {
-    font-size: 0.72rem !important;
-    padding: 3px 5px !important;
-    gap: 3px !important;
+    display: inline-flex !important;
+    align-items: center !important;
+    justify-content: center !important;
   }
 }

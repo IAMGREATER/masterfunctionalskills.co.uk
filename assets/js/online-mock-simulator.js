@@ -8105,6 +8105,40 @@ function toggleSimMobileQGrid(e) {
 }
 window.toggleSimMobileQGrid = toggleSimMobileQGrid;
 
+function toggleSimMobileTools(e) {
+  if (e) {
+    e.preventDefault();
+    e.stopPropagation();
+  }
+  const drawer = document.getElementById('simMobileToolsDrawer');
+  const btn = document.getElementById('simMobileToolsBtn');
+  if (!drawer) return;
+  const open = drawer.classList.toggle('is-open');
+  drawer.setAttribute('aria-hidden', open ? 'false' : 'true');
+  if (btn) btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+}
+window.toggleSimMobileTools = toggleSimMobileTools;
+
+function closeSimMobileTools() {
+  const drawer = document.getElementById('simMobileToolsDrawer');
+  const btn = document.getElementById('simMobileToolsBtn');
+  if (drawer) {
+    drawer.classList.remove('is-open');
+    drawer.setAttribute('aria-hidden', 'true');
+  }
+  if (btn) btn.setAttribute('aria-expanded', 'false');
+}
+window.closeSimMobileTools = closeSimMobileTools;
+
+document.addEventListener('click', (e) => {
+  const drawer = document.getElementById('simMobileToolsDrawer');
+  const btn = document.getElementById('simMobileToolsBtn');
+  if (!drawer || !drawer.classList.contains('is-open')) return;
+  if (!drawer.contains(e.target) && (!btn || !btn.contains(e.target))) {
+    closeSimMobileTools();
+  }
+});
+
 function syncMobileFinalAnsPlacement() {
   const finalCard = document.getElementById('simFinalAnsCard');
   const leftContent = document.getElementById('simLeftQuestionContent');

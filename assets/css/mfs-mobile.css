@@ -316,7 +316,7 @@
     justify-content: space-between !important;
     align-items: center !important;
     margin-bottom: 8px !important;
-    font-size: 0.72rem !important;
+    font-size: 0.80rem !important;
     font-weight: 700 !important;
     text-transform: uppercase !important;
     letter-spacing: 0.05em !important;
@@ -335,7 +335,7 @@
     border-radius: 6px !important;
     border: 1px solid #cbd5e1 !important;
     background: #ffffff !important;
-    font-size: 0.7rem !important;
+    font-size: 0.78rem !important;
     font-weight: 600 !important;
     text-align: center !important;
     cursor: pointer !important;
@@ -425,7 +425,7 @@
   }
 
   .mfs-drawer-chevron {
-    font-size: 0.72rem !important;
+    font-size: 0.80rem !important;
     color: #94a3b8 !important;
     transition: transform 0.2s ease !important;
   }
@@ -852,7 +852,7 @@
   }
 
   .reviews-stat {
-    font-size: 0.74rem !important;
+    font-size: 0.80rem !important;
   }
 
   /* ------------------------------------------------------------------------
@@ -915,7 +915,7 @@
   }
 
   .past-papers-badge-item {
-    font-size: 0.68rem !important;
+    font-size: 0.78rem !important;
     padding: 2px 7px !important;
   }
 
@@ -950,7 +950,7 @@
 
   .board-pill {
     padding: 3px 8px !important;
-    font-size: 0.70rem !important;
+    font-size: 0.78rem !important;
     line-height: 1.2 !important;
     min-height: 24px !important;
     border-radius: 9999px !important;
@@ -1003,7 +1003,7 @@
   .past-paper-tag-board,
   .past-paper-tag-spec,
   .past-paper-tag-subject {
-    font-size: 0.65rem !important;
+    font-size: 0.78rem !important;
     padding: 2px 6px !important;
     border-radius: 4px !important;
     line-height: 1.2 !important;
@@ -1021,7 +1021,7 @@
     flex: unset !important;
     width: 100% !important;
     padding: 6px 4px !important;
-    font-size: 0.74rem !important;
+    font-size: 0.80rem !important;
     font-weight: 700 !important;
     min-height: 32px !important;
     border-radius: 6px !important;
@@ -1034,7 +1034,7 @@
   }
 
   .btn-paper i {
-    font-size: 0.74rem !important;
+    font-size: 0.80rem !important;
   }
 
   .paper-filter-bar {
@@ -1065,7 +1065,7 @@
   .paper-filter-chip,
   .filter-chip {
     padding: 3px 8px !important;
-    font-size: 0.70rem !important;
+    font-size: 0.78rem !important;
     border-radius: 12px !important;
     white-space: nowrap !important;
   }
@@ -1132,7 +1132,7 @@
   .btn-worksheet {
     flex: 1 !important;
     padding: 5px 8px !important;
-    font-size: 0.74rem !important;
+    font-size: 0.80rem !important;
     text-align: center !important;
     border-radius: 6px !important;
   }
@@ -1169,7 +1169,7 @@
     min-width: 0 !important;
   }
   .topic-category-tag {
-    font-size: 0.60rem !important;
+    font-size: 0.78rem !important;
     padding: 2px 7px !important;
     white-space: nowrap !important;
     flex-shrink: 0 !important;
@@ -1302,7 +1302,7 @@
   .topic-pill-nav a,
   .filter-pill {
     padding: 4px 8px !important;
-    font-size: 0.74rem !important;
+    font-size: 0.80rem !important;
     border-radius: 12px !important;
     white-space: nowrap !important;
   }
@@ -1344,7 +1344,7 @@
   }
 
   .math-bar-cell {
-    font-size: 0.76rem !important;
+    font-size: 0.80rem !important;
   }
 
   .math-bidmas-ladder {
@@ -1401,7 +1401,7 @@
 
   .golden-rule-pill,
   .watch-out-pill {
-    font-size: 0.76rem !important;
+    font-size: 0.80rem !important;
     padding: 3px 6px !important;
     margin-bottom: 2px !important;
     line-height: 1.25 !important;
@@ -1593,7 +1593,7 @@
   div:has(> table):not(.keep-table-grid) > table:not(.keep-table-grid):not(.math-matrix-table) td[data-label]:not(:first-child)::before {
     content: attr(data-label);
     display: block !important;
-    font-size: 0.72rem !important;
+    font-size: 0.80rem !important;
     font-weight: 800 !important;
     text-transform: uppercase !important;
     letter-spacing: 0.5px !important;
@@ -1605,7 +1605,7 @@
   .course-compare-table td[data-label]:first-child::before {
     content: attr(data-label);
     display: block !important;
-    font-size: 0.70rem !important;
+    font-size: 0.78rem !important;
     font-weight: 700 !important;
     text-transform: uppercase !important;
     letter-spacing: 0.5px !important;
@@ -1652,7 +1652,7 @@
     display: table-cell !important;
     width: auto !important;
     padding: 4px 3px !important;
-    font-size: 0.70rem !important;
+    font-size: 0.78rem !important;
     line-height: 1.2 !important;
     text-align: center !important;
     border: 1px solid #cbd5e1 !important;
@@ -1765,7 +1765,7 @@
     width: 22px !important;
     height: 22px !important;
     min-width: 22px !important;
-    font-size: 0.70rem !important;
+    font-size: 0.78rem !important;
     border-radius: 5px !important;
     box-shadow: none !important;
   }
@@ -1808,7 +1808,7 @@
     background: rgba(255, 255, 255, 0.05) !important;
     border: 1px solid rgba(255, 255, 255, 0.10) !important;
     border-radius: 12px !important;
-    font-size: 0.68rem !important;
+    font-size: 0.78rem !important;
     color: #cbd5e1 !important;
     text-decoration: none !important;
     transition: background 0.15s ease !important;
@@ -1840,7 +1840,7 @@
   .footer-links-col.mfs-footer-accordion h4 {
     margin: 0 !important;
     padding: 5px 8px !important;
-    font-size: 0.72rem !important;
+    font-size: 0.80rem !important;
     font-weight: 600 !important;
     color: #ffffff !important;
     letter-spacing: 0.02em !important;
@@ -1861,7 +1861,7 @@
   .footer-col.mfs-footer-accordion .mfs-footer-chevron,
   .footer-links-col.mfs-footer-accordion .mfs-footer-chevron {
     display: inline-block !important;
-    font-size: 0.58rem !important;
+    font-size: 0.78rem !important;
     color: var(--accent) !important;
     transition: transform 0.2s ease !important;
   }
@@ -1895,7 +1895,7 @@
 
   .footer-col.mfs-footer-accordion .footer-links a,
   .footer-links-col.mfs-footer-accordion ul a {
-    font-size: 0.68rem !important;
+    font-size: 0.78rem !important;
     line-height: 1.25 !important;
     color: #cbd5e1 !important;
     text-decoration: none !important;
@@ -1915,7 +1915,7 @@
   .footer-links-col:not(.mfs-footer-accordion) h4 {
     margin-bottom: 3px !important;
     padding-bottom: 2px !important;
-    font-size: 0.72rem !important;
+    font-size: 0.80rem !important;
   }
 
   .footer-col:not(.mfs-footer-accordion):not(:first-child) .footer-links,
@@ -1928,7 +1928,7 @@
 
   .footer-col:not(.mfs-footer-accordion):not(:first-child) .footer-links a,
   .footer-links-col:not(.mfs-footer-accordion) ul a {
-    font-size: 0.68rem !important;
+    font-size: 0.78rem !important;
   }
 
   /* Footer Bottom Bar — Ultra Slim */
@@ -1940,7 +1940,7 @@
     align-items: center !important;
     text-align: center !important;
     gap: 3px !important;
-    font-size: 0.64rem !important;
+    font-size: 0.78rem !important;
     color: #94a3b8 !important;
   }
 
@@ -1949,7 +1949,7 @@
     line-height: 1.25 !important;
     max-width: 96% !important;
     margin: 0 !important;
-    font-size: 0.62rem !important;
+    font-size: 0.78rem !important;
     color: #64748b !important;
   }
 
@@ -1961,7 +1961,7 @@
   }
 
   .footer-bottom a {
-    font-size: 0.65rem !important;
+    font-size: 0.78rem !important;
     color: #94a3b8 !important;
     text-decoration: none !important;
     padding: 1px 0 !important;
@@ -1996,7 +1996,7 @@
   }
 
   .hero-showcase-top-pills span {
-    font-size: 0.68rem !important;
+    font-size: 0.78rem !important;
     padding: 3px 8px !important;
   }
 
@@ -2014,7 +2014,7 @@
   }
 
   .hero-showcase-overlay span {
-    font-size: 0.64rem !important;
+    font-size: 0.78rem !important;
   }
 
   /* Awarding Bodies: Compact 3x2 logo strip (no endless scroll) */
@@ -2049,7 +2049,7 @@
   }
 
   .board-brand-card span {
-    font-size: 0.64rem !important;
+    font-size: 0.78rem !important;
     margin-top: 2px !important;
     text-align: center !important;
   }
@@ -2112,7 +2112,7 @@
   }
 
   .card-num-pill {
-    font-size: 0.74rem !important;
+    font-size: 0.80rem !important;
     padding: 2px 6px !important;
   }
 
@@ -2122,7 +2122,7 @@
   }
 
   .header-right {
-    font-size: 0.68rem !important;
+    font-size: 0.78rem !important;
     padding: 2px 6px !important;
   }
 
@@ -2160,7 +2160,7 @@
 
   .golden-rule-pill,
   .watch-out-pill {
-    font-size: 0.76rem !important;
+    font-size: 0.80rem !important;
     padding: 3px 6px !important;
     margin-bottom: 2px !important;
     line-height: 1.25 !important;
@@ -2168,7 +2168,7 @@
 
   .card-footer-strip {
     padding: 5px 10px !important;
-    font-size: 0.72rem !important;
+    font-size: 0.80rem !important;
   }
 
   /* Back face on mobile */
@@ -2182,7 +2182,7 @@
   }
 
   .challenge-title {
-    font-size: 0.74rem !important;
+    font-size: 0.80rem !important;
     margin-bottom: 2px !important;
   }
 
@@ -2229,7 +2229,7 @@
     background: #f1f5f9;
     border: 1.5px solid #e2e8f0;
     border-radius: 999px;
-    font-size: 0.76rem;
+    font-size: 0.80rem;
     font-weight: 700;
     max-width: 100% !important;
     width: 100% !important;
@@ -2262,7 +2262,7 @@
   .btn-mastered,
   .btn-practice {
     padding: 7px 9px !important;
-    font-size: 0.76rem !important;
+    font-size: 0.80rem !important;
     border-radius: 6px !important;
   }
 
@@ -2285,12 +2285,12 @@
 
   .deck-stat-badge {
     padding: 3px 8px !important;
-    font-size: 0.74rem !important;
+    font-size: 0.80rem !important;
   }
 
   .filter-pill {
     padding: 3px 8px !important;
-    font-size: 0.72rem !important;
+    font-size: 0.80rem !important;
   }
 
   /* Hide print mode button on mobile phones */
@@ -2334,7 +2334,7 @@
     top: 12px !important;
     left: 12px !important;
     padding: 4px 10px !important;
-    font-size: 0.68rem !important;
+    font-size: 0.78rem !important;
     border-radius: 100px !important;
   }
 
@@ -2398,7 +2398,7 @@
 
   .res-link {
     padding: 5px 4px !important;
-    font-size: 0.70rem !important;
+    font-size: 0.78rem !important;
     border-radius: 6px !important;
     text-align: center !important;
     justify-content: center !important;
@@ -2416,7 +2416,7 @@
 
   .filter-btn {
     padding: 4px 7px !important;
-    font-size: 0.72rem !important;
+    font-size: 0.80rem !important;
     border-radius: 6px !important;
   }
 }
@@ -3002,7 +3002,7 @@
     }
 
     .practice-q-stem .math-frac-num {
-      font-size: 0.70rem !important;
+      font-size: 0.78rem !important;
       line-height: 1 !important;
       padding-bottom: 1px !important;
       border-bottom: 1.5px solid currentColor !important;
@@ -3011,7 +3011,7 @@
     }
 
     .practice-q-stem .math-frac-den {
-      font-size: 0.70rem !important;
+      font-size: 0.78rem !important;
       line-height: 1 !important;
       padding-top: 1px !important;
       width: auto !important;
@@ -3054,7 +3054,7 @@
     .practice-interactive-wrap label,
     .working-scratchpad-label,
     .practice-notes-label {
-      font-size: 0.76rem !important;
+      font-size: 0.80rem !important;
       font-weight: 700 !important;
       color: #475569 !important;
       margin-bottom: 4px !important;
@@ -3385,13 +3385,13 @@
     }
 
     .examiner-guidance-header {
-      font-size: 0.76rem !important;
+      font-size: 0.80rem !important;
       font-weight: 700 !important;
       margin-bottom: 4px !important;
     }
 
     .examiner-guidance-text {
-      font-size: 0.76rem !important;
+      font-size: 0.80rem !important;
       line-height: 1.35 !important;
     }
 
@@ -3973,7 +3973,7 @@
   }
 
   .practice-q-stem .math-frac-num {
-    font-size: 0.70rem !important;
+    font-size: 0.78rem !important;
     line-height: 1 !important;
     padding-bottom: 1px !important;
     border-bottom: 1.5px solid currentColor !important;
@@ -3982,7 +3982,7 @@
   }
 
   .practice-q-stem .math-frac-den {
-    font-size: 0.70rem !important;
+    font-size: 0.78rem !important;
     line-height: 1 !important;
     padding-top: 1px !important;
     width: auto !important;
@@ -4025,7 +4025,7 @@
   .practice-interactive-wrap label,
   .working-scratchpad-label,
   .practice-notes-label {
-    font-size: 0.76rem !important;
+    font-size: 0.80rem !important;
     font-weight: 700 !important;
     color: #475569 !important;
     margin-bottom: 4px !important;
@@ -4519,7 +4519,7 @@
 
   .badge-pill-accent,
   .badge-pill-gold {
-    font-size: 0.72rem !important;
+    font-size: 0.80rem !important;
     padding: 3px 8px !important;
   }
 
@@ -4922,7 +4922,7 @@
   .board-pill {
     flex-shrink: 0 !important;
     white-space: nowrap !important;
-    font-size: 0.76rem !important;
+    font-size: 0.80rem !important;
     padding: 4px 8px !important;
   }
   .board-pill img {
@@ -5303,7 +5303,7 @@ a[href^="mailto:"] { overflow-wrap: anywhere !important; word-break: break-word 
     background: var(--bg-card, #ffffff) !important;
     border: 1.5px solid var(--border, #e2e8f0) !important;
     border-radius: 10px !important;
-    font-size: 0.75rem !important;
+    font-size: 0.80rem !important;
     font-weight: 700 !important;
     color: #334155 !important;
     box-shadow: 0 1px 4px rgba(15, 23, 42, 0.04) !important;
@@ -5316,7 +5316,7 @@ a[href^="mailto:"] { overflow-wrap: anywhere !important; word-break: break-word 
     color: #0f172a !important;
     text-transform: uppercase !important;
     letter-spacing: 0.04em !important;
-    font-size: 0.68rem !important;
+    font-size: 0.78rem !important;
     padding-right: 4px !important;
     border-right: 1px solid #cbd5e1 !important;
   }
@@ -5333,7 +5333,7 @@ a[href^="mailto:"] { overflow-wrap: anywhere !important; word-break: break-word 
     display: inline-flex !important;
     align-items: center !important;
     justify-content: center !important;
-    font-size: 0.68rem !important;
+    font-size: 0.78rem !important;
     flex-shrink: 0 !important;
   }
 
@@ -5621,7 +5621,7 @@ a[href^="mailto:"] { overflow-wrap: anywhere !important; word-break: break-word 
     flex: 0 0 auto !important;
     white-space: nowrap !important;
     padding: 6px 11px !important;
-    font-size: 0.76rem !important;
+    font-size: 0.80rem !important;
     border-radius: 999px !important;
   }
 
@@ -5702,7 +5702,7 @@ a[href^="mailto:"] { overflow-wrap: anywhere !important; word-break: break-word 
     gap: 4px !important;
   }
   .product-card[data-cat] .product-category {
-    font-size: 0.68rem !important;
+    font-size: 0.78rem !important;
     margin: 0 !important;
   }
   .product-card[data-cat] .product-title {
@@ -5774,7 +5774,7 @@ a[href^="mailto:"] { overflow-wrap: anywhere !important; word-break: break-word 
     background: #0f172a;
     color: #ffffff;
     border: 1.5px solid #ffffff;
-    font-size: 0.62rem;
+    font-size: 0.68rem;
     font-weight: 900;
     line-height: 1;
     display: flex;
@@ -5795,7 +5795,7 @@ a[href^="mailto:"] { overflow-wrap: anywhere !important; word-break: break-word 
     background: #0284c7;
     color: #ffffff;
     border: 1.5px solid #ffffff;
-    font-size: 0.62rem;
+    font-size: 0.68rem;
     font-weight: 900;
     line-height: 1;
     display: flex;
@@ -5826,6 +5826,196 @@ a[href^="mailto:"] { overflow-wrap: anywhere !important; word-break: break-word 
 @media screen and (max-width: 640px) {
   .moat-strip,
   .hero-reviews-bar {
+    display: none !important;
+  }
+}
+
+
+/* ==========================================================================
+   PHASE 2 MOBILE OVERHAUL (2026-11-21)
+   - Font standardisation & >= 16px body readability on mobile
+   - Simplified revision #video-station with collapsed Chapters on <= 768px
+   - Responsive diagrams, SVGs, portraits & .dfs-ui-sim containers
+   ========================================================================== */
+.mfs-chapters-toggle {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  body {
+    font-family: var(--font-body, 'Inter', system-ui, sans-serif);
+    font-size: 16px;
+    line-height: 1.55;
+  }
+  body.dyslexia-mode {
+    font-family: 'Lexend', 'Inter', system-ui, sans-serif !important;
+  }
+  h1, h2, h3, .section-title, .topic-card-title {
+    font-family: var(--font-heading, 'Plus Jakarta Sans', system-ui, sans-serif);
+  }
+
+  /* Primary tap target floor & hero declutter */
+  .btn-hero-action,
+  .btn-nav-exam,
+  .btn-card-action,
+  .mfs-drawer-dyslexia-toggle-btn {
+    min-height: 42px !important;
+  }
+  .hero-badge,
+  .moat-badge {
+    font-size: 0.78rem !important;
+  }
+
+  /* Simplified Mobile #video-station */
+  #videoMasterclassStation {
+    border-radius: 12px !important;
+  }
+  #videoMasterclassStation .mc-part-tabs-bar {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    scrollbar-width: none !important;
+    padding: 8px 10px !important;
+    gap: 6px !important;
+    border-radius: 12px 12px 0 0 !important;
+  }
+  #videoMasterclassStation .mc-part-tabs-bar::-webkit-scrollbar {
+    display: none !important;
+  }
+  #videoMasterclassStation .mc-part-tabs-bar > span {
+    display: none !important;
+  }
+  #videoMasterclassStation .mc-part-tab {
+    flex: 0 0 auto !important;
+    white-space: nowrap !important;
+    padding: 7px 11px !important;
+    font-size: 0.80rem !important;
+    min-height: 38px !important;
+    border-radius: 999px !important;
+  }
+  #videoMasterclassStation .video-exemplar-head {
+    padding: 10px 12px !important;
+    gap: 8px !important;
+  }
+  #videoMasterclassStation #mcTutorAvatar,
+  #videoMasterclassStation .video-exemplar-head > div:last-child,
+  #videoMasterclassStation .mfs-yt-badge-bottom,
+  #videoMasterclassStation > div:last-child {
+    display: none !important;
+  }
+  #videoMasterclassStation #mcVideoTitle {
+    font-size: 0.98rem !important;
+    line-height: 1.25 !important;
+  }
+  #videoMasterclassStation #mcTutorMeta {
+    font-size: 0.80rem !important;
+    line-height: 1.3 !important;
+    margin-top: 2px !important;
+  }
+  #videoMasterclassStation .mfs-yt-play-btn {
+    padding: 10px 18px !important;
+    font-size: 0.90rem !important;
+    min-height: 44px !important;
+  }
+  #videoMasterclassStation .mfs-chapters-toggle {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    width: 100% !important;
+    min-height: 42px !important;
+    padding: 9px 14px !important;
+    background: #0f172a !important;
+    color: #e2e8f0 !important;
+    border: 2px solid #0284c7 !important;
+    border-top: 1px solid #1e3a8a !important;
+    border-radius: 0 0 12px 12px !important;
+    font-size: 0.85rem !important;
+    font-weight: 800 !important;
+    cursor: pointer !important;
+    box-sizing: border-box !important;
+  }
+  #videoMasterclassStation .mfs-chapters-toggle[aria-expanded="true"] {
+    border-radius: 0 !important;
+    border-bottom: 1px solid #1e3a8a !important;
+  }
+  #videoMasterclassStation .mfs-chapters-toggle[aria-expanded="true"] .mfs-chapters-chev {
+    transform: rotate(180deg);
+  }
+  #videoMasterclassStation .mfs-chapters-chev {
+    color: #38bdf8;
+    transition: transform 0.2s ease;
+  }
+  #videoMasterclassStation #mcJumpBar,
+  #videoMasterclassStation .video-jump-bar {
+    display: none !important;
+    border-radius: 0 0 12px 12px !important;
+  }
+  #videoMasterclassStation #mcJumpBar.is-mobile-open,
+  #videoMasterclassStation .video-jump-bar.is-mobile-open {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    padding: 10px 12px !important;
+    gap: 6px !important;
+  }
+  #videoMasterclassStation #mcJumpBar .jump-btn {
+    font-size: 0.80rem !important;
+    min-height: 36px !important;
+  }
+
+  /* Responsive diagrams, SVGs, Tutor portraits & DFS Simulators */
+  main svg:not(.fa-svg):not([width="16"]):not([width="18"]):not([width="20"]):not([width="24"]),
+  .revision-section svg:not([width="16"]):not([width="20"]):not([width="24"]),
+  .dfs-section svg:not([width="16"]):not([width="20"]):not([width="24"]) {
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  .tutor-avatar,
+  .tutor-card img,
+  #mcTutorAvatar,
+  .hero-showcase-img {
+    object-fit: cover !important;
+    object-position: center 20% !important;
+  }
+  .dfs-ui-sim,
+  .dfs-sim-window,
+  .dfs-sim-body,
+  .dfs-table-scroll,
+  .math-visual-card,
+  .math-col-board {
+    max-width: 100% !important;
+    overflow-x: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    box-sizing: border-box !important;
+  }
+  .dfs-ui-sim {
+    border-radius: 10px !important;
+    padding: 10px !important;
+  }
+  .dfs-sheet-grid th,
+  .dfs-sheet-grid td {
+    font-size: 0.82rem !important;
+    padding: 6px 8px !important;
+  }
+  .revision-section table,
+  .dfs-section table {
+    max-width: 100% !important;
+  }
+}
+
+/* Tablet portrait/landscape hero showcase fix (768px - 1024px): keep Sonya's face unobstructed */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .hero-square-showcase {
+    aspect-ratio: 4 / 3 !important;
+    max-height: 360px !important;
+  }
+  .hero-square-showcase .hero-showcase-img {
+    object-fit: cover !important;
+    object-position: center 15% !important;
+  }
+  .hero-square-showcase .hero-showcase-scrim,
+  .hero-square-showcase .hero-showcase-overlay {
     display: none !important;
   }
 }

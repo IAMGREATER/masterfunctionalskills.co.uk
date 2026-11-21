@@ -793,12 +793,12 @@ document.addEventListener('DOMContentLoaded', function() {
     if (!document.querySelector('link[href*="mfs-video-checks.css"]')) {
       var lk = document.createElement('link');
       lk.rel = 'stylesheet';
-      lk.href = MFS_REV_ROOT + 'assets/css/mfs-video-checks.css?v=20261120v12';
+      lk.href = MFS_REV_ROOT + 'assets/css/mfs-video-checks.css?v=20261121v1';
       document.head.appendChild(lk);
     }
     if (!window.MfsVideoChecks && !document.querySelector('script[src*="mfs-video-checks.js"]')) {
       var sc = document.createElement('script');
-      sc.src = MFS_REV_ROOT + 'assets/js/mfs-video-checks.js?v=20261120v12';
+      sc.src = MFS_REV_ROOT + 'assets/js/mfs-video-checks.js?v=20261121v1';
       sc.defer = true;
       document.body.appendChild(sc);
     }
@@ -829,5 +829,103 @@ document.addEventListener('DOMContentLoaded', function() {
     var defaultStart = parseInt(facade.getAttribute('data-start') || '0', 10) || 0;
     mfsActivateTopicVideo(facade, defaultStart);
   });
+
+  function initMobileVideoSimplifier() {
+    var station = document.getElementById('videoMasterclassStation');
+    if (!station) return;
+
+    var jumpBar = document.getElementById('mcJumpBar');
+    if (jumpBar && !station.querySelector('.mfs-chapters-toggle')) {
+      var toggleBtn = document.createElement('button');
+      toggleBtn.type = 'button';
+      toggleBtn.className = 'mfs-chapters-toggle';
+      toggleBtn.setAttribute('aria-expanded', 'false');
+      toggleBtn.setAttribute('aria-controls', 'mcJumpBar');
+
+      function updateToggleLabel() {
+        var isOpen = jumpBar.classList.contains('is-mobile-open');
+        var count = jumpBar.querySelectorAll('.jump-btn').length;
+        toggleBtn.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+        toggleBtn.innerHTML = '<span><i class="fa-solid fa-list-ul"></i> Video Chapters (' + count + ')</span><i class="fa-solid fa-chevron-down mfs-chapters-chev"></i>';
+      }
+
+      updateToggleLabel();
+      toggleBtn.addEventListener('click', function() {
+        jumpBar.classList.toggle('is-mobile-open');
+        updateToggleLabel();
+      });
+
+      if (jumpBar.parentNode) {
+        jumpBar.parentNode.insertBefore(toggleBtn, jumpBar);
+      }
+
+      if (window.MutationObserver) {
+        var jbObs = new MutationObserver(function() {
+          updateToggleLabel();
+        });
+        jbObs.observe(jumpBar, { childList: true });
+      }
+    }
+
+    var metaEl = document.getElementById('mcTutorMeta');
+    if (metaEl) {
+      var mq = window.matchMedia ? window.matchMedia('(max-width: 768px)') : null;
+      function syncCompactMeta() {
+        var rawFull = metaEl.getAttribute('data-mfs-full-meta') || metaEl.innerHTML;
+        if (!metaEl.getAttribute('data-mfs-full-meta')) {
+          metaEl.setAttribute('data-mfs-full-meta', rawFull);
+        }
+        var currentText = metaEl.textContent || '';
+        var isAlreadyCondensed = metaEl.getAttribute('data-mfs-condensed') === '1';
+        if (!isAlreadyCondensed) {
+          metaEl.setAttribute('data-mfs-full-meta', metaEl.innerHTML);
+        }
+        if (mq && mq.matches) {
+          var fullStr = metaEl.getAttribute('data-mfs-full-meta') || '';
+          var tmp = document.createElement('div');
+          tmp.innerHTML = fullStr;
+          var txt = (tmp.textContent || '').replace(/\s+/g, ' ').trim();
+          var tutorMatch = txt.match(/Presented by\s+([A-Za-z]+)/i);
+          var durMatch = txt.match(/\((\d+m\s*\d+s)\)/i);
+          if (tutorMatch || durMatch) {
+            var parts = [];
+            if (tutorMatch) parts.push('Tutor ' + tutorMatch[1]);
+            if (durMatch) parts.push(durMatch[1]);
+            metaEl.textContent = parts.join(' \u2022 ');
+            metaEl.setAttribute('data-mfs-condensed', '1');
+          }
+        } else if (metaEl.getAttribute('data-mfs-condensed') === '1') {
+          metaEl.innerHTML = metaEl.getAttribute('data-mfs-full-meta') || currentText;
+          metaEl.removeAttribute('data-mfs-condensed');
+        }
+      }
+
+      syncCompactMeta();
+      if (mq && mq.addEventListener) {
+        mq.addEventListener('change', syncCompactMeta);
+      }
+      if (window.MutationObserver) {
+        var syncing = false;
+        var metaObs = new MutationObserver(function() {
+          if (syncing) return;
+          if (metaEl.getAttribute('data-mfs-condensed') === '1' && mq && mq.matches) {
+            return;
+          }
+          syncing = true;
+          metaEl.removeAttribute('data-mfs-condensed');
+          metaEl.setAttribute('data-mfs-full-meta', metaEl.innerHTML);
+          syncCompactMeta();
+          syncing = false;
+        });
+        metaObs.observe(metaEl, { childList: true, characterData: true, subtree: true });
+      }
+    }
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initMobileVideoSimplifier);
+  } else {
+    initMobileVideoSimplifier();
+  }
 })();
 

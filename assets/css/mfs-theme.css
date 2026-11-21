@@ -3783,8 +3783,3 @@ body.dyslexia-mode .moat-badge {
   border: 1px solid #fcd34d;
 }
 
-/* ==========================================================================
-   MOBILE & TABLET SYSTEM IMPORT (PRIORITY CASCADE)
-   ========================================================================== */
-@import url('mfs-mobile.css');
-

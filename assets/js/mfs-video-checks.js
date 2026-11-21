@@ -778,9 +778,10 @@
         return null;
       }
       if (contexts.topic) cleanupPlayer(contexts.topic);
+      var isMobileViewport = Boolean(window.matchMedia && window.matchMedia('(max-width: 768px)').matches);
       var ctx = createContext('topic', mount, video, {
         compact: false,
-        collapsed: false,
+        collapsed: isMobileViewport,
         getMediaEl: function () {
           return document.getElementById('topicMasterclassIframe');
         },

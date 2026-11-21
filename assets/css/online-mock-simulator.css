@@ -2577,7 +2577,10 @@ body {
 .sim-mobile-goto-work-btn,
 .sim-mobile-prompt-strip,
 .sim-mobile-qgrid-btn,
-.sim-mobile-calc-btn {
+.sim-mobile-calc-btn,
+.sim-mobile-exit-btn,
+.sim-mobile-tools-btn,
+.sim-mobile-tools-drawer {
   display: none;
 }
 
@@ -2586,7 +2589,10 @@ body {
   .sim-mobile-goto-work-btn,
   .sim-mobile-prompt-strip,
   .sim-mobile-qgrid-btn,
-  .sim-mobile-calc-btn {
+  .sim-mobile-calc-btn,
+  .sim-mobile-exit-btn,
+  .sim-mobile-tools-btn,
+  .sim-mobile-tools-drawer {
     display: none !important;
   }
 }
@@ -2596,7 +2602,9 @@ body {
     scrollbar-gutter: auto !important;
     overflow-y: auto !important;
   }
-  /* 1. Hide outer marketing banner & remove container margin so Simulator starts at top */
+  /* 1. Hide global site chrome & marketing hero so Simulator fills mobile screen */
+  .mfs-top-bar,
+  .mfs-navbar,
   #simHeroContextSection {
     display: none !important;
   }
@@ -2606,77 +2614,159 @@ body {
   }
   .sim-app-shell {
     height: auto !important;
-    min-height: calc(100dvh - 54px) !important;
+    min-height: 100dvh !important;
     max-height: none !important;
     overflow: visible !important;
     margin: 0 !important;
     border-radius: 0 !important;
-    border-left: none !important;
-    border-right: none !important;
+    border: none !important;
     box-shadow: none !important;
   }
 
-  /* 2. Slim Mobile Control Bar */
+  /* 2. Single slim 48px Mobile Control Bar: [Exit] [Paper Select] [Timer] [Calc] [Tools] */
   .sim-control-bar {
-    padding: 8px 10px !important;
-    gap: 8px !important;
-  }
-  .sim-brand-block {
-    width: 100% !important;
-    gap: 6px !important;
-  }
-  .sim-brand-badge,
-  .sim-select-label,
-  .sim-save-status,
-  .sim-font-control-label,
-  .sim-font-size-badge,
-  .sim-reset-lbl,
-  .sim-btn-fullscreen-top {
-    display: none !important;
-  }
-  .sim-paper-select-wrap {
-    width: 100% !important;
-  }
-  .sim-paper-dropdown {
-    width: 100% !important;
-    max-width: 100% !important;
-    padding: 7px 10px !important;
-    font-size: 0.84rem !important;
-  }
-  .sim-controls-right {
-    width: 100% !important;
+    position: sticky !important;
+    top: 0 !important;
+    z-index: 950 !important;
+    min-height: 48px !important;
+    padding: 6px 8px !important;
     display: flex !important;
     flex-wrap: nowrap !important;
     align-items: center !important;
     justify-content: space-between !important;
     gap: 6px !important;
   }
-  .sim-timer-box {
-    padding: 5px 9px !important;
-    font-size: 0.86rem !important;
+  .sim-brand-block {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    width: auto !important;
+  }
+  .sim-mobile-exit-btn {
+    display: inline-flex !important;
+    align-items: center !important;
+    gap: 4px !important;
+    padding: 6px 9px !important;
+    min-height: 36px !important;
+    border-radius: 7px !important;
+    background: #1e293b !important;
+    border: 1px solid #334155 !important;
+    color: #ffffff !important;
+    text-decoration: none !important;
+    font-size: 0.80rem !important;
+    font-weight: 700 !important;
+    white-space: nowrap !important;
     flex-shrink: 0 !important;
   }
-  .sim-font-control-group {
-    padding: 3px 5px !important;
-    gap: 3px !important;
+  .sim-brand-badge,
+  .sim-select-label,
+  .sim-save-status,
+  #simFontControlGroup,
+  .sim-btn-reset-top,
+  .sim-btn-fullscreen-top {
+    display: none !important;
+  }
+  .sim-paper-select-wrap {
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    width: auto !important;
+  }
+  .sim-paper-dropdown {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-height: 36px !important;
+    padding: 6px 8px !important;
+    font-size: 0.82rem !important;
+  }
+  .sim-controls-right {
+    flex: 0 0 auto !important;
+    width: auto !important;
+    display: flex !important;
+    flex-wrap: nowrap !important;
+    align-items: center !important;
+    justify-content: flex-end !important;
+    gap: 6px !important;
+    position: relative !important;
+  }
+  .sim-timer-box {
+    padding: 5px 8px !important;
+    min-height: 36px !important;
+    font-size: 0.82rem !important;
+    flex-shrink: 0 !important;
   }
   .sim-mobile-calc-btn.is-available {
     display: inline-flex !important;
     align-items: center !important;
-    gap: 5px !important;
+    gap: 4px !important;
     background: #0284c7 !important;
     border: 1px solid #38bdf8 !important;
     color: #ffffff !important;
-    padding: 6px 10px !important;
-    font-size: 0.78rem !important;
+    padding: 6px 9px !important;
+    min-height: 36px !important;
+    font-size: 0.80rem !important;
     font-weight: 800 !important;
-    border-radius: 6px !important;
+    border-radius: 7px !important;
     white-space: nowrap !important;
   }
-  .sim-btn-reset-top {
-    padding: 6px 9px !important;
-    min-width: 34px !important;
+  .sim-mobile-tools-btn {
+    display: inline-flex !important;
+    align-items: center !important;
     justify-content: center !important;
+    width: 36px !important;
+    height: 36px !important;
+    border-radius: 7px !important;
+    background: #1e293b !important;
+    border: 1px solid #334155 !important;
+    color: #ffffff !important;
+    font-size: 0.95rem !important;
+    cursor: pointer !important;
+    flex-shrink: 0 !important;
+  }
+  .sim-mobile-tools-drawer.is-open {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 6px !important;
+    position: absolute !important;
+    top: calc(100% + 8px) !important;
+    right: 0 !important;
+    min-width: 215px !important;
+    padding: 10px !important;
+    background: #0f172a !important;
+    border: 1.5px solid #0284c7 !important;
+    border-radius: 10px !important;
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.38) !important;
+    z-index: 1200 !important;
+  }
+  .sim-drawer-font-row {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    padding: 6px 8px !important;
+    color: #cbd5e1 !important;
+    font-size: 0.82rem !important;
+    font-weight: 700 !important;
+  }
+  .sim-drawer-item {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    width: 100% !important;
+    padding: 9px 10px !important;
+    background: #1e293b !important;
+    color: #ffffff !important;
+    border: 1px solid #334155 !important;
+    border-radius: 7px !important;
+    font-size: 0.84rem !important;
+    font-weight: 700 !important;
+    text-align: left !important;
+    cursor: pointer !important;
+  }
+  .sim-drawer-item.sim-drawer-danger {
+    background: #450a0a !important;
+    border-color: #991b1b !important;
+    color: #fecaca !important;
   }
 
   /* Section Switcher Tabs (Section A / Section B) */

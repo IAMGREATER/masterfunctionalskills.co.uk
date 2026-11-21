@@ -15,12 +15,12 @@
     if (!document.querySelector('link[href*="mfs-video-checks.css"]')) {
       var lk = document.createElement('link');
       lk.rel = 'stylesheet';
-      lk.href = MODAL_ROOT + 'assets/css/mfs-video-checks.css?v=20261120v12';
+      lk.href = MODAL_ROOT + 'assets/css/mfs-video-checks.css?v=20261121v1';
       document.head.appendChild(lk);
     }
     if (!window.MfsVideoChecks && !document.querySelector('script[src*="mfs-video-checks.js"]')) {
       var sc = document.createElement('script');
-      sc.src = MODAL_ROOT + 'assets/js/mfs-video-checks.js?v=20261120v12';
+      sc.src = MODAL_ROOT + 'assets/js/mfs-video-checks.js?v=20261121v1';
       sc.defer = true;
       document.body.appendChild(sc);
     }
@@ -1528,25 +1528,25 @@
 
     // Edexcel English Level 1 & 2 Past Paper 10
     'edexcel-english-l2-past-paper-10-reading': {
-      ytId: 'rO4xai5GCLM',
+      ytId: 'TB5P-v8xPQs',
       title: 'English L2 Past Paper 10 • Reading Walkthrough',
       series: 'Pearson Edexcel Functional Skills English Level 2',
       tutor: 'Tutor Subi',
       companionSlug: 'edexcel-english-l2-past-paper-10-writing',
-      companionLabel: 'Writing Past Paper 10 (3m 07s)',
+      companionLabel: 'Writing Past Paper 10 (7m 30s)',
       poster: 'assets/img/posters/eng-l2-p10-reading-poster.jpg'
     },
     'edexcel-english-l2-past-paper-10-writing': {
-      ytId: 'RPRjHwd1KPE',
+      ytId: 'TuBYhKDZ_l4',
       title: 'English L2 Past Paper 10 • Writing Walkthrough',
       series: 'Pearson Edexcel Functional Skills English Level 2',
       tutor: 'Tutor Emma',
       companionSlug: 'edexcel-english-l2-past-paper-10-reading',
-      companionLabel: 'Reading Past Paper 10 (5m 54s)',
+      companionLabel: 'Reading Past Paper 10 (15m 58s)',
       poster: 'assets/img/posters/eng-l2-p10-writing-poster.jpg'
     },
     'edexcel-english-l1-past-paper-10-reading': {
-      ytId: 'ZmmRPQ0Fxcs',
+      ytId: 'RUxoh9ToTv4',
       title: 'English L1 Past Paper 10 • Reading Walkthrough',
       series: 'Pearson Edexcel Functional Skills English Level 1',
       tutor: 'Tutor Sonya',
@@ -1560,8 +1560,80 @@
       series: 'Pearson Edexcel Functional Skills English Level 1',
       tutor: 'Tutor Subi',
       companionSlug: 'edexcel-english-l1-past-paper-10-reading',
-      companionLabel: 'Reading Past Paper 10 (3m 23s)',
+      companionLabel: 'Reading Past Paper 10 (16m 47s)',
       poster: 'assets/img/posters/eng-l1-p10-writing-poster.jpg'
+    },
+
+    // Open Awards Real-Paper & Sample Assessment Walkthroughs
+    'open-awards-english-l2-reading-sam': {
+      ytId: '07mJUVixZ10',
+      title: 'Open Awards English L2 • Reading SAM Walkthrough',
+      series: 'Open Awards Functional Skills English Level 2',
+      tutor: 'Tutor Emma',
+      poster: 'assets/img/posters/oa-eng-l2-reading-sam-poster.jpg'
+    },
+    'open-awards-english-l1-reading-sam': {
+      ytId: 'ge0u2x69O5M',
+      title: 'Open Awards English L1 • Reading SAM Walkthrough',
+      series: 'Open Awards Functional Skills English Level 1',
+      tutor: 'Tutor Subi',
+      poster: 'assets/img/posters/oa-eng-l1-reading-sam-poster.jpg'
+    },
+    'open-awards-maths-l1-mock-3-section-a': {
+      ytId: 'hPYY2Wt3Ey4',
+      title: 'Open Awards Maths L1 Mock 3 • Section A (Non-Calc)',
+      series: 'Open Awards Functional Skills Maths Level 1',
+      tutor: 'Tutor Emma',
+      activeSection: 'A',
+      companionSlug: 'open-awards-maths-l1-mock-3-section-b',
+      companionLabel: 'Section B: Calculator (10m 24s)',
+      poster: 'assets/img/posters/oa-maths-l1-mock-3-sec-a-poster.jpg'
+    },
+    'open-awards-maths-l1-mock-3-section-b': {
+      ytId: 'LRMd1ZSxKXw',
+      title: 'Open Awards Maths L1 Mock 3 • Section B (Calculator)',
+      series: 'Open Awards Functional Skills Maths Level 1',
+      tutor: 'Tutor Subi',
+      activeSection: 'B',
+      companionSlug: 'open-awards-maths-l1-mock-3-section-a',
+      companionLabel: 'Section A: Non-Calc (5m 57s)',
+      poster: 'assets/img/posters/oa-maths-l1-mock-3-sec-b-poster.jpg'
+    },
+    'open-awards-maths-l2-mock-3-section-a': {
+      ytId: 'UD0Xnv3erwo',
+      title: 'Open Awards Maths L2 Mock 3 • Section A (Non-Calc)',
+      series: 'Open Awards Functional Skills Maths Level 2',
+      tutor: 'Tutor Subi',
+      activeSection: 'A',
+      companionSlug: 'open-awards-maths-l2-mock-3-section-b',
+      companionLabel: 'Section B: Calculator (13m 08s)',
+      poster: 'assets/img/posters/oa-maths-l2-mock-3-sec-a-poster.jpg'
+    },
+    'open-awards-maths-l2-mock-3-section-b': {
+      ytId: '-y0HH8bCfww',
+      title: 'Open Awards Maths L2 Mock 3 • Section B (Calculator)',
+      series: 'Open Awards Functional Skills Maths Level 2',
+      tutor: 'Tutor Sonya',
+      activeSection: 'B',
+      companionSlug: 'open-awards-maths-l2-mock-3-section-a',
+      companionLabel: 'Section A: Non-Calc (7m 38s)',
+      poster: 'assets/img/posters/oa-maths-l2-mock-3-sec-b-poster.jpg'
+    },
+
+    // Digital Functional Skills Sample Assessment Walkthroughs
+    'dfs-level-1-sam-walkthrough': {
+      ytId: 'il1LzMRTxw4',
+      title: 'DFS Level 1 SAM • Full Real-Screen Walkthrough',
+      series: 'Pearson Edexcel Digital Functional Skills Level 1',
+      tutor: 'Tutor Emma',
+      poster: 'assets/img/posters/dfs-l1-mock-1-poster.jpg'
+    },
+    'open-awards-dfs-e3-sam-walkthrough': {
+      ytId: 'FHFZ1jd7F2g',
+      title: 'Open Awards DFS Entry Level 3 • SAM Walkthrough',
+      series: 'Open Awards Digital Functional Skills Entry Level 3',
+      tutor: 'Tutor Sonya',
+      poster: 'assets/img/posters/oa-dfs-e3-sam-poster.jpg'
     },
 
     // SLC Task 1 & Task 2 Exemplar Walkthroughs

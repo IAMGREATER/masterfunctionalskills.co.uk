@@ -1644,14 +1644,14 @@
 
     // Digital Functional Skills Sample Assessment Walkthroughs
     'dfs-level-1-sam-walkthrough': {
-      ytId: 'il1LzMRTxw4',
+      ytId: 'VlpLrSET4j4',
       title: 'DFS Level 1 SAM • Full Real-Screen Walkthrough',
       series: 'Pearson Edexcel Digital Functional Skills Level 1',
       tutor: 'Tutor Emma',
       poster: 'assets/img/posters/dfs-l1-mock-1-poster.jpg'
     },
     'open-awards-dfs-e3-sam-walkthrough': {
-      ytId: 'FHFZ1jd7F2g',
+      ytId: 'D4V1QMQY_9I',
       title: 'Open Awards DFS Entry Level 3 • SAM Walkthrough',
       series: 'Open Awards Digital Functional Skills Entry Level 3',
       tutor: 'Tutor Sonya',
@@ -1848,49 +1848,23 @@
               <div class="mfs-tutor-avatar"><i class="fa-solid fa-graduation-cap"></i></div>
               <div class="mfs-tutor-details">
                 <span class="mfs-tutor-name" id="mfsModalTutor">Your Functional Skills Tutor</span>
-                <span class="mfs-tutor-role">Pearson Functional Skills Specialist</span>
               </div>
             </div>
 
             <div class="mfs-modal-actions">
               <a href="#" target="_blank" rel="noopener" class="btn-modal-sheet" id="mfsModalSheetBtn">
-                <i class="fa-regular fa-file-pdf"></i> Question Worksheet
+                <i class="fa-regular fa-file-pdf"></i> Worksheet
               </a>
               <a href="#" target="_blank" rel="noopener" class="btn-modal-answers" id="mfsModalAnswersBtn">
-                <i class="fa-solid fa-circle-check"></i> Worked Answers [M1/A1]
+                <i class="fa-solid fa-circle-check"></i> Worked Answers
               </a>
               <a href="https://www.youtube.com/@MasterFunctionalSkills" target="_blank" rel="noopener" class="btn-modal-yt" id="mfsModalYtBtn">
-                <i class="fa-brands fa-youtube"></i> Watch on YouTube App
+                <i class="fa-brands fa-youtube"></i> YouTube
               </a>
             </div>
           </div>
 
           <div id="mfsModalConceptCheck"></div>
-
-          <!-- Features Cards -->
-          <div class="mfs-modal-features-row">
-            <div class="mfs-modal-feat-card">
-              <i class="fa-solid fa-bullseye" style="color:#38bdf8;"></i>
-              <div>
-                <span class="mfs-feat-title">Method Marks (M1/A1)</span>
-                <span class="mfs-feat-desc">Pearson mark criteria breakdown for every working step.</span>
-              </div>
-            </div>
-            <div class="mfs-modal-feat-card">
-              <i class="fa-solid fa-triangle-exclamation" style="color:#f59e0b;"></i>
-              <div>
-                <span class="mfs-feat-title">Examiner Trap Alerts</span>
-                <span class="mfs-feat-desc">Identifies subtle exam traps and placeholder errors.</span>
-              </div>
-            </div>
-            <div class="mfs-modal-feat-card">
-              <i class="fa-solid fa-rotate-left" style="color:#10b981;"></i>
-              <div>
-                <span class="mfs-feat-title">Reverse Sanity Checks</span>
-                <span class="mfs-feat-desc">Proofing checks to verify answers before moving on.</span>
-              </div>
-            </div>
-          </div>
         </div>
       </div>
     `;
@@ -2008,10 +1982,10 @@
     if (ytBtn) {
       if (ytId) {
         ytBtn.href = `https://youtu.be/${ytId}`;
-        ytBtn.innerHTML = '<i class="fa-brands fa-youtube"></i> Watch on YouTube App';
+        ytBtn.innerHTML = '<i class="fa-brands fa-youtube"></i> YouTube';
       } else {
         ytBtn.href = 'https://www.youtube.com/@MasterFunctionalSkills';
-        ytBtn.innerHTML = '<i class="fa-brands fa-youtube"></i> Visit MFS YouTube Channel';
+        ytBtn.innerHTML = '<i class="fa-brands fa-youtube"></i> YouTube Channel';
       }
     }
 

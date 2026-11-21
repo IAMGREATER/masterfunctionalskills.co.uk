@@ -10,7 +10,7 @@
   // Compute Root Path dynamically so drawer links resolve cleanly from subdirectories
   var ROOT_PATH = (function() {
     var p = window.location.pathname;
-    if (p.includes('/digital-skills/entry-3/') || p.includes('/digital-skills/level-1/')) {
+    if (p.includes('/digital-skills/entry-3/') || p.includes('/digital-skills/level-1/') || p.includes('/digital-skills/basics/')) {
       return '../../';
     }
     if (p.includes('/worksheets/') || p.includes('/topics/') || p.includes('/digital-skills/')) {

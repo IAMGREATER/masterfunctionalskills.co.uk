@@ -842,7 +842,7 @@
     box-sizing: border-box !important;
   }
 
-  .hero-buttons a:last-child {
+  .hero-buttons a:last-child:nth-child(odd) {
     grid-column: 1 / -1 !important;
     padding: 7px 10px !important;
   }
@@ -961,8 +961,9 @@
   }
 
   .board-pill img {
-    height: 12px !important;
+    height: 14px !important;
     width: auto !important;
+    max-width: 48px !important;
   }
 
   /* Main Past Papers Container */
@@ -1044,9 +1045,9 @@
   }
 
   .paper-search-input {
-    padding: 6px 10px 6px 28px !important;
-    font-size: 0.80rem !important;
-    height: 34px !important;
+    padding: 6px 12px 6px 40px !important;
+    font-size: 0.84rem !important;
+    height: 36px !important;
   }
 
   .paper-filter-chips {
@@ -1104,7 +1105,6 @@
   main .card,
   .topic-card,
   .directory-card,
-  .real-photo-card,
   .service-card,
   .course-card,
   .diagnostic-card,
@@ -2429,27 +2429,33 @@
    ======================================================================== */
 @media (max-width: 1024px) and (orientation: portrait), (max-width: 768px) {
     .video-transport-bar {
-      display: grid !important;
-      grid-template-columns: 1fr 1fr !important;
-      grid-template-areas:
-        "dropdown dropdown"
-        "prev next" !important;
-      gap: 8px !important;
+      display: flex !important;
+      flex-direction: row !important;
+      align-items: center !important;
+      justify-content: space-between !important;
+      gap: 6px !important;
+      padding: 6px 8px !important;
       margin-top: 6px !important;
     }
     .transport-center-controls {
-      grid-area: dropdown !important;
-      width: 100% !important;
-    }
-    .btn-transport-prev {
-      grid-area: prev !important;
-      width: 100% !important;
+      flex: 1 1 auto !important;
       min-width: 0 !important;
+      max-width: none !important;
+      width: auto !important;
     }
+    .video-transport-bar .transport-label-group {
+      display: none !important;
+    }
+    .btn-transport-prev,
     .btn-transport-next {
-      grid-area: next !important;
-      width: 100% !important;
-      min-width: 0 !important;
+      flex: 0 0 40px !important;
+      width: 40px !important;
+      min-width: 40px !important;
+      max-width: 40px !important;
+      height: 38px !important;
+      padding: 0 !important;
+      justify-content: center !important;
+      align-items: center !important;
     }
 
     /* 1. Base & Viewport Full-Bleed */
@@ -3433,8 +3439,7 @@
     .model-example-card img:not(.tutor-avatar-img):not([src*="avatars/"]),
     .practice-question-card img:not(.tutor-avatar-img):not([src*="avatars/"]),
     .practice-q-stem img:not(.tutor-avatar-img):not([src*="avatars/"]),
-    .real-photo-card img,
-    .revision-content img:not(.tutor-avatar-img):not([src*="avatars/"]) {
+    .revision-content img:not(.tutor-avatar-img):not([src*="avatars/"]):not(.mfs-yt-poster) {
       width: auto !important;
       max-width: min(100%, 290px) !important;
       max-height: 185px !important;
@@ -4458,7 +4463,7 @@
   .tutor-insight-callout img,
   .examiner-guidance-box img[src*="avatars/"],
   img.tutor-avatar-img,
-  img[src*="avatars/"] {
+  img[src*="avatars/"]:not(.hero-showcase-img) {
     display: block !important;
     width: 40px !important;
     height: 40px !important;
@@ -4719,8 +4724,7 @@
   .math-visual-card img:not(.tutor-avatar-img):not([src*="avatars/"]),
   .model-example-card img:not(.tutor-avatar-img):not([src*="avatars/"]),
   .practice-q-stem img:not(.tutor-avatar-img):not([src*="avatars/"]),
-  .real-photo-card img,
-  .revision-content img:not(.tutor-avatar-img):not([src*="avatars/"]) {
+  .revision-content img:not(.tutor-avatar-img):not([src*="avatars/"]):not(.mfs-yt-poster) {
     width: auto !important;
     max-width: min(100%, 290px) !important;
     max-height: 185px !important;
@@ -5023,8 +5027,6 @@
   }
 
   /* 14. General Portal Images & Showcase Banners — Shrunk to Fit Width */
-  .hero-square-showcase img,
-  .hero-showcase-img,
   .card-img-top,
   .about-hero-img,
   .trustpilot-stars img,
@@ -5032,6 +5034,19 @@
     max-width: 100% !important;
     height: auto !important;
     object-fit: contain !important;
+    box-sizing: border-box !important;
+  }
+  .hero-square-showcase img,
+  .hero-showcase-img {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: none !important;
+    border-radius: 0 !important;
+    object-fit: cover !important;
+    object-position: center 15% !important;
+    display: block !important;
+    margin: 0 !important;
     box-sizing: border-box !important;
   }
 }
@@ -5292,16 +5307,16 @@ a[href^="mailto:"] { overflow-wrap: anywhere !important; word-break: break-word 
 }
 
 @media screen and (max-width: 767px) {
-  /* 5A. 1-Line Mobile Icon Legend Strip (Past Papers, Worksheets Hub, Revision/DFS Hubs) */
+  /* 5A. Wrapped Responsive Mobile Icon Legend Strip (never clips icons on right edge) */
   .mfs-mobile-icon-key {
     display: flex !important;
+    flex-wrap: wrap !important;
     align-items: center !important;
-    gap: 8px !important;
-    overflow-x: auto !important;
-    -webkit-overflow-scrolling: touch !important;
-    scrollbar-width: none !important;
-    white-space: nowrap !important;
-    padding: 7px 11px !important;
+    row-gap: 6px !important;
+    column-gap: 10px !important;
+    overflow-x: visible !important;
+    white-space: normal !important;
+    padding: 8px 11px !important;
     margin: 0 0 10px 0 !important;
     background: var(--bg-card, #ffffff) !important;
     border: 1.5px solid var(--border, #e2e8f0) !important;
@@ -5903,9 +5918,8 @@ a[href^="mailto:"] { overflow-wrap: anywhere !important; word-break: break-word 
     gap: 8px !important;
   }
   #videoMasterclassStation #mcTutorAvatar,
-  #videoMasterclassStation .video-exemplar-head > div:last-child,
-  #videoMasterclassStation .mfs-yt-badge-bottom,
-  #videoMasterclassStation > div:last-child {
+  #videoMasterclassStation .video-exemplar-head > div:last-child:not(:only-child),
+  #videoMasterclassStation .mfs-yt-badge-bottom {
     display: none !important;
   }
   #videoMasterclassStation #mcVideoTitle {
@@ -6007,18 +6021,247 @@ a[href^="mailto:"] { overflow-wrap: anywhere !important; word-break: break-word 
   }
 }
 
-/* Tablet portrait/landscape hero showcase fix (768px - 1024px): keep Sonya's face unobstructed */
+/* Tablet portrait/landscape hero showcase fix (768px - 1024px): keep Sonya's portrait square and proportional */
 @media screen and (min-width: 768px) and (max-width: 1024px) {
   .hero-square-showcase {
-    aspect-ratio: 4 / 3 !important;
-    max-height: 360px !important;
+    aspect-ratio: 1 / 1 !important;
+    max-width: 340px !important;
+    max-height: 340px !important;
+    margin: 12px auto 0 !important;
   }
   .hero-square-showcase .hero-showcase-img {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: none !important;
+    border-radius: 0 !important;
     object-fit: cover !important;
     object-position: center 15% !important;
+    display: block !important;
+    margin: 0 !important;
   }
   .hero-square-showcase .hero-showcase-scrim,
   .hero-square-showcase .hero-showcase-overlay {
     display: none !important;
+  }
+}
+
+/* ==========================================================================
+   6. 2026-11-21 SIDE-BY-SIDE REVISION HERO, COMPACT MENUS & PAST PAPER POLISH
+   ========================================================================== */
+@media (max-width: 1024px) {
+  /* Revision hero: keep title/actions on the left and image proportionally on the right */
+  .revision-hero-grid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) 236px !important;
+    gap: 20px !important;
+    align-items: center !important;
+  }
+  .revision-hero-grid[style*="grid-template-columns:1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+  .revision-hero-content {
+    min-width: 0 !important;
+  }
+  .revision-hero-visual-card {
+    display: block !important;
+    width: 100% !important;
+    max-width: 236px !important;
+    padding: 5px !important;
+    margin: 0 !important;
+    border-radius: 12px !important;
+  }
+  .revision-hero-img-wrap {
+    width: 100% !important;
+    aspect-ratio: 3 / 2 !important;
+    height: auto !important;
+    max-height: none !important;
+    min-height: 0 !important;
+    border-radius: 8px !important;
+  }
+  .revision-hero-img-wrap img,
+  .revision-hero-visual-card img {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: none !important;
+    object-fit: cover !important;
+  }
+
+  /* Subject hub hero (.mfs-hero-grid): title left, generous proportional photo card right on tablet */
+  .mfs-hero-grid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1.05fr) minmax(290px, 0.95fr) !important;
+    gap: 22px !important;
+    align-items: center !important;
+  }
+  .real-photo-card {
+    display: flex !important;
+    flex-direction: column !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 0 !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    overflow: hidden !important;
+    border-radius: 16px !important;
+    background: #0f172a !important;
+  }
+  .real-photo-card img {
+    width: 100% !important;
+    max-width: 100% !important;
+    aspect-ratio: 3 / 2 !important;
+    height: auto !important;
+    min-height: 195px !important;
+    max-height: 420px !important;
+    object-fit: cover !important;
+    object-position: center 12% !important;
+    display: block !important;
+    margin: 0 !important;
+    border-radius: 0 !important;
+  }
+  .real-photo-overlay {
+    position: static !important;
+    inset: auto !important;
+    width: 100% !important;
+    border-radius: 0 !important;
+    border: none !important;
+    border-top: 1px solid rgba(255, 255, 255, 0.14) !important;
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%) !important;
+    padding: 12px 16px !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Past papers switcher & filter chips stay crisp and single-line */
+  .board-pill img {
+    height: 14px !important;
+    width: auto !important;
+    max-width: 48px !important;
+  }
+  .filter-chip,
+  .paper-filter-chip {
+    white-space: nowrap !important;
+    flex-shrink: 0 !important;
+  }
+  .paper-search-input {
+    padding-left: 40px !important;
+  }
+}
+
+@media (max-width: 767px) {
+  /* Phone revision hero: crisp title-left, proportional thumbnail-right (closest to desktop) */
+  .revision-hero-card {
+    padding: 16px 0 !important;
+  }
+  .revision-hero-grid {
+    display: grid !important;
+    grid-template-columns: minmax(0, 1fr) 114px !important;
+    gap: 12px !important;
+    align-items: start !important;
+  }
+  .revision-hero-grid[style*="grid-template-columns:1fr"] {
+    grid-template-columns: 1fr !important;
+  }
+  .revision-hero-title {
+    font-size: 1.38rem !important;
+    line-height: 1.2 !important;
+    margin-bottom: 6px !important;
+  }
+  .revision-hero-lead {
+    font-size: 0.88rem !important;
+    line-height: 1.45 !important;
+    margin-bottom: 10px !important;
+  }
+  .revision-hero-visual-card {
+    display: block !important;
+    width: 114px !important;
+    max-width: 114px !important;
+    padding: 4px !important;
+    margin: 2px 0 0 0 !important;
+    border-radius: 10px !important;
+    box-shadow: 0 4px 12px rgba(7, 13, 30, 0.08) !important;
+  }
+  .revision-hero-visual-card .visual-card-caption,
+  .revision-hero-visual-card .revision-hero-caption-bar {
+    display: none !important;
+  }
+  .revision-hero-img-wrap {
+    width: 100% !important;
+    aspect-ratio: 3 / 2 !important;
+    height: auto !important;
+    max-height: none !important;
+    min-height: 0 !important;
+    border-radius: 7px !important;
+  }
+  .revision-hero-img-wrap img,
+  .revision-hero-visual-card img {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+    max-height: none !important;
+    object-fit: cover !important;
+  }
+  .revision-hero-meta-bar {
+    gap: 8px !important;
+    padding-top: 8px !important;
+    margin-top: 8px !important;
+  }
+
+  /* Phone subject hub heroes (.mfs-hero-grid): keep content stacked above or compact 1:1 photo */
+  .mfs-hero-grid {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 14px !important;
+  }
+  .mfs-hero-grid > .hero-square-showcase,
+  .hero-square-showcase {
+    width: 260px !important;
+    max-width: 260px !important;
+    height: 260px !important;
+    min-height: 260px !important;
+    max-height: 260px !important;
+    aspect-ratio: 1 / 1 !important;
+    align-self: center !important;
+    margin: 8px auto 0 !important;
+  }
+  .real-photo-card {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 6px auto 0 !important;
+    padding: 0 !important;
+  }
+  .real-photo-card img {
+    width: 100% !important;
+    aspect-ratio: 3 / 2 !important;
+    height: auto !important;
+    min-height: 200px !important;
+    max-height: 360px !important;
+    object-fit: cover !important;
+    margin: 0 !important;
+  }
+
+  /* Streamlined phone mobile TOC bar */
+  .mobile-toc-bar {
+    padding: 8px 12px !important;
+    gap: 8px !important;
+  }
+  .mobile-toc-bar > div:first-child {
+    min-width: 0 !important;
+    overflow: hidden !important;
+    text-overflow: ellipsis !important;
+    white-space: nowrap !important;
+  }
+  .btn-mobile-toc {
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+  }
+
+  /* Compact proportional board logos inside past paper group headers on mobile */
+  .paper-group-board-logo {
+    height: 24px !important;
+    width: auto !important;
+    max-width: 110px !important;
+    padding: 2px 6px !important;
   }
 }

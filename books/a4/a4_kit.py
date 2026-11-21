@@ -270,8 +270,19 @@ h3 {{ font-family:'Lexend',sans-serif; font-weight:700; font-size:12pt; margin:0
          border:1.5px solid var(--soft); display:flex; flex-direction:column; }}
 .hero .imgwrap {{ position:relative; flex:1 1 auto; min-height:0; }}
 .hero img {{ position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position:var(--pos, center 18%); display:block; }}
-.hero .cap {{ flex:0 0 auto; font-size:7.6pt; /* hf-ok */ line-height:1.15; color:var(--ink); background:#fff; padding:0.7mm 2.5mm;
-              border-top:1px solid var(--soft); white-space:nowrap; overflow:hidden; text-overflow:ellipsis; }}
+.split-hero {{ position:relative; border-radius:7px; overflow:hidden; background:#ffffff;
+              border:1.5px solid var(--primary); display:flex; flex-direction:row; align-items:stretch;
+              flex:0 0 auto; box-shadow:0 1.5px 4px rgba(0,0,0,0.08); }}
+.split-hero .sh-img {{ flex:0 0 auto; height:100%; overflow:hidden; position:relative; background:#0f172a; }}
+.split-hero .sh-img img {{ width:100%; height:100%; object-fit:cover; object-position:var(--pos, center 22%); display:block; }}
+.split-hero .sh-cap {{ flex:1 1 auto; min-width:0; display:flex; flex-direction:column; justify-content:center;
+                      padding:2.2mm 3.2mm; background:linear-gradient(135deg, #f8fafc 0%, var(--light, #eff6ff) 100%);
+                      border-left:1.5px solid var(--soft, #bfdbfe); }}
+.split-hero .sh-kicker {{ font-family:'Montserrat',sans-serif; font-size:6.8pt; /* hf-ok */ font-weight:800;
+                         letter-spacing:0.06em; text-transform:uppercase; color:var(--primary); margin-bottom:0.8mm; }}
+.split-hero .sh-text {{ font-size:8.8pt; /* hf-ok */ font-weight:700; line-height:1.30; color:var(--ink, #0f172a); }}
+.hero .cap {{ flex:0 0 auto; font-size:7.6pt; /* hf-ok */ line-height:1.25; color:var(--ink); background:#fff; padding:1.0mm 2.5mm;
+              border-top:1px solid var(--soft); }}
 .ph {{ position:absolute; inset:0; display:flex; flex-direction:column; align-items:center; justify-content:center;
        gap:2mm; color:var(--primary); font-weight:700; font-size:14pt; text-align:center; padding:4mm;
        background:repeating-linear-gradient(135deg, var(--light) 0 14px, #ffffff 14px 28px); }}
@@ -549,11 +560,43 @@ def _img_or_placeholder(path, label: str = "") -> str:
     return f'<div class="ph">{_CAMERA_SVG}<div>{E(label) or "Photo"}</div><small>photo coming soon</small></div>'
 
 
+def split_hero_card(path_or_uri, caption: str = "", height_mm: float = 52, pos: str = "center 22%",
+                    kicker: str = "VISUAL CONTEXT", margin: str = "1.0mm 0 1.8mm 0",
+                    fallback_label: str = "Photo", ratio: float = 1.65) -> str:
+    """Proportional editorial split card: enlarged photo on the left (~60% width) + wrapped caption panel on the right.
+    Prevents horizontal letterbox cropping (e.g. 182x42mm slits) and never truncates captions."""
+    h = round(float(height_mm or 52), 1)
+    if isinstance(path_or_uri, str) and path_or_uri.startswith("file://"):
+        media = f'<img src="{path_or_uri}" alt="">'
+    else:
+        media = _img_or_placeholder(path_or_uri, "" if caption else fallback_label)
+
+    if h >= 90:
+        cap = f'<div class="cap">{caption}</div>' if caption else ""
+        return f'<div class="hero" style="height:{h}mm; margin:{margin}; --pos:{pos};"><div class="imgwrap">{media}</div>{cap}</div>'
+
+    img_w = min(118.0, round(h * float(ratio or 1.65), 1))
+    if not caption:
+        return (
+            f'<div class="split-hero" style="height:{h}mm; margin:{margin}; --pos:{pos}; justify-content:center; background:var(--light, #eff6ff);">'
+            f'<div class="sh-img" style="width:{img_w}mm; flex:0 0 {img_w}mm;">{media}</div>'
+            f'</div>'
+        )
+    return (
+        f'<div class="split-hero" style="height:{h}mm; margin:{margin}; --pos:{pos};">'
+        f'<div class="sh-img" style="width:{img_w}mm; flex:0 0 {img_w}mm;">{media}</div>'
+        f'<div class="sh-cap"><div class="sh-kicker">{kicker}</div><div class="sh-text">{caption}</div></div>'
+        f'</div>'
+    )
+
+
 def hero_image(path, caption: str = "", height_mm: float | None = 80, fill: bool = False, pos: str = "center center") -> str:
-    """Full-width photo (object-fit:cover, rounded).  fill=True -> grows to fill the page
-    (height_mm then acts as the minimum height)."""
+    """Proportional photo card: uses split 3:2 editorial card when height_mm < 90 to prevent narrow cropping."""
+    h = float(height_mm or 70)
+    if h < 90:
+        adj_pos = "center 22%" if (not pos or pos == "center center") else pos
+        return split_hero_card(path, caption=caption, height_mm=max(h, 46.0), pos=adj_pos, kicker="VISUAL CONTEXT")
     cls = "hero fill" if fill else "hero"
-    h = height_mm or 70
     style = f"min-height:{h}mm;" if fill else f"height:{h}mm;"
     if pos:
         style += f"--pos:{pos};"

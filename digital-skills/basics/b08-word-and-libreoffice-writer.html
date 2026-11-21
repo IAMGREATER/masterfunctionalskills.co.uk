@@ -1,0 +1,528 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-theme="digital" data-tint="cream" data-level="basics">
+<head>
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Word &amp; LibreOffice Writer Practical Guide (Step-by-Step + Practice Files) | Digital Skills Basics | Master Functional Skills</title>
+  <meta name="description" content="Turn messy plain text into crisp letters, posters, rotas, and flyers in Microsoft Word OR free LibreOffice Writer — including Page Orientation, Tables, Borders, and Lock Aspect Ratio.">
+  <link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg">
+  <meta name="theme-color" content="#0f172a">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../../assets/css/mfs-theme.css?v=20261121v2">
+  <link rel="stylesheet" href="../../assets/css/mfs-revision.css?v=20261121v2">
+  <link rel="stylesheet" href="../../assets/css/mfs-mobile.css?v=20261121v2">
+  <script src="../../assets/js/mfs-pwa.js" defer></script>
+</head>
+<body data-tint="cream">
+  <div class="mfs-top-bar">
+    <div class="mfs-container mfs-top-bar-inner">
+      <div class="top-trust-items">
+        <span class="top-trust-item"><i class="fa-solid fa-building-columns"></i> Open Awards, Pearson Edexcel &amp; City &amp; Guilds Aligned</span>
+      </div>
+      <div class="top-contacts">
+        <div class="mfs-access-bar">
+          <!-- DYSLEXIA BACKGROUND TINT PICKER -->
+          <div class="mfs-tint-dropdown-wrap">
+            <button type="button" id="tintToggle" class="btn-tint-toggle" onclick="toggleTintMenu(event)" title="Change dyslexia background tint">
+              <span class="tint-swatch-indicator" id="tintCurrentSwatch"></span>
+              <span id="tintLabel">Cream Tint</span>
+              <i class="fa-solid fa-chevron-down" style="font-size:0.62rem; opacity:0.75; margin-left:2px;"></i>
+            </button>
+            <div id="tintMenu" class="tint-picker-menu">
+              <div class="tint-picker-title"><i class="fa-solid fa-glasses"></i> Dyslexia Reading Tint</div>
+              <button type="button" class="tint-option-btn active" data-tint="cream" onclick="setSiteTint('cream', event)">
+                <span class="swatch swatch-cream"></span>
+                <span class="tint-name">Cream <small class="tint-badge-def">Default</small></span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="peach" onclick="setSiteTint('peach', event)">
+                <span class="swatch swatch-peach"></span>
+                <span class="tint-name">Soft Peach</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="cool" onclick="setSiteTint('cool', event)">
+                <span class="swatch swatch-cool"></span>
+                <span class="tint-name">Cool Mist</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="sage" onclick="setSiteTint('sage', event)">
+                <span class="swatch swatch-sage"></span>
+                <span class="tint-name">Soft Sage</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <div class="tint-divider"></div>
+              <button type="button" class="tint-option-btn" data-tint="none" onclick="setSiteTint('none', event)">
+                <span class="swatch swatch-none"></span>
+                <span class="tint-name">No Tint (White)</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+            </div>
+          </div>
+          <button id="dyslexiaToggle" class="btn-dyslexia-toggle" onclick="toggleDyslexiaMode()" title="Toggle Dyslexia High-Readability Mode">
+            <i class="fa-solid fa-universal-access"></i> Dyslexia
+          </button>
+          <button id="themeToggle" class="mfs-theme-pill" onclick="toggleTheme()" title="Switch Palette: Sapphire vs Emerald">
+            <i class="fa-solid fa-palette"></i> <span id="themeLabel">Sapphire</span>
+          </button>
+        </div>
+        <a href="../../contact-us.html" class="top-contact-link"><i class="fa-solid fa-envelope"></i> <strong>Contact Us</strong></a>
+      </div>
+    </div>
+  </div>
+
+  <header class="mfs-navbar">
+    <div class="revision-page-wrapper mfs-navbar-inner">
+      <a href="../../index.html" class="mfs-brand">
+        <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div class="mfs-brand-text">
+          <div class="mfs-brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
+          <div class="mfs-brand-subtitle">Delivering Skills • Achieving Goals</div>
+        </div>
+      </a>
+
+      <nav class="mfs-nav-wrapper">
+        <ul class="mfs-nav-menu">
+          <!-- 1. SUBJECTS (VISUAL MEGA-MENU) -->
+          <li class="mfs-nav-item">
+            <a href="../../revise.html" class="mfs-nav-link">
+              <i class="fa-solid fa-book-open-reader" style="color:#0284c7; margin-right:5px;"></i> Subjects <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-revision-hub">
+              <div class="mfs-revision-grid">
+                <!-- Maths Column -->
+                <div class="mfs-revision-col mfs-revision-col-maths">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-calculator"></i> Maths Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="../../functional-skills-maths-level-2.html" class="mfs-dropdown-item">Maths Level 2</a>
+                    <a href="../../functional-skills-maths-level-1.html" class="mfs-dropdown-item">Maths Level 1</a>
+                    <a href="../../entry-level-3-maths.html" class="mfs-dropdown-item">Entry Level 3 Maths</a>
+                  </div>
+                </div>
+                <!-- English Column -->
+                <div class="mfs-revision-col mfs-revision-col-english">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-pen-nib"></i> English Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="../../functional-skills-english-level-2.html" class="mfs-dropdown-item">English Level 2</a>
+                    <a href="../../functional-skills-english-level-1.html" class="mfs-dropdown-item">English Level 1</a>
+                    <a href="../../entry-level-3-english.html" class="mfs-dropdown-item">Entry Level 3 English</a>
+                  </div>
+                </div>
+                <!-- Digital Skills Column -->
+                <div class="mfs-revision-col mfs-revision-col-digital">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-laptop-code"></i> Digital Skills</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="../../digital-functional-skills-level-1.html" class="mfs-dropdown-item"><i class="fa-solid fa-award" style="font-size:0.75rem; margin-right:5px; color:#0284c7;"></i> Digital Skills Level 1</a>
+                    <a href="../../digital-functional-skills-entry-3.html" class="mfs-dropdown-item"><i class="fa-solid fa-seedling" style="font-size:0.75rem; margin-right:5px; color:#059669;"></i> Digital Skills Entry 3</a>
+                    <a href="../../digital-functional-skills-past-papers.html" class="mfs-dropdown-item"><i class="fa-solid fa-file-zipper" style="font-size:0.75rem; margin-right:5px; color:#d97706;"></i> Past Papers &amp; Data Files</a>
+                    <a href="../../digital-functional-skills-mock-exam.html" class="mfs-dropdown-item"><i class="fa-solid fa-desktop" style="font-size:0.75rem; margin-right:5px; color:#7c3aed;"></i> Online Mock Simulator</a>
+                    <a href="../../digital-functional-skills.html" class="mfs-dropdown-item"><i class="fa-solid fa-layer-group" style="font-size:0.75rem; margin-right:5px; color:#475569;"></i> Digital Skills Hub (E3 &amp; L1)</a>
+                  </div>
+                </div>
+              </div>
+              <!-- Course & Subject Selector Cross-link Footer inside dropdown -->
+              <div class="mfs-revision-dropdown-footer" style="margin-top:12px; padding-top:10px; border-top:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center; font-size:0.82rem;">
+                <a href="../../revise.html" style="font-weight:700; color:var(--accent); text-decoration:none;"><i class="fa-solid fa-layer-group" style="margin-right:4px;"></i> View All Subjects &amp; Levels &rarr;</a>
+                <a href="../../courses.html" style="font-weight:700; color:#059669; text-decoration:none;"><i class="fa-solid fa-graduation-cap" style="margin-right:4px;"></i> Accredited Online Courses &rarr;</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- 2. ONLINE COURSES -->
+          <li class="mfs-nav-item">
+            <a href="../../courses.html" class="mfs-nav-link">
+              <i class="fa-solid fa-graduation-cap" style="color:#0284c7; margin-right:5px;"></i> Online Courses
+            </a>
+          </li>
+
+          <!-- 3. PAST PAPERS (DIRECT ACCESS) -->
+          <li class="mfs-nav-item">
+            <a href="../../functional-skills-past-papers.html" class="mfs-nav-link">
+              <i class="fa-regular fa-file-lines" style="color:#0284c7; margin-right:5px;"></i> Past Papers
+            </a>
+          </li>
+
+          <!-- 4. WORKSHEETS DIRECTORY (CORBETT STYLE DUAL ENGINE) -->
+          <li class="mfs-nav-item">
+            <a href="../../worksheets.html" class="mfs-nav-link">
+              <i class="fa-solid fa-layer-group" style="color:#0284c7; margin-right:5px;"></i> Worksheets
+            </a>
+          </li>
+
+          <!-- 5. FREE TOOLS (COMPACT DROPDOWN) -->
+          <li class="mfs-nav-item">
+            <a href="../../tools.html" class="mfs-nav-link">
+              <i class="fa-solid fa-screwdriver-wrench" style="color:#0284c7; margin-right:5px;"></i> Free Tools <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-compact">
+              <a href="../../tools.html" class="mfs-dropdown-item" style="font-weight:700; color:var(--accent);"><i class="fa-solid fa-layer-group" style="font-size:0.85rem; margin-right:6px;"></i> All Free Tools &amp; Simulators &rarr;</a>
+              <div class="mfs-dropdown-divider" style="margin:4px 0; border-top:1px solid #e2e8f0;"></div>
+              <a href="../../pass-mark-calculator.html" class="mfs-dropdown-item"><i class="fa-solid fa-calculator" style="color:var(--accent); font-size:0.85rem; margin-right:6px;"></i> Pass Mark Calculator</a>
+              <a href="../../diagnostic-test.html" class="mfs-dropdown-item"><i class="fa-solid fa-chart-pie" style="color:#059669; font-size:0.85rem; margin-right:6px;"></i> Diagnostic Skill Checker</a>
+              <a href="../../functional-skills-nets.html" class="mfs-dropdown-item"><i class="fa-solid fa-cube" style="color:#0284c7; font-size:0.85rem; margin-right:6px;"></i> 3D Net Folding Tool</a>
+              <a href="../../video-solution.html" class="mfs-dropdown-item"><i class="fa-brands fa-youtube" style="color:#ef4444; font-size:0.85rem; margin-right:6px;"></i> Masterclass Station</a>
+            </div>
+          </li>
+
+          <!-- 6. REVISION CARDS -->
+          <li class="mfs-nav-item">
+            <a href="../../revision-cards.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-layer-group" style="color:#d97706; margin-right:5px;"></i> Revision Cards
+            </a>
+          </li>
+
+          <!-- 7. SHOP -->
+          <li class="mfs-nav-item">
+            <a href="../../shop.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-basket-shopping" style="color:#d97706; margin-right:5px;"></i> Shop
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- 8. BOOK EXAM ACTION BUTTON -->
+      <div class="mfs-nav-actions">
+        <a href="../../exams.html" class="btn-nav-exam">
+          <i class="fa-solid fa-calendar-check"></i> Book Exam
+        </a>
+      </div>
+
+      <!-- MOBILE CONTROLS (TINT + MENU PILL) -->
+      <div class="mfs-mobile-controls" id="mfsMobileControls">
+        <button type="button" class="btn-mobile-tint-toggle" id="mfsMobileTintBtn" title="Change Reading Tint" aria-label="Reading Tint">
+          <i class="fa-solid fa-glasses"></i>
+          <span class="mobile-tint-swatch" id="mfsMobileTintSwatch"></span>
+        </button>
+        <button type="button" class="mfs-menu-pill" id="mfsMobileToggleBtn" title="Open Navigation Menu" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+          <span>Menu</span>
+        </button>
+      </div>
+    </div>
+    <!-- MOBILE NAVIGATION ENGINE -->
+    <script src="../../assets/js/mfs-mobile.js?v=20261121v2" defer></script>
+  </header>
+
+  <div class="revision-breadcrumb-bar">
+    <div class="revision-page-wrapper">
+      <div class="revision-breadcrumbs">
+        <a href="../../index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a href="../../digital-skills-basics.html">Digital Skills Basics</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span class="current">Word &amp; LibreOffice Writer Practical Guide (Step-by-Step + Practice Files)</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="revision-hero-card">
+    <div class="revision-page-wrapper">
+      <div class="revision-hero-grid">
+        <div class="revision-hero-content">
+          <div class="revision-hero-pill-row">
+            <span class="badge-pill-accent" style="background:#0891b2;"><i class="fa-solid fa-seedling"></i> PRACTICAL APP GUIDE • WORD &amp; WRITER</span>
+            <span class="badge-pill-outline">Module 3 • Practical Essential Apps</span>
+          </div>
+          <h1 class="revision-hero-title">Word &amp; LibreOffice Writer Practical Guide (Step-by-Step + Practice Files)</h1>
+          <p class="revision-hero-lead" style="max-width:860px; margin-bottom:14px;">Turn messy plain text into crisp letters, posters, rotas, and flyers in Microsoft Word OR free LibreOffice Writer — including Page Orientation, Tables, Borders, and Lock Aspect Ratio.</p>
+          <div class="dfs-hero-objectives"><span class="dfs-obj-tag"><i class="fa-solid fa-check"></i> Navigate the exact menus in BOTH Microsoft Word and free LibreOffice Writer</span><span class="dfs-obj-tag"><i class="fa-solid fa-check"></i> Format headings, spacing, bullet lists, Landscape orientation, Page Borders, and Tables</span><span class="dfs-obj-tag"><i class="fa-solid fa-check"></i> Insert images and resize corners safely with Lock / Keep Aspect Ratio checked</span></div>
+          <div class="revision-hero-meta-bar" style="margin-top:16px;">
+            <div class="hero-quick-actions">
+              <a href="#interactive-lab" class="btn-hero-action"><i class="fa-solid fa-laptop"></i> Try Interactive Lab</a>
+              <a href="#downloads" class="btn-hero-action-secondary"><i class="fa-regular fa-file-pdf"></i> Printable Exercises</a>
+            </div>
+          </div>
+        </div>
+        <div class="revision-hero-visual-card">
+          <img src="../../assets/img/dfs-basics/writer_flyer.png" alt="Finished formatted community flyer inside LibreOffice Writer" style="width:100%; height:100%; object-fit:cover; display:block;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="mobile-toc-bar">
+    <div style="font-weight:700; color:var(--navy-dark); font-size:0.9rem;">
+      <i class="fa-solid fa-list-check" style="color:var(--accent);"></i> PRACTICAL APP GUIDE • WORD &amp; WRITER
+    </div>
+    <button type="button" class="btn-mobile-toc" onclick="toggleMobileToc()">
+      <span>Table of Contents</span> <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+
+  <main class="revision-page-wrapper">
+    <div class="revision-layout">
+      <aside class="revision-sidebar" id="sidebarNav">
+        <div class="sidebar-toc-title">
+          <span><i class="fa-solid fa-compass-drafting" style="color:var(--accent);"></i> Unit Contents</span>
+          <span style="font-size:0.86rem; color:#64748b; font-weight:700;">6 Sections</span>
+        </div>
+        <ul class="sidebar-toc-list" id="tocList">
+          <li><a href="#teaching" class="sidebar-toc-link"><i class="fa-solid fa-book-open"></i> Step-by-Step Guide</a></li>
+          <li><a href="#cheat-sheet" class="sidebar-toc-link"><i class="fa-solid fa-table-columns"></i> Reference Table</a></li>
+          <li><a href="#visuals" class="sidebar-toc-link"><i class="fa-regular fa-image"></i> Visual Screenshots</a></li>
+          <li><a href="#interactive-lab" class="sidebar-toc-link"><i class="fa-solid fa-laptop-code"></i> Practice Lab</a></li>
+          <li><a href="#traps" class="sidebar-toc-link"><i class="fa-solid fa-triangle-exclamation"></i> Beginner Traps</a></li>
+          <li><a href="#downloads" class="sidebar-toc-link"><i class="fa-regular fa-file-pdf"></i> Tasks &amp; Downloads</a></li>
+        </ul>
+      </aside>
+
+      <div class="revision-content">
+        
+        <div style="margin:18px 0; padding:18px 20px; border-radius:14px; background:linear-gradient(135deg,#0f172a,#1e293b); border:2px solid #0284c7; color:#f8fafc; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:14px;">
+          <div style="flex:1 1 280px;">
+            <div style="color:#38bdf8; font-weight:800; font-size:0.8rem; text-transform:uppercase; margin-bottom:4px;">Download Real Practice Files</div>
+            <div style="font-size:0.95rem; line-height:1.5;">Includes: 01 Community Notice Flyer.docx, 02 Appointment Confirmation Letter.docx, 03 Weekly Shift Rota Table.docx</div>
+          </div>
+          <a href="../../assets/downloads/dfs-basics/MFS Word and Writer Practice Pack.zip" download class="btn-hero-accent" style="white-space:normal; text-align:center; justify-content:center; max-width:100%;"><i class="fa-solid fa-file-zipper"></i> Download 3 .docx Files (.ZIP)</a>
+        </div>
+        
+        <div style="margin:14px 0; padding:14px 18px; border-radius:12px; background:#eff6ff; border:1px solid #bfdbfe; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:12px;">
+          <div style="font-weight:700; color:#1e3a8a;"><i class="fa-brands fa-youtube" style="color:#ef4444; margin-right:6px;"></i> Watch Real-Screen Demonstration: Watch Tutor Emma&#x27;s Word Processing, Layout &amp; Formatting Masterclass (5m 20s)</div>
+          <a href="../../video-solution.html?topic=dfs-word-processing-layout-formatting" target="_blank" rel="noopener" class="btn-paper btn-paper-video" style="padding:8px 14px;"><i class="fa-solid fa-circle-play"></i> Open Walkthrough</a>
+        </div>
+
+        <section id="teaching" class="revision-section">
+          <div class="section-header-row">
+            <h2 class="section-title"><i class="fa-solid fa-book-open"></i> Step-by-Step Practical Guide</h2>
+          </div>
+          <div class="dfs-steps-flow">
+            
+        <div class="dfs-step-card">
+          <div class="dfs-step-header">
+            <div class="dfs-step-num">1</div>
+            <div class="dfs-step-title">1. Page Setup First (Portrait vs Landscape &amp; Page Borders)</div>
+          </div>
+          <div class="dfs-step-body">
+            <p>Always set your page shape BEFORE arranging images and tables:</p><ul><li><strong>Word:</strong> <em>Layout &rarr; Orientation &rarr; Landscape / Portrait</em>; Borders live under <em>Design &rarr; Page Borders</em>.</li><li><strong>LibreOffice Writer:</strong> <em>Format &rarr; Page Style &rarr; Page Tab &rarr; Landscape / Portrait</em>; Borders live in the <em>Borders</em> tab right next to it!</li><li>Save As a descriptive filename immediately (<kbd class='dfs-kbd'>File &rarr; Save As</kbd>) so your starter file stays untouched.</li></ul>
+            <div class="dfs-callout dfs-callout-tutor" style="margin-top:12px;">
+              <i class="fa-solid fa-lightbulb"></i>
+              <div><strong>Tutor Tip:</strong> Look at the grey rulers and Zoom slider (bottom-right) set to ~90% so you can see the whole page at once without text overflowing onto Page 2!</div>
+            </div>
+          </div>
+        </div>
+        <div class="dfs-step-card">
+          <div class="dfs-step-header">
+            <div class="dfs-step-num">2</div>
+            <div class="dfs-step-title">2. Font Hierarchy, Bullets, Tables &amp; Spellcheck</div>
+          </div>
+          <div class="dfs-step-body">
+            <p>Good documents follow clear visual levels — highlight text first (`Ctrl + A` or drag mouse), then format:</p><ul><li><strong>Main Title:</strong> 18–26pt, Bold, High-contrast colour (Dark Navy `#0f172a` or Accent colour), Centred.</li><li><strong>Body Text:</strong> Clear sans-serif font (Arial, Calibri, Liberation Sans) 11–12pt, Left-aligned with clean line spacing.</li><li><strong>Lists &amp; Tables:</strong> Click the <em>Bulleted List</em> button for options; click <em>Insert &rarr; Table</em> (Word) or <em>Table &rarr; Insert Table</em> (Writer) to create crisp columns and rows with a shaded header row.</li><li><strong>Spellcheck:</strong> Press <kbd class='dfs-kbd'>F7</kbd> (or Right-Click red wavy underlines) to fix typos before exporting!</li></ul>
+            <div class="dfs-callout dfs-callout-tutor" style="margin-top:12px;">
+              <i class="fa-solid fa-lightbulb"></i>
+              <div><strong>Tutor Tip:</strong> Use Bold header rows and light shading on tables so timetables and shift rotas read cleanly in seconds.</div>
+            </div>
+          </div>
+        </div>
+        <div class="dfs-step-card">
+          <div class="dfs-step-header">
+            <div class="dfs-step-num">3</div>
+            <div class="dfs-step-title">3. Inserting Pictures &amp; Locking Aspect Ratio (Stop Squashed Photos!)</div>
+          </div>
+          <div class="dfs-step-body">
+            <p>Never drag the middle side handle of a photo — that squashes faces or distorts logos:</p><ol><li>Click where the photo belongs &rarr; <strong>Insert &rarr; Image / Pictures</strong>.</li><li>Right-Click the picture &rarr; <strong>Size &amp; Position / Properties</strong> &rarr; ensure <strong>Lock / Keep Aspect Ratio</strong> is ticked!</li><li>Resize ONLY by dragging one of the four <strong>corner handles</strong>, or type exact Height/Width numbers cleanly.</li><li>Set <strong>Wrap Text</strong> (e.g. Square or Tight) if you need text to sit cleanly alongside an image.</li></ol>
+            <div class="dfs-callout dfs-callout-tutor" style="margin-top:12px;">
+              <i class="fa-solid fa-lightbulb"></i>
+              <div><strong>Tutor Tip:</strong> Before submitting or emailing a final flyer/letter, use File &gt; Export as PDF / Save as PDF so formatting never shifts on someone else&#x27;s computer.</div>
+            </div>
+          </div>
+        </div>
+          </div>
+        </section>
+
+        <section id="cheat-sheet" class="revision-section">
+          <div class="section-header-row">
+            <h2 class="section-title"><i class="fa-solid fa-table-columns"></i> Microsoft Word vs LibreOffice Writer — Exact Menu Translation</h2>
+          </div>
+          <div style="overflow-x:auto;">
+            <table class="math-master-table">
+              <thead><tr><th>Feature / Task</th><th>Microsoft Word Menu</th><th>LibreOffice Writer Menu</th></tr></thead>
+              <tbody><tr><td>Landscape / Portrait page</td><td>Layout &gt; Orientation</td><td>Format &gt; Page Style &gt; Page tab</td></tr><tr><td>Page Border around flyer</td><td>Design &gt; Page Borders &gt; Box</td><td>Format &gt; Page Style &gt; Borders tab</td></tr><tr><td>Bold / Font Size / Alignment</td><td>Home tab (B, Size, Align)</td><td>Formatting Toolbar (B, Size, Align) or Properties sidebar</td></tr><tr><td>Bullet Points / Numbering</td><td>Home &gt; Bullets icon</td><td>Toggle Bulleted List (Shift + F12)</td></tr><tr><td>Insert Table</td><td>Insert &gt; Table &gt; choose grid</td><td>Table &gt; Insert Table (Ctrl + F12)</td></tr><tr><td>Insert Picture</td><td>Insert &gt; Pictures &gt; This Device</td><td>Insert &gt; Image</td></tr><tr><td>Keep / Lock Image Aspect Ratio</td><td>Picture Format &gt; Size corner arrow &gt; Lock Aspect Ratio</td><td>Right-Click image &gt; Properties &gt; Type &gt; Tick Keep ratio</td></tr><tr><td>Spellcheck &amp; Save as PDF</td><td>Review &gt; Spelling (F7) / File &gt; Save As (.pdf)</td><td>Tools &gt; Spelling (F7) / File &gt; Export Directly as PDF</td></tr></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="visuals" class="revision-section">
+          <div class="section-header-row">
+            <h2 class="section-title"><i class="fa-regular fa-image"></i> Real-Screen Diagrams &amp; Screenshots</h2>
+          </div>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(290px, 1fr)); gap:16px;">
+            
+        <div style="background:#ffffff; border:1px solid #cbd5e1; border-radius:12px; overflow:hidden; box-shadow:0 4px 12px rgba(15,23,42,0.06);">
+          <img src="../../assets/img/dfs-basics/writer_layout.png" alt="Changing Page Orientation cleanly in LibreOffice Writer" loading="lazy" style="width:100%; height:auto; display:block;">
+          <div style="padding:10px 14px; font-size:0.86rem; font-weight:700; color:#0f172a; background:#f8fafc; border-top:1px solid #e2e8f0;">Changing Page Orientation cleanly in LibreOffice Writer</div>
+        </div>
+        <div style="background:#ffffff; border:1px solid #cbd5e1; border-radius:12px; overflow:hidden; box-shadow:0 4px 12px rgba(15,23,42,0.06);">
+          <img src="../../assets/img/dfs-basics/writer_aspect_ratio.png" alt="Ticking Keep / Lock Aspect Ratio in Image Properties" loading="lazy" style="width:100%; height:auto; display:block;">
+          <div style="padding:10px 14px; font-size:0.86rem; font-weight:700; color:#0f172a; background:#f8fafc; border-top:1px solid #e2e8f0;">Ticking Keep / Lock Aspect Ratio in Image Properties</div>
+        </div>
+        <div style="background:#ffffff; border:1px solid #cbd5e1; border-radius:12px; overflow:hidden; box-shadow:0 4px 12px rgba(15,23,42,0.06);">
+          <img src="../../assets/img/dfs-basics/writer_flyer.png" alt="Clean 1-Page Flyer Layout with Border, Table &amp; Photo" loading="lazy" style="width:100%; height:auto; display:block;">
+          <div style="padding:10px 14px; font-size:0.86rem; font-weight:700; color:#0f172a; background:#f8fafc; border-top:1px solid #e2e8f0;">Clean 1-Page Flyer Layout with Border, Table &amp; Photo</div>
+        </div>
+          </div>
+        </section>
+
+        <section id="interactive-lab" class="revision-section">
+          <div class="section-header-row">
+            <h2 class="section-title"><i class="fa-solid fa-laptop-code"></i> Word &amp; LibreOffice Writer Document Makeover Preflight</h2>
+          </div>
+          <div data-basics-lab="word-writer-lab">
+            <noscript>Enable JavaScript to use the interactive beginner practice lab.</noscript>
+          </div>
+        </section>
+
+        <section id="traps" class="revision-section">
+          <div class="section-header-row">
+            <h2 class="section-title"><i class="fa-solid fa-triangle-exclamation"></i> Three Common Beginner Traps</h2>
+          </div>
+          
+        <div class="math-visual-card" style="margin-bottom:14px; border-left:6px solid #dc2626;">
+          <div class="math-visual-card-title" style="color:#991b1b;">
+            <i class="fa-solid fa-triangle-exclamation"></i> Avoid Trap: Stretching a photo from its side or bottom dot instead of a corner
+          </div>
+          <p class="math-step-explanation" style="margin:0;">Stretches faces/logos out of proportion — always tick Keep/Lock Aspect Ratio and drag a corner.</p>
+        </div>
+        <div class="math-visual-card" style="margin-bottom:14px; border-left:6px solid #dc2626;">
+          <div class="math-visual-card-title" style="color:#991b1b;">
+            <i class="fa-solid fa-triangle-exclamation"></i> Avoid Trap: Pressing Enter 15 times to push text onto the next page
+          </div>
+          <p class="math-step-explanation" style="margin:0;">Causes ugly gaps later; use Insert &gt; Page Break (Ctrl + Enter) instead.</p>
+        </div>
+        <div class="math-visual-card" style="margin-bottom:14px; border-left:6px solid #dc2626;">
+          <div class="math-visual-card-title" style="color:#991b1b;">
+            <i class="fa-solid fa-triangle-exclamation"></i> Avoid Trap: Letting two extra lines spill onto an accidental blank Page 2
+          </div>
+          <p class="math-step-explanation" style="margin:0;">Slightly adjust margins, spacing, or photo height until your flyer stays cleanly on 1 page.</p>
+        </div>
+        </section>
+
+        <section id="downloads" class="revision-section">
+          <div class="section-header-row">
+            <h2 class="section-title"><i class="fa-solid fa-pen-ruler"></i> Guided Practical Task &amp; Printable Worksheets</h2>
+          </div>
+          <div class="dfs-practice-box">
+            <div class="dfs-task-stem">
+              <div style="font-weight:700; color:#0f172a; margin-bottom:6px;"><i class="fa-solid fa-pen-to-square" style="color:#0284c7;"></i> Try This Yourself:</div>
+              <div>Download &#x27;MFS Word and Writer Practice Pack.zip&#x27; above and open &#x27;01 Community Notice Flyer.docx&#x27;. Change Orientation to Landscape, enlarge the headline to 24pt Bold Centred, turn the activities sentence into bullet points, add a tidy page border, and export as PDF.</div>
+            </div>
+            <div class="dfs-scratchpad-wrap">
+              <div class="dfs-scratchpad-label">
+                <span><i class="fa-solid fa-keyboard"></i> Notes &amp; Self-Check Scratchpad:</span>
+                <span class="dfs-autosave-status"><i class="fa-solid fa-circle-check"></i> Auto-saves in browser</span>
+              </div>
+              <textarea class="dfs-scratchpad-area" data-storage-key="dfs_basics_b08-word-and-libreoffice-writer" placeholder="Type your steps or practice notes here..."></textarea>
+            </div>
+            <button type="button" id="solBtn_b08-word-and-libreoffice-writer" class="dfs-solution-toggle-btn" onclick="toggleSolutionDrawer('solDrawer_b08-word-and-libreoffice-writer', 'solBtn_b08-word-and-libreoffice-writer')">
+              <i class="fa-solid fa-chevron-down"></i> Show Step-by-Step Benchmark Answer
+            </button>
+            <div id="solDrawer_b08-word-and-libreoffice-writer" class="dfs-solution-drawer">
+              <h4><i class="fa-solid fa-circle-check"></i> Worked Benchmark Steps</h4>
+              <pre style="white-space:pre-wrap; font-family:inherit; background:#fff; padding:14px; border-radius:8px; border:1px solid #bbf7d0; color:#14532d; margin:0;">1. Open 01 Community Notice Flyer.docx -&gt; File &gt; Save As &#x27;Oakwood Flyer Formatted.docx&#x27;.
+2. Switch Orientation to Landscape and add a thin dark navy Page Border.
+3. Format the headline at 24pt Bold Centred, split the 4 activities into crisp bullets, run Spellcheck (F7), verify 1 page only, and Export as PDF.</pre>
+            </div>
+          </div>
+
+          <div style="margin-top:20px; padding:18px 20px; background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:12px; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:12px;">
+            <div>
+              <strong style="color:#0f172a;">Module 3 Word/Writer &amp; PowerPoint/Impress Practice Sheet</strong>
+              <div style="font-size:0.88rem; color:#475569;">Printable A4 practice questions + full step-by-step worked answers.</div>
+            </div>
+            <div style="display:flex; flex-wrap:wrap; gap:10px;">
+              <a href="../../worksheets/dfs-basics-writer-impress-exercises.html" class="btn-card-action"><i class="fa-regular fa-file-lines"></i> Practice Exercises</a>
+              <a href="../../worksheets/dfs-basics-writer-impress-answers.html" class="btn-hero-accent" style="padding:8px 16px; font-size:0.9rem;"><i class="fa-solid fa-check-double"></i> Worked Answers</a>
+            </div>
+          </div>
+        </section>
+
+        <div class="dfs-topic-nav-bar">
+          <div><a href="b07-email-attachments-and-everyday-help.html" class="dfs-nav-btn"><i class="fa-solid fa-arrow-left"></i> Previous: Everyday Email, Attachments, Video Calls &amp; First-Aid Troubleshooting</a></div>
+          <div><a href="b09-powerpoint-and-libreoffice-impress.html" class="dfs-nav-btn primary">Next: PowerPoint &amp; LibreOffice Impress Practical Guide <i class="fa-solid fa-arrow-right"></i></a></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="mfs-footer" id="site-footer">
+    <div class="mfs-container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="mfs-brand" style="margin-bottom:16px;">
+            <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="mfs-brand-text">
+              <div class="mfs-brand-title" style="color:#ffffff;">MASTER<span>FUNCTIONALSKILLS</span></div>
+              <div class="mfs-brand-subtitle" style="color:#94a3b8;">Delivering Skills • Achieving Goals</div>
+            </div>
+          </div>
+          <p style="font-size:0.88rem; line-height:1.6; margin-bottom:16px;">
+            Dedicated UK Functional Skills maths, English, and digital skills revision, mock exams, and specialist tuition.
+          </p>
+          <div style="font-size:0.85rem; color:#cbd5e1;">
+            <p><a href="https://wa.me/447564525425" target="_blank" rel="noopener" style="color:#cbd5e1; text-decoration:none;"><i class="fa-brands fa-whatsapp" style="color:var(--accent); margin-right:8px;"></i> WhatsApp: +44 (0)7564 525425</a></p>
+            <p style="margin-top:6px;"><a href="../../contact-us.html" style="color:#cbd5e1; text-decoration:none;"><i class="fa-solid fa-envelope" style="color:var(--accent); margin-right:8px;"></i> Contact Tutor Team</a></p>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Maths Revision</h4>
+          <ul class="footer-links">
+            <li><a href="../../functional-skills-maths-level-2.html">Maths Level 2 Revision</a></li>
+            <li><a href="../../functional-skills-maths-level-1.html">Maths Level 1 Revision</a></li>
+            <li><a href="../../entry-level-3-maths.html">Entry Level 3 Maths</a></li>
+            <li><a href="../../pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="../../functional-skills-past-papers.html">Free Maths Past Papers</a></li>
+            <li><a href="../../exam-maths-l2.html">Book Level 2 Maths Exam</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>English &amp; Digital</h4>
+          <ul class="footer-links">
+            <li><a href="../../functional-skills-english-level-2.html">English Level 2 Revision</a></li>
+            <li><a href="../../functional-skills-english-level-1.html">English Level 1 Revision</a></li>
+            <li><a href="../../entry-level-3-english.html">Entry Level 3 English</a></li>
+            <li><a href="../../digital-functional-skills-level-1.html">Digital Skills Level 1</a></li>
+            <li><a href="../../digital-functional-skills-entry-3.html">Digital Skills Entry 3</a></li>
+            <li><a href="../../digital-functional-skills-past-papers.html">DFS Past Papers &amp; Data Files</a></li>
+            <li><a href="../../digital-functional-skills-mock-exam.html">DFS Online Mock Simulator</a></li>
+            <li><a href="../../digital-functional-skills.html">Digital Skills Hub (E3 &amp; L1)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Student Support &amp; Tools</h4>
+          <ul class="footer-links">
+            <li><a href="../../tools.html" style="color:var(--accent); font-weight:700;"><i class="fa-solid fa-screwdriver-wrench" style="margin-right:6px;"></i>All Interactive Tools Hub</a></li>
+            <li><a href="../../pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="../../diagnostic-test.html">Diagnostic Skill Checker</a></li>
+            <li><a href="../../functional-skills-nets.html">3D Net Folding Tool</a></li>
+            <li><a href="../../digital-functional-skills-mock-exam.html">Pearson DFS Simulator</a></li>
+            <li><a href="../../revision-cards.html">Revision Cards &amp; Flashcards</a></li>
+            <li><a href="../../shop.html">Revision Books &amp; Study Packs</a></li>
+            <li><a href="../../tutors.html">1-to-1 Specialist Tuition</a></li>
+            <li><a href="../../exams.html">Book Official Online Exam</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Master Functional Skills. All rights reserved. Registered in England &amp; Wales. Ofqual Regulated Qualification Standards.</div>
+        <div style="display:flex; gap:16px; flex-wrap:wrap;">
+          <a href="../../index.html">Home</a>
+          <a href="../../tools.html" style="color:var(--accent); font-weight:700;">Tools</a>
+          <a href="../../functional-skills-past-papers.html">Past Papers</a>
+          <a href="../../revision-cards.html">Revision Cards</a>
+          <a href="../../shop.html">Study Shop</a>
+          <a href="../../tutors.html">Tutors</a>
+          <a href="../../open-awards-functional-skills.html">Open Awards Guide</a>
+          <a href="../../centre-policies.html">Policies &amp; Access</a>
+          <a href="../../contact-us.html">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../../assets/js/mfs-revision.js?v=20261121v2"></script>
+  <script src="../../assets/js/mfs-dfs-basics-labs.js?v=20261121"></script>
+  <script src="../../assets/js/mfs-tint.js?v=20261120v12"></script>
+</body>
+</html>

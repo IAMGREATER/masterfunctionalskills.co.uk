@@ -339,42 +339,6 @@
   box-shadow: 0 4px 12px rgba(239, 68, 68, 0.3);
 }
 
-/* Feature Bullets in Modal */
-.mfs-modal-features-row {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
-}
-
-.mfs-modal-feat-card {
-  background: #0f172a;
-  border: 1px solid #1e293b;
-  padding: 12px 14px;
-  border-radius: 10px;
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-}
-
-.mfs-modal-feat-card i {
-  font-size: 1.1rem;
-  margin-top: 2px;
-}
-
-.mfs-feat-title {
-  font-size: 0.82rem;
-  font-weight: 700;
-  color: #e2e8f0;
-  display: block;
-}
-
-.mfs-feat-desc {
-  font-size: 0.74rem;
-  color: #94a3b8;
-  margin-top: 2px;
-  line-height: 1.4;
-}
-
 /* Mobile Responsiveness — Clean, Zero-Clutter Popup Player */
 @media (max-width: 768px) {
   .mfs-video-modal-overlay {
@@ -404,11 +368,6 @@
   .mfs-video-modal-body {
     padding: 10px 12px 12px;
     gap: 10px;
-  }
-  /* Hide verbose marketing blurb boxes & tutor role subtitle on mobile */
-  .mfs-modal-features-row,
-  .mfs-tutor-role {
-    display: none !important;
   }
   .mfs-modal-meta-bar {
     flex-direction: column;

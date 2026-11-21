@@ -10,7 +10,7 @@ frames, real workplace photos, Murphy cartoons, and zero bottom space):
 2. MasterFunctionalSkills_English_Writing_Level_2_Companion_Workbook.pdf  (86 Pages)
 3. MasterFunctionalSkills_English_Writing_Level_1_Core_Guide.pdf          (104 Pages)
 4. MasterFunctionalSkills_English_Writing_Level_1_Companion_Workbook.pdf  (86 Pages)
-5. MasterFunctionalSkills_English_Entry_Level_3_Core_Guide.pdf            (92 Pages)
+5. MasterFunctionalSkills_English_Entry_3_Core_Guide.pdf                  (92 Pages)
 
 Outputs to:
 - assets/downloads/
@@ -146,8 +146,7 @@ def writing_float_photo_card(rel_path: str, caption_txt: str, height_mm: int = 4
         f"<img src='{abs_p.as_uri()}' style='width:100%;height:100%;object-fit:cover;object-position:center 25%;display:block;'>"
         f"</div>"
         f"<div style='font-size:7.6pt; /* hf-ok */ font-weight:700;color:var(--primary);text-align:center;"
-        f"padding:0.8mm 1.2mm;background:#eff6ff;border-top:1px solid #bfdbfe;line-height:1.15;"
-        f"white-space:nowrap;overflow:hidden;text-overflow:ellipsis;'>"
+        f"padding:0.9mm 1.5mm;background:#eff6ff;border-top:1px solid #bfdbfe;line-height:1.25;overflow-wrap:break-word;'>"
         f"{caption_txt}</div></div>"
     )
 
@@ -415,7 +414,7 @@ def build_english_l2_core():
                 f"<div style='width:100%;aspect-ratio:16/9;overflow:hidden;background:#0f172a;'>"
                 f"<img src='{img_uri}' alt='{escape_html(f_short)}' style='width:100%;height:100%;object-fit:cover;object-position:center 25%;display:block;'>"
                 f"</div>"
-                f"<div style='background:var(--primary);color:#ffffff;font-size:7.8pt; /* hf-ok */ font-weight:700;text-align:center;padding:0.8mm 1.5mm;letter-spacing:0.01em;line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;'>"
+                f"<div style='background:var(--primary);color:#ffffff;font-size:7.8pt; /* hf-ok */ font-weight:700;text-align:center;padding:0.8mm 1.5mm;letter-spacing:0.01em;line-height:1.25;'>"
                 f"Unit {f_idx}: {u_cap}</div>"
                 f"</div>"
                 f"</div>"
@@ -523,7 +522,7 @@ def build_english_l2_core():
                         f"<div style='width:100%;aspect-ratio:16/9;overflow:hidden;background:#0f172a;'>"
                         f"<img src='{img2_path.as_uri()}' alt='{escape_html(cap2)}' style='width:100%;height:100%;object-fit:cover;object-position:center 25%;display:block;'>"
                         f"</div>"
-                        f"<div style='background:#eff6ff;color:var(--primary);font-size:7.8pt; /* hf-ok */ font-weight:700;text-align:center;padding:0.8mm 1.5mm;border-top:1px solid #bfdbfe;line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;'>"
+                        f"<div style='background:#eff6ff;color:var(--primary);font-size:7.8pt; /* hf-ok */ font-weight:700;text-align:center;padding:0.8mm 1.5mm;border-top:1px solid #bfdbfe;line-height:1.25;'>"
                         f"Exam Scenario: {cap2}</div>"
                         f"</div>"
                     )
@@ -825,7 +824,7 @@ def build_english_l2_core():
                     f"<div style='width:100%;aspect-ratio:16/9;overflow:hidden;background:#0f172a;'>"
                     f"<img src='{sp_path.as_uri()}' alt='{escape_html(sp_cap)}' style='width:100%;height:100%;object-fit:cover;object-position:center 25%;display:block;'>"
                     f"</div>"
-                    f"<div style='background:#eff6ff;color:var(--primary);font-size:7.8pt; /* hf-ok */ font-weight:700;text-align:center;padding:0.8mm 1.5mm;border-top:1px solid #bfdbfe;line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;'>"
+                    f"<div style='background:#eff6ff;color:var(--primary);font-size:7.8pt; /* hf-ok */ font-weight:700;text-align:center;padding:0.8mm 1.5mm;border-top:1px solid #bfdbfe;line-height:1.25;'>"
                     f"Workplace Application: {sp_cap}</div>"
                     f"</div>"
                 )
@@ -1384,7 +1383,7 @@ def build_english_l2_companion():
                     f"<div style='width:100%;aspect-ratio:16/9;overflow:hidden;background:#0f172a;'>"
                     f"<img src='{img_p.as_uri()}' alt='{escape_html(cap_txt)}' style='width:100%;height:100%;object-fit:cover;object-position:center 25%;display:block;'>"
                     f"</div>"
-                    f"<div style='background:#eff6ff;color:var(--primary);font-size:7.8pt; /* hf-ok */ font-weight:700;text-align:center;padding:0.8mm 1.5mm;border-top:1px solid #bfdbfe;line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;'>"
+                    f"<div style='background:#eff6ff;color:var(--primary);font-size:7.8pt; /* hf-ok */ font-weight:700;text-align:center;padding:0.8mm 1.5mm;border-top:1px solid #bfdbfe;line-height:1.25;'>"
                     f"Task {q_num}: {cap_txt}</div>"
                     f"</div>"
                 )
@@ -1609,7 +1608,7 @@ def build_english_l2_companion():
         d_photo_html = ""
         if (d_idx + 1) in SPAG_WRITING_PHOTOS:
             d_rel, d_cap = SPAG_WRITING_PHOTOS[d_idx + 1]
-            d_photo_html = writing_float_photo_card(d_rel, d_cap, height_mm=38, width_mm=64)
+            d_photo_html = writing_float_photo_card(d_rel, d_cap, height_mm=47, width_mm=84)
         d_body = (
             K.page_title(f"Targeted Diagnostic Drill {d_idx+1}", kicker=d_title, badge=f"D{d_idx+1}")
             + K.box_html(
@@ -2083,7 +2082,7 @@ def build_english_l1_core():
                 f"<div style='width:100%;aspect-ratio:16/9;overflow:hidden;background:#0f172a;'>"
                 f"<img src='{img_uri}' alt='{escape_html(f_short)}' style='width:100%;height:100%;object-fit:cover;object-position:center 25%;display:block;'>"
                 f"</div>"
-                f"<div style='background:var(--primary);color:#ffffff;font-size:7.8pt; /* hf-ok */ font-weight:700;text-align:center;padding:0.8mm 1.5mm;letter-spacing:0.01em;line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;'>"
+                f"<div style='background:var(--primary);color:#ffffff;font-size:7.8pt; /* hf-ok */ font-weight:700;text-align:center;padding:0.8mm 1.5mm;letter-spacing:0.01em;line-height:1.25;'>"
                 f"Unit {f_idx}: {u_cap}</div>"
                 f"</div>"
                 f"</div>"
@@ -2191,7 +2190,7 @@ def build_english_l1_core():
                         f"<div style='width:100%;aspect-ratio:16/9;overflow:hidden;background:#0f172a;'>"
                         f"<img src='{img2_path.as_uri()}' alt='{escape_html(cap2)}' style='width:100%;height:100%;object-fit:cover;object-position:center 25%;display:block;'>"
                         f"</div>"
-                        f"<div style='background:#eff6ff;color:var(--primary);font-size:7.8pt; /* hf-ok */ font-weight:700;text-align:center;padding:0.8mm 1.5mm;border-top:1px solid #bfdbfe;line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;'>"
+                        f"<div style='background:#eff6ff;color:var(--primary);font-size:7.8pt; /* hf-ok */ font-weight:700;text-align:center;padding:0.8mm 1.5mm;border-top:1px solid #bfdbfe;line-height:1.25;'>"
                         f"Exam Scenario: {cap2}</div>"
                         f"</div>"
                     )
@@ -2495,7 +2494,7 @@ def build_english_l1_core():
                     f"<div style='width:100%;aspect-ratio:16/9;overflow:hidden;background:#0f172a;'>"
                     f"<img src='{sp_path.as_uri()}' alt='{escape_html(sp_cap)}' style='width:100%;height:100%;object-fit:cover;object-position:center 25%;display:block;'>"
                     f"</div>"
-                    f"<div style='background:#eff6ff;color:var(--primary);font-size:7.8pt; /* hf-ok */ font-weight:700;text-align:center;padding:0.8mm 1.5mm;border-top:1px solid #bfdbfe;line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;'>"
+                    f"<div style='background:#eff6ff;color:var(--primary);font-size:7.8pt; /* hf-ok */ font-weight:700;text-align:center;padding:0.8mm 1.5mm;border-top:1px solid #bfdbfe;line-height:1.25;'>"
                     f"Everyday Application: {sp_cap}</div>"
                     f"</div>"
                 )
@@ -3062,7 +3061,7 @@ def build_english_l1_companion():
                     f"<div style='width:100%;aspect-ratio:16/9;overflow:hidden;background:#0f172a;'>"
                     f"<img src='{img_p.as_uri()}' alt='{escape_html(cap_txt)}' style='width:100%;height:100%;object-fit:cover;object-position:center 25%;display:block;'>"
                     f"</div>"
-                    f"<div style='background:#eff6ff;color:var(--primary);font-size:7.8pt; /* hf-ok */ font-weight:700;text-align:center;padding:0.8mm 1.5mm;border-top:1px solid #bfdbfe;line-height:1.15;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;'>"
+                    f"<div style='background:#eff6ff;color:var(--primary);font-size:7.8pt; /* hf-ok */ font-weight:700;text-align:center;padding:0.8mm 1.5mm;border-top:1px solid #bfdbfe;line-height:1.25;'>"
                     f"Task {q_num}: {cap_txt}</div>"
                     f"</div>"
                 )
@@ -3285,7 +3284,7 @@ def build_english_l1_companion():
         d_photo_html = ""
         if (d_idx + 1) in SPAG_WRITING_PHOTOS:
             d_rel, d_cap = SPAG_WRITING_PHOTOS[d_idx + 1]
-            d_photo_html = writing_float_photo_card(d_rel, d_cap, height_mm=38, width_mm=64)
+            d_photo_html = writing_float_photo_card(d_rel, d_cap, height_mm=47, width_mm=84)
         d_body = (
             K.page_title(f"Proofreading Drill {d_idx+1}", kicker=d_title, badge=f"D{d_idx+1}")
             + K.box_html(
@@ -3525,10 +3524,10 @@ def build_english_l1_companion():
 
 def build_english_e3_core():
     print("\n" + "="*70)
-    print("BUILDING: MasterFunctionalSkills_English_Entry_Level_3_Core_Guide.pdf")
+    print("BUILDING: MasterFunctionalSkills_English_Entry_3_Core_Guide.pdf")
     print("="*70)
 
-    BOOK = "English Entry Level 3 Core Guide"
+    BOOK = "English Entry 3 Core Guide"
     front_cov = COV / "english_e3_core_cover_page-1.png"
     back_cov = COV / "english_e3_core_cover_page-2.png"
 
@@ -3600,9 +3599,8 @@ def build_english_e3_core():
             f"<div style='width:100%;aspect-ratio:16/9;overflow:hidden;background:#0f172a;'>"
             f"<img src='{abs_p.as_uri()}' style='width:100%;height:100%;object-fit:cover;object-position:{pos};display:block;'>"
             f"</div>"
-            f"<div style='font-size:7.5pt; /* hf-ok */ font-weight:700;color:var(--primary);text-align:center;"
-            f"padding:0.7mm 1.2mm;background:#eff6ff;border-top:1px solid #bfdbfe;line-height:1.15;"
-            f"white-space:nowrap;overflow:hidden;text-overflow:ellipsis;'>"
+            f"<div style='font-size:7.6pt; /* hf-ok */ font-weight:700;color:var(--primary);text-align:center;"
+            f"padding:0.9mm 1.6mm;background:#eff6ff;border-top:1px solid #bfdbfe;line-height:1.25;overflow-wrap:break-word;'>"
             f"{caption_txt}</div></div>"
         )
 
@@ -3610,7 +3608,7 @@ def build_english_e3_core():
     # Placeholder for Page 2 (Complete 2-Column Table of Contents inserted once page numbers are verified)
     pages.append("")
 
-    # p3: Official Pearson Edexcel Entry Level 3 Specification & Syllabus Mapping (E3.R8-R12 & E3.W13-W22)
+    # p3: Official Pearson Edexcel Entry 3 Specification & Syllabus Mapping (E3.R8-R12 & E3.W13-W22)
     p3_body = (
         K.page_title("Entry 3 English &bull; Syllabus Overview", kicker="Pearson Edexcel Qualification Overview &bull; QAN 603/4288/2", badge="SPEC")
         + K.box_html(
@@ -3630,7 +3628,7 @@ def build_english_e3_core():
             "<table style='width:100%;border-collapse:collapse;font-size:8.2pt;line-height:1.22;'>"
             "<tr style='background:var(--primary);color:#fff;'>"
             "<th style='padding:0.8mm 1.5mm;text-align:left;width:13%;'>Code</th>"
-            "<th style='padding:0.8mm 1.5mm;text-align:left;width:62%;'>Official DfE / Pearson Edexcel Entry Level 3 Subject Content</th>"
+            "<th style='padding:0.8mm 1.5mm;text-align:left;width:62%;'>Official DfE / Pearson Edexcel Entry 3 Subject Content</th>"
             "<th style='padding:0.8mm 1.5mm;text-align:left;width:25%;'>Core Guide Coverage</th>"
             "</tr>"
             "<tr style='border-bottom:1px solid #e2e8f0;background:#ffffff;'><td><b>E3.R8&ndash;R10</b></td><td>Read Entry 3 words accurately; identify main points, ideas, and purposes of straightforward texts.</td><td>Reading R1&ndash;R4, R6&ndash;R8, R10</td></tr>"
@@ -3639,13 +3637,13 @@ def build_english_e3_core():
             "<tr style='border-bottom:1px solid #e2e8f0;background:#f8fafc;'><td><b>E3.W14</b></td><td>Form <b>regular plurals</b> (<i>-s, -es</i>) and <b>irregular plurals</b> (<i>-ies, -ves, children, people, men, women</i>).</td><td>Writing Unit W7 &amp; Spelling SP4 (pp. 40, 58)</td></tr>"
             "<tr style='border-bottom:1px solid #e2e8f0;background:#ffffff;'><td><b>E3.W15</b></td><td>Use correct grammar: <b>subject-verb agreement</b>, consistent <b>past/present tense</b>, and <b>articles</b> (<i>a, an, the</i>).</td><td>Writing Units W6 &amp; W7 (pp. 38&ndash;41)</td></tr>"
             "<tr style='border-bottom:1px solid #e2e8f0;background:#f8fafc;'><td><b>E3.W16</b></td><td>Use the <b>first and second letters</b> to sequence words in <b>alphabetical order</b>.</td><td>Reading R5, Writing W8 &amp; Spelling SP6</td></tr>"
-            "<tr style='border-bottom:1px solid #e2e8f0;background:#ffffff;'><td><b>E3.W17</b></td><td>Spell correctly words designated for Entry Level 3 (<b>Official Annexe D Word List</b> prefixes, suffixes, silent letters).</td><td>Spelling Units SP1&ndash;SP6 (pp. 52&ndash;63)</td></tr>"
+            "<tr style='border-bottom:1px solid #e2e8f0;background:#ffffff;'><td><b>E3.W17</b></td><td>Spell correctly words designated for Entry 3 (<b>Official Annexe D Word List</b> prefixes, suffixes, silent letters).</td><td>Spelling Units SP1&ndash;SP6 (pp. 52&ndash;63)</td></tr>"
             "<tr style='border-bottom:1px solid #e2e8f0;background:#f8fafc;'><td><b>E3.W18&ndash;W19</b></td><td>Communicate information, ideas and opinions clearly in a <b>logical sequence</b> and appropriate detail/length.</td><td>Writing Units W8&ndash;W12 (pp. 42&ndash;51)</td></tr>"
             "<tr style='border-bottom:1px solid #e2e8f0;background:#ffffff;'><td><b>E3.W20</b></td><td>Use appropriate <b>format and structure</b> (<b>emails, letters, notes, notices, forms, feedback</b>) with <b>headings &amp; bullets</b>.</td><td>Writing Units W9&ndash;W12 (pp. 44&ndash;51)</td></tr>"
             "<tr style='background:#f8fafc;'><td><b>E3.W21&ndash;W22</b></td><td>Write in <b>complete and compound sentences</b> (<i>and, but, or, so, because</i>), use <b>paragraphs</b>, and suit <b>audience/purpose</b>.</td><td>Writing Units W4, W5, W8&ndash;W12</td></tr>"
             "</table>"
             "</div>",
-            title="Official Pearson Edexcel Entry Level 3 Specification &amp; Syllabus Map"
+            title="Official Pearson Edexcel Entry 3 Specification &amp; Syllabus Map"
         )
         + K.tip_pair("In Writing, tick off every bullet point in the question prompt and write in complete, punctuated sentences.",
                      "Check the 5-Point SPaG Scan: (1) Capital letters, (2) End marks (. ? !), (3) Commas &amp; apostrophes, (4) Tense &amp; plurals, (5) Annexe D spellings.",
@@ -3653,7 +3651,7 @@ def build_english_e3_core():
     )
     pages.append(K.page(p3_body, header=(BOOK, "Exam &bull; Syllabus Overview"), footer=BOOK, page_no=3))
 
-    # p4 to p27: 12 Entry Level 3 Reading Units (24 pages: 2 pages each)
+    # p4 to p27: 12 Entry 3 Reading Units (24 pages: 2 pages each)
     reading_units_e3 = [
         ("Reading Notices and Signs",
          "Public notices and workplace safety signs use <b>bold headings</b>, <b>capital letters</b>, and <b>imperative (command) verbs</b> (e.g. <i>Stop, Walk, Do NOT use</i>) to give urgent instructions and warnings (Syllabus <b>E3.R9, E3.R10, E3.R12</b>).",
@@ -3877,8 +3875,8 @@ def build_english_e3_core():
         )
         # Page 1: Learn
         p1_r = (
-            K.page_title(f"Reading Unit {r_idx}: {r_title}", kicker="Entry Level 3 Reading Skills &bull; Syllabus E3.R8–R12", badge=f"R{r_idx}")
-            + K.hero_image(photo_path, photo_cap, 58, fill=True, pos="center center")
+            K.page_title(f"Reading Unit {r_idx}: {r_title}", kicker="Entry 3 Reading Skills &bull; Syllabus E3.R8–R12", badge=f"R{r_idx}")
+            + K.hero_image(photo_path, photo_cap, 66, fill=True, pos="center center")
             + K.rule_box("Reading Skill, Strategy &amp; Key Vocabulary",
                          f"<p style='font-size:10.8pt;line-height:1.42;margin:0 0 1.8mm 0;'>{r_desc}</p>"
                          f"<div style='display:grid;grid-template-columns:1fr 1fr;gap:1.5mm;'>{vocab_html}</div>")
@@ -3903,7 +3901,7 @@ def build_english_e3_core():
             12: "generated_phase3/e3_prac/r12_medicine_label.jpg",
         }
         qs_html = "".join(f"<p style='margin:1.5mm 0;'><b>{q_num}</b> {escape_html(q_txt)}</p>" for q_num, q_txt in p2_qs)
-        p2_r_card = e3_task_photo_card(E3_READING_PRAC_PHOTOS[r_idx], f"Unit {r_idx}: {r_title[:26]}") if r_idx != 9 else ""
+        p2_r_card = e3_task_photo_card(E3_READING_PRAC_PHOTOS[r_idx], f"Unit {r_idx}: {r_title}") if r_idx != 9 else ""
         p2_r = (
             K.page_title(f"Reading Unit {r_idx} &bull; Practice Text", kicker="Comprehension Questions &bull; 4 Marks", badge="PRACTICE")
             + K.box_html(
@@ -3922,8 +3920,8 @@ def build_english_e3_core():
         pages.append(K.page(p2_r, header=(BOOK, f"Reading {r_idx} &bull; Questions"), footer=BOOK, page_no=p_curr))
         p_curr += 1
 
-    # p28 to p51: 12 Entry Level 3 Writing & Format Units (24 pages: 2 pages each)
-    # Covers 100% of Pearson Edexcel Entry Level 3 Writing Syllabus (E3.W13 to E3.W22)
+    # p28 to p51: 12 Entry 3 Writing & Format Units (24 pages: 2 pages each)
+    # Covers 100% of Pearson Edexcel Entry 3 Writing Syllabus (E3.W13 to E3.W22)
     writing_units_e3 = [
         ("Capital Letters for Sentences, Names and Places",
          "Syllabus <b>E3.W13</b> requires a <b>capital letter</b> at the <b>start of every sentence</b>, for the pronoun <b>'I'</b>, and for all <b>proper nouns</b>: people's names and titles (<i>Mr Clarke, David</i>), days (<i>Monday, Friday</i>), months (<i>October</i>), and towns/places (<i>Oxford, High Street</i>).",
@@ -4101,11 +4099,11 @@ def build_english_e3_core():
     for w_idx, (w_title, w_desc, w_wrong, w_right, w_gold, w_watch, p2_title, p2_task, p2_prompt) in enumerate(writing_units_e3, 1):
         photo_rel, photo_cap = E3_WRITING_PHOTOS[w_idx]
         photo_path = str(K.PHOTO_DIR / photo_rel)
-        hero_h = 54 if w_idx >= 9 else 62
+        hero_h = 58 if w_idx >= 9 else 66
         # Page 1: Learn
         p1_w = (
             e3_w_title_css
-            + K.page_title(f"Writing Unit {w_idx}: {w_title}", kicker="Entry Level 3 Writing &amp; Format Skills &bull; Syllabus E3.W13–W22", badge=f"W{w_idx}")
+            + K.page_title(f"Writing Unit {w_idx}: {w_title}", kicker="Entry 3 Writing &amp; Format Skills &bull; Syllabus E3.W13–W22", badge=f"W{w_idx}")
             + K.hero_image(photo_path, photo_cap, hero_h, fill=True, pos="center center")
             + K.rule_box("Core Writing Rule, Syllabus Explanation &amp; Vocabulary",
                          f"<p style='font-size:10.3pt;line-height:1.4;margin:0;'>{w_desc}</p>")
@@ -4218,7 +4216,7 @@ def build_english_e3_core():
         # Page 1: Learn
         p1_s = (
             K.page_title(f"Annexe D Spelling Drill {s_idx}", kicker=f"{s_title} &bull; Syllabus E3.W17", badge=f"SP{s_idx}")
-            + K.hero_image(photo_path, photo_cap, 55, fill=True, pos="center center")
+            + K.hero_image(photo_path, photo_cap, 64, fill=True, pos="center center")
             + K.rule_box("Official Pearson Edexcel Annexe D Spelling &amp; Phonics Rule",
                          f"<p style='font-size:10.5pt;line-height:1.42;margin:0 0 1.8mm 0;'>{s_rule}</p>"
                          f"<div style='margin-top:1mm;'><b style='font-size:9.2pt;color:#475569;'>12 Core Annexe D Target Words:</b><br>{chips_html}</div>")
@@ -4239,7 +4237,7 @@ def build_english_e3_core():
         }
         sent_html = "".join(f"<p style='margin:1.2mm 0;font-size:10.3pt;'><b>{i+1}.</b> {escape_html(s_txt)}</p>" for i, (_, s_txt) in enumerate(s_sentences))
         word_bank = ", ".join(w for w, _ in s_sentences)
-        sp_card = e3_task_photo_card(E3_SPELLING_PRAC_PHOTOS[s_idx], f"Drill {s_idx}: {s_title[:22]}")
+        sp_card = e3_task_photo_card(E3_SPELLING_PRAC_PHOTOS[s_idx], f"Drill {s_idx}: {s_title}")
         p2_s = (
             K.page_title(f"Spelling Drill {s_idx} &bull; Practice Sentences", kicker="Annexe D Sentence Completion &bull; 6 Marks", badge="DRILL")
             + K.box_html(
@@ -4257,10 +4255,10 @@ def build_english_e3_core():
     # p64 to p79: 2 Complete Reading & Writing Mock Exams (16 pages: 8 pages per mock)
     # Mock Paper 1
     pages.append(K.page(
-        K.page_title("Entry 3 Mock Examination &bull; Paper 1", kicker="Pearson Edexcel Entry Level 3 Full Simulation", badge="MOCK 1")
+        K.page_title("Entry 3 Mock Examination &bull; Paper 1", kicker="Pearson Edexcel Entry 3 Full Simulation", badge="MOCK 1")
         + K.box_html(
             "<div style='font-size:11.5pt;line-height:1.52;'>"
-            "<p><b>Official Pearson Edexcel Entry Level 3 Assessment Simulation (60 Marks Total):</b></p>"
+            "<p><b>Official Pearson Edexcel Entry 3 Assessment Simulation (60 Marks Total):</b></p>"
             "<ul>"
             "<li><b>Section A: Reading Assessment (45 Minutes &bull; 24 Marks):</b> Read Texts 1, 2, and 3 carefully and answer all 12 comprehension questions (Questions 1&ndash;12).</li>"
             "<li><b>Section B: Writing Assessment (50 Minutes &bull; 36 Marks):</b>"
@@ -4423,7 +4421,7 @@ def build_english_e3_core():
         K.page_title("Mock 1 &bull; Candidate Post-Exam Audit", kicker="Self-Evaluation &amp; Official Entry 3 Mark Scheme Alignment", badge="AUDIT")
         + K.box_html(
             "<div style='font-size:10.5pt;line-height:1.48;'>"
-            "<p style='margin:0 0 1.5mm 0;'><b>Check your Mock Examination 1 script against the Pearson Edexcel Entry Level 3 assessment criteria:</b></p>"
+            "<p style='margin:0 0 1.5mm 0;'><b>Check your Mock Examination 1 script against the Pearson Edexcel Entry 3 assessment criteria:</b></p>"
             "<ul>"
             "<li><b>Reading (24 marks &mdash; Pass guide: 16/24):</b> Located exact facts, times, prices, and purposes across all 3 texts without guessing.</li>"
             "<li><b>Writing Section A (10 marks):</b> Corrected all 4 Annexe D spellings (<i>address, question, section, tomorrow</i>), added capitals/question mark, and formed plurals accurately (<i>boxes, duties, children</i>).</li>"
@@ -4439,10 +4437,10 @@ def build_english_e3_core():
 
     # Mock Paper 2 (8 pages)
     pages.append(K.page(
-        K.page_title("Entry 3 Mock Examination &bull; Paper 2", kicker="Pearson Edexcel Entry Level 3 Full Simulation", badge="MOCK 2")
+        K.page_title("Entry 3 Mock Examination &bull; Paper 2", kicker="Pearson Edexcel Entry 3 Full Simulation", badge="MOCK 2")
         + K.box_html(
             "<div style='font-size:11.5pt;line-height:1.52;'>"
-            "<p><b>Official Pearson Edexcel Entry Level 3 Assessment Simulation (60 Marks Total):</b></p>"
+            "<p><b>Official Pearson Edexcel Entry 3 Assessment Simulation (60 Marks Total):</b></p>"
             "<ul>"
             "<li><b>Section A: Reading Assessment (45 Minutes &bull; 24 Marks):</b> Read Texts 1, 2, and 3 carefully and answer all 12 comprehension questions (Questions 1&ndash;12).</li>"
             "<li><b>Section B: Writing Assessment (50 Minutes &bull; 36 Marks):</b>"
@@ -4604,7 +4602,7 @@ def build_english_e3_core():
         K.page_title("Mock 2 &bull; Candidate Post-Exam Audit", kicker="Self-Evaluation &amp; Official Entry 3 Mark Scheme Alignment", badge="AUDIT")
         + K.box_html(
             "<div style='font-size:10.5pt;line-height:1.48;'>"
-            "<p style='margin:0 0 1.5mm 0;'><b>Check your Mock Examination 2 script against the Pearson Edexcel Entry Level 3 standards:</b></p>"
+            "<p style='margin:0 0 1.5mm 0;'><b>Check your Mock Examination 2 script against the Pearson Edexcel Entry 3 standards:</b></p>"
             "<ul>"
             "<li><b>Reading (24 marks &mdash; Pass guide: 16/24):</b> Extracted accurate answers for all 12 questions across the Open Evening, Smartcard, and Community Health App texts.</li>"
             "<li><b>Writing Section A (10 marks):</b> Corrected all 4 Annexe D spellings (<i>helpful, reception, appointment, different</i>), punctuated the equipment list, used irregular past verbs (<i>went, spoke</i>), and alphabetised by 2nd/3rd letters (<i>canteen, certificate, college, course</i>).</li>"
@@ -4711,7 +4709,7 @@ def build_english_e3_core():
         ("Proper noun", "A specific name, day, month, or place that starts with a capital letter."),
     ]
     gloss_html = "".join(f"<p style='margin:0.8mm 0;'><b>{escape_html(k)}:</b> {escape_html(v)}</p>" for k, v in glossary_e3)
-    ref_blocks.append(K.ref_block("Entry Level 3 Functional Writing &amp; SPaG Glossary", gloss_html))
+    ref_blocks.append(K.ref_block("Entry 3 Functional Writing &amp; SPaG Glossary", gloss_html))
 
     # Index
     index_e3 = [
@@ -4732,7 +4730,7 @@ def build_english_e3_core():
     for letter, entries in index_e3:
         items = "".join(f"<div class='ix'><span>{escape_html(t)}</span><span>p. {escape_html(p)}</span></div>" for t, p in entries)
         index_html += f"<div class='ix-letter'>{letter}</div>{items}"
-    ref_blocks.append(K.ref_block("Entry Level 3 Subject &amp; Vocabulary Index", index_html))
+    ref_blocks.append(K.ref_block("Entry 3 Subject &amp; Vocabulary Index", index_html))
 
     cover_theme = K.theme_from_cover(front_cov)
     ref_start_page = p_curr
@@ -4749,7 +4747,7 @@ def build_english_e3_core():
         K.page_title("Candidate Entry 3 Progress &amp; Commitments", kicker="Pearson Edexcel Entry 3 Achievement &bull; Final Readiness Check", badge="SUCCESS")
         + K.box_html(
             "<div style='font-size:11.5pt;line-height:1.42;'>"
-            "<p style='margin:0 0 1.5mm 0;'><b>Check off your Entry Level 3 skills as you complete each section of this manual:</b></p>"
+            "<p style='margin:0 0 1.5mm 0;'><b>Check off your Entry 3 skills as you complete each section of this manual:</b></p>"
             "<ul style='margin:0;padding-left:6mm;'>"
             "<li><b>Reading Mastery (E3.R8&ndash;R12):</b> Can locate main points, facts, dates, and prices; use alphabetical order (1st &amp; 2nd letters); read tables/timetables; and distinguish fact from opinion.</li>"
             "<li><b>Sentence &amp; Punctuation Accuracy (E3.W13&ndash;W15, W21):</b> Secure with capital letters, full stops, question marks, exclamation marks, commas in lists, apostrophes, regular/irregular plurals, articles (<i>a/an</i>), and joining clauses with <i>and, but, or, so, because</i>.</li>"
@@ -4757,7 +4755,7 @@ def build_english_e3_core():
             "<li><b>Annexe D Spelling (E3.W17):</b> Confident with prefixes, suffixes (<i>-ful, -less, -tion, -sion</i>), silent letters, double consonants, and homophones.</li>"
             "<li><b>Mock Exams:</b> Completed Mock Examination 1 and Mock Examination 2 under timed exam conditions.</li>"
             "</ul></div>",
-            title="Entry Level 3 Complete Learning Journey Checklist"
+            title="Entry 3 Complete Learning Journey Checklist"
         )
         + K.fill_notes("Personal Success Notes &amp; Tutor Endorsements", min_mm=24)
     )
@@ -4767,9 +4765,9 @@ def build_english_e3_core():
     # Duplex balance check before back cover
     if (len(pages) + 1) % 2 != 0:
         p_ibc_body = (
-            K.page_title("Candidate Entry 3 Celebration &amp; Sign-Off", kicker="Pearson Edexcel Entry Level 3 &bull; Course Completion Record", badge="PASS")
-            + K.rule_box("Entry Level 3 Achievement Milestone",
-                         "<p style='font-size:12pt;line-height:1.5;'>Well done on completing the Entry Level 3 Core Guide! You have built key foundations in reading and writing:</p>"
+            K.page_title("Candidate Entry 3 Celebration &amp; Sign-Off", kicker="Pearson Edexcel Entry 3 &bull; Course Completion Record", badge="PASS")
+            + K.rule_box("Entry 3 Achievement Milestone",
+                         "<p style='font-size:12pt;line-height:1.5;'>Well done on completing the Entry 3 Core Guide! You have built key foundations in reading and writing:</p>"
                          + K.bullets([
                              "<b>Reading Confidence:</b> Understanding main points, finding factual details, and interpreting tables and signs.",
                              "<b>Writing Demarcation:</b> Using capital letters, full stops, question marks, commas, and apostrophes accurately.",
@@ -4870,12 +4868,12 @@ def build_english_e3_core():
     )
 
     p2_toc_body = (
-        K.page_title("Table of Contents &amp; Directory", kicker="Pearson Edexcel Functional Skills English &bull; Entry Level 3", badge="CONTENTS")
+        K.page_title("Table of Contents &amp; Directory", kicker="Pearson Edexcel Functional Skills English &bull; Entry 3", badge="CONTENTS")
         + "<div style='background:var(--light);border:1.5px solid var(--soft);border-radius:6px;padding:1.8mm 2.8mm;margin-bottom:1.0mm;"
           "display:grid;grid-template-columns:1fr 1fr 1fr;gap:3mm;font-size:8.4pt;'>"
           "<div><b style='color:var(--primary);'>Learner Name:</b> _______________________</div>"
           "<div><b style='color:var(--primary);'>Target Exam Date:</b> ___________________</div>"
-          "<div><b style='color:var(--primary);'>Qualification:</b> Edexcel Entry Level 3</div>"
+          "<div><b style='color:var(--primary);'>Qualification:</b> Edexcel Entry 3</div>"
           "</div>"
         + f"<div style='display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:3.2mm;align-items:start;'>"
           f"<div>{col1_html}</div>"
@@ -4889,13 +4887,12 @@ def build_english_e3_core():
           "<div><b style='color:var(--primary);'>4. Sit the 2 Full Mocks:</b> Test yourself under timed conditions (pp. 64–79) and check solutions (p. 80).</div>"
           "</div>"
     )
-    pages[1] = K.page(p2_toc_body, header=("MASTER FUNCTIONAL SKILLS", "ENGLISH ENTRY LEVEL 3 &bull; CONTENTS"), footer=BOOK, page_no=2)
+    pages[1] = K.page(p2_toc_body, header=("MASTER FUNCTIONAL SKILLS", "ENGLISH ENTRY 3 &bull; CONTENTS"), footer=BOOK, page_no=2)
 
     print(f"Total Pages Assembled: {len(pages)}")
-    out_pdf = DOWNLOADS / "MasterFunctionalSkills_English_Entry_Level_3_Core_Guide.pdf"
-    res = K.render_pdf(pages, out_pdf, theme=cover_theme, entry3=True, title="Master Functional Skills - English Entry Level 3 Core Guide")
-    shutil.copy(out_pdf, DOCUMENTS / out_pdf.name)
-    print(f"Verified & Saved: {out_pdf} -> {DOCUMENTS / out_pdf.name}")
+    out_pdf = DOWNLOADS / "MasterFunctionalSkills_English_Entry_3_Core_Guide.pdf"
+    res = K.render_pdf(pages, out_pdf, theme=cover_theme, entry3=True, title="Master Functional Skills - English Entry 3 Core Guide")
+    print(f"Verified & Saved: {out_pdf}")
     print(f"Overflows: {res.get('overflow')}")
     return res
 

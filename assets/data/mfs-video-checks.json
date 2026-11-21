@@ -52,8 +52,8 @@
     "LRMd1ZSxKXw": "open-awards-maths-l1-mock-3-section-b",
     "UD0Xnv3erwo": "open-awards-maths-l2-mock-3-section-a",
     "-y0HH8bCfww": "open-awards-maths-l2-mock-3-section-b",
-    "il1LzMRTxw4": "dfs-level-1-sam-walkthrough",
-    "FHFZ1jd7F2g": "open-awards-dfs-e3-sam-walkthrough",
+    "VlpLrSET4j4": "dfs-level-1-sam-walkthrough",
+    "D4V1QMQY_9I": "open-awards-dfs-e3-sam-walkthrough",
     "bnxoprdRACk": "edexcel-maths-l2-past-paper-7-section-a",
     "IY2EjScrw4Y": "edexcel-maths-l2-past-paper-7-section-b",
     "TCwy_FiZ1eA": "edexcel-maths-l2-past-paper-6-section-a",
@@ -8511,7 +8511,7 @@
     },
     "dfs-level-1-sam-walkthrough": {
       "id": "dfs-level-1-sam-walkthrough",
-      "ytId": "il1LzMRTxw4",
+      "ytId": "VlpLrSET4j4",
       "mode": "mock",
       "title": "DFS Level 1 SAM • Full Real-Screen Walkthrough",
       "tutor": "Emma",
@@ -8520,70 +8520,70 @@
         {
           "idx": 0,
           "start": 0,
-          "end": 19,
+          "end": 10,
           "label": "Intro & Exam Overview",
           "isQuestion": false
         },
         {
           "idx": 1,
-          "start": 19,
-          "end": 42,
+          "start": 10,
+          "end": 26,
           "label": "Exam Strategy",
           "isQuestion": false
         },
         {
           "idx": 2,
-          "start": 42,
-          "end": 282,
+          "start": 26,
+          "end": 207,
           "label": "Section A: Q1–Q10",
           "isQuestion": true
         },
         {
           "idx": 3,
-          "start": 282,
-          "end": 305,
+          "start": 207,
+          "end": 216,
           "label": "Section B: Tasks A–E",
           "isQuestion": true
         },
         {
           "idx": 4,
-          "start": 305,
-          "end": 392,
+          "start": 216,
+          "end": 290,
           "label": "Task A: Search & Email",
           "isQuestion": true
         },
         {
           "idx": 5,
-          "start": 392,
-          "end": 487,
+          "start": 290,
+          "end": 378,
           "label": "Task B: Flyer Design",
           "isQuestion": true
         },
         {
           "idx": 6,
-          "start": 487,
-          "end": 624,
-          "label": "Task C: Excel & Chart",
+          "start": 378,
+          "end": 531,
+          "label": "Task C: Spreadsheet & Chart",
           "isQuestion": true
         },
         {
           "idx": 7,
-          "start": 624,
-          "end": 673,
+          "start": 531,
+          "end": 578,
           "label": "Task D: Online Form",
           "isQuestion": true
         },
         {
           "idx": 8,
-          "start": 673,
-          "end": 719,
+          "start": 578,
+          "end": 634,
           "label": "Task E: Folders & Web Fix",
           "isQuestion": true
         },
         {
           "idx": 9,
-          "start": 719,
-          "end": 740,
+          "start": 634,
+          "end": 648,
           "label": "Assessment Summary",
           "isQuestion": false
         }
@@ -8594,7 +8594,7 @@
           "stage": "Section A: Q1–Q10",
           "archetype": "Digital Knowledge Trap",
           "chapterIdx": 2,
-          "cueSec": 42,
+          "cueSec": 26,
           "cueLabel": "Section A: Q1–Q10",
           "question": "In 'Section A: Q1–Q10', when answering Part A onscreen knowledge questions, what strategy avoids careless drops?",
           "options": [
@@ -8610,7 +8610,7 @@
           "stage": "Section B: Tasks A–E",
           "archetype": "Digital Knowledge Trap",
           "chapterIdx": 3,
-          "cueSec": 282,
+          "cueSec": 207,
           "cueLabel": "Section B: Tasks A–E",
           "question": "In 'Section B: Tasks A–E', when answering Part A onscreen knowledge questions, what strategy avoids careless drops?",
           "options": [
@@ -8626,7 +8626,7 @@
           "stage": "Task A: Search & Email",
           "archetype": "Privacy & Email Trap",
           "chapterIdx": 4,
-          "cueSec": 305,
+          "cueSec": 216,
           "cueLabel": "Task A: Search & Email",
           "question": "In 'Task A: Search & Email', when emailing multiple external contacts or sharing a cloud folder, what protects personal data and earns full marks?",
           "options": [
@@ -8642,7 +8642,7 @@
           "stage": "Task B: Flyer Design",
           "archetype": "Layout & Save Trap",
           "chapterIdx": 5,
-          "cueSec": 392,
+          "cueSec": 290,
           "cueLabel": "Task B: Flyer Design",
           "question": "In 'Task B: Flyer Design', after formatting the document, flyer, or slide, what final check protects your task marks?",
           "options": [
@@ -8655,12 +8655,12 @@
         },
         {
           "id": "c6",
-          "stage": "Task C: Excel & Chart",
+          "stage": "Task C: Spreadsheet & Chart",
           "archetype": "Chart & Data Trap",
           "chapterIdx": 6,
-          "cueSec": 487,
-          "cueLabel": "Task C: Excel & Chart",
-          "question": "In 'Task C: Excel & Chart', what two mistakes commonly drop marks on spreadsheet sorting, currency formatting, and charts?",
+          "cueSec": 378,
+          "cueLabel": "Task C: Spreadsheet & Chart",
+          "question": "In 'Task C: Spreadsheet & Chart', what two mistakes commonly drop marks on spreadsheet sorting, currency formatting, and charts?",
           "options": [
             "Sorting ONLY one column without expanding the full table, OR including the Total row inside the chart",
             "Using Currency (£) with 2 decimal places",
@@ -8674,7 +8674,7 @@
           "stage": "Task D: Online Form",
           "archetype": "Online Form Trap",
           "chapterIdx": 7,
-          "cueSec": 624,
+          "cueSec": 531,
           "cueLabel": "Task D: Online Form",
           "question": "In 'Task D: Online Form', before submitting an online form, what detail often costs easy marks?",
           "options": [
@@ -8690,7 +8690,7 @@
           "stage": "Task E: Folders & Web Fix",
           "archetype": "Copyright & File Trap",
           "chapterIdx": 8,
-          "cueSec": 673,
+          "cueSec": 578,
           "cueLabel": "Task E: Folders & Web Fix",
           "question": "In 'Task E: Folders & Web Fix', when sourcing online text/images or organising files, what rule must you follow?",
           "options": [
@@ -8705,7 +8705,7 @@
     },
     "open-awards-dfs-e3-sam-walkthrough": {
       "id": "open-awards-dfs-e3-sam-walkthrough",
-      "ytId": "FHFZ1jd7F2g",
+      "ytId": "D4V1QMQY_9I",
       "mode": "mock",
       "title": "Open Awards DFS Entry 3 • SAM Walkthrough",
       "tutor": "Sonya",
@@ -8714,56 +8714,56 @@
         {
           "idx": 0,
           "start": 0,
-          "end": 17,
+          "end": 11,
           "label": "Intro & Assessment Plan",
           "isQuestion": false
         },
         {
           "idx": 1,
-          "start": 17,
-          "end": 36,
+          "start": 11,
+          "end": 26,
           "label": "Exam Strategy",
           "isQuestion": false
         },
         {
           "idx": 2,
-          "start": 36,
-          "end": 250,
+          "start": 26,
+          "end": 192,
           "label": "Section A: Q1–Q10",
           "isQuestion": true
         },
         {
           "idx": 3,
-          "start": 250,
-          "end": 262,
+          "start": 192,
+          "end": 201,
           "label": "Section B: Tasks A–C",
           "isQuestion": true
         },
         {
           "idx": 4,
-          "start": 262,
-          "end": 343,
+          "start": 201,
+          "end": 280,
           "label": "Task A: Search, Contacts & Email",
           "isQuestion": true
         },
         {
           "idx": 5,
-          "start": 343,
-          "end": 454,
+          "start": 280,
+          "end": 343,
           "label": "Task B: Presentation Editing",
           "isQuestion": true
         },
         {
           "idx": 6,
-          "start": 454,
-          "end": 493,
+          "start": 343,
+          "end": 374,
           "label": "Task C: Online Application Form",
           "isQuestion": true
         },
         {
           "idx": 7,
-          "start": 493,
-          "end": 511,
+          "start": 374,
+          "end": 389,
           "label": "Assessment Completed",
           "isQuestion": false
         }
@@ -8774,7 +8774,7 @@
           "stage": "Section A: Q1–Q10",
           "archetype": "Digital Knowledge Trap",
           "chapterIdx": 2,
-          "cueSec": 36,
+          "cueSec": 26,
           "cueLabel": "Section A: Q1–Q10",
           "question": "In 'Section A: Q1–Q10', when answering Part A onscreen knowledge questions, what strategy avoids careless drops?",
           "options": [
@@ -8790,7 +8790,7 @@
           "stage": "Section B: Tasks A–C",
           "archetype": "Digital Knowledge Trap",
           "chapterIdx": 3,
-          "cueSec": 250,
+          "cueSec": 192,
           "cueLabel": "Section B: Tasks A–C",
           "question": "In 'Section B: Tasks A–C', when answering Part A onscreen knowledge questions, what strategy avoids careless drops?",
           "options": [
@@ -8806,7 +8806,7 @@
           "stage": "Task A: Search, Contacts & Email",
           "archetype": "Privacy & Email Trap",
           "chapterIdx": 4,
-          "cueSec": 262,
+          "cueSec": 201,
           "cueLabel": "Task A: Search, Contacts & Email",
           "question": "In 'Task A: Search, Contacts & Email', when emailing multiple external contacts or sharing a cloud folder, what protects personal data and earns full marks?",
           "options": [
@@ -8822,7 +8822,7 @@
           "stage": "Task B: Presentation Editing",
           "archetype": "Digital Knowledge Trap",
           "chapterIdx": 5,
-          "cueSec": 343,
+          "cueSec": 280,
           "cueLabel": "Task B: Presentation Editing",
           "question": "In 'Task B: Presentation Editing', when answering Part A onscreen knowledge questions, what strategy avoids careless drops?",
           "options": [
@@ -8838,7 +8838,7 @@
           "stage": "Task C: Online Application Form",
           "archetype": "Online Form Trap",
           "chapterIdx": 6,
-          "cueSec": 454,
+          "cueSec": 343,
           "cueLabel": "Task C: Online Application Form",
           "question": "In 'Task C: Online Application Form', before submitting an online form, what detail often costs easy marks?",
           "options": [

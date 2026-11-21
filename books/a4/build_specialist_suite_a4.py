@@ -78,24 +78,18 @@ def get_photo(keywords, theme=None, exclude=None):
     return p
 
 
-def specialist_hero_image(photo_path, caption="", height_mm=48, obj_pos="center 15%"):
+def specialist_hero_image(photo_path, caption="", height_mm=58, obj_pos="center 15%"):
     if not photo_path:
         return ""
-    uri = Path(photo_path).resolve().as_uri()
-    cap_html = ""
-    if caption:
-        cap_html = (
-            f"<div style='padding:0.85mm 1.5mm; font-size:7.6pt; font-weight:700; line-height:1.15; color:var(--primary); "
-            f"background:#eff6ff; border-top:1px solid #bfdbfe; text-align:center; white-space:nowrap; overflow:hidden; text-overflow:ellipsis;'>"
-            f"{caption}</div>"
-        )
-    return (
-        f"<div class='hero' style='margin:1.2mm 0 1.8mm 0; border-radius:6px; overflow:hidden; border:1.5px solid var(--primary); background:#ffffff; box-shadow:0 1.5px 4px rgba(0,0,0,0.08);'>"
-        f"<div style='width:100%; aspect-ratio:16/9; max-height:{height_mm}mm; overflow:hidden; background:#0f172a;'>"
-        f"<img src='{uri}' alt='' style='width:100%; height:100%; object-fit:cover; object-position:{obj_pos}; display:block;'>"
-        f"</div>"
-        f"{cap_html}"
-        f"</div>"
+    req_h = float(height_mm or 58)
+    h = 52.0 if req_h <= 34 else (58.0 if req_h <= 42 else max(req_h, 64.0))
+    return K.split_hero_card(
+        Path(photo_path).resolve(),
+        caption=caption,
+        height_mm=h,
+        pos=obj_pos or "center 20%",
+        kicker="WORKPLACE & EXAM CONTEXT",
+        margin="0.8mm 0 1.4mm 0",
     )
 
 K.hero_image = specialist_hero_image
@@ -1385,30 +1379,22 @@ def build_digital_skills_handbook():
             photo_file = PROJECT_DIR / "assets" / "img" / "book_photos" / rel_path
         if not photo_file.exists():
             return ""
-        uri = photo_file.resolve().as_uri()
         cap_text = caption if caption is not None else default_cap
-        h = height_mm if height_mm is not None else default_h
-        if h <= 40:
-            h = 36 if photo_key in ("u2", "u4") else 40
-        pos = obj_pos if obj_pos is not None else default_pos
-
-        cap_html = ""
-        if cap_text:
-            cap_html = (
-                f"<div style='flex:0 0 auto; padding:0.85mm 1.6mm; font-size:7.6pt; font-weight:700; line-height:1.15; "
-                f"color:var(--primary); background:#eff6ff; border-top:1.1px solid #bfdbfe; text-align:center; "
-                f"white-space:nowrap; overflow:hidden; text-overflow:ellipsis;'>"
-                f"{cap_text}</div>"
-            )
-        img_h = h - (6.0 if cap_text else 0)
-        return (
-            f"<div class='digital-hero-card' style='margin:0.4mm 0 1.0mm 0; border-radius:5px; overflow:hidden; "
-            f"border:1.3px solid var(--primary); background:#ffffff; box-shadow:0 1px 3px rgba(0,0,0,0.06); display:flex; flex-direction:column;'>"
-            f"<div style='width:100%; aspect-ratio:16/9; max-height:{img_h}mm; overflow:hidden; position:relative; background:#0f172a;'>"
-            f"<img src='{uri}' alt='' style='width:100%; height:100%; object-fit:cover; object-position:{pos}; display:block;'>"
-            f"</div>"
-            f"{cap_html}"
-            f"</div>"
+        h = float(height_mm if height_mm is not None else default_h)
+        if h <= 42:
+            h = 56.0
+        elif h <= 50:
+            h = 60.0
+        else:
+            h = max(h, 66.0)
+        pos = obj_pos if obj_pos is not None else ("center 22%" if default_pos == "center center" else default_pos)
+        return K.split_hero_card(
+            photo_file.resolve(),
+            caption=cap_text,
+            height_mm=h,
+            pos=pos,
+            kicker="DIGITAL WORKPLACE SCENARIO",
+            margin="0.4mm 0 1.0mm 0",
         )
 
     # -------------------------------------------------------------------------
@@ -1606,10 +1592,10 @@ def build_digital_skills_handbook():
         # Page 1 of Unit: Core Theory & Plain English Concepts (zero overflow tuned)
         p1_b = (
             K.page_title(f"Unit {u_idx} &bull; {u_title}", kicker=f"EDSQ Domain: {u_domain}", badge=badge)
-            + digital_hero_image(f"u{u_idx}", height_mm=36)
-            + K.box_html(f"<div style='font-size:9.6pt; line-height:1.33;'>{theory}</div>", title="Core Knowledge &amp; Specialist Terms Explained")
+            + digital_hero_image(f"u{u_idx}", height_mm=56)
+            + K.box_html(f"<div style='font-size:9.1pt; line-height:1.27;'>{theory}</div>", title="Core Knowledge &amp; Specialist Terms Explained")
             + K.rule_box("Everyday Workplace Context",
-                         f"<p style='margin:0; font-size:9.4pt;'>In modern jobs and community life, mastering <b>{u_title}</b> helps you work faster, keep data secure, and avoid costly mistakes.</p>")
+                         f"<p style='margin:0; font-size:9.0pt; line-height:1.26;'>In modern jobs and community life, mastering <b>{u_title}</b> helps you work faster, keep data secure, and avoid costly mistakes.</p>")
         )
         pages.append(K.page(p1_b, header=(BOOK, f"Unit {u_idx} &bull; Theory"), footer=BOOK, page_no=p_curr))
         p_curr += 1

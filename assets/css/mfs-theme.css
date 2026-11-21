@@ -647,14 +647,16 @@ a {
 
 .mfs-nav-link {
   font-family: var(--font-heading);
-  font-size: 0.93rem;
+  font-size: 0.88rem;
   font-weight: 600;
   color: var(--navy-dark);
-  padding: 10px 14px;
+  padding: 8px 10px;
   border-radius: var(--radius-sm);
   display: inline-flex;
   align-items: center;
-  gap: 6px;
+  gap: 4px;
+  white-space: nowrap;
+  flex-shrink: 0;
   transition: all 0.18s ease;
 }
 
@@ -1941,16 +1943,17 @@ a {
 }
 
 /* Responsive Adjustments */
-@media (max-width: 1280px) {
+@media (max-width: 1320px) {
   .mfs-nav-link {
     padding: 7px 8px;
-    font-size: 0.86rem;
+    font-size: 0.84rem;
     gap: 3px;
+    white-space: nowrap;
   }
   .mfs-brand-title { font-size: 1.15rem; }
   .mfs-brand-subtitle { font-size: 0.65rem; }
   .mfs-brand-icon { width: 44px; height: 44px; }
-  .btn-nav-exam { padding: 7px 12px; font-size: 0.84rem; }
+  .btn-nav-exam { padding: 7px 12px; font-size: 0.84rem; white-space: nowrap; }
   .top-contacts { gap: 10px; }
   .top-contact-link { font-size: 0.74rem; }
 }
@@ -1960,8 +1963,9 @@ a {
     padding: 6px 6px;
     font-size: 0.80rem;
     gap: 2px;
+    white-space: nowrap;
   }
-  .btn-nav-exam { padding: 6px 10px; font-size: 0.80rem; }
+  .btn-nav-exam { padding: 6px 10px; font-size: 0.80rem; white-space: nowrap; }
   .top-trust-items .top-trust-item:nth-child(2) { display: none; }
 }
 
@@ -2636,11 +2640,11 @@ main .callout-primary {
   white-space: nowrap;
 }
 
-/* Question Paper Button (White with Navy border) */
+/* Question Paper Button (White with Slate border) */
 .btn-paper-qp {
   background: #ffffff;
   color: var(--navy-dark) !important;
-  border: 1px solid var(--border-dark);
+  border: 1.5px solid #cbd5e1;
 }
 .btn-paper-qp i {
   color: var(--accent);
@@ -3511,9 +3515,10 @@ body.dyslexia-mode .moat-badge {
 }
 
 .board-pill img {
-  width: 18px;
-  height: 18px;
-  border-radius: 4px;
+  width: auto;
+  max-width: 48px;
+  height: 16px;
+  border-radius: 3px;
   object-fit: contain;
   background: #ffffff;
   vertical-align: middle;
@@ -3782,5 +3787,85 @@ body.dyslexia-mode .moat-badge {
   background: #fef3c7;
   color: #92400e;
   border: 1px solid #fcd34d;
+}
+
+/* ==========================================================================
+   2026-11-21 Layout, Navigation & Past Paper Declutter
+   ========================================================================== */
+.mfs-promo-banner:empty,
+.mfs-promo-banner:has(.mfs-promo-inner:empty) {
+  display: none !important;
+}
+
+.mfs-nav-menu {
+  flex-wrap: nowrap;
+  gap: 2px;
+}
+
+.mfs-nav-link i:not(.fa-chevron-down) {
+  font-size: 0.85em;
+  margin-right: 4px !important;
+}
+
+/* Past papers search bar icon clearance, single-line chips & crisp card chrome */
+.paper-search-wrap {
+  position: relative;
+}
+
+.paper-search-input {
+  padding-left: 44px !important;
+}
+
+.paper-group-count {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.paper-filter-chips {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.filter-chip,
+.paper-filter-chip {
+  white-space: nowrap;
+  flex-shrink: 0;
+  padding: 7px 14px;
+  line-height: 1.25;
+}
+
+.board-switcher-nav {
+  padding: 10px 0;
+}
+
+.board-switcher-inner {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.board-switcher-label {
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.board-switcher-pills {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 7px;
+}
+
+.past-papers-container .btn-paper {
+  min-height: 34px;
+  box-sizing: border-box;
+}
+
+.mfs-footer-brand p {
+  font-size: 0.88rem;
+  line-height: 1.5;
+  max-width: 320px;
 }
 

@@ -513,7 +513,7 @@ function switchTopicVideo(task) {
     if (t2Jumps) t2Jumps.style.display = 'none';
     if (dlBtn) {
       dlBtn.href = 'assets/video/slc-task1-presentation-model.mp4';
-      dlBtn.innerHTML = '<i class="fa-solid fa-download"></i> Download Task 1 Video (1080p MP4)';
+      dlBtn.innerHTML = '<i class="fa-solid fa-download"></i> Download Task 1 Video (MP4)';
     }
     if (stationBtn) {
       stationBtn.href = 'video-solution.html?topic=slc-task1-presentation-model';
@@ -531,7 +531,7 @@ function switchTopicVideo(task) {
     if (t2Jumps) t2Jumps.style.display = 'flex';
     if (dlBtn) {
       dlBtn.href = 'assets/video/slc-task2-discussion-model.mp4';
-      dlBtn.innerHTML = '<i class="fa-solid fa-download"></i> Download Task 2 Video (1080p MP4)';
+      dlBtn.innerHTML = '<i class="fa-solid fa-download"></i> Download Task 2 Video (MP4)';
     }
     if (stationBtn) {
       stationBtn.href = 'video-solution.html?topic=slc-task2-discussion-model';
@@ -885,8 +885,8 @@ document.addEventListener('DOMContentLoaded', function() {
           var tmp = document.createElement('div');
           tmp.innerHTML = fullStr;
           var txt = (tmp.textContent || '').replace(/\s+/g, ' ').trim();
-          var tutorMatch = txt.match(/Presented by\s+([A-Za-z]+)/i);
-          var durMatch = txt.match(/\((\d+m\s*\d+s)\)/i);
+          var tutorMatch = txt.match(/(?:Presented by|Tutor)\s+([A-Za-z]+)/i);
+          var durMatch = txt.match(/(?:\(|\u2022\s*)(\d+m\s*\d+s)\)?/i);
           if (tutorMatch || durMatch) {
             var parts = [];
             if (tutorMatch) parts.push('Tutor ' + tutorMatch[1]);

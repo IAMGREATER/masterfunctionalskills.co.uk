@@ -205,43 +205,31 @@ def clean_mod_title(t):
     return re.sub(r"^Module\s+\d+\s*:\s*", "", str(t).strip(), flags=re.IGNORECASE)
 
 
-def spag_practice_banner(rel_path, caption="", height_mm=50):
-    """Wide-angle 16:9 thematic banner with elevated framing and bold caption."""
+def spag_practice_banner(rel_path, caption="", height_mm=58):
+    """Proportional split SPaG banner with larger photo and full unwrapped caption panel."""
     uri = resolve_spag_photo(rel_path)
-    obj_pos = TOP_ALIGNED_PHOTOS.get(rel_path, "center 25%")
-    cap_html = (
-        f"<div style='padding:0.85mm 1.5mm;font-size:7.6pt;font-weight:700;line-height:1.15;color:var(--primary);"
-        f"background:#eff6ff;border-top:1px solid #bfdbfe;text-align:center;"
-        f"white-space:nowrap;overflow:hidden;text-overflow:ellipsis;'>{caption}</div>"
-    ) if caption else ""
-    return (
-        f"<div class='hero-img' style='margin:0 0 2.0mm 0;border:1.5px solid var(--primary);"
-        f"border-radius:6px;overflow:hidden;background:#ffffff;box-shadow:0 1.5px 4px rgba(0,0,0,0.08);'>"
-        f"<div style='width:100%;aspect-ratio:16/9;max-height:{height_mm}mm;overflow:hidden;background:#0f172a;'>"
-        f"<img src='{uri}' alt='' style='width:100%;height:100%;"
-        f"object-fit:cover;object-position:{obj_pos};display:block;'/>"
-        f"</div>"
-        f"{cap_html}"
-        f"</div>"
+    obj_pos = TOP_ALIGNED_PHOTOS.get(rel_path, "center 22%")
+    return K.split_hero_card(
+        uri,
+        caption=caption,
+        height_mm=max(float(height_mm or 58), 58.0),
+        pos=obj_pos,
+        kicker="SPaG IN CONTEXT",
+        margin="0 0 1.6mm 0",
     )
 
 
 def spag_float_practice_card(rel_path, caption="", width_mm=60):
-    """Renders a medium-to-big 16:9 scenario card floated right without cropping."""
+    """Enlarged full-width editorial split card (~92x56mm photo) replacing undersized left box."""
     uri = resolve_spag_photo(rel_path)
-    cap_html = (
-        f"<div style='padding:0.6mm 1.2mm;font-size:7.4pt;font-weight:700;line-height:1.15;color:var(--primary);"
-        f"background:#eff6ff;border-top:1px solid #bfdbfe;text-align:center;"
-        f"white-space:nowrap;overflow:hidden;text-overflow:ellipsis;'>{caption}</div>"
-    ) if caption else ""
-    return (
-        f"<div style='float:right;width:{width_mm}mm;margin:0 0 1.2mm 3mm;border:1.5px solid var(--primary);"
-        f"border-radius:6px;overflow:hidden;background:#ffffff;box-shadow:0 1.5px 4px rgba(0,0,0,0.08);'>"
-        f"<div style='width:100%;aspect-ratio:16/9;overflow:hidden;background:#0f172a;'>"
-        f"<img src='{uri}' alt='' style='width:100%;height:100%;object-fit:cover;object-position:center 25%;display:block;'/>"
-        f"</div>"
-        f"{cap_html}"
-        f"</div>"
+    obj_pos = TOP_ALIGNED_PHOTOS.get(rel_path, "center 22%")
+    return K.split_hero_card(
+        uri,
+        caption=caption,
+        height_mm=56.0,
+        pos=obj_pos,
+        kicker="SPaG WORKPLACE CONTEXT",
+        margin="0 0 1.2mm 0",
     )
 
 
@@ -500,7 +488,6 @@ def build_spag_l2():
             K.section("A", "Tick the correct sentence")
             + spag_float_practice_card(u_photo, u_cap, width_mm=60)
             + K.exercise_list(ex_a_items)
-            + "<div style='clear:both;'></div>"
             + K.section("B", "Rewrite each sentence correctly")
             + K.exercise_list(ex_b_items, start=3)
             + K.fill_lines(f"<span style='color:var(--accent)'>C &nbsp;Applied Task:</span> Write two sentences using the rules from Unit {u_num}.", min_mm=6, gap_mm=7.0)
@@ -948,7 +935,6 @@ def build_spag_l1():
             K.section("A", "Tick the correct sentence")
             + spag_float_practice_card(u_photo, u_cap, width_mm=60)
             + K.exercise_list(ex_a_items)
-            + "<div style='clear:both;'></div>"
             + K.section("B", "Rewrite each sentence correctly")
             + K.exercise_list(ex_b_items, start=3)
             + K.fill_lines(f"<span style='color:var(--accent)'>C &nbsp;Applied Practice:</span> Write two sentences of your own using the rules from Unit {u_num}.", min_mm=14, gap_mm=8.0)
@@ -1415,7 +1401,6 @@ def build_spag_e3():
             K.section("A", "Tick the correct answer")
             + spag_float_practice_card(u_photo, u_cap, width_mm=60)
             + K.exercise_list(ex_a_items)
-            + "<div style='clear:both;'></div>"
             + K.section("B", "Write the sentence correctly")
             + K.exercise_list(ex_b_items, start=3)
             + K.fill_lines(f"<span style='color:var(--accent)'>C &nbsp;Your Turn:</span> Write one sentence of your own using the rule from Unit {u_num}.", min_mm=14, gap_mm=8.0)

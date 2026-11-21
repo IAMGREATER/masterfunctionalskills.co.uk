@@ -3460,8 +3460,7 @@ p {
   .model-example-card img:not(.tutor-avatar-img):not([src*="avatars/"]),
   .practice-question-card img:not(.tutor-avatar-img):not([src*="avatars/"]),
   .practice-q-stem img:not(.tutor-avatar-img):not([src*="avatars/"]),
-  .real-photo-card img,
-  .revision-content img:not(.tutor-avatar-img):not([src*="avatars/"]) {
+  .revision-content img:not(.tutor-avatar-img):not([src*="avatars/"]):not(.mfs-yt-poster) {
     width: auto !important;
     max-width: min(100%, 290px) !important;
     max-height: 185px !important;
@@ -6091,6 +6090,85 @@ html[data-dyslexia="true"] .math-visual-card {
 html[data-dyslexia="true"] .mfs-pastel-note,
 html[data-dyslexia="true"] .mfs-l1-tutor-tip {
   line-height: 1.85 !important;
+}
+
+/* ==========================================================================
+   2026-11-21 Streamlined Revision Hero, Sidebar TOC & Video Station Polish
+   ========================================================================== */
+.revision-sidebar {
+  padding: 16px 14px;
+}
+
+.sidebar-toc-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  font-size: 0.86rem;
+  letter-spacing: 0.03em;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+}
+
+.sidebar-toc-link {
+  padding: 8px 10px;
+  font-size: 0.87rem;
+  line-height: 1.35;
+  border-radius: 8px;
+}
+
+/* Decluttered #videoMasterclassStation chrome on all viewports */
+#videoMasterclassStation .mc-part-tabs-bar {
+  padding: 10px 14px !important;
+  gap: 8px !important;
+}
+
+#videoMasterclassStation .mc-part-tab {
+  font-size: 0.82rem !important;
+  padding: 7px 12px !important;
+}
+
+#videoMasterclassStation .video-exemplar-head {
+  padding: 14px 18px !important;
+  border-radius: 14px 14px 0 0;
+}
+
+#videoMasterclassStation .mc-part-tabs-bar + .video-exemplar-head {
+  border-radius: 0 !important;
+}
+
+#videoMasterclassStation #mcJumpBar,
+#videoMasterclassStation .video-jump-bar {
+  background: #0f172a;
+  border: 2px solid #0284c7;
+  border-top: 1px solid #1e3a8a;
+  border-radius: 0 0 14px 14px !important;
+  padding: 12px 16px !important;
+  margin-bottom: 0 !important;
+}
+
+/* Guarantee 16:9 full-bleed video poster on all desktop, tablet & mobile sizes */
+.revision-content #videoMasterclassStation img.mfs-yt-poster,
+.mfs-yt-facade img.mfs-yt-poster {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: cover !important;
+  margin: 0 !important;
+  border-radius: 0 !important;
+}
+
+@media (max-width: 1024px) {
+  /* Override cramped tablet rule that shrank content/real-photo cards & posters */
+  .revision-content .real-photo-card img,
+  .revision-content img.mfs-yt-poster {
+    width: 100% !important;
+    max-width: 100% !important;
+    max-height: none !important;
+    object-fit: cover !important;
+    margin: 0 !important;
+  }
 }
 
 

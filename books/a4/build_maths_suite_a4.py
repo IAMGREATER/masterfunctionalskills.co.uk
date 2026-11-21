@@ -218,23 +218,16 @@ def resolve_maths_photo(rel_path):
     return fallback.resolve().as_uri()
 
 
-def maths_hero_banner(rel_path, caption="", height_mm=54):
-    """Wide-angle 16:9 / landscape thematic banner with elevated framing and bold caption."""
+def maths_hero_banner(rel_path, caption="", height_mm=58):
+    """Proportional enlarged split scenario banner with full unwrapped explanation panel."""
     uri = resolve_maths_photo(rel_path)
-    cap_html = (
-        f"<div style='padding:0.85mm 1.5mm;font-size:7.6pt;font-weight:700;line-height:1.15;color:var(--primary);"
-        f"background:#eff6ff;border-top:1px solid #bfdbfe;text-align:center;"
-        f"white-space:nowrap;overflow:hidden;text-overflow:ellipsis;'>{caption}</div>"
-    ) if caption else ""
-    return (
-        f"<div class='hero-img' style='margin:0 0 2.0mm 0;border:1.5px solid var(--primary);"
-        f"border-radius:6px;overflow:hidden;background:#ffffff;box-shadow:0 1.5px 4px rgba(0,0,0,0.08);'>"
-        f"<div style='width:100%;aspect-ratio:16/9;max-height:{height_mm}mm;overflow:hidden;background:#0f172a;'>"
-        f"<img src='{uri}' alt='' style='width:100%;height:100%;"
-        f"object-fit:cover;object-position:center 25%;display:block;'/>"
-        f"</div>"
-        f"{cap_html}"
-        f"</div>"
+    return K.split_hero_card(
+        uri,
+        caption=caption,
+        height_mm=max(float(height_mm or 58), 56.0),
+        pos="center 22%",
+        kicker="MATHEMATICS IN CONTEXT",
+        margin="0 0 2.0mm 0",
     )
 
 
@@ -246,9 +239,8 @@ def maths_paired_scenario(rel_path, caption, right_box_html):
     """
     uri = resolve_maths_photo(rel_path)
     cap_html = (
-        f"<div style='padding:0.85mm 1.4mm;font-size:7.5pt;font-weight:700;line-height:1.15;color:var(--primary);"
-        f"background:#eff6ff;border-top:1px solid #bfdbfe;text-align:center;"
-        f"white-space:nowrap;overflow:hidden;text-overflow:ellipsis;'>{caption}</div>"
+        f"<div style='padding:0.95mm 1.6mm;font-size:7.6pt;font-weight:700;line-height:1.25;color:var(--primary);"
+        f"background:#eff6ff;border-top:1px solid #bfdbfe;text-align:center;'>{caption}</div>"
     ) if caption else ""
     card_html = (
         f"<div style='background:#ffffff;border:1.5px solid var(--primary);border-radius:6px;overflow:hidden;"
@@ -1675,8 +1667,8 @@ def build_maths_e3_core():
         # Left Page: Learn (14pt body font)
         left_body = (
             K.page_title(title, kicker=kicker, badge=t_num)
-            + maths_hero_banner(photo_rel, f"Topic {t_num} Everyday Example ({title}): {ex_q}", height_mm=50)
-            + K.rule_box("How to Do It &bull; Key Rule", f"<div style='font-size:14pt;line-height:1.6;'><b>{idea}</b><br><br>{formula}</div>")
+            + maths_hero_banner(photo_rel, f"Topic {t_num} Everyday Example ({title}): {ex_q}", height_mm=68)
+            + K.rule_box("How to Do It &bull; Key Rule", f"<div style='font-size:14pt;line-height:1.55;'><b>{idea}</b><br><br>{formula}</div>")
             + K.worked_example(ex_q, ex_steps, title="Step-by-Step Example")
             + K.tip_pair(g_rule, w_rule, golden_title="Top Tip", watch_title="Remember!")
         )
@@ -1750,7 +1742,7 @@ def build_maths_e3_core():
         ws_start_pages[ws_idx + 1] = p_curr
         ws_body_1 = (
             K.page_title(f"Workshop {ws_idx+1}: {ws_title}", kicker=f"Vocational Calculation Workshop &bull; Workshop {ws_idx+1}", badge=f"W{ws_idx+1}")
-            + maths_hero_banner(workshop_photos[ws_idx], f"Workshop {ws_idx+1} ({ws_title.replace('&amp;', '&')}): {ws_desc}", height_mm=32)
+            + maths_hero_banner(workshop_photos[ws_idx], f"Workshop {ws_idx+1} ({ws_title.replace('&amp;', '&')}): {ws_desc}", height_mm=58)
             + K.box_html(f"<p>{ws_desc}</p><p>Use your maths skills to complete the workplace tasks below:</p>", "Workplace Scenario")
             + K.practice_stack(workshop_tasks[ws_idx], start=1)
         )

@@ -207,21 +207,16 @@ def resolve_reading_photo(rel_path):
     return fallback.resolve().as_uri()
 
 
-def reading_hero_image(rel_path, caption="", height_mm=64):
+def reading_hero_image(rel_path, caption="", height_mm=70):
     uri = resolve_reading_photo(rel_path)
-    obj_pos = TOP_ALIGNED_PHOTOS.get(rel_path, "center 25%")
-    cap_html = (
-        f"<div style='padding:0.9mm 1.5mm;font-size:8pt;font-weight:700;line-height:1.15;color:var(--primary);"
-        f"background:#eff6ff;border-top:1px solid #bfdbfe;text-align:center;"
-        f"white-space:nowrap;overflow:hidden;text-overflow:ellipsis;'>{caption}</div>"
-    ) if caption else ""
-    return (
-        f"<div class='hero-img' style='margin:1.5mm 0 2.2mm 0;border:1.5px solid var(--primary);"
-        f"border-radius:6px;overflow:hidden;background:#ffffff;box-shadow:0 1.5px 4px rgba(0,0,0,0.08);'>"
-        f"<img src='{uri}' alt='' style='width:100%;height:{height_mm}mm;"
-        f"object-fit:cover;object-position:{obj_pos};display:block;'/>"
-        f"{cap_html}"
-        f"</div>"
+    obj_pos = TOP_ALIGNED_PHOTOS.get(rel_path, "center 22%")
+    return K.split_hero_card(
+        uri,
+        caption=caption,
+        height_mm=max(float(height_mm or 70), 60.0),
+        pos=obj_pos,
+        kicker="READING IN CONTEXT",
+        margin="1.0mm 0 1.8mm 0",
     )
 
 
@@ -229,9 +224,8 @@ def reading_float_photo_card(rel_path, caption="", width_mm=82, height_mm=46, si
     uri = resolve_reading_photo(rel_path)
     margin = "0 0 2mm 3.5mm" if side == "right" else "0 3.5mm 2mm 0"
     cap_html = (
-        f"<div style='padding:0.8mm 1.2mm;font-size:7.6pt;font-weight:700;line-height:1.15;color:var(--primary);"
-        f"background:#eff6ff;border-top:1px solid #bfdbfe;text-align:center;"
-        f"white-space:nowrap;overflow:hidden;text-overflow:ellipsis;'>{caption}</div>"
+        f"<div style='padding:0.85mm 1.4mm;font-size:7.6pt;font-weight:700;line-height:1.25;color:var(--primary);"
+        f"background:#eff6ff;border-top:1px solid #bfdbfe;text-align:center;'>{caption}</div>"
     ) if caption else ""
     return (
         f"<div style='float:{side};width:{width_mm}mm;margin:{margin};"
@@ -414,7 +408,7 @@ def build_reading_l1_core():
         rule_desc = rules[0]["desc"] if rules else "Read texts actively and cross-reference details."
         p1_body = (
             K.page_title(f"Reading Topic {t_idx}: {clean_title}", kicker="Topic Blueprint &bull; Level 1 Reading", badge=f"R{t_idx}")
-            + reading_hero_image(hero_rel, hero_cap, height_mm=64)
+            + reading_hero_image(hero_rel, hero_cap, height_mm=70)
             + K.rule_box("DfE Criteria &amp; Core Concept",
                          f"<div style='font-size:11.2pt;line-height:1.45;'>"
                          f"<p style='margin:0 0 2mm 0;'><b>Curriculum Standard:</b><br>{spec_text}</p>"
@@ -533,7 +527,7 @@ def build_reading_l1_core():
         mc_rel, mc_cap = READING_MC_L1_PHOTOS[em_idx]
         em_body = (
             K.page_title(f"Exam Masterclass {em_idx}: {em_title}", kicker="Pearson Edexcel Reading Strategy", badge=f"EX{em_idx}")
-            + reading_hero_image(mc_rel, mc_cap, height_mm=64)
+            + reading_hero_image(mc_rel, mc_cap, height_mm=70)
             + K.box_html(f"<p style='font-size:11.2pt;line-height:1.48;margin:0;'>{em_desc}</p>", title="Core Examination Technique")
             + K.tip_pair(em_gold, em_trap, golden_title="Top Scoring Strategy", watch_title="Common Exam Pitfall")
             + K.fill_notes(f"My Exam Strategy Notes &amp; Personal Rules (Masterclass {em_idx})", min_mm=34)
@@ -1029,7 +1023,7 @@ def build_reading_l2_core():
         # Page 1: Topic Blueprint & Theory
         spec_text = "<br>".join(f"&bull; <b>{code}:</b> {desc}" for code, desc in spec_pts)
         rule_desc = rules[0]["desc"] if rules else "Read texts critically and evaluate evidence."
-        h_hero = 58 if t_idx == 11 else 64
+        h_hero = 62 if t_idx == 11 else 70
         p1_body = (
             K.page_title(f"Reading Topic {t_idx}: {clean_title}", kicker="Topic Blueprint &bull; Level 2 Reading", badge=f"R{t_idx}")
             + reading_hero_image(hero_rel, hero_cap, height_mm=h_hero)
@@ -1159,7 +1153,7 @@ def build_reading_l2_core():
         mc_rel, mc_cap = READING_MC_L2_PHOTOS[em_idx]
         em_body = (
             K.page_title(f"Masterclass {em_idx}: {em_title}", kicker="Level 2 Analytical Strategy", badge=f"EX{em_idx}")
-            + reading_hero_image(mc_rel, mc_cap, height_mm=64)
+            + reading_hero_image(mc_rel, mc_cap, height_mm=70)
             + K.box_html(f"<p style='font-size:11.2pt;line-height:1.48;margin:0;'>{em_desc}</p>", title="Core Examination Technique")
             + K.tip_pair(em_gold, em_trap, golden_title="Band 4 Strategy", watch_title="Common Exam Pitfall")
             + K.fill_notes(f"Personal Strategic Takeaways &amp; Checkpoints (Masterclass {em_idx})", min_mm=34)

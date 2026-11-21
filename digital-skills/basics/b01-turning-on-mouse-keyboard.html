@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-theme="digital" data-tint="cream" data-level="basics">
+<head>
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Turning On Your Laptop, Mouse, Touchpad &amp; Keyboard Basics | Digital Skills Basics | Master Functional Skills</title>
+  <meta name="description" content="Start from absolute zero: turn on your laptop safely, use left-click, double-click, right-click, and type UK email and web symbols without mistakes.">
+  <link rel="icon" type="image/svg+xml" href="../../assets/img/favicon.svg">
+  <meta name="theme-color" content="#0f172a">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="../../assets/css/mfs-theme.css?v=20261121v2">
+  <link rel="stylesheet" href="../../assets/css/mfs-revision.css?v=20261121v2">
+  <link rel="stylesheet" href="../../assets/css/mfs-mobile.css?v=20261121v2">
+  <script src="../../assets/js/mfs-pwa.js" defer></script>
+</head>
+<body data-tint="cream">
+  <div class="mfs-top-bar">
+    <div class="mfs-container mfs-top-bar-inner">
+      <div class="top-trust-items">
+        <span class="top-trust-item"><i class="fa-solid fa-building-columns"></i> Open Awards, Pearson Edexcel &amp; City &amp; Guilds Aligned</span>
+      </div>
+      <div class="top-contacts">
+        <div class="mfs-access-bar">
+          <!-- DYSLEXIA BACKGROUND TINT PICKER -->
+          <div class="mfs-tint-dropdown-wrap">
+            <button type="button" id="tintToggle" class="btn-tint-toggle" onclick="toggleTintMenu(event)" title="Change dyslexia background tint">
+              <span class="tint-swatch-indicator" id="tintCurrentSwatch"></span>
+              <span id="tintLabel">Cream Tint</span>
+              <i class="fa-solid fa-chevron-down" style="font-size:0.62rem; opacity:0.75; margin-left:2px;"></i>
+            </button>
+            <div id="tintMenu" class="tint-picker-menu">
+              <div class="tint-picker-title"><i class="fa-solid fa-glasses"></i> Dyslexia Reading Tint</div>
+              <button type="button" class="tint-option-btn active" data-tint="cream" onclick="setSiteTint('cream', event)">
+                <span class="swatch swatch-cream"></span>
+                <span class="tint-name">Cream <small class="tint-badge-def">Default</small></span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="peach" onclick="setSiteTint('peach', event)">
+                <span class="swatch swatch-peach"></span>
+                <span class="tint-name">Soft Peach</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="cool" onclick="setSiteTint('cool', event)">
+                <span class="swatch swatch-cool"></span>
+                <span class="tint-name">Cool Mist</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="sage" onclick="setSiteTint('sage', event)">
+                <span class="swatch swatch-sage"></span>
+                <span class="tint-name">Soft Sage</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <div class="tint-divider"></div>
+              <button type="button" class="tint-option-btn" data-tint="none" onclick="setSiteTint('none', event)">
+                <span class="swatch swatch-none"></span>
+                <span class="tint-name">No Tint (White)</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+            </div>
+          </div>
+          <button id="dyslexiaToggle" class="btn-dyslexia-toggle" onclick="toggleDyslexiaMode()" title="Toggle Dyslexia High-Readability Mode">
+            <i class="fa-solid fa-universal-access"></i> Dyslexia
+          </button>
+          <button id="themeToggle" class="mfs-theme-pill" onclick="toggleTheme()" title="Switch Palette: Sapphire vs Emerald">
+            <i class="fa-solid fa-palette"></i> <span id="themeLabel">Sapphire</span>
+          </button>
+        </div>
+        <a href="../../contact-us.html" class="top-contact-link"><i class="fa-solid fa-envelope"></i> <strong>Contact Us</strong></a>
+      </div>
+    </div>
+  </div>
+
+  <header class="mfs-navbar">
+    <div class="revision-page-wrapper mfs-navbar-inner">
+      <a href="../../index.html" class="mfs-brand">
+        <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div class="mfs-brand-text">
+          <div class="mfs-brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
+          <div class="mfs-brand-subtitle">Delivering Skills • Achieving Goals</div>
+        </div>
+      </a>
+
+      <nav class="mfs-nav-wrapper">
+        <ul class="mfs-nav-menu">
+          <!-- 1. SUBJECTS (VISUAL MEGA-MENU) -->
+          <li class="mfs-nav-item">
+            <a href="../../revise.html" class="mfs-nav-link">
+              <i class="fa-solid fa-book-open-reader" style="color:#0284c7; margin-right:5px;"></i> Subjects <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-revision-hub">
+              <div class="mfs-revision-grid">
+                <!-- Maths Column -->
+                <div class="mfs-revision-col mfs-revision-col-maths">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-calculator"></i> Maths Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="../../functional-skills-maths-level-2.html" class="mfs-dropdown-item">Maths Level 2</a>
+                    <a href="../../functional-skills-maths-level-1.html" class="mfs-dropdown-item">Maths Level 1</a>
+                    <a href="../../entry-level-3-maths.html" class="mfs-dropdown-item">Entry Level 3 Maths</a>
+                  </div>
+                </div>
+                <!-- English Column -->
+                <div class="mfs-revision-col mfs-revision-col-english">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-pen-nib"></i> English Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="../../functional-skills-english-level-2.html" class="mfs-dropdown-item">English Level 2</a>
+                    <a href="../../functional-skills-english-level-1.html" class="mfs-dropdown-item">English Level 1</a>
+                    <a href="../../entry-level-3-english.html" class="mfs-dropdown-item">Entry Level 3 English</a>
+                  </div>
+                </div>
+                <!-- Digital Skills Column -->
+                <div class="mfs-revision-col mfs-revision-col-digital">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-laptop-code"></i> Digital Skills</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="../../digital-functional-skills-level-1.html" class="mfs-dropdown-item"><i class="fa-solid fa-award" style="font-size:0.75rem; margin-right:5px; color:#0284c7;"></i> Digital Skills Level 1</a>
+                    <a href="../../digital-functional-skills-entry-3.html" class="mfs-dropdown-item"><i class="fa-solid fa-seedling" style="font-size:0.75rem; margin-right:5px; color:#059669;"></i> Digital Skills Entry 3</a>
+                    <a href="../../digital-functional-skills-past-papers.html" class="mfs-dropdown-item"><i class="fa-solid fa-file-zipper" style="font-size:0.75rem; margin-right:5px; color:#d97706;"></i> Past Papers &amp; Data Files</a>
+                    <a href="../../digital-functional-skills-mock-exam.html" class="mfs-dropdown-item"><i class="fa-solid fa-desktop" style="font-size:0.75rem; margin-right:5px; color:#7c3aed;"></i> Online Mock Simulator</a>
+                    <a href="../../digital-functional-skills.html" class="mfs-dropdown-item"><i class="fa-solid fa-layer-group" style="font-size:0.75rem; margin-right:5px; color:#475569;"></i> Digital Skills Hub (E3 &amp; L1)</a>
+                  </div>
+                </div>
+              </div>
+              <!-- Course & Subject Selector Cross-link Footer inside dropdown -->
+              <div class="mfs-revision-dropdown-footer" style="margin-top:12px; padding-top:10px; border-top:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center; font-size:0.82rem;">
+                <a href="../../revise.html" style="font-weight:700; color:var(--accent); text-decoration:none;"><i class="fa-solid fa-layer-group" style="margin-right:4px;"></i> View All Subjects &amp; Levels &rarr;</a>
+                <a href="../../courses.html" style="font-weight:700; color:#059669; text-decoration:none;"><i class="fa-solid fa-graduation-cap" style="margin-right:4px;"></i> Accredited Online Courses &rarr;</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- 2. ONLINE COURSES -->
+          <li class="mfs-nav-item">
+            <a href="../../courses.html" class="mfs-nav-link">
+              <i class="fa-solid fa-graduation-cap" style="color:#0284c7; margin-right:5px;"></i> Online Courses
+            </a>
+          </li>
+
+          <!-- 3. PAST PAPERS (DIRECT ACCESS) -->
+          <li class="mfs-nav-item">
+            <a href="../../functional-skills-past-papers.html" class="mfs-nav-link">
+              <i class="fa-regular fa-file-lines" style="color:#0284c7; margin-right:5px;"></i> Past Papers
+            </a>
+          </li>
+
+          <!-- 4. WORKSHEETS DIRECTORY (CORBETT STYLE DUAL ENGINE) -->
+          <li class="mfs-nav-item">
+            <a href="../../worksheets.html" class="mfs-nav-link">
+              <i class="fa-solid fa-layer-group" style="color:#0284c7; margin-right:5px;"></i> Worksheets
+            </a>
+          </li>
+
+          <!-- 5. FREE TOOLS (COMPACT DROPDOWN) -->
+          <li class="mfs-nav-item">
+            <a href="../../tools.html" class="mfs-nav-link">
+              <i class="fa-solid fa-screwdriver-wrench" style="color:#0284c7; margin-right:5px;"></i> Free Tools <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-compact">
+              <a href="../../tools.html" class="mfs-dropdown-item" style="font-weight:700; color:var(--accent);"><i class="fa-solid fa-layer-group" style="font-size:0.85rem; margin-right:6px;"></i> All Free Tools &amp; Simulators &rarr;</a>
+              <div class="mfs-dropdown-divider" style="margin:4px 0; border-top:1px solid #e2e8f0;"></div>
+              <a href="../../pass-mark-calculator.html" class="mfs-dropdown-item"><i class="fa-solid fa-calculator" style="color:var(--accent); font-size:0.85rem; margin-right:6px;"></i> Pass Mark Calculator</a>
+              <a href="../../diagnostic-test.html" class="mfs-dropdown-item"><i class="fa-solid fa-chart-pie" style="color:#059669; font-size:0.85rem; margin-right:6px;"></i> Diagnostic Skill Checker</a>
+              <a href="../../functional-skills-nets.html" class="mfs-dropdown-item"><i class="fa-solid fa-cube" style="color:#0284c7; font-size:0.85rem; margin-right:6px;"></i> 3D Net Folding Tool</a>
+              <a href="../../video-solution.html" class="mfs-dropdown-item"><i class="fa-brands fa-youtube" style="color:#ef4444; font-size:0.85rem; margin-right:6px;"></i> Masterclass Station</a>
+            </div>
+          </li>
+
+          <!-- 6. REVISION CARDS -->
+          <li class="mfs-nav-item">
+            <a href="../../revision-cards.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-layer-group" style="color:#d97706; margin-right:5px;"></i> Revision Cards
+            </a>
+          </li>
+
+          <!-- 7. SHOP -->
+          <li class="mfs-nav-item">
+            <a href="../../shop.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-basket-shopping" style="color:#d97706; margin-right:5px;"></i> Shop
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- 8. BOOK EXAM ACTION BUTTON -->
+      <div class="mfs-nav-actions">
+        <a href="../../exams.html" class="btn-nav-exam">
+          <i class="fa-solid fa-calendar-check"></i> Book Exam
+        </a>
+      </div>
+
+      <!-- MOBILE CONTROLS (TINT + MENU PILL) -->
+      <div class="mfs-mobile-controls" id="mfsMobileControls">
+        <button type="button" class="btn-mobile-tint-toggle" id="mfsMobileTintBtn" title="Change Reading Tint" aria-label="Reading Tint">
+          <i class="fa-solid fa-glasses"></i>
+          <span class="mobile-tint-swatch" id="mfsMobileTintSwatch"></span>
+        </button>
+        <button type="button" class="mfs-menu-pill" id="mfsMobileToggleBtn" title="Open Navigation Menu" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+          <span>Menu</span>
+        </button>
+      </div>
+    </div>
+    <!-- MOBILE NAVIGATION ENGINE -->
+    <script src="../../assets/js/mfs-mobile.js?v=20261121v2" defer></script>
+  </header>
+
+  <div class="revision-breadcrumb-bar">
+    <div class="revision-page-wrapper">
+      <div class="revision-breadcrumbs">
+        <a href="../../index.html"><i class="fa-solid fa-house"></i> Home</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a href="../../digital-skills-basics.html">Digital Skills Basics</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span class="current">Turning On Your Laptop, Mouse, Touchpad &amp; Keyboard Basics</span>
+      </div>
+    </div>
+  </div>
+
+  <section class="revision-hero-card">
+    <div class="revision-page-wrapper">
+      <div class="revision-hero-grid">
+        <div class="revision-hero-content">
+          <div class="revision-hero-pill-row">
+            <span class="badge-pill-accent" style="background:#0891b2;"><i class="fa-solid fa-seedling"></i> BASICS UNIT 1</span>
+            <span class="badge-pill-outline">Module 1 • Device &amp; Login Foundations</span>
+          </div>
+          <h1 class="revision-hero-title">Turning On Your Laptop, Mouse, Touchpad &amp; Keyboard Basics</h1>
+          <p class="revision-hero-lead" style="max-width:860px; margin-bottom:14px;">Start from absolute zero: turn on your laptop safely, use left-click, double-click, right-click, and type UK email and web symbols without mistakes.</p>
+          <div class="dfs-hero-objectives"><span class="dfs-obj-tag"><i class="fa-solid fa-check"></i> Turn on, wake from Sleep, and shut down a laptop safely via Start &gt; Power</span><span class="dfs-obj-tag"><i class="fa-solid fa-check"></i> Tell Single Left-Click, Double Left-Click, and Right-Click apart immediately</span><span class="dfs-obj-tag"><i class="fa-solid fa-check"></i> Type capital letters, numbers, and UK @ / \ symbols cleanly using Shift</span></div>
+          <div class="revision-hero-meta-bar" style="margin-top:16px;">
+            <div class="hero-quick-actions">
+              <a href="#interactive-lab" class="btn-hero-action"><i class="fa-solid fa-laptop"></i> Try Interactive Lab</a>
+              <a href="#downloads" class="btn-hero-action-secondary"><i class="fa-regular fa-file-pdf"></i> Printable Exercises</a>
+            </div>
+          </div>
+        </div>
+        <div class="revision-hero-visual-card">
+          <img src="../../assets/img/dfs-basics/basics_keyboard_mouse.png" alt="Essential UK keyboard keys and mouse click guide" style="width:100%; height:100%; object-fit:cover; display:block;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="mobile-toc-bar">
+    <div style="font-weight:700; color:var(--navy-dark); font-size:0.9rem;">
+      <i class="fa-solid fa-list-check" style="color:var(--accent);"></i> BASICS UNIT 1
+    </div>
+    <button type="button" class="btn-mobile-toc" onclick="toggleMobileToc()">
+      <span>Table of Contents</span> <i class="fa-solid fa-bars"></i>
+    </button>
+  </div>
+
+  <main class="revision-page-wrapper">
+    <div class="revision-layout">
+      <aside class="revision-sidebar" id="sidebarNav">
+        <div class="sidebar-toc-title">
+          <span><i class="fa-solid fa-compass-drafting" style="color:var(--accent);"></i> Unit Contents</span>
+          <span style="font-size:0.86rem; color:#64748b; font-weight:700;">6 Sections</span>
+        </div>
+        <ul class="sidebar-toc-list" id="tocList">
+          <li><a href="#teaching" class="sidebar-toc-link"><i class="fa-solid fa-book-open"></i> Step-by-Step Guide</a></li>
+          <li><a href="#cheat-sheet" class="sidebar-toc-link"><i class="fa-solid fa-table-columns"></i> Reference Table</a></li>
+          <li><a href="#visuals" class="sidebar-toc-link"><i class="fa-regular fa-image"></i> Visual Screenshots</a></li>
+          <li><a href="#interactive-lab" class="sidebar-toc-link"><i class="fa-solid fa-laptop-code"></i> Practice Lab</a></li>
+          <li><a href="#traps" class="sidebar-toc-link"><i class="fa-solid fa-triangle-exclamation"></i> Beginner Traps</a></li>
+          <li><a href="#downloads" class="sidebar-toc-link"><i class="fa-regular fa-file-pdf"></i> Tasks &amp; Downloads</a></li>
+        </ul>
+      </aside>
+
+      <div class="revision-content">
+        
+        
+
+        <section id="teaching" class="revision-section">
+          <div class="section-header-row">
+            <h2 class="section-title"><i class="fa-solid fa-book-open"></i> Step-by-Step Practical Guide</h2>
+          </div>
+          <div class="dfs-steps-flow">
+            
+        <div class="dfs-step-card">
+          <div class="dfs-step-header">
+            <div class="dfs-step-num">1</div>
+            <div class="dfs-step-title">1. Switching On, Waking Up &amp; Shutting Down</div>
+          </div>
+          <div class="dfs-step-body">
+            <p>Open the laptop lid and press the round or marked <strong>Power Button once firmly</strong> (never hold it down to turn on). Wait 15–30 seconds for the welcome picture or login screen to appear.</p><p>When you finish for the day, never slam the lid shut with unsaved work or hold the power button unless the laptop is completely frozen. Click <strong>Start &rarr; Power Icon &rarr; Shut down</strong>.</p>
+            <div class="dfs-callout dfs-callout-tutor" style="margin-top:12px;">
+              <i class="fa-solid fa-lightbulb"></i>
+              <div><strong>Tutor Tip:</strong> Use Sleep for short tea breaks; use Shut down at the end of the day; use Restart when a programme freezes or asks to update.</div>
+            </div>
+          </div>
+        </div>
+        <div class="dfs-step-card">
+          <div class="dfs-step-header">
+            <div class="dfs-step-num">2</div>
+            <div class="dfs-step-title">2. Mouse &amp; Laptop Touchpad Buttons</div>
+          </div>
+          <div class="dfs-step-body">
+            <p>Every mouse and laptop touchpad has two sides: the <strong>Left side</strong> makes things happen; the <strong>Right side</strong> shows an extra menu of options.</p><ul><li><strong>Single Left-Click (1 tap):</strong> Clicks buttons, ticks boxes, opens website links, and highlights text or files.</li><li><strong>Double Left-Click (2 quick taps):</strong> Opens folders, programmes, or documents sitting on your Desktop or File Explorer.</li><li><strong>Single Right-Click (1 right tap):</strong> Opens a popup menu with choices like <em>Rename</em>, <em>New Folder</em>, <em>Copy</em>, or <em>Delete</em>.</li><li><strong>Scroll:</strong> Roll the middle wheel (or slide two fingers together on a touchpad) up and down.</li></ul>
+            <div class="dfs-callout dfs-callout-tutor" style="margin-top:12px;">
+              <i class="fa-solid fa-lightbulb"></i>
+              <div><strong>Tutor Tip:</strong> Most beginners double-click blue website links by mistake — websites and menu buttons only ever need ONE single left-click!</div>
+            </div>
+          </div>
+        </div>
+        <div class="dfs-step-card">
+          <div class="dfs-step-header">
+            <div class="dfs-step-num">3</div>
+            <div class="dfs-step-title">3. Essential UK Keyboard Keys (Plus the #1 Beginner Trap)</div>
+          </div>
+          <div class="dfs-step-body">
+            <p>Before you type an email address or password, know what these five keys do:</p><ul><li><strong>Shift (hold while tapping a letter):</strong> Types ONE capital letter, or types the <em>top</em> symbol shown on number/punctuation keys. On a UK keyboard, <strong>Shift + '</strong> (near Enter) gives <code>@</code>.</li><li><strong>Caps Lock:</strong> Locks ALL LETTERS into capitals until pressed again — check the tiny Caps Lock light is OFF before entering passwords!</li><li><strong>Backspace vs Delete:</strong> <em>Backspace</em> (top-right above Enter) erases characters backwards to the LEFT of your flashing line. <em>Delete</em> erases forward to the RIGHT.</li><li><strong>Enter:</strong> Submits a search/login form, or drops down to a new paragraph.</li><li><strong>Spacebar:</strong> Puts a blank space between words (never press Space inside a password or email address!).</li></ul>
+            <div class="dfs-callout dfs-callout-tutor" style="margin-top:12px;">
+              <i class="fa-solid fa-lightbulb"></i>
+              <div><strong>Tutor Tip:</strong> No extra tip needed — practise on a blank Notepad or sticky note for 2 minutes first if typing feels unfamiliar.</div>
+            </div>
+          </div>
+        </div>
+          </div>
+        </section>
+
+        <section id="cheat-sheet" class="revision-section">
+          <div class="section-header-row">
+            <h2 class="section-title"><i class="fa-solid fa-table-columns"></i> Key / Action Cheat Sheet</h2>
+          </div>
+          <div style="overflow-x:auto;">
+            <table class="math-master-table">
+              <thead><tr><th>Button / Key</th><th>What It Does</th><th>Where You Use It</th></tr></thead>
+              <tbody><tr><td>Single Left-Click</td><td>Selects an item or opens a link/button</td><td>Website links, toolbar buttons, Start menu</td></tr><tr><td>Double Left-Click</td><td>Opens a file or folder icon</td><td>Desktop icons, files inside File Explorer</td></tr><tr><td>Single Right-Click</td><td>Opens extra options menu</td><td>Create New Folder, Rename, Copy/Paste</td></tr><tr><td>Shift + &#x27; (UK key)</td><td>Types the @ symbol</td><td>Every email address and username</td></tr><tr><td>Backspace</td><td>Deletes character to the LEFT</td><td>Fixing a typo right after typing it</td></tr><tr><td>Start &gt; Power &gt; Shut down</td><td>Safely closes Windows and turns off</td><td>End of every study or work session</td></tr></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section id="visuals" class="revision-section">
+          <div class="section-header-row">
+            <h2 class="section-title"><i class="fa-regular fa-image"></i> Real-Screen Diagrams &amp; Screenshots</h2>
+          </div>
+          <div style="display:grid; grid-template-columns:repeat(auto-fit, minmax(290px, 1fr)); gap:16px;">
+            
+        <div style="background:#ffffff; border:1px solid #cbd5e1; border-radius:12px; overflow:hidden; box-shadow:0 4px 12px rgba(15,23,42,0.06);">
+          <img src="../../assets/img/dfs-basics/basics_keyboard_mouse.png" alt="Essential UK Keyboard Keys &amp; Mouse Actions Reference" loading="lazy" style="width:100%; height:auto; display:block;">
+          <div style="padding:10px 14px; font-size:0.86rem; font-weight:700; color:#0f172a; background:#f8fafc; border-top:1px solid #e2e8f0;">Essential UK Keyboard Keys &amp; Mouse Actions Reference</div>
+        </div>
+          </div>
+        </section>
+
+        <section id="interactive-lab" class="revision-section">
+          <div class="section-header-row">
+            <h2 class="section-title"><i class="fa-solid fa-laptop-code"></i> Try Single-Click, Double-Click, Right-Click &amp; the UK @ Key</h2>
+          </div>
+          <div data-basics-lab="mouse-keyboard">
+            <noscript>Enable JavaScript to use the interactive beginner practice lab.</noscript>
+          </div>
+        </section>
+
+        <section id="traps" class="revision-section">
+          <div class="section-header-row">
+            <h2 class="section-title"><i class="fa-solid fa-triangle-exclamation"></i> Three Common Beginner Traps</h2>
+          </div>
+          
+        <div class="math-visual-card" style="margin-bottom:14px; border-left:6px solid #dc2626;">
+          <div class="math-visual-card-title" style="color:#991b1b;">
+            <i class="fa-solid fa-triangle-exclamation"></i> Avoid Trap: Leaving Caps Lock switched ON when signing in
+          </div>
+          <p class="math-step-explanation" style="margin:0;">Passphrases and passwords are case-sensitive. Always look for the small Caps Lock indicator light before typing your password.</p>
+        </div>
+        <div class="math-visual-card" style="margin-bottom:14px; border-left:6px solid #dc2626;">
+          <div class="math-visual-card-title" style="color:#991b1b;">
+            <i class="fa-solid fa-triangle-exclamation"></i> Avoid Trap: Using Shift + 2 instead of Shift + &#x27; for @
+          </div>
+          <p class="math-step-explanation" style="margin:0;">US keyboards put @ on Shift + 2, but standard UK laptops put speech marks &quot; on 2 and @ beside the Enter key.</p>
+        </div>
+        <div class="math-visual-card" style="margin-bottom:14px; border-left:6px solid #dc2626;">
+          <div class="math-visual-card-title" style="color:#991b1b;">
+            <i class="fa-solid fa-triangle-exclamation"></i> Avoid Trap: Holding the power button to switch off
+          </div>
+          <p class="math-step-explanation" style="margin:0;">Forcing power off can corrupt open documents and stall Windows updates. Only hold for 5 seconds as a last resort if frozen.</p>
+        </div>
+        </section>
+
+        <section id="downloads" class="revision-section">
+          <div class="section-header-row">
+            <h2 class="section-title"><i class="fa-solid fa-pen-ruler"></i> Guided Practical Task &amp; Printable Worksheets</h2>
+          </div>
+          <div class="dfs-practice-box">
+            <div class="dfs-task-stem">
+              <div style="font-weight:700; color:#0f172a; margin-bottom:6px;"><i class="fa-solid fa-pen-to-square" style="color:#0284c7;"></i> Try This Yourself:</div>
+              <div>Practise switching on calmly: explain the difference between Sleep, Restart, and Shut Down, plus which button (left, right, or double-click) creates a New Folder on the desktop.</div>
+            </div>
+            <div class="dfs-scratchpad-wrap">
+              <div class="dfs-scratchpad-label">
+                <span><i class="fa-solid fa-keyboard"></i> Notes &amp; Self-Check Scratchpad:</span>
+                <span class="dfs-autosave-status"><i class="fa-solid fa-circle-check"></i> Auto-saves in browser</span>
+              </div>
+              <textarea class="dfs-scratchpad-area" data-storage-key="dfs_basics_b01-turning-on-mouse-keyboard" placeholder="Type your steps or practice notes here..."></textarea>
+            </div>
+            <button type="button" id="solBtn_b01-turning-on-mouse-keyboard" class="dfs-solution-toggle-btn" onclick="toggleSolutionDrawer('solDrawer_b01-turning-on-mouse-keyboard', 'solBtn_b01-turning-on-mouse-keyboard')">
+              <i class="fa-solid fa-chevron-down"></i> Show Step-by-Step Benchmark Answer
+            </button>
+            <div id="solDrawer_b01-turning-on-mouse-keyboard" class="dfs-solution-drawer">
+              <h4><i class="fa-solid fa-circle-check"></i> Worked Benchmark Steps</h4>
+              <pre style="white-space:pre-wrap; font-family:inherit; background:#fff; padding:14px; border-radius:8px; border:1px solid #bbf7d0; color:#14532d; margin:0;">1. Sleep pauses power briefly while keeping work open; Restart reboots cleanly to clear glitches/updates; Shut Down closes everything safely at the end of the day.
+2. Single Right-Click on an empty part of the Desktop, choose New, then single Left-Click Folder.</pre>
+            </div>
+          </div>
+
+          <div style="margin-top:20px; padding:18px 20px; background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:12px; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:12px;">
+            <div>
+              <strong style="color:#0f172a;">Module 1–2 Beginner Basics Practice Sheet</strong>
+              <div style="font-size:0.88rem; color:#475569;">Printable A4 practice questions + full step-by-step worked answers.</div>
+            </div>
+            <div style="display:flex; flex-wrap:wrap; gap:10px;">
+              <a href="../../worksheets/dfs-basics-core-exercises.html" class="btn-card-action"><i class="fa-regular fa-file-lines"></i> Practice Exercises</a>
+              <a href="../../worksheets/dfs-basics-core-answers.html" class="btn-hero-accent" style="padding:8px 16px; font-size:0.9rem;"><i class="fa-solid fa-check-double"></i> Worked Answers</a>
+            </div>
+          </div>
+        </section>
+
+        <div class="dfs-topic-nav-bar">
+          <div><a href="../../digital-skills-basics.html" class="dfs-nav-btn"><i class="fa-solid fa-arrow-left"></i> Back to Basics Hub</a></div>
+          <div><a href="b02-logging-in-forgotten-passwords.html" class="dfs-nav-btn primary">Next: Logging In, Forgotten Passwords &amp; Safe Account Recovery <i class="fa-solid fa-arrow-right"></i></a></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="mfs-footer" id="site-footer">
+    <div class="mfs-container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="mfs-brand" style="margin-bottom:16px;">
+            <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="mfs-brand-text">
+              <div class="mfs-brand-title" style="color:#ffffff;">MASTER<span>FUNCTIONALSKILLS</span></div>
+              <div class="mfs-brand-subtitle" style="color:#94a3b8;">Delivering Skills • Achieving Goals</div>
+            </div>
+          </div>
+          <p style="font-size:0.88rem; line-height:1.6; margin-bottom:16px;">
+            Dedicated UK Functional Skills maths, English, and digital skills revision, mock exams, and specialist tuition.
+          </p>
+          <div style="font-size:0.85rem; color:#cbd5e1;">
+            <p><a href="https://wa.me/447564525425" target="_blank" rel="noopener" style="color:#cbd5e1; text-decoration:none;"><i class="fa-brands fa-whatsapp" style="color:var(--accent); margin-right:8px;"></i> WhatsApp: +44 (0)7564 525425</a></p>
+            <p style="margin-top:6px;"><a href="../../contact-us.html" style="color:#cbd5e1; text-decoration:none;"><i class="fa-solid fa-envelope" style="color:var(--accent); margin-right:8px;"></i> Contact Tutor Team</a></p>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Maths Revision</h4>
+          <ul class="footer-links">
+            <li><a href="../../functional-skills-maths-level-2.html">Maths Level 2 Revision</a></li>
+            <li><a href="../../functional-skills-maths-level-1.html">Maths Level 1 Revision</a></li>
+            <li><a href="../../entry-level-3-maths.html">Entry Level 3 Maths</a></li>
+            <li><a href="../../pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="../../functional-skills-past-papers.html">Free Maths Past Papers</a></li>
+            <li><a href="../../exam-maths-l2.html">Book Level 2 Maths Exam</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>English &amp; Digital</h4>
+          <ul class="footer-links">
+            <li><a href="../../functional-skills-english-level-2.html">English Level 2 Revision</a></li>
+            <li><a href="../../functional-skills-english-level-1.html">English Level 1 Revision</a></li>
+            <li><a href="../../entry-level-3-english.html">Entry Level 3 English</a></li>
+            <li><a href="../../digital-functional-skills-level-1.html">Digital Skills Level 1</a></li>
+            <li><a href="../../digital-functional-skills-entry-3.html">Digital Skills Entry 3</a></li>
+            <li><a href="../../digital-functional-skills-past-papers.html">DFS Past Papers &amp; Data Files</a></li>
+            <li><a href="../../digital-functional-skills-mock-exam.html">DFS Online Mock Simulator</a></li>
+            <li><a href="../../digital-functional-skills.html">Digital Skills Hub (E3 &amp; L1)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Student Support &amp; Tools</h4>
+          <ul class="footer-links">
+            <li><a href="../../tools.html" style="color:var(--accent); font-weight:700;"><i class="fa-solid fa-screwdriver-wrench" style="margin-right:6px;"></i>All Interactive Tools Hub</a></li>
+            <li><a href="../../pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="../../diagnostic-test.html">Diagnostic Skill Checker</a></li>
+            <li><a href="../../functional-skills-nets.html">3D Net Folding Tool</a></li>
+            <li><a href="../../digital-functional-skills-mock-exam.html">Pearson DFS Simulator</a></li>
+            <li><a href="../../revision-cards.html">Revision Cards &amp; Flashcards</a></li>
+            <li><a href="../../shop.html">Revision Books &amp; Study Packs</a></li>
+            <li><a href="../../tutors.html">1-to-1 Specialist Tuition</a></li>
+            <li><a href="../../exams.html">Book Official Online Exam</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Master Functional Skills. All rights reserved. Registered in England &amp; Wales. Ofqual Regulated Qualification Standards.</div>
+        <div style="display:flex; gap:16px; flex-wrap:wrap;">
+          <a href="../../index.html">Home</a>
+          <a href="../../tools.html" style="color:var(--accent); font-weight:700;">Tools</a>
+          <a href="../../functional-skills-past-papers.html">Past Papers</a>
+          <a href="../../revision-cards.html">Revision Cards</a>
+          <a href="../../shop.html">Study Shop</a>
+          <a href="../../tutors.html">Tutors</a>
+          <a href="../../open-awards-functional-skills.html">Open Awards Guide</a>
+          <a href="../../centre-policies.html">Policies &amp; Access</a>
+          <a href="../../contact-us.html">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="../../assets/js/mfs-revision.js?v=20261121v2"></script>
+  <script src="../../assets/js/mfs-dfs-basics-labs.js?v=20261121"></script>
+  <script src="../../assets/js/mfs-tint.js?v=20261120v12"></script>
+</body>
+</html>

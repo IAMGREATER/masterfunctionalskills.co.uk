@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<html lang="en-GB" data-theme="digital" data-tint="cream">
+<head>
+  <meta name="robots" content="noindex, nofollow, noarchive, nosnippet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Digital Skills Basics &amp; Essential Apps (Word, PowerPoint, Excel, LibreOffice &amp; Passwords) | Master Functional Skills</title>
+  <meta name="description" content="Complete step-by-step beginner digital skills hub: turning on a laptop, forgotten password recovery, folders and file search, Word & LibreOffice Writer, PowerPoint & Impress, and Excel & LibreOffice Calc mastery with starter packs.">
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#0b172d">
+  <link rel="stylesheet" href="assets/css/mfs-theme.css?v=20261121v2">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="assets/css/mfs-revision.css?v=20261121v2">
+  <link rel="stylesheet" href="assets/css/mfs-mobile.css?v=20261121v2">
+  <script src="assets/js/mfs-pwa.js" defer></script>
+  
+  <style>
+    .basics-module-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(290px, 1fr)); gap:18px; margin-top:18px; }
+    .basics-unit-card { background:#ffffff; border:1.5px solid #cbd5e1; border-radius:14px; padding:22px; display:flex; flex-direction:column; justify-content:space-between; box-shadow:0 6px 18px rgba(15,23,42,0.05); transition:transform .16s ease, border-color .16s ease; }
+    .basics-unit-card:hover { transform:translateY(-2px); border-color:#0284c7; }
+    .basics-unit-num { display:inline-block; background:#e0f2fe; color:#0369a1; font-weight:800; font-size:0.76rem; padding:3px 10px; border-radius:999px; margin-bottom:10px; }
+    .basics-unit-card h3 { font-size:1.1rem; margin:0 0 8px; color:#0f172a; line-height:1.35; }
+    .basics-unit-card p { font-size:0.9rem; color:#475569; line-height:1.55; margin:0 0 16px; }
+    .basics-pack-grid { display:grid; grid-template-columns:repeat(auto-fit, minmax(270px, 1fr)); gap:18px; margin-top:20px; }
+    .basics-pack-card { background:#0f172a; color:#f8fafc; border:2px solid #0284c7; border-radius:16px; padding:24px; display:flex; flex-direction:column; justify-content:space-between; }
+  </style>
+</head>
+<body data-tint="cream">
+  <!-- TOP TRUST BAR WITH ACCESSIBILITY & CONTACT -->
+  <div class="mfs-top-bar">
+    <div class="mfs-container mfs-top-bar-inner">
+      <div class="top-trust-items">
+        <span class="top-trust-item"><i class="fa-solid fa-building-columns"></i> Open Awards, Pearson Edexcel &amp; City &amp; Guilds Aligned</span>
+      </div>
+      <div class="top-contacts">
+        <div class="mfs-access-bar">
+          <!-- DYSLEXIA BACKGROUND TINT PICKER -->
+          <div class="mfs-tint-dropdown-wrap">
+            <button type="button" id="tintToggle" class="btn-tint-toggle" onclick="toggleTintMenu(event)" title="Change dyslexia background tint">
+              <span class="tint-swatch-indicator" id="tintCurrentSwatch"></span>
+              <span id="tintLabel">Cream Tint</span>
+              <i class="fa-solid fa-chevron-down" style="font-size:0.62rem; opacity:0.75; margin-left:2px;"></i>
+            </button>
+            <div id="tintMenu" class="tint-picker-menu">
+              <div class="tint-picker-title"><i class="fa-solid fa-glasses"></i> Dyslexia Reading Tint</div>
+              <button type="button" class="tint-option-btn active" data-tint="cream" onclick="setSiteTint('cream', event)">
+                <span class="swatch swatch-cream"></span>
+                <span class="tint-name">Cream <small class="tint-badge-def">Default</small></span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="peach" onclick="setSiteTint('peach', event)">
+                <span class="swatch swatch-peach"></span>
+                <span class="tint-name">Soft Peach</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="cool" onclick="setSiteTint('cool', event)">
+                <span class="swatch swatch-cool"></span>
+                <span class="tint-name">Cool Mist</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <button type="button" class="tint-option-btn" data-tint="sage" onclick="setSiteTint('sage', event)">
+                <span class="swatch swatch-sage"></span>
+                <span class="tint-name">Soft Sage</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+              <div class="tint-divider"></div>
+              <button type="button" class="tint-option-btn" data-tint="none" onclick="setSiteTint('none', event)">
+                <span class="swatch swatch-none"></span>
+                <span class="tint-name">No Tint (White)</span>
+                <i class="fa-solid fa-check check-icon"></i>
+              </button>
+            </div>
+          </div>
+          <button id="dyslexiaToggle" class="btn-dyslexia-toggle" onclick="toggleDyslexiaMode()" title="Toggle Dyslexia High-Readability Mode">
+            <i class="fa-solid fa-universal-access"></i> Dyslexia
+          </button>
+          <button id="themeToggle" class="mfs-theme-pill" onclick="toggleTheme()" title="Switch Palette: Sapphire vs Emerald">
+            <i class="fa-solid fa-palette"></i> <span id="themeLabel">Sapphire</span>
+          </button>
+        </div>
+        <a href="contact-us.html" class="top-contact-link"><i class="fa-solid fa-envelope"></i> <strong>Contact Us</strong></a>
+      </div>
+    </div>
+  </div>  <!-- MAIN NAVIGATION -->
+  <header class="mfs-navbar">
+    <div class="revision-page-wrapper mfs-navbar-inner">
+      <a href="index.html" class="mfs-brand">
+        <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+        <div class="mfs-brand-text">
+          <div class="mfs-brand-title">MASTER<span>FUNCTIONALSKILLS</span></div>
+          <div class="mfs-brand-subtitle">Delivering Skills • Achieving Goals</div>
+        </div>
+      </a>
+
+      <nav class="mfs-nav-wrapper">
+        <ul class="mfs-nav-menu">
+          <!-- 1. SUBJECTS (VISUAL MEGA-MENU) -->
+          <li class="mfs-nav-item">
+            <a href="revise.html" class="mfs-nav-link">
+              <i class="fa-solid fa-book-open-reader" style="color:#0284c7; margin-right:5px;"></i> Subjects <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-revision-hub">
+              <div class="mfs-revision-grid">
+                <!-- Maths Column -->
+                <div class="mfs-revision-col mfs-revision-col-maths">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-calculator"></i> Maths Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="functional-skills-maths-level-2.html" class="mfs-dropdown-item">Maths Level 2</a>
+                    <a href="functional-skills-maths-level-1.html" class="mfs-dropdown-item">Maths Level 1</a>
+                    <a href="entry-level-3-maths.html" class="mfs-dropdown-item">Entry Level 3 Maths</a>
+                  </div>
+                </div>
+                <!-- English Column -->
+                <div class="mfs-revision-col mfs-revision-col-english">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-pen-nib"></i> English Revision</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="functional-skills-english-level-2.html" class="mfs-dropdown-item">English Level 2</a>
+                    <a href="functional-skills-english-level-1.html" class="mfs-dropdown-item">English Level 1</a>
+                    <a href="entry-level-3-english.html" class="mfs-dropdown-item">Entry Level 3 English</a>
+                  </div>
+                </div>
+                <!-- Digital Skills Column -->
+                <div class="mfs-revision-col mfs-revision-col-digital">
+                  <div class="mfs-revision-col-title"><i class="fa-solid fa-laptop-code"></i> Digital Skills</div>
+                  <div class="mfs-revision-col-links">
+                    <a href="digital-functional-skills-level-1.html" class="mfs-dropdown-item"><i class="fa-solid fa-award" style="font-size:0.75rem; margin-right:5px; color:#0284c7;"></i> Digital Skills Level 1</a>
+                    <a href="digital-functional-skills-entry-3.html" class="mfs-dropdown-item"><i class="fa-solid fa-seedling" style="font-size:0.75rem; margin-right:5px; color:#059669;"></i> Digital Skills Entry 3</a>
+                    <a href="digital-functional-skills-past-papers.html" class="mfs-dropdown-item"><i class="fa-solid fa-file-zipper" style="font-size:0.75rem; margin-right:5px; color:#d97706;"></i> Past Papers &amp; Data Files</a>
+                    <a href="digital-functional-skills-mock-exam.html" class="mfs-dropdown-item"><i class="fa-solid fa-desktop" style="font-size:0.75rem; margin-right:5px; color:#7c3aed;"></i> Online Mock Simulator</a>
+                    <a href="digital-functional-skills.html" class="mfs-dropdown-item"><i class="fa-solid fa-layer-group" style="font-size:0.75rem; margin-right:5px; color:#475569;"></i> Digital Skills Hub (E3 &amp; L1)</a>
+                  </div>
+                </div>
+              </div>
+              <!-- Course & Subject Selector Cross-link Footer inside dropdown -->
+              <div class="mfs-revision-dropdown-footer" style="margin-top:12px; padding-top:10px; border-top:1px solid #e2e8f0; display:flex; justify-content:space-between; align-items:center; font-size:0.82rem;">
+                <a href="revise.html" style="font-weight:700; color:var(--accent); text-decoration:none;"><i class="fa-solid fa-layer-group" style="margin-right:4px;"></i> View All Subjects &amp; Levels &rarr;</a>
+                <a href="courses.html" style="font-weight:700; color:#059669; text-decoration:none;"><i class="fa-solid fa-graduation-cap" style="margin-right:4px;"></i> Accredited Online Courses &rarr;</a>
+              </div>
+            </div>
+          </li>
+
+          <!-- 2. ONLINE COURSES -->
+          <li class="mfs-nav-item">
+            <a href="courses.html" class="mfs-nav-link">
+              <i class="fa-solid fa-graduation-cap" style="color:#0284c7; margin-right:5px;"></i> Online Courses
+            </a>
+          </li>
+
+          <!-- 3. PAST PAPERS (DIRECT ACCESS) -->
+          <li class="mfs-nav-item">
+            <a href="functional-skills-past-papers.html" class="mfs-nav-link">
+              <i class="fa-regular fa-file-lines" style="color:#0284c7; margin-right:5px;"></i> Past Papers
+            </a>
+          </li>
+
+          <!-- 4. WORKSHEETS DIRECTORY (CORBETT STYLE DUAL ENGINE) -->
+          <li class="mfs-nav-item">
+            <a href="worksheets.html" class="mfs-nav-link">
+              <i class="fa-solid fa-layer-group" style="color:#0284c7; margin-right:5px;"></i> Worksheets
+            </a>
+          </li>
+
+          <!-- 5. FREE TOOLS (COMPACT DROPDOWN) -->
+          <li class="mfs-nav-item">
+            <a href="tools.html" class="mfs-nav-link">
+              <i class="fa-solid fa-screwdriver-wrench" style="color:#0284c7; margin-right:5px;"></i> Free Tools <i class="fa-solid fa-chevron-down" style="font-size:0.72rem; margin-left:3px;"></i>
+            </a>
+            <div class="mfs-dropdown-menu mfs-dropdown-compact">
+              <a href="tools.html" class="mfs-dropdown-item" style="font-weight:700; color:var(--accent);"><i class="fa-solid fa-layer-group" style="font-size:0.85rem; margin-right:6px;"></i> All Free Tools &amp; Simulators &rarr;</a>
+              <div class="mfs-dropdown-divider" style="margin:4px 0; border-top:1px solid #e2e8f0;"></div>
+              <a href="pass-mark-calculator.html" class="mfs-dropdown-item"><i class="fa-solid fa-calculator" style="color:var(--accent); font-size:0.85rem; margin-right:6px;"></i> Pass Mark Calculator</a>
+              <a href="diagnostic-test.html" class="mfs-dropdown-item"><i class="fa-solid fa-chart-pie" style="color:#059669; font-size:0.85rem; margin-right:6px;"></i> Diagnostic Skill Checker</a>
+              <a href="functional-skills-nets.html" class="mfs-dropdown-item"><i class="fa-solid fa-cube" style="color:#0284c7; font-size:0.85rem; margin-right:6px;"></i> 3D Net Folding Tool</a>
+              <a href="video-solution.html" class="mfs-dropdown-item"><i class="fa-brands fa-youtube" style="color:#ef4444; font-size:0.85rem; margin-right:6px;"></i> Masterclass Station</a>
+            </div>
+          </li>
+
+          <!-- 6. REVISION CARDS -->
+          <li class="mfs-nav-item">
+            <a href="revision-cards.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-layer-group" style="color:#d97706; margin-right:5px;"></i> Revision Cards
+            </a>
+          </li>
+
+          <!-- 7. SHOP -->
+          <li class="mfs-nav-item">
+            <a href="shop.html" class="mfs-nav-link mfs-nav-link-amber" style="color:#d97706; font-weight:700;">
+              <i class="fa-solid fa-basket-shopping" style="color:#d97706; margin-right:5px;"></i> Shop
+            </a>
+          </li>
+        </ul>
+      </nav>
+
+      <!-- 8. BOOK EXAM ACTION BUTTON -->
+      <div class="mfs-nav-actions">
+        <a href="exams.html" class="btn-nav-exam">
+          <i class="fa-solid fa-calendar-check"></i> Book Exam
+        </a>
+      </div>
+
+      <!-- MOBILE CONTROLS (TINT + MENU PILL) -->
+      <div class="mfs-mobile-controls" id="mfsMobileControls">
+        <button type="button" class="btn-mobile-tint-toggle" id="mfsMobileTintBtn" title="Change Reading Tint" aria-label="Reading Tint">
+          <i class="fa-solid fa-glasses"></i>
+          <span class="mobile-tint-swatch" id="mfsMobileTintSwatch"></span>
+        </button>
+        <button type="button" class="mfs-menu-pill" id="mfsMobileToggleBtn" title="Open Navigation Menu" aria-label="Toggle Menu">
+          <i class="fa-solid fa-bars"></i>
+          <span>Menu</span>
+        </button>
+      </div>
+    </div>
+    <!-- MOBILE NAVIGATION ENGINE -->
+    <script src="assets/js/mfs-mobile.js?v=20261121v2" defer></script>
+  </header>
+  <div class="mfs-promo-banner"><div class="mfs-container mfs-promo-inner"></div></div>
+
+  <section class="mfs-hero-section">
+    <div class="mfs-container mfs-hero-grid">
+      <div class="hero-content">
+        <div class="hero-chip" style="display:inline-flex; align-items:center; gap:8px; padding:6px 14px; background:var(--accent-light); color:var(--accent); border-radius:30px; font-size:0.85rem; font-weight:700; margin-bottom:14px;">
+          <i class="fa-solid fa-seedling"></i> Beginner Bridge &amp; Essential Apps Track
+        </div>
+        <h1>Digital Skills Basics <span>&amp; Essential Apps</span></h1>
+        <p class="hero-description">
+          Step-by-step plain-English guides and real practice files for learners starting from scratch: switching on a laptop, logging in, resetting forgotten passwords, finding files, universal app shortcuts, plus Microsoft Word / PowerPoint / Excel and free LibreOffice.
+        </p>
+        <div class="hero-buttons">
+          <a href="#module-basics" class="btn-hero-accent"><i class="fa-solid fa-play"></i> Start Beginner Modules (1–7)</a>
+          <a href="#module-apps" class="btn-hero-navy"><i class="fa-solid fa-table"></i> Word, Slides &amp; Excel/Calc Hub</a>
+        </div>
+      </div>
+
+      <div style="display:flex; flex-direction:column; gap:16px;">
+        <div style="background:#ffffff; border:1px solid #cbd5e1; border-radius:16px; overflow:hidden; box-shadow:0 10px 28px rgba(15,23,42,0.12);">
+          <img src="assets/img/dfs-basics/basics_universal_shortcuts.png" alt="Universal App Functions and Shortcuts Cheat Card" style="width:100%; aspect-ratio:16/9; height:auto; object-fit:cover; display:block;">
+          <div style="background:#0f172a; color:#ffffff; padding:14px 18px; display:flex; align-items:center; gap:12px;">
+            <div style="font-size:1.4rem; color:#38bdf8;"><i class="fa-solid fa-layer-group"></i></div>
+            <div>
+              <strong style="display:block; font-size:0.96rem;">10 Hands-On Step-by-Step Units</strong>
+              <span style="font-size:0.84rem; color:#cbd5e1;">Includes 11 real starter .xlsx / .docx / .pptx exercise files</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="module-basics" style="padding:52px 0; background:var(--bg-page); border-bottom:1px solid var(--border);">
+    <div class="mfs-container">
+      <div style="margin-bottom:10px;">
+        <span style="display:inline-block; background:#e0f2fe; color:#0369a1; font-weight:800; font-size:0.78rem; padding:4px 12px; border-radius:999px; text-transform:uppercase;">Module 1 • Absolute Foundations</span>
+        <h2 style="font-size:1.7rem; margin:10px 0 6px;">Laptop Power, Mouse, Keyboard, Login &amp; Passwords</h2>
+        <p style="color:var(--text-muted); margin:0;">Essential first steps before starting Digital Functional Skills Entry 3.</p>
+      </div>
+      <div class="basics-module-grid">
+        
+        <div class="basics-unit-card">
+          <div>
+            <span class="basics-unit-num">BASICS UNIT 1</span>
+            <h3>1. Turning On Your Laptop, Mouse, Touchpad &amp; Keyboard Basics</h3>
+            <p>Start from absolute zero: turn on your laptop safely, use left-click, double-click, right-click, and type UK email and web symbols without mistakes.</p>
+          </div>
+          <a href="digital-skills/basics/b01-turning-on-mouse-keyboard.html" class="btn-card-action" style="text-align:center;">Open Step-by-Step Guide &rarr;</a>
+        </div>
+        <div class="basics-unit-card">
+          <div>
+            <span class="basics-unit-num">BASICS UNIT 2</span>
+            <h3>2. Logging In, Forgotten Passwords &amp; Safe Account Recovery</h3>
+            <p>Sign into your laptop, email, or course portal smoothly — and follow a calm 5-step process when you forget a password without getting locked out or phished.</p>
+          </div>
+          <a href="digital-skills/basics/b02-logging-in-forgotten-passwords.html" class="btn-card-action" style="text-align:center;">Open Step-by-Step Guide &rarr;</a>
+        </div>
+        <div class="basics-unit-card">
+          <div>
+            <span class="basics-unit-num">BASICS UNIT 3</span>
+            <h3>3. Windows Desktop, Taskbar, Window Controls &amp; Basic Programmes</h3>
+            <p>Know where every basic programme lives on Windows/PC, stop accidentally closing your work with the X button, and run two windows side-by-side.</p>
+          </div>
+          <a href="digital-skills/basics/b03-windows-desktop-basic-programmes.html" class="btn-card-action" style="text-align:center;">Open Step-by-Step Guide &rarr;</a>
+        </div>
+      </div>
+
+      <div style="margin-top:46px; margin-bottom:10px;">
+        <span style="display:inline-block; background:#dcfce7; color:#065f46; font-weight:800; font-size:0.78rem; padding:4px 12px; border-radius:999px; text-transform:uppercase;">Module 2 • Everyday Confidence</span>
+        <h2 style="font-size:1.7rem; margin:10px 0 6px;">Files, Search, Universal App Shortcuts, Web &amp; Email</h2>
+        <p style="color:var(--text-muted); margin:0;">Practical everyday habits that work across every computer and programme.</p>
+      </div>
+      <div class="basics-module-grid">
+        
+        <div class="basics-unit-card">
+          <div>
+            <span class="basics-unit-num">BASICS UNIT 4</span>
+            <h3>4. Creating Folders, Saving Properly &amp; Finding Lost Files</h3>
+            <p>Never lose another downloaded attachment or document: create tidy nested folders, use Save As deliberately, and locate any missing file in seconds.</p>
+          </div>
+          <a href="digital-skills/basics/b04-files-folders-and-file-search.html" class="btn-card-action" style="text-align:center;">Open Step-by-Step Guide &rarr;</a>
+        </div>
+        <div class="basics-unit-card">
+          <div>
+            <span class="basics-unit-num">BASICS UNIT 5</span>
+            <h3>5. Universal Functions Across Every App (Copy, Paste, Undo, Save, Print &amp; PDF)</h3>
+            <p>Learn these ten universal functions once — they work identically inside Microsoft Office, LibreOffice, web browsers, email, and online forms.</p>
+          </div>
+          <a href="digital-skills/basics/b05-universal-app-functions-shortcuts.html" class="btn-card-action" style="text-align:center;">Open Step-by-Step Guide &rarr;</a>
+        </div>
+        <div class="basics-unit-card">
+          <div>
+            <span class="basics-unit-num">BASICS UNIT 6</span>
+            <h3>6. Web Browsers, Safe Searching, Bookmarks &amp; Online Forms</h3>
+            <p>Search online efficiently without falling for top-of-page adverts, manage browser tabs and bookmarks, and submit online forms accurately.</p>
+          </div>
+          <a href="digital-skills/basics/b06-web-search-browsers-online-forms.html" class="btn-card-action" style="text-align:center;">Open Step-by-Step Guide &rarr;</a>
+        </div>
+        <div class="basics-unit-card">
+          <div>
+            <span class="basics-unit-num">BASICS UNIT 7</span>
+            <h3>7. Everyday Email, Attachments, Video Calls &amp; First-Aid Troubleshooting</h3>
+            <p>Write and reply to emails with confidence, attach files without forgetting them, join online tutor lessons calmly, and fix everyday Wi-Fi or sound hiccups.</p>
+          </div>
+          <a href="digital-skills/basics/b07-email-attachments-and-everyday-help.html" class="btn-card-action" style="text-align:center;">Open Step-by-Step Guide &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="module-apps" style="padding:54px 0; background:#ffffff; border-bottom:1px solid var(--border);">
+    <div class="mfs-container">
+      <div style="margin-bottom:10px;">
+        <span style="display:inline-block; background:#fef3c7; color:#92400e; font-weight:800; font-size:0.78rem; padding:4px 12px; border-radius:999px; text-transform:uppercase;">Module 3 • Practical Office &amp; LibreOffice Guides</span>
+        <h2 style="font-size:1.75rem; margin:10px 0 6px;">Word / Writer, PowerPoint / Impress &amp; Excel / Calc</h2>
+        <p style="color:var(--text-muted); margin:0;">Step-by-step menu translation tables, interactive sandboxes, printable exercises, and real downloadable starter workbooks.</p>
+      </div>
+      <div class="basics-module-grid">
+        
+        <div class="basics-unit-card">
+          <div>
+            <span class="basics-unit-num">PRACTICAL APP GUIDE • WORD &amp; WRITER</span>
+            <h3>8. Word &amp; LibreOffice Writer Practical Guide (Step-by-Step + Practice Files)</h3>
+            <p>Turn messy plain text into crisp letters, posters, rotas, and flyers in Microsoft Word OR free LibreOffice Writer — including Page Orientation, Tables, Borders, and Lock Aspect Ratio.</p>
+          </div>
+          <a href="digital-skills/basics/b08-word-and-libreoffice-writer.html" class="btn-card-action" style="text-align:center;">Open Step-by-Step Guide &rarr;</a>
+        </div>
+        <div class="basics-unit-card">
+          <div>
+            <span class="basics-unit-num">PRACTICAL APP GUIDE • POWERPOINT &amp; IMPRESS</span>
+            <h3>9. PowerPoint &amp; LibreOffice Impress Practical Guide (Slides, Pictures &amp; Present)</h3>
+            <p>Create tidy multi-slide presentations in Microsoft PowerPoint OR free LibreOffice Impress — master new slides, slide order, readable contrast, pictures, and presenting full-screen.</p>
+          </div>
+          <a href="digital-skills/basics/b09-powerpoint-and-libreoffice-impress.html" class="btn-card-action" style="text-align:center;">Open Step-by-Step Guide &rarr;</a>
+        </div>
+        <div class="basics-unit-card">
+          <div>
+            <span class="basics-unit-num">PRACTICAL HUB • EXCEL &amp; LIBREOFFICE CALC</span>
+            <h3>10. Excel &amp; LibreOffice Calc Practical Mastery Hub (Videos, Guides &amp; 6 Starter Workbooks)</h3>
+            <p>Go from nervous about blank spreadsheet grids to confident with =SUM, =AVERAGE, =MIN, =MAX, =COUNT, =IF, dragging formulas, sorting whole tables safely, and building charts on a new sheet tab.</p>
+          </div>
+          <a href="digital-skills/basics/b10-excel-and-libreoffice-calc.html" class="btn-card-action" style="text-align:center;">Open Step-by-Step Guide &rarr;</a>
+        </div>
+      </div>
+
+      <div class="basics-pack-grid">
+        <div class="basics-pack-card">
+          <div>
+            <div style="color:#38bdf8; font-weight:800; font-size:0.8rem; text-transform:uppercase; margin-bottom:6px;">Starter Pack 1 • 6 Workbooks</div>
+            <h3 style="margin:0 0 8px; color:#ffffff; font-size:1.2rem;">Excel &amp; LibreOffice Calc Practice (.ZIP)</h3>
+            <p style="color:#cbd5e1; font-size:0.9rem; line-height:1.55;">6 graded starter spreadsheets (Shop Sales, Cafe Orders, Household Budget, Staff Pay, Stock Check =IF, and Sales + Chart Assessment).</p>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:8px; margin-top:14px;">
+            <a href="assets/downloads/dfs-basics/MFS%20Excel%20and%20Calc%20Practice%20Pack.zip" download class="btn-hero-accent" style="text-align:center; justify-content:center;"><i class="fa-solid fa-file-zipper"></i> Download 6 .xlsx Files (.ZIP)</a>
+            <a href="worksheets/dfs-basics-excel-calc-exercises.html" class="btn-card-action" style="background:#1e293b; color:#e2e8f0; border-color:#334155; text-align:center;">Printable Exercises &amp; Answer Key &rarr;</a>
+          </div>
+        </div>
+
+        <div class="basics-pack-card">
+          <div>
+            <div style="color:#38bdf8; font-weight:800; font-size:0.8rem; text-transform:uppercase; margin-bottom:6px;">Starter Pack 2 • Word &amp; Writer</div>
+            <h3 style="margin:0 0 8px; color:#ffffff; font-size:1.2rem;">Word &amp; Writer Practice Pack (.ZIP)</h3>
+            <p style="color:#cbd5e1; font-size:0.9rem; line-height:1.55;">3 real unformatted .docx starter files: Community Notice Flyer, Appointment Letter, and Weekly Shift Rota Table.</p>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:8px; margin-top:14px;">
+            <a href="assets/downloads/dfs-basics/MFS%20Word%20and%20Writer%20Practice%20Pack.zip" download class="btn-hero-accent" style="text-align:center; justify-content:center;"><i class="fa-solid fa-file-zipper"></i> Download 3 .docx Files (.ZIP)</a>
+            <a href="worksheets/dfs-basics-writer-impress-exercises.html" class="btn-card-action" style="background:#1e293b; color:#e2e8f0; border-color:#334155; text-align:center;">Printable Writer &amp; Slides Exercises &rarr;</a>
+          </div>
+        </div>
+
+        <div class="basics-pack-card">
+          <div>
+            <div style="color:#38bdf8; font-weight:800; font-size:0.8rem; text-transform:uppercase; margin-bottom:6px;">Starter Pack 3 • Slides &amp; Core</div>
+            <h3 style="margin:0 0 8px; color:#ffffff; font-size:1.2rem;">PowerPoint / Impress + Core Drills</h3>
+            <p style="color:#cbd5e1; font-size:0.9rem; line-height:1.55;">2 starter .pptx decks plus printable worksheet exercises covering login, passwords, folders, search, and universal shortcuts.</p>
+          </div>
+          <div style="display:flex; flex-direction:column; gap:8px; margin-top:14px;">
+            <a href="assets/downloads/dfs-basics/MFS%20PowerPoint%20and%20Impress%20Practice%20Pack.zip" download class="btn-hero-accent" style="text-align:center; justify-content:center;"><i class="fa-solid fa-file-zipper"></i> Download 2 .pptx Files (.ZIP)</a>
+            <a href="worksheets/dfs-basics-core-exercises.html" class="btn-card-action" style="background:#1e293b; color:#e2e8f0; border-color:#334155; text-align:center;">Printable Basics Exercises &amp; Key &rarr;</a>
+          </div>
+        </div>
+      </div>
+
+      <div style="margin-top:36px; padding:24px; background:#f8fafc; border:1.5px solid #cbd5e1; border-radius:14px; display:flex; flex-wrap:wrap; justify-content:space-between; align-items:center; gap:16px;">
+        <div>
+          <h3 style="margin:0 0 4px; font-size:1.2rem; color:#0f172a;">Ready for Official Digital Functional Skills Study?</h3>
+          <p style="margin:0; color:#475569; font-size:0.94rem;">Once comfortable with Units 1–10 above, step straight into Entry 3 or Level 1 exam topics and onscreen simulators.</p>
+        </div>
+        <div style="display:flex; flex-wrap:wrap; gap:10px;">
+          <a href="digital-functional-skills-entry-3.html" class="btn-card-action" style="border:1px solid #059669; color:#065f46; background:#ecfdf5;">DFSQ Entry 3 (18 Topics) &rarr;</a>
+          <a href="digital-functional-skills-level-1.html" class="btn-hero-accent">DFS Level 1 (21 Topics) &rarr;</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="mfs-footer" id="site-footer">
+    <div class="mfs-container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <div class="mfs-brand" style="margin-bottom:16px;">
+            <div class="mfs-brand-icon"><i class="fa-solid fa-graduation-cap"></i></div>
+            <div class="mfs-brand-text">
+              <div class="mfs-brand-title" style="color:#ffffff;">MASTER<span>FUNCTIONALSKILLS</span></div>
+              <div class="mfs-brand-subtitle" style="color:#94a3b8;">Delivering Skills • Achieving Goals</div>
+            </div>
+          </div>
+          <p style="font-size:0.88rem; line-height:1.6; margin-bottom:16px;">
+            Dedicated UK Functional Skills maths, English, and digital skills revision, mock exams, and specialist tuition.
+          </p>
+          <div style="font-size:0.85rem; color:#cbd5e1;">
+            <p><a href="https://wa.me/447564525425" target="_blank" rel="noopener" style="color:#cbd5e1; text-decoration:none;"><i class="fa-brands fa-whatsapp" style="color:var(--accent); margin-right:8px;"></i> WhatsApp: +44 (0)7564 525425</a></p>
+            <p style="margin-top:6px;"><a href="contact-us.html" style="color:#cbd5e1; text-decoration:none;"><i class="fa-solid fa-envelope" style="color:var(--accent); margin-right:8px;"></i> Contact Tutor Team</a></p>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Maths Revision</h4>
+          <ul class="footer-links">
+            <li><a href="functional-skills-maths-level-2.html">Maths Level 2 Revision</a></li>
+            <li><a href="functional-skills-maths-level-1.html">Maths Level 1 Revision</a></li>
+            <li><a href="entry-level-3-maths.html">Entry Level 3 Maths</a></li>
+            <li><a href="pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="functional-skills-past-papers.html">Free Maths Past Papers</a></li>
+            <li><a href="exam-maths-l2.html">Book Level 2 Maths Exam</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>English &amp; Digital</h4>
+          <ul class="footer-links">
+            <li><a href="functional-skills-english-level-2.html">English Level 2 Revision</a></li>
+            <li><a href="functional-skills-english-level-1.html">English Level 1 Revision</a></li>
+            <li><a href="entry-level-3-english.html">Entry Level 3 English</a></li>
+            <li><a href="digital-functional-skills-level-1.html">Digital Skills Level 1</a></li>
+            <li><a href="digital-functional-skills-entry-3.html">Digital Skills Entry 3</a></li>
+            <li><a href="digital-functional-skills-past-papers.html">DFS Past Papers &amp; Data Files</a></li>
+            <li><a href="digital-functional-skills-mock-exam.html">DFS Online Mock Simulator</a></li>
+            <li><a href="digital-functional-skills.html">Digital Skills Hub (E3 &amp; L1)</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Student Support &amp; Tools</h4>
+          <ul class="footer-links">
+            <li><a href="tools.html" style="color:var(--accent); font-weight:700;"><i class="fa-solid fa-screwdriver-wrench" style="margin-right:6px;"></i>All Interactive Tools Hub</a></li>
+            <li><a href="pass-mark-calculator.html">Pass Mark Calculator</a></li>
+            <li><a href="diagnostic-test.html">Diagnostic Skill Checker</a></li>
+            <li><a href="functional-skills-nets.html">3D Net Folding Tool</a></li>
+            <li><a href="digital-functional-skills-mock-exam.html">Pearson DFS Simulator</a></li>
+            <li><a href="revision-cards.html">Revision Cards &amp; Flashcards</a></li>
+            <li><a href="shop.html">Revision Books &amp; Study Packs</a></li>
+            <li><a href="tutors.html">1-to-1 Specialist Tuition</a></li>
+            <li><a href="exams.html">Book Official Online Exam</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>&copy; 2026 Master Functional Skills. All rights reserved. Registered in England &amp; Wales. Ofqual Regulated Qualification Standards.</div>
+        <div style="display:flex; gap:16px; flex-wrap:wrap;">
+          <a href="index.html">Home</a>
+          <a href="tools.html" style="color:var(--accent); font-weight:700;">Tools</a>
+          <a href="functional-skills-past-papers.html">Past Papers</a>
+          <a href="revision-cards.html">Revision Cards</a>
+          <a href="shop.html">Study Shop</a>
+          <a href="tutors.html">Tutors</a>
+          <a href="open-awards-functional-skills.html">Open Awards Guide</a>
+          <a href="centre-policies.html">Policies &amp; Access</a>
+          <a href="contact-us.html">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <script src="assets/js/mfs-tint.js?v=20261120v12"></script>
+</body>
+</html>

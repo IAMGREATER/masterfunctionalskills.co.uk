@@ -1361,25 +1361,39 @@
       }
     }
 
-    /* Phase 2D: Mobile-ONLY Full-Screen Mode on Revision Cards (strictly hidden on tablet >= 768px & desktop) */
+    /* Phase 2D+: Mobile-ONLY Full-Screen Mode on Revision Cards (strictly phones: portrait <= 767px or coarse-pointer landscape <= 500px height; hidden on tablet & desktop) */
+    .rc-mobile-quickbar,
     .rc-mobile-fs-btn,
     .rc-fs-topbar {
       display: none !important;
     }
 
-    @media (max-width: 767px) {
+    @media (max-width: 767px), (max-height: 500px) and (pointer: coarse) {
+      .rc-mobile-quickbar {
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 8px !important;
+        margin: 0 0 8px 0 !important;
+        padding: 0 2px !important;
+      }
+      .rc-mobile-quick-counter {
+        font-size: 0.84rem !important;
+        font-weight: 800 !important;
+        color: var(--navy, #0f172a) !important;
+      }
       .rc-mobile-fs-btn {
         display: inline-flex !important;
         align-items: center !important;
         justify-content: center !important;
         gap: 6px !important;
-        min-height: 40px !important;
-        padding: 8px 13px !important;
-        border-radius: 12px !important;
+        min-height: 36px !important;
+        padding: 6px 12px !important;
+        border-radius: 10px !important;
         background: #0f172a !important;
         color: #ffffff !important;
         border: 1.5px solid #0284c7 !important;
-        font-size: 0.85rem !important;
+        font-size: 0.82rem !important;
         font-weight: 800 !important;
         cursor: pointer !important;
         box-shadow: 0 2px 8px rgba(15, 23, 42, 0.2) !important;
@@ -1393,6 +1407,7 @@
       body.rc-mobile-fullscreen #rcToolsDrawer,
       body.rc-mobile-fullscreen footer,
       body.rc-mobile-fullscreen .mobile-card-gesture-hint,
+      body.rc-mobile-fullscreen .rc-mobile-quickbar,
       body.rc-mobile-fullscreen #rcMobileFsBtn {
         display: none !important;
       }
@@ -1403,7 +1418,7 @@
         background: var(--bg-page, #faf8f2) !important;
         display: flex !important;
         flex-direction: column !important;
-        padding: env(safe-area-inset-top, 8px) 10px env(safe-area-inset-bottom, 10px) !important;
+        padding: max(8px, env(safe-area-inset-top)) max(10px, env(safe-area-inset-right)) max(10px, env(safe-area-inset-bottom)) max(10px, env(safe-area-inset-left)) !important;
         box-sizing: border-box !important;
         width: 100vw !important;
         height: 100dvh !important;
@@ -1440,15 +1455,78 @@
         align-items: stretch !important;
         padding: 0 !important;
         min-height: 0 !important;
+        max-width: 100% !important;
+        width: 100% !important;
       }
       body.rc-mobile-fullscreen .flip-card {
+        aspect-ratio: auto !important;
+        width: 100% !important;
         height: 100% !important;
         max-height: none !important;
         min-height: 0 !important;
       }
+      body.rc-mobile-fullscreen .postcard-body {
+        min-height: 0 !important;
+        overflow-y: auto !important;
+        -webkit-overflow-scrolling: touch !important;
+      }
       body.rc-mobile-fullscreen .deck-controls {
         flex-shrink: 0 !important;
         margin-top: 8px !important;
+        max-width: 100% !important;
+      }
+    }
+
+    @media (max-height: 500px) and (pointer: coarse) {
+      body.rc-mobile-fullscreen #deckViewContainer {
+        padding: max(4px, env(safe-area-inset-top)) max(12px, env(safe-area-inset-right)) max(6px, env(safe-area-inset-bottom)) max(12px, env(safe-area-inset-left)) !important;
+      }
+      body.rc-mobile-fullscreen .rc-fs-topbar {
+        padding: 2px 4px 4px !important;
+      }
+      body.rc-mobile-fullscreen .rc-fs-exit-btn {
+        min-height: 30px !important;
+        padding: 4px 10px !important;
+        font-size: 0.78rem !important;
+      }
+      body.rc-mobile-fullscreen .card-header-bar,
+      body.rc-mobile-fullscreen .card-footer-strip {
+        padding: 4px 10px !important;
+      }
+      body.rc-mobile-fullscreen .postcard-body {
+        padding: 6px 12px !important;
+        overflow-y: auto !important;
+        min-height: 0 !important;
+      }
+      body.rc-mobile-fullscreen .diagram-holder {
+        max-height: 96px !important;
+        min-height: 60px !important;
+        height: 84px !important;
+      }
+      body.rc-mobile-fullscreen .scratchpad-area {
+        min-height: 50px !important;
+        height: 60px !important;
+      }
+      body.rc-mobile-fullscreen .answer-box {
+        min-height: 55px !important;
+        max-height: 110px !important;
+      }
+      body.rc-mobile-fullscreen .deck-controls {
+        margin-top: 5px !important;
+        gap: 6px !important;
+        flex-wrap: nowrap !important;
+        justify-content: center !important;
+        max-width: 100% !important;
+      }
+      body.rc-mobile-fullscreen .deck-controls .control-btn,
+      body.rc-mobile-fullscreen .deck-controls .btn-practice,
+      body.rc-mobile-fullscreen .deck-controls .btn-mastered {
+        padding: 5px 9px !important;
+        font-size: 0.76rem !important;
+        white-space: nowrap !important;
+      }
+      body.rc-mobile-fullscreen .deck-controls .btn-kbd {
+        display: none !important;
       }
     }
 
@@ -1790,6 +1868,13 @@
           </button>
         </div>
 
+        <div class="rc-mobile-quickbar" id="rcMobileQuickbar">
+          <span class="rc-mobile-quick-counter" id="rcMobileQuickCounter">Card 1 of 266</span>
+          <button type="button" id="rcMobileFsBtn" class="rc-mobile-fs-btn" onclick="enterMobileCardFullscreen()" aria-label="Full Screen Card View">
+            <i class="fa-solid fa-expand"></i> Full Screen
+          </button>
+        </div>
+
         <div class="deck-viewport">
           <div class="flip-card" id="activeFlipCard" onclick="toggleCardFlip(event)">
           
@@ -1904,10 +1989,6 @@
         <!-- Flip Button -->
         <button class="control-btn control-btn-primary" onclick="toggleCardFlip(event)" title="Flip Card (Space)">
           <i class="fa-solid fa-arrows-rotate"></i> Flip Card <kbd class="btn-kbd btn-kbd-primary">Space</kbd>
-        </button>
-
-        <button type="button" id="rcMobileFsBtn" class="rc-mobile-fs-btn" onclick="enterMobileCardFullscreen()" aria-label="Full Screen Card View">
-          <i class="fa-solid fa-expand"></i> Full Screen
         </button>
 
         <!-- Active Recall Mastery Buttons -->
@@ -2342,6 +2423,8 @@
         document.getElementById('cardCounterTextBack').textContent = '0 of 0';
         const fsEmptyEl = document.getElementById('rcFsCounter');
         if (fsEmptyEl) fsEmptyEl.textContent = '0 of 0';
+        const quickEmptyEl = document.getElementById('rcMobileQuickCounter');
+        if (quickEmptyEl) quickEmptyEl.textContent = '0 of 0';
         updateMasteryButtonsState();
         return;
       }
@@ -2366,6 +2449,8 @@
       document.getElementById('cardCounterText').textContent = `Card ${currentIndex + 1} of ${filteredCards.length}`;
       const fsCountEl = document.getElementById('rcFsCounter');
       if (fsCountEl) fsCountEl.textContent = `Card ${currentIndex + 1} of ${filteredCards.length}`;
+      const quickCountEl = document.getElementById('rcMobileQuickCounter');
+      if (quickCountEl) quickCountEl.textContent = `Card ${currentIndex + 1} of ${filteredCards.length}`;
 
       // Back Face
       const bNum = document.getElementById('backCardNumBadge');
@@ -2527,9 +2612,17 @@
       }
     }
 
-    // Mobile-ONLY Full-Screen Card Mode (strictly <= 767px)
+    // Mobile-ONLY Full-Screen Card Mode (strictly phones: portrait <= 767px or coarse-pointer landscape <= 500px height)
+    const RC_MOBILE_FS_MQ = '(max-width: 767px), (max-height: 500px) and (pointer: coarse)';
+    let rcEnteredNativeFullscreen = false;
+
+    function isMobilePhoneViewport() {
+      return window.matchMedia(RC_MOBILE_FS_MQ).matches;
+    }
+
     function enterMobileCardFullscreen() {
-      if (window.innerWidth > 767) return;
+      if (!isMobilePhoneViewport()) return;
+      rcEnteredNativeFullscreen = false;
       document.body.classList.add('rc-mobile-fullscreen');
       const topbar = document.getElementById('rcFsTopbar');
       if (topbar) topbar.setAttribute('aria-hidden', 'false');
@@ -2540,14 +2633,18 @@
       try {
         const el = document.documentElement;
         if (el.requestFullscreen) {
-          el.requestFullscreen().catch(() => {});
+          el.requestFullscreen().then(() => {
+            rcEnteredNativeFullscreen = true;
+          }).catch(() => {});
         } else if (el.webkitRequestFullscreen) {
           el.webkitRequestFullscreen();
+          rcEnteredNativeFullscreen = true;
         }
       } catch (e) {}
     }
 
     function exitMobileCardFullscreen() {
+      rcEnteredNativeFullscreen = false;
       document.body.classList.remove('rc-mobile-fullscreen');
       const topbar = document.getElementById('rcFsTopbar');
       if (topbar) topbar.setAttribute('aria-hidden', 'true');
@@ -2560,11 +2657,25 @@
       } catch (e) {}
     }
 
-    window.addEventListener('resize', () => {
-      if (window.innerWidth >= 768 && document.body.classList.contains('rc-mobile-fullscreen')) {
+    function handleMobileFsViewportChange() {
+      if (!isMobilePhoneViewport() && document.body.classList.contains('rc-mobile-fullscreen')) {
         exitMobileCardFullscreen();
       }
-    });
+    }
+
+    function handleNativeFullscreenChange() {
+      if (document.fullscreenElement || document.webkitFullscreenElement) {
+        rcEnteredNativeFullscreen = true;
+      } else if (rcEnteredNativeFullscreen && document.body.classList.contains('rc-mobile-fullscreen')) {
+        rcEnteredNativeFullscreen = false;
+        document.body.classList.remove('rc-mobile-fullscreen');
+        const topbar = document.getElementById('rcFsTopbar');
+        if (topbar) topbar.setAttribute('aria-hidden', 'true');
+      }
+    }
+
+    window.addEventListener('resize', handleMobileFsViewportChange);
+    window.addEventListener('orientationchange', handleMobileFsViewportChange);
 
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && document.body.classList.contains('rc-mobile-fullscreen')) {
@@ -2572,11 +2683,8 @@
       }
     });
 
-    document.addEventListener('fullscreenchange', () => {
-      if (!document.fullscreenElement && document.body.classList.contains('rc-mobile-fullscreen') && window.innerWidth >= 768) {
-        document.body.classList.remove('rc-mobile-fullscreen');
-      }
-    });
+    document.addEventListener('fullscreenchange', handleNativeFullscreenChange);
+    document.addEventListener('webkitfullscreenchange', handleNativeFullscreenChange);
 
     document.addEventListener('DOMContentLoaded', () => {
       const toolsDrawer = document.getElementById('rcToolsDrawer');

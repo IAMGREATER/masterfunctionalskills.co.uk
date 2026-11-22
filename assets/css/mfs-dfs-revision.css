@@ -761,12 +761,37 @@ body {
   border: 2px solid #cbd5e1;
   border-radius: var(--radius-md);
   font-family: inherit;
-  font-size: 0.95rem;
+  font-size: 16px;
   line-height: 1.6;
   color: #1e293b;
   resize: vertical;
   background: #fafafa;
   transition: border-color 0.2s ease, background 0.2s ease;
+  box-sizing: border-box;
+}
+
+.dfs-widget-card input[type="text"],
+.dfs-widget-card input[type="email"],
+.dfs-widget-card input[type="password"],
+.dfs-widget-card input[type="number"],
+.dfs-widget-card select,
+.dfs-lab-card input[type="text"],
+.dfs-lab-card input[type="email"],
+.dfs-lab-card input[type="password"],
+.dfs-lab-card input[type="number"],
+.dfs-lab-card select {
+  min-height: 46px;
+  padding: 10px 14px;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+
+.dfs-widget-card textarea,
+.dfs-lab-card textarea {
+  min-height: 120px;
+  padding: 12px 14px;
+  font-size: 16px;
+  box-sizing: border-box;
 }
 
 .dfs-scratchpad-area:focus {

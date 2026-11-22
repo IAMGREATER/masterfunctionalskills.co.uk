@@ -7626,7 +7626,7 @@
           ${Object.entries(data.dimensions).map(([k, v]) => `
             <div>
               <label style="font-size:0.75rem; text-transform:uppercase; color:var(--text-muted); font-weight:700;">${k} (cm):</label>
-              <input type="number" class="sa-input" data-dim="${k}" value="${v}" min="0.1" step="0.5" max="100" style="width:75px; padding:6px 8px; border-radius:6px; background:#1e293b; border:1.5px solid var(--border-color); color:#fff; font-weight:bold;">
+              <input type="number" class="sa-input" data-dim="${k}" value="${v}" min="0.1" step="0.5" max="100" style="min-width:88px; min-height:42px; padding:8px 10px; font-size:16px; border-radius:6px; background:#1e293b; border:1.5px solid var(--border-color); color:#fff; font-weight:bold; box-sizing:border-box;">
             </div>
           `).join('')}
         </div>

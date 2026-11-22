@@ -83,7 +83,7 @@
         <p class="dfs-lab-sub">Part A: Walk through choosing a safe new password, then Part B: pick the genuine reset message.</p>
         <label for="mfsPwTest" style="display:block; font-weight:700; color:#0f172a; margin-bottom:6px;">Type a sample passphrase to test strength (try 3 random words + a number, e.g. <code>RedMugRiver29!</code>):</label>
         <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center;">
-          <input id="mfsPwTest" type="password" placeholder="Type a practice passphrase..." style="flex:1 1 240px; padding:10px 14px; border:2px solid #cbd5e1; border-radius:10px; font-size:1rem;">
+          <input id="mfsPwTest" type="password" placeholder="Type a practice passphrase..." style="flex:1 1 240px; min-height:46px; padding:10px 14px; border:2px solid #cbd5e1; border-radius:10px; font-size:16px; box-sizing:border-box;">
           <button type="button" class="b-eye" style="padding:10px 14px; border-radius:10px; border:1px solid #94a3b8; background:#f8fafc; font-weight:700; cursor:pointer;"><i class="fa-regular fa-eye"></i> Show / Hide</button>
         </div>
         <div class="b-pw-fb" style="margin-top:8px;"></div>
@@ -166,7 +166,7 @@
         <div class="dfs-lab-head"><i class="fa-solid fa-folder-open"></i> File Search, Tidy Folders &amp; Filename Lab</div>
         <p class="dfs-lab-sub">Step 1: Type a clean filename for Samira's CV saved in November 2026 (avoid spaces/messy words like "new final 1" or forbidden slashes):</p>
         <div style="display:flex; flex-wrap:wrap; gap:10px;">
-          <input type="text" class="b-fname" placeholder="e.g. Samira Patel CV Nov 2026" style="flex:1 1 240px; padding:10px 14px; border:2px solid #cbd5e1; border-radius:10px; font-size:1rem;">
+          <input type="text" class="b-fname" placeholder="e.g. Samira Patel CV Nov 2026" style="flex:1 1 240px; min-height:46px; padding:10px 14px; border:2px solid #cbd5e1; border-radius:10px; font-size:16px; box-sizing:border-box;">
           <button type="button" class="b-fname-chk" style="padding:10px 18px; border-radius:10px; border:none; background:#0284c7; color:#fff; font-weight:700; cursor:pointer;">Check Filename</button>
         </div>
         <div class="b-fname-fb"></div>
@@ -205,14 +205,14 @@
       <div class="dfs-lab-card">
         <div class="dfs-lab-head"><i class="fa-solid fa-keyboard"></i> Universal Copy, Paste &amp; Undo Practice Pad</div>
         <p class="dfs-lab-sub">Highlight the phone number below, click <strong>Copy (Ctrl+C)</strong> (or press Ctrl+C), then click inside the lower box and click <strong>Paste (Ctrl+V)</strong>:</p>
-        <textarea class="b-src" rows="2" style="width:100%; padding:10px; border:2px solid #cbd5e1; border-radius:10px; font-size:1rem;">Community Learning Helpline: 0800 111 4040</textarea>
+        <textarea class="b-src" rows="3" style="width:100%; min-height:96px; padding:12px; border:2px solid #cbd5e1; border-radius:10px; font-size:16px; box-sizing:border-box;">Community Learning Helpline: 0800 111 4040</textarea>
         <div style="display:flex; flex-wrap:wrap; gap:8px; margin:10px 0;">
           <button type="button" class="b-sc" data-act="selectall" style="padding:8px 12px; border-radius:8px; border:1px solid #0284c7; background:#f0f9ff; color:#0369a1; font-weight:700; cursor:pointer;">Ctrl + A (Select All)</button>
           <button type="button" class="b-sc" data-act="copy" style="padding:8px 12px; border-radius:8px; border:1px solid #0284c7; background:#f0f9ff; color:#0369a1; font-weight:700; cursor:pointer;">Ctrl + C (Copy)</button>
           <button type="button" class="b-sc" data-act="paste" style="padding:8px 12px; border-radius:8px; border:1px solid #059669; background:#ecfdf5; color:#065f46; font-weight:700; cursor:pointer;">Ctrl + V (Paste Below)</button>
           <button type="button" class="b-sc" data-act="undo" style="padding:8px 12px; border-radius:8px; border:1px solid #d97706; background:#fffbeb; color:#92400e; font-weight:700; cursor:pointer;">Ctrl + Z (Undo)</button>
         </div>
-        <textarea class="b-dst" rows="2" placeholder="Paste text here..." style="width:100%; padding:10px; border:2px solid #cbd5e1; border-radius:10px; font-size:1rem;"></textarea>
+        <textarea class="b-dst" rows="3" placeholder="Paste text here..." style="width:100%; min-height:96px; padding:12px; border:2px solid #cbd5e1; border-radius:10px; font-size:16px; box-sizing:border-box;"></textarea>
         <div class="b-sc-fb"></div>
       </div>`;
     const src = host.querySelector('.b-src');
@@ -257,9 +257,9 @@
         <hr style="border:none; border-top:1px solid #e2e8f0; margin:16px 0;">
         <div style="font-weight:700; margin-bottom:8px;">2. Mini Form Validation Check (Required * fields):</div>
         <div style="display:grid; grid-template-columns:repeat(auto-fit,minmax(190px,1fr)); gap:10px;">
-          <input type="text" class="b-f-name" placeholder="Full Name *" style="padding:9px 12px; border:1px solid #cbd5e1; border-radius:8px;">
-          <input type="text" class="b-f-dob" placeholder="Date (DD/MM/YYYY) *" style="padding:9px 12px; border:1px solid #cbd5e1; border-radius:8px;">
-          <input type="text" class="b-f-pc" placeholder="Postcode (e.g. OX1 4AA) *" style="padding:9px 12px; border:1px solid #cbd5e1; border-radius:8px;">
+          <input type="text" class="b-f-name" placeholder="Full Name *" style="min-height:46px; padding:10px 14px; font-size:16px; border:1.5px solid #cbd5e1; border-radius:8px; box-sizing:border-box;">
+          <input type="text" class="b-f-dob" placeholder="Date (DD/MM/YYYY) *" style="min-height:46px; padding:10px 14px; font-size:16px; border:1.5px solid #cbd5e1; border-radius:8px; box-sizing:border-box;">
+          <input type="text" class="b-f-pc" placeholder="Postcode (e.g. OX1 4AA) *" style="min-height:46px; padding:10px 14px; font-size:16px; border:1.5px solid #cbd5e1; border-radius:8px; box-sizing:border-box;">
         </div>
         <button type="button" class="b-f-sub" style="margin-top:10px; padding:10px 18px; border-radius:8px; border:none; background:#0284c7; color:#fff; font-weight:700; cursor:pointer;">Check &amp; Submit Form</button>
         <div class="b-f-fb"></div>
@@ -383,7 +383,7 @@
           <p class="dfs-lab-sub">${ex.prompt}</p>
           <div style="display:flex; flex-wrap:wrap; gap:10px; align-items:center;">
             <span style="padding:10px 12px; background:#0f172a; color:#38bdf8; border-radius:8px; font-weight:800; font-family:monospace;">fx</span>
-            <input type="text" class="b-ex-inp" placeholder="Type formula starting with = ..." style="flex:1 1 240px; padding:10px 14px; border:2px solid #cbd5e1; border-radius:10px; font-family:monospace; font-size:1.05rem;">
+            <input type="text" class="b-ex-inp" placeholder="Type formula starting with = ..." style="flex:1 1 240px; min-height:46px; padding:10px 14px; border:2px solid #cbd5e1; border-radius:10px; font-family:monospace; font-size:16px; box-sizing:border-box;">
             <button type="button" class="b-ex-run" style="padding:10px 18px; border-radius:10px; border:none; background:#059669; color:#fff; font-weight:700; cursor:pointer;">Press Enter</button>
           </div>
           <div class="b-ex-fb"></div>

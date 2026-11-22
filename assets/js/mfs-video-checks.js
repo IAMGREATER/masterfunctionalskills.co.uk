@@ -778,10 +778,9 @@
         return null;
       }
       if (contexts.topic) cleanupPlayer(contexts.topic);
-      var isMobileViewport = Boolean(window.matchMedia && window.matchMedia('(max-width: 768px)').matches);
       var ctx = createContext('topic', mount, video, {
         compact: false,
-        collapsed: isMobileViewport,
+        collapsed: true,
         getMediaEl: function () {
           return document.getElementById('topicMasterclassIframe');
         },
@@ -816,7 +815,7 @@
       if (contexts.station) cleanupPlayer(contexts.station);
       var ctx = createContext('station', mount, video, {
         compact: false,
-        collapsed: false,
+        collapsed: true,
         getMediaEl: function () {
           return document.getElementById('stationLocalPlayer') ||
                  document.getElementById('stationYtPlayer') ||

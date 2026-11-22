@@ -675,9 +675,10 @@ body {
 
 .sim-final-input {
   border: 2px solid #cbd5e1;
-  border-radius: 6px;
-  padding: 6px 10px;
-  font-size: calc(0.88rem * var(--sim-scale, 1));
+  border-radius: 8px;
+  min-height: 48px;
+  padding: 10px 14px;
+  font-size: max(16px, calc(1rem * var(--sim-scale, 1)));
   font-weight: 700;
   color: var(--sim-navy);
   width: 100%;
@@ -783,10 +784,10 @@ body {
 .sim-subpart-input-wrap {
   display: flex;
   align-items: center;
-  gap: 6px;
+  gap: 8px;
   flex: 1;
-  max-width: 340px;
-  min-width: 0;
+  max-width: 440px;
+  min-width: 190px;
 }
 
 /* Built-in Onscreen Calculator: Docked at bottom right in Section B */
@@ -1593,16 +1594,17 @@ body {
 }
 
 .sim-candidate-input {
-  border: 1px solid #cbd5e1;
-  border-radius: 4px;
-  padding: 5px 10px;
-  font-size: 0.86rem;
+  border: 2px solid #cbd5e1;
+  border-radius: 8px;
+  min-height: 44px;
+  padding: 10px 14px;
+  font-size: 16px;
   font-weight: 800;
   color: var(--sim-navy);
-  text-align: right;
+  text-align: left;
   margin-left: auto;
   width: 100%;
-  max-width: 190px;
+  max-width: 280px;
   background: #ffffff;
   outline: none;
   font-family: inherit;
@@ -1618,7 +1620,7 @@ body {
 .sim-candidate-input::placeholder {
   color: #94a3b8;
   font-weight: 400;
-  text-align: right;
+  text-align: left;
 }
 
 .sim-cover-declaration {
@@ -1787,17 +1789,17 @@ body {
 }
 .sim-planning-textarea {
   width: 100%;
-  border: 1px solid #fde68a;
-  border-radius: 5px;
-  padding: 6px 10px;
-  font-size: 0.86rem;
+  border: 1.5px solid #fcd34d;
+  border-radius: 8px;
+  padding: 12px 14px;
+  font-size: max(16px, 1rem);
   font-family: 'Lexend', system-ui, sans-serif;
   background: #ffffff;
   color: #1e293b;
   resize: vertical;
-  min-height: 60px;
-  height: 60px;
-  margin-top: 4px;
+  min-height: 120px;
+  height: auto;
+  margin-top: 6px;
   box-sizing: border-box;
 }
 
@@ -1975,10 +1977,12 @@ body {
 .sim-reading-textarea-wrap textarea {
   width: 100% !important;
   height: 100% !important;
-  min-height: 140px !important;
+  min-height: 150px !important;
   font-family: 'Lexend', system-ui, -apple-system, sans-serif !important;
-  font-size: calc(0.92rem * var(--sim-scale, 1)) !important;
+  font-size: max(16px, calc(0.96rem * var(--sim-scale, 1))) !important;
   line-height: 1.6 !important;
+  padding: 12px 14px !important;
+  box-sizing: border-box !important;
 }
 
 /* Mode-Specific Rules & Clutter Removal */
@@ -2676,9 +2680,9 @@ body {
   .sim-paper-dropdown {
     width: 100% !important;
     max-width: 100% !important;
-    min-height: 36px !important;
-    padding: 6px 8px !important;
-    font-size: 0.82rem !important;
+    min-height: 42px !important;
+    padding: 8px 10px !important;
+    font-size: 16px !important;
   }
   .sim-controls-right {
     flex: 0 0 auto !important;
@@ -2937,8 +2941,20 @@ body {
   .sim-template-btn {
     flex: 0 0 auto !important;
   }
+  .sim-subpart-ans-row {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+  }
+  .sim-subpart-input-wrap {
+    max-width: 100%;
+    width: 100%;
+    min-width: 0;
+  }
   .sim-working-textarea {
     min-height: 170px !important;
+    font-size: max(16px, calc(0.98rem * var(--sim-scale, 1))) !important;
+    padding: 12px 14px !important;
   }
 
   /* 6. Floating Popup Calculator Overlay on Mobile (Never Squeezes Typing Area) */
@@ -3070,6 +3086,57 @@ body {
     z-index: 950 !important;
     max-height: 55vh !important;
     overflow-y: auto !important;
+  }
+
+  .sim-section-tabs-bar {
+    flex-wrap: wrap !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    overflow-x: hidden !important;
+  }
+  .sim-sec-tab-btn {
+    flex: 1 1 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
+    white-space: normal !important;
+    flex-wrap: wrap !important;
+    justify-content: space-between !important;
+    padding: 8px 10px !important;
+    font-size: 0.80rem !important;
+    box-sizing: border-box !important;
+  }
+  .sim-sec-title {
+    white-space: normal !important;
+    min-width: 0 !important;
+    text-align: left !important;
+  }
+  .sim-cover-instructions-card,
+  .sim-cover-candidate-card {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    width: 100% !important;
+    box-sizing: border-box !important;
+    padding: 14px !important;
+    overflow-wrap: anywhere !important;
+  }
+  .sim-cover-list {
+    padding-left: 16px !important;
+    overflow-wrap: anywhere !important;
+  }
+  .sim-candidate-row {
+    flex-wrap: wrap !important;
+  }
+  .sim-candidate-row span,
+  .sim-candidate-row strong {
+    white-space: normal !important;
+    min-width: 0 !important;
+    text-align: left !important;
+  }
+  .sim-candidate-input {
+    max-width: 100% !important;
+    width: 100% !important;
+    margin-left: 0 !important;
   }
 }
 

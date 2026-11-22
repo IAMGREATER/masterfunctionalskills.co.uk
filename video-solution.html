@@ -17,9 +17,9 @@
   <meta name="apple-mobile-web-app-title" content="MFS Skills">
   <link rel="apple-touch-icon" href="assets/img/favicon-192x192.png">
   <script src="assets/js/mfs-pwa.js" defer></script>
-  <link rel="stylesheet" href="assets/css/mfs-theme.css?v=20261121v2">
-<link rel="stylesheet" href="assets/css/mfs-video-modal.css?v=20261121v2">
-  <link rel="stylesheet" href="assets/css/mfs-video-checks.css?v=20261121v1">
+  <link rel="stylesheet" href="assets/css/mfs-theme.css?v=20261122v1">
+<link rel="stylesheet" href="assets/css/mfs-video-modal.css?v=20261122v1">
+  <link rel="stylesheet" href="assets/css/mfs-video-checks.css?v=20261122v1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     body {
@@ -634,317 +634,339 @@
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
     }
 
-    @media (max-width: 860px) {
-      .video-hero-section {
-        padding: 8px 0 14px 0;
-      }
-      .video-hero-container {
-        display: flex;
-        flex-direction: column;
-        padding: 0 !important;
-        width: 100% !important;
-        max-width: 100% !important;
-      }
-      .video-breadcrumbs {
-        display: none !important;
-      }
+    /* Video studio media query rules handled cleanly in #mfs-video-studio-css */
+  </style>
+  <link rel="stylesheet" href="assets/css/mfs-mobile.css?v=20261122v1">
+  <style id="mfs-video-studio-css">
+    /* UNIFIED DECLUTTERED VIDEO STUDIO (Desktop, Tablet & Mobile) */
+    .video-studio-shell {
+      background: linear-gradient(180deg, #020617 0%, #0b1120 100%);
+      color: #f8fafc;
+      padding: 20px 0 52px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+      overflow-x: clip;
+    }
+    .video-studio-container {
+      max-width: 1280px;
+      margin: 0 auto;
+    }
+    .video-studio-shell .video-breadcrumbs {
+      display: flex;
+      align-items: center;
+      flex-wrap: nowrap;
+      gap: 8px;
+      font-size: 0.82rem;
+      color: #94a3b8;
+      margin: 0 0 14px 0;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .video-studio-shell .video-breadcrumbs span {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    .video-studio-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 365px;
+      gap: 24px;
+      align-items: start;
+    }
+    .video-studio-main {
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    .video-studio-shell .video-main-player-wrap {
+      position: relative !important;
+      width: 100% !important;
+      aspect-ratio: 16 / 9 !important;
+      height: auto !important;
+      padding-bottom: 0 !important;
+      margin: 0 !important;
+      background: #020617;
+      border: 1.5px solid rgba(56, 189, 248, 0.42);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 18px 42px rgba(0, 0, 0, 0.55);
+    }
+    .video-studio-shell .video-main-player-wrap iframe,
+    .video-studio-shell .video-main-player-wrap video {
+      position: absolute !important;
+      inset: 0 !important;
+      width: 100% !important;
+      height: 100% !important;
+      max-width: 100% !important;
+      border: 0 !important;
+      display: block !important;
+    }
+    .video-meta-bar {
+      background: rgba(15, 23, 42, 0.88);
+      border: 1px solid #1e293b;
+      border-radius: 14px;
+      padding: 16px 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+    .video-studio-shell .video-hero-header-block {
+      margin: 0 !important;
+      padding: 0 !important;
+      display: flex !important;
+      align-items: flex-start !important;
+      justify-content: space-between !important;
+      gap: 12px;
+    }
+    .video-studio-shell .hero-title-group {
+      min-width: 0;
+      flex: 1 1 auto;
+    }
+    .video-studio-shell .hero-title-group h1 {
+      font-size: 1.55rem !important;
+      line-height: 1.25 !important;
+      margin: 8px 0 0 0 !important;
+      color: #ffffff !important;
+    }
+    .video-actions-strip {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px 14px;
+    }
+    .video-studio-shell .section-switcher-bar {
+      margin: 0 !important;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+    .video-studio-shell .hero-quick-materials {
+      margin: 0 !important;
+      display: flex;
+      flex-direction: row !important;
+      flex-wrap: wrap !important;
+      align-items: center !important;
+      gap: 8px;
+    }
+    .video-studio-shell .mfs-video-placeholder-card {
+      padding: 16px 20px !important;
+      gap: 8px !important;
+      height: 100% !important;
+      width: 100% !important;
+      display: flex !important;
+      flex-direction: column !important;
+      align-items: center !important;
+      justify-content: center !important;
+      overflow-y: auto !important;
+      box-sizing: border-box !important;
+    }
+    .video-studio-shell .hero-quick-btn {
+      min-height: 40px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 7px;
+      padding: 8px 14px;
+      font-size: 0.86rem;
+      border-radius: 9px;
+      box-sizing: border-box;
+    }
+    .video-studio-shell .hero-quick-youtube {
+      background: #dc2626;
+      color: #ffffff;
+      border: 1.5px solid #ef4444;
+    }
+    .video-studio-shell .hero-quick-youtube:hover {
+      background: #b91c1c;
+    }
+    .video-studio-shell .video-transport-bar {
+      margin: 0 !important;
+    }
+    .video-studio-shell .btn-transport {
+      min-width: 0;
+    }
+    .video-studio-shell .transport-label-group {
+      min-width: 0;
+      overflow: hidden;
+    }
+    .video-studio-shell .transport-title {
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      max-width: 100%;
+    }
+    .video-studio-shell .station-video-dropdown {
+      min-height: 44px;
+      padding: 9px 32px 9px 38px !important;
+    }
+    .video-studio-shell .video-sidebar-panel {
+      position: sticky;
+      top: 84px;
+      min-width: 0;
+    }
+    .video-studio-shell .sidebar-card {
+      padding: 16px !important;
+      border-radius: 16px !important;
+      background: #0f172a !important;
+      border: 1px solid #1e293b !important;
+    }
+    .video-studio-shell .playlist-items-scroll {
+      max-height: 540px;
+    }
 
-      /* 1. Video Player FIRST on mobile */
-      .video-main-player-wrap {
-        order: 1;
-        margin-bottom: 10px;
-        border-radius: 0 !important;
-        width: 100% !important;
-        max-width: 100% !important;
-        box-shadow: 0 8px 24px rgba(0, 0, 0, 0.7);
+    @media (max-width: 1024px) {
+      .video-studio-shell {
+        padding: 14px 0 36px 0;
       }
-
-      /* 2. Compact Title & Badge SECOND */
-      .video-hero-header-block {
-        order: 2;
-        margin-bottom: 8px;
-        gap: 4px;
-      }
-      .hero-title-group h1 {
-        font-size: 1.15rem !important;
-        font-weight: 800 !important;
-        margin: 4px 0 2px 0 !important;
-        line-height: 1.25 !important;
-      }
-      .hero-title-group p {
-        font-size: 0.76rem !important;
-        color: #94a3b8 !important;
-        margin: 0 0 4px 0 !important;
-        line-height: 1.35 !important;
-      }
-      .badge-pill-edexcel {
-        font-size: 0.68rem !important;
-        padding: 2px 8px !important;
-      }
-      .hero-tutor-card {
-        display: none !important;
-      }
-
-      /* 3. Compact Section Switcher THIRD */
-      .section-switcher-bar {
-        order: 3;
-        display: grid !important;
-        grid-template-columns: 1fr 1fr;
-        gap: 6px;
-        width: 100%;
-        margin-bottom: 8px;
-      }
-      .btn-section-toggle {
-        width: 100%;
-        padding: 8px 6px !important;
-        font-size: 0.78rem !important;
-        font-weight: 700 !important;
-        justify-content: center !important;
-        text-align: center !important;
-        border-radius: 8px !important;
-        gap: 6px !important;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-
-      /* 4. Quick PDF Download Chips FOURTH — Compact 3-Column Pill Bar */
-      .hero-quick-materials {
-        order: 4;
-        display: grid !important;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 6px;
-        width: 100%;
-        margin-bottom: 8px;
-      }
-      .hero-quick-btn {
-        padding: 7px 6px;
-        font-size: 0.72rem;
-        justify-content: center;
-        text-align: center;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-
-      /* 5. Compact Transport Bar FIFTH */
-      .transport-meta {
-        font-size: 0.62rem;
-      }
-      .transport-title {
-        font-size: 0.74rem;
-      }
-      .transport-label-group {
-        min-width: 0 !important;
-      }
-
-      /* DETAILS GRID ON MOBILE: Concise Examiner Tips First, Compact Playlist Second */
-      .video-main-content {
-        padding: 10px 0 32px 0 !important;
-        width: 100% !important;
-        max-width: 100% !important;
-      }
-      .video-details-grid {
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        margin-top: 8px;
-        width: 100% !important;
-        max-width: 100% !important;
-      }
-      .video-content-panel {
-        order: 1 !important;
-      }
-      .video-sidebar-panel {
-        order: 2 !important;
-        gap: 12px;
-        width: 100% !important;
-        max-width: 100% !important;
-      }
-      .playlist-items-scroll {
-        max-height: 240px !important;
-      }
-      .hero-quick-btn .quick-lbl-long {
-        display: none !important;
-      }
-      .sidebar-card {
-        padding: 12px 10px;
-        border-radius: 0 !important;
-        border-left: none !important;
-        border-right: none !important;
-        width: 100% !important;
-        max-width: 100% !important;
-      }
-      .sidebar-card-title {
-        font-size: 0.94rem;
-        margin-bottom: 10px;
-      }
-      .sidebar-tab-nav {
-        margin-bottom: 10px;
-      }
-      .sidebar-tab-btn {
-        padding: 7px 8px;
-        font-size: 0.78rem;
-      }
-      .playlist-filter-bar {
-        gap: 4px;
-        margin-bottom: 10px;
-      }
-      .filter-chip {
-        padding: 3px 7px;
-        font-size: 0.68rem;
-      }
-      .playlist-items-scroll {
-        max-height: 320px;
-        gap: 6px;
-      }
-      .playlist-item-card {
-        padding: 7px 8px;
-        gap: 8px;
-      }
-      .playlist-thumb-box {
-        width: 52px;
-        height: 32px;
-      }
-      .playlist-item-title {
-        font-size: 0.76rem;
-      }
-      .playlist-item-tag {
-        font-size: 0.6rem;
-      }
-
-      /* CONTENT PANEL: Examiner Tips & Pitfalls */
-      .video-content-panel {
-        order: 2;
-        padding: 16px 12px;
-        border-radius: 12px;
-      }
-      .video-content-panel h2 {
-        font-size: 1.12rem !important;
-        margin-bottom: 6px !important;
-      }
-      .video-content-panel p#panelDesc {
-        font-size: 0.86rem !important;
-        line-height: 1.5 !important;
-      }
-      .video-content-panel h3 {
-        font-size: 0.95rem !important;
-        margin-top: 18px !important;
-      }
-      .criteria-grid {
+      .video-studio-grid {
         grid-template-columns: 1fr;
-        gap: 8px;
-        margin-top: 10px;
+        gap: 18px;
       }
-      .criteria-grid > div {
+      .video-studio-shell .video-sidebar-panel {
+        position: static;
+      }
+      .video-studio-shell .playlist-items-scroll {
+        max-height: 420px;
+      }
+      .video-studio-shell .hero-title-group h1 {
+        font-size: 1.32rem !important;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .video-studio-shell {
+        padding: 0 0 28px 0 !important;
+      }
+      .video-studio-container {
+        padding: 0 12px !important;
+      }
+      .video-studio-shell .video-breadcrumbs {
+        display: none !important;
+      }
+      .video-studio-shell .video-main-player-wrap {
+        width: calc(100% + 24px) !important;
+        max-width: calc(100% + 24px) !important;
+        margin: 0 -12px !important;
+        border-radius: 0 !important;
+        border-left: 0 !important;
+        border-right: 0 !important;
+      }
+      .video-studio-shell .mfs-video-placeholder-card {
         padding: 12px 14px !important;
+        gap: 8px !important;
       }
-      .video-content-panel ul {
-        font-size: 0.86rem !important;
-        line-height: 1.55 !important;
-        padding-left: 18px !important;
+      .video-studio-shell .mfs-placeholder-icon-wrap,
+      .video-studio-shell .mfs-placeholder-badge,
+      .video-studio-shell .mfs-placeholder-text {
+        display: none !important;
+      }
+      .video-studio-shell .mfs-placeholder-heading {
+        font-size: 1.05rem !important;
+        line-height: 1.25 !important;
+        margin: 0 !important;
+      }
+      .video-studio-shell .mfs-video-placeholder-card > div:last-child {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 6px !important;
+        margin-top: 4px !important;
+        width: 100% !important;
+      }
+      .video-studio-shell .mfs-video-placeholder-card a {
+        padding: 7px 11px !important;
+        font-size: 0.74rem !important;
+        white-space: nowrap !important;
+      }
+      .video-meta-bar {
+        padding: 12px 14px !important;
+        border-radius: 12px !important;
+        gap: 10px !important;
+      }
+      .video-studio-shell .hero-title-group h1 {
+        font-size: 1.1rem !important;
         margin-top: 6px !important;
       }
-      .up-next-prompt {
-        padding: 12px 14px;
-        margin-top: 16px;
-        flex-direction: column;
-        align-items: stretch;
-        gap: 10px;
+      .video-studio-shell .hero-quick-btn {
+        min-height: 40px !important;
+        padding: 8px 12px !important;
+        font-size: 0.82rem !important;
       }
-      .up-next-prompt .btn-play-next {
-        width: 100%;
-        justify-content: center;
-        padding: 9px 14px !important;
+      .video-studio-shell .quick-lbl-long {
+        display: none;
       }
-    }
-
-    /* Mobile Portrait View Only: Sleek 1-Row [Prev Icon] [Topic Picker ▼] [Next Icon] Bar */
-    @media (max-width: 860px) and (orientation: portrait) {
-      .video-transport-bar {
-        order: 5;
-        display: flex !important;
-        flex-direction: row !important;
-        align-items: center !important;
-        justify-content: space-between !important;
-        gap: 6px !important;
-        padding: 6px 8px !important;
-        margin-top: 2px !important;
-        border-radius: 10px !important;
-      }
-      .transport-center-controls {
-        flex: 1 1 auto !important;
-        min-width: 0 !important;
-        max-width: none !important;
-      }
-      .station-video-dropdown {
-        padding: 8px 28px 8px 30px !important;
-        font-size: 0.81rem !important;
-        width: 100% !important;
-      }
-      .transport-picker-icon {
-        font-size: 0.84rem !important;
-        left: 10px !important;
-      }
-      .video-transport-bar .transport-label-group {
-        display: none !important;
-      }
-      .btn-transport-prev,
-      .btn-transport-next {
-        flex: 0 0 40px !important;
-        width: 40px !important;
-        height: 38px !important;
-        min-width: 40px !important;
-        max-width: 40px !important;
-        padding: 0 !important;
-        border-radius: 8px !important;
-        justify-content: center !important;
-        align-items: center !important;
-      }
-    }
-
-    /* Mobile Landscape View: Single row transport bar */
-    @media (max-width: 860px) and (orientation: landscape) {
-      .video-transport-bar {
-        order: 5;
-        display: flex !important;
-        flex-direction: row !important;
-        justify-content: space-between !important;
+      .video-studio-shell .video-transport-bar {
+        display: grid !important;
+        grid-template-columns: 44px minmax(0, 1fr) 44px !important;
         align-items: center !important;
         gap: 8px !important;
-        padding: 6px 10px !important;
-        margin-top: 2px !important;
-        border-radius: 10px !important;
+        padding: 8px 10px !important;
       }
-      .transport-center-controls {
-        flex: 1 1 auto !important;
-        max-width: none !important;
-        min-width: 0 !important;
+      .video-studio-shell .btn-transport-prev {
+        grid-column: 1;
+        width: 44px !important;
+        min-width: 44px !important;
+        height: 44px !important;
+        justify-content: center;
+        padding: 0 !important;
       }
-      .station-video-dropdown {
-        padding: 7px 28px 7px 30px !important;
-        font-size: 0.80rem !important;
+      .video-studio-shell .transport-center-controls {
+        grid-column: 2;
+        width: 100%;
+        min-width: 0;
       }
-      .transport-picker-icon {
-        font-size: 0.85rem !important;
-        left: 10px !important;
+      .video-studio-shell .btn-transport-next {
+        grid-column: 3;
+        width: 44px !important;
+        min-width: 44px !important;
+        height: 44px !important;
+        justify-content: center;
+        padding: 0 !important;
       }
-      .btn-transport-prev,
-      .btn-transport-next {
-        flex: 0 0 auto !important;
-        min-width: 120px !important;
-        max-width: 220px !important;
-        width: auto !important;
-        padding: 6px 10px !important;
-        border-radius: 8px !important;
+      .video-studio-shell .station-video-dropdown {
+        font-size: 16px !important;
+        min-height: 44px !important;
+      }
+      .video-studio-shell .filter-chip {
+        min-height: 36px !important;
+        padding: 6px 11px !important;
+        font-size: 0.76rem !important;
+      }
+      .video-studio-shell .playlist-items-scroll {
+        max-height: 380px;
+      }
+    }
+
+    @media (max-width: 950px) and (max-height: 500px) and (orientation: landscape) {
+      .video-studio-shell .video-main-player-wrap {
+        max-height: 76dvh !important;
+        width: min(100%, calc(76dvh * 16 / 9)) !important;
+        margin: 0 auto !important;
+        border-radius: 12px !important;
+      }
+      .video-studio-shell .mfs-video-placeholder-card {
+        padding: 10px 14px !important;
         gap: 6px !important;
       }
-      .btn-transport-next {
-        justify-content: flex-end !important;
+      .video-studio-shell .mfs-placeholder-icon-wrap,
+      .video-studio-shell .mfs-placeholder-text {
+        display: none !important;
+      }
+      .video-studio-shell .mfs-video-placeholder-card > div:last-child {
+        display: flex !important;
+        flex-wrap: wrap !important;
+        justify-content: center !important;
+        gap: 8px !important;
+        margin-top: 4px !important;
+      }
+      .video-studio-shell .mfs-video-placeholder-card a {
+        padding: 7px 12px !important;
+        font-size: 0.78rem !important;
       }
     }
   </style>
-  <link rel="stylesheet" href="assets/css/mfs-mobile.css?v=20261121v2">
   <link rel="canonical" href="https://masterfunctionalskills.co.uk/video-solution.html">
   <!-- MFS-OG-START -->
   <meta property="og:type" content="website">
@@ -1153,152 +1175,128 @@
     <script src="assets/js/mfs-mobile.js?v=20261121v2" defer></script>
   </header>
 
-  <!-- VIDEO PLAYER HERO SECTION -->
-  <section class="video-hero-section">
-    <div class="video-hero-container">
+  <!-- UNIFIED DARK VIDEO STUDIO -->
+  <main class="video-studio-shell" id="videoStudioMain">
+    <div class="mfs-container video-studio-container">
       <div class="video-breadcrumbs">
         <a href="index.html">Home</a>
-        <i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i>
-        <a href="maths-level-2.html">Curriculum Hub</a>
-        <i class="fa-solid fa-chevron-right" style="font-size:0.7rem;"></i>
-        <span id="breadcrumbTopic">Topic Video Solution</span>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a href="revise.html">Revise</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <a href="functional-skills-past-papers.html">Past Papers</a>
+        <i class="fa-solid fa-chevron-right"></i>
+        <span id="breadcrumbTopic">Loading...</span>
       </div>
 
-      <div class="video-hero-header-block">
-        <div class="hero-title-group">
-          <span class="badge-pill-edexcel" id="heroBadge"><i class="fa-solid fa-video"></i> Official Video Solution</span>
-          <h1 id="heroTitle">Past Paper 10 • Section A: Non-Calculator</h1>
-          <p id="heroSubtitle">Functional Skills Video Walkthrough</p>
-        </div>
-      </div>
-
-      <!-- Section Switcher (shown for multi-section past papers) -->
-      <div id="sectionSwitcherBar" class="section-switcher-bar" style="display:none;"></div>
-
-      <!-- Quick Action Study Materials (Question Paper, Answers & YouTube) -->
-      <div class="hero-quick-materials" id="heroQuickMaterials" style="display:none;">
-        <a href="https://youtu.be/muSRa0fEsSs" target="_blank" rel="noopener" class="hero-quick-btn hero-quick-youtube" id="heroQuickYouTube" style="background:#dc2626; color:#fff; border:1.5px solid #ef4444;">
-          <i class="fa-brands fa-youtube"></i> <span>YouTube</span>
-        </a>
-        <a href="#" target="_blank" rel="noopener" class="hero-quick-btn hero-quick-worksheet" id="heroQuickWorksheet">
-          <i class="fa-regular fa-file-pdf"></i> <span>Worksheet<span class="quick-lbl-long"> (PDF)</span></span>
-        </a>
-        <a href="#" target="_blank" rel="noopener" class="hero-quick-btn hero-quick-answers" id="heroQuickAnswers">
-          <i class="fa-solid fa-circle-check"></i> <span>Answers</span>
-        </a>
-      </div>
-
-      <!-- Player Box -->
-      <div class="video-main-player-wrap" id="mainPlayerContainer">
-        <!-- Rendered by JavaScript -->
-      </div>
-
-      <!-- Video Transport & Quick Next/Prev Navigation Bar -->
-      <div class="video-transport-bar" id="videoTransportBar">
-        <button type="button" class="btn-transport btn-transport-prev" id="btnPrevVideo" onclick="window.MFS_STATION.prev()" title="Previous Video (Shift + P)">
-          <i class="fa-solid fa-backward-step"></i>
-          <div class="transport-label-group">
-            <span class="transport-meta"><i class="fa-solid fa-arrow-left"></i> Previous Video</span>
-            <span class="transport-title" id="prevVideoTitle">—</span>
+      <div class="video-studio-grid">
+        <!-- LEFT COLUMN: Player + Unified Meta/Actions + Transport + Concept Check -->
+        <div class="video-studio-main">
+          <!-- 1. 16:9 Player Box -->
+          <div class="video-main-player-wrap" id="mainPlayerContainer">
+            <!-- Rendered by JavaScript -->
           </div>
-        </button>
 
-        <div class="transport-center-controls">
-          <div class="transport-picker-wrap">
-            <i class="fa-solid fa-film transport-picker-icon"></i>
-            <select id="stationVideoPicker" class="station-video-dropdown" onchange="window.MFS_STATION.load(this.value)" aria-label="Select Video Walkthrough">
-              <!-- Dynamically populated -->
-            </select>
-          </div>
-        </div>
-
-        <button type="button" class="btn-transport btn-transport-next" id="btnNextVideo" onclick="window.MFS_STATION.next()" title="Next Video (Shift + N)">
-          <div class="transport-label-group" style="text-align:right;">
-            <span class="transport-meta">Next Video <i class="fa-solid fa-arrow-right"></i></span>
-            <span class="transport-title" id="nextVideoTitle">—</span>
-          </div>
-          <i class="fa-solid fa-forward-step"></i>
-        </button>
-      </div>
-
-      <!-- Interactive Video Concept Check & Examiner Trap CCQ Mount -->
-      <div id="mfsStationConceptCheck" class="mfs-station-checks-mount"></div>
-    </div>
-  </section>
-
-  <!-- MAIN CONTENT DETAILS SECTION -->
-  <main class="mfs-container video-main-content">
-    <div class="video-details-grid">
-      <!-- Left Content -->
-      <div class="video-content-panel">
-        <h2 style="font-size:1.25rem; font-weight:800; margin:0; color:#ffffff !important;" id="panelTitle">
-          Masterclass Walkthrough
-        </h2>
-
-        <!-- Up Next in Series Interactive Prompt -->
-        <div class="up-next-prompt" id="upNextBanner" style="margin-top:16px;">
-          <div style="display:flex; align-items:center; gap:14px;">
-            <div style="width:42px; height:42px; border-radius:10px; background:#2563eb; display:flex; align-items:center; justify-content:center; color:#fff; font-size:1.15rem; flex-shrink:0; box-shadow:0 4px 12px rgba(37,99,235,0.4);">
-              <i class="fa-solid fa-forward"></i>
+          <!-- 2. Unified Title, Badge, Section Switcher & Quick Study Links -->
+          <div class="video-meta-bar">
+            <div class="video-hero-header-block">
+              <div class="hero-title-group">
+                <span class="badge-pill-edexcel" id="heroBadge"><i class="fa-solid fa-video"></i> Official Video Solution</span>
+                <h1 id="heroTitle">Past Paper 10 • Section A: Non-Calculator</h1>
+              </div>
             </div>
-            <div>
-              <div style="font-size:0.72rem; font-weight:800; text-transform:uppercase; letter-spacing:0.7px; color:#38bdf8;">Next in Sequence</div>
-              <div id="upNextBannerTitle" style="font-size:1rem; font-weight:800; color:#fff; margin-top:2px;">Section B: Calculator (Full Walkthrough)</div>
-              <div id="upNextBannerMeta" style="font-size:0.8rem; color:#94a3b8; margin-top:1px;">Pearson Edexcel Functional Skills • 22 mins</div>
+
+            <div class="video-actions-strip">
+              <div id="sectionSwitcherBar" class="section-switcher-bar" style="display:none;"></div>
+              <div class="hero-quick-materials" id="heroQuickMaterials" style="display:none;">
+                <a href="https://youtu.be/muSRa0fEsSs" target="_blank" rel="noopener" class="hero-quick-btn hero-quick-youtube" id="heroQuickYouTube">
+                  <i class="fa-brands fa-youtube"></i> YouTube
+                </a>
+                <a href="#" target="_blank" rel="noopener" class="hero-quick-btn hero-quick-worksheet" id="heroQuickWorksheet">
+                  <i class="fa-regular fa-file-pdf"></i> <span class="quick-lbl-long">Question </span>Paper
+                </a>
+                <a href="#" target="_blank" rel="noopener" class="hero-quick-btn hero-quick-answers" id="heroQuickAnswers">
+                  <i class="fa-solid fa-circle-check"></i> Model Answers
+                </a>
+              </div>
             </div>
           </div>
-          <button type="button" class="btn-play-next" id="upNextBannerBtn" onclick="window.MFS_STATION.next()" style="padding:10px 18px; background:#2563eb; color:#fff; border:none; border-radius:8px; font-weight:700; font-size:0.9rem; cursor:pointer; display:inline-flex; align-items:center; gap:8px; white-space:nowrap; transition:background 0.2s; box-shadow:0 4px 12px rgba(37,99,235,0.4);">
-            <span>Watch Next</span> <i class="fa-solid fa-circle-play"></i>
-          </button>
-        </div>
-      </div>
 
-      <!-- Right Sidebar -->
-      <div class="video-sidebar-panel">
-        <div class="sidebar-card" style="padding:18px;">
-          <!-- Tab Navigation: Playlist vs Materials -->
-          <div class="sidebar-tab-nav">
-            <button type="button" class="sidebar-tab-btn active" id="tabBtnPlaylist" onclick="window.MFS_STATION.setSidebarTab('playlist')">
-              <i class="fa-brands fa-youtube" style="color:#ef4444;"></i> Masterclasses <span class="badge-count" id="sidebarPlaylistCount">11</span>
+          <!-- 3. Compact Prev / Picker / Next Transport Bar -->
+          <div class="video-transport-bar" id="videoTransportBar">
+            <button type="button" class="btn-transport btn-transport-prev" id="btnPrevVideo" onclick="window.MFS_STATION.prev()" title="Previous Video (Shift + P)">
+              <i class="fa-solid fa-backward-step"></i>
+              <div class="transport-label-group">
+                <span class="transport-meta"><i class="fa-solid fa-arrow-left"></i> Previous Video</span>
+                <span class="transport-title" id="prevVideoTitle">—</span>
+              </div>
             </button>
-            <button type="button" class="sidebar-tab-btn" id="tabBtnMaterials" onclick="window.MFS_STATION.setSidebarTab('materials')">
-              <i class="fa-solid fa-folder-open"></i> Materials
+
+            <div class="transport-center-controls">
+              <div class="transport-picker-wrap">
+                <i class="fa-solid fa-film transport-picker-icon"></i>
+                <select id="stationVideoPicker" class="station-video-dropdown" aria-label="Jump to any topic or past paper video">
+                  <option value="">Choose Video Walkthrough...</option>
+                </select>
+              </div>
+            </div>
+
+            <button type="button" class="btn-transport btn-transport-next" id="btnNextVideo" onclick="window.MFS_STATION.next()" title="Next Video (Shift + N)">
+              <div class="transport-label-group" style="text-align:right;">
+                <span class="transport-meta">Next Video <i class="fa-solid fa-arrow-right"></i></span>
+                <span class="transport-title" id="nextVideoTitle">—</span>
+              </div>
+              <i class="fa-solid fa-forward-step"></i>
             </button>
           </div>
 
-          <!-- TAB 1: Video Playlist Drawer -->
-          <div id="sidebarPlaylistTab" class="sidebar-tab-pane">
-            <div class="playlist-filter-bar">
-              <button type="button" class="filter-chip active" data-filter="all" onclick="window.MFS_STATION.filterPlaylist('all', this)">All (128)</button>
-              <button type="button" class="filter-chip" data-filter="topics" onclick="window.MFS_STATION.filterPlaylist('topics', this)"><i class="fa-brands fa-youtube" style="color:#ef4444;"></i> Masterclasses (76)</button>
-              <button type="button" class="filter-chip" data-filter="past-papers" onclick="window.MFS_STATION.filterPlaylist('past-papers', this)">Past Papers (36)</button>
-              <button type="button" class="filter-chip" data-filter="slc" onclick="window.MFS_STATION.filterPlaylist('slc', this)">Speaking & Listening (2)</button>
-              <button type="button" class="filter-chip" data-filter="e3-foundation" onclick="window.MFS_STATION.filterPlaylist('e3-foundation', this)">Entry 3 (14)</button>
-            </div>
-            <div id="playlistContainer" class="playlist-items-scroll">
-              <!-- Dynamically populated list -->
-            </div>
-          </div>
-
-          <!-- TAB 2: Topic Study Materials -->
-          <div id="sidebarMaterialsTab" class="sidebar-tab-pane" style="display:none;">
-            <div class="sidebar-card-title" style="margin-bottom:12px;">
-              <i class="fa-solid fa-folder-open" style="color:#38bdf8;"></i> Topic Study Materials
-            </div>
-            <a href="#" target="_blank" rel="noopener" class="res-link-btn res-link-worksheet" id="sideWorksheetBtn">
-              <span id="sideWorksheetLabel"><i class="fa-regular fa-file-pdf"></i> Question Worksheet</span>
-              <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            </a>
-            <a href="#" target="_blank" rel="noopener" class="res-link-btn res-link-answers" id="sideAnswersBtn">
-              <span id="sideAnswersLabel"><i class="fa-solid fa-circle-check"></i> Worked Answers [M1/A1]</span>
-              <i class="fa-solid fa-arrow-up-right-from-square"></i>
-            </a>
-            <a href="#" class="res-link-btn res-link-revise" id="sideReviseBtn">
-              <span id="sideReviseLabel"><i class="fa-solid fa-book-open"></i> Full Revision Guide</span>
-              <i class="fa-solid fa-arrow-right"></i>
-            </a>
-          </div>
+          <!-- 4. Collapsible Concept Check -->
+          <div id="mfsStationConceptCheck" class="mfs-station-checks-mount"></div>
         </div>
+
+        <!-- RIGHT COLUMN: Sticky Masterclasses Playlist & Materials Sidebar -->
+        <aside class="video-sidebar-panel">
+          <div class="sidebar-card">
+            <div class="sidebar-tab-nav">
+              <button type="button" class="sidebar-tab-btn active" id="tabBtnPlaylist" onclick="window.MFS_STATION.switchSidebarTab('playlist')">
+                <i class="fa-solid fa-list-ul"></i> Masterclasses <span id="sidebarPlaylistCount" class="badge-count">128</span>
+              </button>
+              <button type="button" class="sidebar-tab-btn" id="tabBtnMaterials" onclick="window.MFS_STATION.switchSidebarTab('materials')">
+                <i class="fa-solid fa-folder-open"></i> Materials
+              </button>
+            </div>
+
+            <div id="sidebarPlaylistTab" class="sidebar-tab-pane">
+              <div class="playlist-filter-bar">
+                <button type="button" class="filter-chip active" data-filter="all" onclick="window.MFS_STATION.filterPlaylist('all', this)">All (128)</button>
+                <button type="button" class="filter-chip" data-filter="topics" onclick="window.MFS_STATION.filterPlaylist('topics', this)"><i class="fa-brands fa-youtube" style="color:#ef4444;"></i> Masterclasses (76)</button>
+                <button type="button" class="filter-chip" data-filter="past-papers" onclick="window.MFS_STATION.filterPlaylist('past-papers', this)">Past Papers (36)</button>
+                <button type="button" class="filter-chip" data-filter="slc" onclick="window.MFS_STATION.filterPlaylist('slc', this)">Speaking &amp; Listening (2)</button>
+                <button type="button" class="filter-chip" data-filter="e3-foundation" onclick="window.MFS_STATION.filterPlaylist('e3-foundation', this)">Entry 3 (14)</button>
+              </div>
+              <div id="playlistContainer" class="playlist-items-scroll">
+                <!-- Dynamically populated list -->
+              </div>
+            </div>
+
+            <div id="sidebarMaterialsTab" class="sidebar-tab-pane" style="display:none;">
+              <div class="sidebar-card-title" style="margin-bottom:12px;">
+                <i class="fa-solid fa-folder-open" style="color:#38bdf8;"></i> Topic Study Materials
+              </div>
+              <a href="#" target="_blank" rel="noopener" class="res-link-btn res-link-worksheet" id="sideWorksheetBtn">
+                <span id="sideWorksheetLabel"><i class="fa-regular fa-file-pdf"></i> Question Worksheet</span>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+              <a href="#" target="_blank" rel="noopener" class="res-link-btn res-link-answers" id="sideAnswersBtn">
+                <span id="sideAnswersLabel"><i class="fa-solid fa-circle-check"></i> Worked Answers [M1/A1]</span>
+                <i class="fa-solid fa-arrow-up-right-from-square"></i>
+              </a>
+              <a href="#" class="res-link-btn res-link-revise" id="sideReviseBtn">
+                <span id="sideReviseLabel"><i class="fa-solid fa-book-open"></i> Full Revision Guide</span>
+                <i class="fa-solid fa-arrow-right"></i>
+              </a>
+            </div>
+          </div>
+        </aside>
       </div>
     </div>
   </main>  <!-- FOOTER -->
@@ -1382,7 +1380,7 @@
   </footer>
 
   <script src="assets/js/mfs-tint.js?v=20261120v12"></script>
-  <script src="assets/js/mfs-video-checks.js?v=20261121v1" defer></script>
+  <script src="assets/js/mfs-video-checks.js?v=20261122v1" defer></script>
   <script>
     (function () {
       'use strict';
@@ -4522,7 +4520,7 @@
               document.getElementById('sideReviseLabel').innerHTML = '<i class="fa-solid fa-clipboard-check"></i> Mark Scheme / Guide';
             }
             if (quickMaterials) {
-              quickMaterials.style.display = 'grid';
+              quickMaterials.style.display = 'flex';
             }
 
           } else {
@@ -4576,7 +4574,7 @@
               quickYouTube.href = 'https://www.youtube.com/@MasterFunctionalSkills';
               quickYouTube.style.display = 'inline-flex';
             }
-            if (quickMaterials) quickMaterials.style.display = 'grid';
+            if (quickMaterials) quickMaterials.style.display = 'flex';
           }
 
           document.getElementById('heroBadge').innerHTML = badgeText;
@@ -4615,8 +4613,17 @@
             if (upNextBanner) upNextBanner.style.display = 'none';
           }
 
-          // Update Picker Value
+          // Update Picker Value (ensure non-playlist slugs also show a readable selected label)
           if (picker) {
+            let opt = Array.from(picker.options).find(o => o.value === cleanSlug);
+            if (!opt && cleanSlug) {
+              opt = new Option(displayTitle || cleanSlug, cleanSlug);
+              opt.setAttribute('data-fallback-opt', '1');
+              picker.insertBefore(opt, picker.firstChild);
+            }
+            Array.from(picker.querySelectorAll('option[data-fallback-opt]')).forEach(el => {
+              if (el.value !== cleanSlug) el.remove();
+            });
             picker.value = cleanSlug;
           }
 

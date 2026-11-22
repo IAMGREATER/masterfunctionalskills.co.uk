@@ -3869,3 +3869,203 @@ body.dyslexia-mode .moat-badge {
   max-width: 320px;
 }
 
+/* ==========================================================================
+   2026-11-22 Ergonomics, Alignment & Declutter (Desktop & Tablet)
+   ========================================================================== */
+
+/* 1. Hero CTA buttons: uniform height, single-line alignment, clean wrap */
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  gap: 12px;
+}
+
+.hero-buttons > a,
+.hero-buttons > button,
+.btn-hero-accent,
+.btn-hero-navy,
+.btn-hero-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 12px 22px;
+  white-space: nowrap;
+  line-height: 1.25;
+  box-sizing: border-box;
+}
+
+/* 2. Generous search inputs across hubs */
+.directory-search-input,
+.paper-search-input {
+  min-height: 46px;
+  height: auto;
+  padding: 11px 16px 11px 44px;
+  font-size: 16px;
+  line-height: 1.35;
+  box-sizing: border-box;
+}
+
+/* 3. Desktop uniform column alignment on Curriculum Directory rows */
+@media (min-width: 1121px) {
+  .topic-row {
+    gap: 18px;
+    align-items: center;
+  }
+  .topic-meta {
+    flex: 1 1 auto;
+    min-width: 220px;
+    gap: 5px;
+  }
+  .topic-actions-group {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    flex-wrap: nowrap;
+    flex-shrink: 0;
+  }
+  .topic-actions-group .btn-mfs-revise {
+    min-width: 96px;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .topic-actions-group .btn-mfs-video {
+    min-width: 220px;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .topic-actions-group .btn-mfs-workout {
+    min-width: 126px;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .topic-actions-group .btn-mfs-sheet:not(.btn-mfs-workout) {
+    min-width: 148px;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+  .topic-actions-group .btn-mfs-test {
+    min-width: 118px;
+    justify-content: center;
+    box-sizing: border-box;
+  }
+}
+
+/* 4. Desktop & Tablet alignment on Past Paper rows & headers */
+.paper-group-header {
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+@media (min-width: 1025px) {
+  .past-paper-row {
+    padding: 15px 20px;
+    gap: 16px;
+    align-items: center;
+  }
+  .past-paper-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 8px;
+    flex-wrap: wrap;
+  }
+  .past-paper-actions .btn-paper {
+    min-height: 38px;
+    padding: 7px 12px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    white-space: nowrap;
+  }
+  .past-paper-actions .btn-paper-qp {
+    min-width: 128px;
+  }
+  .past-paper-actions .btn-paper-ms {
+    min-width: 114px;
+  }
+  .past-paper-actions .btn-paper-model {
+    min-width: 124px;
+  }
+  .past-paper-actions .btn-paper-video {
+    min-width: 112px;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .past-paper-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 14px 16px;
+  }
+  .past-paper-actions {
+    width: 100%;
+    justify-content: flex-start;
+    gap: 8px;
+  }
+  .hero-buttons > a,
+  .hero-buttons > button,
+  .btn-hero-accent,
+  .btn-hero-navy,
+  .btn-hero-outline {
+    font-size: 0.92rem;
+    padding: 11px 18px;
+  }
+}
+
+/* 5. Uniform equal-height landing & index grids */
+.mfs-features-grid,
+.faq-grid,
+.tools-grid,
+.basics-module-grid,
+.basics-pack-grid,
+.mfs-revise-hub-grid {
+  align-items: stretch;
+}
+
+.mfs-features-grid > *,
+.faq-grid > *,
+.tools-grid > *,
+.basics-module-grid > *,
+.basics-pack-grid > *,
+.mfs-revise-hub-grid > * {
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.mfs-revise-hub-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  align-items: stretch;
+}
+
+@media (max-width: 1080px) {
+  .mfs-revise-hub-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 679px) {
+  .mfs-revise-hub-grid {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+}
+
+@media (max-width: 767px) {
+  .topic-category-tag {
+    max-width: 100% !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    line-height: 1.35 !important;
+  }
+}
+
+

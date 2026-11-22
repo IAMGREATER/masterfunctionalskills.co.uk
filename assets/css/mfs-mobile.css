@@ -1313,7 +1313,6 @@
   .math-visual-card,
   .math-col-board,
   .math-stepdown-board,
-  .math-bar-model,
   .math-bidmas-ladder {
     width: 100% !important;
     max-width: 100% !important;
@@ -1339,12 +1338,32 @@
   }
 
   .math-bar-model {
-    height: 34px !important;
-    margin: 6px 0 !important;
+    display: flex !important;
+    align-items: stretch !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    height: auto !important;
+    min-height: 44px !important;
+    padding: 0 !important;
+    margin: 10px 0 !important;
+    border-radius: 8px !important;
+    overflow: hidden !important;
+    box-sizing: border-box !important;
   }
 
   .math-bar-cell {
-    font-size: 0.80rem !important;
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 10px 2px !important;
+    font-size: clamp(0.66rem, 2.6vw, 0.90rem) !important;
+    line-height: 1.2 !important;
+    white-space: normal !important;
+    overflow-wrap: break-word !important;
+    text-align: center !important;
+    box-sizing: border-box !important;
   }
 
   .math-bidmas-ladder {
@@ -1374,7 +1393,7 @@
   .scratchpad-box {
     min-height: 55px !important;
     height: 65px !important;
-    font-size: 0.82rem !important;
+    font-size: 16px !important;
     padding: 6px 8px !important;
     border-radius: 6px !important;
   }
@@ -1710,9 +1729,8 @@
     height: 48px !important;
   }
 
-  input, select, textarea {
-    padding: 6px 10px !important;
-    font-size: 0.80rem !important;
+  input:not([type="checkbox"]):not([type="radio"]), select, textarea {
+    font-size: 16px !important;
   }
 
   .btn, button.btn {
@@ -2194,7 +2212,7 @@
   .scratchpad-area {
     min-height: 55px !important;
     height: 65px !important;
-    font-size: 0.82rem !important;
+    font-size: 16px !important;
     padding: 5px 8px !important;
   }
 
@@ -2686,8 +2704,7 @@
     }
 
     .row > [class*="col-"],
-    .row > .col,
-    [class*="col-"] {
+    .row > .col {
       width: 100% !important;
       max-width: 100% !important;
       flex: 0 0 100% !important;
@@ -3073,13 +3090,13 @@
     .practice-scratchpad,
     .working-scratchpad-input {
       width: 100% !important;
-      min-height: 48px !important;
-      height: 52px !important;
-      padding: 6px 8px !important;
+      min-height: 120px !important;
+      height: auto !important;
+      padding: 12px 14px !important;
       font-size: 16px !important; /* Prevents auto-zoom on iOS Safari */
-      line-height: 1.35 !important;
-      border-radius: 6px !important;
-      border: 1px solid #cbd5e1 !important;
+      line-height: 1.55 !important;
+      border-radius: 10px !important;
+      border: 2px solid #cbd5e1 !important;
       background: #fafbfc !important;
       font-family: monospace !important;
       box-sizing: border-box !important;
@@ -4043,13 +4060,13 @@
   .practice-scratchpad,
   .working-scratchpad-input {
     width: 100% !important;
-    min-height: 48px !important;
-    height: 52px !important;
-    padding: 6px 8px !important;
+    min-height: 120px !important;
+    height: auto !important;
+    padding: 12px 14px !important;
     font-size: 16px !important; /* Prevents auto-zoom on iOS Safari */
-    line-height: 1.35 !important;
-    border-radius: 6px !important;
-    border: 1px solid #cbd5e1 !important;
+    line-height: 1.55 !important;
+    border-radius: 10px !important;
+    border: 2px solid #cbd5e1 !important;
     background: #fafbfc !important;
     font-family: monospace !important;
     box-sizing: border-box !important;
@@ -4446,7 +4463,7 @@
 
   /* Tutor Callout Cards & Avatars — Shrunk & Compact */
   .tutor-pro-callout,
-  .tutor-insight-callout {
+  .tutor-insight-callout:has(img) {
     display: flex !important;
     flex-direction: row !important;
     align-items: flex-start !important;
@@ -4457,6 +4474,16 @@
     width: 100% !important;
     max-width: 100% !important;
     box-sizing: border-box !important;
+  }
+
+  .tutor-insight-callout:not(:has(img)) {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 12px 14px !important;
+    margin: 10px 0 !important;
+    box-sizing: border-box !important;
+    overflow-wrap: break-word !important;
   }
 
   .tutor-pro-callout img,
@@ -6263,5 +6290,299 @@ a[href^="mailto:"] { overflow-wrap: anywhere !important; word-break: break-word 
     width: auto !important;
     max-width: 110px !important;
     padding: 2px 6px !important;
+  }
+}
+
+/* ==========================================================================
+   7. 2026-11-22 ZERO-OVERLAP MOBILE/TABLET ERGONOMICS, DECLUTTER & INPUTS
+   ========================================================================== */
+@media (max-width: 1024px) {
+  /* Guarantee embedded & station iframes always fill their 16:9 wrapper */
+  .video-main-player-wrap iframe,
+  .video-screen-wrap iframe,
+  .mfs-player-ratio-box iframe,
+  .video-main-player-wrap video,
+  .video-screen-wrap video {
+    width: 100% !important;
+    height: 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Generous search & scratchpad inputs on tablet + phone */
+  .directory-search-input,
+  input#topicSearchInput,
+  .paper-search-input {
+    min-height: 46px !important;
+    height: auto !important;
+    padding: 11px 14px 11px 42px !important;
+    font-size: 16px !important;
+    line-height: 1.35 !important;
+  }
+
+  .practice-scratchpad,
+  .working-scratchpad-input {
+    width: 100% !important;
+    min-height: 120px !important;
+    height: auto !important;
+    padding: 12px 14px !important;
+    font-size: 16px !important;
+    line-height: 1.55 !important;
+    border: 2px solid #cbd5e1 !important;
+    border-radius: 10px !important;
+  }
+
+  /* Clean wrapping part tabs on tablet & mobile embedded video station */
+  #videoMasterclassStation .mc-part-tabs-bar {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    overflow: visible !important;
+    padding: 9px 10px !important;
+    gap: 6px !important;
+  }
+  #videoMasterclassStation .mc-part-tab {
+    flex: 1 1 200px !important;
+    white-space: normal !important;
+    text-align: left !important;
+    line-height: 1.3 !important;
+    min-height: 38px !important;
+    padding: 7px 10px !important;
+    border-radius: 8px !important;
+  }
+  /* Tidy compact level switcher bar inside topic heroes */
+  .mfs-level-switch-bar {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    gap: 6px 8px !important;
+    padding: 8px 12px !important;
+    border-radius: 12px !important;
+    max-width: 100% !important;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  /* Hero buttons: equal-height 2-up grid (or 1-up if single button) */
+  .hero-buttons {
+    display: grid !important;
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 8px !important;
+    width: 100% !important;
+  }
+  .hero-buttons:has(> :only-child) {
+    grid-template-columns: 1fr !important;
+  }
+  .hero-buttons > a,
+  .hero-buttons > button {
+    width: 100% !important;
+    min-height: 46px !important;
+    padding: 10px 10px !important;
+    font-size: 0.84rem !important;
+    white-space: normal !important;
+    text-align: center !important;
+    justify-content: center !important;
+    border-radius: 10px !important;
+    line-height: 1.25 !important;
+    box-sizing: border-box !important;
+  }
+
+  /* Past paper section headers: keep count pill clean without right-edge clipping */
+  .paper-group-header {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    gap: 6px 10px !important;
+    padding: 0 2px 10px 2px !important;
+  }
+  .paper-group-title {
+    font-size: 1.04rem !important;
+    line-height: 1.25 !important;
+    flex: 1 1 auto !important;
+    min-width: 0 !important;
+    gap: 8px !important;
+  }
+  .paper-group-count {
+    font-size: 0.80rem !important;
+    flex-shrink: 0 !important;
+    white-space: nowrap !important;
+  }
+
+  /* ZERO OVERLAPS on Mobile Past Paper Rows: clean vertical stack */
+  #papersDirectory .past-paper-row,
+  .past-paper-row {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    justify-content: flex-start !important;
+    gap: 9px !important;
+    padding: 12px 12px !important;
+  }
+  .past-paper-meta {
+    width: 100% !important;
+    min-width: 0 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 5px !important;
+    margin: 0 !important;
+  }
+  body.mfs-multi-board-hub .past-paper-tags {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    gap: 5px !important;
+    margin: 0 !important;
+  }
+  .past-paper-title {
+    font-size: 0.94rem !important;
+    font-weight: 800 !important;
+    line-height: 1.3 !important;
+    margin: 0 !important;
+    width: 100% !important;
+    white-space: normal !important;
+  }
+  .past-paper-actions {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 8px !important;
+    width: 100% !important;
+    padding-top: 2px !important;
+    margin: 0 !important;
+  }
+  .past-paper-actions > a.btn-paper,
+  .past-paper-actions > button.btn-paper {
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    max-width: 40px !important;
+  }
+
+  /* ZERO OVERLAPS on Mobile Curriculum Directory Rows */
+  .topic-row {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: stretch !important;
+    gap: 8px !important;
+    padding: 12px 12px !important;
+  }
+  .topic-meta {
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: flex-start !important;
+    justify-content: flex-start !important;
+    gap: 6px !important;
+    width: 100% !important;
+  }
+  .topic-title {
+    display: flex !important;
+    align-items: flex-start !important;
+    gap: 8px !important;
+    width: 100% !important;
+    font-size: 0.94rem !important;
+    font-weight: 700 !important;
+    line-height: 1.3 !important;
+    margin: 0 !important;
+  }
+  .mfs-topic-done-chk {
+    width: 20px !important;
+    height: 20px !important;
+    margin: 2px 0 0 0 !important;
+    flex-shrink: 0 !important;
+  }
+  .topic-meta-tags {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    gap: 6px !important;
+    margin: 0 !important;
+    width: 100% !important;
+  }
+  .topic-category-tag {
+    max-width: 100% !important;
+    margin-left: 0 !important;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: clip !important;
+    font-size: 0.76rem !important;
+    padding: 3px 9px !important;
+  }
+  .topic-actions-group {
+    display: flex !important;
+    flex-wrap: wrap !important;
+    align-items: center !important;
+    justify-content: flex-start !important;
+    gap: 8px !important;
+    width: 100% !important;
+    margin-top: 2px !important;
+  }
+  .topic-actions-group > :nth-child(n) {
+    width: 40px !important;
+    min-width: 40px !important;
+    max-width: 40px !important;
+  }
+  .topic-actions-group > a {
+    width: 40px !important;
+    height: 40px !important;
+    min-width: 40px !important;
+    max-width: 40px !important;
+  }
+
+  /* Clean mobile #videoMasterclassStation chapters strip (no harsh blue borders) */
+  #videoMasterclassStation .mfs-chapters-toggle {
+    border: none !important;
+    border-top: 1px solid rgba(148, 163, 184, 0.16) !important;
+    border-radius: 0 !important;
+    background: #070d1d !important;
+  }
+
+  /* Math Visual Portrait Shields: Zero Vertical/Horizontal Diagram Clipping & Overlap */
+  .math-col-board {
+    flex: 0 1 auto !important;
+    height: auto !important;
+  }
+  .math-two-col-grid > * {
+    height: auto !important;
+  }
+  .math-bar-model {
+    display: flex !important;
+    align-items: stretch !important;
+    height: auto !important;
+    min-height: 44px !important;
+    padding: 0 !important;
+    overflow: hidden !important;
+  }
+  .math-bar-cell {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    padding: 10px 2px !important;
+    font-size: clamp(0.66rem, 2.6vw, 0.90rem) !important;
+    line-height: 1.2 !important;
+    white-space: normal !important;
+    overflow-wrap: break-word !important;
+    text-align: center !important;
+  }
+  .math-visual-card [style*="justify-content:space-between"],
+  .math-visual-card [style*="justify-content: space-between"] {
+    flex-wrap: wrap !important;
+    gap: 4px 10px !important;
+  }
+  .revision-content svg,
+  .math-visual-card svg,
+  .sketch-diagram-wrap svg,
+  .model-example-card svg {
+    min-width: 0 !important;
+    max-width: 100% !important;
+    height: auto !important;
+  }
+  .dfs-ui-sim-content,
+  .dfs-ui-sim-content span,
+  .dfs-ui-sim-content div {
+    overflow-wrap: anywhere !important;
+    max-width: 100% !important;
   }
 }

@@ -16,8 +16,8 @@
   <meta name="apple-mobile-web-app-title" content="MFS Skills">
   <link rel="apple-touch-icon" href="assets/img/favicon-192x192.png">
   <script src="assets/js/mfs-pwa.js" defer></script>
-  <link rel="stylesheet" href="assets/css/mfs-theme.css?v=20261121v2">
-<link rel="stylesheet" href="assets/css/mfs-video-modal.css?v=20261121v2">
+  <link rel="stylesheet" href="assets/css/mfs-theme.css?v=20261122v1">
+<link rel="stylesheet" href="assets/css/mfs-video-modal.css?v=20261122v1">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   <style>
     /* REVISION CARDS APP SPECIFIC STYLES */
@@ -1196,10 +1196,10 @@
         line-height: 1.35 !important;
       }
       .scratchpad-area {
-        min-height: 75px !important;
-        height: 85px !important;
-        font-size: 0.88rem !important;
-        padding: 6px 10px !important;
+        min-height: 120px !important;
+        height: 120px !important;
+        font-size: 16px !important;
+        padding: 8px 12px !important;
       }
       .card-face-back.show-answer .scratchpad-area,
       .card-face-back:has(#backAnswerBox:not(.hidden-answer)) .scratchpad-area {
@@ -1267,8 +1267,9 @@
         margin-bottom: 8px !important;
       }
       .search-input {
-        padding: 8px 12px 8px 36px !important;
-        font-size: 0.86rem !important;
+        min-height: 44px !important;
+        padding: 10px 12px 10px 38px !important;
+        font-size: 16px !important;
       }
       .deck-stat-badge {
         padding: 4px 10px !important;
@@ -1530,8 +1531,346 @@
       }
     }
 
+    /* Mobile Landscape-ONLY Redesign (hidden everywhere else: desktop, tablet, mobile portrait) */
+    .rc-land-header-actions,
+    .rc-land-pill-wrap {
+      display: none !important;
+    }
+
+    @media (max-width: 950px) and (max-height: 500px) and (orientation: landscape) and (pointer: coarse) {
+      body.rc-mobile-fullscreen {
+        overflow: hidden !important;
+      }
+      body.rc-mobile-fullscreen .mfs-top-bar,
+      body.rc-mobile-fullscreen .mfs-navbar,
+      body.rc-mobile-fullscreen .mfs-hero-section,
+      body.rc-mobile-fullscreen #rcToolsDrawer,
+      body.rc-mobile-fullscreen footer,
+      body.rc-mobile-fullscreen .mobile-card-gesture-hint,
+      body.rc-mobile-fullscreen .rc-mobile-quickbar,
+      body.rc-mobile-fullscreen #rcMobileFsBtn,
+      body.rc-mobile-fullscreen .rc-fs-topbar,
+      body.rc-mobile-fullscreen .deck-controls,
+      body.rc-mobile-fullscreen .card-footer-strip,
+      body.rc-mobile-fullscreen #frontCardNumBadge,
+      body.rc-mobile-fullscreen #backCardNumBadge {
+        display: none !important;
+      }
+      body.rc-mobile-fullscreen #deckViewContainer {
+        position: fixed !important;
+        inset: 0 !important;
+        z-index: 9999 !important;
+        width: 100vw !important;
+        height: 100dvh !important;
+        min-height: 100dvh !important;
+        max-height: 100dvh !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #ffffff !important;
+        display: flex !important;
+        flex-direction: column !important;
+        overflow: hidden !important;
+      }
+      body.rc-mobile-fullscreen .deck-viewport {
+        flex: 1 1 auto !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        height: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+      }
+      body.rc-mobile-fullscreen .flip-card {
+        width: 100% !important;
+        height: 100% !important;
+        min-height: 100% !important;
+        max-height: 100% !important;
+        aspect-ratio: auto !important;
+        border-radius: 0 !important;
+        box-shadow: none !important;
+      }
+      body.rc-mobile-fullscreen .card-face {
+        position: absolute !important;
+        inset: 0 !important;
+        width: 100% !important;
+        height: 100% !important;
+        border-radius: 0 !important;
+        border: 0 !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-start !important;
+        overflow: hidden !important;
+      }
+      body.rc-mobile-fullscreen .flip-card:not(.is-flipped) .card-face-front {
+        pointer-events: auto !important;
+      }
+      body.rc-mobile-fullscreen .flip-card:not(.is-flipped) .card-face-back,
+      body.rc-mobile-fullscreen .flip-card.is-flipped .card-face-front {
+        pointer-events: none !important;
+      }
+      body.rc-mobile-fullscreen .flip-card.is-flipped .card-face-back {
+        pointer-events: auto !important;
+      }
+      body.rc-mobile-fullscreen .card-header-bar {
+        flex-shrink: 0 !important;
+        min-height: 44px !important;
+        padding: 6px 14px !important;
+        border-radius: 0 !important;
+        display: flex !important;
+        align-items: center !important;
+        justify-content: space-between !important;
+        gap: 10px !important;
+      }
+      body.rc-mobile-fullscreen .header-left {
+        min-width: 0 !important;
+        flex: 1 1 auto !important;
+      }
+      body.rc-mobile-fullscreen .header-title-text {
+        font-size: 1.04rem !important;
+        font-weight: 800 !important;
+        max-width: 100% !important;
+        white-space: nowrap !important;
+        overflow: hidden !important;
+        text-overflow: ellipsis !important;
+      }
+      body.rc-mobile-fullscreen .header-right {
+        font-size: 0.78rem !important;
+        padding: 4px 10px !important;
+        white-space: nowrap !important;
+      }
+      body.rc-mobile-fullscreen .rc-land-header-actions {
+        display: inline-flex !important;
+        align-items: center !important;
+        gap: 8px !important;
+        flex-shrink: 0 !important;
+      }
+      body.rc-mobile-fullscreen .rc-land-counter {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        padding: 4px 10px !important;
+        border-radius: 999px !important;
+        background: rgba(15, 23, 42, 0.4) !important;
+        border: 1px solid rgba(255, 255, 255, 0.3) !important;
+        color: #ffffff !important;
+        font-size: 0.84rem !important;
+        font-weight: 800 !important;
+        white-space: nowrap !important;
+      }
+      body.rc-mobile-fullscreen .rc-land-exit-btn {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 6px !important;
+        min-height: 34px !important;
+        padding: 5px 12px !important;
+        border-radius: 999px !important;
+        border: 0 !important;
+        background: #ffffff !important;
+        color: #0f172a !important;
+        font-size: 0.82rem !important;
+        font-weight: 800 !important;
+        cursor: pointer !important;
+        white-space: nowrap !important;
+        box-shadow: 0 2px 8px rgba(15, 23, 42, 0.25) !important;
+      }
+
+      /* Front Card Body: Large 2-Column Landscape Grid (Big Diagram Left, Clear Explanation/Pills Right) */
+      body.rc-mobile-fullscreen .card-face-front .postcard-body {
+        flex: 1 1 auto !important;
+        min-height: 0 !important;
+        padding: 12px 16px !important;
+        overflow-y: auto !important;
+        display: flex !important;
+        flex-direction: column !important;
+      }
+      body.rc-mobile-fullscreen .rc-front-inner {
+        display: grid !important;
+        grid-template-columns: 1.15fr 1fr !important;
+        grid-template-rows: auto auto auto auto 1fr !important;
+        column-gap: 16px !important;
+        row-gap: 7px !important;
+        height: 100% !important;
+        align-content: start !important;
+      }
+      body.rc-mobile-fullscreen .diagram-holder {
+        grid-column: 1 !important;
+        grid-row: 1 / -1 !important;
+        height: 100% !important;
+        min-height: 255px !important;
+        max-height: none !important;
+        margin: 0 !important;
+        padding: 10px !important;
+        border-radius: 12px !important;
+      }
+      body.rc-mobile-fullscreen .diagram-holder svg {
+        width: 100% !important;
+        height: 100% !important;
+        max-width: 100% !important;
+        max-height: 100% !important;
+      }
+      body.rc-mobile-fullscreen .rule-headline {
+        grid-column: 2 !important;
+        font-size: 1.24rem !important;
+        line-height: 1.22 !important;
+        margin: 0 !important;
+      }
+      body.rc-mobile-fullscreen .rule-explanation {
+        grid-column: 2 !important;
+        font-size: 0.96rem !important;
+        line-height: 1.38 !important;
+        margin: 0 !important;
+      }
+      body.rc-mobile-fullscreen .golden-rule-pill,
+      body.rc-mobile-fullscreen .watch-out-pill {
+        grid-column: 2 !important;
+        font-size: 0.88rem !important;
+        line-height: 1.32 !important;
+        padding: 7px 11px !important;
+        margin: 0 !important;
+      }
+      body.rc-mobile-fullscreen .watch-out-pill {
+        margin-bottom: 52px !important;
+      }
+
+      /* Back Card Body: Balanced 2-Column Challenge/Answer Left + Big Working Scratchpad Right */
+      body.rc-mobile-fullscreen .card-face-back .postcard-body {
+        flex: 1 1 auto !important;
+        min-height: 0 !important;
+        padding: 12px 16px !important;
+        overflow-y: auto !important;
+      }
+      body.rc-mobile-fullscreen .card-back-body-inner {
+        display: grid !important;
+        grid-template-columns: 1fr 1fr !important;
+        grid-template-rows: auto 1fr !important;
+        column-gap: 16px !important;
+        row-gap: 8px !important;
+        height: 100% !important;
+        padding-bottom: 50px !important;
+        box-sizing: border-box !important;
+      }
+      body.rc-mobile-fullscreen .challenge-box {
+        grid-column: 1 !important;
+        grid-row: 1 !important;
+        margin: 0 !important;
+        padding: 10px 12px !important;
+      }
+      body.rc-mobile-fullscreen .challenge-q {
+        font-size: 1.02rem !important;
+        line-height: 1.38 !important;
+      }
+      body.rc-mobile-fullscreen .answer-box {
+        grid-column: 1 !important;
+        grid-row: 2 !important;
+        min-height: 90px !important;
+        max-height: none !important;
+        overflow-y: auto !important;
+        font-size: 0.92rem !important;
+        padding: 10px 12px !important;
+        margin: 0 !important;
+      }
+      body.rc-mobile-fullscreen .scratchpad-header-row {
+        grid-column: 2 !important;
+        grid-row: 1 !important;
+        align-self: end !important;
+        margin: 0 !important;
+      }
+      body.rc-mobile-fullscreen .btn-reveal-answer {
+        min-height: 36px !important;
+        padding: 6px 12px !important;
+        font-size: 0.84rem !important;
+      }
+      body.rc-mobile-fullscreen .scratchpad-area,
+      body.rc-mobile-fullscreen .card-face-back.show-answer .scratchpad-area,
+      body.rc-mobile-fullscreen .card-face-back:has(#backAnswerBox:not(.hidden-answer)) .scratchpad-area {
+        grid-column: 2 !important;
+        grid-row: 2 !important;
+        flex: none !important;
+        width: 100% !important;
+        height: 100% !important;
+        min-height: 130px !important;
+        max-height: none !important;
+        font-size: 16px !important;
+        line-height: 1.4 !important;
+        padding: 10px 12px !important;
+        margin: 0 !important;
+        box-sizing: border-box !important;
+      }
+
+      /* Small Single Floating Bottom-Right Controls Pill & Menu */
+      body.rc-mobile-fullscreen .rc-land-pill-wrap {
+        display: flex !important;
+        flex-direction: column !important;
+        align-items: flex-end !important;
+        position: fixed !important;
+        right: 12px !important;
+        bottom: 10px !important;
+        z-index: 10020 !important;
+      }
+      body.rc-mobile-fullscreen .rc-land-pill-btn {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 7px !important;
+        min-height: 40px !important;
+        padding: 8px 14px !important;
+        border-radius: 999px !important;
+        border: 1px solid rgba(56, 189, 248, 0.5) !important;
+        background: #0f172a !important;
+        color: #ffffff !important;
+        font-size: 0.84rem !important;
+        font-weight: 800 !important;
+        box-shadow: 0 8px 20px rgba(15, 23, 42, 0.35) !important;
+        cursor: pointer !important;
+      }
+      body.rc-mobile-fullscreen .rc-land-pill-btn i {
+        color: #38bdf8 !important;
+      }
+      body.rc-mobile-fullscreen .rc-land-pill-menu {
+        display: none !important;
+        grid-template-columns: 1fr 1fr !important;
+        gap: 8px !important;
+        margin-bottom: 8px !important;
+        padding: 10px !important;
+        background: #0f172a !important;
+        border: 1.5px solid #334155 !important;
+        border-radius: 14px !important;
+        box-shadow: 0 14px 32px rgba(2, 6, 23, 0.5) !important;
+        min-width: 260px !important;
+      }
+      body.rc-mobile-fullscreen .rc-land-pill-menu.open {
+        display: grid !important;
+      }
+      body.rc-mobile-fullscreen .rc-land-menu-btn {
+        display: inline-flex !important;
+        align-items: center !important;
+        justify-content: center !important;
+        gap: 6px !important;
+        min-height: 40px !important;
+        padding: 8px 10px !important;
+        border-radius: 9px !important;
+        border: 1px solid #334155 !important;
+        background: #1e293b !important;
+        color: #f8fafc !important;
+        font-size: 0.82rem !important;
+        font-weight: 700 !important;
+        cursor: pointer !important;
+        white-space: nowrap !important;
+      }
+      body.rc-mobile-fullscreen .rc-land-btn-practice.active-state {
+        background: #b45309 !important;
+        border-color: #f59e0b !important;
+        color: #ffffff !important;
+      }
+      body.rc-mobile-fullscreen .rc-land-btn-mastered.active-state {
+        background: #059669 !important;
+        border-color: #34d399 !important;
+        color: #ffffff !important;
+      }
+    }
+
   </style>
-  <link rel="stylesheet" href="assets/css/mfs-mobile.css?v=20261121v2">
+  <link rel="stylesheet" href="assets/css/mfs-mobile.css?v=20261122v1">
   <link rel="canonical" href="https://masterfunctionalskills.co.uk/revision-cards.html">
   <!-- MFS-OG-START -->
   <meta property="og:type" content="website">
@@ -1885,11 +2224,19 @@
                 <span class="card-num-pill" id="frontCardNumBadge">#1</span>
                 <span class="header-title-text" id="frontCardHeaderTitle">Area of a Rectangle</span>
               </div>
-              <div class="header-right" id="frontStrandPill">Shape &amp; Space</div>
+              <div class="header-right-group" style="display:flex; align-items:center; gap:8px; flex-shrink:0;">
+                <div class="header-right" id="frontStrandPill">Shape &amp; Space</div>
+                <div class="rc-land-header-actions">
+                  <span class="rc-land-counter" id="frontLandCounter">1 / 266</span>
+                  <button type="button" class="rc-land-exit-btn" onclick="event.stopPropagation(); exitMobileCardFullscreen();" aria-label="Exit Full Screen">
+                    <i class="fa-solid fa-compress"></i> Exit
+                  </button>
+                </div>
+              </div>
             </div>
 
             <div class="postcard-body">
-              <div>
+              <div class="rc-front-inner">
                 <div class="rule-headline" id="frontRuleHeadline">Area = Length × Width</div>
                 <div class="rule-explanation" id="frontRuleExplanation">
                   Multiply length by width. Area measures flat 2D space inside a border and is always written in square units.
@@ -1922,7 +2269,15 @@
                 <span class="card-num-pill" id="backCardNumBadge">#1</span>
                 <span class="header-title-text" id="backCardHeaderTitle">Challenge: Area of a Rectangle</span>
               </div>
-              <div class="header-right" id="backStrandPill" style="background:#059669;">Shape &amp; Space</div>
+              <div class="header-right-group" style="display:flex; align-items:center; gap:8px; flex-shrink:0;">
+                <div class="header-right" id="backStrandPill" style="background:#059669;">Shape &amp; Space</div>
+                <div class="rc-land-header-actions">
+                  <span class="rc-land-counter" id="backLandCounter">1 / 266</span>
+                  <button type="button" class="rc-land-exit-btn" onclick="event.stopPropagation(); exitMobileCardFullscreen();" aria-label="Exit Full Screen">
+                    <i class="fa-solid fa-compress"></i> Exit
+                  </button>
+                </div>
+              </div>
             </div>
 
             <div class="postcard-body">
@@ -2005,6 +2360,21 @@
       <!-- MOBILE TOUCH GESTURES HINT -->
       <div class="mobile-card-gesture-hint">
         <i class="fa-solid fa-hand-pointer"></i> Tap card to flip &bull; Swipe ◄ ► to navigate
+      </div>
+
+      <!-- MOBILE LANDSCAPE FLOATING CONTROLS PILL (strictly mobile landscape only) -->
+      <div class="rc-land-pill-wrap" id="rcLandPillWrap" onclick="event.stopPropagation()">
+        <div class="rc-land-pill-menu" id="rcLandPillMenu" role="menu" aria-hidden="true">
+          <button type="button" class="rc-land-menu-btn" onclick="prevCard(); closeLandPillMenu();"><i class="fa-solid fa-chevron-left"></i> Previous</button>
+          <button type="button" class="rc-land-menu-btn" onclick="nextCard(); closeLandPillMenu();"><i class="fa-solid fa-chevron-right"></i> Next</button>
+          <button type="button" class="rc-land-menu-btn" onclick="toggleCardFlip(); closeLandPillMenu();"><i class="fa-solid fa-repeat"></i> Flip Card</button>
+          <button type="button" class="rc-land-menu-btn" onclick="shuffleCards(); closeLandPillMenu();"><i class="fa-solid fa-shuffle"></i> Shuffle</button>
+          <button type="button" class="rc-land-menu-btn rc-land-btn-practice" id="rcLandBtnPractice" onclick="markCardMastery(false); closeLandPillMenu();"><i class="fa-solid fa-rotate-left"></i> Need Practice</button>
+          <button type="button" class="rc-land-menu-btn rc-land-btn-mastered" id="rcLandBtnMastered" onclick="markCardMastery(true); closeLandPillMenu();"><i class="fa-solid fa-check"></i> Mastered</button>
+        </div>
+        <button type="button" class="rc-land-pill-btn" id="rcLandPillBtn" onclick="toggleLandPillMenu(event)" aria-expanded="false" aria-controls="rcLandPillMenu">
+          <i class="fa-solid fa-sliders"></i> Controls
+        </button>
       </div>
     </div>
 
@@ -2168,10 +2538,14 @@
     function updateMasteryButtonsState() {
       const btnPractice = document.querySelector('.btn-practice');
       const btnMastered = document.querySelector('.btn-mastered');
+      const landPractice = document.getElementById('rcLandBtnPractice');
+      const landMastered = document.getElementById('rcLandBtnMastered');
       if (!btnPractice || !btnMastered || filteredCards.length === 0) return;
       const card = filteredCards[currentIndex];
       if (!card) return;
       const st = masteryState[card.id];
+      if (landPractice) landPractice.classList.toggle('active-state', st === false);
+      if (landMastered) landMastered.classList.toggle('active-state', st === true);
       if (st === true) {
         btnMastered.style.opacity = '1';
         btnMastered.style.boxShadow = '0 0 0 2px #059669, 0 4px 12px rgba(16, 185, 129, 0.4)';
@@ -2425,6 +2799,10 @@
         if (fsEmptyEl) fsEmptyEl.textContent = '0 of 0';
         const quickEmptyEl = document.getElementById('rcMobileQuickCounter');
         if (quickEmptyEl) quickEmptyEl.textContent = '0 of 0';
+        const lfEmptyEl = document.getElementById('frontLandCounter');
+        if (lfEmptyEl) lfEmptyEl.textContent = '0 / 0';
+        const lbEmptyEl = document.getElementById('backLandCounter');
+        if (lbEmptyEl) lbEmptyEl.textContent = '0 / 0';
         updateMasteryButtonsState();
         return;
       }
@@ -2451,6 +2829,10 @@
       if (fsCountEl) fsCountEl.textContent = `Card ${currentIndex + 1} of ${filteredCards.length}`;
       const quickCountEl = document.getElementById('rcMobileQuickCounter');
       if (quickCountEl) quickCountEl.textContent = `Card ${currentIndex + 1} of ${filteredCards.length}`;
+      const landFrontEl = document.getElementById('frontLandCounter');
+      if (landFrontEl) landFrontEl.textContent = `${currentIndex + 1} / ${filteredCards.length}`;
+      const landBackEl = document.getElementById('backLandCounter');
+      if (landBackEl) landBackEl.textContent = `${currentIndex + 1} / ${filteredCards.length}`;
 
       // Back Face
       const bNum = document.getElementById('backCardNumBadge');
@@ -2613,15 +2995,43 @@
     }
 
     // Mobile-ONLY Full-Screen Card Mode (strictly phones: portrait <= 767px or coarse-pointer landscape <= 500px height)
-    const RC_MOBILE_FS_MQ = '(max-width: 767px), (max-height: 500px) and (pointer: coarse)';
+    const RC_MOBILE_FS_MQ = '(max-width: 767px), (max-width: 950px) and (max-height: 500px) and (orientation: landscape) and (pointer: coarse)';
+    const RC_MOBILE_LAND_MQ = '(max-width: 950px) and (max-height: 500px) and (orientation: landscape) and (pointer: coarse)';
     let rcEnteredNativeFullscreen = false;
+    let rcUserExitedLandscape = false;
 
     function isMobilePhoneViewport() {
       return window.matchMedia(RC_MOBILE_FS_MQ).matches;
     }
 
-    function enterMobileCardFullscreen() {
+    function isMobileLandscapeViewport() {
+      return window.matchMedia(RC_MOBILE_LAND_MQ).matches;
+    }
+
+    function toggleLandPillMenu(e) {
+      if (e) e.stopPropagation();
+      const menu = document.getElementById('rcLandPillMenu');
+      const btn = document.getElementById('rcLandPillBtn');
+      if (!menu || !btn) return;
+      const open = !menu.classList.contains('open');
+      menu.classList.toggle('open', open);
+      menu.setAttribute('aria-hidden', open ? 'false' : 'true');
+      btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    }
+
+    function closeLandPillMenu() {
+      const menu = document.getElementById('rcLandPillMenu');
+      const btn = document.getElementById('rcLandPillBtn');
+      if (menu) {
+        menu.classList.remove('open');
+        menu.setAttribute('aria-hidden', 'true');
+      }
+      if (btn) btn.setAttribute('aria-expanded', 'false');
+    }
+
+    function enterMobileCardFullscreen(opts) {
       if (!isMobilePhoneViewport()) return;
+      rcUserExitedLandscape = false;
       rcEnteredNativeFullscreen = false;
       document.body.classList.add('rc-mobile-fullscreen');
       const topbar = document.getElementById('rcFsTopbar');
@@ -2630,6 +3040,7 @@
       if (counter) {
         counter.textContent = filteredCards.length ? `Card ${currentIndex + 1} of ${filteredCards.length}` : '0 of 0';
       }
+      if (opts && opts.silent) return;
       try {
         const el = document.documentElement;
         if (el.requestFullscreen) {
@@ -2644,6 +3055,8 @@
     }
 
     function exitMobileCardFullscreen() {
+      if (isMobileLandscapeViewport()) rcUserExitedLandscape = true;
+      closeLandPillMenu();
       rcEnteredNativeFullscreen = false;
       document.body.classList.remove('rc-mobile-fullscreen');
       const topbar = document.getElementById('rcFsTopbar');
@@ -2658,6 +3071,12 @@
     }
 
     function handleMobileFsViewportChange() {
+      if (!isMobileLandscapeViewport()) {
+        rcUserExitedLandscape = false;
+        closeLandPillMenu();
+      } else if (!document.body.classList.contains('rc-mobile-fullscreen') && !rcUserExitedLandscape) {
+        enterMobileCardFullscreen({ silent: true });
+      }
       if (!isMobilePhoneViewport() && document.body.classList.contains('rc-mobile-fullscreen')) {
         exitMobileCardFullscreen();
       }
@@ -2677,9 +3096,17 @@
     window.addEventListener('resize', handleMobileFsViewportChange);
     window.addEventListener('orientationchange', handleMobileFsViewportChange);
 
+    document.addEventListener('click', (e) => {
+      const wrap = document.getElementById('rcLandPillWrap');
+      if (wrap && !wrap.contains(e.target)) closeLandPillMenu();
+    });
+
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && document.body.classList.contains('rc-mobile-fullscreen')) {
-        exitMobileCardFullscreen();
+      if (e.key === 'Escape') {
+        closeLandPillMenu();
+        if (document.body.classList.contains('rc-mobile-fullscreen')) {
+          exitMobileCardFullscreen();
+        }
       }
     });
 
@@ -2687,6 +3114,9 @@
     document.addEventListener('webkitfullscreenchange', handleNativeFullscreenChange);
 
     document.addEventListener('DOMContentLoaded', () => {
+      if (isMobileLandscapeViewport() && !rcUserExitedLandscape) {
+        enterMobileCardFullscreen({ silent: true });
+      }
       const toolsDrawer = document.getElementById('rcToolsDrawer');
       if (toolsDrawer && window.innerWidth <= 767) {
         toolsDrawer.removeAttribute('open');

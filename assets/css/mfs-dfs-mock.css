@@ -518,10 +518,12 @@
 
 .sim-search-input {
   flex: 1;
+  min-height: 44px;
   padding: 10px 16px;
   border: 1.5px solid #cbd5e1;
   border-radius: 8px;
-  font-size: 0.95rem;
+  font-size: 16px;
+  box-sizing: border-box;
 }
 
 .sim-search-btn {
@@ -601,9 +603,11 @@
 
 .sim-email-field input {
   flex: 1;
+  min-height: 44px;
+  padding: 8px 10px;
   border: none;
   outline: none;
-  font-size: 0.95rem;
+  font-size: 16px;
   color: #0f172a;
 }
 
@@ -613,13 +617,16 @@
 
 .sim-email-body textarea {
   width: 100%;
-  height: 120px;
+  min-height: 150px;
+  height: auto;
+  padding: 12px;
   border: none;
   outline: none;
-  font-size: 0.95rem;
+  font-size: 16px;
   font-family: inherit;
   resize: vertical;
   color: #0f172a;
+  box-sizing: border-box;
 }
 
 /* Simulated Interactive Spreadsheet */

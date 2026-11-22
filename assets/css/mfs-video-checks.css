@@ -13,14 +13,18 @@
 .mfs-vc-card {
   background: linear-gradient(135deg, #0a0f1d 0%, #0f172a 100%) !important;
   color: #e2e8f0;
-  border: 1.5px solid #1e3a5f !important;
-  border-left: 5px solid #0284c7 !important;
-  border-radius: 14px;
-  padding: 18px 20px;
-  box-shadow: 0 14px 36px rgba(2, 6, 23, 0.45);
+  border: 1px solid #1e3a5f !important;
+  border-left: 4px solid #0284c7 !important;
+  border-radius: 12px;
+  padding: 13px 16px;
+  box-shadow: 0 8px 24px rgba(2, 6, 23, 0.32);
   box-sizing: border-box;
   font-family: inherit;
   transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+#videoMasterclassStation ~ .mfs-vc-wrap .mfs-vc-tutor-pill {
+  display: none;
 }
 
 .mfs-vc-card *,

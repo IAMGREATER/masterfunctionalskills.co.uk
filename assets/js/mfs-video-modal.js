@@ -290,7 +290,7 @@
     },
     // Topic Masterclasses (Level 2 Maths)
     'numbers-and-place-value': {
-      ytId: 'kfK1AuSz2Cg',
+      ytId: '7OxoAc_Vo2M',
       title: 'Numbers and Place Value • Masterclass Walkthrough',
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: 'Tutor Sonya',
@@ -300,7 +300,7 @@
       companionLabel: 'Next: Ordering Numbers (Subi)'
     },
     'numbers and place value': {
-      ytId: 'kfK1AuSz2Cg',
+      ytId: 'C9_AJBjEngY',
       title: 'Numbers and Place Value • Masterclass Walkthrough',
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: 'Tutor Sonya',
@@ -310,7 +310,7 @@
       companionLabel: 'Next: Ordering Numbers (Subi)'
     },
     'ordering-numbers': {
-      ytId: 'vdzEbIQ4ldU',
+      ytId: 'C9_AJBjEngY',
       title: 'Ordering Numbers • Masterclass Walkthrough',
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: 'Tutor Subi',
@@ -320,7 +320,7 @@
       companionLabel: 'Next: Addition & Subtraction (Emma)'
     },
     'ordering numbers': {
-      ytId: 'vdzEbIQ4ldU',
+      ytId: 'MLaOIS6g8nA',
       title: 'Ordering Numbers • Masterclass Walkthrough',
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: 'Tutor Subi',
@@ -330,7 +330,7 @@
       companionLabel: 'Next: Addition & Subtraction (Emma)'
     },
     'addition-and-subtraction': {
-      ytId: 'nr3fzQKurgA',
+      ytId: 'MLaOIS6g8nA',
       title: 'Addition and Subtraction • Masterclass Walkthrough',
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: 'Tutor Emma',
@@ -340,7 +340,7 @@
       companionLabel: 'Next: Multiplication (Sonya)'
     },
     'addition and subtraction': {
-      ytId: 'nr3fzQKurgA',
+      ytId: 'fSvI3tcbuFM',
       title: 'Addition and Subtraction • Masterclass Walkthrough',
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: 'Tutor Emma',
@@ -350,7 +350,7 @@
       companionLabel: 'Next: Multiplication (Sonya)'
     },
     'multiplication': {
-      ytId: '6_aOqyCrVnk',
+      ytId: 'fSvI3tcbuFM',
       title: 'Multiplication (Whole Numbers & Decimals) • Masterclass Walkthrough',
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: 'Tutor Sonya',
@@ -360,7 +360,7 @@
       companionLabel: 'Next: Division (Subi)'
     },
     'functional-skills-multiplication': {
-      ytId: '6_aOqyCrVnk',
+      ytId: 'fSvI3tcbuFM',
       title: 'Multiplication (Whole Numbers & Decimals) • Masterclass Walkthrough',
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: 'Tutor Sonya',
@@ -370,7 +370,7 @@
       companionLabel: 'Next: Division (Subi)'
     },
     'division': {
-      ytId: 'Ps1Z7e7zBqY',
+      ytId: 'KgmLOcQFO7o',
       title: 'Division & Remainders • Masterclass Walkthrough',
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: 'Tutor Subi',
@@ -380,7 +380,7 @@
       companionLabel: 'Next: BIDMAS (Emma)'
     },
     'functional-skills-division': {
-      ytId: 'Ps1Z7e7zBqY',
+      ytId: 'KgmLOcQFO7o',
       title: 'Division & Remainders • Masterclass Walkthrough',
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: 'Tutor Subi',
@@ -390,7 +390,7 @@
       companionLabel: 'Next: BIDMAS (Emma)'
     },
     'bidmas': {
-      ytId: '9gsyBj3dLYE',
+      ytId: 'M8xby9pIgKI',
       title: 'Order of Operations (BIDMAS) • Masterclass Walkthrough',
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: 'Tutor Emma',
@@ -400,7 +400,7 @@
       companionLabel: 'Prev: Division (Subi)'
     },
     'functional-skills-bidmas': {
-      ytId: '9gsyBj3dLYE',
+      ytId: 'M8xby9pIgKI',
       title: 'Order of Operations (BIDMAS) • Masterclass Walkthrough',
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: 'Tutor Emma',
@@ -410,7 +410,7 @@
       companionLabel: 'Prev: Division (Subi)'
     },
     'order of operations': {
-      ytId: '9gsyBj3dLYE',
+      ytId: 'M8xby9pIgKI',
       title: 'Order of Operations (BIDMAS) • Masterclass Walkthrough',
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: 'Tutor Emma',
@@ -423,7 +423,7 @@
     
     // --- 33 NEW LEVEL 2 MATHS TOPIC MASTERCLASSES ---
     '3d-shapes-and-nets': {
-      ytId: 'OVAXhNT24rY',
+      ytId: 'rWreCK8LeV0',
       title: "3D Shapes, Nets and Plans \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Sonya",
@@ -433,7 +433,7 @@
       companionLabel: "3D Shapes and Nets"
     },
     "3d shapes and nets": {
-      ytId: '',
+      ytId: 'rWreCK8LeV0',
       title: "3D Shapes, Nets and Plans \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Sonya",
@@ -443,7 +443,7 @@
       companionLabel: "3D Shapes and Nets"
     },
     'angles-bearings-pythagoras': {
-      ytId: 'uoI78UQK-F4',
+      ytId: '_AMWPPsjdxk',
       title: "Angles, Bearings and Pythagoras \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Subi",
@@ -453,7 +453,7 @@
       companionLabel: "Angles, Bearings and Pythagoras"
     },
     "angles, bearings and pythagoras": {
-      ytId: '',
+      ytId: '_AMWPPsjdxk',
       title: "Angles, Bearings and Pythagoras \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Subi",
@@ -463,7 +463,7 @@
       companionLabel: "Angles, Bearings and Pythagoras"
     },
     'area': {
-      ytId: '8YdveCQz5nE',
+      ytId: 'HRkH4sw-G5o',
       title: "Area of 2D and Compound Shapes \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Subi",
@@ -473,7 +473,7 @@
       companionLabel: "Area of 2D and Compound Shapes"
     },
     "area of 2d and compound shapes": {
-      ytId: '',
+      ytId: 'HRkH4sw-G5o',
       title: "Area of 2D and Compound Shapes \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Subi",
@@ -483,7 +483,7 @@
       companionLabel: "Area of 2D and Compound Shapes"
     },
     'averages-and-spread': {
-      ytId: 'Be89esFk97M',
+      ytId: 'HfkWe1vFavs',
       title: "Averages and Spread \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Sonya",
@@ -493,7 +493,7 @@
       companionLabel: "Averages and Spread (Mean, Median, Mode, Range)"
     },
     "averages and spread (mean, median, mode, range)": {
-      ytId: '',
+      ytId: 'HfkWe1vFavs',
       title: "Averages and Spread \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Sonya",
@@ -503,7 +503,7 @@
       companionLabel: "Averages and Spread (Mean, Median, Mode, Range)"
     },
     'bar-charts-and-pie-charts': {
-      ytId: 'fhoCg0MC26I',
+      ytId: '7WK6zIj-whI',
       title: "Bar Charts and Pie Charts \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Emma",
@@ -513,7 +513,7 @@
       companionLabel: "Bar Charts and Pie Charts"
     },
     "bar charts and pie charts": {
-      ytId: '',
+      ytId: '7WK6zIj-whI',
       title: "Bar Charts and Pie Charts \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Emma",
@@ -523,7 +523,7 @@
       companionLabel: "Bar Charts and Pie Charts"
     },
     'bearings': {
-      ytId: 'lWaeAz7bLwc',
+      ytId: 'a4u1toEYPMs',
       title: "Bearings and 3-Figure Directions \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Emma",
@@ -533,7 +533,7 @@
       companionLabel: "Bearings and Navigation"
     },
     "bearings and navigation": {
-      ytId: '',
+      ytId: 'a4u1toEYPMs',
       title: "Bearings and 3-Figure Directions \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Emma",
@@ -543,7 +543,7 @@
       companionLabel: "Bearings and Navigation"
     },
     'coordinates-and-transformations': {
-      ytId: 'sRB-NjFydek',
+      ytId: 'jmqLi2rAec0',
       title: "Coordinates and Transformations \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Sonya",
@@ -553,7 +553,7 @@
       companionLabel: "Coordinates and Transformations"
     },
     "coordinates and transformations": {
-      ytId: '',
+      ytId: 'jmqLi2rAec0',
       title: "Coordinates and Transformations \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Sonya",
@@ -563,7 +563,7 @@
       companionLabel: "Coordinates and Transformations"
     },
     'currency-conversion': {
-      ytId: 'dhk8H-SIyPs',
+      ytId: 'm52PBfFXbtY',
       title: "Currency Conversion & Exchange Rates \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Subi",
@@ -573,7 +573,7 @@
       companionLabel: "Currency Conversion & Exchange Rates"
     },
     "currency conversion and exchange rates": {
-      ytId: '',
+      ytId: 'm52PBfFXbtY',
       title: "Currency Conversion & Exchange Rates \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Subi",
@@ -583,7 +583,7 @@
       companionLabel: "Currency Conversion & Exchange Rates"
     },
     'decimals': {
-      ytId: 'M_wEPQSc8UY',
+      ytId: 'tbo7GceKRP0',
       title: "Decimals Mastery \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Subi",
@@ -593,7 +593,7 @@
       companionLabel: "Decimals (Arithmetic & Place Value)"
     },
     "decimals (arithmetic and place value)": {
-      ytId: '',
+      ytId: 'tbo7GceKRP0',
       title: "Decimals Mastery \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Subi",
@@ -603,7 +603,7 @@
       companionLabel: "Decimals (Arithmetic & Place Value)"
     },
     'density-mass-and-volume': {
-      ytId: 'pcqsmgG-zBM',
+      ytId: 'NBOOPBtb1qI',
       title: "Density, Mass and Volume \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Sonya",
@@ -613,7 +613,7 @@
       companionLabel: "Density, Mass and Volume"
     },
     "density, mass and volume": {
-      ytId: '',
+      ytId: 'NBOOPBtb1qI',
       title: "Density, Mass and Volume \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Sonya",
@@ -623,7 +623,7 @@
       companionLabel: "Density, Mass and Volume"
     },
     'fdp-conversions': {
-      ytId: 'x9l-0tN09fo',
+      ytId: 'TSJztzuKyDw',
       title: "FDP Conversions \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Subi",
@@ -633,7 +633,7 @@
       companionLabel: "FDP Conversions (Fractions, Decimals, Percentages)"
     },
     "fdp conversions (fractions, decimals, percentages)": {
-      ytId: '',
+      ytId: 'TSJztzuKyDw',
       title: "FDP Conversions \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Subi",
@@ -643,7 +643,7 @@
       companionLabel: "FDP Conversions (Fractions, Decimals, Percentages)"
     },
     'formulas': {
-      ytId: 'YcYYVjJtvHM',
+      ytId: 'wuYqkW29YGs',
       title: "Formulas and Substitution \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Subi",
@@ -653,7 +653,7 @@
       companionLabel: "Formulas and Substitution"
     },
     "formulas and substitution": {
-      ytId: '',
+      ytId: 'wuYqkW29YGs',
       title: "Formulas and Substitution \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Subi",
@@ -663,7 +663,7 @@
       companionLabel: "Formulas and Substitution"
     },
     'fractions': {
-      ytId: '9dRD0_PxY_Y',
+      ytId: 'CB2CJkT-VvQ',
       title: "Fractions Arithmetic & Word Problems \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Sonya",
@@ -673,7 +673,7 @@
       companionLabel: "Fractions (Arithmetic & Simplifying)"
     },
     "fractions (arithmetic and simplifying)": {
-      ytId: '',
+      ytId: 'CB2CJkT-VvQ',
       title: "Fractions Arithmetic & Word Problems \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Sonya",
@@ -683,7 +683,7 @@
       companionLabel: "Fractions (Arithmetic & Simplifying)"
     },
     'fractions-of-amounts': {
-      ytId: 'mvkRHP_SfnA',
+      ytId: '_fNCpPwCBJ4',
       title: "Fractions of Amounts & Reverse Fractions \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Emma",
@@ -693,7 +693,7 @@
       companionLabel: "Fractions of Amounts and Reverse Fractions"
     },
     "fractions of amounts and reverse fractions": {
-      ytId: '',
+      ytId: '_fNCpPwCBJ4',
       title: "Fractions of Amounts & Reverse Fractions \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Emma",
@@ -703,7 +703,7 @@
       companionLabel: "Fractions of Amounts and Reverse Fractions"
     },
     'frequency-and-two-way-tables': {
-      ytId: 'B8INACQygns',
+      ytId: '-WAcWo14nmE',
       title: "Frequency & Two-Way Tables \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Subi",
@@ -713,7 +713,7 @@
       companionLabel: "Frequency & Two-Way Tables"
     },
     "frequency and two-way tables": {
-      ytId: '',
+      ytId: '-WAcWo14nmE',
       title: "Frequency & Two-Way Tables \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Subi",
@@ -723,7 +723,7 @@
       companionLabel: "Frequency & Two-Way Tables"
     },
     'percentages': {
-      ytId: 'Oh4yfZParzw',
+      ytId: 'X6IBIuuwOB8',
       title: "Percentages of Amounts \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Sonya",
@@ -733,7 +733,7 @@
       companionLabel: "Percentages of Amounts"
     },
     "percentages of amounts": {
-      ytId: '',
+      ytId: 'X6IBIuuwOB8',
       title: "Percentages of Amounts \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Sonya",
@@ -743,7 +743,7 @@
       companionLabel: "Percentages of Amounts"
     },
     'percentages-and-percentage-change': {
-      ytId: 'sKICNgWOox0',
+      ytId: 'CVKJ1u0fX7g',
       title: "Percentages & Percentage Change \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Sonya",
@@ -753,7 +753,7 @@
       companionLabel: "Percentages & Percentage Change"
     },
     "percentages and percentage change": {
-      ytId: '',
+      ytId: 'CVKJ1u0fX7g',
       title: "Percentages & Percentage Change \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Sonya",
@@ -763,7 +763,7 @@
       companionLabel: "Percentages & Percentage Change"
     },
     'perimeter-area-and-composite-plans': {
-      ytId: 'v5UawVSRn1I',
+      ytId: 'tvwssr-6ovc',
       title: "Perimeter, Area & Composite Plans \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Emma",
@@ -773,7 +773,7 @@
       companionLabel: "Perimeter, Area & Composite Plans"
     },
     "perimeter, area and composite plans": {
-      ytId: '',
+      ytId: 'tvwssr-6ovc',
       title: "Perimeter, Area & Composite Plans \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Emma",
@@ -783,7 +783,7 @@
       companionLabel: "Perimeter, Area & Composite Plans"
     },
     'perimeter': {
-      ytId: 'sbLzzKlw4EY',
+      ytId: 'kS_VICCQmts',
       title: "Perimeter & Circumference \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Sonya",
@@ -793,7 +793,7 @@
       companionLabel: "Perimeter of 2D Shapes & Circumference"
     },
     "perimeter of 2d shapes and circumference": {
-      ytId: '',
+      ytId: 'kS_VICCQmts',
       title: "Perimeter & Circumference \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Sonya",
@@ -803,7 +803,7 @@
       companionLabel: "Perimeter of 2D Shapes & Circumference"
     },
     'probability-trees': {
-      ytId: 'Digt1ueGR0o',
+      ytId: 'SBbXGn8pbRQ',
       title: "Probability Trees & Combined Events \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Emma",
@@ -813,7 +813,7 @@
       companionLabel: "Probability Trees & Combined Events"
     },
     "probability trees and combined events": {
-      ytId: '',
+      ytId: 'SBbXGn8pbRQ',
       title: "Probability Trees & Combined Events \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Emma",
@@ -823,7 +823,7 @@
       companionLabel: "Probability Trees & Combined Events"
     },
     'probability-and-expected-frequency': {
-      ytId: 'iSKjl9fez2w',
+      ytId: 'EXYn4IiqfyI',
       title: "Probability & Expected Frequency \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Subi",
@@ -833,7 +833,7 @@
       companionLabel: "Probability & Expected Frequency"
     },
     "probability and expected frequency": {
-      ytId: '',
+      ytId: 'EXYn4IiqfyI',
       title: "Probability & Expected Frequency \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Subi",
@@ -843,7 +843,7 @@
       companionLabel: "Probability & Expected Frequency"
     },
     'proportion': {
-      ytId: 'ZbNpYASU7K4',
+      ytId: 'wtcxrEzrmf0',
       title: "Direct & Inverse Proportion \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Sonya",
@@ -853,7 +853,7 @@
       companionLabel: "Direct & Inverse Proportion"
     },
     "direct and inverse proportion": {
-      ytId: '',
+      ytId: 'wtcxrEzrmf0',
       title: "Direct & Inverse Proportion \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Sonya",
@@ -863,7 +863,7 @@
       companionLabel: "Direct & Inverse Proportion"
     },
     'ratio': {
-      ytId: 'jy1mJSnMnwg',
+      ytId: 'vz4jL-nXXLM',
       title: "Ratio Mastery \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Emma",
@@ -873,7 +873,7 @@
       companionLabel: "Ratio (Sharing & Simplifying)"
     },
     "ratio (sharing and simplifying)": {
-      ytId: '',
+      ytId: 'vz4jL-nXXLM',
       title: "Ratio Mastery \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Emma",
@@ -883,7 +883,7 @@
       companionLabel: "Ratio (Sharing & Simplifying)"
     },
     'ratio-and-direct-proportion': {
-      ytId: 'S4UZ6Yvh8X4',
+      ytId: 'rhP7I4BDrig',
       title: "Ratio & Direct Proportion \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Sonya",
@@ -893,7 +893,7 @@
       companionLabel: "Ratio and Direct Proportion Applications"
     },
     "ratio and direct proportion applications": {
-      ytId: '',
+      ytId: 'rhP7I4BDrig',
       title: "Ratio & Direct Proportion \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Sonya",
@@ -903,7 +903,7 @@
       companionLabel: "Ratio and Direct Proportion Applications"
     },
     'rounding-and-estimating': {
-      ytId: 'v2Xt4NXFzPc',
+      ytId: 'mr4j0ce6JEI',
       title: "Rounding and Estimating \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Emma",
@@ -913,7 +913,7 @@
       companionLabel: "Rounding and Estimating"
     },
     "rounding and estimating": {
-      ytId: '',
+      ytId: 'mr4j0ce6JEI',
       title: "Rounding and Estimating \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Emma",
@@ -923,7 +923,7 @@
       companionLabel: "Rounding and Estimating"
     },
     'scale-drawings': {
-      ytId: 'iOuUblNwkZo',
+      ytId: 'd0VHR7jSo8s',
       title: "Maps and Scale Drawings \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Subi",
@@ -933,7 +933,7 @@
       companionLabel: "Maps and Scale Drawings"
     },
     "maps and scale drawings": {
-      ytId: '',
+      ytId: 'd0VHR7jSo8s',
       title: "Maps and Scale Drawings \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Subi",
@@ -943,7 +943,7 @@
       companionLabel: "Maps and Scale Drawings"
     },
     'scatter-graphs-and-correlation': {
-      ytId: 'PV8L53Ei0q0',
+      ytId: '7Bji70KoGxY',
       title: "Scatter Graphs and Correlation \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Sonya",
@@ -953,7 +953,7 @@
       companionLabel: "Scatter Graphs and Correlation"
     },
     "scatter graphs and correlation": {
-      ytId: '',
+      ytId: '7Bji70KoGxY',
       title: "Scatter Graphs and Correlation \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Sonya",
@@ -963,7 +963,7 @@
       companionLabel: "Scatter Graphs and Correlation"
     },
     'simple-and-compound-interest': {
-      ytId: 'c7QyZ05q42A',
+      ytId: 'WloQQO_USZ4',
       title: "Simple and Compound Interest \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Subi",
@@ -973,7 +973,7 @@
       companionLabel: "Simple and Compound Interest"
     },
     "simple and compound interest": {
-      ytId: '',
+      ytId: 'WloQQO_USZ4',
       title: "Simple and Compound Interest \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Subi",
@@ -983,7 +983,7 @@
       companionLabel: "Simple and Compound Interest"
     },
     'speed-distance-and-time': {
-      ytId: '5C6ZjCAK5nI',
+      ytId: '22vPXUstgdc',
       title: "Speed, Distance and Time \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Emma",
@@ -993,7 +993,7 @@
       companionLabel: "Speed, Distance and Time"
     },
     "speed, distance and time": {
-      ytId: '',
+      ytId: '22vPXUstgdc',
       title: "Speed, Distance and Time \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Emma",
@@ -1003,7 +1003,7 @@
       companionLabel: "Speed, Distance and Time"
     },
     'symmetry-tessellation-and-2d-properties': {
-      ytId: '-1QBlinkwn8',
+      ytId: 'mRDm2oKG1tQ',
       title: "Symmetry, Tessellation & 2D Properties \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Emma",
@@ -1013,7 +1013,7 @@
       companionLabel: "Symmetry, Tessellation & 2D Properties"
     },
     "symmetry, tessellation and 2d properties": {
-      ytId: '',
+      ytId: 'mRDm2oKG1tQ',
       title: "Symmetry, Tessellation & 2D Properties \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Emma",
@@ -1023,7 +1023,7 @@
       companionLabel: "Symmetry, Tessellation & 2D Properties"
     },
     'unit-conversions': {
-      ytId: 'IUlDbdCrd4w',
+      ytId: 'nBlq8LRn8e0',
       title: "Unit Conversions \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Emma",
@@ -1033,7 +1033,7 @@
       companionLabel: "Unit Conversions (Metric & Imperial)"
     },
     "unit conversions (metric and imperial)": {
-      ytId: '',
+      ytId: 'nBlq8LRn8e0',
       title: "Unit Conversions \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Emma",
@@ -1043,7 +1043,7 @@
       companionLabel: "Unit Conversions (Metric & Imperial)"
     },
     'volume': {
-      ytId: 'NdnbM96FE5M',
+      ytId: 'gTwPw5DbUuA',
       title: "Volume of Prisms and Cylinders \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Emma",
@@ -1053,7 +1053,7 @@
       companionLabel: "Volume of Prisms and Cylinders"
     },
     "volume of prisms and cylinders": {
-      ytId: '',
+      ytId: 'gTwPw5DbUuA',
       title: "Volume of Prisms and Cylinders \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Emma",
@@ -1063,7 +1063,7 @@
       companionLabel: "Volume of Prisms and Cylinders"
     },
     'volume-and-surface-area': {
-      ytId: 'h0Bw9PcDC0A',
+      ytId: 'bp5-mfp7eJI',
       title: "Surface Area & 3D Volumes \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Subi",
@@ -1073,7 +1073,7 @@
       companionLabel: "Surface Area & Advanced 3D Volumes"
     },
     "surface area and advanced 3d volumes": {
-      ytId: '',
+      ytId: 'bp5-mfp7eJI',
       title: "Surface Area & 3D Volumes \u2022 Masterclass Walkthrough",
       series: 'Pearson Edexcel Functional Skills Maths Level 2',
       tutor: "Tutor Subi",
@@ -1652,8 +1652,8 @@
     },
     'open-awards-dfs-e3-sam-walkthrough': {
       ytId: 'D4V1QMQY_9I',
-      title: 'Open Awards DFS Entry Level 3 • SAM Walkthrough',
-      series: 'Open Awards Digital Functional Skills Entry Level 3',
+      title: 'Open Awards DFS Entry 3 • SAM Walkthrough',
+      series: 'Open Awards Digital Functional Skills Entry 3',
       tutor: 'Tutor Sonya',
       poster: 'assets/img/posters/oa-dfs-e3-sam-poster.jpg'
     },
@@ -1661,6 +1661,7 @@
     // SLC Task 1 & Task 2 Exemplar Walkthroughs
     'slc-task1-presentation-model': {
       ytId: 'l7VRzidsFno',
+      localVideo: 'assets/video/slc-task1-presentation-model.mp4',
       title: 'SLC Task 1 • Presentation Model (Pass Benchmark)',
       series: 'Pearson Edexcel English Level 2 SLC',
       paperGroup: 'edexcel-english-l2-slc',
@@ -1671,6 +1672,7 @@
     },
     'slc task 1 • presentation model': {
       ytId: 'l7VRzidsFno',
+      localVideo: 'assets/video/slc-task1-presentation-model.mp4',
       title: 'SLC Task 1 • Presentation Model (Pass Benchmark)',
       series: 'Pearson Edexcel English Level 2 SLC',
       paperGroup: 'edexcel-english-l2-slc',
@@ -1681,6 +1683,7 @@
     },
     'slc-task2-discussion-model': {
       ytId: 'labg8nxHII0',
+      localVideo: 'assets/video/slc-task2-discussion-model.mp4',
       title: 'SLC Task 2 • Group Discussion Model (Pass Benchmark)',
       series: 'Pearson Edexcel English Level 2 SLC',
       paperGroup: 'edexcel-english-l2-slc',
@@ -1691,6 +1694,7 @@
     },
     'slc task 2 • discussion model': {
       ytId: 'labg8nxHII0',
+      localVideo: 'assets/video/slc-task2-discussion-model.mp4',
       title: 'SLC Task 2 • Group Discussion Model (Pass Benchmark)',
       series: 'Pearson Edexcel English Level 2 SLC',
       paperGroup: 'edexcel-english-l2-slc',
@@ -1705,98 +1709,98 @@
       localVideo: 'assets/video/sonya-e3-numbers-to-1000-and-patterns-walkthrough.mp4',
       poster: 'assets/img/posters/e3-numbers-to-1000-and-patterns-poster.jpg',
       title: 'E3 Maths: Numbers up to 1,000 & Patterns (Foundation Lesson)',
-      series: 'Entry Level 3 Maths Foundation'
+      series: 'Entry 3 Maths Foundation'
     },
     'e3-addition-and-subtraction': {
       ytId: 'gTdqIWhHBQs',
       localVideo: 'assets/video/emma-e3-addition-and-subtraction-walkthrough.mp4',
       poster: 'assets/img/posters/e3-addition-and-subtraction-poster.jpg',
       title: 'E3 Maths: 3-Digit Addition & Subtraction (Foundation Lesson)',
-      series: 'Entry Level 3 Maths Foundation'
+      series: 'Entry 3 Maths Foundation'
     },
     'e3-multiplication-and-division': {
       ytId: '7GCWKG_pSzw',
       localVideo: 'assets/video/subi-e3-multiplication-and-division-walkthrough.mp4',
       poster: 'assets/img/posters/e3-multiplication-and-division-poster.jpg',
       title: 'E3 Maths: Multiplication & Division with Remainders (Foundation Lesson)',
-      series: 'Entry Level 3 Maths Foundation'
+      series: 'Entry 3 Maths Foundation'
     },
     'e3-rounding-and-estimating': {
       ytId: 'kRvgYUIZixY',
       localVideo: 'assets/video/sonya-e3-rounding-and-estimating-walkthrough.mp4',
       poster: 'assets/img/posters/e3-rounding-and-estimating-poster.jpg',
       title: 'E3 Maths: Rounding to Nearest 10 & 100 (Foundation Lesson)',
-      series: 'Entry Level 3 Maths Foundation'
+      series: 'Entry 3 Maths Foundation'
     },
     'e3-everyday-fractions': {
       ytId: '-FCvw_Tv5FM',
       localVideo: 'assets/video/emma-e3-everyday-fractions-walkthrough.mp4',
       poster: 'assets/img/posters/e3-everyday-fractions-poster.jpg',
       title: 'E3 Maths: Everyday Fractions (1/2, 1/4, 3/4, 1/10) (Foundation Lesson)',
-      series: 'Entry Level 3 Maths Foundation'
+      series: 'Entry 3 Maths Foundation'
     },
     'e3-money-and-decimals': {
       ytId: 'TxGrwFLVVE8',
       localVideo: 'assets/video/subi-e3-money-and-decimals-walkthrough.mp4',
       poster: 'assets/img/posters/e3-money-and-decimals-poster.jpg',
       title: 'E3 Maths: Money, Change & Decimal Basics (Foundation Lesson)',
-      series: 'Entry Level 3 Maths Foundation'
+      series: 'Entry 3 Maths Foundation'
     },
     'e3-time-clocks-and-calendars': {
       ytId: 'LbOD8LDZUyo',
       localVideo: 'assets/video/sonya-e3-time-clocks-and-calendars-walkthrough.mp4',
       poster: 'assets/img/posters/e3-time-clocks-and-calendars-poster.jpg',
       title: 'E3 Maths: Telling the Time, Clocks & Calendars (Foundation Lesson)',
-      series: 'Entry Level 3 Maths Foundation'
+      series: 'Entry 3 Maths Foundation'
     },
     'e3-everyday-measures-and-scales': {
       ytId: 'nLt3nEc3URs',
       localVideo: 'assets/video/emma-e3-everyday-measures-and-scales-walkthrough.mp4',
       poster: 'assets/img/posters/e3-everyday-measures-and-scales-poster.jpg',
       title: 'E3 Maths: Length, Weight, Capacity & Reading Scales (Foundation Lesson)',
-      series: 'Entry Level 3 Maths Foundation'
+      series: 'Entry 3 Maths Foundation'
     },
     'e3-shapes-angles-and-directions': {
       ytId: '2DFypm6MqWI',
       localVideo: 'assets/video/subi-e3-shapes-angles-and-directions-walkthrough.mp4',
       poster: 'assets/img/posters/e3-shapes-angles-and-directions-poster.jpg',
       title: 'E3 Maths: Shapes, Right Angles & Directions (Foundation Lesson)',
-      series: 'Entry Level 3 Maths Foundation'
+      series: 'Entry 3 Maths Foundation'
     },
     'e3-lists-tallies-tables-and-charts': {
       ytId: 'OgrJzBZVR24',
       localVideo: 'assets/video/sonya-e3-lists-tallies-tables-and-charts-walkthrough.mp4',
       poster: 'assets/img/posters/e3-lists-tallies-tables-and-charts-poster.jpg',
       title: 'E3 Maths: Lists, Tally Charts, Tables & Bar Charts (Foundation Lesson)',
-      series: 'Entry Level 3 Maths Foundation'
+      series: 'Entry 3 Maths Foundation'
     },
     'e3-english-reading-everyday-texts': {
       ytId: '7abZ7FcL6n8',
       localVideo: 'assets/video/sonya-e3-english-reading-everyday-texts-walkthrough.mp4',
       poster: 'assets/img/posters/e3-english-reading-everyday-texts-poster.jpg',
       title: 'E3 English: Reading Signs, Emails & Instructions (Foundation Lesson)',
-      series: 'Entry Level 3 English Foundation'
+      series: 'Entry 3 English Foundation'
     },
     'e3-english-sentence-basics': {
       ytId: 'fobT_DEnKvI',
       localVideo: 'assets/video/emma-e3-english-sentence-basics-walkthrough.mp4',
       poster: 'assets/img/posters/e3-english-sentence-basics-poster.jpg',
       title: 'E3 English: Capitals, Full Stops & Joining Words (Foundation Lesson)',
-      series: 'Entry Level 3 English Foundation'
+      series: 'Entry 3 English Foundation'
     },
     'e3-english-everyday-spellings': {
       ytId: 'rC3eBmHbbyc',
       localVideo: 'assets/video/subi-e3-english-everyday-spellings-walkthrough.mp4',
       poster: 'assets/img/posters/e3-english-everyday-spellings-poster.jpg',
       title: 'E3 English: Everyday Spellings, Plurals & Homophones (Foundation Lesson)',
-      series: 'Entry Level 3 English Foundation'
+      series: 'Entry 3 English Foundation'
     },
     'e3-english-writing-emails-and-forms': {
       ytId: 'h60SvDd-fuA',
       localVideo: 'assets/video/emma-e3-english-writing-emails-and-forms-walkthrough.mp4',
       poster: 'assets/img/posters/e3-english-writing-emails-and-forms-poster.jpg',
       title: 'E3 English: Writing Short Emails, Notes & Forms (Foundation Lesson)',
-      series: 'Entry Level 3 English Foundation'
+      series: 'Entry 3 English Foundation'
     }
     // === E3_MODAL_END ===
   };
@@ -1994,6 +1998,7 @@
     playerBox.innerHTML = '';
 
     const localVideoUrl = options.localVideo || '';
+    const subtitlesUrl = options.subtitles || '';
     const posterUrl = options.poster || '';
     if (ytId) {
       // Clean YouTube Embed (Never crashes mobile browsers with MIME type error)
@@ -2004,9 +2009,13 @@
         <iframe id="mfsModalYtPlayer" style="width:100%; height:100%; border:0; display:block;" src="https://www.youtube-nocookie.com/embed/${ytId}?autoplay=1&rel=0&playsinline=1&enablejsapi=1${originParam}" title="${escapeHtml(topic)}" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen referrerpolicy="strict-origin-when-cross-origin"></iframe>
       `;
     } else if (localVideoUrl) {
+      const subTrack = subtitlesUrl
+        ? `<track kind="subtitles" srclang="en" label="English (CC)" src="${escapeHtml(subtitlesUrl)}">`
+        : '';
       playerBox.innerHTML = `
         <video controls autoplay playsinline poster="${escapeHtml(posterUrl)}" style="width:100%; height:100%; object-fit:contain; background:#000; display:block;">
           <source src="${escapeHtml(localVideoUrl)}" type="video/mp4">
+          ${subTrack}
         </video>
       `;
     } else {
@@ -2120,6 +2129,7 @@
         let answersUrl = this.getAttribute('data-answers');
         let ytId = this.getAttribute('data-yt-id') || this.getAttribute('data-ytid') || '';
         let localVideo = this.getAttribute('data-local-video') || '';
+        let subtitles = this.getAttribute('data-subtitles') || '';
         let poster = this.getAttribute('data-poster') || '';
         let series = this.getAttribute('data-series') || 'Pearson Edexcel Functional Skills';
 
@@ -2153,6 +2163,7 @@
           answersUrl: answersUrl,
           ytId: ytId,
           localVideo: localVideo,
+          subtitles: subtitles,
           poster: poster,
           series: series,
           tutor: this.getAttribute('data-tutor') || ''

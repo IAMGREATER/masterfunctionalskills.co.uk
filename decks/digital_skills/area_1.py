@@ -8,8 +8,8 @@ CARDS = [ { 'answer_text': 'A screen reader (or text-to-speech / Narrator).',
     'golden_rule': 'Accessibility features ensure digital inclusion for all '
                    'users!',
     'id': 'dfs-01',
-    'level': 'l2',
-    'level_label': 'Level 1 / 2',
+    'level': 'l1',
+    'level_label': 'Level 1 (DFSQ)',
     'number': 1,
     'rule_body': 'Accessibility settings assist users with physical or '
                  'cognitive impairments: High Contrast Mode (visual clarity), '
@@ -50,8 +50,8 @@ CARDS = [ { 'answer_text': 'A screen reader (or text-to-speech / Narrator).',
     'golden_rule': 'Include the date (YYYY-MM-DD) and version number (v1, v2) '
                    'in filename!',
     'id': 'dfs-02',
-    'level': 'l2',
-    'level_label': 'Level 1 / 2',
+    'level': 'l1',
+    'level_label': 'Level 1 (DFSQ)',
     'number': 2,
     'rule_body': 'Organise files into logical tree hierarchies: Root Folder → '
                  'Subfolder → Specific file. Meaningful naming convention: '
@@ -71,13 +71,13 @@ CARDS = [ { 'answer_text': 'A screen reader (or text-to-speech / Narrator).',
                 '            <text x="25" y="26" font-size="11" '
                 'font-weight="800" fill="#0f172a">📁 Documents (Root '
                 'Folder)</text>\n'
-                '            <text x="45" y="52" font-size="10.5" '
+                '            <text x="45" y="52" font-size="11" '
                 'font-weight="700" fill="#2563eb">└── 📁 Healthcare_Clinic_Project '
                 '(Subfolder)</text>\n'
-                '            <text x="70" y="76" font-size="10" '
+                '            <text x="70" y="76" font-size="11" '
                 'font-weight="700" fill="#475569">├── 📄 '
                 'Meeting_Notes_12Oct24.docx</text>\n'
-                '            <text x="70" y="98" font-size="10" '
+                '            <text x="70" y="98" font-size="11" '
                 'font-weight="700" fill="#475569">└── 📊 '
                 'Financial_Forecast_v3.xlsx</text>\n'
                 '          </g>\n'
@@ -92,8 +92,8 @@ CARDS = [ { 'answer_text': 'A screen reader (or text-to-speech / Narrator).',
     'dfe_code': 'DFS 1.3',
     'golden_rule': 'Export to PDF before sharing to keep layout and formatting intact!',
     'id': 'dfs-03',
-    'level': 'l2',
-    'level_label': 'Level 1 / 2',
+    'level': 'l1',
+    'level_label': 'Level 1 (DFSQ)',
     'number': 3,
     'rule_body': '.docx = Word processing. .pdf = Portable read-only document '
                  '(universal). .xlsx / .csv = Spreadsheets / raw '
@@ -135,8 +135,8 @@ CARDS = [ { 'answer_text': 'A screen reader (or text-to-speech / Narrator).',
     'golden_rule': 'Cloud files protect you against hardware crashes, fires, '
                    'or stolen laptops!',
     'id': 'dfs-04',
-    'level': 'l2',
-    'level_label': 'Level 1 / 2',
+    'level': 'l1',
+    'level_label': 'Level 1 (DFSQ)',
     'number': 4,
     'rule_body': 'Cloud storage (OneDrive, Google Drive, iCloud) stores files '
                  'on secure remote servers over the Internet. Benefits: '
@@ -177,8 +177,8 @@ CARDS = [ { 'answer_text': 'A screen reader (or text-to-speech / Narrator).',
     'dfe_code': 'DFS 1.5',
     'golden_rule': 'Use quotation marks to search for exact multi-word terms!',
     'id': 'dfs-05',
-    'level': 'l2',
-    'level_label': 'Level 1 / 2',
+    'level': 'l1',
+    'level_label': 'Level 1 (DFSQ)',
     'number': 5,
     'rule_body': 'Quotation Marks ("..."): Searches for the EXACT phrase in '
                  'that precise order. Minus Sign (-word): Excludes unwanted '
@@ -221,8 +221,8 @@ CARDS = [ { 'answer_text': 'A screen reader (or text-to-speech / Narrator).',
     'dfe_code': 'DFS 1.6',
     'golden_rule': 'Cross-check web information across at least two trusted sources!',
     'id': 'dfs-06',
-    'level': 'l2',
-    'level_label': 'Level 1 / 2',
+    'level': 'l1',
+    'level_label': 'Level 1 (DFSQ)',
     'number': 6,
     'rule_body': 'Top-level domains: .gov.uk = Official UK government. .ac.uk '
                  '= Universities. .org = Non-profit organisations. .com / '
@@ -264,8 +264,8 @@ CARDS = [ { 'answer_text': 'A screen reader (or text-to-speech / Narrator).',
     'golden_rule': 'Empty your Recycle Bin / Trash to permanently reclaim disk '
                    'storage!',
     'id': 'dfs-07',
-    'level': 'l2',
-    'level_label': 'Level 1 / 2',
+    'level': 'l1',
+    'level_label': 'Level 1 (DFSQ)',
     'number': 7,
     'rule_body': 'Storage (GB/TB): Permanent memory holding files and apps '
                  'when PC is turned off. RAM (Random Access Memory): Temporary '
@@ -285,12 +285,12 @@ CARDS = [ { 'answer_text': 'A screen reader (or text-to-speech / Narrator).',
                 '            <text x="90" y="24" font-size="12" '
                 'font-weight="800" fill="#1e40af" text-anchor="middle">STORAGE '
                 '(SSD/HDD)</text>\n'
-                '            <text x="15" y="55" font-size="10.5" '
+                '            <text x="15" y="55" font-size="11" '
                 'font-weight="700" fill="#0f172a">• Permanent file '
                 'storage</text>\n'
-                '            <text x="15" y="78" font-size="10.5" '
+                '            <text x="15" y="78" font-size="11" '
                 'font-weight="700" fill="#0f172a">• 256 GB / 1 TB</text>\n'
-                '            <text x="15" y="101" font-size="10.5" '
+                '            <text x="15" y="101" font-size="11" '
                 'font-weight="700" fill="#0f172a">• Survives restarts</text>\n'
                 '          </g>\n'
                 '          <g transform="translate(240, 20)">\n'
@@ -299,12 +299,12 @@ CARDS = [ { 'answer_text': 'A screen reader (or text-to-speech / Narrator).',
                 '            <text x="90" y="24" font-size="12" '
                 'font-weight="800" fill="#15803d" text-anchor="middle">MEMORY '
                 '(RAM)</text>\n'
-                '            <text x="15" y="55" font-size="10.5" '
+                '            <text x="15" y="55" font-size="11" '
                 'font-weight="700" fill="#0f172a">• Active app '
                 'workspace</text>\n'
-                '            <text x="15" y="78" font-size="10.5" '
+                '            <text x="15" y="78" font-size="11" '
                 'font-weight="700" fill="#0f172a">• 8 GB / 16 GB</text>\n'
-                '            <text x="15" y="101" font-size="10.5" '
+                '            <text x="15" y="101" font-size="11" '
                 'font-weight="700" fill="#0f172a">• Clears on restart</text>\n'
                 '          </g>\n'
                 '</svg>',
@@ -319,8 +319,8 @@ CARDS = [ { 'answer_text': 'A screen reader (or text-to-speech / Narrator).',
     'golden_rule': 'You must EXTRACT files before you can properly edit and '
                    'save them!',
     'id': 'dfs-08',
-    'level': 'l2',
-    'level_label': 'Level 1 / 2',
+    'level': 'l1',
+    'level_label': 'Level 1 (DFSQ)',
     'number': 8,
     'rule_body': 'Compress (Zip): Shrinks file size and bundles multiple '
                  'documents into one single .zip folder for emailing. Extract: '
@@ -355,12 +355,12 @@ CARDS = [ { 'answer_text': 'A screen reader (or text-to-speech / Narrator).',
                  'changes may be lost.'},
   { 'answer_text': 'Ctrl + Shift + Esc (or Ctrl + Alt + Delete).',
     'challenge_prompt': 'What keyboard shortcut opens Windows Task Manager '
-                        'directly to close a frozen program?',
+                        'directly to close a frozen application?',
     'dfe_code': 'DFS 1.9',
     'golden_rule': 'Restarting clears memory caches — try it first before calling support!',
     'id': 'dfs-09',
-    'level': 'l2',
-    'level_label': 'Level 1 / 2',
+    'level': 'l1',
+    'level_label': 'Level 1 (DFSQ)',
     'number': 9,
     'rule_body': 'App frozen: Open Task Manager (Ctrl + Shift + Esc) and '
                  "select 'End Task'. Wi-Fi dropped: Check flight mode, restart "
@@ -401,8 +401,8 @@ CARDS = [ { 'answer_text': 'A screen reader (or text-to-speech / Narrator).',
     'golden_rule': 'Always lock your computer screen (Win + L) when leaving '
                    'your desk!',
     'id': 'dfs-10',
-    'level': 'l2',
-    'level_label': 'Level 1 / 2',
+    'level': 'l1',
+    'level_label': 'Level 1 (DFSQ)',
     'number': 10,
     'rule_body': 'Personal data relates to an identifiable living person '
                  '(names, patient IDs, addresses). Under UK GDPR: 1. Process '

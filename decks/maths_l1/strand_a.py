@@ -62,9 +62,9 @@ CARDS = [ { 'answer_text': 'The digit 7 is in the ten thousands column, so its v
                 '          <g transform="translate(50, 15)">\n'
                 '            <rect x="0" y="0" width="160" height="135" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.8"/>\n'
                 '            <text x="80" y="22" font-size="11" font-weight="800" fill="#1e40af" text-anchor="middle">SUBTRACTION (BORROW)</text>\n'
-                '            <text x="56" y="42" font-size="10.5" font-weight="900" fill="#dc2626" text-anchor="middle">4</text>\n'
-                '            <text x="86" y="42" font-size="10.5" font-weight="900" fill="#dc2626" text-anchor="middle">11</text>\n'
-                '            <text x="116" y="42" font-size="10.5" font-weight="900" fill="#dc2626" text-anchor="middle">14</text>\n'
+                '            <text x="56" y="42" font-size="11" font-weight="900" fill="#dc2626" text-anchor="middle">4</text>\n'
+                '            <text x="86" y="42" font-size="11" font-weight="900" fill="#dc2626" text-anchor="middle">11</text>\n'
+                '            <text x="116" y="42" font-size="11" font-weight="900" fill="#dc2626" text-anchor="middle">14</text>\n'
                 '            <text x="56" y="62" font-size="15" font-weight="800" fill="#94a3b8" text-anchor="middle">5</text>\n'
                 '            <line x1="48" y1="67" x2="64" y2="51" stroke="#dc2626" stroke-width="2" stroke-linecap="round"/>\n'
                 '            <text x="86" y="62" font-size="15" font-weight="800" fill="#94a3b8" text-anchor="middle">2</text>\n'
@@ -89,12 +89,12 @@ CARDS = [ { 'answer_text': 'The digit 7 is in the ten thousands column, so its v
                 '            <path d="M 46 95 L 46 58 L 136 58" fill="none" stroke="#0f172a" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>\n'
                 '            <text x="30" y="85" font-size="16" font-weight="900" fill="#0369a1" text-anchor="middle">6</text>\n'
                 '            <text x="64" y="85" font-size="15" font-weight="800" fill="#0f172a" text-anchor="middle">8</text>\n'
-                '            <text x="80" y="73" font-size="10" font-weight="900" fill="#dc2626" text-anchor="middle">&#178;</text>\n'
+                '            <text x="80" y="73" font-size="11" font-weight="900" fill="#dc2626" text-anchor="middle">&#178;</text>\n'
                 '            <text x="92" y="85" font-size="15" font-weight="800" fill="#0f172a" text-anchor="middle">5</text>\n'
-                '            <text x="108" y="73" font-size="10" font-weight="900" fill="#dc2626" text-anchor="middle">&#185;</text>\n'
+                '            <text x="108" y="73" font-size="11" font-weight="900" fill="#dc2626" text-anchor="middle">&#185;</text>\n'
                 '            <text x="120" y="85" font-size="15" font-weight="800" fill="#0f172a" text-anchor="middle">2</text>\n'
                 '            <rect x="20" y="104" width="120" height="22" rx="4" fill="#dcfce7" stroke="#86efac"/>\n'
-                '            <text x="80" y="119" font-size="10.5" font-weight="800" fill="#15803d" text-anchor="middle">852 ÷ 6 = 142 ✓</text>\n'
+                '            <text x="80" y="119" font-size="11" font-weight="800" fill="#15803d" text-anchor="middle">852 ÷ 6 = 142 ✓</text>\n'
                 '          </g>\n'
                 '</svg>',
     'title': 'Four Operations with Whole Numbers',
@@ -118,16 +118,17 @@ CARDS = [ { 'answer_text': 'The digit 7 is in the ten thousands column, so its v
     'svg_html': '<svg viewBox="0 0 460 170" width="100%" height="170" xmlns="http://www.w3.org/2000/svg">\n'
                 '\n'
                 '          <line x1="30" y1="85" x2="430" y2="85" stroke="#334155" stroke-width="2.5"/>\n'
+                '          <path d="M 90,75 Q 230,22 370,75" fill="none" stroke="#2563eb" stroke-width="2" '
+                'stroke-dasharray="4,4"/>\n'
+                '          <rect x="194" y="49" width="72" height="18" rx="4" fill="#ffffff" fill-opacity="0.92"/>\n'
                 '          <line x1="230" y1="70" x2="230" y2="100" stroke="#0f172a" stroke-width="2.5"/>\n'
-                '          <text x="230" y="60" font-size="13" font-weight="900" fill="#0f172a" '
+                '          <text x="230" y="63" font-size="12.5" font-weight="900" fill="#0f172a" '
                 'text-anchor="middle">£0 / 0°C</text>\n'
                 '          <text x="90" y="110" font-size="12" font-weight="800" fill="#dc2626" '
                 'text-anchor="middle">-£15</text>\n'
                 '          <text x="370" y="110" font-size="12" font-weight="800" fill="#059669" '
                 'text-anchor="middle">+£20</text>\n'
-                '          <path d="M 90,75 Q 230,30 370,75" fill="none" stroke="#2563eb" stroke-width="2" '
-                'stroke-dasharray="4,4"/>\n'
-                '          <text x="230" y="35" font-size="12" font-weight="800" fill="#2563eb" '
+                '          <text x="230" y="29" font-size="12" font-weight="800" fill="#2563eb" '
                 'text-anchor="middle">Difference = £35</text>\n'
                 '          <text x="230" y="145" font-size="11" font-weight="700" fill="#475569" '
                 'text-anchor="middle">-£15 is DEEPER in debt than -£5</text>\n'
@@ -214,14 +215,14 @@ CARDS = [ { 'answer_text': 'The digit 7 is in the ten thousands column, so its v
     'subject': 'maths',
     'subject_label': 'Maths',
     'svg_html': '<svg viewBox="0 0 460 170" width="100%" height="170" xmlns="http://www.w3.org/2000/svg">\n'
-                '          <g transform="translate(25, 12)">\n'
+                '          <g transform="translate(15, 12)">\n'
                 '            <rect x="0" y="0" width="195" height="146" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.8"/>\n'
-                '            <text x="97" y="20" font-size="10.5" font-weight="900" fill="#0369a1" text-anchor="middle">LINE UP THE DECIMAL POINTS</text>\n'
-                '            <text x="58" y="34" font-size="10.5" font-weight="800" fill="#64748b" text-anchor="middle">T</text>\n'
-                '            <text x="86" y="34" font-size="10.5" font-weight="800" fill="#64748b" text-anchor="middle">U</text>\n'
-                '            <text x="106" y="34" font-size="11" font-weight="900" fill="#dc2626" text-anchor="middle">&#8226;</text>\n'
-                '            <text x="126" y="34" font-size="10.5" font-weight="800" fill="#64748b" text-anchor="middle">t</text>\n'
-                '            <text x="154" y="34" font-size="10.5" font-weight="800" fill="#64748b" text-anchor="middle">h</text>\n'
+                '            <text x="97" y="20" font-size="11" font-weight="900" fill="#0369a1" text-anchor="middle">LINE UP DECIMAL POINTS</text>\n'
+                '            <text x="58" y="34" font-size="11" font-weight="800" fill="#64748b" text-anchor="middle">T</text>\n'
+                '            <text x="86" y="34" font-size="11" font-weight="800" fill="#64748b" text-anchor="middle">U</text>\n'
+                '            <text x="106" y="34" font-size="11.5" font-weight="900" fill="#dc2626" text-anchor="middle">&#8226;</text>\n'
+                '            <text x="126" y="34" font-size="11" font-weight="800" fill="#64748b" text-anchor="middle">t</text>\n'
+                '            <text x="154" y="34" font-size="11" font-weight="800" fill="#64748b" text-anchor="middle">h</text>\n'
                 '            <line x1="22" y1="38" x2="173" y2="38" stroke="#e2e8f0" stroke-width="1.5"/>\n'
                 '            <line x1="106" y1="30" x2="106" y2="124" stroke="#ef4444" stroke-width="1.8" stroke-dasharray="3,3" opacity="0.8"/>\n'
                 '            <!-- Row 1: 14.50 -->\n'
@@ -247,21 +248,21 @@ CARDS = [ { 'answer_text': 'The digit 7 is in the ten thousands column, so its v
                 '            <text x="154" y="112" font-size="16" font-weight="900" fill="#15803d" text-anchor="middle">5</text>\n'
                 '            <line x1="22" y1="119" x2="173" y2="119" stroke="#15803d" stroke-width="1.5"/>\n'
                 '            <line x1="22" y1="122" x2="173" y2="122" stroke="#15803d" stroke-width="1.5"/>\n'
-                '            <rect x="35" y="127" width="125" height="15" rx="3" fill="#dcfce7" stroke="#86efac"/>\n'
-                '            <text x="97" y="138" font-size="9" font-weight="800" fill="#15803d" text-anchor="middle">Total: £18.35 &#10003;</text>\n'
+                '            <rect x="35" y="126" width="125" height="17" rx="3" fill="#dcfce7" stroke="#86efac"/>\n'
+                '            <text x="97" y="138" font-size="11" font-weight="800" fill="#15803d" text-anchor="middle">Total: £18.35 &#10003;</text>\n'
                 '          </g>\n'
-                '          <g transform="translate(235, 12)">\n'
-                '            <rect x="0" y="0" width="200" height="146" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="1.8"/>\n'
-                '            <text x="100" y="22" font-size="11.5" font-weight="900" fill="#15803d" text-anchor="middle">DECIMAL MONEY RULES</text>\n'
-                '            <circle cx="16" cy="44" r="3.5" fill="#16a34a"/>\n'
-                '            <text x="26" y="47" font-size="10.5" font-weight="800" fill="#0f172a">1. Align dots in a line</text>\n'
-                '            <text x="26" y="60" font-size="9.5" font-weight="600" fill="#475569">Keep decimal points vertically straight</text>\n'
-                '            <circle cx="16" cy="78" r="3.5" fill="#16a34a"/>\n'
-                '            <text x="26" y="81" font-size="10.5" font-weight="800" fill="#0f172a">2. Always 2 decimal places</text>\n'
-                '            <text x="26" y="94" font-size="9.5" font-weight="600" fill="#475569">£18.35 &#8226; Never write £18.3 or £18.35p</text>\n'
-                '            <circle cx="16" cy="112" r="3.5" fill="#16a34a"/>\n'
-                '            <text x="26" y="115" font-size="10.5" font-weight="800" fill="#0f172a">3. Pad empty places with 0</text>\n'
-                '            <text x="26" y="128" font-size="9.5" font-weight="600" fill="#475569">e.g. £14.5 &#8594; write as £14.50</text>\n'
+                '          <g transform="translate(220, 12)">\n'
+                '            <rect x="0" y="0" width="225" height="146" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="1.8"/>\n'
+                '            <text x="112" y="22" font-size="11.5" font-weight="900" fill="#15803d" text-anchor="middle">DECIMAL MONEY RULES</text>\n'
+                '            <circle cx="14" cy="44" r="3.5" fill="#16a34a"/>\n'
+                '            <text x="23" y="47" font-size="11" font-weight="800" fill="#0f172a">1. Align dots vertically</text>\n'
+                '            <text x="23" y="61" font-size="11" font-weight="600" fill="#475569">Keep decimal points straight</text>\n'
+                '            <circle cx="14" cy="79" r="3.5" fill="#16a34a"/>\n'
+                '            <text x="23" y="82" font-size="11" font-weight="800" fill="#0f172a">2. Always 2 decimal places</text>\n'
+                '            <text x="23" y="96" font-size="11" font-weight="600" fill="#475569">£18.35 (never £18.3 or .35p)</text>\n'
+                '            <circle cx="14" cy="114" r="3.5" fill="#16a34a"/>\n'
+                '            <text x="23" y="117" font-size="11" font-weight="800" fill="#0f172a">3. Pad empty digits with 0</text>\n'
+                '            <text x="23" y="131" font-size="11" font-weight="600" fill="#475569">e.g. £14.5 &#8594; write £14.50</text>\n'
                 '          </g>\n'
                 '</svg>',
     'title': 'Operations with Decimals &amp; Money',
@@ -507,9 +508,9 @@ CARDS = [ { 'answer_text': 'The digit 7 is in the ten thousands column, so its v
                 'text-anchor="middle">PRIME NUMBERS &lt; 20</text>\n'
                 '            <text x="95" y="60" font-size="13" font-weight="800" fill="#dc2626" '
                 'text-anchor="middle">2, 3, 5, 7, 11, 13, 17, 19</text>\n'
-                '            <text x="95" y="95" font-size="10.5" font-weight="800" fill="#0f172a" '
+                '            <text x="95" y="95" font-size="11" font-weight="800" fill="#0f172a" '
                 'text-anchor="middle">⚠️ 1 is NOT prime!</text>\n'
-                '            <text x="95" y="112" font-size="10.5" font-weight="800" fill="#0f172a" '
+                '            <text x="95" y="112" font-size="11" font-weight="800" fill="#0f172a" '
                 'text-anchor="middle">2 is the ONLY even prime</text>\n'
                 '          </g>\n'
                 '</svg>',
@@ -547,4 +548,71 @@ CARDS = [ { 'answer_text': 'The digit 7 is in the ten thousands column, so its v
                 '          </g>\n'
                 '</svg>',
     'title': 'Inverse Operations for Checking',
-    'watch_out': "Don't repeat the same sum — examiners require the inverse operation!"}]
+    'watch_out': "Don't repeat the same sum — examiners require the inverse operation!"},
+  { 'answer_text': '1 year interest = 5% of £800 = £40. 2 years = £40 × 2 = £80. Total = £800 + £80 = £880.',
+  'challenge_prompt': 'Sam invests £800 in a savings account paying 5% simple interest per year. How much money '
+                      'will be in the account after 2 years?',
+  'dfe_code': 'DfE L1.N15',
+  'golden_rule': "Find 1 year's interest first, multiply by years, then add to start money!",
+  'id': 'm-l1-39',
+  'level': 'l1',
+  'level_label': 'Level 1',
+  'number': 15,
+  'rule_body': 'At Level 1, savings earn simple interest on the original deposit only. Find the interest for 1 '
+               'year (% of starting amount), then multiply by the number of years and add back.',
+  'rule_heading': 'Simple Interest = 1 Year Interest × Number of Years',
+  'strand_name': 'Number System',
+  'strand_theme': 'blue',
+  'subject': 'maths',
+  'subject_label': 'Maths',
+  'svg_html': '<svg viewBox="0 0 460 170" width="100%" height="170" xmlns="http://www.w3.org/2000/svg">\n'
+              '          <rect x="25" y="18" width="410" height="134" rx="8" fill="#eff6ff" stroke="#3b82f6" '
+              'stroke-width="2"/>\n'
+              '          <text x="230" y="42" font-size="12.5" font-weight="900" fill="#1e40af" '
+              'text-anchor="middle">SIMPLE INTEREST FORMULA (LEVEL 1)</text>\n'
+              '          <text x="45" y="72" font-size="11.5" font-weight="800" fill="#0f172a">Step 1: Find 1 '
+              'Year Interest  →  5% of £600 = £30</text>\n'
+              '          <text x="45" y="98" font-size="11.5" font-weight="800" fill="#059669">Step 2: Multiply '
+              'by Years   →  £30 × 3 yrs = £90</text>\n'
+              '          <text x="45" y="126" font-size="12" font-weight="900" fill="#1d4ed8">Final Total: £600 '
+              '+ £90 = £690</text>\n'
+              '        </svg>',
+  'title': 'Simple Interest (5% per Year)',
+  'watch_out': 'Read carefully whether the question asks for INTEREST ONLY or the NEW TOTAL!'},
+  { 'answer_text': '7² = 7 × 7 = 49 m².',
+  'challenge_prompt': 'A square patio measures 7 metres along each side. Write this as a squared calculation and '
+                      'find its area.',
+  'dfe_code': 'DfE L1.N6b',
+  'golden_rule': '6² means 6 × 6 = 36 — NEVER 6 × 2 = 12!',
+  'id': 'm-l1-40',
+  'level': 'l1',
+  'level_label': 'Level 1',
+  'number': 16,
+  'rule_body': "The small raised ² means 'squared': 6² = 6 × 6 = 36. Always square numbers when using area units "
+               '(m², cm²) or calculating a square floor area.',
+  'rule_heading': 'Squaring Means Multiply a Number by Itself (n × n)',
+  'strand_name': 'Number System',
+  'strand_theme': 'blue',
+  'subject': 'maths',
+  'subject_label': 'Maths',
+  'svg_html': '<svg viewBox="0 0 460 170" width="100%" height="170" xmlns="http://www.w3.org/2000/svg">\n'
+              '          <rect x="40" y="25" width="105" height="105" fill="#dbeafe" stroke="#2563eb" '
+              'stroke-width="2.5"/>\n'
+              '          <text x="92" y="82" font-size="14" font-weight="900" fill="#1e3a8a" '
+              'text-anchor="middle">6² = 36</text>\n'
+              '          <text x="92" y="148" font-size="11.5" font-weight="800" fill="#2563eb" '
+              'text-anchor="middle">6 × 6 square grid</text>\n'
+              '          <rect x="180" y="22" width="245" height="122" rx="8" fill="#f8fafc" stroke="#cbd5e1" '
+              'stroke-width="1.8"/>\n'
+              '          <text x="302" y="46" font-size="12" font-weight="900" fill="#0f172a" '
+              'text-anchor="middle">KEY SQUARE NUMBERS</text>\n'
+              '          <text x="200" y="72" font-size="11" font-weight="800" fill="#059669">2²=4   3²=9   '
+              '4²=16   5²=25</text>\n'
+              '          <text x="200" y="98" font-size="11" font-weight="800" fill="#2563eb">6²=36  7²=49  '
+              '8²=64   9²=81</text>\n'
+              '          <text x="200" y="124" font-size="11" font-weight="900" fill="#dc2626">10²=100   '
+              '12²=144</text>\n'
+              '        </svg>',
+  'title': 'Square Numbers &amp; Powers (6²)',
+  'watch_out': '1² = 1 (NOT 2), and 10² = 100 (NOT 20). Remember: multiply by ITSELF!'}
+]

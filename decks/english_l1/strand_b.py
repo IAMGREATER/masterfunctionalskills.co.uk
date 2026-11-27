@@ -17,16 +17,16 @@ CARDS = [ { 'answer_text': "'Best wishes,' or 'See you soon,'.",
     'subject_label': 'English',
     'svg_html': '<svg viewBox="0 0 460 170" width="100%" height="170" xmlns="http://www.w3.org/2000/svg">\n'
                 '\n'
-                '          <g transform="translate(60, 20)">\n'
-                '            <rect x="0" y="0" width="340" height="130" rx="8" fill="#f8fafc" stroke="#cbd5e1" '
+                '          <g transform="translate(30, 18)">\n'
+                '            <rect x="0" y="0" width="400" height="132" rx="8" fill="#f8fafc" stroke="#cbd5e1" '
                 'stroke-width="1.8"/>\n'
-                '            <text x="25" y="24" font-size="10" font-weight="800" fill="#0f172a">Subject: Catching up '
+                '            <text x="20" y="25" font-size="11" font-weight="800" fill="#0f172a">Subject: Catching up '
                 '/ Weekend plans</text>\n'
-                '            <line x1="15" y1="34" x2="325" y2="34" stroke="#cbd5e1"/>\n'
-                '            <text x="25" y="55" font-size="10.5" font-weight="700" fill="#2563eb">Hi Marcus,</text>\n'
-                '            <text x="25" y="75" font-size="10" font-weight="700" fill="#475569">Hope you are having a '
+                '            <line x1="15" y1="35" x2="385" y2="35" stroke="#cbd5e1"/>\n'
+                '            <text x="20" y="56" font-size="11" font-weight="700" fill="#2563eb">Hi Marcus,</text>\n'
+                '            <text x="20" y="76" font-size="10.5" font-weight="700" fill="#475569">Hope you are having a '
                 'good week. Would you like to meet...</text>\n'
-                '            <text x="25" y="105" font-size="10" font-weight="800" fill="#059669">See you soon, / Best '
+                '            <text x="20" y="106" font-size="11" font-weight="800" fill="#059669">See you soon, / Best '
                 'wishes,</text>\n'
                 '          </g>\n'
                 '</svg>',
@@ -51,12 +51,12 @@ CARDS = [ { 'answer_text': "'Best wishes,' or 'See you soon,'.",
     'svg_html': """<svg viewBox="0 0 460 170" width="100%" height="170" xmlns="http://www.w3.org/2000/svg">
           <g transform="translate(40, 18)">
             <rect x="0" y="0" width="380" height="134" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.8"/>
-            <text x="20" y="22" font-size="10" font-weight="800" fill="#1e40af">Subject: Absence Notification: [Your Name]</text>
+            <text x="20" y="22" font-size="11" font-weight="800" fill="#1e40af">Subject: Absence Notification: [Your Name]</text>
             <line x1="15" y1="32" x2="365" y2="32" stroke="#cbd5e1"/>
-            <text x="20" y="52" font-size="10.5" font-weight="800" fill="#0f172a">Dear Ms Taylor,</text>
-            <text x="20" y="72" font-size="9.5" font-weight="700" fill="#475569">I am writing to inform you that I am unwell today</text>
-            <text x="20" y="88" font-size="9.5" font-weight="700" fill="#475569">and will be unable to attend work...</text>
-            <text x="20" y="114" font-size="10" font-weight="800" fill="#059669">Kind regards,</text>
+            <text x="20" y="52" font-size="11" font-weight="800" fill="#0f172a">Dear Ms Taylor,</text>
+            <text x="20" y="72" font-size="11" font-weight="700" fill="#475569">I am writing to inform you that I am unwell today</text>
+            <text x="20" y="88" font-size="11" font-weight="700" fill="#475569">and will be unable to attend work...</text>
+            <text x="20" y="114" font-size="11" font-weight="800" fill="#059669">Kind regards,</text>
           </g>
 </svg>""",
     'title': 'Formal Email (Enquiry/Absence)',
@@ -82,15 +82,15 @@ CARDS = [ { 'answer_text': "'Best wishes,' or 'See you soon,'.",
                 '          <g transform="translate(60, 20)">\n'
                 '            <rect x="0" y="0" width="340" height="130" rx="8" fill="#f8fafc" stroke="#cbd5e1" '
                 'stroke-width="1.8"/>\n'
-                '            <text x="25" y="24" font-size="10" font-weight="800" fill="#0f172a">Dear Customer '
+                '            <text x="25" y="24" font-size="11" font-weight="800" fill="#0f172a">Dear Customer '
                 'Services,</text>\n'
-                '            <text x="25" y="48" font-size="10" font-weight="700" fill="#475569">1. Reason: I am '
+                '            <text x="25" y="48" font-size="11" font-weight="700" fill="#475569">1. Reason: I am '
                 'writing to complain about my recent order...</text>\n'
-                '            <text x="25" y="72" font-size="10" font-weight="700" fill="#475569">2. Problem: The item '
+                '            <text x="25" y="72" font-size="11" font-weight="700" fill="#475569">2. Problem: The item '
                 'arrived damaged on 14th May...</text>\n'
-                '            <text x="25" y="96" font-size="10" font-weight="700" fill="#2563eb">3. Solution: I '
+                '            <text x="25" y="96" font-size="11" font-weight="700" fill="#2563eb">3. Solution: I '
                 'request a replacement or full refund...</text>\n'
-                '            <text x="25" y="118" font-size="10" font-weight="800" fill="#0f172a">Yours '
+                '            <text x="25" y="118" font-size="11" font-weight="800" fill="#0f172a">Yours '
                 'faithfully,</text>\n'
                 '          </g>\n'
                 '</svg>',
@@ -120,9 +120,9 @@ CARDS = [ { 'answer_text': "'Best wishes,' or 'See you soon,'.",
                 'text-anchor="middle">NEWSLETTER ARTICLE</text>\n'
                 '            <text x="25" y="55" font-size="11" font-weight="800" fill="#0f172a">Title: New Community '
                 'Garden Opens!</text>\n'
-                '            <text x="25" y="78" font-size="10" font-weight="700" fill="#475569">On Saturday, local '
+                '            <text x="25" y="78" font-size="11" font-weight="700" fill="#475569">On Saturday, local '
                 'volunteers transformed the park...</text>\n'
-                '            <text x="25" y="105" font-size="10.5" font-weight="800" fill="#16a34a">Come along this '
+                '            <text x="25" y="105" font-size="11" font-weight="800" fill="#16a34a">Come along this '
                 'Saturday at 10 am to help plant seeds!</text>\n'
                 '          </g>\n'
                 '</svg>',
@@ -151,13 +151,13 @@ CARDS = [ { 'answer_text': "'Best wishes,' or 'See you soon,'.",
                 'stroke-width="1.8"/>\n'
                 '            <text x="170" y="24" font-size="12" font-weight="900" fill="#9d174d" '
                 'text-anchor="middle">COMMUNITY BAKE SALE</text>\n'
-                '            <text x="30" y="50" font-size="10.5" font-weight="700" fill="#0f172a">📅 Date: Saturday '
+                '            <text x="30" y="50" font-size="11" font-weight="700" fill="#0f172a">📅 Date: Saturday '
                 '18th November  |  ⏰ Time: 10am - 2pm</text>\n'
-                '            <text x="30" y="72" font-size="10.5" font-weight="700" fill="#0f172a">📍 Venue: St Mark\'s '
+                '            <text x="30" y="72" font-size="11" font-weight="700" fill="#0f172a">📍 Venue: St Mark\'s '
                 'Community Hall</text>\n'
-                '            <text x="30" y="94" font-size="10.5" font-weight="700" fill="#0f172a">🎟️ Entry: FREE (All '
+                '            <text x="30" y="94" font-size="11" font-weight="700" fill="#0f172a">🎟️ Entry: FREE (All '
                 'proceeds to charity)</text>\n'
-                '            <text x="30" y="115" font-size="10" font-weight="800" fill="#be185d">📞 Contact: '
+                '            <text x="30" y="115" font-size="11" font-weight="800" fill="#be185d">📞 Contact: '
                 'bakesale@email.com / 01865 123456</text>\n'
                 '          </g>\n'
                 '</svg>',
@@ -186,11 +186,11 @@ CARDS = [ { 'answer_text': "'Best wishes,' or 'See you soon,'.",
                 'stroke-width="1.8"/>\n'
                 '            <text x="170" y="26" font-size="12" font-weight="900" fill="#b45309" '
                 'text-anchor="middle">CAFE REVIEW ★★★★☆</text>\n'
-                '            <text x="25" y="55" font-size="10.5" font-weight="700" fill="#059669">✓ Positives: '
+                '            <text x="25" y="55" font-size="11" font-weight="700" fill="#059669">✓ Positives: '
                 'Delicious food and friendly staff.</text>\n'
-                '            <text x="25" y="80" font-size="10.5" font-weight="700" fill="#dc2626">✗ Drawback: The '
+                '            <text x="25" y="80" font-size="11" font-weight="700" fill="#dc2626">✗ Drawback: The '
                 'service was slightly slow at lunch.</text>\n'
-                '            <text x="25" y="105" font-size="10.5" font-weight="800" fill="#0f172a">Recommendation: I '
+                '            <text x="25" y="105" font-size="11" font-weight="800" fill="#0f172a">Recommendation: I '
                 'would definitely return!</text>\n'
                 '          </g>\n'
                 '</svg>',
@@ -218,13 +218,13 @@ CARDS = [ { 'answer_text': "'Best wishes,' or 'See you soon,'.",
                 'stroke-width="1.8"/>\n'
                 '            <text x="170" y="24" font-size="12" font-weight="900" fill="#1e40af" '
                 'text-anchor="middle">ACCIDENT REPORT FORM</text>\n'
-                '            <text x="25" y="48" font-size="10" font-weight="700" fill="#0f172a">Date: 12 October  |  '
+                '            <text x="25" y="48" font-size="11" font-weight="700" fill="#0f172a">Date: 12 October  |  '
                 'Time: 14:15  |  Location: Warehouse Bay 3</text>\n'
-                '            <text x="25" y="70" font-size="10" font-weight="700" fill="#475569">Details: Employee '
+                '            <text x="25" y="70" font-size="11" font-weight="700" fill="#475569">Details: Employee '
                 'slipped on spilled water near the sink.</text>\n'
-                '            <text x="25" y="92" font-size="10" font-weight="700" fill="#475569">Action Taken: First '
+                '            <text x="25" y="92" font-size="11" font-weight="700" fill="#475569">Action Taken: First '
                 'aid ice pack applied; area cordoned off.</text>\n'
-                '            <text x="25" y="114" font-size="10" font-weight="800" fill="#059669">Reported by: [Staff '
+                '            <text x="25" y="114" font-size="11" font-weight="800" fill="#059669">Reported by: [Staff '
                 'Name]</text>\n'
                 '          </g>\n'
                 '</svg>',
@@ -255,8 +255,8 @@ CARDS = [ { 'answer_text': "'Best wishes,' or 'See you soon,'.",
                 'text-anchor="middle">WHEN TO START A NEW PARAGRAPH</text>\n'
                 '            <text x="40" y="55" font-size="11" font-weight="800" fill="#2563eb">Ti - Time (Next '
                 'morning, Later)</text>\n'
-                '            <text x="40" y="75" font-size="11" font-weight="800" fill="#059669">P - Place (In the '
-                'hospital, At home)</text>\n'
+                '            <text x="40" y="75" font-size="11" font-weight="800" fill="#059669">P - Place (At the '
+                'office, At home)</text>\n'
                 '            <text x="40" y="95" font-size="11" font-weight="800" fill="#d97706">To - Topic '
                 '(Discussing the cost, Looking at safety)</text>\n'
                 '            <text x="40" y="115" font-size="11" font-weight="800" fill="#7c3aed">P - Person (A '
@@ -387,12 +387,12 @@ CARDS = [ { 'answer_text': "'Best wishes,' or 'See you soon,'.",
                 'stroke-width="1.8"/>\n'
                 '            <text x="170" y="26" font-size="12" font-weight="900" fill="#15803d" '
                 'text-anchor="middle">CONSTRUCTIVE POLITE TONE</text>\n'
-                '            <text x="25" y="55" font-size="10.5" font-weight="700" fill="#dc2626">Rude: "Your staff '
+                '            <text x="25" y="55" font-size="11" font-weight="700" fill="#dc2626">Rude: "Your staff '
                 'are useless and I want my money back."</text>\n'
                 '            <line x1="25" y1="68" x2="315" y2="68" stroke="#cbd5e1"/>\n'
-                '            <text x="25" y="90" font-size="10.5" font-weight="800" fill="#15803d">Polite: "I was '
+                '            <text x="25" y="90" font-size="11" font-weight="800" fill="#15803d">Polite: "I was '
                 'disappointed with the service received,</text>\n'
-                '            <text x="25" y="110" font-size="10.5" font-weight="800" fill="#15803d">and would '
+                '            <text x="25" y="110" font-size="11" font-weight="800" fill="#15803d">and would '
                 'appreciate a full refund at your convenience."</text>\n'
                 '          </g>\n'
                 '</svg>',
@@ -420,13 +420,13 @@ CARDS = [ { 'answer_text': "'Best wishes,' or 'See you soon,'.",
                 'stroke-width="1.8"/>\n'
                 '            <text x="170" y="26" font-size="12" font-weight="900" fill="#0f172a" '
                 'text-anchor="middle">5-POINT PROOFREADING SWEEP</text>\n'
-                '            <text x="30" y="52" font-size="10.5" font-weight="700" fill="#0f172a">[✓] 1. Every '
+                '            <text x="30" y="52" font-size="11" font-weight="700" fill="#0f172a">[✓] 1. Every '
                 'sentence starts with a CAPITAL letter</text>\n'
-                '            <text x="30" y="72" font-size="10.5" font-weight="700" fill="#0f172a">[✓] 2. Every '
+                '            <text x="30" y="72" font-size="11" font-weight="700" fill="#0f172a">[✓] 2. Every '
                 'sentence ends with . or ?</text>\n'
-                '            <text x="30" y="92" font-size="10.5" font-weight="700" fill="#0f172a">[✓] 3. The pronoun '
+                '            <text x="30" y="92" font-size="11" font-weight="700" fill="#0f172a">[✓] 3. The pronoun '
                 "'I' is always capitalized</text>\n"
-                '            <text x="30" y="112" font-size="10.5" font-weight="800" fill="#059669">[✓] 4. Clear '
+                '            <text x="30" y="112" font-size="11" font-weight="800" fill="#059669">[✓] 4. Clear '
                 'paragraph breaks</text>\n'
                 '          </g>\n'
                 '</svg>',

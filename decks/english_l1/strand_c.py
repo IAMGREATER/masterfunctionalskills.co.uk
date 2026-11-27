@@ -21,13 +21,13 @@ CARDS = [ { 'answer_text': "'Last Monday, I went to Birmingham with my sister An
                 'stroke-width="1.8"/>\n'
                 '            <text x="170" y="26" font-size="12" font-weight="900" fill="#1e40af" '
                 'text-anchor="middle">M.I.N.T.S FOR CAPITAL LETTERS</text>\n'
-                '            <text x="30" y="52" font-size="10.5" font-weight="800" fill="#0f172a">M - Months &amp; '
+                '            <text x="30" y="52" font-size="11" font-weight="800" fill="#0f172a">M - Months &amp; '
                 'Days: Friday, October</text>\n'
-                '            <text x="30" y="72" font-size="10.5" font-weight="800" fill="#0f172a">I - The pronoun: '
+                '            <text x="30" y="72" font-size="11" font-weight="800" fill="#0f172a">I - The pronoun: '
                 "'I' (NEVER lower case 'i')</text>\n"
-                '            <text x="30" y="92" font-size="10.5" font-weight="800" fill="#0f172a">N - Names: David, '
+                '            <text x="30" y="92" font-size="11" font-weight="800" fill="#0f172a">N - Names: David, '
                 'Manchester, BBC</text>\n'
-                '            <text x="30" y="112" font-size="10.5" font-weight="800" fill="#059669">S - Start of every '
+                '            <text x="30" y="112" font-size="11" font-weight="800" fill="#059669">S - Start of every '
                 'new sentence</text>\n'
                 '          </g>\n'
                 '</svg>',
@@ -176,16 +176,16 @@ CARDS = [ { 'answer_text': "'Last Monday, I went to Birmingham with my sister An
     'subject_label': 'English',
     'svg_html': '<svg viewBox="0 0 460 170" width="100%" height="170" xmlns="http://www.w3.org/2000/svg">\n'
                 '\n'
-                '          <g transform="translate(60, 20)">\n'
-                '            <rect x="0" y="0" width="340" height="130" rx="8" fill="#f0fdf4" stroke="#16a34a" '
+                '          <g transform="translate(30, 18)">\n'
+                '            <rect x="0" y="0" width="400" height="132" rx="8" fill="#f0fdf4" stroke="#16a34a" '
                 'stroke-width="1.8"/>\n'
-                '            <text x="170" y="26" font-size="12" font-weight="900" fill="#15803d" '
+                '            <text x="200" y="26" font-size="12" font-weight="900" fill="#15803d" '
                 'text-anchor="middle">POSSESSIVE APOSTROPHE</text>\n'
-                '            <text x="30" y="55" font-size="11" font-weight="800" fill="#0f172a">Singular: John\'s '
+                '            <text x="22" y="56" font-size="11" font-weight="800" fill="#0f172a">Singular: John\'s '
                 'bag  (1 person owns it)</text>\n'
-                '            <text x="30" y="80" font-size="11" font-weight="800" fill="#0f172a">Plural: The '
+                '            <text x="22" y="81" font-size="11" font-weight="800" fill="#0f172a">Plural: The '
                 "teachers' lounge  (many teachers)</text>\n"
-                '            <text x="30" y="105" font-size="10.5" font-weight="700" fill="#dc2626">⚠️ Never use an '
+                '            <text x="22" y="106" font-size="10.5" font-weight="700" fill="#dc2626">⚠️ Never use an '
                 "apostrophe for simple plurals ('two cats')!</text>\n"
                 '          </g>\n'
                 '</svg>',
@@ -277,7 +277,7 @@ CARDS = [ { 'answer_text': "'Last Monday, I went to Birmingham with my sister An
             <text x="190" y="26" font-size="12" font-weight="900" fill="#1e40af" text-anchor="middle">AGREEMENT MATCHING</text>
             <text x="25" y="55" font-size="11" font-weight="700" fill="#0f172a">He WAS (singular)  |  They WERE (plural)</text>
             <text x="25" y="80" font-size="11" font-weight="700" fill="#0f172a">She DOES (singular)  |  They DO (plural)</text>
-            <text x="25" y="105" font-size="10.5" font-weight="800" fill="#dc2626">✗ "We was going..." → ✓ "We were going..."</text>
+            <text x="25" y="105" font-size="11" font-weight="800" fill="#dc2626">✗ "We was going..." → ✓ "We were going..."</text>
           </g>
 </svg>""",
     'title': 'Subject-Verb Agreement (L1)',
@@ -367,25 +367,25 @@ CARDS = [ { 'answer_text': "'Last Monday, I went to Birmingham with my sister An
                 '            <rect x="0" y="0" width="120" height="120" rx="6" fill="#eff6ff" stroke="#3b82f6"/>\n'
                 '            <text x="60" y="26" font-size="12" font-weight="900" fill="#1e40af" '
                 'text-anchor="middle">TO</text>\n'
-                '            <text x="10" y="55" font-size="10.5" font-weight="700" fill="#475569">Direction / '
+                '            <text x="10" y="55" font-size="11" font-weight="700" fill="#475569">Direction / '
                 'Action</text>\n'
-                '            <text x="10" y="80" font-size="10" font-weight="700" fill="#0f172a">"Go to work"</text>\n'
+                '            <text x="10" y="80" font-size="11" font-weight="700" fill="#0f172a">"Go to work"</text>\n'
                 '          </g>\n'
                 '          <g transform="translate(170, 20)">\n'
                 '            <rect x="0" y="0" width="120" height="120" rx="6" fill="#fdf2f8" stroke="#ec4899"/>\n'
                 '            <text x="60" y="26" font-size="12" font-weight="900" fill="#9d174d" '
                 'text-anchor="middle">TOO</text>\n'
-                '            <text x="10" y="55" font-size="10.5" font-weight="700" fill="#475569">Also / '
+                '            <text x="10" y="55" font-size="11" font-weight="700" fill="#475569">Also / '
                 'Excessive</text>\n'
-                '            <text x="10" y="80" font-size="10" font-weight="700" fill="#0f172a">"Too '
+                '            <text x="10" y="80" font-size="11" font-weight="700" fill="#0f172a">"Too '
                 'expensive"</text>\n'
                 '          </g>\n'
                 '          <g transform="translate(310, 20)">\n'
                 '            <rect x="0" y="0" width="120" height="120" rx="6" fill="#f0fdf4" stroke="#16a34a"/>\n'
                 '            <text x="60" y="26" font-size="12" font-weight="900" fill="#15803d" '
                 'text-anchor="middle">TWO</text>\n'
-                '            <text x="10" y="55" font-size="10.5" font-weight="700" fill="#475569">Number 2</text>\n'
-                '            <text x="10" y="80" font-size="10" font-weight="700" fill="#0f172a">"Two cups"</text>\n'
+                '            <text x="10" y="55" font-size="11" font-weight="700" fill="#475569">Number 2</text>\n'
+                '            <text x="10" y="80" font-size="11" font-weight="700" fill="#0f172a">"Two cups"</text>\n'
                 '          </g>\n'
                 '</svg>',
     'title': 'Confusables: To / Too / Two',
@@ -475,16 +475,16 @@ CARDS = [ { 'answer_text': "'Last Monday, I went to Birmingham with my sister An
                 '          <g transform="translate(25, 20)">\n'
                 '            <rect x="0" y="0" width="195" height="125" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="1.8"/>\n'
                 '            <text x="97" y="25" font-size="11.5" font-weight="900" fill="#1e40af" text-anchor="middle">TASK 1: FORMAL TALK</text>\n'
-                '            <text x="14" y="52" font-size="10" font-weight="700" fill="#0f172a">• 4–5 mins prepared talk</text>\n'
-                '            <text x="14" y="74" font-size="10" font-weight="700" fill="#0f172a">• Clear Intro, 3 Points, End</text>\n'
-                '            <text x="14" y="96" font-size="10" font-weight="800" fill="#059669">• Answer audience Q&amp;A</text>\n'
+                '            <text x="14" y="52" font-size="11" font-weight="700" fill="#0f172a">• 4–5 mins prepared talk</text>\n'
+                '            <text x="14" y="74" font-size="11" font-weight="700" fill="#0f172a">• Clear Intro, 3 Points, End</text>\n'
+                '            <text x="14" y="96" font-size="11" font-weight="800" fill="#059669">• Answer audience Q&amp;A</text>\n'
                 '          </g>\n'
                 '          <g transform="translate(240, 20)">\n'
                 '            <rect x="0" y="0" width="195" height="125" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.8"/>\n'
                 '            <text x="97" y="25" font-size="11.5" font-weight="900" fill="#15803d" text-anchor="middle">TASK 2: DISCUSSION</text>\n'
-                '            <text x="14" y="52" font-size="10" font-weight="700" fill="#0f172a">• 10–15 mins (3–5 peers)</text>\n'
-                '            <text x="14" y="74" font-size="10" font-weight="700" fill="#0f172a">• Share views &amp; listen</text>\n'
-                '            <text x="14" y="96" font-size="10" font-weight="800" fill="#1d4ed8">• Take turns &amp; invite others</text>\n'
+                '            <text x="14" y="52" font-size="11" font-weight="700" fill="#0f172a">• 10–15 mins (3–5 peers)</text>\n'
+                '            <text x="14" y="74" font-size="11" font-weight="700" fill="#0f172a">• Share views &amp; listen</text>\n'
+                '            <text x="14" y="96" font-size="11" font-weight="800" fill="#1d4ed8">• Take turns &amp; invite others</text>\n'
                 '          </g>\n'
                 '</svg>',
     'title': 'SLC Overview: The Two Assessments',
@@ -510,15 +510,15 @@ CARDS = [ { 'answer_text': "'Last Monday, I went to Birmingham with my sister An
                 '          <g transform="translate(25, 20)">\n'
                 '            <rect x="0" y="0" width="195" height="125" rx="8" fill="#fff1f2" stroke="#f43f5e" stroke-width="1.8"/>\n'
                 '            <text x="97" y="25" font-size="11.5" font-weight="900" fill="#be123c" text-anchor="middle">✗ CLOSED (STALLS TALK)</text>\n'
-                '            <text x="14" y="55" font-size="10" font-weight="700" fill="#0f172a">"Do you agree with this?"</text>\n'
-                '            <text x="14" y="80" font-size="10" font-weight="700" fill="#64748b">Reply: "Yes." (Silence)</text>\n'
+                '            <text x="14" y="55" font-size="11" font-weight="700" fill="#0f172a">"Do you agree with this?"</text>\n'
+                '            <text x="14" y="80" font-size="11" font-weight="700" fill="#64748b">Reply: "Yes." (Silence)</text>\n'
                 '          </g>\n'
                 '          <g transform="translate(240, 20)">\n'
                 '            <rect x="0" y="0" width="195" height="125" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1.8"/>\n'
                 '            <text x="97" y="25" font-size="11.5" font-weight="900" fill="#047857" text-anchor="middle">✓ OPEN (SPARKS DEBATE)</text>\n'
-                '            <text x="14" y="55" font-size="10" font-weight="700" fill="#0f172a">"How would this change</text>\n'
-                '            <text x="14" y="72" font-size="10" font-weight="700" fill="#0f172a">impact local commuters?"</text>\n'
-                '            <text x="14" y="100" font-size="10" font-weight="800" fill="#059669">Invites full explanation!</text>\n'
+                '            <text x="14" y="55" font-size="11" font-weight="700" fill="#0f172a">"How would this change</text>\n'
+                '            <text x="14" y="72" font-size="11" font-weight="700" fill="#0f172a">impact local commuters?"</text>\n'
+                '            <text x="14" y="100" font-size="11" font-weight="800" fill="#059669">Invites full explanation!</text>\n'
                 '          </g>\n'
                 '</svg>',
     'title': 'Asking Open &amp; Follow-Up Questions',
@@ -540,12 +540,12 @@ CARDS = [ { 'answer_text': "'Last Monday, I went to Birmingham with my sister An
     'subject': 'english',
     'subject_label': 'English',
     'svg_html': '<svg viewBox="0 0 460 170" width="100%" height="170" xmlns="http://www.w3.org/2000/svg">\n'
-                '          <g transform="translate(30, 20)">\n'
-                '            <rect x="0" y="0" width="400" height="125" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.8"/>\n'
-                '            <text x="200" y="25" font-size="12" font-weight="900" fill="#0f172a" text-anchor="middle">TURN-TAKING STEMS FOR FULL MARKS</text>\n'
-                '            <text x="20" y="54" font-size="10.5" font-weight="800" fill="#2563eb">1. Agree &amp; Build: "Following on from what Sarah said..."</text>\n'
-                '            <text x="20" y="80" font-size="10.5" font-weight="800" fill="#d97706">2. Polite Challenge: "I see your point, but another angle is..."</text>\n'
-                '            <text x="20" y="106" font-size="10.5" font-weight="800" fill="#059669">3. Invite Others: "We haven\'t heard from Leo yet—what do you think?"</text>\n'
+                '          <g transform="translate(18, 20)">\n'
+                '            <rect x="0" y="0" width="424" height="125" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.8"/>\n'
+                '            <text x="212" y="25" font-size="12" font-weight="900" fill="#0f172a" text-anchor="middle">TURN-TAKING STEMS FOR FULL MARKS</text>\n'
+                '            <text x="18" y="54" font-size="10.8" font-weight="800" fill="#2563eb">1. Agree &amp; Build: "Following on from what Sarah said..."</text>\n'
+                '            <text x="18" y="80" font-size="10.8" font-weight="800" fill="#d97706">2. Polite Challenge: "I see your point, but another angle is..."</text>\n'
+                '            <text x="18" y="106" font-size="10.8" font-weight="800" fill="#059669">3. Invite Others: "We haven\'t heard from Leo yet—what do you think?"</text>\n'
                 '          </g>\n'
                 '</svg>',
     'title': 'Turn-Taking &amp; Collaborative Talk',
@@ -570,16 +570,16 @@ CARDS = [ { 'answer_text': "'Last Monday, I went to Birmingham with my sister An
                 '          <g transform="translate(30, 20)">\n'
                 '            <rect x="0" y="0" width="190" height="125" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.8"/>\n'
                 '            <text x="95" y="25" font-size="11.5" font-weight="900" fill="#1e40af" text-anchor="middle">NON-VERBAL SIGNALS</text>\n'
-                '            <text x="15" y="54" font-size="10" font-weight="700" fill="#0f172a">✓ Eye contact with all</text>\n'
-                '            <text x="15" y="76" font-size="10" font-weight="700" fill="#0f172a">✓ Nodding when listening</text>\n'
-                '            <text x="15" y="98" font-size="10" font-weight="700" fill="#0f172a">✓ Open hand gestures</text>\n'
+                '            <text x="15" y="54" font-size="11" font-weight="700" fill="#0f172a">✓ Eye contact with all</text>\n'
+                '            <text x="15" y="76" font-size="11" font-weight="700" fill="#0f172a">✓ Nodding when listening</text>\n'
+                '            <text x="15" y="98" font-size="11" font-weight="700" fill="#0f172a">✓ Open hand gestures</text>\n'
                 '          </g>\n'
                 '          <g transform="translate(240, 20)">\n'
                 '            <rect x="0" y="0" width="190" height="125" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.8"/>\n'
                 '            <text x="95" y="25" font-size="11.5" font-weight="900" fill="#15803d" text-anchor="middle">VOCAL DELIVERY</text>\n'
-                '            <text x="15" y="54" font-size="10" font-weight="700" fill="#0f172a">✓ Clear, steady pace</text>\n'
-                '            <text x="15" y="76" font-size="10" font-weight="700" fill="#0f172a">✓ Varied pitch &amp; emphasis</text>\n'
-                '            <text x="15" y="98" font-size="10" font-weight="700" fill="#0f172a">✓ Professional register</text>\n'
+                '            <text x="15" y="54" font-size="11" font-weight="700" fill="#0f172a">✓ Clear, steady pace</text>\n'
+                '            <text x="15" y="76" font-size="11" font-weight="700" fill="#0f172a">✓ Varied pitch &amp; emphasis</text>\n'
+                '            <text x="15" y="98" font-size="11" font-weight="700" fill="#0f172a">✓ Professional register</text>\n'
                 '          </g>\n'
                 '</svg>',
     'title': 'Active Listening &amp; Body Language',

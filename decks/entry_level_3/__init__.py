@@ -1,11 +1,11 @@
 """
-Master Functional Skills - Entry Level 3 Visual Revision Cards Deck (30 Cards)
-Covers DfE Entry Level 3 Mathematics (#1-#14), English (#15-#24), and Digital Functional Skills (#25-#30).
+Master Functional Skills - Entry 3 Visual Revision Cards Deck (30 Cards)
+Covers DfE Entry 3 Mathematics (#1-#14), English (#15-#24), and Digital Functional Skills (#25-#30).
 """
 
 CARDS = [
     # =========================================================================
-    # ENTRY LEVEL 3 MATHEMATICS (#1 - #14)
+    # ENTRY 3 MATHEMATICS (#1 - #14)
     # =========================================================================
     {
         "id": "e3-01",
@@ -13,7 +13,7 @@ CARDS = [
         "subject": "maths",
         "subject_label": "Maths",
         "level": "e3",
-        "level_label": "Entry Level 3",
+        "level_label": "Entry 3",
         "strand_name": "Number System",
         "strand_theme": "amber",
         "dfe_code": "DfE E3.N1",
@@ -31,15 +31,15 @@ CARDS = [
             <rect x="25" y="36" width="110" height="80" rx="6" fill="#ffffff" stroke="#d97706"/>
             <text x="80" y="55" font-size="11" font-weight="800" fill="#b45309" text-anchor="middle">HUNDREDS</text>
             <text x="80" y="84" font-size="22" font-weight="900" fill="#0f172a" text-anchor="middle">7</text>
-            <text x="80" y="106" font-size="10.5" font-weight="800" fill="#059669" text-anchor="middle">= 700</text>
+            <text x="80" y="106" font-size="11" font-weight="800" fill="#059669" text-anchor="middle">= 700</text>
             <rect x="145" y="36" width="110" height="80" rx="6" fill="#ffffff" stroke="#d97706"/>
             <text x="200" y="55" font-size="11" font-weight="800" fill="#b45309" text-anchor="middle">TENS</text>
             <text x="200" y="84" font-size="22" font-weight="900" fill="#0f172a" text-anchor="middle">4</text>
-            <text x="200" y="106" font-size="10.5" font-weight="800" fill="#2563eb" text-anchor="middle">= 40</text>
+            <text x="200" y="106" font-size="11" font-weight="800" fill="#2563eb" text-anchor="middle">= 40</text>
             <rect x="265" y="36" width="110" height="80" rx="6" fill="#ffffff" stroke="#d97706"/>
             <text x="320" y="55" font-size="11" font-weight="800" fill="#b45309" text-anchor="middle">ONES</text>
             <text x="320" y="84" font-size="22" font-weight="900" fill="#0f172a" text-anchor="middle">9</text>
-            <text x="320" y="106" font-size="10.5" font-weight="800" fill="#dc2626" text-anchor="middle">= 9</text>
+            <text x="320" y="106" font-size="11" font-weight="800" fill="#dc2626" text-anchor="middle">= 9</text>
           </g>
         </svg>"""
     },
@@ -49,7 +49,7 @@ CARDS = [
         "subject": "maths",
         "subject_label": "Maths",
         "level": "e3",
-        "level_label": "Entry Level 3",
+        "level_label": "Entry 3",
         "strand_name": "Number System",
         "strand_theme": "amber",
         "dfe_code": "DfE E3.N2",
@@ -75,13 +75,13 @@ CARDS = [
             <text x="75" y="106" font-size="16" font-weight="900" fill="#059669" text-anchor="middle">5</text>
             <text x="105" y="106" font-size="16" font-weight="900" fill="#059669" text-anchor="middle">2</text>
             <text x="135" y="106" font-size="16" font-weight="900" fill="#059669" text-anchor="middle">5</text>
-            <text x="97" y="123" font-size="9.5" font-weight="700" fill="#475569" text-anchor="middle">Carry: 1 hundred, 1 ten</text>
+            <text x="97" y="123" font-size="11" font-weight="700" fill="#475569" text-anchor="middle">Carry: 1 hundred, 1 ten</text>
           </g>
           <g transform="translate(240, 18)">
             <rect x="0" y="0" width="195" height="132" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="1.8"/>
             <text x="97" y="22" font-size="11.5" font-weight="900" fill="#1e40af" text-anchor="middle">SUBTRACTION (BORROW)</text>
-            <text x="105" y="38" font-size="10.5" font-weight="900" fill="#dc2626" text-anchor="middle">3</text>
-            <text x="135" y="38" font-size="10.5" font-weight="900" fill="#dc2626" text-anchor="middle">12</text>
+            <text x="105" y="38" font-size="11" font-weight="900" fill="#dc2626" text-anchor="middle">3</text>
+            <text x="135" y="38" font-size="11" font-weight="900" fill="#dc2626" text-anchor="middle">12</text>
             <text x="36" y="74" font-size="18" font-weight="900" fill="#0284c7" text-anchor="middle">&#8722;</text>
             <text x="75" y="52" font-size="15" font-weight="800" fill="#0f172a" text-anchor="middle">5</text>
             <text x="105" y="52" font-size="15" font-weight="800" fill="#94a3b8" text-anchor="middle">4</text>
@@ -95,7 +95,7 @@ CARDS = [
             <text x="75" y="106" font-size="16" font-weight="900" fill="#2563eb" text-anchor="middle">3</text>
             <text x="105" y="106" font-size="16" font-weight="900" fill="#2563eb" text-anchor="middle">2</text>
             <text x="135" y="106" font-size="16" font-weight="900" fill="#2563eb" text-anchor="middle">5</text>
-            <text x="97" y="123" font-size="9.5" font-weight="700" fill="#475569" text-anchor="middle">4 tens → 3 tens, 12 - 7 = 5</text>
+            <text x="97" y="123" font-size="11" font-weight="700" fill="#475569" text-anchor="middle">4 tens → 3 tens, 12 - 7 = 5</text>
           </g>
         </svg>"""
     },
@@ -105,7 +105,7 @@ CARDS = [
         "subject": "maths",
         "subject_label": "Maths",
         "level": "e3",
-        "level_label": "Entry Level 3",
+        "level_label": "Entry 3",
         "strand_name": "Number System",
         "strand_theme": "amber",
         "dfe_code": "DfE E3.N3",
@@ -143,7 +143,7 @@ CARDS = [
         "subject": "maths",
         "subject_label": "Maths",
         "level": "e3",
-        "level_label": "Entry Level 3",
+        "level_label": "Entry 3",
         "strand_name": "Number System",
         "strand_theme": "amber",
         "dfe_code": "DfE E3.N4",
@@ -173,7 +173,7 @@ CARDS = [
         "subject": "maths",
         "subject_label": "Maths",
         "level": "e3",
-        "level_label": "Entry Level 3",
+        "level_label": "Entry 3",
         "strand_name": "Number System",
         "strand_theme": "amber",
         "dfe_code": "DfE E3.N5",
@@ -191,11 +191,11 @@ CARDS = [
             <rect x="20" y="42" width="170" height="72" rx="6" fill="#eff6ff" stroke="#3b82f6"/>
             <text x="105" y="64" font-size="11" font-weight="900" fill="#1e40af" text-anchor="middle">0, 1, 2, 3, 4</text>
             <text x="105" y="88" font-size="11" font-weight="800" fill="#475569" text-anchor="middle">ROUND DOWN (Stay)</text>
-            <text x="105" y="106" font-size="10" font-weight="700" fill="#1e40af" text-anchor="middle">342 → 340 (nearest 10)</text>
+            <text x="105" y="106" font-size="11" font-weight="700" fill="#1e40af" text-anchor="middle">342 → 340 (nearest 10)</text>
             <rect x="210" y="42" width="170" height="72" rx="6" fill="#ecfdf5" stroke="#10b981"/>
             <text x="295" y="64" font-size="11" font-weight="900" fill="#047857" text-anchor="middle">5, 6, 7, 8, 9</text>
             <text x="295" y="88" font-size="11" font-weight="800" fill="#047857" text-anchor="middle">ROUND UP (+1)</text>
-            <text x="295" y="106" font-size="10" font-weight="700" fill="#059669" text-anchor="middle">368 → 400 (nearest 100)</text>
+            <text x="295" y="106" font-size="11" font-weight="700" fill="#059669" text-anchor="middle">368 → 400 (nearest 100)</text>
           </g>
         </svg>"""
     },
@@ -205,7 +205,7 @@ CARDS = [
         "subject": "maths",
         "subject_label": "Maths",
         "level": "e3",
-        "level_label": "Entry Level 3",
+        "level_label": "Entry 3",
         "strand_name": "Number System",
         "strand_theme": "amber",
         "dfe_code": "DfE E3.N7",
@@ -238,7 +238,7 @@ CARDS = [
         "subject": "maths",
         "subject_label": "Maths",
         "level": "e3",
-        "level_label": "Entry Level 3",
+        "level_label": "Entry 3",
         "strand_name": "Number System",
         "strand_theme": "amber",
         "dfe_code": "DfE E3.N8",
@@ -265,7 +265,7 @@ CARDS = [
         "subject": "maths",
         "subject_label": "Maths",
         "level": "e3",
-        "level_label": "Entry Level 3",
+        "level_label": "Entry 3",
         "strand_name": "Measures & Money",
         "strand_theme": "emerald",
         "dfe_code": "DfE E3.M10",
@@ -297,7 +297,7 @@ CARDS = [
         "subject": "maths",
         "subject_label": "Maths",
         "level": "e3",
-        "level_label": "Entry Level 3",
+        "level_label": "Entry 3",
         "strand_name": "Measures & Money",
         "strand_theme": "emerald",
         "dfe_code": "DfE E3.M12",
@@ -313,13 +313,13 @@ CARDS = [
             <rect x="0" y="0" width="400" height="132" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.8"/>
             <text x="200" y="25" font-size="12" font-weight="900" fill="#0f172a" text-anchor="middle">TIME JUMP LINE: 09:40 TO 14:15</text>
             <line x1="40" y1="78" x2="360" y2="78" stroke="#2563eb" stroke-width="3"/>
-            <circle cx="40" cy="78" r="5" fill="#1e40af"/><text x="40" y="102" font-size="10.5" font-weight="800" fill="#0f172a" text-anchor="middle">09:40</text>
-            <circle cx="140" cy="78" r="5" fill="#1e40af"/><text x="140" y="102" font-size="10.5" font-weight="800" fill="#0f172a" text-anchor="middle">10:00</text>
-            <circle cx="270" cy="78" r="5" fill="#1e40af"/><text x="270" y="102" font-size="10.5" font-weight="800" fill="#0f172a" text-anchor="middle">14:00</text>
-            <circle cx="360" cy="78" r="5" fill="#1e40af"/><text x="360" y="102" font-size="10.5" font-weight="800" fill="#0f172a" text-anchor="middle">14:15</text>
-            <text x="90" y="62" font-size="10.5" font-weight="800" fill="#059669" text-anchor="middle">+20m</text>
-            <text x="205" y="62" font-size="10.5" font-weight="800" fill="#2563eb" text-anchor="middle">+4 hrs</text>
-            <text x="315" y="62" font-size="10.5" font-weight="800" fill="#059669" text-anchor="middle">+15m</text>
+            <circle cx="40" cy="78" r="5" fill="#1e40af"/><text x="40" y="102" font-size="11" font-weight="800" fill="#0f172a" text-anchor="middle">09:40</text>
+            <circle cx="140" cy="78" r="5" fill="#1e40af"/><text x="140" y="102" font-size="11" font-weight="800" fill="#0f172a" text-anchor="middle">10:00</text>
+            <circle cx="270" cy="78" r="5" fill="#1e40af"/><text x="270" y="102" font-size="11" font-weight="800" fill="#0f172a" text-anchor="middle">14:00</text>
+            <circle cx="360" cy="78" r="5" fill="#1e40af"/><text x="360" y="102" font-size="11" font-weight="800" fill="#0f172a" text-anchor="middle">14:15</text>
+            <text x="90" y="62" font-size="11" font-weight="800" fill="#059669" text-anchor="middle">+20m</text>
+            <text x="205" y="62" font-size="11" font-weight="800" fill="#2563eb" text-anchor="middle">+4 hrs</text>
+            <text x="315" y="62" font-size="11" font-weight="800" fill="#059669" text-anchor="middle">+15m</text>
             <text x="200" y="122" font-size="11" font-weight="900" fill="#059669" text-anchor="middle">Total = 4 hours 35 minutes</text>
           </g>
         </svg>"""
@@ -330,7 +330,7 @@ CARDS = [
         "subject": "maths",
         "subject_label": "Maths",
         "level": "e3",
-        "level_label": "Entry Level 3",
+        "level_label": "Entry 3",
         "strand_name": "Measures & Money",
         "strand_theme": "emerald",
         "dfe_code": "DfE E3.M14",
@@ -345,21 +345,21 @@ CARDS = [
           <g transform="translate(20, 18)">
             <rect x="0" y="0" width="132" height="132" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.8"/>
             <text x="66" y="25" font-size="11" font-weight="900" fill="#1e40af" text-anchor="middle">LENGTH</text>
-            <text x="66" y="55" font-size="10.5" font-weight="800" fill="#0f172a" text-anchor="middle">1 cm = 10 mm</text>
-            <text x="66" y="80" font-size="10.5" font-weight="800" fill="#0f172a" text-anchor="middle">1 m = 100 cm</text>
-            <text x="66" y="105" font-size="10.5" font-weight="800" fill="#1e40af" text-anchor="middle">1 km = 1,000 m</text>
+            <text x="66" y="55" font-size="11" font-weight="800" fill="#0f172a" text-anchor="middle">1 cm = 10 mm</text>
+            <text x="66" y="80" font-size="11" font-weight="800" fill="#0f172a" text-anchor="middle">1 m = 100 cm</text>
+            <text x="66" y="105" font-size="11" font-weight="800" fill="#1e40af" text-anchor="middle">1 km = 1,000 m</text>
           </g>
           <g transform="translate(164, 18)">
             <rect x="0" y="0" width="132" height="132" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1.8"/>
             <text x="66" y="25" font-size="11" font-weight="900" fill="#047857" text-anchor="middle">WEIGHT</text>
             <text x="66" y="60" font-size="11" font-weight="800" fill="#0f172a" text-anchor="middle">1 kg = 1,000 g</text>
-            <text x="66" y="95" font-size="10.5" font-weight="800" fill="#059669" text-anchor="middle">½ kg = 500 g</text>
+            <text x="66" y="95" font-size="11" font-weight="800" fill="#059669" text-anchor="middle">½ kg = 500 g</text>
           </g>
           <g transform="translate(308, 18)">
             <rect x="0" y="0" width="132" height="132" rx="8" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.8"/>
             <text x="66" y="25" font-size="11" font-weight="900" fill="#92400e" text-anchor="middle">CAPACITY</text>
             <text x="66" y="60" font-size="11" font-weight="800" fill="#0f172a" text-anchor="middle">1 L = 1,000 ml</text>
-            <text x="66" y="95" font-size="10.5" font-weight="800" fill="#d97706" text-anchor="middle">½ L = 500 ml</text>
+            <text x="66" y="95" font-size="11" font-weight="800" fill="#d97706" text-anchor="middle">½ L = 500 ml</text>
           </g>
         </svg>"""
     },
@@ -369,7 +369,7 @@ CARDS = [
         "subject": "maths",
         "subject_label": "Maths",
         "level": "e3",
-        "level_label": "Entry Level 3",
+        "level_label": "Entry 3",
         "strand_name": "Measures & Money",
         "strand_theme": "emerald",
         "dfe_code": "DfE E3.M18",
@@ -387,10 +387,10 @@ CARDS = [
             <line x1="60" y1="75" x2="340" y2="75" stroke="#334155" stroke-width="3"/>
             <line x1="60" y1="60" x2="60" y2="90" stroke="#0f172a" stroke-width="3"/><text x="60" y="108" font-size="11" font-weight="900" fill="#0f172a" text-anchor="middle">200 g</text>
             <line x1="130" y1="65" x2="130" y2="85" stroke="#dc2626" stroke-width="3"/><text x="130" y="54" font-size="11" font-weight="900" fill="#dc2626" text-anchor="middle">▼ 250 g</text>
-            <line x1="200" y1="65" x2="200" y2="85" stroke="#475569" stroke-width="2"/><text x="200" y="108" font-size="10" font-weight="700" fill="#64748b" text-anchor="middle">300 g</text>
-            <line x1="270" y1="65" x2="270" y2="85" stroke="#475569" stroke-width="2"/><text x="270" y="108" font-size="10" font-weight="700" fill="#64748b" text-anchor="middle">350 g</text>
+            <line x1="200" y1="65" x2="200" y2="85" stroke="#475569" stroke-width="2"/><text x="200" y="108" font-size="11" font-weight="700" fill="#64748b" text-anchor="middle">300 g</text>
+            <line x1="270" y1="65" x2="270" y2="85" stroke="#475569" stroke-width="2"/><text x="270" y="108" font-size="11" font-weight="700" fill="#64748b" text-anchor="middle">350 g</text>
             <line x1="340" y1="60" x2="340" y2="90" stroke="#0f172a" stroke-width="3"/><text x="340" y="108" font-size="11" font-weight="900" fill="#0f172a" text-anchor="middle">400 g</text>
-            <text x="200" y="125" font-size="10.5" font-weight="800" fill="#059669" text-anchor="middle">Gap = 200 g ÷ 4 spaces = 50 g per division</text>
+            <text x="200" y="125" font-size="11" font-weight="800" fill="#059669" text-anchor="middle">Gap = 200 g ÷ 4 spaces = 50 g per division</text>
           </g>
         </svg>"""
     },
@@ -400,7 +400,7 @@ CARDS = [
         "subject": "maths",
         "subject_label": "Maths",
         "level": "e3",
-        "level_label": "Entry Level 3",
+        "level_label": "Entry 3",
         "strand_name": "Shape & Space",
         "strand_theme": "emerald",
         "dfe_code": "DfE E3.M19",
@@ -418,15 +418,15 @@ CARDS = [
             <rect x="45" y="42" width="105" height="58" fill="#dbeafe" stroke="#1d4ed8" stroke-width="2"/>
             <line x1="97.5" y1="35" x2="97.5" y2="108" stroke="#dc2626" stroke-width="2" stroke-dasharray="4,3"/>
             <rect x="45" y="88" width="12" height="12" fill="none" stroke="#059669" stroke-width="2"/>
-            <text x="97" y="122" font-size="10" font-weight="800" fill="#0f172a" text-anchor="middle">4 Right Angles (90° corners)</text>
+            <text x="97" y="122" font-size="11" font-weight="800" fill="#0f172a" text-anchor="middle">4 Right Angles (90° corners)</text>
           </g>
           <g transform="translate(240, 18)">
             <rect x="0" y="0" width="195" height="132" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.8"/>
             <text x="97" y="24" font-size="11" font-weight="900" fill="#15803d" text-anchor="middle">3D SHAPE PROPERTIES</text>
-            <text x="15" y="54" font-size="10.5" font-weight="800" fill="#0f172a">• Cube/Cuboid: 6 Faces,</text>
-            <text x="25" y="70" font-size="10" font-weight="700" fill="#475569">12 Edges, 8 Vertices</text>
-            <text x="15" y="94" font-size="10.5" font-weight="800" fill="#0f172a">• Cylinder: 3 Faces (2 flat,</text>
-            <text x="25" y="110" font-size="10" font-weight="700" fill="#475569">1 curved), 2 Edges, 0 Vertices</text>
+            <text x="15" y="54" font-size="11" font-weight="800" fill="#0f172a">• Cube/Cuboid: 6 Faces,</text>
+            <text x="25" y="70" font-size="11" font-weight="700" fill="#475569">12 Edges, 8 Vertices</text>
+            <text x="15" y="94" font-size="11" font-weight="800" fill="#0f172a">• Cylinder: 3 Faces (2 flat,</text>
+            <text x="25" y="110" font-size="11" font-weight="700" fill="#475569">1 curved), 2 Edges, 0 Vertices</text>
           </g>
         </svg>"""
     },
@@ -436,7 +436,7 @@ CARDS = [
         "subject": "maths",
         "subject_label": "Maths",
         "level": "e3",
-        "level_label": "Entry Level 3",
+        "level_label": "Entry 3",
         "strand_name": "Shape & Space",
         "strand_theme": "emerald",
         "dfe_code": "DfE E3.M20",
@@ -461,9 +461,9 @@ CARDS = [
             </g>
             <g transform="translate(205, 25)">
               <text x="0" y="20" font-size="11" font-weight="900" fill="#0f172a">8-POINT COMPASS &amp; TURNS</text>
-              <text x="0" y="44" font-size="10" font-weight="700" fill="#475569">• Quarter turn = 1 right angle (N → E)</text>
-              <text x="0" y="66" font-size="10" font-weight="700" fill="#475569">• Half turn = Opposite way (N → S)</text>
-              <text x="0" y="88" font-size="10" font-weight="800" fill="#059669">• Diagonal points: NE, SE, SW, NW</text>
+              <text x="0" y="44" font-size="11" font-weight="700" fill="#475569">• Quarter turn = 1 right angle (N → E)</text>
+              <text x="0" y="66" font-size="11" font-weight="700" fill="#475569">• Half turn = Opposite way (N → S)</text>
+              <text x="0" y="88" font-size="11" font-weight="800" fill="#059669">• Diagonal points: NE, SE, SW, NW</text>
             </g>
           </g>
         </svg>"""
@@ -474,7 +474,7 @@ CARDS = [
         "subject": "maths",
         "subject_label": "Maths",
         "level": "e3",
-        "level_label": "Entry Level 3",
+        "level_label": "Entry 3",
         "strand_name": "Handling Data",
         "strand_theme": "purple",
         "dfe_code": "DfE E3.HD21",
@@ -496,13 +496,13 @@ CARDS = [
             <circle cx="195" cy="60" r="11" fill="#7c3aed"/>
             <path d="M 225,49 A 11,11 0 0,0 225,71 Z" fill="#7c3aed"/>
             <text x="305" y="65" font-size="12" font-weight="900" fill="#059669" text-anchor="middle">4 + 4 + 4 + 2 = 14</text>
-            <text x="200" y="108" font-size="10.5" font-weight="800" fill="#4c1d95" text-anchor="middle">Full symbol = 4   |   Half symbol = 2   |   Quarter symbol = 1</text>
+            <text x="200" y="108" font-size="11" font-weight="800" fill="#4c1d95" text-anchor="middle">Full symbol = 4   |   Half symbol = 2   |   Quarter symbol = 1</text>
           </g>
         </svg>"""
     },
 
     # =========================================================================
-    # ENTRY LEVEL 3 ENGLISH (#15 - #24)
+    # ENTRY 3 ENGLISH (#15 - #24)
     # =========================================================================
     {
         "id": "e3-15",
@@ -510,7 +510,7 @@ CARDS = [
         "subject": "english",
         "subject_label": "English",
         "level": "e3",
-        "level_label": "Entry Level 3",
+        "level_label": "Entry 3",
         "strand_name": "Reading Basics",
         "strand_theme": "blue",
         "dfe_code": "DfE E3.R8",
@@ -525,23 +525,23 @@ CARDS = [
           <g transform="translate(20, 18)">
             <rect x="0" y="0" width="132" height="132" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.8"/>
             <text x="66" y="26" font-size="11" font-weight="900" fill="#1e40af" text-anchor="middle">INFORM</text>
-            <text x="66" y="55" font-size="10" font-weight="700" fill="#0f172a" text-anchor="middle">Gives facts, times</text>
-            <text x="66" y="72" font-size="10" font-weight="700" fill="#0f172a" text-anchor="middle">&amp; details</text>
-            <text x="66" y="102" font-size="9.5" font-weight="800" fill="#2563eb" text-anchor="middle">Notice / Timetable</text>
+            <text x="66" y="55" font-size="11" font-weight="700" fill="#0f172a" text-anchor="middle">Gives facts, times</text>
+            <text x="66" y="72" font-size="11" font-weight="700" fill="#0f172a" text-anchor="middle">&amp; details</text>
+            <text x="66" y="102" font-size="11" font-weight="800" fill="#2563eb" text-anchor="middle">Notice / Timetable</text>
           </g>
           <g transform="translate(164, 18)">
             <rect x="0" y="0" width="132" height="132" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1.8"/>
             <text x="66" y="26" font-size="11" font-weight="900" fill="#047857" text-anchor="middle">INSTRUCT</text>
-            <text x="66" y="55" font-size="10" font-weight="700" fill="#0f172a" text-anchor="middle">Numbered steps &amp;</text>
-            <text x="66" y="72" font-size="10" font-weight="700" fill="#0f172a" text-anchor="middle">command verbs</text>
-            <text x="66" y="102" font-size="9.5" font-weight="800" fill="#059669" text-anchor="middle">Recipe / Manual</text>
+            <text x="66" y="55" font-size="11" font-weight="700" fill="#0f172a" text-anchor="middle">Numbered steps &amp;</text>
+            <text x="66" y="72" font-size="11" font-weight="700" fill="#0f172a" text-anchor="middle">command verbs</text>
+            <text x="66" y="102" font-size="11" font-weight="800" fill="#059669" text-anchor="middle">Recipe / Manual</text>
           </g>
           <g transform="translate(308, 18)">
             <rect x="0" y="0" width="132" height="132" rx="8" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.8"/>
             <text x="66" y="26" font-size="11" font-weight="900" fill="#92400e" text-anchor="middle">PERSUADE</text>
-            <text x="66" y="55" font-size="10" font-weight="700" fill="#0f172a" text-anchor="middle">Encourages you to</text>
-            <text x="66" y="72" font-size="10" font-weight="700" fill="#0f172a" text-anchor="middle">buy, join, or act</text>
-            <text x="66" y="102" font-size="9.5" font-weight="800" fill="#d97706" text-anchor="middle">Poster / Advert</text>
+            <text x="66" y="55" font-size="11" font-weight="700" fill="#0f172a" text-anchor="middle">Encourages you to</text>
+            <text x="66" y="72" font-size="11" font-weight="700" fill="#0f172a" text-anchor="middle">buy, join, or act</text>
+            <text x="66" y="102" font-size="11" font-weight="800" fill="#d97706" text-anchor="middle">Poster / Advert</text>
           </g>
         </svg>"""
     },
@@ -551,13 +551,13 @@ CARDS = [
         "subject": "english",
         "subject_label": "English",
         "level": "e3",
-        "level_label": "Entry Level 3",
+        "level_label": "Entry 3",
         "strand_name": "Reading Basics",
         "strand_theme": "blue",
         "dfe_code": "DfE E3.R9",
-        "title": "Organizational Features (Headings &amp; Bullets)",
+        "title": "Organisational Features (Headings &amp; Bullets)",
         "rule_heading": "Headings, Subheadings, Bullet Points &amp; Boxes",
-        "rule_body": "Writers use organizational features to help readers find information fast: Headings show the main topic, Subheadings divide sections, Bullet points list key facts, and Text boxes highlight warnings or prices.",
+        "rule_body": "Writers use organisational features to help readers find information fast: Headings show the main topic, Subheadings divide sections, Bullet points list key facts, and Text boxes highlight warnings or prices.",
         "golden_rule": 'Use subheadings like signposts to jump straight to the needed section!',
         "watch_out": 'Name the specific feature (e.g. Subheading, Table, Bullet points).',
         "challenge_prompt": "Why does a safety poster use bullet points instead of one long paragraph?",
@@ -566,10 +566,10 @@ CARDS = [
           <g transform="translate(30, 18)">
             <rect x="0" y="0" width="400" height="132" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.8"/>
             <text x="200" y="25" font-size="12" font-weight="900" fill="#1e40af" text-anchor="middle">LAYOUT FEATURES THAT HELP THE READER</text>
-            <text x="25" y="54" font-size="10.5" font-weight="800" fill="#0f172a">• Main Heading: Grabs attention &amp; states overall topic</text>
-            <text x="25" y="76" font-size="10.5" font-weight="800" fill="#2563eb">• Subheadings: Split text into clear, easy-to-scan sections</text>
-            <text x="25" y="98" font-size="10.5" font-weight="800" fill="#059669">• Bullet Points / Numbered Lists: Make key steps stand out</text>
-            <text x="25" y="120" font-size="10.5" font-weight="800" fill="#d97706">• Bold Text &amp; Captions: Highlight important words &amp; photos</text>
+            <text x="25" y="54" font-size="11" font-weight="800" fill="#0f172a">• Main Heading: Grabs attention &amp; states overall topic</text>
+            <text x="25" y="76" font-size="11" font-weight="800" fill="#2563eb">• Subheadings: Split text into clear, easy-to-scan sections</text>
+            <text x="25" y="98" font-size="11" font-weight="800" fill="#059669">• Bullet Points / Numbered Lists: Make key steps stand out</text>
+            <text x="25" y="120" font-size="11" font-weight="800" fill="#d97706">• Bold Text &amp; Captions: Highlight important words &amp; photos</text>
           </g>
         </svg>"""
     },
@@ -579,7 +579,7 @@ CARDS = [
         "subject": "english",
         "subject_label": "English",
         "level": "e3",
-        "level_label": "Entry Level 3",
+        "level_label": "Entry 3",
         "strand_name": "Reading Basics",
         "strand_theme": "blue",
         "dfe_code": "DfE E3.R10",
@@ -595,7 +595,7 @@ CARDS = [
             <rect x="0" y="0" width="400" height="132" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.8"/>
             <text x="200" y="25" font-size="12" font-weight="900" fill="#1e40af" text-anchor="middle">ALPHABETICAL ORDER: CHECK THE NEXT LETTER</text>
             <rect x="25" y="38" width="350" height="24" rx="4" fill="#ffffff" stroke="#93c5fd"/>
-            <text x="200" y="54" font-size="10.5" font-weight="800" fill="#1e3a8a" text-anchor="middle">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</text>
+            <text x="200" y="54" font-size="11" font-weight="800" fill="#1e3a8a" text-anchor="middle">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z</text>
             <text x="200" y="84" font-size="11" font-weight="800" fill="#0f172a" text-anchor="middle">Compare: P<tspan fill="#dc2626">a</tspan>per  •  P<tspan fill="#dc2626">o</tspan>stcode  •  P<tspan fill="#dc2626">r</tspan>inter</text>
             <text x="200" y="110" font-size="11" font-weight="900" fill="#059669" text-anchor="middle">Since A → O → R: Paper, then Postcode, then Printer!</text>
           </g>
@@ -607,7 +607,7 @@ CARDS = [
         "subject": "english",
         "subject_label": "English",
         "level": "e3",
-        "level_label": "Entry Level 3",
+        "level_label": "Entry 3",
         "strand_name": "Everyday Writing",
         "strand_theme": "cyan",
         "dfe_code": "DfE E3.W18",
@@ -622,12 +622,12 @@ CARDS = [
           <g transform="translate(30, 15)">
             <rect x="0" y="0" width="400" height="138" rx="8" fill="#ffffff" stroke="#0891b2" stroke-width="2"/>
             <rect x="0" y="0" width="400" height="26" rx="8" fill="#cffafe"/>
-            <text x="15" y="17" font-size="10.5" font-weight="900" fill="#155e75">✉️ EMAIL CHECKLIST (ENTRY LEVEL 3)</text>
-            <text x="15" y="45" font-size="10.5" font-weight="800" fill="#0f172a">Subject: <tspan fill="#0891b2">Shift Swap Request – Tuesday 14 May</tspan></text>
+            <text x="15" y="17" font-size="11" font-weight="900" fill="#155e75">✉️ EMAIL CHECKLIST (ENTRY 3)</text>
+            <text x="15" y="45" font-size="11" font-weight="800" fill="#0f172a">Subject: <tspan fill="#0891b2">Shift Swap Request – Tuesday 14 May</tspan></text>
             <line x1="15" y1="53" x2="385" y2="53" stroke="#e2e8f0"/>
-            <text x="15" y="72" font-size="10.5" font-weight="800" fill="#0f172a">Dear Manager,</text>
-            <text x="15" y="92" font-size="10" font-weight="600" fill="#475569">I am writing to ask if I can swap my Tuesday morning shift...</text>
-            <text x="15" y="114" font-size="10.5" font-weight="800" fill="#059669">Kind regards,   Alex Carter</text>
+            <text x="15" y="72" font-size="11" font-weight="800" fill="#0f172a">Dear Manager,</text>
+            <text x="15" y="92" font-size="11" font-weight="600" fill="#475569">I am writing to ask if I can swap my Tuesday morning shift...</text>
+            <text x="15" y="114" font-size="11" font-weight="800" fill="#059669">Kind regards,   Alex Carter</text>
           </g>
         </svg>"""
     },
@@ -637,7 +637,7 @@ CARDS = [
         "subject": "english",
         "subject_label": "English",
         "level": "e3",
-        "level_label": "Entry Level 3",
+        "level_label": "Entry 3",
         "strand_name": "Everyday Writing",
         "strand_theme": "cyan",
         "dfe_code": "DfE E3.W19",
@@ -653,17 +653,17 @@ CARDS = [
             <rect x="0" y="0" width="400" height="132" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.8"/>
             <text x="200" y="24" font-size="12" font-weight="900" fill="#0f172a" text-anchor="middle">3-PARAGRAPH STRUCTURE + SEQUENCING WORDS</text>
             <rect x="20" y="38" width="110" height="76" rx="6" fill="#eff6ff" stroke="#3b82f6"/>
-            <text x="75" y="58" font-size="10.5" font-weight="900" fill="#1e40af" text-anchor="middle">1. OPENING</text>
-            <text x="75" y="78" font-size="9.5" font-weight="700" fill="#475569" text-anchor="middle">Why you are</text>
-            <text x="75" y="94" font-size="9.5" font-weight="700" fill="#475569" text-anchor="middle">writing</text>
+            <text x="75" y="58" font-size="11" font-weight="900" fill="#1e40af" text-anchor="middle">1. OPENING</text>
+            <text x="75" y="78" font-size="11" font-weight="700" fill="#475569" text-anchor="middle">Why you are</text>
+            <text x="75" y="94" font-size="11" font-weight="700" fill="#475569" text-anchor="middle">writing</text>
             <rect x="145" y="38" width="110" height="76" rx="6" fill="#ecfdf5" stroke="#10b981"/>
-            <text x="200" y="58" font-size="10.5" font-weight="900" fill="#047857" text-anchor="middle">2. DETAILS</text>
-            <text x="200" y="78" font-size="9.5" font-weight="700" fill="#475569" text-anchor="middle">First, Next,</text>
-            <text x="200" y="94" font-size="9.5" font-weight="700" fill="#475569" text-anchor="middle">Also, Because</text>
+            <text x="200" y="58" font-size="11" font-weight="900" fill="#047857" text-anchor="middle">2. DETAILS</text>
+            <text x="200" y="78" font-size="11" font-weight="700" fill="#475569" text-anchor="middle">First, Next,</text>
+            <text x="200" y="94" font-size="11" font-weight="700" fill="#475569" text-anchor="middle">Also, Because</text>
             <rect x="270" y="38" width="110" height="76" rx="6" fill="#fffbeb" stroke="#f59e0b"/>
-            <text x="325" y="58" font-size="10.5" font-weight="900" fill="#92400e" text-anchor="middle">3. ENDING</text>
-            <text x="325" y="78" font-size="9.5" font-weight="700" fill="#475569" text-anchor="middle">Finally, action</text>
-            <text x="325" y="94" font-size="9.5" font-weight="700" fill="#475569" text-anchor="middle">&amp; thank you</text>
+            <text x="325" y="58" font-size="11" font-weight="900" fill="#92400e" text-anchor="middle">3. ENDING</text>
+            <text x="325" y="78" font-size="11" font-weight="700" fill="#475569" text-anchor="middle">Finally, action</text>
+            <text x="325" y="94" font-size="11" font-weight="700" fill="#475569" text-anchor="middle">&amp; thank you</text>
           </g>
         </svg>"""
     },
@@ -673,7 +673,7 @@ CARDS = [
         "subject": "english",
         "subject_label": "English",
         "level": "e3",
-        "level_label": "Entry Level 3",
+        "level_label": "Entry 3",
         "strand_name": "SPaG Foundations",
         "strand_theme": "teal",
         "dfe_code": "DfE E3.W13",
@@ -688,10 +688,10 @@ CARDS = [
           <g transform="translate(30, 18)">
             <rect x="0" y="0" width="400" height="132" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.8"/>
             <text x="200" y="25" font-size="12" font-weight="900" fill="#15803d" text-anchor="middle">M.I.N.T.S. CAPITAL LETTER CHECKLIST</text>
-            <text x="25" y="52" font-size="10.5" font-weight="800" fill="#0f172a">M — Months &amp; Days: <tspan fill="#059669">Friday, November</tspan></text>
-            <text x="25" y="74" font-size="10.5" font-weight="800" fill="#0f172a">I — The word 'I': <tspan fill="#059669">I work at the clinic.</tspan></text>
-            <text x="25" y="96" font-size="10.5" font-weight="800" fill="#0f172a">N — Names &amp; Places: <tspan fill="#059669">Subi, Oxford, High Street</tspan></text>
-            <text x="25" y="118" font-size="10.5" font-weight="800" fill="#0f172a">S — Start of Every Sentence (+ end with <tspan fill="#dc2626">.  ?  !</tspan>)</text>
+            <text x="25" y="52" font-size="11" font-weight="800" fill="#0f172a">M — Months &amp; Days: <tspan fill="#059669">Friday, November</tspan></text>
+            <text x="25" y="74" font-size="11" font-weight="800" fill="#0f172a">I — The word 'I': <tspan fill="#059669">I work at the clinic.</tspan></text>
+            <text x="25" y="96" font-size="11" font-weight="800" fill="#0f172a">N — Names &amp; Places: <tspan fill="#059669">Subi, Oxford, High Street</tspan></text>
+            <text x="25" y="118" font-size="11" font-weight="800" fill="#0f172a">S — Start of Every Sentence (+ end with <tspan fill="#dc2626">.  ?  !</tspan>)</text>
           </g>
         </svg>"""
     },
@@ -701,7 +701,7 @@ CARDS = [
         "subject": "english",
         "subject_label": "English",
         "level": "e3",
-        "level_label": "Entry Level 3",
+        "level_label": "Entry 3",
         "strand_name": "SPaG Foundations",
         "strand_theme": "teal",
         "dfe_code": "DfE E3.W14",
@@ -716,16 +716,16 @@ CARDS = [
           <g transform="translate(25, 18)">
             <rect x="0" y="0" width="195" height="132" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.8"/>
             <text x="97" y="25" font-size="11" font-weight="900" fill="#1e40af" text-anchor="middle">COMMAS IN A LIST</text>
-            <text x="15" y="55" font-size="10" font-weight="700" fill="#0f172a">"Bring a pen<tspan fill="#dc2626" font-weight="900">,</tspan> a notepad<tspan fill="#dc2626" font-weight="900">,</tspan></text>
-            <text x="15" y="73" font-size="10" font-weight="700" fill="#0f172a">your ID badge and water."</text>
-            <text x="15" y="104" font-size="9.5" font-weight="800" fill="#2563eb">Separates 3 or more items</text>
+            <text x="15" y="55" font-size="11" font-weight="700" fill="#0f172a">"Bring a pen<tspan fill="#dc2626" font-weight="900">,</tspan> a notepad<tspan fill="#dc2626" font-weight="900">,</tspan></text>
+            <text x="15" y="73" font-size="11" font-weight="700" fill="#0f172a">your ID badge and water."</text>
+            <text x="15" y="104" font-size="11" font-weight="800" fill="#2563eb">Separates 3 or more items</text>
           </g>
           <g transform="translate(240, 18)">
             <rect x="0" y="0" width="195" height="132" rx="8" fill="#fffbeb" stroke="#f59e0b" stroke-width="1.8"/>
             <text x="97" y="25" font-size="11" font-weight="900" fill="#92400e" text-anchor="middle">APOSTROPHE (OMISSION)</text>
-            <text x="15" y="55" font-size="10.5" font-weight="800" fill="#0f172a">do not  →  don't</text>
-            <text x="15" y="78" font-size="10.5" font-weight="800" fill="#0f172a">it is   →  it's</text>
-            <text x="15" y="101" font-size="10.5" font-weight="800" fill="#059669">you are →  you're</text>
+            <text x="15" y="55" font-size="11" font-weight="800" fill="#0f172a">do not  →  don't</text>
+            <text x="15" y="78" font-size="11" font-weight="800" fill="#0f172a">it is   →  it's</text>
+            <text x="15" y="101" font-size="11" font-weight="800" fill="#059669">you are →  you're</text>
           </g>
         </svg>"""
     },
@@ -735,7 +735,7 @@ CARDS = [
         "subject": "english",
         "subject_label": "English",
         "level": "e3",
-        "level_label": "Entry Level 3",
+        "level_label": "Entry 3",
         "strand_name": "SPaG Foundations",
         "strand_theme": "teal",
         "dfe_code": "DfE E3.W15",
@@ -750,16 +750,16 @@ CARDS = [
           <g transform="translate(25, 18)">
             <rect x="0" y="0" width="195" height="132" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.8"/>
             <text x="97" y="25" font-size="11" font-weight="900" fill="#1e40af" text-anchor="middle">SINGULAR (ONE)</text>
-            <text x="15" y="54" font-size="10.5" font-weight="800" fill="#0f172a">• I was / He was / She was</text>
-            <text x="15" y="78" font-size="10.5" font-weight="800" fill="#0f172a">• The train is / was late</text>
-            <text x="15" y="102" font-size="10.5" font-weight="800" fill="#2563eb">• There is one seat left</text>
+            <text x="15" y="54" font-size="11" font-weight="800" fill="#0f172a">• I was / He was / She was</text>
+            <text x="15" y="78" font-size="11" font-weight="800" fill="#0f172a">• The train is / was late</text>
+            <text x="15" y="102" font-size="11" font-weight="800" fill="#2563eb">• There is one seat left</text>
           </g>
           <g transform="translate(240, 18)">
             <rect x="0" y="0" width="195" height="132" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1.8"/>
             <text x="97" y="25" font-size="11" font-weight="900" fill="#047857" text-anchor="middle">PLURAL (2+ OR 'YOU')</text>
-            <text x="15" y="54" font-size="10.5" font-weight="800" fill="#059669">• We were / They were</text>
-            <text x="15" y="78" font-size="10.5" font-weight="800" fill="#059669">• You were (NEVER 'you was')</text>
-            <text x="15" y="102" font-size="10.5" font-weight="800" fill="#047857">• There are many options</text>
+            <text x="15" y="54" font-size="11" font-weight="800" fill="#059669">• We were / They were</text>
+            <text x="15" y="78" font-size="11" font-weight="800" fill="#059669">• You were (NEVER 'you was')</text>
+            <text x="15" y="102" font-size="11" font-weight="800" fill="#047857">• There are many options</text>
           </g>
         </svg>"""
     },
@@ -769,7 +769,7 @@ CARDS = [
         "subject": "english",
         "subject_label": "English",
         "level": "e3",
-        "level_label": "Entry Level 3",
+        "level_label": "Entry 3",
         "strand_name": "SPaG Foundations",
         "strand_theme": "teal",
         "dfe_code": "DfE E3.W17",
@@ -781,12 +781,12 @@ CARDS = [
         "challenge_prompt": "Write the plural of these three words: (a) box   (b) family   (c) key",
         "answer_text": "(a) boxes (add -es)   (b) families (consonant + y → -ies)   (c) keys (vowel + y → add -s).",
         "svg_html": """<svg viewBox="0 0 460 170" width="100%" height="170" xmlns="http://www.w3.org/2000/svg">
-          <g transform="translate(30, 18)">
-            <rect x="0" y="0" width="400" height="132" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.8"/>
-            <text x="200" y="25" font-size="12" font-weight="900" fill="#0f172a" text-anchor="middle">THE 3 PLURAL SPELLING RULES</text>
-            <text x="25" y="54" font-size="10.5" font-weight="800" fill="#2563eb">1. Ends in -s, -sh, -ch, -x → Add -ES:  box → boxes, watch → watches</text>
-            <text x="25" y="80" font-size="10.5" font-weight="800" fill="#059669">2. Consonant + Y → Drop Y, add -IES:  city → cities, lorry → lorries</text>
-            <text x="25" y="106" font-size="10.5" font-weight="800" fill="#d97706">3. Vowel + Y → Keep Y, add -S:  day → days, trolley → trolleys</text>
+          <g transform="translate(18, 18)">
+            <rect x="0" y="0" width="424" height="132" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.8"/>
+            <text x="212" y="25" font-size="12" font-weight="900" fill="#0f172a" text-anchor="middle">THE 3 PLURAL SPELLING RULES</text>
+            <text x="18" y="54" font-size="10.5" font-weight="800" fill="#2563eb">1. Ends in -s, -sh, -ch, -x → Add -ES:  box → boxes, watch → watches</text>
+            <text x="18" y="80" font-size="10.5" font-weight="800" fill="#059669">2. Consonant + Y → Drop Y, add -IES:  city → cities, lorry → lorries</text>
+            <text x="18" y="106" font-size="10.5" font-weight="800" fill="#d97706">3. Vowel + Y → Keep Y, add -S:  day → days, trolley → trolleys</text>
           </g>
         </svg>"""
     },
@@ -796,7 +796,7 @@ CARDS = [
         "subject": "english",
         "subject_label": "English",
         "level": "e3",
-        "level_label": "Entry Level 3",
+        "level_label": "Entry 3",
         "strand_name": "Speaking & Listening",
         "strand_theme": "cyan",
         "dfe_code": "DfE E3.SLC1",
@@ -811,23 +811,75 @@ CARDS = [
           <g transform="translate(30, 18)">
             <rect x="0" y="0" width="400" height="132" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1.8"/>
             <text x="200" y="25" font-size="12" font-weight="900" fill="#047857" text-anchor="middle">ENTRY 3 SPEAKING &amp; LISTENING SUCCESS</text>
-            <text x="25" y="54" font-size="10.5" font-weight="800" fill="#0f172a">✓ Speak Clearly: "I think we should... because..."</text>
-            <text x="25" y="78" font-size="10.5" font-weight="800" fill="#2563eb">✓ Ask Questions: "What do you think is the best day for...?"</text>
-            <text x="25" y="102" font-size="10.5" font-weight="800" fill="#059669">✓ Respect Turns: Nod, keep eye contact, and don't interrupt</text>
+            <text x="25" y="54" font-size="11" font-weight="800" fill="#0f172a">✓ Speak Clearly: "I think we should... because..."</text>
+            <text x="25" y="78" font-size="11" font-weight="800" fill="#2563eb">✓ Ask Questions: "What do you think is the best day for...?"</text>
+            <text x="25" y="102" font-size="11" font-weight="800" fill="#059669">✓ Respect Turns: Nod, keep eye contact, and don't interrupt</text>
           </g>
         </svg>"""
     },
 
+    {
+        "id": "e3-31",
+        "number": 25,
+        "subject": "english",
+        "subject_label": "English",
+        "level": "e3",
+        "level_label": "Entry 3",
+        "strand_name": "Everyday Writing",
+        "strand_theme": "purple",
+        "dfe_code": "DfE E3.W20",
+        "title": "Form Filling &amp; Personal Details",
+        "rule_heading": "BLOCK CAPITALS When Asked • Exact Dates • Leave Nothing Blank",
+        "rule_body": "Read every form label carefully: write Surname (family name) separate from Forename, match UK dates (DD/MM/YYYY), tick one option clearly, and write 'N/A' if a section does not apply.",
+        "golden_rule": "Read instructions at the TOP of the form first (e.g. 'Use BLOCK CAPITALS')!",
+        "watch_out": "Never put your first name in the Surname box — check every label twice.",
+        "challenge_prompt": "A GP registration form states 'Use BLACK INK and BLOCK CAPITALS' and asks for 'D.O.B. (DD/MM/YYYY)'. How should you write 5th March 1994 in the Surname/DOB section?",
+        "answer_text": "Use black ink, write your Surname in ALL CAPS (e.g. KHAN), and write DOB as 05/03/1994.",
+        "svg_html": """<svg viewBox="0 0 460 170" width="100%" height="170" xmlns="http://www.w3.org/2000/svg">
+          <rect x="25" y="16" width="410" height="138" rx="8" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="2"/>
+          <text x="230" y="38" font-size="12" font-weight="900" fill="#5b21b6" text-anchor="middle">FORM FILLING GOLDEN CHECKLIST</text>
+          <text x="45" y="64" font-size="11" font-weight="800" fill="#0f172a">SURNAME:     PATEL          (Last name in CAPITALS)</text>
+          <text x="45" y="88" font-size="11" font-weight="800" fill="#0f172a">FORENAME:    AMINA          (First name in CAPITALS)</text>
+          <text x="45" y="112" font-size="11" font-weight="800" fill="#059669">D.O.B.:      05 / 03 / 1994  (Two-digit day &amp; month)</text>
+          <text x="45" y="136" font-size="11" font-weight="800" fill="#2563eb">POSTCODE:    OX1 4BA         (Correct UK spacing)</text>
+        </svg>"""
+    },
+    {
+        "id": "e3-32",
+        "number": 26,
+        "subject": "english",
+        "subject_label": "English",
+        "level": "e3",
+        "level_label": "Entry 3",
+        "strand_name": "Reading Basics",
+        "strand_theme": "purple",
+        "dfe_code": "DfE E3.R11",
+        "title": "Scanning Text for Key Facts",
+        "rule_heading": "Hunt for Numbers, Names, Dates &amp; Bold Keywords",
+        "rule_body": "When an exam asks 'What time does the clinic close?' or 'How much is a ticket?', do NOT read every single word slowly. Let your eyes scan quickly down headings and numbers to spot the exact fact.",
+        "golden_rule": "Underline the keyword in the question first, then scan the page for that word!",
+        "watch_out": "Check adjacent sentences in case there is an exception (e.g. 'Closed on Sundays').",
+        "challenge_prompt": "A leaflet says: 'Library Open Mon–Fri 9am–6pm, Sat 10am–4pm. Half-price printing (£0.05) before noon.' On Saturday, at what time does the library open?",
+        "answer_text": "10am (scanning for 'Sat' quickly rules out Mon–Fri 9am and noon).",
+        "svg_html": """<svg viewBox="0 0 460 170" width="100%" height="170" xmlns="http://www.w3.org/2000/svg">
+          <rect x="25" y="16" width="410" height="138" rx="8" fill="#faf5ff" stroke="#7c3aed" stroke-width="2"/>
+          <text x="230" y="40" font-size="12" font-weight="900" fill="#5b21b6" text-anchor="middle">FAST SCANNING TECHNIQUE</text>
+          <text x="45" y="68" font-size="11" font-weight="800" fill="#2563eb">1. Times &amp; Prices  →  Scan for £ signs, am/pm, numbers</text>
+          <text x="45" y="94" font-size="11" font-weight="800" fill="#059669">2. People &amp; Places →  Scan for Capital Letters &amp; Bold Headings</text>
+          <text x="45" y="120" font-size="11" font-weight="800" fill="#dc2626">3. Check Tricky Words → Look for 'except', 'only', 'closed'</text>
+        </svg>"""
+    },
+
     # =========================================================================
-    # ENTRY LEVEL 3 DIGITAL FUNCTIONAL SKILLS (#25 - #30)
+    # ENTRY 3 DIGITAL FUNCTIONAL SKILLS (#27 - #32)
     # =========================================================================
     {
         "id": "e3-25",
-        "number": 25,
+        "number": 27,
         "subject": "digital",
         "subject_label": "Digital Skills",
         "level": "e3",
-        "level_label": "Entry Level 3",
+        "level_label": "Entry 3",
         "strand_name": "Using Devices",
         "strand_theme": "orange",
         "dfe_code": "DFSQ E3.1",
@@ -842,19 +894,19 @@ CARDS = [
           <g transform="translate(30, 18)">
             <rect x="0" y="0" width="400" height="132" rx="8" fill="#fff7ed" stroke="#f97316" stroke-width="1.8"/>
             <text x="200" y="25" font-size="12" font-weight="900" fill="#9a3412" text-anchor="middle">ESSENTIAL DEVICE SETTINGS (ENTRY 3)</text>
-            <text x="25" y="54" font-size="10.5" font-weight="800" fill="#0f172a">🔒 Secure Wi-Fi: Look for the padlock icon &amp; enter password</text>
-            <text x="25" y="78" font-size="10.5" font-weight="800" fill="#2563eb">🔍 Accessibility: Increase Text Size, Zoom, or High Contrast</text>
-            <text x="25" y="102" font-size="10.5" font-weight="800" fill="#059669">🔄 Software Updates: Install updates to patch security risks</text>
+            <text x="25" y="54" font-size="11" font-weight="800" fill="#0f172a">🔒 Secure Wi-Fi: Look for the padlock icon &amp; enter password</text>
+            <text x="25" y="78" font-size="11" font-weight="800" fill="#2563eb">🔍 Accessibility: Increase Text Size, Zoom, or High Contrast</text>
+            <text x="25" y="102" font-size="11" font-weight="800" fill="#059669">🔄 Software Updates: Install updates to patch security risks</text>
           </g>
         </svg>"""
     },
     {
         "id": "e3-26",
-        "number": 26,
+        "number": 28,
         "subject": "digital",
         "subject_label": "Digital Skills",
         "level": "e3",
-        "level_label": "Entry Level 3",
+        "level_label": "Entry 3",
         "strand_name": "Using Devices",
         "strand_theme": "orange",
         "dfe_code": "DFSQ E3.2",
@@ -882,11 +934,11 @@ CARDS = [
     },
     {
         "id": "e3-27",
-        "number": 27,
+        "number": 29,
         "subject": "digital",
         "subject_label": "Digital Skills",
         "level": "e3",
-        "level_label": "Entry Level 3",
+        "level_label": "Entry 3",
         "strand_name": "Creating & Editing",
         "strand_theme": "orange",
         "dfe_code": "DFSQ E3.6",
@@ -903,19 +955,19 @@ CARDS = [
             <rect x="0" y="0" width="400" height="30" rx="8" fill="#f1f5f9"/>
             <text x="200" y="20" font-size="11" font-weight="900" fill="#0f172a" text-anchor="middle">[B] Bold   |   [I] Italic   |   [U] Underline   |   [•] Bullets</text>
             <text x="200" y="54" font-size="13" font-weight="900" fill="#1e40af" text-anchor="middle">STAFF FIRE SAFETY NOTICE (Bold, 18pt, Centred)</text>
-            <text x="25" y="80" font-size="10.5" font-weight="700" fill="#0f172a">• Leave the building calmly via the nearest green exit sign.</text>
-            <text x="25" y="100" font-size="10.5" font-weight="700" fill="#0f172a">• Report to Assembly Point B in the main car park.</text>
-            <text x="25" y="120" font-size="9.5" font-weight="800" fill="#059669">(Body text: Left-aligned, 12pt, clean bullet points)</text>
+            <text x="25" y="80" font-size="11" font-weight="700" fill="#0f172a">• Leave the building calmly via the nearest green exit sign.</text>
+            <text x="25" y="100" font-size="11" font-weight="700" fill="#0f172a">• Report to Assembly Point B in the main car park.</text>
+            <text x="25" y="120" font-size="11" font-weight="800" fill="#059669">(Body text: Left-aligned, 12pt, clean bullet points)</text>
           </g>
         </svg>"""
     },
     {
         "id": "e3-28",
-        "number": 28,
+        "number": 30,
         "subject": "digital",
         "subject_label": "Digital Skills",
         "level": "e3",
-        "level_label": "Entry Level 3",
+        "level_label": "Entry 3",
         "strand_name": "Creating & Editing",
         "strand_theme": "orange",
         "dfe_code": "DFSQ E3.8",
@@ -939,11 +991,11 @@ CARDS = [
     },
     {
         "id": "e3-29",
-        "number": 29,
+        "number": 31,
         "subject": "digital",
         "subject_label": "Digital Skills",
         "level": "e3",
-        "level_label": "Entry Level 3",
+        "level_label": "Entry 3",
         "strand_name": "Communicating Online",
         "strand_theme": "orange",
         "dfe_code": "DFSQ E3.10",
@@ -958,26 +1010,26 @@ CARDS = [
           <g transform="translate(25, 18)">
             <rect x="0" y="0" width="195" height="132" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1.8"/>
             <text x="97" y="25" font-size="11.5" font-weight="900" fill="#047857" text-anchor="middle">↩️ REPLY (ONE PERSON)</text>
-            <text x="15" y="55" font-size="10" font-weight="700" fill="#0f172a">Sends your message ONLY</text>
-            <text x="15" y="73" font-size="10" font-weight="700" fill="#0f172a">to the person who emailed</text>
-            <text x="15" y="102" font-size="9.5" font-weight="800" fill="#059669">✓ Safe for private info</text>
+            <text x="15" y="55" font-size="11" font-weight="700" fill="#0f172a">Sends your message ONLY</text>
+            <text x="15" y="73" font-size="11" font-weight="700" fill="#0f172a">to the person who emailed</text>
+            <text x="15" y="102" font-size="11" font-weight="800" fill="#059669">✓ Safe for private info</text>
           </g>
           <g transform="translate(240, 18)">
             <rect x="0" y="0" width="195" height="132" rx="8" fill="#fff7ed" stroke="#f97316" stroke-width="1.8"/>
             <text x="97" y="25" font-size="11.5" font-weight="900" fill="#9a3412" text-anchor="middle">📎 ATTACHMENTS</text>
-            <text x="15" y="55" font-size="10" font-weight="700" fill="#0f172a">Click Paperclip icon (📎)</text>
-            <text x="15" y="73" font-size="10" font-weight="700" fill="#0f172a">to attach a PDF or photo</text>
-            <text x="15" y="102" font-size="9.5" font-weight="800" fill="#c2410c">✓ Check file name &amp; size</text>
+            <text x="15" y="55" font-size="11" font-weight="700" fill="#0f172a">Click Paperclip icon (📎)</text>
+            <text x="15" y="73" font-size="11" font-weight="700" fill="#0f172a">to attach a PDF or photo</text>
+            <text x="15" y="102" font-size="11" font-weight="800" fill="#c2410c">✓ Check file name &amp; size</text>
           </g>
         </svg>"""
     },
     {
         "id": "e3-30",
-        "number": 30,
+        "number": 32,
         "subject": "digital",
         "subject_label": "Digital Skills",
         "level": "e3",
-        "level_label": "Entry Level 3",
+        "level_label": "Entry 3",
         "strand_name": "Being Safe & Secure",
         "strand_theme": "rose",
         "dfe_code": "DFSQ E3.12",
@@ -989,12 +1041,12 @@ CARDS = [
         "challenge_prompt": "State two signs that a text message claiming 'Your parcel is held—click here to pay £1.99' is a phishing scam.",
         "answer_text": "1. Urgent demand for payment via an unfamiliar web link. 2. Sent from an unknown mobile number with a generic greeting.",
         "svg_html": """<svg viewBox="0 0 460 170" width="100%" height="170" xmlns="http://www.w3.org/2000/svg">
-          <g transform="translate(30, 18)">
-            <rect x="0" y="0" width="400" height="132" rx="8" fill="#fff1f2" stroke="#f43f5e" stroke-width="1.8"/>
-            <text x="200" y="25" font-size="12" font-weight="900" fill="#9f1239" text-anchor="middle">3 GOLDEN RULES FOR STAYING SAFE ONLINE</text>
-            <text x="25" y="54" font-size="10.5" font-weight="800" fill="#059669">1. Strong Password: 3 random words + numbers/symbols + 2FA code</text>
-            <text x="25" y="78" font-size="10.5" font-weight="800" fill="#2563eb">2. Safe Websites: Check for https:// and the Padlock icon in URL bar</text>
-            <text x="25" y="102" font-size="10.5" font-weight="800" fill="#be123c">3. Spot Phishing: Ignore urgent panic links &amp; fake sender addresses</text>
+          <g transform="translate(18, 18)">
+            <rect x="0" y="0" width="424" height="132" rx="8" fill="#fff1f2" stroke="#f43f5e" stroke-width="1.8"/>
+            <text x="212" y="25" font-size="12" font-weight="900" fill="#9f1239" text-anchor="middle">3 GOLDEN RULES FOR STAYING SAFE ONLINE</text>
+            <text x="18" y="54" font-size="10.5" font-weight="800" fill="#059669">1. Strong Password: 3 random words + numbers/symbols + 2FA code</text>
+            <text x="18" y="78" font-size="10.5" font-weight="800" fill="#2563eb">2. Safe Websites: Check for https:// and the Padlock icon in URL bar</text>
+            <text x="18" y="102" font-size="10.5" font-weight="800" fill="#be123c">3. Spot Phishing: Ignore urgent panic links &amp; fake sender addresses</text>
           </g>
         </svg>"""
     }

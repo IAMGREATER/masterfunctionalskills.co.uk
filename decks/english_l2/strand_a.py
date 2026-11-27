@@ -61,11 +61,11 @@ CARDS = [ { 'answer_text': 'The main purpose is to PERSUADE the reader to take u
                 'stroke-width="1.8"/>\n'
                 '            <text x="90" y="24" font-size="11" font-weight="800" fill="#1e40af" '
                 'text-anchor="middle">FORMAL / PROFESSIONAL</text>\n'
-                '            <text x="15" y="55" font-size="10.5" font-weight="700" fill="#0f172a">• Passive '
+                '            <text x="15" y="55" font-size="11" font-weight="700" fill="#0f172a">• Passive '
                 'voice</text>\n'
-                '            <text x="15" y="78" font-size="10.5" font-weight="700" fill="#0f172a">• Complex '
+                '            <text x="15" y="78" font-size="11" font-weight="700" fill="#0f172a">• Complex '
                 'vocabulary</text>\n'
-                '            <text x="15" y="101" font-size="10.5" font-weight="700" fill="#0f172a">• No slang or '
+                '            <text x="15" y="101" font-size="11" font-weight="700" fill="#0f172a">• No slang or '
                 'contractions</text>\n'
                 '          </g>\n'
                 '          <g transform="translate(240, 20)">\n'
@@ -73,11 +73,11 @@ CARDS = [ { 'answer_text': 'The main purpose is to PERSUADE the reader to take u
                 'stroke-width="1.8"/>\n'
                 '            <text x="90" y="24" font-size="11" font-weight="800" fill="#9d174d" '
                 'text-anchor="middle">INFORMAL / CASUAL</text>\n'
-                '            <text x="15" y="55" font-size="10.5" font-weight="700" fill="#0f172a">• Contractions '
+                '            <text x="15" y="55" font-size="11" font-weight="700" fill="#0f172a">• Contractions '
                 "(don't, it's)</text>\n"
-                '            <text x="15" y="78" font-size="10.5" font-weight="700" fill="#0f172a">• Direct address '
+                '            <text x="15" y="78" font-size="11" font-weight="700" fill="#0f172a">• Direct address '
                 "('you')</text>\n"
-                '            <text x="15" y="101" font-size="10.5" font-weight="700" fill="#0f172a">• Conversational '
+                '            <text x="15" y="101" font-size="11" font-weight="700" fill="#0f172a">• Conversational '
                 'phrases</text>\n'
                 '          </g>\n'
                 '</svg>',
@@ -103,18 +103,18 @@ CARDS = [ { 'answer_text': 'The main purpose is to PERSUADE the reader to take u
           <g transform="translate(40, 20)">
             <rect x="0" y="0" width="180" height="125" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.8"/>
             <text x="90" y="24" font-size="12" font-weight="800" fill="#1e40af" text-anchor="middle">EXPLICIT (Stated)</text>
-            <text x="15" y="50" font-size="10" font-weight="700" fill="#0f172a">"The door was locked</text>
-            <text x="15" y="66" font-size="10" font-weight="700" fill="#0f172a">with three heavy bolts."</text>
+            <text x="15" y="50" font-size="11" font-weight="700" fill="#0f172a">"The door was locked</text>
+            <text x="15" y="66" font-size="11" font-weight="700" fill="#0f172a">with three heavy bolts."</text>
             <rect x="15" y="88" width="150" height="24" rx="4" fill="#3b82f6"/>
-            <text x="90" y="104" font-size="10" font-weight="800" fill="#ffffff" text-anchor="middle">Clear literal fact</text>
+            <text x="90" y="104" font-size="11" font-weight="800" fill="#ffffff" text-anchor="middle">Clear literal fact</text>
           </g>
           <g transform="translate(240, 20)">
             <rect x="0" y="0" width="180" height="125" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1.8"/>
             <text x="90" y="24" font-size="12" font-weight="800" fill="#b45309" text-anchor="middle">IMPLICIT (Inferred)</text>
-            <text x="15" y="50" font-size="10" font-weight="700" fill="#0f172a">"She checked over her</text>
-            <text x="15" y="66" font-size="10" font-weight="700" fill="#0f172a">shoulder before knocking."</text>
+            <text x="15" y="50" font-size="11" font-weight="700" fill="#0f172a">"She checked over her</text>
+            <text x="15" y="66" font-size="11" font-weight="700" fill="#0f172a">shoulder before knocking."</text>
             <rect x="15" y="88" width="150" height="24" rx="4" fill="#d97706"/>
-            <text x="90" y="104" font-size="10" font-weight="800" fill="#ffffff" text-anchor="middle">Infers fear or secrecy</text>
+            <text x="90" y="104" font-size="11" font-weight="800" fill="#ffffff" text-anchor="middle">Infers fear or secrecy</text>
           </g>
 </svg>""",
     'title': 'Explicit vs Implicit (Inference)',
@@ -139,23 +139,23 @@ CARDS = [ { 'answer_text': 'The main purpose is to PERSUADE the reader to take u
           <g transform="translate(25, 20)">
             <rect x="0" y="0" width="130" height="125" rx="6" fill="#eff6ff" stroke="#3b82f6"/>
             <text x="65" y="26" font-size="12" font-weight="800" fill="#1e40af" text-anchor="middle">FACT</text>
-            <text x="12" y="52" font-size="9.5" font-weight="700" fill="#475569">Can be checked</text>
-            <text x="12" y="68" font-size="9.5" font-weight="700" fill="#475569">and verified</text>
-            <text x="12" y="84" font-size="9.5" font-weight="700" fill="#475569">with data/proof.</text>
+            <text x="12" y="52" font-size="11" font-weight="700" fill="#475569">Can be checked</text>
+            <text x="12" y="68" font-size="11" font-weight="700" fill="#475569">and verified</text>
+            <text x="12" y="84" font-size="11" font-weight="700" fill="#475569">with data/proof.</text>
           </g>
           <g transform="translate(165, 20)">
             <rect x="0" y="0" width="130" height="125" rx="6" fill="#fdf2f8" stroke="#ec4899"/>
             <text x="65" y="26" font-size="12" font-weight="800" fill="#9d174d" text-anchor="middle">OPINION</text>
-            <text x="12" y="52" font-size="9.5" font-weight="700" fill="#475569">Belief or value</text>
-            <text x="12" y="68" font-size="9.5" font-weight="700" fill="#475569">(e.g. best, worst,</text>
-            <text x="12" y="84" font-size="9.5" font-weight="700" fill="#475569">greatest).</text>
+            <text x="12" y="52" font-size="11" font-weight="700" fill="#475569">Belief or value</text>
+            <text x="12" y="68" font-size="11" font-weight="700" fill="#475569">(e.g. best, worst,</text>
+            <text x="12" y="84" font-size="11" font-weight="700" fill="#475569">greatest).</text>
           </g>
           <g transform="translate(305, 20)">
             <rect x="0" y="0" width="130" height="125" rx="6" fill="#fffbeb" stroke="#f59e0b"/>
             <text x="65" y="26" font-size="12" font-weight="800" fill="#b45309" text-anchor="middle">BIAS</text>
-            <text x="12" y="52" font-size="9.5" font-weight="700" fill="#475569">Unbalanced,</text>
-            <text x="12" y="68" font-size="9.5" font-weight="700" fill="#475569">one-sided view with</text>
-            <text x="12" y="84" font-size="9.5" font-weight="700" fill="#475569">vested interest.</text>
+            <text x="12" y="52" font-size="11" font-weight="700" fill="#475569">Unbalanced,</text>
+            <text x="12" y="68" font-size="11" font-weight="700" fill="#475569">one-sided view with</text>
+            <text x="12" y="84" font-size="11" font-weight="700" fill="#475569">vested interest.</text>
           </g>
 </svg>""",
     'title': 'Fact vs Opinion vs Bias',
@@ -179,16 +179,16 @@ CARDS = [ { 'answer_text': 'The main purpose is to PERSUADE the reader to take u
     'subject_label': 'English',
     'svg_html': '<svg viewBox="0 0 460 170" width="100%" height="170" xmlns="http://www.w3.org/2000/svg">\n'
                 '\n'
-                '          <g transform="translate(40, 20)">\n'
-                '            <rect x="0" y="0" width="380" height="130" rx="8" fill="#f8fafc" stroke="#cbd5e1" '
+                '          <g transform="translate(24, 18)">\n'
+                '            <rect x="0" y="0" width="412" height="132" rx="8" fill="#f8fafc" stroke="#cbd5e1" '
                 'stroke-width="1.8"/>\n'
-                '            <text x="190" y="26" font-size="13" font-weight="800" fill="#0f172a" '
+                '            <text x="206" y="26" font-size="13" font-weight="800" fill="#0f172a" '
                 'text-anchor="middle">ORGANISATIONAL FEATURES &amp; EFFECT</text>\n'
-                '            <text x="25" y="55" font-size="11" font-weight="700" fill="#2563eb">• Subheadings: Help '
+                '            <text x="20" y="55" font-size="11" font-weight="700" fill="#2563eb">• Subheadings: Help '
                 'reader navigate and find information quickly</text>\n'
-                '            <text x="25" y="80" font-size="11" font-weight="700" fill="#059669">• Bullet Points: '
+                '            <text x="20" y="80" font-size="11" font-weight="700" fill="#059669">• Bullet Points: '
                 'Break complex steps into digestible chunks</text>\n'
-                '            <text x="25" y="105" font-size="11" font-weight="700" fill="#d97706">• Pull-quotes / '
+                '            <text x="20" y="105" font-size="10.8" font-weight="700" fill="#d97706">• Pull-quotes / '
                 'Sidebars: Emphasise critical statistics or takeaways</text>\n'
                 '          </g>\n'
                 '</svg>',
@@ -271,7 +271,7 @@ CARDS = [ { 'answer_text': 'The main purpose is to PERSUADE the reader to take u
     'level_label': 'Level 2',
     'number': 8,
     'rule_body': "Simile: Compares using 'like' or 'as' ('busy as a bee'). Metaphor: States one thing IS another ('the "
-                 "hospital was a warzone'). Hyperbole: Deliberate dramatic exaggeration.",
+                 "busy office was a warzone'). Hyperbole: Deliberate dramatic exaggeration.",
     'rule_heading': 'Metaphor • Simile • Hyperbole',
     'strand_name': 'Reading & Analysis',
     'strand_theme': 'purple',
@@ -352,12 +352,12 @@ CARDS = [ { 'answer_text': 'The main purpose is to PERSUADE the reader to take u
                 'stroke-width="1.8"/>\n'
                 '            <text x="90" y="24" font-size="12" font-weight="800" fill="#1e40af" '
                 'text-anchor="middle">TEXT A</text>\n'
-                '            <text x="15" y="55" font-size="10" font-weight="700" fill="#0f172a">Optimistic about '
+                '            <text x="15" y="55" font-size="11" font-weight="700" fill="#0f172a">Optimistic about '
                 'AI</text>\n'
-                '            <text x="15" y="80" font-size="10" font-weight="700" fill="#475569">Quotes industry '
+                '            <text x="15" y="80" font-size="11" font-weight="700" fill="#475569">Quotes industry '
                 'gains</text>\n'
                 '            <rect x="15" y="92" width="150" height="22" rx="4" fill="#3b82f6"/>\n'
-                '            <text x="90" y="107" font-size="10" font-weight="800" fill="#ffffff" '
+                '            <text x="90" y="107" font-size="11" font-weight="800" fill="#ffffff" '
                 'text-anchor="middle">Supports adoption</text>\n'
                 '          </g>\n'
                 '          <g transform="translate(240, 20)">\n'
@@ -365,12 +365,12 @@ CARDS = [ { 'answer_text': 'The main purpose is to PERSUADE the reader to take u
                 'stroke-width="1.8"/>\n'
                 '            <text x="90" y="24" font-size="12" font-weight="800" fill="#991b1b" '
                 'text-anchor="middle">TEXT B</text>\n'
-                '            <text x="15" y="55" font-size="10" font-weight="700" fill="#0f172a">Cautionary / '
+                '            <text x="15" y="55" font-size="11" font-weight="700" fill="#0f172a">Cautionary / '
                 'Skeptical</text>\n'
-                '            <text x="15" y="80" font-size="10" font-weight="700" fill="#475569">Warns of job '
+                '            <text x="15" y="80" font-size="11" font-weight="700" fill="#475569">Warns of job '
                 'losses</text>\n'
                 '            <rect x="15" y="92" width="150" height="22" rx="4" fill="#ef4444"/>\n'
-                '            <text x="90" y="107" font-size="10" font-weight="800" fill="#ffffff" '
+                '            <text x="90" y="107" font-size="11" font-weight="800" fill="#ffffff" '
                 'text-anchor="middle">Urges regulation</text>\n'
                 '          </g>\n'
                 '</svg>',
@@ -394,14 +394,14 @@ CARDS = [ { 'answer_text': 'The main purpose is to PERSUADE the reader to take u
     'subject_label': 'English',
     'svg_html': '<svg viewBox="0 0 460 170" width="100%" height="170" xmlns="http://www.w3.org/2000/svg">\n'
                 '\n'
-                '          <rect x="30" y="20" width="400" height="130" rx="8" fill="#f8fafc" stroke="#cbd5e1" '
+                '          <rect x="20" y="20" width="420" height="130" rx="8" fill="#f8fafc" stroke="#cbd5e1" '
                 'stroke-width="1.8"/>\n'
-                '          <text x="230" y="42" font-size="13" font-weight="800" fill="#0f172a" '
+                '          <text x="230" y="44" font-size="13" font-weight="800" fill="#0f172a" '
                 'text-anchor="middle">Comparing Structural Formats</text>\n'
-                '          <g transform="translate(60, 60)">\n'
-                '            <text x="0" y="20" font-size="11.5" font-weight="700" fill="#2563eb">Text A: Dense, '
+                '          <g transform="translate(40, 62)">\n'
+                '            <text x="0" y="20" font-size="11.2" font-weight="700" fill="#2563eb">Text A: Dense, '
                 'unbroken prose suited for academic reports.</text>\n'
-                '            <text x="0" y="45" font-size="11.5" font-weight="700" fill="#059669">Text B: Modern web '
+                '            <text x="0" y="45" font-size="11.2" font-weight="700" fill="#059669">Text B: Modern web '
                 'layout with subheadings and numbered steps.</text>\n'
                 '          </g>\n'
                 '</svg>',
@@ -461,16 +461,16 @@ CARDS = [ { 'answer_text': 'The main purpose is to PERSUADE the reader to take u
     'subject_label': 'English',
     'svg_html': '<svg viewBox="0 0 460 170" width="100%" height="170" xmlns="http://www.w3.org/2000/svg">\n'
                 '\n'
-                '          <g transform="translate(60, 20)">\n'
-                '            <rect x="0" y="0" width="340" height="130" rx="8" fill="#f8fafc" stroke="#cbd5e1" '
+                '          <g transform="translate(30, 18)">\n'
+                '            <rect x="0" y="0" width="400" height="132" rx="8" fill="#f8fafc" stroke="#cbd5e1" '
                 'stroke-width="1.8"/>\n'
-                '            <text x="170" y="26" font-size="12" font-weight="800" fill="#0f172a" '
+                '            <text x="200" y="26" font-size="12" font-weight="800" fill="#0f172a" '
                 'text-anchor="middle">SOURCE CREDIBILITY CHECKLIST</text>\n'
-                '            <text x="40" y="55" font-size="11" font-weight="700" fill="#2563eb">1. Who wrote it? '
+                '            <text x="24" y="55" font-size="11" font-weight="700" fill="#2563eb">1. Who wrote it? '
                 '(Expert credentials vs anonymous)</text>\n'
-                '            <text x="40" y="80" font-size="11" font-weight="700" fill="#059669">2. When was it '
+                '            <text x="24" y="80" font-size="11" font-weight="700" fill="#059669">2. When was it '
                 'published? (Recent vs obsolete)</text>\n'
-                '            <text x="40" y="105" font-size="11" font-weight="700" fill="#dc2626">3. Vested interest? '
+                '            <text x="24" y="105" font-size="10.8" font-weight="700" fill="#dc2626">3. Vested interest? '
                 '(Sponsored ad vs independent study)</text>\n'
                 '          </g>\n'
                 '</svg>',
@@ -533,13 +533,13 @@ CARDS = [ { 'answer_text': 'The main purpose is to PERSUADE the reader to take u
                 'text-anchor="middle">MAIN IDEA (Core Claim)</text>\n'
                 '            <g transform="translate(0, 55)">\n'
                 '              <rect x="0" y="0" width="105" height="55" rx="4" fill="#eff6ff" stroke="#3b82f6"/><text '
-                'x="52" y="32" font-size="10" font-weight="800" fill="#1e40af" '
+                'x="52" y="32" font-size="11" font-weight="800" fill="#1e40af" '
                 'text-anchor="middle">Evidence/Stats</text>\n'
                 '              <rect x="117" y="0" width="105" height="55" rx="4" fill="#eff6ff" '
-                'stroke="#3b82f6"/><text x="170" y="32" font-size="10" font-weight="800" fill="#1e40af" '
+                'stroke="#3b82f6"/><text x="170" y="32" font-size="11" font-weight="800" fill="#1e40af" '
                 'text-anchor="middle">Expert Quote</text>\n'
                 '              <rect x="235" y="0" width="105" height="55" rx="4" fill="#eff6ff" '
-                'stroke="#3b82f6"/><text x="287" y="32" font-size="10" font-weight="800" fill="#1e40af" '
+                'stroke="#3b82f6"/><text x="287" y="32" font-size="11" font-weight="800" fill="#1e40af" '
                 'text-anchor="middle">Real Example</text>\n'
                 '            </g>\n'
                 '          </g>\n'

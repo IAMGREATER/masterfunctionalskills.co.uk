@@ -7,7 +7,7 @@ CARDS = [ { 'answer_text': 'A square has 4 equal sides. Perimeter = 4 × 7.5 = 3
     'id': 'm-l1-15',
     'level': 'l1',
     'level_label': 'Level 1',
-    'number': 15,
+    'number': 17,
     'rule_body': 'Perimeter is the total boundary distance around a 2D shape. Rectangle: Perimeter = Length + Width + '
                  'Length + Width = 2l + 2w. Units are linear (cm, m).',
     'rule_heading': 'Add All Four Outside Edges',
@@ -42,7 +42,7 @@ CARDS = [ { 'answer_text': 'A square has 4 equal sides. Perimeter = 4 × 7.5 = 3
     'id': 'm-l1-16',
     'level': 'l1',
     'level_label': 'Level 1',
-    'number': 16,
+    'number': 18,
     'rule_body': "A 'regular' polygon has sides that are ALL EQUAL in length: Equilateral Triangle = 3 × side. "
                  'Pentagon = 5 × side. Hexagon = 6 × side. Octagon = 8 × side.',
     'rule_heading': 'Side Length × Number of Sides',
@@ -78,7 +78,7 @@ CARDS = [ { 'answer_text': 'A square has 4 equal sides. Perimeter = 4 × 7.5 = 3
     'id': 'm-l1-17',
     'level': 'l1',
     'level_label': 'Level 1',
-    'number': 17,
+    'number': 19,
     'rule_body': 'Area measures the flat 2D space inside a shape. Multiply length by width. Answers are ALWAYS written '
                  'in square units (cm², m², mm²).',
     'rule_heading': 'Area = Length × Width',
@@ -110,7 +110,7 @@ CARDS = [ { 'answer_text': 'A square has 4 equal sides. Perimeter = 4 × 7.5 = 3
     'id': 'm-l1-18',
     'level': 'l1',
     'level_label': 'Level 1',
-    'number': 18,
+    'number': 20,
     'rule_body': '1. Multiply base by perpendicular vertical height. 2. HALVE the answer (divide by 2) because a '
                  'triangle is half of a rectangle.',
     'rule_heading': 'Area = (Base × Height) ÷ 2',
@@ -125,7 +125,7 @@ CARDS = [ { 'answer_text': 'A square has 4 equal sides. Perimeter = 4 × 7.5 = 3
                 'stroke-width="2.2"/>\n'
                 '            <line x1="60" y1="30" x2="60" y2="110" stroke="#dc2626" stroke-width="2" '
                 'stroke-dasharray="3,3"/>\n'
-                '            <text x="80" y="70" font-size="11" font-weight="800" fill="#dc2626">h = 6 cm</text>\n'
+                '            <text x="68" y="82" font-size="11" font-weight="800" fill="#dc2626">h = 6 cm</text>\n'
                 '            <text x="95" y="125" font-size="11" font-weight="800" fill="#a16207" '
                 'text-anchor="middle">base = 10 cm</text>\n'
                 '            <text x="95" y="145" font-size="12" font-weight="900" fill="#ca8a04" '
@@ -141,7 +141,7 @@ CARDS = [ { 'answer_text': 'A square has 4 equal sides. Perimeter = 4 × 7.5 = 3
     'id': 'm-l1-19',
     'level': 'l1',
     'level_label': 'Level 1',
-    'number': 19,
+    'number': 21,
     'rule_body': 'Volume measures the 3D space inside a solid box. Multiply all three dimensions together: Length × '
                  'Width × Height. Written in cubic units (cm³, m³).',
     'rule_heading': 'Volume = Length × Width × Height',
@@ -182,7 +182,7 @@ CARDS = [ { 'answer_text': 'A square has 4 equal sides. Perimeter = 4 × 7.5 = 3
     'id': 'm-l1-20',
     'level': 'l1',
     'level_label': 'Level 1',
-    'number': 20,
+    'number': 22,
     'rule_body': '1 cm = 10 mm. 1 m = 100 cm. 1 km = 1,000 m. Big to small unit = MULTIPLY (×). Small to big unit = '
                  'DIVIDE (÷).',
     'rule_heading': 'mm • cm • m • km',
@@ -214,7 +214,7 @@ CARDS = [ { 'answer_text': 'A square has 4 equal sides. Perimeter = 4 × 7.5 = 3
     'id': 'm-l1-21',
     'level': 'l1',
     'level_label': 'Level 1',
-    'number': 21,
+    'number': 23,
     'rule_body': 'To convert kg to g: MULTIPLY by 1,000. To convert g to kg: DIVIDE by 1,000. For medicine: 1 g = '
                  '1,000 mg.',
     'rule_heading': '1 kg = 1,000 g  |  1 tonne = 1,000 kg',
@@ -246,7 +246,7 @@ CARDS = [ { 'answer_text': 'A square has 4 equal sides. Perimeter = 4 × 7.5 = 3
     'id': 'm-l1-22',
     'level': 'l1',
     'level_label': 'Level 1',
-    'number': 22,
+    'number': 24,
     'rule_body': 'Litres to millilitres: MULTIPLY by 1,000. Millilitres to litres: DIVIDE by 1,000. Common amounts: '
                  '1/2 Litre = 500 ml. 1/4 Litre = 250 ml. 3/4 Litre = 750 ml.',
     'rule_heading': '1 Litre = 1,000 ml',
@@ -278,7 +278,7 @@ CARDS = [ { 'answer_text': 'A square has 4 equal sides. Perimeter = 4 × 7.5 = 3
     'id': 'm-l1-23',
     'level': 'l1',
     'level_label': 'Level 1',
-    'number': 23,
+    'number': 25,
     'rule_body': 'To convert PM time to 24-hour: ADD 12 hours (e.g. 4:15 pm + 12 = 16:15). To convert 24-hour to PM: '
                  'SUBTRACT 12 hours (e.g. 21:40 - 12 = 9:40 pm).',
     'rule_heading': 'Converting &amp; Timetables',
@@ -320,7 +320,7 @@ CARDS = [ { 'answer_text': 'A square has 4 equal sides. Perimeter = 4 × 7.5 = 3
     'id': 'm-l1-24',
     'level': 'l1',
     'level_label': 'Level 1',
-    'number': 24,
+    'number': 26,
     'rule_body': '1. Multiply quantities by unit price. 2. Sum all items carefully. 3. Change = Amount paid - Total '
                  'bill. Compare deals by finding price for the same amount.',
     'rule_heading': 'Multi-Item Totals &amp; Change',
@@ -352,7 +352,7 @@ CARDS = [ { 'answer_text': 'A square has 4 equal sides. Perimeter = 4 × 7.5 = 3
     'id': 'm-l1-25',
     'level': 'l1',
     'level_label': 'Level 1',
-    'number': 25,
+    'number': 27,
     'rule_body': 'Right Angle = 90°. Triangle angles sum to 180°. Quadrilateral angles sum to 360°. Parallel lines '
                  'never meet. Perpendicular lines meet at 90°.',
     'rule_heading': 'Sides, Angles &amp; Symmetry',
@@ -367,11 +367,11 @@ CARDS = [ { 'answer_text': 'A square has 4 equal sides. Perimeter = 4 × 7.5 = 3
                 'stroke-width="1.8"/>\n'
                 '            <text x="90" y="24" font-size="12" font-weight="800" fill="#1e40af" '
                 'text-anchor="middle">TRIANGLES (180°)</text>\n'
-                '            <text x="15" y="55" font-size="10.5" font-weight="700" fill="#0f172a">Equilateral: 3 '
+                '            <text x="15" y="55" font-size="11" font-weight="700" fill="#0f172a">Equilateral: 3 '
                 'equal sides</text>\n'
-                '            <text x="15" y="78" font-size="10.5" font-weight="700" fill="#0f172a">Isosceles: 2 equal '
+                '            <text x="15" y="78" font-size="11" font-weight="700" fill="#0f172a">Isosceles: 2 equal '
                 'sides</text>\n'
-                '            <text x="15" y="101" font-size="10.5" font-weight="700" fill="#0f172a">Scalene: 0 equal '
+                '            <text x="15" y="101" font-size="11" font-weight="700" fill="#0f172a">Scalene: 0 equal '
                 'sides</text>\n'
                 '          </g>\n'
                 '          <g transform="translate(240, 20)">\n'
@@ -379,11 +379,11 @@ CARDS = [ { 'answer_text': 'A square has 4 equal sides. Perimeter = 4 × 7.5 = 3
                 'stroke-width="1.8"/>\n'
                 '            <text x="90" y="24" font-size="12" font-weight="800" fill="#15803d" '
                 'text-anchor="middle">QUADRILATERALS (360°)</text>\n'
-                '            <text x="15" y="55" font-size="10.5" font-weight="700" fill="#0f172a">Square: 4 equal '
+                '            <text x="15" y="55" font-size="11" font-weight="700" fill="#0f172a">Square: 4 equal '
                 'sides, 90°</text>\n'
-                '            <text x="15" y="78" font-size="10.5" font-weight="700" fill="#0f172a">Rectangle: Opposite '
+                '            <text x="15" y="78" font-size="11" font-weight="700" fill="#0f172a">Rectangle: Opposite '
                 'equal</text>\n'
-                '            <text x="15" y="101" font-size="10.5" font-weight="700" fill="#0f172a">Trapezium: 1 pair '
+                '            <text x="15" y="101" font-size="11" font-weight="700" fill="#0f172a">Trapezium: 1 pair '
                 'parallel</text>\n'
                 '          </g>\n'
                 '</svg>',
@@ -396,7 +396,7 @@ CARDS = [ { 'answer_text': 'A square has 4 equal sides. Perimeter = 4 × 7.5 = 3
     'id': 'm-l1-26',
     'level': 'l1',
     'level_label': 'Level 1',
-    'number': 26,
+    'number': 28,
     'rule_body': 'Face = Flat or curved surface. Edge = Line where two faces meet. Vertex (Vertices) = Corner point '
                  'where edges meet. A cube/cuboid has 6 faces, 12 edges, 8 vertices.',
     'rule_heading': 'Faces, Edges &amp; Vertices',
@@ -428,7 +428,7 @@ CARDS = [ { 'answer_text': 'A square has 4 equal sides. Perimeter = 4 × 7.5 = 3
     'id': 'm-l1-27',
     'level': 'l1',
     'level_label': 'Level 1',
-    'number': 27,
+    'number': 29,
     'rule_body': 'Coordinates are written as (x, y): 1. First number (x) goes HORIZONTALLY along the bottom axis. 2. '
                  'Second number (y) goes VERTICALLY up the side axis. Origin is (0, 0).',
     'rule_heading': 'Along the Corridor, Up the Stairs',
@@ -449,7 +449,7 @@ CARDS = [ { 'answer_text': 'A square has 4 equal sides. Perimeter = 4 × 7.5 = 3
                 '              <rect x="0" y="0" width="160" height="65" rx="6" fill="#eff6ff" stroke="#3b82f6"/>\n'
                 '              <text x="80" y="24" font-size="11" font-weight="800" fill="#1e40af" '
                 'text-anchor="middle">Point (4, 3):</text>\n'
-                '              <text x="80" y="46" font-size="10.5" font-weight="700" fill="#475569" '
+                '              <text x="80" y="46" font-size="11" font-weight="700" fill="#475569" '
                 'text-anchor="middle">4 along (x), 3 up (y)</text>\n'
                 '            </g>\n'
                 '          </g>\n'
@@ -464,7 +464,7 @@ CARDS = [ { 'answer_text': 'A square has 4 equal sides. Perimeter = 4 × 7.5 = 3
     'id': 'm-l1-28',
     'level': 'l1',
     'level_label': 'Level 1',
-    'number': 28,
+    'number': 30,
     'rule_body': 'Always check the scale key (e.g. 1 square = 1 metre, or 1 square = 2 metres). Real dimension = '
                  'Number of squares counted × Scale key value.',
     'rule_heading': 'Count Squares &amp; Use the Key',
@@ -486,7 +486,7 @@ CARDS = [ { 'answer_text': 'A square has 4 equal sides. Perimeter = 4 × 7.5 = 3
                 '              <rect x="0" y="0" width="170" height="75" rx="6" fill="#f8fafc" stroke="#cbd5e1"/>\n'
                 '              <text x="85" y="24" font-size="11" font-weight="800" fill="#0f172a" '
                 'text-anchor="middle">Key: 1 sq = 2 metres</text>\n'
-                '              <text x="85" y="46" font-size="10.5" font-weight="700" fill="#475569" '
+                '              <text x="85" y="46" font-size="11" font-weight="700" fill="#475569" '
                 'text-anchor="middle">Room is 3 sq × 2 sq</text>\n'
                 '              <text x="85" y="65" font-size="11" font-weight="900" fill="#0284c7" '
                 'text-anchor="middle">Actual: 6 m by 4 m</text>\n'
@@ -494,4 +494,92 @@ CARDS = [ { 'answer_text': 'A square has 4 equal sides. Perimeter = 4 × 7.5 = 3
                 '          </g>\n'
                 '</svg>',
     'title': 'Scale Drawings on Grid Paper',
-    'watch_out': 'If 1 square = 2 metres, 4 squares = 8 metres, NOT 4 metres.'}]
+    'watch_out': 'If 1 square = 2 metres, 4 squares = 8 metres, NOT 4 metres.'},
+  { 'answer_text': '180° - 65° = 115°.',
+  'challenge_prompt': 'Two angles sit on a straight line. One angle is 65°. Calculate the size of the missing '
+                      'angle.',
+  'dfe_code': 'DfE L1.MSS24b',
+  'golden_rule': 'Straight Line = 180° (half turn); Full Point = 360° (full turn)!',
+  'id': 'm-l1-41',
+  'level': 'l1',
+  'level_label': 'Level 1',
+  'number': 31,
+  'rule_body': 'Angles on a flat straight line always add up to 180°. Angles meeting around a full circle point '
+               'add up to 360°. Subtract known angles to find the missing angle.',
+  'rule_heading': 'Straight Line = 180° • Full Turn = 360° • Right Angle = 90°',
+  'strand_name': 'Measures & Space',
+  'strand_theme': 'emerald',
+  'subject': 'maths',
+  'subject_label': 'Maths',
+  'svg_html': '<svg viewBox="0 0 460 170" width="100%" height="170" xmlns="http://www.w3.org/2000/svg">\n'
+              '          <g transform="translate(20, 20)">\n'
+              '            <rect x="0" y="0" width="195" height="128" rx="8" fill="#ecfdf5" stroke="#10b981" '
+              'stroke-width="1.8"/>\n'
+              '            <line x1="20" y1="95" x2="175" y2="95" stroke="#0f172a" stroke-width="2.5"/>\n'
+              '            <line x1="95" y1="95" x2="145" y2="42" stroke="#059669" stroke-width="2.5"/>\n'
+              '            <text x="58" y="72" font-size="11.5" font-weight="900" fill="#065f46">125°</text>\n'
+              '            <text x="134" y="84" font-size="11.5" font-weight="900" fill="#dc2626">55°</text>\n'
+              '            <text x="97" y="118" font-size="11" font-weight="800" fill="#0f172a" '
+              'text-anchor="middle">Line = 180°</text>\n'
+              '          </g>\n'
+              '          <g transform="translate(235, 20)">\n'
+              '            <rect x="0" y="0" width="200" height="128" rx="8" fill="#eff6ff" stroke="#3b82f6" '
+              'stroke-width="1.8"/>\n'
+              '            <circle cx="100" cy="60" r="32" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>\n'
+              '            <line x1="100" y1="60" x2="132" y2="60" stroke="#0f172a" stroke-width="2"/>\n'
+              '            <line x1="100" y1="60" x2="72" y2="34" stroke="#0f172a" stroke-width="2"/>\n'
+              '            <text x="100" y="118" font-size="11" font-weight="800" fill="#1e40af" '
+              'text-anchor="middle">Full Turn = 360°</text>\n'
+              '          </g>\n'
+              '        </svg>',
+  'title': 'Angles: Straight Line &amp; Point',
+  'watch_out': 'Look for the little square symbol inside a corner — it automatically equals 90°.'},
+  { 'answer_text': '6 faces (3 matching pairs: top/bottom, front/back, and left/right ends).',
+  'challenge_prompt': 'How many rectangular faces must appear in the flat net of a sealed rectangular cardboard '
+                      'box (cuboid)?',
+  'dfe_code': 'DfE L1.MSS25b',
+  'golden_rule': 'Count all 6 faces first, then check that opposite faces match in size!',
+  'id': 'm-l1-42',
+  'level': 'l1',
+  'level_label': 'Level 1',
+  'number': 32,
+  'rule_body': 'A cube or cuboid net has 6 flat faces joined along edges. When folded up, matching edges meet '
+               'cleanly without overlapping faces.',
+  'rule_heading': '6 Faces Fold Together Along Edges to Form a Box',
+  'strand_name': 'Measures & Space',
+  'strand_theme': 'emerald',
+  'subject': 'maths',
+  'subject_label': 'Maths',
+  'svg_html': '<svg viewBox="0 0 460 170" width="100%" height="170" xmlns="http://www.w3.org/2000/svg">\n'
+              '          <g transform="translate(35, 16)">\n'
+              '            <rect x="55" y="10" width="45" height="32" fill="#fef3c7" stroke="#d97706" '
+              'stroke-width="2"/>\n'
+              '            <rect x="15" y="42" width="40" height="45" fill="#fde68a" stroke="#d97706" '
+              'stroke-width="2"/>\n'
+              '            <rect x="55" y="42" width="45" height="45" fill="#d1fae5" stroke="#059669" '
+              'stroke-width="2"/>\n'
+              '            <rect x="100" y="42" width="40" height="45" fill="#fde68a" stroke="#d97706" '
+              'stroke-width="2"/>\n'
+              '            <rect x="140" y="42" width="45" height="45" fill="#d1fae5" stroke="#059669" '
+              'stroke-width="2"/>\n'
+              '            <rect x="55" y="87" width="45" height="32" fill="#fef3c7" stroke="#d97706" '
+              'stroke-width="2"/>\n'
+              '            <text x="100" y="138" font-size="11.5" font-weight="800" fill="#0f172a" '
+              'text-anchor="middle">Cuboid Net = 6 Faces (3 Opposite Pairs)</text>\n'
+              '          </g>\n'
+              '          <g transform="translate(270, 26)">\n'
+              '            <rect x="0" y="0" width="155" height="106" rx="8" fill="#f8fafc" stroke="#cbd5e1" '
+              'stroke-width="1.8"/>\n'
+              '            <text x="77" y="28" font-size="11.5" font-weight="900" fill="#059669" '
+              'text-anchor="middle">FOLD CHECK</text>\n'
+              '            <text x="15" y="54" font-size="11" font-weight="700" fill="#0f172a">✓ Cube = 6 '
+              'Squares</text>\n'
+              '            <text x="15" y="76" font-size="11" font-weight="700" fill="#0f172a">✓ No overlapping '
+              'flaps</text>\n'
+              '            <text x="15" y="96" font-size="11" font-weight="700" fill="#2563eb">✓ Opposite sides '
+              'equal</text>\n'
+              '          </g>\n'
+              '        </svg>',
+  'title': '2D Nets of Cubes &amp; Cuboids',
+  'watch_out': 'Two flaps placed on the SAME side of the main strip will fold on top of each other.'}
+]

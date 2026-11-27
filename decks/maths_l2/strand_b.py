@@ -36,9 +36,9 @@ CARDS = [ { 'answer_text': 'Missing horizontal = 12 - 5 = 7 m. Missing vertical 
                 '            <rect x="0" y="0" width="150" height="75" rx="6" fill="#f8fafc" stroke="#cbd5e1"/>\n'
                 '            <text x="75" y="24" font-size="11" font-weight="800" fill="#0f172a" '
                 'text-anchor="middle">Missing Sides:</text>\n'
-                '            <text x="75" y="44" font-size="10" font-weight="700" fill="#dc2626" '
+                '            <text x="75" y="44" font-size="11" font-weight="700" fill="#dc2626" '
                 'text-anchor="middle">Width = 10 - 6 = 4 m</text>\n'
-                '            <text x="75" y="62" font-size="10" font-weight="700" fill="#dc2626" '
+                '            <text x="75" y="62" font-size="11" font-weight="700" fill="#dc2626" '
                 'text-anchor="middle">Height = 9 - 4 = 5 m</text>\n'
                 '          </g>\n'
                 '</svg>',
@@ -54,7 +54,7 @@ CARDS = [ { 'answer_text': 'Missing horizontal = 12 - 5 = 7 m. Missing vertical 
     'level_label': 'Level 2',
     'number': 20,
     'rule_body': 'Circumference is the distance around the outside edge of a circle. Diameter (d) goes straight across '
-                 'through center. Radius (r) is from center to edge (d = 2r).',
+                 'through centre. Radius (r) is from centre to edge (d = 2r).',
     'rule_heading': 'Circumference = 3.142 × Diameter',
     'strand_name': 'Shape & Space',
     'strand_theme': 'emerald',
@@ -155,8 +155,8 @@ CARDS = [ { 'answer_text': 'Missing horizontal = 12 - 5 = 7 m. Missing vertical 
                 '= 6 m</text>\n'
                 '          <text x="210" y="152" font-size="12" font-weight="800" fill="#2563eb" '
                 'text-anchor="middle">b = 10 m</text>\n'
-                '          <rect x="330" y="55" width="85" height="22" rx="4" fill="#ffe4e6" stroke="#f43f5e"/>\n'
-                '          <text x="372" y="70" font-size="10" font-weight="800" fill="#be123c" '
+                '          <rect x="334" y="42" width="88" height="22" rx="4" fill="#ffe4e6" stroke="#f43f5e"/>\n'
+                '          <text x="378" y="57" font-size="11" font-weight="800" fill="#be123c" '
                 'text-anchor="middle">IGNORE SLANT!</text>\n'
                 '</svg>',
     'title': 'Area of a Trapezium',
@@ -184,15 +184,15 @@ CARDS = [ { 'answer_text': 'Missing horizontal = 12 - 5 = 7 m. Missing vertical 
                 '          <circle cx="120" cy="85" r="50" fill="#eff6ff" stroke="#2563eb" stroke-width="2.5"/>\n'
                 '          <line x1="120" y1="85" x2="170" y2="85" stroke="#2563eb" stroke-width="2.5"/>\n'
                 '          <circle cx="120" cy="85" r="3.5" fill="#2563eb"/>\n'
-                '          <text x="145" y="78" font-size="11" font-weight="800" fill="#1e40af">r = 5 cm</text>\n'
-                '          <text x="120" y="152" font-size="10.5" font-weight="800" fill="#1e3a8a" '
+                '          <text x="145" y="102" font-size="11" font-weight="800" fill="#1e40af" text-anchor="middle">r = 5 cm</text>\n'
+                '          <text x="120" y="152" font-size="11" font-weight="800" fill="#1e3a8a" '
                 'text-anchor="middle">A = 3.142 × 5² = 78.55 cm²</text>\n'
                 '          <g transform="translate(240, 35)">\n'
                 '            <path d="M 10,80 A 60,60 0 0,1 130,80 Z" fill="#fdf2f8" stroke="#db2777" '
                 'stroke-width="2.5"/>\n'
-                '            <text x="70" y="100" font-size="10.5" font-weight="800" fill="#be185d" '
+                '            <text x="70" y="100" font-size="11" font-weight="800" fill="#be185d" '
                 'text-anchor="middle">Semicircle Area = (π r²) ÷ 2</text>\n'
-                '            <text x="70" y="118" font-size="10" font-weight="700" fill="#64748b" '
+                '            <text x="70" y="118" font-size="11" font-weight="700" fill="#64748b" '
                 'text-anchor="middle">(r² means r × r = 5 × 5)</text>\n'
                 '          </g>\n'
                 '</svg>',
@@ -267,7 +267,7 @@ CARDS = [ { 'answer_text': 'Missing horizontal = 12 - 5 = 7 m. Missing vertical 
                 '            <polygon points="10,110 80,110 45,30" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>\n'
                 '            <polygon points="80,110 150,75 115,10 45,30" fill="#fde68a" stroke="#d97706" '
                 'stroke-width="2"/>\n'
-                '            <text x="45" y="85" font-size="10" font-weight="800" fill="#b45309" '
+                '            <text x="45" y="85" font-size="11" font-weight="800" fill="#b45309" '
                 'text-anchor="middle">Triangle</text>\n'
                 '            <text x="80" y="130" font-size="11" font-weight="800" fill="#b45309" '
                 'text-anchor="middle">Triangular Prism: Area × Length</text>\n'
@@ -295,26 +295,26 @@ CARDS = [ { 'answer_text': 'Missing horizontal = 12 - 5 = 7 m. Missing vertical 
     'subject_label': 'Maths',
     'svg_html': '<svg viewBox="0 0 460 170" width="100%" height="170" xmlns="http://www.w3.org/2000/svg">\n'
                 '\n'
-                '          <g transform="translate(60, 20)">\n'
-                '            <ellipse cx="60" cy="30" rx="55" ry="18" fill="#e0f2fe" stroke="#0284c7" '
+                '          <g transform="translate(50, 22)">\n'
+                '            <ellipse cx="60" cy="24" rx="55" ry="18" fill="#e0f2fe" stroke="#0284c7" '
                 'stroke-width="2"/>\n'
-                '            <rect x="5" y="30" width="110" height="75" fill="#f0f9ff"/>\n'
-                '            <line x1="5" y1="30" x2="5" y2="105" stroke="#0284c7" stroke-width="2"/>\n'
-                '            <line x1="115" y1="30" x2="115" y2="105" stroke="#0284c7" stroke-width="2"/>\n'
-                '            <ellipse cx="60" cy="105" rx="55" ry="18" fill="#bae6fd" stroke="#0284c7" '
+                '            <rect x="5" y="24" width="110" height="75" fill="#f0f9ff"/>\n'
+                '            <line x1="5" y1="24" x2="5" y2="99" stroke="#0284c7" stroke-width="2"/>\n'
+                '            <line x1="115" y1="24" x2="115" y2="99" stroke="#0284c7" stroke-width="2"/>\n'
+                '            <ellipse cx="60" cy="99" rx="55" ry="18" fill="#bae6fd" stroke="#0284c7" '
                 'stroke-width="2"/>\n'
-                '            <line x1="60" y1="30" x2="115" y2="30" stroke="#0369a1" stroke-width="2"/>\n'
-                '            <text x="85" y="24" font-size="10" font-weight="800" fill="#0369a1">r</text>\n'
-                '            <text x="130" y="70" font-size="11" font-weight="800" fill="#0369a1">h</text>\n'
+                '            <line x1="60" y1="24" x2="115" y2="24" stroke="#0369a1" stroke-width="2"/>\n'
+                '            <text x="85" y="18" font-size="11" font-weight="800" fill="#0369a1">r</text>\n'
+                '            <text x="128" y="64" font-size="11" font-weight="800" fill="#0369a1">h</text>\n'
                 '          </g>\n'
-                '          <g transform="translate(210, 30)">\n'
-                '            <rect x="0" y="0" width="220" height="105" rx="8" fill="#eff6ff" stroke="#3b82f6" '
+                '          <g transform="translate(210, 22)">\n'
+                '            <rect x="0" y="0" width="224" height="114" rx="8" fill="#eff6ff" stroke="#3b82f6" '
                 'stroke-width="1.8"/>\n'
                 '            <text x="110" y="24" font-size="12" font-weight="900" fill="#1e40af" '
                 'text-anchor="middle">CYLINDER FORMULA</text>\n'
                 '            <text x="110" y="48" font-size="11.5" font-weight="800" fill="#0f172a" '
                 'text-anchor="middle">V = π r² h = 3.142 × r² × h</text>\n'
-                '            <text x="110" y="68" font-size="10" font-weight="700" fill="#2563eb" '
+                '            <text x="110" y="68" font-size="11" font-weight="700" fill="#2563eb" '
                 'text-anchor="middle">(r² means radius × radius)</text>\n'
                 '            <text x="110" y="90" font-size="11" font-weight="700" fill="#059669" '
                 'text-anchor="middle">1,000 cm³ = 1 Litre</text>\n'
@@ -341,17 +341,17 @@ CARDS = [ { 'answer_text': 'Missing horizontal = 12 - 5 = 7 m. Missing vertical 
     'subject_label': 'Maths',
     'svg_html': '<svg viewBox="0 0 460 170" width="100%" height="170" xmlns="http://www.w3.org/2000/svg">\n'
                 '\n'
-                '          <rect x="30" y="20" width="400" height="130" rx="8" fill="#f8fafc" stroke="#cbd5e1" '
+                '          <rect x="15" y="20" width="430" height="130" rx="8" fill="#f8fafc" stroke="#cbd5e1" '
                 'stroke-width="1.8"/>\n'
                 '          <text x="230" y="42" font-size="13" font-weight="800" fill="#0f172a" '
                 'text-anchor="middle">Box dimensions: 5 m long, 4 m wide, 3 m high</text>\n'
-                '          <g transform="translate(60, 60)">\n'
-                '            <rect x="0" y="0" width="95" height="40" rx="4" fill="#dbeafe"/><text x="47" y="24" '
-                'font-size="10" font-weight="800" fill="#1e40af" text-anchor="middle">Top/Bot: 2×(5×4)=40</text>\n'
-                '            <rect x="110" y="0" width="105" height="40" rx="4" fill="#dcfce7"/><text x="162" y="24" '
-                'font-size="10" font-weight="800" fill="#15803d" text-anchor="middle">Front/Back: 2×(5×3)=30</text>\n'
-                '            <rect x="230" y="0" width="95" height="40" rx="4" fill="#fef3c7"/><text x="277" y="24" '
-                'font-size="10" font-weight="800" fill="#b45309" text-anchor="middle">Sides: 2×(4×3)=24</text>\n'
+                '          <g transform="translate(26, 60)">\n'
+                '            <rect x="0" y="0" width="128" height="42" rx="4" fill="#dbeafe"/><text x="64" y="25" '
+                'font-size="11" font-weight="800" fill="#1e40af" text-anchor="middle">Top/Bot: 2×5×4 = 40</text>\n'
+                '            <rect x="136" y="0" width="142" height="42" rx="4" fill="#dcfce7"/><text x="207" y="25" '
+                'font-size="11" font-weight="800" fill="#15803d" text-anchor="middle">Front/Back: 2×5×3 = 30</text>\n'
+                '            <rect x="286" y="0" width="122" height="42" rx="4" fill="#fef3c7"/><text x="347" y="25" '
+                'font-size="11" font-weight="800" fill="#b45309" text-anchor="middle">Sides: 2×4×3 = 24</text>\n'
                 '          </g>\n'
                 '          <text x="230" y="132" font-size="13" font-weight="900" fill="#2563eb" '
                 'text-anchor="middle">Total Surface Area = 40 + 30 + 24 = 94 m²</text>\n'
@@ -383,20 +383,20 @@ CARDS = [ { 'answer_text': 'Missing horizontal = 12 - 5 = 7 m. Missing vertical 
                 'stroke-width="2.2"/>\n'
                 '            <text x="112" y="83" font-size="11.5" font-weight="800" fill="#1e40af" '
                 'text-anchor="middle">Body: 3.142 × d × h</text>\n'
-                '            <text x="112" y="98" font-size="9" font-weight="700" fill="#2563eb" '
+                '            <text x="112" y="98" font-size="11" font-weight="700" fill="#2563eb" '
                 'text-anchor="middle">(Circumference × Height)</text>\n'
                 '\n'
                 '            <!-- Top Circle End (Large & Proportional) -->\n'
                 '            <circle cx="112" cy="30" r="26" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="2.2"/>\n'
                 '            <text x="112" y="34" font-size="11" font-weight="800" fill="#1e40af" '
                 'text-anchor="middle">πr²</text>\n'
-                '            <text x="150" y="34" font-size="10" font-weight="800" fill="#1d4ed8">3.142×r²</text>\n'
+                '            <text x="150" y="34" font-size="11" font-weight="800" fill="#1d4ed8">3.142×r²</text>\n'
                 '\n'
                 '            <!-- Bottom Circle End (Large & Proportional) -->\n'
                 '            <circle cx="112" cy="140" r="26" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="2.2"/>\n'
                 '            <text x="112" y="144" font-size="11" font-weight="800" fill="#1e40af" '
                 'text-anchor="middle">πr²</text>\n'
-                '            <text x="150" y="144" font-size="10" font-weight="800" fill="#1d4ed8">3.142×r²</text>\n'
+                '            <text x="150" y="144" font-size="11" font-weight="800" fill="#1d4ed8">3.142×r²</text>\n'
                 '          </g>\n'
                 '\n'
                 '          <!-- Right Formula Card -->\n'
@@ -406,12 +406,12 @@ CARDS = [ { 'answer_text': 'Missing horizontal = 12 - 5 = 7 m. Missing vertical 
                 '            <text x="102" y="24" font-size="12" font-weight="800" fill="#0f172a" '
                 'text-anchor="middle">CLOSED CYLINDER NET</text>\n'
                 '            <rect x="12" y="36" width="181" height="32" rx="6" fill="#dbeafe" stroke="#bfdbfe"/>\n'
-                '            <text x="102" y="56" font-size="10.5" font-weight="800" fill="#1e40af" '
+                '            <text x="102" y="56" font-size="11" font-weight="800" fill="#1e40af" '
                 'text-anchor="middle">2 Ends = 2 × 3.142 × r²</text>\n'
                 '            <rect x="12" y="74" width="181" height="32" rx="6" fill="#dcfce7" stroke="#bbf7d0"/>\n'
-                '            <text x="102" y="94" font-size="10.5" font-weight="800" fill="#15803d" '
+                '            <text x="102" y="94" font-size="11" font-weight="800" fill="#15803d" '
                 'text-anchor="middle">+ Body = 3.142 × d × h</text>\n'
-                '            <text x="102" y="116" font-size="9" font-weight="700" fill="#64748b" '
+                '            <text x="102" y="116" font-size="11" font-weight="700" fill="#64748b" '
                 'text-anchor="middle">(r² means radius × radius)</text>\n'
                 '          </g>\n'
                 '</svg>',
@@ -435,7 +435,7 @@ CARDS = [ { 'answer_text': 'Missing horizontal = 12 - 5 = 7 m. Missing vertical 
     'subject_label': 'Maths',
     'svg_html': '<svg viewBox="0 0 460 170" width="100%" height="170" xmlns="http://www.w3.org/2000/svg">\n'
                 '\n'
-                '          <g transform="translate(30, 20)">\n'
+                '          <g transform="translate(30, 14)">\n'
                 '            <rect x="0" y="0" width="400" height="130" rx="8" fill="#f8fafc" stroke="#cbd5e1" '
                 'stroke-width="1.8"/>\n'
                 '            <text x="200" y="28" font-size="12" font-weight="800" fill="#0f172a" '
@@ -468,7 +468,7 @@ CARDS = [ { 'answer_text': 'Missing horizontal = 12 - 5 = 7 m. Missing vertical 
     'subject_label': 'Maths',
     'svg_html': '<svg viewBox="0 0 460 170" width="100%" height="170" xmlns="http://www.w3.org/2000/svg">\n'
                 '\n'
-                '          <g transform="translate(30, 20)">\n'
+                '          <g transform="translate(30, 18)">\n'
                 '            <rect x="0" y="0" width="190" height="130" rx="8" fill="#eff6ff" stroke="#3b82f6" '
                 'stroke-width="1.8"/>\n'
                 '            <text x="95" y="26" font-size="12" font-weight="800" fill="#1e40af" '
@@ -481,7 +481,7 @@ CARDS = [ { 'answer_text': 'Missing horizontal = 12 - 5 = 7 m. Missing vertical 
                 '            <text x="95" y="111" font-size="11" font-weight="800" fill="#ffffff" '
                 'text-anchor="middle">1 m² = 10,000 cm²</text>\n'
                 '          </g>\n'
-                '          <g transform="translate(240, 20)">\n'
+                '          <g transform="translate(240, 18)">\n'
                 '            <rect x="0" y="0" width="190" height="130" rx="8" fill="#f0fdf4" stroke="#16a34a" '
                 'stroke-width="1.8"/>\n'
                 '            <text x="95" y="26" font-size="12" font-weight="800" fill="#15803d" '
@@ -584,7 +584,7 @@ CARDS = [ { 'answer_text': 'Missing horizontal = 12 - 5 = 7 m. Missing vertical 
                 '            <rect x="10" y="88" width="180" height="24" rx="4" fill="#16a34a"/>\n'
                 '            <text x="100" y="104" font-size="11" font-weight="800" fill="#ffffff" '
                 'text-anchor="middle">Time = Distance ÷ Speed</text>\n'
-                '            <text x="100" y="125" font-size="9.5" font-weight="800" fill="#dc2626" '
+                '            <text x="100" y="125" font-size="11" font-weight="800" fill="#dc2626" '
                 'text-anchor="middle">⚠️ 45m = 0.75h (NEVER 0.45!)</text>\n'
                 '          </g>\n'
                 '</svg>',
@@ -641,7 +641,7 @@ CARDS = [ { 'answer_text': 'Missing horizontal = 12 - 5 = 7 m. Missing vertical 
                 '            <rect x="10" y="88" width="180" height="24" rx="4" fill="#16a34a"/>\n'
                 '            <text x="100" y="104" font-size="11" font-weight="800" fill="#ffffff" '
                 'text-anchor="middle">Volume = Mass ÷ Density</text>\n'
-                '            <text x="100" y="125" font-size="9.5" font-weight="800" fill="#4338ca" '
+                '            <text x="100" y="125" font-size="11" font-weight="800" fill="#4338ca" '
                 'text-anchor="middle">⚖️ g with cm³ | kg with m³</text>\n'
                 '          </g>\n'
                 '</svg>',
@@ -710,16 +710,24 @@ CARDS = [ { 'answer_text': 'Missing horizontal = 12 - 5 = 7 m. Missing vertical 
     'subject': 'maths',
     'subject_label': 'Maths',
     'svg_html': '<svg viewBox="0 0 460 170" width="100%" height="170" xmlns="http://www.w3.org/2000/svg">\n'
-                '\n'
-                '          <g transform="translate(130, 20)">\n'
-                '            <circle cx="100" cy="65" r="55" fill="#f8fafc" stroke="#334155" stroke-width="2"/>\n'
-                '            <line x1="100" y1="10" x2="100" y2="65" stroke="#dc2626" stroke-width="2.5"/>\n'
-                '            <polygon points="100,5 96,15 104,15" fill="#dc2626"/>\n'
-                '            <text x="100" y="0" font-size="12" font-weight="900" fill="#dc2626" '
-                'text-anchor="middle">N (000°)</text>\n'
-                '            <line x1="100" y1="65" x2="145" y2="30" stroke="#2563eb" stroke-width="2.5"/>\n'
-                '            <path d="M 100,35 A 30,30 0 0,1 125,48" fill="none" stroke="#2563eb" stroke-width="2"/>\n'
-                '            <text x="120" y="32" font-size="11" font-weight="800" fill="#2563eb">055°</text>\n'
+                '          <g transform="translate(18, 12)">\n'
+                '            <rect x="0" y="0" width="166" height="144" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.6"/>\n'
+                '            <circle cx="83" cy="86" r="52" fill="#ffffff" stroke="#334155" stroke-width="2"/>\n'
+                '            <line x1="83" y1="29" x2="83" y2="86" stroke="#dc2626" stroke-width="2.5"/>\n'
+                '            <polygon points="83,23 79,33 87,33" fill="#dc2626"/>\n'
+                '            <text x="83" y="17" font-size="11.5" font-weight="900" fill="#dc2626" text-anchor="middle">N (000°)</text>\n'
+                '            <line x1="83" y1="86" x2="126" y2="56" stroke="#2563eb" stroke-width="2.5"/>\n'
+                '            <circle cx="83" cy="86" r="3" fill="#0f172a"/>\n'
+                '            <path d="M 83,62 A 24,24 0 0,1 103,72" fill="none" stroke="#2563eb" stroke-width="2"/>\n'
+                '            <text x="89" y="54" font-size="9.5" font-weight="900" fill="#2563eb">055°</text>\n'
+                '          </g>\n'
+                '          <g transform="translate(200, 12)">\n'
+                '            <rect x="0" y="0" width="242" height="144" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.6"/>\n'
+                '            <text x="121" y="26" font-size="12" font-weight="900" fill="#1e40af" text-anchor="middle">3-FIGURE BEARING RULES</text>\n'
+                '            <text x="16" y="54" font-size="11" font-weight="800" fill="#0f172a">1. Start at North line (000°)</text>\n'
+                '            <text x="16" y="78" font-size="11" font-weight="800" fill="#2563eb">2. Always turn CLOCKWISE</text>\n'
+                '            <text x="16" y="102" font-size="11" font-weight="800" fill="#059669">3. Write 3 digits: e.g. 055°</text>\n'
+                '            <text x="16" y="126" font-size="10.5" font-weight="700" fill="#b45309">Back bearing: add/subtract 180°</text>\n'
                 '          </g>\n'
                 '</svg>',
     'title': 'Bearings (3-Figure Bearings)',
@@ -741,31 +749,128 @@ CARDS = [ { 'answer_text': 'Missing horizontal = 12 - 5 = 7 m. Missing vertical 
     'subject': 'maths',
     'subject_label': 'Maths',
     'svg_html': '<svg viewBox="0 0 460 170" width="100%" height="170" xmlns="http://www.w3.org/2000/svg">\n'
-                '\n'
-                '          <g transform="translate(30, 20)">\n'
-                '            <rect x="0" y="0" width="120" height="120" rx="6" fill="#f8fafc" stroke="#cbd5e1"/>\n'
-                '            <text x="60" y="24" font-size="11" font-weight="800" fill="#1e40af" '
-                'text-anchor="middle">PLAN VIEW</text>\n'
-                '            <rect x="25" y="40" width="70" height="60" fill="#93c5fd" stroke="#2563eb"/>\n'
-                '            <text x="60" y="115" font-size="9.5" font-weight="700" fill="#64748b" '
-                'text-anchor="middle">From Above</text>\n'
+                '          <g transform="translate(6, 12)">\n'
+                '            <rect x="0" y="0" width="105" height="144" rx="6" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5"/>\n'
+                '            <text x="52" y="18" font-size="10.5" font-weight="900" fill="#334155" text-anchor="middle">3D BUILDING</text>\n'
+                '            <polygon points="16,108 54,108 54,66 35,46 16,66" fill="#dbeafe" stroke="#1d4ed8" stroke-width="1.6"/>\n'
+                '            <polygon points="54,108 88,92 88,52 54,66" fill="#fef3c7" stroke="#d97706" stroke-width="1.6"/>\n'
+                '            <polygon points="35,46 69,32 88,52 54,66" fill="#93c5fd" stroke="#1e40af" stroke-width="1.6"/>\n'
+                '            <rect x="46" y="30" width="9" height="14" fill="#64748b" stroke="#334155" stroke-width="1.2"/>\n'
+                '            <rect x="30" y="86" width="10" height="22" fill="#1e40af"/>\n'
+                '            <rect x="65" y="70" width="12" height="11" fill="#f59e0b" stroke="#92400e" stroke-width="1"/>\n'
+                '            <text x="52" y="132" font-size="10" font-weight="800" fill="#475569" text-anchor="middle">House (3D)</text>\n'
                 '          </g>\n'
-                '          <g transform="translate(170, 20)">\n'
-                '            <rect x="0" y="0" width="120" height="120" rx="6" fill="#f8fafc" stroke="#cbd5e1"/>\n'
-                '            <text x="60" y="24" font-size="11" font-weight="800" fill="#15803d" '
-                'text-anchor="middle">FRONT ELEVATION</text>\n'
-                '            <rect x="25" y="55" width="70" height="45" fill="#86efac" stroke="#16a34a"/>\n'
-                '            <text x="60" y="115" font-size="9.5" font-weight="700" fill="#64748b" '
-                'text-anchor="middle">From Front</text>\n'
+                '          <g transform="translate(119, 12)">\n'
+                '            <rect x="0" y="0" width="105" height="144" rx="6" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.5"/>\n'
+                '            <text x="52" y="18" font-size="10.5" font-weight="900" fill="#1e40af" text-anchor="middle">PLAN VIEW</text>\n'
+                '            <rect x="20" y="38" width="65" height="34" fill="#93c5fd" stroke="#1d4ed8" stroke-width="1.6"/>\n'
+                '            <rect x="20" y="72" width="65" height="34" fill="#bfdbfe" stroke="#1d4ed8" stroke-width="1.6"/>\n'
+                '            <line x1="20" y1="72" x2="85" y2="72" stroke="#1e3a8a" stroke-width="2.4"/>\n'
+                '            <rect x="30" y="47" width="13" height="13" fill="#64748b" stroke="#0f172a" stroke-width="1.2"/>\n'
+                '            <text x="52" y="132" font-size="10" font-weight="800" fill="#1e40af" text-anchor="middle">Above (Roof+Ridge)</text>\n'
                 '          </g>\n'
-                '          <g transform="translate(310, 20)">\n'
-                '            <rect x="0" y="0" width="120" height="120" rx="6" fill="#f8fafc" stroke="#cbd5e1"/>\n'
-                '            <text x="60" y="24" font-size="11" font-weight="800" fill="#b45309" '
-                'text-anchor="middle">SIDE ELEVATION</text>\n'
-                '            <rect x="35" y="55" width="50" height="45" fill="#fde68a" stroke="#d97706"/>\n'
-                '            <text x="60" y="115" font-size="9.5" font-weight="700" fill="#64748b" '
-                'text-anchor="middle">From Side</text>\n'
+                '          <g transform="translate(232, 12)">\n'
+                '            <rect x="0" y="0" width="105" height="144" rx="6" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>\n'
+                '            <text x="52" y="18" font-size="10.5" font-weight="900" fill="#15803d" text-anchor="middle">FRONT VIEW</text>\n'
+                '            <rect x="27" y="42" width="10" height="22" fill="#64748b" stroke="#334155" stroke-width="1.2"/>\n'
+                '            <polygon points="18,68 52,36 86,68" fill="#86efac" stroke="#15803d" stroke-width="1.6"/>\n'
+                '            <rect x="18" y="68" width="68" height="42" fill="#dcfce7" stroke="#15803d" stroke-width="1.6"/>\n'
+                '            <rect x="44" y="84" width="16" height="26" fill="#15803d"/>\n'
+                '            <rect x="25" y="76" width="12" height="11" fill="#ffffff" stroke="#16a34a" stroke-width="1.2"/>\n'
+                '            <rect x="67" y="76" width="12" height="11" fill="#ffffff" stroke="#16a34a" stroke-width="1.2"/>\n'
+                '            <text x="52" y="132" font-size="10" font-weight="800" fill="#15803d" text-anchor="middle">Gable + Door</text>\n'
+                '          </g>\n'
+                '          <g transform="translate(345, 12)">\n'
+                '            <rect x="0" y="0" width="105" height="144" rx="6" fill="#fffbeb" stroke="#d97706" stroke-width="1.5"/>\n'
+                '            <text x="52" y="18" font-size="10.5" font-weight="900" fill="#b45309" text-anchor="middle">SIDE VIEW</text>\n'
+                '            <rect x="26" y="32" width="12" height="16" fill="#64748b" stroke="#334155" stroke-width="1.2"/>\n'
+                '            <rect x="16" y="44" width="73" height="24" fill="#fde68a" stroke="#d97706" stroke-width="1.6"/>\n'
+                '            <rect x="16" y="68" width="73" height="42" fill="#fef3c7" stroke="#d97706" stroke-width="1.6"/>\n'
+                '            <rect x="52" y="78" width="20" height="14" fill="#ffffff" stroke="#d97706" stroke-width="1.2"/>\n'
+                '            <text x="52" y="132" font-size="10" font-weight="800" fill="#b45309" text-anchor="middle">Wall + Sloped Roof</text>\n'
                 '          </g>\n'
                 '</svg>',
     'title': 'Plans &amp; Elevations',
-    'watch_out': 'Plan view NEVER shows height — it only shows width and depth.'}]
+    'watch_out': 'Plan view NEVER shows height — it only shows width and depth.'},
+  { 'answer_text': 'Moving 6 down from y = 4 gives y = -2. Beneath B (5, 4), C is at (5, -2).',
+  'challenge_prompt': 'Point A is at (-3, 4) and Point B is at (5, 4). A rectangle ABCD has height 6 units down. '
+                      'State the coordinates of C.',
+  'dfe_code': 'DfE L2.MSS34',
+  'golden_rule': 'Write (x, y) alphabetically: x goes across, y goes up/down!',
+  'id': 'm-l2-51',
+  'level': 'l2',
+  'level_label': 'Level 2',
+  'number': 37,
+  'rule_body': 'Four-quadrant grids include positive and negative values around (0, 0). Always read the '
+               'horizontal x-value first (right +, left −), then the vertical y-value (up +, down −).',
+  'rule_heading': 'Along the Corridor (x) First, Then Up or Down (y)',
+  'strand_name': 'Shape & Space',
+  'strand_theme': 'emerald',
+  'subject': 'maths',
+  'subject_label': 'Maths',
+  'svg_html': '<svg viewBox="0 0 460 170" width="100%" height="170" xmlns="http://www.w3.org/2000/svg">\n'
+              '          <rect x="115" y="15" width="230" height="140" rx="6" fill="#f8fafc" stroke="#cbd5e1" '
+              'stroke-width="1.5"/>\n'
+              '          <line x1="125" y1="85" x2="335" y2="85" stroke="#0f172a" stroke-width="2.2"/>\n'
+              '          <line x1="230" y1="22" x2="230" y2="148" stroke="#0f172a" stroke-width="2.2"/>\n'
+              '          <text x="330" y="78" font-size="11" font-weight="900" fill="#0f172a">+x</text>\n'
+              '          <text x="128" y="78" font-size="11" font-weight="900" fill="#0f172a">-x</text>\n'
+              '          <text x="236" y="32" font-size="11" font-weight="900" fill="#0f172a">+y</text>\n'
+              '          <text x="236" y="146" font-size="11" font-weight="900" fill="#0f172a">-y</text>\n'
+              '          <circle cx="170" cy="52" r="5" fill="#dc2626"/>\n'
+              '          <text x="170" y="42" font-size="11" font-weight="900" fill="#dc2626" '
+              'text-anchor="middle">(-3, 2)</text>\n'
+              '          <circle cx="290" cy="118" r="5" fill="#059669"/>\n'
+              '          <text x="290" y="135" font-size="11" font-weight="900" fill="#059669" '
+              'text-anchor="middle">(3, -2)</text>\n'
+              '        </svg>',
+  'title': '4-Quadrant Negative Coordinates',
+  'watch_out': '(-3, 2) means LEFT 3, UP 2 — do not swap the numbers to (2, -3)!'},
+  { 'answer_text': 'Width = circumference = 3.14 × 10 = 31.4 cm; Height = 12 cm (31.4 cm by 12 cm).',
+  'challenge_prompt': 'A cylinder has diameter 10 cm and height 12 cm. What are the exact dimensions of the '
+                      'rectangular label wrapping around it? (π = 3.14)',
+  'dfe_code': 'DfE L2.MSS33b',
+  'golden_rule': 'Opposite faces on a cuboid net are separated by one face in between!',
+  'id': 'm-l2-52',
+  'level': 'l2',
+  'level_label': 'Level 2',
+  'number': 38,
+  'rule_body': 'A net is a flat 2D pattern that folds along dashed edges into a 3D shape. Count total faces '
+               '(cube = 6 squares; cylinder = 2 circles + 1 curved rectangle; triangular prism = 2 triangles + 3 '
+               'rectangles).',
+  'rule_heading': 'Flat Net Shapes Must Match Every Face of the 3D Box',
+  'strand_name': 'Shape & Space',
+  'strand_theme': 'emerald',
+  'subject': 'maths',
+  'subject_label': 'Maths',
+  'svg_html': '<svg viewBox="0 0 460 170" width="100%" height="170" xmlns="http://www.w3.org/2000/svg">\n'
+              '          <g transform="translate(30, 14)">\n'
+              '            <rect x="42" y="10" width="38" height="38" fill="#d1fae5" stroke="#059669" '
+              'stroke-width="2"/>\n'
+              '            <rect x="4" y="48" width="38" height="38" fill="#a7f3d0" stroke="#059669" '
+              'stroke-width="2"/>\n'
+              '            <rect x="42" y="48" width="38" height="38" fill="#6ee7b7" stroke="#059669" '
+              'stroke-width="2"/>\n'
+              '            <rect x="80" y="48" width="38" height="38" fill="#a7f3d0" stroke="#059669" '
+              'stroke-width="2"/>\n'
+              '            <rect x="118" y="48" width="38" height="38" fill="#d1fae5" stroke="#059669" '
+              'stroke-width="2"/>\n'
+              '            <rect x="42" y="86" width="38" height="38" fill="#d1fae5" stroke="#059669" '
+              'stroke-width="2"/>\n'
+              '            <text x="80" y="134" font-size="11" font-weight="800" fill="#065f46" '
+              'text-anchor="middle">Cube Net (6 Squares)</text>\n'
+              '          </g>\n'
+              '          <g transform="translate(245, 14)">\n'
+              '            <circle cx="85" cy="18" r="15" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>\n'
+              '            <rect x="25" y="36" width="120" height="40" fill="#eff6ff" stroke="#2563eb" '
+              'stroke-width="2"/>\n'
+              '            <circle cx="85" cy="94" r="15" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>\n'
+              '            <text x="85" y="61" font-size="11" font-weight="800" fill="#1e40af" '
+              'text-anchor="middle">Length = π × d</text>\n'
+              '            <text x="85" y="134" font-size="11" font-weight="800" fill="#1e3a8a" '
+              'text-anchor="middle">Cylinder Net</text>\n'
+              '          </g>\n'
+              '        </svg>',
+  'title': '3D Solids & Folding Nets',
+  'watch_out': 'Check rectangle length against circle circumference (πd) on a cylinder net.'}
+]

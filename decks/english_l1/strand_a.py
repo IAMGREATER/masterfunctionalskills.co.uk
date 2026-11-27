@@ -1,6 +1,6 @@
 """English L1 Strand A: Reading Fundamentals (Cards 1-15)"""
-CARDS = [ { 'answer_text': 'To inform visitors about essential hospital visiting rules and contact information.',
-    'challenge_prompt': 'A text lists opening hours, emergency numbers, and ward rules for a hospital. What is the '
+CARDS = [ { 'answer_text': 'To inform visitors about essential leisure centre rules and contact information.',
+    'challenge_prompt': 'A text lists opening hours, emergency numbers, and safety rules for a leisure centre. What is the '
                         'main point of the text?',
     'dfe_code': 'DfE L1.R1',
     'golden_rule': 'The main point is the overarching message, NOT a small illustrative detail!',
@@ -51,23 +51,23 @@ CARDS = [ { 'answer_text': 'To inform visitors about essential hospital visiting
           <g transform="translate(25, 20)">
             <rect x="0" y="0" width="130" height="120" rx="6" fill="#eff6ff" stroke="#3b82f6"/>
             <text x="65" y="24" font-size="11" font-weight="800" fill="#1e40af" text-anchor="middle">INFORM</text>
-            <text x="12" y="52" font-size="9.5" font-weight="700" fill="#475569">Facts, statistics,</text>
-            <text x="12" y="68" font-size="9.5" font-weight="700" fill="#475569">dates, reports,</text>
-            <text x="12" y="84" font-size="9.5" font-weight="700" fill="#475569">and notices</text>
+            <text x="12" y="52" font-size="11" font-weight="700" fill="#475569">Facts, statistics,</text>
+            <text x="12" y="68" font-size="11" font-weight="700" fill="#475569">dates, reports,</text>
+            <text x="12" y="84" font-size="11" font-weight="700" fill="#475569">and notices</text>
           </g>
           <g transform="translate(165, 20)">
             <rect x="0" y="0" width="130" height="120" rx="6" fill="#fdf2f8" stroke="#ec4899"/>
             <text x="65" y="24" font-size="11" font-weight="800" fill="#9d174d" text-anchor="middle">PERSUADE</text>
-            <text x="12" y="52" font-size="9.5" font-weight="700" fill="#475569">Adverts, reviews,</text>
-            <text x="12" y="68" font-size="9.5" font-weight="700" fill="#475569">speeches, and</text>
-            <text x="12" y="84" font-size="9.5" font-weight="700" fill="#475569">opinions</text>
+            <text x="12" y="52" font-size="11" font-weight="700" fill="#475569">Adverts, reviews,</text>
+            <text x="12" y="68" font-size="11" font-weight="700" fill="#475569">speeches, and</text>
+            <text x="12" y="84" font-size="11" font-weight="700" fill="#475569">opinions</text>
           </g>
           <g transform="translate(305, 20)">
             <rect x="0" y="0" width="130" height="120" rx="6" fill="#f0fdf4" stroke="#16a34a"/>
             <text x="65" y="24" font-size="11" font-weight="800" fill="#15803d" text-anchor="middle">INSTRUCT</text>
-            <text x="12" y="52" font-size="9.5" font-weight="700" fill="#475569">Numbered steps,</text>
-            <text x="12" y="68" font-size="9.5" font-weight="700" fill="#475569">recipes, bossy</text>
-            <text x="12" y="84" font-size="9.5" font-weight="700" fill="#475569">imperative verbs</text>
+            <text x="12" y="52" font-size="11" font-weight="700" fill="#475569">Numbered steps,</text>
+            <text x="12" y="68" font-size="11" font-weight="700" fill="#475569">recipes, bossy</text>
+            <text x="12" y="84" font-size="11" font-weight="700" fill="#475569">imperative verbs</text>
           </g>
 </svg>""",
     'title': 'Text Types: Inform, Persuade, Instruct',
@@ -96,11 +96,11 @@ CARDS = [ { 'answer_text': 'To inform visitors about essential hospital visiting
                 'text-anchor="middle">MAIN TITLE: COMMUNITY CENTRE</text>\n'
                 '            <text x="30" y="55" font-size="11" font-weight="800" fill="#0d9488">Subheading 1: Opening '
                 'Hours</text>\n'
-                '            <text x="30" y="72" font-size="10" font-weight="700" fill="#64748b">Monday to Friday 9am '
+                '            <text x="30" y="72" font-size="11" font-weight="700" fill="#64748b">Monday to Friday 9am '
                 '- 8pm</text>\n'
                 '            <text x="30" y="98" font-size="11" font-weight="800" fill="#0d9488">Subheading 2: Room '
                 'Hire Fees</text>\n'
-                '            <text x="30" y="115" font-size="10" font-weight="700" fill="#64748b">Main Hall: £25 per '
+                '            <text x="30" y="115" font-size="11" font-weight="700" fill="#64748b">Main Hall: £25 per '
                 'hour</text>\n'
                 '          </g>\n'
                 '</svg>',
@@ -132,7 +132,7 @@ CARDS = [ { 'answer_text': 'To inform visitors about essential hospital visiting
                 'not matter (checklist, packing list)</text>\n'
                 '            <text x="30" y="80" font-size="11" font-weight="700" fill="#0f172a">1. Numbered: Sequence '
                 'MATTERS (recipe, safety fire drill)</text>\n'
-                '            <text x="170" y="110" font-size="10.5" font-weight="800" fill="#0d9488" '
+                '            <text x="170" y="110" font-size="11" font-weight="800" fill="#0d9488" '
                 'text-anchor="middle">Makes information fast and easy to digest</text>\n'
                 '          </g>\n'
                 '</svg>',
@@ -154,21 +154,34 @@ CARDS = [ { 'answer_text': 'To inform visitors about essential hospital visiting
     'subject': 'english',
     'subject_label': 'English',
     'svg_html': '<svg viewBox="0 0 460 170" width="100%" height="170" xmlns="http://www.w3.org/2000/svg">\n'
-                '\n'
-                '          <g transform="translate(60, 20)">\n'
-                '            <rect x="30" y="10" width="120" height="75" fill="#e2e8f0" stroke="#94a3b8" rx="4"/>\n'
-                '            <circle cx="90" cy="45" r="20" fill="#38bdf8"/>\n'
-                '            <text x="90" y="105" font-size="10" font-weight="700" fill="#0f172a" '
+                '          <defs>\n'
+                '            <clipPath id="solarPanelClip">\n'
+                '              <rect x="16" y="10" width="208" height="114" rx="8"/>\n'
+                '            </clipPath>\n'
+                '          </defs>\n'
+                '          <image href="assets/img/card_solar_panel.jpg" x="16" y="10" width="208" height="114" '
+                'preserveAspectRatio="xMidYMid slice" clip-path="url(#solarPanelClip)"/>\n'
+                '          <rect x="16" y="10" width="208" height="114" rx="8" fill="none" stroke="#0d9488" '
+                'stroke-width="2"/>\n'
+                '          <rect x="16" y="129" width="208" height="24" rx="5" fill="#f0fdfa" stroke="#99f6e4" '
+                'stroke-width="1.2"/>\n'
+                '          <text x="120" y="145" font-size="10.5" font-weight="800" fill="#0f172a" '
                 'text-anchor="middle">Figure 1: Solar panel installation</text>\n'
-                '            <g transform="translate(180, 20)">\n'
-                '              <rect x="0" y="0" width="150" height="70" rx="6" fill="#f8fafc" stroke="#cbd5e1"/>\n'
-                '              <text x="75" y="24" font-size="11" font-weight="800" fill="#0f172a" '
-                'text-anchor="middle">The Caption:</text>\n'
-                '              <text x="75" y="46" font-size="10" font-weight="700" fill="#475569" '
-                'text-anchor="middle">Explains the image</text>\n'
-                '              <text x="75" y="60" font-size="10" font-weight="700" fill="#475569" '
-                'text-anchor="middle">and links to text</text>\n'
-                '            </g>\n'
+                '          <path d="M 244,106 Q 235,134 226,140" fill="none" stroke="#0d9488" stroke-width="2" '
+                'stroke-linecap="round"/>\n'
+                '          <polygon points="224,141 232,135 234,142" fill="#0d9488"/>\n'
+                '          <g transform="translate(244, 16)">\n'
+                '            <rect x="0" y="0" width="200" height="122" rx="8" fill="#f8fafc" stroke="#cbd5e1" '
+                'stroke-width="1.6"/>\n'
+                '            <text x="100" y="28" font-size="12" font-weight="900" fill="#0f172a" '
+                'text-anchor="middle">THE CAPTION</text>\n'
+                '            <text x="100" y="54" font-size="11" font-weight="700" fill="#334155" '
+                'text-anchor="middle">Explains what the photo shows</text>\n'
+                '            <text x="100" y="74" font-size="11" font-weight="700" fill="#334155" '
+                'text-anchor="middle">and links it to the article</text>\n'
+                '            <rect x="14" y="88" width="172" height="24" rx="4" fill="#ccfbf1"/>\n'
+                '            <text x="100" y="104" font-size="10.5" font-weight="800" fill="#0f766e" '
+                'text-anchor="middle">Often tested in Reading Qs!</text>\n'
                 '          </g>\n'
                 '</svg>',
     'title': 'Images, Diagrams &amp; Captions',
@@ -190,26 +203,26 @@ CARDS = [ { 'answer_text': 'To inform visitors about essential hospital visiting
     'subject_label': 'English',
     'svg_html': '<svg viewBox="0 0 460 170" width="100%" height="170" xmlns="http://www.w3.org/2000/svg">\n'
                 '\n'
-                '          <g transform="translate(40, 20)">\n'
-                '            <rect x="0" y="0" width="180" height="125" rx="8" fill="#eff6ff" stroke="#3b82f6" '
+                '          <g transform="translate(20, 20)">\n'
+                '            <rect x="0" y="0" width="200" height="125" rx="8" fill="#eff6ff" stroke="#3b82f6" '
                 'stroke-width="1.8"/>\n'
-                '            <text x="90" y="24" font-size="12" font-weight="800" fill="#1e40af" '
+                '            <text x="100" y="24" font-size="12" font-weight="800" fill="#1e40af" '
                 'text-anchor="middle">FACT (Proven)</text>\n'
-                '            <text x="15" y="55" font-size="10.5" font-weight="700" fill="#0f172a">"The library has 12 '
-                'computers."</text>\n'
-                '            <rect x="15" y="85" width="150" height="24" rx="4" fill="#3b82f6"/>\n'
-                '            <text x="90" y="101" font-size="10" font-weight="800" fill="#ffffff" '
+                '            <text x="100" y="55" font-size="10.8" font-weight="700" fill="#0f172a" '
+                'text-anchor="middle">"The library has 12 computers."</text>\n'
+                '            <rect x="20" y="85" width="160" height="24" rx="4" fill="#3b82f6"/>\n'
+                '            <text x="100" y="101" font-size="11" font-weight="800" fill="#ffffff" '
                 'text-anchor="middle">Can be counted &amp; verified</text>\n'
                 '          </g>\n'
                 '          <g transform="translate(240, 20)">\n'
-                '            <rect x="0" y="0" width="180" height="125" rx="8" fill="#fdf2f8" stroke="#ec4899" '
+                '            <rect x="0" y="0" width="200" height="125" rx="8" fill="#fdf2f8" stroke="#ec4899" '
                 'stroke-width="1.8"/>\n'
-                '            <text x="90" y="24" font-size="12" font-weight="800" fill="#9d174d" '
+                '            <text x="100" y="24" font-size="12" font-weight="800" fill="#9d174d" '
                 'text-anchor="middle">OPINION (Feeling)</text>\n'
-                '            <text x="15" y="55" font-size="10.5" font-weight="700" fill="#0f172a">"It is the best '
-                'place to study."</text>\n'
-                '            <rect x="15" y="85" width="150" height="24" rx="4" fill="#ec4899"/>\n'
-                '            <text x="90" y="101" font-size="10" font-weight="800" fill="#ffffff" '
+                '            <text x="100" y="55" font-size="10.8" font-weight="700" fill="#0f172a" '
+                'text-anchor="middle">"It is the best place to study."</text>\n'
+                '            <rect x="20" y="85" width="160" height="24" rx="4" fill="#ec4899"/>\n'
+                '            <text x="100" y="101" font-size="11" font-weight="800" fill="#ffffff" '
                 'text-anchor="middle">Personal point of view</text>\n'
                 '          </g>\n'
                 '</svg>',
@@ -333,10 +346,10 @@ CARDS = [ { 'answer_text': 'To inform visitors about essential hospital visiting
           <g transform="translate(40, 20)">
             <rect x="0" y="0" width="380" height="130" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.8"/>
             <text x="190" y="26" font-size="12" font-weight="800" fill="#15803d" text-anchor="middle">CONTEXT CLUE STRATEGY</text>
-            <text x="25" y="50" font-size="10.5" font-weight="700" fill="#0f172a">"The recipe requires several condiments,</text>
-            <text x="25" y="66" font-size="10.5" font-weight="700" fill="#0f172a">like ketchup and mustard."</text>
-            <text x="25" y="88" font-size="10" font-weight="700" fill="#475569">Clue: Ketchup and mustard are sauces added to food.</text>
-            <text x="25" y="110" font-size="10.5" font-weight="800" fill="#15803d">Meaning: 'Condiments' means seasonings or sauces.</text>
+            <text x="25" y="50" font-size="11" font-weight="700" fill="#0f172a">"The recipe requires several condiments,</text>
+            <text x="25" y="66" font-size="11" font-weight="700" fill="#0f172a">like ketchup and mustard."</text>
+            <text x="25" y="88" font-size="11" font-weight="700" fill="#475569">Clue: Ketchup and mustard are sauces added to food.</text>
+            <text x="25" y="110" font-size="11" font-weight="800" fill="#15803d">Meaning: 'Condiments' means seasonings or sauces.</text>
           </g>
 </svg>""",
     'title': 'Vocabulary: Using Context Clues',
@@ -429,11 +442,11 @@ CARDS = [ { 'answer_text': 'To inform visitors about essential hospital visiting
                 'stroke-width="1.8"/>\n'
                 '            <text x="90" y="24" font-size="12" font-weight="800" fill="#1e40af" '
                 'text-anchor="middle">FORMAL</text>\n'
-                '            <text x="15" y="55" font-size="10.5" font-weight="700" fill="#0f172a">• "Dear Sir or '
+                '            <text x="15" y="55" font-size="11" font-weight="700" fill="#0f172a">• "Dear Sir or '
                 'Madam"</text>\n'
-                '            <text x="15" y="78" font-size="10.5" font-weight="700" fill="#0f172a">• "I am writing '
+                '            <text x="15" y="78" font-size="11" font-weight="700" fill="#0f172a">• "I am writing '
                 'to..."</text>\n'
-                '            <text x="15" y="101" font-size="10.5" font-weight="700" fill="#0f172a">• "Yours '
+                '            <text x="15" y="101" font-size="11" font-weight="700" fill="#0f172a">• "Yours '
                 'sincerely"</text>\n'
                 '          </g>\n'
                 '          <g transform="translate(240, 20)">\n'
@@ -441,10 +454,10 @@ CARDS = [ { 'answer_text': 'To inform visitors about essential hospital visiting
                 'stroke-width="1.8"/>\n'
                 '            <text x="90" y="24" font-size="12" font-weight="800" fill="#9d174d" '
                 'text-anchor="middle">INFORMAL</text>\n'
-                '            <text x="15" y="55" font-size="10.5" font-weight="700" fill="#0f172a">• "Hi Alex"</text>\n'
-                '            <text x="15" y="78" font-size="10.5" font-weight="700" fill="#0f172a">• "Can\'t wait to '
+                '            <text x="15" y="55" font-size="11" font-weight="700" fill="#0f172a">• "Hi Alex"</text>\n'
+                '            <text x="15" y="78" font-size="11" font-weight="700" fill="#0f172a">• "Can\'t wait to '
                 'see you!"</text>\n'
-                '            <text x="15" y="101" font-size="10.5" font-weight="700" fill="#0f172a">• "Cheers / '
+                '            <text x="15" y="101" font-size="11" font-weight="700" fill="#0f172a">• "Cheers / '
                 'Bye"</text>\n'
                 '          </g>\n'
                 '</svg>',

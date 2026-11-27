@@ -826,7 +826,7 @@ def svg_file_management():
     </svg>"""
 
 ## =============================================================================
-# COMPLETE CURRICULUM-MAPPED REVISION CARDS (ALL 6 DECKS - 266 CARDS)
+# COMPLETE CURRICULUM-MAPPED REVISION CARDS (ALL 6 DECKS - 274 CARDS)
 # =============================================================================
 from decks import maths_l2
 from decks import maths_l1
@@ -835,14 +835,14 @@ from decks import english_l1
 from decks import digital_skills
 from decks import entry_level_3
 
-OVERHAULED_CARDS = (
+OVERHAULED_CARDS = [dict(_c) for _c in (
     maths_l2.CARDS +
     maths_l1.CARDS +
     english_l2.CARDS +
     english_l1.CARDS +
     digital_skills.CARDS +
     entry_level_3.CARDS
-)
+)]
 
 # Theme colors dictionary
 THEMES = {
@@ -875,12 +875,10 @@ def apply_tight_viewboxes():
         return
     with open(path, "r", encoding="utf-8") as f:
         boxes = json.load(f)
-    if "m-l2-017" in boxes and "m-l2-17" not in boxes:
-        boxes["m-l2-17"] = boxes["m-l2-017"]
     applied = 0
     for card in OVERHAULED_CARDS:
         cid = card.get("id")
-        if cid in boxes and boxes[cid] and cid != "m-l2-23" and cid != "m-l1-33":
+        if cid in boxes and boxes[cid]:
             b = boxes[cid]
             bx, by, bw, bh = b["x"], b["y"], b["w"], b["h"]
             new_vb = f'viewBox="{bx} {by} {bw} {bh}"'
@@ -917,16 +915,15 @@ DECK_METADATA = {
         "title": "Functional Skills Revision Cards",
         "subtitle": "Complete All-In-One Visual Revision Deck",
         "subject_tag": "Mathematics • English • Digital Skills",
-        "level_label": "Entry Level 3, Level 1 & Level 2",
+        "level_label": "Entry 3, Level 1 & Level 2",
         "badge_level": "All Levels (Ofqual Regulated)",
         "gradient": "linear-gradient(135deg, #0b1329 0%, #1e3a8a 50%, #1d4ed8 100%)",
         "accent": "#60a5fa",
         "features": [
             "Mapped to UK DfE &amp; Ofqual Subject Criteria",
-            "Pearson Edexcel &amp; City &amp; Guilds Aligned",
+            "Pearson Edexcel, City &amp; Guilds &amp; NCFE Aligned",
             "Visual Diagrams &amp; Golden Rules on Every Card",
-            "Quick Exam Challenges &amp; Step-by-Step Model Steps",
-            "A6 Postcard Cardstock Size (148 × 105 mm)"
+            "Quick Exam Challenges &amp; Step-by-Step Model Steps"
         ]
     },
     "maths_l2": {
@@ -998,7 +995,7 @@ DECK_METADATA = {
         "title": "Digital Functional Skills Revision Cards",
         "subtitle": "Spreadsheet Formulas • Online Security • Devices",
         "subject_tag": "Digital Functional Skills (DFSQ)",
-        "level_label": "Level 1 & Entry Level 3",
+        "level_label": "Level 1 (DFSQ)",
         "badge_level": "Digital DFSQ Standard",
         "gradient": "linear-gradient(135deg, #7c2d12 0%, #c2410c 50%, #ea580c 100%)",
         "accent": "#fdba74",
@@ -1011,11 +1008,11 @@ DECK_METADATA = {
     },
     "entry_level_3": {
         "key": "entry_level_3",
-        "title": "Entry Level 3 Revision Cards",
+        "title": "Entry 3 Revision Cards",
         "subtitle": "Core Maths • English • Digital Foundations",
         "subject_tag": "Functional Skills Foundations",
-        "level_label": "Entry Level 3 (Edexcel & C&G)",
-        "badge_level": "Entry Level 3 Core",
+        "level_label": "Entry 3 (Edexcel & C&G)",
+        "badge_level": "Entry 3 Core",
         "gradient": "linear-gradient(135deg, #78350f 0%, #b45309 50%, #d97706 100%)",
         "accent": "#fde68a",
         "features": [
@@ -1028,7 +1025,7 @@ DECK_METADATA = {
 }
 
 LOGO_BADGE_WHITE = """
-<div style="background:#ffffff; padding:3px 8px; border-radius:6px; box-shadow:0 2px 6px rgba(0,0,0,0.25); display:inline-flex; align-items:center; gap:5px;">
+<div style="background:#ffffff; padding:3px 8px; border-radius:6px; display:inline-flex; align-items:center; gap:5px;">
   <svg viewBox="0 0 64 64" width="18" height="18" style="vertical-align:middle; flex-shrink:0;">
     <rect x="2" y="2" width="60" height="60" rx="12" fill="#1d4ed8"/>
     <path d="M 32 10 L 48 17 L 32 24 L 16 17 Z" fill="#60a5fa"/>
@@ -1061,20 +1058,20 @@ def render_cover_card_front_html(deck_meta, is_quadrant=False):
     <!-- TOP ROW -->
     <div style="display:flex; justify-content:space-between; align-items:center;">
       {LOGO_BADGE_WHITE}
-      <div style="background:rgba(255,255,255,0.22); border:1px solid rgba(255,255,255,0.45); color:#ffffff; font-weight:800; font-size:7.8pt; padding:3.5px 10px; border-radius:12px; letter-spacing:0.4px;">
+      <div style="background:#1e40af; border:1px solid rgba(255,255,255,0.45); color:#ffffff; font-weight:800; font-size:7.8pt; padding:3.5px 10px; border-radius:12px; letter-spacing:0.4px;">
         ★ OFQUAL REGULATED STANDARDS
       </div>
     </div>
 
     <!-- HORIZONTAL ACCENT STRIP (PFS STYLE) -->
-    <div style="background:#0f172a; color:#f8fafc; border-radius:6px; padding:4px 12px; display:flex; justify-content:space-between; align-items:center; margin:2.5mm 0 1.5mm; box-shadow:0 2px 4px rgba(0,0,0,0.2);">
+    <div style="background:#0f172a; color:#f8fafc; border-radius:6px; padding:4px 12px; display:flex; justify-content:space-between; align-items:center; margin:2.5mm 0 1.5mm;">
       <span style="font-size:8.5pt; font-weight:900; letter-spacing:0.8px; text-transform:uppercase; color:{deck_meta['accent']};">{deck_meta['subject_tag']}</span>
       <span style="font-size:7.8pt; font-weight:800; background:{deck_meta['accent']}; color:#0f172a; padding:2px 8px; border-radius:10px;">{deck_meta['badge_level']}</span>
     </div>
 
     <!-- MAIN TITLE -->
     <div style="margin:1mm 0;">
-      <div style="font-size:21pt; font-weight:900; line-height:1.05; letter-spacing:-0.5px; text-shadow:0 2px 4px rgba(0,0,0,0.3); color:#ffffff;">
+      <div style="font-size:21pt; font-weight:900; line-height:1.05; letter-spacing:-0.5px; color:#ffffff;">
         {deck_meta['title']}
       </div>
       <div style="font-size:10.5pt; font-weight:700; color:#fef08a; margin-top:1.5mm; letter-spacing:0.2px;">
@@ -1083,7 +1080,7 @@ def render_cover_card_front_html(deck_meta, is_quadrant=False):
     </div>
 
     <!-- FEATURES BOX -->
-    <div style="background:rgba(255,255,255,0.14); border:1px solid rgba(255,255,255,0.25); border-radius:7px; padding:2.5mm 4mm; display:grid; grid-template-columns:1fr 1fr; gap:2mm 3.5mm; font-size:7.8pt; font-weight:700;">
+    <div style="background:#172554; border:1px solid rgba(255,255,255,0.25); border-radius:7px; padding:2.5mm 4mm; display:grid; grid-template-columns:1fr 1fr; gap:2mm 3.5mm; font-size:7.8pt; font-weight:700;">
       {features_html}
     </div>
 
@@ -1111,35 +1108,35 @@ def render_cover_card_front_html(deck_meta, is_quadrant=False):
 
 def render_cover_card_back_html(deck_meta, cards, is_quadrant=False):
     if len(cards) > 60:
-        # Master All-In-One Deck: Comprehensive 6-Deck Curriculum Overview (266 Cards)
+        # Master All-In-One Deck: Comprehensive 6-Deck Curriculum Overview (274 Cards)
         contents_inner = f"""
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:2mm; font-size:5.8pt; color:#1e293b; margin-bottom:1.2mm;">
         <div style="background:#f0fdf4; border:1px solid #bbf7d0; border-radius:4px; padding:1.5mm;">
-          <div style="font-weight:900; color:#065f46; font-size:6.4pt; margin-bottom:0.8mm;">📐 MATHEMATICS SUITE (88 Cards)</div>
-          <div style="margin-bottom:0.5mm;"><strong>Deck 1: Maths Level 2</strong> • 50 Cards (#1–#50)</div>
-          <div style="color:#047857; font-size:5.0pt; margin-bottom:0.8mm;">Number (1–18) • Measures &amp; Space (19–36) • Data (37–50)</div>
-          <div style="margin-bottom:0.5mm;"><strong>Deck 2: Maths Level 1</strong> • 38 Cards (#1–#38)</div>
-          <div style="color:#047857; font-size:5.0pt;">Number (1–14) • Shape &amp; Space (15–28) • Handling Data (29–38)</div>
+          <div style="font-weight:900; color:#065f46; font-size:6.4pt; margin-bottom:0.8mm;">📐 MATHEMATICS SUITE (94 Cards)</div>
+          <div style="margin-bottom:0.5mm;"><strong>Deck 1: Maths Level 1</strong> • 42 Cards (#1–#42)</div>
+          <div style="color:#047857; font-size:5.0pt; margin-bottom:0.8mm;">Number (1–16) • Shape &amp; Space (17–32) • Handling Data (33–42)</div>
+          <div style="margin-bottom:0.5mm;"><strong>Deck 2: Maths Level 2</strong> • 52 Cards (#1–#52)</div>
+          <div style="color:#047857; font-size:5.0pt;">Number (1–18) • Shape &amp; Space (19–38) • Data (39–52)</div>
         </div>
         <div style="background:#f5f3ff; border:1px solid #ddd6fe; border-radius:4px; padding:1.5mm;">
           <div style="font-weight:900; color:#4338ca; font-size:6.4pt; margin-bottom:0.8mm;">✍️ ENGLISH SUITE (98 Cards)</div>
-          <div style="margin-bottom:0.5mm;"><strong>Deck 3: English Level 2</strong> • 52 Cards (#1–#52)</div>
-          <div style="color:#4c1d95; font-size:5.0pt; margin-bottom:0.8mm;">Reading (1–18) • Writing (19–33) • SPaG (34–48) • SLC (49–52)</div>
-          <div style="margin-bottom:0.5mm;"><strong>Deck 4: English Level 1</strong> • 46 Cards (#1–#46)</div>
-          <div style="color:#4c1d95; font-size:5.0pt;">Reading (1–15) • Writing (16–28) • SPaG (29–42) • SLC (43–46)</div>
+          <div style="margin-bottom:0.5mm;"><strong>Deck 3: English Level 1</strong> • 46 Cards (#1–#46)</div>
+          <div style="color:#4c1d95; font-size:5.0pt; margin-bottom:0.8mm;">Reading (1–15) • Writing (16–28) • SPaG (29–42) • SLC (43–46)</div>
+          <div style="margin-bottom:0.5mm;"><strong>Deck 4: English Level 2</strong> • 52 Cards (#1–#52)</div>
+          <div style="color:#4c1d95; font-size:5.0pt;">Reading (1–18) • Writing (19–33) • SPaG (34–48) • SLC (49–52)</div>
         </div>
       </div>
       <div style="display:grid; grid-template-columns:1fr 1fr; gap:2mm; font-size:5.8pt;">
-        <div style="background:#fff7ed; border:1px solid #fed7aa; border-radius:4px; padding:1.5mm; color:#9a3412;">
-          <div style="font-weight:900; color:#c2410c; font-size:6.2pt; margin-bottom:0.5mm;">💻 DIGITAL SKILLS (50 Cards)</div>
-          <div style="font-size:5.0pt; color:#7c2d12; line-height:1.25;">
-            Devices (1–10) • Creating &amp; Spreadsheets (11–24) • Communicating (25–32) • Transacting (33–40) • Security (41–50)
+        <div style="background:#fffbeb; border:1px solid #fde68a; border-radius:4px; padding:1.5mm; color:#92400e;">
+          <div style="font-weight:900; color:#b45309; font-size:6.2pt; margin-bottom:0.5mm;">🌟 ENTRY 3 (32 Cards)</div>
+          <div style="font-size:5.0pt; color:#78350f; line-height:1.25;">
+            Entry 3 Maths (1–14) • Entry 3 English &amp; Forms (15–26) • Entry 3 Digital Skills (27–32)
           </div>
         </div>
-        <div style="background:#fffbeb; border:1px solid #fde68a; border-radius:4px; padding:1.5mm; color:#92400e;">
-          <div style="font-weight:900; color:#b45309; font-size:6.2pt; margin-bottom:0.5mm;">🌟 ENTRY LEVEL 3 (30 Cards)</div>
-          <div style="font-size:5.0pt; color:#78350f; line-height:1.25;">
-            Entry 3 Maths Foundations (1–14) • Entry 3 English Reading, Writing, SPaG &amp; SLC (15–24) • Entry 3 Digital Skills (25–30)
+        <div style="background:#fff7ed; border:1px solid #fed7aa; border-radius:4px; padding:1.5mm; color:#9a3412;">
+          <div style="font-weight:900; color:#c2410c; font-size:6.2pt; margin-bottom:0.5mm;">💻 DIGITAL SKILLS L1 DFSQ (50 Cards)</div>
+          <div style="font-size:5.0pt; color:#7c2d12; line-height:1.25;">
+            Devices (1–10) • Creating &amp; Spreadsheets (11–24) • Communicating (25–32) • Transacting (33–40) • Security (41–50)
           </div>
         </div>
       </div>
@@ -1179,22 +1176,35 @@ def render_cover_card_back_html(deck_meta, cards, is_quadrant=False):
       </table>
 """
     else:
-        mid = (len(cards) + 1) // 2
+        total = len(cards)
+        # Split near midpoint without splitting a small strand awkwardly if possible
+        mid = (total + 1) // 2
         col1 = cards[:mid]
         col2 = cards[mid:]
-        
-        row_font_size = "6.0pt" if len(cards) > 48 else ("6.2pt" if len(cards) > 40 else ("6.5pt" if len(cards) > 28 else "7.0pt"))
-        row_padding = "0.9px 2px" if len(cards) > 48 else ("1.0px 2px" if len(cards) > 40 else ("1.2px 2px" if len(cards) > 28 else "1.5px 3px"))
-        box_dim = "7.5px" if len(cards) > 48 else "8.5px"
-        show_code = len(cards) <= 36
+
+        row_font_size = "5.8pt" if total > 48 else ("6.1pt" if total > 40 else ("6.4pt" if total > 28 else "6.9pt"))
+        row_padding = "0.7px 2px" if total > 48 else ("0.9px 2px" if total > 40 else ("1.1px 2px" if total > 28 else "1.4px 3px"))
+        hdr_font_size = "5.3pt" if total > 48 else "5.7pt"
+        box_dim = "7.2px" if total > 48 else "8.2px"
+        show_code = total <= 36
 
         def render_col(col_cards):
             c_html = ""
+            last_strand = None
             for c in col_cards:
+                sname = c.get("strand_name", "")
+                if sname and sname != last_strand:
+                    c_html += (
+                        f'<div style="background:#eef2ff;color:#312e81;font-weight:900;'
+                        f'font-size:{hdr_font_size};padding:0.8px 3px;margin:1.2px 0 0.5px;'
+                        f'border-left:2px solid #4f46e5;border-radius:2px;letter-spacing:0.25px;'
+                        f'text-transform:uppercase;">{sname}</div>\n'
+                    )
+                    last_strand = sname
                 code_span = f" <span style=\"color:#64748b;\">({c['dfe_code']})</span>" if show_code else ""
                 c_html += f"""
-            <div style="display:flex; justify-content:space-between; align-items:center; padding:{row_padding}; border-bottom:1px solid #f1f5f9; font-size:{row_font_size}; line-height:1.18;">
-              <span style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis; max-width:84%;"><strong>{c['number']}.</strong> {c['title']}{code_span}</span>
+            <div style="display:flex; justify-content:space-between; align-items:center; padding:{row_padding}; border-bottom:1px solid #f1f5f9; font-size:{row_font_size}; line-height:1.15; gap:3px;">
+              <span style="white-space:nowrap; overflow:hidden; text-overflow:ellipsis; flex:1; min-width:0;"><strong>{c['number']}.</strong> {c['title']}{code_span}</span>
               <span style="display:flex; gap:2.5px; flex-shrink:0;">
                 <span style="display:inline-block; width:{box_dim}; height:{box_dim}; border:1px solid #94a3b8; border-radius:1.5px;"></span>
                 <span style="display:inline-block; width:{box_dim}; height:{box_dim}; border:1px solid #94a3b8; border-radius:1.5px;"></span>
@@ -1254,6 +1264,35 @@ def render_cover_card_back_html(deck_meta, cards, is_quadrant=False):
     {inner_content}
   </div>
 """
+
+
+def _render_diagram_holder_html(card):
+    """Render card SVG at full container width and height."""
+    return f'<div class="diagram-holder">\n        {card["svg_html"]}\n      </div>'
+
+
+def _render_working_area_html(card, sub_font="7.5pt"):
+    """Render an expanded ruled or grid learner scratchpad on the back face."""
+    subj = card.get("subject")
+    cls = "working-maths" if subj == "maths" else "working-lined"
+    left = (
+        "✏️ Learner Scratchpad &amp; Calculations"
+        if subj == "maths"
+        else ("✏️ Learner Drafting &amp; Notes" if subj == "english" else "✏️ Learner Steps &amp; Notes")
+    )
+    right = (
+        "Formula Working Area"
+        if subj == "maths"
+        else ("Reading &amp; Writing Practice Area" if subj == "english" else "Digital Task Planning Area")
+    )
+    return (
+        f'<div class="working-area {cls}">\n'
+        '        <div style="display:flex;justify-content:space-between;width:100%;">\n'
+        f'          <span>{left}</span>\n'
+        f'          <span style="font-size:{sub_font};color:#94a3b8;">{right}</span>\n'
+        '        </div>\n'
+        '      </div>'
+    )
 
 
 def render_a6_individual_html(cards, deck_title="Functional Skills A6 Pocket Cards", deck_meta=None):
@@ -1347,9 +1386,9 @@ def render_a6_individual_html(cards, deck_title="Functional Skills A6 Pocket Car
       background: #f8fafc;
       border: 1.5px solid #cbd5e1;
       border-radius: 7px;
-      flex: 1;
-      min-height: 24mm;
-      max-height: 43mm;
+      flex: 1 1 auto;
+      min-height: 30mm;
+      max-height: 52mm;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1400,7 +1439,7 @@ def render_a6_individual_html(cards, deck_title="Functional Skills A6 Pocket Car
       min-height: 0;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: flex-start;
       gap: 1.5mm;
       background: #fafaf9;
       box-sizing: border-box;
@@ -1428,25 +1467,42 @@ def render_a6_individual_html(cards, deck_title="Functional Skills A6 Pocket Car
       line-height: 1.3;
     }}
     .working-area {{
-      background: #ffffff;
+      background-color: #ffffff;
       border: 1.5px dashed #94a3b8;
       border-radius: 6px;
-      padding: 1.2mm 3.5mm;
-      height: 9mm;
+      padding: 1.5mm 3.5mm;
+      flex: 1 1 auto;
+      min-height: 21mm;
       display: flex;
-      align-items: center;
-      justify-content: space-between;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-start;
       font-size: 8pt;
       font-weight: 600;
       color: #64748b;
-      flex-shrink: 0;
+    }}
+    .working-area.working-maths {{
+      background-image:
+        linear-gradient(to right, rgba(148,163,184,0.18) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(148,163,184,0.18) 1px, transparent 1px);
+      background-size: 4mm 4mm;
+    }}
+    .working-area.working-lined {{
+      background-image: repeating-linear-gradient(
+        to bottom,
+        transparent 0,
+        transparent 5.2mm,
+        rgba(148,163,184,0.32) 5.2mm,
+        rgba(148,163,184,0.32) 5.5mm
+      );
+      background-position: 0 5.5mm;
     }}
     .answer-box {{
       background: #ecfdf5;
       border: 2px solid #059669;
       border-radius: 8px;
-      padding: 2.4mm 3.5mm;
-      flex: 1;
+      padding: 2.2mm 3.5mm;
+      flex: 0 1 auto;
       min-height: 0;
       display: flex;
       flex-direction: column;
@@ -1489,9 +1545,7 @@ def render_a6_individual_html(cards, deck_title="Functional Skills A6 Pocket Car
         <div class="rule-headline">{card['rule_heading']}</div>
         <div class="rule-explanation">{card['rule_body']}</div>
       </div>
-      <div class="diagram-holder">
-        {card['svg_html']}
-      </div>
+      {_render_diagram_holder_html(card)}
       <div style="display:flex; flex-direction:column; gap:1.0mm; flex-shrink:0;">
         <div class="golden-rule-pill">★ <strong>Golden Rule:</strong> {card['golden_rule']}</div>
         <div class="watch-out-pill">⚠️ <strong>Watch Out:</strong> {card['watch_out']}</div>
@@ -1518,10 +1572,7 @@ def render_a6_individual_html(cards, deck_title="Functional Skills A6 Pocket Car
         </div>
         <div class="challenge-q">{card['challenge_prompt']}</div>
       </div>
-      <div class="working-area">
-        <span>{('✏️ Learner Scratchpad &amp; Calculations' if card.get('subject') == 'maths' else ('✏️ Learner Drafting &amp; Notes' if card.get('subject') == 'english' else '✏️ Learner Steps &amp; Notes'))}</span>
-        <span style="font-size:7.5pt; color:#94a3b8;">{('Formula Working Area' if card.get('subject') == 'maths' else ('Reading &amp; Writing Practice Area' if card.get('subject') == 'english' else 'Digital Task Planning Area'))}</span>
-      </div>
+      {_render_working_area_html(card, "7.5pt")}
       <div class="answer-box">
         <div class="answer-title">
           <span>✓ STEP-BY-STEP OFFICIAL MODEL ANSWER</span>
@@ -1688,9 +1739,9 @@ def render_a4_4up_imposition_html(cards, deck_title="Functional Skills A4 Printa
       background: #f8fafc;
       border: 1.5px solid #cbd5e1;
       border-radius: 7px;
-      flex: 1;
-      min-height: 23mm;
-      max-height: 41mm;
+      flex: 1 1 auto;
+      min-height: 29mm;
+      max-height: 50mm;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -1741,7 +1792,7 @@ def render_a4_4up_imposition_html(cards, deck_title="Functional Skills A4 Printa
       min-height: 0;
       display: flex;
       flex-direction: column;
-      justify-content: space-between;
+      justify-content: flex-start;
       gap: 1.4mm;
       background: #fafaf9;
       box-sizing: border-box;
@@ -1769,25 +1820,42 @@ def render_a4_4up_imposition_html(cards, deck_title="Functional Skills A4 Printa
       line-height: 1.28;
     }}
     .working-area {{
-      background: #ffffff;
+      background-color: #ffffff;
       border: 1.5px dashed #94a3b8;
       border-radius: 6px;
-      padding: 1.2mm 3.2mm;
-      height: 8.5mm;
+      padding: 1.4mm 3.2mm;
+      flex: 1 1 auto;
+      min-height: 20mm;
       display: flex;
-      align-items: center;
-      justify-content: space-between;
+      flex-direction: column;
+      align-items: stretch;
+      justify-content: flex-start;
       font-size: 7.8pt;
       font-weight: 600;
       color: #64748b;
-      flex-shrink: 0;
+    }}
+    .working-area.working-maths {{
+      background-image:
+        linear-gradient(to right, rgba(148,163,184,0.18) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(148,163,184,0.18) 1px, transparent 1px);
+      background-size: 4mm 4mm;
+    }}
+    .working-area.working-lined {{
+      background-image: repeating-linear-gradient(
+        to bottom,
+        transparent 0,
+        transparent 5mm,
+        rgba(148,163,184,0.32) 5mm,
+        rgba(148,163,184,0.32) 5.3mm
+      );
+      background-position: 0 5.3mm;
     }}
     .answer-box {{
       background: #ecfdf5;
       border: 2px solid #059669;
       border-radius: 8px;
-      padding: 2.2mm 3.2mm;
-      flex: 1;
+      padding: 2mm 3.2mm;
+      flex: 0 1 auto;
       min-height: 0;
       display: flex;
       flex-direction: column;
@@ -1824,7 +1892,7 @@ def render_a4_4up_imposition_html(cards, deck_title="Functional Skills A4 Printa
             chunk.append(None)
 
         # FRONT PAGE (Cards 0, 1, 2, 3)
-        html += '<div class="sheet-page">\n  <div class="cut-line-v"></div><div class="cut-line-h"></div>\n'
+        html += '<div class="sheet-page">\n  <div class="cut-line-v"></div><div class="cut-line-h"></div><div style="position:absolute; bottom:0.35mm; left:50%; transform:translateX(-50%); font-size:5.5pt; font-weight:700; color:#475569; background:rgba(255,255,255,0.92); padding:0 5px; z-index:20; letter-spacing:0.2px;">Print double-sided: Flip on Short Edge • Cut along dashed lines</div>\n'
         for item in chunk:
             if item and item.get("is_cover"):
                 html += render_cover_card_front_html(deck_meta, is_quadrant=True)
@@ -1842,9 +1910,7 @@ def render_a4_4up_imposition_html(cards, deck_title="Functional Skills A4 Printa
           <div class="rule-headline">{item['rule_heading']}</div>
           <div class="rule-explanation">{item['rule_body']}</div>
         </div>
-        <div class="diagram-holder">
-          {item['svg_html']}
-        </div>
+        {_render_diagram_holder_html(item)}
         <div style="display:flex; flex-direction:column; gap:0.9mm; flex-shrink:0;">
           <div class="golden-rule-pill">★ <strong>Golden Rule:</strong> {item['golden_rule']}</div>
           <div class="watch-out-pill">⚠️ <strong>Watch Out:</strong> {item['watch_out']}</div>
@@ -1864,7 +1930,7 @@ def render_a4_4up_imposition_html(cards, deck_title="Functional Skills A4 Printa
 
         # BACK PAGE (Duplex Swap: Cards 1, 0, 3, 2)
         back_chunk = [chunk[1], chunk[0], chunk[3], chunk[2]]
-        html += '<div class="sheet-page">\n  <div class="cut-line-v"></div><div class="cut-line-h"></div>\n'
+        html += '<div class="sheet-page">\n  <div class="cut-line-v"></div><div class="cut-line-h"></div><div style="position:absolute; bottom:0.35mm; left:50%; transform:translateX(-50%); font-size:5.5pt; font-weight:700; color:#475569; background:rgba(255,255,255,0.92); padding:0 5px; z-index:20; letter-spacing:0.2px;">Print double-sided: Flip on Short Edge • Cut along dashed lines</div>\n'
         for item in back_chunk:
             if item and item.get("is_cover"):
                 html += render_cover_card_back_html(deck_meta, cards, is_quadrant=True)
@@ -1885,10 +1951,7 @@ def render_a4_4up_imposition_html(cards, deck_title="Functional Skills A4 Printa
           </div>
           <div class="challenge-q">{item['challenge_prompt']}</div>
         </div>
-        <div class="working-area">
-          <span>{('✏️ Learner Scratchpad &amp; Calculations' if item.get('subject') == 'maths' else ('✏️ Learner Drafting &amp; Notes' if item.get('subject') == 'english' else '✏️ Learner Steps &amp; Notes'))}</span>
-          <span style="font-size:7pt; color:#94a3b8;">{('Formula Working Area' if item.get('subject') == 'maths' else ('Reading &amp; Writing Practice Area' if item.get('subject') == 'english' else 'Digital Task Planning Area'))}</span>
-        </div>
+        {_render_working_area_html(item, "7pt")}
         <div class="answer-box">
           <div class="answer-title">
             <span>✓ STEP-BY-STEP OFFICIAL MODEL ANSWER</span>
@@ -1925,9 +1988,11 @@ def render_a4_4up_imposition_html(cards, deck_title="Functional Skills A4 Printa
     return html
 
 def compile_pdf(html_content, output_pdf_path):
+    base_tag = '<base href="file:///home/subi/Nextcloud/Projects/masterfunctionalskills.co.uk/">'
+    pdf_html = html_content.replace("<head>", f"<head>\n  {base_tag}", 1) if "<base " not in html_content else html_content
     tmp_html = tempfile.mktemp(suffix=".html", prefix="mfs_cards_")
     with open(tmp_html, "w", encoding="utf-8") as f:
-        f.write(html_content)
+        f.write(pdf_html)
 
     tmp_dir = tempfile.mkdtemp(prefix="chrome_pdf_")
     cmd = [
@@ -1940,7 +2005,7 @@ def compile_pdf(html_content, output_pdf_path):
         f"file://{tmp_html}"
     ]
     try:
-        res = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=120)
+        res = subprocess.run(cmd, stdout=subprocess.PIPE, stderr=subprocess.PIPE, timeout=240)
         if os.path.exists(output_pdf_path) and os.path.getsize(output_pdf_path) > 1000:
             print(f"✓ Created PDF: {os.path.basename(output_pdf_path)} ({os.path.getsize(output_pdf_path):,} bytes)")
             return True
@@ -2006,7 +2071,7 @@ def main():
         ("english_l2", lambda c: c["subject"] == "english" and c["level"] == "l2", "English Level 2 Revision Cards"),
         ("english_l1", lambda c: c["subject"] == "english" and c["level"] == "l1", "English Level 1 Revision Cards"),
         ("digital_skills", lambda c: c["subject"] == "digital" and c["level"] != "e3", "Digital Functional Skills Revision Cards"),
-        ("entry_level_3", lambda c: c["level"] == "e3", "Entry Level 3 Revision Cards")
+        ("entry_level_3", lambda c: c["level"] == "e3", "Entry 3 Revision Cards")
     ]
 
     for key, filter_fn, title in subject_filters:

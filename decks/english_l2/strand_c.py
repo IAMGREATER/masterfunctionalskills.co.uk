@@ -58,11 +58,11 @@ CARDS = [ { 'answer_text': "'The report is complete; it will be emailed tomorrow
                 'stroke-width="1.8"/>\n'
                 '            <text x="190" y="26" font-size="12" font-weight="800" fill="#0f172a" '
                 'text-anchor="middle">3 ESSENTIAL COMMA RULES</text>\n'
-                '            <text x="25" y="55" font-size="10.5" font-weight="700" fill="#2563eb">1. List: \'Apples, '
+                '            <text x="25" y="55" font-size="11" font-weight="700" fill="#2563eb">1. List: \'Apples, '
                 "oranges, and pears.'</text>\n"
-                '            <text x="25" y="78" font-size="10.5" font-weight="700" fill="#059669">2. Opener: '
+                '            <text x="25" y="78" font-size="11" font-weight="700" fill="#059669">2. Opener: '
                 "'Despite the delay, the flight landed safely.'</text>\n"
-                '            <text x="25" y="101" font-size="10.5" font-weight="700" fill="#7c3aed">3. Parenthesis: '
+                '            <text x="25" y="101" font-size="11" font-weight="700" fill="#7c3aed">3. Parenthesis: '
                 "'Mr Patel, our head of finance, approved it.'</text>\n"
                 '          </g>\n'
                 '</svg>',
@@ -93,11 +93,11 @@ CARDS = [ { 'answer_text': "'The report is complete; it will be emailed tomorrow
                 'text-anchor="middle">IT\'S vs ITS</text>\n'
                 '            <text x="15" y="55" font-size="11" font-weight="800" fill="#0f172a">It\'s = It is '
                 '(Contraction)</text>\n'
-                '            <text x="15" y="75" font-size="10.5" font-weight="700" fill="#475569">"It\'s raining '
+                '            <text x="15" y="75" font-size="11" font-weight="700" fill="#475569">"It\'s raining '
                 'outside."</text>\n'
                 '            <text x="15" y="98" font-size="11" font-weight="800" fill="#059669">Its = Possessive '
                 'pronoun</text>\n'
-                '            <text x="15" y="115" font-size="10.5" font-weight="700" fill="#475569">"The cat licked '
+                '            <text x="15" y="115" font-size="11" font-weight="700" fill="#475569">"The cat licked '
                 'its paws."</text>\n'
                 '          </g>\n'
                 '          <g transform="translate(240, 20)">\n'
@@ -107,11 +107,11 @@ CARDS = [ { 'answer_text': "'The report is complete; it will be emailed tomorrow
                 'text-anchor="middle">PLURAL POSSESSION</text>\n'
                 '            <text x="15" y="55" font-size="11" font-weight="800" fill="#0f172a">One doctor: '
                 "doctor's</text>\n"
-                '            <text x="15" y="75" font-size="10.5" font-weight="700" fill="#475569">"The doctor\'s '
+                '            <text x="15" y="75" font-size="11" font-weight="700" fill="#475569">"The doctor\'s '
                 'car"</text>\n'
                 '            <text x="15" y="98" font-size="11" font-weight="800" fill="#15803d">Many doctors: '
                 "doctors'</text>\n"
-                '            <text x="15" y="115" font-size="10.5" font-weight="700" fill="#475569">"The doctors\' '
+                '            <text x="15" y="115" font-size="11" font-weight="700" fill="#475569">"The doctors\' '
                 'room"</text>\n'
                 '          </g>\n'
                 '</svg>',
@@ -137,16 +137,16 @@ CARDS = [ { 'answer_text': "'The report is complete; it will be emailed tomorrow
           <g transform="translate(40, 20)">
             <rect x="0" y="0" width="180" height="125" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.8"/>
             <text x="90" y="24" font-size="12" font-weight="800" fill="#1e40af" text-anchor="middle">COLON (:)</text>
-            <text x="15" y="48" font-size="10.5" font-weight="700" fill="#0f172a">Introduces a list or quote:</text>
-            <text x="15" y="70" font-size="9.5" font-weight="700" fill="#475569">"Please bring three items:</text>
-            <text x="15" y="86" font-size="9.5" font-weight="700" fill="#475569">a pen, a ruler, and paper."</text>
+            <text x="15" y="48" font-size="11" font-weight="700" fill="#0f172a">Introduces a list or quote:</text>
+            <text x="15" y="70" font-size="11" font-weight="700" fill="#475569">"Please bring three items:</text>
+            <text x="15" y="86" font-size="11" font-weight="700" fill="#475569">a pen, a ruler, and paper."</text>
           </g>
           <g transform="translate(240, 20)">
             <rect x="0" y="0" width="180" height="125" rx="8" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.8"/>
             <text x="90" y="24" font-size="12" font-weight="800" fill="#5b21b6" text-anchor="middle">SEMICOLON (;)</text>
-            <text x="15" y="48" font-size="10.5" font-weight="700" fill="#0f172a">Bridges two sentences:</text>
-            <text x="15" y="70" font-size="9.5" font-weight="700" fill="#475569">"She loves surgery;</text>
-            <text x="15" y="86" font-size="9.5" font-weight="700" fill="#475569">he prefers general practice."</text>
+            <text x="15" y="48" font-size="11" font-weight="700" fill="#0f172a">Bridges two sentences:</text>
+            <text x="15" y="70" font-size="11" font-weight="700" fill="#475569">"She loves surgery;</text>
+            <text x="15" y="86" font-size="11" font-weight="700" fill="#475569">he prefers general practice."</text>
           </g>
 </svg>""",
     'title': 'Colons &amp; Semicolons',
@@ -204,16 +204,16 @@ CARDS = [ { 'answer_text': "'The report is complete; it will be emailed tomorrow
           <g transform="translate(40, 20)">
             <rect x="0" y="0" width="180" height="125" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.8"/>
             <text x="90" y="24" font-size="12" font-weight="800" fill="#1e40af" text-anchor="middle">HYPHEN (-)</text>
-            <text x="15" y="55" font-size="10.5" font-weight="700" fill="#0f172a">Joins compound words:</text>
+            <text x="15" y="55" font-size="11" font-weight="700" fill="#0f172a">Joins compound words:</text>
             <text x="15" y="78" font-size="11" font-weight="800" fill="#2563eb">• state-of-the-art facility</text>
             <text x="15" y="101" font-size="11" font-weight="800" fill="#2563eb">• thirty-five patients</text>
           </g>
           <g transform="translate(240, 20)">
             <rect x="0" y="0" width="180" height="125" rx="8" fill="#fdf2f8" stroke="#ec4899" stroke-width="1.8"/>
             <text x="90" y="24" font-size="12" font-weight="800" fill="#9d174d" text-anchor="middle">DASH (—)</text>
-            <text x="15" y="50" font-size="10.5" font-weight="700" fill="#0f172a">Dramatic pause/aside:</text>
-            <text x="15" y="74" font-size="9.5" font-weight="700" fill="#be185d">"The outcome — though</text>
-            <text x="15" y="92" font-size="9.5" font-weight="700" fill="#be185d">unexpected — was positive."</text>
+            <text x="15" y="50" font-size="11" font-weight="700" fill="#0f172a">Dramatic pause/aside:</text>
+            <text x="15" y="74" font-size="11" font-weight="700" fill="#be185d">"The outcome — though</text>
+            <text x="15" y="92" font-size="11" font-weight="700" fill="#be185d">unexpected — was positive."</text>
           </g>
 </svg>""",
     'title': 'Hyphens &amp; Parenthetical Dashes',
@@ -280,7 +280,7 @@ CARDS = [ { 'answer_text': "'The report is complete; it will be emailed tomorrow
                 '            <line x1="25" y1="68" x2="355" y2="68" stroke="#cbd5e1"/>\n'
                 '            <text x="25" y="90" font-size="11" font-weight="800" fill="#15803d">CORRECT: "She walked '
                 'into the room and picked up the file."</text>\n'
-                '            <text x="25" y="110" font-size="10.5" font-weight="700" fill="#475569">Keep both verbs in '
+                '            <text x="25" y="110" font-size="11" font-weight="700" fill="#475569">Keep both verbs in '
                 'the simple past tense.</text>\n'
                 '          </g>\n'
                 '</svg>',
@@ -306,16 +306,16 @@ CARDS = [ { 'answer_text': "'The report is complete; it will be emailed tomorrow
           <g transform="translate(40, 20)">
             <rect x="0" y="0" width="180" height="125" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.8"/>
             <text x="90" y="24" font-size="12" font-weight="800" fill="#1e40af" text-anchor="middle">ACTIVE VOICE</text>
-            <text x="15" y="48" font-size="10" font-weight="700" fill="#0f172a">"The committee</text>
-            <text x="15" y="64" font-size="10" font-weight="700" fill="#0f172a">approved the budget."</text>
-            <text x="15" y="95" font-size="10" font-weight="800" fill="#2563eb">Subject does action</text>
+            <text x="15" y="48" font-size="11" font-weight="700" fill="#0f172a">"The committee</text>
+            <text x="15" y="64" font-size="11" font-weight="700" fill="#0f172a">approved the budget."</text>
+            <text x="15" y="95" font-size="11" font-weight="800" fill="#2563eb">Subject does action</text>
           </g>
           <g transform="translate(240, 20)">
             <rect x="0" y="0" width="180" height="125" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.8"/>
             <text x="90" y="24" font-size="12" font-weight="800" fill="#15803d" text-anchor="middle">PASSIVE VOICE</text>
-            <text x="15" y="48" font-size="10" font-weight="700" fill="#0f172a">"The budget was approved</text>
-            <text x="15" y="64" font-size="10" font-weight="700" fill="#0f172a">by the committee."</text>
-            <text x="15" y="95" font-size="10" font-weight="800" fill="#059669">Formal &amp; Objective</text>
+            <text x="15" y="48" font-size="11" font-weight="700" fill="#0f172a">"The budget was approved</text>
+            <text x="15" y="64" font-size="11" font-weight="700" fill="#0f172a">by the committee."</text>
+            <text x="15" y="95" font-size="11" font-weight="800" fill="#059669">Formal &amp; Objective</text>
           </g>
 </svg>""",
     'title': 'Active vs Passive Voice',
@@ -338,13 +338,13 @@ CARDS = [ { 'answer_text': "'The report is complete; it will be emailed tomorrow
     'subject': 'english',
     'subject_label': 'English',
     'svg_html': """<svg viewBox="0 0 460 170" width="100%" height="170" xmlns="http://www.w3.org/2000/svg">
-          <g transform="translate(40, 20)">
-            <rect x="0" y="0" width="380" height="130" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.8"/>
-            <text x="190" y="26" font-size="12" font-weight="900" fill="#0f172a" text-anchor="middle">COMPLEX SENTENCE STRUCTURE</text>
-            <text x="25" y="55" font-size="10" font-weight="800" fill="#2563eb">Subordinate Clause: 'Although funding was cut,' (cannot stand alone)</text>
-            <text x="25" y="80" font-size="10" font-weight="800" fill="#059669">+ Main Clause: 'the project finished on time.' (stands alone)</text>
-            <rect x="25" y="92" width="330" height="26" rx="4" fill="#3b82f6"/>
-            <text x="190" y="110" font-size="10.5" font-weight="800" fill="#ffffff" text-anchor="middle">Examiners look for a variety of simple, compound &amp; complex!</text>
+          <g transform="translate(20, 20)">
+            <rect x="0" y="0" width="420" height="130" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.8"/>
+            <text x="210" y="26" font-size="12.5" font-weight="900" fill="#0f172a" text-anchor="middle">COMPLEX SENTENCE STRUCTURE</text>
+            <text x="16" y="55" font-size="11" font-weight="800" fill="#2563eb">Subordinate: 'Although funding fell,' (incomplete alone)</text>
+            <text x="16" y="80" font-size="11" font-weight="800" fill="#059669">+ Main Clause: 'the project finished on time.' (complete)</text>
+            <rect x="16" y="94" width="388" height="26" rx="4" fill="#3b82f6"/>
+            <text x="210" y="111" font-size="11" font-weight="800" fill="#ffffff" text-anchor="middle">Mix simple, compound &amp; complex sentences!</text>
           </g>
 </svg>""",
     'title': 'Complex &amp; Compound Sentences',
@@ -365,24 +365,24 @@ CARDS = [ { 'answer_text': "'The report is complete; it will be emailed tomorrow
     'subject': 'english',
     'subject_label': 'English',
     'svg_html': """<svg viewBox="0 0 460 170" width="100%" height="170" xmlns="http://www.w3.org/2000/svg">
-          <g transform="translate(25, 20)">
-            <rect x="0" y="0" width="130" height="120" rx="6" fill="#eff6ff" stroke="#3b82f6"/>
-            <text x="65" y="26" font-size="12" font-weight="900" fill="#1e40af" text-anchor="middle">THERE</text>
-            <text x="12" y="50" font-size="10" font-weight="700" fill="#0f172a">Place (contains 'here')</text>
-            <text x="12" y="80" font-size="10" font-weight="700" fill="#475569">"Over there"</text>
+          <g transform="translate(15, 20)">
+            <rect x="0" y="0" width="138" height="120" rx="6" fill="#eff6ff" stroke="#3b82f6"/>
+            <text x="69" y="26" font-size="12" font-weight="900" fill="#1e40af" text-anchor="middle">THERE</text>
+            <text x="69" y="50" font-size="10.5" font-weight="700" fill="#0f172a" text-anchor="middle">Place (contains 'here')</text>
+            <text x="69" y="80" font-size="11" font-weight="700" fill="#475569" text-anchor="middle">"Over there"</text>
           </g>
-          <g transform="translate(165, 20)">
-            <rect x="0" y="0" width="130" height="120" rx="6" fill="#f0fdf4" stroke="#16a34a"/>
-            <text x="65" y="26" font-size="12" font-weight="900" fill="#15803d" text-anchor="middle">THEIR</text>
-            <text x="12" y="50" font-size="10" font-weight="700" fill="#0f172a">Possession (their car)</text>
-            <text x="12" y="80" font-size="10" font-weight="700" fill="#475569">"Their home"</text>
+          <g transform="translate(161, 20)">
+            <rect x="0" y="0" width="138" height="120" rx="6" fill="#f0fdf4" stroke="#16a34a"/>
+            <text x="69" y="26" font-size="12" font-weight="900" fill="#15803d" text-anchor="middle">THEIR</text>
+            <text x="69" y="50" font-size="10.5" font-weight="700" fill="#0f172a" text-anchor="middle">Possession (their car)</text>
+            <text x="69" y="80" font-size="11" font-weight="700" fill="#475569" text-anchor="middle">"Their home"</text>
           </g>
-          <g transform="translate(305, 20)">
-            <rect x="0" y="0" width="130" height="120" rx="6" fill="#fdf2f8" stroke="#ec4899"/>
-            <text x="65" y="26" font-size="12" font-weight="900" fill="#9d174d" text-anchor="middle">THEY'RE</text>
-            <text x="12" y="48" font-size="9.5" font-weight="700" fill="#0f172a">They are</text>
-            <text x="12" y="62" font-size="9" font-weight="700" fill="#64748b">(has apostrophe)</text>
-            <text x="12" y="82" font-size="10" font-weight="700" fill="#475569">"They're late"</text>
+          <g transform="translate(307, 20)">
+            <rect x="0" y="0" width="138" height="120" rx="6" fill="#fdf2f8" stroke="#ec4899"/>
+            <text x="69" y="26" font-size="12" font-weight="900" fill="#9d174d" text-anchor="middle">THEY'RE</text>
+            <text x="69" y="48" font-size="11" font-weight="700" fill="#0f172a" text-anchor="middle">They are</text>
+            <text x="69" y="64" font-size="10.5" font-weight="700" fill="#64748b" text-anchor="middle">(has apostrophe)</text>
+            <text x="69" y="84" font-size="11" font-weight="700" fill="#475569" text-anchor="middle">"They're late"</text>
           </g>
 </svg>""",
     'title': "Homophones: There / Their / They're",
@@ -564,17 +564,17 @@ CARDS = [ { 'answer_text': "'The report is complete; it will be emailed tomorrow
                 '            <rect x="0" y="0" width="410" height="132" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.8"/>\n'
                 '            <text x="205" y="24" font-size="12" font-weight="900" fill="#1e293b" text-anchor="middle">LEVEL 2 PRESENTATION BLUEPRINT (5–8 MINS)</text>\n'
                 '            <rect x="15" y="38" width="90" height="75" rx="6" fill="#eff6ff" stroke="#3b82f6"/>\n'
-                '            <text x="60" y="60" font-size="10" font-weight="900" fill="#1e40af" text-anchor="middle">1. HOOK</text>\n'
-                '            <text x="60" y="80" font-size="9" font-weight="700" fill="#475569" text-anchor="middle">Key Stat &amp;</text>\n'
-                '            <text x="60" y="94" font-size="9" font-weight="700" fill="#475569" text-anchor="middle">Purpose</text>\n'
+                '            <text x="60" y="60" font-size="11" font-weight="900" fill="#1e40af" text-anchor="middle">1. HOOK</text>\n'
+                '            <text x="60" y="80" font-size="11" font-weight="700" fill="#475569" text-anchor="middle">Key Stat &amp;</text>\n'
+                '            <text x="60" y="94" font-size="11" font-weight="700" fill="#475569" text-anchor="middle">Purpose</text>\n'
                 '            <rect x="115" y="38" width="180" height="75" rx="6" fill="#f5f3ff" stroke="#8b5cf6"/>\n'
-                '            <text x="205" y="60" font-size="10" font-weight="900" fill="#5b21b6" text-anchor="middle">2. 3 PILLARS + REBUTTAL</text>\n'
-                '            <text x="205" y="80" font-size="9" font-weight="700" fill="#475569" text-anchor="middle">Facts, Case Studies &amp;</text>\n'
-                '            <text x="205" y="94" font-size="9" font-weight="700" fill="#475569" text-anchor="middle">Counter-Argument</text>\n'
+                '            <text x="205" y="60" font-size="11" font-weight="900" fill="#5b21b6" text-anchor="middle">2. 3 PILLARS + REBUTTAL</text>\n'
+                '            <text x="205" y="80" font-size="11" font-weight="700" fill="#475569" text-anchor="middle">Facts, Case Studies &amp;</text>\n'
+                '            <text x="205" y="94" font-size="11" font-weight="700" fill="#475569" text-anchor="middle">Counter-Argument</text>\n'
                 '            <rect x="305" y="38" width="90" height="75" rx="6" fill="#ecfdf5" stroke="#10b981"/>\n'
-                '            <text x="350" y="60" font-size="10" font-weight="900" fill="#047857" text-anchor="middle">3. Q&amp;A</text>\n'
-                '            <text x="350" y="80" font-size="9" font-weight="700" fill="#475569" text-anchor="middle">Defend &amp;</text>\n'
-                '            <text x="350" y="94" font-size="9" font-weight="700" fill="#475569" text-anchor="middle">Elaborate</text>\n'
+                '            <text x="350" y="60" font-size="11" font-weight="900" fill="#047857" text-anchor="middle">3. Q&amp;A</text>\n'
+                '            <text x="350" y="80" font-size="11" font-weight="700" fill="#475569" text-anchor="middle">Defend &amp;</text>\n'
+                '            <text x="350" y="94" font-size="11" font-weight="700" fill="#475569" text-anchor="middle">Elaborate</text>\n'
                 '          </g>\n'
                 '</svg>',
     'title': 'SLC L2: Structuring a Formal Presentation',
@@ -597,12 +597,12 @@ CARDS = [ { 'answer_text': "'The report is complete; it will be emailed tomorrow
     'subject': 'english',
     'subject_label': 'English',
     'svg_html': '<svg viewBox="0 0 460 170" width="100%" height="170" xmlns="http://www.w3.org/2000/svg">\n'
-                '          <g transform="translate(30, 20)">\n'
-                '            <rect x="0" y="0" width="400" height="125" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.8"/>\n'
-                '            <text x="200" y="25" font-size="12" font-weight="900" fill="#0f172a" text-anchor="middle">HANDLING CHALLENGING Q&amp;A QUESTIONS</text>\n'
-                '            <text x="20" y="54" font-size="10.5" font-weight="800" fill="#2563eb">A — Acknowledge: "That is a valid concern regarding initial setup costs..."</text>\n'
-                '            <text x="20" y="80" font-size="10.5" font-weight="800" fill="#7c3aed">E — Evidence: "...however, pilot schemes reduced waste by 30% in Year 1..."</text>\n'
-                '            <text x="20" y="106" font-size="10.5" font-weight="800" fill="#059669">C — Connect: "...meaning the project pays for itself within 14 months."</text>\n'
+                '          <g transform="translate(15, 18)">\n'
+                '            <rect x="0" y="0" width="430" height="132" rx="8" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.8"/>\n'
+                '            <text x="215" y="25" font-size="12" font-weight="900" fill="#0f172a" text-anchor="middle">HANDLING CHALLENGING Q&amp;A QUESTIONS</text>\n'
+                '            <text x="16" y="54" font-size="11" font-weight="800" fill="#2563eb">A — Acknowledge: "Valid concern regarding setup costs..."</text>\n'
+                '            <text x="16" y="82" font-size="11" font-weight="800" fill="#7c3aed">E — Evidence: "...however, pilots cut waste by 30% in Year 1..."</text>\n'
+                '            <text x="16" y="110" font-size="11" font-weight="800" fill="#059669">C — Connect: "...so the project pays back in 14 months."</text>\n'
                 '          </g>\n'
                 '</svg>',
     'title': 'SLC L2: Defending Points in Q&amp;A',
@@ -628,15 +628,15 @@ CARDS = [ { 'answer_text': "'The report is complete; it will be emailed tomorrow
                 '          <g transform="translate(25, 20)">\n'
                 '            <rect x="0" y="0" width="195" height="125" rx="8" fill="#fff1f2" stroke="#f43f5e" stroke-width="1.8"/>\n'
                 '            <text x="97" y="25" font-size="11" font-weight="900" fill="#be123c" text-anchor="middle">✗ TOO INFORMAL (SLANG)</text>\n'
-                '            <text x="14" y="55" font-size="10" font-weight="700" fill="#0f172a">"Loads of staff hate the</text>\n'
-                '            <text x="14" y="72" font-size="10" font-weight="700" fill="#0f172a">old system, it\'s rubbish."</text>\n'
+                '            <text x="14" y="55" font-size="11" font-weight="700" fill="#0f172a">"Loads of staff hate the</text>\n'
+                '            <text x="14" y="72" font-size="11" font-weight="700" fill="#0f172a">old system, it\'s rubbish."</text>\n'
                 '          </g>\n'
                 '          <g transform="translate(240, 20)">\n'
                 '            <rect x="0" y="0" width="195" height="125" rx="8" fill="#ecfdf5" stroke="#10b981" stroke-width="1.8"/>\n'
                 '            <text x="97" y="25" font-size="11" font-weight="900" fill="#047857" text-anchor="middle">✓ LEVEL 2 FORMAL</text>\n'
-                '            <text x="14" y="55" font-size="10" font-weight="700" fill="#0f172a">"Staff feedback indicates</text>\n'
-                '            <text x="14" y="72" font-size="10" font-weight="700" fill="#0f172a">the legacy system reduces</text>\n'
-                '            <text x="14" y="89" font-size="10" font-weight="700" fill="#0f172a">productivity."</text>\n'
+                '            <text x="14" y="55" font-size="11" font-weight="700" fill="#0f172a">"Staff feedback indicates</text>\n'
+                '            <text x="14" y="72" font-size="11" font-weight="700" fill="#0f172a">the legacy system reduces</text>\n'
+                '            <text x="14" y="89" font-size="11" font-weight="700" fill="#0f172a">productivity."</text>\n'
                 '          </g>\n'
                 '</svg>',
     'title': 'SLC L2: Adapting Spoken Register &amp; Tone',
@@ -660,12 +660,12 @@ CARDS = [ { 'answer_text': "'The report is complete; it will be emailed tomorrow
     'subject': 'english',
     'subject_label': 'English',
     'svg_html': '<svg viewBox="0 0 460 170" width="100%" height="170" xmlns="http://www.w3.org/2000/svg">\n'
-                '          <g transform="translate(30, 20)">\n'
-                '            <rect x="0" y="0" width="400" height="125" rx="8" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1.8"/>\n'
-                '            <text x="200" y="25" font-size="12" font-weight="900" fill="#5b21b6" text-anchor="middle">STEERING A LEVEL 2 GROUP DISCUSSION</text>\n'
-                '            <text x="20" y="54" font-size="10.5" font-weight="800" fill="#1e293b">1. Synthesise: "So far, we\'ve weighed up budget limits against staff safety..."</text>\n'
-                '            <text x="20" y="80" font-size="10.5" font-weight="800" fill="#2563eb">2. Probe Deeper: "What evidence do we have that Option B is faster?"</text>\n'
-                '            <text x="20" y="106" font-size="10.5" font-weight="800" fill="#059669">3. Consensus: "Can we agree to recommend a phased rollout starting in Q2?"</text>\n'
+                '          <g transform="translate(15, 18)">\n'
+                '            <rect x="0" y="0" width="430" height="132" rx="8" fill="#f5f3ff" stroke="#8b5cf6" stroke-width="1.8"/>\n'
+                '            <text x="215" y="25" font-size="12" font-weight="900" fill="#5b21b6" text-anchor="middle">STEERING A LEVEL 2 GROUP DISCUSSION</text>\n'
+                '            <text x="16" y="54" font-size="11" font-weight="800" fill="#1e293b">1. Synthesise: "We weighed up costs against safety..."</text>\n'
+                '            <text x="16" y="82" font-size="11" font-weight="800" fill="#2563eb">2. Probe Deeper: "What proves Option B is faster?"</text>\n'
+                '            <text x="16" y="110" font-size="11" font-weight="800" fill="#059669">3. Consensus: "Can we agree a phased rollout in Q2?"</text>\n'
                 '          </g>\n'
                 '</svg>',
     'title': 'SLC L2: Mediating &amp; Reaching Consensus',

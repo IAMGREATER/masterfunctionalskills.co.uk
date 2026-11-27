@@ -7,7 +7,7 @@ CARDS = [ { 'answer_text': 'Ordered: 8, 11, 14, 14, 19, 22, 27 (7 numbers). Midd
     'id': 'm-l2-37',
     'level': 'l2',
     'level_label': 'Level 2',
-    'number': 37,
+    'number': 39,
     'rule_body': 'Mean = Sum of values ÷ Count. Median = Middle value after ordering low to high. Mode = Most frequent '
                  'value. Range = Highest - Lowest (spread, NOT an average).',
     'rule_heading': 'The 4 Core Statistics',
@@ -21,28 +21,28 @@ CARDS = [ { 'answer_text': 'Ordered: 8, 11, 14, 14, 19, 22, 27 (7 numbers). Midd
                 '            <rect x="0" y="0" width="190" height="65" rx="6" fill="#eff6ff" stroke="#3b82f6"/>\n'
                 '            <text x="95" y="24" font-size="12" font-weight="800" fill="#1e40af" '
                 'text-anchor="middle">MEAN = Total ÷ Count</text>\n'
-                '            <text x="95" y="48" font-size="10.5" font-weight="700" fill="#475569" '
+                '            <text x="95" y="48" font-size="11" font-weight="700" fill="#475569" '
                 'text-anchor="middle">Add all up and share equally</text>\n'
                 '          </g>\n'
                 '          <g transform="translate(240, 15)">\n'
                 '            <rect x="0" y="0" width="190" height="65" rx="6" fill="#f0fdf4" stroke="#16a34a"/>\n'
                 '            <text x="95" y="24" font-size="12" font-weight="800" fill="#15803d" '
                 'text-anchor="middle">MEDIAN = Middle Value</text>\n'
-                '            <text x="95" y="48" font-size="10.5" font-weight="700" fill="#475569" '
+                '            <text x="95" y="48" font-size="11" font-weight="700" fill="#475569" '
                 'text-anchor="middle">MUST put in order first!</text>\n'
                 '          </g>\n'
                 '          <g transform="translate(30, 90)">\n'
                 '            <rect x="0" y="0" width="190" height="65" rx="6" fill="#fdf2f8" stroke="#ec4899"/>\n'
                 '            <text x="95" y="24" font-size="12" font-weight="800" fill="#9d174d" '
                 'text-anchor="middle">MODE = Most Common</text>\n'
-                '            <text x="95" y="48" font-size="10.5" font-weight="700" fill="#475569" '
+                '            <text x="95" y="48" font-size="11" font-weight="700" fill="#475569" '
                 'text-anchor="middle">Number that appears most often</text>\n'
                 '          </g>\n'
                 '          <g transform="translate(240, 90)">\n'
                 '            <rect x="0" y="0" width="190" height="65" rx="6" fill="#fffbeb" stroke="#f59e0b"/>\n'
                 '            <text x="95" y="24" font-size="12" font-weight="800" fill="#b45309" '
                 'text-anchor="middle">RANGE = High - Low</text>\n'
-                '            <text x="95" y="48" font-size="10.5" font-weight="700" fill="#dc2626" '
+                '            <text x="95" y="48" font-size="11" font-weight="700" fill="#dc2626" '
                 'text-anchor="middle">Spread of data (NOT an average!)</text>\n'
                 '          </g>\n'
                 '</svg>',
@@ -57,7 +57,7 @@ CARDS = [ { 'answer_text': 'Ordered: 8, 11, 14, 14, 19, 22, 27 (7 numbers). Midd
     'id': 'm-l2-38',
     'level': 'l2',
     'level_label': 'Level 2',
-    'number': 38,
+    'number': 40,
     'rule_body': '1. Multiply value (x) by frequency (f) to make an fx column. 2. Sum the fx column (Total score Σfx). '
                  '3. Sum the frequency column (Total count Σf). 4. Divide: Σfx ÷ Σf.',
     'rule_heading': 'Mean = Σfx ÷ Σf',
@@ -105,7 +105,7 @@ CARDS = [ { 'answer_text': 'Ordered: 8, 11, 14, 14, 19, 22, 27 (7 numbers). Midd
     'id': 'm-l2-39',
     'level': 'l2',
     'level_label': 'Level 2',
-    'number': 39,
+    'number': 41,
     'rule_body': '1. Find midpoint of each group: (Lower bound + Upper bound) ÷ 2. 2. Multiply midpoint by frequency '
                  '(mp × f). 3. Sum (mp × f). 4. Divide by total frequency.',
     'rule_heading': 'Midpoints × Frequency ÷ Total Frequency',
@@ -139,7 +139,7 @@ CARDS = [ { 'answer_text': 'Ordered: 8, 11, 14, 14, 19, 22, 27 (7 numbers). Midd
     'id': 'm-l2-40',
     'level': 'l2',
     'level_label': 'Level 2',
-    'number': 40,
+    'number': 42,
     'rule_body': 'Modal Class = The group interval with the HIGHEST frequency number. Median Group = The interval that '
                  'contains the middle position ((Total f + 1) ÷ 2).',
     'rule_heading': 'Identifying Class Intervals',
@@ -183,7 +183,7 @@ CARDS = [ { 'answer_text': 'Ordered: 8, 11, 14, 14, 19, 22, 27 (7 numbers). Midd
     'id': 'm-l2-41',
     'level': 'l2',
     'level_label': 'Level 2',
-    'number': 41,
+    'number': 43,
     'rule_body': 'To earn full marks on Pearson comparison questions, you MUST state: 1. One Average comparison in '
                  "context ('Branch A has a higher mean sales by £50'). 2. One Range/Spread comparison ('Branch B is "
                  "more consistent because its range is smaller').",
@@ -196,9 +196,9 @@ CARDS = [ { 'answer_text': 'Ordered: 8, 11, 14, 14, 19, 22, 27 (7 numbers). Midd
           <rect x="25" y="14" width="410" height="142" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="2"/>
           <text x="230" y="36" font-size="12.5" font-weight="900" fill="#1e40af" text-anchor="middle">PEARSON GOLDEN 2-PART COMPARISON</text>
           <g transform="translate(42, 50)">
-            <text x="0" y="20" font-size="10.5" font-weight="800" fill="#0f172a">1. AVERAGE: "Group A on average is higher because mean is..."</text>
-            <text x="0" y="46" font-size="10.5" font-weight="800" fill="#0f172a">2. SPREAD: "Group B is more consistent because range is smaller..."</text>
-            <text x="0" y="72" font-size="10" font-weight="700" fill="#dc2626">⚠️ Must mention numbers AND the real-world context!</text>
+            <text x="0" y="20" font-size="11" font-weight="800" fill="#0f172a">1. AVERAGE: "Group A on average is higher because mean is..."</text>
+            <text x="0" y="46" font-size="11" font-weight="800" fill="#0f172a">2. SPREAD: "Group B is more consistent because range is smaller..."</text>
+            <text x="0" y="72" font-size="11" font-weight="700" fill="#dc2626">⚠️ Must mention numbers AND the real-world context!</text>
           </g>
 </svg>""",
     'title': 'Comparing Two Data Sets',
@@ -211,7 +211,7 @@ CARDS = [ { 'answer_text': 'Ordered: 8, 11, 14, 14, 19, 22, 27 (7 numbers). Midd
     'id': 'm-l2-42',
     'level': 'l2',
     'level_label': 'Level 2',
-    'number': 42,
+    'number': 44,
     'rule_body': 'Probability is always between 0 (Impossible) and 1 (Certain). Can be written as a fraction, decimal, '
                  'or percentage. P(Not event) = 1 - P(Event).',
     'rule_heading': 'P(Event) = Favourable ÷ Total',
@@ -246,7 +246,7 @@ CARDS = [ { 'answer_text': 'Ordered: 8, 11, 14, 14, 19, 22, 27 (7 numbers). Midd
     'id': 'm-l2-43',
     'level': 'l2',
     'level_label': 'Level 2',
-    'number': 43,
+    'number': 45,
     'rule_body': "Independent events do not affect each other (e.g. flipping a coin and rolling a die). 'AND' rule = "
                  "MULTIPLY probabilities. 'OR' rule = ADD probabilities.",
     'rule_heading': 'P(A and B) = P(A) × P(B)',
@@ -281,7 +281,7 @@ CARDS = [ { 'answer_text': 'Ordered: 8, 11, 14, 14, 19, 22, 27 (7 numbers). Midd
     'id': 'm-l2-44',
     'level': 'l2',
     'level_label': 'Level 2',
-    'number': 44,
+    'number': 46,
     'rule_body': '1. Branches from any single node must add up to 1. 2. MULTIPLY along branches to find outcome '
                  'probability. 3. ADD individual outcome probabilities together if multiple paths satisfy the '
                  'question.',
@@ -292,18 +292,18 @@ CARDS = [ { 'answer_text': 'Ordered: 8, 11, 14, 14, 19, 22, 27 (7 numbers). Midd
     'subject_label': 'Maths',
     'svg_html': '<svg viewBox="0 0 460 170" width="100%" height="170" xmlns="http://www.w3.org/2000/svg">\n'
                 '\n'
-                '          <g transform="translate(40, 20)">\n'
-                '            <line x1="20" y1="65" x2="100" y2="30" stroke="#334155" stroke-width="2"/>\n'
-                '            <line x1="20" y1="65" x2="100" y2="100" stroke="#334155" stroke-width="2"/>\n'
-                '            <text x="60" y="38" font-size="10" font-weight="800" fill="#2563eb">0.7</text>\n'
-                '            <text x="60" y="98" font-size="10" font-weight="800" fill="#dc2626">0.3</text>\n'
-                '            <text x="110" y="32" font-size="10" font-weight="800" fill="#0f172a">Pass</text>\n'
-                '            <text x="110" y="104" font-size="10" font-weight="800" fill="#0f172a">Fail</text>\n'
-                '            <line x1="140" y1="30" x2="220" y2="15" stroke="#334155" stroke-width="1.8"/>\n'
-                '            <line x1="140" y1="30" x2="220" y2="45" stroke="#334155" stroke-width="1.8"/>\n'
-                '            <text x="230" y="18" font-size="10" font-weight="700" fill="#059669">P, P = 0.7 × 0.7 = '
+                '          <g transform="translate(18, 18)">\n'
+                '            <line x1="16" y1="68" x2="96" y2="30" stroke="#334155" stroke-width="2"/>\n'
+                '            <line x1="16" y1="68" x2="96" y2="106" stroke="#334155" stroke-width="2"/>\n'
+                '            <text x="54" y="38" font-size="11" font-weight="800" fill="#2563eb">0.7</text>\n'
+                '            <text x="50" y="109" font-size="11" font-weight="800" fill="#dc2626">0.3</text>\n'
+                '            <text x="104" y="32" font-size="11" font-weight="800" fill="#0f172a">Pass</text>\n'
+                '            <text x="104" y="110" font-size="11" font-weight="800" fill="#0f172a">Fail</text>\n'
+                '            <line x1="138" y1="30" x2="212" y2="15" stroke="#334155" stroke-width="1.8"/>\n'
+                '            <line x1="138" y1="30" x2="212" y2="45" stroke="#334155" stroke-width="1.8"/>\n'
+                '            <text x="220" y="19" font-size="11" font-weight="700" fill="#059669">P, P = 0.7 × 0.7 = '
                 '0.49</text>\n'
-                '            <text x="230" y="48" font-size="10" font-weight="700" fill="#d97706">P, F = 0.7 × 0.3 = '
+                '            <text x="220" y="49" font-size="11" font-weight="700" fill="#d97706">P, F = 0.7 × 0.3 = '
                 '0.21</text>\n'
                 '          </g>\n'
                 '</svg>',
@@ -317,7 +317,7 @@ CARDS = [ { 'answer_text': 'Ordered: 8, 11, 14, 14, 19, 22, 27 (7 numbers). Midd
     'id': 'm-l2-45',
     'level': 'l2',
     'level_label': 'Level 2',
-    'number': 45,
+    'number': 47,
     'rule_body': '1. Every row must add up to its row total. 2. Every column must add up to its column total. 3. Grand '
                  'total bottom-right must match both row totals and column totals.',
     'rule_heading': 'Row Totals + Column Totals',
@@ -365,7 +365,7 @@ CARDS = [ { 'answer_text': 'Ordered: 8, 11, 14, 14, 19, 22, 27 (7 numbers). Midd
     'id': 'm-l2-46',
     'level': 'l2',
     'level_label': 'Level 2',
-    'number': 46,
+    'number': 48,
     'rule_body': 'Positive: As X goes up, Y goes up (slopes uphill). Negative: As X goes up, Y goes down (slopes '
                  'downhill). Zero: Scattered random cloud with no trend.',
     'rule_heading': 'Positive • Negative • Zero Correlation',
@@ -375,25 +375,46 @@ CARDS = [ { 'answer_text': 'Ordered: 8, 11, 14, 14, 19, 22, 27 (7 numbers). Midd
     'subject_label': 'Maths',
     'svg_html': '<svg viewBox="0 0 460 170" width="100%" height="170" xmlns="http://www.w3.org/2000/svg">\n'
                 '\n'
-                '          <g transform="translate(30, 20)">\n'
-                '            <rect x="0" y="0" width="120" height="120" rx="6" fill="#eff6ff" stroke="#3b82f6"/>\n'
-                '            <line x1="20" y1="100" x2="100" y2="20" stroke="#2563eb" stroke-width="2"/>\n'
-                '            <text x="60" y="112" font-size="10" font-weight="800" fill="#1e40af" '
-                'text-anchor="middle">POSITIVE (+)</text>\n'
+                '          <g transform="translate(8, 10)">\n'
+                '            <rect x="0" y="0" width="140" height="146" rx="8" fill="#eff6ff" stroke="#3b82f6" stroke-width="1.6"/>\n'
+                '            <text x="70" y="19" font-size="11" font-weight="900" fill="#1e40af" text-anchor="middle">POSITIVE (+)</text>\n'
+                '            <line x1="22" y1="28" x2="22" y2="116" stroke="#334155" stroke-width="1.8"/>\n'
+                '            <line x1="22" y1="116" x2="124" y2="116" stroke="#334155" stroke-width="1.8"/>\n'
+                '            <line x1="26" y1="110" x2="120" y2="34" stroke="#1d4ed8" stroke-width="2" stroke-dasharray="4,3"/>\n'
+                '            <circle cx="32" cy="102" r="3.2" fill="#2563eb"/><circle cx="40" cy="98" r="3.2" fill="#2563eb"/>\n'
+                '            <circle cx="48" cy="87" r="3.2" fill="#2563eb"/><circle cx="56" cy="85" r="3.2" fill="#2563eb"/>\n'
+                '            <circle cx="65" cy="74" r="3.2" fill="#2563eb"/><circle cx="74" cy="73" r="3.2" fill="#2563eb"/>\n'
+                '            <circle cx="82" cy="61" r="3.2" fill="#2563eb"/><circle cx="91" cy="54" r="3.2" fill="#2563eb"/>\n'
+                '            <circle cx="99" cy="50" r="3.2" fill="#2563eb"/><circle cx="108" cy="40" r="3.2" fill="#2563eb"/>\n'
+                '            <circle cx="116" cy="34" r="3.2" fill="#2563eb"/>\n'
+                '            <text x="70" y="135" font-size="10.5" font-weight="800" fill="#1e40af" text-anchor="middle">As X ↑, Y ↑</text>\n'
                 '          </g>\n'
-                '          <g transform="translate(170, 20)">\n'
-                '            <rect x="0" y="0" width="120" height="120" rx="6" fill="#fef2f2" stroke="#ef4444"/>\n'
-                '            <line x1="20" y1="20" x2="100" y2="100" stroke="#dc2626" stroke-width="2"/>\n'
-                '            <text x="60" y="112" font-size="10" font-weight="800" fill="#991b1b" '
-                'text-anchor="middle">NEGATIVE (-)</text>\n'
+                '          <g transform="translate(160, 10)">\n'
+                '            <rect x="0" y="0" width="140" height="146" rx="8" fill="#fef2f2" stroke="#ef4444" stroke-width="1.6"/>\n'
+                '            <text x="70" y="19" font-size="11" font-weight="900" fill="#991b1b" text-anchor="middle">NEGATIVE (-)</text>\n'
+                '            <line x1="22" y1="28" x2="22" y2="116" stroke="#334155" stroke-width="1.8"/>\n'
+                '            <line x1="22" y1="116" x2="124" y2="116" stroke="#334155" stroke-width="1.8"/>\n'
+                '            <line x1="26" y1="34" x2="120" y2="110" stroke="#b91c1c" stroke-width="2" stroke-dasharray="4,3"/>\n'
+                '            <circle cx="32" cy="36" r="3.2" fill="#dc2626"/><circle cx="40" cy="45" r="3.2" fill="#dc2626"/>\n'
+                '            <circle cx="48" cy="46" r="3.2" fill="#dc2626"/><circle cx="56" cy="58" r="3.2" fill="#dc2626"/>\n'
+                '            <circle cx="65" cy="60" r="3.2" fill="#dc2626"/><circle cx="74" cy="72" r="3.2" fill="#dc2626"/>\n'
+                '            <circle cx="82" cy="76" r="3.2" fill="#dc2626"/><circle cx="91" cy="86" r="3.2" fill="#dc2626"/>\n'
+                '            <circle cx="99" cy="89" r="3.2" fill="#dc2626"/><circle cx="108" cy="100" r="3.2" fill="#dc2626"/>\n'
+                '            <circle cx="116" cy="105" r="3.2" fill="#dc2626"/>\n'
+                '            <text x="70" y="135" font-size="10.5" font-weight="800" fill="#991b1b" text-anchor="middle">As X ↑, Y ↓</text>\n'
                 '          </g>\n'
-                '          <g transform="translate(310, 20)">\n'
-                '            <rect x="0" y="0" width="120" height="120" rx="6" fill="#f8fafc" stroke="#cbd5e1"/>\n'
-                '            <circle cx="35" cy="40" r="3" fill="#64748b"/><circle cx="85" cy="35" r="3" '
-                'fill="#64748b"/><circle cx="50" cy="80" r="3" fill="#64748b"/><circle cx="95" cy="75" r="3" '
-                'fill="#64748b"/>\n'
-                '            <text x="60" y="112" font-size="10" font-weight="800" fill="#475569" '
-                'text-anchor="middle">NO CORRELATION</text>\n'
+                '          <g transform="translate(312, 10)">\n'
+                '            <rect x="0" y="0" width="140" height="146" rx="8" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.6"/>\n'
+                '            <text x="70" y="19" font-size="11" font-weight="900" fill="#334155" text-anchor="middle">NO CORRELATION</text>\n'
+                '            <line x1="22" y1="28" x2="22" y2="116" stroke="#334155" stroke-width="1.8"/>\n'
+                '            <line x1="22" y1="116" x2="124" y2="116" stroke="#334155" stroke-width="1.8"/>\n'
+                '            <circle cx="34" cy="42" r="3.2" fill="#64748b"/><circle cx="42" cy="95" r="3.2" fill="#64748b"/>\n'
+                '            <circle cx="52" cy="60" r="3.2" fill="#64748b"/><circle cx="58" cy="36" r="3.2" fill="#64748b"/>\n'
+                '            <circle cx="68" cy="102" r="3.2" fill="#64748b"/><circle cx="74" cy="74" r="3.2" fill="#64748b"/>\n'
+                '            <circle cx="82" cy="40" r="3.2" fill="#64748b"/><circle cx="90" cy="96" r="3.2" fill="#64748b"/>\n'
+                '            <circle cx="97" cy="58" r="3.2" fill="#64748b"/><circle cx="104" cy="36" r="3.2" fill="#64748b"/>\n'
+                '            <circle cx="112" cy="86" r="3.2" fill="#64748b"/><circle cx="116" cy="68" r="3.2" fill="#64748b"/>\n'
+                '            <text x="70" y="135" font-size="10.5" font-weight="800" fill="#475569" text-anchor="middle">Random scatter</text>\n'
                 '          </g>\n'
                 '</svg>',
     'title': 'Scatter Diagrams &amp; Correlation',
@@ -408,7 +429,7 @@ CARDS = [ { 'answer_text': 'Ordered: 8, 11, 14, 14, 19, 22, 27 (7 numbers). Midd
     'id': 'm-l2-47',
     'level': 'l2',
     'level_label': 'Level 2',
-    'number': 47,
+    'number': 49,
     'rule_body': 'Interpolation: Estimating a value INSIDE the given data range (Reliable). Extrapolation: Extending '
                  'line of best fit BEYOND the data points (Unreliable / Risky).',
     'rule_heading': 'Inside Range (Reliable) vs Beyond (Unreliable)',
@@ -448,15 +469,15 @@ CARDS = [ { 'answer_text': 'Ordered: 8, 11, 14, 14, 19, 22, 27 (7 numbers). Midd
     'title': 'Interpolation vs Extrapolation',
     'watch_out': "Examiners will ask 'Why might this prediction be unreliable?' — answer: 'It is extrapolated beyond "
                  "the data range.'"},
-  { 'answer_text': 'Degrees per patient = 360° ÷ 120 = 3° per patient. Bus angle = 45 × 3° = 135°.',
-    'challenge_prompt': 'In a survey of 120 hospital patients, 45 travelled by bus. What angle should represent bus '
+  { 'answer_text': 'Degrees per visitor = 360° ÷ 120 = 3° per person. Bus angle = 45 × 3° = 135°.',
+    'challenge_prompt': 'In a survey of 120 community centre visitors, 45 travelled by bus. What angle should represent bus '
                         'travel on a pie chart?',
     'dfe_code': 'DfE L2.HD45',
     'golden_rule': 'Sum of all pie chart sector angles MUST equal exactly 360°!',
     'id': 'm-l2-48',
     'level': 'l2',
     'level_label': 'Level 2',
-    'number': 48,
+    'number': 50,
     'rule_body': 'Total degrees in any circle = 360°. Degrees per item = 360° ÷ Total Frequency. To find angle for a '
                  'category: Multiply its frequency by degrees per item.',
     'rule_heading': 'Angle = (Value ÷ Total) × 360°',
@@ -494,7 +515,7 @@ CARDS = [ { 'answer_text': 'Ordered: 8, 11, 14, 14, 19, 22, 27 (7 numbers). Midd
     'id': 'm-l2-49',
     'level': 'l2',
     'level_label': 'Level 2',
-    'number': 49,
+    'number': 51,
     'rule_body': 'Dual bar charts place two bars side-by-side for each category to compare groups (e.g. Male vs '
                  'Female, 2023 vs 2024). Always check the legend key and vertical axis scale.',
     'rule_heading': 'Side-by-Side Comparison with Key',
@@ -511,14 +532,14 @@ CARDS = [ { 'answer_text': 'Ordered: 8, 11, 14, 14, 19, 22, 27 (7 numbers). Midd
                 '            <rect x="92" y="30" width="30" height="90" fill="#10b981"/>\n'
                 '            <rect x="180" y="65" width="30" height="55" fill="#3b82f6"/>\n'
                 '            <rect x="212" y="45" width="30" height="75" fill="#10b981"/>\n'
-                '            <text x="91" y="135" font-size="10" font-weight="700" fill="#0f172a" '
+                '            <text x="91" y="135" font-size="11" font-weight="700" fill="#0f172a" '
                 'text-anchor="middle">Quarter 1</text>\n'
-                '            <text x="211" y="135" font-size="10" font-weight="700" fill="#0f172a" '
+                '            <text x="211" y="135" font-size="11" font-weight="700" fill="#0f172a" '
                 'text-anchor="middle">Quarter 2</text>\n'
                 '            <rect x="280" y="30" width="12" height="12" fill="#3b82f6"/>\n'
-                '            <text x="300" y="40" font-size="10" font-weight="700" fill="#0f172a">2023</text>\n'
+                '            <text x="300" y="40" font-size="11" font-weight="700" fill="#0f172a">2023</text>\n'
                 '            <rect x="280" y="55" width="12" height="12" fill="#10b981"/>\n'
-                '            <text x="300" y="65" font-size="10" font-weight="700" fill="#0f172a">2024</text>\n'
+                '            <text x="300" y="65" font-size="11" font-weight="700" fill="#0f172a">2024</text>\n'
                 '          </g>\n'
                 '</svg>',
     'title': 'Dual &amp; Grouped Bar Charts',
@@ -532,7 +553,7 @@ CARDS = [ { 'answer_text': 'Ordered: 8, 11, 14, 14, 19, 22, 27 (7 numbers). Midd
     'id': 'm-l2-50',
     'level': 'l2',
     'level_label': 'Level 2',
-    'number': 50,
+    'number': 52,
     'rule_body': 'Common tricks used to deceive: 1. Broken vertical axis (not starting at 0) exaggerates tiny '
                  'differences. 2. Unequal scale increments. 3. 3D distortion making front slices look bigger.',
     'rule_heading': 'Non-Zero Baselines &amp; Uneven Scales',
@@ -547,11 +568,11 @@ CARDS = [ { 'answer_text': 'Ordered: 8, 11, 14, 14, 19, 22, 27 (7 numbers). Midd
                 'stroke-width="1.8"/>\n'
                 '            <text x="90" y="24" font-size="11" font-weight="800" fill="#b91c1c" '
                 'text-anchor="middle">MISLEADING (Truncated)</text>\n'
-                '            <text x="15" y="50" font-size="10" font-weight="700" fill="#0f172a">Y-axis starts at '
+                '            <text x="15" y="50" font-size="11" font-weight="700" fill="#0f172a">Y-axis starts at '
                 '90%</text>\n'
                 '            <rect x="40" y="80" width="30" height="35" fill="#dc2626"/>\n'
                 '            <rect x="90" y="60" width="30" height="55" fill="#dc2626"/>\n'
-                '            <text x="90" y="132" font-size="9" font-weight="800" fill="#dc2626" '
+                '            <text x="90" y="132" font-size="11" font-weight="800" fill="#dc2626" '
                 'text-anchor="middle">Looks like 2x difference!</text>\n'
                 '          </g>\n'
                 '          <g transform="translate(240, 20)">\n'
@@ -559,11 +580,11 @@ CARDS = [ { 'answer_text': 'Ordered: 8, 11, 14, 14, 19, 22, 27 (7 numbers). Midd
                 'stroke-width="1.8"/>\n'
                 '            <text x="90" y="24" font-size="11" font-weight="800" fill="#15803d" '
                 'text-anchor="middle">HONEST (Starts at 0)</text>\n'
-                '            <text x="15" y="50" font-size="10" font-weight="700" fill="#0f172a">Y-axis starts at '
+                '            <text x="15" y="50" font-size="11" font-weight="700" fill="#0f172a">Y-axis starts at '
                 '0%</text>\n'
                 '            <rect x="40" y="65" width="30" height="50" fill="#16a34a"/>\n'
                 '            <rect x="90" y="62" width="30" height="53" fill="#16a34a"/>\n'
-                '            <text x="90" y="132" font-size="9" font-weight="800" fill="#15803d" '
+                '            <text x="90" y="132" font-size="11" font-weight="800" fill="#15803d" '
                 'text-anchor="middle">Shows true 92% vs 95%</text>\n'
                 '          </g>\n'
                 '</svg>',
